@@ -219,8 +219,16 @@ def main():
         if p["hunger"] is not None:
             need_flag(p["hunger"], f"guests.json pack {p['id']}")
     groups = {g["id"]: g for g in guests["groups"]}
-    if set(groups) != {"a", "b", "c"}:
-        err("guests.json groups: needs groups a, b and c")
+    if set(groups) != {"b", "c"}:
+        err("guests.json groups: needs groups b and c (one hunt group per run, arriving in Act 2)")
+    for gid, g in groups.items():
+        if g.get("arrives_in_act") != 2:
+            err(f"guests.json group {gid}: the hunt group arrives in Act 2 (section 20, answer 1)")
+        roles = g.get("act2_roles", {})
+        member_ids = {m["id"] for m in g["members"]}
+        for role in ("reads_guestbook", "puts_jamie_on_couch", "did_you_see_that", "light_sleeper"):
+            if roles.get(role) not in member_ids:
+                err(f"guests.json group {gid}: act2_roles.{role} must name one of its members")
     hunt_group = flags.get("run.hunt_group", {})
     if set(hunt_group.get("values", [])) != {g for g in groups if groups[g]["act"] == 3}:
         err("flags.json run.hunt_group: values must be the Act 3 group ids")
@@ -228,8 +236,6 @@ def main():
         for parity, gid in d["rule"].items():
             if gid in groups and groups[gid]["runs"] != parity:
                 err(f"guests.json group {gid}: runs '{groups[gid]['runs']}' but profile derives it on {parity} runs")
-    if "a" in groups and not groups["a"]["leaves_alive"]:
-        err("guests.json group a: Group A leaves alive at dawn (section 8, chapter 8)")
     symbols, all_ids = [], set()
     for gid, g in groups.items():
         for sid in g["scenes"]:

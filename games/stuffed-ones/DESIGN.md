@@ -75,7 +75,7 @@ All quotations are verbatim from `02_Novels/01_The_Stuffed_Ones.md`.
 
 **The author's ending** is chapter 33. It is in the game as **The Cycle**, marked as written, and it follows when the player plays the hunt as the narrator does.
 
-**One reading the game had to choose.** The second movement's three guests and the third movement's guests may be the same people told twice (chapter 30's fall off the couch echoes chapter 20's). Following the direction for this game, Act 2's guests are a first group and Act 3's a second. What happens behind the bedroom door at the end of chapter 23 is not in the text; the game keeps it as a gap (section 8, chapter 8, and question 1 in section 20).
+**One group, told twice.** The second movement's three guests and the third movement's are the same people, told twice. The novel retells as a habit: chapter 15 tells chapter 13's awakening again, nearly word for word, and chapter 24 restarts the arrival ("The moment the door opened") with a correction: "I wish I could say we attacked them right away. That we were mindless. That we didn't know what we were doing. But that would be a lie." Chapter 30's fall off the couch echoes chapter 20's because it is the same fall, told truthfully. So Act 2 ends where chapter 23 ends, at the bedroom door, and Act 3 rewinds to the door opening and tells the same stay again as the hunt it was. What happens behind the bedroom door at the end of chapter 23 is never shown (section 20, answer 1).
 
 ## 4. Investment
 
@@ -90,7 +90,7 @@ All quotations are verbatim from `02_Novels/01_The_Stuffed_Ones.md`.
    - spends two evenings without games: a porch where the friends tell stories of the trips before this one.
    Each of these gives a **memory token** (section 12): a small named thing such as "Lila's three-note hum" or "Jamie's bad postcard". Six are given by the story; ten more are earned only by staying with the friends when you could be searching. In Act 2 these tokens are literally what you have left of yourself.
 2. **Your own self.** At minute 4 you write your own name in the guestbook. It becomes the first memory token. Later it can be lost, and the guestbook page shows the name unpicked.
-3. **The guests you hunt.** Act 3's group are watched from the shelf for a full day before the first game (c09), and the Parlour game makes you use what you learned about them. Knowing them is what lets you either torment them precisely or save them (section 11).
+3. **The guests you hunt.** You first see them in Act 2, from the shelf, while you are still trying not to hunt them; Act 3 rewinds and you watch the same three for a full day before the first game (c09). The Parlour game makes you use what you learned about them. Knowing them is what lets you either torment them precisely or save them (section 11).
 
 **The question that pulls them to the end.** In Act 1: *what are the toys, and what do Mabel and Ruth keep?* In Acts 2 and 3: *who will I still be when the car doors slam, and will these three go down the trapdoor?*
 
@@ -146,9 +146,8 @@ All quotations are verbatim from `02_Novels/01_The_Stuffed_Ones.md`.
 | The friends | The narrator, Jamie, Lila, Marcus, Dani | Source |
 | The keepers | Mabel and Ruth | Source |
 | The elders | The toys already on the shelves when the friends arrive | Source (unnamed); in run 2 and later they are last run's group (added) |
-| Group A, the first new guests | Omar, Bea, Sunny (Act 2) | Source gives "three of them"; names and lives added |
-| Group B | Noor, Wes, Ana (Act 3, odd runs) | Added |
-| Group C | Sol, Rosa, Kit (Act 3, even runs) | Added |
+| Group B | Noor, Wes, Ana (Acts 2 and 3, odd runs) | Source gives "three of them"; names and lives added |
+| Group C | Sol, Rosa, Kit (Acts 2 and 3, even runs) | Source gives "three of them"; names and lives added |
 
 ### Objects that matter
 
@@ -217,17 +216,18 @@ Lines in quotation marks with a chapter number are verbatim from the source. Lin
 
 Unnamed. Barks at the shelves on day one (added), follows Lila, dies in ch 5. Shown hanging only as a distant shape among leaves; never close.
 
-### Group A: the first new guests (Act 2; all added except "three of them, young, laughing, unaware", ch 19)
+### The hunt group's first night (Act 2)
 
-| Name | Interior life | Habit you see from the shelf | Line |
-| --- | --- | --- | --- |
-| Omar | Organised this reunion; first trip with the old school friends in eight years | Reads the guestbook aloud | "Did you see that?" (ch 20) |
-| Bea | Laughs easily, hides that she is nervous of the woods | Picks up Jamie and puts him on the couch (ch 19–20) | (added) "He fell. Poor guy." |
-| Sunny | Brought a scrapbook of their old trips | Shows the scrapbook to the others on the rug, right below your shelf | (added) "Look at us. We look twelve." |
+The group you hunt in Act 3 arrives in Act 2: Group B on odd runs, Group C on even runs. In Act 2 three of them carry the source's moments:
 
-The scrapbook mirrors the friends' own "trips like this before" (ch 1), so the player sees in Act 2 exactly what they lost.
+| Moment | Group B | Group C |
+| --- | --- | --- |
+| Reads old guestbook entries aloud, your name among them | Noor (keeps the scoresheet) | Sol |
+| Picks Jamie up and puts him on the couch (ch 19–20) | Ana (talks to the toys) | Kit |
+| "Did you see that?" (ch 20) | Wes | Rosa (notices moves) |
+| The light sleeper whose cone flickers open (chapter 8) | Wes (sleeps with a lamp on) | Kit (awake until 03:00) |
 
-### Group B (Act 3, odd runs; added)
+### Group B (Acts 2 and 3, odd runs; added)
 
 | Name | Interior life | What the player can learn from the shelf | Parlour symbol | Source lines spoken |
 | --- | --- | --- | --- | --- |
@@ -237,7 +237,7 @@ The scrapbook mirrors the friends' own "trips like this before" (ch 1), so the p
 
 Arc: Cycle, they go down; in the next run they sit on the shelf. Warning: they drive away; Ana looks back at the shelf through the window. Empty Toy: as Cycle. Keeper: never met.
 
-### Group C (Act 3, even runs; added)
+### Group C (Acts 2 and 3, even runs; added)
 
 | Name | Interior life | Learnable habit | Parlour symbol | Mechanical difference |
 | --- | --- | --- | --- | --- |
@@ -336,19 +336,19 @@ Every chapter below lists its scenes in order. Flags named are declared in `data
 ### Chapter 7: The New Guests Arrive (10 min)
 
 - **Order:** `b7_arrivals` (7 min) → `b7_jamie_falls` (3 min).
-- **Play:** "Car doors. / Laughter. / Footsteps on the porch." Group A unpack in front of you. Your view is fixed; you know them by what passes in front of you and what you hear. Sunny's scrapbook on the rug. Omar reads old guestbook entries aloud, including your own name, if you wrote one. Hunger rises while they are near (section 12). When the room is empty you may **release**: move once, unseen, for −30 hunger and one memory from the seam you moved. Tremors begin at hunger 75. Then Jamie falls (scripted; `act2.jamie_fell`); Bea laughs and puts him on the couch; his head twitches; "Did you see that?" With spread 1 read, you saw his glow rising for a full minute before and could do nothing about it, which is the point.
+- **Play:** "Car doors. / Laughter. / Footsteps on the porch." The three you will hunt (Group B on odd runs, C on even) unpack in front of you. Your view is fixed; you know them by what passes in front of you and what you hear. One of them reads old guestbook entries aloud, including your own name, if you wrote one (Noor or Sol). Hunger rises while they are near (section 12). When the room is empty you may **release**: move once, unseen, for −30 hunger and one memory from the seam you moved. Tremors begin at hunger 75. Then Jamie falls (scripted; `act2.jamie_fell`); one of them laughs and puts him on the couch (Ana or Kit); his head twitches; "Did you see that?" (Wes or Rosa). With spread 1 read, you saw his glow rising for a full minute before and could do nothing about it, which is the point.
 - **Ends:** night falls; the guests go up.
 
 ### Chapter 8: Giving In (7 min)
 
 - **Order:** `b8_breaking_point` (2 min) → `b8_dollhouse_climb` (3 min) → `b8_the_door` (2 min).
-- **Play:** The cabin "too quiet". Lila climbs down: "She didn't want to." The view flattens into the dollhouse cutaway, which teaches the 2D mode without the hunt: the pack moves on its own up the stairs and down the hall; you hold Still to lag behind and the pulse drags you anyway. Guests sleep with closed cones; Bea's flickers open twice (she sleeps lightly), which teaches what a cone is. The bedroom door, at toy height in 3D. Choice: **Let go** ("…I didn't fight it."; as written) or **Hold** (hold Still for a 20-second surge with Steady taps every 2 seconds). Holding earns the token "The door" and sets `act2.door_held`; any lurch during it costs two memories as usual. Either way the others go in and the screen goes black. Nothing behind the door is shown.
-- **What happened (added, see section 21):** at first light the shelf faces a window. Group A carry their bags out fast and drive away; Omar looks at the shelf once. The cabin had not sealed; it was only their first night. The player never learns what happened in the room. The rule the player takes from it: too much, too early, and they leave.
+- **Play:** The cabin "too quiet". Lila climbs down: "She didn't want to." The view flattens into the dollhouse cutaway, which teaches the 2D mode without the hunt: the pack moves on its own up the stairs and down the hall; you hold Still to lag behind and the pulse drags you anyway. Guests sleep with closed cones; the light sleeper's flickers open twice (Wes, with his lamp on, or Kit, awake until 03:00), which teaches what a cone is. The bedroom door, at toy height in 3D. Choice: **Let go** ("…I didn't fight it."; as written) or **Hold** (hold Still for a 20-second surge with Steady taps every 2 seconds). Holding earns the token "The door" and sets `act2.door_held`; any lurch during it costs two memories as usual. Either way the others go in and the screen goes black. Nothing behind the door is shown.
+- **What happened:** nothing is shown. The black holds on the narrator's line "…I didn't fight it.", then Act 3 opens on chapter 24's correction and rewinds to the door opening. Act 2's door is the hunger's version of that night; Act 3 is the true one, in which "We don't move at first."
 
 ### Chapter 9: We Don't Move at First (7 min)
 
 - **Order:** `c9_new_guests`.
-- **Play:** Time passes on the shelf in fast light: dust, Ruth's sweeping, seasons through the window (40 seconds). Car doors. "We stayed still. / Perfectly still." Group B (odd runs) or C (even runs) arrive. Wes pokes your arm (hunger +8, a hold test). Ana lifts Lila to another shelf "so she isn't alone." You learn the three by watching for about 5 minutes: who keeps the scoresheet, who sleeps with a lamp, who talks to the toys. A pinned **Notes** strip (section 14) records what you have observed about each; it is your only aid in Parlour later. In run 2 and later, the elders on the high shelf are last run's group, and you feel them fighting the hunger too.
+- **Play:** Black, and the narrator: "I wish I could say we attacked them right away. That we were mindless. That we didn't know what we were doing. But that would be a lie." The shelf view runs backward in fast light to the afternoon they arrived (40 seconds). Car doors again. "We stayed still. / Perfectly still." The same three step inside, and this time you watch them as what you are. Wes pokes your arm (hunger +8, a hold test). Ana lifts Lila to another shelf "so she isn't alone." You learn the three by watching for about 5 minutes: who keeps the scoresheet, who sleeps with a lamp, who talks to the toys. A pinned **Notes** strip (section 14) records what you have observed about each; it is your only aid in Parlour later. In run 2 and later, the elders on the high shelf are last run's group, and you feel them fighting the hunger too.
 - **Ends:** the guests go to bed. The pulse: "Play."
 
 ### Chapter 10: The First Game: Sound (8 min)
@@ -566,7 +566,7 @@ The next incident then plays the variant that **breaks** the current explanation
 | I2 | 2:30 a.m. (ch 2) | The sounds come from the shelf, not the walls | Every friend's door is shut and you hear all four breathing | The forest is silent; nothing is outside | At breakfast everyone heard it (ch 2) |
 | I3 | The smell (ch 3) | Only the rabbit smells; the wood smells of cedar | Jamie recoils for real; he did not plant it | The rabbit is dry; nothing crawled in | The smell stays on your fingers (ch 3) |
 | I4 | The warmth (ch 4) | The bear is warm, the bed is cold | Everyone was at the creek with you | It has a heartbeat; nothing is inside | Everyone touches it (ch 4) |
-| I5 | The dog (ch 5) | — | No one left the porch | "No blood. No struggle." | Mabel's "They get hungry." |
+| I5 | The dog (ch 5) | It is outside, on a low branch near the cabin (ch 5); nothing about an old house reaches a tree | No one left the porch | "No blood. No struggle." | Mabel's "They get hungry." |
 | I6 | Patterned sounds (ch 7) | Three taps, a count; a house does not count | All four friends are in the hall with you | The drag is on the ceiling, inside | The giggle is recorded on Jamie's phone (added) |
 | I7 | Emptied wildlife; fuller toys (ch 6) | The toys' seams are tighter than yesterday | The animals were emptied, not cut | "emptied, like something had taken what it needed" | Marcus covers them; he sees them too |
 | I8 | Where we hadn't left them (ch 7) | Toys and pegs moved, in a locked room | "no one confessed" | They are indoors | The pegs match no one's last turn on the scoresheet |
@@ -647,7 +647,7 @@ What the next run changes:
 
 | Change | Detail |
 | --- | --- |
-| The other group arrives in Act 3 | Group B on odd runs, Group C on even runs; C plays differently (Sol's hearing, Rosa's sketches, Kit's waking nights) |
+| The other group arrives in Acts 2 and 3 | Group B on odd runs, Group C on even runs; C plays differently (Sol's hearing, Rosa's sketches, Kit's waking nights) |
 | The shelf you meet in Act 1 | Last run's guests sit on the shelves with their stitched name tags. In the guestbook, their names are in their own hands above the line where you write yours |
 | Four Act 1 incidents are theirs | The smell (I3), the warmth (I4), the toy at the top of the stairs and the one outside Lila's door (I8) are done by last run's guests in their forms; one habit of each carries over (Noor's hum is the giggle's pitch; Wes's camera strap fabric is the bear's collar; Ana's toy faces the window "so it isn't alone") |
 | The book | Spreads read before start already ordered, so the Keeper ending is within reach |
@@ -670,7 +670,7 @@ The resolver checks endings in priority order at the end of a run and returns th
 ### The Keeper
 
 - **Plain words:** you read all six spreads before the ritual room closed, and at the altar you chose to stitch, and finished the binding seam.
-- **Final scenes:** `a5_altar_stitch`, `e_keeper_porch`. A cut to an ordinary afternoon on the porch. Mabel and Ruth stand either side of you. Through the window, four toys sit on the north shelf: a bear, a rabbit, a dog, a bear. A car comes up Ridgeway Road. You are given one input, **Speak**.
+- **Final scenes:** `a5_altar_stitch`, `e_keeper_porch`. A cut to an ordinary afternoon on the porch. Mabel and Ruth stand either side of you. Through the window, four toys sit on the north shelf: a bear, a rabbit, a dog, a bear. A car comes up Ridgeway Road. Your hands, when they move at the edge of the frame, move at the keepers' pace, slowly, "like they were afraid of breaking" (ch 1); nothing explains it. You are given one input, **Speak**.
 - **Last line:** you say "They like company." The cost: you are whole, and your friends are on your shelf.
 
 ### The Warning
@@ -755,15 +755,15 @@ Controls (remappable): Still (hold; toggle available), Steady, Interact, Journal
 | Kind | Items | Count |
 | --- | --- | --- |
 | 3D environments | Cabin (day, night, warm variants), clearing and porch, three trails, labyrinth, ritual room, car interior | 8 sets, 3 lighting variants of the cabin |
-| Characters, human | 5 friends (narrator's hands only), 2 keepers, 9 guests (A, B, C) | 15 rigged models |
-| Characters, stuffed | 5 pack (cat, bear, rabbit, dog, large bear), 9 guest forms, 40 generic elders (8 bases with fabric variants) | 54 toy models from 12 base meshes |
+| Characters, human | 5 friends (narrator's hands only), 2 keepers, 6 guests (B, C) | 12 rigged models |
+| Characters, stuffed | 5 pack (cat, bear, rabbit, dog, large bear), 6 guest forms, 40 generic elders (8 bases with fabric variants) | 51 toy models from 12 base meshes |
 | Props | Guestbook, game board and pegs, sampler, book and 12 pages, strap, map, camera, scrapbook, lamp, sketchbook, binoculars, bags, tarp, altar, skins | about 60 |
 | Textures | Felt (8), thread (4), wallpaper (6), wood (4), fabric patterns for guests' forms (9) | 31 sets |
 | 2D | Dollhouse cutaway (day, night), toy sprites in 14 forms × 4 poses, guest figures × 9 with cones, labyrinth top-down (2 rings) | 2 boards, about 120 sprites |
 | 1D layouts | Stitchwork (4 patterns), Book (6 spreads, 40 glyphs), Parlour board and scoresheet (2 groups), Stuffing body page | 4 page templates, 12 content sets |
 | Music | Theme (3 arrangements), heartbeat system (5 tempos), music-box ending, 3 game textures | 12 cues |
 | Effects | Toy sounds, fabric, thread, doors, forest, car | about 140 |
-| Voice | Friends (about 60 lines each), keepers (9 source lines), Group A (25 each), Groups B and C (40 each) | about 640 lines |
+| Voice | Friends (about 60 lines each), keepers (9 source lines), Groups B and C (50 each, Act 2 included) | about 610 lines |
 | Journal text | Incident entries (9 × up to 5 variants), tokens (17), spreads (6), endings | about 80 entries |
 
 ## 18. Data files
@@ -795,7 +795,7 @@ The check confirms that every flag whose description starts with "PROFILE" is a 
 | M0 Greybox (4 weeks) | The cabin in grey boxes at both scales; guest camera, shelf camera, toy-floor camera; the Still control and hunger; the resolver and debug panel |
 | M1 Vertical slice (8 weeks) | Chapters 9 and 10 finished: Group B arrives, the shelf day, Sound in the dollhouse, Stuffing at dawn. Proves the second half stays tense, the main risk |
 | M2 Act 1 (8 weeks) | Chapters 1–5 in greybox with all incidents, Shelve and Keep, tokens, Stitchwork 1, the book |
-| M3 Act 2 (4 weeks) | Chapters 6–8, Group A, the door |
+| M3 Act 2 (4 weeks) | Chapters 6–8, the hunt group's first night, the door |
 | M4 Act 3 complete (8 weeks) | Chapters 11–14, Parlour, Scent, Proximity, the labyrinth from above; all four endings |
 | M5 The loop (3 weeks) | The profile, Group C, elders, run-2 changes |
 | M6 Art and audio (10 weeks, overlapping M3–M5) | Final textiles, voice, music |
@@ -809,23 +809,23 @@ The check confirms that every flag whose description starts with "PROFILE" is a 
 | Act 1 is long before the threat | Incidents start at minute 6; something wrong happens every 3–5 minutes; the friends are the content, not a delay |
 | The memory economy is opaque | Spread 3 and the Stuffing side panel show rates; the journal lists what each cost took |
 | Run 2 contradiction (a guest stuffed in one run arrives alive two runs later) | The shelf keeps one generation; earlier groups go to the circle of skins; the title calls each run "a turn of the cycle", a retelling |
-| Three invented guest groups are costly | Group A is one day; B and C share source lines and the same rooms |
+| Two invented guest groups are costly | B and C share source lines and the same rooms; Act 2 reuses each group's Act 3 assets |
 | Players read the guests as props | The Notes strip and Parlour's Personal tamper are built on their interior lives; each has a want and a fear |
 | The Keeper path is short (about 67 min) | It needs the whole book, so it is mostly a second-run ending |
 
-**Questions only the author can answer.**
+**Answered** (by Claude at the author's request, 2026-11-12, from the novel's text; the author can overrule any of them).
 
-1. Are the guests of the second and third movements the same three people told twice, or two groups? The game uses two groups and lets Group A leave alive at dawn after the door. Is that acceptable, or should Act 2's night end in the unshown gap with no departure?
-2. The narrator is unnamed and has no stuffed form in the text. Is a player-written name (never spoken) and a cat form acceptable?
-3. Mabel and Ruth's gain is left unsaid, and the Keeper ending only puts you beside them. Should the game keep that silence, or is there something they are that the author wants shown (for example, why they move "like they were afraid of breaking")?
+1. **One group or two? One group, told twice.** The novel retells as a habit (chapter 15 retells chapter 13 almost word for word), and chapter 24 restarts the arrival with an explicit correction: "I wish I could say we attacked them right away… But that would be a lie." Chapter 30's fall off the couch is chapter 20's fall told truthfully. So the hunt group (B on odd runs, C on even) arrives in Act 2; Act 2 ends at the bedroom door with nothing shown; Act 3 rewinds to the door opening. The invented Group A (Omar, Bea, Sunny) and their departure at dawn are cut.
+2. **A player-written name and a cat form? Yes, with one rule.** The narrator stays unnamed everywhere the novel's voice speaks: the name appears only in the guestbook, in the player's own handwriting, and no character, caption or narration ever says or prints it. The cat fits the source: cats are among the shelf's first toys (ch 1) and a "cat plush" is one of the moving toys in chapters 7 and 29, while the novel names Jamie's and Lila's forms only.
+3. **What Mabel and Ruth gain stays unsaid.** The novel's only account of them is what they are not: "The old ladies weren't caretakers. / They were keepers" (ch 11), and they did not warn the friends "because it wouldn't have mattered" (ch 12). The game shows their one unexplained trait, that they "moved slowly, like they were afraid of breaking", and never explains it. In the Keeper ending your own hands move at their pace on the porch. That is the whole of the hint.
 
 ## 21. Added for the game
 
 Everything below is a proposal, not the author's text.
 
-**Structure and systems:** the two-group reading of movements two and three; Group A leaving alive at dawn; the Shelve-or-Keep engine with the four named explanations and every breaking variant in section 12; memory tokens and all their names; Stuffing (slots, warm slots, costs); seams deciding abilities; hunger numbers, tremors, Steady, lurches, the Act 2 release; friends' hunger meters; dread, blame, the flee line at 70, the break line at 40, the memory governor; Join or Hold and the hunt log; the profile shelf, run alternation of Groups B and C, elders, the run-2 changes and the circle of skins holding older generations; the four endings' exact conditions (The Warning, The Empty Toy and The Keeper are from `docs/ADAPTATIONS.md`, not the novel).
+**Structure and systems:** the one-group-told-twice reading of movements two and three (Act 3 rewinds to the door opening); the hunt group's three Act 2 roles; the Shelve-or-Keep engine with the four named explanations and every breaking variant in section 12; memory tokens and all their names; Stuffing (slots, warm slots, costs); seams deciding abilities; hunger numbers, tremors, Steady, lurches, the Act 2 release; friends' hunger meters; dread, blame, the flee line at 70, the break line at 40, the memory governor; Join or Hold and the hunt log; the profile shelf, run alternation of Groups B and C, elders, the run-2 changes and the circle of skins holding older generations; the four endings' exact conditions (The Warning, The Empty Toy and The Keeper are from `docs/ADAPTATIONS.md`, not the novel).
 
-**People:** all interior detail for Jamie, Lila, Marcus and Dani beyond the source lines (oldest friend, flatmate, the postcard, the narration, sleepwalking as the reason for Lila's lock, mushrooms, maps, the couple, the camp stove, the naming); their added lines; stuffed forms for the narrator (cat), Marcus (dog) and Dani (bear), and for Groups B and C by slot (rabbit, bear, cat: Noor and Sol, Wes and Rosa, Ana and Kit), chosen so the source's rabbit, bear and cat can do the carried Act 1 incidents; the narrator's guestbook name; the keepers' daily routines and the condition on Ruth's line; Group A (Omar, Bea, Sunny), Group B (Noor, Wes, Ana), Group C (Sol, Rosa, Kit), their lives, symbols and added lines; which guest speaks which source line.
+**People:** all interior detail for Jamie, Lila, Marcus and Dani beyond the source lines (oldest friend, flatmate, the postcard, the narration, sleepwalking as the reason for Lila's lock, mushrooms, maps, the couple, the camp stove, the naming); their added lines; stuffed forms for the narrator (cat), Marcus (dog) and Dani (bear), and for Groups B and C by slot (rabbit, bear, cat: Noor and Sol, Wes and Rosa, Ana and Kit), chosen so the source's rabbit, bear and cat can do the carried Act 1 incidents; the narrator's guestbook name; the keepers' daily routines and the condition on Ruth's line; Group B (Noor, Wes, Ana), Group C (Sol, Rosa, Kit), their lives, symbols and added lines; which guest speaks which source line.
 
 **Places and objects:** the cabin's floor plan and room assignments; the keepers' lit window; the shed; three named trails; the car interior; the guestbook; the counting game and all its rules and symbols; Mabel's sampler; Marcus's strap and map; loose book pages hidden in the cabin; the lectern; the book's six spreads' division, the sixth spread (the keeper's hand) and all spread effects; the stitched script's colours and rules; the film camera, scrapbook, lamp, sketchbook, binoculars; the listing on the fridge and its wording drawn from ch 1; Jamie's recorded giggle (I6 variant).
 

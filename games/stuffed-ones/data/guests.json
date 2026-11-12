@@ -1,91 +1,324 @@
 {
   "source": "02_Novels/01_The_Stuffed_Ones.md",
   "pack": [
-    {"id": "narrator", "name": "The narrator", "form": "cat", "hunger": null, "origin": "added", "note": "Never named aloud; the player writes a name in the guestbook."},
-    {"id": "jamie", "name": "Jamie", "form": "bear", "hunger": "pack.hunger.jamie", "origin": "source"},
-    {"id": "lila", "name": "Lila", "form": "rabbit", "hunger": "pack.hunger.lila", "origin": "source"},
-    {"id": "marcus", "name": "Marcus", "form": "dog", "hunger": "pack.hunger.marcus", "origin": "added"},
-    {"id": "dani", "name": "Dani", "form": "large bear", "hunger": "pack.hunger.dani", "origin": "added"}
+    {
+      "id": "narrator",
+      "name": "The narrator",
+      "form": "cat",
+      "hunger": null,
+      "origin": "added",
+      "note": "Never named in narration, captions or dialogue; the name exists only in the guestbook, in the player's handwriting (section 20, answer 2)."
+    },
+    {
+      "id": "jamie",
+      "name": "Jamie",
+      "form": "bear",
+      "hunger": "pack.hunger.jamie",
+      "origin": "source"
+    },
+    {
+      "id": "lila",
+      "name": "Lila",
+      "form": "rabbit",
+      "hunger": "pack.hunger.lila",
+      "origin": "source"
+    },
+    {
+      "id": "marcus",
+      "name": "Marcus",
+      "form": "dog",
+      "hunger": "pack.hunger.marcus",
+      "origin": "added"
+    },
+    {
+      "id": "dani",
+      "name": "Dani",
+      "form": "large bear",
+      "hunger": "pack.hunger.dani",
+      "origin": "added"
+    }
   ],
   "groups": [
-    {
-      "id": "a",
-      "name": "Group A, the first new guests",
-      "act": 2,
-      "runs": "all",
-      "scenes": ["b7_arrivals", "b7_jamie_falls", "b8_dollhouse_climb", "b8_the_door"],
-      "leaves_alive": true,
-      "source_note": "The source gives only \"three of them, young, laughing, unaware\" (ch 19); names and lives are added.",
-      "members": [
-        {"id": "omar", "name": "Omar", "age": null, "interior": "Organised this reunion; first trip with the old school friends in eight years.", "habit": "Reads the guestbook aloud.", "lines": [{"text": "Did you see that?", "verbatim": true, "chapter": 20}]},
-        {"id": "bea", "name": "Bea", "age": null, "interior": "Laughs easily, hides that she is nervous of the woods. Sleeps lightly.", "habit": "Picks up Jamie and puts him on the couch (ch 19-20).", "lines": [{"text": "He fell. Poor guy.", "verbatim": false}]},
-        {"id": "sunny", "name": "Sunny", "age": null, "interior": "Brought a scrapbook of their old trips.", "habit": "Shows the scrapbook to the others on the rug, right below your shelf.", "lines": [{"text": "Look at us. We look twelve.", "verbatim": false}]}
-      ]
-    },
     {
       "id": "b",
       "name": "Group B",
       "act": 3,
       "runs": "odd",
-      "scenes": ["c9_new_guests", "c11_parlour_1", "c13_parlour_2"],
+      "scenes": [
+        "b7_arrivals",
+        "b7_jamie_falls",
+        "b8_dollhouse_climb",
+        "b8_the_door",
+        "c9_new_guests",
+        "c11_parlour_1",
+        "c13_parlour_2"
+      ],
       "leaves_alive": false,
       "members": [
-        {"id": "noor", "slot": 1, "dread": "dread.guest_1", "name": "Noor", "age": 28, "form": "rabbit", "parlour_symbol": "Door",
-         "interior": "Has taken a job abroad and came to tell the other two; rehearses it at the bathroom mirror; afraid of being the one who leaves.",
-         "learnable": ["Keeps the scoresheet", "Hums while cooking", "Locks her door"],
-         "mechanics": null,
-         "carried_habit": "Her hum is the pitch of the I6 giggle in the next run.",
-         "lines": [{"text": "I swear I locked that door.", "verbatim": true, "chapter": 29}, {"text": "Who moved these?", "verbatim": true, "chapter": 27}]},
-        {"id": "wes", "slot": 2, "dread": "dread.guest_2", "name": "Wes", "age": 30, "form": "bear", "parlour_symbol": "Lamp",
-         "interior": "Ana's brother; jokes all the time; still afraid of the dark since a childhood power cut, sleeps with a lamp on and hides it.",
-         "learnable": ["Pokes your arm (ch 25)", "Photographs the toys with a film camera", "Sleeps with a lamp on"],
-         "mechanics": null,
-         "carried_habit": "His camera strap's fabric is the warm bear's collar (I4) in the next run.",
-         "lines": [{"text": "creepy stuffed animals everywhere", "verbatim": true, "chapter": 25}, {"text": "Probably the house settling.", "verbatim": true, "chapter": 26}, {"text": "Seriously, stop messing around.", "verbatim": true, "chapter": 27}]},
-        {"id": "ana", "slot": 3, "dread": "dread.guest_3", "name": "Ana", "age": 24, "form": "cat", "parlour_symbol": "Two",
-         "interior": "First trip after a hard year she never names; afraid of being a burden.",
-         "learnable": ["Talks to the toys", "Lifts Lila to sit beside a bear \"so she isn't alone\" (ch 25)"],
-         "mechanics": null,
-         "carried_habit": "Her toy faces the window \"so it isn't alone\" in the next run.",
-         "lines": [{"text": "Did you hear that?", "verbatim": true, "chapter": 26}, {"text": "Do you smell that?", "verbatim": true, "chapter": 28}, {"text": "This isn't funny.", "verbatim": true, "chapter": 29}]}
-      ]
+        {
+          "id": "noor",
+          "slot": 1,
+          "dread": "dread.guest_1",
+          "name": "Noor",
+          "age": 28,
+          "form": "rabbit",
+          "parlour_symbol": "Door",
+          "interior": "Has taken a job abroad and came to tell the other two; rehearses it at the bathroom mirror; afraid of being the one who leaves.",
+          "learnable": [
+            "Keeps the scoresheet",
+            "Hums while cooking",
+            "Locks her door"
+          ],
+          "mechanics": null,
+          "carried_habit": "Her hum is the pitch of the I6 giggle in the next run.",
+          "lines": [
+            {
+              "text": "I swear I locked that door.",
+              "verbatim": true,
+              "chapter": 29
+            },
+            {
+              "text": "Who moved these?",
+              "verbatim": true,
+              "chapter": 27
+            }
+          ]
+        },
+        {
+          "id": "wes",
+          "slot": 2,
+          "dread": "dread.guest_2",
+          "name": "Wes",
+          "age": 30,
+          "form": "bear",
+          "parlour_symbol": "Lamp",
+          "interior": "Ana's brother; jokes all the time; still afraid of the dark since a childhood power cut, sleeps with a lamp on and hides it.",
+          "learnable": [
+            "Pokes your arm (ch 25)",
+            "Photographs the toys with a film camera",
+            "Sleeps with a lamp on"
+          ],
+          "mechanics": null,
+          "carried_habit": "His camera strap's fabric is the warm bear's collar (I4) in the next run.",
+          "lines": [
+            {
+              "text": "creepy stuffed animals everywhere",
+              "verbatim": true,
+              "chapter": 25
+            },
+            {
+              "text": "Probably the house settling.",
+              "verbatim": true,
+              "chapter": 26
+            },
+            {
+              "text": "Seriously, stop messing around.",
+              "verbatim": true,
+              "chapter": 27
+            }
+          ]
+        },
+        {
+          "id": "ana",
+          "slot": 3,
+          "dread": "dread.guest_3",
+          "name": "Ana",
+          "age": 24,
+          "form": "cat",
+          "parlour_symbol": "Two",
+          "interior": "First trip after a hard year she never names; afraid of being a burden.",
+          "learnable": [
+            "Talks to the toys",
+            "Lifts Lila to sit beside a bear \"so she isn't alone\" (ch 25)"
+          ],
+          "mechanics": null,
+          "carried_habit": "Her toy faces the window \"so it isn't alone\" in the next run.",
+          "lines": [
+            {
+              "text": "Did you hear that?",
+              "verbatim": true,
+              "chapter": 26
+            },
+            {
+              "text": "Do you smell that?",
+              "verbatim": true,
+              "chapter": 28
+            },
+            {
+              "text": "This isn't funny.",
+              "verbatim": true,
+              "chapter": 29
+            }
+          ]
+        }
+      ],
+      "arrives_in_act": 2,
+      "act2_roles": {
+        "reads_guestbook": "noor",
+        "puts_jamie_on_couch": "ana",
+        "did_you_see_that": "wes",
+        "light_sleeper": "wes"
+      },
+      "act2_note": "Movements two and three are one group told twice: this group arrives in Act 2, and Act 3 rewinds to the door opening (DESIGN.md section 3; section 20, answer 1)."
     },
     {
       "id": "c",
       "name": "Group C",
       "act": 3,
       "runs": "even",
-      "scenes": ["c9_new_guests", "c11_parlour_1", "c13_parlour_2"],
+      "scenes": [
+        "b7_arrivals",
+        "b7_jamie_falls",
+        "b8_dollhouse_climb",
+        "b8_the_door",
+        "c9_new_guests",
+        "c11_parlour_1",
+        "c13_parlour_2"
+      ],
       "leaves_alive": false,
       "members": [
-        {"id": "sol", "slot": 1, "dread": "dread.guest_1", "name": "Sol", "age": 64, "form": "rabbit", "parlour_symbol": "Bird",
-         "interior": "Retired teacher, birdwatcher; on his fortieth anniversary; losing his hearing and hiding it.",
-         "learnable": ["Binoculars at the window", "First to notice the silence (\"No birds.\")"],
-         "mechanics": {"sound_strength": 0.5},
-         "carried_habit": null,
-         "lines": [{"text": "No birds.", "verbatim": false}, {"text": "Probably the house settling.", "verbatim": true, "chapter": 26}, {"text": "Do you smell that?", "verbatim": true, "chapter": 28}, {"text": "Seriously, stop messing around.", "verbatim": true, "chapter": 27}]},
-        {"id": "rosa", "slot": 2, "dread": "dread.guest_2", "name": "Rosa", "age": 61, "form": "bear", "parlour_symbol": "Tree",
-         "interior": "Sketches the toys every morning; lost in a wood as a girl.",
-         "learnable": ["Her sketchbook on the table", "Sketches the toys every morning"],
-         "mechanics": {"move_notice_multiplier": 1.5, "blame_cap": 30},
-         "carried_habit": null,
-         "lines": [{"text": "creepy stuffed animals everywhere", "verbatim": true, "chapter": 25}, {"text": "Who moved these?", "verbatim": true, "chapter": 27}, {"text": "This isn't funny.", "verbatim": true, "chapter": 29}]},
-        {"id": "kit", "slot": 3, "dread": "dread.guest_3", "name": "Kit", "age": 33, "form": "cat", "parlour_symbol": "Hearth",
-         "interior": "Their daughter, a night-shift nurse, here to mend years of distance.",
-         "learnable": ["Awake at night", "Reads on the couch until 03:00"],
-         "mechanics": {"cone_open_until": "03:00"},
-         "carried_habit": null,
-         "lines": [{"text": "Did you hear that?", "verbatim": true, "chapter": 26}, {"text": "I swear I locked that door.", "verbatim": true, "chapter": 29}]}
-      ]
+        {
+          "id": "sol",
+          "slot": 1,
+          "dread": "dread.guest_1",
+          "name": "Sol",
+          "age": 64,
+          "form": "rabbit",
+          "parlour_symbol": "Bird",
+          "interior": "Retired teacher, birdwatcher; on his fortieth anniversary; losing his hearing and hiding it.",
+          "learnable": [
+            "Binoculars at the window",
+            "First to notice the silence (\"No birds.\")"
+          ],
+          "mechanics": {
+            "sound_strength": 0.5
+          },
+          "carried_habit": null,
+          "lines": [
+            {
+              "text": "No birds.",
+              "verbatim": false
+            },
+            {
+              "text": "Probably the house settling.",
+              "verbatim": true,
+              "chapter": 26
+            },
+            {
+              "text": "Do you smell that?",
+              "verbatim": true,
+              "chapter": 28
+            },
+            {
+              "text": "Seriously, stop messing around.",
+              "verbatim": true,
+              "chapter": 27
+            }
+          ]
+        },
+        {
+          "id": "rosa",
+          "slot": 2,
+          "dread": "dread.guest_2",
+          "name": "Rosa",
+          "age": 61,
+          "form": "bear",
+          "parlour_symbol": "Tree",
+          "interior": "Sketches the toys every morning; lost in a wood as a girl.",
+          "learnable": [
+            "Her sketchbook on the table",
+            "Sketches the toys every morning"
+          ],
+          "mechanics": {
+            "move_notice_multiplier": 1.5,
+            "blame_cap": 30
+          },
+          "carried_habit": null,
+          "lines": [
+            {
+              "text": "creepy stuffed animals everywhere",
+              "verbatim": true,
+              "chapter": 25
+            },
+            {
+              "text": "Who moved these?",
+              "verbatim": true,
+              "chapter": 27
+            },
+            {
+              "text": "This isn't funny.",
+              "verbatim": true,
+              "chapter": 29
+            }
+          ]
+        },
+        {
+          "id": "kit",
+          "slot": 3,
+          "dread": "dread.guest_3",
+          "name": "Kit",
+          "age": 33,
+          "form": "cat",
+          "parlour_symbol": "Hearth",
+          "interior": "Their daughter, a night-shift nurse, here to mend years of distance.",
+          "learnable": [
+            "Awake at night",
+            "Reads on the couch until 03:00"
+          ],
+          "mechanics": {
+            "cone_open_until": "03:00"
+          },
+          "carried_habit": null,
+          "lines": [
+            {
+              "text": "Did you hear that?",
+              "verbatim": true,
+              "chapter": 26
+            },
+            {
+              "text": "I swear I locked that door.",
+              "verbatim": true,
+              "chapter": 29
+            }
+          ]
+        }
+      ],
+      "arrives_in_act": 2,
+      "act2_roles": {
+        "reads_guestbook": "sol",
+        "puts_jamie_on_couch": "kit",
+        "did_you_see_that": "rosa",
+        "light_sleeper": "kit"
+      },
+      "act2_note": "Movements two and three are one group told twice: this group arrives in Act 2, and Act 3 rewinds to the door opening (DESIGN.md section 3; section 20, answer 1)."
     }
   ],
   "carried_incidents": {
     "note": "In run 2 and later, four Act 1 incidents are done by last run's guests in their forms. The toy each incident needs is fixed by the source, so a guest's form is chosen by slot to fit them.",
     "rows": [
-      {"incident": "I3", "toy": "rabbit", "slot": 1},
-      {"incident": "I4", "toy": "bear", "slot": 2},
-      {"incident": "I8", "toy": "rabbit", "slot": 1, "place": "top of the stairs"},
-      {"incident": "I8", "toy": "cat", "slot": 3, "place": "outside Lila's locked door"}
+      {
+        "incident": "I3",
+        "toy": "rabbit",
+        "slot": 1
+      },
+      {
+        "incident": "I4",
+        "toy": "bear",
+        "slot": 2
+      },
+      {
+        "incident": "I8",
+        "toy": "rabbit",
+        "slot": 1,
+        "place": "top of the stairs"
+      },
+      {
+        "incident": "I8",
+        "toy": "cat",
+        "slot": 3,
+        "place": "outside Lila's locked door"
+      }
     ]
-  }
+  },
+  "groups_note": "The invented Group A was cut on 2026-11-12: Act 2's guests are this run's hunt group."
 }

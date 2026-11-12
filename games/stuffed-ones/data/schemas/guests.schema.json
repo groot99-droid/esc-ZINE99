@@ -63,12 +63,13 @@
           "runs",
           "scenes",
           "leaves_alive",
-          "members"
+          "members",
+          "arrives_in_act",
+          "act2_roles"
         ],
         "properties": {
           "id": {
             "enum": [
-              "a",
               "b",
               "c"
             ]
@@ -77,14 +78,10 @@
             "type": "string"
           },
           "act": {
-            "enum": [
-              2,
-              3
-            ]
+            "const": 3
           },
           "runs": {
             "enum": [
-              "all",
               "odd",
               "even"
             ]
@@ -187,10 +184,40 @@
             },
             "minItems": 3,
             "maxItems": 3
+          },
+          "arrives_in_act": {
+            "const": 2
+          },
+          "act2_roles": {
+            "type": "object",
+            "required": [
+              "reads_guestbook",
+              "puts_jamie_on_couch",
+              "did_you_see_that",
+              "light_sleeper"
+            ],
+            "properties": {
+              "reads_guestbook": {
+                "type": "string"
+              },
+              "puts_jamie_on_couch": {
+                "type": "string"
+              },
+              "did_you_see_that": {
+                "type": "string"
+              },
+              "light_sleeper": {
+                "type": "string"
+              }
+            }
+          },
+          "act2_note": {
+            "type": "string"
           }
         }
       },
-      "minItems": 3
+      "minItems": 2,
+      "maxItems": 2
     },
     "carried_incidents": {
       "type": "object",
@@ -227,6 +254,9 @@
           }
         }
       }
+    },
+    "groups_note": {
+      "type": "string"
     }
   }
 }

@@ -1,32 +1,156 @@
 {
-  "explanations": [
-    {"id": "house", "text": "It's the old cabin", "flag": "explanation.house_broken"},
-    {"id": "us", "text": "One of us is doing it", "flag": "explanation.us_broken"},
-    {"id": "wild", "text": "It's the forest, an animal", "flag": "explanation.wild_broken"},
-    {"id": "me", "text": "I'm tired. I imagined it", "flag": "explanation.me_broken"}
-  ],
-  "responses": {
-    "shelve": {"unease": -10, "note": "Needs one explanation still standing. The next incident plays the variant that breaks it, and it is crossed out for good."},
-    "keep": {"unease": 10, "reveals_next_lead": true, "note": "Write it down unexplained. The next lead page (L1, L2, ...) is revealed nearby; the next incident plays as written."}
+ "explanations": [
+  {
+   "id": "house",
+   "text": "It's the old cabin",
+   "flag": "explanation.house_broken"
   },
-  "incidents": [
-    {"id": "I1", "name": "The padded room", "source_chapter": 1, "scene": "a1_cabin_arrival", "shelvable": true,
-     "breaks": {"house": null, "us": null, "wild": null, "me": null}, "note": "First incident, no variant."},
-    {"id": "I2", "name": "2:30 a.m.", "source_chapter": 2, "scene": "a2_night_hall", "shelvable": true,
-     "breaks": {"house": "The sounds come from the shelf, not the walls", "us": "Every friend's door is shut and you hear all four breathing", "wild": "The forest is silent; nothing is outside", "me": "At breakfast everyone heard it (ch 2)"}},
-    {"id": "I3", "name": "The smell", "source_chapter": 3, "scene": "a3_smell", "shelvable": true,
-     "breaks": {"house": "Only the rabbit smells; the wood smells of cedar", "us": "Jamie recoils for real; he did not plant it", "wild": "The rabbit is dry; nothing crawled in", "me": "The smell stays on your fingers (ch 3)"}},
-    {"id": "I4", "name": "The warmth", "source_chapter": 4, "scene": "a3_warmth", "shelvable": true,
-     "breaks": {"house": "The bear is warm, the bed is cold", "us": "Everyone was at the creek with you", "wild": "It has a heartbeat; nothing is inside", "me": "Everyone touches it (ch 4)"}},
-    {"id": "I5", "name": "The dog", "source_chapter": 5, "scene": "a3_dog", "shelvable": true,
-     "breaks": {"house": null, "us": "No one left the porch", "wild": "\"No blood. No struggle.\"", "me": "Mabel's \"They get hungry.\""}, "note": "DESIGN.md gives no House variant for I5."},
-    {"id": "I6", "name": "Patterned sounds", "source_chapter": 7, "scene": "a4_night_sounds", "shelvable": true,
-     "breaks": {"house": "Three taps, a count; a house does not count", "us": "All four friends are in the hall with you", "wild": "The drag is on the ceiling, inside", "me": "The giggle is recorded on Jamie's phone (added)"}},
-    {"id": "I7", "name": "Emptied wildlife; fuller toys", "source_chapter": 6, "scene": "a4_silent_forest", "shelvable": true,
-     "breaks": {"house": "The toys' seams are tighter than yesterday", "us": "The animals were emptied, not cut", "wild": "\"emptied, like something had taken what it needed\"", "me": "Marcus covers them; he sees them too"}},
-    {"id": "I8", "name": "Where we hadn't left them", "source_chapter": 7, "scene": "a4_wrong_places", "shelvable": true,
-     "breaks": {"house": "Toys and pegs moved, in a locked room", "us": "\"no one confessed\"", "wild": "They are indoors", "me": "The pegs match no one's last turn on the scoresheet"}},
-    {"id": "I9", "name": "The bear turns its head", "source_chapter": 8, "scene": "a5_kitchen_bear", "shelvable": false,
-     "breaks": {"house": null, "us": null, "wild": null, "me": null}, "note": "No response offered."}
-  ]
+  {
+   "id": "us",
+   "text": "One of us is doing it",
+   "flag": "explanation.us_broken"
+  },
+  {
+   "id": "wild",
+   "text": "It's the forest, an animal",
+   "flag": "explanation.wild_broken"
+  },
+  {
+   "id": "me",
+   "text": "I'm tired. I imagined it",
+   "flag": "explanation.me_broken"
+  }
+ ],
+ "responses": {
+  "shelve": {
+   "unease": -10,
+   "note": "Needs one explanation still standing. The next incident plays the variant that breaks it, and it is crossed out for good."
+  },
+  "keep": {
+   "unease": 10,
+   "reveals_next_lead": true,
+   "note": "Write it down unexplained. The next lead page (L1, L2, ...) is revealed nearby; the next incident plays as written."
+  }
+ },
+ "incidents": [
+  {
+   "id": "I1",
+   "name": "The padded room",
+   "source_chapter": 1,
+   "scene": "a1_cabin_arrival",
+   "shelvable": true,
+   "breaks": {
+    "house": null,
+    "us": null,
+    "wild": null,
+    "me": null
+   },
+   "note": "First incident, no variant."
+  },
+  {
+   "id": "I2",
+   "name": "2:30 a.m.",
+   "source_chapter": 2,
+   "scene": "a2_night_hall",
+   "shelvable": true,
+   "breaks": {
+    "house": "The sounds come from the shelf, not the walls",
+    "us": "Every friend's door is shut and you hear all four breathing",
+    "wild": "The forest is silent; nothing is outside",
+    "me": "At breakfast everyone heard it (ch 2)"
+   }
+  },
+  {
+   "id": "I3",
+   "name": "The smell",
+   "source_chapter": 3,
+   "scene": "a3_smell",
+   "shelvable": true,
+   "breaks": {
+    "house": "Only the rabbit smells; the wood smells of cedar",
+    "us": "Jamie recoils for real; he did not plant it",
+    "wild": "The rabbit is dry; nothing crawled in",
+    "me": "The smell stays on your fingers (ch 3)"
+   }
+  },
+  {
+   "id": "I4",
+   "name": "The warmth",
+   "source_chapter": 4,
+   "scene": "a3_warmth",
+   "shelvable": true,
+   "breaks": {
+    "house": "The bear is warm, the bed is cold",
+    "us": "Everyone was at the creek with you",
+    "wild": "It has a heartbeat; nothing is inside",
+    "me": "Everyone touches it (ch 4)"
+   }
+  },
+  {
+   "id": "I5",
+   "name": "The dog",
+   "source_chapter": 5,
+   "scene": "a3_dog",
+   "shelvable": true,
+   "breaks": {
+    "house": "It is outside, on a low branch near the cabin (ch 5); nothing about an old house reaches a tree",
+    "us": "No one left the porch",
+    "wild": "\"No blood. No struggle.\"",
+    "me": "Mabel's \"They get hungry.\""
+   }
+  },
+  {
+   "id": "I6",
+   "name": "Patterned sounds",
+   "source_chapter": 7,
+   "scene": "a4_night_sounds",
+   "shelvable": true,
+   "breaks": {
+    "house": "Three taps, a count; a house does not count",
+    "us": "All four friends are in the hall with you",
+    "wild": "The drag is on the ceiling, inside",
+    "me": "The giggle is recorded on Jamie's phone (added)"
+   }
+  },
+  {
+   "id": "I7",
+   "name": "Emptied wildlife; fuller toys",
+   "source_chapter": 6,
+   "scene": "a4_silent_forest",
+   "shelvable": true,
+   "breaks": {
+    "house": "The toys' seams are tighter than yesterday",
+    "us": "The animals were emptied, not cut",
+    "wild": "\"emptied, like something had taken what it needed\"",
+    "me": "Marcus covers them; he sees them too"
+   }
+  },
+  {
+   "id": "I8",
+   "name": "Where we hadn't left them",
+   "source_chapter": 7,
+   "scene": "a4_wrong_places",
+   "shelvable": true,
+   "breaks": {
+    "house": "Toys and pegs moved, in a locked room",
+    "us": "\"no one confessed\"",
+    "wild": "They are indoors",
+    "me": "The pegs match no one's last turn on the scoresheet"
+   }
+  },
+  {
+   "id": "I9",
+   "name": "The bear turns its head",
+   "source_chapter": 8,
+   "scene": "a5_kitchen_bear",
+   "shelvable": false,
+   "breaks": {
+    "house": null,
+    "us": null,
+    "wild": null,
+    "me": null
+   },
+   "note": "No response offered."
+  }
+ ]
 }
