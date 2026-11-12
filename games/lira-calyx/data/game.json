@@ -1,0 +1,75 @@
+{
+  "slug": "lira-calyx",
+  "title": "The Redacted Testament of Lira Calyx",
+  "sources": [
+    "05_Worldbuilding/02_The_Redacted_Testament_of_Lira_Calyx.md"
+  ],
+  "target_minutes": {
+    "min": 160,
+    "max": 180
+  },
+  "players": {
+    "min": 1,
+    "max": 1
+  },
+  "core_verb": "measure",
+  "chapters": [
+    {
+      "id": "cold-open",
+      "title": "The Torn Book",
+      "minutes": 4,
+      "layers": [
+        "3d"
+      ]
+    },
+    {
+      "id": "book-1",
+      "title": "Book I: Biology of the Modern World",
+      "minutes": 38,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "book-2",
+      "title": "Book II: The Aetheric Systems",
+      "minutes": 35,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "book-3",
+      "title": "Book III: The Human Threshold",
+      "minutes": 44,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "book-4",
+      "title": "Book IV: Final Reckoning",
+      "minutes": 41,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "epilogue",
+      "title": "The Redacted Testament",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d"
+      ]
+    }
+  ]
+}

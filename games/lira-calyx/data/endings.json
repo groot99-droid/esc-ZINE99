@@ -1,0 +1,85 @@
+{
+  "endings": [
+    {
+      "id": "directed-resilience",
+      "name": "Directed Resilience",
+      "as_written": false,
+      "priority": 1,
+      "when": {
+        "is": "core_choice",
+        "eq": "withhold"
+      },
+      "summary": "Lira accepts Veylor's argument and does not fire. The Second Genesis runs, the Peaks reset, and Lira catalogues the world that follows under the Continuum's seal. The archivist steals her original journals because the official catalogue leaves out what was done.",
+      "final_scenes": [
+        "b4-collapse",
+        "ep-tunnel",
+        "ep-vault",
+        "ep-audit-3",
+        "end-resilience"
+      ]
+    },
+    {
+      "id": "fire",
+      "name": "Fire",
+      "as_written": false,
+      "priority": 2,
+      "when": {
+        "is": "core_choice",
+        "eq": "fire"
+      },
+      "summary": "Lira gives up on phase offsets and lets Kade's charges destroy the core, against her own plea. The Continuum falls, and the Mid-Slope terraces fall with it. The archivist digs the books out of the rubble.",
+      "final_scenes": [
+        "b4-collapse",
+        "ep-tunnel",
+        "ep-vault",
+        "ep-audit-3",
+        "end-fire"
+      ]
+    },
+    {
+      "id": "archivist-in-time",
+      "name": "The Archivist in Time",
+      "as_written": false,
+      "priority": 3,
+      "when": {
+        "all": [
+          {
+            "is": "core_choice",
+            "eq": "pulse"
+          },
+          {
+            "is": "margin_notes_answered",
+            "gte": 7
+          },
+          {
+            "is": "verified_share",
+            "gte": 60
+          }
+        ]
+      },
+      "summary": "Lira fires the pulses on data she mostly verified by hand, and through four books she answered the hand in her margins. The follower knows where to wait, the north shaft holds long enough, and they reach her before the tunnels seal. She lives in hiding; the testament is published under her own name; the Continuum hunts them both.",
+      "final_scenes": [
+        "b4-collapse",
+        "ep-tunnel",
+        "ep-vault",
+        "ep-audit-3",
+        "end-in-time"
+      ]
+    },
+    {
+      "id": "redacted-testament",
+      "name": "The Redacted Testament",
+      "as_written": true,
+      "priority": 4,
+      "when": true,
+      "summary": "As written. Lira fires the pulses on partly corrupted data. The result is a fragile pause and a partial fracture. She is taken into the mountain, and the archivist, who arrived too late, carries the books out.",
+      "final_scenes": [
+        "b4-collapse",
+        "ep-tunnel",
+        "ep-vault",
+        "ep-audit-3",
+        "end-written"
+      ]
+    }
+  ]
+}

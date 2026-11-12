@@ -1,0 +1,79 @@
+{
+  "resolution": "per_player",
+  "endings": [
+    {
+      "id": "stayed",
+      "name": "The One Who Stayed",
+      "as_written": false,
+      "priority": 1,
+      "when": {
+        "is": "self.refused",
+        "eq": true
+      },
+      "summary": "He sat on the elders' bench at the Recognition, kept his blue a while longer, heard his brothers go through the wall, and dims the lamps for the next group.",
+      "final_scenes": [
+        "s3_marrow_after",
+        "s1_carve_next",
+        "s1_counters_teach",
+        "s3_marrow_pulse",
+        "s3_lamps"
+      ]
+    },
+    {
+      "id": "taken",
+      "name": "Taken by the River",
+      "as_written": false,
+      "priority": 2,
+      "when": {
+        "is": "run.taken_count",
+        "gte": 1
+      },
+      "summary": "An immune beast took one brother before the heart. The rest arrive with an empty place on the raft and are separated as written; the taken one is turned aside into his own vessel.",
+      "final_scenes": [
+        "s3_hold",
+        "s3_hold_turn",
+        "s3_heart",
+        "s3_vessel"
+      ]
+    },
+    {
+      "id": "two_together",
+      "name": "Two Together",
+      "as_written": false,
+      "priority": 3,
+      "when": {
+        "all": [
+          {
+            "is": "self.held_together",
+            "eq": true
+          },
+          {
+            "is": "self.in_time",
+            "gte": 85
+          },
+          {
+            "is": "run.taken_count",
+            "eq": 0
+          }
+        ]
+      },
+      "summary": "Two brothers who rowed in time all river long squeezed on the song's last note and were swept into one chamber. Everyone else is lost to them.",
+      "final_scenes": [
+        "s3_heart",
+        "s3_vessel_two"
+      ]
+    },
+    {
+      "id": "carried_away",
+      "name": "Carried Away",
+      "as_written": true,
+      "priority": 4,
+      "when": true,
+      "summary": "The current splits in the heart and every brother is swept a different way, holding the tool another carved for him. \"No one stays together.\"",
+      "final_scenes": [
+        "s3_heart",
+        "s3_vessel"
+      ]
+    }
+  ]
+}

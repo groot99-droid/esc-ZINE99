@@ -1,0 +1,609 @@
+{
+  "modes_2d": [
+    {
+      "id": "m2_river",
+      "name": "River section",
+      "movement": "scroll"
+    },
+    {
+      "id": "m2_climb",
+      "name": "The climb",
+      "movement": "scroll"
+    }
+  ],
+  "games_1d": [
+    {
+      "id": "g1_carving",
+      "name": "The Carving",
+      "family": "Gift crafting"
+    },
+    {
+      "id": "g1_song",
+      "name": "Marrow-Song",
+      "family": "Composition"
+    },
+    {
+      "id": "g1_counters",
+      "name": "Bone Counters",
+      "family": "Board game, sowing (mancala family)"
+    },
+    {
+      "id": "g1_chart",
+      "name": "The Branch Chart",
+      "family": "Shared route planning"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s3_marrow",
+      "layer": "3d",
+      "name": "The marrow caverns and the hall of unfinished boards",
+      "chapter": "c1_marrow",
+      "writes": [
+        "run.humans",
+        "run.companions",
+        "self.seat",
+        "self.temperament",
+        "self.mark"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_carve_counter"
+      ]
+    },
+    {
+      "id": "s1_carve_counter",
+      "layer": "1d",
+      "name": "Carving the counter piece",
+      "chapter": "c1_marrow",
+      "game": "g1_carving",
+      "reads": [
+        "self.mark"
+      ],
+      "writes": [
+        "self.counter_carved"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s1_counters_1"
+      ]
+    },
+    {
+      "id": "s1_counters_1",
+      "layer": "1d",
+      "name": "Bone Counters, first sitting",
+      "chapter": "c1_marrow",
+      "game": "g1_counters",
+      "reads": [
+        "self.counter_carved"
+      ],
+      "writes": [
+        "run.counters_moves",
+        "self.sow_on_beat"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_gallery"
+      ]
+    },
+    {
+      "id": "s3_gallery",
+      "layer": "3d",
+      "name": "The shedding gallery",
+      "chapter": "c2_gift",
+      "reads": [
+        "self.mark"
+      ],
+      "writes": [
+        "self.gift_received",
+        "self.gift_quality",
+        "self.gift_marked"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_carve_gift",
+        "s3_hollow"
+      ]
+    },
+    {
+      "id": "s1_carve_gift",
+      "layer": "1d",
+      "name": "The Carving: a tool for a brother",
+      "chapter": "c2_gift",
+      "game": "g1_carving",
+      "reads": [
+        "self.mark"
+      ],
+      "writes": [
+        "run.gifts",
+        "self.gift_given"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_gallery"
+      ]
+    },
+    {
+      "id": "s3_hollow",
+      "layer": "3d",
+      "name": "The singing hollow",
+      "chapter": "c3_song",
+      "reads": [
+        "self.temperament"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_song_1"
+      ]
+    },
+    {
+      "id": "s1_song_1",
+      "layer": "1d",
+      "name": "Marrow-Song, verse one",
+      "chapter": "c3_song",
+      "game": "g1_song",
+      "writes": [
+        "run.song",
+        "run.song_harmony",
+        "run.song_complete"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s1_counters_2"
+      ]
+    },
+    {
+      "id": "s1_counters_2",
+      "layer": "1d",
+      "name": "Bone Counters, second sitting, cut off",
+      "chapter": "c3_song",
+      "game": "g1_counters",
+      "reads": [
+        "run.song_complete"
+      ],
+      "writes": [
+        "run.counters_moves",
+        "self.sow_on_beat",
+        "self.kept_counter"
+      ],
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s3_recognition"
+      ]
+    },
+    {
+      "id": "s3_recognition",
+      "layer": "3d",
+      "name": "The Recognition",
+      "chapter": "c4_recognition",
+      "writes": [
+        "self.refused",
+        "run.stayers"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s3_shaft",
+        "s3_marrow_after"
+      ]
+    },
+    {
+      "id": "s3_shaft",
+      "layer": "3d",
+      "name": "The foot of the shaft",
+      "chapter": "c5_ascent",
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "s2_climb_1"
+      ]
+    },
+    {
+      "id": "s2_climb_1",
+      "layer": "2d",
+      "name": "The climb, lower shaft",
+      "chapter": "c5_ascent",
+      "mode": "m2_climb",
+      "reads": [
+        "self.gift_received",
+        "self.gift_quality"
+      ],
+      "writes": [
+        "run.climb_lifts"
+      ],
+      "enter": "flatten",
+      "exit": "cut",
+      "next": [
+        "s2_climb_2"
+      ]
+    },
+    {
+      "id": "s2_climb_2",
+      "layer": "2d",
+      "name": "The climb, upper shaft in the heat",
+      "chapter": "c5_ascent",
+      "mode": "m2_climb",
+      "reads": [
+        "self.gift_received",
+        "self.gift_quality",
+        "run.stayer_beat"
+      ],
+      "writes": [
+        "run.climb_lifts",
+        "run.sync"
+      ],
+      "enter": "cut",
+      "exit": "flatten",
+      "next": [
+        "s3_river"
+      ]
+    },
+    {
+      "id": "s3_marrow_after",
+      "layer": "3d",
+      "name": "The marrow, emptied (the one who stayed)",
+      "chapter": "c5_ascent",
+      "reads": [
+        "self.refused",
+        "self.kept_counter"
+      ],
+      "writes": [
+        "run.stayer_beat"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_carve_next",
+        "s1_counters_teach",
+        "s3_marrow_pulse"
+      ]
+    },
+    {
+      "id": "s3_river",
+      "layer": "3d",
+      "name": "The Bloodstream between artery walls",
+      "chapter": "c6_river",
+      "reads": [
+        "run.sync",
+        "self.sow_on_beat",
+        "run.song_harmony",
+        "run.stayer_beat",
+        "self.gift_received",
+        "self.gift_quality"
+      ],
+      "writes": [
+        "self.in_time",
+        "run.sync",
+        "run.calm_count"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s2_river_1"
+      ]
+    },
+    {
+      "id": "s2_river_1",
+      "layer": "2d",
+      "name": "River section one",
+      "chapter": "c6_river",
+      "mode": "m2_river",
+      "reads": [
+        "run.sync",
+        "self.gift_received",
+        "self.gift_quality"
+      ],
+      "writes": [
+        "self.in_time",
+        "run.sync",
+        "run.notice"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "s1_chart_1"
+      ]
+    },
+    {
+      "id": "s1_chart_1",
+      "layer": "1d",
+      "name": "The Branch Chart, first junctions",
+      "chapter": "c6_river",
+      "game": "g1_chart",
+      "world_runs": true,
+      "reads": [
+        "self.kept_counter",
+        "self.temperament",
+        "self.gift_received",
+        "self.gift_quality",
+        "self.scout_pings"
+      ],
+      "writes": [
+        "run.route",
+        "run.calm_count"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "s2_river_2"
+      ]
+    },
+    {
+      "id": "s2_river_2",
+      "layer": "2d",
+      "name": "River section two: the first patrol",
+      "chapter": "c6_river",
+      "mode": "m2_river",
+      "reads": [
+        "run.route",
+        "run.sync"
+      ],
+      "writes": [
+        "self.in_time",
+        "run.sync",
+        "run.notice",
+        "self.exposure",
+        "run.taken_count",
+        "run.taken_seat",
+        "self.taken"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s3_delta",
+        "s3_hold"
+      ]
+    },
+    {
+      "id": "s3_hold",
+      "layer": "3d",
+      "name": "Inside the immune beast (the taken brother)",
+      "chapter": "c6_river",
+      "reads": [
+        "self.taken"
+      ],
+      "writes": [
+        "run.sync",
+        "self.scout_pings"
+      ],
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s3_hold_turn"
+      ]
+    },
+    {
+      "id": "s1_carve_next",
+      "layer": "1d",
+      "name": "The Carving: a counter for the next group",
+      "chapter": "c6_river",
+      "game": "g1_carving",
+      "reads": [
+        "self.refused"
+      ],
+      "writes": [
+        "self.next_counter_carved"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_marrow_after"
+      ]
+    },
+    {
+      "id": "s3_delta",
+      "layer": "3d",
+      "name": "The delta of branching vessels",
+      "chapter": "c7_delta",
+      "reads": [
+        "run.route",
+        "run.sync"
+      ],
+      "writes": [
+        "self.in_time",
+        "run.sync",
+        "run.notice",
+        "self.exposure",
+        "run.taken_count",
+        "run.taken_seat",
+        "self.taken"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "s1_chart_2",
+        "s3_hold"
+      ]
+    },
+    {
+      "id": "s1_chart_2",
+      "layer": "1d",
+      "name": "The Branch Chart, the delta",
+      "chapter": "c7_delta",
+      "game": "g1_chart",
+      "world_runs": true,
+      "reads": [
+        "self.kept_counter",
+        "self.temperament",
+        "self.gift_received",
+        "self.gift_quality",
+        "self.scout_pings"
+      ],
+      "writes": [
+        "run.route",
+        "run.calm_count"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s1_song_2"
+      ]
+    },
+    {
+      "id": "s1_song_2",
+      "layer": "1d",
+      "name": "Marrow-Song, the heart verse",
+      "chapter": "c7_delta",
+      "game": "g1_song",
+      "world_runs": true,
+      "reads": [
+        "run.song",
+        "run.calm_count"
+      ],
+      "writes": [
+        "run.song",
+        "run.song_harmony",
+        "run.song_last_beat"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "s2_river_3"
+      ]
+    },
+    {
+      "id": "s2_river_3",
+      "layer": "2d",
+      "name": "River section three: the narrows",
+      "chapter": "c7_delta",
+      "mode": "m2_river",
+      "reads": [
+        "run.route",
+        "run.sync"
+      ],
+      "writes": [
+        "self.in_time",
+        "run.sync",
+        "run.notice",
+        "self.exposure",
+        "run.taken_count",
+        "run.taken_seat",
+        "self.taken"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s3_heart",
+        "s3_hold"
+      ]
+    },
+    {
+      "id": "s1_counters_teach",
+      "layer": "1d",
+      "name": "Bone Counters with the child (the one who stayed)",
+      "chapter": "c7_delta",
+      "game": "g1_counters",
+      "reads": [
+        "self.refused"
+      ],
+      "writes": [
+        "self.taught_pulse"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_marrow_after"
+      ]
+    },
+    {
+      "id": "s3_heart",
+      "layer": "3d",
+      "name": "The heart: the atrium",
+      "chapter": "c8_heart",
+      "reads": [
+        "self.in_time",
+        "run.taken_count",
+        "run.song_last_beat",
+        "self.gift_marked",
+        "self.gift_received",
+        "self.gift_quality"
+      ],
+      "writes": [
+        "self.grip",
+        "self.held_together",
+        "self.swept_order"
+      ],
+      "enter": "fade",
+      "exit": "cut",
+      "next": [
+        "s3_vessel",
+        "s3_vessel_two"
+      ]
+    },
+    {
+      "id": "s3_hold_turn",
+      "layer": "3d",
+      "name": "The beast turns away",
+      "chapter": "c8_heart",
+      "reads": [
+        "self.taken"
+      ],
+      "enter": "fade",
+      "exit": "cut",
+      "next": [
+        "s3_vessel"
+      ]
+    },
+    {
+      "id": "s3_marrow_pulse",
+      "layer": "3d",
+      "name": "The pulse wall during the heart (the one who stayed)",
+      "chapter": "c8_heart",
+      "reads": [
+        "self.refused",
+        "self.swept_order"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "s3_lamps"
+      ]
+    },
+    {
+      "id": "s3_vessel",
+      "layer": "3d",
+      "name": "The narrow vessel, alone",
+      "chapter": "c9_alone",
+      "reads": [
+        "self.gift_received",
+        "self.gift_marked",
+        "self.kept_counter",
+        "self.taken"
+      ],
+      "enter": "cut",
+      "exit": "fade"
+    },
+    {
+      "id": "s3_vessel_two",
+      "layer": "3d",
+      "name": "The shared chamber",
+      "chapter": "c9_alone",
+      "reads": [
+        "self.held_together"
+      ],
+      "enter": "cut",
+      "exit": "fade"
+    },
+    {
+      "id": "s3_lamps",
+      "layer": "3d",
+      "name": "Dimming the lamps, years on",
+      "chapter": "c9_alone",
+      "reads": [
+        "self.next_counter_carved",
+        "self.taught_pulse",
+        "self.kept_counter"
+      ],
+      "enter": "fade",
+      "exit": "fade"
+    }
+  ]
+}

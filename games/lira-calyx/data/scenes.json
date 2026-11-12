@@ -1,0 +1,901 @@
+{
+  "modes_2d": [
+    {
+      "id": "climb",
+      "name": "Cross-section climb",
+      "movement": "scroll"
+    },
+    {
+      "id": "lens",
+      "name": "Under the lens",
+      "movement": "scroll"
+    }
+  ],
+  "games_1d": [
+    {
+      "id": "assay",
+      "name": "The Assay",
+      "family": "Experiment"
+    },
+    {
+      "id": "key",
+      "name": "The Key",
+      "family": "Taxonomy"
+    },
+    {
+      "id": "cipher",
+      "name": "Storm-Song Cipher",
+      "family": "Cipher"
+    },
+    {
+      "id": "audit",
+      "name": "Journal Audit",
+      "family": "Forgery detection"
+    },
+    {
+      "id": "board",
+      "name": "The Node Board",
+      "family": "Board game, network strategy"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "co-tunnel",
+      "layer": "3d",
+      "name": "The shear tunnel under Peak 12",
+      "chapter": "cold-open",
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "b1-terrace"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b1-terrace",
+      "layer": "3d",
+      "name": "Hollin Terrace by day: setting the baselines",
+      "chapter": "book-1",
+      "writes": [
+        "readings",
+        "gear_tier"
+      ],
+      "enter": "push-in",
+      "exit": "push-in",
+      "next": [
+        "b1-key-1"
+      ],
+      "minutes": 7
+    },
+    {
+      "id": "b1-key-1",
+      "layer": "1d",
+      "name": "The Key I: the terrace collection",
+      "chapter": "book-1",
+      "game": "key",
+      "reads": [
+        "readings"
+      ],
+      "writes": [
+        "readings",
+        "key_branches_added"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b1-assay-1"
+      ],
+      "minutes": 5
+    },
+    {
+      "id": "b1-assay-1",
+      "layer": "1d",
+      "name": "The Assay I: crystalline bark spectra",
+      "chapter": "book-1",
+      "game": "assay",
+      "writes": [
+        "readings"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b1-valley"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b1-valley",
+      "layer": "3d",
+      "name": "The Spore-Weaver valley, third night",
+      "chapter": "book-1",
+      "writes": [
+        "readings",
+        "margin_notes",
+        "margin_notes_answered",
+        "margin_notes_acted",
+        "nodes_verified",
+        "pattern_alpha",
+        "relay_used",
+        "exposure"
+      ],
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "b1-climb"
+      ],
+      "minutes": 6
+    },
+    {
+      "id": "b1-climb",
+      "layer": "2d",
+      "name": "Cross-section: the climb to the Aether-Vine ridge",
+      "chapter": "book-1",
+      "mode": "climb",
+      "reads": [
+        "gear_tier"
+      ],
+      "writes": [
+        "readings",
+        "nodes_verified",
+        "relay_used",
+        "exposure"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "b1-outpost"
+      ],
+      "minutes": 5
+    },
+    {
+      "id": "b1-outpost",
+      "layer": "3d",
+      "name": "The storm-struck outpost",
+      "chapter": "book-1",
+      "writes": [
+        "readings",
+        "nodes_verified",
+        "fragment_salvaged",
+        "margin_notes",
+        "margin_notes_answered",
+        "margin_notes_acted",
+        "relay_used",
+        "exposure"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "b1-lens-1"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b1-lens-1",
+      "layer": "2d",
+      "name": "Under the lens I: the fragment's filaments",
+      "chapter": "book-1",
+      "mode": "lens",
+      "reads": [
+        "fragment_salvaged"
+      ],
+      "writes": [
+        "readings"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b1-terrace-night"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b1-terrace-night",
+      "layer": "3d",
+      "name": "Hollin Terrace at night: Hypothesis 1 and the threat",
+      "chapter": "book-1",
+      "reads": [
+        "pattern_alpha",
+        "readings"
+      ],
+      "writes": [
+        "hypothesis_1",
+        "note_published",
+        "exposure",
+        "margin_notes",
+        "margin_notes_answered"
+      ],
+      "enter": "pull-out",
+      "exit": "flatten",
+      "next": [
+        "b2-descent"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "b2-descent",
+      "layer": "2d",
+      "name": "Cross-section: down to the Scorched Biome",
+      "chapter": "book-2",
+      "mode": "climb",
+      "reads": [
+        "gear_tier"
+      ],
+      "writes": [
+        "gear_tier"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "b2-lowlands"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b2-lowlands",
+      "layer": "3d",
+      "name": "The Scorched Biome with Kade",
+      "chapter": "book-2",
+      "writes": [
+        "readings",
+        "nodes_verified",
+        "relay_used",
+        "exposure"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "b2-archive"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b2-archive",
+      "layer": "3d",
+      "name": "The patent archive at Cinder Reach",
+      "chapter": "book-2",
+      "reads": [
+        "fragment_salvaged"
+      ],
+      "writes": [
+        "readings"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "b2-assay-2"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "b2-assay-2",
+      "layer": "1d",
+      "name": "The Assay II: isotope fractionation",
+      "chapter": "book-2",
+      "game": "assay",
+      "writes": [
+        "readings",
+        "nodes_verified",
+        "seeding_evidence"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b2-hearing"
+      ],
+      "minutes": 5
+    },
+    {
+      "id": "b2-hearing",
+      "layer": "3d",
+      "name": "The harvesting hearing on the ridge",
+      "chapter": "book-2",
+      "writes": [
+        "readings",
+        "nodes_verified",
+        "relay_used",
+        "exposure"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "b2-lab"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b2-lab",
+      "layer": "3d",
+      "name": "The corporate lab",
+      "chapter": "book-2",
+      "reads": [
+        "exposure"
+      ],
+      "writes": [
+        "readings",
+        "margin_notes",
+        "margin_notes_answered",
+        "exposure"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "b2-lens-2"
+      ],
+      "minutes": 6
+    },
+    {
+      "id": "b2-lens-2",
+      "layer": "2d",
+      "name": "Under the lens II: the fragment under pulse",
+      "chapter": "book-2",
+      "mode": "lens",
+      "reads": [
+        "fragment_salvaged"
+      ],
+      "writes": [
+        "readings"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b2-cipher-1"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "b2-cipher-1",
+      "layer": "1d",
+      "name": "Storm-Song Cipher I: the sealed archive index",
+      "chapter": "book-2",
+      "game": "cipher",
+      "writes": [
+        "veylor_named",
+        "brief_redacted",
+        "exposure",
+        "margin_notes",
+        "margin_notes_answered"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "b2-audit-1"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "b2-audit-1",
+      "layer": "1d",
+      "name": "Journal Audit I: the redacted brief",
+      "chapter": "book-2",
+      "game": "audit",
+      "reads": [
+        "brief_redacted",
+        "readings"
+      ],
+      "writes": [
+        "readings",
+        "nodes_verified",
+        "forgeries_caught",
+        "forgeries_missed",
+        "false_accusations"
+      ],
+      "enter": "cut",
+      "exit": "flatten",
+      "next": [
+        "b3-climb"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "b3-climb",
+      "layer": "2d",
+      "name": "Cross-section: the High Peaks",
+      "chapter": "book-3",
+      "mode": "climb",
+      "reads": [
+        "gear_tier"
+      ],
+      "writes": [
+        "gear_tier"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "b3-peakborn"
+      ],
+      "minutes": 5
+    },
+    {
+      "id": "b3-peakborn",
+      "layer": "3d",
+      "name": "The storm-singing ledge",
+      "chapter": "book-3",
+      "writes": [
+        "readings"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "b3-cipher-2"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b3-cipher-2",
+      "layer": "1d",
+      "name": "Storm-Song Cipher II: Mara's storm-song",
+      "chapter": "book-3",
+      "game": "cipher",
+      "writes": [
+        "readings",
+        "nodes_verified",
+        "cipher_nodes_decoded"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b3-key-2"
+      ],
+      "minutes": 5
+    },
+    {
+      "id": "b3-key-2",
+      "layer": "1d",
+      "name": "The Key II: the low-gravity specimens",
+      "chapter": "book-3",
+      "game": "key",
+      "reads": [
+        "readings"
+      ],
+      "writes": [
+        "readings",
+        "key_branches_added"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b3-midlander"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b3-midlander",
+      "layer": "3d",
+      "name": "Joren's harvest terrace",
+      "chapter": "book-3",
+      "writes": [
+        "margin_notes",
+        "margin_notes_answered"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "b3-cipher-3"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "b3-cipher-3",
+      "layer": "1d",
+      "name": "Storm-Song Cipher III: the harvest chant",
+      "chapter": "book-3",
+      "game": "cipher",
+      "reads": [
+        "margin_notes"
+      ],
+      "writes": [
+        "readings",
+        "nodes_verified",
+        "cipher_nodes_decoded",
+        "margin_notes_acted"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b3-outpost"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b3-outpost",
+      "layer": "3d",
+      "name": "The Continuum outpost",
+      "chapter": "book-3",
+      "reads": [
+        "exposure"
+      ],
+      "writes": [
+        "readings"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "b3-city"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b3-city",
+      "layer": "3d",
+      "name": "The subterranean city",
+      "chapter": "book-3",
+      "writes": [
+        "second_genesis_proof",
+        "margin_notes",
+        "margin_notes_answered"
+      ],
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "b3-escape"
+      ],
+      "minutes": 5
+    },
+    {
+      "id": "b3-escape",
+      "layer": "2d",
+      "name": "Cross-section: out through the shafts",
+      "chapter": "book-3",
+      "mode": "climb",
+      "reads": [
+        "gear_tier",
+        "exposure"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "b3-audit-2"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "b3-audit-2",
+      "layer": "1d",
+      "name": "Journal Audit II: the forged entries",
+      "chapter": "book-3",
+      "game": "audit",
+      "reads": [
+        "exposure",
+        "readings"
+      ],
+      "writes": [
+        "readings",
+        "nodes_verified",
+        "forgeries_caught",
+        "forgeries_missed",
+        "false_accusations"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b3-hiding"
+      ],
+      "minutes": 5
+    },
+    {
+      "id": "b3-hiding",
+      "layer": "3d",
+      "name": "The hideout",
+      "chapter": "book-3",
+      "reads": [
+        "second_genesis_proof"
+      ],
+      "writes": [
+        "broadcast_sent",
+        "exposure",
+        "margin_notes",
+        "margin_notes_answered",
+        "margin_notes_acted"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "b4-terraces"
+      ],
+      "minutes": 2
+    },
+    {
+      "id": "b4-terraces",
+      "layer": "3d",
+      "name": "Hollin Terrace under the synchronized storms",
+      "chapter": "book-4",
+      "writes": [
+        "joren_forgiven",
+        "emitters_available",
+        "gear_tier"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "b4-board-terrace"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b4-board-terrace",
+      "layer": "1d",
+      "name": "The Node Board I: the terrace drill",
+      "chapter": "book-4",
+      "game": "board",
+      "world_runs": true,
+      "reads": [
+        "readings",
+        "nodes_verified"
+      ],
+      "writes": [
+        "home_terrace_held",
+        "readings",
+        "nodes_verified"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b4-assay-3"
+      ],
+      "minutes": 5
+    },
+    {
+      "id": "b4-assay-3",
+      "layer": "1d",
+      "name": "The Assay III: the fragment at threshold, and the damping",
+      "chapter": "book-4",
+      "game": "assay",
+      "reads": [
+        "margin_notes_acted"
+      ],
+      "writes": [
+        "gamma_remeasured",
+        "readings"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b4-key-3"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b4-key-3",
+      "layer": "1d",
+      "name": "The Key III: mapping the coherent oscillators",
+      "chapter": "book-4",
+      "game": "key",
+      "reads": [
+        "readings"
+      ],
+      "writes": [
+        "readings",
+        "nodes_verified",
+        "verified_share"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "b4-descent"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "b4-descent",
+      "layer": "2d",
+      "name": "Cross-section: the descent under Peak 12",
+      "chapter": "book-4",
+      "mode": "climb",
+      "reads": [
+        "gear_tier"
+      ],
+      "writes": [
+        "margin_notes",
+        "margin_notes_answered"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "b4-lens-3"
+      ],
+      "minutes": 5
+    },
+    {
+      "id": "b4-lens-3",
+      "layer": "2d",
+      "name": "Under the lens III: the timing crystal",
+      "chapter": "book-4",
+      "mode": "lens",
+      "writes": [
+        "emitters_available"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b4-core"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "b4-core",
+      "layer": "3d",
+      "name": "The core beneath Peak 12",
+      "chapter": "book-4",
+      "reads": [
+        "verified_share"
+      ],
+      "enter": "pull-out",
+      "exit": "push-in",
+      "next": [
+        "b4-board-core"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "b4-board-core",
+      "layer": "1d",
+      "name": "The Node Board II: the core",
+      "chapter": "book-4",
+      "game": "board",
+      "world_runs": true,
+      "reads": [
+        "readings",
+        "verified_share",
+        "gamma_remeasured",
+        "emitters_available",
+        "joren_forgiven"
+      ],
+      "writes": [
+        "core_choice",
+        "terraces_held"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b4-collapse"
+      ],
+      "minutes": 10
+    },
+    {
+      "id": "b4-collapse",
+      "layer": "3d",
+      "name": "The shear",
+      "chapter": "book-4",
+      "reads": [
+        "core_choice",
+        "terraces_held",
+        "verified_share",
+        "margin_notes_answered"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "next": [
+        "ep-tunnel"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "ep-tunnel",
+      "layer": "3d",
+      "name": "The follower in the tunnels",
+      "chapter": "epilogue",
+      "reads": [
+        "core_choice",
+        "margin_notes_answered",
+        "verified_share"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "ep-vault"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "ep-vault",
+      "layer": "3d",
+      "name": "The Continuum record vault",
+      "chapter": "epilogue",
+      "reads": [
+        "exposure"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "ep-audit-3"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "ep-audit-3",
+      "layer": "1d",
+      "name": "Journal Audit III: assembling the testament",
+      "chapter": "epilogue",
+      "game": "audit",
+      "reads": [
+        "readings",
+        "margin_notes"
+      ],
+      "writes": [
+        "pages_restored",
+        "names_protected"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "end-written",
+        "end-in-time",
+        "end-resilience",
+        "end-fire"
+      ],
+      "minutes": 5
+    },
+    {
+      "id": "end-written",
+      "layer": "3d",
+      "name": "The archivist's desk: the final warning",
+      "chapter": "epilogue",
+      "reads": [
+        "pages_restored",
+        "names_protected",
+        "terraces_held",
+        "book_closed"
+      ],
+      "writes": [
+        "book_closed"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "minutes": 2
+    },
+    {
+      "id": "end-in-time",
+      "layer": "3d",
+      "name": "The safe room: her name on the cover",
+      "chapter": "epilogue",
+      "reads": [
+        "pages_restored",
+        "names_protected",
+        "terraces_held",
+        "book_closed"
+      ],
+      "writes": [
+        "book_closed"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "minutes": 2
+    },
+    {
+      "id": "end-resilience",
+      "layer": "3d",
+      "name": "The catalogue of the reset world",
+      "chapter": "epilogue",
+      "reads": [
+        "pages_restored",
+        "names_protected",
+        "terraces_held",
+        "book_closed"
+      ],
+      "writes": [
+        "book_closed"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "minutes": 2
+    },
+    {
+      "id": "end-fire",
+      "layer": "3d",
+      "name": "The rubble of the terraces",
+      "chapter": "epilogue",
+      "reads": [
+        "pages_restored",
+        "names_protected",
+        "terraces_held",
+        "book_closed"
+      ],
+      "writes": [
+        "book_closed"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "minutes": 2
+    }
+  ]
+}

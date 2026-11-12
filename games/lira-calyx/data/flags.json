@@ -1,0 +1,222 @@
+{
+  "state": [
+    {
+      "name": "readings",
+      "type": "ledger",
+      "default": [],
+      "description": "Every instrument reading Lira logs. One entry per reading. method is hand, relay or cipher; status is ok, error, forged, restored, doubted or misclassified. A node counts as verified only if its latest entry has method hand or cipher and status ok or restored.",
+      "fields": [
+        "node",
+        "book",
+        "instrument",
+        "method",
+        "status"
+      ]
+    },
+    {
+      "name": "margin_notes",
+      "type": "ledger",
+      "default": [],
+      "description": "The nine notes in another hand, and what the player did with each: ignored, circled, answered, acted, or answered-and-acted.",
+      "fields": [
+        "note",
+        "page",
+        "response"
+      ]
+    },
+    {
+      "name": "nodes_verified",
+      "type": "counter",
+      "default": 0,
+      "description": "How many of the twelve nodes N1 to N12 have a verified reading right now. N12 can never be verified, so the maximum is 11. Recomputed from readings whenever readings changes."
+    },
+    {
+      "name": "verified_share",
+      "type": "meter",
+      "default": 0,
+      "description": "The share of the twelve node inputs to the final model that were verified by hand, in percent: round(nodes_verified / 12 * 100). Frozen at the end of The Key III, before the descent. 60 or more (8 nodes) is a condition of The Archivist in Time.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "margin_notes_answered",
+      "type": "counter",
+      "default": 0,
+      "description": "How many of the nine margin notes the player wrote a reply beside (0 to 9). 7 or more is a condition of The Archivist in Time."
+    },
+    {
+      "name": "margin_notes_acted",
+      "type": "counter",
+      "default": 0,
+      "description": "How many margin notes the player acted on (re-sampled, re-checked, re-measured). Acting on notes 1, 7 and 8 repairs specific data."
+    },
+    {
+      "name": "exposure",
+      "type": "meter",
+      "default": 0,
+      "description": "How visible Lira is to the Continuum. +10 publish note, +15 publish brief, +15 broadcast, +5 per margin reply, -3 per relay reading. At 40 or more, Journal Audit II gets two extra forgeries; at 70 or more, outpost and vault patrols double.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "relay_used",
+      "type": "counter",
+      "default": 0,
+      "description": "How many node readings were taken from the Continuum relay beacons instead of by hand."
+    },
+    {
+      "name": "gear_tier",
+      "type": "counter",
+      "default": 0,
+      "description": "Climbing gear, 0 to 3. Sets the highest band Lira can work in and how long her air lasts in the cross-section climb."
+    },
+    {
+      "name": "pattern_alpha",
+      "type": "bool",
+      "default": false,
+      "description": "Lira has recorded and named Pattern alpha in the Spore-Weaver valley."
+    },
+    {
+      "name": "fragment_salvaged",
+      "type": "bool",
+      "default": false,
+      "description": "Lira has the crystalline fragment from the storm-struck outpost."
+    },
+    {
+      "name": "hypothesis_1",
+      "type": "bool",
+      "default": false,
+      "description": "Hypothesis 1 is written in the journal."
+    },
+    {
+      "name": "note_published",
+      "type": "bool",
+      "default": false,
+      "description": "Lira published her cautious note at the end of Book I."
+    },
+    {
+      "name": "seeding_evidence",
+      "type": "bool",
+      "default": false,
+      "description": "The Assay II found non-natural isotope ratios."
+    },
+    {
+      "name": "veylor_named",
+      "type": "bool",
+      "default": false,
+      "description": "The sealed archive has given up the names Dr. Solace Veylor and Operation ReGenesis."
+    },
+    {
+      "name": "brief_redacted",
+      "type": "bool",
+      "default": false,
+      "description": "Lira's technical brief has been published and surgically redacted."
+    },
+    {
+      "name": "key_branches_added",
+      "type": "counter",
+      "default": 0,
+      "description": "New couplets the player has written into the dichotomous key when an anomaly broke it."
+    },
+    {
+      "name": "cipher_nodes_decoded",
+      "type": "counter",
+      "default": 0,
+      "description": "Nodes located correctly from songs and chants (N7 to N10), 0 to 4."
+    },
+    {
+      "name": "forgeries_caught",
+      "type": "counter",
+      "default": 0,
+      "description": "Altered or forged entries the player found in Journal Audits I and II."
+    },
+    {
+      "name": "forgeries_missed",
+      "type": "counter",
+      "default": 0,
+      "description": "Altered or forged entries the player let stand."
+    },
+    {
+      "name": "false_accusations",
+      "type": "counter",
+      "default": 0,
+      "description": "True entries in Lira's own hand that the player struck as forged."
+    },
+    {
+      "name": "second_genesis_proof",
+      "type": "bool",
+      "default": false,
+      "description": "Lira escaped the subterranean city with the logs that prove the Second Genesis."
+    },
+    {
+      "name": "broadcast_sent",
+      "type": "bool",
+      "default": false,
+      "description": "Lira broadcast her raw data dump to the settlements from the hideout."
+    },
+    {
+      "name": "joren_forgiven",
+      "type": "bool",
+      "default": false,
+      "description": "Lira took Joren back into the coalition in Book IV. Gives the eighth emitter and the Retune action."
+    },
+    {
+      "name": "emitters_available",
+      "type": "counter",
+      "default": 0,
+      "description": "Emitters for the Node Board II: 7, plus 1 if Joren is forgiven; the timing crystal from Under the lens III must be found or the count drops by 1."
+    },
+    {
+      "name": "home_terrace_held",
+      "type": "bool",
+      "default": false,
+      "description": "The terrace drill on the Node Board brought Hollin Terrace's network under the calm line. Also verifies node N11."
+    },
+    {
+      "name": "gamma_remeasured",
+      "type": "bool",
+      "default": false,
+      "description": "Lira measured the damping herself in The Assay III, so the Node Board II shows the true calm line instead of the Continuum's."
+    },
+    {
+      "name": "core_choice",
+      "type": "enum",
+      "default": "none",
+      "description": "What Lira does at the end of the Node Board II.",
+      "values": [
+        "none",
+        "pulse",
+        "withhold",
+        "fire"
+      ]
+    },
+    {
+      "name": "terraces_held",
+      "type": "counter",
+      "default": 0,
+      "description": "Terrace districts held when the pulses fire: one per damped node among N1 to N11, so 0 to 11; by design never 11."
+    },
+    {
+      "name": "pages_restored",
+      "type": "counter",
+      "default": 0,
+      "description": "Redacted passages the archivist restores in Journal Audit III, 0 to 12."
+    },
+    {
+      "name": "names_protected",
+      "type": "bool",
+      "default": false,
+      "description": "The archivist left every living person's name under the black bar."
+    },
+    {
+      "name": "book_closed",
+      "type": "bool",
+      "default": false,
+      "description": "At the last page the player chose to close the book rather than keep going."
+    }
+  ]
+}

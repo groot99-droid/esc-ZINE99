@@ -1,0 +1,99 @@
+{
+  "slug": "heartstream",
+  "title": "A Journey Into the Heartstream",
+  "sources": [
+    "03_Stories/02_A_Journey_Into_the_Heartstream_-_The_Rite_of_the_Blue-Born.md"
+  ],
+  "target_minutes": {
+    "min": 50,
+    "max": 70
+  },
+  "players": {
+    "min": 1,
+    "max": 4
+  },
+  "core_verb": "Row together",
+  "structure": "One unbroken session, played once, no saves. The raft always carries four; companions fill empty seats.",
+  "chapters": [
+    {
+      "id": "c1_marrow",
+      "title": "The Marrow Lights",
+      "minutes": 8,
+      "layers": [
+        "3d",
+        "1d"
+      ]
+    },
+    {
+      "id": "c2_gift",
+      "title": "The Gift",
+      "minutes": 9,
+      "layers": [
+        "3d",
+        "1d"
+      ]
+    },
+    {
+      "id": "c3_song",
+      "title": "The Marrow-Song",
+      "minutes": 9,
+      "layers": [
+        "3d",
+        "1d"
+      ]
+    },
+    {
+      "id": "c4_recognition",
+      "title": "The Recognition",
+      "minutes": 5,
+      "layers": [
+        "3d"
+      ]
+    },
+    {
+      "id": "c5_ascent",
+      "title": "The Ascent",
+      "minutes": 6,
+      "layers": [
+        "3d",
+        "2d"
+      ]
+    },
+    {
+      "id": "c6_river",
+      "title": "The River",
+      "minutes": 9,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "c7_delta",
+      "title": "The Delta",
+      "minutes": 8,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "c8_heart",
+      "title": "The Heart",
+      "minutes": 6,
+      "layers": [
+        "3d"
+      ]
+    },
+    {
+      "id": "c9_alone",
+      "title": "Alone",
+      "minutes": 3,
+      "layers": [
+        "3d"
+      ]
+    }
+  ]
+}

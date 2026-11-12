@@ -1,0 +1,346 @@
+{
+  "scope_note": "Names beginning self. are per-player (one copy per seat; the resolver reads the local player's copy). Names beginning run. are shared.",
+  "state": [
+    {
+      "name": "run.humans",
+      "type": "counter",
+      "default": 1,
+      "description": "Human players at the start, 1-4."
+    },
+    {
+      "name": "run.companions",
+      "type": "counter",
+      "default": 3,
+      "description": "Companion brothers filling empty seats (4 minus humans)."
+    },
+    {
+      "name": "self.seat",
+      "type": "enum",
+      "default": "a",
+      "description": "Per player: raft seat (a bow-left, b bow-right, c stern-left, d stern-right).",
+      "values": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "name": "self.temperament",
+      "type": "enum",
+      "default": "laughs",
+      "description": "Per player: temperament chosen at the mark stone.",
+      "values": [
+        "laughs",
+        "argues",
+        "dreams",
+        "fears"
+      ]
+    },
+    {
+      "name": "self.mark",
+      "type": "enum",
+      "default": "ring",
+      "description": "Per player: the sign chosen at the mark stone.",
+      "values": [
+        "ring",
+        "notch",
+        "spiral",
+        "fork",
+        "star",
+        "wave"
+      ]
+    },
+    {
+      "name": "self.counter_carved",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: carved his counter piece in s1_carve_counter."
+    },
+    {
+      "name": "run.counters_moves",
+      "type": "ledger",
+      "default": [],
+      "description": "Every Bone Counters turn.",
+      "fields": [
+        "sitting",
+        "seat",
+        "hollow",
+        "sown",
+        "on_beat_drops"
+      ]
+    },
+    {
+      "name": "self.sow_on_beat",
+      "type": "meter",
+      "default": 0,
+      "description": "Per player: share of on-beat drops across both counters sittings; >=70 +15 ms river window, <=40 -10 ms.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "self.kept_counter",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: pocketed his counter piece when the lights dimmed."
+    },
+    {
+      "name": "run.gifts",
+      "type": "ledger",
+      "default": [],
+      "description": "Every gift carved.",
+      "fields": [
+        "giver",
+        "receiver",
+        "form",
+        "strokes_used",
+        "quality",
+        "marked"
+      ]
+    },
+    {
+      "name": "self.gift_given",
+      "type": "enum",
+      "default": "none",
+      "description": "Per player: form of the tool he carved.",
+      "values": [
+        "hook",
+        "awl",
+        "comb",
+        "scraper",
+        "flute",
+        "none"
+      ]
+    },
+    {
+      "name": "self.gift_received",
+      "type": "enum",
+      "default": "none",
+      "description": "Per player: form of the tool carved for him.",
+      "values": [
+        "hook",
+        "awl",
+        "comb",
+        "scraper",
+        "flute",
+        "none"
+      ]
+    },
+    {
+      "name": "self.gift_quality",
+      "type": "enum",
+      "default": "keepsake",
+      "description": "Per player: quality of the gift he holds (true >=80%, rough 60-79%, keepsake <60%).",
+      "values": [
+        "true",
+        "rough",
+        "keepsake"
+      ]
+    },
+    {
+      "name": "self.gift_marked",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: the gift he holds carries his mark; +20 ms grip window at the heart."
+    },
+    {
+      "name": "run.song",
+      "type": "ledger",
+      "default": [],
+      "description": "The Marrow-Song as arranged.",
+      "fields": [
+        "slot",
+        "phrase",
+        "seat",
+        "verse"
+      ]
+    },
+    {
+      "name": "run.song_harmony",
+      "type": "meter",
+      "default": 50,
+      "description": "Song harmony; >=75 +15 ms river window for all, <=40 -10 ms.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "run.song_complete",
+      "type": "bool",
+      "default": false,
+      "description": "Verse one sung; starts the 2-minute count to the Recognition."
+    },
+    {
+      "name": "run.song_last_beat",
+      "type": "counter",
+      "default": 16,
+      "description": "Beat of the heart verse's last note, counted from the start of singing in the heart."
+    },
+    {
+      "name": "self.refused",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: sat on the elders' bench at the Recognition and stayed."
+    },
+    {
+      "name": "run.stayers",
+      "type": "counter",
+      "default": 0,
+      "description": "Players who stayed."
+    },
+    {
+      "name": "run.climb_lifts",
+      "type": "counter",
+      "default": 0,
+      "description": "Lifts completed on the climb; run.sync starts at 50 + 3 x lifts, max 70."
+    },
+    {
+      "name": "run.stayer_beat",
+      "type": "meter",
+      "default": 0,
+      "description": "The stayer's pulse-wall timing; up to +15 ms on the raft's window, fading by chapter.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "run.sync",
+      "type": "meter",
+      "default": 50,
+      "description": "Group timing on the river; >=70 speed x1.25, <=30 yaw and splashes.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "self.in_time",
+      "type": "meter",
+      "default": 0,
+      "description": "Per player: share of rowing beats stroked on the beat, river and delta.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "run.notice",
+      "type": "meter",
+      "default": 0,
+      "description": "Immune beasts' notice during patrols; at 100 one brother is taken.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "self.exposure",
+      "type": "meter",
+      "default": 0,
+      "description": "Per player: his share of notice; the highest is taken.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "run.taken_count",
+      "type": "counter",
+      "default": 0,
+      "description": "Brothers taken by an immune beast; capped at 1."
+    },
+    {
+      "name": "run.taken_seat",
+      "type": "enum",
+      "default": "none",
+      "description": "Seat of the taken brother.",
+      "values": [
+        "none",
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "name": "self.taken",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: he was taken into the hold."
+    },
+    {
+      "name": "self.scout_pings",
+      "type": "counter",
+      "default": 0,
+      "description": "Per player: hazards pinged from the hold by a taken brother."
+    },
+    {
+      "name": "run.route",
+      "type": "ledger",
+      "default": [],
+      "description": "Branch Chart choices.",
+      "fields": [
+        "junction",
+        "branch",
+        "votes",
+        "tie_broken"
+      ]
+    },
+    {
+      "name": "run.calm_count",
+      "type": "counter",
+      "default": 0,
+      "description": "Calm pools reached; one in the delta gives the heart verse 2 minutes."
+    },
+    {
+      "name": "self.next_counter_carved",
+      "type": "bool",
+      "default": false,
+      "description": "Per player (stayer): finished the counter for the next group's child."
+    },
+    {
+      "name": "self.taught_pulse",
+      "type": "bool",
+      "default": false,
+      "description": "Per player (stayer): kept time with the child for 16 drops in a row."
+    },
+    {
+      "name": "self.grip",
+      "type": "meter",
+      "default": 100,
+      "description": "Per player: grip at the heart; drains each beat, re-squeezed on the beat.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "self.held_together",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: his hand locked with another's on the song's last note."
+    },
+    {
+      "name": "self.swept_order",
+      "type": "counter",
+      "default": 0,
+      "description": "Per player: order of separation at the heart (1 = first)."
+    },
+    {
+      "name": "run.dropins",
+      "type": "ledger",
+      "default": [],
+      "description": "Companion drop-ins for disconnected players.",
+      "fields": [
+        "seat",
+        "chapter",
+        "beat",
+        "rejoined"
+      ]
+    }
+  ]
+}
