@@ -164,3 +164,76 @@ Each game reaches its endings by a different kind of rule, so replays feel diffe
 | People of the Bark | The balance between the three institutions over the year |
 | The Endless Temple | A choice inside each book, plus whether Elaris keeps returning from the tea |
 | The Lord of the Sea | The Order and Wild map at the end, plus the final match on the Tea Board |
+
+## 7. Graphic styles: one owner each
+
+Each 2D mode and 1D game is drawn in its own graphic style, and no style appears twice in the
+collection. A game keeps one palette and one set of materials across its layers (its DESIGN.md
+section 15); the style is how that palette is drawn on that one page. Generated from
+`docs/graphic_styles.json` by `tools/pictographs/build.py`; edit the JSON, not this table.
+
+| Game | Layer | Mode or game | Graphic style | What it looks like | Pictograph |
+| --- | --- | --- | --- | --- | --- |
+| The Stuffed Ones | 2D | Dollhouse cutaway | **Victorian dollhouse catalogue lithograph** | Flat pastel rooms in a ruled cutaway, printed outlines, wallpaper shown at the cut edge | [dollhouse-cutaway](../games/stuffed-ones/pictographs/dollhouse-cutaway.svg) |
+| The Stuffed Ones | 2D | Labyrinth from above | **Woven tapestry** | Warp-and-weft texture; the maze is woven, its centre reddening thread by thread | [labyrinth](../games/stuffed-ones/pictographs/labyrinth.svg) |
+| The Stuffed Ones | 1D | Stitchwork | **Cross-stitch pattern chart** | Aida grid, symbol key, stitch counts in the margin | [stitchwork](../games/stuffed-ones/pictographs/stitchwork.svg) |
+| The Stuffed Ones | 1D | The Hand-Sewn Book | **Blackwork embroidery on linen** | Geometric counted-thread glyphs in black silk on oatmeal linen | [hand-sewn-book](../games/stuffed-ones/pictographs/hand-sewn-book.svg) |
+| The Stuffed Ones | 1D | Parlour | **Felt appliqué** | Cut felt shapes, blanket-stitched edges, button pieces | [parlour](../games/stuffed-ones/pictographs/parlour.svg) |
+| The Stuffed Ones | 1D | Stuffing | **Dressmaker's tissue pattern** | Translucent tissue, dashed cut lines, notches and grain arrows | [stuffing](../games/stuffed-ones/pictographs/stuffing.svg) |
+| Behind the Peephole | 2D | The eye at the hole | **Fisheye gouache** | Warm opaque paint in a curved circle, everything else black | [eye-at-the-hole](../games/behind-the-peephole/pictographs/eye-at-the-hole.svg) |
+| Behind the Peephole | 2D | Corridor race | **Architect's technical section** | Technical-pen section drawing with dimension lines and dry-transfer lettering | [corridor-race](../games/behind-the-peephole/pictographs/corridor-race.svg) |
+| Behind the Peephole | 1D | Lockwork | **Patent exploded view** | Numbered parts pulled apart along dotted axes, fine line shading | [lockwork](../games/behind-the-peephole/pictographs/lockwork.svg) |
+| Behind the Peephole | 1D | The Statement | **Carbon-copy typewriter form** | Blue carbon smudge, typed grid, rubber stamps | [statement](../games/behind-the-peephole/pictographs/statement.svg) |
+| Behind the Peephole | 1D | Night Patience | **Art deco playing cards** | Gold-on-green baize, stepped fan motifs, one card from another deck | [night-patience](../games/behind-the-peephole/pictographs/night-patience.svg) |
+| Behind the Peephole | 1D | The Mosaic | **Cork-board collage** | Pinned cards and photos, red thread pulled tight | [mosaic](../games/behind-the-peephole/pictographs/mosaic.svg) |
+| Missing Campsites | 2D | Torchlight loop | **Charcoal chiaroscuro** | Smudged black field, one soft amber circle of light | [torchlight-loop](../games/missing-campsites/pictographs/torchlight-loop.svg) |
+| Missing Campsites | 2D | The pattern walk | **Op-art geometric** | Exactly spaced tree glyphs whose rhythm spells the safe path | [pattern-walk](../games/missing-campsites/pictographs/pattern-walk.svg) |
+| Missing Campsites | 1D | Reconcile | **Topographic survey print** | Contour lines, green-ink legend, a missing legend row | [reconcile](../games/missing-campsites/pictographs/reconcile.svg) |
+| Missing Campsites | 1D | Pack List | **Wax crayon on kraft paper** | Waxy broken strokes, a circle of seats around a fire | [pack-list](../games/missing-campsites/pictographs/pack-list.svg) |
+| Missing Campsites | 1D | Foil Supper | **Two-colour risograph recipe card** | Misregistered pink and teal, halftone fills | [foil-supper](../games/missing-campsites/pictographs/foil-supper.svg) |
+| Missing Campsites | 1D | The Ranger's Book | **Ledger in graphite** | Ruled columns, pencil tallies, totals that do not add up | [rangers-book](../games/missing-campsites/pictographs/rangers-book.svg) |
+| The Redacted Testament of Lira Calyx | 2D | Cross-section climb | **Geological survey section** | Stratigraphic hatching, altitude scale, a dotted route | [cross-section-climb](../games/lira-calyx/pictographs/cross-section-climb.svg) |
+| The Redacted Testament of Lira Calyx | 2D | Under the lens | **False-colour micrograph** | Electron-microscope textures in false teal and magenta inside a lens circle | [under-the-lens](../games/lira-calyx/pictographs/under-the-lens.svg) |
+| The Redacted Testament of Lira Calyx | 1D | The Assay | **Oscilloscope trace** | Phosphor-green spectra on a graticule | [assay](../games/lira-calyx/pictographs/assay.svg) |
+| The Redacted Testament of Lira Calyx | 1D | The Key | **Iron-gall botanical plate** | Brown ink specimen drawing beside a branching couplet key | [key](../games/lira-calyx/pictographs/key.svg) |
+| The Redacted Testament of Lira Calyx | 1D | Storm-Song Cipher | **Neume chant notation** | Square neumes on a four-line staff, decoded to coordinates | [storm-song-cipher](../games/lira-calyx/pictographs/storm-song-cipher.svg) |
+| The Redacted Testament of Lira Calyx | 1D | Journal Audit | **Redacted dossier** | Black bars, a second hand's ink, seal-red stamps | [journal-audit](../games/lira-calyx/pictographs/journal-audit.svg) |
+| The Redacted Testament of Lira Calyx | 1D | The Node Board | **Swiss relief map** | Shaded relief and contours, ring and starburst node markers | [node-board](../games/lira-calyx/pictographs/node-board.svg) |
+| WrymWretch | 2D | Twin flight | **Ink-wash scroll** | Sumi ink washes, mountains fading into paper, a dragon in a few strokes | [twin-flight](../games/wrymwretch/pictographs/twin-flight.svg) |
+| WrymWretch | 2D | Forgetting run | **Graphite sketch being erased** | Pencil ground that crumbles to blank paper behind the runner | [forgetting-run](../games/wrymwretch/pictographs/forgetting-run.svg) |
+| WrymWretch | 1D | Star Chart | **Gilded star atlas** | Gold-leaf stars on lapis, fragments of figures | [star-chart](../games/wrymwretch/pictographs/star-chart.svg) |
+| WrymWretch | 1D | The Slipping Glyph | **Illuminated initials** | Painted capitals with vine borders; one glyph mid-change | [slipping-glyph](../games/wrymwretch/pictographs/slipping-glyph.svg) |
+| WrymWretch | 1D | Concentration | **Stained glass** | Lead-lined card faces in jewel colours; matched faces blanking to clear glass | [concentration](../games/wrymwretch/pictographs/concentration.svg) |
+| WrymWretch | 1D | Six Realms | **Byzantine mosaic** | Hex board laid in tesserae, realm colours in gold | [six-realms](../games/wrymwretch/pictographs/six-realms.svg) |
+| WrymWretch | 1D | Heartstone | **Low-poly crystal facets** | Faceted shards in flat-shaded triangles, a pitch line between them | [heartstone](../games/wrymwretch/pictographs/heartstone.svg) |
+| Project: Man Eater | 2D | Silhouette halls | **Shadow puppetry** | Black cut-outs on a lit cream sheet; the shadow taller than the man | [silhouette-halls](../games/man-eater/pictographs/silhouette-halls.svg) |
+| Project: Man Eater | 2D | Snow line | **Aerial reconnaissance photo** | Grainy overhead print with grid ticks and frame numbers; footprints stay | [snow-line](../games/man-eater/pictographs/snow-line.svg) |
+| Project: Man Eater | 1D | Short Rations | **Stencilled ration-issue cards** | Army stencil type on worn card, a shrinking deck | [short-rations](../games/man-eater/pictographs/short-rations.svg) |
+| Project: Man Eater | 1D | The Tray | **Isotype pictograms** | Counted flat icons in rows, as in a statistical chart | [tray](../games/man-eater/pictographs/tray.svg) |
+| Project: Man Eater | 1D | The Chart | **Medical graph paper** | Typed axes, a plotted line on a printed target curve | [chart](../games/man-eater/pictographs/chart.svg) |
+| Project: Man Eater | 1D | Floor Plan | **Cyanotype blueprint** | White lines on Prussian blue, a gap where the halls do not close | [floor-plan](../games/man-eater/pictographs/floor-plan.svg) |
+| A Journey Into the Heartstream | 2D | River section | **Woodblock wave print** | Keyed wave crests above the line, carved shapes below it, flat colour blocks | [river-section](../games/heartstream/pictographs/river-section.svg) |
+| A Journey Into the Heartstream | 2D | The climb | **Cave painting** | Ochre and charcoal figures on rock, hand stencils | [climb](../games/heartstream/pictographs/climb.svg) |
+| A Journey Into the Heartstream | 1D | The Carving | **Scrimshaw** | Scratched black lines on ivory bone | [carving](../games/heartstream/pictographs/carving.svg) |
+| A Journey Into the Heartstream | 1D | Marrow-Song | **Bead-string notation** | Beads on strands, height as pitch, the last bead home | [marrow-song](../games/heartstream/pictographs/marrow-song.svg) |
+| A Journey Into the Heartstream | 1D | Bone Counters | **Linocut** | Bold carved black on cream, gouge marks in the pits | [bone-counters](../games/heartstream/pictographs/bone-counters.svg) |
+| A Journey Into the Heartstream | 1D | The Branch Chart | **Red-ink anatomical plate** | Fine red line vessels branching on vellum, a glowing point | [branch-chart](../games/heartstream/pictographs/branch-chart.svg) |
+| People of the Bark | 2D | Crack runner | **Pixel art** | Sixteen-colour pixel platforms along a bark crack | [crack-runner](../games/people-of-the-bark/pictographs/crack-runner.svg) |
+| People of the Bark | 2D | Crack defence | **Isometric diorama** | Isometric blocks of bark, barricades and a beetle | [crack-defence](../games/people-of-the-bark/pictographs/crack-defence.svg) |
+| People of the Bark | 1D | Omen Spread | **Marginalia drolleries** | Manuscript-margin creatures and sigils on cards | [omen-spread](../games/people-of-the-bark/pictographs/omen-spread.svg) |
+| People of the Bark | 1D | Sap Kitchen | **Alchemical diagram** | Symbols, vessels and arrows of transformation | [sap-kitchen](../games/people-of-the-bark/pictographs/sap-kitchen.svg) |
+| People of the Bark | 1D | The Ring Door | **Dendrochronology letterpress** | Tree-ring discs printed in brown, a notch to align | [ring-door](../games/people-of-the-bark/pictographs/ring-door.svg) |
+| People of the Bark | 1D | Trunk and Shadow | **Knotwork board** | Interlaced bands forming the board's paths | [trunk-and-shadow](../games/people-of-the-bark/pictographs/trunk-and-shadow.svg) |
+| People of the Bark | 1D | Tremor Scroll | **Seismograph drum** | Smoked-paper trace with a seven-day rhythm | [tremor-scroll](../games/people-of-the-bark/pictographs/tremor-scroll.svg) |
+| The Endless Temple | 2D | Living illustration | **Picture-book pen and watercolour** | Loose ink line, watercolour blooms, the page edge visible | [living-illustration](../games/endless-temple/pictographs/living-illustration.svg) |
+| The Endless Temple | 2D | The stacks | **Impossible-architecture line drawing** | Endless shelves in contradictory perspective, fine single-weight line | [stacks](../games/endless-temple/pictographs/stacks.svg) |
+| The Endless Temple | 1D | Tea Blending | **Art nouveau apothecary labels** | Whiplash curves framing three jars and a steep ring | [tea-blending](../games/endless-temple/pictographs/tea-blending.svg) |
+| The Endless Temple | 1D | The Naming | **Bookbinder's gold tooling** | Gold fillets and stamped motifs on leather around an empty cartouche | [naming](../games/endless-temple/pictographs/naming.svg) |
+| The Endless Temple | 1D | The Clasps | **Clockwork cutaway** | Brass gears, cams and a bolt, each part in flat metal tones | [clasps](../games/endless-temple/pictographs/clasps.svg) |
+| The Endless Temple | 1D | The Rule Tablet | **Cuneiform clay tablet** | Wedge marks pressed into clay, eight ruled registers | [rule-tablet](../games/endless-temple/pictographs/rule-tablet.svg) |
+| The Lord of the Sea | 2D | Engraved sea | **Copperplate engraving** | Line-engraved waves and a cutter, burin hatching | [engraved-sea](../games/lord-of-the-sea/pictographs/engraved-sea.svg) |
+| The Lord of the Sea | 2D | The deep | **Deep-sea naturalist lithograph** | Radiolarian forms and pilings in a dark plate, glowing specimens | [deep](../games/lord-of-the-sea/pictographs/deep.svg) |
+| The Lord of the Sea | 1D | Liar's Tide | **Sailor's tattoo flash** | Bold outlines, flat red, green and yellow, dice and swallows | [liars-tide](../games/lord-of-the-sea/pictographs/liars-tide.svg) |
+| The Lord of the Sea | 1D | The Charter | **Engrossed deed with wax seal** | Calligraphic clauses, a ribboned seal, one clause underlined | [charter](../games/lord-of-the-sea/pictographs/charter.svg) |
+| The Lord of the Sea | 1D | The Tea Board | **Blue-and-white export porcelain** | Cobalt on white, willow-pattern borders as trade routes | [tea-board](../games/lord-of-the-sea/pictographs/tea-board.svg) |
+| The Lord of the Sea | 1D | Dead Reckoning | **Nautical plotting sheet** | Compass rose, dividers, pencilled legs and fixes | [dead-reckoning](../games/lord-of-the-sea/pictographs/dead-reckoning.svg) |

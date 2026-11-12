@@ -1194,6 +1194,22 @@ walls, the sailors' faces at the dice table.
 - **The Lord of Tea.** Seen only in chapter 6. Neat, still, ink-stained cuffs.
 - **One look across the layers.** The engraving style of 2D is the ink of 1D's paper; the 3D
   world's outlines are the same ink. A Company ship is drawn with the same silhouette in all three.
+  The palette and materials are shared across the layers, while each page's drawing style differs
+  (see Gameplay graphics).
+
+### Gameplay graphics
+
+Each 2D mode and 1D game keeps this palette but is drawn in its own graphic style, unique in the
+collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg`.
+
+| Mode or game | Layer | Graphic style | How the style serves play |
+| --- | --- | --- | --- |
+| The Engraved Sea (`engraved-sea`) | 2D | Copperplate engraving | Wave lines are burin strokes that swell on the faces, so the slope Alexi surfs and the crest he stirs read at a glance |
+| The Deep (`deep`) | 2D | Deep-sea naturalist lithograph | A dark plate where line thins with depth and only glowing specimens and the stirred current carry light, as the light bands do |
+| Liar's Tide (`liars-tide`) | 1D | Sailor's tattoo flash | Bold outlines and flat colour make each die face, the bid banner and the sailors' turning eyes legible at a glance across the table |
+| The Charter (`charter`) | 1D | Engrossed deed with wax seal | Clauses read as an engrossing hand, so the one binding clause, underlined in red and pinned, stands out from the script around it |
+| The Tea Board (`tea-board`) | 1D | Blue-and-white export porcelain | Cobalt on white keeps the board open information: solid Chests against white Hymns on each lane, with willow-pattern routes |
+| Dead Reckoning (`dead-reckoning`) | 1D | Nautical plotting sheet | Pencilled legs, triple-arrow tide vectors and the compass rose are the working marks of the plot itself |
 
 ## 16. Audio
 
