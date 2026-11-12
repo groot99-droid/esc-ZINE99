@@ -1,0 +1,962 @@
+{
+  "game": "lira-calyx",
+  "location": "shear-tunnel",
+  "name": "The shear tunnel under Peak 12",
+  "reference": "assets/locations/shear-tunnel.jpg",
+  "bounds_m": [
+    60,
+    4,
+    4
+  ],
+  "origin": "floor centre; the tunnel runs along x, +x toward the core and the rubble seal, -x toward the north shaft (an opening in the roof at x -25.5)",
+  "materials": {
+    "rock": {
+      "color": [
+        0.227,
+        0.212,
+        0.196
+      ],
+      "roughness": 0.95
+    },
+    "rubble": {
+      "color": [
+        0.298,
+        0.278,
+        0.251
+      ],
+      "roughness": 1.0
+    },
+    "pit-timber": {
+      "color": [
+        0.29,
+        0.227,
+        0.165
+      ],
+      "roughness": 0.9
+    },
+    "pipe": {
+      "color": [
+        0.243,
+        0.247,
+        0.259
+      ],
+      "roughness": 0.5,
+      "metallic": 0.7
+    },
+    "amber-crystal": {
+      "color": [
+        0.878,
+        0.627,
+        0.188
+      ],
+      "roughness": 0.3,
+      "emission": 2.0
+    },
+    "shaft-light": {
+      "color": [
+        0.784,
+        0.753,
+        0.847
+      ],
+      "roughness": 0.6,
+      "emission": 0.8
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        60,
+        4,
+        0.3
+      ],
+      "location": [
+        0,
+        0,
+        -0.15
+      ],
+      "material": "rubble"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        60,
+        0.6,
+        4
+      ],
+      "location": [
+        0,
+        2.3,
+        2
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        60,
+        0.6,
+        4
+      ],
+      "location": [
+        0,
+        -2.3,
+        2
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "ceiling-east",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        53.5,
+        4,
+        0.6
+      ],
+      "location": [
+        3.25,
+        0,
+        4.3
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "ceiling-west",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        2.5,
+        4,
+        0.6
+      ],
+      "location": [
+        -28.75,
+        0,
+        4.3
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "north-shaft",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        4,
+        3.4,
+        0.6
+      ],
+      "location": [
+        -25.5,
+        0,
+        4.3
+      ],
+      "material": "shaft-light",
+      "collide": false
+    },
+    {
+      "id": "end-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        4,
+        4
+      ],
+      "location": [
+        -30.3,
+        0,
+        2
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "rubble-seal",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        4,
+        4
+      ],
+      "location": [
+        28.5,
+        0,
+        2
+      ],
+      "material": "rubble"
+    },
+    {
+      "id": "rubble-heap-1",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        5,
+        3.4,
+        1.4
+      ],
+      "location": [
+        -8,
+        0.2,
+        0
+      ],
+      "material": "rubble"
+    },
+    {
+      "id": "rubble-heap-2",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        6,
+        3.6,
+        1.8
+      ],
+      "location": [
+        12,
+        -0.3,
+        0
+      ],
+      "material": "rubble"
+    },
+    {
+      "id": "rubble-heap-3",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        4,
+        3.8,
+        2.2
+      ],
+      "location": [
+        24,
+        0.1,
+        0
+      ],
+      "material": "rubble"
+    },
+    {
+      "id": "prop-post-n1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        3.7
+      ],
+      "location": [
+        -18,
+        1.8,
+        1.85
+      ],
+      "material": "pit-timber"
+    },
+    {
+      "id": "prop-post-s1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        3.7
+      ],
+      "location": [
+        -18,
+        -1.8,
+        1.85
+      ],
+      "material": "pit-timber"
+    },
+    {
+      "id": "prop-cap1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        3.9,
+        0.3
+      ],
+      "location": [
+        -18,
+        0,
+        3.85
+      ],
+      "material": "pit-timber"
+    },
+    {
+      "id": "prop-post-n2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        3.7
+      ],
+      "location": [
+        -6,
+        1.8,
+        1.85
+      ],
+      "material": "pit-timber"
+    },
+    {
+      "id": "prop-post-s2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        3.7
+      ],
+      "location": [
+        -6,
+        -1.8,
+        1.85
+      ],
+      "material": "pit-timber"
+    },
+    {
+      "id": "prop-cap2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        3.9,
+        0.3
+      ],
+      "location": [
+        -6,
+        0,
+        3.85
+      ],
+      "material": "pit-timber"
+    },
+    {
+      "id": "prop-post-n3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        3.7
+      ],
+      "location": [
+        6,
+        1.8,
+        1.85
+      ],
+      "material": "pit-timber"
+    },
+    {
+      "id": "prop-post-s3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        3.7
+      ],
+      "location": [
+        6,
+        -1.8,
+        1.85
+      ],
+      "material": "pit-timber"
+    },
+    {
+      "id": "prop-cap3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        3.9,
+        0.3
+      ],
+      "location": [
+        6,
+        0,
+        3.85
+      ],
+      "material": "pit-timber"
+    },
+    {
+      "id": "prop-post-n4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        3.7
+      ],
+      "location": [
+        18,
+        1.8,
+        1.85
+      ],
+      "material": "pit-timber"
+    },
+    {
+      "id": "prop-post-s4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        3.7
+      ],
+      "location": [
+        18,
+        -1.8,
+        1.85
+      ],
+      "material": "pit-timber"
+    },
+    {
+      "id": "prop-cap4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        3.9,
+        0.3
+      ],
+      "location": [
+        18,
+        0,
+        3.85
+      ],
+      "material": "pit-timber"
+    },
+    {
+      "id": "pipe-low",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.35,
+        0.35,
+        40
+      ],
+      "location": [
+        -10,
+        -1.75,
+        0.3
+      ],
+      "material": "pipe",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "amber-vein-1",
+      "shape": "cone",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.3,
+        0.6
+      ],
+      "location": [
+        -14,
+        1.95,
+        2.2
+      ],
+      "material": "amber-crystal",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "amber-vein-2",
+      "shape": "cone",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.3,
+        0.6
+      ],
+      "location": [
+        4,
+        -1.95,
+        2.5
+      ],
+      "material": "amber-crystal",
+      "rotation_deg": [
+        -90,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "amber-vein-3",
+      "shape": "cone",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.3,
+        0.6
+      ],
+      "location": [
+        20,
+        1.95,
+        2.0
+      ],
+      "material": "amber-crystal",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "journal",
+      "object": "field-journal",
+      "location": [
+        25.6,
+        0.4,
+        0
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        20
+      ]
+    },
+    {
+      "id": "lamp-fallen-1",
+      "object": "hand-lamp",
+      "location": [
+        -12,
+        -1.2,
+        0
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        40
+      ]
+    },
+    {
+      "id": "lamp-fallen-2",
+      "object": "hand-lamp",
+      "location": [
+        3,
+        1.3,
+        0
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        200
+      ]
+    },
+    {
+      "id": "lamp-fallen-3",
+      "object": "hand-lamp",
+      "location": [
+        16,
+        -1.1,
+        0
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        110
+      ]
+    },
+    {
+      "id": "lamp-lira",
+      "object": "hand-lamp",
+      "location": [
+        -24.5,
+        1.2,
+        0
+      ]
+    },
+    {
+      "id": "crystals-west",
+      "object": "crystal-cluster",
+      "location": [
+        -14,
+        1.5,
+        0
+      ]
+    },
+    {
+      "id": "crystals-mid",
+      "object": "crystal-cluster",
+      "location": [
+        4,
+        -1.5,
+        0
+      ]
+    },
+    {
+      "id": "crystals-east",
+      "object": "crystal-cluster",
+      "location": [
+        20,
+        1.5,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "co-tunnel": {
+      "world": {
+        "color": [
+          0.031,
+          0.031,
+          0.039
+        ],
+        "strength": 0.05
+      },
+      "lights": [
+        {
+          "name": "hand-lamp",
+          "type": "SPOT",
+          "location": [
+            -26.5,
+            0,
+            1.6
+          ],
+          "energy": 60,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.886,
+            0.69
+          ],
+          "look_at": [
+            -14,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "amber-west",
+          "type": "POINT",
+          "location": [
+            -14,
+            1.6,
+            2.2
+          ],
+          "energy": 15,
+          "size": 0.2,
+          "color": [
+            0.878,
+            0.627,
+            0.188
+          ]
+        },
+        {
+          "name": "amber-mid",
+          "type": "POINT",
+          "location": [
+            4,
+            -1.6,
+            2.5
+          ],
+          "energy": 15,
+          "size": 0.2,
+          "color": [
+            0.878,
+            0.627,
+            0.188
+          ]
+        },
+        {
+          "name": "amber-east",
+          "type": "POINT",
+          "location": [
+            20,
+            1.6,
+            2.0
+          ],
+          "energy": 15,
+          "size": 0.2,
+          "color": [
+            0.878,
+            0.627,
+            0.188
+          ]
+        }
+      ],
+      "note": "Cold open, as the archivist: walk 60 m of fresh rubble in one lamp beam; dust falls every 7 s. The journal lies open at the seal, its last line torn ('the Peaks are-'). Pick it up; push-in to page 1.",
+      "camera": {
+        "location": [
+          -29.0,
+          0.0,
+          2.35
+        ],
+        "look_at": [
+          -22.5,
+          -0.0,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -26.5,
+          0,
+          0
+        ],
+        "facing_deg": 270
+      },
+      "hide": [
+        "lamp-lira"
+      ],
+      "interactions": [
+        {
+          "prop": "journal",
+          "verb": "Pick up the journal",
+          "leads_to": "b1-terrace"
+        },
+        {
+          "prop": "lamp-fallen-1",
+          "verb": "Look at the lamp"
+        },
+        {
+          "prop": "lamp-fallen-2",
+          "verb": "Look at the lamp"
+        },
+        {
+          "prop": "lamp-fallen-3",
+          "verb": "Look at the lamp"
+        }
+      ]
+    },
+    "b4-collapse": {
+      "world": {
+        "color": [
+          0.165,
+          0.125,
+          0.22
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "core-strobe",
+          "type": "AREA",
+          "location": [
+            29.5,
+            0,
+            2.5
+          ],
+          "energy": 4000,
+          "size": 3.5,
+          "color": [
+            0.91,
+            0.863,
+            1.0
+          ],
+          "look_at": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "core-violet",
+          "type": "POINT",
+          "location": [
+            26,
+            0,
+            3.5
+          ],
+          "energy": 800,
+          "size": 1.0,
+          "color": [
+            0.627,
+            0.502,
+            1.0
+          ]
+        },
+        {
+          "name": "lira-lamp",
+          "type": "SPOT",
+          "location": [
+            26,
+            -0.3,
+            1.5
+          ],
+          "energy": 60,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.886,
+            0.69
+          ],
+          "look_at": [
+            14,
+            0,
+            0.3
+          ]
+        }
+      ],
+      "note": "The shear. Nodes damp and amplify, the core fractures, tunnels shear behind Lira as she runs from the core end toward the north shaft; 'a sound like a thousand small fractures'. No interactions; the ending branch decides the exit (the 200 m run is this 60 m set played as a loop of segments).",
+      "camera": {
+        "location": [
+          29.5,
+          -0.0,
+          2.65
+        ],
+        "look_at": [
+          22.0,
+          0.0,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          26,
+          0,
+          0
+        ],
+        "facing_deg": 90
+      },
+      "hide": [
+        "journal",
+        "lamp-fallen-1",
+        "lamp-fallen-2",
+        "lamp-fallen-3"
+      ],
+      "interactions": []
+    },
+    "ep-tunnel": {
+      "world": {
+        "color": [
+          0.031,
+          0.031,
+          0.039
+        ],
+        "strength": 0.05
+      },
+      "lights": [
+        {
+          "name": "hand-lamp",
+          "type": "SPOT",
+          "location": [
+            -26.5,
+            0,
+            1.6
+          ],
+          "energy": 60,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.886,
+            0.69
+          ],
+          "look_at": [
+            -14,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "amber-west",
+          "type": "POINT",
+          "location": [
+            -14,
+            1.6,
+            2.2
+          ],
+          "energy": 15,
+          "size": 0.2,
+          "color": [
+            0.878,
+            0.627,
+            0.188
+          ]
+        },
+        {
+          "name": "amber-mid",
+          "type": "POINT",
+          "location": [
+            4,
+            -1.6,
+            2.5
+          ],
+          "energy": 15,
+          "size": 0.2,
+          "color": [
+            0.878,
+            0.627,
+            0.188
+          ]
+        },
+        {
+          "name": "amber-east",
+          "type": "POINT",
+          "location": [
+            20,
+            1.6,
+            2.0
+          ],
+          "energy": 15,
+          "size": 0.2,
+          "color": [
+            0.878,
+            0.627,
+            0.188
+          ]
+        }
+      ],
+      "note": "The tunnel from the cold open, now understood, as the archivist. What waits at the far end depends on the ending: the sealed exit and the book, rubble, an intact tunnel, or Lira at the north shaft with her lamp (a 20-second carry in The Archivist in Time).",
+      "camera": {
+        "location": [
+          -30.0,
+          0.0,
+          2.35
+        ],
+        "look_at": [
+          -23.5,
+          -0.0,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -27.5,
+          0,
+          0
+        ],
+        "facing_deg": 270
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "lamp-lira",
+          "verb": "Take her lamp",
+          "leads_to": "ep-vault"
+        },
+        {
+          "prop": "journal",
+          "verb": "Take the book",
+          "leads_to": "ep-vault"
+        }
+      ]
+    }
+  }
+}

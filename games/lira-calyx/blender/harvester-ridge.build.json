@@ -1,0 +1,505 @@
+{
+  "game": "lira-calyx",
+  "location": "harvester-ridge",
+  "name": "The harvester ridge",
+  "reference": "assets/locations/harvester-ridge.jpg",
+  "bounds_m": [
+    150,
+    80,
+    30
+  ],
+  "origin": "gravel ridge centre; +y toward the forest bench and the cliff, where the harvester stands over the outcrop; the rostrum is front left",
+  "materials": {
+    "gravel": {
+      "color": [
+        0.549,
+        0.549,
+        0.533
+      ],
+      "roughness": 1.0
+    },
+    "cliff": {
+      "color": [
+        0.416,
+        0.424,
+        0.416
+      ],
+      "roughness": 0.95
+    },
+    "moss": {
+      "color": [
+        0.184,
+        0.29,
+        0.149
+      ],
+      "roughness": 1.0
+    },
+    "outcrop": {
+      "color": [
+        0.604,
+        0.604,
+        0.58
+      ],
+      "roughness": 0.95
+    },
+    "conifer": {
+      "color": [
+        0.141,
+        0.22,
+        0.165
+      ],
+      "roughness": 1.0
+    },
+    "planks": {
+      "color": [
+        0.541,
+        0.416,
+        0.267
+      ],
+      "roughness": 0.9
+    },
+    "rail": {
+      "color": [
+        0.314,
+        0.314,
+        0.314
+      ],
+      "roughness": 0.5,
+      "metallic": 0.7
+    }
+  },
+  "blockout": [
+    {
+      "id": "ridge-ground",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        150,
+        80,
+        1
+      ],
+      "location": [
+        0,
+        0,
+        -0.5
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "cliff-back",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        150,
+        8,
+        30
+      ],
+      "location": [
+        0,
+        38,
+        15
+      ],
+      "material": "cliff"
+    },
+    {
+      "id": "forest-bench",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        110,
+        24,
+        6
+      ],
+      "location": [
+        20,
+        22,
+        3
+      ],
+      "material": "moss"
+    },
+    {
+      "id": "outcrop",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        26,
+        12,
+        8
+      ],
+      "location": [
+        10,
+        10,
+        2
+      ],
+      "material": "outcrop"
+    },
+    {
+      "id": "rostrum",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6,
+        4,
+        1.2
+      ],
+      "location": [
+        -20,
+        -12,
+        0.6
+      ],
+      "material": "planks"
+    },
+    {
+      "id": "rostrum-rail",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        6,
+        0.08,
+        1.0
+      ],
+      "location": [
+        -20,
+        -10.1,
+        1.7
+      ],
+      "material": "rail"
+    },
+    {
+      "id": "conifer-1",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        6,
+        6,
+        18
+      ],
+      "location": [
+        -40,
+        26,
+        15
+      ],
+      "material": "conifer"
+    },
+    {
+      "id": "conifer-2",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        6,
+        6,
+        18
+      ],
+      "location": [
+        -25,
+        30,
+        15
+      ],
+      "material": "conifer"
+    },
+    {
+      "id": "conifer-3",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        6,
+        6,
+        18
+      ],
+      "location": [
+        40,
+        30,
+        15
+      ],
+      "material": "conifer"
+    },
+    {
+      "id": "conifer-4",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        6,
+        6,
+        18
+      ],
+      "location": [
+        55,
+        26,
+        9
+      ],
+      "material": "conifer"
+    },
+    {
+      "id": "conifer-5",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        6,
+        6,
+        18
+      ],
+      "location": [
+        -55,
+        30,
+        9
+      ],
+      "material": "conifer"
+    },
+    {
+      "id": "sleeper-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        6,
+        0.4,
+        0.15
+      ],
+      "location": [
+        -50,
+        -20,
+        0.075
+      ],
+      "material": "planks",
+      "rotation_deg": [
+        0,
+        0,
+        20
+      ]
+    },
+    {
+      "id": "sleeper-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        6,
+        0.4,
+        0.15
+      ],
+      "location": [
+        -44,
+        -24,
+        0.075
+      ],
+      "material": "planks",
+      "rotation_deg": [
+        0,
+        0,
+        30
+      ]
+    },
+    {
+      "id": "sleeper-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        6,
+        0.4,
+        0.15
+      ],
+      "location": [
+        -38,
+        -28,
+        0.075
+      ],
+      "material": "planks",
+      "rotation_deg": [
+        0,
+        0,
+        25
+      ]
+    },
+    {
+      "id": "sleeper-4",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        6,
+        0.4,
+        0.15
+      ],
+      "location": [
+        -10,
+        -32,
+        0.075
+      ],
+      "material": "planks",
+      "rotation_deg": [
+        0,
+        0,
+        80
+      ]
+    },
+    {
+      "id": "sleeper-5",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        6,
+        0.4,
+        0.15
+      ],
+      "location": [
+        5,
+        -34,
+        0.075
+      ],
+      "material": "planks",
+      "rotation_deg": [
+        0,
+        0,
+        70
+      ]
+    },
+    {
+      "id": "sleeper-6",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        6,
+        0.4,
+        0.15
+      ],
+      "location": [
+        20,
+        -33,
+        0.075
+      ],
+      "material": "planks",
+      "rotation_deg": [
+        0,
+        0,
+        75
+      ]
+    }
+  ],
+  "props": [
+    {
+      "id": "harvester",
+      "object": "prototype-harvester",
+      "location": [
+        12,
+        20,
+        6
+      ]
+    },
+    {
+      "id": "gauge",
+      "object": "strain-gauge",
+      "location": [
+        12,
+        4.6,
+        2.6
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "exhibits",
+      "object": "specimen-shelf",
+      "location": [
+        -25,
+        -11,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "b2-hearing": {
+      "world": {
+        "color": [
+          0.604,
+          0.627,
+          0.643
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "overcast",
+          "type": "SUN",
+          "location": [
+            0,
+            -30,
+            50
+          ],
+          "energy": 1.8,
+          "size": 10,
+          "color": [
+            0.847,
+            0.863,
+            0.863
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "harvester-dust",
+          "type": "AREA",
+          "location": [
+            12,
+            14,
+            12
+          ],
+          "energy": 3000,
+          "size": 12,
+          "color": [
+            0.784,
+            0.722,
+            0.596
+          ],
+          "look_at": [
+            12,
+            8,
+            0
+          ]
+        }
+      ],
+      "note": "Book II. The Council's public hearing on harvesting, overcast. The prototype harvester starts; clamp the strain gauge on the outcrop and read the ridge's harmonic before it fails at 40 s (node N6); dust rises, the crowd turns and the flee route opens down the sleepers.",
+      "camera": {
+        "location": [
+          -11.424,
+          -28.197,
+          2.65
+        ],
+        "look_at": [
+          -8.373,
+          -21.346,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -10,
+          -25,
+          0
+        ],
+        "facing_deg": 336
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "harvester",
+          "verb": "Watch the harvester"
+        },
+        {
+          "prop": "exhibits",
+          "verb": "Look at the Council's exhibits"
+        },
+        {
+          "prop": "gauge",
+          "verb": "Clamp the gauge and read the harmonic",
+          "leads_to": "b2-lab"
+        }
+      ]
+    }
+  }
+}

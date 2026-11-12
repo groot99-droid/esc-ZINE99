@@ -1,0 +1,463 @@
+{
+  "game": "lira-calyx",
+  "location": "harvest-terrace",
+  "name": "Joren's harvest terrace",
+  "reference": "assets/locations/harvest-terrace.jpg",
+  "bounds_m": [
+    100,
+    40,
+    25
+  ],
+  "origin": "river floor at z 0 in the gorge (x 20 to 34); the terrace top is z 15 to the west, the drowned twin on the far bank (+x) at z 17; +y toward the hillside",
+  "materials": {
+    "terrace": {
+      "color": [
+        0.541,
+        0.541,
+        0.282
+      ],
+      "roughness": 1.0
+    },
+    "hillside": {
+      "color": [
+        0.353,
+        0.416,
+        0.173
+      ],
+      "roughness": 1.0
+    },
+    "gorge-rock": {
+      "color": [
+        0.227,
+        0.251,
+        0.157
+      ],
+      "roughness": 0.95
+    },
+    "drystone": {
+      "color": [
+        0.42,
+        0.416,
+        0.384
+      ],
+      "roughness": 0.95
+    },
+    "straw": {
+      "color": [
+        0.847,
+        0.722,
+        0.376
+      ],
+      "roughness": 1.0
+    },
+    "threshing": {
+      "color": [
+        0.541,
+        0.353,
+        0.188
+      ],
+      "roughness": 0.8
+    },
+    "river": {
+      "color": [
+        0.22,
+        0.878,
+        0.847
+      ],
+      "roughness": 0.2,
+      "emission": 1.5
+    },
+    "flood": {
+      "color": [
+        0.416,
+        0.69,
+        0.753
+      ],
+      "roughness": 0.1
+    },
+    "timber": {
+      "color": [
+        0.353,
+        0.251,
+        0.157
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "gorge-floor",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        14,
+        40,
+        1
+      ],
+      "location": [
+        27,
+        0,
+        -0.5
+      ],
+      "material": "gorge-rock"
+    },
+    {
+      "id": "river",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        5,
+        40,
+        0.3
+      ],
+      "location": [
+        27,
+        0,
+        0.15
+      ],
+      "material": "river"
+    },
+    {
+      "id": "terrace",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        70,
+        36,
+        15
+      ],
+      "location": [
+        -15,
+        -2,
+        7.5
+      ],
+      "material": "terrace"
+    },
+    {
+      "id": "far-bank",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        16,
+        40,
+        17
+      ],
+      "location": [
+        42,
+        0,
+        8.5
+      ],
+      "material": "gorge-rock"
+    },
+    {
+      "id": "hillside",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        100,
+        14,
+        12
+      ],
+      "location": [
+        0,
+        20,
+        20
+      ],
+      "material": "hillside",
+      "rotation_deg": [
+        -25,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "wall-front",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        70,
+        0.6,
+        0.8
+      ],
+      "location": [
+        -15,
+        -19.7,
+        15.4
+      ],
+      "material": "drystone"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.6,
+        36,
+        0.8
+      ],
+      "location": [
+        -49.7,
+        -2,
+        15.4
+      ],
+      "material": "drystone"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.6,
+        36,
+        0.8
+      ],
+      "location": [
+        19.7,
+        -2,
+        15.4
+      ],
+      "material": "drystone"
+    },
+    {
+      "id": "wall-back",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        70,
+        0.6,
+        0.8
+      ],
+      "location": [
+        -15,
+        15.7,
+        15.4
+      ],
+      "material": "drystone"
+    },
+    {
+      "id": "threshing-floor",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        12,
+        7,
+        0.1
+      ],
+      "location": [
+        -8,
+        -6,
+        15.05
+      ],
+      "material": "threshing"
+    },
+    {
+      "id": "grain-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        16,
+        4,
+        1.2
+      ],
+      "location": [
+        -30,
+        8,
+        15.6
+      ],
+      "material": "straw"
+    },
+    {
+      "id": "grain-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        14,
+        4,
+        1.2
+      ],
+      "location": [
+        0,
+        10,
+        15.6
+      ],
+      "material": "straw"
+    },
+    {
+      "id": "drowned-twin",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        10,
+        12,
+        0.3
+      ],
+      "location": [
+        42,
+        10,
+        17.15
+      ],
+      "material": "flood"
+    },
+    {
+      "id": "drowned-twin-wall",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        11,
+        0.5,
+        0.7
+      ],
+      "location": [
+        42,
+        3.75,
+        17.35
+      ],
+      "material": "drystone"
+    },
+    {
+      "id": "drowned-hut",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.4,
+        2,
+        1.6
+      ],
+      "location": [
+        44,
+        12,
+        17.9
+      ],
+      "material": "timber"
+    }
+  ],
+  "props": [
+    {
+      "id": "table",
+      "object": "folding-field-table",
+      "location": [
+        17,
+        -4,
+        15
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ]
+    },
+    {
+      "id": "journal",
+      "object": "field-journal",
+      "location": [
+        17,
+        -3.7,
+        15.75
+      ]
+    },
+    {
+      "id": "recorder",
+      "object": "field-recorder",
+      "location": [
+        17.1,
+        -4.3,
+        15.75
+      ]
+    }
+  ],
+  "scenes": {
+    "b3-midlander": {
+      "world": {
+        "color": [
+          0.784,
+          0.659,
+          0.408
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "harvest-sun",
+          "type": "SUN",
+          "location": [
+            -40,
+            30,
+            30
+          ],
+          "energy": 3.0,
+          "size": 3,
+          "color": [
+            1.0,
+            0.784,
+            0.471
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "river-glow",
+          "type": "AREA",
+          "location": [
+            27,
+            0,
+            2
+          ],
+          "energy": 1500,
+          "size": 5,
+          "color": [
+            0.22,
+            0.878,
+            0.847
+          ],
+          "look_at": [
+            27,
+            0,
+            0
+          ]
+        }
+      ],
+      "note": "Book III. Joren's harvest terrace in amber harvest light; the chant and the sickles. Record the chant; page 112 appears twice in the journal (margin note 5); across the gorge, the terrace's drowned twin.",
+      "camera": {
+        "location": [
+          2.5,
+          -10.0,
+          17.65
+        ],
+        "look_at": [
+          10.0,
+          -10.0,
+          16.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          6,
+          -10,
+          15
+        ],
+        "facing_deg": 270
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "table",
+          "verb": "Look across at the drowned terrace"
+        },
+        {
+          "prop": "journal",
+          "verb": "Read page 112"
+        },
+        {
+          "prop": "recorder",
+          "verb": "Record the chant",
+          "leads_to": "b3-cipher-3"
+        }
+      ]
+    }
+  }
+}

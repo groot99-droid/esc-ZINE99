@@ -1,0 +1,1026 @@
+{
+  "game": "lira-calyx",
+  "location": "subterranean-city",
+  "name": "The subterranean city and record vault",
+  "reference": "assets/locations/subterranean-city.jpg",
+  "bounds_m": [
+    200,
+    60,
+    40
+  ],
+  "origin": "gallery floor centre; the gallery runs along x, +y toward the houses and the record bays; the record vault wing is at the +x end (x 60 to 100, one door), the catalogue hall at the -x end (x -100 to -70)",
+  "materials": {
+    "floor-pale": {
+      "color": [
+        0.784,
+        0.816,
+        0.8
+      ],
+      "roughness": 0.8
+    },
+    "cavern": {
+      "color": [
+        0.11,
+        0.227,
+        0.22
+      ],
+      "roughness": 0.95
+    },
+    "house-plaster": {
+      "color": [
+        0.722,
+        0.769,
+        0.753
+      ],
+      "roughness": 0.9
+    },
+    "shelving": {
+      "color": [
+        0.078,
+        0.086,
+        0.086
+      ],
+      "roughness": 0.9
+    },
+    "pipe": {
+      "color": [
+        0.659,
+        0.69,
+        0.675
+      ],
+      "roughness": 0.5,
+      "metallic": 0.6
+    },
+    "cage": {
+      "color": [
+        0.125,
+        0.141,
+        0.133
+      ],
+      "roughness": 0.5,
+      "metallic": 0.8
+    },
+    "core-glow": {
+      "color": [
+        0.416,
+        0.878,
+        0.784
+      ],
+      "roughness": 0.2,
+      "emission": 4.0
+    },
+    "vault-black": {
+      "color": [
+        0.043,
+        0.043,
+        0.047
+      ],
+      "roughness": 0.95
+    },
+    "catalogue-white": {
+      "color": [
+        0.902,
+        0.929,
+        0.949
+      ],
+      "roughness": 0.5
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        200,
+        60,
+        0.4
+      ],
+      "location": [
+        0,
+        0,
+        -0.2
+      ],
+      "material": "floor-pale"
+    },
+    {
+      "id": "cavern-roof",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        200,
+        60,
+        2
+      ],
+      "location": [
+        0,
+        0,
+        41
+      ],
+      "material": "cavern"
+    },
+    {
+      "id": "cavern-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        200,
+        4,
+        40
+      ],
+      "location": [
+        0,
+        32,
+        20
+      ],
+      "material": "cavern"
+    },
+    {
+      "id": "cavern-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        200,
+        4,
+        40
+      ],
+      "location": [
+        0,
+        -32,
+        20
+      ],
+      "material": "cavern"
+    },
+    {
+      "id": "house-shelf",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        130,
+        12,
+        10
+      ],
+      "location": [
+        -5,
+        22,
+        13
+      ],
+      "material": "house-plaster"
+    },
+    {
+      "id": "pipe-run-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        130,
+        0.6,
+        0.6
+      ],
+      "location": [
+        -5,
+        -29.5,
+        3
+      ],
+      "material": "pipe"
+    },
+    {
+      "id": "pipe-run-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        130,
+        0.6,
+        0.6
+      ],
+      "location": [
+        -5,
+        -29.5,
+        5
+      ],
+      "material": "pipe"
+    },
+    {
+      "id": "record-bay-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        24,
+        3,
+        8
+      ],
+      "location": [
+        -50,
+        14,
+        4
+      ],
+      "material": "shelving"
+    },
+    {
+      "id": "record-bay-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        24,
+        3,
+        8
+      ],
+      "location": [
+        -20,
+        14,
+        4
+      ],
+      "material": "shelving"
+    },
+    {
+      "id": "record-bay-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        24,
+        3,
+        8
+      ],
+      "location": [
+        10,
+        14,
+        4
+      ],
+      "material": "shelving"
+    },
+    {
+      "id": "record-bay-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        24,
+        3,
+        8
+      ],
+      "location": [
+        40,
+        14,
+        4
+      ],
+      "material": "shelving"
+    },
+    {
+      "id": "cage-lamp-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        6,
+        6,
+        7
+      ],
+      "location": [
+        -30,
+        0,
+        28
+      ],
+      "material": "cage",
+      "collide": false
+    },
+    {
+      "id": "core-orb-1",
+      "shape": "sphere",
+      "role": "trim",
+      "size_m": [
+        4,
+        4,
+        4
+      ],
+      "location": [
+        -30,
+        0,
+        28
+      ],
+      "material": "core-glow",
+      "collide": false
+    },
+    {
+      "id": "cage-lamp-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        6,
+        6,
+        7
+      ],
+      "location": [
+        0,
+        0,
+        28
+      ],
+      "material": "cage",
+      "collide": false
+    },
+    {
+      "id": "core-orb-2",
+      "shape": "sphere",
+      "role": "trim",
+      "size_m": [
+        4,
+        4,
+        4
+      ],
+      "location": [
+        0,
+        0,
+        28
+      ],
+      "material": "core-glow",
+      "collide": false
+    },
+    {
+      "id": "cage-lamp-3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        6,
+        6,
+        7
+      ],
+      "location": [
+        30,
+        0,
+        28
+      ],
+      "material": "cage",
+      "collide": false
+    },
+    {
+      "id": "core-orb-3",
+      "shape": "sphere",
+      "role": "trim",
+      "size_m": [
+        4,
+        4,
+        4
+      ],
+      "location": [
+        30,
+        0,
+        28
+      ],
+      "material": "core-glow",
+      "collide": false
+    },
+    {
+      "id": "vault-wall-w",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        27.5,
+        12
+      ],
+      "location": [
+        60,
+        -16.25,
+        6
+      ],
+      "material": "vault-black"
+    },
+    {
+      "id": "vault-wall-e",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        27.5,
+        12
+      ],
+      "location": [
+        60,
+        16.25,
+        6
+      ],
+      "material": "vault-black"
+    },
+    {
+      "id": "vault-door-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        5,
+        9.5
+      ],
+      "location": [
+        60,
+        0,
+        7.25
+      ],
+      "material": "vault-black"
+    },
+    {
+      "id": "vault-side-n",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40,
+        0.6,
+        12
+      ],
+      "location": [
+        80,
+        12.5,
+        6
+      ],
+      "material": "vault-black"
+    },
+    {
+      "id": "vault-side-s",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40,
+        0.6,
+        12
+      ],
+      "location": [
+        80,
+        -12.5,
+        6
+      ],
+      "material": "vault-black"
+    },
+    {
+      "id": "vault-ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        40,
+        25.6,
+        0.5
+      ],
+      "location": [
+        80,
+        0,
+        12.25
+      ],
+      "material": "vault-black"
+    },
+    {
+      "id": "catalogue-wall-w",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        27.5,
+        10
+      ],
+      "location": [
+        -70,
+        -16.25,
+        5
+      ],
+      "material": "catalogue-white"
+    },
+    {
+      "id": "catalogue-wall-e",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        27.5,
+        10
+      ],
+      "location": [
+        -70,
+        16.25,
+        5
+      ],
+      "material": "catalogue-white"
+    },
+    {
+      "id": "catalogue-door-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        5,
+        7.5
+      ],
+      "location": [
+        -70,
+        0,
+        6.25
+      ],
+      "material": "catalogue-white"
+    },
+    {
+      "id": "catalogue-ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        30,
+        60,
+        0.5
+      ],
+      "location": [
+        -85,
+        0,
+        10.25
+      ],
+      "material": "catalogue-white"
+    },
+    {
+      "id": "catalogue-bench",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6,
+        1.4,
+        0.9
+      ],
+      "location": [
+        -88,
+        0,
+        0.45
+      ],
+      "material": "catalogue-white"
+    }
+  ],
+  "props": [
+    {
+      "id": "card",
+      "object": "coordinate-card",
+      "location": [
+        -20,
+        12.4,
+        1.5
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "logs-1",
+      "object": "log-cabinet",
+      "location": [
+        -48,
+        12.2,
+        0
+      ]
+    },
+    {
+      "id": "logs-2",
+      "object": "log-cabinet",
+      "location": [
+        12,
+        12.2,
+        0
+      ]
+    },
+    {
+      "id": "logs-3",
+      "object": "log-cabinet",
+      "location": [
+        38,
+        12.2,
+        0
+      ]
+    },
+    {
+      "id": "emitter-1",
+      "object": "aetheric-emitter",
+      "location": [
+        -30,
+        -10,
+        0
+      ]
+    },
+    {
+      "id": "emitter-2",
+      "object": "aetheric-emitter",
+      "location": [
+        30,
+        -10,
+        0
+      ]
+    },
+    {
+      "id": "case-1",
+      "object": "journal-case",
+      "location": [
+        90,
+        10,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "case-2",
+      "object": "journal-case",
+      "location": [
+        92,
+        -10,
+        0
+      ]
+    },
+    {
+      "id": "case-3",
+      "object": "journal-case",
+      "location": [
+        97,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "seal-press",
+      "object": "seal-press",
+      "location": [
+        85,
+        10.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "catalogue-case",
+      "object": "journal-case",
+      "location": [
+        -89,
+        0.2,
+        0.9
+      ]
+    },
+    {
+      "id": "catalogue-seal",
+      "object": "seal-press",
+      "location": [
+        -86.5,
+        0.2,
+        0.9
+      ]
+    }
+  ],
+  "scenes": {
+    "b3-city": {
+      "world": {
+        "color": [
+          0.047,
+          0.165,
+          0.165
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "core-1",
+          "type": "POINT",
+          "location": [
+            -30,
+            0,
+            27
+          ],
+          "energy": 60000,
+          "size": 3,
+          "color": [
+            0.416,
+            0.878,
+            0.784
+          ]
+        },
+        {
+          "name": "core-2",
+          "type": "POINT",
+          "location": [
+            0,
+            0,
+            27
+          ],
+          "energy": 60000,
+          "size": 3,
+          "color": [
+            0.416,
+            0.878,
+            0.784
+          ]
+        },
+        {
+          "name": "core-3",
+          "type": "POINT",
+          "location": [
+            30,
+            0,
+            27
+          ],
+          "energy": 60000,
+          "size": 3,
+          "color": [
+            0.416,
+            0.878,
+            0.784
+          ]
+        },
+        {
+          "name": "gallery-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            10,
+            18
+          ],
+          "energy": 8000,
+          "size": 30,
+          "color": [
+            0.416,
+            0.878,
+            0.784
+          ],
+          "look_at": [
+            0,
+            14,
+            0
+          ]
+        }
+      ],
+      "note": "Book III. The subterranean city lit by aetheric cores, deep teal, machine breathing. The hooded archivist in the record galleries hands over the coordinate card misfiled under the wrong peak (margin note 6); take the logs that prove the Second Genesis; Joren leads the guards in; run for the shafts.",
+      "camera": {
+        "location": [
+          -58.5,
+          -4.0,
+          2.65
+        ],
+        "look_at": [
+          -51.0,
+          -4.0,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -55,
+          -4,
+          0
+        ],
+        "facing_deg": 270
+      },
+      "hide": [
+        "catalogue-case",
+        "catalogue-seal"
+      ],
+      "interactions": [
+        {
+          "prop": "card",
+          "verb": "Take the coordinate card"
+        },
+        {
+          "prop": "logs-1",
+          "verb": "Take the logs"
+        },
+        {
+          "prop": "logs-2",
+          "verb": "Take the logs"
+        },
+        {
+          "prop": "logs-3",
+          "verb": "Take the logs",
+          "leads_to": "b3-escape"
+        }
+      ]
+    },
+    "ep-vault": {
+      "world": {
+        "color": [
+          0.102,
+          0.024,
+          0.024
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "emergency-1",
+          "type": "POINT",
+          "location": [
+            70,
+            0,
+            11
+          ],
+          "energy": 1500,
+          "size": 1,
+          "color": [
+            0.816,
+            0.094,
+            0.094
+          ]
+        },
+        {
+          "name": "emergency-2",
+          "type": "POINT",
+          "location": [
+            92,
+            0,
+            11
+          ],
+          "energy": 1500,
+          "size": 1,
+          "color": [
+            0.816,
+            0.094,
+            0.094
+          ]
+        },
+        {
+          "name": "guard-lamp",
+          "type": "SPOT",
+          "location": [
+            88,
+            -8,
+            1.6
+          ],
+          "energy": 150,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.941,
+            0.816
+          ],
+          "look_at": [
+            76,
+            -2,
+            0
+          ]
+        },
+        {
+          "name": "gallery-core",
+          "type": "POINT",
+          "location": [
+            30,
+            0,
+            27
+          ],
+          "energy": 30000,
+          "size": 3,
+          "color": [
+            0.416,
+            0.878,
+            0.784
+          ]
+        }
+      ],
+      "note": "Epilogue, as the archivist. The Continuum record vault wing in stamp-red emergency light: lamp cones, one door, one guard (two at exposure 70+), no fighting. Take the books from the journal cases; the seal press on the wall bench.",
+      "camera": {
+        "location": [
+          51.5,
+          0.0,
+          2.65
+        ],
+        "look_at": [
+          59.0,
+          -0.0,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          55,
+          0,
+          0
+        ],
+        "facing_deg": 270
+      },
+      "hide": [
+        "card",
+        "catalogue-case",
+        "catalogue-seal"
+      ],
+      "interactions": [
+        {
+          "prop": "case-1",
+          "verb": "Take the books"
+        },
+        {
+          "prop": "case-2",
+          "verb": "Take the books"
+        },
+        {
+          "prop": "seal-press",
+          "verb": "Look at the seal"
+        },
+        {
+          "prop": "case-3",
+          "verb": "Take the books",
+          "leads_to": "ep-audit-3"
+        }
+      ]
+    },
+    "end-resilience": {
+      "world": {
+        "color": [
+          0.91,
+          0.933,
+          0.949
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "hall-panel-1",
+          "type": "AREA",
+          "location": [
+            -85,
+            -10,
+            10
+          ],
+          "energy": 2000,
+          "size": 10,
+          "color": [
+            0.957,
+            0.973,
+            1.0
+          ],
+          "look_at": [
+            -85,
+            -10,
+            0
+          ]
+        },
+        {
+          "name": "hall-panel-2",
+          "type": "AREA",
+          "location": [
+            -85,
+            10,
+            10
+          ],
+          "energy": 2000,
+          "size": 10,
+          "color": [
+            0.957,
+            0.973,
+            1.0
+          ],
+          "look_at": [
+            -85,
+            10,
+            0
+          ]
+        }
+      ],
+      "note": "Directed Resilience. The catalogue hall of the reset world, even and sterile white, rain on a new world far above. Lira, alive, at a bench cataloguing; her journals shelved under the Continuum seal, her name on the cover under it. Close the book or keep going.",
+      "camera": {
+        "location": [
+          -74.5,
+          -3.0,
+          2.65
+        ],
+        "look_at": [
+          -82.0,
+          -3.0,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -78,
+          -3,
+          0
+        ],
+        "facing_deg": 90
+      },
+      "hide": [
+        "card",
+        "case-1",
+        "case-2",
+        "case-3"
+      ],
+      "interactions": [
+        {
+          "prop": "catalogue-seal",
+          "verb": "Look at the seal"
+        },
+        {
+          "prop": "catalogue-case",
+          "verb": "Close the book, or keep going"
+        }
+      ]
+    }
+  }
+}

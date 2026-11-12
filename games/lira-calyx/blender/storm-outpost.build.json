@@ -1,0 +1,591 @@
+{
+  "game": "lira-calyx",
+  "location": "storm-outpost",
+  "name": "The storm-struck outpost",
+  "reference": "assets/locations/storm-outpost.jpg",
+  "bounds_m": [
+    40,
+    40,
+    12
+  ],
+  "origin": "ground centre; +y toward the ridge and the radio mast; both huts face -y",
+  "materials": {
+    "ground": {
+      "color": [
+        0.353,
+        0.361,
+        0.4
+      ],
+      "roughness": 1.0
+    },
+    "ridge-rock": {
+      "color": [
+        0.29,
+        0.298,
+        0.361
+      ],
+      "roughness": 0.95
+    },
+    "glassed-wall": {
+      "color": [
+        0.659,
+        0.675,
+        0.753
+      ],
+      "roughness": 0.4
+    },
+    "roof": {
+      "color": [
+        0.298,
+        0.298,
+        0.345
+      ],
+      "roughness": 0.7,
+      "metallic": 0.3
+    },
+    "fused-glass": {
+      "color": [
+        0.847,
+        0.816,
+        1.0
+      ],
+      "roughness": 0.1,
+      "emission": 1.2
+    },
+    "timber": {
+      "color": [
+        0.353,
+        0.251,
+        0.157
+      ],
+      "roughness": 0.9
+    },
+    "steel": {
+      "color": [
+        0.439,
+        0.455,
+        0.502
+      ],
+      "roughness": 0.5,
+      "metallic": 0.8
+    }
+  },
+  "blockout": [
+    {
+      "id": "ground",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        40,
+        40,
+        0.5
+      ],
+      "location": [
+        0,
+        0,
+        -0.25
+      ],
+      "material": "ground"
+    },
+    {
+      "id": "ridge-north",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        40,
+        5,
+        7
+      ],
+      "location": [
+        0,
+        19,
+        3.5
+      ],
+      "material": "ridge-rock"
+    },
+    {
+      "id": "ridge-west",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        5,
+        30,
+        5
+      ],
+      "location": [
+        -19,
+        2,
+        2.5
+      ],
+      "material": "ridge-rock"
+    },
+    {
+      "id": "ridge-east",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        5,
+        30,
+        6
+      ],
+      "location": [
+        19,
+        2,
+        3
+      ],
+      "material": "ridge-rock"
+    },
+    {
+      "id": "hut-west-back",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        9,
+        0.3,
+        3.5
+      ],
+      "location": [
+        -8,
+        9.35,
+        1.75
+      ],
+      "material": "glassed-wall"
+    },
+    {
+      "id": "hut-west-side-w",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        5,
+        3.5
+      ],
+      "location": [
+        -12.35,
+        7,
+        1.75
+      ],
+      "material": "glassed-wall"
+    },
+    {
+      "id": "hut-west-side-e",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        5,
+        3.5
+      ],
+      "location": [
+        -3.65,
+        7,
+        1.75
+      ],
+      "material": "glassed-wall"
+    },
+    {
+      "id": "hut-west-front-w",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3.9,
+        0.3,
+        3.5
+      ],
+      "location": [
+        -10.55,
+        4.65,
+        1.75
+      ],
+      "material": "glassed-wall"
+    },
+    {
+      "id": "hut-west-front-e",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3.9,
+        0.3,
+        3.5
+      ],
+      "location": [
+        -5.45,
+        4.65,
+        1.75
+      ],
+      "material": "glassed-wall"
+    },
+    {
+      "id": "hut-west-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.2,
+        0.3,
+        1.3
+      ],
+      "location": [
+        -8.0,
+        4.65,
+        2.85
+      ],
+      "material": "glassed-wall"
+    },
+    {
+      "id": "hut-west-roof",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        9.6,
+        5.6,
+        0.25
+      ],
+      "location": [
+        -8,
+        7,
+        3.625
+      ],
+      "material": "roof"
+    },
+    {
+      "id": "hut-east-back",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        9,
+        0.3,
+        3.5
+      ],
+      "location": [
+        9,
+        5.85,
+        1.75
+      ],
+      "material": "glassed-wall"
+    },
+    {
+      "id": "hut-east-side-w",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        6,
+        3.5
+      ],
+      "location": [
+        4.65,
+        3,
+        1.75
+      ],
+      "material": "glassed-wall"
+    },
+    {
+      "id": "hut-east-side-e",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        6,
+        3.5
+      ],
+      "location": [
+        13.35,
+        3,
+        1.75
+      ],
+      "material": "glassed-wall"
+    },
+    {
+      "id": "hut-east-front-w",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.4,
+        0.3,
+        3.5
+      ],
+      "location": [
+        5.7,
+        0.15,
+        1.75
+      ],
+      "material": "glassed-wall"
+    },
+    {
+      "id": "hut-east-front-e",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        5.4,
+        0.3,
+        3.5
+      ],
+      "location": [
+        10.8,
+        0.15,
+        1.75
+      ],
+      "material": "glassed-wall"
+    },
+    {
+      "id": "hut-east-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.2,
+        0.3,
+        1.3
+      ],
+      "location": [
+        7.5,
+        0.15,
+        2.85
+      ],
+      "material": "glassed-wall"
+    },
+    {
+      "id": "hut-east-roof",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        9.6,
+        6.6,
+        0.25
+      ],
+      "location": [
+        9,
+        3,
+        3.625
+      ],
+      "material": "roof"
+    },
+    {
+      "id": "scorch-ring",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        6,
+        6,
+        0.04
+      ],
+      "location": [
+        -4,
+        -6,
+        0.02
+      ],
+      "material": "fused-glass",
+      "collide": false
+    },
+    {
+      "id": "radio-mast",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.15,
+        0.15,
+        10
+      ],
+      "location": [
+        2,
+        11,
+        5
+      ],
+      "material": "steel"
+    },
+    {
+      "id": "mast-crossbar",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2.4,
+        0.08,
+        0.08
+      ],
+      "location": [
+        2,
+        11,
+        9
+      ],
+      "material": "steel",
+      "rotation_deg": [
+        0,
+        0,
+        30
+      ]
+    },
+    {
+      "id": "fence",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.1,
+        6,
+        1.1
+      ],
+      "location": [
+        -15,
+        -3,
+        0.55
+      ],
+      "material": "timber",
+      "rotation_deg": [
+        0,
+        0,
+        20
+      ]
+    }
+  ],
+  "props": [
+    {
+      "id": "gravimeter",
+      "object": "gravimeter",
+      "location": [
+        -1,
+        -6,
+        0
+      ]
+    },
+    {
+      "id": "fragment",
+      "object": "fused-glass-fragment",
+      "location": [
+        -4,
+        -6,
+        0.04
+      ]
+    },
+    {
+      "id": "relay",
+      "object": "relay-beacon",
+      "location": [
+        2.8,
+        10,
+        0
+      ]
+    },
+    {
+      "id": "table",
+      "object": "folding-field-table",
+      "location": [
+        10.5,
+        4,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "b1-outpost": {
+      "world": {
+        "color": [
+          0.29,
+          0.29,
+          0.361
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "ridge-day",
+          "type": "SUN",
+          "location": [
+            0,
+            -20,
+            30
+          ],
+          "energy": 1.5,
+          "size": 4,
+          "color": [
+            0.784,
+            0.8,
+            0.847
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "storm-flash",
+          "type": "AREA",
+          "location": [
+            -4,
+            -6,
+            11
+          ],
+          "energy": 6000,
+          "size": 8,
+          "color": [
+            0.69,
+            0.565,
+            1.0
+          ],
+          "look_at": [
+            -4,
+            -6,
+            0
+          ]
+        },
+        {
+          "name": "hut-east-inside",
+          "type": "POINT",
+          "location": [
+            9,
+            3.5,
+            2.8
+          ],
+          "energy": 40,
+          "size": 0.5,
+          "color": [
+            0.784,
+            0.8,
+            0.847
+          ]
+        }
+      ],
+      "note": "Book I. A localized aetheric storm returns every 90 s (the violet flash light pulses on that cycle). Read the gravimeter between gusts with the bubble level: node N3; margin note 2; read the outpost log; lift the fragment from the fused-glass ring.",
+      "camera": {
+        "location": [
+          0.0,
+          -18.5,
+          2.65
+        ],
+        "look_at": [
+          0.0,
+          -11.0,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -15,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "gravimeter",
+          "verb": "Read the gravimeter"
+        },
+        {
+          "prop": "relay",
+          "verb": "Take the relay reading"
+        },
+        {
+          "prop": "table",
+          "verb": "Read the outpost log"
+        },
+        {
+          "prop": "fragment",
+          "verb": "Lift the fragment",
+          "leads_to": "b1-lens-1"
+        }
+      ]
+    }
+  }
+}
