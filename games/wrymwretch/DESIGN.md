@@ -1131,16 +1131,28 @@ everywhere.
 
 ## 15. Art direction
 
-**Palette.** Each realm a pair of colours: West moss green and amber; North pale blue and silver;
+**Signature look (the author's choice).** The bone-and-silver reliquary: every surface reads as
+carved ivory bone and tarnished silver relief, with fine black crack lines, hard cool rim light
+picking out every ridge, and a near-black starry void beyond. The palette is cold blue-silver with
+one accent light, and that accent is the realm's own colour. Compositions lean frontal and
+icon-like, as on a cathedral reliquary or a 1970s fantasy paperback cover. The reference is
+`reference/14-the-veil.jpg`, the statues of the King of Dragons and the Queen of Elves at the heart
+of the wound. Every 3D set, prop and still in this game is rendered in it; the 2D and 1D pages keep
+their own graphic styles (Gameplay graphics, below) but take their accent colours from the same
+realm pairs.
+
+**Palette.** Bone ivory and tarnished silver everywhere, over near-black. Each realm adds a pair of
+accent colours, used for its one light source: West moss green and amber; North pale blue and silver;
 South ochre and molten orange; East sea blue and pearl; Below violet and obsidian; Above gold and
 starlight white. Wrymreach mixes sun gold and moon silver over bone white. Forgetting is the
 paper colour (warm off-white) and graphite.
 
-**References by mood.** Illuminated bestiaries and star atlases; ink-wash landscape painting; the
-weight of old cathedral stone for the Underworld and the Bone Choir. Nothing is modelled on an
+**References by mood.** Reliquaries, carved ivory and silver repoussé; cathedral relief sculpture;
+1970s fantasy paperback cover painting; illuminated bestiaries and star atlases for the 1D pages. Nothing is modelled on an
 existing game's characters, levels or look.
 
-**Materials.** Painterly textures, low-to-mid poly with strong silhouettes. Dragons carry their
+**Materials.** Carved bone and tarnished silver relief textures with crack-line detail, low-to-mid
+poly with strong silhouettes. Dragons carry their
 realm in their scales: bark-like (Sylvan, WW 114), parchment-coloured with runes (Aetherius, WW 139),
 stone and soil with magma beneath (Gaia, WW 162, 170), iridescent blue (Aquatica, WW 189),
 light-swallowing (Umbra, WW 216), cosmic dust (Astraia, WW 237).
