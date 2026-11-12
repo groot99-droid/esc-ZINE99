@@ -1,0 +1,626 @@
+{
+  "game": "endless-temple",
+  "location": "father-camp",
+  "name": "The father's camp and marker",
+  "reference": "assets/locations/father-camp.jpg",
+  "bounds_m": [
+    30,
+    30,
+    10
+  ],
+  "origin": "the ring of stones at the floor centre; +y toward the dune behind the marker pole and, beyond it, the way the father walked; -y the homeward side",
+  "materials": {
+    "ochre-sand": {
+      "color": [
+        0.85,
+        0.55,
+        0.3
+      ],
+      "roughness": 0.95
+    },
+    "dune-light": {
+      "color": [
+        0.9,
+        0.62,
+        0.35
+      ],
+      "roughness": 0.95
+    },
+    "stone": {
+      "color": [
+        0.55,
+        0.45,
+        0.38
+      ],
+      "roughness": 0.9
+    },
+    "far-dunes": {
+      "color": [
+        0.8,
+        0.55,
+        0.42
+      ],
+      "roughness": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "sand-floor",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        30.0,
+        30.0,
+        0.5
+      ],
+      "location": [
+        0.0,
+        0.0,
+        -0.25
+      ],
+      "material": "ochre-sand"
+    },
+    {
+      "id": "dune-back",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        26.0,
+        12.0,
+        8.0
+      ],
+      "location": [
+        -4.0,
+        15.0,
+        0.0
+      ],
+      "material": "dune-light"
+    },
+    {
+      "id": "dune-west",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        16.0,
+        12.0,
+        4.0
+      ],
+      "location": [
+        -13.0,
+        -8.0,
+        0.0
+      ],
+      "material": "dune-light"
+    },
+    {
+      "id": "flat-stone",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        0.7,
+        0.18
+      ],
+      "location": [
+        -3.9,
+        0.5,
+        0.09
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "far-dunes",
+      "shape": "plane",
+      "role": "sky",
+      "size_m": [
+        400.0,
+        0.0,
+        30.0
+      ],
+      "location": [
+        0.0,
+        120.0,
+        8.0
+      ],
+      "material": "far-dunes",
+      "collide": false
+    },
+    {
+      "id": "ring-stone-1",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.7,
+        0.6,
+        0.45
+      ],
+      "location": [
+        1.8,
+        0.0,
+        0.12
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "ring-stone-2",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.7,
+        0.6,
+        0.45
+      ],
+      "location": [
+        1.456,
+        1.058,
+        0.12
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "ring-stone-3",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.7,
+        0.6,
+        0.45
+      ],
+      "location": [
+        0.556,
+        1.712,
+        0.12
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "ring-stone-4",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.7,
+        0.6,
+        0.45
+      ],
+      "location": [
+        -0.556,
+        1.712,
+        0.12
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "ring-stone-5",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.7,
+        0.6,
+        0.45
+      ],
+      "location": [
+        -1.456,
+        1.058,
+        0.12
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "ring-stone-6",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.7,
+        0.6,
+        0.45
+      ],
+      "location": [
+        -1.8,
+        0.0,
+        0.12
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "ring-stone-7",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.7,
+        0.6,
+        0.45
+      ],
+      "location": [
+        -1.456,
+        -1.058,
+        0.12
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "ring-stone-8",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.7,
+        0.6,
+        0.45
+      ],
+      "location": [
+        -0.556,
+        -1.712,
+        0.12
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "ring-stone-9",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.7,
+        0.6,
+        0.45
+      ],
+      "location": [
+        0.556,
+        -1.712,
+        0.12
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "ring-stone-10",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.7,
+        0.6,
+        0.45
+      ],
+      "location": [
+        1.456,
+        -1.058,
+        0.12
+      ],
+      "material": "stone"
+    }
+  ],
+  "props": [
+    {
+      "id": "marker-pole",
+      "object": "marker-pole",
+      "location": [
+        -4.4,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "id": "journal",
+      "object": "father-journal",
+      "location": [
+        -3.4,
+        0.35,
+        0.0
+      ]
+    },
+    {
+      "id": "camp-fire",
+      "object": "campfire-ring",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "cairn-camp",
+      "object": "stone-cairn",
+      "location": [
+        7.0,
+        4.0,
+        0.0
+      ]
+    },
+    {
+      "id": "cairn-home",
+      "object": "stone-cairn",
+      "location": [
+        -5.0,
+        -11.0,
+        0.0
+      ],
+      "height_m": 0.9
+    }
+  ],
+  "scenes": {
+    "s3_father_camp": {
+      "note": "c6: the father's last camp at sunset: a ring of stones, the marker pole with a strip of cloth, his journal under a stone. Reading it pushes one level deeper.",
+      "world": {
+        "color": [
+          0.75,
+          0.45,
+          0.35
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "sunset",
+          "type": "SUN",
+          "location": [
+            60.0,
+            -20.0,
+            8.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 2.5,
+          "size": 1,
+          "color": [
+            1.0,
+            0.55,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          3.5,
+          -11.0,
+          3.0
+        ],
+        "look_at": [
+          -3.0,
+          1.0,
+          1.0
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          3.0,
+          -8.0,
+          0.0
+        ],
+        "facing_deg": 33.7
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "marker-pole",
+          "verb": "Touch the strip of cloth"
+        },
+        {
+          "prop": "journal",
+          "verb": "Open the father's journal",
+          "leads_to": "s3_father_walk"
+        }
+      ]
+    },
+    "s3_father_walk": {
+      "note": "c6, inside the journal: the father's last walk, years ago, in his first person, sepia, 90 s toward the herd (the 200 m walk runs on past the dune, beyond these bounds). The tea drains twice as fast; the journal stops mid-line and the game pulls back before anything is shown.",
+      "world": {
+        "color": [
+          0.6,
+          0.5,
+          0.35
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "old-sun",
+          "type": "SUN",
+          "location": [
+            -40.0,
+            60.0,
+            30.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 3.0,
+          "size": 1,
+          "color": [
+            0.95,
+            0.8,
+            0.55
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -4.0,
+          2.5,
+          1.65
+        ],
+        "look_at": [
+          -4.0,
+          40.0,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -4.0,
+          2.5,
+          0.0
+        ],
+        "facing_deg": 0.0
+      },
+      "hide": [
+        "journal",
+        "cairn-home"
+      ],
+      "interactions": []
+    },
+    "s3_camp_mark_c6": {
+      "note": "c6: the camp at night, moon and a fire. The cuckoo clock coos faintly: the third mark.",
+      "world": {
+        "color": [
+          0.04,
+          0.05,
+          0.12
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "moon",
+          "type": "SUN",
+          "location": [
+            -50.0,
+            80.0,
+            120.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 0.4,
+          "size": 1,
+          "color": [
+            0.7,
+            0.78,
+            1.0
+          ]
+        },
+        {
+          "name": "fire",
+          "type": "POINT",
+          "location": [
+            0.0,
+            0.0,
+            0.5
+          ],
+          "energy": 500,
+          "size": 0.4,
+          "color": [
+            1.0,
+            0.55,
+            0.2
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.5,
+          -8.0,
+          7.0
+        ],
+        "look_at": [
+          0.0,
+          0.0,
+          0.5
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          1.5,
+          -2.5,
+          0.0
+        ],
+        "facing_deg": 31.0
+      },
+      "hide": [
+        "journal"
+      ],
+      "interactions": [
+        {
+          "prop": "camp-fire",
+          "verb": "The clock coos: set the cup down, or one more page",
+          "leads_to": "s3_halls_c7"
+        }
+      ]
+    },
+    "s3_herd_final": {
+      "note": "c9: dawn at the father's marker; the herd returns and passes close. Three prompts in the world. The Xandrix is never a prop, so its flank prompt sits on the marker pole it passes; the track prompt (only if loophole_wake) on the camp cairn toward the track; the way back on the homeward cairn.",
+      "world": {
+        "color": [
+          0.7,
+          0.6,
+          0.65
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "dawn",
+          "type": "SUN",
+          "location": [
+            80.0,
+            10.0,
+            5.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 2.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.75,
+            0.6
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -4.0,
+          1.5
+        ],
+        "look_at": [
+          -4.4,
+          1.0,
+          1.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          -4.0,
+          0.0
+        ],
+        "facing_deg": 41.3
+      },
+      "hide": [
+        "journal"
+      ],
+      "interactions": [
+        {
+          "prop": "marker-pole",
+          "verb": "Climb the nearest Xandrix's flank",
+          "leads_to": "s3_xandrix_back"
+        },
+        {
+          "prop": "cairn-camp",
+          "verb": "Follow the smooth track past the mark",
+          "leads_to": "s2_li_c9"
+        },
+        {
+          "prop": "cairn-home",
+          "verb": "Turn back over the dunes",
+          "leads_to": "s3_village_return"
+        }
+      ]
+    }
+  }
+}

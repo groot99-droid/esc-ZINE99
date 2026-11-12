@@ -1,0 +1,444 @@
+{
+  "game": "endless-temple",
+  "location": "deep-desert",
+  "name": "The deep desert",
+  "reference": "assets/locations/deep-desert.jpg",
+  "bounds_m": [
+    600,
+    600,
+    80
+  ],
+  "origin": "the corridor's centre; +y toward the white horizon: the bones near the south start, the dune crest at y = 170, the herd's smooth track along y = 255",
+  "materials": {
+    "bleached-sand": {
+      "color": [
+        0.93,
+        0.85,
+        0.66
+      ],
+      "roughness": 0.95
+    },
+    "wave-shadow": {
+      "color": [
+        0.8,
+        0.65,
+        0.45
+      ],
+      "roughness": 0.95
+    },
+    "packed-track": {
+      "color": [
+        0.96,
+        0.9,
+        0.75
+      ],
+      "roughness": 0.7
+    },
+    "haze": {
+      "color": [
+        0.98,
+        0.96,
+        0.88
+      ],
+      "roughness": 1.0,
+      "emission": 0.6
+    }
+  },
+  "blockout": [
+    {
+      "id": "sand-floor",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        600.0,
+        600.0,
+        1.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        -0.5
+      ],
+      "material": "bleached-sand"
+    },
+    {
+      "id": "wave-south",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        200.0,
+        25.0,
+        6.0
+      ],
+      "location": [
+        0.0,
+        -150.0,
+        0.0
+      ],
+      "material": "wave-shadow"
+    },
+    {
+      "id": "wave-west",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        180.0,
+        30.0,
+        8.0
+      ],
+      "location": [
+        -80.0,
+        -60.0,
+        0.0
+      ],
+      "material": "bleached-sand"
+    },
+    {
+      "id": "wave-east",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        220.0,
+        30.0,
+        7.0
+      ],
+      "location": [
+        100.0,
+        40.0,
+        0.0
+      ],
+      "material": "wave-shadow"
+    },
+    {
+      "id": "crest",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        160.0,
+        40.0,
+        22.0
+      ],
+      "location": [
+        0.0,
+        170.0,
+        0.0
+      ],
+      "material": "bleached-sand"
+    },
+    {
+      "id": "crest-shoulder",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        120.0,
+        30.0,
+        14.0
+      ],
+      "location": [
+        -140.0,
+        190.0,
+        0.0
+      ],
+      "material": "bleached-sand"
+    },
+    {
+      "id": "herd-track",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        600.0,
+        8.0,
+        0.05
+      ],
+      "location": [
+        0.0,
+        255.0,
+        0.03
+      ],
+      "material": "packed-track",
+      "collide": false
+    },
+    {
+      "id": "sand-hollow",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        40.0,
+        18.0,
+        0.05
+      ],
+      "location": [
+        60.0,
+        -100.0,
+        0.02
+      ],
+      "material": "wave-shadow",
+      "collide": false
+    },
+    {
+      "id": "white-horizon",
+      "shape": "plane",
+      "role": "sky",
+      "size_m": [
+        2000.0,
+        0.0,
+        120.0
+      ],
+      "location": [
+        0.0,
+        700.0,
+        40.0
+      ],
+      "material": "haze",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "bone-a",
+      "object": "giant-bone",
+      "location": [
+        -10.0,
+        -200.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        30.0
+      ]
+    },
+    {
+      "id": "bone-b",
+      "object": "giant-bone",
+      "location": [
+        8.0,
+        -186.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        -60.0
+      ],
+      "height_m": 1.5
+    },
+    {
+      "id": "bone-c",
+      "object": "giant-bone",
+      "location": [
+        -26.0,
+        -172.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "height_m": 1.8
+    },
+    {
+      "id": "bone-crest",
+      "object": "giant-bone",
+      "location": [
+        6.0,
+        166.0,
+        10.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        95.0
+      ],
+      "height_m": 1.2
+    }
+  ],
+  "scenes": {
+    "s3_deep_desert": {
+      "note": "c6: bleached noon. Wider waves, no vines, bones of something old (look only); nothing living. The hum begins.",
+      "world": {
+        "color": [
+          0.96,
+          0.93,
+          0.82
+        ],
+        "strength": 0.9
+      },
+      "lights": [
+        {
+          "name": "noon-sun",
+          "type": "SUN",
+          "location": [
+            0.0,
+            0.0,
+            300.0
+          ],
+          "look_at": [
+            20.0,
+            30.0,
+            0.0
+          ],
+          "energy": 7.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.98,
+            0.92
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -240.0,
+          1.5
+        ],
+        "look_at": [
+          -6.0,
+          -190.0,
+          0.6
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          -240.0,
+          0.0
+        ],
+        "facing_deg": 6.8
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "bone-a",
+          "verb": "Look at the old bones"
+        }
+      ]
+    },
+    "s3_herd_sighting": {
+      "note": "c6: on a dune crest at late sun, lying flat (hold) as five Xandrixes cross about a kilometre off (beyond the bounds, toward +y); the ground hums. The player is told nothing. The herd is never a prop.",
+      "world": {
+        "color": [
+          0.9,
+          0.75,
+          0.55
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "late-sun",
+          "type": "SUN",
+          "location": [
+            -300.0,
+            150.0,
+            40.0
+          ],
+          "look_at": [
+            0.0,
+            200.0,
+            0.0
+          ],
+          "energy": 3.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.75,
+            0.45
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.0,
+          163.0,
+          11.05
+        ],
+        "look_at": [
+          0.0,
+          400.0,
+          3.0
+        ],
+        "lens_mm": 50,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          2.0,
+          163.0,
+          10.6
+        ],
+        "facing_deg": 0.5
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "bone-crest",
+          "verb": "Lie flat on the crest (hold)",
+          "leads_to": "s2_li_c6"
+        }
+      ]
+    },
+    "s3_xandrix_back": {
+      "note": "c9, The Rider: on the back of a moving Xandrix (never placed; the player start is his seat above the track), the camera rising high past the father's mark toward a white horizon. Hold on is a hold-interact on the god's back, so no prop carries it.",
+      "world": {
+        "color": [
+          0.97,
+          0.96,
+          0.92
+        ],
+        "strength": 1.0
+      },
+      "lights": [
+        {
+          "name": "white-sun",
+          "type": "SUN",
+          "location": [
+            0.0,
+            0.0,
+            300.0
+          ],
+          "look_at": [
+            0.0,
+            300.0,
+            0.0
+          ],
+          "energy": 6.0,
+          "size": 1,
+          "color": [
+            1.0,
+            1.0,
+            0.97
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          232.0,
+          16.0
+        ],
+        "look_at": [
+          0.0,
+          330.0,
+          4.0
+        ],
+        "lens_mm": 24,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          255.0,
+          6.0
+        ],
+        "facing_deg": 0.0
+      },
+      "hide": [],
+      "interactions": []
+    }
+  }
+}

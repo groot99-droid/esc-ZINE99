@@ -1,0 +1,1856 @@
+{
+  "game": "endless-temple",
+  "location": "temple-halls",
+  "name": "The temple halls and the reading chair",
+  "reference": "assets/locations/temple-halls.jpg",
+  "bounds_m": [
+    40,
+    18,
+    12
+  ],
+  "origin": "floor centre; +x toward the great window and the doorway to the stacks and pantry, -x the door from Elaris's room; +y the north shelf wall with the stair to the gallery",
+  "materials": {
+    "floor-sage": {
+      "color": [
+        0.56,
+        0.62,
+        0.5
+      ],
+      "roughness": 0.85
+    },
+    "plaster-honey": {
+      "color": [
+        0.82,
+        0.68,
+        0.42
+      ],
+      "roughness": 0.9
+    },
+    "ceiling": {
+      "color": [
+        0.45,
+        0.38,
+        0.26
+      ],
+      "roughness": 0.9
+    },
+    "walnut": {
+      "color": [
+        0.3,
+        0.19,
+        0.11
+      ],
+      "roughness": 0.7
+    },
+    "book-spines": {
+      "color": [
+        0.42,
+        0.24,
+        0.14
+      ],
+      "roughness": 0.85
+    },
+    "brass": {
+      "color": [
+        0.72,
+        0.58,
+        0.3
+      ],
+      "roughness": 0.4,
+      "metallic": 0.7
+    },
+    "window-gold": {
+      "color": [
+        0.98,
+        0.9,
+        0.68
+      ],
+      "roughness": 0.1,
+      "emission": 1.0
+    },
+    "vellum": {
+      "color": [
+        0.9,
+        0.85,
+        0.7
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        40.0,
+        18.0,
+        0.2
+      ],
+      "location": [
+        0.0,
+        0.0,
+        -0.1
+      ],
+      "material": "floor-sage"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        40.0,
+        18.0,
+        0.3
+      ],
+      "location": [
+        0.0,
+        0.0,
+        12.15
+      ],
+      "material": "ceiling"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40.0,
+        0.4,
+        12.0
+      ],
+      "location": [
+        0.0,
+        9.2,
+        6.0
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40.0,
+        0.4,
+        12.0
+      ],
+      "location": [
+        0.0,
+        -9.2,
+        6.0
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "wall-east-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        5.0,
+        12.0
+      ],
+      "location": [
+        20.2,
+        -6.5,
+        6.0
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "wall-east-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        5.0,
+        12.0
+      ],
+      "location": [
+        20.2,
+        6.5,
+        6.0
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "wall-east-low-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        2.25,
+        6.5
+      ],
+      "location": [
+        20.2,
+        -2.875,
+        3.25
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "wall-east-low-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        2.25,
+        6.5
+      ],
+      "location": [
+        20.2,
+        2.875,
+        3.25
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "wall-east-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        3.5,
+        1.0
+      ],
+      "location": [
+        20.2,
+        0.0,
+        6.0
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "wall-east-top",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        8.0,
+        0.5
+      ],
+      "location": [
+        20.2,
+        0.0,
+        11.75
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "great-window",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.1,
+        8.0,
+        5.0
+      ],
+      "location": [
+        20.0,
+        0.0,
+        9.0
+      ],
+      "material": "window-gold",
+      "collide": false
+    },
+    {
+      "id": "wall-west-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        7.75,
+        12.0
+      ],
+      "location": [
+        -20.2,
+        -5.125,
+        6.0
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "wall-west-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        7.75,
+        12.0
+      ],
+      "location": [
+        -20.2,
+        5.125,
+        6.0
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "wall-west-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        2.5,
+        8.5
+      ],
+      "location": [
+        -20.2,
+        0.0,
+        7.75
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "gallery-north",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        40.0,
+        2.6,
+        0.3
+      ],
+      "location": [
+        0.0,
+        7.7,
+        5.15
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "gallery-south",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        40.0,
+        2.6,
+        0.3
+      ],
+      "location": [
+        0.0,
+        -7.7,
+        5.15
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "railing-north",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        40.0,
+        0.12,
+        1.1
+      ],
+      "location": [
+        0.0,
+        6.45,
+        5.85
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "railing-south",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        40.0,
+        0.12,
+        1.1
+      ],
+      "location": [
+        0.0,
+        -6.45,
+        5.85
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "shelves-north-low",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        38.0,
+        0.7,
+        4.9
+      ],
+      "location": [
+        0.0,
+        8.65,
+        2.45
+      ],
+      "material": "book-spines"
+    },
+    {
+      "id": "shelves-north-high",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        38.0,
+        0.7,
+        6.2
+      ],
+      "location": [
+        0.0,
+        8.65,
+        8.6
+      ],
+      "material": "book-spines"
+    },
+    {
+      "id": "shelves-south-low",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        38.0,
+        0.7,
+        4.9
+      ],
+      "location": [
+        0.0,
+        -8.65,
+        2.45
+      ],
+      "material": "book-spines"
+    },
+    {
+      "id": "shelves-south-high",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        38.0,
+        0.7,
+        6.2
+      ],
+      "location": [
+        0.0,
+        -8.65,
+        8.6
+      ],
+      "material": "book-spines"
+    },
+    {
+      "id": "stair-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.85,
+        1.5,
+        0.662
+      ],
+      "location": [
+        -17.575,
+        5.6,
+        0.331
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "stair-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.85,
+        1.5,
+        1.325
+      ],
+      "location": [
+        -16.725,
+        5.6,
+        0.662
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "stair-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.85,
+        1.5,
+        1.987
+      ],
+      "location": [
+        -15.875,
+        5.6,
+        0.994
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "stair-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.85,
+        1.5,
+        2.65
+      ],
+      "location": [
+        -15.025,
+        5.6,
+        1.325
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "stair-5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.85,
+        1.5,
+        3.312
+      ],
+      "location": [
+        -14.175,
+        5.6,
+        1.656
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "stair-6",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.85,
+        1.5,
+        3.975
+      ],
+      "location": [
+        -13.325,
+        5.6,
+        1.987
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "stair-7",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.85,
+        1.5,
+        4.638
+      ],
+      "location": [
+        -12.475,
+        5.6,
+        2.319
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "stair-8",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.85,
+        1.5,
+        5.3
+      ],
+      "location": [
+        -11.625,
+        5.6,
+        2.65
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "pillar-north-west",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        5.0
+      ],
+      "location": [
+        -8.0,
+        6.4,
+        2.5
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "pillar-south-west",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        5.0
+      ],
+      "location": [
+        -8.0,
+        -6.4,
+        2.5
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "pillar-north-east",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        5.0
+      ],
+      "location": [
+        8.0,
+        6.4,
+        2.5
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "pillar-south-east",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        5.0
+      ],
+      "location": [
+        8.0,
+        -6.4,
+        2.5
+      ],
+      "material": "plaster-honey"
+    },
+    {
+      "id": "reading-table",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.6,
+        1.2,
+        0.95
+      ],
+      "location": [
+        6.0,
+        -2.5,
+        0.475
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "book-stack-a",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.8,
+        1.0
+      ],
+      "location": [
+        -15.0,
+        -6.4,
+        0.5
+      ],
+      "material": "vellum"
+    },
+    {
+      "id": "book-stack-b",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        1.4
+      ],
+      "location": [
+        -13.4,
+        -7.3,
+        0.7
+      ],
+      "material": "book-spines"
+    }
+  ],
+  "props": [
+    {
+      "id": "reading-chair",
+      "object": "reading-chair",
+      "location": [
+        6.0,
+        -4.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        180.0
+      ]
+    },
+    {
+      "id": "sand-book",
+      "object": "sand-book",
+      "location": [
+        5.7,
+        -2.4,
+        0.95
+      ]
+    },
+    {
+      "id": "yesterdays-book",
+      "object": "yesterdays-book",
+      "location": [
+        6.7,
+        -2.2,
+        0.95
+      ]
+    },
+    {
+      "id": "lizard-plate",
+      "object": "lizard-plate",
+      "location": [
+        5.0,
+        -2.7,
+        0.95
+      ]
+    },
+    {
+      "id": "teacup",
+      "object": "teacup",
+      "location": [
+        6.9,
+        -2.85,
+        0.95
+      ]
+    },
+    {
+      "id": "cuckoo-clock",
+      "object": "cuckoo-clock",
+      "location": [
+        7.45,
+        -6.4,
+        3.4
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        -90.0
+      ],
+      "ground": false
+    },
+    {
+      "id": "broom",
+      "object": "broom",
+      "location": [
+        18.6,
+        -2.4,
+        0.0
+      ]
+    },
+    {
+      "id": "shelf-aisle-a",
+      "object": "bookshelf",
+      "location": [
+        -6.0,
+        4.3,
+        0.0
+      ]
+    },
+    {
+      "id": "shelf-aisle-b",
+      "object": "bookshelf",
+      "location": [
+        -2.0,
+        4.3,
+        0.0
+      ]
+    },
+    {
+      "id": "shelf-aisle-c",
+      "object": "bookshelf",
+      "location": [
+        2.0,
+        4.3,
+        0.0
+      ]
+    },
+    {
+      "id": "ladder-north",
+      "object": "library-ladder",
+      "location": [
+        -4.0,
+        8.0,
+        0.0
+      ]
+    },
+    {
+      "id": "ladder-south",
+      "object": "library-ladder",
+      "location": [
+        12.0,
+        -8.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        180.0
+      ]
+    },
+    {
+      "id": "ladder-gallery",
+      "object": "library-ladder",
+      "location": [
+        14.0,
+        8.0,
+        5.3
+      ]
+    },
+    {
+      "id": "yesterdays-book-shelved",
+      "object": "yesterdays-book",
+      "location": [
+        -2.0,
+        8.2,
+        1.9
+      ],
+      "ground": false
+    },
+    {
+      "id": "sand-book-shelved",
+      "object": "sand-book",
+      "location": [
+        -1.7,
+        8.2,
+        1.9
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "s3_halls_c1": {
+      "note": "c1, bright late morning with dust motes. Open the window and the sunbeam reaches the reading chair; wind the cuckoo clock; eat the roast sea lizard; name and shelve yesterday's book; the sand book lies on the table, blank spine, leaking sand.",
+      "world": {
+        "color": [
+          0.85,
+          0.76,
+          0.58
+        ],
+        "strength": 0.55
+      },
+      "lights": [
+        {
+          "name": "sun",
+          "type": "SUN",
+          "location": [
+            20.0,
+            0.0,
+            11.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.0
+          ],
+          "energy": 4.5,
+          "size": 1,
+          "color": [
+            1.0,
+            0.92,
+            0.75
+          ]
+        },
+        {
+          "name": "sunbeam",
+          "type": "SPOT",
+          "location": [
+            19.6,
+            0.0,
+            9.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.6
+          ],
+          "energy": 7000,
+          "size": 0.6,
+          "color": [
+            1.0,
+            0.88,
+            0.62
+          ]
+        },
+        {
+          "name": "hall-fill",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            11.6
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 1200,
+          "size": 12,
+          "color": [
+            1.0,
+            0.9,
+            0.7
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -18.5,
+          0.0,
+          2.3
+        ],
+        "look_at": [
+          6.0,
+          -2.5,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -18.5,
+          0.0,
+          0.0
+        ],
+        "facing_deg": -95.8
+      },
+      "hide": [
+        "yesterdays-book-shelved",
+        "sand-book-shelved"
+      ],
+      "interactions": [
+        {
+          "prop": "cuckoo-clock",
+          "verb": "Wind the clock"
+        },
+        {
+          "prop": "lizard-plate",
+          "verb": "Eat the roast sea lizard"
+        },
+        {
+          "prop": "yesterdays-book",
+          "verb": "Name yesterday's book",
+          "leads_to": "g_name_c1"
+        },
+        {
+          "prop": "sand-book",
+          "verb": "Pick up the sand book"
+        }
+      ]
+    },
+    "s3_halls_c3": {
+      "note": "c3, overcast; sand around the reading chair (a sand-drift decal, not blockout). Duties: sweep the sand back into the gutter, wind the clock, shelve two strays. A dry ticking calls from the stacks.",
+      "world": {
+        "color": [
+          0.62,
+          0.64,
+          0.6
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "sun",
+          "type": "SUN",
+          "location": [
+            20.0,
+            0.0,
+            11.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.0
+          ],
+          "energy": 1.5,
+          "size": 1,
+          "color": [
+            0.85,
+            0.88,
+            0.9
+          ]
+        },
+        {
+          "name": "hall-fill",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            11.6
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 1400,
+          "size": 12,
+          "color": [
+            0.85,
+            0.88,
+            0.9
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -18.5,
+          0.0,
+          2.3
+        ],
+        "look_at": [
+          6.0,
+          -2.5,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -18.5,
+          0.0,
+          0.0
+        ],
+        "facing_deg": -95.8
+      },
+      "hide": [
+        "yesterdays-book",
+        "lizard-plate",
+        "sand-book-shelved"
+      ],
+      "interactions": [
+        {
+          "prop": "broom",
+          "verb": "Sweep the sand back into the book's gutter"
+        },
+        {
+          "prop": "cuckoo-clock",
+          "verb": "Wind the clock"
+        },
+        {
+          "prop": "shelf-aisle-a",
+          "verb": "Shelve the stray books"
+        },
+        {
+          "prop": "shelf-aisle-c",
+          "verb": "Follow the dry ticking",
+          "leads_to": "s2_stacks_c3"
+        }
+      ]
+    },
+    "s3_halls_c5": {
+      "note": "c5, rain-grey light. A book on a high gallery shelf drips; two duties (sweep, dust), then the ladder up to it and the stacks after the falling drops.",
+      "world": {
+        "color": [
+          0.5,
+          0.55,
+          0.6
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "sun",
+          "type": "SUN",
+          "location": [
+            20.0,
+            0.0,
+            11.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.0
+          ],
+          "energy": 0.8,
+          "size": 1,
+          "color": [
+            0.7,
+            0.78,
+            0.88
+          ]
+        },
+        {
+          "name": "hall-fill",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            11.6
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 1100,
+          "size": 12,
+          "color": [
+            0.75,
+            0.82,
+            0.9
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -18.5,
+          0.0,
+          2.3
+        ],
+        "look_at": [
+          6.0,
+          -2.5,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -18.5,
+          0.0,
+          0.0
+        ],
+        "facing_deg": -95.8
+      },
+      "hide": [
+        "yesterdays-book",
+        "lizard-plate",
+        "sand-book-shelved"
+      ],
+      "interactions": [
+        {
+          "prop": "broom",
+          "verb": "Sweep"
+        },
+        {
+          "prop": "shelf-aisle-b",
+          "verb": "Dust the shelves"
+        },
+        {
+          "prop": "ladder-gallery",
+          "verb": "Climb to the dripping book",
+          "leads_to": "s2_stacks_c5"
+        }
+      ]
+    },
+    "s3_halls_c6": {
+      "note": "c6, harsh light; the sand book has spilled a drift across the table. Elaris brews at once.",
+      "world": {
+        "color": [
+          0.92,
+          0.86,
+          0.7
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "sun",
+          "type": "SUN",
+          "location": [
+            20.0,
+            0.0,
+            11.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.0
+          ],
+          "energy": 7.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.97,
+            0.9
+          ]
+        },
+        {
+          "name": "sunbeam",
+          "type": "SPOT",
+          "location": [
+            19.6,
+            0.0,
+            9.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.6
+          ],
+          "energy": 9000,
+          "size": 0.6,
+          "color": [
+            1.0,
+            0.88,
+            0.62
+          ]
+        },
+        {
+          "name": "hall-fill",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            11.6
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 1200,
+          "size": 12,
+          "color": [
+            1.0,
+            0.95,
+            0.85
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -18.5,
+          0.0,
+          2.3
+        ],
+        "look_at": [
+          6.0,
+          -2.5,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -18.5,
+          0.0,
+          0.0
+        ],
+        "facing_deg": -95.8
+      },
+      "hide": [
+        "yesterdays-book",
+        "lizard-plate",
+        "sand-book-shelved"
+      ],
+      "interactions": [
+        {
+          "prop": "sand-book",
+          "verb": "Look at the spilled drift"
+        },
+        {
+          "prop": "teacup",
+          "verb": "Brew at once",
+          "leads_to": "g_tea_c6"
+        }
+      ]
+    },
+    "s3_halls_c7": {
+      "note": "c7, dusk light low through the great window. Ink seeps from a shelf; two duties, then the stacks after the ink.",
+      "world": {
+        "color": [
+          0.45,
+          0.32,
+          0.3
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "sun-low",
+          "type": "SUN",
+          "location": [
+            20.0,
+            0.0,
+            4.0
+          ],
+          "look_at": [
+            -10.0,
+            0.0,
+            1.0
+          ],
+          "energy": 2.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.55,
+            0.3
+          ]
+        },
+        {
+          "name": "hall-fill",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            11.6
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 500,
+          "size": 12,
+          "color": [
+            0.85,
+            0.6,
+            0.5
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -18.5,
+          0.0,
+          2.3
+        ],
+        "look_at": [
+          6.0,
+          -2.5,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -18.5,
+          0.0,
+          0.0
+        ],
+        "facing_deg": -95.8
+      },
+      "hide": [
+        "yesterdays-book",
+        "lizard-plate",
+        "sand-book-shelved"
+      ],
+      "interactions": [
+        {
+          "prop": "broom",
+          "verb": "Sweep"
+        },
+        {
+          "prop": "cuckoo-clock",
+          "verb": "Wind the clock"
+        },
+        {
+          "prop": "shelf-aisle-b",
+          "verb": "Follow the ink",
+          "leads_to": "s2_stacks_c7"
+        }
+      ]
+    },
+    "s3_halls_c8": {
+      "note": "c8, thin grey light; the cuckoo clock has stopped and there is no tick. Sand is ankle-deep if sand_leak is 60 or more (decal). Follow the cold, not the call.",
+      "world": {
+        "color": [
+          0.55,
+          0.57,
+          0.6
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "sun",
+          "type": "SUN",
+          "location": [
+            20.0,
+            0.0,
+            11.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.0
+          ],
+          "energy": 0.5,
+          "size": 1,
+          "color": [
+            0.75,
+            0.8,
+            0.88
+          ]
+        },
+        {
+          "name": "hall-fill",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            11.6
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 600,
+          "size": 12,
+          "color": [
+            0.8,
+            0.84,
+            0.9
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -18.5,
+          0.0,
+          2.3
+        ],
+        "look_at": [
+          6.0,
+          -2.5,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -18.5,
+          0.0,
+          0.0
+        ],
+        "facing_deg": -95.8
+      },
+      "hide": [
+        "yesterdays-book",
+        "lizard-plate",
+        "sand-book-shelved"
+      ],
+      "interactions": [
+        {
+          "prop": "cuckoo-clock",
+          "verb": "Look at the stopped clock"
+        },
+        {
+          "prop": "shelf-aisle-c",
+          "verb": "Follow the cold",
+          "leads_to": "s2_stacks_c8"
+        }
+      ]
+    },
+    "s3_last_cup": {
+      "note": "The reading chair, seated. Whatever Xandri chose, the tea thins; Elaris's hand finds the pot. Set the cup down or drink; the endings resolver picks e_stayed, e_rider, e_named or e_returned. Light here dims by a third when steep is 60 or more.",
+      "world": {
+        "color": [
+          0.8,
+          0.68,
+          0.5
+        ],
+        "strength": 0.45
+      },
+      "lights": [
+        {
+          "name": "sun",
+          "type": "SUN",
+          "location": [
+            20.0,
+            0.0,
+            11.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.0
+          ],
+          "energy": 3.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.88,
+            0.68
+          ]
+        },
+        {
+          "name": "sunbeam",
+          "type": "SPOT",
+          "location": [
+            19.6,
+            0.0,
+            9.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.6
+          ],
+          "energy": 5000,
+          "size": 0.6,
+          "color": [
+            1.0,
+            0.88,
+            0.62
+          ]
+        },
+        {
+          "name": "hall-fill",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            11.6
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 900,
+          "size": 12,
+          "color": [
+            1.0,
+            0.88,
+            0.7
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          6.0,
+          -4.0,
+          1.75
+        ],
+        "look_at": [
+          6.0,
+          -2.4,
+          0.95
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          6.0,
+          -4.0,
+          0.0
+        ],
+        "facing_deg": -0.0
+      },
+      "hide": [
+        "yesterdays-book",
+        "lizard-plate",
+        "sand-book-shelved"
+      ],
+      "interactions": [
+        {
+          "prop": "teacup",
+          "verb": "Set the cup down"
+        },
+        {
+          "prop": "teacup",
+          "verb": "Drink"
+        }
+      ]
+    },
+    "e_stayed": {
+      "note": "The Reader Who Stayed. Fixed, from across the room: the chair, the book open, the cup full, no one watching; a second book leaks (rain, ink or mist). The sunbeam draws back across the floor and stops short of the chair.",
+      "world": {
+        "color": [
+          0.62,
+          0.56,
+          0.46
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "sun",
+          "type": "SUN",
+          "location": [
+            20.0,
+            0.0,
+            11.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.0
+          ],
+          "energy": 2.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.88,
+            0.65
+          ]
+        },
+        {
+          "name": "sunbeam-retreating",
+          "type": "SPOT",
+          "location": [
+            19.6,
+            0.0,
+            9.0
+          ],
+          "look_at": [
+            11.5,
+            -2.2,
+            0.0
+          ],
+          "energy": 4000,
+          "size": 0.6,
+          "color": [
+            1.0,
+            0.88,
+            0.62
+          ]
+        },
+        {
+          "name": "hall-fill",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            11.6
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 600,
+          "size": 12,
+          "color": [
+            0.9,
+            0.82,
+            0.7
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -4.0,
+          4.0,
+          3.2
+        ],
+        "look_at": [
+          6.0,
+          -3.5,
+          1.0
+        ],
+        "lens_mm": 35,
+        "mode": "fixed"
+      },
+      "hide": [
+        "yesterdays-book",
+        "lizard-plate",
+        "sand-book-shelved"
+      ],
+      "interactions": []
+    },
+    "e_rider": {
+      "note": "The Rider, the temple beat. Fixed, close on the table: the sand book's title page writes itself in a hand that is not Elaris's.",
+      "world": {
+        "color": [
+          0.85,
+          0.76,
+          0.58
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "sun",
+          "type": "SUN",
+          "location": [
+            20.0,
+            0.0,
+            11.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.0
+          ],
+          "energy": 3.5,
+          "size": 1,
+          "color": [
+            1.0,
+            0.92,
+            0.75
+          ]
+        },
+        {
+          "name": "sunbeam",
+          "type": "SPOT",
+          "location": [
+            19.6,
+            0.0,
+            9.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.6
+          ],
+          "energy": 5000,
+          "size": 0.6,
+          "color": [
+            1.0,
+            0.88,
+            0.62
+          ]
+        },
+        {
+          "name": "hall-fill",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            11.6
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 900,
+          "size": 12,
+          "color": [
+            1.0,
+            0.9,
+            0.7
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          4.2,
+          -0.6,
+          2.2
+        ],
+        "look_at": [
+          5.7,
+          -2.4,
+          1.0
+        ],
+        "lens_mm": 40,
+        "mode": "fixed"
+      },
+      "hide": [
+        "yesterdays-book",
+        "lizard-plate",
+        "sand-book-shelved"
+      ],
+      "interactions": []
+    },
+    "e_named": {
+      "note": "The Named Book. Fixed on the north shelf: the sand book, named in ink on its spine, shelved beside yesterday's book. The sand stops.",
+      "world": {
+        "color": [
+          0.85,
+          0.76,
+          0.58
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "sun",
+          "type": "SUN",
+          "location": [
+            20.0,
+            0.0,
+            11.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.0
+          ],
+          "energy": 4.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.92,
+            0.75
+          ]
+        },
+        {
+          "name": "sunbeam",
+          "type": "SPOT",
+          "location": [
+            19.6,
+            0.0,
+            9.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.6
+          ],
+          "energy": 6000,
+          "size": 0.6,
+          "color": [
+            1.0,
+            0.88,
+            0.62
+          ]
+        },
+        {
+          "name": "hall-fill",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            11.6
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 1000,
+          "size": 12,
+          "color": [
+            1.0,
+            0.9,
+            0.7
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -1.9,
+          5.0,
+          2.3
+        ],
+        "look_at": [
+          -1.85,
+          8.2,
+          1.9
+        ],
+        "lens_mm": 40,
+        "mode": "fixed"
+      },
+      "hide": [
+        "yesterdays-book",
+        "lizard-plate",
+        "sand-book"
+      ],
+      "interactions": []
+    }
+  }
+}

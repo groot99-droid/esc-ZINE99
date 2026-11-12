@@ -1,0 +1,745 @@
+{
+  "game": "endless-temple",
+  "location": "storyteller-hut",
+  "name": "The storyteller's hut and the way home",
+  "reference": "assets/locations/storyteller-hut.jpg",
+  "bounds_m": [
+    10,
+    10,
+    6
+  ],
+  "origin": "the firepit at the floor centre; +y toward the door and the path out to the dunes; the storyteller's seat on the -y side facing the door",
+  "materials": {
+    "packed-earth": {
+      "color": [
+        0.72,
+        0.52,
+        0.3
+      ],
+      "roughness": 0.95
+    },
+    "mud-wall": {
+      "color": [
+        0.66,
+        0.42,
+        0.22
+      ],
+      "roughness": 0.95
+    },
+    "thatch": {
+      "color": [
+        0.6,
+        0.45,
+        0.22
+      ],
+      "roughness": 0.95
+    },
+    "reed-mat": {
+      "color": [
+        0.55,
+        0.38,
+        0.18
+      ],
+      "roughness": 0.95
+    },
+    "dark-wood": {
+      "color": [
+        0.3,
+        0.2,
+        0.12
+      ],
+      "roughness": 0.8
+    },
+    "soot": {
+      "color": [
+        0.02,
+        0.02,
+        0.02
+      ],
+      "roughness": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        9.8,
+        9.8,
+        0.1
+      ],
+      "location": [
+        0.0,
+        0.0,
+        -0.05
+      ],
+      "material": "packed-earth"
+    },
+    {
+      "id": "wall-1",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.018,
+        0.3,
+        2.6
+      ],
+      "location": [
+        4.85,
+        0.0,
+        1.3
+      ],
+      "material": "mud-wall",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        90.0
+      ]
+    },
+    {
+      "id": "wall-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.018,
+        0.3,
+        2.6
+      ],
+      "location": [
+        3.429,
+        3.429,
+        1.3
+      ],
+      "material": "mud-wall",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        135.0
+      ]
+    },
+    {
+      "id": "wall-4",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.018,
+        0.3,
+        2.6
+      ],
+      "location": [
+        -3.429,
+        3.429,
+        1.3
+      ],
+      "material": "mud-wall",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        225.0
+      ]
+    },
+    {
+      "id": "wall-5",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.018,
+        0.3,
+        2.6
+      ],
+      "location": [
+        -4.85,
+        0.0,
+        1.3
+      ],
+      "material": "mud-wall",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        270.0
+      ]
+    },
+    {
+      "id": "wall-6",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.018,
+        0.3,
+        2.6
+      ],
+      "location": [
+        -3.429,
+        -3.429,
+        1.3
+      ],
+      "material": "mud-wall",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        315.0
+      ]
+    },
+    {
+      "id": "wall-7",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.018,
+        0.3,
+        2.6
+      ],
+      "location": [
+        -0.0,
+        -4.85,
+        1.3
+      ],
+      "material": "mud-wall",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        360.0
+      ]
+    },
+    {
+      "id": "wall-8",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.018,
+        0.3,
+        2.6
+      ],
+      "location": [
+        3.429,
+        -3.429,
+        1.3
+      ],
+      "material": "mud-wall",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        405.0
+      ]
+    },
+    {
+      "id": "door-jamb-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.409,
+        0.3,
+        2.6
+      ],
+      "location": [
+        -1.304,
+        4.85,
+        1.3
+      ],
+      "material": "mud-wall"
+    },
+    {
+      "id": "door-jamb-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.409,
+        0.3,
+        2.6
+      ],
+      "location": [
+        1.304,
+        4.85,
+        1.3
+      ],
+      "material": "mud-wall"
+    },
+    {
+      "id": "door-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.2,
+        0.3,
+        0.7
+      ],
+      "location": [
+        0.0,
+        4.85,
+        2.25
+      ],
+      "material": "mud-wall"
+    },
+    {
+      "id": "dome",
+      "shape": "sphere",
+      "role": "ceiling",
+      "size_m": [
+        10.2,
+        10.2,
+        6.8
+      ],
+      "location": [
+        0.0,
+        0.0,
+        2.6
+      ],
+      "material": "thatch",
+      "collide": false
+    },
+    {
+      "id": "smoke-hole",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.6,
+        0.6,
+        0.1
+      ],
+      "location": [
+        0.0,
+        0.0,
+        5.9
+      ],
+      "material": "soot",
+      "collide": false
+    },
+    {
+      "id": "storyteller-seat",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.7,
+        1.2
+      ],
+      "location": [
+        0.0,
+        -3.4,
+        0.6
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "stool-west",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.4,
+        0.4,
+        0.4
+      ],
+      "location": [
+        -1.6,
+        -1.2,
+        0.2
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "stool-east",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.4,
+        0.4,
+        0.4
+      ],
+      "location": [
+        1.6,
+        -1.2,
+        0.2
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "path-out",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        2.0,
+        1.2,
+        0.1
+      ],
+      "location": [
+        0.0,
+        5.5,
+        -0.05
+      ],
+      "material": "packed-earth"
+    },
+    {
+      "id": "mat-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.2,
+        0.8,
+        0.02
+      ],
+      "location": [
+        3.2,
+        0.0,
+        0.01
+      ],
+      "material": "reed-mat",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        90.0
+      ],
+      "collide": false
+    },
+    {
+      "id": "mat-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.2,
+        0.8,
+        0.02
+      ],
+      "location": [
+        2.263,
+        2.263,
+        0.01
+      ],
+      "material": "reed-mat",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        135.0
+      ],
+      "collide": false
+    },
+    {
+      "id": "mat-4",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.2,
+        0.8,
+        0.02
+      ],
+      "location": [
+        -2.263,
+        2.263,
+        0.01
+      ],
+      "material": "reed-mat",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        225.0
+      ],
+      "collide": false
+    },
+    {
+      "id": "mat-5",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.2,
+        0.8,
+        0.02
+      ],
+      "location": [
+        -3.2,
+        0.0,
+        0.01
+      ],
+      "material": "reed-mat",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        270.0
+      ],
+      "collide": false
+    },
+    {
+      "id": "mat-6",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.2,
+        0.8,
+        0.02
+      ],
+      "location": [
+        -2.263,
+        -2.263,
+        0.01
+      ],
+      "material": "reed-mat",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        315.0
+      ],
+      "collide": false
+    },
+    {
+      "id": "mat-8",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.2,
+        0.8,
+        0.02
+      ],
+      "location": [
+        2.263,
+        -2.263,
+        0.01
+      ],
+      "material": "reed-mat",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        405.0
+      ],
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "firepit",
+      "object": "campfire-ring",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "height_m": 0.45
+    }
+  ],
+  "scenes": {
+    "s3_circle": {
+      "note": "c2: Xandri sits among 14 children as the storyteller speaks (the source's lines are her whole speech). One prompt, the raised hand; unpressed for 40 s, his hand shoots up anyway. Firelight, smoke rising to the smoke hole.",
+      "world": {
+        "color": [
+          0.25,
+          0.12,
+          0.05
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "fire",
+          "type": "POINT",
+          "location": [
+            0.0,
+            0.0,
+            0.6
+          ],
+          "energy": 450,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.55,
+            0.2
+          ]
+        },
+        {
+          "name": "smoke-hole",
+          "type": "SPOT",
+          "location": [
+            0.0,
+            0.0,
+            7.5
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 250,
+          "size": 0.3,
+          "color": [
+            0.85,
+            0.72,
+            0.55
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          1.0,
+          2.7,
+          0.9
+        ],
+        "look_at": [
+          0.0,
+          -3.4,
+          1.2
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          1.0,
+          2.7,
+          0.0
+        ],
+        "facing_deg": 170.7
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "firepit",
+          "verb": "Raise your hand",
+          "leads_to": "s3_seclusion"
+        }
+      ]
+    },
+    "s3_village_return": {
+      "note": "c9, The Son Returns: Xandri walks home over the dunes at dusk (the 400 m walk is played on the silver-dunes set) and comes in at this door to the circle.",
+      "world": {
+        "color": [
+          0.45,
+          0.3,
+          0.45
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "dusk-sun",
+          "type": "SUN",
+          "location": [
+            0.0,
+            30.0,
+            8.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 1.5,
+          "size": 1,
+          "color": [
+            0.95,
+            0.55,
+            0.4
+          ]
+        },
+        {
+          "name": "fire",
+          "type": "POINT",
+          "location": [
+            0.0,
+            0.0,
+            0.6
+          ],
+          "energy": 300,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.55,
+            0.2
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          8.0,
+          2.4
+        ],
+        "look_at": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          5.4,
+          0.0
+        ],
+        "facing_deg": 180.0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "firepit",
+          "verb": "Sit down in the circle",
+          "leads_to": "s3_last_cup"
+        }
+      ]
+    },
+    "e_returned": {
+      "note": "The Son Returns, years later: the same hut by firelight; a grown Xandri sits where the storyteller sat and begins with her words. A child's hand shoots up. (Its temple beat, Elaris sweeping sand back into the gutter, is shot on the temple-halls set.)",
+      "world": {
+        "color": [
+          0.25,
+          0.12,
+          0.05
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "fire",
+          "type": "POINT",
+          "location": [
+            0.0,
+            0.0,
+            0.6
+          ],
+          "energy": 450,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.55,
+            0.2
+          ]
+        },
+        {
+          "name": "smoke-hole",
+          "type": "SPOT",
+          "location": [
+            0.0,
+            0.0,
+            7.5
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 250,
+          "size": 0.3,
+          "color": [
+            0.85,
+            0.72,
+            0.55
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.4,
+          3.6,
+          1.3
+        ],
+        "look_at": [
+          0.0,
+          -3.4,
+          1.1
+        ],
+        "lens_mm": 32,
+        "mode": "fixed"
+      },
+      "hide": [],
+      "interactions": []
+    }
+  }
+}

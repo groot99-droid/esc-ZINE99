@@ -1,0 +1,835 @@
+{
+  "game": "endless-temple",
+  "location": "silver-dunes",
+  "name": "The silver sand sea",
+  "reference": "assets/locations/silver-dunes.jpg",
+  "bounds_m": [
+    300,
+    300,
+    60
+  ],
+  "origin": "the sand sea's centre; +y north, away from the lizard clan's village at the -y edge (the moonlit walk runs up the y axis from (0, -140)); the noon cairns ring east at (60, 40), the evening camp hollow north-west at (-60, 60)",
+  "materials": {
+    "silver-sand": {
+      "color": [
+        0.82,
+        0.8,
+        0.78
+      ],
+      "roughness": 0.95
+    },
+    "hollow-shade": {
+      "color": [
+        0.3,
+        0.31,
+        0.42
+      ],
+      "roughness": 0.95
+    },
+    "bruise-vine": {
+      "color": [
+        0.35,
+        0.18,
+        0.38
+      ],
+      "roughness": 0.8
+    },
+    "dead-wood": {
+      "color": [
+        0.2,
+        0.15,
+        0.12
+      ],
+      "roughness": 0.9
+    },
+    "prickle": {
+      "color": [
+        0.35,
+        0.4,
+        0.3
+      ],
+      "roughness": 0.9
+    },
+    "far-ridge": {
+      "color": [
+        0.75,
+        0.78,
+        0.88
+      ],
+      "roughness": 0.95
+    }
+  },
+  "blockout": [
+    {
+      "id": "sand-floor",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        300.0,
+        300.0,
+        1.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        -0.5
+      ],
+      "material": "silver-sand"
+    },
+    {
+      "id": "dune-west",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        80.0,
+        40.0,
+        16.0
+      ],
+      "location": [
+        -80.0,
+        40.0,
+        0.0
+      ],
+      "material": "silver-sand"
+    },
+    {
+      "id": "dune-south-east",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        60.0,
+        30.0,
+        12.0
+      ],
+      "location": [
+        70.0,
+        -60.0,
+        0.0
+      ],
+      "material": "silver-sand"
+    },
+    {
+      "id": "dune-north",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        100.0,
+        35.0,
+        18.0
+      ],
+      "location": [
+        40.0,
+        115.0,
+        0.0
+      ],
+      "material": "silver-sand"
+    },
+    {
+      "id": "dune-south-west",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        50.0,
+        50.0,
+        10.0
+      ],
+      "location": [
+        -110.0,
+        -95.0,
+        0.0
+      ],
+      "material": "silver-sand"
+    },
+    {
+      "id": "camp-hollow-rim",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        44.0,
+        14.0,
+        6.0
+      ],
+      "location": [
+        -60.0,
+        78.0,
+        0.0
+      ],
+      "material": "silver-sand"
+    },
+    {
+      "id": "ridge-far-a",
+      "shape": "cone",
+      "role": "sky",
+      "size_m": [
+        220.0,
+        80.0,
+        90.0
+      ],
+      "location": [
+        -60.0,
+        330.0,
+        0.0
+      ],
+      "material": "far-ridge",
+      "collide": false
+    },
+    {
+      "id": "ridge-far-b",
+      "shape": "cone",
+      "role": "sky",
+      "size_m": [
+        160.0,
+        70.0,
+        70.0
+      ],
+      "location": [
+        120.0,
+        310.0,
+        0.0
+      ],
+      "material": "far-ridge",
+      "collide": false
+    },
+    {
+      "id": "hollow-a",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        12.0,
+        6.0,
+        0.05
+      ],
+      "location": [
+        -20.0,
+        20.0,
+        0.02
+      ],
+      "material": "hollow-shade",
+      "collide": false
+    },
+    {
+      "id": "hollow-b",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        18.0,
+        8.0,
+        0.05
+      ],
+      "location": [
+        30.0,
+        -30.0,
+        0.02
+      ],
+      "material": "hollow-shade",
+      "collide": false
+    },
+    {
+      "id": "hollow-c",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        10.0,
+        5.0,
+        0.05
+      ],
+      "location": [
+        -50.0,
+        -10.0,
+        0.02
+      ],
+      "material": "hollow-shade",
+      "collide": false
+    },
+    {
+      "id": "camp-hollow",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        40.0,
+        40.0,
+        0.05
+      ],
+      "location": [
+        -60.0,
+        60.0,
+        0.02
+      ],
+      "material": "hollow-shade",
+      "collide": false
+    },
+    {
+      "id": "vine-a",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        60.0,
+        0.1
+      ],
+      "location": [
+        0.0,
+        -60.0,
+        0.05
+      ],
+      "material": "bruise-vine",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        15.0
+      ],
+      "collide": false
+    },
+    {
+      "id": "vine-b",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        80.0,
+        0.1
+      ],
+      "location": [
+        20.0,
+        -20.0,
+        0.05
+      ],
+      "material": "bruise-vine",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        -30.0
+      ],
+      "collide": false
+    },
+    {
+      "id": "vine-c",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        70.0,
+        0.1
+      ],
+      "location": [
+        -30.0,
+        20.0,
+        0.05
+      ],
+      "material": "bruise-vine",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        60.0
+      ],
+      "collide": false
+    },
+    {
+      "id": "vine-d",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        60.0,
+        0.1
+      ],
+      "location": [
+        40.0,
+        30.0,
+        0.05
+      ],
+      "material": "bruise-vine",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        10.0
+      ],
+      "collide": false
+    },
+    {
+      "id": "dead-tree",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        1.5,
+        1.5,
+        4.0
+      ],
+      "location": [
+        -60.0,
+        -100.0,
+        2.0
+      ],
+      "material": "dead-wood"
+    },
+    {
+      "id": "prickle-bush-a",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        1.2,
+        0.8
+      ],
+      "location": [
+        -56.0,
+        63.0,
+        0.3
+      ],
+      "material": "prickle"
+    },
+    {
+      "id": "prickle-bush-b",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        0.7
+      ],
+      "location": [
+        -65.0,
+        55.0,
+        0.25
+      ],
+      "material": "prickle"
+    }
+  ],
+  "props": [
+    {
+      "id": "cairn-mark",
+      "object": "stone-cairn",
+      "location": [
+        60.0,
+        65.0,
+        0.0
+      ]
+    },
+    {
+      "id": "cairn-2",
+      "object": "stone-cairn",
+      "location": [
+        36.224,
+        47.725,
+        0.0
+      ]
+    },
+    {
+      "id": "cairn-3",
+      "object": "stone-cairn",
+      "location": [
+        45.305,
+        19.775,
+        0.0
+      ]
+    },
+    {
+      "id": "cairn-4",
+      "object": "stone-cairn",
+      "location": [
+        74.695,
+        19.775,
+        0.0
+      ]
+    },
+    {
+      "id": "cairn-5",
+      "object": "stone-cairn",
+      "location": [
+        83.776,
+        47.725,
+        0.0
+      ]
+    },
+    {
+      "id": "leaf-shoes",
+      "object": "zorlop-leaf-shoes",
+      "location": [
+        18.0,
+        -17.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        -30.0
+      ]
+    },
+    {
+      "id": "pack",
+      "object": "travel-pack",
+      "location": [
+        12.0,
+        -14.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        160.0
+      ]
+    },
+    {
+      "id": "camp-fire",
+      "object": "campfire-ring",
+      "location": [
+        -60.0,
+        60.0,
+        0.0
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_moonlit_dunes": {
+      "note": "c2: Xandri walks out from the village edge by moonlight: silver sand, purple vines, high moon. The tremor; at 300 m the wave swallows him and the screen goes to sand-dark. The first mark.",
+      "world": {
+        "color": [
+          0.05,
+          0.08,
+          0.22
+        ],
+        "strength": 0.45
+      },
+      "lights": [
+        {
+          "name": "moon",
+          "type": "SUN",
+          "location": [
+            -100.0,
+            200.0,
+            150.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 0.6,
+          "size": 1,
+          "color": [
+            0.75,
+            0.8,
+            1.0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -143.0,
+          3.5
+        ],
+        "look_at": [
+          0.0,
+          -100.0,
+          1.5
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          -140.0,
+          0.0
+        ],
+        "facing_deg": 0.0
+      },
+      "hide": [
+        "leaf-shoes",
+        "pack",
+        "camp-fire"
+      ],
+      "interactions": []
+    },
+    "s3_dunes_night": {
+      "note": "c4: surfacing from the wave under clouds over the moon, deep blue. Cold creeps in as a frost edge on the view; hold to dig a hollow (4 s) and lie in it; the source's sleeping line.",
+      "world": {
+        "color": [
+          0.03,
+          0.05,
+          0.14
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "clouded-moon",
+          "type": "SUN",
+          "location": [
+            -100.0,
+            200.0,
+            150.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 0.15,
+          "size": 1,
+          "color": [
+            0.55,
+            0.62,
+            0.9
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -20.0,
+          100.0,
+          1.5
+        ],
+        "look_at": [
+          -20.0,
+          80.0,
+          0.3
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -20.0,
+          100.0,
+          0.0
+        ],
+        "facing_deg": 180.0
+      },
+      "hide": [
+        "leaf-shoes",
+        "pack",
+        "camp-fire"
+      ],
+      "interactions": []
+    },
+    "s3_dunes_day": {
+      "note": "c4: white sun, heat shimmer. Dig in the pack for a head-cloth; walk the vine lines to the leaves \"that looked like the ears of the Zorlop\"; tie them (father's cord quick, vine wrap slow).",
+      "world": {
+        "color": [
+          0.9,
+          0.88,
+          0.8
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "white-sun",
+          "type": "SUN",
+          "location": [
+            50.0,
+            -80.0,
+            200.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 6.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.98,
+            0.92
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          10.0,
+          -18.0,
+          1.5
+        ],
+        "look_at": [
+          20.0,
+          -8.0,
+          0.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          10.0,
+          -18.0,
+          0.0
+        ],
+        "facing_deg": -45.0
+      },
+      "hide": [
+        "camp-fire"
+      ],
+      "interactions": [
+        {
+          "prop": "pack",
+          "verb": "Dig in the pack for the head-cloth"
+        },
+        {
+          "prop": "leaf-shoes",
+          "verb": "Tie the Zorlop leaves",
+          "leads_to": "s2_li_c4a"
+        }
+      ]
+    },
+    "s3_cairns": {
+      "note": "c4: the noon cairns, hard short shadows. Shade at a cairn scratched with the father's sign; dune-vine pith (a new herb) in the shade of another.",
+      "world": {
+        "color": [
+          0.85,
+          0.8,
+          0.7
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "noon-sun",
+          "type": "SUN",
+          "location": [
+            60.0,
+            40.0,
+            200.0
+          ],
+          "look_at": [
+            62.0,
+            42.0,
+            0.0
+          ],
+          "energy": 7.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.97,
+            0.9
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          60.0,
+          4.0,
+          4.0
+        ],
+        "look_at": [
+          60.0,
+          40.0,
+          1.0
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          60.0,
+          8.0,
+          0.0
+        ],
+        "facing_deg": 0.0
+      },
+      "hide": [
+        "leaf-shoes",
+        "camp-fire"
+      ],
+      "interactions": [
+        {
+          "prop": "cairn-mark",
+          "verb": "Read the scratched mark"
+        },
+        {
+          "prop": "cairn-3",
+          "verb": "Take the dune-vine pith from its shade",
+          "leads_to": "s2_li_c4b"
+        }
+      ]
+    },
+    "s3_evening_camp": {
+      "note": "c4: purple dusk in a dune hollow; a prickle-bush fire. The cuckoo clock coos faintly: the second mark (set the cup down, or one more page).",
+      "world": {
+        "color": [
+          0.35,
+          0.2,
+          0.4
+        ],
+        "strength": 0.45
+      },
+      "lights": [
+        {
+          "name": "dusk-sun",
+          "type": "SUN",
+          "location": [
+            -300.0,
+            60.0,
+            30.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 1.2,
+          "size": 1,
+          "color": [
+            0.9,
+            0.5,
+            0.6
+          ]
+        },
+        {
+          "name": "prickle-fire",
+          "type": "POINT",
+          "location": [
+            -60.0,
+            60.0,
+            0.5
+          ],
+          "energy": 600,
+          "size": 0.4,
+          "color": [
+            1.0,
+            0.55,
+            0.2
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -66.0,
+          52.0,
+          7.0
+        ],
+        "look_at": [
+          -60.0,
+          60.0,
+          0.5
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -63.0,
+          57.0,
+          0.0
+        ],
+        "facing_deg": -45.0
+      },
+      "hide": [
+        "leaf-shoes"
+      ],
+      "interactions": [
+        {
+          "prop": "camp-fire",
+          "verb": "Light the prickle-bush fire"
+        },
+        {
+          "prop": "camp-fire",
+          "verb": "The clock coos: set the cup down, or one more page",
+          "leads_to": "s3_halls_c5"
+        }
+      ]
+    }
+  }
+}

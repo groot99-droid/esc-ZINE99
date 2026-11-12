@@ -1,0 +1,635 @@
+{
+  "game": "endless-temple",
+  "location": "hollin-streets",
+  "name": "Hollin under the stuck storm",
+  "reference": "assets/locations/hollin-streets.jpg",
+  "bounds_m": [
+    120,
+    40,
+    20
+  ],
+  "origin": "the main street's centre; +x along the street toward the Weather-Clerk's office and bell tower at its end; side lanes cross it at x = -20 and x = 20 (the rain lane) toward +y and -y",
+  "materials": {
+    "cobbles": {
+      "color": [
+        0.25,
+        0.26,
+        0.28
+      ],
+      "roughness": 0.9
+    },
+    "slate-stone": {
+      "color": [
+        0.38,
+        0.42,
+        0.48
+      ],
+      "roughness": 0.9
+    },
+    "plaster-grey": {
+      "color": [
+        0.55,
+        0.57,
+        0.6
+      ],
+      "roughness": 0.9
+    },
+    "roof-slate": {
+      "color": [
+        0.2,
+        0.23,
+        0.28
+      ],
+      "roughness": 0.8
+    },
+    "timber": {
+      "color": [
+        0.15,
+        0.14,
+        0.13
+      ],
+      "roughness": 0.8
+    },
+    "lamp-window": {
+      "color": [
+        1.0,
+        0.8,
+        0.4
+      ],
+      "roughness": 0.3,
+      "emission": 2.0
+    },
+    "gutter-water": {
+      "color": [
+        0.3,
+        0.36,
+        0.44
+      ],
+      "roughness": 0.1
+    }
+  },
+  "blockout": [
+    {
+      "id": "cobbles",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        120.0,
+        40.0,
+        0.2
+      ],
+      "location": [
+        0.0,
+        0.0,
+        -0.1
+      ],
+      "material": "cobbles"
+    },
+    {
+      "id": "houses-north-west",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        37.0,
+        8.0,
+        9.0
+      ],
+      "location": [
+        -41.5,
+        9.0,
+        4.5
+      ],
+      "material": "slate-stone"
+    },
+    {
+      "id": "roof-north-west",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        37.0,
+        6.4,
+        6.4
+      ],
+      "location": [
+        -41.5,
+        9.0,
+        9.0
+      ],
+      "material": "roof-slate",
+      "rotation_deg": [
+        45.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "houses-north-mid",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        34.0,
+        8.0,
+        9.0
+      ],
+      "location": [
+        0.0,
+        9.0,
+        4.5
+      ],
+      "material": "plaster-grey"
+    },
+    {
+      "id": "roof-north-mid",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        34.0,
+        6.4,
+        6.4
+      ],
+      "location": [
+        0.0,
+        9.0,
+        9.0
+      ],
+      "material": "roof-slate",
+      "rotation_deg": [
+        45.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "houses-north-east",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        21.0,
+        8.0,
+        9.0
+      ],
+      "location": [
+        33.5,
+        9.0,
+        4.5
+      ],
+      "material": "slate-stone"
+    },
+    {
+      "id": "roof-north-east",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        21.0,
+        6.4,
+        6.4
+      ],
+      "location": [
+        33.5,
+        9.0,
+        9.0
+      ],
+      "material": "roof-slate",
+      "rotation_deg": [
+        45.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "houses-south-west",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        37.0,
+        8.0,
+        9.0
+      ],
+      "location": [
+        -41.5,
+        -9.0,
+        4.5
+      ],
+      "material": "slate-stone"
+    },
+    {
+      "id": "roof-south-west",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        37.0,
+        6.4,
+        6.4
+      ],
+      "location": [
+        -41.5,
+        -9.0,
+        9.0
+      ],
+      "material": "roof-slate",
+      "rotation_deg": [
+        45.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "houses-south-mid",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        34.0,
+        8.0,
+        9.0
+      ],
+      "location": [
+        0.0,
+        -9.0,
+        4.5
+      ],
+      "material": "plaster-grey"
+    },
+    {
+      "id": "roof-south-mid",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        34.0,
+        6.4,
+        6.4
+      ],
+      "location": [
+        0.0,
+        -9.0,
+        9.0
+      ],
+      "material": "roof-slate",
+      "rotation_deg": [
+        45.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "houses-south-east",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        21.0,
+        8.0,
+        9.0
+      ],
+      "location": [
+        33.5,
+        -9.0,
+        4.5
+      ],
+      "material": "slate-stone"
+    },
+    {
+      "id": "roof-south-east",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        21.0,
+        6.4,
+        6.4
+      ],
+      "location": [
+        33.5,
+        -9.0,
+        9.0
+      ],
+      "material": "roof-slate",
+      "rotation_deg": [
+        45.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "office",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        14.0,
+        16.0,
+        10.0
+      ],
+      "location": [
+        52.0,
+        0.0,
+        5.0
+      ],
+      "material": "slate-stone"
+    },
+    {
+      "id": "bell-tower",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5.0,
+        5.0,
+        8.0
+      ],
+      "location": [
+        52.0,
+        0.0,
+        14.0
+      ],
+      "material": "slate-stone"
+    },
+    {
+      "id": "tower-spire",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        5.5,
+        5.5,
+        4.0
+      ],
+      "location": [
+        52.0,
+        0.0,
+        20.0
+      ],
+      "material": "roof-slate"
+    },
+    {
+      "id": "tower-slats",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.1,
+        3.0,
+        3.0
+      ],
+      "location": [
+        49.45,
+        0.0,
+        14.5
+      ],
+      "material": "timber",
+      "collide": false
+    },
+    {
+      "id": "office-door",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.1,
+        2.4,
+        3.2
+      ],
+      "location": [
+        44.95,
+        0.0,
+        1.6
+      ],
+      "material": "timber",
+      "collide": false
+    },
+    {
+      "id": "lamp-window-a",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2.5,
+        0.1,
+        1.4
+      ],
+      "location": [
+        -41.0,
+        4.95,
+        5.5
+      ],
+      "material": "lamp-window",
+      "collide": false
+    },
+    {
+      "id": "lamp-window-b",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2.5,
+        0.1,
+        1.4
+      ],
+      "location": [
+        -8.0,
+        -4.95,
+        2.4
+      ],
+      "material": "lamp-window",
+      "collide": false
+    },
+    {
+      "id": "lamp-window-c",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2.5,
+        0.1,
+        1.4
+      ],
+      "location": [
+        10.0,
+        4.95,
+        5.5
+      ],
+      "material": "lamp-window",
+      "collide": false
+    },
+    {
+      "id": "lamp-window-d",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2.5,
+        0.1,
+        1.4
+      ],
+      "location": [
+        30.0,
+        -4.95,
+        2.4
+      ],
+      "material": "lamp-window",
+      "collide": false
+    },
+    {
+      "id": "office-window",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.1,
+        1.6,
+        1.6
+      ],
+      "location": [
+        44.95,
+        4.5,
+        5.0
+      ],
+      "material": "lamp-window",
+      "collide": false
+    },
+    {
+      "id": "gutter-north",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        100.0,
+        0.4,
+        0.08
+      ],
+      "location": [
+        -5.0,
+        4.8,
+        0.04
+      ],
+      "material": "gutter-water"
+    },
+    {
+      "id": "gutter-south",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        100.0,
+        0.4,
+        0.08
+      ],
+      "location": [
+        -5.0,
+        -4.8,
+        0.04
+      ],
+      "material": "gutter-water"
+    }
+  ],
+  "props": [
+    {
+      "id": "umbrella",
+      "object": "clerk-umbrella",
+      "location": [
+        43.6,
+        2.0,
+        0.0
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_hollin_streets": {
+      "note": "c5, Book Two (Pell): Hollin storm-dark at noon under the storm that will not move; lamplit windows; rain falls sideways in the east lane (x = 20) only; roof-gutters full; townsfolk look up at the bell-loft. Stormcress in the gutters. The office door at the street's end.",
+      "world": {
+        "color": [
+          0.12,
+          0.14,
+          0.18
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "storm-light",
+          "type": "SUN",
+          "location": [
+            0.0,
+            0.0,
+            100.0
+          ],
+          "look_at": [
+            20.0,
+            10.0,
+            0.0
+          ],
+          "energy": 0.6,
+          "size": 1,
+          "color": [
+            0.6,
+            0.68,
+            0.8
+          ]
+        },
+        {
+          "name": "window-a",
+          "type": "POINT",
+          "location": [
+            -41.0,
+            4.0,
+            5.5
+          ],
+          "energy": 200,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.75,
+            0.4
+          ]
+        },
+        {
+          "name": "window-c",
+          "type": "POINT",
+          "location": [
+            10.0,
+            4.0,
+            5.5
+          ],
+          "energy": 200,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.75,
+            0.4
+          ]
+        },
+        {
+          "name": "office-lamp",
+          "type": "POINT",
+          "location": [
+            44.0,
+            4.5,
+            5.0
+          ],
+          "energy": 150,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.75,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -55.0,
+          0.0,
+          1.5
+        ],
+        "look_at": [
+          44.0,
+          0.0,
+          4.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -55.0,
+          0.0,
+          0.0
+        ],
+        "facing_deg": -90.0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "umbrella",
+          "verb": "Go in at the office door",
+          "leads_to": "s3_clerk_office"
+        }
+      ]
+    }
+  }
+}

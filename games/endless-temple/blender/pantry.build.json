@@ -1,0 +1,825 @@
+{
+  "game": "endless-temple",
+  "location": "pantry",
+  "name": "The pantry",
+  "reference": "assets/locations/pantry.jpg",
+  "bounds_m": [
+    6,
+    4,
+    4
+  ],
+  "origin": "floor centre; +y toward the back wall of jar shelves; the door from the halls on the -y wall, the small window high on the west (-x) wall, the stove west and the table east",
+  "materials": {
+    "stone-floor": {
+      "color": [
+        0.35,
+        0.3,
+        0.25
+      ],
+      "roughness": 0.95
+    },
+    "plaster": {
+      "color": [
+        0.58,
+        0.48,
+        0.34
+      ],
+      "roughness": 0.9
+    },
+    "dark-walnut": {
+      "color": [
+        0.25,
+        0.16,
+        0.1
+      ],
+      "roughness": 0.75
+    },
+    "iron": {
+      "color": [
+        0.15,
+        0.14,
+        0.13
+      ],
+      "roughness": 0.5,
+      "metallic": 0.8
+    },
+    "amber-glass": {
+      "color": [
+        0.95,
+        0.7,
+        0.35
+      ],
+      "roughness": 0.1,
+      "emission": 0.6
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        6.0,
+        4.0,
+        0.1
+      ],
+      "location": [
+        0.0,
+        0.0,
+        -0.05
+      ],
+      "material": "stone-floor"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        6.0,
+        4.0,
+        0.1
+      ],
+      "location": [
+        0.0,
+        0.0,
+        4.05
+      ],
+      "material": "dark-walnut"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6.0,
+        0.15,
+        4.0
+      ],
+      "location": [
+        0.0,
+        2.075,
+        2.0
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        4.0,
+        4.0
+      ],
+      "location": [
+        3.075,
+        0.0,
+        2.0
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-west-low",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        4.0,
+        2.6
+      ],
+      "location": [
+        -3.075,
+        0.0,
+        1.3
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-west-high",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        4.0,
+        0.6
+      ],
+      "location": [
+        -3.075,
+        0.0,
+        3.7
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-west-front",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        2.6,
+        0.8
+      ],
+      "location": [
+        -3.075,
+        -0.7,
+        3.0
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-west-back",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.6,
+        0.8
+      ],
+      "location": [
+        -3.075,
+        1.7,
+        3.0
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "window-small",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.05,
+        0.8,
+        0.8
+      ],
+      "location": [
+        -3.0,
+        1.0,
+        3.0
+      ],
+      "material": "amber-glass",
+      "collide": false
+    },
+    {
+      "id": "wall-south-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.4,
+        0.15,
+        4.0
+      ],
+      "location": [
+        -1.8,
+        -2.075,
+        2.0
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-south-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.4,
+        0.15,
+        4.0
+      ],
+      "location": [
+        1.8,
+        -2.075,
+        2.0
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-south-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.2,
+        0.15,
+        0.8
+      ],
+      "location": [
+        0.0,
+        -2.075,
+        3.6
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "stove",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.6,
+        1.2
+      ],
+      "location": [
+        -2.4,
+        -1.0,
+        0.6
+      ],
+      "material": "iron"
+    },
+    {
+      "id": "table",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.6,
+        0.85
+      ],
+      "location": [
+        2.2,
+        -1.2,
+        0.425
+      ],
+      "material": "dark-walnut"
+    },
+    {
+      "id": "ledge-north-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        5.6,
+        0.4,
+        0.04
+      ],
+      "location": [
+        0.0,
+        1.8,
+        0.88
+      ],
+      "material": "dark-walnut"
+    },
+    {
+      "id": "ledge-north-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        5.6,
+        0.4,
+        0.04
+      ],
+      "location": [
+        0.0,
+        1.8,
+        1.58
+      ],
+      "material": "dark-walnut"
+    },
+    {
+      "id": "ledge-north-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        5.6,
+        0.4,
+        0.04
+      ],
+      "location": [
+        0.0,
+        1.8,
+        2.28
+      ],
+      "material": "dark-walnut"
+    },
+    {
+      "id": "ledge-north-4",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        5.6,
+        0.4,
+        0.04
+      ],
+      "location": [
+        0.0,
+        1.8,
+        2.98
+      ],
+      "material": "dark-walnut"
+    },
+    {
+      "id": "ledge-east-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        2.6,
+        0.04
+      ],
+      "location": [
+        2.8,
+        0.6,
+        0.88
+      ],
+      "material": "dark-walnut"
+    },
+    {
+      "id": "ledge-east-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        2.6,
+        0.04
+      ],
+      "location": [
+        2.8,
+        0.6,
+        1.58
+      ],
+      "material": "dark-walnut"
+    },
+    {
+      "id": "ledge-east-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        2.6,
+        0.04
+      ],
+      "location": [
+        2.8,
+        0.6,
+        2.28
+      ],
+      "material": "dark-walnut"
+    },
+    {
+      "id": "ledge-west-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        2.4,
+        0.04
+      ],
+      "location": [
+        -2.8,
+        0.7,
+        1.28
+      ],
+      "material": "dark-walnut"
+    },
+    {
+      "id": "ledge-west-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        2.4,
+        0.04
+      ],
+      "location": [
+        -2.8,
+        0.7,
+        1.98
+      ],
+      "material": "dark-walnut"
+    }
+  ],
+  "props": [
+    {
+      "id": "jar-goblins-eyes",
+      "object": "specimen-jar",
+      "location": [
+        -1.0,
+        1.8,
+        0.9
+      ]
+    },
+    {
+      "id": "jar-ogers-tongue",
+      "object": "specimen-jar",
+      "location": [
+        0.6,
+        1.8,
+        1.6
+      ]
+    },
+    {
+      "id": "jar-north-3",
+      "object": "specimen-jar",
+      "location": [
+        1.9,
+        1.8,
+        2.3
+      ]
+    },
+    {
+      "id": "jar-north-4",
+      "object": "specimen-jar",
+      "location": [
+        -2.0,
+        1.8,
+        3.0
+      ]
+    },
+    {
+      "id": "jar-east-1",
+      "object": "specimen-jar",
+      "location": [
+        2.8,
+        0.4,
+        0.9
+      ]
+    },
+    {
+      "id": "jar-east-2",
+      "object": "specimen-jar",
+      "location": [
+        2.8,
+        1.3,
+        1.6
+      ]
+    },
+    {
+      "id": "jar-west-1",
+      "object": "specimen-jar",
+      "location": [
+        -2.8,
+        1.2,
+        1.3
+      ]
+    },
+    {
+      "id": "tin-mint",
+      "object": "tea-tin",
+      "location": [
+        1.9,
+        -1.1,
+        0.85
+      ]
+    },
+    {
+      "id": "tin-sprig",
+      "object": "tea-tin",
+      "location": [
+        2.2,
+        -1.35,
+        0.85
+      ]
+    },
+    {
+      "id": "tin-last",
+      "object": "tea-tin",
+      "location": [
+        -0.4,
+        1.8,
+        1.6
+      ]
+    },
+    {
+      "id": "kettle",
+      "object": "kettle",
+      "location": [
+        -2.4,
+        -1.0,
+        1.2
+      ]
+    },
+    {
+      "id": "teacup",
+      "object": "teacup",
+      "location": [
+        2.55,
+        -1.05,
+        0.85
+      ]
+    },
+    {
+      "id": "candle",
+      "object": "candlestick",
+      "location": [
+        1.75,
+        -1.4,
+        0.85
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_pantry_c1": {
+      "note": "c1: dim, amber light through the jars from one small window. Read the jars (goblin's eyes, \"Ogers' tongue\"), put the kettle on, choose a tin; the label quotes the source's tea line.",
+      "world": {
+        "color": [
+          0.3,
+          0.2,
+          0.1
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "window-amber",
+          "type": "AREA",
+          "location": [
+            -2.9,
+            1.0,
+            3.0
+          ],
+          "look_at": [
+            0.5,
+            0.3,
+            1.0
+          ],
+          "energy": 70,
+          "size": 0.8,
+          "color": [
+            1.0,
+            0.7,
+            0.35
+          ]
+        },
+        {
+          "name": "jar-glow",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            3.9
+          ],
+          "look_at": [
+            0.0,
+            0.5,
+            0.0
+          ],
+          "energy": 25,
+          "size": 2.5,
+          "color": [
+            1.0,
+            0.75,
+            0.45
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -1.5,
+          2.3
+        ],
+        "look_at": [
+          0.0,
+          1.8,
+          1.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          -1.5,
+          0.0
+        ],
+        "facing_deg": 0.0
+      },
+      "hide": [
+        "candle"
+      ],
+      "interactions": [
+        {
+          "prop": "jar-goblins-eyes",
+          "verb": "Read the jar: goblin's eyes"
+        },
+        {
+          "prop": "jar-ogers-tongue",
+          "verb": "Read the jar: Ogers' tongue"
+        },
+        {
+          "prop": "kettle",
+          "verb": "Put the kettle on"
+        },
+        {
+          "prop": "tin-mint",
+          "verb": "Choose a tin",
+          "leads_to": "g_tea_c1"
+        }
+      ]
+    },
+    "s3_pantry_c3": {
+      "note": "c3: the second brew, a short visit in the same amber light. Kettle, then the tin.",
+      "world": {
+        "color": [
+          0.3,
+          0.2,
+          0.1
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "window-amber",
+          "type": "AREA",
+          "location": [
+            -2.9,
+            1.0,
+            3.0
+          ],
+          "look_at": [
+            0.5,
+            0.3,
+            1.0
+          ],
+          "energy": 70,
+          "size": 0.8,
+          "color": [
+            1.0,
+            0.7,
+            0.35
+          ]
+        },
+        {
+          "name": "jar-glow",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            3.9
+          ],
+          "look_at": [
+            0.0,
+            0.5,
+            0.0
+          ],
+          "energy": 25,
+          "size": 2.5,
+          "color": [
+            1.0,
+            0.75,
+            0.45
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -1.5,
+          2.3
+        ],
+        "look_at": [
+          0.0,
+          1.8,
+          1.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          -1.5,
+          0.0
+        ],
+        "facing_deg": 0.0
+      },
+      "hide": [
+        "candle",
+        "teacup"
+      ],
+      "interactions": [
+        {
+          "prop": "kettle",
+          "verb": "Put the kettle on"
+        },
+        {
+          "prop": "tin-sprig",
+          "verb": "Choose a tin",
+          "leads_to": "g_tea_c3"
+        }
+      ]
+    },
+    "s3_pantry_c8": {
+      "note": "c8: night; a single candle on the table. The last pot: the kettle and the last tin.",
+      "world": {
+        "color": [
+          0.03,
+          0.03,
+          0.05
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "candle",
+          "type": "POINT",
+          "location": [
+            1.75,
+            -1.4,
+            1.2
+          ],
+          "energy": 25,
+          "size": 0.05,
+          "color": [
+            1.0,
+            0.7,
+            0.4
+          ]
+        },
+        {
+          "name": "window-night",
+          "type": "AREA",
+          "location": [
+            -2.9,
+            1.0,
+            3.0
+          ],
+          "look_at": [
+            0.5,
+            0.3,
+            1.0
+          ],
+          "energy": 4,
+          "size": 0.8,
+          "color": [
+            0.45,
+            0.55,
+            0.8
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -1.5,
+          2.3
+        ],
+        "look_at": [
+          0.0,
+          1.8,
+          1.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          -1.5,
+          0.0
+        ],
+        "facing_deg": 0.0
+      },
+      "hide": [
+        "teacup"
+      ],
+      "interactions": [
+        {
+          "prop": "kettle",
+          "verb": "Put the kettle on"
+        },
+        {
+          "prop": "tin-last",
+          "verb": "Take down the last tin",
+          "leads_to": "g_tea_c8"
+        }
+      ]
+    }
+  }
+}

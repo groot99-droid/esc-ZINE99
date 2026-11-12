@@ -1,0 +1,463 @@
+{
+  "game": "endless-temple",
+  "location": "abyss-edge",
+  "name": "The edge of the abyss",
+  "reference": "assets/locations/abyss-edge.jpg",
+  "bounds_m": [
+    20,
+    20,
+    12
+  ],
+  "origin": "rock floor centre; +y toward the edge (the lip at y = 4, 6 m ahead of the player start); the abyss and its mist beyond +y and below",
+  "materials": {
+    "rock": {
+      "color": [
+        0.1,
+        0.12,
+        0.16
+      ],
+      "roughness": 0.95
+    },
+    "frost": {
+      "color": [
+        0.8,
+        0.88,
+        0.95
+      ],
+      "roughness": 0.4,
+      "emission": 0.15
+    },
+    "crack": {
+      "color": [
+        0.03,
+        0.04,
+        0.06
+      ],
+      "roughness": 1.0
+    },
+    "mist": {
+      "color": [
+        0.3,
+        0.37,
+        0.48
+      ],
+      "roughness": 1.0,
+      "emission": 0.3
+    },
+    "blue-black": {
+      "color": [
+        0.04,
+        0.06,
+        0.1
+      ],
+      "roughness": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "rock-platform",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        20.0,
+        14.0,
+        1.0
+      ],
+      "location": [
+        0.0,
+        -3.0,
+        -0.5
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "frost-lip",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        20.0,
+        0.4,
+        0.06
+      ],
+      "location": [
+        0.0,
+        3.8,
+        0.03
+      ],
+      "material": "frost",
+      "collide": false
+    },
+    {
+      "id": "crack",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.12,
+        9.0,
+        0.02
+      ],
+      "location": [
+        -1.2,
+        -1.5,
+        0.01
+      ],
+      "material": "crack",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        18.0
+      ],
+      "collide": false
+    },
+    {
+      "id": "ledge-overhang",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5.0,
+        1.6,
+        0.7
+      ],
+      "location": [
+        7.0,
+        4.6,
+        -0.3
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "boulder-west",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        3.0,
+        2.0
+      ],
+      "location": [
+        -8.0,
+        -6.0,
+        0.4
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "boulder-east",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        2.5,
+        2.0,
+        1.5
+      ],
+      "location": [
+        8.5,
+        -4.0,
+        0.3
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "far-rim",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        80.0,
+        3.0,
+        4.0
+      ],
+      "location": [
+        0.0,
+        34.0,
+        -1.0
+      ],
+      "material": "blue-black",
+      "collide": false
+    },
+    {
+      "id": "mist-below",
+      "shape": "plane",
+      "role": "sky",
+      "size_m": [
+        60.0,
+        40.0,
+        0.0
+      ],
+      "location": [
+        0.0,
+        24.0,
+        -8.0
+      ],
+      "material": "mist",
+      "collide": false
+    },
+    {
+      "id": "mist-curtain",
+      "shape": "plane",
+      "role": "sky",
+      "size_m": [
+        60.0,
+        0.0,
+        20.0
+      ],
+      "location": [
+        0.0,
+        16.0,
+        4.0
+      ],
+      "material": "mist",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "collide": false
+    },
+    {
+      "id": "mist-behind",
+      "shape": "plane",
+      "role": "sky",
+      "size_m": [
+        60.0,
+        0.0,
+        20.0
+      ],
+      "location": [
+        0.0,
+        -14.0,
+        6.0
+      ],
+      "material": "mist",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "cairn-flat-stones",
+      "object": "stone-cairn",
+      "location": [
+        -5.0,
+        3.0,
+        0.0
+      ],
+      "height_m": 1.0
+    },
+    {
+      "id": "black-book",
+      "object": "black-book",
+      "location": [
+        0.3,
+        -2.6,
+        0.0
+      ]
+    },
+    {
+      "id": "candle",
+      "object": "candlestick",
+      "location": [
+        -0.4,
+        -1.4,
+        0.0
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_abyss_dream": {
+      "note": "The dream. Near-black rock, blue-grey mist lit from nowhere, breath visible; the edge is 6 m ahead. A step past it (or 75 s) and sunlight cuts the dream to Elaris's room.",
+      "world": {
+        "color": [
+          0.04,
+          0.06,
+          0.1
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "mist-glow",
+          "type": "AREA",
+          "location": [
+            0.0,
+            9.0,
+            -3.0
+          ],
+          "look_at": [
+            0.0,
+            9.0,
+            6.0
+          ],
+          "energy": 400,
+          "size": 12,
+          "color": [
+            0.55,
+            0.65,
+            0.8
+          ]
+        },
+        {
+          "name": "cold-fill",
+          "type": "AREA",
+          "location": [
+            0.0,
+            -4.0,
+            10.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 60,
+          "size": 8,
+          "color": [
+            0.6,
+            0.7,
+            0.85
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -2.0,
+          2.3
+        ],
+        "look_at": [
+          0.0,
+          6.0,
+          0.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "facing_deg": 0.0
+      },
+      "hide": [
+        "black-book",
+        "candle"
+      ],
+      "interactions": [
+        {
+          "prop": "cairn-flat-stones",
+          "verb": "Walk to the edge",
+          "leads_to": "s3_room_morning"
+        }
+      ]
+    },
+    "s3_abyss_return": {
+      "note": "Awake this time, through the black book: the same mist and edge, frost on the lip, Elaris's candle giving 2 m of warm light. Call one star name into the dark (F7); nothing lights.",
+      "world": {
+        "color": [
+          0.04,
+          0.06,
+          0.1
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "mist-glow",
+          "type": "AREA",
+          "location": [
+            0.0,
+            9.0,
+            -3.0
+          ],
+          "look_at": [
+            0.0,
+            9.0,
+            6.0
+          ],
+          "energy": 400,
+          "size": 12,
+          "color": [
+            0.55,
+            0.65,
+            0.8
+          ]
+        },
+        {
+          "name": "cold-fill",
+          "type": "AREA",
+          "location": [
+            0.0,
+            -4.0,
+            10.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 60,
+          "size": 8,
+          "color": [
+            0.6,
+            0.7,
+            0.85
+          ]
+        },
+        {
+          "name": "candle",
+          "type": "POINT",
+          "location": [
+            -0.4,
+            -1.4,
+            0.55
+          ],
+          "energy": 25,
+          "size": 0.05,
+          "color": [
+            1.0,
+            0.72,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -2.0,
+          2.3
+        ],
+        "look_at": [
+          0.0,
+          6.0,
+          0.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          -2.0,
+          0.0
+        ],
+        "facing_deg": 0.0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "cairn-flat-stones",
+          "verb": "Step to the edge and call a star's name"
+        },
+        {
+          "prop": "candle",
+          "verb": "Set the candle by the closed book"
+        },
+        {
+          "prop": "black-book",
+          "verb": "Close the book and go back",
+          "leads_to": "s3_pantry_c8"
+        }
+      ]
+    }
+  }
+}
