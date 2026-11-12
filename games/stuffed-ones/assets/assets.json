@@ -1,0 +1,799 @@
+{
+  "game": "stuffed-ones",
+  "style": "Photographic 1970s folk-horror film stills on 35 mm grain for sets; objects as clean product renders on white; palette of cedar brown, attic-dust beige and faded felt (moss, rust, sky, cream) with bone-white thread; wool felt, cotton thread, worn pine, rag rugs, small-flower wallpaper; natural and lamp light 3200-4500 K, warmer as hunger rises.",
+  "locations": [
+    {
+      "id": "car-interior",
+      "name": "The car on Ridgeway Road",
+      "scenes": [
+        "a1_car"
+      ],
+      "dimensions_m": [
+        1.5,
+        2.2,
+        1.2
+      ],
+      "lighting": "Bright afternoon sun through pine trees flickering across the windows.",
+      "objects": [
+        "jamies-bag"
+      ],
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream), warm practical light. Interior of an old 1970s station wagon seen from the back seat: worn brown vinyl bench seats, a cracked dashboard, a rear-view mirror, side windows looking out on a gravel forest road under tall pines, bright afternoon light strobing through the trees, a canvas duffel bag on the empty seat beside the camera. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "212d77a5-9d31-42ef-8cbf-bc33a424c4a8",
+      "image": "assets/locations/car-interior.jpg"
+    },
+    {
+      "id": "cabin-living-room",
+      "name": "The cabin's ground floor and the shelves",
+      "scenes": [
+        "a1_cabin_arrival",
+        "a3_smell",
+        "a4_wrong_places",
+        "a5_cabin_turns",
+        "b6_waking",
+        "b6_keepers_visit",
+        "b7_arrivals",
+        "b7_jamie_falls",
+        "b8_breaking_point",
+        "c9_new_guests",
+        "c10_hold_shelf",
+        "c11_hold_shelf",
+        "c11_toy_floor",
+        "c12_hold_shelf",
+        "c13_flight",
+        "c13_seal",
+        "c14_hold_shelf",
+        "c14_chase_cabin",
+        "e_cycle_shelf",
+        "e_empty_toy"
+      ],
+      "dimensions_m": [
+        12,
+        8,
+        2.4
+      ],
+      "lighting": "Day: warm dusty sun through porch windows, 4500 K. Evening: lamps and fire, 3200 K. Night: blue-grey without black. Warm variant (c14): amber haze growing toward red. Act 5: lights flicker at 2 Hz.",
+      "objects": [
+        "toy-shelf",
+        "guestbook",
+        "game-box",
+        "counting-game-board",
+        "couch",
+        "rag-rug",
+        "ladder-back-chair",
+        "wood-stove",
+        "sampler",
+        "book-page",
+        "trapdoor",
+        "guest-lamp",
+        "sketchbook",
+        "binoculars"
+      ],
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream), warm practical light. Interior of a remote summer-rental log cabin's ground floor living room: knotty worn pine walls and plank floor, a low ceiling of 2.4 m, tall empty pine shelves running along one whole wall, a sagging floral couch facing a hallway, a cast-iron wood stove, braided rag rugs, a framed embroidery sampler on the wall, a ladder-back chair, a wooden staircase rising to the upstairs, a small low cellar door under the stairs, porch windows with dusty afternoon sunlight, wallpaper with small repeating flowers above the wainscot. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "ae476bde-4061-461d-9094-1e28192758a6",
+      "image": "assets/locations/cabin-living-room.jpg"
+    },
+    {
+      "id": "cabin-kitchen",
+      "name": "The kitchen and dining table",
+      "scenes": [
+        "a1_dinner",
+        "a2_breakfast",
+        "a5_kitchen_bear",
+        "e_warning_unpick"
+      ],
+      "dimensions_m": [
+        5,
+        4,
+        2.4
+      ],
+      "lighting": "Dinner: lamps and fire, 3200 K. Breakfast: flat grey morning. Night three: one bare bulb, warm. Ending: flat lamp over the table.",
+      "objects": [
+        "dining-table",
+        "chili-bowl",
+        "coffee-mug",
+        "ladder-back-chair"
+      ],
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream), warm practical light. Interior of a rustic 1970s cabin kitchen: worn pine plank walls, white-painted base cupboards with a grey laminate counter, an enamel sink under a small window, an old cream stove, open shelves of stoneware, a long scrubbed pine dining table with mismatched ladder-back chairs, a single bulb with a fabric shade hanging low over the table, warm evening lamp light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "15e44e89-bbb0-4df5-96e5-475ddae11956",
+      "image": "assets/locations/cabin-kitchen.jpg"
+    },
+    {
+      "id": "upstairs-hall",
+      "name": "The upstairs hall",
+      "scenes": [
+        "a2_night_hall",
+        "a4_night_sounds",
+        "b8_the_door"
+      ],
+      "dimensions_m": [
+        12,
+        1.2,
+        2.4
+      ],
+      "lighting": "Night only: moonless grey from one end window, 0.05 lux look, blue-grey without black; night two darker.",
+      "objects": [
+        "rag-rug",
+        "guest-lamp"
+      ],
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream), warm practical light. Interior of a narrow upstairs hallway in an old log cabin at night: pine plank floor with a long rag runner, four closed panelled pine bedroom doors along both sides, a narrow hall closet door, a small window at the far end giving a faint blue-grey light, faded floral wallpaper, sloped ceiling beams, the top of a wooden staircase, deep blue-grey night gloom but every surface readable. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "4b83bc03-f93f-4877-948e-24e005ca2e85",
+      "image": "assets/locations/upstairs-hall.jpg"
+    },
+    {
+      "id": "lilas-room",
+      "name": "Lila's bedroom",
+      "scenes": [
+        "a3_warmth"
+      ],
+      "dimensions_m": [
+        4,
+        3.5,
+        2.4
+      ],
+      "lighting": "Afternoon sun through a gingham curtain, warm.",
+      "objects": [
+        "quilted-bed",
+        "rag-rug",
+        "guest-lamp"
+      ],
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream), warm practical light. Interior of a small cabin bedroom: knotty pine walls, a white iron bed with a faded patchwork quilt, a braided rag rug, a small pine dresser, a window with gingham curtains letting in warm afternoon light, an inside bolt on the door, a bedside lamp with a pleated shade. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "1edeca7d-9757-4ca1-82f8-b1aeba7dea14",
+      "image": "assets/locations/lilas-room.jpg"
+    },
+    {
+      "id": "porch-clearing",
+      "name": "The porch, the clearing and the forest edge",
+      "scenes": [
+        "a3_dog",
+        "e_keeper_porch"
+      ],
+      "dimensions_m": [
+        60,
+        40,
+        8
+      ],
+      "lighting": "Dusk with long shadows (a3_dog); bright afternoon (e_keeper_porch).",
+      "objects": [
+        "tarp",
+        "rucksack"
+      ],
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream), warm practical light. Exterior of a small weathered log cabin in a forest clearing at dusk: a long covered front porch with a plank floor, log railings and two wooden rocking chairs, a small plank tool shed beside the porch, a gravel parking patch, a wide grassy clearing ringed by dark pines and birch at the forest edge, long low golden shadows. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "0a0f49b7-c4ea-4f9f-ad48-12b9dc9a3e0b",
+      "image": "assets/locations/porch-clearing.jpg"
+    },
+    {
+      "id": "overlook-trail",
+      "name": "The overlook trail",
+      "scenes": [
+        "a1_trail_overlook"
+      ],
+      "dimensions_m": [
+        15,
+        400,
+        20
+      ],
+      "lighting": "Late sun, warm and low.",
+      "objects": [
+        "paper-map",
+        "rucksack",
+        "binoculars"
+      ],
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream), warm practical light. Exterior of a forest hiking trail climbing to a rocky overlook in late golden sun: a narrow dirt path between pines and ferns, a rough split-log safety rail at the edge of a granite outcrop, a wide valley of forested hills beyond, warm low light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "ee139d01-f4db-4aa8-a1ae-15515c5c3093",
+      "image": "assets/locations/overlook-trail.jpg"
+    },
+    {
+      "id": "creek-trail",
+      "name": "The creek trail and the swimming hole",
+      "scenes": [
+        "a3_trail_creek"
+      ],
+      "dimensions_m": [
+        15,
+        400,
+        15
+      ],
+      "lighting": "Green and bright midday.",
+      "objects": [
+        "film-camera"
+      ],
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream), warm practical light. Exterior of a shaded creek trail in a summer forest: a dirt path along a clear rocky creek that widens into a still green swimming hole under overhanging birches, mossy boulders, ferns, clusters of pale mushrooms on a fallen log, bright green dappled midday light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "5dffef1e-6406-4b8d-a887-ac55bd7fa25d",
+      "image": "assets/locations/creek-trail.jpg"
+    },
+    {
+      "id": "ridge-path",
+      "name": "The ridge path, the silent morning",
+      "scenes": [
+        "a4_silent_forest"
+      ],
+      "dimensions_m": [
+        15,
+        400,
+        20
+      ],
+      "lighting": "Overcast, no shadows, no birds.",
+      "objects": [
+        "tarp"
+      ],
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream), warm practical light. Exterior of a ridge path above a pine forest on an overcast morning: a narrow worn trail along a rocky ridge, still grey sky, flat shadowless light, motionless pines below, a mist in the valley, an empty eerie stillness, muted moss and beige tones. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "90b518f9-7507-4a97-9da9-05b03ab99b5f",
+      "image": "assets/locations/ridge-path.jpg"
+    },
+    {
+      "id": "labyrinth",
+      "name": "The labyrinth under the cabin",
+      "scenes": [
+        "a5_labyrinth"
+      ],
+      "dimensions_m": [
+        44,
+        44,
+        2.6
+      ],
+      "lighting": "Light from nowhere, warmer and redder each ring inward.",
+      "objects": [
+        "broken-crib",
+        "rag-rug",
+        "paper-map"
+      ],
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream), warm practical light. Interior of an impossible labyrinth of domestic rooms beneath a cabin: narrow 1.1 m corridors lined with faded small-flower wallpaper, old patterned carpet underfoot, plain doorways opening into small rooms holding broken wooden toy furniture and a broken crib, no visible light source but a warm amber glow deepening to red further in, dreamlike folk-horror. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "36ae8f1f-aa10-40e4-bd96-f8ffdbcfe6c9",
+      "image": "assets/locations/labyrinth.jpg"
+    },
+    {
+      "id": "ritual-room",
+      "name": "The ritual room",
+      "scenes": [
+        "a5_ritual_room",
+        "a5_last_thing"
+      ],
+      "dimensions_m": [
+        7,
+        7,
+        3.5
+      ],
+      "lighting": "Low amber, breathing; fades to warm dark.",
+      "objects": [
+        "altar",
+        "lectern",
+        "hand-sewn-book",
+        "book-page"
+      ],
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream), warm practical light. Interior of a round domed chamber 7 m across, its walls and 3.5 m dome covered in quilted felt and stitched embroidered symbols in bone-white thread, a low stone-and-pine altar draped with patchwork cloth in the centre, a carved wooden lectern facing it, a ring of folded empty fabric on the floor around the altar, low amber light from nowhere. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "18a72366-cf26-4bb2-bcdb-f5bf77d7235e",
+      "image": "assets/locations/ritual-room.jpg"
+    }
+  ],
+  "objects": [
+    {
+      "id": "guestbook",
+      "name": "Guestbook",
+      "role": "interact",
+      "scenes": [
+        "a1_cabin_arrival"
+      ],
+      "size_m": [
+        0.3,
+        0.22,
+        0.04
+      ],
+      "material": "Cloth-bound ledger, faded rust linen, frayed corners, ribbon marker",
+      "prompt": "A thick old guestbook ledger lying closed, bound in faded rust-red linen cloth with frayed corners and a cream ribbon bookmark hanging out, worn spine, slightly yellowed page edges. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "aed1733a-16b3-4e97-b809-48bbdaa84300",
+      "image": "assets/objects/guestbook.jpg"
+    },
+    {
+      "id": "counting-game-board",
+      "name": "Counting-game board",
+      "role": "interact",
+      "scenes": [
+        "a1_dinner",
+        "a4_wrong_places",
+        "c11_toy_floor"
+      ],
+      "size_m": [
+        0.45,
+        0.45,
+        0.02
+      ],
+      "material": "Embroidered felt board on a wooden backing, felt-button pegs",
+      "prompt": "A square folk board game made of embroidered moss-green wool felt stretched over a thin pine board, a spiral track of stitched cream circles, a few round fabric-covered button pegs in rust and sky blue placed on it, bone-white thread stitching, abstract symbols only. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "3e7b136b-c287-4c47-a5fa-95b1d5b93d18",
+      "image": "assets/objects/counting-game-board.jpg"
+    },
+    {
+      "id": "game-box",
+      "name": "Counting-game box",
+      "role": "interact",
+      "scenes": [
+        "a1_cabin_arrival"
+      ],
+      "size_m": [
+        0.48,
+        0.48,
+        0.08
+      ],
+      "material": "Pine box with a hinged lid, worn paint, faded patterned paper inside the lid",
+      "prompt": "An old flat wooden board-game box with its hinged lid open, worn pine with faded painted border, the inside of the lid lined with faded floral paper, empty compartments inside. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "7a5a08ca-2bdc-46b9-a4e3-bcdfa45a4162",
+      "image": "assets/objects/game-box.jpg"
+    },
+    {
+      "id": "jamies-bag",
+      "name": "Jamie's bag",
+      "role": "interact",
+      "scenes": [
+        "a1_car"
+      ],
+      "size_m": [
+        0.6,
+        0.3,
+        0.3
+      ],
+      "material": "Canvas duffel, moss green, leather handles, patched",
+      "prompt": "A moss-green canvas duffel bag, slightly slumped, brown leather handles, a sewn-on fabric patch, scuffed base, zip half-open. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "106810b9-e8df-4af7-9859-d1ab3affeb2e",
+      "image": "assets/objects/jamies-bag.jpg"
+    },
+    {
+      "id": "paper-map",
+      "name": "Marcus's paper map",
+      "role": "interact",
+      "scenes": [
+        "a1_trail_overlook",
+        "a5_labyrinth"
+      ],
+      "size_m": [
+        0.25,
+        0.18,
+        0.01
+      ],
+      "material": "Folded paper hiking map, soft creases, pencil marks, no legible words",
+      "prompt": "A folded paper hiking map partly opened, soft worn creases, faded green and beige topographic contour lines, pencil route marks, no legible words. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "74a1b3e4-a182-42f3-87d0-01f5f54647fe",
+      "image": "assets/objects/paper-map.jpg"
+    },
+    {
+      "id": "rucksack",
+      "name": "Marcus's rucksack and strap",
+      "role": "interact",
+      "scenes": [
+        "a1_trail_overlook",
+        "a5_labyrinth"
+      ],
+      "size_m": [
+        0.35,
+        0.22,
+        0.5
+      ],
+      "material": "Canvas rucksack, rust, leather trim, one strap mended with visible cream stitches",
+      "prompt": "A vintage rust-coloured canvas rucksack with brown leather trim and buckles, one shoulder strap mended with a row of visible cream hand stitches. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "10f69cda-5db6-4ba1-8f78-675ec2208ff7",
+      "image": "assets/objects/rucksack.jpg"
+    },
+    {
+      "id": "sampler",
+      "name": "Mabel's sampler",
+      "role": "interact",
+      "scenes": [
+        "a4_wrong_places"
+      ],
+      "size_m": [
+        0.4,
+        0.03,
+        0.5
+      ],
+      "material": "Cross-stitch on linen in a dark pine frame",
+      "prompt": "A framed cross-stitch embroidery sampler on cream linen in a plain dark pine frame, stitched borders of small flowers, a little house and trees in moss, rust and sky blue, decorative abstract motifs, no letters or words. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "38d0724b-4ff1-436b-94c7-d97ea81007ee",
+      "image": "assets/objects/sampler.jpg"
+    },
+    {
+      "id": "hand-sewn-book",
+      "name": "The Hand-Sewn Book",
+      "role": "interact",
+      "scenes": [
+        "a5_ritual_room"
+      ],
+      "size_m": [
+        0.3,
+        0.25,
+        0.08
+      ],
+      "material": "Thick book of felt pages bound with thread, cover of stitched wool",
+      "prompt": "A thick handmade book with pages of felt and linen, bound along the spine with heavy bone-white thread, the cover of dark brown wool felt embroidered with strange abstract stitched glyphs, lying closed, slightly lumpy and soft. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "67311505-7ca0-4730-b882-ca1cfb76685f",
+      "image": "assets/objects/hand-sewn-book.jpg"
+    },
+    {
+      "id": "book-page",
+      "name": "Loose book page",
+      "role": "interact",
+      "scenes": [
+        "a1_cabin_arrival",
+        "a2_night_hall",
+        "a3_warmth",
+        "a3_dog",
+        "a4_wrong_places",
+        "a5_ritual_room"
+      ],
+      "size_m": [
+        0.25,
+        0.32,
+        0.005
+      ],
+      "material": "Single sheet of linen with blackwork embroidery, frayed edges, thread holes",
+      "prompt": "A single loose page of cream linen with frayed edges and stitch holes along one side, embroidered with black silk counted-thread abstract glyph figures, slightly curled. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "7534a9d4-99fa-40d7-ade8-95b3c9993397",
+      "image": "assets/objects/book-page.jpg"
+    },
+    {
+      "id": "lectern",
+      "name": "Lectern",
+      "role": "interact",
+      "scenes": [
+        "a5_ritual_room"
+      ],
+      "size_m": [
+        0.6,
+        0.5,
+        1.2
+      ],
+      "material": "Carved dark pine, worn top, cloth drape",
+      "prompt": "A tall carved wooden lectern of dark old pine with a sloped reading top, a strip of patchwork cloth draped over it, worn smooth edges, simple folk carving on the post. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "35f292a6-fc35-4fbd-aba5-43f43986fa18",
+      "image": "assets/objects/lectern.jpg"
+    },
+    {
+      "id": "film-camera",
+      "name": "Lila's film camera",
+      "role": "interact",
+      "scenes": [
+        "a3_trail_creek"
+      ],
+      "size_m": [
+        0.14,
+        0.08,
+        0.09
+      ],
+      "material": "Old 35 mm camera, black leatherette, chrome, worn cloth strap",
+      "prompt": "An old unbranded 35 mm film camera with black leatherette body and worn chrome, a lens cap hanging on a string, a woven cloth neck strap, no logos. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "ad977fb8-defd-466c-a231-4bf9e1f293c5",
+      "image": "assets/objects/film-camera.jpg"
+    },
+    {
+      "id": "tarp",
+      "name": "Canvas tarp over a mound",
+      "role": "interact",
+      "scenes": [
+        "a3_dog",
+        "a4_silent_forest"
+      ],
+      "size_m": [
+        2.0,
+        1.5,
+        0.4
+      ],
+      "material": "Weathered olive canvas tarp with grommets, draped over a low shapeless mound",
+      "prompt": "A weathered olive-green canvas tarp with brass grommets draped over a low shapeless lumpy mound, nothing visible beneath, folds and creases, faded and dusty. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "6380e8a4-77eb-4895-b97e-4b5d93ee4b2b",
+      "image": "assets/objects/tarp.jpg"
+    },
+    {
+      "id": "chili-bowl",
+      "name": "Chili bowl",
+      "role": "interact",
+      "scenes": [
+        "a1_dinner"
+      ],
+      "size_m": [
+        0.16,
+        0.16,
+        0.08
+      ],
+      "material": "Stoneware bowl, rust glaze, chipped rim",
+      "prompt": "An empty handmade stoneware bowl with a speckled rust-brown glaze and a cream rim, one small chip on the rim. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "47dcfb4a-8162-4c3a-bb4b-7695720c633d",
+      "image": "assets/objects/chili-bowl.jpg"
+    },
+    {
+      "id": "coffee-mug",
+      "name": "Coffee mug",
+      "role": "interact",
+      "scenes": [
+        "a2_breakfast"
+      ],
+      "size_m": [
+        0.12,
+        0.09,
+        0.1
+      ],
+      "material": "Enamel camp mug, cream with sky-blue rim, chipped",
+      "prompt": "An old enamel camping mug, cream with a sky-blue rim, a few chips showing dark metal, empty. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "fdeaf78f-d010-4663-852a-c9a2ab4df1db",
+      "image": "assets/objects/coffee-mug.jpg"
+    },
+    {
+      "id": "guest-lamp",
+      "name": "Bedside lamp",
+      "role": "interact",
+      "scenes": [
+        "c9_new_guests",
+        "c10_hold_shelf",
+        "b8_the_door"
+      ],
+      "size_m": [
+        0.25,
+        0.25,
+        0.45
+      ],
+      "material": "Turned pine base, pleated cream fabric shade",
+      "prompt": "A small bedside table lamp with a turned pine wooden base and a pleated cream fabric shade, a braided cloth cord, switched off. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d66c338b-b03f-402f-b64b-1f42e8277549",
+      "image": "assets/objects/guest-lamp.jpg"
+    },
+    {
+      "id": "sketchbook",
+      "name": "Sketchbook",
+      "role": "interact",
+      "scenes": [
+        "c9_new_guests",
+        "c11_toy_floor"
+      ],
+      "size_m": [
+        0.22,
+        0.3,
+        0.02
+      ],
+      "material": "Spiral sketchbook, kraft card cover, pencil tucked in",
+      "prompt": "A spiral-bound sketchbook with a plain kraft-brown card cover, slightly dog-eared, a pencil tucked into the spiral, closed. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "16801a21-6481-4b04-9d7e-c165518745ae",
+      "image": "assets/objects/sketchbook.jpg"
+    },
+    {
+      "id": "binoculars",
+      "name": "Binoculars",
+      "role": "interact",
+      "scenes": [
+        "a1_trail_overlook",
+        "c9_new_guests"
+      ],
+      "size_m": [
+        0.18,
+        0.07,
+        0.12
+      ],
+      "material": "Old field binoculars, olive rubber armour, leather strap",
+      "prompt": "A pair of old field binoculars with olive-green rubber armour and black metal, a brown leather neck strap, no logos. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "5ddbda18-32a7-4c9c-b3a4-1630e7000161",
+      "image": "assets/objects/binoculars.jpg"
+    },
+    {
+      "id": "toy-shelf",
+      "name": "The shelves",
+      "role": "hero",
+      "scenes": [
+        "a1_cabin_arrival",
+        "b6_waking",
+        "b7_arrivals",
+        "c9_new_guests",
+        "c10_hold_shelf",
+        "e_cycle_shelf",
+        "e_empty_toy"
+      ],
+      "size_m": [
+        2.4,
+        0.4,
+        2.2
+      ],
+      "material": "Tall open pine shelving, four boards, worn edges, dust",
+      "prompt": "A tall freestanding open bookshelf unit of worn knotty pine with four deep empty shelves, dusty boards, rounded worn front edges, simple cabin carpentry, completely empty. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "b6b4361a-1a39-4b15-85a2-31393dee835e",
+      "image": "assets/objects/toy-shelf.jpg"
+    },
+    {
+      "id": "altar",
+      "name": "Altar",
+      "role": "hero",
+      "scenes": [
+        "a5_ritual_room",
+        "a5_last_thing"
+      ],
+      "size_m": [
+        1.6,
+        0.9,
+        0.9
+      ],
+      "material": "Fieldstone base, pine slab top, patchwork cloth",
+      "prompt": "A low rectangular folk altar with a base of stacked grey fieldstones and a thick pine slab top, covered by a faded patchwork cloth of felt squares in moss, rust, sky and cream with bone-white stitching hanging over the edges. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "2467b56f-449f-48e9-aa18-d5bcb7a41971",
+      "image": "assets/objects/altar.jpg"
+    },
+    {
+      "id": "trapdoor",
+      "name": "Cellar trapdoor",
+      "role": "hero",
+      "scenes": [
+        "a5_cabin_turns",
+        "c14_chase_cabin"
+      ],
+      "size_m": [
+        1.0,
+        1.0,
+        0.1
+      ],
+      "material": "Pine plank hatch in its frame, iron ring pull, strap hinges",
+      "prompt": "A square wooden cellar trapdoor of worn pine planks set in a plank floor frame, lid propped half open on black iron strap hinges, a black iron ring pull, darkness in the opening. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "1b3a582c-681e-4019-843a-7d42681bccf1",
+      "image": "assets/objects/trapdoor.jpg"
+    },
+    {
+      "id": "couch",
+      "name": "The couch",
+      "role": "hero",
+      "scenes": [
+        "b7_jamie_falls",
+        "a4_wrong_places",
+        "c13_seal"
+      ],
+      "size_m": [
+        2.0,
+        0.9,
+        0.85
+      ],
+      "material": "Sagging floral upholstery, pine legs, crocheted throw",
+      "prompt": "A sagging 1970s three-seat couch upholstered in faded floral fabric of rust and cream, turned pine legs, a crocheted granny-square blanket folded over one arm. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "48a6ef59-e9a3-4f49-9c41-ac92675535e0",
+      "image": "assets/objects/couch.jpg"
+    },
+    {
+      "id": "rag-rug",
+      "name": "Braided rag rug",
+      "role": "fill",
+      "scenes": [
+        "a1_cabin_arrival",
+        "c11_toy_floor",
+        "a2_night_hall"
+      ],
+      "size_m": [
+        1.8,
+        1.2,
+        0.02
+      ],
+      "material": "Oval braided rag rug in faded felt colours",
+      "prompt": "An oval braided rag rug lying flat, coiled strips of faded fabric in moss, rust, sky blue and cream, slightly frayed edge. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "719333d8-901a-4783-88d3-8be4687a177a",
+      "image": "assets/objects/rag-rug.jpg"
+    },
+    {
+      "id": "dining-table",
+      "name": "Dining table",
+      "role": "fill",
+      "scenes": [
+        "a1_dinner",
+        "a2_breakfast",
+        "a5_kitchen_bear",
+        "e_warning_unpick"
+      ],
+      "size_m": [
+        2.0,
+        0.9,
+        0.76
+      ],
+      "material": "Scrubbed pine trestle table",
+      "prompt": "A long rustic scrubbed pine trestle dining table, worn pale top with knots and scratches, sturdy legs, empty. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d082ac7c-2b53-4819-a401-6cd41b9a6ebb",
+      "image": "assets/objects/dining-table.jpg"
+    },
+    {
+      "id": "ladder-back-chair",
+      "name": "Ladder-back chair",
+      "role": "fill",
+      "scenes": [
+        "a1_dinner",
+        "a3_smell"
+      ],
+      "size_m": [
+        0.45,
+        0.45,
+        0.95
+      ],
+      "material": "Pine ladder-back chair, woven rush seat",
+      "prompt": "A single old pine ladder-back chair with a woven rush seat, worn finish, empty. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "6fa3d7c3-8c19-4b16-934f-f0193fd300fd",
+      "image": "assets/objects/ladder-back-chair.jpg"
+    },
+    {
+      "id": "wood-stove",
+      "name": "Wood stove",
+      "role": "fill",
+      "scenes": [
+        "a1_cabin_arrival",
+        "a1_dinner",
+        "c14_chase_cabin"
+      ],
+      "size_m": [
+        0.6,
+        0.6,
+        0.8
+      ],
+      "material": "Cast-iron box stove, black, stovepipe stub",
+      "prompt": "A small black cast-iron box wood stove on short legs, a hinged door with a small mica window, a short stovepipe stub on top, light rust patina. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "304b7f27-9968-4223-a405-ea179070a8a2",
+      "image": "assets/objects/wood-stove.jpg"
+    },
+    {
+      "id": "quilted-bed",
+      "name": "Lila's bed",
+      "role": "fill",
+      "scenes": [
+        "a3_warmth"
+      ],
+      "size_m": [
+        1.0,
+        2.0,
+        1.0
+      ],
+      "material": "White iron bed frame, patchwork quilt, flat pillow",
+      "prompt": "A single white-painted iron bed with a simple curved headboard, a faded patchwork quilt in moss, rust and cream, one flat pillow, slightly rumpled, nobody on it. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "ebe5806d-e103-4e3d-886c-c30a970e9c71",
+      "image": "assets/objects/quilted-bed.jpg"
+    },
+    {
+      "id": "broken-crib",
+      "name": "Broken crib",
+      "role": "fill",
+      "scenes": [
+        "a5_labyrinth"
+      ],
+      "size_m": [
+        1.3,
+        0.7,
+        1.0
+      ],
+      "material": "Old pine crib, one side collapsed, peeling cream paint",
+      "prompt": "An old wooden baby crib with peeling cream paint, one side of slats broken and collapsed inward, empty, dusty. Muted folk palette. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "741a9770-6336-49fe-95ae-403a0bb51c99",
+      "image": "assets/objects/broken-crib.jpg"
+    }
+  ]
+}
