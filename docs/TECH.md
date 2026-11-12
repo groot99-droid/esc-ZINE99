@@ -43,6 +43,8 @@ esc-zine99/
       scenes.json       every 3D scene, 2D sequence and 1D game, with ids
       flags.json        every flag and meter, with type, range and what sets it
       endings.json      every ending and its exact conditions
+      schemas/          optional: schemas for any extra data files this game needs
+    tools/check_data.py optional: checks those extra files; validate.py runs it
     src/                game-specific code (not yet written)
     assets/             models, textures, audio (not yet made)
 ```
@@ -115,6 +117,13 @@ note at start that names what they contain.
 - every scene id referenced exists in `scenes.json`;
 - each game has at least four 3D scenes, two 2D modes and four 1D games;
 - each game has at least four endings, at most one `as_written`, and a final catch-all ending;
-- chapter minutes add up to a total between 45 and 180.
+- chapter minutes add up to a total between 45 and 180;
+- if the game has `tools/check_data.py`, it runs and must exit 0.
+
+**Extra data files.** A game whose design needs data the shared schemas do not cover (Behind the
+Peephole's night scripts, answer tables and card deals, for example) adds the files to its own
+`data/`, their schemas to `data/schemas/`, and a stdlib `tools/check_data.py` that checks them
+against each other and the four shared files. `validate.py` runs that check, so one command still
+covers everything.
 
 Run it after any change to a game's data.
