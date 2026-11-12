@@ -1,0 +1,558 @@
+{
+  "game": "stuffed-ones",
+  "location": "car-interior",
+  "name": "The car on Ridgeway Road",
+  "reference": "assets/locations/car-interior.jpg",
+  "bounds_m": [
+    1.5,
+    2.2,
+    1.2
+  ],
+  "origin": "cabin floor centre; +y toward the windshield and the road ahead, the back seat on -y",
+  "materials": {
+    "upholstery": {
+      "color": [
+        0.478,
+        0.29,
+        0.188
+      ],
+      "roughness": 0.85
+    },
+    "headliner": {
+      "color": [
+        0.788,
+        0.725,
+        0.604
+      ],
+      "roughness": 0.95
+    },
+    "dash": {
+      "color": [
+        0.353,
+        0.18,
+        0.133
+      ],
+      "roughness": 0.7
+    },
+    "glass": {
+      "color": [
+        0.8,
+        0.85,
+        0.82
+      ],
+      "roughness": 0.1,
+      "emission": 0.8
+    },
+    "road": {
+      "color": [
+        0.71,
+        0.647,
+        0.541
+      ],
+      "roughness": 1.0
+    },
+    "pines": {
+      "color": [
+        0.235,
+        0.29,
+        0.188
+      ],
+      "roughness": 1.0
+    },
+    "metal": {
+      "color": [
+        0.788,
+        0.725,
+        0.604
+      ],
+      "roughness": 0.4,
+      "metallic": 0.6
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        1.5,
+        2.2,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "upholstery"
+    },
+    {
+      "id": "roof",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        1.5,
+        2.2,
+        0.08
+      ],
+      "location": [
+        0,
+        0,
+        1.24
+      ],
+      "material": "headliner"
+    },
+    {
+      "id": "door-left-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.08,
+        2.2,
+        0.55
+      ],
+      "location": [
+        -0.71,
+        0,
+        0.275
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "door-right-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.08,
+        2.2,
+        0.55
+      ],
+      "location": [
+        0.71,
+        0,
+        0.275
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "window-left",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.03,
+        1.7,
+        0.45
+      ],
+      "location": [
+        -0.72,
+        -0.1,
+        0.8
+      ],
+      "material": "glass",
+      "collide": false
+    },
+    {
+      "id": "window-right",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.03,
+        1.7,
+        0.45
+      ],
+      "location": [
+        0.72,
+        -0.1,
+        0.8
+      ],
+      "material": "glass",
+      "collide": false
+    },
+    {
+      "id": "pillar-left",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.08,
+        0.08,
+        0.6
+      ],
+      "location": [
+        -0.7,
+        0.85,
+        0.85
+      ],
+      "material": "headliner",
+      "rotation_deg": [
+        -30,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "pillar-right",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.08,
+        0.08,
+        0.6
+      ],
+      "location": [
+        0.7,
+        0.85,
+        0.85
+      ],
+      "material": "headliner",
+      "rotation_deg": [
+        -30,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "windshield",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.35,
+        0.03,
+        0.5
+      ],
+      "location": [
+        0,
+        0.88,
+        0.85
+      ],
+      "material": "glass",
+      "rotation_deg": [
+        -30,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "rear-window",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.3,
+        0.03,
+        0.4
+      ],
+      "location": [
+        0,
+        -1.08,
+        0.85
+      ],
+      "material": "glass",
+      "rotation_deg": [
+        20,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "dashboard",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        0.35,
+        0.3
+      ],
+      "location": [
+        0,
+        0.85,
+        0.45
+      ],
+      "material": "dash"
+    },
+    {
+      "id": "front-seat-left",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.6,
+        0.5,
+        0.4
+      ],
+      "location": [
+        -0.38,
+        0.35,
+        0.2
+      ],
+      "material": "upholstery"
+    },
+    {
+      "id": "front-seat-right",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.6,
+        0.5,
+        0.4
+      ],
+      "location": [
+        0.38,
+        0.35,
+        0.2
+      ],
+      "material": "upholstery"
+    },
+    {
+      "id": "front-back-left",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.6,
+        0.12,
+        0.55
+      ],
+      "location": [
+        -0.38,
+        0.05,
+        0.65
+      ],
+      "material": "upholstery"
+    },
+    {
+      "id": "front-back-right",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.6,
+        0.12,
+        0.55
+      ],
+      "location": [
+        0.38,
+        0.05,
+        0.65
+      ],
+      "material": "upholstery"
+    },
+    {
+      "id": "console",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.18,
+        0.5,
+        0.3
+      ],
+      "location": [
+        0,
+        0.35,
+        0.15
+      ],
+      "material": "dash"
+    },
+    {
+      "id": "rear-bench",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        0.55,
+        0.4
+      ],
+      "location": [
+        0,
+        -0.65,
+        0.2
+      ],
+      "material": "upholstery"
+    },
+    {
+      "id": "rear-back",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        0.12,
+        0.6
+      ],
+      "location": [
+        0,
+        -0.98,
+        0.7
+      ],
+      "material": "upholstery",
+      "rotation_deg": [
+        -10,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "mirror",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.22,
+        0.03,
+        0.07
+      ],
+      "location": [
+        0,
+        0.65,
+        1.08
+      ],
+      "material": "metal",
+      "collide": false
+    },
+    {
+      "id": "ridgeway-road",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        5,
+        80,
+        0.05
+      ],
+      "location": [
+        0,
+        30,
+        -0.35
+      ],
+      "material": "road"
+    },
+    {
+      "id": "pines-left",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        6,
+        80,
+        18
+      ],
+      "location": [
+        -8,
+        30,
+        9
+      ],
+      "material": "pines"
+    },
+    {
+      "id": "pines-right",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        6,
+        80,
+        18
+      ],
+      "location": [
+        8,
+        30,
+        9
+      ],
+      "material": "pines"
+    }
+  ],
+  "props": [
+    {
+      "id": "bag",
+      "object": "jamies-bag",
+      "location": [
+        0,
+        0.35,
+        0.3
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    }
+  ],
+  "scenes": {
+    "a1_car": {
+      "note": "Back seat on Ridgeway Road, bright afternoon flickering through the pines. Look only; answer Jamie, ask what's in his bag for the bad postcard. The cabin comes into view at 1:50.",
+      "world": {
+        "color": [
+          0.75,
+          0.8,
+          0.7
+        ],
+        "strength": 0.7
+      },
+      "lights": [
+        {
+          "name": "sun-through-pines",
+          "type": "SUN",
+          "location": [
+            3,
+            8,
+            12
+          ],
+          "energy": 4.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.93,
+            0.8
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "sky-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            1.15
+          ],
+          "energy": 20,
+          "size": 1.2,
+          "color": [
+            0.85,
+            0.92,
+            0.85
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -0.35,
+          -0.7,
+          1.0
+        ],
+        "look_at": [
+          0,
+          2.5,
+          0.8
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -0.35,
+          -0.7,
+          0.4
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "bag",
+          "verb": "Ask what's in Jamie's bag"
+        }
+      ]
+    }
+  }
+}

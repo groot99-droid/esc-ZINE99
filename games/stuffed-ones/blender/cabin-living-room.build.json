@@ -1,0 +1,3537 @@
+{
+  "game": "stuffed-ones",
+  "location": "cabin-living-room",
+  "name": "The cabin, ground floor",
+  "reference": "assets/locations/cabin-living-room.jpg",
+  "bounds_m": [
+    12.0,
+    8.0,
+    2.4
+  ],
+  "origin": "floor centre; +y toward the north wall and its shelf units, the front door to the porch on the -y wall, the back hall and cellar trapdoor at the -x end, the kitchen through the -x wall",
+  "materials": {
+    "worn-pine": {
+      "color": [
+        0.722,
+        0.58,
+        0.416
+      ],
+      "roughness": 0.85
+    },
+    "cedar-log": {
+      "color": [
+        0.42,
+        0.259,
+        0.149
+      ],
+      "roughness": 0.9
+    },
+    "wallpaper": {
+      "color": [
+        0.839,
+        0.8,
+        0.69
+      ],
+      "roughness": 0.9
+    },
+    "plaster": {
+      "color": [
+        0.788,
+        0.725,
+        0.604
+      ],
+      "roughness": 0.95
+    },
+    "stone": {
+      "color": [
+        0.49,
+        0.467,
+        0.424
+      ],
+      "roughness": 0.95
+    },
+    "stove-iron": {
+      "color": [
+        0.18,
+        0.169,
+        0.157
+      ],
+      "roughness": 0.6,
+      "metallic": 0.7
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        12.0,
+        8.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "worn-pine"
+    },
+    {
+      "id": "ceiling-main",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        12.0,
+        7.0,
+        0.1
+      ],
+      "location": [
+        0,
+        -0.5,
+        2.45
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "ceiling-nw",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        1.9,
+        1.0,
+        0.1
+      ],
+      "location": [
+        -5.05,
+        3.5,
+        2.45
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "ceiling-ne",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        7.4,
+        1.0,
+        0.1
+      ],
+      "location": [
+        2.3,
+        3.5,
+        2.45
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-south-0",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.5,
+        0.15,
+        2.4
+      ],
+      "location": [
+        -4.75,
+        -4.075,
+        1.2
+      ],
+      "material": "wallpaper"
+    },
+    {
+      "id": "wall-south-1-sill",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.0,
+        0.15,
+        0.9
+      ],
+      "location": [
+        -3.0,
+        -4.075,
+        0.45
+      ],
+      "material": "wallpaper"
+    },
+    {
+      "id": "wall-south-2-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.0,
+        0.15,
+        0.4
+      ],
+      "location": [
+        -3.0,
+        -4.075,
+        2.2
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "wall-south-3",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3.0,
+        0.15,
+        2.4
+      ],
+      "location": [
+        -1.0,
+        -4.075,
+        1.2
+      ],
+      "material": "wallpaper"
+    },
+    {
+      "id": "wall-south-4-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.0,
+        0.15,
+        0.3
+      ],
+      "location": [
+        1.0,
+        -4.075,
+        2.25
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "wall-south-5",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.0,
+        0.15,
+        2.4
+      ],
+      "location": [
+        2.5,
+        -4.075,
+        1.2
+      ],
+      "material": "wallpaper"
+    },
+    {
+      "id": "wall-south-6-sill",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.0,
+        0.15,
+        0.9
+      ],
+      "location": [
+        4.0,
+        -4.075,
+        0.45
+      ],
+      "material": "wallpaper"
+    },
+    {
+      "id": "wall-south-7-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.0,
+        0.15,
+        0.4
+      ],
+      "location": [
+        4.0,
+        -4.075,
+        2.2
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "wall-south-8",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.5,
+        0.15,
+        2.4
+      ],
+      "location": [
+        5.25,
+        -4.075,
+        1.2
+      ],
+      "material": "wallpaper"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        12.0,
+        0.15,
+        2.4
+      ],
+      "location": [
+        0,
+        4.075,
+        1.2
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "wall-east-0",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.7,
+        2.4
+      ],
+      "location": [
+        6.075,
+        -3.65,
+        1.2
+      ],
+      "material": "wallpaper"
+    },
+    {
+      "id": "wall-east-1-sill",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.0,
+        0.9
+      ],
+      "location": [
+        6.075,
+        -2.8,
+        0.45
+      ],
+      "material": "wallpaper"
+    },
+    {
+      "id": "wall-east-2-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.0,
+        0.4
+      ],
+      "location": [
+        6.075,
+        -2.8,
+        2.2
+      ],
+      "material": "wallpaper"
+    },
+    {
+      "id": "wall-east-3",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        6.3,
+        2.4
+      ],
+      "location": [
+        6.075,
+        0.85,
+        1.2
+      ],
+      "material": "wallpaper"
+    },
+    {
+      "id": "wall-west-0",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        2.1,
+        2.4
+      ],
+      "location": [
+        -6.075,
+        -2.95,
+        1.2
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "wall-west-1-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.8,
+        0.4
+      ],
+      "location": [
+        -6.075,
+        -1.5,
+        2.2
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "wall-west-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        2.9,
+        2.4
+      ],
+      "location": [
+        -6.075,
+        0.35,
+        1.2
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "wall-west-3-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.2,
+        0.3
+      ],
+      "location": [
+        -6.075,
+        2.4,
+        2.25
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "wall-west-4",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.0,
+        2.4
+      ],
+      "location": [
+        -6.075,
+        3.5,
+        1.2
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "hall-partition-0",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.1,
+        2.5,
+        2.4
+      ],
+      "location": [
+        -4.6,
+        -2.75,
+        1.2
+      ],
+      "material": "wallpaper"
+    },
+    {
+      "id": "hall-partition-1-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.1,
+        1.0,
+        0.3
+      ],
+      "location": [
+        -4.6,
+        -1.0,
+        2.25
+      ],
+      "material": "wallpaper"
+    },
+    {
+      "id": "hall-partition-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.1,
+        0.9,
+        2.4
+      ],
+      "location": [
+        -4.6,
+        -0.05,
+        1.2
+      ],
+      "material": "wallpaper"
+    },
+    {
+      "id": "basement-wall-0",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        0.1,
+        2.4
+      ],
+      "location": [
+        -5.85,
+        -2.8,
+        1.2
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "basement-wall-1-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        0.1,
+        0.4
+      ],
+      "location": [
+        -5.3,
+        -2.8,
+        2.2
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "basement-wall-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        0.1,
+        2.4
+      ],
+      "location": [
+        -4.75,
+        -2.8,
+        1.2
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "stair-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.45,
+        0.9,
+        0.4
+      ],
+      "location": [
+        -1.625,
+        3.5,
+        0.2
+      ],
+      "material": "worn-pine"
+    },
+    {
+      "id": "stair-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.45,
+        0.9,
+        0.8
+      ],
+      "location": [
+        -2.075,
+        3.5,
+        0.4
+      ],
+      "material": "worn-pine"
+    },
+    {
+      "id": "stair-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.45,
+        0.9,
+        1.2
+      ],
+      "location": [
+        -2.525,
+        3.5,
+        0.6
+      ],
+      "material": "worn-pine"
+    },
+    {
+      "id": "stair-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.45,
+        0.9,
+        1.6
+      ],
+      "location": [
+        -2.975,
+        3.5,
+        0.8
+      ],
+      "material": "worn-pine"
+    },
+    {
+      "id": "stair-5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.45,
+        0.9,
+        2.0
+      ],
+      "location": [
+        -3.425,
+        3.5,
+        1.0
+      ],
+      "material": "worn-pine"
+    },
+    {
+      "id": "stair-6",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.45,
+        0.9,
+        2.4
+      ],
+      "location": [
+        -3.875,
+        3.5,
+        1.2
+      ],
+      "material": "worn-pine"
+    },
+    {
+      "id": "hearth-pad",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        0.05
+      ],
+      "location": [
+        -5.4,
+        1.2,
+        0.025
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "stovepipe",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.15,
+        0.15,
+        1.6
+      ],
+      "location": [
+        -5.6,
+        1.2,
+        1.6
+      ],
+      "material": "stove-iron"
+    },
+    {
+      "id": "game-table",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.7,
+        0.45
+      ],
+      "location": [
+        0.4,
+        -1.2,
+        0.225
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "entry-table",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.35,
+        0.8
+      ],
+      "location": [
+        2.6,
+        -3.75,
+        0.4
+      ],
+      "material": "cedar-log"
+    }
+  ],
+  "props": [
+    {
+      "id": "shelf-north-a",
+      "object": "toy-shelf",
+      "location": [
+        -0.1,
+        3.8,
+        0
+      ]
+    },
+    {
+      "id": "shelf-north-b",
+      "object": "toy-shelf",
+      "location": [
+        2.4,
+        3.8,
+        0
+      ]
+    },
+    {
+      "id": "shelf-north-c",
+      "object": "toy-shelf",
+      "location": [
+        4.8,
+        3.8,
+        0
+      ]
+    },
+    {
+      "id": "shelf-east",
+      "object": "toy-shelf",
+      "location": [
+        5.8,
+        1.4,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "guestbook",
+      "object": "guestbook",
+      "location": [
+        2.4,
+        -3.75,
+        0.8
+      ]
+    },
+    {
+      "id": "page-guestbook",
+      "object": "book-page",
+      "location": [
+        2.6,
+        -3.7,
+        0.8
+      ]
+    },
+    {
+      "id": "guest-lamp",
+      "object": "guest-lamp",
+      "location": [
+        2.9,
+        -3.78,
+        0.8
+      ]
+    },
+    {
+      "id": "game-board",
+      "object": "counting-game-board",
+      "location": [
+        0.2,
+        -1.2,
+        0.45
+      ]
+    },
+    {
+      "id": "game-box",
+      "object": "game-box",
+      "location": [
+        0.8,
+        -1.2,
+        0.45
+      ]
+    },
+    {
+      "id": "page-gamebox",
+      "object": "book-page",
+      "location": [
+        0.8,
+        -1.2,
+        0.53
+      ]
+    },
+    {
+      "id": "couch",
+      "object": "couch",
+      "location": [
+        -2.4,
+        -0.6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "sketchbook",
+      "object": "sketchbook",
+      "location": [
+        -2.4,
+        -0.2,
+        0.45
+      ]
+    },
+    {
+      "id": "rug",
+      "object": "rag-rug",
+      "location": [
+        0.2,
+        -1.2,
+        0
+      ]
+    },
+    {
+      "id": "chair-window",
+      "object": "ladder-back-chair",
+      "location": [
+        -3.0,
+        -3.3,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "chair-east",
+      "object": "ladder-back-chair",
+      "location": [
+        4.0,
+        -3.3,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "stove",
+      "object": "wood-stove",
+      "location": [
+        -5.4,
+        1.2,
+        0.05
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "sampler",
+      "object": "sampler",
+      "location": [
+        5.98,
+        -0.8,
+        1.6
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ],
+      "ground": false
+    },
+    {
+      "id": "page-sampler",
+      "object": "book-page",
+      "location": [
+        5.99,
+        -0.8,
+        1.45
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        -90
+      ],
+      "ground": false
+    },
+    {
+      "id": "binoculars",
+      "object": "binoculars",
+      "location": [
+        -3.0,
+        -4.04,
+        0.9
+      ]
+    },
+    {
+      "id": "trapdoor",
+      "object": "trapdoor",
+      "location": [
+        -5.3,
+        -3.4,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "a1_cabin_arrival": {
+      "note": "Arrival by day: warm dusty sun, cedar. Mabel and Ruth, the shelves (look, never move), the Laugh prompt, then I1 at 3:30. Write your name in the guestbook; pages under it and in the game-box lid.",
+      "world": {
+        "color": [
+          0.75,
+          0.68,
+          0.58
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 220,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 220,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 154.0,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        },
+        {
+          "name": "door-spill",
+          "type": "AREA",
+          "location": [
+            1.0,
+            -3.7,
+            1.2
+          ],
+          "energy": 120,
+          "size": 0.9,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            1.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          1.0,
+          -3.4,
+          1.65
+        ],
+        "look_at": [
+          1.5,
+          3.0,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          1.0,
+          -3.4,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "page-sampler"
+      ],
+      "interactions": [
+        {
+          "prop": "guestbook",
+          "verb": "Write your name"
+        },
+        {
+          "prop": "page-guestbook",
+          "verb": "Take the page under the guestbook"
+        },
+        {
+          "prop": "game-box",
+          "verb": "Open the lid"
+        },
+        {
+          "prop": "page-gamebox",
+          "verb": "Take the page in the lid"
+        },
+        {
+          "prop": "shelf-north-b",
+          "verb": "Look at the shelves"
+        },
+        {
+          "prop": "shelf-east",
+          "verb": "Stand with Dani"
+        },
+        {
+          "prop": "binoculars",
+          "verb": "Go out with Marcus",
+          "leads_to": "a1_trail_overlook"
+        }
+      ]
+    },
+    "a3_smell": {
+      "note": "Midday. Jamie lifts the rabbit off a chair: 'this thing smells weird.' Hold to lean in and smell; the screen's edges warm. Incident I3.",
+      "world": {
+        "color": [
+          0.75,
+          0.7,
+          0.6
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 220,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 220,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 154.0,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        },
+        {
+          "name": "door-spill",
+          "type": "AREA",
+          "location": [
+            1.0,
+            -3.7,
+            1.2
+          ],
+          "energy": 120,
+          "size": 0.9,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            1.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -1.6,
+          -2.4,
+          1.65
+        ],
+        "look_at": [
+          -3.0,
+          -3.3,
+          0.6
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -1.6,
+          -2.4,
+          0
+        ],
+        "facing_deg": 135
+      },
+      "hide": [
+        "page-sampler",
+        "page-guestbook",
+        "page-gamebox"
+      ],
+      "interactions": [
+        {
+          "prop": "chair-window",
+          "verb": "Lean in and smell (hold)"
+        },
+        {
+          "prop": "couch",
+          "verb": "Go out to the creek with Lila and Dani",
+          "leads_to": "a3_trail_creek"
+        }
+      ]
+    },
+    "a4_wrong_places": {
+      "note": "Grey morning. The toys where we hadn't left them; the pegs moved on the board. The 40-second argument, incident I8; a page behind the frame of Mabel's sampler.",
+      "world": {
+        "color": [
+          0.6,
+          0.62,
+          0.64
+        ],
+        "strength": 0.45
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 110,
+          "size": 1.0,
+          "color": [
+            0.82,
+            0.84,
+            0.86
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 110,
+          "size": 1.0,
+          "color": [
+            0.82,
+            0.84,
+            0.86
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 77.0,
+          "size": 1.0,
+          "color": [
+            0.82,
+            0.84,
+            0.86
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -3.5,
+          2.2,
+          1.65
+        ],
+        "look_at": [
+          2.0,
+          -1.0,
+          0.8
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -3.5,
+          2.2,
+          0
+        ],
+        "facing_deg": 250
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox"
+      ],
+      "interactions": [
+        {
+          "prop": "game-board",
+          "verb": "Look at the pegs"
+        },
+        {
+          "prop": "couch",
+          "verb": "The dog faces the hallway"
+        },
+        {
+          "prop": "sampler",
+          "verb": "Look behind the frame"
+        },
+        {
+          "prop": "page-sampler",
+          "verb": "Take the page",
+          "leads_to": "a4_book_2"
+        }
+      ]
+    },
+    "a5_cabin_turns": {
+      "note": "The cabin turns: lights flicker at 2 Hz, the toys lunge. Run; every exit has toys in it; the only open way is down the back hall to the cellar trapdoor. You cannot be caught, only steered.",
+      "world": {
+        "color": [
+          0.18,
+          0.15,
+          0.13
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "lamp",
+          "type": "POINT",
+          "location": [
+            2.9,
+            -3.78,
+            1.15
+          ],
+          "energy": 60,
+          "size": 0.15,
+          "color": [
+            1.0,
+            0.72,
+            0.45
+          ]
+        },
+        {
+          "name": "stove-fire",
+          "type": "POINT",
+          "location": [
+            -5.1,
+            1.2,
+            0.4
+          ],
+          "energy": 80,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.55,
+            0.25
+          ]
+        },
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 25,
+          "size": 1.0,
+          "color": [
+            0.9,
+            0.7,
+            0.55
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 25,
+          "size": 1.0,
+          "color": [
+            0.9,
+            0.7,
+            0.55
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 17.5,
+          "size": 1.0,
+          "color": [
+            0.9,
+            0.7,
+            0.55
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          3.0,
+          -1.0,
+          1.65
+        ],
+        "look_at": [
+          -4.6,
+          -1.0,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          3.0,
+          -1.0,
+          0
+        ],
+        "facing_deg": 90
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": [
+        {
+          "prop": "trapdoor",
+          "verb": "Go down",
+          "leads_to": "a5_labyrinth"
+        }
+      ]
+    },
+    "b6_waking": {
+      "note": "Black; 'Warmth. / Pressure. / Then light.' Morning on the shelf, blurred edges. Across: the four friends with button eyes on the east unit. The Still tutorial: Ruth's voice, the pulse, a clock.",
+      "world": {
+        "color": [
+          0.6,
+          0.62,
+          0.66
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 140,
+          "size": 1.0,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 140,
+          "size": 1.0,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 98.0,
+          "size": 1.0,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          5.6,
+          1.4,
+          1.4
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": []
+    },
+    "b6_keepers_visit": {
+      "note": "Morning. Mabel and Ruth with a lint brush: 'Oh, they turned out lovely.' Being handled; hold Still. Ruth's whisper about the hunger.",
+      "world": {
+        "color": [
+          0.6,
+          0.62,
+          0.66
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 140,
+          "size": 1.0,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 140,
+          "size": 1.0,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 98.0,
+          "size": 1.0,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          1.5,
+          -4.0,
+          0.9
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": [
+        {
+          "prop": "shelf-north-b",
+          "verb": "Hold still",
+          "leads_to": "b6_stuffing_1"
+        }
+      ]
+    },
+    "b7_arrivals": {
+      "note": "Afternoon into evening. 'Car doors. / Laughter. / Footsteps on the porch.' The three you will hunt unpack in front of you; one reads the guestbook aloud. Release when the room is empty.",
+      "world": {
+        "color": [
+          0.7,
+          0.6,
+          0.5
+        ],
+        "strength": 0.45
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 220,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 220,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 154.0,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        },
+        {
+          "name": "door-spill",
+          "type": "AREA",
+          "location": [
+            1.0,
+            -3.7,
+            1.2
+          ],
+          "energy": 120,
+          "size": 0.9,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            1.0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "lamp",
+          "type": "POINT",
+          "location": [
+            2.9,
+            -3.78,
+            1.15
+          ],
+          "energy": 30,
+          "size": 0.15,
+          "color": [
+            1.0,
+            0.72,
+            0.45
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          1.5,
+          -4.0,
+          0.9
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": [
+        {
+          "prop": "shelf-north-b",
+          "verb": "Release (room empty)"
+        }
+      ]
+    },
+    "b7_jamie_falls": {
+      "note": "Evening. Jamie falls; a guest laughs and puts him on the couch; his head twitches. 'Did you see that?'",
+      "world": {
+        "color": [
+          0.35,
+          0.28,
+          0.22
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "lamp",
+          "type": "POINT",
+          "location": [
+            2.9,
+            -3.78,
+            1.15
+          ],
+          "energy": 60,
+          "size": 0.15,
+          "color": [
+            1.0,
+            0.72,
+            0.45
+          ]
+        },
+        {
+          "name": "stove-fire",
+          "type": "POINT",
+          "location": [
+            -5.1,
+            1.2,
+            0.4
+          ],
+          "energy": 80,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.55,
+            0.25
+          ]
+        },
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 25,
+          "size": 1.0,
+          "color": [
+            0.9,
+            0.7,
+            0.55
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 25,
+          "size": 1.0,
+          "color": [
+            0.9,
+            0.7,
+            0.55
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 17.5,
+          "size": 1.0,
+          "color": [
+            0.9,
+            0.7,
+            0.55
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          -2.4,
+          -0.6,
+          0.5
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": []
+    },
+    "b8_breaking_point": {
+      "note": "Night, 'too quiet'. Dark but for the friends' glows on the east unit. Lila climbs down: 'She didn't want to.' The view flattens into the dollhouse.",
+      "world": {
+        "color": [
+          0.1,
+          0.12,
+          0.16
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 20,
+          "size": 1.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 20,
+          "size": 1.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 14.0,
+          "size": 1.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        },
+        {
+          "name": "night-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            2.3
+          ],
+          "energy": 20,
+          "size": 4.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "glow-jamie",
+          "type": "POINT",
+          "location": [
+            5.6,
+            0.6,
+            1.65
+          ],
+          "energy": 6,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.6,
+            0.25
+          ]
+        },
+        {
+          "name": "glow-lila",
+          "type": "POINT",
+          "location": [
+            5.6,
+            1.2,
+            1.65
+          ],
+          "energy": 6,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.6,
+            0.25
+          ]
+        },
+        {
+          "name": "glow-marcus",
+          "type": "POINT",
+          "location": [
+            5.6,
+            1.8,
+            1.65
+          ],
+          "energy": 6,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.6,
+            0.25
+          ]
+        },
+        {
+          "name": "glow-dani",
+          "type": "POINT",
+          "location": [
+            5.6,
+            2.3,
+            1.65
+          ],
+          "energy": 6,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.6,
+            0.25
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          5.6,
+          1.4,
+          1.2
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": []
+    },
+    "c9_new_guests": {
+      "note": "Day, rewound: the same three step inside and you watch them as what you are. Wes pokes your arm; Ana moves Lila to another shelf. Learn who keeps score, who sleeps with a lamp, who talks to toys.",
+      "world": {
+        "color": [
+          0.72,
+          0.66,
+          0.58
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 220,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 220,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 154.0,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        },
+        {
+          "name": "door-spill",
+          "type": "AREA",
+          "location": [
+            1.0,
+            -3.7,
+            1.2
+          ],
+          "energy": 120,
+          "size": 0.9,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            1.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          1.5,
+          -4.0,
+          0.9
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": [
+        {
+          "prop": "shelf-north-b",
+          "verb": "Hold still (poked)"
+        },
+        {
+          "prop": "shelf-north-b",
+          "verb": "Join the night's game",
+          "leads_to": "c10_dollhouse_sound"
+        },
+        {
+          "prop": "shelf-north-b",
+          "verb": "Hold (refuse)",
+          "leads_to": "c10_hold_shelf"
+        }
+      ]
+    },
+    "c10_hold_shelf": {
+      "note": "Night one, refused: hold Still on the shelf while the others play Sound; their sounds come from upstairs. Hunger rises unfed.",
+      "world": {
+        "color": [
+          0.1,
+          0.12,
+          0.16
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 35,
+          "size": 1.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 35,
+          "size": 1.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 24.5,
+          "size": 1.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        },
+        {
+          "name": "night-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            2.3
+          ],
+          "energy": 20,
+          "size": 4.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          1.5,
+          -4.0,
+          0.9
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": [
+        {
+          "prop": "shelf-north-b",
+          "verb": "Hold still",
+          "leads_to": "c10_stuffing_2"
+        }
+      ]
+    },
+    "c11_toy_floor": {
+      "note": "Day two, daylight, guests awake: 'we changed positions.' Toy-floor camera; pick one of six spots and reach it unseen. Mid-morning the hike leaves one guest on the porch; the board waits on the table.",
+      "world": {
+        "color": [
+          0.75,
+          0.7,
+          0.6
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 220,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 220,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 154.0,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        },
+        {
+          "name": "door-spill",
+          "type": "AREA",
+          "location": [
+            1.0,
+            -3.7,
+            1.2
+          ],
+          "energy": 120,
+          "size": 0.9,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            1.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.2,
+          0.28
+        ],
+        "look_at": [
+          1.0,
+          -1.2,
+          0.3
+        ],
+        "lens_mm": 26,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.2,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": [
+        {
+          "prop": "couch",
+          "verb": "Take this spot"
+        },
+        {
+          "prop": "chair-window",
+          "verb": "Take this spot"
+        },
+        {
+          "prop": "chair-east",
+          "verb": "Take this spot"
+        },
+        {
+          "prop": "stove",
+          "verb": "Take this spot"
+        },
+        {
+          "prop": "rug",
+          "verb": "Take this spot"
+        },
+        {
+          "prop": "guest-lamp",
+          "verb": "Take this spot"
+        },
+        {
+          "prop": "game-board",
+          "verb": "Climb to the board",
+          "leads_to": "c11_parlour_1"
+        }
+      ]
+    },
+    "c11_hold_shelf": {
+      "note": "Day two, refused: hold Still while the others change positions around the guests.",
+      "world": {
+        "color": [
+          0.72,
+          0.66,
+          0.58
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 220,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 220,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 154.0,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        },
+        {
+          "name": "door-spill",
+          "type": "AREA",
+          "location": [
+            1.0,
+            -3.7,
+            1.2
+          ],
+          "energy": 120,
+          "size": 0.9,
+          "color": [
+            1.0,
+            0.9,
+            0.8
+          ],
+          "look_at": [
+            1.0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          1.5,
+          -4.0,
+          0.9
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": [
+        {
+          "prop": "shelf-north-b",
+          "verb": "Join tonight's game",
+          "leads_to": "c12_dollhouse_scent"
+        },
+        {
+          "prop": "shelf-north-b",
+          "verb": "Hold (refuse)",
+          "leads_to": "c12_hold_shelf"
+        }
+      ]
+    },
+    "c12_hold_shelf": {
+      "note": "Night two, refused: 'the warmth inside us was unbearable.' Hold Still; the shelf is warmer than the dark room around it.",
+      "world": {
+        "color": [
+          0.14,
+          0.11,
+          0.12
+        ],
+        "strength": 0.22
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 25,
+          "size": 1.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 25,
+          "size": 1.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 17.5,
+          "size": 1.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        },
+        {
+          "name": "night-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            2.3
+          ],
+          "energy": 20,
+          "size": 4.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "shelf-warmth",
+          "type": "POINT",
+          "location": [
+            2.4,
+            3.5,
+            1.6
+          ],
+          "energy": 8,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.6,
+            0.25
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          1.5,
+          -4.0,
+          0.9
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": [
+        {
+          "prop": "shelf-north-b",
+          "verb": "Join at 03:00",
+          "leads_to": "c12_dollhouse_proximity"
+        },
+        {
+          "prop": "shelf-north-b",
+          "verb": "Hold still",
+          "leads_to": "c12_stitch_mend"
+        }
+      ]
+    },
+    "c13_flight": {
+      "note": "Morning: the group leaves before the seal. Bags, car doors, the engine leaving; the shelf faces the window. Ana looks back.",
+      "world": {
+        "color": [
+          0.62,
+          0.64,
+          0.68
+        ],
+        "strength": 0.45
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 140,
+          "size": 1.0,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 140,
+          "size": 1.0,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 98.0,
+          "size": 1.0,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          -3.0,
+          -4.0,
+          1.4
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": []
+    },
+    "c13_seal": {
+      "note": "06:00, too warm. 'The door wouldn't open. / The windows wouldn't budge.' The rattling handle, a chair dragged; the shelf faces the door. Jamie falls off the couch.",
+      "world": {
+        "color": [
+          0.7,
+          0.6,
+          0.5
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 140,
+          "size": 1.0,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 140,
+          "size": 1.0,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 98.0,
+          "size": 1.0,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        },
+        {
+          "name": "too-warm",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            2.3
+          ],
+          "energy": 90,
+          "size": 5.0,
+          "color": [
+            1.0,
+            0.6,
+            0.25
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          1.0,
+          -4.0,
+          1.0
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": []
+    },
+    "c14_hold_shelf": {
+      "note": "The Chase, refused: 'alive warm' amber haze; screams and running from the hall while you hold the shelf.",
+      "world": {
+        "color": [
+          0.35,
+          0.14,
+          0.07
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "haze-room",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            2.3
+          ],
+          "energy": 260,
+          "size": 6.0,
+          "color": [
+            1.0,
+            0.6,
+            0.25
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "haze-hall",
+          "type": "POINT",
+          "location": [
+            -5.3,
+            -1.0,
+            1.8
+          ],
+          "energy": 80,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.4,
+            0.2
+          ]
+        },
+        {
+          "name": "stove-fire",
+          "type": "POINT",
+          "location": [
+            -5.1,
+            1.2,
+            0.4
+          ],
+          "energy": 60,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.55,
+            0.25
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          1.5,
+          -4.0,
+          0.9
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": []
+    },
+    "c14_chase_cabin": {
+      "note": "Night, amber haze growing toward red. Toy floor plus gestures: Twitch, Tilt, Step. Herd the guests down the back hall to the basement door; 'The trapdoor opened on its own.'",
+      "world": {
+        "color": [
+          0.4,
+          0.14,
+          0.07
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "haze-room",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            2.3
+          ],
+          "energy": 260,
+          "size": 6.0,
+          "color": [
+            1.0,
+            0.4,
+            0.2
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "haze-hall",
+          "type": "POINT",
+          "location": [
+            -5.3,
+            -1.0,
+            1.8
+          ],
+          "energy": 80,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.4,
+            0.2
+          ]
+        },
+        {
+          "name": "stove-fire",
+          "type": "POINT",
+          "location": [
+            -5.1,
+            1.2,
+            0.4
+          ],
+          "energy": 60,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.55,
+            0.25
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.0,
+          -0.5,
+          0.28
+        ],
+        "look_at": [
+          -4.6,
+          -1.0,
+          0.6
+        ],
+        "lens_mm": 26,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          2.0,
+          -0.5,
+          0
+        ],
+        "facing_deg": 90
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": [
+        {
+          "prop": "couch",
+          "verb": "Twitch"
+        },
+        {
+          "prop": "rug",
+          "verb": "Tilt"
+        },
+        {
+          "prop": "chair-window",
+          "verb": "Step"
+        },
+        {
+          "prop": "trapdoor",
+          "verb": "Herd them through",
+          "leads_to": "c14_labyrinth_outer"
+        }
+      ]
+    },
+    "e_cycle_shelf": {
+      "note": "The Cycle, dawn: car doors, laughter. 'I don't fight it anymore.' Locked on the shelf.",
+      "world": {
+        "color": [
+          0.7,
+          0.6,
+          0.55
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 120,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.82,
+            0.68
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 120,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.82,
+            0.68
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 84.0,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.82,
+            0.68
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          1.5,
+          -4.0,
+          0.9
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": []
+    },
+    "e_empty_toy": {
+      "note": "The Empty Toy, grey: the others leave the shelf to hunt without you. Awake and still.",
+      "world": {
+        "color": [
+          0.55,
+          0.57,
+          0.6
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "window-south-west",
+          "type": "AREA",
+          "location": [
+            -3.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 110,
+          "size": 1.0,
+          "color": [
+            0.82,
+            0.84,
+            0.86
+          ],
+          "look_at": [
+            -2.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-south-east",
+          "type": "AREA",
+          "location": [
+            4.0,
+            -3.7,
+            1.5
+          ],
+          "energy": 110,
+          "size": 1.0,
+          "color": [
+            0.82,
+            0.84,
+            0.86
+          ],
+          "look_at": [
+            3.0,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "window-east",
+          "type": "AREA",
+          "location": [
+            5.75,
+            -2.8,
+            1.5
+          ],
+          "energy": 77.0,
+          "size": 1.0,
+          "color": [
+            0.82,
+            0.84,
+            0.86
+          ],
+          "look_at": [
+            0,
+            -2.0,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          3.6,
+          1.68
+        ],
+        "look_at": [
+          5.6,
+          1.4,
+          1.2
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          3.75,
+          1.4
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "page-guestbook",
+        "page-gamebox",
+        "page-sampler",
+        "sketchbook",
+        "binoculars"
+      ],
+      "interactions": []
+    }
+  }
+}

@@ -1,0 +1,514 @@
+{
+  "game": "stuffed-ones",
+  "location": "ridge-path",
+  "name": "The ridge path",
+  "reference": "assets/locations/ridge-path.jpg",
+  "bounds_m": [
+    15.0,
+    400.0,
+    20.0
+  ],
+  "origin": "centre of the playable band; the crest path climbs toward +y on the +x side, the slope falls to the fogged forest on -x; the trailhead and the tarp at -y",
+  "materials": {
+    "sandy-path": {
+      "color": [
+        0.706,
+        0.604,
+        0.471
+      ],
+      "roughness": 1.0
+    },
+    "dry-slope": {
+      "color": [
+        0.541,
+        0.447,
+        0.329
+      ],
+      "roughness": 1.0
+    },
+    "pine": {
+      "color": [
+        0.227,
+        0.267,
+        0.188
+      ],
+      "roughness": 1.0
+    },
+    "bark": {
+      "color": [
+        0.306,
+        0.227,
+        0.165
+      ],
+      "roughness": 0.9
+    },
+    "fog-forest": {
+      "color": [
+        0.431,
+        0.439,
+        0.369
+      ],
+      "roughness": 1.0
+    },
+    "fog": {
+      "color": [
+        0.784,
+        0.761,
+        0.682
+      ],
+      "roughness": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "crest-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        8.5,
+        100.211,
+        0.6
+      ],
+      "location": [
+        3.25,
+        -150.0,
+        8.45
+      ],
+      "material": "sandy-path",
+      "rotation_deg": [
+        0.859,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slope-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        8.9,
+        100.211,
+        0.6
+      ],
+      "location": [
+        -4.0,
+        -150.0,
+        5.65
+      ],
+      "material": "dry-slope",
+      "rotation_deg": [
+        0.859,
+        -42.7,
+        0
+      ]
+    },
+    {
+      "id": "crest-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        8.5,
+        100.211,
+        0.6
+      ],
+      "location": [
+        3.25,
+        -50.0,
+        9.95
+      ],
+      "material": "sandy-path",
+      "rotation_deg": [
+        0.859,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slope-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        8.9,
+        100.211,
+        0.6
+      ],
+      "location": [
+        -4.0,
+        -50.0,
+        7.15
+      ],
+      "material": "dry-slope",
+      "rotation_deg": [
+        0.859,
+        -42.7,
+        0
+      ]
+    },
+    {
+      "id": "crest-3",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        8.5,
+        100.211,
+        0.6
+      ],
+      "location": [
+        3.25,
+        50.0,
+        11.45
+      ],
+      "material": "sandy-path",
+      "rotation_deg": [
+        0.859,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slope-3",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        8.9,
+        100.211,
+        0.6
+      ],
+      "location": [
+        -4.0,
+        50.0,
+        8.65
+      ],
+      "material": "dry-slope",
+      "rotation_deg": [
+        0.859,
+        -42.7,
+        0
+      ]
+    },
+    {
+      "id": "crest-4",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        8.5,
+        100.211,
+        0.6
+      ],
+      "location": [
+        3.25,
+        150.0,
+        12.95
+      ],
+      "material": "sandy-path",
+      "rotation_deg": [
+        0.859,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slope-4",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        8.9,
+        100.211,
+        0.6
+      ],
+      "location": [
+        -4.0,
+        150.0,
+        10.15
+      ],
+      "material": "dry-slope",
+      "rotation_deg": [
+        0.859,
+        -42.7,
+        0
+      ]
+    },
+    {
+      "id": "slope-pine-1",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        2.5,
+        2.5,
+        9
+      ],
+      "location": [
+        -6.0,
+        -175,
+        7.875
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "slope-pine-2",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        2.5,
+        2.5,
+        9
+      ],
+      "location": [
+        -6.0,
+        -125,
+        8.625
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "slope-pine-3",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        2.5,
+        2.5,
+        9
+      ],
+      "location": [
+        -6.0,
+        -75,
+        9.375
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "slope-pine-4",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        2.5,
+        2.5,
+        9
+      ],
+      "location": [
+        -6.0,
+        -25,
+        10.125
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "slope-pine-5",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        2.5,
+        2.5,
+        9
+      ],
+      "location": [
+        -6.0,
+        25,
+        10.875
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "slope-pine-6",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        2.5,
+        2.5,
+        9
+      ],
+      "location": [
+        -6.0,
+        75,
+        11.625
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "slope-pine-7",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        2.5,
+        2.5,
+        9
+      ],
+      "location": [
+        -6.0,
+        125,
+        12.375
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "slope-pine-8",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        2.5,
+        2.5,
+        9
+      ],
+      "location": [
+        -6.0,
+        175,
+        13.125
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "lone-pine-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.4,
+        0.4,
+        7
+      ],
+      "location": [
+        6.5,
+        190,
+        17.35
+      ],
+      "material": "bark"
+    },
+    {
+      "id": "lone-pine-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        2.5,
+        2.5,
+        4
+      ],
+      "location": [
+        6.5,
+        190,
+        21.35
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "fog-forest",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        300,
+        600,
+        30
+      ],
+      "location": [
+        -170,
+        0,
+        0
+      ],
+      "material": "fog-forest"
+    },
+    {
+      "id": "fog-bank",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        600,
+        800,
+        2
+      ],
+      "location": [
+        0,
+        0,
+        60
+      ],
+      "material": "fog"
+    }
+  ],
+  "props": [
+    {
+      "id": "tarp",
+      "object": "tarp",
+      "location": [
+        4.5,
+        -190,
+        8.15
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        15
+      ]
+    }
+  ],
+  "scenes": {
+    "a4_silent_forest": {
+      "note": "Morning with no birds, overcast, no shadows. Marcus's tarp over the wildlife emptied by the porch ('a squirrel, a rabbit, a raccoon'), never lifted. Jamie and you walk the ridge; his narration falters.",
+      "world": {
+        "color": [
+          0.72,
+          0.7,
+          0.62
+        ],
+        "strength": 0.75
+      },
+      "lights": [
+        {
+          "name": "overcast",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            19
+          ],
+          "energy": 900,
+          "size": 30.0,
+          "color": [
+            0.92,
+            0.9,
+            0.84
+          ],
+          "look_at": [
+            0,
+            0,
+            10
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          3.5,
+          -195,
+          9.725
+        ],
+        "look_at": [
+          3.5,
+          -150,
+          9.95
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          3.5,
+          -195,
+          8.075
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "tarp",
+          "verb": "Look at the tarp"
+        },
+        {
+          "prop": "tarp",
+          "verb": "Answer Jamie when he stops"
+        },
+        {
+          "prop": "tarp",
+          "verb": "Walk back to the cabin",
+          "leads_to": "a4_wrong_places"
+        }
+      ]
+    }
+  }
+}

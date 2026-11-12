@@ -1,0 +1,858 @@
+{
+  "game": "stuffed-ones",
+  "location": "upstairs-hall",
+  "name": "The upstairs hall",
+  "reference": "assets/locations/upstairs-hall.jpg",
+  "bounds_m": [
+    12.0,
+    1.2,
+    2.4
+  ],
+  "origin": "floor centre; the hall runs along x, the end window on the +x wall, the stairs come up at the -x end; +y side holds two bedrooms, -y side Lila's room and the hall closet",
+  "materials": {
+    "wallpaper-green": {
+      "color": [
+        0.604,
+        0.612,
+        0.486
+      ],
+      "roughness": 0.9
+    },
+    "door-wood": {
+      "color": [
+        0.431,
+        0.227,
+        0.141
+      ],
+      "roughness": 0.7
+    },
+    "worn-pine": {
+      "color": [
+        0.722,
+        0.58,
+        0.416
+      ],
+      "roughness": 0.85
+    },
+    "plaster": {
+      "color": [
+        0.788,
+        0.725,
+        0.604
+      ],
+      "roughness": 0.95
+    },
+    "cedar": {
+      "color": [
+        0.42,
+        0.259,
+        0.149
+      ],
+      "roughness": 0.85
+    },
+    "window-glass": {
+      "color": [
+        0.6,
+        0.66,
+        0.78
+      ],
+      "roughness": 0.1,
+      "emission": 0.4
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        10.6,
+        1.2,
+        0.1
+      ],
+      "location": [
+        0.7,
+        0,
+        -0.05
+      ],
+      "material": "worn-pine"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        12.0,
+        1.2,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        2.45
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "rafter-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.15,
+        1.2,
+        0.15
+      ],
+      "location": [
+        3.0,
+        0,
+        2.32
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "rafter-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.15,
+        1.2,
+        0.15
+      ],
+      "location": [
+        -2.0,
+        0,
+        2.32
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "wall-north-0",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.6,
+        0.15,
+        2.4
+      ],
+      "location": [
+        -4.7,
+        0.675,
+        1.2
+      ],
+      "material": "wallpaper-green"
+    },
+    {
+      "id": "wall-north-1-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        0.15,
+        0.35
+      ],
+      "location": [
+        -3.0,
+        0.675,
+        2.225
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "wall-north-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3.7,
+        0.15,
+        2.4
+      ],
+      "location": [
+        -0.75,
+        0.675,
+        1.2
+      ],
+      "material": "wallpaper-green"
+    },
+    {
+      "id": "wall-north-3-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        0.15,
+        0.35
+      ],
+      "location": [
+        1.5,
+        0.675,
+        2.225
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "wall-north-4",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.1,
+        0.15,
+        2.4
+      ],
+      "location": [
+        3.95,
+        0.675,
+        1.2
+      ],
+      "material": "wallpaper-green"
+    },
+    {
+      "id": "wall-south-0",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.8,
+        0.15,
+        2.4
+      ],
+      "location": [
+        -3.6,
+        -0.675,
+        1.2
+      ],
+      "material": "wallpaper-green"
+    },
+    {
+      "id": "wall-south-1-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        0.15,
+        0.35
+      ],
+      "location": [
+        -0.8,
+        -0.675,
+        2.225
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "wall-south-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3.85,
+        0.15,
+        2.4
+      ],
+      "location": [
+        1.525,
+        -0.675,
+        1.2
+      ],
+      "material": "wallpaper-green"
+    },
+    {
+      "id": "wall-south-3-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.7,
+        0.15,
+        0.35
+      ],
+      "location": [
+        3.8,
+        -0.675,
+        2.225
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "wall-south-4",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.85,
+        0.15,
+        2.4
+      ],
+      "location": [
+        5.075,
+        -0.675,
+        1.2
+      ],
+      "material": "wallpaper-green"
+    },
+    {
+      "id": "door-bedroom-west",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.05,
+        2.05
+      ],
+      "location": [
+        -3.0,
+        0.63,
+        1.025
+      ],
+      "material": "door-wood"
+    },
+    {
+      "id": "door-bedroom-guests",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.05,
+        2.05
+      ],
+      "location": [
+        1.5,
+        0.63,
+        1.025
+      ],
+      "material": "door-wood"
+    },
+    {
+      "id": "door-lila",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.05,
+        2.05
+      ],
+      "location": [
+        -0.8,
+        -0.63,
+        1.025
+      ],
+      "material": "door-wood"
+    },
+    {
+      "id": "door-closet",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.7,
+        0.05,
+        2.05
+      ],
+      "location": [
+        3.8,
+        -0.63,
+        1.025
+      ],
+      "material": "door-wood"
+    },
+    {
+      "id": "wall-east-0",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.25,
+        2.4
+      ],
+      "location": [
+        6.075,
+        -0.475,
+        1.2
+      ],
+      "material": "wallpaper-green"
+    },
+    {
+      "id": "wall-east-1-sill",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.7,
+        0.9
+      ],
+      "location": [
+        6.075,
+        0,
+        0.45
+      ],
+      "material": "wallpaper-green"
+    },
+    {
+      "id": "wall-east-2-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.7,
+        0.6
+      ],
+      "location": [
+        6.075,
+        0,
+        2.1
+      ],
+      "material": "wallpaper-green"
+    },
+    {
+      "id": "wall-east-3-glass",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.03,
+        0.7,
+        0.9
+      ],
+      "location": [
+        6.075,
+        0,
+        1.35
+      ],
+      "material": "window-glass",
+      "collide": false
+    },
+    {
+      "id": "wall-east-4",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.25,
+        2.4
+      ],
+      "location": [
+        6.075,
+        0.475,
+        1.2
+      ],
+      "material": "wallpaper-green"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.2,
+        2.4
+      ],
+      "location": [
+        -6.075,
+        0,
+        1.2
+      ],
+      "material": "wallpaper-green"
+    },
+    {
+      "id": "stair-top-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.45,
+        0.9,
+        0.4
+      ],
+      "location": [
+        -4.825,
+        0,
+        -0.2
+      ],
+      "material": "worn-pine"
+    },
+    {
+      "id": "stair-top-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.45,
+        0.9,
+        0.4
+      ],
+      "location": [
+        -5.275,
+        0,
+        -0.45
+      ],
+      "material": "worn-pine"
+    },
+    {
+      "id": "banister",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.4,
+        0.06,
+        0.9
+      ],
+      "location": [
+        -5.3,
+        0.45,
+        0.45
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "hall-table",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.4,
+        0.3,
+        0.75
+      ],
+      "location": [
+        5.55,
+        0.4,
+        0.375
+      ],
+      "material": "cedar"
+    }
+  ],
+  "props": [
+    {
+      "id": "rug-stairs",
+      "object": "rag-rug",
+      "location": [
+        -3.3,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "rug-lila",
+      "object": "rag-rug",
+      "location": [
+        -1.0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "rug-door",
+      "object": "rag-rug",
+      "location": [
+        1.5,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "rug-closet",
+      "object": "rag-rug",
+      "location": [
+        3.8,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "lamp",
+      "object": "guest-lamp",
+      "location": [
+        5.55,
+        0.4,
+        0.75
+      ]
+    }
+  ],
+  "scenes": {
+    "a2_night_hall": {
+      "note": "2:30 a.m., the ambience bed cut out. Moonless grey from the end window, no torch. Thump, drag, squeak placed precisely; then nothing. I2; Keeping finds the rabbit with a page in the hall closet.",
+      "world": {
+        "color": [
+          0.08,
+          0.09,
+          0.12
+        ],
+        "strength": 0.18
+      },
+      "lights": [
+        {
+          "name": "end-window",
+          "type": "AREA",
+          "location": [
+            5.95,
+            0,
+            1.35
+          ],
+          "energy": 45,
+          "size": 0.7,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            -6,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "night-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            2.3
+          ],
+          "energy": 9.0,
+          "size": 6.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -3.0,
+          0.2,
+          1.65
+        ],
+        "look_at": [
+          6.0,
+          0,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -3.0,
+          0.2,
+          0
+        ],
+        "facing_deg": 270
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "rug-lila",
+          "verb": "Listen at the bedroom doors"
+        },
+        {
+          "prop": "rug-closet",
+          "verb": "Open the hall closet"
+        },
+        {
+          "prop": "lamp",
+          "verb": "Stand at the end window"
+        }
+      ]
+    },
+    "a4_night_sounds": {
+      "note": "Night two, darker. 'Three taps near the door. / A dragging sound across the ceiling. / A soft giggle from the hallway, pitched wrong.' Incident I6.",
+      "world": {
+        "color": [
+          0.05,
+          0.06,
+          0.09
+        ],
+        "strength": 0.14
+      },
+      "lights": [
+        {
+          "name": "end-window",
+          "type": "AREA",
+          "location": [
+            5.95,
+            0,
+            1.35
+          ],
+          "energy": 28,
+          "size": 0.7,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            -6,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "night-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            2.3
+          ],
+          "energy": 5.6000000000000005,
+          "size": 6.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -3.0,
+          0.2,
+          1.65
+        ],
+        "look_at": [
+          6.0,
+          0,
+          1.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -3.0,
+          0.2,
+          0
+        ],
+        "facing_deg": 270
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "rug-lila",
+          "verb": "Listen at Lila's door"
+        },
+        {
+          "prop": "rug-stairs",
+          "verb": "Look down the stairs"
+        },
+        {
+          "prop": "rug-door",
+          "verb": "Follow the giggle"
+        }
+      ]
+    },
+    "b8_the_door": {
+      "note": "The bedroom door at toy height, locked forward; sleeping breath beyond it. Let go ('\u2026I didn't fight it.', as written) or Hold (20-second surge). Nothing behind the door is shown.",
+      "world": {
+        "color": [
+          0.06,
+          0.07,
+          0.1
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "end-window",
+          "type": "AREA",
+          "location": [
+            5.95,
+            0,
+            1.35
+          ],
+          "energy": 30,
+          "size": 0.7,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            -6,
+            0,
+            0.3
+          ]
+        },
+        {
+          "name": "night-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            2.3
+          ],
+          "energy": 6.0,
+          "size": 6.0,
+          "color": [
+            0.55,
+            0.63,
+            0.78
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "lamp-under-door",
+          "type": "AREA",
+          "location": [
+            1.5,
+            0.75,
+            0.02
+          ],
+          "energy": 4,
+          "size": 0.6,
+          "color": [
+            1.0,
+            0.72,
+            0.45
+          ],
+          "look_at": [
+            1.5,
+            -0.6,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          1.5,
+          -0.3,
+          0.28
+        ],
+        "look_at": [
+          1.5,
+          0.6,
+          0.9
+        ],
+        "lens_mm": 26,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          1.5,
+          -0.3,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "rug-door",
+          "verb": "Let go",
+          "leads_to": "c9_new_guests"
+        },
+        {
+          "prop": "rug-door",
+          "verb": "Hold (Still, 20 s)",
+          "leads_to": "c9_new_guests"
+        }
+      ]
+    }
+  }
+}

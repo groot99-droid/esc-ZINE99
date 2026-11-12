@@ -1,0 +1,488 @@
+{
+  "game": "stuffed-ones",
+  "location": "creek-trail",
+  "name": "The creek trail",
+  "reference": "assets/locations/creek-trail.jpg",
+  "bounds_m": [
+    15.0,
+    400.0,
+    15.0
+  ],
+  "origin": "centre of the playable band; the path runs along y beside the creek on +x, the swimming hole near y 120, the wooded bank on -x",
+  "materials": {
+    "path-earth": {
+      "color": [
+        0.604,
+        0.51,
+        0.408
+      ],
+      "roughness": 1.0
+    },
+    "moss-bank": {
+      "color": [
+        0.42,
+        0.478,
+        0.298
+      ],
+      "roughness": 1.0
+    },
+    "creek": {
+      "color": [
+        0.29,
+        0.416,
+        0.345
+      ],
+      "roughness": 0.05
+    },
+    "pool": {
+      "color": [
+        0.243,
+        0.416,
+        0.353
+      ],
+      "roughness": 0.05
+    },
+    "trunk": {
+      "color": [
+        0.243,
+        0.196,
+        0.149
+      ],
+      "roughness": 0.9
+    },
+    "stone": {
+      "color": [
+        0.431,
+        0.416,
+        0.353
+      ],
+      "roughness": 0.9
+    },
+    "gravel-bar": {
+      "color": [
+        0.706,
+        0.667,
+        0.588
+      ],
+      "roughness": 1.0
+    },
+    "log": {
+      "color": [
+        0.353,
+        0.29,
+        0.227
+      ],
+      "roughness": 0.9
+    },
+    "canopy": {
+      "color": [
+        0.369,
+        0.478,
+        0.227
+      ],
+      "roughness": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "path-ground",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        10.5,
+        400.0,
+        0.5
+      ],
+      "location": [
+        -2.25,
+        0,
+        -0.25
+      ],
+      "material": "path-earth"
+    },
+    {
+      "id": "creek",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        4.5,
+        400.0,
+        0.2
+      ],
+      "location": [
+        5.25,
+        0,
+        -0.35
+      ],
+      "material": "creek"
+    },
+    {
+      "id": "swimming-hole",
+      "shape": "cylinder",
+      "role": "water",
+      "size_m": [
+        9,
+        9,
+        0.2
+      ],
+      "location": [
+        4.5,
+        120,
+        -0.38
+      ],
+      "material": "pool"
+    },
+    {
+      "id": "bank-west",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        2.0,
+        400.0,
+        3.0
+      ],
+      "location": [
+        -6.5,
+        0,
+        1.5
+      ],
+      "material": "moss-bank"
+    },
+    {
+      "id": "bank-east",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        1.0,
+        400.0,
+        1.6
+      ],
+      "location": [
+        7.5,
+        0,
+        0.6
+      ],
+      "material": "moss-bank"
+    },
+    {
+      "id": "gravel-bar",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        3,
+        10,
+        0.1
+      ],
+      "location": [
+        6.0,
+        128,
+        -0.2
+      ],
+      "material": "gravel-bar"
+    },
+    {
+      "id": "boulder",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        2.0,
+        1.6,
+        1.0
+      ],
+      "location": [
+        2.5,
+        112,
+        0.4
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "boulder-moss",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.2,
+        0.8
+      ],
+      "location": [
+        -4.6,
+        95,
+        0.3
+      ],
+      "material": "moss-bank"
+    },
+    {
+      "id": "fallen-log",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.6,
+        0.6,
+        3.5
+      ],
+      "location": [
+        4.2,
+        104,
+        0.25
+      ],
+      "material": "log",
+      "rotation_deg": [
+        0,
+        90,
+        10
+      ]
+    },
+    {
+      "id": "canopy",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        40,
+        420,
+        1
+      ],
+      "location": [
+        0,
+        0,
+        24
+      ],
+      "material": "canopy"
+    },
+    {
+      "id": "tree-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        12
+      ],
+      "location": [
+        -3.6,
+        -175,
+        6
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "tree-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        12
+      ],
+      "location": [
+        -4.8,
+        -125,
+        6
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "tree-3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        12
+      ],
+      "location": [
+        -3.6,
+        -75,
+        6
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "tree-4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        12
+      ],
+      "location": [
+        -4.8,
+        -25,
+        6
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "tree-5",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        12
+      ],
+      "location": [
+        -3.6,
+        25,
+        6
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "tree-6",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        12
+      ],
+      "location": [
+        -4.8,
+        75,
+        6
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "tree-7",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        12
+      ],
+      "location": [
+        -3.6,
+        125,
+        6
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "tree-8",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        12
+      ],
+      "location": [
+        -4.8,
+        175,
+        6
+      ],
+      "material": "trunk"
+    }
+  ],
+  "props": [
+    {
+      "id": "camera",
+      "object": "film-camera",
+      "location": [
+        2.5,
+        112,
+        0.9
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        30
+      ]
+    }
+  ],
+  "scenes": {
+    "a3_trail_creek": {
+      "note": "The creek trail with Lila and Dani, green and bright midday. The swimming hole; Lila photographs the mushrooms on the fallen log. If I3 was Shelved, her three-note hum.",
+      "world": {
+        "color": [
+          0.6,
+          0.75,
+          0.55
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "midday-sun",
+          "type": "SUN",
+          "location": [
+            10,
+            40,
+            60
+          ],
+          "energy": 4.5,
+          "size": 1,
+          "color": [
+            1.0,
+            0.97,
+            0.88
+          ],
+          "look_at": [
+            0,
+            100,
+            0
+          ]
+        },
+        {
+          "name": "canopy-green",
+          "type": "AREA",
+          "location": [
+            0,
+            115,
+            12
+          ],
+          "energy": 600,
+          "size": 12.0,
+          "color": [
+            0.75,
+            0.95,
+            0.7
+          ],
+          "look_at": [
+            0,
+            115,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -1.0,
+          -180,
+          1.65
+        ],
+        "look_at": [
+          -1.0,
+          -130,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -1.0,
+          -180,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "camera",
+          "verb": "Photograph the mushrooms"
+        },
+        {
+          "prop": "camera",
+          "verb": "Take the path back",
+          "leads_to": "a3_warmth"
+        }
+      ]
+    }
+  }
+}

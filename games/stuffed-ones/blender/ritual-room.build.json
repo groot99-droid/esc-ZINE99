@@ -1,0 +1,702 @@
+{
+  "game": "stuffed-ones",
+  "location": "ritual-room",
+  "name": "The ritual room",
+  "reference": "assets/locations/ritual-room.jpg",
+  "bounds_m": [
+    7.0,
+    7.0,
+    3.5
+  ],
+  "origin": "centre of the round floor; the entrance from the labyrinth on -y, the altar facing it, the lectern to its +x side",
+  "materials": {
+    "quilted-felt": {
+      "color": [
+        0.431,
+        0.243,
+        0.133
+      ],
+      "roughness": 0.95
+    },
+    "stone-floor": {
+      "color": [
+        0.416,
+        0.408,
+        0.384
+      ],
+      "roughness": 0.95
+    },
+    "torn-fabric": {
+      "color": [
+        0.929,
+        0.91,
+        0.847
+      ],
+      "roughness": 0.95
+    },
+    "dome-felt": {
+      "color": [
+        0.353,
+        0.204,
+        0.125
+      ],
+      "roughness": 0.95
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        7,
+        7,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "stone-floor"
+    },
+    {
+      "id": "dome",
+      "shape": "cylinder",
+      "role": "ceiling",
+      "size_m": [
+        7.3,
+        7.3,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        3.55
+      ],
+      "material": "dome-felt"
+    },
+    {
+      "id": "wall-000",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.95,
+        0.15,
+        3.5
+      ],
+      "location": [
+        3.575,
+        0.0,
+        1.75
+      ],
+      "material": "quilted-felt",
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "wall-030",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.95,
+        0.15,
+        3.5
+      ],
+      "location": [
+        3.096,
+        1.787,
+        1.75
+      ],
+      "material": "quilted-felt",
+      "rotation_deg": [
+        0,
+        0,
+        120
+      ]
+    },
+    {
+      "id": "wall-060",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.95,
+        0.15,
+        3.5
+      ],
+      "location": [
+        1.788,
+        3.096,
+        1.75
+      ],
+      "material": "quilted-felt",
+      "rotation_deg": [
+        0,
+        0,
+        150
+      ]
+    },
+    {
+      "id": "wall-090",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.95,
+        0.15,
+        3.5
+      ],
+      "location": [
+        0.0,
+        3.575,
+        1.75
+      ],
+      "material": "quilted-felt",
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "wall-120",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.95,
+        0.15,
+        3.5
+      ],
+      "location": [
+        -1.787,
+        3.096,
+        1.75
+      ],
+      "material": "quilted-felt",
+      "rotation_deg": [
+        0,
+        0,
+        210
+      ]
+    },
+    {
+      "id": "wall-150",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.95,
+        0.15,
+        3.5
+      ],
+      "location": [
+        -3.096,
+        1.787,
+        1.75
+      ],
+      "material": "quilted-felt",
+      "rotation_deg": [
+        0,
+        0,
+        240
+      ]
+    },
+    {
+      "id": "wall-180",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.95,
+        0.15,
+        3.5
+      ],
+      "location": [
+        -3.575,
+        0.0,
+        1.75
+      ],
+      "material": "quilted-felt",
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ]
+    },
+    {
+      "id": "wall-210",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.95,
+        0.15,
+        3.5
+      ],
+      "location": [
+        -3.096,
+        -1.788,
+        1.75
+      ],
+      "material": "quilted-felt",
+      "rotation_deg": [
+        0,
+        0,
+        300
+      ]
+    },
+    {
+      "id": "wall-240",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.95,
+        0.15,
+        3.5
+      ],
+      "location": [
+        -1.788,
+        -3.096,
+        1.75
+      ],
+      "material": "quilted-felt",
+      "rotation_deg": [
+        0,
+        0,
+        330
+      ]
+    },
+    {
+      "id": "entrance-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.95,
+        0.15,
+        1.3
+      ],
+      "location": [
+        0,
+        -3.575,
+        2.85
+      ],
+      "material": "quilted-felt",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "wall-300",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.95,
+        0.15,
+        3.5
+      ],
+      "location": [
+        1.788,
+        -3.096,
+        1.75
+      ],
+      "material": "quilted-felt",
+      "rotation_deg": [
+        0,
+        0,
+        390
+      ]
+    },
+    {
+      "id": "wall-330",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.95,
+        0.15,
+        3.5
+      ],
+      "location": [
+        3.096,
+        -1.788,
+        1.75
+      ],
+      "material": "quilted-felt",
+      "rotation_deg": [
+        0,
+        0,
+        420
+      ]
+    },
+    {
+      "id": "skin-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.1,
+        0.55,
+        0.02
+      ],
+      "location": [
+        1.148,
+        -2.772,
+        0.01
+      ],
+      "material": "torn-fabric",
+      "rotation_deg": [
+        0,
+        0,
+        382.5
+      ],
+      "collide": false
+    },
+    {
+      "id": "skin-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.1,
+        0.55,
+        0.02
+      ],
+      "location": [
+        2.585,
+        -1.523,
+        0.01
+      ],
+      "material": "torn-fabric",
+      "rotation_deg": [
+        0,
+        0,
+        419.5
+      ],
+      "collide": false
+    },
+    {
+      "id": "skin-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.1,
+        0.55,
+        0.02
+      ],
+      "location": [
+        2.981,
+        0.34,
+        0.01
+      ],
+      "material": "torn-fabric",
+      "rotation_deg": [
+        0,
+        0,
+        456.5
+      ],
+      "collide": false
+    },
+    {
+      "id": "skin-4",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.1,
+        0.55,
+        0.02
+      ],
+      "location": [
+        2.176,
+        2.065,
+        0.01
+      ],
+      "material": "torn-fabric",
+      "rotation_deg": [
+        0,
+        0,
+        493.5
+      ],
+      "collide": false
+    },
+    {
+      "id": "skin-5",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.1,
+        0.55,
+        0.02
+      ],
+      "location": [
+        0.495,
+        2.959,
+        0.01
+      ],
+      "material": "torn-fabric",
+      "rotation_deg": [
+        0,
+        0,
+        530.5
+      ],
+      "collide": false
+    },
+    {
+      "id": "skin-6",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.1,
+        0.55,
+        0.02
+      ],
+      "location": [
+        -1.385,
+        2.661,
+        0.01
+      ],
+      "material": "torn-fabric",
+      "rotation_deg": [
+        0,
+        0,
+        567.5
+      ],
+      "collide": false
+    },
+    {
+      "id": "skin-7",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.1,
+        0.55,
+        0.02
+      ],
+      "location": [
+        -2.708,
+        1.292,
+        0.01
+      ],
+      "material": "torn-fabric",
+      "rotation_deg": [
+        0,
+        0,
+        604.5
+      ],
+      "collide": false
+    },
+    {
+      "id": "skin-8",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.1,
+        0.55,
+        0.02
+      ],
+      "location": [
+        -2.94,
+        -0.598,
+        0.01
+      ],
+      "material": "torn-fabric",
+      "rotation_deg": [
+        0,
+        0,
+        641.5
+      ],
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "altar",
+      "object": "altar",
+      "location": [
+        -0.4,
+        0.7,
+        0
+      ]
+    },
+    {
+      "id": "lectern",
+      "object": "lectern",
+      "location": [
+        1.4,
+        -0.1,
+        0
+      ]
+    },
+    {
+      "id": "book",
+      "object": "hand-sewn-book",
+      "location": [
+        1.4,
+        -0.1,
+        1.2
+      ]
+    },
+    {
+      "id": "page",
+      "object": "book-page",
+      "location": [
+        1.55,
+        0.05,
+        1.2
+      ]
+    }
+  ],
+  "scenes": {
+    "a5_ritual_room": {
+      "note": "The ritual room: stitched symbols, the circle of skins (look only), the altar of children's toys, the book on the lectern with one page beside it. Low amber, breathing. Lectern opens the last sitting.",
+      "world": {
+        "color": [
+          0.3,
+          0.18,
+          0.1
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "breathing-amber",
+          "type": "POINT",
+          "location": [
+            0,
+            0.2,
+            2.6
+          ],
+          "energy": 140,
+          "size": 1.5,
+          "color": [
+            1.0,
+            0.6,
+            0.25
+          ]
+        },
+        {
+          "name": "altar-low",
+          "type": "POINT",
+          "location": [
+            -0.4,
+            0.2,
+            0.6
+          ],
+          "energy": 35.0,
+          "size": 0.4,
+          "color": [
+            1.0,
+            0.4,
+            0.2
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -3.0,
+          1.65
+        ],
+        "look_at": [
+          0,
+          0.6,
+          0.9
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -3.0,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "page",
+          "verb": "Take the page"
+        },
+        {
+          "prop": "altar",
+          "verb": "Look at the altar"
+        },
+        {
+          "prop": "lectern",
+          "verb": "Read the book",
+          "leads_to": "a5_book_3"
+        }
+      ]
+    },
+    "a5_last_thing": {
+      "note": "The last thing: locked, the pulse; 'The ritual had already begun the moment we stepped inside.' Amber fades to warm dark over 50 s.",
+      "world": {
+        "color": [
+          0.12,
+          0.06,
+          0.03
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "breathing-amber",
+          "type": "POINT",
+          "location": [
+            0,
+            0.2,
+            2.6
+          ],
+          "energy": 45,
+          "size": 1.5,
+          "color": [
+            1.0,
+            0.6,
+            0.25
+          ]
+        },
+        {
+          "name": "altar-low",
+          "type": "POINT",
+          "location": [
+            -0.4,
+            0.2,
+            0.6
+          ],
+          "energy": 11.25,
+          "size": 0.4,
+          "color": [
+            1.0,
+            0.4,
+            0.2
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.6,
+          -1.2,
+          1.65
+        ],
+        "look_at": [
+          -0.4,
+          0.7,
+          0.9
+        ],
+        "lens_mm": 24,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          0.6,
+          -1.2,
+          0
+        ],
+        "facing_deg": 20
+      },
+      "hide": [
+        "page"
+      ],
+      "interactions": []
+    }
+  }
+}

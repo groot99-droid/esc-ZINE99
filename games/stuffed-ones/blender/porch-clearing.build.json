@@ -1,0 +1,749 @@
+{
+  "game": "stuffed-ones",
+  "location": "porch-clearing",
+  "name": "The porch and the clearing",
+  "reference": "assets/locations/porch-clearing.jpg",
+  "bounds_m": [
+    60.0,
+    40.0,
+    8.0
+  ],
+  "origin": "clearing centre; +y toward the forest edge, the cabin and its porch along the -y side facing it, the gravel drive leaving toward -x",
+  "materials": {
+    "meadow": {
+      "color": [
+        0.541,
+        0.478,
+        0.322
+      ],
+      "roughness": 1.0
+    },
+    "gravel": {
+      "color": [
+        0.557,
+        0.541,
+        0.518
+      ],
+      "roughness": 1.0
+    },
+    "cedar-log": {
+      "color": [
+        0.42,
+        0.259,
+        0.149
+      ],
+      "roughness": 0.9
+    },
+    "shingle": {
+      "color": [
+        0.29,
+        0.227,
+        0.18
+      ],
+      "roughness": 0.9
+    },
+    "weathered-board": {
+      "color": [
+        0.604,
+        0.573,
+        0.518
+      ],
+      "roughness": 0.9
+    },
+    "pine-dark": {
+      "color": [
+        0.184,
+        0.227,
+        0.149
+      ],
+      "roughness": 1.0
+    },
+    "birch-leaf": {
+      "color": [
+        0.69,
+        0.541,
+        0.29
+      ],
+      "roughness": 1.0
+    },
+    "doorway-dark": {
+      "color": [
+        0.165,
+        0.125,
+        0.094
+      ],
+      "roughness": 1.0
+    },
+    "lit-window": {
+      "color": [
+        1.0,
+        0.8,
+        0.5
+      ],
+      "roughness": 0.3,
+      "emission": 3.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "meadow",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        60.0,
+        40.0,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "meadow"
+    },
+    {
+      "id": "gravel-yard",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        14,
+        6,
+        0.02
+      ],
+      "location": [
+        2,
+        -6,
+        0.01
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "gravel-drive",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        24,
+        3.5,
+        0.02
+      ],
+      "location": [
+        -17,
+        -6,
+        0.01
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "cabin",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        12,
+        8,
+        5.0
+      ],
+      "location": [
+        0,
+        -16,
+        2.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "roof-north",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        12.6,
+        4.6,
+        0.2
+      ],
+      "location": [
+        0,
+        -14,
+        5.9
+      ],
+      "material": "shingle",
+      "rotation_deg": [
+        -25,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "roof-south",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        12.6,
+        4.6,
+        0.2
+      ],
+      "location": [
+        0,
+        -18,
+        5.9
+      ],
+      "material": "shingle",
+      "rotation_deg": [
+        25,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "porch-deck",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        12,
+        2,
+        0.3
+      ],
+      "location": [
+        0,
+        -11,
+        0.15
+      ],
+      "material": "weathered-board"
+    },
+    {
+      "id": "porch-steps",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        0.6,
+        0.15
+      ],
+      "location": [
+        1.0,
+        -9.7,
+        0.075
+      ],
+      "material": "weathered-board"
+    },
+    {
+      "id": "porch-roof",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        12.4,
+        2.4,
+        0.12
+      ],
+      "location": [
+        0,
+        -11,
+        2.75
+      ],
+      "material": "shingle",
+      "rotation_deg": [
+        -8,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "front-door",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.0,
+        0.05,
+        2.1
+      ],
+      "location": [
+        1.0,
+        -11.98,
+        1.35
+      ],
+      "material": "doorway-dark"
+    },
+    {
+      "id": "front-window",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.0,
+        0.05,
+        1.1
+      ],
+      "location": [
+        -3.0,
+        -11.98,
+        1.75
+      ],
+      "material": "doorway-dark"
+    },
+    {
+      "id": "porch-post-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.2,
+        0.2,
+        2.4
+      ],
+      "location": [
+        -5.8,
+        -10.1,
+        1.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "porch-post-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.2,
+        0.2,
+        2.4
+      ],
+      "location": [
+        -2.0,
+        -10.1,
+        1.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "porch-post-3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.2,
+        0.2,
+        2.4
+      ],
+      "location": [
+        2.4,
+        -10.1,
+        1.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "porch-post-4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.2,
+        0.2,
+        2.4
+      ],
+      "location": [
+        5.8,
+        -10.1,
+        1.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "shed",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.2,
+        1.3
+      ],
+      "location": [
+        8.5,
+        -10.5,
+        0.65
+      ],
+      "material": "weathered-board"
+    },
+    {
+      "id": "shed-roof",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.4,
+        0.1
+      ],
+      "location": [
+        8.5,
+        -10.5,
+        1.35
+      ],
+      "material": "shingle",
+      "rotation_deg": [
+        8,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "tree-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.6,
+        0.6,
+        3.0
+      ],
+      "location": [
+        -10,
+        10,
+        1.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "tree-canopy",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        6,
+        6,
+        3.5
+      ],
+      "location": [
+        -10,
+        10,
+        3.6
+      ],
+      "material": "birch-leaf",
+      "collide": false
+    },
+    {
+      "id": "forest-edge-1",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        8,
+        3.5,
+        12
+      ],
+      "location": [
+        -26,
+        18.5,
+        6
+      ],
+      "material": "pine-dark"
+    },
+    {
+      "id": "forest-edge-2",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        8,
+        3.5,
+        12
+      ],
+      "location": [
+        -16,
+        18.5,
+        6
+      ],
+      "material": "pine-dark"
+    },
+    {
+      "id": "forest-edge-3",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        8,
+        3.5,
+        12
+      ],
+      "location": [
+        -6,
+        18.5,
+        6
+      ],
+      "material": "pine-dark"
+    },
+    {
+      "id": "forest-edge-4",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        8,
+        3.5,
+        12
+      ],
+      "location": [
+        4,
+        18.5,
+        6
+      ],
+      "material": "pine-dark"
+    },
+    {
+      "id": "forest-edge-5",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        8,
+        3.5,
+        12
+      ],
+      "location": [
+        14,
+        18.5,
+        6
+      ],
+      "material": "pine-dark"
+    },
+    {
+      "id": "forest-edge-6",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        8,
+        3.5,
+        12
+      ],
+      "location": [
+        24,
+        18.5,
+        6
+      ],
+      "material": "pine-dark"
+    },
+    {
+      "id": "forest-beyond",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        140,
+        20,
+        18
+      ],
+      "location": [
+        0,
+        32,
+        9
+      ],
+      "material": "pine-dark"
+    },
+    {
+      "id": "keepers-cottage",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5,
+        4,
+        3.2
+      ],
+      "location": [
+        -24,
+        15,
+        1.6
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "keepers-window",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.0,
+        0.05,
+        0.8
+      ],
+      "location": [
+        -23,
+        12.98,
+        1.6
+      ],
+      "material": "lit-window",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "tarp-dog",
+      "object": "tarp",
+      "location": [
+        -10,
+        7.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        20
+      ]
+    },
+    {
+      "id": "tarp-woodpile",
+      "object": "tarp",
+      "location": [
+        10.3,
+        -10.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "rucksack",
+      "object": "rucksack",
+      "location": [
+        3.5,
+        -11.3,
+        0.3
+      ]
+    }
+  ],
+  "scenes": {
+    "a3_dog": {
+      "note": "Dusk, long shadows. The terrier barks, yelps, stops. A still shape among the leaves under the low-branched tree at 12 m; the camera holds 6 m off. Mabel: 'They get hungry.' I5; a page in the shed.",
+      "world": {
+        "color": [
+          0.55,
+          0.42,
+          0.3
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "low-sun",
+          "type": "SUN",
+          "location": [
+            30,
+            -20,
+            4
+          ],
+          "energy": 2.5,
+          "size": 1,
+          "color": [
+            1.0,
+            0.68,
+            0.42
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "porch-lamp",
+          "type": "POINT",
+          "location": [
+            1.0,
+            -11.5,
+            2.4
+          ],
+          "energy": 40,
+          "size": 0.15,
+          "color": [
+            1.0,
+            0.72,
+            0.45
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -10.8,
+          1.95
+        ],
+        "look_at": [
+          -10,
+          9,
+          0.6
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          -10.8,
+          0.3
+        ],
+        "facing_deg": 30
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "tarp-dog",
+          "verb": "Look (6 m is as close as you get)"
+        },
+        {
+          "prop": "tarp-woodpile",
+          "verb": "Open the shed"
+        },
+        {
+          "prop": "rucksack",
+          "verb": "Sit with the others on the porch",
+          "leads_to": "a3_book_1"
+        }
+      ]
+    },
+    "e_keeper_porch": {
+      "note": "The Keeper, bright afternoon: you stand on the porch as Mabel and Ruth do, and the next car comes up the gravel drive.",
+      "world": {
+        "color": [
+          0.75,
+          0.72,
+          0.62
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "afternoon-sun",
+          "type": "SUN",
+          "location": [
+            -20,
+            -10,
+            30
+          ],
+          "energy": 4.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.92,
+            0.8
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -1.0,
+          -10.8,
+          1.95
+        ],
+        "look_at": [
+          -26,
+          -6,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -1.0,
+          -10.8,
+          0.3
+        ],
+        "facing_deg": 100
+      },
+      "hide": [
+        "tarp-dog",
+        "rucksack"
+      ],
+      "interactions": []
+    }
+  }
+}
