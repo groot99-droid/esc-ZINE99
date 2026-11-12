@@ -82,7 +82,7 @@ nobody else mind?
 | --- | --- | --- |
 | **Agnes Halloran's postcard** (Tam's mother) | In the glovebox at minute 2: six lines in her hand naming the sites of Tam's childhood summers. Tam promised photographs; she can no longer camp after a hip replacement. The player finds site 7 (the owl box) and site 12 (the creek bend) on day 1 and photographs them. | Overnight, day 1: site 7, its photo and her line about it go. |
 | **Dell's grandmother's recipe card** | Foil Supper 1 is played from the card. It is a good meal, and Dell is happy. The player may copy the card into the notebook. | Day 2 dusk: the card's lines go blank. |
-| **Lottie Pell's bicycle** | Day 1, the player fixes the slipped chain for an eight-year-old at site 17; she lends the bike so the player can ride to the payphone. | Day 2 morning: Lottie does not remember having a bicycle. |
+| **Lottie Ashby's bicycle** | Day 1, the player fixes the slipped chain for an eight-year-old at site 17; she lends the bike so the player can ride to the payphone. | Day 2 morning: Lottie does not remember having a bicycle. |
 | **Marisol Teague, the ranger** | Day 1, through the booth window, she radios her wife: "Tell Ruth I'll be home for supper Sunday." She is kind and exact. | Day 2: she tells the player the numbering has always started at twelve. |
 | **The four friends** | Day 1 setup and two suppers: each has a want the player helps with (section 6). | Day 2 dusk: the world beyond the five sites goes. |
 | **The notebook** | Every 1D game writes into it. It is the only surface that never changes. | Never. It is the thing that holds. |
@@ -154,7 +154,7 @@ the first two stand on the pitch.
 | Group | Who | What they do |
 | --- | --- | --- |
 | **The five** | Tam (the player), Dell, Rafe, Inés, June | Remember. Argue at the fire. Hold the sites. |
-| **This world's people** | Marisol the ranger; the Pell family at site 17; Abel the through-hiker; other campers seen at a distance | Answer kindly and consistently. Cannot notice. Each conversation is a reading of how far the loss has spread. |
+| **This world's people** | Marisol the ranger; the Ashby family at site 17; Abel the through-hiker; other campers seen at a distance | Answer kindly and consistently. Cannot notice. Each conversation is a reading of how far the loss has spread. |
 
 ### Objects that matter
 
@@ -162,7 +162,7 @@ the first two stand on the pitch.
 | --- | --- | --- |
 | **Tam's notebook** | The only thing that holds. Pages: Sites (24 ruled rows), People, Copied, Tally. | Done, from minute 6. |
 | **The paper map and its legend** | The main comparison surface. Lags the land by one step, then loses entries. | Done (Reconcile). |
-| **Agnes's postcard** | Six lines in her hand. Each goes when its place goes, unless copied. | Found. |
+| **Agnes's postcard** | Six lines in her hand (section 12, "The postcard"). Each goes when its place goes, unless copied. | Found. |
 | **Inés's camera** | Its photos show each lost site as a clearing that has always been empty. | Seen. |
 | **The ranger's logbook** | Check-ins, totals, envelopes. Names go; counts stay. The heaviest thing a player can carry. | Done (The Ranger's Book). |
 | **The posts 16–19, the heron sign, the master map, the quiet-hours board, firewood, the bicycle** | Anchors: things of this world with weight. | Told by rule 7; done. |
@@ -265,13 +265,14 @@ register he passes, "so somebody knows where I've been". Calls his sister Nell f
 Can be brought in (`person_brought = hiker`) if he has seen his own register line, copied in Tam's
 hand, after the register lost it (`abel_believes`). If carried in, Nell stops remembering him.
 
-### The Pells at site 17
+### The Ashbys at site 17
 
 Corinne and Dev, and Lottie, 8. A first camping trip; a borrowed tent pitched badly; onions from
 their garden. Lottie names everything and has a bicycle with a chain that slips. **Voice (Lottie):**
 "That's Puddle. The bike's called Puddle." / "Whose bike is that? It's nice." / "Are we sleeping
-here? Can we?" The family can only be brought in together (`person_brought = pells`), never a
-child alone. If carried in, everyone outside who knew them forgets them.
+here? Can we?" The family cannot be brought in (section 20, answer 3). They stay in this world
+and forget with it; the only thing of theirs that can cross is the bicycle, and Lottie's forgetting
+it on day 2 is the whole of what the player's carrying costs them.
 
 ### Agnes Halloran
 
@@ -392,7 +393,7 @@ no animation (16, then 13); the notebook ticks did not. `knows` becomes `pattern
 | 4 | `booth_day2` | 3D | Marisol: "Numbering's always started at twelve." Write or accept. |
 | 5 | `rangers_book_1` | 1D | She lets Tam look at the book while she sells ice (1 unit). Three missing rows to rebuild. |
 
-The third unit is free: visit the Pells, sit with Abel on the gravel bar, or rest at camp.
+The third unit is free: visit the Ashbys, sit with Abel on the gravel bar, or rest at camp.
 
 **Flags set.** `ines_draws`, `forecast_right`, `accepted`, `notebook_lines`, `sites_written`,
 `knows` = `scale` after The Ranger's Book 1, `time_units`.
@@ -416,7 +417,6 @@ too loses lines (section 12). Each errand costs time units:
 | Unscrew the quiet-hours board | 1 | Board (1) |
 | Pull one of posts 16–19 by day | 1 each | Post (1) |
 | Find Abel on the creek trail and show him his copied line (`creek_trail`) | 2 | `abel_believes` (needs `abel_line_copied`) |
-| Visit the Pells and invite them to supper | 1 | `pells_invited` |
 | Sit with the friends | 1 | `warmth` +2 |
 
 Bonuses: +1 unit if `forecast_right` ("you know how long you have"). +1 helper unit from the first
@@ -432,15 +432,15 @@ to the booth and back for one fetch.
 | 5 | `torch_loop_2` | 2D | The carrying run: posts 16 to 19 go one by one at their times unless in Tam's light. |
 | 6 | `foil_supper_2` | 1D | Supper at full dark, with the guest if there is one. |
 
-**The dusk choice.** Each person the player has persuaded or invited stands at the edge of site 20.
-Before the player confirms, the person says the one tie that will forget them: Marisol, "Ruth's
-expecting me at six. She'll keep a plate." Abel, "Call Nell for me, when there's a phone." Corinne
-Pell, "My mum's got Lottie's birthday on her fridge." Then: **Ask them to stay** or **Let them go
-home**. Only one person or party fits the space left in the tents. If the player takes the keys and
+**The dusk choice.** Each person the player has persuaded stands at the edge of site 20. Before
+the player confirms, the person says the one tie that will forget them: Marisol, "Ruth's expecting
+me at six. She'll keep a plate." Abel, "Call Nell for me, when there's a phone." Then: **Ask them to
+stay** or **Let them go home**. Only one person fits the space left in the tents. The Ashbys are
+not asked: at 19:30 their lantern is lit at site 17, and Lottie waves at the van. If the player takes the keys and
 drives out alone, the run branches to The One Who Left at once.
 
 **Flags set.** `hold`, `anchors`, `person_brought`, `left_alone`, `logbook_carried`, `posts_pulled`,
-`ranger_doubts`, `abel_believes`, `pells_invited`, `time_units`, `warmth`, `supper_shared`.
+`ranger_doubts`, `abel_believes`, `time_units`, `warmth`, `supper_shared`.
 
 **Ends** with supper eaten. Everything past post 20 is dark ground the torch does not reach.
 
@@ -449,7 +449,7 @@ drives out alone, the run branches to The One Who Left at once.
 | Order | Scene | Layer | What happens |
 | --- | --- | --- | --- |
 | 1 | `torch_loop_3` | 2D | Walk the circle of five. Past post 20 and past post 24 the road continues into ground that takes no light: the torch circle shows nothing, not darkness but no ground texture at all. The player cannot walk into it; the walk turns them back without a wall. The anchors stand in the slots. |
-| 2 | `pack_list_2` | 1D | Six or more seats with a guest. A seat nobody filled is dealt a turn, and an item is spoken from it. |
+| 2 | `pack_list_2` | 1D | Six seats, seven with a guest. A seat nobody filled is dealt a turn, and an item is spoken from it. |
 | 3 | `campfire_night2` | 3D | The second theory. Each friend says one line about what they will do in the morning. |
 | 4 | `reconcile_3` | 1D | By headlamp: the legend lists five entries; the map's title is blank. The notebook's Sites page against it, row by row. |
 
@@ -695,7 +695,7 @@ A button: "Nobody said that."
 | Scene | Seats | Chain at most | Phantoms | Notes |
 | --- | --- | --- | --- | --- |
 | `pack_list_1` | 5 | 10 | 1: "a blue enamel kettle" (site 5's table, seen by Tam at 16:10) | June fails on lap 3, cheerfully. |
-| `pack_list_2` | 6–8 (a guest adds seats) | 14 | 2: "Puddle the bicycle" if borrowed, otherwise "a heron sign"; then an item spoken from a seat nobody filled, "a sixth sleeping bag" | The empty seat is dealt a turn. Nobody admits saying it. Dell fails on lap 3, not cheerfully. |
+| `pack_list_2` | 6–7 (a guest adds a seat) | 14 | 2: "Puddle the bicycle" if borrowed, otherwise "a heron sign"; then an item spoken from a seat nobody filled, "a sixth sleeping bag" | The empty seat is dealt a turn. Nobody admits saying it. Dell fails on lap 3, not cheerfully. |
 
 **Hints.** The last three items stay visible for an extra 2 s on the first appearance. The
 accessibility setting "Hold the chain" keeps every word visible.
@@ -732,7 +732,7 @@ Bea's recipe card, and the notebook margin. A coal bar along the bottom.
 | Lentil cakes (June) | Body | Home | Never |
 | Butter pats | Fat | Booth shelf | Day 2 dusk |
 | Olive oil | Fat | Home | Never |
-| Garden onions | Flavour | The Pells (gift, day 1) | Day 2 dusk |
+| Garden onions | Flavour | The Ashbys (gift, day 1) | Day 2 dusk |
 | Wild ramps | Flavour | Abel (gift, day 1) | Day 2 midday |
 | Salt, pepper | Flavour | Home | Never |
 | Grey apples, salt that tastes of nothing | Unknown | Nobody packed them | Appear on the final morning |
@@ -740,7 +740,7 @@ Bea's recipe card, and the notebook margin. A coal bar along the bottom.
 | Scene | Diners | Ingredients | What makes it harder |
 | --- | --- | --- | --- |
 | `foil_supper_1` | 5 | Everything; enough for 6 | Nothing; the card is legible. Copying it takes one press. |
-| `foil_supper_2` | 5, +1 (Marisol or Abel) or +3 (Pells) | No corn, butter, onions, ramps | Card blank unless copied; with the Pells, eight packets from food for five. |
+| `foil_supper_2` | 5, +1 (Marisol or Abel) | No corn, butter, onions, ramps | Card blank unless copied; with a guest, six packets from food for five. |
 | `foil_supper_3` | Everyone who woke | What came across, plus two unknowns | Unknowns have hidden roles; tasting one (costs 20 s of coal) reveals it. In Nothing Missing the cooler is full and there is one sheet too many; the player can make it or leave it. |
 
 **Finish.** All sheets are on the coals.
@@ -824,6 +824,19 @@ default and named plainly in the settings.
 into it is one press when the line is on screen, costs no time, and keeps the line: a copied
 postcard line raises `mother_lines_kept` (0–6).
 
+**The postcard.** Six lines in Agnes's hand, each lost at the step that takes its place (the heron
+line holds if the sign was carried in). The line for site 21 is the one Agnes says on the phone; the
+other five are added (section 21).
+
+| Line | Text | Goes at step |
+| --- | --- | --- |
+| Site 7 | "Site 7. The owl box. Count to a hundred and it calls." | 2 |
+| Site 9 | "Site 9. The shallow pool. You learned to float there." | 2 |
+| Site 12 | "Site 12. The creek bend. Cold enough to keep the milk." | 3 |
+| Site 16 | "Site 16. The tall cedar. You fell out of it once, and laughed." | 4 |
+| The heron sign | "The heron sign. Wave at it on the way in. We always did." | 4, unless the sign is in a slot |
+| Site 21 | "Site 21. The split boulder. You slept in the crack of it." | Holds; it crosses |
+
 ### Time units
 
 | Day part | Units | Bonuses |
@@ -836,8 +849,8 @@ spent, Dell calls everyone to the van at 19:30.
 
 ### Anchors and hold
 
-Ten slots at the five sites, two per site (the table and the tent-pad edge). A person or party fills
-both slots of one site. `hold` is the sum of the weights in the slots at the moment the carrying run
+Ten slots at the five sites, two per site (the table and the tent-pad edge). A person fills both
+slots of one site. `hold` is the sum of the weights in the slots at the moment the carrying run
 ends.
 
 | Anchor | Weight | Slots | How it is had |
@@ -851,7 +864,6 @@ ends.
 | Lottie's bicycle | 1 | 1 | Borrowed on day 1 |
 | Marisol | 5 | 2 | `ranger_doubts`, asked at dusk; brings the logbook with her if Tam has not got it (it shares her site) |
 | Abel | 5 | 2 | `abel_believes`, asked at dusk |
-| The Pells | 6 | 2 | `pells_invited`, asked at dusk |
 
 Things carry no weight if they belong to the five friends (they are already inside) or if they are
 records of something already lost (a photograph, a drawing of site 7).
@@ -905,7 +917,7 @@ The resolver checks endings in priority order after the last chapter. Conditions
 | 1 | `one_who_left` | The One Who Left | No | Tam drove out alone at dusk on day 2. | `{"is": "left_alone", "eq": true}` |
 | 2 | `nothing_missing` | Nothing Missing | No | Tam accepted the world's word five or more times and took "Nothing's wrong" at the second fire. | `{"all": [{"is": "accepted", "gte": 5}, {"is": "theory_night2", "eq": "nothing_wrong"}]}` |
 | 3 | `held` | Held | No | The five sites held 12 or more weight at dark. | `{"is": "hold", "gte": 12}` |
-| 4 | `brought_along` | Brought Along | No | A person or party slept inside, but the sites held less than 12. | `{"not": {"is": "person_brought", "eq": "none"}}` |
+| 4 | `brought_along` | Brought Along | No | A person slept inside, but the sites held less than 12. | `{"not": {"is": "person_brought", "eq": "none"}}` |
 | 5 | `slipped_through` | Slipped Through | **Yes** | Everything else: Tam stayed, kept watching, and the sites did not hold. | `true` |
 
 ### Slipped Through (as written)
@@ -922,8 +934,8 @@ the vault's terms, a handoff ending.)
 ### Brought Along (proposal)
 
 As Slipped Through, with the guest. Marisol reads the trees from memory and, at the end, steps into
-the empty booth and says the line herself. Abel signs a register that has no other names. The Pells:
-Lottie names every glyph as they pass it and waves at the children in the car. **Last image:** the
+the empty booth and says the line herself. Abel signs a register that has no other names. **Last
+image:** the
 guest at the window, the car's headlights on their face, someone at home who no longer knows to
 wait.
 
@@ -961,7 +973,7 @@ the notebook open at Rafe's page: "Rafe. Four o'clock Monday. That's all I've go
 | Ending | What to do |
 | --- | --- |
 | Slipped Through | Stay. Keep writing. Do not ask anyone to stay, and do not fill the slots past 11. This is what a player who simply follows the friends will get. |
-| Brought Along | Persuade one person (finish The Ranger's Book 2 with Marisol, show Abel his copied line, or invite the Pells), ask them to stay at dusk, and carry little else. |
+| Brought Along | Persuade one person (finish The Ranger's Book 2 with Marisol, or show Abel his copied line), ask them to stay at dusk, and carry little else. |
 | Held | Carry 12 or more weight into the slots. The easy way: a person plus the logbook. The hard way, with no person: buy the firewood and borrow the bike on day 1, call the forecast right, spend every unit on anchors, and take all four posts. |
 | Nothing Missing | Accept five times (each "Correct your note", each phantom repeated, each "Must have read it wrong"), then choose "Nothing's wrong" at the second fire. |
 | The One Who Left | At dusk on day 2, take the keys from Rafe and choose "Drive out alone". |
@@ -998,7 +1010,8 @@ by default; remappable controls; a colour-blind safe palette (status colours in 
 shapes: circle, cross, dash).
 
 **Content note at start:** "No violence, no chase, no jump scares. Loss of places, records and
-people from memory; a family including a child may be taken from their world if the player chooses."
+people from memory; an adult may be taken from their world if the player chooses and they agree.
+The game changes its own screens on purpose: if something you saw is gone, it is not a bug."
 
 ## 15. Art direction
 
@@ -1066,7 +1079,7 @@ last line of Slipped Through. Subtitles for every line.
 | Music cues | Title, supper hum, dusk note, camp song line, glyph tones (19), ending stingers (5) | 28 |
 | Ambience beds | Day 1, day 2 (thinning), night, edge, other side, city, hall | 7 |
 | Sound effects | As section 16 | ~60 |
-| Voice line groups | Friends (4 × ~40), Marisol (~30), Abel (~20), Pells (~25), Agnes (~8), Tam (1), phantoms (6) | ~250 lines |
+| Voice line groups | Friends (4 × ~40), Marisol (~30), Abel (~20), the Ashbys (~12), Agnes (~8), Tam (1), phantoms (6) | ~237 lines |
 
 ## 18. Data files
 
@@ -1083,7 +1096,7 @@ Beyond the shared schemas the game has two small tables the engine reads, each w
 | File | Schema | Holds |
 | --- | --- | --- |
 | `data/erasure_schedule.json` | `data/schemas/erasure_schedule.schema.json` | The six steps of section 12 (0–5): the scenes that advance `erasure_step`, the sites, things, legend entries, map entries, photos, postcard lines, other hands' lines, log and objectives each step takes; the HUD counter's 16 → 13; the carrying run's post times (16 at 40 s, 17 at 70 s, 18 at 140 s, 19 at 170 s); the six postcard lines; the trace each surface keeps; Show seams. |
-| `data/anchors.json` | `data/schemas/anchors.schema.json` | The ten slots (two per site at 20–24), the Held threshold 12, the most without a person (14), and the 13 anchors of section 12 with weight, slots, unit cost, the scenes where each is had, and the flag that records it. |
+| `data/anchors.json` | `data/schemas/anchors.schema.json` | The ten slots (two per site at 20–24), the Held threshold 12, the most without a person (14), and the 12 anchors of section 12 with weight, slots, unit cost, the scenes where each is had, and the flag that records it. |
 
 `tools/check_data.py` (stdlib; `tools/validate.py` runs it) checks both files against their schemas,
 against each other (the timed posts are the post anchors; the `unless` anchors exist), and against the
@@ -1119,16 +1132,56 @@ reads as the one trustworthy surface.
 | Nothing Missing is reached by accident. | The theory is hidden below 3 acceptances; acceptance buttons are always worded as accepting. |
 | The One Who Left is short. | Its home chapters run 76 minutes total, inside the target. |
 
-**Questions only the author can answer.**
+**Answered** (by Claude at the author's request, 2026-11-12, from the source text; the author can overrule any of them).
 
-1. **Held's cost.** The earlier draft said everyone left outside "is gone". This design keeps the
-   rule that nothing is destroyed and makes the cost forgetting: the island holds, and no one outside
-   remembers anyone on it, including the friends' own families. Is that the cost you want?
-2. **The other side and the car.** The pitch stops at the crossing. Is it right to show the other
-   side as the lost campground rebuilt in trees, and to end Slipped Through with Tam saying
-   Marisol's line to new arrivals?
-3. **The Pells.** Should a family with a child be among the people a player can bring in? They can
-   only come together, and they keep their interior lives, but it is the darkest choice in the game.
+1. **Held's cost stays forgetting: the five sites hold, and nobody outside them remembers anyone
+   on them.** The pitch's own word for loss is not destruction but forgetting: the first sites are
+   "Not destroyed. Not taped off. Not overgrown." and of the next morning's, "No one notices. / No
+   one cares. / No one even remembers they were there. / Except the campers."
+   (`04_Book_Concepts/02_Missing_Campsites.md`). Held turns that sentence on the campers: they are
+   what is left over, and the world forgets them as it forgot the sites. That keeps the cost the
+   vault's horror rule asks for ("No tidy, rescued endings in Horror-Prose mode", vault
+   `CLAUDE.md`) without inventing a second mechanism, and it is the same cost The One Who Left
+   already pays. The earlier draft's "everyone left outside is gone" stays cut. Nothing changed:
+   section 13 and rule 7 already say this.
+2. **Yes to both: the other side is the lost campground rebuilt in trees, and Slipped Through ends
+   with Tam saying Marisol's line to new arrivals.** The trees stand on the author's own image, "The
+   trees are arranged in patterns that shouldn’t exist", read through the next sentence: a
+   dimension "that has been pulling them in, piece by piece, since the moment they arrived". The
+   pieces are the sites, so the patterns are the sites. The vault's craft note reads the pitch's
+   ending the same way, as reinterpreting "the only fixed points" as "the last things to be drawn
+   in" (`_Craft/cosmic-horror.md`), and COLLECTION already gives this game the pattern walk, "where
+   only the path the trees spell is safe". The trees show where the pieces went, never why or by
+   what (section 5). The line is a handoff: the pitch's horror is that "everyone else … acts like
+   nothing is missing", and in the last line Tam becomes everyone else. Handoff is one of the
+   endings the vault allows horror-prose (vault `CLAUDE.md`, "Plot logic"), and the liminal note
+   gives a story that ends `inside` "no-return or handoff" (`_Craft/liminality.md`). The crossing,
+   the sky, the trees and the phones remain the author's; the walk, the booth, the car and the line
+   remain listed in section 21. Nothing changed.
+3. **No: the family at site 17 cannot be brought in.** The pitch puts "families" among "everyone
+   else", and the game keeps them there. Marisol and Abel can each come only after seeing their own
+   record fail and choosing, with the cost spoken aloud; an eight-year-old cannot make that choice,
+   and bringing the family in means her parents make it for her, with everyone who knew her as the
+   price. The vault's restraint rule ("I will not make victims into props for cleverness") and
+   this game's register ("Unease without a monster", COLLECTION) both argue against making the
+   darkest choice in the game a child's erasure, and the simpler option cuts invented material.
+   The family keeps its interior life, the onions and the bicycle, and Lottie forgetting her bicycle
+   on day 2 stays the small-scale lesson of rule 7. **Changed:** the family's anchor (weight 6), the
+   `pells_invited` flag and errand, the `pells` value of `person_brought` and the family's variant
+   of Brought Along are cut; the dusk choice offers Marisol or Abel only, and the family is seen at
+   site 17 instead; Foil Supper 2 has one guest at most (six packets) and Pack List 2 six or seven
+   seats; the content note no longer names a child; voice lines fall from ~250 to ~237; anchors fall
+   from 13 to 12. The most `hold` can read is now 17 (inside its 0–20 range); Held without a person
+   is unchanged at 14. Sections 6, 8, 11, 12, 13, 14, 17, 18 and 21 and `anchors.json`,
+   `flags.json`, `scenes.json` and `endings.json` were updated.
+4. **The family is renamed the Ashbys** (Corinne, Dev and Lottie Ashby), because *People of the
+   Bark* has an Elder Pell and names do not repeat across the collection. "Ashby" appears in no
+   other game. Changed throughout DESIGN.md, `anchors.json` and `flags.json`.
+5. **The five missing postcard lines are written** (data gap: `text: null` in
+   `data/erasure_schedule.json` for sites 7, 9, 12, 16 and the heron sign). They follow the shape of
+   the one line the design already had, site 21's: the place, then one thing Tam did or saw there,
+   short, in Agnes's voice. They are listed under "The postcard" in section 12 and in section 21 as
+   added, and are not the author's.
 
 ## 21. Added for the game
 
@@ -1139,7 +1192,7 @@ Everything below is not in the author's text and is offered for approval or stri
 | The campground's name, Hollin Creek; 24 sites on a one-way loop; the booth, store, payphone, register, creek trail; the heron sign | Sections 5, 8 |
 | The campers' names, ages, relationships and wants: Tam Halloran (the player), Dell Amari, Rafe Lindqvist, Inés Varga, June Okafor | Section 6 |
 | Tam's reason for the trip: Agnes Halloran's postcard and the promised photographs | Sections 4, 6 |
-| Marisol Teague and Ruth; Abel Strand and Nell; the Pells (Corinne, Dev, Lottie); Rafe's daughter Ada and her recital | Section 6 |
+| Marisol Teague and Ruth; Abel Strand and Nell; the Ashbys (Corinne, Dev, Lottie) and Puddle the bicycle; Rafe's daughter Ada and her recital | Section 6 |
 | The rules of the world (the order of erasure, memory going with the thing, paper lagging by one step, lines versus numbers, never seen happening, the notebook holds, carrying in removes from others' memory) | Section 5 |
 | The exact erasure schedule by block, and the interface erasure with its traces | Section 12 |
 | The notebook, the map lens, Inés's camera, the HUD counter | Sections 9, 14 |
@@ -1150,3 +1203,5 @@ Everything below is not in the author's text and is offered for approval or stri
 | Endings Brought Along, Held, Nothing Missing and The One Who Left, and their closing images | Section 13 |
 | The close of Slipped Through after the crossing: the pattern walk, the empty booth, the car, Tam's line | Section 13 |
 | Every line of dialogue in this document; none is the author's | Section 6 |
+| Agnes's six postcard lines, including the five written when the data gap was answered (sites 7, 9, 12, 16 and the heron sign) | Section 12 |
+| The Ashbys' lantern and Lottie's wave at the dusk choice, in place of bringing the family in | Section 8 |

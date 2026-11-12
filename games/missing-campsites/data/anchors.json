@@ -13,7 +13,7 @@
   "placed_in_chapter": "ch4_carrying",
   "rules": [
     "hold is the sum of the weights in the slots at the moment the carrying run ends.",
-    "A person or party fills both slots of one site; only one person or party fits.",
+    "A person fills both slots of one site; only one person fits. The Ashby family at site 17 cannot be brought in (DESIGN section 20, answer 3).",
     "Things carry no weight if they belong to the five friends or are records of something already lost."
   ],
   "anchors": [
@@ -44,7 +44,7 @@
     {"id": "firewood", "name": "The firewood bundle", "kind": "thing", "weight": 1, "slots": 1,
      "how": "Bought at the booth on day 1 ($8)", "units": 0, "units_if_warm": null,
      "scenes": ["booth_day1"], "flag": "firewood_bought", "post": null, "person": null},
-    {"id": "bicycle", "name": "Lottie's bicycle", "kind": "thing", "weight": 1, "slots": 1,
+    {"id": "bicycle", "name": "Lottie Ashby's bicycle", "kind": "thing", "weight": 1, "slots": 1,
      "how": "Borrowed on day 1, offered at the end of supper if Tam fixed the chain", "units": 0, "units_if_warm": null,
      "scenes": ["foil_supper_1"], "flag": "bicycle_borrowed", "post": null, "person": null},
     {"id": "marisol", "name": "Marisol", "kind": "person", "weight": 5, "slots": 2,
@@ -52,9 +52,6 @@
      "scenes": ["dusk_choice"], "flag": "person_brought", "needs": "ranger_doubts", "post": null, "person": "ranger", "brings": "logbook"},
     {"id": "abel", "name": "Abel", "kind": "person", "weight": 5, "slots": 2,
      "how": "Asked at dusk", "units": 0, "units_if_warm": null,
-     "scenes": ["dusk_choice"], "flag": "person_brought", "needs": "abel_believes", "post": null, "person": "hiker"},
-    {"id": "pells", "name": "The Pells", "kind": "person", "weight": 6, "slots": 2,
-     "how": "Asked at dusk", "units": 0, "units_if_warm": null,
-     "scenes": ["dusk_choice"], "flag": "person_brought", "needs": "pells_invited", "post": null, "person": "pells"}
+     "scenes": ["dusk_choice"], "flag": "person_brought", "needs": "abel_believes", "post": null, "person": "hiker"}
   ]
 }

@@ -75,7 +75,7 @@
       "name": "bicycle_borrowed",
       "type": "bool",
       "default": false,
-      "description": "Lottie lent her bicycle on day 1 (anchor, weight 1; teaches rule 7)."
+      "description": "Lottie Ashby lent her bicycle on day 1 (anchor, weight 1; teaches rule 7)."
     },
     {
       "name": "abel_line_copied",
@@ -190,12 +190,6 @@
       "description": "Abel saw his own lost line in Tam's hand."
     },
     {
-      "name": "pells_invited",
-      "type": "bool",
-      "default": false,
-      "description": "The Pells were invited to supper at site 22."
-    },
-    {
       "name": "posts_pulled",
       "type": "counter",
       "default": 0,
@@ -209,8 +203,7 @@
       "values": [
         "none",
         "ranger",
-        "hiker",
-        "pells"
+        "hiker"
       ]
     },
     {

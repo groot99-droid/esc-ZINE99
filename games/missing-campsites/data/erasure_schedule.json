@@ -2,11 +2,11 @@
   "source": "DESIGN.md section 12, 'The erasure schedule' and 'How the player can tell'; post times from section 10, torch_loop_2.",
   "flag": "erasure_step",
   "postcard_lines": [
-    {"id": "site_7", "subject": "Site 7, the owl box", "site": 7, "text": null},
-    {"id": "site_9", "subject": "Site 9", "site": 9, "text": null},
-    {"id": "site_12", "subject": "Site 12, the creek bend", "site": 12, "text": null},
-    {"id": "site_16", "subject": "Site 16", "site": 16, "text": null},
-    {"id": "heron", "subject": "The heron sign", "site": null, "text": null},
+    {"id": "site_7", "subject": "Site 7, the owl box", "site": 7, "text": "Site 7. The owl box. Count to a hundred and it calls."},
+    {"id": "site_9", "subject": "Site 9", "site": 9, "text": "Site 9. The shallow pool. You learned to float there."},
+    {"id": "site_12", "subject": "Site 12, the creek bend", "site": 12, "text": "Site 12. The creek bend. Cold enough to keep the milk."},
+    {"id": "site_16", "subject": "Site 16", "site": 16, "text": "Site 16. The tall cedar. You fell out of it once, and laughed."},
+    {"id": "heron", "subject": "The heron sign", "site": null, "text": "The heron sign. Wave at it on the way in. We always did."},
     {"id": "site_21", "subject": "Site 21, the split boulder", "site": 21, "text": "Site 21. The split boulder. You slept in the crack of it."}
   ],
   "steps": [

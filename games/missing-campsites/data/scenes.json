@@ -320,7 +320,6 @@
         "logbook_carried",
         "logbook_taken_unasked",
         "posts_pulled",
-        "pells_invited",
         "warmth"
       ],
       "enter": "cut",
@@ -381,7 +380,6 @@
       "reads": [
         "ranger_doubts",
         "abel_believes",
-        "pells_invited",
         "warmth",
         "theory_night1"
       ],
