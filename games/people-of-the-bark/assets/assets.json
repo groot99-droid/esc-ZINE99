@@ -1,0 +1,776 @@
+{
+  "game": "people-of-the-bark",
+  "style": "Photographic miniature diorama, macro tilt-shift look with shallow depth of field at bark scale; deep-normal bark in umber and grey-brown, lichen sage and lime, sap amber and gold with subsurface glow, lantern orange; seasons shift the palette (spring green, summer bleached, autumn copper, winter white); the backyard in plain deep-focus daylight.",
+  "locations": [
+    {
+      "id": "highridge",
+      "name": "Highridge, the city on the east face",
+      "scenes": [
+        "c1_city_dawn",
+        "c1_city_year",
+        "c2_city",
+        "c2_rain",
+        "c3_city",
+        "c4_city",
+        "c5_city"
+      ],
+      "dimensions_m": [
+        0.12,
+        0.02,
+        0.3
+      ],
+      "lighting": "Dawn: blue pre-dawn turning gold, glow-lichen lanterns lit. Spring green-gold; rain grey-silver with wet sheen; summer bleached with hard shadows; autumn copper, dark for 8 s as the leaf passes; winter white-blue low sun with frost in the grooves.",
+      "objects": [
+        "dwelling",
+        "window-shutter",
+        "sap-tap",
+        "sap-cup",
+        "knot-sanctum",
+        "war-hall",
+        "record-hall",
+        "twigs-kite",
+        "lichen-lantern",
+        "sap-jar",
+        "rain-bead",
+        "falling-leaf",
+        "watchtower"
+      ],
+      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field. A tiny city built on a vertical wall of deep tree bark seen straight on: rows of small round dwellings carved into the ridges and grooves of umber and grey-brown bark, little bark-chip shutters on round windows, a road running along a long dark crack, amber sap taps set into grooves with glowing golden sap, patches of sage and lime lichen, glow-lichen lanterns, a hooded shrine carved into a knot, a hall of bark plates on a splinter, a record hall in a dry groove. Early golden dawn light raking across the bark ridges. The bark wall fills the frame like a hillside of terraces. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "b3334f9e-9339-4280-bfd6-30311a8e1828",
+      "image": "assets/locations/highridge.jpg"
+    },
+    {
+      "id": "splinterwatch",
+      "name": "Splinterwatch's battlements",
+      "scenes": [
+        "c1_battlements",
+        "c3_wind"
+      ],
+      "dimensions_m": [
+        0.12,
+        0.03,
+        0.12
+      ],
+      "lighting": "Tremor: dust-gold, shaking, sheets of falling dust. Windstorm: bleached light, moving streaks of wind across the bark.",
+      "objects": [
+        "battlement-slot",
+        "spear-rack",
+        "watchtower",
+        "war-hall"
+      ],
+      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field. A great raised splinter of torn bark standing out from a vertical bark wall, fortified as a tiny castle: a battlement walk along its top edge with six notched slots for guards, palisades of sharpened splinter spears, small watchtowers lashed with silk on the splinter's tip, ladders of bark flakes, dusty gold light with sheets of fine bark dust drifting down. Grey-brown and umber bark, deep grooves below. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "e41708c5-3109-4553-a61d-372d54c09fa2",
+      "image": "assets/locations/splinterwatch.jpg"
+    },
+    {
+      "id": "first-ring-temple",
+      "name": "The First Ring temple, Knotholm",
+      "scenes": [
+        "c2_temple"
+      ],
+      "dimensions_m": [
+        0.02,
+        0.02,
+        0.012
+      ],
+      "lighting": "Amber lamp-light; low and echoing.",
+      "objects": [
+        "temple-altar",
+        "roll-of-the-bark",
+        "lichen-lantern",
+        "chant-drum"
+      ],
+      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field. The inside of a round hall carved into a tree knot, its walls showing the concentric growth rings of the wood in warm tan and umber, a smooth curved saying-wall left blank for painting, a low carved wooden altar in the centre with a small dish of golden sap, an unrolled empty scroll of pale bark paper on a stand, small amber lamps glowing in niches, worn steps, a round opening to the outside bark. Warm amber lamp-light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "700fbd83-fb0d-4e8c-b61b-ca61090b4b7e",
+      "image": "assets/locations/first-ring-temple.jpg"
+    },
+    {
+      "id": "knotholm-walk",
+      "name": "The walk from Highridge to the temple by night",
+      "scenes": [
+        "c5_temple"
+      ],
+      "dimensions_m": [
+        0.06,
+        0.01,
+        0.02
+      ],
+      "lighting": "Lantern-light in snow-dark: frost white-blue in the grooves, warm orange pools from lanterns.",
+      "objects": [
+        "pells-lantern",
+        "lichen-lantern",
+        "dwelling"
+      ],
+      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field. A narrow path along a groove in a vertical wall of tree bark at night in winter, frost glittering white-blue in the grooves like glass, small round dwellings with one warm lit window, little hanging lanterns making pools of orange light along the route, the path leading to a round doorway carved into a large knot at the far end. Snow-dark sky glow, cold and quiet. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "3d419b0a-391a-4567-97c3-540458142c5b",
+      "image": "assets/locations/knotholm-walk.jpg"
+    },
+    {
+      "id": "highridge-square",
+      "name": "Highridge square",
+      "scenes": [
+        "c5_count"
+      ],
+      "dimensions_m": [
+        0.04,
+        0.01,
+        0.04
+      ],
+      "lighting": "Cold noon: pale white light, frost on the edges.",
+      "objects": [
+        "balance-rope",
+        "chant-drum",
+        "lichen-lantern"
+      ],
+      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field. A small flat square levelled on the top of a broad bark ridge, paved with fitted bark flakes, three low platforms at three sides for the three institutions, a long braided rope lying across the middle of the square, drums at the edges, small dwellings and halls carved into the bark ridges around it, frost in the cracks. Cold pale noon light in winter, umber bark with white frost. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "8ba2d8ec-6c41-4a0f-b791-b17578e284fe",
+      "image": "assets/locations/highridge-square.jpg"
+    },
+    {
+      "id": "the-branch",
+      "name": "The Branch and the Listening Knot",
+      "scenes": [
+        "c4_branch"
+      ],
+      "dimensions_m": [
+        0.35,
+        0.01,
+        0.05
+      ],
+      "lighting": "Open sky light, swaying; the light changes over the 3-minute window.",
+      "objects": [
+        "silk-anchor",
+        "cover-hollow"
+      ],
+      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field. A long horizontal tree branch seen as a vast road of grey-brown bark, curving away into open sky, small hollows in the bark for shelter, silk threads tied at anchor points along the way, patches of lime lichen and moss, and at the far end a large rounded knot swelling from the branch. Bright open sky light, autumn copper leaves out of focus behind. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "518e5248-ab9e-422a-b821-5c01174bc0c8",
+      "image": "assets/locations/the-branch.jpg"
+    },
+    {
+      "id": "bark-face",
+      "name": "The east face under the Shadow",
+      "scenes": [
+        "c6_shadow",
+        "c6_stand",
+        "c6_touch"
+      ],
+      "dimensions_m": [
+        0.12,
+        0.03,
+        0.12
+      ],
+      "lighting": "The Shadow: light swallowed west to east in 40 s; then dark lit only by lanterns; then light returning after the touch.",
+      "objects": [
+        "knot-shelter-door",
+        "lichen-lantern",
+        "chant-drum",
+        "scroll-frame",
+        "battlement-slot"
+      ],
+      "prompt": "Photographic macro miniature diorama, tilt-shift. Frontal, flat-on view of a huge vertical tree-bark wall filling the entire frame edge to edge, with nothing in the foreground: deep umber and grey-brown ridges and grooves run up and down it like a cliff face. Spread across it are three clusters of tiny round carved dwellings on the ridges, a fortified splinter with a little battlement walk, six rounded knots with small round wooden doors, a thin road following a crack, tiny warm lantern dots, lime lichen patches. A vast soft shadow covers the left third of the wall in deep blue dusk; the rest is in pale cold daylight. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "d07ab526-75c1-453a-8b21-c453be82f1ce",
+      "image": "assets/locations/bark-face.jpg"
+    },
+    {
+      "id": "shadow-edge",
+      "name": "The shadow's edge",
+      "scenes": [
+        "c6_edge"
+      ],
+      "dimensions_m": [
+        0.2,
+        0.02,
+        0.2
+      ],
+      "lighting": "Half light, half dark: the line of the shadow across the bark.",
+      "objects": [
+        "edge-stake"
+      ],
+      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field. A stretch of open vertical bark wall, deep ridges and grooves in umber and grey-brown, split exactly by the curved soft edge of a vast shadow: one half in pale winter light, the other in deep blue dark, a faint line of small wooden stakes along the edge, lichen patches. No buildings. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "0ea1fba5-4e06-4882-9bd3-54efdbc90366",
+      "image": "assets/locations/shadow-edge.jpg"
+    },
+    {
+      "id": "backyard",
+      "name": "The backyard",
+      "scenes": [
+        "c7_backyard"
+      ],
+      "dimensions_m": [
+        25,
+        25,
+        8
+      ],
+      "lighting": "Afternoon daylight, ordinary, deep focus.",
+      "objects": [
+        "garden-swing",
+        "washing-line",
+        "garden-shed",
+        "fence-panel"
+      ],
+      "prompt": "Plain ordinary suburban backyard photographed in deep focus afternoon daylight, like a children's nature encyclopaedia: a large old deciduous tree with grey-brown bark in the middle of a green lawn, a white wooden picket fence, a small garden shed, a washing line on two posts, a simple rope swing hanging from a low branch, the back wall and back door of a house at one side. Blue sky, plain and calm. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "625ddf3b-cc25-4d43-8aa8-2ec9c6435f4b",
+      "image": "assets/locations/backyard.jpg"
+    }
+  ],
+  "objects": [
+    {
+      "id": "window-shutter",
+      "name": "Bark-chip shutter",
+      "role": "interact",
+      "scenes": [
+        "c1_city_dawn"
+      ],
+      "size_m": [
+        0.003,
+        0.0005,
+        0.004
+      ],
+      "material": "Curved chip of bark on silk hinges",
+      "prompt": "A tiny window shutter made from a single curved chip of grey-brown tree bark, rough outer texture and smooth pale inner face, two silk-thread hinges on one side, a small wooden peg latch. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d9bcaa5c-b9aa-4124-b5b6-5b3be12883d6",
+      "image": "assets/objects/window-shutter.jpg"
+    },
+    {
+      "id": "twigs-kite",
+      "name": "Twig's kite",
+      "role": "interact",
+      "scenes": [
+        "c1_city_dawn",
+        "c1_city_year"
+      ],
+      "size_m": [
+        0.01,
+        0.002,
+        0.012
+      ],
+      "material": "Dried leaf stretched on grass-stem spars, silk string",
+      "prompt": "A small handmade kite made from a dried sage-green leaf stretched on a cross of thin grass stems, a short tail of knotted plant fibre and a coil of fine silk string, slightly torn edge. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "35041915-d02d-4fda-bb83-c470e0aed6a5",
+      "image": "assets/objects/twigs-kite.jpg"
+    },
+    {
+      "id": "sap-tap",
+      "name": "Sap tap",
+      "role": "interact",
+      "scenes": [
+        "c1_city_dawn",
+        "c2_city",
+        "c3_city"
+      ],
+      "size_m": [
+        0.003,
+        0.004,
+        0.004
+      ],
+      "material": "Hollow thorn spout in a bark collar, amber sap",
+      "prompt": "A primitive sap tap: a hollow thorn spout fitted through a carved collar of bark, a bead of glowing amber golden sap at its tip, a small cup of acorn cap hanging below, umber wood. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "f55f1f4c-ddf2-4c80-b0e4-1349d39ea3c2",
+      "image": "assets/objects/sap-tap.jpg"
+    },
+    {
+      "id": "sap-cup",
+      "name": "Sap cup",
+      "role": "interact",
+      "scenes": [
+        "c2_rain",
+        "c2_city"
+      ],
+      "size_m": [
+        0.004,
+        0.004,
+        0.002
+      ],
+      "material": "Acorn-cap basin with a bark-flake hinged lid",
+      "prompt": "A small round catch basin made from an acorn cap, with a hinged lid of bark flake propped open, a little amber sap and clear water inside, warm brown textures. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "7b9af193-6990-4653-9246-df5cb747d002",
+      "image": "assets/objects/sap-cup.jpg"
+    },
+    {
+      "id": "knot-sanctum",
+      "name": "Knot Sanctum",
+      "role": "interact",
+      "scenes": [
+        "c1_city_dawn",
+        "c2_city"
+      ],
+      "size_m": [
+        0.012,
+        0.008,
+        0.014
+      ],
+      "material": "Shrine carved into a rounded knot, hooded doorway, amber lamp",
+      "prompt": "A small shrine building carved into a rounded wooden tree knot, showing concentric growth rings on its face, a tall hooded arched doorway, a warm amber lamp glowing within, lime lichen at its base. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "4012e371-2f2e-43b8-865e-c4571ec0ecb5",
+      "image": "assets/objects/knot-sanctum.jpg"
+    },
+    {
+      "id": "war-hall",
+      "name": "War Hall",
+      "role": "interact",
+      "scenes": [
+        "c1_city_dawn",
+        "c1_battlements",
+        "c3_city"
+      ],
+      "size_m": [
+        0.012,
+        0.008,
+        0.016
+      ],
+      "material": "Hall of overlapping bark plates on a splinter base, spear crest",
+      "prompt": "A small fortified hall built of overlapping plates of grey-brown bark like armour scales, set on a sharp wooden splinter base, a crest of splinter spears along its roof ridge, a heavy square doorway. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "13fdd4fd-b8da-4023-95be-9d2b07a1d37a",
+      "image": "assets/objects/war-hall.jpg"
+    },
+    {
+      "id": "record-hall",
+      "name": "Record Hall",
+      "role": "interact",
+      "scenes": [
+        "c1_city_dawn",
+        "c2_city"
+      ],
+      "size_m": [
+        0.014,
+        0.008,
+        0.012
+      ],
+      "material": "Long low hall in a dry groove, shelves of scroll tubes",
+      "prompt": "A long low hall built into a dry groove of tree bark, a row of round windows, a pale bark-paper awning, scroll tubes made of hollow grass stems stacked in racks beside the door, ink-stained wooden steps. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "94d7e3c8-da05-4b77-93a5-2163bb13d27f",
+      "image": "assets/objects/record-hall.jpg"
+    },
+    {
+      "id": "watchtower",
+      "name": "Watchtower",
+      "role": "interact",
+      "scenes": [
+        "c3_city",
+        "c3_wind",
+        "c1_battlements",
+        "c2_city"
+      ],
+      "size_m": [
+        0.006,
+        0.006,
+        0.03
+      ],
+      "material": "Tall tower of splinters lashed with silk, lookout platform",
+      "prompt": "A tall thin watchtower built from long wooden splinters lashed together with pale silk threads, a small lookout platform on top with a bark-flake roof, silk guy-lines hanging loose ready for lashing. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "ffad47e9-fa09-4a41-b9f6-4fd18eb31672",
+      "image": "assets/objects/watchtower.jpg"
+    },
+    {
+      "id": "battlement-slot",
+      "name": "Battlement slot",
+      "role": "interact",
+      "scenes": [
+        "c1_battlements",
+        "c6_stand"
+      ],
+      "size_m": [
+        0.006,
+        0.004,
+        0.005
+      ],
+      "material": "Notched bark-plate parapet section with a spear socket",
+      "prompt": "A single short section of a fortified parapet made from thick plates of grey-brown bark, one notched gap for a guard to stand in, a small socket for a spear, dust in the cracks. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "72cfc38e-1fc8-46e5-9828-33b3106fd8eb",
+      "image": "assets/objects/battlement-slot.jpg"
+    },
+    {
+      "id": "roll-of-the-bark",
+      "name": "The Roll of the Bark",
+      "role": "interact",
+      "scenes": [
+        "c2_temple",
+        "c5_temple"
+      ],
+      "size_m": [
+        0.008,
+        0.003,
+        0.006
+      ],
+      "material": "Pale bark-paper scroll on a carved wooden stand, blank",
+      "prompt": "A long scroll of pale cream bark paper partly unrolled on a small carved wooden stand with two wooden rollers, the paper blank and slightly curled at the edges. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "655f41ef-22df-450a-9f97-827f2a8ff8fe",
+      "image": "assets/objects/roll-of-the-bark.jpg"
+    },
+    {
+      "id": "pells-lantern",
+      "name": "Pell's lantern",
+      "role": "interact",
+      "scenes": [
+        "c5_temple"
+      ],
+      "size_m": [
+        0.003,
+        0.003,
+        0.005
+      ],
+      "material": "Hanging lantern of hollow seed pod, warm orange flame",
+      "prompt": "A small hanging lantern made from a hollow brown seed pod with round holes cut in it, a warm orange glow inside, a short loop of twisted fibre to hang it by. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "6450849d-7d44-4876-868a-6334fd05fe3c",
+      "image": "assets/objects/pells-lantern.jpg"
+    },
+    {
+      "id": "silk-anchor",
+      "name": "Silk anchor point",
+      "role": "interact",
+      "scenes": [
+        "c4_branch"
+      ],
+      "size_m": [
+        0.003,
+        0.003,
+        0.004
+      ],
+      "material": "Bark peg wound with silk thread",
+      "prompt": "A short wooden peg driven into a small chunk of bark, wound with pale shining silk thread, a loose end of thread trailing. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "bf168a7e-a5f5-43a3-940a-793926a76528",
+      "image": "assets/objects/silk-anchor.jpg"
+    },
+    {
+      "id": "knot-shelter-door",
+      "name": "Knot shelter door",
+      "role": "interact",
+      "scenes": [
+        "c6_shadow",
+        "c6_stand"
+      ],
+      "size_m": [
+        0.004,
+        0.001,
+        0.006
+      ],
+      "material": "Round door of fitted bark slats in a ringed frame",
+      "prompt": "A small round door made of fitted wooden slats in a frame of ringed knot wood, an iron-free wooden latch and a woven fibre pull, umber and tan. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "28418d7e-0cba-409d-8030-1f73455ab948",
+      "image": "assets/objects/knot-shelter-door.jpg"
+    },
+    {
+      "id": "scroll-frame",
+      "name": "Tremor scroll frame",
+      "role": "interact",
+      "scenes": [
+        "c6_stand"
+      ],
+      "size_m": [
+        0.008,
+        0.004,
+        0.008
+      ],
+      "material": "Wooden drum frame wound with pale paper",
+      "prompt": "A small wooden recording frame: a drum wound with pale cream paper on an axle between two carved wooden uprights, a thin stylus arm resting against the paper, ink pot of acorn cap at the base. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d0c2aa91-42a3-4798-9910-1c6ee3afeb66",
+      "image": "assets/objects/scroll-frame.jpg"
+    },
+    {
+      "id": "edge-stake",
+      "name": "Edge stake",
+      "role": "interact",
+      "scenes": [
+        "c6_edge"
+      ],
+      "size_m": [
+        0.0015,
+        0.0015,
+        0.006
+      ],
+      "material": "Sharpened twig with fibre flag",
+      "prompt": "A single sharpened thin twig stake with a small strip of pale fibre tied near the top as a flag. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "b87b0398-c26c-45d9-93b3-f2aca4123ccd",
+      "image": "assets/objects/edge-stake.jpg"
+    },
+    {
+      "id": "temple-altar",
+      "name": "First Ring altar",
+      "role": "hero",
+      "scenes": [
+        "c2_temple"
+      ],
+      "size_m": [
+        0.008,
+        0.005,
+        0.004
+      ],
+      "material": "Carved knot-wood block showing growth rings, sap dish",
+      "prompt": "A low carved altar block of warm tan wood showing concentric tree growth rings on its top, a shallow dish holding glowing golden sap, small carved grooves around its sides. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "99c4cff8-2ba6-4f45-83b8-bc6835e3f014",
+      "image": "assets/objects/temple-altar.jpg"
+    },
+    {
+      "id": "balance-rope",
+      "name": "The Balance Rope",
+      "role": "hero",
+      "scenes": [
+        "c5_count"
+      ],
+      "size_m": [
+        0.03,
+        0.004,
+        0.002
+      ],
+      "material": "Braided silk and fibre rope, three coloured strands",
+      "prompt": "A long braided rope lying in a loose S-curve, braided from three strands: one sage green, one bark brown, one amber gold, with knots at even intervals and frayed ends. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "cb4ee897-4658-47f9-ab2e-f757b70a30cf",
+      "image": "assets/objects/balance-rope.jpg"
+    },
+    {
+      "id": "rain-bead",
+      "name": "Rain bead",
+      "role": "hero",
+      "scenes": [
+        "c2_rain"
+      ],
+      "size_m": [
+        0.008,
+        0.008,
+        0.007
+      ],
+      "material": "Clear water drop, slightly flattened",
+      "prompt": "A single large clear drop of rain water, slightly flattened at the bottom, glassy and transparent with soft reflections and refraction. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "b7b05497-3710-4fc1-992c-e4cf3247407a",
+      "image": "assets/objects/rain-bead.jpg"
+    },
+    {
+      "id": "falling-leaf",
+      "name": "The falling leaf",
+      "role": "hero",
+      "scenes": [
+        "c4_city"
+      ],
+      "size_m": [
+        0.08,
+        0.01,
+        0.06
+      ],
+      "material": "Copper autumn leaf, dry veins",
+      "prompt": "A single dry autumn tree leaf in copper and rust orange, visible veins, slightly curled edges, a short stem. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "5964963a-3cb2-4dcd-b02d-f964fb7f9850",
+      "image": "assets/objects/falling-leaf.jpg"
+    },
+    {
+      "id": "garden-swing",
+      "name": "Rope swing",
+      "role": "hero",
+      "scenes": [
+        "c7_backyard"
+      ],
+      "size_m": [
+        0.6,
+        0.2,
+        2.0
+      ],
+      "material": "Plain wooden seat, two ropes",
+      "prompt": "A simple garden rope swing: a plain flat wooden plank seat hanging from two thick ropes, weathered wood, with the rope ends cut short at the top. Ordinary full-size garden object, plain realistic photograph. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "160220f3-0197-4812-a462-0473c0da5742",
+      "image": "assets/objects/garden-swing.jpg"
+    },
+    {
+      "id": "dwelling",
+      "name": "Dwelling",
+      "role": "fill",
+      "scenes": [
+        "c1_city_dawn",
+        "c2_city",
+        "c3_city",
+        "c4_city",
+        "c5_city",
+        "c5_temple"
+      ],
+      "size_m": [
+        0.006,
+        0.004,
+        0.007
+      ],
+      "material": "Carved bark lump with round door and window, lichen roof",
+      "prompt": "A tiny round dwelling house carved out of a lump of grey-brown tree bark, a round wooden door and one round window with a bark-chip shutter, a cap of sage and lime lichen on top like a roof, a small sap lantern by the door. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "37d36fa8-9433-4edf-b21a-1e80efd3b6a6",
+      "image": "assets/objects/dwelling.jpg"
+    },
+    {
+      "id": "spear-rack",
+      "name": "Splinter spear rack",
+      "role": "fill",
+      "scenes": [
+        "c1_battlements",
+        "c3_wind"
+      ],
+      "size_m": [
+        0.008,
+        0.003,
+        0.012
+      ],
+      "material": "Rack of sharpened wood splinters bound with plant fibre",
+      "prompt": "A standing wooden rack holding six long sharpened wooden splinter spears, bound with twisted plant fibre, weathered grey-brown wood. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "fc03f223-1ccc-471b-91ea-ad383f678fdc",
+      "image": "assets/objects/spear-rack.jpg"
+    },
+    {
+      "id": "lichen-lantern",
+      "name": "Glow-lichen lantern",
+      "role": "fill",
+      "scenes": [
+        "c1_city_dawn",
+        "c2_temple",
+        "c5_temple",
+        "c5_count",
+        "c6_stand"
+      ],
+      "size_m": [
+        0.002,
+        0.002,
+        0.008
+      ],
+      "material": "Thorn post with a seed-husk cage of glowing lime lichen",
+      "prompt": "A small street lantern: a thin thorn post holding a cage made from a split seed husk, filled with softly glowing lime-green lichen. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "ad00a268-11df-44b4-a452-d4c7648d3a47",
+      "image": "assets/objects/lichen-lantern.jpg"
+    },
+    {
+      "id": "chant-drum",
+      "name": "Chant drum",
+      "role": "fill",
+      "scenes": [
+        "c2_temple",
+        "c5_count",
+        "c6_stand"
+      ],
+      "size_m": [
+        0.004,
+        0.004,
+        0.004
+      ],
+      "material": "Hollow acorn body with stretched leaf-skin head",
+      "prompt": "A small hand drum made from a hollow acorn body with a stretched dry leaf skin head, laced with plant fibre, warm brown and pale tan. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "64182e33-adaf-4df7-8f90-68db00274b7c",
+      "image": "assets/objects/chant-drum.jpg"
+    },
+    {
+      "id": "cover-hollow",
+      "name": "Cover hollow",
+      "role": "fill",
+      "scenes": [
+        "c4_branch"
+      ],
+      "size_m": [
+        0.006,
+        0.004,
+        0.004
+      ],
+      "material": "Curled bark flake forming a shelter",
+      "prompt": "A small shelter made of a large curled flake of grey-brown tree bark forming a half dome, lime lichen on the outside, a dark opening on one side. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "3350354d-d40d-4ced-921d-18950992ddda",
+      "image": "assets/objects/cover-hollow.jpg"
+    },
+    {
+      "id": "sap-jar",
+      "name": "Sap jar",
+      "role": "fill",
+      "scenes": [
+        "c1_city_dawn",
+        "c2_city"
+      ],
+      "size_m": [
+        0.004,
+        0.004,
+        0.005
+      ],
+      "material": "Seed-pod jar of amber sap with bark stopper",
+      "prompt": "A small storage jar made from a round seed pod, filled with glowing amber golden sap visible at the rim, a bark-chip stopper tied with fibre. Miniature prop, handcrafted natural materials. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "504161b6-3f9f-47c0-a28e-14897b0846a9",
+      "image": "assets/objects/sap-jar.jpg"
+    },
+    {
+      "id": "washing-line",
+      "name": "Washing line",
+      "role": "fill",
+      "scenes": [
+        "c7_backyard"
+      ],
+      "size_m": [
+        3.0,
+        0.1,
+        1.9
+      ],
+      "material": "Two metal T-posts and a line, wooden pegs",
+      "prompt": "A plain backyard washing line: two grey metal T-shaped posts with a white line strung between them and a few plain wooden clothes pegs clipped on, no clothes. Ordinary full-size garden object, plain realistic photograph. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "2a8e0a9f-5ec6-4e4d-b666-7660d226e23f",
+      "image": "assets/objects/washing-line.jpg"
+    },
+    {
+      "id": "garden-shed",
+      "name": "Garden shed",
+      "role": "fill",
+      "scenes": [
+        "c7_backyard"
+      ],
+      "size_m": [
+        2.4,
+        1.8,
+        2.2
+      ],
+      "material": "Painted timber shed, felt roof",
+      "prompt": "A small plain timber garden shed painted pale green, a sloped dark roof, one door and one small window, ordinary and tidy. Ordinary full-size garden object, plain realistic photograph. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "be30f4ee-86f3-4fca-9b32-a93704fa06a3",
+      "image": "assets/objects/garden-shed.jpg"
+    },
+    {
+      "id": "fence-panel",
+      "name": "Fence panel",
+      "role": "fill",
+      "scenes": [
+        "c7_backyard"
+      ],
+      "size_m": [
+        1.8,
+        0.1,
+        1.0
+      ],
+      "material": "White painted picket fence section",
+      "prompt": "A single section of white painted wooden picket fence with two posts and pointed pickets. Ordinary full-size garden object, plain realistic photograph. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "ba987bb9-50bb-4885-971a-572c0927098e",
+      "image": "assets/objects/fence-panel.jpg"
+    }
+  ]
+}
