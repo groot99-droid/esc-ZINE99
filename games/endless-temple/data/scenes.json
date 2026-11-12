@@ -329,6 +329,9 @@
       "reads": [
         "sand_leak"
       ],
+      "writes": [
+        "herbs"
+      ],
       "enter": "pull-out",
       "exit": "push-in",
       "next": [
@@ -732,7 +735,8 @@
       "writes": [
         "duties_done",
         "steep",
-        "sand_leak"
+        "sand_leak",
+        "herbs"
       ],
       "enter": "pull-out",
       "exit": "push-in",

@@ -269,7 +269,7 @@
       "name": "past_fragments",
       "type": "ledger",
       "default": [],
-      "description": "Fragments of Elaris's past found in the temple. Slots: where, vow, cost, judgment, mercy, remains (plus the dream).",
+      "description": "Fragments of Elaris's past found in the temple. Slots F1 to F7: the dark (the dream), the vow, the cost, the judgment, the mercy, what remains, a name. Text in data/past_pack.json.",
       "fields": [
         "slot",
         "carrier",

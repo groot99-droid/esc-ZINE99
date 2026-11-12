@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "past_pack.json",
+  "description": "The Endless Temple: Elaris's past in seven swappable slots (DESIGN.md section 5). The text is the author's to replace.",
+  "type": "object",
+  "required": ["pack", "notice", "revelation_order", "slots"],
+  "properties": {
+    "pack": {"enum": ["proposed", "author"]},
+    "notice": {"type": "string"},
+    "source": {"type": "string"},
+    "revelation_order": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "string"}},
+    "slots": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "object",
+      "required": ["slot", "key", "reveals", "chapter", "scene", "carrier", "missable", "title", "text", "text_status", "motif", "motif_status"],
+      "properties": {
+        "slot": {"type": "string", "pattern": "^F[1-7]$"},
+        "key": {"type": "string", "pattern": "^[a-z_]+$"},
+        "reveals": {"type": "string"},
+        "fragment": {"type": "string"},
+        "chapter": {"type": "string"},
+        "scene": {"type": "string", "description": "scene that writes past_fragments"},
+        "carrier": {"type": "string"},
+        "missable": {"type": "boolean"},
+        "title": {"type": "string"},
+        "text": {"type": "string"},
+        "text_status": {"enum": ["source", "proposal", "author"], "description": "source: verbatim from the vault; proposal: added by the design; author: the author's own"},
+        "source": {"type": "object", "required": ["path", "line"], "properties": {"path": {"type": "string"}, "line": {"type": "integer"}}},
+        "interpretation": {"type": ["object", "null"], "required": ["status", "text"], "properties": {
+          "status": {"enum": ["proposal", "author"]}, "text": {"type": "string"}}},
+        "voice_line": {"type": "object", "required": ["status", "text"], "properties": {
+          "status": {"enum": ["proposal", "author"]}, "text": {"type": "string"}}},
+        "motif": {"type": "string"},
+        "motif_status": {"enum": ["proposal", "author"]}
+      }}}
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "source": "DESIGN.md section 11, Tea Blending (herb table, rules, appearances); section 12 (steep)",
+  "base": "mint",
+  "spoons": 3,
+  "steep_dial": [
+    {"mark": 1, "depth_factor": 0.5, "length_add": 0, "binding_add": 0},
+    {"mark": 2, "depth_factor": 0.75, "length_add": 0, "binding_add": 0},
+    {"mark": 3, "depth_factor": 1, "length_add": 0, "binding_add": 0},
+    {"mark": 4, "depth_factor": 1, "length_add": 1, "binding_add": 1},
+    {"mark": 5, "depth_factor": 1, "length_add": 2, "binding_add": 2}
+  ],
+  "depth_rounding": "floor, applied to the whole cup's depth (base included)",
+  "tea_hold": {"base": 40, "per_depth": 10, "max": 100},
+  "steep_per_binding": 3,
+  "failed_pour": {"sand_leak": 5, "plain_paragraphs": 1},
+  "hints": {"one_more_herb_after_failed_pours": 2, "full_solution_after_failed_pours": 4},
+  "herbs": [
+    {"id": "mint", "name": "Mint (base)", "depth": 1, "length": 1, "binding": 0, "chapter": "c1_waking", "scene": "s3_pantry_c1", "added": false, "note": "The source's \"mint herbal tea\"; always in the cup."},
+    {"id": "seers_sprig", "name": "Seer's sprig", "depth": 3, "length": 0, "binding": 1, "chapter": "c1_waking", "scene": "s3_pantry_c1", "added": true, "note": "Added name for the source's \"unique herb\"; the values are added."},
+    {"id": "honeymoss", "name": "Honeymoss", "depth": 0, "length": 1, "binding": -2, "chapter": "c1_waking", "scene": "s3_pantry_c1", "added": true},
+    {"id": "clove_bark", "name": "Clove-bark", "depth": 0, "length": 3, "binding": 1, "chapter": "c3_rounds", "scene": "s3_pantry_c3", "added": true},
+    {"id": "dune_vine_pith", "name": "Dune-vine pith", "depth": 1, "length": 2, "binding": 0, "chapter": "c4_dunes", "scene": "s3_cairns", "added": true, "note": "From the sand book, at the noon cairns."},
+    {"id": "stormcress", "name": "Stormcress", "depth": 2, "length": 0, "binding": -1, "chapter": "c5_hollin", "scene": "s3_hollin_streets", "added": true, "note": "From Hollin's gutters."},
+    {"id": "ember_root", "name": "Ember root", "depth": 2, "length": 1, "binding": 2, "chapter": "c6_father", "scene": "s3_halls_c6", "added": true, "note": "On the shelf behind the spilled sand."},
+    {"id": "lamp_ash", "name": "Lamp-ash", "depth": 0, "length": 2, "binding": -1, "chapter": "c7_procession", "scene": "s3_scribe_wagon", "added": true, "note": "Scraped from the pilgrims' lanterns."}
+  ],
+  "brews": [
+    {"scene": "g_tea_c1", "requirement": {"depth_min": 3}, "jars": ["mint", "seers_sprig", "honeymoss"],
+     "solution": {"spoons": ["seers_sprig", "honeymoss", "honeymoss"], "mark": 3, "result": {"depth": 4, "length": 3, "binding": -3}},
+     "note": "Tutorial; any sprig works at mark 3."},
+    {"scene": "g_tea_c3", "requirement": {"depth_min": 5, "length_min": 4}, "jars": ["mint", "seers_sprig", "honeymoss", "clove_bark"],
+     "solution": {"spoons": ["seers_sprig", "seers_sprig", "clove_bark"], "mark": 3, "result": {"depth": 7, "length": 4, "binding": 3}},
+     "note": "Trade-off introduced."},
+    {"scene": "g_tea_c5", "requirement": {"depth_min": 5, "binding_max": 1}, "jars": ["mint", "seers_sprig", "honeymoss", "clove_bark", "dune_vine_pith"],
+     "solution": {"spoons": ["seers_sprig", "dune_vine_pith", "honeymoss"], "mark": 3, "result": {"depth": 5, "length": 4, "binding": -1}},
+     "note": "A book about a binding."},
+    {"scene": "g_tea_c6", "requirement": {"depth_min": 7, "length_min": 5}, "jars": ["mint", "seers_sprig", "honeymoss", "clove_bark", "dune_vine_pith", "stormcress", "ember_root"],
+     "solution": {"spoons": ["seers_sprig", "stormcress", "dune_vine_pith"], "mark": 5, "result": {"depth": 7, "length": 5, "binding": 2}},
+     "note": "Most solutions bind 4; the clever one binds 2."},
+    {"scene": "g_tea_c7", "requirement": {"depth_min": 6, "length_min": 6, "binding_max": 2}, "jars": ["mint", "seers_sprig", "honeymoss", "clove_bark", "dune_vine_pith", "stormcress", "ember_root"],
+     "solution": {"spoons": ["seers_sprig", "dune_vine_pith", "dune_vine_pith"], "mark": 4, "result": {"depth": 6, "length": 6, "binding": 2}},
+     "note": "Three constraints; lamp-ash is not yet found."},
+    {"scene": "g_tea_c8", "requirement": {}, "jars": ["mint", "seers_sprig", "honeymoss", "clove_bark", "dune_vine_pith", "stormcress", "ember_root", "lamp_ash"],
+     "solution": null,
+     "note": "The last pot: the player's choice. Its binding is the last push on steep."}
+  ]
+}

@@ -145,7 +145,7 @@ The structure is fixed; the text in each slot is data.
 | F7 a name | Who paid | c8, `s3_abyss_return` | A voice in the dark, remembered | Wenna, the lamp-keeper's daughter, who told him not to go, and who kept a list of the names of the stars. One star name comes back to him. |
 
 **How the author drops in their own answer.** Each slot is a record in
-`src/past_pack.json` (to be written): `slot`, `carrier`, `title`, `text`, `motif`. The scenes,
+`data/past_pack.json`: `slot`, `carrier`, `title`, `text`, `motif`, each text marked `proposal` until the author replaces it (then `author`). The scenes,
 flags and puzzles that deliver each slot stay as they are. Rules for a replacement pack:
 
 1. Keep seven slots, in this order of revelation: a place, the binding, the act, the judgment, the
@@ -986,10 +986,26 @@ or two lines each.
 | `data/flags.json` | 37 state entries: meters, counters, enums, flags and four ledgers |
 | `data/endings.json` | Four endings, none as written |
 
-Beyond the shared schemas, the game needs three content files (to be written in `src/`):
-`past_pack.json` (the seven slots, replaceable by the author), `herbs.json` (the herb table in
-section 11) and `tablets.json` (rules, meanings, ways and solutions). They are content, not state,
-so they are not in `data/`.
+Beyond the shared schemas, three content files hold what the build reads but never writes. They
+are content, not state: no flag lives in them.
+
+| File | Holds | Schema |
+| --- | --- | --- |
+| `data/past_pack.json` | The seven past slots F1 to F7 (section 5): carrier, scene, title, text, motif. F1 is the source's opening paragraph, verbatim with its vault line; F2 to F7 are the design's proposal, each marked `proposal`, for the author to replace | `data/schemas/past_pack.schema.json` |
+| `data/herbs.json` | The eight herbs (section 11) with the scene that finds each; the steep dial; the tea_hold and steep formulas; the six brews with requirement, jars and one solution | `data/schemas/herbs.schema.json` |
+| `data/tablets.json` | The four Rule Tablets: want, rules (key words and meanings, the source rule, the price rule), ways, solution, loophole flag, watcher; the scrutiny and hint numbers | `data/schemas/tablets.schema.json` |
+
+`tools/check_data.py` (stdlib) checks each file against its schema and against the shared files:
+every scene, chapter and flag named exists and the scene writes what the file says it delivers;
+each brew's solution is recomputed and meets its requirement, its jars are exactly the herbs found
+before it, and every possible cup fits the `brew.*` ranges; each tablet's solution fits the plan
+row and its loophole flag is a bool the scene writes; the past slots come in revelation order, the
+clasp scenes carry F2 to F6, at least six are certain (the endings' last-line variant needs
+`past_known` ≥ 6), and F1 matches the vault when the Pipelines-Plugin checkout sits beside this
+repository. `python tools/validate.py endless-temple` runs it.
+
+Still open in these files: each tablet's `watcher_rule` (the rule a watcher adds at scrutiny 100,
+and the way it closes) is `null`, because this design does not write it.
 
 ## 19. Build plan
 

@@ -1,0 +1,133 @@
+{
+  "pack": "proposed",
+  "notice": "PROPOSAL, NOT THE AUTHOR'S. Every slot except F1's source paragraph is text the design added (DESIGN.md section 5, 'The past, in slots'; section 21, item 7). The author may replace any slot's title, text, carrier or motif and set its text_status to \"author\". Keep seven slots in this order of revelation. Scenes, flags, puzzles and endings do not read the text.",
+  "source": "DESIGN.md section 5, The past, in slots",
+  "revelation_order": [
+    "a place",
+    "the binding",
+    "the act",
+    "the judgment",
+    "the mercy",
+    "the thing that remains",
+    "a person"
+  ],
+  "slots": [
+    {
+      "slot": "F1",
+      "key": "the_dark",
+      "reveals": "a place",
+      "fragment": "Where",
+      "chapter": "c1_waking",
+      "scene": "s3_abyss_dream",
+      "carrier": "The dream",
+      "missable": false,
+      "title": "The dark",
+      "text": "…I stood upon the edge of the abyss. The cold bit at my skin as the dark mist swelled around me and overhead. I stared into the darkness, straining my eyes to glimpse something… anything. I stayed motionless for some time, praying that I might see some sign of hope, but no. For in the great darkness, no light can be found…",
+      "text_status": "source",
+      "source": {
+        "path": "creative-writing/vault/02_Novels/05_The_Endless_Temple_-_Elaris_Sel_Marden.md",
+        "line": 28
+      },
+      "interpretation": {
+        "status": "proposal",
+        "text": "This is a place Elaris has stood."
+      },
+      "motif": "mist",
+      "motif_status": "proposal"
+    },
+    {
+      "slot": "F2",
+      "key": "the_vow",
+      "reveals": "the binding",
+      "fragment": "What the post is",
+      "chapter": "c3_rounds",
+      "scene": "g_clasp_c3a",
+      "carrier": "The temple register",
+      "missable": false,
+      "title": "The vow",
+      "text": "\"Elaris Sel Marden, reader of the third gallery. Bound as keeper on the day of Keeper Maudric's death. Until his own.\"",
+      "text_status": "proposal",
+      "motif": "register",
+      "motif_status": "proposal"
+    },
+    {
+      "slot": "F3",
+      "key": "the_cost",
+      "reveals": "the act",
+      "fragment": "What he did",
+      "chapter": "c3_rounds",
+      "scene": "g_clasp_c3b",
+      "carrier": "A folded letter from another reader",
+      "missable": false,
+      "title": "The cost",
+      "text": "He lived a season in the Lantern Country as its narrator. He carried its lamp past the line its people had sworn not to cross, to see what lay beyond. \"They are all in the dark now.\"",
+      "text_status": "proposal",
+      "motif": "lamp",
+      "motif_status": "proposal"
+    },
+    {
+      "slot": "F4",
+      "key": "the_judgment",
+      "reveals": "the judgment",
+      "fragment": "Who judged",
+      "chapter": "c5_hollin",
+      "scene": "g_clasp_c5",
+      "carrier": "The Wardens of the Shelves' ruling, strap-bound",
+      "missable": false,
+      "title": "The judgment",
+      "text": "The sentence: to be shelved inside the dark book, reading forever into a world with no light.",
+      "text_status": "proposal",
+      "motif": "strap",
+      "motif_status": "proposal"
+    },
+    {
+      "slot": "F5",
+      "key": "the_mercy",
+      "reveals": "the mercy",
+      "fragment": "Why it was better than deserved",
+      "chapter": "c7_procession",
+      "scene": "g_clasp_c7",
+      "carrier": "Maudric's petition",
+      "missable": false,
+      "title": "The mercy",
+      "text": "\"Let him keep them all, since he could not keep one.\" Maudric asked for this as he was dying.",
+      "text_status": "proposal",
+      "motif": "petition",
+      "motif_status": "proposal"
+    },
+    {
+      "slot": "F6",
+      "key": "what_remains",
+      "reveals": "the thing that remains",
+      "fragment": "The book itself",
+      "chapter": "c8_unlit",
+      "scene": "g_clasp_c8",
+      "carrier": "The black book",
+      "missable": false,
+      "title": "What remains",
+      "text": "The Lantern Country, cold to the touch, mist at its edges, on the unlit shelf.",
+      "text_status": "proposal",
+      "motif": "frost",
+      "motif_status": "proposal"
+    },
+    {
+      "slot": "F7",
+      "key": "a_name",
+      "reveals": "a person",
+      "fragment": "Who paid",
+      "chapter": "c8_unlit",
+      "scene": "s3_abyss_return",
+      "carrier": "A voice in the dark, remembered",
+      "missable": true,
+      "title": "A name",
+      "text": "Wenna, the lamp-keeper's daughter, who told him not to go, and who kept a list of the names of the stars. One star name comes back to him.",
+      "text_status": "proposal",
+      "voice_line": {
+        "status": "proposal",
+        "text": "That one is called the Thread. That one, the Ewe."
+      },
+      "motif": "star",
+      "motif_status": "proposal"
+    }
+  ]
+}

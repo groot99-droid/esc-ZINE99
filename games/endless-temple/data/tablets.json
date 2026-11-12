@@ -1,0 +1,396 @@
+{
+  "source": "DESIGN.md section 11, The Rule Tablet",
+  "plan_slots": 3,
+  "scrutiny": {
+    "flag": "tablet_scrutiny",
+    "per_failed_test": 20,
+    "watcher_at": 100,
+    "reset_each_appearance": true,
+    "watcher_rule_note": "DESIGN.md does not write the rule a watcher adds or name the way it closes. Each tablet's watcher_rule stays null until the author (or the build) writes it as {\"text\", \"closes_way\"}."
+  },
+  "hints": {
+    "key_word_after_failed_tests": 2,
+    "way_after_failed_tests": 4
+  },
+  "tablets": [
+    {
+      "scene": "g_tablet_c2",
+      "book": "sand_book",
+      "title": "The shrine-store",
+      "tutorial": true,
+      "want": "Take my father's leaf-cord and waterskin from the shrine-store.",
+      "loophole_flag": "loophole_shrine",
+      "also_sets": [
+        "fathers_things"
+      ],
+      "watcher": "a shaman",
+      "watcher_rule": null,
+      "rules": [
+        {
+          "n": 1,
+          "text": "No one enters the shrine-store but a shaman.",
+          "origin": "added",
+          "key_word": "enters",
+          "meaning": "passes the threshold with both feet"
+        },
+        {
+          "n": 2,
+          "text": "Nothing is taken from the shrine-store by night.",
+          "origin": "added",
+          "key_word": "night",
+          "meaning": "after the moon clears the well-post"
+        },
+        {
+          "n": 3,
+          "text": "The belongings of the dead are kept for the gods.",
+          "origin": "added",
+          "key_word": "the dead",
+          "meaning": "one who has no house to speak for him"
+        },
+        {
+          "n": 4,
+          "text": "A son speaks for his father's house.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        }
+      ],
+      "ways": [
+        {
+          "id": "enter_store",
+          "text": "Enter the store"
+        },
+        {
+          "id": "reach_roof_gap",
+          "text": "Reach through the roof-gap"
+        },
+        {
+          "id": "wait_for_dawn",
+          "text": "Wait for dawn",
+          "note": "Fails the Want: dawn is too late, he leaves tonight."
+        },
+        {
+          "id": "go_at_dusk",
+          "text": "Go at dusk"
+        },
+        {
+          "id": "claim_fathers_house",
+          "text": "Claim them for my father's house"
+        },
+        {
+          "id": "ask_shaman",
+          "text": "Ask a shaman",
+          "note": "Fails the Want."
+        }
+      ],
+      "solution": [
+        "claim_fathers_house",
+        "reach_roof_gap",
+        "go_at_dusk"
+      ],
+      "why": "Dawn is too late: he leaves tonight. Asking a shaman fails the Want."
+    },
+    {
+      "scene": "g_tablet_c5",
+      "book": "weather_book",
+      "title": "The Clerk's Charter",
+      "tutorial": false,
+      "want": "Make the stuck storm move on without Pell becoming the Clerk.",
+      "loophole_flag": "loophole_hollin",
+      "also_sets": [],
+      "watcher": "a townsman",
+      "watcher_rule": null,
+      "rules": [
+        {
+          "n": 1,
+          "text": "The weather of Hollin is written by the Clerk alone.",
+          "origin": "added",
+          "key_word": "Hollin",
+          "meaning": "the square and its sky as seen from the bell-loft"
+        },
+        {
+          "n": 2,
+          "text": "The Clerk is chosen at the death of the Clerk before.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 3,
+          "text": "What is written in the Day-Book is the day.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 4,
+          "text": "No page of the Day-Book may be torn or crossed.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 5,
+          "text": "The Clerk's chair is not to be sat in by any other.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 6,
+          "text": "Every house in Hollin keeps a window to the sky.",
+          "origin": "added",
+          "key_word": "a window",
+          "meaning": "the house's own; what it shows is the house's"
+        }
+      ],
+      "ways": [
+        {
+          "id": "write_day_book",
+          "text": "Write the weather in the Day-Book"
+        },
+        {
+          "id": "sit_in_chair",
+          "text": "Sit in the chair"
+        },
+        {
+          "id": "tear_storm_page",
+          "text": "Tear out the storm page"
+        },
+        {
+          "id": "ring_bell",
+          "text": "Ring the bell"
+        },
+        {
+          "id": "each_house_writes",
+          "text": "Each house writes its own window's weather on its sill"
+        },
+        {
+          "id": "write_in_margin",
+          "text": "Write in the margin"
+        },
+        {
+          "id": "read_yesterday",
+          "text": "Read yesterday aloud"
+        }
+      ],
+      "solution": [
+        "ring_bell",
+        "each_house_writes"
+      ],
+      "why": "The storm cannot sit over a hundred skies."
+    },
+    {
+      "scene": "g_tablet_c6",
+      "book": "sand_book",
+      "title": "The gods' rules",
+      "tutorial": false,
+      "want": "Go where the Xandrixes go, toward the end.",
+      "loophole_flag": "loophole_wake",
+      "also_sets": [],
+      "watcher": "a shaman",
+      "watcher_rule": null,
+      "rules": [
+        {
+          "n": 1,
+          "text": "We do not ride on the backs of the gods.",
+          "origin": "source",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 2,
+          "text": "No one walks before a god.",
+          "origin": "added",
+          "key_word": "before",
+          "meaning": "ahead of, in its path"
+        },
+        {
+          "n": 3,
+          "text": "No hand touches a god.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 4,
+          "text": "The sand of the deep belongs to the gods; no one takes from it.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 5,
+          "text": "What the gods leave behind is holy and may not be trodden.",
+          "origin": "added",
+          "key_word": "trodden",
+          "meaning": "pressed by a foot of the clan"
+        },
+        {
+          "n": 6,
+          "text": "The holy is not carried away.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 7,
+          "text": "A son of the clan returns by the third moon, or is named lost.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null,
+          "price": true
+        },
+        {
+          "n": 8,
+          "text": "No one sleeps where the gods have not slept.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        }
+      ],
+      "ways": [
+        {
+          "id": "climb_xandrix",
+          "text": "Climb onto a Xandrix"
+        },
+        {
+          "id": "walk_ahead",
+          "text": "Walk ahead to scout"
+        },
+        {
+          "id": "follow_track",
+          "text": "Follow in their track"
+        },
+        {
+          "id": "wear_leaves",
+          "text": "Wear the Zorlop leaves"
+        },
+        {
+          "id": "walk_beside",
+          "text": "Walk beside the herd",
+          "note": "The test answers \"you would be swallowed\"."
+        },
+        {
+          "id": "carry_scale",
+          "text": "Carry a shed scale as a guide"
+        },
+        {
+          "id": "sleep_in_track",
+          "text": "Sleep in their track"
+        },
+        {
+          "id": "return_third_moon",
+          "text": "Return by the third moon"
+        },
+        {
+          "id": "accept_named_lost",
+          "text": "Accept being named lost"
+        }
+      ],
+      "solution": [
+        "wear_leaves",
+        "follow_track",
+        "accept_named_lost"
+      ],
+      "why": "The leaves, not his foot, press the track (rule 5); \"or is named lost\" is a cost he may pay (rule 7). A rule with \"or\" is a price."
+    },
+    {
+      "scene": "g_tablet_c7",
+      "book": "road_book",
+      "title": "The Procession's vows",
+      "tutorial": false,
+      "want": "Give the pilgrims an ending without writing them a city that is not there.",
+      "loophole_flag": "loophole_procession",
+      "also_sets": [],
+      "watcher": "a pilgrim",
+      "watcher_rule": null,
+      "rules": [
+        {
+          "n": 1,
+          "text": "Only the Scribe's hand writes the road.",
+          "origin": "added",
+          "key_word": "hand",
+          "meaning": "the hand that holds the pen"
+        },
+        {
+          "n": 2,
+          "text": "The road is never written backward.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 3,
+          "text": "No pilgrim unmasks until the City.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 4,
+          "text": "The pen is passed only from a dying hand.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 5,
+          "text": "Whatever the road reaches, the pilgrims must enter.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 6,
+          "text": "The City of Answer is where the road ends.",
+          "origin": "added",
+          "key_word": "the City",
+          "meaning": "defined here, by the road"
+        },
+        {
+          "n": 7,
+          "text": "Ink is not wasted on what is not road.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        }
+      ],
+      "ways": [
+        {
+          "id": "write_city",
+          "text": "Write a city myself"
+        },
+        {
+          "id": "steady_hand",
+          "text": "Steady the Scribe's hand"
+        },
+        {
+          "id": "write_to_edge",
+          "text": "Write the road to the cliff's edge and stop"
+        },
+        {
+          "id": "take_pen",
+          "text": "Take the pen"
+        },
+        {
+          "id": "turn_road_back",
+          "text": "Turn the road back"
+        },
+        {
+          "id": "hand_back_pen",
+          "text": "Hand back the pen"
+        },
+        {
+          "id": "write_gate",
+          "text": "Write a gate"
+        }
+      ],
+      "solution": [
+        "steady_hand",
+        "write_to_edge"
+      ],
+      "why": "Where the road ends is the City, by rule 6."
+    }
+  ]
+}
