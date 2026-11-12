@@ -1,0 +1,1348 @@
+{
+ "modes_2d": [
+  {
+   "id": "dollhouse",
+   "name": "Dollhouse cutaway",
+   "movement": "scroll"
+  },
+  {
+   "id": "labyrinth_above",
+   "name": "Labyrinth from above",
+   "movement": "scroll"
+  }
+ ],
+ "games_1d": [
+  {
+   "id": "stitchwork",
+   "name": "Stitchwork",
+   "family": "Crafting"
+  },
+  {
+   "id": "sewn_book",
+   "name": "The Hand-Sewn Book",
+   "family": "Translation"
+  },
+  {
+   "id": "parlour",
+   "name": "Parlour",
+   "family": "Board game, tampering"
+  },
+  {
+   "id": "stuffing",
+   "name": "Stuffing",
+   "family": "Allocation"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "a1_car",
+   "layer": "3d",
+   "name": "Ridgeway Road, the drive in",
+   "chapter": "c01_arrival",
+   "writes": [
+    "memory.earned",
+    "memory_log"
+   ],
+   "enter": "fade",
+   "exit": "cut",
+   "next": [
+    "a1_cabin_arrival"
+   ]
+  },
+  {
+   "id": "a1_cabin_arrival",
+   "layer": "3d",
+   "name": "The cabin by day: arrival and the shelves",
+   "chapter": "c01_arrival",
+   "reads": [
+    "run.number",
+    "run.hunt_group",
+    "shelf.generations",
+    "shelf.previous_ending",
+    "book.carried"
+   ],
+   "writes": [
+    "player.name_written",
+    "book.pages_found",
+    "memory.earned",
+    "memory_log",
+    "explanation.current",
+    "explanation.house_broken",
+    "explanation.us_broken",
+    "explanation.wild_broken",
+    "explanation.me_broken",
+    "incident_log",
+    "act1.unease"
+   ],
+   "enter": "cut",
+   "exit": "fade",
+   "next": [
+    "a1_trail_overlook"
+   ]
+  },
+  {
+   "id": "a1_trail_overlook",
+   "layer": "3d",
+   "name": "The overlook trail",
+   "chapter": "c01_arrival",
+   "writes": [
+    "memory.earned",
+    "memory_log"
+   ],
+   "enter": "fade",
+   "exit": "fade",
+   "next": [
+    "a1_dinner"
+   ]
+  },
+  {
+   "id": "a1_dinner",
+   "layer": "3d",
+   "name": "First dinner and the counting game",
+   "chapter": "c01_arrival",
+   "writes": [
+    "memory.earned",
+    "memory_log",
+    "book.pages_found"
+   ],
+   "enter": "fade",
+   "exit": "push-in",
+   "next": [
+    "a1_stitch_strap"
+   ]
+  },
+  {
+   "id": "a1_stitch_strap",
+   "layer": "1d",
+   "name": "Stitchwork: Marcus's strap",
+   "chapter": "c01_arrival",
+   "game": "stitchwork",
+   "writes": [
+    "strap.quality",
+    "memory.earned",
+    "memory_log"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "a2_night_hall"
+   ]
+  },
+  {
+   "id": "a2_night_hall",
+   "layer": "3d",
+   "name": "2:30 a.m.",
+   "chapter": "c02_first_night",
+   "reads": [
+    "explanation.current"
+   ],
+   "writes": [
+    "explanation.current",
+    "explanation.house_broken",
+    "explanation.us_broken",
+    "explanation.wild_broken",
+    "explanation.me_broken",
+    "incident_log",
+    "act1.unease",
+    "book.pages_found"
+   ],
+   "enter": "fade",
+   "exit": "fade",
+   "next": [
+    "a2_breakfast"
+   ]
+  },
+  {
+   "id": "a2_breakfast",
+   "layer": "3d",
+   "name": "Footsteps, the next morning",
+   "chapter": "c02_first_night",
+   "reads": [
+    "explanation.current",
+    "incident_log"
+   ],
+   "writes": [
+    "explanation.current",
+    "explanation.house_broken",
+    "explanation.us_broken",
+    "explanation.wild_broken",
+    "explanation.me_broken",
+    "incident_log",
+    "act1.unease",
+    "memory.earned",
+    "memory_log"
+   ],
+   "enter": "fade",
+   "exit": "cut",
+   "next": [
+    "a3_smell"
+   ]
+  },
+  {
+   "id": "a3_smell",
+   "layer": "3d",
+   "name": "The rabbit on the chair",
+   "chapter": "c03_smell_warmth",
+   "reads": [
+    "explanation.current"
+   ],
+   "writes": [
+    "explanation.current",
+    "explanation.house_broken",
+    "explanation.us_broken",
+    "explanation.wild_broken",
+    "explanation.me_broken",
+    "incident_log",
+    "act1.unease",
+    "book.pages_found"
+   ],
+   "enter": "cut",
+   "exit": "fade",
+   "next": [
+    "a3_trail_creek"
+   ]
+  },
+  {
+   "id": "a3_trail_creek",
+   "layer": "3d",
+   "name": "The creek trail",
+   "chapter": "c03_smell_warmth",
+   "reads": [
+    "incident_log"
+   ],
+   "writes": [
+    "memory.earned",
+    "memory_log"
+   ],
+   "enter": "fade",
+   "exit": "fade",
+   "next": [
+    "a3_warmth"
+   ]
+  },
+  {
+   "id": "a3_warmth",
+   "layer": "3d",
+   "name": "Lila's bed",
+   "chapter": "c03_smell_warmth",
+   "reads": [
+    "explanation.current"
+   ],
+   "writes": [
+    "explanation.current",
+    "explanation.house_broken",
+    "explanation.us_broken",
+    "explanation.wild_broken",
+    "explanation.me_broken",
+    "incident_log",
+    "act1.unease",
+    "memory.earned",
+    "memory_log",
+    "book.pages_found"
+   ],
+   "enter": "fade",
+   "exit": "cut",
+   "next": [
+    "a3_dog"
+   ]
+  },
+  {
+   "id": "a3_dog",
+   "layer": "3d",
+   "name": "The terrier, the porch and the forest edge",
+   "chapter": "c03_smell_warmth",
+   "reads": [
+    "explanation.current"
+   ],
+   "writes": [
+    "explanation.current",
+    "explanation.house_broken",
+    "explanation.us_broken",
+    "explanation.wild_broken",
+    "explanation.me_broken",
+    "incident_log",
+    "act1.unease",
+    "memory.earned",
+    "memory_log",
+    "book.pages_found"
+   ],
+   "enter": "cut",
+   "exit": "push-in",
+   "next": [
+    "a3_book_1"
+   ]
+  },
+  {
+   "id": "a3_book_1",
+   "layer": "1d",
+   "name": "The Hand-Sewn Book, first sitting",
+   "chapter": "c03_smell_warmth",
+   "game": "sewn_book",
+   "reads": [
+    "book.pages_found",
+    "book.carried"
+   ],
+   "writes": [
+    "book.spreads_read",
+    "book.spread_1",
+    "book.spread_2",
+    "book.spread_3"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "a4_night_sounds"
+   ]
+  },
+  {
+   "id": "a4_night_sounds",
+   "layer": "3d",
+   "name": "Patterned sounds, the second night",
+   "chapter": "c04_fuller",
+   "reads": [
+    "explanation.current"
+   ],
+   "writes": [
+    "explanation.current",
+    "explanation.house_broken",
+    "explanation.us_broken",
+    "explanation.wild_broken",
+    "explanation.me_broken",
+    "incident_log",
+    "act1.unease",
+    "book.pages_found"
+   ],
+   "enter": "fade",
+   "exit": "fade",
+   "next": [
+    "a4_silent_forest"
+   ]
+  },
+  {
+   "id": "a4_silent_forest",
+   "layer": "3d",
+   "name": "The forest went silent",
+   "chapter": "c04_fuller",
+   "reads": [
+    "explanation.current",
+    "incident_log"
+   ],
+   "writes": [
+    "explanation.current",
+    "explanation.house_broken",
+    "explanation.us_broken",
+    "explanation.wild_broken",
+    "explanation.me_broken",
+    "incident_log",
+    "act1.unease",
+    "memory.earned",
+    "memory_log",
+    "book.pages_found"
+   ],
+   "enter": "fade",
+   "exit": "cut",
+   "next": [
+    "a4_wrong_places"
+   ]
+  },
+  {
+   "id": "a4_wrong_places",
+   "layer": "3d",
+   "name": "Where we hadn't left them",
+   "chapter": "c04_fuller",
+   "reads": [
+    "explanation.current"
+   ],
+   "writes": [
+    "explanation.current",
+    "explanation.house_broken",
+    "explanation.us_broken",
+    "explanation.wild_broken",
+    "explanation.me_broken",
+    "incident_log",
+    "act1.unease",
+    "memory.earned",
+    "memory_log",
+    "book.pages_found"
+   ],
+   "enter": "cut",
+   "exit": "push-in",
+   "next": [
+    "a4_book_2"
+   ]
+  },
+  {
+   "id": "a4_book_2",
+   "layer": "1d",
+   "name": "The Hand-Sewn Book, second sitting",
+   "chapter": "c04_fuller",
+   "game": "sewn_book",
+   "reads": [
+    "book.pages_found"
+   ],
+   "writes": [
+    "book.spreads_read",
+    "book.spread_2",
+    "book.spread_3",
+    "book.spread_4",
+    "book.spread_5"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "a5_kitchen_bear"
+   ]
+  },
+  {
+   "id": "a5_kitchen_bear",
+   "layer": "3d",
+   "name": "The bear on the counter",
+   "chapter": "c05_cabin_turns",
+   "writes": [
+    "act1.unease"
+   ],
+   "enter": "fade",
+   "exit": "cut",
+   "next": [
+    "a5_cabin_turns"
+   ]
+  },
+  {
+   "id": "a5_cabin_turns",
+   "layer": "3d",
+   "name": "The cabin turns",
+   "chapter": "c05_cabin_turns",
+   "enter": "cut",
+   "exit": "fade",
+   "next": [
+    "a5_labyrinth"
+   ]
+  },
+  {
+   "id": "a5_labyrinth",
+   "layer": "3d",
+   "name": "The labyrinth, on foot",
+   "chapter": "c05_cabin_turns",
+   "reads": [
+    "strap.quality",
+    "memory_log"
+   ],
+   "enter": "fade",
+   "exit": "fade",
+   "next": [
+    "a5_ritual_room"
+   ]
+  },
+  {
+   "id": "a5_ritual_room",
+   "layer": "3d",
+   "name": "The ritual room",
+   "chapter": "c05_cabin_turns",
+   "reads": [
+    "book.spreads_read"
+   ],
+   "writes": [
+    "book.pages_found"
+   ],
+   "enter": "fade",
+   "exit": "push-in",
+   "next": [
+    "a5_book_3"
+   ]
+  },
+  {
+   "id": "a5_book_3",
+   "layer": "1d",
+   "name": "The Hand-Sewn Book at the altar",
+   "chapter": "c05_cabin_turns",
+   "game": "sewn_book",
+   "world_runs": true,
+   "reads": [
+    "book.pages_found",
+    "book.spreads_read"
+   ],
+   "writes": [
+    "book.spreads_read",
+    "book.spread_4",
+    "book.spread_5",
+    "book.spread_6"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "a5_altar_stitch",
+    "a5_last_thing"
+   ]
+  },
+  {
+   "id": "a5_altar_stitch",
+   "layer": "1d",
+   "name": "Stitchwork: the binding seam (Keeper path)",
+   "chapter": "c05_cabin_turns",
+   "game": "stitchwork",
+   "world_runs": true,
+   "reads": [
+    "book.spread_6",
+    "book.spreads_read"
+   ],
+   "writes": [
+    "altar.choice"
+   ],
+   "enter": "push-in",
+   "exit": "fade",
+   "next": [
+    "e_keeper_porch",
+    "a5_last_thing"
+   ]
+  },
+  {
+   "id": "a5_last_thing",
+   "layer": "3d",
+   "name": "The last thing I remember",
+   "chapter": "c05_cabin_turns",
+   "reads": [
+    "altar.choice"
+   ],
+   "writes": [
+    "altar.choice"
+   ],
+   "enter": "pull-out",
+   "exit": "fade",
+   "next": [
+    "b6_waking"
+   ]
+  },
+  {
+   "id": "b6_waking",
+   "layer": "3d",
+   "name": "Waking warm, on the shelf",
+   "chapter": "c06_waking_warm",
+   "reads": [
+    "act1.unease"
+   ],
+   "writes": [
+    "hunger"
+   ],
+   "enter": "fade",
+   "exit": "push-in",
+   "next": [
+    "b6_stitch_seams"
+   ]
+  },
+  {
+   "id": "b6_stitch_seams",
+   "layer": "1d",
+   "name": "Stitchwork: your own seams",
+   "chapter": "c06_waking_warm",
+   "game": "stitchwork",
+   "reads": [
+    "book.spread_4",
+    "hunger"
+   ],
+   "writes": [
+    "seams.slots_total"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "b6_keepers_visit"
+   ]
+  },
+  {
+   "id": "b6_keepers_visit",
+   "layer": "3d",
+   "name": "The keepers visit",
+   "chapter": "c06_waking_warm",
+   "reads": [
+    "seams.slots_total"
+   ],
+   "writes": [
+    "hunger"
+   ],
+   "enter": "pull-out",
+   "exit": "push-in",
+   "next": [
+    "b6_stuffing_1"
+   ]
+  },
+  {
+   "id": "b6_stuffing_1",
+   "layer": "1d",
+   "name": "Stuffing: the first packing",
+   "chapter": "c06_waking_warm",
+   "game": "stuffing",
+   "reads": [
+    "memory.earned",
+    "memory_log",
+    "seams.slots_total",
+    "book.spread_2"
+   ],
+   "writes": [
+    "memory.kept",
+    "memory_log",
+    "seams.warm_slots",
+    "seams.bound_used"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "b7_arrivals"
+   ]
+  },
+  {
+   "id": "b7_arrivals",
+   "layer": "3d",
+   "name": "Car doors: the first new guests",
+   "chapter": "c07_new_guests",
+   "reads": [
+    "seams.warm_slots",
+    "book.spread_1",
+    "book.spread_3"
+   ],
+   "writes": [
+    "hunger",
+    "hunger.lurches",
+    "slips",
+    "memory.kept",
+    "memory_log",
+    "seams.warm_slots",
+    "pack.hunger.jamie",
+    "pack.hunger.lila",
+    "pack.hunger.marcus",
+    "pack.hunger.dani"
+   ],
+   "enter": "cut",
+   "exit": "cut",
+   "next": [
+    "b7_jamie_falls"
+   ]
+  },
+  {
+   "id": "b7_jamie_falls",
+   "layer": "3d",
+   "name": "Jamie falls",
+   "chapter": "c07_new_guests",
+   "reads": [
+    "pack.hunger.jamie",
+    "pack.hunger.lila",
+    "pack.hunger.marcus",
+    "pack.hunger.dani"
+   ],
+   "writes": [
+    "act2.jamie_fell",
+    "hunger",
+    "slips",
+    "memory.kept",
+    "memory_log"
+   ],
+   "enter": "cut",
+   "exit": "fade",
+   "next": [
+    "b8_breaking_point"
+   ]
+  },
+  {
+   "id": "b8_breaking_point",
+   "layer": "3d",
+   "name": "The breaking point",
+   "chapter": "c08_giving_in",
+   "reads": [
+    "hunger",
+    "pack.hunger.jamie",
+    "pack.hunger.lila",
+    "pack.hunger.marcus",
+    "pack.hunger.dani"
+   ],
+   "writes": [
+    "hunger",
+    "hunger.lurches",
+    "memory.kept",
+    "memory_log"
+   ],
+   "enter": "fade",
+   "exit": "flatten",
+   "next": [
+    "b8_dollhouse_climb"
+   ]
+  },
+  {
+   "id": "b8_dollhouse_climb",
+   "layer": "2d",
+   "name": "Up the stairs, down the hallway",
+   "chapter": "c08_giving_in",
+   "mode": "dollhouse",
+   "reads": [
+    "hunger"
+   ],
+   "writes": [
+    "hunger",
+    "hunger.lurches",
+    "memory.kept",
+    "memory_log"
+   ],
+   "enter": "flatten",
+   "exit": "cut",
+   "next": [
+    "b8_the_door"
+   ]
+  },
+  {
+   "id": "b8_the_door",
+   "layer": "3d",
+   "name": "The bedroom door",
+   "chapter": "c08_giving_in",
+   "reads": [
+    "hunger",
+    "memory.kept"
+   ],
+   "writes": [
+    "act2.door_held",
+    "memory.earned",
+    "memory.kept",
+    "memory_log",
+    "hunger.lurches"
+   ],
+   "enter": "cut",
+   "exit": "fade",
+   "next": [
+    "c9_new_guests"
+   ]
+  },
+  {
+   "id": "c9_new_guests",
+   "layer": "3d",
+   "name": "The new guests step inside",
+   "chapter": "c09_dont_move",
+   "reads": [
+    "run.hunt_group",
+    "elders.present",
+    "shelf.generations"
+   ],
+   "writes": [
+    "hunger",
+    "slips",
+    "memory.kept",
+    "memory_log",
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group"
+   ],
+   "enter": "fade",
+   "exit": "push-in",
+   "next": [
+    "c10_dollhouse_sound",
+    "c10_hold_shelf"
+   ]
+  },
+  {
+   "id": "c10_dollhouse_sound",
+   "layer": "2d",
+   "name": "Night one: Sound",
+   "chapter": "c10_sound",
+   "mode": "dollhouse",
+   "reads": [
+    "memory.kept",
+    "seams.warm_slots",
+    "book.spread_1",
+    "book.spread_5",
+    "seal.done",
+    "elders.present"
+   ],
+   "writes": [
+    "hunger",
+    "hunger.lurches",
+    "slips",
+    "memory.kept",
+    "memory_log",
+    "seams.warm_slots",
+    "hunt_log",
+    "governor.clips",
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group",
+    "pack.hunger.jamie",
+    "pack.hunger.lila",
+    "pack.hunger.marcus",
+    "pack.hunger.dani",
+    "blame",
+    "elders.slips"
+   ],
+   "enter": "flatten",
+   "exit": "push-in",
+   "next": [
+    "c10_stuffing_2"
+   ]
+  },
+  {
+   "id": "c10_hold_shelf",
+   "layer": "3d",
+   "name": "Night one, holding still",
+   "chapter": "c10_sound",
+   "reads": [
+    "hunger"
+   ],
+   "writes": [
+    "hunger",
+    "hunger.lurches",
+    "memory.kept",
+    "memory_log",
+    "hunt_log",
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group"
+   ],
+   "enter": "fade",
+   "exit": "push-in",
+   "next": [
+    "c10_stuffing_2"
+   ]
+  },
+  {
+   "id": "c10_stuffing_2",
+   "layer": "1d",
+   "name": "Stuffing at first light",
+   "chapter": "c10_sound",
+   "game": "stuffing",
+   "reads": [
+    "memory_log",
+    "seams.slots_total",
+    "book.spread_2"
+   ],
+   "writes": [
+    "memory.kept",
+    "memory_log",
+    "seams.warm_slots",
+    "seams.bound_used"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "c11_toy_floor",
+    "c11_hold_shelf"
+   ]
+  },
+  {
+   "id": "c11_toy_floor",
+   "layer": "3d",
+   "name": "Day two: Movement, from the floor",
+   "chapter": "c11_movement",
+   "reads": [
+    "memory.kept",
+    "seams.warm_slots",
+    "run.hunt_group",
+    "blame"
+   ],
+   "writes": [
+    "hunger",
+    "hunger.lurches",
+    "slips",
+    "memory.kept",
+    "memory_log",
+    "seams.warm_slots",
+    "hunt_log",
+    "governor.clips",
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group",
+    "pack.hunger.jamie",
+    "pack.hunger.lila",
+    "pack.hunger.marcus",
+    "pack.hunger.dani",
+    "blame",
+    "guests_fled"
+   ],
+   "enter": "pull-out",
+   "exit": "push-in",
+   "next": [
+    "c11_parlour_1",
+    "c13_flight"
+   ]
+  },
+  {
+   "id": "c11_parlour_1",
+   "layer": "1d",
+   "name": "Parlour: while they are on the trail",
+   "chapter": "c11_movement",
+   "game": "parlour",
+   "world_runs": true,
+   "reads": [
+    "run.hunt_group",
+    "blame",
+    "memory.kept",
+    "book.spread_5"
+   ],
+   "writes": [
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group",
+    "blame",
+    "parlour.personal",
+    "slips",
+    "memory.kept",
+    "memory_log",
+    "hunger",
+    "governor.clips",
+    "guests_fled"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "c12_dollhouse_scent",
+    "c12_hold_shelf",
+    "c13_flight"
+   ]
+  },
+  {
+   "id": "c11_hold_shelf",
+   "layer": "3d",
+   "name": "Day two, holding still",
+   "chapter": "c11_movement",
+   "reads": [
+    "hunger"
+   ],
+   "writes": [
+    "hunger",
+    "hunger.lurches",
+    "memory.kept",
+    "memory_log",
+    "hunt_log",
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group"
+   ],
+   "enter": "pull-out",
+   "exit": "fade",
+   "next": [
+    "c12_dollhouse_scent",
+    "c12_hold_shelf"
+   ]
+  },
+  {
+   "id": "c12_dollhouse_scent",
+   "layer": "2d",
+   "name": "Night two: Scent",
+   "chapter": "c12_scent_proximity",
+   "mode": "dollhouse",
+   "reads": [
+    "memory.kept",
+    "seams.warm_slots",
+    "book.spread_5"
+   ],
+   "writes": [
+    "hunger",
+    "hunger.lurches",
+    "slips",
+    "memory.kept",
+    "memory_log",
+    "seams.warm_slots",
+    "hunt_log",
+    "governor.clips",
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group",
+    "pack.hunger.jamie",
+    "pack.hunger.lila",
+    "pack.hunger.marcus",
+    "pack.hunger.dani",
+    "guests_fled",
+    "elders.slips"
+   ],
+   "enter": "flatten",
+   "exit": "cut",
+   "next": [
+    "c12_dollhouse_proximity",
+    "c12_hold_shelf",
+    "c13_flight"
+   ]
+  },
+  {
+   "id": "c12_dollhouse_proximity",
+   "layer": "2d",
+   "name": "Night two, late: Proximity",
+   "chapter": "c12_scent_proximity",
+   "mode": "dollhouse",
+   "reads": [
+    "memory.kept",
+    "seams.warm_slots",
+    "book.spread_5"
+   ],
+   "writes": [
+    "hunger",
+    "hunger.lurches",
+    "slips",
+    "memory.kept",
+    "memory_log",
+    "seams.warm_slots",
+    "hunt_log",
+    "governor.clips",
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group",
+    "pack.hunger.jamie",
+    "pack.hunger.lila",
+    "pack.hunger.marcus",
+    "pack.hunger.dani",
+    "guests_fled",
+    "elders.slips"
+   ],
+   "enter": "cut",
+   "exit": "push-in",
+   "next": [
+    "c12_stitch_mend",
+    "c13_flight"
+   ]
+  },
+  {
+   "id": "c12_hold_shelf",
+   "layer": "3d",
+   "name": "Night two, holding still",
+   "chapter": "c12_scent_proximity",
+   "reads": [
+    "hunger"
+   ],
+   "writes": [
+    "hunger",
+    "hunger.lurches",
+    "memory.kept",
+    "memory_log",
+    "hunt_log",
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group"
+   ],
+   "enter": "fade",
+   "exit": "push-in",
+   "next": [
+    "c12_dollhouse_proximity",
+    "c12_stitch_mend"
+   ]
+  },
+  {
+   "id": "c12_stitch_mend",
+   "layer": "1d",
+   "name": "Stitchwork: a friend's torn seam",
+   "chapter": "c12_scent_proximity",
+   "game": "stitchwork",
+   "reads": [
+    "pack.hunger.jamie",
+    "pack.hunger.lila",
+    "pack.hunger.marcus",
+    "pack.hunger.dani",
+    "book.spread_4"
+   ],
+   "writes": [
+    "friend.seam_mended",
+    "seams.slots_total"
+   ],
+   "enter": "push-in",
+   "exit": "cut",
+   "next": [
+    "c12_stuffing_3"
+   ]
+  },
+  {
+   "id": "c12_stuffing_3",
+   "layer": "1d",
+   "name": "Stuffing before the third morning",
+   "chapter": "c12_scent_proximity",
+   "game": "stuffing",
+   "reads": [
+    "memory_log",
+    "seams.slots_total",
+    "book.spread_2"
+   ],
+   "writes": [
+    "memory.kept",
+    "memory_log",
+    "seams.warm_slots",
+    "seams.bound_used"
+   ],
+   "enter": "cut",
+   "exit": "pull-out",
+   "next": [
+    "c13_seal"
+   ]
+  },
+  {
+   "id": "c13_flight",
+   "layer": "3d",
+   "name": "They leave before the seal",
+   "chapter": "c13_third_morning",
+   "reads": [
+    "dread.group",
+    "memory.kept",
+    "seal.done"
+   ],
+   "writes": [
+    "guests_fled"
+   ],
+   "enter": "cut",
+   "exit": "fade",
+   "next": [
+    "e_warning_unpick"
+   ]
+  },
+  {
+   "id": "c13_seal",
+   "layer": "3d",
+   "name": "The third morning: the seal",
+   "chapter": "c13_third_morning",
+   "reads": [
+    "guests_fled"
+   ],
+   "writes": [
+    "seal.done",
+    "blame",
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group"
+   ],
+   "enter": "pull-out",
+   "exit": "push-in",
+   "next": [
+    "c13_parlour_2"
+   ]
+  },
+  {
+   "id": "c13_parlour_2",
+   "layer": "1d",
+   "name": "Parlour: the game they could not finish",
+   "chapter": "c13_third_morning",
+   "game": "parlour",
+   "world_runs": true,
+   "reads": [
+    "run.hunt_group",
+    "seal.done"
+   ],
+   "writes": [
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group",
+    "parlour.personal",
+    "slips",
+    "memory.kept",
+    "memory_log",
+    "hunger"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "c14_stuffing_4"
+   ]
+  },
+  {
+   "id": "c14_stuffing_4",
+   "layer": "1d",
+   "name": "Stuffing before the Chase",
+   "chapter": "c14_chase",
+   "game": "stuffing",
+   "reads": [
+    "memory_log",
+    "seams.slots_total"
+   ],
+   "writes": [
+    "memory.kept",
+    "memory_log",
+    "seams.warm_slots",
+    "seams.bound_used"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "c14_chase_cabin",
+    "c14_hold_shelf"
+   ]
+  },
+  {
+   "id": "c14_chase_cabin",
+   "layer": "3d",
+   "name": "The Chase: down the hallway",
+   "chapter": "c14_chase",
+   "reads": [
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group",
+    "seams.warm_slots"
+   ],
+   "writes": [
+    "hunger",
+    "hunger.lurches",
+    "slips",
+    "memory.kept",
+    "memory_log",
+    "seams.warm_slots",
+    "hunt_log",
+    "governor.clips",
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group",
+    "pack.hunger.jamie",
+    "pack.hunger.lila",
+    "pack.hunger.marcus",
+    "pack.hunger.dani"
+   ],
+   "enter": "pull-out",
+   "exit": "flatten",
+   "next": [
+    "c14_labyrinth_outer"
+   ]
+  },
+  {
+   "id": "c14_hold_shelf",
+   "layer": "3d",
+   "name": "The Chase, from the shelf",
+   "chapter": "c14_chase",
+   "reads": [
+    "hunger"
+   ],
+   "writes": [
+    "hunger",
+    "hunger.lurches",
+    "memory.kept",
+    "memory_log",
+    "hunt_log",
+    "guests.herded"
+   ],
+   "enter": "fade",
+   "exit": "fade",
+   "next": [
+    "e_empty_toy",
+    "e_cycle_shelf"
+   ]
+  },
+  {
+   "id": "c14_labyrinth_outer",
+   "layer": "2d",
+   "name": "The labyrinth from above: the outer halls",
+   "chapter": "c14_chase",
+   "mode": "labyrinth_above",
+   "reads": [
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group"
+   ],
+   "writes": [
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group",
+    "hunger",
+    "slips"
+   ],
+   "enter": "flatten",
+   "exit": "cut",
+   "next": [
+    "c14_labyrinth_inner"
+   ]
+  },
+  {
+   "id": "c14_labyrinth_inner",
+   "layer": "2d",
+   "name": "The labyrinth from above: toward the centre",
+   "chapter": "c14_chase",
+   "mode": "labyrinth_above",
+   "reads": [
+    "dread.guest_1",
+    "dread.guest_2",
+    "dread.guest_3",
+    "dread.group"
+   ],
+   "writes": [
+    "guests.herded",
+    "hunger",
+    "hunt_log",
+    "memory.kept",
+    "memory_log"
+   ],
+   "enter": "cut",
+   "exit": "fade",
+   "next": [
+    "e_cycle_shelf"
+   ]
+  },
+  {
+   "id": "e_cycle_shelf",
+   "layer": "3d",
+   "name": "The Cycle: the shelf, car doors",
+   "chapter": "c15_cycle",
+   "reads": [
+    "guests.herded",
+    "memory.kept",
+    "memory_log",
+    "run.hunt_group"
+   ],
+   "writes": [
+    "shelf.generations",
+    "shelf.previous_ending",
+    "run.number",
+    "book.carried"
+   ],
+   "enter": "fade",
+   "exit": "fade"
+  },
+  {
+   "id": "e_empty_toy",
+   "layer": "3d",
+   "name": "The Empty Toy: awake and still",
+   "chapter": "c15_cycle",
+   "reads": [
+    "memory.kept"
+   ],
+   "writes": [
+    "shelf.generations",
+    "shelf.previous_ending",
+    "run.number",
+    "book.carried"
+   ],
+   "enter": "fade",
+   "exit": "fade"
+  },
+  {
+   "id": "e_warning_unpick",
+   "layer": "3d",
+   "name": "The Warning: unpicked",
+   "chapter": "c15_cycle",
+   "reads": [
+    "memory_log"
+   ],
+   "writes": [
+    "shelf.previous_ending",
+    "run.number",
+    "book.carried"
+   ],
+   "enter": "fade",
+   "exit": "fade"
+  },
+  {
+   "id": "e_keeper_porch",
+   "layer": "3d",
+   "name": "The Keeper: the porch, the next car",
+   "chapter": "c15_cycle",
+   "reads": [
+    "altar.choice"
+   ],
+   "writes": [
+    "shelf.generations",
+    "shelf.previous_ending",
+    "run.number",
+    "book.carried"
+   ],
+   "enter": "fade",
+   "exit": "fade"
+  }
+ ]
+}

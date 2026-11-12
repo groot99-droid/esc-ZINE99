@@ -1,0 +1,25 @@
+{
+  "slug": "stuffed-ones",
+  "title": "The Stuffed Ones",
+  "sources": ["02_Novels/01_The_Stuffed_Ones.md"],
+  "target_minutes": {"min": 120, "max": 150},
+  "players": {"min": 1, "max": 1},
+  "core_verb": "Hold still",
+  "chapters": [
+    {"id": "c01_arrival", "title": "The Cabin That Felt Too Quiet", "minutes": 13, "layers": ["3d", "1d"]},
+    {"id": "c02_first_night", "title": "The First Night", "minutes": 9, "layers": ["3d"]},
+    {"id": "c03_smell_warmth", "title": "The Smell, the Warmth, the Dog", "minutes": 13, "layers": ["3d", "1d"]},
+    {"id": "c04_fuller", "title": "Fuller", "minutes": 12, "layers": ["3d", "1d"]},
+    {"id": "c05_cabin_turns", "title": "The Cabin Turns", "minutes": 15, "layers": ["3d", "1d"]},
+    {"id": "c06_waking_warm", "title": "Waking Warm", "minutes": 9, "layers": ["3d", "1d"]},
+    {"id": "c07_new_guests", "title": "The New Guests Arrive", "minutes": 10, "layers": ["3d"]},
+    {"id": "c08_giving_in", "title": "Giving In", "minutes": 7, "layers": ["3d", "2d"]},
+    {"id": "c09_dont_move", "title": "We Don't Move at First", "minutes": 7, "layers": ["3d"]},
+    {"id": "c10_sound", "title": "The First Game: Sound", "minutes": 8, "layers": ["2d", "3d", "1d"]},
+    {"id": "c11_movement", "title": "The Second Game: Movement", "minutes": 9, "layers": ["3d", "1d"]},
+    {"id": "c12_scent_proximity", "title": "Scent, then Proximity", "minutes": 10, "layers": ["2d", "3d", "1d"]},
+    {"id": "c13_third_morning", "title": "The Third Morning", "minutes": 6, "layers": ["3d", "1d"]},
+    {"id": "c14_chase", "title": "The Final Game: The Chase", "minutes": 11, "layers": ["1d", "3d", "2d"]},
+    {"id": "c15_cycle", "title": "The Cycle Continues", "minutes": 4, "layers": ["3d"]}
+  ]
+}

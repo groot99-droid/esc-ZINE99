@@ -1,0 +1,43 @@
+{
+  "endings": [
+    {
+      "id": "keeper",
+      "name": "The Keeper",
+      "as_written": false,
+      "priority": 1,
+      "when": {"is": "altar.choice", "eq": "stitch"},
+      "summary": "As a guest you translated all six spreads of the hand-sewn book, and at the altar you chose to stitch instead of being stitched. Your four friends go on the shelf. You stand on the porch beside Mabel and Ruth and greet the next car with \"They like company.\" The run ends after Act 1.",
+      "final_scenes": ["a5_altar_stitch", "e_keeper_porch"]
+    },
+    {
+      "id": "warning",
+      "name": "The Warning",
+      "as_written": false,
+      "priority": 2,
+      "when": {"all": [
+        {"is": "guests_fled", "eq": true},
+        {"is": "memory.kept", "gte": 5}
+      ]},
+      "summary": "You kept at least five memories and drove the group's dread to 70 before the cabin sealed on the third morning, so they packed and left alive. Mabel and Ruth unpick your seams, and the cabin is listed again.",
+      "final_scenes": ["c13_flight", "e_warning_unpick"]
+    },
+    {
+      "id": "empty_toy",
+      "name": "The Empty Toy",
+      "as_written": false,
+      "priority": 3,
+      "when": {"ledger": "hunt_log", "count_gte": 5, "where": {"joined": false}},
+      "summary": "You refused all five games of the hunt. The hunger, never fed by you, took your memories in lurches. The others hunt without you; the guests go down; you stay on the shelf, awake and still.",
+      "final_scenes": ["c14_hold_shelf", "e_empty_toy"]
+    },
+    {
+      "id": "cycle",
+      "name": "The Cycle",
+      "as_written": true,
+      "priority": 4,
+      "when": true,
+      "summary": "The novel's ending. You play the hunt and herd the guests to the trapdoor. New stuffed ones sit on the shelf beside you, and car doors slam outside.",
+      "final_scenes": ["c14_labyrinth_inner", "e_cycle_shelf"]
+    }
+  ]
+}
