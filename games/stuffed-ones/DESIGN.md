@@ -728,8 +728,22 @@ Controls (remappable): Still (hold; toggle available), Steady, Interact, Journal
 - **Mood references:** 1970s folk-horror film stills; felt and wool picture books for small children; Victorian dollhouse cross-sections; framed embroidery samplers; summer-rental cabins photographed for listings. No existing game's look is copied.
 - **Materials:** wool felt with visible fibres, cotton thread with a sheen, button eyes that catch light, worn pine, rag rugs, wallpaper with small repeating flowers.
 - **Lighting:** Act 1 natural and lamp light, 3200–4500 K. Stuffed-one scenes lower and warmer as hunger rises. The labyrinth's light comes from nowhere and is warmer each ring inward.
-- **One look across layers:** everything is made of the same textiles. The dollhouse's walls show their wallpaper at the cut edge; the labyrinth from above is a woven map; the 1D pages are fabric and paper. Thread is the visual thread.
+- **One look across layers:** everything is made of the same textiles. The dollhouse's walls show their wallpaper at the cut edge; the labyrinth from above is a woven map; the 1D pages are fabric and paper. Thread is the visual thread. The palette and materials are shared, while each page's drawing style differs (see Gameplay graphics).
 - **Restraint:** the dog, the porch animals and the deer are shapes, covered or distant. Nothing is shown being emptied. Guests' fates are suggested by sound and by new toys on the shelf.
+
+### Gameplay graphics
+
+Each 2D mode and 1D game keeps this palette but is drawn in its own graphic style, unique in the
+collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg`.
+
+| Mode or game | Layer | Graphic style | How the style serves play |
+| --- | --- | --- | --- |
+| Dollhouse cutaway | 2D | Victorian dollhouse catalogue lithograph | Every room is open at once in a ruled section, so each toy, guest and sight cone can be read at a glance |
+| Labyrinth from above | 2D | Woven tapestry | The maze is woven, so walls, corridors and the warmth reddening thread by thread toward the centre share one texture the herd moves across |
+| Stitchwork | 1D | Cross-stitch pattern chart | The counted grid makes entry points, stitches done and stitches left exact, with counts in the margin |
+| The Hand-Sewn Book | 1D | Blackwork embroidery on linen | Glyphs are counted-thread figures in black silk, so the eye compares shapes, and the coloured slot borders stand out |
+| Parlour | 1D | Felt appliqué | Spaces, symbols and button pegs are big cut pieces, easy to pick up and move while listening for footsteps |
+| Stuffing | 1D | Dressmaker's tissue pattern | The body laid open as pattern pieces makes seams and slot hollows legible, and empty slots glow warm through the tissue |
 
 ## 16. Audio
 
