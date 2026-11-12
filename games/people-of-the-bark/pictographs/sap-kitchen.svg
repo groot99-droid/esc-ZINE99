@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="sap-kitchen-t sap-kitchen-d">
+<title id="sap-kitchen-t">Sap Kitchen: Alchemical diagram</title>
+<desc id="sap-kitchen-d">Sap Kitchen (1D): Old Resin's cooking drawn as an alchemical diagram. Around a great circle sit the eight ingredient symbols; numbered arrows carry sap, then pollen, then honeydew into the pot at the centre, set over a middle fire with three stirs and a long boil. Beneath, the pot resolves into one of three vessels, food, sealant or offering, and the food flask is lit: a Pollen Cake has been found.</desc>
+<defs><filter id="sap-kitchen-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="251"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="sap-kitchen-vig2" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#4a2a10" stop-opacity="0"/><stop offset="100%" stop-color="#4a2a10" stop-opacity="0.5"/></radialGradient><radialGradient id="sap-kitchen-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#f0c050" stop-opacity="0.8"/><stop offset="100%" stop-color="#f0c050" stop-opacity="0"/></radialGradient><clipPath id="sap-kitchen-clip4"><ellipse cx="600" cy="712" rx="34" ry="28"/></clipPath><clipPath id="sap-kitchen-clip5"><ellipse cx="900" cy="712" rx="34" ry="28"/></clipPath></defs>
+<rect x="0" y="0" width="1200" height="800" fill="#ead9b4"/>
+<rect x="0" y="0" width="1200" height="800" filter="url(#sap-kitchen-grain1)"/>
+<rect x="0" y="0" width="1200" height="800" fill="url(#sap-kitchen-vig2)"/>
+<circle cx="600" cy="335" r="268" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="600" cy="335" r="238" fill="none" stroke="#2b1d14" stroke-width="3"/>
+<circle cx="600" cy="335" r="178" fill="none" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="600" cy="335" r="130" fill="none" stroke="#2b1d14" stroke-width="2"/>
+<path d="M868,335L854,335M867.6,349L861.6,348.7M866.5,363L860.6,362.4M864.7,376.9L858.8,376M862.1,390.7L856.3,389.5M858.9,404.4L853.1,402.8M854.9,417.8L849.2,416M850.2,431L844.6,428.9M844.8,444L839.3,441.6M838.8,456.7L833.4,453.9M832.1,469L820,462M824.8,481L819.7,477.7M816.8,492.5L812,489M808.3,503.7L803.6,499.9M799.2,514.3L794.7,510.3M789.5,524.5L785.3,520.3M779.3,534.2L775.3,529.7M768.7,543.3L764.9,538.6M757.5,551.8L754,547M746,559.8L742.7,554.7M734,567.1L727,555M721.7,573.8L718.9,568.4M709,579.8L706.6,574.3M696,585.2L693.9,579.6M682.8,589.9L681,584.2M669.4,593.9L667.8,588.1M655.7,597.1L654.5,591.3M641.9,599.7L641,593.8M628,601.5L627.4,595.6M614,602.6L613.7,596.6M600,603L600,589M586,602.6L586.3,596.6M572,601.5L572.6,595.6M558.1,599.7L559,593.8M544.3,597.1L545.5,591.3M530.6,593.9L532.2,588.1M517.2,589.9L519,584.2M504,585.2L506.1,579.6M491,579.8L493.4,574.3M478.3,573.8L481.1,568.4M466,567.1L473,555M454,559.8L457.3,554.7M442.5,551.8L446,547M431.3,543.3L435.1,538.6M420.7,534.2L424.7,529.7M410.5,524.5L414.7,520.3M400.8,514.3L405.3,510.3M391.7,503.7L396.4,499.9M383.2,492.5L388,489M375.2,481L380.3,477.7M367.9,469L380,462M361.2,456.7L366.6,453.9M355.2,444L360.7,441.6M349.8,431L355.4,428.9M345.1,417.8L350.8,416M341.1,404.4L346.9,402.8M337.9,390.7L343.7,389.5M335.3,376.9L341.2,376M333.5,363L339.4,362.4M332.4,349L338.4,348.7M332,335L346,335M332.4,321L338.4,321.3M333.5,307L339.4,307.6M335.3,293.1L341.2,294M337.9,279.3L343.7,280.5M341.1,265.6L346.9,267.2M345.1,252.2L350.8,254M349.8,239L355.4,241.1M355.2,226L360.7,228.4M361.2,213.3L366.6,216.1M367.9,201L380,208M375.2,189L380.3,192.3M383.2,177.5L388,181M391.7,166.3L396.4,170.1M400.8,155.7L405.3,159.7M410.5,145.5L414.7,149.7M420.7,135.8L424.7,140.3M431.3,126.7L435.1,131.4M442.5,118.2L446,123M454,110.2L457.3,115.3M466,102.9L473,115M478.3,96.2L481.1,101.6M491,90.2L493.4,95.7M504,84.8L506.1,90.4M517.2,80.1L519,85.8M530.6,76.1L532.2,81.9M544.3,72.9L545.5,78.7M558.1,70.3L559,76.2M572,68.5L572.6,74.4M586,67.4L586.3,73.4M600,67L600,81M614,67.4L613.7,73.4M628,68.5L627.4,74.4M641.9,70.3L641,76.2M655.7,72.9L654.5,78.7M669.4,76.1L667.8,81.9M682.8,80.1L681,85.8M696,84.8L693.9,90.4M709,90.2L706.6,95.7M721.7,96.2L718.9,101.6M734,102.9L727,115M746,110.2L742.7,115.3M757.5,118.2L754,123M768.7,126.7L764.9,131.4M779.3,135.8L775.3,140.3M789.5,145.5L785.3,149.7M799.2,155.7L794.7,159.7M808.3,166.3L803.6,170.1M816.8,177.5L812,181M824.8,189L819.7,192.3M832.1,201L820,208M838.8,213.3L833.4,216.1M844.8,226L839.3,228.4M850.2,239L844.6,241.1M854.9,252.2L849.2,254M858.9,265.6L853.1,267.2M862.1,279.3L856.3,280.5M864.7,293.1L858.8,294M866.5,307L860.6,307.6M867.6,321L861.6,321.3" stroke="#2b1d14" stroke-width="1.2" fill="none"/>
+<polygon points="600,157 754.2,424 445.8,424" fill="none" stroke="#d9902a" stroke-width="1.5" opacity="0.8"/>
+<polygon points="600,513 445.8,246 754.2,246" fill="none" stroke="#d9902a" stroke-width="1.5" opacity="0.8"/>
+<circle cx="600" cy="127" r="28" fill="#f8d98a" stroke="#2b1d14" stroke-width="1.5"/>
+<circle cx="600" cy="127" r="15.3" fill="none" stroke="#a8321e" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M600,117.7 Q607.6,129.6 600,134.7 Q592.4,129.6 600,117.7Z" fill="none" stroke="#a8321e" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="600" y="45" font-size="15" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="2">SAP</text>
+<circle cx="747.1" cy="187.9" r="28" fill="#f4e6c4" stroke="#2b1d14" stroke-width="1.5"/>
+<polygon points="747.1,172.6 733.5,194.7 760.7,194.7" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="747.1" y1="194.7" x2="747.1" y2="206.6" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="740.3" y1="200.7" x2="753.9" y2="200.7" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="809.3" y="131.7" font-size="15" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="2">LICHEN</text>
+<circle cx="808" cy="335" r="28" fill="#f8d98a" stroke="#2b1d14" stroke-width="1.5"/>
+<circle cx="808" cy="335" r="10.2" fill="none" stroke="#a8321e" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="808" cy="335" r="2.5" fill="#a8321e"/>
+<circle cx="824.1" cy="335" r="1.9" fill="#a8321e"/>
+<circle cx="819.4" cy="346.4" r="1.9" fill="#a8321e"/>
+<circle cx="808" cy="351.1" r="1.9" fill="#a8321e"/>
+<circle cx="796.6" cy="346.4" r="1.9" fill="#a8321e"/>
+<circle cx="791.9" cy="335" r="1.9" fill="#a8321e"/>
+<circle cx="796.6" cy="323.6" r="1.9" fill="#a8321e"/>
+<circle cx="808" cy="318.9" r="1.9" fill="#a8321e"/>
+<circle cx="819.4" cy="323.6" r="1.9" fill="#a8321e"/>
+<text x="896" y="341" font-size="15" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="2">POLLEN</text>
+<circle cx="747.1" cy="482.1" r="28" fill="#f8d98a" stroke="#2b1d14" stroke-width="1.5"/>
+<path d="M752.2,466.8 A16,16 0 1,0 752.2,492.3 A12,12 0 1,1 752.2,466.8Z" fill="none" stroke="#a8321e" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="733.5" y1="499.1" x2="760.7" y2="499.1" fill="none" stroke="#a8321e" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="809.3" y="550.3" font-size="15" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="2">HONEYDEW</text>
+<circle cx="600" cy="543" r="28" fill="#f4e6c4" stroke="#2b1d14" stroke-width="1.5"/>
+<circle cx="600" cy="539.6" r="10.2" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="584.7" y1="539.6" x2="615.3" y2="539.6" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M600,549.8 v8.5 q0,5.1 5.1,5.1" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="600" y="637" font-size="15" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="2">RESIN</text>
+<circle cx="452.9" cy="482.1" r="28" fill="#f4e6c4" stroke="#2b1d14" stroke-width="1.5"/>
+<polygon points="439.3,470.2 466.5,470.2 452.9,495.7" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="434.2" y1="480.4" x2="471.6" y2="480.4" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="390.7" y="550.3" font-size="15" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="2">ASH</text>
+<circle cx="392" cy="335" r="28" fill="#f4e6c4" stroke="#2b1d14" stroke-width="1.5"/>
+<line x1="376.7" y1="335" x2="407.3" y2="335" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="384.4" y1="321.7" x2="399.6" y2="348.3" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="399.6" y1="321.7" x2="384.4" y2="348.3" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="392" cy="335" r="4.2" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="304" y="341" font-size="15" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="2">FROST</text>
+<circle cx="452.9" cy="187.9" r="28" fill="#f4e6c4" stroke="#2b1d14" stroke-width="1.5"/>
+<path d="M439.3,199.8 Q441,174.3 466.5,174.3 Q464.8,199.8 439.3,199.8Z" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="439.3" y1="199.8" x2="461.4" y2="179.4" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="390.7" y="131.7" font-size="15" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="2">LEAF-SKIN</text>
+<path d="M600,161 Q592.6,192 600,223" fill="none" stroke="#a8321e" stroke-width="3"/>
+<polygon points="600,223 592.9,213.3 602,211.2" fill="#a8321e"/>
+<circle cx="580" cy="192" r="13" fill="#a8321e"/>
+<text x="580" y="198" font-size="17" font-family="serif" fill="#f7ecd2" text-anchor="middle" font-weight="bold">1</text>
+<path d="M774,335 Q743,327.6 712,335" fill="none" stroke="#a8321e" stroke-width="3"/>
+<polygon points="712,335 721.7,327.9 723.8,337" fill="#a8321e"/>
+<circle cx="743" cy="315" r="13" fill="#a8321e"/>
+<text x="743" y="321" font-size="17" font-family="serif" fill="#f7ecd2" text-anchor="middle" font-weight="bold">2</text>
+<path d="M723,458 Q706.4,430.9 679.2,414.2" fill="none" stroke="#a8321e" stroke-width="3"/>
+<polygon points="679.2,414.2 691.1,416 686.2,424" fill="#a8321e"/>
+<circle cx="715.3" cy="422" r="13" fill="#a8321e"/>
+<text x="715.3" y="428" font-size="17" font-family="serif" fill="#f7ecd2" text-anchor="middle" font-weight="bold">3</text>
+<path d="M522,295 Q502,395 600,405 Q698,395 678,295Z" fill="#5a3d2b" stroke="#2b1d14" stroke-width="3"/>
+<ellipse cx="600" cy="295" rx="78" ry="16" fill="#d9902a" stroke="#2b1d14" stroke-width="3"/>
+<ellipse cx="580" cy="292" rx="30" ry="5" fill="#f0c050" opacity="0.8"/>
+<circle cx="560.5" cy="269" r="5" fill="none" stroke="#d9902a" stroke-width="2"/>
+<circle cx="579.1" cy="255" r="6" fill="none" stroke="#d9902a" stroke-width="2"/>
+<circle cx="598" cy="269" r="7" fill="none" stroke="#d9902a" stroke-width="2"/>
+<circle cx="623.3" cy="255" r="5" fill="none" stroke="#d9902a" stroke-width="2"/>
+<circle cx="636.9" cy="269" r="6" fill="none" stroke="#d9902a" stroke-width="2"/>
+<line x1="630" y1="287" x2="692" y2="185" stroke="#2b1d14" stroke-width="5" stroke-linecap="round"/>
+<line x1="708" y1="185" x2="704" y2="207" stroke="#a8321e" stroke-width="3"/>
+<line x1="718" y1="185" x2="714" y2="207" stroke="#a8321e" stroke-width="3"/>
+<line x1="728" y1="185" x2="724" y2="207" stroke="#a8321e" stroke-width="3"/>
+<polygon points="600,411 566,463 634,463" fill="#e8742a" stroke="#2b1d14" stroke-width="2.5"/>
+<text x="600" y="457" font-size="18" font-family="serif" fill="#2b1d14" text-anchor="middle" font-weight="bold">II</text>
+<polygon points="432,329 468,329 432,381 468,381" fill="none" stroke="#2b1d14" stroke-width="2.5"/>
+<polygon points="440,373 460,373 450,361" fill="#d9902a"/>
+<text x="450" y="403" font-size="13" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="2">LONG</text>
+<text x="40" y="54" font-size="15" font-family="serif" fill="#2b1d14" letter-spacing="2">HEAT × BOIL</text>
+<rect x="40" y="70" width="66" height="40" fill="none" stroke="#2b1d14" stroke-width="1.5"/>
+<text x="73" y="96" font-size="14" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">Runny</text>
+<rect x="106" y="70" width="66" height="40" fill="none" stroke="#2b1d14" stroke-width="1.5"/>
+<text x="139" y="96" font-size="14" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">Syrup</text>
+<rect x="40" y="110" width="66" height="40" fill="none" stroke="#2b1d14" stroke-width="1.5"/>
+<text x="73" y="136" font-size="14" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">Syrup</text>
+<rect x="106" y="110" width="66" height="40" fill="#f8d98a" stroke="#2b1d14" stroke-width="1.5"/>
+<text x="139" y="136" font-size="14" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">Glue</text>
+<rect x="40" y="150" width="66" height="40" fill="none" stroke="#2b1d14" stroke-width="1.5"/>
+<text x="73" y="176" font-size="14" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">Glue</text>
+<rect x="106" y="150" width="66" height="40" fill="none" stroke="#2b1d14" stroke-width="1.5"/>
+<text x="139" y="176" font-size="14" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">Hard</text>
+<circle cx="300" cy="692" r="64" fill="url(#sap-kitchen-rg3)"/>
+<path d="M288,642 v24 q-36,14 -36,46 q0,30 48,30 q48,0 48,-30 q0,-32 -36,-46 v-24Z" fill="#c4d65a" stroke="#2b1d14" stroke-width="2.5"/>
+<text x="300" y="762" font-size="16" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="3">FOOD</text>
+<path d="M588,642 v24 q-36,14 -36,46 q0,30 48,30 q48,0 48,-30 q0,-32 -36,-46 v-24Z" fill="none" stroke="#2b1d14" stroke-width="2.5"/>
+<g clip-path="url(#sap-kitchen-clip4)">
+<path d="M587.2,636.6 L672.4,696.2 M583.2,642.3 L668.4,702 M579.2,648 L664.4,707.7 M575.2,653.8 L660.4,713.4 M571.2,659.5 L656.4,719.2 M567.2,665.2 L652.3,724.9 M563.1,671 L648.3,730.6 M559.1,676.7 L644.3,736.4 M555.1,682.5 L640.3,742.1 M551.1,688.2 L636.3,747.8 M547.1,693.9 L632.3,753.6 M543.1,699.7 L628.3,759.3 M539,705.4 L624.2,765 M535,711.1 L620.2,770.8 M531,716.9 L616.2,776.5" fill="none" stroke="#7d6c5a" stroke-width="1.2"/>
+</g>
+<text x="600" y="762" font-size="16" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="3">SEALANT</text>
+<path d="M888,642 v24 q-36,14 -36,46 q0,30 48,30 q48,0 48,-30 q0,-32 -36,-46 v-24Z" fill="none" stroke="#2b1d14" stroke-width="2.5"/>
+<g clip-path="url(#sap-kitchen-clip5)">
+<path d="M887.2,636.6 L972.4,696.2 M883.2,642.3 L968.4,702 M879.2,648 L964.4,707.7 M875.2,653.8 L960.4,713.4 M871.2,659.5 L956.4,719.2 M867.2,665.2 L952.3,724.9 M863.1,671 L948.3,730.6 M859.1,676.7 L944.3,736.4 M855.1,682.5 L940.3,742.1 M851.1,688.2 L936.3,747.8 M847.1,693.9 L932.3,753.6 M843.1,699.7 L928.3,759.3 M839,705.4 L924.2,765 M835,711.1 L920.2,770.8 M831,716.9 L916.2,776.5" fill="none" stroke="#f0c050" stroke-width="1.2"/>
+</g>
+<text x="900" y="762" font-size="16" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="3">OFFERING</text>
+<path d="M560,475 Q452.6,572.7 320,632" fill="none" stroke="#2b1d14" stroke-width="2.5"/>
+<polygon points="320,632 328.2,623.2 332,631.8" fill="#2b1d14"/>
+<path d="M600,525 Q600,578.5 600,632" fill="none" stroke="#2b1d14" stroke-width="1.2"/>
+<polygon points="600,632 595.3,620.9 604.7,620.9" fill="#2b1d14"/>
+<path d="M640,475 Q747.4,572.7 880,632" fill="none" stroke="#2b1d14" stroke-width="1.2"/>
+<polygon points="880,632 868,631.8 871.8,623.2" fill="#2b1d14"/>
+<rect x="998" y="34" width="186" height="300" fill="#f4e6c4" stroke="#2b1d14" stroke-width="1.5"/>
+<text x="1090" y="54" font-size="14" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="3">RECIPES</text>
+<circle cx="1030" cy="90" r="18" fill="#d9902a" stroke="#2b1d14" stroke-width="1.5"/>
+<text x="1030" y="128" font-size="11" font-family="serif" fill="#2b1d14" text-anchor="middle">1</text>
+<circle cx="1084" cy="90" r="18" fill="#d9902a" stroke="#2b1d14" stroke-width="1.5"/>
+<text x="1084" y="128" font-size="11" font-family="serif" fill="#2b1d14" text-anchor="middle">2</text>
+<circle cx="1138" cy="90" r="18" fill="#c4d65a" stroke="#2b1d14" stroke-width="1.5"/>
+<circle cx="1138" cy="90" r="25" fill="none" stroke="#a8321e" stroke-width="2"/>
+<text x="1138" y="128" font-size="11" font-family="serif" fill="#2b1d14" text-anchor="middle">3</text>
+<circle cx="1030" cy="154" r="18" fill="none" stroke="#2b1d14" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="1030" y="192" font-size="11" font-family="serif" fill="#2b1d14" text-anchor="middle">4</text>
+<circle cx="1084" cy="154" r="18" fill="none" stroke="#2b1d14" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="1084" y="192" font-size="11" font-family="serif" fill="#2b1d14" text-anchor="middle">5</text>
+<circle cx="1138" cy="154" r="18" fill="none" stroke="#2b1d14" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="1138" y="192" font-size="11" font-family="serif" fill="#2b1d14" text-anchor="middle">6</text>
+<circle cx="1030" cy="218" r="18" fill="none" stroke="#2b1d14" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="1030" y="256" font-size="11" font-family="serif" fill="#2b1d14" text-anchor="middle">7</text>
+<circle cx="1084" cy="218" r="18" fill="#d9902a" stroke="#2b1d14" stroke-width="1.5"/>
+<text x="1084" y="256" font-size="11" font-family="serif" fill="#2b1d14" text-anchor="middle">8</text>
+<circle cx="1138" cy="218" r="18" fill="none" stroke="#2b1d14" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="1138" y="256" font-size="11" font-family="serif" fill="#2b1d14" text-anchor="middle">9</text>
+<circle cx="1030" cy="282" r="18" fill="none" stroke="#2b1d14" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="1030" y="320" font-size="11" font-family="serif" fill="#2b1d14" text-anchor="middle">10</text>
+<circle cx="1084" cy="282" r="18" fill="none" stroke="#2b1d14" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="1084" y="320" font-size="11" font-family="serif" fill="#2b1d14" text-anchor="middle">11</text>
+<circle cx="1138" cy="282" r="18" fill="none" stroke="#2b1d14" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="1138" y="320" font-size="11" font-family="serif" fill="#2b1d14" text-anchor="middle">12</text>
+<text x="1090" y="360" font-size="22" font-family="serif" fill="#a8321e" text-anchor="middle" font-style="italic">“sweet”</text>
+</svg>

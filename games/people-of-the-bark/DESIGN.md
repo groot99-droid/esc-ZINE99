@@ -1264,7 +1264,23 @@ glyph's face is shown by direction and a letter. No information is carried by so
   backyard view, and huge, dark-edged and slow in the bark view. One model, two lightings.
 - **One look across layers:** All three layers use the same bark texture set, the same palette and
   the same outline weight on the people. 2D is the 3D bark seen side-on in orthographic; 1D pages
-  are cut from the same bark, as paper.
+  are cut from the same bark, as paper. The palette and materials are shared, while each 2D mode's
+  and 1D page's drawing style differs (see Gameplay graphics).
+
+### Gameplay graphics
+
+Each 2D mode and 1D game keeps this palette but is drawn in its own graphic style, unique in the
+collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg`.
+
+| Mode or game | Layer | Graphic style | How the style serves play |
+| --- | --- | --- | --- |
+| Crack runner | 2D | Pixel art | Hard-edged ledges and hazards read at a glance at running speed; sixteen colours keep sap, lichen and dust distinct |
+| Crack defence | 2D | Isometric diorama | Blocks show the five barricade lines in depth, so the player sees which line holds and how far the beetle has come |
+| Omen Spread | 1D | Marginalia drolleries | Cards and creatures as a manuscript margin make the reading feel like interpretation, written by hand into the record |
+| Sap Kitchen | 1D | Alchemical diagram | Symbols, vessels and arrows lay out order, heat, stirs and outcome as a chart of transformation to experiment against |
+| The Ring Door | 1D | Dendrochronology letterpress | Printed growth rings make each ring's grain notch and the line plain, so alignment is the whole picture |
+| Trunk and Shadow | 1D | Knotwork board | Interlaced bands are the paths themselves: a piece may move only where a band runs |
+| Tremor Scroll | 1D | Seismograph drum | One scratched line per day stacks the days so dawn, noon and dusk bursts line up in columns and the pattern shows |
 
 ## 16. Audio
 
