@@ -1,0 +1,1131 @@
+{
+  "game": "missing-campsites",
+  "location": "entrance-booth",
+  "name": "The entrance road and booth",
+  "reference": "assets/locations/entrance-booth.jpg",
+  "bounds_m": [
+    60,
+    40,
+    28
+  ],
+  "origin": "road centre at the booth (height raised from 8 m to 28 m to hold the pines); +y up the spur into the campground, -y back toward the highway; the booth on the -x side with its window facing the road, the heron sign on +x",
+  "materials": {
+    "gravel": {
+      "color": [
+        0.62,
+        0.56,
+        0.46
+      ],
+      "roughness": 0.95
+    },
+    "gravel-wet": {
+      "color": [
+        0.42,
+        0.4,
+        0.36
+      ],
+      "roughness": 0.6
+    },
+    "forest-floor": {
+      "color": [
+        0.36,
+        0.29,
+        0.19
+      ],
+      "roughness": 1.0
+    },
+    "grass-faded": {
+      "color": [
+        0.45,
+        0.48,
+        0.29
+      ],
+      "roughness": 0.95
+    },
+    "cedar": {
+      "color": [
+        0.55,
+        0.33,
+        0.18
+      ],
+      "roughness": 0.85
+    },
+    "trunk": {
+      "color": [
+        0.3,
+        0.21,
+        0.14
+      ],
+      "roughness": 0.95
+    },
+    "conifer": {
+      "color": [
+        0.17,
+        0.27,
+        0.15
+      ],
+      "roughness": 0.95
+    },
+    "creek": {
+      "color": [
+        0.28,
+        0.36,
+        0.33
+      ],
+      "roughness": 0.15
+    },
+    "sign-brown": {
+      "color": [
+        0.36,
+        0.2,
+        0.13
+      ],
+      "roughness": 0.8
+    },
+    "cream": {
+      "color": [
+        0.91,
+        0.87,
+        0.75
+      ],
+      "roughness": 0.9
+    },
+    "tin": {
+      "color": [
+        0.62,
+        0.63,
+        0.62
+      ],
+      "roughness": 0.5,
+      "metallic": 0.7
+    },
+    "glass": {
+      "color": [
+        0.72,
+        0.78,
+        0.8
+      ],
+      "roughness": 0.1,
+      "emission": 0.2
+    },
+    "concrete": {
+      "color": [
+        0.6,
+        0.59,
+        0.56
+      ],
+      "roughness": 0.95
+    },
+    "asphalt": {
+      "color": [
+        0.27,
+        0.27,
+        0.28
+      ],
+      "roughness": 0.9
+    },
+    "rock": {
+      "color": [
+        0.55,
+        0.54,
+        0.5
+      ],
+      "roughness": 0.95
+    }
+  },
+  "blockout": [
+    {
+      "id": "ground",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        60,
+        40,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "forest-floor"
+    },
+    {
+      "id": "road",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        7,
+        40,
+        0.06
+      ],
+      "location": [
+        0,
+        0,
+        0.03
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "booth-pad",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        3.4,
+        3.4,
+        0.1
+      ],
+      "location": [
+        -6.3,
+        2,
+        0.05
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "booth-floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        2.4,
+        2.6,
+        0.12
+      ],
+      "location": [
+        -6.6,
+        2,
+        0.16
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "booth-back",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.1,
+        2.6,
+        2.5
+      ],
+      "location": [
+        -7.8,
+        2,
+        1.35
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "booth-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.4,
+        0.1,
+        2.5
+      ],
+      "location": [
+        -6.6,
+        3.3,
+        1.35
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "booth-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.4,
+        0.1,
+        2.5
+      ],
+      "location": [
+        -6.6,
+        0.7,
+        1.35
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "booth-front-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.1,
+        2.6,
+        1.0
+      ],
+      "location": [
+        -5.4,
+        2,
+        0.6
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "booth-front-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.1,
+        2.6,
+        0.5
+      ],
+      "location": [
+        -5.4,
+        2,
+        2.35
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "booth-window",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.04,
+        2.0,
+        1.0
+      ],
+      "location": [
+        -5.4,
+        2,
+        1.6
+      ],
+      "material": "glass",
+      "collide": false
+    },
+    {
+      "id": "booth-roof",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        2.8,
+        3.0,
+        0.1
+      ],
+      "location": [
+        -6.5,
+        2,
+        2.65
+      ],
+      "material": "tin",
+      "rotation_deg": [
+        0,
+        -4,
+        0
+      ]
+    },
+    {
+      "id": "awning",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.7,
+        2.8,
+        0.04
+      ],
+      "location": [
+        -5.0,
+        2,
+        2.4
+      ],
+      "material": "tin",
+      "rotation_deg": [
+        0,
+        15,
+        0
+      ]
+    },
+    {
+      "id": "store-shelf",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        2.4,
+        0.05
+      ],
+      "location": [
+        -5.2,
+        2,
+        1.05
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "counter",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        2.2,
+        0.05
+      ],
+      "location": [
+        -5.75,
+        2,
+        1.05
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "phone-post",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.2,
+        0.2,
+        3.6
+      ],
+      "location": [
+        -3.2,
+        3.2,
+        1.8
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "phone-arm",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.5,
+        0.1,
+        0.1
+      ],
+      "location": [
+        -3.0,
+        3.2,
+        3.55
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "phone-bulb",
+      "shape": "sphere",
+      "role": "trim",
+      "size_m": [
+        0.15,
+        0.15,
+        0.15
+      ],
+      "location": [
+        -2.8,
+        3.2,
+        3.45
+      ],
+      "material": "glass",
+      "collide": false
+    },
+    {
+      "id": "pull-in",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        6,
+        10,
+        0.05
+      ],
+      "location": [
+        7,
+        -8,
+        0.025
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "pine-1-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        22
+      ],
+      "location": [
+        -14,
+        12,
+        11.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-1-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        15.4
+      ],
+      "location": [
+        -14,
+        12,
+        14.3
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-2-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        25
+      ],
+      "location": [
+        -18,
+        -4,
+        12.5
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-2-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        17.5
+      ],
+      "location": [
+        -18,
+        -4,
+        16.25
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-3-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        28
+      ],
+      "location": [
+        -22,
+        14,
+        14.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-3-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        19.6
+      ],
+      "location": [
+        -22,
+        14,
+        18.2
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-4-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        22
+      ],
+      "location": [
+        13,
+        14,
+        11.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-4-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        15.4
+      ],
+      "location": [
+        13,
+        14,
+        14.3
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-5-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        25
+      ],
+      "location": [
+        20,
+        4,
+        12.5
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-5-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        17.5
+      ],
+      "location": [
+        20,
+        4,
+        16.25
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-6-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        28
+      ],
+      "location": [
+        24,
+        15,
+        14.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-6-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        19.6
+      ],
+      "location": [
+        24,
+        15,
+        18.2
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-7-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        22
+      ],
+      "location": [
+        -9,
+        17,
+        11.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-7-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        15.4
+      ],
+      "location": [
+        -9,
+        17,
+        14.3
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-8-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        25
+      ],
+      "location": [
+        9,
+        18,
+        12.5
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-8-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        17.5
+      ],
+      "location": [
+        9,
+        18,
+        16.25
+      ],
+      "material": "conifer",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "heron-sign",
+      "object": "heron-sign",
+      "location": [
+        5.5,
+        6,
+        0
+      ]
+    },
+    {
+      "id": "payphone",
+      "object": "payphone",
+      "location": [
+        -3.2,
+        3.05,
+        0
+      ]
+    },
+    {
+      "id": "master-map",
+      "object": "master-map",
+      "location": [
+        -7.7,
+        2,
+        1.7
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "ground": false
+    },
+    {
+      "id": "booth-radio",
+      "object": "booth-radio",
+      "location": [
+        -7.55,
+        2.9,
+        1.1
+      ]
+    },
+    {
+      "id": "paper-map",
+      "object": "paper-map",
+      "location": [
+        -5.75,
+        1.6,
+        1.08
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        90
+      ],
+      "height_m": 0.01
+    },
+    {
+      "id": "logbook",
+      "object": "logbook",
+      "location": [
+        -5.75,
+        2.5,
+        1.08
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        90
+      ],
+      "height_m": 0.05
+    },
+    {
+      "id": "firewood",
+      "object": "firewood-bundle",
+      "location": [
+        -5.2,
+        1.3,
+        1.08
+      ]
+    },
+    {
+      "id": "firewood-2",
+      "object": "firewood-bundle",
+      "location": [
+        -5.2,
+        2.7,
+        1.08
+      ]
+    },
+    {
+      "id": "van",
+      "object": "camper-van",
+      "location": [
+        -1.6,
+        -1,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "post-4",
+      "object": "site-post",
+      "location": [
+        3.8,
+        17,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "booth_day1": {
+      "note": "15:10, day 1. The van stops at the window; Marisol hands over the paper map, sells firewood, talks to Ruth on the radio; Agnes's postcard is in the glovebox. Taking the map starts the walk.",
+      "world": {
+        "color": [
+          0.55,
+          0.62,
+          0.7
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "sun",
+          "type": "SUN",
+          "location": [
+            20,
+            -15,
+            30
+          ],
+          "energy": 4.5,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.93,
+            0.8
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "canopy-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            14
+          ],
+          "energy": 300,
+          "size": 20,
+          "color": [
+            0.75,
+            0.85,
+            0.7
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -2.0,
+          -0.4,
+          1.45
+        ],
+        "look_at": [
+          -5.4,
+          2,
+          1.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -2.0,
+          -0.4,
+          0
+        ],
+        "facing_deg": 54.8
+      },
+      "hide": [
+        "post-4"
+      ],
+      "interactions": [
+        {
+          "prop": "paper-map",
+          "verb": "Take the map",
+          "leads_to": "loop_day1"
+        },
+        {
+          "prop": "firewood",
+          "verb": "Buy a bundle ($8)"
+        },
+        {
+          "prop": "heron-sign",
+          "verb": "Read the sign"
+        },
+        {
+          "prop": "van",
+          "verb": "Open the glovebox"
+        },
+        {
+          "prop": "payphone",
+          "verb": "Look at the payphone"
+        },
+        {
+          "prop": "master-map",
+          "verb": "Look at the master map"
+        }
+      ]
+    },
+    "payphone_night1": {
+      "note": "Night 1, after closing. Torch only; one bulb over the payphone with moths. Agnes: 'Find the split boulder.' The radio murmurs on its shelf behind the dark window. Hanging up returns to the walk.",
+      "world": {
+        "color": [
+          0.02,
+          0.03,
+          0.06
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "phone-bulb",
+          "type": "POINT",
+          "location": [
+            -2.8,
+            3.2,
+            3.35
+          ],
+          "energy": 60,
+          "size": 0.15,
+          "color": [
+            1.0,
+            0.8,
+            0.55
+          ]
+        },
+        {
+          "name": "torch",
+          "type": "SPOT",
+          "location": [
+            -1.2,
+            1.2,
+            1.4
+          ],
+          "energy": 120,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.71,
+            0.42
+          ],
+          "look_at": [
+            -3.2,
+            3.1,
+            1.2
+          ]
+        },
+        {
+          "name": "radio-glow",
+          "type": "POINT",
+          "location": [
+            -7.4,
+            2.9,
+            1.3
+          ],
+          "energy": 2,
+          "size": 0.05,
+          "color": [
+            0.9,
+            0.85,
+            0.6
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -2.2,
+          1.8,
+          1.65
+        ],
+        "look_at": [
+          -3.2,
+          3.05,
+          1.5
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -2.2,
+          1.8,
+          0
+        ],
+        "facing_deg": 38.7
+      },
+      "hide": [
+        "van",
+        "paper-map",
+        "logbook"
+      ],
+      "interactions": [
+        {
+          "prop": "payphone",
+          "verb": "Call Agnes",
+          "leads_to": "torch_loop_1"
+        },
+        {
+          "prop": "booth-radio",
+          "verb": "Listen to the radio"
+        },
+        {
+          "prop": "master-map",
+          "verb": "Raise the map lens to the glass"
+        }
+      ]
+    },
+    "booth_day2": {
+      "note": "Day 2, grey. Marisol: 'Numbering's always started at twelve.' Write it down or accept it; asking to see the logbook opens The Ranger's Book 1.",
+      "world": {
+        "color": [
+          0.62,
+          0.64,
+          0.66
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "overcast",
+          "type": "SUN",
+          "location": [
+            0,
+            -5,
+            30
+          ],
+          "energy": 1.6,
+          "size": 8,
+          "color": [
+            0.82,
+            0.85,
+            0.88
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "sky-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            12
+          ],
+          "energy": 500,
+          "size": 30,
+          "color": [
+            0.82,
+            0.85,
+            0.88
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -3.6,
+          1.6,
+          1.65
+        ],
+        "look_at": [
+          -5.6,
+          2,
+          1.3
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -3.6,
+          1.6,
+          0
+        ],
+        "facing_deg": 78.7
+      },
+      "hide": [
+        "van",
+        "paper-map",
+        "post-4"
+      ],
+      "interactions": [
+        {
+          "prop": "logbook",
+          "verb": "Ask to see the logbook",
+          "leads_to": "rangers_book_1"
+        },
+        {
+          "prop": "booth-radio",
+          "verb": "Listen to the radio"
+        },
+        {
+          "prop": "master-map",
+          "verb": "Raise the map lens to the master map"
+        }
+      ]
+    }
+  }
+}

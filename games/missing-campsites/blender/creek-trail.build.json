@@ -1,0 +1,682 @@
+{
+  "game": "missing-campsites",
+  "location": "creek-trail",
+  "name": "The creek trail and the gravel bar",
+  "reference": "assets/locations/creek-trail.jpg",
+  "bounds_m": [
+    300,
+    20,
+    15
+  ],
+  "origin": "midpoint of the trail; +x downstream toward Abel's gravel bar, the creek on -y, the trail on +y",
+  "materials": {
+    "gravel": {
+      "color": [
+        0.62,
+        0.56,
+        0.46
+      ],
+      "roughness": 0.95
+    },
+    "gravel-wet": {
+      "color": [
+        0.42,
+        0.4,
+        0.36
+      ],
+      "roughness": 0.6
+    },
+    "forest-floor": {
+      "color": [
+        0.36,
+        0.29,
+        0.19
+      ],
+      "roughness": 1.0
+    },
+    "grass-faded": {
+      "color": [
+        0.45,
+        0.48,
+        0.29
+      ],
+      "roughness": 0.95
+    },
+    "cedar": {
+      "color": [
+        0.55,
+        0.33,
+        0.18
+      ],
+      "roughness": 0.85
+    },
+    "trunk": {
+      "color": [
+        0.3,
+        0.21,
+        0.14
+      ],
+      "roughness": 0.95
+    },
+    "conifer": {
+      "color": [
+        0.17,
+        0.27,
+        0.15
+      ],
+      "roughness": 0.95
+    },
+    "creek": {
+      "color": [
+        0.28,
+        0.36,
+        0.33
+      ],
+      "roughness": 0.15
+    },
+    "sign-brown": {
+      "color": [
+        0.36,
+        0.2,
+        0.13
+      ],
+      "roughness": 0.8
+    },
+    "cream": {
+      "color": [
+        0.91,
+        0.87,
+        0.75
+      ],
+      "roughness": 0.9
+    },
+    "tin": {
+      "color": [
+        0.62,
+        0.63,
+        0.62
+      ],
+      "roughness": 0.5,
+      "metallic": 0.7
+    },
+    "glass": {
+      "color": [
+        0.72,
+        0.78,
+        0.8
+      ],
+      "roughness": 0.1,
+      "emission": 0.2
+    },
+    "concrete": {
+      "color": [
+        0.6,
+        0.59,
+        0.56
+      ],
+      "roughness": 0.95
+    },
+    "asphalt": {
+      "color": [
+        0.27,
+        0.27,
+        0.28
+      ],
+      "roughness": 0.9
+    },
+    "rock": {
+      "color": [
+        0.55,
+        0.54,
+        0.5
+      ],
+      "roughness": 0.95
+    }
+  },
+  "blockout": [
+    {
+      "id": "ground",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        300,
+        20,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "forest-floor"
+    },
+    {
+      "id": "trail",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        280,
+        1.4,
+        0.05
+      ],
+      "location": [
+        -10,
+        4.5,
+        0.025
+      ],
+      "material": "forest-floor"
+    },
+    {
+      "id": "creek-a",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        120,
+        4,
+        0.1
+      ],
+      "location": [
+        -90,
+        -3,
+        -0.05
+      ],
+      "material": "creek"
+    },
+    {
+      "id": "creek-b",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        100,
+        4,
+        0.1
+      ],
+      "location": [
+        20,
+        -2,
+        -0.05
+      ],
+      "material": "creek",
+      "rotation_deg": [
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "id": "creek-c",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        80,
+        4,
+        0.1
+      ],
+      "location": [
+        110,
+        -1,
+        -0.05
+      ],
+      "material": "creek",
+      "rotation_deg": [
+        0,
+        0,
+        -4
+      ]
+    },
+    {
+      "id": "bank-north",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        300,
+        2,
+        0.4
+      ],
+      "location": [
+        0,
+        1.5,
+        0.1
+      ],
+      "material": "gravel-wet"
+    },
+    {
+      "id": "gravel-bar",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        60,
+        6,
+        0.15
+      ],
+      "location": [
+        120,
+        -6.5,
+        0.05
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "flat-rock",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        2.2,
+        1.4
+      ],
+      "location": [
+        125,
+        6.3,
+        0.7
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "rock-2",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.0,
+        0.6
+      ],
+      "location": [
+        -60,
+        2.2,
+        0.3
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "forest-north",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        300,
+        3,
+        18
+      ],
+      "location": [
+        0,
+        10,
+        9
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "forest-south",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        300,
+        3,
+        16
+      ],
+      "location": [
+        0,
+        -10.5,
+        8
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-1-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        20
+      ],
+      "location": [
+        -130,
+        7.5,
+        10.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-1-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        14.0
+      ],
+      "location": [
+        -130,
+        7.5,
+        13.0
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-2-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        20
+      ],
+      "location": [
+        -90,
+        7.5,
+        10.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-2-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        14.0
+      ],
+      "location": [
+        -90,
+        7.5,
+        13.0
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-3-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        20
+      ],
+      "location": [
+        -45,
+        7.5,
+        10.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-3-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        14.0
+      ],
+      "location": [
+        -45,
+        7.5,
+        13.0
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-4-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        20
+      ],
+      "location": [
+        0,
+        7.5,
+        10.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-4-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        14.0
+      ],
+      "location": [
+        0,
+        7.5,
+        13.0
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-5-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        20
+      ],
+      "location": [
+        45,
+        7.5,
+        10.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-5-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        14.0
+      ],
+      "location": [
+        45,
+        7.5,
+        13.0
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-6-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.8,
+        0.8,
+        20
+      ],
+      "location": [
+        90,
+        7.5,
+        10.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-6-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        14.0
+      ],
+      "location": [
+        90,
+        7.5,
+        13.0
+      ],
+      "material": "conifer",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "tent-abel",
+      "object": "tent",
+      "location": [
+        118,
+        -6.5,
+        0.1
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        160
+      ],
+      "height_m": 1.1
+    },
+    {
+      "id": "hiking-pack",
+      "object": "hiking-pack",
+      "location": [
+        121.5,
+        -5.0,
+        0.1
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        200
+      ]
+    },
+    {
+      "id": "notebook",
+      "object": "notebook",
+      "location": [
+        124.5,
+        6.0,
+        1.4
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "height_m": 0.02
+    }
+  ],
+  "scenes": {
+    "creek_trail": {
+      "note": "Day 2 errand. Water light dappled through the canopy, the creek, Abel humming. The trail runs to his gravel bar; showing him the line Tam copied from the register.",
+      "world": {
+        "color": [
+          0.55,
+          0.65,
+          0.6
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "sun-through",
+          "type": "SUN",
+          "location": [
+            -60,
+            -30,
+            60
+          ],
+          "energy": 3.0,
+          "size": 1.5,
+          "color": [
+            1.0,
+            0.93,
+            0.8
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "water-bounce",
+          "type": "AREA",
+          "location": [
+            110,
+            -2,
+            1.5
+          ],
+          "energy": 400,
+          "size": 10,
+          "color": [
+            0.75,
+            0.88,
+            0.85
+          ],
+          "look_at": [
+            110,
+            4,
+            1.5
+          ]
+        },
+        {
+          "name": "canopy-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            14
+          ],
+          "energy": 6000,
+          "size": 120,
+          "color": [
+            0.7,
+            0.8,
+            0.65
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -140,
+          4.5,
+          1.65
+        ],
+        "look_at": [
+          -100,
+          3,
+          1.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -140,
+          4.5,
+          0
+        ],
+        "facing_deg": 267.9
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "notebook",
+          "verb": "Show Abel his copied line",
+          "leads_to": "loop_day2pm"
+        },
+        {
+          "prop": "hiking-pack",
+          "verb": "Look at his trail log"
+        }
+      ]
+    }
+  }
+}

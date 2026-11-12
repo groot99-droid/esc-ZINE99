@@ -1,0 +1,925 @@
+{
+  "game": "missing-campsites",
+  "location": "other-side-sites",
+  "name": "The five sites on the other side",
+  "reference": "assets/locations/other-side-sites.jpg",
+  "bounds_m": [
+    180,
+    60,
+    25
+  ],
+  "origin": "middle of the five sites; +y toward the glyph forest of exact-interval trees, the five tents in a row facing -y; the anchors stand in the slots where the carrying run left them (the full set is placed; the engine shows only those carried)",
+  "materials": {
+    "pearl-gravel": {
+      "color": [
+        0.8,
+        0.8,
+        0.78
+      ],
+      "roughness": 0.7
+    },
+    "cool-green": {
+      "color": [
+        0.2,
+        0.42,
+        0.32
+      ],
+      "roughness": 0.8
+    },
+    "cool-grass": {
+      "color": [
+        0.22,
+        0.48,
+        0.3
+      ],
+      "roughness": 0.8
+    },
+    "clean-trunk": {
+      "color": [
+        0.34,
+        0.26,
+        0.22
+      ],
+      "roughness": 0.7
+    },
+    "still-water": {
+      "color": [
+        0.7,
+        0.74,
+        0.74
+      ],
+      "roughness": 0.05
+    },
+    "pearl": {
+      "color": [
+        0.93,
+        0.94,
+        0.92
+      ],
+      "roughness": 1.0,
+      "emission": 0.4
+    },
+    "cedar-clean": {
+      "color": [
+        0.5,
+        0.33,
+        0.22
+      ],
+      "roughness": 0.7
+    },
+    "cream": {
+      "color": [
+        0.91,
+        0.87,
+        0.75
+      ],
+      "roughness": 0.9
+    },
+    "glass": {
+      "color": [
+        0.72,
+        0.78,
+        0.8
+      ],
+      "roughness": 0.1,
+      "emission": 0.2
+    }
+  },
+  "blockout": [
+    {
+      "id": "ground",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        180,
+        60,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "pearl-gravel"
+    },
+    {
+      "id": "grass-beyond",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        180,
+        24,
+        0.1
+      ],
+      "location": [
+        0,
+        18,
+        0.0
+      ],
+      "material": "cool-grass"
+    },
+    {
+      "id": "pearl-sky",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        600,
+        2,
+        200
+      ],
+      "location": [
+        0,
+        300,
+        100
+      ],
+      "material": "pearl",
+      "collide": false
+    },
+    {
+      "id": "glyph-a1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        -80,
+        12,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-a2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        -64,
+        12,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-a3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        -48,
+        12,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-a4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        -32,
+        12,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-a5",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        -16,
+        12,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-a6",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        0,
+        12,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-a7",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        16,
+        12,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-a8",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        32,
+        12,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-a9",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        48,
+        12,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-a10",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        64,
+        12,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-a11",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        80,
+        12,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-b1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        -72,
+        20,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-b2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        -56,
+        20,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-b3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        -40,
+        20,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-b4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        -24,
+        20,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-b5",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        -8,
+        20,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-b6",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        8,
+        20,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-b7",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        24,
+        20,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-b8",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        40,
+        20,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-b9",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        56,
+        20,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "glyph-b10",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        22
+      ],
+      "location": [
+        72,
+        20,
+        11
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "crowns-a",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        176,
+        3,
+        10
+      ],
+      "location": [
+        0,
+        12,
+        18
+      ],
+      "material": "cool-green",
+      "collide": false
+    },
+    {
+      "id": "crowns-b",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        160,
+        3,
+        10
+      ],
+      "location": [
+        0,
+        20,
+        18
+      ],
+      "material": "cool-green",
+      "collide": false
+    },
+    {
+      "id": "glyph-field",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        180,
+        8,
+        20
+      ],
+      "location": [
+        0,
+        28,
+        10
+      ],
+      "material": "cool-green",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "tent-20",
+      "object": "tent",
+      "location": [
+        -40,
+        5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "post-20",
+      "object": "site-post",
+      "location": [
+        -46,
+        -6,
+        0
+      ]
+    },
+    {
+      "id": "tent-21",
+      "object": "tent",
+      "location": [
+        -20,
+        5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "post-21",
+      "object": "site-post",
+      "location": [
+        -26,
+        -6,
+        0
+      ]
+    },
+    {
+      "id": "tent-22",
+      "object": "tent",
+      "location": [
+        0,
+        5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "post-22",
+      "object": "site-post",
+      "location": [
+        -6,
+        -6,
+        0
+      ]
+    },
+    {
+      "id": "tent-23",
+      "object": "tent",
+      "location": [
+        20,
+        5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "post-23",
+      "object": "site-post",
+      "location": [
+        14,
+        -6,
+        0
+      ]
+    },
+    {
+      "id": "tent-24",
+      "object": "tent",
+      "location": [
+        40,
+        5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "post-24",
+      "object": "site-post",
+      "location": [
+        34,
+        -6,
+        0
+      ]
+    },
+    {
+      "id": "table",
+      "object": "picnic-table",
+      "location": [
+        -30,
+        -6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        10
+      ]
+    },
+    {
+      "id": "fire-ring",
+      "object": "fire-ring",
+      "location": [
+        0,
+        -4,
+        0
+      ]
+    },
+    {
+      "id": "split-boulder",
+      "object": "split-boulder",
+      "location": [
+        16,
+        -9,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -10
+      ]
+    },
+    {
+      "id": "cooler",
+      "object": "cooler",
+      "location": [
+        -24,
+        -9,
+        0
+      ]
+    },
+    {
+      "id": "phone-1",
+      "object": "smartphone",
+      "location": [
+        -29.6,
+        -6.2,
+        0.75
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "height_m": 0.01
+    },
+    {
+      "id": "phone-2",
+      "object": "smartphone",
+      "location": [
+        -30.6,
+        -5.8,
+        0.75
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        30
+      ],
+      "height_m": 0.01
+    },
+    {
+      "id": "heron-sign",
+      "object": "heron-sign",
+      "location": [
+        -20,
+        2.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "quiet-hours-board",
+      "object": "quiet-hours-board",
+      "location": [
+        20,
+        2.6,
+        1.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "ground": false
+    },
+    {
+      "id": "master-map",
+      "object": "master-map",
+      "location": [
+        -10,
+        2.6,
+        1.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "ground": false
+    },
+    {
+      "id": "logbook",
+      "object": "logbook",
+      "location": [
+        -30.4,
+        -5.4,
+        0.75
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "height_m": 0.05
+    },
+    {
+      "id": "firewood",
+      "object": "firewood-bundle",
+      "location": [
+        -4,
+        -9,
+        0
+      ]
+    },
+    {
+      "id": "bicycle",
+      "object": "bicycle",
+      "location": [
+        10,
+        2.5,
+        0
+      ]
+    },
+    {
+      "id": "anchor-post-19",
+      "object": "site-post",
+      "location": [
+        -36,
+        2.5,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "wrong_forest": {
+      "note": "The author's morning: the sky is wrong, the air heavier, the trees in patterns that shouldn't exist; phones show no signal, no time, no date. The anchors stand where they were placed. Then the cooler.",
+      "world": {
+        "color": [
+          0.93,
+          0.94,
+          0.92
+        ],
+        "strength": 1.2
+      },
+      "lights": [
+        {
+          "name": "pearl-dome",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            40
+          ],
+          "energy": 9000,
+          "size": 180,
+          "color": [
+            0.95,
+            0.96,
+            0.94
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "pearl-side-a",
+          "type": "AREA",
+          "location": [
+            0,
+            -40,
+            10
+          ],
+          "energy": 3000,
+          "size": 120,
+          "color": [
+            0.95,
+            0.96,
+            0.94
+          ],
+          "look_at": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "pearl-side-b",
+          "type": "AREA",
+          "location": [
+            0,
+            40,
+            10
+          ],
+          "energy": 3000,
+          "size": 120,
+          "color": [
+            0.95,
+            0.96,
+            0.94
+          ],
+          "look_at": [
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -14,
+          1.65
+        ],
+        "look_at": [
+          0,
+          12,
+          4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -14,
+          0
+        ],
+        "facing_deg": 0.0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "phone-1",
+          "verb": "Check the phone"
+        },
+        {
+          "prop": "heron-sign",
+          "verb": "Touch the sign"
+        },
+        {
+          "prop": "split-boulder",
+          "verb": "Look into the crack"
+        },
+        {
+          "prop": "cooler",
+          "verb": "Open the cooler",
+          "leads_to": "foil_supper_3"
+        }
+      ]
+    }
+  }
+}

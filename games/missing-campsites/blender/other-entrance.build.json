@@ -1,0 +1,727 @@
+{
+  "game": "missing-campsites",
+  "location": "other-entrance",
+  "name": "The other entrance",
+  "reference": "assets/locations/other-entrance.jpg",
+  "bounds_m": [
+    60,
+    40,
+    8
+  ],
+  "origin": "the booth's front corner on the road; +y up the road toward the approaching car, the booth on +x with its window facing -y onto the road bend",
+  "materials": {
+    "pearl-gravel": {
+      "color": [
+        0.8,
+        0.8,
+        0.78
+      ],
+      "roughness": 0.7
+    },
+    "cool-green": {
+      "color": [
+        0.2,
+        0.42,
+        0.32
+      ],
+      "roughness": 0.8
+    },
+    "cool-grass": {
+      "color": [
+        0.22,
+        0.48,
+        0.3
+      ],
+      "roughness": 0.8
+    },
+    "clean-trunk": {
+      "color": [
+        0.34,
+        0.26,
+        0.22
+      ],
+      "roughness": 0.7
+    },
+    "still-water": {
+      "color": [
+        0.7,
+        0.74,
+        0.74
+      ],
+      "roughness": 0.05
+    },
+    "pearl": {
+      "color": [
+        0.93,
+        0.94,
+        0.92
+      ],
+      "roughness": 1.0,
+      "emission": 0.4
+    },
+    "cedar-clean": {
+      "color": [
+        0.5,
+        0.33,
+        0.22
+      ],
+      "roughness": 0.7
+    },
+    "cream": {
+      "color": [
+        0.91,
+        0.87,
+        0.75
+      ],
+      "roughness": 0.9
+    },
+    "glass": {
+      "color": [
+        0.72,
+        0.78,
+        0.8
+      ],
+      "roughness": 0.1,
+      "emission": 0.2
+    },
+    "dead-gravel": {
+      "color": [
+        0.66,
+        0.62,
+        0.58
+      ],
+      "roughness": 0.8
+    },
+    "dry-grass": {
+      "color": [
+        0.48,
+        0.4,
+        0.33
+      ],
+      "roughness": 0.95
+    },
+    "car-body": {
+      "color": [
+        0.55,
+        0.5,
+        0.46
+      ],
+      "roughness": 0.4,
+      "metallic": 0.5
+    }
+  },
+  "blockout": [
+    {
+      "id": "ground",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        60,
+        40,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "dry-grass"
+    },
+    {
+      "id": "road-near",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        8,
+        22,
+        0.06
+      ],
+      "location": [
+        -4,
+        -9,
+        0.03
+      ],
+      "material": "dead-gravel"
+    },
+    {
+      "id": "road-far",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        7,
+        20,
+        0.06
+      ],
+      "location": [
+        -10,
+        10,
+        0.03
+      ],
+      "material": "dead-gravel",
+      "rotation_deg": [
+        0,
+        0,
+        15
+      ]
+    },
+    {
+      "id": "booth-floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        2.2,
+        1.8,
+        0.15
+      ],
+      "location": [
+        3.5,
+        -4,
+        0.08
+      ],
+      "material": "cedar-clean"
+    },
+    {
+      "id": "booth-back",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.2,
+        0.1,
+        2.3
+      ],
+      "location": [
+        3.5,
+        -3.1,
+        1.3
+      ],
+      "material": "cedar-clean"
+    },
+    {
+      "id": "booth-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.1,
+        1.8,
+        2.3
+      ],
+      "location": [
+        4.6,
+        -4,
+        1.3
+      ],
+      "material": "cedar-clean"
+    },
+    {
+      "id": "booth-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.1,
+        1.8,
+        2.3
+      ],
+      "location": [
+        2.4,
+        -4,
+        1.3
+      ],
+      "material": "cedar-clean"
+    },
+    {
+      "id": "booth-front-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.2,
+        0.1,
+        1.2
+      ],
+      "location": [
+        3.5,
+        -4.9,
+        0.75
+      ],
+      "material": "cedar-clean"
+    },
+    {
+      "id": "booth-front-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.2,
+        0.1,
+        0.3
+      ],
+      "location": [
+        3.5,
+        -4.9,
+        2.3
+      ],
+      "material": "cedar-clean"
+    },
+    {
+      "id": "booth-window",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.2,
+        0.04,
+        0.8
+      ],
+      "location": [
+        3.8,
+        -4.9,
+        1.75
+      ],
+      "material": "glass",
+      "collide": false
+    },
+    {
+      "id": "window-flap",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.3,
+        0.6,
+        0.03
+      ],
+      "location": [
+        3.8,
+        -5.25,
+        2.3
+      ],
+      "material": "glass",
+      "rotation_deg": [
+        -30,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "booth-roof",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        2.6,
+        2.2,
+        0.08
+      ],
+      "location": [
+        3.5,
+        -4,
+        2.5
+      ],
+      "material": "cedar-clean",
+      "rotation_deg": [
+        4,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "map-rack",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.1,
+        0.6,
+        0.8
+      ],
+      "location": [
+        2.33,
+        -4.3,
+        0.9
+      ],
+      "material": "cream"
+    },
+    {
+      "id": "car",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.8,
+        4.2,
+        1.4
+      ],
+      "location": [
+        -11,
+        16,
+        0.7
+      ],
+      "material": "car-body",
+      "rotation_deg": [
+        0,
+        0,
+        15
+      ]
+    },
+    {
+      "id": "pearl-sky",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        400,
+        2,
+        150
+      ],
+      "location": [
+        0,
+        200,
+        75
+      ],
+      "material": "pearl",
+      "collide": false
+    },
+    {
+      "id": "bare-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.35,
+        14
+      ],
+      "location": [
+        -24,
+        -8,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "bare-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.35,
+        14
+      ],
+      "location": [
+        -22,
+        6,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "bare-3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.35,
+        14
+      ],
+      "location": [
+        -20,
+        18,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "bare-4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.35,
+        14
+      ],
+      "location": [
+        12,
+        2,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "bare-5",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.35,
+        14
+      ],
+      "location": [
+        18,
+        10,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "bare-6",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.35,
+        14
+      ],
+      "location": [
+        24,
+        -2,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "bare-7",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.35,
+        14
+      ],
+      "location": [
+        14,
+        18,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "bare-8",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.35,
+        14
+      ],
+      "location": [
+        22,
+        18,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "bare-9",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.35,
+        14
+      ],
+      "location": [
+        8,
+        12,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "bare-10",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.35,
+        14
+      ],
+      "location": [
+        -16,
+        -16,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "bare-11",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.35,
+        14
+      ],
+      "location": [
+        20,
+        -14,
+        7
+      ],
+      "material": "clean-trunk"
+    }
+  ],
+  "props": [
+    {
+      "id": "heron-panel",
+      "object": "heron-sign",
+      "location": [
+        3.5,
+        -4.97,
+        0.9
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "ground": false,
+      "height_m": 0.9
+    },
+    {
+      "id": "map-1",
+      "object": "paper-map",
+      "location": [
+        2.28,
+        -4.5,
+        1.0
+      ],
+      "rotation_deg": [
+        80,
+        0,
+        90
+      ],
+      "ground": false,
+      "height_m": 0.45
+    },
+    {
+      "id": "map-2",
+      "object": "paper-map",
+      "location": [
+        2.26,
+        -4.1,
+        0.95
+      ],
+      "rotation_deg": [
+        80,
+        0,
+        90
+      ],
+      "ground": false,
+      "height_m": 0.45
+    },
+    {
+      "id": "post-24",
+      "object": "site-post",
+      "location": [
+        0.5,
+        -10,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "other_entrance": {
+      "note": "Slipped Through. A booth with nobody in it; a rack of paper maps showing 24 sites. No sun; a car's headlights are the only warm light. It stops at the window: 'You're at the far end. Twenty through twenty-four.'",
+      "world": {
+        "color": [
+          0.88,
+          0.86,
+          0.86
+        ],
+        "strength": 0.9
+      },
+      "lights": [
+        {
+          "name": "pearl-dome",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            30
+          ],
+          "energy": 5000,
+          "size": 80,
+          "color": [
+            0.95,
+            0.96,
+            0.94
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "headlight-l",
+          "type": "SPOT",
+          "location": [
+            -10.4,
+            13.8,
+            0.8
+          ],
+          "energy": 300,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.85,
+            0.6
+          ],
+          "look_at": [
+            -4,
+            -6,
+            0.5
+          ]
+        },
+        {
+          "name": "headlight-r",
+          "type": "SPOT",
+          "location": [
+            -11.8,
+            14.2,
+            0.8
+          ],
+          "energy": 300,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.85,
+            0.6
+          ],
+          "look_at": [
+            -5,
+            -6,
+            0.5
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          3.5,
+          -3.6,
+          1.8
+        ],
+        "look_at": [
+          -6,
+          8,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          3.5,
+          -3.6,
+          0.15
+        ],
+        "facing_deg": 39.3
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "map-1",
+          "verb": "Look at the map: 24 sites"
+        },
+        {
+          "prop": "heron-panel",
+          "verb": "Look at the heron"
+        },
+        {
+          "prop": "post-24",
+          "verb": "Wait for the car"
+        }
+      ]
+    }
+  }
+}

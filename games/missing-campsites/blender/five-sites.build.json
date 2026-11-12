@@ -1,0 +1,1196 @@
+{
+  "game": "missing-campsites",
+  "location": "five-sites",
+  "name": "The five sites, 20 to 24",
+  "reference": "assets/locations/five-sites.jpg",
+  "bounds_m": [
+    180,
+    60,
+    25
+  ],
+  "origin": "middle of site 22; +x along the road toward 24 and the dark past it, +y back into the forest, the road on -y; site 20 and the van at -x",
+  "materials": {
+    "gravel": {
+      "color": [
+        0.62,
+        0.56,
+        0.46
+      ],
+      "roughness": 0.95
+    },
+    "gravel-wet": {
+      "color": [
+        0.42,
+        0.4,
+        0.36
+      ],
+      "roughness": 0.6
+    },
+    "forest-floor": {
+      "color": [
+        0.36,
+        0.29,
+        0.19
+      ],
+      "roughness": 1.0
+    },
+    "grass-faded": {
+      "color": [
+        0.45,
+        0.48,
+        0.29
+      ],
+      "roughness": 0.95
+    },
+    "cedar": {
+      "color": [
+        0.55,
+        0.33,
+        0.18
+      ],
+      "roughness": 0.85
+    },
+    "trunk": {
+      "color": [
+        0.3,
+        0.21,
+        0.14
+      ],
+      "roughness": 0.95
+    },
+    "conifer": {
+      "color": [
+        0.17,
+        0.27,
+        0.15
+      ],
+      "roughness": 0.95
+    },
+    "creek": {
+      "color": [
+        0.28,
+        0.36,
+        0.33
+      ],
+      "roughness": 0.15
+    },
+    "sign-brown": {
+      "color": [
+        0.36,
+        0.2,
+        0.13
+      ],
+      "roughness": 0.8
+    },
+    "cream": {
+      "color": [
+        0.91,
+        0.87,
+        0.75
+      ],
+      "roughness": 0.9
+    },
+    "tin": {
+      "color": [
+        0.62,
+        0.63,
+        0.62
+      ],
+      "roughness": 0.5,
+      "metallic": 0.7
+    },
+    "glass": {
+      "color": [
+        0.72,
+        0.78,
+        0.8
+      ],
+      "roughness": 0.1,
+      "emission": 0.2
+    },
+    "concrete": {
+      "color": [
+        0.6,
+        0.59,
+        0.56
+      ],
+      "roughness": 0.95
+    },
+    "asphalt": {
+      "color": [
+        0.27,
+        0.27,
+        0.28
+      ],
+      "roughness": 0.9
+    },
+    "rock": {
+      "color": [
+        0.55,
+        0.54,
+        0.5
+      ],
+      "roughness": 0.95
+    }
+  },
+  "blockout": [
+    {
+      "id": "ground",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        180,
+        60,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "forest-floor"
+    },
+    {
+      "id": "road",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        180,
+        7,
+        0.06
+      ],
+      "location": [
+        0,
+        -20,
+        0.03
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "verge",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        180,
+        4,
+        0.08
+      ],
+      "location": [
+        0,
+        -15,
+        0.04
+      ],
+      "material": "grass-faded"
+    },
+    {
+      "id": "forest-back",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        180,
+        10,
+        24
+      ],
+      "location": [
+        0,
+        30,
+        12
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "forest-far",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        180,
+        6,
+        20
+      ],
+      "location": [
+        0,
+        -30,
+        10
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pad-20",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        16,
+        14,
+        0.06
+      ],
+      "location": [
+        -70,
+        0,
+        0.03
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "pad-21",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        16,
+        14,
+        0.06
+      ],
+      "location": [
+        -35,
+        0,
+        0.03
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "pad-22",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        16,
+        14,
+        0.06
+      ],
+      "location": [
+        0,
+        0,
+        0.03
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "pad-23",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        16,
+        14,
+        0.06
+      ],
+      "location": [
+        35,
+        0,
+        0.03
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "pad-24",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        16,
+        14,
+        0.06
+      ],
+      "location": [
+        70,
+        0,
+        0.03
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "pine-1-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        26
+      ],
+      "location": [
+        -85,
+        18,
+        13.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-1-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.05,
+        4.05,
+        18.2
+      ],
+      "location": [
+        -85,
+        18,
+        16.9
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-2-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        26
+      ],
+      "location": [
+        -52,
+        18,
+        13.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-2-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.05,
+        4.05,
+        18.2
+      ],
+      "location": [
+        -52,
+        18,
+        16.9
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-3-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        26
+      ],
+      "location": [
+        -18,
+        18,
+        13.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-3-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.05,
+        4.05,
+        18.2
+      ],
+      "location": [
+        -18,
+        18,
+        16.9
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-4-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        26
+      ],
+      "location": [
+        18,
+        18,
+        13.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-4-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.05,
+        4.05,
+        18.2
+      ],
+      "location": [
+        18,
+        18,
+        16.9
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-5-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        26
+      ],
+      "location": [
+        52,
+        18,
+        13.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-5-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.05,
+        4.05,
+        18.2
+      ],
+      "location": [
+        52,
+        18,
+        16.9
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-6-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        26
+      ],
+      "location": [
+        85,
+        18,
+        13.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-6-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.05,
+        4.05,
+        18.2
+      ],
+      "location": [
+        85,
+        18,
+        16.9
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "dark-road-north",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        10,
+        7,
+        0.06
+      ],
+      "location": [
+        88,
+        -20,
+        0.031
+      ],
+      "material": "asphalt"
+    }
+  ],
+  "props": [
+    {
+      "id": "post-20",
+      "object": "site-post",
+      "location": [
+        -76,
+        -14.5,
+        0
+      ]
+    },
+    {
+      "id": "table-20",
+      "object": "picnic-table",
+      "location": [
+        -67,
+        -2,
+        0
+      ]
+    },
+    {
+      "id": "ring-20",
+      "object": "fire-ring",
+      "location": [
+        -73,
+        2,
+        0
+      ]
+    },
+    {
+      "id": "tent-20",
+      "object": "tent",
+      "location": [
+        -68,
+        6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "post-21",
+      "object": "site-post",
+      "location": [
+        -41,
+        -14.5,
+        0
+      ]
+    },
+    {
+      "id": "table-21",
+      "object": "picnic-table",
+      "location": [
+        -32,
+        -2,
+        0
+      ]
+    },
+    {
+      "id": "ring-21",
+      "object": "fire-ring",
+      "location": [
+        -38,
+        2,
+        0
+      ]
+    },
+    {
+      "id": "tent-21",
+      "object": "tent",
+      "location": [
+        -33,
+        6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "post-22",
+      "object": "site-post",
+      "location": [
+        -6,
+        -14.5,
+        0
+      ]
+    },
+    {
+      "id": "table-22",
+      "object": "picnic-table",
+      "location": [
+        3,
+        -2,
+        0
+      ]
+    },
+    {
+      "id": "ring-22",
+      "object": "fire-ring",
+      "location": [
+        -3,
+        2,
+        0
+      ]
+    },
+    {
+      "id": "tent-22",
+      "object": "tent",
+      "location": [
+        2,
+        6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "post-23",
+      "object": "site-post",
+      "location": [
+        29,
+        -14.5,
+        0
+      ]
+    },
+    {
+      "id": "table-23",
+      "object": "picnic-table",
+      "location": [
+        38,
+        -2,
+        0
+      ]
+    },
+    {
+      "id": "ring-23",
+      "object": "fire-ring",
+      "location": [
+        32,
+        2,
+        0
+      ]
+    },
+    {
+      "id": "tent-23",
+      "object": "tent",
+      "location": [
+        37,
+        6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "post-24",
+      "object": "site-post",
+      "location": [
+        64,
+        -14.5,
+        0
+      ]
+    },
+    {
+      "id": "table-24",
+      "object": "picnic-table",
+      "location": [
+        73,
+        -2,
+        0
+      ]
+    },
+    {
+      "id": "ring-24",
+      "object": "fire-ring",
+      "location": [
+        67,
+        2,
+        0
+      ]
+    },
+    {
+      "id": "tent-24",
+      "object": "tent",
+      "location": [
+        72,
+        6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "split-boulder",
+      "object": "split-boulder",
+      "location": [
+        -41,
+        -6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        20
+      ]
+    },
+    {
+      "id": "chalkboard",
+      "object": "chalkboard",
+      "location": [
+        5,
+        -12,
+        0
+      ]
+    },
+    {
+      "id": "chair-1",
+      "object": "camp-chair",
+      "location": [
+        -2.5,
+        4,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        135
+      ]
+    },
+    {
+      "id": "chair-2",
+      "object": "camp-chair",
+      "location": [
+        -4.5,
+        3.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        200
+      ]
+    },
+    {
+      "id": "chair-3",
+      "object": "camp-chair",
+      "location": [
+        -1.2,
+        1.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "cooler",
+      "object": "cooler",
+      "location": [
+        5.5,
+        -2,
+        0
+      ]
+    },
+    {
+      "id": "notebook",
+      "object": "notebook",
+      "location": [
+        -32,
+        -2,
+        0.75
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "height_m": 0.02
+    },
+    {
+      "id": "postcard",
+      "object": "postcard",
+      "location": [
+        -31.4,
+        -2.2,
+        0.75
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        10
+      ],
+      "height_m": 0.002
+    },
+    {
+      "id": "camera",
+      "object": "camera",
+      "location": [
+        -32.6,
+        -1.6,
+        0.75
+      ]
+    },
+    {
+      "id": "bicycle",
+      "object": "bicycle",
+      "location": [
+        -39,
+        -9.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        10
+      ]
+    },
+    {
+      "id": "van",
+      "object": "camper-van",
+      "location": [
+        -80,
+        -4,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "van-keys",
+      "object": "van-keys",
+      "location": [
+        -78.9,
+        -5.5,
+        1.2
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "fixed_sites_day1": {
+      "note": "Day 1, golden hour. Pitch tents with Dell; meet the four, each want in two lines; the split boulder at 21; the People page. Talking to all four opens Reconcile at the table at 21.",
+      "world": {
+        "color": [
+          0.65,
+          0.62,
+          0.55
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "sun-gold",
+          "type": "SUN",
+          "location": [
+            -90,
+            -40,
+            18
+          ],
+          "energy": 3.5,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.76,
+            0.48
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "canopy-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            30
+          ],
+          "energy": 3000,
+          "size": 120,
+          "color": [
+            0.75,
+            0.8,
+            0.65
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -76,
+          -18,
+          1.65
+        ],
+        "look_at": [
+          -35,
+          -4,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -76,
+          -18,
+          0
+        ],
+        "facing_deg": 288.9
+      },
+      "hide": [
+        "bicycle",
+        "van-keys",
+        "camera",
+        "cooler"
+      ],
+      "interactions": [
+        {
+          "prop": "tent-20",
+          "verb": "Pitch the tent with Dell"
+        },
+        {
+          "prop": "split-boulder",
+          "verb": "Look into the crack"
+        },
+        {
+          "prop": "notebook",
+          "verb": "Write a portrait line"
+        },
+        {
+          "prop": "chalkboard",
+          "verb": "Read Dell's board"
+        },
+        {
+          "prop": "table-21",
+          "verb": "Sit down with the map",
+          "leads_to": "reconcile_1"
+        }
+      ]
+    },
+    "fixed_sites_day2": {
+      "note": "Day 2 morning, overcast and flat; fewer birds. Ines's site 7 photo shows a clearing; the postcard has two blank lines; Lottie walks up for the bicycle at the boulder. Leaving site 20 southward.",
+      "world": {
+        "color": [
+          0.6,
+          0.62,
+          0.64
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "overcast",
+          "type": "SUN",
+          "location": [
+            0,
+            0,
+            40
+          ],
+          "energy": 1.4,
+          "size": 10,
+          "color": [
+            0.82,
+            0.85,
+            0.88
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "sky-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            30
+          ],
+          "energy": 4000,
+          "size": 120,
+          "color": [
+            0.82,
+            0.85,
+            0.88
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -28,
+          -6,
+          1.65
+        ],
+        "look_at": [
+          -32,
+          -2,
+          0.8
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -28,
+          -6,
+          0
+        ],
+        "facing_deg": 45.0
+      },
+      "hide": [
+        "van-keys"
+      ],
+      "interactions": [
+        {
+          "prop": "camera",
+          "verb": "Look at the site 7 photo"
+        },
+        {
+          "prop": "postcard",
+          "verb": "Read Agnes's postcard"
+        },
+        {
+          "prop": "bicycle",
+          "verb": "Whose bike is it?"
+        },
+        {
+          "prop": "notebook",
+          "verb": "Show Ines the notebook"
+        },
+        {
+          "prop": "post-20",
+          "verb": "Walk south",
+          "leads_to": "reconcile_2"
+        }
+      ]
+    },
+    "dusk_choice": {
+      "note": "19:30, blue hour, at the edge of site 20 by the van. Rafe gives Tam the keys. Each persuaded person says the tie that will forget them: ask them to stay, or let them go home. Or drive out alone.",
+      "world": {
+        "color": [
+          0.18,
+          0.22,
+          0.36
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "blue-hour",
+          "type": "SUN",
+          "location": [
+            -60,
+            20,
+            20
+          ],
+          "energy": 0.6,
+          "size": 6,
+          "color": [
+            0.45,
+            0.55,
+            0.85
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "sky-fill",
+          "type": "AREA",
+          "location": [
+            -75,
+            -10,
+            25
+          ],
+          "energy": 900,
+          "size": 40,
+          "color": [
+            0.45,
+            0.55,
+            0.85
+          ],
+          "look_at": [
+            -75,
+            -5,
+            0
+          ]
+        },
+        {
+          "name": "lantern-17-far",
+          "type": "POINT",
+          "location": [
+            -90,
+            -26,
+            1.0
+          ],
+          "energy": 8,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.8,
+            0.55
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -74,
+          -10,
+          1.65
+        ],
+        "look_at": [
+          -79,
+          -5,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -74,
+          -10,
+          0
+        ],
+        "facing_deg": 45.0
+      },
+      "hide": [
+        "chalkboard",
+        "camera"
+      ],
+      "interactions": [
+        {
+          "prop": "van-keys",
+          "verb": "Take the keys"
+        },
+        {
+          "prop": "post-20",
+          "verb": "Ask them to stay",
+          "leads_to": "torch_loop_2"
+        },
+        {
+          "prop": "van",
+          "verb": "Drive out alone",
+          "leads_to": "torch_drive_out"
+        }
+      ]
+    }
+  }
+}

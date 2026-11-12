@@ -1,0 +1,513 @@
+{
+  "game": "missing-campsites",
+  "location": "the-clearing",
+  "name": "The clearing where the creek bend was",
+  "reference": "assets/locations/the-clearing.jpg",
+  "bounds_m": [
+    40,
+    40,
+    20
+  ],
+  "origin": "centre of the ring; +y toward the far side the player walks out of, the player enters from -y",
+  "materials": {
+    "pearl-gravel": {
+      "color": [
+        0.8,
+        0.8,
+        0.78
+      ],
+      "roughness": 0.7
+    },
+    "cool-green": {
+      "color": [
+        0.2,
+        0.42,
+        0.32
+      ],
+      "roughness": 0.8
+    },
+    "cool-grass": {
+      "color": [
+        0.22,
+        0.48,
+        0.3
+      ],
+      "roughness": 0.8
+    },
+    "clean-trunk": {
+      "color": [
+        0.34,
+        0.26,
+        0.22
+      ],
+      "roughness": 0.7
+    },
+    "still-water": {
+      "color": [
+        0.7,
+        0.74,
+        0.74
+      ],
+      "roughness": 0.05
+    },
+    "pearl": {
+      "color": [
+        0.93,
+        0.94,
+        0.92
+      ],
+      "roughness": 1.0,
+      "emission": 0.4
+    },
+    "cedar-clean": {
+      "color": [
+        0.5,
+        0.33,
+        0.22
+      ],
+      "roughness": 0.7
+    },
+    "cream": {
+      "color": [
+        0.91,
+        0.87,
+        0.75
+      ],
+      "roughness": 0.9
+    },
+    "glass": {
+      "color": [
+        0.72,
+        0.78,
+        0.8
+      ],
+      "roughness": 0.1,
+      "emission": 0.2
+    }
+  },
+  "blockout": [
+    {
+      "id": "lawn",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        40,
+        40,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "cool-grass"
+    },
+    {
+      "id": "creek-ring",
+      "shape": "cylinder",
+      "role": "water",
+      "size_m": [
+        22,
+        22,
+        0.04
+      ],
+      "location": [
+        0,
+        0,
+        0.01
+      ],
+      "material": "still-water"
+    },
+    {
+      "id": "inner-lawn",
+      "shape": "cylinder",
+      "role": "terrain",
+      "size_m": [
+        19,
+        19,
+        0.06
+      ],
+      "location": [
+        0,
+        0,
+        0.02
+      ],
+      "material": "cool-grass"
+    },
+    {
+      "id": "pearl-sky",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        300,
+        2,
+        120
+      ],
+      "location": [
+        0,
+        150,
+        60
+      ],
+      "material": "pearl",
+      "collide": false
+    },
+    {
+      "id": "saplings-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        10,
+        0.4,
+        0.5
+      ],
+      "location": [
+        0,
+        3.5,
+        0.25
+      ],
+      "material": "cool-green"
+    },
+    {
+      "id": "saplings-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        10,
+        0.4,
+        0.5
+      ],
+      "location": [
+        0,
+        -3.5,
+        0.25
+      ],
+      "material": "cool-green"
+    },
+    {
+      "id": "saplings-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.4,
+        7,
+        0.5
+      ],
+      "location": [
+        5,
+        0,
+        0.25
+      ],
+      "material": "cool-green"
+    },
+    {
+      "id": "saplings-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.4,
+        7,
+        0.5
+      ],
+      "location": [
+        -5,
+        0,
+        0.25
+      ],
+      "material": "cool-green"
+    },
+    {
+      "id": "tree-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        14
+      ],
+      "location": [
+        17.0,
+        0.0,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "tree-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        14
+      ],
+      "location": [
+        14.722,
+        8.5,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "tree-3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        14
+      ],
+      "location": [
+        8.5,
+        14.722,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "tree-4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        14
+      ],
+      "location": [
+        0.0,
+        17.0,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "tree-5",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        14
+      ],
+      "location": [
+        -8.5,
+        14.722,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "tree-6",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        14
+      ],
+      "location": [
+        -14.722,
+        8.5,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "tree-7",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        14
+      ],
+      "location": [
+        -17.0,
+        0.0,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "tree-8",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        14
+      ],
+      "location": [
+        -14.722,
+        -8.5,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "tree-9",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        14
+      ],
+      "location": [
+        -8.5,
+        -14.722,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "tree-10",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        14
+      ],
+      "location": [
+        -0.0,
+        -17.0,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "tree-11",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        14
+      ],
+      "location": [
+        8.5,
+        -14.722,
+        7
+      ],
+      "material": "clean-trunk"
+    },
+    {
+      "id": "tree-12",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        14
+      ],
+      "location": [
+        14.722,
+        -8.5,
+        7
+      ],
+      "material": "clean-trunk"
+    }
+  ],
+  "props": [
+    {
+      "id": "register-box",
+      "object": "register-box",
+      "location": [
+        0,
+        0,
+        0.05
+      ]
+    }
+  ],
+  "scenes": {
+    "the_clearing": {
+      "note": "Where the creek bend was: a ring of saplings in the shape of the register box, and the creek running round it without sound. No sun. Abel, if brought, stands at it. Walking out the far side.",
+      "world": {
+        "color": [
+          0.93,
+          0.94,
+          0.92
+        ],
+        "strength": 1.2
+      },
+      "lights": [
+        {
+          "name": "pearl-dome",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            25
+          ],
+          "energy": 5000,
+          "size": 60,
+          "color": [
+            0.95,
+            0.96,
+            0.94
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "pearl-side",
+          "type": "AREA",
+          "location": [
+            0,
+            -25,
+            8
+          ],
+          "energy": 1500,
+          "size": 40,
+          "color": [
+            0.95,
+            0.96,
+            0.94
+          ],
+          "look_at": [
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -16,
+          1.65
+        ],
+        "look_at": [
+          0,
+          0,
+          0.5
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -16,
+          0
+        ],
+        "facing_deg": 0.0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "register-box",
+          "verb": "Read what the saplings spell"
+        },
+        {
+          "prop": "register-box",
+          "verb": "Walk out the far side",
+          "leads_to": "pattern_walk_2"
+        }
+      ]
+    }
+  }
+}

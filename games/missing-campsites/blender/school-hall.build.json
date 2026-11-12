@@ -1,0 +1,546 @@
+{
+  "game": "missing-campsites",
+  "location": "school-hall",
+  "name": "The school hall",
+  "reference": "assets/locations/school-hall.jpg",
+  "bounds_m": [
+    30,
+    20,
+    7
+  ],
+  "origin": "floor centre; +y toward the stage and the piano, the audience rows on -y with the aisle at x = 0; the player sits in the second row on the right of the aisle",
+  "materials": {
+    "hall-wall": {
+      "color": [
+        0.8,
+        0.77,
+        0.7
+      ],
+      "roughness": 0.9
+    },
+    "parquet": {
+      "color": [
+        0.36,
+        0.22,
+        0.14
+      ],
+      "roughness": 0.4
+    },
+    "stage-oak": {
+      "color": [
+        0.55,
+        0.36,
+        0.2
+      ],
+      "roughness": 0.6
+    },
+    "curtain": {
+      "color": [
+        0.35,
+        0.22,
+        0.14
+      ],
+      "roughness": 1.0
+    },
+    "screen": {
+      "color": [
+        0.92,
+        0.92,
+        0.9
+      ],
+      "roughness": 1.0
+    },
+    "proscenium": {
+      "color": [
+        0.1,
+        0.08,
+        0.07
+      ],
+      "roughness": 0.9
+    },
+    "chair-black": {
+      "color": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "roughness": 0.6
+    },
+    "window": {
+      "color": [
+        0.25,
+        0.28,
+        0.35
+      ],
+      "roughness": 0.1,
+      "emission": 0.2
+    },
+    "door": {
+      "color": [
+        0.4,
+        0.22,
+        0.14
+      ],
+      "roughness": 0.7
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        30,
+        20,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "parquet"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        30,
+        20,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        7.05
+      ],
+      "material": "hall-wall"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.2,
+        20,
+        7
+      ],
+      "location": [
+        -15,
+        0,
+        3.5
+      ],
+      "material": "hall-wall"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.2,
+        20,
+        7
+      ],
+      "location": [
+        15,
+        0,
+        3.5
+      ],
+      "material": "hall-wall"
+    },
+    {
+      "id": "wall-back",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        30,
+        0.2,
+        7
+      ],
+      "location": [
+        0,
+        -10,
+        3.5
+      ],
+      "material": "hall-wall"
+    },
+    {
+      "id": "wall-stage",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        30,
+        0.2,
+        7
+      ],
+      "location": [
+        0,
+        10,
+        3.5
+      ],
+      "material": "hall-wall"
+    },
+    {
+      "id": "stage",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        18,
+        5,
+        1.0
+      ],
+      "location": [
+        0,
+        7.4,
+        0.5
+      ],
+      "material": "stage-oak"
+    },
+    {
+      "id": "proscenium-left",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.4,
+        6.0
+      ],
+      "location": [
+        -9.4,
+        4.9,
+        3.0
+      ],
+      "material": "proscenium"
+    },
+    {
+      "id": "proscenium-right",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.4,
+        6.0
+      ],
+      "location": [
+        9.4,
+        4.9,
+        3.0
+      ],
+      "material": "proscenium"
+    },
+    {
+      "id": "proscenium-top",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        20,
+        0.4,
+        0.8
+      ],
+      "location": [
+        0,
+        4.9,
+        6.2
+      ],
+      "material": "proscenium"
+    },
+    {
+      "id": "curtain-left",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5.0,
+        0.2,
+        4.8
+      ],
+      "location": [
+        -5.5,
+        9.0,
+        3.4
+      ],
+      "material": "curtain"
+    },
+    {
+      "id": "curtain-right",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5.0,
+        0.2,
+        4.8
+      ],
+      "location": [
+        5.5,
+        9.0,
+        3.4
+      ],
+      "material": "curtain"
+    },
+    {
+      "id": "screen",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6.0,
+        0.05,
+        3.8
+      ],
+      "location": [
+        0,
+        9.3,
+        3.0
+      ],
+      "material": "screen"
+    },
+    {
+      "id": "door-west",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.05,
+        1.2,
+        2.2
+      ],
+      "location": [
+        -14.88,
+        3.5,
+        1.1
+      ],
+      "material": "door",
+      "collide": false
+    },
+    {
+      "id": "door-east",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.05,
+        1.2,
+        2.2
+      ],
+      "location": [
+        14.88,
+        3.5,
+        1.1
+      ],
+      "material": "door",
+      "collide": false
+    },
+    {
+      "id": "seats-left",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6.5,
+        9,
+        0.85
+      ],
+      "location": [
+        -4.5,
+        -2.0,
+        0.42
+      ],
+      "material": "chair-black"
+    },
+    {
+      "id": "seats-right",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6.5,
+        9,
+        0.85
+      ],
+      "location": [
+        4.5,
+        -2.0,
+        0.42
+      ],
+      "material": "chair-black"
+    },
+    {
+      "id": "seats-far-left",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3.5,
+        9,
+        0.85
+      ],
+      "location": [
+        -12,
+        -2.0,
+        0.42
+      ],
+      "material": "chair-black"
+    },
+    {
+      "id": "seats-far-right",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3.5,
+        9,
+        0.85
+      ],
+      "location": [
+        12,
+        -2.0,
+        0.42
+      ],
+      "material": "chair-black"
+    },
+    {
+      "id": "window-wl",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.05,
+        1.0,
+        1.6
+      ],
+      "location": [
+        -14.88,
+        -4,
+        5.2
+      ],
+      "material": "window",
+      "collide": false
+    },
+    {
+      "id": "window-wr",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.05,
+        1.0,
+        1.6
+      ],
+      "location": [
+        14.88,
+        -4,
+        5.2
+      ],
+      "material": "window",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "upright-piano",
+      "object": "upright-piano",
+      "location": [
+        0,
+        8.2,
+        1.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "programme",
+      "object": "programme",
+      "location": [
+        2.0,
+        1.7,
+        0.86
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        5
+      ],
+      "height_m": 0.002
+    }
+  ],
+  "scenes": {
+    "recital": {
+      "note": "The One Who Left. Monday at four, Ada's recital. Stage light on the piano, the hall dim. Tam in the second row; a programme on the saved seat beside; the notebook open at Rafe's page.",
+      "world": {
+        "color": [
+          0.03,
+          0.025,
+          0.02
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "stage-key",
+          "type": "SPOT",
+          "location": [
+            0,
+            3.0,
+            6.5
+          ],
+          "energy": 900,
+          "size": 0.6,
+          "color": [
+            1.0,
+            0.88,
+            0.7
+          ],
+          "look_at": [
+            0,
+            8.2,
+            1.6
+          ]
+        },
+        {
+          "name": "stage-wash",
+          "type": "AREA",
+          "location": [
+            0,
+            6.5,
+            6.8
+          ],
+          "energy": 400,
+          "size": 6,
+          "color": [
+            1.0,
+            0.85,
+            0.65
+          ],
+          "look_at": [
+            0,
+            8,
+            1
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          1.4,
+          1.6,
+          1.15
+        ],
+        "look_at": [
+          0,
+          8.2,
+          1.8
+        ],
+        "lens_mm": 32,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          1.4,
+          1.6,
+          0
+        ],
+        "facing_deg": 12.0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "programme",
+          "verb": "Read the programme"
+        }
+      ]
+    }
+  }
+}
