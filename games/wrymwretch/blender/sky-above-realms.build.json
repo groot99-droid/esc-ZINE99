@@ -1,0 +1,673 @@
+{
+  "game": "wrymwretch",
+  "location": "sky-above-realms",
+  "name": "The sky above the realms",
+  "reference": "assets/locations/sky-above-realms.jpg",
+  "bounds_m": [
+    400,
+    400,
+    200
+  ],
+  "origin": "floor centre at the painted map of the six realms; +y toward the north peaks and the gold-white mountains of Above; West at -x, East (the sea) at +x, Below toward -y; the playable sky is the air above, the first light high over the map",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "realm-west": {
+      "color": [
+        0.361,
+        0.549,
+        0.251
+      ],
+      "roughness": 0.9
+    },
+    "realm-north": {
+      "color": [
+        0.706,
+        0.816,
+        0.941
+      ],
+      "roughness": 0.8
+    },
+    "realm-south": {
+      "color": [
+        0.784,
+        0.549,
+        0.204
+      ],
+      "roughness": 0.9
+    },
+    "realm-east": {
+      "color": [
+        0.173,
+        0.408,
+        0.69
+      ],
+      "roughness": 0.2
+    },
+    "realm-below": {
+      "color": [
+        0.22,
+        0.13,
+        0.32
+      ],
+      "roughness": 0.9
+    },
+    "realm-above": {
+      "color": [
+        0.91,
+        0.753,
+        0.376
+      ],
+      "roughness": 0.6,
+      "metallic": 0.4
+    },
+    "cloud-bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.8
+    },
+    "first-light": {
+      "color": [
+        0.957,
+        0.965,
+        1.0
+      ],
+      "roughness": 0.3,
+      "emission": 8.0
+    },
+    "new-stars": {
+      "color": [
+        0.8,
+        0.847,
+        0.918
+      ],
+      "roughness": 0.3,
+      "emission": 3.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "map-base",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        400,
+        400,
+        0.5
+      ],
+      "location": [
+        0,
+        0,
+        -0.25
+      ],
+      "material": "void"
+    },
+    {
+      "id": "realm-below",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        360,
+        120,
+        1
+      ],
+      "location": [
+        0,
+        -130,
+        0.5
+      ],
+      "material": "realm-below"
+    },
+    {
+      "id": "realm-west",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        110,
+        200,
+        2
+      ],
+      "location": [
+        -140,
+        30,
+        2
+      ],
+      "material": "realm-west"
+    },
+    {
+      "id": "realm-north",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        90,
+        160,
+        2
+      ],
+      "location": [
+        -40,
+        50,
+        2
+      ],
+      "material": "realm-north"
+    },
+    {
+      "id": "realm-south",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        90,
+        160,
+        2
+      ],
+      "location": [
+        50,
+        50,
+        2
+      ],
+      "material": "realm-south"
+    },
+    {
+      "id": "realm-east",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        100,
+        200,
+        0.6
+      ],
+      "location": [
+        145,
+        30,
+        1.2
+      ],
+      "material": "realm-east"
+    },
+    {
+      "id": "peaks-north",
+      "shape": "cylinder",
+      "role": "terrain",
+      "size_m": [
+        60,
+        60,
+        18
+      ],
+      "location": [
+        -40,
+        60,
+        9
+      ],
+      "material": "realm-north"
+    },
+    {
+      "id": "peak-above",
+      "shape": "cone",
+      "role": "terrain",
+      "size_m": [
+        70,
+        50,
+        40
+      ],
+      "location": [
+        0,
+        165,
+        20
+      ],
+      "material": "realm-above"
+    },
+    {
+      "id": "cloud-border-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        10,
+        200,
+        5
+      ],
+      "location": [
+        -87,
+        30,
+        3.5
+      ],
+      "material": "cloud-bone"
+    },
+    {
+      "id": "cloud-border-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        10,
+        200,
+        5
+      ],
+      "location": [
+        5,
+        30,
+        3.5
+      ],
+      "material": "cloud-bone"
+    },
+    {
+      "id": "cloud-border-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        10,
+        200,
+        5
+      ],
+      "location": [
+        97,
+        30,
+        3.5
+      ],
+      "material": "cloud-bone"
+    },
+    {
+      "id": "cloud-border-south",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        380,
+        12,
+        5
+      ],
+      "location": [
+        0,
+        -72,
+        3.5
+      ],
+      "material": "cloud-bone"
+    },
+    {
+      "id": "cloud-border-north",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        380,
+        12,
+        6
+      ],
+      "location": [
+        0,
+        135,
+        4
+      ],
+      "material": "cloud-bone"
+    },
+    {
+      "id": "first-light-orb",
+      "shape": "sphere",
+      "role": "sky",
+      "size_m": [
+        6,
+        6,
+        6
+      ],
+      "location": [
+        0,
+        60,
+        190
+      ],
+      "material": "first-light",
+      "collide": false
+    },
+    {
+      "id": "star-field",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        800,
+        4,
+        400
+      ],
+      "location": [
+        0,
+        420,
+        120
+      ],
+      "material": "new-stars",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "platform-viewpoint",
+      "object": "memory-platform",
+      "location": [
+        0,
+        -60,
+        116
+      ],
+      "ground": false
+    },
+    {
+      "id": "platform-drift",
+      "object": "memory-platform",
+      "location": [
+        70,
+        40,
+        150
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        20
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "s_first_light": {
+      "note": "Camera only, 45 s: the player stands on nothing as one white light splits into the Sun's Roaring Anger (gold) and the Moon's Silent Tear (silver); a title card.",
+      "world": {
+        "color": [
+          0.051,
+          0.055,
+          0.078
+        ],
+        "strength": 0.05
+      },
+      "lights": [
+        {
+          "name": "first-light",
+          "type": "POINT",
+          "location": [
+            0,
+            60,
+            188
+          ],
+          "energy": 4000000.0,
+          "size": 4,
+          "color": [
+            0.957,
+            0.965,
+            1.0
+          ]
+        },
+        {
+          "name": "sun-flare",
+          "type": "SUN",
+          "location": [
+            -60,
+            60,
+            180
+          ],
+          "energy": 2.5,
+          "size": 1,
+          "color": [
+            0.973,
+            0.784,
+            0.314
+          ],
+          "rotation_deg": [
+            40,
+            0,
+            -30
+          ]
+        },
+        {
+          "name": "moon-tear",
+          "type": "SUN",
+          "location": [
+            60,
+            60,
+            180
+          ],
+          "energy": 1.2,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "rotation_deg": [
+            40,
+            0,
+            30
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SUN",
+          "location": [
+            0,
+            200,
+            150
+          ],
+          "energy": 0.6,
+          "size": 1,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "rotation_deg": [
+            -60,
+            0,
+            180
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -60,
+          121.5
+        ],
+        "look_at": [
+          0,
+          60,
+          185
+        ],
+        "lens_mm": 24,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -60,
+          120
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "platform-viewpoint"
+      ],
+      "interactions": []
+    },
+    "s_end_dormant": {
+      "note": "Ending, Dormant Again: the six realms in ordinary daylight, one held shot over the map; colour returns but no dragon is in the sky.",
+      "world": {
+        "color": [
+          0.604,
+          0.69,
+          0.8
+        ],
+        "strength": 0.9
+      },
+      "lights": [
+        {
+          "name": "daylight",
+          "type": "SUN",
+          "location": [
+            0,
+            -100,
+            190
+          ],
+          "energy": 3.5,
+          "size": 1,
+          "color": [
+            1.0,
+            0.965,
+            0.91
+          ],
+          "rotation_deg": [
+            50,
+            0,
+            15
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SUN",
+          "location": [
+            0,
+            200,
+            150
+          ],
+          "energy": 0.5,
+          "size": 1,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "rotation_deg": [
+            -55,
+            0,
+            180
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -170,
+          140
+        ],
+        "look_at": [
+          0,
+          40,
+          0
+        ],
+        "lens_mm": 24,
+        "mode": "fixed"
+      },
+      "hide": [
+        "platform-viewpoint"
+      ],
+      "interactions": []
+    },
+    "s_end_architect": {
+      "note": "Ending, The Architect Rises: night over the six realms, the sky full of new constellations nobody has a name for; one unfamiliar melody.",
+      "world": {
+        "color": [
+          0.051,
+          0.055,
+          0.078
+        ],
+        "strength": 0.08
+      },
+      "lights": [
+        {
+          "name": "new-stars",
+          "type": "SUN",
+          "location": [
+            0,
+            200,
+            190
+          ],
+          "energy": 0.4,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "rotation_deg": [
+            -50,
+            0,
+            180
+          ]
+        },
+        {
+          "name": "unknown-star",
+          "type": "POINT",
+          "location": [
+            70,
+            60,
+            185
+          ],
+          "energy": 1500000.0,
+          "size": 3,
+          "color": [
+            0.957,
+            0.965,
+            1.0
+          ]
+        },
+        {
+          "name": "realm-glow",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            60
+          ],
+          "energy": 400000.0,
+          "size": 200,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -60,
+          121.5
+        ],
+        "look_at": [
+          40,
+          160,
+          170
+        ],
+        "lens_mm": 24,
+        "mode": "fixed"
+      },
+      "hide": [],
+      "interactions": []
+    }
+  }
+}

@@ -1,0 +1,734 @@
+{
+  "game": "wrymwretch",
+  "location": "bone-choir",
+  "name": "The Bone Choir",
+  "reference": "assets/locations/bone-choir.jpg",
+  "bounds_m": [
+    24,
+    60,
+    25
+  ],
+  "origin": "floor centre on the fused-bone floor; +y toward the horned skull at the far end; the ribs arch over the hall from both sides, the spine runs overhead along it; the 60 x 30 m hall narrowed to 24 m between the ribs",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "fused-bone": {
+      "color": [
+        0.816,
+        0.8,
+        0.753
+      ],
+      "roughness": 0.85
+    },
+    "hum-crack": {
+      "color": [
+        0.973,
+        0.784,
+        0.314
+      ],
+      "roughness": 0.3,
+      "emission": 1.5
+    },
+    "silver-crack": {
+      "color": [
+        0.8,
+        0.847,
+        0.918
+      ],
+      "roughness": 0.3,
+      "emission": 1.2
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        24,
+        60,
+        0.6
+      ],
+      "location": [
+        0,
+        0,
+        -0.3
+      ],
+      "material": "fused-bone"
+    },
+    {
+      "id": "spine",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        2.4,
+        2.4,
+        56
+      ],
+      "location": [
+        0,
+        0,
+        21
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "skull-plinth",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        10,
+        8,
+        1
+      ],
+      "location": [
+        0,
+        25,
+        0.5
+      ],
+      "material": "fused-bone"
+    },
+    {
+      "id": "hum-crack-floor",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        50,
+        0.05
+      ],
+      "location": [
+        0.8,
+        -2,
+        0.03
+      ],
+      "material": "hum-crack",
+      "collide": false
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        60,
+        3
+      ],
+      "location": [
+        -12.5,
+        0,
+        1.5
+      ],
+      "material": "fused-bone"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        60,
+        3
+      ],
+      "location": [
+        12.5,
+        0,
+        1.5
+      ],
+      "material": "fused-bone"
+    },
+    {
+      "id": "vertebra-w1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.6,
+        9
+      ],
+      "location": [
+        -10,
+        -24,
+        4.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "vertebra-e1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.6,
+        9
+      ],
+      "location": [
+        10,
+        -24,
+        4.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "vertebra-w2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.6,
+        9
+      ],
+      "location": [
+        -10,
+        -14,
+        4.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "vertebra-e2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.6,
+        9
+      ],
+      "location": [
+        10,
+        -14,
+        4.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "vertebra-w3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.6,
+        9
+      ],
+      "location": [
+        -10,
+        -4,
+        4.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "vertebra-e3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.6,
+        9
+      ],
+      "location": [
+        10,
+        -4,
+        4.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "vertebra-w4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.6,
+        9
+      ],
+      "location": [
+        -10,
+        6,
+        4.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "vertebra-e4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.6,
+        9
+      ],
+      "location": [
+        10,
+        6,
+        4.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "vertebra-w5",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.6,
+        9
+      ],
+      "location": [
+        -10,
+        16,
+        4.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "vertebra-e5",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.6,
+        9
+      ],
+      "location": [
+        10,
+        16,
+        4.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "silver-crack-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.1,
+        40,
+        0.3
+      ],
+      "location": [
+        -11.9,
+        0,
+        2.5
+      ],
+      "material": "silver-crack",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "bone-w1",
+      "object": "wyrm-rib",
+      "location": [
+        -8,
+        -25,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -12,
+        90
+      ]
+    },
+    {
+      "id": "bone-e1",
+      "object": "wyrm-rib",
+      "location": [
+        8,
+        -25,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        12,
+        -90
+      ]
+    },
+    {
+      "id": "bone-w2",
+      "object": "wyrm-rib",
+      "location": [
+        -8,
+        -15,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -12,
+        90
+      ]
+    },
+    {
+      "id": "bone-e2",
+      "object": "wyrm-rib",
+      "location": [
+        8,
+        -15,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        12,
+        -90
+      ]
+    },
+    {
+      "id": "bone-w3",
+      "object": "wyrm-rib",
+      "location": [
+        -8,
+        -5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -12,
+        90
+      ]
+    },
+    {
+      "id": "bone-e3",
+      "object": "wyrm-rib",
+      "location": [
+        8,
+        -5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        12,
+        -90
+      ]
+    },
+    {
+      "id": "bone-w4",
+      "object": "wyrm-rib",
+      "location": [
+        -8,
+        5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -12,
+        90
+      ]
+    },
+    {
+      "id": "bone-e4",
+      "object": "wyrm-rib",
+      "location": [
+        8,
+        5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        12,
+        -90
+      ]
+    },
+    {
+      "id": "bone-w5",
+      "object": "wyrm-rib",
+      "location": [
+        -8,
+        15,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -12,
+        90
+      ]
+    },
+    {
+      "id": "bone-e5",
+      "object": "wyrm-rib",
+      "location": [
+        8,
+        15,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        12,
+        -90
+      ]
+    },
+    {
+      "id": "bone-w6",
+      "object": "wyrm-rib",
+      "location": [
+        -8,
+        21,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -12,
+        90
+      ]
+    },
+    {
+      "id": "bone-e6",
+      "object": "wyrm-rib",
+      "location": [
+        8,
+        21,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        12,
+        -90
+      ]
+    },
+    {
+      "id": "wyrm-skull",
+      "object": "wyrm-skull",
+      "location": [
+        0,
+        25,
+        1
+      ]
+    },
+    {
+      "id": "crystal-choir",
+      "object": "memory-crystal",
+      "location": [
+        -6,
+        -22,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s_bone_choir": {
+      "note": "A hall built in a colossal wyrm's skeleton, lit by the hum of its own bones, faint gold and silver glints; a Stoneback Behemoth and two Fossil Wurms guard it; twelve bones to hear.",
+      "world": {
+        "color": [
+          0.031,
+          0.031,
+          0.047
+        ],
+        "strength": 0.06
+      },
+      "lights": [
+        {
+          "name": "bone-hum-south",
+          "type": "AREA",
+          "location": [
+            0,
+            -15,
+            14
+          ],
+          "energy": 2500,
+          "size": 16,
+          "color": [
+            0.925,
+            0.902,
+            0.839
+          ],
+          "look_at": [
+            0,
+            -15,
+            0
+          ]
+        },
+        {
+          "name": "bone-hum-north",
+          "type": "AREA",
+          "location": [
+            0,
+            10,
+            14
+          ],
+          "energy": 2500,
+          "size": 16,
+          "color": [
+            0.925,
+            0.902,
+            0.839
+          ],
+          "look_at": [
+            0,
+            10,
+            0
+          ]
+        },
+        {
+          "name": "skull-gold",
+          "type": "POINT",
+          "location": [
+            0,
+            22,
+            4
+          ],
+          "energy": 600,
+          "size": 0.6,
+          "color": [
+            0.973,
+            0.784,
+            0.314
+          ]
+        },
+        {
+          "name": "silver-glints",
+          "type": "POINT",
+          "location": [
+            -9,
+            -5,
+            6
+          ],
+          "energy": 300,
+          "size": 0.4,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SPOT",
+          "location": [
+            0,
+            -28,
+            10
+          ],
+          "energy": 1500,
+          "size": 0.5,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "look_at": [
+            0,
+            25,
+            3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -28.5,
+          3.5
+        ],
+        "look_at": [
+          0.0,
+          -18.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -24,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "crystal-choir",
+          "verb": "Record"
+        },
+        {
+          "prop": "bone-w1",
+          "verb": "Listen to the bone's note"
+        },
+        {
+          "prop": "bone-w2",
+          "verb": "Listen to the bone's note"
+        },
+        {
+          "prop": "bone-w3",
+          "verb": "Listen to the bone's note"
+        },
+        {
+          "prop": "bone-w4",
+          "verb": "Listen to the bone's note"
+        },
+        {
+          "prop": "bone-w5",
+          "verb": "Listen to the bone's note"
+        },
+        {
+          "prop": "bone-w6",
+          "verb": "Listen to the bone's note"
+        },
+        {
+          "prop": "bone-e1",
+          "verb": "Listen to the bone's note"
+        },
+        {
+          "prop": "bone-e2",
+          "verb": "Listen to the bone's note"
+        },
+        {
+          "prop": "bone-e3",
+          "verb": "Listen to the bone's note"
+        },
+        {
+          "prop": "bone-e4",
+          "verb": "Listen to the bone's note"
+        },
+        {
+          "prop": "bone-e5",
+          "verb": "Listen to the bone's note"
+        },
+        {
+          "prop": "bone-e6",
+          "verb": "Listen to the bone's note"
+        },
+        {
+          "prop": "wyrm-skull",
+          "verb": "Stand before the skull and tune the choir",
+          "leads_to": "s_heart_choir"
+        }
+      ]
+    }
+  }
+}

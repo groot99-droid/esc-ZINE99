@@ -1,0 +1,829 @@
+{
+  "game": "wrymwretch",
+  "location": "western-groves",
+  "name": "The western groves and the elder-tree",
+  "reference": "assets/locations/western-groves.jpg",
+  "bounds_m": [
+    120,
+    80,
+    40
+  ],
+  "origin": "floor centre in the cedar glade; +y up the path toward the great elder-tree at the far end; the split tree in the middle ground; the elder-tree clearing (s_elder_tree, about 40 x 40 m) is the +y end",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "moss": {
+      "color": [
+        0.361,
+        0.549,
+        0.251
+      ],
+      "roughness": 0.95
+    },
+    "moss-forgotten": {
+      "color": [
+        0.29,
+        0.29,
+        0.306
+      ],
+      "roughness": 0.95
+    },
+    "earth": {
+      "color": [
+        0.12,
+        0.11,
+        0.09
+      ],
+      "roughness": 1.0
+    },
+    "fern-silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.5,
+      "metallic": 0.7
+    },
+    "vine-glow": {
+      "color": [
+        0.361,
+        0.549,
+        0.251
+      ],
+      "roughness": 0.3,
+      "emission": 2.0
+    },
+    "shrine-amber": {
+      "color": [
+        0.941,
+        0.627,
+        0.251
+      ],
+      "roughness": 0.3,
+      "emission": 1.2
+    }
+  },
+  "blockout": [
+    {
+      "id": "ground",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        120,
+        80,
+        0.4
+      ],
+      "location": [
+        0,
+        0,
+        -0.2
+      ],
+      "material": "earth"
+    },
+    {
+      "id": "path",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        6,
+        70,
+        0.05
+      ],
+      "location": [
+        0,
+        -3,
+        0.03
+      ],
+      "material": "moss"
+    },
+    {
+      "id": "clearing",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        36,
+        20,
+        0.05
+      ],
+      "location": [
+        0,
+        24,
+        0.03
+      ],
+      "material": "moss"
+    },
+    {
+      "id": "cedar-w1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        3.0,
+        36
+      ],
+      "location": [
+        -12,
+        -30,
+        18
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "cedar-e1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        3.0,
+        36
+      ],
+      "location": [
+        12,
+        -30,
+        18
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "cedar-w2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        3.0,
+        36
+      ],
+      "location": [
+        -18,
+        -16,
+        18
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "cedar-e2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        3.0,
+        36
+      ],
+      "location": [
+        18,
+        -16,
+        18
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "cedar-w3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        3.0,
+        36
+      ],
+      "location": [
+        -12,
+        -2,
+        18
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "cedar-e3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        3.0,
+        36
+      ],
+      "location": [
+        12,
+        -2,
+        18
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "cedar-w4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        3.0,
+        36
+      ],
+      "location": [
+        -18,
+        12,
+        18
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "cedar-e4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        3.0,
+        36
+      ],
+      "location": [
+        18,
+        12,
+        18
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "shrine-arch-w",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        1.5,
+        9
+      ],
+      "location": [
+        -9,
+        6,
+        4.5
+      ],
+      "material": "silver"
+    },
+    {
+      "id": "shrine-glow-w",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.6,
+        0.2,
+        5
+      ],
+      "location": [
+        -9,
+        5.2,
+        4.0
+      ],
+      "material": "shrine-amber",
+      "collide": false
+    },
+    {
+      "id": "ferns-w",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        40,
+        30,
+        1.6
+      ],
+      "location": [
+        -40,
+        -22,
+        0.8
+      ],
+      "material": "fern-silver"
+    },
+    {
+      "id": "shrine-arch-e",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        1.5,
+        9
+      ],
+      "location": [
+        9,
+        6,
+        4.5
+      ],
+      "material": "silver"
+    },
+    {
+      "id": "shrine-glow-e",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.6,
+        0.2,
+        5
+      ],
+      "location": [
+        9,
+        5.2,
+        4.0
+      ],
+      "material": "shrine-amber",
+      "collide": false
+    },
+    {
+      "id": "ferns-e",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        40,
+        30,
+        1.6
+      ],
+      "location": [
+        40,
+        -22,
+        0.8
+      ],
+      "material": "fern-silver"
+    },
+    {
+      "id": "elder-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        7,
+        7,
+        38
+      ],
+      "location": [
+        0,
+        34,
+        19
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "elder-canopy",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        30,
+        14,
+        26
+      ],
+      "location": [
+        0,
+        35,
+        27
+      ],
+      "material": "bone-dark"
+    },
+    {
+      "id": "elder-root-1",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        12,
+        1.2,
+        3.5
+      ],
+      "location": [
+        -8,
+        27.6,
+        1.75
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        0,
+        0,
+        25
+      ]
+    },
+    {
+      "id": "elder-root-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        12,
+        1.2,
+        3.5
+      ],
+      "location": [
+        8,
+        27.6,
+        1.75
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        0,
+        0,
+        -25
+      ]
+    },
+    {
+      "id": "elder-root-3",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        12,
+        1.2,
+        3.5
+      ],
+      "location": [
+        -5,
+        28.5,
+        1.75
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        0,
+        0,
+        70
+      ]
+    },
+    {
+      "id": "elder-root-4",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        12,
+        1.2,
+        3.5
+      ],
+      "location": [
+        5,
+        28.5,
+        1.75
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        0,
+        0,
+        -70
+      ]
+    },
+    {
+      "id": "hanging-vines",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        16,
+        0.3,
+        12
+      ],
+      "location": [
+        0,
+        28.5,
+        12
+      ],
+      "material": "vine-glow",
+      "collide": false
+    },
+    {
+      "id": "moss-patch-greying",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        10,
+        8,
+        0.05
+      ],
+      "location": [
+        7,
+        -2,
+        0.06
+      ],
+      "material": "moss-forgotten"
+    }
+  ],
+  "props": [
+    {
+      "id": "split-tree",
+      "object": "split-tree",
+      "location": [
+        0,
+        -4,
+        0
+      ]
+    },
+    {
+      "id": "boulder-path",
+      "object": "mossy-boulder",
+      "location": [
+        -5,
+        -20,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        30
+      ]
+    },
+    {
+      "id": "boulder-grey",
+      "object": "mossy-boulder",
+      "location": [
+        8,
+        -1,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -15
+      ]
+    },
+    {
+      "id": "boulder-roots",
+      "object": "mossy-boulder",
+      "location": [
+        4,
+        26,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        60
+      ]
+    },
+    {
+      "id": "crystal-elder",
+      "object": "memory-crystal",
+      "location": [
+        -6,
+        24,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s_cedar_grove": {
+      "note": "Afternoon: track the stag's glowing prints up the path, meet the Grove Stag and two Whisperfoxes, reach the split tree; the moss greys and the whisper comes.",
+      "world": {
+        "color": [
+          0.251,
+          0.314,
+          0.227
+        ],
+        "strength": 0.45
+      },
+      "lights": [
+        {
+          "name": "sun-dapple",
+          "type": "SUN",
+          "location": [
+            -40,
+            -30,
+            40
+          ],
+          "energy": 3.0,
+          "size": 1,
+          "color": [
+            0.949,
+            0.902,
+            0.659
+          ],
+          "rotation_deg": [
+            50,
+            0,
+            -40
+          ]
+        },
+        {
+          "name": "amber-shafts",
+          "type": "AREA",
+          "location": [
+            0,
+            6,
+            30
+          ],
+          "energy": 6000,
+          "size": 20,
+          "color": [
+            0.941,
+            0.627,
+            0.251
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SUN",
+          "location": [
+            0,
+            40,
+            30
+          ],
+          "energy": 0.6,
+          "size": 1,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "rotation_deg": [
+            -50,
+            0,
+            180
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -38.5,
+          3.5
+        ],
+        "look_at": [
+          0.0,
+          -28.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -34,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "crystal-elder"
+      ],
+      "interactions": [
+        {
+          "prop": "boulder-path",
+          "verb": "Read the stag's prints"
+        },
+        {
+          "prop": "boulder-grey",
+          "verb": "Touch the greying moss"
+        },
+        {
+          "prop": "split-tree",
+          "verb": "Touch the split tree",
+          "leads_to": "s_run_outpost"
+        }
+      ]
+    },
+    "s_elder_tree": {
+      "note": "Night under the elder-tree: Sylvan wakes; the bond line locks the two portraits into one life bar; tutorial battle with a Rootbound Golem and two Whisperfoxes; then the flight.",
+      "world": {
+        "color": [
+          0.039,
+          0.055,
+          0.078
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "moon",
+          "type": "SUN",
+          "location": [
+            30,
+            -20,
+            40
+          ],
+          "energy": 0.5,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "rotation_deg": [
+            55,
+            0,
+            30
+          ]
+        },
+        {
+          "name": "vine-breath",
+          "type": "AREA",
+          "location": [
+            0,
+            27,
+            10
+          ],
+          "energy": 3000,
+          "size": 14,
+          "color": [
+            0.361,
+            0.549,
+            0.251
+          ],
+          "look_at": [
+            0,
+            15,
+            0
+          ]
+        },
+        {
+          "name": "crystal-glow",
+          "type": "POINT",
+          "location": [
+            -6,
+            24,
+            1.5
+          ],
+          "energy": 120,
+          "size": 0.4,
+          "color": [
+            0.361,
+            0.549,
+            0.251
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SUN",
+          "location": [
+            0,
+            40,
+            30
+          ],
+          "energy": 0.3,
+          "size": 1,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "rotation_deg": [
+            -50,
+            0,
+            180
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          7.5,
+          3.5
+        ],
+        "look_at": [
+          0.0,
+          18.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          12,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "crystal-elder",
+          "verb": "Record"
+        },
+        {
+          "prop": "boulder-roots",
+          "verb": "Kneel at the roots (the bond line)",
+          "leads_to": "s_flight_sylvan"
+        }
+      ]
+    }
+  }
+}

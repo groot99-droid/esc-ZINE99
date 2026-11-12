@@ -1,0 +1,685 @@
+{
+  "game": "wrymwretch",
+  "location": "tidecaller-shore",
+  "name": "The Tidecaller shore",
+  "reference": "assets/locations/tidecaller-shore.jpg",
+  "bounds_m": [
+    60,
+    30,
+    10
+  ],
+  "origin": "floor centre on the pebble beach at the waterline; +y toward the sea; the two cottages at the west (-x), the jetty running out to +y, six shrine stones along the waterline, dark cliffs at both ends of the bay",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "pebbles": {
+      "color": [
+        0.604,
+        0.612,
+        0.627
+      ],
+      "roughness": 0.9
+    },
+    "sea-oil": {
+      "color": [
+        0.086,
+        0.188,
+        0.298
+      ],
+      "roughness": 0.05
+    },
+    "cliff": {
+      "color": [
+        0.165,
+        0.173,
+        0.188
+      ],
+      "roughness": 0.95
+    },
+    "shell-string": {
+      "color": [
+        0.91,
+        0.925,
+        0.949
+      ],
+      "roughness": 0.4
+    },
+    "cottage-silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.5,
+      "metallic": 0.7
+    }
+  },
+  "blockout": [
+    {
+      "id": "beach",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        60,
+        18,
+        0.6
+      ],
+      "location": [
+        0,
+        -6,
+        -0.3
+      ],
+      "material": "pebbles"
+    },
+    {
+      "id": "sea",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        60,
+        12,
+        0.2
+      ],
+      "location": [
+        0,
+        9,
+        -0.1
+      ],
+      "material": "sea-oil",
+      "collide": false
+    },
+    {
+      "id": "sea-far",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        400,
+        300,
+        0.2
+      ],
+      "location": [
+        0,
+        165,
+        -0.3
+      ],
+      "material": "sea-oil",
+      "collide": false
+    },
+    {
+      "id": "jetty",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.5,
+        16,
+        0.8
+      ],
+      "location": [
+        -6,
+        9,
+        0.4
+      ],
+      "material": "bone-dark"
+    },
+    {
+      "id": "cliff-west",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        6,
+        30,
+        10
+      ],
+      "location": [
+        -30,
+        0,
+        5
+      ],
+      "material": "cliff"
+    },
+    {
+      "id": "cliff-east",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        6,
+        26,
+        9
+      ],
+      "location": [
+        30,
+        4,
+        4.5
+      ],
+      "material": "cliff"
+    },
+    {
+      "id": "cottage-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5,
+        5,
+        3.2
+      ],
+      "location": [
+        -21,
+        -9,
+        1.6
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "cottage-1-roof-w",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        3.2,
+        5.4,
+        0.4
+      ],
+      "location": [
+        -22.2,
+        -9,
+        4.2
+      ],
+      "material": "cottage-silver",
+      "rotation_deg": [
+        0,
+        -45,
+        0
+      ]
+    },
+    {
+      "id": "cottage-1-roof-e",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        3.2,
+        5.4,
+        0.4
+      ],
+      "location": [
+        -19.8,
+        -9,
+        4.2
+      ],
+      "material": "cottage-silver",
+      "rotation_deg": [
+        0,
+        45,
+        0
+      ]
+    },
+    {
+      "id": "cottage-1-door",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.0,
+        0.1,
+        2.0
+      ],
+      "location": [
+        -21,
+        -6.45,
+        1.0
+      ],
+      "material": "void",
+      "collide": false
+    },
+    {
+      "id": "shells-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        5,
+        0.1,
+        0.3
+      ],
+      "location": [
+        -21,
+        -6.4,
+        3.2
+      ],
+      "material": "shell-string",
+      "collide": false
+    },
+    {
+      "id": "cottage-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5,
+        5,
+        3.2
+      ],
+      "location": [
+        -15.5,
+        -9,
+        1.6
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "cottage-2-roof-w",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        3.2,
+        5.4,
+        0.4
+      ],
+      "location": [
+        -16.7,
+        -9,
+        4.2
+      ],
+      "material": "cottage-silver",
+      "rotation_deg": [
+        0,
+        -45,
+        0
+      ]
+    },
+    {
+      "id": "cottage-2-roof-e",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        3.2,
+        5.4,
+        0.4
+      ],
+      "location": [
+        -14.3,
+        -9,
+        4.2
+      ],
+      "material": "cottage-silver",
+      "rotation_deg": [
+        0,
+        45,
+        0
+      ]
+    },
+    {
+      "id": "cottage-2-door",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.0,
+        0.1,
+        2.0
+      ],
+      "location": [
+        -15.5,
+        -6.45,
+        1.0
+      ],
+      "material": "void",
+      "collide": false
+    },
+    {
+      "id": "shells-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        5,
+        0.1,
+        0.3
+      ],
+      "location": [
+        -15.5,
+        -6.4,
+        3.2
+      ],
+      "material": "shell-string",
+      "collide": false
+    },
+    {
+      "id": "chimney",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.6,
+        0.6,
+        1.5
+      ],
+      "location": [
+        -22.5,
+        -10,
+        5.0
+      ],
+      "material": "bone-dark"
+    }
+  ],
+  "props": [
+    {
+      "id": "shrine-stone-1",
+      "object": "tide-shrine-stone",
+      "location": [
+        0,
+        2.6,
+        0
+      ]
+    },
+    {
+      "id": "shrine-stone-2",
+      "object": "tide-shrine-stone",
+      "location": [
+        4,
+        2.6,
+        0
+      ]
+    },
+    {
+      "id": "shrine-stone-3",
+      "object": "tide-shrine-stone",
+      "location": [
+        8,
+        2.6,
+        0
+      ]
+    },
+    {
+      "id": "shrine-stone-4",
+      "object": "tide-shrine-stone",
+      "location": [
+        12,
+        2.6,
+        0
+      ]
+    },
+    {
+      "id": "shrine-stone-5",
+      "object": "tide-shrine-stone",
+      "location": [
+        16,
+        2.6,
+        0
+      ]
+    },
+    {
+      "id": "shrine-stone-6",
+      "object": "tide-shrine-stone",
+      "location": [
+        20,
+        2.6,
+        0
+      ]
+    },
+    {
+      "id": "water-flask",
+      "object": "remembering-water-flask",
+      "location": [
+        -13,
+        -5.8,
+        0
+      ]
+    },
+    {
+      "id": "crystal-shore",
+      "object": "memory-crystal",
+      "location": [
+        -9,
+        -2,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s_tide_shore": {
+      "note": "By day: grey sea, flat overcast light, water still like oil; no gulls; the elders murmur; a tide elder's request ('Bring me water that remembers').",
+      "world": {
+        "color": [
+          0.431,
+          0.455,
+          0.486
+        ],
+        "strength": 0.7
+      },
+      "lights": [
+        {
+          "name": "overcast",
+          "type": "SUN",
+          "location": [
+            0,
+            -20,
+            30
+          ],
+          "energy": 1.6,
+          "size": 1,
+          "color": [
+            0.784,
+            0.804,
+            0.831
+          ],
+          "rotation_deg": [
+            40,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "pearl-sea",
+          "type": "AREA",
+          "location": [
+            0,
+            10,
+            6
+          ],
+          "energy": 1200,
+          "size": 20,
+          "color": [
+            0.91,
+            0.925,
+            0.949
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SUN",
+          "location": [
+            0,
+            40,
+            20
+          ],
+          "energy": 0.4,
+          "size": 1,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "rotation_deg": [
+            -60,
+            0,
+            180
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -4.0,
+          -14.5,
+          3.5
+        ],
+        "look_at": [
+          -4.0,
+          -4.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -4,
+          -10,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "crystal-shore"
+      ],
+      "interactions": [
+        {
+          "prop": "shrine-stone-2",
+          "verb": "Read the shrine stone"
+        },
+        {
+          "prop": "water-flask",
+          "verb": "Take the elder's empty flask"
+        },
+        {
+          "prop": "shrine-stone-6",
+          "verb": "Wade out past the last stone",
+          "leads_to": "s_seabed"
+        }
+      ]
+    },
+    "s_shore_night": {
+      "note": "Night: blue bioluminescent glow on the water and on skin and scales; Aquatica rises; battle with a Tide Serpent and Kelprunners; the crystal holds the Record.",
+      "world": {
+        "color": [
+          0.016,
+          0.027,
+          0.055
+        ],
+        "strength": 0.08
+      },
+      "lights": [
+        {
+          "name": "bioluminescence",
+          "type": "AREA",
+          "location": [
+            4,
+            9,
+            0.5
+          ],
+          "energy": 5000,
+          "size": 24,
+          "color": [
+            0.173,
+            0.408,
+            0.69
+          ],
+          "look_at": [
+            4,
+            9,
+            10
+          ]
+        },
+        {
+          "name": "moon",
+          "type": "SUN",
+          "location": [
+            -20,
+            40,
+            30
+          ],
+          "energy": 0.3,
+          "size": 1,
+          "color": [
+            0.91,
+            0.925,
+            0.949
+          ],
+          "rotation_deg": [
+            -50,
+            0,
+            200
+          ]
+        },
+        {
+          "name": "crystal-glow",
+          "type": "POINT",
+          "location": [
+            -9,
+            -2,
+            1.8
+          ],
+          "energy": 140,
+          "size": 0.4,
+          "color": [
+            0.173,
+            0.408,
+            0.69
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          4.0,
+          -8.5,
+          3.5
+        ],
+        "look_at": [
+          4.0,
+          2.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          4,
+          -4,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "crystal-shore",
+          "verb": "Record"
+        },
+        {
+          "prop": "shrine-stone-4",
+          "verb": "Wade out to Aquatica",
+          "leads_to": "s_flight_aquatica"
+        }
+      ]
+    }
+  }
+}

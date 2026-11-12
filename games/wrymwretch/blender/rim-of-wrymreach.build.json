@@ -1,0 +1,1576 @@
+{
+  "game": "wrymwretch",
+  "location": "rim-of-wrymreach",
+  "name": "The Rim of Wrymreach and the Rim Moot",
+  "reference": "assets/locations/rim-of-wrymreach.jpg",
+  "bounds_m": [
+    120,
+    80,
+    60
+  ],
+  "origin": "floor centre on the clifftop plateau; +y toward the chasm edge (y = 20) and the astral vortex beyond; the far cliffs across the chasm at y = 41; the wyrm ribs along the edge to the east, the fossil spine to the west; the Moot camp rings the fire at (0, -12)",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "plateau": {
+      "color": [
+        0.722,
+        0.675,
+        0.565
+      ],
+      "roughness": 0.95
+    },
+    "moss-silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.6,
+      "metallic": 0.6
+    },
+    "cliff": {
+      "color": [
+        0.29,
+        0.275,
+        0.251
+      ],
+      "roughness": 0.95
+    },
+    "fire-pit": {
+      "color": [
+        0.353,
+        0.337,
+        0.314
+      ],
+      "roughness": 0.9
+    },
+    "vortex": {
+      "color": [
+        0.541,
+        0.376,
+        0.784
+      ],
+      "roughness": 0.3,
+      "emission": 2.5
+    },
+    "ghost-fire": {
+      "color": [
+        0.8,
+        0.847,
+        0.918
+      ],
+      "roughness": 0.3,
+      "emission": 2.0
+    },
+    "abyss": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "plateau",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        120,
+        60,
+        0.6
+      ],
+      "location": [
+        0,
+        -10,
+        -0.3
+      ],
+      "material": "plateau"
+    },
+    {
+      "id": "camp-ground",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        34,
+        34,
+        0.05
+      ],
+      "location": [
+        0,
+        -12,
+        0.03
+      ],
+      "material": "bone-dark"
+    },
+    {
+      "id": "ledge-west",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        30,
+        10,
+        3
+      ],
+      "location": [
+        -42,
+        16,
+        1.5
+      ],
+      "material": "cliff"
+    },
+    {
+      "id": "ledge-east",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        30,
+        10,
+        3
+      ],
+      "location": [
+        42,
+        16,
+        1.5
+      ],
+      "material": "cliff"
+    },
+    {
+      "id": "cliff-lip",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        120,
+        1,
+        0.6
+      ],
+      "location": [
+        0,
+        19.6,
+        0.3
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "moss-filigree",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        60,
+        20,
+        0.05
+      ],
+      "location": [
+        -20,
+        -25,
+        0.03
+      ],
+      "material": "moss-silver",
+      "collide": false
+    },
+    {
+      "id": "far-cliff",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        120,
+        6,
+        20
+      ],
+      "location": [
+        0,
+        41,
+        2
+      ],
+      "material": "cliff"
+    },
+    {
+      "id": "ghost-fire-far",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        110,
+        0.5,
+        1.5
+      ],
+      "location": [
+        0,
+        38,
+        12.8
+      ],
+      "material": "ghost-fire",
+      "collide": false
+    },
+    {
+      "id": "abyss",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        120,
+        20,
+        4
+      ],
+      "location": [
+        0,
+        30,
+        -60
+      ],
+      "material": "abyss",
+      "collide": false
+    },
+    {
+      "id": "vortex",
+      "shape": "cone",
+      "role": "sky",
+      "size_m": [
+        80,
+        80,
+        60
+      ],
+      "location": [
+        0,
+        80,
+        -10
+      ],
+      "material": "vortex",
+      "rotation_deg": [
+        180,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "fire-ring",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        0.4
+      ],
+      "location": [
+        0,
+        -12,
+        0.2
+      ],
+      "material": "fire-pit"
+    },
+    {
+      "id": "fossil-spine",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        40,
+        6,
+        6
+      ],
+      "location": [
+        -40,
+        14,
+        3
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        0,
+        0,
+        -5
+      ]
+    }
+  ],
+  "props": [
+    {
+      "id": "rib-1",
+      "object": "wyrm-rib",
+      "location": [
+        20,
+        16.0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -10,
+        90
+      ]
+    },
+    {
+      "id": "rib-2",
+      "object": "wyrm-rib",
+      "location": [
+        25,
+        15.7,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -10,
+        90
+      ]
+    },
+    {
+      "id": "rib-3",
+      "object": "wyrm-rib",
+      "location": [
+        30,
+        15.4,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -10,
+        90
+      ]
+    },
+    {
+      "id": "rib-4",
+      "object": "wyrm-rib",
+      "location": [
+        35,
+        15.1,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -10,
+        90
+      ]
+    },
+    {
+      "id": "rib-5",
+      "object": "wyrm-rib",
+      "location": [
+        40,
+        14.8,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -10,
+        90
+      ]
+    },
+    {
+      "id": "rib-6",
+      "object": "wyrm-rib",
+      "location": [
+        45,
+        14.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -10,
+        90
+      ]
+    },
+    {
+      "id": "rib-7",
+      "object": "wyrm-rib",
+      "location": [
+        50,
+        14.2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -10,
+        90
+      ]
+    },
+    {
+      "id": "rib-8",
+      "object": "wyrm-rib",
+      "location": [
+        55,
+        13.9,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        -10,
+        90
+      ]
+    },
+    {
+      "id": "tent-1",
+      "object": "witness-tent",
+      "location": [
+        -6.5,
+        -0.74,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        30.0
+      ]
+    },
+    {
+      "id": "banner-1",
+      "object": "tribe-banner",
+      "location": [
+        -8.25,
+        2.29,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        30.0
+      ]
+    },
+    {
+      "id": "tent-2",
+      "object": "witness-tent",
+      "location": [
+        -13.0,
+        -12.0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90.0
+      ]
+    },
+    {
+      "id": "banner-2",
+      "object": "tribe-banner",
+      "location": [
+        -16.5,
+        -12.0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90.0
+      ]
+    },
+    {
+      "id": "tent-3",
+      "object": "witness-tent",
+      "location": [
+        -6.5,
+        -23.26,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        150.0
+      ]
+    },
+    {
+      "id": "banner-3",
+      "object": "tribe-banner",
+      "location": [
+        -8.25,
+        -26.29,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        150.0
+      ]
+    },
+    {
+      "id": "tent-4",
+      "object": "witness-tent",
+      "location": [
+        6.5,
+        -23.26,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        210.0
+      ]
+    },
+    {
+      "id": "banner-4",
+      "object": "tribe-banner",
+      "location": [
+        8.25,
+        -26.29,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        210.0
+      ]
+    },
+    {
+      "id": "tent-5",
+      "object": "witness-tent",
+      "location": [
+        13.0,
+        -12.0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        270.0
+      ]
+    },
+    {
+      "id": "banner-5",
+      "object": "tribe-banner",
+      "location": [
+        16.5,
+        -12.0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        270.0
+      ]
+    },
+    {
+      "id": "tent-6",
+      "object": "witness-tent",
+      "location": [
+        6.5,
+        -0.74,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        330.0
+      ]
+    },
+    {
+      "id": "banner-6",
+      "object": "tribe-banner",
+      "location": [
+        8.25,
+        2.29,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        330.0
+      ]
+    },
+    {
+      "id": "tent-healers",
+      "object": "witness-tent",
+      "location": [
+        -28,
+        -28,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        45
+      ]
+    },
+    {
+      "id": "elder-table-1",
+      "object": "game-table",
+      "location": [
+        -0.0,
+        -5.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "elder-table-2",
+      "object": "game-table",
+      "location": [
+        -6.5,
+        -12.0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "elder-table-3",
+      "object": "game-table",
+      "location": [
+        -0.0,
+        -18.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "elder-table-4",
+      "object": "game-table",
+      "location": [
+        6.5,
+        -12.0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ]
+    },
+    {
+      "id": "moot-fire",
+      "object": "moot-fire",
+      "location": [
+        0,
+        -12,
+        0.4
+      ]
+    },
+    {
+      "id": "sky-watch",
+      "object": "sky-watch-telescope",
+      "location": [
+        24,
+        6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "kill-list-slate",
+      "object": "kill-list-slate",
+      "location": [
+        9,
+        -2,
+        0
+      ],
+      "rotation_deg": [
+        80,
+        0,
+        20
+      ]
+    },
+    {
+      "id": "great-crystal",
+      "object": "memory-crystal",
+      "location": [
+        -22,
+        2,
+        0
+      ],
+      "height_m": 2.4
+    }
+  ],
+  "scenes": {
+    "s_rim": {
+      "note": "Landing at the Rim: swirling astral winds over the abyss, wind through the wyrm bones; the six pairs meet and name themselves; a shared dream scouts the ambush. Record (6 entries).",
+      "world": {
+        "color": [
+          0.031,
+          0.031,
+          0.055
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "astral-winds",
+          "type": "AREA",
+          "location": [
+            0,
+            40,
+            -5
+          ],
+          "energy": 200000.0,
+          "size": 60,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ],
+          "look_at": [
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "name": "moon-silver",
+          "type": "SUN",
+          "location": [
+            -40,
+            -40,
+            50
+          ],
+          "energy": 0.4,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "rotation_deg": [
+            45,
+            0,
+            -40
+          ]
+        },
+        {
+          "name": "sun-gold-rim",
+          "type": "SUN",
+          "location": [
+            0,
+            60,
+            30
+          ],
+          "energy": 0.5,
+          "size": 1,
+          "color": [
+            0.973,
+            0.784,
+            0.314
+          ],
+          "rotation_deg": [
+            -60,
+            0,
+            180
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -34.5,
+          3.5
+        ],
+        "look_at": [
+          0.0,
+          -24.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -30,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "tent-1",
+        "banner-1",
+        "tent-2",
+        "banner-2",
+        "tent-3",
+        "banner-3",
+        "tent-4",
+        "banner-4",
+        "tent-5",
+        "banner-5",
+        "tent-6",
+        "banner-6",
+        "tent-healers",
+        "elder-table-1",
+        "elder-table-2",
+        "elder-table-3",
+        "elder-table-4",
+        "moot-fire",
+        "sky-watch",
+        "kill-list-slate",
+        "tent-healers"
+      ],
+      "interactions": [
+        {
+          "prop": "great-crystal",
+          "verb": "Record"
+        },
+        {
+          "prop": "rib-1",
+          "verb": "Share the dream at the bones",
+          "leads_to": "s_rim_ambush"
+        }
+      ]
+    },
+    "s_rim_ambush": {
+      "note": "Battle stage on the Rim: first party battle, three pairs active and three in reserve; Remnant Erasers un-name abilities; smoke on the rim.",
+      "world": {
+        "color": [
+          0.165,
+          0.149,
+          0.157
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "astral-winds",
+          "type": "AREA",
+          "location": [
+            0,
+            40,
+            -5
+          ],
+          "energy": 200000.0,
+          "size": 60,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ],
+          "look_at": [
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "name": "moon-silver",
+          "type": "SUN",
+          "location": [
+            -40,
+            -40,
+            50
+          ],
+          "energy": 0.4,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "rotation_deg": [
+            45,
+            0,
+            -40
+          ]
+        },
+        {
+          "name": "smoke-glow",
+          "type": "AREA",
+          "location": [
+            10,
+            -5,
+            12
+          ],
+          "energy": 8000,
+          "size": 20,
+          "color": [
+            0.784,
+            0.722,
+            0.659
+          ],
+          "look_at": [
+            10,
+            -5,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          22.6,
+          -17.6,
+          11
+        ],
+        "look_at": [
+          10,
+          -5,
+          1.0
+        ],
+        "lens_mm": 32,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          4,
+          -12,
+          0
+        ],
+        "facing_deg": -30
+      },
+      "hide": [
+        "tent-1",
+        "banner-1",
+        "tent-2",
+        "banner-2",
+        "tent-3",
+        "banner-3",
+        "tent-4",
+        "banner-4",
+        "tent-5",
+        "banner-5",
+        "tent-6",
+        "banner-6",
+        "tent-healers",
+        "elder-table-1",
+        "elder-table-2",
+        "elder-table-3",
+        "elder-table-4",
+        "moot-fire",
+        "sky-watch",
+        "kill-list-slate",
+        "tent-healers"
+      ],
+      "interactions": []
+    },
+    "s_moot_camp": {
+      "note": "The Rim Moot by night: six delegation tents in banner colours round Ilvarra's fire, four elder tables, the healers' tent, the sky-watch, the great crystal; four watches to spend.",
+      "world": {
+        "color": [
+          0.024,
+          0.024,
+          0.047
+        ],
+        "strength": 0.08
+      },
+      "lights": [
+        {
+          "name": "ilvarra-fire",
+          "type": "POINT",
+          "location": [
+            0,
+            -12,
+            1.5
+          ],
+          "energy": 5000,
+          "size": 1.0,
+          "color": [
+            0.973,
+            0.784,
+            0.314
+          ]
+        },
+        {
+          "name": "moon-silver",
+          "type": "SUN",
+          "location": [
+            -40,
+            -40,
+            50
+          ],
+          "energy": 0.2,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "rotation_deg": [
+            45,
+            0,
+            -40
+          ]
+        },
+        {
+          "name": "banner-1",
+          "type": "POINT",
+          "location": [
+            -8.0,
+            1.86,
+            3.2
+          ],
+          "energy": 300,
+          "size": 0.3,
+          "color": [
+            0.361,
+            0.549,
+            0.251
+          ]
+        },
+        {
+          "name": "banner-2",
+          "type": "POINT",
+          "location": [
+            -16.0,
+            -12.0,
+            3.2
+          ],
+          "energy": 300,
+          "size": 0.3,
+          "color": [
+            0.706,
+            0.816,
+            0.941
+          ]
+        },
+        {
+          "name": "banner-3",
+          "type": "POINT",
+          "location": [
+            -8.0,
+            -25.86,
+            3.2
+          ],
+          "energy": 300,
+          "size": 0.3,
+          "color": [
+            0.784,
+            0.549,
+            0.204
+          ]
+        },
+        {
+          "name": "banner-4",
+          "type": "POINT",
+          "location": [
+            8.0,
+            -25.86,
+            3.2
+          ],
+          "energy": 300,
+          "size": 0.3,
+          "color": [
+            0.173,
+            0.408,
+            0.69
+          ]
+        },
+        {
+          "name": "banner-5",
+          "type": "POINT",
+          "location": [
+            16.0,
+            -12.0,
+            3.2
+          ],
+          "energy": 300,
+          "size": 0.3,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ]
+        },
+        {
+          "name": "banner-6",
+          "type": "POINT",
+          "location": [
+            8.0,
+            1.86,
+            3.2
+          ],
+          "energy": 300,
+          "size": 0.3,
+          "color": [
+            0.91,
+            0.753,
+            0.376
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -36.5,
+          3.5
+        ],
+        "look_at": [
+          0.0,
+          -26.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -32,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "kill-list-slate"
+      ],
+      "interactions": [
+        {
+          "prop": "elder-table-1",
+          "verb": "Play the Circle of Seasons",
+          "leads_to": "s_realms_seasons"
+        },
+        {
+          "prop": "elder-table-2",
+          "verb": "Play the Galechanters",
+          "leads_to": "s_realms_galechanters"
+        },
+        {
+          "prop": "elder-table-3",
+          "verb": "Play the Stonekeepers",
+          "leads_to": "s_realms_stonekeepers"
+        },
+        {
+          "prop": "elder-table-4",
+          "verb": "Play the Tidecallers",
+          "leads_to": "s_realms_tidecallers"
+        },
+        {
+          "prop": "tent-healers",
+          "verb": "Sit with the Tidecaller healers",
+          "leads_to": "s_conc_bestiary"
+        },
+        {
+          "prop": "sky-watch",
+          "verb": "Join the Galechanters at the sky-watch",
+          "leads_to": "s_chart_moot"
+        },
+        {
+          "prop": "great-crystal",
+          "verb": "Record"
+        },
+        {
+          "prop": "moot-fire",
+          "verb": "Sit at Ilvarra's fire and retell",
+          "leads_to": "s_moot_dawn"
+        }
+      ]
+    },
+    "s_moot_dawn": {
+      "note": "Grey dawn, the banners un-inking, smoke and silence where names were: the Remnants burn the banners; a defend battle across the three witness tents; a slate is dropped.",
+      "world": {
+        "color": [
+          0.416,
+          0.424,
+          0.439
+        ],
+        "strength": 0.45
+      },
+      "lights": [
+        {
+          "name": "grey-dawn",
+          "type": "SUN",
+          "location": [
+            -60,
+            -40,
+            10
+          ],
+          "energy": 1.2,
+          "size": 1,
+          "color": [
+            0.722,
+            0.737,
+            0.769
+          ],
+          "rotation_deg": [
+            75,
+            0,
+            -60
+          ]
+        },
+        {
+          "name": "embers",
+          "type": "POINT",
+          "location": [
+            0,
+            -12,
+            1.0
+          ],
+          "energy": 600,
+          "size": 0.8,
+          "color": [
+            0.973,
+            0.784,
+            0.314
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SUN",
+          "location": [
+            0,
+            60,
+            30
+          ],
+          "energy": 0.3,
+          "size": 1,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "rotation_deg": [
+            -60,
+            0,
+            180
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -30.5,
+          3.5
+        ],
+        "look_at": [
+          0.0,
+          -20.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -26,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "tent-1",
+          "verb": "Guard the witnesses' tent"
+        },
+        {
+          "prop": "tent-3",
+          "verb": "Guard the witnesses' tent"
+        },
+        {
+          "prop": "tent-5",
+          "verb": "Guard the witnesses' tent"
+        },
+        {
+          "prop": "kill-list-slate",
+          "verb": "Read the dropped slate",
+          "leads_to": "s_glyph_killlist"
+        }
+      ]
+    },
+    "s_chasm_seal1": {
+      "note": "Camera rail over the far chasm: ghostly fire along the cliffs, the bones humming, the voice; 'WrymWretch stirred.' The first seal has cracked; all realms -4.",
+      "world": {
+        "color": [
+          0.016,
+          0.016,
+          0.031
+        ],
+        "strength": 0.05
+      },
+      "lights": [
+        {
+          "name": "ghost-fire",
+          "type": "AREA",
+          "location": [
+            0,
+            36,
+            14
+          ],
+          "energy": 60000.0,
+          "size": 80,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "look_at": [
+            0,
+            41,
+            10
+          ]
+        },
+        {
+          "name": "vortex",
+          "type": "AREA",
+          "location": [
+            0,
+            50,
+            -10
+          ],
+          "energy": 150000.0,
+          "size": 60,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ],
+          "look_at": [
+            0,
+            20,
+            10
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          30,
+          10,
+          20
+        ],
+        "look_at": [
+          -10,
+          40,
+          0
+        ],
+        "lens_mm": 24,
+        "mode": "fixed"
+      },
+      "hide": [
+        "tent-1",
+        "banner-1",
+        "tent-2",
+        "banner-2",
+        "tent-3",
+        "banner-3",
+        "tent-4",
+        "banner-4",
+        "tent-5",
+        "banner-5",
+        "tent-6",
+        "banner-6",
+        "tent-healers",
+        "elder-table-1",
+        "elder-table-2",
+        "elder-table-3",
+        "elder-table-4",
+        "moot-fire",
+        "sky-watch",
+        "kill-list-slate",
+        "tent-healers"
+      ],
+      "interactions": []
+    },
+    "s_chasm_seal2": {
+      "note": "Camera rail, closer: ghostly fire on the cliffs and six streaks of realm colour converging on Wrymreach; the six motifs in one chord; the second seal cracks; all realms -4.",
+      "world": {
+        "color": [
+          0.016,
+          0.016,
+          0.031
+        ],
+        "strength": 0.05
+      },
+      "lights": [
+        {
+          "name": "ghost-fire",
+          "type": "AREA",
+          "location": [
+            0,
+            36,
+            14
+          ],
+          "energy": 60000.0,
+          "size": 80,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "look_at": [
+            0,
+            41,
+            10
+          ]
+        },
+        {
+          "name": "vortex",
+          "type": "AREA",
+          "location": [
+            0,
+            50,
+            -10
+          ],
+          "energy": 150000.0,
+          "size": 60,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ],
+          "look_at": [
+            0,
+            20,
+            10
+          ]
+        },
+        {
+          "name": "streak-1",
+          "type": "POINT",
+          "location": [
+            -0.0,
+            50.0,
+            50
+          ],
+          "energy": 40000.0,
+          "size": 2,
+          "color": [
+            0.361,
+            0.549,
+            0.251
+          ]
+        },
+        {
+          "name": "streak-2",
+          "type": "POINT",
+          "location": [
+            -43.3,
+            40.0,
+            50
+          ],
+          "energy": 40000.0,
+          "size": 2,
+          "color": [
+            0.706,
+            0.816,
+            0.941
+          ]
+        },
+        {
+          "name": "streak-3",
+          "type": "POINT",
+          "location": [
+            -43.3,
+            20.0,
+            50
+          ],
+          "energy": 40000.0,
+          "size": 2,
+          "color": [
+            0.784,
+            0.549,
+            0.204
+          ]
+        },
+        {
+          "name": "streak-4",
+          "type": "POINT",
+          "location": [
+            -0.0,
+            10.0,
+            50
+          ],
+          "energy": 40000.0,
+          "size": 2,
+          "color": [
+            0.173,
+            0.408,
+            0.69
+          ]
+        },
+        {
+          "name": "streak-5",
+          "type": "POINT",
+          "location": [
+            43.3,
+            20.0,
+            50
+          ],
+          "energy": 40000.0,
+          "size": 2,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ]
+        },
+        {
+          "name": "streak-6",
+          "type": "POINT",
+          "location": [
+            43.3,
+            40.0,
+            50
+          ],
+          "energy": 40000.0,
+          "size": 2,
+          "color": [
+            0.91,
+            0.753,
+            0.376
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          18,
+          10
+        ],
+        "look_at": [
+          0,
+          60,
+          30
+        ],
+        "lens_mm": 20,
+        "mode": "fixed"
+      },
+      "hide": [
+        "tent-1",
+        "banner-1",
+        "tent-2",
+        "banner-2",
+        "tent-3",
+        "banner-3",
+        "tent-4",
+        "banner-4",
+        "tent-5",
+        "banner-5",
+        "tent-6",
+        "banner-6",
+        "tent-healers",
+        "elder-table-1",
+        "elder-table-2",
+        "elder-table-3",
+        "elder-table-4",
+        "moot-fire",
+        "sky-watch",
+        "kill-list-slate",
+        "tent-healers"
+      ],
+      "interactions": []
+    }
+  }
+}

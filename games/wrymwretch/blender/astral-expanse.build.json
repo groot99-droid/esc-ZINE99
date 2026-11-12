@@ -1,0 +1,705 @@
+{
+  "game": "wrymwretch",
+  "location": "astral-expanse",
+  "name": "The Astral Expanse",
+  "reference": "assets/locations/astral-expanse.jpg",
+  "bounds_m": [
+    200,
+    200,
+    80
+  ],
+  "origin": "floor centre in the void below the route; +y along the route of floating islands from the near island (with the crystal) to the Sigil platform and the blank plain at the far end (y = 80, z = 0); the islands float 20 to 26 m up; the 200 m route is laid as six islands and four memory platforms",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "island-rock": {
+      "color": [
+        0.416,
+        0.4,
+        0.369
+      ],
+      "roughness": 0.95
+    },
+    "island-top": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.8
+    },
+    "paper-plain": {
+      "color": [
+        0.949,
+        0.929,
+        0.878
+      ],
+      "roughness": 0.9
+    },
+    "pencil": {
+      "color": [
+        0.29,
+        0.29,
+        0.306
+      ],
+      "roughness": 0.9
+    },
+    "moss": {
+      "color": [
+        0.361,
+        0.549,
+        0.251
+      ],
+      "roughness": 0.95
+    },
+    "pebble-beach": {
+      "color": [
+        0.659,
+        0.667,
+        0.69
+      ],
+      "roughness": 0.9
+    },
+    "crystal-out": {
+      "color": [
+        0.706,
+        0.816,
+        0.941
+      ],
+      "roughness": 0.15
+    }
+  },
+  "blockout": [
+    {
+      "id": "island-1",
+      "shape": "cylinder",
+      "role": "terrain",
+      "size_m": [
+        34,
+        27.2,
+        10
+      ],
+      "location": [
+        0,
+        -80,
+        15
+      ],
+      "material": "island-rock"
+    },
+    {
+      "id": "island-1-top",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        33,
+        26.2,
+        0.3
+      ],
+      "location": [
+        0,
+        -80,
+        20.15
+      ],
+      "material": "island-top"
+    },
+    {
+      "id": "island-2",
+      "shape": "cylinder",
+      "role": "terrain",
+      "size_m": [
+        26,
+        20.8,
+        10
+      ],
+      "location": [
+        -26,
+        -52,
+        17
+      ],
+      "material": "island-rock"
+    },
+    {
+      "id": "island-2-top",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        25,
+        19.8,
+        0.3
+      ],
+      "location": [
+        -26,
+        -52,
+        22.15
+      ],
+      "material": "island-top"
+    },
+    {
+      "id": "island-3",
+      "shape": "cylinder",
+      "role": "terrain",
+      "size_m": [
+        24,
+        19.2,
+        10
+      ],
+      "location": [
+        6,
+        -24,
+        19
+      ],
+      "material": "island-rock"
+    },
+    {
+      "id": "island-3-top",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        23,
+        18.2,
+        0.3
+      ],
+      "location": [
+        6,
+        -24,
+        24.15
+      ],
+      "material": "island-top"
+    },
+    {
+      "id": "island-4",
+      "shape": "cylinder",
+      "role": "terrain",
+      "size_m": [
+        26,
+        20.8,
+        10
+      ],
+      "location": [
+        30,
+        2,
+        17
+      ],
+      "material": "island-rock"
+    },
+    {
+      "id": "island-4-top",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        25,
+        19.8,
+        0.3
+      ],
+      "location": [
+        30,
+        2,
+        22.15
+      ],
+      "material": "island-top"
+    },
+    {
+      "id": "island-5",
+      "shape": "cylinder",
+      "role": "terrain",
+      "size_m": [
+        22,
+        17.6,
+        10
+      ],
+      "location": [
+        4,
+        28,
+        21
+      ],
+      "material": "island-rock"
+    },
+    {
+      "id": "island-5-top",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        21,
+        16.6,
+        0.3
+      ],
+      "location": [
+        4,
+        28,
+        26.15
+      ],
+      "material": "island-top"
+    },
+    {
+      "id": "island-6",
+      "shape": "cylinder",
+      "role": "terrain",
+      "size_m": [
+        20,
+        16.0,
+        10
+      ],
+      "location": [
+        -24,
+        48,
+        19
+      ],
+      "material": "island-rock"
+    },
+    {
+      "id": "island-6-top",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        19,
+        15.0,
+        0.3
+      ],
+      "location": [
+        -24,
+        48,
+        24.15
+      ],
+      "material": "island-top"
+    },
+    {
+      "id": "blank-plain",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        200,
+        40,
+        0.4
+      ],
+      "location": [
+        0,
+        80,
+        -0.2
+      ],
+      "material": "paper-plain"
+    },
+    {
+      "id": "forest-clearing",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        12,
+        9,
+        0.2
+      ],
+      "location": [
+        -26,
+        -52,
+        22.4
+      ],
+      "material": "moss"
+    },
+    {
+      "id": "tree-1",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        7
+      ],
+      "location": [
+        -29,
+        -54,
+        26
+      ],
+      "material": "moss"
+    },
+    {
+      "id": "tree-2",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        6
+      ],
+      "location": [
+        -23,
+        -50,
+        25.5
+      ],
+      "material": "moss"
+    },
+    {
+      "id": "pebble-shore",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        14,
+        8,
+        0.2
+      ],
+      "location": [
+        30,
+        2,
+        22.4
+      ],
+      "material": "pebble-beach"
+    },
+    {
+      "id": "crystal-outcrop",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4,
+        4,
+        6
+      ],
+      "location": [
+        4,
+        30,
+        29
+      ],
+      "material": "crystal-out"
+    },
+    {
+      "id": "far-outline",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        30,
+        18,
+        0.1
+      ],
+      "location": [
+        -24,
+        48,
+        24.4
+      ],
+      "material": "pencil",
+      "collide": false
+    },
+    {
+      "id": "stair-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        4,
+        1
+      ],
+      "location": [
+        -12.0,
+        -66,
+        20.5
+      ],
+      "material": "island-rock"
+    },
+    {
+      "id": "stair-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        4,
+        1
+      ],
+      "location": [
+        -8.5,
+        -63,
+        21.5
+      ],
+      "material": "island-rock"
+    },
+    {
+      "id": "stair-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        4,
+        1
+      ],
+      "location": [
+        -5.0,
+        -60,
+        22.5
+      ],
+      "material": "island-rock"
+    }
+  ],
+  "props": [
+    {
+      "id": "crystal-expanse",
+      "object": "memory-crystal",
+      "location": [
+        4,
+        -84,
+        20.3
+      ]
+    },
+    {
+      "id": "platform-1",
+      "object": "memory-platform",
+      "location": [
+        -14,
+        -66,
+        18
+      ],
+      "ground": false
+    },
+    {
+      "id": "platform-2",
+      "object": "memory-platform",
+      "location": [
+        20,
+        -12,
+        20
+      ],
+      "ground": false
+    },
+    {
+      "id": "platform-3",
+      "object": "memory-platform",
+      "location": [
+        18,
+        16,
+        21
+      ],
+      "ground": false
+    },
+    {
+      "id": "platform-sigil",
+      "object": "memory-platform",
+      "location": [
+        -10,
+        64,
+        16
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "s_expanse": {
+      "note": "A realm outside existence built from what the party remembers: each recorded place a platform, gaps where a realm is below 20; blank paper sky with ink stars; the third seal cracks; reach the Sigil.",
+      "world": {
+        "color": [
+          0.949,
+          0.929,
+          0.878
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "sun-gold",
+          "type": "SUN",
+          "location": [
+            -60,
+            -60,
+            70
+          ],
+          "energy": 1.5,
+          "size": 1,
+          "color": [
+            0.973,
+            0.784,
+            0.314
+          ],
+          "rotation_deg": [
+            50,
+            0,
+            -40
+          ]
+        },
+        {
+          "name": "moon-silver",
+          "type": "SUN",
+          "location": [
+            60,
+            -60,
+            70
+          ],
+          "energy": 1.0,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "rotation_deg": [
+            50,
+            0,
+            40
+          ]
+        },
+        {
+          "name": "ink-stars",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            75
+          ],
+          "energy": 100000.0,
+          "size": 100,
+          "color": [
+            0.29,
+            0.29,
+            0.306
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -92.5,
+          23.8
+        ],
+        "look_at": [
+          0.0,
+          -82.0,
+          21.5
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -88,
+          20.3
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "crystal-expanse",
+          "verb": "Record"
+        },
+        {
+          "prop": "platform-sigil",
+          "verb": "Reach the Sigil",
+          "leads_to": "s_chart_expanse"
+        }
+      ]
+    },
+    "s_battle_unwriter": {
+      "note": "On the blank plain, white and high contrast, his creed whispered: the Unwriter un-names one ability per round; if his name is known, Remind ends it without a death.",
+      "world": {
+        "color": [
+          0.949,
+          0.929,
+          0.878
+        ],
+        "strength": 1.0
+      },
+      "lights": [
+        {
+          "name": "white-key",
+          "type": "SUN",
+          "location": [
+            -40,
+            40,
+            60
+          ],
+          "energy": 4.0,
+          "size": 1,
+          "color": [
+            0.957,
+            0.965,
+            1.0
+          ],
+          "rotation_deg": [
+            30,
+            0,
+            -45
+          ]
+        },
+        {
+          "name": "ink-shadow",
+          "type": "SUN",
+          "location": [
+            40,
+            120,
+            40
+          ],
+          "energy": 0.5,
+          "size": 1,
+          "color": [
+            0.29,
+            0.29,
+            0.306
+          ],
+          "rotation_deg": [
+            -40,
+            0,
+            160
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          14.0,
+          66.0,
+          10
+        ],
+        "look_at": [
+          0,
+          80,
+          1.0
+        ],
+        "lens_mm": 32,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          0,
+          72,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "crystal-expanse",
+        "platform-1",
+        "platform-2",
+        "platform-3"
+      ],
+      "interactions": []
+    }
+  }
+}

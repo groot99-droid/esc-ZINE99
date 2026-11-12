@@ -1,0 +1,805 @@
+{
+  "game": "wrymwretch",
+  "location": "heart-of-wound",
+  "name": "The heart of the wound",
+  "reference": "assets/locations/heart-of-wound.jpg",
+  "bounds_m": [
+    50,
+    50,
+    30
+  ],
+  "origin": "floor centre on the round arena; +y toward the torn veil; the crowned dragon (King) on its plinth at -x faces the Queen of Elves at +x across the crack between the gold and silver halves of the floor",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "fused-gold": {
+      "color": [
+        0.91,
+        0.753,
+        0.376
+      ],
+      "roughness": 0.4,
+      "metallic": 0.8
+    },
+    "fused-silver": {
+      "color": [
+        0.8,
+        0.847,
+        0.918
+      ],
+      "roughness": 0.4,
+      "metallic": 0.8
+    },
+    "crack": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "veil": {
+      "color": [
+        0.8,
+        0.847,
+        0.918
+      ],
+      "roughness": 0.2,
+      "emission": 2.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "arena-base",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        50,
+        50,
+        0.6
+      ],
+      "location": [
+        0,
+        0,
+        -0.3
+      ],
+      "material": "fused-silver"
+    },
+    {
+      "id": "gold-half",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        32,
+        44,
+        0.1
+      ],
+      "location": [
+        -8,
+        0,
+        0.05
+      ],
+      "material": "fused-gold"
+    },
+    {
+      "id": "the-crack",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.4,
+        46,
+        0.12
+      ],
+      "location": [
+        1,
+        0,
+        0.07
+      ],
+      "material": "crack",
+      "rotation_deg": [
+        0,
+        0,
+        8
+      ],
+      "collide": false
+    },
+    {
+      "id": "arena-lip",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        51,
+        51,
+        0.3
+      ],
+      "location": [
+        0,
+        0,
+        -0.35
+      ],
+      "material": "silver"
+    },
+    {
+      "id": "plinth-king",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        8,
+        8,
+        1.4
+      ],
+      "location": [
+        -12,
+        0,
+        0.7
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "plinth-king-top",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        7,
+        7,
+        0.6
+      ],
+      "location": [
+        -12,
+        0,
+        1.7
+      ],
+      "material": "silver"
+    },
+    {
+      "id": "plinth-queen",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        6,
+        6,
+        1.4
+      ],
+      "location": [
+        12,
+        0,
+        0.7
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "plinth-queen-top",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        5,
+        5,
+        0.6
+      ],
+      "location": [
+        12,
+        0,
+        1.7
+      ],
+      "material": "silver"
+    },
+    {
+      "id": "veil",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        18,
+        0.2,
+        22
+      ],
+      "location": [
+        5,
+        8,
+        26
+      ],
+      "material": "veil",
+      "rotation_deg": [
+        0,
+        0,
+        10
+      ],
+      "collide": false
+    },
+    {
+      "id": "veil-torn",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        6,
+        0.2,
+        14
+      ],
+      "location": [
+        -6,
+        10,
+        28
+      ],
+      "material": "veil",
+      "rotation_deg": [
+        0,
+        10,
+        -15
+      ],
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "king-statue",
+      "object": "king-statue",
+      "location": [
+        -12,
+        0,
+        2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "queen-statue",
+      "object": "queen-statue",
+      "location": [
+        12,
+        0,
+        2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "crystal-wound",
+      "object": "memory-crystal",
+      "location": [
+        0,
+        -18,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s_heart_of_wound": {
+      "note": "Where the sun's anger and the moon's tear collided: gold and silver mixed light, the bone statues of the King of Dragons and the Queen of Elves; the voice: 'I... remember... me...'",
+      "world": {
+        "color": [
+          0.031,
+          0.031,
+          0.047
+        ],
+        "strength": 0.08
+      },
+      "lights": [
+        {
+          "name": "sun-gold",
+          "type": "SPOT",
+          "location": [
+            -20,
+            -10,
+            22
+          ],
+          "energy": 9000,
+          "size": 1,
+          "color": [
+            0.973,
+            0.784,
+            0.314
+          ],
+          "look_at": [
+            -12,
+            0,
+            6
+          ]
+        },
+        {
+          "name": "moon-silver",
+          "type": "SPOT",
+          "location": [
+            20,
+            -10,
+            22
+          ],
+          "energy": 9000,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "look_at": [
+            12,
+            0,
+            6
+          ]
+        },
+        {
+          "name": "veil-glow",
+          "type": "AREA",
+          "location": [
+            3,
+            8,
+            20
+          ],
+          "energy": 3000,
+          "size": 10,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "crystal-glow",
+          "type": "POINT",
+          "location": [
+            0,
+            -18,
+            1.8
+          ],
+          "energy": 150,
+          "size": 0.4,
+          "color": [
+            0.973,
+            0.784,
+            0.314
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -24.5,
+          3.5
+        ],
+        "look_at": [
+          0.0,
+          -14.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -20,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "crystal-wound",
+          "verb": "Record"
+        },
+        {
+          "prop": "king-statue",
+          "verb": "Offer the Anchor at the statues",
+          "leads_to": "s_heart_anchor"
+        }
+      ]
+    },
+    "s_battle_echo": {
+      "note": "Battle stage under the torn veil, bulging: the Architect's Echo, the shape Rhyla saw; trusted tribes send aid; six motifs fighting a seventh.",
+      "world": {
+        "color": [
+          0.063,
+          0.047,
+          0.078
+        ],
+        "strength": 0.12
+      },
+      "lights": [
+        {
+          "name": "veil-bulge",
+          "type": "AREA",
+          "location": [
+            0,
+            6,
+            22
+          ],
+          "energy": 12000.0,
+          "size": 16,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "sun-gold",
+          "type": "SPOT",
+          "location": [
+            -20,
+            -10,
+            22
+          ],
+          "energy": 6000,
+          "size": 1,
+          "color": [
+            0.973,
+            0.784,
+            0.314
+          ],
+          "look_at": [
+            -12,
+            0,
+            6
+          ]
+        },
+        {
+          "name": "moon-silver",
+          "type": "SPOT",
+          "location": [
+            20,
+            -10,
+            22
+          ],
+          "energy": 6000,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "look_at": [
+            12,
+            0,
+            6
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          14.0,
+          -12.0,
+          11
+        ],
+        "look_at": [
+          0,
+          2,
+          1.0
+        ],
+        "lens_mm": 32,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -10,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": []
+    },
+    "s_choice": {
+      "note": "Still, a held note, in the 20 m between the statues: three answers set in the King and the Queen (keep watch, speak his whole name, give back the bond); the resolver picks the ending.",
+      "world": {
+        "color": [
+          0.031,
+          0.031,
+          0.047
+        ],
+        "strength": 0.06
+      },
+      "lights": [
+        {
+          "name": "sun-gold",
+          "type": "SPOT",
+          "location": [
+            -20,
+            -10,
+            22
+          ],
+          "energy": 7000,
+          "size": 1,
+          "color": [
+            0.973,
+            0.784,
+            0.314
+          ],
+          "look_at": [
+            -12,
+            0,
+            6
+          ]
+        },
+        {
+          "name": "moon-silver",
+          "type": "SPOT",
+          "location": [
+            20,
+            -10,
+            22
+          ],
+          "energy": 7000,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "look_at": [
+            12,
+            0,
+            6
+          ]
+        },
+        {
+          "name": "held-note",
+          "type": "POINT",
+          "location": [
+            0,
+            0,
+            8
+          ],
+          "energy": 600,
+          "size": 1,
+          "color": [
+            0.957,
+            0.965,
+            1.0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -12.5,
+          3.5
+        ],
+        "look_at": [
+          0.0,
+          -2.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -8,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "king-statue",
+          "verb": "Keep watch: one pair stays",
+          "leads_to": "s_end_rememberer"
+        },
+        {
+          "prop": "queen-statue",
+          "verb": "Speak his whole name",
+          "leads_to": "s_end_whole"
+        },
+        {
+          "prop": "queen-statue",
+          "verb": "Give back the bond",
+          "leads_to": "s_end_dormant"
+        }
+      ]
+    },
+    "s_end_rememberer": {
+      "note": "Ending, The Rememberer: the same place years after, at dawn; the keeper pair's motif alone.",
+      "world": {
+        "color": [
+          0.784,
+          0.706,
+          0.604
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "dawn",
+          "type": "SUN",
+          "location": [
+            -50,
+            -40,
+            10
+          ],
+          "energy": 2.5,
+          "size": 1,
+          "color": [
+            0.973,
+            0.847,
+            0.659
+          ],
+          "rotation_deg": [
+            78,
+            0,
+            -50
+          ]
+        },
+        {
+          "name": "moon-silver",
+          "type": "SPOT",
+          "location": [
+            20,
+            -10,
+            22
+          ],
+          "energy": 3000,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "look_at": [
+            12,
+            0,
+            6
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -30,
+          6
+        ],
+        "look_at": [
+          0,
+          0,
+          5
+        ],
+        "lens_mm": 28,
+        "mode": "fixed"
+      },
+      "hide": [],
+      "interactions": []
+    },
+    "s_end_whole": {
+      "note": "Ending, Remembered Whole: the heart of the wound in whole colour, then the six realms; all six motifs and a seventh resolving.",
+      "world": {
+        "color": [
+          0.722,
+          0.784,
+          0.878
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "whole-sun",
+          "type": "SUN",
+          "location": [
+            -30,
+            -30,
+            40
+          ],
+          "energy": 3.5,
+          "size": 1,
+          "color": [
+            0.973,
+            0.784,
+            0.314
+          ],
+          "rotation_deg": [
+            45,
+            0,
+            -40
+          ]
+        },
+        {
+          "name": "whole-moon",
+          "type": "SUN",
+          "location": [
+            30,
+            -30,
+            40
+          ],
+          "energy": 1.5,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "rotation_deg": [
+            45,
+            0,
+            40
+          ]
+        },
+        {
+          "name": "veil-mended",
+          "type": "AREA",
+          "location": [
+            3,
+            8,
+            20
+          ],
+          "energy": 2000,
+          "size": 10,
+          "color": [
+            0.957,
+            0.965,
+            1.0
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -34,
+          14
+        ],
+        "look_at": [
+          0,
+          0,
+          8
+        ],
+        "lens_mm": 24,
+        "mode": "fixed"
+      },
+      "hide": [
+        "crystal-wound"
+      ],
+      "interactions": []
+    }
+  }
+}

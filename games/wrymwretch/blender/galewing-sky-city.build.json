@@ -1,0 +1,942 @@
+{
+  "game": "wrymwretch",
+  "location": "galewing-sky-city",
+  "name": "The Galewing sky-city: balcony, healers' ward and floating platform",
+  "reference": "assets/locations/galewing-sky-city.jpg",
+  "bounds_m": [
+    70,
+    30,
+    20
+  ],
+  "origin": "floor centre on the balcony's west edge; +y toward the ward's arched windows; the ward runs west (-x), the balcony faces east, and the floating platform (25 x 15 m) hangs in the cloud beyond it at +x; bounds widened from 50 to 70 m to hold the platform",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "pale-stone": {
+      "color": [
+        0.847,
+        0.839,
+        0.808
+      ],
+      "roughness": 0.7
+    },
+    "cloud": {
+      "color": [
+        0.784,
+        0.824,
+        0.878
+      ],
+      "roughness": 1.0
+    },
+    "window-sky": {
+      "color": [
+        0.706,
+        0.816,
+        0.941
+      ],
+      "roughness": 0.1,
+      "emission": 1.2
+    },
+    "rock": {
+      "color": [
+        0.431,
+        0.431,
+        0.447
+      ],
+      "roughness": 0.95
+    }
+  },
+  "blockout": [
+    {
+      "id": "ward-floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        30,
+        15,
+        0.4
+      ],
+      "location": [
+        -20,
+        0,
+        -0.2
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "ward-vault",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        30,
+        15,
+        0.6
+      ],
+      "location": [
+        -20,
+        0,
+        9.3
+      ],
+      "material": "pale-stone"
+    },
+    {
+      "id": "ward-end-wall",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        15,
+        9
+      ],
+      "location": [
+        -35,
+        0,
+        4.5
+      ],
+      "material": "pale-stone"
+    },
+    {
+      "id": "ward-south-wall",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        30,
+        0.6,
+        9
+      ],
+      "location": [
+        -20,
+        -7.5,
+        4.5
+      ],
+      "material": "pale-stone"
+    },
+    {
+      "id": "ward-north-pier-1",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        5,
+        0.6,
+        9
+      ],
+      "location": [
+        -32.5,
+        7.5,
+        4.5
+      ],
+      "material": "pale-stone"
+    },
+    {
+      "id": "ward-north-pier-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6,
+        0.6,
+        9
+      ],
+      "location": [
+        -25.0,
+        7.5,
+        4.5
+      ],
+      "material": "pale-stone"
+    },
+    {
+      "id": "ward-north-pier-3",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6,
+        0.6,
+        9
+      ],
+      "location": [
+        -17.0,
+        7.5,
+        4.5
+      ],
+      "material": "pale-stone"
+    },
+    {
+      "id": "ward-north-pier-4",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        7,
+        0.6,
+        9
+      ],
+      "location": [
+        -8.5,
+        7.5,
+        4.5
+      ],
+      "material": "pale-stone"
+    },
+    {
+      "id": "ward-window-1-sill",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2,
+        0.6,
+        1.5
+      ],
+      "location": [
+        -29,
+        7.5,
+        0.75
+      ],
+      "material": "pale-stone"
+    },
+    {
+      "id": "ward-window-1-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2,
+        0.6,
+        1.5
+      ],
+      "location": [
+        -29,
+        7.5,
+        8.25
+      ],
+      "material": "pale-stone"
+    },
+    {
+      "id": "ward-window-1",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        2,
+        0.1,
+        6
+      ],
+      "location": [
+        -29,
+        7.4,
+        4.5
+      ],
+      "material": "window-sky",
+      "collide": false
+    },
+    {
+      "id": "ward-window-2-sill",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2,
+        0.6,
+        1.5
+      ],
+      "location": [
+        -21,
+        7.5,
+        0.75
+      ],
+      "material": "pale-stone"
+    },
+    {
+      "id": "ward-window-2-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2,
+        0.6,
+        1.5
+      ],
+      "location": [
+        -21,
+        7.5,
+        8.25
+      ],
+      "material": "pale-stone"
+    },
+    {
+      "id": "ward-window-2",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        2,
+        0.1,
+        6
+      ],
+      "location": [
+        -21,
+        7.4,
+        4.5
+      ],
+      "material": "window-sky",
+      "collide": false
+    },
+    {
+      "id": "ward-window-3-sill",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2,
+        0.6,
+        1.5
+      ],
+      "location": [
+        -13,
+        7.5,
+        0.75
+      ],
+      "material": "pale-stone"
+    },
+    {
+      "id": "ward-window-3-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2,
+        0.6,
+        1.5
+      ],
+      "location": [
+        -13,
+        7.5,
+        8.25
+      ],
+      "material": "pale-stone"
+    },
+    {
+      "id": "ward-window-3",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        2,
+        0.1,
+        6
+      ],
+      "location": [
+        -13,
+        7.4,
+        4.5
+      ],
+      "material": "window-sky",
+      "collide": false
+    },
+    {
+      "id": "balcony",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        9,
+        15,
+        0.4
+      ],
+      "location": [
+        -0.5,
+        0,
+        -0.2
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "balustrade-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        15,
+        1.1
+      ],
+      "location": [
+        3.85,
+        0,
+        0.55
+      ],
+      "material": "silver"
+    },
+    {
+      "id": "balcony-column-s",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.6,
+        0.6,
+        9
+      ],
+      "location": [
+        -4.5,
+        -6.5,
+        4.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "balcony-column-n",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.6,
+        0.6,
+        9
+      ],
+      "location": [
+        -4.5,
+        6.5,
+        4.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "platform-top",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        25,
+        15,
+        0.6
+      ],
+      "location": [
+        21,
+        0,
+        -0.3
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "platform-underside",
+      "shape": "cone",
+      "role": "terrain",
+      "size_m": [
+        22,
+        13,
+        10
+      ],
+      "location": [
+        21,
+        0,
+        -0.5
+      ],
+      "material": "rock",
+      "rotation_deg": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "cloud-sea",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        400,
+        300,
+        1
+      ],
+      "location": [
+        0,
+        0,
+        -40
+      ],
+      "material": "cloud",
+      "collide": false
+    },
+    {
+      "id": "far-island-1",
+      "shape": "cone",
+      "role": "sky",
+      "size_m": [
+        30,
+        30,
+        25
+      ],
+      "location": [
+        -40,
+        90,
+        10
+      ],
+      "material": "pale-stone",
+      "rotation_deg": [
+        180,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "far-island-2",
+      "shape": "cone",
+      "role": "sky",
+      "size_m": [
+        20,
+        20,
+        18
+      ],
+      "location": [
+        50,
+        110,
+        25
+      ],
+      "material": "pale-stone",
+      "rotation_deg": [
+        180,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "far-island-3",
+      "shape": "cone",
+      "role": "sky",
+      "size_m": [
+        40,
+        40,
+        30
+      ],
+      "location": [
+        120,
+        40,
+        -5
+      ],
+      "material": "pale-stone",
+      "rotation_deg": [
+        180,
+        0,
+        0
+      ],
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "cot-n1",
+      "object": "ward-cot",
+      "location": [
+        -32,
+        5.2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "cot-s1",
+      "object": "ward-cot",
+      "location": [
+        -32,
+        -5.2,
+        0
+      ]
+    },
+    {
+      "id": "cot-n2",
+      "object": "ward-cot",
+      "location": [
+        -28,
+        5.2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "cot-s2",
+      "object": "ward-cot",
+      "location": [
+        -28,
+        -5.2,
+        0
+      ]
+    },
+    {
+      "id": "cot-n3",
+      "object": "ward-cot",
+      "location": [
+        -24,
+        5.2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "cot-s3",
+      "object": "ward-cot",
+      "location": [
+        -24,
+        -5.2,
+        0
+      ]
+    },
+    {
+      "id": "cot-n4",
+      "object": "ward-cot",
+      "location": [
+        -20,
+        5.2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "cot-s4",
+      "object": "ward-cot",
+      "location": [
+        -20,
+        -5.2,
+        0
+      ]
+    },
+    {
+      "id": "cot-n5",
+      "object": "ward-cot",
+      "location": [
+        -16,
+        5.2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "cot-s5",
+      "object": "ward-cot",
+      "location": [
+        -16,
+        -5.2,
+        0
+      ]
+    },
+    {
+      "id": "cot-n6",
+      "object": "ward-cot",
+      "location": [
+        -12,
+        5.2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "cot-s6",
+      "object": "ward-cot",
+      "location": [
+        -12,
+        -5.2,
+        0
+      ]
+    },
+    {
+      "id": "crystal-platform",
+      "object": "memory-crystal",
+      "location": [
+        28,
+        4,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s_galewing_ward": {
+      "note": "Balcony over drifting sky-cities, the healer's line, then the ward: twelve fevered elves under blankets, each whispering a fragment; 'Remember me' threads through the wind.",
+      "world": {
+        "color": [
+          0.659,
+          0.722,
+          0.8
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "cloud-light",
+          "type": "SUN",
+          "location": [
+            0,
+            60,
+            40
+          ],
+          "energy": 2.0,
+          "size": 1,
+          "color": [
+            0.706,
+            0.816,
+            0.941
+          ],
+          "rotation_deg": [
+            -55,
+            0,
+            160
+          ]
+        },
+        {
+          "name": "arch-window-1",
+          "type": "AREA",
+          "location": [
+            -21,
+            9,
+            5
+          ],
+          "energy": 900,
+          "size": 6,
+          "color": [
+            0.706,
+            0.816,
+            0.941
+          ],
+          "look_at": [
+            -21,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "arch-window-2",
+          "type": "AREA",
+          "location": [
+            -13,
+            9,
+            5
+          ],
+          "energy": 900,
+          "size": 6,
+          "color": [
+            0.706,
+            0.816,
+            0.941
+          ],
+          "look_at": [
+            -13,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SUN",
+          "location": [
+            40,
+            0,
+            20
+          ],
+          "energy": 0.5,
+          "size": 1,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "rotation_deg": [
+            -60,
+            0,
+            90
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          5.5,
+          -0.0,
+          3.5
+        ],
+        "look_at": [
+          -5.0,
+          0.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          1,
+          0,
+          0.0
+        ],
+        "facing_deg": 90
+      },
+      "hide": [
+        "crystal-platform"
+      ],
+      "interactions": [
+        {
+          "prop": "cot-n1",
+          "verb": "Listen to the whisper"
+        },
+        {
+          "prop": "cot-s3",
+          "verb": "Listen to the whisper"
+        },
+        {
+          "prop": "cot-n6",
+          "verb": "Kneel by the cot and hold their names",
+          "leads_to": "s_conc_ward"
+        }
+      ]
+    },
+    "s_cloud_platform": {
+      "note": "Night cloud, starlit, a storm around the floating platform: battle with a Cloud Serpent and two Stormriders; Aetherius's Shared Thought shows each enemy's next action.",
+      "world": {
+        "color": [
+          0.047,
+          0.071,
+          0.125
+        ],
+        "strength": 0.12
+      },
+      "lights": [
+        {
+          "name": "starlight",
+          "type": "SUN",
+          "location": [
+            21,
+            40,
+            30
+          ],
+          "energy": 0.6,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "rotation_deg": [
+            -50,
+            0,
+            180
+          ]
+        },
+        {
+          "name": "storm-glow",
+          "type": "AREA",
+          "location": [
+            21,
+            0,
+            14
+          ],
+          "energy": 2500,
+          "size": 10,
+          "color": [
+            0.706,
+            0.816,
+            0.941
+          ],
+          "look_at": [
+            21,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SUN",
+          "location": [
+            -30,
+            0,
+            20
+          ],
+          "energy": 0.4,
+          "size": 1,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "rotation_deg": [
+            -60,
+            0,
+            -90
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          30.1,
+          -9.1,
+          8
+        ],
+        "look_at": [
+          21,
+          0,
+          1.0
+        ],
+        "lens_mm": 32,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          14,
+          0,
+          0
+        ],
+        "facing_deg": -90
+      },
+      "hide": [
+        "cot-n1",
+        "cot-n2",
+        "cot-n3",
+        "cot-n4",
+        "cot-n5",
+        "cot-n6",
+        "cot-s1",
+        "cot-s2",
+        "cot-s3",
+        "cot-s4",
+        "cot-s5",
+        "cot-s6"
+      ],
+      "interactions": []
+    }
+  }
+}

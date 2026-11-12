@@ -1,0 +1,664 @@
+{
+  "game": "wrymwretch",
+  "location": "storm-chamber",
+  "name": "The storm chamber",
+  "reference": "assets/locations/storm-chamber.jpg",
+  "bounds_m": [
+    20,
+    20,
+    18
+  ],
+  "origin": "floor centre on the dais; +y toward the tall arched window; the door from the stair at -y; walls an octagon of crystal 20 m across, open oculus to the storm above",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "crystal-wall": {
+      "color": [
+        0.706,
+        0.816,
+        0.941
+      ],
+      "roughness": 0.15,
+      "metallic": 0.2
+    },
+    "ring-stone": {
+      "color": [
+        0.722,
+        0.722,
+        0.706
+      ],
+      "roughness": 0.8
+    },
+    "storm-sky": {
+      "color": [
+        0.227,
+        0.29,
+        0.439
+      ],
+      "roughness": 0.3,
+      "emission": 0.6
+    },
+    "night-window": {
+      "color": [
+        0.165,
+        0.227,
+        0.565
+      ],
+      "roughness": 0.1,
+      "emission": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor-ring",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        20,
+        20,
+        0.4
+      ],
+      "location": [
+        0,
+        0,
+        -0.2
+      ],
+      "material": "ring-stone"
+    },
+    {
+      "id": "wall-1",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        8.4,
+        0.6,
+        15
+      ],
+      "location": [
+        -0.0,
+        10.0,
+        7.5
+      ],
+      "material": "crystal-wall",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "wall-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        8.4,
+        0.6,
+        15
+      ],
+      "location": [
+        -7.071,
+        7.071,
+        7.5
+      ],
+      "material": "crystal-wall",
+      "rotation_deg": [
+        0,
+        0,
+        45
+      ]
+    },
+    {
+      "id": "wall-3",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        8.4,
+        0.6,
+        15
+      ],
+      "location": [
+        -10.0,
+        0.0,
+        7.5
+      ],
+      "material": "crystal-wall",
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "wall-4",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        8.4,
+        0.6,
+        15
+      ],
+      "location": [
+        -7.071,
+        -7.071,
+        7.5
+      ],
+      "material": "crystal-wall",
+      "rotation_deg": [
+        0,
+        0,
+        135
+      ]
+    },
+    {
+      "id": "wall-6",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        8.4,
+        0.6,
+        15
+      ],
+      "location": [
+        7.071,
+        -7.071,
+        7.5
+      ],
+      "material": "crystal-wall",
+      "rotation_deg": [
+        0,
+        0,
+        225
+      ]
+    },
+    {
+      "id": "wall-7",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        8.4,
+        0.6,
+        15
+      ],
+      "location": [
+        10.0,
+        -0.0,
+        7.5
+      ],
+      "material": "crystal-wall",
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ]
+    },
+    {
+      "id": "wall-8",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        8.4,
+        0.6,
+        15
+      ],
+      "location": [
+        7.071,
+        7.071,
+        7.5
+      ],
+      "material": "crystal-wall",
+      "rotation_deg": [
+        0,
+        0,
+        315
+      ]
+    },
+    {
+      "id": "door-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        8.4,
+        0.6,
+        10
+      ],
+      "location": [
+        0,
+        -10,
+        10
+      ],
+      "material": "crystal-wall"
+    },
+    {
+      "id": "door-wall-w",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.7,
+        0.6,
+        5
+      ],
+      "location": [
+        -2.85,
+        -10,
+        2.5
+      ],
+      "material": "crystal-wall"
+    },
+    {
+      "id": "door-wall-e",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.7,
+        0.6,
+        5
+      ],
+      "location": [
+        2.85,
+        -10,
+        2.5
+      ],
+      "material": "crystal-wall"
+    },
+    {
+      "id": "door-opening",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3,
+        0.2,
+        5
+      ],
+      "location": [
+        0,
+        -10,
+        2.5
+      ],
+      "material": "void",
+      "collide": false
+    },
+    {
+      "id": "window-north",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.8,
+        0.2,
+        5
+      ],
+      "location": [
+        0,
+        9.6,
+        6.5
+      ],
+      "material": "night-window",
+      "collide": false
+    },
+    {
+      "id": "dais-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        12,
+        12,
+        0.4
+      ],
+      "location": [
+        0,
+        0,
+        0.2
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "dais-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        8,
+        8,
+        0.4
+      ],
+      "location": [
+        0,
+        0,
+        0.6
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "dais-3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        4,
+        4,
+        0.4
+      ],
+      "location": [
+        0,
+        0,
+        1.0
+      ],
+      "material": "silver"
+    },
+    {
+      "id": "oculus-ring-n",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        20,
+        6,
+        1
+      ],
+      "location": [
+        0,
+        7,
+        15.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "oculus-ring-s",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        20,
+        6,
+        1
+      ],
+      "location": [
+        0,
+        -7,
+        15.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "oculus-ring-w",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        6,
+        8,
+        1
+      ],
+      "location": [
+        -7,
+        0,
+        15.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "oculus-ring-e",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        6,
+        8,
+        1
+      ],
+      "location": [
+        7,
+        0,
+        15.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "storm-sky",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        60,
+        60,
+        1
+      ],
+      "location": [
+        0,
+        0,
+        40
+      ],
+      "material": "storm-sky",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "storm-pillar-1",
+      "object": "storm-crystal-pillar",
+      "location": [
+        -3.176,
+        7.668,
+        0
+      ]
+    },
+    {
+      "id": "storm-pillar-2",
+      "object": "storm-crystal-pillar",
+      "location": [
+        -7.668,
+        3.176,
+        0
+      ]
+    },
+    {
+      "id": "storm-pillar-3",
+      "object": "storm-crystal-pillar",
+      "location": [
+        -7.668,
+        -3.176,
+        0
+      ]
+    },
+    {
+      "id": "storm-pillar-4",
+      "object": "storm-crystal-pillar",
+      "location": [
+        -3.176,
+        -7.668,
+        0
+      ]
+    },
+    {
+      "id": "storm-pillar-5",
+      "object": "storm-crystal-pillar",
+      "location": [
+        3.176,
+        -7.668,
+        0
+      ]
+    },
+    {
+      "id": "storm-pillar-6",
+      "object": "storm-crystal-pillar",
+      "location": [
+        7.668,
+        -3.176,
+        0
+      ]
+    },
+    {
+      "id": "storm-pillar-7",
+      "object": "storm-crystal-pillar",
+      "location": [
+        7.668,
+        3.176,
+        0
+      ]
+    },
+    {
+      "id": "storm-pillar-8",
+      "object": "storm-crystal-pillar",
+      "location": [
+        3.176,
+        7.668,
+        0
+      ]
+    },
+    {
+      "id": "crystal-storm",
+      "object": "memory-crystal",
+      "location": [
+        3.5,
+        -3.5,
+        0.4
+      ]
+    }
+  ],
+  "scenes": {
+    "s_storm_chamber": {
+      "note": "Lightning across the crystal walls, cold blue dark between flashes: Aeris is chosen; a priest's request ('Bring back a song that heals'); the crystal holds the Record.",
+      "world": {
+        "color": [
+          0.039,
+          0.071,
+          0.133
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "oculus-storm",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            16
+          ],
+          "energy": 2500,
+          "size": 6,
+          "color": [
+            0.706,
+            0.816,
+            0.941
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "lightning",
+          "type": "POINT",
+          "location": [
+            -7,
+            5,
+            12
+          ],
+          "energy": 6000,
+          "size": 0.5,
+          "color": [
+            0.957,
+            0.965,
+            1.0
+          ]
+        },
+        {
+          "name": "crystal-glow",
+          "type": "POINT",
+          "location": [
+            3.5,
+            -3.5,
+            2.2
+          ],
+          "energy": 120,
+          "size": 0.4,
+          "color": [
+            0.706,
+            0.816,
+            0.941
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SPOT",
+          "location": [
+            0,
+            -9,
+            14
+          ],
+          "energy": 1500,
+          "size": 0.5,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "look_at": [
+            0,
+            2,
+            1
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -12.5,
+          3.5
+        ],
+        "look_at": [
+          0.0,
+          -2.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -8,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "crystal-storm",
+          "verb": "Record"
+        },
+        {
+          "prop": "storm-pillar-1",
+          "verb": "Lay a hand on the storm pillar (be chosen)",
+          "leads_to": "s_flight_aetherius"
+        }
+      ]
+    }
+  }
+}
