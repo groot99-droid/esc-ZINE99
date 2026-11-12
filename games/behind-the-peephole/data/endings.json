@@ -1,0 +1,105 @@
+{
+  "endings": [
+    {
+      "id": "under_the_door",
+      "name": "Under the Door",
+      "as_written": false,
+      "priority": 1,
+      "when": {
+        "all": [
+          {
+            "is": "final_choice",
+            "eq": "slide_pages"
+          },
+          {
+            "is": "link.one_hand",
+            "eq": true
+          },
+          {
+            "is": "pages_delivered",
+            "gte": 4
+          },
+          {
+            "is": "rows_correct",
+            "gte": 20
+          },
+          {
+            "is": "account_correct",
+            "gte": 6
+          }
+        ]
+      },
+      "summary": "You slide the truth under six doors. The guests learn they were gathered on purpose and leave together before dawn; the mercenary goes the other way alone. You are left in the passage when the knock comes.",
+      "final_scenes": [
+        "n7_slide_run",
+        "end_under_door"
+      ]
+    },
+    {
+      "id": "wrong_picture",
+      "name": "The Wrong Picture",
+      "as_written": false,
+      "priority": 2,
+      "when": {
+        "all": [
+          {
+            "any": [
+              {
+                "is": "final_choice",
+                "eq": "keep_logging"
+              },
+              {
+                "is": "final_choice",
+                "eq": "slide_pages"
+              }
+            ]
+          },
+          {
+            "any": [
+              {
+                "is": "rows_correct",
+                "lte": 19
+              },
+              {
+                "is": "account_correct",
+                "lte": 5
+              }
+            ]
+          }
+        ]
+      },
+      "summary": "Your deductions are mostly wrong and the file is believed. At dawn a guest who did not do what you wrote is led out through the lobby.",
+      "final_scenes": [
+        "dawn_lobby",
+        "end_wrong_picture"
+      ]
+    },
+    {
+      "id": "open_door",
+      "name": "The Open Door",
+      "as_written": false,
+      "priority": 3,
+      "when": {
+        "is": "final_choice",
+        "eq": "answer_door"
+      },
+      "summary": "You answer the 2:14 knock and walk out with the stranger. Nobody logs the last night, and the guest you watched most does not come back.",
+      "final_scenes": [
+        "n7_your_door",
+        "end_open_door"
+      ]
+    },
+    {
+      "id": "next_watcher",
+      "name": "The Next Watcher",
+      "as_written": false,
+      "priority": 4,
+      "when": true,
+      "summary": "You keep logging with an accurate hand. The file is complete, every guest is sold as predicted, and next season a new watcher's lens looks in on you.",
+      "final_scenes": [
+        "dawn_lobby",
+        "end_next_watcher"
+      ]
+    }
+  ]
+}

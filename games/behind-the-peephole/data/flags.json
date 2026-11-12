@@ -1,0 +1,464 @@
+{
+  "state": [
+    {
+      "name": "night",
+      "type": "counter",
+      "default": 1,
+      "description": "The current night, 1 to 7."
+    },
+    {
+      "name": "shift_clock",
+      "type": "meter",
+      "default": 0,
+      "description": "Game minutes since 23:00 in the current shift; runs at 40x in 3D and 2D, 10x on 1D pages with the world running.",
+      "range": [
+        0,
+        360
+      ]
+    },
+    {
+      "name": "suspicion.r401",
+      "type": "meter",
+      "default": 0,
+      "description": "How sure the guest in room 401 is that they are watched. 40 uneasy, 70 covers the lens, 100 exposed. Halved at the start of each night.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "suspicion.r402",
+      "type": "meter",
+      "default": 0,
+      "description": "How sure the guest in room 402 is that they are watched. 40 uneasy, 70 covers the lens, 100 exposed. Halved at the start of each night.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "suspicion.r403",
+      "type": "meter",
+      "default": 0,
+      "description": "How sure the guest in room 403 is that they are watched. 40 uneasy, 70 covers the lens, 100 exposed. Halved at the start of each night.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "suspicion.r404",
+      "type": "meter",
+      "default": 0,
+      "description": "How sure the guest in room 404 is that they are watched. 40 uneasy, 70 covers the lens, 100 exposed. Halved at the start of each night.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "suspicion.r405",
+      "type": "meter",
+      "default": 0,
+      "description": "How sure the guest in room 405 is that they are watched. 40 uneasy, 70 covers the lens, 100 exposed. Halved at the start of each night.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "suspicion.r406",
+      "type": "meter",
+      "default": 0,
+      "description": "How sure the guest in room 406 is that they are watched. 40 uneasy, 70 covers the lens, 100 exposed. Halved at the start of each night.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "exposed.r401",
+      "type": "bool",
+      "default": false,
+      "description": "Room 401's guest reached 100 suspicion; stages one false sign a night from then on and refuses pages on night seven."
+    },
+    {
+      "name": "exposed.r402",
+      "type": "bool",
+      "default": false,
+      "description": "Room 402's guest reached 100 suspicion; stages one false sign a night from then on and refuses pages on night seven."
+    },
+    {
+      "name": "exposed.r403",
+      "type": "bool",
+      "default": false,
+      "description": "Room 403's guest reached 100 suspicion; stages one false sign a night from then on and refuses pages on night seven."
+    },
+    {
+      "name": "exposed.r404",
+      "type": "bool",
+      "default": false,
+      "description": "Room 404's guest reached 100 suspicion; stages one false sign a night from then on and refuses pages on night seven."
+    },
+    {
+      "name": "exposed.r405",
+      "type": "bool",
+      "default": false,
+      "description": "Room 405's guest reached 100 suspicion; stages one false sign a night from then on and refuses pages on night seven."
+    },
+    {
+      "name": "exposed.r406",
+      "type": "bool",
+      "default": false,
+      "description": "Room 406's guest reached 100 suspicion; stages one false sign a night from then on and refuses pages on night seven."
+    },
+    {
+      "name": "blind.r401",
+      "type": "bool",
+      "default": false,
+      "description": "Room 401's lens is covered for the rest of tonight. Reset each night."
+    },
+    {
+      "name": "blind.r402",
+      "type": "bool",
+      "default": false,
+      "description": "Room 402's lens is covered for the rest of tonight. Reset each night."
+    },
+    {
+      "name": "blind.r403",
+      "type": "bool",
+      "default": false,
+      "description": "Room 403's lens is covered for the rest of tonight. Reset each night."
+    },
+    {
+      "name": "blind.r404",
+      "type": "bool",
+      "default": false,
+      "description": "Room 404's lens is covered for the rest of tonight. Reset each night."
+    },
+    {
+      "name": "blind.r405",
+      "type": "bool",
+      "default": false,
+      "description": "Room 405's lens is covered for the rest of tonight. Reset each night."
+    },
+    {
+      "name": "blind.r406",
+      "type": "bool",
+      "default": false,
+      "description": "Room 406's lens is covered for the rest of tonight. Reset each night."
+    },
+    {
+      "name": "exposed_count",
+      "type": "counter",
+      "default": 0,
+      "description": "Number of exposed guests, 0 to 6."
+    },
+    {
+      "name": "beats_seen",
+      "type": "counter",
+      "default": 0,
+      "description": "Beats caught at a lens in this run."
+    },
+    {
+      "name": "beats",
+      "type": "ledger",
+      "default": [],
+      "description": "Every beat caught.",
+      "fields": [
+        "night",
+        "room",
+        "beat_id",
+        "kind",
+        "false_sign"
+      ]
+    },
+    {
+      "name": "watch_log",
+      "type": "ledger",
+      "default": [],
+      "description": "Every stretch of time at a lens.",
+      "fields": [
+        "night",
+        "room",
+        "from_min",
+        "to_min"
+      ]
+    },
+    {
+      "name": "most_watched_guest",
+      "type": "enum",
+      "default": "none",
+      "description": "The room with the most minutes in watch_log, set at 02:14 on night seven. Names who does not come back in The Open Door.",
+      "values": [
+        "none",
+        "r401",
+        "r402",
+        "r403",
+        "r404",
+        "r405",
+        "r406"
+      ]
+    },
+    {
+      "name": "knocks",
+      "type": "ledger",
+      "default": [],
+      "description": "The nightly 2:14 knock and where the player was when it came.",
+      "fields": [
+        "night",
+        "room",
+        "heard_where"
+      ]
+    },
+    {
+      "name": "seen_by_staff",
+      "type": "counter",
+      "default": 0,
+      "description": "Times the maid saw the player in the passage. At 2 the next shift starts at 23:15; at 3 the stair door is relocked until night six."
+    },
+    {
+      "name": "seen_by_stranger",
+      "type": "bool",
+      "default": false,
+      "description": "The stranger found the player in the back office on night six; the night seven knock comes at 01:14."
+    },
+    {
+      "name": "picks_left",
+      "type": "counter",
+      "default": 3,
+      "description": "Spare lock picks, shared by every lock."
+    },
+    {
+      "name": "drawer_open",
+      "type": "bool",
+      "default": false,
+      "description": "The desk drawer is open: the logbook and the deck."
+    },
+    {
+      "name": "porter_helped",
+      "type": "bool",
+      "default": false,
+      "description": "Lew opened the drawer after three failures."
+    },
+    {
+      "name": "stair_door_open",
+      "type": "bool",
+      "default": false,
+      "description": "The stair door at the passage's east end is open."
+    },
+    {
+      "name": "chute_box_seen",
+      "type": "bool",
+      "default": false,
+      "description": "The player saw the chute's box with the W on it."
+    },
+    {
+      "name": "lost_property_open",
+      "type": "bool",
+      "default": false,
+      "description": "The lost-property cabinet is open."
+    },
+    {
+      "name": "fenn_log_found",
+      "type": "bool",
+      "default": false,
+      "description": "The player read Abel Fenn's log from last season."
+    },
+    {
+      "name": "safe_open",
+      "type": "bool",
+      "default": false,
+      "description": "The back-office safe is open."
+    },
+    {
+      "name": "ledger_read",
+      "type": "bool",
+      "default": false,
+      "description": "The player read the booking ledger: six bookers, one payer, account ending 0214."
+    },
+    {
+      "name": "patience_cards_read",
+      "type": "counter",
+      "default": 0,
+      "description": "Slipped cards read, 0 to 12."
+    },
+    {
+      "name": "patience_wins",
+      "type": "counter",
+      "default": 0,
+      "description": "Night Patience games won."
+    },
+    {
+      "name": "card.wren_name",
+      "type": "bool",
+      "default": false,
+      "description": "Slipped card 5 read: Wren's name."
+    },
+    {
+      "name": "card.safe_combo",
+      "type": "bool",
+      "default": false,
+      "description": "Slipped card 9 read: the safe combination 19-26-14."
+    },
+    {
+      "name": "card.own_door",
+      "type": "bool",
+      "default": false,
+      "description": "Slipped card 11 read: look at your own door."
+    },
+    {
+      "name": "stmt.n1",
+      "type": "counter",
+      "default": 0,
+      "description": "Correct rows in night 1's Statement, 0 to 6."
+    },
+    {
+      "name": "stmt.n2",
+      "type": "counter",
+      "default": 0,
+      "description": "Correct rows in night 2's Statement, 0 to 6."
+    },
+    {
+      "name": "stmt.n3",
+      "type": "counter",
+      "default": 0,
+      "description": "Correct rows in night 3's Statement, 0 to 6."
+    },
+    {
+      "name": "stmt.n4",
+      "type": "counter",
+      "default": 0,
+      "description": "Correct rows in night 4's Statement, 0 to 6."
+    },
+    {
+      "name": "stmt.n5",
+      "type": "counter",
+      "default": 0,
+      "description": "Correct rows in night 5's Statement, 0 to 6."
+    },
+    {
+      "name": "stmt.n6",
+      "type": "counter",
+      "default": 0,
+      "description": "Correct rows in night 6's Statement, 0 to 6."
+    },
+    {
+      "name": "rows_correct",
+      "type": "counter",
+      "default": 0,
+      "description": "Sum of correct Statement rows, nights one to six, 0 to 36."
+    },
+    {
+      "name": "statements",
+      "type": "ledger",
+      "default": [],
+      "description": "Every signed Statement row.",
+      "fields": [
+        "night",
+        "room",
+        "answer",
+        "correct"
+      ]
+    },
+    {
+      "name": "account_correct",
+      "type": "counter",
+      "default": 0,
+      "description": "Correct answers in the Account on night seven, 0 to 9 (six missions, three single questions)."
+    },
+    {
+      "name": "account_scapegoat",
+      "type": "enum",
+      "default": "r406",
+      "description": "Who Wren's file blames in The Wrong Picture: the room wrongly put against the theft, else against the logger, else 406.",
+      "values": [
+        "r401",
+        "r402",
+        "r403",
+        "r404",
+        "r405",
+        "r406"
+      ]
+    },
+    {
+      "name": "mosaic_links",
+      "type": "counter",
+      "default": 0,
+      "description": "True links made on the Mosaic."
+    },
+    {
+      "name": "links",
+      "type": "ledger",
+      "default": [],
+      "description": "Every thread placed on the Mosaic.",
+      "fields": [
+        "night",
+        "from",
+        "to",
+        "type",
+        "true"
+      ]
+    },
+    {
+      "name": "questions_open",
+      "type": "counter",
+      "default": 0,
+      "description": "Question cards pinned by true links."
+    },
+    {
+      "name": "link.sisters",
+      "type": "bool",
+      "default": false,
+      "description": "True link: 405 and 406 are family."
+    },
+    {
+      "name": "link.case_ledger",
+      "type": "bool",
+      "default": false,
+      "description": "True link: the case holds the ledger."
+    },
+    {
+      "name": "link.stranger_fenn",
+      "type": "bool",
+      "default": false,
+      "description": "True link: the stranger is Abel Fenn."
+    },
+    {
+      "name": "link.one_hand",
+      "type": "bool",
+      "default": false,
+      "description": "True link: Wren booked all six. Offers the slide-the-pages choice on night seven."
+    },
+    {
+      "name": "link.wren_you",
+      "type": "bool",
+      "default": false,
+      "description": "True link: Wren hired you."
+    },
+    {
+      "name": "own_lens_seen",
+      "type": "bool",
+      "default": false,
+      "description": "The player saw the lens in the office door on night seven."
+    },
+    {
+      "name": "final_choice",
+      "type": "enum",
+      "default": "none",
+      "description": "The one choice on night seven. Defaults to keep_logging if the player does not act by 02:44.",
+      "values": [
+        "none",
+        "keep_logging",
+        "answer_door",
+        "slide_pages"
+      ]
+    },
+    {
+      "name": "pages_delivered",
+      "type": "counter",
+      "default": 0,
+      "description": "Valet doors whose guests took the pages in the slide run, 0 to 6. Exposed guests' doors do not count."
+    }
+  ]
+}

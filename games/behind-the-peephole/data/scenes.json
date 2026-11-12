@@ -1,0 +1,1677 @@
+{
+  "modes_2d": [
+    {
+      "id": "eye",
+      "name": "The eye at the hole",
+      "movement": "tilt"
+    },
+    {
+      "id": "race",
+      "name": "Corridor race",
+      "movement": "scroll"
+    }
+  ],
+  "games_1d": [
+    {
+      "id": "lockwork",
+      "name": "Lockwork",
+      "family": "Lock picking"
+    },
+    {
+      "id": "statement",
+      "name": "The Statement",
+      "family": "Logic grid"
+    },
+    {
+      "id": "patience",
+      "name": "Night Patience",
+      "family": "Solitaire"
+    },
+    {
+      "id": "mosaic",
+      "name": "The Mosaic",
+      "family": "Link board"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "n1_arrival",
+      "layer": "3d",
+      "name": "Staff alley and service stair",
+      "chapter": "n1",
+      "enter": "fade",
+      "exit": "fade",
+      "writes": [
+        "night"
+      ],
+      "next": [
+        "n1_passage"
+      ]
+    },
+    {
+      "id": "n1_passage",
+      "layer": "3d",
+      "name": "The valet passage, first walk",
+      "chapter": "n1",
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "n1_first_look"
+      ]
+    },
+    {
+      "id": "n1_first_look",
+      "layer": "2d",
+      "name": "First look: empty 406",
+      "chapter": "n1",
+      "mode": "eye",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "n1_office"
+      ]
+    },
+    {
+      "id": "n1_office",
+      "layer": "3d",
+      "name": "The office, first night",
+      "chapter": "n1",
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "n1_drawer"
+      ]
+    },
+    {
+      "id": "n1_drawer",
+      "layer": "1d",
+      "name": "Lockwork: the desk drawer",
+      "chapter": "n1",
+      "game": "lockwork",
+      "world_runs": false,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "picks_left"
+      ],
+      "writes": [
+        "drawer_open",
+        "porter_helped",
+        "picks_left"
+      ],
+      "next": [
+        "n1_shift_eye",
+        "n1_shift_race"
+      ]
+    },
+    {
+      "id": "n1_shift_eye",
+      "layer": "2d",
+      "name": "The shift at the lenses, night 1",
+      "chapter": "n1",
+      "mode": "eye",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "night",
+        "shift_clock",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406"
+      ],
+      "writes": [
+        "beats",
+        "beats_seen",
+        "watch_log",
+        "shift_clock",
+        "knocks",
+        "exposed_count",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406"
+      ],
+      "next": [
+        "n1_shift_race"
+      ]
+    },
+    {
+      "id": "n1_shift_race",
+      "layer": "2d",
+      "name": "The passage, night 1",
+      "chapter": "n1",
+      "mode": "race",
+      "enter": "flatten",
+      "exit": "push-in",
+      "reads": [
+        "night",
+        "shift_clock",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "shift_clock",
+        "seen_by_staff",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406"
+      ],
+      "next": [
+        "n1_shift_eye",
+        "n1_statement"
+      ]
+    },
+    {
+      "id": "n2_office",
+      "layer": "3d",
+      "name": "The office, night 2",
+      "chapter": "n2",
+      "enter": "cut",
+      "exit": "push-in",
+      "reads": [
+        "night",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "night"
+      ],
+      "next": [
+        "n2_patience"
+      ]
+    },
+    {
+      "id": "n2_patience",
+      "layer": "1d",
+      "name": "Night Patience, night 2",
+      "chapter": "n2",
+      "game": "patience",
+      "world_runs": true,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "patience_cards_read"
+      ],
+      "writes": [
+        "patience_cards_read",
+        "patience_wins",
+        "shift_clock"
+      ],
+      "next": [
+        "n2_shift_eye",
+        "n2_shift_race"
+      ]
+    },
+    {
+      "id": "n2_shift_eye",
+      "layer": "2d",
+      "name": "The shift at the lenses, night 2",
+      "chapter": "n2",
+      "mode": "eye",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "night",
+        "shift_clock",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406"
+      ],
+      "writes": [
+        "beats",
+        "beats_seen",
+        "watch_log",
+        "shift_clock",
+        "knocks",
+        "exposed_count",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406"
+      ],
+      "next": [
+        "n2_shift_race"
+      ]
+    },
+    {
+      "id": "n2_shift_race",
+      "layer": "2d",
+      "name": "The passage, night 2",
+      "chapter": "n2",
+      "mode": "race",
+      "enter": "flatten",
+      "exit": "push-in",
+      "reads": [
+        "night",
+        "shift_clock",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "shift_clock",
+        "seen_by_staff",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406"
+      ],
+      "next": [
+        "n2_shift_eye",
+        "n2_statement"
+      ]
+    },
+    {
+      "id": "n3_office",
+      "layer": "3d",
+      "name": "The office, night 3",
+      "chapter": "n3",
+      "enter": "cut",
+      "exit": "push-in",
+      "reads": [
+        "night",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "night"
+      ],
+      "next": [
+        "n3_patience"
+      ]
+    },
+    {
+      "id": "n3_patience",
+      "layer": "1d",
+      "name": "Night Patience, night 3",
+      "chapter": "n3",
+      "game": "patience",
+      "world_runs": true,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "patience_cards_read"
+      ],
+      "writes": [
+        "patience_cards_read",
+        "patience_wins",
+        "shift_clock"
+      ],
+      "next": [
+        "n3_shift_eye",
+        "n3_shift_race"
+      ]
+    },
+    {
+      "id": "n3_shift_eye",
+      "layer": "2d",
+      "name": "The shift at the lenses, night 3",
+      "chapter": "n3",
+      "mode": "eye",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "night",
+        "shift_clock",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406"
+      ],
+      "writes": [
+        "beats",
+        "beats_seen",
+        "watch_log",
+        "shift_clock",
+        "knocks",
+        "exposed_count",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406"
+      ],
+      "next": [
+        "n3_shift_race"
+      ]
+    },
+    {
+      "id": "n3_shift_race",
+      "layer": "2d",
+      "name": "The passage, night 3",
+      "chapter": "n3",
+      "mode": "race",
+      "enter": "flatten",
+      "exit": "push-in",
+      "reads": [
+        "night",
+        "shift_clock",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "shift_clock",
+        "seen_by_staff",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406"
+      ],
+      "next": [
+        "n3_shift_eye",
+        "n3_stair_lock",
+        "n3_statement"
+      ]
+    },
+    {
+      "id": "n4_office",
+      "layer": "3d",
+      "name": "The office, night 4",
+      "chapter": "n4",
+      "enter": "cut",
+      "exit": "push-in",
+      "reads": [
+        "night",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "night"
+      ],
+      "next": [
+        "n4_patience"
+      ]
+    },
+    {
+      "id": "n4_patience",
+      "layer": "1d",
+      "name": "Night Patience, night 4",
+      "chapter": "n4",
+      "game": "patience",
+      "world_runs": true,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "patience_cards_read"
+      ],
+      "writes": [
+        "patience_cards_read",
+        "patience_wins",
+        "shift_clock",
+        "card.wren_name"
+      ],
+      "next": [
+        "n4_shift_eye",
+        "n4_shift_race"
+      ]
+    },
+    {
+      "id": "n4_shift_eye",
+      "layer": "2d",
+      "name": "The shift at the lenses, night 4",
+      "chapter": "n4",
+      "mode": "eye",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "night",
+        "shift_clock",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406"
+      ],
+      "writes": [
+        "beats",
+        "beats_seen",
+        "watch_log",
+        "shift_clock",
+        "knocks",
+        "exposed_count",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406"
+      ],
+      "next": [
+        "n4_shift_race"
+      ]
+    },
+    {
+      "id": "n4_shift_race",
+      "layer": "2d",
+      "name": "The passage, night 4",
+      "chapter": "n4",
+      "mode": "race",
+      "enter": "flatten",
+      "exit": "push-in",
+      "reads": [
+        "night",
+        "shift_clock",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "shift_clock",
+        "seen_by_staff",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406"
+      ],
+      "next": [
+        "n4_shift_eye",
+        "n4_gap_406",
+        "n4_lost_property",
+        "n4_statement"
+      ]
+    },
+    {
+      "id": "n5_office",
+      "layer": "3d",
+      "name": "The office, night 5",
+      "chapter": "n5",
+      "enter": "cut",
+      "exit": "push-in",
+      "reads": [
+        "night",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "night"
+      ],
+      "next": [
+        "n5_patience"
+      ]
+    },
+    {
+      "id": "n5_patience",
+      "layer": "1d",
+      "name": "Night Patience, night 5",
+      "chapter": "n5",
+      "game": "patience",
+      "world_runs": true,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "patience_cards_read"
+      ],
+      "writes": [
+        "patience_cards_read",
+        "patience_wins",
+        "shift_clock"
+      ],
+      "next": [
+        "n5_shift_eye",
+        "n5_shift_race"
+      ]
+    },
+    {
+      "id": "n5_shift_eye",
+      "layer": "2d",
+      "name": "The shift at the lenses, night 5",
+      "chapter": "n5",
+      "mode": "eye",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "night",
+        "shift_clock",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406"
+      ],
+      "writes": [
+        "beats",
+        "beats_seen",
+        "watch_log",
+        "shift_clock",
+        "knocks",
+        "exposed_count",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406"
+      ],
+      "next": [
+        "n5_shift_race"
+      ]
+    },
+    {
+      "id": "n5_shift_race",
+      "layer": "2d",
+      "name": "The passage, night 5",
+      "chapter": "n5",
+      "mode": "race",
+      "enter": "flatten",
+      "exit": "push-in",
+      "reads": [
+        "night",
+        "shift_clock",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "shift_clock",
+        "seen_by_staff",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406"
+      ],
+      "next": [
+        "n5_shift_eye",
+        "n5_blackout",
+        "n5_statement"
+      ]
+    },
+    {
+      "id": "n6_office",
+      "layer": "3d",
+      "name": "The office, night 6",
+      "chapter": "n6",
+      "enter": "cut",
+      "exit": "push-in",
+      "reads": [
+        "night",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "night"
+      ],
+      "next": [
+        "n6_patience"
+      ]
+    },
+    {
+      "id": "n6_patience",
+      "layer": "1d",
+      "name": "Night Patience, night 6",
+      "chapter": "n6",
+      "game": "patience",
+      "world_runs": true,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "patience_cards_read"
+      ],
+      "writes": [
+        "patience_cards_read",
+        "patience_wins",
+        "shift_clock",
+        "card.safe_combo"
+      ],
+      "next": [
+        "n6_shift_eye",
+        "n6_shift_race"
+      ]
+    },
+    {
+      "id": "n6_shift_eye",
+      "layer": "2d",
+      "name": "The shift at the lenses, night 6",
+      "chapter": "n6",
+      "mode": "eye",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "night",
+        "shift_clock",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406"
+      ],
+      "writes": [
+        "beats",
+        "beats_seen",
+        "watch_log",
+        "shift_clock",
+        "knocks",
+        "exposed_count",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406"
+      ],
+      "next": [
+        "n6_shift_race"
+      ]
+    },
+    {
+      "id": "n6_shift_race",
+      "layer": "2d",
+      "name": "The passage, night 6",
+      "chapter": "n6",
+      "mode": "race",
+      "enter": "flatten",
+      "exit": "push-in",
+      "reads": [
+        "night",
+        "shift_clock",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "shift_clock",
+        "seen_by_staff",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406"
+      ],
+      "next": [
+        "n6_shift_eye",
+        "n6_stairwell",
+        "n6_stair_lock",
+        "n6_statement"
+      ]
+    },
+    {
+      "id": "n7_office",
+      "layer": "3d",
+      "name": "The office, night 7",
+      "chapter": "n7",
+      "enter": "cut",
+      "exit": "push-in",
+      "reads": [
+        "night",
+        "seen_by_staff",
+        "seen_by_stranger",
+        "stmt.n1",
+        "rows_correct"
+      ],
+      "writes": [
+        "night"
+      ],
+      "next": [
+        "n7_account"
+      ]
+    },
+    {
+      "id": "n7_patience",
+      "layer": "1d",
+      "name": "Night Patience, night 7",
+      "chapter": "n7",
+      "game": "patience",
+      "world_runs": true,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "patience_cards_read"
+      ],
+      "writes": [
+        "patience_cards_read",
+        "patience_wins",
+        "shift_clock",
+        "card.own_door"
+      ],
+      "next": [
+        "n7_shift_eye",
+        "n7_shift_race"
+      ]
+    },
+    {
+      "id": "n7_shift_eye",
+      "layer": "2d",
+      "name": "The shift at the lenses, night 7",
+      "chapter": "n7",
+      "mode": "eye",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "night",
+        "shift_clock",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406"
+      ],
+      "writes": [
+        "beats",
+        "beats_seen",
+        "watch_log",
+        "shift_clock",
+        "knocks",
+        "exposed_count",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406",
+        "blind.r401",
+        "blind.r402",
+        "blind.r403",
+        "blind.r404",
+        "blind.r405",
+        "blind.r406",
+        "most_watched_guest"
+      ],
+      "next": [
+        "n7_shift_race",
+        "n7_your_door"
+      ]
+    },
+    {
+      "id": "n7_shift_race",
+      "layer": "2d",
+      "name": "The passage, night 7",
+      "chapter": "n7",
+      "mode": "race",
+      "enter": "flatten",
+      "exit": "push-in",
+      "reads": [
+        "night",
+        "shift_clock",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "shift_clock",
+        "seen_by_staff",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406"
+      ],
+      "next": [
+        "n7_shift_eye",
+        "n7_your_door"
+      ]
+    },
+    {
+      "id": "n3_stair_lock",
+      "layer": "1d",
+      "name": "Lockwork: the stair door",
+      "chapter": "n3",
+      "game": "lockwork",
+      "world_runs": true,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "picks_left",
+        "shift_clock"
+      ],
+      "writes": [
+        "stair_door_open",
+        "picks_left",
+        "shift_clock"
+      ],
+      "next": [
+        "n3_stairwell",
+        "n3_shift_race"
+      ]
+    },
+    {
+      "id": "n3_stairwell",
+      "layer": "3d",
+      "name": "The back stair and the chute box",
+      "chapter": "n3",
+      "enter": "cut",
+      "exit": "cut",
+      "reads": [
+        "stair_door_open",
+        "shift_clock"
+      ],
+      "writes": [
+        "chute_box_seen",
+        "shift_clock"
+      ],
+      "next": [
+        "n3_shift_race"
+      ]
+    },
+    {
+      "id": "n4_gap_406",
+      "layer": "2d",
+      "name": "The gap under 406's door",
+      "chapter": "n4",
+      "mode": "eye",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "blind.r406",
+        "shift_clock"
+      ],
+      "writes": [
+        "beats",
+        "beats_seen",
+        "watch_log",
+        "shift_clock"
+      ],
+      "next": [
+        "n4_shift_race"
+      ]
+    },
+    {
+      "id": "n4_lost_property",
+      "layer": "1d",
+      "name": "Lockwork: the lost-property cabinet",
+      "chapter": "n4",
+      "game": "lockwork",
+      "world_runs": true,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "shift_clock",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "lost_property_open",
+        "fenn_log_found",
+        "shift_clock",
+        "seen_by_staff"
+      ],
+      "next": [
+        "n4_shift_race"
+      ]
+    },
+    {
+      "id": "n5_blackout",
+      "layer": "2d",
+      "name": "The blackout",
+      "chapter": "n5",
+      "mode": "race",
+      "enter": "cut",
+      "exit": "cut",
+      "reads": [
+        "shift_clock"
+      ],
+      "writes": [
+        "shift_clock",
+        "suspicion.r401",
+        "suspicion.r402",
+        "suspicion.r403",
+        "suspicion.r404",
+        "suspicion.r405",
+        "suspicion.r406"
+      ],
+      "next": [
+        "n5_shift_race",
+        "n5_shift_eye"
+      ]
+    },
+    {
+      "id": "n6_stair_lock",
+      "layer": "1d",
+      "name": "Lockwork: the stair door, second chance",
+      "chapter": "n6",
+      "game": "lockwork",
+      "world_runs": true,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "picks_left",
+        "shift_clock",
+        "stair_door_open"
+      ],
+      "writes": [
+        "stair_door_open",
+        "picks_left",
+        "shift_clock"
+      ],
+      "next": [
+        "n6_stairwell",
+        "n6_shift_race"
+      ]
+    },
+    {
+      "id": "n6_stairwell",
+      "layer": "3d",
+      "name": "The back stair, night six",
+      "chapter": "n6",
+      "enter": "cut",
+      "exit": "cut",
+      "reads": [
+        "stair_door_open",
+        "shift_clock"
+      ],
+      "writes": [
+        "shift_clock"
+      ],
+      "next": [
+        "n6_back_office",
+        "n6_shift_race"
+      ]
+    },
+    {
+      "id": "n6_back_office",
+      "layer": "3d",
+      "name": "The back office",
+      "chapter": "n6",
+      "enter": "cut",
+      "exit": "push-in",
+      "reads": [
+        "shift_clock",
+        "safe_open"
+      ],
+      "writes": [
+        "seen_by_stranger",
+        "shift_clock"
+      ],
+      "next": [
+        "n6_safe",
+        "n6_stairwell"
+      ]
+    },
+    {
+      "id": "n6_safe",
+      "layer": "1d",
+      "name": "Lockwork: the safe",
+      "chapter": "n6",
+      "game": "lockwork",
+      "world_runs": true,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "card.safe_combo",
+        "shift_clock"
+      ],
+      "writes": [
+        "safe_open",
+        "ledger_read",
+        "shift_clock"
+      ],
+      "next": [
+        "n6_back_office"
+      ]
+    },
+    {
+      "id": "n1_statement",
+      "layer": "1d",
+      "name": "The Statement, night 1",
+      "chapter": "n1",
+      "game": "statement",
+      "world_runs": false,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "beats",
+        "statements"
+      ],
+      "writes": [
+        "stmt.n1",
+        "rows_correct",
+        "statements"
+      ],
+      "next": [
+        "n1_morning"
+      ]
+    },
+    {
+      "id": "n1_morning",
+      "layer": "3d",
+      "name": "The office at 05:00, night 1",
+      "chapter": "n1",
+      "enter": "cut",
+      "exit": "fade",
+      "reads": [
+        "beats"
+      ],
+      "writes": [
+        "night"
+      ],
+      "next": [
+        "n2_office"
+      ]
+    },
+    {
+      "id": "n2_statement",
+      "layer": "1d",
+      "name": "The Statement, night 2",
+      "chapter": "n2",
+      "game": "statement",
+      "world_runs": false,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "beats",
+        "statements"
+      ],
+      "writes": [
+        "stmt.n2",
+        "rows_correct",
+        "statements"
+      ],
+      "next": [
+        "n2_mosaic"
+      ]
+    },
+    {
+      "id": "n2_mosaic",
+      "layer": "1d",
+      "name": "The Mosaic, night 2",
+      "chapter": "n2",
+      "game": "mosaic",
+      "world_runs": false,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "beats",
+        "statements",
+        "links",
+        "ledger_read",
+        "patience_cards_read",
+        "fenn_log_found"
+      ],
+      "writes": [
+        "mosaic_links",
+        "links",
+        "questions_open"
+      ],
+      "next": [
+        "n2_morning"
+      ]
+    },
+    {
+      "id": "n2_morning",
+      "layer": "3d",
+      "name": "The office at 05:00, night 2",
+      "chapter": "n2",
+      "enter": "cut",
+      "exit": "fade",
+      "reads": [
+        "beats"
+      ],
+      "writes": [
+        "night"
+      ],
+      "next": [
+        "n3_office"
+      ]
+    },
+    {
+      "id": "n3_statement",
+      "layer": "1d",
+      "name": "The Statement, night 3",
+      "chapter": "n3",
+      "game": "statement",
+      "world_runs": false,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "beats",
+        "statements"
+      ],
+      "writes": [
+        "stmt.n3",
+        "rows_correct",
+        "statements"
+      ],
+      "next": [
+        "n3_mosaic"
+      ]
+    },
+    {
+      "id": "n3_mosaic",
+      "layer": "1d",
+      "name": "The Mosaic, night 3",
+      "chapter": "n3",
+      "game": "mosaic",
+      "world_runs": false,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "beats",
+        "statements",
+        "links",
+        "ledger_read",
+        "patience_cards_read",
+        "fenn_log_found"
+      ],
+      "writes": [
+        "mosaic_links",
+        "links",
+        "questions_open",
+        "link.sisters"
+      ],
+      "next": [
+        "n3_morning"
+      ]
+    },
+    {
+      "id": "n3_morning",
+      "layer": "3d",
+      "name": "The office at 05:00, night 3",
+      "chapter": "n3",
+      "enter": "cut",
+      "exit": "fade",
+      "reads": [
+        "beats"
+      ],
+      "writes": [
+        "night"
+      ],
+      "next": [
+        "n4_office"
+      ]
+    },
+    {
+      "id": "n4_statement",
+      "layer": "1d",
+      "name": "The Statement, night 4",
+      "chapter": "n4",
+      "game": "statement",
+      "world_runs": false,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "beats",
+        "statements"
+      ],
+      "writes": [
+        "stmt.n4",
+        "rows_correct",
+        "statements"
+      ],
+      "next": [
+        "n4_mosaic"
+      ]
+    },
+    {
+      "id": "n4_mosaic",
+      "layer": "1d",
+      "name": "The Mosaic, night 4",
+      "chapter": "n4",
+      "game": "mosaic",
+      "world_runs": false,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "beats",
+        "statements",
+        "links",
+        "ledger_read",
+        "patience_cards_read",
+        "fenn_log_found"
+      ],
+      "writes": [
+        "mosaic_links",
+        "links",
+        "questions_open",
+        "link.case_ledger",
+        "link.stranger_fenn"
+      ],
+      "next": [
+        "n4_morning"
+      ]
+    },
+    {
+      "id": "n4_morning",
+      "layer": "3d",
+      "name": "The office at 05:00, night 4",
+      "chapter": "n4",
+      "enter": "cut",
+      "exit": "fade",
+      "reads": [
+        "beats"
+      ],
+      "writes": [
+        "night"
+      ],
+      "next": [
+        "n5_office"
+      ]
+    },
+    {
+      "id": "n5_statement",
+      "layer": "1d",
+      "name": "The Statement, night 5",
+      "chapter": "n5",
+      "game": "statement",
+      "world_runs": false,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "beats",
+        "statements"
+      ],
+      "writes": [
+        "stmt.n5",
+        "rows_correct",
+        "statements"
+      ],
+      "next": [
+        "n5_mosaic"
+      ]
+    },
+    {
+      "id": "n5_mosaic",
+      "layer": "1d",
+      "name": "The Mosaic, night 5",
+      "chapter": "n5",
+      "game": "mosaic",
+      "world_runs": false,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "beats",
+        "statements",
+        "links",
+        "ledger_read",
+        "patience_cards_read",
+        "fenn_log_found"
+      ],
+      "writes": [
+        "mosaic_links",
+        "links",
+        "questions_open"
+      ],
+      "next": [
+        "n5_morning"
+      ]
+    },
+    {
+      "id": "n5_morning",
+      "layer": "3d",
+      "name": "The office at 05:00, night 5",
+      "chapter": "n5",
+      "enter": "cut",
+      "exit": "fade",
+      "reads": [
+        "beats"
+      ],
+      "writes": [
+        "night"
+      ],
+      "next": [
+        "n6_office"
+      ]
+    },
+    {
+      "id": "n6_statement",
+      "layer": "1d",
+      "name": "The Statement, night 6",
+      "chapter": "n6",
+      "game": "statement",
+      "world_runs": false,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "beats",
+        "statements",
+        "ledger_read",
+        "knocks"
+      ],
+      "writes": [
+        "stmt.n6",
+        "rows_correct",
+        "statements"
+      ],
+      "next": [
+        "n6_mosaic"
+      ]
+    },
+    {
+      "id": "n6_mosaic",
+      "layer": "1d",
+      "name": "The Mosaic, night 6",
+      "chapter": "n6",
+      "game": "mosaic",
+      "world_runs": false,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "beats",
+        "statements",
+        "links",
+        "ledger_read",
+        "patience_cards_read",
+        "fenn_log_found"
+      ],
+      "writes": [
+        "mosaic_links",
+        "links",
+        "questions_open",
+        "link.one_hand",
+        "link.wren_you"
+      ],
+      "next": [
+        "n6_morning"
+      ]
+    },
+    {
+      "id": "n6_morning",
+      "layer": "3d",
+      "name": "The office at 05:00, night 6",
+      "chapter": "n6",
+      "enter": "cut",
+      "exit": "fade",
+      "reads": [
+        "beats"
+      ],
+      "writes": [
+        "night"
+      ],
+      "next": [
+        "n7_office"
+      ]
+    },
+    {
+      "id": "n7_account",
+      "layer": "1d",
+      "name": "The Account",
+      "chapter": "n7",
+      "game": "statement",
+      "world_runs": false,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "beats",
+        "statements",
+        "links"
+      ],
+      "writes": [
+        "account_correct",
+        "account_scapegoat",
+        "statements"
+      ],
+      "next": [
+        "n7_patience"
+      ]
+    },
+    {
+      "id": "n7_your_door",
+      "layer": "3d",
+      "name": "The knock at your door",
+      "chapter": "n7",
+      "enter": "cut",
+      "exit": "flatten",
+      "reads": [
+        "link.one_hand",
+        "seen_by_stranger",
+        "card.own_door"
+      ],
+      "writes": [
+        "own_lens_seen",
+        "final_choice"
+      ],
+      "next": [
+        "n7_slide_run",
+        "end_open_door",
+        "dawn_lobby"
+      ]
+    },
+    {
+      "id": "n7_slide_run",
+      "layer": "2d",
+      "name": "Pages under the doors",
+      "chapter": "n7",
+      "mode": "race",
+      "enter": "flatten",
+      "exit": "fade",
+      "reads": [
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406",
+        "shift_clock"
+      ],
+      "writes": [
+        "pages_delivered",
+        "shift_clock"
+      ],
+      "next": [
+        "end_under_door",
+        "dawn_lobby"
+      ]
+    },
+    {
+      "id": "dawn_lobby",
+      "layer": "3d",
+      "name": "The lobby at dawn",
+      "chapter": "dawn",
+      "enter": "fade",
+      "exit": "fade",
+      "reads": [
+        "final_choice",
+        "account_scapegoat",
+        "rows_correct",
+        "account_correct"
+      ],
+      "next": [
+        "end_next_watcher",
+        "end_wrong_picture"
+      ]
+    },
+    {
+      "id": "end_next_watcher",
+      "layer": "2d",
+      "name": "The last lens",
+      "chapter": "dawn",
+      "mode": "eye",
+      "enter": "fade",
+      "exit": "fade"
+    },
+    {
+      "id": "end_open_door",
+      "layer": "3d",
+      "name": "The river wall at dawn",
+      "chapter": "dawn",
+      "enter": "fade",
+      "exit": "fade",
+      "reads": [
+        "most_watched_guest"
+      ]
+    },
+    {
+      "id": "end_under_door",
+      "layer": "3d",
+      "name": "The empty passage",
+      "chapter": "dawn",
+      "enter": "fade",
+      "exit": "fade",
+      "reads": [
+        "pages_delivered"
+      ]
+    },
+    {
+      "id": "end_wrong_picture",
+      "layer": "3d",
+      "name": "The lobby floor",
+      "chapter": "dawn",
+      "enter": "fade",
+      "exit": "fade",
+      "reads": [
+        "account_scapegoat"
+      ]
+    }
+  ]
+}
