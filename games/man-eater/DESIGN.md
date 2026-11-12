@@ -835,7 +835,8 @@ give it. Gamepad: shoulder buttons move through the hand.
 
 **Failure:** none as such. Missing your bid means no bread, which means the night is harder.
 
-**What it writes:** `bread_banked`, `hunger`, `jax_trust`, every seated player's `pull.*` meter.
+**What it writes:** `bread_banked`, `hunger`, `jax_trust`, every seated player's `pull.*` meter,
+and on day 3 `the_list` (L10, the empty chair nobody mentions).
 
 **Difficulty curve across appearances:**
 
@@ -1041,7 +1042,7 @@ page (the plan is saved as it stands).
 
 **Failure:** a void placed more than 2 squares off. The stair is not found on night 6. One retry.
 
-**What it writes:** `knows`, `the_list` (day 4 breaks L5), `void_located` (day 6).
+**What it writes:** `knows`, `the_list` (day 4 breaks L5; day 6 breaks L13), `void_located` (day 6).
 
 **Difficulty curve:** day 2, eight rooms, the plan closes, no conversion needed (stride has barely
 changed). Day 4, all ground-floor rooms, the plan does not close, conversion introduced. Day 6, the
@@ -1405,7 +1406,7 @@ Total spoken lines are counted in section 17.
 
 ## 18. Data files
 
-`games/man-eater/data/` holds the four shared files and nothing else.
+`games/man-eater/data/` holds the four shared files and two extra files.
 
 - `game.json`: nine chapters, 112 minutes, target 90 to 120.
 - `scenes.json`: two 2D modes (`silhouette_halls`, `snow_line`), four 1D games (`short_rations`,
@@ -1415,9 +1416,24 @@ Total spoken lines are counted in section 17.
   (`meals`, `rules_broken`, `the_list`, `taken`).
 - `endings.json`: five endings with the conditions in section 13.
 
-Beyond the shared schemas, the game's code will need two tables that are not data files yet and
-belong in `src/`: the list's incident table (section 12) and the Chart's question table (section 11).
-They are fixed content, not state.
+Beyond the shared schemas, two fixed tables (content, not state), each with a schema in
+`data/schemas/`:
+
+- `list_incidents.json` (`schemas/list_incidents.schema.json`): the list's incident table
+  (section 12), L1 to L14. Each entry gives its day, the scene that adds it, its three tier-1
+  explanations in the order lower tiers keep them, and the scenes any one of which breaks it. Also
+  the tier rules, the Follow-night rule and the `knows` ladder (3, 6, 10 broken entries).
+- `chart_questions.json` (`schemas/chart_questions.schema.json`): the Chart's question table
+  (section 11.3): the nine measurement rows and their formulas, the rows each clarity tier shows,
+  the five hypothesis cards, one question for each of days 2 to 6 with the cells that prove it, and
+  day 7's "ready". The day-7 word fragments are a placeholder for the author.
+
+`tools/check_data.py` checks both against their schemas, against each other and against the four
+shared files: every scene, flag, chapter and crew name exists; every scene that adds or breaks an
+entry writes `the_list` and plays on the stated day, after the entry is added; the formulas give
+the values at change 100 and agree with the camera height and Floor Plan's square; the `knows`
+thresholds match; quotes are on their source line when the vault sits beside this repo; and no
+row carries graphic detail or Windigo lore. `python tools/validate.py man-eater` runs it.
 
 ## 19. Build plan
 

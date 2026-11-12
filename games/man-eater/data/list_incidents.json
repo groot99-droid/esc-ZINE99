@@ -1,0 +1,177 @@
+{
+  "note": "The list's incident table (DESIGN.md section 12, 'The list'). Fixed content, not state: each row the game writes to the_list names an entry here. Incidents describe what Fisk sees, never what was done to anyone; no row explains the figure or the call, and nothing here is Windigo lore (the cultural consultation in the build plan still governs every Windigo-specific line).",
+  "source": "03_Stories/07_Project_-_Man_Eater.md",
+  "tiers": [
+    {"tier": 1, "clarity": [75, 100], "offers": "all three explanations"},
+    {"tier": 2, "clarity": [50, 74], "offers": "the first two explanations"},
+    {"tier": 3, "clarity": [25, 49], "offers": "the first explanation and \"Doesn't matter\""},
+    {"tier": 4, "clarity": [0, 24], "offers": "\"Doesn't matter\" only"}
+  ],
+  "doesnt_matter": "Doesn't matter",
+  "follow_night_offers_one_fewer": true,
+  "knows_ladder": [
+    {"rung": "anomaly", "broken_gte": 0, "or_flags": [], "or_chart_days": []},
+    {"rung": "pattern", "broken_gte": 3, "or_flags": [], "or_chart_days": []},
+    {"rung": "scale", "broken_gte": 6, "or_flags": ["files_read"], "or_chart_days": [5]},
+    {"rung": "implicated", "broken_gte": 10, "or_flags": ["pens_seen", "windigo_met"], "or_chart_days": []}
+  ],
+  "entries": [
+    {
+      "id": "L1",
+      "day": 1,
+      "added_in": "c1_truck_gate",
+      "incident": "The gate is armoured inward",
+      "quote": null,
+      "explanations": ["Containment for what they test", "Old design", "Not my business"],
+      "broken_by": [
+        {"scene": "n4_office", "day": 4, "how": "The files"}
+      ]
+    },
+    {
+      "id": "L2",
+      "day": 1,
+      "added_in": "c1_truck_gate",
+      "incident": "The crew look \"sick and slightly anorexic\"",
+      "quote": {"text": "sick and slightly anorexic", "line": 28},
+      "explanations": ["Bad posting", "Flu going round", "Seen worse"],
+      "broken_by": [
+        {"scene": "d2_chart", "day": 2, "how": "The Chart"}
+      ]
+    },
+    {
+      "id": "L3",
+      "day": 1,
+      "added_in": "c1_halls",
+      "incident": "\"giant claw marks on the walls\"",
+      "quote": {"text": "giant claw marks on the walls", "line": 28},
+      "explanations": ["Bears, before it was finished", "Equipment scrapes", "Old damage"],
+      "broken_by": [
+        {"scene": "d2_duty_paint", "day": 2, "how": "Paint duty: older paint layers with marks under them"}
+      ]
+    },
+    {
+      "id": "L4",
+      "day": 1,
+      "added_in": "c1_halls",
+      "incident": "Colder inside than out",
+      "quote": null,
+      "explanations": ["Bad boilers", "Thin walls", "Winter"],
+      "broken_by": [
+        {"scene": "d4_duty_boiler", "day": 4, "how": "Boiler room: the gauges read hot"}
+      ]
+    },
+    {
+      "id": "L5",
+      "day": 1,
+      "added_in": "c1_halls",
+      "incident": "Halls 4 feet wide, 15 feet high",
+      "quote": null,
+      "explanations": ["Built for equipment", "Ventilation", "Government building"],
+      "broken_by": [
+        {"scene": "d4_floorplan", "day": 4, "how": "Floor Plan: the ground floor does not close"}
+      ]
+    },
+    {
+      "id": "L6",
+      "day": 1,
+      "added_in": "n1_bunk_call",
+      "incident": "The bunkmate walked out at 10:00",
+      "quote": null,
+      "explanations": ["Latrine", "Sleepwalking", "His business"],
+      "broken_by": [
+        {"scene": "d2_sam_bunk", "day": 2, "how": "Sam: \"the conversation last night around 10:00\""}
+      ]
+    },
+    {
+      "id": "L7",
+      "day": 1,
+      "added_in": "d1_duty_coldstore",
+      "incident": "The meal makes me hungrier",
+      "quote": null,
+      "explanations": ["Climate, body adjusts", "Haven't eaten right in weeks", "Bad meat"],
+      "broken_by": [
+        {"scene": "d3_chart", "day": 3, "how": "The Chart, first ruling"},
+        {"scene": "d4_chart", "day": 4, "how": "The Chart, second ruling"}
+      ]
+    },
+    {
+      "id": "L8",
+      "day": 2,
+      "added_in": "d2_sam_bunk",
+      "incident": "\"transferred\"",
+      "quote": {"text": "transferred", "line": 32},
+      "explanations": ["Paperwork, he'll write", "Covering a desertion", "Not my business"],
+      "broken_by": [
+        {"scene": "d3_mail_room", "day": 3, "how": "Mail room: the sacks stamped HOLD"},
+        {"scene": "n3_snow", "day": 3, "how": "The boots, laces still tied"}
+      ]
+    },
+    {
+      "id": "L9",
+      "day": 2,
+      "added_in": "d2_chart",
+      "incident": "Height measured every day",
+      "quote": null,
+      "explanations": ["Routine", "Cold-weather study", "Doesn't matter"],
+      "broken_by": [
+        {"scene": "d5_chart", "day": 5, "how": "The Chart: the target curve, \"on schedule\""}
+      ]
+    },
+    {
+      "id": "L10",
+      "day": 3,
+      "added_in": "d3_rations",
+      "incident": "Chairs empty; nobody mentions it",
+      "quote": null,
+      "explanations": ["Rotation", "They got sick", "If they don't, I don't"],
+      "broken_by": [
+        {"scene": "n4_office", "day": 4, "how": "The roster: every transferred man on the same truck date"}
+      ]
+    },
+    {
+      "id": "L11",
+      "day": 3,
+      "added_in": "d3_chart",
+      "incident": "The pill",
+      "quote": null,
+      "explanations": ["Vitamins for winter", "Sedative", "Doesn't matter"],
+      "broken_by": [
+        {"scene": "d6_chart", "day": 6, "how": "The Chart: days with a cheeked pill show smaller changes"}
+      ]
+    },
+    {
+      "id": "L12",
+      "day": 5,
+      "added_in": "n5_snow",
+      "incident": "Bare prints the wind does not fill",
+      "quote": null,
+      "explanations": ["A joke", "Someone's boots", "An animal"],
+      "broken_by": [
+        {"scene": "n6_pens", "day": 6, "how": "The pens"}
+      ]
+    },
+    {
+      "id": "L13",
+      "day": 4,
+      "added_in": "d4_duty_boiler",
+      "incident": "Cold from the drains",
+      "quote": null,
+      "explanations": ["The mine", "Ground frost", "Doesn't matter"],
+      "broken_by": [
+        {"scene": "d6_floorplan", "day": 6, "how": "Floor Plan: the void behind the cold store"},
+        {"scene": "n6_pens", "day": 6, "how": "The pens"}
+      ]
+    },
+    {
+      "id": "L14",
+      "day": 1,
+      "added_in": "n1_bunk_call",
+      "incident": "The flute",
+      "quote": null,
+      "explanations": ["A vent", "A radio", "Doesn't matter"],
+      "broken_by": [
+        {"scene": "n7_windigo", "day": 7, "how": "The corner"}
+      ]
+    }
+  ]
+}

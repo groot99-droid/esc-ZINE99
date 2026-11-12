@@ -1,0 +1,115 @@
+{
+  "note": "The Chart's question table (DESIGN.md section 11.3). Fixed content, not state: the measurement rows, what each clarity tier shows, the hypothesis cards, and one question a day from day 2 to day 6. The numbers are Fisk's body as readings; no row describes what the body looks like.",
+  "game": "the_chart",
+  "min_cells": 2,
+  "retries_per_day": 1,
+  "rows": [
+    {"id": "weight", "label": "Weight", "kind": "formula", "base": 82.0, "per_change": -0.35, "unit": "kg", "at_change_100": 47.0},
+    {"id": "height", "label": "Height", "kind": "formula", "base": 178.0, "per_change": 1.6, "unit": "cm", "at_change_100": 338.0},
+    {"id": "core_temp", "label": "Core temperature", "kind": "formula", "base": 36.8, "per_change": -0.04, "unit": "C", "at_change_100": 32.8},
+    {"id": "pulse", "label": "Resting pulse", "kind": "formula", "base": 64, "per_change": -0.3, "unit": "bpm", "at_change_100": 34},
+    {"id": "grip", "label": "Grip", "kind": "formula", "base": 45, "per_change": 0.9, "unit": "kg", "at_change_100": 135},
+    {"id": "stride", "label": "Stride", "kind": "formula", "base": 75, "per_change": 0.7, "unit": "cm", "at_change_100": 145},
+    {"id": "ration_pieces", "label": "Ration pieces yesterday", "kind": "state", "from": ["meals"], "added_on_day": 3},
+    {"id": "pills", "label": "Pills yesterday", "kind": "state", "from": ["meals", "pills_taken"], "added_on_day": 3},
+    {"id": "hunger_self", "label": "Hunger, self-reported 1 to 10", "kind": "state", "from": ["hunger"], "added_on_day": 1}
+  ],
+  "tiers": [
+    {"tier": 1, "rows": ["weight", "height", "core_temp", "pulse", "grip", "stride", "ration_pieces", "pills", "hunger_self"], "merged": [], "display": "one decimal"},
+    {"tier": 2, "rows": ["weight", "height", "core_temp", "pulse", "grip", "stride", "ration_pieces", "pills", "hunger_self"], "merged": [["height", "stride"]], "display": "one decimal"},
+    {"tier": 3, "rows": ["weight", "height", "ration_pieces", "hunger_self"], "merged": [], "display": "rounded to 5"},
+    {"tier": 4, "rows": ["weight", "height", "ration_pieces", "hunger_self"], "merged": [], "display": "words: more, less"}
+  ],
+  "crew_columns": {"from_day": 4, "crew": ["jax", "hollis"], "why": "From day 4 the orderly's clipboard on the scale shows Jax's and Hollis's rows, so a refuser can still answer the questions about the food."},
+  "cards": [
+    {"id": "climate", "label": "Climate"},
+    {"id": "not_the_food", "label": "Not the food"},
+    {"id": "it_fills_me", "label": "It fills me"},
+    {"id": "routine", "label": "Routine"},
+    {"id": "vitamins", "label": "Vitamins"}
+  ],
+  "questions": [
+    {
+      "day": 2,
+      "scene": "d2_chart",
+      "question": "Is it the climate?",
+      "tests_entry": "L2",
+      "tests_explanation": "Seen worse",
+      "card": "climate",
+      "ruling": "Broken",
+      "cells": {"rule": "same_day_pair", "rows": ["weight", "height"], "days": [2]},
+      "proof": "Weight down and height up in one day; a climate does not make you taller",
+      "second_sheet": null,
+      "crew_alternative": false,
+      "cards_offered": ["climate", "not_the_food", "it_fills_me", "routine", "vitamins"],
+      "difficulty": "Two adjacent cells in one row pair"
+    },
+    {
+      "day": 3,
+      "scene": "d3_chart",
+      "question": "Is it the food?",
+      "tests_entry": "L7",
+      "tests_explanation": "Climate, body adjusts",
+      "card": "not_the_food",
+      "ruling": "Broken",
+      "cells": {"rule": "cross_rows_two_days", "rows": ["ration_pieces", "height"], "days": [2, 3]},
+      "proof": "Ration pieces against height gain, two days",
+      "second_sheet": null,
+      "crew_alternative": false,
+      "cards_offered": ["climate", "not_the_food", "it_fills_me", "routine", "vitamins"],
+      "difficulty": "A correlation across two rows and two days"
+    },
+    {
+      "day": 4,
+      "scene": "d4_chart",
+      "question": "Am I hungrier the more I eat?",
+      "tests_entry": "L7",
+      "tests_explanation": "Climate, body adjusts",
+      "card": "it_fills_me",
+      "ruling": "Broken",
+      "cells": {"rule": "both_rise", "rows": ["ration_pieces", "hunger_self"], "days": [3, 4]},
+      "proof": "Ration pieces against self-reported hunger: both rise",
+      "second_sheet": null,
+      "crew_alternative": true,
+      "cards_offered": ["climate", "not_the_food", "it_fills_me", "routine", "vitamins"],
+      "difficulty": "A correlation where both rows rise"
+    },
+    {
+      "day": 5,
+      "scene": "d5_chart",
+      "question": "Is this routine?",
+      "tests_entry": "L9",
+      "tests_explanation": "Routine",
+      "card": "routine",
+      "ruling": "Broken",
+      "cells": {"rule": "against_second_sheet", "rows": ["height"], "days": [4, 5]},
+      "proof": "Fisk's height against the orderly's printed target curve: \"on schedule\"",
+      "second_sheet": "target_curve",
+      "crew_alternative": false,
+      "cards_offered": ["climate", "not_the_food", "it_fills_me", "routine", "vitamins"],
+      "difficulty": "A comparison against a second sheet"
+    },
+    {
+      "day": 6,
+      "scene": "d6_chart",
+      "question": "What is the pill?",
+      "tests_entry": "L11",
+      "tests_explanation": "Vitamins for winter",
+      "card": "vitamins",
+      "ruling": "Broken",
+      "cells": {"rule": "cheeked_vs_swallowed", "rows": ["pills", "height"], "days": []},
+      "proof": "Days with a cheeked pill against change that day",
+      "second_sheet": null,
+      "crew_alternative": false,
+      "cards_offered": ["climate", "not_the_food", "it_fills_me", "routine", "vitamins"],
+      "difficulty": "A comparison that requires remembering which days the pill was cheeked (the pill row shows it only at tier 1 or 2)"
+    }
+  ],
+  "ready_day": {
+    "day": 7,
+    "scene": "d7_chart",
+    "orderly_writes": "ready",
+    "fragment_budget_by_tier": [8, 5, 3, 1],
+    "fragments": "PLACEHOLDER (author): the word fragments Fisk may build his one line from. DESIGN.md does not supply them."
+  }
+}

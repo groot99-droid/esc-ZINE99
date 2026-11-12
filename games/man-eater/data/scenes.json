@@ -505,7 +505,8 @@
         "pull.kimura",
         "pull.hollis",
         "pull.jax",
-        "hunger"
+        "hunger",
+        "the_list"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -1074,7 +1075,8 @@
       ],
       "writes": [
         "void_located",
-        "knows"
+        "knows",
+        "the_list"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -1361,7 +1363,8 @@
       ],
       "writes": [
         "windigo_met",
-        "cave_reached"
+        "cave_reached",
+        "the_list"
       ],
       "enter": "pull-out",
       "exit": "fade",
