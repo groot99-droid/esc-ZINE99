@@ -1,0 +1,768 @@
+{
+  "game": "heartstream",
+  "location": "singing-hollow",
+  "name": "The singing hollow",
+  "reference": "assets/locations/singing-hollow.jpg",
+  "bounds_m": [
+    20,
+    20,
+    10
+  ],
+  "origin": "floor centre under the dome; +y toward the far side of the ring; the entrance on -y",
+  "materials": {
+    "marrow-deep": {
+      "color": [
+        0.118,
+        0.208,
+        0.341
+      ],
+      "roughness": 0.6,
+      "emission": 0.15
+    },
+    "marrow-tissue": {
+      "color": [
+        0.184,
+        0.365,
+        0.549
+      ],
+      "roughness": 0.5,
+      "emission": 0.3
+    },
+    "marrow-glow": {
+      "color": [
+        0.498,
+        0.698,
+        0.878
+      ],
+      "roughness": 0.3,
+      "emission": 1.0
+    },
+    "marrow-floor": {
+      "color": [
+        0.62,
+        0.66,
+        0.74
+      ],
+      "roughness": 0.35
+    },
+    "shaft-dark": {
+      "color": [
+        0.03,
+        0.04,
+        0.07
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        20,
+        20,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "marrow-floor"
+    },
+    {
+      "id": "floor-centre",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        9,
+        9,
+        0.04
+      ],
+      "location": [
+        0,
+        0,
+        0.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "dome",
+      "shape": "sphere",
+      "role": "ceiling",
+      "size_m": [
+        20.6,
+        20.6,
+        20.6
+      ],
+      "location": [
+        0,
+        0,
+        0
+      ],
+      "material": "marrow-tissue",
+      "collide": false
+    },
+    {
+      "id": "dome-crown",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        2,
+        2,
+        0.4
+      ],
+      "location": [
+        0,
+        0,
+        9.6
+      ],
+      "material": "marrow-glow",
+      "collide": false
+    },
+    {
+      "id": "entrance",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        2.4,
+        2.4,
+        0.6
+      ],
+      "location": [
+        0,
+        -9.8,
+        1.4
+      ],
+      "material": "shaft-dark",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "rib-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.4,
+        6
+      ],
+      "location": [
+        9.369,
+        2.511,
+        3
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        0,
+        15
+      ]
+    },
+    {
+      "id": "rib-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.4,
+        6
+      ],
+      "location": [
+        6.859,
+        6.859,
+        3
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        0,
+        45
+      ]
+    },
+    {
+      "id": "rib-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.4,
+        6
+      ],
+      "location": [
+        2.511,
+        9.369,
+        3
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        0,
+        75
+      ]
+    },
+    {
+      "id": "rib-4",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.4,
+        6
+      ],
+      "location": [
+        -2.511,
+        9.369,
+        3
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        0,
+        105
+      ]
+    },
+    {
+      "id": "rib-5",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.4,
+        6
+      ],
+      "location": [
+        -6.859,
+        6.859,
+        3
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        0,
+        135
+      ]
+    },
+    {
+      "id": "rib-6",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.4,
+        6
+      ],
+      "location": [
+        -9.369,
+        2.511,
+        3
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        0,
+        165
+      ]
+    },
+    {
+      "id": "rib-7",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.4,
+        6
+      ],
+      "location": [
+        -9.369,
+        -2.511,
+        3
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        0,
+        195
+      ]
+    },
+    {
+      "id": "rib-8",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.4,
+        6
+      ],
+      "location": [
+        -6.859,
+        -6.859,
+        3
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        0,
+        225
+      ]
+    },
+    {
+      "id": "rib-9",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.4,
+        6
+      ],
+      "location": [
+        -2.511,
+        -9.369,
+        3
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "id": "rib-10",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.4,
+        6
+      ],
+      "location": [
+        2.511,
+        -9.369,
+        3
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        0,
+        285
+      ]
+    },
+    {
+      "id": "rib-11",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.4,
+        6
+      ],
+      "location": [
+        6.859,
+        -6.859,
+        3
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        0,
+        315
+      ]
+    },
+    {
+      "id": "rib-12",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.4,
+        6
+      ],
+      "location": [
+        9.369,
+        -2.511,
+        3
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        0,
+        345
+      ]
+    }
+  ],
+  "props": [
+    {
+      "id": "board-slab",
+      "object": "board-slab",
+      "location": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "growth-1",
+      "object": "resonant-growth",
+      "location": [
+        0.0,
+        8.2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "height_m": 2.2
+    },
+    {
+      "id": "growth-2",
+      "object": "resonant-growth",
+      "location": [
+        -4.1,
+        7.101,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        30
+      ],
+      "height_m": 3.0
+    },
+    {
+      "id": "growth-3",
+      "object": "resonant-growth",
+      "location": [
+        -7.101,
+        4.1,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        60
+      ],
+      "height_m": 3.8000000000000003
+    },
+    {
+      "id": "growth-4",
+      "object": "resonant-growth",
+      "location": [
+        -8.2,
+        0.0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "height_m": 2.2
+    },
+    {
+      "id": "growth-5",
+      "object": "resonant-growth",
+      "location": [
+        -7.101,
+        -4.1,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        120
+      ],
+      "height_m": 3.0
+    },
+    {
+      "id": "growth-6",
+      "object": "resonant-growth",
+      "location": [
+        -4.1,
+        -7.101,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        150
+      ],
+      "height_m": 3.8000000000000003
+    },
+    {
+      "id": "growth-7",
+      "object": "resonant-growth",
+      "location": [
+        -0.0,
+        -8.2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "height_m": 2.2
+    },
+    {
+      "id": "growth-8",
+      "object": "resonant-growth",
+      "location": [
+        4.1,
+        -7.101,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        210
+      ],
+      "height_m": 3.0
+    },
+    {
+      "id": "growth-9",
+      "object": "resonant-growth",
+      "location": [
+        7.101,
+        -4.1,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        240
+      ],
+      "height_m": 3.8000000000000003
+    },
+    {
+      "id": "growth-10",
+      "object": "resonant-growth",
+      "location": [
+        8.2,
+        -0.0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ],
+      "height_m": 2.2
+    },
+    {
+      "id": "growth-11",
+      "object": "resonant-growth",
+      "location": [
+        7.101,
+        4.1,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        300
+      ],
+      "height_m": 3.0
+    },
+    {
+      "id": "growth-12",
+      "object": "resonant-growth",
+      "location": [
+        4.1,
+        7.101,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        330
+      ],
+      "height_m": 3.8000000000000003
+    }
+  ],
+  "scenes": {
+    "s3_hollow": {
+      "note": "Chapter 3: hum near the growths to find phrases; each growth answers one temperament and blooms with light in turn, like a slow chord; the board is carried in on its slab.",
+      "world": {
+        "color": [
+          0.03,
+          0.06,
+          0.13
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "dome-glow",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            9
+          ],
+          "energy": 1500,
+          "size": 8,
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        },
+        {
+          "name": "bloom-1",
+          "type": "POINT",
+          "location": [
+            0.0,
+            7.8,
+            2.5
+          ],
+          "energy": 150,
+          "size": 0.4,
+          "color": [
+            0.55,
+            0.7,
+            1.0
+          ]
+        },
+        {
+          "name": "bloom-4",
+          "type": "POINT",
+          "location": [
+            -7.8,
+            0.0,
+            2.5
+          ],
+          "energy": 150,
+          "size": 0.4,
+          "color": [
+            0.7,
+            0.55,
+            1.0
+          ]
+        },
+        {
+          "name": "bloom-7",
+          "type": "POINT",
+          "location": [
+            -0.0,
+            -7.8,
+            2.5
+          ],
+          "energy": 150,
+          "size": 0.4,
+          "color": [
+            0.55,
+            0.7,
+            1.0
+          ]
+        },
+        {
+          "name": "bloom-10",
+          "type": "POINT",
+          "location": [
+            7.8,
+            -0.0,
+            2.5
+          ],
+          "energy": 150,
+          "size": 0.4,
+          "color": [
+            0.7,
+            0.55,
+            1.0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -9.3,
+          3
+        ],
+        "look_at": [
+          0,
+          0,
+          2
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -4,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "growth-1",
+          "verb": "Hum"
+        },
+        {
+          "prop": "growth-2",
+          "verb": "Hum"
+        },
+        {
+          "prop": "growth-3",
+          "verb": "Hum"
+        },
+        {
+          "prop": "growth-4",
+          "verb": "Hum"
+        },
+        {
+          "prop": "growth-5",
+          "verb": "Hum"
+        },
+        {
+          "prop": "growth-6",
+          "verb": "Hum"
+        },
+        {
+          "prop": "growth-7",
+          "verb": "Hum"
+        },
+        {
+          "prop": "growth-8",
+          "verb": "Hum"
+        },
+        {
+          "prop": "growth-9",
+          "verb": "Hum"
+        },
+        {
+          "prop": "growth-10",
+          "verb": "Hum"
+        },
+        {
+          "prop": "growth-11",
+          "verb": "Hum"
+        },
+        {
+          "prop": "growth-12",
+          "verb": "Hum"
+        },
+        {
+          "prop": "board-slab",
+          "verb": "Gather at the board",
+          "leads_to": "s1_song_1"
+        }
+      ]
+    }
+  }
+}

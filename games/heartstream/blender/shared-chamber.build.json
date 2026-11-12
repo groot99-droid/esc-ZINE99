@@ -1,0 +1,442 @@
+{
+  "game": "heartstream",
+  "location": "shared-chamber",
+  "name": "The shared chamber",
+  "reference": "assets/locations/shared-chamber.jpg",
+  "bounds_m": [
+    8,
+    8,
+    6
+  ],
+  "origin": "floor centre at the pool; the two vessels enter through the -x and +x walls; +y toward the back wall",
+  "materials": {
+    "tissue-pink": {
+      "color": [
+        0.85,
+        0.42,
+        0.42
+      ],
+      "roughness": 0.45
+    },
+    "blood-water": {
+      "color": [
+        0.702,
+        0.125,
+        0.18
+      ],
+      "roughness": 0.1,
+      "emission": 0.8
+    },
+    "membrane-red": {
+      "color": [
+        0.702,
+        0.125,
+        0.18
+      ],
+      "roughness": 0.3,
+      "emission": 0.9
+    },
+    "red-glow": {
+      "color": [
+        0.878,
+        0.376,
+        0.227
+      ],
+      "roughness": 0.4,
+      "emission": 1.5
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        8,
+        8,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "pool",
+      "shape": "cylinder",
+      "role": "water",
+      "size_m": [
+        4,
+        3,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        0.05
+      ],
+      "material": "blood-water",
+      "collide": false
+    },
+    {
+      "id": "column",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.7,
+        0.7,
+        6
+      ],
+      "location": [
+        0,
+        0.4,
+        3.0
+      ],
+      "material": "membrane-red",
+      "collide": false
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        8,
+        0.4,
+        6
+      ],
+      "location": [
+        0,
+        4.2,
+        3.0
+      ],
+      "material": "membrane-red"
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        8,
+        0.4,
+        6
+      ],
+      "location": [
+        0,
+        -4.2,
+        3.0
+      ],
+      "material": "membrane-red"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        8.8,
+        8.8,
+        0.3
+      ],
+      "location": [
+        0,
+        0,
+        6.15
+      ],
+      "material": "membrane-red"
+    },
+    {
+      "id": "wall-west-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        2.8,
+        6
+      ],
+      "location": [
+        -4.2,
+        -2.6,
+        3.0
+      ],
+      "material": "membrane-red"
+    },
+    {
+      "id": "wall-west-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        2.8,
+        6
+      ],
+      "location": [
+        -4.2,
+        2.6,
+        3.0
+      ],
+      "material": "membrane-red"
+    },
+    {
+      "id": "wall-west-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        2.4,
+        3.4
+      ],
+      "location": [
+        -4.2,
+        0,
+        4.3
+      ],
+      "material": "membrane-red"
+    },
+    {
+      "id": "mouth-west",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        2.4,
+        2.4,
+        0.2
+      ],
+      "location": [
+        -4.2,
+        0,
+        1.3
+      ],
+      "material": "red-glow",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "wall-east-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        2.8,
+        6
+      ],
+      "location": [
+        4.2,
+        -2.6,
+        3.0
+      ],
+      "material": "membrane-red"
+    },
+    {
+      "id": "wall-east-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        2.8,
+        6
+      ],
+      "location": [
+        4.2,
+        2.6,
+        3.0
+      ],
+      "material": "membrane-red"
+    },
+    {
+      "id": "wall-east-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        2.4,
+        3.4
+      ],
+      "location": [
+        4.2,
+        0,
+        4.3
+      ],
+      "material": "membrane-red"
+    },
+    {
+      "id": "mouth-east",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        2.4,
+        2.4,
+        0.2
+      ],
+      "location": [
+        4.2,
+        0,
+        1.3
+      ],
+      "material": "red-glow",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "gift-hook",
+      "object": "gift-hook",
+      "location": [
+        -1.6,
+        -0.15,
+        1.0
+      ],
+      "ground": false
+    },
+    {
+      "id": "gift-awl",
+      "object": "gift-awl",
+      "location": [
+        -1.6,
+        0.15,
+        1.0
+      ],
+      "ground": false
+    },
+    {
+      "id": "gift-comb",
+      "object": "gift-comb",
+      "location": [
+        1.6,
+        -0.15,
+        1.0
+      ],
+      "ground": false
+    },
+    {
+      "id": "gift-scraper",
+      "object": "gift-scraper",
+      "location": [
+        1.6,
+        0.15,
+        1.0
+      ],
+      "ground": false
+    },
+    {
+      "id": "gift-flute",
+      "object": "gift-flute",
+      "location": [
+        0,
+        -1.6,
+        1.0
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "s3_vessel_two": {
+      "note": "Chapter 9, Two Together: the two who held are swept as one into this chamber; two hands, two gifts, two glows pulsing in step. Only the pair's two gifts are shown in play.",
+      "world": {
+        "color": [
+          0.25,
+          0.03,
+          0.03
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "glow-west",
+          "type": "POINT",
+          "location": [
+            -3.6,
+            0,
+            1.2
+          ],
+          "energy": 120,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.35,
+            0.25
+          ]
+        },
+        {
+          "name": "glow-east",
+          "type": "POINT",
+          "location": [
+            3.6,
+            0,
+            1.2
+          ],
+          "energy": 120,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.35,
+            0.25
+          ]
+        },
+        {
+          "name": "pool",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            0.2
+          ],
+          "energy": 80,
+          "size": 3,
+          "look_at": [
+            0,
+            0,
+            4
+          ],
+          "color": [
+            0.878,
+            0.376,
+            0.227
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -3.6,
+          -1.5,
+          2.5
+        ],
+        "look_at": [
+          1,
+          0,
+          1
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -1.8,
+          0,
+          0
+        ],
+        "facing_deg": 270
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "gift-hook",
+          "verb": "Hold your brother's hand"
+        },
+        {
+          "prop": "gift-comb",
+          "verb": "Look at the gift"
+        }
+      ]
+    }
+  }
+}

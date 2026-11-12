@@ -1,0 +1,447 @@
+{
+  "game": "heartstream",
+  "location": "shaft-foot",
+  "name": "The foot of the shaft",
+  "reference": "assets/locations/shaft-foot.jpg",
+  "bounds_m": [
+    6,
+    6,
+    10
+  ],
+  "origin": "floor centre; +y toward the far wall; the way in from the cavern on -y; open above",
+  "materials": {
+    "ivory-chalk": {
+      "color": [
+        0.93,
+        0.9,
+        0.84
+      ],
+      "roughness": 0.95
+    },
+    "marrow-tissue": {
+      "color": [
+        0.184,
+        0.365,
+        0.549
+      ],
+      "roughness": 0.5,
+      "emission": 0.3
+    },
+    "tissue-pink": {
+      "color": [
+        0.85,
+        0.42,
+        0.42
+      ],
+      "roughness": 0.45
+    },
+    "red-glow": {
+      "color": [
+        0.878,
+        0.376,
+        0.227
+      ],
+      "roughness": 0.4,
+      "emission": 1.5
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        6,
+        6,
+        0.15
+      ],
+      "location": [
+        0,
+        0,
+        -0.075
+      ],
+      "material": "ivory-chalk"
+    },
+    {
+      "id": "floor-marrow",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        6,
+        1.2,
+        0.1
+      ],
+      "location": [
+        0,
+        -2.4,
+        0.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6,
+        0.6,
+        10
+      ],
+      "location": [
+        0,
+        3.3,
+        5.0
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        6,
+        10
+      ],
+      "location": [
+        -3.3,
+        0,
+        5.0
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        6,
+        10
+      ],
+      "location": [
+        3.3,
+        0,
+        5.0
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "wall-south-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.8,
+        0.6,
+        10
+      ],
+      "location": [
+        -2.1,
+        -3.3,
+        5.0
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "wall-south-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.8,
+        0.6,
+        10
+      ],
+      "location": [
+        2.1,
+        -3.3,
+        5.0
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "wall-south-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.4,
+        0.6,
+        7
+      ],
+      "location": [
+        0,
+        -3.3,
+        6.5
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "blue-band",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        6,
+        6,
+        0.6
+      ],
+      "location": [
+        0,
+        0,
+        0.3
+      ],
+      "material": "marrow-tissue",
+      "collide": false
+    },
+    {
+      "id": "light-above",
+      "shape": "cylinder",
+      "role": "sky",
+      "size_m": [
+        6,
+        6,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        16
+      ],
+      "material": "red-glow",
+      "collide": false
+    },
+    {
+      "id": "hold-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        1.2,
+        0.3
+      ],
+      "location": [
+        -2.75,
+        0.5,
+        1.2
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "hold-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        1.2,
+        0.3
+      ],
+      "location": [
+        2.75,
+        -0.5,
+        2.0
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "hold-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.5,
+        0.3
+      ],
+      "location": [
+        0.6,
+        2.75,
+        2.8
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "hold-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        1.2,
+        0.3
+      ],
+      "location": [
+        -2.75,
+        -0.8,
+        3.7
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "hold-5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        1.2,
+        0.3
+      ],
+      "location": [
+        2.75,
+        1.0,
+        4.6
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "hold-6",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.5,
+        0.3
+      ],
+      "location": [
+        -0.8,
+        2.75,
+        5.5
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "hold-7",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        1.2,
+        0.3
+      ],
+      "location": [
+        -2.75,
+        1.4,
+        6.6
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "hold-8",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        1.2,
+        0.3
+      ],
+      "location": [
+        2.75,
+        -1.2,
+        7.8
+      ],
+      "material": "tissue-pink"
+    }
+  ],
+  "props": [
+    {
+      "id": "pillar-west",
+      "object": "membrane-pillar",
+      "location": [
+        -2.4,
+        2.4,
+        0
+      ]
+    },
+    {
+      "id": "pillar-east",
+      "object": "membrane-pillar",
+      "location": [
+        2.4,
+        2.2,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_shaft": {
+      "note": "Chapter 5: the climbers at the foot of the shaft, warm red from far above, heat haze; the walls brighten on each beat; the first holds lead into the 2D climb.",
+      "world": {
+        "color": [
+          0.25,
+          0.05,
+          0.05
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "from-above",
+          "type": "SPOT",
+          "location": [
+            0,
+            0,
+            9.8
+          ],
+          "energy": 2500,
+          "size": 3,
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "color": [
+            1.0,
+            0.35,
+            0.25
+          ]
+        },
+        {
+          "name": "marrow-below",
+          "type": "AREA",
+          "location": [
+            0,
+            -2.5,
+            0.5
+          ],
+          "energy": 60,
+          "size": 2,
+          "look_at": [
+            0,
+            0,
+            2
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -2.7,
+          2.6
+        ],
+        "look_at": [
+          0,
+          2,
+          6
+        ],
+        "lens_mm": 20,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -1.5,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "pillar-west",
+          "verb": "Take the first hold",
+          "leads_to": "s2_climb_1"
+        }
+      ]
+    }
+  }
+}

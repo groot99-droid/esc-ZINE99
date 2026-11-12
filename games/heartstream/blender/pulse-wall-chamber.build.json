@@ -1,0 +1,441 @@
+{
+  "game": "heartstream",
+  "location": "pulse-wall-chamber",
+  "name": "The pulse wall chamber",
+  "reference": "assets/locations/pulse-wall-chamber.jpg",
+  "bounds_m": [
+    12,
+    10,
+    8
+  ],
+  "origin": "floor centre; +y toward the round translucent pulse wall; the way in on -y",
+  "materials": {
+    "ivory": {
+      "color": [
+        0.91,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.85
+    },
+    "marrow-deep": {
+      "color": [
+        0.118,
+        0.208,
+        0.341
+      ],
+      "roughness": 0.6,
+      "emission": 0.15
+    },
+    "marrow-tissue": {
+      "color": [
+        0.184,
+        0.365,
+        0.549
+      ],
+      "roughness": 0.5,
+      "emission": 0.3
+    },
+    "membrane-red": {
+      "color": [
+        0.702,
+        0.125,
+        0.18
+      ],
+      "roughness": 0.3,
+      "emission": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        12,
+        10,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "ivory"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        12,
+        10,
+        0.3
+      ],
+      "location": [
+        0,
+        0,
+        8.15
+      ],
+      "material": "marrow-deep"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        10,
+        8
+      ],
+      "location": [
+        -6.2,
+        0,
+        4.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        10,
+        8
+      ],
+      "location": [
+        6.2,
+        0,
+        4.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-south-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.8,
+        0.4,
+        8
+      ],
+      "location": [
+        -3.6,
+        -5.2,
+        4.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-south-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.8,
+        0.4,
+        8
+      ],
+      "location": [
+        3.6,
+        -5.2,
+        4.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-south-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.4,
+        0.4,
+        5
+      ],
+      "location": [
+        0,
+        -5.2,
+        5.5
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-north-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3,
+        0.4,
+        8
+      ],
+      "location": [
+        -4.5,
+        5.2,
+        4.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-north-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3,
+        0.4,
+        8
+      ],
+      "location": [
+        4.5,
+        5.2,
+        4.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-north-above",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6,
+        0.4,
+        1.7
+      ],
+      "location": [
+        0,
+        5.2,
+        7.15
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-north-below",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6,
+        0.4,
+        0.3
+      ],
+      "location": [
+        0,
+        5.2,
+        0.15
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "pulse-wall",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        6,
+        6,
+        0.15
+      ],
+      "location": [
+        0,
+        5.05,
+        3.3
+      ],
+      "material": "membrane-red",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "vault-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.4,
+        10,
+        1.4
+      ],
+      "location": [
+        -5.6,
+        0,
+        7.4
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        45,
+        0
+      ]
+    },
+    {
+      "id": "vault-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.4,
+        10,
+        1.4
+      ],
+      "location": [
+        5.6,
+        0,
+        7.4
+      ],
+      "material": "marrow-deep",
+      "rotation_deg": [
+        0,
+        45,
+        0
+      ]
+    }
+  ],
+  "props": [
+    {
+      "id": "lamp-left",
+      "object": "marrow-lamp",
+      "location": [
+        -4.8,
+        -2.5,
+        0
+      ],
+      "height_m": 1.6
+    },
+    {
+      "id": "lamp-right",
+      "object": "marrow-lamp",
+      "location": [
+        4.6,
+        1.5,
+        0
+      ]
+    },
+    {
+      "id": "lamp-back",
+      "object": "marrow-lamp",
+      "location": [
+        -5.6,
+        3.5,
+        0
+      ]
+    },
+    {
+      "id": "bowl-wall",
+      "object": "bone-bowl",
+      "location": [
+        0,
+        4.4,
+        0
+      ]
+    },
+    {
+      "id": "bowl-side",
+      "object": "bone-bowl",
+      "location": [
+        4.2,
+        1.2,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_marrow_pulse": {
+      "note": "Chapter 8 for the one who stayed: at the pulse wall during the heart, the lamps at 30%; the wall flickers red through blue and skips one beat for each separation.",
+      "world": {
+        "color": [
+          0.02,
+          0.04,
+          0.09
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "behind-wall",
+          "type": "AREA",
+          "location": [
+            0,
+            5.8,
+            3.3
+          ],
+          "energy": 400,
+          "size": 5,
+          "look_at": [
+            0,
+            0,
+            1.5
+          ],
+          "color": [
+            1.0,
+            0.35,
+            0.25
+          ]
+        },
+        {
+          "name": "lamps",
+          "type": "POINT",
+          "location": [
+            -4.8,
+            -2.5,
+            1.5
+          ],
+          "energy": 25,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.66,
+            0.3
+          ]
+        },
+        {
+          "name": "blue",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            7.8
+          ],
+          "energy": 150,
+          "size": 6,
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -4.6,
+          2.6
+        ],
+        "look_at": [
+          0,
+          4,
+          2.5
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -2,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "bowl-wall",
+          "verb": "Tap the beat on the wall",
+          "leads_to": "s3_lamps"
+        }
+      ]
+    }
+  }
+}

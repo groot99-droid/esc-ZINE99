@@ -1,0 +1,733 @@
+{
+  "game": "heartstream",
+  "location": "delta",
+  "name": "The delta of branching vessels",
+  "reference": "assets/locations/delta.jpg",
+  "bounds_m": [
+    600,
+    120,
+    25
+  ],
+  "origin": "main channel centre at the water line; +x downstream toward the far wall and its three junction mouths; bounds widened from 40 m to 120 m so three channels of 20-40 m fit, as DESIGN.md section 9 sizes them",
+  "materials": {
+    "crimson-deep": {
+      "color": [
+        0.478,
+        0.063,
+        0.125
+      ],
+      "roughness": 0.45
+    },
+    "crimson": {
+      "color": [
+        0.702,
+        0.125,
+        0.18
+      ],
+      "roughness": 0.4
+    },
+    "blood-water": {
+      "color": [
+        0.702,
+        0.125,
+        0.18
+      ],
+      "roughness": 0.1,
+      "emission": 0.8
+    },
+    "shaft-dark": {
+      "color": [
+        0.03,
+        0.04,
+        0.07
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "bed",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        600,
+        120,
+        0.5
+      ],
+      "location": [
+        0,
+        0,
+        -0.45
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "channel-main",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        250,
+        40,
+        0.2
+      ],
+      "location": [
+        -175,
+        0,
+        -0.1
+      ],
+      "material": "blood-water",
+      "collide": false
+    },
+    {
+      "id": "channel-middle",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        350,
+        22,
+        0.2
+      ],
+      "location": [
+        125,
+        0,
+        -0.1
+      ],
+      "material": "blood-water",
+      "collide": false
+    },
+    {
+      "id": "channel-left",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        352,
+        20,
+        0.2
+      ],
+      "location": [
+        125,
+        -20,
+        -0.1
+      ],
+      "material": "blood-water",
+      "rotation_deg": [
+        0,
+        0,
+        -6.52
+      ],
+      "collide": false
+    },
+    {
+      "id": "channel-right",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        352,
+        20,
+        0.2
+      ],
+      "location": [
+        125,
+        20,
+        -0.1
+      ],
+      "material": "blood-water",
+      "rotation_deg": [
+        0,
+        0,
+        6.52
+      ],
+      "collide": false
+    },
+    {
+      "id": "island-left",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        166,
+        9,
+        2
+      ],
+      "location": [
+        217,
+        -15.7,
+        1
+      ],
+      "material": "crimson-deep",
+      "rotation_deg": [
+        0,
+        0,
+        -3.28
+      ]
+    },
+    {
+      "id": "island-right",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        166,
+        9,
+        2
+      ],
+      "location": [
+        217,
+        15.7,
+        1
+      ],
+      "material": "crimson-deep",
+      "rotation_deg": [
+        0,
+        0,
+        3.28
+      ]
+    },
+    {
+      "id": "bank-left",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        600,
+        16,
+        2
+      ],
+      "location": [
+        0,
+        -52,
+        1
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "bank-right",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        600,
+        16,
+        2
+      ],
+      "location": [
+        0,
+        52,
+        1
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        600,
+        120,
+        1
+      ],
+      "location": [
+        0,
+        0,
+        25.5
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "wall-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        600,
+        1,
+        25
+      ],
+      "location": [
+        0,
+        -60.5,
+        12.5
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "wall-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        600,
+        1,
+        25
+      ],
+      "location": [
+        0,
+        60.5,
+        12.5
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "far-wall-1",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        11,
+        18
+      ],
+      "location": [
+        300.5,
+        -54.5,
+        9
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "far-wall-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        22,
+        18
+      ],
+      "location": [
+        300.5,
+        -20,
+        9
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "far-wall-3",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        22,
+        18
+      ],
+      "location": [
+        300.5,
+        20,
+        9
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "far-wall-4",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        11,
+        18
+      ],
+      "location": [
+        300.5,
+        54.5,
+        9
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "far-wall-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        120,
+        7
+      ],
+      "location": [
+        300.5,
+        0,
+        21.5
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "upstream",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1,
+        40,
+        20
+      ],
+      "location": [
+        -299.5,
+        0,
+        10
+      ],
+      "material": "crimson",
+      "collide": false
+    },
+    {
+      "id": "mouth-1",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        18,
+        18,
+        1
+      ],
+      "location": [
+        300,
+        -40,
+        9
+      ],
+      "material": "shaft-dark",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "mouth-2",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        18,
+        18,
+        1
+      ],
+      "location": [
+        300,
+        0,
+        9
+      ],
+      "material": "shaft-dark",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "mouth-3",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        18,
+        18,
+        1
+      ],
+      "location": [
+        300,
+        40,
+        9
+      ],
+      "material": "shaft-dark",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "raft",
+      "object": "raft",
+      "location": [
+        -200,
+        0,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "oar-bow-left",
+      "object": "oar",
+      "location": [
+        -198.5,
+        1.2,
+        0.9
+      ],
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "oar-bow-right",
+      "object": "oar",
+      "location": [
+        -198.5,
+        -1.2,
+        0.9
+      ],
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "oar-stern-left",
+      "object": "oar",
+      "location": [
+        -201.8,
+        1.2,
+        0.9
+      ],
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "oar-stern-right",
+      "object": "oar",
+      "location": [
+        -201.8,
+        -1.2,
+        0.9
+      ],
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "fold-1",
+      "object": "river-boulder",
+      "location": [
+        -260,
+        12,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "fold-2",
+      "object": "river-boulder",
+      "location": [
+        -150,
+        -14,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        53
+      ]
+    },
+    {
+      "id": "fold-3",
+      "object": "river-boulder",
+      "location": [
+        -90,
+        10,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        106
+      ]
+    },
+    {
+      "id": "fold-4",
+      "object": "river-boulder",
+      "location": [
+        -30,
+        -6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        159
+      ]
+    },
+    {
+      "id": "fold-5",
+      "object": "river-boulder",
+      "location": [
+        60,
+        4,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        212
+      ]
+    },
+    {
+      "id": "fold-6",
+      "object": "river-boulder",
+      "location": [
+        120,
+        -5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        265
+      ]
+    },
+    {
+      "id": "fold-7",
+      "object": "river-boulder",
+      "location": [
+        180,
+        -30,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        318
+      ]
+    },
+    {
+      "id": "fold-8",
+      "object": "river-boulder",
+      "location": [
+        240,
+        34,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        11
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_delta": {
+      "note": "Chapter 7: the river splits into branching vessels, narrower and faster at 84-92 bpm; choose a mouth on the chart, or drift and finish the song.",
+      "world": {
+        "color": [
+          0.12,
+          0.02,
+          0.02
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "water-glow",
+          "type": "AREA",
+          "location": [
+            -200,
+            0,
+            -0.4
+          ],
+          "energy": 30000,
+          "size": 60,
+          "look_at": [
+            -200,
+            0,
+            20
+          ],
+          "color": [
+            1.0,
+            0.35,
+            0.25
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "AREA",
+          "location": [
+            -150,
+            0,
+            24
+          ],
+          "energy": 8000,
+          "size": 40,
+          "look_at": [
+            -200,
+            0,
+            0
+          ],
+          "color": [
+            0.878,
+            0.376,
+            0.227
+          ]
+        },
+        {
+          "name": "junction-glow",
+          "type": "AREA",
+          "location": [
+            120,
+            0,
+            -0.4
+          ],
+          "energy": 20000,
+          "size": 60,
+          "look_at": [
+            120,
+            0,
+            20
+          ],
+          "color": [
+            1.0,
+            0.35,
+            0.25
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -209,
+          0,
+          9
+        ],
+        "look_at": [
+          -190,
+          0,
+          1
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -200,
+          0,
+          0.6
+        ],
+        "facing_deg": 270
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "oar-bow-left",
+          "verb": "Row on the beat"
+        },
+        {
+          "prop": "fold-6",
+          "verb": "Choose a branch",
+          "leads_to": "s1_chart_2"
+        },
+        {
+          "prop": "raft",
+          "verb": "Ship oars and sing",
+          "leads_to": "s1_song_2"
+        }
+      ]
+    }
+  }
+}

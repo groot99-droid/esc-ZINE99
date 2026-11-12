@@ -1,0 +1,615 @@
+{
+  "game": "heartstream",
+  "location": "bloodstream",
+  "name": "The Bloodstream",
+  "reference": "assets/locations/bloodstream.jpg",
+  "bounds_m": [
+    1200,
+    120,
+    60
+  ],
+  "origin": "river centre at the water line; +x is downstream, the river running along x between the artery cliffs at +y and -y; the landing bank, the shaft's exit and the calm pool on -y near the -x end; the playable stretch only (1.2 km)",
+  "materials": {
+    "crimson-deep": {
+      "color": [
+        0.478,
+        0.063,
+        0.125
+      ],
+      "roughness": 0.45
+    },
+    "crimson": {
+      "color": [
+        0.702,
+        0.125,
+        0.18
+      ],
+      "roughness": 0.4
+    },
+    "blood-water": {
+      "color": [
+        0.702,
+        0.125,
+        0.18
+      ],
+      "roughness": 0.1,
+      "emission": 0.8
+    },
+    "blood-calm": {
+      "color": [
+        0.478,
+        0.063,
+        0.125
+      ],
+      "roughness": 0.02,
+      "emission": 0.5
+    },
+    "red-glow": {
+      "color": [
+        0.878,
+        0.376,
+        0.227
+      ],
+      "roughness": 0.4,
+      "emission": 1.5
+    }
+  },
+  "blockout": [
+    {
+      "id": "riverbed",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        1200,
+        120,
+        0.5
+      ],
+      "location": [
+        0,
+        0,
+        -0.45
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "river",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        1200,
+        100,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "blood-water",
+      "collide": false
+    },
+    {
+      "id": "cliff-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1200,
+        4,
+        60
+      ],
+      "location": [
+        0,
+        61,
+        30.0
+      ],
+      "material": "crimson"
+    },
+    {
+      "id": "cliff-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1200,
+        4,
+        60
+      ],
+      "location": [
+        0,
+        -61,
+        30.0
+      ],
+      "material": "crimson"
+    },
+    {
+      "id": "rim-north",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1200,
+        2,
+        1
+      ],
+      "location": [
+        0,
+        60,
+        60
+      ],
+      "material": "red-glow",
+      "collide": false
+    },
+    {
+      "id": "rim-south",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1200,
+        2,
+        1
+      ],
+      "location": [
+        0,
+        -60,
+        60
+      ],
+      "material": "red-glow",
+      "collide": false
+    },
+    {
+      "id": "bank-landing",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        160,
+        22,
+        1.0
+      ],
+      "location": [
+        -500,
+        -48,
+        0.5
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "calm-pool",
+      "shape": "cylinder",
+      "role": "water",
+      "size_m": [
+        30,
+        16,
+        0.25
+      ],
+      "location": [
+        -470,
+        -36,
+        0.02
+      ],
+      "material": "blood-calm",
+      "collide": false
+    },
+    {
+      "id": "shaft-exit",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        5,
+        5,
+        1
+      ],
+      "location": [
+        -540,
+        -58.6,
+        3.5
+      ],
+      "material": "red-glow",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "headland-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        80,
+        30,
+        3
+      ],
+      "location": [
+        -300,
+        42,
+        1.5
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "headland-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        90,
+        28,
+        3
+      ],
+      "location": [
+        -60,
+        -43,
+        1.5
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "headland-3",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        80,
+        30,
+        3
+      ],
+      "location": [
+        200,
+        42,
+        1.5
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "headland-4",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        90,
+        28,
+        3
+      ],
+      "location": [
+        420,
+        -43,
+        1.5
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "upstream",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        2,
+        100,
+        40
+      ],
+      "location": [
+        -599,
+        0,
+        20
+      ],
+      "material": "crimson-deep",
+      "collide": false
+    },
+    {
+      "id": "downstream",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        2,
+        100,
+        40
+      ],
+      "location": [
+        599,
+        0,
+        20
+      ],
+      "material": "crimson-deep",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "raft",
+      "object": "raft",
+      "location": [
+        -500,
+        -28,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "oar-bow-left",
+      "object": "oar",
+      "location": [
+        -498.5,
+        -26.8,
+        0.9
+      ],
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "oar-bow-right",
+      "object": "oar",
+      "location": [
+        -498.5,
+        -29.2,
+        0.9
+      ],
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "oar-stern-left",
+      "object": "oar",
+      "location": [
+        -501.8,
+        -26.8,
+        0.9
+      ],
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "oar-stern-right",
+      "object": "oar",
+      "location": [
+        -501.8,
+        -29.2,
+        0.9
+      ],
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "boulder-1",
+      "object": "river-boulder",
+      "location": [
+        -520,
+        -38,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "boulder-2",
+      "object": "river-boulder",
+      "location": [
+        -455,
+        -40,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        47
+      ]
+    },
+    {
+      "id": "boulder-3",
+      "object": "river-boulder",
+      "location": [
+        -480,
+        -30,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        94
+      ]
+    },
+    {
+      "id": "boulder-4",
+      "object": "river-boulder",
+      "location": [
+        -300,
+        25,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        141
+      ]
+    },
+    {
+      "id": "boulder-5",
+      "object": "river-boulder",
+      "location": [
+        -60,
+        -26,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        188
+      ]
+    },
+    {
+      "id": "boulder-6",
+      "object": "river-boulder",
+      "location": [
+        150,
+        10,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        235
+      ]
+    },
+    {
+      "id": "boulder-7",
+      "object": "river-boulder",
+      "location": [
+        420,
+        -24,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        282
+      ]
+    },
+    {
+      "id": "boulder-8",
+      "object": "river-boulder",
+      "location": [
+        560,
+        30,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        329
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_river": {
+      "note": "Chapter 6: out of the shaft onto the bank, board the raft and learn to steer on the beat at 72 bpm; one calm pool in the bend leaves room to talk.",
+      "world": {
+        "color": [
+          0.35,
+          0.06,
+          0.06
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "canyon-sky",
+          "type": "SUN",
+          "location": [
+            -500,
+            0,
+            55
+          ],
+          "energy": 3,
+          "size": 1,
+          "rotation_deg": [
+            35,
+            0,
+            60
+          ],
+          "color": [
+            1.0,
+            0.6,
+            0.5
+          ]
+        },
+        {
+          "name": "water-glow",
+          "type": "AREA",
+          "location": [
+            -500,
+            0,
+            -0.4
+          ],
+          "energy": 60000,
+          "size": 120,
+          "look_at": [
+            -500,
+            0,
+            30
+          ],
+          "color": [
+            1.0,
+            0.35,
+            0.25
+          ]
+        },
+        {
+          "name": "pool-glow",
+          "type": "POINT",
+          "location": [
+            -470,
+            -36,
+            0.5
+          ],
+          "energy": 4000,
+          "size": 4,
+          "color": [
+            0.878,
+            0.376,
+            0.227
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -524.4,
+          -50.0,
+          4.0
+        ],
+        "look_at": [
+          -500,
+          -28,
+          1
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -520,
+          -46,
+          1.0
+        ],
+        "facing_deg": 312
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "raft",
+          "verb": "Board"
+        },
+        {
+          "prop": "oar-bow-left",
+          "verb": "Take an oar"
+        },
+        {
+          "prop": "oar-stern-left",
+          "verb": "Row on the beat",
+          "leads_to": "s2_river_1"
+        },
+        {
+          "prop": "boulder-8",
+          "verb": "Read the branches",
+          "leads_to": "s1_chart_1"
+        }
+      ]
+    }
+  }
+}
