@@ -54,6 +54,13 @@ python tools/validate.py
 It checks every game's data against the shared rules and prints `ok` or the problems it found.
 Pass one or more slugs to check only those games.
 
+```bash
+python tools/check_storyboards.py
+```
+
+It checks every storyboard panel in `docs/STORYBOARDS.md` against the game's `scenes.json`, and
+that each reference still sits on exactly one panel.
+
 ## Sources
 
 Every game adapts a work in the author's `Pipelines-Plugin` repository, under

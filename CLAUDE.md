@@ -19,7 +19,8 @@ Ten games adapted from the author's creative-writing vault. Read `README.md` for
   with no travel: map pages, locks, card and board games, crafting, cooking. The test: in 2D the
   player is getting somewhere; in 1D the player is working something out.
 - **DESIGN.md and `data/` must agree.** After changing either, run `python tools/validate.py <slug>`
-  and fix what it reports. Do not loosen the validator to make a game pass.
+  and fix what it reports. Do not loosen the validator to make a game pass. After changing a
+  game's scenes or `docs/STORYBOARDS.md`, run `python tools/check_storyboards.py` too.
 - Horror games keep a cost in every ending; victims have interior lives; graphic detail is
   suggested, never instructed. These are the vault's own craft rules.
 - Do not recreate an existing commercial game, its characters, levels or look.

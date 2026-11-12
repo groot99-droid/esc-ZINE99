@@ -65,6 +65,8 @@ A game is a sequence of **scenes**. Every scene has one layer: `3d`, `2d` or `1d
 Transitions between layers are part of the design. Each scene names its `enter` and `exit`
 transition: `cut`, `fade`, `push-in` (3D camera moves into a surface that becomes the 1D page),
 `pull-out`, or `flatten` (3D camera rotates to orthographic, becoming 2D).
+When a scene branches, its `exit` is the default; if the scene that follows names a different
+`enter`, the following scene's `enter` wins for that branch.
 
 ### State
 
