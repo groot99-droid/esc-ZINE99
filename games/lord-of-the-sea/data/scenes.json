@@ -1,0 +1,1099 @@
+{
+  "modes_2d": [
+    {
+      "id": "engraved",
+      "name": "The Engraved Sea",
+      "movement": "scroll"
+    },
+    {
+      "id": "deep",
+      "name": "The Deep",
+      "movement": "scroll"
+    }
+  ],
+  "games_1d": [
+    {
+      "id": "liars-tide",
+      "name": "Liar's Tide",
+      "family": "Dice, bluffing"
+    },
+    {
+      "id": "charter",
+      "name": "The Charter",
+      "family": "Document hunt"
+    },
+    {
+      "id": "tea-board",
+      "name": "The Tea Board",
+      "family": "Board game, trade routes"
+    },
+    {
+      "id": "reckoning",
+      "name": "Dead Reckoning",
+      "family": "Navigation"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s-cabin-dawn",
+      "layer": "3d",
+      "name": "The cabin at dawn",
+      "chapter": "ch0-shore",
+      "enter": "fade",
+      "exit": "cut",
+      "next": [
+        "s-deck-dinghy"
+      ]
+    },
+    {
+      "id": "s-deck-dinghy",
+      "layer": "3d",
+      "name": "The deck and the dinghy",
+      "chapter": "ch0-shore",
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s-beach-tideline"
+      ]
+    },
+    {
+      "id": "s-beach-tideline",
+      "layer": "3d",
+      "name": "The tideline",
+      "chapter": "ch0-shore",
+      "writes": [
+        "tideline_answered"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "s-beach-princess"
+      ]
+    },
+    {
+      "id": "s-beach-princess",
+      "layer": "3d",
+      "name": "The princess on the shore",
+      "chapter": "ch1-princess",
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "g-charter-deed"
+      ]
+    },
+    {
+      "id": "s-cabin-princess",
+      "layer": "3d",
+      "name": "She comes aboard",
+      "chapter": "ch1-princess",
+      "writes": [
+        "princess_aboard",
+        "princess.trust"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "next": [
+        "s-company-lane"
+      ]
+    },
+    {
+      "id": "g-charter-deed",
+      "layer": "1d",
+      "name": "The Charter: the deed of sale",
+      "chapter": "ch1-princess",
+      "game": "charter",
+      "writes": [
+        "deed_read",
+        "princess.trust"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s-cabin-princess"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "s-company-lane",
+      "layer": "3d",
+      "name": "The Company lane: the ripple",
+      "chapter": "ch2-ordered-sea",
+      "reads": [
+        "wild.lanes",
+        "devotion"
+      ],
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "e-cutter-heave-to"
+      ]
+    },
+    {
+      "id": "e-cutter-heave-to",
+      "layer": "2d",
+      "name": "Engraved Sea: heave-to",
+      "chapter": "ch2-ordered-sea",
+      "mode": "engraved",
+      "writes": [
+        "notice"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s-tidewater"
+      ]
+    },
+    {
+      "id": "s-tidewater",
+      "layer": "3d",
+      "name": "Tidewater",
+      "chapter": "ch2-ordered-sea",
+      "reads": [
+        "met.wenna",
+        "devotion",
+        "wild.lanes"
+      ],
+      "writes": [
+        "met.wenna",
+        "wild.lanes",
+        "stirs",
+        "devotion",
+        "notice",
+        "crews"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "g-liars-tidewater",
+        "g-charter-tidewater"
+      ]
+    },
+    {
+      "id": "g-liars-tidewater",
+      "layer": "1d",
+      "name": "Liar's Tide with Wenna",
+      "chapter": "ch2-ordered-sea",
+      "game": "liars-tide",
+      "reads": [
+        "wild.lanes",
+        "princess.trust"
+      ],
+      "writes": [
+        "news",
+        "devotion",
+        "liars.caught"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "g-tea-parlour"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "g-tea-parlour",
+      "layer": "1d",
+      "name": "The Tea Board: the factor's parlour match",
+      "chapter": "ch2-ordered-sea",
+      "game": "tea-board",
+      "writes": [
+        "tea.parlour_won"
+      ],
+      "enter": "cut",
+      "exit": "pull-out",
+      "next": [
+        "g-reckon-unwritten"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "g-reckon-unwritten",
+      "layer": "1d",
+      "name": "Dead Reckoning: off the chart's edge",
+      "chapter": "ch3-old-sea",
+      "game": "reckoning",
+      "reads": [
+        "wild.unwritten"
+      ],
+      "writes": [
+        "wild.unwritten"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s-unwritten"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "s-unwritten",
+      "layer": "3d",
+      "name": "The Unwritten",
+      "chapter": "ch3-old-sea",
+      "reads": [
+        "wild.unwritten",
+        "devotion"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "g-liars-gullwife"
+      ]
+    },
+    {
+      "id": "g-liars-gullwife",
+      "layer": "1d",
+      "name": "Liar's Tide with the Gullwife crew",
+      "chapter": "ch3-old-sea",
+      "game": "liars-tide",
+      "reads": [
+        "wild.unwritten",
+        "princess.trust"
+      ],
+      "writes": [
+        "crews",
+        "devotion",
+        "liars.caught"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "e-first-squall"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "e-first-squall",
+      "layer": "2d",
+      "name": "Engraved Sea: the first squall",
+      "chapter": "ch3-old-sea",
+      "mode": "engraved",
+      "reads": [
+        "devotion",
+        "wild.unwritten",
+        "crews"
+      ],
+      "writes": [
+        "crews",
+        "devotion",
+        "notice"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "d-first-dive"
+      ]
+    },
+    {
+      "id": "d-first-dive",
+      "layer": "2d",
+      "name": "The Deep: the sunken tender",
+      "chapter": "ch3-old-sea",
+      "mode": "deep",
+      "writes": [
+        "has_harbour_book"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s-home-tideline"
+      ]
+    },
+    {
+      "id": "s-home-tideline",
+      "layer": "3d",
+      "name": "The first tideline stone and Tide Reckoning",
+      "chapter": "ch3-old-sea",
+      "reads": [
+        "devotion",
+        "crews",
+        "wild.home",
+        "wild.lanes",
+        "wild.unwritten",
+        "wild.salt",
+        "wild.strait",
+        "wild.pearl",
+        "wild.spice",
+        "wild.halls",
+        "port.lanes",
+        "port.salt",
+        "port.strait",
+        "port.pearl",
+        "port.spice",
+        "port.halls",
+        "lane.lanes",
+        "lane.salt",
+        "lane.strait",
+        "lane.pearl",
+        "lane.spice",
+        "lane.halls"
+      ],
+      "writes": [
+        "wild.home",
+        "stirs",
+        "devotion",
+        "notice",
+        "toll",
+        "princess.trust",
+        "crews"
+      ],
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s-chart-table",
+        "d-rescue"
+      ]
+    },
+    {
+      "id": "s-chart-table",
+      "layer": "3d",
+      "name": "The chart table",
+      "chapter": "ch4-open-chart",
+      "reads": [
+        "wild.home",
+        "wild.lanes",
+        "wild.unwritten",
+        "wild.salt",
+        "wild.strait",
+        "wild.pearl",
+        "wild.spice",
+        "wild.halls",
+        "port.lanes",
+        "port.salt",
+        "port.strait",
+        "port.pearl",
+        "port.spice",
+        "port.halls",
+        "lane.lanes",
+        "lane.salt",
+        "lane.strait",
+        "lane.pearl",
+        "lane.spice",
+        "lane.halls",
+        "crews",
+        "toll",
+        "notice"
+      ],
+      "writes": [
+        "toll",
+        "devotion",
+        "princess.trust",
+        "crews",
+        "notice",
+        "wild.home",
+        "wild.lanes",
+        "wild.unwritten",
+        "wild.salt",
+        "wild.strait",
+        "wild.pearl",
+        "wild.spice",
+        "wild.halls"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "g-charter-tidewater",
+        "g-reckon-lane",
+        "s-salt-steps",
+        "s-lamplit-strait",
+        "s-pearl-banks",
+        "s-spice-mouth",
+        "g-reckon-blockade"
+      ]
+    },
+    {
+      "id": "g-reckon-lane",
+      "layer": "1d",
+      "name": "Dead Reckoning: laying a lane",
+      "chapter": "ch4-open-chart",
+      "game": "reckoning",
+      "reads": [
+        "wild.home",
+        "wild.lanes",
+        "wild.unwritten",
+        "wild.salt",
+        "wild.strait",
+        "wild.pearl",
+        "wild.spice",
+        "wild.halls"
+      ],
+      "writes": [
+        "wild.home",
+        "wild.lanes",
+        "wild.unwritten",
+        "wild.salt",
+        "wild.strait",
+        "wild.pearl",
+        "wild.spice",
+        "wild.halls",
+        "lane.lanes",
+        "lane.salt",
+        "lane.strait",
+        "lane.pearl",
+        "lane.spice",
+        "lane.halls",
+        "princess.trust"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s-chart-table",
+        "s-cabin-tally"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "g-charter-tidewater",
+      "layer": "1d",
+      "name": "The Charter: the harbour book",
+      "chapter": "ch4-open-chart",
+      "game": "charter",
+      "reads": [
+        "has_harbour_book",
+        "princess.trust"
+      ],
+      "writes": [
+        "port.lanes",
+        "wild.lanes",
+        "lane.lanes",
+        "clauses",
+        "ports_freed",
+        "princess.trust",
+        "notice"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s-tidewater",
+        "s-chart-table"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "s-salt-steps",
+      "layer": "3d",
+      "name": "The Salt Steps",
+      "chapter": "ch4-open-chart",
+      "reads": [
+        "wild.salt",
+        "devotion",
+        "met.salt"
+      ],
+      "writes": [
+        "met.salt",
+        "wild.salt",
+        "stirs",
+        "devotion",
+        "notice",
+        "crews"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "g-liars-salt",
+        "e-salt-reef"
+      ]
+    },
+    {
+      "id": "g-liars-salt",
+      "layer": "1d",
+      "name": "Liar's Tide with the tallyman",
+      "chapter": "ch4-open-chart",
+      "game": "liars-tide",
+      "reads": [
+        "wild.salt",
+        "princess.trust"
+      ],
+      "writes": [
+        "port.salt",
+        "ports_freed",
+        "crews",
+        "devotion",
+        "liars.caught",
+        "news"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "e-salt-reef"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "e-salt-reef",
+      "layer": "2d",
+      "name": "Engraved Sea: over the reef",
+      "chapter": "ch4-open-chart",
+      "mode": "engraved",
+      "reads": [
+        "wild.salt",
+        "devotion"
+      ],
+      "writes": [
+        "notice"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s-chart-table"
+      ]
+    },
+    {
+      "id": "s-lamplit-strait",
+      "layer": "3d",
+      "name": "The Lamplit Strait",
+      "chapter": "ch4-open-chart",
+      "reads": [
+        "wild.strait",
+        "devotion",
+        "met.strait"
+      ],
+      "writes": [
+        "met.strait",
+        "has_logbook",
+        "wild.strait",
+        "stirs",
+        "devotion",
+        "notice",
+        "crews"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "g-charter-strait"
+      ]
+    },
+    {
+      "id": "g-charter-strait",
+      "layer": "1d",
+      "name": "The Charter: the lighthouse lease",
+      "chapter": "ch4-open-chart",
+      "game": "charter",
+      "reads": [
+        "has_logbook",
+        "princess.trust"
+      ],
+      "writes": [
+        "port.strait",
+        "strait.lights_dark",
+        "wild.strait",
+        "lane.strait",
+        "clauses",
+        "ports_freed",
+        "princess.trust",
+        "crews"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "g-reckon-strait"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "g-reckon-strait",
+      "layer": "1d",
+      "name": "Dead Reckoning: through the strait",
+      "chapter": "ch4-open-chart",
+      "game": "reckoning",
+      "reads": [
+        "strait.lights_dark",
+        "wild.strait"
+      ],
+      "writes": [
+        "wild.strait",
+        "notice"
+      ],
+      "enter": "cut",
+      "exit": "pull-out",
+      "next": [
+        "s-chart-table"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "s-pearl-banks",
+      "layer": "3d",
+      "name": "The Pearl Banks",
+      "chapter": "ch4-open-chart",
+      "reads": [
+        "wild.pearl",
+        "devotion",
+        "met.pearl"
+      ],
+      "writes": [
+        "met.pearl",
+        "wild.pearl",
+        "stirs",
+        "devotion",
+        "notice",
+        "crews"
+      ],
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "d-pearl-dive"
+      ]
+    },
+    {
+      "id": "d-pearl-dive",
+      "layer": "2d",
+      "name": "The Deep: the trench and the compact stone",
+      "chapter": "ch4-open-chart",
+      "mode": "deep",
+      "reads": [
+        "wild.pearl",
+        "devotion"
+      ],
+      "writes": [
+        "has_compact_rubbing",
+        "crews"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "g-charter-pearl"
+      ]
+    },
+    {
+      "id": "g-charter-pearl",
+      "layer": "1d",
+      "name": "The Charter: the diving-rights deed",
+      "chapter": "ch4-open-chart",
+      "game": "charter",
+      "reads": [
+        "has_compact_rubbing",
+        "princess.trust"
+      ],
+      "writes": [
+        "port.pearl",
+        "wild.pearl",
+        "lane.pearl",
+        "clauses",
+        "ports_freed",
+        "princess.trust"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s-chart-table"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "s-spice-mouth",
+      "layer": "3d",
+      "name": "The Spice Mouth",
+      "chapter": "ch4-open-chart",
+      "reads": [
+        "wild.spice",
+        "devotion",
+        "met.spice"
+      ],
+      "writes": [
+        "met.spice",
+        "wild.spice",
+        "stirs",
+        "devotion",
+        "notice",
+        "crews"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "g-tea-comptroller"
+      ]
+    },
+    {
+      "id": "g-tea-comptroller",
+      "layer": "1d",
+      "name": "The Tea Board: the Comptroller",
+      "chapter": "ch4-open-chart",
+      "game": "tea-board",
+      "reads": [
+        "wild.home",
+        "wild.lanes",
+        "wild.unwritten",
+        "wild.salt",
+        "wild.strait",
+        "wild.pearl",
+        "wild.spice",
+        "wild.halls",
+        "port.lanes",
+        "port.salt",
+        "port.strait",
+        "port.pearl",
+        "port.spice",
+        "port.halls",
+        "crews",
+        "clauses",
+        "tea.parlour_won",
+        "devotion",
+        "notice"
+      ],
+      "writes": [
+        "tea.comptroller_won",
+        "port.spice",
+        "ports_freed",
+        "clauses",
+        "notice",
+        "crews"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "e-spice-chase"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "e-spice-chase",
+      "layer": "2d",
+      "name": "Engraved Sea: out of the Spice Mouth",
+      "chapter": "ch4-open-chart",
+      "mode": "engraved",
+      "reads": [
+        "notice",
+        "wild.spice",
+        "devotion"
+      ],
+      "writes": [
+        "notice"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s-chart-table"
+      ]
+    },
+    {
+      "id": "d-rescue",
+      "layer": "2d",
+      "name": "The Deep: rescue dive",
+      "chapter": "ch4-open-chart",
+      "mode": "deep",
+      "reads": [
+        "toll",
+        "devotion"
+      ],
+      "writes": [
+        "toll",
+        "devotion",
+        "princess.trust"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s-chart-table",
+        "s-cabin-tally",
+        "g-reckon-blockade"
+      ]
+    },
+    {
+      "id": "g-reckon-blockade",
+      "layer": "1d",
+      "name": "Dead Reckoning: the blockade",
+      "chapter": "ch5-kings-halls",
+      "game": "reckoning",
+      "reads": [
+        "notice",
+        "wild.halls"
+      ],
+      "writes": [
+        "blockade_plotted",
+        "wild.halls"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "e-blockade-run"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "e-blockade-run",
+      "layer": "2d",
+      "name": "Engraved Sea: running the blockade",
+      "chapter": "ch5-kings-halls",
+      "mode": "engraved",
+      "reads": [
+        "blockade_plotted",
+        "notice",
+        "wild.halls",
+        "devotion"
+      ],
+      "writes": [
+        "blockade_run",
+        "notice"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s-kings-halls"
+      ]
+    },
+    {
+      "id": "s-kings-halls",
+      "layer": "3d",
+      "name": "The King's Halls",
+      "chapter": "ch5-kings-halls",
+      "reads": [
+        "blockade_run",
+        "wild.halls",
+        "devotion"
+      ],
+      "writes": [
+        "met.halls",
+        "payment_delivered",
+        "princess.trust",
+        "crews",
+        "devotion",
+        "wild.halls",
+        "stirs",
+        "notice"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "g-charter-halls"
+      ]
+    },
+    {
+      "id": "g-charter-halls",
+      "layer": "1d",
+      "name": "The Charter: the halls' deed",
+      "chapter": "ch5-kings-halls",
+      "game": "charter",
+      "reads": [
+        "payment_delivered",
+        "deed_read",
+        "princess.trust"
+      ],
+      "writes": [
+        "port.halls",
+        "wild.halls",
+        "lane.halls",
+        "clauses",
+        "ports_freed",
+        "princess.trust",
+        "toll",
+        "devotion",
+        "princess.trust",
+        "crews",
+        "notice",
+        "wild.home",
+        "wild.lanes",
+        "wild.unwritten",
+        "wild.salt",
+        "wild.strait",
+        "wild.pearl",
+        "wild.spice",
+        "wild.halls"
+      ],
+      "enter": "push-in",
+      "exit": "fade",
+      "next": [
+        "s-cabin-tally",
+        "d-rescue"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "s-cabin-tally",
+      "layer": "3d",
+      "name": "The tally",
+      "chapter": "ch6-lord-of-tea",
+      "reads": [
+        "wild.home",
+        "wild.lanes",
+        "wild.unwritten",
+        "wild.salt",
+        "wild.strait",
+        "wild.pearl",
+        "wild.spice",
+        "wild.halls",
+        "lane.lanes",
+        "lane.salt",
+        "lane.strait",
+        "lane.pearl",
+        "lane.spice",
+        "lane.halls",
+        "port.lanes",
+        "port.salt",
+        "port.strait",
+        "port.pearl",
+        "port.spice",
+        "port.halls",
+        "narrator.identity"
+      ],
+      "writes": [
+        "chart.wild_regions",
+        "chart.order_regions",
+        "chart.balanced_regions",
+        "wild.home",
+        "stirs"
+      ],
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "g-reckon-lane",
+        "e-storm-approach",
+        "d-under-pilings"
+      ]
+    },
+    {
+      "id": "e-storm-approach",
+      "layer": "2d",
+      "name": "Engraved Sea: approach by the Company lane",
+      "chapter": "ch6-lord-of-tea",
+      "mode": "engraved",
+      "reads": [
+        "chart.wild_regions",
+        "notice"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s-counting-house"
+      ]
+    },
+    {
+      "id": "d-under-pilings",
+      "layer": "2d",
+      "name": "The Deep: under the counting-house",
+      "chapter": "ch6-lord-of-tea",
+      "mode": "deep",
+      "reads": [
+        "chart.wild_regions"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s-counting-house"
+      ]
+    },
+    {
+      "id": "s-counting-house",
+      "layer": "3d",
+      "name": "The counting-house",
+      "chapter": "ch6-lord-of-tea",
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "g-tea-final"
+      ]
+    },
+    {
+      "id": "g-tea-final",
+      "layer": "1d",
+      "name": "The Tea Board: the Lord of Tea",
+      "chapter": "ch6-lord-of-tea",
+      "game": "tea-board",
+      "reads": [
+        "wild.home",
+        "wild.lanes",
+        "wild.unwritten",
+        "wild.salt",
+        "wild.strait",
+        "wild.pearl",
+        "wild.spice",
+        "wild.halls",
+        "port.lanes",
+        "port.salt",
+        "port.strait",
+        "port.pearl",
+        "port.spice",
+        "port.halls",
+        "crews",
+        "clauses",
+        "tea.parlour_won",
+        "devotion",
+        "notice",
+        "princess.trust",
+        "chart.balanced_regions"
+      ],
+      "writes": [
+        "tea.final_result"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s-tideline-final"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "s-tideline-final",
+      "layer": "3d",
+      "name": "The tideline: keep or give up",
+      "chapter": "ch7-tideline",
+      "reads": [
+        "tea.final_result",
+        "chart.wild_regions"
+      ],
+      "writes": [
+        "final_choice"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "s-end-charter",
+        "s-end-no-lord",
+        "s-end-wild-sea",
+        "s-end-lords-peace"
+      ]
+    },
+    {
+      "id": "s-end-charter",
+      "layer": "3d",
+      "name": "Ending: The Charter",
+      "chapter": "ch7-tideline",
+      "reads": [
+        "toll",
+        "narrator.identity"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": []
+    },
+    {
+      "id": "s-end-no-lord",
+      "layer": "3d",
+      "name": "Ending: No Lord",
+      "chapter": "ch7-tideline",
+      "reads": [
+        "toll",
+        "narrator.identity"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": []
+    },
+    {
+      "id": "s-end-wild-sea",
+      "layer": "3d",
+      "name": "Ending: The Wild Sea",
+      "chapter": "ch7-tideline",
+      "reads": [
+        "toll",
+        "narrator.identity"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": []
+    },
+    {
+      "id": "s-end-lords-peace",
+      "layer": "3d",
+      "name": "Ending: The Lord's Peace",
+      "chapter": "ch7-tideline",
+      "reads": [
+        "toll",
+        "narrator.identity"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": []
+    }
+  ]
+}

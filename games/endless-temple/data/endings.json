@@ -1,0 +1,81 @@
+{
+  "endings": [
+    {
+      "id": "reader_who_stayed",
+      "name": "The Reader Who Stayed",
+      "as_written": false,
+      "priority": 10,
+      "when": {
+        "all": [
+          {
+            "is": "last_cup",
+            "eq": "drunk"
+          },
+          {
+            "is": "steep",
+            "gte": 60
+          }
+        ]
+      },
+      "summary": "Elaris drinks the last cup and, steeped deep enough, does not come back out. In the temple, with nobody watching, a second book begins to leak: an unnamed book if one is left, otherwise the black book's mist.",
+      "final_scenes": [
+        "s3_last_cup",
+        "e_stayed"
+      ]
+    },
+    {
+      "id": "the_rider",
+      "name": "The Rider",
+      "as_written": false,
+      "priority": 20,
+      "when": {
+        "is": "xandri_fate",
+        "eq": "rider"
+      },
+      "summary": "Xandri climbs onto a Xandrix and rides past what the shamans said could not be reached. He does not come home to tell them. The book writes its own name in a hand that is not Elaris's.",
+      "final_scenes": [
+        "s3_xandrix_back",
+        "s3_last_cup",
+        "e_rider"
+      ]
+    },
+    {
+      "id": "named_book",
+      "name": "The Named Book",
+      "as_written": false,
+      "priority": 30,
+      "when": {
+        "all": [
+          {
+            "is": "xandri_fate",
+            "eq": "walked_on"
+          },
+          {
+            "is": "book1_named",
+            "eq": true
+          }
+        ]
+      },
+      "summary": "Xandri walks the gods' track on leaf shoes, breaking no rule, further than his father did. Elaris names the book, the sand stops sifting from its pages, and he shelves it.",
+      "final_scenes": [
+        "s2_li_c9",
+        "g_name_c9",
+        "s3_last_cup",
+        "e_named"
+      ]
+    },
+    {
+      "id": "son_returns",
+      "name": "The Son Returns",
+      "as_written": false,
+      "priority": 40,
+      "when": true,
+      "summary": "Catch-all; in practice xandri_fate is returned. Xandri turns back and becomes the storyteller; the tale told at the start is now told about him. The book stays nameless and keeps leaking sand.",
+      "final_scenes": [
+        "s3_village_return",
+        "s3_last_cup",
+        "e_returned"
+      ]
+    }
+  ]
+}

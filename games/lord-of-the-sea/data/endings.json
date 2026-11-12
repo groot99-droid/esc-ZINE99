@@ -1,0 +1,97 @@
+{
+  "endings": [
+    {
+      "id": "the-charter",
+      "name": "The Charter",
+      "as_written": false,
+      "priority": 1,
+      "when": {
+        "all": [
+          {
+            "is": "tea.final_result",
+            "eq": "draw"
+          },
+          {
+            "is": "chart.balanced_regions",
+            "gte": 3
+          },
+          {
+            "is": "devotion",
+            "gte": 50
+          },
+          {
+            "is": "princess.trust",
+            "gte": 60
+          }
+        ]
+      },
+      "summary": "The final match is signed at 4-4. Alexi and the princess write terms between a god and the people who sail: lanes kept calm, wild water left wild. The toll is read on the terms' last page.",
+      "final_scenes": [
+        "s-tideline-final",
+        "s-end-charter"
+      ]
+    },
+    {
+      "id": "no-lord",
+      "name": "No Lord",
+      "as_written": false,
+      "priority": 2,
+      "when": {
+        "all": [
+          {
+            "is": "tea.final_result",
+            "eq": "win"
+          },
+          {
+            "is": "final_choice",
+            "eq": "relinquish"
+          }
+        ]
+      },
+      "summary": "Alexi beats the Lord of Tea and gives up the sea, which was not meant to be owned by anyone. He becomes a mortal sailor; the Company's charters and its lights fall.",
+      "final_scenes": [
+        "s-tideline-final",
+        "s-end-no-lord"
+      ]
+    },
+    {
+      "id": "the-wild-sea",
+      "name": "The Wild Sea",
+      "as_written": false,
+      "priority": 3,
+      "when": {
+        "all": [
+          {
+            "is": "tea.final_result",
+            "eq": "win"
+          },
+          {
+            "is": "final_choice",
+            "eq": "keep"
+          },
+          {
+            "is": "chart.wild_regions",
+            "gte": 5
+          }
+        ]
+      },
+      "summary": "Alexi beats the Lord of Tea and keeps the sea. He is the god again; the hymns come back, and so do the wrecks. The princess leaves the boat.",
+      "final_scenes": [
+        "s-tideline-final",
+        "s-end-wild-sea"
+      ]
+    },
+    {
+      "id": "the-lords-peace",
+      "name": "The Lord's Peace",
+      "as_written": false,
+      "priority": 4,
+      "when": true,
+      "summary": "The Lord of Tea owns every ship that sails. The sea is safe, and Alexi is a man on an old boat whose tide no longer answers.",
+      "final_scenes": [
+        "s-tideline-final",
+        "s-end-lords-peace"
+      ]
+    }
+  ]
+}

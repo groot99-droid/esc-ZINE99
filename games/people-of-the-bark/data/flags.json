@@ -1,0 +1,357 @@
+{
+  "state": [
+    {
+      "name": "season",
+      "type": "enum",
+      "default": "spring",
+      "description": "The current season.",
+      "values": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter",
+        "shadow"
+      ]
+    },
+    {
+      "name": "inst.elders",
+      "type": "meter",
+      "default": 30,
+      "description": "Standing of the Knot (elders and priests, Eye). Sets Omen Spread hand size.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "inst.warriors",
+      "type": "meter",
+      "default": 30,
+      "description": "Standing of the Battlements (warriors, Spear). Sets crack defence squad size.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "inst.scholars",
+      "type": "meter",
+      "default": 30,
+      "description": "Standing of the Scroll House (scholars, Quill). Sets Tremor Scroll hints.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "year.leading",
+      "type": "enum",
+      "default": "none",
+      "description": "Set at the Winter Count: the institution at least 12 above each other, or none.",
+      "values": [
+        "none",
+        "elders",
+        "warriors",
+        "scholars"
+      ]
+    },
+    {
+      "name": "shadow_reading",
+      "type": "enum",
+      "default": "none",
+      "description": "The Reading of the Shadow laid in c6_omen.",
+      "values": [
+        "none",
+        "trial",
+        "enemy",
+        "habit",
+        "offering"
+      ]
+    },
+    {
+      "name": "morale",
+      "type": "meter",
+      "default": 60,
+      "description": "The city's spirits. Above 75 gives +1 council token; below 30 gives -2.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "bark.integrity",
+      "type": "meter",
+      "default": 80,
+      "description": "How sound the bark is. 25 or below at the touch is the Flake.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "sap",
+      "type": "meter",
+      "default": 60,
+      "description": "Sacred water, the main resource.",
+      "range": [
+        0,
+        300
+      ]
+    },
+    {
+      "name": "food",
+      "type": "meter",
+      "default": 50,
+      "description": "Food stores; each season the city eats hands / 2.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "flake_stock",
+      "type": "counter",
+      "default": 20,
+      "description": "Bark flake, a building material gathered by idle builders."
+    },
+    {
+      "name": "hands",
+      "type": "counter",
+      "default": 40,
+      "description": "The city's working population (cap 60)."
+    },
+    {
+      "name": "councils",
+      "type": "ledger",
+      "default": [],
+      "description": "One entry per seasonal council: the tokens given to each post.",
+      "fields": [
+        "season",
+        "elders",
+        "warriors",
+        "scholars",
+        "taps",
+        "builders"
+      ]
+    },
+    {
+      "name": "readings",
+      "type": "ledger",
+      "default": [],
+      "description": "One entry per Omen Spread.",
+      "fields": [
+        "season",
+        "event",
+        "meaning",
+        "policy",
+        "fit",
+        "crown"
+      ]
+    },
+    {
+      "name": "fit_hits",
+      "type": "counter",
+      "default": 0,
+      "description": "Readings whose meaning fitted the real cause."
+    },
+    {
+      "name": "scroll.hint_level",
+      "type": "counter",
+      "default": 0,
+      "description": "Extra Tremor Scroll hint levels from Tremor-reading Fits."
+    },
+    {
+      "name": "forecasts_made",
+      "type": "counter",
+      "default": 0,
+      "description": "Tremor forecasts sealed (18 in a full run)."
+    },
+    {
+      "name": "forecasts_correct",
+      "type": "counter",
+      "default": 0,
+      "description": "Tremor forecasts with the right day-part and face."
+    },
+    {
+      "name": "tread_forecast",
+      "type": "bool",
+      "default": false,
+      "description": "The player forecast the next seventh-day tread in c6_scroll: +1 card at the Shadow."
+    },
+    {
+      "name": "temples_opened",
+      "type": "counter",
+      "default": 0,
+      "description": "Ring Doors opened."
+    },
+    {
+      "name": "heartwood_opened",
+      "type": "bool",
+      "default": false,
+      "description": "The Heartwood Door was opened (integrity -8)."
+    },
+    {
+      "name": "recipes_found",
+      "type": "counter",
+      "default": 0,
+      "description": "Recipes found in the Sap Kitchen (of 12)."
+    },
+    {
+      "name": "offerings",
+      "type": "counter",
+      "default": 0,
+      "description": "Offering pots cooked."
+    },
+    {
+      "name": "great_offering",
+      "type": "bool",
+      "default": false,
+      "description": "The Great Offering was made in c6_offering."
+    },
+    {
+      "name": "tns.wins",
+      "type": "counter",
+      "default": 0,
+      "description": "Trunk and Shadow festivals won."
+    },
+    {
+      "name": "tns_rules",
+      "type": "ledger",
+      "default": [],
+      "description": "Rule cards added to Trunk and Shadow.",
+      "fields": [
+        "season",
+        "rule",
+        "source"
+      ]
+    },
+    {
+      "name": "shadow_rehearsed",
+      "type": "bool",
+      "default": false,
+      "description": "The winter festival was won: +1 card at the Shadow."
+    },
+    {
+      "name": "beetle_reading",
+      "type": "enum",
+      "default": "none",
+      "description": "How the Beetle was read.",
+      "values": [
+        "none",
+        "god",
+        "monster"
+      ]
+    },
+    {
+      "name": "ant_reading",
+      "type": "enum",
+      "default": "none",
+      "description": "How the ants were read (from the leaf spread's policy).",
+      "values": [
+        "none",
+        "god",
+        "monster"
+      ]
+    },
+    {
+      "name": "prophecy.suit",
+      "type": "enum",
+      "default": "none",
+      "description": "The Crown suit of the birdsong reading: the prophecy.",
+      "values": [
+        "none",
+        "wind",
+        "rain",
+        "song",
+        "tremor",
+        "leaf",
+        "mandible"
+      ]
+    },
+    {
+      "name": "expedition.heard",
+      "type": "bool",
+      "default": false,
+      "description": "The expedition reached the Listening Knot and heard the song."
+    },
+    {
+      "name": "defence.breaches",
+      "type": "counter",
+      "default": 0,
+      "description": "Crack defences breached."
+    },
+    {
+      "name": "fallen",
+      "type": "counter",
+      "default": 0,
+      "description": "Bark people lost this year."
+    },
+    {
+      "name": "roll",
+      "type": "ledger",
+      "default": [],
+      "description": "The Roll of the Bark: everyone lost, with one habit each.",
+      "fields": [
+        "name",
+        "season",
+        "cause",
+        "habit"
+      ]
+    },
+    {
+      "name": "burr.wounded",
+      "type": "bool",
+      "default": false,
+      "description": "Captain Burr was wounded (the Beetle fought and breached, or the war)."
+    },
+    {
+      "name": "mossa.on_time",
+      "type": "counter",
+      "default": 0,
+      "description": "Crack runs Mossa finished inside the limit."
+    },
+    {
+      "name": "mossa.shadow_late",
+      "type": "bool",
+      "default": false,
+      "description": "Mossa reached the cities after the dark in c6_run: -1 card at the Shadow."
+    },
+    {
+      "name": "pell.alive",
+      "type": "bool",
+      "default": true,
+      "description": "Elder Pell lives until his last spread."
+    },
+    {
+      "name": "pell.heir",
+      "type": "enum",
+      "default": "none",
+      "description": "Who inherits Pell's deck.",
+      "values": [
+        "none",
+        "hollow",
+        "burr",
+        "fenn",
+        "twig"
+      ]
+    },
+    {
+      "name": "twig.kite_freed",
+      "type": "bool",
+      "default": false,
+      "description": "The player freed Twig's kite at dawn."
+    },
+    {
+      "name": "pullbacks",
+      "type": "counter",
+      "default": 0,
+      "description": "Times the player looked up to the backyard."
+    },
+    {
+      "name": "edge_map",
+      "type": "bool",
+      "default": false,
+      "description": "Fenn drew the map with an edge (habit branch)."
+    }
+  ]
+}

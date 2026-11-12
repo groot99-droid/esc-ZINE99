@@ -1,0 +1,85 @@
+{
+  "slug": "people-of-the-bark",
+  "title": "People of the Bark",
+  "sources": [
+    "05_Worldbuilding/01_People_of_the_Bark.md"
+  ],
+  "target_minutes": {
+    "min": 150,
+    "max": 180
+  },
+  "players": {
+    "min": 1,
+    "max": 1
+  },
+  "core_verb": "interpret",
+  "chapters": [
+    {
+      "id": "ch1_tremor",
+      "title": "The Tremor",
+      "minutes": 20,
+      "layers": [
+        "3d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch2_spring",
+      "title": "Spring: The Rain Blessing",
+      "minutes": 30,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch3_summer",
+      "title": "Summer: Trials and Monsters",
+      "minutes": 34,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch4_autumn",
+      "title": "Autumn: The Falling Leaves",
+      "minutes": 32,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch5_winter",
+      "title": "Winter: The Sap Sleeps",
+      "minutes": 28,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch6_shadow",
+      "title": "The Coming of the Shadow",
+      "minutes": 22,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch7_pullback",
+      "title": "The Pull-back",
+      "minutes": 4,
+      "layers": [
+        "3d"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1472 @@
+{
+  "modes_2d": [
+    {
+      "id": "living",
+      "name": "Living illustration",
+      "movement": "scroll"
+    },
+    {
+      "id": "stacks",
+      "name": "The stacks",
+      "movement": "scroll"
+    }
+  ],
+  "games_1d": [
+    {
+      "id": "tea",
+      "name": "Tea Blending",
+      "family": "Brewing"
+    },
+    {
+      "id": "naming",
+      "name": "The Naming",
+      "family": "Word assembly"
+    },
+    {
+      "id": "clasps",
+      "name": "The Clasps",
+      "family": "Mechanical puzzle"
+    },
+    {
+      "id": "tablet",
+      "name": "The Rule Tablet",
+      "family": "Logic loophole"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s3_abyss_dream",
+      "layer": "3d",
+      "name": "The edge of the abyss (dream)",
+      "chapter": "c1_waking",
+      "writes": [
+        "past_fragments",
+        "past_known"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "s3_room_morning"
+      ]
+    },
+    {
+      "id": "s3_room_morning",
+      "layer": "3d",
+      "name": "Elaris's room, morning",
+      "chapter": "c1_waking",
+      "enter": "fade",
+      "exit": "cut",
+      "next": [
+        "s3_halls_c1"
+      ]
+    },
+    {
+      "id": "s3_halls_c1",
+      "layer": "3d",
+      "name": "The temple halls, first round",
+      "chapter": "c1_waking",
+      "writes": [
+        "duties_done",
+        "steep"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "g_name_c1"
+      ]
+    },
+    {
+      "id": "g_name_c1",
+      "layer": "1d",
+      "name": "The Naming: yesterday's book (tutorial)",
+      "chapter": "c1_waking",
+      "game": "naming",
+      "world_runs": false,
+      "reads": [
+        "motifs"
+      ],
+      "writes": [
+        "names_given"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_pantry_c1"
+      ]
+    },
+    {
+      "id": "s3_pantry_c1",
+      "layer": "3d",
+      "name": "The pantry",
+      "chapter": "c1_waking",
+      "writes": [
+        "herbs"
+      ],
+      "enter": "pull-out",
+      "exit": "push-in",
+      "next": [
+        "g_tea_c1"
+      ]
+    },
+    {
+      "id": "g_tea_c1",
+      "layer": "1d",
+      "name": "Tea Blending: the first cup",
+      "chapter": "c1_waking",
+      "game": "tea",
+      "world_runs": false,
+      "reads": [
+        "herbs",
+        "sand_leak"
+      ],
+      "writes": [
+        "brew.depth",
+        "brew.length",
+        "brew.binding",
+        "steep",
+        "tea_hold"
+      ],
+      "enter": "push-in",
+      "exit": "push-in",
+      "next": [
+        "s3_circle"
+      ]
+    },
+    {
+      "id": "s3_circle",
+      "layer": "3d",
+      "name": "The storyteller's circle",
+      "chapter": "c2_circle",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s3_seclusion"
+      ]
+    },
+    {
+      "id": "s3_seclusion",
+      "layer": "3d",
+      "name": "The secluded yard: the speech",
+      "chapter": "c2_circle",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "g_tablet_c2"
+      ]
+    },
+    {
+      "id": "g_tablet_c2",
+      "layer": "1d",
+      "name": "The Rule Tablet: the shrine-store",
+      "chapter": "c2_circle",
+      "game": "tablet",
+      "world_runs": false,
+      "reads": [
+        "tablet_scrutiny"
+      ],
+      "writes": [
+        "loophole_shrine",
+        "tablet_scrutiny",
+        "rules_broken",
+        "fathers_things"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_hut_night"
+      ]
+    },
+    {
+      "id": "s3_hut_night",
+      "layer": "3d",
+      "name": "Xandri's hut by night",
+      "chapter": "c2_circle",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep",
+        "fathers_things"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "s3_moonlit_dunes"
+      ]
+    },
+    {
+      "id": "s3_moonlit_dunes",
+      "layer": "3d",
+      "name": "The sand sea by moonlight: departure and the first mark",
+      "chapter": "c2_circle",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "lingers",
+        "returns",
+        "steep",
+        "tea_hold",
+        "pov",
+        "motifs",
+        "sand_leak"
+      ],
+      "enter": "cut",
+      "exit": "pull-out",
+      "next": [
+        "s3_halls_c3"
+      ]
+    },
+    {
+      "id": "s3_halls_c3",
+      "layer": "3d",
+      "name": "The halls: sand on the floor",
+      "chapter": "c3_rounds",
+      "reads": [
+        "sand_leak",
+        "steep"
+      ],
+      "writes": [
+        "duties_done",
+        "steep",
+        "sand_leak"
+      ],
+      "enter": "pull-out",
+      "exit": "flatten",
+      "next": [
+        "s2_stacks_c3"
+      ]
+    },
+    {
+      "id": "s2_stacks_c3",
+      "layer": "2d",
+      "name": "The stacks: the clasped shelf",
+      "chapter": "c3_rounds",
+      "mode": "stacks",
+      "reads": [
+        "steep",
+        "sand_leak"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "g_clasp_c3a"
+      ]
+    },
+    {
+      "id": "g_clasp_c3a",
+      "layer": "1d",
+      "name": "The Clasps: the sliding-bolt register",
+      "chapter": "c3_rounds",
+      "game": "clasps",
+      "world_runs": false,
+      "writes": [
+        "clasps_opened",
+        "past_fragments",
+        "past_known"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "g_clasp_c3b"
+      ]
+    },
+    {
+      "id": "g_clasp_c3b",
+      "layer": "1d",
+      "name": "The Clasps: the lever-bank letter",
+      "chapter": "c3_rounds",
+      "game": "clasps",
+      "world_runs": false,
+      "writes": [
+        "clasps_opened",
+        "past_fragments",
+        "past_known"
+      ],
+      "enter": "cut",
+      "exit": "pull-out",
+      "next": [
+        "s3_pantry_c3"
+      ]
+    },
+    {
+      "id": "s3_pantry_c3",
+      "layer": "3d",
+      "name": "The pantry, second brew",
+      "chapter": "c3_rounds",
+      "reads": [
+        "sand_leak"
+      ],
+      "enter": "pull-out",
+      "exit": "push-in",
+      "next": [
+        "g_tea_c3"
+      ]
+    },
+    {
+      "id": "g_tea_c3",
+      "layer": "1d",
+      "name": "Tea Blending: a cup for the long dunes",
+      "chapter": "c3_rounds",
+      "game": "tea",
+      "world_runs": false,
+      "reads": [
+        "herbs",
+        "sand_leak"
+      ],
+      "writes": [
+        "brew.depth",
+        "brew.length",
+        "brew.binding",
+        "steep",
+        "tea_hold"
+      ],
+      "enter": "push-in",
+      "exit": "push-in",
+      "next": [
+        "s3_dunes_night"
+      ]
+    },
+    {
+      "id": "s3_dunes_night",
+      "layer": "3d",
+      "name": "Under the sand at night",
+      "chapter": "c4_dunes",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs"
+      ],
+      "enter": "push-in",
+      "exit": "fade",
+      "next": [
+        "s3_dunes_day"
+      ]
+    },
+    {
+      "id": "s3_dunes_day",
+      "layer": "3d",
+      "name": "The sand sea by day: the Zorlop leaves",
+      "chapter": "c4_dunes",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep",
+        "fathers_things"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs",
+        "leaf_shoes"
+      ],
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "s2_li_c4a"
+      ]
+    },
+    {
+      "id": "s2_li_c4a",
+      "layer": "2d",
+      "name": "Living illustration: the torrent waves",
+      "chapter": "c4_dunes",
+      "mode": "living",
+      "reads": [
+        "tea_hold",
+        "leaf_shoes",
+        "sand_leak",
+        "fathers_things"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "swallowed_count",
+        "motifs"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s3_cairns"
+      ]
+    },
+    {
+      "id": "s3_cairns",
+      "layer": "3d",
+      "name": "The noon cairns",
+      "chapter": "c4_dunes",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs",
+        "herbs"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s2_li_c4b"
+      ]
+    },
+    {
+      "id": "s2_li_c4b",
+      "layer": "2d",
+      "name": "Living illustration: the vine sea at dusk",
+      "chapter": "c4_dunes",
+      "mode": "living",
+      "reads": [
+        "tea_hold",
+        "leaf_shoes",
+        "sand_leak",
+        "fathers_things"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "swallowed_count",
+        "motifs"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s3_evening_camp"
+      ]
+    },
+    {
+      "id": "s3_evening_camp",
+      "layer": "3d",
+      "name": "Evening camp: the second mark",
+      "chapter": "c4_dunes",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "lingers",
+        "returns",
+        "steep",
+        "tea_hold",
+        "pov",
+        "motifs",
+        "sand_leak"
+      ],
+      "enter": "flatten",
+      "exit": "pull-out",
+      "next": [
+        "s3_halls_c5"
+      ]
+    },
+    {
+      "id": "s3_halls_c5",
+      "layer": "3d",
+      "name": "The halls: a book that rains",
+      "chapter": "c5_hollin",
+      "reads": [
+        "sand_leak",
+        "steep"
+      ],
+      "writes": [
+        "duties_done",
+        "steep",
+        "sand_leak"
+      ],
+      "enter": "pull-out",
+      "exit": "flatten",
+      "next": [
+        "s2_stacks_c5"
+      ]
+    },
+    {
+      "id": "s2_stacks_c5",
+      "layer": "2d",
+      "name": "The stacks: following the rain",
+      "chapter": "c5_hollin",
+      "mode": "stacks",
+      "reads": [
+        "steep",
+        "sand_leak"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "g_clasp_c5"
+      ]
+    },
+    {
+      "id": "g_clasp_c5",
+      "layer": "1d",
+      "name": "The Clasps: the strap-bound ruling",
+      "chapter": "c5_hollin",
+      "game": "clasps",
+      "world_runs": false,
+      "writes": [
+        "clasps_opened",
+        "past_fragments",
+        "past_known"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "g_tea_c5"
+      ]
+    },
+    {
+      "id": "g_tea_c5",
+      "layer": "1d",
+      "name": "Tea Blending: a cup that must not bind",
+      "chapter": "c5_hollin",
+      "game": "tea",
+      "world_runs": false,
+      "reads": [
+        "herbs",
+        "sand_leak"
+      ],
+      "writes": [
+        "brew.depth",
+        "brew.length",
+        "brew.binding",
+        "steep",
+        "tea_hold"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s3_hollin_streets"
+      ]
+    },
+    {
+      "id": "s3_hollin_streets",
+      "layer": "3d",
+      "name": "Hollin: the stuck storm",
+      "chapter": "c5_hollin",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs",
+        "herbs"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s3_clerk_office"
+      ]
+    },
+    {
+      "id": "s3_clerk_office",
+      "layer": "3d",
+      "name": "The Weather-Clerk's office",
+      "chapter": "c5_hollin",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "g_tablet_c5"
+      ]
+    },
+    {
+      "id": "g_tablet_c5",
+      "layer": "1d",
+      "name": "The Rule Tablet: the Clerk's Charter",
+      "chapter": "c5_hollin",
+      "game": "tablet",
+      "world_runs": false,
+      "reads": [
+        "tablet_scrutiny"
+      ],
+      "writes": [
+        "loophole_hollin",
+        "tablet_scrutiny",
+        "rules_broken"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "s2_li_c5"
+      ]
+    },
+    {
+      "id": "s2_li_c5",
+      "layer": "2d",
+      "name": "Living illustration: Pell on the wind",
+      "chapter": "c5_hollin",
+      "mode": "living",
+      "reads": [
+        "tea_hold"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "motifs"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s3_hollin_choice"
+      ]
+    },
+    {
+      "id": "s3_hollin_choice",
+      "layer": "3d",
+      "name": "The bell-loft: the Clerk's chair",
+      "chapter": "c5_hollin",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep",
+        "loophole_hollin"
+      ],
+      "writes": [
+        "lingers",
+        "returns",
+        "steep",
+        "tea_hold",
+        "pov",
+        "motifs",
+        "hollin_choice",
+        "rules_broken"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "g_name_c5",
+        "s3_halls_c6"
+      ]
+    },
+    {
+      "id": "g_name_c5",
+      "layer": "1d",
+      "name": "The Naming: the weather book",
+      "chapter": "c5_hollin",
+      "game": "naming",
+      "world_runs": false,
+      "reads": [
+        "motifs",
+        "hollin_choice"
+      ],
+      "writes": [
+        "names_given",
+        "book2_named",
+        "steep"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_halls_c6"
+      ]
+    },
+    {
+      "id": "s3_halls_c6",
+      "layer": "3d",
+      "name": "The halls: the sand book spills",
+      "chapter": "c6_father",
+      "reads": [
+        "sand_leak",
+        "steep"
+      ],
+      "writes": [
+        "duties_done",
+        "steep",
+        "sand_leak"
+      ],
+      "enter": "pull-out",
+      "exit": "push-in",
+      "next": [
+        "g_tea_c6"
+      ]
+    },
+    {
+      "id": "g_tea_c6",
+      "layer": "1d",
+      "name": "Tea Blending: a cup for the deep desert",
+      "chapter": "c6_father",
+      "game": "tea",
+      "world_runs": false,
+      "reads": [
+        "herbs",
+        "sand_leak"
+      ],
+      "writes": [
+        "brew.depth",
+        "brew.length",
+        "brew.binding",
+        "steep",
+        "tea_hold"
+      ],
+      "enter": "push-in",
+      "exit": "push-in",
+      "next": [
+        "s3_deep_desert"
+      ]
+    },
+    {
+      "id": "s3_deep_desert",
+      "layer": "3d",
+      "name": "The deep desert",
+      "chapter": "c6_father",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep",
+        "sand_leak"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s3_herd_sighting"
+      ]
+    },
+    {
+      "id": "s3_herd_sighting",
+      "layer": "3d",
+      "name": "The Xandrixes pass",
+      "chapter": "c6_father",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs"
+      ],
+      "enter": "cut",
+      "exit": "flatten",
+      "next": [
+        "s2_li_c6"
+      ]
+    },
+    {
+      "id": "s2_li_c6",
+      "layer": "2d",
+      "name": "Living illustration: racing the herd's track",
+      "chapter": "c6_father",
+      "mode": "living",
+      "reads": [
+        "tea_hold",
+        "leaf_shoes",
+        "sand_leak",
+        "fathers_things"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "swallowed_count",
+        "motifs"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s3_father_camp"
+      ]
+    },
+    {
+      "id": "s3_father_camp",
+      "layer": "3d",
+      "name": "The father's last camp",
+      "chapter": "c6_father",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs",
+        "father_mark_reached"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "s3_father_walk"
+      ]
+    },
+    {
+      "id": "s3_father_walk",
+      "layer": "3d",
+      "name": "The journal: the father's last walk",
+      "chapter": "c6_father",
+      "reads": [
+        "tea_hold"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "motifs"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "g_tablet_c6"
+      ]
+    },
+    {
+      "id": "g_tablet_c6",
+      "layer": "1d",
+      "name": "The Rule Tablet: the gods' rules",
+      "chapter": "c6_father",
+      "game": "tablet",
+      "world_runs": false,
+      "reads": [
+        "tablet_scrutiny"
+      ],
+      "writes": [
+        "loophole_wake",
+        "tablet_scrutiny",
+        "rules_broken"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_camp_mark_c6"
+      ]
+    },
+    {
+      "id": "s3_camp_mark_c6",
+      "layer": "3d",
+      "name": "Night at the marker: the third mark",
+      "chapter": "c6_father",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "lingers",
+        "returns",
+        "steep",
+        "tea_hold",
+        "pov",
+        "motifs",
+        "sand_leak"
+      ],
+      "enter": "pull-out",
+      "exit": "pull-out",
+      "next": [
+        "s3_halls_c7"
+      ]
+    },
+    {
+      "id": "s3_halls_c7",
+      "layer": "3d",
+      "name": "The halls: ink on the shelf",
+      "chapter": "c7_procession",
+      "reads": [
+        "sand_leak",
+        "steep"
+      ],
+      "writes": [
+        "duties_done",
+        "steep",
+        "sand_leak"
+      ],
+      "enter": "pull-out",
+      "exit": "flatten",
+      "next": [
+        "s2_stacks_c7"
+      ]
+    },
+    {
+      "id": "s2_stacks_c7",
+      "layer": "2d",
+      "name": "The stacks: following the ink",
+      "chapter": "c7_procession",
+      "mode": "stacks",
+      "reads": [
+        "steep",
+        "sand_leak"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "g_clasp_c7"
+      ]
+    },
+    {
+      "id": "g_clasp_c7",
+      "layer": "1d",
+      "name": "The Clasps: the gear-train petition",
+      "chapter": "c7_procession",
+      "game": "clasps",
+      "world_runs": false,
+      "writes": [
+        "clasps_opened",
+        "past_fragments",
+        "past_known"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "g_tea_c7"
+      ]
+    },
+    {
+      "id": "g_tea_c7",
+      "layer": "1d",
+      "name": "Tea Blending: a long cup that lets go",
+      "chapter": "c7_procession",
+      "game": "tea",
+      "world_runs": false,
+      "reads": [
+        "herbs",
+        "sand_leak"
+      ],
+      "writes": [
+        "brew.depth",
+        "brew.length",
+        "brew.binding",
+        "steep",
+        "tea_hold"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s3_procession_road"
+      ]
+    },
+    {
+      "id": "s3_procession_road",
+      "layer": "3d",
+      "name": "The road at dusk",
+      "chapter": "c7_procession",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s3_scribe_wagon"
+      ]
+    },
+    {
+      "id": "s3_scribe_wagon",
+      "layer": "3d",
+      "name": "The Scribe's wagon",
+      "chapter": "c7_procession",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs",
+        "herbs"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "g_tablet_c7"
+      ]
+    },
+    {
+      "id": "g_tablet_c7",
+      "layer": "1d",
+      "name": "The Rule Tablet: the Procession's vows",
+      "chapter": "c7_procession",
+      "game": "tablet",
+      "world_runs": false,
+      "reads": [
+        "tablet_scrutiny"
+      ],
+      "writes": [
+        "loophole_procession",
+        "tablet_scrutiny",
+        "rules_broken"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "s2_li_c7"
+      ]
+    },
+    {
+      "id": "s2_li_c7",
+      "layer": "2d",
+      "name": "Living illustration: the wet ink road",
+      "chapter": "c7_procession",
+      "mode": "living",
+      "reads": [
+        "tea_hold"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "motifs"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s3_procession_choice"
+      ]
+    },
+    {
+      "id": "s3_procession_choice",
+      "layer": "3d",
+      "name": "The road's last sheet",
+      "chapter": "c7_procession",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep",
+        "loophole_procession"
+      ],
+      "writes": [
+        "lingers",
+        "returns",
+        "steep",
+        "tea_hold",
+        "pov",
+        "motifs",
+        "procession_choice",
+        "rules_broken"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "g_name_c7",
+        "s3_halls_c8"
+      ]
+    },
+    {
+      "id": "g_name_c7",
+      "layer": "1d",
+      "name": "The Naming: the road book",
+      "chapter": "c7_procession",
+      "game": "naming",
+      "world_runs": false,
+      "reads": [
+        "motifs",
+        "procession_choice"
+      ],
+      "writes": [
+        "names_given",
+        "book3_named",
+        "steep"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_halls_c8"
+      ]
+    },
+    {
+      "id": "s3_halls_c8",
+      "layer": "3d",
+      "name": "The halls: the clock has stopped",
+      "chapter": "c8_unlit",
+      "reads": [
+        "sand_leak",
+        "steep",
+        "book2_named",
+        "book3_named"
+      ],
+      "writes": [
+        "duties_done",
+        "steep"
+      ],
+      "enter": "pull-out",
+      "exit": "flatten",
+      "next": [
+        "s2_stacks_c8"
+      ]
+    },
+    {
+      "id": "s2_stacks_c8",
+      "layer": "2d",
+      "name": "The stacks: the book that does not call",
+      "chapter": "c8_unlit",
+      "mode": "stacks",
+      "reads": [
+        "steep",
+        "sand_leak"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s3_unlit_gallery"
+      ]
+    },
+    {
+      "id": "s3_unlit_gallery",
+      "layer": "3d",
+      "name": "The unlit shelf",
+      "chapter": "c8_unlit",
+      "reads": [
+        "past_known"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "g_clasp_c8"
+      ]
+    },
+    {
+      "id": "g_clasp_c8",
+      "layer": "1d",
+      "name": "The Clasps: the black book",
+      "chapter": "c8_unlit",
+      "game": "clasps",
+      "world_runs": false,
+      "writes": [
+        "clasps_opened",
+        "past_fragments",
+        "past_known",
+        "black_book_open"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_abyss_return",
+        "s3_pantry_c8"
+      ]
+    },
+    {
+      "id": "s3_abyss_return",
+      "layer": "3d",
+      "name": "The edge of the abyss, awake",
+      "chapter": "c8_unlit",
+      "reads": [
+        "black_book_open",
+        "past_known"
+      ],
+      "writes": [
+        "candle_left",
+        "steep",
+        "past_fragments",
+        "past_known"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_pantry_c8"
+      ]
+    },
+    {
+      "id": "s3_pantry_c8",
+      "layer": "3d",
+      "name": "The pantry: the last pot",
+      "chapter": "c8_unlit",
+      "reads": [
+        "steep",
+        "sand_leak"
+      ],
+      "enter": "pull-out",
+      "exit": "push-in",
+      "next": [
+        "g_tea_c8"
+      ]
+    },
+    {
+      "id": "g_tea_c8",
+      "layer": "1d",
+      "name": "Tea Blending: the last pot",
+      "chapter": "c8_unlit",
+      "game": "tea",
+      "world_runs": false,
+      "reads": [
+        "herbs",
+        "sand_leak",
+        "steep"
+      ],
+      "writes": [
+        "brew.depth",
+        "brew.length",
+        "brew.binding",
+        "steep",
+        "tea_hold"
+      ],
+      "enter": "push-in",
+      "exit": "push-in",
+      "next": [
+        "s3_herd_final"
+      ]
+    },
+    {
+      "id": "s3_herd_final",
+      "layer": "3d",
+      "name": "The herd at the father's mark",
+      "chapter": "c9_end",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep",
+        "loophole_wake",
+        "sand_leak"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs",
+        "xandri_fate",
+        "rules_broken"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s3_xandrix_back",
+        "s2_li_c9",
+        "s3_village_return"
+      ]
+    },
+    {
+      "id": "s3_xandrix_back",
+      "layer": "3d",
+      "name": "The back of a Xandrix",
+      "chapter": "c9_end",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs"
+      ],
+      "enter": "cut",
+      "exit": "pull-out",
+      "next": [
+        "s3_last_cup"
+      ]
+    },
+    {
+      "id": "s2_li_c9",
+      "layer": "2d",
+      "name": "Living illustration: walking the wake past the mark",
+      "chapter": "c9_end",
+      "mode": "living",
+      "reads": [
+        "tea_hold",
+        "leaf_shoes",
+        "sand_leak",
+        "fathers_things"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "swallowed_count",
+        "motifs",
+        "passed_father_mark"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "g_name_c9"
+      ]
+    },
+    {
+      "id": "g_name_c9",
+      "layer": "1d",
+      "name": "The Naming: the sand book",
+      "chapter": "c9_end",
+      "game": "naming",
+      "world_runs": false,
+      "reads": [
+        "motifs",
+        "xandri_fate"
+      ],
+      "writes": [
+        "names_given",
+        "book1_named",
+        "steep"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_last_cup"
+      ]
+    },
+    {
+      "id": "s3_village_return",
+      "layer": "3d",
+      "name": "The way home to the circle",
+      "chapter": "c9_end",
+      "reads": [
+        "tea_hold",
+        "pov",
+        "steep"
+      ],
+      "writes": [
+        "tea_hold",
+        "pov",
+        "sips",
+        "steep",
+        "motifs"
+      ],
+      "enter": "cut",
+      "exit": "pull-out",
+      "next": [
+        "s3_last_cup"
+      ]
+    },
+    {
+      "id": "s3_last_cup",
+      "layer": "3d",
+      "name": "The reading chair: the last cup",
+      "chapter": "c9_end",
+      "reads": [
+        "steep",
+        "tea_hold",
+        "xandri_fate",
+        "book1_named"
+      ],
+      "writes": [
+        "last_cup"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "next": [
+        "e_stayed",
+        "e_rider",
+        "e_named",
+        "e_returned"
+      ]
+    },
+    {
+      "id": "e_stayed",
+      "layer": "3d",
+      "name": "Ending: the temple with nobody watching",
+      "chapter": "c9_end",
+      "reads": [
+        "book2_named",
+        "book3_named",
+        "black_book_open",
+        "past_known"
+      ],
+      "enter": "fade",
+      "next": []
+    },
+    {
+      "id": "e_rider",
+      "layer": "3d",
+      "name": "Ending: beyond the last dune",
+      "chapter": "c9_end",
+      "reads": [
+        "past_known",
+        "candle_left"
+      ],
+      "enter": "fade",
+      "next": []
+    },
+    {
+      "id": "e_named",
+      "layer": "3d",
+      "name": "Ending: the named book on its shelf",
+      "chapter": "c9_end",
+      "reads": [
+        "past_known",
+        "candle_left",
+        "names_given"
+      ],
+      "enter": "fade",
+      "next": []
+    },
+    {
+      "id": "e_returned",
+      "layer": "3d",
+      "name": "Ending: the circle, retold",
+      "chapter": "c9_end",
+      "reads": [
+        "past_known",
+        "candle_left"
+      ],
+      "enter": "fade",
+      "next": []
+    }
+  ]
+}

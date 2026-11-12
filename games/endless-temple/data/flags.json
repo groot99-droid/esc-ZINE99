@@ -1,0 +1,309 @@
+{
+  "state": [
+    {
+      "name": "tea_hold",
+      "type": "meter",
+      "default": 0,
+      "description": "How strongly the tea holds Elaris inside the book this session. Set at brew to min(100, 40 + 10 x depth). Drains by page beats and idle time. 60+ first person; 30-59 fading third person; 1-29 thin; 0 the page closes.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "pov",
+      "type": "enum",
+      "default": "closed",
+      "description": "Narration state derived from tea_hold: first ('I'), fading ('he'), thin, closed (back in the temple).",
+      "values": [
+        "first",
+        "fading",
+        "thin",
+        "closed"
+      ]
+    },
+    {
+      "name": "brew.depth",
+      "type": "meter",
+      "default": 0,
+      "description": "Depth of the last brew: sum of herb depth x steep factor. Sets starting tea_hold; each book needs a minimum.",
+      "range": [
+        0,
+        15
+      ]
+    },
+    {
+      "name": "brew.length",
+      "type": "meter",
+      "default": 0,
+      "description": "Length of the last brew. Lowers page-beat drain on tea_hold.",
+      "range": [
+        0,
+        15
+      ]
+    },
+    {
+      "name": "brew.binding",
+      "type": "meter",
+      "default": 0,
+      "description": "Binding of the last brew. Added to steep as 3 x binding when brewed. Can be negative.",
+      "range": [
+        -6,
+        12
+      ]
+    },
+    {
+      "name": "steep",
+      "type": "meter",
+      "default": 0,
+      "description": "How far Elaris has steeped himself in reading across the run. 60+ lets the last cup keep him (The Reader Who Stayed).",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "sips",
+      "type": "counter",
+      "default": 0,
+      "description": "Sips taken inside a book to hold the tea (max 2 per session). +4 steep each."
+    },
+    {
+      "name": "lingers",
+      "type": "counter",
+      "default": 0,
+      "description": "Times Elaris read on past a mark instead of setting the cup down. +8 steep each."
+    },
+    {
+      "name": "returns",
+      "type": "counter",
+      "default": 0,
+      "description": "Times Elaris set the cup down at a mark. -6 steep each."
+    },
+    {
+      "name": "duties_done",
+      "type": "counter",
+      "default": 0,
+      "description": "Keeper's duties done in the hub (sweeping sand, winding the clock, shelving, dusting). -3 steep each."
+    },
+    {
+      "name": "sand_leak",
+      "type": "meter",
+      "default": 20,
+      "description": "How much sand the nameless book spills into the temple. +15 per Book One session; -10 per sweep. 60+ drifts in the stacks; 80+ harder waves in the last ride.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "herbs",
+      "type": "ledger",
+      "default": [],
+      "description": "Herbs found for the pantry, in order.",
+      "fields": [
+        "herb",
+        "found_in"
+      ]
+    },
+    {
+      "name": "motifs",
+      "type": "ledger",
+      "default": [],
+      "description": "Motif words met while reading, the tiles for The Naming.",
+      "fields": [
+        "book",
+        "motif",
+        "thread",
+        "scene"
+      ]
+    },
+    {
+      "name": "names_given",
+      "type": "ledger",
+      "default": [],
+      "description": "Books Elaris has named.",
+      "fields": [
+        "book",
+        "title",
+        "motifs_used",
+        "author_title"
+      ]
+    },
+    {
+      "name": "rules_broken",
+      "type": "ledger",
+      "default": [],
+      "description": "Rules a narrator broke openly instead of finding a loophole.",
+      "fields": [
+        "book",
+        "rule",
+        "scene"
+      ]
+    },
+    {
+      "name": "tablet_scrutiny",
+      "type": "meter",
+      "default": 0,
+      "description": "Scrutiny on the current Rule Tablet: +20 per failed test, reset per appearance. At 100 a watcher adds one rule.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "loophole_shrine",
+      "type": "bool",
+      "default": false,
+      "description": "Book One: the shrine-store tablet solved without breaking a rule."
+    },
+    {
+      "name": "fathers_things",
+      "type": "bool",
+      "default": false,
+      "description": "Xandri took his father's leaf-cord and waterskin (by loophole or by breaking the rule)."
+    },
+    {
+      "name": "leaf_shoes",
+      "type": "bool",
+      "default": false,
+      "description": "Xandri has tied the Zorlop leaves to his feet."
+    },
+    {
+      "name": "swallowed_count",
+      "type": "counter",
+      "default": 0,
+      "description": "Times a wave swallowed Xandri in the living illustration."
+    },
+    {
+      "name": "father_mark_reached",
+      "type": "bool",
+      "default": false,
+      "description": "Xandri reached his father's last camp and marker."
+    },
+    {
+      "name": "loophole_wake",
+      "type": "bool",
+      "default": false,
+      "description": "The gods' rules tablet solved: Xandri may walk the Xandrixes' track on leaf shoes without breaking a rule."
+    },
+    {
+      "name": "passed_father_mark",
+      "type": "bool",
+      "default": false,
+      "description": "Xandri walked further than his father did."
+    },
+    {
+      "name": "xandri_fate",
+      "type": "enum",
+      "default": "undecided",
+      "description": "Book One's central choice at the herd.",
+      "values": [
+        "undecided",
+        "rider",
+        "walked_on",
+        "returned"
+      ]
+    },
+    {
+      "name": "book1_named",
+      "type": "bool",
+      "default": false,
+      "description": "Elaris named the sand book himself."
+    },
+    {
+      "name": "loophole_hollin",
+      "type": "bool",
+      "default": false,
+      "description": "Book Two: the Clerk's Charter solved, opening the shared option."
+    },
+    {
+      "name": "hollin_choice",
+      "type": "enum",
+      "default": "none",
+      "description": "Book Two's choice.",
+      "values": [
+        "none",
+        "chair",
+        "shared",
+        "unwritten"
+      ]
+    },
+    {
+      "name": "book2_named",
+      "type": "bool",
+      "default": false,
+      "description": "Elaris named the weather book."
+    },
+    {
+      "name": "loophole_procession",
+      "type": "bool",
+      "default": false,
+      "description": "Book Three: the Procession's vows solved, opening the end option."
+    },
+    {
+      "name": "procession_choice",
+      "type": "enum",
+      "default": "none",
+      "description": "Book Three's choice.",
+      "values": [
+        "none",
+        "city",
+        "end",
+        "pen_returned"
+      ]
+    },
+    {
+      "name": "book3_named",
+      "type": "bool",
+      "default": false,
+      "description": "Elaris named the road book."
+    },
+    {
+      "name": "clasps_opened",
+      "type": "counter",
+      "default": 0,
+      "description": "Sealed temple books opened with The Clasps."
+    },
+    {
+      "name": "past_fragments",
+      "type": "ledger",
+      "default": [],
+      "description": "Fragments of Elaris's past found in the temple. Slots: where, vow, cost, judgment, mercy, remains (plus the dream).",
+      "fields": [
+        "slot",
+        "carrier",
+        "chapter"
+      ]
+    },
+    {
+      "name": "past_known",
+      "type": "counter",
+      "default": 0,
+      "description": "How many of the seven past fragments the player holds (0-7)."
+    },
+    {
+      "name": "black_book_open",
+      "type": "bool",
+      "default": false,
+      "description": "The black book on the unlit shelf has been opened."
+    },
+    {
+      "name": "candle_left",
+      "type": "bool",
+      "default": false,
+      "description": "Elaris left a candle burning at the black book. -10 steep."
+    },
+    {
+      "name": "last_cup",
+      "type": "enum",
+      "default": "undecided",
+      "description": "The final choice in the reading chair.",
+      "values": [
+        "undecided",
+        "set_down",
+        "drunk"
+      ]
+    }
+  ]
+}

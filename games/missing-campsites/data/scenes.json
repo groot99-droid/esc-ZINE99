@@ -1,0 +1,786 @@
+{
+  "modes_2d": [
+    {
+      "id": "torchlight_loop",
+      "name": "Torchlight loop",
+      "movement": "scroll"
+    },
+    {
+      "id": "pattern_walk",
+      "name": "The pattern walk",
+      "movement": "scroll"
+    }
+  ],
+  "games_1d": [
+    {
+      "id": "reconcile",
+      "name": "Reconcile",
+      "family": "Map comparison"
+    },
+    {
+      "id": "pack_list",
+      "name": "Pack List",
+      "family": "Spoken memory chain"
+    },
+    {
+      "id": "foil_supper",
+      "name": "Foil Supper",
+      "family": "Cooking by substitution"
+    },
+    {
+      "id": "rangers_book",
+      "name": "The Ranger's Book",
+      "family": "Ledger arithmetic"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "booth_day1",
+      "layer": "3d",
+      "name": "Entrance and booth, day 1",
+      "chapter": "ch1_arrival",
+      "writes": [
+        "firewood_bought",
+        "accepted",
+        "notebook_lines",
+        "knows"
+      ],
+      "enter": "fade",
+      "exit": "cut",
+      "next": [
+        "loop_day1"
+      ]
+    },
+    {
+      "id": "loop_day1",
+      "layer": "3d",
+      "name": "The loop road, day 1",
+      "chapter": "ch1_arrival",
+      "writes": [
+        "photo_site7",
+        "abel_line_copied",
+        "bicycle_borrowed",
+        "mother_lines_kept",
+        "notebook_lines"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "fixed_sites_day1"
+      ]
+    },
+    {
+      "id": "fixed_sites_day1",
+      "layer": "3d",
+      "name": "The five sites, day 1",
+      "chapter": "ch1_arrival",
+      "writes": [
+        "portrait.dell",
+        "portrait.rafe",
+        "portrait.ines",
+        "portrait.june",
+        "notebook_lines"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "reconcile_1"
+      ]
+    },
+    {
+      "id": "reconcile_1",
+      "layer": "1d",
+      "name": "Reconcile 1: the first three",
+      "chapter": "ch1_arrival",
+      "game": "reconcile",
+      "reads": [
+        "notebook_lines"
+      ],
+      "writes": [
+        "sites_written",
+        "notebook_lines",
+        "accepted",
+        "mother_lines_kept"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "foil_supper_1"
+      ]
+    },
+    {
+      "id": "foil_supper_1",
+      "layer": "1d",
+      "name": "Foil Supper 1: Bea's card",
+      "chapter": "ch2_torchlight",
+      "game": "foil_supper",
+      "writes": [
+        "warmth",
+        "recipe_copied",
+        "bicycle_borrowed"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "torch_loop_1"
+      ]
+    },
+    {
+      "id": "torch_loop_1",
+      "layer": "2d",
+      "name": "Torchlight loop 1: to the payphone and back",
+      "chapter": "ch2_torchlight",
+      "mode": "torchlight_loop",
+      "reads": [
+        "torch_battery"
+      ],
+      "writes": [
+        "torch_battery",
+        "erasure_step",
+        "knows",
+        "notebook_lines",
+        "bicycle_borrowed"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "payphone_night1",
+        "pack_list_1"
+      ]
+    },
+    {
+      "id": "payphone_night1",
+      "layer": "3d",
+      "name": "The payphone after closing",
+      "chapter": "ch2_torchlight",
+      "reads": [
+        "photo_site7"
+      ],
+      "writes": [
+        "mother_lines_kept"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "torch_loop_1"
+      ]
+    },
+    {
+      "id": "pack_list_1",
+      "layer": "1d",
+      "name": "Pack List 1: the blue kettle",
+      "chapter": "ch2_torchlight",
+      "game": "pack_list",
+      "reads": [
+        "warmth"
+      ],
+      "writes": [
+        "accepted",
+        "phantoms_caught",
+        "notebook_lines",
+        "warmth"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "campfire_night1"
+      ]
+    },
+    {
+      "id": "campfire_night1",
+      "layer": "3d",
+      "name": "The first fire",
+      "chapter": "ch2_torchlight",
+      "reads": [
+        "knows"
+      ],
+      "writes": [
+        "theory_night1",
+        "warmth",
+        "accepted",
+        "erasure_step"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "next": [
+        "fixed_sites_day2"
+      ]
+    },
+    {
+      "id": "fixed_sites_day2",
+      "layer": "3d",
+      "name": "The five sites, the second morning",
+      "chapter": "ch3_second_morning",
+      "reads": [
+        "bicycle_borrowed",
+        "photo_site7",
+        "mother_lines_kept"
+      ],
+      "writes": [
+        "ines_draws",
+        "accepted",
+        "notebook_lines",
+        "sites_written"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "reconcile_2"
+      ]
+    },
+    {
+      "id": "reconcile_2",
+      "layer": "1d",
+      "name": "Reconcile 2: eleven gone, and a forecast",
+      "chapter": "ch3_second_morning",
+      "game": "reconcile",
+      "reads": [
+        "sites_written",
+        "ines_draws"
+      ],
+      "writes": [
+        "sites_written",
+        "notebook_lines",
+        "accepted",
+        "forecast_right",
+        "mother_lines_kept"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "loop_day2am"
+      ]
+    },
+    {
+      "id": "loop_day2am",
+      "layer": "3d",
+      "name": "The loop down to the booth, day 2",
+      "chapter": "ch3_second_morning",
+      "reads": [
+        "abel_line_copied"
+      ],
+      "writes": [
+        "time_units"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "booth_day2"
+      ]
+    },
+    {
+      "id": "booth_day2",
+      "layer": "3d",
+      "name": "The booth, day 2",
+      "chapter": "ch3_second_morning",
+      "writes": [
+        "accepted",
+        "notebook_lines"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "rangers_book_1"
+      ]
+    },
+    {
+      "id": "rangers_book_1",
+      "layer": "1d",
+      "name": "The Ranger's Book 1: three missing rows",
+      "chapter": "ch3_second_morning",
+      "game": "rangers_book",
+      "writes": [
+        "knows",
+        "notebook_lines",
+        "time_units",
+        "erasure_step"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "loop_day2pm"
+      ]
+    },
+    {
+      "id": "loop_day2pm",
+      "layer": "3d",
+      "name": "The afternoon hub: carrying",
+      "chapter": "ch4_carrying",
+      "reads": [
+        "time_units",
+        "forecast_right",
+        "theory_night1",
+        "warmth",
+        "abel_line_copied"
+      ],
+      "writes": [
+        "time_units",
+        "anchors",
+        "hold",
+        "logbook_carried",
+        "logbook_taken_unasked",
+        "posts_pulled",
+        "pells_invited",
+        "warmth"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "rangers_book_2",
+        "creek_trail",
+        "dusk_choice"
+      ]
+    },
+    {
+      "id": "rangers_book_2",
+      "layer": "1d",
+      "name": "The Ranger's Book 2: Marisol watches",
+      "chapter": "ch4_carrying",
+      "game": "rangers_book",
+      "reads": [
+        "time_units"
+      ],
+      "writes": [
+        "ranger_doubts",
+        "logbook_carried",
+        "notebook_lines",
+        "time_units",
+        "anchors",
+        "hold"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "loop_day2pm"
+      ]
+    },
+    {
+      "id": "creek_trail",
+      "layer": "3d",
+      "name": "The creek trail and Abel's gravel bar",
+      "chapter": "ch4_carrying",
+      "reads": [
+        "abel_line_copied",
+        "time_units"
+      ],
+      "writes": [
+        "abel_believes",
+        "time_units"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "loop_day2pm"
+      ]
+    },
+    {
+      "id": "dusk_choice",
+      "layer": "3d",
+      "name": "The dusk choice at the van",
+      "chapter": "ch4_carrying",
+      "reads": [
+        "ranger_doubts",
+        "abel_believes",
+        "pells_invited",
+        "warmth",
+        "theory_night1"
+      ],
+      "writes": [
+        "person_brought",
+        "left_alone",
+        "hold",
+        "anchors",
+        "logbook_carried"
+      ],
+      "enter": "cut",
+      "exit": "flatten",
+      "next": [
+        "torch_loop_2",
+        "torch_drive_out"
+      ]
+    },
+    {
+      "id": "torch_loop_2",
+      "layer": "2d",
+      "name": "Torchlight loop 2: the carrying run",
+      "chapter": "ch4_carrying",
+      "mode": "torchlight_loop",
+      "reads": [
+        "posts_pulled",
+        "torch_battery"
+      ],
+      "writes": [
+        "posts_pulled",
+        "anchors",
+        "hold",
+        "erasure_step",
+        "torch_battery"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "foil_supper_2"
+      ]
+    },
+    {
+      "id": "foil_supper_2",
+      "layer": "1d",
+      "name": "Foil Supper 2: what is left",
+      "chapter": "ch4_carrying",
+      "game": "foil_supper",
+      "reads": [
+        "recipe_copied",
+        "person_brought"
+      ],
+      "writes": [
+        "warmth",
+        "supper_shared"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "torch_loop_3"
+      ]
+    },
+    {
+      "id": "torch_loop_3",
+      "layer": "2d",
+      "name": "Torchlight loop 3: the circle of five",
+      "chapter": "ch5_five_fixed_points",
+      "mode": "torchlight_loop",
+      "reads": [
+        "anchors",
+        "torch_battery"
+      ],
+      "writes": [
+        "torch_battery"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "pack_list_2"
+      ]
+    },
+    {
+      "id": "pack_list_2",
+      "layer": "1d",
+      "name": "Pack List 2: the empty seat",
+      "chapter": "ch5_five_fixed_points",
+      "game": "pack_list",
+      "reads": [
+        "bicycle_borrowed",
+        "person_brought",
+        "warmth"
+      ],
+      "writes": [
+        "accepted",
+        "phantoms_caught",
+        "notebook_lines",
+        "warmth"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "campfire_night2"
+      ]
+    },
+    {
+      "id": "campfire_night2",
+      "layer": "3d",
+      "name": "The second fire",
+      "chapter": "ch5_five_fixed_points",
+      "reads": [
+        "accepted",
+        "knows",
+        "warmth"
+      ],
+      "writes": [
+        "theory_night2",
+        "knows"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "reconcile_3"
+      ]
+    },
+    {
+      "id": "reconcile_3",
+      "layer": "1d",
+      "name": "Reconcile 3: five entries against twenty-four",
+      "chapter": "ch5_five_fixed_points",
+      "game": "reconcile",
+      "reads": [
+        "sites_written",
+        "accepted"
+      ],
+      "writes": [
+        "sites_written",
+        "notebook_lines",
+        "accepted",
+        "erasure_step"
+      ],
+      "enter": "push-in",
+      "exit": "fade",
+      "next": [
+        "wrong_forest",
+        "gravel_morning",
+        "ordinary_morning"
+      ]
+    },
+    {
+      "id": "torch_drive_out",
+      "layer": "2d",
+      "name": "Headlights: driving out alone",
+      "chapter": "ch5_five_fixed_points",
+      "mode": "torchlight_loop",
+      "reads": [
+        "left_alone"
+      ],
+      "writes": [
+        "erasure_step"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "home_apartment"
+      ]
+    },
+    {
+      "id": "wrong_forest",
+      "layer": "3d",
+      "name": "The final morning: the wrong sky",
+      "chapter": "ch6_final_morning",
+      "reads": [
+        "person_brought",
+        "anchors",
+        "warmth"
+      ],
+      "writes": [
+        "knows"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "foil_supper_3"
+      ]
+    },
+    {
+      "id": "gravel_morning",
+      "layer": "3d",
+      "name": "Held: the gravel clearing",
+      "chapter": "ch6_final_morning",
+      "reads": [
+        "hold",
+        "person_brought",
+        "anchors"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "foil_supper_3"
+      ]
+    },
+    {
+      "id": "ordinary_morning",
+      "layer": "3d",
+      "name": "Nothing Missing: an ordinary morning",
+      "chapter": "ch6_final_morning",
+      "reads": [
+        "accepted",
+        "theory_night2"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "foil_supper_3"
+      ]
+    },
+    {
+      "id": "foil_supper_3",
+      "layer": "1d",
+      "name": "Foil Supper 3: last breakfast",
+      "chapter": "ch6_final_morning",
+      "game": "foil_supper",
+      "reads": [
+        "recipe_copied",
+        "person_brought",
+        "theory_night2"
+      ],
+      "writes": [
+        "breakfast_made",
+        "warmth"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "rangers_book_3",
+        "pattern_walk_1",
+        "mothers_door",
+        "drive_home"
+      ]
+    },
+    {
+      "id": "rangers_book_3",
+      "layer": "1d",
+      "name": "The Ranger's Book 3: counts against trees",
+      "chapter": "ch6_final_morning",
+      "game": "rangers_book",
+      "reads": [
+        "logbook_carried"
+      ],
+      "writes": [
+        "pattern_key",
+        "notebook_lines"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "pattern_walk_1"
+      ]
+    },
+    {
+      "id": "home_apartment",
+      "layer": "3d",
+      "name": "The One Who Left: the flat",
+      "chapter": "ch6_final_morning",
+      "reads": [
+        "left_alone",
+        "portrait.dell",
+        "portrait.rafe",
+        "portrait.ines",
+        "portrait.june"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "reconcile_home"
+      ]
+    },
+    {
+      "id": "pattern_walk_1",
+      "layer": "2d",
+      "name": "The pattern walk: sites 19 to 12",
+      "chapter": "ch7_other_side",
+      "mode": "pattern_walk",
+      "reads": [
+        "sites_written",
+        "pattern_key",
+        "person_brought",
+        "posts_pulled"
+      ],
+      "writes": [
+        "drift"
+      ],
+      "enter": "flatten",
+      "exit": "pull-out",
+      "next": [
+        "the_clearing"
+      ]
+    },
+    {
+      "id": "the_clearing",
+      "layer": "3d",
+      "name": "The clearing where the creek bend was",
+      "chapter": "ch7_other_side",
+      "reads": [
+        "person_brought"
+      ],
+      "enter": "pull-out",
+      "exit": "flatten",
+      "next": [
+        "pattern_walk_2"
+      ]
+    },
+    {
+      "id": "pattern_walk_2",
+      "layer": "2d",
+      "name": "The pattern walk: sites 11 to 1",
+      "chapter": "ch7_other_side",
+      "mode": "pattern_walk",
+      "reads": [
+        "sites_written",
+        "pattern_key",
+        "person_brought",
+        "drift"
+      ],
+      "writes": [
+        "drift"
+      ],
+      "enter": "flatten",
+      "exit": "pull-out",
+      "next": [
+        "other_entrance"
+      ]
+    },
+    {
+      "id": "other_entrance",
+      "layer": "3d",
+      "name": "The other entrance: a car pulls in",
+      "chapter": "ch7_other_side",
+      "reads": [
+        "person_brought",
+        "drift",
+        "warmth"
+      ],
+      "enter": "pull-out",
+      "exit": "fade"
+    },
+    {
+      "id": "mothers_door",
+      "layer": "3d",
+      "name": "Held: Agnes's door",
+      "chapter": "ch7_other_side",
+      "reads": [
+        "mother_lines_kept",
+        "person_brought"
+      ],
+      "enter": "cut",
+      "exit": "fade"
+    },
+    {
+      "id": "drive_home",
+      "layer": "3d",
+      "name": "Nothing Missing: the drive home",
+      "chapter": "ch7_other_side",
+      "reads": [
+        "portrait.dell",
+        "portrait.rafe",
+        "portrait.ines",
+        "portrait.june"
+      ],
+      "enter": "cut",
+      "exit": "fade"
+    },
+    {
+      "id": "reconcile_home",
+      "layer": "1d",
+      "name": "Reconcile at home",
+      "chapter": "ch7_other_side",
+      "game": "reconcile",
+      "reads": [
+        "sites_written",
+        "notebook_lines"
+      ],
+      "writes": [
+        "proof_kept"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "recital"
+      ]
+    },
+    {
+      "id": "recital",
+      "layer": "3d",
+      "name": "The One Who Left: the recital",
+      "chapter": "ch7_other_side",
+      "reads": [
+        "proof_kept"
+      ],
+      "enter": "cut",
+      "exit": "fade"
+    }
+  ]
+}

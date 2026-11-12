@@ -1,0 +1,1156 @@
+{
+  "modes_2d": [
+    {
+      "id": "crack_runner",
+      "name": "Crack runner",
+      "movement": "scroll"
+    },
+    {
+      "id": "crack_defence",
+      "name": "Crack defence",
+      "movement": "scroll"
+    }
+  ],
+  "games_1d": [
+    {
+      "id": "omen_spread",
+      "name": "Omen Spread",
+      "family": "Card interpretation"
+    },
+    {
+      "id": "sap_kitchen",
+      "name": "Sap Kitchen",
+      "family": "Cooking by discovery"
+    },
+    {
+      "id": "ring_door",
+      "name": "The Ring Door",
+      "family": "Rotation puzzle"
+    },
+    {
+      "id": "trunk_and_shadow",
+      "name": "Trunk and Shadow",
+      "family": "Board game, mutating rules"
+    },
+    {
+      "id": "tremor_scroll",
+      "name": "Tremor Scroll",
+      "family": "Sequence prediction"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "c1_city_dawn",
+      "layer": "3d",
+      "name": "Highridge at dawn; the Tremor",
+      "chapter": "ch1_tremor",
+      "reads": [],
+      "writes": [
+        "twig.kite_freed",
+        "sap",
+        "pullbacks",
+        "season"
+      ],
+      "enter": "fade",
+      "exit": "cut",
+      "next": [
+        "c1_battlements"
+      ],
+      "minutes": 6
+    },
+    {
+      "id": "c1_battlements",
+      "layer": "3d",
+      "name": "Splinterwatch's battlements in the Tremor",
+      "chapter": "ch1_tremor",
+      "reads": [],
+      "writes": [
+        "pullbacks",
+        "morale"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "c1_omen"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c1_omen",
+      "layer": "1d",
+      "name": "Omen Spread: the Tremor",
+      "chapter": "ch1_tremor",
+      "game": "omen_spread",
+      "world_runs": false,
+      "reads": [
+        "inst.elders",
+        "pullbacks"
+      ],
+      "writes": [
+        "readings",
+        "morale",
+        "fit_hits",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars",
+        "scroll.hint_level"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c1_scroll"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c1_scroll",
+      "layer": "1d",
+      "name": "Tremor Scroll: eleven dawns",
+      "chapter": "ch1_tremor",
+      "game": "tremor_scroll",
+      "world_runs": false,
+      "reads": [
+        "inst.scholars",
+        "scroll.hint_level"
+      ],
+      "writes": [
+        "forecasts_made",
+        "forecasts_correct",
+        "inst.scholars"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c1_city_year"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c1_city_year",
+      "layer": "3d",
+      "name": "Highridge: the year is named",
+      "chapter": "ch1_tremor",
+      "reads": [
+        "readings"
+      ],
+      "writes": [],
+      "enter": "pull-out",
+      "exit": "fade",
+      "next": [
+        "c2_city"
+      ],
+      "minutes": 2
+    },
+    {
+      "id": "c2_city",
+      "layer": "3d",
+      "name": "Highridge in spring: council and building",
+      "chapter": "ch2_spring",
+      "reads": [
+        "morale",
+        "sap",
+        "flake_stock"
+      ],
+      "writes": [
+        "councils",
+        "sap",
+        "flake_stock",
+        "hands",
+        "bark.integrity",
+        "pullbacks",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars",
+        "season"
+      ],
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "c2_run"
+      ],
+      "minutes": 6
+    },
+    {
+      "id": "c2_run",
+      "layer": "2d",
+      "name": "Crack runner: Highridge to Lowridge",
+      "chapter": "ch2_spring",
+      "mode": "crack_runner",
+      "reads": [
+        "forecasts_correct"
+      ],
+      "writes": [
+        "mossa.on_time",
+        "morale"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "c2_kitchen"
+      ],
+      "minutes": 5
+    },
+    {
+      "id": "c2_kitchen",
+      "layer": "1d",
+      "name": "Sap Kitchen: spring sap",
+      "chapter": "ch2_spring",
+      "game": "sap_kitchen",
+      "world_runs": false,
+      "reads": [
+        "sap",
+        "recipes_found"
+      ],
+      "writes": [
+        "food",
+        "sap",
+        "recipes_found",
+        "inst.elders",
+        "offerings",
+        "morale"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c2_rain"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c2_rain",
+      "layer": "3d",
+      "name": "The Rain",
+      "chapter": "ch2_spring",
+      "reads": [],
+      "writes": [
+        "sap",
+        "pullbacks",
+        "hands"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "c2_omen"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c2_omen",
+      "layer": "1d",
+      "name": "Omen Spread: the rain",
+      "chapter": "ch2_spring",
+      "game": "omen_spread",
+      "world_runs": false,
+      "reads": [
+        "inst.elders",
+        "pullbacks"
+      ],
+      "writes": [
+        "readings",
+        "morale",
+        "fit_hits",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars",
+        "sap"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c2_door"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c2_door",
+      "layer": "1d",
+      "name": "The Ring Door: the Door of the First Ring",
+      "chapter": "ch2_spring",
+      "game": "ring_door",
+      "world_runs": false,
+      "reads": [],
+      "writes": [
+        "temples_opened",
+        "bark.integrity",
+        "inst.elders"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c2_temple"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c2_temple",
+      "layer": "3d",
+      "name": "Inside the First Ring temple",
+      "chapter": "ch2_spring",
+      "reads": [
+        "readings",
+        "roll"
+      ],
+      "writes": [],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "c2_tns"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c2_tns",
+      "layer": "1d",
+      "name": "Trunk and Shadow: the spring festival",
+      "chapter": "ch2_spring",
+      "game": "trunk_and_shadow",
+      "world_runs": false,
+      "reads": [
+        "readings"
+      ],
+      "writes": [
+        "tns.wins",
+        "tns_rules",
+        "morale",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c3_city"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c3_city",
+      "layer": "3d",
+      "name": "Highridge in summer: council and watchtowers",
+      "chapter": "ch3_summer",
+      "reads": [
+        "morale",
+        "sap",
+        "flake_stock"
+      ],
+      "writes": [
+        "councils",
+        "sap",
+        "flake_stock",
+        "hands",
+        "bark.integrity",
+        "pullbacks",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars",
+        "season"
+      ],
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "c3_mites"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c3_mites",
+      "layer": "2d",
+      "name": "Crack defence: mites in the lower cracks",
+      "chapter": "ch3_summer",
+      "mode": "crack_defence",
+      "reads": [
+        "inst.warriors"
+      ],
+      "writes": [
+        "inst.warriors",
+        "bark.integrity",
+        "hands",
+        "fallen",
+        "roll",
+        "defence.breaches"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "c3_wind"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c3_wind",
+      "layer": "3d",
+      "name": "The windstorm on the battlements",
+      "chapter": "ch3_summer",
+      "reads": [
+        "fit_hits"
+      ],
+      "writes": [
+        "bark.integrity",
+        "pullbacks"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "c3_omen_wind"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c3_omen_wind",
+      "layer": "1d",
+      "name": "Omen Spread: the wind",
+      "chapter": "ch3_summer",
+      "game": "omen_spread",
+      "world_runs": false,
+      "reads": [
+        "inst.elders",
+        "pullbacks"
+      ],
+      "writes": [
+        "readings",
+        "morale",
+        "fit_hits",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars",
+        "bark.integrity"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c3_scroll"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c3_scroll",
+      "layer": "1d",
+      "name": "Tremor Scroll: dawn and dusk",
+      "chapter": "ch3_summer",
+      "game": "tremor_scroll",
+      "world_runs": false,
+      "reads": [
+        "inst.scholars",
+        "scroll.hint_level"
+      ],
+      "writes": [
+        "forecasts_made",
+        "forecasts_correct",
+        "inst.scholars"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c3_omen_beetle"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c3_omen_beetle",
+      "layer": "1d",
+      "name": "Omen Spread: the Beetle, god or monster",
+      "chapter": "ch3_summer",
+      "game": "omen_spread",
+      "world_runs": false,
+      "reads": [
+        "inst.elders",
+        "pullbacks"
+      ],
+      "writes": [
+        "readings",
+        "morale",
+        "fit_hits",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars",
+        "beetle_reading"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "c3_beetle"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c3_beetle",
+      "layer": "2d",
+      "name": "Crack defence: the Beetle",
+      "chapter": "ch3_summer",
+      "mode": "crack_defence",
+      "reads": [
+        "beetle_reading",
+        "inst.warriors"
+      ],
+      "writes": [
+        "inst.warriors",
+        "bark.integrity",
+        "hands",
+        "fallen",
+        "roll",
+        "defence.breaches",
+        "burr.wounded",
+        "morale",
+        "pullbacks"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "c3_run"
+      ],
+      "minutes": 5
+    },
+    {
+      "id": "c3_run",
+      "layer": "2d",
+      "name": "Crack runner: through summer sap flow",
+      "chapter": "ch3_summer",
+      "mode": "crack_runner",
+      "reads": [
+        "forecasts_correct"
+      ],
+      "writes": [
+        "mossa.on_time",
+        "morale"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "c3_tns"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c3_tns",
+      "layer": "1d",
+      "name": "Trunk and Shadow: the summer festival",
+      "chapter": "ch3_summer",
+      "game": "trunk_and_shadow",
+      "world_runs": false,
+      "reads": [
+        "readings",
+        "tns_rules",
+        "beetle_reading"
+      ],
+      "writes": [
+        "tns.wins",
+        "tns_rules",
+        "morale",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c4_city"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c4_city",
+      "layer": "3d",
+      "name": "Highridge in autumn: council and the falling leaf",
+      "chapter": "ch4_autumn",
+      "reads": [
+        "morale",
+        "sap",
+        "flake_stock"
+      ],
+      "writes": [
+        "councils",
+        "sap",
+        "flake_stock",
+        "hands",
+        "bark.integrity",
+        "pullbacks",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars",
+        "season"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "c4_omen_leaf"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c4_omen_leaf",
+      "layer": "1d",
+      "name": "Omen Spread: the leaf",
+      "chapter": "ch4_autumn",
+      "game": "omen_spread",
+      "world_runs": false,
+      "reads": [
+        "inst.elders",
+        "pullbacks"
+      ],
+      "writes": [
+        "readings",
+        "morale",
+        "fit_hits",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars",
+        "ant_reading",
+        "food"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c4_branch"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c4_branch",
+      "layer": "3d",
+      "name": "The expedition along the Branch",
+      "chapter": "ch4_autumn",
+      "reads": [],
+      "writes": [
+        "expedition.heard",
+        "pullbacks",
+        "morale"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "c4_omen_song"
+      ],
+      "minutes": 7
+    },
+    {
+      "id": "c4_omen_song",
+      "layer": "1d",
+      "name": "Omen Spread: the birdsong prophecy",
+      "chapter": "ch4_autumn",
+      "game": "omen_spread",
+      "world_runs": false,
+      "reads": [
+        "inst.elders",
+        "pullbacks",
+        "expedition.heard"
+      ],
+      "writes": [
+        "readings",
+        "morale",
+        "fit_hits",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars",
+        "prophecy.suit",
+        "food"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c4_scroll"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c4_scroll",
+      "layer": "1d",
+      "name": "Tremor Scroll: autumn caching",
+      "chapter": "ch4_autumn",
+      "game": "tremor_scroll",
+      "world_runs": false,
+      "reads": [
+        "inst.scholars",
+        "scroll.hint_level",
+        "fit_hits"
+      ],
+      "writes": [
+        "forecasts_made",
+        "forecasts_correct",
+        "inst.scholars"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "c4_ants"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c4_ants",
+      "layer": "2d",
+      "name": "Crack defence: the ants",
+      "chapter": "ch4_autumn",
+      "mode": "crack_defence",
+      "reads": [
+        "ant_reading",
+        "inst.warriors"
+      ],
+      "writes": [
+        "inst.warriors",
+        "bark.integrity",
+        "hands",
+        "fallen",
+        "roll",
+        "defence.breaches",
+        "morale"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "c4_kitchen"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c4_kitchen",
+      "layer": "1d",
+      "name": "Sap Kitchen: sealant before winter",
+      "chapter": "ch4_autumn",
+      "game": "sap_kitchen",
+      "world_runs": false,
+      "reads": [
+        "sap",
+        "recipes_found"
+      ],
+      "writes": [
+        "food",
+        "sap",
+        "recipes_found",
+        "bark.integrity",
+        "inst.elders",
+        "offerings",
+        "morale"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c4_door"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c4_door",
+      "layer": "1d",
+      "name": "The Ring Door: the Deep Knot",
+      "chapter": "ch4_autumn",
+      "game": "ring_door",
+      "world_runs": false,
+      "reads": [],
+      "writes": [
+        "temples_opened",
+        "bark.integrity",
+        "inst.elders"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c5_city"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c5_city",
+      "layer": "3d",
+      "name": "Highridge in winter: council and frost",
+      "chapter": "ch5_winter",
+      "reads": [
+        "morale",
+        "sap",
+        "flake_stock",
+        "bark.integrity"
+      ],
+      "writes": [
+        "councils",
+        "sap",
+        "flake_stock",
+        "hands",
+        "bark.integrity",
+        "pullbacks",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars",
+        "season",
+        "food"
+      ],
+      "enter": "fade",
+      "exit": "cut",
+      "next": [
+        "c5_temple"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c5_temple",
+      "layer": "3d",
+      "name": "Pell's last night",
+      "chapter": "ch5_winter",
+      "reads": [
+        "readings"
+      ],
+      "writes": [],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "c5_omen_pell"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c5_omen_pell",
+      "layer": "1d",
+      "name": "Omen Spread: Pell's last reading",
+      "chapter": "ch5_winter",
+      "game": "omen_spread",
+      "world_runs": false,
+      "reads": [
+        "inst.elders"
+      ],
+      "writes": [
+        "readings",
+        "pell.heir",
+        "pell.alive",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "c5_run"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c5_run",
+      "layer": "2d",
+      "name": "Crack runner: the frost run",
+      "chapter": "ch5_winter",
+      "mode": "crack_runner",
+      "reads": [
+        "pell.heir"
+      ],
+      "writes": [
+        "mossa.on_time",
+        "morale"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "c5_kitchen"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c5_kitchen",
+      "layer": "1d",
+      "name": "Sap Kitchen: winter",
+      "chapter": "ch5_winter",
+      "game": "sap_kitchen",
+      "world_runs": false,
+      "reads": [
+        "sap",
+        "recipes_found"
+      ],
+      "writes": [
+        "food",
+        "sap",
+        "recipes_found",
+        "bark.integrity",
+        "inst.elders",
+        "offerings",
+        "morale"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c5_door"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c5_door",
+      "layer": "1d",
+      "name": "The Ring Door: the Heartwood Door",
+      "chapter": "ch5_winter",
+      "game": "ring_door",
+      "world_runs": false,
+      "reads": [],
+      "writes": [
+        "temples_opened",
+        "heartwood_opened",
+        "bark.integrity",
+        "inst.elders"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c5_tns"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c5_tns",
+      "layer": "1d",
+      "name": "Trunk and Shadow: the winter festival, and the Hand",
+      "chapter": "ch5_winter",
+      "game": "trunk_and_shadow",
+      "world_runs": false,
+      "reads": [
+        "readings",
+        "tns_rules",
+        "pell.heir"
+      ],
+      "writes": [
+        "tns.wins",
+        "tns_rules",
+        "shadow_rehearsed",
+        "morale",
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c5_count"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c5_count",
+      "layer": "3d",
+      "name": "The Winter Count",
+      "chapter": "ch5_winter",
+      "reads": [
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars"
+      ],
+      "writes": [
+        "year.leading"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "c6_scroll"
+      ],
+      "minutes": 3
+    },
+    {
+      "id": "c6_scroll",
+      "layer": "1d",
+      "name": "Tremor Scroll: the seventh-day tread",
+      "chapter": "ch6_shadow",
+      "game": "tremor_scroll",
+      "world_runs": false,
+      "reads": [
+        "inst.scholars",
+        "scroll.hint_level"
+      ],
+      "writes": [
+        "forecasts_made",
+        "forecasts_correct",
+        "inst.scholars",
+        "tread_forecast",
+        "season"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c6_shadow"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c6_shadow",
+      "layer": "3d",
+      "name": "The Shadow falls",
+      "chapter": "ch6_shadow",
+      "reads": [],
+      "writes": [
+        "pullbacks",
+        "morale"
+      ],
+      "enter": "cut",
+      "exit": "flatten",
+      "next": [
+        "c6_run"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c6_run",
+      "layer": "2d",
+      "name": "Crack runner: ahead of the dark",
+      "chapter": "ch6_shadow",
+      "mode": "crack_runner",
+      "reads": [
+        "tread_forecast"
+      ],
+      "writes": [
+        "mossa.on_time",
+        "mossa.shadow_late",
+        "morale"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "c6_omen"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c6_omen",
+      "layer": "1d",
+      "name": "Omen Spread: the Reading of the Shadow",
+      "chapter": "ch6_shadow",
+      "game": "omen_spread",
+      "world_runs": false,
+      "reads": [
+        "inst.elders",
+        "inst.warriors",
+        "inst.scholars",
+        "year.leading",
+        "forecasts_correct",
+        "shadow_rehearsed",
+        "tread_forecast",
+        "mossa.shadow_late",
+        "pell.heir",
+        "readings",
+        "prophecy.suit"
+      ],
+      "writes": [
+        "shadow_reading",
+        "readings"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c6_stand",
+        "c6_war",
+        "c6_edge",
+        "c6_offering"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c6_stand",
+      "layer": "3d",
+      "name": "Under the Shadow: chant, stand, record",
+      "chapter": "ch6_shadow",
+      "reads": [
+        "shadow_reading"
+      ],
+      "writes": [],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "c6_touch"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c6_war",
+      "layer": "2d",
+      "name": "Crack defence reversed: the War on the God",
+      "chapter": "ch6_shadow",
+      "mode": "crack_defence",
+      "reads": [
+        "shadow_reading",
+        "inst.warriors"
+      ],
+      "writes": [
+        "fallen",
+        "roll",
+        "burr.wounded"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "c6_touch"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c6_edge",
+      "layer": "3d",
+      "name": "The shadow's edge: the scholars' walk",
+      "chapter": "ch6_shadow",
+      "reads": [
+        "shadow_reading"
+      ],
+      "writes": [
+        "edge_map"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "c6_touch"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c6_offering",
+      "layer": "1d",
+      "name": "Sap Kitchen: the Great Offering",
+      "chapter": "ch6_shadow",
+      "game": "sap_kitchen",
+      "world_runs": false,
+      "reads": [
+        "shadow_reading",
+        "sap"
+      ],
+      "writes": [
+        "sap",
+        "offerings",
+        "great_offering",
+        "bark.integrity",
+        "inst.elders"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "c6_touch"
+      ],
+      "minutes": 4
+    },
+    {
+      "id": "c6_touch",
+      "layer": "3d",
+      "name": "The touch: three taps and a press",
+      "chapter": "ch6_shadow",
+      "reads": [
+        "bark.integrity",
+        "shadow_reading"
+      ],
+      "writes": [
+        "fallen",
+        "roll",
+        "pullbacks"
+      ],
+      "enter": "cut",
+      "exit": "pull-out",
+      "next": [
+        "c7_backyard"
+      ],
+      "minutes": 2
+    },
+    {
+      "id": "c7_backyard",
+      "layer": "3d",
+      "name": "The backyard",
+      "chapter": "ch7_pullback",
+      "reads": [
+        "roll",
+        "pullbacks",
+        "shadow_reading",
+        "bark.integrity"
+      ],
+      "writes": [],
+      "enter": "pull-out",
+      "exit": "fade",
+      "next": [],
+      "minutes": 4
+    }
+  ]
+}

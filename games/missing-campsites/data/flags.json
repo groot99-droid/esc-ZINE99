@@ -1,0 +1,279 @@
+{
+  "state": [
+    {
+      "name": "erasure_step",
+      "type": "counter",
+      "default": 0,
+      "description": "The erasure schedule's step, 0-5 (DESIGN section 12)."
+    },
+    {
+      "name": "knows",
+      "type": "enum",
+      "default": "none",
+      "description": "The cosmic ladder; only rises.",
+      "values": [
+        "none",
+        "anomaly",
+        "pattern",
+        "scale",
+        "implicated"
+      ]
+    },
+    {
+      "name": "notebook_lines",
+      "type": "counter",
+      "default": 0,
+      "description": "Lines written in Tam's own hand."
+    },
+    {
+      "name": "sites_written",
+      "type": "counter",
+      "default": 0,
+      "description": "Rows of the notebook's Sites page written, 0-24. Reads the pattern walk's glyphs."
+    },
+    {
+      "name": "accepted",
+      "type": "counter",
+      "default": 0,
+      "description": "Times Tam took the world's word over the notebook."
+    },
+    {
+      "name": "phantoms_caught",
+      "type": "counter",
+      "default": 0,
+      "description": "Pack List phantoms challenged correctly."
+    },
+    {
+      "name": "warmth",
+      "type": "meter",
+      "default": 4,
+      "description": "Group cohesion. >=6 at dusk: heron sign costs 1 unit. Chooses friends' last lines.",
+      "range": [
+        0,
+        10
+      ]
+    },
+    {
+      "name": "mother_lines_kept",
+      "type": "counter",
+      "default": 0,
+      "description": "Lines of Agnes's postcard copied into the notebook, 0-6."
+    },
+    {
+      "name": "photo_site7",
+      "type": "bool",
+      "default": false,
+      "description": "Tam photographed site 7 for Agnes."
+    },
+    {
+      "name": "firewood_bought",
+      "type": "bool",
+      "default": false,
+      "description": "Firewood bundle bought at the booth on day 1 (anchor, weight 1)."
+    },
+    {
+      "name": "bicycle_borrowed",
+      "type": "bool",
+      "default": false,
+      "description": "Lottie lent her bicycle on day 1 (anchor, weight 1; teaches rule 7)."
+    },
+    {
+      "name": "abel_line_copied",
+      "type": "bool",
+      "default": false,
+      "description": "Tam copied Abel's register line on day 1."
+    },
+    {
+      "name": "recipe_copied",
+      "type": "bool",
+      "default": false,
+      "description": "Tam copied Bea's recipe card."
+    },
+    {
+      "name": "portrait.dell",
+      "type": "bool",
+      "default": false,
+      "description": "Tam wrote a People-page line about dell. Without it, absent from the van in Nothing Missing."
+    },
+    {
+      "name": "portrait.rafe",
+      "type": "bool",
+      "default": false,
+      "description": "Tam wrote a People-page line about rafe. Without it, absent from the van in Nothing Missing."
+    },
+    {
+      "name": "portrait.ines",
+      "type": "bool",
+      "default": false,
+      "description": "Tam wrote a People-page line about ines. Without it, absent from the van in Nothing Missing."
+    },
+    {
+      "name": "portrait.june",
+      "type": "bool",
+      "default": false,
+      "description": "Tam wrote a People-page line about june. Without it, absent from the van in Nothing Missing."
+    },
+    {
+      "name": "theory_night1",
+      "type": "enum",
+      "default": "none",
+      "description": "First campfire theory.",
+      "values": [
+        "none",
+        "tired",
+        "erasing",
+        "moving"
+      ]
+    },
+    {
+      "name": "theory_night2",
+      "type": "enum",
+      "default": "none",
+      "description": "Second campfire theory.",
+      "values": [
+        "none",
+        "nothing_wrong",
+        "we_hold",
+        "we_are_going"
+      ]
+    },
+    {
+      "name": "torch_battery",
+      "type": "meter",
+      "default": 100,
+      "description": "Torch battery during torchlight loops.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "ines_draws",
+      "type": "bool",
+      "default": false,
+      "description": "Tam showed Inés the notebook holds; her drawings add four Sites rows."
+    },
+    {
+      "name": "forecast_right",
+      "type": "bool",
+      "default": false,
+      "description": "Reconcile 2 forecast correct within one site; +1 afternoon unit."
+    },
+    {
+      "name": "time_units",
+      "type": "counter",
+      "default": 3,
+      "description": "In-game hours left for errands on day 2."
+    },
+    {
+      "name": "ranger_doubts",
+      "type": "bool",
+      "default": false,
+      "description": "Marisol watched her own book fail to add up (Ranger's Book 2)."
+    },
+    {
+      "name": "logbook_carried",
+      "type": "bool",
+      "default": false,
+      "description": "The logbook is in a slot (weight 3) and crosses if the sites do."
+    },
+    {
+      "name": "logbook_taken_unasked",
+      "type": "bool",
+      "default": false,
+      "description": "Tam took the logbook while Marisol was on rounds."
+    },
+    {
+      "name": "abel_believes",
+      "type": "bool",
+      "default": false,
+      "description": "Abel saw his own lost line in Tam's hand."
+    },
+    {
+      "name": "pells_invited",
+      "type": "bool",
+      "default": false,
+      "description": "The Pells were invited to supper at site 22."
+    },
+    {
+      "name": "posts_pulled",
+      "type": "counter",
+      "default": 0,
+      "description": "Posts 16-19 pulled and carried in, 0-4."
+    },
+    {
+      "name": "person_brought",
+      "type": "enum",
+      "default": "none",
+      "description": "Who slept inside the five sites on night 2.",
+      "values": [
+        "none",
+        "ranger",
+        "hiker",
+        "pells"
+      ]
+    },
+    {
+      "name": "left_alone",
+      "type": "bool",
+      "default": false,
+      "description": "Tam drove out alone at dusk on day 2."
+    },
+    {
+      "name": "hold",
+      "type": "meter",
+      "default": 0,
+      "description": "Anchor weight in the ten slots when the carrying run ends. Held at >=12.",
+      "range": [
+        0,
+        20
+      ]
+    },
+    {
+      "name": "anchors",
+      "type": "ledger",
+      "default": [],
+      "description": "Every anchor placed in a slot.",
+      "fields": [
+        "item",
+        "weight",
+        "site",
+        "chapter"
+      ]
+    },
+    {
+      "name": "supper_shared",
+      "type": "counter",
+      "default": 0,
+      "description": "Packets made for guests in Foil Supper 2."
+    },
+    {
+      "name": "breakfast_made",
+      "type": "bool",
+      "default": false,
+      "description": "Last breakfast made in Foil Supper 3."
+    },
+    {
+      "name": "pattern_key",
+      "type": "bool",
+      "default": false,
+      "description": "Ranger's Book 3 matched the counts to the trees; every glyph readable."
+    },
+    {
+      "name": "drift",
+      "type": "meter",
+      "default": 0,
+      "description": "Pattern-walk missteps. >=6 changes the last image only.",
+      "range": [
+        0,
+        10
+      ]
+    },
+    {
+      "name": "proof_kept",
+      "type": "counter",
+      "default": 0,
+      "description": "Rows Tam can still write at home (One Who Left)."
+    }
+  ]
+}

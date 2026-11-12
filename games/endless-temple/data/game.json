@@ -1,0 +1,105 @@
+{
+  "slug": "endless-temple",
+  "title": "The Endless Temple",
+  "sources": [
+    "02_Novels/05_The_Endless_Temple_-_Elaris_Sel_Marden.md"
+  ],
+  "target_minutes": {
+    "min": 120,
+    "max": 160
+  },
+  "players": {
+    "min": 1,
+    "max": 1
+  },
+  "core_verb": "Read",
+  "chapters": [
+    {
+      "id": "c1_waking",
+      "title": "The Waking",
+      "minutes": 11,
+      "layers": [
+        "3d",
+        "1d"
+      ]
+    },
+    {
+      "id": "c2_circle",
+      "title": "The Storyteller's Circle",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "1d"
+      ]
+    },
+    {
+      "id": "c3_rounds",
+      "title": "The Keeper's Rounds",
+      "minutes": 13,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "c4_dunes",
+      "title": "The Silver Dunes",
+      "minutes": 22,
+      "layers": [
+        "3d",
+        "2d"
+      ]
+    },
+    {
+      "id": "c5_hollin",
+      "title": "The Weather-Clerk of Hollin",
+      "minutes": 22,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "c6_father",
+      "title": "The Father's Mark",
+      "minutes": 20,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "c7_procession",
+      "title": "The Long Procession",
+      "minutes": 19,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "c8_unlit",
+      "title": "The Unlit Shelf",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "c9_end",
+      "title": "The End of the Sand",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    }
+  ]
+}

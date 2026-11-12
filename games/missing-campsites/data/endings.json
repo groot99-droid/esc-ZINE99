@@ -1,0 +1,98 @@
+{
+  "endings": [
+    {
+      "id": "one_who_left",
+      "name": "The One Who Left",
+      "as_written": false,
+      "priority": 1,
+      "when": {
+        "is": "left_alone",
+        "eq": true
+      },
+      "summary": "Tam drove out alone at dusk on day 2. Home is ordinary; nobody remembers the four friends or the campground, and the notebook is the only proof.",
+      "final_scenes": [
+        "torch_drive_out",
+        "home_apartment",
+        "reconcile_home",
+        "recital"
+      ]
+    },
+    {
+      "id": "nothing_missing",
+      "name": "Nothing Missing",
+      "as_written": false,
+      "priority": 2,
+      "when": {
+        "all": [
+          {
+            "is": "accepted",
+            "gte": 5
+          },
+          {
+            "is": "theory_night2",
+            "eq": "nothing_wrong"
+          }
+        ]
+      },
+      "summary": "Tam took the world's word five or more times and said nothing was wrong. The morning is ordinary, and there are fewer of them in the van.",
+      "final_scenes": [
+        "ordinary_morning",
+        "foil_supper_3",
+        "drive_home"
+      ]
+    },
+    {
+      "id": "held",
+      "name": "Held",
+      "as_written": false,
+      "priority": 3,
+      "when": {
+        "is": "hold",
+        "gte": 12
+      },
+      "summary": "The five sites held 12 or more weight at dark and stay in this world. Everything and everyone inside is safe, and no one outside remembers any of them.",
+      "final_scenes": [
+        "gravel_morning",
+        "foil_supper_3",
+        "mothers_door"
+      ]
+    },
+    {
+      "id": "brought_along",
+      "name": "Brought Along",
+      "as_written": false,
+      "priority": 4,
+      "when": {
+        "not": {
+          "is": "person_brought",
+          "eq": "none"
+        }
+      },
+      "summary": "A person or party slept inside, but the sites did not hold. They cross with the friends, and someone at home no longer knows to wait.",
+      "final_scenes": [
+        "wrong_forest",
+        "foil_supper_3",
+        "pattern_walk_1",
+        "the_clearing",
+        "pattern_walk_2",
+        "other_entrance"
+      ]
+    },
+    {
+      "id": "slipped_through",
+      "name": "Slipped Through",
+      "as_written": true,
+      "priority": 5,
+      "when": true,
+      "summary": "The author's ending. Tam stayed and kept watching; on the final morning the sky is wrong and the phones show no signal, no time, no date. Added close: the walk out through the trees and a car arriving.",
+      "final_scenes": [
+        "wrong_forest",
+        "foil_supper_3",
+        "pattern_walk_1",
+        "the_clearing",
+        "pattern_walk_2",
+        "other_entrance"
+      ]
+    }
+  ]
+}

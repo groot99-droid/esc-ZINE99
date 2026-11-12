@@ -1,0 +1,92 @@
+{
+  "endings": [
+    {
+      "id": "the_flake",
+      "name": "The Flake",
+      "as_written": false,
+      "priority": 1,
+      "when": {
+        "is": "bark.integrity",
+        "lte": 25
+      },
+      "summary": "The bark was over-tapped and over-carved. At the touch a plate gives and a district falls away. In the backyard a flake drops into the grass and nobody looks up.",
+      "final_scenes": [
+        "c6_touch",
+        "c7_backyard"
+      ]
+    },
+    {
+      "id": "war_on_the_god",
+      "name": "The War on the God",
+      "as_written": false,
+      "priority": 2,
+      "when": {
+        "all": [
+          {
+            "is": "shadow_reading",
+            "eq": "enemy"
+          },
+          {
+            "is": "year.leading",
+            "eq": "warriors"
+          },
+          {
+            "is": "bark.integrity",
+            "gt": 25
+          }
+        ]
+      },
+      "summary": "The Battlements lead, and read the Shadow as an enemy. The warriors climb the knuckle and Burr strikes. In the backyard someone picks out a splinter and goes inside. On the bark it is the greatest victory in history.",
+      "final_scenes": [
+        "c6_war",
+        "c6_touch",
+        "c7_backyard"
+      ]
+    },
+    {
+      "id": "edge_of_the_world",
+      "name": "The Edge of the World",
+      "as_written": false,
+      "priority": 3,
+      "when": {
+        "all": [
+          {
+            "is": "shadow_reading",
+            "eq": "habit"
+          },
+          {
+            "is": "year.leading",
+            "eq": "scholars"
+          },
+          {
+            "is": "forecasts_correct",
+            "gte": 8
+          },
+          {
+            "is": "bark.integrity",
+            "gt": 25
+          }
+        ]
+      },
+      "summary": "The Scroll House leads and read the Shadow as a thing with a habit. The scholars stake its outline; Fenn draws the first map with an edge on it, and the city argues over whether it is heresy.",
+      "final_scenes": [
+        "c6_edge",
+        "c6_touch",
+        "c7_backyard"
+      ]
+    },
+    {
+      "id": "shadow_passes",
+      "name": "The Shadow Passes",
+      "as_written": true,
+      "priority": 4,
+      "when": true,
+      "summary": "The story's own path: the priests chant, the warriors stand ready, the scholars record. The hand taps, finds no termites and goes away. The view pulls back to the backyard, and the moral closes the game.",
+      "final_scenes": [
+        "c6_stand",
+        "c6_touch",
+        "c7_backyard"
+      ]
+    }
+  ]
+}
