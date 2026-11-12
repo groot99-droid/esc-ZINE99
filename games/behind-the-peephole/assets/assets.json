@@ -1,0 +1,930 @@
+{
+  "game": "behind-the-peephole",
+  "style": "Cinematic realist still, 1970s paranoid-thriller look, long-lens restraint, practical light sources only, worn varnished wood, bottle-green cloth wallpaper, thumb-polished brass, river-grey cold light against tobacco-amber lamplight, deep brown shadows, subtle film grain, an old 1920s river hotel.",
+  "locations": [
+    {
+      "id": "staff-alley",
+      "name": "The staff alley and service stair",
+      "scenes": [
+        "n1_arrival"
+      ],
+      "dimensions_m": [
+        30,
+        4,
+        8
+      ],
+      "lighting": "Night: sodium streetlight orange through rain and river fog; the stair inside in bare-bulb yellow.",
+      "objects": [
+        "staff-door",
+        "noticeboard",
+        "dustbin",
+        "iron-lamp-post"
+      ],
+      "prompt": "A narrow wet cobbled service alley behind an old five-storey brick river hotel at night, 30 metres long and 4 metres wide, soot-dark brick walls with iron fire escapes and drainpipes, a plain green-painted steel staff door with a small brass bell push under a caged bulb, a few metal dustbins, a cast-iron lamp post giving sodium-orange light, rain falling, river fog drifting in from the open end, puddles reflecting the orange light; through the propped staff door a glimpse of a bare-bulb yellow service stair. Cinematic realist still, 1970s paranoid-thriller look, long-lens restraint, practical light sources only, worn varnished wood, bottle-green cloth wallpaper, thumb-polished brass, river-grey cold light against tobacco-amber lamplight, deep brown shadows, subtle film grain, an old 1920s river hotel. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "1e77f614-75bd-4d9f-9c24-c7fdd18a4907",
+      "image": "assets/locations/staff-alley.jpg"
+    },
+    {
+      "id": "valet-passage",
+      "name": "The valet passage",
+      "scenes": [
+        "n1_passage",
+        "end_under_door"
+      ],
+      "dimensions_m": [
+        64,
+        1.4,
+        2.4
+      ],
+      "lighting": "Night: low wall sconces every 8 m, two dead; each brass rose a warm coin of light. 05:00 (end_under_door): all roses dark, grey light from the light-well windows.",
+      "objects": [
+        "valet-door",
+        "brass-rose",
+        "lost-property-cabinet",
+        "wall-sconce",
+        "maids-trolley"
+      ],
+      "prompt": "A very long, very narrow hidden service passage inside an old hotel, 1.4 metres wide and 2.4 metres high, receding 64 metres into darkness in one-point perspective, bottle-green cloth wallpaper above dark varnished wainscot, worn floorboards with a threadbare runner, six sealed narrow valet doors set along the left wall at intervals each with a small round brass peephole rose glowing like a warm coin, low brass wall sconces every 8 metres with two of them dead, a tall dark-wood cabinet against the right wall, small light-well windows of grey glass high on the right, cold and quiet. Cinematic realist still, 1970s paranoid-thriller look, long-lens restraint, practical light sources only, worn varnished wood, bottle-green cloth wallpaper, thumb-polished brass, river-grey cold light against tobacco-amber lamplight, deep brown shadows, subtle film grain, an old 1920s river hotel. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "e8f5bc6f-2c38-43b2-a132-26fdaf92dd5a",
+      "image": "assets/locations/valet-passage.jpg"
+    },
+    {
+      "id": "office",
+      "name": "The office (old linen room)",
+      "scenes": [
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "dimensions_m": [
+        4,
+        3,
+        2.6
+      ],
+      "lighting": "Night: one green-shaded desk lamp, warm, a cold slot of light from the light-well window, the rest brown shadow. Morning (05:00): grey daylight in the light-well window, chute hatch open. Night seven: the brass rose in the door lit from outside.",
+      "objects": [
+        "desk",
+        "logbook",
+        "desk-lamp",
+        "telephone",
+        "bell-board",
+        "card-table",
+        "card-deck",
+        "cork-board",
+        "chute-hatch",
+        "kettle",
+        "evening-paper",
+        "office-chair",
+        "brass-rose",
+        "coat-stand"
+      ],
+      "prompt": "A small cramped night office converted from an old hotel linen room, 4 by 3 metres with a 2.6 metre ceiling, bottle-green cloth wallpaper, slatted linen shelves painted cream on one wall, a heavy varnished oak writing desk with a green-shaded banker's lamp as the only warm light, a black rotary telephone, a wall-mounted wooden bell board with six small brass bells and six glass bulbs above the desk, a small square card table covered in green baize with a folding chair, a cork pinboard on the wall, a small square steel laundry-chute hatch low in the wall, an electric kettle on a shelf, a narrow light-well window letting in a cold grey-blue slot of light, a panelled door with a small brass peephole, brown shadows in the corners, night. Cinematic realist still, 1970s paranoid-thriller look, long-lens restraint, practical light sources only, worn varnished wood, bottle-green cloth wallpaper, thumb-polished brass, river-grey cold light against tobacco-amber lamplight, deep brown shadows, subtle film grain, an old 1920s river hotel. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "40817953-aef7-4adc-9c95-382f9429915e",
+      "image": "assets/locations/office.jpg"
+    },
+    {
+      "id": "back-stair",
+      "name": "The back stair and back of house",
+      "scenes": [
+        "n3_stairwell",
+        "n6_stairwell"
+      ],
+      "dimensions_m": [
+        3,
+        23,
+        16
+      ],
+      "lighting": "Night: bare bulbs on flex, laundry steam lit yellow; the lodge window warm.",
+      "objects": [
+        "chute-box",
+        "laundry-cart"
+      ],
+      "prompt": "The back-of-house service stair of an old hotel at night, a painted-brick stairwell 3 by 5 metres with steep worn concrete steps and an iron handrail descending four floors, bare bulbs hanging on flex, cream and green gloss paint chipped on brick, at the bottom a long low back-of-house corridor with laundry steam drifting, a large dented steel slotted collection box under the open mouth of a laundry chute, canvas laundry carts, a small porter's lodge window glowing warm at the corridor side, pipes along the ceiling. Cinematic realist still, 1970s paranoid-thriller look, long-lens restraint, practical light sources only, worn varnished wood, bottle-green cloth wallpaper, thumb-polished brass, river-grey cold light against tobacco-amber lamplight, deep brown shadows, subtle film grain, an old 1920s river hotel. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "58d28ad2-22a5-4829-9172-94341620b2ca",
+      "image": "assets/locations/back-stair.jpg"
+    },
+    {
+      "id": "back-office",
+      "name": "The back office",
+      "scenes": [
+        "n6_back_office"
+      ],
+      "dimensions_m": [
+        5,
+        4,
+        2.8
+      ],
+      "lighting": "Night: dark but for the lobby's light through a frosted glass window; a faint green lamp off.",
+      "objects": [
+        "safe",
+        "coat-stand",
+        "office-chair"
+      ],
+      "prompt": "A night manager's back office behind a hotel front desk, 5 by 4 metres, dark wood panelling and bottle-green wallpaper, a heavy old black cast-iron floor safe with a brass dial in the corner, a bentwood coat stand beside the door, a steel filing cabinet, a desk with a dark lamp, a large interior window of frosted glass through which the lobby's warm light glows softly and is the only light in the room, a wall clock, deep shadow, night. Cinematic realist still, 1970s paranoid-thriller look, long-lens restraint, practical light sources only, worn varnished wood, bottle-green cloth wallpaper, thumb-polished brass, river-grey cold light against tobacco-amber lamplight, deep brown shadows, subtle film grain, an old 1920s river hotel. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "3fb595de-a98f-4970-96c3-eb096d757f6c",
+      "image": "assets/locations/back-office.jpg"
+    },
+    {
+      "id": "lobby",
+      "name": "The lobby",
+      "scenes": [
+        "dawn_lobby",
+        "end_wrong_picture"
+      ],
+      "dimensions_m": [
+        20,
+        14,
+        9
+      ],
+      "lighting": "Dawn: grey river light through the revolving door and tall windows; the chandelier still on, warm.",
+      "objects": [
+        "chandelier",
+        "reception-desk",
+        "lobby-armchair",
+        "luggage-trolley"
+      ],
+      "prompt": "The double-height lobby of a faded 1920s grand river hotel at dawn, 20 by 14 metres, seen from the mezzanine balcony rail looking down and across, marble floor in green and cream, a long dark-wood reception desk with brass fittings and a pigeonhole key rack behind it, a great brass and crystal chandelier still lit warm, a brass revolving door with grey river dawn light coming through it, worn leather armchairs, a brass luggage trolley, potted palms, dark green walls with gilt mouldings. Cinematic realist still, 1970s paranoid-thriller look, long-lens restraint, practical light sources only, worn varnished wood, bottle-green cloth wallpaper, thumb-polished brass, river-grey cold light against tobacco-amber lamplight, deep brown shadows, subtle film grain, an old 1920s river hotel. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "04dc109f-3c8a-4edb-828e-ef9be9493d3d",
+      "image": "assets/locations/lobby.jpg"
+    },
+    {
+      "id": "river-wall",
+      "name": "The river wall at dawn",
+      "scenes": [
+        "end_open_door"
+      ],
+      "dimensions_m": [
+        40,
+        8,
+        6
+      ],
+      "lighting": "Dawn: flat grey river light, fog lifting; the hotel's windows dark except a few.",
+      "objects": [
+        "mooring-bollard",
+        "iron-lamp-post",
+        "dustbin"
+      ],
+      "prompt": "A stone river embankment wall at grey dawn beside an old brick river hotel, a wide flagstone walkway running along a low granite parapet, cast-iron mooring bollards, a cast-iron lamp post still lit pale, a broad grey river with mist lifting and distant cranes and a bridge in the haze, the hotel's tall five-storey brick facade with rows of windows rising on the other side of the walkway, the mouth of the staff alley opening into it, wet stones. Cinematic realist still, 1970s paranoid-thriller look, long-lens restraint, practical light sources only, worn varnished wood, bottle-green cloth wallpaper, thumb-polished brass, river-grey cold light against tobacco-amber lamplight, deep brown shadows, subtle film grain, an old 1920s river hotel. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "96fe9178-5afd-4183-9242-28e966412d5f",
+      "image": "assets/locations/river-wall.jpg"
+    }
+  ],
+  "objects": [
+    {
+      "id": "desk",
+      "name": "Writing desk",
+      "role": "interact",
+      "scenes": [
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "size_m": [
+        1.4,
+        0.7,
+        0.78
+      ],
+      "material": "Varnished oak, worn edges, brass drawer pulls, one drawer with a small brass lock",
+      "prompt": "A heavy old varnished oak writing desk with a pedestal of drawers on the right, one drawer with a small brass keyhole, brass drawer pulls, worn amber varnish rubbed pale at the edges, empty top. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c7f343b5-4c1f-420a-9524-3aa22215c828",
+      "image": "assets/objects/desk.jpg"
+    },
+    {
+      "id": "logbook",
+      "name": "The logbook",
+      "role": "interact",
+      "scenes": [
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "size_m": [
+        0.24,
+        0.32,
+        0.03
+      ],
+      "material": "Cloth-bound ledger, cream ruled paper, carbon sheets",
+      "prompt": "A closed cloth-bound hardback ledger logbook in faded bottle-green cloth with darker leather corners and spine, worn edges, cream page block visible, plain cover with no writing. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "b7f5c362-0832-434c-8bff-fcc29750ad27",
+      "image": "assets/objects/logbook.jpg"
+    },
+    {
+      "id": "telephone",
+      "name": "Rotary telephone",
+      "role": "interact",
+      "scenes": [
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "size_m": [
+        0.22,
+        0.24,
+        0.14
+      ],
+      "material": "Black bakelite, cloth-covered cord, blank finger dial",
+      "prompt": "A black bakelite rotary dial desk telephone from the 1950s with its handset on the cradle and a coiled cloth cord, glossy worn black, the finger-wheel dial has plain empty holes with no numbers or letters and a plain blank cream centre disc. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no numerals, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "0ce229da-efb4-412e-97e5-a596bd479c53",
+      "image": "assets/objects/telephone.jpg"
+    },
+    {
+      "id": "bell-board",
+      "name": "Bell board",
+      "role": "interact",
+      "scenes": [
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "size_m": [
+        0.9,
+        0.12,
+        0.5
+      ],
+      "material": "Varnished wood cabinet, six brass bells, six glass bulbs",
+      "prompt": "A wall-mounted varnished dark wood bell board cabinet from an old hotel, a row of six small domed brass bells along the bottom and a row of six small round frosted glass bulbs above them, brass hinges and a glazed front, blank and unmarked. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "2df66f51-32b5-4620-959f-13eff1b801c6",
+      "image": "assets/objects/bell-board.jpg"
+    },
+    {
+      "id": "card-table",
+      "name": "Card table",
+      "role": "interact",
+      "scenes": [
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "size_m": [
+        0.76,
+        0.76,
+        0.72
+      ],
+      "material": "Folding wooden frame, green baize top",
+      "prompt": "A small square folding card table with dark wooden legs and a worn bottle-green baize playing surface, empty. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "73f2b68d-a130-4060-a85d-7b805dfe3531",
+      "image": "assets/objects/card-table.jpg"
+    },
+    {
+      "id": "card-deck",
+      "name": "Deck of cards",
+      "role": "interact",
+      "scenes": [
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "size_m": [
+        0.064,
+        0.09,
+        0.02
+      ],
+      "material": "Gold art deco pattern on green card backs",
+      "prompt": "A neat squared stack of playing cards face down, card backs printed with a gold art deco geometric fan pattern on deep bottle green, slightly worn edges. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "b852bb48-037a-4124-9bc2-e83b3835f6f5",
+      "image": "assets/objects/card-deck.jpg"
+    },
+    {
+      "id": "cork-board",
+      "name": "Cork board",
+      "role": "interact",
+      "scenes": [
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "size_m": [
+        0.9,
+        0.03,
+        0.6
+      ],
+      "material": "Cork in a varnished wood frame",
+      "prompt": "An empty rectangular cork pinboard in a narrow varnished wood frame, warm brown cork texture, a few brass pins stuck in it, nothing pinned. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "92e0e7af-d3ec-44d8-957a-e0d15f61e0fc",
+      "image": "assets/objects/cork-board.jpg"
+    },
+    {
+      "id": "chute-hatch",
+      "name": "Chute hatch",
+      "role": "interact",
+      "scenes": [
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "size_m": [
+        0.45,
+        0.2,
+        0.45
+      ],
+      "material": "Steel hatch with brass latch, chipped cream paint",
+      "prompt": "A small square wall-mounted laundry chute hatch, a steel door with chipped cream paint on a short steel frame box, brass latch handle and hinges, shown closed, as a standalone fitting. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c52ba1ac-1e5c-4202-8fb8-f60fc3efe4e6",
+      "image": "assets/objects/chute-hatch.jpg"
+    },
+    {
+      "id": "kettle",
+      "name": "Electric kettle",
+      "role": "interact",
+      "scenes": [
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "size_m": [
+        0.25,
+        0.16,
+        0.24
+      ],
+      "material": "Chrome-plated steel, black bakelite handle, cloth flex",
+      "prompt": "An old 1960s chrome electric kettle with a black bakelite handle and a short cloth-covered flex, dull worn chrome. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "b355d400-ddf3-4eba-b931-b5e60ee1a228",
+      "image": "assets/objects/kettle.jpg"
+    },
+    {
+      "id": "evening-paper",
+      "name": "Evening paper",
+      "role": "interact",
+      "scenes": [
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "size_m": [
+        0.3,
+        0.4,
+        0.01
+      ],
+      "material": "Plain cream-grey newsprint, folded; columns as faint ruled bands, nothing legible",
+      "prompt": "A folded newspaper lying flat, made of plain unprinted cream-grey newsprint, only faint thin grey ruled lines dividing blank columns, no headline, no masthead, no photographs, no words or letters anywhere, slightly creased and soft at the folds. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "ffbbdcb8-aa91-44f2-b441-13be9acd7882",
+      "image": "assets/objects/evening-paper.jpg"
+    },
+    {
+      "id": "brass-rose",
+      "name": "Brass rose (peephole)",
+      "role": "interact",
+      "scenes": [
+        "n1_passage",
+        "end_under_door",
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "size_m": [
+        0.09,
+        0.04,
+        0.09
+      ],
+      "material": "Brass, thumb-polished centre, glass lens",
+      "prompt": "A round antique brass door peephole escutcheon shaped like a small rosette with a domed glass lens at its centre, tarnished brass with a thumb-polished bright centre, shown as a single fitting. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "2270af85-ded6-4889-84d3-4ec011dbcb32",
+      "image": "assets/objects/brass-rose.jpg"
+    },
+    {
+      "id": "valet-door",
+      "name": "Valet door",
+      "role": "interact",
+      "scenes": [
+        "n1_passage",
+        "end_under_door"
+      ],
+      "size_m": [
+        0.7,
+        0.08,
+        1.9
+      ],
+      "material": "Varnished panel wood, brass peephole rose, painted-over hinges",
+      "prompt": "A narrow old sealed hotel valet door, dark varnished wood with two recessed panels, a small round brass peephole rosette at eye level, hinges painted over, no handle, standing upright in its own simple wooden frame. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d2aafb4c-da10-463d-ac20-e34008cb2dfe",
+      "image": "assets/objects/valet-door.jpg"
+    },
+    {
+      "id": "lost-property-cabinet",
+      "name": "Lost-property cabinet",
+      "role": "interact",
+      "scenes": [
+        "n1_passage",
+        "end_under_door"
+      ],
+      "size_m": [
+        0.8,
+        0.4,
+        1.8
+      ],
+      "material": "Dark varnished wood, glazed upper doors, brass lock",
+      "prompt": "A tall narrow dark varnished wooden cabinet with two glazed upper doors and two solid lower doors, a small brass keyhole lock, shelves empty, worn corners. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c3cf8bfc-24d6-4753-b7a4-efe37a43f220",
+      "image": "assets/objects/lost-property-cabinet.jpg"
+    },
+    {
+      "id": "staff-door",
+      "name": "Staff door",
+      "role": "interact",
+      "scenes": [
+        "n1_arrival"
+      ],
+      "size_m": [
+        1.0,
+        0.15,
+        2.1
+      ],
+      "material": "Green-painted steel, brass bell push, wire-glass panel",
+      "prompt": "A plain heavy steel staff door painted dark green with peeling paint, a small wire-glass window panel, a push bar, and a small round brass bell push on a plate beside it, standing in its own steel frame. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "e84ff061-895a-4749-933f-b273845694b5",
+      "image": "assets/objects/staff-door.jpg"
+    },
+    {
+      "id": "noticeboard",
+      "name": "Staff noticeboard",
+      "role": "interact",
+      "scenes": [
+        "n1_arrival"
+      ],
+      "size_m": [
+        0.6,
+        0.05,
+        0.8
+      ],
+      "material": "Wood frame, green baize, pinned papers",
+      "prompt": "A small wall-mounted staff noticeboard with a wooden frame and green baize, several blank cream papers held by brass drawing pins, the papers have no writing. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "81c1664b-e536-4c60-ba58-2e53a6e111e2",
+      "image": "assets/objects/noticeboard.jpg"
+    },
+    {
+      "id": "chute-box",
+      "name": "Chute box",
+      "role": "interact",
+      "scenes": [
+        "n3_stairwell",
+        "n6_stairwell"
+      ],
+      "size_m": [
+        0.9,
+        0.6,
+        0.8
+      ],
+      "material": "Dented steel, slotted lid, small brass plate",
+      "prompt": "A large dented steel collection box with a slotted hinged lid, riveted corners, a small blank brass plate fixed to the front, scuffed grey paint, a few faint white chalk smudges on the lid. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "0dfa9008-45b4-4a4c-961c-c94e97b7ce1c",
+      "image": "assets/objects/chute-box.jpg"
+    },
+    {
+      "id": "safe",
+      "name": "Floor safe",
+      "role": "interact",
+      "scenes": [
+        "n6_back_office"
+      ],
+      "size_m": [
+        0.6,
+        0.6,
+        0.9
+      ],
+      "material": "Black-painted cast iron, brass combination dial and handle",
+      "prompt": "An old heavy black cast-iron floor safe with a brass combination dial and a brass T handle on the door, worn gilt pinstripe borders, plain with no lettering. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d914688a-332f-4180-8743-de539094e0bc",
+      "image": "assets/objects/safe.jpg"
+    },
+    {
+      "id": "coat-stand",
+      "name": "Coat stand",
+      "role": "interact",
+      "scenes": [
+        "n6_back_office",
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "size_m": [
+        0.5,
+        0.5,
+        1.85
+      ],
+      "material": "Bentwood, dark stain",
+      "prompt": "A freestanding bentwood coat stand with curled hooks, dark stained wood, empty. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "1d8fb2cc-4409-4148-b40e-b3604b9fcf77",
+      "image": "assets/objects/coat-stand.jpg"
+    },
+    {
+      "id": "chandelier",
+      "name": "Lobby chandelier",
+      "role": "hero",
+      "scenes": [
+        "dawn_lobby",
+        "end_wrong_picture"
+      ],
+      "size_m": [
+        2.2,
+        2.2,
+        2.5
+      ],
+      "material": "Brass frame, cut-crystal drops, lit bulbs",
+      "prompt": "A large antique hotel lobby chandelier with a tiered brass frame and cascades of cut-crystal drops, its candle bulbs lit warm. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "6aa2f4aa-4b5f-4175-8d8b-eb20c4b164d8",
+      "image": "assets/objects/chandelier.jpg"
+    },
+    {
+      "id": "reception-desk",
+      "name": "Reception desk",
+      "role": "hero",
+      "scenes": [
+        "dawn_lobby",
+        "end_wrong_picture"
+      ],
+      "size_m": [
+        4.5,
+        0.9,
+        1.15
+      ],
+      "material": "Dark mahogany, brass rail and fittings, marble top",
+      "prompt": "A long curved hotel reception desk counter in dark mahogany with a green marble top, a brass foot rail and brass edge trim, a small brass desk bell, no signage. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "20fd28a7-71ab-4714-994f-ff363dcc2066",
+      "image": "assets/objects/reception-desk.jpg"
+    },
+    {
+      "id": "desk-lamp",
+      "name": "Green-shaded desk lamp",
+      "role": "fill",
+      "scenes": [
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door"
+      ],
+      "size_m": [
+        0.3,
+        0.22,
+        0.42
+      ],
+      "material": "Brass base and stem, green glass shade",
+      "prompt": "A classic banker's desk lamp with a bottle-green glass shade, brass base and stem, slightly tarnished brass, switched off. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "a43a6c97-b1ec-4e5a-b2df-b3fe1107d11c",
+      "image": "assets/objects/desk-lamp.jpg"
+    },
+    {
+      "id": "office-chair",
+      "name": "Office chair",
+      "role": "fill",
+      "scenes": [
+        "n1_office",
+        "n2_office",
+        "n3_office",
+        "n4_office",
+        "n5_office",
+        "n6_office",
+        "n7_office",
+        "n1_morning",
+        "n2_morning",
+        "n3_morning",
+        "n4_morning",
+        "n5_morning",
+        "n6_morning",
+        "n7_your_door",
+        "n6_back_office"
+      ],
+      "size_m": [
+        0.5,
+        0.5,
+        0.85
+      ],
+      "material": "Bentwood and worn leather seat",
+      "prompt": "An old wooden swivel office chair with a curved bentwood back, a worn brown leather seat and an iron swivel base on four casters. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "a6abc854-0437-4e26-8e29-3c3a7e84809b",
+      "image": "assets/objects/office-chair.jpg"
+    },
+    {
+      "id": "wall-sconce",
+      "name": "Wall sconce",
+      "role": "fill",
+      "scenes": [
+        "n1_passage",
+        "end_under_door"
+      ],
+      "size_m": [
+        0.15,
+        0.18,
+        0.3
+      ],
+      "material": "Brass bracket, cream glass tulip shade",
+      "prompt": "A single brass wall sconce lamp with a curved bracket and a frosted cream glass tulip shade, slightly tarnished. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c67e810c-dca9-4ce8-8b22-4365da5a5ada",
+      "image": "assets/objects/wall-sconce.jpg"
+    },
+    {
+      "id": "maids-trolley",
+      "name": "Maid's trolley",
+      "role": "fill",
+      "scenes": [
+        "n1_passage",
+        "end_under_door"
+      ],
+      "size_m": [
+        1.0,
+        0.5,
+        1.0
+      ],
+      "material": "Painted steel frame, canvas linen bag, wooden shelves",
+      "prompt": "A hotel housekeeping trolley with a painted dark-green steel frame, two wooden shelves stacked with folded white towels, a grey canvas linen bag hanging at one end, small rubber wheels. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "aee262a3-db3b-4624-8010-fb369873e831",
+      "image": "assets/objects/maids-trolley.jpg"
+    },
+    {
+      "id": "dustbin",
+      "name": "Dustbin",
+      "role": "fill",
+      "scenes": [
+        "n1_arrival",
+        "end_open_door"
+      ],
+      "size_m": [
+        0.5,
+        0.5,
+        0.75
+      ],
+      "material": "Galvanised steel, dented",
+      "prompt": "An old galvanised steel dustbin with a lid and side handles, dented and dull grey, wet streaks. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "5134eabe-7546-4f50-9445-3bbf426c5fe4",
+      "image": "assets/objects/dustbin.jpg"
+    },
+    {
+      "id": "iron-lamp-post",
+      "name": "Iron lamp post",
+      "role": "fill",
+      "scenes": [
+        "n1_arrival",
+        "end_open_door"
+      ],
+      "size_m": [
+        0.5,
+        0.5,
+        4.0
+      ],
+      "material": "Cast iron painted black, glass lantern",
+      "prompt": "A tall Victorian cast-iron street lamp post painted black with a fluted column and a four-sided glass lantern on top. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "af0e7458-4bdc-47bf-a75d-36b0571cbe96",
+      "image": "assets/objects/iron-lamp-post.jpg"
+    },
+    {
+      "id": "laundry-cart",
+      "name": "Laundry cart",
+      "role": "fill",
+      "scenes": [
+        "n3_stairwell",
+        "n6_stairwell"
+      ],
+      "size_m": [
+        1.0,
+        0.65,
+        0.9
+      ],
+      "material": "Grey canvas on steel frame, castors",
+      "prompt": "A hotel laundry cart, a deep grey canvas bin slung on a steel tube frame with four castors, empty. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "23e6b4e4-73e9-4daa-b13d-e63e81d04ec0",
+      "image": "assets/objects/laundry-cart.jpg"
+    },
+    {
+      "id": "lobby-armchair",
+      "name": "Lobby armchair",
+      "role": "fill",
+      "scenes": [
+        "dawn_lobby",
+        "end_wrong_picture"
+      ],
+      "size_m": [
+        0.85,
+        0.85,
+        0.95
+      ],
+      "material": "Worn oxblood-brown leather, brass studs",
+      "prompt": "A deep worn leather club armchair in faded brown with brass stud trim and short wooden feet. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "13cba712-6bf6-474b-923a-62b85bfc2aa6",
+      "image": "assets/objects/lobby-armchair.jpg"
+    },
+    {
+      "id": "luggage-trolley",
+      "name": "Luggage trolley",
+      "role": "fill",
+      "scenes": [
+        "dawn_lobby",
+        "end_wrong_picture"
+      ],
+      "size_m": [
+        1.1,
+        0.6,
+        1.8
+      ],
+      "material": "Brass birdcage frame, red carpeted base",
+      "prompt": "A hotel brass birdcage luggage trolley with a curved brass hanging rail, a carpeted base in faded green, four wheels, empty. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "29ad9a55-7001-4630-a071-3036e314004b",
+      "image": "assets/objects/luggage-trolley.jpg"
+    },
+    {
+      "id": "mooring-bollard",
+      "name": "Mooring bollard",
+      "role": "fill",
+      "scenes": [
+        "end_open_door"
+      ],
+      "size_m": [
+        0.45,
+        0.45,
+        0.6
+      ],
+      "material": "Cast iron, black paint worn to rust",
+      "prompt": "A single cast-iron dockside mooring bollard with a flared cap, black paint worn through to dull rust, wet. Realistic, mid-century, worn and lived-in, muted palette of bottle green, brass, varnished wood and cream. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "f0c2bdbe-9655-4673-9060-a3a45ccde946",
+      "image": "assets/objects/mooring-bollard.jpg"
+    }
+  ]
+}
