@@ -1039,7 +1039,22 @@ naming it.
 
 **One look across layers.** The same paper and graphite run through the 1D pages, the 2D pencil
 strip and the 3D map lens and notebook. The torch circle in 2D uses the 3D scene's own colours, so
-the lit patch reads as a window into the 3D world.
+the lit patch reads as a window into the 3D world. The palette and materials are shared across
+layers, while each 2D and 1D page is drawn in its own style (see Gameplay graphics).
+
+### Gameplay graphics
+
+Each 2D mode and 1D game keeps this palette but is drawn in its own graphic style, unique in the
+collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg`.
+
+| Mode or game | Layer | Graphic style | How the style serves play |
+| --- | --- | --- | --- |
+| Torchlight loop | 2D | Charcoal chiaroscuro | Smudged dark everywhere but the amber circle, so the player sees only what the torch holds, and a missing post reads as bare forest floor inside the light. |
+| The pattern walk | 2D | Op-art geometric | Exactly spaced tree glyphs make the forest's rhythm the map: the safe path is the regular one, and a written detail breaks the tie between candidates. |
+| Reconcile | 1D | Topographic survey print | Contours, printed site squares and a green-ink legend are sources to compare, and a missing legend row or square stands out against the survey's order. |
+| Pack List | 1D | Wax crayon on kraft paper | A children's fire game drawn as one: seats round the fire as cards, the chain above, and the phantom item circled where nobody put it. |
+| Foil Supper | 1D | Two-colour risograph recipe card | Two inks, misregistered, keep ingredient roles and the coal bar legible at a glance while the recipe's blanks show as empty print. |
+| The Ranger's Book | 1D | Ledger in graphite | Ruled columns and pencil sums set the printed totals against Tam's working, so the shortfall the ghost rows fill is the picture. |
 
 ## 16. Audio
 
