@@ -1,0 +1,791 @@
+{
+  "game": "heartstream",
+  "style": "Stylised cinematic 3D animation look: a fantastical world inside a body rendered as cave cathedrals lit from within, soft wet translucent tissue with subsurface scattering, dry chalky ivory bone, deep mineral blues in the marrow (#1E3557, #2F5D8C, glow #7FB2E0), crimson to carmine in the river (#7A1020, #B3202E, #E0603A), red into gold at the heart (#F2B544), bone ivory #E8DCC4; every light pulses like a heartbeat; no gore, no wounds, no anatomy beyond architecture.",
+  "locations": [
+    {
+      "id": "marrow-caverns",
+      "name": "The marrow caverns",
+      "scenes": [
+        "s3_marrow",
+        "s3_marrow_after",
+        "s3_lamps"
+      ],
+      "dimensions_m": [
+        60,
+        40,
+        12
+      ],
+      "lighting": "Day of the wake: cold blue glow breathing at 60 bpm, warm steady pinpoints of the marrow lamps. Emptied (stayer): lamps at 30%, the far shaft sealed. Years on: lamps being dimmed by hand, a new group's alcoves occupied.",
+      "objects": [
+        "sleeping-pod",
+        "counter-board",
+        "counter-piece",
+        "board-rack",
+        "mark-stone",
+        "marrow-lamp",
+        "bone-bowl",
+        "membrane-pillar"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A large cave of three connected chambers, about 60 by 40 metres with 12 metre ceilings, its rounded porous walls of soft translucent tissue glowing from within in deep mineral blue, small sleeping niches hollowed into the walls at floor level, a hall lined with low pale shelves holding many flat ivory game boards, a waist-high ivory standing stone in the middle of the main chamber, small warm amber lamp growths on short stalks along the walls, a smooth damp pale floor with shallow puddles reflecting blue light, a dark round opening high in the far wall. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "ebef5041-a107-403d-be4f-b27d5e3f925f",
+      "image": "assets/locations/marrow-caverns.jpg"
+    },
+    {
+      "id": "shedding-gallery",
+      "name": "The shedding gallery",
+      "scenes": [
+        "s3_gallery"
+      ],
+      "dimensions_m": [
+        35,
+        25,
+        14
+      ],
+      "lighting": "Pale, chalky, cool-white light from glowing seams overhead, pulsing faintly; fine bone flakes drifting through the beams.",
+      "objects": [
+        "gift-hook",
+        "gift-awl",
+        "gift-comb",
+        "gift-scraper",
+        "gift-flute",
+        "bone-blank",
+        "flake-pile",
+        "gathering-basket",
+        "bone-shard",
+        "chisel",
+        "carving-slab"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A long cavern of dry ivory bone, 35 by 25 metres, with two levels of soft rounded ledges stepping up the walls like terraces, the walls flaking and peeling in thin pale curls, drifts of bone flakes on the floor, loose rough bone blanks lying on the ledges, a low flat bone slab used as a work table near the entrance, pale chalky light falling from glowing seams in the ceiling, palette of warm ivory and dusty pale blue. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "4ce39d6a-9839-43b7-9540-46efad329ab8",
+      "image": "assets/locations/shedding-gallery.jpg"
+    },
+    {
+      "id": "singing-hollow",
+      "name": "The singing hollow",
+      "scenes": [
+        "s3_hollow"
+      ],
+      "dimensions_m": [
+        20,
+        20,
+        10
+      ],
+      "lighting": "Dim blue at rest; each resonant growth blooms with soft light when it answers a hum, in turn, like a slow chord.",
+      "objects": [
+        "resonant-growth",
+        "board-slab"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A perfectly round domed chamber 20 metres across inside soft blue marrow, the dome's ribs like the inside of a shell, twelve tall translucent coral-like organic growths rising from the floor in a ring around the edge, some glowing softly pale blue and violet, a low flat bone slab in the centre of the floor, smooth concave floor, faint mist, acoustic and cathedral-like. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "c97cf1e7-a591-4f54-8d94-0f86d2bc7ae5",
+      "image": "assets/locations/singing-hollow.jpg"
+    },
+    {
+      "id": "elders-cavern",
+      "name": "The cavern of the elders",
+      "scenes": [
+        "s3_recognition"
+      ],
+      "dimensions_m": [
+        30,
+        30,
+        18
+      ],
+      "lighting": "Starts at full blue glow and dims to 30% over 20 seconds while a warm red light opens from the shaft in the far wall.",
+      "objects": [
+        "elders-bench",
+        "marrow-lamp"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A vaulted cave hall 30 by 30 metres with ribbed arches of dark blue glowing tissue meeting overhead, a pale ivory bone floor, along the left wall a long low curved bench carved from smooth ivory bone with seven seat hollows and a low backrest, all empty, in the centre of the far wall a round tunnel opening 3 metres wide whose soft lining glows warm red, a few small amber lamp growths on the walls, solemn and dim, blue light with the red glow from the tunnel. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "d5c8217a-b9ef-4815-9733-371f76aabef2",
+      "image": "assets/locations/elders-cavern.jpg"
+    },
+    {
+      "id": "shaft-foot",
+      "name": "The foot of the shaft",
+      "scenes": [
+        "s3_shaft"
+      ],
+      "dimensions_m": [
+        6,
+        6,
+        10
+      ],
+      "lighting": "Warm red light from far above; heat haze; the walls brighten on each beat.",
+      "objects": [
+        "membrane-pillar"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. The bottom of a vertical tunnel 6 metres wide lined with soft, living pink-red tissue folded into natural ledges and handholds, looking up the first 10 metres, warm red light glowing from far above, a little heat haze, a floor of ivory bone where it meets the blue marrow below, the walls glistening and soft, transition from blue at the floor to red above. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "0b747ad0-0b37-4ffa-a4ad-aa974808c24b",
+      "image": "assets/locations/shaft-foot.jpg"
+    },
+    {
+      "id": "bloodstream",
+      "name": "The Bloodstream",
+      "scenes": [
+        "s3_river"
+      ],
+      "dimensions_m": [
+        1200,
+        120,
+        60
+      ],
+      "lighting": "Crimson water lit from within, humid red haze, warm highlights on the canyon rims; the light swells with each beat at 72 bpm. One calm pool in a quiet bend.",
+      "objects": [
+        "raft",
+        "oar",
+        "river-boulder"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A vast winding crimson river 100 metres wide flowing through a canyon whose towering walls of red artery tissue rise 60 metres like canyon cliffs, the water glowing from within with swirling eddies and orange highlights, a calm still pool in a bend near the foreground bank, round soft boulders of tissue at the water's edge, humid haze, a low wet bank in the foreground. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "b97c1e2b-c289-4613-8aaf-fa945579976d",
+      "image": "assets/locations/bloodstream.jpg"
+    },
+    {
+      "id": "delta",
+      "name": "The delta of branching vessels",
+      "scenes": [
+        "s3_delta"
+      ],
+      "dimensions_m": [
+        600,
+        40,
+        25
+      ],
+      "lighting": "Darker, closer and faster than the river: red glow from the water, deep shadows in each junction mouth, low folds catching rim light.",
+      "objects": [
+        "raft",
+        "oar",
+        "river-boulder"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A red river splitting into several narrower channels like a river delta, each 20 to 40 metres wide, entering separate rounded tunnel mouths in walls of dark crimson tissue, low soft folds of tissue jutting out of the water, faster currents with white-pink streaks, a dark close ceiling arching overhead, glowing red water the main light source. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "e7fe273c-f86f-4f1d-9a79-0339563c8803",
+      "image": "assets/locations/delta.jpg"
+    },
+    {
+      "id": "heart-atrium",
+      "name": "The heart: the atrium",
+      "scenes": [
+        "s3_heart"
+      ],
+      "dimensions_m": [
+        150,
+        150,
+        200
+      ],
+      "lighting": "Beams of light through moving walls, red at the base rising to gold at the top; tempo 96 rising to 120, the light swelling on every beat.",
+      "objects": [
+        "raft",
+        "gift-hook",
+        "gift-awl",
+        "gift-comb",
+        "gift-scraper",
+        "gift-flute"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A colossal chamber 200 metres high like a cathedral of muscle and light, walls of red muscle fibres sweeping upward in great curved ribs and arches, shafts of golden light pouring through gaps in the moving walls, a whirling crimson current at the floor, the colour shifting from deep red below to radiant gold above, awe-inspiring scale, haze in the beams. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "540e1dfd-e545-41a1-bcbf-fbfd6f0e5051",
+      "image": "assets/locations/heart-atrium.jpg"
+    },
+    {
+      "id": "narrow-vessel",
+      "name": "The narrow vessel",
+      "scenes": [
+        "s3_vessel"
+      ],
+      "dimensions_m": [
+        3,
+        3,
+        40
+      ],
+      "lighting": "One red glow ahead, fading warm; the light pulses with a single heartbeat slowing to 60.",
+      "objects": [
+        "gift-hook",
+        "gift-awl",
+        "gift-comb",
+        "gift-scraper",
+        "gift-flute"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. Looking along the inside of a narrow organic tunnel 3 metres wide and 3 metres high, like a smooth cave passage, soft translucent crimson walls and arched ceiling with faint lighter veins, a shallow stream of glowing red water running along its floor beside a narrow soft ledge, the passage curving gently away into the distance toward a single warm red glow, clear perspective, quiet and intimate. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "c4b5872b-a1a1-4d0e-9c05-79fb9acc4f26",
+      "image": "assets/locations/narrow-vessel.jpg"
+    },
+    {
+      "id": "shared-chamber",
+      "name": "The shared chamber",
+      "scenes": [
+        "s3_vessel_two"
+      ],
+      "dimensions_m": [
+        8,
+        8,
+        6
+      ],
+      "lighting": "Two soft glows, one on each side, pulsing in step.",
+      "objects": [
+        "gift-hook",
+        "gift-awl",
+        "gift-comb",
+        "gift-scraper",
+        "gift-flute"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A small rounded chamber 8 metres wide where two narrow red vessels meet, soft translucent crimson walls, a shallow pool of glowing red water in the middle, two warm glowing light sources on opposite sides pulsing in step, calm and tender, gentle haze. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "598a4080-33ed-44bf-9701-216a64755e3c",
+      "image": "assets/locations/shared-chamber.jpg"
+    },
+    {
+      "id": "beast-hold",
+      "name": "Inside the immune beast",
+      "scenes": [
+        "s3_hold",
+        "s3_hold_turn"
+      ],
+      "dimensions_m": [
+        15,
+        15,
+        10
+      ],
+      "lighting": "Milky white diffuse light; a warm red-orange glow seen above through the skin, which shrinks and drifts away when the beast turns into a side vessel.",
+      "objects": [
+        "old-carved-hook"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. The inside of a huge translucent creature, a hollow space 15 metres across with milky white membrane walls, faint ribbed structure and soft folds, the skin semi-transparent so a blurred warm red-orange glow can be seen above through it, a smooth soft floor of white membrane, quiet, muffled, dreamlike, not gory, like being inside a jellyfish. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "8572209c-8add-4c34-915e-426d1e4b1c05",
+      "image": "assets/locations/beast-hold.jpg"
+    },
+    {
+      "id": "pulse-wall-chamber",
+      "name": "The pulse wall chamber",
+      "scenes": [
+        "s3_marrow_pulse"
+      ],
+      "dimensions_m": [
+        12,
+        10,
+        8
+      ],
+      "lighting": "The marrow lamps at 30%; the wall flickers red through blue with each separation, and skips a beat.",
+      "objects": [
+        "marrow-lamp",
+        "bone-bowl"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A small blue marrow chamber whose far wall is a thin translucent membrane, a smooth round wall about 6 metres across glowing faintly red from behind as if a heartbeat is beyond it, the rest of the chamber in dim deep blue tissue with a few amber lamp growths, a smooth bone floor, intimate and lonely. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "a702f88d-c9c4-4af5-b400-7cb85ff27d54",
+      "image": "assets/locations/pulse-wall-chamber.jpg"
+    }
+  ],
+  "objects": [
+    {
+      "id": "raft",
+      "name": "The Ceremonial Raft",
+      "role": "interact",
+      "scenes": [
+        "s3_river",
+        "s3_delta",
+        "s3_heart"
+      ],
+      "size_m": [
+        3.2,
+        7.0,
+        1.8
+      ],
+      "material": "Living tissue grown into a long boat shape, ribs of ivory bone, four seats, a membrane canopy on bone hoops",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A living raft grown from soft red-pink tissue in the shape of a long shallow boat, ivory bone ribs along its sides, four simple seats in a row, a translucent membrane canopy stretched over curved bone hoops at the back, faint warm glow from within. Colours: warm ivory bone #E8DCC4, crimson #B3202E. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "68af12d7-478c-46a9-b0b6-52f0888d6723",
+      "image": "assets/objects/raft.jpg"
+    },
+    {
+      "id": "oar",
+      "name": "Oar",
+      "role": "interact",
+      "scenes": [
+        "s3_river",
+        "s3_delta"
+      ],
+      "size_m": [
+        0.2,
+        0.1,
+        2.4
+      ],
+      "material": "One long bone shaft, a broad leaf-shaped membrane blade, wrapped grip",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A long oar carved from a single straight ivory bone shaft with a broad flat leaf-shaped blade of stiff translucent red membrane, the grip wrapped in pale sinew cord, slightly worn. Colours: warm ivory bone #E8DCC4, crimson #B3202E. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "56727474-134e-406d-ab73-924aaaa85780",
+      "image": "assets/objects/oar.jpg"
+    },
+    {
+      "id": "counter-board",
+      "name": "Bone-counter board",
+      "role": "interact",
+      "scenes": [
+        "s3_marrow",
+        "s3_marrow_after",
+        "s3_lamps"
+      ],
+      "size_m": [
+        0.9,
+        0.35,
+        0.12
+      ],
+      "material": "Pale carved bone, two rows of six hollows and a keep at each end, tally notches cut in the rim",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A long game board carved from pale ivory bone, two rows of six round hollows with a larger oval keep at each end, all hollows empty, tally notches cut along its rim, smooth worn surface. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "3a6bcbc5-f786-4b1b-b765-777c4153e83c",
+      "image": "assets/objects/counter-board.jpg"
+    },
+    {
+      "id": "counter-piece",
+      "name": "Counter piece",
+      "role": "interact",
+      "scenes": [
+        "s3_marrow",
+        "s3_marrow_after",
+        "s3_lamps"
+      ],
+      "size_m": [
+        0.04,
+        0.04,
+        0.02
+      ],
+      "material": "Small rounded lozenge of carved ivory bone, a simple sign cut in its face",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A small rounded lozenge-shaped game counter carved from ivory bone, smooth and slightly irregular as if hand-carved, a simple spiral sign incised in its face, a faint blue tint in its pores. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c3f6c018-6d69-4290-9267-62bc5013c36d",
+      "image": "assets/objects/counter-piece.jpg"
+    },
+    {
+      "id": "board-rack",
+      "name": "Board shelf",
+      "role": "fill",
+      "scenes": [
+        "s3_marrow"
+      ],
+      "size_m": [
+        2.0,
+        0.5,
+        1.2
+      ],
+      "material": "Low shelf of grown bone, three tiers, rounded supports",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A low organic shelf grown from pale ivory bone, three shallow tiers on rounded knobbly supports, empty, smooth and weathered, faint blue mineral staining. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "02727a7f-2ba3-4b92-8a3b-50ff16796f48",
+      "image": "assets/objects/board-rack.jpg"
+    },
+    {
+      "id": "mark-stone",
+      "name": "The mark stone",
+      "role": "interact",
+      "scenes": [
+        "s3_marrow"
+      ],
+      "size_m": [
+        0.8,
+        0.6,
+        1.1
+      ],
+      "material": "Waist-high standing stone of dense ivory bone, six simple carved signs around its face",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A waist-high rounded standing stone of dense ivory bone, slightly tapered, six simple abstract signs carved around its face: a ring, a notch, a spiral, a fork, a star and a wave, its top polished by touch. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "ed4279e8-424f-42b3-b436-911a65150d28",
+      "image": "assets/objects/mark-stone.jpg"
+    },
+    {
+      "id": "sleeping-pod",
+      "name": "Sleeping alcove pod",
+      "role": "interact",
+      "scenes": [
+        "s3_marrow",
+        "s3_marrow_after",
+        "s3_lamps"
+      ],
+      "size_m": [
+        1.0,
+        2.0,
+        0.8
+      ],
+      "material": "Soft cupped bed of translucent blue marrow tissue on a bone base",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A soft cupped sleeping bed shaped like a shallow open seed pod, made of translucent glowing blue tissue resting on a base of ivory bone, a soft folded lip around its rim. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "01bed6cd-8f52-497d-8e0d-cdc81ada7d1d",
+      "image": "assets/objects/sleeping-pod.jpg"
+    },
+    {
+      "id": "marrow-lamp",
+      "name": "Marrow lamp",
+      "role": "interact",
+      "scenes": [
+        "s3_marrow",
+        "s3_recognition",
+        "s3_marrow_after",
+        "s3_marrow_pulse",
+        "s3_lamps"
+      ],
+      "size_m": [
+        0.3,
+        0.3,
+        0.9
+      ],
+      "material": "Glowing amber bulb growth on a short bone stalk, a petal-like hood that can close",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A lamp that is an organic growth: a short curved stalk of ivory bone with a round glowing warm amber bulb at its top, half-hooded by soft petal-like membrane leaves that can close over it. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "85b00840-0085-4ffe-893b-8865762bd4b6",
+      "image": "assets/objects/marrow-lamp.jpg"
+    },
+    {
+      "id": "bone-bowl",
+      "name": "Bone bowl",
+      "role": "fill",
+      "scenes": [
+        "s3_marrow",
+        "s3_marrow_after",
+        "s3_marrow_pulse",
+        "s3_lamps"
+      ],
+      "size_m": [
+        0.22,
+        0.22,
+        0.1
+      ],
+      "material": "Shallow hand-carved ivory bone bowl, worn rim",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A shallow round bowl hand-carved from ivory bone, uneven worn rim, fine grain lines, a faint blue tint inside. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "95427c08-5598-40f4-a98d-a091028e3f3e",
+      "image": "assets/objects/bone-bowl.jpg"
+    },
+    {
+      "id": "membrane-pillar",
+      "name": "Membrane pillar",
+      "role": "fill",
+      "scenes": [
+        "s3_marrow",
+        "s3_shaft"
+      ],
+      "size_m": [
+        0.8,
+        0.8,
+        3.0
+      ],
+      "material": "Soft translucent tissue column, porous, glowing blue",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. An organic column of soft translucent porous tissue, thicker at base and top, like a stalagmite of sponge-like marrow, glowing soft blue from within, gently ridged. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "b07603b7-b813-47b6-8df1-f1b9c06dc5bc",
+      "image": "assets/objects/membrane-pillar.jpg"
+    },
+    {
+      "id": "bone-blank",
+      "name": "Bone blank",
+      "role": "interact",
+      "scenes": [
+        "s3_gallery"
+      ],
+      "size_m": [
+        0.08,
+        0.05,
+        0.35
+      ],
+      "material": "Rough uncarved length of dry ivory bone with visible grain and two dark knots",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A rough uncarved length of dry ivory bone about the size of a forearm, roughly rectangular with rounded ends, visible lengthwise grain lines and two small darker knots, chalky matte surface. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "8ab0c4b8-bcec-49e1-95b5-cb42e2892c43",
+      "image": "assets/objects/bone-blank.jpg"
+    },
+    {
+      "id": "flake-pile",
+      "name": "Pile of shed flakes",
+      "role": "fill",
+      "scenes": [
+        "s3_gallery"
+      ],
+      "size_m": [
+        0.8,
+        0.8,
+        0.3
+      ],
+      "material": "Heap of thin curled pale bone flakes",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A small low heap of thin curled flakes of shed pale ivory bone, like wood shavings or birch bark curls, chalky and dry. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "aaf344bc-790a-4f10-bebc-5ff8c8bd5114",
+      "image": "assets/objects/flake-pile.jpg"
+    },
+    {
+      "id": "gathering-basket",
+      "name": "Gathering basket",
+      "role": "fill",
+      "scenes": [
+        "s3_gallery"
+      ],
+      "size_m": [
+        0.45,
+        0.35,
+        0.35
+      ],
+      "material": "Basket woven from pale sinew cord on thin bone hoops",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A round open basket woven from pale ivory sinew cord over thin curved bone hoops, a simple carry handle, empty, handmade. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "a51e5b87-b14b-4265-8d66-4bf2daa8fd21",
+      "image": "assets/objects/gathering-basket.jpg"
+    },
+    {
+      "id": "bone-shard",
+      "name": "Fallen bone shard",
+      "role": "fill",
+      "scenes": [
+        "s3_gallery"
+      ],
+      "size_m": [
+        1.2,
+        0.6,
+        0.7
+      ],
+      "material": "Large chunk of fallen ivory bone, porous broken face",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A large fallen chunk of ivory bone like a boulder, smooth weathered outer face and a porous honeycombed broken face, chalky pale colour. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "8c00848a-af08-4beb-b8a5-24bb76101e67",
+      "image": "assets/objects/bone-shard.jpg"
+    },
+    {
+      "id": "chisel",
+      "name": "Bone chisel",
+      "role": "fill",
+      "scenes": [
+        "s3_gallery"
+      ],
+      "size_m": [
+        0.03,
+        0.03,
+        0.2
+      ],
+      "material": "Short chisel of dark polished bone with a sinew-wrapped handle",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A short hand chisel made entirely of polished bone, a flat sharpened blade end darker and harder, the handle wrapped in pale sinew cord. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "f6194fc2-3030-4c50-b782-ebe0137241a6",
+      "image": "assets/objects/chisel.jpg"
+    },
+    {
+      "id": "carving-slab",
+      "name": "Carving slab",
+      "role": "fill",
+      "scenes": [
+        "s3_gallery"
+      ],
+      "size_m": [
+        1.2,
+        0.7,
+        0.6
+      ],
+      "material": "Low flat-topped slab of ivory bone, scratched worktop",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A low flat-topped work slab of ivory bone, its top scored with many fine scratch lines from carving, rounded edges, sturdy legs grown from the same bone. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "7fa0a82f-163e-4f09-bb49-b1614fc414a6",
+      "image": "assets/objects/carving-slab.jpg"
+    },
+    {
+      "id": "resonant-growth",
+      "name": "Resonant growth",
+      "role": "interact",
+      "scenes": [
+        "s3_hollow"
+      ],
+      "size_m": [
+        0.9,
+        0.9,
+        2.2
+      ],
+      "material": "Tall translucent coral-like growth of marrow tissue, hollow tubes, glows when it answers a hum",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A tall organic growth like a cluster of hollow organ pipes or tube coral made of translucent pale blue tissue, the tubes of different heights rising from a soft rounded base, glowing faintly from inside. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "b8506ca8-226a-4663-b967-52026a6c5f8b",
+      "image": "assets/objects/resonant-growth.jpg"
+    },
+    {
+      "id": "board-slab",
+      "name": "Board slab",
+      "role": "fill",
+      "scenes": [
+        "s3_hollow"
+      ],
+      "size_m": [
+        1.4,
+        0.7,
+        0.5
+      ],
+      "material": "Low carrying slab of bone with two side grips",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A low flat carrying slab of pale ivory bone, a raised rim, two rounded hand grips carved into its short ends, simple and sturdy. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "f9ac31d5-c351-445a-b094-3ad91f00635c",
+      "image": "assets/objects/board-slab.jpg"
+    },
+    {
+      "id": "elders-bench",
+      "name": "The elders' bench",
+      "role": "hero",
+      "scenes": [
+        "s3_recognition"
+      ],
+      "size_m": [
+        5.0,
+        0.9,
+        1.0
+      ],
+      "material": "Long curved bench carved from a single piece of ivory bone, seats worn smooth",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A long gently curved bench carved from one piece of ivory bone, a low back, seven seat hollows worn smooth by sitting, the surface aged with faint blue staining. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "871aca40-da40-4822-97a6-2ff4d6a7cefd",
+      "image": "assets/objects/elders-bench.jpg"
+    },
+    {
+      "id": "river-boulder",
+      "name": "Tissue boulder",
+      "role": "fill",
+      "scenes": [
+        "s3_river",
+        "s3_delta"
+      ],
+      "size_m": [
+        2.5,
+        2.0,
+        1.6
+      ],
+      "material": "Rounded boulder of soft dense red tissue, wet sheen",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A large rounded boulder of soft dense dark red tissue with a wet glossy sheen, fine surface folds like coral, smoothed by current. Colours: warm ivory bone #E8DCC4, crimson #B3202E. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "0d90f85d-0789-424e-83f2-fe7de2fbaf6a",
+      "image": "assets/objects/river-boulder.jpg"
+    },
+    {
+      "id": "gift-hook",
+      "name": "Gift: hook",
+      "role": "interact",
+      "scenes": [
+        "s3_gallery",
+        "s3_heart",
+        "s3_vessel",
+        "s3_vessel_two"
+      ],
+      "size_m": [
+        0.06,
+        0.03,
+        0.22
+      ],
+      "material": "Hand-carved ivory bone hook, a grip end with a small carved sign",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A hand-carved climbing hook of ivory bone: a straight grip with a curved hook end, slightly uneven knife facets, a small ring sign cut into the grip end. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "877361a5-49a4-41db-b831-c36cdb0380b8",
+      "image": "assets/objects/gift-hook.jpg"
+    },
+    {
+      "id": "gift-awl",
+      "name": "Gift: awl",
+      "role": "interact",
+      "scenes": [
+        "s3_gallery",
+        "s3_heart",
+        "s3_vessel",
+        "s3_vessel_two"
+      ],
+      "size_m": [
+        0.03,
+        0.03,
+        0.18
+      ],
+      "material": "Hand-carved ivory bone awl, tapered point, rounded handle",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A hand-carved awl of ivory bone: a rounded bulb handle tapering to a long fine point, visible grain and carving facets, a small star sign cut into the handle. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "9b4a4085-2883-4fd7-a4c1-d6ef1ab5539b",
+      "image": "assets/objects/gift-awl.jpg"
+    },
+    {
+      "id": "gift-comb",
+      "name": "Gift: comb",
+      "role": "interact",
+      "scenes": [
+        "s3_gallery",
+        "s3_heart",
+        "s3_vessel",
+        "s3_vessel_two"
+      ],
+      "size_m": [
+        0.12,
+        0.01,
+        0.08
+      ],
+      "material": "Hand-carved ivory bone comb, a row of uneven teeth",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A hand-carved comb of ivory bone with a curved spine and a row of slightly uneven teeth, smooth worn edges, a small wave sign cut into the spine. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "78099a37-a549-46e2-82c3-df4fdcfe9ba3",
+      "image": "assets/objects/gift-comb.jpg"
+    },
+    {
+      "id": "gift-scraper",
+      "name": "Gift: scraper",
+      "role": "interact",
+      "scenes": [
+        "s3_gallery",
+        "s3_river",
+        "s3_heart",
+        "s3_vessel",
+        "s3_vessel_two"
+      ],
+      "size_m": [
+        0.1,
+        0.02,
+        0.16
+      ],
+      "material": "Hand-carved ivory bone scraper, broad bevelled edge",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A hand-carved scraper of ivory bone: a short handle and a broad flat fan-shaped blade with a bevelled curved edge, a small fork sign cut into the handle. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c827e05a-3eb9-4d6f-83e5-9e5da69a4b97",
+      "image": "assets/objects/gift-scraper.jpg"
+    },
+    {
+      "id": "gift-flute",
+      "name": "Gift: flute",
+      "role": "interact",
+      "scenes": [
+        "s3_gallery",
+        "s3_heart",
+        "s3_vessel",
+        "s3_vessel_two"
+      ],
+      "size_m": [
+        0.03,
+        0.03,
+        0.25
+      ],
+      "material": "Hand-carved ivory bone flute, five finger holes",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A small hand-carved flute of hollow ivory bone, five round finger holes along its length, a notched mouthpiece, slightly irregular, a small spiral sign cut near the end. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "5037086b-6d41-48e8-906b-061ba8718872",
+      "image": "assets/objects/gift-flute.jpg"
+    },
+    {
+      "id": "old-carved-hook",
+      "name": "Old carved hook",
+      "role": "interact",
+      "scenes": [
+        "s3_hold",
+        "s3_hold_turn"
+      ],
+      "size_m": [
+        0.06,
+        0.03,
+        0.22
+      ],
+      "material": "An old ivory bone hook gone grey and smooth, its sign half worn away",
+      "prompt": "Stylised 3D game prop, hand-crafted fantasy, clean readable shapes. A very old hand-carved climbing hook of bone, greyed and polished smooth with age, a hairline crack along the shaft, a small carved sign almost worn away on its grip. Colours: warm ivory bone #E8DCC4, touches of mineral blue #2F5D8C. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "8731081d-e9f6-4d2a-a214-2844300e2ef8",
+      "image": "assets/objects/old-carved-hook.jpg"
+    }
+  ]
+}
