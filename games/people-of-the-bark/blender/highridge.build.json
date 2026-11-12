@@ -1,0 +1,1667 @@
+{
+  "game": "people-of-the-bark",
+  "location": "highridge",
+  "name": "Highridge, the city on the east face",
+  "reference": "assets/locations/highridge.jpg",
+  "bounds_m": [
+    0.12,
+    0.1,
+    0.3
+  ],
+  "origin": "floor centre at the foot of the bark; the bark is a vertical wall whose face is the plane y = 0.03, with its relief toward -y and the open air in front of it. Gravity runs -z, down the screen. The god camera hovers in the air at -y and looks along +y straight at the bark, so 'top-down' here means straight onto the bark, which is the ground of the view. Real metres at human scale: the people are 2 mm tall. Three terraces from z 0.165 to 0.24 hold the city; the Long Crack runs down the grooves below it; Splinterwatch is beside it to the east (+x).",
+  "materials": {
+    "bark-umber": {
+      "color": [
+        0.353,
+        0.243,
+        0.169
+      ],
+      "roughness": 0.95
+    },
+    "bark-grey": {
+      "color": [
+        0.431,
+        0.388,
+        0.341
+      ],
+      "roughness": 0.95
+    },
+    "crack-dark": {
+      "color": [
+        0.141,
+        0.094,
+        0.059
+      ],
+      "roughness": 1.0
+    },
+    "lichen-sage": {
+      "color": [
+        0.612,
+        0.686,
+        0.533
+      ],
+      "roughness": 1.0
+    },
+    "lichen-lime": {
+      "color": [
+        0.71,
+        0.784,
+        0.29
+      ],
+      "roughness": 1.0
+    },
+    "sap-amber": {
+      "color": [
+        0.851,
+        0.557,
+        0.169
+      ],
+      "roughness": 0.3,
+      "emission": 0.8
+    },
+    "splinter-pale": {
+      "color": [
+        0.659,
+        0.569,
+        0.435
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "bark-slab",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.12,
+        0.02,
+        0.3
+      ],
+      "location": [
+        0,
+        0.04,
+        0.15
+      ],
+      "material": "bark-grey"
+    },
+    {
+      "id": "ridge-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.018,
+        0.004,
+        0.155
+      ],
+      "location": [
+        -0.048,
+        0.028,
+        0.0775
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.018,
+        0.004,
+        0.155
+      ],
+      "location": [
+        -0.024,
+        0.028,
+        0.0775
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-3",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.018,
+        0.004,
+        0.155
+      ],
+      "location": [
+        0.0,
+        0.028,
+        0.0775
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-4",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.018,
+        0.004,
+        0.155
+      ],
+      "location": [
+        0.024,
+        0.028,
+        0.0775
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-5",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.018,
+        0.004,
+        0.155
+      ],
+      "location": [
+        0.048,
+        0.028,
+        0.0775
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "long-crack",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.003,
+        0.002,
+        0.155
+      ],
+      "location": [
+        -0.012,
+        0.029,
+        0.0775
+      ],
+      "material": "crack-dark",
+      "collide": false
+    },
+    {
+      "id": "terrace-road",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.12,
+        0.016,
+        0.004
+      ],
+      "location": [
+        0,
+        0.022,
+        0.163
+      ],
+      "material": "bark-grey"
+    },
+    {
+      "id": "road-crack",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.12,
+        0.004,
+        0.0006
+      ],
+      "location": [
+        0,
+        0.018,
+        0.1653
+      ],
+      "material": "crack-dark",
+      "collide": false
+    },
+    {
+      "id": "terrace-row-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.12,
+        0.008,
+        0.025
+      ],
+      "location": [
+        0,
+        0.026,
+        0.1775
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "terrace-row-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.12,
+        0.004,
+        0.025
+      ],
+      "location": [
+        0,
+        0.028,
+        0.2025
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "sanctum-knot",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        0.022,
+        0.012,
+        0.022
+      ],
+      "location": [
+        -0.04,
+        0.028,
+        0.262
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "dry-groove",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.016,
+        0.002,
+        0.014
+      ],
+      "location": [
+        0.04,
+        0.021,
+        0.172
+      ],
+      "material": "crack-dark",
+      "collide": false
+    },
+    {
+      "id": "hall-splinter",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.014,
+        0.01,
+        0.05
+      ],
+      "location": [
+        0.045,
+        0.025,
+        0.215
+      ],
+      "material": "splinter-pale"
+    },
+    {
+      "id": "tower-splinter-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.005,
+        0.005,
+        0.02
+      ],
+      "location": [
+        -0.058,
+        0.0275,
+        0.25
+      ],
+      "material": "splinter-pale",
+      "rotation_deg": [
+        0,
+        -6,
+        0
+      ]
+    },
+    {
+      "id": "tower-splinter-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.005,
+        0.005,
+        0.02
+      ],
+      "location": [
+        -0.015,
+        0.0275,
+        0.25
+      ],
+      "material": "splinter-pale",
+      "rotation_deg": [
+        0,
+        4,
+        0
+      ]
+    },
+    {
+      "id": "tower-splinter-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.005,
+        0.005,
+        0.02
+      ],
+      "location": [
+        0.02,
+        0.0275,
+        0.25
+      ],
+      "material": "splinter-pale",
+      "rotation_deg": [
+        0,
+        -3,
+        0
+      ]
+    },
+    {
+      "id": "tower-splinter-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.005,
+        0.005,
+        0.02
+      ],
+      "location": [
+        0.058,
+        0.0275,
+        0.25
+      ],
+      "material": "splinter-pale",
+      "rotation_deg": [
+        0,
+        7,
+        0
+      ]
+    },
+    {
+      "id": "lichen-patch-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.014,
+        0.0008,
+        0.02
+      ],
+      "location": [
+        -0.03,
+        0.0256,
+        0.1
+      ],
+      "material": "lichen-sage",
+      "collide": false
+    },
+    {
+      "id": "lichen-patch-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.01,
+        0.0008,
+        0.016
+      ],
+      "location": [
+        0.035,
+        0.0256,
+        0.06
+      ],
+      "material": "lichen-lime",
+      "collide": false
+    },
+    {
+      "id": "lichen-patch-high",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.016,
+        0.0008,
+        0.012
+      ],
+      "location": [
+        0.01,
+        0.0296,
+        0.28
+      ],
+      "material": "lichen-sage",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "home-1",
+      "object": "dwelling",
+      "location": [
+        -0.05,
+        0.018,
+        0.165
+      ]
+    },
+    {
+      "id": "home-2",
+      "object": "dwelling",
+      "location": [
+        -0.035,
+        0.018,
+        0.165
+      ]
+    },
+    {
+      "id": "home-3",
+      "object": "dwelling",
+      "location": [
+        -0.015,
+        0.018,
+        0.165
+      ]
+    },
+    {
+      "id": "home-4",
+      "object": "dwelling",
+      "location": [
+        0.005,
+        0.018,
+        0.165
+      ]
+    },
+    {
+      "id": "home-5",
+      "object": "dwelling",
+      "location": [
+        0.02,
+        0.018,
+        0.165
+      ]
+    },
+    {
+      "id": "home-6",
+      "object": "dwelling",
+      "location": [
+        -0.045,
+        0.024,
+        0.19
+      ]
+    },
+    {
+      "id": "home-7",
+      "object": "dwelling",
+      "location": [
+        -0.025,
+        0.024,
+        0.19
+      ]
+    },
+    {
+      "id": "home-8",
+      "object": "dwelling",
+      "location": [
+        -0.005,
+        0.024,
+        0.19
+      ]
+    },
+    {
+      "id": "home-9",
+      "object": "dwelling",
+      "location": [
+        0.015,
+        0.024,
+        0.19
+      ]
+    },
+    {
+      "id": "home-10",
+      "object": "dwelling",
+      "location": [
+        0.035,
+        0.024,
+        0.19
+      ]
+    },
+    {
+      "id": "home-11",
+      "object": "dwelling",
+      "location": [
+        -0.05,
+        0.028,
+        0.215
+      ]
+    },
+    {
+      "id": "home-pell",
+      "object": "dwelling",
+      "location": [
+        -0.03,
+        0.028,
+        0.215
+      ]
+    },
+    {
+      "id": "home-13",
+      "object": "dwelling",
+      "location": [
+        0.0,
+        0.028,
+        0.215
+      ]
+    },
+    {
+      "id": "home-14",
+      "object": "dwelling",
+      "location": [
+        0.025,
+        0.028,
+        0.215
+      ]
+    },
+    {
+      "id": "shutter-1",
+      "object": "window-shutter",
+      "location": [
+        -0.0488,
+        0.0158,
+        0.1692
+      ],
+      "ground": false
+    },
+    {
+      "id": "shutter-2",
+      "object": "window-shutter",
+      "location": [
+        -0.0338,
+        0.0158,
+        0.1692
+      ],
+      "ground": false
+    },
+    {
+      "id": "shutter-3",
+      "object": "window-shutter",
+      "location": [
+        -0.0138,
+        0.0158,
+        0.1692
+      ],
+      "ground": false
+    },
+    {
+      "id": "shutter-4",
+      "object": "window-shutter",
+      "location": [
+        0.0062,
+        0.0158,
+        0.1692
+      ],
+      "ground": false
+    },
+    {
+      "id": "shutter-5",
+      "object": "window-shutter",
+      "location": [
+        0.0212,
+        0.0158,
+        0.1692
+      ],
+      "ground": false
+    },
+    {
+      "id": "shutter-6",
+      "object": "window-shutter",
+      "location": [
+        -0.0438,
+        0.0218,
+        0.1942
+      ],
+      "ground": false
+    },
+    {
+      "id": "shutter-7",
+      "object": "window-shutter",
+      "location": [
+        -0.0238,
+        0.0218,
+        0.1942
+      ],
+      "ground": false
+    },
+    {
+      "id": "shutter-8",
+      "object": "window-shutter",
+      "location": [
+        -0.0038,
+        0.0218,
+        0.1942
+      ],
+      "ground": false
+    },
+    {
+      "id": "knot-sanctum",
+      "object": "knot-sanctum",
+      "location": [
+        -0.04,
+        0.02,
+        0.262
+      ],
+      "ground": false
+    },
+    {
+      "id": "war-hall",
+      "object": "war-hall",
+      "location": [
+        0.045,
+        0.025,
+        0.24
+      ]
+    },
+    {
+      "id": "record-hall",
+      "object": "record-hall",
+      "location": [
+        0.04,
+        0.018,
+        0.165
+      ]
+    },
+    {
+      "id": "sap-jar",
+      "object": "sap-jar",
+      "location": [
+        -0.0065,
+        0.018,
+        0.165
+      ]
+    },
+    {
+      "id": "kite",
+      "object": "twigs-kite",
+      "location": [
+        -0.058,
+        0.022,
+        0.246
+      ],
+      "rotation_deg": [
+        0,
+        25,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "tap-first",
+      "object": "sap-tap",
+      "location": [
+        0.012,
+        0.028,
+        0.14
+      ],
+      "ground": false
+    },
+    {
+      "id": "tap-west",
+      "object": "sap-tap",
+      "location": [
+        -0.036,
+        0.028,
+        0.14
+      ],
+      "ground": false
+    },
+    {
+      "id": "tap-east",
+      "object": "sap-tap",
+      "location": [
+        0.036,
+        0.028,
+        0.14
+      ],
+      "ground": false
+    },
+    {
+      "id": "cup-1",
+      "object": "sap-cup",
+      "location": [
+        -0.036,
+        0.028,
+        0.12
+      ],
+      "ground": false
+    },
+    {
+      "id": "cup-2",
+      "object": "sap-cup",
+      "location": [
+        0.012,
+        0.028,
+        0.12
+      ],
+      "ground": false
+    },
+    {
+      "id": "cup-3",
+      "object": "sap-cup",
+      "location": [
+        0.036,
+        0.028,
+        0.12
+      ],
+      "ground": false
+    },
+    {
+      "id": "cup-4",
+      "object": "sap-cup",
+      "location": [
+        -0.036,
+        0.028,
+        0.1
+      ],
+      "ground": false
+    },
+    {
+      "id": "cup-5",
+      "object": "sap-cup",
+      "location": [
+        0.012,
+        0.028,
+        0.1
+      ],
+      "ground": false
+    },
+    {
+      "id": "cup-6",
+      "object": "sap-cup",
+      "location": [
+        0.036,
+        0.028,
+        0.1
+      ],
+      "ground": false
+    },
+    {
+      "id": "tower-1",
+      "object": "watchtower",
+      "location": [
+        -0.058,
+        0.0275,
+        0.26
+      ]
+    },
+    {
+      "id": "tower-2",
+      "object": "watchtower",
+      "location": [
+        -0.015,
+        0.0275,
+        0.26
+      ]
+    },
+    {
+      "id": "tower-3",
+      "object": "watchtower",
+      "location": [
+        0.02,
+        0.0275,
+        0.26
+      ]
+    },
+    {
+      "id": "tower-4",
+      "object": "watchtower",
+      "location": [
+        0.058,
+        0.0275,
+        0.26
+      ]
+    },
+    {
+      "id": "lantern-road-w",
+      "object": "lichen-lantern",
+      "location": [
+        -0.026,
+        0.018,
+        0.165
+      ]
+    },
+    {
+      "id": "lantern-road-e",
+      "object": "lichen-lantern",
+      "location": [
+        0.03,
+        0.018,
+        0.165
+      ]
+    },
+    {
+      "id": "lantern-row1-w",
+      "object": "lichen-lantern",
+      "location": [
+        -0.056,
+        0.024,
+        0.19
+      ]
+    },
+    {
+      "id": "lantern-row1-e",
+      "object": "lichen-lantern",
+      "location": [
+        0.052,
+        0.024,
+        0.19
+      ]
+    },
+    {
+      "id": "lantern-row2",
+      "object": "lichen-lantern",
+      "location": [
+        -0.016,
+        0.028,
+        0.215
+      ]
+    },
+    {
+      "id": "lantern-knot",
+      "object": "lichen-lantern",
+      "location": [
+        -0.025,
+        0.028,
+        0.24
+      ]
+    },
+    {
+      "id": "bead-1",
+      "object": "rain-bead",
+      "location": [
+        -0.036,
+        0.024,
+        0.13
+      ],
+      "ground": false
+    },
+    {
+      "id": "bead-2",
+      "object": "rain-bead",
+      "location": [
+        -0.012,
+        0.024,
+        0.122
+      ],
+      "ground": false
+    },
+    {
+      "id": "bead-3",
+      "object": "rain-bead",
+      "location": [
+        0.012,
+        0.024,
+        0.114
+      ],
+      "ground": false
+    },
+    {
+      "id": "bead-4",
+      "object": "rain-bead",
+      "location": [
+        0.036,
+        0.024,
+        0.106
+      ],
+      "ground": false
+    },
+    {
+      "id": "leaf",
+      "object": "falling-leaf",
+      "location": [
+        0.0,
+        -0.025,
+        0.21
+      ],
+      "rotation_deg": [
+        25,
+        10,
+        35
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "c1_city_dawn": {
+      "note": "Chapter 1, dawn. Wake the city (8 shutters), free Twig's kite, place the first tap; at 4:30 the Tremor shakes the bark and dust falls; click the three halls to send the institutions to their posts.",
+      "world": {
+        "color": [
+          0.25,
+          0.32,
+          0.5
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "dawn-sun",
+          "type": "SUN",
+          "location": [
+            0.3,
+            -0.3,
+            0.12
+          ],
+          "energy": 2.5,
+          "color": [
+            1.0,
+            0.78,
+            0.45
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.19
+          ]
+        },
+        {
+          "name": "glow-lantern-road-w",
+          "type": "POINT",
+          "location": [
+            -0.026,
+            0.016,
+            0.172
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-lantern-row1-w",
+          "type": "POINT",
+          "location": [
+            -0.056,
+            0.022,
+            0.197
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-lantern-row2",
+          "type": "POINT",
+          "location": [
+            -0.016,
+            0.026,
+            0.222
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.015,
+          0.19
+        ],
+        "look_at": [
+          0,
+          0.03,
+          0.19
+        ],
+        "lens_mm": 40,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.018,
+          0.165
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "tap-west",
+        "tap-east",
+        "leaf",
+        "cup-1",
+        "cup-2",
+        "cup-3",
+        "cup-4",
+        "cup-5",
+        "cup-6",
+        "tower-1",
+        "tower-2",
+        "tower-3",
+        "tower-4",
+        "bead-1",
+        "bead-2",
+        "bead-3",
+        "bead-4"
+      ],
+      "interactions": [
+        {
+          "prop": "shutter-1",
+          "verb": "Open the shutter"
+        },
+        {
+          "prop": "shutter-2",
+          "verb": "Open the shutter"
+        },
+        {
+          "prop": "shutter-3",
+          "verb": "Open the shutter"
+        },
+        {
+          "prop": "shutter-4",
+          "verb": "Open the shutter"
+        },
+        {
+          "prop": "shutter-5",
+          "verb": "Open the shutter"
+        },
+        {
+          "prop": "shutter-6",
+          "verb": "Open the shutter"
+        },
+        {
+          "prop": "shutter-7",
+          "verb": "Open the shutter"
+        },
+        {
+          "prop": "shutter-8",
+          "verb": "Open the shutter"
+        },
+        {
+          "prop": "kite",
+          "verb": "Free Twig's kite from the splinter"
+        },
+        {
+          "prop": "tap-first",
+          "verb": "Place the year's first sap tap in the glowing groove"
+        },
+        {
+          "prop": "knot-sanctum",
+          "verb": "Send the Knot to its post"
+        },
+        {
+          "prop": "record-hall",
+          "verb": "Send the Scroll House to its post"
+        },
+        {
+          "prop": "war-hall",
+          "verb": "Send the Battlements to the walls (after all three halls)",
+          "leads_to": "c1_battlements"
+        }
+      ]
+    },
+    "c1_city_year": {
+      "note": "Chapter 1 ends: the city paints the year's name on the ridge; title card 'The Endless Trunk'.",
+      "world": {
+        "color": [
+          0.6,
+          0.55,
+          0.45
+        ],
+        "strength": 0.7
+      },
+      "lights": [
+        {
+          "name": "full-dawn",
+          "type": "SUN",
+          "location": [
+            0.3,
+            -0.3,
+            0.5
+          ],
+          "energy": 4.0,
+          "color": [
+            1.0,
+            0.86,
+            0.62
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.19
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.05,
+          0.19
+        ],
+        "look_at": [
+          0,
+          0.03,
+          0.19
+        ],
+        "lens_mm": 24,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.018,
+          0.165
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "tap-west",
+        "tap-east",
+        "kite",
+        "leaf",
+        "bead-1",
+        "bead-2",
+        "bead-3",
+        "bead-4",
+        "cup-1",
+        "cup-2",
+        "cup-3",
+        "cup-4",
+        "cup-5",
+        "cup-6",
+        "tower-1",
+        "tower-2",
+        "tower-3",
+        "tower-4"
+      ],
+      "interactions": []
+    },
+    "c2_city": {
+      "note": "Spring council (10 tokens), then build: dwellings in grooves, roads along cracks, taps; the view opens downward along the Long Crack as roads are built.",
+      "world": {
+        "color": [
+          0.55,
+          0.65,
+          0.5
+        ],
+        "strength": 0.7
+      },
+      "lights": [
+        {
+          "name": "spring-sun",
+          "type": "SUN",
+          "location": [
+            0.3,
+            -0.3,
+            0.5
+          ],
+          "energy": 4.0,
+          "color": [
+            0.95,
+            0.95,
+            0.7
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.19
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.05,
+          0.19
+        ],
+        "look_at": [
+          0,
+          0.03,
+          0.19
+        ],
+        "lens_mm": 24,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.018,
+          0.165
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "kite",
+        "leaf",
+        "bead-1",
+        "bead-2",
+        "bead-3",
+        "bead-4",
+        "tower-1",
+        "tower-2",
+        "tower-3",
+        "tower-4"
+      ],
+      "interactions": [
+        {
+          "prop": "home-9",
+          "verb": "Build a dwelling in the groove"
+        },
+        {
+          "prop": "tap-west",
+          "verb": "Tap the groove"
+        },
+        {
+          "prop": "cup-1",
+          "verb": "Set a sap cup"
+        },
+        {
+          "prop": "knot-sanctum",
+          "verb": "Carve a Knot Sanctum"
+        },
+        {
+          "prop": "lantern-road-w",
+          "verb": "Send Mossa down the Long Crack",
+          "leads_to": "c2_run"
+        }
+      ]
+    },
+    "c2_rain": {
+      "note": "The Rain: beads as big as houses roll down four groove lanes for 2:30; open the six sap cups and drag people out of the bead lanes. Pull-back: a spring shower over the yard.",
+      "world": {
+        "color": [
+          0.45,
+          0.5,
+          0.55
+        ],
+        "strength": 0.7
+      },
+      "lights": [
+        {
+          "name": "rain-sky",
+          "type": "SUN",
+          "location": [
+            0.3,
+            -0.3,
+            0.5
+          ],
+          "energy": 1.5,
+          "color": [
+            0.75,
+            0.8,
+            0.85
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.19
+          ]
+        },
+        {
+          "name": "overcast",
+          "type": "AREA",
+          "location": [
+            0,
+            -0.06,
+            0.26
+          ],
+          "energy": 1.5,
+          "color": [
+            0.8,
+            0.85,
+            0.9
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.17
+          ],
+          "size": 0.12
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.05,
+          0.15
+        ],
+        "look_at": [
+          0,
+          0.03,
+          0.15
+        ],
+        "lens_mm": 24,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.018,
+          0.165
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "kite",
+        "leaf",
+        "tower-1",
+        "tower-2",
+        "tower-3",
+        "tower-4"
+      ],
+      "interactions": [
+        {
+          "prop": "cup-1",
+          "verb": "Open the sap cup"
+        },
+        {
+          "prop": "cup-2",
+          "verb": "Open the sap cup"
+        },
+        {
+          "prop": "cup-3",
+          "verb": "Open the sap cup"
+        },
+        {
+          "prop": "cup-4",
+          "verb": "Open the sap cup"
+        },
+        {
+          "prop": "cup-5",
+          "verb": "Open the sap cup"
+        },
+        {
+          "prop": "cup-6",
+          "verb": "Open the sap cup"
+        },
+        {
+          "prop": "knot-sanctum",
+          "verb": "Take the rain to Pell",
+          "leads_to": "c2_omen"
+        }
+      ]
+    },
+    "c3_city": {
+      "note": "Summer council; build watchtowers on the splinters for the windstorm and the Beetle.",
+      "world": {
+        "color": [
+          0.75,
+          0.8,
+          0.85
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "summer-sun",
+          "type": "SUN",
+          "location": [
+            0.3,
+            -0.3,
+            0.5
+          ],
+          "energy": 6.0,
+          "color": [
+            1.0,
+            0.97,
+            0.9
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.19
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.05,
+          0.19
+        ],
+        "look_at": [
+          0,
+          0.03,
+          0.19
+        ],
+        "lens_mm": 24,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.018,
+          0.165
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "kite",
+        "leaf",
+        "bead-1",
+        "bead-2",
+        "bead-3",
+        "bead-4"
+      ],
+      "interactions": [
+        {
+          "prop": "tower-1",
+          "verb": "Build a watchtower on the splinter"
+        },
+        {
+          "prop": "tower-2",
+          "verb": "Build a watchtower on the splinter"
+        },
+        {
+          "prop": "tower-3",
+          "verb": "Build a watchtower on the splinter"
+        },
+        {
+          "prop": "tower-4",
+          "verb": "Build a watchtower on the splinter"
+        },
+        {
+          "prop": "war-hall",
+          "verb": "Hold the lower cracks",
+          "leads_to": "c3_mites"
+        }
+      ]
+    },
+    "c4_city": {
+      "note": "Autumn council; at 1:00 a leaf as big as a country drifts down past the city and the light goes for 8 s. The city stops. Pull-back: leaves falling over the yard.",
+      "world": {
+        "color": [
+          0.5,
+          0.35,
+          0.25
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "autumn-sun",
+          "type": "SUN",
+          "location": [
+            0.3,
+            -0.3,
+            0.5
+          ],
+          "energy": 3.5,
+          "color": [
+            1.0,
+            0.62,
+            0.35
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.19
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.05,
+          0.19
+        ],
+        "look_at": [
+          0,
+          0.03,
+          0.19
+        ],
+        "lens_mm": 24,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.018,
+          0.165
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "kite",
+        "bead-1",
+        "bead-2",
+        "bead-3",
+        "bead-4"
+      ],
+      "interactions": [
+        {
+          "prop": "knot-sanctum",
+          "verb": "Read the leaf",
+          "leads_to": "c4_omen_leaf"
+        }
+      ]
+    },
+    "c5_city": {
+      "note": "Winter council; frost lies in the grooves like glass, sap does not flow; builders only seal and mend.",
+      "world": {
+        "color": [
+          0.6,
+          0.7,
+          0.85
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "winter-sun",
+          "type": "SUN",
+          "location": [
+            0.3,
+            -0.3,
+            0.12
+          ],
+          "energy": 2.5,
+          "color": [
+            0.85,
+            0.9,
+            1.0
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.19
+          ]
+        },
+        {
+          "name": "glow-lantern-road-w",
+          "type": "POINT",
+          "location": [
+            -0.026,
+            0.016,
+            0.172
+          ],
+          "energy": 0.02,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-lantern-row1-w",
+          "type": "POINT",
+          "location": [
+            -0.056,
+            0.022,
+            0.197
+          ],
+          "energy": 0.02,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-lantern-row2",
+          "type": "POINT",
+          "location": [
+            -0.016,
+            0.026,
+            0.222
+          ],
+          "energy": 0.02,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.05,
+          0.19
+        ],
+        "look_at": [
+          0,
+          0.03,
+          0.19
+        ],
+        "lens_mm": 24,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.018,
+          0.165
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "kite",
+        "leaf",
+        "bead-1",
+        "bead-2",
+        "bead-3",
+        "bead-4"
+      ],
+      "interactions": [
+        {
+          "prop": "home-3",
+          "verb": "Seal and mend"
+        },
+        {
+          "prop": "home-pell",
+          "verb": "Go to Pell's home",
+          "leads_to": "c5_temple"
+        }
+      ]
+    }
+  }
+}

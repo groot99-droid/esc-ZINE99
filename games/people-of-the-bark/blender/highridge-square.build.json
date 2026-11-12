@@ -1,0 +1,371 @@
+{
+  "game": "people-of-the-bark",
+  "location": "highridge-square",
+  "name": "Highridge square",
+  "reference": "assets/locations/highridge-square.jpg",
+  "bounds_m": [
+    0.04,
+    0.06,
+    0.04
+  ],
+  "origin": "floor centre at the foot of the bark; the bark is a vertical wall whose face is the plane y = 0.015, with its relief toward -y and the open air in front of it. Gravity runs -z, down the screen. The god camera hovers in the air at -y and looks along +y straight at the bark, so 'top-down' here means straight onto the bark, which is the ground of the view. Real metres at human scale: the people are 2 mm tall. The square is a level shelf of paving on top of a broad ridge (z 0.015), with the Knot's platform west, the Battlements' east and the Scroll House's back.",
+  "materials": {
+    "bark-umber": {
+      "color": [
+        0.353,
+        0.243,
+        0.169
+      ],
+      "roughness": 0.95
+    },
+    "bark-grey": {
+      "color": [
+        0.431,
+        0.388,
+        0.341
+      ],
+      "roughness": 0.95
+    },
+    "crack-dark": {
+      "color": [
+        0.141,
+        0.094,
+        0.059
+      ],
+      "roughness": 1.0
+    },
+    "lichen-sage": {
+      "color": [
+        0.612,
+        0.686,
+        0.533
+      ],
+      "roughness": 1.0
+    },
+    "lichen-lime": {
+      "color": [
+        0.71,
+        0.784,
+        0.29
+      ],
+      "roughness": 1.0
+    },
+    "paving": {
+      "color": [
+        0.659,
+        0.549,
+        0.424
+      ],
+      "roughness": 0.9
+    },
+    "frost": {
+      "color": [
+        0.867,
+        0.91,
+        0.949
+      ],
+      "roughness": 0.2
+    }
+  },
+  "blockout": [
+    {
+      "id": "bark-slab",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.04,
+        0.02,
+        0.04
+      ],
+      "location": [
+        0,
+        0.025,
+        0.02
+      ],
+      "material": "bark-grey"
+    },
+    {
+      "id": "square-ridge",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.04,
+        0.014,
+        0.014
+      ],
+      "location": [
+        0,
+        0.008,
+        0.007
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "square-paving",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        0.036,
+        0.012,
+        0.001
+      ],
+      "location": [
+        0,
+        0.008,
+        0.0145
+      ],
+      "material": "paving"
+    },
+    {
+      "id": "platform-knot",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.006,
+        0.006,
+        0.0015
+      ],
+      "location": [
+        -0.014,
+        0.009,
+        0.01575
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "platform-battlements",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.006,
+        0.006,
+        0.0015
+      ],
+      "location": [
+        0.014,
+        0.009,
+        0.01575
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "platform-scroll",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.012,
+        0.004,
+        0.0015
+      ],
+      "location": [
+        0,
+        0.012,
+        0.01575
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-west",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.008,
+        0.008,
+        0.02
+      ],
+      "location": [
+        -0.017,
+        0.013,
+        0.026
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-east",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.008,
+        0.008,
+        0.02
+      ],
+      "location": [
+        0.017,
+        0.013,
+        0.026
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "hall-west",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.005,
+        0.003,
+        0.003
+      ],
+      "location": [
+        -0.017,
+        0.0105,
+        0.0375
+      ],
+      "material": "bark-grey"
+    },
+    {
+      "id": "hall-east",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.005,
+        0.003,
+        0.003
+      ],
+      "location": [
+        0.017,
+        0.0105,
+        0.0375
+      ],
+      "material": "bark-grey"
+    },
+    {
+      "id": "frost-edge",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.036,
+        0.0006,
+        0.0004
+      ],
+      "location": [
+        0,
+        0.0022,
+        0.0152
+      ],
+      "material": "frost",
+      "collide": false
+    },
+    {
+      "id": "frost-crack",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.0015,
+        0.0006,
+        0.014
+      ],
+      "location": [
+        0.005,
+        0.0147,
+        0.03
+      ],
+      "material": "frost",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "rope",
+      "object": "balance-rope",
+      "location": [
+        0,
+        0.007,
+        0.015
+      ]
+    },
+    {
+      "id": "drum-west",
+      "object": "chant-drum",
+      "location": [
+        -0.016,
+        0.004,
+        0.015
+      ]
+    },
+    {
+      "id": "drum-east",
+      "object": "chant-drum",
+      "location": [
+        0.016,
+        0.004,
+        0.015
+      ]
+    },
+    {
+      "id": "lantern-west",
+      "object": "lichen-lantern",
+      "location": [
+        -0.016,
+        0.013,
+        0.015
+      ]
+    },
+    {
+      "id": "lantern-east",
+      "object": "lichen-lantern",
+      "location": [
+        0.016,
+        0.013,
+        0.015
+      ]
+    }
+  ],
+  "scenes": {
+    "c5_count": {
+      "note": "The Winter Count: the three institutions' heads stand on their platforms holding the Balance Rope, shown in full; the game states which institution, if any, leads.",
+      "world": {
+        "color": [
+          0.7,
+          0.75,
+          0.82
+        ],
+        "strength": 0.7
+      },
+      "lights": [
+        {
+          "name": "cold-noon",
+          "type": "SUN",
+          "location": [
+            0.05,
+            -0.1,
+            0.4
+          ],
+          "energy": 3.0,
+          "color": [
+            0.92,
+            0.95,
+            1.0
+          ],
+          "look_at": [
+            0,
+            0.015,
+            0.015
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.035,
+          0.034
+        ],
+        "look_at": [
+          0,
+          0.008,
+          0.015
+        ],
+        "lens_mm": 35,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.006999999999999999,
+          0.015
+        ],
+        "facing_deg": 0
+      },
+      "interactions": []
+    }
+  }
+}

@@ -1,0 +1,444 @@
+{
+  "game": "people-of-the-bark",
+  "location": "the-branch",
+  "name": "The Branch and the Listening Knot",
+  "reference": "assets/locations/the-branch.jpg",
+  "bounds_m": [
+    0.36,
+    0.06,
+    0.06
+  ],
+  "origin": "floor centre under the branch; the trunk face is at -x and the branch runs along +x to the Listening Knot; +y is behind the branch (the sky and the canopy). Gravity runs -z. The god camera sits at -y, rotated to the branch so it runs across the screen, and follows the party. Real metres: the walk is 35 cm long and 1 cm wide.",
+  "materials": {
+    "bark-umber": {
+      "color": [
+        0.353,
+        0.243,
+        0.169
+      ],
+      "roughness": 0.95
+    },
+    "bark-grey": {
+      "color": [
+        0.431,
+        0.388,
+        0.341
+      ],
+      "roughness": 0.95
+    },
+    "crack-dark": {
+      "color": [
+        0.141,
+        0.094,
+        0.059
+      ],
+      "roughness": 1.0
+    },
+    "lichen-sage": {
+      "color": [
+        0.612,
+        0.686,
+        0.533
+      ],
+      "roughness": 1.0
+    },
+    "lichen-lime": {
+      "color": [
+        0.71,
+        0.784,
+        0.29
+      ],
+      "roughness": 1.0
+    },
+    "sky": {
+      "color": [
+        0.612,
+        0.769,
+        0.925
+      ],
+      "roughness": 1.0
+    },
+    "copper-leaves": {
+      "color": [
+        0.69,
+        0.325,
+        0.165
+      ],
+      "roughness": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "trunk-face",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.01,
+        0.06,
+        0.06
+      ],
+      "location": [
+        -0.175,
+        0,
+        0.03
+      ],
+      "material": "bark-grey"
+    },
+    {
+      "id": "branch",
+      "shape": "cylinder",
+      "role": "terrain",
+      "size_m": [
+        0.022,
+        0.022,
+        0.33
+      ],
+      "location": [
+        -0.005,
+        0,
+        0.025
+      ],
+      "material": "bark-grey",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "listening-knot",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.04,
+        0.034,
+        0.03
+      ],
+      "location": [
+        0.13,
+        0,
+        0.035
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "lichen-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.012,
+        0.008,
+        0.0008
+      ],
+      "location": [
+        -0.13,
+        -0.002,
+        0.0363
+      ],
+      "material": "lichen-lime",
+      "collide": false
+    },
+    {
+      "id": "lichen-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.02,
+        0.008,
+        0.0008
+      ],
+      "location": [
+        -0.04,
+        -0.003,
+        0.0363
+      ],
+      "material": "lichen-lime",
+      "collide": false
+    },
+    {
+      "id": "lichen-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.01,
+        0.008,
+        0.0008
+      ],
+      "location": [
+        0.06,
+        0.002,
+        0.0363
+      ],
+      "material": "lichen-sage",
+      "collide": false
+    },
+    {
+      "id": "sway-hole-1",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.003,
+        0.001,
+        0.003
+      ],
+      "location": [
+        -0.1,
+        -0.011,
+        0.022
+      ],
+      "material": "crack-dark",
+      "collide": false
+    },
+    {
+      "id": "sway-hole-2",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.003,
+        0.001,
+        0.003
+      ],
+      "location": [
+        0.02,
+        -0.011,
+        0.02
+      ],
+      "material": "crack-dark",
+      "collide": false
+    },
+    {
+      "id": "sky-backdrop",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        3.0,
+        0.01,
+        2.0
+      ],
+      "location": [
+        0,
+        1.5,
+        0.5
+      ],
+      "material": "sky",
+      "collide": false
+    },
+    {
+      "id": "autumn-crown",
+      "shape": "sphere",
+      "role": "sky",
+      "size_m": [
+        0.6,
+        0.4,
+        0.5
+      ],
+      "location": [
+        0.5,
+        1.0,
+        0.4
+      ],
+      "material": "copper-leaves",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "silk-1",
+      "object": "silk-anchor",
+      "location": [
+        -0.12,
+        -0.004,
+        0.036
+      ]
+    },
+    {
+      "id": "silk-2",
+      "object": "silk-anchor",
+      "location": [
+        -0.06,
+        -0.004,
+        0.036
+      ]
+    },
+    {
+      "id": "silk-3",
+      "object": "silk-anchor",
+      "location": [
+        0.0,
+        -0.004,
+        0.036
+      ]
+    },
+    {
+      "id": "silk-4",
+      "object": "silk-anchor",
+      "location": [
+        0.05,
+        -0.004,
+        0.036
+      ]
+    },
+    {
+      "id": "silk-5",
+      "object": "silk-anchor",
+      "location": [
+        0.09,
+        -0.004,
+        0.036
+      ]
+    },
+    {
+      "id": "hollow-1",
+      "object": "cover-hollow",
+      "location": [
+        -0.09,
+        0.004,
+        0.036
+      ]
+    },
+    {
+      "id": "hollow-2",
+      "object": "cover-hollow",
+      "location": [
+        -0.03,
+        0.004,
+        0.036
+      ]
+    },
+    {
+      "id": "hollow-3",
+      "object": "cover-hollow",
+      "location": [
+        0.07,
+        0.004,
+        0.036
+      ]
+    },
+    {
+      "id": "hollow-knot",
+      "object": "cover-hollow",
+      "location": [
+        0.105,
+        0.004,
+        0.036
+      ]
+    }
+  ],
+  "scenes": {
+    "c4_branch": {
+      "note": "The expedition: move Mossa, Burr, Fenn and two warriors out along the Branch in stages, tie silk at five sway points, hide in hollows from the bird's four hops, pass the aphid herd, hear the five-phrase song at the Listening Knot and get back within 3 minutes.",
+      "world": {
+        "color": [
+          0.55,
+          0.72,
+          0.92
+        ],
+        "strength": 1.0
+      },
+      "lights": [
+        {
+          "name": "open-sky-sun",
+          "type": "SUN",
+          "location": [
+            0.1,
+            -0.2,
+            0.3
+          ],
+          "energy": 4.0,
+          "color": [
+            1.0,
+            0.97,
+            0.9
+          ],
+          "look_at": [
+            0,
+            0,
+            0.036
+          ]
+        },
+        {
+          "name": "sky-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            -0.05,
+            0.08
+          ],
+          "energy": 0.5,
+          "color": [
+            0.75,
+            0.85,
+            1.0
+          ],
+          "look_at": [
+            0,
+            0,
+            0.036
+          ],
+          "size": 0.2
+        }
+      ],
+      "camera": {
+        "location": [
+          -0.13,
+          -0.045,
+          0.05
+        ],
+        "look_at": [
+          -0.11,
+          0,
+          0.036
+        ],
+        "lens_mm": 35,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          -0.16,
+          0,
+          0.036
+        ],
+        "facing_deg": -90
+      },
+      "interactions": [
+        {
+          "prop": "silk-1",
+          "verb": "Tie silk at the sway point"
+        },
+        {
+          "prop": "silk-2",
+          "verb": "Tie silk at the sway point"
+        },
+        {
+          "prop": "silk-3",
+          "verb": "Tie silk at the sway point"
+        },
+        {
+          "prop": "silk-4",
+          "verb": "Tie silk at the sway point"
+        },
+        {
+          "prop": "silk-5",
+          "verb": "Tie silk at the sway point"
+        },
+        {
+          "prop": "hollow-1",
+          "verb": "Hide in the hollow"
+        },
+        {
+          "prop": "hollow-2",
+          "verb": "Hide in the hollow"
+        },
+        {
+          "prop": "hollow-3",
+          "verb": "Hide in the hollow"
+        },
+        {
+          "prop": "hollow-knot",
+          "verb": "Shelter at the Listening Knot and hear the song",
+          "leads_to": "c4_omen_song"
+        }
+      ]
+    }
+  }
+}

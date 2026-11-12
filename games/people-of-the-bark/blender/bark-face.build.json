@@ -1,0 +1,1181 @@
+{
+  "game": "people-of-the-bark",
+  "location": "bark-face",
+  "name": "The east face under the Shadow",
+  "reference": "assets/locations/bark-face.jpg",
+  "bounds_m": [
+    0.12,
+    0.1,
+    0.12
+  ],
+  "origin": "floor centre at the foot of the bark; the bark is a vertical wall whose face is the plane y = 0.03, with its relief toward -y and the open air in front of it. Gravity runs -z, down the screen. The god camera hovers in the air at -y and looks along +y straight at the bark, so 'top-down' here means straight onto the bark, which is the ground of the view. Real metres at human scale: the people are 2 mm tall. A 12 x 12 cm region: three home clusters, six knots with shelter doors, the fortified splinter (battlement walk at z 0.05) to the east.",
+  "materials": {
+    "bark-umber": {
+      "color": [
+        0.353,
+        0.243,
+        0.169
+      ],
+      "roughness": 0.95
+    },
+    "bark-grey": {
+      "color": [
+        0.431,
+        0.388,
+        0.341
+      ],
+      "roughness": 0.95
+    },
+    "crack-dark": {
+      "color": [
+        0.141,
+        0.094,
+        0.059
+      ],
+      "roughness": 1.0
+    },
+    "lichen-sage": {
+      "color": [
+        0.612,
+        0.686,
+        0.533
+      ],
+      "roughness": 1.0
+    },
+    "lichen-lime": {
+      "color": [
+        0.71,
+        0.784,
+        0.29
+      ],
+      "roughness": 1.0
+    },
+    "splinter-pale": {
+      "color": [
+        0.749,
+        0.655,
+        0.506
+      ],
+      "roughness": 0.9
+    },
+    "home-bark": {
+      "color": [
+        0.482,
+        0.416,
+        0.345
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "bark-slab",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.12,
+        0.02,
+        0.12
+      ],
+      "location": [
+        0,
+        0.04,
+        0.06
+      ],
+      "material": "bark-grey"
+    },
+    {
+      "id": "ridge-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.012,
+        0.003,
+        0.12
+      ],
+      "location": [
+        -0.05,
+        0.0285,
+        0.06
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.012,
+        0.003,
+        0.12
+      ],
+      "location": [
+        -0.03,
+        0.0285,
+        0.06
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-3",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.012,
+        0.003,
+        0.12
+      ],
+      "location": [
+        -0.01,
+        0.0285,
+        0.06
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-4",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.012,
+        0.003,
+        0.12
+      ],
+      "location": [
+        0.01,
+        0.0285,
+        0.06
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-5",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.012,
+        0.003,
+        0.12
+      ],
+      "location": [
+        0.03,
+        0.0285,
+        0.06
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-6",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.012,
+        0.003,
+        0.12
+      ],
+      "location": [
+        0.05,
+        0.0285,
+        0.06
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "knot-1",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.014,
+        0.01,
+        0.014
+      ],
+      "location": [
+        -0.045,
+        0.028,
+        0.085
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "knot-2",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.014,
+        0.01,
+        0.014
+      ],
+      "location": [
+        0.0,
+        0.028,
+        0.092
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "knot-3",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.014,
+        0.01,
+        0.014
+      ],
+      "location": [
+        0.04,
+        0.028,
+        0.085
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "knot-4",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.014,
+        0.01,
+        0.014
+      ],
+      "location": [
+        -0.05,
+        0.028,
+        0.04
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "knot-5",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.014,
+        0.01,
+        0.014
+      ],
+      "location": [
+        -0.015,
+        0.028,
+        0.032
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "knot-6",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.014,
+        0.01,
+        0.014
+      ],
+      "location": [
+        0.005,
+        0.028,
+        0.055
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "splinter",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.04,
+        0.012,
+        0.03
+      ],
+      "location": [
+        0.04,
+        0.024,
+        0.035
+      ],
+      "material": "splinter-pale"
+    },
+    {
+      "id": "homes-west",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.02,
+        0.004,
+        0.006
+      ],
+      "location": [
+        -0.025,
+        0.028,
+        0.065
+      ],
+      "material": "home-bark"
+    },
+    {
+      "id": "homes-mid",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.02,
+        0.004,
+        0.006
+      ],
+      "location": [
+        0.022,
+        0.028,
+        0.07
+      ],
+      "material": "home-bark"
+    },
+    {
+      "id": "homes-low",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.02,
+        0.004,
+        0.006
+      ],
+      "location": [
+        -0.02,
+        0.028,
+        0.015
+      ],
+      "material": "home-bark"
+    },
+    {
+      "id": "road-crack",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.11,
+        0.0015,
+        0.0015
+      ],
+      "location": [
+        0,
+        0.0265,
+        0.05
+      ],
+      "material": "crack-dark",
+      "rotation_deg": [
+        0,
+        -12,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "scroll-ledge",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.012,
+        0.008,
+        0.002
+      ],
+      "location": [
+        -0.025,
+        0.026,
+        0.077
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "lichen-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.006,
+        0.0008,
+        0.008
+      ],
+      "location": [
+        -0.035,
+        0.0266,
+        0.11
+      ],
+      "material": "lichen-lime",
+      "collide": false
+    },
+    {
+      "id": "lichen-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.008,
+        0.0008,
+        0.006
+      ],
+      "location": [
+        0.025,
+        0.0266,
+        0.02
+      ],
+      "material": "lichen-sage",
+      "collide": false
+    },
+    {
+      "id": "drum-ledge-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.008,
+        0.006,
+        0.0015
+      ],
+      "location": [
+        -0.045,
+        0.02,
+        0.0765
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "drum-ledge-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.008,
+        0.006,
+        0.0015
+      ],
+      "location": [
+        0.0,
+        0.02,
+        0.0835
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "drum-ledge-3",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.008,
+        0.006,
+        0.0015
+      ],
+      "location": [
+        0.04,
+        0.02,
+        0.0765
+      ],
+      "material": "bark-umber"
+    }
+  ],
+  "props": [
+    {
+      "id": "door-1",
+      "object": "knot-shelter-door",
+      "location": [
+        -0.045,
+        0.0225,
+        0.085
+      ],
+      "ground": false
+    },
+    {
+      "id": "door-2",
+      "object": "knot-shelter-door",
+      "location": [
+        0.0,
+        0.0225,
+        0.092
+      ],
+      "ground": false
+    },
+    {
+      "id": "door-3",
+      "object": "knot-shelter-door",
+      "location": [
+        0.04,
+        0.0225,
+        0.085
+      ],
+      "ground": false
+    },
+    {
+      "id": "door-4",
+      "object": "knot-shelter-door",
+      "location": [
+        -0.05,
+        0.0225,
+        0.04
+      ],
+      "ground": false
+    },
+    {
+      "id": "door-5",
+      "object": "knot-shelter-door",
+      "location": [
+        -0.015,
+        0.0225,
+        0.032
+      ],
+      "ground": false
+    },
+    {
+      "id": "door-6",
+      "object": "knot-shelter-door",
+      "location": [
+        0.005,
+        0.0225,
+        0.055
+      ],
+      "ground": false
+    },
+    {
+      "id": "drum-1",
+      "object": "chant-drum",
+      "location": [
+        -0.045,
+        0.02,
+        0.07725
+      ]
+    },
+    {
+      "id": "drum-2",
+      "object": "chant-drum",
+      "location": [
+        0.0,
+        0.02,
+        0.08425
+      ]
+    },
+    {
+      "id": "drum-3",
+      "object": "chant-drum",
+      "location": [
+        0.04,
+        0.02,
+        0.07725
+      ]
+    },
+    {
+      "id": "slot-1",
+      "object": "battlement-slot",
+      "location": [
+        0.0235,
+        0.02,
+        0.05
+      ]
+    },
+    {
+      "id": "slot-2",
+      "object": "battlement-slot",
+      "location": [
+        0.0303,
+        0.02,
+        0.05
+      ]
+    },
+    {
+      "id": "slot-3",
+      "object": "battlement-slot",
+      "location": [
+        0.0371,
+        0.02,
+        0.05
+      ]
+    },
+    {
+      "id": "slot-4",
+      "object": "battlement-slot",
+      "location": [
+        0.0439,
+        0.02,
+        0.05
+      ]
+    },
+    {
+      "id": "slot-5",
+      "object": "battlement-slot",
+      "location": [
+        0.0507,
+        0.02,
+        0.05
+      ]
+    },
+    {
+      "id": "slot-6",
+      "object": "battlement-slot",
+      "location": [
+        0.0575,
+        0.02,
+        0.05
+      ]
+    },
+    {
+      "id": "scroll-frame",
+      "object": "scroll-frame",
+      "location": [
+        -0.025,
+        0.026,
+        0.078
+      ]
+    },
+    {
+      "id": "lantern-1",
+      "object": "lichen-lantern",
+      "location": [
+        -0.034,
+        0.028,
+        0.068
+      ],
+      "ground": false
+    },
+    {
+      "id": "lantern-2",
+      "object": "lichen-lantern",
+      "location": [
+        0.012,
+        0.028,
+        0.073
+      ],
+      "ground": false
+    },
+    {
+      "id": "lantern-3",
+      "object": "lichen-lantern",
+      "location": [
+        -0.01,
+        0.028,
+        0.018
+      ],
+      "ground": false
+    },
+    {
+      "id": "lantern-4",
+      "object": "lichen-lantern",
+      "location": [
+        0.033,
+        0.028,
+        0.074
+      ],
+      "ground": false
+    },
+    {
+      "id": "lantern-5",
+      "object": "lichen-lantern",
+      "location": [
+        -0.058,
+        0.028,
+        0.06
+      ],
+      "ground": false
+    },
+    {
+      "id": "lantern-6",
+      "object": "lichen-lantern",
+      "location": [
+        0.02,
+        0.028,
+        0.098
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "c6_shadow": {
+      "note": "The Shadow falls: the light is swallowed from the west edge (-x) to the east edge (+x) in 40 s; the people panic, the priests chant, the warriors prepare. Send people into the six knots. Lights are the start state; the engine sweeps the dark across.",
+      "world": {
+        "color": [
+          0.55,
+          0.6,
+          0.7
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "pale-day",
+          "type": "SUN",
+          "location": [
+            0.2,
+            -0.3,
+            0.3
+          ],
+          "energy": 3.0,
+          "color": [
+            0.9,
+            0.93,
+            1.0
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.06
+          ]
+        },
+        {
+          "name": "glow-1",
+          "type": "POINT",
+          "location": [
+            -0.034,
+            0.026,
+            0.071
+          ],
+          "energy": 0.02,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-2",
+          "type": "POINT",
+          "location": [
+            0.012,
+            0.026,
+            0.076
+          ],
+          "energy": 0.02,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-3",
+          "type": "POINT",
+          "location": [
+            -0.01,
+            0.026,
+            0.021
+          ],
+          "energy": 0.02,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-4",
+          "type": "POINT",
+          "location": [
+            0.033,
+            0.026,
+            0.077
+          ],
+          "energy": 0.02,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-5",
+          "type": "POINT",
+          "location": [
+            -0.058,
+            0.026,
+            0.063
+          ],
+          "energy": 0.02,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-6",
+          "type": "POINT",
+          "location": [
+            0.02,
+            0.026,
+            0.101
+          ],
+          "energy": 0.02,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.05,
+          0.06
+        ],
+        "look_at": [
+          0,
+          0.03,
+          0.06
+        ],
+        "lens_mm": 24,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.026,
+          0.06
+        ],
+        "facing_deg": 0
+      },
+      "interactions": [
+        {
+          "prop": "door-1",
+          "verb": "Send people into the knot"
+        },
+        {
+          "prop": "door-2",
+          "verb": "Send people into the knot"
+        },
+        {
+          "prop": "door-3",
+          "verb": "Send people into the knot"
+        },
+        {
+          "prop": "door-4",
+          "verb": "Send people into the knot"
+        },
+        {
+          "prop": "door-5",
+          "verb": "Send people into the knot"
+        },
+        {
+          "prop": "door-6",
+          "verb": "Send people into the knot"
+        }
+      ]
+    },
+    "c6_stand": {
+      "note": "Trial: under the Shadow, post the chanters at the knots, the warriors on the battlements and the scholars at the scroll; dark, lit only by lanterns, chant and steady drums.",
+      "world": {
+        "color": [
+          0.02,
+          0.03,
+          0.06
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "glow-1",
+          "type": "POINT",
+          "location": [
+            -0.034,
+            0.026,
+            0.071
+          ],
+          "energy": 0.04,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-2",
+          "type": "POINT",
+          "location": [
+            0.012,
+            0.026,
+            0.076
+          ],
+          "energy": 0.04,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-3",
+          "type": "POINT",
+          "location": [
+            -0.01,
+            0.026,
+            0.021
+          ],
+          "energy": 0.04,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-4",
+          "type": "POINT",
+          "location": [
+            0.033,
+            0.026,
+            0.077
+          ],
+          "energy": 0.04,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-5",
+          "type": "POINT",
+          "location": [
+            -0.058,
+            0.026,
+            0.063
+          ],
+          "energy": 0.04,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-6",
+          "type": "POINT",
+          "location": [
+            0.02,
+            0.026,
+            0.101
+          ],
+          "energy": 0.04,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.05,
+          0.06
+        ],
+        "look_at": [
+          0,
+          0.03,
+          0.06
+        ],
+        "lens_mm": 24,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.026,
+          0.06
+        ],
+        "facing_deg": 0
+      },
+      "interactions": [
+        {
+          "prop": "drum-1",
+          "verb": "Post the chanters at the knot"
+        },
+        {
+          "prop": "drum-2",
+          "verb": "Post the chanters at the knot"
+        },
+        {
+          "prop": "drum-3",
+          "verb": "Post the chanters at the knot"
+        },
+        {
+          "prop": "slot-1",
+          "verb": "Post a warrior on the battlement"
+        },
+        {
+          "prop": "slot-2",
+          "verb": "Post a warrior on the battlement"
+        },
+        {
+          "prop": "slot-3",
+          "verb": "Post a warrior on the battlement"
+        },
+        {
+          "prop": "slot-4",
+          "verb": "Post a warrior on the battlement"
+        },
+        {
+          "prop": "slot-5",
+          "verb": "Post a warrior on the battlement"
+        },
+        {
+          "prop": "slot-6",
+          "verb": "Post a warrior on the battlement"
+        },
+        {
+          "prop": "scroll-frame",
+          "verb": "Post the scholars at the scroll (all posts filled)",
+          "leads_to": "c6_touch"
+        }
+      ]
+    },
+    "c6_touch": {
+      "note": "The hand touches the bark: three taps and a press of the thumb into a crack; the screen shakes on each tap. Then the light returns from the east, unless the bark breaks. No hand is placed here.",
+      "world": {
+        "color": [
+          0.03,
+          0.04,
+          0.08
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "returning-light",
+          "type": "SUN",
+          "location": [
+            0.3,
+            -0.3,
+            0.3
+          ],
+          "energy": 0.8,
+          "color": [
+            0.9,
+            0.92,
+            1.0
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.06
+          ]
+        },
+        {
+          "name": "glow-1",
+          "type": "POINT",
+          "location": [
+            -0.034,
+            0.026,
+            0.071
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-2",
+          "type": "POINT",
+          "location": [
+            0.012,
+            0.026,
+            0.076
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-3",
+          "type": "POINT",
+          "location": [
+            -0.01,
+            0.026,
+            0.021
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-4",
+          "type": "POINT",
+          "location": [
+            0.033,
+            0.026,
+            0.077
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-5",
+          "type": "POINT",
+          "location": [
+            -0.058,
+            0.026,
+            0.063
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-6",
+          "type": "POINT",
+          "location": [
+            0.02,
+            0.026,
+            0.101
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.05,
+          0.06
+        ],
+        "look_at": [
+          0,
+          0.03,
+          0.06
+        ],
+        "lens_mm": 24,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.026,
+          0.06
+        ],
+        "facing_deg": 0
+      },
+      "interactions": []
+    }
+  }
+}

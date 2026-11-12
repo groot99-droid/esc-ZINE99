@@ -1,0 +1,472 @@
+{
+  "game": "people-of-the-bark",
+  "location": "first-ring-temple",
+  "name": "The First Ring temple, Knotholm",
+  "reference": "assets/locations/first-ring-temple.jpg",
+  "bounds_m": [
+    0.02,
+    0.02,
+    0.012
+  ],
+  "origin": "floor centre of the round hall carved into the knot; +y toward the saying wall and the altar, the round opening to the outside bark in the -y wall. The god camera looks in through the opening, tilted 20 degrees down into the hall. Real metres: a hall 2 cm across.",
+  "materials": {
+    "ring-wood": {
+      "color": [
+        0.541,
+        0.353,
+        0.204
+      ],
+      "roughness": 0.85
+    },
+    "knot-tan": {
+      "color": [
+        0.69,
+        0.541,
+        0.353
+      ],
+      "roughness": 0.8
+    },
+    "bark-umber": {
+      "color": [
+        0.353,
+        0.243,
+        0.169
+      ],
+      "roughness": 0.95
+    },
+    "bark-paper": {
+      "color": [
+        0.937,
+        0.894,
+        0.784
+      ],
+      "roughness": 0.9
+    },
+    "lamp-glow": {
+      "color": [
+        1.0,
+        0.604,
+        0.235
+      ],
+      "roughness": 0.4,
+      "emission": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        0.018,
+        0.018,
+        0.001
+      ],
+      "location": [
+        0,
+        0,
+        -0.0005
+      ],
+      "material": "knot-tan"
+    },
+    {
+      "id": "wall-back",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.02,
+        0.002,
+        0.012
+      ],
+      "location": [
+        0,
+        0.009,
+        0.006
+      ],
+      "material": "ring-wood"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.002,
+        0.018,
+        0.012
+      ],
+      "location": [
+        -0.009,
+        0,
+        0.006
+      ],
+      "material": "ring-wood"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.002,
+        0.018,
+        0.012
+      ],
+      "location": [
+        0.009,
+        0,
+        0.006
+      ],
+      "material": "ring-wood"
+    },
+    {
+      "id": "wall-front-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.004,
+        0.002,
+        0.012
+      ],
+      "location": [
+        -0.008,
+        -0.009,
+        0.006
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "wall-front-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.004,
+        0.002,
+        0.012
+      ],
+      "location": [
+        0.008,
+        -0.009,
+        0.006
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "wall-front-sill",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.012,
+        0.002,
+        0.002
+      ],
+      "location": [
+        0,
+        -0.009,
+        0.001
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "wall-front-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.012,
+        0.002,
+        0.003
+      ],
+      "location": [
+        0,
+        -0.009,
+        0.0105
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        0.02,
+        0.02,
+        0.001
+      ],
+      "location": [
+        0,
+        0,
+        0.0125
+      ],
+      "material": "ring-wood"
+    },
+    {
+      "id": "saying-wall",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.007,
+        0.0003,
+        0.004
+      ],
+      "location": [
+        -0.004,
+        0.0078,
+        0.0065
+      ],
+      "material": "bark-paper",
+      "collide": false
+    },
+    {
+      "id": "side-door",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.0003,
+        0.003,
+        0.005
+      ],
+      "location": [
+        -0.0079,
+        0.002,
+        0.0025
+      ],
+      "material": "bark-umber",
+      "collide": false
+    },
+    {
+      "id": "step-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.002,
+        0.003,
+        0.0006
+      ],
+      "location": [
+        -0.007,
+        0.002,
+        0.0003
+      ],
+      "material": "knot-tan"
+    },
+    {
+      "id": "step-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.0014,
+        0.003,
+        0.0006
+      ],
+      "location": [
+        -0.0073,
+        0.002,
+        0.0009
+      ],
+      "material": "knot-tan"
+    },
+    {
+      "id": "step-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.0008,
+        0.003,
+        0.0006
+      ],
+      "location": [
+        -0.0076,
+        0.002,
+        0.0015
+      ],
+      "material": "knot-tan"
+    },
+    {
+      "id": "niche-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.0004,
+        0.002,
+        0.003
+      ],
+      "location": [
+        -0.0079,
+        -0.004,
+        0.006
+      ],
+      "material": "lamp-glow",
+      "collide": false
+    },
+    {
+      "id": "niche-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.0004,
+        0.002,
+        0.003
+      ],
+      "location": [
+        0.0079,
+        0.004,
+        0.006
+      ],
+      "material": "lamp-glow",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "altar",
+      "object": "temple-altar",
+      "location": [
+        0,
+        0.004,
+        0
+      ]
+    },
+    {
+      "id": "roll",
+      "object": "roll-of-the-bark",
+      "location": [
+        0.0045,
+        -0.0005,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -15
+      ]
+    },
+    {
+      "id": "lamp-west",
+      "object": "lichen-lantern",
+      "location": [
+        -0.0068,
+        -0.004,
+        0.0065
+      ],
+      "ground": false
+    },
+    {
+      "id": "lamp-east",
+      "object": "lichen-lantern",
+      "location": [
+        0.0068,
+        0.004,
+        0.0065
+      ],
+      "ground": false
+    },
+    {
+      "id": "drum",
+      "object": "chant-drum",
+      "location": [
+        -0.0045,
+        -0.004,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "c2_temple": {
+      "note": "Inside the First Ring temple: Pell shows the saying wall and the empty Roll of the Bark; the player paints the first saying (the rain reading's Crown card) on the pale wall behind the altar.",
+      "world": {
+        "color": [
+          0.25,
+          0.15,
+          0.08
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "lamp-west",
+          "type": "POINT",
+          "location": [
+            -0.0062,
+            -0.004,
+            0.007
+          ],
+          "energy": 0.01,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.001
+        },
+        {
+          "name": "lamp-east",
+          "type": "POINT",
+          "location": [
+            0.0062,
+            0.004,
+            0.007
+          ],
+          "energy": 0.01,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.001
+        },
+        {
+          "name": "doorway",
+          "type": "AREA",
+          "location": [
+            0,
+            -0.012,
+            0.006
+          ],
+          "energy": 0.02,
+          "color": [
+            0.95,
+            0.8,
+            0.6
+          ],
+          "look_at": [
+            0,
+            0.006,
+            0.004
+          ],
+          "size": 0.008
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.014,
+          0.0098
+        ],
+        "look_at": [
+          0,
+          0.003,
+          0.0035
+        ],
+        "lens_mm": 24,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -0.006,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "interactions": [
+        {
+          "prop": "altar",
+          "verb": "Paint the first saying on the wall behind the altar",
+          "leads_to": "c2_tns"
+        },
+        {
+          "prop": "roll",
+          "verb": "Read the Roll of the Bark"
+        }
+      ]
+    }
+  }
+}
