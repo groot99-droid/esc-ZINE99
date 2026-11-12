@@ -6,7 +6,7 @@
     "per_failed_test": 20,
     "watcher_at": 100,
     "reset_each_appearance": true,
-    "watcher_rule_note": "DESIGN.md does not write the rule a watcher adds or name the way it closes. Each tablet's watcher_rule stays null until the author (or the build) writes it as {\"text\", \"closes_way\"}."
+    "watcher_rule_note": "Written by Claude at the author's request, 2026-11-12 (DESIGN.md section 11, rule 3; section 20, Answered 4); added, not the author's. At watcher_at the watcher adds watcher_rule.text to the tablet as its last rule. It closes the way the loophole stands on (closes_way is always in the solution), so the clean loophole is lost; the same plan can still be made with Break, and the watcher's rule is what it breaks."
   },
   "hints": {
     "key_word_after_failed_tests": 2,
@@ -24,7 +24,10 @@
         "fathers_things"
       ],
       "watcher": "a shaman",
-      "watcher_rule": null,
+      "watcher_rule": {
+        "text": "No hand reaches into the shrine-store but a shaman's.",
+        "closes_way": "reach_roof_gap"
+      },
       "rules": [
         {
           "n": 1,
@@ -99,7 +102,10 @@
       "loophole_flag": "loophole_hollin",
       "also_sets": [],
       "watcher": "a townsman",
-      "watcher_rule": null,
+      "watcher_rule": {
+        "text": "Every window in Hollin shows the sky the Clerk has written.",
+        "closes_way": "each_house_writes"
+      },
       "rules": [
         {
           "n": 1,
@@ -189,7 +195,10 @@
       "loophole_flag": "loophole_wake",
       "also_sets": [],
       "watcher": "a shaman",
-      "watcher_rule": null,
+      "watcher_rule": {
+        "text": "No one follows where a god has gone.",
+        "closes_way": "follow_track"
+      },
       "rules": [
         {
           "n": 1,
@@ -304,7 +313,10 @@
       "loophole_flag": "loophole_procession",
       "also_sets": [],
       "watcher": "a pilgrim",
-      "watcher_rule": null,
+      "watcher_rule": {
+        "text": "No other hand touches the Scribe's.",
+        "closes_way": "steady_hand"
+      },
       "rules": [
         {
           "n": 1,

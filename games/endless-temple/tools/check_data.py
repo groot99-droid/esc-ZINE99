@@ -287,9 +287,17 @@ def check_tablets(doc, ctx):
             problem(f"{where}: solution names unknown ways {missing}")
         if len(ways) <= len(sol):
             problem(f"{where}: needs more ways than the solution uses")
+        # DESIGN.md section 11, rule 3: at watcher_at the watcher adds one rule, and it closes the
+        # way the loophole stands on (section 20, Answered 4).
         wr = t["watcher_rule"]
-        if wr is not None and wr["closes_way"] not in ways:
+        if wr is None:
+            problem(f"{where}: watcher_rule is not written")
+        elif wr["closes_way"] not in ways:
             problem(f"{where}: watcher_rule closes unknown way '{wr['closes_way']}'")
+        elif wr["closes_way"] not in sol:
+            problem(f"{where}: watcher_rule closes '{wr['closes_way']}', which is not a way of the solution")
+        if wr is not None and wr["text"] in [r["text"] for r in t["rules"]]:
+            problem(f"{where}: watcher_rule repeats a rule already on the tablet")
     # DESIGN.md section 11: the gods' rules add "a rule with 'or' is a price".
     gods = [t for t in doc["tablets"] if t["scene"] == "g_tablet_c6"]
     if gods and not any(r.get("price") for r in gods[0]["rules"]):

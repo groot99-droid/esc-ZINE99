@@ -136,13 +136,19 @@ The structure is fixed; the text in each slot is data.
 
 | Slot | Fragment | Found in | Carrier object | Proposed text (added, replaceable) |
 | --- | --- | --- | --- | --- |
-| F1 the dark | Where | c1, `s3_abyss_dream` | The dream | The source's own opening paragraph, verbatim. The game adds only the interpretation: this is a place Elaris has stood. |
+| F1 the dark | Where | c1, `s3_abyss_dream` | The dream | The source's own opening paragraph, verbatim. The game adds only the interpretation: this is a place Elaris has stood, the dark of a book he would not leave. |
 | F2 the vow | What the post is | c3, `g_clasp_c3a` | The temple register | "Elaris Sel Marden, reader of the third gallery. Bound as keeper on the day of Keeper Maudric's death. Until his own." |
-| F3 the cost | What he did | c3, `g_clasp_c3b` | A folded letter from another reader | He lived a season in the Lantern Country as its narrator. He carried its lamp past the line its people had sworn not to cross, to see what lay beyond. "They are all in the dark now." |
+| F3 the cost | What he did | c3, `g_clasp_c3b` | A folded letter from another reader | He read the Lantern Country as its narrator for a season, and would not set the cup down. While he stayed, its story could not end, and its lamps burned down one by one. "They are all in the dark now." |
 | F4 the judgment | Who judged | c5, `g_clasp_c5` | The Wardens of the Shelves' ruling, strap-bound | The sentence: to be shelved inside the dark book, reading forever into a world with no light. |
 | F5 the mercy | Why it was better than deserved | c7, `g_clasp_c7` | Maudric's petition | "Let him keep them all, since he could not keep one." Maudric asked for this as he was dying. |
 | F6 what remains | The book itself | c8, `g_clasp_c8` | The black book | The Lantern Country, cold to the touch, mist at its edges, on the unlit shelf. |
-| F7 a name | Who paid | c8, `s3_abyss_return` | A voice in the dark, remembered | Wenna, the lamp-keeper's daughter, who told him not to go, and who kept a list of the names of the stars. One star name comes back to him. |
+| F7 a name | Who paid | c8, `s3_abyss_return` | A voice in the dark, remembered | Wenna, the lamp-keeper's daughter, who asked him to let the story end, and who kept a list of the names of the stars. One star name comes back to him. |
+
+**The reading the pack commits to** (Claude's, 2026-11-12; section 20, Answered 1). Elaris's act
+is the one the design's own systems already name: he stayed. The steep meter, the marks' "One more
+page" and The Reader Who Stayed ("he repeats his crime") all describe a reader who will not come
+out, so F3 tells that, not a second act. The lamp carried past a sworn line is cut: it made
+Elaris's crime the Rider's choice and gave the hub two pasts.
 
 **How the author drops in their own answer.** Each slot is a record in
 `data/past_pack.json`: `slot`, `carrier`, `title`, `text`, `motif`, each text marked `proposal` until the author replaces it (then `author`). The scenes,
@@ -221,7 +227,7 @@ Dialogue is sparse, as in the source: bursts of a line or two, never scenes carr
 | **Oda** (Book Three) | Added | That the old Scribe can rest | That the road will end nowhere | "His hand shakes. The road shakes with it." | City: writes a city herself. End: steadies his hand to an edge. Pen returned: walks on. |
 | **The Scribe** (Book Three) | Added | To finish before he dies | Writing the wrong city | "Ink is not wasted on what is not road." | |
 | **Keeper Maudric** | Added; dead | That the temple be kept | | Petition only: "Let him keep them all, since he could not keep one." | |
-| **Wenna** | Added; in the dark book | That the lamp be kept on its side of the line | | Remembered: "That one is called the Thread. That one, the Ewe." | Her interior life is a habit, the star list, and a refusal; she is never a prop. |
+| **Wenna** | Added; in the dark book | That the story be let end, and morning come | | Remembered: "That one is called the Thread. That one, the Ewe." | Her interior life is a habit, the star list, and a refusal; she is never a prop. |
 
 The Xandrixes' added form: dune-long, low, scaled beasts the colour of wet sand that move through
 the sand sea as whales move through water, slowly, in herds of three to seven. They leave a smooth,
@@ -421,8 +427,9 @@ Times below are for a first playthrough at normal pace. Each level lists scene i
   Scribe's hand writes the road"); steady the Scribe's hand to a cliff's edge and stop, where the
   road ends and so, by the vows, is the City (end, needs `loophole_procession`); or hand back the
   pen and walk on (pen returned).
-- **Why it is here.** It is Elaris's crime seen from outside: a reader writing into someone
-  else's story. The player chooses for Oda before the black book.
+- **Why it is here.** It is Elaris's crime seen from outside: a story that cannot end while
+  someone keeps it going, and the pull to put your own hand into it. The player chooses for Oda
+  before the black book.
 - **Flags.** `loophole_procession`, `procession_choice`, `book3_named` (city or end), `steep`
   (city +10, end −6, pen returned +4), `herbs` (lamp-ash).
 
@@ -682,8 +689,12 @@ Right: the Test stone and the Break stone.
 2. Test. Every rule is checked literally, by its words and their meanings. A rule that the plan
    breaks lights, with the word that catches it underlined in red. A plan that does not achieve
    the Want greys the Want card.
-3. A failed Test adds 20 to `tablet_scrutiny`. At 100 a watcher (a shaman, a townsman, a pilgrim)
-   adds one more rule to the tablet, which closes one way.
+3. A failed Test adds 20 to `tablet_scrutiny`. From 60 the watcher's shadow lies across the
+   tablet's edge. At 100 the watcher (a shaman, a townsman, a pilgrim) carves one more rule at the
+   foot of the tablet, and it closes the way the loophole stands on: rule-keepers who see a rule
+   tested close the gap. The clean loophole is then lost for that appearance; the same plan can
+   still be made with Break, and the watcher's rule is the one it breaks. Each tablet's watcher
+   rule is listed below and in `data/tablets.json`.
 4. A plan that achieves the Want and breaks no rule wins: the loophole flag is set.
 5. Break: at any time the player may choose a plan that breaks a rule on purpose. The broken rule
    is written to `rules_broken`, and the book goes on.
@@ -703,6 +714,8 @@ shrine-store.
 Ways (6): Enter the store; Reach through the roof-gap; Wait for dawn; Go at dusk; Claim them for
 my father's house; Ask a shaman. Solution: Claim them for my father's house + Reach through the
 roof-gap + Go at dusk. (Dawn is too late: he leaves tonight. Asking a shaman fails the Want.)
+Watcher (a shaman): "No hand reaches into the shrine-store but a shaman's." It closes Reach
+through the roof-gap.
 
 `g_tablet_c5`, the Clerk's Charter. Want: make the stuck storm move on without Pell becoming the
 Clerk.
@@ -719,7 +732,8 @@ Clerk.
 Ways (7): Write the weather in the Day-Book; Sit in the chair; Tear out the storm page; Ring the
 bell; Each house writes its own window's weather on its sill; Write in the margin; Read yesterday
 aloud. Solution: Ring the bell + Each house writes its own window. The storm cannot sit over a
-hundred skies.
+hundred skies. Watcher (a townsman): "Every window in Hollin shows the sky the Clerk has written."
+It closes Each house writes.
 
 `g_tablet_c6`, the gods' rules (hardest). Want: go where the Xandrixes go, toward the end.
 
@@ -737,7 +751,9 @@ hundred skies.
 Ways (9): Climb onto a Xandrix; Walk ahead to scout; Follow in their track; Wear the Zorlop
 leaves; Walk beside the herd (the test answers "you would be swallowed"); Carry a shed scale as a
 guide; Sleep in their track; Return by the third moon; Accept being named lost. Solution: Wear the
-Zorlop leaves + Follow in their track + Accept being named lost. The leaves, not his foot, press
+Zorlop leaves + Follow in their track + Accept being named lost. Watcher (a shaman): "No one
+follows where a god has gone." It closes Follow in their track, and with it the track prompt in
+c9 (it needs `loophole_wake`). The leaves, not his foot, press
 the track (rule 5); "or is named lost" is a cost he may pay (rule 7). The lesson the earlier
 tablets taught is that meanings matter; this one adds that a rule with "or" is a price.
 
@@ -757,6 +773,7 @@ city that is not there.
 Ways (7): Write a city myself; Steady the Scribe's hand; Write the road to the cliff's edge and
 stop; Take the pen; Turn the road back; Hand back the pen; Write a gate. Solution: Steady the
 Scribe's hand + Write the road to the edge and stop. Where the road ends is the City, by rule 6.
+Watcher (a pilgrim): "No other hand touches the Scribe's." It closes Steady the Scribe's hand.
 
 **Hints.** After two failed tests, one key word in a rule pulses. After four, a Way tile pulses.
 
@@ -869,7 +886,7 @@ hour, and nobody wound it."
 and holds on. The god does not throw him. The camera rises as it carries him past the father's
 mark, past the edge of the drawn page, into white. The game does not show the end of the desert or
 whether the clan is turned back into lizards; Xandri learns it, and does not come home to tell
-them. In the temple the title page writes itself, in a hand that is not Elaris's. Last line
+them. No ending shows the clan as lizards, and none shows the desert's end (section 20, Answered 2). In the temple the title page writes itself, in a hand that is not Elaris's. Last line
 (added): "The book named itself. Elaris let it."
 
 **The Named Book.** Final scenes: `s2_li_c9`, `g_name_c9`, `s3_last_cup`, `e_named`. Xandri rides
@@ -993,19 +1010,17 @@ are content, not state: no flag lives in them.
 | --- | --- | --- |
 | `data/past_pack.json` | The seven past slots F1 to F7 (section 5): carrier, scene, title, text, motif. F1 is the source's opening paragraph, verbatim with its vault line; F2 to F7 are the design's proposal, each marked `proposal`, for the author to replace | `data/schemas/past_pack.schema.json` |
 | `data/herbs.json` | The eight herbs (section 11) with the scene that finds each; the steep dial; the tea_hold and steep formulas; the six brews with requirement, jars and one solution | `data/schemas/herbs.schema.json` |
-| `data/tablets.json` | The four Rule Tablets: want, rules (key words and meanings, the source rule, the price rule), ways, solution, loophole flag, watcher; the scrutiny and hint numbers | `data/schemas/tablets.schema.json` |
+| `data/tablets.json` | The four Rule Tablets: want, rules (key words and meanings, the source rule, the price rule), ways, solution, loophole flag, watcher and the watcher's rule; the scrutiny and hint numbers | `data/schemas/tablets.schema.json` |
 
 `tools/check_data.py` (stdlib) checks each file against its schema and against the shared files:
 every scene, chapter and flag named exists and the scene writes what the file says it delivers;
 each brew's solution is recomputed and meets its requirement, its jars are exactly the herbs found
 before it, and every possible cup fits the `brew.*` ranges; each tablet's solution fits the plan
-row and its loophole flag is a bool the scene writes; the past slots come in revelation order, the
+row, its loophole flag is a bool the scene writes, and its watcher rule is written, is new to the
+tablet and closes a way of the solution; the past slots come in revelation order, the
 clasp scenes carry F2 to F6, at least six are certain (the endings' last-line variant needs
 `past_known` ≥ 6), and F1 matches the vault when the Pipelines-Plugin checkout sits beside this
 repository. `python tools/validate.py endless-temple` runs it.
-
-Still open in these files: each tablet's `watcher_rule` (the rule a watcher adds at scrutiny 100,
-and the way it closes) is `null`, because this design does not write it.
 
 ## 19. Build plan
 
@@ -1030,15 +1045,56 @@ and the way it closes) is `null`, because this design does not write it.
 | Two extra books dilute the sand sea | They are short (15 and 12.5 minutes of book time) and each mirrors one part of Elaris's story: the binding, the crime. |
 | The steep meter is invisible | Its signs are diegetic and escalate; the journal notes "you read on" each time. |
 
-**Questions only the author can answer.**
+**Answered** (by Claude at the author's request, 2026-11-12, from the source text; the author can overrule any of them).
 
-1. What happened to Elaris? The game proposes the Lantern Country and builds seven slots for the
-   author's own answer. Is the introduction's opening ("I stood upon the edge of the abyss") his
-   memory?
-2. Does the desert have an end, and would the Xandrixes really turn the clan back into lizards?
-   The Rider is built so the answer is never shown; if the author decides, it can be.
-3. May the two added books (Hollin and the Procession) stand on the shelves, and may the unique herb
-   be called the seer's sprig?
+1. **Elaris stayed. He read a book as its narrator and would not come out, so its story could not
+   end and its light went out; and the abyss paragraph is his memory of that book's dark.** The text
+   gives three things. His post is a sentence softened: "things had happened that had made this his
+   permanent occupation… this was an honor and a much better outcome than he deserved." The tea is
+   what makes a reader "the narrator of the book", and the only "I" in the work besides Xandri's is
+   the opening's. And the opening is a dream that wakes: it ends "For in the great darkness, no light
+   can be found…", and the next lines are sunbeams touching a face with "Eyes fast shut" until "he
+   wiped his eyes" (all `02_Novels/05_The_Endless_Temple_-_Elaris_Sel_Marden.md`, lines 28–30). A
+   narrator's "I" standing in a lightless world, dreamt by a reader who now drinks the narrator's
+   tea and is bound to "ensure that no ill fate becomes the worlds that lie within", reads as the
+   memory of a world he darkened by reading. The design held two pasts at once: the history row said
+   he stayed, F3 said he carried a lamp past a sworn line. Staying is the one its own systems
+   already name (steep, "One more page", The Reader Who Stayed, where "he repeats his crime"), so
+   the pack commits to it. Changed: F3's and F7's text, F1's interpretation card, Wenna's want, the
+   Procession's "why it is here", section 5's note on the committed reading, and
+   `data/past_pack.json` (its notice records the choice). Cut: the lamp carried past the line. Kept:
+   seven slots, swappable, every one still marked `proposal` (Claude's, not the author's); scenes,
+   flags and endings do not read the text, so the author's own answer still drops in unchanged.
+2. **Neither is answered, on purpose: the desert has no end the game shows, and no ending turns the
+   clan into lizards.** The text keeps both open. The storyteller says the desert only "seems to
+   extend on into eternity", and the father "never found the end"; the chapter's own title calls the
+   dunes "Never-Ending". The lizard threat is hearsay ("It was said that…"), and the text doubts it in
+   the same breath: "Xandri, like his father, struggled to believe that genuinely divine creatures
+   would be so callous" (line 35). The game keeps the hearsay and the doubt and settles neither: in
+   The Rider the god does not throw him and he does not come home, and the c9 ride runs off the drawn
+   page into white. Changed: one sentence in section 13 says no ending shows either. If the author
+   decides, The Rider's last panel is where it would go.
+3. **Both stand, and the herb is the seer's sprig.** The temple holds "countless worlds" (line 30) and
+   Elaris "thumbed through a series of books" (line 32), so other books belong on the shelves; the two are
+   original to the game, take no other vault work (Heartstream and People of the Bark stay their own
+   games), and each mirrors Elaris (Hollin a post held until death, the Procession a story kept from
+   ending). They also carry two of the four Rule Tablets and two of the six reading sessions, and
+   lead to the clasps that hold F4 and F5; cutting them would leave the Rule Tablet two appearances
+   and the sand sea without a mirror. The source names the herb only as "a unique
+   herb" that makes scholars "more vividly imagine, if not envision" (line 32); a jar beside seven
+   named herbs needs a name, and "seer's sprig" comes from "envision". The tin's label still quotes
+   the source line. No change; both stay listed in section 21.
+4. **Data gap: the watchers' rules.** At scrutiny 100 the watcher carves one rule that closes the way
+   the loophole stands on, because rule-keepers who see a rule tested close the gap ("They had rules
+   for everything", line 36). The plan can still be made with Break. From 60 the watcher's shadow
+   lies on the tablet's edge, so the loss is never a surprise. Shrine-store (a shaman): "No hand
+   reaches into the shrine-store but a shaman's." closes Reach through the roof-gap. Charter (a
+   townsman): "Every window in Hollin shows the sky the Clerk has written." closes Each house writes.
+   Gods' rules (a shaman): "No one follows where a god has gone." closes Follow in their track (and so
+   the c9 track prompt). Vows (a pilgrim): "No other hand touches the Scribe's." closes Steady the
+   Scribe's hand. Changed: section 11 rule 3 and each appearance, section 18, `data/tablets.json`, and
+   `tools/check_data.py`, which now requires each watcher rule to be written, new to its tablet and
+   to close a way of the solution.
 
 **Notes on the shared docs.** COLLECTION.md gives the camera as "third in the books". The direction
 for this game asks for first person while the tea holds and third as it fades; the design follows
@@ -1059,14 +1115,14 @@ Everything below is not in the author's text. The author can approve or strike e
 | 4 | Herb names and values, including the name "seer's sprig" for the source's "unique herb"; honeymoss, clove-bark, dune-vine pith, ember root, stormcress, lamp-ash | Section 11 |
 | 5 | Things from a book ending up in the reader's cup | Lore |
 | 6 | A named book rests; a book in trouble shows it on its cover (rain, ink, cold) | Lore |
-| 7 | Elaris's past: the Lantern Country, the lamp carried past the line, the Wardens of the Shelves, Keeper Maudric and his petition, Wenna and her star list, the black book, the unlit shelf | Section 5, c3 to c8 |
-| 8 | Reading the introduction's abyss paragraph as Elaris's memory | c1, c8 |
+| 7 | Elaris's past: the Lantern Country, the season he stayed in it as narrator and its lamps going out, the Wardens of the Shelves, Keeper Maudric and his petition, Wenna and her star list, the black book, the unlit shelf | Section 5, c3 to c8 |
+| 8 | Reading the introduction's abyss paragraph as Elaris's memory of the Lantern Country's dark | c1, c8 |
 | 9 | Yesterday's book (the hedgehog tale) for the Naming tutorial | c1 |
 | 10 | The shrine-store, the father's leaf-cord and waterskin, and its tablet | c2 |
 | 11 | The six packing items | c2 |
 | 12 | The noon cairns, the father's scratched mark, the father's last camp and marker pole, his journal, and his last walk | c4, c6 |
 | 13 | The Xandrixes' form (dune-long, herd, smooth track), the herd sighting, and their hum | c6, c9 |
-| 14 | All Rule Tablet rules except "We do not ride on the backs of the gods", and every word meaning | Section 11 |
+| 14 | All Rule Tablet rules except "We do not ride on the backs of the gods", every word meaning, and the four watchers' rules with the watcher's shadow | Section 11 |
 | 15 | The three fates' details: riding past the page, following the track on leaf shoes, the grown Xandri as storyteller | c9, section 13 |
 | 16 | Book Two, *The Weather-Clerk of Hollin*: Pell, Clerk Ossery, the Day-Book, the stuck storm, the Charter, the bell-loft, the three choices | c5 |
 | 17 | Book Three, *The Long Procession*: Oda, the Scribe, the masked pilgrims, the written road, the City of Answer, the vows, the three choices | c7 |

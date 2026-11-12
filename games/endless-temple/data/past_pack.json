@@ -1,6 +1,6 @@
 {
   "pack": "proposed",
-  "notice": "PROPOSAL, NOT THE AUTHOR'S. Every slot except F1's source paragraph is text the design added (DESIGN.md section 5, 'The past, in slots'; section 21, item 7). The author may replace any slot's title, text, carrier or motif and set its text_status to \"author\". Keep seven slots in this order of revelation. Scenes, flags, puzzles and endings do not read the text.",
+  "notice": "PROPOSAL, NOT THE AUTHOR'S. Every slot except F1's source paragraph is text Claude added for the design (DESIGN.md section 5, 'The past, in slots'; section 21, item 7). On 2026-11-12, at the author's request, Claude committed the pack to one reading (DESIGN.md section 20, Answered 1): Elaris stayed in a book as its narrator, so its story could not end; and F1 is his memory of that book's dark. That choice is still Claude's, and every slot stays 'proposal'. The author may replace any slot's title, text, carrier or motif and set its text_status to \"author\". Keep seven slots in this order of revelation. Scenes, flags, puzzles and endings do not read the text.",
   "source": "DESIGN.md section 5, The past, in slots",
   "revelation_order": [
     "a place",
@@ -30,7 +30,7 @@
       },
       "interpretation": {
         "status": "proposal",
-        "text": "This is a place Elaris has stood."
+        "text": "This is a place Elaris has stood: the dark of a book he would not leave."
       },
       "motif": "mist",
       "motif_status": "proposal"
@@ -60,7 +60,7 @@
       "carrier": "A folded letter from another reader",
       "missable": false,
       "title": "The cost",
-      "text": "He lived a season in the Lantern Country as its narrator. He carried its lamp past the line its people had sworn not to cross, to see what lay beyond. \"They are all in the dark now.\"",
+      "text": "He read the Lantern Country as its narrator for a season, and would not set the cup down. While he stayed, its story could not end, and its lamps burned down one by one. \"They are all in the dark now.\"",
       "text_status": "proposal",
       "motif": "lamp",
       "motif_status": "proposal"
@@ -120,7 +120,7 @@
       "carrier": "A voice in the dark, remembered",
       "missable": true,
       "title": "A name",
-      "text": "Wenna, the lamp-keeper's daughter, who told him not to go, and who kept a list of the names of the stars. One star name comes back to him.",
+      "text": "Wenna, the lamp-keeper's daughter, who asked him to let the story end, and who kept a list of the names of the stars. One star name comes back to him.",
       "text_status": "proposal",
       "voice_line": {
         "status": "proposal",
