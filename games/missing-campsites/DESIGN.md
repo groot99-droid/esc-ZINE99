@@ -122,8 +122,9 @@ the first two stand on the pitch.
 2. **Memory goes with the thing.** When a site goes, everyone outside the five friends has always
    known the campground without it. The ranger renumbers without noticing: "Numbering's always
    started at four."
-3. **Paper lags the land by one step.** Maps and the map legend keep a site for one block after the
-   land loses it. Signs stand until the end of day 2. This is why the player can catch the loss at
+3. **Paper lags the land by one step.** Maps and the map legend keep a site for at least one block
+   after the land loses it, until dusk on day 2, when the legend closes up to the five sites (section
+   12, step 4). Signs stand until the end of day 2. This is why the player can catch the loss at
    all.
 4. **Lines that name a lost thing go; numbers that only count stay.** A line in someone else's hand
    ("Site 7, the owl box") goes blank when site 7 goes. A total ("24 envelopes") stays. That is why
@@ -1076,9 +1077,22 @@ last line of Slipped Through. Subtitles for every line.
 | `data/flags.json` | Every flag, meter, counter and ledger in sections 8–13. The `anchors` ledger has fields item, weight, site, chapter. |
 | `data/endings.json` | The five endings with the conditions in section 13. |
 
-Beyond the shared schemas the game needs two small tables the engine will read from `src/`, not
-`data/`, when built: the erasure schedule (section 12) and the anchor weights (section 12). They are
-specified here so that they are not invented at build time.
+Beyond the shared schemas the game has two small tables the engine reads, each with a schema in
+`data/schemas/`:
+
+| File | Schema | Holds |
+| --- | --- | --- |
+| `data/erasure_schedule.json` | `data/schemas/erasure_schedule.schema.json` | The six steps of section 12 (0–5): the scenes that advance `erasure_step`, the sites, things, legend entries, map entries, photos, postcard lines, other hands' lines, log and objectives each step takes; the HUD counter's 16 → 13; the carrying run's post times (16 at 40 s, 17 at 70 s, 18 at 140 s, 19 at 170 s); the six postcard lines; the trace each surface keeps; Show seams. |
+| `data/anchors.json` | `data/schemas/anchors.schema.json` | The ten slots (two per site at 20–24), the Held threshold 12, the most without a person (14), and the 13 anchors of section 12 with weight, slots, unit cost, the scenes where each is had, and the flag that records it. |
+
+`tools/check_data.py` (stdlib; `tools/validate.py` runs it) checks both files against their schemas,
+against each other (the timed posts are the post anchors; the `unless` anchors exist), and against the
+shared files: every scene that writes `erasure_step` advances a step and every step's scenes write it;
+sites go from the entrance inward and all 24 go once, the last five by crossing; paper never leads the
+land and lags it by at most one step; the HUD counter matches the route; six postcard lines match
+`mother_lines_kept` 0–6; the Held threshold matches `endings.json`; the things fill exactly ten slots
+and weigh 14; each person maps to a `person_brought` value; and `hold`'s range covers the most it can
+read.
 
 ## 19. Build plan
 
