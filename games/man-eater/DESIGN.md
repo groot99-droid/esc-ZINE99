@@ -1343,7 +1343,22 @@ a backlit shape only. No body horror is shown in close-up anywhere.
 
 **One look across layers:** the same eight tokens drive all three layers. 2D uses only `ink`,
 `wall.cream`, `snow` and `print`. 1D uses `steel`, paper whites and `ink`. Desaturation by clarity
-tier is a single global post-process applied to all three.
+tier is a single global post-process applied to all three. The palette and materials are shared, while
+each 2D mode's and 1D game's drawing style differs (see Gameplay graphics).
+
+### Gameplay graphics
+
+Each 2D mode and 1D game keeps this palette but is drawn in its own graphic style, unique in the
+collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg`.
+
+| Mode or game | Layer | Graphic style | How the style serves play |
+| --- | --- | --- | --- |
+| Silhouette halls | 2D | Shadow puppetry | Black cut-outs on a lit sheet make the shadow a second body: it is taller than Fisk and is seen before he is |
+| Snow line | 2D | Aerial reconnaissance photo | An overhead print shows the whole trail at once, so the prints that stay read as evidence a patrol can follow |
+| Short Rations | 1D | Stencilled ration-issue cards | Issue stencils make the deck an allotment; a departed player's suit is stamped withdrawn and the deck shrinks |
+| The Tray | 1D | Isotype pictograms | Counted icons in rows turn each portion into a tally: eaten, pocketed, passed, left, and the body that grows |
+| The Chart | 1D | Medical graph paper | Typed axes and a printed target curve let the player see his own line keeping to schedule |
+| Floor Plan | 1D | Cyanotype blueprint | White lines on Prussian blue read as a measured plan, so the gap where the halls do not close stands out |
 
 ## 16. Audio
 
