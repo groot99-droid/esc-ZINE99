@@ -68,6 +68,11 @@ transition: `cut`, `fade`, `push-in` (3D camera moves into a surface that become
 When a scene branches, its `exit` is the default; if the scene that follows names a different
 `enter`, the following scene's `enter` wins for that branch.
 
+Each `Layer2D` mode and `Layer1D` game is drawn in its own graphic style (`docs/graphic_styles.json`).
+A game's palette and materials are shared across its layers; the style is a per-page render
+treatment (line weight, fills, texture, type), so it lives in that page's theme, not in the shared
+materials. The pictographs in `games/<slug>/pictographs/` are the reference for each theme.
+
 ### State
 
 - **Flags**: booleans and enumerations, set once by events. `ritual_book_read: true`.

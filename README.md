@@ -32,6 +32,8 @@ run on, and a validator that keeps them consistent.
 | `docs/DESIGN_TEMPLATE.md` | The 21 sections every game's design has |
 | `docs/ADAPTATIONS.md` | The first round of adaptations, which the designs build on |
 | `docs/STORYBOARDS.md` | How each game's scenes join through the three layers, panel by panel |
+| `docs/PICTOGRAPHS.md` | One procedurally drawn pictograph per 2D mode and 1D game, each in its own graphic style |
+| `docs/graphic_styles.json` | The graphic style each 2D mode and 1D game owns; no style is used twice |
 | `games/<slug>/reference/` | Four reference stills per game (Higgsfield, Soul Cinema); mood references, not final art |
 | `games/<slug>/DESIGN.md` | One game's full design |
 | `games/<slug>/data/` | That game's chapters, scenes, state and endings, as JSON |
@@ -60,6 +62,14 @@ python tools/check_storyboards.py
 
 It checks every storyboard panel in `docs/STORYBOARDS.md` against the game's `scenes.json`, and
 that each reference still sits on exactly one panel.
+
+```bash
+python tools/pictographs/build.py
+```
+
+It draws every gameplay pictograph (`games/<slug>/pictographs/*.svg`) from each game's
+`pictographs/make.py`, and regenerates `docs/PICTOGRAPHS.md` and section 7 of `docs/COLLECTION.md`
+from `docs/graphic_styles.json`. `--check` changes nothing and fails if anything is stale.
 
 ## Sources
 

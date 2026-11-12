@@ -21,6 +21,10 @@ Ten games adapted from the author's creative-writing vault. Read `README.md` for
 - **DESIGN.md and `data/` must agree.** After changing either, run `python tools/validate.py <slug>`
   and fix what it reports. Do not loosen the validator to make a game pass. After changing a
   game's scenes or `docs/STORYBOARDS.md`, run `python tools/check_storyboards.py` too.
+- **Each 2D mode and 1D game owns one graphic style** (`docs/graphic_styles.json`, shown in
+  `docs/COLLECTION.md` section 7); no style is used twice. Pictographs are drawn by code in
+  `games/<slug>/pictographs/make.py`, never by hand: change the code and run
+  `python tools/pictographs/build.py`; `--check` must pass before a commit.
 - Horror games keep a cost in every ending; victims have interior lives; graphic detail is
   suggested, never instructed. These are the vault's own craft rules.
 - Do not recreate an existing commercial game, its characters, levels or look.
