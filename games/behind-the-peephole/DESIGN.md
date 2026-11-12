@@ -1255,7 +1255,21 @@ grey, ink, baize, cork, brass; flat light; no depth.
 | Materials | Worn varnish, cloth wallpaper, brass with a thumb-polished centre, terry cloth, cream paper, carbon copy. |
 | Lighting | Practical sources only. Each room has its own lamp temperature (401 white, 402 the TV's blue, 403 a north-light daylight bulb, 404 yellow, 405 screen glow, 406 a bedside lamp with a red shade). The player learns the doors by their colour of light. |
 | Guests | Painted 2D cut-outs with a limited set of animations per guest (sit, stand, walk, hands, phone, face the door). Faces readable at lens size; never photo-real. |
-| One look | All three layers are lit by the same practical lights and share the same textures: the 2D rooms are painted over renders of the 3D room set, and the 1D pages use the same paper and brass as the office. |
+| One look | All three layers are lit by the same practical lights and share the same textures: the 2D rooms are painted over renders of the 3D room set, and the 1D pages use the same paper and brass as the office. The palette and materials are shared, while each page's drawing style differs (see Gameplay graphics). |
+
+### Gameplay graphics
+
+Each 2D mode and 1D game keeps this palette but is drawn in its own graphic style, unique in the
+collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg`.
+
+| Mode or game | Layer | Graphic style | How the style serves play |
+| --- | --- | --- | --- |
+| The eye at the hole | 2D | Fisheye gouache | Warm opaque paint inside one bowed circle, everything else black: the lens is the only lit, coloured place, and the player's attention goes where the paint is. |
+| Corridor race | 2D | Architect's technical section | The passage as a dimensioned long section: distances, door positions and the loose boards are measured facts the player plans a run against. |
+| Lockwork | 1D | Patent exploded view | Pins, springs and plug pulled apart and numbered, so the binding order and the shear line are legible as mechanism. |
+| The Statement | 1D | Carbon-copy typewriter form | A typed grid and rubber stamps: a signed statement reads as a record that will be checked and filed. |
+| Night Patience | 1D | Art deco playing cards | Gold-on-green deco cards make the deck the office's own, so the one card from another deck stands out at a glance. |
+| The Mosaic | 1D | Cork-board collage | Pinned cards and pulled thread: a taut thread is a true link and a slack one a wrong guess, seen without a word. |
 
 ## 16. Audio
 
