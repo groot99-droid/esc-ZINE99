@@ -1,0 +1,902 @@
+{
+  "game": "lira-calyx",
+  "style": "Cinematic illustrated realism with a faint ink outline pass, so the world reads as a naturalist's field plate; palette by band (Lowlands rust, ochre, bone and crystal white; Mid-Slopes moss, slate and river cyan; High Peaks violet dusk, ice blue and teal; Continuum matte black, cold white and seal red); aetheric sources are cool emissives, the core white-violet, night scenes lit by bioluminescence.",
+  "locations": [
+    {
+      "id": "shear-tunnel",
+      "name": "The shear tunnel under Peak 12",
+      "scenes": [
+        "co-tunnel",
+        "ep-tunnel",
+        "b4-collapse"
+      ],
+      "dimensions_m": [
+        60,
+        4,
+        4
+      ],
+      "lighting": "Cold open and epilogue: one hand-lamp cone in dust. Collapse: strobing white-violet core light down the tunnel.",
+      "objects": [
+        "hand-lamp",
+        "field-journal",
+        "crystal-cluster"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. A long rough-hewn mining tunnel deep under a mountain, 4 metres wide and 4 metres high, running 60 metres into darkness, its floor covered in fresh rubble and fallen rock slabs, timber and iron shoring props, a narrow fissure in the ceiling dropping fine dust, small amber crystals glinting in the walls, a vertical shaft opening at the far end. Lit only by a single cone of warm lamplight from the foreground and a faint white-violet glow from deep inside, slate and black rock, drifting dust. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "97bb1fb4-e2f2-474c-a5ce-816992f31c35",
+      "image": "assets/locations/shear-tunnel.jpg"
+    },
+    {
+      "id": "hollin-terrace",
+      "name": "Hollin Terrace",
+      "scenes": [
+        "b1-terrace",
+        "b1-terrace-night",
+        "b4-terraces",
+        "end-fire"
+      ],
+      "dimensions_m": [
+        120,
+        60,
+        30
+      ],
+      "lighting": "Day: clear morning, green and cyan. Night: lamp and river glow at the bench. Storm: storm-dark green with lightning, cracked tiers. Fire ending: ash, green light through, rubble on an 80 m slope.",
+      "objects": [
+        "strider-clicker",
+        "river-glow-meter",
+        "flood-siren",
+        "relay-beacon",
+        "specimen-shelf",
+        "folding-field-table",
+        "field-journal",
+        "threat-packet",
+        "aetheric-emitter",
+        "crystal-cluster"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. A mountainside village of three stepped stone farming terraces on a steep green slope, 120 metres wide, drystone retaining walls, timber and slate-roofed cottages, wooden water lifts with wheels and buckets climbing between tiers, a sagging rope bridge across a gorge with a glowing cyan river far below, a tall timber mast with a small instrument box on top, thin metal instrument posts, wind chimes on eaves, clumps of pale translucent crystal grass along the edges, misty peaks behind. Clear early morning light, deep moss green, slate and river-cyan glow. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "28f60a1b-500f-4f83-be91-ff615cdd9925",
+      "image": "assets/locations/hollin-terrace.jpg"
+    },
+    {
+      "id": "spore-weaver-valley",
+      "name": "The Spore-Weaver valley",
+      "scenes": [
+        "b1-valley"
+      ],
+      "dimensions_m": [
+        400,
+        200,
+        60
+      ],
+      "lighting": "Night only; the webs pulse cyan in travelling waves; nine post sockets in the floor.",
+      "objects": [
+        "photodiode-post",
+        "sampling-dial",
+        "relay-beacon"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. A broad mountain valley at night, 400 metres long, its floor of moss and boulders crossed by vast curtains of thin glowing web strung between crystalline-bark trees and rock outcrops, the strands glowing cyan with brighter pulses travelling along them, a few short metal sockets set into flat stones on the valley floor, a winding stream, dark slopes rising to both sides, a starry sky with thin cloud. Night lit by bioluminescence only, deep moss green, slate, cyan glow. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "8062bc25-8eba-4e0f-aba5-cf20f35951b3",
+      "image": "assets/locations/spore-weaver-valley.jpg"
+    },
+    {
+      "id": "storm-outpost",
+      "name": "The storm-struck outpost",
+      "scenes": [
+        "b1-outpost"
+      ],
+      "dimensions_m": [
+        40,
+        40,
+        12
+      ],
+      "lighting": "Grey ridge daylight broken every 90 s by a violet aetheric storm flash.",
+      "objects": [
+        "gravimeter",
+        "fused-glass-fragment",
+        "relay-beacon",
+        "folding-field-table"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. A small abandoned survey outpost on an exposed rocky ridge, 40 by 40 metres, two weathered stone huts with collapsed roofs, a bent metal antenna mast, scorched ground with a pool of fused glassy rock at the centre where something struck, scattered crates and a toppled fence, jagged peaks around, a churning violet storm cloud overhead lighting the scene from above. Slate grey rock, ice blue and violet light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "53d87da5-93eb-417d-9274-a29e2bebe602",
+      "image": "assets/locations/storm-outpost.jpg"
+    },
+    {
+      "id": "scorched-biome",
+      "name": "The Scorched Biome",
+      "scenes": [
+        "b2-lowlands"
+      ],
+      "dimensions_m": [
+        300,
+        150,
+        40
+      ],
+      "lighting": "Hard white sun; crystal glints; one shimmering radiation pocket in a hollow.",
+      "objects": [
+        "flux-probe",
+        "relay-beacon",
+        "crystal-cluster"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. A scorched lowland basin, 300 metres across, cracked rust and ochre earth covered in velvety faintly glowing fungal mats, outcrops of bleached bone-white rock, clusters of tall white crystals catching the sun, a shallow hollow with a faint heat shimmer, a dry riverbed, distant mesas under a hazy sky. Hard white midday sun, rust, ochre, bleached bone and crystal white. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "c416b78b-b54b-4707-bd98-1c9fab8114c1",
+      "image": "assets/locations/scorched-biome.jpg"
+    },
+    {
+      "id": "cinder-reach-archive",
+      "name": "The Cinder Reach patent archive",
+      "scenes": [
+        "b2-archive"
+      ],
+      "dimensions_m": [
+        50,
+        30,
+        10
+      ],
+      "lighting": "Dust in skylight shafts; dripping water; cool shade between the stacks.",
+      "objects": [
+        "patent-drawer-cabinet",
+        "light-table",
+        "fused-glass-fragment"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. An old abandoned records archive inside a concrete hall, 50 by 30 metres, long rows of tall grey steel plan-chest cabinets with many shallow drawers forming aisles, a central illuminated light table, cracked skylights in the high ceiling throwing shafts of sunlight through floating dust, a few clear rainwater puddles under the skylights, weathered ochre concrete walls, scattered loose papers on a clean dusty floor. Ochre and dusty grey, warm light shafts. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "946519e6-03bc-4756-9fa2-7ff7701ca9ce",
+      "image": "assets/locations/cinder-reach-archive.jpg"
+    },
+    {
+      "id": "harvester-ridge",
+      "name": "The harvester ridge",
+      "scenes": [
+        "b2-hearing"
+      ],
+      "dimensions_m": [
+        150,
+        80,
+        30
+      ],
+      "lighting": "Overcast; then dust from the failing harvester.",
+      "objects": [
+        "prototype-harvester",
+        "strain-gauge",
+        "specimen-shelf"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. An open rocky mountain ridge, 150 metres long, a simple timber speaking platform with a rail and rows of rough wooden benches for a public hearing, and at the far end a huge industrial drilling machine on steel legs anchored into the rock, cables and generators beside it, crystalline-bark trees along the slope, a deep valley falling away behind. Overcast flat light, slate, moss green and matte black machinery. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "f6a4a4ce-7246-40f0-b705-45d7540b8dd0",
+      "image": "assets/locations/harvester-ridge.jpg"
+    },
+    {
+      "id": "corporate-lab",
+      "name": "The corporate lab",
+      "scenes": [
+        "b2-lab"
+      ],
+      "dimensions_m": [
+        40,
+        25,
+        8
+      ],
+      "lighting": "After hours: clean blue-white ceiling light, dim corridors, guard lamp cones.",
+      "objects": [
+        "log-cabinet",
+        "pulse-rig",
+        "lab-console"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. A sterile two-storey research laboratory interior, matte black and cold white seamless surfaces, a glass-walled upper gallery and a stair, rows of benches with glass culture chambers holding glowing fungus under metal pulse rigs, tall black filing cabinets, a large control console against the wall, red indicator lights. After hours, clean blue-white light, matte black, cold white and seal red. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "8c2283ea-32c7-4469-8c68-ed5952c072e0",
+      "image": "assets/locations/corporate-lab.jpg"
+    },
+    {
+      "id": "storm-singing-ledge",
+      "name": "The storm-singing ledge",
+      "scenes": [
+        "b3-peakborn"
+      ],
+      "dimensions_m": [
+        60,
+        30,
+        20
+      ],
+      "lighting": "Violet dusk; moss glow; a storm brewing out of the rock.",
+      "objects": [
+        "afu-meter",
+        "field-recorder",
+        "crystal-cluster"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. A wide high-altitude stone ledge on a sheer mountain face, 60 metres long, a ring of flat sitting stones in a circle, glowing teal moss in the cracks, prayer-flag-like strips of plain cloth on poles, ice on the rock, enormous drop beyond the edge with peaks above the clouds, faint lightning flickering inside the rock face. Violet dusk, ice blue and bioluminescent teal. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "3b2818e0-edd9-40db-9eec-1baf1be998b8",
+      "image": "assets/locations/storm-singing-ledge.jpg"
+    },
+    {
+      "id": "harvest-terrace",
+      "name": "Joren's harvest terrace",
+      "scenes": [
+        "b3-midlander"
+      ],
+      "dimensions_m": [
+        100,
+        40,
+        25
+      ],
+      "lighting": "Amber harvest light; the drowned twin terrace visible across the gorge.",
+      "objects": [
+        "field-recorder",
+        "field-journal",
+        "folding-field-table"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. Standing on a long mountainside farming terrace at harvest time: in the foreground a flat terrace 100 metres long with golden grain, sheaves and baskets and a round wooden threshing floor, bounded by a drystone wall at the edge of a deep gorge. Across the gorge, on the opposite slope, a matching stone terrace with a small farmhouse half drowned under a still lake, its walls and roof just breaking the water. Green slopes, a cyan-glowing river at the bottom of the gorge, mountains beyond. Warm amber late-afternoon harvest light, moss green, slate. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "06e27125-c4ff-439b-904b-21347168330a",
+      "image": "assets/locations/harvest-terrace.jpg"
+    },
+    {
+      "id": "continuum-outpost",
+      "name": "The Continuum outpost",
+      "scenes": [
+        "b3-outpost"
+      ],
+      "dimensions_m": [
+        80,
+        60,
+        20
+      ],
+      "lighting": "Night under cold floodlights; mast hum.",
+      "objects": [
+        "log-cabinet",
+        "relay-beacon"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. A fenced high-mountain compound at night, 80 by 60 metres, matte black seamless modular buildings, a tall black relay mast with small red lights, cold white floodlights on poles throwing hard pools of light on packed snow, a gate, narrow walkways between buildings, rock and ice beyond. Matte black, cold white and seal red. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "b111fc6d-8361-4d07-a813-8a51da10ee29",
+      "image": "assets/locations/continuum-outpost.jpg"
+    },
+    {
+      "id": "subterranean-city",
+      "name": "The subterranean city and record vault",
+      "scenes": [
+        "b3-city",
+        "ep-vault",
+        "end-resilience"
+      ],
+      "dimensions_m": [
+        200,
+        60,
+        40
+      ],
+      "lighting": "City: deep teal core glow, machine breathing. Vault wing: stamp-red emergency light. Catalogue hall (Directed Resilience): even, sterile white.",
+      "objects": [
+        "coordinate-card",
+        "log-cabinet",
+        "journal-case",
+        "seal-press",
+        "aetheric-emitter"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. A vast underground city carved into a cavern, a 200 metre long gallery with tiers of stone dwellings and walkways cut into the walls, great glowing aetheric cores hanging in metal cradles giving off deep teal light, and at ground level a long record hall of tall black shelving and glass-fronted cases, pipes and machinery along the walls, mist. Deep teal glow, matte black, cold white. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "1287b6bb-f81a-4717-b587-831011cacdce",
+      "image": "assets/locations/subterranean-city.jpg"
+    },
+    {
+      "id": "peak-core",
+      "name": "The core beneath Peak 12",
+      "scenes": [
+        "b4-core"
+      ],
+      "dimensions_m": [
+        90,
+        40,
+        40
+      ],
+      "lighting": "Humming white-violet light from the crystal mass; warm amber crystals in the walls.",
+      "objects": [
+        "aetheric-emitter",
+        "board-table",
+        "crystal-cluster"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. An immense natural crystal cavern deep under a mountain, 90 metres long, dark curving rock walls studded with glowing amber crystals, at the centre a huge column of white-violet crystal humming with light, a ring of metal tripod emitters arranged around it, a flat stone platform in front, roots and cables across the floor. White-violet core light and amber crystal glow in darkness. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "6c8eb77e-e534-421b-92b1-a1754b3cc63b",
+      "image": "assets/locations/peak-core.jpg"
+    },
+    {
+      "id": "small-room",
+      "name": "The hideout and the archivist's room",
+      "scenes": [
+        "b3-hiding",
+        "end-written",
+        "end-in-time"
+      ],
+      "dimensions_m": [
+        8,
+        6,
+        3
+      ],
+      "lighting": "Hideout: one bare bulb, static. Archivist's desk: a single lamp at night. Safe room: morning light through the window.",
+      "objects": [
+        "transmitter",
+        "field-journal",
+        "hand-lamp"
+      ],
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline so the world reads like a naturalist's field plate. A small plain stone room, 8 by 6 metres, timber ceiling beams, one shuttered window, a heavy wooden writing desk with a chair, a narrow cot, a shelf of books, a radio transmitter on a side bench with a cable to the ceiling, a bare bulb hanging from the ceiling, worn plank floor. Warm single lamplight, warm paper tones, slate and brown. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "2864b135-bf15-4ccb-8a28-e71805f3fc0d",
+      "image": "assets/locations/small-room.jpg"
+    }
+  ],
+  "objects": [
+    {
+      "id": "field-journal",
+      "name": "Lira's field journal",
+      "role": "interact",
+      "scenes": [
+        "co-tunnel",
+        "b1-terrace-night",
+        "b3-midlander",
+        "b3-hiding",
+        "end-written",
+        "end-in-time",
+        "end-fire"
+      ],
+      "size_m": [
+        0.18,
+        0.04,
+        0.24
+      ],
+      "material": "Thick leather field journal, swollen with tipped-in pages, iron clasp, frayed ribbon, torn edge",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A thick weathered leather-bound field journal lying closed, dark brown cracked leather cover, swollen with tipped-in pages and pressed leaves sticking out, an iron clasp and a frayed ribbon bookmark, one torn page edge, warm paper edges. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "e22a7d4e-abeb-41c4-999e-3def65947af7",
+      "image": "assets/objects/field-journal.jpg"
+    },
+    {
+      "id": "hand-lamp",
+      "name": "Hand lamp",
+      "role": "interact",
+      "scenes": [
+        "co-tunnel",
+        "ep-tunnel",
+        "b3-hiding",
+        "end-written"
+      ],
+      "size_m": [
+        0.14,
+        0.14,
+        0.32
+      ],
+      "material": "Brass and iron hand lamp, glass chimney, bail handle, soot",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. An old brass and blackened iron hand lantern with a glass chimney and a wire bail handle, soot on the glass, dented base, unlit. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "5af595ac-2dc0-4405-a139-5838b59b4665",
+      "image": "assets/objects/hand-lamp.jpg"
+    },
+    {
+      "id": "strider-clicker",
+      "name": "Strider tally clicker",
+      "role": "interact",
+      "scenes": [
+        "b1-terrace"
+      ],
+      "size_m": [
+        0.06,
+        0.03,
+        0.08
+      ],
+      "material": "Steel hand tally counter with a thumb button and a lanyard ring",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A small mechanical hand tally counter, worn steel casing, a thumb plunger on top, a finger ring and short leather lanyard, the number wheels blank. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "b3b55a14-337b-4bca-a964-506eac240233",
+      "image": "assets/objects/strider-clicker.jpg"
+    },
+    {
+      "id": "river-glow-meter",
+      "name": "River glow meter",
+      "role": "interact",
+      "scenes": [
+        "b1-terrace"
+      ],
+      "size_m": [
+        0.25,
+        0.2,
+        1.2
+      ],
+      "material": "Brass meter with glass dial on an iron stake, cyan-tinted lens",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A field instrument on an iron stake: a round brass housing with a glass dial face and a needle, a cyan-tinted lens pointing down, weathered moss-green paint, dial marks only, no numbers. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "5dfe7ff6-aa4a-42f0-a69e-fc693c445fbd",
+      "image": "assets/objects/river-glow-meter.jpg"
+    },
+    {
+      "id": "flood-siren",
+      "name": "Flood siren with dial",
+      "role": "interact",
+      "scenes": [
+        "b1-terrace",
+        "b4-terraces"
+      ],
+      "size_m": [
+        0.6,
+        0.5,
+        2.2
+      ],
+      "material": "Hand-cranked siren horn on a timber post, iron setting dial, green paint",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A hand-cranked mechanical flood siren: a flared iron horn on top of a squat timber post, a crank handle and a large round iron setting dial on the side, chipped moss-green paint and rust. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c6160f4e-6c1c-4769-a0fd-700665b9a240",
+      "image": "assets/objects/flood-siren.jpg"
+    },
+    {
+      "id": "relay-beacon",
+      "name": "Relay beacon",
+      "role": "interact",
+      "scenes": [
+        "b1-terrace",
+        "b1-valley",
+        "b1-outpost",
+        "b2-lowlands",
+        "b3-outpost"
+      ],
+      "size_m": [
+        0.4,
+        0.4,
+        1.6
+      ],
+      "material": "Matte black sealed sensor box on a pole, small red lamp, solar slats",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A relay beacon: a sealed matte black sensor box mounted on a slim metal pole with a tripod foot, a small red lamp on top, a stubby antenna and a fold-out panel, clean seamless corporate design. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "21950df9-61f3-40a5-b0e6-fecbb77cfcb1",
+      "image": "assets/objects/relay-beacon.jpg"
+    },
+    {
+      "id": "photodiode-post",
+      "name": "Photodiode post",
+      "role": "interact",
+      "scenes": [
+        "b1-valley"
+      ],
+      "size_m": [
+        0.15,
+        0.15,
+        1.3
+      ],
+      "material": "Brass and steel stake with a glass light-sensor eye, cable coil",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A field sensor stake: a thin steel post with a brass head holding a glass light-sensor eye, a coiled cable and a pointed foot, scratched and handmade-looking. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "7ec300d0-926e-40c3-b6a2-e1ce086c9c7a",
+      "image": "assets/objects/photodiode-post.jpg"
+    },
+    {
+      "id": "sampling-dial",
+      "name": "Sampling dial",
+      "role": "interact",
+      "scenes": [
+        "b1-valley"
+      ],
+      "size_m": [
+        0.2,
+        0.12,
+        0.15
+      ],
+      "material": "Brass box with a large three-position rotary knob, leather strap",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A small brass instrument box with one large ridged rotary knob with three click positions marked by dots, a toggle switch, a leather carrying strap, worn edges. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "89773c94-7d6e-4999-97e6-468031df0074",
+      "image": "assets/objects/sampling-dial.jpg"
+    },
+    {
+      "id": "gravimeter",
+      "name": "Gravimeter on tripod",
+      "role": "interact",
+      "scenes": [
+        "b1-outpost"
+      ],
+      "size_m": [
+        0.6,
+        0.6,
+        1.4
+      ],
+      "material": "Brass cylinder with needle window on a wooden survey tripod",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A field gravimeter: a brass cylindrical instrument with a small glass needle window and levelling screws, mounted on a wooden survey tripod with brass fittings. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "4c61e76f-f121-4eb5-90b8-9704ef82c3e0",
+      "image": "assets/objects/gravimeter.jpg"
+    },
+    {
+      "id": "fused-glass-fragment",
+      "name": "Fragment in fused glass",
+      "role": "interact",
+      "scenes": [
+        "b1-outpost",
+        "b2-archive"
+      ],
+      "size_m": [
+        0.2,
+        0.15,
+        0.12
+      ],
+      "material": "Lump of dark fused glassy rock with a faceted translucent crystal shard inside, faint inner glow",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A fist-sized lump of dark fused glassy rock with a faceted translucent crystal shard embedded in it, faint pale violet inner glow, fine filament lines inside the crystal. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "880baa28-fafe-48bd-89c1-6b875f1dc1d3",
+      "image": "assets/objects/fused-glass-fragment.jpg"
+    },
+    {
+      "id": "flux-probe",
+      "name": "Flux probe",
+      "role": "interact",
+      "scenes": [
+        "b2-lowlands"
+      ],
+      "size_m": [
+        0.12,
+        0.12,
+        1.1
+      ],
+      "material": "Long steel probe rod with depth rings, brass readout head, geiger grille",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A handheld ground flux probe: a long steel rod with three engraved depth rings and a pointed tip, a brass readout head with a needle gauge and a perforated grille, rubber grip, rust-dusted. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "12f2cb40-7957-4cf3-9e10-34f6726c1290",
+      "image": "assets/objects/flux-probe.jpg"
+    },
+    {
+      "id": "strain-gauge",
+      "name": "Strain gauge clamp",
+      "role": "interact",
+      "scenes": [
+        "b2-hearing"
+      ],
+      "size_m": [
+        0.3,
+        0.12,
+        0.2
+      ],
+      "material": "Heavy steel C-clamp with a sensor block and a cable",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A heavy steel C-clamp with a screw handle holding a small brass sensor block with a needle gauge, a coiled black cable coming out of it. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c7778988-b335-40ac-8dab-806f85fe33b1",
+      "image": "assets/objects/strain-gauge.jpg"
+    },
+    {
+      "id": "patent-drawer-cabinet",
+      "name": "Patent drawer cabinet",
+      "role": "interact",
+      "scenes": [
+        "b2-archive"
+      ],
+      "size_m": [
+        1.2,
+        0.9,
+        1.4
+      ],
+      "material": "Steel plan chest of many shallow drawers, brass pulls, rust and dust",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A tall steel plan chest with many shallow wide drawers, small brass drawer pulls and blank brass label frames, one drawer half open, dusty grey paint with rust streaks. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "6b60f1f7-2491-49c2-9b8c-00cb2a785ce6",
+      "image": "assets/objects/patent-drawer-cabinet.jpg"
+    },
+    {
+      "id": "light-table",
+      "name": "Light table",
+      "role": "interact",
+      "scenes": [
+        "b2-archive"
+      ],
+      "size_m": [
+        1.4,
+        0.9,
+        1.0
+      ],
+      "material": "Steel-framed table with a frosted glass top lit from below",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A drafting light table: a steel frame on four legs with a large frosted glass top glowing softly from below, a hinged lamp arm, scuffed grey paint. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "15f1fb43-c44e-4818-9ec1-36a2fe8cf33c",
+      "image": "assets/objects/light-table.jpg"
+    },
+    {
+      "id": "log-cabinet",
+      "name": "Log cabinet",
+      "role": "interact",
+      "scenes": [
+        "b2-lab",
+        "b3-outpost",
+        "b3-city"
+      ],
+      "size_m": [
+        0.5,
+        0.6,
+        1.3
+      ],
+      "material": "Matte black seamless filing cabinet, four drawers, red indicator",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A matte black seamless four-drawer filing cabinet with recessed handles and a small red indicator light on top, clean corporate design. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "43676e68-14e4-4dbf-b9bd-a5661df3f94d",
+      "image": "assets/objects/log-cabinet.jpg"
+    },
+    {
+      "id": "pulse-rig",
+      "name": "Pulse rig",
+      "role": "interact",
+      "scenes": [
+        "b2-lab"
+      ],
+      "size_m": [
+        0.7,
+        0.5,
+        0.9
+      ],
+      "material": "Glass culture chamber of glowing fungus under a black emitter coil frame",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A laboratory pulse rig: a cylindrical glass culture chamber holding a glowing teal fungal culture, under a matte black frame with a copper emitter coil and cables, cold white base. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "8dedfe14-66f0-49d6-a668-661473c96bcc",
+      "image": "assets/objects/pulse-rig.jpg"
+    },
+    {
+      "id": "lab-console",
+      "name": "Lab console",
+      "role": "interact",
+      "scenes": [
+        "b2-lab"
+      ],
+      "size_m": [
+        1.6,
+        0.8,
+        1.3
+      ],
+      "material": "Matte black control desk with blank screens, knobs and red lights",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A matte black laboratory control console desk with two blank dark screens, rows of knobs and switches, small red lights, cold white trim. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "7208cd1a-dd86-4499-b1e3-88e3f4941c1c",
+      "image": "assets/objects/lab-console.jpg"
+    },
+    {
+      "id": "threat-packet",
+      "name": "Sealed packet",
+      "role": "interact",
+      "scenes": [
+        "b1-terrace-night"
+      ],
+      "size_m": [
+        0.24,
+        0.03,
+        0.32
+      ],
+      "material": "Brown paper packet tied with string, a red wax seal",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A thick brown paper packet tied with string, sealed with a plain round red wax seal with no emblem, creased and slightly soiled. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "cc9e23fb-ec56-4411-9ef7-4baefb8b56c3",
+      "image": "assets/objects/threat-packet.jpg"
+    },
+    {
+      "id": "field-recorder",
+      "name": "Field recorder",
+      "role": "interact",
+      "scenes": [
+        "b3-peakborn",
+        "b3-midlander"
+      ],
+      "size_m": [
+        0.25,
+        0.12,
+        0.18
+      ],
+      "material": "Portable reel-to-reel recorder in a leather case, brass fittings",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A small portable reel-to-reel field recorder in a scuffed leather case with brass corners, two reels under a clear lid, a hand microphone on a coiled cable. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "e0d47fc1-65ee-458f-a4d4-a619ecfacbe6",
+      "image": "assets/objects/field-recorder.jpg"
+    },
+    {
+      "id": "afu-meter",
+      "name": "AFU meter",
+      "role": "interact",
+      "scenes": [
+        "b3-peakborn"
+      ],
+      "size_m": [
+        0.15,
+        0.08,
+        0.2
+      ],
+      "material": "Handheld brass meter with a large needle dial and a sensor bulb",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A handheld field meter: a brass body with a large round glass dial and needle, a glass sensor bulb glowing faint teal on top, a leather wrist strap, dial marks only. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d34abcb7-7aa8-416a-8e7c-5082d6bba5d0",
+      "image": "assets/objects/afu-meter.jpg"
+    },
+    {
+      "id": "coordinate-card",
+      "name": "Misfiled coordinate card",
+      "role": "interact",
+      "scenes": [
+        "b3-city"
+      ],
+      "size_m": [
+        0.15,
+        0.005,
+        0.1
+      ],
+      "material": "Aged index card with faint pencil marks, bent corner",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A single aged index card lying flat, yellowed paper, a bent corner and a coffee-ring stain, only faint smudged pencil scribbles that cannot be read. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "0552a046-daa0-4560-8351-7256902a4e1c",
+      "image": "assets/objects/coordinate-card.jpg"
+    },
+    {
+      "id": "transmitter",
+      "name": "Radio transmitter",
+      "role": "interact",
+      "scenes": [
+        "b3-hiding"
+      ],
+      "size_m": [
+        0.5,
+        0.35,
+        0.35
+      ],
+      "material": "Steel-cased valve transmitter with dials, a hand key and a microphone",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A rugged old radio transmitter in a grey steel case with large tuning dials, toggle switches, a telegraph hand key and a desk microphone on top, dial marks only. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "f7eeaea4-e01b-42d6-8d36-8b7e685a32f2",
+      "image": "assets/objects/transmitter.jpg"
+    },
+    {
+      "id": "seal-press",
+      "name": "Seal press",
+      "role": "interact",
+      "scenes": [
+        "ep-vault",
+        "end-resilience"
+      ],
+      "size_m": [
+        0.3,
+        0.25,
+        0.4
+      ],
+      "material": "Black cast-iron embossing press with a lever and a red-lacquered base",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A heavy cast-iron embossing seal press, matte black, with a long lever arm and a round die, set on a seal-red lacquered base. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "79f2c693-b7e4-463b-95c5-8ea5084ef182",
+      "image": "assets/objects/seal-press.jpg"
+    },
+    {
+      "id": "journal-case",
+      "name": "Journal case",
+      "role": "interact",
+      "scenes": [
+        "ep-vault"
+      ],
+      "size_m": [
+        0.5,
+        0.35,
+        0.3
+      ],
+      "material": "Matte black locking document case, red clasp",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A matte black hard-shell document case with a carrying handle and a seal-red latch, clean seamless corporate design, closed. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "823fa3f4-f819-4af4-aec8-6b1601f8129c",
+      "image": "assets/objects/journal-case.jpg"
+    },
+    {
+      "id": "prototype-harvester",
+      "name": "Prototype harvester",
+      "role": "hero",
+      "scenes": [
+        "b2-hearing"
+      ],
+      "size_m": [
+        6,
+        6,
+        9
+      ],
+      "material": "Industrial drilling rig on four steel legs, black and rust, cables and pistons",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A large industrial drilling machine on four splayed steel legs with a central drill column driving down, matte black housing streaked with rust, pistons, hoses and cable reels, a small operator platform. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "3666c491-d137-4f93-a1d5-586916e6867d",
+      "image": "assets/objects/prototype-harvester.jpg"
+    },
+    {
+      "id": "aetheric-emitter",
+      "name": "Aetheric emitter",
+      "role": "hero",
+      "scenes": [
+        "b4-terraces",
+        "b4-core",
+        "b3-city"
+      ],
+      "size_m": [
+        0.8,
+        0.8,
+        1.6
+      ],
+      "material": "Brass and steel tripod emitter with a crystal lens, cables",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A field resonance emitter: a sturdy steel tripod carrying a brass drum housing with a clear crystal lens at the front, copper coils, cables and a small dial, handbuilt and dented. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "00c7424c-2c5a-41ac-af75-c22c31d5732e",
+      "image": "assets/objects/aetheric-emitter.jpg"
+    },
+    {
+      "id": "board-table",
+      "name": "Board table",
+      "role": "hero",
+      "scenes": [
+        "b4-core"
+      ],
+      "size_m": [
+        2.0,
+        1.2,
+        0.9
+      ],
+      "material": "Heavy stone-and-iron table with a carved relief map top",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A heavy low table made of a slab of slate on iron legs, its top carved into a shaded relief map of mountain peaks with small round sockets, no writing. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "cdf0c4ae-49c5-4dc8-a3db-675347823c13",
+      "image": "assets/objects/board-table.jpg"
+    },
+    {
+      "id": "specimen-shelf",
+      "name": "Specimen shelf",
+      "role": "fill",
+      "scenes": [
+        "b1-terrace",
+        "b2-hearing"
+      ],
+      "size_m": [
+        1.2,
+        0.35,
+        1.6
+      ],
+      "material": "Timber field shelf of jars, bones and pressed plants",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A free-standing weathered timber shelf unit holding glass specimen jars, pressed leaves, small bones and crystal samples, rope-tied joints, moss green paint worn away. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "f9c21be8-09f3-4f35-aba7-9bcdfba9fbda",
+      "image": "assets/objects/specimen-shelf.jpg"
+    },
+    {
+      "id": "folding-field-table",
+      "name": "Folding field table",
+      "role": "fill",
+      "scenes": [
+        "b1-terrace",
+        "b1-outpost",
+        "b3-midlander"
+      ],
+      "size_m": [
+        1.0,
+        0.6,
+        0.75
+      ],
+      "material": "Folding wooden camp table with a rust-red top and X legs",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A folding wooden camp table with crossed X legs and a worn rust-red painted top, brass hinges, empty. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "dfda36f9-fe1f-4a51-9cfd-aac633f69b4a",
+      "image": "assets/objects/folding-field-table.jpg"
+    },
+    {
+      "id": "crystal-cluster",
+      "name": "Crystal grass cluster",
+      "role": "fill",
+      "scenes": [
+        "co-tunnel",
+        "b1-terrace",
+        "b2-lowlands",
+        "b3-peakborn",
+        "b4-core"
+      ],
+      "size_m": [
+        0.8,
+        0.6,
+        0.7
+      ],
+      "material": "Clump of translucent faceted crystal blades with a soft inner glow",
+      "prompt": "Illustrated realism with a faint ink outline, like a naturalist's field plate. A clump of tall translucent faceted crystal blades growing from a small rock base, pale ice-blue with a soft inner glow, like crystalline grass. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "0a2353bd-6393-4448-a394-1affeb53d9ac",
+      "image": "assets/objects/crystal-cluster.jpg"
+    }
+  ]
+}
