@@ -1,6 +1,6 @@
 {
   "game": "wrymwretch",
-  "style": "Painterly high-fantasy concept art, ink-wash and illuminated-bestiary feel, low-to-mid poly forms with strong silhouettes, each realm keyed to its own colour pair and source light",
+  "style": "Signature bone-and-silver reliquary look: carved ivory bone and tarnished silver relief, fine black cracks, hard cool rim light, near-black starry void, cold blue-silver with each realm's colour as the single accent light. Reference: reference/14-the-veil.jpg.",
   "locations": [
     {
       "id": "sky-above-realms",
@@ -19,9 +19,9 @@
       "objects": [
         "memory-platform"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. A vast open sky high above a fantasy world: below, six realms laid out like a painted map, green forest to the west, pale cloud peaks to the north, ochre canyons to the south, a blue sea to the east, dark violet hollows below a ridge, gold-white mountains above; a single white light at the centre of the sky splitting into a gold sun-flare and a silver moon-tear; layered clouds as scale cues, horizon curving. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. A vast open sky high above a fantasy world: below, six realms laid out like a painted map, green forest to the west, pale cloud peaks to the north, ochre canyons to the south, a blue sea to the east, dark violet hollows below a ridge, gold-white mountains above; the one accent light: a single white light at the centre of the sky splitting into a gold sun-flare and a silver moon-tear; layered clouds carved as bone relief as scale cues, horizon curving. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "df40ad98-7a4e-4372-81b8-6f38fd6fe63b",
+      "job_id": "4a83cee5-a830-45e4-9ebf-28ce1d1f085e",
       "image": "assets/locations/sky-above-realms.jpg"
     },
     {
@@ -42,9 +42,9 @@
         "mossy-boulder",
         "memory-crystal"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. An ancient cedar forest glade, 120 metres across: towering cedar trunks, moss-carpeted ground with paths between ferns, a lightning-split ancient tree in the middle ground, at the far end a colossal elder-tree with roots like walls and hanging vines; moss green and amber palette, dappled afternoon sunbeams, some moss patches fading to pale grey graphite as if forgotten. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. An ancient cedar forest glade, 120 metres across: towering cedar trunks carved as ribbed bone columns, ferns of silver filigree, paths between them, a lightning-split ancient tree in the middle ground, at the far end a colossal elder-tree with roots like walls and hanging vines; moss-green and amber accent glow between the trunks, some moss patches fading to pale grey graphite as if forgotten. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "324726e4-f5c0-472a-a4f6-6c45a6b00486",
+      "job_id": "780cfc7f-509a-47ce-98fa-c0aace95bd32",
       "image": "assets/locations/western-groves.jpg"
     },
     {
@@ -64,9 +64,9 @@
         "torch-sconce",
         "memory-crystal"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. A wooden elven ranger outpost in a forest clearing, 30 by 30 metres: palisade of sharpened cedar logs, a heavy timber double gate, a raised watch platform with ladder, a longhouse with moss roof, weapon racks, a waist-high glowing green crystal on a carved stand in the yard; moss green and amber palette, torchlit dusk, forest dark beyond the walls. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. A wooden elven ranger outpost in a forest clearing, 30 by 30 metres: palisade of sharpened cedar logs, a heavy timber double gate, a raised watch platform with ladder, a longhouse with moss roof, weapon racks, a waist-high glowing green crystal on a carved stand in the yard; moss-green and amber accent light from the crystal and torches, forest dark beyond the walls. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "83d16c89-4b73-4920-b177-e279c7c089e2",
+      "job_id": "fd45192c-28f4-4e94-8c20-fa7b0c9659ee",
       "image": "assets/locations/ranger-outpost.jpg"
     },
     {
@@ -86,9 +86,9 @@
         "ward-cot",
         "memory-crystal"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. A sky-city of pale stone and silver filigree on drifting clouds: a wide balcony with slender columns overlooking other floating city islands, opening into a long airy healers' ward with two rows of low cots under tall arched windows, linen curtains moving in wind; beyond the balcony a separate flat floating rock platform 25 metres wide hanging in the clouds; pale blue and silver palette, cold diffuse cloud light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. A sky-city of pale stone and silver filigree on drifting clouds: a wide balcony with slender columns overlooking other floating city islands, opening into a long airy healers' ward with two rows of low cots under tall arched windows, linen curtains moving in wind; beyond the balcony a separate flat floating rock platform 25 metres wide hanging in the clouds; pale blue and silver accent light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "799bbb4e-3a35-4812-a453-c246a58b8e55",
+      "job_id": "3a39f788-1fb7-4487-beae-79cb9d5f5c8d",
       "image": "assets/locations/galewing-sky-city.jpg"
     },
     {
@@ -107,9 +107,9 @@
         "storm-crystal-pillar",
         "memory-crystal"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. A circular chamber 20 metres across at the top of a sky-city tower: walls of faceted pale blue crystal, a domed open oculus to a stormy sky, a raised round altar dais at the centre, ring of crystal pillars, a stone ring floor carved with wind spirals; pale blue and silver palette, lightning arcs crawling across the crystal walls. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. A circular chamber 20 metres across at the top of a sky-city tower: walls of faceted pale blue crystal, a domed open oculus to a stormy sky, a raised round altar dais at the centre, ring of crystal pillars, a stone ring floor carved with wind spirals; pale blue and silver accent light, lightning arcs crawling across the crystal walls. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "4cdb125b-7708-4a0d-8124-8ce732db89f0",
+      "job_id": "ccb9a27c-70bc-480e-8c3d-66c2bb8e4034",
       "image": "assets/locations/storm-chamber.jpg"
     },
     {
@@ -130,9 +130,9 @@
         "living-shard",
         "memory-crystal"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. A vast deserted underground city carved into a cavern, 60 metres across, completely empty and abandoned-looking: tiered stone houses and stairways cut into cavern walls studded with glowing ochre and amber gems, an empty stone plaza with a great faceted amber crystal the size of a house on a stepped plinth at the centre, its glow dim like a dying ember; at the front edge the floor drops to a lower cavern with a glowing molten fissure and walls of crystal clusters; ochre and molten orange palette. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. A vast deserted underground city carved into a cavern, 60 metres across, completely empty and abandoned-looking: tiered stone houses and stairways cut into cavern walls studded with glowing ochre and amber gems, an empty stone plaza with a great faceted amber crystal the size of a house on a stepped plinth at the centre, its glow dim like a dying ember; at the front edge the floor drops to a lower cavern with a glowing molten fissure and walls of crystal clusters; ochre and molten orange accent glow from the fissure and the crystal. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "2c2d1a05-e77d-4580-b95a-7b22d5379a84",
+      "job_id": "14c472cd-c4c6-48d1-a5ad-ed34ab27d28a",
       "image": "assets/locations/heartstone-caverns.jpg"
     },
     {
@@ -153,9 +153,9 @@
         "remembering-water-flask",
         "memory-crystal"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. An empty grey pebble beach in a sheltered bay, 60 metres long, seen from the land side: on the left two small square fishing cottages built of driftwood planks with thatched roofs and strings of pale shells hanging from the eaves, a row of six weathered carved standing stones along the waterline, a long straight stone jetty running out into a dead-calm sea whose surface is glassy and smooth like oil, dark cliffs at both ends of the bay, low overcast sky; sea blue and pearl palette, flat grey daylight, no birds, no animals. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. An empty beach of silver pebbles in a sheltered bay, 60 metres long, seen from the land side: on the left two small square fishing cottages carved as ivory bone and tarnished silver relief and strings of pale shells hanging from the eaves, a row of six weathered carved standing stones along the waterline, a long straight stone jetty running out into a dead-calm sea whose surface is glassy and smooth like oil, dark cliffs at both ends of the bay, near-black starry sky; sea blue and pearl accent light on the water, no birds, no animals. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "d2f1dacc-ddc8-4aef-9b87-9a8621eedc8a",
+      "job_id": "3ca171cd-48d4-4be3-bd61-f081ece8fb6a",
       "image": "assets/locations/tidecaller-shore.jpg"
     },
     {
@@ -174,9 +174,9 @@
         "monolith",
         "lantern-crystal"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. The deep seabed under a dark sea: a sloping rocky floor with twisted dead coral and silt dunes, falling away into darkness, and at the centre a tall weathered stone obelisk carved with worn glyphs rising from a rubble mound; sea blue and pearl palette, deep teal murk, faint shafts of light from far above, small drifting particles. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. The deep seabed under a dark sea: a sloping rocky floor with twisted dead coral and silt dunes, falling away into darkness, and at the centre a tall weathered stone obelisk carved with worn glyphs rising from a rubble mound; sea blue and pearl accent glow, near-black water, faint shafts of light from far above, small drifting particles. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "c9b75d63-96a0-44d1-9bdb-c7019035e649",
+      "job_id": "18c9071f-1b35-4360-8941-bdc849d59d50",
       "image": "assets/locations/seabed.jpg"
     },
     {
@@ -203,9 +203,9 @@
         "remnant-mask",
         "memory-crystal"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. An underground labyrinth of heavy cathedral-like stone: vaulted halls with ribbed arches and pillars, a long stone table at the centre, dark passages leading off into tunnels, and at the end a massive carved stone door half open onto a small dusty chamber with a bone pedestal lit by candles; violet and obsidian palette, violet torches in iron sconces, deep shadows, dripping water. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. An underground labyrinth of heavy cathedral-like stone: vaulted halls with ribbed arches and pillars, a long stone table at the centre, dark passages leading off into tunnels, and at the end a massive carved stone door half open onto a small dusty chamber with a bone pedestal lit by candles; violet and obsidian accent light, violet torches in iron sconces, deep shadows, dripping water. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "a921d4f9-bdea-4643-9bbf-520cf8b40a91",
+      "job_id": "d96dc8d7-a398-401f-bff2-72128a19a0e4",
       "image": "assets/locations/duskbane-underworld.jpg"
     },
     {
@@ -226,9 +226,9 @@
         "sky-watch-telescope",
         "memory-crystal"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. A celestial priory of white marble and gold: a long hall under a great glass star dome painted with constellations, rows of slender columns, brass star instruments; through tall doors at the far end a luminous forest of translucent crystal trees on a hillside under a night sky full of cosmic dust; gold and starlight white palette, flickering starlight. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. A celestial priory of white marble and gold: a long hall under a great glass star dome painted with constellations, rows of slender columns, brass star instruments; through tall doors at the far end a luminous forest of translucent crystal trees on a hillside under a night sky full of cosmic dust; gold and starlight white accent light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "2ba95d1b-a34d-4908-a6d3-b6699781353a",
+      "job_id": "727dec63-b77b-463a-9d6f-1b621ec49828",
       "image": "assets/locations/starlit-priory.jpg"
     },
     {
@@ -258,9 +258,9 @@
         "sky-watch-telescope",
         "memory-crystal"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. A broad flat mossy clifftop plateau at night on the near edge of a vast chasm: across the chasm a swirling vortex of violet and silver astral cloud spirals down into a starry void; along the cliff edge a row of enormous bleached curved rib bones of a long-dead giant wyrm stick up out of the moss like the ribs of a ruined ship; in the foreground on the plateau a camp of six canvas tents in six colours (green, pale blue, ochre, sea blue, violet, gold) with tall banners on poles, arranged in a ring around a central stone fire pit with low wooden tables between them; sun gold and moon silver over bone white, warm firelight on the tents, pale ghostly fire along the far cliffs. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. A broad flat clifftop plateau of carved ivory bone relief at night, its moss rendered as tarnished silver filigree, on the near edge of a vast chasm: across the chasm a swirling vortex of violet and silver astral cloud spirals down into a starry void; along the cliff edge a row of enormous bleached curved rib bones of a long-dead giant wyrm stick up out of the moss like the ribs of a ruined ship; in the foreground on the plateau a camp of six tents carved as bone-and-silver pavilions, each faintly tinted one of six colours (green, pale blue, ochre, sea blue, violet, gold), with tall silver banner poles, arranged in a ring around a central stone fire pit with low wooden tables between them; sun gold and moon silver accent light, firelight on the tents, pale ghostly fire along the far cliffs, no green grass, near-black sky. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "e4f27b56-b3eb-4d5c-ba9c-6007217a3669",
+      "job_id": "dc792ba6-0111-4c29-9277-e3dce36882f0",
       "image": "assets/locations/rim-of-wrymreach.jpg"
     },
     {
@@ -280,9 +280,9 @@
         "wyrm-rib",
         "memory-crystal"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. A long subterranean hall built inside the skeleton of a colossal ancient wyrm, 60 metres long: arching rib bones form the vault like cathedral ribs, vertebrae as pillars, a huge horned skull at the far end, bone-white floor of fused bone and stone, humming bones with faint glowing cracks; bone white with sun gold and moon silver accents, soft light coming from the bones themselves. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. A long subterranean hall built inside the skeleton of a colossal ancient wyrm, 60 metres long: arching rib bones form the vault like cathedral ribs, vertebrae as pillars, a huge horned skull at the far end, bone-white floor of fused bone and stone, humming bones with faint glowing cracks; sun gold and moon silver accent glow, soft light coming from the bones themselves. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "72bc4c87-465f-4ea0-9e2c-74c2ef39ecaa",
+      "job_id": "6075e2f6-4516-4fb9-990e-e44d399433a2",
       "image": "assets/locations/bone-choir.jpg"
     },
     {
@@ -302,9 +302,9 @@
         "memory-platform",
         "memory-crystal"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. A dreamlike realm made of memory: a vast sky of warm off-white paper texture with small hand-inked stars, and a winding route of large floating rock islands crossing it from the foreground into the distance, each island a painted fragment of a different landscape (a mossy forest clearing, a stone stairway, a pebble beach, a crystal outcrop), with open gaps of empty paper between them, the far islands fading into faint pencil outline; on the horizon a flat blank white plain; warm paper white and graphite with patches of realm colour. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. A dreamlike realm made of memory: a vast near-black starry void, and a winding route of large floating rock islands crossing it from the foreground into the distance, each island carved in ivory bone and tarnished silver relief as a fragment of a different landscape (a mossy forest clearing, a stone stairway, a pebble beach, a crystal outcrop), with open gaps of empty void between them, the far islands fading into faint pencil outline; no daylight, on the horizon a thin flat blank pale plain under the void; sun gold and moon silver accent light with faint patches of realm colour. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "332e4279-c65e-4f38-88b9-4e5b115860d5",
+      "job_id": "1395af3f-a050-4656-a0ad-a24d2432099b",
       "image": "assets/locations/astral-expanse.jpg"
     },
     {
@@ -328,9 +328,9 @@
         "queen-statue",
         "memory-crystal"
       ],
-      "prompt": "Painterly fantasy concept art, ink-wash textures, strong readable silhouettes. A round cosmic arena 50 metres across where the sun and moon collided: a cracked circular floor of fused gold and silver stone, two colossal statues carved from bone facing each other across it, one a crowned dragon and one a crowned robed elf queen, a torn shimmering veil of light hanging in the sky above; sun gold and moon silver over bone white, mixed gold and silver light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Bone-and-silver reliquary style: every surface rendered as carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light picking out every ridge, near-black starry void beyond, cold blue-silver palette with one accent light, symmetrical icon-like frontal composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. A round cosmic arena 50 metres across where the sun and moon collided: a cracked circular floor of fused gold and silver stone, two colossal solid sculpted statues of carved ivory bone and tarnished silver on plinths facing each other across it, not skeletons: on the left a crowned dragon, a winged reptile beast with a long neck, horned head, folded bat wings and a coiled tail, sitting on its haunches; on the right a crowned robed elf queen with long pointed ears and hands folded; a torn shimmering veil of light hanging in the sky above; sun gold and moon silver accent light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "3a8c0169-a954-4671-85f2-c1e65a024fdb",
+      "job_id": "128b1bac-804f-4f2b-95dd-5e8a14d81f33",
       "image": "assets/locations/heart-of-wound.jpg"
     }
   ],
@@ -376,9 +376,9 @@
         1.3
       ],
       "material": "Faceted translucent crystal cluster, cool green-white glow, on a carved grey stone stand with brass bands",
-      "prompt": "A waist-high faceted translucent crystal cluster glowing soft green-white, set in a carved grey stone pedestal bound with worn brass bands, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a waist-high faceted translucent crystal cluster glowing soft green-white, set in a carved grey stone pedestal bound with worn brass bands. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "67122c2b-c327-4b41-94aa-410b2ef437d7",
+      "job_id": "88480d46-d278-4e99-ab4f-ec8fc06728c5",
       "image": "assets/objects/memory-crystal.jpg"
     },
     {
@@ -394,9 +394,9 @@
         0.35
       ],
       "material": "Pale sea-blue crystal in a pearl-shell cage with a short cord loop",
-      "prompt": "A hand-held lantern made of a glowing pale sea-blue crystal held in a cage of pearly shell and silver wire with a carrying loop, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a hand-held lantern made of a glowing pale sea-blue crystal held in a cage of pearly shell and silver wire with a carrying loop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "3e94ff05-4775-46b9-903f-7912de3b7c4f",
+      "job_id": "184b677e-f2ee-4d8e-822f-a42cc1c27bfa",
       "image": "assets/objects/lantern-crystal.jpg"
     },
     {
@@ -412,9 +412,9 @@
         0.25
       ],
       "material": "Single ochre-amber crystal shard with a living orange glow inside",
-      "prompt": "A single jagged crystal shard the size of a hand, ochre and amber with a warm living orange glow at its core, rough broken base, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a single jagged crystal shard the size of a hand, ochre and amber with a warm living orange glow at its core, rough broken base. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "119326ec-c494-4dc2-894b-d729e66746d6",
+      "job_id": "00d8c883-0645-4880-8ccd-4b83e77c0a97",
       "image": "assets/objects/living-shard.jpg"
     },
     {
@@ -431,9 +431,9 @@
         4
       ],
       "material": "Huge faceted amber crystal on a stepped carved stone plinth, glow dimmed, hairline cracks",
-      "prompt": "A huge heart-shaped faceted amber crystal with dim ember glow and fine cracks, on a stepped carved ochre stone plinth with worn steps, painterly fantasy set piece. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a huge heart-shaped faceted amber crystal with dim ember glow and fine cracks, on a stepped carved ochre stone plinth with worn steps. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "d581ae19-8ae2-495c-9ed3-a33166a650ab",
+      "job_id": "aff87bfa-15e4-4747-aa40-789af6ddef15",
       "image": "assets/objects/heartstone.jpg"
     },
     {
@@ -449,9 +449,9 @@
         0.12
       ],
       "material": "Heavy closed book, cracked violet leather, iron corner caps and clasp, dusty",
-      "prompt": "A heavy closed ancient book with cracked dark violet leather cover, iron corner caps, an iron clasp, dusty page edges, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a heavy closed ancient book with cracked dark violet leather cover, iron corner caps, an iron clasp, dusty page edges. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "46393fdc-b569-4a15-af1c-635ae0f54fed",
+      "job_id": "271198c3-160d-4dcc-8955-94cf1898b60a",
       "image": "assets/objects/prophecy-tome.jpg"
     },
     {
@@ -467,9 +467,9 @@
         1.2
       ],
       "material": "Pedestal carved from old bone and obsidian, slanted reading top",
-      "prompt": "A lectern-style pedestal carved from pale old bone with a dark obsidian base and a slanted empty reading top, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a lectern-style pedestal carved from pale old bone with a dark obsidian base and a slanted empty reading top. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "ef30775d-c272-4edc-b743-81973f1a7dc0",
+      "job_id": "43c06b64-7a80-4b08-8199-8d70c4857abd",
       "image": "assets/objects/prophecy-pedestal.jpg"
     },
     {
@@ -485,9 +485,9 @@
         4
       ],
       "material": "Massive carved stone slab door in a frame, violet-grey stone, abstract carved patterns",
-      "prompt": "A massive carved stone door slab in its stone frame, violet-grey obsidian stone with abstract spiral relief carvings and a heavy ring handle, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a massive carved stone door slab in its stone frame, violet-grey obsidian stone with abstract spiral relief carvings and a heavy ring handle. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "33a74bd6-ed37-4b2c-94db-81b57e7db812",
+      "job_id": "16ded906-1ad3-4c8b-a862-5b28ffab5b1f",
       "image": "assets/objects/forbidden-door.jpg"
     },
     {
@@ -504,9 +504,9 @@
         0.28
       ],
       "material": "Smooth blank paper-white lacquered mask, no features but eye slits, graphite streaks",
-      "prompt": "A smooth featureless face mask of off-white lacquered paper, only two narrow eye slits, faint graphite smudges, a black cord tie, empty with nobody wearing it, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a smooth featureless face mask of off-white lacquered paper, only two narrow eye slits, faint graphite smudges, a black cord tie, empty with nobody wearing it. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "607ad164-abd4-4bdc-b420-b9cbe0a39462",
+      "job_id": "1c56bfee-b96a-4cf4-add6-e9731812c5cf",
       "image": "assets/objects/remnant-mask.jpg"
     },
     {
@@ -523,9 +523,9 @@
         0.8
       ],
       "material": "Low round wooden table inlaid with a hexagonal mosaic board in six realm colours",
-      "prompt": "A low round wooden table whose top is inlaid with a hexagonal tile mosaic game board in six colours (moss green, pale blue, ochre, sea blue, violet, gold), carved legs, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a low round wooden table whose top is inlaid with a hexagonal tile mosaic game board in six colours (moss green, pale blue, ochre, sea blue, violet, gold), carved legs. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "699bfd51-3c30-4ed0-b978-82bc57574c11",
+      "job_id": "87bd29a5-fc5a-487f-9ba1-b48d8d128149",
       "image": "assets/objects/game-table.jpg"
     },
     {
@@ -541,9 +541,9 @@
         0.4
       ],
       "material": "Dark slate tablet scratched with abstract pale glyph marks, chipped edges",
-      "prompt": "A rectangular dark grey slate tablet with chipped edges, scratched with abstract pale symbolic marks that are not letters, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a rectangular dark grey slate tablet with chipped edges, scratched with abstract pale symbolic marks that are not letters. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "245610fa-9c79-4427-ae31-a94e43a1f12d",
+      "job_id": "08a95395-81d1-4339-8ac8-3c81bb032bfb",
       "image": "assets/objects/kill-list-slate.jpg"
     },
     {
@@ -560,9 +560,9 @@
         0.25
       ],
       "material": "Pearl-glass flask with stopper, sea-blue glowing water inside",
-      "prompt": "A small round flask of pearly glass with a carved shell stopper, filled with softly glowing sea-blue water, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a small round flask of pearly glass with a carved shell stopper, filled with softly glowing sea-blue water. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "d9287c57-e333-48d6-a7ec-655e9732d92a",
+      "job_id": "6375b436-6467-464e-8baa-c73d8f84c937",
       "image": "assets/objects/remembering-water-flask.jpg"
     },
     {
@@ -578,9 +578,9 @@
         4.5
       ],
       "material": "Timber double gate of cedar logs, iron hinges, moss on the beams",
-      "prompt": "A heavy timber double gate made of lashed cedar logs with sharpened tops, iron hinges, a crossbeam bar, some moss, standing in its own post frame, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a heavy timber double gate made of lashed cedar logs with sharpened tops, iron hinges, a crossbeam bar, some moss, standing in its own post frame. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "df8ac627-2e28-45f9-a43f-c4520d3b877c",
+      "job_id": "7ec8632c-882f-43f6-849d-98fc3fe79ba3",
       "image": "assets/objects/outpost-gate.jpg"
     },
     {
@@ -596,9 +596,9 @@
         14
       ],
       "material": "Ancient cedar split down the middle, bark-like, moss half green half faded grey",
-      "prompt": "An ancient cedar tree split down the middle by a deep cleft, gnarled roots, moss on one half bright green and on the other half faded pale grey, painterly fantasy set piece. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, an ancient cedar tree split down the middle by a deep cleft, gnarled roots, moss on one half bright green and on the other half faded pale grey. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "d0f03843-17d5-451b-af5b-6b7a4b1ebb06",
+      "job_id": "a78ff8a3-ac61-478f-a7a2-09a297b5c473",
       "image": "assets/objects/split-tree.jpg"
     },
     {
@@ -614,9 +614,9 @@
         12
       ],
       "material": "Tall weathered stone obelisk carved with worn glyph rows, on a rubble base",
-      "prompt": "A tall weathered grey-green stone obelisk carved with rows of worn abstract glyphs, rising from a rubble mound base, painterly fantasy set piece. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a tall weathered grey-green stone obelisk carved with rows of worn abstract glyphs, rising from a rubble mound base. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "091d036e-8cf9-429d-95f8-7d92bcdce849",
+      "job_id": "8f96498b-4f30-4268-9fed-fc8b3ac3feaf",
       "image": "assets/objects/monolith.jpg"
     },
     {
@@ -634,9 +634,9 @@
         10
       ],
       "material": "Colossal bone-white statue of a crowned dragon, gold veining",
-      "prompt": "A colossal statue of a seated crowned dragon carved from bone-white stone with thin gold veins, on a round plinth, painterly fantasy set piece. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a colossal statue of a seated crowned dragon carved from bone-white stone with thin gold veins, on a round plinth. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "010a0529-9a54-42c2-b50b-8504528caf09",
+      "job_id": "2db8bf18-93d6-4fcb-b308-b0eaeb260c97",
       "image": "assets/objects/king-statue.jpg"
     },
     {
@@ -654,9 +654,9 @@
         10
       ],
       "material": "Colossal bone-white statue of a robed crowned elf queen, silver veining",
-      "prompt": "A colossal statue of a robed crowned elf queen carved from bone-white stone with thin silver veins, hands folded, on a round plinth, painterly fantasy set piece. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a colossal statue of a robed crowned elf queen carved from bone-white stone with thin silver veins, hands folded, on a round plinth. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "e9546054-4c9a-4c50-b311-4cd69f8e34a2",
+      "job_id": "d42e4617-65f4-4933-bf7e-1d6be42b4704",
       "image": "assets/objects/queen-statue.jpg"
     },
     {
@@ -672,9 +672,9 @@
         5
       ],
       "material": "Huge horned wyrm skull, bone white, faint glowing hum-cracks",
-      "prompt": "A huge ancient horned wyrm skull, bone white and weathered, faint gold glowing hairline cracks, lower jaw resting on the ground, painterly fantasy set piece. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a huge ancient horned wyrm skull, bone white and weathered, faint gold glowing hairline cracks, lower jaw resting on the ground. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "d3920344-45cf-4262-9630-318da2522d58",
+      "job_id": "bb1991a3-e9ac-45d2-ab2b-e4a59c23af54",
       "image": "assets/objects/wyrm-skull.jpg"
     },
     {
@@ -691,9 +691,9 @@
         3.5
       ],
       "material": "Round canvas tent, painted border bands, wooden poles",
-      "prompt": "A round canvas tent with a conical roof, cream canvas with painted coloured border bands, wooden poles and ropes, door flap tied open, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a round canvas tent with a conical roof, cream canvas with painted coloured border bands, wooden poles and ropes, door flap tied open. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "6aaa75bb-b336-4c75-9678-5fe73a62d32c",
+      "job_id": "9646a264-db5d-44b5-b701-3a53cce249df",
       "image": "assets/objects/witness-tent.jpg"
     },
     {
@@ -709,9 +709,9 @@
         1
       ],
       "material": "Ring of stones around a burning log fire, ash",
-      "prompt": "A campfire inside a ring of rough stones with crossed burning logs and glowing embers, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a campfire inside a ring of rough stones with crossed burning logs and glowing embers. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "d8a97688-6dc9-4626-b3e4-1a0ba0bd1fa3",
+      "job_id": "57b9c16d-84cc-49fa-aca2-d3e92cfe30d9",
       "image": "assets/objects/moot-fire.jpg"
     },
     {
@@ -728,9 +728,9 @@
         3.5
       ],
       "material": "Tall cloth banner on a carved pole, green with plain realm sigil shape, frayed",
-      "prompt": "A tall cloth banner hanging from a carved wooden pole with crossbar, moss green cloth with a simple abstract leaf emblem, frayed lower edge, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a tall cloth banner hanging from a carved wooden pole with crossbar, moss green cloth with a simple abstract leaf emblem, frayed lower edge. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "32385c48-f3d2-48f1-a6ba-4628b0ae869d",
+      "job_id": "8bc06382-9db0-44d0-89c4-9b1d5e81d55c",
       "image": "assets/objects/tribe-banner.jpg"
     },
     {
@@ -746,9 +746,9 @@
         7
       ],
       "material": "Tree of translucent iridescent crystal branches, gold-white glow",
-      "prompt": "A tree made entirely of translucent iridescent crystal, branching trunk and crystal leaves glowing gold and starlight white, painterly fantasy set piece. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a tree made entirely of translucent iridescent crystal, branching trunk and crystal leaves glowing gold and starlight white. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "d942641c-e754-4572-8f36-546013c6cda9",
+      "job_id": "1f628ce0-5a53-476a-a731-7d43618330cf",
       "image": "assets/objects/crystalline-tree.jpg"
     },
     {
@@ -764,9 +764,9 @@
         4
       ],
       "material": "Floating fragment of painted landscape, grass top, rock underside fading to pencil",
-      "prompt": "A floating island fragment of earth, grassy top with a few stones, rocky underside tapering down, edges fading into pencil sketch lines, painterly fantasy set piece. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a floating island fragment of earth, grassy top with a few stones, rocky underside tapering down, edges fading into pencil sketch lines. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "1fd8fe66-6659-4425-938b-dc5ed2becfed",
+      "job_id": "cfe3e9f4-00ea-4433-8c6b-5778c82af70b",
       "image": "assets/objects/memory-platform.jpg"
     },
     {
@@ -784,9 +784,9 @@
         8
       ],
       "material": "Giant curved rib bone, bone white with moss at the base",
-      "prompt": "A single giant curved wyrm rib bone standing upright like a tusk, weathered bone white, moss at its base, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a single giant curved wyrm rib bone standing upright like a tusk, weathered bone white, moss at its base. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "10c61c0a-bf12-4398-930a-f56642088379",
+      "job_id": "bcd5f0ad-82e1-4bbb-ba01-5cc15df66f88",
       "image": "assets/objects/wyrm-rib.jpg"
     },
     {
@@ -802,9 +802,9 @@
         0.6
       ],
       "material": "Low cot of pale wood and silver fittings, folded blue-grey blanket",
-      "prompt": "A low empty healer's cot of pale wood with silver fittings, linen pillow and a folded pale blue blanket, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a low empty healer's cot of pale wood with silver fittings, linen pillow and a folded pale blue blanket. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "657f344f-2a2d-4917-bf16-92959b8c5c0e",
+      "job_id": "53c54dce-c800-4ed4-a8ac-6f583b1e8eaa",
       "image": "assets/objects/ward-cot.jpg"
     },
     {
@@ -822,9 +822,9 @@
         0.8
       ],
       "material": "Wrought iron wall sconce with a burning torch",
-      "prompt": "A wrought iron wall sconce holding a burning wooden torch with a small flame, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a wrought iron wall sconce holding a burning wooden torch with a small flame. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "f9168f02-26f7-4160-9818-57565cb8f2db",
+      "job_id": "4b343283-77ac-4842-b29c-88d113ef0248",
       "image": "assets/objects/torch-sconce.jpg"
     },
     {
@@ -840,9 +840,9 @@
         1.3
       ],
       "material": "Iron candelabrum with dripping candles",
-      "prompt": "A tall iron floor candelabrum with five dripping lit candles, wax pooled on its arms, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a tall iron floor candelabrum with five dripping lit candles, wax pooled on its arms. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "0b0aeaba-3875-48f8-82cf-b6c3d28a7c07",
+      "job_id": "57961eef-c9ab-49ed-91d2-46343387bc97",
       "image": "assets/objects/candle-stand.jpg"
     },
     {
@@ -858,9 +858,9 @@
         5
       ],
       "material": "Tall pale blue crystal pillar on silver base",
-      "prompt": "A tall faceted pale blue crystal pillar on a silver filigree base, a faint lightning flicker inside, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a tall faceted pale blue crystal pillar on a silver filigree base, a faint lightning flicker inside. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "7f419cfc-3da2-4302-9da1-5548f922b5bc",
+      "job_id": "8e76f196-4bb8-45fc-b5f4-546b9fd4b5f1",
       "image": "assets/objects/storm-crystal-pillar.jpg"
     },
     {
@@ -877,9 +877,9 @@
         1.8
       ],
       "material": "Brass and wood telescope on a tripod with star rings",
-      "prompt": "An old brass telescope on a wooden tripod with engraved celestial rings around its mount, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, an old brass telescope on a wooden tripod with engraved celestial rings around its mount. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "6cc77e41-c680-4b3a-9d60-58c92d7837fa",
+      "job_id": "073396cc-bfef-400d-91f0-86e0888744b5",
       "image": "assets/objects/sky-watch-telescope.jpg"
     },
     {
@@ -896,9 +896,9 @@
         2
       ],
       "material": "Standing stone carved with wave spirals, hung with shells",
-      "prompt": "A standing carved stone with wave spiral reliefs, strings of pearly shells hung around it, barnacles at its base, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a standing carved stone with wave spiral reliefs, strings of pearly shells hung around it, barnacles at its base. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "fd1a18e0-9d58-45c6-9abc-8d551e7d3b9d",
+      "job_id": "04b971bb-6e7f-4b01-a448-264efdfc8ba9",
       "image": "assets/objects/tide-shrine-stone.jpg"
     },
     {
@@ -915,9 +915,9 @@
         1.2
       ],
       "material": "Grey boulder with moss and ferns",
-      "prompt": "A rounded grey granite boulder covered in thick green moss with a few small ferns, painterly fantasy prop. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "prompt": "Carved ivory bone and tarnished silver, fine black crack lines in the bone, crisp relief detail, cool rim light, a rounded natural boulder, a plain rock and not a box or container, its stone surface carved as ivory bone with fine black cracks, covered in thick green moss with a few small ferns. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": "9e2d3798-1362-45cc-9605-5308e1f112c0",
+      "job_id": "d1e69374-a644-491a-b87b-bbf21b26946d",
       "image": "assets/objects/mossy-boulder.jpg"
     }
   ]
