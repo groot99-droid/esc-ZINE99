@@ -685,8 +685,23 @@ The journal is the HUD. Nothing is overlaid that Lira would not have written or 
 
 - **Materials.** Crystalline bark (translucent facets with subsurface glow); fungal mats (velvety, slightly emissive); web (thin glowing strands with travelling pulses); Continuum surfaces (matte, seamless).
 - **Lighting.** Natural light shifts by band; aetheric sources are cool emissives; the core is white-violet. Night scenes rely on bioluminescence.
-- **One look across layers.** 3D materials use a light ink outline pass so the world reads as an illustration; 2D sprites are drawn in the same ink weight; 1D pages use the same paper and ink. References by mood only: naturalist field plates, survey cross-sections, redacted state documents.
+- **One look across layers.** 3D materials use a light ink outline pass so the world reads as an illustration; 2D sprites are drawn in the same ink weight; 1D pages use the same paper and ink. The palette and materials are shared, while each 2D and 1D page's drawing style differs (see Gameplay graphics). References by mood only: naturalist field plates, survey cross-sections, redacted state documents.
 - **Colour-blind safety.** Green and red node states on the board also differ by shape (ring versus starburst) and pattern.
+
+### Gameplay graphics
+
+Each 2D mode and 1D game keeps this palette but is drawn in its own graphic style, unique in the
+collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg`.
+
+| Mode or game | Layer | Graphic style | How the style serves play |
+| --- | --- | --- | --- |
+| Cross-section climb | 2D | Geological survey section | The climb reads as the journal's own cut-away: hatched strata, an altitude scale that fills, and the dotted route left behind in ink |
+| Under the lens | 2D | False-colour micrograph | False teal marks the solid focus plane and magenta the blurred planes, so what can be touched is told by colour |
+| The Assay | 1D | Oscilloscope trace | Peaks on a graticule make measuring literal: the cursor and vernier read a wavelength to the nanometre |
+| The Key | 1D | Iron-gall botanical plate | The specimen drawing and the couplet key sit side by side as a naturalist's plate; new couplets go in pencil |
+| Storm-Song Cipher | 1D | Neume chant notation | Square neumes on a four-line staff carry the song's intervals and rests, which decode to bearings and distances on the map |
+| Journal Audit | 1D | Redacted dossier | Black bars, a second hand's ink and seal-red stamps make the page itself the evidence of tampering |
+| The Node Board | 1D | Swiss relief map | Shaded relief and contours set the nodes on the Peaks; rings and starbursts show damped and amplified by shape as well as colour |
 
 ## 16. Audio
 
