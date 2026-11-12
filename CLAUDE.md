@@ -29,6 +29,9 @@ Ten games adapted from the author's creative-writing vault. Read `README.md` for
   Blender reference) and one isolated object image per Meshy prop. Keep the prompt, model and job
   id with each image, never a link. No characters or creatures are Meshy props. After changing
   scenes or assets, run `python tools/check_assets.py <slug>`.
+- **Each 3D location has one Blender build file** (`games/<slug>/blender/<location>.build.json`,
+  format in `docs/BLENDER.md`) covering every 3D scene played there. After changing scenes, assets
+  or build files, run `python tools/check_blender.py <slug>`. `build/` is generated; never commit it.
 - Horror games keep a cost in every ending; victims have interior lives; graphic detail is
   suggested, never instructed. These are the vault's own craft rules.
 - Do not recreate an existing commercial game, its characters, levels or look.

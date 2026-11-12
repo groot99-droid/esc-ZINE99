@@ -80,6 +80,15 @@ building each 3D set in Blender (every 3D scene covered by exactly one location)
 object images on white that are the input for Meshy image-to-3D (every object placed in a location,
 with its size in metres).
 
+```bash
+python tools/check_blender.py
+python tools/blender/compile.py
+```
+
+The first checks each game's Blender build files (`games/<slug>/blender/<location>.build.json`);
+the second compiles every 3D scene into a layout the studio's `assemble-3d` runs unchanged. See
+`docs/BLENDER.md`.
+
 ## Sources
 
 Every game adapts a work in the author's `Pipelines-Plugin` repository, under

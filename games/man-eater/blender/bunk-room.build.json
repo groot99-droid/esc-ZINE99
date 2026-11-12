@@ -1,0 +1,1447 @@
+{
+  "game": "man-eater",
+  "location": "bunk-room",
+  "name": "The bunk room",
+  "reference": "assets/locations/bunk-room.jpg",
+  "bounds_m": [
+    4.0,
+    5.0,
+    4.57
+  ],
+  "origin": "floor centre; +y toward the window wall, the door on the -y wall",
+  "materials": {
+    "wall-green": {
+      "color": [
+        0.37,
+        0.45,
+        0.39
+      ],
+      "roughness": 0.9
+    },
+    "wall-cream": {
+      "color": [
+        0.85,
+        0.82,
+        0.75
+      ],
+      "roughness": 0.9
+    },
+    "concrete": {
+      "color": [
+        0.45,
+        0.45,
+        0.44
+      ],
+      "roughness": 0.95
+    },
+    "steel": {
+      "color": [
+        0.54,
+        0.56,
+        0.58
+      ],
+      "roughness": 0.5,
+      "metallic": 0.8
+    },
+    "window-glass": {
+      "color": [
+        0.75,
+        0.82,
+        0.88
+      ],
+      "roughness": 0.1,
+      "emission": 0.6
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        4.0,
+        5.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        4.0,
+        5.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        4.62
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-north-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.0,
+        0.15,
+        1.5
+      ],
+      "location": [
+        0,
+        2.575,
+        0.75
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-north-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.0,
+        0.15,
+        3.0700000000000003
+      ],
+      "location": [
+        0,
+        2.575,
+        3.035
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "window-high",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.2,
+        0.05,
+        0.6
+      ],
+      "location": [
+        0,
+        2.5,
+        3.5
+      ],
+      "material": "window-glass",
+      "collide": false
+    },
+    {
+      "id": "wall-south-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.45,
+        0.15,
+        4.57
+      ],
+      "location": [
+        -1.275,
+        -2.575,
+        2.285
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-south-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.45,
+        0.15,
+        4.57
+      ],
+      "location": [
+        1.275,
+        -2.575,
+        2.285
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-south-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.1,
+        0.15,
+        0.3700000000000001
+      ],
+      "location": [
+        0,
+        -2.575,
+        4.385
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        5.0,
+        4.57
+      ],
+      "location": [
+        2.075,
+        0,
+        2.285
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        5.0,
+        4.57
+      ],
+      "location": [
+        -2.075,
+        0,
+        2.285
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "dado-rail",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        4.0,
+        0.04,
+        0.04
+      ],
+      "location": [
+        0,
+        2.48,
+        1.5
+      ],
+      "material": "steel"
+    }
+  ],
+  "props": [
+    {
+      "id": "bed-fisk",
+      "object": "bunk-bed",
+      "location": [
+        -1.4,
+        0.4,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "bed-mate",
+      "object": "bunk-bed",
+      "location": [
+        1.4,
+        0.4,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "bags-fisk",
+      "object": "sleeping-bag",
+      "location": [
+        -1.4,
+        0.4,
+        0.6
+      ],
+      "ground": true
+    },
+    {
+      "id": "bags-mate",
+      "object": "sleeping-bag",
+      "location": [
+        1.4,
+        0.4,
+        0.6
+      ],
+      "ground": true
+    },
+    {
+      "id": "door",
+      "object": "two-handle-door",
+      "location": [
+        0,
+        -2.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "rules-card",
+      "object": "rules-card",
+      "location": [
+        0.35,
+        -2.44,
+        2.2
+      ],
+      "ground": false
+    },
+    {
+      "id": "clock",
+      "object": "wall-clock",
+      "location": [
+        0,
+        2.46,
+        2.6
+      ],
+      "ground": false,
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "boots-mate",
+      "object": "laced-boots",
+      "location": [
+        1.1,
+        -0.8,
+        0
+      ]
+    },
+    {
+      "id": "kit-bag",
+      "object": "kit-bag",
+      "location": [
+        -1.75,
+        -1.2,
+        0
+      ]
+    },
+    {
+      "id": "bread",
+      "object": "bread-loaf",
+      "location": [
+        -1.2,
+        1.2,
+        0.75
+      ],
+      "ground": true
+    },
+    {
+      "id": "keys",
+      "object": "key-ring",
+      "location": [
+        0.2,
+        -2.45,
+        1.3
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "c1_bunk": {
+      "world": {
+        "color": [
+          0.55,
+          0.6,
+          0.65
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "window-day",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            0,
+            0.6
+          ],
+          "energy": 180,
+          "size": 1.2,
+          "color": [
+            0.85,
+            0.9,
+            1.0
+          ]
+        },
+        {
+          "name": "tube",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            4.470000000000001
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "energy": 250,
+          "size": 1.5,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ]
+        }
+      ],
+      "note": "Day 1. Sam at the door gives the three rules; the card is read at lever height.",
+      "camera": {
+        "location": [
+          0,
+          -1.9,
+          1.66
+        ],
+        "look_at": [
+          0,
+          1.5,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -1.9,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "bread"
+      ],
+      "interactions": [
+        {
+          "prop": "rules-card",
+          "verb": "Read the rules"
+        },
+        {
+          "prop": "bed-fisk",
+          "verb": "Take the bed",
+          "leads_to": "d1_cafeteria"
+        }
+      ]
+    },
+    "n1_bunk_call": {
+      "world": {
+        "color": [
+          0.03,
+          0.04,
+          0.07
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "moon",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            -1.5,
+            0
+          ],
+          "energy": 90,
+          "size": 1.2,
+          "color": [
+            0.6,
+            0.7,
+            1.0
+          ]
+        },
+        {
+          "name": "clock-face",
+          "type": "POINT",
+          "location": [
+            0,
+            2.25,
+            2.6
+          ],
+          "energy": 3,
+          "size": 0.1,
+          "color": [
+            0.9,
+            0.95,
+            0.8
+          ]
+        }
+      ],
+      "note": "Night 1, 10:00. The call; the bunkmate pulls on his boots and leaves. 'Stop him' and 'Say something' fade unpressed.",
+      "camera": {
+        "location": [
+          -1.4,
+          0.9,
+          1.25
+        ],
+        "look_at": [
+          0,
+          -2.5,
+          1.6
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -1.4,
+          0.9,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "bread"
+      ],
+      "interactions": []
+    },
+    "d2_sam_bunk": {
+      "world": {
+        "color": [
+          0.55,
+          0.6,
+          0.65
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "window-day",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            0,
+            0.6
+          ],
+          "energy": 180,
+          "size": 1.2,
+          "color": [
+            0.85,
+            0.9,
+            1.0
+          ]
+        },
+        {
+          "name": "tube",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            4.470000000000001
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "energy": 250,
+          "size": 1.5,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ]
+        }
+      ],
+      "note": "Day 2. Sam: 'transferred'. The second bed is stripped.",
+      "camera": {
+        "location": [
+          0,
+          -1.9,
+          1.66
+        ],
+        "look_at": [
+          0,
+          1.5,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -1.9,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "bags-mate",
+        "boots-mate",
+        "bread"
+      ],
+      "interactions": []
+    },
+    "d5_jax_plan": {
+      "world": {
+        "color": [
+          0.2,
+          0.2,
+          0.25
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "bunk-lamp",
+          "type": "POINT",
+          "location": [
+            -1.0,
+            1.2,
+            1.0
+          ],
+          "energy": 60,
+          "size": 0.2,
+          "color": [
+            1.0,
+            0.72,
+            0.4
+          ]
+        },
+        {
+          "name": "window-dusk",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            0,
+            0.6
+          ],
+          "energy": 40,
+          "size": 1.2,
+          "color": [
+            0.5,
+            0.55,
+            0.75
+          ]
+        }
+      ],
+      "note": "Jax on the other bed; his knot on Fisk's bed frame.",
+      "camera": {
+        "location": [
+          -1.4,
+          0.9,
+          1.25
+        ],
+        "look_at": [
+          0,
+          -2.5,
+          1.6
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -1.4,
+          0.9,
+          0
+        ],
+        "facing_deg": 90
+      },
+      "hide": [
+        "boots-mate"
+      ],
+      "interactions": []
+    },
+    "d6_sam_offer": {
+      "world": {
+        "color": [
+          0.55,
+          0.6,
+          0.65
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "window-day",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            0,
+            0.6
+          ],
+          "energy": 180,
+          "size": 1.2,
+          "color": [
+            0.85,
+            0.9,
+            1.0
+          ]
+        },
+        {
+          "name": "tube",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            4.470000000000001
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "energy": 250,
+          "size": 1.5,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ]
+        }
+      ],
+      "note": "Sam's visit: the offer or the inspection; the bread under the bag matters.",
+      "camera": {
+        "location": [
+          0,
+          -1.9,
+          1.66
+        ],
+        "look_at": [
+          0,
+          1.5,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -1.9,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "boots-mate"
+      ],
+      "interactions": [
+        {
+          "prop": "bread",
+          "verb": "Hide the bread"
+        }
+      ]
+    },
+    "d7_bunk_evening": {
+      "world": {
+        "color": [
+          0.2,
+          0.2,
+          0.25
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "bunk-lamp",
+          "type": "POINT",
+          "location": [
+            -1.0,
+            1.2,
+            1.0
+          ],
+          "energy": 60,
+          "size": 0.2,
+          "color": [
+            1.0,
+            0.72,
+            0.4
+          ]
+        },
+        {
+          "name": "window-dusk",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            0,
+            0.6
+          ],
+          "energy": 40,
+          "size": 1.2,
+          "color": [
+            0.5,
+            0.55,
+            0.75
+          ]
+        }
+      ],
+      "note": "The last evening.",
+      "camera": {
+        "location": [
+          -1.4,
+          0.9,
+          1.25
+        ],
+        "look_at": [
+          0,
+          -2.5,
+          1.6
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -1.4,
+          0.9,
+          0
+        ],
+        "facing_deg": 90
+      },
+      "hide": [
+        "boots-mate"
+      ],
+      "interactions": [
+        {
+          "prop": "bread",
+          "verb": "Eat or share the bread"
+        }
+      ]
+    },
+    "n7_bunk_stay": {
+      "world": {
+        "color": [
+          0.03,
+          0.04,
+          0.07
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "moon",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            -1.5,
+            0
+          ],
+          "energy": 90,
+          "size": 1.2,
+          "color": [
+            0.6,
+            0.7,
+            1.0
+          ]
+        },
+        {
+          "name": "clock-face",
+          "type": "POINT",
+          "location": [
+            0,
+            2.25,
+            2.6
+          ],
+          "energy": 3,
+          "size": 0.1,
+          "color": [
+            0.9,
+            0.95,
+            0.8
+          ]
+        }
+      ],
+      "note": "Night 7, staying in: the door does not open from outside until it does.",
+      "camera": {
+        "location": [
+          -1.4,
+          0.9,
+          1.25
+        ],
+        "look_at": [
+          0,
+          -2.5,
+          1.6
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -1.4,
+          0.9,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "boots-mate"
+      ],
+      "interactions": []
+    },
+    "n2_door": {
+      "world": {
+        "color": [
+          0.03,
+          0.04,
+          0.07
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "moon",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            -1.5,
+            0
+          ],
+          "energy": 90,
+          "size": 1.2,
+          "color": [
+            0.6,
+            0.7,
+            1.0
+          ]
+        },
+        {
+          "name": "clock-face",
+          "type": "POINT",
+          "location": [
+            0,
+            2.25,
+            2.6
+          ],
+          "energy": 3,
+          "size": 0.1,
+          "color": [
+            0.9,
+            0.95,
+            0.8
+          ]
+        }
+      ],
+      "note": "10:00 at the door: go out (to n2_halls) or stay.",
+      "camera": {
+        "location": [
+          0,
+          -1.3,
+          1.66
+        ],
+        "look_at": [
+          0,
+          -2.5,
+          2.0
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -1.3,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "door",
+          "verb": "Go out",
+          "leads_to": "n2_halls"
+        },
+        {
+          "prop": "bed-fisk",
+          "verb": "Stay in"
+        }
+      ]
+    },
+    "n3_door": {
+      "world": {
+        "color": [
+          0.03,
+          0.04,
+          0.07
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "moon",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            -1.5,
+            0
+          ],
+          "energy": 90,
+          "size": 1.2,
+          "color": [
+            0.6,
+            0.7,
+            1.0
+          ]
+        },
+        {
+          "name": "clock-face",
+          "type": "POINT",
+          "location": [
+            0,
+            2.25,
+            2.6
+          ],
+          "energy": 3,
+          "size": 0.1,
+          "color": [
+            0.9,
+            0.95,
+            0.8
+          ]
+        }
+      ],
+      "note": "10:00 at the door: go out (to n3_snow) or stay.",
+      "camera": {
+        "location": [
+          0,
+          -1.3,
+          1.66
+        ],
+        "look_at": [
+          0,
+          -2.5,
+          2.0
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -1.3,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "boots-mate"
+      ],
+      "interactions": [
+        {
+          "prop": "door",
+          "verb": "Go out",
+          "leads_to": "n3_snow"
+        },
+        {
+          "prop": "bed-fisk",
+          "verb": "Stay in"
+        }
+      ]
+    },
+    "n4_door": {
+      "world": {
+        "color": [
+          0.03,
+          0.04,
+          0.07
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "moon",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            -1.5,
+            0
+          ],
+          "energy": 90,
+          "size": 1.2,
+          "color": [
+            0.6,
+            0.7,
+            1.0
+          ]
+        },
+        {
+          "name": "clock-face",
+          "type": "POINT",
+          "location": [
+            0,
+            2.25,
+            2.6
+          ],
+          "energy": 3,
+          "size": 0.1,
+          "color": [
+            0.9,
+            0.95,
+            0.8
+          ]
+        }
+      ],
+      "note": "10:00 at the door: go out (to n4_halls) or stay.",
+      "camera": {
+        "location": [
+          0,
+          -1.3,
+          1.66
+        ],
+        "look_at": [
+          0,
+          -2.5,
+          2.0
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -1.3,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "boots-mate"
+      ],
+      "interactions": [
+        {
+          "prop": "door",
+          "verb": "Go out",
+          "leads_to": "n4_halls"
+        },
+        {
+          "prop": "bed-fisk",
+          "verb": "Stay in"
+        }
+      ]
+    },
+    "n5_door": {
+      "world": {
+        "color": [
+          0.03,
+          0.04,
+          0.07
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "moon",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            -1.5,
+            0
+          ],
+          "energy": 90,
+          "size": 1.2,
+          "color": [
+            0.6,
+            0.7,
+            1.0
+          ]
+        },
+        {
+          "name": "clock-face",
+          "type": "POINT",
+          "location": [
+            0,
+            2.25,
+            2.6
+          ],
+          "energy": 3,
+          "size": 0.1,
+          "color": [
+            0.9,
+            0.95,
+            0.8
+          ]
+        }
+      ],
+      "note": "10:00 at the door: go out (to n5_snow) or stay.",
+      "camera": {
+        "location": [
+          0,
+          -1.3,
+          1.66
+        ],
+        "look_at": [
+          0,
+          -2.5,
+          2.0
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -1.3,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "boots-mate"
+      ],
+      "interactions": [
+        {
+          "prop": "door",
+          "verb": "Go out",
+          "leads_to": "n5_snow"
+        },
+        {
+          "prop": "bed-fisk",
+          "verb": "Stay in"
+        }
+      ]
+    },
+    "n6_door": {
+      "world": {
+        "color": [
+          0.03,
+          0.04,
+          0.07
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "moon",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            -1.5,
+            0
+          ],
+          "energy": 90,
+          "size": 1.2,
+          "color": [
+            0.6,
+            0.7,
+            1.0
+          ]
+        },
+        {
+          "name": "clock-face",
+          "type": "POINT",
+          "location": [
+            0,
+            2.25,
+            2.6
+          ],
+          "energy": 3,
+          "size": 0.1,
+          "color": [
+            0.9,
+            0.95,
+            0.8
+          ]
+        }
+      ],
+      "note": "10:00 at the door: go out (to n6_halls) or stay.",
+      "camera": {
+        "location": [
+          0,
+          -1.3,
+          1.66
+        ],
+        "look_at": [
+          0,
+          -2.5,
+          2.0
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -1.3,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "boots-mate"
+      ],
+      "interactions": [
+        {
+          "prop": "door",
+          "verb": "Go out",
+          "leads_to": "n6_halls"
+        },
+        {
+          "prop": "bed-fisk",
+          "verb": "Stay in"
+        }
+      ]
+    },
+    "n7_door": {
+      "world": {
+        "color": [
+          0.03,
+          0.04,
+          0.07
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "moon",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            -1.5,
+            0
+          ],
+          "energy": 90,
+          "size": 1.2,
+          "color": [
+            0.6,
+            0.7,
+            1.0
+          ]
+        },
+        {
+          "name": "clock-face",
+          "type": "POINT",
+          "location": [
+            0,
+            2.25,
+            2.6
+          ],
+          "energy": 3,
+          "size": 0.1,
+          "color": [
+            0.9,
+            0.95,
+            0.8
+          ]
+        }
+      ],
+      "note": "10:00 at the door: go out (to n7_halls) or stay.",
+      "camera": {
+        "location": [
+          0,
+          -1.3,
+          1.66
+        ],
+        "look_at": [
+          0,
+          -2.5,
+          2.0
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -1.3,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "boots-mate"
+      ],
+      "interactions": [
+        {
+          "prop": "door",
+          "verb": "Go out",
+          "leads_to": "n7_halls"
+        },
+        {
+          "prop": "bed-fisk",
+          "verb": "Stay in"
+        }
+      ]
+    }
+  }
+}
