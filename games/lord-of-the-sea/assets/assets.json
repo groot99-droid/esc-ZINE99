@@ -1,0 +1,825 @@
+{
+  "game": "lord-of-the-sea",
+  "style": "Painterly cinematic realism, like a hand-finished film matte painting of an age-of-sail world: tarred wood, salt-dulled brass, glass bottles and paper; Company order in ink-blue, ledger red, tea brown and lamp white; the wild sea in sea-green, foam, storm violet and dawn gold.",
+  "locations": [
+    {
+      "id": "boat-cabin",
+      "name": "The boat: the cabin",
+      "scenes": [
+        "s-cabin-dawn",
+        "s-cabin-princess",
+        "s-chart-table",
+        "s-cabin-tally"
+      ],
+      "dimensions_m": [
+        6,
+        3.5,
+        2.2
+      ],
+      "lighting": "Dawn: orange threads through the porthole, swaying beams. Midday: cleaner light. Chart table: oil lamp. Tally: night lamp, walls full.",
+      "objects": [
+        "rum-bottle",
+        "chart-table",
+        "brass-dividers",
+        "sale-deed",
+        "spice-jar",
+        "tea-caddy",
+        "strongbox",
+        "harbour-book",
+        "ship-lantern",
+        "rope-coil"
+      ],
+      "prompt": "Painterly cinematic realism, age-of-sail world. Interior of a small old sailing boat's cabin, 6 by 3.5 metres, curved tarred-oak hull ribs and a low beamed ceiling, two levels of shelving on the walls crowded with spice jars, tea tins and glass bottles, sketches, foreign poems and hand-drawn sea charts pinned to the planks, a round brass porthole letting in thin orange dawn light, a narrow wooden stair up to a hatch, a heavy chart table with a hanging oil lamp, a wooden bunk, empty green glass bottles rolled across the worn floorboards. Warm amber and tea-brown light, dust in the beams. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "71165f58-0a38-46f9-91dd-fd01a88ea08c",
+      "image": "assets/locations/boat-cabin.jpg"
+    },
+    {
+      "id": "boat-deck",
+      "name": "The boat: deck and dinghy",
+      "scenes": [
+        "s-deck-dinghy"
+      ],
+      "dimensions_m": [
+        14,
+        4.5,
+        10
+      ],
+      "lighting": "Molten gold dawn over still water.",
+      "objects": [
+        "dinghy",
+        "oar",
+        "rope-coil",
+        "ship-lantern"
+      ],
+      "prompt": "Painterly cinematic realism, age-of-sail world. The open deck of a weathered 14-metre single-masted wooden sailing boat at anchor in a calm bay at dawn, tarred planking, worn rails, coiled ropes, a furled patched sail on the boom, a small wooden rowing dinghy tied alongside the rail on a line, a sandy crescent beach and green headlands in the distance, molten gold dawn light on glassy sea-green water. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "465faeac-b1b2-48eb-bd52-d156ee8dfb83",
+      "image": "assets/locations/boat-deck.jpg"
+    },
+    {
+      "id": "home-reach-beach",
+      "name": "The beach of Home Reach",
+      "scenes": [
+        "s-beach-tideline",
+        "s-beach-princess",
+        "s-home-tideline",
+        "s-tideline-final",
+        "s-end-charter",
+        "s-end-no-lord",
+        "s-end-wild-sea",
+        "s-end-lords-peace"
+      ],
+      "dimensions_m": [
+        220,
+        60,
+        30
+      ],
+      "lighting": "Dawn gold haze (chapter 0, final tideline, most endings); bright morning; late afternoon with a storm on the horizon; storm-gold for The Wild Sea; flat noon for The Lord's Peace.",
+      "objects": [
+        "tideline-stone",
+        "dinghy",
+        "oar",
+        "rum-bottle",
+        "lobster-pot"
+      ],
+      "prompt": "Painterly cinematic realism, age-of-sail world. A 220-metre crescent sandy beach in a quiet bay at dawn, a wide wet tideline band of glistening sand and foam where the waves reach, a single standing stone carved with worn wave spirals at the water's edge, driftwood and seaweed, a weathered sailing boat anchored offshore, green headlands closing the bay, hazy dawn-gold light over sea-green water. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "89494928-4750-4166-87e5-a9b0ce6e2671",
+      "image": "assets/locations/home-reach-beach.jpg"
+    },
+    {
+      "id": "company-lane",
+      "name": "Sea tile: the Company lane",
+      "scenes": [
+        "s-company-lane"
+      ],
+      "dimensions_m": [
+        2000,
+        2000,
+        60
+      ],
+      "lighting": "Flat sun, glassy water, no wind.",
+      "objects": [
+        "company-buoy",
+        "revenue-cutter"
+      ],
+      "prompt": "Painterly cinematic realism, age-of-sail world. Open sea under a flat bright sun, glassy calm ink-blue water stretching to the horizon, a straight receding line of identical plain riveted iron channel buoys painted ink-blue with a white band, each topped by a small bell cage, spaced evenly into the distance marking a shipping lane, a distant convoy of tall three-masted wooden merchant sailing ships in neat file all flying the same plain blue flag, orderly and too tidy. Unmarked buoys with no numbers or painted markings. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "453643ad-0e3d-4970-8ce4-0a76490f232a",
+      "image": "assets/locations/company-lane.jpg"
+    },
+    {
+      "id": "tidewater",
+      "name": "Tidewater harbour",
+      "scenes": [
+        "s-tidewater"
+      ],
+      "dimensions_m": [
+        300,
+        200,
+        40
+      ],
+      "lighting": "Clean whites and Company blue under high sun; tavern interior warm lamp light.",
+      "objects": [
+        "harbour-ferry",
+        "notice-board",
+        "tea-chest",
+        "rope-coil"
+      ],
+      "prompt": "Painterly cinematic realism, age-of-sail world. A clean ordered colonial-era trading harbour town, 300 by 200 metre harbour, whitewashed stone warehouses and offices with ink-blue shutters, a long stone quay with neat bollards, wide stone school steps down to the water, a small ferry boat with a bell mid-harbour, a tavern doorway under a plain hanging sign with no lettering, a wooden notice board on the quay, stacked tea chests, everything orderly and too clean, bright sun on white walls. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "168e9313-82fd-45c5-bb58-a648d9e48bd6",
+      "image": "assets/locations/tidewater.jpg"
+    },
+    {
+      "id": "the-unwritten",
+      "name": "The Unwritten",
+      "scenes": [
+        "s-unwritten"
+      ],
+      "dimensions_m": [
+        2000,
+        2000,
+        80
+      ],
+      "lighting": "Green-grey moving light through drifting fog.",
+      "objects": [
+        "gullwife-boat"
+      ],
+      "prompt": "Painterly cinematic realism, age-of-sail world. Rough open sea beyond the edge of the charts, green-grey heaving swells with foam, black jagged rocks breaking the surface, low banks of fog drifting across the water, a battered patched fishing boat with a crooked mast half seen in the fog, shafts of moving light through grey cloud, wild and untamed, no buoys, no flags. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "7ce75758-87c7-4cde-9e6f-fd41cc3efd28",
+      "image": "assets/locations/the-unwritten.jpg"
+    },
+    {
+      "id": "salt-steps",
+      "name": "The Salt Steps",
+      "scenes": [
+        "s-salt-steps"
+      ],
+      "dimensions_m": [
+        400,
+        300,
+        60
+      ],
+      "lighting": "Hot noon, salt-white glare.",
+      "objects": [
+        "tideline-stone",
+        "lobster-pot",
+        "rope-coil",
+        "tea-chest"
+      ],
+      "prompt": "Painterly cinematic realism, age-of-sail world. A deserted coastal fishing village of white salt-evaporation terraces stepping down a sun-bleached hillside to the sea, shallow rectangular pans of crystallising salt with low stone walls, a rocky reef just under turquoise water with a few empty beached skiffs, fishing nets drying on poles, a small wooden tallyman's hut on the shore, a carved standing stone at the water's edge, hot salt-white noon glare, everyone gone for the day. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no figures, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "1330615f-bd31-4c14-8421-59ca8ee60623",
+      "image": "assets/locations/salt-steps.jpg"
+    },
+    {
+      "id": "lamplit-strait",
+      "name": "The Lamplit Strait",
+      "scenes": [
+        "s-lamplit-strait"
+      ],
+      "dimensions_m": [
+        500,
+        400,
+        80
+      ],
+      "lighting": "Dusk; the five lights coming on in sequence; lamp room warm.",
+      "objects": [
+        "lighthouse-lamp",
+        "tideline-stone",
+        "ship-lantern"
+      ],
+      "prompt": "Painterly cinematic realism, age-of-sail world. A narrow sea strait at dusk between two rocky headlands, five stone lighthouses spaced along the cliffs with their lamps beginning to glow in sequence, the nearest lighthouse with a glazed lamp room at the top, steep stone steps and a small stone landing, a carved standing stone by the water, violet and gold dusk sky reflected in calm dark water, deserted. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no figures, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "9f7e6c86-8ddf-4ca3-baed-5c8655f8ee8a",
+      "image": "assets/locations/lamplit-strait.jpg"
+    },
+    {
+      "id": "pearl-banks",
+      "name": "The Pearl Banks",
+      "scenes": [
+        "s-pearl-banks"
+      ],
+      "dimensions_m": [
+        400,
+        400,
+        30
+      ],
+      "lighting": "Bright turquoise shallows; the trench a dark line.",
+      "objects": [
+        "diving-boat",
+        "tideline-stone",
+        "lobster-pot"
+      ],
+      "prompt": "Painterly cinematic realism, age-of-sail world. A village of wooden huts on tall stilts over turquoise tropical shallows, rope walkways between the huts, a narrow wooden pearl-diving boat moored below, sandbanks and coral heads visible through clear water, and beyond them a sharp dark line where the sea floor drops into a deep trench, a carved standing stone on a sandbar, bright clear daylight. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "a96a0504-4962-44fa-80b2-a4b075caa98a",
+      "image": "assets/locations/pearl-banks.jpg"
+    },
+    {
+      "id": "spice-mouth",
+      "name": "The Spice Mouth",
+      "scenes": [
+        "s-spice-mouth"
+      ],
+      "dimensions_m": [
+        450,
+        300,
+        40
+      ],
+      "lighting": "Warm afternoon; brown river water; tea dust hanging in the light.",
+      "objects": [
+        "pay-table",
+        "tea-chest",
+        "rope-coil",
+        "tideline-stone"
+      ],
+      "prompt": "Painterly cinematic realism, age-of-sail world. A busy river-mouth port in warm afternoon light, tall brick and timber warehouses along stone quays, brown river water meeting the sea, cranes and stacks of wooden tea chests and spice sacks, a covered wooden pay table under an awning, an office with ink-blue shutters, golden tea dust hanging in the light, a carved standing stone at the quay's end. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "c390864c-d953-448d-8b5a-5306e12f06b6",
+      "image": "assets/locations/spice-mouth.jpg"
+    },
+    {
+      "id": "kings-halls",
+      "name": "The King's Halls",
+      "scenes": [
+        "s-kings-halls"
+      ],
+      "dimensions_m": [
+        120,
+        80,
+        20
+      ],
+      "lighting": "Faded gold interior; the jetty and sea-gate in bright sea light.",
+      "objects": [
+        "throne",
+        "gallery-mirror",
+        "coin-chest",
+        "ledger"
+      ],
+      "prompt": "Painterly cinematic realism, age-of-sail world. The interior of a faded seaside palace, a long gallery of tall gilt-framed mirrors on polished marble floors leading to a throne hall with a carved gilded throne, small paper inventory tags tied to every piece of furniture, tall arched windows, and through a great open sea-gate at the end a stone jetty running out to the water, faded gold and dusty light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "6e2fb26e-18c7-47ad-ac7c-462727dae001",
+      "image": "assets/locations/kings-halls.jpg"
+    },
+    {
+      "id": "counting-house",
+      "name": "The counting-house",
+      "scenes": [
+        "s-counting-house"
+      ],
+      "dimensions_m": [
+        40,
+        18,
+        9
+      ],
+      "lighting": "Cold lamp-white light, ink-blue shadows; the sea moving under the floor.",
+      "objects": [
+        "tea-board",
+        "ledger",
+        "tea-chest",
+        "ship-lantern"
+      ],
+      "prompt": "Painterly cinematic realism, age-of-sail world. A deserted long timber counting-house hall at night, 40 by 18 metres, built on a floating wharf over the sea, floor-to-ceiling wooden shelves of bound ledgers, rows of empty clerks' writing desks with empty chairs pushed in, a single small table at the centre set with a blue-and-white porcelain game board and two empty chairs, brass oil lamps giving cold lamp-white light, ink-blue shadows, glimpses of dark sea through gaps in the floorboards, tall clocks on the walls. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no figures, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "ff5351e5-320f-48a6-b668-3034aebb2b73",
+      "image": "assets/locations/counting-house.jpg"
+    }
+  ],
+  "objects": [
+    {
+      "id": "rum-bottle",
+      "name": "The bottle",
+      "role": "interact",
+      "scenes": [
+        "s-cabin-dawn",
+        "s-end-lords-peace"
+      ],
+      "size_m": [
+        0.09,
+        0.09,
+        0.32
+      ],
+      "material": "Dark green blown glass, scuffed paper label left blank, cork",
+      "prompt": "An old dark green blown-glass rum bottle, slightly uneven hand-blown shape, a scuffed blank paper label, a cork stopper, salt-dulled surface, a little amber liquid left inside. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c9d98504-a459-4be4-a560-10617e9f2ac1",
+      "image": "assets/objects/rum-bottle.jpg"
+    },
+    {
+      "id": "chart-table",
+      "name": "Chart table",
+      "role": "interact",
+      "scenes": [
+        "s-chart-table",
+        "s-cabin-tally"
+      ],
+      "size_m": [
+        1.4,
+        0.9,
+        0.95
+      ],
+      "material": "Tarred oak, brass corner fittings, a raised lip, one drawer",
+      "prompt": "A heavy ship's chart table of dark tarred oak, a slanted top with a raised wooden lip to hold charts, brass corner fittings, one shallow drawer, sturdy turned legs, worn edges, a blank cream sea chart unrolled on top with faint coastline lines. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "b8809ff7-e9a8-430a-889c-55428c345523",
+      "image": "assets/objects/chart-table.jpg"
+    },
+    {
+      "id": "brass-dividers",
+      "name": "Brass dividers",
+      "role": "interact",
+      "scenes": [
+        "s-chart-table",
+        "s-cabin-tally"
+      ],
+      "size_m": [
+        0.04,
+        0.02,
+        0.18
+      ],
+      "material": "Salt-dulled brass, steel points",
+      "prompt": "A pair of antique navigational brass dividers, two long tapering legs with steel points hinged at a rounded head, salt-dulled brass with a soft patina, legs slightly opened. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "52d9232e-7b38-49fd-9a21-40fe52ed6360",
+      "image": "assets/objects/brass-dividers.jpg"
+    },
+    {
+      "id": "dinghy",
+      "name": "Dinghy",
+      "role": "interact",
+      "scenes": [
+        "s-deck-dinghy",
+        "s-end-no-lord"
+      ],
+      "size_m": [
+        1.4,
+        3.2,
+        0.6
+      ],
+      "material": "Clinker-built tarred wood, faded sea-green paint, rope painter",
+      "prompt": "A small clinker-built wooden rowing dinghy, overlapping planks with faded sea-green paint worn to bare wood, two thwart seats, brass oarlocks, a coiled rope painter at the bow, empty, on its keel. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "dcfcf356-8c27-4906-acc4-e0f51fdba61b",
+      "image": "assets/objects/dinghy.jpg"
+    },
+    {
+      "id": "oar",
+      "name": "Oar",
+      "role": "interact",
+      "scenes": [
+        "s-deck-dinghy",
+        "s-end-no-lord"
+      ],
+      "size_m": [
+        0.15,
+        0.05,
+        2.4
+      ],
+      "material": "Ash wood, leather collar, worn blade",
+      "prompt": "A single long wooden rowing oar, pale ash wood darkened with use, a wrapped leather collar near the handle, a worn flat blade with chipped edges, lying diagonally. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "2308e6a3-ef89-4418-b301-bda3ed853397",
+      "image": "assets/objects/oar.jpg"
+    },
+    {
+      "id": "tideline-stone",
+      "name": "Tideline stone",
+      "role": "interact",
+      "scenes": [
+        "s-home-tideline",
+        "s-tideline-final",
+        "s-salt-steps",
+        "s-lamplit-strait",
+        "s-pearl-banks",
+        "s-spice-mouth"
+      ],
+      "size_m": [
+        0.6,
+        0.4,
+        1.4
+      ],
+      "material": "Grey-green granite, carved wave spirals, barnacles and weed at the foot",
+      "prompt": "A weathered standing stone about 1.4 metres tall, rough grey-green granite, carved with worn concentric wave spirals, barnacles and a fringe of dried seaweed around its base, salt-crusted. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "41c1ca3d-2afe-4558-aee5-58862f42fb74",
+      "image": "assets/objects/tideline-stone.jpg"
+    },
+    {
+      "id": "company-buoy",
+      "name": "Company buoy",
+      "role": "interact",
+      "scenes": [
+        "s-company-lane"
+      ],
+      "size_m": [
+        1.6,
+        1.6,
+        3.2
+      ],
+      "material": "Riveted iron, ink-blue paint, iron bell cage",
+      "prompt": "A riveted iron channel buoy painted ink-blue with a lamp-white band, conical float, a small iron cage on top holding a bell, rust streaks at the seams, mooring ring below. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "879a2001-80e2-407a-9a98-94cace746299",
+      "image": "assets/objects/company-buoy.jpg"
+    },
+    {
+      "id": "sale-deed",
+      "name": "Sale deed",
+      "role": "interact",
+      "scenes": [
+        "s-beach-princess",
+        "s-cabin-princess"
+      ],
+      "size_m": [
+        0.3,
+        0.01,
+        0.42
+      ],
+      "material": "Crisp Company paper, red wax seal, ribbon",
+      "prompt": "A folded legal deed on thick cream parchment, slightly creased and sand-dusted, faint illegible ruled lines, a large ledger-red wax seal with a ribbon, one corner curled. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "2a6cc7e1-c352-4f88-af5e-8fbc82be7c4d",
+      "image": "assets/objects/sale-deed.jpg"
+    },
+    {
+      "id": "spice-jar",
+      "name": "Spice jar",
+      "role": "interact",
+      "scenes": [
+        "s-cabin-dawn",
+        "s-cabin-princess"
+      ],
+      "size_m": [
+        0.12,
+        0.12,
+        0.2
+      ],
+      "material": "Thick glass, cork stopper, string-tied paper cap, saffron-red spice",
+      "prompt": "A thick old glass apothecary jar with a cork stopper and a paper cap tied with string, filled with rust-red dried spice, a blank paper label, scratched glass. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "4a87ce4d-5251-460d-aaa4-2da81192d9fe",
+      "image": "assets/objects/spice-jar.jpg"
+    },
+    {
+      "id": "tea-caddy",
+      "name": "Tea caddy",
+      "role": "interact",
+      "scenes": [
+        "s-cabin-dawn",
+        "s-cabin-princess"
+      ],
+      "size_m": [
+        0.14,
+        0.14,
+        0.18
+      ],
+      "material": "Dented tin, faded blue-and-white painted pattern, hinged lid",
+      "prompt": "An old dented tin tea caddy, square with a hinged lid, faded blue-and-white painted floral pattern, rust at the corners. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "3e766258-fd9f-4ea2-b9bd-bc50e64df63d",
+      "image": "assets/objects/tea-caddy.jpg"
+    },
+    {
+      "id": "strongbox",
+      "name": "Strongbox",
+      "role": "interact",
+      "scenes": [
+        "s-chart-table"
+      ],
+      "size_m": [
+        0.5,
+        0.35,
+        0.3
+      ],
+      "material": "Sea-swollen oak, corroded iron bands, verdigris hasp",
+      "prompt": "A small sea-swollen oak strongbox, banded with corroded iron straps, a green-crusted brass hasp hanging open, barnacles on one corner, wood darkened and warped by seawater. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c1faa5d8-f7f9-4972-a588-31960f44c31b",
+      "image": "assets/objects/strongbox.jpg"
+    },
+    {
+      "id": "harbour-book",
+      "name": "Harbour book",
+      "role": "interact",
+      "scenes": [
+        "s-chart-table"
+      ],
+      "size_m": [
+        0.3,
+        0.06,
+        0.4
+      ],
+      "material": "Water-stained leather ledger, swollen pages",
+      "prompt": "A thick leather-bound harbour ledger, water-stained and swollen, wavy page edges, a ledger-red cloth spine, brass corner protectors, closed. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "a7de810b-b3c1-4d7e-98f7-726e8232873b",
+      "image": "assets/objects/harbour-book.jpg"
+    },
+    {
+      "id": "notice-board",
+      "name": "Notice board",
+      "role": "interact",
+      "scenes": [
+        "s-tidewater"
+      ],
+      "size_m": [
+        1.2,
+        0.2,
+        2.0
+      ],
+      "material": "Whitewashed timber, ink-blue roof, blank pinned papers",
+      "prompt": "A freestanding wooden harbour notice board on two posts with a small pitched ink-blue roof, whitewashed timber, several blank paper notices pinned on it. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "4b88cf40-4b7b-496b-acaa-b944cc94dc13",
+      "image": "assets/objects/notice-board.jpg"
+    },
+    {
+      "id": "lighthouse-lamp",
+      "name": "Lighthouse lamp",
+      "role": "interact",
+      "scenes": [
+        "s-lamplit-strait"
+      ],
+      "size_m": [
+        0.6,
+        0.6,
+        0.9
+      ],
+      "material": "Brass oil lamp, glass chimney, polished reflector",
+      "prompt": "A large brass lighthouse oil lamp with a tall glass chimney, a cotton wick, a curved polished reflector dish behind it, on a heavy brass base with trimming screws, warm patina. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c8551a48-0ae6-4c60-bf9d-fe868bb165c0",
+      "image": "assets/objects/lighthouse-lamp.jpg"
+    },
+    {
+      "id": "pay-table",
+      "name": "Pay table",
+      "role": "interact",
+      "scenes": [
+        "s-spice-mouth"
+      ],
+      "size_m": [
+        1.8,
+        0.8,
+        0.8
+      ],
+      "material": "Scarred teak, a brass bell, a coin tray",
+      "prompt": "A long scarred teak pay table on trestles, a small brass hand bell and a wooden coin tray with copper coins on top, ink stains, worn edges. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d9fbc043-6dd9-461f-9b8c-b06c8249b475",
+      "image": "assets/objects/pay-table.jpg"
+    },
+    {
+      "id": "coin-chest",
+      "name": "The king's payment",
+      "role": "interact",
+      "scenes": [
+        "s-kings-halls"
+      ],
+      "size_m": [
+        0.6,
+        0.4,
+        0.4
+      ],
+      "material": "Oak, gilt bands, faded crimson velvet lining, coins",
+      "prompt": "A small oak coin chest with faded gilt bands and a domed lid open, lined with worn crimson velvet, full of gold and silver coins. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "3431b871-106c-472f-b02e-54deb2ae0152",
+      "image": "assets/objects/coin-chest.jpg"
+    },
+    {
+      "id": "tea-board",
+      "name": "The Tea Board",
+      "role": "interact",
+      "scenes": [
+        "s-counting-house"
+      ],
+      "size_m": [
+        0.7,
+        0.7,
+        0.06
+      ],
+      "material": "Lacquered wood frame, blue-and-white porcelain tiles, wooden counters",
+      "prompt": "A square game board with a dark lacquered wooden frame, inlaid with cobalt blue-and-white porcelain tiles painted with willow-pattern routes forming lanes, small turned wooden counters in blue and white set on it. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "5805cc87-8750-46b6-bd96-25b189d4ebaf",
+      "image": "assets/objects/tea-board.jpg"
+    },
+    {
+      "id": "revenue-cutter",
+      "name": "Revenue cutter",
+      "role": "hero",
+      "scenes": [
+        "s-company-lane"
+      ],
+      "size_m": [
+        6,
+        24,
+        22
+      ],
+      "material": "Black-tarred hull, white stripe, ink-blue pennant",
+      "prompt": "A small fast single-masted revenue cutter sailing ship model, black tarred hull with a lamp-white stripe, ink-blue pennant with no emblem, taut sails, a few small cannon ports. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "8ea11e1f-8f5d-4534-a98f-a7a1ddccbaa0",
+      "image": "assets/objects/revenue-cutter.jpg"
+    },
+    {
+      "id": "gullwife-boat",
+      "name": "The Gullwife boat",
+      "role": "hero",
+      "scenes": [
+        "s-unwritten"
+      ],
+      "size_m": [
+        4,
+        12,
+        10
+      ],
+      "material": "Patched timber, crooked mast, mismatched sails",
+      "prompt": "A battered small fishing boat with a crooked mast, mismatched patched sails in faded red and ochre, sea-green hull with scraped paint, nets heaped at the stern, a gull-shaped carved figurehead. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "6d404d5a-0660-4475-8bf8-53b191b82cbb",
+      "image": "assets/objects/gullwife-boat.jpg"
+    },
+    {
+      "id": "harbour-ferry",
+      "name": "Tidewater ferry",
+      "role": "hero",
+      "scenes": [
+        "s-tidewater"
+      ],
+      "size_m": [
+        3.5,
+        10,
+        5
+      ],
+      "material": "White-painted planks, ink-blue trim, brass bell on a post",
+      "prompt": "A small 18th-century open wooden harbour ferry rowing-and-sail boat, no roof and no canopy, neat white-painted clinker planking with ink-blue trim, plain wooden thwart benches for passengers, a single short mast with a furled sail, a small brass bell on a post at the bow, empty. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "5758640c-1e0e-4a0f-94b6-70fcc1af688c",
+      "image": "assets/objects/harbour-ferry.jpg"
+    },
+    {
+      "id": "diving-boat",
+      "name": "Ide's diving boat",
+      "role": "hero",
+      "scenes": [
+        "s-pearl-banks"
+      ],
+      "size_m": [
+        1.2,
+        7,
+        1.2
+      ],
+      "material": "Narrow sun-bleached wood, outrigger, rope baskets",
+      "prompt": "A narrow sun-bleached wooden pearl-diving canoe with a bamboo outrigger, coils of rope and woven baskets inside, a stone diving weight tied to a line, empty. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c55733c0-f360-4bcd-8d1d-a8d3da1a7be9",
+      "image": "assets/objects/diving-boat.jpg"
+    },
+    {
+      "id": "throne",
+      "name": "The king's throne",
+      "role": "hero",
+      "scenes": [
+        "s-kings-halls"
+      ],
+      "size_m": [
+        1.2,
+        1.0,
+        2.2
+      ],
+      "material": "Carved gilt wood, faded crimson cushion, paper inventory tag",
+      "prompt": "An ornate carved wooden throne with faded gilding flaking off, worn crimson velvet cushion, sea-shell and wave carvings on the high back, a small blank paper inventory tag tied to one arm with string. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d29f386a-feb6-4bd8-95fc-e4a5cfba8954",
+      "image": "assets/objects/throne.jpg"
+    },
+    {
+      "id": "gallery-mirror",
+      "name": "Gallery mirror",
+      "role": "hero",
+      "scenes": [
+        "s-kings-halls"
+      ],
+      "size_m": [
+        1.2,
+        0.15,
+        2.6
+      ],
+      "material": "Gilt frame, foxed mirror glass, inventory tag",
+      "prompt": "A tall freestanding gilt-framed mirror with shell carvings, foxed and slightly clouded antique glass reflecting only soft grey, a small blank paper inventory tag tied to the frame. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "95351655-bbcc-4913-bc64-d639ee1c417c",
+      "image": "assets/objects/gallery-mirror.jpg"
+    },
+    {
+      "id": "tea-chest",
+      "name": "Tea chest",
+      "role": "fill",
+      "scenes": [
+        "s-tidewater",
+        "s-spice-mouth",
+        "s-counting-house",
+        "s-salt-steps"
+      ],
+      "size_m": [
+        0.5,
+        0.5,
+        0.6
+      ],
+      "material": "Plywood-and-pine crate, tin-lined, rope handles",
+      "prompt": "A wooden tea chest crate, pale pine boards with metal corner strips, rope handles, a stencilled blank panel, scuffed and dusty. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "1665dafa-77af-497b-a5a9-69c8d99a855d",
+      "image": "assets/objects/tea-chest.jpg"
+    },
+    {
+      "id": "ledger",
+      "name": "Ledger",
+      "role": "fill",
+      "scenes": [
+        "s-kings-halls",
+        "s-counting-house"
+      ],
+      "size_m": [
+        0.3,
+        0.05,
+        0.42
+      ],
+      "material": "Crisp ink-blue cloth binding, ledger-red spine",
+      "prompt": "A large closed account ledger book, ink-blue cloth covers with a ledger-red leather spine and corners, crisp cream page edges, standing slightly open. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "dc8bcfad-e92e-4bab-85e2-2beaedcf8ddd",
+      "image": "assets/objects/ledger.jpg"
+    },
+    {
+      "id": "lobster-pot",
+      "name": "Lobster pot",
+      "role": "fill",
+      "scenes": [
+        "s-salt-steps",
+        "s-pearl-banks",
+        "s-beach-tideline"
+      ],
+      "size_m": [
+        0.6,
+        0.4,
+        0.4
+      ],
+      "material": "Woven willow, tarred rope, cork float",
+      "prompt": "A traditional woven willow lobster pot with a domed top and funnel entrance, tied with tarred rope to a cork float. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "a3a9deda-c9c6-44c8-b129-22743dccb935",
+      "image": "assets/objects/lobster-pot.jpg"
+    },
+    {
+      "id": "rope-coil",
+      "name": "Rope coil",
+      "role": "fill",
+      "scenes": [
+        "s-deck-dinghy",
+        "s-cabin-dawn",
+        "s-tidewater",
+        "s-salt-steps",
+        "s-spice-mouth"
+      ],
+      "size_m": [
+        0.6,
+        0.6,
+        0.2
+      ],
+      "material": "Tarred hemp",
+      "prompt": "A neat flat coil of thick tarred hemp ship's rope, brown and frayed at the end. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "b3ee1e70-92ea-4c21-a4fb-e06ce9affe9f",
+      "image": "assets/objects/rope-coil.jpg"
+    },
+    {
+      "id": "ship-lantern",
+      "name": "Ship's lantern",
+      "role": "fill",
+      "scenes": [
+        "s-cabin-dawn",
+        "s-chart-table",
+        "s-deck-dinghy",
+        "s-lamplit-strait",
+        "s-counting-house"
+      ],
+      "size_m": [
+        0.2,
+        0.2,
+        0.4
+      ],
+      "material": "Salt-dulled brass, glass panes, wire guards",
+      "prompt": "An old ship's hanging lantern of salt-dulled brass with glass panes behind wire guards, a carrying ring on top, unlit. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "08e56272-f84a-4103-98ab-a7ec2663b342",
+      "image": "assets/objects/ship-lantern.jpg"
+    }
+  ]
+}
