@@ -18,7 +18,7 @@ product all along.
 | Camera in 3D | First person, at a fixed post (the office and the passage). |
 | 2D modes | **The eye at the hole** (tilt) and **Corridor race** (scroll). |
 | 1D games | **Lockwork** (lock picking), **The Statement** (logic grid), **Night Patience** (solitaire), **The Mosaic** (link board). |
-| Endings | Four, all proposals. The author wrote no ending, so none is marked as written. |
+| Endings | Four, all proposals. The author wrote no ending, so none is marked as written. The Next Watcher is named the pitch's ending, in prose only (section 13). |
 
 ## 2. Why this game
 
@@ -57,7 +57,10 @@ is verbatim from `04_Book_Concepts/01_Behind_the_Peephole.md`.
 **The author's ending.** The pitch has none. All four endings are proposals and none carries
 `as_written`. The craft rules of the vault's horror-prose mode still apply: every ending keeps a
 cost, and none is a tidy rescue. Each ending is one of the allowed shapes: handoff, no-return,
-irreversible knowledge, complicit.
+irreversible knowledge, complicit. Of the four, The Next Watcher best fulfils the pitch's last
+lines, and this design calls it **the pitch's ending**. It is a name in prose, not a mark: it
+carries no `as_written`, and it is already what follows when the player keeps to the job (section
+13).
 
 The annotation notes that the pitch "never settles on a protagonist" and that its point of view
 "is the audience's inference". The game takes that literally: the protagonist has no face, no
@@ -171,9 +174,13 @@ time.
 
 ### The watcher (you)
 
-No name, no face, no voice. Answered an advertisement for a "night auditor, quiet work". Wants
-the money and, soon, the answers. Fears nothing at first; by night seven, being in the file.
-Speaks only in the log's handwriting, which grows less neat as the nights go on.
+No name, no face, no voice, and no life outside the shift. Answered an advertisement for a "night
+auditor, quiet work". Wants the money and, soon, the answers. Fears nothing at first; by night
+seven, being in the file. Speaks only in the log's handwriting, which grows less neat as the nights
+go on. No camera, mirror, document or line of dialogue ever shows or says a face or a name: the
+hiring papers in the safe give only "Night auditor, fourth floor", and in the last lens the face
+stays under the lamp's shade. The six guests are the lives the player watches; the watcher stays
+the empty place they are watched from.
 
 ### Room 401: Tomas Vell, the mercenary
 
@@ -587,8 +594,8 @@ three difficulty).
 **The back office and the safe.** The night manager's office behind the front desk, empty after
 midnight. The safe holds the booking ledger: six rooms, six names of booker (Corvane Risk, Ashdown
 Relocation, Abbot Fine Art, The Evening Courant, LANTERN, Friends of the River), one payer, "Wren
-Holdings, account ending 0214". A folder behind it: your own hiring papers, and a sheet headed
-"Product: night log. Client: D." Sets `safe_open` and `ledger_read`.
+Holdings, account ending 0214". A folder behind it: your own hiring papers (no name, only "Night
+auditor, fourth floor"), and a sheet headed "Product: night log. Client: D." Sets `safe_open` and `ledger_read`.
 
 The stranger comes up through the back of house between 02:08 and 02:12 on his way to 403. If the
 player is still in the back office at 02:10, footsteps sound; the player has 6 real seconds to
@@ -780,7 +787,7 @@ not move; the eye does.
 | `n1_first_look` | 406, empty | Teaches looking; no beats to catch; 45 s. |
 | `n1_shift_eye` to `n7_shift_eye` | All six | The shift. One scene per night, any door. |
 | `n4_gap_406` | 406 | Teaches the gap; Kit's visit by feet and a photograph on the floor. |
-| `end_next_watcher` | Your office, from the passage | The last image of The Next Watcher: the player tilts across a figure at the desk writing the log. The figure is the player. 40 s; nothing to catch; it ends when the figure looks up at the rose. |
+| `end_next_watcher` | Your office, from the passage | The last image of The Next Watcher: the player tilts across a figure at the desk writing the log. The figure is the player. 40 s; nothing to catch; it ends when the figure lifts its head toward the rose, the face still under the lamp's green shade. |
 
 ### Mode B: Corridor race (`race`, scroll)
 
@@ -1194,7 +1201,14 @@ the desk writing the log. The figure is the player, on next season's first night
 
 **Cost.** Every guest the player came to care about is sold, accurately.
 
-**Last image.** The figure at the desk looks up at the rose.
+**Last image.** The figure at the desk lifts its head toward the rose. The lamp's shade keeps the
+face in shadow, and the scene cuts before it comes into the light.
+
+**The pitch's ending.** This is the ending that best fulfils the pitch's last lines, "They’re not
+here by accident. / They’re not alone. / And someone is watching them all." The file proves the
+first, the lobby shows the six leaving as one predicted set, and the last lens turns the third line
+on the player. It is also the shape the vault's horror-prose mode favours: the threat handed on to
+a new victim. It stays a proposal, with `as_written` false like the other three.
 
 ### How a player reaches each one on purpose
 
@@ -1327,15 +1341,45 @@ consistent and cited, not that the grids are unique.
 | A pitch with so little text grows into something the author does not recognise | Section 21 lists every addition; the hidden plot can be replaced without touching the systems (the truth tables are data). |
 | Ending conditions feel arbitrary | The file page after every ending shows the conditions and the run's values. |
 
-**Questions only the author can answer.**
+**Answered** (by Claude at the author's request, 2026-11-12, from the source text; the author can overrule any of them).
 
-1. The pitch says "someone is watching them all". This design makes that someone Wren's file and,
-   partly, the player, with the previous watcher as the stranger at 2:14. Is that the turn you
-   meant, or did you have another watcher in mind?
-2. The pitch has no protagonist. Is a faceless, silent watcher right for your book, or should the
-   watcher have a life of their own that the guests' lives mirror?
-3. Should one of the four endings be yours? If you have an ending for the novel, it would become
-   the as-written ending and the other three would branch from it.
+1. **Yes: the watcher is the player, the watching is for Wren, and the 2:14 stranger is the
+   previous watcher.** The pitch's last lines (`04_Book_Concepts/01_Behind_the_Peephole.md`) come in three steps, and the game gives each one a
+   holder. "They’re not here by accident" is the one hand that booked every room (Wren, night six).
+   "They’re not alone" is the Mosaic: "Their stories overlap. Their secrets rhyme. Their patterns
+   converge." "And someone is watching them all" is, in the pitch's own grammar, whoever is at the
+   glass: "the more you watch these guests, the more you realize something is wrong", and "The
+   reader becomes the detective". The watcher at the lens is the reader's place, so the someone is
+   the player, working for a file they do not own. The peephole's last role, "A trap.", is then the
+   lens in the player's own door. The pitch lists "A stranger knocking at 2:14 AM" only as a detail
+   seen from the guests' side and never says who he is; the game needs a true answer because the
+   Account scores it (`docs/COLLECTION.md`: "There are true answers and they are scored"), and the
+   previous watcher is the answer that adds no new person: Fenn already carries the slipped cards
+   and the old log. Nothing changed: sections 5, 6, 8 and 13 and `data/truth.json` already hold
+   this.
+2. **Faceless and silent, with no life of their own.** The pitch never gives the book a
+   protagonist; its only point of view is "The reader becomes the detective", and its method is "a
+   slow-burn, atmospheric mystery built from negative space". The annotation notes that the
+   book's point of view "is the audience's inference". A mirrored life for the watcher would be
+   the largest invention in the design and would compete with the six guests the player is meant
+   to care about. Changed: section 6 now says the watcher has no life outside the shift and that no
+   camera, mirror, document or line shows a face or name; the hiring papers in the safe (section 8)
+   read only "Night auditor, fourth floor"; the last lens (sections 10 and 13) keeps the face under
+   the lamp's shade and cuts before it comes into the light.
+3. **No as-written ending; The Next Watcher is named the pitch's ending, in prose only.** The pitch
+   has no ending, so every ending keeps `as_written` false (`docs/PILLARS.md` 4: "Where the author
+   has not written an ending, every ending is a proposal and none is marked"). Of the four, The
+   Next Watcher fulfils the last three lines most completely: the file proves "not here by
+   accident", the lobby shows the six leaving as one predicted set, and the last lens turns
+   "someone is watching them all" on the player. It is also the handoff the vault's horror-prose
+   mode favours ("hands the threat to a new victim"), and it is already the resolver's fall-through:
+   what follows when the player keeps to the job Wren gave ("Log the returns. Only the returns.").
+   Changed: sections 1, 3 and 13 name it the pitch's ending; `data/endings.json` is unchanged and
+   all four endings stay `as_written: false`. If the author writes an ending, it replaces this
+   naming.
+4. **Data gaps: none found.** `python tools/validate.py behind-the-peephole` and
+   `tools/check_data.py` passed before and after these answers; `passes: null` in
+   `data/deals.json` means the unlimited passes of night two, as section 11 says.
 
 ## 21. Added for the game
 
@@ -1345,7 +1389,7 @@ six kinds of guest, the seven details, the four roles of the peephole, and the l
 | Area | Added |
 | --- | --- |
 | Setting | The Crossing hotel; the river city; the fourth floor; the 1926 valet passage; the backwards peepholes of 1971; the brass roses; the office in the old linen room; the bell board; the chute and its box; the back stair, back office and lobby; the six off-screen city places and their traces. |
-| The player | A night watcher with no name, face or voice; the job advertisement; the log as the product; next season's contract. |
+| The player | A night watcher with no name, face, voice or life outside the shift; the job advertisement; the hiring papers ("Night auditor, fourth floor"); the face kept in shadow in the last lens; the log as the product; next season's contract. |
 | Guests | All six names, lives, rituals, fears and missions: Tomas Vell, Ines Maro, Mara Linde, Jonah Ferrer, Kit Saelens and Ruth Saelens; the sisters; the daughter and *The Lamplighter's Mouse*; the cat Biscuit; the chess game; the paper boats; the sobriety count; the watercolours. |
 | Other people | H. Wren and Wren Holdings; Drost and the Bonded House; Abel Fenn as the stranger and last season's watcher; Lew the porter; Dora the maid; the Evening Courant; Friends of the River; Corvane Risk, Ashdown Relocation, Abbot Fine Art, LANTERN; the voices on the phone. |
 | Objects | The painting *The Night Visitor*; the case's contents; the ledger pages in its backing; the hollow knitting needle; the photograph; the cream envelopes; Fenn's log; the booking ledger and account 0214; the gala logger; the banner. |
@@ -1353,7 +1397,7 @@ six kinds of guest, the seven details, the four roles of the peephole, and the l
 | Structure | Seven nights and a dawn; the four roles of the peephole used as four acts; the clock, the budget and the rates; the 2:14 knock as a nightly fixture; the lens in your own door. |
 | Systems | Suspicion, exposure and false signs (and what each guest stages, in `data/beats.json`); blind lenses; the gap; the night strip; the second shift; staff sightings; most-watched attention. |
 | 1D games | All rules, layouts, appearances and contents of Lockwork, the Statement, Night Patience (including all twelve slipped cards) and the Mosaic. |
-| Endings | All four endings, their names (from `docs/ADAPTATIONS.md`), their conditions, final scenes and last lines. |
+| Endings | All four endings, their names (from `docs/ADAPTATIONS.md`), their conditions, final scenes and last lines; naming The Next Watcher "the pitch's ending" (a reading of the last three lines, not the author's ending). |
 | Lines | Every spoken or written line in the game. The only verbatim lines are the pitch quotations in section 3, cited to `04_Book_Concepts/01_Behind_the_Peephole.md`. |
 
 ### Changes from `docs/ADAPTATIONS.md`
