@@ -66,7 +66,9 @@
         "scene": {"type": "string"},
         "orderly_writes": {"type": "string"},
         "fragment_budget_by_tier": {"type": "array", "items": {"type": "integer"}, "minItems": 4, "maxItems": 4},
-        "fragments": {"type": ["string", "array"], "description": "A marked placeholder until the author supplies them"}
+        "fragments": {"type": "array", "minItems": 1, "description": "The words Fisk may build his one line from, in the order lower tiers keep them; each verbatim from the source line it names",
+          "items": {"type": "object", "required": ["text", "line"],
+            "properties": {"text": {"type": "string"}, "line": {"type": "integer", "minimum": 1}}}}
       }}
   }
 }

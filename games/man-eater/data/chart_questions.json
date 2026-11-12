@@ -110,6 +110,15 @@
     "scene": "d7_chart",
     "orderly_writes": "ready",
     "fragment_budget_by_tier": [8, 5, 3, 1],
-    "fragments": "PLACEHOLDER (author): the word fragments Fisk may build his one line from. DESIGN.md does not supply them."
+    "fragments": [
+      {"text": "hate", "line": 36},
+      {"text": "these people", "line": 36},
+      {"text": "never", "line": 36},
+      {"text": "something was off", "line": 32},
+      {"text": "lied to", "line": 33},
+      {"text": "transferred", "line": 32},
+      {"text": "worse places", "line": 28},
+      {"text": "Sir yes Sir", "line": 29}
+    ]
   }
 }

@@ -67,9 +67,6 @@
       "layer": "3d",
       "name": "The bunk room and the three rules",
       "chapter": "ch1_arrival",
-      "writes": [
-        "the_list"
-      ],
       "enter": "cut",
       "exit": "fade",
       "next": [
@@ -387,8 +384,7 @@
       "writes": [
         "suspicion",
         "rules_broken",
-        "warmth",
-        "the_list"
+        "warmth"
       ],
       "enter": "flatten",
       "exit": "fade",
@@ -428,8 +424,7 @@
         "warmth"
       ],
       "writes": [
-        "duties_failed",
-        "the_list"
+        "duties_failed"
       ],
       "enter": "cut",
       "exit": "cut",
@@ -1358,8 +1353,7 @@
       "chapter": "ch8_day7",
       "reads": [
         "change",
-        "followed_with",
-        "nights_followed"
+        "followed_with"
       ],
       "writes": [
         "windigo_met",
@@ -1369,8 +1363,7 @@
       "enter": "pull-out",
       "exit": "fade",
       "next": [
-        "e_cave",
-        "e_flute"
+        "e_cave"
       ]
     },
     {
@@ -1490,18 +1483,6 @@
       "id": "e_new_recruit",
       "layer": "3d",
       "name": "Call Me Sam: the new recruit",
-      "chapter": "ch9_end",
-      "reads": [
-        "change"
-      ],
-      "enter": "fade",
-      "exit": "fade",
-      "next": []
-    },
-    {
-      "id": "e_flute",
-      "layer": "3d",
-      "name": "Footsteps: the flute down the hall",
       "chapter": "ch9_end",
       "reads": [
         "change"

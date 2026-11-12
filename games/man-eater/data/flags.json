@@ -361,7 +361,7 @@
       "name": "cave_reached",
       "type": "bool",
       "default": false,
-      "description": "Fisk was taken to the cave (followed with Jax, followed unchanged, caught at the fence, or gassed in the bunk)."
+      "description": "Fisk was taken to the cave (followed the call, with Jax or alone; caught at the fence; or gassed in the bunk)."
     }
   ]
 }

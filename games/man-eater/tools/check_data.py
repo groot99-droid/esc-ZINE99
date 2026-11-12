@@ -214,8 +214,8 @@ def main():
 
     # Quotes stay verbatim: check them against the vault when it sits beside this repo.
     vault = GAME.parent.parent.parent / "Pipelines-Plugin" / "creative-writing" / "vault" / li["source"]
-    if vault.is_file():
-        lines = vault.read_text(encoding="utf-8").splitlines()
+    lines = vault.read_text(encoding="utf-8").splitlines() if vault.is_file() else None
+    if lines is not None:
         for e in entries:
             q = e["quote"]
             if q and (q["line"] > len(lines) or q["text"] not in lines[q["line"] - 1]):
@@ -334,10 +334,27 @@ def main():
             problem(f"{w} ready_day: '{rd['scene']}' is not the day-{rd['day']} chart")
     if rd["fragment_budget_by_tier"] != FRAGMENT_BUDGET:
         problem(f"{w} ready_day: word budget must be {FRAGMENT_BUDGET} (section 11.3)")
+    frags = rd["fragments"]
+    if len(frags) != max(FRAGMENT_BUDGET):
+        problem(f"{w} ready_day: {len(frags)} fragments; tier 1 offers {max(FRAGMENT_BUDGET)}")
+    if len({f["text"] for f in frags}) != len(frags):
+        problem(f"{w} ready_day: fragments repeat")
+    for f in frags:
+        if lines is not None and (f["line"] > len(lines) or f["text"] not in lines[f["line"] - 1]):
+            problem(f"{w} ready_day: fragment {f['text']!r} is not on line {f['line']} of the source")
+    restraint(frags, f"{w} ready_day fragments")
     covered = {q["scene"] for q in cq["questions"]} | {rd["scene"]}
     for sid in chart_scenes:
         if sid not in covered:
             problem(f"{w}: chart scene '{sid}' has no question and is not the ready day")
+
+    # Every scene that writes the_list adds, breaks or ends an entry (the ready day's one line).
+    touches = {e["added_in"] for e in entries} | {b["scene"] for e in entries for b in e["broken_by"]}
+    touches.add(rd["scene"])
+    for sc in scenes_doc["scenes"]:
+        if "the_list" in sc.get("writes", []) and sc["id"] not in touches:
+            problem(f"scenes.json: '{sc['id']}' writes 'the_list' but adds, breaks or ends no "
+                    f"entry in list_incidents.json")
 
     # Every list entry that a chart scene breaks is tested by that day's question.
     for e in entries:

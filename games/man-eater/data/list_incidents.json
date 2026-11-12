@@ -114,7 +114,8 @@
       "quote": null,
       "explanations": ["Routine", "Cold-weather study", "Doesn't matter"],
       "broken_by": [
-        {"scene": "d5_chart", "day": 5, "how": "The Chart: the target curve, \"on schedule\""}
+        {"scene": "d5_chart", "day": 5, "how": "The Chart: the target curve, \"on schedule\""},
+        {"scene": "d5_duty_laundry", "day": 5, "how": "The laundry: uniforms let down at the hem, Fisk's among them"}
       ]
     },
     {

@@ -26,7 +26,7 @@ chairs empty one by one, and decides which rule to break, and at what cost.
 | Camera in 3D | First person. The camera rises with the body, from 1.66 m on day 1 to as much as 3.26 m by day 7 |
 | 2D modes | Silhouette halls (scroll); Snow line (scroll) |
 | 1D games | Short Rations; The Tray; The Chart; Floor Plan |
-| Endings | Five: The Zoo (as written), Rule Three, Footsteps, Call Me Sam, Transferred |
+| Endings | Four: The Zoo (as written), Rule Three, Call Me Sam, Transferred |
 | Endings decided by | A ledger of meals eaten and rules broken (`docs/COLLECTION.md` section 6) |
 
 ## 2. Why this game
@@ -93,7 +93,9 @@ is served, follow the call, go with Jax.
   that the player, like Fisk, does not try).
 - The meal that makes you hungrier, and the bread that makes you feel full.
 - The halls' size: 4 feet (1.22 m) wide and 15 feet (4.57 m) high, everywhere.
-- The figure's description and its one line. Sam's cave lines. The last image.
+- The figure's description and its one line. The last image.
+- Sam's cave lines, word for word, less two sentences: the account of the Windigo's origin is
+  omitted (section 20, answer 1). Nothing is reworded or added to what he says.
 - The first bunkmate is never named, as in the source.
 
 ### What the game stretches
@@ -172,10 +174,9 @@ add up, and the cold comes up through the drains.
 | Days 2 to 6 | One chair empties each night | Done (Short Rations) |
 | Night 7 | The last call | Done |
 
-**The author's Who Did It material.** `03_Stories/29_What_the_Lab_Made.md` (project `who-did-it`,
-status draft) is a special ending in the Grounds 99 material that echoes this story, and that
-material places a related site in North Dakota. It could become a tie-in later, for example a line
-in the officers' wing files. This design does not depend on it and adds nothing from it.
+**The Who Did It material stays outside the game.** `03_Stories/29_What_the_Lab_Made.md` (project
+`who-did-it`, an auto-authored draft) ends on a North Dakota site being built. The game takes
+nothing from it and no file points to it (section 20, answer 4).
 
 ### Rules of the world
 
@@ -231,10 +232,10 @@ Sam says in the cave, and never shown.
 | The pill cup | On every tray | Done |
 | Kit chocolate | Three squares in Fisk's kit. Eating one breaks rule one | Done |
 | The first bunkmate's boots | In the kennel shed, laces still tied | Found, night 3 |
-| The project's source file | A thin, secondhand summary the project treats as fact (see section 20, cultural care) | Found, night 4 |
+| The project's source file | A cover sheet: one secondhand account, the word "unverified" crossed out. It gives no account of the Windigo; its body is never shown (section 20) | Found, night 4 |
 | The transfer roster | Every "transferred" man on the same truck date; the truck has not moved | Found, night 4 |
 | The first bunkmate's list | Scratched on his pen wall: the same incidents as Fisk's, his explanations, ending in "doesn't matter" | Found, night 6 |
-| The flute | The figure's instrument. In Footsteps, Fisk's | Seen, night 7 |
+| The flute | The figure's instrument. Who the figure was is never said (section 20, answer 3) | Seen, night 7 |
 
 ## 6. Characters
 
@@ -249,8 +250,8 @@ talk.
 - **Voice:** clipped, flat. "Sir yes Sir," (line 29, replied "flatly"). Inner lines are the list
   entries: dry, short, getting shorter. His memory of New Mexico, where "the Barracks got so hot
   many recruits died of heat stroke" (line 28), is his yardstick for "worse places".
-- **Arc by ending:** Zoo, transformed and kept. Rule Three, out and still changing. Footsteps, the
-  next caller. Call Me Sam, staff, giving the rules. Transferred, alive and never knowing.
+- **Arc by ending:** Zoo, transformed and kept. Rule Three, out and still changing. Call Me Sam,
+  staff, giving the rules. Transferred, alive and never knowing.
 
 ### Sam
 
@@ -280,8 +281,8 @@ talk.
 - **Voice:** sparse. Source gives him no lines; added lines are marked. "So you know which is
   yours." (day 3, the knot). "I counted the posts." (day 5).
 - **Arc by ending:** Zoo, gassed beside Fisk (if he is still there on night 7). Rule Three, stops in
-  the snow. Footsteps, already taken, his knot still on the bed. Call Me Sam, reported, his chair
-  given to the new recruit. Transferred, told that Fisk was transferred.
+  the snow. Call Me Sam, reported, his chair given to the new recruit. Transferred, told that Fisk
+  was transferred.
 
 ### The crew (added)
 
@@ -305,8 +306,9 @@ says one thing a day ("Eat up."). Guards are flashlights in the halls.
   thin" (line 34), "almost touching the ceiling", playing a flute "slowly through heaved breaths".
   It speaks one line, verbatim, and vanishes "with a gust of cold mist".
 - The game adds no backstory, no origin, no name beyond the one the source gives it, and no
-  ceremony. It is lit from behind and never seen close. See section 20 for the cultural-consultation
-  step that governs everything about it.
+  ceremony. Whether it is one of "the rest" Sam speaks of stays open: the game shows the pens and
+  the figure and joins them nowhere (section 20, answer 3). It is lit from behind and never seen
+  close. See section 20 for the cultural-consultation step that governs everything about it.
 
 ## 7. Structure and pacing
 
@@ -326,7 +328,7 @@ in every night (the Transferred route) lasts about 100 minutes.
 | `ch6_day5` | Day Five: Jax's Plan | 14 | 3D, 1D, 2D | "On schedule"; Jax's plan and the report choice; the bare footprints; the adit | 4 |
 | `ch7_day6` | Day Six: Below | 15 | 3D, 1D, 2D | Sam's offer; the void placed; the last card game; the pens | 5 |
 | `ch8_day7` | Day Seven: The Last Call | 14 | 3D, 1D, 2D | The halls fit; the last ration; the last door: stay, follow or the fence | 5 |
-| `ch9_end` | The Endings | 6 | 3D | One of five endings | 5, then 1 |
+| `ch9_end` | The Endings | 6 | 3D | One of four endings | 5, then 1 |
 | | **Total** | **112** | | | |
 
 ### The day template
@@ -518,7 +520,8 @@ each names which earlier explanation it breaks (section 12, "The list").
   numbers sit on it. The word beside them: "on schedule". L9 broken; `knows` reaches at least
   `scale` if the player finds the curve.
 - **Duty:** the laundry. Uniforms come back from the wash taken in at the waist and let down at the
-  hem. Fisk's own has his name in it.
+  hem. Fisk's own has his name in it. If the Chart has not already broken L9 ("Routine"), this
+  does: someone is altering his clothes ahead of his body.
 - **Jax's plan:** in the bunk, Jax says he has counted the fence posts and where the searchlight
   does not reach. He wants to go over the fence on the last night, and before that, to follow the
   big prints he saw by the hill. Three answers, all always available at any clarity:
@@ -582,12 +585,9 @@ each names which earlier explanation it breaks (section 12, "The list").
   he comes if `jax_plan_answer` is agreed.
 - **Follow, with Jax or alone:** `n7_halls`, no guards, the pull strong, frost forming toward the
   sound. Fingers whiten at the edge of the screen. At clarity tier 3 or lower the halls lose their
-  colour. `n7_windigo`: the corner, the figure, the line, the gust. Then:
-  - With Jax, or alone with change under 85, or with fewer than three nights followed: the steps
-    behind are not heard. Cloth, gas, black. `cave_reached`.
-  - Alone, with change 85 or more, three or more nights followed, and six or more rations: Fisk
-    hears the steps. He turns. Sam and two orderlies stop. Sam lowers his hand. The flute lies
-    where the figure stood. (Footsteps.)
+  colour. `n7_windigo`: the corner, the figure, the line, the gust. Then, with Jax or alone, the
+  steps behind are not heard: "neither Jax nor Fisk heard the footsteps that slowly and silently
+  approached behind them." (line 34). Cloth, gas, black. `cave_reached`.
 - **Fence:** `n7_snow`: across the yard to the posts Jax counted, under the wire, and 400 m of open
   snow to the trees. Beyond the wire the cold doubles. With change under 60, Fisk's legs stop at the
   halfway mark; the patrol follows his prints; `cave_reached`. With 60 or more he reaches the trees
@@ -606,7 +606,6 @@ One branch plays. See section 13 for each.
 
 - The Zoo: `e_cave` (3D, 3), `e_zoo_wake` (3D, 3).
 - Rule Three: `e_tree_line` (3D, 3) after `n7_perimeter`.
-- Footsteps: `e_flute` (3D, 4).
 - Call Me Sam: `e_new_recruit` (3D, 5).
 - Transferred: `e_transfer_truck` (3D, 4).
 
@@ -664,7 +663,6 @@ One branch plays. See section 13 for each.
 | `e_tree_line` | The trees | 30 m into the wood | None | Dawn blue | Wind dropping, Fisk's breath slowing | The last line | fade / fade |
 | `e_transfer_truck` | Truck bed, leaving | Truck interior | Fisk's kit | Grey | Engine, gate chains | The gate closes behind | fade / fade |
 | `e_new_recruit` | The gate and the halls | as `c1_halls` | A new recruit walking ahead | Overcast | Boots, the recruit's breathing | Fisk gives the three rules | fade / fade |
-| `e_flute` | The halls at 10:00, a week later | as `c1_halls` | The flute | Moonlight | The call, from inside | The last image | fade / fade |
 
 ### Notes on the hardest scenes
 
@@ -675,9 +673,13 @@ One branch plays. See section 13 for each.
   reads as a long pale shape against frost. The flute sound comes from it in 3D audio, and the line
   is subtitled verbatim. The vanish is a gust of mist across the camera, not a cut.
 - **`e_cave`**: Fisk is tied, so the camera cannot move; the player can look 90 degrees either way.
-  Sam steps out of the dark at 4 m. His lines are verbatim from line 35, edited only by omission
-  after the cultural review (section 20). Fisk's line, "Where am I, and what are you really up to
-  here?" (line 35), is the only time the player hears Fisk raise his voice.
+  Sam steps out of the dark at 4 m. His lines are verbatim from line 35, cut only by omission: he
+  says "Do you not realize what this place is?" and goes straight on to "My superiors wish to
+  harvest this curse and use it for scientific advancements, but first, we must have a surplus of
+  test subjects." The two sentences between them, the origin account, are not voiced, captioned or
+  printed anywhere in the game (section 20, answer 1). The rest of the exchange is spoken whole.
+  Fisk's line, "Where am I, and what are you really up to here?" (line 35), is the only time the
+  player hears Fisk raise his voice.
 - **`e_zoo_wake`**: "Parts of his body, which had been amputated, were being examined on a nearby
   table" (line 36) is shown as a steel table at the edge of vision, under a sheet, with a
   technician's back to camera. The camera never turns to it.
@@ -951,7 +953,11 @@ change is shown as numbers; nowhere else is there a bar or a figure.
 4. A wrong ruling leaves the explanation standing: Fisk shelves it. One retry per day.
 5. Day 7 has no question. The orderly writes "ready" in Fisk's column, and the player may write one
    line on the list from word fragments (the number of fragments offered is the clarity tier's word
-   budget: 8, 5, 3, 1).
+   budget: 8, 5, 3, 1). The fragments are the source's own words, in this order, and a lower tier
+   keeps the first ones: "hate", "these people", "never" (line 36); "something was off" (line 32);
+   "lied to" (line 33); "transferred" (line 32); "worse places" (line 28); "Sir yes Sir" (line 29).
+   At tier 4 the one word left is "hate": as his mind goes, "he knew he would always hate these
+   people" (line 36).
 
 **The measurements** (the true values the page shows at tier 1):
 
@@ -1059,7 +1065,7 @@ All names below are declared in `data/flags.json`.
 
 | Meter | Start | Rises | Falls | Thresholds |
 | --- | --- | --- | --- | --- |
-| `change` (0–100) | 0 | +2 per ration piece; +3 per pill swallowed; +3 per night following the call | Never | 33: can climb hall pipes. 40: the call slows you when you walk away. 60: survives beyond the wire. 68: shadow reaches the ceiling. 75: "Stay" and "Go out" removed at the door without bread. 85: hears the steps on night 7 (Footsteps) |
+| `change` (0–100) | 0 | +2 per ration piece; +3 per pill swallowed; +3 per night following the call | Never | 33: can climb hall pipes. 40: the call slows you when you walk away. 60: survives beyond the wire. 68: shadow reaches the ceiling. 75: "Stay" and "Go out" removed at the door without bread |
 | `strength` (0–100) | 50 | = 50 + 0.5 x `change` | -10 for each day with fewer than two ration pieces and no bread or staff food | Under 40: duties take 1.5x as long. Under 25: a duty fails (`duties_failed` +1, suspicion +5) |
 | `hunger` (0–100) | 20 | +3 per in-game hour, +1 per 25 `change`, +1 per ration piece eaten in the last 24 hours | -6 per ration piece (for an hour), -3 broth, -10 bread heel, -25 a loaf, -20 staff food, -15 a chocolate square | 70: pieces drift at the Tray; cards tremble; prompts gain a food word. 90: the Tray takes the first piece unless pushed away; one in four cards misplay. 100: Fisk faints and loses the free hours |
 | `warmth` (0–100) | 100 per excursion | — | Halls: 12 - `change`/10 per minute. Yard: 8 - `change`/12.5. Beyond the wire: 40 - `change`/2. Floor drain: -10 | 0: collapse (caught) |
@@ -1163,7 +1169,7 @@ Each row is written to `the_list`.
 | L6 | 1 | The bunkmate walked out at 10:00 | Latrine / Sleepwalking / His business | Sam, day 2 |
 | L7 | 1 | The meal makes me hungrier | Climate, body adjusts / Haven't eaten right in weeks / Bad meat | The Chart, days 3 and 4 |
 | L8 | 2 | "transferred" | Paperwork, he'll write / Covering a desertion / Not my business | Mail room, day 3; the boots, night 3 |
-| L9 | 2 | Height measured every day | Routine / Cold-weather study / Doesn't matter | The Chart, day 5 |
+| L9 | 2 | Height measured every day | Routine / Cold-weather study / Doesn't matter | The Chart, day 5; the laundry, day 5 |
 | L10 | 3 | Chairs empty; nobody mentions it | Rotation / They got sick / If they don't, I don't | The roster, night 4 |
 | L11 | 3 | The pill | Vitamins for winter / Sedative / Doesn't matter | The Chart, day 6 |
 | L12 | 5 | Bare prints the wind does not fill | A joke / Someone's boots / An animal | The pens, night 6 |
@@ -1189,7 +1195,6 @@ condition is true. Every condition below is copied from `data/endings.json`.
 | Priority | Id | Name | As written |
 | --- | --- | --- | --- |
 | 10 | `rule_three` | Rule Three | no |
-| 20 | `footsteps` | Footsteps | no |
 | 30 | `call_me_sam` | Call Me Sam | no |
 | 40 | `transferred` | Transferred | no |
 | 50 | `the_zoo` | The Zoo | **yes** |
@@ -1198,14 +1203,14 @@ condition is true. Every condition below is copied from `data/endings.json`.
 
 - **Condition:** `true`. It is the last ending checked. It follows when the player keeps to the
   story's path (eats what is served, follows the call with Jax, `cave_reached`), and it also catches
-  every run that reaches night 7 without meeting one of the four ways out: caught at the fence,
-  followed alone without being changed enough, or stayed in without being staff or a refuser. The
+  every run that reaches night 7 without meeting one of the three ways out: caught at the fence,
+  followed alone, or stayed in without being staff or a refuser. The
   base takes him another way.
 - **In `data/endings.json`:** `"when": true`, `"as_written": true`.
 - **Final scenes:** `n7_windigo` (or `n7_snow` or `n7_bunk_stay`), `e_cave`, `e_zoo_wake`.
 - **What happens:** the cave. Fisk tied to a stalagmite. Sam steps out. Sam's lines from line 35,
-  reviewed (section 20). Fisk: "We are not Windigos, nor will a single man in his right mind eat
-  another human." (line 35). Sam: "Soon, you will be our next test subject, but we won't make the
+  with the origin account omitted (section 9, `e_cave`; section 20). Fisk: "We are not Windigos,
+  nor will a single man in his right mind eat another human." (line 35). Sam: "Soon, you will be our next test subject, but we won't make the
   same mistakes as we have with the rest." Cloth. Black. Waking: "A tube ran through his arm."
   (line 36). The camera cannot rise. The list opens by itself and is blank except one line in Fisk's
   hand, whatever the tier: "Deep down, this would only spread." (line 36).
@@ -1227,21 +1232,6 @@ condition is true. Every condition below is copied from `data/endings.json`.
 - **Last image and line:** Fisk stands, and his head is among the low branches. Caption: "Deep down,
   this would only spread." (line 36).
 - **The cost:** he is out, and he is the thing he was fed to become, loose. If Jax came, he is left.
-
-### Footsteps, priority 20
-
-- **Condition, plain:** Fisk followed the call on night 7, alone, with `change` 85 or more, having
-  followed on at least three nights and eaten the ration on at least six days.
-- **In `data/endings.json`:**
-  `{"all":[{"is":"night7_choice","eq":"follow"},{"is":"followed_with","eq":"alone"},{"is":"change","gte":85},{"is":"nights_followed","gte":3},{"ledger":"meals","count_gte":6,"where":{"kind":"ration"}}]}`
-- **Final scenes:** `n7_halls`, `n7_windigo`, `e_flute`.
-- **What happens:** the figure says its line. "Follow in my footsteps, and you will become me."
-  It vanishes. Fisk hears the steps behind him, turns, and Sam lowers the cloth. Sam looks at him the
-  way he looked at the door handle. The flute lies on the floor. A cut: a week later. The halls at
-  9:59. Fisk's hands, long, on the flute.
-- **Last image:** the clock in a bunk room with a new recruit in three sleeping bags. 10:00. The call
-  begins, and the player knows it is Fisk.
-- **The cost:** he keeps his hatred and cannot act on it. He is the project's lure.
 
 ### Call Me Sam, priority 30
 
@@ -1280,7 +1270,6 @@ condition is true. Every condition below is copied from `data/endings.json`.
 | --- | --- |
 | The Zoo | Eat what is served. Agree with Jax on day 5. On night 7, follow the call together |
 | Rule Three | Eat enough to reach `change` 60 by night 7 (about half the ration with pills swallowed). Learn the fence route (Jax's plan, or counting posts on day 3 and reading the files). Choose the fence. If Jax comes, go on without him |
-| Footsteps | Eat the ration on six or seven days. Follow the call on three or more nights. Lose Jax or leave him in the bunk. On night 7, follow alone |
 | Call Me Sam | Keep seen breaks to two or fewer and suspicion under 60. Report Jax on day 5. Accept Sam's key on day 6. Stay in on night 7 |
 | Transferred | Refuse the ration on at least six days. Live on bread from the card table and the kit chocolate. Never follow the call. Stay in on night 7 |
 
@@ -1392,14 +1381,14 @@ Total spoken lines are counted in section 17.
 | Kind | Item | Count |
 | --- | --- | --- |
 | 3D models, environment | Gate and yard; hall kit (straight, corner, T, stair door, window, drain, two-handle door); bunk room; cafeteria; rec room; infirmary and cold store; mail room; boiler room; laundry; Sam's office and staff mess; the pens; the cave; the perimeter strip and tree line; the truck | 15 sets, about 90 pieces |
-| 3D models, props | Tray set, deck, bread loaf, kit bag, rules card, clock, sleeping bags, ladder, crates, shovel, sacks, files, clipboard, scale and height rod, flute, tube stand, sheet-covered table | 40 |
+| 3D models, props | Tray set, deck, bread loaf, kit bag, rules card, clock, sleeping bags, ladder, crates, shovel, sacks, files, clipboard, scale and height rod, tube stand, sheet-covered table | 39 |
 | 3D models, characters | Sam; Jax; Pell; Duarte; Kimura; Hollis; the first bunkmate; orderly; cook; guard (x2 variants); new recruit; the figure (silhouette-only rig) | 12 |
 | First-person hands | Five change states, left and right | 10 |
 | Texture sets | Painted concrete, steel, wool, paper, snow, frost overlay, stone | 7 |
 | 2D sprite sheets | Fisk silhouette at five heights (walk, crouch, climb, idle); guards; crew silhouettes; the figure; Snow line dots, prints at three sizes, patrols, searchlight | 14 |
 | 1D page layouts | Short Rations (6 seat counts); The Tray (staff variant); The Chart (target-curve variant); Floor Plan (3 scopes); the list; the door | 6 games/pages, 14 variants |
 | Card art | 7 suits x 8 ranks, plus backs | 57 |
-| Music cues | Day drones (4 layers), the meal note, the pens pulse, five ending cues | 11 |
+| Music cues | Day drones (4 layers), the meal note, the pens pulse, four ending cues | 10 |
 | Sound effects | As section 16 | about 70 |
 | The call | Five intensities, one per night 1 to 5, plus night 7 close | 6 |
 | Voice line groups | Sam (about 30 lines), Jax (about 25), crew (4 x 12), orderly (20), cook (7), guards (10), Fisk (8), the figure (1), new recruit (2) | about 150 lines |
@@ -1410,11 +1399,11 @@ Total spoken lines are counted in section 17.
 
 - `game.json`: nine chapters, 112 minutes, target 90 to 120.
 - `scenes.json`: two 2D modes (`silhouette_halls`, `snow_line`), four 1D games (`short_rations`,
-  `the_tray`, `the_chart`, `floor_plan`), and 64 scenes: 35 in 3D, 7 in 2D, 22 1D appearances.
+  `the_tray`, `the_chart`, `floor_plan`), and 63 scenes: 34 in 3D, 7 in 2D, 22 1D appearances.
   Each scene lists what it reads and writes.
 - `flags.json`: every meter, counter, flag, enum and ledger in section 12, including four ledgers
   (`meals`, `rules_broken`, `the_list`, `taken`).
-- `endings.json`: five endings with the conditions in section 13.
+- `endings.json`: four endings with the conditions in section 13.
 
 Beyond the shared schemas, two fixed tables (content, not state), each with a schema in
 `data/schemas/`:
@@ -1426,14 +1415,15 @@ Beyond the shared schemas, two fixed tables (content, not state), each with a sc
 - `chart_questions.json` (`schemas/chart_questions.schema.json`): the Chart's question table
   (section 11.3): the nine measurement rows and their formulas, the rows each clarity tier shows,
   the five hypothesis cards, one question for each of days 2 to 6 with the cells that prove it, and
-  day 7's "ready". The day-7 word fragments are a placeholder for the author.
+  day 7's "ready" with its eight word fragments, each with the source line it is taken from.
 
 `tools/check_data.py` checks both against their schemas, against each other and against the four
 shared files: every scene, flag, chapter and crew name exists; every scene that adds or breaks an
 entry writes `the_list` and plays on the stated day, after the entry is added; the formulas give
 the values at change 100 and agree with the camera height and Floor Plan's square; the `knows`
-thresholds match; quotes are on their source line when the vault sits beside this repo; and no
-row carries graphic detail or Windigo lore. `python tools/validate.py man-eater` runs it.
+thresholds match; every scene that writes `the_list` adds, breaks or ends an entry; the day-7
+fragments number the tier-1 budget; quotes and fragments are on their source line when the vault
+sits beside this repo; and no row carries graphic detail or Windigo lore. `python tools/validate.py man-eater` runs it.
 
 ## 19. Build plan
 
@@ -1458,11 +1448,11 @@ height, the Chart as the only readout, the Tray's portioning, a shrinking table,
 explanation, and the first choice at the door. It needs no Windigo content, so it can be built while
 the consultation is still running.
 
-**Tests that gate each milestone:** the resolver returns the expected ending for five scripted runs
+**Tests that gate each milestone:** the resolver returns the expected ending for four scripted runs
 (one per ending) and for ten random runs, and the debug panel explains each; each 1D game writes the
 names listed in `data/scenes.json`; `python tools/validate.py man-eater` prints `ok`.
 
-## 20. Risks and open questions
+## 20. Risks and answered questions
 
 ### Cultural care: the Windigo
 
@@ -1472,10 +1462,13 @@ institution that exploits the legend:
 
 - The game invents no lore about the Windigo or any nation: no origin, no ceremony, no names, no
   regalia, no Indigenous characters used as props.
-- Sam's account is presented as **Sam's**, the project's justification, never as the game's truth.
-  The officers' wing file (night 4) shows how the project built it: a thin typed summary drawn from
-  one secondhand account, with the word "unverified" crossed out by a superior's pen. The horror is
-  that the institution turned a people's tradition into a resource and a schedule.
+- Sam's account of the origin is not voiced (section 20, answer 1). What he does say, that this
+  place is "the first recorded birthplace of a Windigo" and that his superiors "wish to harvest this
+  curse", is presented as **Sam's**, the project's justification, never as the game's truth.
+  The officers' wing file (night 4) shows how the project built it: a cover sheet citing one
+  secondhand account, with the word "unverified" crossed out by a superior's pen. The account
+  itself is never shown. The horror is that the institution turned a people's tradition into a
+  resource and a schedule.
 - The figure is shown only as the source describes it, at a distance, backlit.
 - The call is not built from Indigenous instruments or music.
 - The consultation step (M0, M6, M9) can change or remove any of this, including Sam's lines and the
@@ -1492,24 +1485,65 @@ institution that exploits the legend:
 | The refuser's route is dull or impossible | Bread from the table and the kit keep a refuser alive; hunger never kills; the Chart answers can come from the crew's columns |
 | Feeding crew to move the call is read as a rescue | It only moves the call; every chair still empties by night 5; the ledger records who Fisk fed |
 | Graphic content creeps in through art | Art bible rule: no close-ups of bodies; the figure backlit; the cave table under a sheet; review at M6 |
-| The as-written ending as the catch-all feels like a punishment | Each of the other four endings is announced by play (the offer, the fence, the bread, the flute) well before night 7 |
-| Scope: 35 3D scenes | Most share the hall kit and the bunk room; 15 environment sets cover them |
+| The as-written ending as the catch-all feels like a punishment | Each of the other three endings is announced by play (the offer, the fence, the bread) well before night 7 |
+| Scope: 34 3D scenes | Most share the hall kit and the bunk room; 15 environment sets cover them |
 
-### Questions only the author can answer
+**Answered** (by Claude at the author's request, 2026-11-12, from the source text; the author can overrule any of them).
 
-1. **Sam's cave speech.** Should the game voice Sam's line 35 account of the Windigo's origin
-   verbatim (framed as his and checked by the consultant), shorten it by omission, or replace it with
-   the file prop alone? The rest of his lines stand either way.
-2. **Footsteps.** The fifth ending makes Fisk the next caller. It takes the hand-off idea in
-   `docs/ADAPTATIONS.md` (the flute down the hall is you) and makes it an ending instead of a
-   carry-over between runs, because carrying over between runs belongs to *The Stuffed Ones*. Keep it,
-   change it, or strike it?
-3. **The figure's identity.** The source says "we won't make the same mistakes as we have with the
-   rest" (line 35). The design leaves open whether the figure is one of "the rest". Should the game
-   keep it open, or does the author have an answer?
-4. **The Who Did It tie-in.** Should a line in the night 4 files point at the North Dakota site in
-   the Grounds 99 material (`03_Stories/29_What_the_Lab_Made.md`), or should the game stay entirely
-   separate?
+1. **Sam's cave speech: shorten it by omission.** Sam voices line 35 word for word except two
+   sentences, "Long ago, back in a far less hospitable time, Native Americans would suffer through
+   long and harsh winters where, in the most devastating of times, they had to resort to
+   cannibalism; this brought about the birth of the Windigo. A curse was placed upon those who had
+   partaken of the flesh of another human?" Those two are the only place the story states an origin
+   and pins it on a people, and the source itself marks them as unsure (the second sentence ends on
+   a question mark). Voiced verbatim in the last scene, uncontradicted, they would be the most
+   authoritative thing the game says about the Windigo, against the rule that nothing presents its
+   lore as authoritative. Moving them onto the file prop would be worse: typed and filed, read at
+   leisure, they look more like fact, not less. What stays keeps the horror on the institution:
+   "Do you not realize what this place is?", the superiors who "wish to harvest this curse", the
+   "surplus of test subjects", "the first recorded birthplace of a Windigo" as the project's claim,
+   "feeding you all flesh and other chemicals", and "we won't make the same mistakes as we have
+   with the rest." Fisk's two lines stand whole. The file prop stays, as a cover sheet only, and
+   carries no account. Changed: sections 3, 5, 9 (`e_cave`), 13 and the cultural-care block above.
+   M0, M6 and M9 are unchanged: the consultant can still restore, cut further or strike the word.
+2. **Footsteps: strike it.** It hinges on Fisk hearing the steps, where the source's line is that
+   "neither Jax nor Fisk heard the footsteps" (line 34), and its last image puts the player's hands
+   on the figure's flute, which closes the distance the cultural-care rules keep and tells the
+   player what the figure is (see 3). It was the only ending new to this document, and four endings
+   still meet the pillars. A changed Fisk who follows alone now meets the source's line and wakes in
+   the cave: The Zoo. Removed: the ending, `e_flute`, the change-85 threshold, the flute prop,
+   one ending cue, and every mention in sections 1, 5 to 9, 12, 13, 17 to 19 and 21; in the data,
+   `footsteps` in `endings.json`, `e_flute` in `scenes.json` and the read of `nights_followed` in
+   `n7_windigo`.
+3. **The figure: keep it open.** The source does not join them. "the rest" are what Sam's project
+   has already made (line 35); the figure plays the flute, speaks, and "vanished into thin air"
+   (line 34), which no kept subject does. Its line, "Follow in my footsteps, and you will become
+   me.", says what Fisk is becoming, not who it was. The game shows the pens and the figure and
+   joins them nowhere; nothing in the list, the files or the endings answers it. Changed: sections
+   5 and 6.
+4. **The Who Did It tie-in: stay separate.** `03_Stories/29_What_the_Lab_Made.md` is marked
+   `origin: auto-authored` and `status: draft`: it is not one of the certified works this
+   collection adapts. Its own annotation says it hands off to where *Project: Man Eater* "would
+   begin" and echoes the original; the dependency runs one way. A file line pointing to it would
+   also answer question 3 for the author (a subject transferred in under a typed WINDIGO
+   designation) and give the figure a history the game has promised not to give. No line is added.
+   Changed: the Who Did It paragraph in section 5.
+5. **The day-7 word fragments: eight of the source's own words.** "hate", "these people", "never",
+   "something was off", "lied to", "transferred", "worse places", "Sir yes Sir", each from the line
+   section 11.3 gives. A lower tier keeps the first ones, so at tier 4 the last word left is
+   "hate", because the source's man keeps that when the rest goes: "As his mind went blank ... he
+   knew he would always hate these people" (line 36). No new words are written. Changed: section
+   11.3, `chart_questions.json` (fragments with their lines), its schema (fragments must be that
+   list) and `tools/check_data.py` (eight fragments, each on its line).
+6. **Scenes that wrote `the_list` with no entry: three writes removed, one entry gains a breaker.**
+   `n2_halls` (the frozen print is a foreshadowing image; L12 names the prints on day 5) and
+   `d3_duty_shovel` (its pace count and the posts feed Floor Plan and the fence route, not the
+   list) no longer write it, and neither does `c1_bunk`, which had the same gap (chapter 1's
+   entries come from the gate and the halls). `d5_duty_laundry` keeps its write: the uniforms let
+   down at the hem now break L9, "Routine", as a second route beside the day-5 Chart, so a player
+   who misses the target curve can still lose that explanation. No new entry was written.
+   `tools/check_data.py` now fails on a scene that writes `the_list` and adds, breaks or ends
+   nothing.
 
 ## 21. Added for the game
 
@@ -1519,9 +1553,9 @@ Everything below is a proposal, not the author's text. The author can approve or
 
 - Seven days and nights instead of two; the day template; the chapter split.
 - The night 7 choice of stay, follow or fence; night 6 with no taking.
-- Five endings. The Zoo is the author's. Rule Three, Transferred and Call Me Sam come from
-  `docs/ADAPTATIONS.md`, which the author has read. Footsteps is new to this document (from the
-  ADAPTATIONS hand-off idea).
+- Four endings. The Zoo is the author's. Rule Three, Transferred and Call Me Sam come from
+  `docs/ADAPTATIONS.md`, which the author has read. (A fifth, Footsteps, was struck: section 20,
+  answer 2.)
 - The Zoo as the catch-all for any run that misses the four ways out, including being gassed in the
   bunk on night 7.
 
@@ -1531,8 +1565,8 @@ Everything below is a proposal, not the author's text. The author can approve or
   the room is now a choice at the door, governed by the call, bread and suspicion.
 - "The medical card" becomes The Chart. "The barracks card game" becomes Short Rations. "The floor
   plan" becomes Floor Plan. The Tray is new, from `docs/COLLECTION.md`.
-- The hand-off (the next playthrough as a new recruit) is removed as a carry-over and becomes the
-  Footsteps ending, because *The Stuffed Ones* owns runs that inherit from earlier runs.
+- The hand-off (the next playthrough as a new recruit) is removed, because *The Stuffed Ones* owns
+  runs that inherit from earlier runs, and it is not kept as an ending (section 20, answer 2).
 - "The building fits you later" is kept as the camera height formula.
 
 **Systems**
@@ -1572,11 +1606,17 @@ Everything below is a proposal, not the author's text. The author can approve or
 **Endings' detail**
 
 - Every final image and caption choice: the reflection in the door window (The Zoo); the hands and
-  the branches (Rule Three); the week-later cut and the new recruit's clock (Footsteps); the walk with
+  the branches (Rule Three); the walk with
   the new recruit (Call Me Sam); the road and the unbroken list (Transferred). The captions
   themselves are the author's lines.
 
 **Presentation**
 
 - The art palette, the sound of the call and its build, the music plan, the content note.
-- The cultural-consultation process and the file prop that frames Sam's account.
+- The cultural-consultation process and the file prop (a cover sheet) that frames Sam's claim.
+- The omission of the two origin sentences from Sam's cave lines (a cut, not an addition).
+- The choice and order of the day-7 word fragments; the words themselves are the source's.
+- The laundry as a second way to break L9.
+
+**Not added on purpose:** the Windigo's origin in any form the player sees or hears; who the figure
+was; any link to the Grounds 99 material.
