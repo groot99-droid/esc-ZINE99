@@ -1,0 +1,2155 @@
+{
+  "rooms": ["r401", "r402", "r403", "r404", "r405", "r406"],
+  "kinds": ["clothing", "calls", "hands", "luggage", "visitors", "tv", "ritual"],
+  "regions": ["vestibule", "bed", "desk_tv", "window", "bathroom", "floor"],
+  "shift": {"start": "23:00", "end": "05:00"},
+  "bell_to_door_minutes": 12,
+  "window_minutes": {"min": 2, "max": 30},
+  "nights": [
+    {
+      "night": 1,
+      "chapter": "n1",
+      "eye_scene": "n1_shift_eye",
+      "race_scene": "n1_shift_race",
+      "knock": {"room": "r402", "time": "02:14"},
+      "returns": [
+        {"room": "r402", "bell": "23:25", "door": "23:37"},
+        {"room": "r406", "bell": "00:05", "door": "00:17"},
+        {"room": "r404", "bell": "00:45", "door": "00:57"},
+        {"room": "r401", "bell": "01:30", "door": "01:42"},
+        {"room": "r405", "bell": "02:05", "door": "02:17"},
+        {"room": "r403", "bell": "02:45", "door": "02:57"}
+      ]
+    },
+    {
+      "night": 2,
+      "chapter": "n2",
+      "eye_scene": "n2_shift_eye",
+      "race_scene": "n2_shift_race",
+      "knock": {"room": "r405", "time": "02:14"},
+      "returns": [
+        {"room": "r404", "bell": "23:50", "door": "00:02"},
+        {"room": "r402", "bell": "00:20", "door": "00:32"},
+        {"room": "r401", "bell": "01:15", "door": "01:27"},
+        {"room": "r405", "bell": "01:45", "door": "01:57"},
+        {"room": "r406", "bell": "02:00", "door": "02:12"},
+        {"room": "r403", "bell": "02:40", "door": "02:52"}
+      ]
+    },
+    {
+      "night": 3,
+      "chapter": "n3",
+      "eye_scene": "n3_shift_eye",
+      "race_scene": "n3_shift_race",
+      "knock": {"room": "r401", "time": "02:14"},
+      "returns": [
+        {"room": "r406", "bell": "23:28", "door": "23:40"},
+        {"room": "r401", "bell": "00:18", "door": "00:30"},
+        {"room": "r405", "bell": "00:43", "door": "00:55"},
+        {"room": "r404", "bell": "00:58", "door": "01:10"},
+        {"room": "r402", "bell": "01:28", "door": "01:40"},
+        {"room": "r403", "in": true}
+      ]
+    },
+    {
+      "night": 4,
+      "chapter": "n4",
+      "eye_scene": "n4_shift_eye",
+      "race_scene": "n4_shift_race",
+      "knock": {"room": "r404", "time": "02:14"},
+      "returns": [
+        {"room": "r401", "bell": "23:18", "door": "23:30"},
+        {"room": "r405", "bell": "23:28", "door": "23:40"},
+        {"room": "r402", "bell": "23:53", "door": "00:05"},
+        {
+          "room": "r404",
+          "bell": "00:08",
+          "door": "00:20",
+          "note": "Out to 402 at 00:30, back at 01:00 by the guest corridor; no bell."
+        },
+        {"room": "r406", "bell": "00:48", "door": "01:00"},
+        {"room": "r403", "in": true}
+      ]
+    },
+    {
+      "night": 5,
+      "chapter": "n5",
+      "eye_scene": "n5_shift_eye",
+      "race_scene": "n5_shift_race",
+      "knock": {"room": "r406", "time": "02:14"},
+      "returns": [
+        {"room": "r404", "bell": "23:08", "door": "23:20"},
+        {"room": "r402", "bell": "23:33", "door": "23:45"},
+        {"room": "r401", "bell": "00:18", "door": "00:30"},
+        {"room": "r406", "bell": "00:48", "door": "01:00"},
+        {"room": "r405", "bell": "01:28", "door": "01:40"},
+        {"room": "r403", "in": true}
+      ]
+    },
+    {
+      "night": 6,
+      "chapter": "n6",
+      "eye_scene": "n6_shift_eye",
+      "race_scene": "n6_shift_race",
+      "knock": {"room": "r403", "time": "02:14"},
+      "returns": [
+        {"room": "r406", "bell": "23:38", "door": "23:50"},
+        {"room": "r402", "bell": "23:58", "door": "00:10"},
+        {"room": "r401", "bell": "00:28", "door": "00:40"},
+        {"room": "r404", "bell": "00:38", "door": "00:50"},
+        {"room": "r405", "bell": "00:48", "door": "01:00"},
+        {"room": "r403", "in": true}
+      ]
+    },
+    {
+      "night": 7,
+      "chapter": "n7",
+      "eye_scene": "n7_shift_eye",
+      "race_scene": "n7_shift_race",
+      "knock": {"room": "office", "time": "02:14", "time_if_seen_by_stranger": "01:14"},
+      "returns": [
+        {"room": "r402", "bell": "23:30", "door": "23:42"},
+        {
+          "room": "r405",
+          "bell": "23:50",
+          "door": "00:02",
+          "note": "Comes back with 406 and spends the night in 406; 405 is empty."
+        },
+        {"room": "r406", "bell": "23:50", "door": "00:02", "note": "Comes back with 405."},
+        {"room": "r404", "bell": "00:40", "door": "00:52"},
+        {"room": "r401", "bell": "01:20", "door": "01:32"},
+        {"room": "r403", "in": true},
+        {
+          "room": "r402",
+          "bell": "02:50",
+          "door": "03:02",
+          "requires": {"is": "final_choice", "eq": "keep_logging"},
+          "note": "Only if the player keeps logging after the knock."
+        },
+        {
+          "room": "r404",
+          "bell": "02:50",
+          "door": "03:02",
+          "requires": {"is": "final_choice", "eq": "keep_logging"},
+          "note": "Only if the player keeps logging after the knock."
+        },
+        {
+          "room": "r401",
+          "bell": "03:30",
+          "door": "03:42",
+          "requires": {"is": "final_choice", "eq": "keep_logging"},
+          "note": "Only if the player keeps logging after the knock."
+        }
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "id": "n1.r402.keycard",
+      "night": 1,
+      "room": "r402",
+      "scene": "n1_shift_eye",
+      "window": {"start": "23:37", "end": "23:43"},
+      "kind": "hands",
+      "region": "vestibule",
+      "floor_visible": true,
+      "threshold": true,
+      "clue": {"id": "c.n1.r402.keycard", "text": "The keycard shakes in her hand; she drops it twice."}
+    },
+    {
+      "id": "n1.r402.chain",
+      "night": 1,
+      "room": "r402",
+      "scene": "n1_shift_eye",
+      "window": {"start": "23:38", "end": "23:48"},
+      "kind": "ritual",
+      "region": "vestibule",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r402.chain", "text": "The door chain on, seven times."}
+    },
+    {
+      "id": "n1.r402.pollen",
+      "night": 1,
+      "room": "r402",
+      "scene": "n1_shift_eye",
+      "window": {"start": "23:40", "end": "23:50"},
+      "kind": "clothing",
+      "region": "vestibule",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r402.pollen", "text": "Pollen on a dark sleeve. Her glasses fog, then clear."}
+    },
+    {
+      "id": "n1.r402.gameshow",
+      "night": 1,
+      "room": "r402",
+      "scene": "n1_shift_eye",
+      "window": {"start": "23:45", "end": "00:05"},
+      "kind": "tv",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r402.gameshow", "text": "A game show, loud."}
+    },
+    {
+      "id": "n1.r402.eating",
+      "night": 1,
+      "room": "r402",
+      "scene": "n1_shift_eye",
+      "window": {"start": "00:10", "end": "00:20"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r402.eating", "text": "Whispers into the phone: \"Is she eating?\""}
+    },
+    {
+      "id": "n1.r402.envelope",
+      "night": 1,
+      "room": "r402",
+      "scene": "n1_shift_eye",
+      "window": {"start": "02:14", "end": "02:30"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {
+        "id": "c.n1.r402.envelope",
+        "text": "An envelope under the main door. She stares at it and leaves it till 02:30."
+      }
+    },
+    {
+      "id": "n1.r406.ink",
+      "night": 1,
+      "room": "r406",
+      "scene": "n1_shift_eye",
+      "window": {"start": "00:17", "end": "00:23"},
+      "kind": "hands",
+      "region": "bathroom",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n1.r406.ink", "text": "Ink on her fingertips; she scrubs at the sink."}
+    },
+    {
+      "id": "n1.r406.leaflets",
+      "night": 1,
+      "room": "r406",
+      "scene": "n1_shift_eye",
+      "window": {"start": "00:20", "end": "00:35"},
+      "kind": "luggage",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r406.leaflets", "text": "A tube of rolled leaflets."}
+    },
+    {
+      "id": "n1.r406.river",
+      "night": 1,
+      "room": "r406",
+      "scene": "n1_shift_eye",
+      "window": {"start": "00:25", "end": "00:45"},
+      "kind": "tv",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r406.river", "text": "The river report."}
+    },
+    {
+      "id": "n1.r406.boat",
+      "night": 1,
+      "room": "r406",
+      "scene": "n1_shift_eye",
+      "window": {"start": "00:40", "end": "00:50"},
+      "kind": "ritual",
+      "region": "window",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r406.boat", "text": "Folds a paper boat and sets it on the sill. Two now."}
+    },
+    {
+      "id": "n1.r404.jacket",
+      "night": 1,
+      "room": "r404",
+      "scene": "n1_shift_eye",
+      "window": {"start": "00:57", "end": "01:07"},
+      "kind": "clothing",
+      "region": "vestibule",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n1.r404.jacket", "text": "A white catering jacket flecked with gold; a badge reading \"J.\""}
+    },
+    {
+      "id": "n1.r404.sink",
+      "night": 1,
+      "room": "r404",
+      "scene": "n1_shift_eye",
+      "window": {"start": "01:05", "end": "01:15"},
+      "kind": "ritual",
+      "region": "bathroom",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r404.sink", "text": "Pours a miniature into the sink; writes \"400\" on the notepad."}
+    },
+    {
+      "id": "n1.r404.film",
+      "night": 1,
+      "room": "r404",
+      "scene": "n1_shift_eye",
+      "window": {"start": "01:10", "end": "01:30"},
+      "kind": "tv",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r404.film", "text": "A black-and-white film."}
+    },
+    {
+      "id": "n1.r404.memo",
+      "night": 1,
+      "room": "r404",
+      "scene": "n1_shift_eye",
+      "window": {"start": "01:30", "end": "01:40"},
+      "kind": "calls",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r404.memo", "text": "A voice memo; the words are lost."}
+    },
+    {
+      "id": "n1.r401.clay",
+      "night": 1,
+      "room": "r401",
+      "scene": "n1_shift_eye",
+      "window": {"start": "01:42", "end": "01:52"},
+      "kind": "clothing",
+      "region": "vestibule",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n1.r401.clay", "text": "Red clay on his collar and knees."}
+    },
+    {
+      "id": "n1.r401.kit",
+      "night": 1,
+      "room": "r401",
+      "scene": "n1_shift_eye",
+      "window": {"start": "01:45", "end": "01:55"},
+      "kind": "ritual",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r401.kit", "text": "Kit laid out in order; the bedspread folded back a hand's width."}
+    },
+    {
+      "id": "n1.r401.chapter1",
+      "night": 1,
+      "room": "r401",
+      "scene": "n1_shift_eye",
+      "window": {"start": "01:55", "end": "02:05"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {
+        "id": "c.n1.r401.chapter1",
+        "text": "Reads his daughter chapter one of The Lamplighter's Mouse. \"I know. Papa's late.\""
+      }
+    },
+    {
+      "id": "n1.r401.news",
+      "night": 1,
+      "room": "r401",
+      "scene": "n1_shift_eye",
+      "window": {"start": "02:20", "end": "02:40"},
+      "kind": "tv",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r401.news", "text": "The news, muted."}
+    },
+    {
+      "id": "n1.r405.grease",
+      "night": 1,
+      "room": "r405",
+      "scene": "n1_shift_eye",
+      "window": {"start": "02:17", "end": "02:23"},
+      "kind": "hands",
+      "region": "vestibule",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n1.r405.grease", "text": "Grease under her nails."}
+    },
+    {
+      "id": "n1.r405.laptops",
+      "night": 1,
+      "room": "r405",
+      "scene": "n1_shift_eye",
+      "window": {"start": "02:20", "end": "02:35"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r405.laptops", "text": "Three laptops in one bag."}
+    },
+    {
+      "id": "n1.r405.e4",
+      "night": 1,
+      "room": "r405",
+      "scene": "n1_shift_eye",
+      "window": {"start": "02:30", "end": "02:40"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r405.e4", "text": "Chess by phone: \"e4.\""}
+    },
+    {
+      "id": "n1.r405.cereal",
+      "night": 1,
+      "room": "r405",
+      "scene": "n1_shift_eye",
+      "window": {"start": "02:40", "end": "02:50"},
+      "kind": "ritual",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r405.cereal", "text": "Dry cereal from the box."}
+    },
+    {
+      "id": "n1.r403.salt",
+      "night": 1,
+      "room": "r403",
+      "scene": "n1_shift_eye",
+      "window": {"start": "02:57", "end": "03:07"},
+      "kind": "clothing",
+      "region": "vestibule",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n1.r403.salt", "text": "Salt rime on her boots; she smells her gloves."}
+    },
+    {
+      "id": "n1.r403.gloves",
+      "night": 1,
+      "room": "r403",
+      "scene": "n1_shift_eye",
+      "window": {"start": "03:00", "end": "03:10"},
+      "kind": "ritual",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r403.gloves", "text": "White gloves on before she touches the lamp."}
+    },
+    {
+      "id": "n1.r403.portfolio",
+      "night": 1,
+      "room": "r403",
+      "scene": "n1_shift_eye",
+      "window": {"start": "03:10", "end": "03:25"},
+      "kind": "luggage",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r403.portfolio", "text": "A flat portfolio."}
+    },
+    {
+      "id": "n1.r403.paints",
+      "night": 1,
+      "room": "r403",
+      "scene": "n1_shift_eye",
+      "window": {"start": "03:30", "end": "03:40"},
+      "kind": "ritual",
+      "region": "window",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r403.paints", "text": "Paints the river and pins it up."}
+    },
+    {
+      "id": "n1.r403.auction",
+      "night": 1,
+      "room": "r403",
+      "scene": "n1_shift_eye",
+      "window": {"start": "03:45", "end": "04:05"},
+      "kind": "tv",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r403.auction", "text": "An art auction channel."}
+    },
+    {
+      "id": "n2.r404.photocopy",
+      "night": 2,
+      "room": "r404",
+      "scene": "n2_shift_eye",
+      "window": {"start": "00:02", "end": "00:17"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n2.r404.photocopy", "text": "A photocopied page, read under the lamp with a magnifier."}
+    },
+    {
+      "id": "n2.r404.sink",
+      "night": 2,
+      "room": "r404",
+      "scene": "n2_shift_eye",
+      "window": {"start": "00:10", "end": "00:20"},
+      "kind": "ritual",
+      "region": "bathroom",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r404.sink", "text": "A miniature into the sink; \"401\" on the notepad."}
+    },
+    {
+      "id": "n2.r404.film",
+      "night": 2,
+      "room": "r404",
+      "scene": "n2_shift_eye",
+      "window": {"start": "00:30", "end": "00:50"},
+      "kind": "tv",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r404.film", "text": "A film."}
+    },
+    {
+      "id": "n2.r402.keycard",
+      "night": 2,
+      "room": "r402",
+      "scene": "n2_shift_eye",
+      "window": {"start": "00:32", "end": "00:38"},
+      "kind": "hands",
+      "region": "vestibule",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n2.r402.keycard", "text": "Steadier on the keycard."}
+    },
+    {
+      "id": "n2.r402.orchid",
+      "night": 2,
+      "room": "r402",
+      "scene": "n2_shift_eye",
+      "window": {"start": "00:33", "end": "00:43"},
+      "kind": "clothing",
+      "region": "vestibule",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r402.orchid", "text": "An orchid in her buttonhole."}
+    },
+    {
+      "id": "n2.r402.chain",
+      "night": 2,
+      "room": "r402",
+      "scene": "n2_shift_eye",
+      "window": {"start": "00:40", "end": "00:50"},
+      "kind": "ritual",
+      "region": "vestibule",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r402.chain", "text": "The chain on, seven times."}
+    },
+    {
+      "id": "n2.r402.pressed",
+      "night": 2,
+      "room": "r402",
+      "scene": "n2_shift_eye",
+      "window": {"start": "00:50", "end": "01:00"},
+      "kind": "ritual",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r402.pressed", "text": "Presses the orchid in the hotel directory."}
+    },
+    {
+      "id": "n2.r401.suit",
+      "night": 2,
+      "room": "r401",
+      "scene": "n2_shift_eye",
+      "window": {"start": "01:27", "end": "01:37"},
+      "kind": "clothing",
+      "region": "vestibule",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n2.r401.suit", "text": "A suit, not his kit."}
+    },
+    {
+      "id": "n2.r401.pass",
+      "night": 2,
+      "room": "r401",
+      "scene": "n2_shift_eye",
+      "window": {"start": "01:30", "end": "01:45"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r401.pass", "text": "A laminated pass on a lanyard: \"BH\"."}
+    },
+    {
+      "id": "n2.r401.chapter2",
+      "night": 2,
+      "room": "r401",
+      "scene": "n2_shift_eye",
+      "window": {"start": "01:35", "end": "01:45"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r401.chapter2", "text": "Reads chapter two."}
+    },
+    {
+      "id": "n2.r401.irons",
+      "night": 2,
+      "room": "r401",
+      "scene": "n2_shift_eye",
+      "window": {"start": "01:50", "end": "02:00"},
+      "kind": "ritual",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r401.irons", "text": "Irons tomorrow's shirt."}
+    },
+    {
+      "id": "n2.r405.grease",
+      "night": 2,
+      "room": "r405",
+      "scene": "n2_shift_eye",
+      "window": {"start": "01:57", "end": "02:03"},
+      "kind": "hands",
+      "region": "vestibule",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n2.r405.grease", "text": "Grease under her nails again."}
+    },
+    {
+      "id": "n2.r405.spool",
+      "night": 2,
+      "room": "r405",
+      "scene": "n2_shift_eye",
+      "window": {"start": "02:00", "end": "02:15"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r405.spool", "text": "A spool of cable."}
+    },
+    {
+      "id": "n2.r405.envelope",
+      "night": 2,
+      "room": "r405",
+      "scene": "n2_shift_eye",
+      "window": {"start": "02:14", "end": "02:22"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {"id": "c.n2.r405.envelope", "text": "She opens the door a crack; an envelope."}
+    },
+    {
+      "id": "n2.r405.cash",
+      "night": 2,
+      "room": "r405",
+      "scene": "n2_shift_eye",
+      "window": {"start": "02:16", "end": "02:22"},
+      "kind": "hands",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r405.cash", "text": "Counts cash, hands shaking."}
+    },
+    {
+      "id": "n2.r405.nf3",
+      "night": 2,
+      "room": "r405",
+      "scene": "n2_shift_eye",
+      "window": {"start": "02:30", "end": "02:40"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r405.nf3", "text": "Chess by phone: \"Nf3.\""}
+    },
+    {
+      "id": "n2.r406.rope",
+      "night": 2,
+      "room": "r406",
+      "scene": "n2_shift_eye",
+      "window": {"start": "02:12", "end": "02:27"},
+      "kind": "luggage",
+      "region": "vestibule",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n2.r406.rope", "text": "A coil of blue rope."}
+    },
+    {
+      "id": "n2.r406.burn",
+      "night": 2,
+      "room": "r406",
+      "scene": "n2_shift_eye",
+      "window": {"start": "02:15", "end": "02:21"},
+      "kind": "hands",
+      "region": "bathroom",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r406.burn", "text": "Rope burn across one palm."}
+    },
+    {
+      "id": "n2.r406.river",
+      "night": 2,
+      "room": "r406",
+      "scene": "n2_shift_eye",
+      "window": {"start": "02:20", "end": "02:40"},
+      "kind": "tv",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r406.river", "text": "The river report."}
+    },
+    {
+      "id": "n2.r406.boat",
+      "night": 2,
+      "room": "r406",
+      "scene": "n2_shift_eye",
+      "window": {"start": "02:30", "end": "02:40"},
+      "kind": "ritual",
+      "region": "window",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r406.boat", "text": "Boat three on the sill."}
+    },
+    {
+      "id": "n2.r403.cut",
+      "night": 2,
+      "room": "r403",
+      "scene": "n2_shift_eye",
+      "window": {"start": "02:52", "end": "02:58"},
+      "kind": "hands",
+      "region": "vestibule",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n2.r403.cut", "text": "A cut palm, bandaged."}
+    },
+    {
+      "id": "n2.r403.clay",
+      "night": 2,
+      "room": "r403",
+      "scene": "n2_shift_eye",
+      "window": {"start": "02:54", "end": "03:04"},
+      "kind": "clothing",
+      "region": "vestibule",
+      "floor_visible": false,
+      "clue": {
+        "id": "c.n2.r403.clay",
+        "text": "Red clay on her boots and on the white gloves: the same red as 401's collar."
+      }
+    },
+    {
+      "id": "n2.r403.tag",
+      "night": 2,
+      "room": "r403",
+      "scene": "n2_shift_eye",
+      "window": {"start": "03:00", "end": "03:15"},
+      "kind": "luggage",
+      "region": "window",
+      "floor_visible": false,
+      "clue": {"id": "c.n2.r403.tag", "text": "A brass tag, \"BH-0611\", set on the sill."}
+    },
+    {
+      "id": "n2.r403.awake",
+      "night": 2,
+      "room": "r403",
+      "scene": "n2_shift_eye",
+      "window": {"start": "03:20", "end": "03:50"},
+      "kind": "ritual",
+      "region": "bed",
+      "floor_visible": false,
+      "ritual_broken": true,
+      "clue": {"id": "c.n2.r403.awake", "text": "She does not paint. She sits awake."}
+    },
+    {
+      "id": "n3.r406.dials",
+      "night": 3,
+      "room": "r406",
+      "scene": "n3_shift_eye",
+      "window": {"start": "00:10", "end": "00:20"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {
+        "id": "c.n3.r406.dials",
+        "text": "Dials a number from a card, \"Friends of the River\". It rings out; she writes it again."
+      }
+    },
+    {
+      "id": "n3.r406.boat",
+      "night": 3,
+      "room": "r406",
+      "scene": "n3_shift_eye",
+      "window": {"start": "00:30", "end": "00:40"},
+      "kind": "ritual",
+      "region": "window",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r406.boat", "text": "Boat four."}
+    },
+    {
+      "id": "n3.r406.phone",
+      "night": 3,
+      "room": "r406",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:05", "end": "01:15"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r406.phone", "text": "The room phone rings; she answers, hears a voice, hangs up."}
+    },
+    {
+      "id": "n3.r406.receiver",
+      "night": 3,
+      "room": "r406",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:10", "end": "01:16"},
+      "kind": "hands",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r406.receiver", "text": "Sits with her hand on the receiver."}
+    },
+    {
+      "id": "n3.r401.chapter3",
+      "night": 3,
+      "room": "r401",
+      "scene": "n3_shift_eye",
+      "window": {"start": "00:40", "end": "00:50"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r401.chapter3", "text": "\"Chapter three. The mouse climbs the tower.\" Reads it to the end."}
+    },
+    {
+      "id": "n3.r401.kit",
+      "night": 3,
+      "room": "r401",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:00", "end": "01:10"},
+      "kind": "ritual",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r401.kit", "text": "Kit in order."}
+    },
+    {
+      "id": "n3.r401.stranger",
+      "night": 3,
+      "room": "r401",
+      "scene": "n3_shift_eye",
+      "window": {"start": "02:14", "end": "02:22"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {"id": "c.n3.r401.stranger", "text": "Opens to the stranger; a cream envelope."}
+    },
+    {
+      "id": "n3.r401.photo",
+      "night": 3,
+      "room": "r401",
+      "scene": "n3_shift_eye",
+      "window": {"start": "02:16", "end": "02:18"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {
+        "id": "c.n3.r401.photo",
+        "text": "A photograph on the desk, face up, then face down: 403's guest at her own door."
+      }
+    },
+    {
+      "id": "n3.r405.list",
+      "night": 3,
+      "room": "r405",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:00", "end": "01:15"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r405.list", "text": "Reads a printed list; stops on one line."}
+    },
+    {
+      "id": "n3.r405.ruthie",
+      "night": 3,
+      "room": "r405",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:05", "end": "01:15"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r405.ruthie", "text": "Dials the room phone: \"Ruthie, it's—\""}
+    },
+    {
+      "id": "n3.r405.receiver",
+      "night": 3,
+      "room": "r405",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:06", "end": "01:12"},
+      "kind": "hands",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r405.receiver", "text": "Sets the receiver down very slowly."}
+    },
+    {
+      "id": "n3.r405.bb5",
+      "night": 3,
+      "room": "r405",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:30", "end": "01:40"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r405.bb5", "text": "Chess: \"Bb5.\""}
+    },
+    {
+      "id": "n3.r404.source",
+      "night": 3,
+      "room": "r404",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:20", "end": "01:30"},
+      "kind": "calls",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r404.source", "text": "\"Then who is the source?\" Slams the receiver."}
+    },
+    {
+      "id": "n3.r404.sink",
+      "night": 3,
+      "room": "r404",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:25", "end": "01:35"},
+      "kind": "ritual",
+      "region": "bathroom",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r404.sink", "text": "The miniature; \"402\"."}
+    },
+    {
+      "id": "n3.r404.film",
+      "night": 3,
+      "room": "r404",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:40", "end": "02:00"},
+      "kind": "tv",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r404.film", "text": "A film, sound off."}
+    },
+    {
+      "id": "n3.r402.gameshow",
+      "night": 3,
+      "room": "r402",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:50", "end": "02:10"},
+      "kind": "tv",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r402.gameshow", "text": "The game show turned up."}
+    },
+    {
+      "id": "n3.r402.whisper",
+      "night": 3,
+      "room": "r402",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:52", "end": "02:02"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r402.whisper", "text": "Whispers to her neighbour under the noise."}
+    },
+    {
+      "id": "n3.r402.knits",
+      "night": 3,
+      "room": "r402",
+      "scene": "n3_shift_eye",
+      "window": {"start": "02:10", "end": "02:20"},
+      "kind": "ritual",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r402.knits", "text": "Knits."}
+    },
+    {
+      "id": "n3.r403.case",
+      "night": 3,
+      "room": "r403",
+      "scene": "n3_shift_eye",
+      "window": {"start": "23:00", "end": "23:30"},
+      "kind": "luggage",
+      "region": "bed",
+      "floor_visible": true,
+      "clue": {"id": "c.n3.r403.case", "text": "A flat hard case under the bed, where there was nothing last night."}
+    },
+    {
+      "id": "n3.r403.message",
+      "night": 3,
+      "room": "r403",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:00", "end": "01:10"},
+      "kind": "calls",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r403.message", "text": "Leaves a message: \"It's with me. It's heavier than it should be.\""}
+    },
+    {
+      "id": "n3.r403.paints",
+      "night": 3,
+      "room": "r403",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:30", "end": "01:40"},
+      "kind": "ritual",
+      "region": "window",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r403.paints", "text": "Gloves on; paints."}
+    },
+    {
+      "id": "n3.r403.caseback",
+      "night": 3,
+      "room": "r403",
+      "scene": "n3_shift_eye",
+      "window": {"start": "03:00", "end": "03:06"},
+      "kind": "hands",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r403.caseback", "text": "Runs a gloved hand along the case's back."}
+    },
+    {
+      "id": "n4.r401.lew",
+      "night": 4,
+      "room": "r401",
+      "scene": "n4_shift_eye",
+      "window": {"start": "23:45", "end": "23:53"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {"id": "c.n4.r401.lew", "text": "Lew the porter at the door, with an iron."}
+    },
+    {
+      "id": "n4.r401.chapter4",
+      "night": 4,
+      "room": "r401",
+      "scene": "n4_shift_eye",
+      "window": {"start": "00:40", "end": "00:50"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r401.chapter4", "text": "Reads chapter four."}
+    },
+    {
+      "id": "n4.r401.irons",
+      "night": 4,
+      "room": "r401",
+      "scene": "n4_shift_eye",
+      "window": {"start": "00:50", "end": "01:00"},
+      "kind": "ritual",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r401.irons", "text": "Irons; folds."}
+    },
+    {
+      "id": "n4.r405.security",
+      "night": 4,
+      "room": "r405",
+      "scene": "n4_shift_eye",
+      "window": {"start": "23:50", "end": "23:58"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {"id": "c.n4.r405.security", "text": "A man at the door says \"hotel security\". It is 401."}
+    },
+    {
+      "id": "n4.r405.corvane",
+      "night": 4,
+      "room": "r405",
+      "scene": "n4_shift_eye",
+      "window": {"start": "23:55", "end": "00:10"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r405.corvane", "text": "A card left on the table: \"Corvane Risk\"."}
+    },
+    {
+      "id": "n4.r405.laptops",
+      "night": 4,
+      "room": "r405",
+      "scene": "n4_shift_eye",
+      "window": {"start": "00:10", "end": "00:16"},
+      "kind": "hands",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r405.laptops", "text": "She shuts two laptops at once."}
+    },
+    {
+      "id": "n4.r402.visitor",
+      "night": 4,
+      "room": "r402",
+      "scene": "n4_shift_eye",
+      "window": {"start": "00:30", "end": "00:38"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {"id": "c.n4.r402.visitor", "text": "404 at her door."}
+    },
+    {
+      "id": "n4.r402.needle",
+      "night": 4,
+      "room": "r402",
+      "scene": "n4_shift_eye",
+      "window": {"start": "00:45", "end": "00:51"},
+      "kind": "hands",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r402.needle", "text": "She unscrews a knitting needle's end; it is hollow."}
+    },
+    {
+      "id": "n4.r402.gives",
+      "night": 4,
+      "room": "r402",
+      "scene": "n4_shift_eye",
+      "window": {"start": "00:50", "end": "00:56"},
+      "kind": "hands",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r402.gives", "text": "She gives the needle to him."}
+    },
+    {
+      "id": "n4.r404.sink",
+      "night": 4,
+      "room": "r404",
+      "scene": "n4_shift_eye",
+      "window": {"start": "00:25", "end": "00:35"},
+      "kind": "ritual",
+      "region": "bathroom",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r404.sink", "text": "The miniature; \"403\"."}
+    },
+    {
+      "id": "n4.r404.needle",
+      "night": 4,
+      "room": "r404",
+      "scene": "n4_shift_eye",
+      "window": {"start": "01:05", "end": "01:20"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r404.needle", "text": "A knitting needle on the desk."}
+    },
+    {
+      "id": "n4.r404.stranger",
+      "night": 4,
+      "room": "r404",
+      "scene": "n4_shift_eye",
+      "window": {"start": "02:14", "end": "02:22"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {"id": "c.n4.r404.stranger", "text": "The stranger at the door."}
+    },
+    {
+      "id": "n4.r404.bin",
+      "night": 4,
+      "room": "r404",
+      "scene": "n4_shift_eye",
+      "window": {"start": "02:20", "end": "02:40"},
+      "kind": "hands",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r404.bin", "text": "Drops an envelope of money in the bin; at 02:40 takes it out."}
+    },
+    {
+      "id": "n4.r406.feet",
+      "night": 4,
+      "room": "r406",
+      "scene": "n4_gap_406",
+      "window": {"start": "01:10", "end": "01:40"},
+      "kind": "visitors",
+      "region": "floor",
+      "floor_visible": true,
+      "clue": {"id": "c.n4.r406.feet", "text": "Two pairs of feet, bare and in slippers; two people sit down on the floor."}
+    },
+    {
+      "id": "n4.r406.photo",
+      "night": 4,
+      "room": "r406",
+      "scene": "n4_gap_406",
+      "window": {"start": "01:15", "end": "01:45"},
+      "kind": "luggage",
+      "region": "floor",
+      "floor_visible": true,
+      "clue": {"id": "c.n4.r406.photo", "text": "A photograph slid across the floor between them."}
+    },
+    {
+      "id": "n4.r403.tea",
+      "night": 4,
+      "room": "r403",
+      "scene": "n4_shift_eye",
+      "window": {"start": "01:30", "end": "01:38"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {"id": "c.n4.r403.tea", "text": "Room service: a pot of tea."}
+    },
+    {
+      "id": "n4.r403.backing",
+      "night": 4,
+      "room": "r403",
+      "scene": "n4_shift_eye",
+      "window": {"start": "02:30", "end": "02:45"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r403.backing", "text": "The case open on the desk; she peels the painting's backing."}
+    },
+    {
+      "id": "n4.r403.pages",
+      "night": 4,
+      "room": "r403",
+      "scene": "n4_shift_eye",
+      "window": {"start": "02:50", "end": "02:56"},
+      "kind": "hands",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r403.pages", "text": "Folded pages inside; she reads them with gloves on."}
+    },
+    {
+      "id": "n4.r403.room",
+      "night": 4,
+      "room": "r403",
+      "scene": "n4_shift_eye",
+      "window": {"start": "03:30", "end": "03:40"},
+      "kind": "ritual",
+      "region": "window",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r403.room", "text": "Paints, but the picture is of the room."}
+    },
+    {
+      "id": "n5.r404.drinks",
+      "night": 5,
+      "room": "r404",
+      "scene": "n5_shift_eye",
+      "window": {"start": "23:35", "end": "23:45"},
+      "kind": "ritual",
+      "region": "bathroom",
+      "floor_visible": false,
+      "ritual_broken": true,
+      "clue": {
+        "id": "c.n5.r404.drinks",
+        "text": "Drinks the miniature. Does not write \"404\". Voice memo: \"Day four hundred and four. I'm sorry.\""
+      }
+    },
+    {
+      "id": "n5.r404.press",
+      "night": 5,
+      "room": "r404",
+      "scene": "n5_shift_eye",
+      "window": {"start": "23:40", "end": "23:55"},
+      "kind": "luggage",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r404.press", "text": "A press card on the bed: \"J. FERRER\"."}
+    },
+    {
+      "id": "n5.r404.bizcard",
+      "night": 5,
+      "room": "r404",
+      "scene": "n5_shift_eye",
+      "window": {"start": "23:45", "end": "00:00"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r404.bizcard", "text": "A business card: \"wine salesman\"."}
+    },
+    {
+      "id": "n5.r402.mirror",
+      "night": 5,
+      "room": "r402",
+      "scene": "n5_shift_eye",
+      "window": {"start": "00:00", "end": "00:10"},
+      "kind": "ritual",
+      "region": "bathroom",
+      "floor_visible": false,
+      "clue": {
+        "id": "c.n5.r402.mirror",
+        "text": "To the mirror, until her voice holds: \"I kept the accounts. I kept two sets.\""
+      }
+    },
+    {
+      "id": "n5.r402.name",
+      "night": 5,
+      "room": "r402",
+      "scene": "n5_shift_eye",
+      "window": {"start": "00:02", "end": "00:12"},
+      "kind": "ritual",
+      "region": "bathroom",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r402.name", "text": "To the mirror: \"My name is Ines Maro.\""}
+    },
+    {
+      "id": "n5.r402.lanyard",
+      "night": 5,
+      "room": "r402",
+      "scene": "n5_shift_eye",
+      "window": {"start": "00:10", "end": "00:25"},
+      "kind": "luggage",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r402.lanyard", "text": "A lanyard: \"conference interpreter\"."}
+    },
+    {
+      "id": "n5.r401.chapter5",
+      "night": 5,
+      "room": "r401",
+      "scene": "n5_shift_eye",
+      "window": {"start": "00:40", "end": "00:50"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r401.chapter5", "text": "Reads chapter five; after she hangs up, says \"No\" to the photograph."}
+    },
+    {
+      "id": "n5.r401.postcard",
+      "night": 5,
+      "room": "r401",
+      "scene": "n5_shift_eye",
+      "window": {"start": "00:50", "end": "01:05"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r401.postcard", "text": "A postcard to his daughter, signed \"T. Vell\"."}
+    },
+    {
+      "id": "n5.r401.folder",
+      "night": 5,
+      "room": "r401",
+      "scene": "n5_shift_eye",
+      "window": {"start": "01:00", "end": "01:15"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r401.folder", "text": "An insurance assessor's folder."}
+    },
+    {
+      "id": "n5.r406.sews",
+      "night": 5,
+      "room": "r406",
+      "scene": "n5_shift_eye",
+      "window": {"start": "01:20", "end": "01:30"},
+      "kind": "ritual",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {
+        "id": "c.n5.r406.sews",
+        "text": "Sews the last letter of the banner; talks to the river report about her father."
+      }
+    },
+    {
+      "id": "n5.r406.letter",
+      "night": 5,
+      "room": "r406",
+      "scene": "n5_shift_eye",
+      "window": {"start": "01:30", "end": "01:45"},
+      "kind": "luggage",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r406.letter", "text": "A letter from her group: \"Dear Ruth\"."}
+    },
+    {
+      "id": "n5.r406.watch",
+      "night": 5,
+      "room": "r406",
+      "scene": "n5_shift_eye",
+      "window": {"start": "01:35", "end": "01:45"},
+      "kind": "clothing",
+      "region": "vestibule",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r406.watch", "text": "A nurse's watch pinned to her coat."}
+    },
+    {
+      "id": "n5.r405.message",
+      "night": 5,
+      "room": "r405",
+      "scene": "n5_shift_eye",
+      "window": {"start": "01:50", "end": "02:00"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r405.message", "text": "Records a message she does not send."}
+    },
+    {
+      "id": "n5.r405.name",
+      "night": 5,
+      "room": "r405",
+      "scene": "n5_shift_eye",
+      "window": {"start": "01:52", "end": "02:02"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r405.name", "text": "\"It's Kit. Kit Saelens. Your sister. Remember her?\""}
+    },
+    {
+      "id": "n5.r405.student",
+      "night": 5,
+      "room": "r405",
+      "scene": "n5_shift_eye",
+      "window": {"start": "02:00", "end": "02:15"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r405.student", "text": "A student card."}
+    },
+    {
+      "id": "n5.r403.copies",
+      "night": 5,
+      "room": "r403",
+      "scene": "n5_shift_eye",
+      "window": {"start": "23:30", "end": "00:00"},
+      "kind": "ritual",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r403.copies", "text": "Copies the folded pages by hand at the desk, all night."}
+    },
+    {
+      "id": "n5.r403.label_name",
+      "night": 5,
+      "room": "r403",
+      "scene": "n5_shift_eye",
+      "window": {"start": "00:30", "end": "00:45"},
+      "kind": "luggage",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r403.label_name", "text": "A luggage label: \"M. LINDE\"."}
+    },
+    {
+      "id": "n5.r403.label_trade",
+      "night": 5,
+      "room": "r403",
+      "scene": "n5_shift_eye",
+      "window": {"start": "00:35", "end": "00:50"},
+      "kind": "luggage",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r403.label_trade", "text": "The same label, second line: \"restorer\"."}
+    },
+    {
+      "id": "n6.r406.boat",
+      "night": 6,
+      "room": "r406",
+      "scene": "n6_shift_eye",
+      "window": {"start": "00:10", "end": "00:20"},
+      "kind": "ritual",
+      "region": "window",
+      "floor_visible": false,
+      "clue": {"id": "c.n6.r406.boat", "text": "Boat seven, the last on the sill."}
+    },
+    {
+      "id": "n6.r406.banner",
+      "night": 6,
+      "room": "r406",
+      "scene": "n6_shift_eye",
+      "window": {"start": "00:30", "end": "00:45"},
+      "kind": "luggage",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n6.r406.banner", "text": "The banner, rolled and tied with the blue rope."}
+    },
+    {
+      "id": "n6.r402.chain",
+      "night": 6,
+      "room": "r402",
+      "scene": "n6_shift_eye",
+      "window": {"start": "00:20", "end": "00:30"},
+      "kind": "ritual",
+      "region": "vestibule",
+      "floor_visible": false,
+      "clue": {"id": "c.n6.r402.chain", "text": "The chain on, seven times."}
+    },
+    {
+      "id": "n6.r402.ashdown",
+      "night": 6,
+      "room": "r402",
+      "scene": "n6_shift_eye",
+      "window": {"start": "00:40", "end": "00:55"},
+      "kind": "luggage",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n6.r402.ashdown", "text": "A letter from \"Ashdown Relocation\" on the bed."}
+    },
+    {
+      "id": "n6.r401.asleep",
+      "night": 6,
+      "room": "r401",
+      "scene": "n6_shift_eye",
+      "window": {"start": "00:45", "end": "00:55"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n6.r401.asleep", "text": "A woman answers: \"She's asleep.\" He sits on the bed for a long time."}
+    },
+    {
+      "id": "n6.r401.leaves",
+      "night": 6,
+      "room": "r401",
+      "scene": "n6_shift_eye",
+      "window": {"start": "01:30", "end": "01:35"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {"id": "c.n6.r401.leaves", "text": "He leaves by the main door. The room is empty till 01:55."}
+    },
+    {
+      "id": "n6.r404.courant",
+      "night": 6,
+      "room": "r404",
+      "scene": "n6_shift_eye",
+      "window": {"start": "01:00", "end": "01:15"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n6.r404.courant", "text": "A Courant envelope, the booking confirmation inside."}
+    },
+    {
+      "id": "n6.r404.notepad",
+      "night": 6,
+      "room": "r404",
+      "scene": "n6_shift_eye",
+      "window": {"start": "01:10", "end": "01:20"},
+      "kind": "ritual",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "ritual_broken": true,
+      "clue": {"id": "c.n6.r404.notepad", "text": "An empty notepad."}
+    },
+    {
+      "id": "n6.r405.lantern",
+      "night": 6,
+      "room": "r405",
+      "scene": "n6_shift_eye",
+      "window": {"start": "01:10", "end": "01:25"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n6.r405.lantern", "text": "Her screen shows a job board, handle \"LANTERN\"."}
+    },
+    {
+      "id": "n6.r405.chess",
+      "night": 6,
+      "room": "r405",
+      "scene": "n6_shift_eye",
+      "window": {"start": "01:40", "end": "01:50"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n6.r405.chess", "text": "Chess; she loses on purpose."}
+    },
+    {
+      "id": "n6.r403.visit",
+      "night": 6,
+      "room": "r403",
+      "scene": "n6_shift_eye",
+      "window": {"start": "01:30", "end": "01:55"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {
+        "id": "c.n6.r403.visit",
+        "text": "401 at her door; she lets him in. She shows him the folded pages. At 01:55 he leaves without the case."
+      }
+    },
+    {
+      "id": "n6.r403.stranger",
+      "night": 6,
+      "room": "r403",
+      "scene": "n6_shift_eye",
+      "window": {"start": "02:14", "end": "02:22"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {
+        "id": "c.n6.r403.stranger",
+        "text": "The stranger; an envelope: payment, and \"the service stair, 05:30 Monday\"."
+      }
+    },
+    {
+      "id": "n6.r403.invoice",
+      "night": 6,
+      "room": "r403",
+      "scene": "n6_shift_eye",
+      "window": {"start": "02:30", "end": "02:45"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n6.r403.invoice", "text": "An \"Abbot Fine Art\" invoice."}
+    },
+    {
+      "id": "n7.r402.coat",
+      "night": 7,
+      "room": "r402",
+      "scene": "n7_shift_eye",
+      "window": {"start": "23:42", "end": "23:52"},
+      "kind": "clothing",
+      "region": "vestibule",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n7.r402.coat", "text": "Waits by the door in her coat."}
+    },
+    {
+      "id": "n7.r402.leaves",
+      "night": 7,
+      "room": "r402",
+      "scene": "n7_shift_eye",
+      "window": {"start": "01:00", "end": "01:05"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {"id": "c.n7.r402.leaves", "text": "Leaves with 404."}
+    },
+    {
+      "id": "n7.r402.ink",
+      "night": 7,
+      "room": "r402",
+      "scene": "n7_shift_eye",
+      "window": {"start": "03:02", "end": "03:08"},
+      "kind": "hands",
+      "region": "vestibule",
+      "floor_visible": false,
+      "requires": {"is": "final_choice", "eq": "keep_logging"},
+      "clue": {"id": "c.n7.r402.ink", "text": "Back at 02:50 with ink on her hands."}
+    },
+    {
+      "id": "n7.r406.soaked",
+      "night": 7,
+      "room": "r406",
+      "scene": "n7_shift_eye",
+      "window": {"start": "00:02", "end": "00:12"},
+      "kind": "clothing",
+      "region": "vestibule",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n7.r406.soaked", "text": "Ruth, soaked from the river."}
+    },
+    {
+      "id": "n7.r406.tap",
+      "night": 7,
+      "room": "r406",
+      "scene": "n7_shift_eye",
+      "window": {"start": "00:05", "end": "00:11"},
+      "kind": "hands",
+      "region": "bathroom",
+      "floor_visible": false,
+      "clue": {"id": "c.n7.r406.tap", "text": "Kit holds her hands under the hot tap."}
+    },
+    {
+      "id": "n7.r406.floor",
+      "night": 7,
+      "room": "r406",
+      "scene": "n7_shift_eye",
+      "window": {"start": "00:15", "end": "00:45"},
+      "kind": "ritual",
+      "region": "bed",
+      "floor_visible": true,
+      "clue": {"id": "c.n7.r406.floor", "text": "The two of them sit on the floor of 406. The towel is gone."}
+    },
+    {
+      "id": "n7.r404.needle",
+      "night": 7,
+      "room": "r404",
+      "scene": "n7_shift_eye",
+      "window": {"start": "00:52", "end": "01:07"},
+      "kind": "luggage",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n7.r404.needle", "text": "Takes the needle from the desk."}
+    },
+    {
+      "id": "n7.r404.minibar",
+      "night": 7,
+      "room": "r404",
+      "scene": "n7_shift_eye",
+      "window": {"start": "00:55", "end": "01:05"},
+      "kind": "ritual",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "ritual_broken": true,
+      "clue": {"id": "c.n7.r404.minibar", "text": "Does not touch the minibar."}
+    },
+    {
+      "id": "n7.r404.leaves",
+      "night": 7,
+      "room": "r404",
+      "scene": "n7_shift_eye",
+      "window": {"start": "01:00", "end": "01:05"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {"id": "c.n7.r404.leaves", "text": "Leaves."}
+    },
+    {
+      "id": "n7.r404.ink",
+      "night": 7,
+      "room": "r404",
+      "scene": "n7_shift_eye",
+      "window": {"start": "03:02", "end": "03:08"},
+      "kind": "hands",
+      "region": "vestibule",
+      "floor_visible": false,
+      "requires": {"is": "final_choice", "eq": "keep_logging"},
+      "clue": {"id": "c.n7.r404.ink", "text": "Back at 02:50 with ink on his hands."}
+    },
+    {
+      "id": "n7.r401.irons",
+      "night": 7,
+      "room": "r401",
+      "scene": "n7_shift_eye",
+      "window": {"start": "01:32", "end": "01:42"},
+      "kind": "ritual",
+      "region": "bed",
+      "floor_visible": false,
+      "threshold": true,
+      "clue": {"id": "c.n7.r401.irons", "text": "Irons a shirt."}
+    },
+    {
+      "id": "n7.r401.chapter6",
+      "night": 7,
+      "room": "r401",
+      "scene": "n7_shift_eye",
+      "window": {"start": "01:35", "end": "01:45"},
+      "kind": "calls",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n7.r401.chapter6", "text": "Reads chapter six."}
+    },
+    {
+      "id": "n7.r401.packs",
+      "night": 7,
+      "room": "r401",
+      "scene": "n7_shift_eye",
+      "window": {"start": "01:45", "end": "02:00"},
+      "kind": "luggage",
+      "region": "bed",
+      "floor_visible": false,
+      "clue": {"id": "c.n7.r401.packs", "text": "Packs his kit."}
+    },
+    {
+      "id": "n7.r401.leaves",
+      "night": 7,
+      "room": "r401",
+      "scene": "n7_shift_eye",
+      "window": {"start": "01:50", "end": "01:55"},
+      "kind": "visitors",
+      "region": "vestibule",
+      "floor_visible": true,
+      "clue": {"id": "c.n7.r401.leaves", "text": "Leaves."}
+    },
+    {
+      "id": "n7.r401.nokit",
+      "night": 7,
+      "room": "r401",
+      "scene": "n7_shift_eye",
+      "window": {"start": "03:42", "end": "03:57"},
+      "kind": "luggage",
+      "region": "vestibule",
+      "floor_visible": false,
+      "requires": {"is": "final_choice", "eq": "keep_logging"},
+      "clue": {"id": "c.n7.r401.nokit", "text": "Back at 03:30 without his kit."}
+    },
+    {
+      "id": "n7.r403.paints",
+      "night": 7,
+      "room": "r403",
+      "scene": "n7_shift_eye",
+      "window": {"start": "23:00", "end": "23:30"},
+      "kind": "ritual",
+      "region": "window",
+      "floor_visible": false,
+      "clue": {"id": "c.n7.r403.paints", "text": "Paints, all night."}
+    }
+  ],
+  "office_clues": [
+    {
+      "id": "o.n1.guest_cards",
+      "night": 1,
+      "source": "office",
+      "text": "Six guest cards, one line each: 401 a soldier for hire, 402 a whistleblower, 403 an art thief, 404 an undercover journalist, 405 a hacker, 406 an activist."
+    },
+    {
+      "id": "o.n1.paper_glasshouse",
+      "night": 1,
+      "source": "paper",
+      "text": "Evening paper: the Glasshouse late opening ends 23:00."
+    },
+    {
+      "id": "o.n1.paper_printworks",
+      "night": 1,
+      "source": "paper",
+      "text": "Evening paper: the Printworks night run ends 23:30."
+    },
+    {
+      "id": "o.n1.paper_assembly",
+      "night": 1,
+      "source": "paper",
+      "text": "Evening paper: the Assembly Rooms gala rehearsal ends 00:30."
+    },
+    {
+      "id": "o.n1.paper_fishmarket",
+      "night": 1,
+      "source": "paper",
+      "text": "Evening paper: fish market trade ends 02:15."
+    },
+    {
+      "id": "o.n1.lew",
+      "night": 1,
+      "source": "told",
+      "text": "Lew: \"Nowhere in this town's more than half an hour from here.\""
+    },
+    {
+      "id": "o.n2.paper_caterers",
+      "night": 2,
+      "source": "paper",
+      "text": "Evening paper: \"Gala caterers briefed tonight\"."
+    },
+    {
+      "id": "o.n2.paper_orchid",
+      "night": 2,
+      "source": "paper",
+      "text": "Evening paper: \"Orchid week at the Glasshouse\"."
+    },
+    {"id": "o.n2.strip_n1", "night": 2, "source": "strip", "text": "The night strip of night one."},
+    {
+      "id": "o.n3.lew",
+      "night": 3,
+      "source": "told",
+      "text": "Lew at the hand-over: \"Stair door's locked from your side. Someone's idea.\""
+    },
+    {
+      "id": "o.n3.chute_box",
+      "night": 3,
+      "source": "found",
+      "text": "The chute ends in a steel box: a brass plate \"W\", \"2:14\" chalked on the lid.",
+      "requires_flag": "chute_box_seen"
+    },
+    {
+      "id": "o.n4.fenn_log",
+      "night": 4,
+      "source": "found",
+      "text": "Abel Fenn's log, last season: six other guests, the same columns, a 2:14 column every night. Last page: \"I stopped writing it down.\"",
+      "requires_flag": "fenn_log_found"
+    },
+    {"id": "o.n4.strip_n3", "night": 4, "source": "strip", "text": "The night strip of night three."},
+    {
+      "id": "o.n5.paper_courant",
+      "night": 5,
+      "source": "paper",
+      "text": "Evening paper: \"Courant drops river warehouse story\"."
+    },
+    {
+      "id": "o.n6.booking_ledger",
+      "night": 6,
+      "source": "found",
+      "text": "The booking ledger: six rooms booked by Corvane Risk (401), Ashdown Relocation (402), Abbot Fine Art (403), The Evening Courant (404), LANTERN (405), Friends of the River (406); one payer, Wren Holdings, account ending 0214.",
+      "requires_flag": "ledger_read"
+    },
+    {
+      "id": "o.n6.hiring_folder",
+      "night": 6,
+      "source": "found",
+      "text": "Behind the ledger: your own hiring papers, and a sheet headed \"Product: night log. Client: D.\"",
+      "requires_flag": "ledger_read"
+    }
+  ],
+  "false_signs": {
+    "starts": "The night after a guest is exposed (suspicion 100): one staged beat a night, in the window of the beat it replaces.",
+    "nights": [2, 3, 4, 5, 6],
+    "tell": "Staged facing the rose: the clue card's sketch shows the guest's eyes on the viewer. A second look shows the conflict.",
+    "none": [
+      {
+        "night": 4,
+        "room": "r406",
+        "reason": "406's lens is covered by script from 01:00 and the gap never raises suspicion, so nothing is staged to the lens."
+      }
+    ],
+    "substitutions": [
+      {
+        "id": "f.n2.r401",
+        "night": 2,
+        "room": "r401",
+        "replaces": "n2.r401.pass",
+        "kind": "luggage",
+        "region": "bed",
+        "floor_visible": false,
+        "clue": {"id": "cf.n2.r401", "text": "A coil of rope laid on the bed."},
+        "points_to": {"category": "object", "option": "rope"}
+      },
+      {
+        "id": "f.n2.r402",
+        "night": 2,
+        "room": "r402",
+        "replaces": "n2.r402.orchid",
+        "kind": "luggage",
+        "region": "vestibule",
+        "floor_visible": false,
+        "clue": {"id": "cf.n2.r402", "text": "A photocopied page in her hand."},
+        "points_to": {"category": "object", "option": "photocopy"}
+      },
+      {
+        "id": "f.n2.r403",
+        "night": 2,
+        "room": "r403",
+        "replaces": "n2.r403.tag",
+        "kind": "luggage",
+        "region": "window",
+        "floor_visible": false,
+        "clue": {"id": "cf.n2.r403", "text": "A laminated pass set on the sill."},
+        "points_to": {"category": "object", "option": "pass"}
+      },
+      {
+        "id": "f.n2.r404",
+        "night": 2,
+        "room": "r404",
+        "replaces": "n2.r404.photocopy",
+        "kind": "luggage",
+        "region": "desk_tv",
+        "floor_visible": false,
+        "clue": {"id": "cf.n2.r404", "text": "An orchid in a glass on the desk."},
+        "points_to": {"category": "object", "option": "orchid"}
+      },
+      {
+        "id": "f.n2.r405",
+        "night": 2,
+        "room": "r405",
+        "replaces": "n2.r405.spool",
+        "kind": "luggage",
+        "region": "desk_tv",
+        "floor_visible": false,
+        "clue": {"id": "cf.n2.r405", "text": "A brass crate tag on the desk."},
+        "points_to": {"category": "object", "option": "tag"}
+      },
+      {
+        "id": "f.n2.r406",
+        "night": 2,
+        "room": "r406",
+        "replaces": "n2.r406.rope",
+        "kind": "luggage",
+        "region": "vestibule",
+        "floor_visible": false,
+        "clue": {"id": "cf.n2.r406", "text": "A spool of cable."},
+        "points_to": {"category": "object", "option": "spool"}
+      },
+      {
+        "id": "f.n3.r401",
+        "night": 3,
+        "room": "r401",
+        "replaces": "n3.r401.chapter3",
+        "kind": "calls",
+        "region": "bed",
+        "floor_visible": false,
+        "clue": {"id": "cf.n3.r401", "text": "Says goodnight to a machine and leaves a message."},
+        "points_to": {"category": "ended", "option": "message"}
+      },
+      {
+        "id": "f.n3.r402",
+        "night": 3,
+        "room": "r402",
+        "replaces": "n3.r402.whisper",
+        "kind": "calls",
+        "region": "bed",
+        "floor_visible": false,
+        "clue": {"id": "cf.n3.r402", "text": "Slams the receiver down."},
+        "points_to": {"category": "ended", "option": "angry"}
+      },
+      {
+        "id": "f.n3.r403",
+        "night": 3,
+        "room": "r403",
+        "replaces": "n3.r403.message",
+        "kind": "calls",
+        "region": "desk_tv",
+        "floor_visible": false,
+        "clue": {"id": "cf.n3.r403", "text": "Whispers into the phone under the television."},
+        "points_to": {"category": "ended", "option": "whispered"}
+      },
+      {
+        "id": "f.n3.r404",
+        "night": 3,
+        "room": "r404",
+        "replaces": "n3.r404.source",
+        "kind": "calls",
+        "region": "desk_tv",
+        "floor_visible": false,
+        "clue": {"id": "cf.n3.r404", "text": "Dials; it rings out; he writes the number again."},
+        "points_to": {"category": "ended", "option": "never"}
+      },
+      {
+        "id": "f.n3.r405",
+        "night": 3,
+        "room": "r405",
+        "replaces": "n3.r405.ruthie",
+        "kind": "calls",
+        "region": "bed",
+        "floor_visible": false,
+        "clue": {"id": "cf.n3.r405", "text": "Reads a long list down the phone to the end."},
+        "points_to": {"category": "ended", "option": "to_the_end"}
+      },
+      {
+        "id": "f.n3.r406",
+        "night": 3,
+        "room": "r406",
+        "replaces": "n3.r406.dials",
+        "kind": "calls",
+        "region": "bed",
+        "floor_visible": false,
+        "clue": {"id": "cf.n3.r406", "text": "Says two words; the line is cut."},
+        "points_to": {"category": "ended", "option": "cut_short"}
+      },
+      {
+        "id": "f.n4.r401",
+        "night": 4,
+        "room": "r401",
+        "replaces": "n4.r401.lew",
+        "kind": "visitors",
+        "region": "vestibule",
+        "floor_visible": false,
+        "clue": {"id": "cf.n4.r401", "text": "Lew at the door with a pot of tea."},
+        "points_to": {"category": "passed", "option": "tea"}
+      },
+      {
+        "id": "f.n4.r402",
+        "night": 4,
+        "room": "r402",
+        "replaces": "n4.r402.needle",
+        "kind": "hands",
+        "region": "bed",
+        "floor_visible": false,
+        "clue": {"id": "cf.n4.r402", "text": "She hands her visitor a business card."},
+        "points_to": {"category": "passed", "option": "card"}
+      },
+      {
+        "id": "f.n4.r403",
+        "night": 4,
+        "room": "r403",
+        "replaces": "n4.r403.tea",
+        "kind": "visitors",
+        "region": "vestibule",
+        "floor_visible": false,
+        "clue": {"id": "cf.n4.r403", "text": "Room service leaves an iron."},
+        "points_to": {"category": "passed", "option": "iron"}
+      },
+      {
+        "id": "f.n4.r404",
+        "night": 4,
+        "room": "r404",
+        "replaces": "n4.r404.bin",
+        "kind": "hands",
+        "region": "desk_tv",
+        "floor_visible": false,
+        "clue": {"id": "cf.n4.r404", "text": "Holds up a photograph from the envelope."},
+        "points_to": {"category": "passed", "option": "photograph"}
+      },
+      {
+        "id": "f.n4.r405",
+        "night": 4,
+        "room": "r405",
+        "replaces": "n4.r405.corvane",
+        "kind": "luggage",
+        "region": "desk_tv",
+        "floor_visible": false,
+        "clue": {"id": "cf.n4.r405", "text": "An envelope of cash left on the table."},
+        "points_to": {"category": "passed", "option": "money"}
+      },
+      {
+        "id": "f.n5.r401",
+        "night": 5,
+        "room": "r401",
+        "replaces": "n5.r401.folder",
+        "kind": "luggage",
+        "region": "desk_tv",
+        "floor_visible": false,
+        "clue": {"id": "cf.n5.r401", "text": "A business card: \"wine salesman\"."},
+        "points_to": {"category": "cover", "option": "wine"}
+      },
+      {
+        "id": "f.n5.r402",
+        "night": 5,
+        "room": "r402",
+        "replaces": "n5.r402.lanyard",
+        "kind": "luggage",
+        "region": "bed",
+        "floor_visible": false,
+        "clue": {"id": "cf.n5.r402", "text": "A student card."},
+        "points_to": {"category": "cover", "option": "student"}
+      },
+      {
+        "id": "f.n5.r403",
+        "night": 5,
+        "room": "r403",
+        "replaces": "n5.r403.label_trade",
+        "kind": "luggage",
+        "region": "bed",
+        "floor_visible": false,
+        "clue": {"id": "cf.n5.r403", "text": "The label's second line: \"insurance assessor\"."},
+        "points_to": {"category": "cover", "option": "assessor"}
+      },
+      {
+        "id": "f.n5.r404",
+        "night": 5,
+        "room": "r404",
+        "replaces": "n5.r404.bizcard",
+        "kind": "luggage",
+        "region": "desk_tv",
+        "floor_visible": false,
+        "clue": {"id": "cf.n5.r404", "text": "A lanyard: \"conference interpreter\"."},
+        "points_to": {"category": "cover", "option": "interpreter"}
+      },
+      {
+        "id": "f.n5.r405",
+        "night": 5,
+        "room": "r405",
+        "replaces": "n5.r405.student",
+        "kind": "clothing",
+        "region": "vestibule",
+        "floor_visible": false,
+        "clue": {"id": "cf.n5.r405", "text": "A nurse's watch pinned to her coat."},
+        "points_to": {"category": "cover", "option": "nurse"}
+      },
+      {
+        "id": "f.n5.r406",
+        "night": 5,
+        "room": "r406",
+        "replaces": "n5.r406.watch",
+        "kind": "luggage",
+        "region": "bed",
+        "floor_visible": false,
+        "clue": {"id": "cf.n5.r406", "text": "A card: \"restorer\"."},
+        "points_to": {"category": "cover", "option": "restorer"}
+      },
+      {
+        "id": "f.n6.r401",
+        "night": 6,
+        "room": "r401",
+        "replaces": "n6.r401.asleep",
+        "kind": "luggage",
+        "region": "desk_tv",
+        "floor_visible": false,
+        "clue": {"id": "cf.n6.r401", "text": "A Courant envelope on the desk."},
+        "points_to": {"category": "booked_by", "option": "courant"}
+      },
+      {
+        "id": "f.n6.r402",
+        "night": 6,
+        "room": "r402",
+        "replaces": "n6.r402.ashdown",
+        "kind": "luggage",
+        "region": "bed",
+        "floor_visible": false,
+        "clue": {"id": "cf.n6.r402", "text": "A \"Friends of the River\" card on the bed."},
+        "points_to": {"category": "booked_by", "option": "friends"}
+      },
+      {
+        "id": "f.n6.r403",
+        "night": 6,
+        "room": "r403",
+        "replaces": "n6.r403.invoice",
+        "kind": "luggage",
+        "region": "desk_tv",
+        "floor_visible": false,
+        "clue": {"id": "cf.n6.r403", "text": "A \"Corvane Risk\" card."},
+        "points_to": {"category": "booked_by", "option": "corvane"}
+      },
+      {
+        "id": "f.n6.r404",
+        "night": 6,
+        "room": "r404",
+        "replaces": "n6.r404.courant",
+        "kind": "luggage",
+        "region": "desk_tv",
+        "floor_visible": false,
+        "clue": {"id": "cf.n6.r404", "text": "A printout from a job board, handle \"LANTERN\"."},
+        "points_to": {"category": "booked_by", "option": "lantern"}
+      },
+      {
+        "id": "f.n6.r405",
+        "night": 6,
+        "room": "r405",
+        "replaces": "n6.r405.lantern",
+        "kind": "luggage",
+        "region": "desk_tv",
+        "floor_visible": false,
+        "clue": {"id": "cf.n6.r405", "text": "\"Abbot Fine Art\" letterhead on her screen."},
+        "points_to": {"category": "booked_by", "option": "abbot"}
+      },
+      {
+        "id": "f.n6.r406",
+        "night": 6,
+        "room": "r406",
+        "replaces": "n6.r406.banner",
+        "kind": "luggage",
+        "region": "bed",
+        "floor_visible": false,
+        "clue": {"id": "cf.n6.r406", "text": "A letter from \"Ashdown Relocation\"."},
+        "points_to": {"category": "booked_by", "option": "ashdown"}
+      }
+    ]
+  }
+}

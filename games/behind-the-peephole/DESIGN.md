@@ -142,7 +142,7 @@ Everything in this section is added for the game unless it is quoted from the pi
 | --- | --- | --- |
 | Wren Holdings | To sell a complete, timed record of six people who threaten or serve the Bonded House, gathered in one place, so that all six can be dealt with at once. | Told: Wren's calls. Found: the ledger. Deduced: the Account. |
 | Drost and the Bonded House | Drost owns the warehouse and launders money through art valuations. Wren's client. Never seen, never heard. | Found: the ledger pages the art thief finds; the evening paper. |
-| The Evening Courant | The journalist's paper. Its editor's source for the Drost story is Wren. It drops the story on night four. | Seen and heard: 404's calls. |
+| The Evening Courant | The journalist's paper. Its editor's source for the Drost story is Wren. It drops the story on night five. | Seen and heard: 404's calls. |
 | Friends of the River | The "supporters" who booked the activist's room. A front with a dead phone number. | Seen: 406's call never connects (night three). |
 | The hotel staff | Lew the night porter, Dora the night maid. They know the passage exists and do not ask. | Seen and told. |
 
@@ -372,8 +372,10 @@ No stretch is longer than 8 minutes without a new mechanic, place, revelation or
 - **Returns.** When a guest's key calls the lift, the bell board rings that room's number (four
   rings for 404). The bell is heard everywhere in the passage. The guest's main door opens 12 game
   minutes later (18 real seconds). Being at the lens when the door opens catches the threshold
-  beat: hands, clothing and luggage, the densest clues of the night.
-- **Beats.** Each room has a timed script: 3 to 6 beats a night, each with a time window, a kind
+  beat: hands, clothing and luggage, the densest clues of the night. The tables for nights one,
+  two and seven give the bell's time ("Back"); those for nights three to six give the time the
+  door opens ("Door opens").
+- **Beats.** Each room has a timed script: up to 6 beats a night, each with a time window, a kind
   (one of the seven), and a place in the room. A beat is caught by holding the eye on it (section
   10). A caught beat becomes a clue card in the notebook.
 - **The 2:14 knock.** Every night at 02:14 the stranger knocks three times (two quick, one slow)
@@ -478,10 +480,10 @@ was nothing last night, is a flat hard case: "A suitcase that wasn’t there yes
 
 **Returns and beats.** 2:14 knock at 401.
 
-| Room | Back | Beats the lens can catch | Truth (call · how it ended) |
+| Room | Door opens | Beats the lens can catch | Truth (call · how it ended) |
 | --- | --- | --- | --- |
 | 406 | 23:40 | 00:10 calls: dials a number from a card; it rings out; she writes it again · 00:30 ritual: boat four · 01:05 calls: the room phone rings; she answers, hears a voice, hangs up · 01:10 hands: sits with her hand on the receiver | "Friends of the River" · never connected |
-| 401 | 00:30 | 00:40 calls: chapter three, read to the end · 01:00 ritual: kit in order · 02:14 visitors: opens to the stranger; a cream envelope · 02:16 luggage: a photograph on the desk, face up for one minute, then face down (tilt to the desk to see: 403's guest at her own door) | His daughter · read to the end |
+| 401 | 00:30 | 00:40 calls: chapter three, read to the end · 01:00 ritual: kit in order · 02:14 visitors: opens to the stranger; a cream envelope · 02:16 luggage: a photograph on the desk, face up for two minutes, then face down (tilt to the desk to see: 403's guest at her own door) | His daughter · read to the end |
 | 405 | 00:55 | 01:00 luggage: reads a printed list, stops on one line · 01:05 calls: dials the room phone, "Ruthie, it's—" · 01:06 hands: sets the receiver down very slowly · 01:30 calls: chess, "Bb5." | Room 406 · cut short |
 | 404 | 01:10 | 01:20 calls: "Then who is the source?" and slams the receiver · 01:25 ritual: the miniature; "402" · 01:40 TV: a film, sound off | His editor · hung up angry |
 | 402 | 01:40 | 01:50 TV: game show turned up · 01:52 calls: whispers to her neighbour under the noise · 02:10 ritual: knits | Her neighbour · whispered |
@@ -513,7 +515,7 @@ slid across the floor between them, and two people sitting down on the floor.
 
 **Returns, visits and beats.** 2:14 knock at 404.
 
-| Room | Back | Visitor and what passed | Beats the lens can catch |
+| Room | Door opens | Visitor and what passed | Beats the lens can catch |
 | --- | --- | --- | --- |
 | 401 | 23:30 | Lew the porter, 23:45 · an iron | 23:45 visitors: Lew with an iron · 00:40 calls: chapter four · 00:50 ritual: irons, folds |
 | 405 | 23:40 | Tomas (401), 23:50 · a business card | 23:50 visitors: a man at the door says "hotel security"; it is 401 · 23:55 luggage: a card left on the table, "Corvane Risk" · 00:10 hands: she shuts two laptops at once |
@@ -541,7 +543,7 @@ minutes.
 
 **Confessions.** Tonight every guest speaks, alone, and each says or shows their name once.
 
-| Room | Back | Confession beat | Name shown | Cover story shown |
+| Room | Door opens | Confession beat | Name shown | Cover story shown |
 | --- | --- | --- | --- | --- |
 | 404 | 23:20 | 23:35 ritual broken: he drinks the miniature. He does not write "404". Voice memo: "Day four hundred and four. I'm sorry." | Press card on the bed: "J. FERRER" | Business card: "wine salesman" |
 | 402 | 23:45 | 00:00 to the mirror: "My name is Ines Maro. I kept the accounts. I kept two sets." Repeats it until her voice holds. | Spoken | Lanyard: "conference interpreter" |
@@ -573,7 +575,7 @@ three difficulty).
 
 **Returns and beats.** 2:14 knock at 403.
 
-| Room | Back | Beats the lens can catch |
+| Room | Door opens | Beats the lens can catch |
 | --- | --- | --- |
 | 406 | 23:50 | 00:10 ritual: boat seven, the last on the sill · 00:30 luggage: the banner rolled and tied with the blue rope |
 | 402 | 00:10 | 00:20 ritual: chain seven times · 00:40 luggage: a letter from "Ashdown Relocation" on the bed |
@@ -877,7 +879,7 @@ fish market and came back at 02:45."). A pen nib at the foot: "Sign".
 | `n1_statement` | Room × Place (return times printed) | 6 office, up to 27 beats | One sub-grid; a tutorial overlay |
 | `n2_statement` | Room × Object × Act | 3 office, up to 24 beats | Three sub-grids |
 | `n3_statement` | Room × Who they called × How it ended | 2 office, up to 22 beats | Three sub-grids; one room's evidence is only the absence of a call |
-| `n4_statement` | Host room × Visitor × What passed | 2 office, up to 19 beats; 406 by the gap only | Visitors include two guests, so a guest is both a row and a column |
+| `n4_statement` | Host room × Visitor × What passed | 2 office, up to 19 beats; 406 by the gap only | Visitors include three guests, so a guest is both a row and a column |
 | `n5_statement` | Room × Name × Cover story | 1 office, up to 18 beats | Names must be read from small text on objects |
 | `n6_statement` | Room × Booked by × Night of the 2:14 knock | The booking ledger (if opened) or scattered beats; the `knocks` ledger | The night column needs the player's memory of six nights |
 | `n7_account` | Room × Mission (6), and three single questions: who booked them all (Wren / Drost / the porter / the stranger / you), who the stranger is (Abel Fenn / Drost / Wren / Lew / a guest), and what the product is (the log / the painting / the ledger / the logger / the banner) | Every card the player holds, and every stamped row | Nine answers; no second look |
@@ -993,7 +995,7 @@ cards pin along the top edge.
 | 402 – 404 | met | 2 | "What did she give him?" | Rings 402 at 00:30 on night four's clock |
 | 403 – Bonded House | after | 2 | "What did she take?" | Adds the case as a pin |
 | 401 – Bonded House | works for | 2 | "Who is he guarding it for?" | Adds Drost as a pin |
-| 403 – the case | after | 3 | "Who wants it back?" | Rings 401 at 02:14 on night three's clock |
+| 403 – the case | after | 3 | "Who wants it back?" | Rings 405 at 23:50 on night four's clock (401 at her door) |
 | 405 – 406 | family | 3 | "Why did she call?" | Sets `link.sisters`; rings 406 at 01:10 on night four |
 | 401 – 403 | after | 3 | "What will he do?" | Rings 403 at 01:30 on night six |
 | 405 – Bonded House | works for | 3 | "What did she erase?" | A clue for the Account |
@@ -1289,13 +1291,15 @@ a visual equivalent.
 | `data/scenes.json` | The two 2D modes (`eye`, `race`), the four 1D games (`lockwork`, `statement`, `patience`, `mosaic`), and every scene in sections 8–10 with chapter, mode or game, transitions, what it reads and writes, and what can follow. |
 | `data/flags.json` | Every meter, counter, flag, enumeration and ledger in sections 8–13. |
 | `data/endings.json` | The four endings with the conditions in section 13 and their final scenes. |
+| `data/beats.json` | The per-night room scripts of section 8: each night's returns (bell and door), the 2:14 knock, and every beat (139) with its id, room, night, scene, time window, kind, region of the room plate, whether it is floor-visible, and the clue card it writes; the office clues; and the false-sign substitutions of section 12 (what an exposed guest stages instead of one true beat, nights two to six). |
+| `data/truth.json` | The true answers: the six Statement grids (36 rows, one true answer per row and category, each with the clue cards it rests on), the Account (six missions and three single questions, and the scapegoat rule), and the Mosaic's pins, thread lengths and 16 true links. |
+| `data/deals.json` | The Night Patience deals for nights two to seven: the six columns, the stock, the two slipped cards and where they sit, and a winning line for each deal within its passes. |
+| `data/schemas/` | `beats.schema.json`, `truth.schema.json` and `deals.schema.json`, the JSON Schemas (draft 2020-12) for the three files above. The shared schemas in `schemas/` cover only the first four. |
+| `tools/check_data.py` | Checks the three files against their schemas, against each other and against the four shared files: ids, rooms, nights and scenes exist; every clue card a truth row or link relies on is written by a beat; one true answer per row; 36 rows and 9 Account answers against the endings' thresholds; Mosaic links between real pins; full, legal deals with the right slipped cards, each won by replaying its winning line. `python tools/validate.py` runs it; it also runs alone: `python games/behind-the-peephole/tools/check_data.py`. |
 
-Not yet in `data/`, and needed before production (the shared schemas have no place for them): the
-per-night room scripts (each beat's id, room, window, kind, region in the room plate, whether it is
-floor-visible, and the clue card it writes), the truth tables for the seven grids, the false-sign
-substitutions, the Mosaic's true links, and the patience deals. The build plan proposes
-`data/beats.json`, `data/truth.json` and `data/deals.json` for these, with their own checks in the
-game's tests, until the shared schemas say otherwise.
+Still to come (milestone 3): the solver that proves each grid unique from the full beats and
+solvable from the office clues plus any 60 % of them. `check_data.py` checks that the truth is
+consistent and cited, not that the grids are unique.
 
 ## 19. Build plan
 
@@ -1347,7 +1351,7 @@ six kinds of guest, the seven details, the four roles of the peephole, and the l
 | Objects | The painting *The Night Visitor*; the case's contents; the ledger pages in its backing; the hollow knitting needle; the photograph; the cream envelopes; Fenn's log; the booking ledger and account 0214; the gala logger; the banner. |
 | Plot | The hidden plot night by night in section 8: who went where, what they brought back, who called whom, who visited whom, their names and covers, who booked them, and the gala night. The stranger's door each night (402, 405, 401, 404, 406, 403, then yours). The assignment of the pitch's seven details to particular guests and nights. |
 | Structure | Seven nights and a dawn; the four roles of the peephole used as four acts; the clock, the budget and the rates; the 2:14 knock as a nightly fixture; the lens in your own door. |
-| Systems | Suspicion, exposure and false signs; blind lenses; the gap; the night strip; the second shift; staff sightings; most-watched attention. |
+| Systems | Suspicion, exposure and false signs (and what each guest stages, in `data/beats.json`); blind lenses; the gap; the night strip; the second shift; staff sightings; most-watched attention. |
 | 1D games | All rules, layouts, appearances and contents of Lockwork, the Statement, Night Patience (including all twelve slipped cards) and the Mosaic. |
 | Endings | All four endings, their names (from `docs/ADAPTATIONS.md`), their conditions, final scenes and last lines. |
 | Lines | Every spoken or written line in the game. The only verbatim lines are the pitch quotations in section 3, cited to `04_Book_Concepts/01_Behind_the_Peephole.md`. |
