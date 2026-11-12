@@ -201,8 +201,8 @@ source lines to quote for them; the sample lines are proposals.
 - **Habit:** Taps each card's edge twice before he lays it.
 - **Lines:** "The Trunk does not shout twice. Write it down." / "A card means what we do after
   it." / "Leaves fall. I know which one is mine."
-- **Arc:** Pell dies in winter, of age, in every run. It is the one certain loss of the year
-  (section 20 asks the author to confirm it). Who he leaves the deck to is the player's last
+- **Arc:** Pell dies in winter, of age, in every run. It is the one certain loss of the year,
+  foretold by the autumn leaf he reads as his own (section 20, answer 1). Who he leaves the deck to is the player's last
   reading with him, and it shapes the Shadow. In every ending his saying is painted on a wall.
 
 ### Captain Burr, of the Battlements
@@ -268,8 +268,9 @@ source lines to quote for them; the sample lines are proposals.
 
 ### The squirrel, the beetle, the bird and the hand
 
-They are causes, not characters. They have no lines, no names and no faces. The human is only
-ever a hand and a sleeve, and a figure crossing the yard at a distance in chapter 7.
+They are causes, not characters. They have no lines, no names and no faces. The human is the
+source's "someone": up close only a hand and a sleeve, and in the backyard view a faceless figure
+at a distance. The human never speaks, and the game never says what the check found.
 
 ### The Roll of the Bark
 
@@ -1113,6 +1114,9 @@ Backyard card for the next Omen Spread: no pull-back during an event, no Backyar
 The endings are decided by the balance between the three institutions over the year (which
 readings of the Shadow are allowed), the reading the player lays (`shadow_reading`), and whether
 the bark holds (`bark.integrity`). The resolver checks them in priority order after `c6_touch`.
+The moral's last line, "Even the smallest world is a universe to the ones who live in it.", closes
+the as-written ending only; the source calls the moral "woven, not stated", so the other endings
+carry it in the image (the camera always comes back to the people) and end on their own lines.
 
 | Priority | Id | Name | As written | Conditions in plain words | `data/endings.json` |
 | --- | --- | --- | --- | --- | --- |
@@ -1134,7 +1138,7 @@ integrity, and the fourth is the remainder.
 - **Final scenes:** `c6_stand` (or `c6_offering`), `c6_touch`, `c7_backyard`.
 - **What happens:** Under the dark, every post is filled. The hand taps the bark three times (three
   tremors that Fenn writes down as they come) and presses a thumb into a crack, looking for
-  termites. It finds none. It lifts away. Light comes back from the east edge. The people come out
+  termites. It lifts away; the game never says what it found. Light comes back from the east edge. The people come out
   of the knots. Twig's kite goes up. Mossa starts up the Long Crack.
 - **The pull-back:** The camera rises. The person who checked the tree walks back across the yard
   to the house. A door closes. The tree is just a tree in a backyard. On the rise, three lines
@@ -1280,7 +1284,7 @@ wooden click), pot bubbling, the hand's taps (three huge thuds), the Flake (a cr
 
 **Voice approach:** The bark people speak a soft invented murmur with subtitles for every line
 (lines are short; about 260 subtitled lines across the game). Chants are sung. The human never
-speaks, except one far "ow" in the War ending, heard from the backyard.
+speaks, in any ending.
 
 ## 17. Content list
 
@@ -1374,15 +1378,34 @@ land as both funny and tender, the game does not work, and that is the thing to 
 | Players do not find the endings | The Rope's 12-point knot is always visible; the final spread's preview states the reading before it is laid; the Codex lists the four readings after the first playthrough |
 | Pell's death feels forced | It is prepared from autumn (his leaf) and played slowly, by the player, through the sayings they made |
 
-**Questions only the author can answer:**
+**Answered** (by Claude at the author's request, 2026-11-12, from the source text; the author can overrule any of them).
 
-1. Pell's death in winter is the one fixed loss of the year. Do you want a certain death in this
-   world, or should the year carry no loss the player cannot prevent?
-2. The moral, "Even the smallest world is a universe to the ones who live in it", is used as the
-   last line of the as-written ending only. Should it close every ending instead?
-3. The treatment does not say what the hand does. This design has it tap three times, press a
-   crack, find no termites and leave, and never shows the person beyond a hand, a sleeve and a
-   distant figure. Is that how you see it?
+1. **Yes: Pell dies in winter, of age, in every run, and the player cannot prevent it.** The
+   treatment names no one, but it gives the people one belief about death and makes it half true:
+   "• Falling leaves are omens of death", then "They’re not wrong." / "But they’re not right
+   either." (`05_Worldbuilding/01_People_of_the_Bark.md`). Pell reads the autumn leaf as his own;
+   its Backyard card says only "Autumn". The omen is right and the cause is ordinary, which is the
+   treatment's whole joke turned tender. The death is also the one thing the player, like the
+   people, cannot change, which is the game's own rule about what the player knows. This is not a
+   horror game (COLLECTION: "Comic, mythic"), so no ending needs a cost added for its own sake, and
+   a saveable Pell would add a rescue system and turn old age into a failure the player is blamed
+   for. Nothing is added: section 6 no longer says the question is open, and section 21 now names
+   the leaf as the omen. Pell stays off the Roll of the Bark.
+2. **Only the as-written ending.** The treatment heads it "The Moral (woven, not stated)", and
+   what it rules out is a stated lesson: "The moral isn’t “your worries don’t matter.”" The
+   as-written ending prints the moral because that is how the author said the game closes; the
+   War on the God, the Edge of the World and the Flake carry it in their image (the camera always
+   returns to the people, and the Flake reads the Roll by name) and keep their own added last
+   lines. Section 13 now says so; no data changed.
+3. **Yes, with two cuts.** The source gives the human as "a human hand reaching toward the trunk"
+   and "someone checking for termites", nothing more, so the person stays a hand and a sleeve up
+   close and a faceless, unnamed figure at a distance in the backyard. The three taps and the press
+   are what checking for termites looks like, and the design needs them: Fenn records the taps, and
+   the press is what breaks a weak plate in the Flake. Cut: the claim that the hand "finds no
+   termites" (the treatment never says what the check found, so the game does not either: the hand
+   lifts away), and the far "ow" in the War on the God (the human now never speaks, and the
+   people's victory gets no comic sting). Changed: sections 6, 13, 16 and 21, and the as-written
+   summary in `data/endings.json`.
 
 ## 21. Added for the game
 
@@ -1392,7 +1415,7 @@ Everything below is not in the author's text and is proposed for the author to a
 | --- | --- |
 | The year in four seasons, with the Shadow at the year's turn | Structure |
 | The named cast: Mossa, Elder Pell, Captain Burr, Fenn, Old Resin, Twig, Chanter Hollow | Section 6 |
-| Pell's death in winter, and the heir to his deck | Chapter 5 |
+| Pell's death in winter, of age, in every run; the autumn leaf as its omen; the heir to his deck | Chapter 5 |
 | The Roll of the Bark and its pool of 48 names and habits | Sections 6, 12.6 |
 | Place names: Highridge, Lowridge, Knotholm, Splinterwatch, the Scroll House, the Long Crack, the Branch, the Listening Knot, the Crown, the Under, Underhollow | Section 5 |
 | The people's history: the First Ring, the Age of Grooves, the Great Flake, the Year of Two Shadows, the founding of the Scroll House | Section 5 |
@@ -1406,7 +1429,7 @@ Everything below is not in the author's text and is proposed for the author to a
 | The five 1D games and their rules, decks, recipes, doors, rule cards and tremor patterns | Section 11 |
 | The two 2D modes and their levels | Section 10 |
 | The seventh-day tread (the human's footsteps on the scroll) | Section 11.5 |
-| What the hand does: three taps, a press, finding no termites | Chapter 6 |
+| What the hand does: three taps and a press into a crack, then it lifts away (what the check found is never said); the human shown only as a hand and sleeve, or a faceless figure at a distance | Chapter 6, section 13 |
 | The three non-written endings (The War on the God, The Edge of the World, The Flake) and their last lines; the Underhollow precedent for the Flake | Section 13 |
 | The backyard's contents: lawn, fence, shed, washing line, swing, a house's back door | Section 9 |
 | Twig's kite as a recurring image | Throughout |
