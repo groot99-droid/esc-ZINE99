@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "endings.json",
+  "type": "object",
+  "required": ["endings"],
+  "$defs": {
+    "cond": {
+      "description": "A condition. true; {all:[...]}; {any:[...]}; {not:cond}; {is:name, eq:value}; {is:name, gte|gt|lte|lt:number}; {ledger:name, count_gte:number, where:{field:value}}",
+      "oneOf": [
+        {"const": true},
+        {"type": "object", "required": ["all"], "properties": {"all": {"type": "array", "items": {"$ref": "#/$defs/cond"}}}},
+        {"type": "object", "required": ["any"], "properties": {"any": {"type": "array", "items": {"$ref": "#/$defs/cond"}}}},
+        {"type": "object", "required": ["not"], "properties": {"not": {"$ref": "#/$defs/cond"}}},
+        {"type": "object", "required": ["is"], "properties": {"is": {"type": "string"}, "eq": {}, "gte": {"type": "number"}, "gt": {"type": "number"}, "lte": {"type": "number"}, "lt": {"type": "number"}}},
+        {"type": "object", "required": ["ledger"], "properties": {"ledger": {"type": "string"}, "count_gte": {"type": "number"}, "count_lte": {"type": "number"}, "where": {"type": "object"}}}
+      ]
+    }
+  },
+  "properties": {
+    "endings": {"type": "array", "minItems": 4, "items": {"type": "object",
+      "required": ["id", "name", "as_written", "priority", "when", "summary"],
+      "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string"},
+        "as_written": {"type": "boolean"},
+        "priority": {"type": "integer", "description": "Lower is checked first. The highest priority number must have when: true."},
+        "when": {"$ref": "#/$defs/cond"},
+        "summary": {"type": "string"},
+        "final_scenes": {"type": "array", "items": {"type": "string"}}
+      }}}
+  }
+}

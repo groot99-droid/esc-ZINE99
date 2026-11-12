@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "flags.json",
+  "type": "object",
+  "required": ["state"],
+  "properties": {
+    "state": {"type": "array", "items": {"type": "object",
+      "required": ["name", "type", "default", "description"],
+      "properties": {
+        "name": {"type": "string", "pattern": "^[a-z0-9_.]+$"},
+        "type": {"enum": ["bool", "enum", "meter", "counter", "ledger"]},
+        "values": {"type": "array", "items": {"type": "string"}, "description": "enum only"},
+        "range": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2, "description": "meter only"},
+        "fields": {"type": "array", "items": {"type": "string"}, "description": "ledger only: the fields of each entry"},
+        "default": {},
+        "description": {"type": "string"}
+      }}}
+  }
+}

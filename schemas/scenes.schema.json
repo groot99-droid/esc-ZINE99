@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "scenes.json",
+  "type": "object",
+  "required": ["modes_2d", "games_1d", "scenes"],
+  "properties": {
+    "modes_2d": {"type": "array", "minItems": 2, "items": {"type": "object",
+      "required": ["id", "name", "movement"],
+      "properties": {"id": {"type": "string"}, "name": {"type": "string"}, "movement": {"enum": ["scroll", "tilt"]}}}},
+    "games_1d": {"type": "array", "minItems": 4, "items": {"type": "object",
+      "required": ["id", "name", "family"],
+      "properties": {"id": {"type": "string"}, "name": {"type": "string"}, "family": {"type": "string"}}}},
+    "scenes": {"type": "array", "items": {"type": "object",
+      "required": ["id", "layer", "name", "chapter"],
+      "properties": {
+        "id": {"type": "string"},
+        "layer": {"enum": ["3d", "2d", "1d"]},
+        "name": {"type": "string"},
+        "chapter": {"type": "string", "description": "A chapter id from game.json"},
+        "mode": {"type": "string", "description": "2d only: a modes_2d id"},
+        "game": {"type": "string", "description": "1d only: a games_1d id"},
+        "world_runs": {"type": "boolean", "description": "1d only: the world keeps running beneath the page"},
+        "reads": {"type": "array", "items": {"type": "string"}, "description": "Flag, meter, counter or ledger names this scene reads"},
+        "writes": {"type": "array", "items": {"type": "string"}, "description": "Names this scene changes"},
+        "enter": {"enum": ["cut", "fade", "push-in", "pull-out", "flatten"]},
+        "exit": {"enum": ["cut", "fade", "push-in", "pull-out", "flatten"]},
+        "next": {"type": "array", "items": {"type": "string"}, "description": "Scene ids that can follow"}
+      }}}
+  }
+}
