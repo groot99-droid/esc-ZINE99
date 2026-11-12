@@ -949,7 +949,22 @@ stripe); text size in every page.
 - **Figures.** Slender, simplified Blue-Born with large, readable hands (hands carry the story:
   carving, sowing, rowing, holding).
 - **One look across layers.** 2D uses the same models rendered orthographically with a flat rim
-  light; 1D pages are photographed from the 3D materials.
+  light; 1D pages are photographed from the 3D materials. The palette and materials are shared
+  across layers, while each page's drawing style differs (see Gameplay graphics).
+
+### Gameplay graphics
+
+Each 2D mode and 1D game keeps this palette but is drawn in its own graphic style, unique in the
+collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg`.
+
+| Mode or game | Layer | Graphic style | How the style serves play |
+| --- | --- | --- | --- |
+| River section (`river-section`) | 2D | Woodblock wave print | Keyed crests mark the surface line the raft rides; flat carved bands below make tendrils, cells and the beast's eye read at a glance |
+| The climb (`climb`) | 2D | Cave painting | Ochre figures on rock show the brace-and-pull lift plainly; hand stencils echo the game's large, readable hands |
+| The Carving (`carving`) | 1D | Scrimshaw | Lines scratched into ivory are the act itself: grain, knots and each stroke stand out as engraving on bone |
+| Marrow-Song (`marrow-song`) | 1D | Bead-string notation | Bead height is pitch, so joins between phrases and the last bead home can be read without notation |
+| Bone Counters (`bone-counters`) | 1D | Linocut | Bold cream pits on a black block make the hollows, counts and the sowing path legible; red marks the beat |
+| The Branch Chart (`branch-chart`) | 1D | Red-ink anatomical plate | Fine red vessels branch from the glowing raft like a plate's figure; widths, arrows and rings label each branch |
 
 ## 16. Audio
 
