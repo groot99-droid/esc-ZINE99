@@ -529,7 +529,8 @@
       "writes": [
         "self.grip",
         "self.held_together",
-        "self.swept_order"
+        "self.swept_order",
+        "run.separations"
       ],
       "enter": "fade",
       "exit": "cut",
@@ -559,7 +560,7 @@
       "chapter": "c8_heart",
       "reads": [
         "self.refused",
-        "self.swept_order"
+        "run.separations"
       ],
       "enter": "fade",
       "exit": "fade",

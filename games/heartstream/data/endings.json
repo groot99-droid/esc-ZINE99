@@ -1,5 +1,4 @@
 {
-  "resolution": "per_player",
   "endings": [
     {
       "id": "stayed",
@@ -10,7 +9,7 @@
         "is": "self.refused",
         "eq": true
       },
-      "summary": "He sat on the elders' bench at the Recognition, kept his blue a while longer, heard his brothers go through the wall, and dims the lamps for the next group.",
+      "summary": "He sat on the elders' bench at the Recognition. The shaft sealed and cut his brothers' voices at once; he kept his blue a while longer, felt each of them go as a skipped beat in the wall, and dims the lamps for the next group.",
       "final_scenes": [
         "s3_marrow_after",
         "s1_carve_next",
@@ -25,14 +24,13 @@
       "as_written": false,
       "priority": 2,
       "when": {
-        "is": "run.taken_count",
-        "gte": 1
+        "is": "self.taken",
+        "eq": true
       },
-      "summary": "An immune beast took one brother before the heart. The rest arrive with an empty place on the raft and are separated as written; the taken one is turned aside into his own vessel.",
+      "summary": "An immune beast took him before the heart. He is turned aside into his own vessel, still holding his gift. The ending is his alone: the rest of the raft reach the heart with an empty place and are separated as written.",
       "final_scenes": [
         "s3_hold",
         "s3_hold_turn",
-        "s3_heart",
         "s3_vessel"
       ]
     },

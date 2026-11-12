@@ -64,8 +64,9 @@ All quotations are verbatim from
 
 **The author's ending.** The heart splits the current, every brother is swept a different way, and
 "No one stays together." In the game this is **Carried Away**, marked as written. It follows
-whenever every player climbs, nobody is taken by the river, and the grips fail as they almost
-always do.
+for every brother who climbs, is not taken by the river, and whose grip fails as grips almost
+always do. A raft that has lost a brother to a beast still reaches the heart, and the brothers left on
+it are carried away as written.
 
 ## 4. Investment
 
@@ -160,7 +161,11 @@ words. The source says it at the very end, and the players learn it with their h
 
 ## 6. Characters
 
-The source names nobody. The game keeps that: no character has a fixed name. At the mark stone a
+The source names nobody. The game keeps that: no character has a fixed name.
+
+The source's Blue-Born are "The young men" and "still a brotherhood", and the game keeps them so:
+every seat is a young brother, whoever plays him. The player's own voice in the chat is their own;
+no scripted line, caption or menu names the player, only the brother. At the mark stone a
 player may type a name for their brother (up to 12 characters, optional). Unnamed brothers are
 called by their temperament glyph and their mark.
 
@@ -180,7 +185,7 @@ the chart, and one small perception gift.
 
 **Arc in each ending.** Carried Away: alone in a vessel, fully red, holding the gift. Two Together:
 two hands in one chamber. The One Who Stayed: blue a while longer, an elder, dimming lamps. Taken by
-the River: inside the beast, turned aside; or, for the others, an empty place on the raft.
+the River: inside the beast, turned aside, alone before anyone else is.
 
 ### Companion brothers (solo and drop-in)
 
@@ -315,7 +320,9 @@ No stretch passes 6 minutes without a new place, mechanic or choice.
   enters, or 120 seconds after it opens. A player who has done neither when it closes climbs (the
   current takes them; "Nobody chooses when they change"). Companions always climb.
 - **Flags.** `self.refused`, `run.stayers`.
-- **Ends.** Climbers: push-in to the shaft. Stayers: the shaft seals in front of them.
+- **Ends.** Climbers: push-in to the shaft. Stayers: the shaft seals in front of them, and as it
+  seals the climbers' voices are cut for the stayer, and his for them, with the same cut as at the
+  heart (section 12, Voices cut). There is no goodbye.
 
 ### Chapter 5: The Ascent (`c5_ascent`, 6 minutes)
 
@@ -369,7 +376,8 @@ No stretch passes 6 minutes without a new place, mechanic or choice.
 - **Order.** `s3_vessel` (Carried Away, Taken by the River), `s3_vessel_two` (Two Together),
   `s3_lamps` (The One Who Stayed).
 - **Ends.** The ending's last image, the title, and a quiet return to the title screen. There is
-  no lobby afterwards.
+  no lobby afterwards. Each client resolves its own ending when it leaves the shared session
+  (section 13).
 
 ## 9. 3D scenes
 
@@ -389,8 +397,8 @@ hum, emote wheel, and on the raft row, switch side, crouch, stand.
 | `s3_heart` | The atrium | 200 m high, cathedral of muscle and light | The raft, each brother's hand, the grip | Beams of light through moving walls; red to gold | Heart at 96 rising to 120, the song sung back | Grip resolves; each separation | fade / cut |
 | `s3_vessel` | A narrow vessel | 3 m wide, endless | The gift in the player's hand (look) | One red glow, fading warm | One heartbeat, slowing to 60 | 3 minutes, then the end | cut / fade |
 | `s3_vessel_two` | A shared chamber | 8 m wide | Two hands, two gifts | Two glows | Two heartbeats in step | 3 minutes | cut / fade |
-| `s3_marrow_after` | The marrow, emptied | As `s3_marrow` | The sealed shaft, the pulse wall, the group's board, the alcoves | Lamps at 30%; the player's hands still blue | The raft's beat heard faintly through the wall | Chapter timers → `s1_carve_next`, `s1_counters_teach` | fade / push-in |
-| `s3_marrow_pulse` | The pulse wall during the heart | The wall chamber | The pulse wall | The wall flickers with each separation | Each voice lost through the wall | Last separation | fade / fade |
+| `s3_marrow_after` | The marrow, emptied | As `s3_marrow` | The sealed shaft, the pulse wall, the group's board, the alcoves | Lamps at 30%; the player's hands still blue | The raft's beat felt faintly through the wall; no voices | Chapter timers → `s1_carve_next`, `s1_counters_teach` | fade / push-in |
+| `s3_marrow_pulse` | The pulse wall during the heart | The wall chamber | The pulse wall | The wall flickers with each separation | The heart through the wall, skipping one beat for each separation | Last separation | fade / fade |
 | `s3_lamps` | Marrow lamps, years on | As `s3_marrow` | The lamps (dim them), the child | The player's own hands dimming the light | Distant heart, the song, hummed by the child | Lamps dimmed | fade / fade |
 | `s3_hold` | Inside an immune beast | 15 m translucent space | Its skin (look out), the raft above, an old carved hook (look) | Milky white, the raft's glow seen through | Muffled river; the raft's voices low-passed | Knock on the beat; ping hazards | cut / fade |
 | `s3_hold_turn` | The beast turns into a side vessel | As `s3_hold` | The raft's glow drawing away | The glow above shrinks | The heart heard from a distance | Raft enters the heart | fade / cut |
@@ -707,11 +715,15 @@ volume until the heart, when the beast turns away (`s3_hold_turn`) and the voice
 
 ### The player who stayed (`s3_marrow_after`)
 
-He keeps playing until the end, in the marrow. At the pulse wall he taps the beat; every 8 on-beat
-taps in a row adds 1 to `run.stayer_beat` (0–100 → up to +15 ms on the raft's window, at 1 ms per 7
-points). His link fades by chapter: full in c5, 60% in c6, 30% in c7, gone in c8. His voice reaches
-the raft low-passed and quieter in the same steps. He carves for the next group (c6), teaches the
-counters (c7), feels each separation as a skipped beat in the wall (c8), and dims the lamps (c9).
+He keeps playing until the end, in the marrow, cut off from his brothers' voices from the moment
+the shaft seals (chapter 4): he hears none of them and they hear none of him, and his text chat
+greys. The only thing that still joins him to the raft is the source's own: "the walls pulse faintly with
+the rhythm of the distant heart". At the pulse wall he taps the beat; every 8 on-beat taps in a row adds
+1 to `run.stayer_beat` (0–100 → up to +15 ms on the raft's window, at 1 ms per 7 points). The taps'
+effect on the raft fades by chapter: full in c5, 60% in c6, 30% in c7, none in c8. The raft feels
+him only as that steadier beat. He carves for the next group (c6), teaches the counters (c7), feels
+each separation as a skipped beat in the wall (c8, one per entry in `run.separations`), and dims the
+lamps (c9).
 
 ### The grip (the heart)
 
@@ -735,7 +747,9 @@ counters (c7), feels each separation as a skipped beat in the wall (c8), and dim
   rowing record) and always squeezes on the last note, so in solo the player can hold with the
   companion who carved his gift; in co-op a companion locks with a human only if no second human
   squeezed. The game never says this is possible.
-- `self.swept_order` records the order of separation (1 = first).
+- `self.swept_order` records the order of separation (1 = first). Each separation is also appended
+  to the shared `run.separations` (seat, beat), which every client reads to cut that brother's voice
+  and which the stayer's wall reads to skip a beat.
 
 ### Voices cut
 
@@ -746,7 +760,8 @@ Voice chat runs all game (section 12, networking). When a brother is swept away:
 3. He hears the others fade over 1.2 s, then only the heart.
 4. Text chat: his messages stop arriving; the box greys for him.
 
-A pair who held together keep each other's voices and nobody else's.
+A pair who held together keep each other's voices and nobody else's. The same cut is made once
+earlier, both ways, between a player who stays and the climbers, when the shaft seals.
 
 ### Companion brothers
 
@@ -791,7 +806,9 @@ A pair who held together keep each other's voices and nobody else's.
   human leaves, the session is gone. A solo player who quits is asked once: "The river does not
   wait. Leave?"; leaving ends the run.
 - **After the heart.** Each client leaves the session at its own separation and plays its last
-  scene offline. Only a pair who held together stay connected, to each other.
+  scene offline. Only a pair who held together stay connected, to each other. A stayer's client stays
+  in the session without voice until the last separation (it needs the shared beat and
+  `run.separations`), then leaves.
 - **Played once.** After the ending, the title screen shows the player's crossing record (each
   ending they have reached, by name). The game can be started again; it begins at chapter 1.
 
@@ -803,15 +820,32 @@ then 0.3 as an elder's skin settles. No ending makes anyone blue again.
 
 ## 13. Endings
 
-Endings are resolved **per player**. Every `self.*` name is that player's own state; every `run.*`
-name is shared. The resolver runs once on each client at the end of chapter 8 (for a stayer, at
-the end of `s3_marrow_pulse`) and returns the first ending in priority order whose condition is
-true. Different players in one run can and usually do get different endings.
+Endings are resolved **per player**, inside the shared format of `docs/TECH.md` and with the
+resolver unchanged. This is how:
+
+1. **Each client is one run to the resolver.** Every client has its own state store. The host owns
+   every `run.*` name and replicates it to every client. Each client's store holds the `self.*`
+   names with its own player's values only (the host is authoritative for them, keeps every seat's
+   copy, companions' included, and writes each seat's values into that seat's client). To the
+   resolver, `self.refused` is an ordinary name in the store it is given; nothing binds it.
+2. **"The game's end" is the moment a client leaves the shared session**, because from then on its
+   run is its own: for a brother on the raft, his separation at the heart; for a taken brother, the
+   end of `s3_hold_turn`; for a stayer, the end of `s3_marrow_pulse`. The resolver is called once,
+   then, on that client's store, and returns the first ending in priority order whose condition is
+   true. Its result picks the client's chapter 9 scene.
+3. **A seat held by a companion** (a player who dropped and has not rejoined) is resolved by the host
+   on that seat's copy at the same moment, and the result is given to the player if he rejoins.
+   Companions who never had a player are not resolved: they have no ending.
+4. **The data is the shared format.** `endings.json` has only the schema's keys and one catch-all;
+   no field marks it per-player. The convention lives in `flags.json` (`scope_note`) and here.
+
+Different players in one run can and usually do get different endings. The one-line change this
+needs in `docs/TECH.md` is listed in the report to the author, not made here.
 
 | Priority | Id | Name | As written | Condition in words | `when` in `data/endings.json` |
 | --- | --- | --- | --- | --- | --- |
 | 1 | `stayed` | The One Who Stayed | No | This player sat on the elders' bench at the Recognition | `{"is":"self.refused","eq":true}` |
-| 2 | `taken` | Taken by the River | No | A brother on this raft was taken by an immune beast | `{"is":"run.taken_count","gte":1}` |
+| 2 | `taken` | Taken by the River | No | This player was taken by an immune beast | `{"is":"self.taken","eq":true}` |
 | 3 | `two_together` | Two Together | No | This player's hand locked with another's on the song's last note, with both in time | `{"all":[{"is":"self.held_together","eq":true},{"is":"self.in_time","gte":85},{"is":"run.taken_count","eq":0}]}` |
 | 4 | `carried_away` | Carried Away | **Yes** | Everything else: the story's own path | `true` |
 
@@ -838,21 +872,24 @@ Final scenes: `s3_marrow_after`, `s1_carve_next`, `s1_counters_teach`, `s3_marro
 `s3_lamps`. He keeps his blue a while longer. In `s3_lamps` time has passed: a new group sleeps in
 the alcoves. He dims the lamps. The child he taught is among them, with the counter he carved if he
 finished it, humming the group's song if he kept time with the child. The unfinished board his group
-left is in the hall with the others. The cost: he heard each of his brothers go through the wall.
+left is in the hall with the others. The cost: he lost their voices the moment the shaft sealed,
+with no goodbye, and felt each of them go at the heart as a skipped beat in the wall.
 
 ### Taken by the River
 
-Final scenes: for the taken brother, `s3_hold`, `s3_hold_turn`, `s3_vessel`; for the others,
-`s3_heart`, `s3_vessel`. The others reach the heart with an empty place on the raft and lose one
-another there as written. The taken brother sees the raft's glow draw away and rides his own vessel,
-still holding his gift. There is no tidy rescue: no one gets him back.
+Final scenes: `s3_hold`, `s3_hold_turn`, `s3_vessel`. This ending is the taken brother's alone.
+He sees the raft's glow draw away and rides his own vessel, still holding his gift. There is no tidy
+rescue: no one gets him back. The others reach the heart with an empty place on the raft and lose one
+another there as written (Carried Away); the taking still costs them, because with
+`run.taken_count` at 1 no two hands can lock at the heart.
 
 ### Why these are mutually exclusive
 
 The resolver returns one ending per player. Priority 1 is a choice at the Recognition and removes
-the player from the raft. Priority 2 depends on a taking, which also blocks priority 3. Priority 3
-needs a lock that the grip system only grants with in-time brothers and no taking. Priority 4 is the
-catch-all.
+the player from the raft, so he can be neither taken nor held. Priority 2 needs this player to have
+been taken, which removes him from the raft before the heart, so he cannot be held. Priority 3 needs
+a lock that the grip system only grants to in-time brothers on the raft and no taking. Priority 4 is
+the catch-all.
 
 ### How a player reaches each one on purpose
 
@@ -863,8 +900,10 @@ catch-all.
   second crossing, or by intuition: the last note is the loudest moment of the song.
 - **The One Who Stayed.** At the Recognition, walk away from the shaft and sit in the empty seat on
   the elders' bench for 3 seconds.
-- **Taken by the River.** Steer into patrol branches and row loudly in hush, or stand during a
-  patrol until the beast comes. Any one player can cause it for the whole raft.
+- **Taken by the River.** Stand during a patrol until the beast comes: a brother who stands on
+  purpose always has the highest exposure, so it takes him. Steering into patrol branches and rowing
+  loudly in hush raise everyone's notice, and the beast then takes whoever is most exposed. The
+  ending is the taken brother's; the raft pays with an empty seat and no lock at the heart.
 
 ## 14. UI and HUD
 
@@ -959,13 +998,14 @@ stripe); text size in every page.
 - `game.json`: the nine chapters, their minutes (63 total) and layers.
 - `scenes.json`: two 2D modes (`m2_river`, `m2_climb`), four 1D games (`g1_carving`, `g1_song`,
   `g1_counters`, `g1_chart`), and 30 scenes: 15 3D, 5 2D and 10 1D appearances.
-- `flags.json`: every flag, meter, counter and ledger. **Beyond the shared schemas:** names that
-  begin with `self.` are per-player state, one copy per seat, and the resolver reads the local
-  player's copy. Names that begin with `run.` are shared. The schema allows the dot; the scoping is
-  this game's convention and needs one line in the engine's resolver (bind `self.` to the evaluating
-  player). See section 20.
+- `flags.json`: every flag, meter, counter and ledger. Names that begin with `self.` are per-player
+  state: each client's store holds its own player's values under them, and the host keeps every
+  seat's copy. Names that begin with `run.` are shared and replicated by the host. The schema allows
+  the dot; the scoping is this game's convention, carried by the networking layer, not the resolver
+  (section 13). `run.separations` makes each separation at the heart shared, so that a client never
+  needs another seat's `self.` values.
 - `endings.json`: the four endings above, priorities 1 to 4, Carried Away last with `when: true`
-  and `as_written: true`.
+  and `as_written: true`. It uses only the schema's keys.
 
 ## 19. Build plan
 
@@ -973,7 +1013,7 @@ stripe); text size in every page.
 | --- | --- | --- |
 | M0 Beat and net | Four browsers in one lobby by code, a shared heartbeat, everyone tapping, judged within the window, voice chat with a working cut | 3 |
 | M1 Vertical slice | Chapter 6 complete in greybox: boarding, 3D steering, `s2_river_1`, `s1_chart_1`, `s2_river_2` with a patrol and a possible taking; companions for empty seats | 5 |
-| M2 The heart | Chapter 8 greybox: grip, separations one per beat, voices cut, song sung back, the lock, per-player ending resolver | 3 |
+| M2 The heart | Chapter 8 greybox: grip, separations one per beat, voices cut, song sung back, the lock, per-client state stores and one resolve per client as it leaves the session | 3 |
 | M3 The marrow | Chapters 1–3 greybox with all three 1D games working: Carving, Marrow-Song, Bone Counters | 5 |
 | M4 Full path | All chapters in greybox, including the stayer and taken paths; drop-in and host migration | 4 |
 | M5 Art pass | Final environments, shaders (the red), creatures, pages | 6 |
@@ -991,26 +1031,53 @@ rowing together is not fun at M1, the game is redesigned before anything else is
 | --- | --- |
 | A forced loss only works if the first 26 minutes earn it | Every attachment is an act, not a scene (section 4); playtest asks players, after the heart, whose gift they hold and who carved it |
 | Network latency ruins rhythm | Client-side judging against a synchronised clock (section 12); relay fallback; Gentle Current |
-| One player can doom the raft to Taken | It is a real choice and an ending; the cost is shared, as the source shares it. Taking is capped at one. |
+| One player's recklessness costs the raft | The ending is only the taken brother's; the raft pays with an empty seat and no lock at the heart. Taking is capped at one. |
 | The stayer and taken paths are thin | Each has a role that helps the raft (the pulse wall, the knocks and pings) and its own 1D appearances |
 | Two Together is too easy in solo (companions always squeeze on the note) | It still needs 85% in time from the human and no taking; tune in M7 |
 | Players do not find the bench | That is acceptable; it is a choice for those who look. The empty seat is lit. |
 | Voice chat between strangers | Invite only; mute and block; no matchmaking |
-| Per-player endings need a resolver change | One line in the engine (bind `self.`); the schema already accepts the names |
+| Per-player endings and TECH.md's one resolve per run | Each client is one run to the resolver: its own store, resolved once as it leaves the session (section 13). The resolver and the schemas are unchanged; TECH.md needs one line saying so |
+| A stayer is silent for half the game | It is the refusal's cost, and the bench is never prompted. The wall's beat keeps him in the raft's time and helps it |
 | Players dislike "played once" | The game can be restarted; it simply has no saves and no chapter select |
 
 **Rule that may not fit this game.** `docs/TECH.md` describes one resolver call per run. This game
-needs one per player, because the source sends each brother to "different destinies". The data
-follows the schema as written; the scoping is explained in section 18.
+needs one per player, because the source sends each brother to "different destinies". It resolves
+within the existing format by treating each client as one run (section 13); `docs/TECH.md` itself is
+not edited here.
 
-**Questions only the author can answer.**
+**Answered** (by Claude at the author's request, 2026-11-12, from the source text; the author can overrule any of them).
 
-1. The source says "The young men". The design keeps every Blue-Born a young man and calls them
-   brothers. Should players be able to choose otherwise?
-2. Is it right that one player's choices (steering into patrols, standing) can give the whole raft
-   Taken by the River, or should Taken apply only to the brother taken?
-3. The One Who Stayed keeps playing from the marrow and hears his brothers go. Should a player who
-   stays be cut off from the others at once instead?
+1. **Every Blue-Born stays a young brother; players do not choose otherwise.** The source is
+   specific twice: "The young men stand together, trembling not with fear but with the weight of
+   inevitability" and "The young men laugh, argue, dream, and fear", and they board "still a
+   brotherhood". The rite is a coming of age the story gives to a group of brothers, and the game's
+   temperaments come from that second line. A player of any gender plays a brother; the player's own voice in chat is their own, and no
+   scripted line, caption or menu names the player, only the brother. Nothing is cut; section 6 now
+   says this.
+2. **Taken by the River is the taken brother's ending only.** The source has no taking: everyone who
+   boards reaches the heart, and there "One by one, they are swept into different chambers,
+   different arteries, different destinies." The brothers left on the raft live exactly that, so
+   they get the story's own ending, Carried Away, not one named for something that happened to
+   someone else. The taking still costs the raft: an empty seat, harder steering, and no lock at the
+   heart (`run.taken_count` 0 stays a condition of Two Together). `taken` now fires on `self.taken`
+   instead of `run.taken_count`, `s3_heart` is dropped from its final scenes, and sections 3, 6, 13
+   and the risks are changed to match. A player can still reach it on purpose: standing in a patrol
+   always makes him the most exposed.
+3. **A player who stays is cut off from his brothers' voices at once, when the shaft seals.** The
+   source's separation has "no time for goodbye" and "no ceremony for separation"; letting a stayer
+   listen for half an hour would give him the long goodbye the story denies everyone. The cut is the
+   same one the heart makes, both ways, at the end of chapter 4. What remains is the source's own
+   link: walls that "pulse faintly with the rhythm of the distant heart". He still taps the beat to
+   steady the raft and feels each separation as a skipped beat, but hears no voice. Cut: the
+   stayer's voice fading by chapter (full, 60%, 30%) and "each voice lost through the wall". Added:
+   the shared ledger `run.separations`, which the wall reads, and which every client uses to cut
+   voices.
+4. **The engine note: per-player endings resolve as one run per client.** Each client's state store
+   holds its own player's `self.*` values; the host replicates `run.*`; the resolver is called once
+   on that store when the client leaves the shared session (section 13). The resolver and the
+   schemas are unchanged. The non-schema `"resolution": "per_player"` key was removed from
+   `endings.json`; `s3_marrow_pulse` now reads `run.separations` instead of another seat's
+   `self.swept_order`, which a client store no longer holds.
 
 ## 21. Added for the game
 
@@ -1043,7 +1110,9 @@ None of the following is in the author's text. Each can be approved or struck.
 | The elders' six spoken lines: "Choose your sign." "Sow with the heart." "Carve for him." "Sing it whole." "Keep the time." "It is time." | c1–c4 |
 | Companion brothers and their behaviour | Solo and drop-in |
 | The endings Two Together, The One Who Stayed and Taken by the River (from ADAPTATIONS.md; the author's ending is Carried Away) | Endings |
-| Per-player endings; no lobby after the heart | Endings, networking |
+| Per-player endings, resolved once per client as it leaves the session; no lobby after the heart | Endings, networking |
+| The shared ledger of separations (`run.separations`) | c8, stayer path |
+| A stayer's voice cut both ways when the shaft seals; the wall carries only the beat | c4–c8, stayer path |
 | Skin turning red by chapter as a shader | All |
 | The seal on the shaft (a timed lock in ADAPTATIONS.md) is **dropped**: lock picking belongs to Behind the Peephole in COLLECTION.md; Marrow-Song takes its place among this game's 1D games | Change from ADAPTATIONS.md |
 | Length 50–70 minutes (ADAPTATIONS.md said 60–90; the collection sets 50–70) | Change from ADAPTATIONS.md |

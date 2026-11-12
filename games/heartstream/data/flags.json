@@ -1,5 +1,5 @@
 {
-  "scope_note": "Names beginning self. are per-player (one copy per seat; the resolver reads the local player's copy). Names beginning run. are shared.",
+  "scope_note": "Names beginning self. are per-player. Each client's state store holds its own player's values under these names; the host keeps every seat's copy, companions' included. Names beginning run. are shared and replicated by the host. The resolver runs once per client, on that client's store (DESIGN.md section 13).",
   "state": [
     {
       "name": "run.humans",
@@ -201,7 +201,7 @@
       "name": "run.stayer_beat",
       "type": "meter",
       "default": 0,
-      "description": "The stayer's pulse-wall timing; up to +15 ms on the raft's window, fading by chapter.",
+      "description": "The stayer's pulse-wall timing; up to +15 ms on the raft's window, fading by chapter (full c5, 60% c6, 30% c7, none c8). The wall carries the beat only, never voices.",
       "range": [
         0,
         100
@@ -251,7 +251,7 @@
       "name": "run.taken_count",
       "type": "counter",
       "default": 0,
-      "description": "Brothers taken by an immune beast; capped at 1."
+      "description": "Brothers taken by an immune beast; capped at 1. At 1 no hands can lock at the heart (a cost to the whole raft)."
     },
     {
       "name": "run.taken_seat",
@@ -270,7 +270,7 @@
       "name": "self.taken",
       "type": "bool",
       "default": false,
-      "description": "Per player: he was taken into the hold."
+      "description": "Per player: he was taken into the hold. Decides Taken by the River for him alone."
     },
     {
       "name": "self.scout_pings",
@@ -329,6 +329,16 @@
       "type": "counter",
       "default": 0,
       "description": "Per player: order of separation at the heart (1 = first)."
+    },
+    {
+      "name": "run.separations",
+      "type": "ledger",
+      "default": [],
+      "description": "Each separation at the heart, in order, shared so the stayer's wall can skip a beat for each and every client can cut that brother's voice.",
+      "fields": [
+        "seat",
+        "beat"
+      ]
     },
     {
       "name": "run.dropins",

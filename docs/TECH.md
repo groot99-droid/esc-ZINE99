@@ -84,6 +84,10 @@ in priority order has the condition `true`, so a run always ends somewhere. A co
 expression tree (see `schemas/endings.schema.json`), never code, so it can be tested and shown in
 a debug panel that explains which ending fired and why.
 
+In a game with several players (Heartstream), each client's state store holds only its own
+player's values for per-player names, written `self.<name>`, and the resolver runs once per
+client, on that store, when the client leaves the shared session.
+
 The ending the author wrote is marked `"as_written": true`. Exactly one ending per game may carry
 it, and only if the author wrote one.
 
