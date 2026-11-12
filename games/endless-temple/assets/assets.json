@@ -1,0 +1,921 @@
+{
+  "game": "endless-temple",
+  "style": "Hand-painted fantasy illustration: gouache and ink with fine dark ink outlines and visible brush texture, painted matte-painting depth, illuminated-manuscript warmth; palette per place (temple honey gold, sage green, walnut; sand sea moon silver, ochre, bruise-purple vines; Hollin graphite and slate blue; Procession sepia ink and lantern orange; abyss blue-black and frost).",
+  "locations": [
+    {
+      "id": "abyss-edge",
+      "name": "The edge of the abyss",
+      "scenes": [
+        "s3_abyss_dream",
+        "s3_abyss_return"
+      ],
+      "dimensions_m": [
+        20,
+        20,
+        12
+      ],
+      "lighting": "Near-black; blue-grey mist lit from nowhere, frost on the rock lip. The awake visit (c8) adds Elaris's candle, 2 m of warm light.",
+      "objects": [
+        "candlestick"
+      ],
+      "prompt": "In the foreground a broad flat platform of dark cracked grey rock twenty metres across, clearly visible and lit faintly from above, with a few broken stone steps rising behind it, the platform ending ahead in a sheer straight edge, beyond it a bottomless void filled with slow blue-grey mist, faint frost crystals on the rock lip, no stars, near-black blue-black sky, cold and silent, dreamlike. Hand-painted gouache and ink illustration style, full-bleed image with no border or frame, unsigned with no signature, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "93bc72d7-37b9-4343-83ad-d98e1a20ee28",
+      "image": "assets/locations/abyss-edge.jpg"
+    },
+    {
+      "id": "elaris-room",
+      "name": "Elaris's room",
+      "scenes": [
+        "s3_room_morning"
+      ],
+      "dimensions_m": [
+        6,
+        5,
+        4
+      ],
+      "lighting": "Morning: one sunbeam from the high window across the floorboards, warm gold dust motes.",
+      "objects": [
+        "bookshelf"
+      ],
+      "prompt": "A small tall monastic bedchamber inside an ancient library temple, six by five metres with a four-metre ceiling and oversized tall doorway, walnut floorboards, plastered walls in honey and sage, a long narrow wooden bed with a pale green blanket, a robe hook, a narrow arched window with a single golden sunbeam crossing the floor, a small bookshelf and stacked old books, early morning. Hand-painted gouache and ink illustration style, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "da47b946-93c4-4bca-9258-851d119a0508",
+      "image": "assets/locations/elaris-room.jpg"
+    },
+    {
+      "id": "temple-halls",
+      "name": "The temple halls and the reading chair",
+      "scenes": [
+        "s3_halls_c1",
+        "s3_halls_c3",
+        "s3_halls_c5",
+        "s3_halls_c6",
+        "s3_halls_c7",
+        "s3_halls_c8",
+        "s3_last_cup",
+        "e_stayed",
+        "e_rider",
+        "e_named"
+      ],
+      "dimensions_m": [
+        40,
+        18,
+        12
+      ],
+      "lighting": "One set, six states: c1 bright late morning with dust motes and the sunbeam on the chair; c3 overcast, sand on the floor; c5 rain-grey; c6 harsh light, sand drift on the table; c7 dusk; c8 thin grey light, clock stopped. The last cup and the endings use the reading-chair corner; the sunbeam retreats in The Reader Who Stayed.",
+      "objects": [
+        "sand-book",
+        "yesterdays-book",
+        "cuckoo-clock",
+        "broom",
+        "reading-chair",
+        "lizard-plate",
+        "teacup",
+        "bookshelf",
+        "library-ladder"
+      ],
+      "prompt": "A vast two-level hall of an ancient library temple, forty metres long, carved walnut bookshelves rising to a gallery with a wooden balustrade, tall wooden library ladders, piles and stacks of old leather books on the floor, a heavy reading table, a worn high-backed reading chair near a tall arched window with a sunbeam falling across it, a carved cuckoo clock on a pillar, stone floor, warm honey-gold late morning light with dust motes, sage green and walnut tones, oversized proportions with very tall doorways. Hand-painted gouache and ink illustration style, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "9063ad62-8f69-4526-9835-8ae0861ee91f",
+      "image": "assets/locations/temple-halls.jpg"
+    },
+    {
+      "id": "pantry",
+      "name": "The pantry",
+      "scenes": [
+        "s3_pantry_c1",
+        "s3_pantry_c3",
+        "s3_pantry_c8"
+      ],
+      "dimensions_m": [
+        6,
+        4,
+        4
+      ],
+      "lighting": "Dim; amber light through the jars from one small window. c8: a single candle.",
+      "objects": [
+        "specimen-jar",
+        "tea-tin",
+        "kettle",
+        "teacup"
+      ],
+      "prompt": "A small stone pantry six by four metres in an old temple, floor-to-ceiling wooden shelves crowded with glass jars of amber liquid holding floating dried herbs and strange preserved things, rows of tea tins, a small iron stove with a copper kettle, a scrubbed wooden worktable, one small window, dim amber light glowing through the jars, cobwebs, walnut and brass. Hand-painted gouache and ink illustration style, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "be61ad2c-995a-4e11-827f-74854d8e38db",
+      "image": "assets/locations/pantry.jpg"
+    },
+    {
+      "id": "unlit-gallery",
+      "name": "The unlit shelf",
+      "scenes": [
+        "s3_unlit_gallery"
+      ],
+      "dimensions_m": [
+        20,
+        4,
+        5
+      ],
+      "lighting": "Dark; the only light is Elaris's candle, about 2 m; frost glints on one clasp.",
+      "objects": [
+        "black-book",
+        "bookshelf",
+        "candlestick"
+      ],
+      "prompt": "A narrow high gallery twenty metres long at the top of a library, a single walkway with a wooden rail along one side and an endless wall of dark shelves on the other, the books faded and dusty, one black book with frosted metal clasps alone on a shelf, deep blue-black darkness, a small pool of warm candle light from a candlestick on the rail, cold breath of frost, silent. Hand-painted gouache and ink illustration style, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "b60e839c-dd79-4fd6-ab11-77fcde4860fe",
+      "image": "assets/locations/unlit-gallery.jpg"
+    },
+    {
+      "id": "storyteller-hut",
+      "name": "The storyteller's hut and the way home",
+      "scenes": [
+        "s3_circle",
+        "s3_village_return",
+        "e_returned"
+      ],
+      "dimensions_m": [
+        10,
+        10,
+        6
+      ],
+      "lighting": "Firelight, smoke rising to the smoke hole. The way home (c9) comes over the dunes at dusk to this door; the ending is the same hut years later.",
+      "objects": [],
+      "prompt": "Interior of a round desert-clan hut ten metres across, mud-brick wall with a woven palm-frond roof and a central smoke hole, a ring of low woven mats and small wooden stools around a stone fire pit, a storyteller's carved seat facing the ring, clay oil lamps in wall niches, ochre and sand tones, warm firelight and drifting smoke, evening. Hand-painted gouache and ink illustration style, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "2262a26c-ff9c-4fbb-b61c-a3dd162cafca",
+      "image": "assets/locations/storyteller-hut.jpg"
+    },
+    {
+      "id": "walled-yard",
+      "name": "The secluded yard",
+      "scenes": [
+        "s3_seclusion"
+      ],
+      "dimensions_m": [
+        8,
+        8,
+        4
+      ],
+      "lighting": "Dusk; the walls glow orange, the sky above goes violet.",
+      "objects": [],
+      "prompt": "A small enclosed courtyard eight by eight metres with high mud-plastered walls glowing orange at dusk, packed sand floor, a single low wooden bench, a narrow gate, carved lizard-like clan symbols worn smooth into the wall, open violet sky above, austere and quiet, desert village. Hand-painted gouache and ink illustration style, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "c1c3e05a-baeb-4098-80f6-04958015399b",
+      "image": "assets/locations/walled-yard.jpg"
+    },
+    {
+      "id": "xandri-hut",
+      "name": "Xandri's hut by night",
+      "scenes": [
+        "s3_hut_night"
+      ],
+      "dimensions_m": [
+        4,
+        4,
+        3
+      ],
+      "lighting": "Moonlight in shafts through holes in the roof; deep blue night.",
+      "objects": [
+        "travel-pack",
+        "waterskin",
+        "hut-mirror"
+      ],
+      "prompt": "A tiny round mud hut four metres across at night, a sleeping mat, a small polished metal mirror on the wall, a clay water pitcher and basin, a canvas travel pack and leather waterskin on the floor, a low stool, shafts of silver moonlight through small holes in the woven roof, deep blue shadows, ochre walls. Hand-painted gouache and ink illustration style, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "b2ce17eb-86c4-44c4-9152-27fdb7646e73",
+      "image": "assets/locations/xandri-hut.jpg"
+    },
+    {
+      "id": "silver-dunes",
+      "name": "The silver sand sea",
+      "scenes": [
+        "s3_moonlit_dunes",
+        "s3_dunes_night",
+        "s3_dunes_day",
+        "s3_cairns",
+        "s3_evening_camp"
+      ],
+      "dimensions_m": [
+        300,
+        300,
+        60
+      ],
+      "lighting": "Moonlit: silver sand, high moon. Night: clouds over the moon, deep blue. Day: white sun, heat shimmer. Noon cairns: hard short shadows. Evening camp: purple dusk, a prickle-bush fire in a dune hollow.",
+      "objects": [
+        "stone-cairn",
+        "zorlop-leaf-shoes",
+        "campfire-ring"
+      ],
+      "prompt": "An endless sea of glittering silver sand dunes under a full moon and deep blue sky, the dunes rising into one frozen wave-like crest, a web of thick bruise-purple vines snaking across the sand, a few spiky dark desert plants, a ring of small stone cairns on a flat between dunes, a dune hollow in the foreground, vast scale, moonlit silver and purple. Hand-painted gouache and ink illustration style, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "7e276fda-35b7-4d42-9940-3de79f6ab0c0",
+      "image": "assets/locations/silver-dunes.jpg"
+    },
+    {
+      "id": "deep-desert",
+      "name": "The deep desert",
+      "scenes": [
+        "s3_deep_desert",
+        "s3_herd_sighting",
+        "s3_xandrix_back"
+      ],
+      "dimensions_m": [
+        600,
+        600,
+        80
+      ],
+      "lighting": "Bleached noon; the crest at late sun; the ride toward a white horizon.",
+      "objects": [
+        "giant-bone"
+      ],
+      "prompt": "A vast deep desert of wide pale ochre dunes with no plants, bleached old giant bones half buried in the sand, a long dune crest overlooking an enormous empty plain with one long smooth flattened track across it, bleached noon light fading toward a white horizon, enormous scale, silent and empty. Hand-painted gouache and ink illustration style, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "c534bd46-8ab2-46e8-bdce-ba08c342c412",
+      "image": "assets/locations/deep-desert.jpg"
+    },
+    {
+      "id": "father-camp",
+      "name": "The father's camp and marker",
+      "scenes": [
+        "s3_father_camp",
+        "s3_father_walk",
+        "s3_camp_mark_c6",
+        "s3_herd_final"
+      ],
+      "dimensions_m": [
+        30,
+        30,
+        10
+      ],
+      "lighting": "Sunset for the camp; sepia older palette for the father's walk; moonlight and a fire for the third mark; dawn at the herd's return.",
+      "objects": [
+        "marker-pole",
+        "father-journal",
+        "campfire-ring",
+        "stone-cairn"
+      ],
+      "prompt": "An abandoned old desert camp on silver-ochre sand, a ring of weathered stones around a cold fire pit, a single straight vertical wooden marker pole with no crossbar, a faded red strip of cloth tied at its top fluttering, a flat stone beside it, a sand-scoured stone cairn nearby, beyond it rolling dunes to the horizon, sunset light, long shadows, lonely. Hand-painted gouache and ink illustration style, full-bleed image with no border or frame, unsigned with no signature, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "cdecd635-c874-4f7f-8fa3-384e7299d331",
+      "image": "assets/locations/father-camp.jpg",
+      "note": "A painted signature in the lower-left corner was patched out with neighbouring sand after generation; the pole came back with a short crossbar (the marker-pole object image is the straight pole to model)."
+    },
+    {
+      "id": "hollin-streets",
+      "name": "Hollin under the stuck storm",
+      "scenes": [
+        "s3_hollin_streets"
+      ],
+      "dimensions_m": [
+        120,
+        40,
+        20
+      ],
+      "lighting": "Storm-dark at noon; lamplit windows; rain falls sideways in one lane only.",
+      "objects": [
+        "clerk-umbrella"
+      ],
+      "prompt": "Three narrow cobbled streets of a crooked storybook town of tall slate-roofed houses, overflowing roof gutters, a stone town hall with a bell-loft tower at the end of the street, warm lamplit windows, heavy dark storm cloud sitting low over the town at midday, rain falling sideways in one lane only, graphite grey and slate blue, wet reflective cobbles. Hand-painted gouache and ink illustration style, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "3bb41e3a-ebe6-410c-abb7-f9294a67c9af",
+      "image": "assets/locations/hollin-streets.jpg"
+    },
+    {
+      "id": "clerk-office",
+      "name": "The Weather-Clerk's office and bell-loft",
+      "scenes": [
+        "s3_clerk_office",
+        "s3_hollin_choice"
+      ],
+      "dimensions_m": [
+        8,
+        6,
+        8
+      ],
+      "lighting": "Office: candle, rain on the glass. Bell-loft above: lightning through the slats.",
+      "objects": [
+        "day-book",
+        "clerks-chair",
+        "loft-bell",
+        "quill-pen"
+      ],
+      "prompt": "A small cluttered clerk's office eight by six metres in a town-hall tower, a tall slanted desk with a huge open ledger, a high-backed carved wooden chair, a wall carved with long panels of decorative relief, rain streaming on a leaded window, a single candle, and an open wooden stair rising to a bell-loft with a large bronze bell and hanging rope behind slatted shutters, graphite and slate blue. Hand-painted gouache and ink illustration style, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "e3535951-14d7-4744-bdf0-0eeaf310505b",
+      "image": "assets/locations/clerk-office.jpg"
+    },
+    {
+      "id": "procession-road",
+      "name": "The written road",
+      "scenes": [
+        "s3_procession_road",
+        "s3_scribe_wagon",
+        "s3_procession_choice"
+      ],
+      "dimensions_m": [
+        500,
+        60,
+        30
+      ],
+      "lighting": "Lantern sky at dusk; the wagon in lantern light; last light at the cliff edge where the road's last sheet stops.",
+      "objects": [
+        "scribe-scroll",
+        "quill-pen",
+        "pilgrim-lantern"
+      ],
+      "prompt": "A wide grey-grass plain at dusk, a road of wet sepia ink and paper unrolling across the grass toward a distant cliff edge, a small open wooden wagon with a writing desk and a long scroll, tall staffs with small bells and paper lanterns planted along the road, an orange lantern-lit sky, sepia and grey paper tones like an ink drawing come to life. Hand-painted gouache and ink illustration style, full-bleed image with no border or frame, unsigned with no signature, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "2032fdab-7faf-4b5f-ba38-d1f6817fd4d0",
+      "image": "assets/locations/procession-road.jpg"
+    }
+  ],
+  "objects": [
+    {
+      "id": "sand-book",
+      "name": "The sand book",
+      "role": "interact",
+      "scenes": [
+        "s3_halls_c1",
+        "s3_halls_c3",
+        "s3_halls_c6",
+        "s3_last_cup",
+        "e_stayed",
+        "e_rider",
+        "e_named",
+        "e_returned"
+      ],
+      "size_m": [
+        0.3,
+        0.08,
+        0.4
+      ],
+      "material": "Thick leather book, worn ochre leather, blank spine, fine silver sand spilling from its pages",
+      "prompt": "A thick old leather-bound book lying open, worn ochre leather cover with a blank spine, a thin stream of fine glittering silver sand pouring from between its pages into a small heap. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "35516fd7-8188-4cbf-ba99-edc0409eaa7a",
+      "image": "assets/objects/sand-book.jpg"
+    },
+    {
+      "id": "black-book",
+      "name": "The black book",
+      "role": "interact",
+      "scenes": [
+        "s3_unlit_gallery",
+        "s3_abyss_return"
+      ],
+      "size_m": [
+        0.28,
+        0.07,
+        0.38
+      ],
+      "material": "Black leather, three iron and brass clasps rimed with frost",
+      "prompt": "A closed old book bound in black leather, three heavy iron and brass clasps with gears and pegs across its fore-edge, white frost crystals on the clasps and corners, blue-black tones. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "f529916f-8deb-4e96-a9cd-5a0d56550bb3",
+      "image": "assets/objects/black-book.jpg"
+    },
+    {
+      "id": "yesterdays-book",
+      "name": "Yesterday's book",
+      "role": "interact",
+      "scenes": [
+        "s3_halls_c1"
+      ],
+      "size_m": [
+        0.22,
+        0.04,
+        0.3
+      ],
+      "material": "Small green cloth-bound book, gilt-tooled spine, a little worn",
+      "prompt": "A small closed cloth-bound book, sage green cloth with blind-tooled ornamental borders and gold tooling on the spine, slightly worn corners, a ribbon bookmark. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "9e308a9a-adae-4a78-8fb7-92e7fb54febd",
+      "image": "assets/objects/yesterdays-book.jpg"
+    },
+    {
+      "id": "cuckoo-clock",
+      "name": "The cuckoo clock",
+      "role": "interact",
+      "scenes": [
+        "s3_halls_c1",
+        "s3_halls_c3",
+        "s3_halls_c7",
+        "s3_halls_c8"
+      ],
+      "size_m": [
+        0.5,
+        0.25,
+        0.9
+      ],
+      "material": "Carved walnut case, brass weights on chains, painted face, key in its side",
+      "prompt": "A tall carved walnut cuckoo clock, a small closed bird door above a painted cream clock face with simple marks instead of numerals, carved leaves on the gable, two brass pine-cone weights on chains below, a brass winding key in the side. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "9d4bcebc-903b-4380-8a8a-538e679bba26",
+      "image": "assets/objects/cuckoo-clock.jpg"
+    },
+    {
+      "id": "broom",
+      "name": "The broom",
+      "role": "interact",
+      "scenes": [
+        "s3_halls_c3",
+        "s3_halls_c5",
+        "e_returned"
+      ],
+      "size_m": [
+        0.35,
+        0.1,
+        1.6
+      ],
+      "material": "Bound straw head, worn walnut handle",
+      "prompt": "An old besom broom, bundled golden straw bound with twine, a long worn walnut handle. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "55a37163-f20d-4679-992d-61f60ec06f0d",
+      "image": "assets/objects/broom.jpg"
+    },
+    {
+      "id": "reading-chair",
+      "name": "The reading chair",
+      "role": "interact",
+      "scenes": [
+        "s3_halls_c1",
+        "s3_last_cup",
+        "e_stayed",
+        "e_named"
+      ],
+      "size_m": [
+        0.9,
+        0.9,
+        1.4
+      ],
+      "material": "Walnut frame, cracked green leather, brass studs",
+      "prompt": "A large high-backed wooden reading chair with arms, carved walnut frame, cracked sage-green leather seat and back fixed with brass studs, worn armrests. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "f6523f6d-d626-4349-a5eb-4ce640b65efe",
+      "image": "assets/objects/reading-chair.jpg"
+    },
+    {
+      "id": "lizard-plate",
+      "name": "Plate of roast sea lizard",
+      "role": "interact",
+      "scenes": [
+        "s3_halls_c1"
+      ],
+      "size_m": [
+        0.35,
+        0.25,
+        0.1
+      ],
+      "material": "Glazed earthenware plate, a whole roast lizard, herbs",
+      "prompt": "A glazed earthenware plate holding a whole roasted lizard, golden-brown and crisp, garnished with a few sprigs of green herbs, appetising, cooked food. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "63cfc01e-2e4e-4d9c-8b87-f550b5c4ea46",
+      "image": "assets/objects/lizard-plate.jpg"
+    },
+    {
+      "id": "teacup",
+      "name": "The cup",
+      "role": "interact",
+      "scenes": [
+        "s3_halls_c1",
+        "s3_pantry_c1",
+        "s3_last_cup",
+        "e_stayed",
+        "e_named"
+      ],
+      "size_m": [
+        0.12,
+        0.12,
+        0.08
+      ],
+      "material": "Pale celadon porcelain cup with a gold rim, amber tea",
+      "prompt": "A small porcelain teacup on a saucer, pale celadon green glaze with a thin worn gold rim, filled with clear amber tea. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "7cb6397a-fd8a-40fc-99f9-6f9650ab48db",
+      "image": "assets/objects/teacup.jpg"
+    },
+    {
+      "id": "tea-tin",
+      "name": "Tea tin",
+      "role": "interact",
+      "scenes": [
+        "s3_pantry_c1",
+        "s3_pantry_c3",
+        "s3_pantry_c8"
+      ],
+      "size_m": [
+        0.1,
+        0.1,
+        0.14
+      ],
+      "material": "Brass tin with verdigris, embossed vine border, blank paper label",
+      "prompt": "A cylindrical brass tea tin with a lid, embossed art nouveau vine border, patches of green verdigris, a blank cream paper label with an ornate empty frame. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d71fd78f-09dd-4991-a726-c054e63b394f",
+      "image": "assets/objects/tea-tin.jpg"
+    },
+    {
+      "id": "kettle",
+      "name": "The kettle",
+      "role": "interact",
+      "scenes": [
+        "s3_pantry_c1",
+        "s3_pantry_c3",
+        "s3_pantry_c8"
+      ],
+      "size_m": [
+        0.28,
+        0.2,
+        0.25
+      ],
+      "material": "Hammered copper, brass handle wrapped in cane",
+      "prompt": "An old hammered copper kettle with a curved spout and a brass handle wrapped in cane, darkened by use. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "cb19597d-0da8-437d-a64f-fd6ddb4f934a",
+      "image": "assets/objects/kettle.jpg"
+    },
+    {
+      "id": "specimen-jar",
+      "name": "Pantry jar",
+      "role": "interact",
+      "scenes": [
+        "s3_pantry_c1",
+        "s3_pantry_c3",
+        "s3_pantry_c8"
+      ],
+      "size_m": [
+        0.15,
+        0.15,
+        0.3
+      ],
+      "material": "Glass jar, cork and wax seal, amber liquid, floating dried herbs",
+      "prompt": "A tall old glass jar with a cork stopper sealed with dark red wax, filled with amber liquid in which dried herbs, seed pods and small round berries float, string tied at the neck. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "0a84edb1-3f23-4f4d-a4b0-4d3ecca55b88",
+      "image": "assets/objects/specimen-jar.jpg"
+    },
+    {
+      "id": "candlestick",
+      "name": "The candle",
+      "role": "interact",
+      "scenes": [
+        "s3_unlit_gallery",
+        "s3_abyss_return",
+        "s3_pantry_c8"
+      ],
+      "size_m": [
+        0.12,
+        0.12,
+        0.3
+      ],
+      "material": "Brass chamberstick with a finger ring, half-burnt beeswax candle",
+      "prompt": "A brass chamberstick candle holder with a wide drip pan and finger ring, a half-burnt honey-coloured beeswax candle with a small lit flame. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "8ca46bb7-7025-4f2e-9606-50e85db2003f",
+      "image": "assets/objects/candlestick.jpg"
+    },
+    {
+      "id": "travel-pack",
+      "name": "Xandri's pack",
+      "role": "interact",
+      "scenes": [
+        "s3_hut_night",
+        "s3_dunes_day"
+      ],
+      "size_m": [
+        0.4,
+        0.25,
+        0.55
+      ],
+      "material": "Faded canvas and leather pack, patched, rope ties",
+      "prompt": "A faded ochre canvas travel backpack with leather straps and buckles, a few colourful sewn patches, rope ties, a rolled cloth on top. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "e8974220-4a23-402a-9fe0-06c41ea5e966",
+      "image": "assets/objects/travel-pack.jpg"
+    },
+    {
+      "id": "waterskin",
+      "name": "The father's waterskin",
+      "role": "interact",
+      "scenes": [
+        "s3_hut_night"
+      ],
+      "size_m": [
+        0.25,
+        0.12,
+        0.4
+      ],
+      "material": "Stitched goat leather, wooden stopper, braided cord",
+      "prompt": "A traditional leather waterskin, dark stitched goat leather bag shape, a carved wooden stopper and a braided cord strap. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "558b2793-c6df-43e7-b13b-72511fcd02b4",
+      "image": "assets/objects/waterskin.jpg"
+    },
+    {
+      "id": "hut-mirror",
+      "name": "The hut mirror",
+      "role": "interact",
+      "scenes": [
+        "s3_hut_night"
+      ],
+      "size_m": [
+        0.3,
+        0.03,
+        0.4
+      ],
+      "material": "Polished bronze disc in a clay and wood frame",
+      "prompt": "A round hand-polished bronze mirror disc set in a simple carved wooden frame with a hanging loop, slightly tarnished edges, blank reflective surface. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "5ffdf74d-a1bf-40e9-bf7a-dee13c46da8f",
+      "image": "assets/objects/hut-mirror.jpg"
+    },
+    {
+      "id": "zorlop-leaf-shoes",
+      "name": "Zorlop-leaf shoes",
+      "role": "interact",
+      "scenes": [
+        "s3_dunes_day"
+      ],
+      "size_m": [
+        0.4,
+        0.6,
+        0.08
+      ],
+      "material": "Two broad purple-green leaves bound with cord into flat sand shoes",
+      "prompt": "One pair of improvised sand shoes made of very broad flat leaves shaped like long ears, purple-green and leathery, tied together with braided cord into flat sole-like pads, side by side as a single pair. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "88f96f89-aac6-4f78-8c11-50daee302ef3",
+      "image": "assets/objects/zorlop-leaf-shoes.jpg"
+    },
+    {
+      "id": "father-journal",
+      "name": "The father's journal",
+      "role": "interact",
+      "scenes": [
+        "s3_father_camp",
+        "s3_father_walk"
+      ],
+      "size_m": [
+        0.15,
+        0.03,
+        0.2
+      ],
+      "material": "Sand-scoured leather notebook tied with a cord",
+      "prompt": "A small sand-scoured travel journal bound in cracked brown leather, wrapped closed with a long leather cord, pages swollen and uneven. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "3cf4aeed-438c-4c1f-82d6-7b5c507de59f",
+      "image": "assets/objects/father-journal.jpg"
+    },
+    {
+      "id": "clerk-umbrella",
+      "name": "The Clerk's umbrella",
+      "role": "interact",
+      "scenes": [
+        "s3_hollin_streets",
+        "s3_hollin_choice"
+      ],
+      "size_m": [
+        1.1,
+        1.1,
+        0.95
+      ],
+      "material": "Slate-blue oilcloth, brass ribs, carved crook handle",
+      "prompt": "An old open umbrella with slate-blue waxed oilcloth canopy, brass ribs, and a carved wooden crook handle, slightly worn. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "e911f348-d08a-42b1-be44-017aeb1cb446",
+      "image": "assets/objects/clerk-umbrella.jpg"
+    },
+    {
+      "id": "day-book",
+      "name": "The Day-Book",
+      "role": "interact",
+      "scenes": [
+        "s3_clerk_office",
+        "s3_hollin_choice"
+      ],
+      "size_m": [
+        0.6,
+        0.45,
+        0.1
+      ],
+      "material": "Huge open ledger, vellum pages with ruled columns, unreadable notes",
+      "prompt": "A huge old ledger lying open, heavy grey leather binding with brass corners, cream vellum pages ruled in columns with faint illegible pencil marks and small weather symbols. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c660e1c9-ac62-4944-b74c-e501a2005a31",
+      "image": "assets/objects/day-book.jpg"
+    },
+    {
+      "id": "clerks-chair",
+      "name": "The Clerk's chair",
+      "role": "interact",
+      "scenes": [
+        "s3_clerk_office",
+        "s3_hollin_choice"
+      ],
+      "size_m": [
+        0.7,
+        0.7,
+        1.5
+      ],
+      "material": "Dark carved oak, high back, worn grey cushion",
+      "prompt": "A tall high-backed clerk's chair in dark carved oak, the back carved with cloud and rain motifs, a worn grey cushion on the seat. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "afbedbe5-4531-4e84-ad68-458e70dde5fe",
+      "image": "assets/objects/clerks-chair.jpg"
+    },
+    {
+      "id": "loft-bell",
+      "name": "The bell",
+      "role": "interact",
+      "scenes": [
+        "s3_hollin_choice"
+      ],
+      "size_m": [
+        0.9,
+        0.9,
+        1.1
+      ],
+      "material": "Bronze bell on a wooden yoke with a hanging rope",
+      "prompt": "A large bronze church-style bell hung from a heavy wooden yoke, green patina streaks, a thick hemp rope hanging from the wheel. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "360af17e-9d2a-45ad-853b-fe733fd37764",
+      "image": "assets/objects/loft-bell.jpg"
+    },
+    {
+      "id": "scribe-scroll",
+      "name": "The Scribe's scroll",
+      "role": "interact",
+      "scenes": [
+        "s3_scribe_wagon",
+        "s3_procession_choice"
+      ],
+      "size_m": [
+        0.6,
+        0.4,
+        0.15
+      ],
+      "material": "Long grey paper scroll on wooden rollers, sepia ink road drawing",
+      "prompt": "A long grey paper scroll partly unrolled between two turned wooden rollers, the paper drawn with a winding sepia ink road and small trees, no writing. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d776621b-1edc-43a3-aa40-dcf96f128cf4",
+      "image": "assets/objects/scribe-scroll.jpg"
+    },
+    {
+      "id": "quill-pen",
+      "name": "The pen",
+      "role": "interact",
+      "scenes": [
+        "s3_scribe_wagon",
+        "s3_procession_choice",
+        "s3_clerk_office"
+      ],
+      "size_m": [
+        0.03,
+        0.03,
+        0.3
+      ],
+      "material": "Long grey quill with an ink-stained nib",
+      "prompt": "A long grey goose-feather quill pen with an ink-stained cut nib, lying diagonally. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "f1082b99-56f6-431d-901c-920efcfba8cc",
+      "image": "assets/objects/quill-pen.jpg"
+    },
+    {
+      "id": "pilgrim-lantern",
+      "name": "Pilgrim's lantern",
+      "role": "interact",
+      "scenes": [
+        "s3_procession_road",
+        "s3_scribe_wagon"
+      ],
+      "size_m": [
+        0.2,
+        0.2,
+        0.4
+      ],
+      "material": "Pierced tin and paper lantern with ash-blackened glass",
+      "prompt": "A small pilgrim's hand lantern of pierced tin with paper panels and a top ring, lit with a warm orange glow, the inside smudged with grey ash. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "ac8b3737-d0fd-4a5c-bdf9-b4de2d204ff2",
+      "image": "assets/objects/pilgrim-lantern.jpg"
+    },
+    {
+      "id": "stone-cairn",
+      "name": "Cairn with the father's mark",
+      "role": "hero",
+      "scenes": [
+        "s3_cairns",
+        "s3_father_camp"
+      ],
+      "size_m": [
+        0.8,
+        0.8,
+        1.2
+      ],
+      "material": "Stacked flat sandstone, one stone scratched with a simple sign",
+      "prompt": "A waist-high cairn of stacked flat weathered sandstone slabs, ochre and grey, one stone scratched with a simple spiral sign, sand drifted around its base. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "8d004631-dce0-4ab7-bcbf-321847d9e2d7",
+      "image": "assets/objects/stone-cairn.jpg"
+    },
+    {
+      "id": "marker-pole",
+      "name": "The father's marker pole",
+      "role": "hero",
+      "scenes": [
+        "s3_father_camp",
+        "s3_camp_mark_c6",
+        "s3_herd_final"
+      ],
+      "size_m": [
+        0.4,
+        0.4,
+        2.6
+      ],
+      "material": "Weathered wooden pole, faded red cloth strip",
+      "prompt": "A tall weathered wooden pole, sun-bleached and cracked, standing upright on a small mound of stones, a long faded red cloth strip tied near the top hanging down. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "af86d5ab-e945-4533-a320-f2faa4a3a974",
+      "image": "assets/objects/marker-pole.jpg"
+    },
+    {
+      "id": "campfire-ring",
+      "name": "Camp fire ring",
+      "role": "fill",
+      "scenes": [
+        "s3_evening_camp",
+        "s3_father_camp",
+        "s3_camp_mark_c6"
+      ],
+      "size_m": [
+        1.2,
+        1.2,
+        0.3
+      ],
+      "material": "Ring of fire-blackened stones, dry prickle-bush sticks",
+      "prompt": "A small ring of fire-blackened stones in sand with a few dry thorny branches piled in the centre, unlit. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "235d930d-4541-48fd-acec-bd0236a4738f",
+      "image": "assets/objects/campfire-ring.jpg"
+    },
+    {
+      "id": "giant-bone",
+      "name": "Old bones",
+      "role": "fill",
+      "scenes": [
+        "s3_deep_desert"
+      ],
+      "size_m": [
+        4,
+        1.2,
+        2.5
+      ],
+      "material": "Bleached giant rib bone, weathered and cracked",
+      "prompt": "One enormous bleached curved rib bone, ancient and weathered, cracked and chalk white with ochre staining, fossil-like, clean and dry. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d3cc30ed-2daf-420d-a08a-44821efee2bd",
+      "image": "assets/objects/giant-bone.jpg"
+    },
+    {
+      "id": "bookshelf",
+      "name": "Temple bookshelf",
+      "role": "fill",
+      "scenes": [
+        "s3_room_morning",
+        "s3_halls_c1",
+        "s3_unlit_gallery"
+      ],
+      "size_m": [
+        2.0,
+        0.5,
+        3.2
+      ],
+      "material": "Carved walnut bookcase, gilt edges, filled with old leather books",
+      "prompt": "A tall carved walnut bookcase with five shelves crowded with old leather-bound books of mixed sizes in brown, green and oxblood, a carved cornice with leaf ornament, worn honey-gold varnish. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "8b62ba56-2f5e-484d-ba2e-9912df5e282c",
+      "image": "assets/objects/bookshelf.jpg"
+    },
+    {
+      "id": "library-ladder",
+      "name": "Library ladder",
+      "role": "fill",
+      "scenes": [
+        "s3_halls_c5",
+        "s3_halls_c1"
+      ],
+      "size_m": [
+        0.6,
+        0.4,
+        3.5
+      ],
+      "material": "Tall walnut ladder with brass hooks and worn rungs",
+      "prompt": "A tall freestanding wooden library ladder of walnut with worn rungs, brass hooks at the top and small brass wheels at the foot. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "21f37357-9a0d-4ebd-bc8b-ec1171e42fed",
+      "image": "assets/objects/library-ladder.jpg"
+    }
+  ]
+}
