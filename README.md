@@ -31,6 +31,8 @@ run on, and a validator that keeps them consistent.
 | `docs/TECH.md` | The shared engine, the repository layout, saves, endings, accessibility, assets |
 | `docs/DESIGN_TEMPLATE.md` | The 21 sections every game's design has |
 | `docs/ADAPTATIONS.md` | The first round of adaptations, which the designs build on |
+| `docs/STORYBOARDS.md` | How each game's scenes join through the three layers, panel by panel |
+| `games/<slug>/reference/` | Four reference stills per game (Higgsfield, Soul Cinema); mood references, not final art |
 | `games/<slug>/DESIGN.md` | One game's full design |
 | `games/<slug>/data/` | That game's chapters, scenes, state and endings, as JSON |
 | `schemas/` | JSON Schemas for those data files |

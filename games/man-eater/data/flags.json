@@ -1,0 +1,367 @@
+{
+  "state": [
+    {
+      "name": "day",
+      "type": "counter",
+      "default": 1,
+      "description": "The day of the week on base, 1 to 7. Advances at 06:00."
+    },
+    {
+      "name": "change",
+      "type": "meter",
+      "range": [
+        0,
+        100
+      ],
+      "default": 0,
+      "description": "How far the body has changed. +2 per ration piece, +3 per pill swallowed, +3 per night the call is followed. Never shown as a bar: camera height, hands, breath and the Chart show it."
+    },
+    {
+      "name": "hunger",
+      "type": "meter",
+      "range": [
+        0,
+        100
+      ],
+      "default": 20,
+      "description": "Hunger now. Rises through the day faster as change rises; a ration piece lowers it for an hour, bread lowers it for the night."
+    },
+    {
+      "name": "clarity",
+      "type": "meter",
+      "range": [
+        0,
+        100
+      ],
+      "default": 100,
+      "description": "Fisk's clear mind. Falls with ration pieces, pills and nights in the call. Drives the four UI tiers."
+    },
+    {
+      "name": "strength",
+      "type": "meter",
+      "range": [
+        0,
+        100
+      ],
+      "default": 50,
+      "description": "What the body can do: duties, climbing, carrying. 50 + 0.5 x change, minus 10 for each day under two ration pieces with no bread."
+    },
+    {
+      "name": "warmth",
+      "type": "meter",
+      "range": [
+        0,
+        100
+      ],
+      "default": 100,
+      "description": "Reset to 100 at the start of each excursion. Drains outside and in the cold halls at (12 - change/10) per minute."
+    },
+    {
+      "name": "suspicion",
+      "type": "meter",
+      "range": [
+        0,
+        100
+      ],
+      "default": 0,
+      "description": "How much the staff watch Fisk. Seen rule breaks +20, unseen +5, food left visible on the tray +5, failed duty +5, reporting Jax -20."
+    },
+    {
+      "name": "jax_trust",
+      "type": "meter",
+      "range": [
+        0,
+        100
+      ],
+      "default": 0,
+      "description": "How much Jax trusts Fisk. Bread given, cover at the Tray, nights out together, truth told at the bunk."
+    },
+    {
+      "name": "pull.pell",
+      "type": "meter",
+      "range": [
+        0,
+        100
+      ],
+      "default": 60,
+      "description": "The call's hold on Pell. +15 a night; -15 for each loaf Fisk gives him. The seated crew member with the highest pull is taken at 10:00."
+    },
+    {
+      "name": "pull.duarte",
+      "type": "meter",
+      "range": [
+        0,
+        100
+      ],
+      "default": 50,
+      "description": "The call's hold on Duarte. Same rules as pull.pell."
+    },
+    {
+      "name": "pull.kimura",
+      "type": "meter",
+      "range": [
+        0,
+        100
+      ],
+      "default": 40,
+      "description": "The call's hold on Kimura. Same rules as pull.pell."
+    },
+    {
+      "name": "pull.hollis",
+      "type": "meter",
+      "range": [
+        0,
+        100
+      ],
+      "default": 30,
+      "description": "The call's hold on Hollis. Same rules as pull.pell."
+    },
+    {
+      "name": "pull.jax",
+      "type": "meter",
+      "range": [
+        0,
+        100
+      ],
+      "default": 0,
+      "description": "The call's hold on Jax. +15 a night, more if he eats as Fisk does; capped at 49 before night 5."
+    },
+    {
+      "name": "nights_followed",
+      "type": "counter",
+      "default": 0,
+      "description": "Nights Fisk let the call lead him (the door choice 'Follow', or 'Stay' removed by the call)."
+    },
+    {
+      "name": "nights_out",
+      "type": "counter",
+      "default": 0,
+      "description": "Nights Fisk left the room after 10:00 for any reason."
+    },
+    {
+      "name": "chairs_empty",
+      "type": "counter",
+      "default": 0,
+      "description": "Empty chairs at the rec-room table. Each one removes a suit from Short Rations."
+    },
+    {
+      "name": "bread_banked",
+      "type": "counter",
+      "default": 0,
+      "description": "Loaves of bread Fisk holds. Won at Short Rations or given at the cafeteria; eaten or given away."
+    },
+    {
+      "name": "pills_taken",
+      "type": "counter",
+      "default": 0,
+      "description": "Pills swallowed at the Tray. A cheeked pill does not count."
+    },
+    {
+      "name": "contraband_left",
+      "type": "counter",
+      "default": 3,
+      "description": "Chocolate squares left in Fisk's kit. Eating one breaks rule one."
+    },
+    {
+      "name": "duties_failed",
+      "type": "counter",
+      "default": 0,
+      "description": "Day duties Fisk was too weak, too slow or too absent to finish."
+    },
+    {
+      "name": "knows",
+      "type": "enum",
+      "values": [
+        "anomaly",
+        "pattern",
+        "scale",
+        "implicated"
+      ],
+      "default": "anomaly",
+      "description": "What Fisk understands, rung by rung. Raised by the Chart and by discoveries that break an explanation on the List."
+    },
+    {
+      "name": "meals",
+      "type": "ledger",
+      "fields": [
+        "day",
+        "meal",
+        "kind",
+        "pieces"
+      ],
+      "default": [],
+      "description": "Every meal. kind is ration, bread, contraband, staff or refused; pieces is how many ration pieces were eaten. A Tray with no piece eaten is logged as refused."
+    },
+    {
+      "name": "rules_broken",
+      "type": "ledger",
+      "fields": [
+        "day",
+        "rule",
+        "seen"
+      ],
+      "default": [],
+      "description": "Every broken rule. rule is diet, curfew or base; seen is yes or no."
+    },
+    {
+      "name": "the_list",
+      "type": "ledger",
+      "fields": [
+        "day",
+        "incident",
+        "explanation",
+        "broken_on"
+      ],
+      "default": [],
+      "description": "Fisk's list of wrong things, each with the explanation he chose, and the day a later discovery broke it."
+    },
+    {
+      "name": "taken",
+      "type": "ledger",
+      "fields": [
+        "night",
+        "who",
+        "bread_from_fisk"
+      ],
+      "default": [],
+      "description": "Who left at 10:00 each night, and how many loaves Fisk had given them."
+    },
+    {
+      "name": "jax_arrived",
+      "type": "bool",
+      "default": false,
+      "description": "Jax has taken the empty chair (evening of day 2)."
+    },
+    {
+      "name": "jax_fate",
+      "type": "enum",
+      "values": [
+        "not_arrived",
+        "present",
+        "taken",
+        "reported"
+      ],
+      "default": "not_arrived",
+      "description": "Where Jax is. taken: the call took him at 10:00. reported: Sam took him after Fisk reported his plan."
+    },
+    {
+      "name": "jax_plan_answer",
+      "type": "enum",
+      "values": [
+        "none",
+        "agreed",
+        "reported",
+        "silent"
+      ],
+      "default": "none",
+      "description": "Fisk's answer to Jax's plan on day 5."
+    },
+    {
+      "name": "sam_offer_made",
+      "type": "bool",
+      "default": false,
+      "description": "Sam has offered Fisk a place on staff (day 6; only after a report and with suspicion under 60)."
+    },
+    {
+      "name": "sam_offer_accepted",
+      "type": "bool",
+      "default": false,
+      "description": "Fisk took Sam's key and the staff ration."
+    },
+    {
+      "name": "claw_marks_measured",
+      "type": "bool",
+      "default": false,
+      "description": "Day 2 duty: Fisk measured the claw marks at 3.6 metres up the wall."
+    },
+    {
+      "name": "boots_found",
+      "type": "bool",
+      "default": false,
+      "description": "Night 3: the first bunkmate's boots in the kennel shed, laces still tied."
+    },
+    {
+      "name": "mail_held",
+      "type": "bool",
+      "default": false,
+      "description": "Day 3: the outgoing mail sack is stamped HOLD and has never left."
+    },
+    {
+      "name": "cold_from_below",
+      "type": "bool",
+      "default": false,
+      "description": "Day 4: the boilers run hot; the cold comes up through the floor drains."
+    },
+    {
+      "name": "files_read",
+      "type": "bool",
+      "default": false,
+      "description": "Night 4: the project's source file and transfer roster in the officers' wing."
+    },
+    {
+      "name": "adit_found",
+      "type": "bool",
+      "default": false,
+      "description": "Night 5: the giant bare footprints lead into the old mine adit."
+    },
+    {
+      "name": "void_located",
+      "type": "bool",
+      "default": false,
+      "description": "Floor Plan: the missing paces placed behind the infirmary cold store."
+    },
+    {
+      "name": "pens_seen",
+      "type": "bool",
+      "default": false,
+      "description": "Night 6: the pens below the base, and the first bunkmate's list on the wall."
+    },
+    {
+      "name": "night7_choice",
+      "type": "enum",
+      "values": [
+        "undecided",
+        "stay",
+        "follow",
+        "fence"
+      ],
+      "default": "undecided",
+      "description": "The last choice at the door on night 7."
+    },
+    {
+      "name": "followed_with",
+      "type": "enum",
+      "values": [
+        "none",
+        "jax",
+        "alone"
+      ],
+      "default": "none",
+      "description": "Who walks with Fisk when he follows the call on night 7."
+    },
+    {
+      "name": "windigo_met",
+      "type": "bool",
+      "default": false,
+      "description": "Night 7: the figure at the corner and its line."
+    },
+    {
+      "name": "fence_crossed",
+      "type": "bool",
+      "default": false,
+      "description": "Night 7: Fisk reached the tree line beyond the fence."
+    },
+    {
+      "name": "jax_fell",
+      "type": "bool",
+      "default": false,
+      "description": "Night 7, fence: Jax stopped in the snow and Fisk went on."
+    },
+    {
+      "name": "cave_reached",
+      "type": "bool",
+      "default": false,
+      "description": "Fisk was taken to the cave (followed with Jax, followed unchanged, caught at the fence, or gassed in the bunk)."
+    }
+  ]
+}

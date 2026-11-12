@@ -1,0 +1,155 @@
+{
+  "endings": [
+    {
+      "id": "rule_three",
+      "name": "Rule Three",
+      "as_written": false,
+      "priority": 10,
+      "when": {
+        "all": [
+          {
+            "is": "night7_choice",
+            "eq": "fence"
+          },
+          {
+            "is": "fence_crossed",
+            "eq": true
+          },
+          {
+            "is": "change",
+            "gte": 60
+          },
+          {
+            "ledger": "rules_broken",
+            "count_gte": 1,
+            "where": {
+              "rule": "base"
+            }
+          }
+        ]
+      },
+      "summary": "Fisk breaks the last rule and crosses the fence on night 7. Only a body that has eaten enough survives the cold, so he reaches the trees already changing. If Jax came, Jax stopped in the snow. 'Deep down, this would only spread.'",
+      "final_scenes": [
+        "n7_snow",
+        "n7_perimeter",
+        "e_tree_line"
+      ]
+    },
+    {
+      "id": "footsteps",
+      "name": "Footsteps",
+      "as_written": false,
+      "priority": 20,
+      "when": {
+        "all": [
+          {
+            "is": "night7_choice",
+            "eq": "follow"
+          },
+          {
+            "is": "followed_with",
+            "eq": "alone"
+          },
+          {
+            "is": "change",
+            "gte": 85
+          },
+          {
+            "is": "nights_followed",
+            "gte": 3
+          },
+          {
+            "ledger": "meals",
+            "count_gte": 6,
+            "where": {
+              "kind": "ration"
+            }
+          }
+        ]
+      },
+      "summary": "Fisk follows the call alone, changed far enough to hear the steps behind him. The project does not gas him. It lets him pick up the flute. At 10:00 the next week, a new recruit hears the call, and it is Fisk.",
+      "final_scenes": [
+        "n7_halls",
+        "n7_windigo",
+        "e_flute"
+      ]
+    },
+    {
+      "id": "call_me_sam",
+      "name": "Call Me Sam",
+      "as_written": false,
+      "priority": 30,
+      "when": {
+        "all": [
+          {
+            "is": "jax_plan_answer",
+            "eq": "reported"
+          },
+          {
+            "is": "sam_offer_accepted",
+            "eq": true
+          },
+          {
+            "is": "night7_choice",
+            "eq": "stay"
+          },
+          {
+            "ledger": "rules_broken",
+            "count_lte": 2,
+            "where": {
+              "seen": "yes"
+            }
+          }
+        ]
+      },
+      "summary": "Fisk reported Jax and took Sam's key. He stays in on night 7 because staff are not called. He is kept on, and the game ends with him walking a new recruit down the tall halls and giving him the three rules.",
+      "final_scenes": [
+        "n7_bunk_stay",
+        "e_new_recruit"
+      ]
+    },
+    {
+      "id": "transferred",
+      "name": "Transferred",
+      "as_written": false,
+      "priority": 40,
+      "when": {
+        "all": [
+          {
+            "is": "night7_choice",
+            "eq": "stay"
+          },
+          {
+            "is": "nights_followed",
+            "lte": 0
+          },
+          {
+            "ledger": "meals",
+            "count_lte": 1,
+            "where": {
+              "kind": "ration"
+            }
+          }
+        ]
+      },
+      "summary": "Fisk refused the meat and never followed the call. He is too weak to work and no use to the project. He is put on a truck. Sam tells the bunk that he was transferred, and Fisk never learns what the base was for.",
+      "final_scenes": [
+        "n7_bunk_stay",
+        "e_transfer_truck"
+      ]
+    },
+    {
+      "id": "the_zoo",
+      "name": "The Zoo",
+      "as_written": true,
+      "priority": 50,
+      "when": true,
+      "summary": "As written. Fisk eats, follows the flute with Jax, meets the pale figure, is gassed and taken to the cave. Sam explains the project. Fisk wakes transformed, a tube in his arm, 'like an animal in a zoo'. Every other run that reaches night 7 without one of the four ways out ends here too: the base takes him another way.",
+      "final_scenes": [
+        "n7_windigo",
+        "e_cave",
+        "e_zoo_wake"
+      ]
+    }
+  ]
+}

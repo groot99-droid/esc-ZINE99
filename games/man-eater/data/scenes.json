@@ -1,0 +1,1511 @@
+{
+  "modes_2d": [
+    {
+      "id": "silhouette_halls",
+      "name": "Silhouette halls",
+      "movement": "scroll"
+    },
+    {
+      "id": "snow_line",
+      "name": "Snow line",
+      "movement": "scroll"
+    }
+  ],
+  "games_1d": [
+    {
+      "id": "short_rations",
+      "name": "Short Rations",
+      "family": "Card game, trick-taking"
+    },
+    {
+      "id": "the_tray",
+      "name": "The Tray",
+      "family": "Portioning"
+    },
+    {
+      "id": "the_chart",
+      "name": "The Chart",
+      "family": "Self-diagnosis"
+    },
+    {
+      "id": "floor_plan",
+      "name": "Floor Plan",
+      "family": "Drawing from memory"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "c1_truck_gate",
+      "layer": "3d",
+      "name": "The truck and the gate",
+      "chapter": "ch1_arrival",
+      "writes": [
+        "the_list"
+      ],
+      "enter": "fade",
+      "exit": "cut",
+      "next": [
+        "c1_halls"
+      ]
+    },
+    {
+      "id": "c1_halls",
+      "layer": "3d",
+      "name": "The tall halls, with Sam",
+      "chapter": "ch1_arrival",
+      "writes": [
+        "the_list"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "c1_bunk"
+      ]
+    },
+    {
+      "id": "c1_bunk",
+      "layer": "3d",
+      "name": "The bunk room and the three rules",
+      "chapter": "ch1_arrival",
+      "writes": [
+        "the_list"
+      ],
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "d1_cafeteria"
+      ]
+    },
+    {
+      "id": "d1_cafeteria",
+      "layer": "3d",
+      "name": "The cafeteria, day 1",
+      "chapter": "ch2_day1",
+      "reads": [
+        "hunger"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "d1_tray"
+      ]
+    },
+    {
+      "id": "d1_tray",
+      "layer": "1d",
+      "name": "The Tray: the first ration",
+      "chapter": "ch2_day1",
+      "game": "the_tray",
+      "world_runs": true,
+      "reads": [
+        "hunger",
+        "clarity",
+        "change",
+        "suspicion",
+        "day",
+        "contraband_left"
+      ],
+      "writes": [
+        "meals",
+        "change",
+        "hunger",
+        "clarity",
+        "strength",
+        "pills_taken",
+        "suspicion",
+        "jax_trust",
+        "rules_broken",
+        "contraband_left"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d1_duty_coldstore"
+      ]
+    },
+    {
+      "id": "d1_duty_coldstore",
+      "layer": "3d",
+      "name": "Duty: crates to the cold store",
+      "chapter": "ch2_day1",
+      "reads": [
+        "strength"
+      ],
+      "writes": [
+        "duties_failed",
+        "the_list"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "d1_rec_room"
+      ]
+    },
+    {
+      "id": "d1_rec_room",
+      "layer": "3d",
+      "name": "The rec room, six chairs",
+      "chapter": "ch2_day1",
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "d1_rations"
+      ]
+    },
+    {
+      "id": "d1_rations",
+      "layer": "1d",
+      "name": "Short Rations: six seats",
+      "chapter": "ch2_day1",
+      "game": "short_rations",
+      "reads": [
+        "chairs_empty",
+        "clarity",
+        "hunger",
+        "jax_arrived"
+      ],
+      "writes": [
+        "bread_banked",
+        "jax_trust",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax",
+        "hunger"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "n1_bunk_call"
+      ]
+    },
+    {
+      "id": "n1_bunk_call",
+      "layer": "3d",
+      "name": "Night 1: the call, and the bunkmate leaves",
+      "chapter": "ch2_day1",
+      "writes": [
+        "taken",
+        "chairs_empty",
+        "the_list",
+        "clarity"
+      ],
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "d2_chart"
+      ]
+    },
+    {
+      "id": "d2_chart",
+      "layer": "1d",
+      "name": "The Chart: first reading",
+      "chapter": "ch3_day2",
+      "game": "the_chart",
+      "reads": [
+        "change",
+        "clarity",
+        "the_list",
+        "day"
+      ],
+      "writes": [
+        "knows",
+        "the_list"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d2_duty_paint"
+      ]
+    },
+    {
+      "id": "d2_duty_paint",
+      "layer": "3d",
+      "name": "Duty: painting over the claw marks",
+      "chapter": "ch3_day2",
+      "reads": [
+        "strength",
+        "change"
+      ],
+      "writes": [
+        "claw_marks_measured",
+        "the_list",
+        "duties_failed"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "d2_tray"
+      ]
+    },
+    {
+      "id": "d2_tray",
+      "layer": "1d",
+      "name": "The Tray, day 2",
+      "chapter": "ch3_day2",
+      "game": "the_tray",
+      "world_runs": true,
+      "reads": [
+        "hunger",
+        "clarity",
+        "change",
+        "suspicion",
+        "day",
+        "contraband_left"
+      ],
+      "writes": [
+        "meals",
+        "change",
+        "hunger",
+        "clarity",
+        "strength",
+        "pills_taken",
+        "suspicion",
+        "jax_trust",
+        "rules_broken",
+        "contraband_left"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d2_sam_bunk"
+      ]
+    },
+    {
+      "id": "d2_sam_bunk",
+      "layer": "3d",
+      "name": "Sam in the bunk: transferred",
+      "chapter": "ch3_day2",
+      "writes": [
+        "the_list"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "d2_floorplan"
+      ]
+    },
+    {
+      "id": "d2_floorplan",
+      "layer": "1d",
+      "name": "Floor Plan: the barracks wing",
+      "chapter": "ch3_day2",
+      "game": "floor_plan",
+      "reads": [
+        "clarity",
+        "change",
+        "nights_out"
+      ],
+      "writes": [
+        "knows"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d2_rations"
+      ]
+    },
+    {
+      "id": "d2_rations",
+      "layer": "1d",
+      "name": "Short Rations: Jax takes the chair",
+      "chapter": "ch3_day2",
+      "game": "short_rations",
+      "reads": [
+        "chairs_empty",
+        "clarity",
+        "hunger",
+        "jax_arrived"
+      ],
+      "writes": [
+        "bread_banked",
+        "jax_trust",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax",
+        "hunger",
+        "jax_arrived",
+        "jax_fate"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "n2_door"
+      ]
+    },
+    {
+      "id": "n2_door",
+      "layer": "3d",
+      "name": "Night 2: the door at 10:00",
+      "chapter": "ch3_day2",
+      "reads": [
+        "change",
+        "hunger",
+        "bread_banked",
+        "clarity",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax"
+      ],
+      "writes": [
+        "nights_out",
+        "nights_followed",
+        "rules_broken",
+        "change",
+        "clarity",
+        "taken",
+        "chairs_empty",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "n2_halls",
+        "d3_chart"
+      ]
+    },
+    {
+      "id": "n2_halls",
+      "layer": "2d",
+      "name": "Night 2: the halls, first time out",
+      "chapter": "ch3_day2",
+      "mode": "silhouette_halls",
+      "reads": [
+        "change",
+        "warmth",
+        "clarity"
+      ],
+      "writes": [
+        "suspicion",
+        "rules_broken",
+        "warmth",
+        "the_list"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "d3_chart"
+      ]
+    },
+    {
+      "id": "d3_chart",
+      "layer": "1d",
+      "name": "The Chart, day 3",
+      "chapter": "ch4_day3",
+      "game": "the_chart",
+      "reads": [
+        "change",
+        "clarity",
+        "the_list",
+        "day"
+      ],
+      "writes": [
+        "knows",
+        "the_list"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d3_duty_shovel"
+      ]
+    },
+    {
+      "id": "d3_duty_shovel",
+      "layer": "3d",
+      "name": "Duty: shovelling the yard",
+      "chapter": "ch4_day3",
+      "reads": [
+        "strength",
+        "warmth"
+      ],
+      "writes": [
+        "duties_failed",
+        "the_list"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "d3_tray"
+      ]
+    },
+    {
+      "id": "d3_tray",
+      "layer": "1d",
+      "name": "The Tray, day 3",
+      "chapter": "ch4_day3",
+      "game": "the_tray",
+      "world_runs": true,
+      "reads": [
+        "hunger",
+        "clarity",
+        "change",
+        "suspicion",
+        "day",
+        "contraband_left"
+      ],
+      "writes": [
+        "meals",
+        "change",
+        "hunger",
+        "clarity",
+        "strength",
+        "pills_taken",
+        "suspicion",
+        "jax_trust",
+        "rules_broken",
+        "contraband_left"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d3_mail_room"
+      ]
+    },
+    {
+      "id": "d3_mail_room",
+      "layer": "3d",
+      "name": "The mail room and the HOLD sack",
+      "chapter": "ch4_day3",
+      "writes": [
+        "mail_held",
+        "the_list"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "d3_rations"
+      ]
+    },
+    {
+      "id": "d3_rations",
+      "layer": "1d",
+      "name": "Short Rations: five seats",
+      "chapter": "ch4_day3",
+      "game": "short_rations",
+      "reads": [
+        "chairs_empty",
+        "clarity",
+        "hunger",
+        "jax_arrived"
+      ],
+      "writes": [
+        "bread_banked",
+        "jax_trust",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax",
+        "hunger"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "n3_door"
+      ]
+    },
+    {
+      "id": "n3_door",
+      "layer": "3d",
+      "name": "Night 3: the door at 10:00",
+      "chapter": "ch4_day3",
+      "reads": [
+        "change",
+        "hunger",
+        "bread_banked",
+        "clarity",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax"
+      ],
+      "writes": [
+        "nights_out",
+        "nights_followed",
+        "rules_broken",
+        "change",
+        "clarity",
+        "taken",
+        "chairs_empty",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "n3_snow",
+        "d4_chart"
+      ]
+    },
+    {
+      "id": "n3_snow",
+      "layer": "2d",
+      "name": "Night 3: the yard to the kennel shed",
+      "chapter": "ch4_day3",
+      "mode": "snow_line",
+      "reads": [
+        "change",
+        "warmth",
+        "clarity"
+      ],
+      "writes": [
+        "boots_found",
+        "suspicion",
+        "rules_broken",
+        "warmth",
+        "the_list"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "d4_chart"
+      ]
+    },
+    {
+      "id": "d4_chart",
+      "layer": "1d",
+      "name": "The Chart, day 4",
+      "chapter": "ch5_day4",
+      "game": "the_chart",
+      "reads": [
+        "change",
+        "clarity",
+        "the_list",
+        "day"
+      ],
+      "writes": [
+        "knows",
+        "the_list"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d4_duty_boiler"
+      ]
+    },
+    {
+      "id": "d4_duty_boiler",
+      "layer": "3d",
+      "name": "Duty: the boiler room",
+      "chapter": "ch5_day4",
+      "reads": [
+        "strength"
+      ],
+      "writes": [
+        "cold_from_below",
+        "the_list",
+        "duties_failed"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "d4_tray"
+      ]
+    },
+    {
+      "id": "d4_tray",
+      "layer": "1d",
+      "name": "The Tray, day 4",
+      "chapter": "ch5_day4",
+      "game": "the_tray",
+      "world_runs": true,
+      "reads": [
+        "hunger",
+        "clarity",
+        "change",
+        "suspicion",
+        "day",
+        "contraband_left"
+      ],
+      "writes": [
+        "meals",
+        "change",
+        "hunger",
+        "clarity",
+        "strength",
+        "pills_taken",
+        "suspicion",
+        "jax_trust",
+        "rules_broken",
+        "contraband_left"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d4_floorplan"
+      ]
+    },
+    {
+      "id": "d4_floorplan",
+      "layer": "1d",
+      "name": "Floor Plan: the halls do not add up",
+      "chapter": "ch5_day4",
+      "game": "floor_plan",
+      "reads": [
+        "clarity",
+        "change",
+        "nights_out"
+      ],
+      "writes": [
+        "knows",
+        "the_list"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d4_rations"
+      ]
+    },
+    {
+      "id": "d4_rations",
+      "layer": "1d",
+      "name": "Short Rations: four seats",
+      "chapter": "ch5_day4",
+      "game": "short_rations",
+      "reads": [
+        "chairs_empty",
+        "clarity",
+        "hunger",
+        "jax_arrived"
+      ],
+      "writes": [
+        "bread_banked",
+        "jax_trust",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax",
+        "hunger"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "n4_door"
+      ]
+    },
+    {
+      "id": "n4_door",
+      "layer": "3d",
+      "name": "Night 4: the door at 10:00",
+      "chapter": "ch5_day4",
+      "reads": [
+        "change",
+        "hunger",
+        "bread_banked",
+        "clarity",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax"
+      ],
+      "writes": [
+        "nights_out",
+        "nights_followed",
+        "rules_broken",
+        "change",
+        "clarity",
+        "taken",
+        "chairs_empty",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "n4_halls",
+        "d5_chart"
+      ]
+    },
+    {
+      "id": "n4_halls",
+      "layer": "2d",
+      "name": "Night 4: the halls to the officers' wing",
+      "chapter": "ch5_day4",
+      "mode": "silhouette_halls",
+      "reads": [
+        "change",
+        "warmth",
+        "clarity"
+      ],
+      "writes": [
+        "suspicion",
+        "rules_broken",
+        "warmth"
+      ],
+      "enter": "flatten",
+      "exit": "pull-out",
+      "next": [
+        "n4_office",
+        "d5_chart"
+      ]
+    },
+    {
+      "id": "n4_office",
+      "layer": "3d",
+      "name": "Night 4: Sam's office and the files",
+      "chapter": "ch5_day4",
+      "reads": [
+        "clarity"
+      ],
+      "writes": [
+        "files_read",
+        "the_list",
+        "knows",
+        "contraband_left",
+        "meals",
+        "rules_broken"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "next": [
+        "d5_chart"
+      ]
+    },
+    {
+      "id": "d5_chart",
+      "layer": "1d",
+      "name": "The Chart, day 5: on schedule",
+      "chapter": "ch6_day5",
+      "game": "the_chart",
+      "reads": [
+        "change",
+        "clarity",
+        "the_list",
+        "day"
+      ],
+      "writes": [
+        "knows",
+        "the_list"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d5_duty_laundry"
+      ]
+    },
+    {
+      "id": "d5_duty_laundry",
+      "layer": "3d",
+      "name": "Duty: the laundry",
+      "chapter": "ch6_day5",
+      "reads": [
+        "strength"
+      ],
+      "writes": [
+        "the_list",
+        "duties_failed"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "d5_tray"
+      ]
+    },
+    {
+      "id": "d5_tray",
+      "layer": "1d",
+      "name": "The Tray, day 5",
+      "chapter": "ch6_day5",
+      "game": "the_tray",
+      "world_runs": true,
+      "reads": [
+        "hunger",
+        "clarity",
+        "change",
+        "suspicion",
+        "day",
+        "contraband_left"
+      ],
+      "writes": [
+        "meals",
+        "change",
+        "hunger",
+        "clarity",
+        "strength",
+        "pills_taken",
+        "suspicion",
+        "jax_trust",
+        "rules_broken",
+        "contraband_left"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d5_jax_plan"
+      ]
+    },
+    {
+      "id": "d5_jax_plan",
+      "layer": "3d",
+      "name": "The bunk: Jax's plan",
+      "chapter": "ch6_day5",
+      "reads": [
+        "jax_trust",
+        "knows",
+        "jax_fate"
+      ],
+      "writes": [
+        "jax_plan_answer",
+        "jax_trust"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "d5_sam_office",
+        "d5_rations"
+      ]
+    },
+    {
+      "id": "d5_sam_office",
+      "layer": "3d",
+      "name": "Sam's office: the report",
+      "chapter": "ch6_day5",
+      "reads": [
+        "jax_plan_answer"
+      ],
+      "writes": [
+        "suspicion",
+        "jax_fate"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "d5_rations"
+      ]
+    },
+    {
+      "id": "d5_rations",
+      "layer": "1d",
+      "name": "Short Rations: three seats",
+      "chapter": "ch6_day5",
+      "game": "short_rations",
+      "reads": [
+        "chairs_empty",
+        "clarity",
+        "hunger",
+        "jax_arrived"
+      ],
+      "writes": [
+        "bread_banked",
+        "jax_trust",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax",
+        "hunger"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "n5_door"
+      ]
+    },
+    {
+      "id": "n5_door",
+      "layer": "3d",
+      "name": "Night 5: the door at 10:00",
+      "chapter": "ch6_day5",
+      "reads": [
+        "change",
+        "hunger",
+        "bread_banked",
+        "clarity",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax",
+        "jax_plan_answer"
+      ],
+      "writes": [
+        "nights_out",
+        "nights_followed",
+        "rules_broken",
+        "change",
+        "clarity",
+        "taken",
+        "chairs_empty",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax",
+        "jax_fate"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "n5_snow",
+        "d6_chart"
+      ]
+    },
+    {
+      "id": "n5_snow",
+      "layer": "2d",
+      "name": "Night 5: the bare footprints to the adit",
+      "chapter": "ch6_day5",
+      "mode": "snow_line",
+      "reads": [
+        "change",
+        "warmth",
+        "clarity",
+        "jax_plan_answer"
+      ],
+      "writes": [
+        "adit_found",
+        "suspicion",
+        "rules_broken",
+        "warmth",
+        "the_list",
+        "jax_trust"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "d6_chart"
+      ]
+    },
+    {
+      "id": "d6_chart",
+      "layer": "1d",
+      "name": "The Chart, day 6",
+      "chapter": "ch7_day6",
+      "game": "the_chart",
+      "reads": [
+        "change",
+        "clarity",
+        "the_list",
+        "day"
+      ],
+      "writes": [
+        "knows",
+        "the_list"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d6_sam_offer"
+      ]
+    },
+    {
+      "id": "d6_sam_offer",
+      "layer": "3d",
+      "name": "Sam's visit: the offer or the inspection",
+      "chapter": "ch7_day6",
+      "reads": [
+        "jax_plan_answer",
+        "suspicion"
+      ],
+      "writes": [
+        "sam_offer_made",
+        "sam_offer_accepted"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "d6_tray"
+      ]
+    },
+    {
+      "id": "d6_tray",
+      "layer": "1d",
+      "name": "The Tray, day 6",
+      "chapter": "ch7_day6",
+      "game": "the_tray",
+      "world_runs": true,
+      "reads": [
+        "hunger",
+        "clarity",
+        "change",
+        "suspicion",
+        "day",
+        "contraband_left",
+        "sam_offer_accepted"
+      ],
+      "writes": [
+        "meals",
+        "change",
+        "hunger",
+        "clarity",
+        "strength",
+        "pills_taken",
+        "suspicion",
+        "jax_trust",
+        "rules_broken",
+        "contraband_left"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d6_floorplan"
+      ]
+    },
+    {
+      "id": "d6_floorplan",
+      "layer": "1d",
+      "name": "Floor Plan: placing the void",
+      "chapter": "ch7_day6",
+      "game": "floor_plan",
+      "reads": [
+        "clarity",
+        "change",
+        "nights_out",
+        "files_read",
+        "cold_from_below"
+      ],
+      "writes": [
+        "void_located",
+        "knows"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d6_rations"
+      ]
+    },
+    {
+      "id": "d6_rations",
+      "layer": "1d",
+      "name": "Short Rations: the last game",
+      "chapter": "ch7_day6",
+      "game": "short_rations",
+      "reads": [
+        "chairs_empty",
+        "clarity",
+        "hunger",
+        "jax_arrived",
+        "jax_fate",
+        "sam_offer_accepted"
+      ],
+      "writes": [
+        "bread_banked",
+        "jax_trust",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax",
+        "hunger"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "n6_door"
+      ]
+    },
+    {
+      "id": "n6_door",
+      "layer": "3d",
+      "name": "Night 6: the door at 10:00",
+      "chapter": "ch7_day6",
+      "reads": [
+        "change",
+        "hunger",
+        "bread_banked",
+        "clarity",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax",
+        "void_located"
+      ],
+      "writes": [
+        "nights_out",
+        "nights_followed",
+        "rules_broken",
+        "change",
+        "clarity",
+        "taken",
+        "chairs_empty",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "n6_halls",
+        "d7_chart"
+      ]
+    },
+    {
+      "id": "n6_halls",
+      "layer": "2d",
+      "name": "Night 6: the halls to the hidden stair",
+      "chapter": "ch7_day6",
+      "mode": "silhouette_halls",
+      "reads": [
+        "change",
+        "warmth",
+        "clarity",
+        "void_located"
+      ],
+      "writes": [
+        "suspicion",
+        "rules_broken",
+        "warmth"
+      ],
+      "enter": "flatten",
+      "exit": "pull-out",
+      "next": [
+        "n6_pens",
+        "d7_chart"
+      ]
+    },
+    {
+      "id": "n6_pens",
+      "layer": "3d",
+      "name": "Night 6: the pens below",
+      "chapter": "ch7_day6",
+      "reads": [
+        "clarity"
+      ],
+      "writes": [
+        "pens_seen",
+        "the_list",
+        "knows"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "next": [
+        "d7_chart"
+      ]
+    },
+    {
+      "id": "d7_chart",
+      "layer": "1d",
+      "name": "The Chart, day 7: ready",
+      "chapter": "ch8_day7",
+      "game": "the_chart",
+      "reads": [
+        "change",
+        "clarity",
+        "the_list",
+        "day"
+      ],
+      "writes": [
+        "knows",
+        "the_list"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d7_duty_walk"
+      ]
+    },
+    {
+      "id": "d7_duty_walk",
+      "layer": "3d",
+      "name": "Duty: the empty halls fit",
+      "chapter": "ch8_day7",
+      "reads": [
+        "change"
+      ],
+      "writes": [
+        "duties_failed"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "d7_tray"
+      ]
+    },
+    {
+      "id": "d7_tray",
+      "layer": "1d",
+      "name": "The Tray: the last ration",
+      "chapter": "ch8_day7",
+      "game": "the_tray",
+      "world_runs": true,
+      "reads": [
+        "hunger",
+        "clarity",
+        "change",
+        "suspicion",
+        "day",
+        "contraband_left",
+        "sam_offer_accepted"
+      ],
+      "writes": [
+        "meals",
+        "change",
+        "hunger",
+        "clarity",
+        "strength",
+        "pills_taken",
+        "suspicion",
+        "jax_trust",
+        "rules_broken",
+        "contraband_left"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "d7_bunk_evening"
+      ]
+    },
+    {
+      "id": "d7_bunk_evening",
+      "layer": "3d",
+      "name": "The last evening in the bunk",
+      "chapter": "ch8_day7",
+      "reads": [
+        "jax_fate",
+        "jax_trust",
+        "bread_banked"
+      ],
+      "writes": [
+        "hunger",
+        "jax_trust"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "n7_door"
+      ]
+    },
+    {
+      "id": "n7_door",
+      "layer": "3d",
+      "name": "Night 7: the last door",
+      "chapter": "ch8_day7",
+      "reads": [
+        "change",
+        "hunger",
+        "bread_banked",
+        "clarity",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax",
+        "jax_fate",
+        "sam_offer_accepted"
+      ],
+      "writes": [
+        "nights_out",
+        "nights_followed",
+        "rules_broken",
+        "change",
+        "clarity",
+        "taken",
+        "chairs_empty",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax",
+        "night7_choice",
+        "followed_with"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "n7_halls",
+        "n7_snow",
+        "n7_bunk_stay"
+      ]
+    },
+    {
+      "id": "n7_halls",
+      "layer": "2d",
+      "name": "Night 7: the halls toward the flute",
+      "chapter": "ch8_day7",
+      "mode": "silhouette_halls",
+      "reads": [
+        "change",
+        "warmth",
+        "clarity",
+        "followed_with"
+      ],
+      "writes": [
+        "warmth"
+      ],
+      "enter": "flatten",
+      "exit": "pull-out",
+      "next": [
+        "n7_windigo"
+      ]
+    },
+    {
+      "id": "n7_windigo",
+      "layer": "3d",
+      "name": "Night 7: the corner",
+      "chapter": "ch8_day7",
+      "reads": [
+        "change",
+        "followed_with",
+        "nights_followed"
+      ],
+      "writes": [
+        "windigo_met",
+        "cave_reached"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "next": [
+        "e_cave",
+        "e_flute"
+      ]
+    },
+    {
+      "id": "n7_snow",
+      "layer": "2d",
+      "name": "Night 7: the fence",
+      "chapter": "ch8_day7",
+      "mode": "snow_line",
+      "reads": [
+        "change",
+        "warmth",
+        "jax_fate"
+      ],
+      "writes": [
+        "fence_crossed",
+        "jax_fell",
+        "rules_broken",
+        "warmth",
+        "cave_reached"
+      ],
+      "enter": "flatten",
+      "exit": "pull-out",
+      "next": [
+        "n7_perimeter",
+        "e_cave"
+      ]
+    },
+    {
+      "id": "n7_perimeter",
+      "layer": "3d",
+      "name": "Night 7: past the wire",
+      "chapter": "ch8_day7",
+      "reads": [
+        "jax_fell"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "next": [
+        "e_tree_line"
+      ]
+    },
+    {
+      "id": "n7_bunk_stay",
+      "layer": "3d",
+      "name": "Night 7: staying in",
+      "chapter": "ch8_day7",
+      "reads": [
+        "change",
+        "nights_followed",
+        "meals",
+        "sam_offer_accepted"
+      ],
+      "writes": [
+        "cave_reached"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "e_cave",
+        "e_transfer_truck",
+        "e_new_recruit"
+      ]
+    },
+    {
+      "id": "e_cave",
+      "layer": "3d",
+      "name": "The cave: Sam explains",
+      "chapter": "ch9_end",
+      "reads": [
+        "followed_with",
+        "knows"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "e_zoo_wake"
+      ]
+    },
+    {
+      "id": "e_zoo_wake",
+      "layer": "3d",
+      "name": "The Zoo: waking",
+      "chapter": "ch9_end",
+      "reads": [
+        "clarity"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": []
+    },
+    {
+      "id": "e_tree_line",
+      "layer": "3d",
+      "name": "Rule Three: the tree line",
+      "chapter": "ch9_end",
+      "reads": [
+        "jax_fell"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": []
+    },
+    {
+      "id": "e_transfer_truck",
+      "layer": "3d",
+      "name": "Transferred: the truck",
+      "chapter": "ch9_end",
+      "reads": [
+        "jax_fate",
+        "knows"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": []
+    },
+    {
+      "id": "e_new_recruit",
+      "layer": "3d",
+      "name": "Call Me Sam: the new recruit",
+      "chapter": "ch9_end",
+      "reads": [
+        "change"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": []
+    },
+    {
+      "id": "e_flute",
+      "layer": "3d",
+      "name": "Footsteps: the flute down the hall",
+      "chapter": "ch9_end",
+      "reads": [
+        "change"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": []
+    }
+  ]
+}
