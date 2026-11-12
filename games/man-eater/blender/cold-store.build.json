@@ -1,0 +1,620 @@
+{
+  "game": "man-eater",
+  "location": "cold-store",
+  "name": "The loading bay and the cold store",
+  "reference": "assets/locations/cold-store.jpg",
+  "bounds_m": [
+    40,
+    8,
+    5
+  ],
+  "origin": "floor centre; +x east toward the cold-store door, the loading bay and its roller door at the west end of the north (+y) wall",
+  "materials": {
+    "concrete": {
+      "color": [
+        0.45,
+        0.45,
+        0.44
+      ],
+      "roughness": 0.95
+    },
+    "frost": {
+      "color": [
+        0.486,
+        0.549,
+        0.6
+      ],
+      "roughness": 0.7
+    },
+    "snow": {
+      "color": [
+        0.933,
+        0.945,
+        0.949
+      ],
+      "roughness": 0.95
+    },
+    "steel": {
+      "color": [
+        0.541,
+        0.561,
+        0.576
+      ],
+      "roughness": 0.55,
+      "metallic": 0.8
+    },
+    "wall-cream": {
+      "color": [
+        0.851,
+        0.824,
+        0.749
+      ],
+      "roughness": 0.9
+    },
+    "wall-green": {
+      "color": [
+        0.369,
+        0.451,
+        0.388
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        40.0,
+        8.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        40.0,
+        8.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        5.05
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "bay-snow",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        8,
+        5,
+        0.04
+      ],
+      "location": [
+        -15,
+        1.2,
+        0.02
+      ],
+      "material": "snow"
+    },
+    {
+      "id": "frost-line",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.2,
+        4,
+        0.02
+      ],
+      "location": [
+        19.2,
+        0,
+        0.01
+      ],
+      "material": "frost"
+    },
+    {
+      "id": "wall-south-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40,
+        0.15,
+        1.4
+      ],
+      "location": [
+        0.0,
+        -4.075,
+        0.7
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-south-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40,
+        0.15,
+        3.6
+      ],
+      "location": [
+        0.0,
+        -4.075,
+        3.2
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-north-bay-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.0,
+        0.15,
+        5.0
+      ],
+      "location": [
+        -19,
+        4.075,
+        2.5
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-north-bay-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6.0,
+        0.15,
+        0.8
+      ],
+      "location": [
+        -15,
+        4.075,
+        4.6
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "roller-shutter",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6.0,
+        0.4,
+        0.7
+      ],
+      "location": [
+        -15,
+        3.9,
+        3.85
+      ],
+      "material": "steel"
+    },
+    {
+      "id": "bay-opening",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        6.0,
+        0.05,
+        4.2
+      ],
+      "location": [
+        -15,
+        4.1,
+        2.1
+      ],
+      "material": "snow",
+      "collide": false
+    },
+    {
+      "id": "wall-north-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        32,
+        0.15,
+        1.4
+      ],
+      "location": [
+        4.0,
+        4.075,
+        0.7
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-north-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        32,
+        0.15,
+        3.6
+      ],
+      "location": [
+        4.0,
+        4.075,
+        3.2
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-west-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        8,
+        1.4
+      ],
+      "location": [
+        -20.075,
+        0.0,
+        0.7
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-west-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        8,
+        3.6
+      ],
+      "location": [
+        -20.075,
+        0.0,
+        3.2
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-east-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        2.5,
+        5.0
+      ],
+      "location": [
+        20.075,
+        -2.75,
+        2.5
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-east-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        2.5,
+        5.0
+      ],
+      "location": [
+        20.075,
+        2.75,
+        2.5
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-east-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        3.0,
+        1.8
+      ],
+      "location": [
+        20.075,
+        0,
+        4.1
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "cold-store-door",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.2,
+        3.0,
+        3.2
+      ],
+      "location": [
+        19.95,
+        0,
+        1.6
+      ],
+      "material": "steel"
+    },
+    {
+      "id": "pipes",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.15,
+        0.15,
+        36
+      ],
+      "location": [
+        -1,
+        3.6,
+        4.6
+      ],
+      "material": "steel",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "pillar-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        5.0
+      ],
+      "location": [
+        4,
+        -3.6,
+        2.5
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "pillar-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        5.0
+      ],
+      "location": [
+        12,
+        -3.6,
+        2.5
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "forklift-body",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        2.2,
+        1.4
+      ],
+      "location": [
+        -18.5,
+        -1.8,
+        0.7
+      ],
+      "material": "frost"
+    },
+    {
+      "id": "forklift-mast",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        0.15,
+        2.4
+      ],
+      "location": [
+        -18.5,
+        -0.6,
+        1.2
+      ],
+      "material": "steel"
+    }
+  ],
+  "props": [
+    {
+      "id": "crate-1",
+      "object": "supply-crate",
+      "location": [
+        -16.5,
+        3.2,
+        0
+      ]
+    },
+    {
+      "id": "crate-2",
+      "object": "supply-crate",
+      "location": [
+        -16.5,
+        3.2,
+        0.4
+      ]
+    },
+    {
+      "id": "crate-3",
+      "object": "supply-crate",
+      "location": [
+        -15.7,
+        3.2,
+        0
+      ]
+    },
+    {
+      "id": "crate-4",
+      "object": "supply-crate",
+      "location": [
+        -15.7,
+        3.2,
+        0.4
+      ]
+    },
+    {
+      "id": "crate-stack-a",
+      "object": "supply-crate",
+      "location": [
+        -18.6,
+        3.4,
+        0
+      ]
+    },
+    {
+      "id": "crate-stack-b",
+      "object": "supply-crate",
+      "location": [
+        -18.6,
+        3.4,
+        0.4
+      ]
+    },
+    {
+      "id": "crate-stack-c",
+      "object": "supply-crate",
+      "location": [
+        -18.6,
+        3.4,
+        0.8
+      ]
+    },
+    {
+      "id": "crate-delivered",
+      "object": "supply-crate",
+      "location": [
+        18.2,
+        -2.6,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "d1_duty_coldstore": {
+      "note": "Day 1 duty: carry four 25 kg crates from the bay to the infirmary's cold store; the frost line in front of its door does not melt. The forklift does not start.",
+      "world": {
+        "color": [
+          0.75,
+          0.8,
+          0.85
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "bay-daylight",
+          "type": "AREA",
+          "location": [
+            -15,
+            5.5,
+            3.0
+          ],
+          "energy": 900,
+          "size": 5,
+          "color": [
+            0.85,
+            0.9,
+            1.0
+          ],
+          "look_at": [
+            -15,
+            -2,
+            0.5
+          ]
+        },
+        {
+          "name": "corridor-lamp",
+          "type": "POINT",
+          "location": [
+            4,
+            0,
+            4.7
+          ],
+          "energy": 120,
+          "size": 0.3,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ]
+        },
+        {
+          "name": "cold-store-blue",
+          "type": "AREA",
+          "location": [
+            19.4,
+            0,
+            3.5
+          ],
+          "energy": 160,
+          "size": 2.5,
+          "color": [
+            0.6,
+            0.75,
+            1.0
+          ],
+          "look_at": [
+            17,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -14,
+          0,
+          1.66
+        ],
+        "look_at": [
+          -16.2,
+          3.2,
+          0.6
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -14,
+          0,
+          0.0
+        ],
+        "facing_deg": 45
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "crate-1",
+          "verb": "Lift a crate"
+        },
+        {
+          "prop": "crate-delivered",
+          "verb": "Set the crate down at the cold store",
+          "leads_to": "d1_rec_room"
+        }
+      ]
+    }
+  }
+}

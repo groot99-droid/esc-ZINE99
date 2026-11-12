@@ -1,0 +1,469 @@
+{
+  "game": "man-eater",
+  "location": "mail-room",
+  "name": "The mail room",
+  "reference": "assets/locations/mail-room.jpg",
+  "bounds_m": [
+    4,
+    3,
+    4.57
+  ],
+  "origin": "floor centre; +y toward the counter and pigeonholes, the entry door on the south wall, a second door on the east wall",
+  "materials": {
+    "concrete": {
+      "color": [
+        0.45,
+        0.45,
+        0.44
+      ],
+      "roughness": 0.95
+    },
+    "dark-wood": {
+      "color": [
+        0.3,
+        0.2,
+        0.13
+      ],
+      "roughness": 0.8
+    },
+    "steel": {
+      "color": [
+        0.541,
+        0.561,
+        0.576
+      ],
+      "roughness": 0.55,
+      "metallic": 0.8
+    },
+    "wall-cream": {
+      "color": [
+        0.851,
+        0.824,
+        0.749
+      ],
+      "roughness": 0.9
+    },
+    "wall-green": {
+      "color": [
+        0.369,
+        0.451,
+        0.388
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        4,
+        3,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        4,
+        3,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        4.62
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-north-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4,
+        0.15,
+        1.6
+      ],
+      "location": [
+        0.0,
+        1.575,
+        0.8
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-north-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4,
+        0.15,
+        2.97
+      ],
+      "location": [
+        0.0,
+        1.575,
+        3.085
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-south-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.25,
+        0.15,
+        4.57
+      ],
+      "location": [
+        -1.375,
+        -1.575,
+        2.285
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-south-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.65,
+        0.15,
+        4.57
+      ],
+      "location": [
+        1.175,
+        -1.575,
+        2.285
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-south-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.1,
+        0.15,
+        0.37
+      ],
+      "location": [
+        -0.2,
+        -1.575,
+        4.385
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-west-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        3.0,
+        1.6
+      ],
+      "location": [
+        -2.075,
+        0.0,
+        0.8
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-west-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        3.0,
+        2.97
+      ],
+      "location": [
+        -2.075,
+        0.0,
+        3.085
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-east-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        3.0,
+        1.6
+      ],
+      "location": [
+        2.075,
+        0.0,
+        0.8
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-east-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        3.0,
+        2.97
+      ],
+      "location": [
+        2.075,
+        0.0,
+        3.085
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "east-door",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.06,
+        1.1,
+        4.2
+      ],
+      "location": [
+        1.97,
+        0.4,
+        2.1
+      ],
+      "material": "steel"
+    },
+    {
+      "id": "counter",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.4,
+        0.6,
+        1.0
+      ],
+      "location": [
+        -0.4,
+        1.2,
+        0.5
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "pigeonholes",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.2,
+        0.3,
+        1.2
+      ],
+      "location": [
+        -0.4,
+        1.35,
+        1.6
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "letters",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2.0,
+        0.25,
+        1.0
+      ],
+      "location": [
+        -0.4,
+        1.32,
+        1.6
+      ],
+      "material": "wall-cream",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "sack-counter-a",
+      "object": "mail-sack",
+      "location": [
+        -0.6,
+        0.65,
+        0
+      ]
+    },
+    {
+      "id": "sack-counter-b",
+      "object": "mail-sack",
+      "location": [
+        0.0,
+        0.65,
+        0
+      ]
+    },
+    {
+      "id": "sack-west",
+      "object": "mail-sack",
+      "location": [
+        -1.65,
+        -0.6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        80
+      ]
+    },
+    {
+      "id": "sack-hold-full",
+      "object": "mail-sack",
+      "location": [
+        1.5,
+        -0.9,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        20
+      ]
+    },
+    {
+      "id": "sack-hold-new",
+      "object": "mail-sack",
+      "location": [
+        1.45,
+        -0.85,
+        0.75
+      ],
+      "rotation_deg": [
+        70,
+        0,
+        20
+      ]
+    },
+    {
+      "id": "sack-pile",
+      "object": "mail-sack",
+      "location": [
+        1.6,
+        0.2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -15
+      ]
+    },
+    {
+      "id": "sack-shelf-1",
+      "object": "mail-sack",
+      "location": [
+        -1.2,
+        1.35,
+        2.2
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        90
+      ],
+      "height_m": 0.4
+    },
+    {
+      "id": "sack-shelf-2",
+      "object": "mail-sack",
+      "location": [
+        0.3,
+        1.35,
+        2.2
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        90
+      ],
+      "height_m": 0.4
+    }
+  ],
+  "scenes": {
+    "d3_mail_room": {
+      "note": "Day 3: Duarte posts his letter. The sack is stamped HOLD; the sack under it is stamped HOLD and is full. Opening the lower sack sets mail_held (L8 broken).",
+      "world": {
+        "color": [
+          0.25,
+          0.28,
+          0.3
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "bulb",
+          "type": "POINT",
+          "location": [
+            -1.9,
+            0.6,
+            3.0
+          ],
+          "energy": 110,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.82,
+            0.55
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -0.2,
+          -1.1,
+          1.85
+        ],
+        "look_at": [
+          0.6,
+          0.6,
+          0.9
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -0.2,
+          -1.1,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "sack-hold-new",
+          "verb": "Read the stamp"
+        },
+        {
+          "prop": "sack-hold-full",
+          "verb": "Open the lower sack",
+          "leads_to": "d3_rations"
+        }
+      ]
+    }
+  }
+}

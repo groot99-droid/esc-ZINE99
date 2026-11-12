@@ -1,0 +1,1329 @@
+{
+  "game": "man-eater",
+  "location": "tall-halls",
+  "name": "The tall halls",
+  "reference": "assets/locations/tall-halls.jpg",
+  "bounds_m": [
+    6.5,
+    120,
+    4.57
+  ],
+  "origin": "floor centre of the 1.22 m hall; +y north toward the corner and the stair door (which turns +x at y = 58), the yard door at the south end; the bounds are widened in x only for the corner leg",
+  "materials": {
+    "concrete": {
+      "color": [
+        0.45,
+        0.45,
+        0.44
+      ],
+      "roughness": 0.95
+    },
+    "frosted-glass": {
+      "color": [
+        0.86,
+        0.88,
+        0.86
+      ],
+      "roughness": 0.3,
+      "emission": 0.8
+    },
+    "ink": {
+      "color": [
+        0.106,
+        0.114,
+        0.122
+      ],
+      "roughness": 0.9
+    },
+    "wall-cream": {
+      "color": [
+        0.851,
+        0.824,
+        0.749
+      ],
+      "roughness": 0.9
+    },
+    "wall-green": {
+      "color": [
+        0.369,
+        0.451,
+        0.388
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        1.22,
+        118.78,
+        0.1
+      ],
+      "location": [
+        0,
+        -0.61,
+        -0.05
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "floor-corner",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        2.39,
+        1.22,
+        0.1
+      ],
+      "location": [
+        1.805,
+        58.17,
+        -0.05
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        1.22,
+        118.78,
+        0.1
+      ],
+      "location": [
+        0,
+        -0.61,
+        4.62
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "ceiling-corner",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        2.39,
+        1.22,
+        0.1
+      ],
+      "location": [
+        1.805,
+        58.17,
+        4.62
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-west-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        118.78,
+        2.0
+      ],
+      "location": [
+        -0.685,
+        -0.61,
+        1.0
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-west-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        118.78,
+        2.57
+      ],
+      "location": [
+        -0.685,
+        -0.61,
+        3.285
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-east-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        117.56,
+        2.0
+      ],
+      "location": [
+        0.685,
+        -1.22,
+        1.0
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-east-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        117.56,
+        2.57
+      ],
+      "location": [
+        0.685,
+        -1.22,
+        3.285
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-north-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3.91,
+        0.15,
+        2.0
+      ],
+      "location": [
+        1.195,
+        58.855,
+        1.0
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-north-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3.91,
+        0.15,
+        2.57
+      ],
+      "location": [
+        1.195,
+        58.855,
+        3.285
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-leg-south-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.39,
+        0.15,
+        2.0
+      ],
+      "location": [
+        1.805,
+        57.485,
+        1.0
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-leg-south-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.39,
+        0.15,
+        2.57
+      ],
+      "location": [
+        1.805,
+        57.485,
+        3.285
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-yard-end-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.52,
+        0.15,
+        2.0
+      ],
+      "location": [
+        0.0,
+        -60.075,
+        1.0
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-yard-end-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.52,
+        0.15,
+        2.57
+      ],
+      "location": [
+        0.0,
+        -60.075,
+        3.285
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "stair-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.22,
+        0.37
+      ],
+      "location": [
+        3.075,
+        58.17,
+        4.385
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "window-1",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.05,
+        0.9,
+        0.6
+      ],
+      "location": [
+        0.61,
+        -45,
+        3.5
+      ],
+      "material": "frosted-glass",
+      "collide": false
+    },
+    {
+      "id": "window-2",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.05,
+        0.9,
+        0.6
+      ],
+      "location": [
+        0.61,
+        -20,
+        3.5
+      ],
+      "material": "frosted-glass",
+      "collide": false
+    },
+    {
+      "id": "window-3",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.05,
+        0.9,
+        0.6
+      ],
+      "location": [
+        0.61,
+        5,
+        3.5
+      ],
+      "material": "frosted-glass",
+      "collide": false
+    },
+    {
+      "id": "window-4",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.05,
+        0.9,
+        0.6
+      ],
+      "location": [
+        0.61,
+        30,
+        3.5
+      ],
+      "material": "frosted-glass",
+      "collide": false
+    },
+    {
+      "id": "window-5",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.05,
+        0.9,
+        0.6
+      ],
+      "location": [
+        0.61,
+        50,
+        3.5
+      ],
+      "material": "frosted-glass",
+      "collide": false
+    },
+    {
+      "id": "window-corner",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.9,
+        0.05,
+        0.7
+      ],
+      "location": [
+        1.3,
+        58.78,
+        3.5
+      ],
+      "material": "frosted-glass",
+      "collide": false
+    },
+    {
+      "id": "rail-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.05,
+        118.78,
+        0.05
+      ],
+      "location": [
+        -0.58,
+        -0.61,
+        2.0
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "rail-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.05,
+        117.56,
+        0.05
+      ],
+      "location": [
+        0.58,
+        -1.22,
+        2.0
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "claw-marks-bunk",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.01,
+        3.0,
+        1.0
+      ],
+      "location": [
+        0.6,
+        30,
+        3.6
+      ],
+      "material": "ink",
+      "collide": false
+    },
+    {
+      "id": "claw-marks-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.01,
+        2.5,
+        1.2
+      ],
+      "location": [
+        -0.6,
+        12,
+        3.5
+      ],
+      "material": "ink",
+      "collide": false
+    },
+    {
+      "id": "claw-marks-corner",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.01,
+        1.2,
+        3.2
+      ],
+      "location": [
+        -0.6,
+        57.6,
+        2.9
+      ],
+      "material": "ink",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "door-yard",
+      "object": "two-handle-door",
+      "location": [
+        0,
+        -59.96,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "door-stair",
+      "object": "two-handle-door",
+      "location": [
+        2.96,
+        58.17,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "door-1",
+      "object": "two-handle-door",
+      "location": [
+        -0.57,
+        -45,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "door-2",
+      "object": "two-handle-door",
+      "location": [
+        0.57,
+        -38,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "door-3",
+      "object": "two-handle-door",
+      "location": [
+        -0.57,
+        -24,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "door-4",
+      "object": "two-handle-door",
+      "location": [
+        0.57,
+        -10,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "door-5",
+      "object": "two-handle-door",
+      "location": [
+        -0.57,
+        2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "door-6",
+      "object": "two-handle-door",
+      "location": [
+        0.57,
+        14,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "door-bunk",
+      "object": "two-handle-door",
+      "location": [
+        -0.57,
+        30,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "door-8",
+      "object": "two-handle-door",
+      "location": [
+        0.57,
+        38,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "door-9",
+      "object": "two-handle-door",
+      "location": [
+        -0.57,
+        45,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "door-10",
+      "object": "two-handle-door",
+      "location": [
+        0.57,
+        52,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "ladder",
+      "object": "ladder",
+      "location": [
+        0.3,
+        31.6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "paint-tin",
+      "object": "paint-tin",
+      "location": [
+        0.25,
+        30.8,
+        0
+      ]
+    },
+    {
+      "id": "door-log",
+      "object": "door-log-clipboard",
+      "location": [
+        -0.58,
+        -58.6,
+        1.45
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "c1_halls": {
+      "note": "Day 1, with Sam, on rails at walking pace with free look: claw marks high on the walls (L3), breath showing (L4), the proportions (L5), two handles on every door.",
+      "world": {
+        "color": [
+          0.5,
+          0.55,
+          0.52
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "strip-1",
+          "type": "AREA",
+          "location": [
+            0,
+            -50,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            -50,
+            0
+          ]
+        },
+        {
+          "name": "strip-2",
+          "type": "AREA",
+          "location": [
+            0,
+            -26,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            -26,
+            0
+          ]
+        },
+        {
+          "name": "strip-3",
+          "type": "AREA",
+          "location": [
+            0,
+            -2,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            -2,
+            0
+          ]
+        },
+        {
+          "name": "strip-4",
+          "type": "AREA",
+          "location": [
+            0,
+            22,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            22,
+            0
+          ]
+        },
+        {
+          "name": "strip-5",
+          "type": "AREA",
+          "location": [
+            0,
+            34,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            34,
+            0
+          ]
+        },
+        {
+          "name": "strip-6",
+          "type": "AREA",
+          "location": [
+            0,
+            46,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            46,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -58,
+          1.66
+        ],
+        "look_at": [
+          0,
+          -40,
+          2.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -58,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "ladder",
+        "paint-tin"
+      ],
+      "interactions": [
+        {
+          "prop": "door-1",
+          "verb": "Look at the two handles"
+        },
+        {
+          "prop": "door-bunk",
+          "verb": "Go in",
+          "leads_to": "c1_bunk"
+        }
+      ]
+    },
+    "d2_duty_paint": {
+      "note": "Day 2 duty: paint over the claw marks in the bunk hall; the marks are at 3.6 m, and scraping shows older marks under older paint (L3 broken).",
+      "world": {
+        "color": [
+          0.5,
+          0.55,
+          0.52
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "strip-1",
+          "type": "AREA",
+          "location": [
+            0,
+            -50,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            -50,
+            0
+          ]
+        },
+        {
+          "name": "strip-2",
+          "type": "AREA",
+          "location": [
+            0,
+            -26,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            -26,
+            0
+          ]
+        },
+        {
+          "name": "strip-3",
+          "type": "AREA",
+          "location": [
+            0,
+            -2,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            -2,
+            0
+          ]
+        },
+        {
+          "name": "strip-4",
+          "type": "AREA",
+          "location": [
+            0,
+            22,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            22,
+            0
+          ]
+        },
+        {
+          "name": "strip-5",
+          "type": "AREA",
+          "location": [
+            0,
+            34,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            34,
+            0
+          ]
+        },
+        {
+          "name": "strip-6",
+          "type": "AREA",
+          "location": [
+            0,
+            46,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            46,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          26,
+          1.75
+        ],
+        "look_at": [
+          0.6,
+          30,
+          3.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          26,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "ladder",
+          "verb": "Climb and measure the marks"
+        },
+        {
+          "prop": "paint-tin",
+          "verb": "Paint over the marks",
+          "leads_to": "d2_tray"
+        }
+      ]
+    },
+    "d7_duty_walk": {
+      "note": "Day 7 duty: walk the whole ground floor and log twelve doors. No crew. The eye sits at the height the halls were built for and the high lever is at hand.",
+      "world": {
+        "color": [
+          0.5,
+          0.55,
+          0.52
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "strip-1",
+          "type": "AREA",
+          "location": [
+            0,
+            -50,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            -50,
+            0
+          ]
+        },
+        {
+          "name": "strip-2",
+          "type": "AREA",
+          "location": [
+            0,
+            -26,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            -26,
+            0
+          ]
+        },
+        {
+          "name": "strip-3",
+          "type": "AREA",
+          "location": [
+            0,
+            -2,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            -2,
+            0
+          ]
+        },
+        {
+          "name": "strip-4",
+          "type": "AREA",
+          "location": [
+            0,
+            22,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            22,
+            0
+          ]
+        },
+        {
+          "name": "strip-5",
+          "type": "AREA",
+          "location": [
+            0,
+            34,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            34,
+            0
+          ]
+        },
+        {
+          "name": "strip-6",
+          "type": "AREA",
+          "location": [
+            0,
+            46,
+            3.8
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            46,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -57,
+          2.6
+        ],
+        "look_at": [
+          0,
+          -30,
+          2.6
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -57,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "ladder",
+        "paint-tin"
+      ],
+      "interactions": [
+        {
+          "prop": "door-log",
+          "verb": "Take the door log"
+        },
+        {
+          "prop": "door-1",
+          "verb": "Log the door"
+        },
+        {
+          "prop": "door-stair",
+          "verb": "Log the stair door"
+        },
+        {
+          "prop": "door-bunk",
+          "verb": "Log the twelfth door",
+          "leads_to": "d7_tray"
+        }
+      ]
+    },
+    "n7_windigo": {
+      "note": "Night 7, following: the strips off, frost, moonlight from the high windows; the corner by the stair, the figure backlit and never nearer than 6 m (never placed here); the gust, then the steps.",
+      "world": {
+        "color": [
+          0.353,
+          0.31,
+          0.369
+        ],
+        "strength": 0.08
+      },
+      "lights": [
+        {
+          "name": "moon-corner",
+          "type": "AREA",
+          "location": [
+            1.3,
+            59.2,
+            3.5
+          ],
+          "energy": 260,
+          "size": 0.9,
+          "color": [
+            0.62,
+            0.7,
+            0.9
+          ],
+          "look_at": [
+            0.3,
+            55,
+            0.5
+          ]
+        },
+        {
+          "name": "moon-window-5",
+          "type": "AREA",
+          "location": [
+            0.9,
+            50,
+            3.5
+          ],
+          "energy": 90,
+          "size": 0.9,
+          "color": [
+            0.62,
+            0.7,
+            0.9
+          ],
+          "look_at": [
+            -0.6,
+            50,
+            0
+          ]
+        },
+        {
+          "name": "moon-window-4",
+          "type": "AREA",
+          "location": [
+            0.9,
+            30,
+            3.5
+          ],
+          "energy": 40,
+          "size": 0.9,
+          "color": [
+            0.62,
+            0.7,
+            0.9
+          ],
+          "look_at": [
+            -0.6,
+            30,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          47,
+          2.6
+        ],
+        "look_at": [
+          0.6,
+          58.2,
+          2.6
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          47,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "ladder",
+        "paint-tin",
+        "door-log"
+      ],
+      "interactions": []
+    }
+  }
+}

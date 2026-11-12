@@ -1,0 +1,562 @@
+{
+  "game": "man-eater",
+  "location": "rec-room",
+  "name": "The rec room",
+  "reference": "assets/locations/rec-room.jpg",
+  "bounds_m": [
+    6,
+    6,
+    4.57
+  ],
+  "origin": "floor centre; +y toward the high window, the doorway on the east wall, the stove in the south-east corner",
+  "materials": {
+    "concrete": {
+      "color": [
+        0.45,
+        0.45,
+        0.44
+      ],
+      "roughness": 0.95
+    },
+    "frosted-glass": {
+      "color": [
+        0.86,
+        0.88,
+        0.86
+      ],
+      "roughness": 0.3,
+      "emission": 0.8
+    },
+    "ink": {
+      "color": [
+        0.106,
+        0.114,
+        0.122
+      ],
+      "roughness": 0.9
+    },
+    "pale-wood": {
+      "color": [
+        0.55,
+        0.42,
+        0.28
+      ],
+      "roughness": 0.8
+    },
+    "steel": {
+      "color": [
+        0.541,
+        0.561,
+        0.576
+      ],
+      "roughness": 0.55,
+      "metallic": 0.8
+    },
+    "wall-cream": {
+      "color": [
+        0.851,
+        0.824,
+        0.749
+      ],
+      "roughness": 0.9
+    },
+    "wall-green": {
+      "color": [
+        0.369,
+        0.451,
+        0.388
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        6.0,
+        6.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        6.0,
+        6.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        4.62
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-north-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6,
+        0.15,
+        1.9
+      ],
+      "location": [
+        0.0,
+        3.075,
+        0.95
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-north-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6,
+        0.15,
+        2.67
+      ],
+      "location": [
+        0.0,
+        3.075,
+        3.235
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-south-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6,
+        0.15,
+        1.9
+      ],
+      "location": [
+        0.0,
+        -3.075,
+        0.95
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-south-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6,
+        0.15,
+        2.67
+      ],
+      "location": [
+        0.0,
+        -3.075,
+        3.235
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-west-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        6,
+        1.9
+      ],
+      "location": [
+        -3.075,
+        0.0,
+        0.95
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-west-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        6,
+        2.67
+      ],
+      "location": [
+        -3.075,
+        0.0,
+        3.235
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-east-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        3.05,
+        4.57
+      ],
+      "location": [
+        3.075,
+        -1.475,
+        2.285
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-east-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.85,
+        4.57
+      ],
+      "location": [
+        3.075,
+        2.075,
+        2.285
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "wall-east-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.1,
+        0.37
+      ],
+      "location": [
+        3.075,
+        0.6,
+        4.385
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "window-high",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        2.4,
+        0.05,
+        0.7
+      ],
+      "location": [
+        0,
+        3.0,
+        3.7
+      ],
+      "material": "frosted-glass",
+      "collide": false
+    },
+    {
+      "id": "stove-plate",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.1,
+        1.1,
+        0.02
+      ],
+      "location": [
+        2.3,
+        -2.3,
+        0.01
+      ],
+      "material": "steel"
+    },
+    {
+      "id": "flue",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.15,
+        0.15,
+        2.8
+      ],
+      "location": [
+        2.3,
+        -2.3,
+        3.2
+      ],
+      "material": "ink"
+    },
+    {
+      "id": "bulb-flex",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.01,
+        0.01,
+        2.1
+      ],
+      "location": [
+        0,
+        0.3,
+        3.5
+      ],
+      "material": "ink",
+      "collide": false
+    },
+    {
+      "id": "chair-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.42,
+        0.42,
+        0.45
+      ],
+      "location": [
+        0.823,
+        0.775,
+        0.225
+      ],
+      "material": "pale-wood",
+      "rotation_deg": [
+        0,
+        0,
+        120
+      ]
+    },
+    {
+      "id": "chair-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.42,
+        0.42,
+        0.45
+      ],
+      "location": [
+        0.0,
+        1.25,
+        0.225
+      ],
+      "material": "pale-wood",
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "chair-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.42,
+        0.42,
+        0.45
+      ],
+      "location": [
+        -0.823,
+        0.775,
+        0.225
+      ],
+      "material": "pale-wood",
+      "rotation_deg": [
+        0,
+        0,
+        240
+      ]
+    },
+    {
+      "id": "chair-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.42,
+        0.42,
+        0.45
+      ],
+      "location": [
+        -0.823,
+        -0.175,
+        0.225
+      ],
+      "material": "pale-wood",
+      "rotation_deg": [
+        0,
+        0,
+        300
+      ]
+    },
+    {
+      "id": "chair-5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.42,
+        0.42,
+        0.45
+      ],
+      "location": [
+        -0.0,
+        -0.65,
+        0.225
+      ],
+      "material": "pale-wood",
+      "rotation_deg": [
+        0,
+        0,
+        360
+      ]
+    },
+    {
+      "id": "chair-6",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.42,
+        0.42,
+        0.45
+      ],
+      "location": [
+        0.823,
+        -0.175,
+        0.225
+      ],
+      "material": "pale-wood",
+      "rotation_deg": [
+        0,
+        0,
+        420
+      ]
+    }
+  ],
+  "props": [
+    {
+      "id": "table",
+      "object": "round-table",
+      "location": [
+        0,
+        0.3,
+        0
+      ]
+    },
+    {
+      "id": "deck",
+      "object": "card-deck",
+      "location": [
+        0.1,
+        0.25,
+        0.75
+      ]
+    },
+    {
+      "id": "stove",
+      "object": "wood-stove",
+      "location": [
+        2.3,
+        -2.3,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        45
+      ]
+    }
+  ],
+  "scenes": {
+    "d1_rec_room": {
+      "note": "Day 1 evening: six chairs at the round table under one warm bulb in a cold room; the stove gives no heat. Sitting pushes in to Short Rations.",
+      "world": {
+        "color": [
+          0.353,
+          0.31,
+          0.369
+        ],
+        "strength": 0.12
+      },
+      "lights": [
+        {
+          "name": "bulb",
+          "type": "POINT",
+          "location": [
+            0,
+            0.3,
+            2.4
+          ],
+          "energy": 90,
+          "size": 0.08,
+          "color": [
+            0.851,
+            0.643,
+            0.255
+          ]
+        },
+        {
+          "name": "window-cold",
+          "type": "AREA",
+          "location": [
+            0,
+            2.8,
+            3.7
+          ],
+          "energy": 25,
+          "size": 2.4,
+          "color": [
+            0.6,
+            0.75,
+            1.0
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          0.6,
+          1.66
+        ],
+        "look_at": [
+          0,
+          0.3,
+          0.8
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          2.4,
+          0.6,
+          0.0
+        ],
+        "facing_deg": 90
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "table",
+          "verb": "Sit down",
+          "leads_to": "d1_rations"
+        },
+        {
+          "prop": "stove",
+          "verb": "Hold your hands to the stove"
+        }
+      ]
+    }
+  }
+}
