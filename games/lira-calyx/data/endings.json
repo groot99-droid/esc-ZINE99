@@ -49,7 +49,7 @@
           },
           {
             "is": "margin_notes_answered",
-            "gte": 7
+            "gte": 6
           },
           {
             "is": "verified_share",
@@ -72,7 +72,7 @@
       "as_written": true,
       "priority": 4,
       "when": true,
-      "summary": "As written. Lira fires the pulses on partly corrupted data. The result is a fragile pause and a partial fracture. She is taken into the mountain, and the archivist, who arrived too late, carries the books out.",
+      "summary": "As written. Lira fires the pulses on partly corrupted data. The result is a fragile pause and a partial fracture. She is taken into the mountain and pays with her life, and the archivist, who arrived too late, carries the books out.",
       "final_scenes": [
         "b4-collapse",
         "ep-tunnel",

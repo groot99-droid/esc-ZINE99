@@ -70,7 +70,7 @@ All quotations are verbatim from `05_Worldbuilding/02_The_Redacted_Testament_of_
 
 **Final chapter.** "This is not paranoia. This is presence." "Her plea is clear: phase offsets, not fire." "If I don’t make it out, if this book is all that remains, then let it be known that the Peaks are—". The archivist: "They were not the person Lira trusted. They were the one who arrived too late." The pulses "produced a fragile pause and a partial fracture." "If you are reading this, you are a target." "Close the book if you want. Or keep going. Either way — they will come."
 
-**The author's ending.** Lira fires the phase-offset pulses on partly corrupted data; the result is a fragile pause and a partial fracture; she is taken into the mountain; the archivist steals the books and warns the reader. In the game this is **The Redacted Testament**, marked as written.
+**The author's ending.** Lira fires the phase-offset pulses on partly corrupted data; the result is a fragile pause and a partial fracture; she is taken into the mountain, and the archivist says plainly that she died: "She paid with her life. The Continuum took her into the mountain." The source's own summary agrees: "knowledge survives, but its author does not". The archivist steals the books and warns the reader. In the game this is **The Redacted Testament**, marked as written.
 
 ## 4. Investment
 
@@ -166,7 +166,7 @@ How the player learns each item: **Found** (an object or document), **Told** (a 
 | The crystalline fragment | A "seeding lattice with catalytic activity at AFU \(> 0.7\)" (source). | Done: three lens sequences, two assays |
 | The relay beacons (added) | Continuum telemetry posts at every survey site; instant readings, falsified. | Done; revealed on the Node Board |
 | Fungal-integrated emitters | The devices that fire the phase-offset pulses. | Done: the Node Board |
-| The threat letter, the scrap, the footnote, the clandestine note | Fingerprints of the conspiracy and of the follower. | Found |
+| The threat letter, the scrap, the footnote, the clandestine note | Fingerprints of the conspiracy and of the follower; the clandestine note's sender is never named. | Found |
 | Kade's charges (added) | The means of the Fire ending. | Told: Book IV |
 
 ## 6. Characters
@@ -176,7 +176,7 @@ Dialogue is sparse throughout, as in the source: a burst of lines, never a scene
 | Character | Want | Fear | Voice (sample lines) |
 | --- | --- | --- | --- |
 | **Dr. Lira Calyx** (player, Books I to IV) | To know what is true and to say it. | That method itself can be turned against the world. | "Life is not choosing upward. It is being chosen." *(source)* / "I know paranoia when it blooms. This is not paranoia. This is presence." *(source)* / "Who wrote this?" *(source)* |
-| **The archivist** (player, epilogue; the hand in the margins) | To make up for arriving too late. | Being the reason she was caught. | "Phase offset miscalculated. Re‑sample at 0.5 s resolution." *(source)* / "If you are reading this, you are a target." *(source)* / "North shaft. Leave it open." |
+| **The archivist** (player, epilogue; the hand in the margins, and the hooded archivist of the subterranean city) | To make up for arriving too late. | Being the reason she was caught. | "Phase offset miscalculated. Re‑sample at 0.5 s resolution." *(source)* / "If you are reading this, you are a target." *(source)* / "North shaft. Leave it open." |
 | **Mara**, Peakborn storm-singer | To keep the mountain answering. | A mountain "that no longer answers" *(source, of the elders' songs)*. | "Don't write the words. Write where I breathe." / "It is singing back wrong." |
 | **Joren**, Midlander engineer | Restoration of the terrace he lost. | That nothing lost comes back. | "Hold the post. I'll level it." / "They said they could raise it again. Hollin's twin. I believed them." |
 | **Kade**, Lowland scout | To get people through the pockets alive. | Wasted crossings. | "Count to forty in there. Not forty-one." / "I carry charges. You carry numbers. We'll see." |
@@ -187,7 +187,7 @@ Dialogue is sparse throughout, as in the source: a burst of lines, never a scene
 
 | Character | The Redacted Testament | The Archivist in Time | Directed Resilience | Fire |
 | --- | --- | --- | --- | --- |
-| Lira | Taken into the mountain; her book survives, torn. | Pulled out through the north shaft; lives in hiding; publishes under her own name. | Stands down; becomes the cataloguer of the reset world under the Continuum's seal. | Destroys the core; survives the fall of the terraces she meant to save. |
+| Lira | Taken into the mountain; she pays with her life *(source)*; her book survives, torn. | Pulled out through the north shaft; lives in hiding; publishes under her own name. | Stands down; becomes the cataloguer of the reset world under the Continuum's seal. | Destroys the core; survives the fall of the terraces she meant to save. |
 | The archivist | Arrives too late; steals the books out of obligation and guilt. | Arrives in time; becomes her keeper and her co-author. | Steals the true journals from an honoured scientist's shelf. | Digs the books out of rubble. |
 | Mara | Sings dirges for a mountain that no longer answers. | Carries the testament's songs to the Peakborn circles. | Sings for the new mountain; the old songs are banned. | Her ledge falls silent. |
 | Joren (if forgiven) | Holds the emitter line; is seen at the evacuation. | Holds the north shaft open with his gravity anchors. | Is given his restored terrace, and cannot live in it. | Dies keeping the water lifts running so others evacuate; this is the cost of that ending. Off-screen, told in one line. |
@@ -301,7 +301,7 @@ If the player keeps the note private, the threat and packet still arrive (the pa
   5. `b2-hearing` (3D, 4 min). A public hearing on harvesting at the ridge. The prototype harvester starts. Clamp a strain gauge and read the ridge's harmonic before it fails at 40 seconds: node **N6**. The crowd turns; you get out.
   6. `b2-lab` (3D, 6 min). Infiltrate the corporate lab after hours. Take logs, not fights: guards walk fixed routes with lamp cones. Watch pulse rigs alter fungal cultures. Find the scrap behind the console: "She’s close. Move the logs." Find the Continuum manifest with a misfiled footnote in the margin hand: margin note 4 ("Batch 9 is not from the well.").
   7. `b2-lens-2` (2D, 3 min). The fragment under a lab pulse: its filaments rearrange, the same motion as the cultures.
-  8. `b2-cipher-1` (1D, 3 min). The sealed archive index is written in a notation you cannot fully read. You recover two names, Dr. Solace Veylor and Operation ReGenesis; the coordinates stay locked. You publish the technical brief (required: it is the story's spine); it comes back surgically redacted and you are branded a saboteur. Margin note 5 arrives: "You are looking at the wrong end of the needle. Look below." Writes `veylor_named`, `brief_redacted`, `exposure`.
+  8. `b2-cipher-1` (1D, 3 min). The sealed archive index is written in a notation you cannot fully read. You recover two names, Dr. Solace Veylor and Operation ReGenesis; the coordinates stay locked. You publish the technical brief (required: it is the story's spine); it comes back surgically redacted and you are branded a saboteur. A clandestine note arrives, loose, unsigned: "You are looking at the wrong end of the needle. Look below." *(source)* It is not in the margin hand or any hand the journal knows, it is not a margin note, and it cannot be answered. Writes `veylor_named`, `brief_redacted`, `exposure`.
   9. `b2-audit-1` (1D, 3 min). Compare your journal against the published brief and the official log. Find what was changed.
 - **Ends.** Flatten into the climb to the Peaks.
 
@@ -314,13 +314,13 @@ If the player keeps the note private, the threat and packet still arrive (the pa
   2. `b3-peakborn` (3D, 4 min). The singing circle. Record the songs with the AFU meter running beside them; Mara sings a storm in and out. "Don't write the words. Write where I breathe."
   3. `b3-cipher-2` (1D, 5 min). Decode Mara's storm-song into phase offsets and locate nodes **N7** and **N8**.
   4. `b3-key-2` (1D, 4 min). Classify the low-gravity creatures and the Lowland mutation reports Kade forwarded. The key breaks three times.
-  5. `b3-midlander` (3D, 3 min). Joren takes you to his harvest terrace. The chant is recorded. He shows the terrace's drowned twin across the gorge. Margin note 6: page 112 appears twice in your journal; the second copy reads "The chant has a rest you did not write."
-  6. `b3-cipher-3` (1D, 4 min). Decode the harvest chant into a nodal map: nodes **N9** and **N10**. Acting on note 6 means inserting the missing rest.
+  5. `b3-midlander` (3D, 3 min). Joren takes you to his harvest terrace. The chant is recorded. He shows the terrace's drowned twin across the gorge. Margin note 5: page 112 appears twice in your journal; the second copy reads "The chant has a rest you did not write."
+  6. `b3-cipher-3` (1D, 4 min). Decode the harvest chant into a nodal map: nodes **N9** and **N10**. Acting on note 5 means inserting the missing rest.
   7. `b3-outpost` (3D, 4 min). With Mara, slip into the Continuum outpost; take the logs from three cabinets; patrol count depends on exposure.
-  8. `b3-city` (3D, 5 min). The subterranean city lit by Aetheric cores. A hooded archivist in the record galleries "speaks in half‑truths and riddles" (source) and hands you a coordinate misfiled under the wrong peak: margin note 7 ("Peak 12, not 11."). Joren leads Continuum guards to you. He says one line: "They said they could raise it again." You take the logs that prove the Second Genesis and run. Writes `second_genesis_proof`.
+  8. `b3-city` (3D, 5 min). The subterranean city lit by Aetheric cores. A hooded archivist in the record galleries "speaks in half‑truths and riddles" (source) and hands you a coordinate misfiled under the wrong peak: margin note 6 ("Peak 12, not 11."), written in the small, left-slanted margin hand. Nothing in Book III says this is the follower (the source's follower is still "not yet revealed"); a player who knows the hand can match it, as Lira matches the footnote in Book II. Joren leads Continuum guards to you. He says one line: "They said they could raise it again." You take the logs that prove the Second Genesis and run. Writes `second_genesis_proof`.
   9. `b3-escape` (2D, 3 min). Up the shafts out of the city; lamp sweeps from below; the climb against a clock.
   10. `b3-audit-2` (1D, 5 min). The logs you stole, and your own journal, now carry forged entries: false timestamps, fabricated readings. Find them.
-  11. `b3-hiding` (3D, 2 min). The hideout. Broadcast the raw data dump or hold it (the source broadcasts; holding it is allowed). Margin note 8, beside your coupling matrix: "Your damping is not yours. Measure it." Writes `broadcast_sent`, `exposure`.
+  11. `b3-hiding` (3D, 2 min). The hideout. Broadcast the raw data dump or hold it (the source broadcasts; holding it is allowed). Margin note 7, beside your coupling matrix: "Your damping is not yours. Measure it." Writes `broadcast_sent`, `exposure`.
 - **Ends.** Fade to the terraces.
 
 ### Book IV: Final Reckoning (41 min)
@@ -330,9 +330,9 @@ If the player keeps the note private, the threat and packet still arrive (the pa
 - **Sequence.**
   1. `b4-terraces` (3D, 4 min). Synchronized storms crack Hollin's terraces; Pell's family is packing. The coalition gathers: Mara, Kade, and Joren, who comes back. Choose: take him back (the source's path) or send him away. If taken: gravity anchors, gear tier 3. Writes `joren_forgiven`, `emitters_available`, `gear_tier`.
   2. `b4-board-terrace` (1D, 5 min). The Node Board on Hollin's own six-node network. The game's only full win is possible here. Success holds the home terrace and verifies node **N11**.
-  3. `b4-assay-3` (1D, 4 min). The fragment at AFU 0.7: confirm the threshold. Optional damping test (prompted by note 8): `gamma_remeasured`.
+  3. `b4-assay-3` (1D, 4 min). The fragment at AFU 0.7: confirm the threshold. Optional damping test (prompted by note 7): `gamma_remeasured`.
   4. `b4-key-3` (1D, 3 min). Map nodal points: classify Spore-Weaver arrays as coherent oscillators, incoherent, or seeded. `verified_share` is frozen at the end.
-  5. `b4-descent` (2D, 5 min). Down the cross-section under Peak 12. Platforms rise and fall with the mountain's oscillation; you move on its rhythm. Margin note 9 appears in chalk on a shaft wall, in the margin hand: "North shaft. Leave it open."
+  5. `b4-descent` (2D, 5 min). Down the cross-section under Peak 12. Platforms rise and fall with the mountain's oscillation; you move on its rhythm. Margin note 8 appears in chalk on a shaft wall, in the margin hand: "North shaft. Leave it open."
   6. `b4-lens-3` (2D, 3 min). The fragment set as the master emitter's timing crystal; find its resonant channel. Failure leaves one emitter dead.
   7. `b4-core` (3D, 4 min). The core. Veylor. Sparse lines; his argument; "the old world was weak; a hard reset is a mercy." He tells you he seeded the data years ago. He does not say where.
   8. `b4-board-core` (1D, 10 min). The Node Board against Veylor's hidden pieces. At the end, the choice: **Trigger the pulses**, **Stand down**, or **Set the charges**. Writes `core_choice`, `terraces_held`.
@@ -369,7 +369,7 @@ Shared for every 3D scene: third-person camera on a spring arm, 3.5 m behind and
 | `b3-midlander` | Joren's harvest terrace | 100 × 40 m | Recorder, journal (page 112), the drowned terrace view | Amber harvest light | Chant, sickles | Chant recorded | fade / push-in |
 | `b3-outpost` | Continuum outpost | 80 × 60 m | Three log cabinets, relay mast, patrol routes (2 or 4) | Cold floodlights | Mast hum | Three cabinets emptied | fade / fade |
 | `b3-city` | Subterranean city | 200 m gallery and a record hall | Hooded archivist, misfiled coordinate card, logs, Joren | Core glow, deep teal | Machine breathing; echo | Logs taken; betrayal sequence | fade / flatten |
-| `b3-hiding` | Hideout | 10 × 8 m | Transmitter, journal (note 8) | One bulb | Static | Broadcast choice | fade / fade |
+| `b3-hiding` | Hideout | 10 × 8 m | Transmitter, journal (note 7) | One bulb | Static | Broadcast choice | fade / fade |
 | `b4-terraces` | Hollin Terrace in storm | As `b1-terrace`, with cracks and evacuees | Pell's family, Joren at the gate, Mara, Kade, emitter crates | Storm-dark green, lightning | Siren (the baseline you set) | Joren choice | fade / push-in |
 | `b4-core` | Core beneath Peak 12 | 90 m crystal cavern | Veylor, the emitter array, the board table | Humming white-violet | A deep tone at the mountain's frequency | Veylor's last line | pull-out / push-in |
 | `b4-collapse` | Core and tunnels | 200 m of tunnel | None; run toward the shaft | Strobing core light | "A sound like a thousand small fractures" (source) | Ending branch | pull-out / fade |
@@ -403,7 +403,7 @@ The mountain is drawn as the journal's own cross-section come alive: strata, sha
 | `b2-descent` | Book II | Down, 2,000 to 300 m | 4 min, 2 camps | 0 | Chemical storm front, crawlers |
 | `b3-climb` | Book III | Up, 2,800 to 4,600 m | 5 min, 3 camps | 1 (tier 2 given halfway, by Mara) | Low gravity, storm rock |
 | `b3-escape` | Book III | Up shafts | 3 min, 1 camp | 2 | Lamp sweeps; twice as many at exposure 70+ |
-| `b4-descent` | Book IV | Down, under Peak 12 | 5 min, 2 camps | 2 or 3 | Rhythm platforms; note 9 on a wall |
+| `b4-descent` | Book IV | Down, under Peak 12 | 5 min, 2 camps | 2 or 3 | Rhythm platforms; note 8 on a wall |
 
 ### Mode B: Under the lens (`lens`, movement `scroll`)
 
@@ -440,7 +440,7 @@ Every 1D page is a journal spread: left page for the work, right page for Lira's
 | `b2-assay-2` isotope ratios | 5 | 6 | Ratios: read two peaks and compare their heights | `readings` (N5), `nodes_verified`, `seeding_evidence` |
 | `b4-assay-3` fragment at threshold | 6 | 7 | Pulse tests; optional damping test (decay curve: measure the half-life of a ring-down, cost 3) | `readings`, `gamma_remeasured` |
 
-- **Hints.** After 2 wrong eliminations, Lira's note circles the most useful untested reagent. In `b4-assay-3`, if the player acted on note 8, the damping test is highlighted.
+- **Hints.** After 2 wrong eliminations, Lira's note circles the most useful untested reagent. In `b4-assay-3`, if the player acted on note 7, the damping test is highlighted.
 
 ### The Key (taxonomy)
 
@@ -474,9 +474,9 @@ Every 1D page is a journal spread: left page for the work, right page for Lira's
 | --- | --- | --- | --- | --- |
 | `b2-cipher-1` sealed archive | 3 glyph lines in a staff-like notation | 0 (names only; coordinates stay locked until Book III) | Teaching the notation; the payoff is two names | `veylor_named` |
 | `b3-cipher-2` Mara's storm-song | 16 bars | N7, N8 | Audio as well as staff; breaths mark node changes | `readings`, `nodes_verified`, `cipher_nodes_decoded` |
-| `b3-cipher-3` harvest chant | 24 bars, call and response | N9, N10 | Rhythm carries distance; a missing rest (note 6) shifts N10 by 2 squares | `readings`, `nodes_verified`, `cipher_nodes_decoded`, `margin_notes_acted` |
+| `b3-cipher-3` harvest chant | 24 bars, call and response | N9, N10 | Rhythm carries distance; a missing rest (note 5) shifts N10 by 2 squares | `readings`, `nodes_verified`, `cipher_nodes_decoded`, `margin_notes_acted` |
 
-- **Hints.** Mara's line "Write where I breathe" marks node changes. In the chant, if the player acted on note 6, the missing rest's bar flickers.
+- **Hints.** Mara's line "Write where I breathe" marks node changes. In the chant, if the player acted on note 5, the missing rest's bar flickers.
 
 ### Journal Audit (forgery detection)
 
@@ -544,7 +544,7 @@ Every measurement goes into the `readings` ledger with fields `node`, `book`, `i
 | N5 | Lowland well | `b2-assay-2` | Assay | The Assay won |
 | N6 | Harvester ridge | `b2-hearing` | Strain gauge | Clamp seated and read before the ridge fails at 40 s |
 | N7, N8 | Peakborn ledges | `b3-cipher-2` | Song | Cipher locates each |
-| N9, N10 | Midlander chant | `b3-cipher-3` | Chant | Cipher locates each; N10 needs the rest from note 6 |
+| N9, N10 | Midlander chant | `b3-cipher-3` | Chant | Cipher locates each; N10 needs the rest from note 5 |
 | N11 | Hollin Terrace | `b4-board-terrace` | Drill | The drill succeeds |
 | N12 | Peak 12 core | none | none | Never verifiable |
 
@@ -562,11 +562,12 @@ Every node site in 3D or 2D has a Continuum relay beacon (added). Pressing it gi
 | 2 | `b1-outpost` | 61 | "Not lightning. Read the gravimeter first." | Highlights the gravimeter; the storm window is explained |
 | 3 | `b1-terrace-night` | 74 | "Publish less than you know." | Publishing a shorter note: exposure +5 instead of +10 |
 | 4 | `b2-lab` (in a Continuum manifest) | footnote | "Batch 9 is not from the well." | Marks one forgery in Audit II in advance |
-| 5 | `b2-cipher-1` (delivered) | loose | "You are looking at the wrong end of the needle. Look below." *(source)* | Lore; points the coalition down |
-| 6 | `b3-midlander` | 112 (twice) | "The chant has a rest you did not write." | Fixes N10 in Cipher III |
-| 7 | `b3-city` | coordinate card | "Peak 12, not 11." | N12 is outlined on the core board as suspect |
-| 8 | `b3-hiding` | beside the coupling matrix | "Your damping is not yours. Measure it." | Highlights the damping test in Assay III |
-| 9 | `b4-descent` | chalk on a shaft wall | "North shaft. Leave it open." | Lore; in The Archivist in Time it is where they meet |
+| 5 | `b3-midlander` | 112 (twice) | "The chant has a rest you did not write." | Fixes N10 in Cipher III |
+| 6 | `b3-city` | coordinate card, handed over by the hooded archivist | "Peak 12, not 11." | N12 is outlined on the core board as suspect |
+| 7 | `b3-hiding` | beside the coupling matrix | "Your damping is not yours. Measure it." | Highlights the damping test in Assay III |
+| 8 | `b4-descent` | chalk on a shaft wall | "North shaft. Leave it open." | Lore; in The Archivist in Time it is where they meet |
+
+The clandestine note of Book II ("You are looking at the wrong end of the needle. Look below." *(source)*) is not one of them. The source leaves its sender unsaid and the archivist's confession does not claim it, so it arrives loose and unsigned, in no hand the journal knows; it has no Circle or Reply prompt, and it points the coalition down.
 
 For each note the journal offers: **Circle it** (Lira writes "Who wrote this?", as in the source; does not count as an answer), **Reply** (choose one of three replies in Lira's voice or type up to 80 characters; counts toward `margin_notes_answered`; exposure +5), or **Leave it**. Acting is separate: doing what the note says. Replies are sometimes answered in the next chapter, in the same small hand: after the 2nd reply, "I can't say who. Not yet."; after the 4th, "They read this book when you sleep. So do I."; after the 6th, "I am behind you. I am always behind you." This is the relationship the player builds with an unseen person.
 
@@ -585,7 +586,7 @@ For each note the journal offers: **Circle it** (Lira writes "Who wrote this?", 
 | 40+ | Journal Audit II has 7 forgeries instead of 5 |
 | 70+ | Patrols double in `b3-outpost` and `ep-vault`; lamp sweeps double in `b3-escape` |
 
-A player who answers all nine notes and publishes everything reaches about 85 before relay credit. Answering the archivist is therefore not free: it makes the forgeries harder to catch, which threatens the share the ending also needs.
+A player who answers all eight notes and publishes everything reaches about 80 before relay credit. Answering the archivist is therefore not free: it makes the forgeries harder to catch, which threatens the share the ending also needs.
 
 ### Redactions
 
@@ -606,7 +607,7 @@ Companions follow in 3D at 3 m, never fight, and speak at most two lines per sce
 
 ## 13. Endings
 
-The resolver runs once, when the Node Board II closes: every condition is final by then (`verified_share` was frozen at The Key III; `margin_notes_answered` cannot change after note 9 in `b4-descent`; `core_choice` is set on the board). The epilogue then plays the ending's own scenes. The epilogue writes only `pages_restored`, `names_protected` and `book_closed`, which no ending reads, so resolving at the game's end would give the same result.
+The resolver runs once, when the Node Board II closes: every condition is final by then (`verified_share` was frozen at The Key III; `margin_notes_answered` cannot change after note 8 in `b4-descent`; `core_choice` is set on the board). The epilogue then plays the ending's own scenes. The epilogue writes only `pages_restored`, `names_protected` and `book_closed`, which no ending reads, so resolving at the game's end would give the same result.
 
 Priorities are checked from 1. Every ending keeps a cost.
 
@@ -614,13 +615,13 @@ Priorities are checked from 1. Every ending keeps a cost.
 | --- | --- | --- | --- | --- |
 | 1 | **Directed Resilience** | No | You chose Stand down. | `{"is": "core_choice", "eq": "withhold"}` |
 | 2 | **Fire** | No | You chose Set the charges. | `{"is": "core_choice", "eq": "fire"}` |
-| 3 | **The Archivist in Time** | No | You fired the pulses, answered at least 7 of the 9 margin notes, and at least 60% of your node data was verified by hand (8 nodes). | `{"all": [{"is": "core_choice", "eq": "pulse"}, {"is": "margin_notes_answered", "gte": 7}, {"is": "verified_share", "gte": 60}]}` |
+| 3 | **The Archivist in Time** | No | You fired the pulses, answered at least 6 of the 8 margin notes, and at least 60% of your node data was verified by hand (8 nodes). | `{"all": [{"is": "core_choice", "eq": "pulse"}, {"is": "margin_notes_answered", "gte": 6}, {"is": "verified_share", "gte": 60}]}` |
 | 4 | **The Redacted Testament** | **Yes** | Everything else: you fired the pulses on partly corrupted data, or answered the hand too rarely for it to find you. | `true` |
 
 ### The Redacted Testament (as written)
 
-- **Final scenes.** `b4-collapse`: the pulses fire; green and red nodes; the core fractures; Veylor walks deeper into the mountain; tunnels shear; Lira is cornered at a sealed exit; the sound "like a thousand small fractures"; the camera stays on her lamp as it goes out. `ep-tunnel`: the follower arrives at the sealed exit and finds the book. `ep-vault`, `ep-audit-3`, `end-written`.
-- **Variation.** `terraces_held` is spoken in the epilogue as a count of terraces still standing. If the player answered 7 or more notes but verified less than 60%, the follower's first line in `ep-tunnel` is "You told me where. I came. The shaft was already gone." This is the source's "the one who arrived too late", earned.
+- **Final scenes.** `b4-collapse`: the pulses fire; green and red nodes; the core fractures; Veylor walks deeper into the mountain; tunnels shear; Lira is cornered at a sealed exit; the sound "like a thousand small fractures"; the camera stays on her lamp as it goes out. `ep-tunnel`: the follower arrives at the sealed exit and finds the book. `ep-vault`, `ep-audit-3`, `end-written`. Nothing hints that she is held alive: at the desk the archivist's three admissions are read verbatim, ending "She paid with her life. The Continuum took her into the mountain."
+- **Variation.** `terraces_held` is spoken in the epilogue as a count of terraces still standing. If the player answered 6 or more notes but verified less than 60%, the follower's first line in `ep-tunnel` is "You told me where. I came. The shaft was already gone." This is the source's "the one who arrived too late", earned.
 - **Last image.** The archivist's desk. The final warning is read in the archivist's hand, verbatim: "If you are reading this, you are a target." … "Close the book if you want. Or keep going. Either way — they will come." Two prompts: Close the book / Keep going. A knock.
 
 ### The Archivist in Time
@@ -643,7 +644,7 @@ Priorities are checked from 1. Every ending keeps a cost.
 ### How a player reaches each one on purpose
 
 - **The Redacted Testament.** Play the story's path: fire the pulses. Either do not answer the margin notes (circle them, as Lira does), or let the relay and forgeries take your data.
-- **The Archivist in Time.** Reply to at least 7 of the 9 notes, take at least 8 node readings by hand or cipher, catch the forgeries without striking your own lines, then fire.
+- **The Archivist in Time.** Reply to at least 6 of the 8 notes, take at least 8 node readings by hand or cipher, catch the forgeries without striking your own lines, then fire.
 - **Directed Resilience.** At the end of the core board, choose Stand down.
 - **Fire.** At the end of the core board, choose Set the charges.
 
@@ -713,7 +714,7 @@ The journal is the HUD. Nothing is overlaid that Lira would not have written or 
 | 2D cross-section sheets | Five climb sequences, each 3 to 5 screens tall; Lira sprite (idle, walk, climb, jump, anchor, black-out: 6 sets), crawler, storm front, lamp sweep | 5 level sheets, 10 sprite sets |
 | 2D lens plates | Three fragment sequences, three depth planes each | 9 plates |
 | 1D layouts | Assay (3), Key (3), Cipher (3), Audit (3), Node Board (2) | 14 pages |
-| Journal | Entry pages for every scene, dossier, specimen plates (24), song staves (3), margin note set (9), redaction and stamp overlays | about 90 pages |
+| Journal | Entry pages for every scene, dossier, specimen plates (24), song staves (3), margin note set (8), the unsigned clandestine note, redaction and stamp overlays | about 90 pages |
 | Music cues | 6 chapter themes, 3 sung pieces, the board's per-node tones (12), stingers (8) | 29 |
 | Voice line groups | Lira journal readings (40), Mara (14), Joren (14), Kade (12), Veylor (8), archivist (20), Pell (6), crowd barks (20) | 134 lines |
 
@@ -747,11 +748,11 @@ The journal is the HUD. Nothing is overlaid that Lira would not have written or 
 | 176 minutes overruns | Each chapter has a hard ceiling in playtest; the climbs can lose a camp each |
 | Dialogue creep | Two lines per companion per scene, enforced in the script tool |
 
-**Questions only the author can answer.**
+**Answered** (by Claude at the author's request, 2026-11-12, from the source text; the author can overrule any of them).
 
-1. Is the "archivist who speaks in half‑truths and riddles" in the subterranean city (Book III) the same person as the follower who wrote in the margins? This design keeps them the same hooded figure, and never says so outright.
-2. Lira's fate in your text is "She is taken" and later "She paid with her life." Is she dead or a captive? The as-written ending keeps both possible; The Archivist in Time lets her live. Is that acceptable?
-3. May the game attribute the clandestine note ("You are looking at the wrong end of the needle. Look below.") to the archivist? Your text leaves its sender unsaid.
+1. **The city's archivist and the hand in the margins are one person, and Book III does not say so.** The source calls the margin hand's owner "the archivist" from the first note on: page 47 is "the first fingerprint of the person who will later call themselves the archivist", and the throughline names "An unknown follower, later revealed as the archivist". Book III meets "an archivist who speaks in half‑truths and riddles" in the city, and two paragraphs later the annotations on Lira's page are "the archivist’s hand". Book III's last paragraph still calls the follower "someone who is following, not yet revealed", so Lira does not know whom she met. The design keeps the one hooded figure; the only tell is that the coordinate card (note 6) is in the margin hand, which a player can match as Lira matches the footnote in Book II. The reveal stays where the source puts it, in the epilogue ("VII. The Archivist Revealed"). Changed: the `b3-city` step, the note table and the characters table say this; section 21 lists the reading.
+2. **In the author's ending Lira is dead, and she may live in The Archivist in Time.** "She is taken" (Book IV) is how she dies, not a captivity: the archivist says "She paid with her life. The Continuum took her into the mountain.", the final warning speaks of "Lira’s sacrifice", and the summary says "knowledge survives, but its author does not". The Redacted Testament no longer keeps captivity open: her lamp goes out, and the archivist's three admissions are read verbatim at the desk. The Archivist in Time is the one change the source itself names, that the follower "arrived too late"; the player earns the other timing, and the ending keeps its cost (Veylor lives, both are hunted, every terrace not held falls), so it is not a tidy rescue. Changed: section 3, the arcs table, section 13 and `data/endings.json` (the as-written summary).
+3. **The needle note is not the archivist's.** The source says only "A clandestine note arrives", and the archivist's confession lists "the tiny correction on page 47, the misfiled footnote, the misnumbered page", not this note. Attributing it would add to the author's mystery, so the game cuts the attribution: the note arrives loose and unsigned, in no hand the journal knows, cannot be answered, and still points the coalition down. There are now eight margin notes, renumbered (the old 6 to 9 are now 5 to 8). The Archivist in Time asks for 6 of the 8 replies (75%, against the old 7 of 9, 78%), and a player who answers every note and publishes everything reaches exposure about 80 instead of 85. Changed: Book II to IV steps, the note table, sections 11, 12, 13, 17 and 21, `data/endings.json`, `data/flags.json` (`margin_notes`, `margin_notes_answered`, `margin_notes_acted`) and `data/scenes.json` (`b2-cipher-1` no longer writes the margin flags).
 
 ## 21. Added for the game
 
@@ -764,7 +765,9 @@ Everything below is a proposal for the game, not the author's text.
 - Pell, the glassback crawlers, Cinder Reach archive, the hideout as a relay hut, the record vault.
 - The relay beacons, their falsified data, and the exposure meter.
 - The node system: twelve nodes, their places, the dossier, the hand-verification rule and the 60% threshold.
-- Margin notes 2, 3, 4, 6 (its text), 7 (its text), 8 (its text) and 9, the archivist's replies, and the rule that answering 7 of 9 lets the follower find Lira. Notes 1 and 5 are the author's words; the misfiled footnote, misnumbered page, misfiled coordinate and the nudge away from a fatal assumption are the author's events.
+- Margin notes 2, 3, 4, 5 (its text), 6 (its text), 7 (its text) and 8, the archivist's replies, and the rule that answering 6 of 8 lets the follower find Lira. Note 1 is the author's words; the misfiled footnote, misnumbered page, misfiled coordinate and the nudge away from a fatal assumption are the author's events. The clandestine needle note is the author's and stays unsigned; its delivery as a loose sheet that cannot be answered is the game's.
+- The reading of the city's "archivist who speaks in half‑truths and riddles" as the follower, shown only through the handwriting on the coordinate card and never said in Book III.
+- Lira surviving in The Archivist in Time, Directed Resilience and Fire; in the author's ending she dies.
 - All rules of The Assay, The Key, Storm-Song Cipher, Journal Audit and The Node Board, including: 30° per interval and 100 m per rest; per-node load and the γ/4 mark (a consequence of the author's criterion, chosen to make it playable); tuned ×0.5 and mistuned ×1.5; opposite-phase cancellation; γ = 8 shown as 10; Veylor's moves; the fracture rule; companion actions.
 - Gear tiers, air, low-gravity pockets, rhythm platforms, the 7-second mountain period.
 - The three choices at the core and the endings The Archivist in Time, Directed Resilience and Fire (proposed in `docs/ADAPTATIONS.md`, kept with their names). The Directed Resilience reading of "with her name on it" as her name under the Continuum's seal.

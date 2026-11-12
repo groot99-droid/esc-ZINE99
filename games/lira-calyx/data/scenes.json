@@ -351,9 +351,7 @@
       "writes": [
         "veylor_named",
         "brief_redacted",
-        "exposure",
-        "margin_notes",
-        "margin_notes_answered"
+        "exposure"
       ],
       "enter": "push-in",
       "exit": "cut",

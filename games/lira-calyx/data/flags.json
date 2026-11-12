@@ -17,7 +17,7 @@
       "name": "margin_notes",
       "type": "ledger",
       "default": [],
-      "description": "The nine notes in another hand, and what the player did with each: ignored, circled, answered, acted, or answered-and-acted.",
+      "description": "The eight notes in another hand, and what the player did with each: ignored, circled, answered, acted, or answered-and-acted. The unsigned clandestine note of Book II is not one of them.",
       "fields": [
         "note",
         "page",
@@ -44,13 +44,13 @@
       "name": "margin_notes_answered",
       "type": "counter",
       "default": 0,
-      "description": "How many of the nine margin notes the player wrote a reply beside (0 to 9). 7 or more is a condition of The Archivist in Time."
+      "description": "How many of the eight margin notes the player wrote a reply beside (0 to 8). 6 or more is a condition of The Archivist in Time."
     },
     {
       "name": "margin_notes_acted",
       "type": "counter",
       "default": 0,
-      "description": "How many margin notes the player acted on (re-sampled, re-checked, re-measured). Acting on notes 1, 7 and 8 repairs specific data."
+      "description": "How many margin notes the player acted on (re-sampled, re-checked, re-measured). Acting on note 1 corrects N1, note 4 marks a forgery in Journal Audit II, note 5 fixes N10, and note 7 highlights the damping test."
     },
     {
       "name": "exposure",
