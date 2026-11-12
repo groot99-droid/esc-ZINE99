@@ -1,0 +1,919 @@
+{
+  "game": "missing-campsites",
+  "style": "Photographic 35mm film still, naturalistic late-summer state-park realism: matte surfaces, sun-faded greens, cedar brown, dust gold, the van's dull red; the other side under a shadowless pearl sky; objects as isolated modelling references in the same palette.",
+  "locations": [
+    {
+      "id": "entrance-booth",
+      "name": "The entrance road and booth",
+      "scenes": [
+        "booth_day1",
+        "payphone_night1",
+        "booth_day2"
+      ],
+      "dimensions_m": [
+        60,
+        40,
+        8
+      ],
+      "lighting": "Day 1: 15:10 high summer sun, dust in shafts. Night 1: booth window dark, torch only, one bulb over the payphone with moths. Day 2: overcast grey.",
+      "objects": [
+        "heron-sign",
+        "payphone",
+        "master-map",
+        "firewood-bundle",
+        "booth-radio",
+        "paper-map",
+        "camper-van",
+        "logbook",
+        "site-post"
+      ],
+      "prompt": "A gravel spur road entering a pine forest campground in late summer afternoon: a small cedar-plank ranger booth with a sliding service window and a narrow store shelf under an awning, a payphone on a wooden post beside it with a small bulb above, a painted plywood entrance sign on two posts with a grey heron silhouette and a blank board, tall ponderosa pines, dry needle-covered ground, high sun with dust in the light shafts, sun-faded greens, cedar brown, dust gold, matte surfaces, photographic 35mm film still, naturalistic. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "825837ea-26ee-42ef-b10e-ccf18aed8204",
+      "image": "assets/locations/entrance-booth.jpg"
+    },
+    {
+      "id": "loop-road",
+      "name": "The loop road",
+      "scenes": [
+        "loop_day1",
+        "loop_day2am",
+        "loop_day2pm",
+        "ordinary_morning"
+      ],
+      "dimensions_m": [
+        240,
+        180,
+        30
+      ],
+      "lighting": "Day 1: late afternoon, long shadows. Day 2 morning: grey noon. Day 2 afternoon: dimming, wind. Ordinary morning: bright Sunday sun.",
+      "objects": [
+        "site-post",
+        "picnic-table",
+        "fire-ring",
+        "owl-box",
+        "register-box",
+        "bicycle",
+        "blue-kettle",
+        "quiet-hours-board",
+        "camp-lantern",
+        "chalkboard",
+        "tent"
+      ],
+      "prompt": "A one-way gravel campground loop road curving through a tall pine forest beside a shallow creek, numbered square cedar posts with blank number plates at regular intervals, each campsite with a steel fire ring, a weathered wooden picnic table and a flat tent pad, a small wooden trail register box on a post where a footpath leaves the road, a wooden owl nest box on a pine trunk, late summer afternoon with long shadows across the gravel, sun-faded greens, cedar brown, dust gold, matte, photographic 35mm film still, naturalistic. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "36684520-dfa7-425d-acd4-3caa624a6414",
+      "image": "assets/locations/loop-road.jpg"
+    },
+    {
+      "id": "five-sites",
+      "name": "The five sites, 20 to 24",
+      "scenes": [
+        "fixed_sites_day1",
+        "fixed_sites_day2",
+        "dusk_choice"
+      ],
+      "dimensions_m": [
+        180,
+        60,
+        25
+      ],
+      "lighting": "Day 1: golden hour. Day 2: overcast, flat. Dusk choice: blue hour at the edge of site 20 by the van.",
+      "objects": [
+        "split-boulder",
+        "tent",
+        "picnic-table",
+        "fire-ring",
+        "site-post",
+        "chalkboard",
+        "camera",
+        "postcard",
+        "notebook",
+        "bicycle",
+        "camper-van",
+        "van-keys",
+        "camp-chair",
+        "cooler"
+      ],
+      "prompt": "The north end of a pine forest campground loop: five neighbouring campsites in a row along a gravel road, each with a square cedar post with a blank number plate, a weathered wooden picnic table, a steel fire ring and a flat tent pad, a huge granite boulder split down the middle with a crack wide enough to lie in, a small chalkboard on an easel at the middle site, an old dull red camper van parked at the end, tall pines, golden hour light, sun-faded greens, cedar brown, dust gold, matte, photographic 35mm film still, naturalistic. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "a697f57f-41e9-457e-bcaa-f5cd9d61ce0b",
+      "image": "assets/locations/five-sites.jpg"
+    },
+    {
+      "id": "fire-ring",
+      "name": "The shared fire ring at site 22",
+      "scenes": [
+        "campfire_night1",
+        "campfire_night2"
+      ],
+      "dimensions_m": [
+        12,
+        12,
+        6
+      ],
+      "lighting": "Night 1: firelight 2200 K, crickets. Night 2: firelight, and beyond it no horizon at all.",
+      "objects": [
+        "fire-ring",
+        "camp-chair",
+        "cooler",
+        "firewood-bundle",
+        "camp-lantern"
+      ],
+      "prompt": "A campfire burning in a round steel fire ring at night in a pine forest campsite, a circle of six folding canvas camp chairs and two logs around it, a weathered picnic table at the edge of the light, a cooler, stacked split firewood, warm 2200 K firelight on the near trunks fading into blue-black darkness, matte, photographic 35mm film still, naturalistic. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "405a1e87-bcb4-4ae8-a83f-5c53d6e21476",
+      "image": "assets/locations/fire-ring.jpg"
+    },
+    {
+      "id": "creek-trail",
+      "name": "The creek trail and the gravel bar",
+      "scenes": [
+        "creek_trail"
+      ],
+      "dimensions_m": [
+        300,
+        20,
+        15
+      ],
+      "lighting": "Afternoon water light dappled through the canopy.",
+      "objects": [
+        "hiking-pack",
+        "notebook",
+        "tent"
+      ],
+      "prompt": "A narrow dirt footpath following a shallow clear creek through a pine and alder forest to a wide bar of wet rounded gravel on a bend of the creek, a small one-person tent pitched on the gravel bar, afternoon water light dappled through the canopy, wet gravel, mossy stones, sun-faded greens, matte, photographic 35mm film still, naturalistic. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "161f0bfb-4ae4-4aad-a2b2-90a6bc038e0f",
+      "image": "assets/locations/creek-trail.jpg"
+    },
+    {
+      "id": "other-side-sites",
+      "name": "The five sites on the other side",
+      "scenes": [
+        "wrong_forest"
+      ],
+      "dimensions_m": [
+        180,
+        60,
+        25
+      ],
+      "lighting": "No sun; even pearl light from every side; no shadows at all.",
+      "objects": [
+        "split-boulder",
+        "tent",
+        "picnic-table",
+        "fire-ring",
+        "site-post",
+        "cooler",
+        "smartphone",
+        "heron-sign",
+        "quiet-hours-board"
+      ],
+      "prompt": "A real full-scale pine forest campground seen at human eye level from the gravel road: five campsites in a row, each with a pitched olive dome tent, a weathered wooden picnic table, a rusted steel fire ring and a square cedar post, a large split granite boulder in the foreground site, behind them a real forest of tall bare-trunked pines standing on an exact regular grid with arched and bent trunks in deliberate patterns, the sky a flat overcast pearl white with no gradient and no visible sun, soft light from every direction, no shadows on the ground, greens with no yellow in them, every surface slightly too clean, uncanny stillness, life-size, not a miniature, photographic 35mm film still. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "e08bf9b5-d944-40a2-afbd-3e5756d818cc",
+      "image": "assets/locations/other-side-sites.jpg"
+    },
+    {
+      "id": "gravel-clearing",
+      "name": "The gravel clearing",
+      "scenes": [
+        "gravel_morning"
+      ],
+      "dimensions_m": [
+        180,
+        1600,
+        20
+      ],
+      "lighting": "Ordinary morning sun; the highway far off.",
+      "objects": [
+        "tent",
+        "picnic-table",
+        "fire-ring",
+        "site-post",
+        "heron-sign",
+        "camper-van"
+      ],
+      "prompt": "Five small campsites with tents, wooden picnic tables and steel fire rings sitting alone in a forest clearing at the end of a long straight gravel road that runs off toward a distant highway, no booth, no loop, a single painted plywood sign with a heron silhouette leaning against a post, an old dull red camper van, ordinary clear morning sun, sun-faded greens, dust gold, matte, photographic 35mm film still, naturalistic. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "e2b9fb1f-7d74-418b-82a8-fab8b5523cab",
+      "image": "assets/locations/gravel-clearing.jpg"
+    },
+    {
+      "id": "the-clearing",
+      "name": "The clearing where the creek bend was",
+      "scenes": [
+        "the_clearing"
+      ],
+      "dimensions_m": [
+        40,
+        40,
+        20
+      ],
+      "lighting": "No sun; even pearl light, no shadows; the creek runs without sound.",
+      "objects": [
+        "register-box"
+      ],
+      "prompt": "A round forest clearing where a still creek bends, a ring of young saplings planted in a precise rectangle shape like the outline of a box on a post, tall bare pines spaced on exact intervals around the edge, a flat pearl-white sky with no sun, even light from every side, no shadows, greens with no yellow, glassy silent water, uncanny, photographic 35mm film still. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "ad7d700f-4f80-48e2-bd3f-8d785573d020",
+      "image": "assets/locations/the-clearing.jpg"
+    },
+    {
+      "id": "other-entrance",
+      "name": "The other entrance",
+      "scenes": [
+        "other_entrance"
+      ],
+      "dimensions_m": [
+        60,
+        40,
+        8
+      ],
+      "lighting": "No sun; pearl light, no shadows; a car's headlights are the only warm light.",
+      "objects": [
+        "heron-sign",
+        "site-post"
+      ],
+      "prompt": "An empty cedar-plank ranger booth at the entrance of a gravel road into a forest of tall bare pines spaced on exact regular intervals, the booth window open and unlit, a wire rack of folded paper maps beside the window, a painted plywood sign with a heron silhouette and a blank board, a flat pearl-white sky with no sun, even light, no shadows, two warm headlight beams approaching on the gravel, uncanny stillness, photographic 35mm film still. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "4e9ed35a-4698-47af-a749-cdc72533daee",
+      "image": "assets/locations/other-entrance.jpg"
+    },
+    {
+      "id": "tam-flat",
+      "name": "Tam's flat",
+      "scenes": [
+        "home_apartment"
+      ],
+      "dimensions_m": [
+        12,
+        9,
+        2.7
+      ],
+      "lighting": "Monday daylight through the windows; traffic below.",
+      "objects": [
+        "notebook",
+        "smartphone"
+      ],
+      "prompt": "A small three-room city rental flat seen through open doorways: a living room with a worn sofa and a table with a closed laptop, a short hallway, a spare room set up as a tidy study with bookshelves and a desk, plain painted walls, wooden floors, flat Monday daylight through tall windows, muted colours, matte, photographic 35mm film still, naturalistic. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "7ddce21f-e46b-49d5-9de6-8f067b96c40b",
+      "image": "assets/locations/tam-flat.jpg"
+    },
+    {
+      "id": "van-interior",
+      "name": "The van on the highway",
+      "scenes": [
+        "drive_home"
+      ],
+      "dimensions_m": [
+        2.2,
+        4.5,
+        1.9
+      ],
+      "lighting": "Afternoon sun through the windscreen; highway outside.",
+      "objects": [
+        "notebook",
+        "van-keys"
+      ],
+      "prompt": "The interior of an old dull red camper van seen from the back seat looking forward: two front seats, a dashboard with a small analogue radio and a spiral notebook lying on it, worn upholstery, a curtained rear bench, through the windscreen a two-lane highway through pine forest in afternoon sun, matte, photographic 35mm film still, naturalistic. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "865c4c18-a4e4-49ba-8474-462be7f8225d",
+      "image": "assets/locations/van-interior.jpg"
+    },
+    {
+      "id": "stairwell",
+      "name": "Agnes's stairwell and door",
+      "scenes": [
+        "mothers_door"
+      ],
+      "dimensions_m": [
+        4,
+        6,
+        9
+      ],
+      "lighting": "Evening; a warm bulb on each landing.",
+      "objects": [
+        "postcard",
+        "notebook"
+      ],
+      "prompt": "The stairwell of a modest old apartment building in the evening: worn stone steps with an iron handrail, a landing with a painted wooden flat door with a peephole and a doormat, a warm single bulb on each landing, cream walls, a window showing dusk sky, matte, photographic 35mm film still, naturalistic. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "406b8cd2-3783-43e4-b785-f9949a2768d9",
+      "image": "assets/locations/stairwell.jpg"
+    },
+    {
+      "id": "school-hall",
+      "name": "The school hall",
+      "scenes": [
+        "recital"
+      ],
+      "dimensions_m": [
+        30,
+        20,
+        7
+      ],
+      "lighting": "Stage light on the piano; the hall dim.",
+      "objects": [
+        "upright-piano",
+        "programme"
+      ],
+      "prompt": "A school assembly hall set for a children's piano recital: rows of folding chairs facing a low wooden stage with an upright piano under warm stage light, wall bars and high windows along the sides, polished wood floor, the hall lights dimmed, matte, photographic 35mm film still, naturalistic. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "143095ed-d474-48ab-9909-3d66c3a39ef0",
+      "image": "assets/locations/school-hall.jpg"
+    }
+  ],
+  "objects": [
+    {
+      "id": "paper-map",
+      "name": "Paper campground map",
+      "role": "interact",
+      "scenes": [
+        "booth_day1",
+        "loop_day1",
+        "loop_day2pm"
+      ],
+      "size_m": [
+        0.6,
+        0.01,
+        0.45
+      ],
+      "material": "Folded cream paper stock, printed forest-green ink, worn creases",
+      "prompt": "A half-unfolded paper campground map on cream paper stock with a forest-green printed loop road and small blank squares for sites, worn creases, slightly curled corners. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "efe7aa65-cb6a-4b9e-9656-d9b3b0ec8ba7",
+      "image": "assets/objects/paper-map.jpg"
+    },
+    {
+      "id": "master-map",
+      "name": "Master map in its frame",
+      "role": "interact",
+      "scenes": [
+        "booth_day1",
+        "payphone_night1",
+        "loop_day2pm"
+      ],
+      "size_m": [
+        0.9,
+        0.04,
+        0.65
+      ],
+      "material": "Wooden frame, glass, cream paper with green ink",
+      "prompt": "A large framed wall map of a campground loop road behind glass, plain cedar wooden frame, cream paper with forest-green printed contours and a loop of small blank site squares. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c009ec33-10f2-4368-ad55-c4cea9ad7bb6",
+      "image": "assets/objects/master-map.jpg"
+    },
+    {
+      "id": "notebook",
+      "name": "Tam's notebook",
+      "role": "interact",
+      "scenes": [
+        "fixed_sites_day1",
+        "fixed_sites_day2",
+        "home_apartment",
+        "drive_home",
+        "mothers_door",
+        "creek_trail"
+      ],
+      "size_m": [
+        0.15,
+        0.02,
+        0.21
+      ],
+      "material": "Kraft card cover, elastic band, ruled cream pages, graphite",
+      "prompt": "A closed pocket notebook with a plain brown kraft card cover, rounded corners, a black elastic band and a short pencil tucked under the band, slightly worn edges. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "ae80e8b6-06fb-4e39-9df4-e082775ec5f1",
+      "image": "assets/objects/notebook.jpg"
+    },
+    {
+      "id": "postcard",
+      "name": "Agnes's postcard",
+      "role": "interact",
+      "scenes": [
+        "booth_day1",
+        "fixed_sites_day2",
+        "mothers_door"
+      ],
+      "size_m": [
+        0.15,
+        0.002,
+        0.1
+      ],
+      "material": "Card stock, faded photo side, handwriting side",
+      "prompt": "A single old vintage postcard lying flat at an angle, picture side up showing a faded photograph of a pine forest creek, soft rounded corners, slightly bent and sun-faded. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d5cad638-f6ba-4459-b014-ccc10e5b5f86",
+      "image": "assets/objects/postcard.jpg"
+    },
+    {
+      "id": "camera",
+      "name": "Inés's camera",
+      "role": "interact",
+      "scenes": [
+        "fixed_sites_day2",
+        "loop_day1"
+      ],
+      "size_m": [
+        0.14,
+        0.08,
+        0.09
+      ],
+      "material": "Black and silver metal body, leather strap",
+      "prompt": "A generic unbranded 35mm film rangefinder camera, black leatherette and brushed silver metal body, a worn brown leather neck strap, no logos. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "10048ef4-be2a-4086-a820-641a42d793f7",
+      "image": "assets/objects/camera.jpg"
+    },
+    {
+      "id": "logbook",
+      "name": "The ranger's logbook",
+      "role": "interact",
+      "scenes": [
+        "booth_day2",
+        "loop_day2pm"
+      ],
+      "size_m": [
+        0.32,
+        0.05,
+        0.42
+      ],
+      "material": "Green cloth hardback, cream ruled pages, ribbon",
+      "prompt": "A thick closed ledger logbook with a dark forest-green cloth hardback cover, worn corners, a cream page block and a frayed ribbon marker, no lettering. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "8ffebae8-30e2-4d85-9c8f-ce59f89824d2",
+      "image": "assets/objects/logbook.jpg"
+    },
+    {
+      "id": "payphone",
+      "name": "The payphone",
+      "role": "interact",
+      "scenes": [
+        "booth_day1",
+        "payphone_night1"
+      ],
+      "size_m": [
+        0.35,
+        0.3,
+        2.0
+      ],
+      "material": "Painted steel housing on a wooden post, steel cord",
+      "prompt": "An old outdoor payphone in a weathered grey steel housing with a hood, mounted on a cedar wooden post, black handset on a steel armoured cord, a small light fitting above, no logos. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "7d7db7a0-ce21-4d34-a587-334d69dae468",
+      "image": "assets/objects/payphone.jpg"
+    },
+    {
+      "id": "register-box",
+      "name": "Trail register box",
+      "role": "interact",
+      "scenes": [
+        "loop_day1",
+        "loop_day2am",
+        "the_clearing"
+      ],
+      "size_m": [
+        0.4,
+        0.3,
+        1.4
+      ],
+      "material": "Cedar box with a hinged lid on a post",
+      "prompt": "A small weathered cedar trail register box on a wooden post with a hinged sloped lid, a pencil hanging on a string, grey sun-faded wood. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "8158a480-69a1-490e-b257-750839a2b3f7",
+      "image": "assets/objects/register-box.jpg"
+    },
+    {
+      "id": "heron-sign",
+      "name": "Heron entrance sign",
+      "role": "interact",
+      "scenes": [
+        "booth_day1",
+        "loop_day2pm",
+        "wrong_forest",
+        "gravel_morning",
+        "other_entrance"
+      ],
+      "size_m": [
+        2.4,
+        0.15,
+        2.2
+      ],
+      "material": "Painted plywood on two cedar posts",
+      "prompt": "A painted plywood campground entrance sign on two cedar posts, forest-green painted board with a cream border and a simple grey heron silhouette on the left, the rest of the board plain and blank, sun-faded paint. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "aab00d58-4c95-4042-8912-d56bafb288b9",
+      "image": "assets/objects/heron-sign.jpg"
+    },
+    {
+      "id": "quiet-hours-board",
+      "name": "Quiet-hours board",
+      "role": "interact",
+      "scenes": [
+        "loop_day2pm",
+        "wrong_forest"
+      ],
+      "size_m": [
+        0.6,
+        0.03,
+        0.4
+      ],
+      "material": "Painted wood board, four screws",
+      "prompt": "A small rectangular wooden notice board painted cream with a forest-green border and four screws in the corners, blank painted surface, weathered. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "432ab20d-2610-4782-be4e-a8d0f0714c20",
+      "image": "assets/objects/quiet-hours-board.jpg"
+    },
+    {
+      "id": "site-post",
+      "name": "Numbered site post",
+      "role": "interact",
+      "scenes": [
+        "loop_day1",
+        "loop_day2am",
+        "loop_day2pm",
+        "fixed_sites_day1",
+        "wrong_forest"
+      ],
+      "size_m": [
+        0.15,
+        0.15,
+        1.2
+      ],
+      "material": "Square cedar post, cedar end-grain top, blank yellow plate",
+      "prompt": "A square cedar wooden campsite marker post with a small peaked cap and a blank faded yellow number plate, cedar end-grain, weathered. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "0974a3b4-3cf0-46fd-abd7-dc27a690954f",
+      "image": "assets/objects/site-post.jpg"
+    },
+    {
+      "id": "firewood-bundle",
+      "name": "Firewood bundle",
+      "role": "interact",
+      "scenes": [
+        "booth_day1",
+        "campfire_night1"
+      ],
+      "size_m": [
+        0.4,
+        0.3,
+        0.35
+      ],
+      "material": "Split pine logs, cord binding",
+      "prompt": "A bundle of split pine firewood logs tied with twine, pale wood and brown bark. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c28ffddf-c333-4f8d-89f5-bc33d05bef6a",
+      "image": "assets/objects/firewood-bundle.jpg"
+    },
+    {
+      "id": "bicycle",
+      "name": "Lottie's bicycle",
+      "role": "interact",
+      "scenes": [
+        "loop_day1",
+        "fixed_sites_day2"
+      ],
+      "size_m": [
+        1.3,
+        0.5,
+        0.8
+      ],
+      "material": "Child's bike, faded teal paint, chain",
+      "prompt": "A child's small bicycle with faded teal paint, a white basket, chunky tyres, a slightly slack chain, standing upright on its kickstand, no logos. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "120c0fa0-db1a-496b-ab2e-e47abda5c900",
+      "image": "assets/objects/bicycle.jpg"
+    },
+    {
+      "id": "blue-kettle",
+      "name": "Blue enamel kettle",
+      "role": "interact",
+      "scenes": [
+        "loop_day1"
+      ],
+      "size_m": [
+        0.25,
+        0.2,
+        0.22
+      ],
+      "material": "Blue enamel steel, chipped",
+      "prompt": "A blue enamel camping kettle with a black wire handle, a few chips in the enamel at the rim. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "edd76e80-3577-4071-b01b-cd75177dcfb1",
+      "image": "assets/objects/blue-kettle.jpg"
+    },
+    {
+      "id": "cooler",
+      "name": "The cooler",
+      "role": "interact",
+      "scenes": [
+        "wrong_forest",
+        "campfire_night2"
+      ],
+      "size_m": [
+        0.7,
+        0.4,
+        0.45
+      ],
+      "material": "Hard plastic, faded green, white lid",
+      "prompt": "A rectangular hard-sided camping cooler box, faded forest-green body with an off-white lid and grey handles, scuffed, no logos. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "723c1554-e2cd-4d93-ae20-e6870962da28",
+      "image": "assets/objects/cooler.jpg"
+    },
+    {
+      "id": "owl-box",
+      "name": "The owl box",
+      "role": "interact",
+      "scenes": [
+        "loop_day1"
+      ],
+      "size_m": [
+        0.35,
+        0.35,
+        0.6
+      ],
+      "material": "Weathered cedar boards",
+      "prompt": "A wooden owl nest box made of weathered cedar boards with a round entrance hole and a sloped roof, mounting strap on the back. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "e0f72dc8-d830-42d6-a5b8-b3f957dade45",
+      "image": "assets/objects/owl-box.jpg"
+    },
+    {
+      "id": "van-keys",
+      "name": "Rafe's van keys",
+      "role": "interact",
+      "scenes": [
+        "dusk_choice",
+        "drive_home"
+      ],
+      "size_m": [
+        0.08,
+        0.02,
+        0.12
+      ],
+      "material": "Steel keys on a ring with a cork fob",
+      "prompt": "A small bunch of two old steel car keys on a split ring with a round cork float key fob. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "938eef91-aa3d-476e-8180-59dca4ec70a7",
+      "image": "assets/objects/van-keys.jpg"
+    },
+    {
+      "id": "chalkboard",
+      "name": "Dell's chalkboard",
+      "role": "interact",
+      "scenes": [
+        "fixed_sites_day1",
+        "loop_day2pm"
+      ],
+      "size_m": [
+        0.6,
+        0.4,
+        1.0
+      ],
+      "material": "Slate board on a wooden easel",
+      "prompt": "A small slate chalkboard on a folding wooden A-frame easel, wiped with faint chalk smudges, blank. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "fc8114ee-7ed6-4587-9b6e-1b9aa5096a9b",
+      "image": "assets/objects/chalkboard.jpg"
+    },
+    {
+      "id": "smartphone",
+      "name": "A phone",
+      "role": "interact",
+      "scenes": [
+        "wrong_forest",
+        "home_apartment"
+      ],
+      "size_m": [
+        0.075,
+        0.01,
+        0.15
+      ],
+      "material": "Black glass slab, grey case",
+      "prompt": "A generic unbranded smartphone in a plain grey case, lying at an angle, screen dark and blank. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "2ffb750f-cd0e-4388-9416-f4a8e06928ce",
+      "image": "assets/objects/smartphone.jpg"
+    },
+    {
+      "id": "booth-radio",
+      "name": "Booth radio",
+      "role": "interact",
+      "scenes": [
+        "payphone_night1",
+        "booth_day2"
+      ],
+      "size_m": [
+        0.25,
+        0.12,
+        0.18
+      ],
+      "material": "Cream plastic, dial",
+      "prompt": "A small vintage cream-coloured transistor radio with a round tuning dial and a short antenna, no logos. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "3415b691-1aed-4299-b4a2-9fb173537f99",
+      "image": "assets/objects/booth-radio.jpg"
+    },
+    {
+      "id": "programme",
+      "name": "Recital programme",
+      "role": "interact",
+      "scenes": [
+        "recital"
+      ],
+      "size_m": [
+        0.15,
+        0.002,
+        0.21
+      ],
+      "material": "Folded cream card",
+      "prompt": "A single folded cream card concert programme standing half open, plain with a small printed green border, blank. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "20a59066-0ad7-4179-a1d5-77e868e53f89",
+      "image": "assets/objects/programme.jpg"
+    },
+    {
+      "id": "split-boulder",
+      "name": "The split boulder",
+      "role": "hero",
+      "scenes": [
+        "fixed_sites_day1",
+        "fixed_sites_day2",
+        "wrong_forest"
+      ],
+      "size_m": [
+        4.0,
+        3.0,
+        2.2
+      ],
+      "material": "Grey granite, lichen",
+      "prompt": "A large granite boulder split down the middle into two halves with a crack wide enough for a person to lie in, grey granite with pale green lichen patches. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "6925065f-ffaf-4226-8866-c31416e20e04",
+      "image": "assets/objects/split-boulder.jpg"
+    },
+    {
+      "id": "camper-van",
+      "name": "The van",
+      "role": "hero",
+      "scenes": [
+        "booth_day1",
+        "dusk_choice",
+        "gravel_morning"
+      ],
+      "size_m": [
+        2.0,
+        4.8,
+        2.2
+      ],
+      "material": "Dull red paint, chrome bumpers",
+      "prompt": "A generic old camper van of no recognisable make: a plain boxy high-roof body with flat sides and a flat front, rectangular headlights, a dull faded red paint with a white roof, black rubber bumpers, a sliding side door, plain grille, no logos, badges or emblems. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "596ff86d-25d7-4c98-825f-f67072074235",
+      "image": "assets/objects/camper-van.jpg"
+    },
+    {
+      "id": "picnic-table",
+      "name": "Picnic table",
+      "role": "hero",
+      "scenes": [
+        "loop_day1",
+        "fixed_sites_day1",
+        "wrong_forest",
+        "gravel_morning"
+      ],
+      "size_m": [
+        1.8,
+        1.6,
+        0.75
+      ],
+      "material": "Weathered timber, galvanised bolts",
+      "prompt": "A weathered grey timber campground picnic table with attached bench seats, galvanised bolts. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "6e40edea-c9f5-4382-b1cc-72a0ee1fbbf5",
+      "image": "assets/objects/picnic-table.jpg"
+    },
+    {
+      "id": "fire-ring",
+      "name": "Steel fire ring",
+      "role": "hero",
+      "scenes": [
+        "campfire_night1",
+        "campfire_night2",
+        "fixed_sites_day1",
+        "wrong_forest"
+      ],
+      "size_m": [
+        0.9,
+        0.9,
+        0.35
+      ],
+      "material": "Rusted steel, ash inside",
+      "prompt": "A round rusted steel campground fire ring with a hinged cooking grate folded up, cold grey ash inside. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "5bfad336-f372-42f1-9023-68fdbd229a80",
+      "image": "assets/objects/fire-ring.jpg"
+    },
+    {
+      "id": "tent",
+      "name": "Dome tent",
+      "role": "hero",
+      "scenes": [
+        "fixed_sites_day1",
+        "wrong_forest",
+        "gravel_morning",
+        "creek_trail"
+      ],
+      "size_m": [
+        2.2,
+        2.0,
+        1.3
+      ],
+      "material": "Faded olive nylon, grey poles",
+      "prompt": "A pitched two-person dome tent in faded olive green nylon with a grey fly sheet and guy lines, no logos. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "0cbbd7b8-47e5-48ca-a131-144b52aec02d",
+      "image": "assets/objects/tent.jpg"
+    },
+    {
+      "id": "upright-piano",
+      "name": "Upright piano",
+      "role": "hero",
+      "scenes": [
+        "recital"
+      ],
+      "size_m": [
+        1.5,
+        0.6,
+        1.25
+      ],
+      "material": "Dark walnut veneer",
+      "prompt": "An old upright piano in dark walnut veneer with the keyboard lid open, no logos. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "f3fb1fdf-3280-4a94-a61e-56ad243707ef",
+      "image": "assets/objects/upright-piano.jpg"
+    },
+    {
+      "id": "camp-lantern",
+      "name": "Camp lantern",
+      "role": "fill",
+      "scenes": [
+        "campfire_night1",
+        "loop_day2pm"
+      ],
+      "size_m": [
+        0.15,
+        0.15,
+        0.3
+      ],
+      "material": "Green enamel and glass globe",
+      "prompt": "A vintage camping lantern with a dark green enamel base and top, a clear glass globe and a wire bail handle, unlit, no logos. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "ddf9b36c-65ac-4360-8efe-26086bef1aab",
+      "image": "assets/objects/camp-lantern.jpg"
+    },
+    {
+      "id": "camp-chair",
+      "name": "Folding camp chair",
+      "role": "fill",
+      "scenes": [
+        "campfire_night1",
+        "campfire_night2",
+        "fixed_sites_day1"
+      ],
+      "size_m": [
+        0.6,
+        0.6,
+        0.85
+      ],
+      "material": "Canvas and wooden frame",
+      "prompt": "A folding camp chair with a faded rust canvas seat on a wooden frame, opened. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "27dac38d-870d-438b-a875-b50513a724b5",
+      "image": "assets/objects/camp-chair.jpg"
+    },
+    {
+      "id": "hiking-pack",
+      "name": "Abel's pack",
+      "role": "fill",
+      "scenes": [
+        "creek_trail"
+      ],
+      "size_m": [
+        0.35,
+        0.3,
+        0.7
+      ],
+      "material": "Faded canvas, leather straps",
+      "prompt": "A well-worn hiking backpack in faded khaki canvas with leather straps, a rolled sleeping mat strapped to the bottom, no logos. Matte, photographic product render. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "b3c2dde9-cb39-436b-8217-1e1a39c2a4cc",
+      "image": "assets/objects/hiking-pack.jpg"
+    }
+  ]
+}
