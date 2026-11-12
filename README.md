@@ -71,6 +71,15 @@ It draws every gameplay pictograph (`games/<slug>/pictographs/*.svg`) from each 
 `pictographs/make.py`, and regenerates `docs/PICTOGRAPHS.md` and section 7 of `docs/COLLECTION.md`
 from `docs/graphic_styles.json`. `--check` changes nothing and fails if anything is stale.
 
+```bash
+python tools/check_assets.py
+```
+
+It checks each game's `assets/assets.json`: the location images that are the reference for
+building each 3D set in Blender (every 3D scene covered by exactly one location), and the isolated
+object images on white that are the input for Meshy image-to-3D (every object placed in a location,
+with its size in metres).
+
 ## Sources
 
 Every game adapts a work in the author's `Pipelines-Plugin` repository, under
