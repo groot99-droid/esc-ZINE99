@@ -1,0 +1,38 @@
+{
+  "seams": [
+    {"id": "head", "name": "Head", "slots_max": 3},
+    {"id": "chest", "name": "Chest", "slots_max": 3},
+    {"id": "left_arm", "name": "Left Arm", "slots_max": 3},
+    {"id": "right_arm", "name": "Right Arm", "slots_max": 3},
+    {"id": "left_leg", "name": "Left Leg", "slots_max": 3},
+    {"id": "right_leg", "name": "Right Leg", "slots_max": 3}
+  ],
+  "scoring": {
+    "accuracy_px": {"perfect": 6, "good": 14},
+    "stitch_score": {"perfect_in_band": 1.0, "good": 0.7, "loose": 0.4, "off": 0.2},
+    "tear_penalty_s": 2,
+    "idle_hint_s": 8,
+    "spread_4_band_bonus": 0.2
+  },
+  "quality": [
+    {"id": "strong", "min_percent": 85, "slots_per_seam": 3},
+    {"id": "fair", "min_percent": 60, "slots_per_seam": 2},
+    {"id": "poor", "min_percent": 0, "slots_per_seam": 1}
+  ],
+  "ruth_line_min_strong_seams": 4,
+  "mend_own_extra_slots": 1,
+  "patterns": [
+    {"n": 1, "scene": "a1_stitch_strap", "stitch": "running", "on": "Marcus's pack strap (webbing)", "seams": 1, "stitches_per_seam": 8,
+     "pressure": "None; the friends' game and voices play", "drift_px": 0, "drift_every_s": null, "time_limit_s": null, "world_runs": false,
+     "writes": ["strap.quality"], "tokens": ["marcus_strap", "my_hands"]},
+    {"n": 2, "scene": "b6_stitch_seams", "stitch": "ladder", "on": "Your own six seams", "seams": 6, "stitches_per_seam": 6,
+     "pressure": "The needle drifts 4 px with each pulse", "drift_px": 4, "drift_every_s": 1.2, "time_limit_s": null, "world_runs": false,
+     "writes": ["seams.slots_total"], "tokens": []},
+    {"n": 3, "scene": "c12_stitch_mend", "stitch": "whip", "on": "A torn seam, a friend's or yours", "seams": 1, "stitches_per_seam": 10,
+     "pressure": "Dawn light grows; the scene ends when Mabel arrives", "drift_px": 0, "drift_every_s": null, "time_limit_s": 60, "world_runs": false,
+     "writes": ["friend.seam_mended", "seams.slots_total"], "tokens": [], "friend_hunger_rate": 0.7},
+    {"n": 4, "scene": "a5_altar_stitch", "stitch": "backstitch", "on": "Around the circle of skins (Keeper only)", "seams": 1, "stitches_per_seam": 12,
+     "pressure": "World runs; the room's pulse speeds up", "drift_px": 0, "drift_every_s": null, "time_limit_s": 90, "world_runs": true,
+     "writes": ["altar.choice"], "tokens": [], "on_complete": "stitch", "on_abandon": "stitched"}
+  ]
+}

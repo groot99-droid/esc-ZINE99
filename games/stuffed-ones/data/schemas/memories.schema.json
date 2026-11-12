@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "memories.json",
+  "type": "object",
+  "required": [
+    "totals",
+    "tokens"
+  ],
+  "properties": {
+    "totals": {
+      "type": "object",
+      "required": [
+        "guaranteed",
+        "act1_possible",
+        "all"
+      ],
+      "properties": {
+        "guaranteed": {
+          "type": "integer"
+        },
+        "act1_possible": {
+          "type": "integer"
+        },
+        "all": {
+          "type": "integer"
+        }
+      }
+    },
+    "tokens": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "person",
+          "chapter",
+          "scene",
+          "guaranteed",
+          "condition"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "person": {
+            "type": "string",
+            "description": "A pack id from guests.json"
+          },
+          "chapter": {
+            "type": "string"
+          },
+          "scene": {
+            "type": "string"
+          },
+          "guaranteed": {
+            "type": "boolean"
+          },
+          "condition": {
+            "type": "object",
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "always",
+                  "shelve",
+                  "action",
+                  "flag"
+                ]
+              },
+              "incidents": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "flag": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "profile.json",
+  "type": "object",
+  "required": [
+    "store",
+    "written",
+    "cleared_by",
+    "keys",
+    "derived",
+    "shelf_writes",
+    "generations_on_shelf"
+  ],
+  "properties": {
+    "store": {
+      "type": "object",
+      "required": [
+        "backend",
+        "name",
+        "records",
+        "beside_slots"
+      ],
+      "properties": {
+        "backend": {
+          "enum": [
+            "indexeddb"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "records": {
+          "enum": [
+            "one"
+          ]
+        },
+        "beside_slots": {
+          "type": "boolean"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "written": {
+      "type": "object",
+      "required": [
+        "when",
+        "before",
+        "once_per_run",
+        "scenes"
+      ],
+      "properties": {
+        "when": {
+          "enum": [
+            "ending_resolves"
+          ]
+        },
+        "before": {
+          "type": "string"
+        },
+        "once_per_run": {
+          "type": "boolean"
+        },
+        "scenes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "description": "Scene ids from scenes.json that write the profile"
+        }
+      }
+    },
+    "cleared_by": {
+      "type": "object",
+      "required": [
+        "control",
+        "confirm",
+        "resets_to_defaults"
+      ],
+      "properties": {
+        "control": {
+          "type": "string"
+        },
+        "confirm": {
+          "type": "boolean"
+        },
+        "resets_to_defaults": {
+          "type": "boolean"
+        }
+      }
+    },
+    "keys": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "flag",
+          "type",
+          "default",
+          "read_at",
+          "write",
+          "write_note"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "flag": {
+            "type": "string",
+            "description": "The flags.json name this key mirrors; its description starts with PROFILE"
+          },
+          "type": {
+            "enum": [
+              "bool",
+              "enum",
+              "meter",
+              "counter",
+              "ledger"
+            ]
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "default": {},
+          "read_at": {
+            "enum": [
+              "new_game"
+            ]
+          },
+          "write": {
+            "enum": [
+              "increment",
+              "append_by_ending",
+              "set_to_ending",
+              "append_new_spreads"
+            ]
+          },
+          "write_note": {
+            "type": "string"
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "derived": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "from",
+          "stored",
+          "set_at",
+          "rule"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string",
+            "description": "A profile key"
+          },
+          "stored": {
+            "const": false
+          },
+          "set_at": {
+            "enum": [
+              "new_game"
+            ]
+          },
+          "rule": {
+            "type": "object"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "shelf_writes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ending",
+          "entries"
+        ],
+        "properties": {
+          "ending": {
+            "type": "string",
+            "description": "An ending id from endings.json"
+          },
+          "entries": {
+            "enum": [
+              "herded_guests",
+              "friends",
+              "none"
+            ]
+          },
+          "group_from": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "generations_on_shelf": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "book.json",
+  "type": "object",
+  "required": [
+    "source",
+    "pages_total",
+    "glyphs_total",
+    "thread_colours",
+    "order_rules",
+    "pages",
+    "spreads",
+    "sittings",
+    "hints"
+  ],
+  "properties": {
+    "source": {
+      "type": "string"
+    },
+    "pages_total": {
+      "type": "integer"
+    },
+    "glyphs_total": {
+      "type": "integer"
+    },
+    "glyphs_note": {
+      "type": "string"
+    },
+    "thread_colours": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "colour",
+          "role"
+        ],
+        "properties": {
+          "colour": {
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "act",
+              "thing",
+              "who"
+            ]
+          }
+        }
+      }
+    },
+    "order_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "introduced_at"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "introduced_at": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "found",
+          "place"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "found": {
+            "enum": [
+              "explore",
+              "lead"
+            ]
+          },
+          "place": {
+            "type": "string"
+          },
+          "scene": {
+            "type": "string"
+          },
+          "lead": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "spreads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "n",
+          "name",
+          "pages",
+          "flag",
+          "strips",
+          "rules",
+          "decoys",
+          "teaches",
+          "effect"
+        ],
+        "properties": {
+          "n": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "pages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "flag": {
+            "type": "string"
+          },
+          "strips": {
+            "type": "integer"
+          },
+          "rules": {
+            "type": "integer"
+          },
+          "decoys": {
+            "type": "integer"
+          },
+          "teaches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "text",
+                "verbatim"
+              ],
+              "properties": {
+                "text": {
+                  "type": "string"
+                },
+                "verbatim": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "effect": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sittings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "n",
+          "scene",
+          "world_runs",
+          "time_limit_s"
+        ],
+        "properties": {
+          "n": {
+            "type": "integer"
+          },
+          "scene": {
+            "type": "string"
+          },
+          "world_runs": {
+            "type": "boolean"
+          },
+          "time_limit_s": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "hints": {
+      "type": "object",
+      "required": [
+        "idle_role_glow_s",
+        "sampler_solved_lines"
+      ],
+      "properties": {
+        "idle_role_glow_s": {
+          "type": "integer"
+        },
+        "sampler_solved_lines": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

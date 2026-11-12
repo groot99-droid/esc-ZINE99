@@ -477,7 +477,7 @@ Cameras: **guest camera**, first person at 1.65 m, walk 1.4 m/s, run 3.2 m/s (Ac
 | Appearance | Scene | Stitch | Stitches | Pressure | Writes |
 | --- | --- | --- | --- | --- | --- |
 | 1 | `a1_stitch_strap` | Running stitch on webbing | 8 | None; the friends' game and voices play | `strap.quality`; tokens "Marcus's strap", "My hands" |
-| 2 | `b6_stitch_seams` | Ladder stitch on your own six seams | 6 per seam, 36 in all | The needle drifts 4 px with each pulse (every 1.2 s) | `seams.slots_total`: Strong 3, Fair 2, Poor 1 slot per seam (6–18) |
+| 2 | `b6_stitch_seams` | Ladder stitch on your own six seams | 6 per seam, 36 in all | The needle drifts 4 px with each pulse (every 1.2 s) | `seams.slots_total`: Strong 3, Fair 2, Poor 1 slot per seam (6–18; 19 with appearance 3's own-seam mend) |
 | 3 | `c12_stitch_mend` | Whip stitch on a torn seam (a friend's, or yours) | 10 | Dawn light grows; 60 s before Mabel arrives, then the scene ends | `friend.seam_mended` (that friend's hunger rises 30 percent slower) or +1 slot on yours |
 | 4 | `a5_altar_stitch` (Keeper only) | Backstitch around the circle of skins | 12 in a ring | World runs; the room's pulse speeds up; 90 s | `altar.choice = stitch` on completion at any quality; abandoning it returns to `stitched` |
 
@@ -492,7 +492,7 @@ The Keeper stitch is shown only as needle, thread and torn fabric at the altar's
 - **Difficulty:** S1–S2 four strips, one rule; S3–S4 six strips, two rules; S5–S6 eight strips, three rules and one decoy strip that fits no slot.
 - **Hints:** Mabel's sampler shows one solved line (found in c04). After 90 seconds idle, one strip's role glows.
 - **Failure:** none, except time in `a5_book_3`: 180 seconds with the toys closing in (a ring of glows tightening at the page's edge). Unfinished spreads stay unread.
-- **Carry-over:** spreads read in any earlier run start already ordered (`book.carried`).
+- **Carry-over:** spreads read in any earlier run start already ordered (`book.carried`, a ledger of spread numbers, since spreads can be read out of order).
 
 | Spread | Teaches (source where it exists) | Effect in Acts 2–3 |
 | --- | --- | --- |
@@ -584,14 +584,14 @@ The next incident then plays the variant that **breaks** the current explanation
 | Jamie's bad postcard | Jamie | c01 car | Ask about his bag |
 | Jamie's narration | Jamie | c04 ridge | Answer him when he stops |
 | Why Lila locks her door | Lila | c02 | Shelve I2 |
-| Lila's hum | Lila | c03 creek | Shelve I3 or I4 |
+| Lila's hum | Lila | c03 creek | Shelve I3 |
 | Lila's mushroom photo | Lila | c03 creek | Look at her photo |
 | Marcus's strap | Marcus | c01 | Always |
 | Marcus's paper map | Marcus | c01 overlook | Walk beside him |
 | There's always a way out | Marcus | c04 porch | Shelve I6 or I7 |
 | The chili | Dani | c01 dinner | Always |
 | Dani names the toys | Dani | c01 shelves | Stand with her |
-| Dani is glad she came | Dani | c03 creek | Shelve I3 or I4 |
+| Dani is glad she came | Dani | c03 creek | Shelve I3 |
 | The door | You | c08 | Hold at the door |
 
 Six are guaranteed; 16 can be earned in Act 1; 17 in all. The tradeoff: the five Shelve-gated tokens need four Shelves, while the Keeper ending needs all six leads, which need six Keeps out of eight. No player gets both in one run.
@@ -775,7 +775,18 @@ Controls (remappable): Still (hold; toggle available), Steady, Interact, Journal
 | `data/flags.json` | 52 names: flags, meters, counters and 4 ledgers (`incident_log`, `memory_log`, `hunt_log`, `shelf.generations`) |
 | `data/endings.json` | The four endings above |
 
-Beyond the shared schemas: five names are **profile** state that survives a new game (`run.number`, `run.hunt_group` is derived from it, `shelf.generations`, `shelf.previous_ending`, `book.carried`). Their descriptions start with "PROFILE". The engine needs a profile store beside the slots (TECH.md describes slots only). Per-room scent levels, cone angles and guest positions are scene-local runtime values and are not saved past the scene.
+Beyond the shared schemas, six extra files, each with a schema in `data/schemas/<name>.schema.json` and all checked by `tools/check_data.py` (which `tools/validate.py` runs):
+
+| File | Holds |
+| --- | --- |
+| `data/profile.json` | The profile store beside the save slots (IndexedDB store `profile`, one record): its four keys `run.number`, `shelf.generations`, `shelf.previous_ending` and `book.carried`, each with the flag it mirrors, type, default and write rule; the derived, unstored `run.hunt_group` (odd runs B, even runs C); when it is written (once, as an ending resolves, before the credits, by the four ending scenes); what each ending writes to the shelf; "Empty the shelf" |
+| `data/guests.json` | The pack's five stuffed forms, and Groups A, B and C (three each): lives, habits, Parlour symbols, Group C's mechanical differences, which source line each speaks, stuffed forms by slot, and which slot does which carried Act 1 incident in later runs |
+| `data/memories.json` | The 17 memory tokens: person, chapter, scene and condition (6 guaranteed, 16 in Act 1) |
+| `data/incidents.json` | The four explanations, Shelve and Keep, and incidents I1–I9 with every breaking variant |
+| `data/book.json` | The 12 pages (6 explored, 6 leads), the 6 spreads with their pages, strips, rules, decoys, teaching and effect; the three thread colours, the three order rules, the three sittings |
+| `data/stitchwork.json` | The six seams, scoring and quality thresholds, slots per quality, Ruth's line threshold, and the four stitch patterns |
+
+The check confirms that every flag whose description starts with "PROFILE" is a profile key and every profile key is such a flag; that the profile is written by exactly the ending scenes; that token, incident, page and pattern scenes exist and write what they claim; that each spread is readable at the first sitting where its pages can all be found; and that the vault quotes are verbatim (when the vault checkout sits beside this repo). `run.hunt_group` is derived from `run.number` at each new game and not stored, so its description does not start with "PROFILE". Per-room scent levels, cone angles and guest positions are scene-local runtime values and are not saved past the scene.
 
 ## 19. Build plan
 
@@ -814,7 +825,7 @@ Everything below is a proposal, not the author's text.
 
 **Structure and systems:** the two-group reading of movements two and three; Group A leaving alive at dawn; the Shelve-or-Keep engine with the four named explanations and every breaking variant in section 12; memory tokens and all their names; Stuffing (slots, warm slots, costs); seams deciding abilities; hunger numbers, tremors, Steady, lurches, the Act 2 release; friends' hunger meters; dread, blame, the flee line at 70, the break line at 40, the memory governor; Join or Hold and the hunt log; the profile shelf, run alternation of Groups B and C, elders, the run-2 changes and the circle of skins holding older generations; the four endings' exact conditions (The Warning, The Empty Toy and The Keeper are from `docs/ADAPTATIONS.md`, not the novel).
 
-**People:** all interior detail for Jamie, Lila, Marcus and Dani beyond the source lines (oldest friend, flatmate, the postcard, the narration, sleepwalking as the reason for Lila's lock, mushrooms, maps, the couple, the camp stove, the naming); their added lines; stuffed forms for the narrator (cat), Marcus (dog) and Dani (bear); the narrator's guestbook name; the keepers' daily routines and the condition on Ruth's line; Group A (Omar, Bea, Sunny), Group B (Noor, Wes, Ana), Group C (Sol, Rosa, Kit), their lives, symbols and added lines; which guest speaks which source line.
+**People:** all interior detail for Jamie, Lila, Marcus and Dani beyond the source lines (oldest friend, flatmate, the postcard, the narration, sleepwalking as the reason for Lila's lock, mushrooms, maps, the couple, the camp stove, the naming); their added lines; stuffed forms for the narrator (cat), Marcus (dog) and Dani (bear), and for Groups B and C by slot (rabbit, bear, cat: Noor and Sol, Wes and Rosa, Ana and Kit), chosen so the source's rabbit, bear and cat can do the carried Act 1 incidents; the narrator's guestbook name; the keepers' daily routines and the condition on Ruth's line; Group A (Omar, Bea, Sunny), Group B (Noor, Wes, Ana), Group C (Sol, Rosa, Kit), their lives, symbols and added lines; which guest speaks which source line.
 
 **Places and objects:** the cabin's floor plan and room assignments; the keepers' lit window; the shed; three named trails; the car interior; the guestbook; the counting game and all its rules and symbols; Mabel's sampler; Marcus's strap and map; loose book pages hidden in the cabin; the lectern; the book's six spreads' division, the sixth spread (the keeper's hand) and all spread effects; the stitched script's colours and rules; the film camera, scrapbook, lamp, sketchbook, binoculars; the listing on the fridge and its wording drawn from ch 1; Jamie's recorded giggle (I6 variant).
 

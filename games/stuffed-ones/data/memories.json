@@ -1,0 +1,22 @@
+{
+  "totals": {"guaranteed": 6, "act1_possible": 16, "all": 17},
+  "tokens": [
+    {"id": "my_name", "name": "My name", "person": "narrator", "chapter": "c01_arrival", "scene": "a1_cabin_arrival", "guaranteed": true, "condition": {"type": "always", "note": "If you write one in the guestbook (player.name_written)."}},
+    {"id": "drive_up", "name": "The drive up", "person": "narrator", "chapter": "c01_arrival", "scene": "a1_car", "guaranteed": true, "condition": {"type": "always"}},
+    {"id": "my_hands", "name": "My hands", "person": "narrator", "chapter": "c01_arrival", "scene": "a1_stitch_strap", "guaranteed": true, "condition": {"type": "always"}},
+    {"id": "trips_before", "name": "The trips before", "person": "narrator", "chapter": "c03_smell_warmth", "scene": "a3_dog", "guaranteed": false, "condition": {"type": "shelve", "incidents": ["I5"]}},
+    {"id": "jamie_question", "name": "Jamie's question", "person": "jamie", "chapter": "c02_first_night", "scene": "a2_breakfast", "guaranteed": true, "condition": {"type": "always"}},
+    {"id": "jamie_postcard", "name": "Jamie's bad postcard", "person": "jamie", "chapter": "c01_arrival", "scene": "a1_car", "guaranteed": false, "condition": {"type": "action", "note": "Ask about his bag."}},
+    {"id": "jamie_narration", "name": "Jamie's narration", "person": "jamie", "chapter": "c04_fuller", "scene": "a4_silent_forest", "guaranteed": false, "condition": {"type": "action", "note": "Answer him when he stops."}},
+    {"id": "lila_door", "name": "Why Lila locks her door", "person": "lila", "chapter": "c02_first_night", "scene": "a2_breakfast", "guaranteed": false, "condition": {"type": "shelve", "incidents": ["I2"]}},
+    {"id": "lila_hum", "name": "Lila's hum", "person": "lila", "chapter": "c03_smell_warmth", "scene": "a3_trail_creek", "guaranteed": false, "condition": {"type": "shelve", "incidents": ["I3"]}},
+    {"id": "lila_mushroom", "name": "Lila's mushroom photo", "person": "lila", "chapter": "c03_smell_warmth", "scene": "a3_trail_creek", "guaranteed": false, "condition": {"type": "action", "note": "Look at her photo."}},
+    {"id": "marcus_strap", "name": "Marcus's strap", "person": "marcus", "chapter": "c01_arrival", "scene": "a1_stitch_strap", "guaranteed": true, "condition": {"type": "always"}},
+    {"id": "marcus_map", "name": "Marcus's paper map", "person": "marcus", "chapter": "c01_arrival", "scene": "a1_trail_overlook", "guaranteed": false, "condition": {"type": "action", "note": "Walk beside him."}},
+    {"id": "way_out", "name": "There's always a way out", "person": "marcus", "chapter": "c04_fuller", "scene": "a4_silent_forest", "guaranteed": false, "condition": {"type": "shelve", "incidents": ["I6", "I7"]}},
+    {"id": "chili", "name": "The chili", "person": "dani", "chapter": "c01_arrival", "scene": "a1_dinner", "guaranteed": true, "condition": {"type": "always"}},
+    {"id": "dani_names", "name": "Dani names the toys", "person": "dani", "chapter": "c01_arrival", "scene": "a1_cabin_arrival", "guaranteed": false, "condition": {"type": "action", "note": "Stand with her."}},
+    {"id": "dani_glad", "name": "Dani is glad she came", "person": "dani", "chapter": "c03_smell_warmth", "scene": "a3_trail_creek", "guaranteed": false, "condition": {"type": "shelve", "incidents": ["I3"]}},
+    {"id": "the_door", "name": "The door", "person": "narrator", "chapter": "c08_giving_in", "scene": "b8_the_door", "guaranteed": false, "condition": {"type": "flag", "flag": "act2.door_held", "note": "Hold at the door."}}
+  ]
+}

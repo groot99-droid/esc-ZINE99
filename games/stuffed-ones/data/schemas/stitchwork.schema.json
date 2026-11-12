@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "stitchwork.json",
+  "type": "object",
+  "required": [
+    "seams",
+    "scoring",
+    "quality",
+    "ruth_line_min_strong_seams",
+    "mend_own_extra_slots",
+    "patterns"
+  ],
+  "properties": {
+    "seams": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "slots_max"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slots_max": {
+            "type": "integer"
+          }
+        }
+      },
+      "minItems": 6,
+      "maxItems": 6
+    },
+    "scoring": {
+      "type": "object",
+      "required": [
+        "accuracy_px",
+        "stitch_score",
+        "tear_penalty_s",
+        "idle_hint_s",
+        "spread_4_band_bonus"
+      ],
+      "properties": {
+        "accuracy_px": {
+          "type": "object"
+        },
+        "stitch_score": {
+          "type": "object"
+        },
+        "tear_penalty_s": {
+          "type": "number"
+        },
+        "idle_hint_s": {
+          "type": "number"
+        },
+        "spread_4_band_bonus": {
+          "type": "number"
+        }
+      }
+    },
+    "quality": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "min_percent",
+          "slots_per_seam"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "strong",
+              "fair",
+              "poor"
+            ]
+          },
+          "min_percent": {
+            "type": "number"
+          },
+          "slots_per_seam": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "ruth_line_min_strong_seams": {
+      "type": "integer"
+    },
+    "mend_own_extra_slots": {
+      "type": "integer"
+    },
+    "patterns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "n",
+          "scene",
+          "stitch",
+          "on",
+          "seams",
+          "stitches_per_seam",
+          "pressure",
+          "drift_px",
+          "drift_every_s",
+          "time_limit_s",
+          "world_runs",
+          "writes",
+          "tokens"
+        ],
+        "properties": {
+          "n": {
+            "type": "integer"
+          },
+          "scene": {
+            "type": "string"
+          },
+          "stitch": {
+            "type": "string"
+          },
+          "on": {
+            "type": "string"
+          },
+          "seams": {
+            "type": "integer"
+          },
+          "stitches_per_seam": {
+            "type": "integer"
+          },
+          "pressure": {
+            "type": "string"
+          },
+          "drift_px": {
+            "type": "number"
+          },
+          "drift_every_s": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "time_limit_s": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "world_runs": {
+            "type": "boolean"
+          },
+          "writes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tokens": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "friend_hunger_rate": {
+            "type": "number"
+          },
+          "on_complete": {
+            "type": "string"
+          },
+          "on_abandon": {
+            "type": "string"
+          }
+        }
+      },
+      "minItems": 4
+    }
+  }
+}

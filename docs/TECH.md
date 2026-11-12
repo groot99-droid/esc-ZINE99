@@ -90,7 +90,9 @@ it, and only if the author wrote one.
 ### Saves
 
 Autosave at every chapter boundary and every layer change. Three manual slots. A save stores the
-current scene id, every flag, meter, counter and ledger, and the playtime. Heartstream is the
+current scene id, every flag, meter, counter and ledger, and the playtime. A game may also keep a **profile**: one IndexedDB record beside the slots that survives a new
+game. `flags.json` marks its names "PROFILE" and the game's `data/profile.json` declares them
+(The Stuffed Ones uses it to put the last run's guests on the shelf). Heartstream is the
 exception: it has no saves by design, and its session is resumable only if a player drops out.
 
 ### Accessibility (all games)

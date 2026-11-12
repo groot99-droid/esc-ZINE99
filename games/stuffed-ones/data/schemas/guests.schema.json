@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "guests.json",
+  "type": "object",
+  "required": [
+    "source",
+    "pack",
+    "groups",
+    "carried_incidents"
+  ],
+  "properties": {
+    "source": {
+      "type": "string"
+    },
+    "pack": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "form",
+          "hunger",
+          "origin"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "form": {
+            "type": "string"
+          },
+          "hunger": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "origin": {
+            "enum": [
+              "source",
+              "added"
+            ]
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      },
+      "minItems": 5
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "act",
+          "runs",
+          "scenes",
+          "leaves_alive",
+          "members"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "act": {
+            "enum": [
+              2,
+              3
+            ]
+          },
+          "runs": {
+            "enum": [
+              "all",
+              "odd",
+              "even"
+            ]
+          },
+          "scenes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "leaves_alive": {
+            "type": "boolean"
+          },
+          "source_note": {
+            "type": "string"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "name",
+                "age",
+                "interior",
+                "lines"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "slot": {
+                  "type": "integer"
+                },
+                "dread": {
+                  "type": "string",
+                  "description": "A dread meter in flags.json"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "form": {
+                  "type": "string"
+                },
+                "parlour_symbol": {
+                  "type": "string"
+                },
+                "interior": {
+                  "type": "string"
+                },
+                "habit": {
+                  "type": "string"
+                },
+                "learnable": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "mechanics": {
+                  "type": [
+                    "object",
+                    "null"
+                  ]
+                },
+                "carried_habit": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "lines": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "text",
+                      "verbatim"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "verbatim": {
+                        "type": "boolean"
+                      },
+                      "chapter": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "minItems": 3,
+            "maxItems": 3
+          }
+        }
+      },
+      "minItems": 3
+    },
+    "carried_incidents": {
+      "type": "object",
+      "required": [
+        "rows"
+      ],
+      "properties": {
+        "note": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "incident",
+              "toy",
+              "slot"
+            ],
+            "properties": {
+              "incident": {
+                "type": "string"
+              },
+              "toy": {
+                "type": "string"
+              },
+              "slot": {
+                "type": "integer"
+              },
+              "place": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -286,7 +286,8 @@
     "book.spreads_read",
     "book.spread_1",
     "book.spread_2",
-    "book.spread_3"
+    "book.spread_3",
+    "book.spread_4"
    ],
    "enter": "push-in",
    "exit": "pull-out",

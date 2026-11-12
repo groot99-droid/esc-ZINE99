@@ -1,0 +1,56 @@
+{
+  "source": "02_Novels/01_The_Stuffed_Ones.md",
+  "pages_total": 12,
+  "glyphs_total": 40,
+  "glyphs_note": "The 40 glyphs are drawn with the art (section 17); they are not listed here.",
+  "thread_colours": [
+    {"colour": "red", "role": "act"},
+    {"colour": "black", "role": "thing"},
+    {"colour": "white", "role": "who"}
+  ],
+  "order_rules": [
+    {"id": "needle_before_thread", "text": "A needle glyph comes before a thread glyph.", "introduced_at": 1},
+    {"id": "knot_ends_line", "text": "A knot glyph ends a line.", "introduced_at": 3},
+    {"id": "doubled_is_many", "text": "A glyph doubled means \"many\".", "introduced_at": 5}
+  ],
+  "pages": [
+    {"id": "P_guestbook", "found": "explore", "place": "Under the guestbook", "scene": "a1_cabin_arrival"},
+    {"id": "P_game_box", "found": "explore", "place": "Inside the lid of the counting-game box", "scene": "a1_cabin_arrival"},
+    {"id": "P_shed", "found": "explore", "place": "The shed beside the porch", "scene": "a3_dog"},
+    {"id": "P_bear_seam", "found": "explore", "place": "Inside the warm bear's seam (feel along it for 3 s)", "scene": "a3_warmth"},
+    {"id": "P_sampler", "found": "explore", "place": "Behind the frame of Mabel's sampler", "scene": "a4_wrong_places"},
+    {"id": "P_lectern", "found": "explore", "place": "On the lectern in the ritual room", "scene": "a5_ritual_room"},
+    {"id": "L1", "found": "lead", "lead": 1, "place": "Near the incident whose Keep revealed it (I2 kept first: the hall closet rabbit)"},
+    {"id": "L2", "found": "lead", "lead": 2, "place": "Near the incident whose Keep revealed it"},
+    {"id": "L3", "found": "lead", "lead": 3, "place": "Near the incident whose Keep revealed it"},
+    {"id": "L4", "found": "lead", "lead": 4, "place": "Near the incident whose Keep revealed it"},
+    {"id": "L5", "found": "lead", "lead": 5, "place": "Near the incident whose Keep revealed it"},
+    {"id": "L6", "found": "lead", "lead": 6, "place": "Near the incident whose Keep revealed it"}
+  ],
+  "spreads": [
+    {"n": 1, "name": "Summoned", "pages": ["P_guestbook", "P_game_box"], "flag": "book.spread_1", "strips": 4, "rules": 1, "decoys": 0,
+     "teaches": [{"text": "They weren't made. / They were summoned.", "verbatim": true}],
+     "effect": "Friends' hunger shown as glows"},
+    {"n": 2, "name": "Bound", "pages": ["P_shed", "L1"], "flag": "book.spread_2", "strips": 4, "rules": 1, "decoys": 0,
+     "teaches": [{"text": "how to bind something into fabric", "verbatim": true}],
+     "effect": "One bound slot: costs never take its memory"},
+    {"n": 3, "name": "Fed", "pages": ["P_bear_seam", "L2"], "flag": "book.spread_3", "strips": 6, "rules": 2, "decoys": 0,
+     "teaches": [{"text": "how to feed it", "verbatim": true}],
+     "effect": "Hunger shown as a number"},
+    {"n": 4, "name": "Kept alive", "pages": ["L3", "L4"], "flag": "book.spread_4", "strips": 6, "rules": 2, "decoys": 0,
+     "teaches": [{"text": "how to keep it alive", "verbatim": true}],
+     "effect": "Stitchwork band +20 percent"},
+    {"n": 5, "name": "The filling", "pages": ["P_sampler", "L5"], "flag": "book.spread_5", "strips": 8, "rules": 3, "decoys": 1,
+     "teaches": [{"text": "We were the next filling", "verbatim": true}, {"text": "The ritual had already begun the moment we stepped inside.", "verbatim": true}],
+     "effect": "Dread shading, flee line and seal clock visible"},
+    {"n": 6, "name": "The keeper's hand", "pages": ["P_lectern", "L6"], "flag": "book.spread_6", "strips": 8, "rules": 3, "decoys": 1,
+     "teaches": [{"text": "One who reads it all may hold the needle", "verbatim": false}],
+     "effect": "Altar offers stitch"}
+  ],
+  "sittings": [
+    {"n": 1, "scene": "a3_book_1", "world_runs": false, "time_limit_s": null},
+    {"n": 2, "scene": "a4_book_2", "world_runs": false, "time_limit_s": null},
+    {"n": 3, "scene": "a5_book_3", "world_runs": true, "time_limit_s": 180}
+  ],
+  "hints": {"idle_role_glow_s": 90, "sampler_solved_lines": 1}
+}
