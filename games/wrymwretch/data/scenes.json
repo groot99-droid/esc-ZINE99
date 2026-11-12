@@ -1,0 +1,1398 @@
+{
+  "modes_2d": [
+    {
+      "id": "twin_flight",
+      "name": "Twin flight",
+      "movement": "scroll"
+    },
+    {
+      "id": "forgetting_run",
+      "name": "Forgetting run",
+      "movement": "scroll"
+    }
+  ],
+  "games_1d": [
+    {
+      "id": "star_chart",
+      "name": "Star Chart",
+      "family": "Redrawing from fragments"
+    },
+    {
+      "id": "slipping_glyph",
+      "name": "The Slipping Glyph",
+      "family": "Observation puzzle"
+    },
+    {
+      "id": "concentration",
+      "name": "Concentration",
+      "family": "Memory match"
+    },
+    {
+      "id": "six_realms",
+      "name": "Six Realms",
+      "family": "Board game, hex tactics"
+    },
+    {
+      "id": "heartstone",
+      "name": "Heartstone",
+      "family": "Resonance crafting"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s_first_light",
+      "layer": "3d",
+      "name": "The First Light shatters",
+      "chapter": "pr_thalen",
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "s_cedar_grove"
+      ],
+      "reads": [],
+      "writes": []
+    },
+    {
+      "id": "s_cedar_grove",
+      "layer": "3d",
+      "name": "The western groves and the split tree",
+      "chapter": "pr_thalen",
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "s_run_outpost"
+      ],
+      "reads": [
+        "memory.west"
+      ],
+      "writes": [
+        "record",
+        "echoes",
+        "memory.west"
+      ]
+    },
+    {
+      "id": "s_run_outpost",
+      "layer": "2d",
+      "name": "Forgetting run I: to the outpost",
+      "chapter": "pr_thalen",
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s_cedar_outpost"
+      ],
+      "reads": [
+        "record"
+      ],
+      "writes": [
+        "memory.west"
+      ],
+      "mode": "forgetting_run"
+    },
+    {
+      "id": "s_cedar_outpost",
+      "layer": "3d",
+      "name": "The outpost and the first crystal",
+      "chapter": "pr_thalen",
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s_elder_tree"
+      ],
+      "reads": [
+        "echoes"
+      ],
+      "writes": [
+        "record",
+        "echoes",
+        "requests",
+        "memory.west"
+      ]
+    },
+    {
+      "id": "s_elder_tree",
+      "layer": "3d",
+      "name": "Sylvan under the elder-tree (battle)",
+      "chapter": "pr_thalen",
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "s_flight_sylvan"
+      ],
+      "reads": [
+        "memory.west",
+        "record"
+      ],
+      "writes": [
+        "record",
+        "echoes",
+        "memory.west"
+      ]
+    },
+    {
+      "id": "s_flight_sylvan",
+      "layer": "2d",
+      "name": "Twin flight I: Sylvan",
+      "chapter": "pr_thalen",
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s_galewing_ward"
+      ],
+      "reads": [],
+      "writes": [],
+      "mode": "twin_flight"
+    },
+    {
+      "id": "s_galewing_ward",
+      "layer": "3d",
+      "name": "The sky-city balcony and the healers' ward",
+      "chapter": "pr_aeris",
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s_conc_ward"
+      ],
+      "reads": [],
+      "writes": [
+        "echoes"
+      ]
+    },
+    {
+      "id": "s_conc_ward",
+      "layer": "1d",
+      "name": "Concentration I: the fevered's names",
+      "chapter": "pr_aeris",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s_storm_chamber"
+      ],
+      "reads": [],
+      "writes": [
+        "ward_names_kept",
+        "memory.north",
+        "trust.sky",
+        "record"
+      ],
+      "game": "concentration"
+    },
+    {
+      "id": "s_storm_chamber",
+      "layer": "3d",
+      "name": "The storm chamber",
+      "chapter": "pr_aeris",
+      "enter": "pull-out",
+      "exit": "flatten",
+      "next": [
+        "s_flight_aetherius"
+      ],
+      "reads": [
+        "echoes"
+      ],
+      "writes": [
+        "record",
+        "echoes",
+        "requests",
+        "memory.north"
+      ]
+    },
+    {
+      "id": "s_flight_aetherius",
+      "layer": "2d",
+      "name": "Twin flight II: the sky-sail and Aetherius",
+      "chapter": "pr_aeris",
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s_cloud_platform"
+      ],
+      "reads": [],
+      "writes": [],
+      "mode": "twin_flight"
+    },
+    {
+      "id": "s_cloud_platform",
+      "layer": "3d",
+      "name": "A floating platform (battle)",
+      "chapter": "pr_aeris",
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s_heartstone_hall"
+      ],
+      "reads": [
+        "memory.north",
+        "record"
+      ],
+      "writes": [
+        "record",
+        "echoes",
+        "memory.north"
+      ]
+    },
+    {
+      "id": "s_heartstone_hall",
+      "layer": "3d",
+      "name": "The Heartstone and Rhyla's vision",
+      "chapter": "pr_rhyla",
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s_heart_rekindle"
+      ],
+      "reads": [],
+      "writes": [
+        "echoes"
+      ]
+    },
+    {
+      "id": "s_heart_rekindle",
+      "layer": "1d",
+      "name": "Heartstone I: one memory kept",
+      "chapter": "pr_rhyla",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s_deep_core"
+      ],
+      "reads": [],
+      "writes": [
+        "heartstone_kept",
+        "izladar_fragments",
+        "memory.south",
+        "record"
+      ],
+      "game": "heartstone"
+    },
+    {
+      "id": "s_deep_core",
+      "layer": "3d",
+      "name": "The Deep Core and Gaia (battle)",
+      "chapter": "pr_rhyla",
+      "enter": "pull-out",
+      "exit": "flatten",
+      "next": [
+        "s_flight_gaia"
+      ],
+      "reads": [
+        "memory.south",
+        "record",
+        "echoes"
+      ],
+      "writes": [
+        "record",
+        "echoes",
+        "requests",
+        "memory.south"
+      ]
+    },
+    {
+      "id": "s_flight_gaia",
+      "layer": "2d",
+      "name": "Twin flight III: Gaia burrows",
+      "chapter": "pr_rhyla",
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s_chasm_seal1"
+      ],
+      "reads": [],
+      "writes": [],
+      "mode": "twin_flight"
+    },
+    {
+      "id": "s_chasm_seal1",
+      "layer": "3d",
+      "name": "The chasm: the first seal cracks",
+      "chapter": "pr_rhyla",
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "s_tide_shore"
+      ],
+      "reads": [],
+      "writes": [
+        "seals_cracked",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "world_memory"
+      ]
+    },
+    {
+      "id": "s_tide_shore",
+      "layer": "3d",
+      "name": "The still shore",
+      "chapter": "pr_lunessa",
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "s_seabed"
+      ],
+      "reads": [],
+      "writes": [
+        "requests",
+        "record",
+        "echoes"
+      ]
+    },
+    {
+      "id": "s_seabed",
+      "layer": "3d",
+      "name": "The dive to the monolith",
+      "chapter": "pr_lunessa",
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s_glyph_monolith"
+      ],
+      "reads": [],
+      "writes": [
+        "echoes"
+      ]
+    },
+    {
+      "id": "s_glyph_monolith",
+      "layer": "1d",
+      "name": "The Slipping Glyph I: the monolith",
+      "chapter": "pr_lunessa",
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "s_run_surface"
+      ],
+      "reads": [],
+      "writes": [
+        "monolith_rows",
+        "izladar_fragments",
+        "memory.east"
+      ],
+      "game": "slipping_glyph"
+    },
+    {
+      "id": "s_run_surface",
+      "layer": "2d",
+      "name": "Forgetting run II: to the surface",
+      "chapter": "pr_lunessa",
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s_shore_night"
+      ],
+      "reads": [
+        "record"
+      ],
+      "writes": [
+        "memory.east"
+      ],
+      "mode": "forgetting_run"
+    },
+    {
+      "id": "s_shore_night",
+      "layer": "3d",
+      "name": "Aquatica rises (battle)",
+      "chapter": "pr_lunessa",
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s_flight_aquatica"
+      ],
+      "reads": [
+        "memory.east",
+        "record",
+        "echoes"
+      ],
+      "writes": [
+        "record",
+        "echoes",
+        "memory.east"
+      ]
+    },
+    {
+      "id": "s_flight_aquatica",
+      "layer": "2d",
+      "name": "Twin flight IV: Aquatica",
+      "chapter": "pr_lunessa",
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s_duskbane_halls"
+      ],
+      "reads": [],
+      "writes": [],
+      "mode": "twin_flight"
+    },
+    {
+      "id": "s_duskbane_halls",
+      "layer": "3d",
+      "name": "The Syndicate's halls",
+      "chapter": "pr_kael",
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s_realms_syndicate"
+      ],
+      "reads": [],
+      "writes": [
+        "echoes"
+      ]
+    },
+    {
+      "id": "s_realms_syndicate",
+      "layer": "1d",
+      "name": "Six Realms I: the Syndicate Elder",
+      "chapter": "pr_kael",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s_forbidden_chamber"
+      ],
+      "reads": [],
+      "writes": [
+        "trust.dark",
+        "tribes_trusted",
+        "realms_matches_won",
+        "memory.below",
+        "echoes"
+      ],
+      "game": "six_realms"
+    },
+    {
+      "id": "s_forbidden_chamber",
+      "layer": "3d",
+      "name": "The forbidden chamber and the prophecy",
+      "chapter": "pr_kael",
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "s_underworld_tunnels"
+      ],
+      "reads": [
+        "echoes"
+      ],
+      "writes": [
+        "record",
+        "echoes",
+        "name_in_record",
+        "name_recorded",
+        "requests"
+      ]
+    },
+    {
+      "id": "s_underworld_tunnels",
+      "layer": "3d",
+      "name": "The tunnels, Umbra, the Eraser (battle)",
+      "chapter": "pr_kael",
+      "enter": "cut",
+      "exit": "flatten",
+      "next": [
+        "s_flight_umbra"
+      ],
+      "reads": [
+        "memory.below",
+        "record"
+      ],
+      "writes": [
+        "kael_choice",
+        "izladar_fragments",
+        "unwriter_name_known",
+        "witnesses",
+        "witnesses_lost",
+        "memory.below",
+        "record",
+        "echoes"
+      ]
+    },
+    {
+      "id": "s_flight_umbra",
+      "layer": "2d",
+      "name": "Twin flight V: Umbra",
+      "chapter": "pr_kael",
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s_priory_halls"
+      ],
+      "reads": [],
+      "writes": [],
+      "mode": "twin_flight"
+    },
+    {
+      "id": "s_priory_halls",
+      "layer": "3d",
+      "name": "The star-lit halls of the Priory",
+      "chapter": "pr_seraphyne",
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s_chart_priory"
+      ],
+      "reads": [],
+      "writes": [
+        "echoes"
+      ]
+    },
+    {
+      "id": "s_chart_priory",
+      "layer": "1d",
+      "name": "Star Chart I: the Sigil forms",
+      "chapter": "pr_seraphyne",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s_crystal_forest"
+      ],
+      "reads": [
+        "name_recorded"
+      ],
+      "writes": [
+        "priory_charts_complete",
+        "sigil_seen",
+        "izladar_fragments",
+        "stars_redrawn",
+        "memory.above",
+        "memory.west",
+        "memory.north",
+        "requests",
+        "record",
+        "echoes"
+      ],
+      "game": "star_chart"
+    },
+    {
+      "id": "s_crystal_forest",
+      "layer": "3d",
+      "name": "Astraia in the crystalline forest (battle)",
+      "chapter": "pr_seraphyne",
+      "enter": "pull-out",
+      "exit": "flatten",
+      "next": [
+        "s_flight_astraia"
+      ],
+      "reads": [
+        "memory.above",
+        "record"
+      ],
+      "writes": [
+        "record",
+        "echoes",
+        "memory.above"
+      ]
+    },
+    {
+      "id": "s_flight_astraia",
+      "layer": "2d",
+      "name": "Twin flight VI: Astraia",
+      "chapter": "pr_seraphyne",
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s_chasm_seal2"
+      ],
+      "reads": [],
+      "writes": [],
+      "mode": "twin_flight"
+    },
+    {
+      "id": "s_chasm_seal2",
+      "layer": "3d",
+      "name": "Toward #Wrymreach: the second seal cracks",
+      "chapter": "pr_seraphyne",
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "s_flight_six_roads"
+      ],
+      "reads": [],
+      "writes": [
+        "seals_cracked",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "world_memory"
+      ]
+    },
+    {
+      "id": "s_flight_six_roads",
+      "layer": "2d",
+      "name": "Twin flight VII: Six Roads",
+      "chapter": "cv_roads",
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "s_rim"
+      ],
+      "reads": [
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above"
+      ],
+      "writes": [
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "world_memory"
+      ],
+      "mode": "twin_flight"
+    },
+    {
+      "id": "s_rim",
+      "layer": "3d",
+      "name": "The Rim of #Wrymreach",
+      "chapter": "cv_roads",
+      "enter": "flatten",
+      "exit": "cut",
+      "next": [
+        "s_rim_ambush"
+      ],
+      "reads": [
+        "echoes",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above"
+      ],
+      "writes": [
+        "record",
+        "echoes"
+      ]
+    },
+    {
+      "id": "s_rim_ambush",
+      "layer": "3d",
+      "name": "The Rim ambush (party battle)",
+      "chapter": "cv_roads",
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s_moot_camp"
+      ],
+      "reads": [
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "record",
+        "echoes"
+      ],
+      "writes": [
+        "record",
+        "burned",
+        "echoes",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "requests"
+      ]
+    },
+    {
+      "id": "s_moot_camp",
+      "layer": "3d",
+      "name": "The Rim Moot and Ilvarra's fire",
+      "chapter": "cv_moot",
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "s_realms_seasons",
+        "s_realms_galechanters",
+        "s_realms_stonekeepers",
+        "s_realms_tidecallers",
+        "s_conc_bestiary",
+        "s_chart_moot",
+        "s_moot_dawn"
+      ],
+      "reads": [
+        "moot_watches_left",
+        "requests",
+        "record",
+        "name_recorded",
+        "echoes",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "trust.wood",
+        "trust.sky",
+        "trust.earth",
+        "trust.water",
+        "trust.dark",
+        "trust.celestial"
+      ],
+      "writes": [
+        "ilvarra_met",
+        "witnesses",
+        "requests",
+        "requests_done",
+        "izladar_fragments",
+        "record",
+        "echoes",
+        "moot_watches_left",
+        "tribes_trusted",
+        "trust.wood",
+        "trust.sky",
+        "trust.earth",
+        "trust.water",
+        "trust.dark",
+        "trust.celestial",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "world_memory"
+      ]
+    },
+    {
+      "id": "s_realms_seasons",
+      "layer": "1d",
+      "name": "Six Realms II: the Circle of Seasons",
+      "chapter": "cv_moot",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s_moot_camp"
+      ],
+      "reads": [
+        "moot_watches_left"
+      ],
+      "writes": [
+        "trust.wood",
+        "tribes_trusted",
+        "realms_matches_won",
+        "memory.west",
+        "echoes",
+        "moot_watches_left"
+      ],
+      "game": "six_realms"
+    },
+    {
+      "id": "s_realms_galechanters",
+      "layer": "1d",
+      "name": "Six Realms II: the Galechanters",
+      "chapter": "cv_moot",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s_moot_camp"
+      ],
+      "reads": [
+        "moot_watches_left"
+      ],
+      "writes": [
+        "trust.sky",
+        "tribes_trusted",
+        "realms_matches_won",
+        "memory.north",
+        "echoes",
+        "moot_watches_left"
+      ],
+      "game": "six_realms"
+    },
+    {
+      "id": "s_realms_stonekeepers",
+      "layer": "1d",
+      "name": "Six Realms II: the Stonekeepers",
+      "chapter": "cv_moot",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s_moot_camp"
+      ],
+      "reads": [
+        "moot_watches_left"
+      ],
+      "writes": [
+        "trust.earth",
+        "tribes_trusted",
+        "realms_matches_won",
+        "memory.south",
+        "echoes",
+        "moot_watches_left"
+      ],
+      "game": "six_realms"
+    },
+    {
+      "id": "s_realms_tidecallers",
+      "layer": "1d",
+      "name": "Six Realms II: the Tidecallers",
+      "chapter": "cv_moot",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s_moot_camp"
+      ],
+      "reads": [
+        "moot_watches_left"
+      ],
+      "writes": [
+        "trust.water",
+        "tribes_trusted",
+        "realms_matches_won",
+        "memory.east",
+        "echoes",
+        "moot_watches_left"
+      ],
+      "game": "six_realms"
+    },
+    {
+      "id": "s_conc_bestiary",
+      "layer": "1d",
+      "name": "Concentration II: the healers' creature cards",
+      "chapter": "cv_moot",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s_moot_camp"
+      ],
+      "reads": [
+        "moot_watches_left"
+      ],
+      "writes": [
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "record",
+        "moot_watches_left",
+        "echoes"
+      ],
+      "game": "concentration"
+    },
+    {
+      "id": "s_chart_moot",
+      "layer": "1d",
+      "name": "Star Chart II: the sky-watch",
+      "chapter": "cv_moot",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s_moot_camp"
+      ],
+      "reads": [
+        "moot_watches_left",
+        "izladar_fragments"
+      ],
+      "writes": [
+        "stars_redrawn",
+        "izladar_fragments",
+        "memory.east",
+        "memory.south",
+        "memory.below",
+        "memory.above",
+        "record",
+        "moot_watches_left"
+      ],
+      "game": "star_chart"
+    },
+    {
+      "id": "s_moot_dawn",
+      "layer": "3d",
+      "name": "The dawn attack (defend battle)",
+      "chapter": "a3_witness",
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s_glyph_killlist"
+      ],
+      "reads": [
+        "witnesses",
+        "record",
+        "unwriter_name_known",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above"
+      ],
+      "writes": [
+        "witnesses",
+        "witnesses_lost",
+        "record",
+        "burned",
+        "echoes",
+        "requests",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "world_memory"
+      ]
+    },
+    {
+      "id": "s_glyph_killlist",
+      "layer": "1d",
+      "name": "The Slipping Glyph II: the kill-list",
+      "chapter": "a3_witness",
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "s_run_bone_bridge"
+      ],
+      "reads": [],
+      "writes": [
+        "witnesses",
+        "killlist_read",
+        "unwriter_name_known"
+      ],
+      "game": "slipping_glyph",
+      "world_runs": true
+    },
+    {
+      "id": "s_run_bone_bridge",
+      "layer": "2d",
+      "name": "Forgetting run III: the bone bridge, with Ilvarra",
+      "chapter": "a3_witness",
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "s_conc_ilvarra"
+      ],
+      "reads": [
+        "record"
+      ],
+      "writes": [
+        "ilvarra_alive",
+        "witnesses",
+        "witnesses_lost",
+        "memory.below"
+      ],
+      "mode": "forgetting_run"
+    },
+    {
+      "id": "s_conc_ilvarra",
+      "layer": "1d",
+      "name": "Concentration III: Ilvarra's memories",
+      "chapter": "a3_witness",
+      "enter": "push-in",
+      "exit": "fade",
+      "next": [
+        "s_flight_descent"
+      ],
+      "reads": [
+        "ilvarra_alive"
+      ],
+      "writes": [
+        "ilvarra_memory_kept",
+        "izladar_fragments",
+        "record",
+        "echoes"
+      ],
+      "game": "concentration"
+    },
+    {
+      "id": "s_flight_descent",
+      "layer": "2d",
+      "name": "Twin flight VIII: down the chasm wall",
+      "chapter": "a3_bones",
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "s_bone_choir"
+      ],
+      "reads": [
+        "stars_redrawn",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above"
+      ],
+      "writes": [
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "world_memory"
+      ],
+      "mode": "twin_flight"
+    },
+    {
+      "id": "s_bone_choir",
+      "layer": "3d",
+      "name": "The Bone Choir (battle)",
+      "chapter": "a3_bones",
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "s_heart_choir"
+      ],
+      "reads": [
+        "record",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above"
+      ],
+      "writes": [
+        "record",
+        "burned",
+        "echoes",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above"
+      ]
+    },
+    {
+      "id": "s_heart_choir",
+      "layer": "1d",
+      "name": "Heartstone II: tuning the bones",
+      "chapter": "a3_bones",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s_glyph_seal"
+      ],
+      "reads": [],
+      "writes": [
+        "choir_opened",
+        "memory.south"
+      ],
+      "game": "heartstone"
+    },
+    {
+      "id": "s_glyph_seal",
+      "layer": "1d",
+      "name": "The Slipping Glyph III: the seal",
+      "chapter": "a3_bones",
+      "enter": "push-in",
+      "exit": "fade",
+      "next": [
+        "s_expanse"
+      ],
+      "reads": [
+        "monolith_rows"
+      ],
+      "writes": [
+        "seal_text_read",
+        "izladar_fragments"
+      ],
+      "game": "slipping_glyph"
+    },
+    {
+      "id": "s_expanse",
+      "layer": "3d",
+      "name": "The Astral Expanse",
+      "chapter": "a3_expanse",
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s_chart_expanse"
+      ],
+      "reads": [
+        "record",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above"
+      ],
+      "writes": [
+        "seals_cracked",
+        "record",
+        "echoes",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "world_memory"
+      ]
+    },
+    {
+      "id": "s_chart_expanse",
+      "layer": "1d",
+      "name": "Star Chart III: the Sigil undone",
+      "chapter": "a3_expanse",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s_battle_unwriter"
+      ],
+      "reads": [
+        "izladar_fragments"
+      ],
+      "writes": [
+        "izladar_constellation_drawn",
+        "izladar_fragments",
+        "stars_redrawn",
+        "memory.above"
+      ],
+      "game": "star_chart"
+    },
+    {
+      "id": "s_battle_unwriter",
+      "layer": "3d",
+      "name": "The Unwriter (battle)",
+      "chapter": "a3_expanse",
+      "enter": "pull-out",
+      "exit": "flatten",
+      "next": [
+        "s_run_expanse"
+      ],
+      "reads": [
+        "unwriter_name_known",
+        "record",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above"
+      ],
+      "writes": [
+        "unwriter_reminded",
+        "record",
+        "burned",
+        "echoes",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above"
+      ]
+    },
+    {
+      "id": "s_run_expanse",
+      "layer": "2d",
+      "name": "Forgetting run IV: toward the voice",
+      "chapter": "a3_expanse",
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s_heart_of_wound"
+      ],
+      "reads": [
+        "record",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above"
+      ],
+      "writes": [
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "world_memory"
+      ],
+      "mode": "forgetting_run"
+    },
+    {
+      "id": "s_heart_of_wound",
+      "layer": "3d",
+      "name": "The heart of the wound",
+      "chapter": "a3_choice",
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "s_heart_anchor"
+      ],
+      "reads": [],
+      "writes": [
+        "record"
+      ]
+    },
+    {
+      "id": "s_heart_anchor",
+      "layer": "1d",
+      "name": "Heartstone III: the Anchor",
+      "chapter": "a3_choice",
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s_battle_echo"
+      ],
+      "reads": [
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "trust.wood",
+        "trust.sky",
+        "trust.earth",
+        "trust.water",
+        "trust.dark",
+        "trust.celestial"
+      ],
+      "writes": [
+        "anchor_forged"
+      ],
+      "game": "heartstone"
+    },
+    {
+      "id": "s_battle_echo",
+      "layer": "3d",
+      "name": "The Architect's Echo (battle)",
+      "chapter": "a3_choice",
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "s_choice"
+      ],
+      "reads": [
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "trust.wood",
+        "trust.sky",
+        "trust.earth",
+        "trust.water",
+        "trust.dark",
+        "trust.celestial",
+        "record"
+      ],
+      "writes": [
+        "record",
+        "burned",
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "world_memory"
+      ]
+    },
+    {
+      "id": "s_choice",
+      "layer": "3d",
+      "name": "Who remembers: the choice",
+      "chapter": "a3_choice",
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s_end_rememberer",
+        "s_end_whole",
+        "s_end_dormant",
+        "s_end_architect"
+      ],
+      "reads": [
+        "memory.west",
+        "memory.north",
+        "memory.south",
+        "memory.east",
+        "memory.below",
+        "memory.above",
+        "world_memory",
+        "izladar_fragments",
+        "anchor_forged"
+      ],
+      "writes": [
+        "final_choice",
+        "keeper_pair"
+      ]
+    },
+    {
+      "id": "s_end_rememberer",
+      "layer": "3d",
+      "name": "Ending: The Rememberer",
+      "chapter": "a3_choice",
+      "enter": "fade",
+      "exit": "fade",
+      "next": [],
+      "reads": [
+        "keeper_pair",
+        "witnesses",
+        "ilvarra_alive",
+        "unwriter_reminded"
+      ],
+      "writes": []
+    },
+    {
+      "id": "s_end_whole",
+      "layer": "3d",
+      "name": "Ending: Remembered Whole",
+      "chapter": "a3_choice",
+      "enter": "fade",
+      "exit": "fade",
+      "next": [],
+      "reads": [
+        "keeper_pair",
+        "witnesses",
+        "ilvarra_alive",
+        "unwriter_reminded"
+      ],
+      "writes": []
+    },
+    {
+      "id": "s_end_dormant",
+      "layer": "3d",
+      "name": "Ending: Dormant Again",
+      "chapter": "a3_choice",
+      "enter": "fade",
+      "exit": "fade",
+      "next": [],
+      "reads": [
+        "keeper_pair",
+        "witnesses",
+        "ilvarra_alive",
+        "unwriter_reminded"
+      ],
+      "writes": []
+    },
+    {
+      "id": "s_end_architect",
+      "layer": "3d",
+      "name": "Ending: The Architect Rises",
+      "chapter": "a3_choice",
+      "enter": "fade",
+      "exit": "fade",
+      "next": [],
+      "reads": [
+        "keeper_pair",
+        "witnesses",
+        "ilvarra_alive",
+        "unwriter_reminded"
+      ],
+      "writes": []
+    }
+  ]
+}

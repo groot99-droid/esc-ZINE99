@@ -1,0 +1,77 @@
+{
+  "endings": [
+    {
+      "id": "architect_rises",
+      "name": "The Architect Rises",
+      "as_written": false,
+      "priority": 1,
+      "when": {
+        "is": "world_memory",
+        "lt": 25
+      },
+      "summary": "Too much was forgotten: whatever answer is given at the choice fails, the shape Rhyla saw steps out of the Astral Expanse, and the sky fills with constellations no one has a name for.",
+      "final_scenes": [
+        "s_choice",
+        "s_end_architect"
+      ]
+    },
+    {
+      "id": "remembered_whole",
+      "name": "Remembered Whole",
+      "as_written": false,
+      "priority": 2,
+      "when": {
+        "all": [
+          {
+            "is": "final_choice",
+            "eq": "remember_him"
+          },
+          {
+            "is": "izladar_fragments",
+            "gte": 6
+          },
+          {
+            "is": "anchor_forged",
+            "eq": true
+          },
+          {
+            "is": "world_memory",
+            "gte": 65
+          }
+        ]
+      },
+      "summary": "The party remembers who Izladar was, a Celestial Elf scholar; the Anchor holds his whole name, the voice finishes its sentence, and he chooses to stay. The dead witnesses stay dead.",
+      "final_scenes": [
+        "s_choice",
+        "s_end_whole"
+      ]
+    },
+    {
+      "id": "dormant_again",
+      "name": "Dormant Again",
+      "as_written": false,
+      "priority": 3,
+      "when": {
+        "is": "final_choice",
+        "eq": "give_bonds"
+      },
+      "summary": "The six pairs seal the wound by giving up the Twin-Soul Bond; the world is saved, and elves and dragons forget each other.",
+      "final_scenes": [
+        "s_choice",
+        "s_end_dormant"
+      ]
+    },
+    {
+      "id": "the_rememberer",
+      "name": "The Rememberer",
+      "as_written": false,
+      "priority": 4,
+      "when": true,
+      "summary": "One pair, chosen by the player (keeper_pair), stays at the heart of the wound to hold the name for good; the seal holds and the world slowly remembers. Also the result of a failed attempt to speak his whole name.",
+      "final_scenes": [
+        "s_choice",
+        "s_end_rememberer"
+      ]
+    }
+  ]
+}
