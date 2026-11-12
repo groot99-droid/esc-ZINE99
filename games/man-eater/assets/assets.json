@@ -1,0 +1,896 @@
+{
+  "game": "man-eater",
+  "style": "Muted cinematic photographic realism of a remote 1950s Arctic military research base: matte painted concrete, steel, wool and paper, nothing glossy; palette of institutional hospital green lower walls, pale cream upper walls, snow white, steel grey, frost blue-grey, sodium amber lamps, bruise-violet night shadows; flat fluorescent light with dead tubes by day, moonlight from high windows at 3.5 m by night; cold, quiet, oppressive.",
+  "locations": [
+    {
+      "id": "gate-yard",
+      "name": "The gate and the yard",
+      "scenes": [
+        "c1_truck_gate",
+        "d3_duty_shovel",
+        "e_transfer_truck",
+        "e_new_recruit"
+      ],
+      "dimensions_m": [
+        60,
+        40,
+        8
+      ],
+      "lighting": "Overcast white day, sodium yard lamps on; bright snow glare on day 3; grey on the transfer morning.",
+      "objects": [
+        "army-truck",
+        "kit-bag",
+        "snow-shovel",
+        "fence-post",
+        "yard-lamp"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. A snowbound military base yard seen from just inside a tall gate of dark riveted armour plates on timber posts, chains hanging from the gate. A flat snow-covered yard 60 by 40 metres, a tall wire fence of evenly spaced wooden posts along the far north wall, low dark concrete barracks blocks with snow on their roofs, a steel searchlight tower, sodium lamp posts glowing amber, an old canvas-backed army truck parked half buried under snow, shovelled paths, forested mountain behind in low cloud, overcast white sky. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "2f9c0d3a-2497-4d90-923c-bbaeecbfe1b4",
+      "image": "assets/locations/gate-yard.jpg"
+    },
+    {
+      "id": "tall-halls",
+      "name": "The tall halls",
+      "scenes": [
+        "c1_halls",
+        "d2_duty_paint",
+        "d7_duty_walk",
+        "n7_windigo"
+      ],
+      "dimensions_m": [
+        1.22,
+        120,
+        4.57
+      ],
+      "lighting": "Day: fluorescent strips at 3.8 m, half of them dead. Night (n7): strips off, moonlight from high frosted windows, frost on the walls, a corner near the stair door.",
+      "objects": [
+        "two-handle-door",
+        "ladder",
+        "paint-tin",
+        "door-log-clipboard"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. A long, very narrow and impossibly tall barracks corridor: 1.2 metres wide and 4.6 metres high, walls painted hospital green on the lower half and pale cream above, high grey gouge marks scraped into the paint near the ceiling, a row of fluorescent tube strips at 3.8 metres with some tubes dead, small frosted windows high up at 3.5 metres, a bare concrete floor with a steel floor drain, tall narrow steel doors 4.2 metres high each with a steel lever handle high up and a brass knob at normal height, the hall turning a corner at the far end toward a stair door. Flat cold fluorescent light, breath-cold air. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "d278457c-38f2-4f88-967e-4946663084d4",
+      "image": "assets/locations/tall-halls.jpg"
+    },
+    {
+      "id": "bunk-room",
+      "name": "The bunk room",
+      "scenes": [
+        "c1_bunk",
+        "n1_bunk_call",
+        "d2_sam_bunk",
+        "n2_door",
+        "n3_door",
+        "n4_door",
+        "n5_door",
+        "n6_door",
+        "d5_jax_plan",
+        "d6_sam_offer",
+        "d7_bunk_evening",
+        "n7_door",
+        "n7_bunk_stay"
+      ],
+      "dimensions_m": [
+        4,
+        5,
+        4.57
+      ],
+      "lighting": "Day: one window, grey light; afternoon grey; morning. Evening: a low lamp. Night: moonlight from the high window, the clock face lit.",
+      "objects": [
+        "bunk-bed",
+        "sleeping-bag",
+        "rules-card",
+        "wall-clock",
+        "laced-boots",
+        "bread-loaf",
+        "kit-bag",
+        "two-handle-door",
+        "key-ring"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. A small spartan military bunk room 4 by 5 metres with an oddly high 4.6 metre ceiling, walls painted hospital green below and cream above, two steel-frame single bunk beds with grey wool blankets and rolled sleeping bags, a plain round wall clock, a painted steel radiator, a footlocker, one window high in the wall letting in grey winter light, a tall narrow steel door with a lever handle high up and a brass knob at normal height, a small painted plate card fixed inside the door, bare concrete floor. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "3cc15f3c-2325-4417-840e-a657e9aaab89",
+      "image": "assets/locations/bunk-room.jpg"
+    },
+    {
+      "id": "cafeteria",
+      "name": "The cafeteria",
+      "scenes": [
+        "d1_cafeteria"
+      ],
+      "dimensions_m": [
+        20,
+        12,
+        4.57
+      ],
+      "lighting": "Steam from the hatch and flat fluorescent strips, noon.",
+      "objects": [
+        "meal-tray"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. An institutional military cafeteria 20 by 12 metres with a tall ceiling, long steel tables and steel benches in rows, a serving hatch with a steel counter and steam rising from the kitchen behind it, stacked steel trays at the hatch, walls painted hospital green below and cream above, fluorescent strips with dead tubes, frosted windows high on the wall, bare concrete floor. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "f740f6a0-8911-4c1d-8651-dcdb03e2f7b9",
+      "image": "assets/locations/cafeteria.jpg"
+    },
+    {
+      "id": "cold-store",
+      "name": "The loading bay and the cold store",
+      "scenes": [
+        "d1_duty_coldstore"
+      ],
+      "dimensions_m": [
+        40,
+        8,
+        5
+      ],
+      "lighting": "Bay doors open on snow, white daylight; cold blue at the cold store door.",
+      "objects": [
+        "supply-crate"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. A military loading bay with large roller doors open onto falling snow, a dead forklift, stacked wooden supply crates, a 40 metre concrete corridor running back to a heavy insulated steel cold-store door at the far end of an infirmary wing, a band of white frost on the floor in front of the cold-store door, hospital green and cream painted walls, steel pipes along the ceiling, cold white daylight from the bay. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "644f779a-4290-46f6-91b0-a41806d61d10",
+      "image": "assets/locations/cold-store.jpg"
+    },
+    {
+      "id": "rec-room",
+      "name": "The rec room",
+      "scenes": [
+        "d1_rec_room"
+      ],
+      "dimensions_m": [
+        6,
+        6,
+        4.57
+      ],
+      "lighting": "One warm-coloured sodium bulb over the table in a cold room.",
+      "objects": [
+        "round-table",
+        "card-deck",
+        "wood-stove"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. A small bare military recreation room 6 by 6 metres with a high ceiling, one round wooden card table in the centre with six simple wooden chairs pushed in, a black iron wood stove with a flue pipe in the corner, a single bare bulb hanging over the table giving warm amber light, the rest of the room cold and dim, walls painted hospital green below and cream above, frost at the high window. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "deacc170-9fa3-4278-a5cf-586859783951",
+      "image": "assets/locations/rec-room.jpg"
+    },
+    {
+      "id": "mail-room",
+      "name": "The mail room",
+      "scenes": [
+        "d3_mail_room"
+      ],
+      "dimensions_m": [
+        4,
+        3,
+        4.57
+      ],
+      "lighting": "One bare bulb.",
+      "objects": [
+        "mail-sack"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. A cramped military mail room 4 by 3 metres with a tall ceiling, a wooden sorting counter with pigeonhole shelves behind it, heavy canvas mail sacks slumped on the floor and piled on each other, one bare bulb, walls painted hospital green below and cream above, a narrow tall steel door. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "f21e91fe-a7ee-4f75-8f52-fb6de1df85ae",
+      "image": "assets/locations/mail-room.jpg"
+    },
+    {
+      "id": "boiler-room",
+      "name": "The boiler room",
+      "scenes": [
+        "d4_duty_boiler"
+      ],
+      "dimensions_m": [
+        12,
+        8,
+        5
+      ],
+      "lighting": "Orange boiler glow; pale blue frost around the floor drains.",
+      "objects": [
+        "boiler",
+        "floor-drain"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. A basement boiler room 12 by 8 metres: two large riveted steel boilers with round pressure gauges and glowing orange firebox doors, thick insulated pipes running across the ceiling, a bare concrete floor with several round steel floor drain grates that have pale blue frost spreading around them despite the heat, warm orange glow on one side, cold blue on the floor. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "234f7164-9cf3-411e-85b2-80188029ef74",
+      "image": "assets/locations/boiler-room.jpg"
+    },
+    {
+      "id": "sams-office",
+      "name": "Sam's office and the staff mess",
+      "scenes": [
+        "n4_office",
+        "d5_sam_office"
+      ],
+      "dimensions_m": [
+        11,
+        5,
+        4
+      ],
+      "lighting": "Night: a desk lamp left on, otherwise dark. Day: grey daylight from the window.",
+      "objects": [
+        "filing-cabinet",
+        "file-folder"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. A 1950s military officer's office 6 by 5 metres with an open doorway into a small staff mess: a heavy wooden desk with a green-shaded desk lamp switched on, a steel four-drawer filing cabinet, a wall clock, a wooden chair, a window with blinds, beyond the doorway a small mess room with a shelf of plain tinned and boxed food and a small table. Walls painted cream, warm wood, night, the desk lamp the only light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "e3b2fea4-f4da-4fbb-8561-2fc2d4e194db",
+      "image": "assets/locations/sams-office.jpg"
+    },
+    {
+      "id": "laundry",
+      "name": "The laundry",
+      "scenes": [
+        "d5_duty_laundry"
+      ],
+      "dimensions_m": [
+        8,
+        6,
+        4.57
+      ],
+      "lighting": "Steam, flat strips.",
+      "objects": [
+        "uniform"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. An institutional military laundry 8 by 6 metres with a high ceiling, a row of large steel drum washing machines, a steam press, wooden folding tables, olive drab uniforms hanging on a rail, wicker laundry baskets, steam in the air, walls painted hospital green below and cream above, fluorescent strips. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "f43644d6-062c-46f8-83b3-d57513932867",
+      "image": "assets/locations/laundry.jpg"
+    },
+    {
+      "id": "the-pens",
+      "name": "The pens below the cold store",
+      "scenes": [
+        "n6_pens"
+      ],
+      "dimensions_m": [
+        40,
+        6,
+        6
+      ],
+      "lighting": "Blue work lights, frost on everything.",
+      "objects": [
+        "tube-stand"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. A long hidden underground room 40 metres by 6 metres with a 6 metre ceiling, one wall lined with twelve tall cells fronted by heavily frosted glass panes so nothing inside can be seen, a thin tube running from the ceiling into each cell, bare concrete, frost on every surface, cold blue work lamps along the ceiling, a steel pump on the floor at the end, eerie and still, empty walkway. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "b6fb69c0-e797-46fc-be8a-60030c0be6ad",
+      "image": "assets/locations/the-pens.jpg"
+    },
+    {
+      "id": "the-cave",
+      "name": "The cave",
+      "scenes": [
+        "e_cave"
+      ],
+      "dimensions_m": [
+        25,
+        18,
+        6
+      ],
+      "lighting": "Work lamps on stands lighting a pool of the floor; dark beyond.",
+      "objects": [
+        "work-lamp"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. A natural limestone cave 25 by 18 metres reached through an old mine adit, stalagmites up to 3 metres tall rising from a damp stone floor, a few industrial work lamps on tripod stands lighting a pool in the centre, a small generator with cables, timber mine props at the entrance, darkness beyond the light, cold bruise-violet shadows. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "55f82636-2959-4381-8269-5df7c6265214",
+      "image": "assets/locations/the-cave.jpg"
+    },
+    {
+      "id": "room-below",
+      "name": "The room below",
+      "scenes": [
+        "e_zoo_wake"
+      ],
+      "dimensions_m": [
+        5,
+        5,
+        3
+      ],
+      "lighting": "Surgical white light; one small window in the door.",
+      "objects": [
+        "sheet-covered-table",
+        "tube-stand"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. A small plain white-tiled basement room 5 by 5 metres, a steel table covered by a smooth white sheet against one wall, a steel drip stand, a small steel pump on the floor, one heavy door with a single small square window, bright even white overhead light, quiet and bare. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "9f295225-e141-47e6-a7ba-b92508a69e1c",
+      "image": "assets/locations/room-below.jpg"
+    },
+    {
+      "id": "perimeter",
+      "name": "Beyond the wire and the tree line",
+      "scenes": [
+        "n7_perimeter",
+        "e_tree_line"
+      ],
+      "dimensions_m": [
+        30,
+        400,
+        20
+      ],
+      "lighting": "Night: searchlight behind, dark trees ahead. Ending: dawn blue among the trees.",
+      "objects": [
+        "fence-post"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. Open snowfield beyond a military perimeter fence, 400 metres of untouched deep snow running to a dark line of tall spruce trees, the wire fence and wooden fence posts in the near ground, a searchlight beam from the base far behind, the edge of a quiet boreal forest, pale blue pre-dawn light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "aab45874-1d61-488a-82b4-63ef20fc935c",
+      "image": "assets/locations/perimeter.jpg"
+    }
+  ],
+  "objects": [
+    {
+      "id": "kit-bag",
+      "name": "Kit bag",
+      "role": "interact",
+      "scenes": [
+        "c1_truck_gate",
+        "n2_door",
+        "n3_door",
+        "n4_door",
+        "n5_door",
+        "n6_door",
+        "n7_door",
+        "e_transfer_truck"
+      ],
+      "size_m": [
+        0.35,
+        0.35,
+        0.8
+      ],
+      "material": "Olive drab canvas duffel bag, drawstring top, worn leather base, brass grommets",
+      "prompt": "A 1950s olive drab canvas military duffel kit bag standing upright, drawstring top cinched, worn leather base, brass grommets, frayed and scuffed, matte fabric. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "438e074f-3adb-4c6e-b8d6-e9d52b71c3aa",
+      "image": "assets/objects/kit-bag.jpg"
+    },
+    {
+      "id": "rules-card",
+      "name": "Rules card",
+      "role": "interact",
+      "scenes": [
+        "c1_bunk"
+      ],
+      "size_m": [
+        0.3,
+        0.01,
+        0.4
+      ],
+      "material": "Painted steel plate, cream enamel, stencil marks implied but illegible, four screws",
+      "prompt": "A small rectangular painted steel plate sign, cream paint chipped at the edges, four corner screws, blank surface with faint worn paint, matte, rust spots. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d2c101a3-8114-4cd1-9462-5c8d07f6f3fd",
+      "image": "assets/objects/rules-card.jpg"
+    },
+    {
+      "id": "wall-clock",
+      "name": "Wall clock",
+      "role": "interact",
+      "scenes": [
+        "c1_bunk",
+        "n1_bunk_call",
+        "n2_door",
+        "n7_door",
+        "n7_bunk_stay"
+      ],
+      "size_m": [
+        0.3,
+        0.06,
+        0.3
+      ],
+      "material": "Steel-rimmed round wall clock, plain cream face with tick marks only",
+      "prompt": "A plain round 1950s institutional wall clock with a grey steel rim, cream face with simple black tick marks and no numerals, black hands, matte, slightly scuffed. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "23361c35-c5c8-4170-a91c-ec60edb6e250",
+      "image": "assets/objects/wall-clock.jpg"
+    },
+    {
+      "id": "bunk-bed",
+      "name": "Bunk bed",
+      "role": "interact",
+      "scenes": [
+        "c1_bunk",
+        "n1_bunk_call",
+        "d5_jax_plan",
+        "d7_bunk_evening",
+        "n7_bunk_stay"
+      ],
+      "size_m": [
+        0.9,
+        2.0,
+        0.6
+      ],
+      "material": "Grey steel tube frame, sagging spring base, grey wool blanket",
+      "prompt": "A single 1950s military steel-frame cot bed with grey painted tubular frame and headboard rails, a thin striped mattress and a folded grey wool blanket, scuffed paint, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "e358e216-3c90-45d9-8ce7-a6a4584ebe0a",
+      "image": "assets/objects/bunk-bed.jpg"
+    },
+    {
+      "id": "sleeping-bag",
+      "name": "Sleeping bag",
+      "role": "interact",
+      "scenes": [
+        "c1_bunk",
+        "n1_bunk_call"
+      ],
+      "size_m": [
+        0.8,
+        2.0,
+        0.15
+      ],
+      "material": "Olive and grey quilted wool and cotton, worn",
+      "prompt": "A 1950s olive drab quilted military mummy sleeping bag laid flat and slightly crumpled, wool and cotton fabric, worn seams, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "c12f5919-6709-4c4d-b244-a0ca44395abe",
+      "image": "assets/objects/sleeping-bag.jpg"
+    },
+    {
+      "id": "laced-boots",
+      "name": "The first bunkmate's boots",
+      "role": "interact",
+      "scenes": [
+        "c1_bunk"
+      ],
+      "size_m": [
+        0.3,
+        0.32,
+        0.3
+      ],
+      "material": "Black leather combat boots, laces still tied, salt-stained",
+      "prompt": "A pair of black leather 1950s military combat boots standing side by side, laces still tied in bows, scuffed toes, white salt stains from snow, matte leather. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "8ed28606-d78b-495f-a85f-978b2490f294",
+      "image": "assets/objects/laced-boots.jpg"
+    },
+    {
+      "id": "bread-loaf",
+      "name": "Bread loaf",
+      "role": "interact",
+      "scenes": [
+        "n2_door",
+        "d7_bunk_evening",
+        "n7_bunk_stay"
+      ],
+      "size_m": [
+        0.25,
+        0.12,
+        0.1
+      ],
+      "material": "Plain brown army loaf, floury crust",
+      "prompt": "A plain rectangular brown army bread loaf, dull floury crust, slightly squashed, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "9dd0420c-2149-499a-9f9d-89746dca94f0",
+      "image": "assets/objects/bread-loaf.jpg"
+    },
+    {
+      "id": "two-handle-door",
+      "name": "Two-handle door",
+      "role": "interact",
+      "scenes": [
+        "c1_halls",
+        "c1_bunk",
+        "n2_door",
+        "d7_duty_walk",
+        "n7_door"
+      ],
+      "size_m": [
+        1.1,
+        0.08,
+        4.2
+      ],
+      "material": "Tall narrow steel door in grey paint, steel lever at 2.4 m, brass knob at 1.1 m",
+      "prompt": "A very tall narrow grey painted steel door in its frame, 1.1 metres wide and 4.2 metres tall, a steel lever handle placed high up near two thirds of its height and a small brass round knob at ordinary waist height, rivets, chipped paint, matte, standing upright. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "b5ad3579-7b01-4ac1-a6cb-e0c4c30b7a47",
+      "image": "assets/objects/two-handle-door.jpg"
+    },
+    {
+      "id": "meal-tray",
+      "name": "Meal tray",
+      "role": "interact",
+      "scenes": [
+        "d1_cafeteria"
+      ],
+      "size_m": [
+        0.45,
+        0.33,
+        0.03
+      ],
+      "material": "Pressed steel compartment tray, dull, scratched",
+      "prompt": "An empty pressed steel military compartment meal tray with five shallow sections, dull grey metal, scratched and dented, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "78f55fe9-def5-4293-8b41-985e2c4b8721",
+      "image": "assets/objects/meal-tray.jpg"
+    },
+    {
+      "id": "supply-crate",
+      "name": "Supply crate",
+      "role": "interact",
+      "scenes": [
+        "d1_duty_coldstore"
+      ],
+      "size_m": [
+        0.6,
+        0.4,
+        0.4
+      ],
+      "material": "Pale wooden crate, rope handles, iron corner straps",
+      "prompt": "A closed rectangular wooden military supply crate with rope carry handles at the ends and iron corner straps, pale weathered pine boards, no markings, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "f36391fb-687a-4e12-bcb1-d5892119dec9",
+      "image": "assets/objects/supply-crate.jpg"
+    },
+    {
+      "id": "round-table",
+      "name": "Card table",
+      "role": "interact",
+      "scenes": [
+        "d1_rec_room"
+      ],
+      "size_m": [
+        1.2,
+        1.2,
+        0.75
+      ],
+      "material": "Round worn wooden table, scarred top",
+      "prompt": "A round worn wooden card table on four legs, scarred and faded tabletop, plain 1950s style, matte wood. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "5627eae9-a6ea-45a6-955b-bd1a463b677d",
+      "image": "assets/objects/round-table.jpg"
+    },
+    {
+      "id": "card-deck",
+      "name": "Deck of cards",
+      "role": "interact",
+      "scenes": [
+        "d1_rec_room"
+      ],
+      "size_m": [
+        0.064,
+        0.09,
+        0.02
+      ],
+      "material": "Squared deck, plain steel-grey backs",
+      "prompt": "A squared stack of playing cards with plain grey-green patterned backs and worn edges, slightly fanned at one corner, no printing visible, matte card. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "3857a95a-03b2-4251-9ff7-188a974060cb",
+      "image": "assets/objects/card-deck.jpg"
+    },
+    {
+      "id": "ladder",
+      "name": "Ladder",
+      "role": "interact",
+      "scenes": [
+        "d2_duty_paint"
+      ],
+      "size_m": [
+        0.5,
+        0.15,
+        4.0
+      ],
+      "material": "Long wooden ladder, paint-splattered",
+      "prompt": "A tall straight wooden ladder about 4 metres long standing upright, worn rungs, splatters of pale cream paint, matte wood. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "5e51c0b3-ba33-4b76-b192-fbcd78b202be",
+      "image": "assets/objects/ladder.jpg"
+    },
+    {
+      "id": "paint-tin",
+      "name": "Paint tin",
+      "role": "interact",
+      "scenes": [
+        "d2_duty_paint"
+      ],
+      "size_m": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "material": "Steel paint tin, cream paint drips, wire bail",
+      "prompt": "An open steel paint tin with a wire bail handle, filled with pale cream paint, drips down the unlabelled grey side, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "d921b46b-90de-4de5-92cf-e1e4bc8640b0",
+      "image": "assets/objects/paint-tin.jpg"
+    },
+    {
+      "id": "snow-shovel",
+      "name": "Snow shovel",
+      "role": "interact",
+      "scenes": [
+        "d3_duty_shovel"
+      ],
+      "size_m": [
+        0.45,
+        0.2,
+        1.4
+      ],
+      "material": "Wooden shaft, wide steel blade, rust",
+      "prompt": "A wide 1950s snow shovel with a long wooden shaft and D grip, broad steel blade with rust patches and packed snow on it, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "508c9e6d-79ad-4450-98f9-2107499191f4",
+      "image": "assets/objects/snow-shovel.jpg"
+    },
+    {
+      "id": "fence-post",
+      "name": "Fence post",
+      "role": "interact",
+      "scenes": [
+        "d3_duty_shovel",
+        "n7_perimeter"
+      ],
+      "size_m": [
+        0.2,
+        0.2,
+        3.0
+      ],
+      "material": "Weathered timber post, barbed wire stubs, snow cap",
+      "prompt": "A single tall weathered timber fence post with a few short cut strands of barbed wire stapled to it and a cap of snow on top, grey wood, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "bee9fa5b-3a77-42ba-a535-ee0734404516",
+      "image": "assets/objects/fence-post.jpg"
+    },
+    {
+      "id": "mail-sack",
+      "name": "Mail sack",
+      "role": "interact",
+      "scenes": [
+        "d3_mail_room"
+      ],
+      "size_m": [
+        0.6,
+        0.4,
+        0.9
+      ],
+      "material": "Heavy canvas sack, full, drawcord, rope tie",
+      "prompt": "A full heavy grey-green canvas mail sack slumped upright, tied at the top with rope and a drawcord, rough canvas, no markings, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "ae9284e1-769b-423e-a530-c39687a5655b",
+      "image": "assets/objects/mail-sack.jpg"
+    },
+    {
+      "id": "floor-drain",
+      "name": "Floor drain",
+      "role": "interact",
+      "scenes": [
+        "d4_duty_boiler"
+      ],
+      "size_m": [
+        0.4,
+        0.4,
+        0.08
+      ],
+      "material": "Round cast iron grate, frost bloom",
+      "prompt": "A round cast iron floor drain grate set in a small square slab of concrete, with white frost crystals spreading around the grate, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "6af463a2-bd49-40bb-8afb-ae0e9e974168",
+      "image": "assets/objects/floor-drain.jpg"
+    },
+    {
+      "id": "filing-cabinet",
+      "name": "Filing cabinet",
+      "role": "interact",
+      "scenes": [
+        "n4_office",
+        "d5_sam_office"
+      ],
+      "size_m": [
+        0.45,
+        0.65,
+        1.3
+      ],
+      "material": "Grey steel four-drawer cabinet, blank card holders",
+      "prompt": "A grey steel four-drawer 1950s filing cabinet, the top drawer slightly open, empty card holders on each drawer, scuffs, matte paint. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "38497c05-90b5-4f82-b9be-a2fc2dbc1bc9",
+      "image": "assets/objects/filing-cabinet.jpg"
+    },
+    {
+      "id": "file-folder",
+      "name": "File folder",
+      "role": "interact",
+      "scenes": [
+        "n4_office"
+      ],
+      "size_m": [
+        0.24,
+        0.32,
+        0.02
+      ],
+      "material": "Buff manila folder, papers inside, string tie",
+      "prompt": "A closed buff manila file folder thick with papers, a red string tie, worn corners, blank cover, matte paper. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "73e290c8-b670-4521-bafb-98b89ccc2eb1",
+      "image": "assets/objects/file-folder.jpg"
+    },
+    {
+      "id": "uniform",
+      "name": "Taken-in uniform trousers",
+      "role": "interact",
+      "scenes": [
+        "d5_duty_laundry"
+      ],
+      "size_m": [
+        0.5,
+        0.1,
+        1.5
+      ],
+      "material": "Olive drab wool trousers on a hanger, waist taken in, hems let down",
+      "prompt": "A pair of olive drab 1950s military wool uniform trousers hanging from a wooden hanger, the waist taken in very narrow and the hems let down long, visible altered seams, matte fabric. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "bf755881-c748-46b5-90ad-f54e6f269563",
+      "image": "assets/objects/uniform.jpg"
+    },
+    {
+      "id": "key-ring",
+      "name": "Key ring",
+      "role": "interact",
+      "scenes": [
+        "d6_sam_offer"
+      ],
+      "size_m": [
+        0.08,
+        0.02,
+        0.12
+      ],
+      "material": "Steel ring, two long brass keys",
+      "prompt": "A steel key ring holding two long old-fashioned brass keys and one steel key, worn and dull. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "86513ad6-2be2-41db-8c5e-74d51c8bf282",
+      "image": "assets/objects/key-ring.jpg"
+    },
+    {
+      "id": "door-log-clipboard",
+      "name": "Door log clipboard",
+      "role": "interact",
+      "scenes": [
+        "d7_duty_walk"
+      ],
+      "size_m": [
+        0.23,
+        0.02,
+        0.32
+      ],
+      "material": "Masonite clipboard, ruled sheet, pencil on a string",
+      "prompt": "A brown masonite clipboard with a steel clip holding a sheet of blank ruled paper, a pencil tied on a string, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "1ca80c8e-bb3e-4ab8-8d82-7660bc33a7ec",
+      "image": "assets/objects/door-log-clipboard.jpg"
+    },
+    {
+      "id": "army-truck",
+      "name": "Transport truck",
+      "role": "hero",
+      "scenes": [
+        "c1_truck_gate",
+        "d3_duty_shovel",
+        "e_transfer_truck"
+      ],
+      "size_m": [
+        2.5,
+        7.0,
+        3.0
+      ],
+      "material": "Olive drab 1950s cargo truck with canvas cover, unmarked",
+      "prompt": "A 1950s olive drab military cargo truck with a canvas-covered rear bed, unmarked, snow on the hood and canvas, chains on the tyres, matte paint, generic design. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "82b1f279-86c9-4128-a130-7affee265ef4",
+      "image": "assets/objects/army-truck.jpg"
+    },
+    {
+      "id": "boiler",
+      "name": "Boiler",
+      "role": "hero",
+      "scenes": [
+        "d4_duty_boiler"
+      ],
+      "size_m": [
+        2.0,
+        3.5,
+        2.8
+      ],
+      "material": "Riveted steel boiler, round gauges, orange firebox door",
+      "prompt": "A large riveted steel industrial boiler with round pressure gauges, pipes rising from the top and a small firebox door with orange glow, soot-darkened, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "14fe3644-9fd4-488f-bee0-1be75d84213e",
+      "image": "assets/objects/boiler.jpg"
+    },
+    {
+      "id": "sheet-covered-table",
+      "name": "Sheet-covered table",
+      "role": "hero",
+      "scenes": [
+        "e_zoo_wake"
+      ],
+      "size_m": [
+        0.8,
+        2.0,
+        0.9
+      ],
+      "material": "Steel examination table under a flat white sheet",
+      "prompt": "A steel hospital examination table on four legs with a plain white cloth sheet draped flat and smooth over its top, nothing under the sheet, clinical, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "e410fbd1-3328-4be6-99ad-588624fc3098",
+      "image": "assets/objects/sheet-covered-table.jpg"
+    },
+    {
+      "id": "tube-stand",
+      "name": "Tube stand",
+      "role": "fill",
+      "scenes": [
+        "n6_pens",
+        "e_zoo_wake"
+      ],
+      "size_m": [
+        0.5,
+        0.5,
+        1.9
+      ],
+      "material": "Chrome-free steel drip stand, glass bottle, rubber tube",
+      "prompt": "A 1950s steel medical drip stand on a four-wheel base with a hanging glass bottle of clear liquid and a long rubber tube, dull steel, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "19bb27bc-cf7c-437c-b7e2-dbfd56c1172c",
+      "image": "assets/objects/tube-stand.jpg"
+    },
+    {
+      "id": "work-lamp",
+      "name": "Work lamp on stand",
+      "role": "fill",
+      "scenes": [
+        "e_cave"
+      ],
+      "size_m": [
+        0.8,
+        0.8,
+        2.0
+      ],
+      "material": "Tripod steel work lamp, caged bulb, cable",
+      "prompt": "An industrial work lamp with a caged bulb on a steel tripod stand, a cable coiled at its base, dull yellow paint, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "f2a37298-fca5-45ba-849f-394c40286a79",
+      "image": "assets/objects/work-lamp.jpg"
+    },
+    {
+      "id": "wood-stove",
+      "name": "Wood stove",
+      "role": "fill",
+      "scenes": [
+        "d1_rec_room"
+      ],
+      "size_m": [
+        0.6,
+        0.6,
+        1.8
+      ],
+      "material": "Black cast iron stove with flue pipe",
+      "prompt": "A small black cast iron pot-belly wood stove with a short straight flue pipe on top, ash dust, matte. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "fe4a2724-7eb2-43bd-b3a9-98f559b5be93",
+      "image": "assets/objects/wood-stove.jpg"
+    },
+    {
+      "id": "yard-lamp",
+      "name": "Yard lamp post",
+      "role": "fill",
+      "scenes": [
+        "c1_truck_gate",
+        "d3_duty_shovel"
+      ],
+      "size_m": [
+        0.4,
+        0.4,
+        5.0
+      ],
+      "material": "Steel pole, sodium lamp head, snow",
+      "prompt": "A tall steel yard lamp post with a single enclosed lamp head giving a warm amber sodium glow, snow on the top, matte grey steel. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": "cedd41f8-4173-4d84-8fb3-3738b0d7cebf",
+      "image": "assets/objects/yard-lamp.jpg"
+    }
+  ]
+}
