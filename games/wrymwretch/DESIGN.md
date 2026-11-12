@@ -1150,7 +1150,23 @@ lantern-crystals under water, torchlight swallowed by shadow, starlight. Light d
 meter falls.
 
 **One look for three layers.** The same palettes and the same forgetting shader drive all three
-layers; the 2D flight backgrounds are painted from the 3D scenes' own models, flattened.
+layers; the 2D flight backgrounds are painted from the 3D scenes' own models, flattened. The palette and
+materials are shared, while each 2D and 1D page's drawing style differs (see Gameplay graphics).
+
+### Gameplay graphics
+
+Each 2D mode and 1D game keeps this palette but is drawn in its own graphic style, unique in the
+collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg`.
+
+| Mode or game | Layer | Graphic style | How the style serves play |
+| --- | --- | --- | --- |
+| Twin flight | 2D | Ink-wash scroll | The flight reads as unrolling a handscroll toward its far peak; washes fade into mist so the dragon, the drawn current and the gusts stand out as the only hard ink |
+| Forgetting run | 2D | Graphite sketch being erased | Remembered ground is dense graphite, the unremembered path a faint outline, and the blank-paper edge erases what is behind: the three states of the run are three densities of pencil |
+| Star Chart | 1D | Gilded star atlas | Lines laid correctly turn to gold leaf on lapis, so a solved constellation is visibly gilded; fragments sit on the page as torn paper |
+| The Slipping Glyph | 1D | Illuminated initials | Each glyph is a painted capital built of four parts, so a part that changes and the one that stays are easy to compare; the gilt focus circle lights only the glyph held still |
+| Concentration | 1D | Stained glass | Card faces are lead-lined jewel glass, and a blanked face becomes clear glass: the loss is visible at a glance while the lead outline still marks the card |
+| Six Realms | 1D | Byzantine mosaic | Hexes laid in tesserae in realm colours make the board's realms readable from across the room; a hex lost to the tide drops its tiles |
+| Heartstone | 1D | Low-poly crystal facets | Shards are flat-shaded facets in realm colours, and the beat lines between them show how far each pitch is from the target chord |
 
 ## 16. Audio
 
