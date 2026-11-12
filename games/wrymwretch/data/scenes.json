@@ -600,7 +600,7 @@
     {
       "id": "s_chasm_seal2",
       "layer": "3d",
-      "name": "Toward #Wrymreach: the second seal cracks",
+      "name": "Toward Wrymreach: the second seal cracks",
       "chapter": "pr_seraphyne",
       "enter": "fade",
       "exit": "fade",
@@ -651,7 +651,7 @@
     {
       "id": "s_rim",
       "layer": "3d",
-      "name": "The Rim of #Wrymreach",
+      "name": "The Rim of Wrymreach",
       "chapter": "cv_roads",
       "enter": "flatten",
       "exit": "cut",

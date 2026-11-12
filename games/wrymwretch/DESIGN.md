@@ -14,7 +14,7 @@ retelling and re-drawing what the world lets go.
 | Target length | 170–180 minutes; this design runs 176 |
 | Players | 1 |
 | Core verb | **Remember** |
-| Structure | Six short prologues (one per pair), a convergence on #Wrymreach, then a proposed Act III (added, replaceable) |
+| Structure | Six short prologues (one per pair), a convergence on Wrymreach, then a proposed Act III (added, replaceable) |
 | Camera in 3D | Third person; a single pair in the prologues, a party of six from the convergence on |
 | Endings | Four, all proposals: the author's text stops at Act II, so none is marked as written |
 
@@ -170,7 +170,7 @@ The Codex gives eleven steps (Codex 71–81). Each is learned in play.
 | Celestial magic draws from Sun and Moon; elemental magic follows each tribe's dragon | Codex 67 | Six dragon gifts; pairing two gifts makes a Concord (15 in all) | Done |
 | The prison is sealed by memory itself | Codex 30 | If enough is forgotten, the seal fails (The Architect Rises) | Told by Seraphyne and Ilvarra; done |
 | The Remnants erase all memory of Izladar | Codex 30, WW 81 | Remnants kill witnesses and un-name things in battle | Seen in Kael's prologue; done in Act III |
-| #Wrymreach: reality thins, time folds, memory bleeds | Codex 59 | In the chasm, recorded memories become solid ground and forgotten ones are void | Done in Act III |
+| Wrymreach: reality thins, time folds, memory bleeds | Codex 59 | In the chasm, recorded memories become solid ground and forgotten ones are void | Done in Act III |
 
 ### Places
 
@@ -182,7 +182,7 @@ The Codex gives eleven steps (Codex 71–81). Each is learned in play.
 | Tidecaller Shores (East) | Codex 61 | Lunessa's prologue: the oil-still shore, the seabed, the monolith | `s_tide_shore`, `s_seabed`, `s_shore_night` |
 | Duskbane Underworld (Below) | Codex 61 | Kael's prologue: labyrinth halls, the forbidden chamber, the tunnels | `s_duskbane_halls`, `s_forbidden_chamber`, `s_underworld_tunnels` |
 | High Realm (Above) | Codex 61 | Seraphyne's prologue: star-lit Priory halls, luminous crystalline forests | `s_priory_halls`, `s_crystal_forest` |
-| #Wrymreach | Codex 59, WW 97 | The chasm: the Rim, the Rim Moot, the bone bridge, the Bone Choir, the heart of the wound | convergence and Act III |
+| Wrymreach | Codex 58–59, WW 97 | The chasm: the Rim, the Rim Moot, the bone bridge, the Bone Choir, the heart of the wound | convergence and Act III |
 | The Astral Expanse | Codex 63 | Izladar's prison, built from what the party remembers | `s_expanse` |
 | The Rim Moot (added) | — | A camp on the rim where the six tribes' delegations gather | `s_moot_camp` |
 | The Bone Choir (added) | from "The bones of ancient wyrms hummed" (WW 99) | A hall of wyrm bones that sound when tuned | `s_bone_choir` |
@@ -252,14 +252,14 @@ wakes in their own realm with no dragon and no memory of one, and each dragon sl
 | The Tidecaller elders and divers | WW 67, 69 | Murmur on the shore; dive with Lunessa; one elder gives the fourth request (added) |
 | The dying sage | WW 79 | Mentioned only. The game never shows him |
 | The Priory elder | WW 93 | Asks "And the name?"; gives the sixth request (added) |
-| The voice in the chasm | WW 101, 262 | Heard, never seen, until the endings |
-| Shallock Izladar | WW 79, Codex 30 | A name, a sigil, a voice. Who he was is the optional mystery |
+| The voice in the chasm | WW 97–101, 243, 260–262 | WrymWretch: what Shallock Izladar has become, pressing at the seal (section 20, answer 1). Heard, never seen, until the endings |
+| Shallock Izladar | WW 79, Codex 30 | A name, a sigil, a voice. Who he was is the optional mystery, and its answer is the Codex's: "a Celestial Elf scholar" who "ascended into an astral entity after delving into forbidden cosmic texts" (Codex 30). The game adds no more biography |
 
 ### Added for the game
 
 | Character | Want | Fear | Sample lines (all added) | Arc by ending |
 | --- | --- | --- | --- | --- |
-| **Ilvarra, last of the Wyrmguard** | That someone remembers her dragon's name after she dies | Being the last one who remembers | "Play the board. It teaches you the world faster than I can." / "Her name was Cendre. Say it back to me." | Survives Act III if protected. Rememberer: she stays with the keeper pair. Whole: she hears her dragon's name spoken by Izladar, who knew it. Dormant: she is the only elf who still remembers dragons. Architect: she is the first to forget |
+| **Ilvarra, last of the Wyrmguard** | That someone remembers her dragon's name after she dies | Being the last one who remembers | "Play the board. It teaches you the world faster than I can." / "Her name was Cendre. Say it back to me." | Survives Act III if protected. Rememberer: she stays with the keeper pair. Whole: she flies home with the party. Dormant: she is the only elf who still remembers dragons. Architect: she is the first to forget |
 | **The Unwriter** | That reality be raised, as the Remnants believe | That he is wrong, and gave up his name for nothing | "Forget, and be lifted." / "I had a name. It was heavy." | Defeated or reminded of his name in Act III. If reminded, he is present at the end and speaks once |
 | **The Syndicate Elder** | To keep the Underworld's secrets | That Kael is reckless | "Win, and the door is yours." | Plays Kael at Six Realms |
 | **Four Moot elders** (Circle of Seasons, Galechanters, Stonekeepers, Tidecallers) | Proof that the pairs understand their realm | That the pairs serve only themselves | One line each before and after a match | Send aid to the final battle if they trust you |
@@ -365,7 +365,7 @@ crystal veins in the walls by touch.
 | --- | --- | --- | --- | --- |
 | 1 | `s_heartstone_hall` | 3D | 2.5 | Gem-lit underground city. Rhyla kneels; the vision is a 30-second playable space: walls that are not there, a name dissolving into silence. WW 59 |
 | 2 | `s_heart_rekindle` | 1D Heartstone I | 3.5 | The stone cannot be saved (WW 61), but a tuned shard can keep one memory. Rhyla chooses: the tribe's founding, the vision, or the Stonekeepers' song |
-| 3 | `s_deep_core` | 3D + battle | 3 | Tremors; crystals shatter; the molten chamber; Gaia (WW 160–178). Battle: Crystal Crawlers and a Fossil Wurm. Gaia's Fossil Recall restores a faded page so a crawler can be reminded. A Stonekeeper's request (spoken by a voice through the stone): "Bring a living shard back to the Heartstone." Crystal: Record |
+| 3 | `s_deep_core` | 3D + battle | 3 | Tremors; crystals shatter; the molten chamber; Gaia (WW 160–178). Battle: Crystal Crawlers and a Fossil Wurm. Gaia's Fossil Recall restores a faded page so a crawler can be reminded. A Stonekeeper's request (spoken by a voice through the stone): "Bring a living shard back to the Heartstone." After the battle one crystal on the wall still glows among the shattered ones; Rhyla picks up a shard of it. Crystal: Record |
 | 4 | `s_flight_gaia` | 2D flight | 2 | "they plunged into the tunnels" (WW 180): Gaia's flight is burrow and leap |
 | 5 | `s_chasm_seal1` | 3D | 1 | Far away: "WrymWretch stirred." The bones hum; the voice; "The first seal had cracked." All realms −4 |
 
@@ -424,7 +424,7 @@ request), `seals_cracked`, `memory.above`.
 
 ### Chapter 7, `cv_roads`: Six Roads (14 min)
 
-**Goal:** bring the six together. **Where:** the sky above the realms, then the Rim of #Wrymreach.
+**Goal:** bring the six together. **Where:** the sky above the realms, then the Rim of Wrymreach.
 
 | Order | Scene | Layer | Minutes | What happens |
 | --- | --- | --- | --- | --- |
@@ -553,7 +553,7 @@ forgotten thing in 3D is drawn the same way: colour drains to pencil line, then 
 | `s_priory_halls` | Star-lit halls of the Priory | 40 × 20 m | Star dome, elders | Flickering starlight | Chimes losing notes | Dome touched → Star Chart | fade / push-in |
 | `s_crystal_forest` | Luminous crystalline forest | 60 × 60 m | Crystalline tree, Astraia | Iridescent, cosmic dust | Warm hum, gravity | Bond → battle → flight | pull-out / flatten |
 | `s_chasm_seal2` | The chasm, closer | Camera rail | None | Ghostly fire; six streaks of colour converging | The six motifs in one chord; the voice | Rail ends | fade / fade |
-| `s_rim` | Rim of #Wrymreach | 120 × 60 m | The six pairs, wyrm bones, crystal | Astral winds in the abyss | Wind through bone | Dream scout → ambush | flatten / cut |
+| `s_rim` | Rim of Wrymreach | 120 × 60 m | The six pairs, wyrm bones, crystal | Astral winds in the abyss | Wind through bone | Dream scout → ambush | flatten / cut |
 | `s_rim_ambush` | Same, battle stage | — | Battle | Smoke | Battle motif | Won → Moot | cut / fade |
 | `s_moot_camp` | The Rim Moot | 80 × 80 m | Six delegation tents, four elder tables, healers' tent, sky-watch, great crystal, Ilvarra's fire | Six banner colours; firelight | Six motifs from six tents | Four watches spent → the fire → dawn | fade / fade |
 | `s_moot_dawn` | The Moot at dawn | Same | Three witness tents, banners | Grey dawn, banners un-inking | Silence where names were | Battle won → kill-list | cut / push-in |
@@ -758,7 +758,7 @@ all six: `seal_text_read`, `izladar_fragments` +1.
 **Purpose.** The tribes' own game (added). Each elder judges whether the pairs understand the
 world by how they play it. Winning earns that tribe's trust.
 
-**Board.** 19 hexes (radius 2). The centre is #Wrymreach. Ring 1 (6 hexes) are the six
+**Board.** 19 hexes (radius 2). The centre is Wrymreach. Ring 1 (6 hexes) are the six
 Thresholds, one per realm colour. Ring 2 (12 hexes) are homes, two per realm.
 
 **Pieces.** Each side fields three tribe pieces. A tribe moves as its dragon does.
@@ -914,7 +914,7 @@ the right one from their own memory.
 | --- | --- | --- | --- |
 | Ranger captain | West | "Find out what is making it forget." | Retelling the prophecy line to the Circle of Seasons |
 | Priest of the Gale | North | "Bring back a song that heals." | The healing song from Concentration II |
-| A Stonekeeper | South | "Bring a living shard back to the Heartstone." | A shard from the Deep Core, if not shattered in Heartstone I |
+| A Stonekeeper | South | "Bring a living shard back to the Heartstone." | A living shard from the Deep Core, picked up in `s_deep_core` after the battle |
 | Tide elder | East | "Bring me water that remembers." | A vial purified by Aquatica on the shore (picked up in `s_shore_night`) |
 | Syndicate Elder | Below | "Bring me one of their masks." | A Remnant mask from any Remnant battle |
 | Priory elder | Above | "Keep the name." | THE NAME recorded |
@@ -1071,8 +1071,8 @@ for, and the Star Chart page, blank, waiting. **Cost:** everything the world for
 
 The party has remembered enough to learn who he was before he ascended: a Celestial Elf scholar
 (Codex 30). The constellation drawn in the Expanse is his, the Anchor holds his name, and the
-voice finishes its sentence. He chooses to stay in the Expanse as himself, and the prison no longer
-needs a guard. Final scenes: `s_choice`, `s_end_whole`. **Last line (added):** "I… remember… me.
+voice finishes its sentence. He does not choose anything: the prison is "sealed by memory itself"
+(Codex 30), and now the whole world remembers him, so no one pair has to keep watch. Final scenes: `s_choice`, `s_end_whole`. **Last line (added):** "I… remember… me.
 I was a scholar." **Cost:** the witnesses who died are not restored; their names are read out over
 the six realms, and the ones the player did not record are read as blanks.
 
@@ -1114,7 +1114,7 @@ never goes home.
 | Screen | Shows | Diegetic or overlaid |
 | --- | --- | --- |
 | Exploration HUD | Lead pair's portrait pair (elf and dragon joined at the shoulder) and Life; the corner map with live names; an Echo count as small glowing motes | Overlaid, minimal |
-| The map (M) | The six realms around #Wrymreach; every place name in ink. Forgotten names are blank and the land under them is pencil. Recording a place re-inks its name with a short pen stroke | Diegetic: Aeris's navigator's chart |
+| The map (M) | The six realms around Wrymreach; every place name in ink. Forgotten names are blank and the land under them is pencil. Recording a place re-inks its name with a short pen stroke | Diegetic: Aeris's navigator's chart |
 | The Record (Tab) | Six realm sections and a gold page for THE NAME; each entry kept, fading (grey) or forgotten (blank line); the six realm meters as six candles | Diegetic: a bound book |
 | Bestiary | Each page: picture, lore, weakness, remembrance. Lines vanish by tier | Part of the Record |
 | Party screen | Six pairs; each ability name in ink; Unnamed shows as a blank label with the icon still visible; Concord grid (6 × 6) lit where both names are kept | Overlaid |
@@ -1133,7 +1133,7 @@ everywhere.
 
 **Palette.** Each realm a pair of colours: West moss green and amber; North pale blue and silver;
 South ochre and molten orange; East sea blue and pearl; Below violet and obsidian; Above gold and
-starlight white. #Wrymreach mixes sun gold and moon silver over bone white. Forgetting is the
+starlight white. Wrymreach mixes sun gold and moon silver over bone white. Forgetting is the
 paper colour (warm off-white) and graphite.
 
 **References by mood.** Illuminated bestiaries and star atlases; ink-wash landscape painting; the
@@ -1253,14 +1253,52 @@ writing it back) in 15 minutes.
 | Six prologues before the party might delay the "real game" | Each prologue has its own battle, flight and 1D game; the party arrives at minute 74 |
 | The change of order (sign and awakening together) | Every line is kept with its speaker; the two seal cracks still close halves of the prologues |
 
-**Questions only the author can answer.**
+**Answered** (by Claude at the author's request, 2026-11-12, from the source text; the author can overrule any of them).
 
-1. What is WrymWretch? The text says "WrymWretch stirred" at the chasm (WW 97). The game treats it
-   as the chasm itself waking. Is it a creature, Izladar, the bones, or the place?
-2. Is Shallock Izladar someone who could choose to stay, as *Remembered Whole* proposes, or is he
-   beyond that? Who was he before he ascended?
-3. Spelling: the novel writes "#Wrymreach" and the Codex's title "Wyrmreach". Is the "#" part of the
-   in-world name the game should display, and which spelling is canon?
+1. **WrymWretch is the thing in the chasm, not the chasm: what Shallock Izladar has become.** The
+   sentence puts the place and the subject apart: "where the land cracked open into a vast abyss of
+   swirling astral winds, WrymWretch stirred." (WW 97). The bones are separate too: they hum in
+   answer, "The bones of ancient wyrms hummed with a resonance not heard in millennia" (WW 99). The
+   end of Act II retells the same moment and names what stirred: "deep within that chasm, something
+   ancient stirred — a voice half‑formed, a memory refusing to die." (WW 260). The same verb is used
+   once more, for the Architect: "The prison weakens. The Architect stirs." (WW 243), and the
+   voice's three words answer the whisper that asked to be remembered ("Remember me", WW 49) and
+   Rhyla's "name dissolving into silence" (WW 57). The text never writes "WrymWretch is Izladar", so
+   this is a reading, and it is listed in section 21. Changed: the voice in the chasm (section 6) is
+   named as WrymWretch, Izladar as he is now; the chasm keeps its own name, Wrymreach. Nothing else
+   in play changes: the voice stays heard and unseen until the endings.
+2. **No. Izladar does not choose; he is remembered.** The source gives him no will beyond three
+   half-formed words: he is "a memory refusing to die" (WW 260), a name "the world was trying to
+   forget" (WW 79), imprisoned "in a realm outside existence, sealed by memory itself" (Codex 30).
+   Who he was before is the Codex's whole answer: "a Celestial Elf scholar" who "ascended into an
+   astral entity after delving into forbidden cosmic texts" (Codex 30); the game adds no more. Since
+   the seal is memory, *Remembered Whole* now works without his consent: when the whole world
+   remembers him, the world holds the seal and no one pair has to keep watch. Changed: the
+   invented choice ("He chooses to stay in the Expanse as himself") is cut from section 13 and
+   `endings.json`; Ilvarra's *Whole* arc, in which Izladar spoke her dragon's name, is cut to "she
+   flies home with the party"; section 6 cites the Codex for who he was. The conditions, last line
+   and cost are unchanged.
+3. **The game displays "Wrymreach", without the "#".** Every in-world use in both files is spelled
+   "Wrym": "#Wrymreach" six times (WW 230, 247, 258; Codex 30, 58, 81), and the novel's own title,
+   "WrymWretch" (WW 26, 97). The two names share the spelling, so "Wrymreach" is kept to match the
+   game's title. The one exception is the Codex's own title, "World Codex of Wyrmreach" (Codex 26),
+   which spells it as the common noun is spelled ("Wyrm bones", Codex 59; "Wyrmguard", Codex 69;
+   "wyrms", WW 99). If the author means that spelling, it is a rename in display text only. The "#"
+   is a mark, not a letter: it also stands before a chapter heading, "#WrymWretch Chapter One" (WW
+   270), where the same title has none elsewhere, and "#Wrymreach" sits as a heading in the Codex's
+   Geography (Codex 58) where the others ("The Six Realms", "The Astral Expanse") have none.
+   Changed: every display name, map label, scene name and description reads "Wrymreach" (sections
+   1, 5, 8, 9, 11, 14, 15; `scenes.json`; `bestiary.json`); quotations keep "#Wrymreach" verbatim
+   with their line numbers, and their on-screen subtitles drop the "#". The Codex's timeline item
+   "March to #Wrymreach" is a quotation and is kept. `docs/COLLECTION.md` still writes
+   "#Wrymreach"; it is a shared document and was not changed here.
+4. **Data gap: the Stonekeeper's shard comes from the Deep Core itself.** Heartstone I is played
+   before Rhyla reaches the Deep Core, so it could not shatter a Deep Core shard. The source has the
+   Deep Core's crystals dying around her: "Crystals shattered along the walls, their light dimming to
+   ash." (WW 158), and it is "where the oldest crystals slept" (WW 63). Changed: after the
+   `s_deep_core` battle one crystal still glows among the shattered ones and Rhyla takes a shard of
+   it; the request is fulfilled by that shard (section 8, section 12). The condition "if not
+   shattered in Heartstone I" is cut. No flag was needed: `s_deep_core` already writes `requests`.
 
 ## 21. Added for the game
 
@@ -1294,6 +1332,11 @@ Life and move, and every battle roster beyond the creatures section 8 names; the
 the constellations' shapes and fragment wording (except the three example fragments above); the
 rune shapes; the elders' pieces, AI weights and the Stonekeepers' stone hexes; every shard's pitch
 and every chord.
+
+**Answers to the open questions (section 20).** The reading that WrymWretch is what Izladar has
+become (the text never says so outright); showing the place as "Wrymreach" without the "#";
+*Remembered Whole* sealed by the whole world's memory rather than by Izladar's choice; the living
+shard Rhyla takes from the Deep Core for the Stonekeeper.
 
 **Story elements.** The three memories Rhyla can keep; the fourth monolith row being unreadable;
 the Syndicate's game for the chamber; THE NAME as a Record entry; the archivist choice in Kael's

@@ -40,7 +40,7 @@
           }
         ]
       },
-      "summary": "The party remembers who Izladar was, a Celestial Elf scholar; the Anchor holds his whole name, the voice finishes its sentence, and he chooses to stay. The dead witnesses stay dead.",
+      "summary": "The party remembers who Izladar was, a Celestial Elf scholar; the Anchor holds his whole name and the voice finishes its sentence. The prison is sealed by memory, and now the whole world holds it, so no pair has to keep watch; he does not choose this. The dead witnesses stay dead.",
       "final_scenes": [
         "s_choice",
         "s_end_whole"

@@ -158,7 +158,7 @@ Each game reaches its endings by a different kind of rule, so replays feel diffe
 | Behind the Peephole | Accuracy of your statements plus one choice on the last night |
 | Missing Campsites | What and whom you carried into the fixed sites (inventory) |
 | Lira Calyx | The share of your data you verified by hand, and whether you answered the margin notes |
-| WrymWretch | Which pair you choose at #Wrymreach, and how much the world remembers |
+| WrymWretch | Which pair you choose at Wrymreach, and how much the world remembers |
 | Man Eater | A ledger of meals eaten and rules broken |
 | Heartstream | How well the players kept time together, and one refusal at the Recognition |
 | People of the Bark | The balance between the three institutions over the year |

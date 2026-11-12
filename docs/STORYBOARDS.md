@@ -137,7 +137,7 @@ Six short boards that each end with a pair taking off toward the chasm, then one
 | 8 | 3D | A forbidden chamber, a prophecy on bone | Kael reads of the Astral Architect | Cut |  |
 | 9 | 1D | Star Chart: the Sigil of Izladar | Seraphyne redraws the stars | Pull-out |  |
 | 10 | 2D | The forgetting run | Reach the remembered place before it goes | Cut |  |
-| 11 | 3D | #Wrymreach: astral wind, wyrm bones, six dragons arriving | "I… remember… me…" | Cut | [11-wrymreach](../games/wrymwretch/reference/11-wrymreach.jpg) |
+| 11 | 3D | Wrymreach: astral wind, wyrm bones, six dragons arriving | "I… remember… me…" | Cut | [11-wrymreach](../games/wrymwretch/reference/11-wrymreach.jpg) |
 | 12 | 3D | A battle on the chasm's rim | The party's first fight | Push-in on the tribal board |  |
 | 13 | 1D | Six Realms against a tribe's elder | Win their trust | Pull-out |  |
 | 14 | 3D | Before the Astral Expanse | The pair you choose decides the ending | End | [14-the-veil](../games/wrymwretch/reference/14-the-veil.jpg) |
