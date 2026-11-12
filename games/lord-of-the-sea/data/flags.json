@@ -236,15 +236,6 @@
       ]
     },
     {
-      "name": "narrator.identity",
-      "type": "enum",
-      "default": "unset",
-      "description": "Slot for the unnamed narrator ('I—who am him and not him'). Left unset until the author decides; no ending reads it.",
-      "values": [
-        "unset"
-      ]
-    },
-    {
       "name": "tideline_answered",
       "type": "bool",
       "default": false,

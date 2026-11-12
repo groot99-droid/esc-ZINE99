@@ -923,8 +923,7 @@
         "port.strait",
         "port.pearl",
         "port.spice",
-        "port.halls",
-        "narrator.identity"
+        "port.halls"
       ],
       "writes": [
         "chart.wild_regions",
@@ -1049,8 +1048,7 @@
       "name": "Ending: The Charter",
       "chapter": "ch7-tideline",
       "reads": [
-        "toll",
-        "narrator.identity"
+        "toll"
       ],
       "enter": "fade",
       "exit": "fade",
@@ -1062,8 +1060,7 @@
       "name": "Ending: No Lord",
       "chapter": "ch7-tideline",
       "reads": [
-        "toll",
-        "narrator.identity"
+        "toll"
       ],
       "enter": "fade",
       "exit": "fade",
@@ -1075,8 +1072,7 @@
       "name": "Ending: The Wild Sea",
       "chapter": "ch7-tideline",
       "reads": [
-        "toll",
-        "narrator.identity"
+        "toll"
       ],
       "enter": "fade",
       "exit": "fade",
@@ -1088,8 +1084,7 @@
       "name": "Ending: The Lord's Peace",
       "chapter": "ch7-tideline",
       "reads": [
-        "toll",
-        "narrator.identity"
+        "toll"
       ],
       "enter": "fade",
       "exit": "fade",

@@ -19,7 +19,7 @@ brings back his hymns also brings back wrecks to people who were safe under the 
 | Camera in 3D | Third person, at sea |
 | 2D modes | The Engraved Sea (storms and chases, side-on); The Deep (dives, side-on) |
 | 1D games | Liar's Tide (dice, bluffing); The Charter (document hunt); The Tea Board (trade-route board game); Dead Reckoning (navigation) |
-| Endings | Four, all proposals. The author has written two chapters and no ending, so none is marked as written |
+| Endings | Four, all proposals. The author has written two chapters and no ending, so none is marked as written. No Lord is the proposed default: the ending the chapters point toward (section 13) |
 
 The chapters never say "Poseidon". The game never says it either: the god is Alexi, and what he
 was is shown by what the sea does around him. The Company is fictional, the Great British Tea
@@ -212,7 +212,7 @@ burst, then play.
   a mortal sailor who chose it, rowing in at dawn. *The Charter*: a god under terms, keeping some
   water calm by his own hand.
 
-### The princess (not named; the source does not name her)
+### The princess (not named, as in the source; see section 20, answer 2)
 
 - **Want:** her father's halls back, and her people not handed to the Company as stock.
 - **Fear:** a life that is "normal" in the Company's sense: owned, ledgered, quiet.
@@ -224,7 +224,7 @@ burst, then play.
   sea is no one's. *The Wild Sea*: leaves the boat at the halls, unsure she helped. *The Lord's
   Peace*: becomes a Company ward with a pension and a view.
 
-### The king, her father (added beyond the source's mention)
+### The king, her father (added beyond the source's mention; his kingdom is not named)
 
 - **Want:** to be out of debt. **Fear:** that his daughter will see how he got into it.
 - **Voice (added):** "I signed what they put in front of me. They always put something in front of me."
@@ -282,8 +282,10 @@ Teaches Alexi the Tea Board in the Tidewater tavern, as a courtesy to a drunk.
 ### The narrator: "I—who am him and not him"
 
 The source gives one line in the narrator's own voice (357) and one slip (304: "My toes—his
-toes"). The design does **not** decide who the narrator is. See section 12, "The Voice Beside",
-for the slot built for it, and section 20 for the question to the author.
+toes"). The design reads the narrator as the god inside the man: the "something older than memory,
+older than the man he had become" that stirs at line 351, one sentence before the "I" speaks. It
+is never named and no ending reveals it (section 20, answer 1). Section 12, "The Voice Beside",
+gives the rules for its lines.
 
 ## 7. Structure and pacing
 
@@ -1057,28 +1059,35 @@ At `s-cabin-tally` the chart table writes three counters, shown with each region
 These, the ports, `crews`, `devotion`, `clauses`, `notice` and `tea.parlour_won` seed the final
 match (section 11).
 
-### The Voice Beside (the narrator slot)
+### The Voice Beside (the narrator)
 
 The source's narrator is "I—who am him and not him, who walk beside him and inside him" (357). The
-design builds a slot for that voice and leaves its identity to the author.
+design reads it as the god inside the man, the thing that "stirred" at 351, and never says so.
 
 - **Form.** Short first-person lines in a separate type (an upright italic in sea-ink green) that
-  appear without a speaker plate. No portrait, no voice actor until the author decides.
+  appear without a speaker plate. No portrait and no voice actor: it speaks from inside him, so it
+  is read, not heard.
 - **When.** Nine fixed places: the tideline in chapter 0; the ends of chapters 1 to 5; the tally;
-  the tideline in chapter 7; the last line of each ending.
-- **What it may say until the author decides.** Only lines that commit to nothing about who it is:
-  what Alexi does, what the sea does, and the word "us". The two verbatim lines are used as the
-  chapter 0 and chapter 1 lines. Every added line is marked in the script as provisional.
-- **The hook for a reveal.** The tally and each ending have an empty "identity line" field in the
-  script. The engine reads `narrator.identity` (enum, default `unset`). While it is `unset` the field
-  is skipped. If the author names the narrator, the value is added to the enum and the lines are
-  written; nothing else in the game changes.
-- No ending depends on the narrator. That is deliberate: the author may want the reveal to belong to
-  one ending or to none.
+  the tideline in chapter 7; the last line of each ending except The Lord's Peace.
+- **What it may say.** What Alexi does, what the sea does, and the word "us", as at 357. It may
+  speak of the sea as something it knows from inside ("older than memory", 351). It never says
+  "Poseidon", "god" or its own name, and it never explains itself. The two verbatim lines are used
+  as the chapter 0 and chapter 1 lines; every added line is marked in the script as added.
+- **No reveal.** No ending names it, and nothing in the data tracks who it is. What each ending
+  does to it is shown by whether it speaks: in The Lord's Peace, where the sea stops answering, the
+  last-line slot is left empty and the ending closes on buoy bells alone.
 
 ## 13. Endings
 
 None is marked as written: the author has written two chapters and no ending.
+
+**The default ending is No Lord.** It is a proposal, not the author's ending, and `as_written`
+stays false. It is named the default because it is the one the chapters point toward: the
+stirring is "Something that knew the sea was not meant to be owned" (351), which a god who keeps
+the sea (The Wild Sea) or signs terms for it (The Charter) does not honour, and the Lord of Tea
+owning it (The Lord's Peace) is the warning itself. Its last image, Alexi rowing the dinghy in at
+dawn, returns to the chapters' own "He took up the oars ... and began to row" (288). A player who
+frees ports, wins the final match and lets go at the tideline is on the story's path.
 
 The ending is decided at `s-tideline-final` by the final match result, the map at the tally, and,
 after a win, one choice. The resolver checks in priority order.
@@ -1099,8 +1108,8 @@ without them cannot occur; they are repeated in the data so the debug panel can 
 With the princess, Alexi writes terms between a god and the people who sail: the lanes kept calm by
 his own hand, the wild water left wild, and the halls' clause that reached the sea struck out. The
 Lord of Tea signs at 4–4. Final image: dawn on the bay, the ferry crossing a glassy lane while
-beyond it the water rises and falls on its own, and a crew sings a hymn to the tide, in tune for
-once. The narrator's last-line slot. Cost kept: every wreck and drowning in the `toll` ledger is
+beyond it the water rises and falls on its own, and a crew sings the hymn to the tide (section 16),
+in tune for once. The narrator's last-line slot. Cost kept: every wreck and drowning in the `toll` ledger is
 read out on the terms' last page as the reason for the lanes.
 
 ### No Lord
@@ -1108,15 +1117,18 @@ read out on the terms' last page as the reason for the lanes.
 He beats the Lord of Tea and then, at the tideline, lets go: the sea "was not meant to be owned"
 (351), by anyone. Alexi becomes a mortal sailor. The princess takes back the halls. The Company's
 charters fall; so do its lights, and no one keeps them. Final image: Alexi rowing the dinghy in at
-dawn with blistered hands, an ordinary man on an ordinary sea. Cost kept: the epilogue lists the
-regions where wrecks will now come back with no god to answer to, one line each.
+dawn with blistered hands, an ordinary man on an ordinary sea. The Gullwife crew sings the hymn from the
+anchorage, and he does not look round. The narrator's last line is its last: the god leaves the
+story it said would swallow them. Cost kept: the epilogue lists the regions where wrecks will now
+come back with no god to answer to, one line each.
 
 ### The Wild Sea
 
 He beats the Lord of Tea and keeps the sea. Alexi is the god again. The hymns come back, every crew
 on the chart singing, and so do the wrecks. Final image: Alexi on the bowsprit in a storm he made,
 the coast strip of the Engraved Sea at the bottom of the frame with its moorings lifting. Cost kept:
-the princess leaves the boat at the halls; the `toll` ledger is read out as a hymn, by name.
+the princess leaves the boat at the halls; the `toll` ledger is sung to the hymn's tune, by name,
+with no other words.
 
 ### The Lord's Peace
 
@@ -1124,14 +1136,14 @@ The Lord of Tea owns every ship that sails. The sea is safe. Alexi is "a man on 
 cannot make the tide answer; the game does not say he forgot, only that the sea stopped answering.
 Final image: noon on the beach, buoy bells at even intervals, Alexi turning a bottle in his hand and
 stirring the water at his ankles, which does nothing. The princess is a Company ward with a pension.
-Wenna counts the children across, on time.
+Wenna counts the children across, on time. The narrator says nothing.
 
 ### How a player reaches each one on purpose
 
 | Ending | Do this |
 | --- | --- |
 | The Charter | Rewrite charters rather than strike them (needs trust 50, so read with her and lay lanes early); keep five or six regions between 45 and 70 with lanes; gather crews to reach devotion 50; at the final match aim for 4–4 and press Sign. |
-| No Lord | Free ports and push regions wild enough to win the final match (5+ wild regions or most ports freed); then choose to give up the sea. |
+| No Lord (default) | Free ports and push regions wild enough to win the final match (5+ wild regions or most ports freed); then choose to give up the sea. |
 | The Wild Sea | As No Lord, with at least 5 regions at Wild 60+ at the tally, and choose to keep it. Expect most of the `toll` ledger to fill. |
 | The Lord's Peace | Still the stones, leave charters bound, or lose the final match. |
 
@@ -1202,9 +1214,18 @@ cups; the tide die; the Tea Board's wooden clicks; the pen of Sign; the Tide Rec
 writing each line.
 
 **Voice.** Sparse. Alexi, the princess, the Lord of Tea and the Comptroller are voiced for their
-few lines. Sailors bark in short phrases. The hymns are sung (original lyrics, to be written and
-approved: section 21). The narrator is not voiced until the author decides who it is. Every spoken
+few lines. Sailors bark in short phrases. The narrator is never voiced (section 12). Every spoken
 line is subtitled.
+
+**The hymn.** The source says the crews "sang drunken hymns to the tide, praising her like a lover
+who always returned" (346), so they sing words, not a hum. There is one hymn, added for the game
+(section 21), four lines long; each crew sings it to its own arrangement, and no crew has other
+words:
+
+> Drink to her going, drink to her coming,
+> she never stays and she never stays gone.
+> Ship oars, all hands, for the tide is a-turning:
+> sing her back in and we'll drink till the dawn.
 
 ## 17. Content list
 
@@ -1219,7 +1240,7 @@ line is subtitled.
 | 1D page layouts | Liar's Tide table (3 tavern skins), Charter writing slope (5 documents), Tea Board (3 board sizes), Dead Reckoning chart sheets (4 + lane template) | 4 layouts, 16 content sets |
 | 1D documents to write | Deed (2 pages), harbour book (3), lease (4), diving deed (4), halls' deed and schedule (6) | 19 pages |
 | UI | Rose ring, stir spiral, chart table, Tide Reckoning sheet, pause menu, save slots | 6 |
-| Music cues | Bottle motif and 4 ending arrangements; Company march (3 tempos); 7 crew hymns; squall; blockade; counting-house | 19 |
+| Music cues | Bottle motif and 4 ending arrangements; Company march (3 tempos); 7 crew arrangements of the one hymn; squall; blockade; counting-house | 19 |
 | Ambience loops | One per set plus storm, fog and deep | 14 |
 | Sound effects | Stir (5 layers), dice, board, pen, quill, ship sounds, surf variants | about 120 |
 | Voice line groups | Alexi (about 60 barks and lines), princess (about 90, many of them hints), Lord of Tea (25), Comptroller (15), factor (10), tallyman (10), Wenna (15), Corran (10), Ide (10), sailors (60), Tide Reckoning readings (12 toll lines + 12 saved lines) | about 340 lines |
@@ -1232,7 +1253,7 @@ line is subtitled.
 | --- | --- |
 | `game.json` | Slug, title, source path, target 160–180, one player, verb "stir", eight chapters adding to 174 |
 | `scenes.json` | Two 2D modes (`engraved`, `deep`), four 1D games (`liars-tide`, `charter`, `tea-board`, `reckoning`), and 47 scenes with reads, writes, transitions and next scenes |
-| `flags.json` | 8 Wild meters, devotion, trust, notice; port enums; lane bools; counters for crews, clauses, ports freed, the tally; ledgers `toll`, `stirs`, `news`; `tea.final_result`, `final_choice`; `narrator.identity` |
+| `flags.json` | 8 Wild meters, devotion, trust, notice; port enums; lane bools; counters for crews, clauses, ports freed, the tally; ledgers `toll`, `stirs`, `news`; `tea.final_result`, `final_choice` |
 | `endings.json` | The four endings in section 13 |
 
 Two conventions beyond the schemas: region names in flags use the region ids of section 5
@@ -1248,7 +1269,7 @@ ending never reads a stale count.
 | M3 1D games complete (5 weeks) | The Charter with all five documents; the Tea Board with AI at three depths and the campaign seed; Sign |
 | M4 The open chart (6 weeks) | Chapter 4's four regions in any order, lanes, all three Tide Reckonings, rescue dives |
 | M5 Endgame (4 weeks) | Chapters 5 to 7, all four endings reachable, the debug panel explaining each |
-| M6 Art and audio pass (8 weeks) | Engraved 2D style, painted 3D, hymns recorded, voice |
+| M6 Art and audio pass (8 weeks) | Engraved 2D style, painted 3D, the hymn recorded in seven arrangements, voice |
 | M7 Balance and accessibility (4 weeks) | Playtests to 174 ± 10 minutes; each ending reached on purpose by testers told only its row in section 13 |
 
 **First vertical slice.** From the bottles to the end of the first squall (about 66 minutes of
@@ -1269,17 +1290,11 @@ lane makes the player want the wild back.
 | The open chart order makes pacing uneven | Every region has the same spine and length (8–9 minutes) and its own featured game |
 | Imperial setting | The Company is fictional; ports and people are invented, not modelled on any real colony or people. Sensitivity read before M6 |
 
-### Questions for the author
+**Answered** (by Claude at the author's request, 2026-11-12, from the source text; the author can overrule any of them).
 
-1. **The narrator.** Who is "I—who am him and not him, who walk beside him and inside him"? The
-   adaptations note proposed the god's older self, but this design leaves it open and builds a slot
-   (section 12). Should it be revealed, and if so in which ending, or in none?
-2. **The princess's name.** She is unnamed here, as in the chapters. Do you want her named, and
-   does the game need her father's kingdom named?
-3. **Where you would end it.** None of the four endings is yours. If you have an ending in mind for
-   *The Lord of the Sea*, which of these is closest, and what would it change?
-4. Smaller: is a sung hymn with original lyrics acceptable, or should the crews hum only until you
-   write the words?
+1. **The narrator is the god inside the man, and no ending reveals it.** The text places it: "somewhere deep inside him—somewhere older than memory, older than the man he had become—something stirred" (351), and six lines later the "I" speaks, "who am him and not him, who walk beside him and inside him" (357), with "My toes—his toes" (304) as the one earlier slip. That is the older self ADAPTATIONS.md proposed. The source names nothing, so neither does the game: the `narrator.identity` flag and the empty "identity line" fields are cut from the data and section 12, the narrator stays unvoiced, and its lines never say "god", "Poseidon" or a name. What an ending does to it is shown only by whether it speaks; in The Lord's Peace it is silent.
+2. **Neither the princess nor her father's kingdom is named.** The chapters call her "a princess", "Your Highness" and "she", and the kingdom is only "my father's", "his halls" and "the empire" (324–336). She keeps her title; the region stays "the King's Halls"; UI and save labels say "the princess". Nothing in the data changed: it never named either.
+3. **No Lord is closest, and it is named the default; the crews sing, with one short hymn.** The chapters' turn is "Something that knew the sea was not meant to be owned" (351), which No Lord alone honours on both sides of the table, and its last image rows in at dawn as the chapters do (288). It stays `as_written: false`, with its conditions unchanged; section 13 says why it is the default. Humming would contradict "sang drunken hymns to the tide, praising her like a lover who always returned" (346), so the crews sing one four-line hymn built on that line (section 16, listed in section 21). The seven crew hymns become seven arrangements of it; the Wild Sea toll is sung to its tune with only the names; the cue count is unchanged.
 
 ## 21. Added for the game
 
@@ -1322,6 +1337,13 @@ history (two generations; the lights twenty years ago; the pearl rights ten year
 **Lines:** every line of dialogue not quoted in section 3, including "It used to come when I called.",
 "Calm water is not the same as safe people.", "I do not sink ships. I own them.", "A tie, in my
 books, is mine.", the factor's and the Comptroller's lines, and all narrator lines after the two
-verbatim ones. Hymn lyrics are to be written.
+verbatim ones. The hymn's four lines in section 16 ("Drink to her going, drink to her coming, /
+she never stays and she never stays gone. / Ship oars, all hands, for the tide is a-turning: / sing
+her back in and we'll drink till the dawn."), built on "praising her like a lover who always
+returned" (346).
 
-**Not added, deliberately:** the name Poseidon; a name for the princess; an identity for the narrator.
+**Readings and decisions:** the narrator read as the god inside the man (section 12); its silence in
+The Lord's Peace; No Lord as the default ending; one hymn for all crews; the crews singing in the
+No Lord ending.
+
+**Not added, deliberately:** the name Poseidon; a name for the princess or her father's kingdom; any line in which the narrator names or explains itself; a reveal of the narrator in any ending; more than one set of hymn words.
