@@ -953,7 +953,22 @@ tactile and close: paper, brass, stone, felt, seen straight on.
   when he opens the window, and it retreats in The Reader Who Stayed.
 - **One look across layers.** The 3D books are built from the same ink drawings as their 2D
   pages: textures are painted from the illustration plates, and the flatten transition rotates the
-  3D camera until the scene lines up with its drawn page.
+  3D camera until the scene lines up with its drawn page. The palette and materials are shared
+  across layers, while each 2D and 1D page's drawing style differs (see Gameplay graphics).
+
+### Gameplay graphics
+
+Each 2D mode and 1D game keeps this palette but is drawn in its own graphic style, unique in the
+collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg`.
+
+| Mode or game | Layer | Graphic style | How the style serves play |
+| --- | --- | --- | --- |
+| Living illustration | 2D | Picture-book pen and watercolour | The page is the storybook's own plate: loose ink makes the rider and the wave crest easy to read against soft washes, and the visible page edge keeps the player inside a book. |
+| The stacks | 2D | Impossible-architecture line drawing | One fine line with no single true perspective makes shelves that do not end; the gold mote stream is the only colour, so the right branch stands out. |
+| Tea Blending | 1D | Art nouveau apothecary labels | Each jar's label carries its depth, length and binding marks, and the whiplash frame draws the eye from the jars to the cup and the steep ring. |
+| The Naming | 1D | Bookbinder's gold tooling | The empty cartouche is a title waiting to be tooled: gold for set words, blind impressions for open slots, stamped tiles in their trays. |
+| The Clasps | 1D | Clockwork cutaway | Flat brass tones show each gear, peg and bolt plainly, and turning arrows make the parity of the train readable at a glance. |
+| The Rule Tablet | 1D | Cuneiform clay tablet | Eight ruled registers hold eight rules, numbered by their wedges; the rule a plan breaks lights, with its key word underlined in red. |
 
 ## 16. Audio
 
