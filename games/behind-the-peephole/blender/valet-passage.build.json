@@ -1,0 +1,1131 @@
+{
+  "game": "behind-the-peephole",
+  "location": "valet-passage",
+  "name": "The valet passage",
+  "reference": "assets/locations/valet-passage.jpg",
+  "bounds_m": [
+    64.0,
+    1.4,
+    2.4
+  ],
+  "origin": "floor centre; +x east toward the stair door, -x west to the office door; +y is the wall of valet doors 401 to 406 (west to east), -y the light-well windows and lost property",
+  "materials": {
+    "bottle-green": {
+      "color": [
+        0.18,
+        0.275,
+        0.196
+      ],
+      "roughness": 0.9
+    },
+    "varnish": {
+      "color": [
+        0.29,
+        0.18,
+        0.11
+      ],
+      "roughness": 0.45
+    },
+    "floorboards": {
+      "color": [
+        0.353,
+        0.263,
+        0.188
+      ],
+      "roughness": 0.7
+    },
+    "runner": {
+      "color": [
+        0.42,
+        0.353,
+        0.243
+      ],
+      "roughness": 0.95
+    },
+    "lightwell-glass": {
+      "color": [
+        0.62,
+        0.686,
+        0.749
+      ],
+      "roughness": 0.1,
+      "emission": 0.4
+    },
+    "brass": {
+      "color": [
+        0.69,
+        0.553,
+        0.341
+      ],
+      "roughness": 0.35,
+      "metallic": 0.8
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        64.0,
+        1.4,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "floorboards"
+    },
+    {
+      "id": "runner",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        62.0,
+        0.7,
+        0.01
+      ],
+      "location": [
+        0,
+        -0.1,
+        0.005
+      ],
+      "material": "runner",
+      "collide": false
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        64.0,
+        1.4,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        2.45
+      ],
+      "material": "varnish"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        64.0,
+        0.15,
+        2.4
+      ],
+      "location": [
+        0,
+        0.775,
+        1.2
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wainscot-north",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        64.0,
+        0.03,
+        0.9
+      ],
+      "location": [
+        0,
+        0.685,
+        0.45
+      ],
+      "material": "varnish"
+    },
+    {
+      "id": "dado-north",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        64.0,
+        0.05,
+        0.05
+      ],
+      "location": [
+        0,
+        0.675,
+        0.92
+      ],
+      "material": "varnish"
+    },
+    {
+      "id": "wall-south-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        64.0,
+        0.15,
+        1.7
+      ],
+      "location": [
+        0,
+        -0.775,
+        0.85
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-south-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        64.0,
+        0.15,
+        0.2
+      ],
+      "location": [
+        0,
+        -0.775,
+        2.3
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wainscot-south",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        64.0,
+        0.03,
+        0.9
+      ],
+      "location": [
+        0,
+        -0.685,
+        0.45
+      ],
+      "material": "varnish"
+    },
+    {
+      "id": "wall-south-band-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        20.0,
+        0.15,
+        0.5
+      ],
+      "location": [
+        -22.0,
+        -0.775,
+        1.95
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-south-pier-1",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.5,
+        0.15,
+        0.5
+      ],
+      "location": [
+        -10.75,
+        -0.775,
+        1.95
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-south-pier-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.5,
+        0.15,
+        0.5
+      ],
+      "location": [
+        -9.25,
+        -0.775,
+        1.95
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-south-band-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40.0,
+        0.15,
+        0.5
+      ],
+      "location": [
+        12.0,
+        -0.775,
+        1.95
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "lightwell-window-1",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.0,
+        0.05,
+        0.5
+      ],
+      "location": [
+        -11.5,
+        -0.7,
+        1.95
+      ],
+      "material": "lightwell-glass",
+      "collide": false
+    },
+    {
+      "id": "lightwell-window-2",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.0,
+        0.05,
+        0.5
+      ],
+      "location": [
+        -10.0,
+        -0.7,
+        1.95
+      ],
+      "material": "lightwell-glass",
+      "collide": false
+    },
+    {
+      "id": "lightwell-window-3",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.0,
+        0.05,
+        0.5
+      ],
+      "location": [
+        -8.5,
+        -0.7,
+        1.95
+      ],
+      "material": "lightwell-glass",
+      "collide": false
+    },
+    {
+      "id": "wall-west-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.3,
+        2.4
+      ],
+      "location": [
+        -32.075,
+        0.55,
+        1.2
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-west-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.3,
+        2.4
+      ],
+      "location": [
+        -32.075,
+        -0.55,
+        1.2
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-west-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.8,
+        0.35
+      ],
+      "location": [
+        -32.075,
+        0,
+        2.225
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "office-door-leaf",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.05,
+        0.8,
+        2.05
+      ],
+      "location": [
+        -32.075,
+        0,
+        1.025
+      ],
+      "material": "varnish"
+    },
+    {
+      "id": "wall-east-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.3,
+        2.4
+      ],
+      "location": [
+        32.075,
+        0.55,
+        1.2
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-east-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.3,
+        2.4
+      ],
+      "location": [
+        32.075,
+        -0.55,
+        1.2
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-east-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.8,
+        0.35
+      ],
+      "location": [
+        32.075,
+        0,
+        2.225
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "stair-door-leaf",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.05,
+        0.8,
+        2.05
+      ],
+      "location": [
+        32.075,
+        0,
+        1.025
+      ],
+      "material": "varnish"
+    },
+    {
+      "id": "loose-board-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.18,
+        1.2,
+        0.012
+      ],
+      "location": [
+        7.2,
+        0,
+        0.006
+      ],
+      "material": "varnish",
+      "collide": false
+    },
+    {
+      "id": "loose-board-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.18,
+        1.2,
+        0.012
+      ],
+      "location": [
+        7.65,
+        0,
+        0.006
+      ],
+      "material": "varnish",
+      "collide": false
+    },
+    {
+      "id": "loose-board-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.18,
+        1.2,
+        0.012
+      ],
+      "location": [
+        8.1,
+        0,
+        0.006
+      ],
+      "material": "varnish",
+      "collide": false
+    },
+    {
+      "id": "loose-board-4",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.18,
+        1.2,
+        0.012
+      ],
+      "location": [
+        8.55,
+        0,
+        0.006
+      ],
+      "material": "varnish",
+      "collide": false
+    },
+    {
+      "id": "valet-plate",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        0.01,
+        0.1
+      ],
+      "location": [
+        31.4,
+        0.68,
+        1.6
+      ],
+      "material": "brass",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "door-401",
+      "object": "valet-door",
+      "location": [
+        -25,
+        0.66,
+        0
+      ]
+    },
+    {
+      "id": "rose-401",
+      "object": "brass-rose",
+      "location": [
+        -25,
+        0.6,
+        1.55
+      ],
+      "ground": false
+    },
+    {
+      "id": "door-402",
+      "object": "valet-door",
+      "location": [
+        -15,
+        0.66,
+        0
+      ]
+    },
+    {
+      "id": "rose-402",
+      "object": "brass-rose",
+      "location": [
+        -15,
+        0.6,
+        1.55
+      ],
+      "ground": false
+    },
+    {
+      "id": "door-403",
+      "object": "valet-door",
+      "location": [
+        -5,
+        0.66,
+        0
+      ]
+    },
+    {
+      "id": "rose-403",
+      "object": "brass-rose",
+      "location": [
+        -5,
+        0.6,
+        1.55
+      ],
+      "ground": false
+    },
+    {
+      "id": "door-404",
+      "object": "valet-door",
+      "location": [
+        5,
+        0.66,
+        0
+      ]
+    },
+    {
+      "id": "rose-404",
+      "object": "brass-rose",
+      "location": [
+        5,
+        0.6,
+        1.55
+      ],
+      "ground": false
+    },
+    {
+      "id": "door-405",
+      "object": "valet-door",
+      "location": [
+        15,
+        0.66,
+        0
+      ]
+    },
+    {
+      "id": "rose-405",
+      "object": "brass-rose",
+      "location": [
+        15,
+        0.6,
+        1.55
+      ],
+      "ground": false
+    },
+    {
+      "id": "door-406",
+      "object": "valet-door",
+      "location": [
+        25,
+        0.66,
+        0
+      ]
+    },
+    {
+      "id": "rose-406",
+      "object": "brass-rose",
+      "location": [
+        25,
+        0.6,
+        1.55
+      ],
+      "ground": false
+    },
+    {
+      "id": "sconce-04",
+      "object": "wall-sconce",
+      "location": [
+        -28,
+        0.61,
+        1.95
+      ],
+      "ground": false
+    },
+    {
+      "id": "sconce-12",
+      "object": "wall-sconce",
+      "location": [
+        -20,
+        0.61,
+        1.95
+      ],
+      "ground": false
+    },
+    {
+      "id": "sconce-20",
+      "object": "wall-sconce",
+      "location": [
+        -12,
+        0.61,
+        1.95
+      ],
+      "ground": false
+    },
+    {
+      "id": "sconce-28",
+      "object": "wall-sconce",
+      "location": [
+        -4,
+        0.61,
+        1.95
+      ],
+      "ground": false
+    },
+    {
+      "id": "sconce-36",
+      "object": "wall-sconce",
+      "location": [
+        4,
+        0.61,
+        1.95
+      ],
+      "ground": false
+    },
+    {
+      "id": "sconce-44",
+      "object": "wall-sconce",
+      "location": [
+        12,
+        0.61,
+        1.95
+      ],
+      "ground": false
+    },
+    {
+      "id": "sconce-52",
+      "object": "wall-sconce",
+      "location": [
+        20,
+        0.61,
+        1.95
+      ],
+      "ground": false
+    },
+    {
+      "id": "sconce-60",
+      "object": "wall-sconce",
+      "location": [
+        28,
+        0.61,
+        1.95
+      ],
+      "ground": false
+    },
+    {
+      "id": "lost-property",
+      "object": "lost-property-cabinet",
+      "location": [
+        0,
+        -0.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "maids-trolley",
+      "object": "maids-trolley",
+      "location": [
+        29.5,
+        -0.4,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    }
+  ],
+  "scenes": {
+    "n1_passage": {
+      "note": "Night 1. Lew unlocks the passage at the east end and leaves. Walk west past six lit roses, two sconces dead; at 406's rose, the prompt: Look.",
+      "world": {
+        "color": [
+          0.03,
+          0.025,
+          0.02
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "sconce-04",
+          "type": "POINT",
+          "location": [
+            -28,
+            0.49999999999999994,
+            1.9
+          ],
+          "energy": 15,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "sconce-20",
+          "type": "POINT",
+          "location": [
+            -12,
+            0.49999999999999994,
+            1.9
+          ],
+          "energy": 15,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "sconce-28",
+          "type": "POINT",
+          "location": [
+            -4,
+            0.49999999999999994,
+            1.9
+          ],
+          "energy": 15,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "sconce-36",
+          "type": "POINT",
+          "location": [
+            4,
+            0.49999999999999994,
+            1.9
+          ],
+          "energy": 15,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "sconce-52",
+          "type": "POINT",
+          "location": [
+            20,
+            0.49999999999999994,
+            1.9
+          ],
+          "energy": 15,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "sconce-60",
+          "type": "POINT",
+          "location": [
+            28,
+            0.49999999999999994,
+            1.9
+          ],
+          "energy": 15,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "rose-401-glow",
+          "type": "POINT",
+          "location": [
+            -25,
+            0.5499999999999999,
+            1.55
+          ],
+          "energy": 0.6,
+          "size": 0.03,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "rose-402-glow",
+          "type": "POINT",
+          "location": [
+            -15,
+            0.5499999999999999,
+            1.55
+          ],
+          "energy": 0.6,
+          "size": 0.03,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "rose-403-glow",
+          "type": "POINT",
+          "location": [
+            -5,
+            0.5499999999999999,
+            1.55
+          ],
+          "energy": 0.6,
+          "size": 0.03,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "rose-404-glow",
+          "type": "POINT",
+          "location": [
+            5,
+            0.5499999999999999,
+            1.55
+          ],
+          "energy": 0.6,
+          "size": 0.03,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "rose-405-glow",
+          "type": "POINT",
+          "location": [
+            15,
+            0.5499999999999999,
+            1.55
+          ],
+          "energy": 0.6,
+          "size": 0.03,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "rose-406-glow",
+          "type": "POINT",
+          "location": [
+            25,
+            0.5499999999999999,
+            1.55
+          ],
+          "energy": 0.6,
+          "size": 0.03,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "lightwell-night",
+          "type": "AREA",
+          "location": [
+            -10.0,
+            -0.55,
+            1.95
+          ],
+          "energy": 8,
+          "size": 3.0,
+          "color": [
+            0.62,
+            0.72,
+            0.85
+          ],
+          "look_at": [
+            -10.0,
+            0.6,
+            0.5
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          30.6,
+          0,
+          1.62
+        ],
+        "look_at": [
+          0,
+          0,
+          1.3
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          30.6,
+          0,
+          0
+        ],
+        "facing_deg": 90
+      },
+      "hide": [
+        "maids-trolley"
+      ],
+      "interactions": [
+        {
+          "prop": "rose-406",
+          "verb": "Look",
+          "leads_to": "n1_first_look"
+        },
+        {
+          "prop": "lost-property",
+          "verb": "Try the cabinet (locked)"
+        }
+      ]
+    },
+    "end_under_door": {
+      "note": "Under the Door, 05:00. Every rose dark, grey light from the light-well windows. Walk east past six empty rooms; the knock at the office door behind you.",
+      "world": {
+        "color": [
+          0.14,
+          0.15,
+          0.16
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "lightwell-dawn",
+          "type": "AREA",
+          "location": [
+            -10.0,
+            -0.55,
+            1.95
+          ],
+          "energy": 120,
+          "size": 3.0,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            -10.0,
+            0.6,
+            0.3
+          ]
+        },
+        {
+          "name": "stair-door-crack",
+          "type": "AREA",
+          "location": [
+            31.5,
+            0,
+            1.0
+          ],
+          "energy": 6,
+          "size": 0.6,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            0,
+            0,
+            1.0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -30.6,
+          0,
+          1.62
+        ],
+        "look_at": [
+          30,
+          0,
+          1.3
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -30.6,
+          0,
+          0
+        ],
+        "facing_deg": -90
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "rose-401",
+          "verb": "Look"
+        },
+        {
+          "prop": "rose-402",
+          "verb": "Look"
+        },
+        {
+          "prop": "rose-403",
+          "verb": "Look"
+        },
+        {
+          "prop": "rose-404",
+          "verb": "Look"
+        },
+        {
+          "prop": "rose-405",
+          "verb": "Look"
+        },
+        {
+          "prop": "rose-406",
+          "verb": "Look"
+        }
+      ]
+    }
+  }
+}

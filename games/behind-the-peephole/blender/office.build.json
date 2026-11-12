@@ -1,0 +1,1900 @@
+{
+  "game": "behind-the-peephole",
+  "location": "office",
+  "name": "The office (old linen room)",
+  "reference": "assets/locations/office.jpg",
+  "bounds_m": [
+    4.0,
+    3.0,
+    2.6
+  ],
+  "origin": "floor centre; +y toward the light-well window wall (desk, bell board, cork board, chute hatch); the door to the valet passage on the +x wall; linen shelves on the -x wall",
+  "materials": {
+    "bottle-green": {
+      "color": [
+        0.18,
+        0.275,
+        0.196
+      ],
+      "roughness": 0.9
+    },
+    "varnish": {
+      "color": [
+        0.29,
+        0.18,
+        0.11
+      ],
+      "roughness": 0.45
+    },
+    "cream-paint": {
+      "color": [
+        0.851,
+        0.812,
+        0.706
+      ],
+      "roughness": 0.8
+    },
+    "floorboards": {
+      "color": [
+        0.353,
+        0.263,
+        0.188
+      ],
+      "roughness": 0.7
+    },
+    "lightwell-glass": {
+      "color": [
+        0.62,
+        0.686,
+        0.749
+      ],
+      "roughness": 0.1,
+      "emission": 0.4
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        4.0,
+        3.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "floorboards"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        4.0,
+        3.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        2.65
+      ],
+      "material": "cream-paint"
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.0,
+        0.15,
+        2.6
+      ],
+      "location": [
+        0,
+        -1.575,
+        1.3
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        3.0,
+        2.6
+      ],
+      "location": [
+        -2.075,
+        0,
+        1.3
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-north-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.0,
+        0.15,
+        2.1
+      ],
+      "location": [
+        0,
+        1.575,
+        1.05
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-north-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.0,
+        0.15,
+        0.15
+      ],
+      "location": [
+        0,
+        1.575,
+        2.525
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-north-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.9,
+        0.15,
+        0.35
+      ],
+      "location": [
+        -1.05,
+        1.575,
+        2.275
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-north-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.9,
+        0.15,
+        0.35
+      ],
+      "location": [
+        1.55,
+        1.575,
+        2.275
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "lightwell-window",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.2,
+        0.05,
+        0.35
+      ],
+      "location": [
+        0.5,
+        1.5,
+        2.275
+      ],
+      "material": "lightwell-glass",
+      "collide": false
+    },
+    {
+      "id": "wall-east-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.5,
+        2.6
+      ],
+      "location": [
+        2.075,
+        -1.25,
+        1.3
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-east-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.7,
+        2.6
+      ],
+      "location": [
+        2.075,
+        0.65,
+        1.3
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-east-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.8,
+        0.55
+      ],
+      "location": [
+        2.075,
+        -0.6,
+        2.325
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "office-door-leaf",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.05,
+        0.8,
+        2.05
+      ],
+      "location": [
+        2.03,
+        -0.6,
+        1.025
+      ],
+      "material": "varnish"
+    },
+    {
+      "id": "linen-shelf-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        2.0,
+        0.03
+      ],
+      "location": [
+        -1.825,
+        -0.2,
+        0.35
+      ],
+      "material": "cream-paint"
+    },
+    {
+      "id": "linen-shelf-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        2.0,
+        0.03
+      ],
+      "location": [
+        -1.825,
+        -0.2,
+        0.7
+      ],
+      "material": "cream-paint"
+    },
+    {
+      "id": "linen-shelf-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        2.0,
+        0.03
+      ],
+      "location": [
+        -1.825,
+        -0.2,
+        1.05
+      ],
+      "material": "cream-paint"
+    },
+    {
+      "id": "linen-shelf-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        2.0,
+        0.03
+      ],
+      "location": [
+        -1.825,
+        -0.2,
+        1.4
+      ],
+      "material": "cream-paint"
+    },
+    {
+      "id": "linen-shelf-5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        2.0,
+        0.03
+      ],
+      "location": [
+        -1.825,
+        -0.2,
+        1.75
+      ],
+      "material": "cream-paint"
+    },
+    {
+      "id": "linen-shelf-6",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        2.0,
+        0.03
+      ],
+      "location": [
+        -1.825,
+        -0.2,
+        2.1
+      ],
+      "material": "cream-paint"
+    },
+    {
+      "id": "shelf-upright-south",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.04,
+        2.2
+      ],
+      "location": [
+        -1.825,
+        -1.22,
+        1.1
+      ],
+      "material": "cream-paint"
+    },
+    {
+      "id": "shelf-upright-north",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.04,
+        2.2
+      ],
+      "location": [
+        -1.825,
+        0.82,
+        1.1
+      ],
+      "material": "cream-paint"
+    },
+    {
+      "id": "skirting",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        4.0,
+        0.02,
+        0.12
+      ],
+      "location": [
+        0,
+        1.49,
+        0.06
+      ],
+      "material": "varnish"
+    }
+  ],
+  "props": [
+    {
+      "id": "desk",
+      "object": "desk",
+      "location": [
+        0.6,
+        1.1,
+        0
+      ]
+    },
+    {
+      "id": "logbook",
+      "object": "logbook",
+      "location": [
+        0.6,
+        0.95,
+        0.78
+      ]
+    },
+    {
+      "id": "desk-lamp",
+      "object": "desk-lamp",
+      "location": [
+        1.05,
+        1.25,
+        0.78
+      ]
+    },
+    {
+      "id": "telephone",
+      "object": "telephone",
+      "location": [
+        0.05,
+        1.3,
+        0.78
+      ]
+    },
+    {
+      "id": "evening-paper",
+      "object": "evening-paper",
+      "location": [
+        0.2,
+        0.92,
+        0.78
+      ]
+    },
+    {
+      "id": "office-chair",
+      "object": "office-chair",
+      "location": [
+        0.6,
+        0.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "bell-board",
+      "object": "bell-board",
+      "location": [
+        0.6,
+        1.44,
+        1.75
+      ],
+      "ground": false
+    },
+    {
+      "id": "cork-board",
+      "object": "cork-board",
+      "location": [
+        -0.75,
+        1.485,
+        1.55
+      ],
+      "ground": false
+    },
+    {
+      "id": "chute-hatch",
+      "object": "chute-hatch",
+      "location": [
+        -0.95,
+        1.4,
+        0.35
+      ],
+      "ground": false
+    },
+    {
+      "id": "card-table",
+      "object": "card-table",
+      "location": [
+        1.45,
+        0.25,
+        0
+      ]
+    },
+    {
+      "id": "card-deck",
+      "object": "card-deck",
+      "location": [
+        1.45,
+        0.25,
+        0.72
+      ]
+    },
+    {
+      "id": "kettle",
+      "object": "kettle",
+      "location": [
+        -1.82,
+        0.3,
+        1.765
+      ]
+    },
+    {
+      "id": "coat-stand",
+      "object": "coat-stand",
+      "location": [
+        1.65,
+        -1.2,
+        0
+      ]
+    },
+    {
+      "id": "office-rose",
+      "object": "brass-rose",
+      "location": [
+        2.0,
+        -0.6,
+        1.55
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "n1_office": {
+      "note": "Night 1, 22:58. Wren on the phone: log the returns, only the returns. Six guest cards and the evening paper on the desk; the drawer is locked.",
+      "world": {
+        "color": [
+          0.05,
+          0.04,
+          0.03
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 35,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "lightwell-slot",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 25,
+          "size": 1.2,
+          "color": [
+            0.62,
+            0.72,
+            0.85
+          ],
+          "look_at": [
+            0.2,
+            -0.6,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.6,
+          -0.9,
+          1.62
+        ],
+        "look_at": [
+          0.6,
+          1.3,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.6,
+          -0.9,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "office-rose",
+        "logbook",
+        "card-deck"
+      ],
+      "interactions": [
+        {
+          "prop": "telephone",
+          "verb": "Answer the phone"
+        },
+        {
+          "prop": "evening-paper",
+          "verb": "Read the evening paper"
+        },
+        {
+          "prop": "bell-board",
+          "verb": "Read the bell board"
+        },
+        {
+          "prop": "desk",
+          "verb": "Try the drawer",
+          "leads_to": "n1_drawer"
+        }
+      ]
+    },
+    "n2_office": {
+      "note": "Night 2. Wren: 'One of them may come back with something. Note what.' The first slipped cards; the tutorial deal at the card table.",
+      "world": {
+        "color": [
+          0.05,
+          0.04,
+          0.03
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 35,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "lightwell-slot",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 25,
+          "size": 1.2,
+          "color": [
+            0.62,
+            0.72,
+            0.85
+          ],
+          "look_at": [
+            0.2,
+            -0.6,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.6,
+          -0.9,
+          1.62
+        ],
+        "look_at": [
+          0.6,
+          1.3,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.6,
+          -0.9,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "telephone",
+          "verb": "Answer the phone"
+        },
+        {
+          "prop": "evening-paper",
+          "verb": "Read the evening paper"
+        },
+        {
+          "prop": "bell-board",
+          "verb": "Read the bell board"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Read the log"
+        },
+        {
+          "prop": "cork-board",
+          "verb": "Look at the board"
+        },
+        {
+          "prop": "kettle",
+          "verb": "Make tea"
+        },
+        {
+          "prop": "card-table",
+          "verb": "Deal a hand",
+          "leads_to": "n2_patience"
+        }
+      ]
+    },
+    "n3_office": {
+      "note": "Night 3. Lew at the hand-over: 'Stair door's locked from your side. Someone's idea.' 403 is lit before the shift.",
+      "world": {
+        "color": [
+          0.05,
+          0.04,
+          0.03
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 35,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "lightwell-slot",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 25,
+          "size": 1.2,
+          "color": [
+            0.62,
+            0.72,
+            0.85
+          ],
+          "look_at": [
+            0.2,
+            -0.6,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.6,
+          -0.9,
+          1.62
+        ],
+        "look_at": [
+          0.6,
+          1.3,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.6,
+          -0.9,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "telephone",
+          "verb": "Answer the phone"
+        },
+        {
+          "prop": "evening-paper",
+          "verb": "Read the evening paper"
+        },
+        {
+          "prop": "bell-board",
+          "verb": "Read the bell board"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Read the log"
+        },
+        {
+          "prop": "cork-board",
+          "verb": "Look at the board"
+        },
+        {
+          "prop": "kettle",
+          "verb": "Make tea"
+        },
+        {
+          "prop": "card-table",
+          "verb": "Deal a hand",
+          "leads_to": "n3_patience"
+        }
+      ]
+    },
+    "n4_office": {
+      "note": "Night 4. Cards 5 and 6 tonight: Wren's name, and 'Lost property. Bottom drawer. My old book.'",
+      "world": {
+        "color": [
+          0.05,
+          0.04,
+          0.03
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 35,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "lightwell-slot",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 25,
+          "size": 1.2,
+          "color": [
+            0.62,
+            0.72,
+            0.85
+          ],
+          "look_at": [
+            0.2,
+            -0.6,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.6,
+          -0.9,
+          1.62
+        ],
+        "look_at": [
+          0.6,
+          1.3,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.6,
+          -0.9,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "telephone",
+          "verb": "Answer the phone"
+        },
+        {
+          "prop": "evening-paper",
+          "verb": "Read the evening paper"
+        },
+        {
+          "prop": "bell-board",
+          "verb": "Read the bell board"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Read the log"
+        },
+        {
+          "prop": "cork-board",
+          "verb": "Look at the board"
+        },
+        {
+          "prop": "kettle",
+          "verb": "Make tea"
+        },
+        {
+          "prop": "card-table",
+          "verb": "Deal a hand",
+          "leads_to": "n4_patience"
+        }
+      ]
+    },
+    "n5_office": {
+      "note": "Night 5. The paper: 'Courant drops river warehouse story'. Names replace room numbers on the cards from tonight where earned.",
+      "world": {
+        "color": [
+          0.05,
+          0.04,
+          0.03
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 35,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "lightwell-slot",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 25,
+          "size": 1.2,
+          "color": [
+            0.62,
+            0.72,
+            0.85
+          ],
+          "look_at": [
+            0.2,
+            -0.6,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.6,
+          -0.9,
+          1.62
+        ],
+        "look_at": [
+          0.6,
+          1.3,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.6,
+          -0.9,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "telephone",
+          "verb": "Answer the phone"
+        },
+        {
+          "prop": "evening-paper",
+          "verb": "Read the evening paper"
+        },
+        {
+          "prop": "bell-board",
+          "verb": "Read the bell board"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Read the log"
+        },
+        {
+          "prop": "cork-board",
+          "verb": "Look at the board"
+        },
+        {
+          "prop": "kettle",
+          "verb": "Make tea"
+        },
+        {
+          "prop": "card-table",
+          "verb": "Deal a hand",
+          "leads_to": "n5_patience"
+        }
+      ]
+    },
+    "n6_office": {
+      "note": "Night 6, One Hand. The safe downstairs or 403 at 01:30; the stair door is the way down.",
+      "world": {
+        "color": [
+          0.05,
+          0.04,
+          0.03
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 35,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "lightwell-slot",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 25,
+          "size": 1.2,
+          "color": [
+            0.62,
+            0.72,
+            0.85
+          ],
+          "look_at": [
+            0.2,
+            -0.6,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.6,
+          -0.9,
+          1.62
+        ],
+        "look_at": [
+          0.6,
+          1.3,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.6,
+          -0.9,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "telephone",
+          "verb": "Answer the phone"
+        },
+        {
+          "prop": "evening-paper",
+          "verb": "Read the evening paper"
+        },
+        {
+          "prop": "bell-board",
+          "verb": "Read the bell board"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Read the log"
+        },
+        {
+          "prop": "cork-board",
+          "verb": "Look at the board"
+        },
+        {
+          "prop": "kettle",
+          "verb": "Make tea"
+        },
+        {
+          "prop": "card-table",
+          "verb": "Deal a hand",
+          "leads_to": "n6_patience"
+        }
+      ]
+    },
+    "n7_office": {
+      "note": "Night 7. Wren: 'The file closes tonight. Write the account before the shift. Tonight you only confirm.' The Account lies on the desk.",
+      "world": {
+        "color": [
+          0.05,
+          0.04,
+          0.03
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 35,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "lightwell-slot",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 25,
+          "size": 1.2,
+          "color": [
+            0.62,
+            0.72,
+            0.85
+          ],
+          "look_at": [
+            0.2,
+            -0.6,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.6,
+          -0.9,
+          1.62
+        ],
+        "look_at": [
+          0.6,
+          1.3,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.6,
+          -0.9,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "telephone",
+          "verb": "Answer the phone"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Write the Account",
+          "leads_to": "n7_account"
+        },
+        {
+          "prop": "bell-board",
+          "verb": "Read the bell board"
+        },
+        {
+          "prop": "evening-paper",
+          "verb": "Read the evening paper"
+        }
+      ]
+    },
+    "n1_morning": {
+      "note": "Night 1, 05:00. Grey daylight in the light-well window, the chute hatch open: the signed pages go down the chute, then the night strip shows the beats missed.",
+      "world": {
+        "color": [
+          0.2,
+          0.21,
+          0.22
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "lightwell-day",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            -0.4,
+            -0.6,
+            0.3
+          ]
+        },
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 10,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          0.3,
+          1.62
+        ],
+        "look_at": [
+          -0.95,
+          1.4,
+          0.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          0.3,
+          0
+        ],
+        "facing_deg": 30
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "chute-hatch",
+          "verb": "Drop the pages down the chute",
+          "leads_to": "n2_office"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Read the log"
+        }
+      ]
+    },
+    "n2_morning": {
+      "note": "Night 2, 05:00. Grey daylight in the light-well window, the chute hatch open: the signed pages go down the chute, then the night strip shows the beats missed.",
+      "world": {
+        "color": [
+          0.2,
+          0.21,
+          0.22
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "lightwell-day",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            -0.4,
+            -0.6,
+            0.3
+          ]
+        },
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 10,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          0.3,
+          1.62
+        ],
+        "look_at": [
+          -0.95,
+          1.4,
+          0.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          0.3,
+          0
+        ],
+        "facing_deg": 30
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "chute-hatch",
+          "verb": "Drop the pages down the chute",
+          "leads_to": "n3_office"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Read the log"
+        }
+      ]
+    },
+    "n3_morning": {
+      "note": "Night 3, 05:00. Grey daylight in the light-well window, the chute hatch open: the signed pages go down the chute, then the night strip shows the beats missed.",
+      "world": {
+        "color": [
+          0.2,
+          0.21,
+          0.22
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "lightwell-day",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            -0.4,
+            -0.6,
+            0.3
+          ]
+        },
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 10,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          0.3,
+          1.62
+        ],
+        "look_at": [
+          -0.95,
+          1.4,
+          0.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          0.3,
+          0
+        ],
+        "facing_deg": 30
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "chute-hatch",
+          "verb": "Drop the pages down the chute",
+          "leads_to": "n4_office"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Read the log"
+        }
+      ]
+    },
+    "n4_morning": {
+      "note": "Night 4, 05:00. Grey daylight in the light-well window, the chute hatch open: the signed pages go down the chute, then the night strip shows the beats missed.",
+      "world": {
+        "color": [
+          0.2,
+          0.21,
+          0.22
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "lightwell-day",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            -0.4,
+            -0.6,
+            0.3
+          ]
+        },
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 10,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          0.3,
+          1.62
+        ],
+        "look_at": [
+          -0.95,
+          1.4,
+          0.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          0.3,
+          0
+        ],
+        "facing_deg": 30
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "chute-hatch",
+          "verb": "Drop the pages down the chute",
+          "leads_to": "n5_office"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Read the log"
+        }
+      ]
+    },
+    "n5_morning": {
+      "note": "Night 5, 05:00. Grey daylight in the light-well window, the chute hatch open: the signed pages go down the chute, then the night strip shows the beats missed.",
+      "world": {
+        "color": [
+          0.2,
+          0.21,
+          0.22
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "lightwell-day",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            -0.4,
+            -0.6,
+            0.3
+          ]
+        },
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 10,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          0.3,
+          1.62
+        ],
+        "look_at": [
+          -0.95,
+          1.4,
+          0.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          0.3,
+          0
+        ],
+        "facing_deg": 30
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "chute-hatch",
+          "verb": "Drop the pages down the chute",
+          "leads_to": "n6_office"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Read the log"
+        }
+      ]
+    },
+    "n6_morning": {
+      "note": "Night 6, 05:00. Grey daylight in the light-well window, the chute hatch open: the signed pages go down the chute, then the night strip shows the beats missed.",
+      "world": {
+        "color": [
+          0.2,
+          0.21,
+          0.22
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "lightwell-day",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 140,
+          "size": 1.2,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            -0.4,
+            -0.6,
+            0.3
+          ]
+        },
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 10,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          0.3,
+          1.62
+        ],
+        "look_at": [
+          -0.95,
+          1.4,
+          0.4
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          0.3,
+          0
+        ],
+        "facing_deg": 30
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "chute-hatch",
+          "verb": "Drop the pages down the chute",
+          "leads_to": "n7_office"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Read the log"
+        }
+      ]
+    },
+    "n7_your_door": {
+      "note": "Night 7, 02:14 (01:14 if seen downstairs). Three knocks on the office door; for the first time a brass rose in it, lit from the passage side. Open, keep writing, or take the pages.",
+      "world": {
+        "color": [
+          0.05,
+          0.04,
+          0.03
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 35,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "lightwell-slot",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 25,
+          "size": 1.2,
+          "color": [
+            0.62,
+            0.72,
+            0.85
+          ],
+          "look_at": [
+            0.2,
+            -0.6,
+            0.4
+          ]
+        },
+        {
+          "name": "rose-from-passage",
+          "type": "POINT",
+          "location": [
+            1.97,
+            -0.6,
+            1.55
+          ],
+          "energy": 2,
+          "size": 0.05,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.6,
+          0.3,
+          1.62
+        ],
+        "look_at": [
+          2.0,
+          -0.6,
+          1.55
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.6,
+          0.3,
+          0
+        ],
+        "facing_deg": -90
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "office-rose",
+          "verb": "Look through your own door"
+        },
+        {
+          "prop": "office-rose",
+          "verb": "Open the door",
+          "leads_to": "end_open_door"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Keep writing",
+          "leads_to": "dawn_lobby"
+        },
+        {
+          "prop": "evening-paper",
+          "verb": "Gather the pages",
+          "leads_to": "n7_slide_run"
+        }
+      ]
+    }
+  }
+}

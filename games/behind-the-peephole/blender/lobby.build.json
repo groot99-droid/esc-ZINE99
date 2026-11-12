@@ -1,0 +1,794 @@
+{
+  "game": "behind-the-peephole",
+  "location": "lobby",
+  "name": "The lobby",
+  "reference": "assets/locations/lobby.jpg",
+  "bounds_m": [
+    20.0,
+    14.0,
+    9.0
+  ],
+  "origin": "floor centre; +y toward the reception desk and the north mezzanine; the revolving door in the -x (river) wall, tall windows in the -y wall; mezzanine galleries along +y and +x at 4.5 m",
+  "materials": {
+    "marble-cream": {
+      "color": [
+        0.847,
+        0.824,
+        0.753
+      ],
+      "roughness": 0.15
+    },
+    "marble-green": {
+      "color": [
+        0.184,
+        0.29,
+        0.235
+      ],
+      "roughness": 0.15
+    },
+    "cream-paint": {
+      "color": [
+        0.851,
+        0.812,
+        0.706
+      ],
+      "roughness": 0.8
+    },
+    "bottle-green": {
+      "color": [
+        0.18,
+        0.275,
+        0.196
+      ],
+      "roughness": 0.9
+    },
+    "brass": {
+      "color": [
+        0.69,
+        0.553,
+        0.341
+      ],
+      "roughness": 0.35,
+      "metallic": 0.8
+    },
+    "lightwell-glass": {
+      "color": [
+        0.62,
+        0.686,
+        0.749
+      ],
+      "roughness": 0.1,
+      "emission": 0.4
+    },
+    "mahogany": {
+      "color": [
+        0.263,
+        0.125,
+        0.102
+      ],
+      "roughness": 0.4
+    },
+    "varnish": {
+      "color": [
+        0.29,
+        0.18,
+        0.11
+      ],
+      "roughness": 0.45
+    }
+  },
+  "blockout": [
+    {
+      "id": "marble-floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        20.0,
+        14.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "marble-cream"
+    },
+    {
+      "id": "marble-band-x",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        18.0,
+        0.6,
+        0.005
+      ],
+      "location": [
+        0,
+        -1.0,
+        0.003
+      ],
+      "material": "marble-green",
+      "collide": false
+    },
+    {
+      "id": "marble-band-y",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.6,
+        12.0,
+        0.005
+      ],
+      "location": [
+        -2.0,
+        0,
+        0.003
+      ],
+      "material": "marble-green",
+      "collide": false
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        20.0,
+        14.0,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        9.1
+      ],
+      "material": "cream-paint"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        20.0,
+        0.3,
+        9.0
+      ],
+      "location": [
+        0,
+        7.15,
+        4.5
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        14.0,
+        9.0
+      ],
+      "location": [
+        10.15,
+        0,
+        4.5
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-west-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        4.4,
+        9.0
+      ],
+      "location": [
+        -10.15,
+        -4.8,
+        4.5
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-west-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        6.4,
+        9.0
+      ],
+      "location": [
+        -10.15,
+        3.8,
+        4.5
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-west-over-door",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        3.2,
+        5.6
+      ],
+      "location": [
+        -10.15,
+        -1.0,
+        6.2
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "revolving-door",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        2.6,
+        2.6,
+        3.0
+      ],
+      "location": [
+        -9.4,
+        -1.0,
+        1.5
+      ],
+      "material": "brass"
+    },
+    {
+      "id": "wall-south-low",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        20.0,
+        0.3,
+        1.0
+      ],
+      "location": [
+        0,
+        -7.15,
+        0.5
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-south-high",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        20.0,
+        0.3,
+        3.0
+      ],
+      "location": [
+        0,
+        -7.15,
+        7.5
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-south-pier-1",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.0,
+        0.3,
+        5.0
+      ],
+      "location": [
+        -8.0,
+        -7.15,
+        3.5
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-south-pier-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3.0,
+        0.3,
+        5.0
+      ],
+      "location": [
+        -2.5,
+        -7.15,
+        3.5
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "wall-south-pier-3",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        9.0,
+        0.3,
+        5.0
+      ],
+      "location": [
+        5.5,
+        -7.15,
+        3.5
+      ],
+      "material": "bottle-green"
+    },
+    {
+      "id": "tall-window-1",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        2.0,
+        0.05,
+        5.0
+      ],
+      "location": [
+        -5.0,
+        -7.0,
+        3.5
+      ],
+      "material": "lightwell-glass",
+      "collide": false
+    },
+    {
+      "id": "tall-window-2",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        2.0,
+        0.05,
+        5.0
+      ],
+      "location": [
+        0.0,
+        -7.0,
+        3.5
+      ],
+      "material": "lightwell-glass",
+      "collide": false
+    },
+    {
+      "id": "mezzanine-north",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        20.0,
+        2.0,
+        0.3
+      ],
+      "location": [
+        0,
+        6.0,
+        4.35
+      ],
+      "material": "mahogany"
+    },
+    {
+      "id": "mezzanine-east",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.4,
+        12.0,
+        0.3
+      ],
+      "location": [
+        8.8,
+        -1.0,
+        4.35
+      ],
+      "material": "mahogany"
+    },
+    {
+      "id": "rail-north",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        17.6,
+        0.12,
+        1.0
+      ],
+      "location": [
+        -1.2,
+        5.0,
+        5.0
+      ],
+      "material": "mahogany"
+    },
+    {
+      "id": "rail-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.12,
+        12.0,
+        1.0
+      ],
+      "location": [
+        7.6,
+        -1.0,
+        5.0
+      ],
+      "material": "mahogany"
+    },
+    {
+      "id": "column-north-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        4.5
+      ],
+      "location": [
+        -4.0,
+        5.0,
+        2.25
+      ],
+      "material": "marble-green"
+    },
+    {
+      "id": "column-north-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        4.5
+      ],
+      "location": [
+        5.0,
+        5.0,
+        2.25
+      ],
+      "material": "marble-green"
+    },
+    {
+      "id": "pigeonholes",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        5.0,
+        0.3,
+        2.0
+      ],
+      "location": [
+        2.0,
+        6.85,
+        2.1
+      ],
+      "material": "varnish"
+    },
+    {
+      "id": "palm-1",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        2.2
+      ],
+      "location": [
+        -6.5,
+        5.6,
+        1.1
+      ],
+      "material": "marble-green"
+    },
+    {
+      "id": "palm-2",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        2.2
+      ],
+      "location": [
+        -3.0,
+        5.6,
+        1.1
+      ],
+      "material": "marble-green"
+    }
+  ],
+  "props": [
+    {
+      "id": "chandelier",
+      "object": "chandelier",
+      "location": [
+        -3.0,
+        -1.0,
+        6.6
+      ],
+      "ground": false
+    },
+    {
+      "id": "reception-desk",
+      "object": "reception-desk",
+      "location": [
+        2.0,
+        4.3,
+        0
+      ]
+    },
+    {
+      "id": "armchair-1",
+      "object": "lobby-armchair",
+      "location": [
+        -8.7,
+        2.0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "armchair-2",
+      "object": "lobby-armchair",
+      "location": [
+        -8.7,
+        3.1,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "luggage-trolley",
+      "object": "luggage-trolley",
+      "location": [
+        -5.0,
+        5.4,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "dawn_lobby": {
+      "note": "06:00. From the mezzanine rail, look only: grey river light through the revolving door, the chandelier still on. Ninety seconds of crossings set by the ending.",
+      "world": {
+        "color": [
+          0.24,
+          0.27,
+          0.28
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "revolving-door-dawn",
+          "type": "AREA",
+          "location": [
+            -9.5,
+            -1.0,
+            2.0
+          ],
+          "energy": 400,
+          "size": 3.0,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            0,
+            -1.0,
+            0.5
+          ]
+        },
+        {
+          "name": "window-dawn-1",
+          "type": "AREA",
+          "location": [
+            -5.0,
+            -6.6,
+            3.5
+          ],
+          "energy": 300,
+          "size": 2.0,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            -5.0,
+            2.0,
+            0
+          ]
+        },
+        {
+          "name": "window-dawn-2",
+          "type": "AREA",
+          "location": [
+            0.0,
+            -6.6,
+            3.5
+          ],
+          "energy": 300,
+          "size": 2.0,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            0.0,
+            2.0,
+            0
+          ]
+        },
+        {
+          "name": "chandelier",
+          "type": "POINT",
+          "location": [
+            -3.0,
+            -1.0,
+            6.6
+          ],
+          "energy": 600,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.72,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          8.5,
+          -2.0,
+          6.12
+        ],
+        "look_at": [
+          -7.0,
+          0.5,
+          0.5
+        ],
+        "lens_mm": 35,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          8.5,
+          -2.0,
+          4.5
+        ],
+        "facing_deg": 90
+      },
+      "hide": [],
+      "interactions": []
+    },
+    "end_wrong_picture": {
+      "note": "The Wrong Picture. On the lobby floor by the desk: the scapegoat is led past toward the revolving door and looks up at the fourth floor; a police radio.",
+      "world": {
+        "color": [
+          0.24,
+          0.27,
+          0.28
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "revolving-door-dawn",
+          "type": "AREA",
+          "location": [
+            -9.5,
+            -1.0,
+            2.0
+          ],
+          "energy": 400,
+          "size": 3.0,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            0,
+            -1.0,
+            0.5
+          ]
+        },
+        {
+          "name": "window-dawn-1",
+          "type": "AREA",
+          "location": [
+            -5.0,
+            -6.6,
+            3.5
+          ],
+          "energy": 300,
+          "size": 2.0,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            -5.0,
+            2.0,
+            0
+          ]
+        },
+        {
+          "name": "window-dawn-2",
+          "type": "AREA",
+          "location": [
+            0.0,
+            -6.6,
+            3.5
+          ],
+          "energy": 300,
+          "size": 2.0,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            0.0,
+            2.0,
+            0
+          ]
+        },
+        {
+          "name": "chandelier",
+          "type": "POINT",
+          "location": [
+            -3.0,
+            -1.0,
+            6.6
+          ],
+          "energy": 600,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.72,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.5,
+          2.6,
+          1.62
+        ],
+        "look_at": [
+          -9.0,
+          -1.0,
+          1.6
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.5,
+          2.6,
+          0
+        ],
+        "facing_deg": 90
+      },
+      "hide": [],
+      "interactions": []
+    }
+  }
+}
