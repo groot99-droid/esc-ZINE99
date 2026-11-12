@@ -1,0 +1,53 @@
+{
+  "source": "DESIGN.md section 11.2",
+  "pot": {"sap_cost": 10, "max_ingredients": 3, "stirs_max": 6, "heats": ["low", "middle", "high"], "boils": ["short", "long"]},
+  "thickness": [
+    {"heat": "low", "boil": "short", "thickness": "runny"},
+    {"heat": "low", "boil": "long", "thickness": "syrup"},
+    {"heat": "middle", "boil": "short", "thickness": "syrup"},
+    {"heat": "middle", "boil": "long", "thickness": "glue"},
+    {"heat": "high", "boil": "short", "thickness": "glue"},
+    {"heat": "high", "boil": "long", "thickness": "hard"}
+  ],
+  "stirs": [
+    {"min": 0, "max": 2, "texture": "clear"},
+    {"min": 3, "max": 4, "texture": "smooth"},
+    {"min": 5, "max": 6, "texture": "frothy"}
+  ],
+  "ruined": {"thickness": "glue", "texture": "frothy", "becomes": "crumbly", "note": "Froth ruins glue: a failed pot"},
+  "ingredients": [
+    {"id": "sap", "name": "Sap", "seasons": ["spring", "summer", "autumn", "winter", "shadow"], "base": true},
+    {"id": "lichen", "name": "Lichen", "seasons": ["spring", "summer", "autumn", "winter", "shadow"], "base": false},
+    {"id": "pollen", "name": "Pollen", "seasons": ["spring", "summer", "autumn", "winter", "shadow"], "base": false},
+    {"id": "honeydew", "name": "Aphid honeydew", "seasons": ["spring", "summer", "autumn", "winter", "shadow"], "base": false},
+    {"id": "resin", "name": "Resin", "seasons": ["spring", "summer", "autumn", "winter", "shadow"], "base": false},
+    {"id": "ash", "name": "Ash (from an old lightning scar)", "seasons": ["spring", "summer", "autumn", "winter", "shadow"], "base": false},
+    {"id": "frost", "name": "Frost", "seasons": ["winter", "shadow"], "base": false},
+    {"id": "leaf_skin", "name": "Leaf-skin", "seasons": ["autumn", "winter", "shadow"], "base": false}
+  ],
+  "recipes": [
+    {"number": 1, "id": "groove_syrup", "name": "Groove Syrup", "category": "food", "thickness": "syrup", "ingredients": [], "ordered": false, "stirs": [0, 2], "effects": [{"state": "food", "add": 6}], "opens": "spring", "once": false, "hint": "sticky"},
+    {"number": 2, "id": "lichen_loaf", "name": "Lichen Loaf", "category": "food", "thickness": "hard", "ingredients": ["lichen"], "ordered": false, "stirs": [3, 4], "effects": [{"state": "food", "add": 8}], "opens": "spring", "once": false, "hint": "firm"},
+    {"number": 3, "id": "pollen_cake", "name": "Pollen Cake", "category": "food", "thickness": "hard", "ingredients": ["pollen", "honeydew"], "ordered": false, "stirs": [3, 4], "effects": [{"state": "food", "add": 10}, {"state": "morale", "add": 2}], "opens": "spring", "once": false, "hint": "sweet"},
+    {"number": 4, "id": "dew_broth", "name": "Dew Broth", "category": "food", "thickness": "runny", "ingredients": ["honeydew", "lichen"], "ordered": false, "stirs": [5, 6], "effects": [{"state": "food", "add": 7}], "opens": "spring", "once": false, "hint": "thin"},
+    {"number": 5, "id": "ridge_glue", "name": "Ridge Glue", "category": "sealant", "thickness": "glue", "ingredients": ["resin"], "ordered": false, "stirs": [0, 2], "effects": [{"state": "bark.integrity", "add": 4}], "opens": "autumn", "once": false, "hint": "holds"},
+    {"number": 6, "id": "ashpatch", "name": "Ashpatch", "category": "sealant", "thickness": "glue", "ingredients": ["resin", "ash"], "ordered": true, "stirs": [3, 4], "effects": [{"state": "bark.integrity", "add": 6}], "opens": "autumn", "once": false, "hint": "gritty"},
+    {"number": 7, "id": "leaf_skin_plaster", "name": "Leaf-skin Plaster", "category": "sealant", "thickness": "hard", "ingredients": ["leaf_skin", "resin"], "ordered": false, "stirs": [0, 2], "effects": [{"state": "bark.integrity", "add": 5}], "opens": "autumn", "once": false, "hint": "keeps"},
+    {"number": 8, "id": "gold_tear", "name": "Gold Tear", "category": "offering", "thickness": "runny", "ingredients": ["pollen", "honeydew"], "ordered": false, "stirs": [0, 2], "effects": [{"state": "inst.elders", "add": 3}], "opens": "spring", "once": false, "hint": "gold"},
+    {"number": 9, "id": "ember_drop", "name": "Ember Drop", "category": "offering", "thickness": "syrup", "ingredients": ["ash", "pollen"], "ordered": false, "stirs": [0, 2], "effects": [{"state": "inst.elders", "add": 3}, {"state": "morale", "add": 1}], "opens": "autumn", "once": false, "hint": "warm"},
+    {"number": 10, "id": "frost_candy", "name": "Frost Candy", "category": "food", "thickness": "hard", "ingredients": ["frost", "honeydew"], "ordered": false, "stirs": [0, 2], "effects": [{"state": "food", "add": 9}], "opens": "winter", "once": false, "hint": "glassy"},
+    {"number": 11, "id": "winter_bread", "name": "Winter Bread", "category": "food", "thickness": "hard", "ingredients": ["lichen", "leaf_skin", "frost"], "ordered": false, "stirs": [3, 4], "effects": [{"state": "food", "add": 12}], "opens": "winter", "once": false, "hint": "filling"},
+    {"number": 12, "id": "pells_tear", "name": "Pell's Tear", "category": "offering", "thickness": "syrup", "ingredients": ["frost", "pollen", "resin"], "ordered": false, "stirs": [0, 2], "effects": [{"state": "inst.elders", "add": 5}], "opens": "winter", "once": true, "hint": "last"}
+  ],
+  "unmatched": {"effects": [{"state": "food", "add": 2}], "line": "edible, just"},
+  "every_pot": {"found_counter": "recipes_found", "offering_counter": "offerings"},
+  "caps_per_visit": {"sealant": 3, "offering": 3},
+  "hints": {"after_pot_words": ["thin", "sticky", "sweet", "gritty", "gold"], "failed_in_a_row": 3, "then": "Old Resin names the thickness the nearest unfound recipe needs"},
+  "visits": [
+    {"scene": "c2_kitchen", "sap": 50, "open_recipes": [1, 2, 3, 4, 8], "caps_lifted": false, "goal": "Learn thickness; find 3", "on_finish": []},
+    {"scene": "c4_kitchen", "sap": 60, "open_recipes": [1, 2, 3, 4, 5, 6, 7, 8, 9], "caps_lifted": false, "goal": "Sealant before winter", "on_finish": []},
+    {"scene": "c5_kitchen", "sap": 40, "open_recipes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "caps_lifted": false, "goal": "Feed the city on little", "on_finish": []},
+    {"scene": "c6_offering", "sap": "all", "open_recipes": [8, 9, 12], "caps_lifted": true, "goal": "The Great Offering: cook every drop into offerings",
+     "on_finish": [{"state": "sap", "set": 0}, {"state": "bark.integrity", "add": -20}, {"state": "great_offering", "set": true}]}
+  ]
+}

@@ -1328,10 +1328,20 @@ speaks, except one far "ow" in the War ending, heard from the backyard.
 | `flags.json` | Every flag, meter, counter and ledger used: the three standings, `year.leading`, `shadow_reading`, the economy meters, forecasts, readings, councils, the Roll, the cast flags |
 | `endings.json` | The four endings with their conditions as in section 13; `shadow_passes` is `as_written` and the catch-all |
 
-Beyond the shared schemas, this game's code will need three tables that are not state and so are
-not in `flags.json`: the Omen deck (section 11.1), the recipe table (11.2) and the tremor patterns
-(11.5). They belong in `src/` as constants when the game is built; this document is their source.
-Derived values (hand size, squad size, the Year deck) are computed from declared meters and are not
+Beyond the shared schemas, three tables are not state and so are not in `flags.json`. They sit in
+the same folder, each with a schema in `data/schemas/`:
+
+| File | Schema | Holds |
+| --- | --- | --- |
+| `omen_deck.json` | `omen_deck.schema.json` | Section 11.1 and 12.5: the six suits, three sigils, 18 Omen cards with weights, the 8 event cards with their Backyard causes, fit suits and Fit payoffs, the spread rules (slots, hand, policy, Clear, Bold), the 8 appearances with hand sizes, the god-or-monster rule, Pell's 4 heirs, and the Reading of the Shadow (hand modifiers and the 4 readings with the gates the endings use) |
+| `recipes.json` | `recipes.schema.json` | Section 11.2: the thickness table, stir bands, the ruined pot, 8 ingredients with the seasons they can be had, the 12 recipes (thickness, ingredients, stirs, effects, season, hint word), the unmatched pot, caps, and the 4 visits |
+| `tremor_patterns.json` | `tremor_patterns.schema.json` | Section 11.5: faces, parts, weathers, scoring and hints, and the 4 scrolls, each with its pattern rules, a weather mark for every day, and its forecast cells with their answers (18 in all; one is the tread day) |
+
+`tools/check_data.py` checks the three against their schemas, against each other and against the
+four shared files: every scene, flag, value and ending it names; that each 1D appearance matches
+`scenes.json`; that every forecast answer follows from its scroll's rules; that no two recipes come
+from the same pot; and that the Shadow's gates and the 8-forecast threshold match `endings.json`.
+`tools/validate.py` runs it. Derived values (hand size, squad size, the Year deck) are computed from declared meters and are not
 stored. Each scene also carries a `minutes` field (not in the shared schema, which allows it); the
 scenes of a chapter add up to that chapter's minutes in `game.json`. The as-written ending lists
 `c6_stand` as its branch scene; when the Knot leads and the offering is made, `c6_offering` takes its

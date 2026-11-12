@@ -1,0 +1,90 @@
+{
+  "source": "DESIGN.md section 11.5",
+  "parts": ["dawn", "noon", "dusk"],
+  "faces": ["east", "south", "west", "north"],
+  "strengths": [1, 3],
+  "weathers": ["sun", "rain", "storm", "frost"],
+  "rule_order": "For each day and part, the first rule that matches gives the glyph; no match means no tremor. A rule matches when its part is the cell's part, the day's weather is in its weather list (if it has one), the day is a multiple of its every (if it has one), and the day is not a multiple of its skip_every (if it has one). Days count from 1 at the left end of the scroll.",
+  "scoring": {
+    "correct": "part and face right, or none right",
+    "fine": "correct and strength right",
+    "correct_effects": [{"state": "inst.scholars", "add": 2}, {"state": "forecasts_correct", "add": 1}],
+    "fine_effects": [{"state": "inst.scholars", "add": 1}],
+    "every_forecast": [{"state": "forecasts_made", "add": 1}]
+  },
+  "hints": {"standing": "inst.scholars", "underline_at": 40, "overlay_at": 60, "extra_levels": "scroll.hint_level"},
+  "total_forecasts": 18,
+  "scholars_ending_needs": 8,
+  "scrolls": [
+    {
+      "scene": "c1_scroll",
+      "season": "spring",
+      "summary": "Every dawn, east, strength 2. 11 days shown",
+      "days_shown": 11,
+      "rules": [
+        {"part": "dawn", "face": "east", "strength": 2}
+      ],
+      "weather": ["sun", "sun", "rain", "sun", "sun", "sun", "rain", "sun", "sun", "sun", "sun", "sun", "rain"],
+      "forecasts": [
+        {"day": 12, "part": "dawn", "answer": {"face": "east", "strength": 2}},
+        {"day": 13, "part": "dawn", "answer": {"face": "east", "strength": 2}}
+      ]
+    },
+    {
+      "scene": "c3_scroll",
+      "season": "summer",
+      "summary": "Dawn east 2, and dusk west 1 (running down). None on storm days, and the weather for the forecast days is marked",
+      "days_shown": 12,
+      "rules": [
+        {"part": "dawn", "face": "east", "strength": 2, "weather": ["sun", "rain"]},
+        {"part": "dusk", "face": "west", "strength": 1, "weather": ["sun", "rain"]}
+      ],
+      "weather": ["sun", "sun", "storm", "sun", "rain", "sun", "sun", "storm", "sun", "sun", "rain", "sun", "sun", "storm", "sun"],
+      "forecasts": [
+        {"day": 13, "part": "dawn", "answer": {"face": "east", "strength": 2}},
+        {"day": 13, "part": "dusk", "answer": {"face": "west", "strength": 1}},
+        {"day": 14, "part": "dawn", "answer": null},
+        {"day": 15, "part": "dawn", "answer": {"face": "east", "strength": 2}},
+        {"day": 15, "part": "dusk", "answer": {"face": "west", "strength": 1}}
+      ]
+    },
+    {
+      "scene": "c4_scroll",
+      "season": "autumn",
+      "summary": "Caching: dawn east 2, noon north 3, dusk west 1. On rain days only noon. Every fourth day, no dusk (it stays at the cache)",
+      "days_shown": 12,
+      "rules": [
+        {"part": "dawn", "face": "east", "strength": 2, "weather": ["sun"]},
+        {"part": "noon", "face": "north", "strength": 3},
+        {"part": "dusk", "face": "west", "strength": 1, "weather": ["sun"], "skip_every": 4}
+      ],
+      "weather": ["sun", "rain", "sun", "sun", "rain", "sun", "sun", "sun", "rain", "sun", "sun", "sun", "sun", "rain"],
+      "forecasts": [
+        {"day": 13, "part": "dawn", "answer": {"face": "east", "strength": 2}},
+        {"day": 13, "part": "noon", "answer": {"face": "north", "strength": 3}},
+        {"day": 13, "part": "dusk", "answer": {"face": "west", "strength": 1}},
+        {"day": 14, "part": "dawn", "answer": null},
+        {"day": 14, "part": "noon", "answer": {"face": "north", "strength": 3}},
+        {"day": 14, "part": "dusk", "answer": null}
+      ]
+    },
+    {
+      "scene": "c6_scroll",
+      "season": "shadow",
+      "summary": "Winter: tremors only on sun days, noon, south 1. New: a faint ripple at noon on every face at once, every seventh day (the human's tread)",
+      "days_shown": 16,
+      "rules": [
+        {"part": "noon", "face": "all", "strength": 1, "every": 7, "tread": true},
+        {"part": "noon", "face": "south", "strength": 1, "weather": ["sun"]}
+      ],
+      "weather": ["sun", "frost", "sun", "sun", "frost", "frost", "frost", "sun", "sun", "frost", "sun", "frost", "sun", "sun", "frost", "sun", "sun", "frost", "sun", "frost", "sun"],
+      "forecasts": [
+        {"day": 17, "part": "noon", "answer": {"face": "south", "strength": 1}},
+        {"day": 18, "part": "noon", "answer": null},
+        {"day": 19, "part": "noon", "answer": {"face": "south", "strength": 1}},
+        {"day": 20, "part": "noon", "answer": null},
+        {"day": 21, "part": "noon", "answer": {"face": "all", "strength": 1}, "sets": "tread_forecast"}
+      ]
+    }
+  ]
+}

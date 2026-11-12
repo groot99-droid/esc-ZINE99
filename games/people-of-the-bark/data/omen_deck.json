@@ -1,0 +1,115 @@
+{
+  "source": "DESIGN.md sections 11.1 and 12.5",
+  "suits": [
+    {"id": "wind", "name": "Wind", "belief": "trial"},
+    {"id": "rain", "name": "Rain", "belief": "blessing"},
+    {"id": "song", "name": "Song", "belief": "prophecy"},
+    {"id": "tremor", "name": "Tremor", "belief": "message"},
+    {"id": "leaf", "name": "Leaf", "belief": "death"},
+    {"id": "mandible", "name": "Mandible", "belief": "monster or god"}
+  ],
+  "sigils": [
+    {"id": "eye", "institution": "the Knot", "standing": "inst.elders", "leads_as": "elders"},
+    {"id": "spear", "institution": "the Battlements", "standing": "inst.warriors", "leads_as": "warriors"},
+    {"id": "quill", "institution": "the Scroll House", "standing": "inst.scholars", "leads_as": "scholars"}
+  ],
+  "cards": [
+    {"id": "bowed_elder", "name": "The Bowed Elder", "suit": "wind", "sigil": "eye", "weight": 2},
+    {"id": "bending_ridge", "name": "The Bending Ridge", "suit": "wind", "sigil": "spear", "weight": 3},
+    {"id": "counted_gust", "name": "The Counted Gust", "suit": "wind", "sigil": "quill", "weight": 1},
+    {"id": "full_cup", "name": "The Full Cup", "suit": "rain", "sigil": "eye", "weight": 3},
+    {"id": "washed_spear", "name": "The Washed Spear", "suit": "rain", "sigil": "spear", "weight": 1},
+    {"id": "marked_bead", "name": "The Marked Bead", "suit": "rain", "sigil": "quill", "weight": 2},
+    {"id": "singer_above", "name": "The Singer Above", "suit": "song", "sigil": "eye", "weight": 3},
+    {"id": "war_note", "name": "The War Note", "suit": "song", "sigil": "spear", "weight": 1},
+    {"id": "written_tune", "name": "The Written Tune", "suit": "song", "sigil": "quill", "weight": 2},
+    {"id": "shaken_lamp", "name": "The Shaken Lamp", "suit": "tremor", "sigil": "eye", "weight": 1},
+    {"id": "braced_wall", "name": "The Braced Wall", "suit": "tremor", "sigil": "spear", "weight": 2},
+    {"id": "long_scroll", "name": "The Long Scroll", "suit": "tremor", "sigil": "quill", "weight": 3},
+    {"id": "last_leaf", "name": "The Last Leaf", "suit": "leaf", "sigil": "eye", "weight": 3},
+    {"id": "falling_shield", "name": "The Falling Shield", "suit": "leaf", "sigil": "spear", "weight": 2},
+    {"id": "leaf_count", "name": "The Leaf Count", "suit": "leaf", "sigil": "quill", "weight": 1},
+    {"id": "great_visitor", "name": "The Great Visitor", "suit": "mandible", "sigil": "eye", "weight": 1},
+    {"id": "biting_thing", "name": "The Biting Thing", "suit": "mandible", "sigil": "spear", "weight": 3},
+    {"id": "measured_shell", "name": "The Measured Shell", "suit": "mandible", "sigil": "quill", "weight": 2}
+  ],
+  "event_cards": [
+    {"id": "tremor", "name": "The Tremor", "suit": "tremor", "weight": 2,
+     "seen": "The world shakes at dawn", "cause": "A squirrel landing and scratching",
+     "fit_suit": "tremor", "fit_effects": [{"state": "scroll.hint_level", "add": 1}],
+     "fit_note": "Fenn's scroll gives one more hint level"},
+    {"id": "rain", "name": "The Rain", "suit": "rain", "weight": 2,
+     "seen": "Houses of water roll down the grooves", "cause": "A spring shower",
+     "fit_suit": "rain", "fit_effects": [{"state": "sap", "add": 20}],
+     "fit_note": "Sap +20"},
+    {"id": "wind", "name": "The Windstorm", "suit": "wind", "weight": 2,
+     "seen": "Bands of wind sweep the bark", "cause": "A summer gust",
+     "fit_suit": "wind", "fit_effects": [],
+     "fit_note": "Next storm damage is 0; towers count as lashed"},
+    {"id": "beetle", "name": "The Beetle", "suit": "mandible", "weight": 2,
+     "seen": "A shape as big as a city climbs from the Under", "cause": "A ground beetle, wandering",
+     "fit_suit": "mandible", "fit_effects": [],
+     "fit_note": "Read as god: no losses; read as monster: -1 line of will to drain"},
+    {"id": "leaf", "name": "The Leaf", "suit": "leaf", "weight": 2,
+     "seen": "A country-sized leaf falls past", "cause": "Autumn",
+     "fit_suit": "leaf", "fit_effects": [{"state": "food", "add": 15}],
+     "fit_note": "Food +15 (they store against the dark)"},
+    {"id": "song", "name": "The Birdsong", "suit": "song", "weight": 2,
+     "seen": "A singer above, five phrases", "cause": "A small bird before it migrates",
+     "fit_suit": "song", "fit_effects": [{"state": "food", "add": 10}],
+     "fit_note": "Food +10, and the prophecy line names \"the seventh day\""},
+    {"id": "year", "name": "The Year", "suit": null, "weight": 2,
+     "seen": "Pell's last reading", "cause": null,
+     "fit_suit": null, "fit_effects": [], "fit_note": null},
+    {"id": "shadow", "name": "The Shadow", "suit": null, "weight": 2,
+     "seen": "The world goes dark", "cause": "A hand, checking for termites",
+     "fit_suit": null, "fit_effects": [], "fit_note": null}
+  ],
+  "rules": {
+    "slots": ["root", "branch", "crown"],
+    "tie_break_slot": "root",
+    "hand": {"base": 4, "standing": "inst.elders", "plus_one_at": [40, 60], "event_suit_guaranteed": 1},
+    "policy": {"two_of_a_sigil": 6, "three_of_a_sigil": 9, "three_others": -2, "balanced_each": 2},
+    "clear_effects": [{"state": "morale", "add": 5}],
+    "bold_effects": [{"state": "morale", "add": -3}, {"state": "inst.scholars", "add": 2}],
+    "fit_counter": "fit_hits",
+    "ledger": "readings"
+  },
+  "appearances": [
+    {"scene": "c1_omen", "event": "tremor", "hand": [4, 4], "guided": true, "decides": null, "new_idea": "Meaning and policy"},
+    {"scene": "c2_omen", "event": "rain", "hand": [4, 5], "guided": false, "decides": null, "new_idea": "Clear and Bold"},
+    {"scene": "c3_omen_wind", "event": "wind", "hand": [4, 5], "guided": false, "decides": null, "new_idea": "Fit is shown (if Backyard card turned)"},
+    {"scene": "c3_omen_beetle", "event": "beetle", "hand": [4, 5], "guided": false, "decides": "beetle_reading", "new_idea": "The reading decides god or monster: lives at stake"},
+    {"scene": "c4_omen_leaf", "event": "leaf", "hand": [4, 6], "guided": false, "decides": "ant_reading", "new_idea": "Also decides the ants, later this season; Pell reads his own death in it"},
+    {"scene": "c4_omen_song", "event": "song", "hand": [4, 6], "guided": false, "decides": "prophecy.suit", "new_idea": "The Crown card becomes the prophecy"},
+    {"scene": "c5_omen_pell", "event": "year", "hand": [6, 6], "guided": false, "decides": "pell.heir", "new_idea": "The heir"},
+    {"scene": "c6_omen", "event": "shadow", "hand": [4, 7], "guided": false, "decides": "shadow_reading", "new_idea": "The Shadow; the Year deck"}
+  ],
+  "god_or_monster": {"monster_if_policy": "spear", "monster": "monster", "otherwise": "god"},
+  "heirs": {
+    "hand": 6,
+    "by_policy": [
+      {"policy": "eye", "heir": "hollow", "effects": [{"state": "inst.elders", "add": 8}]},
+      {"policy": "spear", "heir": "burr", "effects": [{"state": "inst.warriors", "add": 8}]},
+      {"policy": "quill", "heir": "fenn", "effects": [{"state": "inst.scholars", "add": 8}]},
+      {"policy": "balanced", "heir": "twig", "effects": [{"state": "inst.elders", "add": 3}, {"state": "inst.warriors", "add": 3}, {"state": "inst.scholars", "add": 3}]}
+    ]
+  },
+  "shadow": {
+    "deck_size": 12,
+    "deck_rule": "Each sigil's count is round(12 x standing / sum of the three standings), adjusted by one so the total is 12; suits come from the year's readings. Computed at play, not stored.",
+    "hand_base": 5,
+    "hand_modifiers": [
+      {"flag": "shadow_rehearsed", "add": 1},
+      {"flag": "tread_forecast", "add": 1},
+      {"flag": "mossa.shadow_late", "add": -1}
+    ],
+    "fallback": "trial",
+    "readings": [
+      {"placed": "balanced", "reading": "trial", "line": "The Trunk tests us. Chant, stand, record.", "allowed_if": true, "scene": "c6_stand"},
+      {"placed": "spear", "reading": "enemy", "line": "It is an enemy. We go up to meet it.", "allowed_if": {"is": "year.leading", "eq": "warriors"}, "scene": "c6_war"},
+      {"placed": "quill", "reading": "habit", "line": "It is a thing with a habit. We will learn its shape.", "allowed_if": {"all": [{"is": "year.leading", "eq": "scholars"}, {"is": "forecasts_correct", "gte": 8}]}, "scene": "c6_edge"},
+      {"placed": "eye", "reading": "offering", "line": "It is a hungry god. Give it everything.", "allowed_if": {"is": "year.leading", "eq": "elders"}, "scene": "c6_offering"}
+    ]
+  }
+}
