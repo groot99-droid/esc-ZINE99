@@ -1,0 +1,1589 @@
+{
+  "field": {
+    "width": 100,
+    "height": 100,
+    "y_axis": "up"
+  },
+  "rules": {
+    "wrong_attempt_dims_fragment_seconds": 10,
+    "false_star_cycle_seconds": 2,
+    "glimpse_hint_seconds": 3,
+    "underline_after_wrong": 3
+  },
+  "pages": [
+    {
+      "scene": "s_chart_priory",
+      "constellations": [
+        {
+          "id": "first_light",
+          "name": "The First Light",
+          "realm": "above",
+          "stars": [
+            {
+              "id": "fl1",
+              "x": 78,
+              "y": 40,
+              "mag": 1
+            },
+            {
+              "id": "fl2",
+              "x": 72,
+              "y": 48,
+              "mag": 3
+            },
+            {
+              "id": "fl3",
+              "x": 84,
+              "y": 48,
+              "mag": 3
+            },
+            {
+              "id": "fl4",
+              "x": 70,
+              "y": 33,
+              "mag": 3
+            },
+            {
+              "id": "fl5",
+              "x": 86,
+              "y": 33,
+              "mag": 3
+            },
+            {
+              "id": "fl6",
+              "x": 78,
+              "y": 53,
+              "mag": 3
+            }
+          ],
+          "lines": [
+            [
+              "fl1",
+              "fl2"
+            ],
+            [
+              "fl1",
+              "fl3"
+            ],
+            [
+              "fl1",
+              "fl4"
+            ],
+            [
+              "fl1",
+              "fl5"
+            ],
+            [
+              "fl1",
+              "fl6"
+            ]
+          ],
+          "fragments": [
+            {
+              "text": "The First Light's brightest star touches all the others",
+              "rules": [
+                {
+                  "type": "degree",
+                  "star": "brightest",
+                  "value": 5
+                }
+              ]
+            },
+            {
+              "text": "Nothing joins the outer lights to one another",
+              "rules": [
+                {
+                  "type": "degree",
+                  "star": "fl2",
+                  "value": 1
+                },
+                {
+                  "type": "degree",
+                  "star": "fl3",
+                  "value": 1
+                },
+                {
+                  "type": "degree",
+                  "star": "fl4",
+                  "value": 1
+                },
+                {
+                  "type": "degree",
+                  "star": "fl5",
+                  "value": 1
+                },
+                {
+                  "type": "degree",
+                  "star": "fl6",
+                  "value": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gale_harp",
+          "name": "The Gale Harp",
+          "realm": "north",
+          "stars": [
+            {
+              "id": "gh1",
+              "x": 50.0,
+              "y": 85.0,
+              "mag": 1
+            },
+            {
+              "id": "gh2",
+              "x": 60.2,
+              "y": 80.1,
+              "mag": 3
+            },
+            {
+              "id": "gh3",
+              "x": 62.7,
+              "y": 69.1,
+              "mag": 3
+            },
+            {
+              "id": "gh4",
+              "x": 55.6,
+              "y": 60.3,
+              "mag": 3
+            },
+            {
+              "id": "gh5",
+              "x": 44.4,
+              "y": 60.3,
+              "mag": 3
+            },
+            {
+              "id": "gh6",
+              "x": 37.3,
+              "y": 69.1,
+              "mag": 3
+            },
+            {
+              "id": "gh7",
+              "x": 39.8,
+              "y": 80.1,
+              "mag": 3
+            }
+          ],
+          "lines": [
+            [
+              "gh1",
+              "gh2"
+            ],
+            [
+              "gh2",
+              "gh3"
+            ],
+            [
+              "gh3",
+              "gh4"
+            ],
+            [
+              "gh4",
+              "gh5"
+            ],
+            [
+              "gh5",
+              "gh6"
+            ],
+            [
+              "gh6",
+              "gh7"
+            ],
+            [
+              "gh7",
+              "gh1"
+            ]
+          ],
+          "fragments": [
+            {
+              "text": "No line of the Harp crosses another",
+              "rules": [
+                {
+                  "type": "no_crossing"
+                }
+              ]
+            },
+            {
+              "text": "The Harp is one frame: every star of it holds two lines",
+              "rules": [
+                {
+                  "type": "cycle",
+                  "stars": [
+                    "gh1",
+                    "gh2",
+                    "gh3",
+                    "gh4",
+                    "gh5",
+                    "gh6",
+                    "gh7"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Seven strings, no more",
+              "rules": [
+                {
+                  "type": "line_count",
+                  "value": 7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "stag",
+          "name": "The Stag",
+          "realm": "west",
+          "stars": [
+            {
+              "id": "st1",
+              "x": 30,
+              "y": 40,
+              "mag": 1
+            },
+            {
+              "id": "st2",
+              "x": 26,
+              "y": 48,
+              "mag": 3
+            },
+            {
+              "id": "st3",
+              "x": 22,
+              "y": 55,
+              "mag": 3
+            },
+            {
+              "id": "st4",
+              "x": 17,
+              "y": 63,
+              "mag": 3
+            },
+            {
+              "id": "st5",
+              "x": 12,
+              "y": 70,
+              "mag": 3
+            },
+            {
+              "id": "st6",
+              "x": 35,
+              "y": 33,
+              "mag": 3
+            },
+            {
+              "id": "st7",
+              "x": 42,
+              "y": 26,
+              "mag": 3
+            }
+          ],
+          "lines": [
+            [
+              "st1",
+              "st2"
+            ],
+            [
+              "st2",
+              "st3"
+            ],
+            [
+              "st3",
+              "st4"
+            ],
+            [
+              "st4",
+              "st5"
+            ],
+            [
+              "st1",
+              "st6"
+            ],
+            [
+              "st6",
+              "st7"
+            ]
+          ],
+          "fragments": [
+            {
+              "text": "The Stag's antlers are five stars climbing to the left",
+              "rules": [
+                {
+                  "type": "chain",
+                  "stars": [
+                    "st1",
+                    "st2",
+                    "st3",
+                    "st4",
+                    "st5"
+                  ],
+                  "direction": "up_left"
+                }
+              ]
+            },
+            {
+              "text": "From the root of the antlers, two stars run down and to the right",
+              "rules": [
+                {
+                  "type": "chain",
+                  "stars": [
+                    "st1",
+                    "st6",
+                    "st7"
+                  ],
+                  "direction": "down_right"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_stars": [
+        {
+          "id": "dim1",
+          "x": 74.0,
+          "y": 26.2,
+          "mag": 4,
+          "false": false
+        },
+        {
+          "id": "dim2",
+          "x": 24.9,
+          "y": 65.2,
+          "mag": 4,
+          "false": false
+        },
+        {
+          "id": "dim3",
+          "x": 62.9,
+          "y": 25.7,
+          "mag": 4,
+          "false": false
+        },
+        {
+          "id": "dim4",
+          "x": 10.0,
+          "y": 83.4,
+          "mag": 4,
+          "false": false
+        },
+        {
+          "id": "dim5",
+          "x": 7.9,
+          "y": 41.0,
+          "mag": 4,
+          "false": false
+        },
+        {
+          "id": "dim6",
+          "x": 28.4,
+          "y": 10.2,
+          "mag": 4,
+          "false": false
+        }
+      ],
+      "stars_per_constellation": [
+        5,
+        7
+      ],
+      "fragments_per_constellation": [
+        2,
+        3
+      ],
+      "false_stars": 0,
+      "sigil": {
+        "lines": [
+          [
+            "st5",
+            "gh6"
+          ],
+          [
+            "gh6",
+            "gh3"
+          ],
+          [
+            "gh3",
+            "fl6"
+          ],
+          [
+            "fl6",
+            "fl1"
+          ],
+          [
+            "fl1",
+            "st7"
+          ],
+          [
+            "st7",
+            "st5"
+          ],
+          [
+            "gh1",
+            "st1"
+          ]
+        ],
+        "when": "all_named",
+        "scripted": true
+      },
+      "on_complete": {
+        "flags": [
+          "priory_charts_complete",
+          "sigil_seen"
+        ],
+        "izladar_fragments": 1
+      }
+    },
+    {
+      "scene": "s_chart_moot",
+      "constellations": [
+        {
+          "id": "moons_tear",
+          "name": "The Moon's Tear",
+          "realm": "east",
+          "stars": [
+            {
+              "id": "mt1",
+              "x": 25.0,
+              "y": 40.0,
+              "mag": 3
+            },
+            {
+              "id": "mt2",
+              "x": 33.7,
+              "y": 35.0,
+              "mag": 3
+            },
+            {
+              "id": "mt3",
+              "x": 33.7,
+              "y": 25.0,
+              "mag": 3
+            },
+            {
+              "id": "mt4",
+              "x": 25.0,
+              "y": 20.0,
+              "mag": 1
+            },
+            {
+              "id": "mt5",
+              "x": 16.3,
+              "y": 25.0,
+              "mag": 3
+            },
+            {
+              "id": "mt6",
+              "x": 16.3,
+              "y": 35.0,
+              "mag": 3
+            },
+            {
+              "id": "mt7",
+              "x": 25,
+              "y": 12,
+              "mag": 3
+            }
+          ],
+          "lines": [
+            [
+              "mt1",
+              "mt2"
+            ],
+            [
+              "mt2",
+              "mt3"
+            ],
+            [
+              "mt3",
+              "mt4"
+            ],
+            [
+              "mt4",
+              "mt5"
+            ],
+            [
+              "mt5",
+              "mt6"
+            ],
+            [
+              "mt6",
+              "mt1"
+            ],
+            [
+              "mt4",
+              "mt7"
+            ]
+          ],
+          "fragments": [
+            {
+              "text": "The Tear is a ring of six",
+              "rules": [
+                {
+                  "type": "cycle",
+                  "stars": [
+                    "mt1",
+                    "mt2",
+                    "mt3",
+                    "mt4",
+                    "mt5",
+                    "mt6"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "One star falls from the ring's lowest point, and holds nothing else",
+              "rules": [
+                {
+                  "type": "edge",
+                  "a": "mt4",
+                  "b": "mt7"
+                },
+                {
+                  "type": "degree",
+                  "star": "mt7",
+                  "value": 1
+                }
+              ]
+            },
+            {
+              "text": "Seven lines, and none crosses another",
+              "rules": [
+                {
+                  "type": "line_count",
+                  "value": 7
+                },
+                {
+                  "type": "no_crossing"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "delvers_lamp",
+          "name": "The Delver's Lamp",
+          "realm": "south",
+          "stars": [
+            {
+              "id": "dl1",
+              "x": 75,
+              "y": 55,
+              "mag": 3
+            },
+            {
+              "id": "dl2",
+              "x": 75,
+              "y": 48,
+              "mag": 3
+            },
+            {
+              "id": "dl3",
+              "x": 75,
+              "y": 41,
+              "mag": 1
+            },
+            {
+              "id": "dl4",
+              "x": 68,
+              "y": 32,
+              "mag": 3
+            },
+            {
+              "id": "dl5",
+              "x": 82,
+              "y": 32,
+              "mag": 3
+            },
+            {
+              "id": "dl6",
+              "x": 75,
+              "y": 23,
+              "mag": 3
+            },
+            {
+              "id": "dl7",
+              "x": 71,
+              "y": 15,
+              "mag": 3
+            },
+            {
+              "id": "dl8",
+              "x": 79,
+              "y": 15,
+              "mag": 3
+            }
+          ],
+          "lines": [
+            [
+              "dl1",
+              "dl2"
+            ],
+            [
+              "dl2",
+              "dl3"
+            ],
+            [
+              "dl3",
+              "dl4"
+            ],
+            [
+              "dl3",
+              "dl5"
+            ],
+            [
+              "dl4",
+              "dl6"
+            ],
+            [
+              "dl5",
+              "dl6"
+            ],
+            [
+              "dl6",
+              "dl7"
+            ],
+            [
+              "dl6",
+              "dl8"
+            ]
+          ],
+          "fragments": [
+            {
+              "text": "The Lamp's brightest star touches three others",
+              "rules": [
+                {
+                  "type": "degree",
+                  "star": "brightest",
+                  "value": 3
+                }
+              ]
+            },
+            {
+              "text": "It hangs from a chain of three stars, straight down",
+              "rules": [
+                {
+                  "type": "chain",
+                  "stars": [
+                    "dl1",
+                    "dl2",
+                    "dl3"
+                  ],
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "text": "Its lowest corner holds four lines; eight in all",
+              "rules": [
+                {
+                  "type": "degree",
+                  "star": "dl6",
+                  "value": 4
+                },
+                {
+                  "type": "line_count",
+                  "value": 8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eclipse",
+          "name": "The Eclipse",
+          "realm": "below",
+          "stars": [
+            {
+              "id": "ec1",
+              "x": 25.0,
+              "y": 86.0,
+              "mag": 3
+            },
+            {
+              "id": "ec2",
+              "x": 34.5,
+              "y": 80.5,
+              "mag": 3
+            },
+            {
+              "id": "ec3",
+              "x": 34.5,
+              "y": 69.5,
+              "mag": 3
+            },
+            {
+              "id": "ec4",
+              "x": 25.0,
+              "y": 64.0,
+              "mag": 3
+            },
+            {
+              "id": "ec5",
+              "x": 15.5,
+              "y": 69.5,
+              "mag": 3
+            },
+            {
+              "id": "ec6",
+              "x": 15.5,
+              "y": 80.5,
+              "mag": 3
+            },
+            {
+              "id": "ec7",
+              "x": 25,
+              "y": 79,
+              "mag": 1
+            },
+            {
+              "id": "ec8",
+              "x": 25,
+              "y": 71,
+              "mag": 3
+            }
+          ],
+          "lines": [
+            [
+              "ec1",
+              "ec2"
+            ],
+            [
+              "ec2",
+              "ec3"
+            ],
+            [
+              "ec3",
+              "ec4"
+            ],
+            [
+              "ec4",
+              "ec5"
+            ],
+            [
+              "ec5",
+              "ec6"
+            ],
+            [
+              "ec6",
+              "ec1"
+            ],
+            [
+              "ec7",
+              "ec8"
+            ],
+            [
+              "ec7",
+              "ec1"
+            ],
+            [
+              "ec8",
+              "ec4"
+            ]
+          ],
+          "fragments": [
+            {
+              "text": "The Eclipse is a ring of six around a hidden pair",
+              "rules": [
+                {
+                  "type": "cycle",
+                  "stars": [
+                    "ec1",
+                    "ec2",
+                    "ec3",
+                    "ec4",
+                    "ec5",
+                    "ec6"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "The hidden pair hold each other, and each reaches the ring once",
+              "rules": [
+                {
+                  "type": "edge",
+                  "a": "ec7",
+                  "b": "ec8"
+                },
+                {
+                  "type": "degree",
+                  "star": "ec7",
+                  "value": 2
+                },
+                {
+                  "type": "degree",
+                  "star": "ec8",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "text": "The upper of the pair touches the ring's crown, the lower its foot; nine lines",
+              "rules": [
+                {
+                  "type": "edge",
+                  "a": "ec7",
+                  "b": "ec1"
+                },
+                {
+                  "type": "edge",
+                  "a": "ec8",
+                  "b": "ec4"
+                },
+                {
+                  "type": "line_count",
+                  "value": 9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scholars_lamp",
+          "name": "The Scholar's Lamp",
+          "realm": "above",
+          "stars": [
+            {
+              "id": "sl1",
+              "x": 56,
+              "y": 90,
+              "mag": 3
+            },
+            {
+              "id": "sl2",
+              "x": 61,
+              "y": 86,
+              "mag": 3
+            },
+            {
+              "id": "sl3",
+              "x": 66,
+              "y": 82,
+              "mag": 3
+            },
+            {
+              "id": "sl4",
+              "x": 71,
+              "y": 78,
+              "mag": 3
+            },
+            {
+              "id": "sl5",
+              "x": 80,
+              "y": 80,
+              "mag": 3
+            },
+            {
+              "id": "sl6",
+              "x": 82,
+              "y": 70,
+              "mag": 1
+            },
+            {
+              "id": "sl7",
+              "x": 72,
+              "y": 68,
+              "mag": 3
+            },
+            {
+              "id": "sl8",
+              "x": 88,
+              "y": 62,
+              "mag": 3
+            },
+            {
+              "id": "sl9",
+              "x": 94,
+              "y": 55,
+              "mag": 3
+            }
+          ],
+          "lines": [
+            [
+              "sl1",
+              "sl2"
+            ],
+            [
+              "sl2",
+              "sl3"
+            ],
+            [
+              "sl3",
+              "sl4"
+            ],
+            [
+              "sl4",
+              "sl5"
+            ],
+            [
+              "sl5",
+              "sl6"
+            ],
+            [
+              "sl6",
+              "sl7"
+            ],
+            [
+              "sl7",
+              "sl4"
+            ],
+            [
+              "sl6",
+              "sl8"
+            ],
+            [
+              "sl8",
+              "sl9"
+            ]
+          ],
+          "missing_star": "sl9",
+          "fragments": [
+            {
+              "text": "Its handle is four stars, falling to the right",
+              "rules": [
+                {
+                  "type": "chain",
+                  "stars": [
+                    "sl1",
+                    "sl2",
+                    "sl3",
+                    "sl4"
+                  ],
+                  "direction": "down_right"
+                }
+              ]
+            },
+            {
+              "text": "Its body is a ring of four, closed at the handle's end",
+              "rules": [
+                {
+                  "type": "cycle",
+                  "stars": [
+                    "sl4",
+                    "sl5",
+                    "sl6",
+                    "sl7"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Its light runs down and to the right through two stars from the body's brightest; the last is lost",
+              "rules": [
+                {
+                  "type": "chain",
+                  "stars": [
+                    "sl6",
+                    "sl8",
+                    "sl9"
+                  ],
+                  "direction": "down_right"
+                },
+                {
+                  "type": "line_count",
+                  "value": 9
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_stars": [
+        {
+          "id": "false1",
+          "x": 59.8,
+          "y": 9.1,
+          "mag": 4,
+          "false": true
+        },
+        {
+          "id": "false2",
+          "x": 14.6,
+          "y": 58.2,
+          "mag": 4,
+          "false": true
+        },
+        {
+          "id": "false3",
+          "x": 87.1,
+          "y": 22.8,
+          "mag": 4,
+          "false": true
+        },
+        {
+          "id": "false4",
+          "x": 76.4,
+          "y": 5.7,
+          "mag": 4,
+          "false": true
+        },
+        {
+          "id": "dim1",
+          "x": 5.7,
+          "y": 66.2,
+          "mag": 4,
+          "false": false
+        },
+        {
+          "id": "dim2",
+          "x": 39.2,
+          "y": 6.3,
+          "mag": 4,
+          "false": false
+        }
+      ],
+      "stars_per_constellation": [
+        7,
+        9
+      ],
+      "fragments_per_constellation": [
+        3,
+        3
+      ],
+      "false_stars": 4,
+      "on_constellation": {
+        "scholars_lamp": {
+          "izladar_fragments": 1
+        }
+      }
+    },
+    {
+      "scene": "s_chart_expanse",
+      "constellations": [
+        {
+          "id": "the_scholar",
+          "name": "The Scholar",
+          "realm": "above",
+          "stars": [
+            {
+              "id": "sc1",
+              "name": "the Head",
+              "x": 50,
+              "y": 85,
+              "mag": 1
+            },
+            {
+              "id": "sc2",
+              "name": "the Throat",
+              "x": 50,
+              "y": 75,
+              "mag": 3
+            },
+            {
+              "id": "sc3",
+              "name": "the Left Shoulder",
+              "x": 40,
+              "y": 72,
+              "mag": 3
+            },
+            {
+              "id": "sc4",
+              "name": "the Right Shoulder",
+              "x": 60,
+              "y": 72,
+              "mag": 3
+            },
+            {
+              "id": "sc5",
+              "name": "the Left Hand",
+              "x": 32,
+              "y": 58,
+              "mag": 3
+            },
+            {
+              "id": "sc6",
+              "name": "the Right Hand",
+              "x": 68,
+              "y": 58,
+              "mag": 3
+            },
+            {
+              "id": "sc7",
+              "name": "the Waist",
+              "x": 50,
+              "y": 52,
+              "mag": 3
+            },
+            {
+              "id": "sc8",
+              "name": "the Left Knee",
+              "x": 44,
+              "y": 35,
+              "mag": 3
+            },
+            {
+              "id": "sc9",
+              "name": "the Right Knee",
+              "x": 56,
+              "y": 35,
+              "mag": 3
+            },
+            {
+              "id": "sc10",
+              "name": "the Left Foot",
+              "x": 42,
+              "y": 18,
+              "mag": 3
+            },
+            {
+              "id": "sc11",
+              "name": "the Right Foot",
+              "x": 58,
+              "y": 18,
+              "mag": 3
+            },
+            {
+              "id": "sc12",
+              "name": "the Book",
+              "x": 76,
+              "y": 52,
+              "mag": 3
+            }
+          ],
+          "lines": [
+            [
+              "sc1",
+              "sc2"
+            ],
+            [
+              "sc2",
+              "sc3"
+            ],
+            [
+              "sc2",
+              "sc4"
+            ],
+            [
+              "sc3",
+              "sc5"
+            ],
+            [
+              "sc4",
+              "sc6"
+            ],
+            [
+              "sc2",
+              "sc7"
+            ],
+            [
+              "sc7",
+              "sc8"
+            ],
+            [
+              "sc7",
+              "sc9"
+            ],
+            [
+              "sc8",
+              "sc10"
+            ],
+            [
+              "sc9",
+              "sc11"
+            ],
+            [
+              "sc6",
+              "sc12"
+            ]
+          ],
+          "fragments": [
+            {
+              "order": 1,
+              "text": "The Head to the Throat; the Left Shoulder to the Left Hand; the Throat to the Waist; the Waist to the Left Knee; the Right Knee to the Right Foot",
+              "rules": [
+                {
+                  "type": "edges",
+                  "lines": [
+                    [
+                      "sc1",
+                      "sc2"
+                    ],
+                    [
+                      "sc3",
+                      "sc5"
+                    ],
+                    [
+                      "sc2",
+                      "sc7"
+                    ],
+                    [
+                      "sc7",
+                      "sc8"
+                    ],
+                    [
+                      "sc9",
+                      "sc11"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "order": 2,
+              "text": "The Head to the Throat; the Throat to the Left Shoulder; the Right Shoulder to the Right Hand; the Waist to the Left Knee; the Waist to the Right Knee; the Right Hand to the Book",
+              "rules": [
+                {
+                  "type": "edges",
+                  "lines": [
+                    [
+                      "sc1",
+                      "sc2"
+                    ],
+                    [
+                      "sc2",
+                      "sc3"
+                    ],
+                    [
+                      "sc4",
+                      "sc6"
+                    ],
+                    [
+                      "sc7",
+                      "sc8"
+                    ],
+                    [
+                      "sc7",
+                      "sc9"
+                    ],
+                    [
+                      "sc6",
+                      "sc12"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "order": 3,
+              "text": "The Throat to the Left Shoulder; the Throat to the Right Shoulder; the Throat to the Waist; the Waist to the Right Knee; the Left Knee to the Left Foot",
+              "rules": [
+                {
+                  "type": "edges",
+                  "lines": [
+                    [
+                      "sc2",
+                      "sc3"
+                    ],
+                    [
+                      "sc2",
+                      "sc4"
+                    ],
+                    [
+                      "sc2",
+                      "sc7"
+                    ],
+                    [
+                      "sc7",
+                      "sc9"
+                    ],
+                    [
+                      "sc8",
+                      "sc10"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "order": 4,
+              "text": "The Head to the Throat; the Throat to the Right Shoulder; the Left Shoulder to the Left Hand; the Waist to the Left Knee; the Left Knee to the Left Foot; the Right Knee to the Right Foot",
+              "rules": [
+                {
+                  "type": "edges",
+                  "lines": [
+                    [
+                      "sc1",
+                      "sc2"
+                    ],
+                    [
+                      "sc2",
+                      "sc4"
+                    ],
+                    [
+                      "sc3",
+                      "sc5"
+                    ],
+                    [
+                      "sc7",
+                      "sc8"
+                    ],
+                    [
+                      "sc8",
+                      "sc10"
+                    ],
+                    [
+                      "sc9",
+                      "sc11"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "order": 5,
+              "text": "The Throat to the Left Shoulder; the Left Shoulder to the Left Hand; the Right Shoulder to the Right Hand; the Waist to the Right Knee; the Right Knee to the Right Foot; the Right Hand to the Book",
+              "rules": [
+                {
+                  "type": "edges",
+                  "lines": [
+                    [
+                      "sc2",
+                      "sc3"
+                    ],
+                    [
+                      "sc3",
+                      "sc5"
+                    ],
+                    [
+                      "sc4",
+                      "sc6"
+                    ],
+                    [
+                      "sc7",
+                      "sc9"
+                    ],
+                    [
+                      "sc9",
+                      "sc11"
+                    ],
+                    [
+                      "sc6",
+                      "sc12"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "order": 6,
+              "text": "The Throat to the Right Shoulder; the Right Shoulder to the Right Hand; the Throat to the Waist; the Left Knee to the Left Foot; the Right Hand to the Book",
+              "rules": [
+                {
+                  "type": "edges",
+                  "lines": [
+                    [
+                      "sc2",
+                      "sc4"
+                    ],
+                    [
+                      "sc4",
+                      "sc6"
+                    ],
+                    [
+                      "sc2",
+                      "sc7"
+                    ],
+                    [
+                      "sc8",
+                      "sc10"
+                    ],
+                    [
+                      "sc6",
+                      "sc12"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_stars": [
+        {
+          "id": "false1",
+          "x": 39.1,
+          "y": 86.6,
+          "mag": 4,
+          "false": true
+        },
+        {
+          "id": "false2",
+          "x": 25.7,
+          "y": 35.8,
+          "mag": 4,
+          "false": true
+        },
+        {
+          "id": "false3",
+          "x": 27.8,
+          "y": 6.7,
+          "mag": 4,
+          "false": true
+        },
+        {
+          "id": "false4",
+          "x": 47.8,
+          "y": 92.1,
+          "mag": 4,
+          "false": true
+        },
+        {
+          "id": "false5",
+          "x": 18.2,
+          "y": 38.0,
+          "mag": 4,
+          "false": true
+        },
+        {
+          "id": "false6",
+          "x": 90.5,
+          "y": 33.9,
+          "mag": 4,
+          "false": true
+        },
+        {
+          "id": "dim1",
+          "x": 15.4,
+          "y": 46.7,
+          "mag": 4,
+          "false": false
+        },
+        {
+          "id": "dim2",
+          "x": 78.0,
+          "y": 86.1,
+          "mag": 4,
+          "false": false
+        },
+        {
+          "id": "dim3",
+          "x": 52.0,
+          "y": 59.9,
+          "mag": 4,
+          "false": false
+        },
+        {
+          "id": "dim4",
+          "x": 88.9,
+          "y": 72.4,
+          "mag": 4,
+          "false": false
+        },
+        {
+          "id": "dim5",
+          "x": 17.1,
+          "y": 60.4,
+          "mag": 4,
+          "false": false
+        },
+        {
+          "id": "dim6",
+          "x": 70.0,
+          "y": 84.7,
+          "mag": 4,
+          "false": false
+        }
+      ],
+      "stars_per_constellation": [
+        12,
+        12
+      ],
+      "fragments_per_constellation": [
+        0,
+        6
+      ],
+      "false_stars": 6,
+      "sigil": {
+        "lines": [
+          [
+            "sc1",
+            "sc5"
+          ],
+          [
+            "sc1",
+            "sc6"
+          ],
+          [
+            "sc5",
+            "sc10"
+          ],
+          [
+            "sc6",
+            "sc11"
+          ],
+          [
+            "sc10",
+            "sc11"
+          ],
+          [
+            "sc3",
+            "sc4"
+          ],
+          [
+            "sc5",
+            "sc6"
+          ]
+        ],
+        "remove_first": true
+      },
+      "fragments_shown": "one per izladar_fragments held",
+      "full_draw_min_fragments": 4,
+      "below_min": "outline only",
+      "on_complete": {
+        "flags": [
+          "izladar_constellation_drawn"
+        ],
+        "izladar_fragments": 1
+      }
+    }
+  ],
+  "per_constellation_named": {
+    "own_realm": 4,
+    "memory.above": 1,
+    "stars_redrawn": 1
+  },
+  "izladar_fragment_sources": [
+    {
+      "id": "heartstone_vision",
+      "scene": "s_heart_rekindle",
+      "how": "Keep the vision in the Heartstone"
+    },
+    {
+      "id": "monolith_rows",
+      "scene": "s_glyph_monolith",
+      "how": "Read all three readable rows of the monolith"
+    },
+    {
+      "id": "archivist_saved",
+      "scene": "s_underworld_tunnels",
+      "how": "Fight now and save the archivist"
+    },
+    {
+      "id": "priory_charts",
+      "scene": "s_chart_priory",
+      "how": "Name all three constellations in Star Chart I"
+    },
+    {
+      "id": "scholars_lamp",
+      "scene": "s_chart_moot",
+      "how": "Restore the Scholar's Lamp in Star Chart II"
+    },
+    {
+      "id": "name_at_the_fire",
+      "scene": "s_moot_camp",
+      "how": "Retell THE NAME, recorded, at Ilvarra's fire"
+    },
+    {
+      "id": "ilvarra_memory",
+      "scene": "s_conc_ilvarra",
+      "how": "Keep Ilvarra's memory in Concentration III"
+    },
+    {
+      "id": "seal_text",
+      "scene": "s_glyph_seal",
+      "how": "Read the whole seal in Glyph III"
+    },
+    {
+      "id": "scholar_drawn",
+      "scene": "s_chart_expanse",
+      "how": "Draw the Scholar's constellation in Star Chart III"
+    }
+  ]
+}

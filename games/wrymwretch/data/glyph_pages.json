@@ -1,0 +1,418 @@
+{
+  "part_types": [
+    "crown",
+    "stem",
+    "foot",
+    "mark"
+  ],
+  "part_variants": {
+    "crown": [
+      "crown_01",
+      "crown_02",
+      "crown_03",
+      "crown_04",
+      "crown_05",
+      "crown_06",
+      "crown_07",
+      "crown_08",
+      "crown_09",
+      "crown_10",
+      "crown_11",
+      "crown_12"
+    ],
+    "stem": [
+      "stem_01",
+      "stem_02",
+      "stem_03",
+      "stem_04",
+      "stem_05",
+      "stem_06",
+      "stem_07",
+      "stem_08",
+      "stem_09",
+      "stem_10",
+      "stem_11",
+      "stem_12"
+    ],
+    "foot": [
+      "foot_01",
+      "foot_02",
+      "foot_03",
+      "foot_04",
+      "foot_05",
+      "foot_06",
+      "foot_07",
+      "foot_08",
+      "foot_09",
+      "foot_10",
+      "foot_11",
+      "foot_12"
+    ],
+    "mark": [
+      "mark_01",
+      "mark_02",
+      "mark_03",
+      "mark_04",
+      "mark_05",
+      "mark_06",
+      "mark_07",
+      "mark_08",
+      "mark_09",
+      "mark_10",
+      "mark_11",
+      "mark_12"
+    ]
+  },
+  "runes": [
+    {
+      "id": "rune_01",
+      "parts": {
+        "crown": "crown_01",
+        "stem": "stem_01",
+        "foot": "foot_01",
+        "mark": "mark_01"
+      }
+    },
+    {
+      "id": "rune_02",
+      "parts": {
+        "crown": "crown_01",
+        "stem": "stem_01",
+        "foot": "foot_02",
+        "mark": "mark_03"
+      }
+    },
+    {
+      "id": "rune_03",
+      "parts": {
+        "crown": "crown_01",
+        "stem": "stem_01",
+        "foot": "foot_03",
+        "mark": "mark_02"
+      }
+    },
+    {
+      "id": "rune_04",
+      "parts": {
+        "crown": "crown_01",
+        "stem": "stem_02",
+        "foot": "foot_01",
+        "mark": "mark_03"
+      }
+    },
+    {
+      "id": "rune_05",
+      "parts": {
+        "crown": "crown_01",
+        "stem": "stem_02",
+        "foot": "foot_02",
+        "mark": "mark_02"
+      }
+    },
+    {
+      "id": "rune_06",
+      "parts": {
+        "crown": "crown_01",
+        "stem": "stem_02",
+        "foot": "foot_03",
+        "mark": "mark_01"
+      }
+    },
+    {
+      "id": "rune_07",
+      "parts": {
+        "crown": "crown_01",
+        "stem": "stem_03",
+        "foot": "foot_01",
+        "mark": "mark_02"
+      }
+    },
+    {
+      "id": "rune_08",
+      "parts": {
+        "crown": "crown_01",
+        "stem": "stem_03",
+        "foot": "foot_02",
+        "mark": "mark_01"
+      }
+    },
+    {
+      "id": "rune_09",
+      "parts": {
+        "crown": "crown_01",
+        "stem": "stem_03",
+        "foot": "foot_03",
+        "mark": "mark_03"
+      }
+    },
+    {
+      "id": "rune_10",
+      "parts": {
+        "crown": "crown_02",
+        "stem": "stem_01",
+        "foot": "foot_01",
+        "mark": "mark_03"
+      }
+    },
+    {
+      "id": "rune_11",
+      "parts": {
+        "crown": "crown_02",
+        "stem": "stem_01",
+        "foot": "foot_02",
+        "mark": "mark_02"
+      }
+    },
+    {
+      "id": "rune_12",
+      "parts": {
+        "crown": "crown_02",
+        "stem": "stem_01",
+        "foot": "foot_03",
+        "mark": "mark_01"
+      }
+    }
+  ],
+  "rules": {
+    "glyphs_per_row": 4,
+    "focus_hold_seconds": 1.5,
+    "sketch_blur_seconds": 5,
+    "wrong_runes_to_devour": 3,
+    "devour_realm_loss": 3,
+    "accessibility_change_seconds": 4,
+    "purify_hold_seconds": 5
+  },
+  "pages": [
+    {
+      "scene": "s_glyph_monolith",
+      "slip_delay": 1.5,
+      "stable_moves_per_minute": 0,
+      "devour_realm": "east",
+      "ends_after_row": 3,
+      "rows": [
+        {
+          "row": 1,
+          "answer": "rune_04",
+          "stable": [
+            "stem",
+            "crown",
+            "mark",
+            "foot"
+          ]
+        },
+        {
+          "row": 2,
+          "answer": "rune_09",
+          "stable": [
+            "stem",
+            "mark",
+            "crown",
+            "foot"
+          ]
+        },
+        {
+          "row": 3,
+          "answer": "rune_02",
+          "stable": [
+            "stem",
+            "mark",
+            "crown",
+            "foot"
+          ]
+        },
+        {
+          "row": 4,
+          "answer": null,
+          "stable": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "unreadable": true
+        }
+      ],
+      "on_rows_read": {
+        "counter": "monolith_rows",
+        "at": 3,
+        "izladar_fragments": 1
+      }
+    },
+    {
+      "scene": "s_glyph_killlist",
+      "slip_delay": 1.2,
+      "stable_moves_per_minute": 0,
+      "devour_realm": null,
+      "time_limit_seconds": 180,
+      "rows": [
+        {
+          "row": 1,
+          "answer": "rune_07",
+          "stable": [
+            "stem",
+            "mark",
+            "foot",
+            "crown"
+          ],
+          "names": {
+            "kind": "witness_slot",
+            "slot": 1,
+            "place": "healers_tent"
+          }
+        },
+        {
+          "row": 2,
+          "answer": "rune_11",
+          "stable": [
+            "mark",
+            "stem",
+            "foot",
+            "crown"
+          ],
+          "names": {
+            "kind": "witness_slot",
+            "slot": 2,
+            "place": "sky_watch"
+          }
+        },
+        {
+          "row": 3,
+          "answer": "rune_01",
+          "stable": [
+            "foot",
+            "stem",
+            "crown",
+            "mark"
+          ],
+          "names": {
+            "kind": "witness_slot",
+            "slot": 3,
+            "place": "delegation_tents"
+          }
+        },
+        {
+          "row": 4,
+          "answer": "rune_05",
+          "stable": [
+            "foot",
+            "mark",
+            "crown",
+            "stem"
+          ],
+          "names": {
+            "kind": "witness_slot",
+            "slot": 4,
+            "place": "great_crystal"
+          }
+        },
+        {
+          "row": 5,
+          "answer": "rune_12",
+          "stable": [
+            "foot",
+            "mark",
+            "stem",
+            "crown"
+          ],
+          "names": {
+            "kind": "ilvarra",
+            "place": "bone_bridge"
+          },
+          "signed_by": "the_unwriter"
+        }
+      ],
+      "on_rows_read": {
+        "each_row": "witness fate warned",
+        "at": 4,
+        "flag": "killlist_read",
+        "row_5_flag": "unwriter_name_known"
+      }
+    },
+    {
+      "scene": "s_glyph_seal",
+      "slip_delay": 1.0,
+      "stable_moves_per_minute": 1,
+      "devour_realm": null,
+      "rows": [
+        {
+          "row": 1,
+          "answer": "rune_04",
+          "stable": [
+            "crown",
+            "foot",
+            "mark",
+            "stem"
+          ],
+          "prefilled_from": {
+            "scene": "s_glyph_monolith",
+            "row": 1
+          }
+        },
+        {
+          "row": 2,
+          "answer": "rune_09",
+          "stable": [
+            "stem",
+            "foot",
+            "crown",
+            "mark"
+          ],
+          "prefilled_from": {
+            "scene": "s_glyph_monolith",
+            "row": 2
+          }
+        },
+        {
+          "row": 3,
+          "answer": "rune_02",
+          "stable": [
+            "mark",
+            "crown",
+            "foot",
+            "stem"
+          ],
+          "prefilled_from": {
+            "scene": "s_glyph_monolith",
+            "row": 3
+          }
+        },
+        {
+          "row": 4,
+          "answer": "rune_10",
+          "stable": [
+            "foot",
+            "mark",
+            "crown",
+            "stem"
+          ]
+        },
+        {
+          "row": 5,
+          "answer": "rune_06",
+          "stable": [
+            "stem",
+            "crown",
+            "mark",
+            "foot"
+          ]
+        },
+        {
+          "row": 6,
+          "answer": "rune_08",
+          "stable": [
+            "mark",
+            "crown",
+            "stem",
+            "foot"
+          ],
+          "is_the_name": true
+        }
+      ],
+      "on_rows_read": {
+        "at": 6,
+        "flag": "seal_text_read",
+        "izladar_fragments": 1
+      }
+    }
+  ]
+}

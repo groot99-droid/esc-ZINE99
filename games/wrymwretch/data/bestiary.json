@@ -1,0 +1,706 @@
+{
+  "codex_source": "05_Worldbuilding/03_World_Codex_of_Wyrmreach.md",
+  "codex_line": 65,
+  "realm_of_group": {
+    "Forest": "west",
+    "Sky": "north",
+    "Earth": "south",
+    "Water": "east",
+    "Dark": "below",
+    "Celestial": "above"
+  },
+  "creatures": [
+    {
+      "id": "grove_stag",
+      "name": "Grove Stag",
+      "codex_name": "Grove Stags",
+      "codex_group": "Forest",
+      "realm": "west",
+      "role": "Gentle; flees",
+      "first_met": "s_cedar_grove",
+      "seen_in": [],
+      "battles": [],
+      "life": 40,
+      "move": {
+        "name": "Bolt",
+        "effect": "Leaves the battle at the end of the round; no damage"
+      },
+      "weakness": {
+        "text": "It does not fight. Approach while it grazes and it lets you read it.",
+        "weak_to": []
+      },
+      "lore": "A silver-antlered stag of the western groves; its prints glow where the moss is still whole.",
+      "remembrance": "It walked the groves at dusk, and the moss stood up where it had passed."
+    },
+    {
+      "id": "whisperfox",
+      "name": "Whisperfox",
+      "codex_name": "Whisperfoxes",
+      "codex_group": "Forest",
+      "realm": "west",
+      "role": "Mimics voices; confuses",
+      "first_met": "s_cedar_grove",
+      "seen_in": [],
+      "battles": [
+        "s_elder_tree"
+      ],
+      "life": 30,
+      "move": {
+        "name": "Borrowed Voice",
+        "effect": "One pair's next action goes to a random target"
+      },
+      "weakness": {
+        "text": "Pin it before it speaks: a Slowed fox cannot borrow a voice.",
+        "weak_to": [
+          "pin_shot",
+          "thornbind"
+        ]
+      },
+      "lore": "A small grey fox that speaks with the voices of people it has heard, and no longer knows its own.",
+      "remembrance": "It carried the rangers' calls from tree to tree, so no one in the groves was ever lost."
+    },
+    {
+      "id": "rootbound_golem",
+      "name": "Rootbound Golem",
+      "codex_name": "Rootbound Golems",
+      "codex_group": "Forest",
+      "realm": "west",
+      "role": "Tank, roots",
+      "first_met": "s_elder_tree",
+      "seen_in": [],
+      "battles": [
+        "s_elder_tree"
+      ],
+      "life": 70,
+      "move": {
+        "name": "Root Grip",
+        "effect": "12 damage and Rooted for 1 round"
+      },
+      "weakness": {
+        "text": "Its roots are grey and brittle where the ichor touched; Track it and strike the grey.",
+        "weak_to": [
+          "track",
+          "verdant_wake"
+        ]
+      },
+      "lore": "Roots and stone wound into a walker, its heartwood greyed by the black ichor.",
+      "remembrance": "It was the groves' gardener: it carried fallen seed to bare ground and stood guard while it grew."
+    },
+    {
+      "id": "stormrider",
+      "name": "Stormrider",
+      "codex_name": "Stormriders",
+      "codex_group": "Sky",
+      "realm": "north",
+      "role": "Fast striker",
+      "first_met": "s_cloud_platform",
+      "seen_in": [],
+      "battles": [
+        "s_cloud_platform"
+      ],
+      "life": 35,
+      "move": {
+        "name": "Downdraft",
+        "effect": "14 damage; acts first each round"
+      },
+      "weakness": {
+        "text": "It rides the confused winds; calm them and it loses its speed.",
+        "weak_to": [
+          "calm_the_storm",
+          "gale_song"
+        ]
+      },
+      "lore": "A lean winged thing that dives out of the wind faster than the eye.",
+      "remembrance": "It ran messages between the sky-cities on the high winds, faster than any sail."
+    },
+    {
+      "id": "cloud_serpent",
+      "name": "Cloud Serpent",
+      "codex_name": "Cloud Serpents",
+      "codex_group": "Sky",
+      "realm": "north",
+      "role": "Coils; hits a row",
+      "first_met": "s_cloud_platform",
+      "seen_in": [],
+      "battles": [
+        "s_cloud_platform"
+      ],
+      "life": 60,
+      "move": {
+        "name": "Coil",
+        "effect": "10 damage to every pair in one row"
+      },
+      "weakness": {
+        "text": "It telegraphs each coil one round ahead; read its intent and move the row.",
+        "weak_to": [
+          "windread",
+          "shared_thought"
+        ]
+      },
+      "lore": "A long serpent of vapour and scale that wraps a platform before it strikes.",
+      "remembrance": "It held the drifting sky-cities together in storms, coiled round their moorings."
+    },
+    {
+      "id": "star_moth",
+      "name": "Star Moth",
+      "codex_name": "Star Moths",
+      "codex_group": "Sky",
+      "realm": "north",
+      "role": "Drawn to light; un-names",
+      "first_met": "s_rim_ambush",
+      "seen_in": [],
+      "battles": [
+        "s_rim_ambush"
+      ],
+      "life": 25,
+      "move": {
+        "name": "Dust of Forgetting",
+        "effect": "One ability becomes Unnamed"
+      },
+      "weakness": {
+        "text": "It flies to the brightest light on the field; a Veil or Eclipse leaves it lost.",
+        "weak_to": [
+          "veil",
+          "phantasm"
+        ]
+      },
+      "lore": "A wide pale moth whose dust makes a word slip from the tongue.",
+      "remembrance": "Galechanters followed its flight at night to find the stars they were singing to."
+    },
+    {
+      "id": "crystal_crawler",
+      "name": "Crystal Crawler",
+      "codex_name": "Crystal Crawlers",
+      "codex_group": "Earth",
+      "realm": "south",
+      "role": "Swarm",
+      "first_met": "s_deep_core",
+      "seen_in": [],
+      "battles": [
+        "s_deep_core"
+      ],
+      "life": 20,
+      "move": {
+        "name": "Swarm",
+        "effect": "6 damage per crawler still standing to one pair"
+      },
+      "weakness": {
+        "text": "Each crawler is weak alone; hit the whole row.",
+        "weak_to": [
+          "upheaval",
+          "high_tide"
+        ]
+      },
+      "lore": "Many-legged crystal shards that skitter out of the walls in numbers.",
+      "remembrance": "They polished the gem veins of the deep cities and made them shine."
+    },
+    {
+      "id": "fossil_wurm",
+      "name": "Fossil Wurm",
+      "codex_name": "Fossil Wurms",
+      "codex_group": "Earth",
+      "realm": "south",
+      "role": "Burrows, strikes from below",
+      "first_met": "s_deep_core",
+      "seen_in": [],
+      "battles": [
+        "s_deep_core",
+        "s_bone_choir"
+      ],
+      "life": 55,
+      "move": {
+        "name": "Strike from Below",
+        "effect": "18 damage; Hidden underground until it strikes"
+      },
+      "weakness": {
+        "text": "Root it and it cannot burrow.",
+        "weak_to": [
+          "thornbind",
+          "rootstone"
+        ]
+      },
+      "lore": "A wurm of old bone and new stone that swims through rock.",
+      "remembrance": "It carried the memory of the first stones in its bones, and the Stonekeepers sang to it."
+    },
+    {
+      "id": "stoneback_behemoth",
+      "name": "Stoneback Behemoth",
+      "codex_name": "Stoneback Behemoths",
+      "codex_group": "Earth",
+      "realm": "south",
+      "role": "Guardian",
+      "first_met": "s_bone_choir",
+      "seen_in": [],
+      "battles": [
+        "s_bone_choir"
+      ],
+      "life": 160,
+      "move": {
+        "name": "Stand Fast",
+        "effect": "Guard +20 to itself and 16 damage to the front row"
+      },
+      "weakness": {
+        "text": "Its shell turns aside blades; damage that ignores Guard reaches it.",
+        "weak_to": [
+          "undermine",
+          "celestial_beam"
+        ]
+      },
+      "lore": "A great beast with a back of layered rock, set before the Bone Choir.",
+      "remembrance": "It was set at the chasm by the first tribes to keep the wyrm bones, and kept them."
+    },
+    {
+      "id": "tide_serpent",
+      "name": "Tide Serpent",
+      "codex_name": "Tide Serpents",
+      "codex_group": "Water",
+      "realm": "east",
+      "role": "Pulls",
+      "first_met": "s_shore_night",
+      "seen_in": [
+        "s_seabed"
+      ],
+      "battles": [
+        "s_shore_night"
+      ],
+      "life": 60,
+      "move": {
+        "name": "Undertow",
+        "effect": "12 damage and pulls one back-row pair to the front"
+      },
+      "weakness": {
+        "text": "The corruption sits in its gills like oil; purify it.",
+        "weak_to": [
+          "purify",
+          "riptide"
+        ]
+      },
+      "lore": "A sea serpent whose scales have gone dull as oil.",
+      "remembrance": "It turned the tides in the bays and brought the fish in close to the Tidecaller nets."
+    },
+    {
+      "id": "moonfish",
+      "name": "Moonfish",
+      "codex_name": "Moonfish",
+      "codex_group": "Water",
+      "realm": "east",
+      "role": "Heals enemies",
+      "first_met": "s_rim_ambush",
+      "seen_in": [],
+      "battles": [
+        "s_rim_ambush"
+      ],
+      "life": 25,
+      "move": {
+        "name": "Moonlit Scales",
+        "effect": "Heals 15 to one enemy"
+      },
+      "weakness": {
+        "text": "It hides behind the others; a pierce or a pull reaches it.",
+        "weak_to": [
+          "celestial_beam",
+          "riptide"
+        ]
+      },
+      "lore": "A round silver fish that swims in the air of the chasm and mends what it touches.",
+      "remembrance": "It showed the way home to lost divers by the light of its scales."
+    },
+    {
+      "id": "kelprunner",
+      "name": "Kelprunner",
+      "codex_name": "Kelprunners",
+      "codex_group": "Water",
+      "realm": "east",
+      "role": "Binds",
+      "first_met": "s_shore_night",
+      "seen_in": [],
+      "battles": [
+        "s_shore_night"
+      ],
+      "life": 35,
+      "move": {
+        "name": "Kelp Snare",
+        "effect": "Rooted for 1 round"
+      },
+      "weakness": {
+        "text": "Its kelp is dry and brittle out of the sea; wind tears it.",
+        "weak_to": [
+          "shear",
+          "squall"
+        ]
+      },
+      "lore": "A loping thing of knotted kelp that binds whatever it touches.",
+      "remembrance": "It tended the kelp forests off the shore, and the young fish hid in them."
+    },
+    {
+      "id": "shadehound",
+      "name": "Shadehound",
+      "codex_name": "Shadehounds",
+      "codex_group": "Dark",
+      "realm": "below",
+      "role": "Hunts the hidden",
+      "first_met": "s_underworld_tunnels",
+      "seen_in": [],
+      "battles": [
+        "s_moot_dawn"
+      ],
+      "life": 40,
+      "move": {
+        "name": "Scent of the Hidden",
+        "effect": "Removes Hidden from one pair; 14 damage to it"
+      },
+      "weakness": {
+        "text": "It hunts by scent in the dark; light confuses it.",
+        "weak_to": [
+          "celestial_beam",
+          "starlore"
+        ]
+      },
+      "lore": "A long black hound with no eyes, that finds anything hidden by its breath.",
+      "remembrance": "The Syndicate kept it to find the lost in the labyrinth and bring them out."
+    },
+    {
+      "id": "nightmare",
+      "name": "Nightmare",
+      "codex_name": "Nightmares",
+      "codex_group": "Dark",
+      "realm": "below",
+      "role": "Fear: skip an action",
+      "first_met": "s_moot_dawn",
+      "seen_in": [],
+      "battles": [
+        "s_moot_dawn"
+      ],
+      "life": 45,
+      "move": {
+        "name": "Dread",
+        "effect": "One pair loses one action next round"
+      },
+      "weakness": {
+        "text": "Calm and a shared thought steady the pair it frightens.",
+        "weak_to": [
+          "calm_the_storm",
+          "shared_thought"
+        ]
+      },
+      "lore": "A shape of smoke and hooves that comes at the edge of sleep.",
+      "remembrance": "It carried dreams through the Underworld, and the Duskbane read them for warnings."
+    },
+    {
+      "id": "obsidian_spider",
+      "name": "Obsidian Spider",
+      "codex_name": "Obsidian Spiders",
+      "codex_group": "Dark",
+      "realm": "below",
+      "role": "Webs",
+      "first_met": "s_underworld_tunnels",
+      "seen_in": [],
+      "battles": [
+        "s_underworld_tunnels"
+      ],
+      "life": 45,
+      "move": {
+        "name": "Web",
+        "effect": "Rooted for 1 round and 8 damage"
+      },
+      "weakness": {
+        "text": "Fire-dark glass cracks under stone; strike it with earth.",
+        "weak_to": [
+          "stonestaff",
+          "upheaval"
+        ]
+      },
+      "lore": "A spider of black glass whose webs catch light and hold it.",
+      "remembrance": "It spun the threads the Syndicate followed through the labyrinth, so none went the wrong way twice."
+    },
+    {
+      "id": "starborn_owl",
+      "name": "Starborn Owl",
+      "codex_name": "Starborn Owls",
+      "codex_group": "Celestial",
+      "realm": "above",
+      "role": "Watches; reveals the hidden",
+      "first_met": "s_moot_dawn",
+      "seen_in": [],
+      "battles": [
+        "s_moot_dawn"
+      ],
+      "life": 35,
+      "move": {
+        "name": "Watchful Eye",
+        "effect": "Removes Hidden from every pair"
+      },
+      "weakness": {
+        "text": "It watches the leader; a decoy holds its eye.",
+        "weak_to": [
+          "phantasm",
+          "veil"
+        ]
+      },
+      "lore": "A white owl with stars in its feathers that sees through every shadow.",
+      "remembrance": "It kept watch over the Priory's sleepers and woke them when the stars moved."
+    },
+    {
+      "id": "luminae",
+      "name": "Luminae",
+      "codex_name": "Luminae",
+      "codex_group": "Celestial",
+      "realm": "above",
+      "role": "Light spirits; shields",
+      "first_met": "s_crystal_forest",
+      "seen_in": [],
+      "battles": [
+        "s_crystal_forest"
+      ],
+      "life": 30,
+      "move": {
+        "name": "Lightward",
+        "effect": "Shields one enemy: absorbs 15"
+      },
+      "weakness": {
+        "text": "Its light gutters in shadow; darken it and its shields fall.",
+        "weak_to": [
+          "shadowblade",
+          "the_hunt"
+        ]
+      },
+      "lore": "Small spirits of light that gather round the crystalline trees.",
+      "remembrance": "They lit the crystalline forests at night, so the Priory could read under the trees."
+    },
+    {
+      "id": "astral_wyrmling",
+      "name": "Astral Wyrmling",
+      "codex_name": "Astral Wyrmlings",
+      "codex_group": "Celestial",
+      "realm": "above",
+      "role": "Young wyrm; breath",
+      "first_met": "s_expanse",
+      "seen_in": [],
+      "battles": [
+        "s_battle_unwriter"
+      ],
+      "life": 70,
+      "move": {
+        "name": "Starbreath",
+        "effect": "16 damage to every pair in one lane"
+      },
+      "weakness": {
+        "text": "It is young and lonely; a shield it trusts stops its breath.",
+        "weak_to": [
+          "astral_shield",
+          "benediction"
+        ]
+      },
+      "lore": "A young wyrm of cosmic dust, lost in the Expanse since before it could fly.",
+      "remembrance": "It was hatched at #Wrymreach and waited there for a rider it never met.",
+      "follows_party_when_reminded": true
+    }
+  ],
+  "other_foes": [
+    {
+      "id": "remnant_eraser",
+      "name": "Eraser",
+      "role": "Un-names one ability",
+      "life": 45
+    },
+    {
+      "id": "remnant_blank_scribe",
+      "name": "Blank-Scribe",
+      "role": "Blanks a bestiary page in the battle, closing Remind",
+      "life": 35
+    },
+    {
+      "id": "remnant_hollow",
+      "name": "Hollow",
+      "role": "Slow and hard; gave up the most",
+      "life": 80
+    },
+    {
+      "id": "the_unwriter",
+      "name": "The Unwriter",
+      "role": "Boss: un-names one ability per round; at half Life burns his own Record for a heal",
+      "life": 260
+    },
+    {
+      "id": "architects_echo",
+      "name": "The Architect's Echo",
+      "role": "Final: Unmake, Press the Veil, Forget a Pair",
+      "life": 400
+    }
+  ],
+  "battles": [
+    {
+      "scene": "s_elder_tree",
+      "kind": "prologue",
+      "can_lose": false,
+      "roster": [
+        {
+          "foe": "rootbound_golem",
+          "count": 1
+        },
+        {
+          "foe": "whisperfox",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "scene": "s_cloud_platform",
+      "kind": "prologue",
+      "can_lose": true,
+      "roster": [
+        {
+          "foe": "cloud_serpent",
+          "count": 1
+        },
+        {
+          "foe": "stormrider",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "scene": "s_deep_core",
+      "kind": "prologue",
+      "can_lose": true,
+      "roster": [
+        {
+          "foe": "crystal_crawler",
+          "count": 3
+        },
+        {
+          "foe": "fossil_wurm",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "scene": "s_shore_night",
+      "kind": "prologue",
+      "can_lose": true,
+      "roster": [
+        {
+          "foe": "tide_serpent",
+          "count": 1
+        },
+        {
+          "foe": "kelprunner",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "scene": "s_underworld_tunnels",
+      "kind": "prologue",
+      "can_lose": true,
+      "roster": [
+        {
+          "foe": "remnant_eraser",
+          "count": 1
+        },
+        {
+          "foe": "obsidian_spider",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "scene": "s_crystal_forest",
+      "kind": "prologue",
+      "can_lose": true,
+      "roster": [
+        {
+          "foe": "remnant_blank_scribe",
+          "count": 2
+        },
+        {
+          "foe": "luminae",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "scene": "s_rim_ambush",
+      "kind": "rim_ambush",
+      "can_lose": true,
+      "roster": [
+        {
+          "foe": "remnant_eraser",
+          "count": 3
+        },
+        {
+          "foe": "star_moth",
+          "count": 2
+        },
+        {
+          "foe": "moonfish",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "scene": "s_moot_dawn",
+      "kind": "dawn_defence",
+      "can_lose": true,
+      "roster": [
+        {
+          "foe": "remnant_hollow",
+          "count": 3
+        },
+        {
+          "foe": "nightmare",
+          "count": 1
+        },
+        {
+          "foe": "starborn_owl",
+          "count": 1
+        },
+        {
+          "foe": "shadehound",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "scene": "s_bone_choir",
+      "kind": "guardian",
+      "can_lose": true,
+      "roster": [
+        {
+          "foe": "stoneback_behemoth",
+          "count": 1
+        },
+        {
+          "foe": "fossil_wurm",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "scene": "s_battle_unwriter",
+      "kind": "boss",
+      "can_lose": true,
+      "roster": [
+        {
+          "foe": "the_unwriter",
+          "count": 1
+        },
+        {
+          "foe": "astral_wyrmling",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "scene": "s_battle_echo",
+      "kind": "final",
+      "can_lose": true,
+      "roster": [
+        {
+          "foe": "architects_echo",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

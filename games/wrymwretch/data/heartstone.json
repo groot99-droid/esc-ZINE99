@@ -1,0 +1,342 @@
+{
+  "wheel_steps": 12,
+  "rules": {
+    "cracks_to_shatter": 3,
+    "fuse_from": "s_heart_choir"
+  },
+  "pages": [
+    {
+      "scene": "s_heart_rekindle",
+      "slots": 3,
+      "strikes": 6,
+      "fuse": false,
+      "tray": [
+        {
+          "id": "r1",
+          "pitch": 0,
+          "realm": "south",
+          "cracks": 0
+        },
+        {
+          "id": "r2",
+          "pitch": 4,
+          "realm": "south",
+          "cracks": 1
+        },
+        {
+          "id": "r3",
+          "pitch": 7,
+          "realm": "south",
+          "cracks": 0
+        },
+        {
+          "id": "r4",
+          "pitch": 3,
+          "realm": "south",
+          "cracks": 0
+        },
+        {
+          "id": "r5",
+          "pitch": 8,
+          "realm": "south",
+          "cracks": 1
+        },
+        {
+          "id": "r6",
+          "pitch": 2,
+          "realm": "south",
+          "cracks": 0
+        },
+        {
+          "id": "r7",
+          "pitch": 5,
+          "realm": "south",
+          "cracks": 0
+        },
+        {
+          "id": "r8",
+          "pitch": 9,
+          "realm": "south",
+          "cracks": 1
+        }
+      ],
+      "choices": [
+        {
+          "memory": "founding",
+          "chord": [
+            0,
+            4,
+            7
+          ]
+        },
+        {
+          "memory": "vision",
+          "chord": [
+            0,
+            3,
+            8
+          ]
+        },
+        {
+          "memory": "song",
+          "chord": [
+            2,
+            5,
+            9
+          ]
+        }
+      ],
+      "on_win": {
+        "skip_drains": {
+          "realm": "south",
+          "count": 2
+        }
+      }
+    },
+    {
+      "scene": "s_heart_choir",
+      "slots": 4,
+      "strikes": 6,
+      "fuse": true,
+      "tray": [
+        {
+          "id": "c1",
+          "pitch": 1,
+          "realm": "west",
+          "cracks": 0
+        },
+        {
+          "id": "c2",
+          "pitch": 4,
+          "realm": "north",
+          "cracks": 0
+        },
+        {
+          "id": "c3",
+          "pitch": 8,
+          "realm": "south",
+          "cracks": 1
+        },
+        {
+          "id": "c4",
+          "pitch": 5,
+          "realm": "east",
+          "cracks": 0
+        },
+        {
+          "id": "c5",
+          "pitch": 6,
+          "realm": "below",
+          "cracks": 1
+        },
+        {
+          "id": "c6",
+          "pitch": 2,
+          "realm": "above",
+          "cracks": 0
+        },
+        {
+          "id": "c7",
+          "pitch": 10,
+          "realm": "west",
+          "cracks": 0
+        },
+        {
+          "id": "c8",
+          "pitch": 0,
+          "realm": "north",
+          "cracks": 1
+        },
+        {
+          "id": "c9",
+          "pitch": 7,
+          "realm": "south",
+          "cracks": 0
+        },
+        {
+          "id": "c10",
+          "pitch": 3,
+          "realm": "east",
+          "cracks": 0
+        }
+      ],
+      "chord": [
+        1,
+        4,
+        8,
+        11
+      ],
+      "on_fail": {
+        "realm": "south",
+        "loss": 3,
+        "extra_minutes": 2
+      },
+      "on_win": {
+        "flag": "choir_opened"
+      }
+    },
+    {
+      "scene": "s_heart_anchor",
+      "slots": 5,
+      "strikes": 7,
+      "fuse": true,
+      "realm_sets": [
+        {
+          "realm": "west",
+          "qualifies_if": {
+            "memory_gte": 40,
+            "or_trust": "trust.wood"
+          },
+          "shards": [
+            {
+              "id": "west_1",
+              "pitch": 11,
+              "cracks": 0
+            },
+            {
+              "id": "west_2",
+              "pitch": 1,
+              "cracks": 0
+            },
+            {
+              "id": "west_3",
+              "pitch": 7,
+              "cracks": 0
+            }
+          ]
+        },
+        {
+          "realm": "north",
+          "qualifies_if": {
+            "memory_gte": 40,
+            "or_trust": "trust.sky"
+          },
+          "shards": [
+            {
+              "id": "north_1",
+              "pitch": 11,
+              "cracks": 0
+            },
+            {
+              "id": "north_2",
+              "pitch": 2,
+              "cracks": 0
+            },
+            {
+              "id": "north_3",
+              "pitch": 11,
+              "cracks": 0
+            }
+          ]
+        },
+        {
+          "realm": "south",
+          "qualifies_if": {
+            "memory_gte": 40,
+            "or_trust": "trust.earth"
+          },
+          "shards": [
+            {
+              "id": "south_1",
+              "pitch": 11,
+              "cracks": 0
+            },
+            {
+              "id": "south_2",
+              "pitch": 0,
+              "cracks": 0
+            },
+            {
+              "id": "south_3",
+              "pitch": 4,
+              "cracks": 0
+            }
+          ]
+        },
+        {
+          "realm": "east",
+          "qualifies_if": {
+            "memory_gte": 40,
+            "or_trust": "trust.water"
+          },
+          "shards": [
+            {
+              "id": "east_1",
+              "pitch": 7,
+              "cracks": 0
+            },
+            {
+              "id": "east_2",
+              "pitch": 5,
+              "cracks": 0
+            },
+            {
+              "id": "east_3",
+              "pitch": 9,
+              "cracks": 0
+            }
+          ]
+        },
+        {
+          "realm": "below",
+          "qualifies_if": {
+            "memory_gte": 40,
+            "or_trust": "trust.dark"
+          },
+          "shards": [
+            {
+              "id": "below_1",
+              "pitch": 4,
+              "cracks": 0
+            },
+            {
+              "id": "below_2",
+              "pitch": 9,
+              "cracks": 0
+            },
+            {
+              "id": "below_3",
+              "pitch": 1,
+              "cracks": 0
+            }
+          ]
+        },
+        {
+          "realm": "above",
+          "qualifies_if": {
+            "memory_gte": 40,
+            "or_trust": "trust.celestial"
+          },
+          "shards": [
+            {
+              "id": "above_1",
+              "pitch": 7,
+              "cracks": 0
+            },
+            {
+              "id": "above_2",
+              "pitch": 4,
+              "cracks": 0
+            },
+            {
+              "id": "above_3",
+              "pitch": 3,
+              "cracks": 0
+            }
+          ]
+        }
+      ],
+      "chord": [
+        0,
+        3,
+        5,
+        8,
+        10
+      ],
+      "min_sets": 4,
+      "on_win": {
+        "flag": "anchor_forged"
+      }
+    }
+  ]
+}

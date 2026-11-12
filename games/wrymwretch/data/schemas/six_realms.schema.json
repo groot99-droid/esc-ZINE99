@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "six_realms.json (WrymWretch)",
+  "description": "The Six Realms board, pieces, rules, and each match's elder and AI settings (DESIGN.md section 11).",
+  "type": "object",
+  "required": ["board", "pieces", "rules", "win_rewards", "matches"],
+  "properties": {
+    "board": {"type": "object", "required": ["radius", "hexes", "player_start", "elder_start"], "properties": {
+      "radius": {"type": "integer"}, "orientation": {"type": "string"},
+      "hexes": {"type": "array", "minItems": 19, "maxItems": 19, "items": {"type": "object", "required": ["id", "q", "r", "ring", "kind", "realm"],
+        "properties": {"id": {"type": "string"}, "q": {"type": "integer"}, "r": {"type": "integer"}, "ring": {"type": "integer", "minimum": 0, "maximum": 2},
+          "kind": {"enum": ["centre", "threshold", "home"]}, "realm": {"type": ["string", "null"]}}}},
+      "player_start": {"type": "array", "items": {"type": "string"}},
+      "elder_start": {"type": "array", "items": {"type": "string"}}}},
+    "pieces": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "required": ["tribe", "realm", "move", "power", "params"],
+      "properties": {"tribe": {"enum": ["wood", "sky", "earth", "water", "dark", "celestial"]}, "realm": {"type": "string"},
+        "move": {"type": "string"}, "power": {"type": "string"}, "params": {"type": "object"}}}},
+    "rules": {"type": "object", "required": ["pieces_per_side", "tide_every_rounds", "recall_per_game", "round_limit", "tie_goes_to"], "properties": {
+      "pieces_per_side": {"type": "integer"}, "tide_every_rounds": {"type": "integer"}, "tide_warning_rounds": {"type": "integer"},
+      "recall_per_game": {"type": "integer"}, "round_limit": {"type": "integer"}, "tie_goes_to": {"enum": ["elder", "player"]},
+      "undo_per_match": {"type": "integer"}}},
+    "win_rewards": {"type": "object", "required": ["realm_gain", "echoes", "counters"], "properties": {
+      "realm_gain": {"type": "integer"}, "echoes": {"type": "integer"}, "counters": {"type": "array", "items": {"type": "string"}}}},
+    "matches": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object",
+      "required": ["scene", "chapter", "opponent", "tribe", "trust_flag", "realm", "elder_pieces", "player_pieces", "house_rule", "ai", "watch_cost"],
+      "properties": {
+        "scene": {"type": "string"}, "chapter": {"type": "string"}, "opponent": {"type": "string"},
+        "tribe": {"enum": ["wood", "sky", "earth", "water", "dark", "celestial"]}, "trust_flag": {"type": "string"}, "realm": {"type": "string"},
+        "elder_pieces": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "player_pieces": {"type": ["array", "string"], "description": "Three tribes, or choose_3_from_party"},
+        "house_rule": {"type": ["object", "null"], "required": ["id", "text"], "properties": {"id": {"type": "string"}, "text": {"type": "string"}}},
+        "ai": {"type": "object", "required": ["depth", "style", "deliberate_errors", "tutorial_turns", "weights"], "properties": {
+          "depth": {"type": "integer", "minimum": 1}, "style": {"enum": ["balanced", "defensive", "aggressive", "slow", "tide-aware"]},
+          "deliberate_errors": {"type": "integer", "minimum": 0}, "tutorial_turns": {"type": "integer", "minimum": 0},
+          "weights": {"type": "object", "required": ["material", "thresholds", "centre", "safety", "tide"]}}},
+        "watch_cost": {"type": "integer", "minimum": 0}
+      }}}
+  }
+}

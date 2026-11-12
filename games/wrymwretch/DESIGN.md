@@ -999,7 +999,7 @@ remembrance known, Remind sends it home.
 | Realm | Creature | Role | First met |
 | --- | --- | --- | --- |
 | Forest | Grove Stag | Gentle; flees | `s_cedar_grove` |
-| Forest | Whisperfox | Mimics voices; confuses | `s_elder_tree` |
+| Forest | Whisperfox | Mimics voices; confuses | `s_cedar_grove` |
 | Forest | Rootbound Golem | Tank, roots | `s_elder_tree` |
 | Sky | Stormrider | Fast striker | `s_cloud_platform` |
 | Sky | Cloud Serpent | Coils; hits a row | `s_cloud_platform` |
@@ -1206,10 +1206,24 @@ chasm is one recording of three words. All spoken lines subtitled (TECH accessib
   used in sections 8–13; and four ledgers (`record`, `burned`, `witnesses`, `requests`).
 - `endings.json`: the four endings and conditions of section 13.
 
-Beyond the schemas, the build will need per-game tables not yet written: the bestiary (18 rows),
-abilities and Concords, Six Realms elder AI settings, Star Chart star fields and fragments, glyph
-pages and Heartstone chords. These belong in `data/` as further JSON files once the engine defines
-their shape.
+Beyond the shared schemas, six per-game files, each with its schema in `data/schemas/`
+(`<name>.schema.json`):
+
+| File | Holds |
+| --- | --- |
+| `bestiary.json` | The eighteen creatures in Codex order, each with its Codex spelling (Codex 65), realm, role, first meeting, battles, Life, move, weakness, lore and remembrance; the five Remnant and final foes; the roster of each of the eleven battles |
+| `abilities.json` | The six pairs (Life, tribe, trust flag, final-battle aid); their thirty abilities; Bond; the five commands; the six statuses; the fifteen Concords and the Concord rule |
+| `six_realms.json` | The 19-hex board, the six pieces, the rules, the win rewards, and each of the five matches: the elder's pieces, the house rule and the AI's depth, style, deliberate errors and weights |
+| `star_chart.json` | The three pages' star fields; the nine constellations with their lines and fragments (each fragment a checkable rule); the Sigil on the Priory and Expanse pages; the nine sources of Izladar fragments |
+| `glyph_pages.json` | The rune key (twelve runes from 48 glyph parts) and the three pages row by row: each row's rune and stable parts, the kill-list's witnesses and places, the seal's prefilled rows and the name |
+| `heartstone.json` | The three pages' trays, chords and the Anchor's six realm shard sets |
+
+`tools/check_data.py` checks each file against its schema, against the others, and against the
+four shared files: scene, flag, pair and ability names; every value a page changes is in that
+scene's `writes`; the Codex names; that every fragment rule holds on its constellation and any four
+of the Scholar's fragments fix every line (six are what `remembered_whole` needs); that every
+Heartstone chord can be set, the Choir's only with Fuse, and the Anchor with any four realms' sets
+but no three. `tools/validate.py` runs it.
 
 ## 19. Build plan
 
@@ -1274,6 +1288,12 @@ each dragon's flight model.
 
 **1D games.** All five games' rules (their types are assigned by COLLECTION.md); Six Realms as the
 tribes' game; the eight named constellations (the Sigil of Izladar is the author's); the rune key.
+
+**Data tables (section 18).** The bestiary's lore, weakness and remembrance lines, each creature's
+Life and move, and every battle roster beyond the creatures section 8 names; the Remnants' Life;
+the constellations' shapes and fragment wording (except the three example fragments above); the
+rune shapes; the elders' pieces, AI weights and the Stonekeepers' stone hexes; every shard's pitch
+and every chord.
 
 **Story elements.** The three memories Rhyla can keep; the fourth monolith row being unreadable;
 the Syndicate's game for the chamber; THE NAME as a Record entry; the archivist choice in Kael's

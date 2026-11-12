@@ -1,0 +1,424 @@
+{
+  "board": {
+    "radius": 2,
+    "orientation": "flat-top axial, clockwise from top",
+    "hexes": [
+      {
+        "id": "centre",
+        "q": 0,
+        "r": 0,
+        "ring": 0,
+        "kind": "centre",
+        "realm": null
+      },
+      {
+        "id": "threshold_north",
+        "q": 0,
+        "r": -1,
+        "ring": 1,
+        "kind": "threshold",
+        "realm": "north"
+      },
+      {
+        "id": "threshold_above",
+        "q": 1,
+        "r": -1,
+        "ring": 1,
+        "kind": "threshold",
+        "realm": "above"
+      },
+      {
+        "id": "threshold_east",
+        "q": 1,
+        "r": 0,
+        "ring": 1,
+        "kind": "threshold",
+        "realm": "east"
+      },
+      {
+        "id": "threshold_south",
+        "q": 0,
+        "r": 1,
+        "ring": 1,
+        "kind": "threshold",
+        "realm": "south"
+      },
+      {
+        "id": "threshold_below",
+        "q": -1,
+        "r": 1,
+        "ring": 1,
+        "kind": "threshold",
+        "realm": "below"
+      },
+      {
+        "id": "threshold_west",
+        "q": -1,
+        "r": 0,
+        "ring": 1,
+        "kind": "threshold",
+        "realm": "west"
+      },
+      {
+        "id": "home_north_a",
+        "q": 0,
+        "r": -2,
+        "ring": 2,
+        "kind": "home",
+        "realm": "north"
+      },
+      {
+        "id": "home_north_b",
+        "q": 1,
+        "r": -2,
+        "ring": 2,
+        "kind": "home",
+        "realm": "north"
+      },
+      {
+        "id": "home_above_a",
+        "q": 2,
+        "r": -2,
+        "ring": 2,
+        "kind": "home",
+        "realm": "above"
+      },
+      {
+        "id": "home_above_b",
+        "q": 2,
+        "r": -1,
+        "ring": 2,
+        "kind": "home",
+        "realm": "above"
+      },
+      {
+        "id": "home_east_a",
+        "q": 2,
+        "r": 0,
+        "ring": 2,
+        "kind": "home",
+        "realm": "east"
+      },
+      {
+        "id": "home_east_b",
+        "q": 1,
+        "r": 1,
+        "ring": 2,
+        "kind": "home",
+        "realm": "east"
+      },
+      {
+        "id": "home_south_a",
+        "q": 0,
+        "r": 2,
+        "ring": 2,
+        "kind": "home",
+        "realm": "south"
+      },
+      {
+        "id": "home_south_b",
+        "q": -1,
+        "r": 2,
+        "ring": 2,
+        "kind": "home",
+        "realm": "south"
+      },
+      {
+        "id": "home_below_a",
+        "q": -2,
+        "r": 2,
+        "ring": 2,
+        "kind": "home",
+        "realm": "below"
+      },
+      {
+        "id": "home_below_b",
+        "q": -2,
+        "r": 1,
+        "ring": 2,
+        "kind": "home",
+        "realm": "below"
+      },
+      {
+        "id": "home_west_a",
+        "q": -2,
+        "r": 0,
+        "ring": 2,
+        "kind": "home",
+        "realm": "west"
+      },
+      {
+        "id": "home_west_b",
+        "q": -1,
+        "r": -1,
+        "ring": 2,
+        "kind": "home",
+        "realm": "west"
+      }
+    ],
+    "player_start": [
+      "home_east_b",
+      "home_south_a",
+      "home_south_b"
+    ],
+    "elder_start": [
+      "home_north_a",
+      "home_north_b",
+      "home_west_b"
+    ]
+  },
+  "pieces": [
+    {
+      "tribe": "wood",
+      "realm": "west",
+      "move": "1 hex",
+      "power": "Leaves a Grove on the hex it left; enemies cannot enter it for 2 turns",
+      "params": {
+        "move": 1,
+        "grove_turns": 2
+      }
+    },
+    {
+      "tribe": "sky",
+      "realm": "north",
+      "move": "Up to 3 in a straight line, jumping pieces",
+      "power": "",
+      "params": {
+        "move": 3,
+        "straight": true,
+        "jumps": true
+      }
+    },
+    {
+      "tribe": "earth",
+      "realm": "south",
+      "move": "1 hex",
+      "power": "Cannot be captured on a home hex; may raise a Stone (permanent block) instead of moving, twice a game",
+      "params": {
+        "move": 1,
+        "safe_on_home": true,
+        "stones": 2,
+        "survives_tide": true
+      }
+    },
+    {
+      "tribe": "water",
+      "realm": "east",
+      "move": "Up to 2",
+      "power": "May push an adjacent piece 1 hex instead of capturing",
+      "params": {
+        "move": 2,
+        "push": 1
+      }
+    },
+    {
+      "tribe": "dark",
+      "realm": "below",
+      "move": "1 hex, or swap with a friendly piece within 2",
+      "power": "Shown face-down until it captures or an enemy stands next to it",
+      "params": {
+        "move": 1,
+        "swap_range": 2,
+        "hidden": true
+      }
+    },
+    {
+      "tribe": "celestial",
+      "realm": "above",
+      "move": "1 hex",
+      "power": "Friendly pieces next to it cannot be captured",
+      "params": {
+        "move": 1,
+        "protects_adjacent": true
+      }
+    }
+  ],
+  "rules": {
+    "pieces_per_side": 3,
+    "tide_every_rounds": 3,
+    "tide_warning_rounds": 1,
+    "recall_per_game": 1,
+    "round_limit": 16,
+    "tie_goes_to": "elder",
+    "undo_per_match": 1
+  },
+  "win_rewards": {
+    "realm_gain": 3,
+    "echoes": 2,
+    "counters": [
+      "tribes_trusted",
+      "realms_matches_won"
+    ]
+  },
+  "matches": [
+    {
+      "scene": "s_realms_syndicate",
+      "chapter": "pr_kael",
+      "opponent": "Syndicate Elder",
+      "tribe": "dark",
+      "trust_flag": "trust.dark",
+      "realm": "below",
+      "elder_pieces": [
+        "dark",
+        "water",
+        "sky"
+      ],
+      "player_pieces": [
+        "dark",
+        "earth",
+        "wood"
+      ],
+      "house_rule": null,
+      "ai": {
+        "depth": 2,
+        "style": "balanced",
+        "deliberate_errors": 1,
+        "tutorial_turns": 2,
+        "weights": {
+          "material": 1.0,
+          "thresholds": 1.0,
+          "centre": 1.0,
+          "safety": 1.0,
+          "tide": 0.5
+        }
+      },
+      "watch_cost": 0
+    },
+    {
+      "scene": "s_realms_seasons",
+      "chapter": "cv_moot",
+      "opponent": "Circle of Seasons",
+      "tribe": "wood",
+      "trust_flag": "trust.wood",
+      "realm": "west",
+      "elder_pieces": [
+        "wood",
+        "earth",
+        "celestial"
+      ],
+      "player_pieces": "choose_3_from_party",
+      "house_rule": {
+        "id": "long_groves",
+        "text": "Groves last 3 turns",
+        "grove_turns": 3
+      },
+      "ai": {
+        "depth": 3,
+        "style": "defensive",
+        "deliberate_errors": 0,
+        "tutorial_turns": 0,
+        "weights": {
+          "material": 1.0,
+          "thresholds": 0.8,
+          "centre": 0.6,
+          "safety": 1.6,
+          "tide": 0.8
+        }
+      },
+      "watch_cost": 1
+    },
+    {
+      "scene": "s_realms_galechanters",
+      "chapter": "cv_moot",
+      "opponent": "Galechanters",
+      "tribe": "sky",
+      "trust_flag": "trust.sky",
+      "realm": "north",
+      "elder_pieces": [
+        "sky",
+        "water",
+        "wood"
+      ],
+      "player_pieces": "choose_3_from_party",
+      "house_rule": {
+        "id": "wind",
+        "text": "A wind blows each round (shown); moves with it go 1 further",
+        "wind_bonus": 1,
+        "wind_shown": true
+      },
+      "ai": {
+        "depth": 3,
+        "style": "aggressive",
+        "deliberate_errors": 0,
+        "tutorial_turns": 0,
+        "weights": {
+          "material": 1.4,
+          "thresholds": 1.0,
+          "centre": 1.4,
+          "safety": 0.6,
+          "tide": 0.5
+        }
+      },
+      "watch_cost": 1
+    },
+    {
+      "scene": "s_realms_stonekeepers",
+      "chapter": "cv_moot",
+      "opponent": "Stonekeepers",
+      "tribe": "earth",
+      "trust_flag": "trust.earth",
+      "realm": "south",
+      "elder_pieces": [
+        "earth",
+        "wood",
+        "celestial"
+      ],
+      "player_pieces": "choose_3_from_party",
+      "house_rule": {
+        "id": "stones_at_start",
+        "text": "Two Stones on the board at start",
+        "stones": [
+          "home_above_a",
+          "home_below_a"
+        ]
+      },
+      "ai": {
+        "depth": 3,
+        "style": "slow",
+        "deliberate_errors": 0,
+        "tutorial_turns": 0,
+        "weights": {
+          "material": 1.0,
+          "thresholds": 1.2,
+          "centre": 0.5,
+          "safety": 1.4,
+          "tide": 1.0
+        }
+      },
+      "watch_cost": 1
+    },
+    {
+      "scene": "s_realms_tidecallers",
+      "chapter": "cv_moot",
+      "opponent": "Tidecallers",
+      "tribe": "water",
+      "trust_flag": "trust.water",
+      "realm": "east",
+      "elder_pieces": [
+        "water",
+        "sky",
+        "celestial"
+      ],
+      "player_pieces": "choose_3_from_party",
+      "house_rule": {
+        "id": "fast_tide",
+        "text": "The tide forgets every second round",
+        "tide_every_rounds": 2
+      },
+      "ai": {
+        "depth": 3,
+        "style": "tide-aware",
+        "deliberate_errors": 0,
+        "tutorial_turns": 0,
+        "weights": {
+          "material": 1.0,
+          "thresholds": 1.0,
+          "centre": 0.8,
+          "safety": 1.0,
+          "tide": 2.0
+        }
+      },
+      "watch_cost": 1
+    }
+  ]
+}

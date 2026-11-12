@@ -1,0 +1,724 @@
+{
+  "bond": {
+    "max": 10,
+    "per_round": 1,
+    "same_target_bonus": 2
+  },
+  "actions_per_round": 2,
+  "pairs": [
+    {
+      "id": "thalen_sylvan",
+      "elf": "Thalen of Cedarheart",
+      "dragon": "Sylvan",
+      "realm": "west",
+      "tribe": "wood",
+      "trust_flag": "trust.wood",
+      "memory_meter": "memory.west",
+      "life": 90,
+      "elf_skills": [
+        "pin_shot",
+        "track"
+      ],
+      "dragon_gifts": [
+        "thornbind",
+        "greenmend"
+      ],
+      "joined": "verdant_wake",
+      "final_battle_aid": {
+        "round": 3,
+        "effect": "heal 15 to every pair"
+      }
+    },
+    {
+      "id": "aeris_aetherius",
+      "elf": "Lady Aeris Galewing",
+      "dragon": "Aetherius",
+      "realm": "north",
+      "tribe": "sky",
+      "trust_flag": "trust.sky",
+      "memory_meter": "memory.north",
+      "life": 75,
+      "elf_skills": [
+        "gale_song",
+        "windread"
+      ],
+      "dragon_gifts": [
+        "shear",
+        "calm_the_storm"
+      ],
+      "joined": "shared_thought",
+      "final_battle_aid": {
+        "round": 1,
+        "effect": "every pair gets one extra action"
+      }
+    },
+    {
+      "id": "rhyla_gaia",
+      "elf": "Elder Rhyla Mosswhisper",
+      "dragon": "Gaia",
+      "realm": "south",
+      "tribe": "earth",
+      "trust_flag": "trust.earth",
+      "memory_meter": "memory.south",
+      "life": 110,
+      "elf_skills": [
+        "stonestaff",
+        "ancestral_ward"
+      ],
+      "dragon_gifts": [
+        "upheaval",
+        "fossil_recall"
+      ],
+      "joined": "bedrock",
+      "final_battle_aid": {
+        "round": 2,
+        "effect": "Stonewall, Guard +10 to every pair for 2 rounds"
+      }
+    },
+    {
+      "id": "lunessa_aquatica",
+      "elf": "Lunessa Tidecaller",
+      "dragon": "Aquatica",
+      "realm": "east",
+      "tribe": "water",
+      "trust_flag": "trust.water",
+      "memory_meter": "memory.east",
+      "life": 85,
+      "elf_skills": [
+        "tide_heal",
+        "current_read"
+      ],
+      "dragon_gifts": [
+        "riptide",
+        "purify"
+      ],
+      "joined": "high_tide",
+      "final_battle_aid": {
+        "round": 4,
+        "effect": "cleanse every Unnamed ability"
+      }
+    },
+    {
+      "id": "kael_umbra",
+      "elf": "Kael Duskbane",
+      "dragon": "Umbra",
+      "realm": "below",
+      "tribe": "dark",
+      "trust_flag": "trust.dark",
+      "memory_meter": "memory.below",
+      "life": 80,
+      "elf_skills": [
+        "shadowblade",
+        "mark_for_the_hunt"
+      ],
+      "dragon_gifts": [
+        "veil",
+        "phantasm"
+      ],
+      "joined": "the_hunt",
+      "final_battle_aid": {
+        "round": 1,
+        "effect": "the Echo loses its first action"
+      }
+    },
+    {
+      "id": "seraphyne_astraia",
+      "elf": "Scholar Seraphyne",
+      "dragon": "Astraia",
+      "realm": "above",
+      "tribe": "celestial",
+      "trust_flag": "trust.celestial",
+      "memory_meter": "memory.above",
+      "life": 80,
+      "elf_skills": [
+        "starlore",
+        "benediction"
+      ],
+      "dragon_gifts": [
+        "astral_shield",
+        "celestial_beam"
+      ],
+      "joined": "glimpse",
+      "final_battle_aid": {
+        "round": 1,
+        "effect": "the Echo's intents are shown for the whole battle"
+      }
+    }
+  ],
+  "abilities": [
+    {
+      "id": "pin_shot",
+      "pair": "thalen_sylvan",
+      "slot": "elf",
+      "name": "Pin Shot",
+      "effect": "12, target slowed",
+      "actions": 1,
+      "numbers": {
+        "damage": 12,
+        "status": "slowed"
+      }
+    },
+    {
+      "id": "track",
+      "pair": "thalen_sylvan",
+      "slot": "elf",
+      "name": "Track",
+      "effect": "target takes +25%",
+      "actions": 1,
+      "numbers": {
+        "damage_taken_bonus": 0.25
+      }
+    },
+    {
+      "id": "thornbind",
+      "pair": "thalen_sylvan",
+      "slot": "dragon",
+      "name": "Thornbind",
+      "effect": "root 1 turn",
+      "actions": 1,
+      "numbers": {
+        "status": "rooted",
+        "rounds": 1
+      }
+    },
+    {
+      "id": "greenmend",
+      "pair": "thalen_sylvan",
+      "slot": "dragon",
+      "name": "Greenmend",
+      "effect": "heal 18",
+      "actions": 1,
+      "numbers": {
+        "heal": 18
+      }
+    },
+    {
+      "id": "verdant_wake",
+      "pair": "thalen_sylvan",
+      "slot": "joined",
+      "name": "Verdant Wake",
+      "effect": "heal 12 all, cleanse 1",
+      "actions": 2,
+      "numbers": {
+        "heal_all": 12,
+        "cleanse": 1
+      }
+    },
+    {
+      "id": "gale_song",
+      "pair": "aeris_aetherius",
+      "slot": "elf",
+      "name": "Gale Song",
+      "effect": "an ally gets +1 action next round",
+      "actions": 1,
+      "numbers": {
+        "extra_actions": 1
+      }
+    },
+    {
+      "id": "windread",
+      "pair": "aeris_aetherius",
+      "slot": "elf",
+      "name": "Windread",
+      "effect": "one enemy's intent",
+      "actions": 1,
+      "numbers": {
+        "reveal_intents": 1
+      }
+    },
+    {
+      "id": "shear",
+      "pair": "aeris_aetherius",
+      "slot": "dragon",
+      "name": "Shear",
+      "effect": "18",
+      "actions": 1,
+      "numbers": {
+        "damage": 18
+      }
+    },
+    {
+      "id": "calm_the_storm",
+      "pair": "aeris_aetherius",
+      "slot": "dragon",
+      "name": "Calm the Storm",
+      "effect": "strip enemy boosts",
+      "actions": 1,
+      "numbers": {
+        "strip_boosts": true
+      }
+    },
+    {
+      "id": "shared_thought",
+      "pair": "aeris_aetherius",
+      "slot": "joined",
+      "name": "Shared Thought",
+      "effect": "all intents shown, Bond +1 all",
+      "actions": 2,
+      "numbers": {
+        "reveal_intents": "all",
+        "bond_all": 1
+      }
+    },
+    {
+      "id": "stonestaff",
+      "pair": "rhyla_gaia",
+      "slot": "elf",
+      "name": "Stonestaff",
+      "effect": "14",
+      "actions": 1,
+      "numbers": {
+        "damage": 14
+      }
+    },
+    {
+      "id": "ancestral_ward",
+      "pair": "rhyla_gaia",
+      "slot": "elf",
+      "name": "Ancestral Ward",
+      "effect": "ally Guard +10",
+      "actions": 1,
+      "numbers": {
+        "guard": 10
+      }
+    },
+    {
+      "id": "upheaval",
+      "pair": "rhyla_gaia",
+      "slot": "dragon",
+      "name": "Upheaval",
+      "effect": "16 to front row",
+      "actions": 1,
+      "numbers": {
+        "damage": 16,
+        "target": "front_row"
+      }
+    },
+    {
+      "id": "fossil_recall",
+      "pair": "rhyla_gaia",
+      "slot": "dragon",
+      "name": "Fossil Recall",
+      "effect": "restore one enemy page",
+      "actions": 1,
+      "numbers": {
+        "restore_pages": 1
+      }
+    },
+    {
+      "id": "bedrock",
+      "pair": "rhyla_gaia",
+      "slot": "joined",
+      "name": "Bedrock",
+      "effect": "party immune to Unnamed 2 rounds",
+      "actions": 2,
+      "numbers": {
+        "immune": "unnamed",
+        "rounds": 2
+      }
+    },
+    {
+      "id": "tide_heal",
+      "pair": "lunessa_aquatica",
+      "slot": "elf",
+      "name": "Tide Heal",
+      "effect": "20",
+      "actions": 1,
+      "numbers": {
+        "heal": 20
+      }
+    },
+    {
+      "id": "current_read",
+      "pair": "lunessa_aquatica",
+      "slot": "elf",
+      "name": "Current Read",
+      "effect": "dodge +30% 1 round",
+      "actions": 1,
+      "numbers": {
+        "dodge": 0.3,
+        "rounds": 1
+      }
+    },
+    {
+      "id": "riptide",
+      "pair": "lunessa_aquatica",
+      "slot": "dragon",
+      "name": "Riptide",
+      "effect": "16, pull to front",
+      "actions": 1,
+      "numbers": {
+        "damage": 16,
+        "pull": "front"
+      }
+    },
+    {
+      "id": "purify",
+      "pair": "lunessa_aquatica",
+      "slot": "dragon",
+      "name": "Purify",
+      "effect": "cleanse all on one ally, incl. Unnamed",
+      "actions": 1,
+      "numbers": {
+        "cleanse": "all",
+        "includes_unnamed": true
+      }
+    },
+    {
+      "id": "high_tide",
+      "pair": "lunessa_aquatica",
+      "slot": "joined",
+      "name": "High Tide",
+      "effect": "22 to one lane",
+      "actions": 2,
+      "numbers": {
+        "damage": 22,
+        "target": "lane"
+      }
+    },
+    {
+      "id": "shadowblade",
+      "pair": "kael_umbra",
+      "slot": "elf",
+      "name": "Shadowblade",
+      "effect": "20; 30 vs. marked",
+      "actions": 1,
+      "numbers": {
+        "damage": 20,
+        "damage_vs_marked": 30
+      }
+    },
+    {
+      "id": "mark_for_the_hunt",
+      "pair": "kael_umbra",
+      "slot": "elf",
+      "name": "Mark for the Hunt",
+      "effect": "Marks one enemy: Shadowblade and The Hunt do more to it",
+      "actions": 1,
+      "numbers": {
+        "status": "marked"
+      }
+    },
+    {
+      "id": "veil",
+      "pair": "kael_umbra",
+      "slot": "dragon",
+      "name": "Veil",
+      "effect": "ally untargetable 1 round",
+      "actions": 1,
+      "numbers": {
+        "status": "hidden",
+        "rounds": 1
+      }
+    },
+    {
+      "id": "phantasm",
+      "pair": "kael_umbra",
+      "slot": "dragon",
+      "name": "Phantasm",
+      "effect": "decoy draws one attack",
+      "actions": 1,
+      "numbers": {
+        "decoy": 1
+      }
+    },
+    {
+      "id": "the_hunt",
+      "pair": "kael_umbra",
+      "slot": "joined",
+      "name": "The Hunt",
+      "effect": "30, +15 if marked",
+      "actions": 2,
+      "numbers": {
+        "damage": 30,
+        "bonus_vs_marked": 15
+      }
+    },
+    {
+      "id": "starlore",
+      "pair": "seraphyne_astraia",
+      "slot": "elf",
+      "name": "Starlore",
+      "effect": "enemy page in full, +1 Echo",
+      "actions": 1,
+      "numbers": {
+        "reveal_page": true,
+        "echoes": 1
+      }
+    },
+    {
+      "id": "benediction",
+      "pair": "seraphyne_astraia",
+      "slot": "elf",
+      "name": "Benediction",
+      "effect": "heal 15, Bond +1",
+      "actions": 1,
+      "numbers": {
+        "heal": 15,
+        "bond": 1
+      }
+    },
+    {
+      "id": "astral_shield",
+      "pair": "seraphyne_astraia",
+      "slot": "dragon",
+      "name": "Astral Shield",
+      "effect": "absorb 20",
+      "actions": 1,
+      "numbers": {
+        "absorb": 20,
+        "status": "shielded"
+      }
+    },
+    {
+      "id": "celestial_beam",
+      "pair": "seraphyne_astraia",
+      "slot": "dragon",
+      "name": "Celestial Beam",
+      "effect": "24, pierces",
+      "actions": 1,
+      "numbers": {
+        "damage": 24,
+        "pierce": true
+      }
+    },
+    {
+      "id": "glimpse",
+      "pair": "seraphyne_astraia",
+      "slot": "joined",
+      "name": "Glimpse",
+      "effect": "enemy's next 2 turns; once a battle",
+      "actions": 2,
+      "numbers": {
+        "reveal_turns": 2,
+        "per_battle": 1
+      }
+    }
+  ],
+  "commands": [
+    {
+      "id": "remind",
+      "name": "Remind",
+      "actions": 1,
+      "echo_cost": 0,
+      "requires": "remembrance_known",
+      "effect": "The creature leaves and is recorded; +1 its realm, +1 Echo"
+    },
+    {
+      "id": "recall",
+      "name": "Recall",
+      "actions": 1,
+      "echo_cost": 1,
+      "requires": null,
+      "effect": "Restore one Unnamed ability"
+    },
+    {
+      "id": "burn",
+      "name": "Burn",
+      "actions": 1,
+      "echo_cost": 0,
+      "requires": "record_entry",
+      "effect": "Spend a Record entry: full Bond refill for the party, or 30 damage; the entry is forgotten, logged in burned, and its realm loses 4",
+      "damage": 30,
+      "realm_loss": 4
+    },
+    {
+      "id": "guard",
+      "name": "Guard",
+      "actions": 1,
+      "echo_cost": 0,
+      "requires": null,
+      "effect": "Guard +10 until the pair's next round",
+      "guard": 10
+    },
+    {
+      "id": "swap",
+      "name": "Swap",
+      "actions": 2,
+      "echo_cost": 0,
+      "requires": null,
+      "effect": "Bring in a reserve pair; the outgoing pair's actions are spent"
+    }
+  ],
+  "statuses": [
+    {
+      "id": "unnamed",
+      "name": "Unnamed",
+      "effect": "An ability's name is blank: usable alone at 75% power, unusable in a Concord",
+      "power": 0.75
+    },
+    {
+      "id": "hidden",
+      "name": "Hidden",
+      "effect": "Cannot be targeted",
+      "rounds": 1
+    },
+    {
+      "id": "shielded",
+      "name": "Shielded",
+      "effect": "Damage is absorbed first",
+      "rounds": 2
+    },
+    {
+      "id": "rooted",
+      "name": "Rooted",
+      "effect": "Cannot move lanes or Swap",
+      "rounds": 1
+    },
+    {
+      "id": "slowed",
+      "name": "Slowed",
+      "effect": "Acts last in the round",
+      "rounds": 2
+    },
+    {
+      "id": "marked",
+      "name": "Marked",
+      "effect": "Shadowblade and The Hunt do more",
+      "rounds": 3
+    }
+  ],
+  "concord_rule": {
+    "bond_min": 4,
+    "bond_cost": 4,
+    "uses_both_pairs_actions": true,
+    "requires_named": "both gifts of both dragons"
+  },
+  "concords": [
+    {
+      "id": "seedstorm",
+      "name": "Seedstorm",
+      "dragons": [
+        "Sylvan",
+        "Aetherius"
+      ],
+      "effect": "Heal 20 all, cleanse 1 each"
+    },
+    {
+      "id": "rootstone",
+      "name": "Rootstone",
+      "dragons": [
+        "Sylvan",
+        "Gaia"
+      ],
+      "effect": "Root the enemy front row 1 round; Guard +10 all"
+    },
+    {
+      "id": "rainbloom",
+      "name": "Rainbloom",
+      "dragons": [
+        "Sylvan",
+        "Aquatica"
+      ],
+      "effect": "Heal 35 one; or revive a dormant pair at 25%"
+    },
+    {
+      "id": "thornshade",
+      "name": "Thornshade",
+      "dragons": [
+        "Sylvan",
+        "Umbra"
+      ],
+      "effect": "Attackers take 10 back for 2 rounds"
+    },
+    {
+      "id": "starseed",
+      "name": "Starseed",
+      "dragons": [
+        "Sylvan",
+        "Astraia"
+      ],
+      "effect": "A seed of light; next round 30 to all enemies"
+    },
+    {
+      "id": "sandgale",
+      "name": "Sandgale",
+      "dragons": [
+        "Aetherius",
+        "Gaia"
+      ],
+      "effect": "Enemies miss half their attacks for 2 rounds"
+    },
+    {
+      "id": "squall",
+      "name": "Squall",
+      "dragons": [
+        "Aetherius",
+        "Aquatica"
+      ],
+      "effect": "25 to all; back row pushed forward"
+    },
+    {
+      "id": "whisper_in_the_dark",
+      "name": "Whisper in the Dark",
+      "dragons": [
+        "Aetherius",
+        "Umbra"
+      ],
+      "effect": "Two enemies attack each other"
+    },
+    {
+      "id": "skyread",
+      "name": "Skyread",
+      "dragons": [
+        "Aetherius",
+        "Astraia"
+      ],
+      "effect": "All intents shown 3 rounds; +1 action all next round"
+    },
+    {
+      "id": "fossil_tide",
+      "name": "Fossil Tide",
+      "dragons": [
+        "Gaia",
+        "Aquatica"
+      ],
+      "effect": "Every present enemy's page restored (Remind opens)"
+    },
+    {
+      "id": "undermine",
+      "name": "Undermine",
+      "dragons": [
+        "Gaia",
+        "Umbra"
+      ],
+      "effect": "45 to one, ignores Guard"
+    },
+    {
+      "id": "crystal_aegis",
+      "name": "Crystal Aegis",
+      "dragons": [
+        "Gaia",
+        "Astraia"
+      ],
+      "effect": "Absorb 25 on every pair"
+    },
+    {
+      "id": "black_current",
+      "name": "Black Current",
+      "dragons": [
+        "Aquatica",
+        "Umbra"
+      ],
+      "effect": "20 drained from every enemy, shared out as healing"
+    },
+    {
+      "id": "moonwell",
+      "name": "Moonwell",
+      "dragons": [
+        "Aquatica",
+        "Astraia"
+      ],
+      "effect": "Every Unnamed ability in the party restored"
+    },
+    {
+      "id": "eclipse",
+      "name": "Eclipse",
+      "dragons": [
+        "Umbra",
+        "Astraia"
+      ],
+      "effect": "60 to one; both pairs skip their next round"
+    }
+  ]
+}

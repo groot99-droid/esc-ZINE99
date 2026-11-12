@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "bestiary.json (WrymWretch)",
+  "description": "The eighteen Codex creatures, the other foes, and the roster of each of the eleven battles (DESIGN.md section 12).",
+  "type": "object",
+  "required": ["codex_source", "codex_line", "realm_of_group", "creatures", "other_foes", "battles"],
+  "properties": {
+    "codex_source": {"type": "string"},
+    "codex_line": {"type": "integer"},
+    "realm_of_group": {"type": "object"},
+    "creatures": {"type": "array", "minItems": 18, "maxItems": 18, "items": {"type": "object",
+      "required": ["id", "name", "codex_name", "codex_group", "realm", "role", "first_met", "seen_in", "battles", "life", "move", "weakness", "lore", "remembrance"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z_]+$"},
+        "name": {"type": "string", "description": "Singular, as the game shows it on the page"},
+        "codex_name": {"type": "string", "description": "Exactly as the Codex spells it (line 65)"},
+        "codex_group": {"enum": ["Forest", "Sky", "Earth", "Water", "Dark", "Celestial"]},
+        "realm": {"enum": ["west", "north", "south", "east", "below", "above"]},
+        "role": {"type": "string"},
+        "first_met": {"type": "string", "description": "A 3D scene id"},
+        "seen_in": {"type": "array", "items": {"type": "string"}},
+        "battles": {"type": "array", "items": {"type": "string"}},
+        "life": {"type": "integer", "minimum": 1},
+        "move": {"type": "object", "required": ["name", "effect"], "properties": {"name": {"type": "string"}, "effect": {"type": "string"}}},
+        "weakness": {"type": "object", "required": ["text", "weak_to"], "properties": {
+          "text": {"type": "string"}, "weak_to": {"type": "array", "items": {"type": "string"}, "description": "Ability or Concord ids"}}},
+        "lore": {"type": "string"},
+        "remembrance": {"type": "string", "description": "What it was before; Remind needs it known"},
+        "follows_party_when_reminded": {"type": "boolean"}
+      }}},
+    "other_foes": {"type": "array", "items": {"type": "object", "required": ["id", "name", "role", "life"],
+      "properties": {"id": {"type": "string"}, "name": {"type": "string"}, "role": {"type": "string"}, "life": {"type": "integer", "minimum": 1}}}},
+    "battles": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"type": "object", "required": ["scene", "kind", "can_lose", "roster"],
+      "properties": {
+        "scene": {"type": "string"},
+        "kind": {"enum": ["prologue", "rim_ambush", "dawn_defence", "guardian", "boss", "final"]},
+        "can_lose": {"type": "boolean"},
+        "roster": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["foe", "count"],
+          "properties": {"foe": {"type": "string"}, "count": {"type": "integer", "minimum": 1}}}}
+      }}}
+  }
+}
