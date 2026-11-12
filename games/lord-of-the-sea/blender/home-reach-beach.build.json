@@ -1,0 +1,1064 @@
+{
+  "game": "lord-of-the-sea",
+  "location": "home-reach-beach",
+  "name": "The beach of Home Reach",
+  "reference": "assets/locations/home-reach-beach.jpg",
+  "bounds_m": [
+    220,
+    60,
+    30
+  ],
+  "origin": "beach centre on the high-water line; +y toward the sea (the tideline band at y 6..12, surf at 13, the boat at anchor out at y 160); the wooded headland at the -x end",
+  "materials": {
+    "sand": {
+      "color": [
+        0.851,
+        0.769,
+        0.604
+      ],
+      "roughness": 0.95
+    },
+    "wet-sand": {
+      "color": [
+        0.659,
+        0.58,
+        0.424
+      ],
+      "roughness": 0.4
+    },
+    "sea": {
+      "color": [
+        0.184,
+        0.42,
+        0.369
+      ],
+      "roughness": 0.1
+    },
+    "foam": {
+      "color": [
+        0.91,
+        0.949,
+        0.933
+      ],
+      "roughness": 0.6
+    },
+    "forest": {
+      "color": [
+        0.184,
+        0.243,
+        0.145
+      ],
+      "roughness": 0.95
+    },
+    "rock": {
+      "color": [
+        0.353,
+        0.337,
+        0.314
+      ],
+      "roughness": 0.9
+    },
+    "weed": {
+      "color": [
+        0.29,
+        0.227,
+        0.133
+      ],
+      "roughness": 0.9
+    },
+    "hull": {
+      "color": [
+        0.227,
+        0.165,
+        0.11
+      ],
+      "roughness": 0.85
+    },
+    "island": {
+      "color": [
+        0.431,
+        0.416,
+        0.4
+      ],
+      "roughness": 0.95
+    },
+    "glass-lane": {
+      "color": [
+        0.561,
+        0.702,
+        0.761
+      ],
+      "roughness": 0.05
+    }
+  },
+  "blockout": [
+    {
+      "id": "sand",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        220,
+        36,
+        0.5
+      ],
+      "location": [
+        0,
+        -12,
+        -0.25
+      ],
+      "material": "sand"
+    },
+    {
+      "id": "dune-bank",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        220,
+        6,
+        2.5
+      ],
+      "location": [
+        0,
+        -27,
+        1.25
+      ],
+      "material": "sand"
+    },
+    {
+      "id": "tideline-band",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        220,
+        6,
+        0.1
+      ],
+      "location": [
+        0,
+        9,
+        -0.05
+      ],
+      "material": "wet-sand"
+    },
+    {
+      "id": "seaweed-line",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        160,
+        0.6,
+        0.05
+      ],
+      "location": [
+        10,
+        5.6,
+        0.02
+      ],
+      "material": "weed"
+    },
+    {
+      "id": "surf",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        220,
+        1.2,
+        0.15
+      ],
+      "location": [
+        0,
+        13.0,
+        0.05
+      ],
+      "material": "foam",
+      "collide": false
+    },
+    {
+      "id": "sea",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        220,
+        18,
+        0
+      ],
+      "location": [
+        0,
+        21,
+        -0.1
+      ],
+      "material": "sea"
+    },
+    {
+      "id": "headland-west",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        50,
+        40,
+        28
+      ],
+      "location": [
+        -100,
+        6,
+        0
+      ],
+      "material": "forest"
+    },
+    {
+      "id": "headland-west-rocks",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        12,
+        8,
+        4
+      ],
+      "location": [
+        -82,
+        22,
+        0
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "headland-east",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        30,
+        24,
+        12
+      ],
+      "location": [
+        104,
+        18,
+        0
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "anchored-boat",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        4,
+        16,
+        18
+      ],
+      "location": [
+        30,
+        160,
+        0
+      ],
+      "material": "hull"
+    },
+    {
+      "id": "island-west",
+      "shape": "sphere",
+      "role": "sky",
+      "size_m": [
+        80,
+        30,
+        20
+      ],
+      "location": [
+        -60,
+        400,
+        0
+      ],
+      "material": "island"
+    },
+    {
+      "id": "island-east",
+      "shape": "sphere",
+      "role": "sky",
+      "size_m": [
+        60,
+        20,
+        10
+      ],
+      "location": [
+        260,
+        420,
+        0
+      ],
+      "material": "island"
+    },
+    {
+      "id": "open-sea",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        1200,
+        800,
+        0
+      ],
+      "location": [
+        0,
+        400,
+        -0.1
+      ],
+      "material": "sea"
+    },
+    {
+      "id": "glass-lane",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        30,
+        400,
+        0
+      ],
+      "location": [
+        60,
+        400,
+        0.0
+      ],
+      "material": "glass-lane"
+    }
+  ],
+  "props": [
+    {
+      "id": "tideline-stone",
+      "object": "tideline-stone",
+      "location": [
+        8,
+        5,
+        0
+      ]
+    },
+    {
+      "id": "dinghy",
+      "object": "dinghy",
+      "location": [
+        -12,
+        7,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        70
+      ]
+    },
+    {
+      "id": "oar",
+      "object": "oar",
+      "location": [
+        -9.5,
+        5.0,
+        0.05
+      ],
+      "rotation_deg": [
+        0,
+        90,
+        20
+      ],
+      "ground": true
+    },
+    {
+      "id": "rum-bottle",
+      "object": "rum-bottle",
+      "location": [
+        6.5,
+        7.5,
+        0.045
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        40
+      ]
+    },
+    {
+      "id": "lobster-pot",
+      "object": "lobster-pot",
+      "location": [
+        -3,
+        8.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        25
+      ]
+    },
+    {
+      "id": "lobster-pot-2",
+      "object": "lobster-pot",
+      "location": [
+        -26,
+        1.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -10
+      ]
+    }
+  ],
+  "scenes": {
+    "s-beach-tideline": {
+      "note": "Dawn gold haze; the band shimmers. A free stir by the water: lift the beached dinghy, draw the spiral wider. The first stir in the band sets tideline_answered.",
+      "world": {
+        "color": [
+          0.8,
+          0.65,
+          0.4
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "sun-dawn",
+          "type": "SUN",
+          "location": [
+            140,
+            200,
+            10
+          ],
+          "energy": 4.0,
+          "size": 0.03,
+          "color": [
+            0.906,
+            0.663,
+            0.231
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "haze",
+          "type": "AREA",
+          "location": [
+            0,
+            30,
+            25
+          ],
+          "energy": 4000,
+          "size": 60,
+          "color": [
+            1.0,
+            0.85,
+            0.55
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -6,
+          4.5,
+          0.9
+        ],
+        "look_at": [
+          -6,
+          26.5,
+          0.6
+        ],
+        "lens_mm": 24,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -9,
+          5.5,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "tideline-stone",
+        "rum-bottle"
+      ],
+      "interactions": [
+        {
+          "prop": "dinghy",
+          "verb": "Stir: lift the beached dinghy back to the water"
+        },
+        {
+          "prop": "lobster-pot",
+          "verb": "Stir: draw the spiral wider",
+          "leads_to": "s-beach-princess"
+        }
+      ]
+    },
+    "s-beach-princess": {
+      "note": "Bright morning, pineapple-yellow haze while she speaks, gone at 'Something colder took its place'. The run to 'Alexi!' cannot stop; the collision; the bow; the warning; she hands over the deed.",
+      "world": {
+        "color": [
+          0.85,
+          0.82,
+          0.6
+        ],
+        "strength": 0.7
+      },
+      "lights": [
+        {
+          "name": "sun-morning",
+          "type": "SUN",
+          "location": [
+            80,
+            120,
+            60
+          ],
+          "energy": 5.0,
+          "size": 0.02,
+          "color": [
+            1.0,
+            0.95,
+            0.8
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "yellow-haze",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            20
+          ],
+          "energy": 2500,
+          "size": 40,
+          "color": [
+            1.0,
+            0.9,
+            0.45
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -4,
+          -7.5,
+          1.6
+        ],
+        "look_at": [
+          -4,
+          6,
+          1.0
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -4,
+          -4,
+          0
+        ],
+        "facing_deg": 60
+      },
+      "hide": [
+        "tideline-stone",
+        "rum-bottle"
+      ],
+      "interactions": [
+        {
+          "prop": "dinghy",
+          "verb": "Take the deed aboard",
+          "leads_to": "g-charter-deed"
+        }
+      ]
+    },
+    "s-home-tideline": {
+      "note": "Late afternoon, the squall's storm on the horizon; the crew singing from the boat. The first tideline stone: stir Home Reach, then the Tide Reckoning page.",
+      "world": {
+        "color": [
+          0.55,
+          0.5,
+          0.55
+        ],
+        "strength": 0.45
+      },
+      "lights": [
+        {
+          "name": "sun-late",
+          "type": "SUN",
+          "location": [
+            -150,
+            60,
+            25
+          ],
+          "energy": 3.0,
+          "size": 0.03,
+          "color": [
+            1.0,
+            0.75,
+            0.45
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "storm-horizon",
+          "type": "AREA",
+          "location": [
+            0,
+            300,
+            40
+          ],
+          "energy": 3000,
+          "size": 200,
+          "color": [
+            0.294,
+            0.247,
+            0.388
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          8,
+          4.0,
+          0.9
+        ],
+        "look_at": [
+          8,
+          26.0,
+          0.6
+        ],
+        "lens_mm": 24,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          8,
+          7.5,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "rum-bottle"
+      ],
+      "interactions": [
+        {
+          "prop": "tideline-stone",
+          "verb": "Stir the stone",
+          "leads_to": "s-chart-table"
+        },
+        {
+          "prop": "dinghy",
+          "verb": "Dive for the drowned",
+          "leads_to": "d-rescue"
+        }
+      ]
+    },
+    "s-tideline-final": {
+      "note": "Dawn, as in chapter 0. After a win Alexi stands in the water and chooses: keep the sea (only with five or more wild regions, else 'The sea will not answer that') or give it up.",
+      "world": {
+        "color": [
+          0.8,
+          0.65,
+          0.4
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "sun-dawn",
+          "type": "SUN",
+          "location": [
+            140,
+            200,
+            10
+          ],
+          "energy": 4.0,
+          "size": 0.03,
+          "color": [
+            0.906,
+            0.663,
+            0.231
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "haze",
+          "type": "AREA",
+          "location": [
+            0,
+            30,
+            25
+          ],
+          "energy": 4000,
+          "size": 60,
+          "color": [
+            1.0,
+            0.85,
+            0.55
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          8,
+          5.0,
+          0.9
+        ],
+        "look_at": [
+          8,
+          27.0,
+          0.6
+        ],
+        "lens_mm": 24,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          8,
+          9,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "rum-bottle"
+      ],
+      "interactions": [
+        {
+          "prop": "tideline-stone",
+          "verb": "Keep the sea",
+          "leads_to": "s-end-wild-sea"
+        },
+        {
+          "prop": "tideline-stone",
+          "verb": "Give it up",
+          "leads_to": "s-end-no-lord"
+        }
+      ]
+    },
+    "s-end-charter": {
+      "note": "The Charter. Dawn on the bay: the ferry crosses a glassy lane while beyond it the water rises and falls on its own; a crew sings the hymn in tune. Camera only.",
+      "world": {
+        "color": [
+          0.8,
+          0.68,
+          0.45
+        ],
+        "strength": 0.55
+      },
+      "lights": [
+        {
+          "name": "sun-dawn",
+          "type": "SUN",
+          "location": [
+            140,
+            200,
+            10
+          ],
+          "energy": 4.0,
+          "size": 0.03,
+          "color": [
+            0.906,
+            0.663,
+            0.231
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "haze",
+          "type": "AREA",
+          "location": [
+            0,
+            30,
+            25
+          ],
+          "energy": 4000,
+          "size": 60,
+          "color": [
+            1.0,
+            0.85,
+            0.55
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -25,
+          8
+        ],
+        "look_at": [
+          10,
+          40,
+          2
+        ],
+        "lens_mm": 24,
+        "mode": "fixed"
+      },
+      "hide": [
+        "rum-bottle"
+      ],
+      "interactions": []
+    },
+    "s-end-no-lord": {
+      "note": "No Lord. Dawn, plain light: Alexi rows the dinghy in with blistered hands, an ordinary man on an ordinary sea; the Gullwife crew sings from the anchorage and he does not look round.",
+      "world": {
+        "color": [
+          0.75,
+          0.7,
+          0.6
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "sun-dawn",
+          "type": "SUN",
+          "location": [
+            140,
+            200,
+            10
+          ],
+          "energy": 3.0,
+          "size": 0.03,
+          "color": [
+            0.906,
+            0.663,
+            0.231
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -14,
+          1,
+          1.4
+        ],
+        "look_at": [
+          -12,
+          14,
+          0.5
+        ],
+        "lens_mm": 35,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          -12,
+          12,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "rum-bottle"
+      ],
+      "interactions": [
+        {
+          "prop": "oar",
+          "verb": "Row"
+        }
+      ]
+    },
+    "s-end-wild-sea": {
+      "note": "The Wild Sea. Storm-gold: Alexi on the bowsprit in a storm he made; the hymn from every crew, thunder, the bells of wrecks. Camera only.",
+      "world": {
+        "color": [
+          0.35,
+          0.28,
+          0.3
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "storm-gold-sun",
+          "type": "SUN",
+          "location": [
+            100,
+            300,
+            30
+          ],
+          "energy": 6.0,
+          "size": 0.05,
+          "color": [
+            0.906,
+            0.663,
+            0.231
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "storm-cloud",
+          "type": "AREA",
+          "location": [
+            0,
+            80,
+            40
+          ],
+          "energy": 6000,
+          "size": 120,
+          "color": [
+            0.294,
+            0.247,
+            0.388
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "lightning",
+          "type": "POINT",
+          "location": [
+            40,
+            120,
+            28
+          ],
+          "energy": 40000,
+          "size": 2,
+          "color": [
+            0.85,
+            0.9,
+            1.0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          14,
+          3
+        ],
+        "look_at": [
+          30,
+          160,
+          8
+        ],
+        "lens_mm": 24,
+        "mode": "fixed"
+      },
+      "hide": [
+        "rum-bottle",
+        "lobster-pot"
+      ],
+      "interactions": []
+    },
+    "s-end-lords-peace": {
+      "note": "The Lord's Peace. Flat noon, buoy bells at even intervals; Alexi turns a bottle in his hand and stirs the water at his ankles, which does nothing.",
+      "world": {
+        "color": [
+          0.8,
+          0.82,
+          0.85
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "sun-noon",
+          "type": "SUN",
+          "location": [
+            0,
+            0,
+            100
+          ],
+          "energy": 6.0,
+          "size": 0.01,
+          "color": [
+            0.957,
+            0.945,
+            0.91
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          6.5,
+          3.0,
+          1.6
+        ],
+        "look_at": [
+          6.5,
+          16.5,
+          1.0
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          6.5,
+          7,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "rum-bottle",
+          "verb": "Turn the bottle"
+        },
+        {
+          "prop": "tideline-stone",
+          "verb": "Stir"
+        }
+      ]
+    }
+  }
+}

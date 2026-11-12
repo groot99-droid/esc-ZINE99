@@ -1,0 +1,1154 @@
+{
+  "game": "lord-of-the-sea",
+  "location": "boat-cabin",
+  "name": "The boat: the cabin",
+  "reference": "assets/locations/boat-cabin.jpg",
+  "bounds_m": [
+    6.0,
+    3.5,
+    2.2
+  ],
+  "origin": "floor centre; +x toward the bow (forepeak door), +y to starboard (the two-level shelf wall); the companion ladder and deck hatch at the aft (-x) end, the porthole over the bunk on the port wall",
+  "materials": {
+    "tarred-wood": {
+      "color": [
+        0.227,
+        0.165,
+        0.11
+      ],
+      "roughness": 0.85
+    },
+    "plank": {
+      "color": [
+        0.353,
+        0.255,
+        0.157
+      ],
+      "roughness": 0.9
+    },
+    "beam": {
+      "color": [
+        0.42,
+        0.29,
+        0.169
+      ],
+      "roughness": 0.8
+    },
+    "brass": {
+      "color": [
+        0.612,
+        0.518,
+        0.322
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "porthole-glass": {
+      "color": [
+        0.906,
+        0.663,
+        0.231
+      ],
+      "roughness": 0.1,
+      "emission": 0.8
+    },
+    "hatch-sky": {
+      "color": [
+        0.788,
+        0.706,
+        0.541
+      ],
+      "roughness": 0.2,
+      "emission": 0.5
+    },
+    "canvas": {
+      "color": [
+        0.725,
+        0.663,
+        0.541
+      ],
+      "roughness": 0.95
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        6.0,
+        3.5,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "plank"
+    },
+    {
+      "id": "ceiling-main",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        4.4,
+        3.5,
+        0.1
+      ],
+      "location": [
+        0.8,
+        0,
+        2.25
+      ],
+      "material": "plank"
+    },
+    {
+      "id": "ceiling-aft",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        0.4,
+        3.5,
+        0.1
+      ],
+      "location": [
+        -2.8,
+        0,
+        2.25
+      ],
+      "material": "plank"
+    },
+    {
+      "id": "ceiling-hatch-port",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        0.8,
+        1.95,
+        0.1
+      ],
+      "location": [
+        -2.2,
+        -0.775,
+        2.25
+      ],
+      "material": "plank"
+    },
+    {
+      "id": "ceiling-hatch-stbd",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        0.8,
+        0.75,
+        0.1
+      ],
+      "location": [
+        -2.2,
+        1.375,
+        2.25
+      ],
+      "material": "plank"
+    },
+    {
+      "id": "deck-hatch",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.8,
+        0.8,
+        0.05
+      ],
+      "location": [
+        -2.2,
+        0.6,
+        2.3
+      ],
+      "material": "hatch-sky",
+      "collide": false
+    },
+    {
+      "id": "beam-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.18,
+        3.5,
+        0.2
+      ],
+      "location": [
+        -1.0,
+        0,
+        2.1
+      ],
+      "material": "beam"
+    },
+    {
+      "id": "beam-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.18,
+        3.5,
+        0.2
+      ],
+      "location": [
+        0.4,
+        0,
+        2.1
+      ],
+      "material": "beam"
+    },
+    {
+      "id": "beam-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.18,
+        3.5,
+        0.2
+      ],
+      "location": [
+        1.8,
+        0,
+        2.1
+      ],
+      "material": "beam"
+    },
+    {
+      "id": "wall-starboard",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6.0,
+        0.15,
+        2.2
+      ],
+      "location": [
+        0,
+        1.825,
+        1.1
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "shelf-lower",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5.6,
+        0.3,
+        0.04
+      ],
+      "location": [
+        0.2,
+        1.6,
+        1.2
+      ],
+      "material": "beam"
+    },
+    {
+      "id": "shelf-upper",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5.6,
+        0.3,
+        0.04
+      ],
+      "location": [
+        0.2,
+        1.6,
+        1.65
+      ],
+      "material": "beam"
+    },
+    {
+      "id": "wall-port-aft",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3.22,
+        0.15,
+        2.2
+      ],
+      "location": [
+        -1.39,
+        -1.825,
+        1.1
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "wall-port-fore",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.42,
+        0.15,
+        2.2
+      ],
+      "location": [
+        1.79,
+        -1.825,
+        1.1
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "wall-port-below",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.36,
+        0.15,
+        1.37
+      ],
+      "location": [
+        0.4,
+        -1.825,
+        0.685
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "wall-port-above",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.36,
+        0.15,
+        0.47
+      ],
+      "location": [
+        0.4,
+        -1.825,
+        1.965
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "porthole",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        0.36,
+        0.36,
+        0.05
+      ],
+      "location": [
+        0.4,
+        -1.77,
+        1.55
+      ],
+      "material": "porthole-glass",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "shelf-port",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        0.25,
+        0.04
+      ],
+      "location": [
+        -1.4,
+        -1.625,
+        1.25
+      ],
+      "material": "beam"
+    },
+    {
+      "id": "bulkhead-fore-port",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.8,
+        2.2
+      ],
+      "location": [
+        3.075,
+        -1.35,
+        1.1
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "bulkhead-fore-stbd",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        2.0,
+        2.2
+      ],
+      "location": [
+        3.075,
+        0.75,
+        1.1
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "bulkhead-fore-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.7,
+        0.4
+      ],
+      "location": [
+        3.075,
+        -0.6,
+        2.0
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "bulkhead-aft",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        3.5,
+        2.2
+      ],
+      "location": [
+        -3.075,
+        0,
+        1.1
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "bunk",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.0,
+        0.8,
+        0.45
+      ],
+      "location": [
+        1.6,
+        -1.35,
+        0.225
+      ],
+      "material": "plank"
+    },
+    {
+      "id": "bunk-blanket",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.9,
+        0.75,
+        0.08
+      ],
+      "location": [
+        1.6,
+        -1.35,
+        0.49
+      ],
+      "material": "canvas"
+    },
+    {
+      "id": "ladder-tread-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.22,
+        0.7,
+        0.05
+      ],
+      "location": [
+        -1.6,
+        0.6,
+        0.35
+      ],
+      "material": "beam"
+    },
+    {
+      "id": "ladder-tread-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.22,
+        0.7,
+        0.05
+      ],
+      "location": [
+        -1.8,
+        0.6,
+        0.7
+      ],
+      "material": "beam"
+    },
+    {
+      "id": "ladder-tread-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.22,
+        0.7,
+        0.05
+      ],
+      "location": [
+        -2.0,
+        0.6,
+        1.05
+      ],
+      "material": "beam"
+    },
+    {
+      "id": "ladder-tread-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.22,
+        0.7,
+        0.05
+      ],
+      "location": [
+        -2.2,
+        0.6,
+        1.4
+      ],
+      "material": "beam"
+    },
+    {
+      "id": "ladder-tread-5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.22,
+        0.7,
+        0.05
+      ],
+      "location": [
+        -2.4,
+        0.6,
+        1.75
+      ],
+      "material": "beam"
+    },
+    {
+      "id": "ladder-rail",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.3,
+        0.05,
+        0.05
+      ],
+      "location": [
+        -2.0,
+        0.95,
+        1.05
+      ],
+      "material": "beam",
+      "rotation_deg": [
+        0,
+        -60,
+        0
+      ]
+    }
+  ],
+  "props": [
+    {
+      "id": "chart-table",
+      "object": "chart-table",
+      "location": [
+        1.0,
+        1.05,
+        0
+      ]
+    },
+    {
+      "id": "dividers",
+      "object": "brass-dividers",
+      "location": [
+        0.7,
+        1.0,
+        0.95
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        30
+      ]
+    },
+    {
+      "id": "harbour-book",
+      "object": "harbour-book",
+      "location": [
+        1.4,
+        0.95,
+        0.95
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        10
+      ]
+    },
+    {
+      "id": "strongbox",
+      "object": "strongbox",
+      "location": [
+        2.4,
+        1.2,
+        0
+      ]
+    },
+    {
+      "id": "sale-deed",
+      "object": "sale-deed",
+      "location": [
+        -0.6,
+        -1.73,
+        1.45
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "ground": false
+    },
+    {
+      "id": "spice-jar",
+      "object": "spice-jar",
+      "location": [
+        -0.8,
+        1.6,
+        1.22
+      ]
+    },
+    {
+      "id": "spice-jar-2",
+      "object": "spice-jar",
+      "location": [
+        1.9,
+        1.6,
+        1.67
+      ]
+    },
+    {
+      "id": "tea-caddy",
+      "object": "tea-caddy",
+      "location": [
+        -1.2,
+        1.6,
+        1.67
+      ]
+    },
+    {
+      "id": "tea-caddy-2",
+      "object": "tea-caddy",
+      "location": [
+        -1.8,
+        -1.62,
+        1.27
+      ]
+    },
+    {
+      "id": "rum-bottle-1",
+      "object": "rum-bottle",
+      "location": [
+        2.6,
+        0.4,
+        0.045
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        20
+      ]
+    },
+    {
+      "id": "rum-bottle-2",
+      "object": "rum-bottle",
+      "location": [
+        2.7,
+        0.0,
+        0.045
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        75
+      ]
+    },
+    {
+      "id": "rum-bottle-3",
+      "object": "rum-bottle",
+      "location": [
+        2.5,
+        -0.4,
+        0
+      ]
+    },
+    {
+      "id": "rum-bottle-shelf",
+      "object": "rum-bottle",
+      "location": [
+        0.2,
+        1.6,
+        1.22
+      ]
+    },
+    {
+      "id": "lantern",
+      "object": "ship-lantern",
+      "location": [
+        1.0,
+        0.9,
+        1.8
+      ],
+      "ground": false
+    },
+    {
+      "id": "rope-coil",
+      "object": "rope-coil",
+      "location": [
+        -1.5,
+        0.0,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s-cabin-dawn": {
+      "note": "Alexi wakes hungover at dawn; fourteen objects on the walls, each a one-line caption. The first stir rolls the bottles; the stair leads up to the deck.",
+      "world": {
+        "color": [
+          0.35,
+          0.22,
+          0.12
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "porthole-dawn",
+          "type": "SPOT",
+          "location": [
+            0.4,
+            -2.35,
+            1.55
+          ],
+          "energy": 120,
+          "size": 0.3,
+          "color": [
+            0.906,
+            0.663,
+            0.231
+          ],
+          "look_at": [
+            1.2,
+            1.2,
+            0.5
+          ]
+        },
+        {
+          "name": "hatch-dawn",
+          "type": "AREA",
+          "location": [
+            -2.2,
+            0.6,
+            2.5
+          ],
+          "energy": 40,
+          "size": 0.7,
+          "color": [
+            1.0,
+            0.82,
+            0.6
+          ],
+          "look_at": [
+            -2.0,
+            0.6,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.4,
+          -0.6,
+          1.5
+        ],
+        "look_at": [
+          0.0,
+          1.2,
+          1.0
+        ],
+        "lens_mm": 18,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          1.6,
+          -0.9,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "strongbox",
+        "harbour-book",
+        "sale-deed"
+      ],
+      "interactions": [
+        {
+          "prop": "rum-bottle-1",
+          "verb": "Stir: roll the bottles"
+        },
+        {
+          "prop": "spice-jar",
+          "verb": "Look"
+        },
+        {
+          "prop": "tea-caddy",
+          "verb": "Look"
+        },
+        {
+          "prop": "rum-bottle-shelf",
+          "verb": "Look"
+        },
+        {
+          "prop": "lantern",
+          "verb": "Look"
+        },
+        {
+          "prop": "rope-coil",
+          "verb": "Climb the stair to the deck",
+          "leads_to": "s-deck-dinghy"
+        }
+      ]
+    },
+    "s-cabin-princess": {
+      "note": "She comes aboard at midday and pins the deed to the wall; she picks up three objects. Showing her the chart sets princess.trust +5. Then the boat weighs anchor.",
+      "world": {
+        "color": [
+          0.6,
+          0.55,
+          0.45
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "porthole-noon",
+          "type": "SPOT",
+          "location": [
+            0.4,
+            -2.35,
+            1.55
+          ],
+          "energy": 150,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.97,
+            0.9
+          ],
+          "look_at": [
+            0.6,
+            1.2,
+            0.4
+          ]
+        },
+        {
+          "name": "hatch-noon",
+          "type": "AREA",
+          "location": [
+            -2.2,
+            0.6,
+            2.5
+          ],
+          "energy": 120,
+          "size": 0.8,
+          "color": [
+            0.95,
+            0.97,
+            1.0
+          ],
+          "look_at": [
+            -2.0,
+            0.6,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -1.2,
+          -0.9,
+          1.6
+        ],
+        "look_at": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "lens_mm": 18,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -1.3,
+          0.3,
+          0
+        ],
+        "facing_deg": -90
+      },
+      "hide": [
+        "strongbox",
+        "harbour-book"
+      ],
+      "interactions": [
+        {
+          "prop": "sale-deed",
+          "verb": "Pin the deed to the wall"
+        },
+        {
+          "prop": "chart-table",
+          "verb": "Show her the chart"
+        },
+        {
+          "prop": "tea-caddy",
+          "verb": "Show her"
+        },
+        {
+          "prop": "spice-jar",
+          "verb": "Show her"
+        },
+        {
+          "prop": "rope-coil",
+          "verb": "Weigh anchor",
+          "leads_to": "s-company-lane"
+        }
+      ]
+    },
+    "s-chart-table": {
+      "note": "The hub of the Open Chart, lamp-lit: read the harbour book first, lay lanes, then choose a region.",
+      "world": {
+        "color": [
+          0.12,
+          0.1,
+          0.1
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "lantern-flame",
+          "type": "POINT",
+          "location": [
+            1.0,
+            0.9,
+            1.75
+          ],
+          "energy": 40,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.78,
+            0.45
+          ]
+        },
+        {
+          "name": "porthole-night",
+          "type": "SPOT",
+          "location": [
+            0.4,
+            -2.35,
+            1.55
+          ],
+          "energy": 15,
+          "size": 0.3,
+          "color": [
+            0.5,
+            0.6,
+            0.85
+          ],
+          "look_at": [
+            0.4,
+            1.0,
+            0.5
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -0.4,
+          -0.8,
+          1.6
+        ],
+        "look_at": [
+          1.0,
+          1.05,
+          0.9
+        ],
+        "lens_mm": 18,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0.9,
+          0.2,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "harbour-book",
+          "verb": "Read the harbour book",
+          "leads_to": "g-charter-tidewater"
+        },
+        {
+          "prop": "dividers",
+          "verb": "Lay a lane",
+          "leads_to": "g-reckon-lane"
+        },
+        {
+          "prop": "strongbox",
+          "verb": "Open the strongbox"
+        },
+        {
+          "prop": "chart-table",
+          "verb": "Sail for the Salt Steps",
+          "leads_to": "s-salt-steps"
+        },
+        {
+          "prop": "chart-table",
+          "verb": "Sail for the Lamplit Strait",
+          "leads_to": "s-lamplit-strait"
+        },
+        {
+          "prop": "chart-table",
+          "verb": "Sail for the Pearl Banks",
+          "leads_to": "s-pearl-banks"
+        },
+        {
+          "prop": "chart-table",
+          "verb": "Sail for the Spice Mouth",
+          "leads_to": "s-spice-mouth"
+        },
+        {
+          "prop": "chart-table",
+          "verb": "Plot the blockade",
+          "leads_to": "g-reckon-blockade"
+        }
+      ]
+    },
+    "s-cabin-tally": {
+      "note": "Night lamp, the walls full. The last lanes, then the chart writes wild, order and balanced regions; the narrator's slot speaks. The approach is by storm or by the deep.",
+      "world": {
+        "color": [
+          0.06,
+          0.06,
+          0.1
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "lantern-flame",
+          "type": "POINT",
+          "location": [
+            1.0,
+            0.9,
+            1.75
+          ],
+          "energy": 25,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.78,
+            0.45
+          ]
+        },
+        {
+          "name": "porthole-night",
+          "type": "SPOT",
+          "location": [
+            0.4,
+            -2.35,
+            1.55
+          ],
+          "energy": 8,
+          "size": 0.3,
+          "color": [
+            0.5,
+            0.6,
+            0.85
+          ],
+          "look_at": [
+            0.4,
+            1.0,
+            0.5
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -0.4,
+          -0.8,
+          1.6
+        ],
+        "look_at": [
+          1.0,
+          1.05,
+          0.9
+        ],
+        "lens_mm": 18,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0.9,
+          0.2,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "dividers",
+          "verb": "Lay the last lanes",
+          "leads_to": "g-reckon-lane"
+        },
+        {
+          "prop": "chart-table",
+          "verb": "Tally the chart"
+        },
+        {
+          "prop": "chart-table",
+          "verb": "Approach by the Company lane",
+          "leads_to": "e-storm-approach"
+        },
+        {
+          "prop": "chart-table",
+          "verb": "Go under the pilings",
+          "leads_to": "d-under-pilings"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,590 @@
+{
+  "game": "lord-of-the-sea",
+  "location": "boat-deck",
+  "name": "The boat: deck and dinghy",
+  "reference": "assets/locations/boat-deck.jpg",
+  "bounds_m": [
+    14.0,
+    4.5,
+    10.0
+  ],
+  "origin": "deck centre at deck level (z 0, the sea 0.5 m below); +x toward the bow, +y to starboard, the side facing the beach of Home Reach; the dinghy sits at the starboard gangway",
+  "materials": {
+    "deck-plank": {
+      "color": [
+        0.361,
+        0.29,
+        0.212
+      ],
+      "roughness": 0.9
+    },
+    "tarred-wood": {
+      "color": [
+        0.227,
+        0.165,
+        0.11
+      ],
+      "roughness": 0.85
+    },
+    "spar": {
+      "color": [
+        0.42,
+        0.29,
+        0.169
+      ],
+      "roughness": 0.8
+    },
+    "sail": {
+      "color": [
+        0.659,
+        0.604,
+        0.502
+      ],
+      "roughness": 0.95
+    },
+    "sail-red": {
+      "color": [
+        0.549,
+        0.169,
+        0.169
+      ],
+      "roughness": 0.95
+    },
+    "sea-dawn": {
+      "color": [
+        0.624,
+        0.714,
+        0.659
+      ],
+      "roughness": 0.15
+    },
+    "headland": {
+      "color": [
+        0.306,
+        0.42,
+        0.196
+      ],
+      "roughness": 0.95
+    },
+    "sand": {
+      "color": [
+        0.851,
+        0.769,
+        0.604
+      ],
+      "roughness": 0.95
+    }
+  },
+  "blockout": [
+    {
+      "id": "deck",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        13.0,
+        4.5,
+        0.12
+      ],
+      "location": [
+        0,
+        0,
+        -0.06
+      ],
+      "material": "deck-plank"
+    },
+    {
+      "id": "hull-below",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        13.0,
+        4.3,
+        0.4
+      ],
+      "location": [
+        0,
+        0,
+        -0.32
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "bow-deck",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        1.6,
+        2.4,
+        0.12
+      ],
+      "location": [
+        7.0,
+        0,
+        -0.06
+      ],
+      "material": "deck-plank"
+    },
+    {
+      "id": "bulwark-port",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        13.0,
+        0.15,
+        0.9
+      ],
+      "location": [
+        0,
+        -2.25,
+        0.45
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "bulwark-stbd-aft",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        8.0,
+        0.15,
+        0.5
+      ],
+      "location": [
+        -2.5,
+        2.25,
+        0.25
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "bulwark-stbd-fore",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.0,
+        0.15,
+        0.5
+      ],
+      "location": [
+        5.5,
+        2.25,
+        0.25
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "rail-stbd-aft",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        8.0,
+        0.12,
+        0.08
+      ],
+      "location": [
+        -2.5,
+        2.25,
+        1.0
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "rail-stbd-fore",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2.0,
+        0.12,
+        0.08
+      ],
+      "location": [
+        5.5,
+        2.25,
+        1.0
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "gangway",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3.0,
+        0.15,
+        1.0
+      ],
+      "location": [
+        3.0,
+        2.25,
+        0.5
+      ],
+      "material": "deck-plank",
+      "collide": false
+    },
+    {
+      "id": "transom",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.2,
+        4.5,
+        1.1
+      ],
+      "location": [
+        -6.5,
+        0,
+        0.55
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "bow-bulwark",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.2,
+        2.4,
+        0.9
+      ],
+      "location": [
+        7.8,
+        0,
+        0.45
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "bowsprit",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.18,
+        0.18,
+        4.0
+      ],
+      "location": [
+        7.9,
+        0,
+        1.0
+      ],
+      "material": "spar",
+      "rotation_deg": [
+        0,
+        70,
+        0
+      ]
+    },
+    {
+      "id": "hatch-coaming",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        0.35
+      ],
+      "location": [
+        -4.0,
+        0,
+        0.175
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "mast",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        10.0
+      ],
+      "location": [
+        -1.0,
+        0,
+        5.0
+      ],
+      "material": "spar"
+    },
+    {
+      "id": "yard",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.15,
+        0.15,
+        9.0
+      ],
+      "location": [
+        -1.0,
+        0.8,
+        7.5
+      ],
+      "material": "spar",
+      "rotation_deg": [
+        0,
+        80,
+        10
+      ]
+    },
+    {
+      "id": "furled-sail",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        8.5,
+        0.5,
+        0.9
+      ],
+      "location": [
+        -1.0,
+        0.9,
+        6.9
+      ],
+      "material": "sail",
+      "rotation_deg": [
+        0,
+        -10,
+        10
+      ]
+    },
+    {
+      "id": "sail-patch",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2.0,
+        0.55,
+        0.7
+      ],
+      "location": [
+        -3.0,
+        0.9,
+        7.1
+      ],
+      "material": "sail-red",
+      "rotation_deg": [
+        0,
+        -10,
+        10
+      ]
+    },
+    {
+      "id": "sea",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        60.0,
+        40.0,
+        0
+      ],
+      "location": [
+        0,
+        0,
+        -0.5
+      ],
+      "material": "sea-dawn"
+    },
+    {
+      "id": "headland-far",
+      "shape": "sphere",
+      "role": "sky",
+      "size_m": [
+        180,
+        60,
+        40
+      ],
+      "location": [
+        60,
+        260,
+        0
+      ],
+      "material": "headland"
+    },
+    {
+      "id": "beach-far",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        200,
+        30,
+        1
+      ],
+      "location": [
+        140,
+        220,
+        0
+      ],
+      "material": "sand"
+    }
+  ],
+  "props": [
+    {
+      "id": "dinghy",
+      "object": "dinghy",
+      "location": [
+        3.0,
+        1.15,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "oar-1",
+      "object": "oar",
+      "location": [
+        2.6,
+        0.9,
+        0.25
+      ],
+      "rotation_deg": [
+        0,
+        90,
+        5
+      ],
+      "ground": true
+    },
+    {
+      "id": "oar-2",
+      "object": "oar",
+      "location": [
+        3.2,
+        1.4,
+        0.25
+      ],
+      "rotation_deg": [
+        0,
+        90,
+        -5
+      ],
+      "ground": true
+    },
+    {
+      "id": "rope-mast",
+      "object": "rope-coil",
+      "location": [
+        -0.4,
+        -0.6,
+        0
+      ]
+    },
+    {
+      "id": "rope-dinghy-line",
+      "object": "rope-coil",
+      "location": [
+        1.6,
+        1.7,
+        0
+      ]
+    },
+    {
+      "id": "lantern-mast",
+      "object": "ship-lantern",
+      "location": [
+        -1.0,
+        -0.25,
+        2.2
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "s-deck-dinghy": {
+      "note": "Molten gold dawn at anchor in Home Reach. Over the rail into the dinghy, then thirty forgiving strokes, left and right triggers, to the beach.",
+      "world": {
+        "color": [
+          0.75,
+          0.55,
+          0.3
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "sun-dawn",
+          "type": "SUN",
+          "location": [
+            40,
+            60,
+            8
+          ],
+          "energy": 3.5,
+          "size": 0.02,
+          "color": [
+            0.906,
+            0.663,
+            0.231
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "sky-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            12
+          ],
+          "energy": 60,
+          "size": 10,
+          "color": [
+            0.9,
+            0.75,
+            0.55
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -10.5,
+          -3.5,
+          6.0
+        ],
+        "look_at": [
+          2.0,
+          1.0,
+          0.5
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -4.0,
+          -0.8,
+          0
+        ],
+        "facing_deg": -60
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "rope-dinghy-line",
+          "verb": "Haul in the dinghy line"
+        },
+        {
+          "prop": "dinghy",
+          "verb": "Drop into the dinghy"
+        },
+        {
+          "prop": "oar-1",
+          "verb": "Row: left, right",
+          "leads_to": "s-beach-tideline"
+        }
+      ]
+    }
+  }
+}

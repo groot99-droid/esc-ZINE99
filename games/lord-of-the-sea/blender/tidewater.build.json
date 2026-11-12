@@ -1,0 +1,524 @@
+{
+  "game": "lord-of-the-sea",
+  "location": "tidewater",
+  "name": "Tidewater harbour",
+  "reference": "assets/locations/tidewater.jpg",
+  "bounds_m": [
+    300,
+    200,
+    40
+  ],
+  "origin": "basin water level at the centre; +y up the basin to the warehouse and the school steps at its head; quays 1.8 m high on three sides, the tavern row on the east quay, the harbour mouth at -y",
+  "materials": {
+    "harbour-water": {
+      "color": [
+        0.18,
+        0.243,
+        0.306
+      ],
+      "roughness": 0.08
+    },
+    "quay-stone": {
+      "color": [
+        0.604,
+        0.58,
+        0.541
+      ],
+      "roughness": 0.9
+    },
+    "whitewash": {
+      "color": [
+        0.957,
+        0.945,
+        0.91
+      ],
+      "roughness": 0.9
+    },
+    "company-blue": {
+      "color": [
+        0.122,
+        0.18,
+        0.29
+      ],
+      "roughness": 0.6
+    },
+    "slate": {
+      "color": [
+        0.361,
+        0.376,
+        0.4
+      ],
+      "roughness": 0.7
+    },
+    "iron": {
+      "color": [
+        0.227,
+        0.227,
+        0.227
+      ],
+      "roughness": 0.5,
+      "metallic": 0.7
+    }
+  },
+  "blockout": [
+    {
+      "id": "basin",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        80,
+        160,
+        0
+      ],
+      "location": [
+        -20,
+        -20,
+        0
+      ],
+      "material": "harbour-water"
+    },
+    {
+      "id": "harbour-mouth",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        80,
+        20,
+        0
+      ],
+      "location": [
+        -20,
+        -110,
+        0
+      ],
+      "material": "harbour-water"
+    },
+    {
+      "id": "quay-east",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        130,
+        160,
+        1.8
+      ],
+      "location": [
+        85,
+        -20,
+        0.9
+      ],
+      "material": "quay-stone"
+    },
+    {
+      "id": "quay-west",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        90,
+        160,
+        1.8
+      ],
+      "location": [
+        -105,
+        -20,
+        0.9
+      ],
+      "material": "quay-stone"
+    },
+    {
+      "id": "quay-head",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        300,
+        40,
+        1.8
+      ],
+      "location": [
+        0,
+        80,
+        0.9
+      ],
+      "material": "quay-stone"
+    },
+    {
+      "id": "bollards",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        150,
+        0.6
+      ],
+      "location": [
+        21,
+        -20,
+        2.1
+      ],
+      "material": "iron"
+    },
+    {
+      "id": "ferry-pontoon",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        16,
+        12,
+        0.8
+      ],
+      "location": [
+        -50,
+        -40,
+        0.4
+      ],
+      "material": "quay-stone"
+    },
+    {
+      "id": "warehouse-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        64,
+        20,
+        12.2
+      ],
+      "location": [
+        -48,
+        90,
+        7.9
+      ],
+      "material": "whitewash"
+    },
+    {
+      "id": "warehouse-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        64,
+        20,
+        12.2
+      ],
+      "location": [
+        28,
+        90,
+        7.9
+      ],
+      "material": "whitewash"
+    },
+    {
+      "id": "warehouse-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        12,
+        20,
+        5.2
+      ],
+      "location": [
+        -10,
+        90,
+        11.4
+      ],
+      "material": "whitewash"
+    },
+    {
+      "id": "warehouse-door",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        12,
+        0.3,
+        7
+      ],
+      "location": [
+        -10,
+        79.8,
+        5.3
+      ],
+      "material": "slate",
+      "collide": false
+    },
+    {
+      "id": "tavern-row",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        40,
+        120,
+        16
+      ],
+      "location": [
+        130,
+        -10,
+        9.8
+      ],
+      "material": "whitewash"
+    },
+    {
+      "id": "tavern-door",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.3,
+        3,
+        4
+      ],
+      "location": [
+        109.8,
+        -30,
+        3.8
+      ],
+      "material": "company-blue",
+      "collide": false
+    },
+    {
+      "id": "west-house",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        50,
+        80,
+        14
+      ],
+      "location": [
+        -125,
+        -40,
+        8.8
+      ],
+      "material": "whitewash"
+    },
+    {
+      "id": "school-step-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        40,
+        2,
+        1.8
+      ],
+      "location": [
+        -20,
+        59,
+        0.9
+      ],
+      "material": "quay-stone"
+    },
+    {
+      "id": "school-step-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        40,
+        2,
+        1.35
+      ],
+      "location": [
+        -20,
+        57,
+        0.675
+      ],
+      "material": "quay-stone"
+    },
+    {
+      "id": "school-step-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        40,
+        2,
+        0.9
+      ],
+      "location": [
+        -20,
+        55,
+        0.45
+      ],
+      "material": "quay-stone"
+    },
+    {
+      "id": "school-step-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        40,
+        2,
+        0.45
+      ],
+      "location": [
+        -20,
+        53,
+        0.225
+      ],
+      "material": "quay-stone"
+    }
+  ],
+  "props": [
+    {
+      "id": "ferry",
+      "object": "harbour-ferry",
+      "location": [
+        -20,
+        10,
+        0
+      ]
+    },
+    {
+      "id": "notice-board",
+      "object": "notice-board",
+      "location": [
+        40,
+        -50,
+        1.8
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "tea-chest-1",
+      "object": "tea-chest",
+      "location": [
+        -24,
+        76,
+        1.8
+      ]
+    },
+    {
+      "id": "tea-chest-2",
+      "object": "tea-chest",
+      "location": [
+        -23.4,
+        76.2,
+        1.8
+      ]
+    },
+    {
+      "id": "tea-chest-3",
+      "object": "tea-chest",
+      "location": [
+        -23.7,
+        76.1,
+        2.4
+      ]
+    },
+    {
+      "id": "tea-chest-tavern",
+      "object": "tea-chest",
+      "location": [
+        106,
+        -26,
+        1.8
+      ]
+    },
+    {
+      "id": "rope-quay",
+      "object": "rope-coil",
+      "location": [
+        24,
+        -5,
+        1.8
+      ]
+    },
+    {
+      "id": "rope-pontoon",
+      "object": "rope-coil",
+      "location": [
+        -45,
+        -38,
+        0.8
+      ]
+    }
+  ],
+  "scenes": {
+    "s-tidewater": {
+      "note": "Clean whites and Company blue under a high sun; the ferry bell every six minutes. Ride one crossing and hear Wenna count the children (met.wenna), then the tavern.",
+      "world": {
+        "color": [
+          0.75,
+          0.82,
+          0.95
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "sun-high",
+          "type": "SUN",
+          "location": [
+            60,
+            -80,
+            300
+          ],
+          "energy": 6.0,
+          "size": 0.01,
+          "color": [
+            1.0,
+            0.98,
+            0.94
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "tavern-glow",
+          "type": "POINT",
+          "location": [
+            108,
+            -30,
+            4.3
+          ],
+          "energy": 300,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.75,
+            0.45
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          30,
+          -77,
+          3.4000000000000004
+        ],
+        "look_at": [
+          10,
+          0,
+          1.8
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          30,
+          -73.5,
+          1.8
+        ],
+        "facing_deg": -20
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "ferry",
+          "verb": "Ride one crossing"
+        },
+        {
+          "prop": "notice-board",
+          "verb": "Read the notices"
+        },
+        {
+          "prop": "tea-chest-tavern",
+          "verb": "Go in by the tavern door",
+          "leads_to": "g-liars-tidewater"
+        }
+      ]
+    }
+  }
+}

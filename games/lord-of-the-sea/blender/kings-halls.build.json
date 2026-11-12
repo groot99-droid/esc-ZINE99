@@ -1,0 +1,806 @@
+{
+  "game": "lord-of-the-sea",
+  "location": "kings-halls",
+  "name": "The King's Halls",
+  "reference": "assets/locations/kings-halls.jpg",
+  "bounds_m": [
+    120,
+    80,
+    20
+  ],
+  "origin": "gallery floor level; +y toward the sea-gate, the terrace and the jetty (y 20..40); the gallery of mirrors runs along y at x -10..10, the throne hall opens east of it",
+  "materials": {
+    "marble": {
+      "color": [
+        0.788,
+        0.761,
+        0.698
+      ],
+      "roughness": 0.15
+    },
+    "plaster": {
+      "color": [
+        0.847,
+        0.804,
+        0.706
+      ],
+      "roughness": 0.9
+    },
+    "faded-gold": {
+      "color": [
+        0.722,
+        0.584,
+        0.29
+      ],
+      "roughness": 0.4,
+      "metallic": 0.6
+    },
+    "dais-wood": {
+      "color": [
+        0.29,
+        0.204,
+        0.141
+      ],
+      "roughness": 0.7
+    },
+    "terrace": {
+      "color": [
+        0.812,
+        0.769,
+        0.675
+      ],
+      "roughness": 0.9
+    },
+    "sea": {
+      "color": [
+        0.184,
+        0.42,
+        0.369
+      ],
+      "roughness": 0.1
+    },
+    "sea-light": {
+      "color": [
+        0.957,
+        0.945,
+        0.91
+      ],
+      "roughness": 0.2,
+      "emission": 1.5
+    },
+    "jetty": {
+      "color": [
+        0.42,
+        0.29,
+        0.169
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "gallery-floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        20,
+        60,
+        0.2
+      ],
+      "location": [
+        0,
+        -10,
+        -0.1
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "throne-floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        30,
+        30,
+        0.2
+      ],
+      "location": [
+        25,
+        5,
+        -0.1
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "gallery-ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        20,
+        60,
+        0.3
+      ],
+      "location": [
+        0,
+        -10,
+        9.15
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "throne-ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        30,
+        30,
+        0.3
+      ],
+      "location": [
+        25,
+        5,
+        9.15
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "gallery-wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.5,
+        60,
+        9.0
+      ],
+      "location": [
+        -10.25,
+        -10,
+        4.5
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "gallery-wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        20,
+        0.5,
+        9.0
+      ],
+      "location": [
+        0,
+        -40.25,
+        4.5
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "gallery-wall-east-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.5,
+        34,
+        9.0
+      ],
+      "location": [
+        10.25,
+        -23,
+        4.5
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "gallery-wall-east-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.5,
+        14,
+        9.0
+      ],
+      "location": [
+        10.25,
+        13,
+        4.5
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "gallery-wall-east-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.5,
+        12,
+        2.5
+      ],
+      "location": [
+        10.25,
+        0,
+        7.75
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "seagate-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6.5,
+        0.5,
+        9.0
+      ],
+      "location": [
+        -6.75,
+        20.25,
+        4.5
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "seagate-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6.5,
+        0.5,
+        9.0
+      ],
+      "location": [
+        6.75,
+        20.25,
+        4.5
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "seagate-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        7,
+        0.5,
+        2.5
+      ],
+      "location": [
+        0,
+        20.25,
+        7.75
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "sea-gate",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        7,
+        0.1,
+        6.5
+      ],
+      "location": [
+        0,
+        20.3,
+        3.25
+      ],
+      "material": "sea-light",
+      "collide": false
+    },
+    {
+      "id": "throne-wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.5,
+        30,
+        9.0
+      ],
+      "location": [
+        40.25,
+        5,
+        4.5
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "throne-wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        30,
+        0.5,
+        9.0
+      ],
+      "location": [
+        25,
+        20.25,
+        4.5
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "throne-wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        30,
+        0.5,
+        9.0
+      ],
+      "location": [
+        25,
+        -10.25,
+        4.5
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "cornice",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        20,
+        60,
+        0.3
+      ],
+      "location": [
+        0,
+        -10,
+        8.8
+      ],
+      "material": "faded-gold"
+    },
+    {
+      "id": "dais-lower",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        5,
+        0.3
+      ],
+      "location": [
+        30,
+        16,
+        0.15
+      ],
+      "material": "dais-wood"
+    },
+    {
+      "id": "dais-upper",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6,
+        3.5,
+        0.3
+      ],
+      "location": [
+        30,
+        16.6,
+        0.45
+      ],
+      "material": "dais-wood"
+    },
+    {
+      "id": "inventory-table",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2,
+        1,
+        0.8
+      ],
+      "location": [
+        -6,
+        -20,
+        0.4
+      ],
+      "material": "dais-wood"
+    },
+    {
+      "id": "terrace",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        60,
+        12,
+        0.5
+      ],
+      "location": [
+        0,
+        26,
+        -0.25
+      ],
+      "material": "terrace"
+    },
+    {
+      "id": "parapet",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        60,
+        0.8,
+        1.2
+      ],
+      "location": [
+        -10,
+        31.6,
+        0.6
+      ],
+      "material": "terrace"
+    },
+    {
+      "id": "sea",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        120,
+        10,
+        0
+      ],
+      "location": [
+        0,
+        37,
+        -0.5
+      ],
+      "material": "sea"
+    },
+    {
+      "id": "jetty",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        10,
+        0.4
+      ],
+      "location": [
+        25,
+        36,
+        -0.2
+      ],
+      "material": "jetty"
+    }
+  ],
+  "props": [
+    {
+      "id": "throne",
+      "object": "throne",
+      "location": [
+        30,
+        17,
+        0.6
+      ]
+    },
+    {
+      "id": "mirror-west-1",
+      "object": "gallery-mirror",
+      "location": [
+        -9.9,
+        -34,
+        1.5
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "ground": false
+    },
+    {
+      "id": "mirror-west-2",
+      "object": "gallery-mirror",
+      "location": [
+        -9.9,
+        -26,
+        1.5
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "ground": false
+    },
+    {
+      "id": "mirror-west-3",
+      "object": "gallery-mirror",
+      "location": [
+        -9.9,
+        -18,
+        1.5
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "ground": false
+    },
+    {
+      "id": "mirror-west-4",
+      "object": "gallery-mirror",
+      "location": [
+        -9.9,
+        -10,
+        1.5
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "ground": false
+    },
+    {
+      "id": "mirror-west-5",
+      "object": "gallery-mirror",
+      "location": [
+        -9.9,
+        -2,
+        1.5
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "ground": false
+    },
+    {
+      "id": "mirror-west-6",
+      "object": "gallery-mirror",
+      "location": [
+        -9.9,
+        6,
+        1.5
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "ground": false
+    },
+    {
+      "id": "mirror-west-7",
+      "object": "gallery-mirror",
+      "location": [
+        -9.9,
+        14,
+        1.5
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "ground": false
+    },
+    {
+      "id": "mirror-east-1",
+      "object": "gallery-mirror",
+      "location": [
+        9.9,
+        -34,
+        1.5
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ],
+      "ground": false
+    },
+    {
+      "id": "mirror-east-2",
+      "object": "gallery-mirror",
+      "location": [
+        9.9,
+        -26,
+        1.5
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ],
+      "ground": false
+    },
+    {
+      "id": "mirror-east-3",
+      "object": "gallery-mirror",
+      "location": [
+        9.9,
+        -18,
+        1.5
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ],
+      "ground": false
+    },
+    {
+      "id": "coin-chest",
+      "object": "coin-chest",
+      "location": [
+        25,
+        33,
+        0.0
+      ]
+    },
+    {
+      "id": "ledger-gallery",
+      "object": "ledger",
+      "location": [
+        -6,
+        -20,
+        0.8
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "ledger-throne",
+      "object": "ledger",
+      "location": [
+        22,
+        8,
+        0.0
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        30
+      ]
+    }
+  ],
+  "scenes": {
+    "s-kings-halls": {
+      "note": "Faded gold, Company inventory tags on everything; echoing steps, clerks' pens. Carry the payment up from the jetty through the gallery of mirrors (the lurch at its best), deliver it to the king, chase the clerks on the jetty; at the sea-gate tideline Alexi is strong again.",
+      "world": {
+        "color": [
+          0.55,
+          0.48,
+          0.36
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "sea-light",
+          "type": "AREA",
+          "location": [
+            0,
+            24,
+            4
+          ],
+          "energy": 3000,
+          "size": 7,
+          "color": [
+            1.0,
+            0.97,
+            0.9
+          ],
+          "look_at": [
+            0,
+            -20,
+            1
+          ]
+        },
+        {
+          "name": "sun-outside",
+          "type": "SUN",
+          "location": [
+            0,
+            200,
+            120
+          ],
+          "energy": 5.0,
+          "size": 0.02,
+          "color": [
+            0.957,
+            0.945,
+            0.91
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "gallery-glow",
+          "type": "AREA",
+          "location": [
+            0,
+            -10,
+            8.5
+          ],
+          "energy": 800,
+          "size": 15,
+          "color": [
+            1.0,
+            0.82,
+            0.55
+          ],
+          "look_at": [
+            0,
+            -10,
+            0
+          ]
+        },
+        {
+          "name": "throne-glow",
+          "type": "AREA",
+          "location": [
+            25,
+            5,
+            8.5
+          ],
+          "energy": 900,
+          "size": 15,
+          "color": [
+            1.0,
+            0.8,
+            0.5
+          ],
+          "look_at": [
+            25,
+            5,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          25,
+          37.5,
+          1.6
+        ],
+        "look_at": [
+          25,
+          25,
+          1.0
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          25,
+          34,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "coin-chest",
+          "verb": "Carry the king's payment"
+        },
+        {
+          "prop": "throne",
+          "verb": "Deliver the payment to the king"
+        },
+        {
+          "prop": "ledger-gallery",
+          "verb": "Read the clerks' inventory"
+        },
+        {
+          "prop": "ledger-throne",
+          "verb": "Take up the halls' deed",
+          "leads_to": "g-charter-halls"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,728 @@
+{
+  "game": "lord-of-the-sea",
+  "location": "counting-house",
+  "name": "The counting-house",
+  "reference": "assets/locations/counting-house.jpg",
+  "bounds_m": [
+    40.0,
+    18.0,
+    9.0
+  ],
+  "origin": "floor centre of the hall on the floating wharf; +y toward the Lord of Tea's desk and the two tall windows, the entry door on the -y wall; the sea moves 0.5 m under the floor",
+  "materials": {
+    "plank": {
+      "color": [
+        0.18,
+        0.165,
+        0.149
+      ],
+      "roughness": 0.9
+    },
+    "panel": {
+      "color": [
+        0.165,
+        0.141,
+        0.125
+      ],
+      "roughness": 0.8
+    },
+    "ink-blue": {
+      "color": [
+        0.122,
+        0.18,
+        0.29
+      ],
+      "roughness": 0.8
+    },
+    "window-night": {
+      "color": [
+        0.102,
+        0.165,
+        0.267
+      ],
+      "roughness": 0.1,
+      "emission": 0.3
+    },
+    "sea": {
+      "color": [
+        0.063,
+        0.102,
+        0.149
+      ],
+      "roughness": 0.1
+    },
+    "ledger-red": {
+      "color": [
+        0.549,
+        0.169,
+        0.169
+      ],
+      "roughness": 0.8
+    },
+    "shelf-paper": {
+      "color": [
+        0.784,
+        0.749,
+        0.651
+      ],
+      "roughness": 0.9
+    },
+    "porcelain": {
+      "color": [
+        0.957,
+        0.945,
+        0.91
+      ],
+      "roughness": 0.3
+    }
+  },
+  "blockout": [
+    {
+      "id": "sea-under",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        46.0,
+        24.0,
+        0
+      ],
+      "location": [
+        0,
+        0,
+        -0.5
+      ],
+      "material": "sea"
+    },
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        40.0,
+        18.0,
+        0.15
+      ],
+      "location": [
+        0,
+        0,
+        -0.075
+      ],
+      "material": "plank"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        40.0,
+        18.0,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        9.1
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        18.0,
+        9.0
+      ],
+      "location": [
+        -20.15,
+        0,
+        4.5
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        18.0,
+        9.0
+      ],
+      "location": [
+        20.15,
+        0,
+        4.5
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "wall-north-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        10.75,
+        0.3,
+        9.0
+      ],
+      "location": [
+        -14.625,
+        9.15,
+        4.5
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "wall-north-mid",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        13.5,
+        0.3,
+        9.0
+      ],
+      "location": [
+        0,
+        9.15,
+        4.5
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "wall-north-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        10.75,
+        0.3,
+        9.0
+      ],
+      "location": [
+        14.625,
+        9.15,
+        4.5
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "window-1-sill",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.5,
+        0.3,
+        1.2
+      ],
+      "location": [
+        -8.0,
+        9.15,
+        0.6
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "window-1-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.5,
+        0.3,
+        3.0
+      ],
+      "location": [
+        -8.0,
+        9.15,
+        7.5
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "window-1",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        2.5,
+        0.05,
+        4.8
+      ],
+      "location": [
+        -8.0,
+        9.05,
+        3.6
+      ],
+      "material": "window-night",
+      "collide": false
+    },
+    {
+      "id": "window-2-sill",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.5,
+        0.3,
+        1.2
+      ],
+      "location": [
+        8.0,
+        9.15,
+        0.6
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "window-2-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.5,
+        0.3,
+        3.0
+      ],
+      "location": [
+        8.0,
+        9.15,
+        7.5
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "window-2",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        2.5,
+        0.05,
+        4.8
+      ],
+      "location": [
+        8.0,
+        9.05,
+        3.6
+      ],
+      "material": "window-night",
+      "collide": false
+    },
+    {
+      "id": "wall-south-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        19.0,
+        0.3,
+        9.0
+      ],
+      "location": [
+        -10.5,
+        -9.15,
+        4.5
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "wall-south-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        19.0,
+        0.3,
+        9.0
+      ],
+      "location": [
+        10.5,
+        -9.15,
+        4.5
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "wall-south-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2,
+        0.3,
+        6.0
+      ],
+      "location": [
+        0,
+        -9.15,
+        6.0
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "counter-west",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        14,
+        1.1
+      ],
+      "location": [
+        -14,
+        0,
+        0.55
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "counter-east",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        14,
+        1.1
+      ],
+      "location": [
+        14,
+        0,
+        0.55
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "shelves-north",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        10,
+        0.5,
+        6
+      ],
+      "location": [
+        0,
+        8.75,
+        4.0
+      ],
+      "material": "shelf-paper"
+    },
+    {
+      "id": "shelves-west",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        14,
+        6
+      ],
+      "location": [
+        -19.75,
+        0,
+        4.0
+      ],
+      "material": "shelf-paper"
+    },
+    {
+      "id": "shelves-east",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        14,
+        6
+      ],
+      "location": [
+        19.75,
+        0,
+        4.0
+      ],
+      "material": "shelf-paper"
+    },
+    {
+      "id": "lords-desk",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4,
+        1.2,
+        0.8
+      ],
+      "location": [
+        0,
+        6.5,
+        0.4
+      ],
+      "material": "panel"
+    },
+    {
+      "id": "game-table",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        1.2,
+        0.75
+      ],
+      "location": [
+        0,
+        -2,
+        0.375
+      ],
+      "material": "ink-blue"
+    },
+    {
+      "id": "ledger-rail",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        40.0,
+        0.05,
+        0.05
+      ],
+      "location": [
+        0,
+        8.95,
+        1.1
+      ],
+      "material": "ledger-red"
+    }
+  ],
+  "props": [
+    {
+      "id": "tea-board",
+      "object": "tea-board",
+      "location": [
+        0,
+        -2,
+        0.75
+      ]
+    },
+    {
+      "id": "ledger-west-1",
+      "object": "ledger",
+      "location": [
+        -14,
+        -3,
+        1.1
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "ledger-west-2",
+      "object": "ledger",
+      "location": [
+        -14,
+        2,
+        1.1
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "ledger-east-1",
+      "object": "ledger",
+      "location": [
+        14,
+        0,
+        1.1
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "ledger-desk",
+      "object": "ledger",
+      "location": [
+        0.8,
+        6.5,
+        0.8
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "lamp-desk-west",
+      "object": "ship-lantern",
+      "location": [
+        -1.4,
+        6.5,
+        0.8
+      ]
+    },
+    {
+      "id": "lamp-desk-east",
+      "object": "ship-lantern",
+      "location": [
+        1.4,
+        6.5,
+        0.8
+      ]
+    },
+    {
+      "id": "lamp-counter-east",
+      "object": "ship-lantern",
+      "location": [
+        14,
+        6,
+        1.1
+      ]
+    },
+    {
+      "id": "lamp-hanging",
+      "object": "ship-lantern",
+      "location": [
+        -17,
+        -6,
+        4.5
+      ],
+      "ground": false
+    },
+    {
+      "id": "tea-chest-1",
+      "object": "tea-chest",
+      "location": [
+        -3,
+        -8,
+        0
+      ]
+    },
+    {
+      "id": "tea-chest-2",
+      "object": "tea-chest",
+      "location": [
+        -3.6,
+        -8.1,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s-counting-house": {
+      "note": "A hall of ledgers on a wharf over the sea: cold lamp-white light, ink-blue shadows; clocks, pens, the sea moving under the floor. Ashore again and clumsy; the Lord of Tea is seated at the board.",
+      "world": {
+        "color": [
+          0.08,
+          0.1,
+          0.18
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "desk-lamp-west",
+          "type": "POINT",
+          "location": [
+            -1.4,
+            6.5,
+            1.3
+          ],
+          "energy": 80,
+          "size": 0.15,
+          "color": [
+            0.92,
+            0.94,
+            1.0
+          ]
+        },
+        {
+          "name": "desk-lamp-east",
+          "type": "POINT",
+          "location": [
+            1.4,
+            6.5,
+            1.3
+          ],
+          "energy": 80,
+          "size": 0.15,
+          "color": [
+            0.92,
+            0.94,
+            1.0
+          ]
+        },
+        {
+          "name": "board-lamp",
+          "type": "SPOT",
+          "location": [
+            0,
+            -2,
+            4.0
+          ],
+          "energy": 250,
+          "size": 0.3,
+          "color": [
+            0.92,
+            0.94,
+            1.0
+          ],
+          "look_at": [
+            0,
+            -2,
+            0.75
+          ]
+        },
+        {
+          "name": "night-windows",
+          "type": "AREA",
+          "location": [
+            0,
+            10.5,
+            4
+          ],
+          "energy": 200,
+          "size": 6,
+          "color": [
+            0.35,
+            0.45,
+            0.75
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -8.8,
+          1.6
+        ],
+        "look_at": [
+          0,
+          2,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -7.5,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "ledger-west-1",
+          "verb": "Read the ledger"
+        },
+        {
+          "prop": "tea-board",
+          "verb": "Sit at the board",
+          "leads_to": "g-tea-final"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,547 @@
+{
+  "game": "lord-of-the-sea",
+  "location": "company-lane",
+  "name": "Sea tile: the Company lane",
+  "reference": "assets/locations/company-lane.jpg",
+  "bounds_m": [
+    2000,
+    2000,
+    60
+  ],
+  "origin": "sea level at the tile centre; +y along the lane (buoys every 200 m on two rows at x -60 and +60); the convoy runs parallel at x +320; the fleet on the horizon is sky",
+  "materials": {
+    "glassy-sea": {
+      "color": [
+        0.169,
+        0.31,
+        0.478
+      ],
+      "roughness": 0.03
+    },
+    "ink-hull": {
+      "color": [
+        0.122,
+        0.18,
+        0.29
+      ],
+      "roughness": 0.6
+    },
+    "company-sail": {
+      "color": [
+        0.957,
+        0.945,
+        0.91
+      ],
+      "roughness": 0.9
+    },
+    "haze": {
+      "color": [
+        0.784,
+        0.824,
+        0.871
+      ],
+      "roughness": 1.0,
+      "emission": 0.2
+    }
+  },
+  "blockout": [
+    {
+      "id": "sea",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        2000,
+        2000,
+        0
+      ],
+      "location": [
+        0,
+        0,
+        0
+      ],
+      "material": "glassy-sea"
+    },
+    {
+      "id": "convoy-hull-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6,
+        30,
+        4
+      ],
+      "location": [
+        320,
+        -300,
+        1.5
+      ],
+      "material": "ink-hull"
+    },
+    {
+      "id": "convoy-sail-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1,
+        18,
+        16
+      ],
+      "location": [
+        320,
+        -300,
+        12
+      ],
+      "material": "company-sail",
+      "collide": false
+    },
+    {
+      "id": "convoy-hull-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6,
+        30,
+        4
+      ],
+      "location": [
+        320,
+        -150,
+        1.5
+      ],
+      "material": "ink-hull"
+    },
+    {
+      "id": "convoy-sail-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1,
+        18,
+        16
+      ],
+      "location": [
+        320,
+        -150,
+        12
+      ],
+      "material": "company-sail",
+      "collide": false
+    },
+    {
+      "id": "convoy-hull-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6,
+        30,
+        4
+      ],
+      "location": [
+        320,
+        0,
+        1.5
+      ],
+      "material": "ink-hull"
+    },
+    {
+      "id": "convoy-sail-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1,
+        18,
+        16
+      ],
+      "location": [
+        320,
+        0,
+        12
+      ],
+      "material": "company-sail",
+      "collide": false
+    },
+    {
+      "id": "convoy-hull-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6,
+        30,
+        4
+      ],
+      "location": [
+        320,
+        150,
+        1.5
+      ],
+      "material": "ink-hull"
+    },
+    {
+      "id": "convoy-sail-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1,
+        18,
+        16
+      ],
+      "location": [
+        320,
+        150,
+        12
+      ],
+      "material": "company-sail",
+      "collide": false
+    },
+    {
+      "id": "convoy-hull-5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6,
+        30,
+        4
+      ],
+      "location": [
+        320,
+        300,
+        1.5
+      ],
+      "material": "ink-hull"
+    },
+    {
+      "id": "convoy-sail-5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1,
+        18,
+        16
+      ],
+      "location": [
+        320,
+        300,
+        12
+      ],
+      "material": "company-sail",
+      "collide": false
+    },
+    {
+      "id": "convoy-hull-6",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6,
+        30,
+        4
+      ],
+      "location": [
+        320,
+        450,
+        1.5
+      ],
+      "material": "ink-hull"
+    },
+    {
+      "id": "convoy-sail-6",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1,
+        18,
+        16
+      ],
+      "location": [
+        320,
+        450,
+        12
+      ],
+      "material": "company-sail",
+      "collide": false
+    },
+    {
+      "id": "horizon-fleet",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        3000,
+        20,
+        18
+      ],
+      "location": [
+        0,
+        1200,
+        9
+      ],
+      "material": "ink-hull"
+    },
+    {
+      "id": "horizon-haze",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        4000,
+        10,
+        120
+      ],
+      "location": [
+        0,
+        1400,
+        60
+      ],
+      "material": "haze"
+    }
+  ],
+  "props": [
+    {
+      "id": "buoy-west-1",
+      "object": "company-buoy",
+      "location": [
+        -60,
+        -800,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-west-2",
+      "object": "company-buoy",
+      "location": [
+        -60,
+        -600,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-west-3",
+      "object": "company-buoy",
+      "location": [
+        -60,
+        -400,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-west-4",
+      "object": "company-buoy",
+      "location": [
+        -60,
+        -200,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-west-5",
+      "object": "company-buoy",
+      "location": [
+        -60,
+        0,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-west-6",
+      "object": "company-buoy",
+      "location": [
+        -60,
+        200,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-west-7",
+      "object": "company-buoy",
+      "location": [
+        -60,
+        400,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-west-8",
+      "object": "company-buoy",
+      "location": [
+        -60,
+        600,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-west-9",
+      "object": "company-buoy",
+      "location": [
+        -60,
+        800,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-east-1",
+      "object": "company-buoy",
+      "location": [
+        60,
+        -800,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-east-2",
+      "object": "company-buoy",
+      "location": [
+        60,
+        -600,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-east-3",
+      "object": "company-buoy",
+      "location": [
+        60,
+        -400,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-east-4",
+      "object": "company-buoy",
+      "location": [
+        60,
+        -200,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-east-5",
+      "object": "company-buoy",
+      "location": [
+        60,
+        0,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-east-6",
+      "object": "company-buoy",
+      "location": [
+        60,
+        200,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-east-7",
+      "object": "company-buoy",
+      "location": [
+        60,
+        400,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-east-8",
+      "object": "company-buoy",
+      "location": [
+        60,
+        600,
+        -0.4
+      ]
+    },
+    {
+      "id": "buoy-east-9",
+      "object": "company-buoy",
+      "location": [
+        60,
+        800,
+        -0.4
+      ]
+    },
+    {
+      "id": "revenue-cutter",
+      "object": "revenue-cutter",
+      "location": [
+        160,
+        620,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        160
+      ]
+    }
+  ],
+  "scenes": {
+    "s-company-lane": {
+      "note": "Flat sun, glassy water, no wind; bells on the buoys at even intervals, no gulls. Alexi tries to raise a wave and gets a ripple. The princess counts the buoys; the revenue cutter signals heave-to.",
+      "world": {
+        "color": [
+          0.6,
+          0.7,
+          0.85
+        ],
+        "strength": 0.7
+      },
+      "lights": [
+        {
+          "name": "sun-flat",
+          "type": "SUN",
+          "location": [
+            200,
+            -300,
+            400
+          ],
+          "energy": 5.0,
+          "size": 0.01,
+          "color": [
+            1.0,
+            0.98,
+            0.92
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -712,
+          6
+        ],
+        "look_at": [
+          0,
+          -600,
+          2
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -700,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "buoy-west-2",
+          "verb": "Count the buoys"
+        },
+        {
+          "prop": "buoy-east-2",
+          "verb": "Stir: raise a wave"
+        },
+        {
+          "prop": "revenue-cutter",
+          "verb": "Heave to",
+          "leads_to": "e-cutter-heave-to"
+        }
+      ]
+    }
+  }
+}
