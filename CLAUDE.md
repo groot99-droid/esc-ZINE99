@@ -32,6 +32,9 @@ Ten games adapted from the author's creative-writing vault. Read `README.md` for
 - **Each 3D location has one Blender build file** (`games/<slug>/blender/<location>.build.json`,
   format in `docs/BLENDER.md`) covering every 3D scene played there. After changing scenes, assets
   or build files, run `python tools/check_blender.py <slug>`. `build/` is generated; never commit it.
+- **The web build (`web/`, `docs/WEB.md`)** holds the hub, each game's loading screen and one
+  playable module per 2D mode and 1D game, in that mode's graphic style. No libraries and no network.
+  After a change, run `python tools/web/build.py` and `node tools/web/smoke.mjs <slug>`.
 - Horror games keep a cost in every ending; victims have interior lives; graphic detail is
   suggested, never instructed. These are the vault's own craft rules.
 - Do not recreate an existing commercial game, its characters, levels or look.

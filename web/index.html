@@ -1,0 +1,85 @@
+<title>esc-ZINE99</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;800&family=Instrument+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a photocopied zine. The hub is a contact sheet of ten covers; each game's own palette
+   takes over the whole page from its loading screen on. */
+:root {
+  --paper: #e6e8e3;          /* newsprint, a cool grey */
+  --ink: #15171a;
+  --ink-dim: #5b6066;
+  --riso: #e5337a;           /* risograph pink, the one spot colour */
+  --riso-2: #2d5bd1;         /* the second drum: blue */
+  --rule: #b9bdb6;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #131416; --ink: #ecede8; --ink-dim: #9aa0a6; --riso: #ff5c9a; --riso-2: #6f93ff; --rule: #2c2f33; color-scheme: dark } }
+:root[data-theme="dark"] { --paper: #131416; --ink: #ecede8; --ink-dim: #9aa0a6; --riso: #ff5c9a; --riso-2: #6f93ff; --rule: #2c2f33; color-scheme: dark }
+html, body { height: 100%; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--riso); outline-offset: 2px; }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; max-width: 1280px; margin: 0 auto; }
+
+/* ---- hub ---- */
+.mast { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 8px 24px; border-bottom: 3px solid var(--ink); padding-bottom: 14px; }
+.mast h1 { font-family: var(--display); font-weight: 800; font-size: clamp(56px, 11vw, 150px); line-height: .82; letter-spacing: -.01em; margin: 0; text-transform: uppercase; }
+.mast h1 span { color: var(--riso); mix-blend-mode: multiply; }
+.mast .issue { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; text-align: right; color: var(--ink-dim); }
+.dek { max-width: 62ch; margin: 18px 0 30px; font-size: 17px; text-wrap: pretty; }
+.dek b { font-weight: 600; }
+.sheet { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 28px 22px; }
+.cover { display: grid; gap: 10px; text-decoration: none; min-width: 0; }
+.cover .frame { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--ink); max-width: 100%; }
+.cover img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(.25) contrast(1.05); transition: filter .25s, transform .4s; }
+.cover:hover img, .cover:focus-visible img { filter: none; transform: scale(1.03); }
+.cover .no { position: absolute; left: 0; top: 0; background: var(--riso); color: #fff; font-family: var(--mono); font-size: 12px; padding: 3px 8px; }
+.cover h2 { font-family: var(--display); font-weight: 800; font-size: 30px; line-height: .95; margin: 0; text-transform: uppercase; text-wrap: balance; }
+.cover .facts { display: flex; flex-wrap: wrap; gap: 4px 12px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-dim); text-transform: uppercase; letter-spacing: .05em; }
+.cover .facts b { color: var(--riso-2); font-weight: 600; }
+.colophon { margin-top: 48px; border-top: 1px solid var(--rule); padding-top: 14px; font-family: var(--mono); font-size: 12px; color: var(--ink-dim); max-width: 80ch; }
+
+/* ---- stage: everything after the hub takes the game's own palette ---- */
+#stage { position: fixed; inset: 0; z-index: 5; display: flex; flex-direction: column; background: var(--g-bg, #000); color: var(--g-fg, #fff); font-family: var(--g-body, var(--body)); padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+#stage[hidden] { display: none !important; }
+.bar { display: flex; align-items: center; gap: 12px; padding: 10px max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px)); border-bottom: 1px solid color-mix(in srgb, var(--g-fg, #fff) 22%, transparent); font-family: var(--mono); font-size: 12px; min-height: 44px; }
+.bar .crumb { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-transform: uppercase; letter-spacing: .06em; }
+.bar button, .menu button { font: inherit; color: inherit; background: transparent; border: 1px solid color-mix(in srgb, var(--g-fg, #fff) 45%, transparent); padding: 6px 12px; cursor: pointer; }
+.bar button:hover, .menu button:hover { background: color-mix(in srgb, var(--g-accent, #fff) 25%, transparent); }
+.view { flex: 1; min-height: 0; overflow: auto; position: relative; }
+.menu { padding: 22px max(16px, env(safe-area-inset-right, 0px)) 40px max(16px, env(safe-area-inset-left, 0px)); max-width: 1200px; margin: 0 auto; }
+.menu h1 { font-family: var(--g-display, var(--display)); font-size: clamp(36px, 6vw, 72px); line-height: 1; margin: 0 0 6px; text-wrap: balance; }
+.menu .sub { opacity: .78; max-width: 70ch; margin: 0 0 24px; }
+.modes { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+.mode { display: grid; gap: 8px; text-align: left; padding: 0 !important; border: 1px solid color-mix(in srgb, var(--g-fg, #fff) 25%, transparent) !important; min-width: 0; }
+.mode img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; background: #fff; }
+.mode .t { padding: 0 12px; font-family: var(--g-display, var(--display)); font-size: 22px; line-height: 1.1; }
+.mode .s { padding: 0 12px 12px; font-family: var(--mono); font-size: 11px; opacity: .75; text-transform: uppercase; letter-spacing: .05em; }
+.play { position: absolute; inset: 0; }
+.ending { position: absolute; inset: auto 0 0 0; padding: 16px max(16px, env(safe-area-inset-right, 0px)) 18px max(16px, env(safe-area-inset-left, 0px)); background: color-mix(in srgb, var(--g-bg, #000) 88%, transparent); border-top: 2px solid var(--g-accent, #fff); display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; z-index: 20; }
+.ending p { margin: 0; flex: 1 1 260px; }
+.loader { position: absolute; inset: 0; }
+.err { padding: 24px; font-family: var(--mono); }
+@media (prefers-reduced-motion: reduce) { .cover img { transition: none; } }
+</style>
+
+<main class="wrap" id="hub" aria-labelledby="hub-title">
+  <header class="mast">
+    <h1 id="hub-title">esc<span>-</span>ZINE99</h1>
+    <div class="issue">Ten games<br>from one vault</div>
+  </header>
+  <p class="dek">Ten stories from the author's creative-writing vault, each made into a game that moves between <b>3D places</b>, <b>2D spaces you cross</b> and <b>1D puzzles you work out</b>. Pick a cover to load the game and play its 2D modes and 1D games here in the page.</p>
+  <section class="sheet" id="sheet" aria-label="The games"></section>
+  <p class="colophon">The 3D scenes are built in Blender from each game's build files and are not playable on this page. Every 2D mode and 1D game is drawn in its own graphic style, and no style is used twice across the ten games. Progress is kept in this browser only.</p>
+</main>
+
+<section id="stage" hidden aria-live="polite">
+  <div class="bar"><button id="back" type="button">Back</button><span class="crumb" id="crumb"></span><button id="restart" type="button" hidden>Restart</button></div>
+  <div class="view" id="view"></div>
+</section>
+
+<script type="module" src="lib/app.js"></script>

@@ -89,6 +89,15 @@ The first checks each game's Blender build files (`games/<slug>/blender/<locatio
 the second compiles every 3D scene into a layout the studio's `assemble-3d` runs unchanged. See
 `docs/BLENDER.md`.
 
+```bash
+python tools/web/build.py
+node tools/web/smoke.mjs
+```
+
+The first builds the web site's catalog and assets; the second plays every route of `web/` in a
+headless browser. `web/` is the hub, each game's loading screen, and every 2D mode and 1D game,
+playable in the page. See `docs/WEB.md`.
+
 ## Sources
 
 Every game adapts a work in the author's `Pipelines-Plugin` repository, under
