@@ -28,13 +28,13 @@ export const meta = {
 };
 
 const TIPS = [
-  "Twin flight: beat the wings for lift; glide to win your stamina back.",
-  "Forgetting run: hold Recall to make the faint path solid before you step on it.",
-  "Star Chart: drag from star to star. Every fragment must hold before you name it.",
+  "Twin flight: when the sail tears, dive under Aeris before six seconds run out.",
+  "Forgetting run: tap Recall just before a faint ledge; lanterns and remembered ground give Focus back.",
+  "Star Chart: the ringed stars are the figure you are drawing. Name it before the grey cloud drifts over.",
   "The Slipping Glyph: whatever you stop watching changes. Watch what stays.",
-  "Concentration: faces blank to clear glass as you play. Your memory is the only record.",
+  "Concentration: faces blank to clear glass as you play. Lead a face you have seen and it will not blank.",
   "Six Realms: end a turn on Wrymreach while you hold a Threshold.",
-  "Heartstone: still is right, a slow wobble is one step off, a fast one is far.",
+  "Heartstone: still is right, a slow wobble is one step off, a fast one is far. Ring a shard to hear if it belongs at all.",
 ];
 
 const CSS = `
@@ -44,13 +44,15 @@ const CSS = `
 .wrymwretch-load-veil{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 38%,transparent 35%,rgba(7,8,13,.45) 70%,${P.void} 100%),linear-gradient(180deg,rgba(7,8,13,.1),rgba(7,8,13,.05) 40%,rgba(7,8,13,.85) 80%)}
 .wrymwretch-load-frame{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .wrymwretch-load-col{position:absolute;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 20px clamp(18px,5vh,46px);text-align:center}
-.wrymwretch-load-kicker{font-family:'Cinzel',Georgia,serif;font-size:11px;letter-spacing:.42em;color:${P.silver};opacity:.8;text-transform:uppercase}
+.wrymwretch-load-kicker{font-family:'Cinzel',Georgia,serif;font-size:12px;letter-spacing:.36em;color:${P.silver};text-transform:uppercase;text-shadow:0 1px 3px #000}
 .wrymwretch-load-title{font-family:'Cinzel',Georgia,serif;font-weight:700;font-size:clamp(34px,7.4vw,84px);line-height:.95;letter-spacing:.08em;margin:0;color:${P.bone};text-shadow:0 0 1px #fff,0 2px 0 #3a3f47,0 0 28px rgba(199,204,211,.35)}
-.wrymwretch-load-label{font-family:'Cinzel',Georgia,serif;font-size:12px;letter-spacing:.28em;color:${P.sungold};text-transform:uppercase}
-.wrymwretch-load-quote{font-style:italic;font-size:clamp(16px,2.3vw,22px);max-width:34ch;color:${P.ivory};margin:2px 0 0;line-height:1.25}
-.wrymwretch-load-cite{font-family:'Cinzel',Georgia,serif;font-size:10px;letter-spacing:.3em;color:${P.tarnish};text-transform:uppercase}
+.wrymwretch-load-label{font-family:'Cinzel',Georgia,serif;font-size:13px;letter-spacing:.28em;color:${P.sungold};text-transform:uppercase;text-shadow:0 1px 3px #000}
+.wrymwretch-load-quote{font-style:italic;font-size:clamp(16px,2.3vw,22px);max-width:34ch;color:${P.ivory};margin:2px 0 0;line-height:1.25;text-shadow:0 1px 6px #000}
+.wrymwretch-load-cite{font-family:'Cinzel',Georgia,serif;font-size:12px;letter-spacing:.24em;color:${P.silver};opacity:.85;text-transform:uppercase}
 .wrymwretch-load-seal{width:clamp(92px,15vh,132px);height:auto;margin-top:6px}
-.wrymwretch-load-tip{min-height:2.6em;max-width:46ch;font-size:clamp(14px,1.8vw,17px);color:${P.silver};transition:opacity .5s}
+.wrymwretch-load-tip{min-height:2.6em;max-width:46ch;font-size:clamp(15px,1.8vw,18px);line-height:1.3;color:${P.bone};background:rgba(7,8,13,.62);border:1px solid rgba(199,204,211,.28);padding:6px 14px;border-radius:2px;transition:opacity .5s}
+.wrymwretch-load-pct{font-family:'Cinzel',Georgia,serif;font-size:13px;letter-spacing:.2em;color:${P.sungold};margin-top:-4px}
+@media (max-width:480px){.wrymwretch-load-col{gap:8px;padding:0 26px 30px}.wrymwretch-load-kicker{letter-spacing:.22em}.wrymwretch-load-title{letter-spacing:.04em}}
 .wrymwretch-load-tip.fade{opacity:0}
 .wrymwretch-load-spin{transform-origin:60px 60px;animation:wrymwretch-load-turn 24s linear infinite}
 .wrymwretch-load-root.still .wrymwretch-load-spin{animation:none}
@@ -129,6 +131,7 @@ export function render(root, ctx) {
       <p class="wrymwretch-load-quote">“When the last memory fades, the Astral Architect shall rise.”</p>
       <div class="wrymwretch-load-cite">WrymWretch · the prophecy</div>
       ${sealSvg()}
+      <div class="wrymwretch-load-pct" aria-hidden="true">0 / 6 realms</div>
       <div class="wrymwretch-load-tip" aria-live="polite"></div>
     </div>`;
   wrap.querySelector(".wrymwretch-load-title").textContent = ctx.title || "WrymWretch";
@@ -145,6 +148,7 @@ export function render(root, ctx) {
   const crack = wrap.querySelector("[data-crack]");
   const gems = [...wrap.querySelectorAll("[data-gem]")];
   const tip = wrap.querySelector(".wrymwretch-load-tip");
+  const pct = wrap.querySelector(".wrymwretch-load-pct");
   let ti = Math.floor(Math.random() * TIPS.length);
   tip.textContent = TIPS[ti];
   const timers = [];
@@ -162,6 +166,8 @@ export function render(root, ctx) {
       arc.setAttribute("stroke-dashoffset", (314.16 * (1 - p)).toFixed(1));
       gems.forEach((g, i) => g.setAttribute("opacity", p >= (i + 0.5) / 6 ? "1" : ".28"));
       crack.setAttribute("opacity", p >= 1 ? ".9" : "0");
+      const lit = gems.filter((_, i) => p >= (i + 0.5) / 6).length;
+      pct.textContent = p >= 1 ? "remembered" : `${lit} / 6 realms`;
     },
     close() {
       clearInterval(iv);

@@ -9,8 +9,17 @@
 // seen: a slip (dread +15 to that guest, +5 to the others, one memory). Standing still in a cone is
 // safe. Creaking stairs: passing the third step opens the cone of any guest within 4 m toward it.
 // Tools (Sound): Thump, Drag, Squeak, and Three taps (both toys at one door). The night runs 23:00
-// to 05:00; bedroom doors stand open, so an eye sees along its whole floor. Cut to fit: one night of about three minutes, cone timings compressed to match, the hall
-// light hazard left out, the cellar drawn but not walked.
+// to 05:00; bedroom doors stand open, so an eye sees along its whole floor. Cut to fit: one night of
+// about three minutes, cone timings compressed to match, the cellar drawn but not walked.
+//
+// Actions: Walk (tap a room; arrows), Hold still (hold Space or the button), Switch toy (Tab), the
+// four Sound tools (1-4), and Steady (S), from section 12's tremors: from hunger 75 a pulse comes
+// every 4 s and wants a Steady inside its window, or the toy shakes (hunger +4; a guest who sees it:
+// dread +5 and their eye turns toward it). Phases: Ana reads in the parlour until 01:00; deep sleep;
+// from 03:00 Wes sleeps lighter. The hall light hazard (section 10) follows Three taps at a bedroom
+// door: the guest gets up and the hall and landing are lit for a while. Guests get used to a noise:
+// each sound frightens a little less than the last. Narrative lines other than the quoted source
+// lines (ch 17 and ch 26, as DESIGN.md sections 3 and 6 quote them) are written for the game.
 const PRE = "stuffed-ones-dollhouse-cutaway-";
 const C = { paper: "#efe4c9", ink: "#2a211b", cedar: "#6b4a32", cedarD: "#4a3222", dust: "#e6dcc6", moss: "#7d8a5a", rust: "#a5553a",
   sky: "#8fa9bf", cream: "#efe5cf", bone: "#f6f1e4", amber: "#e39a2d", red: "#b8322a", night: "#56627a", nightL: "#7f8ca3", rose: "#c9a7b0" };
@@ -37,14 +46,15 @@ const TOOLS = [
   { id: "squeak", name: "Squeak", dread: 6, range: 4, floors: 0, hunger: 3 },
   { id: "taps", name: "Three taps", dread: 8, range: 0, floors: 0, hunger: 5 },
 ];
-const NIGHT = 180, CONE = (70 * Math.PI) / 180, REACH = 4, SPEED = 0.6;
+const NIGHT = 180, CONE = (70 * Math.PI) / 180, REACH = 4, SPEED = 0.6, HABIT = 0.9, TARGET = 35, LIGHT = 10, PULSE_EVERY = 4, PULSE_WIN = 0.6;
 
 function kit() {
-  const offs = []; let raf = 0;
+  const offs = [], timers = new Set(); let raf = 0;
   return {
     on(t, ev, fn, o) { t.addEventListener(ev, fn, o); offs.push(() => t.removeEventListener(ev, fn, o)); },
+    after(ms, fn) { const id = setTimeout(() => { timers.delete(id); fn(); }, ms); timers.add(id); return id; },
     frame(fn) { cancelAnimationFrame(raf); raf = requestAnimationFrame(fn); },
-    dispose() { cancelAnimationFrame(raf); offs.forEach((f) => f()); },
+    dispose() { cancelAnimationFrame(raf); timers.forEach(clearTimeout); offs.forEach((f) => f()); },
   };
 }
 
@@ -63,23 +73,52 @@ export default {
 .${PRE}bar button:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
 .${PRE}bar .${PRE}still{background:${C.ink};color:${C.bone};min-width:110px;text-transform:uppercase;letter-spacing:.12em}
 .${PRE}bar .${PRE}still[aria-pressed=true]{background:${C.red};border-color:${C.red}}
-.${PRE}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(239,228,201,.82);z-index:3;padding:16px}
-.${PRE}intro div{max-width:500px;background:${C.bone};border:3px double ${C.ink};padding:18px 22px}
-.${PRE}intro h2{margin:0 0 4px;font:400 30px 'IM Fell English',Georgia,serif}
-.${PRE}intro h2+small{display:block;font:italic 13px 'IM Fell English',Georgia,serif;margin-bottom:10px;opacity:.75}
-.${PRE}intro p{margin:0 0 8px;font:14px/1.45 Karla,Arial,sans-serif}
-.${PRE}intro button{font:600 14px Karla,Arial,sans-serif;background:${C.ink};color:${C.bone};border:0;padding:9px 22px;cursor:pointer;margin-top:6px}
-.${PRE}intro label{font:12px Karla,Arial,sans-serif;display:flex;gap:6px;align-items:center;margin-top:6px}
+.${PRE}bar .${PRE}steady{background:${C.amber};border-color:${C.ink}}
+.${PRE}bar .${PRE}steady[hidden]{display:none}
+.${PRE}bar .${PRE}steady.${PRE}beat-on{background:${C.red};color:${C.bone}}
+.${PRE}bar button:hover:not(:disabled){background:#fff}
+.${PRE}bar .${PRE}still:hover{background:${C.ink}}
+.${PRE}bar button kbd{font:600 11px ui-monospace,Menlo,monospace;opacity:.7;margin-left:5px}
+.${PRE}cap{position:absolute;left:50%;transform:translateX(-50%);top:62px;width:min(500px,calc(100% - 32px));box-sizing:border-box;background:${C.bone};border:3px double ${C.ink};padding:10px 16px 12px;font:15px/1.45 Karla,Arial,sans-serif;z-index:3;transition:opacity .5s;pointer-events:none;text-align:center}
+.${PRE}cap b{display:block;font:400 13px 'IM Fell English',Georgia,serif;letter-spacing:.18em;text-transform:uppercase;margin-bottom:2px}
+.${PRE}cap q{display:block;font:italic 19px 'IM Fell English',Georgia,serif}
+.${PRE}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(239,228,201,.82);z-index:4;padding:16px;overflow:auto}
+.${PRE}plate{width:min(500px,100%);box-sizing:border-box;background:${C.bone};border:1px solid ${C.ink};outline:1px solid ${C.ink};outline-offset:4px;padding:16px 24px 20px;box-shadow:0 0 0 9px ${C.paper},0 0 0 10px ${C.ink}}
+.${PRE}plate header{display:flex;justify-content:space-between;font:italic 13px 'IM Fell English',Georgia,serif;border-bottom:3px double ${C.ink};padding-bottom:6px}
+.${PRE}plate h2{margin:10px 0 2px;font:400 34px 'IM Fell English',Georgia,serif;font-variant:small-caps;letter-spacing:.02em;text-align:center}
+.${PRE}plate .${PRE}goal{margin:6px 0 12px;font:15px/1.45 Karla,Arial,sans-serif;text-align:center}
+.${PRE}plate dl{margin:0;border-top:1px solid ${C.ink};border-bottom:1px solid ${C.ink};padding:6px 0}
+.${PRE}plate dl div{display:flex;align-items:baseline;gap:6px;font:15px Karla,Arial,sans-serif;padding:3px 0}
+.${PRE}plate dt{font:italic 17px 'IM Fell English',Georgia,serif;white-space:nowrap}
+.${PRE}plate dd{margin:0;flex:1;display:flex;gap:6px;align-items:baseline}
+.${PRE}plate dd::before{content:"";flex:1;border-bottom:1.5px dotted ${C.ink};min-width:16px;order:0}
+.${PRE}plate dd span{order:1;text-align:right}
+.${PRE}plate .${PRE}more{font:italic 14px 'IM Fell English',Georgia,serif;margin:8px 0 0;text-align:center;opacity:.85}
+.${PRE}plate button{display:block;margin:14px auto 0;font:600 16px Karla,Arial,sans-serif;background:${C.ink};color:${C.bone};border:0;padding:11px 28px;cursor:pointer;min-height:46px}
+.${PRE}plate button:focus-visible{outline:3px solid ${C.red};outline-offset:2px}
+.${PRE}plate label{font:14px Karla,Arial,sans-serif;display:flex;gap:8px;align-items:center;margin-top:8px;justify-content:center}
+.${PRE}plate .${PRE}kind{margin:10px 0 0;font:italic 15px 'IM Fell English',Georgia,serif;color:${C.red};text-align:center}
 </style><canvas aria-label="The cabin cut open from the front at night, every room at once"></canvas>
 <div class="${PRE}bar">
-  <button type="button" class="${PRE}still" aria-pressed="false">Hold still</button>
-  ${TOOLS.map((t) => `<button type="button" data-tool="${t.id}">${t.name}</button>`).join("")}
-  <button type="button" data-a="switch">Switch toy</button>
-</div>`;
+  <button type="button" class="${PRE}still" aria-pressed="false">Hold still<kbd>Space</kbd></button>
+  ${TOOLS.map((t, i) => `<button type="button" data-tool="${t.id}">${t.name}<kbd>${i + 1}</kbd></button>`).join("")}
+  <button type="button" data-a="switch">Switch toy<kbd>Tab</kbd></button>
+  <button type="button" class="${PRE}steady" hidden>Steady<kbd>S</kbd></button>
+</div>
+<div class="${PRE}cap" aria-live="polite" style="opacity:0"></div>`;
     root.appendChild(wrap);
     const cv = wrap.querySelector("canvas"), g = cv.getContext("2d");
     const stillBtn = wrap.querySelector("." + PRE + "still");
     const toolBtns = [...wrap.querySelectorAll("button[data-tool]")];
+    const steadyBtn = wrap.querySelector("." + PRE + "steady"), capEl = wrap.querySelector("." + PRE + "cap");
+    const losses = api.store.get("losses", 0);
+    let capTimer = 0;
+    function cap(title, text, quote, ms = 5000) {
+      capEl.innerHTML = ""; const b = document.createElement("b"); b.textContent = title; capEl.appendChild(b);
+      if (quote) { const q = document.createElement("q"); q.textContent = quote; capEl.appendChild(q); }
+      if (text) capEl.appendChild(document.createTextNode(text));
+      capEl.style.opacity = 1; clearTimeout(capTimer); capTimer = K.after(ms, () => (capEl.style.opacity = 0));
+    }
 
     // state
     const toys = [
@@ -90,6 +129,10 @@ export default {
     const guests = GUESTS.map((gd) => ({ ...gd, dread: 0, open: 0, warn: 0, next: gd.sleep[0] + rng() * (gd.sleep[1] - gd.sleep[0]), look: gd.face, lookAt: null }));
     let sel = 0, still = false, stillToggle = false, started = false, over = false, speed = 1, t = 0;
     let memories = 6, hunger = 60, slips = 0, cooldown = 0, msg = "", msgT = 0, flash = 0, pack = 0;
+    let lightBy = null, lightT = 0, pulseT = 2, pulseOn = false, steadied = false, tremor = false, shakes = 0, shakeT = 0, gentle = false;
+    let saidAna = false, saidVoice = false, saidHunger = false, saidThree = false, saidLight = false;
+    const pops = [];
+    function pop(text, x, y, col) { pops.push({ text, x, y, col, t0: performance.now() }); }
     let L = null, plate = null;
     const roomOf = (x, lvl) => ROOMS.find((r) => r.lvl === lvl && x >= r.x0 && x <= r.x1);
     const clock = () => { const m = 23 * 60 + (t / (NIGHT * speed)) * 360; const h = Math.floor(m / 60) % 24; return `${String(h).padStart(2, "0")}:${String(Math.floor(m % 60)).padStart(2, "0")}`; };
@@ -134,15 +177,17 @@ export default {
       x.fillStyle = "#8a93a6"; x.fillRect(cx0, cy0, cx1 - cx0, cy1 - cy0);
       x.strokeStyle = C.ink; x.lineWidth = 1.2; x.strokeRect(cx0, cy0, cx1 - cx0, cy1 - cy0);
       for (let i = 0; i < 6; i++) { const [bx, by] = P(1 + i * 1.9, -CELLAR + 0.25); x.fillStyle = i % 2 ? C.cedar : "#c8c3b0"; const w = (i % 2 ? 0.9 : 0.45) * k, h = (i % 2 ? 0.8 : 0.6) * k; x.fillRect(bx, by - h, w, h); x.strokeRect(bx, by - h, w, h); if (i % 2) { x.beginPath(); x.moveTo(bx, by - h); x.lineTo(bx + w, by); x.stroke(); } }
-      x.fillStyle = C.ink; x.font = `${Math.max(9, k * 0.2)}px Georgia,serif`; x.fillText("CELLAR", cx0 + 6, cy0 + 13);
+      x.fillStyle = C.ink; x.font = `${Math.max(12, k * 0.22)}px 'IM Fell English',Georgia,serif`; x.fillText("CELLAR", cx0 + 6, cy0 + 15);
       // rooms
       ROOMS.forEach((r) => {
         const [rx, ry] = P(r.x0, (r.lvl + 1) * FLOOR), [rx2, ry2] = P(r.x1, r.lvl * FLOOR);
         sprigs(x, rx, ry, rx2 - rx, ry2 - ry, r.wall, r.sprig, Math.max(10, k * 0.42));
         // night wash, blue-grey without black
         x.fillStyle = "rgba(86,98,122,.28)"; x.fillRect(rx, ry, rx2 - rx, ry2 - ry);
-        x.fillStyle = C.ink; x.font = `${Math.max(9, k * 0.19)}px Georgia,serif`; x.textBaseline = "top";
-        x.fillText(r.name, rx + 6, ry + 5);
+        x.font = `${Math.max(12, k * 0.21)}px 'IM Fell English',Georgia,serif`; x.textBaseline = "top";
+        const nm = W < 560 && r.id === "landing" ? "LANDING" : r.name;
+        const nw = x.measureText(nm).width + 8; x.fillStyle = "rgba(246,241,228,.85)"; x.fillRect(rx + 3, ry + 3, nw, Math.max(15, k * 0.26));
+        x.fillStyle = C.ink; x.fillText(nm, rx + 7, ry + 5);
       });
       // floors and walls at the cut: wood with the wallpaper shown at the edge
       x.strokeStyle = C.ink; x.lineWidth = 1.4;
@@ -187,9 +232,9 @@ export default {
       x.fillStyle = "#e9c98a"; x.beginPath(); x.moveTo(lx - 6, ly); x.lineTo(lx + 6, ly); x.lineTo(lx + 4, ly - 8); x.lineTo(lx - 4, ly - 8); x.closePath(); x.fill(); x.stroke();
       // plate border and caption
       x.strokeStyle = C.ink; x.lineWidth = 1; x.strokeRect(6, 6, W - 12, H - 12); x.strokeRect(10, 10, W - 20, H - 20);
-      x.font = `italic ${W < 560 ? 11 : 13}px 'IM Fell English',Georgia,serif`; x.fillStyle = C.ink; x.textBaseline = "alphabetic";
+      x.font = `italic ${W < 560 ? 13 : 15}px 'IM Fell English',Georgia,serif`; x.fillStyle = C.ink; x.textBaseline = "alphabetic";
       const [, capY] = P(0, -CELLAR - 0.1);
-      x.fillText("Plate III. THE CABIN IN SECTION, BY NIGHT. Move while no eye is open.", L.ox, Math.min(H - L.bottom - 4, capY + 16));
+      x.fillText(W < 560 ? "Plate III. THE CABIN IN SECTION, BY NIGHT." : "Plate III. THE CABIN IN SECTION, BY NIGHT. Move while no eye is open.", L.ox, Math.min(H - L.bottom - 4, capY + 18));
       return c;
     }
 
@@ -237,6 +282,12 @@ export default {
       if (!plate) plate = buildPlate();
       g.drawImage(plate, 0, 0, W, H);
       const s = Math.max(0.55, k / 46);
+      if (lightT > 0) {
+        const [lx0, ly0] = S(4, 2 * FLOOR), [lx1, ly1] = S(8, 0);
+        g.fillStyle = `rgba(246,226,160,${0.28 + 0.12 * Math.min(1, lightT)})`; g.fillRect(lx0, ly0, lx1 - lx0, ly1 - ly0);
+        g.strokeStyle = C.amber; g.lineWidth = 2; g.setLineDash([6, 4]); g.strokeRect(lx0 + 2, ly0 + 2, lx1 - lx0 - 4, ly1 - ly0 - 4); g.setLineDash([]);
+        g.fillStyle = C.ink; g.font = "700 13px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "top"; g.fillText(`HALL LIGHT ON · ${Math.ceil(lightT)} s`, (lx0 + lx1) / 2, ly0 + 22);
+      }
       guests.forEach((gu) => cone(gu, now));
       guests.forEach((gu) => sleeper(gu, s));
       // toys and their walk paths
@@ -248,22 +299,38 @@ export default {
           g.stroke(); g.setLineDash([]);
           const end = ty.plan[ty.plan.length - 1], [qx, qy] = S(end.x, end.y); g.fillStyle = C.red; g.fillRect(qx - 3, qy - 3, 6, 6);
         }
-        const [x, y] = S(ty.x, ty.y);
+        let [x, y] = S(ty.x, ty.y);
+        if (i === 0 && shakeT > 0 && !api.reducedMotion) x += Math.sin(now / 30) * 3 * shakeT;
         toy(x, y, s, ty.col, i === 0, i === sel, ty.kind);
-        if (i === sel && still) { g.fillStyle = C.bone; g.strokeStyle = C.ink; g.lineWidth = 1; const tw = 74; g.fillRect(x + 12 * s, y - 30 * s, tw, 15); g.strokeRect(x + 12 * s, y - 30 * s, tw, 15); g.fillStyle = C.ink; g.font = "600 9px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText("HOLD STILL", x + 12 * s + tw / 2, y - 22 * s); }
+        const exposed = guests.some((gu) => inCone(gu, ty.x, ty.y)) || (lightT > 0 && ty.x > 4 && ty.x < 8);
+        if (exposed) { g.strokeStyle = C.red; g.lineWidth = 2; g.beginPath(); g.arc(x, y - 12 * s, 28 * s, 0, 7); g.stroke(); }
+        if (i === sel && (still || exposed)) {
+          const txt = still ? "HOLDING STILL" : "IN SIGHT: DON'T MOVE";
+          g.font = "700 12px Karla,Arial,sans-serif"; const tw = g.measureText(txt).width + 12;
+          g.fillStyle = still ? C.bone : C.red; g.strokeStyle = C.ink; g.lineWidth = 1; g.fillRect(x + 12 * s, y - 34 * s - 8, tw, 18); g.strokeRect(x + 12 * s, y - 34 * s - 8, tw, 18);
+          g.fillStyle = still ? C.ink : C.bone; g.textAlign = "left"; g.textBaseline = "middle"; g.fillText(txt, x + 12 * s + 6, y - 34 * s + 1);
+        }
       });
       // door marks for Three taps
       DOORS.forEach((d) => { const [x, y] = S(d.x, d.lvl * FLOOR + 1.0); const both = toys.every((ty) => ty.lvl === d.lvl && Math.abs(ty.x - d.x) < 0.8 && !ty.plan.length); g.fillStyle = both ? C.red : "rgba(42,33,27,.35)"; g.beginPath(); g.arc(x, y, 3, 0, 7); g.fill(); });
       // night clock along the top
       const cx0 = 34, cx1 = (wide ? W - L.cards.w - 40 : W - 24), cy = 30;
       g.strokeStyle = C.night; g.lineWidth = 2; g.beginPath(); g.moveTo(cx0, cy); g.lineTo(cx1, cy); g.stroke();
-      g.fillStyle = C.ink; g.font = "10px Georgia,serif"; g.textAlign = "center"; g.textBaseline = "bottom";
+      g.fillStyle = C.ink; g.font = "12px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "bottom";
       for (let h = 0; h <= 6; h++) { const x = cx0 + (cx1 - cx0) * h / 6; g.fillRect(x - 0.5, cy - 4, 1, 8); if (W > 420 || h % 2 === 0) g.fillText(`${String((23 + h) % 24).padStart(2, "0")}:00`, x, cy - 6); }
       const p = Math.min(1, t / (NIGHT * speed)), mx = cx0 + (cx1 - cx0) * p;
       g.fillStyle = C.amber; g.beginPath(); g.moveTo(mx - 6, cy + 12); g.lineTo(mx + 6, cy + 12); g.lineTo(mx, cy + 3); g.closePath(); g.fill(); g.strokeStyle = C.ink; g.lineWidth = 1; g.stroke();
       // status line
-      g.textAlign = "left"; g.textBaseline = "alphabetic"; g.font = "12px Karla,Arial,sans-serif"; g.fillStyle = C.ink;
-      g.fillText(`${clock()}  ·  leading: ${toys[sel].name}  ·  memories ${memories}  ·  hunger ${Math.round(hunger)}${hunger >= 75 ? " (trembling)" : ""}`, cx0, cy + 26);
+      g.textAlign = "left"; g.textBaseline = "alphabetic"; g.font = "700 14px Karla,Arial,sans-serif"; g.fillStyle = C.ink;
+      const avg = guests.reduce((a, gu) => a + gu.dread, 0) / guests.length;
+      let sx0 = cx0;
+      const seg = (txt, col) => { g.fillStyle = col || C.ink; g.fillText(txt, sx0, cy + 28); sx0 += g.measureText(txt).width + 14; };
+      seg(clock()); seg(`${toys[sel].name === "You" ? "the cat" : toys[sel].name}`);
+      seg(`memories ${"●".repeat(Math.max(0, memories))}${"○".repeat(Math.max(0, 6 - memories))}`, memories <= 2 ? C.red : C.ink);
+      if (W >= 560) seg(`hunger ${Math.round(hunger)}${hunger >= 75 ? " · trembling" : ""}`, hunger >= 75 ? C.red : C.ink);
+      seg(`dread ${Math.floor(avg)}/${TARGET}`, avg >= TARGET ? "#4f6b2c" : C.ink);
+      if (W < 560) { sx0 = cx0; g.font = "700 13px Karla,Arial,sans-serif"; g.fillStyle = hunger >= 75 ? C.red : C.ink; g.fillText(`hunger ${Math.round(hunger)}${hunger >= 75 ? " · trembling: Steady on the beat" : ""}`, cx0, cy + 46); }
+      if (pulseOn) { g.fillStyle = steadied ? "#4f6b2c" : C.red; g.beginPath(); g.arc(cx1 - 8, cy + 23, 8, 0, 7); g.fill(); }
       // guest cards
       guests.forEach((gu, i) => {
         let x, y, w, h;
@@ -277,18 +344,29 @@ export default {
         g.fillStyle = C.ink; g.textAlign = "left"; g.font = `italic ${wide ? 14 : 12}px 'IM Fell English',Georgia,serif`;
         const tx = x + 16 + pr * 2;
         g.fillText(gu.name, tx, y + (wide ? 22 : 18));
-        g.font = "9px Karla,Arial,sans-serif"; g.fillText(gu.open > 0 ? "eyes open" : t < gu.awakeUntil * speed ? "reading" : gu.lamp ? "asleep, lamp on" : "asleep", tx, y + (wide ? 36 : 30));
+        g.font = `${wide ? 13 : 12}px Karla,Arial,sans-serif`; g.fillStyle = gu.open > 0 ? C.red : C.ink;
+        g.fillText(gu.open > 0 ? "eyes open" : gu.warn > 0 ? "stirring" : t < gu.awakeUntil * speed ? "reading" : wide ? (gu.lamp ? "asleep, lamp on" : "asleep") : "asleep", tx, y + (wide ? 38 : 32));
         const bw = x + w - 10 - tx, bh = wide ? 14 : 10, by = y + h - bh - 10;
-        g.fillStyle = C.cream; g.fillRect(tx, by, bw, bh); g.strokeRect(tx, by, bw, bh);
+        g.fillStyle = C.cream; g.fillRect(tx, by, bw, bh); g.strokeStyle = C.ink; g.strokeRect(tx, by, bw, bh);
         g.save(); g.beginPath(); g.rect(tx, by, bw * Math.min(1, gu.dread / 60), bh); g.clip();
         g.strokeStyle = C.red; for (let q = -20; q < bw; q += 4) { g.beginPath(); g.moveTo(tx + q, by + bh); g.lineTo(tx + q + bh, by); g.stroke(); }
         g.restore();
+        const mk = tx + bw * TARGET / 60; g.strokeStyle = C.ink; g.lineWidth = 2; g.beginPath(); g.moveTo(mk, by - 3); g.lineTo(mk, by + bh + 3); g.stroke(); g.lineWidth = 1;
+        if (wide) { g.font = "700 13px Karla,Arial,sans-serif"; g.fillStyle = C.ink; g.textAlign = "right"; g.fillText(`${Math.round(gu.dread)}`, x + w - 10, y + 22); g.textAlign = "left"; }
       });
       if (flash > 0) { g.fillStyle = `rgba(184,50,42,${flash * 0.25})`; g.fillRect(0, 0, W, H); }
       if (msg && now - msgT < 2600) {
-        g.font = "600 14px Karla,Arial,sans-serif"; const w = g.measureText(msg).width + 26;
-        g.fillStyle = C.bone; g.strokeStyle = C.ink; g.fillRect(W / 2 - w / 2, 64, w, 30); g.strokeRect(W / 2 - w / 2, 64, w, 30);
-        g.fillStyle = C.ink; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(msg, W / 2, 79);
+        g.font = "700 15px Karla,Arial,sans-serif"; const w = Math.min(W - 24, g.measureText(msg).width + 26);
+        const my = L.base - 2 * FLOOR * L.k - 46;
+        g.fillStyle = C.bone; g.strokeStyle = C.ink; g.lineWidth = 1; g.fillRect(W / 2 - w / 2, my, w, 32); g.strokeRect(W / 2 - w / 2, my, w, 32); g.strokeRect(W / 2 - w / 2 + 3, my + 3, w - 6, 26);
+        g.fillStyle = C.ink; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(msg, W / 2, my + 16, w - 16);
+      }
+      for (let i = pops.length - 1; i >= 0; i--) {
+        const p = pops[i], a = (now - p.t0) / 1500;
+        if (a >= 1) { pops.splice(i, 1); continue; }
+        const rise = api.reducedMotion ? 0 : a * 28;
+        g.globalAlpha = 1 - a * a; g.font = "700 15px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "middle";
+        g.lineWidth = 4; g.strokeStyle = C.bone; g.strokeText(p.text, p.x, p.y - rise); g.fillStyle = p.col; g.fillText(p.text, p.x, p.y - rise); g.globalAlpha = 1;
       }
       K.frame(draw);
     }
@@ -321,10 +399,16 @@ export default {
       slips++; memories--; flash = 1;
       guests.forEach((o) => (o.dread = Math.min(100, o.dread + (o === gu ? 15 : 5))));
       say(`${why} A slip: one memory goes.`);
+      const [x, y] = S(gu.ex, gu.ey); pop("seen · −1 memory", x, y - 20, C.red);
       if (memories <= 0) lose();
     }
     // a guest gets used to the same night noises: each sound frightens a little less than the last
-    function scare(gu, v) { gu.dread = Math.min(100, gu.dread + v * Math.pow(0.85, gu.heard || 0)); gu.heard = (gu.heard || 0) + 1; }
+    function scare(gu, v) {
+      const add = v * Math.pow(HABIT, gu.heard || 0);
+      gu.dread = Math.min(100, gu.dread + add); gu.heard = (gu.heard || 0) + 1;
+      const [x, y] = S(gu.ex, gu.ey); pop(`+${add.toFixed(1)}`, x, y - 18, C.red);
+      if (!saidVoice && gu.dread >= 12) { saidVoice = true; cap("From the bedrooms", "Ana, then Wes, half asleep:", "“Did you hear that?” / “Probably the house settling.”", 5000); }
+    }
     function act(tool) {
       if (!started || over || cooldown > 0) return;
       const ty = toys[sel];
@@ -334,6 +418,11 @@ export default {
         if (!door) { say("Three taps needs both toys at one door."); return; }
         guests.filter((gu) => gu.room === door.room).forEach((gu) => { scare(gu, tool.dread); gu.lookAt = door; gu.warn = 0.6; gu.open = Math.max(gu.open, 0); });
         say(`Three taps at the ${door.room === "parlour" ? "parlour" : "bedroom"} door.`);
+        const up = guests.find((gu) => gu.room === door.room && door.lvl === 1);
+        if (up) {
+          lightT = LIGHT * speed; lightBy = up;
+          if (!saidLight) { saidLight = true; cap("The hall light", `${up.name} gets up to look. The switch clicks: the hall and the landing are lit. Nothing in them may move until it goes off.`, null, 5500); }
+        }
       } else {
         let hit = 0;
         guests.forEach((gu) => {
@@ -344,13 +433,45 @@ export default {
         say(hit ? `${tool.name}: ${hit} guest${hit > 1 ? "s" : ""} heard it.` : `${tool.name}: nobody near enough to hear.`);
       }
       hunger = Math.max(0, hunger - tool.hunger); cooldown = 2;
+      toolBtns.forEach((b) => (b.disabled = true));
       // an action is a movement: inside an open cone it is seen
       const seer = guests.find((gu) => inCone(gu, ty.x, ty.y));
       if (seer && ty.grace <= 0) { slip(seer, `${seer.name} saw the ${ty.name === "You" ? "cat" : "bear"} move.`); ty.grace = 2; }
     }
+    function steady() {
+      if (!started || over || !tremor) return;
+      if (pulseOn && !steadied) { steadied = true; const [x, y] = S(toys[0].x, toys[0].y); pop("steady", x, y - 50, "#4f6b2c"); }
+    }
     function update(dt) {
       t += dt;
-      if (cooldown > 0) cooldown -= dt;
+      if (cooldown > 0) { cooldown -= dt; if (cooldown <= 0) toolBtns.forEach((b) => (b.disabled = false)); }
+      if (shakeT > 0) shakeT = Math.max(0, shakeT - dt * 2);
+      // the hall light: whoever got up is looking down the hall and the landing
+      if (lightT > 0) {
+        lightT -= dt;
+        toys.forEach((ty, i) => { if (ty.moved && ty.x > 4 && ty.x < 8 && ty.grace <= 0) { slip(lightBy || guests[0], `In the hall light, ${lightBy ? lightBy.name : "someone"} sees ${i === 0 ? "the cat" : "Jamie"} move.`); ty.grace = 2.5; } });
+        if (lightT <= 0) say("Click. The hall goes dark again.");
+      }
+      // phases of the night
+      if (!saidAna && t >= GUESTS[2].awakeUntil * speed) { saidAna = true; cap("01:00", "Ana's book closes on her finger. The parlour lamp goes out; the parlour eye is shut, for now.", null, 4500); }
+      if (!saidThree && t >= NIGHT * speed * 4 / 6) { saidThree = true; guests[1].sleep = [3, 6]; cap("03:00", "Wes turns over and over. The lamp is still on; he sleeps lighter now, and his eye opens more often.", null, 4500); }
+      // tremors from 75 hunger: a pulse every 4 s wants a Steady
+      tremor = hunger >= 75;
+      steadyBtn.hidden = !tremor;
+      if (tremor) {
+        if (!saidHunger) { saidHunger = true; cap("The hunger", "Ruth's whisper, from the day you woke:", "“The hunger. Don't fight it. It's what keeps you alive.”", 5500); }
+        pulseT -= dt / speed;
+        if (!pulseOn && pulseT <= 0) { pulseOn = true; steadied = false; pulseT = (gentle ? PULSE_WIN * 2 : PULSE_WIN) * speed; steadyBtn.classList.add(PRE + "beat-on"); }
+        else if (pulseOn && pulseT <= 0) {
+          pulseOn = false; pulseT = PULSE_EVERY * speed; steadyBtn.classList.remove(PRE + "beat-on");
+          if (!steadied) {
+            shakes++; shakeT = 1; hunger += 4;
+            const ty = toys[0], [x, y] = S(ty.x, ty.y); pop("you shake", x, y - 50, C.red);
+            const seer = guests.find((gu) => inCone(gu, ty.x, ty.y));
+            if (seer) { seer.dread = Math.min(100, seer.dread + 5); seer.lookAt = { x: ty.x, lvl: ty.lvl }; seer.open = Math.max(seer.open, 1.5); seer.look = Math.atan2(ty.lvl * FLOOR + 0.6 - seer.ey, ty.x - seer.ex); say(`${seer.name} saw something shiver on the shelf.`); }
+          }
+        }
+      } else { pulseOn = false; steadyBtn.classList.remove(PRE + "beat-on"); }
       if (flash > 0) flash = Math.max(0, flash - dt * 1.5);
       hunger += dt / 2 / speed;
       // the pack's own rhythm: the friends play Sound by themselves (+6 to every guest across the night)
@@ -404,6 +525,7 @@ export default {
         memories -= 2; hunger = 55; flash = 1;
         const seer = guests.find((gu) => inCone(gu, ty.x, ty.y));
         say("The hunger lurches you: two memories go.");
+        { const [x, y] = S(ty.x, ty.y); pop("lurch · −2 memories", x, y - 50, C.red); }
         if (seer) slip(seer, `${seer.name} saw the lurch.`);
         if (memories <= 0) lose();
       }
@@ -412,10 +534,15 @@ export default {
     function finish() {
       over = true;
       const avg = guests.reduce((a, gu) => a + gu.dread, 0) / guests.length;
-      const won = avg >= 35 && memories > 0;
-      api.end({ outcome: won ? "win" : "done", text: `05:00. The night ends with the guests' dread at ${Math.floor(avg)} on average, 35 needed (${guests.map((gu) => `${gu.name} ${Math.round(gu.dread)}`).join(", ")}). ${slips} slip${slips === 1 ? "" : "s"}, ${memories} memor${memories === 1 ? "y" : "ies"} left.${won ? "" : " Not yet enough to make them think of leaving."}` });
+      const won = avg >= TARGET && memories > 0;
+      api.store.set("losses", 0);
+      const most = guests.reduce((a, b) => (a.dread > b.dread ? a : b));
+      const tail = won
+        ? ` At breakfast ${most.name} will ask who was up in the night, and nobody will say it was them.`
+        : " They will sleep late and laugh about the old cabin over coffee. The pack plays again tomorrow night.";
+      api.end({ outcome: won ? "win" : "done", text: `05:00. Grey at the windows; the pack is back on the shelf. Dread ${Math.floor(avg)} on average, ${TARGET} needed (${guests.map((gu) => `${gu.name} ${Math.round(gu.dread)}`).join(", ")}). ${slips} slip${slips === 1 ? "" : "s"}, ${memories} memor${memories === 1 ? "y" : "ies"} left.${tail}` });
     }
-    function lose() { if (over) return; over = true; api.end({ outcome: "lose", text: `${clock()}. Nothing is left of you to hold still with. ${slips} slip${slips === 1 ? "" : "s"}.` }); }
+    function lose() { if (over) return; over = true; api.store.set("losses", losses + 1); api.end({ outcome: "lose", text: `${clock()}. One slip too many, one lurch too hard: nothing is left of you to hold still with. In the morning a cat plush lies on the landing floor, and someone puts it back on the shelf without a word. ${slips} slip${slips === 1 ? "" : "s"}.` }); }
 
     // ---- input -------------------------------------------------------------------------------
     const pt = (e) => { const b = cv.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; };
@@ -433,13 +560,16 @@ export default {
     K.on(stillBtn, "pointerup", () => { if (!stillToggle) setStill(false); });
     K.on(stillBtn, "pointerleave", () => { if (!stillToggle && still) setStill(false); });
     K.on(stillBtn, "click", (e) => { if (e.detail === 0) setStill(!still); }); // keyboard activation toggles
-    toolBtns.forEach((b) => K.on(b, "click", () => act(TOOLS.find((x) => x.id === b.dataset.tool))));
-    K.on(wrap.querySelector('button[data-a="switch"]'), "click", () => { sel = (sel + 1) % toys.length; });
+    toolBtns.forEach((b) => K.on(b, "click", () => { act(TOOLS.find((x) => x.id === b.dataset.tool)); wrap.focus(); }));
+    K.on(wrap.querySelector('button[data-a="switch"]'), "click", () => { sel = (sel + 1) % toys.length; wrap.focus(); });
+    K.on(steadyBtn, "pointerdown", (e) => { e.preventDefault(); steady(); });
+    K.on(steadyBtn, "click", (e) => { if (e.detail === 0) steady(); });
     K.on(wrap, "keydown", (e) => {
       if (!started || over) return;
       if (e.key === " " && !e.repeat) { e.preventDefault(); if (stillToggle) setStill(!still); else setStill(true); }
       else if (e.key === "Tab") { e.preventDefault(); sel = (sel + 1) % toys.length; }
       else if (["1", "2", "3", "4"].includes(e.key)) act(TOOLS[+e.key - 1]);
+      else if (e.key === "s" || e.key === "S") steady();
       else if (e.key === "ArrowLeft" || e.key === "ArrowRight") { const ty = toys[sel]; plan(ty, ty.x + (e.key === "ArrowLeft" ? -1 : 1), ty.lvl); }
       else if (e.key === "ArrowUp" || e.key === "ArrowDown") { const ty = toys[sel]; plan(ty, e.key === "ArrowUp" ? STAIR.x1 + 0.4 : STAIR.x0 - 0.4, e.key === "ArrowUp" ? 1 : 0); }
     });
@@ -456,23 +586,34 @@ export default {
 
     const intro = document.createElement("div");
     intro.className = PRE + "intro";
-    intro.innerHTML = `<div><h2>Dollhouse cutaway</h2><small>Night one: the Sound game</small>
-      <p>Tap a room to send your cat there; it walks whenever you are not holding <b>Still</b> (Space, or the button). A toy standing still in an open eye is safe. Moving inside one is a slip.</p>
-      <p>Get near the guests and frighten them: Thump, Drag (through a floor), Squeak, and Three taps with Jamie at the same door (Tab switches toy). Each guest gets used to a noise, so spread your fright across all three: their dread must average 35 by 05:00.</p>
-      <button type="button">Start</button>
+    intro.innerHTML = `<div class="${PRE}plate" role="dialog" aria-label="How to play Dollhouse cutaway">
+      <header><span>Plate III.</span><span>No. 10 · The Sound game</span></header>
+      <h2>Dollhouse Cutaway</h2>
+      <p class="${PRE}goal">The first night of the hunt. Noor, Wes and Ana are asleep; Ana still reads in the parlour. Join the pack's Sound game: frighten them to ${TARGET} dread on average by 05:00 without being seen to move.</p>
+      <dl>
+        <div><dt>Walk</dt><dd><span>tap a room · arrows</span></dd></div>
+        <div><dt>Hold still</dt><dd><span>hold Space or the button</span></dd></div>
+        <div><dt>Thump, Drag, Squeak</dt><dd><span>1 · 2 · 3, when near</span></dd></div>
+      </dl>
+      <p class="${PRE}more">Still in an open eye is safe; moving in one is a slip. More plates follow as the night goes on.</p>
+      <p class="${PRE}kind" ${losses >= 2 ? "" : "hidden"}>Two nights lost. The slower night is ticked for you.</p>
+      <label><input type="checkbox" data-o="half" ${losses >= 2 ? "checked" : ""}> Slower night (clock, cones and tremors at half speed)</label>
       <label><input type="checkbox" data-o="toggle"> Still toggles instead of hold</label>
-      <label><input type="checkbox" data-o="half"> Half speed (night clock and cones)</label></div>`;
+      <button type="button">Begin the night</button>
+    </div>`;
     wrap.appendChild(intro);
     const sb = intro.querySelector("button");
     K.on(sb, "click", () => {
-      stillToggle = intro.querySelector('[data-o="toggle"]').checked; speed = intro.querySelector('[data-o="half"]').checked ? 2 : 1;
+      stillToggle = intro.querySelector('[data-o="toggle"]').checked; speed = intro.querySelector('[data-o="half"]').checked ? 2 : 1; gentle = speed === 2;
       guests.forEach((gu) => (gu.next *= speed));
       intro.remove(); started = true; wrap.focus();
+      cap("23:00", "The cat on the landing shelf, Jamie the bear in the kitchen. Three taps (4) need you both at one bedroom door, and Switch toy (Tab) moves him.", null, 6000);
     });
     sb.focus();
 
     const ro = new ResizeObserver(() => layout());
     ro.observe(wrap);
+    // a read-only probe for automated play tests
     layout(); K.frame(draw);
     return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); ro.disconnect(); wrap.remove(); } };
   },

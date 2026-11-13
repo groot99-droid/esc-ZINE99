@@ -3,6 +3,10 @@
 // says below 2 000 m). Measure the trait each couplet asks for (stopwatch on the glow, rule, altimeter
 // tag), follow it to a name, and either name the specimen or key the anomaly by writing a new couplet.
 // Two misclassified specimens lose the plate.
+// Added in the refine pass: from the second specimen, Pell (the terrace child of DESIGN 4, who keeps
+// "her own wrong but earnest tally") offers her count of the glow, three times: instant, but not
+// always right. The plate stamps each name as it is settled. After two lost plates, the key shows
+// the measure each couplet uses from the start.
 const P = "lira-calyx-key-";
 const INK = "#3b2618", PAPER = "#ebe0c4", PENCIL = "#7d7a74", SEAL = "#b3212b", TEAL = "#25c2a8";
 const NAMES = {
@@ -18,11 +22,11 @@ const TRAIT = { glow: "Glow period", len: "Length", alt: "Found at" };
 const fmt = (t, v) => (t === "glow" ? `${v.toFixed(1)} s` : t === "len" ? `${Math.round(v)} mm` : `${String(Math.round(v)).replace(/(\d)(\d{3})$/, "$1 $2")} m`);
 const SPECS = [
   { id: 1, kind: "frond", glow: 2.2, len: 58, alt: 2300, name: "Glassleaf", label: "Frond, terrace edge" },
-  { id: 2, kind: "fern", glow: 3.1, len: 28, alt: 1700, name: "Ash-fern", label: "Fern, river stair" },
-  { id: 3, kind: "strand", glow: 5.0, len: 44, alt: 2100, name: "Spore-Weaver strand", label: "Thread, valley web" },
-  { id: 4, kind: "track", glow: 7.2, len: 74, alt: 2640, name: "Ember Wolf", anomaly: true, label: "Track cast, upper bridge" },
-  { id: 5, kind: "moss", glow: 1.6, len: 22, alt: 2450, name: "Spire-moss", label: "Moss, schoolroom wall" },
-  { id: 6, kind: "plate", glow: 4.6, len: 92, alt: 2200, name: "Ridgeback Strider", label: "Dorsal plate, bridge" },
+  { id: 2, kind: "fern", glow: 3.1, len: 28, alt: 1700, name: "Ash-fern", label: "Fern, river stair", pell: 3.0 },
+  { id: 3, kind: "strand", glow: 5.0, len: 44, alt: 2100, name: "Spore-Weaver strand", label: "Thread, valley web", pell: 3.5 },
+  { id: 4, kind: "track", glow: 7.2, len: 74, alt: 2640, name: "Ember Wolf", anomaly: true, label: "Track cast, upper bridge", pell: 7.0 },
+  { id: 5, kind: "moss", glow: 1.6, len: 22, alt: 2450, name: "Spire-moss", label: "Moss, schoolroom wall", pell: 1.5 },
+  { id: 6, kind: "plate", glow: 4.6, len: 92, alt: 2200, name: "Ridgeback Strider", label: "Dorsal plate, bridge", pell: 3.8 },
 ];
 
 export default {
@@ -39,7 +43,11 @@ export default {
       @media (max-width:700px){.${P}right{border-left:0;padding-left:0;border-top:1px solid rgba(59,38,24,.35);padding-top:10px}}
       .${P}left svg{width:100%;height:auto;display:block;touch-action:none}
       .${P}wrap button{font:15px 'IM Fell English',Georgia,serif;color:${INK};background:transparent;border:1px solid ${INK};padding:7px 12px;cursor:pointer;min-height:40px}
-      .${P}wrap button:hover:not(:disabled){background:rgba(59,38,24,.08)}
+      .${P}wrap button:hover:not(:disabled){background:rgba(59,38,24,.1)}
+      .${P}wrap button:active:not(:disabled){transform:translateY(1px)}
+      .${P}wrap button.pell{border-style:dashed;color:#5b4a3a}
+      .${P}wrap button.pell[hidden]{display:none}
+      .${P}taps{display:inline-flex;gap:4px;margin-left:6px;vertical-align:middle}.${P}taps i{width:9px;height:9px;border:1.2px solid ${INK};border-radius:50%}.${P}taps i.f{background:${TEAL}}
       .${P}wrap button:disabled{opacity:.4;cursor:default}
       .${P}kit{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
       .${P}meas{font:15px Georgia,serif;display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:6px 0}
@@ -53,11 +61,21 @@ export default {
       .${P}box p{margin:0 0 8px}
       .${P}row{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
       .${P}row button.sel{background:${INK};color:${PAPER}}
-      .${P}log{font:italic 14px Georgia,serif;color:${PENCIL};margin-top:8px}
+      .${P}log{font:italic 16px/1.4 'IM Fell English',Georgia,serif;color:#5b4a3a;margin-top:8px;min-height:2.8em}
+      .${P}log.v{color:#2f4c86}
+      .${P}stamp{transition:opacity .4s}
       .${P}tally{font:13px 'Courier Prime',monospace;letter-spacing:.06em;margin:4px 0 8px}
-      .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(216,203,168,.85);z-index:5;padding:16px}
-      .${P}card{max-width:470px;background:${PAPER};border:1.5px solid ${INK};padding:18px 20px}
-      .${P}card h3{font:400 26px/1.1 'IM Fell English',Georgia,serif;margin:0 0 8px}.${P}card p{margin:0 0 10px;font:15px/1.45 Georgia,serif}
+      .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(216,203,168,.88);z-index:5;padding:14px;overflow:auto}
+      .${P}card{width:min(460px,100%);background:${PAPER};border:1.5px solid ${INK};outline:1px solid ${INK};outline-offset:-7px;padding:20px 22px;text-align:center}
+      .${P}card .pl{font:13px 'IM Fell English',Georgia,serif;letter-spacing:.3em}
+      .${P}card h3{font:400 30px/1.05 'IM Fell English',Georgia,serif;margin:2px 0 6px}
+      .${P}card .goal{font:italic 17px/1.35 'IM Fell English',Georgia,serif;margin:0 0 12px}
+      .${P}card ol{list-style:none;padding:0;margin:0 0 14px;text-align:left;font:15px/1.4 Georgia,serif}
+      .${P}card li{display:grid;grid-template-columns:2.6em 1fr;padding:4px 0;border-bottom:1px dotted rgba(59,38,24,.45)}
+      .${P}card li b{font:400 15px 'IM Fell English',Georgia,serif}
+      .${P}card label{display:flex;gap:8px;justify-content:center;font:italic 15px Georgia,serif;margin:0 0 10px;color:${PENCIL}}
+      .${P}card button{background:${INK};color:${PAPER};padding:10px 22px;font-size:17px}
+      .${P}card button:hover{background:${SEAL}!important}
     </style>
     <div class="${P}plate"><h2>PLATE XIV · THE TERRACE COLLECTION</h2>
       <section class="${P}left" aria-label="Specimen card">
@@ -67,6 +85,7 @@ export default {
           <button type="button" data-t="tap">Stopwatch: tap at each glow</button>
           <button type="button" data-t="rule">Read the rule</button>
           <button type="button" data-t="tag">Read the altimeter tag</button>
+          <button type="button" class="pell" data-t="pell" hidden>Pell’s tally</button>
         </div>
         <div class="${P}meas" aria-live="polite"></div>
         <div class="${P}log" aria-live="polite"></div>
@@ -86,7 +105,9 @@ export default {
     ];
     const st = { i: 0, cp: 1, path: [], m: {}, taps: [], misses: 0, misclassified: 0, keyedNew: 0, named: 0, anomaly: null, jaw: 60, over: false, started: false, t0: performance.now() };
     const spec = () => SPECS[st.i];
-    const log = (t) => { $("." + P + "log").textContent = t; };
+    const log = (t, voice) => { const l = $("." + P + "log"); l.textContent = t; l.className = P + "log" + (voice ? " v" : ""); };
+    const losses = api.store.get("losses", 0);
+    st.pellLeft = 3; st.helped = losses >= 2;
 
     // ---- specimen drawing (iron-gall ink, lying along the rule; 3 px per mm from x = 30)
     const X0 = 30, MM = 3, CY = 118;
@@ -134,15 +155,19 @@ export default {
       // rule
       const RY = 226;
       d += `<rect x="${X0 - 6}" y="${RY}" width="${110 * MM + 12}" height="22" fill="#e7d6a8" stroke="${INK}"/>`;
-      for (let mm = 0; mm <= 110; mm++) { const x = X0 + mm * MM, h = mm % 10 === 0 ? 10 : mm % 5 === 0 ? 7 : 4; d += `<line x1="${x}" x2="${x}" y1="${RY}" y2="${RY + h}" stroke="${INK}" stroke-width=".6"/>`; if (mm % 10 === 0) d += `<text x="${x}" y="${RY + 20}" font-size="8" text-anchor="middle" fill="${INK}" font-family="Courier Prime,monospace">${mm}</text>`; }
+      for (let mm = 0; mm <= 110; mm++) { const x = X0 + mm * MM, h = mm % 10 === 0 ? 10 : mm % 5 === 0 ? 7 : 4; d += `<line x1="${x}" x2="${x}" y1="${RY}" y2="${RY + h}" stroke="${INK}" stroke-width=".6"/>`; if (mm % 10 === 0 && (mm % 20 === 0 || mm === 110)) d += `<text x="${x}" y="${RY + 21}" font-size="11" text-anchor="middle" fill="${INK}" font-family="Courier Prime,monospace">${mm}</text>`; }
       d += `<line x1="${X0}" x2="${X0}" y1="${CY - 50}" y2="${RY}" stroke="${INK}" stroke-width="1" stroke-dasharray="2 3"/>`;
       d += `<g class="${P}jaw" tabindex="0" role="slider" aria-label="Rule jaw, millimetres" style="cursor:ew-resize"><rect class="${P}jhit" x="-14" y="${CY - 60}" width="28" height="${RY - CY + 86}" fill="transparent"/><line x1="0" x2="0" y1="${CY - 56}" y2="${RY + 22}" stroke="${SEAL}" stroke-width="1.6"/><path d="M-7,${RY + 24} L0,${RY + 14} L7,${RY + 24}Z" fill="${SEAL}"/></g>`;
-      d += `<text x="390" y="20" text-anchor="end" font-size="12" font-style="italic" fill="${INK}">fig. ${s.id}. ${s.label}</text>`;
-      d += `<g class="${P}tag"><rect x="320" y="150" width="62" height="34" fill="#f3ead0" stroke="${INK}"/><circle cx="328" cy="167" r="3" fill="none" stroke="${INK}"/><text x="352" y="164" font-size="8" text-anchor="middle" fill="${INK}" font-family="Courier Prime,monospace">ALT TAG</text><text x="352" y="178" font-size="10" text-anchor="middle" fill="${INK}" font-family="Courier Prime,monospace">${st.m.alt != null ? fmt("alt", s.alt) : "· · ·"}</text></g>`;
+      d += `<text x="390" y="22" text-anchor="end" font-size="15" font-style="italic" fill="${INK}" font-family="IM Fell English,Georgia,serif">fig. ${s.id}. ${s.label}</text>`;
+      d += `<g class="${P}tag"><rect x="306" y="146" width="80" height="42" fill="#f3ead0" stroke="${INK}"/><circle cx="314" cy="167" r="3" fill="none" stroke="${INK}"/><text x="350" y="162" font-size="10" text-anchor="middle" fill="${INK}" font-family="Courier Prime,monospace">ALT TAG</text><text x="350" y="180" font-size="13" text-anchor="middle" fill="${INK}" font-family="Courier Prime,monospace">${st.m.alt != null ? fmt("alt", s.alt) : "· · ·"}</text></g>
+        <text x="${X0 + st.jaw * MM}" y="${RY - 6}" class="${P}jawv" font-size="12" text-anchor="middle" fill="${SEAL}" font-family="Courier Prime,monospace">${st.jaw} mm</text>
+        <g class="${P}stamp" opacity="0"><rect x="120" y="70" width="170" height="44" fill="none" stroke="${SEAL}" stroke-width="3" transform="rotate(-8 205 92)"/><text x="205" y="100" text-anchor="middle" font-size="22" fill="${SEAL}" font-family="Courier Prime,monospace" font-weight="700" transform="rotate(-8 205 92)" letter-spacing="3"></text></g>`;
       svg.innerHTML = d;
       placeJaw();
     };
-    const placeJaw = () => { const j = svg.querySelector("." + P + "jaw"); if (j) { j.setAttribute("transform", `translate(${X0 + st.jaw * MM},0)`); j.setAttribute("aria-valuenow", st.jaw); } };
+    const placeJaw = () => { const j = svg.querySelector("." + P + "jaw"); if (j) { j.setAttribute("transform", `translate(${X0 + st.jaw * MM},0)`); j.setAttribute("aria-valuenow", st.jaw); }
+      const v = svg.querySelector("." + P + "jawv"); if (v) { v.setAttribute("x", X0 + st.jaw * MM); v.textContent = `${st.jaw} mm`; } };
+    const stamp = (txt, ok) => { const g = svg.querySelector("." + P + "stamp"); if (!g) return; g.querySelector("text").textContent = txt; g.querySelectorAll("rect,text").forEach((n) => { n.setAttribute(n.tagName === "text" ? "fill" : "stroke", ok ? INK : SEAL); }); g.setAttribute("opacity", 1); };
     const svgX = (e) => { const r = svg.getBoundingClientRect(); return (e.clientX - r.left) / r.width * 400; };
     let drag = false;
     on(svg, "pointerdown", (e) => { if (!st.started || st.over) return; const x = svgX(e); if (Math.abs(x - (X0 + st.jaw * MM)) < 30 || e.target.closest("." + P + "jaw")) { drag = true; try { svg.setPointerCapture(e.pointerId); } catch {} } });
@@ -161,7 +186,7 @@ export default {
     // ---- measuring kit
     const renderMeas = () => {
       const s = spec(), m = st.m;
-      $("." + P + "meas").innerHTML = ["glow", "len", "alt"].map((t) => `<b>${TRAIT[t]}</b><span>${m[t] != null ? fmt(t, m[t]) : t === "glow" && st.taps.length ? `${st.taps.length} tap${st.taps.length > 1 ? "s" : ""}…` : "not measured"}</span>`).join("");
+      $("." + P + "meas").innerHTML = ["glow", "len", "alt"].map((t) => `<b>${TRAIT[t]}</b><span>${m[t] != null ? fmt(t, m[t]) + (t === "glow" && st.pellTold ? " (Pell’s count)" : "") : t === "glow" && st.taps.length ? `tapping <span class="${P}taps">${[0, 1, 2, 3].map((k) => `<i class="${k < st.taps.length ? "f" : ""}"></i>`).join("")}</span>` : "not measured"}</span>`).join("");
       $("." + P + "tally").textContent = `SPECIMEN ${st.i + 1} OF 6 · NAMED ${st.named} · KEYED NEW ${st.keyedNew} · MISCLASSIFIED ${st.misclassified}`;
       void s;
     };
@@ -174,12 +199,17 @@ export default {
         st.taps.push(now);
         if (st.taps.length >= 4) {
           const iv = (st.taps[3] - st.taps[0]) / 3000;
-          st.m.glow = Math.round(iv * 10) / 10; st.taps = [];
+          st.m.glow = Math.round(iv * 10) / 10; st.taps = []; st.pellTold = false;
           log(`Three glow intervals: ${fmt("glow", st.m.glow)}.`);
         } else log(`Tap ${st.taps.length} of 4: tap again as it glows.`);
       }
       if (t === "rule") { st.m.len = st.jaw; log(st.jaw === 0 ? "Drag the red jaw along the rule to the specimen's tip first." : `Rule read at ${fmt("len", st.jaw)}.`); if (st.jaw === 0) delete st.m.len; }
       if (t === "tag") { st.m.alt = s.alt; log(`Altimeter tag: ${fmt("alt", s.alt)}.`); drawSpec(); }
+      if (t === "pell" && st.pellLeft > 0 && s.pell != null) {
+        st.pellLeft--; st.m.glow = s.pell; st.pellTold = true;
+        log(`Pell, counting on her fingers: “${s.pell.toFixed(1)} seconds, I promise.” She has ${st.pellLeft} count${st.pellLeft === 1 ? "" : "s"} left in her today.`, true);
+        pellBtn.textContent = `Pell’s tally (${st.pellLeft})`; pellBtn.disabled = st.pellLeft <= 0;
+      }
       renderMeas(); renderKey();
     };
     el.querySelectorAll("[data-t]").forEach((b) => on(b, "click", () => tool(b.dataset.t)));
@@ -204,11 +234,12 @@ export default {
           } else row.insertAdjacentHTML("beforeend", `<span>${lab}</span><span>${br.txt} ……</span><span style="text-align:right">${nameText(dest)}</span>`);
         }
         if (lit && st.m[c.t] == null) row.insertAdjacentHTML("beforeend", `<span class="h">Measure ${TRAIT[c.t].toLowerCase()} first.</span>`);
-        if (lit && st.misses >= 2) row.insertAdjacentHTML("beforeend", `<span class="h">${TRAIT[c.t]}: ${fmt(c.t, spec()[c.t])} (the measure to use)</span>`);
+        if (lit && (st.misses >= 2 || st.helped)) row.insertAdjacentHTML("beforeend", `<span class="h">${TRAIT[c.t]}: ${fmt(c.t, spec()[c.t])} (the measure to use)</span>`);
         keyEl.appendChild(row);
       }
     }
     const choose = (c, side) => {
+      if (st.over) return;
       const s = spec();
       if (c.test(s[c.t]) !== side) st.misses++;
       st.path.push(c.id);
@@ -223,7 +254,7 @@ export default {
         <p style="font-style:italic">Your measures: ${["glow", "len", "alt"].map((t) => (m[t] != null ? fmt(t, m[t]) : "—")).join(" · ")}</p>
         <div class="${P}row"><button type="button" data-n="name">Name it</button><button type="button" data-n="anom">Anomaly: write a couplet</button><button type="button" data-n="back">Back to couplet 1</button></div></div>`;
       act.querySelectorAll("[data-n]").forEach((b) => on(b, "click", () => {
-        const k = b.dataset.n;
+        const k = b.dataset.n; if (st.over) return;
         if (k === "back") { st.atName = null; st.cp = 1; act.innerHTML = ""; renderKey(); return; }
         if (k === "name") return settle(st.atName === spec().name && !spec().anomaly, st.atName);
         const s = spec();
@@ -244,7 +275,7 @@ export default {
       act.querySelectorAll("[data-th]").forEach((b) => on(b, "click", () => { a.thr = +b.dataset.th; renderAnomaly(); }));
       act.querySelectorAll("[data-at]").forEach((b) => on(b, "click", () => { a.at = b.dataset.at; renderAnomaly(); }));
       const w = act.querySelector("[data-w]");
-      on(w, "click", () => {
+      on(w, "click", () => { if (st.over) return;
         const ok = a.trait === "alt" && a.thr === 2000 && a.at === "leaf";
         if (!ok) {
           a.tries++;
@@ -254,37 +285,56 @@ export default {
         const id = KEY.length + 1;
         st.leaf.c[st.leaf.side].go = id;
         KEY.push({ id, t: "alt", pencil: true, a: { txt: "Found below 2 000 m", go: "Ember Wolf" }, b: { txt: "Found 2 000 m or above", go: "Ember Wolf, upland form (new)" }, test: (v) => (v < 2000 ? "a" : "b") });
-        st.keyedNew++; log("Couplet written in pencil. The juvenile is keyed as new.");
-        next();
+        st.keyedNew++; log("Couplet written in pencil. The juvenile is keyed as new: an Ember Wolf, too high. Lira underlines the altitude twice.", true); stamp("KEYED NEW", true);
+        renderKey(); act.innerHTML = ""; later(next, 1400);
       });
     };
     const settle = (ok, name) => {
-      if (ok) { st.named++; log(`${name}: named.`); }
-      else { st.misclassified++; log(`${name}: logged misclassified.`); }
-      if (st.misclassified >= 2) { st.over = true; renderMeas(); api.end({ outcome: "lose", text: `Two specimens misclassified. The terrace collection goes into the journal unverified (${st.named} named, ${st.keyedNew} keyed new).` }); return; }
-      next();
+      if (ok) { st.named++; log(`${name}: named.`); stamp("NAMED", true); }
+      else {
+        st.misclassified++; stamp("MISCLASSIFIED", false);
+        const s = spec();
+        log(s.anomaly && name === s.name ? `${name}? The tag says ${fmt("alt", s.alt)}; the description says below 2 000 m. Lira writes it in, and it sits there wrong.` : `${name}: logged misclassified. ${st.pellTold ? "Pell’s count was off; she looks at her fingers and goes quiet." : "It was not that."}`);
+      }
+      if (st.misclassified >= 2) { st.over = true; renderMeas(); act.innerHTML = ""; api.store.set("losses", losses + 1); later(() => api.end({ outcome: "lose", text: `Two specimens misclassified. The terrace collection goes into the journal unverified (${st.named} named, ${st.keyedNew} keyed new), and Pell copies the wrong names into her own book in her careful capitals.` }), 900); return; }
+      later(next, 900);
     };
+    const timers = []; const later = (f, ms) => timers.push(setTimeout(f, ms));
     const next = () => {
       st.i++; st.cp = 1; st.m = {}; st.taps = []; st.atName = null; st.anomaly = null; st.path = []; st.jaw = 0; act.innerHTML = "";
       if (st.i >= SPECS.length) {
-        st.over = true; st.i = SPECS.length - 1;
+        st.over = true; st.i = SPECS.length - 1; api.store.set("losses", 0);
         const clean = st.misclassified === 0 && st.keyedNew === 1;
-        api.end({ outcome: "win", text: `All six specimens keyed: ${st.named} named, ${st.keyedNew} keyed as new${st.misclassified ? `, ${st.misclassified} misclassified` : ""}. ${clean ? "The anomaly now has its own couplet in Lira's pencil." : st.keyedNew ? "" : "The anomaly went in under the wrong name."}` });
+        api.end({ outcome: clean ? "win" : "done", text: `All six specimens keyed: ${st.named} named, ${st.keyedNew} keyed as new${st.misclassified ? `, ${st.misclassified} misclassified` : ""}. ${clean ? "The anomaly now has its own couplet in Lira's pencil, and the key is one branch truer than it was this morning. Pell asks why the wolf came up so high. Lira says she does not know yet, and writes that down too." : st.keyedNew ? "The anomaly has its couplet; one name on the plate is wrong and will stay wrong in the journal." : "The anomaly went in under the wrong name. Nothing on the page says the wolves are climbing."}` });
         return;
       }
-      st.t0 = performance.now(); drawSpec(); renderMeas(); renderKey();
+      st.t0 = performance.now(); st.pellTold = false; drawSpec(); renderMeas(); renderKey();
+      if (st.i === 1) { pellBtn.hidden = false; log("Pell drags a stool to the bench. “I can count glows faster than you. Ask me.” She means it. Her numbers are not always right.", true); }
+      else if (st.i === 3) log("A track cast from the upper bridge, still damp. Joren brought it down this morning, wrapped in his scarf.", true);
+      else if (st.i === 4) log(st.keyedNew ? "Lira looks at her new pencil couplet for a while before she picks up the next jar." : "The next jar. The wolf’s card stays at the edge of the bench.", true);
     };
 
+    const pellBtn = el.querySelector("[data-t=pell]"); pellBtn.textContent = "Pell’s tally (3)";
     st.jaw = 0; drawSpec(); renderMeas(); renderKey();
     const intro = document.createElement("div"); intro.className = P + "intro";
-    intro.innerHTML = `<div class="${P}card"><h3>The Key</h3>
-      <p>Key six specimens from the terrace. Each lit couplet asks for one trait: time the glow with the stopwatch (tap four times as it glows), drag the red jaw to the tip and read the rule, or read the altimeter tag.</p>
-      <p>Follow the couplets to a name. If the specimen contradicts the name's description, it is an anomaly: write a new couplet. Two misclassified specimens lose the plate.</p>
+    intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="pl">PLATE XIV</div><h3>The Key</h3>
+      <p class="goal">Name six specimens from the terrace by following the key, couplet by couplet.</p>
+      <ol><li><b>T</b><span>Stopwatch: tap four times, once at each glow</span></li>
+      <li><b>R</b><span>Drag the red jaw to the specimen’s tip, then read the rule</span></li>
+      <li><b>G</b><span>Read the altimeter tag</span></li>
+      <li><b>1a/1b</b><span>Choose the branch your measure fits</span></li></ol>
+      ${losses >= 2 ? `<label><input type="checkbox" class="gentle" checked> Lira’s annotated key: show the measure each couplet uses</label>` : ""}
       <button type="button">Open the collection</button></div>`;
     el.appendChild(intro);
     const sb = intro.querySelector("button");
-    on(sb, "click", () => { intro.remove(); st.started = true; st.t0 = performance.now(); });
+    on(sb, "click", () => {
+      const g = intro.querySelector(".gentle"); st.helped = !!(g && g.checked);
+      intro.remove(); st.started = true; st.t0 = performance.now(); renderKey();
+      log("Book I, Hollin Terrace. Six jars on the bench from this week's walks, and Pell watching from the doorway. Two misclassified and the plate goes in unverified.", true);
+    });
     sb.focus();
-    return { unmount() { cancelAnimationFrame(raf); off.forEach((f) => f()); } };
+    on(window, "keydown", (e) => { if (!st.started || st.over || e.target.closest("input")) return; const k = e.key.toLowerCase(); if (k === "t") { tool("tap"); e.preventDefault(); } else if (k === "r") tool("rule"); else if (k === "g") tool("tag"); else if (k === "p" && !pellBtn.hidden) tool("pell"); });
+    if (window.__ezTest) window.__ezTest[api.key] = { st, spec, tool, choose: (side) => { const c = KEY.find((x) => x.id === st.cp); choose(c, side); }, KEY };
+    return { unmount() { cancelAnimationFrame(raf); off.forEach((f) => f()); timers.forEach(clearTimeout); } };
   },
 };

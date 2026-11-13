@@ -50,9 +50,11 @@ export function render(root, ctx) {
   .me-load-tip b{color:#D9A441;font-weight:700;letter-spacing:.12em;margin-right:8px;font-size:11px}
   .me-load-r{display:flex;flex-direction:column;align-items:center;gap:14px;min-width:0}
   .me-load-clock{width:min(34vh,30vw,300px);height:auto;filter:drop-shadow(0 12px 28px rgba(0,0,0,.6))}
-  .me-load-time{font-size:13px;letter-spacing:.25em;color:#7C8C99}
+  .me-load-time{font-size:15px;font-weight:700;letter-spacing:.25em;color:#7C8C99}
+  .me-load-bar{width:160px;height:4px;background:rgba(217,210,191,.2);margin:6px 0}
+  .me-load-bar i{display:block;height:100%;width:0;background:#D9A441}
   .me-load-label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#D9A441}
-  @media (max-width:720px){.me-load-wrap{grid-template-columns:1fr;align-content:center;gap:12px}.me-load-r{order:-1;flex-direction:row}.me-load-clock{width:110px}.me-load-card{margin-top:16px}.me-load-tip{margin-top:14px}}
+  @media (max-width:720px){.me-load-bar{width:120px}.me-load-wrap{grid-template-columns:1fr;align-content:center;gap:12px}.me-load-r{order:-1;flex-direction:row}.me-load-clock{width:110px}.me-load-card{margin-top:16px}.me-load-tip{margin-top:14px}}
   `;
   root.innerHTML = `<style>${css}</style>
   <div class="me-load">
@@ -68,7 +70,7 @@ export function render(root, ctx) {
       </div>
       <div class="me-load-r">
         <svg class="me-load-clock" viewBox="-110 -110 220 220" role="img" aria-label="The bunk-room clock"></svg>
-        <div><div class="me-load-time">21:00</div><div class="me-load-label"></div></div>
+        <div><div class="me-load-time">21:00</div><div class="me-load-bar"><i></i></div><div class="me-load-label"></div></div>
       </div>
     </div>
   </div>`;
@@ -107,12 +109,14 @@ export function render(root, ctx) {
 
   let p = 0, shown = 0, raf = 0, last = performance.now(), sec = 0;
   const timeEl = root.querySelector(".me-load-time");
+  const barEl = root.querySelector(".me-load-bar i");
   const set = (v) => {
     // 21:00 -> 22:00 across the load
     const mins = v * 60;
     minute.setAttribute("transform", `rotate(${mins * 6})`);
     hour.setAttribute("transform", `rotate(${(9 + mins / 60) * 30})`);
     frost.setAttribute("stroke-width", (v * 10).toFixed(1));
+    barEl.style.width = (v * 100).toFixed(1) + "%";
     const m = Math.min(59, Math.floor(mins));
     timeEl.textContent = v >= 1 ? "22:00" : `21:${String(m).padStart(2, "0")}`;
   };

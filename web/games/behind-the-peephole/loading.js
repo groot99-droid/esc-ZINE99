@@ -35,12 +35,15 @@ export function render(root, ctx) {
   .${P}dark{position:absolute;inset:0;background:radial-gradient(circle at var(--x) var(--y),transparent 0,transparent var(--r),rgba(11,9,7,.97) calc(var(--r) + 2px))}
   .${P}still{position:absolute;inset:0;background-size:cover;background-position:center;filter:sepia(.45) saturate(1.25) contrast(1.08) brightness(1.15)}
   .${P}svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-  .${P}txt{position:absolute;left:max(16px,4vw);right:max(16px,4vw);bottom:max(18px,5vh);display:grid;gap:10px;max-width:640px}
-  .${P}label{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#e0a24a}
+  .${P}txt{position:absolute;left:max(16px,4vw);right:max(16px,4vw);bottom:max(18px,5vh);display:grid;gap:10px;max-width:640px;padding:14px 0 0;background:linear-gradient(transparent,rgba(11,9,7,.85) 18%)}
+  .${P}label{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#e0a24a;display:flex;align-items:center;gap:10px}
+  .${P}bar{flex:1;max-width:220px;height:3px;background:#3b2a0e;position:relative;overflow:hidden}
+  .${P}bar i{position:absolute;left:0;top:0;bottom:0;background:#e0a24a;width:0}
   .${P}title{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(40px,8vw,92px);line-height:.9;margin:0;color:#f6cf86;text-shadow:0 2px 18px #000}
   .${P}q{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(18px,2.4vw,26px);line-height:1.25;margin:0;color:#efe6cf}
-  .${P}tip{font-size:12.5px;line-height:1.5;color:#c9bfa6;min-height:3em;transition:opacity .5s}
-  .${P}clock{position:absolute;top:max(14px,3vh);right:max(16px,4vw);font-size:12px;letter-spacing:.2em;color:#b8913f}
+  .${P}tip{font-size:14px;line-height:1.5;color:#ddd3b8;min-height:3em;transition:opacity .5s}
+  .${P}tip::before{content:"TIP · ";color:#e0a24a;letter-spacing:.14em;font-size:12px}
+  .${P}clock{position:absolute;top:max(14px,3vh);right:max(16px,4vw);font-size:13px;letter-spacing:.18em;color:#d8b060}
   `;
   const wrap = document.createElement("div");
   wrap.className = P + "wrap";
@@ -51,14 +54,15 @@ export function render(root, ctx) {
     <svg class="${P}svg" aria-hidden="true"><g class="${P}ring"></g></svg>
     <div class="${P}clock">23:00 · VALET PASSAGE · 4F</div>
     <div class="${P}txt">
-      <div class="${P}label"></div>
+      <div class="${P}label"><span></span><span class="${P}bar"><i></i></span><span class="${P}pct">0%</span></div>
       <h1 class="${P}title"></h1>
       <p class="${P}q">“You never see their missions.<br>You only see their return.”</p>
       <div class="${P}tip"></div>
     </div>`;
   root.append(css, wrap);
   wrap.querySelector("." + P + "still").style.backgroundImage = `url("${meta.cover}")`;
-  wrap.querySelector("." + P + "label").textContent = ctx.label || "Loading";
+  wrap.querySelector("." + P + "label span").textContent = ctx.label || "Loading";
+  const barEl = wrap.querySelector("." + P + "bar i"), pctEl = wrap.querySelector("." + P + "pct");
   wrap.querySelector("." + P + "title").textContent = ctx.title || "Behind the Peephole";
   const tipEl = wrap.querySelector("." + P + "tip");
   const clockEl = wrap.querySelector("." + P + "clock");
@@ -99,6 +103,7 @@ export function render(root, ctx) {
     arc.setAttribute("transform", `rotate(-90 ${x} ${y})`);
     const mins = Math.floor(p * 14);
     clockEl.textContent = `23:${String(mins).padStart(2, "0")} · VALET PASSAGE · 4F`;
+    barEl.style.width = (p * 100).toFixed(1) + "%"; pctEl.textContent = Math.round(p * 100) + "%";
     svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
     raf = requestAnimationFrame(frame);
   }

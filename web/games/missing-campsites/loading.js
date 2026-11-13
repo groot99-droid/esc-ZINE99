@@ -38,16 +38,18 @@ const CSS = `
 .mc-load-sheet{position:absolute;left:50%;bottom:max(18px,4vh);transform:translateX(-50%);width:min(760px,calc(100% - 32px));background:#f1ead6;color:#2b2a27;box-shadow:0 18px 50px rgba(0,0,0,.55);padding:18px 20px 14px;box-sizing:border-box}
 .mc-load-sheet::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(80,60,30,.035) 3px 4px)}
 .mc-load-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:2px solid #2f6b3a;padding-bottom:6px;color:#2f6b3a}
-.mc-load-head small{font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.mc-load-head small{font-size:12px;letter-spacing:.18em;text-transform:uppercase}
 .mc-load-title{font-family:'Zilla Slab',Rockwell,Georgia,serif;font-weight:700;font-size:clamp(28px,6vw,52px);line-height:1;margin:0;color:#1f2a22;letter-spacing:.01em}
 .mc-load-row{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:14px;align-items:center;margin-top:10px}
 .mc-load-map{width:100%;height:auto;display:block}
 .mc-load-quote{font-family:'Caveat','Segoe Print',cursive;font-size:clamp(20px,3.4vw,28px);line-height:1.08;color:#3a3a3c;margin:0}
-.mc-load-cite{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#2f6b3a;margin-top:6px}
-.mc-load-tip{margin-top:10px;font-size:12px;line-height:1.45;color:#4a4a4c;min-height:3em;border-top:1px dashed #b9b09a;padding-top:8px}
-.mc-load-tip b{color:#9c3b30;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:10px;margin-right:6px}
-.mc-load-label{position:absolute;top:14px;left:16px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#ffb35c;opacity:.85}
-@media (max-width:560px){.mc-load-row{grid-template-columns:1fr}.mc-load-sheet{padding:14px}}
+.mc-load-cite{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#2f6b3a;margin-top:6px}
+.mc-load-tip{margin-top:10px;font-size:14px;line-height:1.45;color:#333336;min-height:3em;border-top:1px dashed #b9b09a;padding-top:8px}
+.mc-load-tip b{color:#9c3b30;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin-right:6px}
+.mc-load-label{position:absolute;top:14px;left:16px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#ffb35c;opacity:.85}
+.mc-load-rule{height:4px;background:rgba(47,107,58,.18);margin-top:6px;position:relative}.mc-load-rule i{position:absolute;left:0;top:0;bottom:0;background:#4a4a4c;width:0;background-image:repeating-linear-gradient(90deg,#4a4a4c 0 7px,#6a6a6c 7px 9px)}
+.mc-load-tip span{transition:opacity .3s}
+@media (max-width:560px){.mc-load-quote{font-size:22px}.mc-load-title{font-size:34px}.mc-load-row{grid-template-columns:1fr}.mc-load-sheet{padding:14px}}
 `;
 
 export function render(root, ctx) {
@@ -58,7 +60,7 @@ export function render(root, ctx) {
     <div class="mc-load-photo"></div><div class="mc-load-veil"></div>
     <div class="mc-load-label"></div>
     <div class="mc-load-sheet">
-      <div class="mc-load-head"><small>Hollin Creek · Sites 1–24</small><small class="mc-load-pct">0%</small></div>
+      <div class="mc-load-head"><small>Hollin Creek · Sites 1–24</small><small class="mc-load-pct">0%</small></div><div class="mc-load-rule"><i></i></div>
       <div class="mc-load-row">
         <div><h1 class="mc-load-title"></h1><svg class="mc-load-map" viewBox="0 0 400 210" aria-hidden="true"></svg></div>
         <div><p class="mc-load-quote"></p><span class="mc-load-cite">from the author's pitch</span>
@@ -96,7 +98,7 @@ export function render(root, ctx) {
     const x = p.x + ox, y = p.y + oy;
     const g = mk("g", {});
     const sq = mk("rect", { x: x - 5, y: y - 5, width: 10, height: 10, fill: "#2f6b3a" }, g);
-    const pencil = mk("text", { x, y: y + 4, "text-anchor": "middle", "font-size": 11, fill: "#4a4a4c", "font-family": "Caveat, 'Segoe Print', cursive", "font-weight": 700, visibility: "hidden" }, g);
+    const pencil = mk("text", { x, y: y + 4, "text-anchor": "middle", "font-size": 14, fill: "#333336", "font-family": "Caveat, 'Segoe Print', cursive", "font-weight": 700, visibility: "hidden" }, g);
     pencil.textContent = String(i + 1);
     sites.push({ t, sq, pencil, gone: false });
   }
@@ -111,6 +113,7 @@ export function render(root, ctx) {
   const END_T = (19 + 0.5) / 24 + 0.03;
   let target = 0, shown = 0, raf = 0, tipTimer = 0, tipIdx = 0, open = true;
   const pctEl = el.querySelector(".mc-load-pct");
+  const ruleEl = el.querySelector(".mc-load-rule i");
   const place = (p) => {
     const t = p * END_T;
     const c = pt(t);
@@ -123,6 +126,7 @@ export function render(root, ctx) {
       }
     }
     pctEl.textContent = Math.round(p * 100) + "%";
+    ruleEl.style.width = (p * 100).toFixed(1) + "%";
   };
   const frame = () => {
     if (!open) return;

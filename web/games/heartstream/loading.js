@@ -19,10 +19,11 @@ export const meta = {
 const QUOTE = "They live in a labyrinth of glowing marrow tunnels, where the walls pulse faintly with the rhythm of the distant heart.";
 const TIPS = [
   "Everything is judged against the heartbeat. Act on the pulse, not between pulses.",
-  "On the river, row on the beat; when the beast's eye opens, hush and keep still.",
-  "In the shaft, a hold grabbed on the beat is firm. Off the beat it is slick.",
-  "Carve with the grain: a stroke across it costs two.",
-  "In Marrow-Song, joins that step by one or less are smooth. Alternate the accents to make rowing calls.",
+  "On the river, row on the beat; when the drone sounds, hold Hush until the eye closes.",
+  "In the shaft, a hold grabbed on the beat is firm. When the holds glisten, brace and cling.",
+  "A Reach gains two holds on the very heart of the beat, and slides you two when it misses.",
+  "Carve with the grain: a stroke across it costs two. Rub the ink to find the knots.",
+  "In Marrow-Song, joins that step by one or less are smooth. The heart verse must end home, on 1.",
   "Bone Counters: tap Drop as each counter falls. A last counter on the beat into a hollow of three rings it.",
   "On the Branch Chart, a tie goes to the strongest current. The body simply moves them on.",
 ];
@@ -61,9 +62,11 @@ export function render(root, ctx) {
 .${P}title{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(34px,6.4vw,84px);line-height:.98;margin:.25em 0 .35em;text-wrap:balance;text-shadow:0 2px 30px rgba(0,0,0,.6)}
 .${P}quote{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(17px,2.1vw,25px);line-height:1.35;max-width:34em;color:#e9dfca;margin:0;border-left:2px solid #E0603A;padding-left:14px}
 .${P}hand{position:absolute;right:clamp(10px,7vw,120px);bottom:clamp(70px,14vh,150px);width:clamp(130px,22vw,260px);height:auto;overflow:visible}
+.${P}vein{position:absolute;left:clamp(16px,6vw,90px);right:clamp(16px,6vw,90px);bottom:clamp(64px,11vh,100px);height:4px;background:rgba(127,178,224,.25);border-radius:2px;overflow:hidden}
+.${P}vein i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2F5D8C,#B3202E 60%,#E0603A)}
 .${P}tip{position:absolute;left:clamp(16px,6vw,90px);right:clamp(16px,6vw,90px);bottom:clamp(18px,5vh,46px);font-size:clamp(14px,1.6vw,17px);line-height:1.4;max-width:46em;transition:opacity .5s}
 .${P}tip b{color:#7FB2E0;font-weight:700;letter-spacing:.14em;font-size:.78em;text-transform:uppercase;margin-right:.6em}
-@media (max-width:620px){.${P}hand{width:110px;bottom:120px;opacity:.85}}
+@media (max-width:620px){.${P}hand{width:110px;bottom:150px;opacity:.85}.${P}vein{bottom:120px}.${P}label{font-size:12px}}
 `;
   el.appendChild(css);
   const img = document.createElement("img");
@@ -107,7 +110,10 @@ export function render(root, ctx) {
   const tip = document.createElement("div");
   tip.className = P + "tip";
   tip.setAttribute("aria-live", "polite");
-  el.appendChild(tip);
+  const vein = document.createElement("div"); vein.className = P + "vein"; vein.innerHTML = "<i></i>";
+  vein.setAttribute("role", "progressbar"); vein.setAttribute("aria-label", "Loading");
+  el.append(vein, tip);
+  const veinFill = vein.querySelector("i");
   let tipI = Math.floor(Math.random() * TIPS.length);
   const showTip = () => { tip.innerHTML = `<b>How it plays</b><span></span>`; tip.querySelector("span").textContent = TIPS[tipI % TIPS.length]; tipI++; };
   showTip();
@@ -127,6 +133,7 @@ export function render(root, ctx) {
     fill.setAttribute("y", String(68 - h)); fill.setAttribute("height", String(h));
     edge.setAttribute("y", String(66 - h));
     red.style.height = `${Math.round(shown * 62)}%`;
+    veinFill.style.width = `${(shown * 100).toFixed(1)}%`;
     if (!ctx.reducedMotion) {
       // 60 bpm: a sharp systole, then a slow ease back.
       const ph = ((now - t0) / 1000) % 1;

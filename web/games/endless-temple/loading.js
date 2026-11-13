@@ -51,21 +51,22 @@ export function render(root, ctx) {
   .${P}plate{position:relative;width:100%;flex:1;min-height:0;border:1px solid #5a3d27;outline:1px solid rgba(90,61,39,.4);outline-offset:4px;overflow:hidden;background:#e9d9b3}
   .${P}plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:sepia(.55) saturate(.85) contrast(1.06) brightness(1.04);mix-blend-mode:multiply;opacity:.95}
   .${P}plate::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 40px rgba(212,162,58,.45);}
-  .${P}cap{font-style:italic;font-size:12px;color:#5a3d27;text-align:center;margin-top:8px}
+  .${P}cap{font-style:italic;font-size:14px;color:#5a3d27;text-align:center;margin-top:8px}
   .${P}title{font-family:'IM Fell English','EB Garamond',Georgia,serif;color:#3a2716;font-size:clamp(26px,4.2vw,56px);line-height:.98;margin:0 0 .25em;text-wrap:balance}
-  .${P}label{font-variant:small-caps;letter-spacing:.12em;color:#8a6a2a;font-size:clamp(12px,1.3vw,15px);margin-bottom:1em}
+  .${P}label{font-variant:small-caps;letter-spacing:.12em;color:#8a6a2a;font-size:clamp(13px,1.3vw,15px);margin-bottom:1em}
   .${P}orn{width:60%;height:12px;margin:.2em 0 1em;color:#b98a2c}
-  .${P}quote{font-style:italic;color:#3a2716;font-size:clamp(14px,1.55vw,19px);line-height:1.35;margin:0;text-wrap:pretty}
-  .${P}quote small{display:block;font-style:normal;font-size:.72em;color:#7a5d3a;margin-top:.5em;letter-spacing:.04em}
-  .${P}tip{margin-top:auto;padding-top:1em;color:#5a3d27;font-size:clamp(12px,1.25vw,15px);min-height:3.2em;transition:opacity .4s}
+  .${P}quote{font-style:italic;color:#3a2716;font-size:clamp(15px,1.55vw,19px);line-height:1.35;margin:0;text-wrap:pretty}
+  .${P}quote small{display:block;font-style:normal;font-size:max(13px,.72em);color:#7a5d3a;margin-top:.5em;letter-spacing:.04em}
+  .${P}tip{margin-top:auto;padding-top:1em;color:#4a3020;font-size:clamp(14px,1.3vw,16px);min-height:3.2em;transition:opacity .4s}
   .${P}tip b{font-variant:small-caps;letter-spacing:.1em;color:#8a6a2a;font-weight:600;margin-right:.4em}
   .${P}sand{position:relative;width:min(1060px,96%);height:min(22vh,150px);flex:none}
   .${P}sand canvas{position:absolute;inset:0;width:100%;height:100%}
-  .${P}pct{position:absolute;right:0;top:4px;font-variant:small-caps;letter-spacing:.14em;font-size:12px;color:#d4a23a;opacity:.85}
+  .${P}pct{position:absolute;right:0;top:4px;font-variant:small-caps;letter-spacing:.14em;font-size:14px;color:#e5c27a;background:rgba(23,15,9,.85);padding:1px 8px;border-radius:3px;z-index:1}
   @media (max-width:640px){
     .${P}book{grid-template-columns:1fr;aspect-ratio:auto;max-height:none;width:100%}
     .${P}book::after{display:none}
-    .${P}page.${P}left{height:30vh}
+    .${P}page.${P}left{height:26vh}
+    .${P}title{font-size:30px}
     .${P}sand{height:16vh;width:100%}
   }`;
   const wrap = document.createElement("div");

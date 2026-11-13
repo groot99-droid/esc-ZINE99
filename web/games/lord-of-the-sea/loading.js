@@ -28,6 +28,8 @@ const TIPS = [
   "The binding clause is the one every other obligation routes through. Follow the red thread.",
   "On the Tea Board a tie, in the factor's books, is his. Take a port outright.",
   "Lay the tide from the end of each hour's run, not from the fix.",
+  "Once a run, call the crew to sing: for twelve seconds every stir runs one tier higher.",
+  "Lift a seal to the loupe. The wax remembers dates the clerk would rather you forgot.",
 ];
 
 let uid = 0;
@@ -60,7 +62,7 @@ export function render(root, ctx) {
     .${id} .tip { font-size:15px; max-width:52ch; min-height:2.6em; opacity:.88; transition:opacity .5s; }
     .${id} .tip b { font-family:'IM Fell English SC',Georgia,serif; font-weight:400; color:#E7A93B; letter-spacing:.08em; margin-right:.5em; }
     .${id} .ring { width:clamp(110px,16vw,168px); height:auto; display:block; }
-    .${id} .ringlbl { font-family:'IM Fell English SC',Georgia,serif; font-size:12px; letter-spacing:.14em; text-align:center; opacity:.8; margin-top:4px; }
+    .${id} .ringlbl { font-family:'IM Fell English SC',Georgia,serif; font-size:13px; letter-spacing:.14em; text-align:center; opacity:.9; margin-top:4px; }
     @media (max-width:640px) { .${id} .body { grid-template-columns:1fr; } .${id} .rose { justify-self:start; order:-1; } }
   </style>
   <div class="${id}${reduce ? "" : " drift"}" role="status" aria-label="Loading ${esc(ctx.title)}">

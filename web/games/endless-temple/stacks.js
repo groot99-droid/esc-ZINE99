@@ -10,8 +10,23 @@
 // staggers you, and a hit on a ladder drops you back to the landing. No failure is fatal: the run
 // is scored by time and wrong turns.
 
-const JUNCTIONS = 5;
+const BASE_JUNCTIONS = 5;
 const EXITS = ["up", "down", "on"];
+// Narration written for the game (not quotations).
+const LINES = {
+  open: "Rain is falling somewhere in the stacks, where no rain should be. The weather book of Hollin is calling, and Elaris goes to find it.",
+  first: "Follow the drops. Where they thicken, the way is right.",
+  listen: "The drops are harder to read here. Stand and Listen (hold L), and they gather into one stream.",
+  ladders: "Rolling ladders on the rails. Grab one (E) and push: it outruns the falling books.",
+  wander: "The keeper's mind wanders, and the shelves go on: two more junctions have grown ahead.",
+  right: "The drops thicken. Junction {n} of {N} behind you.",
+  wrong: "The drops thin out here.",
+  bend: "The aisle bends back. The same junction again; the shelves go on.",
+  near: "The drops gather ahead. The calling book is close.",
+  hit: "A book falls on you. You stagger.",
+  winClean: "The weather book of Hollin, found by its own rain: {N} junctions in {t}, with no wrong turn. Its pages are damp under Elaris's long green hand.",
+  win: "The weather book of Hollin, found: {N} junctions in {t}, with {w} wrong turn{ws} and {h} falling book{hs}. The shelves behind him have already rearranged themselves.",
+};
 
 export default {
   mount(root, api) {
@@ -28,66 +43,88 @@ export default {
     .${P}pad button{pointer-events:auto;font:600 15px 'EB Garamond',Georgia,serif;color:${C.ink};background:rgba(239,232,214,.9);border:1px solid ${C.ink};min-width:56px;min-height:56px;border-radius:4px;touch-action:none}
     .${P}pad button.${P}on{background:${C.goldHi}}
     @media (hover:hover) and (pointer:fine){.${P}pad{opacity:.7}}
-    .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(239,232,214,.8);z-index:5;padding:16px}
-    .${P}intro div{max-width:460px;background:${C.paper};color:${C.ink};padding:24px;border:1px solid ${C.ink};outline:1px solid ${C.ink};outline-offset:5px;font-family:'EB Garamond',Georgia,serif}
-    .${P}intro h2{font-family:'IM Fell English',Georgia,serif;font-weight:400;margin:0 0 8px}
-    .${P}intro p{margin:0 0 10px}
-    .${P}intro button{font:inherit;font-size:17px;padding:8px 26px;border:1px solid ${C.ink};background:${C.goldHi};cursor:pointer}
+    .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(239,232,214,.82);z-index:5;padding:16px;overflow:auto}
+    .${P}pad button[hidden]{display:none}
+    .${P}card{max-width:440px;background:${C.paper};color:${C.ink};padding:18px 22px 22px;border:1px solid ${C.ink};outline:1px solid ${C.ink};outline-offset:5px;font-family:'EB Garamond',Georgia,serif;font-size:16px;
+      background-image:repeating-linear-gradient(90deg,transparent 0 23px,rgba(42,42,42,.06) 23px 24px)}
+    .${P}card svg{display:block;width:100%;height:auto;margin-bottom:6px}
+    .${P}card h2{font-family:'IM Fell English',Georgia,serif;font-weight:400;margin:0;font-size:28px;text-align:center}
+    .${P}goal{margin:4px 0 12px;font-size:17px;text-align:center}
+    .${P}card dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:0 0 16px}
+    .${P}card dt{font-weight:600;border-bottom:1px solid ${C.ink};white-space:nowrap}
+    .${P}card dd{margin:0}
+    .${P}card button{display:block;margin:0 auto;font:inherit;font-size:18px;padding:8px 26px;border:1px solid ${C.ink};background:${C.goldHi};cursor:pointer}
+    .${P}card button:hover,.${P}card button:focus-visible{background:#ffd877;outline:2px solid ${C.ink};outline-offset:2px}
     `;
     const el = document.createElement("div");
     el.className = P + "root";
     el.innerHTML = `<canvas aria-label="Side-on shelves that do not end; a stream of gold motes drifts toward the calling book."></canvas>
       <div class="${P}pad"><div><button type="button" data-k="left">◀</button><button type="button" data-k="right">▶</button></div>
-      <div><button type="button" data-k="grab">Grab</button><button type="button" data-k="down">▼</button><button type="button" data-k="up">▲</button></div></div>`;
+      <div><button type="button" data-k="listen" hidden>Listen</button><button type="button" data-k="grab">Grab</button><button type="button" data-k="down">▼</button><button type="button" data-k="up">▲</button></div></div>`;
     root.append(css, el);
     const cv = el.querySelector("canvas");
+    const listenBtn = el.querySelector('[data-k="listen"]');
     const g = cv.getContext("2d");
 
     // ---- segments ------------------------------------------------------------------------------
     // a segment is an aisle; it ends in a junction (three exits), a bend back (after a wrong turn),
     // or the calling book (after the last junction)
-    const answers = Array.from({ length: JUNCTIONS }, () => EXITS[Math.floor(rng() * 3)]);
+    const answers = Array.from({ length: BASE_JUNCTIONS + 2 }, () => EXITS[Math.floor(rng() * 3)]);
     function makeSeg(kind) {
-      const L = 40 + Math.floor(rng() * 24);
+      const L = 52 + Math.floor(rng() * 28);
       const seg = { kind, L, seed: Math.floor(rng() * 1e6), books: [], ladders: [] };
-      if (kind !== "book") for (let x = 8; x < L - 12; x += 7 + rng() * 8) seg.books.push({ x, t: -1, state: "wait", trig: x - 3 - rng() * 2 });
-      if (rng() < 0.85) seg.ladders.push({ x: 4 + rng() * 6, v: 0, rail: [2, L - 14] });
+      const late = S0.ribbon >= 2;
+      if (kind !== "book") for (let x = 8; x < L - 12; x += (late ? 7 : 10) + rng() * 8) seg.books.push({ x, t: -1, state: "wait", trig: x - 4 - rng() * 3 });
+      if (S0.ribbon >= 1 && rng() < 0.9) seg.ladders.push({ x: 4 + rng() * 6, v: 0, rail: [2, L - 14] });
       return seg;
     }
+    const S0 = { ribbon: 0 };
     const S = {
-      ribbon: 0, wrong: 0, hits: 0, t: 0, started: false, done: false,
+      ribbon: 0, wrong: 0, hits: 0, t: 0, started: false, done: false, J: BASE_JUNCTIONS, wandered: false, still: 0, listening: false, flash: 0, flashKind: "", listenOn: false,
       seg: makeSeg("junction"), x: 1.5, v: 0, facing: 1, climb: null, stagger: 0, riding: null, runT: 0,
       motes: [], msg: "", msgT: 0, fade: 0,
     };
-    const keys = { left: false, right: false, up: false, down: false };
+    const keys = { left: false, right: false, up: false, down: false, listen: false };
     function say(t, s = 2.4) { S.msg = t; S.msgT = s; }
     const exitX = (seg) => ({ up: seg.L - 9, down: seg.L - 5, on: seg.L });
 
-    function enter(kind) { S.seg = makeSeg(kind); S.x = 1.5; S.v = 0; S.riding = null; S.motes = []; S.fade = 1; }
+    function enter(kind) { S0.ribbon = S.ribbon; S.seg = makeSeg(kind); S.x = 1.5; S.v = 0; S.riding = null; S.motes = []; S.fade = 1; }
+    function flash(kind) { S.flash = api.reducedMotion ? 0 : 0.9; S.flashKind = kind; }
     function takeExit(ex) {
       const seg = S.seg;
       if (seg.kind === "junction") {
         if (ex === answers[S.ribbon]) {
-          S.ribbon++;
-          if (S.ribbon >= JUNCTIONS) { enter("book"); say("The drops gather ahead. The calling book is close."); }
-          else { enter("junction"); say(`The motes thicken. Junction ${S.ribbon} of ${JUNCTIONS} behind you.`); }
-        } else { S.wrong++; enter("bend"); say("The motes thin out here."); }
-      } else if (seg.kind === "bend") { enter("junction"); say("The aisle bends back. The same junction again; the shelves go on."); }
+          S.ribbon++; flash("right");
+          if (S.ribbon >= S.J) { enter("book"); say(LINES.near, 3); }
+          else {
+            enter("junction");
+            if (S.ribbon === 1) say(LINES.ladders, 4.5);
+            else if (S.ribbon === 2 && !S.listenOn) { S.listenOn = true; listenBtn.hidden = false; say(LINES.listen, 5); }
+            else say(LINES.right.replace("{n}", S.ribbon).replace("{N}", S.J));
+          }
+        } else {
+          S.wrong++; flash("wrong"); enter("bend");
+          if (S.wrong >= 2 && !S.wandered) { S.wandered = true; S.J += 2; say(LINES.wrong + " " + LINES.wander, 5); }
+          else say(LINES.wrong);
+          if (!S.listenOn) { S.listenOn = true; listenBtn.hidden = false; timers.push(setTimeout(() => say(LINES.listen, 5), 2600)); }
+        }
+      } else if (seg.kind === "bend") { enter("junction"); say(LINES.bend); }
     }
 
     // ---- input ---------------------------------------------------------------------------------
-    const KM = { arrowleft: "left", a: "left", arrowright: "right", d: "right", arrowup: "up", w: "up", arrowdown: "down", s: "down", e: "grab", " ": "grab" };
+    const KM = { arrowleft: "left", a: "left", arrowright: "right", d: "right", arrowup: "up", w: "up", arrowdown: "down", s: "down", e: "grab", " ": "grab", l: "listen", q: "listen" };
     function grab() {
       if (S.climb || S.stagger > 0) return;
       if (S.riding) { S.v = S.riding.v; S.riding = null; say("Off the ladder.", 1); return; }
       const l = S.seg.ladders.find((l) => Math.abs(l.x - S.x) < 1.2);
       if (l) { S.riding = l; l.v = Math.max(1.5, Math.abs(S.v)); say("Riding the rolling ladder. Push with ▶.", 1.6); }
     }
-    const onDown = (e) => { const k = KM[e.key.toLowerCase()]; if (!k || !S.started) return; e.preventDefault(); if (k === "grab") { if (!e.repeat) grab(); } else keys[k] = true; };
+    const onDown = (e) => { const k = KM[e.key.toLowerCase()]; if (!k || !S.started || (k === "listen" && !S.listenOn)) return; e.preventDefault(); if (k === "grab") { if (!e.repeat) grab(); } else keys[k] = true; };
     const onUp = (e) => { const k = KM[e.key.toLowerCase()]; if (k && k !== "grab") keys[k] = false; };
     addEventListener("keydown", onDown); addEventListener("keyup", onUp);
     const ptr = [];
     for (const b of el.querySelectorAll("[data-k]")) {
+      if (!b.dataset.k) continue;
       const k = b.dataset.k;
       const d = (e) => { e.preventDefault(); if (!S.started) return; b.classList.add(P + "on"); if (k === "grab") grab(); else keys[k] = true; };
       const u = (e) => { e.preventDefault(); b.classList.remove(P + "on"); if (k !== "grab") keys[k] = false; };
@@ -131,6 +168,9 @@ export default {
           if (S.x > seg.L + 0.5) takeExit("on");
         } else if (seg.kind === "book" && S.x > seg.L - 3) finish();
       }
+      S.listening = keys.listen && S.listenOn && !S.climb && !S.riding;
+      if (S.listening) { S.v *= 0.8; }
+      if (S.flash > 0) S.flash -= dt;
       // rolling ladders drift on their own a little
       for (const l of seg.ladders) if (l !== S.riding) { l.x = Math.min(l.rail[1], Math.max(l.rail[0], l.x + Math.sin(S.t * 0.7 + l.rail[0]) * 0.1 * dt)); }
 
@@ -142,10 +182,10 @@ export default {
           b.t += dt;
           if (b.t >= 0.25) {
             b.state = "down";
-            if (Math.abs(S.x - b.x) < 0.7) {
+            if (Math.abs(S.x - b.x) < 0.7 && !(S.riding && S.riding.v > 3.5)) {
               S.hits++;
-              if (S.climb && !S.climb.fall) { S.climb = { fall: true, t: 0 }; }
-              else { S.stagger = 1.1; S.riding = null; say("A book falls on you. You stagger.", 1.4); }
+              if (S.climb && !S.climb.fall) { S.climb = { fall: true, t: 0 }; flash("hit"); }
+              else { S.stagger = 1.1; S.riding = null; flash("hit"); say(LINES.hit, 1.4); }
             }
           }
         }
@@ -153,20 +193,22 @@ export default {
 
       // motes: thick toward the right exit, thin and drifting back after a wrong turn
       const right = seg.kind === "junction" ? answers[S.ribbon] : seg.kind === "book" ? "book" : null;
-      const rate = right ? 26 : 5;
+      const rate = right ? (S.listening ? 60 : 22) : 5;
       let n = rate * dt; while (n > 0) { if (rng() < n) spawnMote(right); n -= 1; }
       for (let i = S.motes.length - 1; i >= 0; i--) {
         const m = S.motes[i]; m.life -= dt;
         const dx = m.tx - m.x, dy = m.ty - m.y, d = Math.hypot(dx, dy) || 1;
-        m.vx += (dx / d) * 2.4 * dt + Math.sin(S.t * 2 + m.ph) * 0.3 * dt; m.vy += (dy / d) * 2.4 * dt + Math.cos(S.t * 1.7 + m.ph) * 0.2 * dt;
+        const pull = S.listening ? 6 : 2.4, wob = S.listening ? 0.05 : 0.3;
+        m.vx += (dx / d) * pull * dt + Math.sin(S.t * 2 + m.ph) * wob * dt; m.vy += (dy / d) * pull * dt + Math.cos(S.t * 1.7 + m.ph) * wob * dt;
         m.vx *= 0.97; m.vy *= 0.97; m.x += m.vx * dt; m.y += m.vy * dt;
         if (m.life <= 0 || d < 0.3) S.motes.splice(i, 1);
       }
     }
     function spawnMote(right) {
       const seg = S.seg, ex = exitX(seg);
-      const x = S.x - 8 + rng() * 14;
-      const y = 0.4 + rng() * 2.6;
+      const tight = S.listening && right;
+      const x = tight ? S.x + rng() * 1.5 : S.x - 8 + rng() * 14;
+      const y = tight ? 1.2 + rng() * 0.8 : 0.4 + rng() * 2.6;
       let tx, ty;
       if (right === "up") { tx = ex.up; ty = 6; } else if (right === "down") { tx = ex.down; ty = -2.5; }
       else if (right === "on") { tx = ex.on + 6; ty = 1.5; } else if (right === "book") { tx = seg.L - 1; ty = 1.4; }
@@ -177,7 +219,9 @@ export default {
       if (S.done) return;
       S.done = true;
       const secs = Math.round(S.t);
-      timers.push(setTimeout(() => api.end({ outcome: "win", text: `The weather book, found: ${JUNCTIONS} junctions in ${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}, with ${S.wrong} wrong turn${S.wrong === 1 ? "" : "s"} and ${S.hits} falling book${S.hits === 1 ? "" : "s"}.` }), api.reducedMotion ? 100 : 600));
+      const t = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`;
+      const text = (S.wrong ? LINES.win : LINES.winClean).replace("{N}", S.J).replace("{t}", t).replace("{w}", S.wrong).replace("{ws}", S.wrong === 1 ? "" : "s").replace("{h}", S.hits).replace("{hs}", S.hits === 1 ? "" : "s");
+      timers.push(setTimeout(() => api.end({ outcome: "win", text }), api.reducedMotion ? 100 : 600));
     }
 
     // ---- draw ----------------------------------------------------------------------------------
@@ -208,7 +252,7 @@ export default {
         const fY = floorY - off, cY = ceilY - off;
         if (fY < -10 || cY > H + 10) continue;
         const main = lv === 0;
-        g.globalAlpha = main ? 1 : 0.38;
+        g.globalAlpha = main ? 1 : 0.26;
         for (let i = first; i <= last; i++) {
           const x0 = X(i * bayW), x1 = X((i + 1) * bayW);
           const up = (((i + lv) % 2) + 2) % 2 === 0;
@@ -262,18 +306,18 @@ export default {
         // the aisle on: an arch
         const ox = X(ex.on);
         g.beginPath(); g.moveTo(ox, floorY); g.lineTo(ox, ceilY + 1.2 * s); g.arc(ox + 0.9 * s, ceilY + 1.2 * s, 0.9 * s, Math.PI, 0); g.lineTo(ox + 1.8 * s, floorY); g.stroke();
-        g.font = "italic 13px 'EB Garamond',Georgia,serif"; g.fillStyle = C.ink;
+        g.font = "italic 16px 'EB Garamond',Georgia,serif"; g.fillStyle = C.ink;
         g.fillText("up", ux - 8, ceilY - 30); g.fillText("down", dx - 14, floorY + 54); g.fillText("on", ox + 0.6 * s, ceilY + 1.2 * s - 6);
       } else if (seg.kind === "bend") {
         const ox = X(seg.L);
         g.beginPath(); g.moveTo(ox, floorY); g.bezierCurveTo(ox + 2 * s, floorY - 1 * s, ox + 2 * s, ceilY + s, ox - 0.5 * s, ceilY + 0.5 * s); g.stroke();
-        g.font = "italic 13px 'EB Garamond',Georgia,serif"; g.fillStyle = C.ink; g.fillText("the aisle bends back", ox - 2.2 * s, ceilY + 0.3 * s);
+        g.font = "italic 16px 'EB Garamond',Georgia,serif"; g.fillStyle = C.ink; g.fillText("the aisle bends back", ox - 2.2 * s, ceilY + 0.3 * s);
       } else if (seg.kind === "book") {
         const bx = X(seg.L - 1);
         line(bx, floorY, bx, floorY - 1.1 * s); line(bx - 0.5 * s, floorY, bx + 0.5 * s, floorY);
         g.beginPath(); g.moveTo(bx - 0.6 * s, floorY - 1.1 * s); g.lineTo(bx + 0.6 * s, floorY - 1.3 * s); g.lineTo(bx + 0.6 * s, floorY - 1.0 * s); g.lineTo(bx - 0.6 * s, floorY - 0.85 * s); g.closePath();
         g.fillStyle = C.goldHi; g.fill(); g.stroke();
-        g.font = "italic 13px 'EB Garamond',Georgia,serif"; g.fillStyle = C.ink; g.fillText("the calling book", bx - 0.9 * s, floorY - 1.6 * s);
+        g.font = "italic 16px 'EB Garamond',Georgia,serif"; g.fillStyle = C.ink; g.fillText("the calling book", bx - 0.9 * s, floorY - 1.6 * s);
       }
       g.lineWidth = 1;
       // rolling ladders on their rail
@@ -309,23 +353,39 @@ export default {
       for (const m of S.motes) {
         const mx = X(m.x), my = Y(m.y);
         if (mx < -10 || mx > W + 10) continue;
-        g.fillStyle = m.life < 1 ? `rgba(212,162,58,${m.life.toFixed(2)})` : C.gold;
-        g.beginPath(); g.moveTo(mx, my - 5); g.quadraticCurveTo(mx + 3.5, my + 1, mx, my + 3); g.quadraticCurveTo(mx - 3.5, my + 1, mx, my - 5); g.fill();
+        g.fillStyle = m.life < 1 ? `rgba(196,140,30,${m.life.toFixed(2)})` : "#c48c1e";
+        g.beginPath(); g.moveTo(mx, my - 8); g.quadraticCurveTo(mx + 5.5, my + 1.5, mx, my + 4.5); g.quadraticCurveTo(mx - 5.5, my + 1.5, mx, my - 8); g.fill();
+      }
+      // listening: a dotted gold thread from Elaris to the way the drops go
+      if (S.listening) {
+        const right = seg.kind === "junction" ? answers[S.ribbon] : seg.kind === "book" ? "book" : null;
+        if (right) {
+          const tx = right === "up" ? X(ex.up) : right === "down" ? X(ex.down) : right === "on" ? X(ex.on + 1) : X(seg.L - 1);
+          const ty = right === "up" ? ceilY - 20 : right === "down" ? floorY + 30 : floorY - 1.5 * s;
+          g.strokeStyle = C.gold; g.lineWidth = 2.5; g.setLineDash([2, 6]); g.beginPath(); g.moveTo(X(S.x), floorY - 1.4 * s); g.quadraticCurveTo((X(S.x) + tx) / 2, floorY - 3.4 * s, tx, ty); g.stroke(); g.setLineDash([]); g.lineWidth = 1;
+        }
+      }
+      // flourishes: gold wash on a right turn, grey on a wrong one, a smudge on a hit
+      if (S.flash > 0) {
+        const a = Math.min(1, S.flash) * 0.35;
+        g.fillStyle = S.flashKind === "right" ? `rgba(240,196,90,${a})` : S.flashKind === "wrong" ? `rgba(90,90,90,${a})` : `rgba(160,60,40,${a})`;
+        g.fillRect(0, 0, W, H);
       }
       // the rebuild fade
       if (S.fade > 0) { g.fillStyle = `rgba(239,232,214,${S.fade.toFixed(2)})`; g.fillRect(0, 0, W, H); }
 
       // the bookmark ribbon across the top
-      const rw = Math.min(W - 32, 520), rx = 16, ry = 12;
-      g.fillStyle = "rgba(239,232,214,.92)"; g.fillRect(rx - 6, ry - 6, rw + 12, 46);
-      g.strokeStyle = C.ink; g.strokeRect(rx, ry, rw, 14);
-      for (let j = 0; j < JUNCTIONS; j++) {
-        const x = rx + (rw / JUNCTIONS) * j;
-        if (j < S.ribbon) { g.fillStyle = C.sage; g.fillRect(x + 2, ry + 2, rw / JUNCTIONS - 4, 10); }
+      const rw = Math.min(W - 32, 560), rx = 16, ry = 12;
+      g.fillStyle = "rgba(239,232,214,.96)"; g.fillRect(rx - 8, ry - 6, rw + 16, 50);
+      g.strokeStyle = C.ink; g.strokeRect(rx - 8, ry - 6, rw + 16, 50);
+      g.strokeRect(rx, ry, rw, 14);
+      for (let j = 0; j < S.J; j++) {
+        const x = rx + (rw / S.J) * j;
+        if (j < S.ribbon) { g.fillStyle = C.gold; g.fillRect(x + 2, ry + 2, rw / S.J - 4, 10); }
         if (j) line(x, ry, x, ry + 14);
       }
-      g.fillStyle = C.ink; g.font = "13px 'EB Garamond',Georgia,serif";
-      g.fillText(`${S.ribbon} / ${JUNCTIONS}   ·   wrong turns ${S.wrong}   ·   ${Math.floor(S.t / 60)}:${String(Math.floor(S.t % 60)).padStart(2, "0")}`, rx, ry + 32);
+      g.fillStyle = C.ink; g.font = "600 15px 'EB Garamond',Georgia,serif";
+      g.fillText(`junction ${Math.min(S.ribbon + 1, S.J)} of ${S.J}   ·   wrong turns ${S.wrong}   ·   ${Math.floor(S.t / 60)}:${String(Math.floor(S.t % 60)).padStart(2, "0")}`, rx, ry + 34);
       // prompt near an exit or ladder
       let prompt = "";
       if (!S.climb && seg.kind === "junction") {
@@ -333,11 +393,17 @@ export default {
         else if (Math.abs(S.x - ex.down) < 0.8) prompt = "▼ climb down";
       }
       if (!S.riding && seg.ladders.some((l) => Math.abs(l.x - S.x) < 1.2)) prompt = prompt || "Grab (E) the rolling ladder";
-      if (prompt) { g.font = "italic 15px 'EB Garamond',Georgia,serif"; g.fillText(prompt, X(S.x) - 40, Y(2.9)); }
+      if (S.riding) prompt = "riding: push ▶, Grab to step off";
+      if (prompt) { g.font = "italic 16px 'EB Garamond',Georgia,serif"; const pw2 = g.measureText(prompt).width; const px2 = Math.max(8, Math.min(W - pw2 - 8, X(S.x) - 40)); g.fillStyle = "rgba(239,232,214,.9)"; g.fillRect(px2 - 4, Y(2.9) - 15, pw2 + 8, 21); g.fillStyle = C.ink; g.fillText(prompt, px2, Y(2.9)); }
       if (S.msgT > 0) {
-        g.font = "italic 16px 'EB Garamond',Georgia,serif"; g.textAlign = "center";
-        g.fillStyle = "rgba(239,232,214,.9)"; const tw = g.measureText(S.msg).width; g.fillRect(W / 2 - tw / 2 - 10, floorY + 64, tw + 20, 26);
-        g.fillStyle = C.ink; g.fillText(S.msg, W / 2, floorY + 82); g.textAlign = "left";
+        g.font = "italic 17px 'EB Garamond',Georgia,serif"; g.textAlign = "center";
+        const maxW = Math.min(W - 32, 640), words = S.msg.split(" "), lines = []; let ln = "";
+        for (const w of words) { const t = ln ? ln + " " + w : w; if (g.measureText(t).width > maxW && ln) { lines.push(ln); ln = w; } else ln = t; }
+        lines.push(ln);
+        const top = floorY + 40;
+        g.fillStyle = "rgba(239,232,214,.95)"; g.fillRect(W / 2 - maxW / 2 - 10, top, maxW + 20, lines.length * 22 + 12);
+        g.strokeStyle = C.ink; g.strokeRect(W / 2 - maxW / 2 - 10, top, maxW + 20, lines.length * 22 + 12);
+        g.fillStyle = C.ink; lines.forEach((l, i) => g.fillText(l, W / 2, top + 22 + i * 22)); g.textAlign = "left";
       }
     }
 
@@ -352,12 +418,22 @@ export default {
 
     const intro = document.createElement("div");
     intro.className = P + "intro";
-    intro.innerHTML = `<div><h2>The stacks</h2>
-      <p>A book is calling, and the shelves do not end. Walk with <b>◀ ▶</b> (A/D). At each junction, climb <b>up</b> (W), go <b>down</b> the hatch (S), or walk <b>on</b>. Follow the gold motes: where they thicken, you are right.</p>
-      <p>Ride rolling ladders with <b>Grab</b> (E). Watch for a book's shadow on the floor. Five junctions to the weather book.</p>
-      <button type="button">Start</button></div>`;
+    intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play">
+      <svg viewBox="0 0 400 70" aria-hidden="true"><g fill="none" stroke="${C.ink}" stroke-width="1">
+        <path d="M0 60 H400 M0 10 H400 M40 10 L60 30 H340 L360 10 M60 30 V60 M340 30 V60 M120 30 V60 M200 30 V60 M280 30 V60"/>
+        <path d="M70 30 v-8 M80 30 v-12 M90 30 v-9 M150 30 v-10 M160 30 v-7 M220 30 v-11 M300 30 v-9"/>
+        <path d="M372 10 V60 M388 10 V60 M372 20 H388 M372 30 H388 M372 40 H388 M372 50 H388"/></g>
+        <g fill="${C.gold}">${[60, 100, 140, 180, 220, 260, 300, 330, 350, 365].map((x, i) => `<circle cx="${x}" cy="${46 - i * 3.6}" r="${1.5 + i * 0.2}"/>`).join("")}</g></svg>
+      <h2>The stacks</h2>
+      <p class="${P}goal"><b>Goal:</b> follow the falling drops to the calling book, through five junctions.</p>
+      <dl>
+        <dt>◀ ▶ · A D</dt><dd>Walk. Keep going to run.</dd>
+        <dt>▲ ▼ · W S</dt><dd>At a junction: the ladder up, the hatch down, or walk on.</dd>
+        <dt>shadow</dt><dd>A book's shadow means it falls in a second.</dd>
+      </dl>
+      <button type="button">Into the stacks</button></div>`;
     el.appendChild(intro);
-    intro.querySelector("button").addEventListener("click", () => { intro.remove(); S.started = true; last = performance.now(); say("Follow the motes."); });
+    intro.querySelector("button").addEventListener("click", () => { intro.remove(); S.started = true; last = performance.now(); say(LINES.open + " " + LINES.first, 5.5); });
     intro.querySelector("button").focus();
 
     return {

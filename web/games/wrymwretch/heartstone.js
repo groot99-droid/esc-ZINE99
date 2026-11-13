@@ -5,13 +5,17 @@
 // step off) or still (right); every placed shard takes a crack, and three cracks shatter it. Win:
 // every slot still on one strike. Gaia's hint (once): one slot glows when its shard is chosen.
 // Shards and chords: data/heartstone.json.
-// Quoted on the page, verbatim as DESIGN.md section 11 quotes it:
-//   "Its power was tied to memory" creative-writing/vault/02_Novels/02_WrymWretch.md, line 61 (WW 61)
+// Refinements: Ring a shard (added; three a page) taps one shard against the ring without a strike or a
+// crack, and says whether its pitch is in the chord at all. Each shard keeps a note of what it sounded
+// in each slot. After the second strike a tremor runs through the hall and cracks one shard in the
+// tray. After two losses in a row: seven strikes and Gaia twice (api.store).
+// Quoted, verbatim as DESIGN.md sections 3 and 11 quote them (creative-writing/vault/02_Novels/02_WrymWretch.md):
+//   "Its power was tied to memory" (WW 61)   "Not yet," she whispered. "You cannot fade. Not now." (WW 59)
 
 const OCHRE = "#c88a2e", MOLTEN = "#e8571c", GOLD = "#d4a72c", BONE = "#f3eee2", NIGHT = "#140f12", LEAD = "#0d0a0b";
 const TRAY = [["r1", 0, 0], ["r2", 4, 1], ["r3", 7, 0], ["r4", 3, 0], ["r5", 8, 1], ["r6", 2, 0], ["r7", 5, 0], ["r8", 9, 1]];
 const CHOICES = [["founding", "The founding", [0, 4, 7]], ["vision", "The vision", [0, 3, 8]], ["song", "The song", [2, 5, 9]]];
-const STRIKES = 6, SHATTER = 3;
+const SHATTER = 3, RINGS = 3;
 const NUM = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
 
 const CSS = `
@@ -19,15 +23,30 @@ const CSS = `
 .wrymwretch-heartstone-root svg{flex:1;min-height:0;width:100%;display:block;touch-action:manipulation}
 .wrymwretch-heartstone-hit{cursor:pointer;outline:none}
 .wrymwretch-heartstone-hit:focus-visible .wrymwretch-heartstone-focus{stroke:#fff;stroke-width:4;stroke-dasharray:6 4}
-.wrymwretch-heartstone-bar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:8px 14px;background:#1d1518;border-top:1px solid #4a3528;font-size:16px}
+.wrymwretch-heartstone-hit:hover .wrymwretch-heartstone-focus{stroke:#fff2b0;stroke-width:3}
+.wrymwretch-heartstone-bar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:8px 14px;background:#1d1518;border-top:1px solid #4a3528;font-size:16px}
+.wrymwretch-heartstone-btn:hover:not(:disabled){filter:brightness(1.18)}
+.wrymwretch-heartstone-btn.on{background:#fff2b0;color:${NIGHT}}
+.wrymwretch-heartstone-beat{position:absolute;left:50%;top:10px;transform:translateX(-50%);width:min(540px,calc(100% - 24px));box-sizing:border-box;background:linear-gradient(135deg,#3a2a22,#241a1c 60%,#3a2420);border:2px solid ${GOLD};color:${BONE};padding:10px 18px;font-size:17px;line-height:1.35;clip-path:polygon(3% 0,97% 0,100% 50%,97% 100%,3% 100%,0 50%);opacity:0;transition:opacity .5s;pointer-events:none;z-index:2;text-align:center}
+.wrymwretch-heartstone-beat.on{opacity:1}
+.wrymwretch-heartstone-beat q{font-style:italic;color:#f6e3b4}
+.wrymwretch-heartstone-beat cite{display:block;font:600 13px 'Cinzel',Georgia,serif;font-style:normal;letter-spacing:.1em;color:${GOLD};margin-top:3px}
+.wrymwretch-heartstone-root.shake svg{animation:wrymwretch-heartstone-shake .5s}
+@keyframes wrymwretch-heartstone-shake{20%{transform:translate(-4px,2px)}40%{transform:translate(4px,-2px)}60%{transform:translate(-3px,1px)}80%{transform:translate(2px,0)}}
 .wrymwretch-heartstone-bar i{flex:1 1 240px}
 .wrymwretch-heartstone-btn{font:700 13px 'Cinzel',Georgia,serif;letter-spacing:.1em;color:${NIGHT};background:${GOLD};border:0;padding:9px 14px;cursor:pointer;min-height:40px;clip-path:polygon(8% 0,92% 0,100% 50%,92% 100%,8% 100%,0 50%)}
 .wrymwretch-heartstone-btn.ghost{background:#4a3528;color:${BONE}}
 .wrymwretch-heartstone-btn:disabled{opacity:.35;cursor:default}
 .wrymwretch-heartstone-intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(20,15,18,.78);padding:16px;z-index:3}
-.wrymwretch-heartstone-card{max-width:470px;background:#241a1c;border:2px solid ${GOLD};padding:20px 22px;font-size:17px;line-height:1.4;clip-path:polygon(4% 0,96% 0,100% 6%,100% 94%,96% 100%,4% 100%,0 94%,0 6%)}
-.wrymwretch-heartstone-card h2{font:700 21px 'Cinzel',Georgia,serif;color:${GOLD};margin:0 0 8px}
+.wrymwretch-heartstone-card{width:min(450px,100%);box-sizing:border-box;background:linear-gradient(155deg,#4a3226 0 18%,#2c2022 18% 46%,#38262a 46% 70%,#241a1c 70%);border:2px solid ${GOLD};padding:22px 26px;font-size:16px;line-height:1.4;clip-path:polygon(10% 0,90% 0,100% 12%,100% 88%,90% 100%,10% 100%,0 88%,0 12%)}
+.wrymwretch-heartstone-card h2{font:700 25px 'Cinzel',Georgia,serif;color:${GOLD};margin:0;text-align:center}
+.wrymwretch-heartstone-card .goal{font-style:italic;font-size:17px;text-align:center;margin:4px 0 12px}
+.wrymwretch-heartstone-card dl{display:grid;grid-template-columns:auto 1fr;gap:7px 12px;margin:0 0 12px;padding:10px 0;border-top:1px solid ${GOLD};border-bottom:1px solid ${GOLD}}
+.wrymwretch-heartstone-card dt{font:700 13px 'Cinzel',Georgia,serif;color:${GOLD};white-space:nowrap;padding-top:2px}
+.wrymwretch-heartstone-card dd{margin:0}
+.wrymwretch-heartstone-card .more{font-size:15px;margin:0 0 10px;color:#e9d8b0}
 .wrymwretch-heartstone-card p{margin:0 0 10px}
+.wrymwretch-heartstone-choices{justify-content:center}
 .wrymwretch-heartstone-card q{font-style:italic;color:#e9d8b0}
 .wrymwretch-heartstone-choices{display:flex;flex-wrap:wrap;gap:8px}
 `;
@@ -35,20 +54,31 @@ const CSS = `
 export default {
   mount(root, api) {
     const R = api.rng();
+    const losses = api.store.get("losses", 0) || 0;
+    const gentle = losses >= 2;
+    const STRIKES = gentle ? 7 : 6;
     const wrap = document.createElement("div");
     wrap.className = "wrymwretch-heartstone-root";
     wrap.innerHTML = `<style>${CSS}</style><svg viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" role="application" aria-label="The Stonekeeper's workbench"></svg>
       <div class="wrymwretch-heartstone-bar"><i aria-live="polite">Choose a shard from the tray, then a slot in the ring.</i>
-        <button type="button" class="wrymwretch-heartstone-btn ghost" data-gaia>Gaia listens</button>
+        <button type="button" class="wrymwretch-heartstone-btn ghost" data-ring hidden>Ring a shard</button>
+        <button type="button" class="wrymwretch-heartstone-btn ghost" data-gaia hidden>Gaia listens</button>
         <button type="button" class="wrymwretch-heartstone-btn" data-strike>Strike</button></div>
+      <div class="wrymwretch-heartstone-beat" aria-live="polite"></div>
       <div class="wrymwretch-heartstone-intro"><div class="wrymwretch-heartstone-card">
-        <h2>Heartstone · the rekindling</h2>
-        <p><q>Its power was tied to memory.</q> Set three shards in the ring and strike. A beat line that lies still is right; a slow wobble is one step off; a fast one is far.</p>
-        <p>Every strike cracks the shards it sounds, and three cracks shatter one. Six strikes. First, choose which memory the stone keeps:</p>
+        <h2>Heartstone</h2>
+        <p class="goal">Tune one shard to each slot so the ring holds a memory.</p>
+        <dl>
+          <dt>Shard → slot</dt><dd>pick a shard in the tray, then a slot in the ring</dd>
+          <dt>Strike</dt><dd>each slot's line: <b>still</b> is right, a slow wobble one step off, a fast one far</dd>
+          <dt>Cracks</dt><dd>every strike cracks the shards it sounds; three cracks shatter one</dd>
+        </dl>
+        <p class="more">${gentle ? "Seven strikes this time, and Gaia will listen twice. " : ""}<q>Its power was tied to memory.</q> First, choose which memory the stone keeps:</p>
         <div class="wrymwretch-heartstone-choices">${CHOICES.map(([id, label]) => `<button type="button" class="wrymwretch-heartstone-btn" data-choice="${id}">${label}</button>`).join("")}</div></div></div>`;
     root.appendChild(wrap);
     const svg = wrap.querySelector("svg"), note = wrap.querySelector(".wrymwretch-heartstone-bar i");
-    const strikeBtn = wrap.querySelector("[data-strike]"), gaiaBtn = wrap.querySelector("[data-gaia]");
+    const strikeBtn = wrap.querySelector("[data-strike]"), gaiaBtn = wrap.querySelector("[data-gaia]"), ringBtn = wrap.querySelector("[data-ring]");
+    const beatEl = wrap.querySelector(".wrymwretch-heartstone-beat");
     const NS = "http://www.w3.org/2000/svg";
     const mk = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; };
     const timers = new Set();
@@ -72,9 +102,17 @@ export default {
     const gTop = mk("g", {}, svg), gRing = mk("g", {}, svg), gSlots = mk("g", {}, svg), gTray = mk("g", {}, svg), gHud = mk("g", {}, svg), gBeat = mk("g", {}, svg);
 
     // ---- state ----------------------------------------------------------------------------------
-    const shards = TRAY.map(([id, pitch, cracks], i) => ({ id, pitch, cracks, n: i, slot: -1, gone: false })).sort(() => R() - 0.5);
-    shards.forEach((s, i) => (s.tray = i));
-    const st = { chord: null, memory: "", strikes: STRIKES, sel: null, beats: [null, null, null], hint: -1, hintUsed: false, over: false, started: false, phase: 0 };
+    const shards = TRAY.map(([id, pitch, cracks], i) => ({ id, pitch, cracks, col: i, slot: -1, gone: false, notes: {}, rung: null }));
+    for (let i = shards.length - 1; i > 0; i--) { const j = Math.floor(R() * (i + 1)); [shards[i], shards[j]] = [shards[j], shards[i]]; }
+    // numbered by where they lie in the tray, so the numbering says nothing about the pitch
+    shards.forEach((s, i) => { s.tray = i; s.n = i; });
+    const st = { chord: null, memory: "", strikes: STRIKES, sel: null, beats: [null, null, null], hint: -1, gaia: gentle ? 2 : 1, rings: RINGS, ringing: false, over: false, started: false, phase: 0, said: new Set(), struck: 0 };
+    const timersB = { t: null };
+    function beat(html, ms = 7000) {
+      beatEl.innerHTML = html; beatEl.classList.add("on");
+      if (timersB.t) { clearTimeout(timersB.t); timers.delete(timersB.t); }
+      timersB.t = setTimeout(() => { timers.delete(timersB.t); beatEl.classList.remove("on"); }, ms); timers.add(timersB.t);
+    }
     // two layouts: a wide bench, and a tall one for phones
     const LAYOUTS = {
       wide: { vb: "0 0 1000 700", cx: 380, cy: 330, wave: "240,18 760,18 790,58 760,98 240,98 210,58", tx: 262, wx: 260, ww: 480,
@@ -91,7 +129,7 @@ export default {
       const r = api.rng(s.id.charCodeAt(1) * 31 + 7);
       const n = 6 + Math.floor(r() * 2);
       const pts = Array.from({ length: n }, (_, i) => { const a = (i / n) * Math.PI * 2 - Math.PI / 2 + (r() - 0.5) * 0.4; const rr = size * (i % 2 ? 0.62 : 1) * (0.85 + r() * 0.3); return [cx + Math.cos(a) * rr * 0.7, cy + Math.sin(a) * rr]; });
-      const col = s.n % 2 ? OCHRE : MOLTEN;
+      const col = s.col % 2 ? OCHRE : MOLTEN;
       const g = mk("g", {});
       pts.forEach((p, i) => { const q = pts[(i + 1) % n]; mk("polygon", { points: `${cx},${cy} ${p} ${q}`, fill: shade(col, 0.6 + ((i * 37) % 9) / 14), stroke: shade(col, 0.45), "stroke-width": 0.8 }, g); });
       mk("polygon", { class: "wrymwretch-heartstone-focus", points: pts.map((p) => p.join(",")).join(" "), fill: "none", stroke: LEAD, "stroke-width": 1.6 }, g);
@@ -129,7 +167,8 @@ export default {
         let d = "";
         for (let i = 0; i <= 110; i += 2) { const w = amp * Math.sin(i / 110 * Math.PI * 2 * freq + st.phase * (b === 1 ? 2 : 9)) * Math.sin(i / 110 * Math.PI); d += `${i ? "L" : "M"}${bx + 5 + i},${by + 20 + w}`; }
         mk("path", { d, fill: "none", stroke: b == null ? "rgba(243,238,226,.25)" : b === 0 ? "#fff2b0" : BONE, "stroke-width": b === 0 ? 3 : 2 }, gBeat);
-        if (b != null) mk("text", { x: bx + 60, y: by + 56, "text-anchor": "middle", fill: "rgba(243,238,226,.7)", "font-size": 12, "font-style": "italic" }, gBeat).textContent = b === 0 ? "still" : b === 1 ? "slow: one step off" : "fast: far";
+        if (b === 0) mk("polygon", { points: `${bx - 10},${by + 20} ${bx},${by} ${bx + 120},${by} ${bx + 130},${by + 20} ${bx + 120},${by + 40} ${bx},${by + 40}`, fill: "rgba(255,242,176,.12)", stroke: "#fff2b0", "stroke-width": 2.5 }, gBeat);
+        mk("text", { x: bx + 60, y: L.beat ? by + 60 : by - 8, "text-anchor": "middle", fill: b === 0 ? "#fff2b0" : "rgba(243,238,226,.85)", "font-size": 16, "font-style": "italic", "font-family": "Georgia, serif" }, gBeat).textContent = b == null ? `slot ${k + 1}` : b === 0 ? `slot ${k + 1}: still` : b === 1 ? `slot ${k + 1}: slow, one off` : `slot ${k + 1}: fast, far`;
       });
     }
     function render() {
@@ -143,7 +182,7 @@ export default {
         mk("circle", { class: "wrymwretch-heartstone-focus", cx: x, cy: y, r: 40, fill: "none", stroke: "none" }, g);
         const s = shards.find((z) => z.slot === k && !z.gone);
         if (s) g.appendChild(shardPoly(s, x, y, 30));
-        else mk("text", { x, y: y + 5, "text-anchor": "middle", fill: "rgba(243,238,226,.4)", "font-size": 13, "font-family": "Cinzel, Georgia, serif" }, g).textContent = "slot " + (k + 1);
+        else mk("text", { x, y: y + 6, "text-anchor": "middle", fill: "rgba(243,238,226,.75)", "font-size": 17, "font-family": "Cinzel, Georgia, serif" }, g).textContent = "slot " + (k + 1);
       });
       // the tray
       mk("polygon", { points: L.tray, fill: "rgba(13,10,11,.7)", stroke: GOLD, "stroke-width": 2 }, gTray);
@@ -154,17 +193,20 @@ export default {
         if (s.slot >= 0) { mk("circle", { cx: x, cy: y, r: 24, fill: "none", stroke: "rgba(243,238,226,.25)", "stroke-dasharray": "4 4" }, g); }
         else g.appendChild(shardPoly(s, x, y - 4, 38));
         if (st.sel === s.id) mk("circle", { cx: x, cy: y - 4, r: 44, fill: "none", stroke: "#fff2b0", "stroke-width": 3 }, g);
-        mk("text", { x, y: y + 52, "text-anchor": "middle", fill: "rgba(243,238,226,.75)", "font-size": 13, "font-family": "Cinzel, Georgia, serif" }, g).textContent = NUM[s.n];
+        mk("text", { x, y: y + 50, "text-anchor": "middle", fill: "rgba(243,238,226,.9)", "font-size": 17, "font-family": "Cinzel, Georgia, serif" }, g).textContent = NUM[s.n] + (s.rung === true ? " ♪" : s.rung === false ? " ·" : "");
+        const nt = Object.entries(s.notes).map(([k, v]) => `${+k + 1}${v === 0 ? "✓" : v === 1 ? "~" : "×"}`).join(" ");
+        if (nt) mk("text", { x, y: y + 68, "text-anchor": "middle", fill: "#e9c77a", "font-size": 15, "font-family": "Georgia, serif" }, g).textContent = nt;
       });
       // the strike budget: a row of small hammers
-      mk("text", { x: L.hl[0], y: L.hl[1], fill: GOLD, "font-size": 13, "font-family": "Cinzel, Georgia, serif", "letter-spacing": 3 }, gHud).textContent = `STRIKES ${st.strikes}`;
+      mk("text", { x: L.hl[0], y: L.hl[1], fill: GOLD, "font-size": 16, "font-family": "Cinzel, Georgia, serif", "letter-spacing": 2 }, gHud).textContent = `STRIKES ${st.strikes}`;
       for (let i = 0; i < STRIKES; i++) {
         const [x, y] = L.ham(i), on = i < st.strikes;
         mk("rect", { x, y, width: 44, height: 14, fill: on ? "#d9dde2" : "#3a3236", stroke: LEAD }, gHud);
         mk("rect", { x: x + 18, y: y + 14, width: 8, height: 34, fill: on ? "#7a5634" : "#2a2224" }, gHud);
       }
       strikeBtn.disabled = st.over || !shards.some((s) => s.slot >= 0 && !s.gone);
-      gaiaBtn.disabled = st.hintUsed || st.over;
+      gaiaBtn.disabled = st.gaia < 1 || st.over; gaiaBtn.textContent = `Gaia listens (${st.gaia})`;
+      ringBtn.disabled = st.rings < 1 || st.over; ringBtn.textContent = st.ringing ? "Pick a shard to ring" : `Ring a shard (${st.rings})`; ringBtn.classList.toggle("on", st.ringing);
     }
 
     // ---- audio: each sounded slot plays its shard against the target, so the beats can be heard
@@ -186,22 +228,35 @@ export default {
       if (st.over || !st.started) return;
       const placed = shards.filter((s) => s.slot >= 0 && !s.gone);
       if (!placed.length) return;
-      st.strikes--;
+      st.strikes--; st.struck++;
+      if (!api.reducedMotion) { wrap.classList.remove("shake"); void wrap.offsetWidth; wrap.classList.add("shake"); }
       st.beats = st.chord.map((t, k) => { const s = placed.find((z) => z.slot === k); if (!s) return null; const d = Math.abs(s.pitch - t) % 12; return Math.min(d, 12 - d) >= 2 ? 2 : Math.min(d, 12 - d); });
+      st.beats.forEach((b, k) => { const s = placed.find((z) => z.slot === k); if (s && b != null) s.notes[k] = b; });
+      if (st.struck === 1) { ringBtn.hidden = false; gaiaBtn.hidden = false; }
+      if (st.beats.some((b) => b === 0) && !st.said.has("still")) { st.said.add("still"); beat(`One line lies still, and the stone answers it with a glow. Rhyla's hand is on the crystal. <i>“Not yet,” she whispered. “You cannot fade. Not now.”</i><cite>WW 59</cite>`, 8000); }
       sound(st.chord.map((t, k) => { const s = placed.find((z) => z.slot === k); return s ? [t, s.pitch] : null; }).filter(Boolean));
       const won = st.beats.every((b) => b === 0);
       if (won) {
         st.over = true; render();
         note.textContent = "Every line lies still. The crystal is set.";
-        return later(() => api.end({ outcome: "win", text: `The Heartstone is rekindled and keeps ${st.memory.toLowerCase()}, with ${st.strikes} strike${st.strikes === 1 ? "" : "s"} to spare. Mosswhisper's memory is anchored through the next two drains.` }), 1200);
+        api.store.set("losses", 0);
+        const kept = { founding: "the tribe's founding", vision: "Rhyla's vision", song: "the Stonekeepers' song" }[st.memId];
+        return later(() => api.end({ outcome: "win", text: `Every line lies still. The Heartstone cannot be saved, but its tuned shard keeps ${kept}, with ${st.strikes} strike${st.strikes === 1 ? "" : "s"} to spare. Mosswhisper's memory is anchored through the next two drains, and Rhyla sets out for the Deep Core.` }), 1200);
       }
       const broke = [];
       placed.forEach((s) => { s.cracks++; if (s.cracks >= SHATTER) { s.gone = true; s.slot = -1; broke.push(NUM[s.n]); } });
+      if (st.struck === 2) {
+        const pool = shards.filter((z) => !z.gone && z.slot < 0 && z.cracks === 0);   // a tremor never shatters a shard
+        if (pool.length) { const z = pool[Math.floor(R() * pool.length)]; z.cracks++;
+          beat(`A tremor runs through the gem-lit hall, and dust falls from the vault. Shard ${NUM[z.n]} cracks in the tray. <cite>The Deep Core is waking · ${st.strikes} strikes left</cite>`, 7000); }
+      }
       const left = shards.filter((s) => !s.gone).length;
       note.textContent = `${st.beats.map((b, k) => b == null ? `slot ${k + 1} empty` : `slot ${k + 1} ${b === 0 ? "still" : b === 1 ? "slow" : "fast"}`).join(" · ")}.${broke.length ? ` Shard ${broke.join(", ")} shatters.` : ""}`;
       if (st.strikes <= 0 || left < st.chord.length) {
         st.over = true; render();
-        return later(() => api.end({ outcome: "lose", text: left < st.chord.length ? "Too few shards are left whole to fill the ring. The Heartstone stays dark." : "The last strike fades with the lines still shaking. The Heartstone stays dark, and what it held goes with it." }), 1200);
+        api.store.set("losses", losses + 1);
+        const lostMem = { founding: "the founding of the tribe", vision: "the vision", song: "the Stonekeepers' song" }[st.memId];
+        return later(() => api.end({ outcome: "lose", text: `${left < st.chord.length ? "Too few shards are left whole to fill the ring." : "The last strike fades with the lines still shaking."} The Heartstone goes dark, and ${lostMem} goes with it. Rhyla keeps her hand on the cold stone a long moment before she rises.${losses + 1 >= 2 ? " Next time: seven strikes, and Gaia twice." : ""}` }), 1200);
       }
       render();
     }
@@ -209,6 +264,12 @@ export default {
     function clickShard(id) {
       if (st.over || !st.started) return;
       const s = shards.find((z) => z.id === id); if (!s || s.gone) return;
+      if (st.ringing) {
+        st.ringing = false; st.rings--; s.rung = st.chord.includes(s.pitch);
+        sound([[s.pitch, s.pitch]]);
+        note.textContent = s.rung ? `Shard ${NUM[s.n]} rings and the ring hums back: its pitch is in the chord.` : `Shard ${NUM[s.n]} rings dull against the ring: its pitch is not in the chord.`;
+        return render();
+      }
       if (s.slot >= 0) { s.slot = -1; st.sel = null; note.textContent = `Shard ${NUM[s.n]} is back in the tray.`; }
       else st.sel = st.sel === id ? null : id;
       render();
@@ -233,9 +294,10 @@ export default {
       const again = svg.querySelector(id ? `[data-shard="${id}"]` : `[data-slot="${h.dataset.slot}"]`); again && again.focus();
     });
     strikeBtn.addEventListener("click", strike);
+    ringBtn.addEventListener("click", () => { if (st.rings < 1 || st.over || !st.started) return; st.ringing = !st.ringing; note.textContent = st.ringing ? "Choose a shard in the tray to ring against the setting. No strike, no crack." : ""; render(); });
     gaiaBtn.addEventListener("click", () => {
-      if (st.hintUsed || st.over || !st.started) return;
-      st.hintUsed = true; st.hint = st.beats.findIndex((b) => b !== 0); if (st.hint < 0) st.hint = 0;
+      if (st.gaia < 1 || st.over || !st.started) return;
+      st.gaia--; st.hint = st.beats.findIndex((b) => b !== 0); if (st.hint < 0) st.hint = 0;
       note.textContent = `Gaia listens: slot ${st.hint + 1} will glow when its true shard is chosen.`;
       render();
     });
@@ -245,9 +307,10 @@ export default {
     const intro = wrap.querySelector(".wrymwretch-heartstone-intro");
     intro.querySelectorAll("[data-choice]").forEach((b) => b.addEventListener("click", () => {
       const c = CHOICES.find((x) => x[0] === b.dataset.choice);
-      st.memory = c[1]; st.chord = c[2]; st.started = true; intro.remove();
+      st.memory = c[1]; st.memId = c[0]; st.chord = c[2]; st.started = true; intro.remove();
       drawStatic(); render();
       note.textContent = `The stone will keep ${c[1].toLowerCase()}. Choose a shard from the tray, then a slot in the ring.`;
+      beat(`The Heartstone hall, under the Stonekeepers' city. The great crystal is going dim and cannot be saved, but one shard tuned to it can keep ${c[1].toLowerCase()}. Elder Rhyla kneels at the bench. <cite>Set three shards, then Strike</cite>`, 8000);
       const first = svg.querySelector("[data-shard]"); first && first.focus();
     }));
     intro.querySelector("[data-choice]").focus();

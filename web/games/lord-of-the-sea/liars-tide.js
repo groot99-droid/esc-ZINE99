@@ -5,13 +5,16 @@
 // face, or call the tide. Once a round Alexi may stir the cup: secretly re-roll up to two of his
 // dice, and the table's suspicion rises 25 (Tidewater's Wild is 10, so no "sea's luck"); it falls
 // 10 a round he does not stir. At 100 he is caught. Last with dice wins.
-// Cut to fit: four dice each instead of five, so a game is a few minutes.
+// Cut to fit: three dice for each sailor and four for Alexi (the house spots a newcomer one) instead
+// of five each, so a game is a few minutes and winnable against three. Stir the cup unlocks after
+// the first round; the princess's whisper (trust 40+) gives the odds of the standing bid once a round.
+// The table talk, the news each sailor leaves with, and the Voice Beside lines are written for the game.
 
 const RED = "#8C2B2B", GREEN = "#2F6B5E", GOLD = "#E7A93B", INK = "#17140f", SKIN = "#F1E3C6", PAPER = "#E9DBBB", BLUE = "#1F2E4A";
 const FACES = ["", "Gull", "Shell", "Rope", "Bottle", "Lantern", "Wave"];
 const PLURAL = ["", "Gulls", "Shells", "Ropes", "Bottles", "Lanterns", "Waves"];
 const NUMW = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen"];
-const DICE = 4;
+const DICE = 3;
 
 function icon(face, s = 40, col = INK) {
   const st = `fill="none" stroke="${INK}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"`;
@@ -35,7 +38,7 @@ export default {
     const roll = () => 1 + Math.floor(rng() * 6);
 
     const players = [
-      { name: "Alexi", you: true, dice: [], count: DICE },
+      { name: "Alexi", you: true, dice: [], count: DICE + 1 + ((+api.store.get("losses", 0) || 0) >= 2 ? 1 : 0) }, // the house spots the newcomer a fourth die (a fifth after two losses)
       { name: "Wenna", dice: [], count: DICE, bluff: 0.1, thresh: 0.65, eye: GREEN, tell: true },
       { name: "Dockhand", dice: [], count: DICE, bluff: 0.2, thresh: 0.5, eye: RED },
       { name: "Dockhand", dice: [], count: DICE, bluff: 0.2, thresh: 0.5, eye: BLUE },
@@ -44,7 +47,13 @@ export default {
     const S = {
       phase: "how", turn: 0, starter: 0, bid: null, bidder: -1, gullBid: false, tide: 1, ledger: [], round: 0,
       suspicion: 0, stirredThisRound: false, stirring: false, pick: new Set(), selQ: 1, selF: 2, speech: {}, hintUsed: false,
-      reveal: null, log: "",
+      reveal: null, log: "", stirOpen: false, beat: "", beatVoice: false, outs: 0, stirs: 0, popBid: false, shake: -1,
+    };
+    const losses = +api.store.get("losses", 0) || 0;
+    const NEWS = {
+      1: "Wenna pushes back her stool. “The Gullwife crew fish past the chart's edge, where the Company's buoys stop. Go and find them.”",
+      2: "The tall dockhand drains his cup. “Kettle crew still sing at the Salt Steps. Under their breath, mind.”",
+      3: "The short dockhand shrugs into his coat. “Ferry's late every Thursday. Company man counts the fares himself.”",
     };
 
     root.innerHTML = `
@@ -91,18 +100,48 @@ export default {
       .${P}pickbid { display:flex; align-items:center; gap:6px; border:3px solid ${INK}; border-radius:10px; padding:4px 8px; background:#fff8e6; }
       .${P}pickbid .q { font-family:'Rye',Georgia,serif; font-size:24px; min-width:2ch; text-align:center; }
       .${P}pickbid button { padding:3px 10px; box-shadow:none; }
-      .${P}how { position:absolute; inset:0; display:grid; place-items:center; background:${PAPER}ee; z-index:3; padding:16px; }
-      .${P}how div { max-width:520px; background:${SKIN}; border:4px solid ${INK}; border-radius:18px; padding:20px 22px; box-shadow:6px 6px 0 ${INK}; }
-      .${P}how h2 { margin:0 0 8px; font-weight:400; font-size:30px; color:${RED}; }
-      .${P}how p { margin:0 0 10px; font-size:16px; line-height:1.4; }
+      .${P}how { position:absolute; inset:0; display:grid; place-items:center; background:${PAPER}f0; z-index:3; padding:14px; overflow:auto;
+        background-image: radial-gradient(${INK}22 1px, transparent 1.4px); background-size: 9px 9px; }
+      .${P}flash { position:relative; max-width:540px; box-sizing:border-box; margin:8px; background:${SKIN}; border:4px solid ${INK}; border-radius:22px; padding:54px 22px 18px; margin-top:34px; box-shadow:7px 7px 0 ${INK}; }
+      .${P}flash .ttl { position:absolute; left:50%; top:-24px; transform:translateX(-50%); white-space:nowrap; }
+      .${P}flash .ttl .${P}ribbon { font-size:clamp(22px,5vw,30px); padding:8px 22px; }
+      .${P}flash .goal { font-size:18px; text-align:center; margin:6px 0 6px; color:${RED}; }
+      .${P}flash .open { font-style:italic; font-size:15px; line-height:1.4; text-align:center; margin:0 0 12px; }
+      .${P}legend { display:grid; gap:8px; margin:0 0 14px; }
+      .${P}legend div { display:grid; grid-template-columns:44px minmax(0,1fr); gap:10px; align-items:center; font-size:16px; line-height:1.3; }
+      .${P}legend .ic { width:44px; height:44px; display:grid; place-items:center; border:3px solid ${INK}; border-radius:10px; background:${GOLD}; box-shadow:3px 3px 0 ${INK}; }
+      .${P}legend b { font-family:'Rye',Georgia,serif; font-weight:400; color:${RED}; }
+      .${P}legend kbd { font-family:inherit; border:2px solid ${INK}; border-radius:5px; padding:0 4px; font-size:14px; background:#fff8e6; }
+      .${P}flash .gentle { text-align:center; color:${GREEN}; font-style:italic; font-size:15px; margin:0 0 10px; }
+      .${P}flash > button { display:block; margin:0 auto; font-family:'Rye',Georgia,serif; font-size:19px; background:${RED}; color:${SKIN}; border:3px solid ${INK}; border-radius:12px; padding:8px 22px; cursor:pointer; box-shadow:4px 4px 0 ${INK}; }
+      .${P}flash > button:hover, .${P}flash > button:focus-visible { background:${GREEN}; }
+      .${P}beat { text-align:center; font-size:16px; line-height:1.35; min-height:1.35em; padding:6px 12px; border:3px dashed ${INK}; border-radius:12px; background:#fff8e6; }
+      .${P}beat.voice { font-style:italic; color:${GREEN}; border-color:${GREEN}; }
+      .${P}beat:empty { display:none; }
+      .${P}sailor.shake { animation:${P}shake .5s; }
+      @keyframes ${P}shake { 0%,100% { transform:none; } 20% { transform:translateX(-6px) rotate(-2deg); } 40% { transform:translateX(6px) rotate(2deg); } 60% { transform:translateX(-4px); } 80% { transform:translateX(4px); } }
+      .${P}ribbon.pop { animation:${P}pop .35s; }
+      @keyframes ${P}pop { 0% { transform:scale(.8); } 70% { transform:scale(1.08); } 100% { transform:none; } }
+      .${P}ctl button:not(:disabled):hover { transform:translate(-1px,-1px); box-shadow:4px 4px 0 ${INK}; }
+      .${P}why { font-size:14px; color:${RED}; font-style:italic; width:100%; text-align:center; }
+      .${P}bar i.warm { background:${GOLD}; } .${P}bar i.hot { background:${RED}; }
+      @media (prefers-reduced-motion: reduce) { .${P}sailor.shake, .${P}ribbon.pop { animation:none; } }
       @media (max-width:480px) { .${P}pip { width:11px; height:11px; border-width:2px; } .${P}sailor .nm { font-size:13px; } .${P}frame { padding-left:8px; padding-right:8px; } }
-      @media (max-width:720px) { .${P}mid { grid-template-columns:1fr; justify-items:center; } .${P}ledger { width:100%; box-sizing:border-box; max-height:110px; } }
+      @media (max-width:720px) { .${P}mid { grid-template-columns:auto minmax(0,1fr); justify-items:center; gap:8px; } .${P}ledger { grid-column:1 / -1; width:100%; box-sizing:border-box; max-height:84px; }
+        .${P}you { position:sticky; bottom:0; z-index:2; padding:8px; box-shadow:0 -6px 0 ${PAPER}; } .${P}mine { padding:6px 12px; } .${P}die { width:48px; height:48px; } .${P}die.tide { width:56px; height:56px; }
+        .${P}swal { display:none; } .${P}ribbon { padding:6px 14px; } .${P}say { min-height:1.3em; font-size:14px; } .${P}sailor svg { max-width:64px !important; } .${P}frame { gap:8px; } }
     </style>
     <div class="${P}w"><div class="${P}frame"></div>
-      <div class="${P}how" role="dialog" aria-label="How to play"><div>
-        <h2 class="${P}rye">Liar's Tide</h2>
-        <p>You, Wenna and two dockhands each hide four tide dice under a horn cup; one tide die in the middle counts for everyone, and Gulls are wild until someone bids on Gulls. Bid how many of a face are on the whole table, raising each time, or <b>call the tide</b>: if the bid fails the bidder loses a die, if it holds the caller does.</p>
-        <p>Once a round you may <b>stir the cup</b>: pick up to two of your dice and circle over the cup to re-roll them. Every stir draws the sailors' eyes. Last with dice wins the news.</p>
+      <div class="${P}how" role="dialog" aria-label="How to play"><div class="${P}flash">
+        <div class="ttl">${swallow(false)}<span class="${P}ribbon ${P}rye">LIAR'S TIDE</span>${swallow(true)}</div>
+        <p class="goal ${P}rye">Be the last at the table with dice.</p>
+        <p class="open" style="font-style:normal;margin-bottom:6px">Each sailor hides three tide dice under a horn cup; the house spots the newcomer a fourth.</p>
+        <p class="open">Chapter II, the Tidewater taproom. Wenna, who pilots the ferry, and two dockhands. Alexi cannot ask a straight question to save his life, so he plays for the news instead.</p>
+        ${losses >= 2 ? `<p class="gentle">The princess has pulled up a stool: her whisper is free every turn this game, and the house spots you a fifth die.</p>` : ""}
+        <div class="${P}legend">
+          <div><span class="ic">${icon(5, 30)}</span><span><b>Bid</b> how many of one face sit under all the cups plus the tide die. Raise the count, or keep it and raise the face. <kbd>↑</kbd><kbd>↓</kbd> count, <kbd>←</kbd><kbd>→</kbd> face, <kbd>B</kbd> bid.</span></div>
+          <div><span class="ic">${icon(6, 30)}</span><span><b>Call the tide</b> (<kbd>C</kbd>) if you doubt the bid. Cups lift: whoever was wrong loses a die. <b>Gulls</b> count as any face until someone bids Gulls.</span></div>
+        </div>
         <button type="button">Take a seat</button>
       </div></div>
     </div>`;
@@ -150,12 +189,15 @@ export default {
       S.ledger.push({ round: S.round });
       S.selQ = 1; S.selF = 2;
       S.log = S.turn === 0 ? "You open the bidding." : `${players[S.turn].name} opens.`;
+      if (S.round === 2 && !S.stirOpen) { S.stirOpen = true; beat("The water jug at his elbow turns when he looks at it. Stir the cup: pick up to two of your dice and circle over them (or S) to roll them again. Every stir draws the sailors' eyes.", false); }
+      else if (S.round === 3) beat("The princess slides onto the bench beside him. Whisper (W): once a round she tells you the odds that the standing bid holds.", false);
       render();
       if (S.turn !== 0) later(aiTurn, 1100);
     }
 
+    function beat(text, voice) { S.beat = text; S.beatVoice = !!voice; }
     function placeBid(pi, q, f) {
-      S.bid = { q, f }; S.bidder = pi;
+      S.bid = { q, f }; S.bidder = pi; S.popBid = true;
       if (f === 1) S.gullBid = true;
       S.ledger.push({ who: players[pi].name, text: bidName(S.bid) });
       if (pi !== 0) S.speech[pi] = `“${cap(bidName(S.bid))}.”`;
@@ -203,7 +245,16 @@ export default {
       const holds = n >= S.bid.q;
       const loser = holds ? pi : S.bidder;
       players[loser].count--;
+      S.shake = loser;
       S.reveal = { caller: pi, n, holds, loser, face: S.bid.f, wild: wild(S.bid.f) };
+      if (loser !== 0 && players[loser].count === 0) {
+        S.outs++;
+        beat(NEWS[loser], false);
+        if (active().length === 2 && players[0].count > 0) {
+          const last = active().find((i) => i !== 0);
+          later(() => { if (S.phase === "reveal") { beat(last === 1 ? "Just Wenna now. She counts under her breath when she holds three of a face. Listen for it." : `Just the ${players[last].name.toLowerCase()} now, and the whole taproom watching.`, false); render(); } }, 2600);
+        }
+      } else if (loser === 0 && players[0].count === 1) beat("One die left under his cup. The sea's luck does not come to a man who stops looking at it.", true);
       S.ledger.push({ who: players[pi].name, text: "calls the tide", strong: true });
       S.speech[pi] = pi === 0 ? "" : "“Lift the cups.”";
       S.log = `${pi === 0 ? "You call" : players[pi].name + " calls"} the tide. ${cap(NUMW[n] || String(n))} on the table: the bid ${holds ? "holds" : "fails"}. ${loser === 0 ? "You lose" : players[loser].name + " loses"} a die.`;
@@ -217,16 +268,18 @@ export default {
     function end(won, caught) {
       if (S.phase === "over") return;
       S.phase = "over"; render();
-      if (caught) api.end({ outcome: "lose", text: "Caught stirring the cup. The sailors' eyes were on him the whole time; the stake is forfeit and the news goes elsewhere." });
-      else if (won) api.end({ outcome: "win", text: "Last with dice. Two pieces of news: where the Gullwife crew fish where they should not, and where the Kettle crew sing. Devotion +3." });
-      else api.end({ outcome: "lose", text: "Out of dice. One piece of news anyway, from a dockhand who pities him: the Gullwife crew fish off the chart's edge." });
+      api.store.set("losses", won ? 0 : losses + 1);
+      if (caught) api.end({ outcome: "lose", text: `Caught stirring the cup, ${S.stirs === 1 ? "once too often" : `the ${["", "first", "second", "third", "fourth", "fifth"][S.stirs] || "last"} time`}. Wenna puts her hand flat over his; the stake is forfeit, and the news goes to someone else's table.` });
+      else if (won) api.end({ outcome: "win", text: `Last with dice${S.stirs ? `, and ${S.stirs === 1 ? "one stir" : NUMW[S.stirs] + " stirs"} the table never quite caught` : ", and an honest cup"}. Two pieces of news: where the Gullwife crew fish past the chart's edge, and where the Kettle crew still sing. Devotion +3.` });
+      else api.end({ outcome: "lose", text: `Out of dice${S.outs ? ` after seeing ${S.outs === 1 ? "one sailor" : S.outs + " sailors"} off the bench` : ""}. One piece of news anyway, from a dockhand who pities him: the Gullwife crew fish off the chart's edge.` });
     }
 
     function doStir() {
       if (!S.pick.size) return;
       for (const i of S.pick) players[0].dice[i] = roll();
-      S.pick.clear(); S.stirring = false; S.stirredThisRound = true;
+      S.pick.clear(); S.stirring = false; S.stirredThisRound = true; S.stirs++;
       S.suspicion = Math.min(100, S.suspicion + 25);
+      if (S.suspicion >= 50 && S.suspicion < 100) beat(S.suspicion >= 75 ? "Wenna has stopped looking at her own cup. One more stir and she will say something." : "The tall dockhand glances at the jug, then at Alexi's hands.", false);
       S.log = "You stir the cup. The water in the jug beside it turns too.";
       S.ledger.push({ who: "Alexi", text: "(a stir)", faint: true });
       render();
@@ -249,22 +302,23 @@ export default {
         const cupHtml = showDice
           ? p.dice.map((v) => `<span class="${P}die" style="width:30px;height:30px;border-width:2.5px;box-shadow:2px 2px 0 ${INK}${matchesReveal(v) ? ";background:#bfe0c9" : ""}">${icon(v, 22)}</span>`).join("")
           : Array.from({ length: p.count }, () => `<span class="${P}pip"></span>`).join("");
-        return `<div class="${P}sailor${S.turn === i && S.phase === "play" ? " turn" : ""}${p.count ? "" : " out"}">
+        return `<div class="${P}sailor${S.turn === i && S.phase === "play" ? " turn" : ""}${p.count ? "" : " out"}${S.shake === i ? " shake" : ""}">
           <svg viewBox="-40 0 80 40" style="width:100%;max-width:90px;height:auto" aria-hidden="true">${eye(-19)}${eye(19)}</svg>
           <div class="nm ${P}rye">${p.name}</div><div class="cup" aria-label="${p.count} dice">${cupHtml}</div>
           <div class="${P}say">${S.speech[i] || (p.count ? "" : "out")}</div></div>`;
       };
       const matchesReveal = (v) => S.reveal && (v === S.reveal.face || (S.reveal.wild && v === 1));
       const myTurn = S.phase === "play" && S.turn === 0;
-      const canStir = S.phase === "play" && !S.stirredThisRound && you.count > 0;
+      const canStir = S.phase === "play" && S.stirOpen && !S.stirredThisRound && you.count > 0;
       const ledger = S.ledger.slice(-18).map((l) => (l.round ? `<div style="opacity:.6">─ round ${l.round} ─</div>` : `<div${l.faint ? ' style="opacity:.5"' : ""}>${l.strong ? "<u>" : ""}${l.who}: ${l.text}${l.strong ? "</u>" : ""}</div>`)).join("");
       frame.innerHTML = `
         <div class="${P}sailors">${[1, 2, 3].map(sailor).join("")}</div>
-        <div class="${P}sus"><span class="${P}rye" style="font-size:13px;letter-spacing:.15em">SUSPICION</span><span class="${P}bar" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${S.suspicion}" aria-label="Suspicion"><i style="width:${S.suspicion}%"></i></span><span>${S.suspicion}</span></div>
+        <div class="${P}sus"><span class="${P}rye" style="font-size:13px;letter-spacing:.15em">SUSPICION</span><span class="${P}bar" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${S.suspicion}" aria-label="Suspicion"><i class="${S.suspicion >= 75 ? "hot" : S.suspicion >= 50 ? "warm" : ""}" style="width:${S.suspicion}%"></i></span><span style="font-size:16px">${S.suspicion} / 100</span></div>
+        <div class="${P}beat${S.beatVoice ? " voice" : ""}" aria-live="polite">${esc(S.beat)}</div>
         <div class="${P}mid">
           <div class="${P}tide"><span class="${P}rye">TIDE DIE</span><span class="${P}die tide${matchesReveal(S.tide) ? " hit" : ""}">${icon(S.tide, 48)}</span><span>${FACES[S.tide]}</span></div>
           <div class="${P}banner">
-            ${swallow(false)}<span class="${P}ribbon ${P}rye">${S.bid ? bidName(S.bid).toUpperCase() : "NO BID YET"}</span>${swallow(true)}
+            ${swallow(false)}<span class="${P}ribbon ${P}rye${S.popBid ? " pop" : ""}">${S.bid ? bidName(S.bid).toUpperCase() : "NO BID YET"}</span>${swallow(true)}
             <div class="${P}note" aria-live="polite">${esc(S.log)}${S.gullBid ? " <i>(Gulls are bid: not wild this round.)</i>" : ""}</div>
           </div>
           <div class="${P}ledger" aria-label="Bid ledger"><b>THE CHALK</b>${ledger}</div>
@@ -273,18 +327,20 @@ export default {
           <div class="${P}mine" aria-label="Your dice under the cup">${you.dice.map((v, i) => `<button type="button" class="${P}die${S.pick.has(i) ? " pick" : ""}${S.reveal && matchesReveal(v) ? " hit" : ""}" data-i="${i}" aria-label="${FACES[v]}${S.stirring ? (S.pick.has(i) ? ", picked to re-roll" : ", pick to re-roll") : ""}">${icon(v, 42)}</button>`).join("") || "<i>no dice</i>"}</div>
           <div class="${P}ctl">${controls(myTurn, canStir)}</div>
         </div>`;
+      S.popBid = false; S.shake = -1;
       wire();
     }
     function controls(myTurn, canStir) {
       if (S.phase === "reveal") return players[0].count === 0 || active().length === 1 ? "<i>The cups are lifted.</i>" : `<button type="button" class="main" data-a="next">Next round</button>`;
       if (S.phase !== "play") return "";
       if (S.stirring) return `<span>Pick up to two dice, then circle over the cup (or press Stir).</span><button type="button" class="stir" data-a="dostir" ${S.pick.size ? "" : "disabled"}>Stir ${S.pick.size || ""}</button><button type="button" data-a="cancelstir">Leave it</button>`;
-      const hint = !S.hintUsed && S.bid ? `<button type="button" data-a="hint" title="Trust 40+: the princess whispers the odds once a round">Whisper</button>` : "";
+      const hint = S.round >= 3 && (!S.hintUsed || losses >= 2) && S.bid ? `<button type="button" data-a="hint" title="Trust 40+: the princess whispers the odds once a round">Whisper</button>` : "";
+      const why = myTurn && S.bid && !legal(S.selQ, S.selF) ? `<span class="${P}why">Raise the count, or keep ${S.bid.q} and pick a later face.</span>` : "";
       return `<span class="${P}pickbid" aria-label="Your bid"><button type="button" data-a="q-" aria-label="Fewer">−</button><span class="q">${S.selQ}</span><button type="button" data-a="q+" aria-label="More">+</button>
         <button type="button" data-a="f-" aria-label="Previous face">◀</button>${icon(S.selF, 34)}<button type="button" data-a="f+" aria-label="Next face">▶</button></span>
         <button type="button" class="main" data-a="bid" ${myTurn && legal(S.selQ, S.selF) ? "" : "disabled"}>Bid ${S.selQ} ${S.selQ === 1 ? FACES[S.selF] : PLURAL[S.selF]}</button>
         <button type="button" data-a="call" ${myTurn && S.bid ? "" : "disabled"}>Call the tide</button>
-        <button type="button" class="stir" data-a="stir" ${canStir ? "" : "disabled"}>Stir the cup</button>${hint}`;
+        ${S.stirOpen ? `<button type="button" class="stir" data-a="stir" ${canStir ? "" : "disabled"}>Stir the cup</button>` : ""}${hint}${why}`;
     }
     function act(a) {
       if (a === "q+") S.selQ = Math.min(totalDice(), S.selQ + 1);
@@ -293,10 +349,10 @@ export default {
       if (a === "f-") S.selF = ((S.selF + 4) % 6) + 1;
       if (a === "bid" && S.turn === 0 && S.phase === "play" && legal(S.selQ, S.selF)) { placeBid(0, S.selQ, S.selF); return; }
       if (a === "call" && S.turn === 0 && S.bid && S.phase === "play") { callTide(0); return; }
-      if (a === "stir") { S.stirring = true; S.pick.clear(); }
+      if (a === "stir") { if (!(S.phase === "play" && S.stirOpen && !S.stirredThisRound)) return; S.stirring = true; S.pick.clear(); }
       if (a === "cancelstir") { S.stirring = false; S.pick.clear(); }
       if (a === "dostir") { doStir(); return; }
-      if (a === "hint" && S.bid) { S.hintUsed = true; const p = probHolds(0, S.bid.q, S.bid.f, S.gullBid); S.log = `The princess, low: “About ${Math.round(p * 100)} in a hundred that it holds.”`; }
+      if (a === "hint" && S.bid && S.round >= 3 && (!S.hintUsed || losses >= 2)) { S.hintUsed = true; const p = probHolds(0, S.bid.q, S.bid.f, S.gullBid); S.log = `The princess, low: “About ${Math.round(p * 100)} in a hundred that it holds.”`; }
       if (a === "next" && S.phase === "reveal" && players[0].count > 0 && active().length > 1) { newRound(S.nextStarter); return; }
       render();
     }
@@ -305,7 +361,7 @@ export default {
     function wire() {
       frame.querySelectorAll("[data-a]").forEach((b) => b.addEventListener("click", () => act(b.dataset.a)));
       frame.querySelectorAll(`.${P}mine [data-i]`).forEach((b) => b.addEventListener("click", () => {
-        if (!S.stirring) { if (S.phase === "play" && !S.stirredThisRound) { S.stirring = true; } else return; }
+        if (!S.stirring) { if (S.phase === "play" && S.stirOpen && !S.stirredThisRound) { S.stirring = true; } else return; }
         const i = +b.dataset.i;
         if (S.pick.has(i)) S.pick.delete(i); else if (S.pick.size < 2) S.pick.add(i);
         render();
@@ -327,14 +383,14 @@ export default {
     const onKey = (e) => {
       if (S.phase !== "play" && S.phase !== "reveal") return;
       const k = e.key;
-      const map = { ArrowUp: "q+", ArrowDown: "q-", ArrowRight: "f+", ArrowLeft: "f-", b: "bid", c: "call", s: S.stirring ? "dostir" : "stir", n: "next" };
+      const map = { ArrowUp: "q+", ArrowDown: "q-", ArrowRight: "f+", ArrowLeft: "f-", b: "bid", c: "call", s: S.stirring ? "dostir" : "stir", n: "next", w: "hint" };
       if (k === "Enter" && S.phase === "reveal") { act("next"); e.preventDefault(); return; }
       if (map[k] && !(e.target instanceof HTMLButtonElement && k === "Enter")) { if (k.startsWith("Arrow")) e.preventDefault(); act(map[k]); }
       if (S.stirring && /^[1-4]$/.test(k)) { const i = +k - 1; if (i < players[0].dice.length) { S.pick.has(i) ? S.pick.delete(i) : S.pick.size < 2 && S.pick.add(i); render(); } }
     };
     addEventListener("keydown", onKey);
     const startBtn = how.querySelector("button");
-    startBtn.addEventListener("click", () => { how.remove(); newRound(0); });
+    startBtn.addEventListener("click", () => { how.remove(); beat("Wenna rattles her cup. “Stakes are news, sailor. Tell us something we don't know, or lose.”", false); newRound(0); });
     startBtn.focus();
     // the table under the panel
     for (const p of players) p.dice = Array.from({ length: p.count }, roll);

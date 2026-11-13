@@ -5,16 +5,27 @@
 // deep keeps him and the dive is lost. Hazards: a dredge chain that sweeps (contact pushes him
 // back), a Company net (slows to 20% until cut by gripping and pulling), a cold current at 40-55 m.
 // Stir: draw a circle (or hold E) and a 10 m ribbon of current runs the way the circle last turned.
+// Three phases: the descent (net, chain, cold current), the tender (grip three seconds while the hull
+// settles), and the ascent, when the Company drops a second net across the way up and the dredge
+// sweeps faster. Beats and the Voice Beside lines are written for the game (refine additions list).
 
 const PLATE = "#0B1424", INKBLUE = "#1F2E4A", FOAM = "#E8F2EE", PAPER = "#F4F1E8", GOLD = "#E7A93B", GREEN = "#2F6B5E", VIOLET = "#4B3F63", RED = "#8C2B2B";
 const WORLD_W = 150, FLOOR = 92, WRECK_X = 112, WRECK_Y = 85;
-const PULL = 120;               // seconds: the later dives' 120 (DESIGN.md section 10), so a browser dive can be finished
+const PULL_BASE = 120;               // seconds: the later dives' 120 (DESIGN.md section 10), so a browser dive can be finished
+const FREE_S = 3;               // seconds of grip to work the strongbox free
+const BEATS = [
+  { id: "light", y: 20, voice: true, text: "The light thinned to blue. He did not reach for air; there was none he needed." },
+  { id: "dark", y: 60, text: "Below sixty metres only what glows gives light, and what he stirs." },
+  { id: "voice", y: 75, voice: true, text: "The deep knew him. It wanted to keep us, gently, the way it keeps everything." },
+];
 const STIR_SPEED = 3;           // Current tier: 3 m/s, carries a person
 
 export default {
   mount(root, api) {
     const P = "lord-of-the-sea-deep-";
     const reduce = api.reducedMotion;
+    const gentle = (+api.store.get("losses", 0) || 0) >= 2;
+    const PULL = gentle ? 150 : PULL_BASE;
     root.innerHTML = `
     <style>
       .${P}wrap { position:absolute; inset:0; background:${PLATE}; color:${FOAM}; font-family:'IM Fell English',Georgia,serif; overflow:hidden; touch-action:none; user-select:none; }
@@ -22,23 +33,46 @@ export default {
       .${P}pad { position:absolute; right:12px; bottom:12px; display:flex; gap:8px; }
       .${P}pad button { font:inherit; font-size:16px; color:${FOAM}; background:rgba(11,20,36,.7); border:1px solid ${FOAM}; border-radius:50%; width:64px; height:64px; cursor:pointer; touch-action:none; }
       .${P}pad button.on { background:${FOAM}; color:${PLATE}; }
-      .${P}how { position:absolute; inset:0; display:grid; place-items:center; background:rgba(11,20,36,.78); padding:16px; z-index:3; }
-      .${P}how div { max-width:520px; border:1px solid ${FOAM}; padding:20px 22px; background:${PLATE}; box-shadow:0 0 0 6px ${PLATE}, 0 0 0 7px rgba(232,242,238,.4); }
-      .${P}how h2 { font-weight:400; font-size:28px; margin:0 0 4px; }
-      .${P}how .cap { font-family:'IM Fell English SC',Georgia,serif; letter-spacing:.14em; font-size:12px; opacity:.7; margin-bottom:10px; }
-      .${P}how p { margin:0 0 10px; font-size:16px; line-height:1.4; }
-      .${P}how kbd { font-family:inherit; border:1px solid ${FOAM}; padding:0 4px; font-size:13px; }
-      .${P}how button { font:inherit; font-size:18px; padding:8px 22px; background:${FOAM}; color:${PLATE}; border:0; cursor:pointer; margin-top:6px; }
+      .${P}pad button .cd { position:absolute; left:0; bottom:0; height:4px; background:${GOLD}; border-radius:2px; }
+      .${P}pad button { position:relative; overflow:hidden; }
+      .${P}pad button[hidden] { display:none; }
+      .${P}cap { position:absolute; left:50%; top:96px; transform:translateX(-50%); width:min(560px,calc(100% - 90px)); box-sizing:border-box; text-align:center; padding:8px 14px;
+        background:rgba(11,20,36,.86); border:1px solid rgba(232,242,238,.5); font-size:16px; line-height:1.35; color:${FOAM}; pointer-events:none; opacity:0; transition:opacity .5s; }
+      .${P}cap.show { opacity:1; }
+      .${P}cap.voice { font-style:italic; color:#7FE0C2; border-color:#7FE0C2; }
+      .${P}how { position:absolute; inset:0; display:grid; place-items:center; background:rgba(5,9,15,.8); padding:14px; z-index:3; overflow:auto; }
+      .${P}label { position:relative; max-width:520px; box-sizing:border-box; margin:8px; background:#ece6d6; color:#1b2230; padding:18px 22px 16px; border:1px solid #9a8f74;
+        box-shadow:0 0 0 6px #0b1424, 0 0 0 7px rgba(232,242,238,.45), 0 12px 30px rgba(0,0,0,.6);
+        background-image: radial-gradient(rgba(60,50,30,.10) 1px, transparent 1.3px); background-size:5px 5px; }
+      .${P}label .cap2 { font-family:'IM Fell English SC',Georgia,serif; letter-spacing:.18em; font-size:13px; display:flex; justify-content:space-between; border-bottom:1px solid #1b2230; padding-bottom:4px; }
+      .${P}label h2 { font-weight:400; font-size:clamp(26px,5vw,32px); margin:8px 0 2px; font-style:italic; }
+      .${P}label .goal { font-size:17px; line-height:1.35; margin:0 0 8px; }
+      .${P}label .open { font-size:15px; line-height:1.4; margin:0 0 10px; color:#3d4659; }
+      .${P}figs { list-style:none; margin:0 0 10px; padding:8px 0 0; border-top:1px solid rgba(27,34,48,.4); display:grid; gap:6px; font-size:15px; line-height:1.3; }
+      .${P}figs li { display:grid; grid-template-columns:58px minmax(0,1fr); gap:8px; }
+      .${P}figs b { font-family:'IM Fell English SC',Georgia,serif; font-weight:400; letter-spacing:.06em; color:${VIOLET}; }
+      .${P}figs kbd { font-family:inherit; border:1px solid #1b2230; padding:0 4px; font-size:14px; }
+      .${P}label .gentle { font-style:italic; color:${GREEN}; font-size:15px; margin:0 0 8px; }
+      .${P}label button { font:inherit; font-size:18px; padding:8px 26px; background:#1b2230; color:#ece6d6; border:0; cursor:pointer; }
+      .${P}label button:hover, .${P}label button:focus-visible { background:${VIOLET}; }
+      @media (max-width:520px) { .${P}label { padding:14px; } .${P}cap { top:96px; width:calc(100% - 70px); font-size:15px; left:auto; right:12px; transform:none; } .${P}pad button { width:58px; height:58px; } }
     </style>
     <div class="${P}wrap">
       <canvas aria-label="The Deep: a diver in a dark plate, glowing specimens, a wreck far below"></canvas>
-      <div class="${P}pad"><button type="button" data-k="kick">Kick</button><button type="button" data-k="grip">Grip</button></div>
+      <div class="${P}cap" aria-live="polite"></div>
+      <div class="${P}pad"><button type="button" data-k="kick" aria-label="Kick (Space)">Kick<span class="cd"></span></button><button type="button" data-k="grip" hidden aria-label="Grip (hold Shift)">Grip</button></div>
       <div class="${P}how" role="dialog" aria-label="How to play">
-        <div>
-          <div class="cap">PLATE IV · THE DEEP</div>
+        <div class="${P}label">
+          <div class="cap2"><span>PLATE IV</span><span>CHAPTER III</span><span>THE DEEP</span></div>
           <h2>Down to the tender</h2>
-          <p>Swim down 80 metres to the sunken tender, hold <b>Grip</b> on the strongbox to work it free of the hull, and carry it up to the light. He does not breathe, but the deep wants to keep him: when the edges close, the dive is lost.</p>
-          <p>Swim: <kbd>WASD</kbd>/arrows, or press and drag toward where you want to go. <kbd>Space</kbd> kick, hold <kbd>Shift</kbd> to grip. <b>Stir</b>: draw a circle and a current runs the way it last turned (or hold <kbd>E</kbd>). Ride your currents; carrying halves your speed.</p>
+          <p class="goal">Swim down 80 m to the sunken tender, work its strongbox free, and carry it up before the pull closes the edges.</p>
+          <p class="open">The Company's tender went down off Home Reach with Tidewater's harbour book locked in its strongbox. Whatever binds that harbour is written there. Alexi goes over the side with no breath to hold.</p>
+          ${gentle ? `<p class="gentle">The deep is slower to close this time: the pull runs 150 seconds.</p>` : ""}
+          <ul class="${P}figs">
+            <li><b>Fig. 1</b><span><b>Swim</b>: <kbd>WASD</kbd> or arrows, or press and drag toward where you want to go.</span></li>
+            <li><b>Fig. 2</b><span><b>Kick</b>: <kbd>Space</kbd> or the Kick button. A burst of speed, then two seconds to recover.</span></li>
+            <li><b>Fig. 3</b><span><b>Stir</b>: draw a circle (or hold <kbd>E</kbd> with a direction). A current runs the way the circle last turned, and carries him.</span></li>
+          </ul>
           <button type="button">Dive</button>
         </div>
       </div>
@@ -47,11 +81,19 @@ export default {
     const cv = wrap.querySelector("canvas"), g = cv.getContext("2d");
     const how = wrap.querySelector("." + P + "how");
     const rng = api.rng("deep");
+    const capEl = wrap.querySelector("." + P + "cap");
+    const kickBtn = wrap.querySelector('[data-k="kick"]'), gripBtn = wrap.querySelector('[data-k="grip"]');
+    const losses = +api.store.get("losses", 0) || 0;
+    let capT = 0;
+    function caption(text, voice, sec = 6) { capEl.textContent = text; capEl.classList.toggle("voice", !!voice); capEl.classList.add("show"); capT = sec; }
+    const fired = new Set();
+    let flashT = 0, flashCol = RED, rings = [];
 
     const d = { x: 12, y: 1, vx: 0, vy: 0, face: 1, kick: 0, cool: 0, grip: false, carry: false, free: 0, pull: PULL, net: 0, cut: 0, msg: "", msgT: 0, hit: 0 };
-    let t = 0, running = false, over = false;
+    let t = 0, running = false, over = false, chainT = 0;
     let currents = [];
     const nets = [{ x0: 46, x1: 66, y0: 24, y1: 33, cut: false }];
+    let sweep = 0.35;
     const chain = { ax: 80, len: 64 };
     const cold = { y0: 40, y1: 55, v: -2.2 };
     const specimens = [];
@@ -69,6 +111,7 @@ export default {
     function spawnCurrent(x, y, dx, dy) {
       const m = Math.hypot(dx, dy) || 1;
       currents.push({ x, y, dx: dx / m, dy: dy / m, len: 10, age: 0, life: 7 });
+      rings.push({ x, y, age: 0 });
       say("A current, " + ["up", "down", "left", "right"][Math.abs(dy) > Math.abs(dx) ? (dy < 0 ? 0 : 1) : (dx < 0 ? 2 : 3)]);
     }
     const kd = (e) => {
@@ -143,12 +186,17 @@ export default {
 
     // ---- simulation ----
     function chainPos(k) { // k in 0..1 along the chain
-      const a = Math.sin(t * 0.35) * 0.55;
+      const a = Math.sin(chainT) * 0.55;
       return [chain.ax + Math.sin(a) * chain.len * k, -2 + Math.cos(a) * chain.len * k];
     }
     function step(dt) {
-      t += dt;
+      t += dt; chainT += dt * sweep;
       if (d.msgT > 0) d.msgT -= dt;
+      if (capT > 0) { capT -= dt; if (capT <= 0) capEl.classList.remove("show"); }
+      if (flashT > 0) flashT = Math.max(0, flashT - dt * 1.5);
+      rings.forEach((r) => (r.age += dt)); rings = rings.filter((r) => r.age < 1);
+      for (const b of BEATS) if (!fired.has(b.id) && !d.carry && d.y >= b.y) { fired.add(b.id); caption(b.text, b.voice); }
+      if (!d.carry && d.pull < PULL * 0.35 && !fired.has("late")) { fired.add("late"); caption("The edges are closing. Kick, and ride a current if you stir one.", false, 4); }
       d.pull -= dt;
       if (d.pull <= 0) { finish(false); return; }
       if (d.cool > 0) d.cool -= dt;
@@ -164,8 +212,8 @@ export default {
       const inNet = nets.find((n) => !n.cut && d.x > n.x0 && d.x < n.x1 && d.y > n.y0 && d.y < n.y1);
       if (inNet) {
         top *= 0.2;
-        if (d.grip && im > 0) { d.cut += dt; if (d.cut > 1) { inNet.cut = true; d.cut = 0; say("The net parts."); } }
-        if (!d.net) say("Caught in a Company net: grip and pull to cut it.");
+        if (d.grip && im > 0) { d.cut += dt; if (d.cut > 1) { inNet.cut = true; d.cut = 0; say("The net parts."); flashT = 0.6; flashCol = GREEN; rings.push({ x: d.x, y: d.y, age: 0 }); } }
+        if (!d.net) { say("Caught in a Company net: hold Grip and swim to tear it."); if (!fired.has("grip")) { fired.add("grip"); gripBtn.hidden = false; caption("A Company net. Fig. 4, Grip: hold Shift (or the Grip button) and swim against it to tear it open.", false, 7); } }
         d.net = 1;
       } else { d.net = 0; d.cut = 0; }
       const k = Math.min(1, dt / 0.3);
@@ -186,21 +234,35 @@ export default {
       for (let i = 1; i <= 14; i++) {
         const [cx, cy] = chainPos(i / 14);
         if (Math.hypot(d.x - cx, d.y - cy) < 1.6 && d.hit <= 0) {
-          const dir = Math.sign(d.x - cx) || 1; d.x += dir * 5; d.vx = dir * 3; d.hit = 1.2; say("The dredge chain sweeps him back."); break;
+          const dir = Math.sign(d.x - cx) || 1; d.x += dir * 5; d.vx = dir * 3; d.hit = 1.2; say("The dredge chain sweeps him back."); flashT = 0.8; flashCol = RED; break;
         }
       }
       currents.forEach((c) => (c.age += dt)); currents = currents.filter((c) => c.age < c.life);
       // the strongbox
       const near = Math.hypot(d.x - WRECK_X, d.y - (WRECK_Y + 2)) < 4.5;
-      if (!d.carry && near && d.grip) { d.free += dt; if (d.free >= 2) { d.carry = true; say("Free of the hull. Now up: carrying halves your speed.", 3); } }
+      if (!d.carry && near && !fired.has("tender")) { fired.add("tender"); gripBtn.hidden = false; caption("The strongbox, wedged in the tender's ribs, the Company's mark on its lid. Hold Grip to work it free.", false, 6); }
+      if (!d.carry && near && d.grip) {
+        d.free += dt;
+        if (d.free >= FREE_S / 2 && !fired.has("settle")) { fired.add("settle"); say("The hull groans and settles."); flashT = 0.5; flashCol = GOLD; }
+        if (d.free >= FREE_S) {
+          d.carry = true; flashT = 0.8; flashCol = GOLD; rings.push({ x: d.x, y: d.y, age: 0 });
+          // the turn: up above, the Company has heard the dredge strike something, and drops a second net
+          nets.push({ x0: Math.max(4, Math.min(WORLD_W - 26, d.x - 14)), x1: Math.max(26, Math.min(WORLD_W - 4, d.x + 8)), y0: 13, y1: 20, cut: false, late: true });
+          sweep = 0.55;
+          caption("Free. Above, a second net comes down across the way up, and the dredge swings faster. Carrying halves your speed: stir currents upward.", false, 7);
+        }
+      }
       else if (!d.carry) d.free = Math.max(0, d.free - dt);
+      if (d.carry && d.y < 30 && !fired.has("near")) { fired.add("near"); caption("Thirty metres. The light comes back to his hands, and the box is lighter than it was.", true, 5); }
       if (d.carry && d.y < 2.2) finish(true);
     }
+    const netsCut = () => nets.filter((n) => n.cut).length;
     function finish(won) {
       if (over) return; over = true; running = false;
       const left = Math.max(0, Math.round(d.pull));
-      if (won) api.end({ outcome: "win", text: `The strongbox breaks the surface with ${left} s of the pull to spare. Swollen, not locked: the harbour book is inside.` });
-      else api.end({ outcome: "lose", text: d.carry ? "The strongbox was free, but the deep kept him. He settles gently to the floor, and the dive is lost." : "The edges close. The deep keeps him a while, and the dive is lost." });
+      api.store.set("losses", won ? 0 : losses + 1);
+      if (won) api.end({ outcome: "win", text: `The strongbox breaks the surface with ${left} s of the pull to spare${netsCut() ? `, and ${netsCut()} Company net${netsCut() === 1 ? "" : "s"} torn on the way` : ""}. Swollen, not locked: the harbour book of Tidewater is inside, and the princess is already reaching for it.` });
+      else api.end({ outcome: "lose", text: d.carry ? "The strongbox was free, but the deep kept him. He settles gently to the floor beside it, and the dive will have to be made again from the last mark." : "The edges close before he reaches the tender. The deep keeps him a while, gently, and the dive will have to be made again." });
     }
 
     // ---- drawing ----
@@ -297,7 +359,7 @@ export default {
         const bx = sx(WRECK_X), by = sy(WRECK_Y + 2);
         g.strokeStyle = PAPER; g.globalAlpha = 0.5 + 0.3 * Math.sin(t * 2); g.lineWidth = 1.2; g.beginPath(); g.arc(bx, by, 3.2 * ppm, 0, 7); g.stroke(); g.globalAlpha = 1;
         g.fillStyle = GOLD; g.strokeStyle = PLATE; g.fillRect(bx - 0.9 * ppm, by - 0.6 * ppm, 1.8 * ppm, 1.2 * ppm); g.strokeRect(bx - 0.9 * ppm, by - 0.6 * ppm, 1.8 * ppm, 1.2 * ppm);
-        if (d.free > 0) { g.strokeStyle = GOLD; g.lineWidth = 3; g.beginPath(); g.arc(bx, by, 4 * ppm, -Math.PI / 2, -Math.PI / 2 + (d.free / 2) * Math.PI * 2); g.stroke(); }
+        if (d.free > 0) { g.strokeStyle = GOLD; g.lineWidth = 3; g.beginPath(); g.arc(bx, by, 4 * ppm, -Math.PI / 2, -Math.PI / 2 + (d.free / FREE_S) * Math.PI * 2); g.stroke(); }
       } else if (d.y > 4) {
         g.strokeStyle = PAPER; g.globalAlpha = 0.5 + 0.3 * Math.sin(t * 2); g.lineWidth = 1.2; g.beginPath(); g.ellipse(sx(d.x), sy(0.5), 6 * ppm, 1.4 * ppm, 0, 0, 7); g.stroke(); g.globalAlpha = 1;
       }
@@ -305,7 +367,7 @@ export default {
       for (const sp of specimens) {
         const px = sx(sp.x + Math.sin(t * 0.3 + sp.ph) * 1.5), py = sy(sp.y + Math.cos(t * 0.25 + sp.ph) * 1); if (px < -60 || px > W + 60 || py < -60 || py > Hh + 60) continue;
         radiolarian(px, py, sp.r * ppm, sp.c, sp.spines, sp.ph + t * 0.1, sp.y > 18);
-        g.font = "italic 10px 'IM Fell English',Georgia,serif"; g.fillStyle = sp.c; g.globalAlpha = 0.6; g.textAlign = "left"; g.fillText("Fig. " + sp.fig, px + sp.r * ppm * 2, py + sp.r * ppm * 2); g.globalAlpha = 1;
+        g.font = "italic 12px 'IM Fell English',Georgia,serif"; g.fillStyle = sp.c; g.globalAlpha = 0.6; g.textAlign = "left"; g.fillText("Fig. " + sp.fig, px + sp.r * ppm * 2, py + sp.r * ppm * 2); g.globalAlpha = 1;
       }
       // stirred currents glow
       for (const c of currents) {
@@ -332,17 +394,27 @@ export default {
       // margins: depth gauge, plate caption, pull
       const gx = 22, g0 = 40, g1 = Hh - 50;
       g.strokeStyle = FOAM; g.globalAlpha = 0.8; g.lineWidth = 1; g.beginPath(); g.moveTo(gx, g0); g.lineTo(gx, g1); g.stroke();
-      g.font = "10px 'IM Fell English',Georgia,serif"; g.fillStyle = FOAM; g.textAlign = "left";
+      g.font = "12px 'IM Fell English',Georgia,serif"; g.fillStyle = FOAM; g.textAlign = "left";
       for (let m = 0; m <= 100; m += 20) { const y = g0 + ((g1 - g0) * m) / 100; g.beginPath(); g.moveTo(gx - 4, y); g.lineTo(gx + 4, y); g.stroke(); g.fillText(m + " m", gx + 7, y + 3); }
       const yy = g0 + ((g1 - g0) * Math.min(100, d.y)) / 100; g.fillStyle = GOLD; g.beginPath(); g.moveTo(gx - 2, yy); g.lineTo(gx - 12, yy - 6); g.lineTo(gx - 12, yy + 6); g.fill();
       const yw = g0 + ((g1 - g0) * WRECK_Y) / 100; g.strokeStyle = PAPER; g.beginPath(); g.arc(gx, yw, 4, 0, 7); g.stroke();
       g.globalAlpha = 1;
+      { const bw = Math.min(W - 70, 290); g.fillStyle = "rgba(11,20,36,.84)"; g.fillRect(W - 16 - bw - 8, 8, bw + 16, 76); g.strokeStyle = FOAM; g.globalAlpha = 0.35; g.strokeRect(W - 16 - bw - 7.5, 8.5, bw + 15, 75); g.globalAlpha = 1; }
       g.font = "14px 'IM Fell English SC',Georgia,serif"; g.fillStyle = FOAM; g.textAlign = "right";
       g.fillText(`PLATE IV. THE DEEP · ${Math.round(d.y)} m`, W - 16, 26);
-      g.font = "italic 14px 'IM Fell English',Georgia,serif";
-      g.fillText(d.carry ? "Carry it up to the light" : d.free > 0 ? "Working it free…" : "Down to the pale ring", W - 16, 46);
-      // pull: a thin closing line along the top
-      g.fillStyle = pullK > 0.75 ? RED : FOAM; g.globalAlpha = 0.7; g.fillRect(0, 0, W * (d.pull / PULL), 3); g.globalAlpha = 1;
+      g.font = "italic 15px 'IM Fell English',Georgia,serif";
+      g.fillText(d.carry ? "Carry it up to the light" : d.free > 0 ? `Working it free… ${Math.min(FREE_S, d.free).toFixed(1)} / ${FREE_S} s` : d.net ? "Grip and swim to tear the net" : "Down to the pale ring", W - 16, 45);
+      // the pull: a ruled gauge under the caption, and the closing line along the top
+      g.fillStyle = pullK > 0.75 ? RED : FOAM; g.globalAlpha = 0.8; g.fillRect(0, 0, W * (d.pull / PULL), 4); g.globalAlpha = 1;
+      { const pw = Math.min(260, W - 90), px0 = W - 16 - pw, py0 = 66;
+        g.font = "13px 'IM Fell English SC',Georgia,serif"; g.textAlign = "left"; g.fillStyle = pullK > 0.65 ? "#e7a0a0" : FOAM; g.fillText("THE PULL", px0, py0 - 4);
+        g.textAlign = "right"; g.fillText(`${Math.ceil(d.pull)} s`, W - 16, py0 - 4);
+        g.strokeStyle = FOAM; g.globalAlpha = 0.8; g.strokeRect(px0 + 0.5, py0 + 0.5, pw, 9); g.globalAlpha = 1;
+        g.fillStyle = pullK > 0.65 ? RED : "#7FE0C2"; g.fillRect(px0 + 2, py0 + 2, (pw - 3) * (d.pull / PULL), 6);
+        if (pullK > 0.65 && !reduce) { g.globalAlpha = 0.25 + 0.25 * Math.sin(t * 6); g.strokeStyle = RED; g.lineWidth = 10; g.strokeRect(0, 0, W, Hh); g.globalAlpha = 1; g.lineWidth = 1; } }
+      for (const r of rings) { if (reduce) break; g.strokeStyle = "#7FE0C2"; g.globalAlpha = 1 - r.age; g.lineWidth = 1.4; g.beginPath(); g.arc(sx(r.x), sy(r.y), 8 + r.age * 50, 0, 7); g.stroke(); g.globalAlpha = 1; }
+      if (flashT > 0) { g.strokeStyle = flashCol; g.globalAlpha = Math.min(1, flashT) * 0.6; g.lineWidth = reduce ? 6 : 16; g.strokeRect(0, 0, W, Hh); g.globalAlpha = 1; g.lineWidth = 1; }
+      if (kickBtn) { const cd = kickBtn.firstElementChild; if (cd) cd.style.width = (d.cool > 0 ? (1 - d.cool / 2) * 100 : 100) + "%"; }
       if (d.msgT > 0) { g.font = `italic ${Math.max(16, Math.min(22, W / 45))}px 'IM Fell English',Georgia,serif`; g.textAlign = "center"; g.fillStyle = FOAM; g.globalAlpha = Math.min(1, d.msgT); g.fillText(d.msg, W / 2, Math.max(70, Hh * 0.16)); g.globalAlpha = 1; }
       g.strokeStyle = FOAM; g.globalAlpha = 0.35; g.strokeRect(5.5, 5.5, W - 11, Hh - 11); g.globalAlpha = 1;
     }
@@ -356,7 +428,7 @@ export default {
     }
     raf = requestAnimationFrame(frame);
     const b = how.querySelector("button");
-    b.addEventListener("click", () => { how.remove(); running = true; last = performance.now(); say("Down. The ring marks the tender.", 3); });
+    b.addEventListener("click", () => { how.remove(); running = true; last = performance.now(); caption("Down. The pale ring far below marks the tender.", false, 4); });
     b.focus();
     return {
       unmount() {

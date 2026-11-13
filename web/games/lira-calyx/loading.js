@@ -20,6 +20,8 @@ const TIPS = [
   "Each interval from the drone is thirty degrees; each rest, a hundred metres.",
   "In the audit, the archivist's small blue hand is not a forgery. Mark it Other hand.",
   "On the Node Board, opposite phases on one edge cancel it. Timing is everything.",
+  "At a reading station the relay beacon is instant. Nobody has ever checked its numbers.",
+  "Pell counts glows faster than anyone on the terrace. Not always correctly.",
 ];
 
 export function render(root, ctx) {
@@ -43,11 +45,11 @@ export function render(root, ctx) {
       clip-path:polygon(0 8%,4% 0,97% 4%,100% 50%,98% 100%,2% 94%)}
     .${P}text h1{font:400 clamp(30px,4.4vw,58px)/1.02 'IM Fell English',Georgia,serif;margin:0 0 6px;text-wrap:balance}
     .${P}text h1 i{display:block;font-size:.5em;letter-spacing:.04em;opacity:.8}
-    .${P}label{font:700 12px 'Courier Prime',monospace;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin:0 0 14px}
+    .${P}label{font:700 13px 'Courier Prime',monospace;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin:0 0 14px}
     .${P}quote{font:italic clamp(16px,1.7vw,21px)/1.4 'IM Fell English',Georgia,serif;margin:0 0 14px;padding-left:14px;border-left:2px solid #b3212b;max-width:38ch}
     .${P}quote .torn{display:inline-block;width:2.4em;border-bottom:1px dashed #3b2618;transform:translateY(-4px)}
-    .${P}tip{font-size:14px;line-height:1.4;min-height:2.9em;margin:0 0 8px;max-width:44ch;transition:opacity .4s}
-    .${P}tip b{font:700 11px 'Courier Prime',monospace;letter-spacing:.1em;color:#b3212b;margin-right:6px}
+    .${P}tip{font-size:15px;line-height:1.45;min-height:2.9em;margin:0 0 8px;max-width:44ch;transition:opacity .4s}
+    .${P}tip b{font:700 12px 'Courier Prime',monospace;letter-spacing:.1em;color:#b3212b;margin-right:6px}
     .${P}sect{width:100%;max-width:520px;height:auto;display:block}
     @media (max-width:760px){.${P}sect{max-height:26vh}.${P}plate img{aspect-ratio:21/9}}
   </style>
@@ -60,7 +62,7 @@ export function render(root, ctx) {
       <h1>The Redacted Testament <i>of Lira Calyx</i></h1>
       <p class="${P}quote">“If I don’t make it out, if this book is all that remains, then let it be known that the Peaks are—”<span class="torn"></span></p>
       <p class="${P}tip"><b>FIELD NOTE</b><span></span></p>
-      <svg class="${P}sect" viewBox="0 0 520 170" aria-label="Loading: the route climbs the section"></svg>
+      <svg class="${P}sect" viewBox="0 0 520 172" aria-label="Loading: the route climbs the section"></svg>
     </div>
   </div>`;
   // The quoted line: creative-writing/vault/05_Worldbuilding/02_The_Redacted_Testament_of_Lira_Calyx.md
@@ -81,7 +83,7 @@ export function render(root, ctx) {
   // The cross-section: strata hatched under a ridge, an altitude scale on the left, a dotted route.
   const svg = el.querySelector("svg");
   const NS = "http://www.w3.org/2000/svg";
-  const X0 = 46, X1 = 510, YB = 160, YT = 14;
+  const X0 = 56, X1 = 510, YB = 156, YT = 14;
   const ridge = [];
   for (let i = 0; i <= 60; i++) {
     const t = i / 60, x = X0 + t * (X1 - X0);
@@ -103,11 +105,11 @@ export function render(root, ctx) {
   }
   h += `</g><polygon points="${poly}" fill="none" stroke="#3b2618" stroke-width="1.6"/>`;
   h += `<line x1="22" y1="${YB}" x2="22" y2="${YT}" stroke="#3b2618"/><rect x="18" y="${YT}" width="8" height="${YB - YT}" fill="none" stroke="#3b2618" stroke-width=".8"/>`;
-  for (let a = 0; a <= 5; a++) { const y = YB - (YB - YT) * a / 5; h += `<line x1="14" x2="26" y1="${y}" y2="${y}" stroke="#3b2618"/><text x="30" y="${y - 2}" font-size="8" font-family="Courier Prime,monospace" fill="#3b2618">${a} km</text>`; }
+  for (let a = 0; a <= 5; a++) { const y = YB - (YB - YT) * a / 5; h += `<line x1="14" x2="26" y1="${y}" y2="${y}" stroke="#3b2618"/><text x="30" y="${y - 2}" font-size="11" font-family="Courier Prime,monospace" fill="#3b2618">${a} km</text>`; }
   h += `<rect class="${P}fill" x="18" y="${YB}" width="8" height="0" fill="#3fc4d0"/>`;
   h += `<path class="${P}route" d="" fill="none" stroke="#3b2618" stroke-width="2" stroke-dasharray="1 5" stroke-linecap="round"/>`;
   h += `<g class="${P}me"><circle r="4" fill="#b3212b"/><line y1="-4" y2="-14" stroke="#3b2618" stroke-width="1.2"/><path d="M0,-14 l7,3 l-7,3z" fill="#b3212b"/></g>`;
-  h += `<text class="${P}alt" x="${X1}" y="${YB + 9}" text-anchor="end" font-size="9" font-family="Courier Prime,monospace" fill="#3b2618"></text>`;
+  h += `<text class="${P}alt" x="${X1}" y="${YB + 9}" text-anchor="end" font-size="12" font-family="Courier Prime,monospace" fill="#3b2618"></text>`;
   svg.innerHTML = h;
   const route = svg.querySelector("." + P + "route"), me = svg.querySelector("." + P + "me");
   const fill = svg.querySelector("." + P + "fill"), altT = svg.querySelector("." + P + "alt");

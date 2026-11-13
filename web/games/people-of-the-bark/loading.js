@@ -42,16 +42,18 @@ export function render(root, ctx) {
   mask-image:linear-gradient(180deg,#000 0%,transparent 26%,transparent 62%,#000 90%);-webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 26%,transparent 62%,#000 90%)}
 .${P}dust{position:absolute;inset:0;width:100%;height:100%}
 .${P}foot{position:absolute;left:max(16px,6vw);right:max(16px,6vw);bottom:clamp(16px,4vh,40px);display:flex;flex-direction:column;gap:clamp(14px,3vh,26px)}
-.${P}kick{font-family:'Silkscreen',monospace;font-size:11px;letter-spacing:.18em;color:#f0c050;text-transform:uppercase;margin-bottom:10px}
+.${P}kick{font-family:'Silkscreen',monospace;font-size:12px;letter-spacing:.16em;line-height:1.5;color:#f0c050;text-shadow:0 1px 6px rgba(0,0,0,.8);text-transform:uppercase;margin-bottom:10px}
 .${P}title{font-family:'IM Fell English',Georgia,serif;font-size:clamp(40px,8vw,104px);line-height:.92;margin:0;color:#efe2c4;text-shadow:0 2px 24px rgba(0,0,0,.6)}
-.${P}quote{font-family:'IM Fell English',Georgia,serif;font-style:italic;font-size:clamp(17px,2.2vw,24px);margin:14px 0 0;max-width:34ch;color:#e9d6ae}
+.${P}quote{font-family:'IM Fell English',Georgia,serif;font-style:italic;font-size:clamp(19px,2.2vw,26px);line-height:1.3;margin:14px 0 0;max-width:34ch;color:#f3e4c0;text-shadow:0 1px 10px rgba(0,0,0,.85)}
+.${P}cite{display:block;margin-top:6px;font:12px 'Silkscreen',monospace;letter-spacing:.12em;color:#c9b99a;font-style:normal}
 .${P}quote::before{content:"\\201C"}.${P}quote::after{content:"\\201D"}
-.${P}tip{font-size:clamp(15px,1.6vw,18px);min-height:2.6em;display:flex;gap:10px;align-items:flex-start;color:#d8c8a4;transition:opacity .45s}
-.${P}tip b{font-family:'Silkscreen',monospace;font-weight:400;font-size:10px;letter-spacing:.14em;color:#c4d65a;padding-top:4px;white-space:nowrap}
-.${P}crack{height:26px}
+.${P}tip{font-size:clamp(16px,1.6vw,19px);line-height:1.35;min-height:2.7em;display:flex;gap:12px;align-items:flex-start;color:#efe2c4;background:rgba(27,18,12,.72);border-left:3px solid #c4d65a;padding:8px 12px;transition:opacity .45s}
+.${P}tip b{font-family:'Silkscreen',monospace;font-weight:400;font-size:12px;letter-spacing:.14em;color:#c4d65a;padding-top:4px;white-space:nowrap}
+.${P}crack{height:34px;position:relative}
+.${P}pct{position:absolute;right:0;top:-20px;font:12px 'Silkscreen',monospace;letter-spacing:.12em;color:#f0c050}
 @media (max-width:560px){.${P}tip{flex-direction:column;gap:4px}}
 .${P}crack svg{width:100%;height:100%;overflow:visible;display:block}
-.${P}label{position:absolute;right:max(16px,6vw);top:18px;font-family:'Silkscreen',monospace;font-size:10px;letter-spacing:.16em;color:#c9b99a;text-transform:uppercase}
+.${P}label{position:absolute;right:max(16px,6vw);top:18px;font-family:'Silkscreen',monospace;font-size:12px;text-shadow:0 1px 6px #000;letter-spacing:.16em;color:#c9b99a;text-transform:uppercase}
 </style>
 <div class="${P}still"></div>
 <div class="${P}blur"></div>
@@ -61,14 +63,14 @@ export function render(root, ctx) {
 <div class="${P}foot"><div class="${P}text">
   <div class="${P}kick">The Endless Trunk · the year of the message</div>
   <h1 class="${P}title"></h1>
-  <p class="${P}quote">At dawn, the bark people wake to a strange vibration.</p>
+  <p class="${P}quote">At dawn, the bark people wake to a strange vibration.</p><span class="${P}cite">People of the Bark · the Tremor</span>
 </div>
-<div class="${P}crack"><svg viewBox="0 0 1000 26" preserveAspectRatio="none" aria-hidden="true">
-  <path class="${P}c-bed" d="" fill="none" stroke="#0d0805" stroke-width="9" stroke-linecap="round"/>
+<div class="${P}crack"><span class="${P}pct"></span><svg viewBox="0 0 1000 26" preserveAspectRatio="none" aria-hidden="true">
+  <path class="${P}c-bed" d="" fill="none" stroke="#0d0805" stroke-width="12" stroke-linecap="round"/>
   <path class="${P}c-rim" d="" fill="none" stroke="#7d6c5a" stroke-width="1.2" stroke-opacity=".7" transform="translate(0,-5)"/>
-  <path class="${P}c-sap" d="" fill="none" stroke="#d9902a" stroke-width="5" stroke-linecap="round"/>
+  <path class="${P}c-sap" d="" fill="none" stroke="#d9902a" stroke-width="7" stroke-linecap="round"/>
   <path class="${P}c-glow" d="" fill="none" stroke="#f0c050" stroke-width="1.6" stroke-linecap="round" stroke-opacity=".9"/>
-  <circle class="${P}c-drop" r="5.5" fill="#f0c050"/>
+  <circle class="${P}c-drop" r="7" fill="#f0c050"/>
 </svg></div>
 <div class="${P}tip" role="status"><b>HOW IT PLAYS</b><span></span></div></div>`;
   root.appendChild(el);
@@ -88,6 +90,7 @@ export function render(root, ctx) {
   const sap = el.querySelector("." + P + "c-sap");
   const glow = el.querySelector("." + P + "c-glow");
   const drop = el.querySelector("." + P + "c-drop");
+  const pct = el.querySelector("." + P + "pct");
   const len = sap.getTotalLength ? sap.getTotalLength() : 1100;
   for (const s of [sap, glow]) { s.style.strokeDasharray = `${len} ${len}`; s.style.strokeDashoffset = String(len); }
 
@@ -100,7 +103,7 @@ export function render(root, ctx) {
   timers.push(setInterval(() => {
     tipEl.style.opacity = "0";
     timers.push(setTimeout(() => { tipIdx = (tipIdx + 1) % TIPS.length; tipText.textContent = TIPS[tipIdx]; tipEl.style.opacity = "1"; }, ctx.reducedMotion ? 0 : 420));
-  }, 2600));
+  }, 3200));
 
   // Dust from the ridges, and a small tremor now and then.
   const cv = el.querySelector("." + P + "dust");
@@ -135,6 +138,7 @@ export function render(root, ctx) {
     glow.style.strokeDashoffset = String(off);
     const at = sap.getPointAtLength ? sap.getPointAtLength(Math.max(0.1, len * p)) : { x: 1000 * p, y: 13 };
     drop.setAttribute("cx", at.x); drop.setAttribute("cy", at.y);
+    pct.textContent = "SAP " + String(Math.round(p * 100)).padStart(3, "\u2007") + "%";
   }
   setBar(0);
 

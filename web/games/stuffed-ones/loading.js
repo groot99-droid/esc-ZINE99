@@ -23,10 +23,12 @@ const QUOTE_WHO = "Mabel";
 
 const TIPS = [
   "Dollhouse: a toy standing still in a sight cone is safe. Only moving inside an open eye is seen.",
+  "Dollhouse: Three taps at a bedroom door bring the guest out, and the hall light on.",
   "Labyrinth: come within a metre of a guest and they freeze. The pack herds; it never pounces.",
   "Stitchwork: in, out, pull. Release the thread while the needle sits in the green band.",
+  "Stitchwork: when the pack's pulse beats through the thread, Steady the needle.",
   "The Hand-Sewn Book: red thread is an act, black a thing, white who. A slot takes only its colour.",
-  "Parlour: footsteps grow louder in three steps before anyone enters. The climb back takes four seconds.",
+  "Parlour: when a face comes to the window, hold still. A toy on the table is a toy someone left there.",
   "Stuffing: a slot left empty is warm. The hunger lives there.",
 ];
 
@@ -43,12 +45,12 @@ export function render(root, ctx) {
 .stuffed-ones-load-warm{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;transition:opacity .4s}
 .stuffed-ones-load-grain{position:absolute;inset:0;opacity:.18;mix-blend-mode:overlay;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.25) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(0,0,0,.25) 0 1px,transparent 1px 3px)}
 .stuffed-ones-load-text{position:absolute;left:0;right:0;top:0;bottom:118px;display:flex;flex-direction:column;justify-content:flex-end;padding:0 max(16px,6vw);gap:10px}
-.stuffed-ones-load-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.stuffed-ones-load-label{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
 .stuffed-ones-load h1{margin:0;font-family:${meta.display};font-weight:400;font-size:clamp(44px,9vw,120px);line-height:.9;letter-spacing:-.01em;text-shadow:0 2px 24px rgba(0,0,0,.55)}
 .stuffed-ones-load h1 i{font-style:italic;color:#efe5cf}
 .stuffed-ones-load-quote{font-family:${meta.display};font-style:italic;font-size:clamp(20px,2.6vw,30px);opacity:.92;margin:4px 0 0}
-.stuffed-ones-load-quote span{font-style:normal;font-family:${meta.body};font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-left:10px}
-.stuffed-ones-load-tip{min-height:2.8em;max-width:60ch;font-size:14px;line-height:1.4;opacity:.88;transition:opacity .5s}
+.stuffed-ones-load-quote span{font-style:normal;font-family:${meta.body};font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-left:10px}
+.stuffed-ones-load-tip{min-height:2.8em;max-width:60ch;font-size:15px;line-height:1.45;opacity:.95;transition:opacity .5s;text-shadow:0 1px 8px rgba(0,0,0,.6)}
 .stuffed-ones-load-seam{position:absolute;left:0;bottom:0;width:100%;height:104px;display:block}
 @media (max-width:520px){.stuffed-ones-load-text{bottom:96px}.stuffed-ones-load-seam{height:86px}}
 </style>
@@ -129,7 +131,7 @@ export function render(root, ctx) {
     g.strokeStyle = "#f6f1e4"; g.lineWidth = 1.4;
     g.beginPath(); g.moveTo(tipX - 2, y); g.quadraticCurveTo(tipX + 10, y - 30 - bob, nx + 28 * Math.cos(-0.55), ny + 28 * Math.sin(-0.55)); g.stroke();
     // stitch count in the margin, like a pattern
-    g.fillStyle = "rgba(246,241,228,.8)"; g.font = "12px Karla, Arial, sans-serif"; g.textAlign = "right";
+    g.fillStyle = "rgba(246,241,228,.92)"; g.font = "600 13px Karla, Arial, sans-serif"; g.textAlign = "right";
     g.fillText(`${Math.min(done, n)} / ${n} stitches`, x1, h - 12);
   }
 

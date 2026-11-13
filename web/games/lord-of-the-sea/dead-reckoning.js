@@ -6,6 +6,9 @@
 // across a rock is refused and shown. The Unwritten's Wild is 85, so Alexi may stir an hour's
 // tide vector up to 30 degrees either way (Wild +5 each). Off target: you arrive in fog.
 // Added to fit the browser: two erasers to rub out a plot and try again.
+// Refine pass: the princess checks the leg once (section 11 hints, trust 40+), the stir and her check
+// unlock as the plot goes on, a worked-example card opens the sheet, and the beats and closing lines
+// are written for the game (refine additions list).
 
 const PAPER = "#F4F1E8", GRID = "#9fb0c4", INK = "#1F2E4A", RED = "#8C2B2B", PENCIL = "#4a4a4a", GOLD = "#E7A93B", GREEN = "#2F6B5E";
 const NM = 30;                         // px per nautical mile
@@ -22,7 +25,9 @@ const vec = (bearing, len) => ({ x: Math.sin(rad(bearing)) * len, y: Math.cos(ra
 export default {
   mount(root, api) {
     const P = "lord-of-the-sea-dead-reckoning-";
-    const S = { heading: 62, quarters: 16, laid: [], stir: [], sel: -1, marked: false, erasers: 2, wild: 85, msg: "", refused: null, over: false };
+    const S = { heading: 62, quarters: 16, laid: [], stir: [], sel: -1, marked: false, erasers: 2, wild: 85, msg: "", refused: null, over: false, checks: 1, beat: "", voice: false, refusals: 0, flash: 0 };
+    const losses = +api.store.get("losses", 0) || 0;
+    if (losses >= 2) S.checks = 3;
 
     root.innerHTML = `
     <style>
@@ -43,27 +48,58 @@ export default {
       .${P}tide tr.done { color:${GREEN}; }
       .${P}tide tr.next { background:#fff3d6; }
       .${P}msg { font-size:16px; line-height:1.35; min-height:2.6em; }
-      .${P}how { position:absolute; inset:0; display:grid; place-items:center; background:rgba(217,212,196,.9); z-index:3; padding:16px; }
-      .${P}how div { max-width:540px; background:${PAPER}; border:1px solid ${INK}; padding:20px 22px; box-shadow:4px 5px 0 rgba(31,46,74,.3);
-        background-image: linear-gradient(${GRID}33 1px, transparent 1px), linear-gradient(90deg, ${GRID}33 1px, transparent 1px); background-size:24px 24px; }
-      .${P}how h2 { font-weight:400; font-size:30px; margin:0 0 8px; }
-      .${P}how p { margin:0 0 10px; font-size:16px; line-height:1.4; }
-      @media (max-width:820px) { .${P}lay { grid-template-columns:1fr; } .${P}sheet { max-height:none; } }
+      .${P}how { position:absolute; inset:0; display:grid; place-items:center; background:rgba(217,212,196,.92); z-index:3; padding:14px; overflow:auto; }
+      .${P}card2 { position:relative; max-width:540px; box-sizing:border-box; margin:8px; background:${PAPER}; border:1px solid ${INK}; padding:18px 22px 16px; box-shadow:4px 5px 0 rgba(31,46,74,.3);
+        background-image: linear-gradient(${GRID}40 1px, transparent 1px), linear-gradient(90deg, ${GRID}40 1px, transparent 1px); background-size:24px 24px; }
+      .${P}card2 .hd { display:flex; justify-content:space-between; font-family:ui-monospace,'JetBrains Mono',monospace; font-size:13px; border-bottom:2px solid ${INK}; padding-bottom:4px; letter-spacing:.06em; }
+      .${P}card2 h2 { font-weight:400; font-size:clamp(28px,6vw,34px); margin:8px 0 2px; }
+      .${P}card2 .goal { font-size:17px; margin:0 0 6px; line-height:1.35; }
+      .${P}card2 .open { font-style:italic; font-size:15px; line-height:1.4; margin:0 0 10px; color:#3b4660; }
+      .${P}card2 table { width:100%; border-collapse:collapse; font-size:15px; margin:0 0 12px; }
+      .${P}card2 td { border-top:1px dotted ${INK}; padding:5px 4px; vertical-align:top; line-height:1.3; }
+      .${P}card2 td:first-child { font-family:ui-monospace,'JetBrains Mono',monospace; font-size:14px; white-space:nowrap; color:${RED}; width:1%; padding-right:10px; }
+      .${P}card2 kbd { font-family:ui-monospace,monospace; border:1px solid ${INK}; padding:0 3px; font-size:13px; background:#fff; }
+      .${P}card2 .gentle { font-style:italic; color:${GREEN}; font-size:15px; margin:0 0 8px; }
+      .${P}card2 button { font:inherit; font-size:18px; padding:7px 22px; background:${INK}; color:${PAPER}; border:0; cursor:pointer; }
+      .${P}card2 button:hover, .${P}card2 button:focus-visible { background:${RED}; }
+      .${P}beat { font-size:15px; line-height:1.35; padding:7px 10px; border-left:4px solid ${INK}; background:#fffdf6; }
+      .${P}beat.voice { font-style:italic; color:${GREEN}; border-color:${GREEN}; }
+      .${P}beat:empty { display:none; }
+      @media (min-width:821px) { .${P}beat { position:absolute; left:26px; top:26px; width:min(400px,42%); z-index:1; box-shadow:2px 3px 0 rgba(31,46,74,.2); } }
+      @media (max-width:820px) { .${P}beat { margin:0 0 8px; } }
+      .${P}tray button:not(:disabled):hover { background:#eef1f6; }
+      .${P}tray button.main:not(:disabled):hover { background:${RED}; }
+      .${P}tide tr[data-h]:hover td { background:#f3ecd8; }
+      .${P}sheetbox { min-width:0; }
+      .${P}sheet.refused { animation:${P}ref .6s; }
+      @keyframes ${P}ref { 0%,100% { transform:none; } 25% { transform:translateX(-6px); } 75% { transform:translateX(6px); } }
+      @media (prefers-reduced-motion: reduce) { .${P}sheet.refused { animation:none; outline:3px solid ${RED}; } }
+      @media (max-width:820px) { .${P}lay { grid-template-columns:1fr; } .${P}sheet { max-height:none; }
+        .${P}sheetbox { overflow-x:auto; overscroll-behavior-x:contain; } .${P}sheetbox .${P}sheet { width:760px; max-width:none; touch-action:pan-x pan-y; } .${P}pan { display:block !important; } }
+      .${P}pan { display:none; font-size:14px; font-style:italic; text-align:center; margin:4px 0 0; }
     </style>
     <div class="${P}w"><div class="${P}lay">
-      <svg class="${P}sheet" viewBox="0 0 1000 660" role="img" aria-label="Plotting sheet"></svg>
+      <div style="position:relative"><div class="${P}beat" aria-live="polite"></div><div class="${P}sheetbox"><svg class="${P}sheet" viewBox="0 0 1000 660" role="img" aria-label="Plotting sheet"></svg></div><p class="${P}pan">Swipe the sheet sideways for the boat and the rose; the course buttons below set the heading.</p></div>
       <div class="${P}tray"></div>
     </div>
-    <div class="${P}how" role="dialog" aria-label="How to play"><div>
+    <div class="${P}how" role="dialog" aria-label="How to play"><div class="${P}card2">
+      <div class="hd"><span>PLOTTING SHEET No. 3</span><span>CH. III</span><span>FIX 0600</span></div>
       <h2>Dead Reckoning</h2>
-      <p>No chart reaches the Unwritten. Plot a course from the fix to the Gullwife boat inside the dashed circle, clear of both rocks. Lay a <b>heading</b> on the rose and a <b>time</b>; the boat makes 6 knots through the water.</p>
-      <p>Then lay the <b>tide</b> hour by hour from the table: it sets you south-east whatever you do, so aim off. Mark where you will be and commit. Here the water is wild enough to <b>stir</b>: turn one hour's tide up to 30° with a circle.</p>
+      <p class="goal">Plot a course from the fix to the Gullwife boat, ending inside the red circle and clear of both rocks.</p>
+      <p class="open">No chart reaches the Unwritten. The Gullwife crew fish out there, past the last Company buoy, and the only way to meet them is a pencil, a rose and the tide table.</p>
+      ${losses >= 2 ? `<p class="gentle">The cabin's old maps hold a worked example in pencil: aim well north of the boat, the tide carries you south-east. She will check your leg three times.</p>` : ""}
+      <table>
+        <tr><td>1 COURSE</td><td>Drag on the rose (or <kbd>←</kbd><kbd>→</kbd>) for a heading; <kbd>↑</kbd><kbd>↓</kbd> for the time. The boat makes 6 knots.</td></tr>
+        <tr><td>2 TIDE</td><td>Click each hour's row in the table (or <kbd>T</kbd>) to lay its tide from the end of that hour's run.</td></tr>
+        <tr><td>3 COMMIT</td><td>Mark the dead-reckoned position with the dividers, then Commit.</td></tr>
+      </table>
       <button type="button">Unroll the sheet</button>
     </div></div>
     </div>`;
     const w = root.querySelector("." + P + "w");
     const svg = w.querySelector("svg");
     const tray = w.querySelector("." + P + "tray");
+    const beatEl = w.querySelector("." + P + "beat");
     const how = w.querySelector("." + P + "how");
 
     const hours = () => Math.ceil(S.quarters / 4);
@@ -123,7 +159,7 @@ export default {
       for (let i = 0; i <= 31; i++) s += `<line x1="${OX + i * NM}" y1="20" x2="${OX + i * NM}" y2="${OY + 20}" stroke="${GRID}" stroke-width="${i % 5 ? 0.5 : 1.1}"/>`;
       for (let j = -1; j <= 20; j++) s += `<line x1="20" y1="${OY - j * NM}" x2="980" y2="${OY - j * NM}" stroke="${GRID}" stroke-width="${j % 5 ? 0.5 : 1.1}"/>`;
       s += `<rect x="14" y="14" width="972" height="632" fill="none" stroke="${INK}" stroke-width="3" stroke-dasharray="14 6"/>`;
-      for (let j = 0; j <= 15; j += 5) s += `<text x="22" y="${OY - j * NM - 4}" font-size="10" fill="${INK}" font-family="ui-monospace,monospace">41°${String(j).padStart(2, "0")}'</text>`;
+      for (let j = 0; j <= 15; j += 5) s += ` <text x="22" y="${OY - j * NM - 4}" font-size="12" fill="${INK}" font-family="ui-monospace,monospace">41°${String(j).padStart(2, "0")}'</text>`;
       // scale of miles
       s += `<g transform="translate(330,${OY + 14})">${[0, 1, 2, 3, 4].map((i) => `<rect x="${i * NM}" y="0" width="${NM}" height="6" fill="${i % 2 ? PAPER : INK}" stroke="${INK}"/>`).join("")}<text x="${5 * NM + 8}" y="7" font-size="12" font-style="italic" fill="${INK}">nautical miles</text></g>`;
       // hazards
@@ -148,7 +184,7 @@ export default {
         const [x1, y1] = px(a), [x2, y2] = px(b);
         s += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${PENCIL}" stroke-width="1.6" ${S.laid[h] ? "" : 'stroke-dasharray="7 5"'}/>${arrowHead(x1, y1, x2, y2, PENCIL, false)}`;
         if (h === 0) s += `<text x="${(x1 + x2) / 2 - 30}" y="${(y1 + y2) / 2 - 10}" font-size="12" font-family="ui-monospace,monospace" fill="${PENCIL}" transform="rotate(${S.heading - 90} ${(x1 + x2) / 2} ${(y1 + y2) / 2})">C ${String(S.heading).padStart(3, "0")}°T S ${SPEED} kn</text>`;
-        s += `<line x1="${x2 - 4}" y1="${y2 - 4}" x2="${x2 + 4}" y2="${y2 + 4}" stroke="${PENCIL}"/><text x="${x2 + 6}" y="${y2 + 14}" font-size="10" fill="${PENCIL}" font-family="ui-monospace,monospace">${h + 1 > S.quarters / 4 ? String(6 + h).padStart(2, "0") + String((S.quarters % 4) * 15).padStart(2, "0") : String(7 + h).padStart(2, "0") + "00"}</text>`;
+        s += `<line x1="${x2 - 4}" y1="${y2 - 4}" x2="${x2 + 4}" y2="${y2 + 4}" stroke="${PENCIL}"/><text x="${x2 + 6}" y="${y2 + 14}" font-size="12" fill="${PENCIL}" font-family="ui-monospace,monospace">${h + 1 > S.quarters / 4 ? String(6 + h).padStart(2, "0") + String((S.quarters % 4) * 15).padStart(2, "0") : String(7 + h).padStart(2, "0") + "00"}</text>`;
         if (S.laid[h]) {
           const t = tideFor(h), [x3, y3] = px({ x: b.x + t.x, y: b.y + t.y });
           s += `<g data-vec="${h}" style="cursor:pointer"><line x1="${x2}" y1="${y2}" x2="${x3}" y2="${y3}" stroke="${S.sel === h ? GOLD : INK}" stroke-width="${S.sel === h ? 3.4 : 2}"/>${arrowHead(x2, y2, x3, y3, S.sel === h ? GOLD : INK, true)}<line x1="${x2}" y1="${y2}" x2="${x3}" y2="${y3}" stroke="transparent" stroke-width="18"/></g>`;
@@ -175,20 +211,24 @@ export default {
       const locked = S.laid.some(Boolean);
       const next = Array.from({ length: hours() }, (_, h) => h).find((h) => !S.laid[h]);
       const rows = Array.from({ length: Math.max(5, hours()) }, (_, h) => `<tr data-h="${h}" class="${S.laid[h] ? "done" : h === next ? "next" : ""}" ${h < hours() ? 'draggable="true"' : 'style="opacity:.4"'}><td>${String(6 + h).padStart(2, "0")}–${String(7 + h).padStart(2, "0")}</td><td>${TIDE.set}°</td><td>${TIDE.rate.toFixed(1)} kn</td><td>${S.laid[h] ? "✓" : h < hours() ? "lay" : ""}</td></tr>`).join("");
+      const anyLaid = S.laid.some(Boolean);
       tray.innerHTML = `
         <div class="${P}card"><h3>COURSE</h3>
           <div class="${P}row">Heading <button type="button" data-a="h-10" ${locked ? "disabled" : ""}>−10</button><button type="button" data-a="h-1" ${locked ? "disabled" : ""}>−1</button><b>${String(S.heading).padStart(3, "0")}°</b><button type="button" data-a="h+1" ${locked ? "disabled" : ""}>+1</button><button type="button" data-a="h+10" ${locked ? "disabled" : ""}>+10</button></div>
           <div class="${P}row" style="margin-top:6px">Time <button type="button" data-a="t-" ${locked ? "disabled" : ""}>−¼</button><b>${(S.quarters / 4).toFixed(2)}h</b><button type="button" data-a="t+" ${locked ? "disabled" : ""}>+¼</button></div>
           <div style="font-size:13px;margin-top:4px;opacity:.8">Log-line: ${SPEED} knots. Run: ${(SPEED * S.quarters / 4).toFixed(1)} nm.</div></div>
         <div class="${P}card"><h3>TIDAL STREAM</h3><table class="${P}tide"><tr><td>HR</td><td>SET</td><td>RATE</td><td></td></tr>${rows}</table>
-          <div style="font-size:13px;margin-top:4px;opacity:.8">Drag a row onto the sheet, or click it, to lay that hour's tide.</div></div>
-        <div class="${P}card"><h3>STIR · WILD ${S.wild}</h3>
-          <div class="${P}row"><button type="button" data-a="s-" ${S.sel >= 0 ? "" : "disabled"}>↺ 5°</button><button type="button" data-a="s+" ${S.sel >= 0 ? "" : "disabled"}>↻ 5°</button><span style="font-size:13px">${S.sel >= 0 ? `hour ${S.sel + 1}: ${(S.stir[S.sel] || 0)}°` : "click a tide arrow"}</span></div></div>
+          <div style="font-size:13px;margin-top:4px;opacity:.8">Click a row (or drag it onto the sheet, or press T) to lay that hour's tide.</div></div>
+        ${anyLaid ? `<div class="${P}card"><h3>STIR · WILD ${S.wild} (+5 AN HOUR)</h3>
+          <div class="${P}row"><button type="button" data-a="s-" ${S.sel >= 0 ? "" : "disabled"} aria-label="Turn left 5 degrees ([)">↺ 5°</button><button type="button" data-a="s+" ${S.sel >= 0 ? "" : "disabled"} aria-label="Turn right 5 degrees (])">↻ 5°</button><span style="font-size:14px">${S.sel >= 0 ? `hour ${S.sel + 1}: ${(S.stir[S.sel] || 0)}°` : "click a tide arrow (or 1–6)"}</span></div>
+          </div>` : ""}
         <div class="${P}card"><div class="${P}row">
           <button type="button" data-a="mark" ${allLaid() && !S.marked ? "" : "disabled"}>Mark DR</button>
           <button type="button" class="main" data-a="commit" ${S.marked && !S.over ? "" : "disabled"}>Commit</button>
-          <button type="button" data-a="erase" ${locked && S.erasers > 0 && !S.over ? "" : "disabled"}>Erase (${S.erasers})</button></div>
+          <button type="button" data-a="erase" ${locked && S.erasers > 0 && !S.over ? "" : "disabled"}>Erase (${S.erasers})</button>
+          ${anyLaid ? `<button type="button" data-a="check" ${S.checks > 0 && !S.over ? "" : "disabled"} title="Trust 40+: she checks the leg">Ask her (${S.checks})</button>` : ""}</div>
           <p class="${P}msg" aria-live="polite">${S.msg}</p></div>`;
+      beatEl.textContent = S.beat; beatEl.classList.toggle("voice", S.voice);
       tray.querySelectorAll("[data-a]").forEach((b) => b.addEventListener("click", () => act(b.dataset.a)));
       tray.querySelectorAll("tr[data-h]").forEach((tr) => {
         tr.addEventListener("click", () => layTide(+tr.dataset.h));
@@ -201,11 +241,27 @@ export default {
       if (next === undefined) return;
       if (h !== next) { S.msg = `Lay the tide in order: hour ${next + 1} first, from the end of its run.`; render(); return; }
       S.laid[h] = true; S.refused = null;
-      S.msg = allLaid() ? "Every hour's tide is laid. Mark the dead-reckoned position with the dividers." : `Hour ${h + 1}'s tide laid.`;
+      if (h === 0 && !S.stirShown) { S.stirShown = true; beat("The first triple arrow goes down in ink. The water out here is wild enough to argue with: click a tide arrow and circle on the sheet to turn it up to 30°. She will check the leg for you once.", false); }
+      if (allLaid() && !S.allShown) { S.allShown = true; beat("Every hour laid. Out past the buoys the fog is already coming down; whatever the pencil says is all he will have.", true); }
+      S.msg = allLaid() ? "Every hour's tide is laid. Mark the dead-reckoned position with the dividers." : `Hour ${h + 1}'s tide laid. Next: hour ${h + 2}.`;
       render();
+    }
+    function beat(t, v) { S.beat = t; S.voice = !!v; }
+    function check() {
+      if (S.checks <= 0) return;
+      S.checks--;
+      const pl = plot();
+      const dx = pl.end.x - TARGET.x, dy = pl.end.y - TARGET.y, off = Math.hypot(dx, dy);
+      const hit = pl.pts.some((p, i) => i && ROCKS.some((r) => segHitsCircle(pl.pts[i - 1], p, r)));
+      const dir = Math.abs(dy) > Math.abs(dx) ? (dy > 0 ? "north of her" : "south of her") : (dx > 0 ? "past her, to the east" : "short of her, to the west");
+      if (!allLaid()) S.msg = `She runs a finger along it: “Lay the rest of the tide first. Without it you are only guessing.”`;
+      else if (hit) S.msg = "She taps a rock: “That line goes straight over it. Turn a tide arrow, or erase.”";
+      else if (off <= TARGET.r) S.msg = "She nods once: “That will find her. If the pencil is honest.”";
+      else S.msg = `She frowns at the circle: “You'll come up ${dir}, about ${off.toFixed(0)} miles out.”`;
     }
     function act(a) {
       if (S.over) return;
+      if (a === "check") { check(); render(); return; }
       const locked = S.laid.some(Boolean);
       const m = a.match(/^h([+-]\d+)$/);
       if (m && !locked) S.heading = (S.heading + +m[1] + 360) % 360;
@@ -228,13 +284,14 @@ export default {
       const pl = plot();
       for (let i = 1; i < pl.pts.length; i++) for (const r of ROCKS) {
         const hit = segHitsCircle(pl.pts[i - 1], pl.pts[i], r);
-        if (hit) { S.refused = hit; S.marked = false; S.msg = "Refused: that track runs over a rock. See the red cross. Erase or stir to clear it."; render(); return; }
+        if (hit) { S.refused = hit; S.marked = false; S.refusals++; S.msg = "Refused: that track runs over a rock. See the red cross. Erase or stir to clear it."; render(); svg.classList.remove(P + "refused"); void svg.getBoundingClientRect(); svg.classList.add(P + "refused"); return; }
       }
       const off = Math.hypot(pl.end.x - TARGET.x, pl.end.y - TARGET.y);
       S.over = true; render();
       const stirred = S.stir.filter(Boolean).length;
-      if (off <= TARGET.r) api.end({ outcome: "win", text: `Arrived, ${off.toFixed(1)} nm from the Gullwife boat: fifty metres off her bow when the fog lifts.${stirred ? ` The tide was stirred ${stirred === 1 ? "once" : stirred + " times"}: Wild ${S.wild}.` : ""}` });
-      else api.end({ outcome: "lose", text: `Arrived off-target, ${off.toFixed(1)} nm out. You come up in fog, three hundred metres from the Gullwife boat instead of fifty.` });
+      api.store.set("losses", off <= TARGET.r ? 0 : losses + 1);
+      if (off <= TARGET.r) api.end({ outcome: "win", text: `Arrived, ${off.toFixed(1)} nm from the Gullwife boat: fifty metres off her bow when the fog lifts, and someone aboard is already singing.${stirred ? ` The tide was stirred ${stirred === 1 ? "once" : stirred + " times"}: Wild ${S.wild} in the Unwritten.` : " Not a stir: the pencil did it alone."}` });
+      else api.end({ outcome: "lose", text: `Arrived off-target: the pencil put him ${off.toFixed(1)} nm wide. He finds the Gullwife boat only by their singing, and comes up in fog, three hundred metres from the Gullwife boat instead of fifty. His mark fell ${pl.end.y < TARGET.y ? "south" : "north"} of her; let the tide table do its share next time.` });
     }
 
     // ---- pointer: the rose, dropping tide rows, the circle stir ----
@@ -280,11 +337,14 @@ export default {
       if (e.key === "t") { const next = Array.from({ length: hours() }, (_, k) => k).find((k) => !S.laid[k]); if (next !== undefined) layTide(next); }
       if (e.key === "[" && S.sel >= 0) { stirBy(S.sel, -5); render(); }
       if (e.key === "]" && S.sel >= 0) { stirBy(S.sel, 5); render(); }
+      if (/^[1-6]$/.test(e.key) && S.laid[+e.key - 1]) { S.sel = S.sel === +e.key - 1 ? -1 : +e.key - 1; render(); }
+      if (e.key === "a" && S.laid.some(Boolean)) act("check");
+      if (e.key === "m" && allLaid() && !S.marked) act("mark");
     };
     addEventListener("keydown", onKey);
     render();
     const b = how.querySelector("button");
-    b.addEventListener("click", () => { how.remove(); S.msg = "Lay a heading on the rose. The tide will set you south-east; aim off."; render(); });
+    b.addEventListener("click", () => { how.remove(); S.msg = "Lay a heading on the rose. The tide will set you south-east; aim off."; beat("Six in the morning, the last buoy astern. The princess holds the lamp over the sheet; the boat holds its breath.", false); render(); });
     b.focus();
     return { unmount() { removeEventListener("keydown", onKey); S.over = true; } };
   },
