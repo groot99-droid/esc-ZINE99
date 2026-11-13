@@ -371,7 +371,6 @@ export default {
     K.on(sb, "click", () => { speed = intro.querySelector("input").checked ? 2 : 1; intro.remove(); started = true; wrap.focus(); });
     sb.focus();
 
-    cv._probe = () => ({ toys: toys.map((t) => [t.x, t.y]), guests: guests.map((gu) => [gu.x, gu.y, gu.ring, gu.done, gu.freeze > 0, +gu.scared.toFixed(2), +gu.immune.toFixed(1)]), sel, cell: L.cell, ox: L.ox, oy: L.oy, memories, t });
     const ro = new ResizeObserver(() => layout());
     ro.observe(wrap);
     layout(); K.frame(draw);

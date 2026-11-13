@@ -385,7 +385,6 @@ export default {
     K.on(sb, "click", () => { speed = intro.querySelector("input").checked ? 2 : 1; intro.remove(); started = true; leaveBtn.disabled = false; wrap.focus(); });
     sb.focus();
 
-    cv._probe = () => ({ spots: SPOTS.map((_, i) => spot(i)), pegs: pegs.map((p) => p.at), sym: SYM, sr: L.sr });
     const ro = new ResizeObserver(() => layout());
     ro.observe(wrap);
     layout(); K.frame(draw);

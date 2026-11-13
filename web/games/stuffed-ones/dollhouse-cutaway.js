@@ -471,7 +471,6 @@ export default {
     });
     sb.focus();
 
-    cv._probe = () => ({ toys: toys.map((ty) => ({ x: ty.x, y: ty.y, lvl: ty.lvl, plan: ty.plan.length })), guests: guests.map((gu) => ({ open: gu.open > 0, dread: gu.dread })), memories, hunger, t, k: L.k, ox: L.ox, base: L.base });
     const ro = new ResizeObserver(() => layout());
     ro.observe(wrap);
     layout(); K.frame(draw);

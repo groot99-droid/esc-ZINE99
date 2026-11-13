@@ -393,7 +393,6 @@ export default {
     const ro = new ResizeObserver(() => layout());
     ro.observe(wrap);
     // a read-only probe for automated play tests
-    cv._probe = () => ({ si, sz: L.sz, slots: L.slotPos, strips: strips.map((s) => ({ x: s.x, y: s.y, glyph: s.glyph, colour: s.colour, doubled: s.doubled, slot: s.slot })) });
     loadSpread(0); K.frame(draw);
     return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); ro.disconnect(); wrap.remove(); } };
   },
