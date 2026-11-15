@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="glyph-pulse-t glyph-pulse-d">
+<title id="glyph-pulse-t">Chronicle glyph: The Pulse</title>
+<desc id="glyph-pulse-d">A new chronicle glyph, printed letterpress in brown over an off-register tint. A ring with small ticks inside it and nothing else: a rhythm that comes from no face of the Trunk.</desc>
+<defs><filter id="glyph-pulse-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="886"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><filter id="glyph-pulse-rough2"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="630" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.8"/></filter></defs>
+<rect x="0" y="0" width="240" height="240" fill="#f1e7d0"/>
+<rect x="0" y="0" width="240" height="240" filter="url(#glyph-pulse-grain1)"/>
+<rect x="14" y="14" width="212" height="212" fill="none" stroke="#2b1810" stroke-width="2"/>
+<rect x="22" y="22" width="196" height="196" fill="none" stroke="#2b1810" stroke-width="0.8"/>
+<circle cx="124" cy="101" r="62" fill="#b9c2c4" opacity="0.6"/>
+<g filter="url(#glyph-pulse-rough2)">
+<circle cx="120" cy="104" r="62" fill="none" stroke="#5a3424" stroke-width="2.5"/>
+<circle cx="120" cy="104" r="39" fill="none" stroke="#2b1810" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M96,86 l15,-9 l-3,15 l18,-6" fill="none" stroke="#2b1810" stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M96,104 l15,-9 l-3,15 l18,-6" fill="none" stroke="#2b1810" stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M96,122 l15,-9 l-3,15 l18,-6" fill="none" stroke="#2b1810" stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="120" y="204" font-size="13" font-family="serif" fill="#2b1810" text-anchor="middle" letter-spacing="2.5" font-weight="bold">THE PULSE</text>
+<polygon points="19.7,19.7 14,17 8.3,19.7 11,14 8.3,8.3 14,11 19.7,8.3 17,14" fill="#d9902a" stroke="#2b1810" stroke-width="1"/>
+<polygon points="231.7,19.7 226,17 220.3,19.7 223,14 220.3,8.3 226,11 231.7,8.3 229,14" fill="#d9902a" stroke="#2b1810" stroke-width="1"/>
+<polygon points="19.7,231.7 14,229 8.3,231.7 11,226 8.3,220.3 14,223 19.7,220.3 17,226" fill="#d9902a" stroke="#2b1810" stroke-width="1"/>
+<polygon points="231.7,231.7 226,229 220.3,231.7 223,226 220.3,220.3 226,223 231.7,220.3 229,226" fill="#d9902a" stroke="#2b1810" stroke-width="1"/>
+</svg>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="omen-bending-ridge-t omen-bending-ridge-d">
+<title id="omen-bending-ridge-t">Omen card: The Bending Ridge</title>
+<desc id="omen-bending-ridge-d">Omen card The Bending Ridge: a watchtower on its splinter bowing under the gust while two warriors lean in to hold their ground. Suit Wind (trial), the spear sigil, weight 3, with Pell's notches down the left edge.</desc>
+<defs><clipPath id="omen-bending-ridge-clip1"><rect x="1" y="1" width="298" height="418" rx="16"/></clipPath><filter id="omen-bending-ridge-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="669"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="omen-bending-ridge-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#6b4a20" stop-opacity="0"/><stop offset="100%" stop-color="#6b4a20" stop-opacity="0.3"/></radialGradient><clipPath id="omen-bending-ridge-clip4"><rect x="0" y="0" width="244" height="236"/></clipPath><linearGradient id="omen-bending-ridge-lg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff6dc"/><stop offset="100%" stop-color="#dfe3c4"/></linearGradient></defs>
+<g clip-path="url(#omen-bending-ridge-clip1)">
+<rect x="0" y="0" width="300" height="420" fill="#efe2c4"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#omen-bending-ridge-grain2)"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#omen-bending-ridge-vig3)"/>
+<rect x="14" y="14" width="272" height="392" rx="10" fill="none" stroke="#a8321e" stroke-width="1.4"/>
+<rect x="19" y="19" width="262" height="382" rx="5" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="40" cy="40" r="17" fill="#dfe3c4" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M27,38.1 h15.8 a4.3,4.3 0 1,0 -4.3,-4.3 M27,44.6 h21.6 a3.6,3.6 0 1,1 -3.6,3.6" fill="none" stroke="#8fa37a" stroke-width="1.7" stroke-linecap="round"/>
+<circle cx="264" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="262" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<circle cx="245" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="243" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<circle cx="226" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="224" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<text x="150" y="45" font-size="11" font-family="serif" fill="#a8321e" text-anchor="middle" letter-spacing="3">TRIAL</text>
+<g transform="translate(28 60)">
+<g clip-path="url(#omen-bending-ridge-clip4)">
+<rect x="0" y="0" width="244" height="236" fill="#dfe3c4"/>
+<rect x="0" y="0" width="244" height="236" fill="url(#omen-bending-ridge-lg5)" opacity="0.6"/>
+<path d="M4,46 h170 a11.7,11.7 0 1,0 -11.7,-11.7" fill="none" stroke="#2b1d14" stroke-width="4" stroke-linecap="round"/>
+<path d="M4,46 h170 a11.7,11.7 0 1,0 -11.7,-11.7" fill="none" stroke="#8fa37a" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M30,96 h90 a9,9 0 1,0 -9,-9" fill="none" stroke="#2b1d14" stroke-width="4" stroke-linecap="round"/>
+<path d="M30,96 h90 a9,9 0 1,0 -9,-9" fill="none" stroke="#8fa37a" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M0,193.8 C5.1,194.4 20.3,197.3 30.5,197.4 C40.7,197.5 50.8,194.1 61,194.3 C71.2,194.6 81.3,198.1 91.5,198.8 C101.7,199.5 111.8,198.5 122,198.4 C132.2,198.3 142.3,198.9 152.5,198.3 C162.7,197.7 172.8,195.4 183,194.7 C193.2,194.1 203.3,193.8 213.5,194.5 C223.7,195.2 238.9,198 244,198.7 L244,256 L0,256Z" fill="#c9a877" stroke="#2b1d14" stroke-width="1.6"/>
+<path d="M73,208.9 l10.7,2.3M94.5,224.3 l12.5,2.7M182.2,217.7 l8.8,3.9M198.3,216.9 l10.5,3M152.1,210.1 l9,2.2M156,219.9 l9.9,3.7M143.9,221.2 l11.6,1M123.1,219.3 l10.5,2.3M82.4,215.8 l13.7,1.1M153.7,223.6 l11.7,2.3M6.5,225.1 l13.4,2M6.4,225.6 l9.3,3.3M156.8,213.9 l9.2,2.6M219.1,223.1 l9.9,1.1M20.1,205.9 l15,2.3M124.2,224.1 l15.8,3.6" stroke="#2b1d14" stroke-width="1" fill="none" opacity="0.6"/>
+<path d="M150,198 Q150,120 176,44 L200,50 Q180,124 184,198Z" fill="#b58d62" stroke="#2b1d14" stroke-width="1.6"/>
+<path d="M158,150 Q170,146 180,152 M163,110 Q174,106 186,112 M172,76 Q182,72 193,78" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<path d="M170,44 l-6,-12 l10,3 l5,-11 l6,10 l10,-4 l-3,13Z" fill="#a8321e" stroke="#2b1d14" stroke-width="1.2"/>
+<path d="M188,30 L196,2 M196,2 q14,4 26,-2 q-8,10 -24,12" fill="#f0c050" stroke="#2b1d14" stroke-width="1.3"/>
+<g transform="translate(70 200) rotate(-16) scale(0.9 0.9)">
+<path d="M-8,-64 L-13,-50 L-12,-44" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-12" cy="-44" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-4,-40 L-9.6,-20 L-13,0 l-5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4,-40 L7.2,-20 L13,0 l5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 L11,-38 Q0,-34 -11,-38Z" fill="#9a7a52" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M-10,-58 L10,-58 M-10.5,-48 L10.5,-48" fill="none" stroke="#2b1d14" stroke-width="1.2"/>
+<path d="M-13,-70 l8,-2 l0,7 l-8,2Z M13,-70 l-8,-2 l0,7 l8,2Z" fill="#c09866" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="0" cy="-84" r="14" fill="#d9b88a" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M-14.5,-85 A14.5,14.5 0 0,1 14.5,-85 L15,-81 L-15,-81Z" fill="#5a3d2b" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="6" cy="-85" r="1.7" fill="#2b1d14"/>
+<path d="M8,-64 L16,-57 L18,-58" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="18" cy="-58" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<line x1="20" y1="2" x2="20" y2="-92" stroke="#2b1d14" stroke-width="2.2" stroke-linecap="round"/>
+<polygon points="20,-104 16,-90 24,-90" fill="#f6e8c8" stroke="#2b1d14" stroke-width="1"/>
+</g>
+<g transform="translate(112 200) rotate(-10) scale(0.9 0.9)">
+<path d="M-8,-64 L-13,-50 L-12,-44" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-12" cy="-44" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-4,-40 L-9.6,-20 L-13,0 l-5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4,-40 L7.2,-20 L13,0 l5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 L11,-38 Q0,-34 -11,-38Z" fill="#9a7a52" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M-10,-58 L10,-58 M-10.5,-48 L10.5,-48" fill="none" stroke="#2b1d14" stroke-width="1.2"/>
+<path d="M-13,-70 l8,-2 l0,7 l-8,2Z M13,-70 l-8,-2 l0,7 l8,2Z" fill="#c09866" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="0" cy="-84" r="14" fill="#d9b88a" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M-14.5,-85 A14.5,14.5 0 0,1 14.5,-85 L15,-81 L-15,-81Z" fill="#5a3d2b" stroke="#2b1d14" stroke-width="1.2"/>
+<path d="M-6,-98 Q4,-120 22,-110 Q10,-108 6,-97Z" fill="#e8742a" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="6" cy="-85" r="1.7" fill="#2b1d14"/>
+<path d="M8,-64 L16,-57 L18,-58" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="18" cy="-58" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<line x1="20" y1="2" x2="20" y2="-92" stroke="#2b1d14" stroke-width="2.2" stroke-linecap="round"/>
+<polygon points="20,-104 16,-90 24,-90" fill="#f6e8c8" stroke="#2b1d14" stroke-width="1"/>
+</g>
+</g>
+<rect x="0" y="0" width="244" height="236" fill="none" stroke="#2b1d14" stroke-width="1.8"/>
+<rect x="-3" y="-3" width="250" height="242" fill="none" stroke="#a8321e" stroke-width="0.9"/>
+</g>
+<text x="150" y="327" font-size="23" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">The Bending Ridge</text>
+<path d="M70,338 Q150,346 230,338" fill="none" stroke="#a8321e" stroke-width="1"/>
+<circle cx="150" cy="374" r="22" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.4"/>
+<line x1="150" y1="389.9" x2="150" y2="366.3" stroke="#a8321e" stroke-width="2.9" stroke-linecap="round"/>
+<polygon points="150,357.6 145,367.6 155,367.6" fill="#a8321e"/>
+<line x1="144.4" y1="378.7" x2="155.6" y2="378.7" stroke="#a8321e" stroke-width="1.9" stroke-linecap="round"/>
+<path d="M126,374 C121.3,373 107.3,367 98,368 C88.7,369 79,379.3 70,380 C61,380.7 48.3,373.3 44,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M98,368 L108.3,368.7 L103.7,371.6 L99.2,370.6 L97,367.2 L97.6,363.2 L100.5,360.5 L103.9,359.9 L106.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M98,368 Q88,363.8 81.9,375.2 Q91,377.8 98,368Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M70,380 L59.7,368.1 L64.3,365.2 L68.8,366.2 L71,369.6 L70.4,373.6 L67.5,376.3 L64.1,376.9 L61.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M70,380 Q80,375.8 86.1,387.2 Q77,389.8 70,380Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M174,374 C178.7,373 192.7,367 202,368 C211.3,369 221,379.3 230,380 C239,380.7 251.7,373.3 256,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M202,368 L212.3,368.7 L207.7,371.6 L203.2,370.6 L201,367.2 L201.6,363.2 L204.5,360.5 L207.9,359.9 L210.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M202,368 Q192,363.8 185.9,375.2 Q195,377.8 202,368Z" fill="#f0c050" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M230,380 L219.7,368.1 L224.3,365.2 L228.8,366.2 L231,369.6 L230.4,373.6 L227.5,376.3 L224.1,376.9 L221.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M230,380 Q240,375.8 246.1,387.2 Q237,389.8 230,380Z" fill="#f0c050" stroke="#2b1d14" stroke-width="0.9"/>
+<polygon points="0,64 9,70 0,76" fill="#1b120c"/>
+<path d="M9,70 L0,76" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,106 9,112 0,118" fill="#1b120c"/>
+<path d="M9,112 L0,118" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,122 9,128 0,134" fill="#1b120c"/>
+<path d="M9,128 L0,134" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,138 9,144 0,150" fill="#1b120c"/>
+<path d="M9,144 L0,150" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,180 9,186 0,192" fill="#1b120c"/>
+<path d="M9,186 L0,192" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,196 9,202 0,208" fill="#1b120c"/>
+<path d="M9,202 L0,208" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+</g>
+<rect x="1" y="1" width="298" height="418" rx="16" fill="none" stroke="#2b1d14" stroke-width="2"/>
+</svg>

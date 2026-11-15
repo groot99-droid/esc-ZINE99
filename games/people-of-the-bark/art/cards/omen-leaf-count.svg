@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="omen-leaf-count-t omen-leaf-count-d">
+<title id="omen-leaf-count-t">Omen card: The Leaf Count</title>
+<desc id="omen-leaf-count-d">Omen card The Leaf Count: five fallen leaves pinned in a row over a scholar's tally slate. Suit Leaf (death), the quill sigil, weight 1, with Pell's notches down the left edge.</desc>
+<defs><clipPath id="omen-leaf-count-clip1"><rect x="1" y="1" width="298" height="418" rx="16"/></clipPath><filter id="omen-leaf-count-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="625"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="omen-leaf-count-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#6b4a20" stop-opacity="0"/><stop offset="100%" stop-color="#6b4a20" stop-opacity="0.3"/></radialGradient><clipPath id="omen-leaf-count-clip4"><rect x="0" y="0" width="244" height="236"/></clipPath><linearGradient id="omen-leaf-count-lg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff6dc"/><stop offset="100%" stop-color="#e3cf9c"/></linearGradient></defs>
+<g clip-path="url(#omen-leaf-count-clip1)">
+<rect x="0" y="0" width="300" height="420" fill="#efe2c4"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#omen-leaf-count-grain2)"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#omen-leaf-count-vig3)"/>
+<rect x="14" y="14" width="272" height="392" rx="10" fill="none" stroke="#a8321e" stroke-width="1.4"/>
+<rect x="19" y="19" width="262" height="382" rx="5" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="40" cy="40" r="17" fill="#e3cf9c" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M29.9,48.2 Q32.8,30.9 50.1,32.4 Q47.2,48.2 29.9,48.2Z" fill="#5f7a3e"/>
+<line x1="29.9" y1="48.2" x2="44.3" y2="36.7" stroke="#efe2c4" stroke-width="0.8"/>
+<circle cx="264" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="262" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<text x="150" y="45" font-size="11" font-family="serif" fill="#a8321e" text-anchor="middle" letter-spacing="3">DEATH</text>
+<g transform="translate(28 60)">
+<g clip-path="url(#omen-leaf-count-clip4)">
+<rect x="0" y="0" width="244" height="236" fill="#e3cf9c"/>
+<rect x="0" y="0" width="244" height="236" fill="url(#omen-leaf-count-lg5)" opacity="0.6"/>
+<line x1="10" y1="30" x2="234" y2="30" stroke="#2b1d14" stroke-width="2"/>
+<line x1="34" y1="30" x2="34" y2="48" stroke="#2b1d14" stroke-width="1.2"/>
+<g transform="translate(34 74) rotate(-16) scale(0.6)">
+<path d="M0,-30 Q22,-12 14,14 Q6,28 0,32 Q-6,28 -14,14 Q-22,-12 0,-30Z" fill="#c8702a" stroke="#2b1d14" stroke-width="2.3"/>
+<path d="M0,-28 L0,40 M0,-10 L10,-18 M0,-10 L-10,-18 M0,4 L11,-4 M0,4 L-11,-4 M0,18 L8,11 M0,18 L-8,11" fill="none" stroke="#2b1d14" stroke-width="1.5"/>
+</g>
+<line x1="78" y1="30" x2="78" y2="48" stroke="#2b1d14" stroke-width="1.2"/>
+<g transform="translate(78 74) rotate(-8) scale(0.6)">
+<path d="M0,-30 Q22,-12 14,14 Q6,28 0,32 Q-6,28 -14,14 Q-22,-12 0,-30Z" fill="#b8862a" stroke="#2b1d14" stroke-width="2.3"/>
+<path d="M0,-28 L0,40 M0,-10 L10,-18 M0,-10 L-10,-18 M0,4 L11,-4 M0,4 L-11,-4 M0,18 L8,11 M0,18 L-8,11" fill="none" stroke="#2b1d14" stroke-width="1.5"/>
+</g>
+<line x1="122" y1="30" x2="122" y2="48" stroke="#2b1d14" stroke-width="1.2"/>
+<g transform="translate(122 74) rotate(0) scale(0.6)">
+<path d="M0,-30 Q22,-12 14,14 Q6,28 0,32 Q-6,28 -14,14 Q-22,-12 0,-30Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="2.3"/>
+<path d="M0,-28 L0,40 M0,-10 L10,-18 M0,-10 L-10,-18 M0,4 L11,-4 M0,4 L-11,-4 M0,18 L8,11 M0,18 L-8,11" fill="none" stroke="#2b1d14" stroke-width="1.5"/>
+</g>
+<line x1="166" y1="30" x2="166" y2="48" stroke="#2b1d14" stroke-width="1.2"/>
+<g transform="translate(166 74) rotate(8) scale(0.6)">
+<path d="M0,-30 Q22,-12 14,14 Q6,28 0,32 Q-6,28 -14,14 Q-22,-12 0,-30Z" fill="#a8321e" stroke="#2b1d14" stroke-width="2.3"/>
+<path d="M0,-28 L0,40 M0,-10 L10,-18 M0,-10 L-10,-18 M0,4 L11,-4 M0,4 L-11,-4 M0,18 L8,11 M0,18 L-8,11" fill="none" stroke="#2b1d14" stroke-width="1.5"/>
+</g>
+<line x1="210" y1="30" x2="210" y2="48" stroke="#2b1d14" stroke-width="1.2"/>
+<g transform="translate(210 74) rotate(16) scale(0.6)">
+<path d="M0,-30 Q22,-12 14,14 Q6,28 0,32 Q-6,28 -14,14 Q-22,-12 0,-30Z" fill="#c8702a" stroke="#2b1d14" stroke-width="2.3"/>
+<path d="M0,-28 L0,40 M0,-10 L10,-18 M0,-10 L-10,-18 M0,4 L11,-4 M0,4 L-11,-4 M0,18 L8,11 M0,18 L-8,11" fill="none" stroke="#2b1d14" stroke-width="1.5"/>
+</g>
+<path d="M0,207.2 C5.1,207.9 20.3,211 30.5,211 C40.7,211 50.8,207.6 61,207.2 C71.2,206.8 81.3,207.9 91.5,208.5 C101.7,209 111.8,210.3 122,210.4 C132.2,210.6 142.3,209.5 152.5,209.2 C162.7,208.8 172.8,208.2 183,208.3 C193.2,208.5 203.3,209.8 213.5,210.2 C223.7,210.6 238.9,210.8 244,210.9 L244,270 L0,270Z" fill="#c9a877" stroke="#2b1d14" stroke-width="1.6"/>
+<rect x="110" y="124" width="112" height="70" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.5" transform="rotate(3 166 160)"/>
+<path d="M124,136 l1.3,17.6M131.7,136 l1.3,17.6M139.4,136 l1.3,17.6M147.1,136 l1.3,17.6M119.4,151.4 L151.7,138.2M162.5,136 l1.3,17.6M170.2,136 l1.3,17.6M177.9,136 l1.3,17.6M185.6,136 l1.3,17.6M157.9,151.4 L190.2,138.2" fill="none" stroke="#2b1d14" stroke-width="2" stroke-linecap="round"/>
+<path d="M124,164 l1.3,17.6M131.7,164 l1.3,17.6M139.4,164 l1.3,17.6M147.1,164 l1.3,17.6" fill="none" stroke="#a8321e" stroke-width="2" stroke-linecap="round"/>
+<g transform="translate(58 212) rotate(0) scale(1.3 1.3)">
+<path d="M-8,-64 L-14,-49 L-14,-42" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-14" cy="-42" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-4,-40 L-6.8,-20 L-9,0 l-5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4,-40 L5.6,-20 L9,0 l5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 L11,-38 Q0,-34 -11,-38Z" fill="#7d6c5a" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M-6,-64 L6,-64 L7,-30 L-7,-30Z" fill="#efe2c4" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="2" cy="-46" r="2.2" fill="#2b1d14" opacity="0.7"/>
+<circle cx="-3" cy="-38" r="1.4" fill="#2b1d14" opacity="0.7"/>
+<circle cx="0" cy="-84" r="14" fill="#d9b88a" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M-14,-86 A14,14 0 0,1 12,-91 Q0,-90 -14,-86Z" fill="#3a281c"/>
+<circle cx="6" cy="-85" r="1.7" fill="#2b1d14"/>
+<path d="M8,-64 L22,-60 L30,-64" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="30" cy="-64" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M30,-64 q12,-12 10,-26 q-10,10 -10,26Z" fill="#efe2c4" stroke="#2b1d14" stroke-width="0.9"/>
+</g>
+</g>
+<rect x="0" y="0" width="244" height="236" fill="none" stroke="#2b1d14" stroke-width="1.8"/>
+<rect x="-3" y="-3" width="250" height="242" fill="none" stroke="#a8321e" stroke-width="0.9"/>
+</g>
+<text x="150" y="327" font-size="23" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">The Leaf Count</text>
+<path d="M70,338 Q150,346 230,338" fill="none" stroke="#a8321e" stroke-width="1"/>
+<circle cx="150" cy="374" r="22" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M141.3,389.9 Q147.5,372.5 159.9,358.9 Q156.2,377.5 141.3,389.9Z" fill="none" stroke="#2f4f8a" stroke-width="2.4" stroke-linejoin="round"/>
+<line x1="141.3" y1="389.9" x2="155" y2="367.6" stroke="#2f4f8a" stroke-width="1.4"/>
+<path d="M126,374 C121.3,373 107.3,367 98,368 C88.7,369 79,379.3 70,380 C61,380.7 48.3,373.3 44,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M98,368 L108.3,368.7 L103.7,371.6 L99.2,370.6 L97,367.2 L97.6,363.2 L100.5,360.5 L103.9,359.9 L106.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M98,368 Q88,363.8 81.9,375.2 Q91,377.8 98,368Z" fill="#2f4f8a" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M70,380 L59.7,368.1 L64.3,365.2 L68.8,366.2 L71,369.6 L70.4,373.6 L67.5,376.3 L64.1,376.9 L61.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M70,380 Q80,375.8 86.1,387.2 Q77,389.8 70,380Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M174,374 C178.7,373 192.7,367 202,368 C211.3,369 221,379.3 230,380 C239,380.7 251.7,373.3 256,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M202,368 L212.3,368.7 L207.7,371.6 L203.2,370.6 L201,367.2 L201.6,363.2 L204.5,360.5 L207.9,359.9 L210.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M202,368 Q192,363.8 185.9,375.2 Q195,377.8 202,368Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M230,380 L219.7,368.1 L224.3,365.2 L228.8,366.2 L231,369.6 L230.4,373.6 L227.5,376.3 L224.1,376.9 L221.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M230,380 Q240,375.8 246.1,387.2 Q237,389.8 230,380Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<polygon points="0,64 9,70 0,76" fill="#1b120c"/>
+<path d="M9,70 L0,76" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,80 9,86 0,92" fill="#1b120c"/>
+<path d="M9,86 L0,92" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,96 9,102 0,108" fill="#1b120c"/>
+<path d="M9,102 L0,108" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,112 9,118 0,124" fill="#1b120c"/>
+<path d="M9,118 L0,124" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,128 9,134 0,140" fill="#1b120c"/>
+<path d="M9,134 L0,140" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,170 9,176 0,182" fill="#1b120c"/>
+<path d="M9,176 L0,182" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,212 9,218 0,224" fill="#1b120c"/>
+<path d="M9,218 L0,224" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,228 9,234 0,240" fill="#1b120c"/>
+<path d="M9,234 L0,240" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,244 9,250 0,256" fill="#1b120c"/>
+<path d="M9,250 L0,256" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+</g>
+<rect x="1" y="1" width="298" height="418" rx="16" fill="none" stroke="#2b1d14" stroke-width="2"/>
+</svg>

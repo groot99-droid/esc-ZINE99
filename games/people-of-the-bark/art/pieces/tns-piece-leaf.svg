@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="tns-piece-leaf-t tns-piece-leaf-d">
+<title id="tns-piece-leaf-t">Trunk and Shadow piece: Leaf token</title>
+<desc id="tns-piece-leaf-d">The leaf token of the Leaf rule: a copper leaf on a wooden disc, which falls one square a round down its column.</desc>
+<defs><filter id="tns-piece-leaf-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="2" seed="204"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><radialGradient id="tns-piece-leaf-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#5a3d2b" stop-opacity="0.9"/><stop offset="100%" stop-color="#5a3d2b" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="200" height="200" fill="#24170f"/>
+<rect x="0" y="0" width="200" height="200" fill="#2e1f15"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#tns-piece-leaf-grain1)"/>
+<circle cx="100" cy="100" r="92" fill="url(#tns-piece-leaf-rg2)"/>
+<circle cx="100" cy="104" r="70" fill="#000" opacity="0.3"/>
+<circle cx="100" cy="100" r="70" fill="#8c6a48" stroke="#140d08" stroke-width="5"/>
+<path d="M100,50.1 Q137.8,79.8 121.6,120.3 Q108.1,139.2 100,144.6 Q91.9,139.2 78.4,120.3 Q62.2,79.8 100,50.1Z" fill="#c8702a" stroke="#140d08" stroke-width="4.1"/>
+<path d="M100,55.5 V155.4 M100,85.2 l16.2,-12.2 M100,85.2 l-16.2,-12.2 M100,106.8 l16.2,-12.2 M100,106.8 l-16.2,-12.2" fill="none" stroke="#140d08" stroke-width="2.4"/>
+</svg>

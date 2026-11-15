@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="backyard-tremor-t backyard-tremor-d">
+<title id="backyard-tremor-t">Backyard card: a squirrel</title>
+<desc id="backyard-tremor-d">Backyard card, turned: the real cause, a squirrel, drawn small and plain in ordinary daylight: a squirrel clinging head-down to the trunk, scratching an itch with a hind foot. In its corner, the suit that fits: Tremor.</desc>
+<defs><clipPath id="backyard-tremor-clip1"><rect x="1" y="1" width="298" height="418" rx="16"/></clipPath><filter id="backyard-tremor-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="447"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="backyard-tremor-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#8a8f8c" stop-opacity="0"/><stop offset="100%" stop-color="#8a8f8c" stop-opacity="0.1"/></radialGradient><clipPath id="backyard-tremor-clip4"><rect x="0" y="0" width="252" height="300" rx="6"/></clipPath></defs>
+<g clip-path="url(#backyard-tremor-clip1)">
+<rect x="0" y="0" width="300" height="420" fill="#f6f1e4"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#backyard-tremor-grain2)"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#backyard-tremor-vig3)"/>
+<rect x="14" y="14" width="272" height="392" rx="10" fill="none" stroke="#8a8f8c" stroke-width="1.2"/>
+<g transform="translate(24 24)">
+<g clip-path="url(#backyard-tremor-clip4)">
+<rect x="0" y="0" width="252" height="300" fill="#bfdcec"/>
+<path d="M4,170 l8,-8 l8,8 V218 h-16Z" fill="#f4f1e6" stroke="#9aa3a0" stroke-width="1"/>
+<path d="M26,170 l8,-8 l8,8 V218 h-16Z" fill="#f4f1e6" stroke="#9aa3a0" stroke-width="1"/>
+<path d="M48,170 l8,-8 l8,8 V218 h-16Z" fill="#f4f1e6" stroke="#9aa3a0" stroke-width="1"/>
+<path d="M70,170 l8,-8 l8,8 V218 h-16Z" fill="#f4f1e6" stroke="#9aa3a0" stroke-width="1"/>
+<path d="M92,170 l8,-8 l8,8 V218 h-16Z" fill="#f4f1e6" stroke="#9aa3a0" stroke-width="1"/>
+<path d="M114,170 l8,-8 l8,8 V218 h-16Z" fill="#f4f1e6" stroke="#9aa3a0" stroke-width="1"/>
+<path d="M136,170 l8,-8 l8,8 V218 h-16Z" fill="#f4f1e6" stroke="#9aa3a0" stroke-width="1"/>
+<path d="M158,170 l8,-8 l8,8 V218 h-16Z" fill="#f4f1e6" stroke="#9aa3a0" stroke-width="1"/>
+<path d="M180,170 l8,-8 l8,8 V218 h-16Z" fill="#f4f1e6" stroke="#9aa3a0" stroke-width="1"/>
+<path d="M202,170 l8,-8 l8,8 V218 h-16Z" fill="#f4f1e6" stroke="#9aa3a0" stroke-width="1"/>
+<path d="M224,170 l8,-8 l8,8 V218 h-16Z" fill="#f4f1e6" stroke="#9aa3a0" stroke-width="1"/>
+<path d="M246,170 l8,-8 l8,8 V218 h-16Z" fill="#f4f1e6" stroke="#9aa3a0" stroke-width="1"/>
+<rect x="0" y="184" width="252" height="5" fill="#f4f1e6" stroke="#9aa3a0" stroke-width="0.8"/>
+<rect x="0" y="214" width="252" height="86" fill="#7fae5a"/>
+<path d="M8,228 l2,-7 l2,7M21,265 l2,-7 l2,7M34,242 l2,-7 l2,7M47,279 l2,-7 l2,7M60,256 l2,-7 l2,7M73,233 l2,-7 l2,7M86,270 l2,-7 l2,7M99,247 l2,-7 l2,7M112,284 l2,-7 l2,7M125,261 l2,-7 l2,7M138,238 l2,-7 l2,7M151,275 l2,-7 l2,7M164,252 l2,-7 l2,7M177,229 l2,-7 l2,7M190,266 l2,-7 l2,7M203,243 l2,-7 l2,7M216,280 l2,-7 l2,7M229,257 l2,-7 l2,7M242,234 l2,-7 l2,7" fill="none" stroke="#5c8a3e" stroke-width="1.2"/>
+<path d="M0,0 H96 Q88,210.0 112,300 H-10 Q6,180.0 0,0Z" fill="#7a5a40" stroke="#4a3324" stroke-width="1.6"/>
+<path d="M34.5,24.4 q-2,20 0,46.6M13.2,37.9 q0.4,20 0,50.5M55.2,225.2 q-1.2,20 0,54.8M55.4,134.7 q3.9,20 0,52.3M23.4,238.2 q-3.1,20 0,48.5M67.7,164.7 q-3.5,20 0,32.6M74.4,226.3 q3,20 0,32.5M54.7,205.3 q-3.6,20 0,56M81.9,84.9 q1.1,20 0,32.4M6.2,207.2 q1.7,20 0,51.7M16,18.1 q0.4,20 0,32.7M37.9,3.3 q3,20 0,41.3" fill="none" stroke="#4a3324" stroke-width="1.3"/>
+<path d="M96,60 Q168,20 176,86 Q180,124 142,128 Q170,110 160,82 Q150,56 108,84Z" fill="#b5733a" stroke="#5a3d2b" stroke-width="1.5"/>
+<ellipse cx="100" cy="120" rx="24" ry="36" fill="#c98a4a" stroke="#5a3d2b" stroke-width="1.5" transform="rotate(14 100 120)"/>
+<ellipse cx="88" cy="164" rx="14" ry="12" fill="#c98a4a" stroke="#5a3d2b" stroke-width="1.5"/>
+<path d="M84,150 l-4,-10 l8,6Z M96,152 l4,-10 l4,10Z" fill="#b5733a" stroke="#5a3d2b" stroke-width="1"/>
+<path d="M112,98 q18,-2 14,14 M110,140 q10,8 2,16" fill="none" stroke="#5a3d2b" stroke-width="4" stroke-linecap="round"/>
+<path d="M132,104 l8,-4 M134,112 l9,0 M132,120 l8,4" stroke="#5a3d2b" stroke-width="1.3" stroke-linecap="round"/>
+</g>
+<rect x="0" y="0" width="252" height="300" rx="6" fill="none" stroke="#6f7471" stroke-width="1.4"/>
+</g>
+<circle cx="256" cy="368" r="22" fill="#ecc9ae" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M235.1,369 L238.9,371.7 L242.7,364.9 L246.5,374.4 L250.3,362.2 L254.1,377.1 L257.9,359.5 L261.7,377.1 L265.5,362.2 L269.3,374.4 L273.1,364.9 L276.9,371.7" fill="none" stroke="#a8321e" stroke-width="2.1" stroke-linejoin="round"/>
+<path d="M40,368 H222" stroke="#8a8f8c" stroke-width="1" stroke-dasharray="2 5"/>
+</g>
+<rect x="1" y="1" width="298" height="418" rx="16" fill="none" stroke="#2b1d14" stroke-width="2"/>
+</svg>

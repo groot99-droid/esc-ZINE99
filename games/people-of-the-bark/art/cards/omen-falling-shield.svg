@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="omen-falling-shield-t omen-falling-shield-d">
+<title id="omen-falling-shield-t">Omen card: The Falling Shield</title>
+<desc id="omen-falling-shield-d">Omen card The Falling Shield: a leaf with a shield's boss tumbling out of the sky onto two warriors with their arms flung up. Suit Leaf (death), the spear sigil, weight 2, with Pell's notches down the left edge.</desc>
+<defs><clipPath id="omen-falling-shield-clip1"><rect x="1" y="1" width="298" height="418" rx="16"/></clipPath><filter id="omen-falling-shield-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="987"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="omen-falling-shield-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#6b4a20" stop-opacity="0"/><stop offset="100%" stop-color="#6b4a20" stop-opacity="0.3"/></radialGradient><clipPath id="omen-falling-shield-clip4"><rect x="0" y="0" width="244" height="236"/></clipPath><linearGradient id="omen-falling-shield-lg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff6dc"/><stop offset="100%" stop-color="#e3cf9c"/></linearGradient></defs>
+<g clip-path="url(#omen-falling-shield-clip1)">
+<rect x="0" y="0" width="300" height="420" fill="#efe2c4"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#omen-falling-shield-grain2)"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#omen-falling-shield-vig3)"/>
+<rect x="14" y="14" width="272" height="392" rx="10" fill="none" stroke="#a8321e" stroke-width="1.4"/>
+<rect x="19" y="19" width="262" height="382" rx="5" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="40" cy="40" r="17" fill="#e3cf9c" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M29.9,48.2 Q32.8,30.9 50.1,32.4 Q47.2,48.2 29.9,48.2Z" fill="#5f7a3e"/>
+<line x1="29.9" y1="48.2" x2="44.3" y2="36.7" stroke="#efe2c4" stroke-width="0.8"/>
+<circle cx="264" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="262" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<circle cx="245" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="243" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<text x="150" y="45" font-size="11" font-family="serif" fill="#a8321e" text-anchor="middle" letter-spacing="3">DEATH</text>
+<g transform="translate(28 60)">
+<g clip-path="url(#omen-falling-shield-clip4)">
+<rect x="0" y="0" width="244" height="236" fill="#e3cf9c"/>
+<rect x="0" y="0" width="244" height="236" fill="url(#omen-falling-shield-lg5)" opacity="0.6"/>
+<path d="M0,205.8 C5.1,205.2 20.3,202.3 30.5,202 C40.7,201.8 50.8,203.3 61,204.1 C71.2,204.9 81.3,206.8 91.5,206.8 C101.7,206.8 111.8,204.6 122,204.2 C132.2,203.8 142.3,204.6 152.5,204.6 C162.7,204.5 172.8,204.6 183,204 C193.2,203.4 203.3,201.5 213.5,201.1 C223.7,200.7 238.9,201.5 244,201.6 L244,264 L0,264Z" fill="#c9a877" stroke="#2b1d14" stroke-width="1.6"/>
+<path d="M46.2,212.9 l8.8,1.1M169.7,216.1 l9,3.3M220.2,232.5 l10.1,2.9M16.1,217.1 l11.5,3.7M113.9,218.8 l15.9,3.6M210.5,213.5 l13.4,1.7M167.4,230.3 l15,2.9M172.1,218.6 l15.4,3.9M179.9,231.4 l14.5,2.5M166.3,227.4 l14,2M159.3,228.1 l14.8,2.8M151.2,213.5 l10.5,3.5M102.2,224.5 l10.4,3.1M82.2,229.7 l10.1,3.9M111.9,223.5 l15.3,2.4M55,218.7 l8.9,1.8" stroke="#2b1d14" stroke-width="1" fill="none" opacity="0.6"/>
+<g transform="rotate(24 136 84)">
+<g transform="translate(136 84) rotate(0) scale(2)">
+<path d="M0,-30 Q22,-12 14,14 Q6,28 0,32 Q-6,28 -14,14 Q-22,-12 0,-30Z" fill="#c8702a" stroke="#2b1d14" stroke-width="0.7"/>
+<path d="M0,-28 L0,40 M0,-10 L10,-18 M0,-10 L-10,-18 M0,4 L11,-4 M0,4 L-11,-4 M0,18 L8,11 M0,18 L-8,11" fill="none" stroke="#2b1d14" stroke-width="0.5"/>
+</g>
+<circle cx="136" cy="86" r="13" fill="#f0c050" stroke="#2b1d14" stroke-width="1.5"/>
+<circle cx="136" cy="86" r="4" fill="#2b1d14"/>
+<path d="M112,70 q24,-12 48,0 M108,102 q28,14 56,0" fill="none" stroke="#2b1d14" stroke-width="1.6"/>
+</g>
+<path d="M60,20 q-10,24 4,46 M84,10 q-8,18 2,34 M200,30 q10,20 2,40" fill="none" stroke="#a8321e" stroke-width="1.8" stroke-linecap="round"/>
+<g transform="translate(70 206) rotate(-8) scale(1.1 1.1)">
+<path d="M-8,-64 L-17,-71 L-20,-86" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-20" cy="-86" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-4,-40 L-10.3,-20 L-14,0 l-5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4,-40 L7.6,-20 L14,0 l5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 L11,-38 Q0,-34 -11,-38Z" fill="#9a7a52" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M-10,-58 L10,-58 M-10.5,-48 L10.5,-48" fill="none" stroke="#2b1d14" stroke-width="1.2"/>
+<path d="M-13,-70 l8,-2 l0,7 l-8,2Z M13,-70 l-8,-2 l0,7 l8,2Z" fill="#c09866" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="0" cy="-84" r="14" fill="#d9b88a" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M-14.5,-85 A14.5,14.5 0 0,1 14.5,-85 L15,-81 L-15,-81Z" fill="#5a3d2b" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="6" cy="-85" r="1.7" fill="#2b1d14"/>
+<path d="M8,-64 L18,-72 L22,-88" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="22" cy="-88" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+</g>
+<g transform="translate(204 206) rotate(-14) scale(-0.8 0.8)">
+<path d="M-8,-64 L-14,-50 L-14,-44" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-14" cy="-44" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-4,-40 L-11,-20 L-15,0 l-5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4,-40 L8,-20 L15,0 l5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 L11,-38 Q0,-34 -11,-38Z" fill="#9a7a52" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M-10,-58 L10,-58 M-10.5,-48 L10.5,-48" fill="none" stroke="#2b1d14" stroke-width="1.2"/>
+<path d="M-13,-70 l8,-2 l0,7 l-8,2Z M13,-70 l-8,-2 l0,7 l8,2Z" fill="#c09866" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="0" cy="-84" r="14" fill="#d9b88a" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M-14.5,-85 A14.5,14.5 0 0,1 14.5,-85 L15,-81 L-15,-81Z" fill="#5a3d2b" stroke="#2b1d14" stroke-width="1.2"/>
+<path d="M-6,-98 Q4,-120 22,-110 Q10,-108 6,-97Z" fill="#e8742a" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="6" cy="-85" r="1.7" fill="#2b1d14"/>
+<path d="M8,-64 L17,-68 L20,-80" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="20" cy="-80" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+</g>
+</g>
+<rect x="0" y="0" width="244" height="236" fill="none" stroke="#2b1d14" stroke-width="1.8"/>
+<rect x="-3" y="-3" width="250" height="242" fill="none" stroke="#a8321e" stroke-width="0.9"/>
+</g>
+<text x="150" y="327" font-size="23" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">The Falling Shield</text>
+<path d="M70,338 Q150,346 230,338" fill="none" stroke="#a8321e" stroke-width="1"/>
+<circle cx="150" cy="374" r="22" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.4"/>
+<line x1="150" y1="389.9" x2="150" y2="366.3" stroke="#a8321e" stroke-width="2.9" stroke-linecap="round"/>
+<polygon points="150,357.6 145,367.6 155,367.6" fill="#a8321e"/>
+<line x1="144.4" y1="378.7" x2="155.6" y2="378.7" stroke="#a8321e" stroke-width="1.9" stroke-linecap="round"/>
+<path d="M126,374 C121.3,373 107.3,367 98,368 C88.7,369 79,379.3 70,380 C61,380.7 48.3,373.3 44,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M98,368 L108.3,368.7 L103.7,371.6 L99.2,370.6 L97,367.2 L97.6,363.2 L100.5,360.5 L103.9,359.9 L106.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M98,368 Q88,363.8 81.9,375.2 Q91,377.8 98,368Z" fill="#2f4f8a" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M70,380 L59.7,368.1 L64.3,365.2 L68.8,366.2 L71,369.6 L70.4,373.6 L67.5,376.3 L64.1,376.9 L61.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M70,380 Q80,375.8 86.1,387.2 Q77,389.8 70,380Z" fill="#a8321e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M174,374 C178.7,373 192.7,367 202,368 C211.3,369 221,379.3 230,380 C239,380.7 251.7,373.3 256,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M202,368 L212.3,368.7 L207.7,371.6 L203.2,370.6 L201,367.2 L201.6,363.2 L204.5,360.5 L207.9,359.9 L210.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M202,368 Q192,363.8 185.9,375.2 Q195,377.8 202,368Z" fill="#2f4f8a" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M230,380 L219.7,368.1 L224.3,365.2 L228.8,366.2 L231,369.6 L230.4,373.6 L227.5,376.3 L224.1,376.9 L221.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M230,380 Q240,375.8 246.1,387.2 Q237,389.8 230,380Z" fill="#f0c050" stroke="#2b1d14" stroke-width="0.9"/>
+<polygon points="0,64 9,70 0,76" fill="#1b120c"/>
+<path d="M9,70 L0,76" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,80 9,86 0,92" fill="#1b120c"/>
+<path d="M9,86 L0,92" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,96 9,102 0,108" fill="#1b120c"/>
+<path d="M9,102 L0,108" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,112 9,118 0,124" fill="#1b120c"/>
+<path d="M9,118 L0,124" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,128 9,134 0,140" fill="#1b120c"/>
+<path d="M9,134 L0,140" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,170 9,176 0,182" fill="#1b120c"/>
+<path d="M9,176 L0,182" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,186 9,192 0,198" fill="#1b120c"/>
+<path d="M9,192 L0,198" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,228 9,234 0,240" fill="#1b120c"/>
+<path d="M9,234 L0,240" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,244 9,250 0,256" fill="#1b120c"/>
+<path d="M9,250 L0,256" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+</g>
+<rect x="1" y="1" width="298" height="418" rx="16" fill="none" stroke="#2b1d14" stroke-width="2"/>
+</svg>

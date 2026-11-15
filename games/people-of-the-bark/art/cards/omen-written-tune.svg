@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="omen-written-tune-t omen-written-tune-d">
+<title id="omen-written-tune-t">Omen card: The Written Tune</title>
+<desc id="omen-written-tune-d">Omen card The Written Tune: a scholar setting five sung phrases down on a tall sheet, line under line. Suit Song (prophecy), the quill sigil, weight 2, with Pell's notches down the left edge.</desc>
+<defs><clipPath id="omen-written-tune-clip1"><rect x="1" y="1" width="298" height="418" rx="16"/></clipPath><filter id="omen-written-tune-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="295"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="omen-written-tune-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#6b4a20" stop-opacity="0"/><stop offset="100%" stop-color="#6b4a20" stop-opacity="0.3"/></radialGradient><clipPath id="omen-written-tune-clip4"><rect x="0" y="0" width="244" height="236"/></clipPath><linearGradient id="omen-written-tune-lg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff6dc"/><stop offset="100%" stop-color="#f3dfa2"/></linearGradient></defs>
+<g clip-path="url(#omen-written-tune-clip1)">
+<rect x="0" y="0" width="300" height="420" fill="#efe2c4"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#omen-written-tune-grain2)"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#omen-written-tune-vig3)"/>
+<rect x="14" y="14" width="272" height="392" rx="10" fill="none" stroke="#a8321e" stroke-width="1.4"/>
+<rect x="19" y="19" width="262" height="382" rx="5" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="40" cy="40" r="17" fill="#f3dfa2" stroke="#2b1d14" stroke-width="1.4"/>
+<ellipse cx="36.4" cy="47.5" rx="4.7" ry="3.6" fill="#f0c050" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M40.7,47.5 v-15.8 q7.2,1.4 7.2,7.9" fill="none" stroke="#2b1d14" stroke-width="1.3" stroke-linecap="round"/>
+<circle cx="264" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="262" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<circle cx="245" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="243" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<text x="150" y="45" font-size="11" font-family="serif" fill="#a8321e" text-anchor="middle" letter-spacing="3">PROPHECY</text>
+<g transform="translate(28 60)">
+<g clip-path="url(#omen-written-tune-clip4)">
+<rect x="0" y="0" width="244" height="236" fill="#f3dfa2"/>
+<rect x="0" y="0" width="244" height="236" fill="url(#omen-written-tune-lg5)" opacity="0.6"/>
+<path d="M0,207.2 C5.1,208.1 20.3,212.3 30.5,212.5 C40.7,212.7 50.8,209.1 61,208.3 C71.2,207.6 81.3,207.7 91.5,208.1 C101.7,208.4 111.8,209.7 122,210.5 C132.2,211.3 142.3,212.9 152.5,212.8 C162.7,212.6 172.8,210.1 183,209.4 C193.2,208.6 203.3,208.2 213.5,208.4 C223.7,208.6 238.9,210.2 244,210.6 L244,270 L0,270Z" fill="#c9a877" stroke="#2b1d14" stroke-width="1.6"/>
+<path d="M96,26 H226 Q232,100 220,196 H108 Q92,110 96,26Z" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.5"/>
+<path d="M110,50 C112.3,50.7 119.3,53.8 124,54.5 C128.7,55.1 133.3,54.9 138,54 C142.7,53.2 147.3,50.7 152,49.2 C156.7,47.7 161.3,45.7 166,45.2 C170.7,44.8 175.3,45.4 180,46.5 C184.7,47.5 189.3,50.1 194,51.6 C198.7,53 205.7,54.4 208,54.9" fill="none" stroke="#2b1d14" stroke-width="1.2"/>
+<rect x="121" y="45.7" width="6" height="6" fill="#a8321e" transform="rotate(45 124 48.5)"/>
+<rect x="149" y="39.1" width="6" height="6" fill="#a8321e" transform="rotate(45 152 43.2)"/>
+<text x="102" y="54" font-size="9" font-family="serif" fill="#a8321e" text-anchor="end">I</text>
+<path d="M110,85 C112.3,84.4 119.3,83.1 124,81.7 C128.7,80.3 133.3,77.6 138,76.6 C142.7,75.5 147.3,74.8 152,75.2 C156.7,75.6 161.3,77.6 166,79.1 C170.7,80.5 175.3,83.1 180,84 C184.7,84.9 189.3,85.2 194,84.5 C198.7,83.9 205.7,80.9 208,80.1" fill="none" stroke="#2b1d14" stroke-width="1.2"/>
+<rect x="121" y="69.5" width="6" height="6" fill="#a8321e" transform="rotate(45 124 75.7)"/>
+<rect x="149" y="63.1" width="6" height="6" fill="#a8321e" transform="rotate(45 152 69.2)"/>
+<rect x="163" y="66.7" width="6" height="6" fill="#2b1d14" transform="rotate(45 166 73.1)"/>
+<text x="102" y="84" font-size="9" font-family="serif" fill="#a8321e" text-anchor="end">V</text>
+<path d="M110,108.7 C112.3,108.1 119.3,105.4 124,105.1 C128.7,104.8 133.3,105.7 138,106.8 C142.7,108 147.3,110.7 152,112 C156.7,113.4 161.3,114.9 166,115 C170.7,115.1 175.3,113.8 180,112.5 C184.7,111.2 189.3,108.5 194,107.3 C198.7,106 205.7,105.4 208,105" fill="none" stroke="#2b1d14" stroke-width="1.2"/>
+<rect x="121" y="94.8" width="6" height="6" fill="#a8321e" transform="rotate(45 124 99.1)"/>
+<rect x="149" y="102.5" width="6" height="6" fill="#a8321e" transform="rotate(45 152 106)"/>
+<rect x="163" y="102.9" width="6" height="6" fill="#2b1d14" transform="rotate(45 166 109)"/>
+<rect x="191" y="94.6" width="6" height="6" fill="#2b1d14" transform="rotate(45 194 101.3)"/>
+<text x="102" y="114" font-size="9" font-family="serif" fill="#a8321e" text-anchor="end">X</text>
+<path d="M110,135.4 C112.3,136.1 119.3,138.1 124,139.6 C128.7,141.1 133.3,143.5 138,144.3 C142.7,145 147.3,145 152,144.3 C156.7,143.5 161.3,141.1 166,139.6 C170.7,138.1 175.3,136 180,135.4 C184.7,134.8 189.3,135.2 194,136.2 C198.7,137.2 205.7,140.3 208,141.2" fill="none" stroke="#2b1d14" stroke-width="1.2"/>
+<rect x="121" y="126.8" width="6" height="6" fill="#a8321e" transform="rotate(45 124 133.6)"/>
+<rect x="149" y="132.7" width="6" height="6" fill="#a8321e" transform="rotate(45 152 138.3)"/>
+<text x="102" y="144" font-size="9" font-family="serif" fill="#a8321e" text-anchor="end">IV</text>
+<path d="M110,172.5 C112.3,172.9 119.3,175.1 124,175 C128.7,174.9 133.3,173.4 138,172.1 C142.7,170.7 147.3,168 152,166.9 C156.7,165.7 161.3,164.8 166,165.1 C170.7,165.4 175.3,167.3 180,168.7 C184.7,170.1 189.3,172.7 194,173.7 C198.7,174.7 205.7,174.5 208,174.7" fill="none" stroke="#2b1d14" stroke-width="1.2"/>
+<rect x="121" y="166.9" width="6" height="6" fill="#a8321e" transform="rotate(45 124 169)"/>
+<rect x="149" y="155.3" width="6" height="6" fill="#a8321e" transform="rotate(45 152 160.9)"/>
+<rect x="163" y="156.5" width="6" height="6" fill="#2b1d14" transform="rotate(45 166 159.1)"/>
+<text x="102" y="174" font-size="9" font-family="serif" fill="#a8321e" text-anchor="end">C</text>
+<g transform="translate(54 212) rotate(6) scale(1.2 1.2)">
+<path d="M-8,-64 L-14,-50 L-14,-44" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-14" cy="-44" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-4,-40 L-6.8,-20 L-9,0 l-5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4,-40 L5.6,-20 L9,0 l5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 L11,-38 Q0,-34 -11,-38Z" fill="#7d6c5a" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M-6,-64 L6,-64 L7,-30 L-7,-30Z" fill="#efe2c4" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="2" cy="-46" r="2.2" fill="#2b1d14" opacity="0.7"/>
+<circle cx="-3" cy="-38" r="1.4" fill="#2b1d14" opacity="0.7"/>
+<circle cx="0" cy="-84" r="14" fill="#d9b88a" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M-14,-86 A14,14 0 0,1 12,-91 Q0,-90 -14,-86Z" fill="#3a281c"/>
+<circle cx="6" cy="-85" r="1.7" fill="#2b1d14"/>
+<path d="M8,-64 L20,-59 L26,-62" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="26" cy="-62" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M26,-62 q12,-16 10,-32 q-10,12 -10,32Z" fill="#efe2c4" stroke="#2b1d14" stroke-width="0.9"/>
+</g>
+<ellipse cx="60" cy="36" rx="7.2" ry="5.5" fill="#f0c050" stroke="#2b1d14" stroke-width="1" transform="rotate(-20 60 36)"/>
+<path d="M66.5,35 v-24 q10.8,2.4 9.6,13.2" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+</g>
+<rect x="0" y="0" width="244" height="236" fill="none" stroke="#2b1d14" stroke-width="1.8"/>
+<rect x="-3" y="-3" width="250" height="242" fill="none" stroke="#a8321e" stroke-width="0.9"/>
+</g>
+<text x="150" y="327" font-size="23" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">The Written Tune</text>
+<path d="M70,338 Q150,346 230,338" fill="none" stroke="#a8321e" stroke-width="1"/>
+<circle cx="150" cy="374" r="22" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M141.3,389.9 Q147.5,372.5 159.9,358.9 Q156.2,377.5 141.3,389.9Z" fill="none" stroke="#2f4f8a" stroke-width="2.4" stroke-linejoin="round"/>
+<line x1="141.3" y1="389.9" x2="155" y2="367.6" stroke="#2f4f8a" stroke-width="1.4"/>
+<path d="M126,374 C121.3,373 107.3,367 98,368 C88.7,369 79,379.3 70,380 C61,380.7 48.3,373.3 44,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M98,368 L108.3,368.7 L103.7,371.6 L99.2,370.6 L97,367.2 L97.6,363.2 L100.5,360.5 L103.9,359.9 L106.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M98,368 Q88,363.8 81.9,375.2 Q91,377.8 98,368Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M70,380 L59.7,368.1 L64.3,365.2 L68.8,366.2 L71,369.6 L70.4,373.6 L67.5,376.3 L64.1,376.9 L61.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M70,380 Q80,375.8 86.1,387.2 Q77,389.8 70,380Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M174,374 C178.7,373 192.7,367 202,368 C211.3,369 221,379.3 230,380 C239,380.7 251.7,373.3 256,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M202,368 L212.3,368.7 L207.7,371.6 L203.2,370.6 L201,367.2 L201.6,363.2 L204.5,360.5 L207.9,359.9 L210.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M202,368 Q192,363.8 185.9,375.2 Q195,377.8 202,368Z" fill="#a8321e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M230,380 L219.7,368.1 L224.3,365.2 L228.8,366.2 L231,369.6 L230.4,373.6 L227.5,376.3 L224.1,376.9 L221.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M230,380 Q240,375.8 246.1,387.2 Q237,389.8 230,380Z" fill="#a8321e" stroke="#2b1d14" stroke-width="0.9"/>
+<polygon points="0,64 9,70 0,76" fill="#1b120c"/>
+<path d="M9,70 L0,76" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,80 9,86 0,92" fill="#1b120c"/>
+<path d="M9,86 L0,92" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,96 9,102 0,108" fill="#1b120c"/>
+<path d="M9,102 L0,108" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,138 9,144 0,150" fill="#1b120c"/>
+<path d="M9,144 L0,150" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,154 9,160 0,166" fill="#1b120c"/>
+<path d="M9,160 L0,166" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,196 9,202 0,208" fill="#1b120c"/>
+<path d="M9,202 L0,208" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,212 9,218 0,224" fill="#1b120c"/>
+<path d="M9,218 L0,224" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,228 9,234 0,240" fill="#1b120c"/>
+<path d="M9,234 L0,240" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+</g>
+<rect x="1" y="1" width="298" height="418" rx="16" fill="none" stroke="#2b1d14" stroke-width="2"/>
+</svg>

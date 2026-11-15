@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="omen-bowed-elder-t omen-bowed-elder-d">
+<title id="omen-bowed-elder-t">Omen card: The Bowed Elder</title>
+<desc id="omen-bowed-elder-d">Omen card The Bowed Elder: an old robed reader bent double into the wind, cane planted, leaves streaming past. Suit Wind (trial), the eye sigil, weight 2, with Pell's notches down the left edge.</desc>
+<defs><clipPath id="omen-bowed-elder-clip1"><rect x="1" y="1" width="298" height="418" rx="16"/></clipPath><filter id="omen-bowed-elder-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="521"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="omen-bowed-elder-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#6b4a20" stop-opacity="0"/><stop offset="100%" stop-color="#6b4a20" stop-opacity="0.3"/></radialGradient><clipPath id="omen-bowed-elder-clip4"><rect x="0" y="0" width="244" height="236"/></clipPath><linearGradient id="omen-bowed-elder-lg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff6dc"/><stop offset="100%" stop-color="#dfe3c4"/></linearGradient></defs>
+<g clip-path="url(#omen-bowed-elder-clip1)">
+<rect x="0" y="0" width="300" height="420" fill="#efe2c4"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#omen-bowed-elder-grain2)"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#omen-bowed-elder-vig3)"/>
+<rect x="14" y="14" width="272" height="392" rx="10" fill="none" stroke="#a8321e" stroke-width="1.4"/>
+<rect x="19" y="19" width="262" height="382" rx="5" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="40" cy="40" r="17" fill="#dfe3c4" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M27,38.1 h15.8 a4.3,4.3 0 1,0 -4.3,-4.3 M27,44.6 h21.6 a3.6,3.6 0 1,1 -3.6,3.6" fill="none" stroke="#8fa37a" stroke-width="1.7" stroke-linecap="round"/>
+<circle cx="264" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="262" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<circle cx="245" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="243" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<text x="150" y="45" font-size="11" font-family="serif" fill="#a8321e" text-anchor="middle" letter-spacing="3">TRIAL</text>
+<g transform="translate(28 60)">
+<g clip-path="url(#omen-bowed-elder-clip4)">
+<rect x="0" y="0" width="244" height="236" fill="#dfe3c4"/>
+<rect x="0" y="0" width="244" height="236" fill="url(#omen-bowed-elder-lg5)" opacity="0.6"/>
+<path d="M6,40 h150 a10.8,10.8 0 1,0 -10.8,-10.8" fill="none" stroke="#2b1d14" stroke-width="4" stroke-linecap="round"/>
+<path d="M6,40 h150 a10.8,10.8 0 1,0 -10.8,-10.8" fill="none" stroke="#8fa37a" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M20,78 h110 a10.8,10.8 0 1,0 -10.8,-10.8" fill="none" stroke="#2b1d14" stroke-width="4" stroke-linecap="round"/>
+<path d="M20,78 h110 a10.8,10.8 0 1,0 -10.8,-10.8" fill="none" stroke="#8fa37a" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M34,120 h170 a10.8,10.8 0 1,0 -10.8,-10.8" fill="none" stroke="#2b1d14" stroke-width="4" stroke-linecap="round"/>
+<path d="M34,120 h170 a10.8,10.8 0 1,0 -10.8,-10.8" fill="none" stroke="#8fa37a" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M0,201.7 C5.1,201.6 20.3,200.5 30.5,201.1 C40.7,201.7 50.8,204.7 61,205.4 C71.2,206.1 81.3,205 91.5,205.1 C101.7,205.2 111.8,205.9 122,206.1 C132.2,206.3 142.3,207 152.5,206.3 C162.7,205.6 172.8,202.2 183,201.9 C193.2,201.6 203.3,203.9 213.5,204.5 C223.7,205.1 238.9,205.3 244,205.5 L244,264 L0,264Z" fill="#c9a877" stroke="#2b1d14" stroke-width="1.6"/>
+<path d="M184.3,232.6 l11.7,3.1M144.2,215.5 l8.7,3M90.4,232.8 l9.9,2.1M41,224.1 l8.8,3.6M197.5,227.8 l15.1,1.1M127.9,213.5 l12.6,3.9M23.3,212.2 l9.1,2.4M169.9,221.3 l15,2.1M28.6,219.3 l11.1,4M82.5,227.3 l13,2.6M169.6,228.2 l10.6,3.9M144.9,233.9 l11.8,1.6M9.3,233.4 l11.8,1.7M145.9,229.5 l12.9,3.3M96.1,230.7 l9.8,3.4M165.2,223 l15.2,3.8" stroke="#2b1d14" stroke-width="1" fill="none" opacity="0.6"/>
+<g transform="translate(150 206) rotate(24) scale(1.4 1.4)">
+<path d="M-8,-64 L-12,-50 L-10,-44" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-10" cy="-44" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-7,-6 l-1,6 l-4,0 M7,-6 l1,6 l4,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 Q14,-40 17,-5 Q0,-1 -17,-5 Q-14,-40 -9,-69Z" fill="#8f8a70" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M0,-66 L1,-6" fill="none" stroke="#2b1d14" stroke-width="0.9" opacity="0.6"/>
+<path d="M-16,-72 Q-20,-102 0,-103 Q14,-102 13,-90 L10,-72 Q0,-66 -16,-72Z" fill="#8f8a70" stroke="#2b1d14" stroke-width="1.4"/>
+<circle cx="3" cy="-84" r="10.5" fill="#d9b88a" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="8" cy="-85" r="1.7" fill="#2b1d14"/>
+<path d="M8,-64 L17,-54 L20,-52" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="20" cy="-52" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M24,0 L24,-58 q0,-7 -6,-6" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linecap="round"/>
+</g>
+<g transform="translate(40 150) rotate(40) scale(0.3)">
+<path d="M0,-30 Q22,-12 14,14 Q6,28 0,32 Q-6,28 -14,14 Q-22,-12 0,-30Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="3.5"/>
+</g>
+<g transform="translate(86 176) rotate(110) scale(0.3)">
+<path d="M0,-30 Q22,-12 14,14 Q6,28 0,32 Q-6,28 -14,14 Q-22,-12 0,-30Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="3.5"/>
+</g>
+<g transform="translate(206 60) rotate(70) scale(0.3)">
+<path d="M0,-30 Q22,-12 14,14 Q6,28 0,32 Q-6,28 -14,14 Q-22,-12 0,-30Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="3.5"/>
+</g>
+</g>
+<rect x="0" y="0" width="244" height="236" fill="none" stroke="#2b1d14" stroke-width="1.8"/>
+<rect x="-3" y="-3" width="250" height="242" fill="none" stroke="#a8321e" stroke-width="0.9"/>
+</g>
+<text x="150" y="327" font-size="23" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">The Bowed Elder</text>
+<path d="M70,338 Q150,346 230,338" fill="none" stroke="#a8321e" stroke-width="1"/>
+<circle cx="150" cy="374" r="22" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M136.4,374 Q150,361.6 163.6,374 Q150,386.4 136.4,374Z" fill="none" stroke="#8a6a10" stroke-width="2.4" stroke-linejoin="round"/>
+<circle cx="150" cy="374" r="3.7" fill="#8a6a10"/>
+<path d="M126,374 C121.3,373 107.3,367 98,368 C88.7,369 79,379.3 70,380 C61,380.7 48.3,373.3 44,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M98,368 L108.3,368.7 L103.7,371.6 L99.2,370.6 L97,367.2 L97.6,363.2 L100.5,360.5 L103.9,359.9 L106.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M98,368 Q88,363.8 81.9,375.2 Q91,377.8 98,368Z" fill="#a8321e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M70,380 L59.7,368.1 L64.3,365.2 L68.8,366.2 L71,369.6 L70.4,373.6 L67.5,376.3 L64.1,376.9 L61.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M70,380 Q80,375.8 86.1,387.2 Q77,389.8 70,380Z" fill="#f0c050" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M174,374 C178.7,373 192.7,367 202,368 C211.3,369 221,379.3 230,380 C239,380.7 251.7,373.3 256,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M202,368 L212.3,368.7 L207.7,371.6 L203.2,370.6 L201,367.2 L201.6,363.2 L204.5,360.5 L207.9,359.9 L210.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M202,368 Q192,363.8 185.9,375.2 Q195,377.8 202,368Z" fill="#a8321e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M230,380 L219.7,368.1 L224.3,365.2 L228.8,366.2 L231,369.6 L230.4,373.6 L227.5,376.3 L224.1,376.9 L221.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M230,380 Q240,375.8 246.1,387.2 Q237,389.8 230,380Z" fill="#f0c050" stroke="#2b1d14" stroke-width="0.9"/>
+<polygon points="0,64 9,70 0,76" fill="#1b120c"/>
+<path d="M9,70 L0,76" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,106 9,112 0,118" fill="#1b120c"/>
+<path d="M9,112 L0,118" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,122 9,128 0,134" fill="#1b120c"/>
+<path d="M9,128 L0,134" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,164 9,170 0,176" fill="#1b120c"/>
+<path d="M9,170 L0,176" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+</g>
+<rect x="1" y="1" width="298" height="418" rx="16" fill="none" stroke="#2b1d14" stroke-width="2"/>
+</svg>

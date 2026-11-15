@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="omen-last-leaf-t omen-last-leaf-d">
+<title id="omen-last-leaf-t">Omen card: The Last Leaf</title>
+<desc id="omen-last-leaf-d">Omen card The Last Leaf: one copper leaf left on a bare twig and an old reader beneath it, one hand lifted as if he knows which is his. Suit Leaf (death), the eye sigil, weight 3, with Pell's notches down the left edge.</desc>
+<defs><clipPath id="omen-last-leaf-clip1"><rect x="1" y="1" width="298" height="418" rx="16"/></clipPath><filter id="omen-last-leaf-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="657"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="omen-last-leaf-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#6b4a20" stop-opacity="0"/><stop offset="100%" stop-color="#6b4a20" stop-opacity="0.3"/></radialGradient><clipPath id="omen-last-leaf-clip4"><rect x="0" y="0" width="244" height="236"/></clipPath><linearGradient id="omen-last-leaf-lg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff6dc"/><stop offset="100%" stop-color="#e3cf9c"/></linearGradient></defs>
+<g clip-path="url(#omen-last-leaf-clip1)">
+<rect x="0" y="0" width="300" height="420" fill="#efe2c4"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#omen-last-leaf-grain2)"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#omen-last-leaf-vig3)"/>
+<rect x="14" y="14" width="272" height="392" rx="10" fill="none" stroke="#a8321e" stroke-width="1.4"/>
+<rect x="19" y="19" width="262" height="382" rx="5" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="40" cy="40" r="17" fill="#e3cf9c" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M29.9,48.2 Q32.8,30.9 50.1,32.4 Q47.2,48.2 29.9,48.2Z" fill="#5f7a3e"/>
+<line x1="29.9" y1="48.2" x2="44.3" y2="36.7" stroke="#efe2c4" stroke-width="0.8"/>
+<circle cx="264" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="262" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<circle cx="245" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="243" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<circle cx="226" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="224" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<text x="150" y="45" font-size="11" font-family="serif" fill="#a8321e" text-anchor="middle" letter-spacing="3">DEATH</text>
+<g transform="translate(28 60)">
+<g clip-path="url(#omen-last-leaf-clip4)">
+<rect x="0" y="0" width="244" height="236" fill="#e3cf9c"/>
+<rect x="0" y="0" width="244" height="236" fill="url(#omen-last-leaf-lg5)" opacity="0.6"/>
+<path d="M0,20 Q80,34 150,22 Q190,18 244,30" fill="none" stroke="#2b1d14" stroke-width="7" stroke-linecap="round"/>
+<path d="M0,20 Q80,34 150,22 Q190,18 244,30" fill="none" stroke="#8a6344" stroke-width="4" stroke-linecap="round"/>
+<path d="M40,27 l4,12" stroke="#2b1d14" stroke-width="2" stroke-linecap="round"/>
+<path d="M92,27 l4,12" stroke="#2b1d14" stroke-width="2" stroke-linecap="round"/>
+<path d="M196,27 l4,12" stroke="#2b1d14" stroke-width="2" stroke-linecap="round"/>
+<g transform="translate(150 78) rotate(8) scale(1.2)">
+<path d="M0,-30 Q22,-12 14,14 Q6,28 0,32 Q-6,28 -14,14 Q-22,-12 0,-30Z" fill="#c8702a" stroke="#2b1d14" stroke-width="1.1"/>
+<path d="M0,-28 L0,40 M0,-10 L10,-18 M0,-10 L-10,-18 M0,4 L11,-4 M0,4 L-11,-4 M0,18 L8,11 M0,18 L-8,11" fill="none" stroke="#2b1d14" stroke-width="0.7"/>
+</g>
+<line x1="150" y1="24" x2="152" y2="42" stroke="#2b1d14" stroke-width="1.5"/>
+<g transform="translate(40 170) rotate(60) scale(0.3)">
+<path d="M0,-30 Q22,-12 14,14 Q6,28 0,32 Q-6,28 -14,14 Q-22,-12 0,-30Z" fill="#b8862a" stroke="#2b1d14" stroke-width="3.5"/>
+</g>
+<g transform="translate(214 150) rotate(130) scale(0.3)">
+<path d="M0,-30 Q22,-12 14,14 Q6,28 0,32 Q-6,28 -14,14 Q-22,-12 0,-30Z" fill="#b8862a" stroke="#2b1d14" stroke-width="3.5"/>
+</g>
+<path d="M0,204.8 C5.1,204.4 20.3,202.3 30.5,202.1 C40.7,201.9 50.8,203.1 61,203.4 C71.2,203.8 81.3,203.9 91.5,204.2 C101.7,204.6 111.8,205.7 122,205.6 C132.2,205.6 142.3,204.4 152.5,203.8 C162.7,203.3 172.8,202.1 183,202.5 C193.2,203 203.3,206.4 213.5,206.5 C223.7,206.5 238.9,203.2 244,202.6 L244,264 L0,264Z" fill="#c9a877" stroke="#2b1d14" stroke-width="1.6"/>
+<path d="M137.3,213.4 l15.4,1.1M138.7,224.5 l9.5,2.5M58.5,227.8 l12.8,2.8M168.5,228.8 l9.6,2.4M136.8,218.6 l14.7,3.4M87.9,212.7 l11.4,2.2M46,216.8 l15.7,1.6M28.7,219.5 l11.4,2.2M92,224.3 l8.6,2.3M69.2,224 l12.5,1.4M12.7,221.8 l11.5,2.8M224.1,212.8 l12,2.8M104.2,226.4 l13.4,3.8M80.5,224.2 l9,3.6M44.1,229.3 l10.4,3.7M86.7,230.3 l15.7,2.5" stroke="#2b1d14" stroke-width="1" fill="none" opacity="0.6"/>
+<g transform="translate(104 206) rotate(-5) scale(1.2 1.2)">
+<path d="M-8,-64 L-15,-51 L-16,-46" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-16" cy="-46" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-7,-6 l-1,6 l-4,0 M7,-6 l1,6 l4,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 Q14,-40 17,-5 Q0,-1 -17,-5 Q-14,-40 -9,-69Z" fill="#8f8a70" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M0,-66 L1,-6" fill="none" stroke="#2b1d14" stroke-width="0.9" opacity="0.6"/>
+<path d="M-16,-72 Q-20,-102 0,-103 Q14,-102 13,-90 L10,-72 Q0,-66 -16,-72Z" fill="#8f8a70" stroke="#2b1d14" stroke-width="1.4"/>
+<circle cx="3" cy="-84" r="10.5" fill="#d9b88a" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="8" cy="-85" r="1.7" fill="#2b1d14"/>
+<path d="M8,-64 L17,-70 L20,-84" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="20" cy="-84" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-19,0 L-19,-52 q0,-7 -6,-6" fill="none" stroke="#2b1d14" stroke-width="2.4" stroke-linecap="round"/>
+</g>
+<path d="M132,128 q8,-14 14,-22" fill="none" stroke="#a8321e" stroke-width="1" stroke-dasharray="3 4"/>
+</g>
+<rect x="0" y="0" width="244" height="236" fill="none" stroke="#2b1d14" stroke-width="1.8"/>
+<rect x="-3" y="-3" width="250" height="242" fill="none" stroke="#a8321e" stroke-width="0.9"/>
+</g>
+<text x="150" y="327" font-size="23" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">The Last Leaf</text>
+<path d="M70,338 Q150,346 230,338" fill="none" stroke="#a8321e" stroke-width="1"/>
+<circle cx="150" cy="374" r="22" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M136.4,374 Q150,361.6 163.6,374 Q150,386.4 136.4,374Z" fill="none" stroke="#8a6a10" stroke-width="2.4" stroke-linejoin="round"/>
+<circle cx="150" cy="374" r="3.7" fill="#8a6a10"/>
+<path d="M126,374 C121.3,373 107.3,367 98,368 C88.7,369 79,379.3 70,380 C61,380.7 48.3,373.3 44,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M98,368 L108.3,368.7 L103.7,371.6 L99.2,370.6 L97,367.2 L97.6,363.2 L100.5,360.5 L103.9,359.9 L106.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M98,368 Q88,363.8 81.9,375.2 Q91,377.8 98,368Z" fill="#2f4f8a" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M70,380 L59.7,368.1 L64.3,365.2 L68.8,366.2 L71,369.6 L70.4,373.6 L67.5,376.3 L64.1,376.9 L61.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M70,380 Q80,375.8 86.1,387.2 Q77,389.8 70,380Z" fill="#2f4f8a" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M174,374 C178.7,373 192.7,367 202,368 C211.3,369 221,379.3 230,380 C239,380.7 251.7,373.3 256,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M202,368 L212.3,368.7 L207.7,371.6 L203.2,370.6 L201,367.2 L201.6,363.2 L204.5,360.5 L207.9,359.9 L210.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M202,368 Q192,363.8 185.9,375.2 Q195,377.8 202,368Z" fill="#a8321e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M230,380 L219.7,368.1 L224.3,365.2 L228.8,366.2 L231,369.6 L230.4,373.6 L227.5,376.3 L224.1,376.9 L221.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M230,380 Q240,375.8 246.1,387.2 Q237,389.8 230,380Z" fill="#2f4f8a" stroke="#2b1d14" stroke-width="0.9"/>
+<polygon points="0,64 9,70 0,76" fill="#1b120c"/>
+<path d="M9,70 L0,76" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,80 9,86 0,92" fill="#1b120c"/>
+<path d="M9,86 L0,92" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,96 9,102 0,108" fill="#1b120c"/>
+<path d="M9,102 L0,108" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,112 9,118 0,124" fill="#1b120c"/>
+<path d="M9,118 L0,124" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,128 9,134 0,140" fill="#1b120c"/>
+<path d="M9,134 L0,140" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,170 9,176 0,182" fill="#1b120c"/>
+<path d="M9,176 L0,182" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,186 9,192 0,198" fill="#1b120c"/>
+<path d="M9,192 L0,198" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,202 9,208 0,214" fill="#1b120c"/>
+<path d="M9,208 L0,214" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,244 9,250 0,256" fill="#1b120c"/>
+<path d="M9,250 L0,256" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+</g>
+<rect x="1" y="1" width="298" height="418" rx="16" fill="none" stroke="#2b1d14" stroke-width="2"/>
+</svg>

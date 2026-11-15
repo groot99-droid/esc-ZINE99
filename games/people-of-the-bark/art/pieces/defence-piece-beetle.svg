@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="360" height="360" role="img" aria-labelledby="defence-piece-beetle-t defence-piece-beetle-d">
+<title id="defence-piece-beetle-t">Crack defence piece: the Beetle</title>
+<desc id="defence-piece-beetle-d">The Beetle: a domed dark-green shell on six legs filling its three floor tiles, feelers forward, one highlight on its back. It has no face. Two tiny warriors beside it give its size.</desc>
+<defs><radialGradient id="defence-piece-beetle-rg1" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#4a3324" stop-opacity="1"/><stop offset="100%" stop-color="#1b120c" stop-opacity="1"/></radialGradient><radialGradient id="defence-piece-beetle-rg2" cx="0.38" cy="0.3" r="0.5"><stop offset="0%" stop-color="#4d5a4a" stop-opacity="1"/><stop offset="55%" stop-color="#1e2420" stop-opacity="1"/><stop offset="100%" stop-color="#0c0f0d" stop-opacity="1"/></radialGradient><radialGradient id="defence-piece-beetle-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.5"/></radialGradient></defs>
+<rect x="0" y="0" width="360" height="360" fill="url(#defence-piece-beetle-rg1)"/>
+<polygon points="119.8,236.4 170,265.4 170,248 119.8,219" fill="#4a3323" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="220.2,236.4 170,265.4 170,248 220.2,219" fill="#322318" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="170,190 220.2,219 170,248 119.8,219" fill="#6a4a33" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="154.9" y1="210.3" x2="185.1" y2="227.7" stroke="#523927" stroke-width="1"/>
+<polygon points="69.5,265.4 119.8,294.4 119.8,277 69.5,248" fill="#3e2a1e" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="170,265.4 119.8,294.4 119.8,277 170,248" fill="#2b1d14" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="119.8,219 170,248 119.8,277 69.5,248" fill="#5a3d2b" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="104.7" y1="239.3" x2="134.8" y2="256.7" stroke="#462f21" stroke-width="1"/>
+<polygon points="170,265.4 220.2,294.4 220.2,277 170,248" fill="#3e2a1e" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="270.5,265.4 220.2,294.4 220.2,277 270.5,248" fill="#2b1d14" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="220.2,219 270.5,248 220.2,277 170,248" fill="#5a3d2b" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="205.2" y1="239.3" x2="235.3" y2="256.7" stroke="#462f21" stroke-width="1"/>
+<polygon points="119.8,294.4 170,323.4 170,306 119.8,277" fill="#4a3323" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="220.2,294.4 170,323.4 170,306 220.2,277" fill="#322318" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="170,248 220.2,277 170,306 119.8,277" fill="#6a4a33" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="154.9" y1="268.3" x2="185.1" y2="285.7" stroke="#523927" stroke-width="1"/>
+<polygon points="220.2,294.4 270.5,323.4 270.5,306 220.2,277" fill="#4a3323" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="320.7,294.4 270.5,323.4 270.5,306 320.7,277" fill="#322318" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="270.5,248 320.7,277 270.5,306 220.2,277" fill="#6a4a33" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="255.4" y1="268.3" x2="285.5" y2="285.7" stroke="#523927" stroke-width="1"/>
+<polygon points="170,323.4 220.2,352.4 220.2,335 170,306" fill="#3e2a1e" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="270.5,323.4 220.2,352.4 220.2,335 270.5,306" fill="#2b1d14" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="220.2,277 270.5,306 220.2,335 170,306" fill="#5a3d2b" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="205.2" y1="297.3" x2="235.3" y2="314.7" stroke="#462f21" stroke-width="1"/>
+<g transform="translate(196 196) scale(1)">
+<ellipse cx="0" cy="40" rx="120" ry="40" fill="#000" opacity="0.4"/>
+<path d="M-40,-4 q-14,-30 -34,-4" fill="none" stroke="#120c08" stroke-width="7" stroke-linecap="round"/>
+<path d="M-40,24 q-14,-30 -34,48" fill="none" stroke="#120c08" stroke-width="7" stroke-linecap="round"/>
+<path d="M-2,-4 q-8,-30 -24,-4" fill="none" stroke="#120c08" stroke-width="7" stroke-linecap="round"/>
+<path d="M-2,24 q-8,-30 -24,48" fill="none" stroke="#120c08" stroke-width="7" stroke-linecap="round"/>
+<path d="M36,-4 q-2,-30 -14,-4" fill="none" stroke="#120c08" stroke-width="7" stroke-linecap="round"/>
+<path d="M36,24 q-2,-30 -14,48" fill="none" stroke="#120c08" stroke-width="7" stroke-linecap="round"/>
+<ellipse cx="0" cy="-20" rx="115" ry="72" fill="url(#defence-piece-beetle-rg2)" stroke="#000" stroke-width="2"/>
+<line x1="-8" y1="-90" x2="20" y2="48" stroke="#000" stroke-width="3"/>
+<path d="M-90,-30 Q-60,-70 -20,-78 M30,-84 Q70,-74 96,-40" fill="none" stroke="#2e3a34" stroke-width="3"/>
+<ellipse cx="-98" cy="10" rx="40" ry="30" fill="#151a17" stroke="#000" stroke-width="2"/>
+<path d="M-118,2 q-40,-6 -52,-30" fill="none" stroke="#0c0f0d" stroke-width="7" stroke-linecap="round"/>
+<path d="M-118,18 q-40,6 -52,30" fill="none" stroke="#0c0f0d" stroke-width="7" stroke-linecap="round"/>
+<ellipse cx="-40" cy="-55" rx="26" ry="12" fill="#cfe0c8" opacity="0.3"/>
+</g>
+<g transform="translate(84.6 250.9) scale(0.6)">
+<ellipse cx="0" cy="0" rx="12" ry="5" fill="#000" opacity="0.4"/>
+<path d="M-5,0 L-4,-16 M5,0 L4,-16" stroke="#1b120c" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M-8,-14 L-6,-36 L6,-36 L8,-14Z" fill="#8a6a48" stroke="#1b120c" stroke-width="1.4"/>
+<circle cx="0" cy="-46" r="10.5" fill="#d9b88a" stroke="#1b120c" stroke-width="1.4"/>
+<path d="M-11,-48 a11,11 0 0,1 22,0Z" fill="#3a281c" stroke="#1b120c" stroke-width="1"/>
+<line x1="12" y1="4" x2="17" y2="-72" stroke="#e6cfa0" stroke-width="2.6" stroke-linecap="round"/>
+<polygon points="17.5,-80 13,-66 21,-66" fill="#f6e8c8" stroke="#1b120c" stroke-width="0.8"/>
+</g>
+<g transform="translate(79.6 277) scale(0.6)">
+<ellipse cx="0" cy="0" rx="12" ry="5" fill="#000" opacity="0.4"/>
+<path d="M-5,0 L-4,-16 M5,0 L4,-16" stroke="#1b120c" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M-8,-14 L-6,-36 L6,-36 L8,-14Z" fill="#8a6a48" stroke="#1b120c" stroke-width="1.4"/>
+<circle cx="0" cy="-46" r="10.5" fill="#d9b88a" stroke="#1b120c" stroke-width="1.4"/>
+<path d="M-11,-48 a11,11 0 0,1 22,0Z" fill="#3a281c" stroke="#1b120c" stroke-width="1"/>
+<path d="M-4,-58 q8,-22 22,-14 q-10,2 -14,16Z" fill="#e8742a" stroke="#1b120c" stroke-width="1"/>
+<line x1="12" y1="4" x2="17" y2="-72" stroke="#e6cfa0" stroke-width="2.6" stroke-linecap="round"/>
+<polygon points="17.5,-80 13,-66 21,-66" fill="#f6e8c8" stroke="#1b120c" stroke-width="0.8"/>
+</g>
+<rect x="0" y="0" width="360" height="360" fill="url(#defence-piece-beetle-vig3)"/>
+</svg>
