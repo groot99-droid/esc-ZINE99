@@ -7,6 +7,11 @@
 // "her own wrong but earnest tally") offers her count of the glow, three times: instant, but not
 // always right. The plate stamps each name as it is settled. After two lost plates, the key shows
 // the measure each couplet uses from the start.
+// Phase 1 of the accepted development (DESIGN "Accepted development (2026-11-15)"): every couplet
+// shows whose hand it is in (print, or Lira's pencil), and the plate ends with the Flyleaf: one more
+// drawer, in the Cinder Reach archive of Book II, holding the key's first printing, initialled S.V.,
+// with the couplet the player wrote already pencilled in it by a third hand. Drawn with the game's
+// art (api.art): the key's pages, the wolf plate, Pell's page, the dial faces.
 const P = "lira-calyx-key-";
 const INK = "#3b2618", PAPER = "#ebe0c4", PENCIL = "#7d7a74", SEAL = "#b3212b", TEAL = "#25c2a8";
 const NAMES = {
@@ -33,6 +38,8 @@ export default {
   mount(root, api) {
     const off = []; let raf = 0;
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); off.push(() => t.removeEventListener(e, f, o)); };
+    const A = api.art || { has: () => false, url: () => "" };
+    const pic = (id, cls = "", alt = "") => (A.has(id) ? `<img class="${cls}" src="${A.url(id)}" alt="${alt}" draggable="false">` : "");
     root.style.background = "#d8cba8";
     const el = document.createElement("div"); el.className = P + "wrap";
     el.innerHTML = `<style>
@@ -76,15 +83,34 @@ export default {
       .${P}card label{display:flex;gap:8px;justify-content:center;font:italic 15px Georgia,serif;margin:0 0 10px;color:${PENCIL}}
       .${P}card button{background:${INK};color:${PAPER};padding:10px 22px;font-size:17px}
       .${P}card button:hover{background:${SEAL}!important}
+      .${P}plate h2 img{height:34px;width:auto;vertical-align:middle;margin-right:10px}
+      .${P}kit button img{height:26px;width:26px;vertical-align:middle;margin:-4px 6px -2px -4px;border-radius:50%}
+      .${P}hd{display:inline-block;font:700 10px 'Courier Prime',monospace;letter-spacing:.08em;border:1px solid currentColor;padding:0 4px;margin-left:6px;vertical-align:1px;font-style:normal;white-space:nowrap}
+      .${P}hd.p{color:${PENCIL};border-style:dashed}
+      .${P}kp{display:flex;gap:10px;align-items:center;margin:0 0 8px;padding:0!important;border:0!important;text-align:left;width:100%;min-height:0!important;font:13px/1.4 'Courier Prime',monospace!important}
+      .${P}kp img{width:58px;height:auto;border:1px solid ${INK};box-shadow:2px 2px 0 rgba(59,38,24,.25);flex:0 0 auto}
+      .${P}found{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end;margin:0 0 8px}.${P}found img{height:120px;width:auto;border:1px solid ${INK}}
+      .${P}found span{flex:1 1 140px;font:italic 14px/1.4 Georgia,serif;color:#5b4a3a}
+      .${P}over{position:absolute;inset:0;display:grid;place-items:center;background:rgba(40,30,20,.82);z-index:6;padding:12px;overflow:auto}
+      .${P}fly{width:min(900px,100%);max-height:100%;overflow:auto;background:${PAPER};border:1.5px solid ${INK};padding:14px 16px;display:flex;flex-wrap:wrap;gap:14px;box-shadow:0 8px 26px rgba(0,0,0,.45)}
+      .${P}fly .im{flex:0 1 300px;min-width:170px;max-width:min(300px,62vw);margin:0 auto}.${P}fly .im img{display:block;width:100%;height:auto;box-shadow:2px 3px 0 rgba(59,38,24,.3)}
+      .${P}fly .im .fb{aspect-ratio:8/11;border:1px solid ${INK};display:grid;place-items:center;padding:16px;font:italic 18px/1.6 Georgia,serif;color:${PENCIL};text-align:center}
+      .${P}fly .tx{flex:1 1 300px;min-width:0;font:15px/1.45 Georgia,serif}
+      .${P}fly .ch{font:700 12px 'Courier Prime',monospace;letter-spacing:.16em;color:${SEAL}}
+      .${P}fly h3{font:400 28px/1.05 'IM Fell English',Georgia,serif;margin:2px 0 8px}
+      .${P}fly p{margin:0 0 8px}.${P}fly .said{font:italic 16px/1.4 'IM Fell English',Georgia,serif;color:#2f4c86;min-height:3em}
+      .${P}fly .his{font:italic 16px/1.4 Georgia,serif;color:${PENCIL};border-left:3px solid ${PENCIL};padding-left:10px}
+      .${P}fly button.done{opacity:.55}
+      .${P}zoom{max-width:min(520px,100%);max-height:100%;overflow:auto;background:${PAPER};padding:10px;border:1.5px solid ${INK}}.${P}zoom img{display:block;width:100%;height:auto;margin-bottom:8px}
     </style>
-    <div class="${P}plate"><h2>PLATE XIV · THE TERRACE COLLECTION</h2>
+    <div class="${P}plate"><h2>${pic("tab-specimens")}PLATE XIV · THE TERRACE COLLECTION</h2>
       <section class="${P}left" aria-label="Specimen card">
         <div class="${P}tally"></div>
         <svg viewBox="0 0 400 270" aria-label="Specimen drawing with rule"></svg>
         <div class="${P}kit">
-          <button type="button" data-t="tap">Stopwatch: tap at each glow</button>
+          <button type="button" data-t="tap">${pic("dial-clock")}Stopwatch: tap at each glow</button>
           <button type="button" data-t="rule">Read the rule</button>
-          <button type="button" data-t="tag">Read the altimeter tag</button>
+          <button type="button" data-t="tag">${pic("dial-altimeter")}Read the altimeter tag</button>
           <button type="button" class="pell" data-t="pell" hidden>Pell’s tally</button>
         </div>
         <div class="${P}meas" aria-live="polite"></div>
@@ -208,7 +234,7 @@ export default {
       if (t === "pell" && st.pellLeft > 0 && s.pell != null) {
         st.pellLeft--; st.m.glow = s.pell; st.pellTold = true;
         log(`Pell, counting on her fingers: “${s.pell.toFixed(1)} seconds, I promise.” She has ${st.pellLeft} count${st.pellLeft === 1 ? "" : "s"} left in her today.`, true);
-        pellBtn.textContent = `Pell’s tally (${st.pellLeft})`; pellBtn.disabled = st.pellLeft <= 0;
+        pellBtn.innerHTML = `${pic("token-witness-pell")}Pell’s tally (${st.pellLeft})`; pellBtn.disabled = st.pellLeft <= 0;
       }
       renderMeas(); renderKey();
     };
@@ -218,20 +244,23 @@ export default {
     const keyEl = $("." + P + "key"), act = $("." + P + "act");
     const nameText = (n) => typeof n === "number" ? `${n}` : n;
     function renderKey() {
-      keyEl.innerHTML = `<div class="${P}tally">THE KEY · couplets in pencil are Lira's</div>`;
+      const pg = st.keyedNew ? "key-page-her-pencil" : "key-page-print";
+      keyEl.innerHTML = A.has(pg) ? `<button type="button" class="${P}kp" aria-label="Look at the key's page">${pic(pg)}<span>THE KEY · Mid-Slopes edition<br>Each couplet is marked with its hand: <span class="${P}hd">PRINT</span> <span class="${P}hd p">HER PENCIL</span></span></button>` : `<div class="${P}tally">THE KEY · each couplet is marked with its hand: PRINT, or HER PENCIL</div>`;
+      const kp = keyEl.querySelector("." + P + "kp"); if (kp) on(kp, "click", () => zoom(pg, st.keyedNew ? "The key's page, with your couplet in pencil in its margin. Who printed the rest, the page does not say." : "The key as printed. No author on the page; the title leaf is missing from the terrace copy."));
       for (const c of KEY) {
         const lit = st.cp === c.id && !st.anomaly && !st.atName;
         const row = document.createElement("div"); row.className = P + "cp" + (lit ? " lit" : "") + (c.pencil ? " pencil" : "");
+        const hd = `<span class="${P}hd${c.pencil ? " p" : ""}">${c.pencil ? "HER PENCIL" : "PRINT"}</span>`;
         for (const side of ["a", "b"]) {
           const br = c[side];
           const lab = `${c.id}${side}.`, dest = typeof br.go === "number" ? br.go : br.go;
           if (lit) {
             const b = document.createElement("button"); b.type = "button"; b.className = P + "go";
-            b.innerHTML = `<span>${lab}</span><span>${br.txt} ……</span><span>${nameText(dest)}</span>`;
+            b.innerHTML = `<span>${lab}</span><span>${br.txt} ……${side === "a" ? hd : ""}</span><span>${nameText(dest)}</span>`;
             b.disabled = st.m[c.t] == null;
             on(b, "click", () => choose(c, side));
             row.appendChild(b);
-          } else row.insertAdjacentHTML("beforeend", `<span>${lab}</span><span>${br.txt} ……</span><span style="text-align:right">${nameText(dest)}</span>`);
+          } else row.insertAdjacentHTML("beforeend", `<span>${lab}</span><span>${br.txt} ……${side === "a" ? hd : ""}</span><span style="text-align:right">${nameText(dest)}</span>`);
         }
         if (lit && st.m[c.t] == null) row.insertAdjacentHTML("beforeend", `<span class="h">Measure ${TRAIT[c.t].toLowerCase()} first.</span>`);
         if (lit && (st.misses >= 2 || st.helped)) row.insertAdjacentHTML("beforeend", `<span class="h">${TRAIT[c.t]}: ${fmt(c.t, spec()[c.t])} (the measure to use)</span>`);
@@ -286,7 +315,10 @@ export default {
         st.leaf.c[st.leaf.side].go = id;
         KEY.push({ id, t: "alt", pencil: true, a: { txt: "Found below 2 000 m", go: "Ember Wolf" }, b: { txt: "Found 2 000 m or above", go: "Ember Wolf, upland form (new)" }, test: (v) => (v < 2000 ? "a" : "b") });
         st.keyedNew++; log("Couplet written in pencil. The juvenile is keyed as new: an Ember Wolf, too high. Lira underlines the altitude twice.", true); stamp("KEYED NEW", true);
-        renderKey(); act.innerHTML = ""; later(next, 1400);
+        renderKey();
+        const found = pic("fig-wolf", "", "Ember Wolf, juvenile, 2 600 m") + pic("pell-page-5", "", "Pell's page: WOLF BABY ONE. 2 600 M TOO HIGH");
+        act.innerHTML = found ? `<div class="${P}found">${found}<span>Pell copies it into her own book that evening, in capitals: 2 600 M. TOO HIGH.</span></div>` : "";
+        later(next, found ? (api.reducedMotion ? 1800 : 3600) : 1400);
       });
     };
     const settle = (ok, name) => {
@@ -305,7 +337,8 @@ export default {
       if (st.i >= SPECS.length) {
         st.over = true; st.i = SPECS.length - 1; api.store.set("losses", 0);
         const clean = st.misclassified === 0 && st.keyedNew === 1;
-        api.end({ outcome: clean ? "win" : "done", text: `All six specimens keyed: ${st.named} named, ${st.keyedNew} keyed as new${st.misclassified ? `, ${st.misclassified} misclassified` : ""}. ${clean ? "The anomaly now has its own couplet in Lira's pencil, and the key is one branch truer than it was this morning. Pell asks why the wolf came up so high. Lira says she does not know yet, and writes that down too." : st.keyedNew ? "The anomaly has its couplet; one name on the plate is wrong and will stay wrong in the journal." : "The anomaly went in under the wrong name. Nothing on the page says the wolves are climbing."}` });
+        const text = `All six specimens keyed: ${st.named} named, ${st.keyedNew} keyed as new${st.misclassified ? `, ${st.misclassified} misclassified` : ""}. ${clean ? "The anomaly now has its own couplet in Lira's pencil, and the key is one branch truer than it was this morning. Pell asks why the wolf came up so high. Lira says she does not know yet, and writes that down too." : st.keyedNew ? "The anomaly has its couplet; one name on the plate is wrong and will stay wrong in the journal." : "The anomaly went in under the wrong name. Nothing on the page says the wolves are climbing."}`;
+        flyleaf(clean ? "win" : "done", text);
         return;
       }
       st.t0 = performance.now(); st.pellTold = false; drawSpec(); renderMeas(); renderKey();
@@ -314,7 +347,74 @@ export default {
       else if (st.i === 4) log(st.keyedNew ? "Lira looks at her new pencil couplet for a while before she picks up the next jar." : "The next jar. The wolf’s card stays at the edge of the bench.", true);
     };
 
-    const pellBtn = el.querySelector("[data-t=pell]"); pellBtn.textContent = "Pell’s tally (3)";
+    // ---- overlays: a page looked at closely, and the Flyleaf (Book II, Cinder Reach)
+    let over = null;
+    const closeOver = () => { if (over) { over.remove(); over = null; } };
+    const zoom = (id, cap) => {
+      closeOver(); over = document.createElement("div"); over.className = P + "over";
+      over.innerHTML = `<div class="${P}zoom" role="dialog" aria-label="The key's page">${pic(id, "", cap)}<p style="font:italic 15px/1.4 Georgia,serif;margin:0 0 8px">${cap}</p><button type="button">Back to the bench</button></div>`;
+      el.appendChild(over); on(over, "click", (e) => { if (e.target === over || e.target.closest("button")) closeOver(); }); over.querySelector("button").focus();
+    };
+    const flyleaf = (outcome, text) => {
+      closeOver(); over = document.createElement("div"); over.className = P + "over";
+      const fl = { read: new Set(), tries: 0, done: false };
+      const end = (tail) => { closeOver(); api.end({ outcome, text: text + tail }); };
+      const mine = st.keyedNew ? "6b. Found 2 000 m or above …… Ember Wolf, upland form (new)" : null;
+      const draw = (stage) => {
+        const tx = over.querySelector(".tx");
+        if (stage === "door") {
+          tx.innerHTML = `<div class="ch">BOOK II · CINDER REACH ARCHIVE</div><h3>One more drawer</h3>
+            <p>Weeks later and two thousand metres down, in the archive at Cinder Reach, the drawer under the specimen bench is not on the index. The label says only: <i>Key, Mid-Slopes. First printing.</i></p>
+            <p>You have used this key since your first morning on the terrace.</p>
+            <div class="${P}row"><button type="button" data-f="open">Open the drawer</button><button type="button" data-f="leave">Leave it shut</button></div>`;
+          over.querySelector(".im").innerHTML = pic(st.keyedNew ? "key-page-her-pencil" : "key-page-print", "", "Your copy of the key") || `<div class="fb">Your copy of the key.</div>`;
+        } else if (stage === "leaf") {
+          over.querySelector(".im").innerHTML = pic("key-flyleaf", "", "The flyleaf of the key's first printing") || `<div class="fb">CINDER REACH · FIRST PRINTING<br>S.V.<br>2b. Found above 2 000 m: not yet. Leave room.</div>`;
+          const all = fl.read.size === 3;
+          tx.innerHTML = `<div class="ch">THE FLYLEAF</div><h3>The key, first printing</h3>
+            <p>The title leaf your terrace copy never had. Read it as you would a specimen.</p>
+            <div class="${P}row">${[["stamp", "The stamp"], ["init", "The initials"], ["pencil", "The pencil"]].map(([k, l]) => `<button type="button" data-r="${k}" class="${fl.read.has(k) ? "done" : ""}">${l}</button>`).join("")}</div>
+            <p class="said" aria-live="polite">${fl.said || ""}</p>
+            ${all ? `<div class="${P}row"><button type="button" data-f="lay">${mine ? "Lay your couplet beside it" : "Lay your key beside it"}</button></div>` : ""}`;
+        } else if (stage === "lay") {
+          tx.innerHTML = `<div class="ch">THE FLYLEAF</div><h3>Whose hand?</h3>
+            ${mine ? `<p><span class="${P}hd p">HER PENCIL</span> ${mine}</p>` : `<p>Your copy has no couplet for it: the wolf went in under the old name.</p>`}
+            <p class="his">2b. Found above 2 000 m: not yet. Leave room.</p>
+            <p>${mine ? "The same cut, at the same altitude, on a leaf printed before you ever climbed to Hollin." : "A cut at 2 000 m that your key never made, on a leaf printed before you ever climbed to Hollin."} Mark the hand that wrote it.</p>
+            <div class="${P}row"><button type="button" data-h="print">Print</button><button type="button" data-h="hers">Her pencil</button><button type="button" data-h="his">A third hand: his pencil</button></div>
+            <p class="said" aria-live="polite">${fl.said || ""}</p>`;
+        } else {
+          tx.innerHTML = `<div class="ch">THE FLYLEAF</div><h3><span class="${P}hd p" style="font-size:13px">HIS PENCIL</span></h3>
+            <p class="his">2b. Found above 2 000 m: not yet. Leave room.</p>
+            <p class="said">Upright, precise, patient. Not print, and not mine. Whoever S.V. is wrote the key I have trusted since the first morning, and left room in it for an animal that had not climbed yet.</p>
+            <p>Every couplet you have followed is his prose. From here the key marks three hands, not two.</p>
+            <div class="${P}row"><button type="button" data-f="close">Close the drawer</button></div>`;
+        }
+        tx.querySelectorAll("[data-f]").forEach((b) => on(b, "click", () => {
+          const k = b.dataset.f;
+          if (k === "open") { st.flyleaf = true; draw("leaf"); }
+          else if (k === "lay") { fl.said = ""; draw("lay"); }
+          else if (k === "leave") end(" In Book II, at Cinder Reach, one drawer under the bench stays shut, and the key stays a printed thing with no author.");
+          else end(mine ? " At Cinder Reach, in Book II, the key's first printing turns up in a drawer: initialled S.V., with your wolf couplet already pencilled on its flyleaf. “Not yet. Leave room.” The key now marks three hands: print, hers, his." : " At Cinder Reach, in Book II, the key's first printing turns up in a drawer, initialled S.V., with a couplet for an upland wolf pencilled on its flyleaf: the one your own key still lacks.");
+        }));
+        tx.querySelectorAll("[data-r]").forEach((b) => on(b, "click", () => {
+          const k = b.dataset.r; fl.read.add(k);
+          fl.said = k === "stamp" ? "CINDER REACH · FIRST PRINTING. The archive's own stamp, in the blue the Continuum used before it was the Continuum." : k === "init" ? "S.V., in pencil, where an owner signs. Nobody on the terrace ever said who wrote the key." : "Below the initials, pencilled couplets for the blank end of the key. 2b. Found above 2 000 m: not yet. Leave room.";
+          draw("leaf");
+        }));
+        tx.querySelectorAll("[data-h]").forEach((b) => on(b, "click", () => {
+          const k = b.dataset.h;
+          if (k === "his") { fl.done = true; draw("known"); return; }
+          fl.tries++; fl.said = k === "print" ? "Print does not smudge under a thumb. This is graphite." : "My pencil slants right and crosses its sevens. This one stands upright, and I was not here.";
+          draw("lay");
+        }));
+        const f = tx.querySelector("button"); if (f) f.focus();
+      };
+      over.innerHTML = `<div class="${P}fly" role="dialog" aria-label="The Flyleaf"><div class="im"></div><div class="tx"></div></div>`;
+      el.appendChild(over); draw("door");
+    };
+
+    const pellBtn = el.querySelector("[data-t=pell]"); const pellIco = pic("token-witness-pell"); pellBtn.innerHTML = `${pellIco}Pell’s tally (3)`;
     st.jaw = 0; drawSpec(); renderMeas(); renderKey();
     const intro = document.createElement("div"); intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="pl">PLATE XIV</div><h3>The Key</h3>
@@ -322,7 +422,8 @@ export default {
       <ol><li><b>T</b><span>Stopwatch: tap four times, once at each glow</span></li>
       <li><b>R</b><span>Drag the red jaw to the specimen’s tip, then read the rule</span></li>
       <li><b>G</b><span>Read the altimeter tag</span></li>
-      <li><b>1a/1b</b><span>Choose the branch your measure fits</span></li></ol>
+      <li><b>1a/1b</b><span>Choose the branch your measure fits</span></li>
+      <li><b>hands</b><span>Each couplet is marked print or pencil. Notice whose.</span></li></ol>
       ${losses >= 2 ? `<label><input type="checkbox" class="gentle" checked> Lira’s annotated key: show the measure each couplet uses</label>` : ""}
       <button type="button">Open the collection</button></div>`;
     el.appendChild(intro);

@@ -7,6 +7,8 @@
 // Added in the refine pass: Ask Mara (two uses, three after two lost songs) sings one weathered slot
 // slowly and pencils it faintly over the weathering, so at least one must be heard or reasoned out.
 // The plotted path draws itself on the map; beats follow the transcription and the plots.
+// Drawn with the game's art (api.art): Mara's fourteen neume cards as a rail that also enters notes,
+// rests and pitch for touch players; the peak map under the grid; Mara's plate beside her voice.
 const P = "lira-calyx-storm-song-cipher-";
 const INK = "#3b2618", RED = "#b3212b", PAPER = "#e9dcbd", BLUE = "#2f4c86", GOLD = "#c8913a", PENCIL = "#6f6a62";
 const SONG = [2, "r", "r", "r", 1, "r", "r", "B", 0, "r", "r", "r", 3, "r", "r", "r", 5, "r", "r", "B", 4, "r", "r", "r"];
@@ -30,6 +32,8 @@ export default {
   mount(root, api) {
     const off = [], timers = [];
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); off.push(() => t.removeEventListener(e, f, o)); };
+    const A = api.art || { has: () => false, url: () => "" };
+    const pic = (id, cls = "", alt = "") => (A.has(id) ? `<img class="${cls}" src="${A.url(id)}" alt="${alt}" draggable="false">` : "");
     root.style.background = "#d9c9a3";
     const TRUE = walk(SONG);
     const losses = api.store.get("losses", 0);
@@ -75,6 +79,15 @@ export default {
       .${P}card li b{font:700 13px 'Courier Prime',monospace;display:inline-block;min-width:6.5em}
       .${P}card button{grid-column:1/-1;justify-self:start;background:${INK};color:${PAPER};font-size:17px;padding:10px 22px}
       .${P}card button:hover{background:${RED}!important}
+      .${P}card .mf{grid-column:1/-1;display:flex;gap:10px;align-items:center;font:italic 15px/1.35 'IM Fell English',Georgia,serif;color:${BLUE}}.${P}card .mf img{width:64px;height:auto;border:1px solid ${INK}}
+      .${P}rail{display:flex;gap:6px;overflow-x:auto;padding:4px 2px 8px;margin:8px 0 0;scrollbar-width:thin}
+      .${P}rail button{flex:0 0 auto;padding:0!important;border:1px solid ${INK}!important;min-height:0!important;width:62px;height:62px;background:${PAPER}!important}
+      .${P}rail button img{display:block;width:100%;height:100%}
+      .${P}rail button.tool{outline:2px solid ${BLUE};outline-offset:1px}
+      .${P}rl{font:12px 'Courier Prime',monospace;color:${PENCIL};margin:8px 0 0}
+      .${P}vw{display:flex;gap:10px;align-items:flex-start}.${P}vw img{width:54px;height:auto;border:1px solid ${INK};flex:0 0 auto}.${P}vw .${P}voice{flex:1;margin:0}
+      .${P}title img.tab{height:30px;width:auto;margin-left:auto}
+      .${P}wrap button.mara img{height:24px;width:24px;vertical-align:middle;margin:-4px 6px -2px -2px}
     </style>
     <div class="${P}spread">
       <section class="${P}page ${P}left" aria-label="Staffs">
@@ -82,10 +95,11 @@ export default {
         <div class="${P}bars"></div>
         <div class="${P}row"><button type="button" data-a="play">▶ Play the song</button><button type="button" data-a="mine">▶ Play mine</button><button type="button" class="mara" data-a="ask" hidden>Ask Mara (2)</button><button type="button" data-a="plot">Plot the path</button></div>
         <p class="${P}help">Tap a line or space on your staff for a note, below it for a rest; tap again to clear. Keys: ← → slot · ↑ ↓ pitch · Enter note · R rest · Delete clear · M ask Mara.</p>
-        <p class="${P}voice" aria-live="polite"></p>
+        ${A.has("neume-punctum") ? `<p class="${P}rl">MARA’S NEUME CARDS · tap one: the outlined cards write on your staff</p><div class="${P}rail" role="group" aria-label="Neume cards"></div>` : ""}
+        <div class="${P}vw">${pic("fig-mara", "", "Mara, storm-singer")}<p class="${P}voice" aria-live="polite"></p></div>
       </section>
       <section class="${P}page ${P}right" aria-label="Correlation table and peak map">
-        <div class="${P}title" style="font-style:normal">Lira's correlation table</div>
+        <div class="${P}title" style="font-style:normal">Lira's correlation table${pic("tab-songs", "tab")}</div>
         <table class="${P}tbl"><tbody>
           ${[0, 1, 2, 3, 4, 5, 6].map((k) => `<tr><td>interval ${k} ${k === 0 ? "(the drone)" : ""}</td><td>bearing ${k * 30}°</td></tr>`).join("")}
           <tr><td>rest, one beat</td><td>100 m</td></tr><tr><td>breath</td><td>a node</td></tr></tbody></table>
@@ -99,7 +113,7 @@ export default {
     const msg = (t, bad) => { const m = $("." + P + "msg"); m.textContent = t; m.classList.toggle("bad", !!bad); };
     const voice = (t) => { $("." + P + "voice").textContent = t; };
     const askBtn = $("[data-a=ask]");
-    const syncAsk = () => { askBtn.textContent = `Ask Mara (${st.asks})`; askBtn.disabled = st.asks <= 0 || [...WEATHERED].every((i) => st.asked.has(i)); };
+    const syncAsk = () => { askBtn.innerHTML = `${pic("token-witness-song")}Ask Mara (${st.asks})`; askBtn.disabled = st.asks <= 0 || [...WEATHERED].every((i) => st.asked.has(i)); };
 
     // ---- staff drawing: four lines, the drone on the bottom line; positions 0..6 = line, space, line...
     const SLOT = 38, X0 = 18;
@@ -194,7 +208,7 @@ export default {
     const mx = (x) => (x - minX) * U, my = (y) => (maxY - y) * U;
     mapSvg.setAttribute("viewBox", `0 0 ${GW * U} ${GH * U}`);
     const drawMap = () => {
-      let s = "";
+      let s = A.has("peak-map") ? `<image href="${A.url("peak-map")}" x="0" y="0" width="${GW * U}" height="${GH * U}" preserveAspectRatio="xMidYMid slice" opacity=".5"/>` : "";
       for (let i = 0; i <= GW; i++) s += `<line x1="${i * U}" x2="${i * U}" y1="0" y2="${GH * U}" stroke="#bfae8a" stroke-width=".25"/>`;
       for (let j = 0; j <= GH; j++) s += `<line y1="${j * U}" y2="${j * U}" x1="0" x2="${GW * U}" stroke="#bfae8a" stroke-width=".25"/>`;
       const pk = [mx(TRUE.nodes[1][0] + 0.6), my(TRUE.nodes[1][1] + 1.2)];
@@ -247,6 +261,28 @@ export default {
     el.querySelectorAll("[data-a]").forEach((b) => on(b, "click", () => { act(b.dataset.a); if (b.dataset.a !== "plot") b.blur(); }));
     renderBars(); drawMap();
 
+    // ---- the neume cards: a legend, and for touch a way to write (note, rest, pitch up and down)
+    const CARDS = [["punctum", "One note: writes the pencilled pitch in the slot.", "note"], ["rest", "A rest: one beat, 100 m along the bearing.", "rest"], ["drone", "The drone: interval 0, bearing 0°.", "drone"],
+      ["pes", "Pes: one step up, +30°.", "up"], ["clivis", "Clivis: one step down, −30°.", "down"], ["breath", "A breath: a node. Mara's breaths are already on your staff.", null], ["virga", "Virga: one note, held.", null],
+      ["scandicus", "Scandicus: two steps up.", null], ["climacus", "Climacus: two steps down.", null], ["torculus", "Torculus: up, then back.", null], ["porrectus", "Porrectus: down, then back.", null],
+      ["quilisma", "Quilisma: up slowly; the storm is close.", null], ["clef", "The clef: the line of do. Count intervals from the drone.", null], ["custos", "Custos: where the next line begins.", null]];
+    const rail = $("." + P + "rail");
+    if (rail) {
+      rail.innerHTML = CARDS.filter(([n]) => A.has("neume-" + n)).map(([n, t, k]) => `<button type="button" data-n="${n}" class="${k ? "tool" : ""}" title="${t}" aria-label="${n}. ${t}">${pic("neume-" + n)}</button>`).join("");
+      on(rail, "click", (e) => {
+        const b = e.target.closest("[data-n]"); if (!b || st.over) return;
+        const [, t, k] = CARDS.find((c) => c[0] === b.dataset.n);
+        const move = () => { let i = st.cur; do { i = (i + 1) % SONG.length; } while (SONG[i] === "B"); st.cur = i; };
+        if (SONG[st.cur] === "B" && k) move();
+        if (k === "note") { st.mine[st.cur] = st.pitch; tone(st.pitch, 0.35); st.flashI = st.cur; move(); }
+        else if (k === "rest") { st.mine[st.cur] = "r"; st.flashI = st.cur; move(); }
+        else if (k === "drone") { st.pitch = 0; st.mine[st.cur] = 0; tone(0, 0.35); st.flashI = st.cur; move(); }
+        else if (k === "up") { st.pitch = Math.min(6, st.pitch + 1); tone(st.pitch, 0.25); }
+        else if (k === "down") { st.pitch = Math.max(0, st.pitch - 1); tone(st.pitch, 0.25); }
+        msg(t); if (k) { renderBars(); progressBeats(); }
+      });
+    }
+
     const intro = document.createElement("div"); intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><span class="S">S</span><h2>Storm-Song Cipher</h2>
       <p class="goal">Copy Mara’s song, then plot it to find N7 and N8.</p>
@@ -257,6 +293,7 @@ export default {
       <ul><li><b>tap staff</b>a note on a line or space; below it, a rest</li>
       <li><b>▶ play</b>listen to the song, or one bar</li>
       <li><b>plot</b>walk the path from Mara’s ledge; one free retry</li></ul>
+      ${A.has("fig-mara") ? `<div class="mf">${pic("fig-mara")}<span>“Don't write the words. Write where I breathe.”</span></div>` : ""}
       <button type="button">Begin</button></div>`;
     el.appendChild(intro);
     const sb = intro.querySelector("button");

@@ -175,13 +175,15 @@ Dialogue is sparse throughout, as in the source: a burst of lines, never a scene
 
 | Character | Want | Fear | Voice (sample lines) |
 | --- | --- | --- | --- |
-| **Dr. Lira Calyx** (player, Books I to IV) | To know what is true and to say it. | That method itself can be turned against the world. | "Life is not choosing upward. It is being chosen." *(source)* / "I know paranoia when it blooms. This is not paranoia. This is presence." *(source)* / "Who wrote this?" *(source)* |
+| **Dr. Lira Calyx** (player, Books I to IV) | To know what is true and to say it; under that, a clean result under her own name: one model, one author, vindication after being branded a saboteur (accepted 2026-11-15). | That method itself can be turned against the world. | "Life is not choosing upward. It is being chosen." *(source)* / "I know paranoia when it blooms. This is not paranoia. This is presence." *(source)* / "Who wrote this?" *(source)* |
 | **The archivist** (player, epilogue; the hand in the margins, and the hooded archivist of the subterranean city) | To make up for arriving too late. | Being the reason she was caught. | "Phase offset miscalculated. Re‑sample at 0.5 s resolution." *(source)* / "If you are reading this, you are a target." *(source)* / "North shaft. Leave it open." |
 | **Mara**, Peakborn storm-singer | To keep the mountain answering. | A mountain "that no longer answers" *(source, of the elders' songs)*. | "Don't write the words. Write where I breathe." / "It is singing back wrong." |
 | **Joren**, Midlander engineer | Restoration of the terrace he lost. | That nothing lost comes back. | "Hold the post. I'll level it." / "They said they could raise it again. Hollin's twin. I believed them." |
 | **Kade**, Lowland scout | To get people through the pockets alive. | Wasted crossings. | "Count to forty in there. Not forty-one." / "I carry charges. You carry numbers. We'll see." |
 | **Dr. Solace Veylor** | A world strong enough to survive itself. | The old world's weakness returning. | "the old world was weak; a hard reset is a mercy." *(source, narration of his argument)* / "I read your model years before you wrote it." |
-| **Pell**, a Hollin Terrace child | To count striders as well as Lira. | The siren. | "Seventeen. Or eighteen. One was a baby." |
+| **Pell**, a Hollin Terrace child | To count striders as well as Lira. | The siren. | "Seventeen. Or eighteen. One was a baby." / *(her book, in capitals)* "DOCTOR SAYS 0.44. I WROTE IT SAME." |
+
+**Accepted 2026-11-15 (section 21 has the whole of it).** Lira *needs* the opposite of what she wants: to let other hands into the book. Pell copies Lira's numbers into her own book every evening, in capitals; it is the one off-site copy of Book I. Veylor wrote the dichotomous key Lira has used since minute 11, and wants a measurer honest enough to check him. The archivist's and Joren's secrets are stated in section 21 and are not played until phase 2.
 
 **Arcs by ending.**
 
@@ -459,6 +461,8 @@ Every 1D page is a journal spread: left page for the work, right page for Lira's
 | `b4-key-3` Spore-Weaver arrays | 10 arrays | 2 seeded arrays that pass every couplet except a phase test | Classes are oscillator types: coherent, incoherent, seeded. The player's own earlier couplets are part of the key | `readings`, `nodes_verified`, `verified_share` |
 
 - **Hints.** A wrong branch shows the measurement it should have used, in grey, after 2 misses.
+- **Whose couplet (accepted 2026-11-15, built in phase 1).** Every couplet shows the hand it is in: **print**, **her pencil** (the couplets the player writes), and, once `flyleaf_found` is set, **his pencil**. In `b1-key-1` the key is all print until the player's own couplet goes in. The mark is a small boxed label beside the couplet's first line; pencil marks are dashed.
+- **The Flyleaf (accepted 2026-11-15, built in phase 1).** One extra drawer in the existing archive scene `b2-archive`: not on the index, labelled "Key, Mid-Slopes. First printing." Inside is the key's title leaf, which the terrace copy never had: the archive's stamp, the initials S.V. in pencil, and pencilled couplets for the blank end of the key, among them "2b. Found above 2 000 m: not yet. Leave room." The player reads the stamp, the initials and the pencil, lays their own Book I couplet beside it, and marks whose hand wrote it (print, her pencil, a third hand). Marking the third hand sets `flyleaf_found`. In the web build this plays as the closing step of The Key's plate. Reverse keying from the flyleaf's blank couplets waits for phase 3.
 
 ### Storm-Song Cipher (cipher)
 
@@ -490,10 +494,13 @@ Every 1D page is a journal spread: left page for the work, right page for Lira's
 | Appearance | Pages | Forgeries | Distractors | Writes |
 | --- | --- | --- | --- | --- |
 | `b2-audit-1` the redacted brief | 1 spread: your journal against the published brief | 3 alterations to N1–N3 values | None | `readings`, `nodes_verified`, `forgeries_caught`, `forgeries_missed`, `false_accusations` |
-| `b3-audit-2` forged entries | 3 spreads | 5, or 7 at exposure 40+ | 2 archivist notes; 1 forgery that imitates her hand well and is caught only by the clock | same |
+| `b3-audit-2` forged entries | 3 spreads | 5, or 7 at exposure 40+; plus 1 caught only by Pell's book (accepted 2026-11-15) | 2 archivist notes; 1 forgery that imitates her hand well and is caught only by the clock | same |
 | `ep-audit-3` the testament | 8 spreads, as the archivist | Continuum replacement pages (4), blank sealed sheets (3) | 12 redactions to restore or leave | `pages_restored`, `names_protected` |
 
 - **The epilogue version.** The archivist restores the testament. Each of the 12 black bars can be lifted (if the player knows the text from play, the bar lifts to the true line; otherwise to a guess the game marks uncertain) or left. Some bars hide methods (restoring helps future readers), some hide names of living people: Mara, Kade, Pell's family (restoring them exposes them). Leaving every name black sets `names_protected`. This writes the testament the ending scene shows.
+- **The four hands (accepted 2026-11-15, built in phase 1).** Each hand is a drawn stroke set: Lira's (slants right, sevens crossed), the Continuum's (upright, even pressure), the other hand's (small, slanted left, blue-black) and Pell's (pencil capitals). The loupe shows the selected line's seven beside the four reference cards, which the player can open at any time.
+- **Pell's book (accepted 2026-11-15, built in phase 1).** A second field card for all of Book I, relay readings included, exactly as wrong as Lira was that day. The player pages through it (six pages) and matches a line by eye. In `b3-audit-2` two lines are carried forward from Book I; one is a forgery in her hand and in sequence that states a relay number as a hand reading, and only Pell's book catches it (so the spread has 6 forgeries, or 8 at exposure 40+). It cannot catch a seeded relay number: a copy is only as right as the day it copies. Writes `pell_book_checked`.
+- **The bar gauge (accepted 2026-11-15, built in phase 1).** A black bar on a spread can be selected like a line. The loupe shows its edge; the gauge measures it; the player then says how it was made: **ruled** (blue under the black, the same length at both edges: surgical) or **brushed** (clumsy). A right call writes `bars_gauged`. The first surgical bar is 41 mm, and Lira writes: "The bar is 41 mm long. I measured it. I do not know what else to do with it." Under it the small hand answers: "I ruled that line. I am sorry for its length." This is the first step of the twelve bars (section 21); the last steps, the staff and the plot, wait for phase 3.
 - **Hints.** The tally shows how many forgeries remain in Audit I only. In Audit II, after 3 minutes, Lira's note says which spread has the most.
 
 ### The Node Board (board game, network strategy)
@@ -592,6 +599,8 @@ A player who answers all eight notes and publishes everything reaches about 80 b
 
 After the Book I note is published, one page of the official field log is blacked out. After the brief, the journal's dossier tabs for N1 to N3 show ■ until Journal Audit I restores them (a caught alteration restores its node's value; a missed one leaves it `doubted`). A redacted value shows as ■ on the Node Board too.
 
+**Two kinds of bar (accepted 2026-11-15).** The source: "Pages arrive with black bars—some clumsy, some surgical." (`05_Worldbuilding/02_The_Redacted_Testament_of_Lira_Calyx.md`). A clumsy bar is brushed. A surgical bar is ruled to a length with blue under the black, and there is one per stage, twelve across the four books. From Journal Audit I the bar gauge measures them (`bars_gauged`). Phase 1 builds the bar, the gauge and the first measurement; what the lengths say is section 21's secret and is played in phase 3.
+
 ### Gear
 
 | Tier | Source | Effect |
@@ -640,6 +649,8 @@ Priorities are checked from 1. Every ending keeps a cost.
 - **Final scenes.** `b4-collapse`: Kade's charges; the core destroyed; the mountain drops a tier; the Continuum falls. `ep-tunnel`: rubble. `ep-vault`: the vault is open to the sky. `ep-audit-3`. `end-fire`: the archivist digs the books out of the rubble of the terraces.
 - **Cost.** "Phase offsets, not fire" was her plea; the Mid-Slope terraces fall. If Joren was forgiven, he dies keeping the water lifts running during the evacuation; one line, off-screen.
 - **Last image.** Silent water lifts; the river still glowing.
+
+**Accepted 2026-11-15, not yet in `data/endings.json`.** A fifth ending, **Errata**, and the changes to the costs of the four above are accepted and stated in section 21. They belong to phase 3: Errata needs an ending scene that `data/scenes.json` does not have yet ("scene to add": `end-errata`), so the resolver, the table above and `data/endings.json` stay as they are in this pass. Phase 1 writes one of Errata's two conditions, `flyleaf_found`. The as-written ending is unchanged and stays the default.
 
 ### How a player reaches each one on purpose
 
@@ -737,7 +748,7 @@ collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg
 
 - `data/game.json`: title, source path, target 160–180, players 1, core verb `measure`, six chapters totalling 176.
 - `data/scenes.json`: 2D modes `climb` and `lens` (both `scroll`); 1D games `assay`, `key`, `cipher`, `audit`, `board`; 45 scenes (23 3D, 8 2D, 14 1D), each with reads, writes, transitions and next. Each scene also carries a `minutes` field, which is beyond the shared schema: the planned play time of that appearance; scene minutes add up to each chapter's minutes (the four ending scenes are alternatives, counted once).
-- `data/flags.json`: 32 entries, including two ledgers (`readings`, `margin_notes`).
+- `data/flags.json`: 35 entries, including two ledgers (`readings`, `margin_notes`). Three were added on 2026-11-15 for phase 1: `bars_gauged`, `pell_book_checked`, `flyleaf_found` (written by `b2-audit-1` and `b3-audit-2`, by `b3-audit-2`, and by `b2-archive`).
 - `data/endings.json`: four endings, as in section 13.
 
 ## 19. Build plan
@@ -769,7 +780,61 @@ collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg
 2. **In the author's ending Lira is dead, and she may live in The Archivist in Time.** "She is taken" (Book IV) is how she dies, not a captivity: the archivist says "She paid with her life. The Continuum took her into the mountain.", the final warning speaks of "Lira’s sacrifice", and the summary says "knowledge survives, but its author does not". The Redacted Testament no longer keeps captivity open: her lamp goes out, and the archivist's three admissions are read verbatim at the desk. The Archivist in Time is the one change the source itself names, that the follower "arrived too late"; the player earns the other timing, and the ending keeps its cost (Veylor lives, both are hunted, every terrace not held falls), so it is not a tidy rescue. Changed: section 3, the arcs table, section 13 and `data/endings.json` (the as-written summary).
 3. **The needle note is not the archivist's.** The source says only "A clandestine note arrives", and the archivist's confession lists "the tiny correction on page 47, the misfiled footnote, the misnumbered page", not this note. Attributing it would add to the author's mystery, so the game cuts the attribution: the note arrives loose and unsigned, in no hand the journal knows, cannot be answered, and still points the coalition down. There are now eight margin notes, renumbered (the old 6 to 9 are now 5 to 8). The Archivist in Time asks for 6 of the 8 replies (75%, against the old 7 of 9, 78%), and a player who answers every note and publishes everything reaches exposure about 80 instead of 85. Changed: Book II to IV steps, the note table, sections 11, 12, 13, 17 and 21, `data/endings.json`, `data/flags.json` (`margin_notes`, `margin_notes_answered`, `margin_notes_acted`) and `data/scenes.json` (`b2-cipher-1` no longer writes the margin flags).
 
-## 21. Added for the game
+## 21. Accepted development (2026-11-15)
+
+The author accepted the deep dive (`DEEP_DIVE.md`) whole on 2026-11-15. This section states the accepted story. Nothing here edits the source or contradicts it; the source lines are quoted verbatim from `05_Worldbuilding/02_The_Redacted_Testament_of_Lira_Calyx.md`. **Phase 1 is built in this pass**: the four hands, the bar and the bar gauge, Pell's book as a tool in Journal Audit, whose-couplet marks in The Key, the Flyleaf as one extra drawer in `b2-archive`, and the sample lines those carry. Everything else below is accepted and waits: phase 2 is the midpoint (the Excision Desk, Three Nights, the Sluice Log, Pell's Book as a scene), phase 3 the long puzzle, the layer links, the new mode rules and the endings.
+
+**Dramatic question.** When the instruments, the record and her own hand can all be written on by someone else, what can one honest observer still vouch for?
+
+**Want and need.** Lira wants a clean result under her own name: one model, one author, vindication after being branded a saboteur. She needs the opposite: to let other hands into the book. A child's copy, a singer's breath, a censor's correction and an engineer's confession are the only data nobody seeded.
+
+**The opposing force.** Veylor wants to be checked by someone good enough to check him. He belonged to "a lab consortium that ceased public operations months before the Convergence" (source): they saw it coming and built ReGenesis as triage. The Mid-Slopes are "Dense forests grown from radiation‑resistant seeds" (source), and the game says whose seeds. Hollin Terrace is his first Genesis working. His argument: he was right once, and terraces trading compounds as currency are the old weakness growing back.
+
+**Characters, new or deepened.**
+
+| Character | Want | Secret | Scene | Phase |
+| --- | --- | --- | --- | --- |
+| **The archivist** (unnamed, as in the source) | To keep her alive long enough to finish | A Continuum clerk of excisions. The surgical black bars are their other handwriting. | The Excision Desk | 2 (phase 1 seeds it: the ruled bar, the small hand owning it, the EXCISED stamp) |
+| **Veylor** | A measurer honest enough for the world after | He wrote the dichotomous key. Its couplets are his prose. The source: "He reveals that he anticipated her model". | The Flyleaf | **1** |
+| **Joren** | To raise the drowned terrace | He drowned it, opening the sluices on a relay river level. | The Sluice Log | 2 |
+| **Pell** | To count as well as Lira | She copies Lira's numbers into her own book in capitals, every evening: the one off-site copy of Book I. | Pell's Book | **1** as a tool in Journal Audit; 2 as the scene where she hands it over |
+
+**The secret under the story.** "Coordinates are excised in a cipher." and "Pages arrive with black bars—some clumsy, some surgical." (both `05_Worldbuilding/02_The_Redacted_Testament_of_Lira_Calyx.md`). The clumsy bars are censorship; the surgical ones are a message. Each is ruled to a length and set on a line; laid under a four-line staff they are neumes, in the notation the sealed archive is written in. The scrap "She’s close. Move the logs." (source) was an order to the archivist, who moved them into the one index Lira would learn to read. Twelve surgical bars across the four books spell a route from the core to the north shaft. **The long puzzle** has three steps: measure each bar with the gauge (phase 1, from Journal Audit I), read it on the staff (phase 3, from Book III), plot it before the descent (phase 3). Solved, it is the route; unsolved, the archivist reads it alone in the epilogue.
+
+**Act structure.** "Existing" is a scene this design already had; "source" is one the source itself tells; "new" is accepted on 2026-11-15.
+
+| # | Scene | Status | Built |
+| --- | --- | --- | --- |
+| 1 | **The Torn Book.** A lamp, rubble, "the Peaks are—". | Existing | Yes |
+| 2 | **Baselines.** Striders on the bridge; Pell copies each number. | Existing; the copying is new | The copying shows in The Key and the Node Board drill (phase 1) |
+| 3 | **Page 47.** Pattern α, the first note, "Who wrote this?" | Source | Yes |
+| 4 | **The Flyleaf.** Veylor's key, and your couplet in it. | New, inside `b2-archive` | **Phase 1** |
+| 5 | **The Ridge.** The hearing; the harvester; the scrap. | Source | Yes |
+| 6 | **The Excision Desk** (midpoint). You redact her brief. | New. Scene to add: `b2-excision-desk` (1D, audit) | Phase 2 |
+| 7 | **The Sluice Log.** Joren's terrace and what he trusted. | New, inside an existing Book III scene | Phase 2 |
+| 8 | **The City.** The hooded archivist; Joren brings the guards. | Source | Yes |
+| 9 | **Three Nights** (darkest moment). The loupe fails her own lines. | New, from the source's final chapter. Scenes to add: `b3-three-nights` (1D, audit) and its dream slide (2D, lens) | Phase 2 |
+| 10 | **Pell's Book.** A control copy in a child's capitals. | New, inside an existing scene | Phase 2 (the book itself is a tool from phase 1) |
+| 11 | **The Constant.** Veylor, the damping term, the board. | Source | Yes |
+| 12 | **The Shear and the Desk.** | Source | Yes |
+
+Phase 2 adds 9 minutes and trims 5 (the outpost stealth merges into the escape; one camp leaves each of the first two climbs), to finish at the 180-minute ceiling. Until then the design stays at 176.
+
+**Endings.** Accepted; all of it phase 3. `data/endings.json` is unchanged in this pass.
+
+- **The Redacted Testament (as written).** Unchanged, and still the default. She dies. New cost made visible: in the epilogue the archivist decodes their own twelve bars, the route she never read.
+- **The Archivist in Time.** The archivist breaks cover to reach her and loses the vault. Only six of the twelve bars can be lifted. Solving the bars may stand in for two of the six replies.
+- **Directed Resilience.** Lira's last act is a Journal Audit in which she rules the bars herself.
+- **Fire.** As designed, plus: the songs measured a core that is gone, and now decode to nothing.
+- **Errata (new).** Offered only if the damping was re-measured (`gamma_remeasured`) and the Flyleaf found (`flyleaf_found`): Lira withdraws her schedule and publishes the correction to her own model, unsigned. No pulse, no pause: the storms take the terraces, Hollin among them, evacuated on the siren baseline the player set in minute 6. She lives with her name on nothing, and a hundred settlements start re-measuring. Scene to add: `end-errata`.
+
+**New rules by mode (accepted; phase 3 unless marked).** Climb: redacted strata, the core drill, sung gaps. Lens: phase dye, rewiring planes, ghost filaments, the maker's mark 9. Assay: the standard, the blank run, the false line on the Continuum's reference card. Key: whose couplet (**phase 1**), reverse keying. Cipher: the bar staff, the dirge. Audit: the four hands, Pell's book, the bar gauge (**phase 1**); the Excision Desk (phase 2). Board: witness tokens, the honest pencil, the calm line dropping. The three links between layers (bars cut at the Desk black out strata and nodes; cores add reference lines to the next Assay; a written couplet changes what the climbs draw) are phase 3.
+
+**Lines written for the game and used in phase 1** (not the author's text): "Strider count, bridge, 06:10: 17. Pell says 18." / "The bar is 41 mm long. I measured it. I do not know what else to do with it." / *(the small hand)* "I ruled that line. I am sorry for its length." / *(Pell's book)* "DOCTOR SAYS 0.44. I WROTE IT SAME." / *(pencil, the flyleaf)* "2b. Found above 2 000 m: not yet. Leave room."
+
+**Art.** The style bible of `DEEP_DIVE.md` section 4 stands: paper, iron-gall line, bars with fibrous ends and blue under the surgical ones. Never shown: the archivist's face, Veylor's face except as a fracture in bark, what is under a bar unless the player lifts it, Lira's death. The code-drawn set is in `art/` and is what the web modes are drawn with.
+
+## 22. Added for the game
 
 Everything below is a proposal for the game, not the author's text.
 
@@ -790,3 +855,6 @@ Everything below is a proposal for the game, not the author's text.
 - The archivist saying "You are one of us now." to Lira in The Archivist in Time (the line is the author's; its use to Lira is not).
 - The epilogue's restore-or-leave decisions and `names_protected`; the close-or-keep-going prompt as an interactive choice.
 - From `docs/ADAPTATIONS.md`, replaced to fit `docs/COLLECTION.md`: the specimen card game became The Key (taxonomy), and the archive cipher lock became Storm-Song Cipher (lock picking belongs to Behind the Peephole).
+- **Accepted 2026-11-15** (from `DEEP_DIVE.md`; the author's "i accept"). Built in phase 1: the four hands as drawn stroke sets and reference cards; the two kinds of bar, the bar gauge, the 41 mm bar, and `bars_gauged`; Pell copying Lira's numbers, Pell's book as a second field card, the forged line only it catches, and `pell_book_checked`; whose-couplet marks; the Flyleaf, the unindexed drawer in `b2-archive`, the initials S.V., the archive stamp, and `flyleaf_found`; Veylor as author of the key; the lines listed in section 21; the cut-out climb sprites in `art/`.
+- **Accepted 2026-11-15, waiting for phase 2**: the archivist as a Continuum clerk of excisions and the scrap as an order to them; the Excision Desk, its quota, supervisor and crib; Joren drowning his own terrace on a relay reading, and the Sluice Log; Pell's Book as a scene; Three Nights, the loupe failing on her own hand, the dream slide; the time trims to 180.
+- **Accepted 2026-11-15, waiting for phase 3**: the surgical bars as a neume cipher and the twelve bars as the long puzzle; Veylor as planter of the Mid-Slope forests, and "You love that terrace. I planted it."; the new rules of each mode listed in section 21; the three layer links; the ending changes and the ending Errata with its condition; solving the bars standing in for two replies; the archivist's desk log on a second playthrough.

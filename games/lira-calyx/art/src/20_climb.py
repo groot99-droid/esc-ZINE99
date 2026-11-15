@@ -588,3 +588,62 @@ def sec_redact(a: Art):
     a.rect(1536, 40, 48, 174, fill=BAR, opacity=0.9)
     for k in range(7):
         a.circle(1560, 62 + k * 22, 6, fill=PAPER if k == 6 else "none", stroke=PAPER, stroke_width=1.6)
+
+
+# ---- cut-out sprites for the climb in play: the same figures with no plate and no ledge, feet near y = 188
+SROW = "Climb sprites"
+
+
+def _sprite(a: Art, pose, hip=(78, 100), **kw):
+    return person(a, hip, pose, **kw)
+
+
+@asset(G, "spr-lira-stand", group="figures", title="Sprite: Lira standing", w=160, h=200, row=SROW)
+def spr_stand(a: Art):
+    """Lira standing with the journal open in her hands, cut out with no ground, for the climb in play."""
+    J = _sprite(a, STAND)
+    x, y = J["nhand"]
+    a.poly([(x - 6, y - 8), (x + 22, y - 14), (x + 26, y + 4), (x - 2, y + 10)], fill=PAPER, stroke=INK, stroke_width=2)
+
+
+@asset(G, "spr-lira-walk", group="figures", title="Sprite: Lira walking", w=160, h=200, row=SROW)
+def spr_walk(a: Art):
+    """Lira mid-stride, cut out with no ground, for the climb in play."""
+    _sprite(a, WALK, hip=(78, 102))
+
+
+@asset(G, "spr-lira-walk-2", group="figures", title="Sprite: Lira walking, passing step", w=160, h=200, row=SROW)
+def spr_walk2(a: Art):
+    """Lira's passing step, legs together under her, the second frame of her walk in play."""
+    _sprite(a, dict(lean=9, fleg=(8, -10), nleg=(-4, -22), farm=(-12, 30), narm=(18, 60)), hip=(78, 100))
+
+
+@asset(G, "spr-lira-jump", group="figures", title="Sprite: Lira jumping", w=160, h=200, row=SROW)
+def spr_jump(a: Art):
+    """Lira in the air, knees drawn up and arms thrown forward, cut out for the climb in play."""
+    _sprite(a, JUMP, hip=(74, 112))
+
+
+@asset(G, "spr-lira-anchor", group="figures", title="Sprite: Lira anchored", w=160, h=200, row=SROW)
+def spr_anchor(a: Art):
+    """Lira crouched low against a front, one hand back toward the ring, cut out for the climb in play."""
+    _sprite(a, ANCHOR, hip=(66, 140))
+
+
+@asset(G, "spr-lira-drill", group="figures", title="Sprite: Lira at the instrument", w=160, h=200, row=SROW)
+def spr_drill(a: Art):
+    """Lira kneeling still over an instrument on its rod, both hands on the crossbar, cut out for
+    the hand readings of the climb in play."""
+    J = _sprite(a, DRILL, hip=(64, 140))
+    x, y = J["nhand"]
+    a.rect(x - 4, y, 8, 186 - y, fill="#c9ced0", stroke=INK, stroke_width=2)
+    a.line(x - 16, y, x + 18, y, stroke=INK, stroke_width=5, stroke_linecap="round")
+
+
+@asset(G, "spr-mara", group="figures", title="Sprite: Mara at her camp", w=160, h=200, row=SROW)
+def spr_mara(a: Art):
+    """Mara in her violet cloak, hood up, one arm lifted, cut out to stand at her camp in play."""
+    J = _sprite(a, dict(lean=-4, nod=-14, fleg=(-4, 0), nleg=(6, 0), farm=(20, 60), narm=(110, 150)),
+                cloak="#6d5490", hair="hood", pack=None, hip=(78, 100))
+    hx, hy = J["head"]
+    a.ellipse(hx + 10, hy + 6, 2.6, 4, fill=INK)

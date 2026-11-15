@@ -8,6 +8,10 @@
 // (instant, never verified). DESIGN 10 names the instrument at a reading station; DESIGN 12 the relay.
 // Phases: the lower section; Mara's camp (rebreather); above 4 000 m, low gravity and fronts that
 // come faster. After two lost climbs the intro offers Mara's slower pace (air drains 30% less).
+// Drawn with the game's art (api.art): Lira and Mara are cut-out sprites (walk, jump, anchor, the still
+// kneel of a hand reading), pre-rendered once; the pose plate sits above the legend on wide screens;
+// the how-to card opens on the survey sheets, this climb's section marked. The stick figure remains
+// as the fallback.
 const P = "lira-calyx-cross-section-climb-";
 const INK = "#3b2618", PAPER = "#f1e8d2", SEAL = "#b3212b", CYAN = "#3fc4d0", VIOLET = "#5a3f7a", SLATE = "#56606a", OCHRE = "#c8913a";
 const LW = 640, ALT0 = 2800, ALT1 = 4600, S = 2.4; // logical px per metre of altitude
@@ -54,6 +58,11 @@ export default {
       .${P}pad button.st{border-color:${VIOLET};color:${VIOLET}}
       .${P}pad button[hidden]{display:none}
       .${P}flash{position:absolute;inset:0;pointer-events:none;z-index:2;opacity:0;transition:opacity .5s}
+      .${P}card img.bd{display:block;width:100%;height:auto;border:1px solid ${INK};margin-bottom:6px}
+      .${P}card .sheets{display:flex;gap:4px;align-items:center;margin-bottom:8px;font:700 11px 'Courier Prime',monospace;letter-spacing:.1em}
+      .${P}card .sheets img{width:17%;height:auto;border:1px solid ${INK};opacity:.45}.${P}card .sheets img.on{opacity:1;outline:2px solid ${SEAL}}
+      .${P}card .sheets span{margin-left:auto;white-space:nowrap}
+      @media (max-height:700px){.${P}card img.bd{display:none}}
       .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(241,232,210,.86);z-index:5;padding:14px;overflow:auto}
       .${P}card{width:min(470px,100%);background:#f6efdc;border:2px solid ${INK};color:${INK};box-shadow:5px 5px 0 rgba(59,38,24,.22)}
       .${P}card .tb{display:flex;justify-content:space-between;border-bottom:1.5px solid ${INK};font:700 12px 'Courier Prime',monospace;letter-spacing:.12em;padding:6px 12px;
@@ -88,6 +97,13 @@ export default {
     wrap.append(padL, padR);
     root.appendChild(wrap);
     const ctx = cv.getContext("2d");
+    // ---- art: each image decoded once and pre-rendered into an offscreen canvas at the size it is drawn
+    const A = api.art || { has: () => false, url: () => "", img: async () => null };
+    const SPR = {}, PLATE = {};
+    const bake = (img, w, h, flip) => { const c = document.createElement("canvas"); c.width = w; c.height = h; const g = c.getContext("2d"); if (flip) { g.translate(w, 0); g.scale(-1, 1); } g.drawImage(img, 0, 0, w, h); return c; };
+    ["stand", "walk", "walk-2", "jump", "anchor", "drill"].forEach((k) => A.img("spr-lira-" + k).then((im) => { if (im && alive) SPR[k] = [bake(im, 132, 165), bake(im, 132, 165, true)]; }).catch(() => {}));
+    A.img("spr-mara").then((im) => { if (im && alive) SPR.mara = [bake(im, 132, 165, true)]; }).catch(() => {});
+    [["stand", "fig-lira-stand"], ["walk", "fig-lira-walk"], ["jump", "fig-lira-jump"], ["anchor", "fig-lira-anchor"], ["drill", "fig-lira-drill"], ["climb", "fig-lira-climb"]].forEach(([k, id]) => A.img(id).then((im) => { if (im && alive) PLATE[k] = bake(im, 240, 320); }).catch(() => {}));
 
     // ---- strata patterns (after the pictograph's survey hatching)
     const pat = (bg, draw, size = 16) => {
@@ -316,6 +332,7 @@ export default {
     };
 
     // ---- drawing
+    let pose = "stand";
     const draw = (now) => {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.fillStyle = PAPER; ctx.fillRect(0, 0, W, H);
@@ -394,7 +411,8 @@ export default {
           ctx.beginPath(); ctx.moveTo(tx2, L.y); ctx.lineTo(tx2 + 14, L.y - 20); ctx.lineTo(tx2 + 28, L.y); ctx.closePath(); ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 1.2; ctx.stroke();
           ctx.beginPath(); ctx.moveTo(tx2 + 14, L.y - 20); ctx.lineTo(tx2 + 14, L.y - 34); ctx.stroke(); ctx.fillStyle = SEAL; ctx.beginPath(); ctx.moveTo(tx2 + 14, L.y - 34); ctx.lineTo(tx2 + 25, L.y - 30); ctx.lineTo(tx2 + 14, L.y - 26); ctx.fill();
           ctx.fillStyle = INK; ctx.font = "italic 14px 'IM Fell English', Georgia, serif"; ctx.fillText(L.camp, tx2 + 34, L.y - 6);
-          if (L.camp === "Mara's camp" && st.tier < 2) { // Mara, a seated figure by her tent
+          if (L.camp === "Mara's camp" && st.tier < 2 && SPR.mara) ctx.drawImage(SPR.mara[0], L.x + L.w - 60 - 22, L.y - 52, 44, 55);
+          else if (L.camp === "Mara's camp" && st.tier < 2) { // Mara, a seated figure by her tent
             const mx = L.x + L.w - 60; ctx.strokeStyle = INK; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(mx, L.y - 26, 4.5, 0, 7); ctx.moveTo(mx, L.y - 21); ctx.lineTo(mx, L.y - 8); ctx.lineTo(mx + 8, L.y - 4); ctx.stroke();
           }
         }
@@ -405,12 +423,21 @@ export default {
       // Lira
       const fx = pl.x, fy = pl.y, sw = pl.ground && pl.vx ? Math.sin(pl.walk / 9) * 6 : 0, sq = st.land > 0 && !RM ? 3 : 0;
       if (pl.anchored) { ctx.strokeStyle = SEAL; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(fx, fy - 24); ctx.lineTo(pl.ground.anchor, pl.ground.y - 11); ctx.stroke(); }
+      const reading = !!(keys.read && pl.ground && pl.ground.station && !pl.ground.station.done && !pl.vx);
+      pose = pl.anchored ? "anchor" : reading ? "drill" : !pl.ground ? "jump" : pl.vx ? (Math.floor(pl.walk / 14) % 2 ? "walk-2" : "walk") : "stand";
+      const spr = SPR[pose] || SPR.stand;
+      if (spr) {
+        if (st.knock > 0) { ctx.strokeStyle = SEAL; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(fx, fy - 24, 26, 0, 7); ctx.stroke(); }
+        ctx.drawImage(spr[pl.face < 0 ? 1 : 0], fx - 22, fy - 52 + sq, 44, 55 - sq);
+        if (st.tier >= 2) { ctx.fillStyle = CYAN; ctx.strokeStyle = INK; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(fx + pl.face * 5, fy - 40 + sq, 3, 0, 7); ctx.fill(); ctx.stroke(); }
+      } else {
       ctx.strokeStyle = st.knock > 0 ? SEAL : INK; ctx.lineWidth = 2.4; ctx.lineCap = "round";
       ctx.beginPath(); ctx.moveTo(fx, fy - 16 + sq); ctx.lineTo(fx - 5 + sw * 0.6, fy); ctx.moveTo(fx, fy - 16 + sq); ctx.lineTo(fx + 5 - sw * 0.6, fy);
       ctx.moveTo(fx, fy - 16 + sq); ctx.lineTo(fx, fy - 32 + sq);
       ctx.moveTo(fx, fy - 29 + sq); ctx.lineTo(fx + pl.face * 9, fy - (pl.ground ? 21 : 38)); ctx.stroke();
       ctx.fillStyle = st.tier >= 2 ? CYAN : OCHRE; ctx.fillRect(fx - pl.face * 9 - 4, fy - 32 + sq, 8, 13); ctx.strokeRect(fx - pl.face * 9 - 4, fy - 32 + sq, 8, 13);
       ctx.fillStyle = PAPER; ctx.beginPath(); ctx.arc(fx, fy - 38 + sq, 5, 0, 7); ctx.fill(); ctx.stroke(); ctx.lineCap = "butt";
+      }
       // storm front
       const sm = st.storm;
       if (sm.x != null) {
@@ -447,6 +474,8 @@ export default {
         ctx.font = "13px 'Courier Prime', monospace"; ctx.fillStyle = INK;
         ctx.fillText("○ anchor ring   ▲ camp", lx + 10, ly + 196); ctx.fillStyle = VIOLET; ctx.fillText("■ reading station", lx + 10, ly + 216);
         ctx.fillStyle = INK; ctx.globalAlpha = 0.8; ctx.fillText("Book III climb, 2 800–4 600 m", lx + 10, ly + 244); ctx.globalAlpha = 1;
+        const pk = pose === "walk-2" ? "walk" : pose, plate = PLATE[pk] || PLATE.stand;
+        if (plate && ly - 186 > 96) { ctx.drawImage(plate, lx, ly - 180, 126, 168); ctx.strokeStyle = INK; ctx.strokeRect(lx, ly - 180, 126, 168); }
       }
       // HUD text
       hudAir.style.width = Math.max(0, st.air) + "%"; hudAirBox.classList.toggle("low", st.air < 25);
@@ -473,6 +502,7 @@ export default {
     const intro = document.createElement("div");
     intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="tb"><span>SECTION A–A′</span><span>BOOK III</span></div><div class="in">
+      ${A.has("section-b3-climb") ? `<img class="bd" alt="Section: the High Peaks" src="${A.url("section-b3-climb")}"><div class="sheets" aria-hidden="true">${["section-b1-climb", "section-b2-descent", "section-b3-climb", "section-b3-escape", "section-b4-descent"].filter((id) => A.has(id)).map((id) => `<img alt="" class="${id === "section-b3-climb" ? "on" : ""}" src="${A.url(id)}">`).join("")}<span>SHEET 3 OF 5</span></div>` : ""}
       <h2>Cross-section climb</h2>
       <p class="goal">Climb from 2 800 m to the summit camp at 4 600 m before your air gives out three times.</p>
       <table>

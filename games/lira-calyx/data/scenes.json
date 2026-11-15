@@ -257,7 +257,8 @@
         "fragment_salvaged"
       ],
       "writes": [
-        "readings"
+        "readings",
+        "flyleaf_found"
       ],
       "enter": "fade",
       "exit": "push-in",
@@ -375,7 +376,8 @@
         "nodes_verified",
         "forgeries_caught",
         "forgeries_missed",
-        "false_accusations"
+        "false_accusations",
+        "bars_gauged"
       ],
       "enter": "cut",
       "exit": "flatten",
@@ -561,7 +563,9 @@
         "nodes_verified",
         "forgeries_caught",
         "forgeries_missed",
-        "false_accusations"
+        "false_accusations",
+        "bars_gauged",
+        "pell_book_checked"
       ],
       "enter": "push-in",
       "exit": "pull-out",

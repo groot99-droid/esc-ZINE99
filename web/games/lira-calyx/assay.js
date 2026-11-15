@@ -8,6 +8,8 @@
 // unlocked by the first precise reading; with two precise peaks it reads the isotope ratio, which adds
 // the seeding evidence to a win. Readings leave flags on the trace. After two lost assays, a fresh
 // sample of 7 mass is offered.
+// Drawn with the game's art (api.art): the six reagent vials on the rack, the cuvette and the
+// standard on the bench, the scope on the how-to card, dial faces on the filter and pulse controls.
 const P = "lira-calyx-assay-";
 const GREEN = "#7dff9a", DIM = "#2f6b3f", PANEL = "#26292b", SCREEN = "#071a0e", PAPER = "#efe4cb", INK = "#3b2618", SEAL = "#b3212b";
 const COMP = {
@@ -34,6 +36,8 @@ export default {
     const off = [];
     let raf = 0;
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); off.push(() => t.removeEventListener(e, f, o)); };
+    const A = api.art || { has: () => false, url: () => "" };
+    const pic = (id, cls = "", alt = "") => (A.has(id) ? `<img class="${cls}" src="${A.url(id)}" alt="${alt}" draggable="false">` : "");
     root.style.background = "#1b1d1e";
     const el = document.createElement("div");
     el.className = P + "wrap";
@@ -87,12 +91,21 @@ export default {
       .${P}card .knobs i::after{content:"";position:absolute;left:50%;top:3px;width:2px;height:10px;background:#ddd}
       .${P}card label{display:flex;gap:8px;align-items:center;font:14px 'Courier Prime',monospace;color:#ffcf6b;margin-top:10px}
       .${P}card button.go{margin-left:auto;background:${GREEN};color:#071a0e;border:0}
+      .${P}card .sc{display:block;width:100%;height:110px;object-fit:cover;object-position:50% 38%;border-radius:8px 8px 0 0;margin-bottom:-4px}
+      .${P}vial img{display:block;height:84px;width:auto;border-radius:3px}.${P}vial.used img{opacity:.35;filter:grayscale(.6)}
+      .${P}vial.drop img{animation:${P}tilt .6s}
+      .${P}vial.art{padding:4px 6px 6px!important;min-width:62px}
+      .${P}wrap button.di img{height:24px;width:24px;border-radius:50%;vertical-align:middle;margin:-4px 6px -2px -2px}
+      .${P}bits{display:flex;gap:8px;align-items:flex-end;margin-left:auto}.${P}bits img{height:84px;width:auto;border-radius:3px;border:1px solid #3a3e41}
+      .${P}page h3 img{height:26px;width:auto;vertical-align:middle;margin-right:8px}
+      .${P}std{float:right;width:74px;height:auto;margin:0 0 6px 10px;border:1px solid rgba(59,38,24,.5);border-radius:2px}
+      @media (max-width:640px){.${P}vial img{height:62px}.${P}bits img{height:62px}.${P}vial.art{min-width:0;flex:1 1 30%}}
     </style>
     <div class="${P}spread">
       <section class="${P}bench" aria-label="Bench">
         <div class="${P}lab"><span>CH1 · SPECTRUM 400–800 nm</span><span class="${P}cuv">CUVETTE: WELL N5</span></div>
         <div class="${P}scope"><canvas tabindex="0" aria-label="Spectrum. Drag or use arrow keys to move the cursor; Enter records."></canvas></div>
-        <div class="${P}row"><button type="button" data-a="filter" title="F">BAND FILTER (1)</button><button type="button" data-a="clear">FULL BAND</button><button type="button" data-a="pulse" title="P">PULSE (2)</button>
+        <div class="${P}row"><button type="button" class="di" data-a="filter" title="F">${pic("dial-sampling")}BAND FILTER (1)</button><button type="button" data-a="clear">FULL BAND</button><button type="button" class="di" data-a="pulse" title="P">${pic("dial-afu")}PULSE (2)</button>
           <button type="button" class="ratio" data-a="ratio" hidden>RATIO</button>
           <span style="flex:1"></span><button type="button" data-a="record" title="Enter">RECORD</button><button type="button" class="amber" data-a="conclude">CONCLUDE</button></div>
         <div class="${P}row ${P}rack" aria-label="Reagent rack"></div>
@@ -101,7 +114,7 @@ export default {
         <h3>Reference card: well sample, N5</h3>
         <div class="${P}cands"></div>
         <h3 style="margin-top:12px">Sample mass</h3><div class="${P}mass"></div>
-        <h3>Notes</h3><div class="${P}notes" aria-live="polite"></div>
+        <h3>${pic("tab-hypotheses")}Notes</h3><div class="${P}notes" aria-live="polite"></div>
       </section>
     </div>`;
     root.appendChild(el);
@@ -147,7 +160,9 @@ export default {
       REAGENTS.forEach(([name, comp], i) => {
         const b = document.createElement("button"); b.type = "button";
         b.className = P + "vial" + (st.used.has(comp) ? " used" : "") + (st.hint === comp ? " hint" : "");
-        b.innerHTML = `<i style="background:${COMP[comp].vial}"></i>${name.split(" ").slice(0, 2).join(" ")}`;
+        const va = pic(`assay-vial-r${i + 1}`);
+        if (va) b.classList.add("art");
+        b.innerHTML = `${va || `<i style="background:${COMP[comp].vial}"></i>`}${name.split(" ").slice(0, 2).join(" ")}`;
         b.title = `${name}: suppresses the ${COMP[comp].label} peak at ${COMP[comp].nm} nm (cost 1)`;
         b.setAttribute("aria-label", b.title);
         b.disabled = st.used.has(comp) || st.mass < 1 || st.over;
@@ -162,6 +177,8 @@ export default {
         });
         rack.appendChild(b);
       });
+      const bits = pic("assay-standard", "", "The standard: Book I bark, 452 nm") + pic("assay-cuvette", "", "The cuvette, well sample N5");
+      if (bits) rack.insertAdjacentHTML("beforeend", `<span class="${P}bits">${bits}</span>`);
     };
     const giveHint = () => {
       const remaining = CANDS.filter((c) => !st.struck.has(c.id) || c === st.sample);
@@ -312,7 +329,7 @@ export default {
     renderCands(); sync();
 
     const intro = document.createElement("div"); intro.className = P + "intro";
-    intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="scr">
+    intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play">${pic("assay-scope", "sc")}<div class="scr">
       <div class="ch">CH1 · BENCH SET-UP · CINDER REACH</div><h2>The Assay</h2>
       <p class="goal">Name the well sample: strike the card down to one, with one precise peak reading.</p>
       <dl><dt>vial</dt><dd>a reagent drops one named peak (1 mass)</dd><dt>drag</dt><dd>move the cursor (← → on the trace)</dd>

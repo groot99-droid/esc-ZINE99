@@ -217,6 +217,24 @@
       "type": "bool",
       "default": false,
       "description": "At the last page the player chose to close the book rather than keep going."
+    },
+    {
+      "name": "bars_gauged",
+      "type": "counter",
+      "default": 0,
+      "description": "Black bars the player has measured with the bar gauge and called correctly (ruled with blue under the black is surgical; brushed is clumsy). 0 to 12 across the four books; one surgical bar per stage is the long puzzle of the twelve bars. Phase 1 builds the gauge and the first bar (41 mm) in the Journal Audits; reading the bars on the staff and plotting them wait for phase 3. No ending reads it yet. Accepted 2026-11-15."
+    },
+    {
+      "name": "pell_book_checked",
+      "type": "counter",
+      "default": 0,
+      "description": "Lines carried forward from Book I that the player checked against Pell's book in Journal Audit II. Pell's book is her copy of every Book I number, relay readings included, exactly as wrong as Lira was that day: it catches a forgery that misquotes Book I and cannot catch a seeded relay number. Accepted 2026-11-15."
+    },
+    {
+      "name": "flyleaf_found",
+      "type": "bool",
+      "default": false,
+      "description": "Lira opened the unindexed drawer in the Cinder Reach archive and found the key's first printing, initialled S.V., with her own Book I pencil couplet already on its flyleaf in a third hand. From then on every couplet in The Key is marked print, her pencil or his pencil. One of the two conditions of the accepted ending Errata, which is not in endings.json until phase 3. Accepted 2026-11-15."
     }
   ]
 }

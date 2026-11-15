@@ -47,7 +47,12 @@ export default {
       .${P}card button{font:700 15px 'Courier Prime',monospace;background:${TEAL};color:${BLACK};border:0;padding:11px 22px;cursor:pointer;letter-spacing:.1em}
       .${P}card button:hover,.${P}card button:focus-visible{background:#f2f4f5}
       @media (max-width:520px){.${P}card{grid-template-columns:1fr}.${P}card .disc{height:90px;border-right:0;border-bottom:1.5px solid #39434a}}
-    </style><canvas></canvas><div class="${P}focus"><button type="button" class="hold" data-h="1" hidden>HOLD BREATH</button><button type="button" data-d="-1">FOCUS ▲</button><button type="button" data-d="1">FOCUS ▼</button></div>`;
+      .${P}dial{position:absolute;left:12px;bottom:40px;width:64px;height:64px;border-radius:50%;z-index:2;pointer-events:none;box-shadow:0 0 0 2px #39434a;transition:box-shadow .4s}
+      .${P}dial.hot{box-shadow:0 0 0 3px #b48cff,0 0 14px #b48cff}
+      .${P}dial img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover}
+      .${P}dial i{position:absolute;left:50%;bottom:50%;width:2px;height:40%;background:#b48cff;transform-origin:50% 100%;border-radius:2px}
+      @media (max-width:520px){.${P}dial{width:48px;height:48px;bottom:70px}}
+    </style><canvas></canvas>${api.art && api.art.has("dial-afu") ? `<div class="${P}dial" aria-hidden="true"><img alt="" src="${api.art.url("dial-afu")}"><i></i></div>` : ""}<div class="${P}focus"><button type="button" class="hold" data-h="1" hidden>HOLD BREATH</button><button type="button" data-d="-1">FOCUS ▲</button><button type="button" data-d="1">FOCUS ▼</button></div>`;
     root.appendChild(wrap);
     const cv = wrap.querySelector("canvas"), ctx = cv.getContext("2d");
     const rng = api.rng();
@@ -301,8 +306,10 @@ export default {
     };
 
     let last = 0;
+    const dialEl = wrap.querySelector("." + P + "dial"); let dialAfu = -1;
     const loop = (now) => {
       if (!alive) return;
+      if (dialEl && STAGES[st.stage].afu !== dialAfu) { dialAfu = STAGES[st.stage].afu; dialEl.classList.toggle("hot", dialAfu > 0.7); dialEl.querySelector("i").style.transform = `translateX(-50%) rotate(${(dialAfu - 0.5) * 240}deg)`; }
       const dt = Math.min(0.05, (now - (last || now)) / 1000); last = now;
       if (st.started && !st.over) update(dt);
       draw(now);

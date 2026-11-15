@@ -8,6 +8,9 @@
 // Added in the refine pass: Read the dossier (DESIGN 11 hint: relay-fed nodes are drawn dotted once
 // the player has looked at the dossier), so the relay node is found by reading, not shown. The
 // trigger lights the nodes one by one. After two lost drills, Joren's margin sketch offers a hint.
+// Drawn with the game's art (api.art): the emitter and seed tokens on the map and in the tray, the
+// dossier tab, Pell's-book token where her copy vouches for a Book I number (phase 1 of the accepted
+// development: she copied every number, the relay's included), Joren's plate beside his sketch.
 const P = "lira-calyx-node-board-";
 const INK = "#2e2a24", SEAL = "#b3212b", VIOLET = "#5a3f7a", GREEN = "#2f6b3f", PAPER = "#efe7d3";
 const GAMMA = 8, MARK = GAMMA / 4, CALM = GAMMA / 2, N = 4;
@@ -83,6 +86,8 @@ export default {
   mount(root, api) {
     const off = [];
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); off.push(() => t.removeEventListener(e, f, o)); };
+    const A = api.art || { has: () => false, url: () => "" };
+    const pic = (id, cls = "", alt = "") => (A.has(id) ? `<img class="${cls}" src="${A.url(id)}" alt="${alt}" draggable="false">` : "");
     root.style.background = "#d9d2c0";
     const losses = api.store.get("losses", 0);
     const st = { em: {}, sel: null, slot: 1, over: false, started: false, revealed: false, read: new Set(), lit: null, beats: {} };
@@ -128,6 +133,10 @@ export default {
       .${P}card dt{font-weight:700}
       .${P}card label{display:flex;gap:8px;align-items:center;font:14px Georgia,serif;margin:0 0 10px}
       .${P}card button{background:${INK}!important;color:#fff!important;padding:10px 22px!important;letter-spacing:.12em}
+      .${P}card .tg{float:right;width:96px;height:96px;margin:0 0 6px 10px;border:1px solid ${INK}}
+      .${P}tray img{width:26px;height:26px}.${P}tray img.u{opacity:.25;filter:grayscale(1)}
+      .${P}wrap button.dos img{height:26px;width:auto;vertical-align:middle;margin:-4px 8px -2px 0}
+      .${P}info img{float:left;width:54px;height:auto;margin:2px 8px 2px 0}.${P}info img.fig{border:1px solid ${INK}}
     </style>
     <div class="${P}sheet">
       <div class="${P}strain"><span>STRAIN</span><div class="${P}meter" aria-live="polite"><i></i><b></b><span></span></div><span class="val"></span></div>
@@ -137,7 +146,7 @@ export default {
         <h3>FIRING SLOT · φ = slot × 2π/4</h3>
         <div class="${P}wheel">${[1, 2, 3, 4].map((s) => `<button type="button" data-s="${s}">${s}<br><small>${["90°", "180°", "270°", "360°"][s - 1]}</small></button>`).join("")}</div>
         <button type="button" data-a="place">PLACE ON NODE</button> <button type="button" data-a="remove">REMOVE</button>
-        <button type="button" class="dos" data-a="dossier" style="width:100%;margin-top:6px">READ THE DOSSIER (D)</button>
+        <button type="button" class="dos" data-a="dossier" style="width:100%;margin-top:6px">${pic("tab-dossier")}READ THE DOSSIER (D)</button>
         <button type="button" class="trig" data-a="trigger">TRIGGER</button>
         <div class="${P}info" aria-live="polite">Select a node.</div>
         <div class="${P}legend">◯ damped (load ≤ γ/4 = 2) · ✶ amplifies<br>line weight = K · dashed = cancelled<br>dotted node = fed by a relay reading (once read)</div>
@@ -147,7 +156,7 @@ export default {
     root.appendChild(el);
     const $ = (s) => el.querySelector(s);
     const svg = $("svg"), info = $("." + P + "info");
-    const say = (t, v) => { info.textContent = t; info.classList.toggle("v", !!v); info.classList.remove(P + "flash"); void info.offsetWidth; info.classList.add(P + "flash"); };
+    const say = (t, v, art) => { info.textContent = t; if (art) info.insertAdjacentHTML("afterbegin", pic(art, /^fig/.test(art) ? "fig" : "")); info.classList.toggle("v", !!v); info.classList.remove(P + "flash"); void info.offsetWidth; info.classList.add(P + "flash"); };
     const bg = relief(300, 210);
 
     const star = (x, y, r) => { let d = ""; for (let i = 0; i < 16; i++) { const a = Math.PI / 8 * i, rr = i % 2 ? r * 0.45 : r; d += `${i ? "L" : "M"}${(x + Math.cos(a) * rr).toFixed(1)},${(y + Math.sin(a) * rr).toFixed(1)}`; } return d + "Z"; };
@@ -175,7 +184,9 @@ export default {
         s += `<line x1="${nd.x}" y1="${nd.y + r + 2}" x2="${nd.x}" y2="${nd.y + r + 10}" stroke="${INK}" stroke-width="2"/>`;
         if (truth && !ok) s += `<path d="${star(nd.x, nd.y, r)}" fill="${SEAL}" stroke="#fff" stroke-width="1.5"/>`;
         else s += `<circle class="fr" cx="${nd.x}" cy="${nd.y}" r="${r - 3}" fill="#fff" stroke="${truth ? GREEN : INK}" stroke-width="${truth ? 6 : 2.5}" ${dotted ? 'stroke-dasharray="2 3"' : ""}/>`;
-        if (em) s += `<path d="M${nd.x},${nd.y - 10} L${nd.x + 10},${nd.y} L${nd.x},${nd.y + 10} L${nd.x - 10},${nd.y}Z" fill="#25c2a8" stroke="${INK}"/><text x="${nd.x}" y="${nd.y + 4}" text-anchor="middle" font-size="11" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="${INK}">${em}</text>`;
+        if (truth && nd.seed && ok && A.has("token-seed")) s += `<image href="${A.url("token-seed")}" x="${nd.x - 20}" y="${nd.y - 20}" width="40" height="40"/>`;
+        if (em && A.has("token-emitter")) s += `<image href="${A.url("token-emitter")}" x="${nd.x - 19}" y="${nd.y - 19}" width="38" height="38"/><circle cx="${nd.x + 15}" cy="${nd.y - 15}" r="9" fill="${PAPER}" stroke="${INK}" stroke-width="1.5"/><text x="${nd.x + 15}" y="${nd.y - 11}" text-anchor="middle" font-size="12" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="${INK}">${em}</text>`;
+        else if (em) s += `<path d="M${nd.x},${nd.y - 10} L${nd.x + 10},${nd.y} L${nd.x},${nd.y + 10} L${nd.x - 10},${nd.y}Z" fill="#25c2a8" stroke="${INK}"/><text x="${nd.x}" y="${nd.y + 4}" text-anchor="middle" font-size="11" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="${INK}">${em}</text>`;
         if (truth && nd.seed) s += `<text x="${nd.x}" y="${nd.y + 50}" text-anchor="middle" font-size="11" font-weight="700" font-family="Helvetica,Arial,sans-serif" fill="${SEAL}">SEED</text>`;
         const ty = nd.y + nd.ly * (narrow ? 1.12 : 1), up = nd.ly < 0;
         const t1 = narrow ? `${nd.n} · ${+ld.toFixed(2)}` : `${nd.n} ${nd.name}`;
@@ -190,7 +201,7 @@ export default {
       $("." + P + "meter b").style.left = pct(CALM) + "%";
       $("." + P + "meter span").style.left = pct(CALM) + "%"; $("." + P + "meter span").textContent = "calm line γ/2 = 4";
       $("." + P + "strain .val").textContent = `λmax ${lam.toFixed(2)}${truth ? "" : " (projected)"}`;
-      $("." + P + "tray").innerHTML = Array.from({ length: N }, (_, i) => `<i class="${i < N - Object.keys(st.em).length ? "f" : ""}"></i>`).join("") + `<span style="font:12px Helvetica,Arial,sans-serif;margin-left:6px">${N - Object.keys(st.em).length} left</span>`;
+      $("." + P + "tray").innerHTML = Array.from({ length: N }, (_, i) => pic("token-emitter", i < N - Object.keys(st.em).length ? "" : "u") || `<i class="${i < N - Object.keys(st.em).length ? "f" : ""}"></i>`).join("") + `<span style="font:12px Helvetica,Arial,sans-serif;margin-left:6px">${N - Object.keys(st.em).length} left</span>`;
       el.querySelectorAll("[data-s]").forEach((b) => b.classList.toggle("sel", +b.dataset.s === st.slot));
       $("[data-a=trigger]").disabled = Object.keys(st.em).length < N || st.over;
       $("[data-a=dossier]").disabled = st.sel == null || st.over;
@@ -203,7 +214,7 @@ export default {
     const dossier = () => {
       if (st.over || st.sel == null) { say("Select a node first."); return; }
       const nd = NODES[st.sel]; st.read.add(st.sel); draw();
-      say(`Dossier, ${nd.n} ${nd.name}: ${nd.how}.${nd.relay ? " Relay. Lira wrote it in her smaller hand. Nobody has ever checked a relay number by hand." : " Hand, ok."}`, true);
+      say(`Dossier, ${nd.n} ${nd.name}: ${nd.how}.${nd.relay ? " Relay. Lira wrote it in her smaller hand. Nobody has ever checked a relay number by hand. Pell’s book has it the same: DOCTOR SAYS, and then the relay’s number. A copy is only as right as the day it copies." : ` Hand, ok.${nd.n === "H3" ? " Pell’s book has it too: DOCTOR 17. ME 18." : " Pell’s book has the same figure, in capitals."}`}`, true, "token-witness-pell");
     };
     const place = () => {
       if (st.over || st.sel == null) { say("Select a node first."); return; }
@@ -245,7 +256,7 @@ export default {
     draw();
 
     const intro = document.createElement("div"); intro.className = P + "intro";
-    intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="cart"><span>HOLLIN TERRACE</span><span>1:25 000</span></div><div class="in">
+    intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="cart"><span>HOLLIN TERRACE</span><span>1:25 000</span></div><div class="in">${pic("thread-guest", "tg", "A hand over the board")}
       <h2>The Node Board: the drill</h2>
       <p class="goal">Bring every node’s load to 2 or less with four emitters, then Trigger.</p>
       <dl><dt>select</dt><dd>tap a node (Tab, Enter): its load and its mark</dd>
@@ -260,7 +271,7 @@ export default {
       const g = intro.querySelector(".gentle");
       intro.remove(); st.started = true; draw();
       say("Book IV. Hollin Terrace is cracking under synchronized storms, and the coalition runs a drill on its six nodes before anyone goes near the core. Select a node to begin.", true);
-      if (g && g.checked) later(() => say("Joren's sketch in the margin: the Market carries three heavy springs. Put the Market opposite the emitters around it, and keep those emitters in step with each other.", true), 6000);
+      if (g && g.checked) later(() => say("Joren's sketch in the margin: the Market carries three heavy springs. Put the Market opposite the emitters around it, and keep those emitters in step with each other.", true, "fig-joren"), 6000);
     });
     sb.focus();
     if (window.__ezTest) window.__ezTest[api.key] = { st, place, trigger, select: (i) => { st.sel = i; describe(i); } };

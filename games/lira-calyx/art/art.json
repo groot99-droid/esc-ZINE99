@@ -1,6 +1,6 @@
 {
  "game": "lira-calyx",
- "count": 92,
+ "count": 99,
  "assets": [
   {
    "id": "title-lettering",
@@ -97,6 +97,62 @@
    "w": 320,
    "h": 240,
    "row": "Climb figures"
+  },
+  {
+   "id": "spr-lira-anchor",
+   "group": "figures",
+   "title": "Sprite: Lira anchored",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
+  },
+  {
+   "id": "spr-lira-drill",
+   "group": "figures",
+   "title": "Sprite: Lira at the instrument",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
+  },
+  {
+   "id": "spr-lira-jump",
+   "group": "figures",
+   "title": "Sprite: Lira jumping",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
+  },
+  {
+   "id": "spr-lira-stand",
+   "group": "figures",
+   "title": "Sprite: Lira standing",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
+  },
+  {
+   "id": "spr-lira-walk",
+   "group": "figures",
+   "title": "Sprite: Lira walking",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
+  },
+  {
+   "id": "spr-lira-walk-2",
+   "group": "figures",
+   "title": "Sprite: Lira walking, passing step",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
+  },
+  {
+   "id": "spr-mara",
+   "group": "figures",
+   "title": "Sprite: Mara at her camp",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
   },
   {
    "id": "section-b1-climb",
