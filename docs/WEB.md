@@ -53,6 +53,11 @@ Each mode is a playable prototype of the design's rules (DESIGN.md sections 10 a
 scope: one level, board or puzzle, two to six minutes. It is drawn in the graphic style the mode
 owns (`docs/graphic_styles.json`; its pictograph is the visual reference), works with mouse, touch
 and keyboard, opens with a short how-to-play, ends with a win or a loss, and respects reduced motion.
+`api.art` is the game's code-drawn art (`games/<slug>/art/`, bundled into `web/assets/art/<slug>.json`):
+`art.has(id)`, `art.info(id)` (`{id, group, w, h, title}`), `art.list(group?)` (ids), `art.svg(id)` (the
+SVG text, for inlining), `art.url(id)` (a blob URL for `<img>` or a CSS background) and `art.img(id)` (a
+promise of a decoded image, for canvas). Unknown ids give `""` or `null`; a mode must still run then.
+
 No network requests and no libraries; Google Fonts only through `meta.fonts`. Styles are scoped by a
 class prefix so modes cannot collide.
 

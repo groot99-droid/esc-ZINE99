@@ -43,7 +43,18 @@ def main():
             modes.append({"key": s["key"], "name": s["name"], "layer": s["kind"], "style": s["style"],
                           "look": s["look"], "pictograph": f"assets/pictographs/{slug}/{s['key']}.svg",
                           "module": f"games/{slug}/{s['key']}.js"})
-        games.append({"slug": slug, "title": g["title"], "minutes": g.get("target_minutes"),
+        art_path = None
+        man = ROOT / "games" / slug / "art" / "art.json"
+        if man.is_file():
+            adir = WEB / "assets" / "art"
+            adir.mkdir(parents=True, exist_ok=True)
+            bundle = {}
+            for a in json.loads(man.read_text(encoding="utf-8"))["assets"]:
+                svg = (man.parent / a["group"] / f"{a['id']}.svg").read_text(encoding="utf-8")
+                bundle[a["id"]] = {"g": a["group"], "w": a["w"], "h": a["h"], "t": a["title"], "s": svg}
+            (adir / f"{slug}.json").write_text(json.dumps(bundle, separators=(",", ":")), encoding="utf-8")
+            art_path = f"assets/art/{slug}.json"
+        games.append({"slug": slug, "art": art_path, "title": g["title"], "minutes": g.get("target_minutes"),
                       "players": g.get("players"), "verb": g.get("core_verb"), "stills": stills,
                       "loading": f"games/{slug}/loading.js", "modes": modes})
     (WEB / "data").mkdir(exist_ok=True)

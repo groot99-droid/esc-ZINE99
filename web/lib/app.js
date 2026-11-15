@@ -127,6 +127,40 @@ function menu(game, meta) {
   return m;
 }
 
+// A game's code-drawn art (games/<slug>/art/, bundled by tools/web/build.py into one JSON file).
+const artCache = {};
+async function loadArt(game) {
+  if (artCache[game.slug]) return artCache[game.slug];
+  let data = {};
+  if (game.art) {
+    try { data = await (await fetch(game.art)).json(); }
+    catch (e) { console.warn("no art for", game.slug, e); }
+  }
+  const urls = {};
+  const imgs = {};
+  const art = {
+    has: (id) => id in data,
+    info: (id) => (data[id] ? { id, group: data[id].g, w: data[id].w, h: data[id].h, title: data[id].t } : null),
+    list: (group) => Object.keys(data).filter((id) => !group || data[id].g === group),
+    svg: (id) => (data[id] ? data[id].s : ""),
+    url(id) {
+      if (!data[id]) return "";
+      return urls[id] || (urls[id] = URL.createObjectURL(new Blob([data[id].s], { type: "image/svg+xml" })));
+    },
+    // A decoded <img>, for canvas drawing. Resolves to null for an unknown id.
+    img(id) {
+      if (!data[id]) return Promise.resolve(null);
+      return imgs[id] || (imgs[id] = new Promise((res) => {
+        const im = new Image();
+        im.onload = () => res(im);
+        im.onerror = () => res(null);
+        im.src = art.url(id);
+      }));
+    },
+  };
+  return (artCache[game.slug] = art);
+}
+
 async function playMode(game, mode, modModule, meta) {
   stop();
   const root = document.createElement("div");
@@ -141,6 +175,7 @@ async function playMode(game, mode, modModule, meta) {
     rng: (seed) => seededRng(seed ?? `${game.slug}/${mode.key}/${Date.now()}`),
     store: { get: (k, d) => store.get(`${game.slug}/${mode.key}/${k}`, d), set: (k, v) => store.set(`${game.slug}/${mode.key}/${k}`, v) },
     asset: (p) => p,
+    art: await loadArt(game),
     end(result = {}) {
       const done = store.get("done:" + game.slug, {});
       done[mode.key] = true;
@@ -199,7 +234,7 @@ async function route() {
   crumb.textContent = `${game.title} / ${mode.name}`;
   let modModule;
   try {
-    modModule = await withLoading(game, mod, import("../" + mode.module), mode.name);
+    [modModule] = await withLoading(game, mod, Promise.all([import("../" + mode.module), loadArt(game)]), mode.name);
   } catch (e) {
     console.error(e);
     view.innerHTML = `<div class="err">${mode.name} is not built yet.</div>`;
