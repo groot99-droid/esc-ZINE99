@@ -18,11 +18,12 @@
       "kind": "key-art",
       "title": "Lanterns under five dark fingers",
       "aspect_ratio": "2:3",
-      "model": "soul_cinematic",
-      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field, fine dust in the lit air. Tall upright composition. A vertical wall of deep umber tree bark seen straight on, filling the whole frame edge to edge like a cliff, no sky. In the lower half a tiny city of round carved dwellings with bark-chip shutters climbs the ridges along one long dark crack, dozens of orange glow-lichen lanterns lit, amber sap beading in the grooves, patches of sage and lime lichen. The upper half of the bark lies in a flat soft blue-black cast shadow whose lower edge is shaped into five long tapering lobes pointing down, a shadow only, painted by light on the bark surface, the longest tip just touching the highest lantern. In a narrow strip of gold light at the right edge, a small kite made of one sage-green leaf hangs on a silk thread. The upper third is calm shadowed bark with nothing on it, left empty for a title. One low warm light from below left. Nothing in front of the bark: no hand, no fingers, no skin, no people, no text, no lettering, no watermark, no logo",
-      "job_id": "32c46109-d422-4da8-a483-e917886f8acb",
-      "needs_review": "Both attempts failed; retry kept as the better. It contains a line of garbled lettering at the left, mid-height, and a tiny figure with a lantern at lower left; the city is a mound, the shadow lobes are few. The first attempt showed real hands and was upside down. Needs a retouch or a new generation.",
-      "image": "keyart/key-art-tall.jpg"
+      "model": "gpt_image_2_6",
+      "prompt": "Edit this image. Remove all lettering and text from this image: the line of white letters on the bark at the left, at mid-height. Fill that area with the surrounding dark tree bark. Change nothing else; keep the exact composition, colours, grain, depth of field and lighting. No text, no lettering, no watermark anywhere.",
+      "job_id": "12b21596-5286-4de6-adc1-960b7e07e072",
+      "needs_review": "Lettering removed by an image edit of the earlier generation (source_job_id; its original prompt is in git history); now 1360x2040. Remaining from that generation: a tiny figure with a lantern at lower left, the city is a mound, the shadow lobes are few.",
+      "image": "keyart/key-art-tall.jpg",
+      "source_job_id": "32c46109-d422-4da8-a483-e917886f8acb"
     },
     {
       "id": "ending-shadow-passes",
