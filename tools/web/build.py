@@ -11,6 +11,7 @@ versioned. Needs Pillow for the stills.
 from __future__ import annotations
 
 import json
+import sys
 import shutil
 from pathlib import Path
 
@@ -20,7 +21,27 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 WEB = ROOT / "web"
 
 
+def art_bundle(slug):
+    """Write web/assets/art/<slug>.json from games/<slug>/art/ (atomically). Returns its web path or None."""
+    man = ROOT / "games" / slug / "art" / "art.json"
+    if not man.is_file():
+        return None
+    adir = WEB / "assets" / "art"
+    adir.mkdir(parents=True, exist_ok=True)
+    bundle = {}
+    for a in json.loads(man.read_text(encoding="utf-8"))["assets"]:
+        svg = (man.parent / a["group"] / f"{a['id']}.svg").read_text(encoding="utf-8")
+        bundle[a["id"]] = {"g": a["group"], "w": a["w"], "h": a["h"], "t": a["title"], "s": svg}
+    tmp = adir / f".{slug}.json.tmp"
+    tmp.write_text(json.dumps(bundle, separators=(",", ":")), encoding="utf-8")
+    tmp.replace(adir / f"{slug}.json")
+    return f"assets/art/{slug}.json"
+
+
 def main():
+    if len(sys.argv) == 3 and sys.argv[1] == "--art":
+        print(f"ok   web art: {sys.argv[2]} -> {art_bundle(sys.argv[2])}")
+        return
     styles = json.loads((ROOT / "docs" / "graphic_styles.json").read_text(encoding="utf-8"))["styles"]
     order = list(dict.fromkeys(s["game"] for s in styles))
     games = []
@@ -43,17 +64,7 @@ def main():
             modes.append({"key": s["key"], "name": s["name"], "layer": s["kind"], "style": s["style"],
                           "look": s["look"], "pictograph": f"assets/pictographs/{slug}/{s['key']}.svg",
                           "module": f"games/{slug}/{s['key']}.js"})
-        art_path = None
-        man = ROOT / "games" / slug / "art" / "art.json"
-        if man.is_file():
-            adir = WEB / "assets" / "art"
-            adir.mkdir(parents=True, exist_ok=True)
-            bundle = {}
-            for a in json.loads(man.read_text(encoding="utf-8"))["assets"]:
-                svg = (man.parent / a["group"] / f"{a['id']}.svg").read_text(encoding="utf-8")
-                bundle[a["id"]] = {"g": a["group"], "w": a["w"], "h": a["h"], "t": a["title"], "s": svg}
-            (adir / f"{slug}.json").write_text(json.dumps(bundle, separators=(",", ":")), encoding="utf-8")
-            art_path = f"assets/art/{slug}.json"
+        art_path = art_bundle(slug)
         games.append({"slug": slug, "art": art_path, "title": g["title"], "minutes": g.get("target_minutes"),
                       "players": g.get("players"), "verb": g.get("core_verb"), "stills": stills,
                       "loading": f"games/{slug}/loading.js", "modes": modes})
