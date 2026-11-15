@@ -4,7 +4,8 @@
 // delta (3 junctions of 3, 3 and 4 branches, 20 s, one or two patrols). Solo: you are the one who
 // laughs and carry the awl (true); the others vote by temperament (DESIGN.md section 12): the one who
 // argues takes the strongest current, the one who dreams a calm pool or the widest, and the one who
-// fears feels one patrol at each junction (it is marked for everyone) and sets his piece elsewhere.
+// fears feels one patrol at each junction (it is marked for everyone) and sets his piece on a patrol-free
+// branch; the other two keep off the vessel he has marked.
 //
 // Actions: Vote (set your piece on a branch); Listen (hold on a branch three seconds: a pulse off
 // the heart's beat means a beast, right seven times in ten); the Awl (once per chart: every patrol at
@@ -277,9 +278,13 @@ export default {
     // ---- the companions vote by temperament -----------------------------------------------------
     function companions() {
       const J = route[st.j], bs = J.branches;
-      const strongest = () => bs.reduce((a, b, i) => (b.current > bs[a].current ? i : a), 0);
-      const fear = () => { const free = bs.map((b, i) => (b.felt || b.back ? -1 : i)).filter((i) => i >= 0); return free[Math.floor(rng() * free.length)]; };
-      const dream = () => { if (st.backHeard && !st.sawBoard) { const k = bs.findIndex((b) => b.back); if (k >= 0) return k; } const calm = bs.findIndex((b) => b.calm); return calm >= 0 ? calm : bs.reduce((a, b, i) => (!b.back && Wd[b.width] > Wd[bs[a].width] ? i : a), 0); };
+      // Nobody sets his piece on the vessel the one who fears has marked, and he himself stands on a
+      // patrol-free branch (DESIGN.md sections 11 and 12). Before this the three could carry the raft into
+      // a patrol against any one vote.
+      const open = (b) => !b.felt && !b.back, first = bs.findIndex(open);
+      const strongest = () => bs.reduce((a, b, i) => (open(b) && b.current > bs[a].current ? i : a), first);
+      const fear = () => { const free = bs.map((b, i) => (b.patrol || b.back ? -1 : i)).filter((i) => i >= 0); return free[Math.floor(rng() * free.length)]; };
+      const dream = () => { if (st.backHeard && !st.sawBoard) { const k = bs.findIndex((b) => b.back); if (k >= 0) return k; } const calm = bs.findIndex((b) => b.calm && open(b)); return calm >= 0 ? calm : bs.reduce((a, b, i) => (open(b) && Wd[b.width] > Wd[bs[a].width] ? i : a), first); };
       const T0 = J.time * 1000;
       later(() => { if (st.phase === "vote" && st.j === J.idx) { st.votes[3] = fear(); say.textContent = "The one who fears sets his piece first, away from the vessel he feels."; draw();
         if (legend.add("listen", "Listen", "hold L on a focused branch · hold a branch after pressing Listen", true)) { bListen.hidden = false; beats.show("He only feels one. Hold your ear to a branch for three seconds: a beast's pulse is off the heart's beat. You will be right seven times in ten.", 5600, "listen", "New · Listen"); } } }, Math.min(2500, T0 * 0.1));

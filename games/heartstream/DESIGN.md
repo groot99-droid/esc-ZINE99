@@ -857,7 +857,7 @@ earlier, both ways, between a player who stays and the climbers, when the shaft 
 | --- | --- |
 | Rowing | On the beat with a fixed accuracy drawn from 88–95%; follow the human majority's side on steering; stroke harder in eddies |
 | Hiding | Hush on the beast's eye tell within 1 beat; never stand |
-| Chart votes | Laughs: votes with the first human. Argues: the strongest current, and against a unanimous human vote if it is a patrol branch he knows of. Dreams: a calm pool if any, else the widest. Fears: the patrol-free branch he feels. |
+| Chart votes | Laughs: votes with the first human. Argues: the strongest current, and against a unanimous human vote if it is a patrol branch he knows of. Dreams: a calm pool if any, else the widest. Fears: the patrol-free branch he feels. Neither Argues nor Dreams sets his piece on a vessel Fears has marked (retuned 2026-11-15: before it, three companions could carry the raft into a patrol against any one vote). |
 | Carving | A pre-authored gift for his temperament (laughs: flute; argues: awl; dreams: comb; fears: hook), quality rolled 70–90%, marked if the recipient's mark was visible on the board |
 | Song | Places his phrases where joins are smooth; suggests ghosted placements |
 | Counters | Picks a capture if one exists, else a random legal hollow; taps on the beat at his accuracy |
