@@ -200,7 +200,7 @@ def scoresheet(a: Art):
     a.path("M120,156H680", stroke=pen, stroke_width=0.6)
     cols = [("Noor", 130), ("Wes", 330), ("Ana", 530)]
     rows = [[("kettle", 2), ("candle", 2), ("mountain", 2), ("lantern", 2), ("butterfly", 3), ("porch", 1), ("yesterday", 3)],
-            [("banana", 3), ("door", 1), ("ridiculous", 4), ("moon", 1), ("cinnamon", 3), ("blanket", 2), ("owl", 1)],
+            [("banana", 3), ("door", 1), ("ridiculous", 4), ("moon", 1), ("cinnamon", 3), ("blanket", 2), ("otter", 2)],
             [("quiet", 2), ("river", 2), ("wonderful", 3), ("home", 1), ("button", 2), ("lullaby", 3), ("stone", 1)]]
     for name, x in cols:
         a.text(x + 80, 214, name, size=34, family="cursive", fill=pen, text_anchor="middle")

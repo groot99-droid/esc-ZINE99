@@ -15,20 +15,42 @@
 // window ("We stayed still when they looked"); a toy caught moving on the table is noticed, which is
 // noise, blame +4 (section 12, Movement noticed) and an early return. Leave: the four-second climb.
 // Narrative lines other than the quoted ones are written for the game (refine additions list).
+//
+// Phase 1 (DESIGN.md "Accepted development", 2026-11-15). Ruth's peg: one bone button belongs to no
+// guest; it moves a space on whenever nobody is looking, and a guest's peg put on its space makes
+// that guest It (the pack goes to their door first that night). The Door sentence: all three pegs
+// on the Door is the only thing a toy can say, "leave"; then you may lie down by the board and hold
+// still while they come in and find you. With group dread at 50 or more it lowers the flee line by
+// 15. The board, its thirty symbols, the pegs and the scoresheet are the game's art (api.art); the
+// spaces sit where the board art puts them, and the old felt drawing stays as the fallback.
+import { artKit, PEG } from "./art-kit.js";
 const PRE = "stuffed-ones-parlour-";
 const C = { moss: "#6f7d4f", mossD: "#55623a", cream: "#efe5cf", bone: "#f6f1e4", rust: "#a5553a", sky: "#8fa9bf", night: "#3f4b63",
   amber: "#e39a2d", red: "#b8322a", cedar: "#6b4a32", ink: "#2a211b", rose: "#c07a8e", ochre: "#c9a24a", plum: "#8a6a86" };
 const N = 30;
-const SYM = ["door", "cup", "tree", "bird", "lamp", "moon", "two", "knot", "key", "tree", "bird", "cup", "lamp", "moon", "two", "knot",
-  "key", "bird", "door", "lamp", "tree", "cup", "knot", "moon", "two", "key", "lamp", "bird", "cup", "hearth"];
-const SYM_COL = { door: C.cedar, cup: C.sky, tree: C.moss, bird: C.rose, lamp: C.ochre, moon: C.plum, two: C.rust, knot: C.ink, key: C.ochre, hearth: C.red };
-// The guests' game so far: each word moves one space per syllable; a Knot sends you back three.
+// The cloth's thirty spaces in the order the board art lays them (games/stuffed-ones/art/src/40_parlour.py).
+const SYM = ["door", "leaf", "cup", "key", "bird", "boot", "knot", "star", "chair", "two", "fish", "bell", "window", "acorn", "thimble",
+  "lamp", "feather", "spool", "stair", "tree", "hat", "button", "moon", "scissors", "bed", "mushroom", "candle", "book", "needle", "hearth"];
+const SPACE_NAME = (i) => (SYM[i] === "two" ? "Two" : "the " + SYM[i][0].toUpperCase() + SYM[i].slice(1));
+const FELTS = [C.moss, C.rust, C.sky, C.rose, C.cedar, C.night];
+const SYM_COL = (i) => (i === N - 1 ? C.red : FELTS[(i * 3 + (i >> 2)) % FELTS.length]);
+// The guests' game so far, as their scoresheet has it: one space per syllable; the Knot sends you back three.
 const GUESTS = [
-  { id: "noor", name: "Noor", col: C.sky, personal: "door", words: [["kettle", 2], ["window", 2], ["lantern", 2], ["porcupine", 3], ["river", 2]] },
-  { id: "wes", name: "Wes", col: "#9aa86f", personal: "lamp", words: [["boots", 1], ["campfire", 2], ["thunder", 2], ["owl", 1], ["canoe", 2], ["mud", 1]] },
-  { id: "ana", name: "Ana", col: C.rust, personal: "two", words: [["sunrise", 2], ["blanket", 2], ["pine", 1], ["marshmallow", 3], ["firefly", 3], ["stars", 1], ["creek", 1]] },
+  { id: "noor", name: "Noor", col: C.rust, personal: "door", words: [["kettle", 2], ["candle", 2], ["mountain", 2], ["lantern", 2], ["butterfly", 3], ["porch", 1], ["yesterday", 3]] },
+  { id: "wes", name: "Wes", col: C.sky, personal: "lamp", words: [["banana", 3], ["door", 1], ["ridiculous", 4], ["moon", 1], ["cinnamon", 3], ["blanket", 2], ["otter", 2]] },
+  { id: "ana", name: "Ana", col: "#8a9a5e", personal: "two", words: [["quiet", 2], ["river", 2], ["wonderful", 3], ["home", 1], ["button", 2], ["lullaby", 3], ["stone", 1]] },
 ];
 GUESTS.forEach((gu) => { let p = 0; gu.trail = gu.words.map(([w, n]) => { p = Math.min(N - 1, p + n); if (SYM[p] === "knot") p = Math.max(0, p - 3); return [w, n, p]; }); gu.sheet = p; });
+// The same walk the board art takes: equal steps of arc along a spiral from the Door to the Hearth.
+const SPOTS = (() => {
+  const walk = (b) => { let th = 0; const out = []; for (let k = 0; k < N - 1; k++) { const r = 575 - b * th; out.push([r, th]); th += 152 / Math.max(r, 60); } return out; };
+  let lo = 0, hi = 200;
+  for (let k = 0; k < 40; k++) { const mid = (lo + hi) / 2; if (walk(mid)[N - 2][0] > 200) lo = mid; else hi = mid; }
+  const pts = walk(lo).map(([r, th]) => { const a = (200 * Math.PI) / 180 + th; return [(r * Math.cos(a)) / 700, (r * Math.sin(a)) / 700]; });
+  pts.push([0, 0]);
+  return pts;
+})();
+const BASE_DREAD = 42, FLEE = 70, FOUND = 6, RUTH_START = 19;
 // What you watched from the shelf (c09). It never interprets. Ana's quoted words are verbatim from
 // creative-writing/vault/02_Novels/01_The_Stuffed_Ones.md (ch 25; DESIGN.md section 6, Group B).
 const NOTES = [
@@ -52,6 +74,7 @@ export default {
   mount(root, api) {
     const K = kit();
     const rng = api.rng();
+    const A = artKit(api);
     const losses = api.store.get("losses", 0);
     const wrap = document.createElement("div");
     wrap.className = PRE + "wrap";
@@ -67,6 +90,9 @@ export default {
 .${PRE}btns button:disabled{opacity:.45;cursor:not-allowed}
 .${PRE}btns button[hidden]{display:none}
 .${PRE}btns button.${PRE}leave{background:${C.red};outline-color:${C.red}}
+.${PRE}btns button.${PRE}lie{background:${C.amber};outline-color:${C.amber};color:${C.ink};border-color:${C.ink}}
+.${PRE}card canvas{position:static;width:auto;height:auto}
+.${PRE}card .${PRE}plate{margin:14px -8px 0;border:2px dashed ${C.cedar}}
 .${PRE}btns button.${PRE}still{background:${C.night};outline-color:${C.night}}
 .${PRE}btns button.${PRE}still[aria-pressed=true]{background:${C.amber};outline-color:${C.amber};color:${C.ink};border-color:${C.ink}}
 .${PRE}btns button.${PRE}urgent{animation:${PRE}throb 0.6s ease-in-out infinite alternate}
@@ -85,11 +111,11 @@ export default {
 .${PRE}card label{font:14px Karla,Arial,sans-serif;display:flex;gap:8px;align-items:center;margin-top:12px}
 .${PRE}card .${PRE}kind{margin:10px 0 0;font:italic 15px 'IM Fell English',Georgia,serif;color:${C.red}}
 </style><canvas aria-label="The counting game's felt board seen from above, with the guests' button pegs"></canvas>
-<div class="${PRE}btns"><button type="button" class="${PRE}still" aria-pressed="false" hidden>Hold still</button><button type="button" class="${PRE}undo" disabled>Undo</button><button type="button" class="${PRE}leave" disabled>Leave</button></div>
+<div class="${PRE}btns"><button type="button" class="${PRE}still" aria-pressed="false" hidden>Hold still</button><button type="button" class="${PRE}lie" hidden>Lie down by the board</button><button type="button" class="${PRE}undo" disabled>Undo</button><button type="button" class="${PRE}leave" disabled>Leave</button></div>
 <div class="${PRE}beat" aria-live="polite" style="opacity:0"></div>`;
     root.appendChild(wrap);
     const cv = wrap.querySelector("canvas"), g = cv.getContext("2d");
-    const undoBtn = wrap.querySelector("." + PRE + "undo"), leaveBtn = wrap.querySelector("." + PRE + "leave"), stillBtn = wrap.querySelector("." + PRE + "still");
+    const undoBtn = wrap.querySelector("." + PRE + "undo"), leaveBtn = wrap.querySelector("." + PRE + "leave"), stillBtn = wrap.querySelector("." + PRE + "still"), lieBtn = wrap.querySelector("." + PRE + "lie");
     const beatEl = wrap.querySelector("." + PRE + "beat");
 
     const pegs = GUESTS.map((gu) => ({ gu, at: gu.sheet }));
@@ -99,6 +125,11 @@ export default {
     let drag = null, kbPeg = -1, kbSpace = -1, kbUsed = false, kbSel = 0, hoverPeg = null, still = false;
     let watchSeen = false, watches = [], watchI = 0, watchState = "none", watchT = 0, stepSaid = 0, personalSaid = false, firstSaid = false;
     const pops = [];
+    // phase 1: the peg that is nobody's, It, and the Door sentence
+    const ruth = { at: RUTH_START, moves: 0 };
+    let it = null, sentenceSaid = false, lying = false, foundAt = -1, ruthSaid = false;
+    const groupDread = () => BASE_DREAD + (dread.noor + dread.wes + dread.ana) / 3;
+    const onDoor = () => pegs.every((p) => p.at === 0);
     let L = null, felt = null, beatTimer = 0;
 
     function beat(title, text, ms = 4500) {
@@ -107,18 +138,6 @@ export default {
     }
     function say(m, col = C.bone) { lastMsg = m; msgT = performance.now(); msgCol = col; }
     function pop(text, x, y, col) { pops.push({ text, x, y, col, t0: performance.now() }); }
-
-    function spiral() {
-      const pts = [], turns = 2.35, steps = 2000, path = [];
-      for (let i = 0; i <= steps; i++) { const u = i / steps, th = u * turns * Math.PI * 2, r = 1 - u * 0.86; path.push([Math.cos(th - Math.PI / 2) * r, Math.sin(th - Math.PI / 2) * r]); }
-      const len = [0]; for (let i = 1; i < path.length; i++) len.push(len[i - 1] + Math.hypot(path[i][0] - path[i - 1][0], path[i][1] - path[i - 1][1]));
-      const total = len[len.length - 1] * 0.985;
-      let j = 0;
-      for (let k = 0; k < N - 1; k++) { const want = total * k / (N - 2) * 0.93; while (len[j] < want) j++; pts.push(path[j]); }
-      pts.push([0, 0]);
-      return pts;
-    }
-    const SPOTS = spiral();
 
     function layout() {
       const W = wrap.clientWidth, H = wrap.clientHeight, wide = W >= 820;
@@ -139,10 +158,10 @@ export default {
         sheet = { x: 10, y: y0 + 54, w: W - 20, h: 62 };
         notes = { x: 10, y: y0 + 122, w: W - 20, h: Math.max(76, H - (y0 + 122) - 64) };
       }
-      L = { W, H, wide, board, sheet, door, notes, sr: board.R * 0.068 };
-      felt = null;
+      L = { W, H, wide, board, sheet, door, notes, sr: board.R * 0.085 };
+      felt = null; A.flush();
     }
-    const spot = (i) => [L.board.cx + SPOTS[i][0] * L.board.R * 0.86, L.board.cy + SPOTS[i][1] * L.board.R * 0.86];
+    const spot = (i) => [L.board.cx + SPOTS[i][0] * L.board.R, L.board.cy + SPOTS[i][1] * L.board.R];
 
     // ---- felt drawing ----------------------------------------------------------------------
     function feltTex(W, H) {
@@ -167,6 +186,7 @@ export default {
     function symbol(s, cx, cy, r) {
       const u = r * 0.5; g.fillStyle = C.bone; g.strokeStyle = C.bone; g.lineWidth = Math.max(1.2, r / 9);
       g.beginPath();
+      if (!["door", "lamp", "two", "bird", "tree", "knot", "cup", "moon", "key", "hearth"].includes(s)) { g.font = `700 ${Math.round(r)}px Karla,Arial,sans-serif`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(String(SYM.indexOf(s) + 1), cx, cy + 1); return; }
       switch (s) {
         case "door": g.moveTo(cx - u * 0.6, cy + u); g.lineTo(cx - u * 0.6, cy - u * 0.2); g.arc(cx, cy - u * 0.2, u * 0.6, Math.PI, 0); g.lineTo(cx + u * 0.6, cy + u); g.closePath(); g.fill(); g.fillStyle = C.ink; g.beginPath(); g.arc(cx + u * 0.3, cy + u * 0.3, u * 0.1, 0, 7); g.fill(); break;
         case "lamp": g.arc(cx, cy - u * 0.25, u * 0.55, 0, 7); g.fill(); g.fillRect(cx - u * 0.25, cy + u * 0.3, u * 0.5, u * 0.5); g.fillRect(cx - u * 0.55, cy + u * 0.8, u * 1.1, u * 0.2); break;
@@ -175,13 +195,17 @@ export default {
         case "tree": g.moveTo(cx, cy - u); g.lineTo(cx + u * 0.75, cy + u * 0.4); g.lineTo(cx - u * 0.75, cy + u * 0.4); g.closePath(); g.fill(); g.fillRect(cx - u * 0.15, cy + u * 0.4, u * 0.3, u * 0.55); break;
         case "knot": g.ellipse(cx - u * 0.4, cy, u * 0.42, u * 0.6, 0, 0, 7); g.moveTo(cx + u * 0.82, cy); g.ellipse(cx + u * 0.4, cy, u * 0.42, u * 0.6, 0, 0, 7); g.stroke(); break;
         case "cup": g.moveTo(cx - u * 0.6, cy - u * 0.5); g.lineTo(cx + u * 0.6, cy - u * 0.5); g.lineTo(cx + u * 0.4, cy + u * 0.6); g.lineTo(cx - u * 0.4, cy + u * 0.6); g.closePath(); g.fill(); g.beginPath(); g.arc(cx + u * 0.7, cy, u * 0.25, -1.4, 1.4); g.stroke(); break;
-        case "moon": g.arc(cx, cy, u * 0.7, 0, 7); g.fill(); g.fillStyle = SYM_COL.moon; g.beginPath(); g.arc(cx + u * 0.35, cy - u * 0.15, u * 0.6, 0, 7); g.fill(); break;
+        case "moon": g.arc(cx, cy, u * 0.7, 0, 7); g.fill(); g.fillStyle = C.plum; g.beginPath(); g.arc(cx + u * 0.35, cy - u * 0.15, u * 0.6, 0, 7); g.fill(); break;
         case "key": g.arc(cx - u * 0.45, cy, u * 0.35, 0, 7); g.fill(); g.fillRect(cx - u * 0.2, cy - u * 0.1, u * 1.1, u * 0.2); g.fillRect(cx + u * 0.6, cy, u * 0.15, u * 0.35); break;
         case "hearth": g.moveTo(cx, cy - u * 1.1); g.quadraticCurveTo(cx + u * 0.9, cy - u * 0.1, cx + u * 0.5, cy + u * 0.7); g.lineTo(cx - u * 0.5, cy + u * 0.7); g.quadraticCurveTo(cx - u * 0.9, cy - u * 0.1, cx, cy - u * 1.1); g.fill(); g.fillStyle = C.amber; g.beginPath(); g.ellipse(cx, cy + u * 0.25, u * 0.25, u * 0.4, 0, 0, 7); g.fill(); break;
       }
     }
-    function button(cx, cy, r, col, label) {
+    function button(cx, cy, r, col, label, id) {
       g.fillStyle = "rgba(0,0,0,.35)"; g.beginPath(); g.arc(cx + 2, cy + 3, r, 0, 7); g.fill();
+      if (id && A.draw(g, "peg-" + id, cx - r, cy - r, r * 2, r * 2, PEG)) {
+        if (label) { g.font = "700 13px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "top"; const w = g.measureText(label).width + 10; g.fillStyle = "rgba(42,33,27,.82)"; g.fillRect(cx - w / 2, cy + r + 2, w, 17); g.fillStyle = C.bone; g.fillText(label, cx, cy + r + 4); }
+        return;
+      }
       g.fillStyle = col; g.beginPath(); g.arc(cx, cy, r, 0, 7); g.fill();
       g.strokeStyle = "rgba(0,0,0,.3)"; g.lineWidth = 2; g.beginPath(); g.arc(cx, cy, r * 0.78, 0, 7); g.stroke();
       const h = r * 0.28;
@@ -215,10 +239,12 @@ export default {
     // what a move to space `to` would be, for the preview while dragging
     function kindOf(peg, to) {
       if (to === peg.at) return null;
+      if (to === ruth.at) return "it";
+      if (to === 0) return peg.gu.personal === "door" ? "personal" : "door";
       if (pegs.find((q) => q !== peg && q.at === to)) return "swap";
       return to === N - 1 ? "hearth" : SYM[to] === peg.gu.personal ? "personal" : SYM[to] === "knot" ? "knot" : "nudge";
     }
-    const KIND_LABEL = { nudge: "nudge", swap: "swap", knot: "knot", hearth: "hearth", personal: "theirs" };
+    const KIND_LABEL = { nudge: "nudge", swap: "swap", knot: "knot", hearth: "hearth", personal: "theirs", door: "the Door", it: "It" };
 
     function draw(now) {
       if (!L) layout();
@@ -228,15 +254,18 @@ export default {
       if (!felt) felt = feltTex(Math.ceil(W), Math.ceil(H));
       g.drawImage(felt, 0, 0);
       // the embroidered cloth board
-      feltCircle(board.cx, board.cy, board.R, C.cream);
-      g.strokeStyle = "rgba(107,74,50,.5)"; g.lineWidth = 1.5; g.setLineDash([5, 5]); g.beginPath();
-      SPOTS.forEach((_, i) => { const [x, y] = spot(i); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.stroke(); g.setLineDash([]);
+      g.fillStyle = "rgba(0,0,0,.25)"; g.fillRect(board.cx - board.R + 5, board.cy - board.R + 7, board.R * 2, board.R * 2);
+      const cloth = A.draw(g, "parlour-board", board.cx - board.R, board.cy - board.R, board.R * 2, board.R * 2);
+      if (!cloth) {
+        feltCircle(board.cx, board.cy, board.R, C.cream);
+        g.strokeStyle = "rgba(107,74,50,.5)"; g.lineWidth = 1.5; g.setLineDash([5, 5]); g.beginPath();
+        SPOTS.forEach((_, i) => { const [x, y] = spot(i); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.stroke(); g.setLineDash([]);
+      }
       const active = drag ? drag.peg : kbPeg >= 0 ? pegs[kbPeg] : null;
       const hotI = drag ? drag.hover : kbPeg >= 0 ? kbSpace : -1;
       SPOTS.forEach((_, i) => {
-        const [x, y] = spot(i), r = i === N - 1 ? sr * 1.7 : sr;
-        feltCircle(x, y, r, SYM_COL[SYM[i]]);
-        symbol(SYM[i], x, y, r);
+        const [x, y] = spot(i), r = i === N - 1 ? sr * 1.4 : sr;
+        if (!cloth) { feltCircle(x, y, r, SYM_COL(i)); symbol(SYM[i], x, y, r); }
         if (active && i === hotI) {
           const k = kindOf(active, i), ok = k && tampers.length < LIMIT;
           g.strokeStyle = ok ? C.amber : C.red; g.lineWidth = 4; g.beginPath(); g.arc(x, y, r + 6, 0, 7); g.stroke();
@@ -248,7 +277,21 @@ export default {
         }
       });
       g.fillStyle = C.ink; g.font = `italic ${Math.max(14, sr * 0.8)}px 'IM Fell English',Georgia,serif`; g.textAlign = "right"; g.textBaseline = "middle";
-      const d0 = spot(0); g.fillText("Door", d0[0] - sr - 6, d0[1]);
+      const d0 = spot(0); if (!cloth) g.fillText("Door", d0[0] - sr - 6, d0[1]);
+      // the space under the hand, shown large in the cloth's corner: its felt tile and its name
+      if (active && hotI >= 0) {
+        const ts = Math.max(54, Math.min(84, board.R * 0.24)), tx0 = board.cx - board.R + 10, ty0 = board.cy - board.R + 10;
+        g.fillStyle = "rgba(42,33,27,.85)"; g.fillRect(tx0 - 4, ty0 - 4, ts + 8, ts + 26);
+        const id = `symbol-${String(hotI + 1).padStart(2, "0")}-${SYM[hotI]}`;
+        if (!A.draw(g, id, tx0, ty0, ts, ts)) { feltCircle(tx0 + ts / 2, ty0 + ts / 2, ts * 0.42, SYM_COL(hotI)); symbol(SYM[hotI], tx0 + ts / 2, ty0 + ts / 2, ts * 0.42); }
+        g.fillStyle = C.bone; g.font = "700 13px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "alphabetic"; g.fillText(`${hotI + 1} · ${SPACE_NAME(hotI)}`, tx0 + ts / 2, ty0 + ts + 16, ts + 4);
+      }
+      // Ruth's peg: nobody's, and one space on from the mark where it was left
+      {
+        const [rx, ry] = spot(ruth.at), rr = sr * 0.62;
+        if (ruth.moves) { const [mx, my] = spot(ruth.at - 1); g.strokeStyle = "rgba(107,74,50,.8)"; g.lineWidth = 1.6; g.setLineDash([3, 4]); g.beginPath(); g.arc(mx, my - sr * 0.35, rr, 0, 7); g.stroke(); g.setLineDash([]); }
+        button(rx + (pegs.some((q) => q.at === ruth.at) ? sr * 0.8 : 0), ry - sr * 0.35, rr, C.bone, "", "ruth");
+      }
       // pegs: where the scoresheet says they should be, then the pegs themselves
       pegs.forEach((p) => { if (p.at !== p.gu.sheet) { const [x, y] = spot(p.gu.sheet); g.strokeStyle = p.gu.col; g.lineWidth = 2; g.setLineDash([3, 3]); g.beginPath(); g.arc(x, y - sr * 0.35, sr * 0.62, 0, 7); g.stroke(); g.setLineDash([]); } });
       pegs.forEach((p, k) => {
@@ -256,22 +299,25 @@ export default {
         const [x, y] = spot(p.at), same = pegs.filter((q) => q.at === p.at), j = same.indexOf(p);
         const off = same.length > 1 ? (j - (same.length - 1) / 2) * sr * 0.9 : 0;
         const lift = hoverPeg === p && !drag ? 3 : 0;
-        button(x + off, y - sr * 0.35 - lift, sr * 0.62, p.gu.col, p.gu.name);
+        button(x + off, y - sr * 0.35 - lift, sr * 0.62, p.gu.col, p === it ? p.gu.name + " · It" : p.gu.name, p.gu.id);
         if ((kbUsed && kbPeg < 0 && k === kbSel) || lift) { g.strokeStyle = C.amber; g.lineWidth = 3; g.beginPath(); g.arc(x + off, y - sr * 0.35 - lift, sr * 0.62 + 5, 0, 7); g.stroke(); }
       });
-      if (drag) { paw(drag.x, drag.y, sr * 0.9); button(drag.x, drag.y, sr * 0.7, drag.peg.gu.col, drag.peg.gu.name); }
+      if (drag) { paw(drag.x, drag.y, sr * 0.9); button(drag.x, drag.y, sr * 0.7, drag.peg.gu.col, drag.peg.gu.name, drag.peg.gu.id); }
       // scoresheet
       card(sheet.x, sheet.y, sheet.w, sheet.h);
       g.textAlign = "left"; g.textBaseline = "alphabetic"; g.fillStyle = C.ink;
       if (wide) {
         g.font = "italic 20px 'IM Fell English',Georgia,serif"; g.fillText("Scores", sheet.x + 14, sheet.y + 30);
         let y = sheet.y + 54;
+        const tw = Math.min(sheet.w - 28, 150), th = Math.round(tw * 1100 / 800);
+        const pic = sheet.h > 560 && A.draw(g, "parlour-scoresheet", sheet.x + (sheet.w - tw) / 2, sheet.y + 40, tw, th);
+        if (pic) y += th + 6;
         GUESTS.forEach((gu, i) => {
           g.fillStyle = gu.col; g.fillRect(sheet.x + 14, y - 11, 12, 12); g.fillStyle = C.ink; g.font = "700 14px Karla,Arial,sans-serif"; g.fillText(gu.name, sheet.x + 32, y);
           const moved = pegs[i].at !== gu.sheet;
           g.textAlign = "right"; g.font = "600 13px Karla,Arial,sans-serif"; g.fillStyle = moved ? C.red : C.ink; g.fillText(moved ? `now ${pegs[i].at + 1}` : "", sheet.x + sheet.w - 14, y); g.textAlign = "left";
           y += 18; g.font = "13px Karla,Arial,sans-serif";
-          gu.trail.forEach(([w, n, pos]) => { g.fillStyle = "rgba(42,33,27,.85)"; g.fillText(w, sheet.x + 18, y); g.textAlign = "right"; g.fillText(String(pos + 1), sheet.x + sheet.w - 14, y); g.textAlign = "left"; y += 16; });
+          (pic ? gu.trail.slice(-3) : gu.trail).forEach(([w, n, pos]) => { g.fillStyle = "rgba(42,33,27,.85)"; g.fillText(w, sheet.x + 18, y); g.textAlign = "right"; g.fillText(String(pos + 1), sheet.x + sheet.w - 14, y); g.textAlign = "left"; y += 16; });
           g.strokeStyle = "rgba(165,85,58,.5)"; g.beginPath(); g.moveTo(sheet.x + 14, y - 8); g.lineTo(sheet.x + sheet.w - 14, y - 8); g.stroke(); y += 8;
         });
       } else {
@@ -281,10 +327,6 @@ export default {
           g.font = "13px Karla,Arial,sans-serif"; g.fillStyle = moved ? C.red : C.ink; g.fillText(moved ? `sheet ${gu.sheet + 1} → ${pegs[i].at + 1}` : `space ${gu.sheet + 1}`, x, sheet.y + 46);
         });
       }
-      // tampers left: three felt buttons
-      const tx = wide ? sheet.x + 14 : notes.x + notes.w - 96, ty = wide ? sheet.y + sheet.h - 24 : notes.y + 22;
-      g.fillStyle = C.ink; g.font = "italic 15px 'IM Fell English',Georgia,serif"; g.textAlign = "left"; g.textBaseline = "alphabetic"; g.fillText("tampers", tx, ty - 16);
-      for (let k = 0; k < LIMIT; k++) { const used = k < tampers.length; button(tx + 12 + k * 28, ty, 11, used ? C.red : C.cream); }
       // doorway strip: footsteps in three steps, the window, and the time
       const step = footStep();
       g.fillStyle = C.night; g.fillRect(door.x, door.y, door.w, door.h);
@@ -315,11 +357,18 @@ export default {
       // notes strip
       card(notes.x, notes.y, notes.w, notes.h);
       g.fillStyle = C.ink; g.textAlign = "left"; g.textBaseline = "alphabetic"; g.font = "italic 15px 'IM Fell English',Georgia,serif";
-      g.fillText("what you watched from the shelf:", notes.x + 14, notes.y + 22);
+      g.fillText(wide ? "what you watched from the shelf:" : "what you watched:", notes.x + 14, notes.y + 22);
       g.font = "14px Karla,Arial,sans-serif";
       let ny = notes.y + 41;
-      const maxW = notes.w - 28 - (wide ? 0 : 0);
+      const maxW = notes.w - 28;
       NOTES.forEach((n) => { ny = wrapText(n, notes.x + 14, ny, wide ? maxW : maxW, 17); });
+      // tampers left: three felt buttons
+      const tx = wide ? sheet.x + 14 : notes.x + notes.w - 96, ty = wide ? sheet.y + sheet.h - 24 : notes.y + 18;
+      g.fillStyle = C.ink; g.font = "italic 15px 'IM Fell English',Georgia,serif"; g.textAlign = "left"; g.textBaseline = "alphabetic"; if (wide) g.fillText("tampers", tx, ty - 16);
+      for (let k = 0; k < LIMIT; k++) { const used = k < tampers.length; button(tx + 12 + k * 28, ty, 11, used ? C.red : C.cream); }
+      // the group's dread against the flee line (spread 5 shows it)
+      { const gd = Math.round(groupDread()); g.font = "700 13px Karla,Arial,sans-serif"; g.fillStyle = gd >= 50 ? C.red : C.ink; g.textAlign = "left";
+        if (wide) g.fillText(`dread ${gd} · flee ${FLEE}`, tx + 96, ty + 4, sheet.w - 114); else { g.textAlign = "right"; g.fillText(`dread ${gd} · flee ${FLEE}`, notes.x + notes.w - 12, notes.y + notes.h - 12); } }
       // climbing back, the hunger, messages
       if (climbing >= 0) {
         const p = Math.min(1, climbing / CLIMB);
@@ -361,25 +410,32 @@ export default {
       if (kind === "knot") addDread(owner, 8);
       if (kind === "hearth") { GUESTS.forEach((gu) => addDread(gu.id, 10)); blame += 12; }
       if (kind === "personal") { dread[owner] += 15; personal++; }
+      if (kind === "door") { addDread(owner, 6); blame += 2; }
+      if (kind === "it") { dread[owner] += 10; it = pegs.find((q) => q.gu.id === owner); }
       hunger = Math.max(0, hunger - 5);
       noise += kind === "swap" || kind === "hearth" ? 2 : 1;
     }
     function move(peg, to) {
-      if (over || climbing >= 0 || still) return;
+      if (over || climbing >= 0 || still || lying) return;
       if (to === peg.at) return;
       if (tampers.length >= LIMIT) { say("Three tampers is all a visit allows. Leave.", C.amber); return; }
-      const snap = { pegs: pegs.map((p) => p.at), dread: { ...dread }, blame, hunger, noise, personal };
-      const occ = pegs.find((q) => q !== peg && q.at === to);
-      let kind;
-      if (occ) { kind = "swap"; occ.at = peg.at; peg.at = to; apply(kind, peg.gu.id, occ.gu.id); }
-      else { peg.at = to; kind = kindOf({ gu: peg.gu, at: -1 }, to); apply(kind, peg.gu.id); }
+      const snap = { pegs: pegs.map((p) => p.at), dread: { ...dread }, blame, hunger, noise, personal, it };
+      const kind = kindOf(peg, to);
+      const occ = kind === "swap" ? pegs.find((q) => q !== peg && q.at === to) : null;
+      if (occ) { occ.at = peg.at; peg.at = to; apply(kind, peg.gu.id, occ.gu.id); }
+      else { peg.at = to; apply(kind, peg.gu.id); }
       tampers.push({ kind, snap, who: peg.gu.name });
       undoBtn.disabled = false;
       const [x, y] = spot(to);
-      const dv = { nudge: 6, swap: 4, knot: 8, hearth: 10, personal: 15 }[kind];
+      const dv = { nudge: 6, swap: 4, knot: 8, hearth: 10, personal: 15, door: 6, it: 10 }[kind];
       pop(`${KIND_LABEL[kind]} · +${dv} dread`, x, y - L.sr * 1.6, kind === "personal" ? C.amber : C.bone);
-      say({ nudge: `${peg.gu.name}'s peg nudged off the scoresheet.`, swap: `${peg.gu.name} and ${occ ? occ.gu.name : ""} swapped.`, knot: `${peg.gu.name}'s peg on a Knot it never landed on.`, hearth: `${peg.gu.name}'s peg on the Hearth.`, personal: `${peg.gu.name}'s peg on the ${SYM[to]}.` }[kind]);
-      if (!firstSaid) { firstSaid = true; beat("The first peg", "It is still warm from their hands. Somewhere on the trail they are laughing about something else."); }
+      say({ nudge: `${peg.gu.name}'s peg nudged off the scoresheet.`, swap: `${peg.gu.name} and ${occ ? occ.gu.name : ""} swapped.`, knot: `${peg.gu.name}'s peg on a Knot it never landed on.`, hearth: `${peg.gu.name}'s peg on the Hearth.`, personal: `${peg.gu.name}'s peg on ${SPACE_NAME(to)}.`, door: `${peg.gu.name}'s peg back on the Door.`, it: `${peg.gu.name}'s peg beside the one that is nobody's. ${peg.gu.name} is It.` }[kind]);
+      if (kind === "it") beat("It", `Whoever shares a space with that peg is It. Tonight the pack goes to ${peg.gu.name}'s door first. You did not decide that; you only put the peg there.`, 5200);
+      if (onDoor() && !sentenceSaid) {
+        sentenceSaid = true; lieBtn.hidden = false;
+        beat("The only thing a toy can say", "Three pegs on the Door. It is a sentence, and it has one word: leave. You can climb back now, or lie down by the board (D) and let them find who said it.", 7000);
+      } else if (!onDoor()) lieBtn.hidden = true;
+      if (!firstSaid && kind !== "it" && !onDoor()) { firstSaid = true; beat("The first peg", "It is still warm from their hands. Somewhere on the trail they are laughing about something else."); }
       if (kind === "personal" && !personalSaid) { personalSaid = true; beat("You know where this one belongs", "Nobody wrote it down. You watched, and you remembered. That is the worst of it."); }
       if (watchState === "watch") seen();
     }
@@ -387,7 +443,8 @@ export default {
       if (climbing >= 0 || over) return;
       const last = tampers.pop(); if (!last) return;
       last.snap.pegs.forEach((a, i) => (pegs[i].at = a)); Object.assign(dread, last.snap.dread);
-      ({ blame, hunger, noise, personal } = last.snap);
+      ({ blame, hunger, noise, personal, it } = last.snap);
+      lieBtn.hidden = !onDoor();
       undoBtn.disabled = true; say("Put back, as if nothing happened.");
     }
     function setStill(v) {
@@ -396,15 +453,37 @@ export default {
       still = v; stillBtn.setAttribute("aria-pressed", String(v));
       if (v) drag = null;
     }
+    // Ruth does what you do: she moves a piece when nobody is looking. Her peg goes one space on.
+    function ruthMoves() {
+      if (over || lying || ruth.at >= N - 2) return;
+      ruth.at++; ruth.moves++;
+      if (it && it.at === ruth.at - 1) { /* It stays It: the peg was beside it when the choosing was done */ }
+      if (!ruthSaid) { ruthSaid = true; beat("The peg that is nobody's", `While you held still it moved: the old bone button tied with red wool is on ${SPACE_NAME(ruth.at)} now, one space on. You did not touch it. Put a guest's peg beside it and that guest is It.`, 6500); }
+      else say("The bone peg has moved one space on.", C.amber);
+    }
     function seen() {
-      if (watchSeen) return;
+      if (watchSeen || lying) return;
       watchSeen = true; seenCount++; noise += 3; blame += 4;
       const at = t + 10 * speed;
       early = early === null ? at : Math.min(early, at);
       say("Wes saw something move on the table. He is coming in.", C.amber);
       beat("At the window", "A shape in the glass, a hand cupped against the light. Then the porch boards creak toward the door.");
     }
-    function leave() { if (over || climbing >= 0) return; setStill(false); climbing = 0; undoBtn.disabled = true; leaveBtn.disabled = true; stillBtn.disabled = true; drag = null; }
+    // the Door sentence's set-piece: you stay on the table on purpose, and hold still while they come in
+    function lie() {
+      if (over || climbing >= 0 || lying || !onDoor()) return;
+      lying = true; drag = null; kbPeg = -1; watches = []; watchState = "none";
+      early = t + 7 * speed; undoBtn.disabled = true; leaveBtn.disabled = true; lieBtn.hidden = true;
+      stillBtn.hidden = false; stillBtn.classList.add(PRE + "urgent");
+      beat("Beside the board", "You lie down on the cloth with one paw on the Door. Hold still (hold Space, or the button) before they reach the room, and do not let go.", 6000);
+    }
+    function sentenceEnd(moved) {
+      const gd = Math.round(groupDread());
+      if (moved) { dread.noor += 15; finishWith("lose", `They are in the doorway when you move. Noor sees the cat's head turn and screams, and the three pegs go over with the table. A slip: one memory goes, and nobody remembers what the board said. ${it ? it.gu.name + " is still It." : ""}`); return; }
+      if (gd >= 50) finishWith("win", `They come in and find three pegs on the Door, and a felt cat lying beside the board with one paw on the cloth. Nobody laughs. Noor reads it out loud, once: leave. Group dread ${gd}: the flee line falls from ${FLEE} to ${FLEE - 15}. Wes puts you back on the shelf with two fingers, and goes to look at where the car keys are.`);
+      else finishWith("done", `They come in and find three pegs on the Door and a cat beside the board. Group dread ${gd}, under 50: Wes says “Seriously, stop messing around.” and they take it for one another's joke. The sentence was said. It was not heard.`);
+    }
+    function leave() { if (over || climbing >= 0 || lying) return; setStill(false); climbing = 0; undoBtn.disabled = true; leaveBtn.disabled = true; stillBtn.disabled = true; drag = null; }
     function finishWith(kind, text) { over = true; api.store.set("losses", kind === "lose" ? losses + 1 : 0); api.end({ outcome: kind, text }); }
     function caught(who) {
       dread[who.id] += 15; blame = Math.max(0, blame - 10);
@@ -412,15 +491,16 @@ export default {
     }
     function safe() {
       const sum = Math.round(dread.noor + dread.wes + dread.ana);
+      const itTail = it ? ` ${it.gu.name} is It: the pack goes to ${it.gu.name}'s door first tonight.` : "";
       const parts = GUESTS.map((gu) => `${gu.name} +${Math.round(dread[gu.id])}`).join(", ");
       const mine = GUESTS.filter((gu, i) => SYM[pegs[i].at] === gu.personal && pegs[i].at !== gu.sheet).map((gu) => gu.name);
       if (!tampers.length) { finishWith("done", "Back on the shelf having touched nothing. The pegs are where the guests left them, and the hunger has not been fed."); return; }
-      const won = sum >= 15 || personal > 0;
+      const won = sum >= 15 || personal > 0 || !!it;
       let tail;
       if (mine.length) tail = ` When they sit down tonight, ${mine.join(" and ")} will find their own symbol under their peg, and say nothing about it to the others.`;
       else if (blame >= 50) tail = " Tonight they will argue about who moved the pegs. Nobody will think of the shelf.";
       else tail = " Someone will say the board got knocked. Nobody will quite believe it.";
-      finishWith(won ? "win" : "done", `Back on the shelf before the door opens. Dread: ${parts}; blame ${Math.round(blame)}.${tail}${seenCount ? " Wes keeps glancing at the window." : ""}`);
+      finishWith(won ? "win" : "done", `Back on the shelf before the door opens. Dread: ${parts}; blame ${Math.round(blame)}.${tail}${itTail}${onDoor() ? " Three pegs on the Door: they will find the sentence and not the one who said it." : ""}${seenCount ? " Wes keeps glancing at the window." : ""}`);
     }
 
     // ---- input -------------------------------------------------------------------------------
@@ -431,6 +511,8 @@ export default {
       if (!started || over || climbing >= 0) return;
       if (still) { say("You are holding still. Let go first.", C.amber); return; }
       const [x, y] = pt(e), p = pegAt(x, y);
+      if (lying) return;
+      if (!p) { const [rx, ry] = spot(ruth.at); if (Math.hypot(rx - x, ry - y + L.sr * 0.35) < L.sr * 1.1) { say("It is nobody's. It will not come up off the cloth.", C.amber); return; } }
       if (p) { drag = { peg: p, x, y, hover: p.at }; cv.setPointerCapture(e.pointerId); if (watchState === "watch") seen(); }
     });
     K.on(cv, "pointermove", (e) => {
@@ -449,6 +531,8 @@ export default {
       if (!started || over || climbing >= 0) return;
       const k = e.key;
       if (k === " ") { e.preventDefault(); if (!e.repeat) setStill(true); return; }
+      if (lying) return;
+      if (k === "d" || k === "D") { lie(); return; }
       if (e.target.tagName === "BUTTON" && k === "Enter") return;
       kbUsed = true;
       if (["1", "2", "3"].includes(k)) { kbSel = +k - 1; kbPeg = -1; }
@@ -473,6 +557,7 @@ export default {
     K.on(window, "blur", () => setStill(false));
     K.on(undoBtn, "click", () => { undo(); wrap.focus(); });
     K.on(leaveBtn, "click", leave);
+    K.on(lieBtn, "click", () => { lie(); wrap.focus(); });
 
     let prev = performance.now(), tickRaf = 0;
     function tick(now) {
@@ -484,14 +569,18 @@ export default {
         if (w !== undefined) {
           if (watchState === "none" && t >= w) { watchState = "warn"; watchT = WARN * speed; stillBtn.hidden = false; stillBtn.classList.add(PRE + "urgent"); if (watchI === 0) beat("A shadow at the window", "Wes, on the porch with his camera, cups a hand to the glass. Hold still (Space, or hold the button) until he looks away."); }
           else if (watchState === "warn") { watchT -= dt; if (watchT <= 0) { watchState = "watch"; watchT = WATCH * speed; watchSeen = false; if (!still || drag) seen(); } }
-          else if (watchState === "watch") { watchT -= dt; if (watchT <= 0) { watchState = "none"; watchI++; stillBtn.classList.remove(PRE + "urgent"); if (!over) say("He looks away.", C.bone); } }
+          else if (watchState === "watch") { watchT -= dt; if (watchT <= 0) { watchState = "none"; watchI++; stillBtn.classList.remove(PRE + "urgent"); if (!over) say("He looks away.", C.bone); ruthMoves(); } }
         }
         // the porch guest after 60 s, if you have been loud
         if (early === null && t >= 60 * speed && noise >= 3) early = t + (12 + rng() * 10) * speed;
         const st = footStep();
         if (st >= 1 && stepSaid < 1) { stepSaid = 1; beat("Voices on the trail", "The hike is coming back early, or right on time. Leave now and the climb takes four seconds.", 3800); }
         if (climbing >= 0) { climbing += dt / speed; if (climbing >= CLIMB) { safe(); } }
-        if (!over && t >= arrival()) caught(early !== null && early < TIME * speed ? GUESTS[1] : GUESTS[0]);
+        if (!over && lying && t >= arrival()) {
+          if (foundAt < 0) { foundAt = t; stillBtn.classList.remove(PRE + "urgent"); if (still) beat("They come in", "Three people in the doorway, then round the table. Nobody speaks. One of them counts the pegs.", 5000); }
+          if (!still) sentenceEnd(true);
+          else if (t - foundAt >= FOUND * speed) sentenceEnd(false);
+        } else if (!over && t >= arrival()) caught(early !== null && early < TIME * speed ? GUESTS[1] : GUESTS[0]);
       }
       tickRaf = requestAnimationFrame(tick);
     }
@@ -504,15 +593,24 @@ export default {
       <h2>Parlour</h2>
       <p class="${PRE}goal">Day two, late morning. The guests are out on the hike; their counting game lies mid-play on the table. Move their pegs so the wrongness finds each of them, and be back on the shelf before anyone walks in.</p>
       <div class="${PRE}legend">
-        <div><i style="background:${btnFelt(C.sky)}"></i><span>Drag a peg to any space</span><kbd>1–3 · Enter · arrows</kbd></div>
+        <div><i style="background:${btnFelt(C.rust)}"></i><span>Drag a peg to any space</span><kbd>1–3 · Enter · arrows</kbd></div>
         <div><i style="background:${btnFelt(C.cream)}"></i><span>Undo the last tamper</span><kbd>U</kbd></div>
         <div><i style="background:${btnFelt(C.red)}"></i><span>Leave: the climb takes four seconds</span><kbd>L</kbd></div>
+        <div><i style="background:${btnFelt(C.bone)}"></i><span>One bone peg is nobody's. It moves when you are not looking</span><span></span></div>
       </div>
       <p class="${PRE}kind" ${losses >= 2 ? "" : "hidden"}>Caught twice. A slower hike is ticked for you.</p>
       <label><input type="checkbox" ${losses >= 2 ? "checked" : ""}> Slower hike (twice the time)</label>
       <button type="button">Climb down</button>
     </div>`;
     wrap.appendChild(intro);
+    { // the chapter card and the title in the cross-stitch alphabet, when the art is there
+      const cardEl = intro.querySelector("." + PRE + "card"), h2 = intro.querySelector("h2");
+      const cw = Math.min(436, wrap.clientWidth - 76);
+      const plate = A.picture("chapter-11", cw, { alt: "Chapter 11: The Second Game: Movement" });
+      if (plate) { plate.className = PRE + "plate"; cardEl.insertBefore(plate, h2); }
+      const ttl = A.word("Parlour", 40);
+      if (ttl) { h2.textContent = ""; h2.appendChild(ttl); }
+    }
     const sb = intro.querySelector("button");
     K.on(sb, "click", () => {
       speed = intro.querySelector("input").checked ? 2 : 1;
@@ -526,6 +624,6 @@ export default {
     ro.observe(wrap);
     // a read-only probe for automated play tests
     layout(); K.frame(draw);
-    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); ro.disconnect(); wrap.remove(); } };
+    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); A.dispose(); ro.disconnect(); wrap.remove(); } };
   },
 };

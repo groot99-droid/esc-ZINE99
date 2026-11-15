@@ -582,7 +582,10 @@
     "memory.kept",
     "memory_log",
     "seams.warm_slots",
-    "seams.bound_used"
+    "seams.bound_used",
+    "borrowed.kept",
+    "seams.wadded",
+    "seams.all_wadded"
    ],
    "enter": "push-in",
    "exit": "pull-out",
@@ -816,7 +819,10 @@
     "memory.kept",
     "memory_log",
     "seams.warm_slots",
-    "seams.bound_used"
+    "seams.bound_used",
+    "borrowed.kept",
+    "seams.wadded",
+    "seams.all_wadded"
    ],
    "enter": "push-in",
    "exit": "pull-out",
@@ -874,7 +880,8 @@
     "run.hunt_group",
     "blame",
     "memory.kept",
-    "book.spread_5"
+    "book.spread_5",
+    "dread.group"
    ],
    "writes": [
     "dread.guest_1",
@@ -888,7 +895,11 @@
     "memory_log",
     "hunger",
     "governor.clips",
-    "guests_fled"
+    "guests_fled",
+    "parlour.ruth_peg",
+    "parlour.it",
+    "parlour.sentence",
+    "flee_line"
    ],
    "enter": "push-in",
    "exit": "pull-out",
@@ -972,7 +983,8 @@
    "reads": [
     "memory.kept",
     "seams.warm_slots",
-    "book.spread_5"
+    "book.spread_5",
+    "parlour.it"
    ],
    "writes": [
     "hunger",
@@ -992,7 +1004,8 @@
     "pack.hunger.marcus",
     "pack.hunger.dani",
     "guests_fled",
-    "elders.slips"
+    "elders.slips",
+    "cupboard.opened"
    ],
    "enter": "cut",
    "exit": "push-in",
@@ -1065,7 +1078,10 @@
     "memory.kept",
     "memory_log",
     "seams.warm_slots",
-    "seams.bound_used"
+    "seams.bound_used",
+    "borrowed.kept",
+    "seams.wadded",
+    "seams.all_wadded"
    ],
    "enter": "cut",
    "exit": "pull-out",
@@ -1123,7 +1139,8 @@
    "world_runs": true,
    "reads": [
     "run.hunt_group",
-    "seal.done"
+    "seal.done",
+    "parlour.ruth_peg"
    ],
    "writes": [
     "dread.guest_1",
@@ -1134,7 +1151,9 @@
     "slips",
     "memory.kept",
     "memory_log",
-    "hunger"
+    "hunger",
+    "parlour.ruth_peg",
+    "parlour.it"
    ],
    "enter": "push-in",
    "exit": "pull-out",
@@ -1156,7 +1175,10 @@
     "memory.kept",
     "memory_log",
     "seams.warm_slots",
-    "seams.bound_used"
+    "seams.bound_used",
+    "borrowed.kept",
+    "seams.wadded",
+    "seams.all_wadded"
    ],
    "enter": "push-in",
    "exit": "pull-out",
@@ -1267,7 +1289,8 @@
     "hunger",
     "hunt_log",
     "memory.kept",
-    "memory_log"
+    "memory_log",
+    "threshold.held"
    ],
    "enter": "cut",
    "exit": "fade",

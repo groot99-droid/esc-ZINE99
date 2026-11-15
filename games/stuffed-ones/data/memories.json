@@ -18,5 +18,21 @@
     {"id": "dani_names", "name": "Dani names the toys", "person": "dani", "chapter": "c01_arrival", "scene": "a1_cabin_arrival", "guaranteed": false, "condition": {"type": "action", "note": "Stand with her."}},
     {"id": "dani_glad", "name": "Dani is glad she came", "person": "dani", "chapter": "c03_smell_warmth", "scene": "a3_trail_creek", "guaranteed": false, "condition": {"type": "shelve", "incidents": ["I3"]}},
     {"id": "the_door", "name": "The door", "person": "narrator", "chapter": "c08_giving_in", "scene": "b8_the_door", "guaranteed": false, "condition": {"type": "flag", "flag": "act2.door_held", "note": "Hold at the door."}}
-  ]
+  ],
+  "borrowed": {
+    "note": "Accepted 2026-11-15 (phase 1). Friends' memories that come down the pulse into the Stuffing tray in the friend's own thread colour. Packed, one costs a slot, slows that friend's hunger by 20 percent and keeps them one line of voice; it is never counted as kept and never pays a cost; left in the tray it goes back up the pulse. Names are written for the game.",
+    "first_scene": "b6_stuffing_1",
+    "hunger_slower_percent": 20,
+    "patches": [
+      {"id": "dani_gerald", "friend": "dani", "name": "Dani moved Gerald.", "always": true},
+      {"id": "dani_weird", "friend": "dani", "name": "Don't make it weird.", "always": false},
+      {"id": "jamie_hiker", "friend": "jamie", "name": "The rare hiker", "always": false},
+      {"id": "jamie_nine", "friend": "jamie", "name": "Since we were nine", "always": false},
+      {"id": "lila_flat", "friend": "lila", "name": "Two years, one flat", "always": false},
+      {"id": "lila_laugh", "friend": "lila", "name": "Don't laugh.", "always": false},
+      {"id": "marcus_compass", "friend": "marcus", "name": "The compass", "always": false},
+      {"id": "marcus_held", "friend": "marcus", "name": "Your stitches held", "always": false}
+    ]
+  },
+  "wadding": {"note": "Accepted 2026-11-15 (phase 1). Plain fill, always in the tray. A wadded slot is cold: not warm, no memory, no game. Every open slot of all six seams wadded sets seams.all_wadded.", "hunger_rate_percent": 0, "plays_a_game": false}
 }

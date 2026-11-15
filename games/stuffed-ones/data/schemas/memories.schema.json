@@ -89,6 +89,71 @@
           }
         }
       }
+    },
+    "borrowed": {
+      "type": "object",
+      "required": [
+        "first_scene",
+        "hunger_slower_percent",
+        "patches"
+      ],
+      "properties": {
+        "note": {
+          "type": "string"
+        },
+        "first_scene": {
+          "type": "string"
+        },
+        "hunger_slower_percent": {
+          "type": "integer"
+        },
+        "patches": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "friend",
+              "name",
+              "always"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "friend": {
+                "type": "string",
+                "description": "A pack id from guests.json, never the narrator"
+              },
+              "name": {
+                "type": "string"
+              },
+              "always": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    "wadding": {
+      "type": "object",
+      "required": [
+        "hunger_rate_percent",
+        "plays_a_game"
+      ],
+      "properties": {
+        "note": {
+          "type": "string"
+        },
+        "hunger_rate_percent": {
+          "type": "integer"
+        },
+        "plays_a_game": {
+          "type": "boolean"
+        }
+      }
     }
   }
 }

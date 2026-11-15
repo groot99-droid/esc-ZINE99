@@ -17,6 +17,15 @@
 // guests take the one that runs warmer and deeper ("The deeper we went, the warmer the air
 // became."). Phases: the outer ring with Lila; the inner ring, where Jamie joins at the far loop
 // door; the centre. Narrative lines other than quotations are written for the game.
+//
+// Phase 1 (DESIGN.md "Accepted development", 2026-11-15): the statue at the threshold. When the last
+// guest is inside, the Chase does not end: you stand the cat in the centre doorway as the wall that
+// keeps them in, and hold Still for twenty seconds while Ana kneels and talks to you. Let go once
+// and a memory goes and the count begins again; let go twice and she is past you. (Walking in after
+// them instead is The Page, a later phase: the centre is shut to the pack here.) The pack are the
+// game's felt medallions, the walls its wallpaper repeats, the centre its tapestry (api.art); the
+// woven squares and block sprites stay as the fallback.
+import { artKit, FACE } from "./art-kit.js";
 const PRE = "stuffed-ones-labyrinth-";
 const C = { moss: "#7d8a5a", mossD: "#56623d", rust: "#a5553a", cedar: "#6b4a32", cedarD: "#4a3222", dust: "#e6dcc6", cream: "#efe5cf",
   bone: "#f6f1e4", amber: "#e39a2d", red: "#b8322a", sky: "#8fa9bf", night: "#56627a", nightL: "#7f8ca3", ink: "#2a211b", bear: "#c2925f" };
@@ -38,6 +47,17 @@ const START = [
 ];
 const TOY_SPEED = 2.6, GUEST_SPEED = TOY_SPEED * 1.2, SEE = 5, STEP_SEE = 7, LIMIT = 300;
 const HUNGER_RATE = 1 / 3, STEP_COST = 12, TWITCH_COST = 2;
+const DOORWAY = [10, 7], STATUE = 20;
+const FACES = { cat: "medallion-narrator", rabbit: "medallion-lila", bear: "medallion-jamie" };
+const SHELF = { Noor: "medallion-noor", Wes: "medallion-wes", Ana: "medallion-ana" };
+const WALLP = [["wallpaper-1-sprig", "wallpaper-2-trellis"], ["wallpaper-3-birds", "wallpaper-4-stripe"], ["wallpaper-5-acorns", "wallpaper-6-selvage"]];
+const KNEEL = [
+  [1, "At the threshold", "Ana comes back to the doorway and kneels in front of you.", "It's you. The white one, from the second shelf."],
+  [5, "Ana", "", "I put the rabbit beside the bear so she wouldn't be alone. Was that wrong?"],
+  [9, "Ana", "", "If somebody is in there, blink. Move a paw. Anything."],
+  [13, "Ana", "", "Please."],
+  [17, "Ana", "She stands up, and backs into the warm room.", "…Okay."],
+];
 
 function kit() {
   const offs = [], timers = new Set(); let raf = 0;
@@ -53,6 +73,7 @@ export default {
   mount(root, api) {
     const K = kit();
     const rng = api.rng();
+    const A = artKit(api);
     const losses = api.store.get("losses", 0);
     const wrap = document.createElement("div");
     wrap.className = PRE + "wrap";
@@ -71,6 +92,9 @@ export default {
 @keyframes ${PRE}glow{to{box-shadow:inset 0 0 0 3px ${C.cedar},0 0 0 4px ${C.amber}}}
 .${PRE}beat{position:absolute;left:50%;transform:translateX(-50%);top:62px;width:min(480px,calc(100% - 32px));box-sizing:border-box;${weaveCss(C.cream, "rgba(165,85,58,.08)")};color:${C.ink};border:5px solid ${C.rust};outline:2px dashed ${C.amber};outline-offset:-10px;padding:14px 18px;font:15px/1.45 Karla,Arial,sans-serif;z-index:3;transition:opacity .5s;pointer-events:none}
 .${PRE}beat b{font:400 19px 'IM Fell English',Georgia,serif;display:block}
+.${PRE}beat canvas,.${PRE}card canvas{position:static;width:auto;height:auto}
+.${PRE}beat canvas{float:left;margin:0 12px 2px 0;border:2px solid ${C.rust}}
+.${PRE}card .${PRE}plate{margin:0 0 10px;border:2px solid ${C.rust}}
 .${PRE}beat q{font:italic 17px 'IM Fell English',Georgia,serif}
 .${PRE}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(42,33,27,.62);z-index:4;padding:16px;overflow:auto}
 .${PRE}card{width:min(480px,100%);box-sizing:border-box;${weaveCss(C.cream, "rgba(165,85,58,.07)")};color:${C.ink};border:8px solid ${C.rust};outline:3px dashed ${C.amber};outline-offset:-14px;padding:24px 26px 30px;position:relative}
@@ -126,11 +150,14 @@ export default {
     let sel = 0, memories = 3, freezes = 0, t = 0, speed = 1, started = false, over = false, msg = "", msgT = 0, msgCol = C.bone, held = null;
     let hunger = 40, holding = false, stepT = 0, lurches = 0, steps = 0, twitches = 0, loopSaid = false, innerSaid = false, centreSaid = false, unlocked = 1;
     const pops = [];
+    let statue = null;   // the last set-piece: { on, t, breaks, line, said }
     let L = null, tex = null, hoverCell = null, beatTimer = 0;
     const live = () => toys.filter((ty) => ty.active);
 
-    function beat(title, text, quote, ms = 5000) {
-      beatEl.innerHTML = ""; const b = document.createElement("b"); b.textContent = title; beatEl.appendChild(b);
+    function beat(title, text, quote, ms = 5000, pic) {
+      beatEl.innerHTML = "";
+      const thumb = pic ? A.picture(pic, 76) : null; if (thumb) beatEl.appendChild(thumb);
+      const b = document.createElement("b"); b.textContent = title; beatEl.appendChild(b);
       if (quote) { const q = document.createElement("q"); q.textContent = quote; beatEl.appendChild(q); if (text) beatEl.appendChild(document.createTextNode(" ")); }
       if (text) beatEl.appendChild(document.createTextNode(text));
       beatEl.style.opacity = 1; clearTimeout(beatTimer); beatTimer = K.after(ms, () => (beatEl.style.opacity = 0));
@@ -151,7 +178,7 @@ export default {
       const size = cell * N;
       L = { W, H, cell, ox: Math.floor((W - size) / 2), oy: hud + Math.floor((H - hud - bottom - size) / 2), size, hud };
       beatEl.style.top = (L.oy + 8) + "px";
-      tex = null;
+      tex = null; A.flush();
     }
 
     // ---- the woven texture ------------------------------------------------------------------
@@ -172,8 +199,13 @@ export default {
       for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
         const m = MAP[j][i], cx = i * s, cy = j * s;
         if (m === "#") {
-          weave(x, cx, cy, s, C.dust, "#f6efdf", "#c9b994");
-          x.fillStyle = (i + j) % 2 === 0 ? C.rust : C.moss; x.fillRect(cx + s * 0.4, cy + s * 0.4, s * 0.2, s * 0.2);
+          // a wall is wallpaper seen edge-on: each ring has its own two papers
+          const wp = A.sprite(WALLP[Math.min(2, depth(i, j) >> 1)][(i + j) % 2], s, s, { src: [0, 0, 240, 240], key: "wall", ready: () => (tex = null) });
+          if (wp) { x.drawImage(wp, cx, cy, s, s); x.strokeStyle = "rgba(42,33,27,.45)"; x.lineWidth = 1; x.strokeRect(cx + 0.5, cy + 0.5, s - 1, s - 1); }
+          else {
+            weave(x, cx, cy, s, C.dust, "#f6efdf", "#c9b994");
+            x.fillStyle = (i + j) % 2 === 0 ? C.rust : C.moss; x.fillRect(cx + s * 0.4, cy + s * 0.4, s * 0.2, s * 0.2);
+          }
         } else {
           const base = warmFloor(depth(i, j));
           weave(x, cx, cy, s, base, mix(base, C.bone, 0.28), mix(base, C.ink, 0.38));
@@ -189,7 +221,16 @@ export default {
           }
         }
       }
+      // the centre is the tapestry's own: the red room and its circle of skins
+      const mid = A.sprite("tapestry-centre", 5 * s, 5 * s, { src: [190, 195, 820, 820], key: "centre", ready: () => (tex = null) });
+      if (mid) { x.globalAlpha = 0.9; x.drawImage(mid, 5 * s, 5 * s, 5 * s, 5 * s); x.globalAlpha = 1; }
       return c;
+    }
+    function toyFace(ty, x, y, s) {
+      const d = Math.max(18, Math.round(s * 0.9));
+      if (!A.draw(g, FACES[ty.kind], x - d / 2, y - d / 2, d, d, FACE)) return false;
+      g.strokeStyle = C.ink; g.lineWidth = 1.2; g.beginPath(); g.arc(x, y, d / 2, 0, 7); g.stroke();
+      return true;
     }
     function sprite(cx, cy, s, rows, cols) {
       const u = s / 6;
@@ -215,7 +256,14 @@ export default {
       const warmth = guests.reduce((a, gu) => a + (gu.done ? 3 : gu.ring + depth(gu.x, gu.y) / 6), 0) / (guests.length * 3);
       g.fillStyle = C.red;
       const threads = Math.floor(warmth * 40);
-      for (let k = 0; k < threads; k++) { const yy = oy + 5 * s + ((k * 7) % (5 * s)); g.fillRect(ox + 5 * s, yy, 5 * s, 1.5); }
+      g.globalAlpha = 0.6; for (let k = 0; k < threads; k++) { const yy = oy + 5 * s + ((k * 7) % (5 * s)); g.fillRect(ox + 5 * s, yy, 5 * s, 1.5); } g.globalAlpha = 1;
+      if (statue) {
+        // the doorway to hold, and Ana kneeling on its far side
+        const dx = ox + DOORWAY[0] * s, dy = oy + DOORWAY[1] * s, pl = api.reducedMotion ? 0.6 : 0.5 + 0.5 * Math.sin(now / 260);
+        g.strokeStyle = `rgba(227,154,45,${0.5 + 0.5 * pl})`; g.lineWidth = 3; g.strokeRect(dx + 1.5, dy + 1.5, s - 3, s - 3);
+        if (!statue.on) { g.font = "700 12px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "bottom"; const tw = g.measureText("STAND HERE").width + 8; g.fillStyle = C.amber; g.fillRect(dx + s / 2 - tw / 2, dy - 17, tw, 16); g.fillStyle = C.ink; g.fillText("STAND HERE", dx + s / 2, dy - 2); }
+        if (statue.on && statue.t < 17.6) { sprite(dx - s / 2, dy + s * 0.56, s * 0.92, GUEST.slice(0, 4), { h: C.cedar, f: C.dust, b: C.rust, l: C.night }); g.font = `700 ${Math.max(12, s * 0.3)}px Karla,Arial,sans-serif`; g.textAlign = "center"; g.textBaseline = "bottom"; g.fillStyle = C.bone; g.fillText("Ana", dx - s / 2, dy + s * 0.12); }
+      }
       const at = (e) => [ox + e.px * s + s / 2, oy + e.py * s + s / 2];
       // the hover cell and the planned path
       if (hoverCell && open(hoverCell[0], hoverCell[1]) && started && !over) { g.strokeStyle = "rgba(246,241,228,.9)"; g.lineWidth = 2; g.strokeRect(ox + hoverCell[0] * s + 1, oy + hoverCell[1] * s + 1, s - 2, s - 2); }
@@ -252,7 +300,16 @@ export default {
           if (ty.path.length) { g.strokeStyle = "rgba(246,241,228,.75)"; g.lineWidth = 2; g.setLineDash([2, 4]); g.beginPath(); g.moveTo(x, y); ty.path.forEach(([px, py]) => g.lineTo(ox + px * s + s / 2, oy + py * s + s / 2)); g.stroke(); g.setLineDash([]); const e = ty.path[ty.path.length - 1]; g.fillStyle = C.amber; g.fillRect(ox + e[0] * s + s * 0.35, oy + e[1] * s + s * 0.35, s * 0.3, s * 0.3); }
           if (stepT > 0) { g.strokeStyle = C.red; g.lineWidth = 2; g.globalAlpha = stepT; g.beginPath(); g.arc(x, y, s * (0.8 + (1 - stepT) * 2.5), 0, 7); g.stroke(); g.globalAlpha = 1; }
         }
-        sprite(x, y, s * 0.8, ty.kind === "cat" ? CAT : ty.kind === "bear" ? BEAR : RAB, { c: C.amber, r: C.cream, b: C.bear, e: C.ink });
+        if (!toyFace(ty, x, y, s)) sprite(x, y, s * 0.8, ty.kind === "cat" ? CAT : ty.kind === "bear" ? BEAR : RAB, { c: C.amber, r: C.cream, b: C.bear, e: C.ink });
+        if (i === 0 && statue && statue.on) {
+          // the count, sewn round the cat stitch by stitch
+          const d = s * 1.9;
+          if (holding) A.draw(g, "ui-hold-still-ring", x - d / 2, y - d / 2, d, d, { src: [10, 10, 300, 300], round: true, key: "ring" });
+          toyFace(ty, x, y, s);
+          g.strokeStyle = holding ? C.bone : C.red; g.lineWidth = 4; g.beginPath(); g.arc(x, y, s * 0.86, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * Math.min(1, statue.t / STATUE)); g.stroke();
+          g.font = "700 13px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "top"; const txt = holding ? `${Math.ceil(STATUE - statue.t)} s` : "HOLD STILL", tw = g.measureText(txt).width + 8;
+          g.fillStyle = holding ? "rgba(42,33,27,.85)" : C.red; g.fillRect(x - tw / 2, y + s * 0.95, tw, 17); g.fillStyle = C.bone; g.fillText(txt, x, y + s * 0.95 + 2);
+        }
       });
       if (holding) { g.strokeStyle = C.bone; g.lineWidth = 4; g.globalAlpha = 0.5; g.strokeRect(ox - 4, oy - 4, size + 8, size + 8); g.globalAlpha = 1; }
       drawHud(now);
@@ -277,6 +334,8 @@ export default {
       const herdRing = Math.min(...guests.map((gu) => (gu.done ? 2 : gu.ring)));
       const inCentre = guests.filter((gu) => gu.done).length;
       ["OUTER", "INNER", `CENTRE ${inCentre}/3`].forEach((r, i) => { g.fillStyle = i === herdRing ? C.amber : "rgba(246,241,228,.55)"; g.fillText(r, 14 + i * 66, hy); });
+      // who has gone down, as what they will be on the shelf
+      if (!narrow) guests.forEach((gu, i) => { if (gu.done) A.draw(g, SHELF[gu.name], 250 + 66 + Math.max(0, Math.min(160, W - 560)) + 16 + i * 30, hy - 13, 26, 26, FACE); });
       // hunger: a woven bar that reddens
       const hx = narrow ? 14 : 250, hyy = narrow ? hy + 24 : hy, hw = narrow ? 110 : Math.min(160, W - 560);
       if (hw > 60) {
@@ -322,8 +381,34 @@ export default {
       gu.loops = 0; gu.frozenTotal = 0; gu.freeze = 0; gu.immune = 2;
       setRing(gu.ring, gu);
     }
+    // ---- the statue at the threshold ---------------------------------------------------------
+    function startStatue() {
+      statue = { on: false, t: 0, breaks: 0, line: -1, armed: false };
+      sel = 0; unlock(2); hunger = Math.min(hunger, 45); t = Math.min(t, (LIMIT - 75) * speed);
+      beat("The threshold", "All three are inside. The Chase is not over: stand the cat in the centre doorway (the lit square) and hold Still. You are the wall that keeps them in.", null, 7000, "tapestry-centre");
+    }
+    function breakStatue(why) {
+      statue.breaks++; statue.t = 0; statue.armed = false; statue.line = -1;
+      if (statue.breaks >= 2) { lose("You moved, and she saw it twice. Ana is past you and up the corridor before the pulse can turn the pack, and the two inside come after her. The herd is loose in the rings again, and the grey is coming."); return; }
+      loseMemory(why);
+      if (!over) beat("She saw", "Ana scrambles back from the doorway. Then, slowly, she comes forward again. Hold still: the count begins over.", null, 5000);
+    }
+    function updateStatue(dt) {
+      const cat = toys[0], there = cat.x === DOORWAY[0] && cat.y === DOORWAY[1] && Math.hypot(cat.x - cat.px, cat.y - cat.py) < 0.05;
+      if (!statue.on) { if (there) { statue.on = true; say("In the doorway. Hold still (hold Space).", C.amber); btn("hold").classList.add(PRE + "new"); } return; }
+      if (!there) { statue.on = false; if (statue.armed) breakStatue("You stepped out of the doorway while she was looking. One memory gone."); return; }
+      if (holding) {
+        statue.armed = statue.armed || statue.t > 0.4;
+        statue.t += dt / speed; hunger += 1.2 * dt / speed;
+        const k = KNEEL.findIndex(([at], i) => i > statue.line && statue.t >= at);
+        if (k >= 0) { statue.line = k; beat(KNEEL[k][1], KNEEL[k][2], KNEEL[k][3], 3800); }
+        if (statue.t >= STATUE) win();
+      } else if (statue.armed) breakStatue("You let go, and the cat's head turned. One memory gone.");
+    }
     function update(dt) {
       t += dt;
+      if (statue) updateStatue(dt);
+      if (over) return;
       if (t >= LIMIT * speed) { lose("Grey light comes through the boards. The herd scattered and the rhythm broke; the ring begins again from its entrance."); return; }
       if (stepT > 0) stepT = Math.max(0, stepT - dt / 1.5);
       hunger += HUNGER_RATE * dt / speed;
@@ -331,7 +416,8 @@ export default {
         lurches++; hunger = 55;
         const ty = toys[0]; ty.still = 0;
         pop("lurch", ty, C.red);
-        loseMemory("The hunger lurches you forward. One memory gone.");
+        if (statue && statue.on && statue.armed) breakStatue("The hunger lurches you forward in the doorway. One memory gone.");
+        else loseMemory("The hunger lurches you forward. One memory gone.");
         if (over) return;
       }
       toys.forEach((ty) => {
@@ -382,7 +468,7 @@ export default {
           gu.done = true; gu.fade = 0; hunger = Math.max(0, hunger - 15); pop("−15 hunger", gu, C.amber);
           say(`${gu.name} reaches the centre.`, C.amber);
           if (!centreSaid) { centreSaid = true; beat("The centre", `${gu.name} stops in the warm room and does not turn round.`, "The deeper we went, the warmer the air became.", 5000); }
-          if (guests.every((x) => x.done)) win();
+          if (guests.every((x) => x.done)) startStatue();
           return;
         }
         if (NB.filter(([ax, ay]) => open(gu.x + ax, gu.y + ay)).length >= 3) { gu.scared = 0; gu.hesitate = 0.9 * speed; }
@@ -399,7 +485,7 @@ export default {
       innerSaid = true;
       toys[2].active = true; place(toys[2], 11, 9);
       unlock(3);
-      beat("Jamie", `${gu.name} is in the inner ring. Behind you, Jamie has come down through the trapdoor; he stands below the far loop door and will hold there until you lead him. Step (S) is yours now: a step forward, seen from far off, and hungry work.`, null, 7000);
+      beat("Jamie", `${gu.name} is in the inner ring. Behind you, Jamie has come down through the trapdoor; he stands below the far loop door and will hold there until you lead him. Step (S) is yours now: a step forward, seen from far off, and hungry work.`, null, 7000, "tapestry-inner");
     }
     function unlock(n) {
       if (n <= unlocked) return;
@@ -409,21 +495,25 @@ export default {
     }
     function end(kind, text) { if (over) return; over = true; holding = false; api.store.set("losses", kind === "lose" ? losses + 1 : 0); api.end({ outcome: kind, text }); }
     function win() {
+      if (over) return;
       const best = api.store.get("best", null); if (best === null || t < best) api.store.set("best", Math.round(t));
-      end("win", `All three went down to the centre in ${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, "0")}, with ${memories} memor${memories === 1 ? "y" : "ies"} left${lurches ? "" : " and no lurch"}. The warmth rises through the floor. We were the hunters.`);
+      over = true; holding = false; api.store.set("losses", 0);
+      const text = `All three went down to the centre, and for twenty seconds you were a toy in a doorway while one of them asked you to be anything else. ${memories} memor${memories === 1 ? "y" : "ies"} left${lurches ? "" : ", and no lurch"}${statue && statue.breaks ? "; she saw you move once" : ""}. The warmth rises through the floor. We were the hunters.`;
+      A.finale(wrap, "chapter-15").then(() => api.end({ outcome: "win", text }));
     }
     function lose(text) { end("lose", text); }
 
     // ---- input -------------------------------------------------------------------------------
     function goTo(x, y) {
       const ty = toys[sel];
+      if (statue && depth(x, y) >= 5) { say("Not in after them. Not this time.", C.amber); return; }
       const dist = bfs(x, y, (cx, cy) => occupied(cx, cy, ty) && !(cx === ty.x && cy === ty.y));
       if (dist[ty.y][ty.x] === Infinity) { say("No way through from here."); return; }
       const path = []; let cx = ty.x, cy = ty.y;
       while (!(cx === x && cy === y)) { let nx = cx, ny = cy; for (const [dx, dy] of NB) { const ax = cx + dx, ay = cy + dy; if (open(ax, ay) && dist[ay][ax] < dist[ny][nx]) { nx = ax; ny = ay; } } if (nx === cx && ny === cy) break; path.push([nx, ny]); cx = nx; cy = ny; }
       ty.path = path;
     }
-    function nudge(dx, dy) { const ty = toys[sel]; const nx = ty.x + dx, ny = ty.y + dy; if (open(nx, ny) && !occupied(nx, ny, ty)) ty.path = [[nx, ny]]; }
+    function nudge(dx, dy) { const ty = toys[sel]; const nx = ty.x + dx, ny = ty.y + dy; if (statue && depth(nx, ny) >= 5) { say("Not in after them. Not this time.", C.amber); return; } if (open(nx, ny) && !occupied(nx, ny, ty)) ty.path = [[nx, ny]]; }
     function swap() { const n = toys.length; for (let k = 1; k <= n; k++) { const j = (sel + k) % n; if (toys[j].active) { sel = j; break; } } pop(toys[sel].name, toys[sel], C.amber); }
     function twitch() { if (holding) return; toys[sel].still = 0; twitches++; hunger += TWITCH_COST; pop("twitch", toys[sel], C.bone); }
     function step() {
@@ -493,10 +583,18 @@ export default {
       <button type="button">Go down</button>
     </div>`;
     wrap.appendChild(intro);
+    {
+      const cardEl = intro.querySelector("." + PRE + "card"), h2 = intro.querySelector("h2");
+      const cw = Math.min(412, wrap.clientWidth - 100);
+      const plate = A.picture("chapter-14", cw, { alt: "Chapter 14: The Final Game: The Chase" });
+      if (plate) { plate.className = PRE + "plate"; cardEl.insertBefore(plate, h2); }
+      const ttl = A.word("Labyrinth from above", 30);
+      if (ttl) { h2.textContent = ""; h2.appendChild(ttl); }
+    }
     const sb = intro.querySelector("button");
     K.on(sb, "click", () => {
       speed = intro.querySelector("input").checked ? 2 : 1; intro.remove(); started = true; wrap.focus();
-      beat("The outer ring", "Come at them from behind, never too close. The door with the turning thread, down the left side, leads back.", "We didn't rush. We didn't pounce. / We herded them.", 6000);
+      beat("The outer ring", "Come at them from behind, never too close. The door with the turning thread, down the left side, leads back.", "We didn't rush. We didn't pounce. / We herded them.", 6000, "tapestry-outer");
     });
     sb.focus();
 
@@ -504,6 +602,6 @@ export default {
     ro.observe(wrap);
     // a read-only probe for automated play tests
     layout(); K.frame(draw);
-    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); ro.disconnect(); wrap.remove(); } };
+    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); A.dispose(); ro.disconnect(); wrap.remove(); } };
   },
 };

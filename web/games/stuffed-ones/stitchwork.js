@@ -13,6 +13,10 @@
 // beat drifts the next point or jerks the pull); Unpick (twice, 3 s each) takes out the last stitch
 // to sew it again. Phases: calm (stitches 1-3), the pulse (4-6), dawn (7-10 or under 25 s): the
 // pull runs faster. Narrative lines are written for the game (listed in the refine additions).
+//
+// The cloth under the chart, the pattern card, the Steady mark and the needle are the game's art
+// (api.art); the counted chart itself is still drawn cell by cell, since it is the play.
+import { artKit, FACE } from "./art-kit.js";
 const PRE = "stuffed-ones-stitchwork-";
 const C = { moss: "#7d8a5a", mossL: "#a3ad83", rust: "#a5553a", rustL: "#c98a6e", sky: "#8fa9bf", cream: "#efe5cf", bone: "#f6f1e4",
   ink: "#2a211b", paper: "#f4efe3", amber: "#e39a2d", red: "#b8322a", night: "#56627a", band: "#8e9f68", green: "#4f6b2c" };
@@ -35,6 +39,7 @@ function hash(x, y) { let h = (x * 374761393 + y * 668265263) >>> 0; h = (h ^ (h
 export default {
   mount(root, api) {
     const K = kit();
+    const A = artKit(api);
     const losses = api.store.get("losses", 0);
     const wrap = document.createElement("div");
     wrap.className = PRE + "wrap";
@@ -67,6 +72,9 @@ export default {
 .${PRE}choose button{font:600 15px Karla,Arial,sans-serif;background:${C.ink};color:${C.bone};border:0;padding:10px 16px;cursor:pointer;min-height:44px}
 .${PRE}choose button+button{background:${C.bone};color:${C.ink};box-shadow:inset 0 0 0 1.5px ${C.ink}}
 .${PRE}choose button:focus-visible{outline:3px solid ${C.red};outline-offset:2px}
+.${PRE}card canvas{position:static;width:auto;height:auto}
+.${PRE}card .${PRE}pat{float:right;margin:12px 18px 6px 12px;border:1px solid ${C.ink};box-shadow:3px 3px 0 ${C.moss}}
+.${PRE}choose button{display:flex;align-items:center;gap:8px}
 .${PRE}card label{font:14px Karla,Arial,sans-serif;display:flex;gap:8px;align-items:center;margin:12px 18px 0}
 .${PRE}card .${PRE}kind{margin:10px 18px 0;font:italic 14px 'IM Fell English',Georgia,serif;color:${C.red}}
 </style><canvas aria-label="A cross-stitch chart of a torn seam with numbered entry points"></canvas>
@@ -130,17 +138,26 @@ export default {
       if (y <= TEAR + 1) return "lining";
       return (x + y) % 5 === 0 ? "sky" : "rust";
     }
-    function drawCell(sx, sy, kind, c, x, y) {
+    function drawCell(sx, sy, kind, c, x, y, q = g) {
       const fill = { moss: C.mossL, rust: C.rustL, sky: C.rustL, lining: C.cream, torn: "#fbf8f1" }[kind];
-      g.fillStyle = fill; g.fillRect(sx, sy, c, c);
+      q.fillStyle = fill; q.fillRect(sx, sy, c, c);
       if (c < 7) return;
-      g.strokeStyle = "rgba(42,33,27,.55)"; g.fillStyle = "rgba(42,33,27,.55)"; g.lineWidth = 1;
+      q.strokeStyle = "rgba(42,33,27,.55)"; q.fillStyle = "rgba(42,33,27,.55)"; q.lineWidth = 1;
       const m = c * 0.28;
-      if (kind === "moss") { g.beginPath(); g.moveTo(sx + m, sy + m); g.lineTo(sx + c - m, sy + c - m); g.moveTo(sx + c - m, sy + m); g.lineTo(sx + m, sy + c - m); g.stroke(); }
-      else if (kind === "rust") { g.beginPath(); g.arc(sx + c / 2, sy + c / 2, c * 0.13, 0, 7); g.fill(); }
-      else if (kind === "sky") { g.fillStyle = C.sky; g.beginPath(); g.moveTo(sx + c / 2, sy + m); g.lineTo(sx + c - m, sy + c - m); g.lineTo(sx + m, sy + c - m); g.closePath(); g.fill(); }
-      else if (kind === "lining") { g.beginPath(); g.moveTo(sx + c - m, sy + m); g.lineTo(sx + m, sy + c - m); g.stroke(); }
-      else if (kind === "torn" && hash(x, y) < 0.35) { g.fillStyle = "rgba(107,74,50,.7)"; g.beginPath(); g.moveTo(sx + c / 2, sy + m); g.lineTo(sx + c - m, sy + c / 2); g.lineTo(sx + c / 2, sy + c - m); g.lineTo(sx + m, sy + c / 2); g.closePath(); g.fill(); }
+      if (kind === "moss") { q.beginPath(); q.moveTo(sx + m, sy + m); q.lineTo(sx + c - m, sy + c - m); q.moveTo(sx + c - m, sy + m); q.lineTo(sx + m, sy + c - m); q.stroke(); }
+      else if (kind === "rust") { q.beginPath(); q.arc(sx + c / 2, sy + c / 2, c * 0.13, 0, 7); q.fill(); }
+      else if (kind === "sky") { q.fillStyle = C.sky; q.beginPath(); q.moveTo(sx + c / 2, sy + m); q.lineTo(sx + c - m, sy + c - m); q.lineTo(sx + m, sy + c - m); q.closePath(); q.fill(); }
+      else if (kind === "lining") { q.beginPath(); q.moveTo(sx + c - m, sy + m); q.lineTo(sx + m, sy + c - m); q.stroke(); }
+      else if (kind === "torn" && hash(x, y) < 0.35) { q.fillStyle = "rgba(107,74,50,.7)"; q.beginPath(); q.moveTo(sx + c / 2, sy + m); q.lineTo(sx + c - m, sy + c / 2); q.lineTo(sx + c / 2, sy + c - m); q.lineTo(sx + m, sy + c / 2); q.closePath(); q.fill(); }
+    }
+    // the counted cloth never changes, so it is drawn once per layout and blitted each frame
+    let chartTex = null;
+    function buildChart(c) {
+      const dpr = Math.min(2, devicePixelRatio || 1), cv2 = document.createElement("canvas");
+      cv2.width = Math.round(COLS * c * dpr); cv2.height = Math.round(ROWS * c * dpr);
+      const q = cv2.getContext("2d"); q.scale(dpr, dpr);
+      for (let y = 0; y < ROWS; y++) for (let x = 0; x < COLS; x++) drawCell(x * c, y * c, cellSym(x, y), c, x, y, q);
+      return { cv: cv2, c };
     }
     function stitchLine(a, b, w, col) {
       g.strokeStyle = "rgba(42,33,27,.6)"; g.lineWidth = w + 2.2; g.lineCap = "round";
@@ -166,6 +183,12 @@ export default {
       g.setTransform(dpr, 0, 0, dpr, 0, 0);
       const total = 60 * speed, dawn = Math.max(0, Math.min(1, 1 - timeLeft / total));
       g.fillStyle = C.paper; g.fillRect(0, 0, W, H);
+      // the cloth itself, under the lamp: the friend's torn seam, or your own felt
+      if (A.draw(g, whose === "lila" ? "ground-torn-seam" : "ground-own-felt", 0, 0, W, H, { cover: true, key: "bg" })) {
+        g.fillStyle = "rgba(244,239,227,.93)";
+        g.fillRect(L.gx - 34, L.gy - 24, VC * c + 46, (R1 - R0) * c + 34);
+        g.fillRect(L.px - 10, L.py - 14, L.pw + 20, wide ? L.ph - 44 : L.ph + 8);
+      }
       // dawn growing over the paper: night blue-grey to warm light as Mabel nears
       const gr = g.createLinearGradient(0, 0, W, 0);
       gr.addColorStop(0, `rgba(86,98,122,${0.35 * (1 - dawn)})`); gr.addColorStop(1, `rgba(227,154,45,${0.36 * dawn})`);
@@ -191,7 +214,8 @@ export default {
       // grid cells in view
       g.save(); g.beginPath(); g.rect(L.gx, L.gy, VC * c, (R1 - R0) * c); g.clip();
       const x0 = Math.floor(vx), x1 = Math.min(COLS, Math.ceil(vx + VC));
-      for (let y = R0; y < R1; y++) for (let x = x0; x < x1; x++) { const [sx, sy] = toScr(x, y); drawCell(sx, sy, cellSym(x, y), c, x, y); }
+      if (!chartTex || chartTex.c !== c) chartTex = buildChart(c);
+      { const [sx, sy] = toScr(0, 0); g.drawImage(chartTex.cv, sx, sy, COLS * c, ROWS * c); }
       // the open tear: a ragged dark gap the stitches close
       g.fillStyle = "rgba(74,50,34,.85)";
       g.beginPath();
@@ -227,6 +251,7 @@ export default {
         }
       }
       // the pulse: a ring that beats through the whole chart
+      if (pulseOn && !steadied) { const mw = Math.min(210, VC * c * 0.6); A.draw(g, "ui-steady-mark", L.gx + (VC * c - mw) / 2, L.gy + 8, mw, mw / 3); }
       if (pulseOn) { g.strokeStyle = steadied ? C.green : C.red; g.lineWidth = steadied ? 6 : 4; g.globalAlpha = 0.55; g.strokeRect(L.gx + 2, L.gy + 2, VC * c - 4, (R1 - R0) * c - 4); g.globalAlpha = 1; }
       g.restore();
       g.strokeStyle = C.ink; g.lineWidth = 1.5; g.strokeRect(L.gx, L.gy, VC * c, (R1 - R0) * c);
@@ -295,9 +320,15 @@ export default {
       // the next move, in words
       g.fillStyle = C.ink; g.font = "600 15px Karla,Arial,sans-serif";
       const step = lockT > 0 ? "The thread tore. Rethreading…" : phase === "in" ? "① Press the dark point (in)" : phase === "drag" ? "② Drag to the dashed point (out)" : pulling ? "③ Pulling… let go in the green" : "③ Hold to pull the thread";
-      if (started && !over) g.fillText(step, px, y);
+      const ic = started && !over && A.draw(g, "ui-needle-cursor", px, y - 20, 30, 30) ? 38 : 0;
+      if (started && !over) g.fillText(step, px + ic, y);
       y += 22;
-      if (drifts + steadies > 0 && wide) { g.font = "13px Karla,Arial,sans-serif"; g.fillStyle = "rgba(42,33,27,.8)"; g.fillText(`pulse: ${steadies} steadied, ${drifts} slipped`, px, y); }
+      if (drifts + steadies > 0 && wide) { g.font = "13px Karla,Arial,sans-serif"; g.fillStyle = "rgba(42,33,27,.8)"; g.fillText(`pulse: ${steadies} steadied, ${drifts} slipped`, px + ic, y); }
+      // the pattern card this seam is worked from
+      if (wide) {
+        const room = L.py + L.ph - 60 - (y + 18), th = Math.min(250, room), tw = th * 900 / 1100;
+        if (th > 110 && A.draw(g, "chart-3-whip", px, y + 18, tw, th)) { g.strokeStyle = C.ink; g.lineWidth = 1; g.strokeRect(px, y + 18, tw, th); g.font = "700 12px ui-monospace,Menlo,monospace"; g.fillStyle = C.ink; g.textAlign = "left"; g.fillText("PATTERN", px + tw + 10, y + 32); g.fillText("CARD 3", px + tw + 10, y + 48); }
+      }
     }
 
     // ---- scoring ------------------------------------------------------------------------------
@@ -479,6 +510,16 @@ export default {
       <div class="${PRE}choose"><button type="button" data-w="lila">Mend Lila's seam</button><button type="button" data-w="me">Mend your own</button></div>
     </div>`;
     wrap.appendChild(intro);
+    {
+      const cardEl = intro.querySelector("." + PRE + "card"), h2 = intro.querySelector("h2");
+      const pat = A.picture("chart-3-whip", 108, { alt: "Stitch chart 3: whip stitch" });
+      if (pat) { pat.className = PRE + "pat"; cardEl.insertBefore(pat, h2); }
+      const ttl = A.word("Stitchwork", 34);
+      if (ttl) { h2.textContent = ""; h2.appendChild(ttl); }
+      const band = A.picture("ui-rule-band", Math.min(300, wrap.clientWidth - 90), { alt: "" });
+      if (band) { band.style.margin = "8px 18px 0"; cardEl.insertBefore(band, cardEl.querySelector("." + PRE + "key")); }
+      [["lila", "medallion-lila"], ["me", "medallion-narrator"]].forEach(([w, id]) => { const f = A.picture(id, 34, { ...FACE, alt: "" }); if (f) intro.querySelector(`button[data-w="${w}"]`).prepend(f); });
+    }
     intro.querySelectorAll("button").forEach((b) => K.on(b, "click", () => {
       whose = b.dataset.w; gentle = intro.querySelector("input").checked; speed = gentle ? 2 : 1; timeLeft = 60 * speed;
       intro.remove(); started = true; wrap.focus();
@@ -487,10 +528,10 @@ export default {
     }));
     intro.querySelector("button").focus();
 
-    const ro = new ResizeObserver(() => layout());
+    const ro = new ResizeObserver(() => { A.flush(); layout(); });
     ro.observe(wrap);
     // a read-only probe for automated play tests
     layout(); K.frame(draw);
-    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); ro.disconnect(); wrap.remove(); } };
+    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); A.dispose(); ro.disconnect(); wrap.remove(); } };
   },
 };

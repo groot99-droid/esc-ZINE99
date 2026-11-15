@@ -20,34 +20,45 @@
 // creative-writing/vault/02_Novels/01_The_Stuffed_Ones.md (ch 11 and ch 12; DESIGN.md sections 3, 11).
 // The opening quotes ch 11 as DESIGN.md section 3 item 12 does; Marcus's line is DESIGN.md
 // section 6's (added). Other narrative lines are written for the game (refine additions list).
+//
+// The strips are the game's blackwork glyph cards (api.art): who in white thread, a thing in black,
+// an act in red, as the cards are sewn. A card whose glyph you cannot read yet has a scrap tacked
+// over its word. Reading the walls shows the whole stitched wall, all thirty glyphs. The segment
+// glyphs stay as the fallback.
+import { artKit } from "./art-kit.js";
 const PRE = "stuffed-ones-hand-sewn-book-";
 const C = { linen: "#e3d6bb", linenD: "#cdbd9c", silk: "#1d1712", red: "#b8322a", white: "#f6f1e4", black: "#1d1712",
   cedar: "#6b4a32", cedarD: "#3d2a1d", amber: "#e39a2d", ink: "#2a211b", moss: "#4f6b2c" };
 
 // Glyphs on a 4 x 4 counted grid: [x1, y1, x2, y2] segments of black silk.
 const GLYPHS = {
-  needle: { name: "needle", segs: [[2, 0, 2, 4], [1, 1, 2, 0], [3, 1, 2, 0], [1.5, 3, 2.5, 3]] },
-  thread: { name: "thread", segs: [[0, 2, 1, 1], [1, 1, 2, 3], [2, 3, 3, 1], [3, 1, 4, 2]] },
-  knot: { name: "knot", segs: [[1, 1, 3, 1], [3, 1, 3, 3], [3, 3, 1, 3], [1, 3, 1, 1], [1, 1, 3, 3], [3, 1, 1, 3], [2, 0, 2, 1], [2, 3, 2, 4]] },
-  hand: { name: "hand", segs: [[0, 4, 4, 4], [1, 4, 1, 1], [2, 4, 2, 0], [3, 4, 3, 1], [4, 4, 4, 2]] },
-  mouth: { name: "mouth", segs: [[0, 1, 2, 3], [2, 3, 4, 1], [0, 1, 4, 1], [1, 2, 3, 2]] },
-  cloth: { name: "cloth", segs: [[0, 0, 4, 0], [0, 0, 0, 4], [0, 4, 4, 4], [4, 0, 4, 4], [0, 2, 4, 2], [2, 0, 2, 4]] },
-  they: { name: "they", segs: [[0, 4, 1, 0], [1, 0, 2, 4], [2, 4, 3, 0], [3, 0, 4, 4]] },
+  needle: { name: "needle", art: "glyph-09-needle", segs: [[0, 2, 3, 2], [3, 2, 3.5, 1.5], [3.5, 1.5, 4, 2], [4, 2, 3.5, 2.5], [3.5, 2.5, 3, 2]] },
+  thread: { name: "thread", art: "glyph-10-thread", segs: [[0, 2, 1, 1], [1, 1, 2, 3], [2, 3, 3, 1], [3, 1, 4, 2]] },
+  knot: { name: "knot", art: "glyph-11-knot", segs: [[0, 3, 2, 1], [2, 1, 4, 3], [1, 2, 2, 3], [2, 3, 3, 2]] },
+  mouth: { name: "mouth", art: "glyph-12-mouth", segs: [[1, 1, 3, 1], [3, 1, 4, 2], [4, 2, 3, 3], [3, 3, 1, 3], [1, 3, 0, 2], [0, 2, 1, 1], [1, 2, 3, 2], [2, 3, 2, 4]] },
+  filling: { name: "filling", art: "glyph-19-filling", segs: [[1, 0, 3, 0], [3, 0, 4, 1], [4, 1, 3, 2], [3, 2, 1, 2], [1, 2, 0, 1], [0, 1, 1, 0], [0, 3, 4, 3], [0, 4, 4, 4], [1, 2.5, 1, 4], [2, 2.5, 2, 4], [3, 2.5, 3, 4]] },
+  they: { name: "they", art: "glyph-01-they", segs: [[1, 0, 1, 1.5], [0, 0.7, 2, 0.7], [1, 1.5, 0, 2.2], [1, 1.5, 2, 2.2], [3, 2, 3, 3.5], [2, 2.7, 4, 2.7], [3, 3.5, 2, 4], [3, 3.5, 4, 4]] },
+  we: { name: "we", art: "glyph-02-we", segs: [[2, 0, 2, 1.5], [1, 0.7, 3, 0.7], [2, 1.5, 1, 2.2], [2, 1.5, 3, 2.2], [1, 2.6, 3, 2.6], [3, 2.6, 4, 3.3], [4, 3.3, 3, 4], [3, 4, 1, 4], [1, 4, 0, 3.3], [0, 3.3, 1, 2.6]] },
+  it: { name: "it", art: "glyph-03-it", segs: [[1, 0, 3, 0], [3, 0, 4, 1], [4, 1, 3, 2], [3, 2, 1, 2], [1, 2, 0, 1], [0, 1, 1, 0], [2, 2.4, 0.6, 4], [2, 2.4, 3.4, 4], [2, 3, 1.3, 4], [2, 3, 2.7, 4]] },
+  summon: { name: "summon", art: "glyph-23-summon", segs: [[1, 0, 3, 0], [3, 0, 4, 0.7], [4, 0.7, 3, 1.4], [3, 1.4, 1, 1.4], [1, 1.4, 0, 0.7], [0, 0.7, 1, 0], [2, 1.4, 2, 2], [0, 4, 4, 4], [1.3, 4, 1.3, 2.6], [1.3, 2.6, 2.7, 2.6], [2.7, 2.6, 2.7, 4]] },
+  feed: { name: "feed", art: "glyph-25-feed", segs: [[0, 1, 3, 1], [3, 1, 3.5, 0.5], [3.5, 0.5, 4, 1], [4, 1, 3.5, 1.5], [3.5, 1.5, 3, 1], [1, 2.6, 3, 2.6], [3, 2.6, 4, 3.3], [4, 3.3, 3, 4], [3, 4, 1, 4], [1, 4, 0, 3.3], [0, 3.3, 1, 2.6]] },
+  begin: { name: "begin", art: "glyph-27-begin", segs: [[0, 0, 4, 0], [2, 0, 2, 2], [0, 2, 4, 2], [0, 4, 2, 2], [2, 2, 4, 4]] },
 };
+const ALL_GLYPHS = 30;
 const RULES = [
   { id: "needle", text: "a needle comes right before its thread" },
   { id: "knot", text: "a knot ends the line" },
   { id: "many", text: "doubled means many: it follows what it repeats" },
 ];
 const SPREADS = [
-  { no: "I", title: "Summoned", rules: 1, slots: ["white", "red", "red", "black"],
-    strips: [["they", "white"], ["needle", "red"], ["thread", "red"], ["cloth", "black"]],
+  { no: "I", title: "Summoned", rules: 1, slots: ["white", "red", "black", "black"],
+    strips: [["they", "white"], ["summon", "red"], ["needle", "black"], ["thread", "black"]],
     text: ["They weren't made.", "They were summoned."] },
-  { no: "III", title: "Fed", rules: 2, slots: ["white", "red", "red", "black", "red", "black"],
-    strips: [["hand", "white"], ["needle", "red"], ["thread", "red"], ["mouth", "red"], ["cloth", "black"], ["knot", "black"]],
+  { no: "III", title: "Fed", rules: 2, slots: ["red", "black", "white", "black", "black", "black"],
+    strips: [["feed", "red"], ["mouth", "black"], ["it", "white"], ["needle", "black"], ["thread", "black"], ["knot", "black"]],
     text: ["how to feed it"] },
-  { no: "V", title: "The filling", rules: 3, slots: ["white", "white", "red", "black", "black", "red", "red", "black"],
-    strips: [["hand", "white"], ["hand", "white", true], ["mouth", "red"], ["needle", "red"], ["thread", "red"], ["cloth", "black"], ["cloth", "black", true], ["knot", "black"], ["knot", "black", true]],
+  { no: "V", title: "The filling", rules: 3, slots: ["white", "white", "red", "black", "black", "white", "black", "black"],
+    strips: [["we", "white"], ["we", "white", true], ["begin", "red"], ["needle", "black"], ["thread", "black"], ["it", "white"], ["filling", "black"], ["knot", "black"], ["knot", "black", true]],
     text: ["We were the next filling.", "The ritual had already begun the moment we stepped inside."] },
 ];
 const WALL_COST = 8, SAMPLER = 2;
@@ -82,6 +93,8 @@ export default {
   mount(root, api) {
     const K = kit();
     const rng = api.rng("stuffed-ones/book");
+    const A = artKit(api), ART = A.has("glyph-09-needle");
+    const WALL_IDS = A.art.list("pieces").filter((id) => /^glyph-\d/.test(id)).sort().slice(0, ALL_GLYPHS);
     const losses = api.store.get("losses", 0);
     const wrap = document.createElement("div");
     wrap.className = PRE + "wrap";
@@ -114,6 +127,8 @@ export default {
 .${PRE}legend kbd{font:600 12px ui-monospace,Menlo,monospace;border:1px solid ${C.silk};padding:1px 6px;background:${C.white}}
 .${PRE}card button{font:600 15px Karla,Arial,sans-serif;background:${C.silk};color:${C.linen};border:0;padding:11px 24px;cursor:pointer;margin-top:14px;min-height:44px}
 .${PRE}card button:focus-visible{outline:3px solid ${C.red};outline-offset:2px}
+.${PRE}card canvas{position:static;width:auto;height:auto}
+.${PRE}card .${PRE}plate{margin:0 0 10px;border:2px solid ${C.silk}}
 .${PRE}card label{font:14px Karla,Arial,sans-serif;display:flex;gap:8px;align-items:center;margin-top:10px}
 .${PRE}card .${PRE}kind{margin:10px 0 0;font:italic 15px 'IM Fell English',Georgia,serif;color:${C.red}}
 </style><canvas aria-label="An open hand-sewn book: loose glyph strips on the left page, coloured slots on the right"></canvas>
@@ -126,7 +141,8 @@ export default {
 
     let started = false, over = false, speed = 1, total = 180, left = 180, idle = 0;
     let tautStart = 0, si = 0, strips = [], row = [], taut = 0, read = [];
-    const named = new Set(["they", "needle", "thread", "cloth"]);
+    const named = new Set(["they", "needle", "thread", "summon"]);
+    let wallT = 0, wallNew = [];
     let kbUsed = false, drag = null, held = null, cursor = 0, msg = "", msgT = 0, msgCol = C.red, shakeSlot = -1, shakeT = 0, hintPair = null;
     let samplers = SAMPLER, wallsUsed = 0, lastViol = 0, creep = 0, marcusSaid = false, edgeSaid = false, hover = null;
     const pops = [];
@@ -158,14 +174,18 @@ export default {
       const book = { x: pad, y: pad, w: W - pad * 2, h: H - pad * 2 - (wide ? 0 : 58) };
       let lp, rp;
       if (wide) { const half = book.w / 2; lp = { x: book.x, y: book.y, w: half, h: book.h }; rp = { x: book.x + half, y: book.y, w: half, h: book.h }; }
-      else { const hh = Math.min(book.h * 0.52, 400); rp = { x: book.x, y: book.y, w: book.w, h: hh }; lp = { x: book.x, y: book.y + hh, w: book.w, h: book.h - hh }; }
+      else { const hh = Math.min(book.h * 0.56, 440); rp = { x: book.x, y: book.y, w: book.w, h: hh }; lp = { x: book.x, y: book.y + hh, w: book.w, h: book.h - hh }; }
       const sp = SPREADS[si];
       const n = sp.slots.length;
-      const sz = Math.max(36, Math.min(84, (rp.w - 40) / n - 6, rp.h * 0.2));
+      const ASP = ART ? 320 / 220 : 1;
+      const perRow = !wide && n > 4 ? Math.ceil(n / 2) : n;
+      const sz = Math.round(Math.max(36, Math.min(84, (rp.w - 40) / perRow - 6, rp.h * (wide ? 0.2 : 0.125 * (n > 4 ? 1 : 1.5)))));
+      const sh = Math.round(sz * ASP);
       const gap = Math.min(12, sz * 0.16);
-      const rowW = n * sz + (n - 1) * gap;
-      const slotY = rp.y + Math.max(wide ? 120 : 128, rp.h * 0.26);
-      const slotPos = sp.slots.map((_, k) => ({ x: rp.x + (rp.w - rowW) / 2 + k * (sz + gap), y: slotY }));
+      const rowW = perRow * sz + (perRow - 1) * gap;
+      const slotY = rp.y + Math.max(wide ? 120 : 112, wide ? rp.h * 0.26 : 0);
+      const slotPos = sp.slots.map((_, k) => ({ x: rp.x + (rp.w - rowW) / 2 + (k % perRow) * (sz + gap), y: slotY + Math.floor(k / perRow) * (sh + 12) }));
+      const slotBottom = slotY + Math.ceil(n / perRow) * (sh + 12) - 12;
       const cols = Math.max(2, Math.min(Math.floor((lp.w - 40) / (sz * 1.3)), Math.ceil(Math.sqrt(strips.length * lp.w / Math.max(1, lp.h)))));
       const rows = Math.ceil(strips.length / cols);
       const cw = (lp.w - 40) / cols, ch = (lp.h - 70) / rows;
@@ -173,9 +193,9 @@ export default {
       order.forEach((s, k) => {
         const c = k % cols, r = Math.floor(k / cols);
         s.hx = lp.x + 20 + c * cw + (cw - sz) / 2 + (s.ry - 0.5) * Math.max(0, cw - sz) * 0.6;
-        s.hy = lp.y + 34 + r * ch + (ch - sz - 16) / 2 + ((s.rx * 7 % 1) - 0.5) * Math.max(0, ch - sz - 16) * 0.5;
+        s.hy = lp.y + 34 + r * ch + (ch - sh - 16) / 2 + ((s.rx * 7 % 1) - 0.5) * Math.max(0, ch - sh - 16) * 0.5;
       });
-      L = { W, H, wide, book, lp, rp, sz, slotPos };
+      L = { W, H, wide, book, lp, rp, sz, sh, slotPos, slotBottom };
       strips.forEach((s) => { if (s.slot !== null) { s.x = slotPos[s.slot].x; s.y = slotPos[s.slot].y; } else { s.x = s.hx; s.y = s.hy; } });
       if (wide) { acts.style.right = (W - rp.x - rp.w + 18) + "px"; acts.style.bottom = "30px"; acts.style.left = "auto"; }
       else { acts.style.right = "14px"; acts.style.left = "14px"; acts.style.bottom = "10px"; acts.style.justifyContent = "center"; }
@@ -197,6 +217,26 @@ export default {
       g.strokeStyle = col; g.lineWidth = lw; g.setLineDash(dashed ? [5, 3] : []); g.strokeRect(x, y, w, h); g.setLineDash([]);
     }
     function drawStrip(s, x, y, sz, lift) {
+      const sh = L.sh, id = GLYPHS[s.glyph].art;
+      if (ART && A.sprite(id, sz, sh)) {
+        g.save();
+        if (s.slot === null && !lift) { g.translate(x + sz / 2, y + sh / 2); g.rotate(s.rot * 0.6); g.translate(-x - sz / 2, -y - sh / 2); }
+        g.fillStyle = lift ? "rgba(0,0,0,.3)" : "rgba(0,0,0,.2)"; g.fillRect(x + (lift ? 7 : 3), y + (lift ? 9 : 4), sz, sh);
+        A.draw(g, id, x, y, sz, sh);
+        if (!named.has(s.glyph)) { // a scrap of linen tacked over the word you cannot read yet
+          g.fillStyle = "#cdbd9c"; g.fillRect(x + sz * 0.2, y + sh * 0.585, sz * 0.6, sh * 0.105);
+          g.strokeStyle = C.silk; g.lineWidth = 1; g.setLineDash([2, 2]); g.strokeRect(x + sz * 0.2, y + sh * 0.585, sz * 0.6, sh * 0.105); g.setLineDash([]);
+          g.fillStyle = C.silk; g.font = `700 ${Math.max(10, Math.round(sh * 0.085))}px Karla,Arial,sans-serif`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText("?", x + sz / 2, y + sh * 0.64);
+        }
+        if (s.doubled) { // doubled: the same glyph sewn twice, so a second card peeps out behind and a stitched ×2
+          const r = Math.max(9, sz * 0.2);
+          g.fillStyle = C.silk; g.beginPath(); g.arc(x + sz - r * 0.7, y + r * 0.7, r, 0, 7); g.fill();
+          g.strokeStyle = C.white; g.lineWidth = 1; g.setLineDash([2, 2]); g.beginPath(); g.arc(x + sz - r * 0.7, y + r * 0.7, r - 2.5, 0, 7); g.stroke(); g.setLineDash([]);
+          g.fillStyle = C.white; g.font = `700 ${Math.round(r * 1.05)}px Karla,Arial,sans-serif`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText("×2", x + sz - r * 0.7, y + r * 0.7 + 0.5);
+        }
+        g.restore();
+        return;
+      }
       g.save();
       if (s.slot === null && !lift) { g.translate(x + sz / 2, y + sz / 2); g.rotate(s.rot); g.translate(-x - sz / 2, -y - sz / 2); }
       g.fillStyle = lift ? "rgba(0,0,0,.3)" : "rgba(0,0,0,.18)"; g.fillRect(x + (lift ? 7 : 3), y + (lift ? 9 : 4), sz, sz);
@@ -206,6 +246,7 @@ export default {
       else { const q = sz * 0.56; glyph(s.glyph, x + (sz - q) / 2, y + (sz - q) / 2, q); }
       g.restore();
       if (named.has(s.glyph) && !lift) {
+        y += L.sh - sz;
         g.fillStyle = C.ink; g.font = "600 12px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "top";
         g.fillText(s.doubled ? `many ${s.glyph}s` : s.glyph, x + sz / 2, y + sz + 4);
       }
@@ -233,7 +274,9 @@ export default {
       const { W, H, lp, rp, sz, slotPos, book, wide } = L, dpr = Math.min(2, devicePixelRatio || 1);
       if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
       g.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const sh = L.sh;
       g.fillStyle = C.cedarD; g.fillRect(0, 0, W, H);
+      A.draw(g, "ground-altar", 0, 0, W, H, { cover: true, key: "bg" });
       g.fillStyle = "rgba(0,0,0,.35)"; g.fillRect(book.x + 6, book.y + 8, book.w, book.h);
       linen(lp.x, lp.y, lp.w, lp.h); linen(rp.x, rp.y, rp.w, rp.h);
       const gr = wide ? g.createLinearGradient(rp.x - 24, 0, rp.x + 24, 0) : g.createLinearGradient(0, lp.y - 18, 0, lp.y + 18);
@@ -247,19 +290,20 @@ export default {
       g.fillText(`Spread ${sp.no} · ${sp.title}`, rp.x + 22, rp.y + 52);
       // the glows' distance, as a stitched bar: the pressure, always shown
       const frac = Math.max(0, left / total);
-      const tbx = rp.x + 22, tby = rp.y + 66, tbw = Math.min(rp.w - 44, 360);
+      const gloss = wide && rp.w > 560;
+      const tbx = rp.x + 22, tby = rp.y + 66, tbw = Math.min(rp.w - 44, gloss ? 200 : 360);
       g.strokeStyle = C.silk; g.lineWidth = 1.2; g.strokeRect(tbx, tby, tbw, 12);
       const cells = Math.floor((tbw - 4) / 8);
       for (let k = 0; k < cells; k++) { if (k / cells > frac) break; g.fillStyle = frac < 0.2 ? C.red : C.silk; g.fillRect(tbx + 2 + k * 8, tby + 2, 6, 8); }
       g.font = `700 ${left < 30 * speed ? 15 : 14}px Karla,Arial,sans-serif`; g.fillStyle = left < 30 * speed ? C.red : C.ink; g.textAlign = "left";
       g.fillText(rp.w > 520 ? `${Math.ceil(left)} s before the glows reach the page · spread ${si + 1} of ${SPREADS.length}` : `${Math.ceil(left)} s to the glows · spread ${si + 1} of ${SPREADS.length}`, tbx, tby + 30);
       // glossary, top right on wide pages
-      if (wide && rp.w > 560) {
-        const gl = Object.keys(GLYPHS).filter((k) => strips.some((s) => s.glyph === k) || read.length);
+      if (gloss) {
+        const gl = Object.keys(GLYPHS).filter((k) => strips.some((s) => s.glyph === k));
         g.font = "600 12px Karla,Arial,sans-serif"; g.textAlign = "center"; g.fillStyle = C.ink;
         const gs = 18, gx0 = rp.x + rp.w - 22 - gl.length * 52;
-        g.textAlign = "left"; g.fillText("glossary", gx0, rp.y + 34); g.textAlign = "center";
-        gl.forEach((k, i) => { const x = gx0 + i * 52 + 10; glyph(k, x, rp.y + 40, gs, C.silk, 1.4); g.fillText(named.has(k) ? k : "?", x + gs / 2, rp.y + 74); });
+        g.textAlign = "left"; g.fillText("glossary", gx0 - 62, rp.y + 46); g.textAlign = "center";
+        gl.forEach((k, i) => { const x = gx0 + i * 52 + 10; if (!(ART && named.has(k) && A.draw(g, GLYPHS[k].art, x - 4, rp.y + 22, 26, 38))) glyph(k, x, rp.y + 32, gs, C.silk, 1.4); g.fillText(named.has(k) ? k : "?", x + gs / 2, rp.y + 74); });
       }
       const { bad, at } = violations(row, sp.rules);
       // slots
@@ -268,14 +312,14 @@ export default {
       slotPos.forEach((p, k) => {
         const sx = p.x + (k === shakeSlot ? shake : 0);
         const fits = drag && sp.slots[k] === drag.s.colour;
-        g.fillStyle = drag && k === target ? (fits ? "rgba(79,107,44,.25)" : "rgba(184,50,42,.2)") : "rgba(255,255,255,.18)"; g.fillRect(sx, p.y, sz, sz);
-        border(sx, p.y, sz, sz, sp.slots[k], !taut, at.has(k) ? 4 : 2.6);
+        g.fillStyle = drag && k === target ? (fits ? "rgba(79,107,44,.25)" : "rgba(184,50,42,.2)") : "rgba(255,255,255,.18)"; g.fillRect(sx, p.y, sz, sh);
+        border(sx, p.y, sz, sh, sp.slots[k], !taut, at.has(k) ? 4 : 2.6);
         if (at.has(k)) { g.fillStyle = C.red; g.font = "700 18px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "alphabetic"; g.fillText("×", sx + sz / 2, p.y - 6); }
         const focus = kbUsed && held !== null && kbList()[cursor] === "s" + k;
-        if (focus || (hintPair && hintPair[1] === k)) { g.strokeStyle = C.amber; g.lineWidth = 3; g.strokeRect(sx - 5, p.y - 5, sz + 10, sz + 10); }
+        if (focus || (hintPair && hintPair[1] === k)) { g.strokeStyle = C.amber; g.lineWidth = 3; g.strokeRect(sx - 5, p.y - 5, sz + 10, sh + 10); }
       });
       // rules
-      let y = slotPos[0].y + sz + 44;
+      let y = L.slotBottom + (wide ? 44 : 26);
       g.textAlign = "left"; g.textBaseline = "alphabetic"; g.font = `italic 16px 'IM Fell English',Georgia,serif`;
       RULES.slice(0, sp.rules).forEach((r) => {
         const broken = bad.has(r.id);
@@ -303,9 +347,10 @@ export default {
         drawStrip(s, s.x, s.y, sz);
         const kb = kbUsed && held === null && kbList()[cursor] === "t" + s.i;
         const hov = hover === s && held === null && !drag && !taut;
-        if (held === s.i || kb || hov || (hintPair && hintPair[0] === s.i)) { g.strokeStyle = held === s.i ? C.red : hov ? C.ink : C.amber; g.lineWidth = held === s.i ? 3 : 2; g.strokeRect(s.x - 5, s.y - 5, sz + 10, sz + 10); }
+        if (held === s.i || kb || hov || (hintPair && hintPair[0] === s.i)) { g.strokeStyle = held === s.i ? C.red : hov ? C.ink : C.amber; g.lineWidth = held === s.i ? 3 : 2; g.strokeRect(s.x - 5, s.y - 5, sz + 10, sh + 10); }
       });
-      if (drag) drawStrip(drag.s, drag.x - sz / 2, drag.y - sz / 2, sz, true);
+      if (drag) drawStrip(drag.s, drag.x - sz / 2, drag.y - sh / 2, sz, true);
+      if (wallT > 0) drawWall(now);
       // the toys closing in: a ring of warm glows tightening at the page edge
       const t = Math.min(1, 1 - left / total + creep);
       const inset = 4 + t * Math.min(W, H) * 0.26;
@@ -328,6 +373,25 @@ export default {
         g.fillStyle = p.col; g.fillText(p.text, p.x, p.y - rise); g.globalAlpha = 1;
       }
       K.frame(draw);
+    }
+
+    // the ritual room's wall: every glyph of the script, the ones just read ringed in amber
+    function drawWall(now) {
+      const { W, H } = L, cols = W >= 760 ? 10 : 6, rows = Math.ceil(WALL_IDS.length / cols);
+      const cw = Math.floor(Math.min(64, (W - 60) / cols - 6)), chh = Math.round(cw * 320 / 220);
+      const pw = cols * (cw + 6) + 24, ph = rows * (chh + 6) + 54, px = (W - pw) / 2, py = Math.max(10, (H - ph) / 2 - 20);
+      g.globalAlpha = Math.min(1, wallT * 3);
+      g.fillStyle = "rgba(29,23,18,.6)"; g.fillRect(0, 0, W, H);
+      g.fillStyle = "#3f5167"; g.fillRect(px, py, pw, ph);
+      A.draw(g, "wallpaper-6-selvage", px, py, pw, ph, { cover: true, key: "wall" });
+      g.strokeStyle = C.linen; g.lineWidth = 2; g.setLineDash([6, 4]); g.strokeRect(px + 4, py + 4, pw - 8, ph - 8); g.setLineDash([]);
+      g.fillStyle = C.linen; g.font = "italic 18px 'IM Fell English',Georgia,serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText("the walls", W / 2, py + 22);
+      WALL_IDS.forEach((id, k) => {
+        const x = px + 12 + (k % cols) * (cw + 6), y = py + 40 + Math.floor(k / cols) * (chh + 6);
+        if (!A.draw(g, id, x, y, cw, chh)) { g.fillStyle = "#ece2cb"; g.fillRect(x, y, cw, chh); }
+        if (wallNew.some((nm) => id.endsWith("-" + nm))) { g.strokeStyle = C.amber; g.lineWidth = 3; g.strokeRect(x - 2, y - 2, cw + 4, chh + 4); }
+      });
+      g.globalAlpha = 1;
     }
 
     // ---- placing ---------------------------------------------------------------------------
@@ -362,7 +426,7 @@ export default {
       });
     }
     function spreadBeat() {
-      if (si === 1) beat("New glyphs", "A hand, a mouth, a knot: you don't know these yet. The walls are covered in them. Read the walls (R) to learn their names, but the glows come on while your back is turned.", null, 6500);
+      if (si === 1) beat("New glyphs", "It, feed, a mouth, a knot: you don't know these yet. The walls are covered in them. Read the walls (R) to learn their names, but the glows come on while your back is turned.", null, 6500);
       if (si === 2) beat("In your pocket", "Mabel's sampler from the parlour wall: one line already solved in her small, even stitches. Use it (H) to set a strip, twice. One strip on this page fits no line at all.", null, 6500);
     }
     function solution() {
@@ -387,6 +451,7 @@ export default {
       const unknown = [...new Set(strips.map((s) => s.glyph))].filter((k) => !named.has(k));
       if (!unknown.length) { say("You already know every glyph on this page.", C.ink); return; }
       unknown.forEach((k) => named.add(k));
+      wallNew = unknown; wallT = api.reducedMotion ? 1.6 : 2.4;
       left -= WALL_COST; creep = Math.min(0.25, creep + 0.05); wallsUsed++;
       say(`The walls: ${unknown.join(", ")}.`, C.moss);
       pop(`−${WALL_COST} s`, L.rp.x + L.rp.w / 2, L.rp.y + 110, C.red);
@@ -429,8 +494,8 @@ export default {
 
     // ---- input -----------------------------------------------------------------------------
     const pt = (e) => { const b = cv.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; };
-    function stripAt(x, y) { for (let k = strips.length - 1; k >= 0; k--) { const s = strips[k]; if (x >= s.x - 4 && x <= s.x + L.sz + 4 && y >= s.y - 4 && y <= s.y + L.sz + 4) return s; } return null; }
-    function slotAt(x, y, slack = 6) { return L.slotPos.findIndex((p) => x >= p.x - slack && x <= p.x + L.sz + slack && y >= p.y - slack && y <= p.y + L.sz + slack); }
+    function stripAt(x, y) { for (let k = strips.length - 1; k >= 0; k--) { const s = strips[k]; if (x >= s.x - 4 && x <= s.x + L.sz + 4 && y >= s.y - 4 && y <= s.y + L.sh + 4) return s; } return null; }
+    function slotAt(x, y, slack = 6) { return L.slotPos.findIndex((p) => x >= p.x - slack && x <= p.x + L.sz + slack && y >= p.y - slack && y <= p.y + L.sh + slack); }
     K.on(cv, "pointerdown", (e) => {
       if (!started || over || taut) return;
       const [x, y] = pt(e), s = stripAt(x, y);
@@ -486,6 +551,7 @@ export default {
         if (!taut) { left -= dt; idle += dt; }
         if (tautStart) taut = Math.max(0.01, Math.min(1, (now - tautStart) / (api.reducedMotion ? 1 : 900)));
         if (shakeT > 0) shakeT = Math.max(0, shakeT - dt * 2.5);
+        if (wallT > 0) wallT = Math.max(0, wallT - dt);
         if (idle > 30 && !hintPair) {
           const sol = solution();
           const k = sol.findIndex((s, k2) => s && row[k2] !== s);
@@ -516,6 +582,18 @@ export default {
       <button type="button">Open the book</button>
     </div>`;
     wrap.appendChild(intro);
+    {
+      const cardEl = intro.querySelector("." + PRE + "card"), h2 = intro.querySelector("h2");
+      const cw = Math.min(426, wrap.clientWidth - 86);
+      const plate = A.picture("chapter-05", cw, { alt: "Chapter 5: The Cabin Turns" });
+      if (plate) { plate.className = PRE + "plate"; cardEl.insertBefore(plate, h2); }
+      const mark = A.picture("wordmark", Math.min(240, cw), { alt: "The Stuffed Ones" });
+      if (mark) { mark.style.margin = "0 0 8px"; cardEl.insertBefore(mark, cardEl.firstChild); }
+      const ttl = A.word("The hand sewn book", 30);
+      if (ttl) { h2.textContent = ""; h2.appendChild(ttl); }
+      const rule = A.picture("ui-rule-knots", Math.min(300, cw), { alt: "" });
+      if (rule) { rule.style.margin = "10px 0 0"; cardEl.insertBefore(rule, cardEl.querySelector("." + PRE + "legend")); }
+    }
     const sb = intro.querySelector("button");
     K.on(sb, "click", () => {
       speed = intro.querySelector("input").checked ? 2 : 1; total = left = 180 * speed; intro.remove(); started = true; wrap.focus();
@@ -523,10 +601,10 @@ export default {
     });
     sb.focus();
 
-    const ro = new ResizeObserver(() => layout());
+    const ro = new ResizeObserver(() => { A.flush(); layout(); });
     ro.observe(wrap);
     // a read-only probe for automated play tests
     loadSpread(0); K.frame(draw);
-    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); ro.disconnect(); wrap.remove(); } };
+    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); A.dispose(); ro.disconnect(); wrap.remove(); } };
   },
 };

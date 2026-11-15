@@ -26,8 +26,11 @@
       "name": "The Empty Toy",
       "as_written": false,
       "priority": 3,
-      "when": {"ledger": "hunt_log", "count_gte": 5, "where": {"joined": false}},
-      "summary": "You refused all five games of the hunt. The hunger, never fed by you, took your memories in lurches. The others hunt without you; the guests go down; you stay on the shelf, awake and still.",
+      "when": {"any": [
+        {"ledger": "hunt_log", "count_gte": 5, "where": {"joined": false}},
+        {"is": "seams.all_wadded", "eq": true}
+      ]},
+      "summary": "You refused all five games of the hunt. The hunger, never fed by you, took your memories in lurches. The others hunt without you; the guests go down; you stay on the shelf, awake and still. Accepted 2026-11-15: it can also be chosen by hand, by packing all six seams with wadding at a Stuffing, after which no game can be joined.",
       "final_scenes": ["c14_hold_shelf", "e_empty_toy"]
     },
     {

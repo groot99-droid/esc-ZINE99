@@ -14,6 +14,15 @@
 // result counts as a win when five or more are kept (the Warning's need), at least one memory of
 // each friend survives, and no lurch comes. Narrative lines are written for the game (refine
 // additions list); token names are the design's (section 12).
+//
+// Phase 1 (DESIGN.md "Accepted development", 2026-11-15). Borrowed patches: after the second
+// packing four patches come down the pulse in the friends' own thread, Dani's secret always among
+// them. Packed, one costs a hollow, slows the pack's hunger (by dawn -6 each) and keeps that friend
+// one line of voice; it is not yours, so it is never counted as kept and never pays a cost. Left in
+// the tray it goes back up the pulse. Wadding: plain fill for a hollow; a wadded slot is cold, keeps
+// nothing and plays no game, and a body packed with nothing but wadding is the Empty Toy, chosen by
+// hand. The patches are the game's art (api.art); the lettered discs stay as the fallback.
+import { artKit, PATCH, FACE } from "./art-kit.js";
 const PRE = "stuffed-ones-stuffing-";
 const C = { cedar: "#6b4a32", cedarD: "#4a3222", dust: "#e6dcc6", moss: "#7d8a5a", rust: "#a5553a", sky: "#8fa9bf",
   cream: "#efe5cf", bone: "#f6f1e4", amber: "#e39a2d", red: "#b8322a", ink: "#2a211b", gold: "#c9a227", rose: "#c07a8e", green: "#4f6b2c" };
@@ -21,18 +30,34 @@ const C = { cedar: "#6b4a32", cedarD: "#4a3222", dust: "#e6dcc6", moss: "#7d8a5a
 // Token names are the design's memory tokens (section 12); colour by whose memory it is. The second
 // field of each is a recollection written for the game.
 const TOKENS = [
-  ["My name", "you", "Your own hand in the guestbook, under all the other names."],
-  ["The drive up", "you", "The forest road, four voices over the radio."],
-  ["My hands", "you", "The feel of a needle that was the right size for you."],
-  ["Jamie's question", "jamie", "At breakfast, the one who asked first."],
-  ["Jamie's bad postcard", "jamie", "Deliberately terrible, as every trip since you were nine."],
-  ["Lila's hum", "lila", "Three notes, the same three, whenever she was nervous."],
-  ["Lila's mushroom photo", "lila", "Crouched by the creek, so pleased with a small brown cap."],
-  ["Marcus's strap", "marcus", "The strap you mended at the table. It held."],
-  ["Marcus's paper map", "marcus", "Folded wrong, always, and always right about the way back."],
-  ["The chili", "dani", "Camp-stove chili, though the cabin had a kitchen."],
-  ["Dani names the toys", "dani", "She stood at the shelves and gave them names."],
+  ["My name", "you", "Your own hand in the guestbook, under all the other names.", "patch-my-name"],
+  ["The drive up", "you", "The forest road, four voices over the radio.", "patch-drive-up"],
+  ["My hands", "you", "The feel of a needle that was the right size for you.", "patch-my-hands"],
+  ["The door", "you", "The bedroom door on the first night, and twenty seconds of not going in.", "patch-the-door"],
+  ["Jamie's question", "jamie", "At breakfast, the one who asked first.", "patch-jamie-question"],
+  ["Jamie's bad postcard", "jamie", "Deliberately terrible, as every trip since you were nine.", "patch-jamie-postcard"],
+  ["Jamie's narration", "jamie", "A nature film about a hiker, until the birds did not answer.", "patch-jamie-narration"],
+  ["Lila's hum", "lila", "Three notes, the same three, whenever she was nervous.", "patch-lila-hum"],
+  ["Lila's mushroom photo", "lila", "Crouched by the creek, so pleased with a small brown cap.", "patch-lila-mushroom"],
+  ["Marcus's strap", "marcus", "The strap you mended at the table. It held.", "patch-marcus-strap"],
+  ["Marcus's paper map", "marcus", "Folded wrong, always, and always right about the way back.", "patch-marcus-map"],
+  ["The chili", "dani", "Camp-stove chili, though the cabin had a kitchen.", "patch-chili"],
+  ["Dani names the toys", "dani", "She stood at the shelves and gave them names.", "patch-dani-names"],
 ];
+// Borrowed patches: a friend's memory in the friend's thread. The names are the patches' own; the
+// recollections are written for the game. Dani's secret always comes; the others bring one of two.
+const BORROWED = {
+  dani: [["Dani moved Gerald.", "Night one. She put the bear she had named on Marcus's pillow, for a joke. She thinks she began it. This is not your memory.", "patch-borrowed-dani-gerald"]],
+  jamie: [["The rare hiker", "His own voice, narrating himself up a hill, pleased with it.", "patch-borrowed-jamie-hiker"], ["Since we were nine", "A fence, two bikes, one summer. He remembers you smaller than you remember yourself.", "patch-borrowed-jamie-nine"]],
+  lila: [["Two years, one flat", "A hallway with two coats on one hook. She remembers which stair creaked.", "patch-borrowed-lila-flat"], ["Don't laugh.", "The lock on her door, and telling you why. She remembers that you didn't.", "patch-borrowed-lila-laugh"]],
+  marcus: [["The compass", "Brass, scratched, older than he is. He remembers it pointing somewhere.", "patch-borrowed-marcus-compass"], ["Your stitches held", "A broken crib, a jump, the strap taking his weight.", "patch-borrowed-marcus-held"]],
+};
+// The one line of voice a kept friend keeps (DESIGN.md section 6, their added lines).
+const VOICE = { jamie: "“And here, the rare hiker, in his natural habitat.”", lila: "“I lock it so I don't go wandering. Don't laugh.”",
+  marcus: "“There's always a way out. You just haven't drawn it yet.”", dani: "“I'm glad I came. Don't make it weird.”" };
+const MEDAL = { you: "medallion-narrator", jamie: "medallion-jamie", lila: "medallion-lila", marcus: "medallion-marcus", dani: "medallion-dani" };
+const SHEET = { you: "pattern-narrator", jamie: "pattern-jamie", lila: "pattern-lila", marcus: "pattern-marcus", dani: "pattern-dani" };
+const BORROW_AFTER = 2, BORROW_EASE = 6;
 const WHO = { you: [C.cream, "Y", "You"], jamie: [C.sky, "J", "Jamie"], lila: [C.rose, "L", "Lila"], marcus: [C.moss, "M", "Marcus"], dani: [C.amber, "D", "Dani"] };
 const FRIENDS = ["jamie", "lila", "marcus", "dani"];
 
@@ -64,6 +89,7 @@ function kit() {
 export default {
   mount(root, api) {
     const K = kit();
+    const A = artKit(api), rng = api.rng();
     const wrap = document.createElement("div");
     wrap.className = PRE + "wrap";
     const tissue = `background-color:rgba(239,229,207,.94);background-image:repeating-linear-gradient(115deg,rgba(120,90,60,.07) 0 1px,transparent 1px 22px),repeating-linear-gradient(25deg,rgba(255,255,255,.25) 0 1px,transparent 1px 31px)`;
@@ -103,6 +129,8 @@ export default {
 .${PRE}log{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(460px,calc(100% - 32px));box-sizing:border-box;${tissue};border:1.5px dashed ${C.ink};padding:16px 20px;font-size:15px;line-height:1.5;z-index:4;max-height:72%;overflow:auto}
 .${PRE}log p{margin:0 0 5px}
 .${PRE}log p.${PRE}cost{color:${C.red}}
+.${PRE}card canvas,.${PRE}panel canvas{position:static;width:auto;height:auto}
+.${PRE}card .${PRE}plate{margin:0 0 6px;border:1px dashed ${C.ink}}
 </style><canvas aria-label="Your body laid open as a sewing pattern, with memory tokens in a tray"></canvas>
 <div class="${PRE}panel" aria-live="polite"><div class="${PRE}scroll"></div><button type="button" class="${PRE}close">Close the seams</button></div>
 <div class="${PRE}beat" aria-live="polite" style="opacity:0"></div>`;
@@ -112,15 +140,19 @@ export default {
     const beatEl = wrap.querySelector("." + PRE + "beat");
 
     // state
-    const tokens = TOKENS.map(([name, who, line], i) => ({ i, name, who, line, slot: null, lost: false, fade: 0 }));
+    const tokens = TOKENS.map(([name, who, line, art], i) => ({ i, name, who, line, art, kind: "mine", slot: null, lost: false, fade: 0 }));
     const slots = [];
-    SEAMS.forEach((s, si) => s.slots.forEach((p, k) => slots.push({ seam: si, k, x: p[0], y: p[1], bound: false, closed: false, token: null })));
+    SEAMS.forEach((s, si) => s.slots.forEach((p, k) => slots.push({ seam: si, k, x: p[0], y: p[1], bound: false, closed: false, token: null, wad: false })));
+    const wad = { tx: 0, ty: 0, r: 20 };
+    let borrowedCame = false, wadSaid = false;
     const join = { scent: true, proximity: true };
     let kbUsed = false, started = false, closing = false, dragging = null, hover = null, cursor = 0, held = null, binding = false, bindUsed = false;
     let ruthDone = false, packedEver = 0;
     const pops = [], seenLine = new Set();
     let L = null, beatTimer = 0;
 
+    const joinPic = A.picture("ui-join-hold", 220, { alt: "Join or Hold" });
+    if (joinPic) joinPic.style.margin = "0 0 6px";
     function beat(title, text, ms = 4500) {
       beatEl.innerHTML = ""; const b = document.createElement("b"); b.textContent = title; beatEl.append(b, document.createTextNode(text));
       beatEl.style.opacity = 1; clearTimeout(beatTimer); beatTimer = K.after(ms, () => (beatEl.style.opacity = 0));
@@ -133,13 +165,14 @@ export default {
       let pat, tray, pan;
       if (wide) {
         const pw = Math.min(330, Math.max(260, W * 0.28));
-        const th = 136;
+        const nTray = tokens.filter((t) => t.slot === null && !t.lost).length + 1;
+        const th = 52 + Math.ceil(nTray / Math.max(3, Math.floor((W - 44) / 96))) * 88;
         pan = { x: W - pw - 14, y: 14, w: pw, h: H - th - 34 };
         tray = { x: 14, y: H - th - 12, w: W - 28, h: th };
         pat = { x: 14, y: 14, w: W - pw - 42, h: H - th - 40 };
       } else {
-        const per = Math.max(4, Math.floor((W - 28) / 84));
-        const th = 34 + Math.ceil(TOKENS.length / per) * 62;
+        const per = Math.max(4, Math.floor((W - 28) / 64));
+        const th = 34 + Math.ceil((tokens.filter((t) => t.slot === null && !t.lost).length + 1) / per) * 74;
         const patH = Math.min((W - 8) * 410 / 690 + 16, H * 0.4);
         tray = { x: 10, y: H - th - 8, w: W - 20, h: th };
         pat = { x: 4, y: 4, w: W - 8, h: patH };
@@ -150,37 +183,43 @@ export default {
       L = { W, H, wide, pat, tray, pan, s, ox, oy };
       beatEl.style.top = (wide ? 14 : pan.y) + "px";
       panel.style.left = pan.x + "px"; panel.style.top = pan.y + "px"; panel.style.width = pan.w + "px"; panel.style.height = pan.h + "px";
-      const per = wide ? Math.max(3, Math.floor((tray.w - 16) / 96)) : Math.max(4, Math.floor((W - 28) / 84));
+      const per = wide ? Math.max(3, Math.floor((tray.w - 16) / 96)) : Math.max(4, Math.floor((W - 28) / 64));
       let n = 0;
-      const rr = wide ? 22 : 17;
-      tokens.forEach((t) => {
-        if (t.slot !== null || t.lost) return;
+      const rr = wide ? 26 : 19;
+      const seat = (t) => {
         const row = Math.floor(n / per), col = n % per;
         t.tx = tray.x + 16 + col * ((tray.w - 32) / per) + (tray.w - 32) / per / 2;
-        t.ty = tray.y + (wide ? 50 : 44) + row * (wide ? 78 : 62);
+        t.ty = tray.y + (wide ? 58 : 46) + row * (wide ? 88 : 74);
         t.r = rr;
         n++;
-      });
+      };
+      tokens.forEach((t) => { if (t.slot === null && !t.lost) seat(t); });
+      seat(wad);
       slots.forEach((sl) => { sl.sx = L.ox + sl.x * s; sl.sy = L.oy + sl.y * s; sl.r = Math.max(15, 19 * s); });
       tokens.forEach((t) => { if (t.slot !== null) { const sl = slots[t.slot]; t.tx = sl.sx; t.ty = sl.sy; t.r = sl.r - 2; } });
     }
 
     // ---- the night, worked out from the packing --------------------------------------------
-    const open = (sl) => !sl.closed && sl.token === null;
+    const open = (sl) => !sl.closed && sl.token === null && !sl.wad;
     function warmIn(si) { return slots.filter((s) => s.seam === si && open(s)).length; }
     function canPlay(game) { return game.needs.some((id) => warmIn(SEAMS.findIndex((s) => s.id === id)) > 0); }
     function simulate() {
       const fill = slots.map((s) => s.token);
       const events = [];
-      tokens.filter((t) => t.slot === null && !t.lost).forEach((t) => events.push({ kind: "tray", token: t.i, text: `${t.name} is left in the tray. It unravels.` }));
+      tokens.filter((t) => t.slot === null && !t.lost).forEach((t) => events.push(t.kind === "borrowed"
+        ? { kind: "back", token: t.i, text: `${t.name} goes back up the pulse to ${WHO[t.who][2]}. It was never yours to keep.` }
+        : { kind: "tray", token: t.i, text: `${t.name} is left in the tray. It unravels.` }));
+      const live = slots.filter((s) => !s.closed);
+      const emptyToy = live.length > 0 && live.every((s) => s.wad);
+      const lent = fill.filter((x) => x !== null && tokens[x].kind === "borrowed").map((x) => tokens[x]);
       const w = slots.filter(open).length;
       function take(si, why) {
         for (let step = 0; step < SEAMS.length; step++) {
           const sj = (si + step) % SEAMS.length;
-          const idx = slots.findIndex((s, k) => s.seam === sj && !s.bound && fill[k] !== null);
+          const idx = slots.findIndex((s, k) => s.seam === sj && !s.bound && fill[k] !== null && tokens[fill[k]].kind === "mine");
           if (idx >= 0) {
             const tk = fill[idx]; fill[idx] = null;
-            events.push({ kind: "cost", token: tk, text: `${why}: ${TOKENS[tk][0]} goes from the ${SEAMS[sj].name.toLowerCase()}${step ? " (its own seam had nothing to give)" : ""}.` });
+            events.push({ kind: "cost", token: tk, text: `${why}: ${tokens[tk].name} goes from the ${SEAMS[sj].name.toLowerCase()}${step ? " (its own seam had nothing to give)" : ""}.` });
             return;
           }
         }
@@ -195,16 +234,16 @@ export default {
           take(best, `${gm.name}, joined`);
         } else events.push({ kind: "hold", text: `${gm.name}: you hold. The hunger is not fed.` });
       });
-      const hunger = 64 + 40 * (1 + 0.15 * w) - 18 * joined;
-      const lurches = hunger >= 100 ? 1 + Math.floor((hunger - 100) / 40) : 0;
+      const hunger = 64 + 40 * (1 + 0.15 * w) - 18 * joined - BORROW_EASE * lent.length;
+      const lurches = !emptyToy && hunger >= 100 ? 1 + Math.floor((hunger - 100) / 40) : 0;
       let warmest = 0, ww = -1;
       SEAMS.forEach((s, si) => { if (warmIn(si) > ww) { ww = warmIn(si); warmest = si; } });
       for (let k = 0; k < lurches; k++) { take(warmest, `Lurch at 100, the ${SEAMS[warmest].name.toLowerCase()} jerks`); take(warmest, "The same lurch"); }
-      const keptIdx = fill.filter((x) => x !== null);
-      const friends = FRIENDS.map((f) => [f, keptIdx.some((i) => TOKENS[i][1] === f)]);
+      const keptIdx = fill.filter((x) => x !== null && tokens[x].kind === "mine");
+      const friends = FRIENDS.map((f) => [f, keptIdx.some((i) => tokens[i].who === f)]);
       const kept = keptIdx.length;
       const ok = kept >= 5 && friends.every((x) => x[1]) && lurches === 0;
-      return { w, joined, hunger: Math.round(hunger), lurches, warmest, events, kept, fill, friends, ok };
+      return { w, joined, hunger: Math.round(hunger), lurches, warmest, events, kept, fill, friends, ok, lent, emptyToy };
     }
 
     function renderPanel() {
@@ -217,16 +256,19 @@ export default {
           <small>${ok ? `warm slot in ${gm.needName}` : `needs a warm slot in ${gm.needName}`}</small></div>`;
       }).join("");
       const mark = (b) => `<b style="color:${b ? C.green : C.red}">${b ? "✓" : "✗"}</b>`;
-      const sel = held !== null ? `<div class="${PRE}row"><small>Holding <b>${TOKENS[held][0]}</b>: tap a hollow.</small></div>` : binding ? `<div class="${PRE}row"><small><b style="color:#6b5410">Tap a slot to bind it in gold.</b></small></div>` : "";
+      const sel = held !== null ? `<div class="${PRE}row"><small>Holding <b>${held === "wad" ? "wadding" : tokens[held].name}</b>: tap a hollow.</small></div>` : binding ? `<div class="${PRE}row"><small><b style="color:#6b5410">Tap a slot to bind it in gold.</b></small></div>` : "";
       scroll.innerHTML = `<h3>Tonight: Scent, then Proximity</h3>${gameRows}
         <div class="${PRE}row" style="justify-content:space-between;align-items:flex-end"><div><h3 style="margin:6px 0 0">Hunger rate</h3><span class="${PRE}rate">+${r.w * 15}%</span> <small>${r.w} warm</small></div>
         <div style="text-align:right"><small>by dawn</small><br><b style="font-size:20px;color:${r.hunger >= 100 ? C.red : C.ink}">${r.hunger}</b> <small>/ 100</small></div></div>
         <ul class="${PRE}checks">
           <li>${mark(r.kept >= 5)}<span>Kept by morning: <b>${r.kept}</b> of ${TOKENS.length} (the Warning needs 5)</span></li>
+          ${borrowedCame ? `<li><b style="color:${C.cedar}">+</b><span>Borrowed, packed: <b>${r.lent.length}</b>${r.lent.length ? ` (${r.lent.map((t) => WHO[t.who][2]).join(", ")}: hunger −${BORROW_EASE * r.lent.length}, a line of voice each)` : ". Each costs a hollow and slows the pack's hunger."}</span></li>` : ""}
+          ${r.emptyToy ? `<li><b style="color:${C.red}">○</b><span><b>Nothing but wadding.</b> Close now and you have packed yourself with nothing.</span></li>` : ""}
           <li>${mark(r.friends.every((x) => x[1]))}<span>A memory of each friend: ${r.friends.map(([f, k]) => `<span style="color:${k ? C.ink : C.red};${k ? "" : "text-decoration:line-through"}">${WHO[f][2]}</span>`).join(" · ")}</span></li>
           <li>${mark(!r.lurches)}<span>${r.lurches ? `${r.lurches} lurch${r.lurches > 1 ? "es" : ""}: two memories each from the ${SEAMS[r.warmest].name.toLowerCase()}` : "No lurch tonight"}</span></li>
         </ul>
         <div class="${PRE}row" style="margin-top:8px"><button type="button" class="${PRE}bind" aria-pressed="${binding}" ${bindUsed ? "disabled" : ""}>${bindUsed ? "Gold thread used" : "Bind a slot (B)"}</button><small>${bindUsed ? "the bound slot never pays" : "once: that slot never pays"}</small></div>${sel}`;
+      if (joinPic) scroll.prepend(joinPic);
       scroll.querySelectorAll("button[data-g]").forEach((b) => b.addEventListener("click", () => { join[b.dataset.g] = b.dataset.v === "1"; renderPanel(); }));
       scroll.querySelector("." + PRE + "bind").addEventListener("click", () => { if (!bindUsed && started && !closing) { binding = !binding; held = null; renderPanel(); } });
       closeBtn.disabled = closing || !started;
@@ -252,12 +294,31 @@ export default {
     function drawToken(t, x, y, r, alpha = 1) {
       const [col, letter] = WHO[t.who];
       g.save(); g.globalAlpha = alpha;
+      if (t.art) {
+        const d = Math.round(r * 2);
+        if (A.draw(g, t.art, x - r, y - r, d, d, PATCH)) {
+          g.strokeStyle = col; g.lineWidth = 2; if (t.kind === "borrowed") g.setLineDash([4, 3]);
+          g.beginPath(); g.arc(x, y, r + 1, 0, 7); g.stroke(); g.setLineDash([]);
+          g.restore(); return;
+        }
+      }
       g.fillStyle = "rgba(0,0,0,.25)"; g.beginPath(); g.arc(x + 1.5, y + 2, r, 0, 7); g.fill();
       g.fillStyle = col; g.beginPath(); g.arc(x, y, r, 0, 7); g.fill();
       g.strokeStyle = C.bone; g.lineWidth = 1.4; g.setLineDash([2.5, 2]); g.beginPath(); g.arc(x, y, r - 3.5, 0, 7); g.stroke(); g.setLineDash([]);
       g.strokeStyle = C.ink; g.lineWidth = 1; g.beginPath(); g.arc(x, y, r, 0, 7); g.stroke();
       g.fillStyle = C.ink; g.font = `italic ${Math.round(r * 0.95)}px 'IM Fell English',Georgia,serif`; g.textAlign = "center"; g.textBaseline = "middle";
       g.fillText(letter, x, y + 1);
+      g.restore();
+    }
+    // wadding: plain fill, a pale tuft with nothing stitched on it
+    function drawWad(x, y, r, cold) {
+      g.save();
+      g.fillStyle = "rgba(0,0,0,.2)"; g.beginPath(); g.arc(x + 1.5, y + 2, r, 0, 7); g.fill();
+      g.fillStyle = "#f3efe6";
+      for (let k = 0; k < 7; k++) { const a = k / 7 * 6.283; g.beginPath(); g.arc(x + Math.cos(a) * r * 0.42, y + Math.sin(a) * r * 0.42, r * 0.6, 0, 7); g.fill(); }
+      g.strokeStyle = "rgba(42,33,27,.35)"; g.lineWidth = 1;
+      for (let k = 0; k < 5; k++) { const a = k * 1.3 + 0.4; g.beginPath(); g.arc(x + Math.cos(a) * r * 0.25, y + Math.sin(a) * r * 0.25, r * 0.5, a, a + 1.6); g.stroke(); }
+      if (cold) { g.fillStyle = C.sky; g.font = "700 11px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillStyle = "#4c6276"; g.fillText("COLD", x, y + 1); }
       g.restore();
     }
     function label(text, x, y, max, size) {
@@ -315,6 +376,7 @@ export default {
       });
       // slot hollows
       slots.forEach((sl, k) => {
+        if (sl.wad && !sl.closed) drawWad(sl.sx, sl.sy, sl.r - 2, true);
         if (sl.closed) {
           g.strokeStyle = C.ink; g.lineWidth = 2;
           g.beginPath(); for (let q = -2; q <= 2; q++) { g.moveTo(sl.sx - sl.r * 0.8, sl.sy + q * sl.r * 0.3); g.lineTo(sl.sx + sl.r * 0.8, sl.sy + q * sl.r * 0.3 + 2); } g.stroke();
@@ -335,7 +397,30 @@ export default {
       g.strokeStyle = "rgba(246,241,228,.6)"; g.setLineDash([5, 4]); g.strokeRect(tray.x + 4, tray.y + 4, tray.w - 8, tray.h - 8); g.setLineDash([]);
       g.fillStyle = C.bone; g.font = "700 13px Karla,Arial,sans-serif"; g.textAlign = "left"; g.textBaseline = "top";
       g.fillText(wide ? "TRAY: whatever is left here unravels when you close" : "TRAY: left here, it unravels", tray.x + 12, tray.y + 11);
-      if (wide) { g.textAlign = "right"; g.fillText("PATTERN No. 6 · ONE BODY, SIX SEAMS", tray.x + tray.w - 12, tray.y + 11); }
+      if (wide) {
+        // whose patterns the thread comes from: yours, then the four on the shelf across the room
+        const heldTok = typeof held === "number" ? tokens[held] : dragging && dragging.t ? dragging.t : null;
+        let px = tray.x + tray.w - 12, any = false;
+        ["dani", "marcus", "lila", "jamie", "you"].forEach((who) => {
+          const hot = heldTok && heldTok.who === who, kept = who === "you" || r.friends.find((f) => f[0] === who)[1];
+          if (A.draw(g, MEDAL[who], px - 30, tray.y + 5, 30, 30, FACE)) {
+            any = true;
+            g.strokeStyle = hot ? C.amber : WHO[who][0]; g.lineWidth = hot ? 3 : 1.5; g.beginPath(); g.arc(px - 15, tray.y + 20, 16, 0, 7); g.stroke();
+            if (!kept) { g.strokeStyle = C.red; g.lineWidth = 2.5; g.beginPath(); g.moveTo(px - 28, tray.y + 32); g.lineTo(px - 2, tray.y + 8); g.stroke(); }
+            px -= 38;
+          }
+        });
+        if (!any) { g.textAlign = "right"; g.fillText("PATTERN No. 6 · ONE BODY, SIX SEAMS", tray.x + tray.w - 12, tray.y + 11); }
+        else if (heldTok && heldTok.kind === "borrowed") A.draw(g, SHEET[heldTok.who], tray.x + tray.w - 12 - 64, tray.y - 96, 64, 88);
+      }
+      // the wadding, always in the tray
+      {
+        const lift = hover === "w" && !dragging ? 2 : 0;
+        if (!(dragging && dragging.wad && dragging.moved)) drawWad(wad.tx, wad.ty - lift, wad.r, false);
+        g.fillStyle = C.bone; label("Wadding", wad.tx, wad.ty + wad.r + 3, 80, wide ? 13 : 12);
+        const kb = kbUsed && kbTargets()[cursor] === "w";
+        if (held === "wad" || kb || lift) { g.strokeStyle = held === "wad" ? C.amber : C.bone; g.lineWidth = 3; g.beginPath(); g.arc(wad.tx, wad.ty - lift, wad.r + 5, 0, 7); g.stroke(); }
+      }
       tokens.forEach((t) => {
         if (t.lost && t.fadeStart) t.fade = Math.min(1, (now - t.fadeStart) / (api.reducedMotion ? 1 : 800));
         if (t.lost && t.fade >= 1) return;
@@ -344,14 +429,14 @@ export default {
         const lift = hover === "t" + t.i && !dragging && held === null ? 2 : 0;
         drawToken(t, t.tx, t.ty - lift, t.r, a);
         g.fillStyle = t.slot === null ? C.bone : C.ink; g.globalAlpha = a;
-        if (t.slot === null) label(t.name, t.tx, t.ty + t.r + 3, wide ? 92 : 80, wide ? 13 : 12);
+        if (t.slot === null) label(t.name, t.tx, t.ty + t.r + 3, wide ? 92 : 62, wide ? 13 : 12);
         g.globalAlpha = 1;
         const kb = kbUsed && kbTargets()[cursor] === "t" + t.i;
         if (held === t.i || kb || lift) { g.strokeStyle = held === t.i ? C.amber : C.bone; g.lineWidth = 3; g.beginPath(); g.arc(t.tx, t.ty - lift, t.r + 5, 0, 7); g.stroke(); }
       });
       // the name of a packed token, on hover
-      if (hover && hover[0] === "t") { const t = tokens[+hover.slice(1)]; if (t.slot !== null) { g.font = "700 13px Karla,Arial,sans-serif"; const w = g.measureText(t.name).width + 12; g.fillStyle = C.ink; g.fillRect(t.tx - w / 2, t.ty - t.r - 26, w, 20); g.fillStyle = C.bone; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(t.name, t.tx, t.ty - t.r - 16); } }
-      if (dragging && dragging.moved) drawToken(dragging.t, dragging.x, dragging.y, 24);
+      if (hover && hover[0] === "t" && !dragging) { const t = tokens[+hover.slice(1)]; if (t.slot !== null) { g.font = "700 13px Karla,Arial,sans-serif"; const w = g.measureText(t.name).width + 12; g.fillStyle = C.ink; g.fillRect(t.tx - w / 2, t.ty - t.r - 26, w, 20); g.fillStyle = C.bone; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(t.name, t.tx, t.ty - t.r - 16); } }
+      if (dragging && dragging.moved) { if (dragging.wad) drawWad(dragging.x, dragging.y, 24, false); else drawToken(dragging.t, dragging.x, dragging.y, 28); }
       for (let i = pops.length - 1; i >= 0; i--) {
         const p = pops[i], a = (now - p.t0) / 1400;
         if (a >= 1) { pops.splice(i, 1); continue; }
@@ -366,6 +451,7 @@ export default {
     // ---- input ----------------------------------------------------------------------------
     function hit(x, y) {
       for (const t of tokens) if (!t.lost && Math.hypot(t.tx - x, t.ty - y) <= t.r + 6) return "t" + t.i;
+      if (Math.hypot(wad.tx - x, wad.ty - y) <= wad.r + 6) return "w";
       for (let k = 0; k < slots.length; k++) if (!slots[k].closed && Math.hypot(slots[k].sx - x, slots[k].sy - y) <= slots[k].r + 10) return "s" + k;
       return null;
     }
@@ -375,6 +461,7 @@ export default {
       else {
         const sl = slots[k];
         if (sl.closed) return;
+        sl.wad = false;
         if (sl.token !== null && sl.token !== ti) { const other = tokens[sl.token]; other.slot = t.slot; if (t.slot !== null) slots[t.slot].token = other.i; }
         else if (t.slot !== null) slots[t.slot].token = null;
         sl.token = ti; t.slot = k;
@@ -382,7 +469,29 @@ export default {
         packedEver++;
       }
       layout(); renderPanel();
+      if (!borrowedCame && packedEver >= BORROW_AFTER) { borrowedCame = true; K.after(900, borrowed); }
       if (!ruthDone && slots.filter((x) => x.token !== null).length >= RUTH_AFTER) K.after(700, ruth);
+    }
+    // wadding goes into a hollow, or comes out of one
+    function wadSlot(k) {
+      const sl = slots[k]; if (!sl || sl.closed) return;
+      if (sl.token !== null) { tokens[sl.token].slot = null; sl.token = null; }
+      sl.wad = true;
+      pop("wadding · cold", sl.sx, sl.sy - sl.r - 12, "#4c6276");
+      if (!wadSaid) { wadSaid = true; beat("Wadding", "Plain fill. The hollow goes cold: no hunger lives in it, no memory, and it plays no game. Tap a wadded hollow to pull it out again.", 5600); }
+      layout(); renderPanel();
+    }
+    function unwad(k) { slots[k].wad = false; pop("pulled out", slots[k].sx, slots[k].sy - slots[k].r - 12, C.amber); renderPanel(); }
+    const drop = (k) => { if (held === "wad") wadSlot(k); else place(held, k); };
+    // borrowed patches: four memories that are not yours come down the pulse into the tray
+    function borrowed() {
+      if (closing) return;
+      FRIENDS.forEach((f) => {
+        const pick = BORROWED[f][Math.floor(rng() * BORROWED[f].length)];
+        tokens.push({ i: tokens.length, name: pick[0], who: f, line: pick[1], art: pick[2], kind: "borrowed", slot: null, lost: false, fade: 0 });
+      });
+      layout(); renderPanel();
+      beat("Borrowed", "Something comes down the pulse that is not yours: four patches in other people's thread. One reads “Dani moved Gerald.” Pack one and that friend hungers slower and keeps a line of their voice. It costs you a hollow.", 8000);
     }
     function bindSlot(k) {
       const sl = slots[k]; if (!sl || sl.closed || bindUsed) return;
@@ -413,8 +522,10 @@ export default {
       if (!started || closing) return;
       const [x, y] = pt(e), h = hit(x, y);
       if (binding) { if (h && h[0] === "s") bindSlot(+h.slice(1)); else if (h && h[0] === "t" && tokens[+h.slice(1)].slot !== null) bindSlot(tokens[+h.slice(1)].slot); return; }
+      if (h === "w") { dragging = { wad: true, t: null, x, y, moved: false, sx: x, sy: y }; cv.setPointerCapture(e.pointerId); return; }
+      if (h && h[0] === "s" && held === null && slots[+h.slice(1)].wad) { unwad(+h.slice(1)); return; }
       if (h && h[0] === "t") { const t = tokens[+h.slice(1)]; dragging = { t, x, y, moved: false, sx: x, sy: y }; cv.setPointerCapture(e.pointerId); }
-      else if (h && h[0] === "s" && held !== null) { place(held, +h.slice(1)); held = null; renderPanel(); }
+      else if (h && h[0] === "s" && held !== null) { drop(+h.slice(1)); held = null; renderPanel(); }
     });
     K.on(cv, "pointermove", (e) => {
       const [x, y] = pt(e);
@@ -425,14 +536,15 @@ export default {
     K.on(cv, "pointerup", (e) => {
       if (!dragging) return;
       const [x, y] = pt(e), d = dragging; dragging = null;
-      if (!d.moved) { select(d.t.i); return; }
+      if (!d.moved) { if (d.wad) { held = held === "wad" ? null : "wad"; binding = false; renderPanel(); } else select(d.t.i); return; }
       let best = null, bd = 1e9;
       slots.forEach((sl, k) => { if (sl.closed) return; const dd = Math.hypot(sl.sx - x, sl.sy - y); if (dd < bd && dd < sl.r + 22) { bd = dd; best = k; } });
+      if (d.wad) { if (best !== null) wadSlot(best); held = null; renderPanel(); return; }
       if (!seenLine.has(d.t.i)) { seenLine.add(d.t.i); beat(d.t.name, d.t.line, 3600); }
       place(d.t.i, best); held = null; renderPanel();
     });
     function kbTargets() {
-      return held === null && !binding ? tokens.filter((t) => !t.lost).sort((a, b) => (a.slot === null ? 0 : 1) - (b.slot === null ? 0 : 1)).map((t) => "t" + t.i) : slots.map((_, k) => "s" + k).filter((id) => !slots[+id.slice(1)].closed);
+      return held === null && !binding ? tokens.filter((t) => !t.lost).sort((a, b) => (a.slot === null ? 0 : 1) - (b.slot === null ? 0 : 1)).map((t) => "t" + t.i).concat(["w"]) : slots.map((_, k) => "s" + k).filter((id) => !slots[+id.slice(1)].closed);
     }
     K.on(wrap, "keydown", (e) => {
       if (!started || closing) return;
@@ -445,10 +557,12 @@ export default {
         e.preventDefault();
         const id = list[cursor];
         if (binding && id) { bindSlot(+id.slice(1)); cursor = 0; }
+        else if (held === null && id === "w") { held = "wad"; cursor = 0; }
         else if (held === null && id && id[0] === "t") { select(+id.slice(1)); cursor = 0; }
-        else if (held !== null && id) { place(held, +id.slice(1)); held = null; cursor = 0; }
+        else if (held !== null && id) { drop(+id.slice(1)); held = null; cursor = 0; }
         renderPanel();
-      } else if ((e.key === "Backspace" || e.key === "Delete") && held !== null) { place(held, null); held = null; cursor = 0; renderPanel(); }
+      } else if ((e.key === "Backspace" || e.key === "Delete") && held !== null) { if (held !== "wad") place(held, null); held = null; cursor = 0; renderPanel(); }
+      else if (e.key === "w" || e.key === "W") { held = held === "wad" ? null : "wad"; binding = false; cursor = 0; renderPanel(); }
       else if (e.key === "Escape") { held = null; binding = false; renderPanel(); }
       else if ((e.key === "b" || e.key === "B") && !bindUsed) { binding = !binding; held = null; cursor = 0; renderPanel(); }
     });
@@ -467,7 +581,8 @@ export default {
       wrap.appendChild(log);
       const step = api.reducedMotion ? 300 : 1000;
       r.events.forEach((ev, k) => K.after(step * (k + 1), () => {
-        const p = document.createElement("p"); p.textContent = ev.text; if (ev.kind === "cost" || ev.kind === "tray") p.className = PRE + "cost"; log.appendChild(p); log.scrollTop = 1e6;
+        const p = document.createElement("p"); p.textContent = ev.text; if (ev.kind === "cost" || ev.kind === "tray") p.className = PRE + "cost";
+        if (r.emptyToy && ev.kind !== "tray" && ev.kind !== "back") return; log.appendChild(p); log.scrollTop = 1e6;
         if (ev.token !== undefined) {
           const t = tokens[ev.token]; t.lost = true;
           if (t.slot !== null) { slots[t.slot].token = null; t.slot = null; }
@@ -475,7 +590,12 @@ export default {
         }
       }));
       K.after(step * (r.events.length + 2), () => {
-        const kept = tokens.filter((t) => !t.lost).map((t) => t.name);
+        const kept = tokens.filter((t) => !t.lost && t.kind === "mine").map((t) => t.name);
+        const voices = r.lent.map((t) => `${WHO[t.who][2]}, later, once: ${VOICE[t.who]}`);
+        if (r.emptyToy) {
+          A.finale(wrap, "movement-2").then(() => api.end({ outcome: "done", text: `Six seams of wadding. You pack yourself with nothing: no memory to lose, no hunger to feed, no game you can be made to play. The others climb down without you. In the morning Mabel dusts around a toy that does not move. “And the worst part? / We were awake.” This is the Empty Toy, chosen by hand.` }));
+          return;
+        }
         const best = api.store.get("best", 0);
         if (r.kept > best) api.store.set("best", r.kept);
         const gone = r.friends.filter((x) => !x[1]).map(([f]) => WHO[f][2]);
@@ -484,7 +604,7 @@ export default {
         else if (r.lurches) why = "The hunger lurched in the night and took what it wanted from the warmest seam.";
         else if (gone.length) why = `Nothing is left of ${gone.join(" or ")}. You know there was someone; you cannot think who.`;
         else why = "Too little is left of you for the Warning.";
-        api.end({ outcome: r.ok ? "win" : "done", text: `Kept ${r.kept} of ${TOKENS.length}: ${kept.join(", ") || "nothing"}. ${why} ${r.joined ? `You joined ${r.joined === 2 ? "both games" : "one game"}.` : "You held through both games."}` });
+        api.end({ outcome: r.ok ? "win" : r.lurches ? "lose" : "done", text: `Kept ${r.kept} of ${TOKENS.length}: ${kept.join(", ") || "nothing"}. ${why} ${r.joined ? `You joined ${r.joined === 2 ? "both games" : "one game"}.` : "You held through both games."}${voices.length ? " Borrowed and kept: " + voices.join(" ") : ""}` });
       });
     }
     K.on(closeBtn, "click", closeSeams);
@@ -499,18 +619,29 @@ export default {
         <div><i style="background:${C.sky}"></i><span>Drag a memory into a hollow, or tap it then a hollow</span><kbd>arrows · Enter</kbd></div>
         <div><i style="background:radial-gradient(${C.amber},${C.red})"></i><span>An empty hollow is warm: hunger lives there, and games need it</span><span></span></div>
         <div><i style="background:${C.bone}"></i><span>Join or Hold tonight's games, then Close</span><kbd>panel</kbd></div>
+        <div><i style="background:#f3efe6"></i><span>Wadding fills a hollow with nothing: cold, and it plays no game</span><kbd>W</kbd></div>
       </div>
       <button type="button">Lay out the pattern</button>
     </div>`;
     wrap.appendChild(intro);
+    {
+      const cardEl = intro.querySelector("." + PRE + "card"), h2 = intro.querySelector("h2");
+      const cw = Math.min(418, wrap.clientWidth - 84);
+      const plate = A.picture("chapter-12", cw, { alt: "Chapter 12: Scent, then Proximity" });
+      if (plate) { plate.className = PRE + "plate"; cardEl.insertBefore(plate, h2); }
+      const ttl = A.word("Stuffing", 40);
+      if (ttl) { h2.textContent = ""; h2.appendChild(ttl); }
+      const meter = A.picture("ui-warmth-meter", Math.min(300, cw), { alt: "The hunger meter" });
+      if (meter) { meter.style.margin = "8px 0 0"; cardEl.insertBefore(meter, cardEl.querySelector("button")); }
+    }
     const startBtn = intro.querySelector("button");
     K.on(startBtn, "click", () => { intro.remove(); started = true; wrap.focus(); renderPanel(); beat("Gold thread", "Spread 2 taught you to bind one slot. Choose it with Bind (B): whatever sits there, the night cannot take.", 5000); });
     startBtn.focus();
 
-    const ro = new ResizeObserver(() => layout());
+    const ro = new ResizeObserver(() => { A.flush(); layout(); });
     ro.observe(wrap);
     // a read-only probe for automated play tests
     layout(); renderPanel(); K.frame(draw);
-    return { unmount() { K.dispose(); ro.disconnect(); wrap.remove(); } };
+    return { unmount() { K.dispose(); A.dispose(); ro.disconnect(); wrap.remove(); } };
   },
 };

@@ -20,6 +20,15 @@
 // door: the guest gets up and the hall and landing are lit for a while. Guests get used to a noise:
 // each sound frightens a little less than the last. Narrative lines other than the quoted source
 // lines (ch 17 and ch 26, as DESIGN.md sections 3 and 6 quote them) are written for the game.
+//
+// Phase 1 (DESIGN.md "Accepted development", 2026-11-15): night two, the cupboard start for Proximity
+// (`c12_dollhouse_proximity`). A guest has shut the pack in the linen cupboard and wedged a chair.
+// The heap: press on three beats of the shared pulse and the chair goes over; Noor comes out under
+// the hall light and you hold the whole heap still while she says the source's lines (ch 29, as
+// DESIGN.md section 3 quotes them). Then Proximity from 03:00: Settle each toy at a marked spot,
+// unseen, before 05:00. The cabin is the game's lithograph plate (api.art), and the rooms, stair and
+// doors sit where the plate draws them; the old ruled drawing stays as the fallback.
+import { artKit, FACE } from "./art-kit.js";
 const PRE = "stuffed-ones-dollhouse-cutaway-";
 const C = { paper: "#efe4c9", ink: "#2a211b", cedar: "#6b4a32", cedarD: "#4a3222", dust: "#e6dcc6", moss: "#7d8a5a", rust: "#a5553a",
   sky: "#8fa9bf", cream: "#efe5cf", bone: "#f6f1e4", amber: "#e39a2d", red: "#b8322a", night: "#56627a", nightL: "#7f8ca3", rose: "#c9a7b0" };
@@ -32,8 +41,21 @@ const ROOMS = [
   { id: "hall", name: "HALL", x0: 4, x1: 8, lvl: 0, wall: "#b6a796", sprig: "#7d8a5a" },
   { id: "kitchen", name: "KITCHEN", x0: 8, x1: 12, lvl: 0, wall: "#a8b4bf", sprig: "#efe5cf" },
 ];
-const STAIR = { x0: 4.5, x1: 7.4 };            // ground at x0, landing at x1
-const DOORS = [{ x: 4, lvl: 1, room: "bedA" }, { x: 8, lvl: 1, room: "bedB" }, { x: 4, lvl: 0, room: "parlour" }];
+let STAIR = { x0: 4.5, x1: 7.4 };            // ground at x0, landing at x1
+let DOORS = [{ x: 4, lvl: 1, room: "bedA" }, { x: 8, lvl: 1, room: "bedB" }, { x: 4, lvl: 0, room: "parlour" }];
+let HALL = [4, 8];
+// Where the lithograph plate (art/src/90_backdrops.py, 1600 x 900) puts the same things: the house
+// runs x 250..1350 for 12 m, the floors are at y 662 and 432 (230 px for 3 m).
+const PLATE = { src: [190, 36, 1220, 800], x0: 60, wide: 1100, ground: 626, floor: 230 };
+const PLATE_GEOM = {
+  STAIR: { x0: 5.87, x1: 7.6 }, HALL: [3.9, 7.85],
+  DOORS: [{ x: 4.25, lvl: 1, room: "bedA" }, { x: 7.6, lvl: 1, room: "bedB" }, { x: 4.9, lvl: 0, room: "parlour" }],
+  guests: { noor: [0.8, 0.6, 0.15], wes: [10.0, 0.6, Math.PI - 0.15], ana: [3.0, 0.75, 0.1] }, toys: [5.0, 9.4],
+};
+// Proximity: where a toy may settle to be found in the morning (plate positions).
+const SETTLE = [{ name: "the kitchen sink", x: 9.64, lvl: 0 }, { name: "Wes's bedside", x: 9.2, lvl: 1 }, { name: "Noor's door", x: 4.3, lvl: 1 }, { name: "Noor's bedside", x: 2.7, lvl: 1 }];
+const HEAP_BEAT = 1.6, HEAP_WIN = 0.3, HEAP_LOOK = 9, HEAP_GRACE = 2.6;
+const HEAP_LINES = ["Okay, seriously, who keeps moving these?", "This isn't funny.", "I swear I locked that door."];
 const GUESTS = [
   // eye position (m), facing (radians, 0 = right), room
   { id: "noor", name: "Noor", room: "bedA", ex: 1.3, ey: FLOOR + 0.75, face: 0.15, sleep: [10, 20], awakeUntil: 0 },
@@ -62,6 +84,9 @@ export default {
   mount(root, api) {
     const K = kit();
     const rng = api.rng();
+    const A = artKit(api), ART = A.has("dollhouse-night");
+    if (ART) { STAIR = PLATE_GEOM.STAIR; DOORS = PLATE_GEOM.DOORS; HALL = PLATE_GEOM.HALL; }
+    else { STAIR = { x0: 4.5, x1: 7.4 }; DOORS = [{ x: 4, lvl: 1, room: "bedA" }, { x: 8, lvl: 1, room: "bedB" }, { x: 4, lvl: 0, room: "parlour" }]; HALL = [4, 8]; }
     const wrap = document.createElement("div");
     wrap.className = PRE + "wrap";
     wrap.tabIndex = 0;
@@ -77,11 +102,12 @@ export default {
 .${PRE}bar .${PRE}steady[hidden]{display:none}
 .${PRE}bar .${PRE}steady.${PRE}beat-on{background:${C.red};color:${C.bone}}
 .${PRE}bar button:hover:not(:disabled){background:#fff}
-.${PRE}bar .${PRE}still:hover{background:${C.ink}}
+.${PRE}bar .${PRE}still:hover:not(:disabled){background:${C.ink}}
+.${PRE}bar .${PRE}still[aria-pressed=true]:hover:not(:disabled){background:${C.red}}
 .${PRE}bar button kbd{font:600 11px ui-monospace,Menlo,monospace;opacity:.7;margin-left:5px}
 .${PRE}cap{position:absolute;left:50%;transform:translateX(-50%);top:62px;width:min(500px,calc(100% - 32px));box-sizing:border-box;background:${C.bone};border:3px double ${C.ink};padding:10px 16px 12px;font:15px/1.45 Karla,Arial,sans-serif;z-index:3;transition:opacity .5s;pointer-events:none;text-align:center}
 .${PRE}cap b{display:block;font:400 13px 'IM Fell English',Georgia,serif;letter-spacing:.18em;text-transform:uppercase;margin-bottom:2px}
-.${PRE}cap q{display:block;font:italic 19px 'IM Fell English',Georgia,serif}
+.${PRE}cap q{quotes:none;display:block;font:italic 19px 'IM Fell English',Georgia,serif}
 .${PRE}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(239,228,201,.82);z-index:4;padding:16px;overflow:auto}
 .${PRE}plate{width:min(500px,100%);box-sizing:border-box;background:${C.bone};border:1px solid ${C.ink};outline:1px solid ${C.ink};outline-offset:4px;padding:16px 24px 20px;box-shadow:0 0 0 9px ${C.paper},0 0 0 10px ${C.ink}}
 .${PRE}plate header{display:flex;justify-content:space-between;font:italic 13px 'IM Fell English',Georgia,serif;border-bottom:3px double ${C.ink};padding-bottom:6px}
@@ -97,6 +123,11 @@ export default {
 .${PRE}plate button{display:block;margin:14px auto 0;font:600 16px Karla,Arial,sans-serif;background:${C.ink};color:${C.bone};border:0;padding:11px 28px;cursor:pointer;min-height:46px}
 .${PRE}plate button:focus-visible{outline:3px solid ${C.red};outline-offset:2px}
 .${PRE}plate label{font:14px Karla,Arial,sans-serif;display:flex;gap:8px;align-items:center;margin-top:8px;justify-content:center}
+.${PRE}plate canvas{position:static;width:auto;height:auto;margin:0 auto}
+.${PRE}plate .${PRE}pic{border:1px solid ${C.ink};margin:8px auto 0}
+.${PRE}plate button.${PRE}alt{background:${C.bone};color:${C.ink};box-shadow:inset 0 0 0 1.5px ${C.ink};margin-top:8px}
+.${PRE}bar button[hidden]{display:none}
+.${PRE}bar .${PRE}push,.${PRE}bar .${PRE}push:hover:not(:disabled){background:${C.red};color:${C.bone};border-color:${C.red};min-width:120px}
 .${PRE}plate .${PRE}kind{margin:10px 0 0;font:italic 15px 'IM Fell English',Georgia,serif;color:${C.red};text-align:center}
 </style><canvas aria-label="The cabin cut open from the front at night, every room at once"></canvas>
 <div class="${PRE}bar">
@@ -104,12 +135,15 @@ export default {
   ${TOOLS.map((t, i) => `<button type="button" data-tool="${t.id}">${t.name}<kbd>${i + 1}</kbd></button>`).join("")}
   <button type="button" data-a="switch">Switch toy<kbd>Tab</kbd></button>
   <button type="button" class="${PRE}steady" hidden>Steady<kbd>S</kbd></button>
+  <button type="button" class="${PRE}push" hidden>Push<kbd>Enter</kbd></button>
+  <button type="button" data-a="settle" hidden>Settle<kbd>1</kbd></button>
 </div>
 <div class="${PRE}cap" aria-live="polite" style="opacity:0"></div>`;
     root.appendChild(wrap);
     const cv = wrap.querySelector("canvas"), g = cv.getContext("2d");
     const stillBtn = wrap.querySelector("." + PRE + "still");
     const toolBtns = [...wrap.querySelectorAll("button[data-tool]")];
+    const pushBtn = wrap.querySelector("." + PRE + "push"), settleBtn = wrap.querySelector('button[data-a="settle"]'), switchBtn = wrap.querySelector('button[data-a="switch"]');
     const steadyBtn = wrap.querySelector("." + PRE + "steady"), capEl = wrap.querySelector("." + PRE + "cap");
     const losses = api.store.get("losses", 0);
     let capTimer = 0;
@@ -125,12 +159,16 @@ export default {
       { name: "You", kind: "cat", col: C.amber, x: 6.2, lvl: 1, sx: 0, plan: [], moved: false, grace: 0, creaked: false },
       { name: "Jamie", kind: "bear", col: "#c2925f", x: 9.4, lvl: 0, plan: [], moved: false, grace: 0, creaked: false },
     ];
+    if (ART) { toys[0].x = PLATE_GEOM.toys[0]; toys[1].x = PLATE_GEOM.toys[1]; }
     toys.forEach((t) => (t.y = t.lvl * FLOOR));
-    const guests = GUESTS.map((gd) => ({ ...gd, dread: 0, open: 0, warn: 0, next: gd.sleep[0] + rng() * (gd.sleep[1] - gd.sleep[0]), look: gd.face, lookAt: null }));
+    toys[0].face = "medallion-narrator"; toys[1].face = "medallion-jamie";
+    const guests = GUESTS.map((gd) => ({ ...gd, ...(ART ? { ex: PLATE_GEOM.guests[gd.id][0], ey: (gd.ey > FLOOR ? FLOOR : 0) + PLATE_GEOM.guests[gd.id][1], face: PLATE_GEOM.guests[gd.id][2] } : {}), dread: 0, open: 0, warn: 0, next: gd.sleep[0] + rng() * (gd.sleep[1] - gd.sleep[0]), look: gd.face, lookAt: null }));
     let sel = 0, still = false, stillToggle = false, started = false, over = false, speed = 1, t = 0;
     let memories = 6, hunger = 60, slips = 0, cooldown = 0, msg = "", msgT = 0, flash = 0, pack = 0;
     let lightBy = null, lightT = 0, pulseT = 2, pulseOn = false, steadied = false, tremor = false, shakes = 0, shakeT = 0, gentle = false;
     let saidAna = false, saidVoice = false, saidHunger = false, saidThree = false, saidLight = false;
+    // night two: the heap in the cupboard, then Proximity
+    let variant = "sound", stage = "night", heapT = 0, pushes = 0, misses = 0, beatUsed = -1, foundT = 0, heapLine = -1, heapSteady = 0, settled = 0;
     const pops = [];
     function pop(text, x, y, col) { pops.push({ text, x, y, col, t0: performance.now() }); }
     let L = null, plate = null;
@@ -143,13 +181,19 @@ export default {
       const top = 54, bottom = W < 560 ? 104 : 60;
       const availW = (wide ? W - cards.w - 40 : W - 24), availH = H - top - bottom - (wide ? 0 : cards.h + 8) - 26;
       const totalH = CELLAR + FLOOR * 2 + ROOF;
-      const k = Math.max(10, Math.min(availW / (W_M + 1.4), availH / totalH));
-      const ox = (wide ? 20 : 12) + (availW - W_M * k) / 2;
-      const base = top + ROOF * k + FLOOR * 2 * k + (availH - totalH * k) / 2 + 8;
-      L = { W, H, wide, k, ox, base, top, cards, bottom };
-      plate = null;
+      let k = Math.max(10, Math.min(availW / (W_M + 1.4), availH / totalH)), ky = k;
+      let ox = (wide ? 20 : 12) + (availW - W_M * k) / 2;
+      let base = top + ROOF * k + FLOOR * 2 * k + (availH - totalH * k) / 2 + 8;
+      let pr = null;
+      if (ART) {
+        const sc = Math.min(availW / PLATE.src[2], availH / PLATE.src[3]);
+        pr = { x: (wide ? 20 : 12) + (availW - PLATE.src[2] * sc) / 2, y: top + 14 + (availH - PLATE.src[3] * sc) / 2, w: PLATE.src[2] * sc, h: PLATE.src[3] * sc };
+        k = PLATE.wide * sc / W_M; ky = PLATE.floor * sc / FLOOR; ox = pr.x + PLATE.x0 * sc; base = pr.y + PLATE.ground * sc;
+      }
+      L = { W, H, wide, k, ky, ox, base, top, cards, bottom, pr, availW, availH };
+      plate = null; A.flush();
     }
-    const S = (x, y) => [L.ox + x * L.k, L.base - y * L.k];
+    const S = (x, y) => [L.ox + x * L.k, L.base - y * L.ky];
 
     // ---- the plate: rooms, wallpaper at the cut edge, furniture -----------------------------
     function paperGrain(x, w, h) {
@@ -239,7 +283,15 @@ export default {
     }
 
     // ---- drawing the live parts -------------------------------------------------------------
-    function toy(x, y, s, body, glow, selected, kind = "cat") {
+    function toy(x, y, s, body, glow, selected, kind = "cat", face) {
+      const d = Math.max(22, Math.round(30 * s));
+      if (face && A.sprite(face, d, d, FACE)) {
+        if (glow) { const gr = g.createRadialGradient(x, y - d / 2, 1, x, y - d / 2, d * 1.1); gr.addColorStop(0, "rgba(227,154,45,.7)"); gr.addColorStop(1, "rgba(227,154,45,0)"); g.fillStyle = gr; g.beginPath(); g.arc(x, y - d / 2, d * 1.1, 0, 7); g.fill(); }
+        if (selected) { g.strokeStyle = C.red; g.lineWidth = 1.5; g.setLineDash([3, 2]); g.beginPath(); g.arc(x, y - 12 * s, 24 * s, 0, 7); g.stroke(); g.setLineDash([]); }
+        A.draw(g, face, x - d / 2, y - d, d, d, FACE);
+        g.strokeStyle = C.ink; g.lineWidth = 1.2; g.beginPath(); g.arc(x, y - d / 2, d / 2, 0, 7); g.stroke();
+        return;
+      }
       if (glow) { const gr = g.createRadialGradient(x, y - 10 * s, 1, x, y - 10 * s, 30 * s); gr.addColorStop(0, "rgba(227,154,45,.7)"); gr.addColorStop(1, "rgba(227,154,45,0)"); g.fillStyle = gr; g.beginPath(); g.arc(x, y - 10 * s, 30 * s, 0, 7); g.fill(); }
       if (selected) { g.strokeStyle = C.red; g.lineWidth = 1.5; g.setLineDash([3, 2]); g.beginPath(); g.arc(x, y - 12 * s, 24 * s, 0, 7); g.stroke(); g.setLineDash([]); }
       g.fillStyle = body; g.strokeStyle = C.ink; g.lineWidth = 1.3;
@@ -262,6 +314,7 @@ export default {
       const [rx0, ry0] = S(0, (r.lvl + 1) * FLOOR), [rx1, ry1] = S(W_M, r.lvl * FLOOR);
       g.save(); g.beginPath(); g.rect(rx0, ry0, rx1 - rx0, ry1 - ry0); g.clip();
       const a0 = -gu.look - CONE / 2, a1 = -gu.look + CONE / 2, R = REACH * L.k;
+      g.translate(ex, ey); g.scale(1, L.ky / L.k); g.translate(-ex, -ey);
       g.beginPath(); g.moveTo(ex, ey); g.arc(ex, ey, R, a0, a1); g.closePath();
       if (gu.open > 0) {
         const gr = g.createRadialGradient(ex, ey, 2, ex, ey, R); gr.addColorStop(0, "rgba(246,236,190,.75)"); gr.addColorStop(1, "rgba(246,236,190,.12)");
@@ -279,11 +332,24 @@ export default {
       const { W, H, k, wide } = L, dpr = Math.min(2, devicePixelRatio || 1);
       if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
       g.setTransform(dpr, 0, 0, dpr, 0, 0);
-      if (!plate) plate = buildPlate();
-      g.drawImage(plate, 0, 0, W, H);
+      if (stage !== "night") { drawHeap(now); drawPops(now); K.frame(draw); return; }
+      if (ART) {
+        g.fillStyle = C.paper; g.fillRect(0, 0, W, H);
+        A.draw(g, "dollhouse-night", L.pr.x, L.pr.y, L.pr.w, L.pr.h, { src: PLATE.src, key: "house" });
+        g.strokeStyle = C.ink; g.lineWidth = 1; g.strokeRect(6, 6, W - 12, H - 12); g.strokeRect(10, 10, W - 20, H - 20);
+      } else {
+        if (!plate) plate = buildPlate();
+        g.drawImage(plate, 0, 0, W, H);
+      }
       const s = Math.max(0.55, k / 46);
+      // Proximity: the marked spots, as small stitched crosses on the floor
+      if (variant === "cupboard") SETTLE.forEach((sp) => {
+        const [x, y] = S(sp.x, sp.lvl * FLOOR), taken = toys.some((ty) => ty.settled === sp), r = Math.max(6, 9 * s);
+        g.strokeStyle = taken ? C.ink : C.red; g.lineWidth = 2.5; g.beginPath(); g.moveTo(x - r, y - r * 2); g.lineTo(x + r, y); g.moveTo(x + r, y - r * 2); g.lineTo(x - r, y); g.stroke();
+        g.setLineDash([3, 3]); g.lineWidth = 1.2; g.beginPath(); g.arc(x, y - r, r * 1.9, 0, 7); g.stroke(); g.setLineDash([]);
+      });
       if (lightT > 0) {
-        const [lx0, ly0] = S(4, 2 * FLOOR), [lx1, ly1] = S(8, 0);
+        const [lx0, ly0] = S(HALL[0], 2 * FLOOR), [lx1, ly1] = S(HALL[1], 0);
         g.fillStyle = `rgba(246,226,160,${0.28 + 0.12 * Math.min(1, lightT)})`; g.fillRect(lx0, ly0, lx1 - lx0, ly1 - ly0);
         g.strokeStyle = C.amber; g.lineWidth = 2; g.setLineDash([6, 4]); g.strokeRect(lx0 + 2, ly0 + 2, lx1 - lx0 - 4, ly1 - ly0 - 4); g.setLineDash([]);
         g.fillStyle = C.ink; g.font = "700 13px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "top"; g.fillText(`HALL LIGHT ON · ${Math.ceil(lightT)} s`, (lx0 + lx1) / 2, ly0 + 22);
@@ -301,8 +367,11 @@ export default {
         }
         let [x, y] = S(ty.x, ty.y);
         if (i === 0 && shakeT > 0 && !api.reducedMotion) x += Math.sin(now / 30) * 3 * shakeT;
-        toy(x, y, s, ty.col, i === 0, i === sel, ty.kind);
-        const exposed = guests.some((gu) => inCone(gu, ty.x, ty.y)) || (lightT > 0 && ty.x > 4 && ty.x < 8);
+        toy(x, y, s, ty.col, i === 0, i === sel && !ty.settled, ty.kind, ty.face);
+        if (ty.settled) { g.font = "700 12px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "bottom"; const tw = g.measureText("SETTLED").width + 8; g.fillStyle = C.ink; g.fillRect(x - tw / 2, y - 34 * s - 16, tw, 16); g.fillStyle = C.bone; g.fillText("SETTLED", x, y - 34 * s - 2); return; }
+        if (i === sel && still) { const d = Math.max(48, 66 * s); A.draw(g, "ui-hold-still-ring", x - d / 2, y - 14 * s - d / 2, d, d, { src: [10, 10, 300, 300], round: true, key: "ring" }); toy(x, y, s, ty.col, i === 0, false, ty.kind, ty.face); }
+        if (i === 0 && pulseOn && !steadied) A.draw(g, "ui-steady-mark", x - 54, y - 34 * s - 56, 108, 36);
+        const exposed = guests.some((gu) => inCone(gu, ty.x, ty.y)) || (lightT > 0 && ty.x > HALL[0] && ty.x < HALL[1]);
         if (exposed) { g.strokeStyle = C.red; g.lineWidth = 2; g.beginPath(); g.arc(x, y - 12 * s, 28 * s, 0, 7); g.stroke(); }
         if (i === sel && (still || exposed)) {
           const txt = still ? "HOLDING STILL" : "IN SIGHT: DON'T MOVE";
@@ -328,12 +397,32 @@ export default {
       seg(clock()); seg(`${toys[sel].name === "You" ? "the cat" : toys[sel].name}`);
       seg(`memories ${"●".repeat(Math.max(0, memories))}${"○".repeat(Math.max(0, 6 - memories))}`, memories <= 2 ? C.red : C.ink);
       if (W >= 560) seg(`hunger ${Math.round(hunger)}${hunger >= 75 ? " · trembling" : ""}`, hunger >= 75 ? C.red : C.ink);
-      seg(`dread ${Math.floor(avg)}/${TARGET}`, avg >= TARGET ? "#4f6b2c" : C.ink);
+      if (variant === "cupboard") seg(`settled ${settled}/2`, settled >= 2 ? "#4f6b2c" : C.ink);
+      else seg(`dread ${Math.floor(avg)}/${TARGET}`, avg >= TARGET ? "#4f6b2c" : C.ink);
       if (W < 560) { sx0 = cx0; g.font = "700 13px Karla,Arial,sans-serif"; g.fillStyle = hunger >= 75 ? C.red : C.ink; g.fillText(`hunger ${Math.round(hunger)}${hunger >= 75 ? " · trembling: Steady on the beat" : ""}`, cx0, cy + 46); }
       if (pulseOn) { g.fillStyle = steadied ? "#4f6b2c" : C.red; g.beginPath(); g.arc(cx1 - 8, cy + 23, 8, 0, 7); g.fill(); }
       // guest cards
       guests.forEach((gu, i) => {
         let x, y, w, h;
+        if (wide && A.has("ui-guest-card")) {
+          h = Math.min((H - L.bottom - 50) / 3 - 8, L.cards.w * 1.4); w = h / 1.4; x = W - 20 - (L.cards.w + w) / 2; y = 44 + i * (h + 8);
+          const u = w / 300;
+          g.fillStyle = "rgba(0,0,0,.25)"; g.fillRect(x + 3, y + 4, w, h);
+          if (A.draw(g, "ui-guest-card", x, y, w, h)) {
+            // in the oval: the sleeper's eye; on the tag: the name; up the side: dread, stitch by stitch
+            const cx = x + 132 * u, cy = y + 172 * u, er = 34 * u;
+            g.strokeStyle = C.bone; g.fillStyle = C.bone; g.lineWidth = Math.max(1.5, 3 * u); g.lineCap = "round";
+            if (gu.open > 0) { g.beginPath(); g.ellipse(cx, cy, er, er * 0.55, 0, 0, 7); g.stroke(); g.beginPath(); g.arc(cx, cy, er * 0.3, 0, 7); g.fill(); }
+            else { g.beginPath(); g.arc(cx, cy - er * 0.4, er, 0.25, Math.PI - 0.25); g.stroke(); if (gu.warn > 0) { g.strokeStyle = C.amber; g.beginPath(); g.arc(cx, cy - er * 0.4, er * 1.3, 0.5, Math.PI - 0.5); g.stroke(); } }
+            g.lineCap = "butt";
+            g.textAlign = "center"; g.textBaseline = "middle"; g.font = `${Math.max(12, Math.round(13 * u * 1.9))}px Karla,Arial,sans-serif`; g.fillStyle = gu.open > 0 ? "#f3b3a6" : C.bone;
+            g.fillText(gu.open > 0 ? "eyes open" : gu.warn > 0 ? "stirring" : t < gu.awakeUntil * speed ? "reading" : gu.lamp ? "asleep, lamp on" : "asleep", cx, cy + 64 * u, 170 * u);
+            g.fillStyle = C.ink; g.font = `italic ${Math.max(13, Math.round(24 * u))}px 'IM Fell English',Georgia,serif`; g.fillText(gu.name, x + 132 * u, y + 368 * u);
+            for (let q = 0; q < 20; q++) if (q < gu.dread / 5) { g.fillStyle = q >= 13 ? C.red : C.rust; g.fillRect(x + 249 * u, y + (331 - q * 14) * u, 20 * u, 8 * u); }
+            g.font = "700 12px Karla,Arial,sans-serif"; g.fillStyle = C.ink; g.fillText(String(Math.round(gu.dread)), x + 259 * u, y + 356 * u);
+            return;
+          }
+        }
         if (wide) { w = L.cards.w; h = 84; x = W - w - 20; y = 44 + i * (h + 12); }
         else { w = (W - 24 - 16) / 3; h = L.cards.h; x = 12 + i * (w + 8); y = H - L.bottom - h - 4; }
         g.fillStyle = C.bone; g.fillRect(x, y, w, h); g.strokeStyle = C.ink; g.lineWidth = 1; g.strokeRect(x, y, w, h); g.strokeRect(x + 3, y + 3, w - 6, h - 6);
@@ -357,10 +446,14 @@ export default {
       if (flash > 0) { g.fillStyle = `rgba(184,50,42,${flash * 0.25})`; g.fillRect(0, 0, W, H); }
       if (msg && now - msgT < 2600) {
         g.font = "700 15px Karla,Arial,sans-serif"; const w = Math.min(W - 24, g.measureText(msg).width + 26);
-        const my = L.base - 2 * FLOOR * L.k - 46;
+        const my = L.base - 2 * FLOOR * L.ky - 46;
         g.fillStyle = C.bone; g.strokeStyle = C.ink; g.lineWidth = 1; g.fillRect(W / 2 - w / 2, my, w, 32); g.strokeRect(W / 2 - w / 2, my, w, 32); g.strokeRect(W / 2 - w / 2 + 3, my + 3, w - 6, 26);
         g.fillStyle = C.ink; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(msg, W / 2, my + 16, w - 16);
       }
+      drawPops(now);
+      K.frame(draw);
+    }
+    function drawPops(now) {
       for (let i = pops.length - 1; i >= 0; i--) {
         const p = pops[i], a = (now - p.t0) / 1500;
         if (a >= 1) { pops.splice(i, 1); continue; }
@@ -368,7 +461,123 @@ export default {
         g.globalAlpha = 1 - a * a; g.font = "700 15px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "middle";
         g.lineWidth = 4; g.strokeStyle = C.bone; g.strokeText(p.text, p.x, p.y - rise); g.fillStyle = p.col; g.fillText(p.text, p.x, p.y - rise); g.globalAlpha = 1;
       }
-      K.frame(draw);
+    }
+
+    // ---- night two: the heap in the linen cupboard --------------------------------------------
+    function heapRect() {
+      // on a narrow screen the plate is cropped to the cupboard, the chair and the lamp
+      const { W, H, bottom } = L, src = W < 560 ? [430, 80, 1140, 780] : [0, 0, 1600, 900];
+      const aw = W - 24, ah = H - 50 - bottom - 8, sc = Math.min(aw / src[2], ah / src[3]);
+      return { x: 12 + (aw - src[2] * sc) / 2, y: 46 + (ah - src[3] * sc) / 2, w: src[2] * sc, h: src[3] * sc, sc, src };
+    }
+    function drawHeap(now) {
+      const { W, H } = L, R = heapRect(), X = (px) => R.x + (px - R.src[0]) * R.sc, Y = (py) => R.y + (py - R.src[1]) * R.sc;
+      g.fillStyle = C.paper; g.fillRect(0, 0, W, H);
+      if (!A.draw(g, "dollhouse-cupboard", R.x, R.y, R.w, R.h, { src: R.src, key: "heap" + R.src[0] })) {
+        g.fillStyle = "#9aa3b5"; g.fillRect(R.x, R.y, R.w, R.h); g.strokeStyle = C.ink; g.lineWidth = 1.5; g.strokeRect(R.x, R.y, R.w, R.h);
+        g.fillStyle = "#55607a"; g.fillRect(X(520), Y(190), R.sc * 420, R.sc * 550); g.strokeRect(X(520), Y(190), R.sc * 420, R.sc * 550);
+        g.fillStyle = C.amber; [[612, 666], [680, 636], [734, 644], [782, 674], [838, 692]].forEach(([ex, ey]) => { g.beginPath(); g.arc(X(ex), Y(ey), 3, 0, 7); g.arc(X(ex + 15), Y(ey), 3, 0, 7); g.fill(); });
+      }
+      const hx = X(730), hy = Y(660), beat = (heapT / (HEAP_BEAT * speed)) % 1, near = Math.min(beat, 1 - beat) * HEAP_BEAT * speed;
+      // the shared pulse, beating on the heap
+      if (stage === "heap") {
+        const swell = api.reducedMotion ? (near < HEAP_WIN ? 1 : 0) : Math.max(0, 1 - near / 0.5);
+        const d = Math.max(90, R.sc * 300) * (0.8 + 0.3 * swell);
+        g.globalAlpha = 0.55 + 0.45 * swell;
+        if (!A.draw(g, "ui-pulse-ring", hx - d / 2, hy - d / 2, d, d, { round: true, key: "pulse" })) { g.strokeStyle = C.amber; g.lineWidth = 5; g.beginPath(); g.arc(hx, hy, d / 2, 0, 7); g.stroke(); }
+        g.globalAlpha = 1;
+        // the door: how far it has been pressed
+        g.fillStyle = C.ink; g.font = "700 15px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "middle";
+        const lbl = `press on the beat  ${"●".repeat(pushes)}${"○".repeat(3 - pushes)}`, lw = g.measureText(lbl).width + 20;
+        g.fillStyle = C.bone; g.fillRect(hx - lw / 2, Y(150) - 14, lw, 28); g.strokeStyle = C.ink; g.lineWidth = 1; g.strokeRect(hx - lw / 2, Y(150) - 14, lw, 28);
+        g.fillStyle = near < HEAP_WIN * (gentle ? 1.6 : 1) ? C.red : C.ink; g.fillText(lbl, hx, Y(150) + 1);
+      } else {
+        // Noor under the hall light, and her eye on the heap
+        const nx = X(1230), ny = Y(740), u = R.sc * 1.55, looking = foundT >= HEAP_GRACE;
+        if (looking) { g.fillStyle = "rgba(246,236,190,.34)"; g.beginPath(); g.moveTo(nx, ny - 150 * u); g.lineTo(X(540), Y(520)); g.lineTo(X(540), Y(760)); g.closePath(); g.fill(); g.strokeStyle = "rgba(42,33,27,.5)"; g.lineWidth = 1; g.stroke(); }
+        g.fillStyle = "#4d5a74"; g.strokeStyle = C.ink; g.lineWidth = 1.4;
+        g.beginPath(); g.moveTo(nx - 26 * u, ny); g.lineTo(nx - 18 * u, ny - 120 * u); g.lineTo(nx + 18 * u, ny - 120 * u); g.lineTo(nx + 26 * u, ny); g.closePath(); g.fill(); g.stroke();
+        g.fillStyle = C.dust; g.beginPath(); g.arc(nx, ny - 142 * u, 20 * u, 0, 7); g.fill(); g.stroke();
+        g.fillStyle = C.ink; g.beginPath(); g.arc(nx - 9 * u, ny - 144 * u, 2.6 * u, 0, 7); g.fill();
+        g.font = "700 13px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "bottom"; g.fillText("Noor", nx, ny - 168 * u);
+        if (still) { const d = Math.max(110, R.sc * 330); g.globalAlpha = 0.8; A.draw(g, "ui-hold-still-ring", X(1048) - d / 2, Y(690) - d / 2, d, d, { src: [10, 10, 300, 300], round: true, key: "ring" }); g.globalAlpha = 1; }
+        // five toys in a pile on the landing floor, where the door let them fall
+        ["medallion-dani", "medallion-marcus", "medallion-lila", "medallion-jamie", "medallion-narrator"].forEach((id, k) => {
+          const d = Math.max(26, R.sc * 92), tx = X(960 + k * 44) + (k % 2 ? 6 : -4), ty = Y(730) - (k % 2) * d * 0.45 - (k === 4 ? d * 0.2 : 0);
+          let sx = 0; if (k === 4 && shakeT > 0 && !api.reducedMotion) sx = Math.sin(now / 30) * 3 * shakeT;
+          if (!A.draw(g, id, tx - d / 2 + sx, ty - d, d, d, FACE)) { g.fillStyle = k === 4 ? C.amber : "#c2925f"; g.beginPath(); g.arc(tx + sx, ty - d / 2, d / 2, 0, 7); g.fill(); g.stroke(); }
+        });
+        if (pulseOn && !steadied) A.draw(g, "ui-steady-mark", X(1048) - 72, Y(560) - 24, 144, 48);
+        const left = Math.max(0, HEAP_GRACE + HEAP_LOOK - foundT);
+        g.font = "700 15px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "middle";
+        const lbl = !looking ? "every eye opens: HOLD STILL" : still ? `holding all five still · ${Math.ceil(left)} s` : "YOU ARE MOVING", lw = g.measureText(lbl).width + 20;
+        g.fillStyle = !looking || still ? C.bone : C.red; g.fillRect(X(1048) - lw / 2, Y(150) - 14, lw, 28); g.strokeStyle = C.ink; g.strokeRect(X(1048) - lw / 2, Y(150) - 14, lw, 28);
+        g.fillStyle = !looking || still ? C.ink : C.bone; g.fillText(lbl, X(1048), Y(150) + 1);
+      }
+      g.textAlign = "left"; g.textBaseline = "alphabetic"; g.font = "700 14px Karla,Arial,sans-serif"; g.fillStyle = memories <= 2 ? C.red : C.ink;
+      g.fillText(`night two · the linen cupboard · memories ${"●".repeat(Math.max(0, memories))}${"○".repeat(Math.max(0, 6 - memories))}`, 16, 30, W - 32);
+      if (flash > 0) { g.fillStyle = `rgba(184,50,42,${flash * 0.25})`; g.fillRect(0, 0, W, H); }
+    }
+    function push() {
+      if (!started || over || stage !== "heap") return;
+      const period = HEAP_BEAT * speed, n = Math.round(heapT / period), near = Math.abs(heapT - n * period), R = heapRect();
+      if (near <= HEAP_WIN * (gentle ? 1.6 : 1) && n !== beatUsed && n > 0) {
+        beatUsed = n; pushes++;
+        pop(["the door gives", "the chair shifts", "the chair goes over"][pushes - 1], R.x + (940 - R.src[0]) * R.sc, R.y + (520 - R.src[1]) * R.sc, C.red);
+        if (pushes >= 3) {
+          stage = "found"; foundT = 0; heapLine = -1; heapSteady = 0; pushBtn.hidden = true; stillBtn.hidden = false; steadyBtn.hidden = false;
+          cap("The chair goes over", "The door swings. Five toys spill onto the landing in a heap, touching, for the first time since the change. A bedroom door opens. Hold still (Space), all of you.", null, 5200);
+        }
+      } else {
+        misses++; hunger += 3;
+        pop("out of step: the door only rattles", R.x + (760 - R.src[0]) * R.sc, R.y + (470 - R.src[1]) * R.sc, C.ink);
+        if (misses % 3 === 0) { memories--; flash = 1; say("The rattling wakes the hunger: it lurches in the dark. One memory goes."); if (memories <= 0) lose(); }
+      }
+    }
+    function updateHeap(dt) {
+      heapT += dt;
+      if (flash > 0) flash = Math.max(0, flash - dt * 1.5);
+      if (shakeT > 0) shakeT = Math.max(0, shakeT - dt * 2);
+      if (stage !== "found") return;
+      foundT += dt / speed;
+      const look = foundT - HEAP_GRACE;
+      if (look < 0) return;
+      const line = Math.min(2, Math.floor(look / 3));
+      if (line !== heapLine) { heapLine = line; cap(line === 2 ? "Noor, under the hall light" : "Noor", "", HEAP_LINES[line], 2900); }
+      // one beat of the hunger while she looks: Steady, or the heap shivers
+      if (!heapSteady && look >= 4.2) { heapSteady = 1; pulseOn = true; steadied = false; pulseT = (gentle ? PULSE_WIN * 2 : PULSE_WIN) + 0.5; steadyBtn.classList.add(PRE + "beat-on"); }
+      if (pulseOn) { pulseT -= dt / speed; if (pulseT <= 0) { pulseOn = false; steadyBtn.classList.remove(PRE + "beat-on"); if (!steadied) { shakeT = 1; shakes++; guests[0].dread += 5; say("The cat shivers in the pile. Noor takes a step back."); } } }
+      if (!still && toys[0].grace <= 0) {
+        memories--; slips++; flash = 1; guests[0].dread += 15; toys[0].grace = 2.5; foundT = Math.max(HEAP_GRACE, foundT - 2);
+        say("You moved while she was looking. A slip: one memory goes.");
+        if (memories <= 0) { lose(); return; }
+      }
+      toys[0].grace = Math.max(0, toys[0].grace - dt);
+      if (look >= HEAP_LOOK) startProximity();
+    }
+    function startProximity() {
+      stage = "night"; pulseOn = false; steadyBtn.classList.remove(PRE + "beat-on");
+      t = NIGHT * speed * 4 / 6; pack = 4; saidAna = true; saidThree = true;
+      guests.forEach((gu) => { gu.awakeUntil = 0; gu.open = 0; gu.warn = 0; gu.next = (6 + rng() * 6) * speed; });
+      guests[0].sleep = [4, 8];
+      toys[0].x = ART ? 5.4 : 5.6; toys[1].x = ART ? 6.2 : 6.6; toys.forEach((ty) => { ty.lvl = 1; ty.y = FLOOR; ty.plan = []; ty.grace = 1; });
+      lightT = 6 * speed; lightBy = guests[0];
+      settleBtn.hidden = false; switchBtn.hidden = false;
+      cap("03:00 · Proximity", "She puts nobody back. She goes to bed with the light on; it will go out. Then walk each toy to a red cross and Settle (1): somewhere to be found in the morning.", null, 7000);
+    }
+    function settle() {
+      if (!started || over || stage !== "night" || variant !== "cupboard") return;
+      const ty = toys[sel];
+      if (ty.settled) { say("Already settled. Switch toy (Tab)."); return; }
+      if (ty.plan.length && !still) { say("Stop first: hold still, then settle."); return; }
+      const sp = SETTLE.find((q) => q.lvl === ty.lvl && Math.abs(q.x - ty.x) < 0.6 && !toys.some((o) => o.settled === q));
+      if (!sp) { say("Not here. Settle at a red cross: a sink, a bed, a door."); return; }
+      const seer = guests.find((gu) => inCone(gu, ty.x, ty.y)) || (lightT > 0 && ty.x > HALL[0] && ty.x < HALL[1] ? lightBy : null);
+      if (seer && ty.grace <= 0) { slip(seer, `${seer.name} saw ${sel === 0 ? "the cat" : "Jamie"} sit down.`); ty.grace = 2; if (over) return; }
+      ty.settled = sp; ty.plan = []; settled++; hunger = Math.max(0, hunger - 8);
+      const [x, y] = S(ty.x, ty.y); pop("settled · −8 hunger", x, y - 50, "#4f6b2c");
+      say(`${sel === 0 ? "The cat" : "Jamie"} settles by ${sp.name}.`);
+      if (settled >= 2) K.after(900, finish); else sel = toys.findIndex((o) => !o.settled);
     }
 
     // ---- simulation -----------------------------------------------------------------------
@@ -376,7 +585,7 @@ export default {
     function inCone(gu, x, y) {
       if (gu.open <= 0) return false;
       const r = ROOMS.find((q) => q.id === gu.room);
-      if (y < r.lvl * FLOOR - 0.01 || y > (r.lvl + 1) * FLOOR) return false; // doors stand open: an eye sees along its floor
+      if (y < r.lvl * FLOOR - 0.01 || y >= (r.lvl + 1) * FLOOR - 0.01) return false; // doors stand open: an eye sees along its floor
       const dx = x - gu.ex, dy = (y + 0.3) - gu.ey, d = Math.hypot(dx, dy);
       if (d > REACH) return false;
       let a = Math.atan2(dy, dx) - gu.look; a = Math.atan2(Math.sin(a), Math.cos(a));
@@ -439,7 +648,7 @@ export default {
       if (seer && ty.grace <= 0) { slip(seer, `${seer.name} saw the ${ty.name === "You" ? "cat" : "bear"} move.`); ty.grace = 2; }
     }
     function steady() {
-      if (!started || over || !tremor) return;
+      if (!started || over || (!tremor && stage !== "found")) return;
       if (pulseOn && !steadied) { steadied = true; const [x, y] = S(toys[0].x, toys[0].y); pop("steady", x, y - 50, "#4f6b2c"); }
     }
     function update(dt) {
@@ -449,7 +658,7 @@ export default {
       // the hall light: whoever got up is looking down the hall and the landing
       if (lightT > 0) {
         lightT -= dt;
-        toys.forEach((ty, i) => { if (ty.moved && ty.x > 4 && ty.x < 8 && ty.grace <= 0) { slip(lightBy || guests[0], `In the hall light, ${lightBy ? lightBy.name : "someone"} sees ${i === 0 ? "the cat" : "Jamie"} move.`); ty.grace = 2.5; } });
+        toys.forEach((ty, i) => { if (ty.moved && ty.x > HALL[0] && ty.x < HALL[1] && ty.grace <= 0) { slip(lightBy || guests[0], `In the hall light, ${lightBy ? lightBy.name : "someone"} sees ${i === 0 ? "the cat" : "Jamie"} move.`); ty.grace = 2.5; } });
         if (lightT <= 0) say("Click. The hall goes dark again.");
       }
       // phases of the night
@@ -458,6 +667,7 @@ export default {
       // tremors from 75 hunger: a pulse every 4 s wants a Steady
       tremor = hunger >= 75;
       steadyBtn.hidden = !tremor;
+      if (variant === "cupboard" && tremor && !saidHunger) saidHunger = true;
       if (tremor) {
         if (!saidHunger) { saidHunger = true; cap("The hunger", "Ruth's whisper, from the day you woke:", "“The hunger. Don't fight it. It's what keeps you alive.”", 5500); }
         pulseT -= dt / speed;
@@ -498,6 +708,7 @@ export default {
       toys.forEach((ty, i) => {
         ty.grace = Math.max(0, ty.grace - dt);
         ty.moved = false;
+        if (ty.settled) return;
         if (i === sel && holding) return;
         if (i !== sel && !ty.plan.length) return;
         if (i !== sel && holding) return; // the pulse: the pack holds together
@@ -532,7 +743,17 @@ export default {
       if (!over && t >= NIGHT * speed) finish();
     }
     function finish() {
+      if (over) return;
       over = true;
+      if (variant === "cupboard") {
+        api.store.set("losses", 0);
+        const where = toys.filter((ty) => ty.settled).map((ty) => `${ty.name === "You" ? "the cat" : ty.name} by ${ty.settled.name}`).join(", ");
+        const text = settled >= 2
+          ? `05:00. The chair lies on its side on the landing and nobody has picked it up. In the morning they will find ${where}. Noor will say it again, quieter: “I swear I locked that door.” ${slips} slip${slips === 1 ? "" : "s"}, ${memories} memor${memories === 1 ? "y" : "ies"} left.`
+          : `05:00. Grey at the windows${where ? `, and only ${where}` : ", and no toy where it means to be found"}. They will set the chair upright and tell each other the door was never locked. ${slips} slip${slips === 1 ? "" : "s"}, ${memories} memor${memories === 1 ? "y" : "ies"} left.`;
+        A.finale(wrap, "dollhouse-day").then(() => api.end({ outcome: settled >= 2 ? "win" : "done", text }));
+        return;
+      }
       const avg = guests.reduce((a, gu) => a + gu.dread, 0) / guests.length;
       const won = avg >= TARGET && memories > 0;
       api.store.set("losses", 0);
@@ -540,7 +761,7 @@ export default {
       const tail = won
         ? ` At breakfast ${most.name} will ask who was up in the night, and nobody will say it was them.`
         : " They will sleep late and laugh about the old cabin over coffee. The pack plays again tomorrow night.";
-      api.end({ outcome: won ? "win" : "done", text: `05:00. Grey at the windows; the pack is back on the shelf. Dread ${Math.floor(avg)} on average, ${TARGET} needed (${guests.map((gu) => `${gu.name} ${Math.round(gu.dread)}`).join(", ")}). ${slips} slip${slips === 1 ? "" : "s"}, ${memories} memor${memories === 1 ? "y" : "ies"} left.${tail}` });
+      A.finale(wrap, "dollhouse-day").then(() => api.end({ outcome: won ? "win" : "done", text: `05:00. Grey at the windows; the pack is back on the shelf. Dread ${Math.floor(avg)} on average, ${TARGET} needed (${guests.map((gu) => `${gu.name} ${Math.round(gu.dread)}`).join(", ")}). ${slips} slip${slips === 1 ? "" : "s"}, ${memories} memor${memories === 1 ? "y" : "ies"} left.${tail}` }));
     }
     function lose() { if (over) return; over = true; api.store.set("losses", losses + 1); api.end({ outcome: "lose", text: `${clock()}. One slip too many, one lurch too hard: nothing is left of you to hold still with. In the morning a cat plush lies on the landing floor, and someone puts it back on the shelf without a word. ${slips} slip${slips === 1 ? "" : "s"}.` }); }
 
@@ -548,10 +769,13 @@ export default {
     const pt = (e) => { const b = cv.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; };
     K.on(cv, "pointerdown", (e) => {
       if (!started || over) return;
+      if (stage === "heap") { push(); return; }
+      if (stage !== "night") return;
       const [px, py] = pt(e);
-      const mx = (px - L.ox) / L.k, my = (L.base - py) / L.k;
+      const mx = (px - L.ox) / L.k, my = (L.base - py) / L.ky;
       const ti = toys.findIndex((ty) => Math.abs(ty.x - mx) < 0.5 && my > ty.y - 0.2 && my < ty.y + 1.0);
       if (ti >= 0) { sel = ti; return; }
+      if (toys[sel].settled) { say("Settled toys stay where they are. Switch toy (Tab)."); return; }
       if (mx < -0.3 || mx > W_M + 0.3 || my < 0 || my > 2 * FLOOR) return;
       plan(toys[sel], mx, my >= FLOOR ? 1 : 0);
     });
@@ -561,13 +785,20 @@ export default {
     K.on(stillBtn, "pointerleave", () => { if (!stillToggle && still) setStill(false); });
     K.on(stillBtn, "click", (e) => { if (e.detail === 0) setStill(!still); }); // keyboard activation toggles
     toolBtns.forEach((b) => K.on(b, "click", () => { act(TOOLS.find((x) => x.id === b.dataset.tool)); wrap.focus(); }));
-    K.on(wrap.querySelector('button[data-a="switch"]'), "click", () => { sel = (sel + 1) % toys.length; wrap.focus(); });
+    const cycle = () => { for (let q = 1; q <= toys.length; q++) { const j = (sel + q) % toys.length; if (!toys[j].settled) { sel = j; return; } } };
+    K.on(wrap.querySelector('button[data-a="switch"]'), "click", () => { cycle(); wrap.focus(); });
+    K.on(pushBtn, "click", () => { push(); wrap.focus(); });
+    K.on(settleBtn, "click", () => { settle(); wrap.focus(); });
     K.on(steadyBtn, "pointerdown", (e) => { e.preventDefault(); steady(); });
     K.on(steadyBtn, "click", (e) => { if (e.detail === 0) steady(); });
     K.on(wrap, "keydown", (e) => {
       if (!started || over) return;
       if (e.key === " " && !e.repeat) { e.preventDefault(); if (stillToggle) setStill(!still); else setStill(true); }
-      else if (e.key === "Tab") { e.preventDefault(); sel = (sel + 1) % toys.length; }
+      else if (stage === "heap") { if (e.key === "Enter" || e.key === "p" || e.key === "P") { e.preventDefault(); push(); } }
+      else if (e.key === "s" || e.key === "S") steady();
+      else if (stage !== "night") return;
+      else if (e.key === "Tab") { e.preventDefault(); cycle(); }
+      else if (variant === "cupboard") { if (e.key === "1" || e.key === "Enter") settle(); else if (e.key === "ArrowLeft" || e.key === "ArrowRight") { const ty = toys[sel]; if (!ty.settled) plan(ty, ty.x + (e.key === "ArrowLeft" ? -1 : 1), ty.lvl); } else if (e.key === "ArrowUp" || e.key === "ArrowDown") { const ty = toys[sel]; if (!ty.settled) plan(ty, e.key === "ArrowUp" ? STAIR.x1 + 0.4 : STAIR.x0 - 0.4, e.key === "ArrowUp" ? 1 : 0); } }
       else if (["1", "2", "3", "4"].includes(e.key)) act(TOOLS[+e.key - 1]);
       else if (e.key === "s" || e.key === "S") steady();
       else if (e.key === "ArrowLeft" || e.key === "ArrowRight") { const ty = toys[sel]; plan(ty, ty.x + (e.key === "ArrowLeft" ? -1 : 1), ty.lvl); }
@@ -579,7 +810,7 @@ export default {
     let prev = performance.now(), tickRaf = 0;
     function tick(now) {
       const dt = Math.min(0.05, (now - prev) / 1000); prev = now;
-      if (started && !over) update(dt);
+      if (started && !over) { if (stage === "night") update(dt); else updateHeap(dt); }
       tickRaf = requestAnimationFrame(tick);
     }
     tickRaf = requestAnimationFrame(tick);
@@ -599,10 +830,28 @@ export default {
       <p class="${PRE}kind" ${losses >= 2 ? "" : "hidden"}>Two nights lost. The slower night is ticked for you.</p>
       <label><input type="checkbox" data-o="half" ${losses >= 2 ? "checked" : ""}> Slower night (clock, cones and tremors at half speed)</label>
       <label><input type="checkbox" data-o="toggle"> Still toggles instead of hold</label>
-      <button type="button">Begin the night</button>
+      <button type="button" data-n="sound">Night one: the Sound game</button>
+      <button type="button" data-n="cupboard" class="${PRE}alt">Night two: the linen cupboard</button>
     </div>`;
     wrap.appendChild(intro);
+    {
+      const plateEl = intro.querySelector("." + PRE + "plate"), h2 = intro.querySelector("h2");
+      const cw = Math.min(450, wrap.clientWidth - 82);
+      const pic = A.picture("chapter-10", cw, { alt: "Chapter 10: The First Game: Sound" });
+      if (pic) { pic.className = PRE + "pic"; plateEl.insertBefore(pic, h2); }
+      const ttl = A.word("Dollhouse cutaway", 34);
+      if (ttl) { ttl.style.justifyContent = "center"; ttl.style.margin = "10px 0 4px"; h2.textContent = ""; h2.appendChild(ttl); }
+      const clockPic = A.picture("ui-night-clock", cw, { alt: "The night clock, 23:00 to 05:00" });
+      if (clockPic) { clockPic.className = PRE + "pic"; plateEl.insertBefore(clockPic, plateEl.querySelector("." + PRE + "more")); }
+    }
     const sb = intro.querySelector("button");
+    K.on(intro.querySelector('[data-n="cupboard"]'), "click", () => {
+      stillToggle = intro.querySelector('[data-o="toggle"]').checked; speed = intro.querySelector('[data-o="half"]').checked ? 2 : 1; gentle = speed === 2;
+      variant = "cupboard"; stage = "heap"; hunger = 50;
+      toolBtns.forEach((b) => (b.hidden = true)); switchBtn.hidden = true; stillBtn.hidden = true; pushBtn.hidden = false;
+      intro.remove(); started = true; wrap.focus();
+      cap("Night two", "After the morning's moved toys, one of them shut every toy in the linen cupboard and wedged a chair under the knob. Five of you, in the dark, on one pulse. Press the door on the beat (Enter, or tap): three times.", null, 8000);
+    });
     K.on(sb, "click", () => {
       stillToggle = intro.querySelector('[data-o="toggle"]').checked; speed = intro.querySelector('[data-o="half"]').checked ? 2 : 1; gentle = speed === 2;
       guests.forEach((gu) => (gu.next *= speed));
@@ -615,6 +864,6 @@ export default {
     ro.observe(wrap);
     // a read-only probe for automated play tests
     layout(); K.frame(draw);
-    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); ro.disconnect(); wrap.remove(); } };
+    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); A.dispose(); ro.disconnect(); wrap.remove(); } };
   },
 };
