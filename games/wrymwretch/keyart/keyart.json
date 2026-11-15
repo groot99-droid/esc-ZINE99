@@ -1,0 +1,84 @@
+{
+  "game": "wrymwretch",
+  "style": "Bone-and-silver reliquary style: every surface carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light on every ridge, near-black starry void beyond, frontal icon-like composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. Cold blue-silver palette of bone ivory and tarnished silver over near-black, with one accent light per image in a realm's colour (moss green, pale blue, molten orange, sea blue, violet or star gold; sun gold with moon silver at the statues).",
+  "images": [
+    {
+      "id": "key-art-wide",
+      "kind": "key-art",
+      "title": "The six pairs, a reliquary frieze",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Bone-and-silver reliquary style: every surface carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light on every ridge, near-black starry void beyond, frontal icon-like composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. Six arched niches in one row across the lower two thirds, each an adult elf with a dragon coiled behind: a wood elf archer with olive skin and green hair, bark-scaled dragon, moss-green glow; a sky elf noblewoman in a feathered cloak, parchment-coloured dragon, pale blue glow; an elderly earth elf woman with a staff, stone dragon with magma seams, orange glow; a sea elf diver, iridescent blue dragon, sea-blue glow; a hooded dark elf assassin, light-swallowing black dragon, violet glow; a celestial elf scholar woman in star-embroidered robes, cosmic-dust dragon, gold glow. One thin crack through all six. Upper third calm empty starry void for a title. Each lit by its own glow, cold blue-silver elsewhere. no text, no lettering, no watermark, no logo",
+      "job_id": "625dd74a-2ab9-4b83-8f35-745c6e915eb2",
+      "image": "keyart/key-art-wide.jpg"
+    },
+    {
+      "id": "key-art-tall",
+      "kind": "key-art",
+      "title": "The six pairs, a reliquary frieze (tall)",
+      "aspect_ratio": "2:3",
+      "model": "soul_cinematic",
+      "prompt": "Bone-and-silver reliquary style: every surface carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light on every ridge, near-black starry void beyond, frontal icon-like composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. Six arched niches in two rows of three in the lower two thirds, each an adult elf with a dragon coiled behind: a wood elf archer with olive skin and green hair, bark-scaled dragon, moss-green glow; a sky elf noblewoman in a feathered cloak, parchment-coloured dragon, pale blue glow; an elderly earth elf woman with a staff, stone dragon with magma seams, orange glow; a sea elf diver, iridescent blue dragon, sea-blue glow; a hooded dark elf assassin, light-swallowing black dragon, violet glow; a celestial elf scholar woman in star-embroidered robes, cosmic-dust dragon, gold glow. One thin crack down both rows. Upper third calm empty starry void for a title. Each lit by its own glow, cold blue-silver elsewhere. no text, no lettering, no watermark, no logo",
+      "job_id": "a6b6808c-5fa8-4e61-bd80-bf9e9629a9fa",
+      "image": "keyart/key-art-tall.jpg"
+    },
+    {
+      "id": "ending-architect-rises",
+      "kind": "ending",
+      "ending": "architect_rises",
+      "title": "The Architect Rises",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Bone-and-silver reliquary style: carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light on every ridge, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. A vast near-black night sky fills the upper three quarters, crowded with abstract constellations: only thin straight white lines joining stars into irregular angular webs, no animals, no people, no pictures. At the centre of the sky a round dome-shaped swelling, as if the dark sky were a membrane pushed toward us from behind by something unseen, with fine cracks radiating from the swell; no figure, no face, no funnel, only the pressure. Far below, a thin curved rim of carved bone crosses the bottom of the frame; on it six very tiny elves stand in a row, backs to the viewer, each with a small dragon beside it, all looking up at the swell. A small open book with empty pages lies on the rim beside them. Cold white starlight only, no warm colour anywhere, blue-silver and ivory over near-black. The bottom strip below the rim is plain dark shadow, empty. no text, no lettering, no signature, no watermark, no logo",
+      "job_id": "74151912-ad17-4cb7-af68-210d44d6da0f",
+      "image": "keyart/ending-architect-rises.jpg",
+      "needs_review": "Retry kept. Five elves with dragons on the rim, not six; the rim carries a warm ochre band although the prompt asks for no warm colour; the rim and book fill the lower quarter."
+    },
+    {
+      "id": "ending-remembered-whole",
+      "kind": "ending",
+      "ending": "remembered_whole",
+      "title": "Remembered Whole",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Bone-and-silver reliquary style: every surface carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light on every ridge, near-black starry void beyond, frontal icon-like composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. Symmetrical wide view: a towering skeletal dragon king statue of gilded bone at left, a robed elf queen statue of cracked silver-white stone with open hands at right. Between them, where a chasm was, a smooth sealed floor of silver. High above in the void one finished constellation in gold leaf lines, the shape of a scholar's lamp. Six small dragons with riders, as distant silhouettes fly away toward six horizons. Along the statues' base a row of small silver name plaques: some bear worn illegible engraved marks, several are left smooth and blank. Star-gold accent light from the constellation only, cold blue-silver elsewhere. The lower quarter is calm dark floor and shadow, empty for a caption. no text, no lettering, no watermark, no logo",
+      "job_id": "774354e5-ce3f-4b0b-801b-604e02bf3bad",
+      "image": "keyart/ending-remembered-whole.jpg"
+    },
+    {
+      "id": "ending-dormant-again",
+      "kind": "ending",
+      "ending": "dormant_again",
+      "title": "Dormant Again",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Bone-and-silver reliquary style, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary, fine black crack lines, hard cool rim light. Full-frame wide landscape painting, edge to edge, no frame, no border, no box: an ancient cedar grove whose trunks are carved like ribbed ivory bone columns, with ferns of silver filigree. In the middle distance a small wood elf archer with olive skin and green hair, seen from behind, alone, crouches with the bow held low and no arrow drawn, watching a silver-antlered stag that stands far off between the trunks, looking back. In the background the roots of one colossal elder tree curl in the shape of a sleeping bark-scaled dragon, eyes closed, half overgrown with moss, unnoticed by the elf. No other dragon anywhere. Dappled moss-green and amber light falling between the trunks, cold blue-silver and ivory elsewhere, quiet morning stillness. The lower quarter is calm dark forest floor and shadow, empty. no text, no lettering, no signature, no watermark, no logo",
+      "job_id": "d17512e7-28e6-48d2-85d4-90c18c3cf3aa",
+      "image": "keyart/ending-dormant-again.jpg",
+      "needs_review": "Retry kept (the first had a signature-like scrawl and a box frame). The elf stands in the lower quarter with an arrow on the bow, so the caption space is not empty and the bow is not plainly lowered."
+    },
+    {
+      "id": "ending-the-rememberer",
+      "kind": "ending",
+      "ending": "the_rememberer",
+      "title": "The Rememberer",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Bone-and-silver reliquary style: every surface carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light on every ridge, near-black starry void beyond, frontal icon-like composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. Symmetrical wide view at dawn: a towering skeletal dragon king statue of gilded bone at left, a robed elf queen statue of cracked silver-white stone with open hands at right. Between them a column of violet-white light narrowed to one thin steady thread. At its foot, very small and seen from behind, one adult elf in a plain cloak sits beside one dragon curled around them, alone, facing the light, realm unreadable. Far off, five tiny dragon silhouettes with riders fly away. A first line of sun-gold dawn on the horizon meets moon-silver on the statues. The lower quarter is calm dark stone and shadow, empty for a caption. no text, no lettering, no watermark, no logo",
+      "job_id": "bc7cc5d3-3436-4d00-a44b-bc10caf7e2d6",
+      "image": "keyart/ending-the-rememberer.jpg"
+    },
+    {
+      "id": "ending-the-empty-saddle",
+      "kind": "ending",
+      "ending": "The Empty Saddle",
+      "title": "The Empty Saddle",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Bone-and-silver reliquary style: every surface carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light on every ridge, near-black starry void beyond, frontal icon-like composition, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. Symmetrical wide view: a towering skeletal dragon king statue of gilded bone at left, a robed elf queen statue of cracked silver-white stone with open hands at right. Between them a thin column of violet-white light. At its foot one small seated figure, back to us: an adult elf man in worn dragon-rider's harness, its wyrm crest half filed away. Beside him an empty carved dragon saddle, a blank ivory mask laid face down on it, and an open book whose last page is empty. No dragon, no one else. Sun-gold and moon-silver accents meet on the figure's shoulders, one dim ember-orange glow on the saddle. The lower quarter is calm dark stone and shadow, empty for a caption. no text, no lettering, no watermark, no logo",
+      "job_id": "7c9d1725-2851-4ab4-9593-8c6fb30567d8",
+      "image": "keyart/ending-the-empty-saddle.jpg",
+      "needs_review": "First image kept; the retry turned the dragon king into a robed human skeleton and was discarded (job c225084a-3588-4123-9df0-dc9d30c7fc72). In the kept image the figure is large, not small, the saddle reads as a horn with a dragon head, the mask lies face up, a stray orange object sits at the queen's feet, and the lower quarter is not empty."
+    }
+  ]
+}

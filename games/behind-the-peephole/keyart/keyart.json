@@ -1,0 +1,84 @@
+{
+  "game": "behind-the-peephole",
+  "style": "Painterly cinematic still, an old 1920s river hotel at night, 1970s paranoid-thriller restraint, opaque gouache brush drag, practical lamps only, bottle-green cloth wallpaper, worn varnish, thumb-polished brass, tobacco-amber lamplight against river-grey light, brown-black shadow, soft film grain.",
+  "images": [
+    {
+      "id": "key-art-wide",
+      "kind": "key-art",
+      "title": "The coin of light",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic still, an old 1920s river hotel at night, 1970s paranoid-thriller restraint, opaque gouache brush drag, practical lamps only, bottle-green cloth wallpaper, worn varnish, thumb-polished brass, tobacco-amber lamplight against river-grey light, brown-black shadow, soft film grain. One small bowed circle of warm colour, a peephole lens view, sits right of centre in a wide field of pure black, ringed by a faint band of worn brass. Inside the circle, bent like a fisheye: a narrow hotel room, a slight woman in her fifties in a dark wool coat buttoned to the neck, grey-brown hair pinned up, her back half turned, sliding a brass door chain with a careful hand; behind her a small television throws game-show blue across the bed and a ball of wool with knitting needles. Tobacco amber and bottle green inside the lens, television blue the one cool note. The left half of the frame stays calm empty black for a title. Nothing else is lit. No text, no lettering, no watermark, no logo.",
+      "job_id": "ac5f5445-efd6-4756-8120-d52a20eb9696",
+      "image": "keyart/key-art-wide.jpg"
+    },
+    {
+      "id": "key-art-tall",
+      "kind": "key-art",
+      "title": "The coin of light",
+      "aspect_ratio": "2:3",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic still, an old 1920s river hotel at night, 1970s paranoid-thriller restraint, opaque gouache brush drag, practical lamps only, bottle-green cloth wallpaper, worn varnish, thumb-polished brass, tobacco-amber lamplight against river-grey light, brown-black shadow, soft film grain. Tall poster composition. One small bowed circle of warm colour, a peephole lens view, sits low in a tall field of pure black, ringed by a faint band of worn brass. Inside the circle, bent like a fisheye: a narrow hotel room, a slight woman in her fifties in a dark wool coat buttoned to the neck, grey-brown hair pinned up, her back half turned, sliding a brass door chain with a careful hand; behind her a small television throws game-show blue across the bed and a ball of wool with knitting needles. Tobacco amber and bottle green inside the lens, television blue the one cool note. The upper third of the frame stays calm empty black for a title. Nothing else is lit. No text, no lettering, no watermark, no logo.",
+      "job_id": "6c422b41-df24-445b-a662-a24fcdf29a26",
+      "image": "keyart/key-art-tall.jpg"
+    },
+    {
+      "id": "ending-under-the-door",
+      "kind": "ending",
+      "ending": "under_the_door",
+      "title": "Under the Door",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic still, an old 1920s river hotel at night, 1970s paranoid-thriller restraint, opaque gouache brush drag, practical lamps only, bottle-green cloth wallpaper, worn varnish, thumb-polished brass, tobacco-amber lamplight against river-grey light, brown-black shadow, soft film grain. Five in the morning in a very long, very narrow hidden service passage, camera centred looking straight down its length, symmetrical one-point perspective, no people. Along the left wall a row of six narrow dark doors, each with a small round unlit brass peephole rose. Nothing hangs on the walls. On the floor, a single blank dark blue-black sheet of carbon paper lies half slid under the nearest door, only its corner showing on the floorboards. Dead centre at the far end of the passage, a seventh plain door whose peephole glows: one tiny bright point of amber light, the only warm light in the picture. Thin river-grey dawn from high windows on the right, wall lamps off, threadbare runner, dark wainscot. Emptied, waiting. The lower quarter is quiet dark floorboards. No notices, no posters, no printed paper, no text, no lettering, no watermark, no logo.",
+      "job_id": "b15f9852-6008-4dc1-9219-7c88128ae5e0",
+      "image": "keyart/ending-under-the-door.jpg",
+      "needs_review": "Retry kept (first try had a printed notice with pseudo-lettering on the wall and no lit far door). Still off: blank picture frames on the walls, a ceiling lamp lit at the top edge, and the carbon sheet reads as a large dark mat rather than a sheet corner under the door."
+    },
+    {
+      "id": "ending-wrong-picture",
+      "kind": "ending",
+      "ending": "wrong_picture",
+      "title": "The Wrong Picture",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic still, an old 1920s river hotel at night, 1970s paranoid-thriller restraint, opaque gouache brush drag, practical lamps only, bottle-green cloth wallpaper, worn varnish, thumb-polished brass, tobacco-amber lamplight against river-grey light, brown-black shadow, soft film grain. Dawn in a double-height marble hotel lobby, a high wide view looking down from the mezzanine, all figures tiny and far below. Three small figures walk away from us in a row toward the revolving door: a hotel guest in a plain overcoat carrying one small suitcase, flanked by two uniformed police officers seen from behind, one on each side, unhurried, nobody touching anybody; the guest looks back over one shoulder and up toward the camera, face too small and shadowed to read. Apart from them, alone at the reception desk on the right, a night clerk in a waistcoat faces the camera and raises a black telephone receiver high above his head toward the mezzanine, offering it to the viewer. Flat river-grey daylight through the revolving door, a brass chandelier still burning amber. The lower quarter is the calm dark varnished mezzanine rail and shadow. No text, no lettering, no watermark, no logo.",
+      "job_id": "c6e38dd1-ccf6-4fd9-b8e5-05e47f41e25a",
+      "image": "keyart/ending-wrong-picture.jpg"
+    },
+    {
+      "id": "ending-open-door",
+      "kind": "ending",
+      "ending": "open_door",
+      "title": "The Open Door",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic still, an old 1920s river hotel at night, 1970s paranoid-thriller restraint, opaque gouache brush drag, practical lamps only, bottle-green cloth wallpaper, worn varnish, thumb-polished brass, tobacco-amber lamplight against river-grey light, brown-black shadow, soft film grain. First grey light at a wet stone river wall behind a five-storey brick hotel, fog on the water. In the left foreground a tall thin man in his thirties in a long grey raincoat and flat cap, seen only from behind, stands at the wall, hands in pockets, facing the river, not the building. Across the upper frame the hotel's fourth floor: a row of six tall guest windows, five lit, each a different colour of lamp, white, blue, yellow, pale screen glow and red-shaded amber, and one window among them dark. At the end of the row one small narrow window still glows green-amber, a desk lamp left on. A sodium streetlamp fading orange in the fog. The lower quarter is calm wet cobbles. No text, no lettering, no watermark, no logo.",
+      "job_id": "f15318bb-9210-47d3-a5e1-2b8c5455ce91",
+      "image": "keyart/ending-open-door.jpg",
+      "needs_review": "Not retried. The hotel stands across the water, so the man faces the building, where the prompt has him facing the river and not the building; the green-amber window is on the floor below the row."
+    },
+    {
+      "id": "ending-next-watcher",
+      "kind": "ending",
+      "ending": "next_watcher",
+      "title": "The Next Watcher",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic still, an old 1920s river hotel at night, 1970s paranoid-thriller restraint, opaque gouache brush drag, practical lamps only, bottle-green cloth wallpaper, worn varnish, thumb-polished brass, tobacco-amber lamplight against river-grey light, brown-black shadow, soft film grain. One bowed circle, a peephole lens view ringed in worn brass, in the upper three quarters of a field of pure black. Inside the circle, bent like a fisheye, seen from behind and slightly above: a cramped night office in an old linen room, an adult figure in a white shirt seated at a varnished oak desk writing in a cloth-bound ledger, head just beginning to lift and turn toward us, the face wholly lost in the shadow of a green-shaded banker's lamp. On the desk a black rotary telephone, a deck of green-backed cards, and one old brass key lying apart. A wooden bell board on the wall. Green and amber lamplight only. The lower quarter is calm black. No text, no lettering, no watermark, no logo.",
+      "job_id": "24e79160-0fdf-4496-83a3-ad1c71b2193e",
+      "image": "keyart/ending-next-watcher.jpg"
+    },
+    {
+      "id": "ending-the-sitter",
+      "kind": "ending",
+      "ending": "The Sitter",
+      "title": "The Sitter",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic still, an old 1920s river hotel at night, 1970s paranoid-thriller restraint, opaque gouache brush drag, practical lamps only, bottle-green cloth wallpaper, worn varnish, thumb-polished brass, tobacco-amber lamplight against river-grey light, brown-black shadow, soft film grain. Close view of a small watercolour on cream paper, pinned with one brass pin to bottle-green cloth wallpaper, no people. The watercolour shows a plain varnished door at the end of a narrow passage, a brass peephole rose at eye height painted as one warm lit dot, the brightest point in the frame; in the paper's bottom corner a tiny filled circle of brass paint. Loose washes of river grey and amber, pencil lines showing, one corner of the sheet curling. On a desk edge below, out of focus, a folded pair of white cotton gloves. Cool north-light bulb from the left, a soft shadow behind the paper. The watercolour sits high in the frame; the lower quarter is calm green wallpaper and shadow. No text, no lettering, no watermark, no logo.",
+      "job_id": "726304d6-2ca0-43ad-a5a3-e79be22d5e4e",
+      "image": "keyart/ending-the-sitter.jpg",
+      "needs_review": "First try kept (the retry cropped the paper at the top and lost the amber dot). Off: the lit dot sits below a dark peephole rose instead of being it, the corner dot is red not brass, and lamp glare shows top left."
+    }
+  ]
+}
