@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-labelledby="stacks-ladder-up-t stacks-ladder-up-d">
 <title id="stacks-ladder-up-t">Stacks tile: Junction: ladder up</title>
-<desc id="stacks-ladder-up-d">The stacks, drawn in one fine line. A ladder climbing through the ceiling into shelves seen from below, the motes thinning up it.</desc>
+<desc id="stacks-ladder-up-d">The stacks, drawn in one fine line. A ladder climbing through the ceiling into shelves seen from below, the mote stream passing its foot.</desc>
 <defs><filter id="stacks-ladder-up-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="140"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter></defs>
 <rect x="0" y="0" width="400" height="400" fill="#F2ECDC"/>
 <rect x="0" y="0" width="400" height="400" filter="url(#stacks-ladder-up-grain1)"/>
@@ -14,8 +14,6 @@
 <path d="M227,338L227,-10M183,338L183,-10M227,317.5L183,317.5M227,297.1L183,297.1M227,276.6L183,276.6M227,256.1L183,256.1M227,235.6L183,235.6M227,215.2L183,215.2M227,194.7L183,194.7M227,174.2L183,174.2M227,153.8L183,153.8M227,133.3L183,133.3M227,112.8L183,112.8M227,92.4L183,92.4M227,71.9L183,71.9M227,51.4L183,51.4M227,30.9L183,30.9M227,10.5L183,10.5" stroke="#2F2A22" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M160,124V340M250,124V340" stroke="#2F2A22" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M196,60 l9,-14 l9,14" stroke="#2F2A22" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M162,271h0M149,280h0M111,292h0M177,251h0M191,132h0M176,266h0M170,268h0M20,297h0M134,288h0M3,298h0M97,293h0M94,302h0M199,206h0M26,293h0M206,205h0M197,253h0M160,262h0M186,254h0M192,205h0M196,229h0" stroke="#B8861C" stroke-width="2.6" stroke-linecap="round" fill="none" opacity="0.5"/>
-<path d="M143,291h0M185,266h0M167,268h0M186,224h0M194,202h0M45,297h0M157,275h0M190,164h0" stroke="#B8861C" stroke-width="4.7" stroke-linecap="round" fill="none" opacity="0.5"/>
-<path d="M37,304h0M333,292h0M87,293h0M98,303h0M259,297h0M80,298h0M176,297h0M98,299h0M264,298h0M24,308h0M284,297h0M291,294h0M189,294h0M234,299h0M80,308h0M400,294h0M266,300h0M287,293h0M40,298h0M259,296h0M361,290h0M49,307h0M199,303h0M382,302h0M79,305h0M44,294h0M159,294h0M69,299h0M42,306h0M184,310h0M77,302h0M367,289h0M382,283h0M335,297h0M333,294h0M295,303h0M124,300h0M281,292h0M387,294h0M389,291h0M58,299h0M131,302h0M58,298h0M147,298h0M129,300h0M95,307h0M144,301h0M369,292h0" stroke="#B8861C" stroke-width="2.6" stroke-linecap="round" fill="none" opacity="0.8"/>
-<path d="M164,312h0M373,294h0M247,294h0M-5,306h0M171,301h0M69,298h0M304,297h0M79,300h0M13,305h0M398,287h0M18,298h0M111,293h0" stroke="#B8861C" stroke-width="4.7" stroke-linecap="round" fill="none" opacity="0.8"/>
+<path d="M168,298h0M151,302h0M101,295h0M213,292h0M378,298h0M195,300h0M179,297h0M18,297h0M123,294h0M2,298h0M86,296h0M84,305h0M292,291h0M23,294h0M307,296h0M239,296h0M169,291h0M244,308h0M282,286h0M282,307h0M37,304h0M333,292h0M87,293h0M98,303h0M259,297h0M80,298h0M176,297h0M98,299h0M264,298h0M24,308h0M284,297h0M291,294h0M189,294h0M234,299h0M80,308h0M400,294h0M266,300h0M287,293h0M40,298h0M259,296h0M361,290h0M49,307h0M199,303h0M382,302h0M79,305h0M44,294h0" stroke="#B8861C" stroke-width="2.6" stroke-linecap="round" fill="none" opacity="0.8"/>
+<path d="M135,302h0M205,299h0M169,292h0M258,291h0M300,298h0M41,298h0M162,302h0M339,297h0M164,312h0M373,294h0M247,294h0M-5,306h0M171,301h0M69,298h0" stroke="#B8861C" stroke-width="4.7" stroke-linecap="round" fill="none" opacity="0.8"/>
 </svg>

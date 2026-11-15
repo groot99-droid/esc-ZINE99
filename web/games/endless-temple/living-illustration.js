@@ -9,6 +9,14 @@
 // cools it. The tea drains with each page beat; as it fades the narrator slips from "I" to "he",
 // input lags and the written line takes the reins. Hold S to sip (two sips). Win: reach 600 m.
 // Lose: the tea runs out and the page closes.
+// Accepted development, phase 1 (DESIGN.md "Accepted development (2026-11-15)"):
+//   The cup colours the page: choose the cup before the ride. Stormcress brings one squall (Q) that
+//   lays the waves flat for 5 s; lamp-ash keeps the thin phase readable; ember root halves the heat
+//   and gives the written line 20% more pull.
+//   The Other Hand: past the 600 m, the book turns to a later plate where an older hand with a ring
+//   brings a cup nobody asked for, and the player may Look away (hold) or read One more page.
+// Art (api.art): the Xandri sprite, the six cup vignettes, the two hands, corner folds, fleurons,
+// jar labels, glyphs and the chapter heading. Each is rasterised once into an offscreen canvas.
 
 const LEN = 600, CHECK = 150;
 // Source line for the swallow, verbatim (DESIGN.md section 3 beat 20):
@@ -37,7 +45,21 @@ const LINES = {
   winHe: "Six hundred metres, and the page turns, but the tea is down to {tea}: by the end it was \u201che\u201d who reached the moonlit vines, and the written line that steered.",
   lose: "The tea is gone at {x} m, {phase}. The lines thin to nothing, and the page closes on Xandri mid-stride.",
   gentle: "The cup is fuller this time, with a third sip in it.",
+  squall: "A squall comes off the cup, stormcress and rain: the waves lie down.",
+  squallOver: "The squall passes. The sand begins to move again.",
+  squallHint: "Stormcress in the cup: one squall (Q) will flatten the waves for five seconds.",
+  // DEEP_DIVE.md sample line, written for the game:
+  otherHand: "The hand that brought the cup was not his. It was older, and it wore a ring.",
+  otherNote: "You did not press Sip.",
+  lookedAway: "Elaris lifts his eyes from the page. The plate holds still, and whoever walks on it walks unwatched.",
+  onePage: "One more page. The ringed hand has been here before him, and the walker on the plate goes on past his cairn.",
 };
+const CUPS = [
+  { id: "mint", name: "Plain mint", art: "label-mint", note: "Nothing added. The page as it is drawn." },
+  { id: "storm", name: "Stormcress", art: "label-stormcress", note: "One squall a ride (Q): the waves lie flat for 5 s." },
+  { id: "lampash", name: "Lamp-ash", art: "label-lamp-ash", note: "The thin, pencil phase stays readable." },
+  { id: "ember", name: "Ember root", art: "label-ember-root", note: "Half the heat; the written line pulls 20% harder." },
+];
 const PHASES = [{ at: 0, name: "mid-morning" }, { at: 200, name: "noon" }, { at: 400, name: "dusk on the vine sea" }];
 
 export default {
@@ -48,6 +70,25 @@ export default {
     const gentle = losses >= 2;
     const C = { page: "#f1e6cc", ink: "#2b1d12", ochre: "#c98a3a", sand: "#e0b56e", sky: "#b9cbd6", bruise: "#6e4a78", sage: "#8fa07a", honey: "#d4a23a", table: "#3a2a1d", silver: "#c9ccd3" };
     const timers = [];
+    const art = api.art || { has: () => false, url: () => "", img: async () => null };
+    const pic = (id, alt = "") => (art.has(id) ? `<img src="${art.url(id)}" alt="${alt}" draggable="false">` : "");
+    // each piece of art is rasterised once, at a fixed bitmap size, and only blitted after that
+    const spr = {};
+    let alive = true;
+    async function prep(id, w, h) {
+      const im = await art.img(id);
+      if (!im || !alive) return;
+      const c = document.createElement("canvas");
+      c.width = w; c.height = h;
+      c.getContext("2d").drawImage(im, 0, 0, w, h);
+      spr[id] = c;
+    }
+    const VIG = ["cup-vignette-1-full", "cup-vignette-2-three-quarters", "cup-vignette-3-half", "cup-vignette-4-quarter", "cup-vignette-5-dregs", "cup-vignette-6-empty"];
+    prep("sprite-xandri", 288, 360); prep("hand-elaris", 480, 240);
+    VIG.forEach((id) => prep(id, 176, 176));
+    for (const id of ["corner-fold-rest", "corner-fold-lifted", "corner-fold-turned"]) prep(id, 128, 128);
+    for (const id of ["fleuron-wave", "fleuron-sand", "fleuron-moon"]) prep(id, 480, 96);
+    let taste = "mint";
     const css = document.createElement("style");
     css.textContent = `
     .${P}root{position:absolute;inset:0;overflow:hidden;background:${C.table};touch-action:none;user-select:none;-webkit-user-select:none}
@@ -70,13 +111,38 @@ export default {
     .${P}plate kbd{flex:none;min-width:86px;text-align:center;font:600 14px 'EB Garamond',Georgia,serif;border:1.5px solid ${C.ink};border-radius:14px;padding:1px 8px;background:rgba(212,162,58,.35)}
     .${P}plate button{display:block;margin:0 auto;font:inherit;font-size:18px;padding:8px 28px;border:2px solid ${C.ink};background:${C.honey};cursor:pointer;border-radius:22px}
     .${P}plate button:hover,.${P}plate button:focus-visible{background:#e8bb55;outline:2px solid ${C.ink};outline-offset:2px}
+    .${P}plate img.${P}head{display:block;width:100%;height:auto;margin-bottom:8px;border-radius:2px}
+    .${P}cups{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:0 0 6px}
+    .${P}plate .${P}cups button{margin:0;padding:3px;border-radius:8px;border:2px solid transparent;background:transparent;font-size:13px;line-height:1.1;display:flex;flex-direction:column;align-items:center;gap:2px}
+    .${P}plate .${P}cups button[aria-pressed=true]{border-color:${C.ink};background:rgba(212,162,58,.45)}
+    .${P}cups img{width:100%;height:auto;border-radius:4px}
+    .${P}cupnote{font-size:15px;font-style:italic;margin:0 0 12px;min-height:2.4em;text-align:center}
+    .${P}pad button img{width:26px;height:26px;vertical-align:middle;margin:-4px 4px -2px -6px}
+    .${P}pad button[hidden]{display:none}
+    .${P}coda{position:absolute;inset:0;z-index:6;display:grid;place-items:center;background:rgba(43,29,18,.72);padding:12px 12px 20px;overflow:auto;box-sizing:border-box}
+    .${P}codap{position:relative;width:min(560px,100%);background:${C.page};color:${C.ink};border:1.5px solid ${C.ink};box-shadow:6px 8px 0 rgba(0,0,0,.35);padding:12px 14px 14px;font-family:'EB Garamond',Georgia,serif;box-sizing:border-box}
+    .${P}codap small{display:block;font-style:italic;text-align:center;font-size:14px;margin:4px 0}
+    .${P}scene{position:relative;overflow:hidden;border:1px solid ${C.ink};aspect-ratio:2/1;background:linear-gradient(#cdd3cc 0 46%,#e3c58c 46% 100%)}
+    .${P}scene svg{position:absolute;inset:0;width:100%;height:100%}
+    .${P}scene img{position:absolute;left:0;bottom:4%;width:62%;height:auto;transform:translateX(-102%);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+    .${P}scene.${P}in img{transform:translateX(-6%)}
+    .${P}scene.${P}still{filter:grayscale(.55)}
+    .${P}codap p{margin:8px 0;font-size:17px;line-height:1.35;text-align:center}
+    .${P}codap p.${P}n{font-style:italic;font-size:15px}
+    .${P}choice{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .${P}choice button{position:relative;overflow:hidden;font:600 16px 'EB Garamond',Georgia,serif;color:${C.ink};background:rgba(241,230,204,.9);border:2px solid ${C.ink};border-radius:30px;min-height:52px;padding:4px 18px 4px 8px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;touch-action:none}
+    .${P}choice button img{width:40px;height:40px;position:relative}
+    .${P}choice button span{position:relative}
+    .${P}choice button i{position:absolute;left:0;top:0;bottom:0;width:0;background:${C.honey}}
+    .${P}choice button:hover,.${P}choice button:focus-visible{outline:2px solid ${C.honey};outline-offset:2px}
+    @media (prefers-reduced-motion:reduce){.${P}scene img{transition:none}}
     `;
     const el = document.createElement("div");
     el.className = P + "root";
     el.innerHTML = `<canvas aria-label="A storybook page: Xandri rides the sand waves left to right."></canvas>
       <div class="${P}pad">
         <div class="${P}grp"><button type="button" data-k="back">◀ Lean back</button><button type="button" data-k="fwd">Lean ▶</button></div>
-        <div class="${P}grp"><button type="button" data-k="sip">Sip</button><button type="button" class="${P}big" data-k="pump">Pump / Dig</button></div>
+        <div class="${P}grp"><button type="button" data-k="squall" hidden>Squall</button><button type="button" data-k="sip">${pic("glyph-sip")}Sip</button><button type="button" class="${P}big" data-k="pump">Pump / Dig</button></div>
       </div>`;
     root.append(css, el);
     const cv = el.querySelector("canvas");
@@ -102,7 +168,8 @@ export default {
     const base = (x) => 1.6 + 1.1 * Math.sin(x / 23) + 0.6 * Math.sin(x / 9.7 + 1);
     let waves = [];
     const WF = 6, WB = 14, CW = 7.2; // front width, back width, wave speed m/s
-    function waveH(w) { const a = w.age; return a < 7 ? 2 + 4 * Math.min(1, a / 6) : Math.max(0, 6 - (a - 7) * 2.5); }
+    let squallK = 1;   // a stormcress squall lays the waves flat
+    function waveH(w) { const a = w.age; return squallK * (a < 7 ? 2 + 4 * Math.min(1, a / 6) : Math.max(0, 6 - (a - 7) * 2.5)); }
     function hAt(x) {
       let h = base(x);
       for (const w of waves) {
@@ -118,9 +185,9 @@ export default {
     const S = {
       x: 4, v: 4, y: 0, vy: 0, air: false, tea: gentle ? 85 : 70, sips: gentle ? 3 : 2, phase: 0, fx: [], sipToldNew: false, cooled: 0, heat: 0, hot: 0, swallows: 0, check: 0,
       swallowed: null, snag: 0, beat: 50, t: 0, nextWave: 0.2, sipHold: 0, caption: "", capT: 0, done: false, started: false,
-      maxX: 0, inputQ: [],
+      maxX: 0, inputQ: [], squall: 0, squallLeft: 0, phaseT: 0,
     };
-    const keys = { back: false, fwd: false, pump: false, sip: false };
+    const keys = { back: false, fwd: false, pump: false, sip: false, squall: false };
     let digPresses = 0;
     function say(t, secs = 3) { S.caption = t; S.capT = secs; }
     // voice: first person while the tea holds, third as it fades
@@ -131,22 +198,24 @@ export default {
     function fx(kind) { if (!api.reducedMotion) S.fx.push({ kind, x: S.x, y: S.air ? S.y : hAt(S.x), t: 0 }); }
 
     // ---- input ---------------------------------------------------------------------------------
-    const KEYMAP = { a: "back", arrowleft: "back", d: "fwd", arrowright: "fwd", " ": "pump", w: "pump", arrowup: "pump", s: "sip", arrowdown: "sip", e: "dig" };
+    const KEYMAP = { a: "back", arrowleft: "back", d: "fwd", arrowright: "fwd", " ": "pump", w: "pump", arrowup: "pump", s: "sip", arrowdown: "sip", e: "dig", q: "squall" };
     const onDown = (e) => {
+      if (coda) { if (codaKey) codaKey(e, true); return; }
       const k = KEYMAP[e.key.toLowerCase()];
       if (!k || !S.started) return;
       e.preventDefault();
       if (k === "dig" || (k === "pump" && S.swallowed)) { if (!e.repeat) digPresses++; if (k === "dig") return; }
       keys[k] = true;
     };
-    const onUp = (e) => { const k = KEYMAP[e.key.toLowerCase()]; if (k && k !== "dig") keys[k] = false; };
+    const onUp = (e) => { if (coda) { if (codaKey) codaKey(e, false); return; } const k = KEYMAP[e.key.toLowerCase()]; if (k && k !== "dig" && k !== "squall") keys[k] = false; };
     addEventListener("keydown", onDown); addEventListener("keyup", onUp);
     const btns = [...el.querySelectorAll("[data-k]")];
+    const squallBtn = el.querySelector('[data-k="squall"]');
     const ptr = [];
     for (const b of btns) {
       const k = b.dataset.k;
       const down = (e) => { e.preventDefault(); if (!S.started) return; keys[k] = true; b.classList.add(P + "on"); if (k === "pump" && S.swallowed) digPresses++; };
-      const up = (e) => { e.preventDefault(); keys[k] = false; b.classList.remove(P + "on"); };
+      const up = (e) => { e.preventDefault(); if (k !== "squall") keys[k] = false; b.classList.remove(P + "on"); };
       b.addEventListener("pointerdown", down); b.addEventListener("pointerup", up); b.addEventListener("pointercancel", up); b.addEventListener("pointerleave", up);
       ptr.push([b, down, up]);
     }
@@ -160,7 +229,13 @@ export default {
       S.nextWave -= dt;
       if (S.nextWave <= 0) { waves.push({ x: S.x - 22 - rng() * 6, age: 0 }); S.nextWave = 4 + rng() * 3; }
       for (const w of waves) { w.age += dt; w.x += CW * dt; }
-      waves = waves.filter((w) => waveH(w) > 0.05 && w.x < S.x + 80);
+      // the squall (stormcress in the cup): once a ride, five seconds of flat sand
+      if (keys.squall) { keys.squall = false; if (S.squallLeft > 0 && S.squall <= 0 && !S.swallowed) { S.squallLeft--; S.squall = 5; squallBtn.hidden = true; say(LINES.squall, 3); } }
+      if (S.squall > 0) { S.squall -= dt; if (S.squall <= 0) say(LINES.squallOver, 2); }
+      const kTo = S.squall > 0 ? 0.12 : 1;
+      squallK += (kTo - squallK) * Math.min(1, dt * 3);
+      if (S.phaseT > 0) S.phaseT -= dt;
+      waves = waves.filter((w) => waveH(w) > 0.05 * squallK && w.x < S.x + 80);
 
       // tea: idle drain, sip
       S.tea -= dt / 8;
@@ -189,7 +264,7 @@ export default {
       S.inputQ.push({ t: S.t, back: keys.back, fwd: keys.fwd, pump: keys.pump });
       while (S.inputQ.length > 1 && S.inputQ[1].t <= S.t - lag) S.inputQ.shift();
       const inp = S.inputQ[0];
-      const auth = b === 0 ? 1 : b === 1 ? 1 - 0.3 * (60 - S.tea) / 30 : S.tea < 10 ? 0 : 0.35;
+      const auth = (b === 0 ? 1 : b === 1 ? 1 - 0.3 * (60 - S.tea) / 30 : S.tea < 10 ? 0 : 0.35) * (taste === "ember" ? 0.8 : 1);
       const slope = slopeAt(S.x);
       const auto = { pump: slope < -0.05, back: false, fwd: false };
       const use = (k) => (rng() < auth ? inp[k] : auto[k]);
@@ -223,7 +298,7 @@ export default {
       if (S.x > CHECK * (Math.floor(S.check / CHECK) + 1) && S.x < LEN) { S.check = Math.floor(S.x / CHECK) * CHECK; S.pageFlash = 0.6; if (!S.capT || S.capT < 1) say(LINES.page.replace("{m}", S.check), 1.6); for (const p of prickles) if (p.x > S.check) p.hit = false; }
       // phases
       const ph = S.x >= PHASES[2].at ? 2 : S.x >= PHASES[1].at ? 1 : 0;
-      if (ph !== S.phase) { S.phase = ph; say(ph === 1 ? LINES.noon : MOON_LINE, 5); if (ph === 2) { S.heat = 0; S.hot = 0; } }
+      if (ph !== S.phase) { S.phase = ph; S.phaseT = 5; say(ph === 1 ? LINES.noon : MOON_LINE, 5); if (ph === 2) { S.heat = 0; S.hot = 0; } }
       if (b >= 1 && !S.sipToldNew && S.sips > 0 && S.capT < 0.5) { S.sipToldNew = true; say(LINES.sipNew, 3.5); }
 
       // swallowed by a breaking lip
@@ -238,7 +313,7 @@ export default {
 
       // heat: sun by day, dune shade cools
       const shade = shades.some(([a, c]) => S.x > a && S.x < c);
-      const sun = S.phase === 0 ? 3 : S.phase === 1 ? 6 : -10;
+      const sun = (S.phase === 0 ? 3 : S.phase === 1 ? 6 : -10) * (taste === "ember" && S.phase < 2 ? 0.5 : 1);
       S.heat = Math.max(0, Math.min(100, S.heat + (shade ? -12 : sun) * dt));
       if (shade && S.heat > 0 && S.v < 3) S.cooled += dt;
       if (S.hot > 0) { S.hot -= dt; if (S.hot <= 0) S.heat = 60; }
@@ -250,7 +325,7 @@ export default {
       if (S.capT <= 0 && S.v > 7.5 && !S.air && rng() < 0.02) say(V(LINES.ride), 1.8);
       if (S.pageFlash > 0) S.pageFlash -= dt;
       for (const f of S.fx) f.t += dt;
-      S.fx = S.fx.filter((f) => f.t < 0.8);
+      S.fx = S.fx.filter((f) => f.t < (f.kind === "sip" ? 1.8 : 0.8));
 
       if (S.x >= LEN) finish(true);
       else if (S.tea <= 0) { S.tea = 0; finish(false); }
@@ -261,10 +336,73 @@ export default {
       api.store.set("lossStreak", win ? 0 : losses + 1);
       const tea = Math.max(0, Math.round(S.tea));
       const sw = S.totalSwallows ? ` The sand had him ${S.totalSwallows} time${S.totalSwallows > 1 ? "s" : ""}.` : " The sand never had him.";
-      timers.push(setTimeout(() => api.end(win
-        ? { outcome: "win", text: (tea >= 60 ? LINES.winI : LINES.winHe).replace("{tea}", tea) + sw }
-        : { outcome: "lose", text: LINES.lose.replace("{x}", Math.round(S.x)).replace("{phase}", PHASES[S.phase].name) + (S.sips ? ` ${S.sips === 1 ? "One sip was" : S.sips + " sips were"} still in the cup.` : "") }), api.reducedMotion ? 100 : 700));
+      if (!win) {
+        timers.push(setTimeout(() => api.end({ outcome: "lose", text: LINES.lose.replace("{x}", Math.round(S.x)).replace("{phase}", PHASES[S.phase].name) + (S.sips ? ` ${S.sips === 1 ? "One sip was" : S.sips + " sips were"} still in the cup.` : "") }), api.reducedMotion ? 100 : 700));
+        return;
+      }
+      const winText = (tea >= 60 ? LINES.winI : LINES.winHe).replace("{tea}", tea) + sw;
+      timers.push(setTimeout(() => otherHand(winText), api.reducedMotion ? 100 : 900));
     }
+    // ---- The Other Hand: the reversal's first appearance (a later plate of the same book) --------
+    let coda = null, holdRaf = 0;
+    function otherHand(winText) {
+      if (!alive) return;
+      el.querySelector("." + P + "pad").hidden = true;
+      coda = document.createElement("div");
+      coda.className = P + "coda";
+      coda.innerHTML = `<div class="${P}codap" role="dialog" aria-label="The Other Hand">
+        <small>The book turns itself to a later plate: the father's last walk.</small>
+        <div class="${P}scene">
+          <svg viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+            <circle cx="330" cy="40" r="16" fill="${C.honey}" opacity=".55" stroke="${C.ink}" stroke-width="1"/>
+            <path d="M0 112 C60 96 110 120 170 104 C230 88 300 116 400 98 L400 200 L0 200Z" fill="${C.sand}" opacity=".8"/>
+            <path d="M0 112 C60 96 110 120 170 104 C230 88 300 116 400 98" fill="none" stroke="${C.ink}" stroke-width="1.6"/>
+            <path d="M0 150 C80 138 150 160 240 144 C300 134 350 150 400 140" fill="none" stroke="${C.ink}" stroke-width="1" opacity=".5"/>
+            <g fill="${C.ink}"><circle cx="186" cy="100" r="2.6"/><circle cx="193" cy="98" r="2.6"/><circle cx="200" cy="99" r="2.6"/><circle cx="190" cy="94" r="2.4"/><circle cx="197" cy="93" r="2.4"/></g>
+            <g stroke="${C.ink}" stroke-width="1.8" fill="none" stroke-linecap="round"><path d="M292 96 l3 -14 l-2 -12 M293 82 l-7 6 M293 80 l8 5 M295 96 l5 0 M290 96 l-5 1"/><circle cx="293" cy="65" r="4" fill="${C.page}"/></g>
+            <g fill="${C.ink}" opacity=".55"><circle cx="214" cy="101" r="1.4"/><circle cx="228" cy="100" r="1.4"/><circle cx="243" cy="99" r="1.4"/><circle cx="258" cy="98" r="1.4"/><circle cx="273" cy="97" r="1.4"/></g>
+          </svg>
+          ${art.has("hand-ringed") ? pic("hand-ringed", "An older hand with a brass ring brings a cup into the plate.") : ""}
+        </div>
+        <p></p><p class="${P}n"></p>
+        <div class="${P}choice">
+          <button type="button" data-a="away"><i></i>${pic("glyph-look-away")}<span>Look away (hold, L)</span></button>
+          <button type="button" data-a="page">${pic("glyph-one-more-page")}<span>One more page (Enter)</span></button>
+        </div></div>`;
+      const ps = coda.querySelectorAll("p");
+      ps[0].textContent = LINES.otherHand; ps[1].textContent = LINES.otherNote;
+      el.appendChild(coda);
+      const scene = coda.querySelector("." + P + "scene");
+      timers.push(setTimeout(() => scene.classList.add(P + "in"), 60));
+      api.store.set("otherHandSeen", true);
+      const away = coda.querySelector('[data-a="away"]'), page = coda.querySelector('[data-a="page"]'), bar = away.querySelector("i");
+      let t0h = 0, chosen = false;
+      const choose = (which) => {
+        if (chosen) return; chosen = true;
+        cancelAnimationFrame(holdRaf);
+        if (which === "away") scene.classList.add(P + "still");
+        away.disabled = page.disabled = true;
+        ps[0].textContent = which === "away" ? LINES.lookedAway : LINES.onePage; ps[1].textContent = "";
+        api.end({ outcome: "win", text: `${winText} ${which === "away" ? LINES.lookedAway : LINES.onePage}` });
+      };
+      const tickHold = (now) => {
+        if (!t0h || chosen) return;
+        const k = Math.min(1, (now - t0h) / 900);
+        bar.style.width = k * 100 + "%";
+        if (k >= 1) choose("away"); else holdRaf = requestAnimationFrame(tickHold);
+      };
+      const down = (e) => { if (e) e.preventDefault(); if (chosen || t0h) return; t0h = performance.now(); holdRaf = requestAnimationFrame(tickHold); };
+      const up = () => { if (chosen) return; t0h = 0; bar.style.width = "0"; cancelAnimationFrame(holdRaf); };
+      away.addEventListener("pointerdown", down); away.addEventListener("pointerup", up); away.addEventListener("pointerleave", up); away.addEventListener("pointercancel", up);
+      page.addEventListener("click", () => choose("page"));
+      codaKey = (e, isDown) => {
+        const k = e.key.toLowerCase();
+        if (k === "l") { e.preventDefault(); if (isDown) { if (!e.repeat) down(); } else up(); }
+        else if (k === "enter" && isDown && document.activeElement !== away) { e.preventDefault(); choose("page"); }
+      };
+      page.focus();
+    }
+    let codaKey = null;
 
     // ---- draw ----------------------------------------------------------------------------------
     let W = 0, H = 0, dpr = 1;
@@ -290,7 +428,7 @@ export default {
       g.save();
       g.beginPath(); g.rect(mx, my, pw, ph); g.clip();
       g.fillStyle = paperPat; g.fillRect(mx, my, pw, ph);
-      const thin = b >= 2;
+      const thin = b >= 2 && taste !== "lampash";
       const inkC = thin ? "rgba(90,90,90,.75)" : C.ink;
       const inkW = thin ? 0.9 : 1.8;
       const washA = thin ? 0.25 : 0.55;
@@ -386,6 +524,16 @@ export default {
       const rx = X(S.x), ry = Y(S.air ? S.y : hAt(S.x));
       const slope = S.air ? 0 : slopeAt(S.x);
       const lean = (keys.back ? -0.35 : keys.fwd ? 0.25 : 0) + Math.atan(-slope) * 0.4;
+      const xs = spr["sprite-xandri"];
+      if (xs) {
+        // the Xandri figure: feet (the leaf shoes) at the sand, leaning with the slope and the stick
+        const hpx = Math.max(74, Math.min(120, s * 4.6)), wpx = hpx * 0.8;
+        const crouch2 = keys.pump && !S.air ? 0.9 : 1;
+        g.save(); g.translate(rx, ry); g.rotate(Math.atan(-slope) * 0.7 + lean * 0.5);
+        g.globalAlpha = thin ? 0.55 : 1;
+        g.drawImage(xs, -wpx * 0.52, -hpx * 0.86 * crouch2, wpx, hpx * crouch2);
+        g.restore(); g.globalAlpha = 1;
+      } else {
       g.save(); g.translate(rx, ry); g.rotate(Math.atan(-slope) * 0.7);
       g.globalAlpha = washA + 0.2; g.fillStyle = "#6f8f3a"; g.beginPath(); g.ellipse(0, -2, 18, 5, 0, 0, 7); g.fill(); g.globalAlpha = 1;
       g.strokeStyle = inkC; g.lineWidth = inkW; g.beginPath(); g.ellipse(0, -2, 18, 5, 0, 0, 7); g.stroke();
@@ -396,6 +544,7 @@ export default {
       g.globalAlpha = washA + 0.2; g.fillStyle = "#8a5a3a"; g.beginPath(); g.ellipse(-6, -40 + crouch, 6, 9, -0.3, 0, 7); g.fill(); g.globalAlpha = 1; // the patched pack
       g.fillStyle = C.page; g.beginPath(); g.arc(3, -57 + crouch, 7, 0, 7); g.fill(); g.stroke();
       g.restore();
+      }
       if (S.swallowed) {
         g.globalAlpha = 0.8; g.fillStyle = C.sand; g.beginPath(); g.ellipse(rx, ry - 20, 34, 30, 0, 0, 7); g.fill(); g.globalAlpha = 1;
         g.strokeStyle = inkC; g.lineWidth = inkW; g.beginPath(); g.ellipse(rx, ry - 20, 34, 30, 0, 0, 7); g.stroke();
@@ -410,7 +559,11 @@ export default {
         if (f.kind === "jump") { g.strokeStyle = C.ink; g.lineWidth = 1.5; for (let i = 0; i < 7; i++) { const a = Math.PI + (i / 6) * Math.PI; g.beginPath(); g.moveTo(fxX + Math.cos(a) * 10, fyY + Math.sin(a) * 6); g.lineTo(fxX + Math.cos(a) * (14 + k * 26), fyY + Math.sin(a) * (8 + k * 18)); g.stroke(); } }
         else if (f.kind === "land") { g.fillStyle = S.phase === 2 ? C.silver : C.ochre; for (let i = 0; i < 9; i++) { g.beginPath(); g.arc(fxX + (i - 4) * 5 * (1 + k), fyY - k * 10 - (i % 3) * 3, 2.2, 0, 7); g.fill(); } }
         else if (f.kind === "hit") { g.fillStyle = "rgba(168,67,44,.55)"; g.beginPath(); g.arc(X(S.x), Y(S.air ? S.y : hAt(S.x)) - 28, 18 + k * 30, 0, 7); g.fill(); }
-        else if (f.kind === "sip") { g.strokeStyle = C.sage; g.lineWidth = 4; g.beginPath(); g.arc(mx + 46, my + ph - 52, 30 + k * 40, 0, 7); g.stroke(); }
+        else if (f.kind === "sip") {
+          const hs = spr["hand-elaris"], kk = f.t / 1.8;
+          if (hs) { const hw = Math.min(360, pw * 0.62), hh = hw / 2, slide = kk < 0.3 ? kk / 0.3 : kk > 0.75 ? (1 - kk) / 0.25 : 1; g.globalAlpha = 1; g.drawImage(hs, mx - hw * (1 - slide) - hw * 0.08, my + ph - hh - 62, hw, hh); }
+          else { g.globalAlpha = Math.max(0, 1 - kk); g.strokeStyle = C.sage; g.lineWidth = 4; g.beginPath(); g.arc(mx + 46, my + ph - 52, 30 + kk * 40, 0, 7); g.stroke(); }
+        }
       }
       g.globalAlpha = 1;
       if (S.pageFlash > 0 && !api.reducedMotion) {
@@ -428,7 +581,8 @@ export default {
         }
       }
       // the top margin: the map that draws itself, on a band of clean paper
-      const my0 = my + 16, mlx = mx + 20, mlw = Math.max(120, pw - 130);
+      const foldOn = !!spr["corner-fold-rest"], foldS = pw < 520 ? 44 : 54;
+      const my0 = my + 16, mlx = mx + 20, mlw = Math.max(110, pw - 130 - (foldOn ? foldS : 0));
       const bandH = pw < 520 ? 72 : 54;
       g.fillStyle = "rgba(241,230,204,.92)"; g.fillRect(mx, my, pw, bandH);
       g.strokeStyle = "rgba(43,29,18,.35)"; g.beginPath(); g.moveTo(mx, my + bandH); g.lineTo(mx + pw, my + bandH); g.stroke();
@@ -454,24 +608,42 @@ export default {
       }
       g.fillStyle = C.ink;
       const swText = `under ${S.swallows}/3`, swW = g.measureText(swText).width;
-      const swx = mx + pw - swW - 16, swy = (hy === my0 + 30 && swx < hx + 190 && S.phase < 2) || swx < mlx + tw0 + 16 ? my0 + 50 : my0 + 30;
+      const swx = mx + pw - swW - 16 - (foldOn ? foldS : 0), swy = (hy === my0 + 30 && swx < hx + 190 && S.phase < 2) || swx < mlx + tw0 + 16 ? my0 + 50 : my0 + 30;
       g.fillText(swText, swx, swy);
       // page number
       g.fillText(`~ ${47 + Math.floor(S.x / CHECK)} ~`, mx + pw / 2 - 14, my + ph - 10);
+      // the page's corner fold: it lifts as a page turns
+      if (foldOn) {
+        const fid = S.done && S.x >= LEN ? "corner-fold-turned" : S.pageFlash > 0 ? "corner-fold-lifted" : "corner-fold-rest";
+        g.drawImage(spr[fid] || spr["corner-fold-rest"], mx + pw - foldS, my, foldS, foldS);
+        g.strokeStyle = "rgba(43,29,18,.5)"; g.lineWidth = 1; g.strokeRect(mx + pw - foldS + 0.5, my + 0.5, foldS - 1, foldS - 1);
+      }
+      // the squall: slanted rain over the plate
+      if (S.squall > 0) {
+        g.strokeStyle = "rgba(93,111,134,.55)"; g.lineWidth = 1.2; g.beginPath();
+        for (let i = 0; i < 46; i++) { const rx0 = mx + ((i * 73 + Math.floor(S.t * (api.reducedMotion ? 0 : 240))) % Math.max(1, Math.floor(pw))), ry0 = my + bandH + ((i * 131) % Math.max(1, Math.floor(ph - bandH - 20))); g.moveTo(rx0, ry0); g.lineTo(rx0 - 6, ry0 + 16); }
+        g.stroke();
+        g.fillStyle = "rgba(241,230,204,.9)"; g.fillRect(mx + pw / 2 - 70, my + ph - 48, 140, 22); g.fillStyle = C.ink; g.textAlign = "center"; g.fillText(`squall ${Math.ceil(S.squall)} s`, mx + pw / 2, my + ph - 32); g.textAlign = "left";
+      }
       g.restore();
 
       // the cup vignette, bottom-left of the page
       const cx = mx + 46, cy = my + ph - 52;
+      const vig = spr[VIG[S.tea >= 85 ? 0 : S.tea >= 65 ? 1 : S.tea >= 45 ? 2 : S.tea >= 25 ? 3 : S.tea > 5 ? 4 : 5]];
+      if (vig) g.drawImage(vig, cx - 40, cy - 44, 80, 80);
+      else {
       g.fillStyle = "rgba(241,230,204,.9)"; g.strokeStyle = C.ink; g.lineWidth = 1.5;
       g.beginPath(); g.moveTo(cx - 24, cy - 24); g.lineTo(cx - 18, cy + 18); g.quadraticCurveTo(cx, cy + 26, cx + 18, cy + 18); g.lineTo(cx + 24, cy - 24); g.closePath(); g.fill(); g.stroke();
       const lvl = Math.max(0, Math.min(1, S.tea / 100));
       g.save(); g.clip(); g.fillStyle = C.sage; g.fillRect(cx - 26, cy + 24 - lvl * 48, 52, 48); g.restore();
       g.beginPath(); g.moveTo(cx - 24, cy - 24); g.lineTo(cx - 18, cy + 18); g.quadraticCurveTo(cx, cy + 26, cx + 18, cy + 18); g.lineTo(cx + 24, cy - 24); g.stroke();
       g.beginPath(); g.arc(cx + 28, cy - 4, 9, -1.4, 1.4); g.stroke();
+      }
       if (S.sipHold > 0) { g.strokeStyle = C.honey; g.lineWidth = 4; g.beginPath(); g.arc(cx, cy, 34, -1.57, -1.57 + (S.sipHold / 1.5) * 6.283); g.stroke(); }
       g.fillStyle = "rgba(241,230,204,.9)"; g.fillRect(cx - 34, cy + 30, 150, 20);
       g.fillStyle = b >= 1 ? "#7a2f1e" : C.ink; g.font = "600 14px 'EB Garamond',Georgia,serif";
       g.fillText(`tea ${Math.round(S.tea)} · “${["I", "he", "he", "—"][b]}”${b === 2 ? " (thin)" : ""}`, cx - 30, cy + 45);
+      if (taste !== "mint" && pw >= 520) { const tn = CUPS.find((c) => c.id === taste).name.toLowerCase() + " in the cup"; g.font = "italic 14px 'EB Garamond',Georgia,serif"; const tw = g.measureText(tn).width; g.fillStyle = "rgba(241,230,204,.9)"; g.fillRect(cx + 122, cy + 30, tw + 12, 20); g.fillStyle = C.ink; g.fillText(tn, cx + 128, cy + 45); g.font = "600 14px 'EB Garamond',Georgia,serif"; }
       if (b >= 1 && S.sips > 0 && !S.done) { g.fillStyle = "rgba(241,230,204,.9)"; g.fillRect(cx + 40, cy - 26, 196, 22); g.fillStyle = C.ink; g.fillText(`hold Sip (S): ${S.sips} sip${S.sips > 1 ? "s" : ""} left`, cx + 44, cy - 10); }
       // caption, bottom centre
       if (S.capT > 0 && S.caption) {
@@ -485,6 +657,9 @@ export default {
         g.strokeStyle = "rgba(43,29,18,.4)"; g.lineWidth = 1; g.strokeRect(mx + pw / 2 - maxW / 2 - 10, cyc - 18, maxW + 20, lines.length * 21 + 10);
         g.fillStyle = C.ink; lines.forEach((l, i) => g.fillText(l, mx + pw / 2, cyc + i * 21));
         g.textAlign = "left";
+        // a fleuron under the caption as the day turns
+        const fl = S.phaseT > 0 ? spr[S.phase === 1 ? "fleuron-sand" : "fleuron-moon"] : S.t < 3.5 ? spr["fleuron-wave"] : null;
+        if (fl) { const fw = Math.min(240, maxW); g.drawImage(fl, mx + pw / 2 - fw / 2, cyc - 8 + lines.length * 21, fw, fw / 5); }
       }
     }
 
@@ -501,7 +676,8 @@ export default {
     const intro = document.createElement("div");
     intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}plate" role="dialog" aria-label="How to play">
-      <svg viewBox="0 0 400 90" aria-hidden="true"><rect x="1" y="1" width="398" height="88" fill="none" stroke="${C.ink}"/>
+      ${art.has("heading-c4") ? `<img class="${P}head" src="${art.url("heading-c4")}" alt="">` : ""}
+      <svg viewBox="0 0 400 90" aria-hidden="true" ${art.has("heading-c4") ? 'style="display:none"' : ""}><rect x="1" y="1" width="398" height="88" fill="none" stroke="${C.ink}"/>
         <path d="M0 70 C60 66 90 30 130 34 C160 37 170 60 200 62 C250 66 280 28 330 36 C360 40 380 58 400 60 L400 90 L0 90Z" fill="${C.sand}" opacity=".7"/>
         <path d="M0 70 C60 66 90 30 130 34 C160 37 170 60 200 62 C250 66 280 28 330 36 C360 40 380 58 400 60" fill="none" stroke="${C.ink}" stroke-width="1.6"/>
         <path d="M118 36 l4 -14 l3 -12 M120 22 l-10 6 M121 20 l10 -4" stroke="${C.ink}" stroke-width="1.6" fill="none"/><circle cx="125" cy="6" r="4" fill="${C.page}" stroke="${C.ink}"/>
@@ -514,13 +690,23 @@ export default {
         <li><kbd>Jump</kbd><span>Clears prickle bushes and, later, vine webs.</span></li>
       </ul>
       <p style="font-size:15px;margin:0 0 12px;font-style:italic">Slow under a breaking lip, and the sand swallows you. More controls arrive as the day turns.${gentle ? " " + LINES.gentle : ""}</p>
-      <button type="button">Begin the page</button></div>`;
+      <div class="${P}cups" role="group" aria-label="The cup you brewed">${CUPS.map((c) => `<button type="button" data-cup="${c.id}" aria-pressed="${c.id === "mint"}">${pic(c.art)}<span>${c.name}</span></button>`).join("")}</div>
+      <p class="${P}cupnote"></p>
+      <button type="button" class="${P}go">Begin the page</button></div>`;
     el.appendChild(intro);
-    intro.querySelector("button").addEventListener("click", () => { intro.remove(); S.started = true; last = last2 = performance.now(); say(START_LINE, 3.5); });
-    intro.querySelector("button").focus();
+    const cupNote = intro.querySelector("." + P + "cupnote");
+    const setCup = (id) => { if (!CUPS.some((c) => c.id === id)) id = "mint"; taste = id; intro.querySelectorAll("[data-cup]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.cup === id))); cupNote.textContent = "The cup colours the page. " + CUPS.find((c) => c.id === id).note; };
+    intro.querySelectorAll("[data-cup]").forEach((b) => b.addEventListener("click", () => setCup(b.dataset.cup)));
+    setCup(api.store.get("cup", "mint"));
+    intro.querySelector("." + P + "go").addEventListener("click", () => {
+      intro.remove(); S.started = true; last = last2 = performance.now(); api.store.set("cup", taste);
+      if (taste === "storm") { S.squallLeft = 1; squallBtn.hidden = false; say(START_LINE + " " + LINES.squallHint, 5); } else say(START_LINE, 3.5);
+    });
+    intro.querySelector("." + P + "go").focus();
 
     return {
       unmount() {
+        alive = false; cancelAnimationFrame(holdRaf);
         cancelAnimationFrame(raf); timers.forEach(clearTimeout); ro.disconnect();
         removeEventListener("keydown", onDown); removeEventListener("keyup", onUp);
         for (const [b, d, u] of ptr) { b.removeEventListener("pointerdown", d); b.removeEventListener("pointerup", u); b.removeEventListener("pointercancel", u); b.removeEventListener("pointerleave", u); }

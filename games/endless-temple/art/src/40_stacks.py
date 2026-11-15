@@ -155,7 +155,7 @@ def t_ladder_up(a):
     a.path(ladder_d(205, 338, 205, -10, 44, 17), **L(1.5))
     a.path("M160,124V340M250,124V340", **L(1.6))
     a.path("M196,60 l9,-14 l9,14", **L(1.6))
-    stream(a, [(0, 300), (120, 296), (190, 250), (206, 120)], n=28, spread=8, op=.45)
+    # (the junction tiles carry only the passing stream: in play the live motes say which way is right)
     stream(a, [(0, 300), (160, 300), (400, 292)], n=60, spread=8)
 
 
@@ -168,7 +168,6 @@ def t_ladder_down(a):
     a.path(ladder_d(207, 318, 214, 400, 34, 6), **L(1.5))
     a.path("M130,372 L170,400 M290,372 L250,400", **L(1))
     a.path("M200,392 l10,8 l10,-8", **L(1.6))
-    stream(a, [(0, 296), (120, 300), (190, 330), (210, 390)], n=26, spread=7, op=.45)
     stream(a, [(0, 296), (200, 286), (400, 292)], n=60, spread=8)
 
 
@@ -181,7 +180,7 @@ def t_arch(a):
     a.close()
     a.path("M120,340 V180 A85,80 0 0,1 290,180 V340 M108,340 V178 A97,92 0 0,1 302,178 V340", **L(1.6))
     a.path("M205,88 l-8,-10 h16Z", **L(1.2))
-    stream(a, [(0, 300), (130, 296), (200, 262), (236, 232)], n=130, spread=7)
+    stream(a, [(0, 300), (130, 296), (270, 300), (400, 292)], n=60, spread=8)
 
 
 def t_rolling(a):
@@ -320,9 +319,9 @@ def t_chair(a):
 TILES = [
     ("plain", "A plain bay", t_plain, "A bay of shelves with one opening where the books run away to a vanishing point of their own."),
     ("calling", "The calling book", t_calling, "The calling book glowing gold in an alcove, the mote stream thick and rising to it."),
-    ("ladder-up", "Junction: ladder up", t_ladder_up, "A ladder climbing through the ceiling into shelves seen from below, the motes thinning up it."),
+    ("ladder-up", "Junction: ladder up", t_ladder_up, "A ladder climbing through the ceiling into shelves seen from below, the mote stream passing its foot."),
     ("ladder-down", "Junction: ladder down", t_ladder_down, "A hatch in the plank floor and a ladder down a shaft with its own vanishing point."),
-    ("arch", "Junction: aisle on", t_arch, "An arch through the shelves onto a second aisle that recedes the wrong way, motes thickening into it."),
+    ("arch", "Junction: aisle on", t_arch, "An arch through the shelves onto a second aisle that recedes the wrong way, the mote stream passing its sill."),
     ("rolling-ladder", "The rolling ladder", t_rolling, "A rolling ladder on its rail, wheels on the planks, pushed along with momentum."),
     ("ceiling", "Shelves on the ceiling", t_ceiling, "Shelves hanging from the ceiling with their books upside down, and two stairs that climb each other sideways."),
     ("lamp", "A reading lamp, lit", t_lamp, "A lit reading lamp with two wicks left beside it and a pin in the shelf: this aisle will not be rebuilt."),

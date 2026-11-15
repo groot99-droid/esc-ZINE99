@@ -24,6 +24,23 @@
     {"id": "ember_root", "name": "Ember root", "depth": 2, "length": 1, "binding": 2, "chapter": "c6_father", "scene": "s3_halls_c6", "added": true, "note": "On the shelf behind the spilled sand."},
     {"id": "lamp_ash", "name": "Lamp-ash", "depth": 0, "length": 2, "binding": -1, "chapter": "c7_procession", "scene": "s3_scribe_wagon", "added": true, "note": "Scraped from the pilgrims' lanterns."}
   ],
+  "conditional_herbs_note": "Accepted 2026-11-15. A ninth jar that is on the shelf only while flags.json gutter_sand is above 0: sweeping the hub fills it, one spoon a sweep, two at most. It is kept out of 'herbs' because no scene finds it and no brew's jar list can count on it.",
+  "conditional_herbs": [
+    {"id": "gutter_sand", "name": "Gutter sand", "depth": 2, "length": 0, "binding": -3, "max_spoons": 2, "flag": "gutter_sand", "added": true, "note": "Sand swept up from under the sand book. The only herb that is deep and unbinding at once."}
+  ],
+  "taste_carry_note": "Accepted 2026-11-15. The cup colours the page: the first of these herbs in the cup sets flags.json cup_taste for the next living-illustration ride.",
+  "taste_carry": [
+    {"herb": "stormcress", "cup_taste": "stormcress", "effect": "One squall a ride: the waves lie flat for 5 seconds.", "squalls": 1, "squall_seconds": 5},
+    {"herb": "lamp_ash", "cup_taste": "lamp_ash", "effect": "The thin, pencil phase (tea_hold 1 to 29) keeps its full line and colour.", "thin_phase_readable": true},
+    {"herb": "ember_root", "cup_taste": "ember_root", "effect": "Heat builds at half the rate; the written line pulls 20% harder.", "heat_factor": 0.5, "written_line_pull_factor": 1.2}
+  ],
+  "parting_cup": {
+    "scene": "g_tea_c8", "flag": "parting_cup", "needs": ["gutter_sand", "ledger_turned"],
+    "ledger_line": "For leaving a book that is still going: sprig, and what the book gives back",
+    "test": {"must_include": ["seers_sprig", "gutter_sand"], "depth_min": 7, "binding_max": -4},
+    "solution": {"spoons": ["seers_sprig", "gutter_sand", "gutter_sand"], "mark": 3, "result": {"depth": 8, "length": 1, "binding": -5}},
+    "note": "Accepted 2026-11-15. No cup made from the eight jars reaches depth 7 at binding -4. With the sprig the ledger names, only sprig and two spoons of gutter sand do (mark 3, or mark 4 at depth 8 and binding -4). Phase 1 builds the recipe and the cup. What the cup lets Elaris do (close a book without stopping it) is phase 3."
+  },
   "brews": [
     {"scene": "g_tea_c1", "requirement": {"depth_min": 3}, "jars": ["mint", "seers_sprig", "honeymoss"],
      "solution": {"spoons": ["seers_sprig", "honeymoss", "honeymoss"], "mark": 3, "result": {"depth": 4, "length": 3, "binding": -3}},

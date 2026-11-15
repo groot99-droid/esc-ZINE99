@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="stamp-pilgrims-t stamp-pilgrims-d">
+<title id="stamp-pilgrims-t">Tooling stamp: Pilgrims (person)</title>
+<desc id="stamp-pilgrims-d">A leather tile from the Person tray, stamped in gold: Three hooded pilgrims walking in a file. Below it, the word PILGRIMS.</desc>
+<defs><clipPath id="stamp-pilgrims-clip1"><rect x="0" y="0" width="200" height="200" rx="10"/></clipPath><filter id="stamp-pilgrims-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="404"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><filter id="stamp-pilgrims-gr3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="327"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="stamp-pilgrims-rg4" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#140904" stop-opacity="0.5"/></radialGradient><linearGradient id="stamp-pilgrims-gold5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="84" spreadMethod="reflect"><stop offset="0" stop-color="#F0D488"/><stop offset="0.45" stop-color="#D4A23A"/><stop offset="0.75" stop-color="#9A6F1E"/><stop offset="1" stop-color="#D4A23A"/></linearGradient><filter id="stamp-pilgrims-gr6" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="281"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="200" height="200" fill="#5E2A1E" rx="10"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-pilgrims-gr2)" clip-path="url(#stamp-pilgrims-clip1)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-pilgrims-gr3)" clip-path="url(#stamp-pilgrims-clip1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#stamp-pilgrims-rg4)" rx="10"/>
+<path d="M34,16 H166 L184,34 V132 L166,150 H34 L16,132 V34Z" fill="#431B12" opacity="0.8"/>
+<path d="M34,16 H166 L184,34 V132 L166,150 H34 L16,132 V34Z" fill="none" stroke="#140904" stroke-width="5" opacity="0.5" transform="translate(1.5 2)"/>
+<path d="M34,16 H166 L184,34 V132 L166,150 H34 L16,132 V34Z" fill="none" stroke="url(#stamp-pilgrims-gold5)" stroke-width="3"/>
+<path d="M37,23 H163 L177,37 V129 L163,143 H37 L23,129 V37Z" fill="none" stroke="url(#stamp-pilgrims-gold5)" stroke-width="0.9"/>
+<g transform="translate(101.6 86.2) scale(1.06)" opacity="0.7">
+<path d="M-36,36 L-33.6,8.8 Q-28,-12 -22.4,8.8 L-20,36Z" fill="#140904"/>
+<path d="M-10,36 L-7,2 Q0,-24 7,2 L10,36Z" fill="#140904"/>
+<path d="M20,36 L22.4,8.8 Q28,-12 33.6,8.8 L36,36Z" fill="#140904"/>
+<path d="M-46,40 H46" fill="none" stroke="#140904" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g transform="translate(100 84) scale(1.06)" opacity="1">
+<path d="M-36,36 L-33.6,8.8 Q-28,-12 -22.4,8.8 L-20,36Z" fill="url(#stamp-pilgrims-gold5)"/>
+<path d="M-10,36 L-7,2 Q0,-24 7,2 L10,36Z" fill="url(#stamp-pilgrims-gold5)"/>
+<path d="M20,36 L22.4,8.8 Q28,-12 33.6,8.8 L36,36Z" fill="url(#stamp-pilgrims-gold5)"/>
+<path d="M-46,40 H46" fill="none" stroke="url(#stamp-pilgrims-gold5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="100.6" y="180.8" font-size="16" font-family="serif" fill="#1A0B05" opacity="0.8" text-anchor="middle" letter-spacing="2.4" font-weight="bold">PILGRIMS</text>
+<text x="100" y="180" font-size="16" font-family="serif" fill="url(#stamp-pilgrims-gold5)" text-anchor="middle" letter-spacing="2.4" font-weight="bold">PILGRIMS</text>
+<text x="99.8" y="179.7" font-size="16" font-family="serif" fill="none" stroke="#F0D488" stroke-width="0.4" opacity="0.6" text-anchor="middle" letter-spacing="2.4" font-weight="bold">PILGRIMS</text>
+<path d="M30,160 H170" stroke="url(#stamp-pilgrims-gold5)" stroke-width="0.8" fill="none"/>
+<path d="M22,160 l4,-4 l4,4 l-4,4Z" fill="url(#stamp-pilgrims-gold5)"/>
+<path d="M178,160 l-4,-4 l-4,4 l4,4Z" fill="url(#stamp-pilgrims-gold5)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-pilgrims-gr6)"/>
+</svg>

@@ -46,9 +46,9 @@
       "name": "brew.binding",
       "type": "meter",
       "default": 0,
-      "description": "Binding of the last brew. Added to steep as 3 x binding when brewed. Can be negative.",
+      "description": "Binding of the last brew. Added to steep as 3 x binding when brewed. Can be negative; gutter sand (two spoons at most) takes it as low as -8.",
       "range": [
-        -6,
+        -8,
         12
       ]
     },
@@ -90,7 +90,7 @@
       "name": "sand_leak",
       "type": "meter",
       "default": 20,
-      "description": "How much sand the nameless book spills into the temple. +15 per Book One session; -10 per sweep. 60+ drifts in the stacks; 80+ harder waves in the last ride.",
+      "description": "How much sand the nameless book spills into the temple. +15 per Book One session; -10 per sweep. 60+ drifts in the stacks; 80+ harder waves in the last ride. Accepted 2026-11-15: a sweep also puts one spoon of gutter sand in the ninth jar, and each 20 points left unswept blocks one peg, tab or lever of the next clasp until it is brushed out.",
       "range": [
         0,
         100
@@ -304,6 +304,52 @@
         "set_down",
         "drunk"
       ]
+    },
+    {
+      "name": "gutter_sand",
+      "type": "meter",
+      "default": 0,
+      "description": "Spoons of gutter sand in the pantry's ninth jar (accepted 2026-11-15). +1 per sweep in the hub, 2 at most; -1 per spoon brewed. The jar is on the shelf only while this is above 0.",
+      "range": [
+        0,
+        2
+      ]
+    },
+    {
+      "name": "cup_taste",
+      "type": "enum",
+      "default": "none",
+      "description": "The herb whose taste the last cup carries into the next living-illustration ride (accepted 2026-11-15): stormcress brings one squall that flattens the waves for 5 s; lamp-ash keeps the thin phase readable; ember root halves heat and gives the written line 20% more pull. Set at brew from the cup's spoons; stormcress wins over lamp-ash, lamp-ash over ember root.",
+      "values": [
+        "none",
+        "stormcress",
+        "lamp_ash",
+        "ember_root"
+      ]
+    },
+    {
+      "name": "clasp_brushes",
+      "type": "counter",
+      "default": 0,
+      "description": "Moves spent brushing sand out of a clasp's works (accepted 2026-11-15). One part is blocked per 20 points of sand_leak when the clasp is opened."
+    },
+    {
+      "name": "ledger_turned",
+      "type": "bool",
+      "default": false,
+      "description": "Elaris has turned the pantry ledger over and seen the day count on its back pages (accepted 2026-11-15; the long puzzle's first step, from c6; the web build offers it at the last pot)."
+    },
+    {
+      "name": "parting_cup",
+      "type": "bool",
+      "default": false,
+      "description": "The last pot was the Parting Cup: seer's sprig and two spoons of gutter sand at mark 3, depth 8 and binding -5 (accepted 2026-11-15). What it lets Elaris do is phase 3 (The Unread Page)."
+    },
+    {
+      "name": "other_hand_seen",
+      "type": "bool",
+      "default": false,
+      "description": "The player has seen the ringed hand bring a cup into the father's last walk (accepted 2026-11-15; the midpoint reversal's first appearance)."
     }
   ]
 }

@@ -12,6 +12,9 @@
 // Actions: choose a template; set a tile in a slot (or clear one); Inspect a tile (three glances
 // back into the books per page: says which book a tile came from); Inscribe when the rules hold.
 // There is no failure: the page waits, and the gutter runs until the book is named.
+// Art (api.art): every motif tile is its tooling stamp (pieces/stamp-*), each book shows its own
+// cartouche plate, a figure from the book stands by the page, and the last card is the ninth
+// frontispiece. The lettered tiles stay as the fallback.
 
 const SOURCE_TASK = "Well, I guess since this one doesn't have a name, I'll just have to read this one and find out what to call it,";
 const AUTHOR = ["Never-Ending", "Dunes", "Wondering", "Xandrixes"];
@@ -35,7 +38,7 @@ const PAGES = [
   { scene: "g_name_c5", book: "the weather book", fluid: "rain", open: LINES.p1, templates: [T1, T2],
     threads: { Place: ["Hollin", "Hill", "Sky", "Bell-loft"], Person: ["Pell", "Clerk", "Bakers", "Bell-ringer"], Want: ["Tomorrow", "Windows", "Fair Weather"] }, foreign: {} },
   { scene: "g_name_c7", book: "the road book", fluid: "ink", open: LINES.p2, templates: [T1, T2, T3],
-    threads: { Place: ["Road", "Plain", "Grey Grass", "Dusk", "Dunes"], Person: ["Oda", "Scribe", "Pilgrims", "Masks", "Xandri"], Want: ["City", "Answer", "Edge", "Ending", "Waves"] },
+    threads: { Place: ["Road", "Plain", "Grey Grass", "Dusk", "Dunes", "Waves"], Person: ["Oda", "Scribe", "Pilgrims", "Masks", "Xandri"], Want: ["City", "Answer", "Edge", "Ending"] },
     foreign: { Dunes: "the sand book", Xandri: "the sand book", Waves: "the sand book" } },
   { scene: "g_name_c9", book: "the sand book", fluid: "sand", open: LINES.p3, templates: [T1, T2, T3, T4], fate: ["Wake", "Past the Mark"], quote: SOURCE_TASK,
     threads: { Place: ["Desert", "Eternity", "Sand Sea", "Dunes", "Never-Ending", "Silver", "Moon", "Vines", "Waves", "Hill", "Road"],
@@ -43,6 +46,13 @@ const PAGES = [
       Want: ["End", "Proof", "Further", "Leaf", "Wake", "Past the Mark", "Windows", "City"] },
     foreign: { Hill: "the weather book", Road: "the road book", Clerk: "the weather book", Pilgrims: "the road book", Windows: "the weather book", City: "the road book" } },
 ];
+
+const PAGE_ART = [
+  { plate: "cartouche-c5", figure: "figure-pell", mote: "mote-rain" },
+  { plate: "cartouche-c7", figure: "figure-oda", mote: "mote-ink" },
+  { plate: "cartouche-c9", figure: "figure-xandri", mote: "mote-sand" },
+];
+const stampId = (w) => "stamp-" + w.toLowerCase().replace(/[^a-z]+/g, "-");
 
 // join words, gluing "Never-" to the next word and "-less" to the one before
 function compose(words) {
@@ -62,6 +72,8 @@ export default {
     const C = { leather: "#4a2416", leather2: "#2f160d", gold: "#d9a93c", gold2: "#f2d27a", blind: "#3a1b10", cream: "#f3ead2", bad: "#ff9a7a" };
     const rm = api.reducedMotion;
     const timers = [];
+    const art = api.art || { has: () => false, url: () => "", info: () => null };
+    const pic = (id, cls, alt = "") => (art.has(id) ? `<img class="${P}${cls}" src="${art.url(id)}" alt="${alt}" draggable="false">` : "");
     const css = document.createElement("style");
     css.textContent = `
     .${P}root{position:absolute;inset:0;overflow:auto;background:radial-gradient(120% 100% at 40% 20%,${C.leather},${C.leather2});color:${C.gold};font-family:'EB Garamond',Georgia,serif;font-size:16px}
@@ -107,6 +119,26 @@ export default {
     .${P}tiles{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
     .${P}tile{font:inherit;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:${C.gold2};background:linear-gradient(#5b2c1a,#3e1d11);border:1px solid ${C.gold};border-radius:3px;padding:7px 9px;cursor:pointer;box-shadow:0 2px 3px rgba(0,0,0,.5);transition:transform .12s,background .12s}
     .${P}tile:hover,.${P}tile:focus-visible{background:#7a4126;transform:translateY(-2px);outline:none}
+    .${P}tile.${P}st{padding:3px 3px 4px;width:74px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11.5px;letter-spacing:.04em;line-height:1.1;background:transparent;border-color:transparent;box-shadow:none}
+    .${P}tile.${P}st img{width:66px;height:66px;display:block;border-radius:5px;box-shadow:0 2px 4px rgba(0,0,0,.55)}
+    .${P}tile.${P}st span{display:block;min-height:2.2em;text-align:center;color:${C.cream}}
+    .${P}tile.${P}st:hover,.${P}tile.${P}st:focus-visible{background:rgba(242,210,122,.16);border-color:${C.gold}}
+    .${P}tile.${P}st.${P}known img{outline:2px dashed ${C.bad};outline-offset:1px}
+    .${P}tile.${P}st.${P}fate img{box-shadow:0 0 0 2px ${C.gold2},0 2px 4px rgba(0,0,0,.55)}
+    .${P}tile.${P}st.${P}fate{box-shadow:none}
+    @media (max-width:760px){.${P}tile.${P}st{width:62px}.${P}tile.${P}st img{width:56px;height:56px}}
+    .${P}plate{display:block;width:min(520px,100%);height:auto;margin:10px auto 0;border-radius:4px;box-shadow:0 6px 16px rgba(0,0,0,.5);transition:filter .6s,box-shadow .6s}
+    .${P}plate.${P}set{box-shadow:0 0 40px rgba(242,210,122,.7);filter:brightness(1.15)}
+    .${P}who{display:flex;gap:12px;align-items:center;justify-content:center;max-width:70ch;margin:6px auto 0;text-align:left}
+    .${P}who img.${P}fig{flex:none;width:64px;height:80px;object-fit:cover;border:1px solid ${C.gold};border-radius:3px}
+    .${P}who .${P}beat{margin:0}
+    .${P}pagename img{width:26px;height:26px;border-radius:50%;vertical-align:middle;margin-right:8px;border:1px solid ${C.gold}}
+    .${P}spine img.${P}c1{display:block;width:100%;height:auto;margin:0 0 12px;border-radius:3px}
+    .${P}endc{position:absolute;inset:0;z-index:6;display:grid;place-items:center;background:rgba(20,8,4,.85);padding:16px 16px 170px;box-sizing:border-box;overflow:auto}
+    .${P}endc figure{margin:0;max-width:340px;text-align:center}
+    .${P}endc img{display:block;margin:0 auto;height:auto}
+    .${P}endc img.${P}fr{width:min(230px,56vw);box-shadow:0 10px 30px rgba(0,0,0,.6)}
+    .${P}endc img.${P}hd{width:min(340px,86vw);margin-top:10px}
     .${P}tile.${P}used{opacity:.55}
     .${P}tile.${P}known{border-style:dashed;color:${C.bad}}
     .${P}tile.${P}fate{box-shadow:0 0 0 2px ${C.gold2},0 2px 3px rgba(0,0,0,.5)}
@@ -142,7 +174,8 @@ export default {
         <svg class="${P}orn" style="right:44px;bottom:14px" viewBox="0 0 30 30" aria-hidden="true">${fleur}</svg>
         <div class="${P}gutter" aria-hidden="true"><canvas></canvas></div>
         <div class="${P}head"><small class="${P}pagename"></small><span class="${P}pages" aria-hidden="true"></span>
-          <p class="${P}beat" aria-live="polite"></p><p class="${P}quote" hidden></p></div>
+          <div class="${P}who"><img class="${P}fig" alt="" hidden><p class="${P}beat" aria-live="polite"></p></div><p class="${P}quote" hidden></p>
+          <img class="${P}plate" alt="" hidden></div>
         <div class="${P}tpls" role="group" aria-label="Title templates"></div>
         <div class="${P}cart" aria-label="The title"></div>
         <div class="${P}status" aria-live="polite"></div>
@@ -164,7 +197,12 @@ export default {
 
     function setPage(i) {
       pi = i; PG = PAGES[i]; tpl = 0; resetFill(); busy = false; glances = 3; inspecting = false; known = new Set(); triedForeign = false;
-      q("pagename").textContent = `Title page ${i + 1} of ${PAGES.length}: ${PG.book}`;
+      const PA = PAGE_ART[i];
+      q("pagename").innerHTML = pic(PA.mote, "m");
+      q("pagename").append(`Title page ${i + 1} of ${PAGES.length}: ${PG.book}`);
+      const fig = q("fig"); if (art.has(PA.figure)) { fig.src = art.url(PA.figure); fig.hidden = false; } else fig.hidden = true;
+      const plate = q("plate"); plate.classList.remove(P + "set");
+      if (art.has(PA.plate)) { plate.src = art.url(PA.plate); plate.alt = `The cartouche on the cover of ${PG.book}, still blank.`; plate.hidden = false; } else plate.hidden = true;
       q("pages").innerHTML = PAGES.map((_, k) => `<i class="${k < i ? P + "done" : ""}"></i>`).join("");
       q("beat").textContent = PG.open + (PG.fate ? " " + LINES.fate : "") + (i === 1 ? " " + LINES.inspectNew : "");
       const qe = q("quote"); qe.hidden = !PG.quote; if (PG.quote) qe.textContent = `“${PG.quote}” (Elaris, on the first day)`;
@@ -199,6 +237,12 @@ export default {
       const b = document.createElement("button");
       b.type = "button"; b.className = P + "tile"; b.textContent = w; b.dataset.w = w;
       if (motif) b.dataset.motif = "1";
+      if (motif && art.has(stampId(w))) {
+        b.classList.add(P + "st"); b.textContent = "";
+        b.innerHTML = `<img src="${art.url(stampId(w))}" alt="" draggable="false"><span></span>`;
+        b.querySelector("span").textContent = w;
+        b.setAttribute("aria-label", w);
+      }
       b.addEventListener("click", () => (inspecting && motif ? inspect(w) : place(w)));
       b.addEventListener("mousedown", (e) => e.preventDefault());   // a mouse click does not steal focus, so Enter still inscribes
       return b;
@@ -298,7 +342,7 @@ export default {
       const name = compose(words());
       names.push(name);
       if (c.author) authorTitle = true;
-      q("cart").classList.add(P + "set");
+      q("cart").classList.add(P + "set"); q("plate").classList.add(P + "set");
       say(`${LINES.inked} <b>“${name}”</b>.`);
       draw();
       timers.push(setTimeout(() => {
@@ -306,6 +350,12 @@ export default {
         over = true;
         let text = LINES.end.replace("{names}", names.map((n) => `“${n}”`).join(", "));
         if (authorTitle) text += " " + ADDED_AUTHOR_LINE;
+        if (art.has("frontis-c9")) {
+          const c = document.createElement("div");
+          c.className = P + "endc";
+          c.innerHTML = `<figure>${pic("frontis-c9", "fr", "The ninth chapter's frontispiece: The End of the Sand.")}${pic("heading-c9", "hd")}</figure>`;
+          root.appendChild(c);
+        }
         api.end({ outcome: "win", text });
       }, rm ? 400 : 2000));
     }
@@ -353,6 +403,7 @@ export default {
     const intro = document.createElement("div");
     intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}spine" role="dialog" aria-label="How to play">
+      ${pic("cartouche-c1", "c1", "A blank cartouche on a book's cover.")}
       <h2>The Naming</h2>
       <p class="${P}goal"><b>Goal:</b> give three books a name. A named book rests.</p>
       <ul>

@@ -16,22 +16,20 @@ def ground(a, tint, rough):
     K.wash(a, K.blob_d(a, a.w / 2, a.h * .5, a.w * .4, a.h * .36, jit=.16), tint, .3, rough)
 
 
-@asset(K.G, "figure-xandri", group="figures", title="Xandri on leaf shoes", w=480, h=600, row=ROW)
-def xandri(a: Art):
-    """Xandri side-on, riding a sand wave on two woody leaves tied to his feet: knees bent, arms out, his
-    ochre head-cloth and his father's leaf-cord flying back, the patched pack with its holes on his back."""
+def xandri(a: Art, bare=False):
     rough = a.roughen(7, .03)
-    ground(a, K.SILVER, rough)
-    # the wave face under him
-    face = [(0, 430), (90, 440), (200, 478), (320, 520), (480, 548)]
-    K.wash(a, a.smooth_d(face) + " L480,600 L0,600Z", K.SILVER, .85, rough, edge="#8D94A8")
-    K.wash(a, K.blob_d(a, 300, 570, 150, 26), K.OCHRE, .3, rough)
-    K.pen(a, face, w=4, taper=(.05, .2))
-    for k in range(9):
-        x = 20 + k * 52
-        y = 452 + k * 13
-        K.curve(a, [(x, y + 22), (x + 36, y + 34)], w=1.1, color=K.INK2, opacity=.6)
-    K.sand(a, 0, 380, 190, 90, n=150, r=(.7, 2), density=lambda x, y: max(0, 1 - math.hypot(x - 60, y - 430) / 110))
+    if not bare:
+        ground(a, K.SILVER, rough)
+        # the wave face under him
+        face = [(0, 430), (90, 440), (200, 478), (320, 520), (480, 548)]
+        K.wash(a, a.smooth_d(face) + " L480,600 L0,600Z", K.SILVER, .85, rough, edge="#8D94A8")
+        K.wash(a, K.blob_d(a, 300, 570, 150, 26), K.OCHRE, .3, rough)
+        K.pen(a, face, w=4, taper=(.05, .2))
+        for k in range(9):
+            x = 20 + k * 52
+            y = 452 + k * 13
+            K.curve(a, [(x, y + 22), (x + 36, y + 34)], w=1.1, color=K.INK2, opacity=.6)
+        K.sand(a, 0, 380, 190, 90, n=150, r=(.7, 2), density=lambda x, y: max(0, 1 - math.hypot(x - 60, y - 430) / 110))
     # leaf shoes
     K.woody_leaf(a, 150, 462, 120, 0.33)
     K.woody_leaf(a, 262, 500, 124, 0.3)
@@ -183,16 +181,14 @@ def oda(a: Art):
         K.pen(a, [(40 + k * 14, 300 + k * 30), (110 + k * 12, 296 + k * 30)], w=2, color=K.INK2, taper=(.6, .2))
 
 
-@asset(K.G, "figure-elaris", group="figures", title="Elaris side-on", w=480, h=600, row=ROW)
-def elaris(a: Art):
-    """Elaris Sel Marden side-on, walking the stacks: almost eight feet tall and thin, in monk's attire, sea-froth
-    skin and a long ear, the cup in one hand and a closed book under the other arm, sand trailing from its pages."""
+def elaris(a: Art, bare=False):
     rough = a.roughen(7, .03)
-    ground(a, K.GOLD, rough)
     robe, robe_d = "#7A5C3A", "#5A4028"
-    # a floor line and his long shadow
-    a.path("M30,566 H450", stroke=INK, stroke_width=1.6)
-    a.ellipse(250, 568, 120, 8, fill=K.WALNUT, opacity=.25)
+    if not bare:
+        ground(a, K.GOLD, rough)
+        # a floor line and his long shadow
+        a.path("M30,566 H450", stroke=INK, stroke_width=1.6)
+        a.ellipse(250, 568, 120, 8, fill=K.WALNUT, opacity=.25)
     # feet
     K.shape(a, [(196, 546), (236, 548), (252, 562), (198, 564)], K.WALNUT_L)
     K.shape(a, [(262, 544), (300, 546), (318, 560), (264, 562)], K.WALNUT_L)
@@ -227,7 +223,60 @@ def elaris(a: Art):
     a.path("M268,76 l12,-2 M284,108 q-6,3 -10,1", stroke=INK, stroke_width=1.7, fill="none", stroke_linecap="round")
     a.path("M250,100 q6,6 2,14", stroke=K.SKIN_D, stroke_width=1.4, fill="none")
     # the sunbeam he walks through
-    K.sunbeam(a, 480, 0, 120, 600, 30, 110, K.GOLD_L, .28)
+    if not bare:
+        K.sunbeam(a, 480, 0, 120, 600, 30, 110, K.GOLD_L, .28)
+
+
+K.reg("figure-xandri", "figures", "Xandri on leaf shoes", 480, 600, ROW,
+      "Xandri side-on, riding a sand wave on two woody leaves tied to his feet: knees bent, arms out, his ochre "
+      "head-cloth and his father's leaf-cord flying back, the patched pack with its holes on his back.", xandri)
+K.reg("figure-elaris", "figures", "Elaris side-on", 480, 600, ROW,
+      "Elaris Sel Marden side-on, walking the stacks: almost eight feet tall and thin, in monk's attire, sea-froth "
+      "skin and a long ear, the cup in one hand and a closed book under the other arm, sand trailing from its pages.", elaris)
+ROW_S = "Play sprites and the two hands (added for the modes, 2026-11-15)"
+K.reg("sprite-xandri", "figures", "Sprite: Xandri on leaf shoes, no ground", 480, 600, ROW_S,
+      "The Xandri figure cut out for play: the same drawing with no paper and no wave under it, so the living "
+      "illustration can set him on its own sand.", xandri, bare=True)
+K.reg("sprite-elaris", "figures", "Sprite: Elaris side-on, no ground", 480, 600, ROW_S,
+      "The Elaris figure cut out for play: the same drawing with no paper, floor line or sunbeam, so the stacks can "
+      "walk him along their own shelves.", elaris, bare=True)
+
+
+def cup_hand(a: Art, ringed=False):
+    """A long hand reaching in from the left edge with the cup; the older one wears a brass ring."""
+    skin, skin_d = (("#A9BBA4", "#7F957F") if ringed else (K.SKIN, K.SKIN_D))
+    sleeve, sleeve_d = (("#4A3A44", "#33262E") if ringed else ("#7A5C3A", "#5A4028"))
+    # the sleeve, entering from the left edge
+    K.shape(a, [(-20, 96), (150, 112), (232, 138), (236, 196), (150, 214), (-20, 232)], sleeve)
+    a.path("M40,112 q30,50 10,108 M110,118 q24,44 8,92", stroke=sleeve_d, stroke_width=2, fill="none")
+    # the wrist and the long back of the hand
+    K.limb(a, [(226, 166), (300, 160), (368, 150)], 44, skin)
+    # four long fingers wrapped under the bowl, and the thumb over its rim
+    for k, (dy, ln) in enumerate(((0, 96), (14, 104), (28, 100), (42, 88))):
+        K.limb(a, [(356, 140 + dy), (400 + ln * .4, 150 + dy), (386 + ln, 168 + dy * .7)], 15 - k, skin)
+    if ringed:
+        # age: knuckles and tendons, and the ring on the second finger
+        a.path("M250,150 q40,-6 96,-8 M256,176 q44,2 92,-4 M300,146 q4,8 0,14 M330,144 q4,8 0,14", stroke=skin_d,
+               stroke_width=1.8, fill="none", stroke_linecap="round")
+        a.path("M404,150 q8,10 2,24", stroke=K.BRASS_D, stroke_width=11, fill="none", stroke_linecap="round")
+        a.path("M404,150 q8,10 2,24", stroke=K.BRASS_L, stroke_width=6, fill="none", stroke_linecap="round")
+        a.circle(409, 161, 5.5, fill=K.BRUISE, stroke=K.BRASS_D, stroke_width=1.6)
+    else:
+        a.path("M250,152 q40,-6 96,-8", stroke=skin_d, stroke_width=1.6, fill="none", stroke_linecap="round")
+    K.cup_side(a, 470, 196, 1.5, tea=.8, saucer=False, steam=True)
+    # the fingers that show in front of the bowl, and the thumb
+    K.limb(a, [(388, 190), (424, 204), (452, 198)], 13, skin)
+    K.limb(a, [(350, 134), (400, 112), (436, 118)], 16, skin)
+    a.path("M430,112 q8,2 8,10", stroke=INK, stroke_width=1.6, fill="none", stroke_linecap="round")
+
+
+K.reg("hand-elaris", "figures", "The hand that brings the cup: Elaris", 600, 300, ROW_S,
+      "Elaris's long sea-froth hand in its brown sleeve, reaching in from the left edge of a page with the cup: what "
+      "the reader sees when the player sips.", cup_hand)
+K.reg("hand-ringed", "figures", "The other hand: older, with a brass ring", 600, 300, ROW_S,
+      "The same reach and the same cup in an older, greyer hand with a brass ring on the second finger and a dark "
+      "sleeve: the hand in The Other Hand, which brings a cup the player did not ask for. No face is shown.",
+      cup_hand, ringed=True)
 
 
 # ---- watcher shadows ----------------------------------------------------------------------------

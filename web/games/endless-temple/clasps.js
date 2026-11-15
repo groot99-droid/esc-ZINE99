@@ -9,6 +9,11 @@
 // There is no failure (reset is free); the clasps are scored in moves against par. The hint sigil
 // glows after 90 seconds on a clasp and shows one correct next move; after another 60 it can be
 // pressed again.
+// Accepted development, phase 1 (DESIGN.md "Accepted development (2026-11-15)"): sand in the works.
+// The sand book leaks onto the same table. Each 20 points of sand_leak blocks one lever pivot,
+// buckle or peg until it is brushed out, and brushing is a move (tap the sanded part once to brush
+// it, again to work it). Between clasps Elaris may sweep the table: swept sand does not reach the
+// next clasp. Art (api.art): the keeper's cutaway plates of the clasps, chapter headings, glyphs.
 
 // Narration written for the game (not quotations). Fragment texts below are DESIGN.md's (section 5).
 const LINES = {
@@ -21,7 +26,17 @@ const LINES = {
   frag5: "Inside, Keeper Maudric's petition.",
   endPar: "Three clasps, three pages of the past, and hardly a wasted move. Elaris lays the letter, the ruling and the petition side by side, and reads them in order.",
   endOver: "Three clasps open at last, the table scattered with brass. Elaris lays the letter, the ruling and the petition side by side, and reads them in order.",
+  sand1: "The sand book lies open on the same table, and a little of its sand has got into the works.",
+  sandN: "The table was not swept: the sand has drifted into {n} places in the works.",
+  sandNone: "The table is swept, and the works are clean.",
+  brushed: "<b>Sand in the works.</b> Elaris brushes it out of {what}: a move. Now it will answer.",
+  swept: "Swept. The pan goes into the ninth jar in the pantry.",
+  endSand: " Sand cost him {n} move{s} with the brush.",
 };
+// which parts the sand reaches first, in order (DESIGN.md: one per 20 points of sand_leak)
+const JAM_LEVERS = [2, 0, 4], JAM_STRAPS = ["E", "B", "D"], JAM_PEGS = ["2,1", "3,2", "1,1"];
+const PLATE = { lever: "clasp-c3b-lever-bank", strap: "clasp-c5-strap-fold", gear: "clasp-c7-gear-train" };
+const HEADING = { lever: "heading-c3", strap: "heading-c5", gear: "heading-c7" };
 const FRAG = {
   F3: "He read the Lantern Country as its narrator for a season, and would not set the cup down. While he stayed, its story could not end, and its lamps burned down one by one. “They are all in the dark now.”",
   F4: "The sentence: to be shelved inside the dark book, reading forever into a world with no light.",
@@ -103,6 +118,8 @@ export default {
     const COLORS = { 1: [M.steel, M.steelD], 2: [M.brass, M.brassD], 3: [M.copper, M.copperD] };
     const rm = api.reducedMotion;
     const timers = [];
+    const art = api.art || { has: () => false, url: () => "", info: () => null };
+    const pic = (id, cls, alt = "") => (art.has(id) ? `<img class="${P}${cls}" src="${art.url(id)}" alt="${alt}" draggable="false">` : "");
     let raf = 0;
     const css = document.createElement("style");
     css.textContent = `
@@ -118,8 +135,9 @@ export default {
     .${P}moves{font-family:ui-monospace,Menlo,monospace;font-size:15px;border:1.5px solid ${M.brass};padding:7px 12px;background:#1d120b;color:${M.brassL};text-align:right;line-height:1.15}
     .${P}moves small{display:block;font-size:12px;color:${M.cream};opacity:.8}
     .${P}moves.${P}over{color:${M.red}}
+    .${P}top,.${P}beat,.${P}msg{flex:none}
     .${P}beat{max-width:900px;width:100%;margin:8px 0 2px;font-style:italic;font-size:16px;color:#e7d6b3;text-align:center;min-height:1.4em}
-    .${P}svg{flex:none;width:100%;max-width:900px;max-height:calc(100vh - 270px);min-height:240px;height:auto;touch-action:manipulation;user-select:none}
+    .${P}svg{flex:none;width:100%;max-width:900px;max-height:calc(100vh - 300px);min-height:240px;height:auto;touch-action:manipulation;user-select:none}
     .${P}msg{max-width:900px;text-align:center;min-height:2.8em;margin:4px 0;font-size:16px;line-height:1.35}
     .${P}msg b{color:${M.brassL}}
     .${P}msg.${P}bad{color:#ffb39f}
@@ -127,6 +145,18 @@ export default {
     .${P}frag div{max-width:440px;background:#efe3c4;color:#2f1d10;padding:20px 22px;font-size:17px;line-height:1.4;box-shadow:0 10px 30px rgba(0,0,0,.6);transform:rotate(-1deg);border:1px solid #8a6224}
     .${P}frag small{display:block;font-variant:small-caps;letter-spacing:.12em;font-size:14px;color:#7a5a2a;margin-bottom:6px}
     .${P}frag p{margin:0 0 12px}
+    .${P}frag img.${P}plateimg{display:block;width:100%;height:auto;margin:0 0 8px;border-radius:2px}
+    .${P}frag img.${P}chap{display:block;width:100%;height:auto;margin:0 0 8px;border-radius:2px}
+    .${P}frag .${P}btn{margin:0 6px 6px 0;color:${M.cream}}
+    .${P}thumb{flex:none;height:46px;width:auto;border:1.5px solid ${M.brass};border-radius:3px;display:block}
+    .${P}stagewrap{flex:1;min-width:150px;display:flex;gap:10px;align-items:center;justify-content:center}
+    .${P}btn img{width:26px;height:26px;vertical-align:middle;margin:-4px 6px -2px -4px}
+    .${P}strip{display:flex;gap:6px;margin:0 0 10px}
+    .${P}strip img{flex:1;min-width:0;width:33%;height:auto;border:1px solid ${M.brassD};border-radius:3px}
+    .${P}endc{position:absolute;inset:0;z-index:6;display:grid;place-items:center;background:rgba(15,8,4,.82);padding:16px 16px 150px;box-sizing:border-box;overflow:auto}
+    .${P}endc figure{margin:0;max-width:520px;text-align:center;color:${M.cream}}
+    .${P}endc img{width:100%;height:auto;border:2px solid ${M.brass};border-radius:4px}
+    .${P}endc figcaption{font-family:'IM Fell English',Georgia,serif;font-size:22px;margin-top:8px;color:${M.brassL}}
     .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(15,8,4,.75);z-index:5;padding:16px;overflow:auto}
     .${P}plate{max-width:440px;padding:20px 22px;border:2px solid ${M.brass};background:linear-gradient(160deg,#5a4330,#3e2c1d);border-radius:8px;position:relative;box-shadow:inset 0 0 0 5px #3e2c1d,inset 0 0 0 6px ${M.brassD},0 18px 40px rgba(0,0,0,.6)}
     .${P}plate::before,.${P}plate::after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 35%,${M.brassL},${M.brassD});top:10px;left:10px;box-shadow:calc(100% + 0px) 0 0 0 transparent}
@@ -142,8 +172,8 @@ export default {
     el.className = P + "root";
     el.innerHTML = `
       <div class="${P}top"><button type="button" class="${P}btn ${P}reset" title="Reset (R)">↺ Reset lever</button>
-        <div class="${P}stage"><b></b><span></span></div>
-        <button type="button" class="${P}btn ${P}turn" title="Turn the knob (T)" hidden>Turn the knob ↻</button>
+        <div class="${P}stagewrap"><img class="${P}thumb" alt="" hidden><div class="${P}stage"><b></b><span></span></div></div>
+        <button type="button" class="${P}btn ${P}turn" title="Turn the knob (T)" hidden>${pic("glyph-wind", "g")}Turn the knob ↻</button>
         <span class="${P}moves">MOVES 00<small>par 3</small></span></div>
       <p class="${P}beat" aria-live="polite"></p>
       <svg class="${P}svg" viewBox="-40 -30 660 600" role="application" aria-label="The clasp mechanism"></svg>
@@ -164,6 +194,15 @@ export default {
     let lifted = new Set(), blockedBy = null, shake = null, hasp = false, strapCur = 0;
     // gear state
     let gears = [], tray = TRAY.slice(), sel = null, turning = false, cursor = { x: 1, y: 1 }, rot = 0, spin = null, t0 = performance.now();
+    // sand in the works
+    let leak = 20, jam = new Set(), jam0 = 0, brushMoves = 0;
+    const par = () => stage.par + jam0;
+    function brush(key, what) {
+      jam.delete(key); bump(); brushMoves++;
+      say(LINES.brushed.replace("{what}", what));
+      draw();
+    }
+    const grit = (x, y, r = 16) => `<g pointer-events="none">${Array.from({ length: 14 }, (_, k) => `<circle cx="${(x + Math.cos(k * 2.4) * r * (0.25 + (k % 5) / 6)).toFixed(1)}" cy="${(y + Math.sin(k * 2.4) * r * (0.25 + (k % 4) / 5)).toFixed(1)}" r="${2 + (k % 3)}" fill="${k % 2 ? "#e6dcc0" : "#c9b98c"}" stroke="#6b5a34" stroke-width=".6"/>`).join("")}</g>`;
 
     function say(t, bad) { msg.innerHTML = t; msg.classList.toggle(P + "bad", !!bad); }
     const sigilLit = () => !over && !busy && performance.now() - lastHintAt > (hintLevel === 0 ? 90000 : 60000);
@@ -171,10 +210,14 @@ export default {
     function setStage(i) {
       si = i; stage = STAGES[i]; moves = 0; over = false; busy = false; hintLevel = 0; lastHintAt = performance.now(); stageStart = performance.now();
       levers = LEVERS0.slice(); changed = []; lifted = new Set(); hasp = false; blockedBy = null; gears = []; tray = TRAY.slice(); sel = null;
+      jam0 = Math.max(0, Math.min(3, Math.floor(leak / 20)));
+      jam = new Set((stage.key === "lever" ? JAM_LEVERS.map((k) => "l" + k) : stage.key === "strap" ? JAM_STRAPS.map((k) => "s" + k) : JAM_PEGS.map((k) => "p" + k)).slice(0, jam0));
       el.querySelector("." + P + "stage b").textContent = stage.name;
       el.querySelector("." + P + "stage span").textContent = `Clasp ${i + 1} of ${STAGES.length}`;
+      const th = el.querySelector("." + P + "thumb");
+      if (art.has(PLATE[stage.key])) { th.src = art.url(PLATE[stage.key]); th.hidden = false; } else th.hidden = true;
       turnBtn.hidden = stage.key !== "gear";
-      beat.textContent = stage.intro;
+      beat.textContent = stage.intro + " " + (jam0 === 0 ? LINES.sandNone : jam0 === 1 ? LINES.sand1 : LINES.sandN.replace("{n}", ["", "one", "two", "three"][jam0]));
       say(stage.help);
       draw();
     }
@@ -239,6 +282,7 @@ export default {
           ${ch ? `<circle cx="${x}" cy="${y}" r="30" fill="none" stroke="${M.brassL}" stroke-width="3" opacity=".8"/>` : ""}
           ${hot ? `<rect x="${x - 42}" y="132" width="84" height="266" fill="none" stroke="${M.cream}" stroke-dasharray="5 5" opacity=".7"/>` : ""}
           ${h && h.lever === i ? `<circle cx="${x}" cy="${y}" r="40" fill="none" stroke="#ffe08a" stroke-width="4" stroke-dasharray="8 6"/>` : ""}
+          ${jam.has("l" + i) ? grit(x, y, 26) + `<text x="${x}" y="${y - 34}" text-anchor="middle" font-size="18" fill="#e6dcc0">sand</text>` : ""}
           <text x="${x}" y="384" text-anchor="middle" font-size="22" fill="${M.cream}">${i + 1}</text>
           <text x="${x}" y="408" text-anchor="middle" font-size="18" fill="${up ? "#ffb39f" : M.verd}">${up ? "raised" : "flat"}</text></g>`;
       });
@@ -274,6 +318,7 @@ export default {
           <rect x="${len / 2 - 30}" y="-22" width="24" height="44" rx="3" fill="none" stroke="${M.brass}" stroke-width="4"/>
           ${hot ? `<rect x="${-len / 2 - 4}" y="-24" width="${len + 8}" height="48" fill="none" stroke="${M.cream}" stroke-dasharray="6 5"/>` : ""}
           ${h && h.strap === st.id ? `<rect x="${-len / 2 - 6}" y="-27" width="${len + 12}" height="54" fill="none" stroke="#ffe08a" stroke-width="4" stroke-dasharray="10 6"/>` : ""}
+          ${jam.has("s" + st.id) && !up ? grit(len / 2 - 18, 0, 22) : ""}
           <g transform="translate(${-len / 2 + 34} 0) rotate(${(-ang * 180) / Math.PI})"><circle r="15" fill="#1d120b" stroke="${M.brass}" stroke-width="2"/><text y="7" text-anchor="middle" font-size="20" fill="${M.brassL}">${st.id}</text></g></g>`;
       }
       if (h && h.hasp) s += `<rect x="248" y="176" width="104" height="88" rx="16" fill="none" stroke="#ffe08a" stroke-width="4" stroke-dasharray="10 6"/>`;
@@ -289,7 +334,7 @@ export default {
       for (let y = 0; y < ROWS; y++) for (let x = 0; x < COLS; x++) {
         const hov = cursor.x === x && cursor.y === y;
         s += `<circle data-peg="${x},${y}" cx="${px(x)}" cy="${py(y)}" r="30" fill="${hov && sel != null ? "rgba(232,195,90,.18)" : "transparent"}" style="cursor:pointer"/>
-              <circle cx="${px(x)}" cy="${py(y)}" r="6" fill="#d8d2c4" stroke="#1d120b" pointer-events="none"/>`;
+              <circle cx="${px(x)}" cy="${py(y)}" r="6" fill="#d8d2c4" stroke="#1d120b" pointer-events="none"/>${jam.has(`p${x},${y}`) ? grit(px(x), py(y), 20) : ""}`;
       }
       const boltOpen = over ? 70 : 0;
       s += `<rect x="${px(3) + 10 + boltOpen}" y="${py(2) + 44}" width="${SP + 40}" height="12" fill="${M.brass}" stroke="${M.brassD}"/>
@@ -345,14 +390,15 @@ export default {
       if (F > 1.05) s = s.replace(/font-size="(\d+)"/g, (m, n) => `font-size="${Math.round(n * F)}"`);
       svg.innerHTML = s;
       const mv = el.querySelector("." + P + "moves");
-      mv.innerHTML = `MOVES ${String(moves).padStart(2, "0")}<small>par ${stage.par}</small>`;
-      mv.classList.toggle(P + "over", moves > stage.par);
+      mv.innerHTML = `MOVES ${String(moves).padStart(2, "0")}<small>par ${par()}${jam0 ? " (sand +" + jam0 + ")" : ""}</small>`;
+      mv.classList.toggle(P + "over", moves > par());
     }
 
     // ---- actions ----
     function pressLever(i) {
       if (over || busy) return;
       levCur = i;
+      if (jam.has("l" + i)) { brush("l" + i, `lever ${i + 1}'s pivot`); return; }
       changed = [i - 1, i, i + 1].filter((j) => j >= 0 && j < 5);
       for (const j of changed) levers[j] ^= 1;
       flash = performance.now() + (rm ? 0 : 450);
@@ -367,6 +413,7 @@ export default {
       const st = STRAPS.find((s) => s.id === id);
       strapCur = STRAPS.indexOf(st);
       if (lifted.has(id)) { say(`Strap ${id} is already lifted.`); draw(); return; }
+      if (jam.has("s" + id) && canLift(st)) { brush("s" + id, `strap ${id}'s buckle`); return; }
       bump();
       if (!canLift(st)) {
         const ids = STRAPS.filter((o) => !lifted.has(o.id) && o.z > st.z && CROSS[strapCur].includes(o.id)).map((o) => o.id);
@@ -393,6 +440,7 @@ export default {
       const s = tray[sel];
       const why = blocked(gears, x, y, s);
       if (why) { say(why, true); draw(); return; }
+      if (jam.has(`p${x},${y}`)) { brush(`p${x},${y}`, "that peg"); return; }
       gears.push({ x, y, s }); tray.splice(sel, 1); bump();
       sel = tray.length ? Math.min(sel, tray.length - 1) : null;
       const A = analyse(gears);
@@ -434,18 +482,30 @@ export default {
       timers.push(setTimeout(() => {
         const f = document.createElement("div");
         f.className = P + "frag";
-        f.innerHTML = `<div role="dialog" aria-label="Found"><small>${stage.name} · open in ${moves} move${moves === 1 ? "" : "s"} (par ${stage.par}), ${secs} s</small><p><i></i></p><p></p><button type="button" class="${P}btn">${si + 1 < STAGES.length ? "Next clasp" : "Close the books"}</button></div>`;
+        const more = si + 1 < STAGES.length;
+        leak += 20;   // the sand book has gone on leaking while he worked
+        f.innerHTML = `<div role="dialog" aria-label="Found">${pic(HEADING[stage.key], "chap")}<small>${stage.name} · open in ${moves} move${moves === 1 ? "" : "s"} (par ${par()}), ${secs} s</small><p><i></i></p><p></p>
+          ${more ? `<p class="${P}sandp" style="font-size:15px">More sand has run from the sand book onto the table.</p><button type="button" class="${P}btn" data-a="sweep">${pic("glyph-sweep", "g")}Sweep the table, then the next clasp</button><button type="button" class="${P}btn" data-a="next">Next clasp</button>` : `<button type="button" class="${P}btn" data-a="next">Close the books</button>`}</div>`;
         f.querySelector("i").textContent = stage.found;
         f.querySelectorAll("p")[1].textContent = FRAG[stage.frag];
-        el.appendChild(f);
-        const b = f.querySelector("button");
-        b.focus();
-        b.addEventListener("click", () => {
+        root.appendChild(f);
+        const bs = [...f.querySelectorAll("button")];
+        bs[0].focus();
+        const parAll = () => STAGES.reduce((a, s) => a + s.par, 0) + brushMoves;
+        for (const b of bs) b.addEventListener("click", () => {
           f.remove();
-          if (si + 1 < STAGES.length) setStage(si + 1);
+          if (b.dataset.a === "sweep") leak = Math.max(0, leak - 40);
+          if (more) { setStage(si + 1); if (b.dataset.a === "sweep") say(LINES.swept + " " + stage.help); }
           else {
-            const par = STAGES.reduce((a, s) => a + s.par, 0);
-            api.end({ outcome: "win", text: `${totalMoves <= par + 4 ? LINES.endPar : LINES.endOver} (${totalMoves} moves; par ${par}.)` });
+            const p = parAll();
+            const text = `${totalMoves <= p + 4 ? LINES.endPar : LINES.endOver} (${totalMoves} moves; par ${p}.)${brushMoves ? LINES.endSand.replace("{n}", brushMoves).replace("{s}", brushMoves === 1 ? "" : "s") : ""}`;
+            if (art.has("clasp-closing-clasp")) {
+              const c = document.createElement("div");
+              c.className = P + "endc";
+              c.innerHTML = `<figure>${pic("clasp-closing-clasp", "x", "A clasp being closed over a book that is still open.")}<figcaption>The books are closed again, one clasp at a time.</figcaption></figure>`;
+              root.appendChild(c);
+            }
+            api.end({ outcome: "win", text });
           }
         });
       }, rm ? 200 : 1100));
@@ -522,10 +582,12 @@ export default {
     intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}plate" role="dialog" aria-label="How to play">
       <h2>The Clasps</h2>
+      ${art.has(PLATE.lever) ? `<div class="${P}strip">${pic(PLATE.lever, "x")}${pic(PLATE.strap, "x")}${pic(PLATE.gear, "x")}</div>` : ""}
       <p class="${P}goal">${LINES.open}<br><b>Goal:</b> open all three, near par.</p>
       <dl>
         <dt>tap</dt><dd>Work the clasp: press a lever, lift a strap, place a gear.</dd>
         <dt>R</dt><dd>The reset lever puts a clasp back. It is free.</dd>
+        <dt>sand</dt><dd>A sanded part must be brushed first: tap it once (a move), then work it. Sweep between clasps.</dd>
         <dt>✦</dt><dd>The hint sigil warms after 90 s and marks one move.</dd>
       </dl>
       <button type="button" class="${P}btn ${P}go">Open the first book</button></div>`;

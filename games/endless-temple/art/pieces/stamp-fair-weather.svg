@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="stamp-fair-weather-t stamp-fair-weather-d">
+<title id="stamp-fair-weather-t">Tooling stamp: Fair Weather (want)</title>
+<desc id="stamp-fair-weather-d">A leather tile from the Want tray, stamped in gold: A whole sun, with one small cloud passing under it. Below it, the word FAIR WEATHER.</desc>
+<defs><clipPath id="stamp-fair-weather-clip1"><rect x="0" y="0" width="200" height="200" rx="10"/></clipPath><filter id="stamp-fair-weather-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="755"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><filter id="stamp-fair-weather-gr3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="389"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="stamp-fair-weather-rg4" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#140904" stop-opacity="0.5"/></radialGradient><linearGradient id="stamp-fair-weather-gold5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="84" spreadMethod="reflect"><stop offset="0" stop-color="#F0D488"/><stop offset="0.45" stop-color="#D4A23A"/><stop offset="0.75" stop-color="#9A6F1E"/><stop offset="1" stop-color="#D4A23A"/></linearGradient><filter id="stamp-fair-weather-gr6" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="198"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="200" height="200" fill="#3F4A36" rx="10"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-fair-weather-gr2)" clip-path="url(#stamp-fair-weather-clip1)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-fair-weather-gr3)" clip-path="url(#stamp-fair-weather-clip1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#stamp-fair-weather-rg4)" rx="10"/>
+<path d="M16,150 V56 Q16,16 100.0,16 Q184,16 184,56 V150Z" fill="#2B3425" opacity="0.8"/>
+<path d="M16,150 V56 Q16,16 100.0,16 Q184,16 184,56 V150Z" fill="none" stroke="#140904" stroke-width="5" opacity="0.5" transform="translate(1.5 2)"/>
+<path d="M16,150 V56 Q16,16 100.0,16 Q184,16 184,56 V150Z" fill="none" stroke="url(#stamp-fair-weather-gold5)" stroke-width="3"/>
+<path d="M23,143 V63 Q23,23 100.0,23 Q177,23 177,63 V143Z" fill="none" stroke="url(#stamp-fair-weather-gold5)" stroke-width="0.9"/>
+<g transform="translate(101.6 86.2) scale(1.06)" opacity="0.7">
+<path d="M-15,-8a15,15 0 1,0 30,0a15,15 0 1,0 -30,0" fill="#140904"/>
+<line x1="21" y1="-8" x2="30" y2="-8" fill="none" stroke="#140904" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="17" y1="4.3" x2="24.3" y2="9.6" fill="none" stroke="#140904" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="6.5" y1="12" x2="9.3" y2="20.5" fill="none" stroke="#140904" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="-6.5" y1="12" x2="-9.3" y2="20.5" fill="none" stroke="#140904" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="-17" y1="4.3" x2="-24.3" y2="9.6" fill="none" stroke="#140904" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="-21" y1="-8" x2="-30" y2="-8" fill="none" stroke="#140904" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="-17" y1="-20.3" x2="-24.3" y2="-25.6" fill="none" stroke="#140904" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="-6.5" y1="-28" x2="-9.3" y2="-36.5" fill="none" stroke="#140904" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="6.5" y1="-28" x2="9.3" y2="-36.5" fill="none" stroke="#140904" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="17" y1="-20.3" x2="24.3" y2="-25.6" fill="none" stroke="#140904" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8,36 a8,8 0 0,1 12,-8 a11,11 0 0,1 20,2 a7,7 0 0,1 4,6Z" fill="none" stroke="#140904" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g transform="translate(100 84) scale(1.06)" opacity="1">
+<path d="M-15,-8a15,15 0 1,0 30,0a15,15 0 1,0 -30,0" fill="url(#stamp-fair-weather-gold5)"/>
+<line x1="21" y1="-8" x2="30" y2="-8" fill="none" stroke="url(#stamp-fair-weather-gold5)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="17" y1="4.3" x2="24.3" y2="9.6" fill="none" stroke="url(#stamp-fair-weather-gold5)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="6.5" y1="12" x2="9.3" y2="20.5" fill="none" stroke="url(#stamp-fair-weather-gold5)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="-6.5" y1="12" x2="-9.3" y2="20.5" fill="none" stroke="url(#stamp-fair-weather-gold5)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="-17" y1="4.3" x2="-24.3" y2="9.6" fill="none" stroke="url(#stamp-fair-weather-gold5)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="-21" y1="-8" x2="-30" y2="-8" fill="none" stroke="url(#stamp-fair-weather-gold5)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="-17" y1="-20.3" x2="-24.3" y2="-25.6" fill="none" stroke="url(#stamp-fair-weather-gold5)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="-6.5" y1="-28" x2="-9.3" y2="-36.5" fill="none" stroke="url(#stamp-fair-weather-gold5)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="6.5" y1="-28" x2="9.3" y2="-36.5" fill="none" stroke="url(#stamp-fair-weather-gold5)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="17" y1="-20.3" x2="24.3" y2="-25.6" fill="none" stroke="url(#stamp-fair-weather-gold5)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8,36 a8,8 0 0,1 12,-8 a11,11 0 0,1 20,2 a7,7 0 0,1 4,6Z" fill="none" stroke="url(#stamp-fair-weather-gold5)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="100.5" y="180.7" font-size="13.5" font-family="serif" fill="#1A0B05" opacity="0.8" text-anchor="middle" letter-spacing="1.2" font-weight="bold">FAIR WEATHER</text>
+<text x="100" y="180" font-size="13.5" font-family="serif" fill="url(#stamp-fair-weather-gold5)" text-anchor="middle" letter-spacing="1.2" font-weight="bold">FAIR WEATHER</text>
+<text x="99.8" y="179.8" font-size="13.5" font-family="serif" fill="none" stroke="#F0D488" stroke-width="0.4" opacity="0.6" text-anchor="middle" letter-spacing="1.2" font-weight="bold">FAIR WEATHER</text>
+<path d="M30,160 H170" stroke="url(#stamp-fair-weather-gold5)" stroke-width="0.8" fill="none"/>
+<path d="M22,160 l4,-4 l4,4 l-4,4Z" fill="url(#stamp-fair-weather-gold5)"/>
+<path d="M178,160 l-4,-4 l-4,4 l4,4Z" fill="url(#stamp-fair-weather-gold5)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-fair-weather-gr6)"/>
+</svg>

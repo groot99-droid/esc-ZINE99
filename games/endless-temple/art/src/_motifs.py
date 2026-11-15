@@ -286,4 +286,210 @@ STAMPS = [
     ("end", "END", "want", end), ("proof", "PROOF", "want", proof), ("further", "FURTHER", "want", further),
     ("leaf", "LEAF", "want", leaf_m), ("wake", "WAKE", "want", wake), ("mark", "MARK", "want", mark),
 ]
+
+# ---- motifs for the other books' tiles and the three sand-book tiles without one (added 2026-11-15) ----
+def hollin(a, g):
+    """Three roofs of Hollin under one long cloud."""
+    a.path("M-42,36 V10 L-28,-4 L-14,10 V36Z M-8,36 V2 L8,-16 L24,2 V36Z M28,36 V14 L37,4 L46,14 V36Z", fill=g)
+    a.path("M-36,-24 a10,10 0 0,1 16,-8 a14,14 0 0,1 26,0 a10,10 0 0,1 16,8Z", **_S(g, 2.4))
+    a.path("M-2,36 v-12 h8 v12", **_S("#3a1a0e", 1.6))
+
+
+def hill(a, g):
+    """One round hill with a path up it."""
+    a.path("M-46,36 Q0,-44 46,36Z", fill=g, opacity=.85)
+    a.path("M-6,34 q14,-12 2,-24 q-10,-10 4,-22", **_S("#3a1a0e", 2))
+    a.path("M0,-12 v-22 l14,6 l-14,6", **_S(g, 2.4))
+
+
+def sky(a, g):
+    """Open sky: two clouds and three birds over a low horizon."""
+    a.path("M-46,38 H46", **_S(g, 2))
+    a.path("M-40,6 a9,9 0 0,1 14,-8 a12,12 0 0,1 22,0 a9,9 0 0,1 12,8Z M6,-18 a7,7 0 0,1 11,-6 a10,10 0 0,1 18,0 a7,7 0 0,1 9,6Z", **_S(g, 2.4))
+    a.path("M-30,-30 q5,-6 10,0 q5,-6 10,0 M10,16 q5,-6 10,0 q5,-6 10,0 M-18,24 q4,-5 8,0 q4,-5 8,0", **_S(g, 1.8))
+
+
+def bell_loft(a, g):
+    """A loft tower with its bell in the arch."""
+    a.path("M-22,40 V-14 L0,-40 L22,-14 V40", **_S(g, 3))
+    a.path("M-12,24 V0 A12,12 0 0,1 12,0 V24", **_S(g, 2))
+    a.path("M-8,14 Q-8,-2 0,-4 Q8,-2 8,14Z", fill=g)
+    _dots(a, g, [(0, 19)], 3)
+    a.path("M-34,40 H34", **_S(g, 2.4))
+
+
+def pell(a, g):
+    """A small child in a long scarf, looking up."""
+    a.path("M-8,40 L-4,4 Q2,-2 8,4 L12,40Z", fill=g)
+    _dots(a, g, [(2, -14)], 11)
+    a.path("M-8,0 Q-26,-6 -40,6 M-8,4 Q-24,6 -36,20", **_S(g, 3.4))
+    a.path("M22,-34 l6,10 M34,-28 l4,10 M26,-6 l4,10", **_S(g, 1.8))
+
+
+def clerk(a, g):
+    """The Clerk's tall-backed chair."""
+    a.path("M-16,40 V-38 H16 V40 M-16,-38 q16,-10 32,0", **_S(g, 3))
+    a.path("M-22,6 H22 V16 H-22Z", fill=g)
+    a.path("M-10,-28 V0 M0,-30 V0 M10,-28 V0 M-20,16 V40 M20,16 V40", **_S(g, 2))
+
+
+def bakers(a, g):
+    """A scored loaf, still steaming."""
+    a.path("M-40,22 Q-40,-8 0,-8 Q40,-8 40,22 Q0,34 -40,22Z", fill=g)
+    a.path("M-22,2 l10,14 M-4,-2 l10,16 M14,2 l10,14", **_S("#3a1a0e", 2.4))
+    a.path("M-14,-18 q-6,-8 0,-14 q6,-6 0,-12 M6,-18 q-6,-8 0,-14 q6,-6 0,-12", **_S(g, 2))
+
+
+def bell_ringer(a, g):
+    """A bell swung on its rope."""
+    a.path("M-4,-40 V-26", **_S(g, 2.4))
+    a.path("M-26,14 Q-22,-26 -2,-26 Q18,-26 22,14 Q-2,22 -26,14Z", fill=g, transform="rotate(14 -2 -26)")
+    _dots(a, g, [(-10, 24)], 4.5)
+    a.path("M30,-40 q-6,30 4,48 q6,14 -2,30", **_S(g, 2.4))
+    a.path("M-40,-6 q-6,8 0,16 M-46,-12 q-10,14 0,28", **_S(g, 1.6))
+
+
+def tomorrow(a, g):
+    """A sun not yet over the horizon, and an arrow toward it."""
+    a.path("M-46,10 H46", **_S(g, 2.4))
+    a.path("M4,10 A18,18 0 0,1 40,10Z", fill=g)
+    for k in range(5):
+        t = math.pi * (k + 0.5) / 5
+        a.line(22 - 24 * math.cos(t), 10 - 24 * math.sin(t), 22 - 32 * math.cos(t), 10 - 32 * math.sin(t), **_S(g, 2))
+    a.path("M-42,30 H-6 M-16,22 L-6,30 L-16,38", **_S(g, 2.6))
+
+
+def fair_weather(a, g):
+    """A whole sun, with one small cloud passing under it."""
+    _dots(a, g, [(0, -8)], 15)
+    for k in range(10):
+        t = 2 * math.pi * k / 10
+        a.line(21 * math.cos(t), -8 + 21 * math.sin(t), 30 * math.cos(t), -8 + 30 * math.sin(t), **_S(g, 2.2))
+    a.path("M8,36 a8,8 0 0,1 12,-8 a11,11 0 0,1 20,2 a7,7 0 0,1 4,6Z", **_S(g, 2.2))
+
+
+def road(a, g):
+    """A road running to one point."""
+    a.path("M-40,40 L-4,-34 M40,40 L4,-34", **_S(g, 3))
+    a.path("M0,38 V24 M0,14 V4 M0,-4 V-12 M0,-18 V-24", **_S(g, 2.2))
+    a.path("M-46,-34 H46", **_S(g, 1.6))
+
+
+def plain(a, g):
+    """A flat plain: one long horizon and little on it."""
+    a.path("M-46,6 H46", **_S(g, 3))
+    a.path("M-40,20 H-8 M4,20 H40 M-28,32 H24", **_S(g, 1.8))
+    a.path("M26,6 v-10 M26,-4 l-5,-6 M26,-4 l5,-6", **_S(g, 1.8))
+
+
+def grey_grass(a, g):
+    """Three tufts of long grass bent one way."""
+    for x, s in ((-28, .8), (0, 1.1), (28, .9)):
+        for k in range(5):
+            a.path(f"M{f(x + (k - 2) * 3)},36 Q{f(x + (k - 2) * 6 + 6 * s)},{f(36 - 30 * s)} {f(x + (k - 2) * 9 + 16 * s)},{f(36 - (44 - abs(k - 2) * 6) * s)}", **_S(g, 2))
+    a.path("M-46,38 H46", **_S(g, 2))
+
+
+def dusk(a, g):
+    """A sun half gone under the horizon, and the first two stars."""
+    a.path("M-46,8 H46", **_S(g, 2.4))
+    a.path("M-18,8 A18,18 0 0,1 18,8Z", fill=g, opacity=.8)
+    a.path("M-34,18 H34 M-24,28 H24 M-12,38 H12", **_S(g, 1.8))
+    for x, y, s in ((-30, -24, 1), (26, -30, .7)):
+        a.path(f"M{x},{y - 8 * s} L{x + 2 * s},{y - 2 * s} L{x + 8 * s},{y} L{x + 2 * s},{y + 2 * s} L{x},{y + 8 * s} L{x - 2 * s},{y + 2 * s} L{x - 8 * s},{y} L{x - 2 * s},{y - 2 * s}Z", fill=g)
+
+
+def oda(a, g):
+    """A hooded walker with a lantern on a pole."""
+    a.path("M-22,40 L-16,-6 Q-6,-34 8,-6 L12,40Z", fill=g)
+    a.path("M4,-10 L34,-34", **_S(g, 2.4))
+    a.path("M28,-30 h12 l-2,16 h-8Z", fill=g)
+    a.path("M-10,-8 q6,6 12,0", **_S("#3a1a0e", 1.8))
+
+
+def scribe(a, g):
+    """A quill, and the line it has just written."""
+    a.path("M30,-40 C6,-30 -8,-8 -16,18 L-10,20 C2,2 22,-10 34,-34Z", fill=g)
+    a.path("M-16,18 L-24,34", **_S(g, 2.6))
+    a.path("M-40,40 q8,-8 16,0 q8,8 16,0 q8,-8 16,0 q8,8 16,0", **_S(g, 2))
+
+
+def pilgrims(a, g):
+    """Three hooded pilgrims walking in a file."""
+    for x, s in ((-28, .8), (0, 1), (28, .8)):
+        a.path(f"M{f(x - 10 * s)},36 L{f(x - 7 * s)},{f(36 - 34 * s)} Q{f(x)},{f(36 - 60 * s)} {f(x + 7 * s)},{f(36 - 34 * s)} L{f(x + 10 * s)},36Z", fill=g)
+    a.path("M-46,40 H46", **_S(g, 2))
+
+
+def masks(a, g):
+    """One plain mask with its ties."""
+    a.path("M-24,-22 Q0,-38 24,-22 Q28,14 0,36 Q-28,14 -24,-22Z", **_S(g, 3))
+    a.path("M-16,-8 q7,-6 14,0 M2,-8 q7,-6 14,0", **_S(g, 2.6))
+    a.path("M-6,16 h12", **_S(g, 2))
+    a.path("M-24,-18 q-14,-2 -20,8 M24,-18 q14,-2 20,8", **_S(g, 1.8))
+
+
+def city(a, g):
+    """A far city: towers, a dome and one gate."""
+    a.path("M-44,36 V4 H-30 V36Z M-26,36 V-18 H-12 V36Z M12,36 V-28 H24 V36Z M30,36 V-4 H44 V36Z", fill=g)
+    a.path("M-8,36 V4 A8,10 0 0,1 8,4 V36", **_S(g, 2.6))
+    a.path("M-19,-18 V-30 M18,-28 V-40", **_S(g, 2))
+    a.path("M-46,38 H46", **_S(g, 2))
+
+
+def answer(a, g):
+    """A key."""
+    a.path("M-10,-14 m-16,0 a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0", **_S(g, 3.4))
+    a.path("M2,-2 L34,30 M24,20 l-8,8 M32,28 l-8,8", **_S(g, 3.4))
+
+
+def edge(a, g):
+    """Ground that stops, and what falls from it."""
+    a.path("M-46,-6 H6 V40", **_S(g, 3.2))
+    a.path("M-40,6 H-8 M-36,18 H-6 M-40,30 H-8", **_S(g, 1.6))
+    _dots(a, g, [(16, 2), (22, 14), (18, 26), (28, 34), (34, 20)], 2)
+
+
+def ending(a, g):
+    """A closed book with its ribbon out."""
+    a.path("M-30,-34 H26 Q34,-34 34,-26 V34 H-30Z", **_S(g, 3))
+    a.path("M-20,-34 V34 M-8,-14 H22 M-8,-2 H22", **_S(g, 2))
+    a.path("M6,34 V46 L12,40 L18,46 V34Z", fill=g)
+
+
+def never_ending(a, g):
+    """An endless loop over a line of dunes."""
+    a.path("M0,-12 C-12,-34 -40,-30 -40,-12 C-40,6 -12,10 0,-12 C12,-34 40,-30 40,-12 C40,6 12,10 0,-12Z", **_S(g, 3.2))
+    a.path("M-46,34 Q-30,18 -16,34 Q0,18 16,34 Q30,18 46,34", **_S(g, 2.2))
+
+
+def zorlop(a, g):
+    """Three broad woody leaves, fallen: the beast itself is never shown."""
+    for x, y, r in ((-20, 8, -40), (4, -6, 5), (24, 14, 50)):
+        a.path("M0,26 C-20,10 -18,-20 0,-34 C18,-20 20,10 0,26Z M0,26 V-28", transform=f"translate({x} {y}) rotate({r})", **_S(g, 2.6))
+    a.path("M-40,40 H40", **_S(g, 1.8))
+
+
+def past_the_mark(a, g):
+    """The marker flag, and a track of prints going on beyond it."""
+    a.path("M-26,36 V-34 L-6,-26 L-26,-18", **_S(g, 3))
+    _dots(a, g, [(-36, 36), (-26, 38), (-16, 36)], 3)
+    _dots(a, g, [(0, 30), (12, 22), (24, 26), (34, 16), (44, 20)], 2.4)
+    a.path("M28,-2 L44,-2 M38,-8 L44,-2 L38,4", **_S(g, 2.2))
+
+
+STAMPS_BASE = len(STAMPS)
+STAMPS += [
+    ("hollin", "HOLLIN", "place", hollin), ("hill", "HILL", "place", hill), ("sky", "SKY", "place", sky),
+    ("bell-loft", "BELL-LOFT", "place", bell_loft), ("pell", "PELL", "person", pell), ("clerk", "CLERK", "person", clerk),
+    ("bakers", "BAKERS", "person", bakers), ("bell-ringer", "BELL-RINGER", "person", bell_ringer),
+    ("tomorrow", "TOMORROW", "want", tomorrow), ("windows", "WINDOWS", "want", window),
+    ("fair-weather", "FAIR WEATHER", "want", fair_weather),
+    ("road", "ROAD", "place", road), ("plain", "PLAIN", "place", plain), ("grey-grass", "GREY GRASS", "place", grey_grass),
+    ("dusk", "DUSK", "place", dusk), ("oda", "ODA", "person", oda), ("scribe", "SCRIBE", "person", scribe),
+    ("pilgrims", "PILGRIMS", "person", pilgrims), ("masks", "MASKS", "person", masks), ("city", "CITY", "want", city),
+    ("answer", "ANSWER", "want", answer), ("edge", "EDGE", "want", edge), ("ending", "ENDING", "want", ending),
+    ("never-ending", "NEVER-ENDING", "place", never_ending), ("zorlop", "ZORLOP", "person", zorlop),
+    ("past-the-mark", "PAST THE MARK", "want", past_the_mark),
+]
 EMBLEMS = [window, storyteller, broom, sand_sea, umbrella, mark, lanterns, candle, herd]

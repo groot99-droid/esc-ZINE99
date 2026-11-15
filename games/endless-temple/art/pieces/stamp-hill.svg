@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="stamp-hill-t stamp-hill-d">
+<title id="stamp-hill-t">Tooling stamp: Hill (place)</title>
+<desc id="stamp-hill-d">A leather tile from the Place tray, stamped in gold: One round hill with a path up it. Below it, the word HILL.</desc>
+<defs><clipPath id="stamp-hill-clip1"><rect x="0" y="0" width="200" height="200" rx="10"/></clipPath><filter id="stamp-hill-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="410"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><filter id="stamp-hill-gr3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="46"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="stamp-hill-rg4" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#140904" stop-opacity="0.5"/></radialGradient><linearGradient id="stamp-hill-gold5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="84" spreadMethod="reflect"><stop offset="0" stop-color="#F0D488"/><stop offset="0.45" stop-color="#D4A23A"/><stop offset="0.75" stop-color="#9A6F1E"/><stop offset="1" stop-color="#D4A23A"/></linearGradient><filter id="stamp-hill-gr6" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="453"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="200" height="200" fill="#6B4423" rx="10"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-hill-gr2)" clip-path="url(#stamp-hill-clip1)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-hill-gr3)" clip-path="url(#stamp-hill-clip1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#stamp-hill-rg4)" rx="10"/>
+<path d="M16,16 H184 V150 H16Z" fill="#4E3018" opacity="0.8"/>
+<path d="M16,16 H184 V150 H16Z" fill="none" stroke="#140904" stroke-width="5" opacity="0.5" transform="translate(1.5 2)"/>
+<path d="M16,16 H184 V150 H16Z" fill="none" stroke="url(#stamp-hill-gold5)" stroke-width="3"/>
+<path d="M23,23 H177 V143 H23Z" fill="none" stroke="url(#stamp-hill-gold5)" stroke-width="0.9"/>
+<g transform="translate(101.6 86.2) scale(1.06)" opacity="0.7">
+<path d="M-46,36 Q0,-44 46,36Z" fill="#140904" opacity="0.8"/>
+<path d="M-6,34 q14,-12 2,-24 q-10,-10 4,-22" fill="none" stroke="#3a1a0e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0,-12 v-22 l14,6 l-14,6" fill="none" stroke="#140904" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g transform="translate(100 84) scale(1.06)" opacity="1">
+<path d="M-46,36 Q0,-44 46,36Z" fill="url(#stamp-hill-gold5)" opacity="0.8"/>
+<path d="M-6,34 q14,-12 2,-24 q-10,-10 4,-22" fill="none" stroke="#3a1a0e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0,-12 v-22 l14,6 l-14,6" fill="none" stroke="url(#stamp-hill-gold5)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="100.7" y="180.9" font-size="19" font-family="serif" fill="#1A0B05" opacity="0.8" text-anchor="middle" letter-spacing="2.4" font-weight="bold">HILL</text>
+<text x="100" y="180" font-size="19" font-family="serif" fill="url(#stamp-hill-gold5)" text-anchor="middle" letter-spacing="2.4" font-weight="bold">HILL</text>
+<text x="99.8" y="179.7" font-size="19" font-family="serif" fill="none" stroke="#F0D488" stroke-width="0.4" opacity="0.6" text-anchor="middle" letter-spacing="2.4" font-weight="bold">HILL</text>
+<path d="M30,160 H170" stroke="url(#stamp-hill-gold5)" stroke-width="0.8" fill="none"/>
+<path d="M22,160 l4,-4 l4,4 l-4,4Z" fill="url(#stamp-hill-gold5)"/>
+<path d="M178,160 l-4,-4 l-4,4 l4,4Z" fill="url(#stamp-hill-gold5)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-hill-gr6)"/>
+</svg>

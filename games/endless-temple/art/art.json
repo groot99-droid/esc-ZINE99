@@ -1,6 +1,6 @@
 {
  "game": "endless-temple",
- "count": 134,
+ "count": 164,
  "assets": [
   {
    "id": "heading-c1",
@@ -113,6 +113,38 @@
    "w": 480,
    "h": 600,
    "row": "2D figures: Xandri on leaf shoes, Pell, Oda, Elaris side-on"
+  },
+  {
+   "id": "hand-elaris",
+   "group": "figures",
+   "title": "The hand that brings the cup: Elaris",
+   "w": 600,
+   "h": 300,
+   "row": "Play sprites and the two hands (added for the modes, 2026-11-15)"
+  },
+  {
+   "id": "hand-ringed",
+   "group": "figures",
+   "title": "The other hand: older, with a brass ring",
+   "w": 600,
+   "h": 300,
+   "row": "Play sprites and the two hands (added for the modes, 2026-11-15)"
+  },
+  {
+   "id": "sprite-elaris",
+   "group": "figures",
+   "title": "Sprite: Elaris side-on, no ground",
+   "w": 480,
+   "h": 600,
+   "row": "Play sprites and the two hands (added for the modes, 2026-11-15)"
+  },
+  {
+   "id": "sprite-xandri",
+   "group": "figures",
+   "title": "Sprite: Xandri on leaf shoes, no ground",
+   "w": 480,
+   "h": 600,
+   "row": "Play sprites and the two hands (added for the modes, 2026-11-15)"
   },
   {
    "id": "watcher-c2",
@@ -419,6 +451,54 @@
    "row": "Stacks tile set (12) and mote sprites (4)"
   },
   {
+   "id": "stamp-answer",
+   "group": "pieces",
+   "title": "Tooling stamp: Answer (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-bakers",
+   "group": "pieces",
+   "title": "Tooling stamp: Bakers (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-bell-loft",
+   "group": "pieces",
+   "title": "Tooling stamp: Bell-Loft (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-bell-ringer",
+   "group": "pieces",
+   "title": "Tooling stamp: Bell-Ringer (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-city",
+   "group": "pieces",
+   "title": "Tooling stamp: City (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-clerk",
+   "group": "pieces",
+   "title": "Tooling stamp: Clerk (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
    "id": "stamp-desert",
    "group": "pieces",
    "title": "Tooling stamp: Desert (place)",
@@ -435,12 +515,36 @@
    "row": "Tooling stamps (24) and cartouches (4)"
   },
   {
+   "id": "stamp-dusk",
+   "group": "pieces",
+   "title": "Tooling stamp: Dusk (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-edge",
+   "group": "pieces",
+   "title": "Tooling stamp: Edge (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
    "id": "stamp-end",
    "group": "pieces",
    "title": "Tooling stamp: End (want)",
    "w": 200,
    "h": 200,
    "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-ending",
+   "group": "pieces",
+   "title": "Tooling stamp: Ending (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
   },
   {
    "id": "stamp-eternity",
@@ -459,6 +563,14 @@
    "row": "Tooling stamps (24) and cartouches (4)"
   },
   {
+   "id": "stamp-fair-weather",
+   "group": "pieces",
+   "title": "Tooling stamp: Fair Weather (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
    "id": "stamp-father",
    "group": "pieces",
    "title": "Tooling stamp: Father (person)",
@@ -473,6 +585,30 @@
    "w": 200,
    "h": 200,
    "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-grey-grass",
+   "group": "pieces",
+   "title": "Tooling stamp: Grey Grass (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-hill",
+   "group": "pieces",
+   "title": "Tooling stamp: Hill (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-hollin",
+   "group": "pieces",
+   "title": "Tooling stamp: Hollin (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
   },
   {
    "id": "stamp-leaf",
@@ -499,12 +635,68 @@
    "row": "Tooling stamps (24) and cartouches (4)"
   },
   {
+   "id": "stamp-masks",
+   "group": "pieces",
+   "title": "Tooling stamp: Masks (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
    "id": "stamp-moon",
    "group": "pieces",
    "title": "Tooling stamp: Moon (place)",
    "w": 200,
    "h": 200,
    "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-never-ending",
+   "group": "pieces",
+   "title": "Tooling stamp: Never-Ending (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-oda",
+   "group": "pieces",
+   "title": "Tooling stamp: Oda (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-past-the-mark",
+   "group": "pieces",
+   "title": "Tooling stamp: Past The Mark (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-pell",
+   "group": "pieces",
+   "title": "Tooling stamp: Pell (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-pilgrims",
+   "group": "pieces",
+   "title": "Tooling stamp: Pilgrims (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-plain",
+   "group": "pieces",
+   "title": "Tooling stamp: Plain (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
   },
   {
    "id": "stamp-proof",
@@ -515,12 +707,28 @@
    "row": "Tooling stamps (24) and cartouches (4)"
   },
   {
+   "id": "stamp-road",
+   "group": "pieces",
+   "title": "Tooling stamp: Road (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
    "id": "stamp-sand-sea",
    "group": "pieces",
    "title": "Tooling stamp: Sand Sea (place)",
    "w": 200,
    "h": 200,
    "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-scribe",
+   "group": "pieces",
+   "title": "Tooling stamp: Scribe (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
   },
   {
    "id": "stamp-shaman",
@@ -539,6 +747,14 @@
    "row": "Tooling stamps (24) and cartouches (4)"
   },
   {
+   "id": "stamp-sky",
+   "group": "pieces",
+   "title": "Tooling stamp: Sky (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
    "id": "stamp-son",
    "group": "pieces",
    "title": "Tooling stamp: Son (person)",
@@ -553,6 +769,14 @@
    "w": 200,
    "h": 200,
    "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-tomorrow",
+   "group": "pieces",
+   "title": "Tooling stamp: Tomorrow (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
   },
   {
    "id": "stamp-vines",
@@ -577,6 +801,14 @@
    "w": 200,
    "h": 200,
    "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-windows",
+   "group": "pieces",
+   "title": "Tooling stamp: Windows (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
   },
   {
    "id": "stamp-wondering",
@@ -609,6 +841,14 @@
    "w": 200,
    "h": 200,
    "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-zorlop",
+   "group": "pieces",
+   "title": "Tooling stamp: Zorlop (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
   },
   {
    "id": "frontis-c1",

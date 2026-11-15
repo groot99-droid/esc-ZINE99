@@ -49,7 +49,8 @@ def stamp(a: Art, idx):
 
 
 for _i, (_sid, _word, _thread, _fn) in enumerate(M.STAMPS):
-    K.reg(f"stamp-{_sid}", "pieces", f"Tooling stamp: {_word.title()} ({_thread})", 200, 200, ROW,
+    K.reg(f"stamp-{_sid}", "pieces", f"Tooling stamp: {_word.title()} ({_thread})", 200, 200,
+          ROW if _i < M.STAMPS_BASE else "Tooling stamps for the other books' tiles (26, added 2026-11-15)",
           f"A leather tile from the {_thread.title()} tray, stamped in gold: " + " ".join((_fn.__doc__ or
           {"desert": "a half sun on a flat horizon.", "eternity": "dune lines closing on a far point.",
            "sand-sea": "a breaking wave of sand.", "dunes": "three dunes in shrinking weights of gold.",

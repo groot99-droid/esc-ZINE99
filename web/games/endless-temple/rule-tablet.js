@@ -11,6 +11,9 @@
 // Test draws the watcher's eye: +20 scrutiny, and at 100 he carves a rule that closes the gap);
 // Break (unlocked after the first Test): go on anyway, and the broken rule is remembered.
 // Win: the gods' loophole. Lose: break the gods' rules. The shrine-store result colours the ending.
+// Art (api.art): each tablet's drawn face on its opening card and on the result, the chapter
+// headings, and the watcher's shadow (figures/watcher-c2, -c6) falling across the tablet's edge as
+// scrutiny rises. The CSS shadow stays as the fallback.
 
 const SOURCE_RULES_LINE = "They had rules for everything, and it was stifling.";
 
@@ -114,6 +117,9 @@ export default {
     const P = "endless-temple-rule-tablet-";
     const clay = { hi: "#dcb683", mid: "#c08a55", lo: "#8f5f35", ink: "#3d2412", dark: "#1d140d", red: "#a3271a", cream: "#f3ead2", gold: "#f0b36a" };
     const timers = [];
+    const art = api.art || { has: () => false, url: () => "", info: () => null };
+    const pic = (id, cls, alt = "") => (art.has(id) ? `<img class="${P}${cls}" src="${art.url(id)}" alt="${alt}" draggable="false">` : "");
+    const FACE = { c2: "tablet-c2-shrine-store", c6: "tablet-c6-gods-rules" }, HEAD = { c2: "heading-c2", c6: "heading-c6" }, WATCH = { c2: "watcher-c2", c6: "watcher-c6" };
     const rm = api.reducedMotion;
     const losses = api.store.get("lossStreak", 0);
     const gentle = losses >= 2;
@@ -133,6 +139,14 @@ export default {
     @keyframes ${P}shake{20%{transform:translateX(-6px)}40%{transform:translateX(5px)}60%{transform:translateX(-3px)}80%{transform:translateX(2px)}}
     .${P}tab.${P}glow{box-shadow:0 0 0 3px ${clay.gold},0 0 40px rgba(240,179,106,.7),inset 0 -6px 14px rgba(60,30,10,.45)}
     .${P}shadow{position:absolute;inset:0;pointer-events:none;background:linear-gradient(270deg,rgba(15,8,4,.8),rgba(15,8,4,0) 50%);opacity:0;transition:opacity .8s}
+    .${P}watch{position:absolute;right:0;top:0;height:100%;width:min(36%,300px);object-fit:cover;object-position:right center;pointer-events:none;opacity:0;transition:opacity .8s;mix-blend-mode:multiply;-webkit-mask-image:linear-gradient(to left,#000 45%,transparent);mask-image:linear-gradient(to left,#000 45%,transparent)}
+    .${P}card2 img.${P}hd{display:block;width:100%;height:auto;border-radius:3px;margin:0 0 10px}
+    .${P}card2 img.${P}face{float:right;width:112px;height:auto;margin:0 0 8px 12px;border-radius:6px;box-shadow:0 4px 10px rgba(40,20,8,.5)}
+    .${P}card2 img.${P}bigface{display:block;width:min(240px,60%);height:auto;margin:0 auto 10px;border-radius:8px;box-shadow:0 6px 14px rgba(40,20,8,.55)}
+    .${P}endc{position:absolute;inset:0;z-index:6;display:grid;place-items:center;background:rgba(10,6,3,.84);padding:16px 16px 170px;box-sizing:border-box;overflow:auto}
+    .${P}endc figure{margin:0;text-align:center;color:${clay.cream};font-family:'IM Fell English',Georgia,serif;font-size:22px}
+    .${P}endc img{display:block;width:min(250px,60vw);height:auto;margin:0 auto 10px;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.7)}
+    .${P}endc.${P}lost img{filter:grayscale(.7) brightness(.8)}
     .${P}reg{position:relative;display:grid;grid-template-columns:48px 1fr;gap:8px;align-items:center;padding:8px 4px;border-bottom:2px solid rgba(90,55,25,.45);box-shadow:0 1px 0 rgba(255,235,200,.45)}
     .${P}reg:last-child{border-bottom:0;box-shadow:none}
     .${P}reg svg{width:44px;height:28px;fill:${clay.ink};stroke:${clay.ink}}
@@ -194,7 +208,7 @@ export default {
     el.innerHTML = `
       <div class="${P}wrap">
         <header class="${P}head"><h2 class="${P}title"></h2><span class="${P}count"></span><p class="${P}beat" aria-live="polite"></p></header>
-        <section class="${P}tab" aria-label="The tablet"><div class="${P}regs"></div><div class="${P}gloss" aria-live="polite">Tap an underlined word to read what it means.</div><div class="${P}shadow"></div></section>
+        <section class="${P}tab" aria-label="The tablet"><div class="${P}regs"></div><div class="${P}gloss" aria-live="polite">Tap an underlined word to read what it means.</div><div class="${P}shadow"></div><img class="${P}watch" alt="" hidden></section>
         <aside class="${P}side">
           <div class="${P}card ${P}want"><small>The Want</small><span class="${P}wanttext"></span></div>
           <div class="${P}stones"><button type="button" class="${P}stone ${P}test">Test<small>T</small></button><button type="button" class="${P}stone ${P}brk" hidden>Break<small>B</small></button></div>
@@ -261,7 +275,12 @@ export default {
         regs.appendChild(row);
       }
       carved = false;
-      q("shadow").style.opacity = scrutiny >= 100 ? 1 : scrutiny >= 60 ? 0.65 : scrutiny >= 40 ? 0.25 : 0;
+      const lvl = scrutiny >= 100 ? 1 : scrutiny >= 60 ? 0.65 : scrutiny >= 40 ? 0.25 : 0;
+      const wi = q("watch");
+      if (art.has(WATCH[T.id])) {
+        if (wi.dataset.id !== T.id) { wi.src = art.url(WATCH[T.id]); wi.dataset.id = T.id; wi.alt = `The shadow of ${T.who} on the tablet's edge.`; }
+        wi.hidden = false; wi.style.opacity = lvl ? Math.min(0.92, lvl + 0.2) : 0; q("shadow").style.opacity = 0;
+      } else { wi.hidden = true; q("shadow").style.opacity = lvl; }
       el.querySelectorAll("." + P + "pips i").forEach((p, i) => p.classList.toggle(P + "on", i < scrutiny / 20));
     }
     function drawPlan() {
@@ -343,8 +362,19 @@ export default {
     function next(ns) {
       timers.push(setTimeout(() => {
         if (ti + 1 < TABLETS.length) {
-          over = false; tested = tested; setTablet(ti + 1);
-          q("beat").textContent = LINES.bridge + " " + LINES.c6open;
+          const go = () => { over = false; el.scrollTop = 0; setTablet(ti + 1); q("beat").textContent = LINES.bridge + " " + LINES.c6open; };
+          const NT = TABLETS[ti + 1];
+          if (!art.has(FACE[NT.id])) { go(); return; }
+          // the chapter card between the two tablets
+          const c = document.createElement("div");
+          c.className = P + "intro";
+          c.innerHTML = `<div class="${P}card2" role="dialog" aria-label="The next tablet">${pic(HEAD[NT.id], "hd")}${pic(FACE[NT.id], "bigface", "The gods' rules, pressed in clay.")}
+            <p class="${P}goal" style="border:0;text-align:center"></p><button type="button" class="${P}go" style="display:block;margin:0 auto">Read the tablet</button></div>`;
+          c.querySelector("p").textContent = LINES.bridge;
+          root.appendChild(c);
+          const b = c.querySelector("button");
+          b.addEventListener("click", () => { c.remove(); go(); q("tray").querySelector("button")?.focus(); });
+          b.focus();
           return;
         }
         const win = results[1] === "loophole";
@@ -352,6 +382,12 @@ export default {
         let text;
         if (win) text = results[0] === "loophole" ? LINES.endWinBoth : LINES.endWinMixed;
         else text = `${LINES.endLose} ${ns} remembered.${results[0] === "loophole" ? " The shrine-store, at least, he left clean." : ""}`;
+        if (art.has(FACE.c6)) {
+          const c = document.createElement("div");
+          c.className = P + "endc" + (win ? "" : " " + P + "lost");
+          c.innerHTML = `<figure>${pic(FACE.c6, "x", "The gods' rules.")}<div>${win ? "The tablet holds" : "A rule is written down against him"}</div></figure>`;
+          root.appendChild(c);
+        }
         api.end({ outcome: win ? "win" : "lose", text });
       }, rm ? 400 : 2400));
     }
@@ -373,6 +409,7 @@ export default {
     const intro = document.createElement("div");
     intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}card2" role="dialog" aria-label="How to play">
+      ${pic(HEAD.c2, "hd")}${pic(FACE.c2, "face", "The shrine-store tablet.")}
       <h2>The Rule Tablet</h2>
       <q>“${SOURCE_RULES_LINE}”</q>
       <p class="${P}goal"><b>Goal:</b> find a plan of Ways that gets what Xandri wants and breaks no rule, read word by word.</p>

@@ -6,6 +6,15 @@
 // Actions: spoon (a jar), return a spoon, the steep dial, Taste (three sips that show the cup's
 // numbers before you pour; unlocked at the second book or after a failed pour), Pour.
 // Win: the three books open (the last pot then colours the ending). Lose: the kettle runs dry.
+// Accepted development, phase 1 (DESIGN.md "Accepted development (2026-11-15)"):
+//   Sweep: the sand book leaks onto the table; a swept pile goes into a ninth jar, gutter sand
+//     (depth 2, length 0, binding -3), two spoons at most.
+//   The ledger opens (L): its front pages are the jars and recipes, its last recipe is unfinished.
+//     At the last pot it can be turned over: the back pages are a count of days that stops at forty.
+//   The Parting Cup: seer's sprig and two spoons of gutter sand at mark 3 (depth 8, binding -5),
+//     brewed as the last pot. No cup without gutter sand reaches depth 7 at binding -4.
+// Art (api.art): the nine jar labels, the five cup rings, the six ledger pages, chapter headings,
+// a frontispiece, glyphs, fleurons and the thread ring. Every element falls back to the old drawing.
 // The source line in the how-to-play is DESIGN.md section 3 beat 10, verbatim, from
 // creative-writing/vault/02_Novels/05_The_Endless_Temple_-_Elaris_Sel_Marden.md.
 
@@ -20,7 +29,10 @@ const HERBS = {
   storm: { name: "Stormcress", d: 2, l: 0, b: -1, col: "#5d6f86" },
   ember: { name: "Ember root", d: 2, l: 1, b: 2, col: "#a8432c" },
   lampash: { name: "Lamp-ash", d: 0, l: 2, b: -1, col: "#6b6660" },
+  sand: { name: "Gutter sand", d: 2, l: 0, b: -3, col: "#b9bec6" },
 };
+const LABEL = { mint: "label-mint", sprig: "label-seers-sprig", honeymoss: "label-honeymoss", clove: "label-clove-bark", dunevine: "label-dune-vine-pith", storm: "label-stormcress", ember: "label-ember-root", lampash: "label-lamp-ash", sand: "label-gutter-sand" };
+const SAND_MAX = 2;
 // Narration written for the game (not quotations). The ledger lines are the design's hint form.
 const LINES = {
   open: "Morning in the pantry. Three books wait by the reading chair, and the kettle holds six pours.",
@@ -35,7 +47,30 @@ const LINES = {
   endHeavy: "Three books open, and the last cup is heavy with binding. The ring on the table is dark, and one more page sounds very reasonable.",
   lose: "The kettle is dry, and “{book}” stays shut. Opened {n} of 3.",
   gentle: "The kettle has been filled to the brim this time, and the ledger is a page ahead.",
+  sandStart: "Overnight the sand book has leaked a small drift onto the table.",
+  sandMore: "While he read, the sand book leaked again: another drift on the table.",
+  swept: "Swept. The pan goes into a ninth jar instead of out of the window: gutter sand.",
+  sweptFull: "Swept. The ninth jar is full, so this panful goes out of the window.",
+  noSand: "The table is clean. There is nothing to sweep.",
+  turnOver: "Elaris turns the ledger over. The back pages are not recipes. They are a count of days, in the same hand.",
+  lastPotBack: "The ledger's last recipe is unfinished, and its back pages stop at forty.",
+  // DEEP_DIVE.md sample line, written for the game:
+  day31: "Day thirty-one. I meant to turn at the cairn. I did not turn. I cannot say why.",
+  endParting: "The Parting Cup: seer's sprig and what the book gave back, depth {d} and binding {b}. It is the lightest deep cup the pantry can make, the only one that lets a reader close a book that is still going. Elaris sets it by the sand book and, for now, only looks at it.",
+  endSandLeft: " {n} drift{s} of sand still lie{v} on the table.",
 };
+// The ledger's pages (art/documents). The captions repeat what the page says, for small screens.
+const LEDGER_FRONT = [
+  { art: "ledger-front-1-jars", cap: "Jars kept in the pantry: each herb with its depth, length and binding." },
+  { art: "ledger-front-2-recipes", cap: "What opens a book: sprig and honeymoss for depth 3; sprig, sprig, clove for a long sand reading. And a note: for long sand, clove… and something from the sand itself." },
+  { art: "ledger-front-3-unfinished", cap: "The last recipe is unfinished: “For leaving a book that is still going: sprig, and what the book gives back”." },
+];
+const LEDGER_BACK = [
+  { art: "ledger-back-1-days", cap: "The back pages: a count of days in fives. Five, ten, fifteen, twenty." },
+  { art: "ledger-back-2-thirty-one", cap: "“Day thirty-one. I meant to turn at the cairn. I did not turn. I cannot say why.”" },
+  { art: "ledger-back-3-forty", cap: "The count stops at forty. Pinned over it, a slip from a journal: “Day forty. The leaves hold. The track goes on.” Under it, in the ledger's hand: “I did not turn.”" },
+];
+const CHAPTER_OF = { g_tea_c3: "heading-c3", g_tea_c5: "heading-c5", g_tea_c7: "heading-c7", g_tea_c8: "heading-c8" };
 const BOOKS = [
   { scene: "g_tea_c3", book: "The sand book, again", req: { dmin: 5, lmin: 4 }, jars: ["sprig", "honeymoss", "clove"],
     note: "A long reading of the sand sea.",
@@ -47,7 +82,11 @@ const BOOKS = [
     note: "A long road, walked by masked pilgrims.",
     ledger: ["A long road: dune-vine, and let the kettle sit a while…", "Dune-vine twice, and the sprig for depth…", "Sprig, dune-vine, dune-vine. Mark 4."] },
 ];
-const LAST = { scene: "g_tea_c8", book: "The last pot", req: {}, jars: Object.keys(HERBS).filter((k) => k !== "mint"), note: LINES.lastPot, ledger: ["No recipe. The binding is yours to choose."] };
+const LAST = { scene: "g_tea_c8", book: "The last pot", req: {}, jars: Object.keys(HERBS).filter((k) => k !== "mint" && k !== "sand"), note: LINES.lastPot,
+  ledger: ["No recipe. The binding is yours to choose. (The ledger has more pages: open it.)"],
+  ledgerBack: ["“…sprig, and what the book gives back.” What does a sand book give back to the table?", "Sprig, and the swept sand, twice over. Leave the dial where it rests.", "Sprig, gutter sand, gutter sand. Mark 3."] };
+// The Parting Cup: deep and unbinding at once. Only gutter sand reaches it.
+const isParting = (spoons, r) => spoons.includes("sprig") && spoons.includes("sand") && r.d >= 7 && r.b <= -4;
 const DIAL = { 1: [0.5, 0], 2: [0.75, 0], 3: [1, 0], 4: [1, 1], 5: [1, 2] };
 const DIAL_NOTE = { 1: "depth halved", 2: "depth ×¾", 3: "neutral", 4: "+1 length and binding", 5: "+2 length and binding" };
 
@@ -90,6 +129,7 @@ export default {
     const gentle = losses >= 2;
     const POURS = gentle ? 8 : 6;
     const timers = [];
+    const art = api.art || { has: () => false, url: () => "", info: () => null };
     const css = document.createElement("style");
     css.textContent = `
     .${P}root{position:absolute;inset:0;overflow:auto;background:#e7dcc0;color:${pal.sepia};font-family:'EB Garamond',Georgia,serif;font-size:16px;
@@ -110,7 +150,7 @@ export default {
     @media (max-width:860px){.${P}grid{grid-template-columns:1fr}}
     .${P}panel{background:${pal.cream};border:1.5px solid ${pal.walnut};outline:1px solid ${pal.honey};outline-offset:-6px;border-radius:44px 44px 6px 6px;padding:22px 14px 14px;position:relative}
     .${P}panel h3{margin:0 0 8px;text-align:center;font-variant:small-caps;letter-spacing:.16em;font-weight:600;font-size:15px;color:${pal.walnut}}
-    .${P}jars{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+    .${P}jars{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px 8px}
     .${P}jar{font:inherit;color:inherit;cursor:pointer;background:transparent;border:0;padding:0;display:flex;flex-direction:column;align-items:center;transition:transform .15s}
     .${P}jar:hover:not(:disabled),.${P}jar:focus-visible{transform:translateY(-4px);outline:none}
     .${P}jar:disabled{opacity:.45;cursor:not-allowed}
@@ -121,7 +161,34 @@ export default {
     .${P}lab{background:#fbf6e8;border:1px solid ${pal.walnut};border-radius:18px 18px 3px 3px;padding:4px 3px 0;text-align:center}
     .${P}lab b{display:block;font-variant:small-caps;font-size:14px;letter-spacing:.03em;line-height:1.05;min-height:2.1em}
     .${P}fleck{height:10px;margin-top:4px;border-radius:0 0 8px 8px}
-    .${P}key{font-size:14px;margin:10px 4px 0;line-height:1.35}
+    .${P}key{font-size:14px;margin:10px 4px 0;line-height:1.35;display:flex;gap:8px;align-items:center}
+    .${P}key img{width:44px;flex:none;border-radius:4px}
+    .${P}jar img.${P}lbl{display:block;width:100%;height:auto;border-radius:6px 6px 12px 12px;box-shadow:0 2px 5px rgba(58,42,28,.35);transition:box-shadow .15s}
+    .${P}jar:hover:not(:disabled) img.${P}lbl,.${P}jar:focus-visible img.${P}lbl{box-shadow:0 0 0 3px ${pal.honey}}
+    .${P}jar.${P}new img.${P}lbl{box-shadow:0 0 0 3px ${pal.honey}}
+    .${P}cap{display:block;text-align:center;font-size:14px;line-height:1.15;margin-top:4px}
+    .${P}cap b{display:block;font-variant:small-caps;letter-spacing:.03em}
+    .${P}cap i{font-style:normal;font-size:13px;white-space:nowrap}
+    .${P}cap em{font-style:italic;font-size:13px;display:block}
+    .${P}chap{display:block;width:100%;height:auto;border-radius:3px;margin:0 0 8px}
+    .${P}fleur{display:block;width:min(300px,70%);height:auto;margin:2px auto 0;mix-blend-mode:multiply}
+    .${P}piles{display:flex;gap:6px;align-items:flex-end;min-height:22px;margin:2px 0 6px}
+    .${P}pile{width:30px;height:14px;border-radius:50% 50% 0 0/100% 100% 0 0;background:radial-gradient(circle at 40% 90%,#e6dcc0,#b9a877);border:1px solid ${pal.walnut};border-bottom:0}
+    .${P}mini{font:inherit;font-variant:small-caps;letter-spacing:.08em;font-size:15px;min-height:40px;padding:4px 12px 4px 6px;border-radius:22px;border:1.5px solid ${pal.sepia};background:${pal.cream};color:${pal.sepia};cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+    .${P}mini img{width:30px;height:30px}
+    .${P}mini:hover:not(:disabled),.${P}mini:focus-visible{outline:2px solid ${pal.honey};outline-offset:2px}
+    .${P}mini:disabled{opacity:.45;cursor:not-allowed}
+    .${P}book{position:absolute;inset:0;z-index:6;background:rgba(34,23,14,.82);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:10px 12px;box-sizing:border-box;overflow:auto}
+    .${P}book img.${P}pg{max-height:min(62vh,640px);max-width:100%;width:auto;height:auto;box-shadow:0 10px 30px rgba(0,0,0,.6);border-radius:2px;background:#d9c9a0}
+    .${P}book .${P}pgfall{width:min(420px,100%);min-height:200px;background:#e9dcb8;border:1px solid ${pal.walnut};padding:20px;box-sizing:border-box;font-style:italic;font-size:18px}
+    .${P}book p{margin:0;max-width:60ch;color:${pal.cream};font-size:16px;line-height:1.35;text-align:center}
+    .${P}book small{color:#e7d6a8;font-variant:small-caps;letter-spacing:.14em;font-size:14px}
+    .${P}bknav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+    .${P}endc{position:absolute;inset:0;z-index:7;display:grid;place-items:center;background:rgba(34,23,14,.86);padding:16px 16px 150px;box-sizing:border-box;overflow:auto}
+    .${P}endc figure{margin:0;max-width:420px;text-align:center;color:${pal.cream}}
+    .${P}endc img{width:min(300px,70vw);height:auto;border-radius:4px;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+    .${P}endc figcaption{font-family:'IM Fell English',Georgia,serif;font-size:22px;margin-top:10px}
+    .${P}label img.${P}front{display:block;height:150px;width:auto;margin:0 auto 6px;border-radius:2px;box-shadow:0 3px 10px rgba(58,42,28,.4)}
     .${P}cupwrap{display:flex;flex-direction:column;align-items:center;gap:10px}
     .${P}cupwrap svg{width:100%;max-width:300px}
     .${P}slots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
@@ -177,12 +244,12 @@ export default {
           <path d="M4 96 C6 70 2 50 6 30 C9 16 4 8 20 5 M96 96 C94 70 98 50 94 30 C91 16 96 8 80 5"
             fill="none" stroke="${pal.honey}" stroke-width=".25" vector-effect="non-scaling-stroke"/>
         </svg>
-        <div class="${P}head"><h2>The Pantry Table</h2>
+        <div class="${P}head"><h2>The Pantry Table</h2>${art.has("fleuron-cup") ? `<img class="${P}fleur" src="${art.url("fleuron-cup")}" alt="">` : ""}
           <div class="${P}strip"><span class="${P}books" aria-label="Books opened"></span><i class="${P}bookname"></i><span>Asks: <b class="${P}req"></b></span></div>
           <p class="${P}beat" aria-live="polite"></p></div>
         <div class="${P}grid">
           <section class="${P}panel" aria-label="Jars"><h3>The Jars</h3><div class="${P}jars"></div>
-            <p class="${P}key">Each label: <b>D</b>epth, <b>L</b>ength, <b>B</b>inding. A square adds one; a ring takes one away. Mint (D1 L1 B0) is already in the cup.</p></section>
+            <p class="${P}key">${art.has("label-mint") ? `<img src="${art.url("label-mint")}" alt="">` : ""}<span>Each label: <b>D</b>epth, <b>L</b>ength, <b>B</b>inding. A bar adds one; a ring takes one away. Mint (D1 L1 B0) is already in the cup.</span></p></section>
           <section class="${P}panel ${P}cupwrap" aria-label="The cup">
             <h3>The Cup</h3>
             <svg viewBox="0 0 240 190" aria-hidden="true"><g class="${P}cupsvg"></g></svg>
@@ -193,8 +260,12 @@ export default {
           </section>
           <section class="${P}panel" aria-label="Cards">
             <h3>The Book's Card</h3>
+            <img class="${P}chap" alt="" hidden>
             <div class="${P}card ${P}reqcard"><small>Requirement</small><strong class="${P}req2"></strong><div class="${P}note" style="font-style:italic;margin-top:2px"></div></div>
-            <div class="${P}card ${P}ledger"><small>The pantry ledger</small><span class="${P}led"></span></div>
+            <div class="${P}card ${P}ledger"><small>The pantry ledger</small><span class="${P}led"></span>
+              <div style="margin-top:6px"><button type="button" class="${P}mini ${P}openled">${art.has("glyph-read") ? `<img src="${art.url("glyph-read")}" alt="">` : ""}Open the ledger (L)</button></div></div>
+            <div class="${P}card ${P}sandcard"><small>Sand on the table</small><div class="${P}piles" aria-live="polite"></div>
+              <button type="button" class="${P}mini ${P}sweep">${art.has("glyph-sweep") ? `<img src="${art.url("glyph-sweep")}" alt="">` : ""}Sweep (S)</button></div>
             <div class="${P}card"><small>The kettle</small><div class="${P}kettle"></div></div>
             <div class="${P}card ${P}tastecard" hidden><small>Tastes left</small><div class="${P}taste"></div></div>
             <div class="${P}card ${P}result" aria-live="polite"><small>The pour</small><span class="${P}res">Nothing poured yet.</span></div>
@@ -205,7 +276,11 @@ export default {
     const q = (c) => el.querySelector("." + P + c);
 
     let bookI = 0, spoons = [], mark = 3, poursLeft = POURS, failsHere = 0, steep = 0, over = false, busy = false;
+    let backLooks = 0;
     let tastes = 3, tasteOn = false, tasted = null, lastPot = false, pourFlash = null;
+    let piles = 1, jarSand = 0, ledgerTurned = false, ledgerSeen = false;
+    const sandInCup = () => spoons.filter((x) => x === "sand").length;
+    const jarsNow = () => (jarSand + sandInCup() > 0 ? [...curBook().jars, "sand"] : curBook().jars);
     const opened = [];
     const curBook = () => (lastPot ? LAST : BOOKS[bookI]);
 
@@ -222,6 +297,21 @@ export default {
       const a = Math.PI * (1.1 + (mark - 1) * 0.2);
       const flecks = spoons.map((s, i) => `<path d="M${102 + i * 13} ${108 - (i % 2) * 4} q4 -6 8 0" stroke="${HERBS[s].col}" stroke-width="3.5" fill="none"/>`).join("");
       const steamOn = pourFlash && pourFlash.ok && performance.now() < pourFlash.until;
+      const ringId = "cup-ring-" + (steep < 20 ? "1-clear" : steep < 40 ? "2-faint" : steep < 60 ? "3-set" : steep < 80 ? "4-wide" : "5-stained");
+      if (art.has(ringId)) {
+        // the cup from above, on the pantry table: the art carries the ring the steep has left
+        const dots = spoons.map((s, i) => `<circle cx="${108 + i * 12}" cy="${104 + (i % 2) * 8}" r="5.5" fill="${HERBS[s].col}" stroke="#2a1a0c" stroke-width="1"/>`).join("");
+        cupG.innerHTML = `
+        <path d="M24 112 A96 96 0 0 1 216 112" fill="none" stroke="${pal.walnut}" stroke-width="1" stroke-dasharray="2 4"/>
+        <path d="M120 112 L${(120 + 88 * Math.cos(a)).toFixed(1)} ${(112 + 88 * Math.sin(a)).toFixed(1)}" stroke="${pal.honey}" stroke-width="2" stroke-dasharray="3 3"/>
+        <clipPath id="${P}cc"><rect x="42" y="30" width="156" height="156" rx="14"/></clipPath>
+        <image href="${art.url(ringId)}" x="42" y="30" width="156" height="156" clip-path="url(#${P}cc)"/>
+        <rect x="42" y="30" width="156" height="156" rx="14" fill="none" stroke="${pal.walnut}" stroke-width="1.5"/>
+        ${steamOn ? `<g stroke="#f6eedb" fill="none" stroke-width="2" opacity=".8"><path d="M105 86 q-8 -12 0 -24 q8 -12 0 -24"/><path d="M122 84 q8 -14 0 -28 q-8 -12 0 -26"/><path d="M138 86 q-6 -10 0 -20"/></g>` : ""}
+        ${pourFlash && !pourFlash.ok && performance.now() < pourFlash.until ? `<g fill="#e6dcc0">${Array.from({ length: 16 }, (_, k) => `<circle cx="${60 + (k * 37) % 120}" cy="${160 + (k * 13) % 20}" r="1.8"/>`).join("")}</g>` : ""}
+        ${dots}${marks}`;
+        return;
+      }
       cupG.innerHTML = `
         <path d="M24 112 A96 96 0 0 1 216 112" fill="none" stroke="${pal.walnut}" stroke-width="1" stroke-dasharray="2 4"/>
         <path d="M120 112 L${(120 + 80 * Math.cos(a)).toFixed(1)} ${(112 + 80 * Math.sin(a)).toFixed(1)}" stroke="${pal.honey}" stroke-width="2" stroke-dasharray="3 3"/>
@@ -240,21 +330,48 @@ export default {
     let prevJars = [];
     function buildJars() {
       jarsBox.innerHTML = "";
-      const B = curBook();
-      for (const id of B.jars) {
+      const list = jarsNow();
+      const sgn = (v) => (v < 0 ? "\u2212" + -v : v);
+      list.forEach((id, k) => {
         const h = HERBS[id];
         const b = document.createElement("button");
         b.type = "button"; b.className = P + "jar" + (prevJars.length && !prevJars.includes(id) ? " " + P + "new" : "");
+        b.dataset.herb = id;
         b.setAttribute("aria-label", `${h.name}: depth ${h.d}, length ${h.l}, binding ${h.b}. Add a spoon.`);
-        b.innerHTML = `<div class="${P}lid"></div><div class="${P}glass"><div class="${P}lab"><b>${h.name}</b>${marksSvg(h)}</div>
-          <div class="${P}fleck" style="background:repeating-linear-gradient(110deg,${h.col} 0 3px,transparent 3px 7px)"></div></div>`;
+        const key = "QWERTYUIO"[k] || "";
+        if (art.has(LABEL[id])) {
+          b.innerHTML = `<img class="${P}lbl" src="${art.url(LABEL[id])}" alt="" draggable="false">
+            <span class="${P}cap"><b>${h.name}</b><i>D${h.d} · L${h.l} · B${sgn(h.b)}</i>${id === "sand" ? `<em class="${P}sandleft"></em>` : ""}</span>`;
+        } else {
+          b.innerHTML = `<div class="${P}lid"></div><div class="${P}glass"><div class="${P}lab"><b>${h.name}</b>${marksSvg(h)}</div>
+          <div class="${P}fleck" style="background:repeating-linear-gradient(110deg,${h.col} 0 3px,transparent 3px 7px)"></div></div>${id === "sand" ? `<span class="${P}cap"><em class="${P}sandleft"></em></span>` : ""}`;
+        }
+        b.title = key ? `${h.name} (${key})` : h.name;
         b.addEventListener("click", () => addSpoon(id));
         b.addEventListener("mousedown", (e) => e.preventDefault());   // keep keyboard focus where it was, so Enter still pours
         jarsBox.appendChild(b);
-      }
-      prevJars = B.jars.slice();
+      });
+      prevJars = list.slice();
     }
-    function addSpoon(id) { if (!over && !busy && spoons.length < 3) { spoons.push(id); tasted = null; update(); } }
+    function addSpoon(id) {
+      if (over || busy || spoons.length >= 3) return;
+      if (id === "sand") { if (jarSand <= 0) return; jarSand--; }
+      spoons.push(id); tasted = null; update();
+    }
+    function takeSpoon(i) {
+      if (over || busy || i < 0 || i >= spoons.length) return;
+      if (spoons[i] === "sand") jarSand++;
+      spoons.splice(i, 1); tasted = null; update();
+    }
+    function sweep() {
+      if (over || busy) return;
+      if (piles <= 0) { beat(LINES.noSand); return; }
+      piles--;
+      const had = jarSand + sandInCup() > 0;
+      if (jarSand + sandInCup() < SAND_MAX) { jarSand++; beat(LINES.swept); } else beat(LINES.sweptFull);
+      if (!had) buildJars();
+      update();
+    }
     const slotsBox = q("slots");
     function drawSlots() {
       slotsBox.innerHTML = "";
@@ -264,7 +381,7 @@ export default {
         b.type = "button"; b.className = P + "slot" + (s ? " " + P + "full" : "");
         b.textContent = s ? HERBS[s].name : `spoon ${i + 1}`;
         b.setAttribute("aria-label", s ? `Return ${HERBS[s].name} to its jar` : `Empty spoon ${i + 1}`);
-        b.addEventListener("click", () => { if (s && !over && !busy) { spoons.splice(i, 1); tasted = null; update(); } });
+        b.addEventListener("click", () => { if (s) takeSpoon(i); });
         slotsBox.appendChild(b);
       }
     }
@@ -293,7 +410,13 @@ export default {
       q("req2").textContent = reqText(B.req);
       q("note").textContent = B.note;
       const lead = gentle ? 2 : 0;
-      q("led").textContent = B.ledger[Math.min(B.ledger.length - 1, failsHere + lead >= 4 ? 2 : failsHere + lead >= 2 ? 1 : 0)];
+      const led = lastPot && ledgerTurned ? B.ledgerBack : B.ledger;
+      q("led").textContent = lastPot && ledgerTurned ? led[Math.max(0, Math.min(led.length - 1, gentle ? backLooks : Math.min(1, backLooks - 1)))] : led[Math.min(led.length - 1, failsHere + lead >= 4 ? 2 : failsHere + lead >= 2 ? 1 : 0)];
+      q("piles").innerHTML = piles ? Array.from({ length: piles }, () => `<span class="${P}pile"></span>`).join("") + `<span>${piles} drift${piles === 1 ? "" : "s"}</span>` : "<span>The table is clean.</span>";
+      q("sweep").disabled = over || busy || piles <= 0;
+      const ch = q("chap"), chId = CHAPTER_OF[B.scene];
+      if (art.has(chId)) { if (ch.dataset.id !== chId) { ch.src = art.url(chId); ch.dataset.id = chId; } ch.hidden = false; } else ch.hidden = true;
+      const sl = q("sandleft"); if (sl) sl.textContent = `${jarSand} spoon${jarSand === 1 ? "" : "s"} left`;
       q("books").innerHTML = BOOKS.map((_, i) => `<span class="${P}bk ${opened[i] ? P + "open" : ""} ${i === bookI && !lastPot ? P + "now" : ""}"></span>`).join("");
       q("kettle").innerHTML = Array.from({ length: POURS }, (_, i) => `<span class="${P}drop ${i >= poursLeft ? P + "used" : poursLeft <= 2 ? P + "low" : ""}"></span>`).join("") + `<span style="margin-left:6px">${lastPot ? "the last pot is its own" : `${poursLeft} pour${poursLeft === 1 ? "" : "s"} left`}</span>`;
       q("taste").innerHTML = [0, 1, 2].map((i) => `<i class="${i >= tastes ? P + "used" : ""}"></i>`).join("") + `<span style="margin-left:6px">${tastes} left</span>`;
@@ -302,7 +425,7 @@ export default {
       drawSlots();
       pourBtn.disabled = spoons.length !== 3 || over || busy;
       tasteBtn.disabled = spoons.length !== 3 || over || busy || tastes <= 0 || !!tasted;
-      for (const j of jarsBox.children) j.disabled = spoons.length >= 3 || over || busy;
+      for (const j of jarsBox.children) j.disabled = spoons.length >= 3 || over || busy || (j.dataset.herb === "sand" && jarSand <= 0);
       drawCup(spoons.length / 3, spoons.length ? HERBS[spoons[spoons.length - 1]].col : HERBS.mint.col);
       if (!busy && !over) {
         if (tasted) resEl.innerHTML = `Tasted: ${tally(tasted, B.req)}`;
@@ -351,11 +474,12 @@ export default {
       timers.push(setTimeout(() => {
         clearInterval(tick);
         busy = false; spoons = []; tasted = null; pourFlash = null;
+        piles = Math.min(4, piles + 1);   // a failed pour runs sand from the cover; a long reading leaks while he reads
         if (ok) {
           bookI++; failsHere = 0; mark = 3;
           if (bookI === 1) unlockTaste();
-          if (bookI >= BOOKS.length) { lastPot = true; beat(LINES.lastPot); }
-          else beat(`${BOOKS[bookI].book}: ${BOOKS[bookI].note}`);
+          if (bookI >= BOOKS.length) { lastPot = true; beat(LINES.lastPot + " " + LINES.sandMore); }
+          else beat(`${BOOKS[bookI].book}: ${BOOKS[bookI].note} ${LINES.sandMore}`);
           buildJars();
         } else if (poursLeft <= 0) {
           over = true; update();
@@ -368,14 +492,76 @@ export default {
       timers.push(() => clearInterval(tick));
     }
     function finishLastPot(r) {
+      const parting = isParting(spoons, r);
       over = true; busy = true;
       pourFlash = { ok: true, until: performance.now() + (rm ? 0 : 1300) };
-      resEl.innerHTML = `${tally(r, {})}<br>The last pot is poured.`;
+      resEl.innerHTML = `${tally(r, {})}<br>${parting ? "<b>The Parting Cup.</b>" : "The last pot is poured."}`;
       update();
       api.store.set("lossStreak", 0);
-      const text = r.b <= 0 ? LINES.endLight : r.b >= 4 ? LINES.endHeavy : LINES.endEven;
-      timers.push(setTimeout(() => api.end({ outcome: "win", text: `${text} (${poursLeft} pour${poursLeft === 1 ? " was" : "s were"} left in the kettle; the last cup bound ${r.b}.)` }), rm ? 300 : 1500));
+      api.store.set("partingCup", parting || api.store.get("partingCup", false));
+      let text = parting ? LINES.endParting.replace("{d}", r.d).replace("{b}", "\u2212" + -r.b) : r.b <= 0 ? LINES.endLight : r.b >= 4 ? LINES.endHeavy : LINES.endEven;
+      if (!parting) text += ` (${poursLeft} pour${poursLeft === 1 ? " was" : "s were"} left in the kettle; the last cup bound ${r.b}.)`;
+      if (piles) text += LINES.endSandLeft.replace("{n}", piles).replace("{s}", piles === 1 ? "" : "s").replace("{v}", piles === 1 ? "s" : "");
+      if (!parting && !ledgerTurned) text += " The ledger was never turned over.";
+      timers.push(setTimeout(() => {
+        endCard(parting ? "The Parting Cup" : "The last cup");
+        api.end({ outcome: "win", text });
+      }, rm ? 300 : 1500));
     }
+    // the ending card: the ring a cup leaves on a table (the collection's thread), behind the result
+    function endCard(title) {
+      if (!art.has("thread-own")) return;
+      const c = document.createElement("div");
+      c.className = P + "endc";
+      c.innerHTML = `<figure><img src="${art.url("thread-own")}" alt="The ring a cup leaves on a table."><figcaption></figcaption></figure>`;
+      c.querySelector("figcaption").textContent = title;
+      root.appendChild(c);   // on the stage, not in the scrolling page, so it is seen wherever the page was scrolled
+    }
+    // ---- the ledger, opened ----------------------------------------------------------------------
+    let ledgerEl = null, ledSide = "front", ledPage = 0;
+    function openLedger() {
+      if (over || busy || ledgerEl) return;
+      ledgerSeen = true; ledSide = ledgerTurned ? "back" : "front"; ledPage = ledgerTurned ? 0 : (lastPot ? 2 : 0);
+      ledgerEl = document.createElement("div");
+      ledgerEl.className = P + "book";
+      ledgerEl.setAttribute("role", "dialog"); ledgerEl.setAttribute("aria-label", "The pantry ledger");
+      root.appendChild(ledgerEl);
+      drawLedger();
+    }
+    function closeLedger() { if (ledgerEl) { ledgerEl.remove(); ledgerEl = null; update(); q("frame").focus(); } }
+    function drawLedger() {
+      const pages = ledSide === "front" ? LEDGER_FRONT : LEDGER_BACK;
+      const pg = pages[ledPage];
+      const canTurn = lastPot;   // the keeper only thinks to turn it over once no book is asking
+      ledgerEl.innerHTML = `<small>${ledSide === "front" ? "The pantry ledger" : "The ledger, turned over"} · page ${ledPage + 1} of ${pages.length}</small>
+        ${art.has(pg.art) ? `<img class="${P}pg" src="${art.url(pg.art)}" alt="">` : `<div class="${P}pgfall"></div>`}
+        <p></p>
+        <div class="${P}bknav">
+          <button type="button" class="${P}mini" data-a="prev" ${ledPage === 0 ? "disabled" : ""}>◀ Back a page</button>
+          <button type="button" class="${P}mini" data-a="next" ${ledPage === pages.length - 1 ? "disabled" : ""}>On a page ▶</button>
+          ${canTurn ? `<button type="button" class="${P}mini" data-a="turn">${ledSide === "front" ? "Turn the ledger over (O)" : "Turn it back (O)"}</button>` : ""}
+          <button type="button" class="${P}mini" data-a="close">Close (Esc)</button>
+        </div>`;
+      ledgerEl.querySelector("p").textContent = pg.cap;
+      const fall = ledgerEl.querySelector("." + P + "pgfall"); if (fall) fall.textContent = pg.cap;
+      ledgerEl.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => ledgerAct(b.dataset.a)));
+      (ledgerEl.querySelector('[data-a="next"]:not(:disabled)') || ledgerEl.querySelector('[data-a="close"]')).focus();
+      if (ledSide === "back") backLooks = Math.max(backLooks, ledPage + 1);
+    }
+    function ledgerAct(a) {
+      if (!ledgerEl) return;
+      const pages = ledSide === "front" ? LEDGER_FRONT : LEDGER_BACK;
+      if (a === "prev" && ledPage > 0) ledPage--;
+      else if (a === "next" && ledPage < pages.length - 1) ledPage++;
+      else if (a === "turn" && lastPot) {
+        ledSide = ledSide === "front" ? "back" : "front"; ledPage = 0;
+        if (!ledgerTurned) { ledgerTurned = true; beat(LINES.turnOver + " " + LINES.lastPotBack); }
+      }
+      else if (a === "close") { closeLedger(); return; }
+      drawLedger();
+    }
+    q("openled").addEventListener("click", openLedger);
+    q("sweep").addEventListener("click", sweep);
     pourBtn.addEventListener("click", pour);
     tasteBtn.addEventListener("click", taste);
 
@@ -383,11 +569,21 @@ export default {
       if (over || intro.isConnected) return;
       if (e.target && e.target.tagName === "BUTTON" && !e.target.disabled && (e.key === "Enter" || e.key === " ")) return;
       const k = e.key.toLowerCase();
-      const jars = curBook().jars;
-      const jk = "qwertyui".indexOf(k);
+      if (ledgerEl) {
+        if (k === "escape" || k === "l") closeLedger();
+        else if (k === "arrowleft") ledgerAct("prev");
+        else if (k === "arrowright") ledgerAct("next");
+        else if (k === "o") ledgerAct("turn");
+        else return;
+        e.preventDefault(); return;
+      }
+      const jars = jarsNow();
+      const jk = "qwertyuio".indexOf(k);
       if (e.key >= "1" && e.key <= "5") setMark(+e.key);
       else if (jk >= 0 && jk < jars.length && k.length === 1) addSpoon(jars[jk]);
-      else if (k === "backspace") { if (!busy) { spoons.pop(); tasted = null; update(); } }
+      else if (k === "backspace") takeSpoon(spoons.length - 1);
+      else if (k === "s") sweep();
+      else if (k === "l") openLedger();
       else if (k === "enter" || k === "p") pour();
       else if (k === "a") taste();
       else return;
@@ -399,6 +595,7 @@ export default {
     intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}label" role="dialog" aria-label="How to play">
       <svg class="${P}whip" viewBox="0 0 420 70" preserveAspectRatio="none" aria-hidden="true"><path d="M60 64 C80 10 150 30 175 14 C190 4 200 20 210 12 C220 20 230 4 245 14 C270 30 340 10 360 64" fill="none" stroke="${pal.honey}" stroke-width="1.5"/><circle cx="210" cy="12" r="4" fill="${pal.honey}"/></svg>
+      ${art.has("frontis-c3") ? `<img class="${P}front" src="${art.url("frontis-c3")}" alt="">` : ""}
       <h2>Tea Blending</h2>
       <q>“${SOURCE_TEA}”</q>
       <p class="${P}goal"><b>Goal:</b> brew a cup that meets each book's card. Three books, one kettle of ${POURS} pours.</p>
@@ -406,11 +603,13 @@ export default {
         <tr><td>Spoon</td><td>Tap a jar (Q W E R…) to add. Exactly three.</td></tr>
         <tr><td>Steep</td><td>Dial 1 to 5. Low thins depth; high adds length and binding.</td></tr>
         <tr><td>Pour</td><td>Enter. A short cup costs a pour.</td></tr>
+        <tr><td>Sweep</td><td>S. Sand swept from the table fills a ninth jar.</td></tr>
+        <tr><td>Ledger</td><td>L. The old keeper's recipes. Read all of it.</td></tr>
       </table>
       ${gentle ? `<p style="font-style:italic;margin:0 0 12px">${LINES.gentle}</p>` : ""}
       <button type="button" class="${P}btn">Light the kettle</button></div>`;
     el.appendChild(intro);
-    intro.querySelector("button").addEventListener("click", () => { intro.remove(); beat(LINES.open + " First, " + BOOKS[0].book.toLowerCase() + ": " + BOOKS[0].note); q("frame").focus(); });
+    intro.querySelector("button").addEventListener("click", () => { intro.remove(); beat(LINES.open + " " + LINES.sandStart + " First, " + BOOKS[0].book.toLowerCase() + ": " + BOOKS[0].note); q("frame").focus(); });
     intro.querySelector("button").focus();
 
     buildJars();

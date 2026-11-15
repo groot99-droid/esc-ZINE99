@@ -67,7 +67,8 @@
       "chapter": "c1_waking",
       "writes": [
         "duties_done",
-        "steep"
+        "steep",
+        "gutter_sand"
       ],
       "enter": "cut",
       "exit": "push-in",
@@ -117,14 +118,17 @@
       "world_runs": false,
       "reads": [
         "herbs",
-        "sand_leak"
+        "sand_leak",
+        "gutter_sand"
       ],
       "writes": [
         "brew.depth",
         "brew.length",
         "brew.binding",
         "steep",
-        "tea_hold"
+        "tea_hold",
+        "gutter_sand",
+        "cup_taste"
       ],
       "enter": "push-in",
       "exit": "push-in",
@@ -261,7 +265,8 @@
       "writes": [
         "duties_done",
         "steep",
-        "sand_leak"
+        "sand_leak",
+        "gutter_sand"
       ],
       "enter": "pull-out",
       "exit": "flatten",
@@ -292,10 +297,14 @@
       "chapter": "c3_rounds",
       "game": "clasps",
       "world_runs": false,
+      "reads": [
+        "sand_leak"
+      ],
       "writes": [
         "clasps_opened",
         "past_fragments",
-        "past_known"
+        "past_known",
+        "clasp_brushes"
       ],
       "enter": "push-in",
       "exit": "cut",
@@ -310,10 +319,14 @@
       "chapter": "c3_rounds",
       "game": "clasps",
       "world_runs": false,
+      "reads": [
+        "sand_leak"
+      ],
       "writes": [
         "clasps_opened",
         "past_fragments",
-        "past_known"
+        "past_known",
+        "clasp_brushes"
       ],
       "enter": "cut",
       "exit": "pull-out",
@@ -347,14 +360,17 @@
       "world_runs": false,
       "reads": [
         "herbs",
-        "sand_leak"
+        "sand_leak",
+        "gutter_sand"
       ],
       "writes": [
         "brew.depth",
         "brew.length",
         "brew.binding",
         "steep",
-        "tea_hold"
+        "tea_hold",
+        "gutter_sand",
+        "cup_taste"
       ],
       "enter": "push-in",
       "exit": "push-in",
@@ -420,7 +436,8 @@
         "tea_hold",
         "leaf_shoes",
         "sand_leak",
-        "fathers_things"
+        "fathers_things",
+        "cup_taste"
       ],
       "writes": [
         "tea_hold",
@@ -468,7 +485,8 @@
         "tea_hold",
         "leaf_shoes",
         "sand_leak",
-        "fathers_things"
+        "fathers_things",
+        "cup_taste"
       ],
       "writes": [
         "tea_hold",
@@ -519,7 +537,8 @@
       "writes": [
         "duties_done",
         "steep",
-        "sand_leak"
+        "sand_leak",
+        "gutter_sand"
       ],
       "enter": "pull-out",
       "exit": "flatten",
@@ -550,10 +569,14 @@
       "chapter": "c5_hollin",
       "game": "clasps",
       "world_runs": false,
+      "reads": [
+        "sand_leak"
+      ],
       "writes": [
         "clasps_opened",
         "past_fragments",
-        "past_known"
+        "past_known",
+        "clasp_brushes"
       ],
       "enter": "push-in",
       "exit": "cut",
@@ -570,14 +593,17 @@
       "world_runs": false,
       "reads": [
         "herbs",
-        "sand_leak"
+        "sand_leak",
+        "gutter_sand"
       ],
       "writes": [
         "brew.depth",
         "brew.length",
         "brew.binding",
         "steep",
-        "tea_hold"
+        "tea_hold",
+        "gutter_sand",
+        "cup_taste"
       ],
       "enter": "cut",
       "exit": "push-in",
@@ -660,7 +686,8 @@
       "chapter": "c5_hollin",
       "mode": "living",
       "reads": [
-        "tea_hold"
+        "tea_hold",
+        "cup_taste"
       ],
       "writes": [
         "tea_hold",
@@ -736,7 +763,8 @@
         "duties_done",
         "steep",
         "sand_leak",
-        "herbs"
+        "herbs",
+        "gutter_sand"
       ],
       "enter": "pull-out",
       "exit": "push-in",
@@ -753,14 +781,17 @@
       "world_runs": false,
       "reads": [
         "herbs",
-        "sand_leak"
+        "sand_leak",
+        "gutter_sand"
       ],
       "writes": [
         "brew.depth",
         "brew.length",
         "brew.binding",
         "steep",
-        "tea_hold"
+        "tea_hold",
+        "gutter_sand",
+        "cup_taste"
       ],
       "enter": "push-in",
       "exit": "push-in",
@@ -825,7 +856,8 @@
         "tea_hold",
         "leaf_shoes",
         "sand_leak",
-        "fathers_things"
+        "fathers_things",
+        "cup_taste"
       ],
       "writes": [
         "tea_hold",
@@ -874,7 +906,8 @@
       "writes": [
         "tea_hold",
         "pov",
-        "motifs"
+        "motifs",
+        "other_hand_seen"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -940,7 +973,8 @@
       "writes": [
         "duties_done",
         "steep",
-        "sand_leak"
+        "sand_leak",
+        "gutter_sand"
       ],
       "enter": "pull-out",
       "exit": "flatten",
@@ -971,10 +1005,14 @@
       "chapter": "c7_procession",
       "game": "clasps",
       "world_runs": false,
+      "reads": [
+        "sand_leak"
+      ],
       "writes": [
         "clasps_opened",
         "past_fragments",
-        "past_known"
+        "past_known",
+        "clasp_brushes"
       ],
       "enter": "push-in",
       "exit": "cut",
@@ -991,14 +1029,17 @@
       "world_runs": false,
       "reads": [
         "herbs",
-        "sand_leak"
+        "sand_leak",
+        "gutter_sand"
       ],
       "writes": [
         "brew.depth",
         "brew.length",
         "brew.binding",
         "steep",
-        "tea_hold"
+        "tea_hold",
+        "gutter_sand",
+        "cup_taste"
       ],
       "enter": "cut",
       "exit": "push-in",
@@ -1081,7 +1122,8 @@
       "chapter": "c7_procession",
       "mode": "living",
       "reads": [
-        "tea_hold"
+        "tea_hold",
+        "cup_taste"
       ],
       "writes": [
         "tea_hold",
@@ -1157,7 +1199,8 @@
       ],
       "writes": [
         "duties_done",
-        "steep"
+        "steep",
+        "gutter_sand"
       ],
       "enter": "pull-out",
       "exit": "flatten",
@@ -1202,11 +1245,15 @@
       "chapter": "c8_unlit",
       "game": "clasps",
       "world_runs": false,
+      "reads": [
+        "sand_leak"
+      ],
       "writes": [
         "clasps_opened",
         "past_fragments",
         "past_known",
-        "black_book_open"
+        "black_book_open",
+        "clasp_brushes"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -1261,14 +1308,19 @@
       "reads": [
         "herbs",
         "sand_leak",
-        "steep"
+        "steep",
+        "gutter_sand"
       ],
       "writes": [
         "brew.depth",
         "brew.length",
         "brew.binding",
         "steep",
-        "tea_hold"
+        "tea_hold",
+        "gutter_sand",
+        "cup_taste",
+        "ledger_turned",
+        "parting_cup"
       ],
       "enter": "push-in",
       "exit": "push-in",
@@ -1338,7 +1390,8 @@
         "tea_hold",
         "leaf_shoes",
         "sand_leak",
-        "fathers_things"
+        "fathers_things",
+        "cup_taste"
       ],
       "writes": [
         "tea_hold",

@@ -9,6 +9,9 @@
 // push with D, E again to step off. Falling books cast a shadow a second before they land; a hit
 // staggers you, and a hit on a ladder drops you back to the landing. No failure is fatal: the run
 // is scored by time and wrong turns.
+// Art (api.art): the twelve shelf bays as the backdrop (each rasterised once), the Elaris sprite,
+// the bookmark ribbon, the mote sprites as the call's badge, a climb glyph, the chapter heading.
+// The old line drawing stays as the fallback while the art loads, or if it is missing.
 
 const BASE_JUNCTIONS = 5;
 const EXITS = ["up", "down", "on"];
@@ -34,6 +37,26 @@ export default {
     const rng = api.rng("et-stacks-c5");
     const C = { paper: "#efe8d6", ink: "#2a2a2a", faint: "rgba(42,42,42,.35)", gold: "#d4a23a", goldHi: "#f0c45a", sage: "#8fa07a" };
     const timers = [];
+    const art = api.art || { has: () => false, url: () => "", img: async () => null };
+    const pic = (id, alt = "") => (art.has(id) ? `<img src="${art.url(id)}" alt="${alt}" draggable="false">` : "");
+    const spr = {};
+    let alive = true;
+    async function prep(id, w, h) {
+      const im = await art.img(id);
+      if (!im || !alive) return;
+      const c = document.createElement("canvas");
+      c.width = w; c.height = h;
+      c.getContext("2d").drawImage(im, 0, 0, w, h);
+      spr[id] = c;
+    }
+    const TILE_IDS = ["plain", "calling", "ladder-up", "ladder-down", "arch", "ceiling", "lamp", "ribbon", "sand-drift", "frost", "chair"];
+    for (const t of TILE_IDS) prep("stacks-" + t, 512, 512);
+    prep("sprite-elaris", 288, 360);
+    for (const r of ["ribbon-empty", "ribbon-grown", "ribbon-end"]) prep(r, 300, 60);
+    for (const m of ["mote-rain", "mote-frost"]) prep(m, 96, 96);
+    prep("glyph-climb", 88, 88);
+    const TILE_K = 400 / 336;          // a tile's shelves run from y=4 to the floor line at y=340 of 400
+    const BAY = 4.6 * TILE_K;          // so one bay is this many metres wide
     const css = document.createElement("style");
     css.textContent = `
     .${P}root{position:absolute;inset:0;overflow:hidden;background:${C.paper};touch-action:none;user-select:none;-webkit-user-select:none}
@@ -55,6 +78,13 @@ export default {
     .${P}card dd{margin:0}
     .${P}card button{display:block;margin:0 auto;font:inherit;font-size:18px;padding:8px 26px;border:1px solid ${C.ink};background:${C.goldHi};cursor:pointer}
     .${P}card button:hover,.${P}card button:focus-visible{background:#ffd877;outline:2px solid ${C.ink};outline-offset:2px}
+    .${P}card img.${P}head{display:block;width:100%;height:auto;margin-bottom:8px}
+    .${P}legend{display:flex;gap:8px;align-items:center;justify-content:center;margin:0 0 12px;font-size:14px;font-style:italic;flex-wrap:wrap}
+    .${P}legend img{width:34px;height:34px;border:1px solid ${C.ink};border-radius:50%}
+    .${P}legend span{display:inline-flex;align-items:center;gap:4px}
+    .${P}endc{position:absolute;inset:0;z-index:6;display:grid;place-items:center;background:rgba(239,232,214,.88);padding:16px 16px 150px;box-sizing:border-box;overflow:auto}
+    .${P}endc figure{margin:0;max-width:360px;text-align:center;color:${C.ink};font-family:'IM Fell English',Georgia,serif;font-size:22px}
+    .${P}endc img{width:min(320px,70vw);height:auto;border:1px solid ${C.ink};outline:1px solid ${C.ink};outline-offset:4px;margin-bottom:10px}
     `;
     const el = document.createElement("div");
     el.className = P + "root";
@@ -86,7 +116,7 @@ export default {
     };
     const keys = { left: false, right: false, up: false, down: false, listen: false };
     function say(t, s = 2.4) { S.msg = t; S.msgT = s; }
-    const exitX = (seg) => ({ up: seg.L - 9, down: seg.L - 5, on: seg.L });
+    const exitX = (seg) => ({ up: seg.L - 2 * BAY, down: seg.L - BAY, on: seg.L });
 
     function enter(kind) { S0.ribbon = S.ribbon; S.seg = makeSeg(kind); S.x = 1.5; S.v = 0; S.riding = null; S.motes = []; S.fade = 1; }
     function flash(kind) { S.flash = api.reducedMotion ? 0 : 0.9; S.flashKind = kind; }
@@ -221,7 +251,15 @@ export default {
       const secs = Math.round(S.t);
       const t = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`;
       const text = (S.wrong ? LINES.win : LINES.winClean).replace("{N}", S.J).replace("{t}", t).replace("{w}", S.wrong).replace("{ws}", S.wrong === 1 ? "" : "s").replace("{h}", S.hits).replace("{hs}", S.hits === 1 ? "" : "s");
-      timers.push(setTimeout(() => api.end({ outcome: "win", text }), api.reducedMotion ? 100 : 600));
+      timers.push(setTimeout(() => {
+        if (art.has("stacks-calling")) {
+          const c = document.createElement("div");
+          c.className = P + "endc";
+          c.innerHTML = `<figure>${pic("stacks-calling", "The calling book, glowing in its alcove.")}<div>The calling book</div></figure>`;
+          el.appendChild(c);
+        }
+        api.end({ outcome: "win", text });
+      }, api.reducedMotion ? 100 : 600));
     }
 
     // ---- draw ----------------------------------------------------------------------------------
@@ -244,10 +282,37 @@ export default {
 
       // bays: each with its own vanishing point, above or below, so no single perspective is true.
       // The galleries above and below are drawn too, fainter: the shelves go on in every direction.
+      const useArt = !!spr["stacks-plain"];
+      if (useArt) {
+        // the shelf bays, as drawn: one tile per bay, the galleries above and below fainter
+        const T = (floorY - ceilY) * TILE_K, top = ceilY - (4 / 400) * T;
+        const tile = (id, x, y, a) => { const c = spr["stacks-" + id] || spr["stacks-plain"]; if (x > W || x + T < 0) return; g.globalAlpha = a; g.drawImage(c, Math.round(x), Math.round(y), Math.ceil(T) + 1, Math.ceil(T) + 1); };
+        const kindOf = (i, lv) => {
+          const h = hash(i * 7 + lv * 13, seg.seed % 997);
+          if (seg.kind === "bend" && lv === 0 && (i + 0.5) * BAY > seg.L * 0.45) return "frost";
+          if (i === 0 && lv === 0) return "lamp";
+          return h < 0.14 ? "ceiling" : h < 0.26 && lv <= 0 ? "sand-drift" : "plain";
+        };
+        const i0 = Math.floor(camX / BAY) - 1, i1 = Math.ceil((camX + W / s) / BAY);
+        for (const lv of [1, -1, 0]) for (let i = i0; i <= i1; i++) tile(kindOf(i, lv), X(i * BAY), top - lv * T, lv ? 0.3 : 1);
+        g.globalAlpha = 1;
+        if (seg.kind === "junction") {
+          tile("ladder-up", X(ex.up) - 0.5125 * T, top, 1);
+          tile("ladder-down", X(ex.down) - 0.525 * T, top, 1);
+          tile("arch", X(ex.on + 0.9) - 0.5125 * T, top, 1);
+        } else if (seg.kind === "book") {
+          tile("chair", X(seg.L * 0.4), top, 1);
+          tile("ribbon", X(seg.L * 0.4 + BAY), top, 1);
+          tile("calling", X(seg.L - 1) - 0.5 * T, top, 1);
+        }
+        g.globalAlpha = 1;
+        g.strokeStyle = C.ink; g.lineWidth = 1.4;
+        line(0, floorY, W, floorY); line(0, ceilY, W, ceilY);
+      }
       const bayW = 3;
       const first = Math.floor(camX / bayW) - 1, last = Math.ceil((camX + W / s) / bayW) + 1;
       const levH = floorY - ceilY + 22;
-      for (let lv = -2; lv <= 2; lv++) {
+      for (let lv = -2; lv <= 2 && !useArt; lv++) {
         const off = lv * levH;
         const fY = floorY - off, cY = ceilY - off;
         if (fY < -10 || cY > H + 10) continue;
@@ -281,6 +346,7 @@ export default {
         if (!main) { line(0, fY + 6, W, fY + 6); line(0, cY - 6, W, cY - 6); }
       }
       g.globalAlpha = 1;
+      if (!useArt) {
       g.fillStyle = "rgba(239,232,214,.5)"; g.fillRect(0, floorY + 7, W, 16); g.fillRect(0, ceilY - 23, W, 16);
       // the floor, the gallery above and the gallery below (cut views)
       g.strokeStyle = C.ink;
@@ -288,10 +354,16 @@ export default {
       line(0, ceilY, W, ceilY); line(0, ceilY - 6, W, ceilY - 6);
       for (let x = Math.floor(camX); x < camX + W / s + 1; x++) { line(X(x), ceilY - 6, X(x), ceilY - 22); line(X(x), floorY + 6, X(x) - 6, floorY + 20); }
       line(0, ceilY - 22, W, ceilY - 22);
+      }
 
       // exits
       g.lineWidth = 1.2;
-      if (seg.kind === "junction") {
+      const lab = (t, x, y) => { g.font = "italic 16px 'EB Garamond',Georgia,serif"; const w = g.measureText(t).width; g.fillStyle = "rgba(239,232,214,.92)"; g.fillRect(x - 4, y - 14, w + 8, 19); g.fillStyle = C.ink; g.fillText(t, x, y); };
+      if (useArt) {
+        if (seg.kind === "junction") { lab("up", X(ex.up) - 8, ceilY + 18); lab("down", X(ex.down) - 16, floorY - 8); lab("on", X(ex.on + 0.9) - 8, ceilY + 1.0 * s); }
+        else if (seg.kind === "bend") { const ox = X(seg.L); g.strokeStyle = C.ink; g.lineWidth = 2; g.beginPath(); g.moveTo(ox, floorY); g.bezierCurveTo(ox + 2 * s, floorY - 1 * s, ox + 2 * s, ceilY + s, ox - 0.5 * s, ceilY + 0.5 * s); g.stroke(); lab("the aisle bends back", ox - 2.2 * s, ceilY + 0.3 * s); }
+        else if (seg.kind === "book") lab("the calling book", X(seg.L - 1) - 0.9 * s, ceilY + 2.2 * s);
+      } else if (seg.kind === "junction") {
         // ladder up through the ceiling
         const ux = X(ex.up);
         g.fillStyle = C.paper; g.fillRect(ux - 16, ceilY - 24, 32, 30);
@@ -322,19 +394,25 @@ export default {
       g.lineWidth = 1;
       // rolling ladders on their rail
       for (const l of seg.ladders) {
+        if (useArt) {   // a paper backing, so the moving ladder reads over the drawn shelves
+          const lx0 = X(l.x);
+          g.strokeStyle = C.paper; g.lineWidth = 7; line(lx0, ceilY + 0.3 * s, lx0 + 0.7 * s, floorY - 4); line(lx0 + 0.45 * s, ceilY + 0.3 * s, lx0 + 1.15 * s, floorY - 4);
+          g.strokeStyle = C.ink; g.lineWidth = 1.8;
+        }
         line(X(l.rail[0]), ceilY + 0.3 * s, X(l.rail[1]), ceilY + 0.3 * s);
         const lx = X(l.x);
         line(lx, ceilY + 0.3 * s, lx + 0.7 * s, floorY - 4); line(lx + 0.45 * s, ceilY + 0.3 * s, lx + 1.15 * s, floorY - 4);
         for (let r = 1; r < 9; r++) { const t = r / 9; line(lx + t * 0.7 * s, ceilY + 0.3 * s + t * (floorY - ceilY - 0.3 * s), lx + 0.45 * s + t * 0.7 * s, ceilY + 0.3 * s + t * (floorY - ceilY - 0.3 * s)); }
         g.beginPath(); g.arc(lx + 0.7 * s, floorY - 2, 3, 0, 7); g.arc(lx + 1.15 * s, floorY - 2, 3, 0, 7); g.stroke();
+        g.lineWidth = 1;
       }
       // falling books: shadow first, then the book
       for (const b of seg.books) {
         const bx = X(b.x);
-        if (b.state === "shadow") { g.strokeStyle = C.ink; g.setLineDash([3, 3]); g.beginPath(); g.ellipse(bx, floorY - 2, 0.35 * s * (0.4 + b.t), 4, 0, 0, 7); g.stroke(); g.setLineDash([]); }
+        if (b.state === "shadow") { if (useArt) { g.fillStyle = "rgba(42,42,42,.28)"; g.beginPath(); g.ellipse(bx, floorY - 2, 0.35 * s * (0.4 + b.t), 4, 0, 0, 7); g.fill(); } g.strokeStyle = C.ink; g.setLineDash([3, 3]); g.beginPath(); g.ellipse(bx, floorY - 2, 0.35 * s * (0.4 + b.t), 4, 0, 0, 7); g.stroke(); g.setLineDash([]); }
         if (b.state === "fall" || b.state === "down") {
           const y = b.state === "fall" ? ceilY + (floorY - 10 - ceilY) * (b.t / 0.25) : floorY - 8;
-          g.strokeStyle = C.ink; g.save(); g.translate(bx, y); g.rotate(b.state === "down" ? 0.1 : b.t * 4); g.strokeRect(-12, -6, 24, 12); line(-9, -6, -9, 6); g.restore();
+          g.strokeStyle = C.ink; g.save(); g.translate(bx, y); g.rotate(b.state === "down" ? 0.1 : b.t * 4); if (useArt) { g.fillStyle = "#c58b3a"; g.fillRect(-12, -6, 24, 12); g.lineWidth = 1.5; } g.strokeRect(-12, -6, 24, 12); line(-9, -6, -9, 6); g.restore(); g.lineWidth = 1;
         }
       }
       // Elaris: a tall thin figure in a monk's robe, in the same single line
@@ -344,10 +422,19 @@ export default {
       if (S.climb && S.climb.fall) ey = floorY - (0.8 - S.climb.t) * 2 * s;
       g.strokeStyle = C.ink; g.lineWidth = 1.2;
       const hgt = 2.4 * s, sway = S.stagger > 0 ? Math.sin(S.t * 20) * 4 : 0;
+      const es = spr["sprite-elaris"];
+      if (es) {
+        const ih = hgt * (600 / 526), iw = ih * 0.8;
+        const bob = Math.abs(S.v) > 0.2 && !S.climb && !S.riding ? Math.abs(Math.sin(S.x * 3)) * 0.03 * s : 0;
+        g.save(); g.translate(ex2, ey - bob); if (S.stagger > 0) g.rotate(Math.sin(S.t * 20) * 0.08); g.scale(S.facing < 0 ? -1 : 1, 1);
+        g.drawImage(es, -iw * 0.52, -ih * 0.943, iw, ih);
+        g.restore();
+      } else {
       g.beginPath(); g.moveTo(ex2 - 0.3 * s, ey); g.lineTo(ex2 - 0.12 * s + sway, ey - hgt * 0.78); g.lineTo(ex2 + 0.12 * s + sway, ey - hgt * 0.78); g.lineTo(ex2 + 0.3 * s, ey); g.closePath(); g.stroke();
       g.beginPath(); g.arc(ex2 + sway, ey - hgt * 0.86, 0.13 * s, 0, 7); g.stroke();
       const step = Math.sin(S.x * 3) * (Math.abs(S.v) > 0.2 ? 0.1 * s : 0);
       line(ex2 - 0.1 * s + sway, ey - hgt * 0.66, ex2 + S.facing * 0.32 * s + step, ey - hgt * 0.42);
+      }
       g.lineWidth = 1;
       // motes: the only colour (drops, for the weather book)
       for (const m of S.motes) {
@@ -378,12 +465,22 @@ export default {
       const rw = Math.min(W - 32, 560), rx = 16, ry = 12;
       g.fillStyle = "rgba(239,232,214,.96)"; g.fillRect(rx - 8, ry - 6, rw + 16, 50);
       g.strokeStyle = C.ink; g.strokeRect(rx - 8, ry - 6, rw + 16, 50);
+      if (spr["ribbon-grown"] && spr["ribbon-empty"] && spr["ribbon-end"]) {
+        // the bookmark ribbon, as drawn: a grown length per junction passed, its end at the last one
+        const cw = rw / S.J;
+        for (let j = 0; j < S.J; j++) g.drawImage(spr[j < S.ribbon - 1 ? "ribbon-grown" : j === S.ribbon - 1 ? "ribbon-end" : "ribbon-empty"], 0, 12, 300, 36, rx + cw * j, ry - 2, cw, 18);
+        g.strokeStyle = C.ink; g.strokeRect(rx, ry - 2, rw, 18);
+      } else {
       g.strokeRect(rx, ry, rw, 14);
       for (let j = 0; j < S.J; j++) {
         const x = rx + (rw / S.J) * j;
         if (j < S.ribbon) { g.fillStyle = C.gold; g.fillRect(x + 2, ry + 2, rw / S.J - 4, 10); }
         if (j) line(x, ry, x, ry + 14);
       }
+      }
+      // the call's badge: rain while the weather book calls, frost where nothing does
+      const badge = spr[seg.kind === "bend" ? "mote-frost" : "mote-rain"];
+      if (badge && W >= 700) { g.drawImage(badge, rx + rw + 16, ry - 6, 50, 50); g.strokeStyle = C.ink; g.strokeRect(rx + rw + 16, ry - 6, 50, 50); g.fillStyle = "rgba(239,232,214,.96)"; g.fillRect(rx + rw + 70, ry + 8, 150, 22); g.fillStyle = C.ink; g.font = "italic 15px 'EB Garamond',Georgia,serif"; g.fillText(seg.kind === "bend" ? "nothing calls here" : "the call: rain", rx + rw + 76, ry + 24); }
       g.fillStyle = C.ink; g.font = "600 15px 'EB Garamond',Georgia,serif";
       g.fillText(`junction ${Math.min(S.ribbon + 1, S.J)} of ${S.J}   ·   wrong turns ${S.wrong}   ·   ${Math.floor(S.t / 60)}:${String(Math.floor(S.t % 60)).padStart(2, "0")}`, rx, ry + 34);
       // prompt near an exit or ladder
@@ -394,7 +491,7 @@ export default {
       }
       if (!S.riding && seg.ladders.some((l) => Math.abs(l.x - S.x) < 1.2)) prompt = prompt || "Grab (E) the rolling ladder";
       if (S.riding) prompt = "riding: push ▶, Grab to step off";
-      if (prompt) { g.font = "italic 16px 'EB Garamond',Georgia,serif"; const pw2 = g.measureText(prompt).width; const px2 = Math.max(8, Math.min(W - pw2 - 8, X(S.x) - 40)); g.fillStyle = "rgba(239,232,214,.9)"; g.fillRect(px2 - 4, Y(2.9) - 15, pw2 + 8, 21); g.fillStyle = C.ink; g.fillText(prompt, px2, Y(2.9)); }
+      if (prompt) { g.font = "italic 16px 'EB Garamond',Georgia,serif"; const pw2 = g.measureText(prompt).width; const px2 = Math.max(8, Math.min(W - pw2 - 8, X(S.x) - 40)); g.fillStyle = "rgba(239,232,214,.9)"; g.fillRect(px2 - 4, Y(2.9) - 15, pw2 + 8, 21); g.fillStyle = C.ink; g.fillText(prompt, px2, Y(2.9)); if (spr["glyph-climb"] && prompt.includes("climb")) g.drawImage(spr["glyph-climb"], Math.max(4, px2 - 48), Y(2.9) - 30, 40, 40); }
       if (S.msgT > 0) {
         g.font = "italic 17px 'EB Garamond',Georgia,serif"; g.textAlign = "center";
         const maxW = Math.min(W - 32, 640), words = S.msg.split(" "), lines = []; let ln = "";
@@ -419,7 +516,8 @@ export default {
     const intro = document.createElement("div");
     intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play">
-      <svg viewBox="0 0 400 70" aria-hidden="true"><g fill="none" stroke="${C.ink}" stroke-width="1">
+      ${art.has("heading-c5") ? `<img class="${P}head" src="${art.url("heading-c5")}" alt="">` : ""}
+      <svg viewBox="0 0 400 70" aria-hidden="true" ${art.has("heading-c5") ? 'style="display:none"' : ""}><g fill="none" stroke="${C.ink}" stroke-width="1">
         <path d="M0 60 H400 M0 10 H400 M40 10 L60 30 H340 L360 10 M60 30 V60 M340 30 V60 M120 30 V60 M200 30 V60 M280 30 V60"/>
         <path d="M70 30 v-8 M80 30 v-12 M90 30 v-9 M150 30 v-10 M160 30 v-7 M220 30 v-11 M300 30 v-9"/>
         <path d="M372 10 V60 M388 10 V60 M372 20 H388 M372 30 H388 M372 40 H388 M372 50 H388"/></g>
@@ -431,6 +529,7 @@ export default {
         <dt>▲ ▼ · W S</dt><dd>At a junction: the ladder up, the hatch down, or walk on.</dd>
         <dt>shadow</dt><dd>A book's shadow means it falls in a second.</dd>
       </dl>
+      ${art.has("mote-rain") ? `<p class="${P}legend"><span>${pic("mote-rain")}this book calls in rain</span><span>${pic("mote-sand")}${pic("mote-ink")}others in sand or ink</span><span>${pic("mote-frost")}frost: nothing calls</span></p>` : ""}
       <button type="button">Into the stacks</button></div>`;
     el.appendChild(intro);
     intro.querySelector("button").addEventListener("click", () => { intro.remove(); S.started = true; last = performance.now(); say(LINES.open + " " + LINES.first, 5.5); });
@@ -438,6 +537,7 @@ export default {
 
     return {
       unmount() {
+        alive = false;
         cancelAnimationFrame(raf); timers.forEach(clearTimeout); ro.disconnect();
         removeEventListener("keydown", onDown); removeEventListener("keyup", onUp);
         for (const [b, d, u] of ptr) { b.removeEventListener("pointerdown", d); b.removeEventListener("pointerup", u); b.removeEventListener("pointercancel", u); b.removeEventListener("pointerleave", u); }
