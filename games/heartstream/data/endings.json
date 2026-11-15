@@ -9,7 +9,7 @@
         "is": "self.refused",
         "eq": true
       },
-      "summary": "He sat on the elders' bench at the Recognition. The shaft sealed and cut his brothers' voices at once; he kept his blue a while longer, felt each of them go as a skipped beat in the wall, and dims the lamps for the next group.",
+      "summary": "He sat on the elders' bench at the Recognition. The shaft sealed and cut his brothers' voices at once; he kept his blue a while longer, felt each of them go as a skipped beat in the wall, and dims the lamps for the next group. A last image, years on: old, he climbs the shaft alone; a raft waits with his mark in its flank, and four small figures come out of the bone. He carries others to the parting he refused.",
       "final_scenes": [
         "s3_marrow_after",
         "s1_carve_next",
@@ -27,7 +27,7 @@
         "is": "self.taken",
         "eq": true
       },
-      "summary": "An immune beast took him before the heart. He is turned aside into his own vessel, still holding his gift. The ending is his alone: the rest of the raft reach the heart with an empty place and are separated as written.",
+      "summary": "A Warden took him before the heart. In its hold his gift begins to sink into the skin among the gifts it has kept; holding it means he cannot knock for the raft. He is turned aside into his own vessel, with the gift or without it. The ending is his alone: the rest of the raft reach the heart with an empty place and are separated as written.",
       "final_scenes": [
         "s3_hold",
         "s3_hold_turn",
@@ -55,7 +55,7 @@
           }
         ]
       },
-      "summary": "Two brothers who rowed in time all river long squeezed on the song's last note and were swept into one chamber. Everyone else is lost to them.",
+      "summary": "Two brothers who rowed in time all river long squeezed on the song's last note and were swept into one chamber. Everyone else is lost to them. After three minutes a valve opens between the two, without struggle or prompt, and each is carried on alone: \"…never lets you hold what you love for long.\"",
       "final_scenes": [
         "s3_heart",
         "s3_vessel_two"
@@ -67,7 +67,7 @@
       "as_written": true,
       "priority": 4,
       "when": true,
-      "summary": "The current splits in the heart and every brother is swept a different way, holding the tool another carved for him. \"No one stays together.\"",
+      "summary": "The current splits in the heart and every brother is swept a different way, holding the tool another carved for him. In the vessel he turns it over and finds the Underside, if his brother cut one. \"No one stays together.\"",
       "final_scenes": [
         "s3_heart",
         "s3_vessel"

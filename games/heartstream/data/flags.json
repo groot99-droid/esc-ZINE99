@@ -87,6 +87,17 @@
       "description": "Per player: pocketed his counter piece when the lights dimmed."
     },
     {
+      "name": "self.small_one_counter",
+      "type": "enum",
+      "default": "none",
+      "values": [
+        "none",
+        "put_back",
+        "left"
+      ],
+      "description": "Per player: what he did with the counter the small one moved in the first sitting (accepted 2026-11-15). Phase 2 starts the second sitting from the position left."
+    },
+    {
       "name": "run.gifts",
       "type": "ledger",
       "default": [],
@@ -97,7 +108,8 @@
         "form",
         "strokes_used",
         "quality",
-        "marked"
+        "marked",
+        "underside"
       ]
     },
     {
@@ -144,6 +156,36 @@
       "type": "bool",
       "default": false,
       "description": "Per player: the gift he holds carries his mark; +20 ms grip window at the heart."
+    },
+    {
+      "name": "self.underside_cut",
+      "type": "enum",
+      "default": "none",
+      "values": [
+        "none",
+        "counter",
+        "home",
+        "lamp",
+        "open_hand",
+        "raft",
+        "two_hands"
+      ],
+      "description": "Per player: the sign he cut on the inside face of the gift he carved, for 2 strokes (the Underside, accepted 2026-11-15)."
+    },
+    {
+      "name": "self.underside_held",
+      "type": "enum",
+      "default": "none",
+      "values": [
+        "none",
+        "counter",
+        "home",
+        "lamp",
+        "open_hand",
+        "raft",
+        "two_hands"
+      ],
+      "description": "Per player: the Underside on the gift he holds. Nothing shows it to him until s3_vessel."
     },
     {
       "name": "run.song",
@@ -218,6 +260,12 @@
       ]
     },
     {
+      "name": "self.saw_raft_mark",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: at boarding he laid a hand on the pale patch in the raft's flank and knew the mark from the empty seat (accepted 2026-11-15)."
+    },
+    {
       "name": "self.in_time",
       "type": "meter",
       "default": 0,
@@ -279,6 +327,12 @@
       "description": "Per player: hazards pinged from the hold by a taken brother."
     },
     {
+      "name": "self.hold_kept_gift",
+      "type": "bool",
+      "default": true,
+      "description": "Per player (taken): his gift is still in his hand when the beast turns away. Holding it with both hands stops it sinking into the hold's skin and stops him knocking (accepted 2026-11-15)."
+    },
+    {
       "name": "run.route",
       "type": "ledger",
       "default": [],
@@ -295,6 +349,12 @@
       "type": "counter",
       "default": 0,
       "description": "Calm pools reached; one in the delta gives the heart verse 2 minutes."
+    },
+    {
+      "name": "run.saw_finished_board",
+      "type": "bool",
+      "default": false,
+      "description": "The Fourth Branch carried the vote at the last junction and the raft saw the Finished Board in the backwater (accepted 2026-11-15)."
     },
     {
       "name": "self.next_counter_carved",

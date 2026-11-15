@@ -81,7 +81,8 @@
       ],
       "writes": [
         "run.counters_moves",
-        "self.sow_on_beat"
+        "self.sow_on_beat",
+        "self.small_one_counter"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -100,7 +101,8 @@
       "writes": [
         "self.gift_received",
         "self.gift_quality",
-        "self.gift_marked"
+        "self.gift_marked",
+        "self.underside_held"
       ],
       "enter": "cut",
       "exit": "push-in",
@@ -120,7 +122,8 @@
       ],
       "writes": [
         "run.gifts",
-        "self.gift_given"
+        "self.gift_given",
+        "self.underside_cut"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -282,7 +285,8 @@
       "writes": [
         "self.in_time",
         "run.sync",
-        "run.calm_count"
+        "run.calm_count",
+        "self.saw_raft_mark"
       ],
       "enter": "flatten",
       "exit": "flatten",
@@ -372,7 +376,8 @@
       ],
       "writes": [
         "run.sync",
-        "self.scout_pings"
+        "self.scout_pings",
+        "self.hold_kept_gift"
       ],
       "enter": "cut",
       "exit": "fade",
@@ -439,7 +444,8 @@
       ],
       "writes": [
         "run.route",
-        "run.calm_count"
+        "run.calm_count",
+        "run.saw_finished_board"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -577,7 +583,9 @@
         "self.gift_received",
         "self.gift_marked",
         "self.kept_counter",
-        "self.taken"
+        "self.taken",
+        "self.underside_held",
+        "self.hold_kept_gift"
       ],
       "enter": "cut",
       "exit": "fade"

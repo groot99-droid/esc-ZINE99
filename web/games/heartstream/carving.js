@@ -11,12 +11,21 @@
 // Knots are hidden until the ink is rubbed or a cut finds one; that is this mode's reading of
 // "Knots (2–4 per blank)" with only the grain named as visible (DESIGN.md section 11).
 //
+//   The Underside (2 strokes, once) turn the tool over and cut one of six small signs on the inside face
+// The Underside is phase 1 of the accepted development (DESIGN.md "Accepted development (2026-11-15)",
+// DEEP_DIVE.md section 3): the recipient cannot see it until his last scene, alone in the vessel. Its
+// lines are written for the game, not the author's text.
+//
+// Art (api.art): the five form plates, the wedge blank, his mark (the notch), his seat portrait, the
+// six underside signs, chapter cards 2 and 9. Each falls back to the mode's own
+// drawing when the id is missing.
+//
 // Lines shown, verbatim (DESIGN.md section 3, "What they shared"):
 //   creative-writing/vault/03_Stories/02_A_Journey_Into_the_Heartstream_-_The_Rite_of_the_Blue-Born.md
 //   "They have grown up side by side, carved tools together, sung marrow‑songs together, dreamed of the world above the bone."
 // "Carve for him." is the elders' line from DESIGN.md section 6; "Not that one." is the one who argues's.
 
-import { howTo, Legend, Beats, flourish, disposeKit } from "./_kit.js";
+import { howTo, Legend, Beats, flourish, disposeKit, artUrl, plate, endCard } from "./_kit.js";
 
 const C = { ink: "#1a1410", ivory: "#f3e9d2", paper: "#efe3c8", slab: "#cdbb98", red: "#7A1020", gold: "#F2B544" };
 const BW = 36, BH = 108;          // the blank, in mm (grain runs along its length)
@@ -34,6 +43,8 @@ const FORMS = {
   flute: { name: "Flute", effect: "Whole raft: after each calm, the good window widens by 10 ms for 30 s.", rough: "5 ms",
     in: (x, y) => y >= 6 && y <= 102 && Math.abs(x - 18) <= 7 },
 };
+const SIGNS = [["counter", "a counter in its hollow"], ["home", "three beads, the last one home"], ["lamp", "a lamp left burning"],
+  ["open-hand", "an open hand"], ["raft", "the raft on the line"], ["two-hands", "two hands meeting"]];
 const inBlank = (x, y) => { const rx = BW / 2, cy = Math.min(Math.max(y, rx), BH - rx); return Math.hypot((x - rx) / rx, (y - cy) / rx * 1.0) <= 1; };
 // a small outline of each form for its button (drawn from its rule)
 function formIcon(k) {
@@ -86,7 +97,7 @@ export default {
 .${P}legend b{font-family:var(--g-display);font-size:15px}
 .${P}legend li.${P}new{animation:${P}hl 1.2s 2}
 @keyframes ${P}hl{50%{background:rgba(122,16,32,.15)}}
-.${P}beat{position:absolute;left:50%;top:12px;transform:translateX(-50%);width:min(92%,420px);padding:10px 14px;background:${C.ivory};border:1.5px solid ${C.ink};outline:1px solid ${C.ink};outline-offset:3px;font-size:17px;line-height:1.35;font-style:italic;text-align:center;z-index:2}
+.${P}beat{position:absolute;left:50%;top:12px;transform:translateX(-50%);width:min(92%,420px);padding:10px 14px;background:${C.ivory};border:1.5px solid ${C.ink};outline:1px solid ${C.ink};outline-offset:3px;font-size:17px;line-height:1.35;font-style:italic;text-align:center;z-index:2;pointer-events:none}
 .${P}beat b{display:block;font-style:normal;font-family:var(--g-body);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:${C.red}}
 .${P}beat.${P}in{animation:${P}fd .5s}
 @keyframes ${P}fd{from{opacity:0}}
@@ -108,12 +119,24 @@ export default {
 .${P}kc{font-family:var(--g-body);font-size:14px}
 .${P}kw{grid-column:2;font-size:15px;font-style:italic}
 .${P}start{font:600 18px var(--g-display);letter-spacing:.2em;background:${C.ink};color:${C.ivory};border:0;padding:10px 26px;cursor:pointer}
-@media (max-width:760px){.${P}wrap{grid-template-columns:1fr;grid-auto-rows:auto;padding:10px;gap:8px}.${P}stage{min-height:min(56vh,520px)}
+.${P}forms button img{height:44px;width:auto;border:1px solid ${C.ink}}
+.${P}mark img{height:58px;width:auto;border:1px solid ${C.ink}}
+.${P}blank{display:flex;gap:12px;align-items:center;margin:0 0 12px;font-size:15px;font-style:italic}
+.${P}blank img{height:84px;width:auto;border:1px solid ${C.ink};flex:none}
+.${P}under{position:absolute;inset:0;z-index:4;background:rgba(239,227,200,.94);display:grid;place-items:center;padding:12px;overflow:auto}
+.${P}under>div{max-width:440px;width:100%;background:${C.ivory};border:2px solid ${C.ink};outline:1px solid ${C.ink};outline-offset:4px;padding:14px}
+.${P}under h3{margin:0 0 4px;font-size:22px;font-weight:500}
+.${P}under p{margin:0 0 10px;font-size:15px;font-style:italic;line-height:1.35}
+.${P}signs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.${P}signs button{padding:4px;background:${C.ivory};border:1.5px solid ${C.ink};cursor:pointer;font:italic 13px/1.2 var(--g-display);color:${C.ink};display:flex;flex-direction:column;align-items:center;gap:3px;min-height:64px}
+.${P}signs button:hover,.${P}signs button:focus-visible{background:#fff9ea;box-shadow:inset 0 0 0 2px ${C.red}}
+.${P}signs img{width:100%;max-width:92px;height:auto;display:block}
+@media (max-width:760px){.${P}forms button img{height:30px}.${P}wrap{grid-template-columns:1fr;grid-auto-rows:auto;padding:10px;gap:8px}.${P}stage{min-height:min(56vh,520px)}
   .${P}left{order:-2;padding:10px;gap:6px}.${P}stage{order:-1}.${P}mark,.${P}eff{display:none}.${P}lamp{height:56px}.${P}forms{grid-template-columns:repeat(5,1fr)}.${P}forms button{padding:4px 2px;font-size:14px;flex-direction:column;gap:0}.${P}forms button svg{height:22px}}
 `;
     wrap.appendChild(css);
     const left = document.createElement("div"); left.className = P + "side " + P + "left";
-    left.innerHTML = `<p class="${P}h">For</p><div class="${P}mark"><svg width="54" height="54" viewBox="-30 -30 60 60" aria-hidden="true"><circle r="22" fill="none" stroke="${C.ink}" stroke-width="2"/><path d="M-11,12 L0,-13 L11,12 M-6,2 L6,2" fill="none" stroke="${C.red}" stroke-width="3"/></svg><span>the one who argues<br>his mark</span></div>
+    left.innerHTML = `<p class="${P}h">For</p><div class="${P}mark">${artUrl(api, "seat-argues-blue") ? `<img alt="" src="${artUrl(api, "seat-argues-blue")}">` : ""}${artUrl(api, "mark-notch") ? `<img alt="His mark: the notch" src="${artUrl(api, "mark-notch")}">` : `<svg width="54" height="54" viewBox="-30 -30 60 60" aria-hidden="true"><circle r="22" fill="none" stroke="${C.ink}" stroke-width="2"/><path d="M-11,-12 L0,13 L11,-12" fill="none" stroke="${C.red}" stroke-width="3"/></svg>`}<span>the one who argues<br>his mark, the notch</span></div>
 <p class="${P}h">Form</p><div class="${P}forms"></div><div class="${P}eff">Pick a form for his tool.</div><p class="${P}h">Strokes <span class="${P}left-n"></span></p><div class="${P}notches" aria-hidden="true"></div>`;
     const stage = document.createElement("div"); stage.className = P + "stage";
     const cv = document.createElement("canvas"); cv.setAttribute("aria-label", "The bone blank. Drag to carve a stroke; with the keyboard, arrows move the chisel and Space sets each end."); cv.tabIndex = 0;
@@ -124,6 +147,7 @@ export default {
 <button type="button" class="${P}btn" data-a="ink" hidden>Rub the ink <small>1 stroke · I</small></button>
 <button type="button" class="${P}btn" data-a="elder" hidden>The elder's old tool <small>3 looks · E</small></button>
 <button type="button" class="${P}btn" data-a="mark" hidden>Cut his mark <small>3 strokes · M</small></button>
+<button type="button" class="${P}btn" data-a="under" hidden>The underside <small>2 strokes · U</small></button>
 <div class="${P}lamp"><svg viewBox="0 0 60 90" height="100%" aria-hidden="true"><path class="${P}flame" d="M30,10 C22,28 24,40 30,46 C36,40 38,28 30,10Z" fill="${C.gold}" stroke="${C.ink}" stroke-width="1.5"/><rect class="${P}oil" x="14" y="56" width="32" height="20" fill="${C.red}" opacity=".5"/><path d="M8,52 h44 l-6,28 h-32z" fill="none" stroke="${C.ink}" stroke-width="2"/></svg><span class="${P}lampt">the lamp</span></div>
 <button type="button" class="${P}btn ${P}done" data-a="done">DONE</button>`;
     wrap.append(left, stage, right);
@@ -135,8 +159,9 @@ export default {
       scene: "An elder sets a bone blank on the slab in front of you. “Carve for him.” The tool is for the one who argues; it will ride with him to the end.",
       goal: "Make his tool from the blank in 24 strokes, as close to its form as you can.",
       keys: [["Form", "click a form", "its faint outline lies over the blank"], ["Cut", "drag a straight line · arrows + Space", "with the grain costs 1, across it 2"]],
-      extra: `<p style="margin:0 0 12px;font-size:15px;font-style:italic">Other tools lie on the slab; you will find them as you work.</p>`,
+      extra: `<div class="${P}blank">${artUrl(api, "blank-wedge") ? `<img alt="The blank: a wedge of bone, its grain and knots" src="${artUrl(api, "blank-wedge")}">` : ""}<span>Other tools lie on the slab; you will find them as you work.</span></div>`,
     });
+    plate(api, intro, P, { card: "chapter-2", numeral: "numeral-2" });
     wrap.appendChild(intro);
     root.appendChild(wrap);
     const g = cv.getContext("2d");
@@ -173,7 +198,7 @@ export default {
     }
     const formsEl = left.querySelector("." + P + "forms");
     for (const k of Object.keys(FORMS)) {
-      const b = document.createElement("button"); b.type = "button"; b.dataset.k = k; b.innerHTML = `${formIcon(k)}<span>${FORMS[k].name}</span>`; b.setAttribute("aria-pressed", "false");
+      const b = document.createElement("button"); b.type = "button"; b.dataset.k = k; b.innerHTML = `${artUrl(api, "form-" + k) ? `<img alt="" src="${artUrl(api, "form-" + k)}">` : formIcon(k)}<span>${FORMS[k].name}</span>`; b.setAttribute("aria-pressed", "false");
       on(b, "click", () => setForm(k)); formsEl.appendChild(b);
     }
     function quality() {
@@ -222,6 +247,10 @@ export default {
         btn("mark").hidden = false; legend.add("mark", "His mark", "M · 3 strokes, trace", true);
         beats.show("His sign could go into the grip. It costs three strokes, and he would know whose hand cut it.", 5200, "mark", "The grip end");
       }
+      if (st.cuts.length === 10) {
+        btn("under").hidden = false; legend.add("under", "The underside", "U · 2 strokes, one sign", true);
+        beats.show("Nobody carves the inside face of a grip. Two strokes would cut one small sign there, where he would not find it until the tool was all he had.", 6000, "underside", "The underside");
+      }
     }
 
     function cut(a, b0) {
@@ -263,7 +292,7 @@ export default {
       draw();
       if (st.left <= 0) finish();
     }
-    const markPts = () => [{ x: BW / 2 - 4, y: BH - 6 }, { x: BW / 2, y: BH - 16 }, { x: BW / 2 + 4, y: BH - 6 }];
+    const markPts = () => [{ x: BW / 2 - 4, y: BH - 16 }, { x: BW / 2, y: BH - 6 }, { x: BW / 2 + 4, y: BH - 16 }]; // the notch: a V
     function useInk() {
       if (st.inked || st.left < 1 || !st.form) { if (!st.form) say.textContent = "Pick a form first."; return; }
       st.inked = true; st.left -= 1; renderNotches(1); knots.forEach((k) => { k.seen = true; });
@@ -278,6 +307,29 @@ export default {
       btn("elder").querySelector("small").textContent = `${st.looks} look${st.looks === 1 ? "" : "s"} left · E`;
       if (!st.looks) btn("elder").disabled = true;
       say.textContent = "The elder's own old tool: the form as it should be, and the bone still to come away."; draw();
+    }
+    // ---- phase 1: the Underside -------------------------------------------------------------------
+    let underEl = null;
+    function openUnder() {
+      if (st.under || underEl || st.over) return;
+      if (!st.form) { say.textContent = "Pick a form first."; return; }
+      if (st.left < 2) { say.textContent = "Not enough strokes left for the underside."; return; }
+      underEl = document.createElement("div"); underEl.className = P + "under"; underEl.setAttribute("role", "dialog"); underEl.setAttribute("aria-label", "The underside: choose one sign");
+      underEl.innerHTML = `<div><h3>The underside</h3><p>You turn the tool over. The inside face of the grip, where his palm will lie. Two strokes cut one small sign here, and he will not look until he is alone.</p><div class="${P}signs">${SIGNS.map(([id, name], i) => `<button type="button" data-s="${id}">${artUrl(api, "underside-" + id) ? `<img alt="" src="${artUrl(api, "underside-" + id)}">` : ""}<span>${i + 1} · ${name}</span></button>`).join("")}</div><button type="button" class="${P}btn" data-s="">Leave it bare <small>Esc</small></button></div>`;
+      stage.appendChild(underEl);
+      on(underEl, "click", (e) => { const b = e.target.closest("button"); if (b) cutUnder(b.dataset.s); });
+      underEl.querySelector("button").focus();
+    }
+    function cutUnder(id) {
+      if (!underEl) return;
+      underEl.remove(); underEl = null;
+      if (!id) { say.textContent = "You turn it back. The inside face stays bare."; return; }
+      st.under = id; st.left -= 2; renderNotches(2); btn("under").disabled = true;
+      const name = SIGNS.find((x) => x[0] === id)[1];
+      say.textContent = `Cut on the inside face: ${name}. From where he sits he cannot see it.`;
+      beats.show("You turn it face up again before he looks over. It is the only thing you have ever hidden from him.", 4600, "under");
+      draw();
+      if (st.left <= 0) finish();
     }
     function startMark() {
       if (st.left < 3) { say.textContent = "Not enough strokes left for his mark."; return; }
@@ -321,6 +373,8 @@ export default {
     on(wrap, "keydown", (e) => {
       if (!st.started || st.over || e.ctrlKey || e.metaKey) return;
       const k = e.key.toLowerCase();
+      if (underEl) { if (k === "escape") cutUnder(""); else if (/^[1-6]$/.test(k)) cutUnder(SIGNS[+k - 1][0]); return; }
+      if (k === "u" && !btn("under").hidden && !st.under) { openUnder(); return; }
       if (k === "i" && !btn("ink").hidden) useInk();
       else if (k === "e" && !btn("elder").hidden) useElder();
       else if (k === "m" && !btn("mark").hidden && !st.marked) startMark();
@@ -331,6 +385,7 @@ export default {
       if (a.dataset.a === "ink") useInk();
       if (a.dataset.a === "elder") useElder();
       if (a.dataset.a === "mark") startMark();
+      if (a.dataset.a === "under") openUnder();
       if (a.dataset.a === "done") finish();
     });
     on(intro.querySelector("." + P + "start"), "click", () => {
@@ -361,7 +416,7 @@ export default {
     function finish() {
       if (st.over) return;
       if (!st.form) { say.textContent = "Pick a form first."; flourish(formsEl, P + "flash", RM, 450); if (st.time > 0) return; setForm("flute"); }
-      st.over = true; draw();
+      st.over = true; if (underEl) { underEl.remove(); underEl = null; } draw();
       const q = Math.round(quality() * 100), F = FORMS[st.form];
       const word = q >= 80 ? "true" : q >= 60 ? "rough" : "keepsake";
       const used = STROKES - st.left;
@@ -369,8 +424,13 @@ export default {
       const what = word === "true" ? `He will feel it in his hand. ${F.effect}`
         : word === "rough" ? `Rough, but it will serve: ${F.rough.charAt(0).toLowerCase() + F.rough.slice(1)}.`
         : "It will do nothing on the river. It rides with him to the last frame all the same.";
+      const sign = st.under ? SIGNS.find((x) => x[0] === st.under)[1] : "";
+      const under = st.under ? ` On the inside face: ${sign}. He will find it when the heart has taken him from you, alone in a narrow vessel, turning the tool over in a red hand.` : "";
+      // the last picture: with an Underside, the vessel where he reads it (Carried Away gains this and loses nothing)
+      if (st.under) endCard(wrap, api, "chapter-9", { numeral: "numeral-9", inset: "underside-" + st.under, caption: "He cut this where you would not look until now." });
+      else endCard(wrap, api, "chapter-2", { numeral: "numeral-2", inset: "form-" + st.form });
       api.end({ outcome: word === "true" ? "win" : "done",
-        text: `${/^[AEIOU]/.test(F.name) ? "An" : "A"} ${F.name.toLowerCase()} for the one who argues, ${word} (${q}% likeness), in ${used} stroke${used === 1 ? "" : "s"}${st.marked ? ", his mark cut in the grip" : ""}.${how} ${what}` });
+        text: `${/^[AEIOU]/.test(F.name) ? "An" : "A"} ${F.name.toLowerCase()} for the one who argues, ${word} (${q}% likeness), in ${used} stroke${used === 1 ? "" : "s"}${st.marked ? ", his mark cut in the grip" : ""}.${how} ${what}${under}` });
     }
 
     // ---- drawing (scrimshaw) --------------------------------------------------------------------
@@ -427,7 +487,7 @@ export default {
       const mp = markPts();
       if (st.tracing || st.marked) {
         g.strokeStyle = st.marked ? C.red : C.ink; g.lineWidth = st.marked ? 0.7 : 0.35; g.setLineDash(st.marked ? [] : [0.8, 0.8]);
-        g.beginPath(); g.moveTo(mp[0].x, mp[0].y); g.lineTo(mp[1].x, mp[1].y); g.lineTo(mp[2].x, mp[2].y); g.moveTo(mp[0].x + 1.4, mp[0].y - 4); g.lineTo(mp[2].x - 1.4, mp[2].y - 4); g.stroke(); g.setLineDash([]);
+        g.beginPath(); g.moveTo(mp[0].x, mp[0].y); g.lineTo(mp[1].x, mp[1].y); g.lineTo(mp[2].x, mp[2].y); g.stroke(); g.setLineDash([]);
         if (st.tracing) for (const p of mp) { g.beginPath(); g.arc(p.x, p.y, 1.2, 0, 7); g.fillStyle = C.red; g.fill(); }
       }
       const a = st.drag ? st.drag.a : st.kbStart, b0 = st.drag ? st.drag.b : st.kbStart ? st.cursor : null;

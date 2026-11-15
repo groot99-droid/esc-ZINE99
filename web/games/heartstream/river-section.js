@@ -12,9 +12,21 @@
 //   "It is not a tube. / It is a river."
 //   "immune creatures watch from the shadows"
 //   "The river grows narrower. / The current grows faster. / The heart draws near."
+//   "They board together, still a brotherhood. / They do not know how long that will last."
+// Phase 1 of the accepted development (DESIGN.md "Accepted development (2026-11-15)", DEEP_DIVE.md
+// section 2, the midpoint): The Raft Has a Mark. Before the first stroke the raft lies at the bank;
+// there is a fresh pale patch on its flank, and a hand laid on it finds the mark from the empty seat
+// healed into the tissue. Its lines are written for the game, not the author's text.
+//
+// Art (api.art): the far and near planes of the three river sequences (rasterised once per size; the
+// middle planes carry painted folds and tendrils that would read as hazards, so they stay out), the
+// twelve seat portraits (blue at the bank, turning on the river, red in the narrows), the vessel line,
+// the beat rim, the raft's flank in the bone page frame, chapter cards 6 and 8, and the Taken by the River ending card. The
+// mode's own woodblock drawing remains as the fallback for each.
+//
 // The companions' "Down." and "Hush." are the one who fears's lines from DESIGN.md section 6.
 
-import { howTo, Legend, Beats, Streak, flourish, disposeKit } from "./_kit.js";
+import { howTo, Legend, Beats, Streak, flourish, disposeKit, artUrl, artImg, raster, plate, endCard } from "./_kit.js";
 
 const C = { key: "#2a0a10", deep: "#7A1020", river: "#B3202E", hi: "#E0603A", gold: "#F2B544", bone: "#E8DCC4",
   marrow: "#1E3557", marrow2: "#2F5D8C", glow: "#7FB2E0", peach: "#f0b08a" };
@@ -73,9 +85,20 @@ export default {
 .${P}extra label{display:flex;gap:8px;align-items:center;cursor:pointer;padding:6px 8px;border:2px dashed ${C.deep}}
 .${P}start{font:700 17px var(--g-body);background:${C.river};color:${C.bone};border:3px solid ${C.key};padding:10px 28px;cursor:pointer;box-shadow:4px 4px 0 ${C.key}}
 .${P}start:hover{background:${C.hi}}
+.${P}board{position:absolute;inset:0;z-index:4;background:rgba(42,10,16,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:12px;box-sizing:border-box;overflow:auto;touch-action:manipulation}
+.${P}flank{position:relative;max-width:min(100%,820px);border:4px solid ${C.key};box-shadow:8px 8px 0 ${C.key};flex:0 1 auto}
+.${P}flank img{display:block;width:100%;height:auto}
+.${P}flank img.${P}frm{position:absolute;inset:0;height:100%;pointer-events:none}
+.${P}flank button{position:absolute;left:38%;top:50%;width:24%;height:30%;border:3px dashed ${C.key};border-radius:50%;background:rgba(242,181,68,.12);cursor:pointer;padding:0;touch-action:manipulation}
+.${P}flank button:hover,.${P}flank button:focus-visible{background:rgba(242,181,68,.35);outline:3px solid ${C.gold}}
+.${P}flank button[data-seen]{border-style:solid;border-color:${C.gold};background:transparent}
+.${P}board p{margin:0;max-width:640px;text-align:center;font-family:var(--g-display);font-size:19px;line-height:1.35;white-space:pre-line;min-height:3.9em}
+.${P}crew{display:flex;gap:6px}
+.${P}crew img{height:clamp(54px,11vh,84px);width:auto;border:2px solid ${C.key}}
+.${P}board .${P}start small{font-weight:400;opacity:.8;margin-left:6px}
 .${P}shake{animation:${P}shk .35s}
 @keyframes ${P}shk{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
-@media (max-width:560px){.${P}legend{display:none}.${P}beat{font-size:17px;top:28px}.${P}pad button{min-width:58px;padding:8px 8px}.${P}pad button.${P}row{min-width:92px}.${P}card{padding-top:44px}.${P}keys li{grid-template-columns:78px 1fr}}
+@media (max-width:560px){.${P}board p{font-size:17px}.${P}legend{display:none}.${P}beat{font-size:17px;top:28px}.${P}pad button{min-width:58px;padding:8px 8px}.${P}pad button.${P}row{min-width:92px}.${P}card{padding-top:44px}.${P}keys li{grid-template-columns:78px 1fr}}
 `;
     const cv = document.createElement("canvas");
     const pad = document.createElement("div");
@@ -97,6 +120,7 @@ export default {
       keys: [["Row", "Space · tap the river · Row", "on the beat, with your brothers"]],
       extra: `<p style="margin:0 0 8px">Other strokes come as the river brings them.</p>${gentleOffer ? `<label><input type="checkbox" class="${P}gentle"> Gentle Current: the beat window widens to ±200 ms</label>` : ""}`,
     });
+    plate(api, intro, P, { card: "chapter-6", numeral: "numeral-6", css: "margin-right:44px;border:3px solid #2a0a10" });
     wrap.append(css, cv, pad);
     const legend = new Legend(P, wrap);
     const beats = new Beats(P, wrap, RM);
@@ -109,6 +133,40 @@ export default {
     const resize = () => { const r = wrap.getBoundingClientRect(); dpr = Math.min(2, devicePixelRatio || 1); W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); };
     const ro = new ResizeObserver(resize); ro.observe(wrap); resize();
 
+    // ---- the art, rasterised once per size --------------------------------------------------------
+    const A = { far: [null, null, null], near: [null, null, null], frame: [null, null, null], seat: {}, line: null, rim: null, tw: 0, h: 0 };
+    const BAND0 = 0.2, BAND1 = 0.375; // the near plane's crest band, as shares of the height (its surface line is at 0.35)
+    // The near plane is used twice: its crest band scrolls with the water (the roof drape cut out of it),
+    // and the rest of it, the banks and the drape, stands still as a frame (the band cut out of that).
+    function splitNear(c, n) {
+      const copy = () => { const d = document.createElement("canvas"); d.width = c.width; d.height = c.height; const x = d.getContext("2d"); x.drawImage(c, 0, 0); x.globalCompositeOperation = "destination-out"; return [d, x]; };
+      const [band, bx] = copy(), [frame, fx2] = copy(), w = c.width, h = c.height;
+      if (n === 1) bx.fillRect(0, 0, w * 0.31, h * 0.318); else bx.fillRect(w * 0.7, 0, w * 0.3, h * 0.318);
+      const gr = fx2.createLinearGradient(0, h * 0.17, 0, h * 0.25); gr.addColorStop(0, "rgba(0,0,0,0)"); gr.addColorStop(1, "rgba(0,0,0,1)");
+      fx2.fillStyle = gr; fx2.fillRect(0, h * 0.17, w, h * 0.08); fx2.fillStyle = "#000"; fx2.fillRect(0, h * 0.25, w, h * 0.16);
+      return [band, frame];
+    }
+    let artJob = 0, artTimer = 0;
+    async function loadPlanes() {
+      const job = ++artJob, h = Math.round(H), tw = Math.round(h * 16 / 9);
+      if (!h || (A.h === h && A.far[0])) return;
+      const far = [], near = [], frame = [];
+      for (let n = 0; n < 3; n++) {
+        far[n] = await raster(api, `river-${n + 1}-far`, tw, h); if (job !== artJob) return;
+        const m = await raster(api, `river-${n + 1}-near`, tw, h); if (job !== artJob) return;
+        if (m) [near[n], frame[n]] = splitNear(m, n);
+      }
+      A.far = far; A.near = near; A.frame = frame; A.tw = tw; A.h = h;
+      const r = await raster(api, "ui-beat-rim", Math.round(W), h); if (job === artJob) A.rim = r;
+    }
+    const TEMPERS = ["fears", "dreams", "argues", "laughs"]; // bow to stern; you sit at the stern
+    (async () => {
+      for (const t of TEMPERS) for (const c of ["blue", "turning", "red"]) A.seat[`${t}-${c}`] = await raster(api, `seat-${t}-${c}`, 96, 120);
+      A.line = await raster(api, "ui-vessel-line", 1600, 120);
+    })();
+    const kick = () => { clearTimeout(artTimer); artTimer = setTimeout(loadPlanes, 180); };
+    const ro2 = new ResizeObserver(kick); ro2.observe(wrap); loadPlanes();
+
     const folds = [22, 70, 128, 172, 196, 222, 240].map((x) => ({ x, hit: false, done: false }));
     const swells = [50, 104, 160, 208, 231].map((x) => ({ x, hit: false, done: false }));
     const tendrils = [40, 62, 92, 118, 150, 190, 214, 236].map((x) => ({ x, done: false }));
@@ -116,7 +174,7 @@ export default {
     const eyes = [108, 136, 164].map((x) => ({ x, state: "wait", t: 0 }));
     const st = { started: false, over: false, x: 0, speed: CURRENT, trim: 0, pitch: 0, lift: false, hush: false,
       stun: 0, stop: 0, surge: 0, sync: 56, notice: 0, maxNotice: 0, rowBeats: 0, onBeats: 0, flash: 0, jolt: 0, eye: 0, msg: "", msgT: 0,
-      hits: 0, stings: 0, bumps: 0, surges: 0, lastPhase: "" };
+      hits: 0, stings: 0, bumps: 0, surges: 0, lastPhase: "", boarding: false, sawMark: false };
     const beatLog = new Map(); // beat index -> { player: "on"|"off"|null, comp: [bool x3], active }
     let beatTimes = [], nextBeat = 0, nextEval = 0, lastNow = 0, raf = 0, audio = null;
     const strokes = []; // recent stroke marks: { t, on }
@@ -206,6 +264,7 @@ export default {
     on(bStern, "click", () => setTrim(1));
     on(cv, "pointerdown", (e) => { e.preventDefault(); row(); });
     on(window, "keydown", (e) => {
+      if (st.boarding) { const k = e.key.toLowerCase(); if (k === "t") { e.preventDefault(); touchMark(); } else if (k === "enter") { e.preventDefault(); board(); } return; }
       if (!st.started) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); start(); } return; }
       const k = e.key.toLowerCase();
       if (k === " " || k === "j") { e.preventDefault(); if (!e.repeat) row(); }
@@ -221,12 +280,37 @@ export default {
     });
     on(intro.querySelector("." + P + "start"), "click", () => start());
 
+    // ---- phase 1: boarding, and the mark in the raft's flank --------------------------------------
+    let boardEl = null;
     function start() {
-      if (st.started) return;
+      if (st.started || st.boarding) return;
       const gc = intro.querySelector("." + P + "gentle");
       if (gc && gc.checked) GOOD = 200;
       intro.remove();
       try { audio = new (window.AudioContext || window.webkitAudioContext)(); } catch { audio = null; }
+      st.boarding = true;
+      boardEl = document.createElement("div"); boardEl.className = P + "board"; boardEl.setAttribute("role", "dialog"); boardEl.setAttribute("aria-label", "Boarding the raft");
+      const url = artUrl(api, "raft-flank-mark");
+      boardEl.innerHTML = `<div class="${P}flank">${url ? `<img alt="The raft at the bank: a long pale hull, and on its flank one paler patch." src="${url}">` : `<div style="aspect-ratio:16/9;width:min(92vw,820px);background:${C.bone}"></div>`}${artUrl(api, "ui-frame-page") ? `<img alt="" class="${P}frm" src="${artUrl(api, "ui-frame-page")}">` : ""}<button type="button" aria-label="Lay your hand on the pale patch (T)"></button></div>
+<p aria-live="polite">They board together, still a brotherhood.\nThey do not know how long that will last.\nThe raft lies against the bank. On its flank there is a patch paler than the rest.</p>
+<div class="${P}crew"></div><button type="button" class="${P}start">Board the raft<small>Enter</small></button>`;
+      const crew = boardEl.querySelector("." + P + "crew");
+      TEMPERS.forEach((t) => { const im = artImg(api, `seat-${t}-blue`, "", "the one who " + t); if (im) crew.appendChild(im); });
+      wrap.appendChild(boardEl);
+      on(boardEl.querySelector("." + P + "flank button"), "click", touchMark);
+      on(boardEl.querySelector("." + P + "start"), "click", board);
+      boardEl.querySelector("." + P + "flank button").focus();
+    }
+    function touchMark() {
+      if (!boardEl || st.sawMark) return;
+      st.sawMark = true;
+      boardEl.querySelector("." + P + "flank button").setAttribute("data-seen", "1");
+      boardEl.querySelector("p").textContent = "The patch is new, and there is a mark healed into it. You know the mark: it is cut into the empty seat on the elders' bench.\nThe raft is warm where you sit. It was waiting before you were born.";
+      boardEl.querySelector("." + P + "start").focus();
+    }
+    function board() {
+      if (!st.boarding) return;
+      st.boarding = false; if (boardEl) { boardEl.remove(); boardEl = null; }
       st.started = true;
       beatTimes = [performance.now() + 700]; nextBeat = 0; nextEval = 0; lastNow = performance.now();
       legend.add("row", "Row", "Space · tap · Row");
@@ -348,11 +432,13 @@ export default {
         const how = inTime >= 85 ? "You kept the heart's time on " + inTime + "% of your strokes, and the raft ran warm under all four of you."
           : inTime >= 60 ? "You kept time on " + inTime + "% of your strokes; the raft forgave the rest."
           : "Your oar found the beat on only " + inTime + "% of strokes; your brothers carried the time for you.";
+        const mark = st.sawMark ? " The raft knew the way. It is grown from everyone who never went." : "";
         const scar = st.maxNotice >= 60 ? " The eye had turned your way once, and turned back." : st.hits ? ` The folds stopped you ${st.hits} time${st.hits > 1 ? "s" : ""}.` : " Not a fold touched the bow.";
-        text = `Out of the narrows, still four. ${how}${scar}`;
+        text = `Out of the narrows, still four. ${how}${scar}${mark}`;
       } else {
         text = "The eye found the stern. You are lifted into the beast in one movement, without a struggle, and your seat stays empty. Your brothers row on with three. Taken by the river.";
       }
+      endCard(wrap, api, win ? "chapter-8" : "ending-taken-by-the-river", win ? { numeral: "numeral-8" } : {});
       api.end({ outcome: win ? "win" : "lose", text: text + (!win && streak.losses >= 2 ? " (Gentle Current is offered on the next start.)" : "") });
     }
 
@@ -384,6 +470,23 @@ export default {
       const sx = (x) => RX + (x - st.x) * PX;
       const jy = st.jolt * Math.sin(now / 30) * 4;
       const narrows = Math.max(0, Math.min(1, (st.x - NARROWS + 10) / 30));
+      // the reach: 0 open water, 1 the patrol, 2 the narrows; `mix` fades the next plane in
+      const reach = st.x < PATROL[0] - 8 ? 0 : st.x < NARROWS - 6 ? 1 : 2;
+      const edge = reach === 0 ? PATROL[0] - 8 : NARROWS - 6, mix = reach < 2 ? Math.max(0, Math.min(1, (st.x - edge + 8) / 8)) : 0;
+      const useArt = A.far[reach] && Math.abs(A.h - H) < 2;
+      const tiles = (c, off, sy0, sh, dy, dh) => { // mirrored tiling across the width, so the seams meet
+        const tw = A.tw, o = ((off % (2 * tw)) + 2 * tw) % (2 * tw), ky = c.height / A.h;
+        for (let i = -1, x = -o; x < W; i++, x += tw) {
+          if (x + tw < 0) continue;
+          const flip = ((i % 2) + 2) % 2 === 0;
+          g.save(); if (flip) { g.translate(x + tw, 0); g.scale(-1, 1); } else g.translate(x, 0);
+          g.drawImage(c, c.width * 0.012, sy0 * ky, c.width * 0.976, sh * ky, 0, dy, tw + 1, dh); g.restore(); // the plane's own edges are trimmed
+        }
+      };
+      if (useArt) {
+        tiles(A.far[reach], reach === 2 ? 0 : st.x * PX * 0.22, 0, H, 0, H);
+        if (mix > 0 && A.far[reach + 1]) { g.globalAlpha = mix; tiles(A.far[reach + 1], reach === 1 ? 0 : st.x * PX * 0.22, 0, H, 0, H); g.globalAlpha = 1; }
+      } else {
       // sky: the artery interior in flat bands; the walls close in at the narrows
       const bands = [[0, "#4a0812"], [0.3, C.deep], [0.62, C.river], [0.86, "#d4704f"]];
       bands.forEach(([f, c], i) => { g.fillStyle = c; const y0 = SURF * f, y1 = i < 3 ? SURF * bands[i + 1][0] : SURF; g.fillRect(0, y0, W, y1 - y0 + 1); });
@@ -395,6 +498,8 @@ export default {
         g.quadraticCurveTo(x + 45, wallDepth + (i % 2) * 8, x + 90, 0);
       }
       g.lineTo(W, 0); g.closePath(); g.fill(); g.stroke();
+      }
+      const late = []; // the folds' and swells' labels, drawn after the crests so the crests never cover them
       // valve folds hanging to the surface
       for (const f of folds) {
         const x = sx(f.x); if (x < -120 || x > W + 120) continue;
@@ -405,9 +510,10 @@ export default {
         g.fillStyle = f.hit ? "#5a0b17" : "#8f2233"; g.fill(); g.lineWidth = 3; g.strokeStyle = C.key; g.stroke();
         g.lineWidth = 2; g.strokeStyle = "rgba(240,176,138,.55)";
         for (let k = 1; k < 4; k++) { g.beginPath(); g.moveTo(x - 50 + k * 25, 10); g.quadraticCurveTo(x - 50 + k * 25 + 4, bottom * 0.6, x - 30 + k * 15, bottom - 14); g.stroke(); }
-        if (!f.done && x > RX && legend.has("trim")) label("◀ BOW DOWN", x, bottom + 22, st.pitch < -0.3 ? C.gold : C.bone, C.key);
+        if (!f.done && x > RX && legend.has("trim")) late.push(["◀ BOW DOWN", x, bottom + 22, st.pitch < -0.3 ? C.gold : C.bone]);
       }
       // the water: flat carved bands, with carved wave lines between them
+      if (!useArt) {
       const water = [[SURF, C.river], [SURF + (H - SURF) * 0.3, "#981a28"], [SURF + (H - SURF) * 0.58, C.deep], [SURF + (H - SURF) * 0.8, "#5a0b17"]];
       water.forEach(([y, c], i) => {
         g.fillStyle = c; g.fillRect(0, y, W, (i < 3 ? water[i + 1][0] : H) - y + 1);
@@ -418,18 +524,22 @@ export default {
         }
       });
       g.save(); g.translate(-((st.x * PX * 0.5) % 240), 0); g.fillStyle = grain; g.fillRect(0, 0, W + 240, H); g.restore();
+      }
       // swells: a raised hump in the surface
       for (const w of swells) {
         const x = sx(w.x); if (x < -140 || x > W + 140) continue;
         g.beginPath(); g.moveTo(x - 90, SURF); g.quadraticCurveTo(x, SURF - 44, x + 90, SURF); g.closePath();
         g.fillStyle = C.river; g.fill(); g.lineWidth = 3; g.strokeStyle = C.key; g.stroke();
         for (let k = -2; k <= 1; k++) crest(x + k * 34, SURF - 30 + Math.abs(k + 0.5) * 9, 0.7, C.bone);
-        if (!w.done && x > RX && legend.has("trim")) label("STERN DOWN ▶", x, SURF - 60, st.pitch > 0.3 ? C.gold : C.bone, C.key);
+        if (!w.done && x > RX && legend.has("trim")) late.push(["STERN DOWN ▶", x, SURF - 60, st.pitch > 0.3 ? C.gold : C.bone]);
       }
       // keyed crests along the surface line
       const cs = Math.max(0.6, Math.min(1.1, W / 1200));
-      for (let x = -((st.x * PX) % (60 * cs)) - 60 * cs; x < W + 60; x += 60 * cs) crest(x, SURF, cs, C.bone);
+      const band0 = H * BAND0, band1 = H * BAND1;
+      if (useArt && A.near[reach]) tiles(A.near[reach], st.x * PX, band0, band1 - band0, band0, band1 - band0);
+      else for (let x = -((st.x * PX) % (60 * cs)) - 60 * cs; x < W + 60; x += 60 * cs) crest(x, SURF, cs, C.bone);
       g.strokeStyle = C.key; g.lineWidth = 3; g.beginPath(); g.moveTo(0, SURF); g.lineTo(W, SURF); g.stroke();
+      for (const [t, x, y, bg] of late) label(t, x, y, bg, C.key);
       // the immune beast below, its single slow eye
       if (st.x > PATROL[0] - 20 && st.x < PATROL[1] + 20) {
         const bx = W * 0.55 + Math.sin(now / 2400) * W * 0.08, by = H + 30;
@@ -471,6 +581,9 @@ export default {
       const warm = Math.max(0, (st.sync - 40) / 60);
       g.beginPath(); g.moveTo(-110, -8); g.quadraticCurveTo(0, 18, 120, -12); g.lineTo(108, -24); g.lineTo(-100, -20); g.closePath();
       g.fillStyle = st.surge > 0 ? "#fff1c8" : `rgb(${232},${220 - warm * 40},${196 - warm * 70})`; g.fill(); g.lineWidth = 3; g.strokeStyle = C.key; g.stroke();
+      // the patch on the flank, and the mark healed into it (it is there whether or not you looked)
+      g.beginPath(); g.ellipse(4, -8, 13, 8, 0, 0, 7); g.fillStyle = "#fbf4e2"; g.fill(); g.lineWidth = 1.5; g.strokeStyle = "#b89f78"; g.stroke();
+      g.strokeStyle = st.sawMark ? C.deep : "#c9a37a"; g.lineWidth = 2; g.beginPath(); g.moveTo(4, -3); g.lineTo(4, -8); g.lineTo(0, -12); g.moveTo(4, -8); g.lineTo(8, -12); g.stroke();
       const seats = [80, 30, -20, -70];
       const lastB = beatLog.get(nextBeat - 1);
       seats.forEach((bx, i) => {
@@ -508,16 +621,38 @@ export default {
         g.fillText("BOW", gx - 48, gy + 14); g.fillText("STERN", gx + 44, gy + 14);
         g.fillStyle = C.gold; g.beginPath(); g.arc(gx + st.trim * 12, gy + 9, 6, 0, 7); g.fill();
       }
+      // the near plane's banks and roof drape frame the view (everything outside its crest band)
+      if (useArt && A.frame[reach]) {
+        // its left and right parts are pinned to the stage's corners, so the banks stay in the corners at any width
+        const c = A.frame[reach], kx = c.width / A.tw, part = Math.min(A.tw * 0.4, W / 2);
+        // on a narrow stage only the roof drape is kept: the banks would cover the water the player has to read
+        const rows = W < 700 ? 0.3 : 1;
+        g.drawImage(c, 0, 0, part * kx, c.height * rows, 0, 0, part, H * rows);
+        g.drawImage(c, (A.tw - part) * kx, 0, part * kx, c.height * rows, W - part, 0, part, H * rows);
+      }
+      if (A.rim && st.flash > 0.02 && !RM) { g.globalAlpha = Math.min(1, st.flash) * 0.85; g.drawImage(A.rim, 0, 0, W, H); g.globalAlpha = 1; }
       // HUD: the vessel line along the top edge, the raft's glyph moving toward a small heart
       const vx0 = 20, vx1 = W - 50, vy = 16;
       g.fillStyle = "rgba(42,10,16,.6)"; g.fillRect(0, 0, W, 30);
-      g.strokeStyle = C.bone; g.lineWidth = 2; g.beginPath(); g.moveTo(vx0, vy); g.lineTo(vx1, vy); g.stroke();
+      if (A.line) { const k = W / 1600, sh = Math.min(120, 30 / k); g.drawImage(A.line, 0, (120 - sh) / 2, 1600, sh, 0, 15 - (sh * k) / 2, W, sh * k); }
+      else { g.strokeStyle = C.bone; g.lineWidth = 2; g.beginPath(); g.moveTo(vx0, vy); g.lineTo(vx1, vy); g.stroke(); }
       g.fillStyle = "rgba(0,0,0,.45)"; g.fillRect(vx0 + (vx1 - vx0) * PATROL[0] / LEN, vy - 3, (vx1 - vx0) * (PATROL[1] - PATROL[0]) / LEN, 6);
       g.fillStyle = C.hi; g.fillRect(vx0 + (vx1 - vx0) * NARROWS / LEN, vy - 1, (vx1 - vx0) * (LEN - NARROWS) / LEN, 3);
       const gx = vx0 + (vx1 - vx0) * Math.min(1, st.x / LEN);
       g.fillStyle = C.bone; g.beginPath(); g.moveTo(gx - 9, vy - 5); g.lineTo(gx + 9, vy - 5); g.lineTo(gx + 6, vy + 5); g.lineTo(gx - 6, vy + 5); g.fill();
-      const hs = 1 + st.flash * 0.25; g.save(); g.translate(vx1 + 18, vy + 1); g.scale(hs, hs);
-      g.fillStyle = C.gold; g.beginPath(); g.moveTo(0, 8); g.bezierCurveTo(-14, -2, -8, -12, 0, -5); g.bezierCurveTo(8, -12, 14, -2, 0, 8); g.fill(); g.restore();
+      if (!A.line) { const hs = 1 + st.flash * 0.25; g.save(); g.translate(vx1 + 18, vy + 1); g.scale(hs, hs);
+      g.fillStyle = C.gold; g.beginPath(); g.moveTo(0, 8); g.bezierCurveTo(-14, -2, -8, -12, 0, -5); g.bezierCurveTo(8, -12, 14, -2, 0, 8); g.fill(); g.restore(); }
+      // the four seats, bow to stern: turning on the river, red in the narrows
+      { const col = st.x >= NARROWS ? "red" : "turning", small = W < 560, pw = small ? 34 : 46, ph = pw * 1.25;
+        const px0 = small ? 10 : 14, py0 = small ? 36 : H - 150 - ph + 40;
+        TEMPERS.forEach((t, i) => {
+          const c = A.seat[`${t}-${col}`]; if (!c) return;
+          const x = px0 + i * (pw + 4), me = i === 3;
+          if (me && st.stun > 0) g.globalAlpha = 0.45;
+          g.drawImage(c, x, py0, pw, ph); g.globalAlpha = 1;
+          g.lineWidth = me ? 3 : 1.5; g.strokeStyle = me ? C.gold : C.key; g.strokeRect(x, py0, pw, ph);
+        });
+      }
       // the eye's notice: shown from the patrol on, a carved bar that reddens and shakes as it rises
       if (st.x >= PATROL[0] - 6 || st.notice > 0) {
         const nw = Math.min(200, W * 0.4), nx = W - nw - 14, ny = 40, f = Math.min(1, st.notice / 100);
@@ -567,8 +702,8 @@ export default {
 
     return {
       unmount() {
-        cancelAnimationFrame(raf);
-        ro.disconnect();
+        cancelAnimationFrame(raf); artJob++; clearTimeout(artTimer);
+        ro.disconnect(); ro2.disconnect();
         listeners.forEach(([t, ev, fn, o]) => t.removeEventListener(ev, fn, o));
         beats.dispose(); disposeKit();
         if (audio) audio.close().catch(() => {});

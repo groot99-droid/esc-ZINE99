@@ -11,12 +11,17 @@
 //   Reach  a long reach for the hold beyond: on the beat's heart (±60 ms) it gains two holds; a near
 //          miss gains one; a miss slides you two.
 //
+// Art (api.art): the far and near planes of both climb sequences (the painted back wall of the shaft and
+// its side walls with their hand stencils, rasterised once per size; the middle planes carry painted
+// ledges and holds that would read as real ones, so they stay out), the four seat portraits in the
+// count, chapter cards 5 and 6. The mode's own rock, walls and stencils remain as the fallback.
+//
 // Line shown, verbatim (DESIGN.md section 3, "The ascent"):
 //   creative-writing/vault/03_Stories/02_A_Journey_Into_the_Heartstream_-_The_Rite_of_the_Blue-Born.md
 //   "A narrow shaft opens in the bone — a vertical tunnel lined with soft, living tissue. The Blue‑Born climb, feeling the temperature rise, feeling the pulse grow louder."
 // "Look up." is the one who dreams's line from DESIGN.md section 6.
 
-import { howTo, Legend, Beats, Streak, flourish, disposeKit } from "./_kit.js";
+import { howTo, Legend, Beats, Streak, flourish, disposeKit, artImg, raster, plate, endCard } from "./_kit.js";
 
 const C = { char: "#1d1612", ochre: "#a4532a", red: "#b3202e", deep: "#7A1020", gold: "#F2B544", bone: "#E8DCC4",
   rock: "#d8c3a2", blue: "#2F5D8C" };
@@ -53,6 +58,9 @@ export default {
 .${P}hud .${P}bar{height:10px;border:2px solid ${C.char};border-radius:6px;margin:2px 0 4px;overflow:hidden;background:#efe0c3}
 .${P}hud .${P}bar i{display:block;height:100%;background:${C.red};transition:width .3s}
 .${P}hud .${P}heat{color:${C.red};font-weight:700}
+.${P}crew{display:flex;gap:3px;margin-top:4px}
+.${P}crew img{height:40px;width:auto;border:1.5px solid ${C.char}}
+.${P}crew img:first-child{border:2px solid ${C.red}}
 .${P}legend{position:absolute;right:10px;top:10px;margin:0;padding:8px 12px;list-style:none;background:rgba(230,210,176,.9);border:2px solid ${C.char};border-radius:16px 10px 14px 12px;font-size:14px;line-height:1.55;max-width:240px}
 .${P}legend b{color:${C.deep}}
 .${P}legend li::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:${C.red};margin-right:6px;box-shadow:5px 1px 0 ${C.red}}
@@ -83,7 +91,7 @@ export default {
 .${P}start:hover{background:${C.deep}}
 .${P}shake{animation:${P}shk .3s}
 @keyframes ${P}shk{30%{transform:translateY(3px)}70%{transform:translateY(-2px)}}
-@media (max-width:620px){.${P}legend{display:none}.${P}hud{font-size:13px;min-width:140px}.${P}beat{top:110px;font-size:17px}.${P}pad button{min-width:80px;padding:8px 10px}}
+@media (max-width:620px){.${P}crew img{height:28px}.${P}legend{display:none}.${P}hud{font-size:13px;min-width:140px}.${P}beat{top:110px;font-size:17px}.${P}pad button{min-width:80px;padding:8px 10px}}
 `;
     const cv = document.createElement("canvas");
     const pad = document.createElement("div"); pad.className = P + "pad";
@@ -105,6 +113,12 @@ export default {
       keys: [["Grab", "Space · ↑ · Grab · tap the rock", "on the beat the hold is firm; off it, you slide down one"]],
       extra: `<p style="margin:0 0 8px">More moves come as the shaft asks for them.</p>${offer ? `<label><input type="checkbox" class="${P}gentle"> Gentle Current: the beat window widens to ±200 ms</label>` : ""}`,
     });
+    plate(api, intro, P, { card: "chapter-5", numeral: "numeral-5", css: "border-radius:18px 12px 20px 10px;border:3px solid #1d1612", at: "50% 30%" });
+    { // the four in the shaft: you, the one beside you, the two ahead
+      const crew = document.createElement("div"); crew.className = P + "crew";
+      ["laughs", "dreams", "argues", "fears"].forEach((t) => { const im = artImg(api, `seat-${t}-turning`, "", "the one who " + t); if (im) crew.appendChild(im); });
+      if (crew.children.length) hud.appendChild(crew);
+    }
     wrap.append(css, cv, hud, pad);
     const legend = new Legend(P, wrap);
     const beats = new Beats(P, wrap, RM);
@@ -115,7 +129,23 @@ export default {
 
     let W = 0, H = 0, dpr = 1;
     const resize = () => { const r = wrap.getBoundingClientRect(); dpr = Math.min(2, devicePixelRatio || 1); W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); };
-    const ro = new ResizeObserver(resize); ro.observe(wrap); resize();
+    const ro = new ResizeObserver(() => { resize(); kick(); }); ro.observe(wrap); resize();
+    // ---- the art: the shaft's back wall (far) and side walls (near), rasterised once per size ----
+    const shaftW = () => Math.min(W * 0.56, 420);
+    const A = { far: [null, null], near: [null, null], nw: 0, nh: 0 };
+    let artJob = 0, artTimer = 0;
+    async function loadPlanes() {
+      const job = ++artJob, nw = Math.round(shaftW() / 0.72), nh = Math.round(nw * 16 / 9);
+      if (!nw || (A.nw === nw && A.far[0])) return;
+      const far = [], near = [];
+      for (let n = 0; n < 2; n++) {
+        far[n] = await raster(api, `climb-${n + 1}-far`, nw, nh); if (job !== artJob) return;
+        near[n] = await raster(api, `climb-${n + 1}-near`, nw, nh); if (job !== artJob) return;
+      }
+      A.far = far; A.near = near; A.nw = nw; A.nh = nh;
+    }
+    function kick() { clearTimeout(artTimer); artTimer = setTimeout(loadPlanes, 180); }
+    loadPlanes();
 
     // rock texture: a stippled, cracked tile drawn once
     const tile = document.createElement("canvas"); tile.width = 256; tile.height = 256;
@@ -251,6 +281,7 @@ export default {
       streak.record(win ? "win" : "lose");
       const sync = Math.min(70, 50 + 3 * st.lifts);
       const acc = st.good + st.bad ? Math.round((100 * st.good) / (st.good + st.bad)) : 0;
+      endCard(wrap, api, win ? "chapter-6" : "chapter-5", { numeral: win ? "numeral-6" : "numeral-5" });
       api.end(win
         ? { outcome: "win", text: `Into the light at the top of the shaft, the one who dreams beside you. ${st.lifts} lift${st.lifts === 1 ? "" : "s"} made together, ${acc}% of your grabs firm${st.clings ? `, ${st.clings} slick beat${st.clings === 1 ? "" : "s"} clung through` : ""}; the raft's sync will start at ${sync}.` }
         : { outcome: "lose", text: `The count ran out ${Math.max(1, Math.round(TOP - st.me))} m below the light. Nobody falls in the shaft; ${st.slips} slip${st.slips === 1 ? "" : "s"} cost you the height. The heart keeps its own time: wait for it.${streak.losses >= 2 ? " (Gentle Current is offered on the next start.)" : ""}` });
@@ -334,16 +365,40 @@ export default {
       const prog = Math.min(1, st.me / TOP);
       const bg = g.createLinearGradient(0, 0, 0, H);
       bg.addColorStop(0, `rgb(${233},${195 - prog * 40},${154 - prog * 50})`); bg.addColorStop(0.5, "#d8c3a2"); bg.addColorStop(1, `rgb(${169 + prog * 40},${180 - prog * 40},${189 - prog * 70})`);
+      const sw = shaftW(), sxL = W / 2 - sw / 2, sxR = W / 2 + sw / 2;
+      const useArt = A.far[0] && A.far[1] && A.near[0] && A.near[1] && Math.abs(A.nw - Math.round(sw / 0.72)) < 3;
+      if (useArt) {
+        // Both planes are laid from the foot of the shaft to its top and scroll at their own rates, so the
+        // foot shows the cool end of plane 1 and the top the warm end of plane 2.
+        const nw = A.nw, nh = A.nh, x0 = Math.round(W / 2 - nw / 2), camMax = Math.max(1, TOP * PX - H * 0.32), camNow = Math.max(0, st.cam);
+        g.fillStyle = "#2f241f"; g.fillRect(0, 0, W, H);
+        const offF = camNow * Math.max(0, (2 * nh - H) / camMax);
+        for (let n = 0; n < 2; n++) { const y = H - (n + 1) * nh + offF; if (y < H && y + nh > 0) g.drawImage(A.far[n], x0 + 3, y, nw - 6, nh + 1); }
+        // near: [1 whole] [1 mirrored, without its haze] [2 mirrored, without its shimmer] [2 whole]
+        const parts = [[0, 0, 1, false], [0, 0, 0.78, true], [1, 0.2, 1, true], [1, 0, 1, false]];
+        const total = parts.reduce((a, q) => a + (q[2] - q[1]) * nh, 0), offN = camNow * Math.max(0, (total - H) / camMax);
+        let yb = H + offN;
+        for (const [n, a0, a1, flip] of parts) {
+          const hh = (a1 - a0) * nh, y = yb - hh; yb = y;
+          if (y > H || y + hh < 0) continue;
+          const c = A.near[n];
+          g.save(); if (flip) { g.translate(x0 + nw, 0); g.scale(-1, 1); } else g.translate(x0, 0);
+          g.drawImage(c, 0, a0 * c.height, c.width, (a1 - a0) * c.height, 0, y, nw, hh + 1); g.restore();
+        }
+        g.fillStyle = "#2f241f"; g.fillRect(x0 - 1, 0, 4, H); g.fillRect(x0 + nw - 3, 0, 4, H); // the planes' own edges
+      } else {
       g.fillStyle = bg; g.fillRect(0, 0, W, H);
       g.save(); g.translate(0, st.cam % 256); g.fillStyle = pattern; g.fillRect(0, -256, W, H + 512); g.restore();
+      }
       const lr = W * (0.25 + 0.5 * prog);
       const lg = g.createRadialGradient(W / 2, Math.min(sy(TOP + 2), 0) - 20, 0, W / 2, Math.min(sy(TOP + 2), 0) - 20, lr);
       lg.addColorStop(0, "rgba(255,243,208,.95)"); lg.addColorStop(0.5, "rgba(242,181,68,.55)"); lg.addColorStop(1, "rgba(224,96,58,0)");
       g.fillStyle = lg; g.fillRect(0, 0, W, H);
-      const sw = Math.min(W * 0.56, 420), sxL = W / 2 - sw / 2, sxR = W / 2 + sw / 2;
+      if (!useArt) {
       for (const h of stencils) { const y = sy(h.y); if (y < -80 || y > H + 80) continue; stencil(h.side < 0 ? sxL - Math.max(50, (sxL) * 0.5) : sxR + Math.max(50, (W - sxR) * 0.5), y, h.s, h.rot, h.red); }
       g.strokeStyle = C.char; g.lineWidth = 4;
       [sxL, sxR].forEach((x0, side) => { g.beginPath(); for (let y = -20; y <= H + 20; y += 20) { const m = (H - y + st.cam) / PX; const x = x0 + Math.sin(m * 1.3 + side * 2) * 10 + Math.sin(m * 3.1) * 4; y === -20 ? g.moveTo(x, y) : g.lineTo(x, y); } g.stroke(); });
+      }
       // holds: paired ochre dabs that tighten on the beat; they glisten white before a slick beat
       const pulse = st.flash, glisten = st.slickNext && st.phase === "climb";
       for (let m = 1; m <= TOP; m++) {
@@ -429,7 +484,7 @@ export default {
 
     return {
       unmount() {
-        cancelAnimationFrame(raf); ro.disconnect();
+        cancelAnimationFrame(raf); ro.disconnect(); artJob++; clearTimeout(artTimer);
         listeners.forEach(([t, ev, fn, o]) => t.removeEventListener(ev, fn, o));
         beats.dispose(); disposeKit();
         if (audio) audio.close().catch(() => {});

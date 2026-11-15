@@ -10,19 +10,23 @@
 // Actions: Place (drag, or tap a phrase then a slot); Take back (tap your placed phrase); Listen
 // (the whole verse with a play-head); Ask the one who dreams (two ghosted suggestions per verse).
 //
+// Art (api.art): the song membrane under the slots, each brother's bead, temperament glyph and seat
+// portrait on his tray (blue in the hollow, turning on the river), chapter cards 3 and 7. The mode's
+// own drawing remains as the fallback for each.
+//
 // Lines shown, verbatim (DESIGN.md section 3):
 //   creative-writing/vault/03_Stories/02_A_Journey_Into_the_Heartstream_-_The_Rite_of_the_Blue-Born.md
 //   "Their society is calm, cold, and ceremonial. Everything they do prepares them for the moment they will leave the bones forever."
 //   "The young men laugh, argue, dream, and fear — all the emotions of early adulthood, amplified by the knowledge that this is the last time they will ever be together."
 // "Sing it whole." is the elders' line from DESIGN.md section 6.
 
-import { howTo, Beats, flourish, disposeKit } from "./_kit.js";
+import { howTo, Beats, flourish, disposeKit, artUrl, pngUrl, plate, flashPlate, endCard } from "./_kit.js";
 
 const SEATS = [
-  { name: "you, the one who laughs", short: "You", col: "#7FB2E0", wave: "sine" },
-  { name: "the one who argues", short: "Argues", col: "#E8DCC4", wave: "triangle" },
-  { name: "the one who dreams", short: "Dreams", col: "#E0603A", wave: "square" },
-  { name: "the one who fears", short: "Fears", col: "#F2B544", wave: "sawtooth" },
+  { name: "you, the one who laughs", short: "You", col: "#7FB2E0", wave: "sine", t: "laughs" },
+  { name: "the one who argues", short: "Argues", col: "#E8DCC4", wave: "triangle", t: "argues" },
+  { name: "the one who dreams", short: "Dreams", col: "#E0603A", wave: "square", t: "dreams" },
+  { name: "the one who fears", short: "Fears", col: "#F2B544", wave: "sawtooth", t: "fears" },
 ];
 const PITCH = [0, 196, 220, 262, 294, 330];
 const SOCIETY = "Their society is calm, cold, and ceremonial. Everything they do prepares them for the moment they will leave the bones forever.";
@@ -139,7 +143,9 @@ export default {
 .${P}mem g[role=button]:focus rect.${P}hit{stroke:#F2B544;stroke-width:3;stroke-opacity:1}
 .${P}trays{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
 .${P}tray{border:1.5px solid;border-radius:14px;padding:8px;background:rgba(11,20,36,.55);min-width:0}
-.${P}tray h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px;font-weight:700}
+.${P}tray h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px;font-weight:700;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.${P}tray h3 img{height:38px;width:auto;border-radius:4px;flex:none}
+.${P}tray h3 img.${P}sm{height:26px;border-radius:50%}
 .${P}tray .${P}ph{display:flex;gap:6px;flex-wrap:wrap}
 .${P}phr{background:none;border:1.5px solid rgba(127,178,224,.25);border-radius:10px;padding:2px;cursor:grab;touch-action:none}
 .${P}phr:hover:not(:disabled){border-color:#7FB2E0}
@@ -174,7 +180,7 @@ export default {
 .${P}kw{grid-column:3;font-size:14px;color:#c9d8ec}
 .${P}extra{font-size:14px;color:#c9d8ec;margin:0 0 12px}
 .${P}start{font:700 16px var(--g-body);color:#0b1424;background:#F2B544;border:0;border-radius:18px;padding:10px 26px;cursor:pointer}
-@media (max-width:640px){.${P}scroll{flex:0 0 auto;min-height:0}.${P}mem{height:auto;max-height:none}.${P}hbar span{width:100px}.${P}top h2{flex-basis:100%}.${P}beat{top:110px;font-size:17px}.${P}trays{grid-template-columns:1fr 1fr}.${P}tray h3{font-size:12px}.${P}keys li{grid-template-columns:20px 76px 1fr}}
+@media (max-width:640px){.${P}scroll{flex:0 0 auto;min-height:0}.${P}mem{height:auto;max-height:none}.${P}hbar span{width:100px}.${P}top h2{flex-basis:100%}.${P}beat{top:110px;font-size:17px}.${P}trays{grid-template-columns:1fr 1fr}.${P}tray h3{font-size:12px}.${P}tray h3 img{height:30px}.${P}tray h3 img.${P}sm{height:22px}.${P}keys li{grid-template-columns:20px 76px 1fr}}
 `;
     wrap.appendChild(css);
     const top = document.createElement("div"); top.className = P + "top";
@@ -200,6 +206,9 @@ export default {
         ["Call", "neighbours with alternating accents", "the big bead is the accent; each change is a rowing call"]],
       extra: "Press Sing when you are ready; your brothers fill what is left.",
     });
+    plate(api, intro, P, { card: "chapter-3", numeral: "numeral-3", css: "border-radius:12px", at: "50% 50%" });
+    let memUrl = "";
+    pngUrl(api, "song-membrane", 1200, 375).then((u) => { memUrl = u; drawMem(); });
     wrap.appendChild(intro);
     root.appendChild(wrap);
     const singBtn = top.querySelector('[data-a="sing"]'), hintBtn = top.querySelector('[data-a="hint"]'), timerEl = top.querySelector("." + P + "timer");
@@ -254,7 +263,8 @@ export default {
       let s = "";
       for (let r = 0; r < G.rows; r++) {
         const oy = r * 280;
-        s += `<rect x="20" y="${oy + 20}" width="${G.w - 40}" height="260" rx="40" fill="#fff" opacity=".05" stroke="#7FB2E0" stroke-opacity=".35"/>`;
+        if (memUrl) s += `<image href="${memUrl}" x="6" y="${oy + 14}" width="${G.w - 12}" height="272" preserveAspectRatio="none" opacity=".8"/>`;
+        s += `<rect x="20" y="${oy + 20}" width="${G.w - 40}" height="260" rx="40" fill="#fff" opacity="${memUrl ? 0 : 0.05}" stroke="#7FB2E0" stroke-opacity=".35"/>`;
         for (let h = 1; h <= 5; h++) s += `<line x1="30" x2="${G.w - 30}" y1="${Y(h, oy)}" y2="${Y(h, oy)}" stroke="#7FB2E0" stroke-opacity="${h === 1 && st.verse === 2 ? 0.6 : 0.18}"/><text x="30" y="${Y(h, oy) + 5}" font-size="14" fill="#7FB2E0" text-anchor="end" opacity=".75">${h}</text>`;
       }
       if (st.verse === 2) {
@@ -302,7 +312,8 @@ export default {
       trays.innerHTML = "";
       SEATS.forEach((seat, s) => {
         const t = document.createElement("div"); t.className = P + "tray"; t.style.borderColor = seat.col;
-        t.innerHTML = `<h3 style="color:${seat.col}">${seat.name}</h3><div class="${P}ph"></div>`;
+        const pic = (id, cls) => (artUrl(api, id) ? `<img alt="" ${cls ? `class="${cls}"` : ""} src="${artUrl(api, id)}">` : "");
+        t.innerHTML = `<h3 style="color:${seat.col}">${pic(`seat-${seat.t}-${st.verse === 1 ? "blue" : "turning"}`)}${pic("ui-glyph-" + seat.t, P + "sm")}<span>${seat.name}</span>${pic("bead-" + seat.t, P + "sm")}</h3><div class="${P}ph"></div>`;
         for (const p of pool().filter((q) => q.seat === s)) {
           const placed = st.slots.includes(p);
           const b = document.createElement("button"); b.type = "button"; b.className = P + "phr"; b.dataset.id = p.id;
@@ -410,6 +421,7 @@ export default {
           if (st.v1h <= 40) return finish();
           st.over = false; st.verse = 2; st.heart = makeHeart(st.lastHeight); st.slots = [null, null, null, null]; st.time = 120; st.hints = 2;
           say.textContent = `Verse one: harmony ${st.v1h}. Now the heart verse: start near ${st.lastHeight}, end home on 1.`;
+          flashPlate(wrap, api, "chapter-7", RM ? 1200 : 3400, RM, "top:62%;width:min(60%,480px)");
           beats.show(BROTHERS, 7000, "brothers", "Days later · a calm pool on the river");
           timers.push(setTimeout(() => beats.show("The heart verse: one phrase from each of you, in an order you choose. It must begin near where verse one ended, and end home, on the lowest bead.", 6000, "heart2", "The heart verse"), RM ? 0 : 7200));
           redraw();
@@ -424,6 +436,7 @@ export default {
     function finish() {
       st.over = true;
       const h1 = st.v1h, sc2 = st.verse === 2 ? score(st.slots) : null;
+      endCard(wrap, api, h1 <= 40 ? "chapter-3" : "chapter-7", { numeral: h1 <= 40 ? "numeral-3" : "numeral-7" });
       if (h1 <= 40) {
         api.end({ outcome: "lose", text: `Verse one: harmony ${h1}. It breaks in too many places to row to; on the river every brother's window will narrow by 10 ms. There is no heart verse to sing.` });
         return;

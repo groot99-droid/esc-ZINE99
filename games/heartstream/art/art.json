@@ -1,6 +1,6 @@
 {
  "game": "heartstream",
- "count": 117,
+ "count": 119,
  "assets": [
   {
    "id": "numeral-1",
@@ -179,6 +179,14 @@
    "row": "Seat portraits, 4 temperaments \u00d7 3 colour states, linocut heads"
   },
   {
+   "id": "small-one",
+   "group": "figures",
+   "title": "The small one moves a counter",
+   "w": 480,
+   "h": 480,
+   "row": "Counters: board, counter, 6 mark pieces, the finished board, the hall wall"
+  },
+  {
    "id": "climb-1-far",
    "group": "backdrops",
    "title": "Climb 1, far plane",
@@ -241,6 +249,14 @@
    "w": 1600,
    "h": 900,
    "row": "Counters: board, counter, 6 mark pieces, the finished board, the hall wall"
+  },
+  {
+   "id": "raft-flank-mark",
+   "group": "backdrops",
+   "title": "The raft's flank, and the mark healed into it",
+   "w": 1600,
+   "h": 900,
+   "row": "River backdrops, 3 sequences \u00d7 3 planes, and the Inspection plate"
   },
   {
    "id": "river-1-far",
