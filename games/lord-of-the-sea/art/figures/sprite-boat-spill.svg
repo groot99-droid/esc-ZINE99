@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 310" width="300" height="310" role="img" aria-labelledby="sprite-boat-spill-t sprite-boat-spill-d">
+<title id="sprite-boat-spill-t">Cut-out: Alexi's boat, spilling wind</title>
+<desc id="sprite-boat-spill-d">The same boat on no ground with her sails let fly, the mainsail hanging in loose folds off the gaff.</desc>
+<g transform="translate(150,262) rotate(0) scale(1.8,1.8)">
+<line x1="8" y1="1" x2="8" y2="-131" stroke-width="2.6" stroke="#1F2E4A" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8,-121.8 L-13.1,0.8 M8,-121.8 L29.1,-0.6" fill="none" stroke-width="0.8" stroke="#1F2E4A" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="8" y1="-11" x2="-62" y2="-11" stroke-width="2" stroke="#1F2E4A" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="8" y1="-120.5" x2="-40.8" y2="-102" stroke-width="1.8" stroke="#1F2E4A" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="8" y1="-117.8" x2="74" y2="-16.5" stroke-width="0.8" stroke="#1F2E4A" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-65,-11 Q-13,6.1 35.8,-1.6 Q55.2,-6.6 76,-16.5 Q58.5,16.5 40.3,22 L-52,22 Q-67.6,12.1 -65,-11Z" fill="#FBF8EF" stroke-width="2" stroke="#1F2E4A" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-63,-4 Q-13,11.7 53.6,3.7M-63,2.2 Q-13,16.6 48.1,9.9" fill="none" stroke="#1F2E4A" stroke-width="0.8" opacity="0.8"/>
+<path d="M-39,-1.9 v-15 q16.9,-5 35.1,0 v15" fill="#FBF8EF" stroke-width="1.5" stroke="#1F2E4A" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-31" cy="-9.9" r="2.6" fill="none" stroke="#1F2E4A" stroke-width="1.1"/>
+<circle cx="-19.9" cy="-9.9" r="2.6" fill="none" stroke="#1F2E4A" stroke-width="1.1"/>
+<circle cx="-8.9" cy="-9.9" r="2.6" fill="none" stroke="#1F2E4A" stroke-width="1.1"/>
+<path d="M-63.6,-4.7 q-2,-17 9,-18 q12,1 10,18z" fill="#1F2E4A"/>
+<circle cx="-53.6" cy="-27.7" r="5.2" fill="#1F2E4A"/>
+<path d="M-48.6,-18.7 q10,-10 13,-22" fill="none" stroke="#1F2E4A" stroke-width="3.2" stroke-linecap="round"/>
+<line x1="-60.6" y1="-10.7" x2="-76.6" y2="-6.7" stroke="#1F2E4A" stroke-width="2" stroke-linecap="round"/>
+</g>
+<path d="M58,100 q8,50 -4,100 q-6,34 4,60" fill="none" stroke="#1F2E4A" stroke-width="1.3"/>
+<path d="M74,94 q9,50 -2,100 q-6,34 4,63" fill="none" stroke="#1F2E4A" stroke-width="1.3"/>
+<path d="M90,88 q10,50 0,100 q-6,34 4,66" fill="none" stroke="#1F2E4A" stroke-width="1.3"/>
+<path d="M106,82 q11,50 2,100 q-6,34 4,69" fill="none" stroke="#1F2E4A" stroke-width="1.3"/>
+<path d="M122,76 q12,50 4,100 q-6,34 4,72" fill="none" stroke="#1F2E4A" stroke-width="1.3"/>
+<path d="M138,70 q13,50 6,100 q-6,34 4,75" fill="none" stroke="#1F2E4A" stroke-width="1.3"/>
+<path d="M154,64 q14,50 8,100 q-6,34 4,78" fill="none" stroke="#1F2E4A" stroke-width="1.3"/>
+<path d="M164,36 q30,90 96,206" fill="none" stroke="#1F2E4A" stroke-width="1.2"/>
+<path d="M168,42 q52,80 56,150 q-20,30 -50,44z" fill="#FBF8EF" stroke="#1F2E4A" stroke-width="1.4" opacity="0.9"/>
+</svg>

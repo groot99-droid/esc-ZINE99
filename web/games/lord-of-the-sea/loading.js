@@ -30,6 +30,9 @@ const TIPS = [
   "Lay the tide from the end of each hour's run, not from the fix.",
   "Once a run, call the crew to sing: for twelve seconds every stir runs one tier higher.",
   "Lift a seal to the loupe. The wax remembers dates the clerk would rather you forgot.",
+  "A pledge the sea has blurred can be raised with one stirred drop, at the price of a line on the chart.",
+  "Every Tide Reckoning comes back ticked in green. Turn the sheet over.",
+  "A red thread that runs off the page is still a reference. Follow it across the cabin.",
 ];
 
 let uid = 0;

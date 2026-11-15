@@ -94,13 +94,13 @@ def leg(a, pts, labels):
             a.line(px - 6 * math.cos(r), py - 6 * math.sin(r), px + 6 * math.cos(r), py + 6 * math.sin(r), stroke=PENCIL, stroke_width=1.6)
 
 
-def scalebar(a, x, y):
-    a.rect(x, y, 300, 9, fill="#FBF9EE", stroke=INK, stroke_width=1)
+def scalebar(a, x, y, nm=50.0):
+    a.rect(x, y, 6 * nm, 9, fill="#FBF9EE", stroke=INK, stroke_width=1)
     for i in range(0, 6, 2):
-        a.rect(x + i * 50, y, 50, 9, fill=INK)
+        a.rect(x + i * nm, y, nm, 9, fill=INK)
     for i in range(7):
-        a.text(x + i * 50, y + 26, str(i), size=12, family="sans-serif", fill=INK, text_anchor="middle")
-    kit.italic(a, x + 320, y + 10, "nautical miles", size=14, anchor="start")
+        a.text(x + i * nm, y + 20 if nm != 50.0 else y + 26, str(i), size=12, family="sans-serif", fill=INK, text_anchor="middle")
+    kit.italic(a, x + 6 * nm + 20, y + 10, "nautical miles", size=14, anchor="start")
 
 
 def coast(a, pts, hatch=True):
@@ -116,25 +116,24 @@ def smudge(a, x, y, w, h):
 
 @asset(G, "reckon-unwritten", group="maps", title="Dead Reckoning sheet: off the chart's edge", w=1600, h=900, row=ROW)
 def r_unwritten(a: Art):
-    """The first plot: one leg from the last fix off the chart's edge into the Unwritten. The engraved coast stops
-    at the left; beyond it the sheet is bare but for two rocks, a steady tide and the target ring."""
-    sheetpaper(a)
-    coast(a, [(40, 40), (300, 40), (360, 200), (300, 380), (380, 560), (280, 760), (320, 860), (40, 860)])
-    a.line(470, 40, 470, 860, stroke=INK, stroke_width=1.2, stroke_dasharray="14 8")
-    a.text(486, 846, "here the chart ends", size=15, family="serif", fill=INK, font_style="italic")
-    kit.sea(a, 480, 1560, 120, 820, rows=9, fn=kit.swell(amp=12, wl=260, sharp=0.5), col=GREEN, sw=(0.8, 0.8), step=18, persp=1, opacity=0.3)
-    rock(a, 860, 380, 1.3)
-    rock(a, 1040, 600, 1.0)
-    target(a, 1320, 330, 90)
-    fix(a, 420, 640, "FIX 0600")
-    leg(a, [(420, 640), (1210, 392)], ["C 072° T   S 5 kn"])
-    arrow(a, 1210, 392, 1300, 352, SEAINK, 2.2, heads=3)
-    dr(a, 1300, 352, "DR 1000")
-    tide_table(a, 560, 70, ["06  070°  1.5", "07  070°  1.5", "08  070°  1.5", "09  070°  1.5"])
-    clock(a, 1480, 110, 4)
-    kit.rose(a, 1380, 690, 110)
-    scalebar(a, 520, 800)
-    smudge(a, 800, 520, 120, 40)
+    """The first plot, as the sheet lies before the pencil touches it: 46 points to the nautical mile, the engraved
+    coast stopping at the left, the last fix, two rocks, the target ring and the rose. The leg, the tide arrows and
+    the clock are the player's to lay, so the sheet carries none."""
+    NM, OX, OY = 46.0, 40.0, 822.0      # the module plots on this grid: x east and y north in nautical miles
+    X = lambda nm: OX + nm * NM
+    Y = lambda nm: OY - nm * NM
+    sheetpaper(a, grid=NM * 5)
+    coast(a, [(40, 40), (120, 40), (150, 200), (118, 380), (128, 560), (96, 700), (150, 800), (132, 860), (40, 860)])
+    a.line(250, 40, 250, 860, stroke=INK, stroke_width=1.2, stroke_dasharray="14 8")
+    a.text(262, 60, "here the chart ends", size=15, family="serif", fill=INK, font_style="italic")
+    kit.sea(a, 270, 1560, 120, 820, rows=9, fn=kit.swell(amp=12, wl=260, sharp=0.5), col=GREEN, sw=(0.8, 0.8), step=18, persp=1, opacity=0.3)
+    for (rx, ry) in ((17.2, 6.1), (11.5, 12.6)):
+        a.circle(X(rx), Y(ry), 0.8 * NM, fill="none", stroke=INK, stroke_width=1, stroke_dasharray="2 4")
+        rock(a, X(rx), Y(ry) + 2, 0.8)
+    target(a, X(24), Y(15), 2 * NM)
+    fix(a, X(3), Y(4), "FIX 0600")
+    kit.rose(a, X(27.6), Y(3.6), 3 * NM * 0.86)
+    scalebar(a, X(8), 836, NM)
 
 
 @asset(G, "reckon-strait", group="maps", title="Dead Reckoning sheet: the Lamplit Strait", w=1600, h=900, row=ROW)

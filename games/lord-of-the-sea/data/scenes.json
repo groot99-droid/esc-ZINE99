@@ -151,7 +151,8 @@
       "reads": [
         "met.wenna",
         "devotion",
-        "wild.lanes"
+        "wild.lanes",
+        "met.halse"
       ],
       "writes": [
         "met.wenna",
@@ -159,7 +160,8 @@
         "stirs",
         "devotion",
         "notice",
-        "crews"
+        "crews",
+        "met.halse"
       ],
       "enter": "flatten",
       "exit": "push-in",
@@ -176,12 +178,14 @@
       "game": "liars-tide",
       "reads": [
         "wild.lanes",
-        "princess.trust"
+        "princess.trust",
+        "met.halse"
       ],
       "writes": [
         "news",
         "devotion",
-        "liars.caught"
+        "liars.caught",
+        "chits"
       ],
       "enter": "push-in",
       "exit": "cut",
@@ -291,7 +295,8 @@
       "chapter": "ch3-old-sea",
       "mode": "deep",
       "writes": [
-        "has_harbour_book"
+        "has_harbour_book",
+        "chits"
       ],
       "enter": "flatten",
       "exit": "flatten",
@@ -335,7 +340,8 @@
         "notice",
         "toll",
         "princess.trust",
-        "crews"
+        "crews",
+        "reckoning.countersigned"
       ],
       "enter": "cut",
       "exit": "fade",
@@ -450,7 +456,8 @@
       "game": "charter",
       "reads": [
         "has_harbour_book",
-        "princess.trust"
+        "princess.trust",
+        "chits"
       ],
       "writes": [
         "port.lanes",
@@ -459,7 +466,9 @@
         "clauses",
         "ports_freed",
         "princess.trust",
-        "notice"
+        "notice",
+        "chits",
+        "tab.known"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -581,7 +590,8 @@
         "clauses",
         "ports_freed",
         "princess.trust",
-        "crews"
+        "crews",
+        "chits"
       ],
       "enter": "push-in",
       "exit": "cut",
@@ -647,7 +657,8 @@
       ],
       "writes": [
         "has_compact_rubbing",
-        "crews"
+        "crews",
+        "chits"
       ],
       "enter": "flatten",
       "exit": "push-in",
@@ -737,7 +748,8 @@
         "ports_freed",
         "clauses",
         "notice",
-        "crews"
+        "crews",
+        "chits"
       ],
       "enter": "push-in",
       "exit": "flatten",
@@ -850,7 +862,8 @@
         "devotion",
         "wild.halls",
         "stirs",
-        "notice"
+        "notice",
+        "chits"
       ],
       "enter": "flatten",
       "exit": "push-in",
@@ -923,14 +936,18 @@
         "port.strait",
         "port.pearl",
         "port.spice",
-        "port.halls"
+        "port.halls",
+        "chits",
+        "tab.known"
       ],
       "writes": [
         "chart.wild_regions",
         "chart.order_regions",
         "chart.balanced_regions",
         "wild.home",
-        "stirs"
+        "stirs",
+        "tab.matched",
+        "pay_open"
       ],
       "enter": "fade",
       "exit": "flatten",
@@ -976,6 +993,9 @@
       "layer": "3d",
       "name": "The counting-house",
       "chapter": "ch6-lord-of-tea",
+      "writes": [
+        "chits"
+      ],
       "enter": "fade",
       "exit": "push-in",
       "next": [

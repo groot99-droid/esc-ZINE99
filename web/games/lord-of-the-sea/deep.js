@@ -8,6 +8,12 @@
 // Three phases: the descent (net, chain, cold current), the tender (grip three seconds while the hull
 // settles), and the ascent, when the Company drops a second net across the way up and the dredge
 // sweeps faster. Beats and the Voice Beside lines are written for the game (refine additions list).
+// Phase 1 (accepted 2026-11-15): the strongbox holds more than the harbour book. When it breaks the surface it is
+// opened on deck: under the book lies chit No. 3, sea-swollen, its pledge run to a blur. One stir of seawater
+// (a circle on the chit, or E) raises the ink: "an anchor's hold".
+// Art pass: the light bands are the game's four plates, cross-faded by depth behind the play; the swimmer, the
+// strongbox and the twelve glowing specimens are the game's art, each rasterised once (api.art).
+import { pic, raster, endCard, chapterStrip, circleGesture } from "./_art.js";
 
 const PLATE = "#0B1424", INKBLUE = "#1F2E4A", FOAM = "#E8F2EE", PAPER = "#F4F1E8", GOLD = "#E7A93B", GREEN = "#2F6B5E", VIOLET = "#4B3F63", RED = "#8C2B2B";
 const WORLD_W = 150, FLOOR = 92, WRECK_X = 112, WRECK_Y = 85;
@@ -55,7 +61,21 @@ export default {
       .${P}label .gentle { font-style:italic; color:${GREEN}; font-size:15px; margin:0 0 8px; }
       .${P}label button { font:inherit; font-size:18px; padding:8px 26px; background:#1b2230; color:#ece6d6; border:0; cursor:pointer; }
       .${P}label button:hover, .${P}label button:focus-visible { background:${VIOLET}; }
-      @media (max-width:520px) { .${P}label { padding:14px; } .${P}cap { top:96px; width:calc(100% - 70px); font-size:15px; left:auto; right:12px; transform:none; } .${P}pad button { width:58px; height:58px; } }
+      .${P}box { position:absolute; inset:0; z-index:4; display:grid; place-items:center; background:rgba(5,9,15,.86); padding:12px; overflow:auto; }
+      .${P}box .in { max-width:620px; width:100%; box-sizing:border-box; background:#ece6d6; color:#1b2230; border:1px solid #9a8f74; padding:16px 20px; display:grid; gap:10px; box-shadow:0 12px 30px rgba(0,0,0,.6);
+        background-image: radial-gradient(rgba(60,50,30,.10) 1px, transparent 1.3px); background-size:5px 5px; }
+      .${P}box h2 { font-weight:400; font-style:italic; font-size:clamp(22px,4.6vw,28px); margin:0; }
+      .${P}box p { margin:0; font-size:16px; line-height:1.4; }
+      .${P}box p.v { font-style:italic; color:${GREEN}; }
+      .${P}box .row { display:grid; grid-template-columns:110px minmax(0,1fr); gap:12px; align-items:center; }
+      .${P}box .row img { width:110px; height:auto; }
+      .${P}box .chit { position:relative; justify-self:center; width:min(100%,400px); cursor:grab; border:1px dashed #1b2230; }
+      .${P}box .chit img { width:100%; height:auto; display:block; }
+      .${P}box .chit .ring { position:absolute; inset:0; display:grid; place-items:center; pointer-events:none; }
+      .${P}box .chit .ring svg { width:46%; height:auto; opacity:.8; }
+      .${P}box button { justify-self:start; font:inherit; font-size:17px; padding:7px 20px; background:#1b2230; color:#ece6d6; border:0; cursor:pointer; }
+      .${P}box button:hover, .${P}box button:focus-visible { background:${VIOLET}; }
+      @media (max-width:520px) { .${P}label { padding:14px; } .${P}box .row { grid-template-columns:72px minmax(0,1fr); } .${P}box .row img { width:72px; } .${P}cap { top:96px; width:calc(100% - 70px); font-size:15px; left:auto; right:12px; transform:none; } .${P}pad button { width:58px; height:58px; } }
     </style>
     <div class="${P}wrap">
       <canvas aria-label="The Deep: a diver in a dark plate, glowing specimens, a wreck far below"></canvas>
@@ -63,7 +83,9 @@ export default {
       <div class="${P}pad"><button type="button" data-k="kick" aria-label="Kick (Space)">Kick<span class="cd"></span></button><button type="button" data-k="grip" hidden aria-label="Grip (hold Shift)">Grip</button></div>
       <div class="${P}how" role="dialog" aria-label="How to play">
         <div class="${P}label">
+          ${chapterStrip(api.art, 4, "Chapter IV: What Is Left of the Old Sea")}
           <div class="cap2"><span>PLATE IV</span><span>CHAPTER III</span><span>THE DEEP</span></div>
+          ${pic(api.art, "swimmer", "Alexi swimming, drawn in white line on blue-black", `style="float:right;width:min(38%,170px);height:auto;margin:6px 0 6px 12px;border:1px solid #1b2230"`)}
           <h2>Down to the tender</h2>
           <p class="goal">Swim down 80 m to the sunken tender, work its strongbox free, and carry it up before the pull closes the edges.</p>
           <p class="open">The Company's tender went down off Home Reach with Tidewater's harbour book locked in its strongbox. Whatever binds that harbour is written there. Alexi goes over the side with no breath to hold.</p>
@@ -84,6 +106,28 @@ export default {
     const capEl = wrap.querySelector("." + P + "cap");
     const kickBtn = wrap.querySelector('[data-k="kick"]'), gripBtn = wrap.querySelector('[data-k="grip"]');
     const losses = +api.store.get("losses", 0) || 0;
+    const art = api.art;
+    // art, rasterised once at the size it is drawn; rebuilt when the plate is resized
+    const A = { bands: [], spec: [], swim: null, kick: null, box: null, key: "" };
+    let prepTimer = 0, dead = false;
+    async function prep() {
+      if (dead || !W || !Hh) return;
+      const key = W + "x" + Hh;
+      if (A.key === key) return;
+      A.key = key;
+      const bw = Math.ceil(W * 1.12), bh = Math.ceil(Hh * 1.12);
+      const bands = await Promise.all([1, 2, 3, 4].map((i) => raster(art, "deep-band-" + i, bw, bh, { src: [130, 24, 1440, 826] })));
+      if (dead || A.key !== key) return;
+      A.bands = bands;
+      if (!A.spec.length) {
+        const ids = art.list("backdrops").filter((id) => id.startsWith("specimen-")).sort();
+        A.spec = (await Promise.all(ids.map((id) => raster(art, id, 128, 128, { src: [56, 46, 248, 248], key: true })))).filter(Boolean);
+      }
+      const sw = Math.round(ppm * 7.2 * dpr);
+      A.swim = await raster(art, "sprite-swimmer", sw, sw / 2);
+      A.kick = await raster(art, "sprite-swimmer-kick", sw, sw / 2);
+      A.box = await raster(art, "sprite-strongbox", Math.round(ppm * 3 * dpr), Math.round(ppm * 2.25 * dpr));
+    }
     let capT = 0;
     function caption(text, voice, sec = 6) { capEl.textContent = text; capEl.classList.toggle("voice", !!voice); capEl.classList.add("show"); capT = sec; }
     const fired = new Set();
@@ -181,6 +225,7 @@ export default {
       cv.width = Math.round(W * dpr); cv.height = Math.round(Hh * dpr);
       g.setTransform(dpr, 0, 0, dpr, 0, 0);
       ppm = Math.max(7, Math.min(16, Math.min(W, Hh * 1.4) / 46));
+      clearTimeout(prepTimer); prepTimer = setTimeout(prep, A.key ? 260 : 0);
     }
     const ro = new ResizeObserver(resize); ro.observe(wrap); resize();
 
@@ -261,9 +306,42 @@ export default {
       if (over) return; over = true; running = false;
       const left = Math.max(0, Math.round(d.pull));
       api.store.set("losses", won ? 0 : losses + 1);
-      if (won) api.end({ outcome: "win", text: `The strongbox breaks the surface with ${left} s of the pull to spare${netsCut() ? `, and ${netsCut()} Company net${netsCut() === 1 ? "" : "s"} torn on the way` : ""}. Swollen, not locked: the harbour book of Tidewater is inside, and the princess is already reaching for it.` });
-      else api.end({ outcome: "lose", text: d.carry ? "The strongbox was free, but the deep kept him. He settles gently to the floor beside it, and the dive will have to be made again from the last mark." : "The edges close before he reaches the tender. The deep keeps him a while, gently, and the dive will have to be made again." });
+      if (won) openBox(`The strongbox breaks the surface with ${left} s of the pull to spare${netsCut() ? `, and ${netsCut()} Company net${netsCut() === 1 ? "" : "s"} torn on the way` : ""}. Swollen, not locked: the harbour book of Tidewater is inside, and the princess is already reaching for it.`);
+      else endCard(root, art, "deep-band-4", "BELOW 150 METRES · ONLY WHAT GLOWS", "#05090f"), api.end({ outcome: "lose", text: d.carry ? "The strongbox was free, but the deep kept him. He settles gently to the floor beside it, and the dive will have to be made again from the last mark." : "The edges close before he reaches the tender. The deep keeps him a while, gently, and the dive will have to be made again." });
     }
+
+    // ---- the strongbox on deck: chit No. 3 ----
+    let box = null, ungest = null, boxKey = null;
+    function openBox(winText) {
+      box = document.createElement("div");
+      box.className = P + "box"; box.setAttribute("role", "dialog"); box.setAttribute("aria-label", "The strongbox, opened on deck");
+      const stage = (raised) => {
+        box.innerHTML = `<div class="in">
+          <h2>The strongbox, on deck</h2>
+          ${pic(art, "rule-wild", "", `style="width:100%;height:auto;display:block"`)}
+          <div class="row">${pic(art, "sprite-strongbox", "") || "<span></span>"}<p>Swollen, not locked. On top, the harbour book of Tidewater. Under it, flat against the lid, a chandler's slip the sea has had for years${raised ? "." : ": No. 3. The pledge has run to a blur."}</p></div>
+          <div class="chit" data-chit="1" aria-label="${raised ? "Chit No. 3: an anchor's hold" : "Chit No. 3, its pledge unreadable. Draw a circle on it to stir a drop of seawater onto it."}">${pic(art, raised ? "chit-3-strongbox-raised" : "chit-3-strongbox", "") || `<div style="padding:26px;text-align:center">Chit No. 3${raised ? ": “an anchor's hold”" : " (unreadable)"}</div>`}
+            ${raised ? "" : `<span class="ring"><svg viewBox="0 0 60 60" aria-hidden="true"><path d="M30 30 C32 26 37 28 36 33 C35 39 26 40 23 34 C19 26 27 17 36 19 C47 22 49 37 41 44 C31 52 14 46 13 32 C12 20 22 10 34 10" fill="none" stroke="#3C7A6A" stroke-width="2" stroke-dasharray="3 3" stroke-linecap="round"/></svg></span>`}</div>
+          ${raised ? `<p>The salt lets go of the ink. <b>No. 3.</b> <i>An anchor's hold. Pays next tide.</i> Signed with a clockwise spiral, and stamped, later, with the Company's leaf.</p>
+            <p class="v">The hand was his. The deep had only been minding it.</p>
+            <button type="button" data-b="shut">Shut the box</button>`
+          : `<p>Seawater took the ink, and seawater will give it back. <b>Stir</b> one drop onto the chit: draw a circle on it, or press <b>E</b>.</p>
+            <button type="button" data-b="stir">Stir a drop onto it (E)</button>`}
+        </div>`;
+        if (ungest) { ungest(); ungest = null; }
+        const go = () => stage(true);
+        if (!raised) { ungest = circleGesture(box.querySelector("[data-chit]"), go); box.querySelector("[data-b=stir]").addEventListener("click", go); }
+        else box.querySelector("[data-b=shut]").addEventListener("click", () => { closeBox(); api.end({ outcome: "win", text: winText + " And chit No. 3, “an anchor's hold”: the third of eight." }); });
+        box.querySelector("button").focus();
+        boxRaised = raised;
+      };
+      let boxRaised = false;
+      boxKey = (e) => { if ((e.key === "e" || e.key === "E") && box && !boxRaised) stage(true); };
+      addEventListener("keydown", boxKey);
+      wrap.appendChild(box);
+      stage(false);
+    }
+    function closeBox() { if (ungest) { ungest(); ungest = null; } if (boxKey) { removeEventListener("keydown", boxKey); boxKey = null; } if (box) { box.remove(); box = null; } }
 
     // ---- drawing ----
     function radiolarian(x, y, r, col, spines, ph, glow) {
@@ -283,6 +361,16 @@ export default {
     function drawDiver() {
       const x = sx(d.x), y = sy(d.y), k = ppm / 10;
       const ang = Math.atan2(d.vy, Math.abs(d.vx) + 0.001) * 0.8;
+      if (A.swim) { // the game's swimmer, glide and kick
+        const moving = Math.hypot(d.vx, d.vy) > 0.6;
+        const im = (d.kick > 0 || (moving && (t * (d.carry ? 1.6 : 2.4)) % 1 < 0.45)) && A.kick ? A.kick : A.swim;
+        const wpx = ppm * 7.2, hpx = wpx / 2;
+        g.save(); g.translate(x, y); g.scale(d.face, 1); g.rotate(ang);
+        g.drawImage(im, -wpx * (140 / 300), -hpx * (70 / 150), wpx, hpx);
+        if (d.carry) { if (A.box) g.drawImage(A.box, ppm * 0.4, ppm * 0.3, ppm * 2.4, ppm * 1.8); else { g.fillStyle = GOLD; g.fillRect(ppm * 0.6, ppm * 0.3, ppm * 1.4, ppm); } }
+        g.restore();
+        return;
+      }
       g.save(); g.translate(x, y); g.scale(d.face * k, k); g.rotate(ang);
       g.strokeStyle = FOAM; g.lineWidth = 2.4; g.lineCap = "round";
       const sw = Math.sin(t * (d.kick > 0 ? 14 : 7)) * 6;
@@ -299,13 +387,23 @@ export default {
       camY = Math.max(Hh / 2 / ppm - 6, Math.min(FLOOR + 6 - Hh / 2 / ppm, d.y));
       // light bands, sampled per strip
       const bands = (y) => (y < 0 ? "#3a5a78" : y < 20 ? "#26405e" : y < 60 ? "#15253c" : y < 150 ? "#0b1424" : "#060b14");
-      for (let py = 0; py < Hh; py += 8) { g.fillStyle = bands(wyp(py)); g.fillRect(0, py, W, 8); }
-      // smooth the band edges
       const sky = sy(0);
+      const plates = A.bands.length === 4 && A.bands.every(Boolean);
+      if (plates) { // the four plates, cross-faded by depth, drifting a little against the play
+        const sm = (a, b, v) => { const u = Math.max(0, Math.min(1, (v - a) / (b - a))); return u * u * (3 - 2 * u); };
+        const k12 = sm(13, 27, d.y), k23 = sm(50, 66, d.y), k34 = sm(84, 96, d.y) * 0.5;
+        const ox = -(camX / WORLD_W) * W * 0.12, oy = -(Math.min(1, d.y / FLOOR)) * Hh * 0.12;
+        const ks = [1, k12, k23, k34];
+        let base = 0; for (let i = 1; i < 4; i++) if (ks[i] > 0.99) base = i;      // nothing under an opaque plate is drawn
+        for (let i = base; i < 4; i++) if (i === base || ks[i] > 0.01) { g.globalAlpha = i === base ? 1 : ks[i]; g.drawImage(A.bands[i], ox, oy); }
+        g.globalAlpha = 1;
+        g.fillStyle = "rgba(6,12,24,.3)"; g.fillRect(0, 0, W, Hh);                 // the plate recedes; what can touch him is drawn over it, brighter
+      } else for (let py = 0; py < Hh; py += 8) { g.fillStyle = bands(wyp(py)); g.fillRect(0, py, W, 8); }
+      // above the surface
       if (sky > 0) { g.fillStyle = "#c9d6d2"; g.fillRect(0, 0, W, sky); }
       // engraved lines: white, thinning with depth
       g.strokeStyle = FOAM;
-      for (let wy = 0; wy < FLOOR; wy += 1.6 + wy * 0.06) {
+      for (let wy = 0; !plates && wy < FLOOR; wy += 1.6 + wy * 0.06) {
         const py = sy(wy); if (py < -4 || py > Hh + 4) continue;
         g.globalAlpha = Math.max(0.1, 0.26 - wy * 0.002); g.lineWidth = Math.max(0.3, 1 - wy * 0.009);
         g.beginPath();
@@ -358,7 +456,8 @@ export default {
       if (!d.carry) {
         const bx = sx(WRECK_X), by = sy(WRECK_Y + 2);
         g.strokeStyle = PAPER; g.globalAlpha = 0.5 + 0.3 * Math.sin(t * 2); g.lineWidth = 1.2; g.beginPath(); g.arc(bx, by, 3.2 * ppm, 0, 7); g.stroke(); g.globalAlpha = 1;
-        g.fillStyle = GOLD; g.strokeStyle = PLATE; g.fillRect(bx - 0.9 * ppm, by - 0.6 * ppm, 1.8 * ppm, 1.2 * ppm); g.strokeRect(bx - 0.9 * ppm, by - 0.6 * ppm, 1.8 * ppm, 1.2 * ppm);
+        if (A.box) g.drawImage(A.box, bx - 1.5 * ppm, by - 1.3 * ppm, 3 * ppm, 2.25 * ppm);
+        else { g.fillStyle = GOLD; g.strokeStyle = PLATE; g.fillRect(bx - 0.9 * ppm, by - 0.6 * ppm, 1.8 * ppm, 1.2 * ppm); g.strokeRect(bx - 0.9 * ppm, by - 0.6 * ppm, 1.8 * ppm, 1.2 * ppm); }
         if (d.free > 0) { g.strokeStyle = GOLD; g.lineWidth = 3; g.beginPath(); g.arc(bx, by, 4 * ppm, -Math.PI / 2, -Math.PI / 2 + (d.free / FREE_S) * Math.PI * 2); g.stroke(); }
       } else if (d.y > 4) {
         g.strokeStyle = PAPER; g.globalAlpha = 0.5 + 0.3 * Math.sin(t * 2); g.lineWidth = 1.2; g.beginPath(); g.ellipse(sx(d.x), sy(0.5), 6 * ppm, 1.4 * ppm, 0, 0, 7); g.stroke(); g.globalAlpha = 1;
@@ -366,7 +465,9 @@ export default {
       // specimens: the light the deep has
       for (const sp of specimens) {
         const px = sx(sp.x + Math.sin(t * 0.3 + sp.ph) * 1.5), py = sy(sp.y + Math.cos(t * 0.25 + sp.ph) * 1); if (px < -60 || px > W + 60 || py < -60 || py > Hh + 60) continue;
-        radiolarian(px, py, sp.r * ppm, sp.c, sp.spines, sp.ph + t * 0.1, sp.y > 18);
+        const sa = A.spec.length ? A.spec[(sp.fig - 1) % A.spec.length] : null;
+        if (sa) { const z = sp.r * ppm * 5.4; g.globalAlpha = sp.y > 18 ? 1 : 0.7; g.drawImage(sa, px - z / 2, py - z / 2, z, z); g.globalAlpha = 1; }
+        else radiolarian(px, py, sp.r * ppm, sp.c, sp.spines, sp.ph + t * 0.1, sp.y > 18);
         g.font = "italic 12px 'IM Fell English',Georgia,serif"; g.fillStyle = sp.c; g.globalAlpha = 0.6; g.textAlign = "left"; g.fillText("Fig. " + sp.fig, px + sp.r * ppm * 2, py + sp.r * ppm * 2); g.globalAlpha = 1;
       }
       // stirred currents glow
@@ -432,7 +533,7 @@ export default {
     b.focus();
     return {
       unmount() {
-        cancelAnimationFrame(raf); ro.disconnect();
+        cancelAnimationFrame(raf); ro.disconnect(); dead = true; clearTimeout(prepTimer); closeBox();
         removeEventListener("keydown", kd); removeEventListener("keyup", ku);
         running = false;
       },

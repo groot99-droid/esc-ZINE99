@@ -9,6 +9,11 @@
 // of five each, so a game is a few minutes and winnable against three. Stir the cup unlocks after
 // the first round; the princess's whisper (trust 40+) gives the odds of the standing bid once a round.
 // The table talk, the news each sailor leaves with, and the Voice Beside lines are written for the game.
+// Phase 1 (accepted 2026-11-15): The Slate. The game opens in Mother Halse's chandlery, where he asks for a
+// bottle and is shown the slate; she then takes the short dockhand's stool and stakes a chit, No. 2, "the luck
+// of the dice". See her off the bench and the chit lies by the tide die for the last one sitting; while it
+// lies there a stir draws 10 suspicion, not 25. The table, cups, dice and stake are the game's art (api.art).
+import { pic, bg, dieCrop, cupCrop, endCard, chapterStrip } from "./_art.js";
 
 const RED = "#8C2B2B", GREEN = "#2F6B5E", GOLD = "#E7A93B", INK = "#17140f", SKIN = "#F1E3C6", PAPER = "#E9DBBB", BLUE = "#1F2E4A";
 const FACES = ["", "Gull", "Shell", "Rope", "Bottle", "Lantern", "Wave"];
@@ -41,19 +46,20 @@ export default {
       { name: "Alexi", you: true, dice: [], count: DICE + 1 + ((+api.store.get("losses", 0) || 0) >= 2 ? 1 : 0) }, // the house spots the newcomer a fourth die (a fifth after two losses)
       { name: "Wenna", dice: [], count: DICE, bluff: 0.1, thresh: 0.65, eye: GREEN, tell: true },
       { name: "Dockhand", dice: [], count: DICE, bluff: 0.2, thresh: 0.5, eye: RED },
-      { name: "Dockhand", dice: [], count: DICE, bluff: 0.2, thresh: 0.5, eye: BLUE },
+      { name: "Mother Halse", dice: [], count: DICE, bluff: 0.15, thresh: 0.55, eye: BLUE, halse: true },
     ];
-    players[2].name = "Tall dockhand"; players[3].name = "Short dockhand";
+    players[2].name = "Tall dockhand";
+    const art = api.art;
     const S = {
       phase: "how", turn: 0, starter: 0, bid: null, bidder: -1, gullBid: false, tide: 1, ledger: [], round: 0,
       suspicion: 0, stirredThisRound: false, stirring: false, pick: new Set(), selQ: 1, selF: 2, speech: {}, hintUsed: false,
-      reveal: null, log: "", stirOpen: false, beat: "", beatVoice: false, outs: 0, stirs: 0, popBid: false, shake: -1,
+      reveal: null, log: "", stirOpen: false, chitFree: false, beat: "", beatVoice: false, outs: 0, stirs: 0, popBid: false, shake: -1,
     };
     const losses = +api.store.get("losses", 0) || 0;
     const NEWS = {
       1: "Wenna pushes back her stool. “The Gullwife crew fish past the chart's edge, where the Company's buoys stop. Go and find them.”",
       2: "The tall dockhand drains his cup. “Kettle crew still sing at the Salt Steps. Under their breath, mind.”",
-      3: "The short dockhand shrugs into his coat. “Ferry's late every Thursday. Company man counts the fares himself.”",
+      3: "Mother Halse turns her chit face up and leaves it by the tide die. “The luck of the dice. You pawned it to my mother for a bottle of the green. Last one sitting takes it.” While it lies there a stir draws 10, not 25.",
     };
 
     root.innerHTML = `
@@ -115,6 +121,48 @@ export default {
       .${P}flash .gentle { text-align:center; color:${GREEN}; font-style:italic; font-size:15px; margin:0 0 10px; }
       .${P}flash > button { display:block; margin:0 auto; font-family:'Rye',Georgia,serif; font-size:19px; background:${RED}; color:${SKIN}; border:3px solid ${INK}; border-radius:12px; padding:8px 22px; cursor:pointer; box-shadow:4px 4px 0 ${INK}; }
       .${P}flash > button:hover, .${P}flash > button:focus-visible { background:${GREEN}; }
+      .${P}tbl { position:relative; width:100%; max-width:840px; aspect-ratio:16/9; margin:0 auto; border:3px solid ${INK}; border-radius:10px; background:#b9864f center/cover no-repeat; box-shadow:5px 5px 0 ${INK}; container-type:inline-size; }
+      .${P}tbl > * { position:absolute; transform:translate(-50%,-50%); }
+      .${P}tbl .${P}die.tide { left:50%; top:52.2%; width:9.6cqw; height:9.6cqw; min-width:44px; min-height:44px; border-radius:18%; }
+      .${P}spot { display:grid; justify-items:center; }
+      .${P}spot .cupi { width:9.4cqw; height:9.4cqw; min-width:40px; min-height:40px; border:2.5px solid ${INK}; box-sizing:border-box; border-radius:50%; position:relative; }
+      .${P}spot .cupi.plain { background:${SKIN}; border:3px solid ${INK}; }
+      .${P}spot .cupi b { position:absolute; right:-10px; bottom:-6px; font-family:'Rye',Georgia,serif; font-weight:400; font-size:13px; background:${SKIN}; border:2px solid ${INK}; border-radius:9px; padding:0 5px; line-height:1.35; }
+      .${P}spot.turn .cupi { box-shadow:0 0 0 4px ${GOLD}, 0 0 0 6px ${INK}; }
+      .${P}spot.out { opacity:.45; }
+      .${P}spot .who { position:absolute; bottom:calc(100% + 1px); left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:4px; background:${SKIN}; border:2.5px solid ${INK}; border-radius:10px; padding:1px 7px 1px 3px; font-size:clamp(11px,1.9cqw,15px); white-space:nowrap; }
+      .${P}spot .who svg { width:clamp(34px,6.4cqw,52px); height:auto; flex:none; }
+      .${P}spot .shown { display:flex; gap:2px; flex-wrap:wrap; justify-content:center; max-width:18cqw; }
+      .${P}spot .shown .${P}die { width:3.9cqw; height:3.9cqw; min-width:19px; min-height:19px; border-width:2px; box-shadow:1px 1px 0 ${INK}; border-radius:5px; }
+      .${P}spot.shake { animation:${P}nudge .5s; }
+      @keyframes ${P}nudge { 0%,100% { margin-left:0; } 20% { margin-left:-7px; } 40% { margin-left:7px; } 60% { margin-left:-4px; } 80% { margin-left:4px; } }
+      .${P}slate[hidden], .${P}flash[hidden] { display:none; }
+      .${P}stake { width:13cqw; left:11.5%; top:80%; transform:translate(-50%,-50%) rotate(-9deg); filter:drop-shadow(2px 3px 0 ${INK}); }
+      .${P}stake.free { left:36%; top:60%; transform:translate(-50%,-50%) rotate(6deg); width:15cqw; filter:drop-shadow(0 0 10px ${GOLD}); transition:left .7s, top .7s, width .7s; }
+      .${P}stake img { width:100%; height:auto; display:block; }
+      .${P}chalk { left:89.1%; top:50%; width:11.6cqw; height:30cqw; overflow:hidden; color:#efe9da; font-size:clamp(8px,1.25cqw,12px); line-height:1.3; background:#2a2d33; border-radius:4px; padding:3px 4px; box-sizing:border-box; }
+      .${P}chalk b { font-family:'Rye',Georgia,serif; font-weight:400; color:${GOLD}; display:block; font-size:.9em; letter-spacing:.08em; }
+      .${P}cols { display:grid; gap:12px; align-items:start; }
+      .${P}rhs { display:grid; gap:10px; min-width:0; }
+      @media (min-width:1000px) { .${P}cols { grid-template-columns:minmax(0,1.6fr) minmax(320px,1fr); align-items:center; } }
+      .${P}slate .sl { max-width:420px; width:100%; justify-self:center; box-sizing:border-box; }
+      .${P}die.art { background-color:#f6ecd2; }
+      .${P}die.art.hit { box-shadow:0 0 0 4px #3fae6a, 4px 4px 0 ${INK}; }
+      .${P}die.art.pick { box-shadow:0 0 0 4px ${GOLD}, 4px 10px 0 ${INK}; }
+      .${P}talk { font-size:15px; font-style:italic; line-height:1.3; min-height:1.3em; margin-top:4px; }
+      .${P}slate { position:relative; max-width:560px; box-sizing:border-box; margin:8px; background:${SKIN}; border:4px solid ${INK}; border-radius:22px; padding:16px 18px; box-shadow:7px 7px 0 ${INK}; display:grid; gap:8px; }
+      .${P}slate h2 { font-family:'Rye',Georgia,serif; font-weight:400; font-size:clamp(22px,5vw,28px); margin:0; text-align:center; color:${RED}; }
+      .${P}slate p { margin:0; font-size:16px; line-height:1.4; }
+      .${P}slate p.v { font-style:italic; color:${GREEN}; }
+      .${P}slate .sl { border:3px solid ${INK}; border-radius:6px; aspect-ratio:1000/560; background:#5a3d22 repeating-linear-gradient(92deg, rgba(0,0,0,.2) 0 2px, transparent 2px 14px); display:grid; place-items:center; color:${SKIN}; font-style:italic; overflow:hidden; }
+      .${P}slate .sl img { width:100%; height:100%; object-fit:cover; display:block; animation:${P}turn .7s both; }
+      @keyframes ${P}turn { from { transform:rotateY(88deg); opacity:.2; } to { transform:none; opacity:1; } }
+      .${P}slate button { justify-self:center; font-family:'Rye',Georgia,serif; font-size:18px; background:${RED}; color:${SKIN}; border:3px solid ${INK}; border-radius:12px; padding:8px 20px; cursor:pointer; box-shadow:4px 4px 0 ${INK}; }
+      .${P}slate button:hover, .${P}slate button:focus-visible { background:${GREEN}; }
+      .${P}legend .ic.art { background-color:#f6ecd2; }
+      @media (prefers-reduced-motion: reduce) { .${P}slate .sl img, .${P}spot.shake { animation:none; } .${P}stake.free { transition:none; } }
+      @media (max-width:720px) { .${P}chalk { display:none; } .${P}tbl { width:100%; } }
+      @media (min-width:721px) { .${P}ledger.under { display:none; } }
       .${P}beat { text-align:center; font-size:16px; line-height:1.35; min-height:1.35em; padding:6px 12px; border:3px dashed ${INK}; border-radius:12px; background:#fff8e6; }
       .${P}beat.voice { font-style:italic; color:${GREEN}; border-color:${GREEN}; }
       .${P}beat:empty { display:none; }
@@ -132,15 +180,29 @@ export default {
         .${P}swal { display:none; } .${P}ribbon { padding:6px 14px; } .${P}say { min-height:1.3em; font-size:14px; } .${P}sailor svg { max-width:64px !important; } .${P}frame { gap:8px; } }
     </style>
     <div class="${P}w"><div class="${P}frame"></div>
-      <div class="${P}how" role="dialog" aria-label="How to play"><div class="${P}flash">
+      <div class="${P}how" role="dialog" aria-label="The Slate, and how to play">
+      <div class="${P}slate">
+        ${chapterStrip(art, 3, "Chapter III: The Ordered Sea")}
+        <h2>The Slate</h2>
+        <p>Chapter II, Tidewater. Before the taproom, the chandlery on the quay: Mother Halse's shop, the shutters half down, and Alexi with a thirst.</p>
+        <div class="sl" data-sl="1">the back of a slate, on the counter</div>
+        <div data-after="1" hidden>
+          <p class="v">He asked for a bottle and was shown a slate. It was longer than the shop, and all of it was us.</p>
+          <p style="margin-top:6px">“Forty years my family has written ‘pays next tide’. Which tide, love?”</p>
+          <p style="margin-top:6px">The chits she sold on, years since. One she kept. She shuts the shop, follows him to the taproom, takes the short dockhand's stool and lays it on the table: her stake.</p>
+        </div>
+        <button type="button" data-sl="ask">Ask for a bottle</button>
+      </div>
+      <div class="${P}flash" hidden>
         <div class="ttl">${swallow(false)}<span class="${P}ribbon ${P}rye">LIAR'S TIDE</span>${swallow(true)}</div>
         <p class="goal ${P}rye">Be the last at the table with dice.</p>
         <p class="open" style="font-style:normal;margin-bottom:6px">Each sailor hides three tide dice under a horn cup; the house spots the newcomer a fourth.</p>
-        <p class="open">Chapter II, the Tidewater taproom. Wenna, who pilots the ferry, and two dockhands. Alexi cannot ask a straight question to save his life, so he plays for the news instead.</p>
+        <p class="open">Chapter II, the Tidewater taproom. Wenna, who pilots the ferry; a dockhand; and Mother Halse, with chit No. 2 on the table. Alexi cannot ask a straight question to save his life, so he plays for the news instead.</p>
         ${losses >= 2 ? `<p class="gentle">The princess has pulled up a stool: her whisper is free every turn this game, and the house spots you a fifth die.</p>` : ""}
         <div class="${P}legend">
-          <div><span class="ic">${icon(5, 30)}</span><span><b>Bid</b> how many of one face sit under all the cups plus the tide die. Raise the count, or keep it and raise the face. <kbd>↑</kbd><kbd>↓</kbd> count, <kbd>←</kbd><kbd>→</kbd> face, <kbd>B</kbd> bid.</span></div>
-          <div><span class="ic">${icon(6, 30)}</span><span><b>Call the tide</b> (<kbd>C</kbd>) if you doubt the bid. Cups lift: whoever was wrong loses a die. <b>Gulls</b> count as any face until someone bids Gulls.</span></div>
+          <div><span class="ic${dieCrop(art, 5) ? " art" : ""}" style="${dieCrop(art, 5)}">${dieCrop(art, 5) ? "" : icon(5, 30)}</span><span><b>Bid</b> how many of one face sit under all the cups plus the tide die. Raise the count, or keep it and raise the face. <kbd>↑</kbd><kbd>↓</kbd> count, <kbd>←</kbd><kbd>→</kbd> face, <kbd>B</kbd> bid.</span></div>
+          <div><span class="ic${dieCrop(art, 1) ? " art" : ""}" style="${dieCrop(art, 1)}">${dieCrop(art, 1) ? "" : icon(6, 30)}</span><span><b>Call the tide</b> (<kbd>C</kbd>) if you doubt the bid. Cups lift: whoever was wrong loses a die. <b>Gulls</b> count as any face until someone bids Gulls.</span></div>
+          ${art.has("tide-die") ? `<div><span class="ic art" style="background:#f6ecd2 url('${art.url("tide-die")}') 50% 30%/150% auto no-repeat"></span><span>The <b>tide die</b> in the middle of the table is rolled face up each round, and counts for everyone.</span></div>` : ""}
         </div>
         <button type="button">Take a seat</button>
       </div></div>
@@ -200,7 +262,7 @@ export default {
       S.bid = { q, f }; S.bidder = pi; S.popBid = true;
       if (f === 1) S.gullBid = true;
       S.ledger.push({ who: players[pi].name, text: bidName(S.bid) });
-      if (pi !== 0) S.speech[pi] = `“${cap(bidName(S.bid))}.”`;
+      if (pi !== 0) S.speech[pi] = players[pi].halse ? `(chalks it on the table: ${bidName(S.bid)})` : `“${cap(bidName(S.bid))}.”`;
       S.turn = nextActive(pi);
       S.log = pi === 0 ? `You bid ${bidName(S.bid)}.` : `${players[pi].name} bids ${bidName(S.bid)}.`;
       if (S.turn !== 0) { const p = players[S.turn]; if (p.tell && hasThree(p)) S.speech[S.turn] = "(counting under her breath: one, two, three…)"; }
@@ -248,11 +310,11 @@ export default {
       S.shake = loser;
       S.reveal = { caller: pi, n, holds, loser, face: S.bid.f, wild: wild(S.bid.f) };
       if (loser !== 0 && players[loser].count === 0) {
-        S.outs++;
+        S.outs++; if (loser === 3) S.chitFree = true;
         beat(NEWS[loser], false);
         if (active().length === 2 && players[0].count > 0) {
           const last = active().find((i) => i !== 0);
-          later(() => { if (S.phase === "reveal") { beat(last === 1 ? "Just Wenna now. She counts under her breath when she holds three of a face. Listen for it." : `Just the ${players[last].name.toLowerCase()} now, and the whole taproom watching.`, false); render(); } }, 2600);
+          if (loser !== 3) later(() => { if (S.phase === "reveal") { beat(last === 1 ? "Just Wenna now. She counts under her breath when she holds three of a face. Listen for it." : `Just the ${players[last].name.toLowerCase()} now, and the whole taproom watching.`, false); render(); } }, 2600);
         }
       } else if (loser === 0 && players[0].count === 1) beat("One die left under his cup. The sea's luck does not come to a man who stops looking at it.", true);
       S.ledger.push({ who: players[pi].name, text: "calls the tide", strong: true });
@@ -269,18 +331,19 @@ export default {
       if (S.phase === "over") return;
       S.phase = "over"; render();
       api.store.set("losses", won ? 0 : losses + 1);
-      if (caught) api.end({ outcome: "lose", text: `Caught stirring the cup, ${S.stirs === 1 ? "once too often" : `the ${["", "first", "second", "third", "fourth", "fifth"][S.stirs] || "last"} time`}. Wenna puts her hand flat over his; the stake is forfeit, and the news goes to someone else's table.` });
-      else if (won) api.end({ outcome: "win", text: `Last with dice${S.stirs ? `, and ${S.stirs === 1 ? "one stir" : NUMW[S.stirs] + " stirs"} the table never quite caught` : ", and an honest cup"}. Two pieces of news: where the Gullwife crew fish past the chart's edge, and where the Kettle crew still sing. Devotion +3.` });
-      else api.end({ outcome: "lose", text: `Out of dice${S.outs ? ` after seeing ${S.outs === 1 ? "one sailor" : S.outs + " sailors"} off the bench` : ""}. One piece of news anyway, from a dockhand who pities him: the Gullwife crew fish off the chart's edge.` });
+      endCard(root, art, won ? "chit-2-dice-stake" : "the-slate", won ? "CHIT No. 2 · THE LUCK OF THE DICE" : "MOTHER HALSE'S SLATE · PAYS NEXT TIDE", "#2b1d10");
+      if (caught) api.end({ outcome: "lose", text: `Caught stirring the cup, ${S.stirs === 1 ? "once too often" : `the ${["", "first", "second", "third", "fourth", "fifth"][S.stirs] || "last"} time`}. Wenna puts her hand flat over his; the stake is forfeit, the news goes to someone else's table, and Mother Halse puts her chit back in her apron. “Next tide, then.”` });
+      else if (won) api.end({ outcome: "win", text: `Last with dice${S.stirs ? `, and ${S.stirs === 1 ? "one stir" : NUMW[S.stirs] + " stirs"} the table never quite caught` : ", and an honest cup"}. Two pieces of news: where the Gullwife crew fish past the chart's edge, and where the Kettle crew still sing. Devotion +3. And chit No. 2, “the luck of the dice”, in his own hand: the second of eight.` });
+      else api.end({ outcome: "lose", text: `Out of dice${S.outs ? ` after seeing ${S.outs === 1 ? "one sailor" : S.outs + " sailors"} off the bench` : ""}. One piece of news anyway, from a dockhand who pities him: the Gullwife crew fish off the chart's edge. Mother Halse ${S.chitFree ? "takes her chit back off the table" : "keeps her chit"}: “Next tide, then.”` });
     }
 
     function doStir() {
       if (!S.pick.size) return;
       for (const i of S.pick) players[0].dice[i] = roll();
       S.pick.clear(); S.stirring = false; S.stirredThisRound = true; S.stirs++;
-      S.suspicion = Math.min(100, S.suspicion + 25);
+      S.suspicion = Math.min(100, S.suspicion + (S.chitFree ? 10 : 25));
       if (S.suspicion >= 50 && S.suspicion < 100) beat(S.suspicion >= 75 ? "Wenna has stopped looking at her own cup. One more stir and she will say something." : "The tall dockhand glances at the jug, then at Alexi's hands.", false);
-      S.log = "You stir the cup. The water in the jug beside it turns too.";
+      S.log = S.chitFree ? "You stir the cup. The luck of the dice is lying on the table: hardly anyone looks." : "You stir the cup. The water in the jug beside it turns too.";
       S.ledger.push({ who: "Alexi", text: "(a stir)", faint: true });
       render();
       if (S.suspicion >= 100) later(() => end(false, true), 900);
@@ -291,42 +354,51 @@ export default {
     }
 
     // ---- render ----
+    const dieEl = (v, cls, extra = "", size = 0, tag = "span") => {
+      const crop = dieCrop(art, v);
+      return `<${tag} ${tag === "button" ? 'type="button" ' : ""}class="${P}die${crop ? " art" : ""}${cls ? " " + cls : ""}" ${extra} style="${crop}">${crop ? "" : icon(v, size || 42)}</${tag}>`;
+    };
     function render() {
       const you = players[0];
       const eyesToward = S.suspicion / 100;
-      const sailor = (i) => {
-        const p = players[i];
-        const px = 0, py = eyesToward * 5; // pupils drop toward the player
-        const eye = (cx) => `<g transform="translate(${cx},20)"><path d="M-17 0 Q0 -14 17 0 Q0 14 -17 0Z" fill="#fff" stroke="${INK}" stroke-width="3"/><circle cx="${px}" cy="${py.toFixed(1)}" r="${6 + eyesToward * 2}" fill="${p.eye}" stroke="${INK}" stroke-width="2"/><circle cx="${px}" cy="${py.toFixed(1)}" r="2.5" fill="${INK}"/>${S.suspicion >= 50 ? `<path d="M-14 -13 L14 ${-13 + eyesToward * 8}" stroke="${INK}" stroke-width="3"/>` : ""}</g>`;
-        const showDice = S.phase !== "play" && S.reveal;
-        const cupHtml = showDice
-          ? p.dice.map((v) => `<span class="${P}die" style="width:30px;height:30px;border-width:2.5px;box-shadow:2px 2px 0 ${INK}${matchesReveal(v) ? ";background:#bfe0c9" : ""}">${icon(v, 22)}</span>`).join("")
-          : Array.from({ length: p.count }, () => `<span class="${P}pip"></span>`).join("");
-        return `<div class="${P}sailor${S.turn === i && S.phase === "play" ? " turn" : ""}${p.count ? "" : " out"}${S.shake === i ? " shake" : ""}">
-          <svg viewBox="-40 0 80 40" style="width:100%;max-width:90px;height:auto" aria-hidden="true">${eye(-19)}${eye(19)}</svg>
-          <div class="nm ${P}rye">${p.name}</div><div class="cup" aria-label="${p.count} dice">${cupHtml}</div>
-          <div class="${P}say">${S.speech[i] || (p.count ? "" : "out")}</div></div>`;
-      };
       const matchesReveal = (v) => S.reveal && (v === S.reveal.face || (S.reveal.wild && v === 1));
+      const POS = { 1: [50, 24.4], 2: [18.75, 52.2], 3: [73.75, 52.2] };
+      const cup = cupCrop(art);
+      const spot = (i) => {
+        const p = players[i];
+        const py = eyesToward * 5;
+        const eye = (cx) => `<g transform="translate(${cx},20)"><path d="M-17 0 Q0 -14 17 0 Q0 14 -17 0Z" fill="#fff" stroke="${INK}" stroke-width="3"/><circle cx="0" cy="${py.toFixed(1)}" r="${6 + eyesToward * 2}" fill="${p.eye}" stroke="${INK}" stroke-width="2"/><circle cx="0" cy="${py.toFixed(1)}" r="2.5" fill="${INK}"/>${S.suspicion >= 50 ? `<path d="M-14 -13 L14 ${-13 + eyesToward * 8}" stroke="${INK}" stroke-width="3"/>` : ""}</g>`;
+        const showDice = S.phase !== "play" && S.reveal;
+        const under = showDice && p.count + (S.reveal.loser === i ? 1 : 0) > 0
+          ? `<span class="shown">${p.dice.map((v) => dieEl(v, matchesReveal(v) ? "hit" : "", `aria-label="${FACES[v]}"`, 18)).join("")}</span>`
+          : `<span class="cupi${cup ? "" : " plain"}" style="${cup}" aria-label="${p.count} dice under the cup"><b>×${p.count}</b></span>`;
+        return `<div class="${P}spot${S.turn === i && S.phase === "play" ? " turn" : ""}${p.count ? "" : " out"}${S.shake === i ? " shake" : ""}" style="left:${POS[i][0]}%;top:${POS[i][1]}%">
+          <span class="who ${P}rye"><svg viewBox="-40 0 80 40" aria-hidden="true">${eye(-19)}${eye(19)}</svg>${p.name}${p.count ? "" : " · out"}</span>${under}</div>`;
+      };
       const myTurn = S.phase === "play" && S.turn === 0;
       const canStir = S.phase === "play" && S.stirOpen && !S.stirredThisRound && you.count > 0;
-      const ledger = S.ledger.slice(-18).map((l) => (l.round ? `<div style="opacity:.6">─ round ${l.round} ─</div>` : `<div${l.faint ? ' style="opacity:.5"' : ""}>${l.strong ? "<u>" : ""}${l.who}: ${l.text}${l.strong ? "</u>" : ""}</div>`)).join("");
+      const rows = S.ledger.slice(-18).map((l) => (l.round ? `<div style="opacity:.6">─ round ${l.round} ─</div>` : `<div${l.faint ? ' style="opacity:.5"' : ""}>${l.strong ? "<u>" : ""}${l.who}: ${l.text}${l.strong ? "</u>" : ""}</div>`));
+      const talk = [1, 2, 3].filter((i) => S.speech[i]).map((i) => `${players[i].name}: ${esc(S.speech[i])}`).join(" · ");
       frame.innerHTML = `
-        <div class="${P}sailors">${[1, 2, 3].map(sailor).join("")}</div>
-        <div class="${P}sus"><span class="${P}rye" style="font-size:13px;letter-spacing:.15em">SUSPICION</span><span class="${P}bar" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${S.suspicion}" aria-label="Suspicion"><i class="${S.suspicion >= 75 ? "hot" : S.suspicion >= 50 ? "warm" : ""}" style="width:${S.suspicion}%"></i></span><span style="font-size:16px">${S.suspicion} / 100</span></div>
+        <div class="${P}sus"><span class="${P}rye" style="font-size:13px;letter-spacing:.15em">SUSPICION</span><span class="${P}bar" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${S.suspicion}" aria-label="Suspicion"><i class="${S.suspicion >= 75 ? "hot" : S.suspicion >= 50 ? "warm" : ""}" style="width:${S.suspicion}%"></i></span><span style="font-size:16px">${S.suspicion} / 100${S.chitFree ? " · a stir draws 10" : ""}</span></div>
         <div class="${P}beat${S.beatVoice ? " voice" : ""}" aria-live="polite">${esc(S.beat)}</div>
-        <div class="${P}mid">
-          <div class="${P}tide"><span class="${P}rye">TIDE DIE</span><span class="${P}die tide${matchesReveal(S.tide) ? " hit" : ""}">${icon(S.tide, 48)}</span><span>${FACES[S.tide]}</span></div>
-          <div class="${P}banner">
-            ${swallow(false)}<span class="${P}ribbon ${P}rye${S.popBid ? " pop" : ""}">${S.bid ? bidName(S.bid).toUpperCase() : "NO BID YET"}</span>${swallow(true)}
-            <div class="${P}note" aria-live="polite">${esc(S.log)}${S.gullBid ? " <i>(Gulls are bid: not wild this round.)</i>" : ""}</div>
-          </div>
-          <div class="${P}ledger" aria-label="Bid ledger"><b>THE CHALK</b>${ledger}</div>
+        <div class="${P}cols"><div class="${P}tbl" style="background-image:${bg(art, "table-tidewater")}" role="group" aria-label="The table">
+          ${[1, 2, 3].map(spot).join("")}
+          ${dieEl(S.tide, "tide" + (matchesReveal(S.tide) ? " hit" : ""), `aria-label="Tide die: ${FACES[S.tide]}" title="The tide die counts for everyone"`, 48)}
+          <div class="${P}spot" style="left:50%;top:91%"><span class="who ${P}rye" style="position:static;transform:none">Alexi ×${you.count} · tide die: ${FACES[S.tide]}</span></div>
+          ${art.has("chit-2-dice-stake") ? `<div class="${P}stake${S.chitFree ? " free" : ""}" title="Mother Halse's stake: chit No. 2">${pic(art, "chit-2-dice-stake", "Mother Halse's stake: chit No. 2, the luck of the dice")}</div>` : ""}
+          <div class="${P}chalk" aria-hidden="true"><b>THE CHALK</b>${rows.slice(-9).join("")}</div>
         </div>
+        <div class="${P}rhs"><div class="${P}banner">
+          ${swallow(false)}<span class="${P}ribbon ${P}rye${S.popBid ? " pop" : ""}">${S.bid ? bidName(S.bid).toUpperCase() : "NO BID YET"}</span>${swallow(true)}
+          <div class="${P}note" aria-live="polite">${esc(S.log)}${S.gullBid ? " <i>(Gulls are bid: not wild this round.)</i>" : ""}</div>
+          <div class="${P}talk">${talk}</div>
+        </div>
+        <div class="${P}ledger under" aria-label="Bid ledger"><b>THE CHALK</b>${rows.join("")}</div>
         <div class="${P}you">
-          <div class="${P}mine" aria-label="Your dice under the cup">${you.dice.map((v, i) => `<button type="button" class="${P}die${S.pick.has(i) ? " pick" : ""}${S.reveal && matchesReveal(v) ? " hit" : ""}" data-i="${i}" aria-label="${FACES[v]}${S.stirring ? (S.pick.has(i) ? ", picked to re-roll" : ", pick to re-roll") : ""}">${icon(v, 42)}</button>`).join("") || "<i>no dice</i>"}</div>
+          <div class="${P}mine" aria-label="Your dice under the cup">${you.dice.map((v, i) => dieEl(v, (S.pick.has(i) ? "pick" : "") + (S.reveal && matchesReveal(v) ? " hit" : ""), `data-i="${i}" aria-label="${FACES[v]}${S.stirring ? (S.pick.has(i) ? ", picked to re-roll" : ", pick to re-roll") : ""}"`, 42, "button")).join("") || "<i>no dice</i>"}</div>
           <div class="${P}ctl">${controls(myTurn, canStir)}</div>
-        </div>`;
+        </div></div></div>`;
       S.popBid = false; S.shake = -1;
       wire();
     }
@@ -337,7 +409,7 @@ export default {
       const hint = S.round >= 3 && (!S.hintUsed || losses >= 2) && S.bid ? `<button type="button" data-a="hint" title="Trust 40+: the princess whispers the odds once a round">Whisper</button>` : "";
       const why = myTurn && S.bid && !legal(S.selQ, S.selF) ? `<span class="${P}why">Raise the count, or keep ${S.bid.q} and pick a later face.</span>` : "";
       return `<span class="${P}pickbid" aria-label="Your bid"><button type="button" data-a="q-" aria-label="Fewer">−</button><span class="q">${S.selQ}</span><button type="button" data-a="q+" aria-label="More">+</button>
-        <button type="button" data-a="f-" aria-label="Previous face">◀</button>${icon(S.selF, 34)}<button type="button" data-a="f+" aria-label="Next face">▶</button></span>
+        <button type="button" data-a="f-" aria-label="Previous face">◀</button>${dieCrop(art, S.selF) ? `<span class="${P}die art" style="width:38px;height:38px;border-width:2.5px;box-shadow:2px 2px 0 ${INK};border-radius:9px;${dieCrop(art, S.selF)}" title="${FACES[S.selF]}"></span>` : icon(S.selF, 34)}<button type="button" data-a="f+" aria-label="Next face">▶</button></span>
         <button type="button" class="main" data-a="bid" ${myTurn && legal(S.selQ, S.selF) ? "" : "disabled"}>Bid ${S.selQ} ${S.selQ === 1 ? FACES[S.selF] : PLURAL[S.selF]}</button>
         <button type="button" data-a="call" ${myTurn && S.bid ? "" : "disabled"}>Call the tide</button>
         ${S.stirOpen ? `<button type="button" class="stir" data-a="stir" ${canStir ? "" : "disabled"}>Stir the cup</button>` : ""}${hint}${why}`;
@@ -389,9 +461,21 @@ export default {
       if (S.stirring && /^[1-4]$/.test(k)) { const i = +k - 1; if (i < players[0].dice.length) { S.pick.has(i) ? S.pick.delete(i) : S.pick.size < 2 && S.pick.add(i); render(); } }
     };
     addEventListener("keydown", onKey);
-    const startBtn = how.querySelector("button");
-    startBtn.addEventListener("click", () => { how.remove(); beat("Wenna rattles her cup. “Stakes are news, sailor. Tell us something we don't know, or lose.”", false); newRound(0); });
-    startBtn.focus();
+    const slateEl = how.querySelector("." + P + "slate"), rulesEl = how.querySelector("." + P + "flash");
+    const slBtn = slateEl.querySelector("button");
+    let asked = false;
+    slBtn.addEventListener("click", () => {
+      if (!asked) {
+        asked = true;
+        const sl = slateEl.querySelector("[data-sl='1']");
+        sl.innerHTML = pic(art, "the-slate", "A slate turned round on the counter: forty years of one account in chalk, every line ending ‘pays next tide’") || "A slate, turned round: forty years of one account in chalk, every line ending ‘pays next tide’.";
+        slateEl.querySelector("[data-after]").hidden = false;
+        slBtn.textContent = "Follow her to the table";
+      } else { slateEl.hidden = true; rulesEl.hidden = false; startBtn.focus(); }
+    });
+    const startBtn = rulesEl.querySelector(":scope > button");
+    startBtn.addEventListener("click", () => { how.remove(); beat("Wenna rattles her cup. “Stakes are news, sailor.” Mother Halse says nothing, and squares her chit against the table's edge.", false); newRound(0); });
+    slBtn.focus();
     // the table under the panel
     for (const p of players) p.dice = Array.from({ length: p.count }, roll);
     S.phase = "idle"; render();

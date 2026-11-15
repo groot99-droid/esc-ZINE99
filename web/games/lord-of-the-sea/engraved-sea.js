@@ -10,6 +10,13 @@
 // at 50 a second cutter puts out. The coast strip shows the moorings lift as each crest rolls on.
 // Narrative beats (opening, captions, the Voice Beside) are written for the game; see the
 // refine pass's additions list.
+// Phase 1 (accepted 2026-11-15): the account rendered. When the run ends, win or caught, the Tide Reckoning sheet
+// for the Spice Mouth is written line by line from what the run did (crests that rolled on to the coast, notice,
+// the pay lighter if six or more reached the moorings), and it comes back countersigned: a green tick and a T.
+// Turn it over and the Lord of Tea's own account shows, "The Sea, Dr."; strike his tick out, or let it stand.
+// Art pass: the boat, the cutter, the coast strip with its moored skiffs, the sky and the rose ring are the game's
+// art, each rasterised once at the size it is drawn (api.art); the sea itself stays the module's own burin lines.
+import { pic, raster, endCard, chapterStrip } from "./_art.js";
 
 const INK = "#1F2E4A", PAPER = "#F4F1E8", RED = "#8C2B2B", GOLD = "#E7A93B", GREEN = "#2F6B5E", BROWN = "#6B4A2B";
 const LENGTH = 2200;            // metres to the port (about 1.2 nm)
@@ -77,7 +84,37 @@ export default {
       .${P}gentle { font-size:15px; color:${GREEN}; margin:0 0 8px; text-align:center; font-style:italic; }
       .${P}plate button { display:block; margin:4px auto 0; font:inherit; font-size:18px; padding:8px 26px; background:${INK}; color:${PAPER}; border:0; cursor:pointer; }
       .${P}plate button:hover, .${P}plate button:focus-visible { background:${RED}; }
-      @media (max-width:520px) { .${P}plate { padding:14px 14px 12px; } .${P}key td:first-child { white-space:normal; } .${P}cap { top:30%; font-size:15px; } }
+      .${P}figs { display:flex; gap:6px; justify-content:center; margin:0 0 8px; }
+      .${P}figs img { width:31%; max-width:150px; height:auto; border:1px solid rgba(31,46,74,.4); }
+      .${P}key td img { display:block; width:34px; height:34px; margin:0 auto 2px; border-radius:50%; }
+      .${P}acct { position:absolute; inset:0; z-index:4; display:grid; place-items:center; background:rgba(31,46,74,.82); padding:12px; overflow:auto; }
+      .${P}sheet { position:relative; max-width:600px; width:100%; box-sizing:border-box; background:#fbfaf3; color:${INK}; border:1px solid ${INK}; padding:16px 22px 16px; box-shadow:0 12px 34px rgba(0,0,0,.5);
+        background-image:linear-gradient(rgba(31,46,74,.10) 1px, transparent 1px); background-size:100% 26px; background-position:0 62px; }
+      .${P}sheet h2 { font-family:'IM Fell English SC',Georgia,serif; font-weight:400; letter-spacing:.2em; font-size:clamp(20px,4.6vw,26px); margin:0; text-align:center; }
+      .${P}sheet .sub { text-align:center; font-style:italic; font-size:15px; margin:0 0 4px; color:${BROWN}; }
+      .${P}sheet .rule { display:block; width:100%; height:auto; margin:0 0 6px; }
+      .${P}sheet table { width:100%; border-collapse:collapse; font-size:16px; line-height:26px; }
+      .${P}sheet td { padding:0 4px; vertical-align:top; }
+      .${P}sheet td:last-child { text-align:right; white-space:nowrap; font-family:'IM Fell English SC',Georgia,serif; color:${RED}; }
+      .${P}sheet tr { opacity:0; transition:opacity .5s; }
+      .${P}sheet tr.in { opacity:1; }
+      .${P}sheet .toll { display:grid; grid-template-columns:120px minmax(0,1fr); gap:12px; align-items:center; margin:8px 0 0; padding:8px; background:#fbfaf3; border:1px solid ${RED}; font-size:15px; line-height:1.35; opacity:0; transition:opacity .5s; }
+      .${P}sheet .toll.in { opacity:1; }
+      .${P}sheet .toll img { width:120px; height:auto; display:block; }
+      .${P}sheet .seal { display:block; width:min(100%,300px); height:auto; margin:4px 0 0 auto; }
+      .${P}sheet .cs { display:block; margin:8px 0 0 auto; width:min(40%,170px); opacity:0; transform:scale(1.5) rotate(-8deg); transition:opacity .25s, transform .25s; pointer-events:none; }
+      .${P}sheet .cs.in { opacity:.92; transform:none; }
+      .${P}sheet .cs img { width:100%; height:auto; display:block; }
+      .${P}sheet .cs .fb { border:2px solid #2E7A46; color:#2E7A46; padding:6px 10px; font-size:22px; text-align:center; background:#fbfaf3; }
+      .${P}sheet .after { margin-top:10px; padding-top:8px; border-top:1px solid ${INK}; background:#fbfaf3; display:grid; gap:8px; font-size:16px; line-height:1.4; position:relative; }
+      .${P}sheet .after p { margin:0; } .${P}sheet .after p.v { font-style:italic; color:${GREEN}; }
+      .${P}sheet .after img.book { width:100%; height:auto; display:block; border:1px solid ${INK}; }
+      .${P}sheet .btns { display:flex; flex-wrap:wrap; gap:8px; }
+      .${P}sheet button { font:inherit; font-size:16px; padding:6px 16px; background:${INK}; color:${PAPER}; border:1px solid ${INK}; cursor:pointer; }
+      .${P}sheet button.alt { background:#fbfaf3; color:${INK}; }
+      .${P}sheet button:hover, .${P}sheet button:focus-visible { background:${RED}; color:${PAPER}; }
+      @media (prefers-reduced-motion: reduce) { .${P}sheet tr, .${P}sheet .toll, .${P}sheet .cs { transition:none; } }
+      @media (max-width:520px) { .${P}plate { padding:14px 14px 12px; } .${P}sheet { padding:12px 12px; } .${P}sheet table { font-size:15px; } .${P}sheet .toll { grid-template-columns:88px minmax(0,1fr); } .${P}sheet .toll img { width:88px; } .${P}key td:first-child { white-space:normal; } .${P}cap { top:30%; font-size:15px; } }
     </style>
     <div class="${P}wrap">
       <canvas aria-label="The Engraved Sea: a side-on engraved sea with your boat, the reef and a revenue cutter"></canvas>
@@ -91,14 +128,16 @@ export default {
       </div>
       <div class="${P}how" role="dialog" aria-label="How to play">
         <div class="${P}plate">
+          ${chapterStrip(api.art, 5, "Chapter V: The Open Chart")}
           <div class="${P}kick">PLATE I · CHAPTER IV · OFF THE SPICE MOUTH</div>
           <h2>The Engraved Sea</h2>
           <p class="${P}goal">Reach the Spice Mouth, 1.2 miles on, before a revenue cutter's grapnel holds you four seconds.</p>
           <p class="${P}open">The Company has had word of a boat that makes its own weather. Alexi has the tiller, a following sea, and a cutter two cables astern.</p>
           ${gentle ? `<p class="${P}gentle">A gentler sea: the cutter starts further back this time.</p>` : ""}
+          ${api.art.has("boat-surf") ? `<div class="${P}figs">${pic(api.art, "boat-surf", "The boat, surfing a face")}${pic(api.art, "cutter", "A revenue cutter")}${pic(api.art, "boat-capsized", "The boat, capsized")}</div>` : ""}
           <table class="${P}key">
-            <tr><td>Raise</td><td>Draw a clockwise circle on the sea, or hold <kbd>E</kbd>. More circles, a bigger crest.</td></tr>
-            <tr><td>Still</td><td>A counter-clockwise circle, or hold <kbd>Q</kbd>, flattens the sea there.</td></tr>
+            <tr><td>${pic(api.art, "stir-spiral-clockwise", "")}Raise</td><td>Draw a clockwise circle on the sea, or hold <kbd>E</kbd>. More circles, a bigger crest.</td></tr>
+            <tr><td>${pic(api.art, "stir-spiral-counter", "")}Still</td><td>A counter-clockwise circle, or hold <kbd>Q</kbd>, flattens the sea there.</td></tr>
             <tr><td>Helm</td><td><b>Climb</b> a rising face, <b>Run</b> a falling one (<kbd>W</kbd>/<kbd>S</kbd>), or go over. <kbd>A</kbd>/<kbd>D</kbd> trim; <kbd>&larr;</kbd><kbd>&rarr;</kbd> move the reticle.</td></tr>
           </table>
           <button type="button">Make sail</button>
@@ -252,7 +291,32 @@ export default {
       boatSX = W * 0.36;
       seaY = Hh * 0.56;
     }
-    const ro = new ResizeObserver(resize); ro.observe(wrap); resize();
+    // art, rasterised once at the size it is drawn; rebuilt when the plate is resized
+    const art = api.art;
+    const A = { key: "" };
+    let prepTimer = 0, dead = false;
+    // the plate's sky is 1512 x 208; take the part of it with the plate's own proportions, keeping the sun in view
+    const skySrc = (aspect) => (aspect >= 1512 / 208 ? [44, 122 + (208 - 1512 / aspect) / 2, 1512, 1512 / aspect] : [Math.max(44, Math.min(44 + 1512 - 208 * aspect, 250 - 208 * aspect * 0.3)), 122, 208 * aspect, 208]);
+    async function prep() {
+      if (dead || !W || !Hh) return;
+      const key = W + "x" + Hh;
+      if (A.key === key) return;
+      A.key = key;
+      const k = ppm / 8, top = Hh * 0.09, bandH = Hh * 0.17 - top - 6, skyH = Hh * 0.56 + 4 - (Hh * 0.17 + 2);
+      const got = {
+        boat: await raster(art, "sprite-boat-full", 92 * k * dpr, 95 * k * dpr),
+        spill: await raster(art, "sprite-boat-spill", 92 * k * dpr, 95 * k * dpr),
+        cutter: await raster(art, "sprite-cutter", 138 * k * dpr, 109 * k * dpr),
+        rose: await raster(art, "rose-ring", 84 * dpr, 84 * dpr, { round: true }),
+        coast: await raster(art, "coast-spice", bandH * (1556 / 168) * dpr, bandH * dpr, { src: [22, 16, 1556, 168] }),
+        sky: await raster(art, "sea-plate", (W - 20) * dpr, skyH * dpr, { src: skySrc((W - 20) / skyH) }),
+        skiff: await raster(art, "sprite-skiff", bandH * 0.62 * (150 / 140) * dpr, bandH * 0.62 * dpr),
+        ferry: await raster(art, "sprite-ferry", bandH * 0.5 * (260 / 110) * dpr, bandH * 0.5 * dpr),
+      };
+      if (dead || A.key !== key) return;
+      Object.assign(A, got, { k, bandH });
+    }
+    const ro = new ResizeObserver(() => { resize(); clearTimeout(prepTimer); prepTimer = setTimeout(prep, A.key ? 260 : 0); }); ro.observe(wrap); resize(); prep();
 
     // ---- simulation ----
     function capsize(why) {
@@ -353,8 +417,63 @@ export default {
       const secs = Math.round(t);
       const time = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`;
       const sent = s.sent ? ` ${s.sent} crest${s.sent === 1 ? "" : "s"} rolled on to the moorings along the coast; the Tide Reckoning will count ${s.sent === 1 ? "it" : "them"}.` : " He raised almost nothing on the way, and the coast barely felt him pass.";
-      if (won) api.end({ outcome: "win", text: `Into the Spice Mouth in ${time}, the cutter still beating up behind.${sent} Notice ${Math.round(s.notice)}.` });
-      else api.end({ outcome: "lose", text: `The grapnel bites and holds: the cutter has him ${((LENGTH - s.x) / NM).toFixed(2)} nm short of the Spice Mouth. Caught, notice +10. Next time put a crest under her bow, or lay fog between you.` });
+      const result = won ? { outcome: "win", text: `Into the Spice Mouth in ${time}, the cutter still beating up behind.${sent} Notice ${Math.round(s.notice)}.` }
+        : { outcome: "lose", text: `The grapnel bites and holds: the cutter has him ${((LENGTH - s.x) / NM).toFixed(2)} nm short of the Spice Mouth. Caught, notice +10. Next time put a crest under her bow, or lay fog between you.` };
+      later(() => account(won, result), reduce ? 100 : 900);
+    }
+
+    // ---- the account rendered: the Tide Reckoning sheet, countersigned ----
+    let acct = null;
+    function account(won, result) {
+      if (dead) return;
+      const wreck = s.sent >= 6;
+      const notice = Math.round(Math.min(100, s.notice + (won ? 0 : 10)));
+      const rows = [
+        ["Crests raised that rolled on to the coast", String(s.sent)],
+        ["Moorings lifted at the Spice Mouth", s.sent ? `${s.sent * 3} boats` : "none"],
+        ["Revenue cutters broached on a crest", String(s.broaches)],
+        ["The boat capsized, and righted", String(s.capsizes)],
+        [won ? "Made the Spice Mouth" : "Taken by the cutter: a fine entered", won ? "arrived" : "notice +10"],
+        ["Notice", `${notice} of 100`],
+      ];
+      acct = document.createElement("div");
+      acct.className = P + "acct"; acct.setAttribute("role", "dialog"); acct.setAttribute("aria-label", "Tide Reckoning: the account rendered");
+      acct.innerHTML = `<div class="${P}sheet">
+        <h2>TIDE RECKONING</h2><p class="sub">The Spice Mouth: what this run adds to its line</p>
+        ${pic(art, "rule-order", "", `class="rule"`)}
+        <table>${rows.map((r) => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</table>
+        ${pic(art, "notice-seal", "The Company's seal darkens with notice: pale at 0, red at 30 and 50, black at 70", `class="seal"`)}
+        <div class="toll">${wreck ? (pic(art, "toll-wreck-lighter", "The pay lighter, adrift") || "<span></span>") + `<span><b>Wreck.</b> The pay lighter, loaded with the week's pay: lifted off her mooring by the sixth crest and lost on the bar. No one was aboard. The dock is not paid this week.</span>`
+          : `<span style="grid-column:1/-1"><b>The toll.</b> No wreck, and no one lost. ${s.sent ? `The moorings held, this time: six crests would have had the pay lighter.` : `He raised almost nothing, and the coast barely felt him pass.`}</span>`}</div>
+        <div class="cs" aria-hidden="true">${pic(art, "countersign", "") || `<div class="fb">✓ T.</div>`}</div>
+        <div class="after" hidden></div>
+      </div>`;
+      wrap.appendChild(acct);
+      const els = [...acct.querySelectorAll("tr"), acct.querySelector(".toll")];
+      const after = acct.querySelector(".after"), cs = acct.querySelector(".cs");
+      const step = reduce ? 0 : 480;
+      els.forEach((el, i) => later(() => el.classList.add("in"), 200 + i * step));
+      const show = (stage, pick) => {
+        after.hidden = false;
+        if (stage === 0) after.innerHTML = `<p>The sheet is his own count, in his own hand. It comes back before the ink is dry, and it has been somewhere first: in the corner, in green, a tick and a <b>T</b>.</p>
+          <div class="btns"><button type="button" data-k="turn">Turn the sheet over</button></div>`;
+        if (stage === 1) after.innerHTML = `${pic(art, "wreck-book-account", "A ledger spread headed ‘The Sea, Dr.’ on the left and ‘Cr.’ on the right", `class="book"`)}
+          <p>On the back, a copy of a ledger page in a small exact hand, headed <i>The Sea, Dr.</i> Every line of this sheet is already entered there. <i>“Examined and entered. T.”</i></p>
+          <p class="v">Someone had been keeping our score, and keeping it better than we did.</p>
+          <div class="btns"><button type="button" data-k="strike">Strike his tick out</button><button type="button" class="alt" data-k="stand">Let it stand</button></div>`;
+        if (stage === 2) after.innerHTML = `<p>${pick === "strike" ? "He draws one line through the tick. Under it, already, in the same green: <i>“Noted.”</i>" : "He lets it stand. It is, as far as he can tell, correct, and that is the worst of it."}</p>
+          <p>From the first Tide Reckoning on, every sheet comes back countersigned. The Lord of Tea is keeping the account.</p>
+          <div class="btns"><button type="button" data-k="close">Close the account</button></div>`;
+        after.querySelectorAll("[data-k]").forEach((b) => b.addEventListener("click", () => {
+          const k = b.dataset.k;
+          if (k === "turn") show(1); else if (k === "strike" || k === "stand") show(2, k);
+          else { acct.remove(); acct = null; endCard(root, art, "tide-reckoning-sheet", "TIDE RECKONING · EXAMINED AND ENTERED"); api.end({ ...result, text: result.text + " The reckoning came back countersigned: the Lord of Tea is keeping the account." }); }
+        }));
+        after.querySelector("button").focus();
+        after.scrollIntoView?.({ block: "nearest" });
+      };
+      later(() => { cs.classList.add("in"); if (!reduce) flash(GREEN, 0.4); }, 400 + els.length * step);
+      later(() => show(0), 900 + els.length * step);
     }
 
     // ---- drawing ----
@@ -370,6 +489,18 @@ export default {
     function drawBoat(x, cutter, alpha = 1) {
       const sx = wx(x), h = H(x), sy = wy(h), a = Math.atan(-slope(x) / 1) * 0.9;
       const k = ppm / 8;
+      const im = cutter ? A.cutter : s.trim < 0.5 ? A.spill || A.boat : A.boat;
+      if (im && A.k === k) { // the game's vessels, set on the module's own sea
+        g.save(); g.globalAlpha = alpha; g.translate(sx, sy); g.rotate(a);
+        if (cutter) g.drawImage(im, -138 * k * (176 / 380), -109 * k * (268 / 300), 138 * k, 109 * k);
+        else {
+          g.drawImage(im, -92 * k * 0.5, -95 * k * (276 / 310), 92 * k, 95 * k);
+          if (s.song > 0) { g.scale(k, k); g.fillStyle = GREEN; g.strokeStyle = GREEN; g.lineWidth = 1;
+            for (let i = 0; i < 3; i++) { const ph = (t * 0.9 + i / 3) % 1, nx = -14 + i * 10, ny = -22 - ph * 44; g.globalAlpha = alpha * (1 - ph); g.beginPath(); g.ellipse(nx, ny, 2.6, 2, -0.4, 0, 7); g.fill(); g.beginPath(); g.moveTo(nx + 2.4, ny); g.lineTo(nx + 2.4, ny - 9); g.stroke(); } }
+        }
+        g.restore();
+        return;
+      }
       g.save(); g.globalAlpha = alpha; g.translate(sx, sy); g.rotate(a); g.scale(k, k);
       g.lineWidth = 1.4; g.strokeStyle = INK; g.fillStyle = PAPER;
       if (!cutter) {
@@ -432,7 +563,17 @@ export default {
       g.save(); g.beginPath(); g.rect(10, coastTop, W - 20, coastBot - coastTop); g.clip();
       g.strokeStyle = INK; g.beginPath(); g.moveTo(10, coastBot - 2); g.lineTo(W - 10, coastBot - 2); g.stroke();
       const swell = crests.reduce((a, c) => a + c.h, 0);
-      for (let i = 0; i < Math.ceil(W / 46) + 1; i++) {
+      if (A.coast) { // the Spice Mouth strip, drifting past, with skiffs and a ferry at its moorings
+        const cw = A.coast.width / dpr, bh = coastBot - coastTop;
+        for (let x = -((s.x * 0.6) % cw); x < W; x += cw) g.drawImage(A.coast, x, coastTop, cw, bh);
+        for (let i = 0; i < Math.ceil(W / 92) + 1; i++) {
+          const x = ((i * 92 - (s.x * 1.1) % 92) + 92) % (W + 92) - 30;
+          const bob = Math.sin(t * 1.4 + i) * (0.6 + swell * 1.1);
+          const im = i % 5 === 2 ? A.ferry : A.skiff;
+          if (im) g.drawImage(im, x, coastBot - 3 - im.height / dpr * 0.82 + bob, im.width / dpr, im.height / dpr);
+        }
+        if (swell > 1.5) { g.fillStyle = GREEN; g.globalAlpha = 0.12; g.fillRect(10, coastBot - 9, W - 20, 8); g.globalAlpha = 1; }
+      } else for (let i = 0; i < Math.ceil(W / 46) + 1; i++) {
         const x = ((i * 46 - (s.x * 0.6) % 46) + 46) % (W + 46) - 10;
         const bob = Math.sin(t * 1.4 + i) * (1 + swell * 1.2);
         g.strokeStyle = swell > 1.5 ? GREEN : INK;
@@ -441,8 +582,9 @@ export default {
       }
       g.restore();
       // sky hatching and clouds
-      hatch(10, coastBot + 2, W - 10, seaY + 4, 7, 0.9, 0.12);
-      for (let i = 0; i < 5; i++) {
+      if (A.sky) g.drawImage(A.sky, 10, coastBot + 2, W - 20, seaY + 4 - (coastBot + 2));
+      else hatch(10, coastBot + 2, W - 10, seaY + 4, 7, 0.9, 0.12);
+      for (let i = 0; !A.sky && i < 5; i++) {
         const x = ((i * 260 - s.x * 0.35 * ppm * 0.3) % (W + 300) + W + 300) % (W + 300) - 150, y = coastBot + 70 + (i % 3) * 22;
         g.fillStyle = PAPER; g.strokeStyle = INK; g.lineWidth = 1;
         g.beginPath(); for (let j = 0; j < 5; j++) g.arc(x + j * 22, y + (j % 2) * 4, 16 + (j % 3) * 4, Math.PI, 0); g.closePath(); g.fill(); g.stroke();
@@ -548,8 +690,9 @@ export default {
       }
       // margins: compass rose, scale bar
       const rx0 = W - 52, ry0 = Hh - 100;
-      g.strokeStyle = INK; g.lineWidth = 0.8; g.beginPath(); g.arc(rx0, ry0, 26, 0, 7); g.stroke();
-      g.fillStyle = INK; for (let k = 0; k < 4; k++) { const a = k * Math.PI / 2; g.beginPath(); g.moveTo(rx0 + Math.cos(a) * 30, ry0 + Math.sin(a) * 30); g.lineTo(rx0 + Math.cos(a + 0.5) * 6, ry0 + Math.sin(a + 0.5) * 6); g.lineTo(rx0 + Math.cos(a - 0.5) * 6, ry0 + Math.sin(a - 0.5) * 6); g.fill(); }
+      if (A.rose) { g.drawImage(A.rose, rx0 - 38, ry0 - 38, 76, 76); g.strokeStyle = INK; g.lineWidth = 1; g.beginPath(); g.arc(rx0, ry0, 38, 0, 7); g.stroke(); }
+      else { g.strokeStyle = INK; g.lineWidth = 0.8; g.beginPath(); g.arc(rx0, ry0, 26, 0, 7); g.stroke(); }
+      g.fillStyle = INK; for (let k = 0; !A.rose && k < 4; k++) { const a = k * Math.PI / 2; g.beginPath(); g.moveTo(rx0 + Math.cos(a) * 30, ry0 + Math.sin(a) * 30); g.lineTo(rx0 + Math.cos(a + 0.5) * 6, ry0 + Math.sin(a + 0.5) * 6); g.lineTo(rx0 + Math.cos(a - 0.5) * 6, ry0 + Math.sin(a - 0.5) * 6); g.fill(); }
       const sbx = 18, sby = Hh - 84;
       for (let k = 0; k < 5; k++) { g.fillStyle = k % 2 ? PAPER : INK; g.fillRect(sbx + k * 10 * ppm / 2, sby, 10 * ppm / 2, 5); } g.strokeRect(sbx, sby, 25 * ppm, 5);
       g.font = "12px 'IM Fell English',Georgia,serif"; g.fillStyle = INK; g.textAlign = "left"; g.fillText("25 metres", sbx, sby + 18);
@@ -601,7 +744,7 @@ export default {
 
     return {
       unmount() {
-        cancelAnimationFrame(raf);
+        cancelAnimationFrame(raf); dead = true; clearTimeout(prepTimer); if (acct) acct.remove();
         removeEventListener("keydown", kd); removeEventListener("keyup", ku);
         cv.removeEventListener("pointerdown", pd); cv.removeEventListener("pointermove", pm);
         cv.removeEventListener("pointerup", pu); cv.removeEventListener("pointercancel", pu); cv.removeEventListener("contextmenu", noMenu);

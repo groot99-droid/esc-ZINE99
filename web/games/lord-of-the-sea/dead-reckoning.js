@@ -9,10 +9,15 @@
 // Refine pass: the princess checks the leg once (section 11 hints, trust 40+), the stir and her check
 // unlock as the plot goes on, a worked-example card opens the sheet, and the beats and closing lines
 // are written for the game (refine additions list).
+// Art pass (2026-11-15): the sheet is the game's plotting sheet (reckon-unwritten), drawn at 46 points to the
+// nautical mile on a 1600 x 900 plate and laid here at 1000 x 562.5; the module pencils only the plot, the rose's
+// needle, the rule and the clock on it. The tray's instruments are the game's own. Without the art the old
+// sheet is drawn as before.
+import { pic, chapterStrip } from "./_art.js";
 
 const PAPER = "#F4F1E8", GRID = "#9fb0c4", INK = "#1F2E4A", RED = "#8C2B2B", PENCIL = "#4a4a4a", GOLD = "#E7A93B", GREEN = "#2F6B5E";
-const NM = 30;                         // px per nautical mile
-const OX = 40, OY = 620;               // chart origin (0, 0) in px; y grows north
+let NM = 30;                           // px per nautical mile
+let OX = 40, OY = 620;                 // chart origin (0, 0) in px; y grows north
 const FIX = { x: 3, y: 4 }, TARGET = { x: 24, y: 15, r: 2 };
 const ROCKS = [{ x: 17.2, y: 6.1, r: 0.8 }, { x: 11.5, y: 12.6, r: 0.8 }];
 const SPEED = 6;                       // knots, from the log-line
@@ -25,6 +30,11 @@ const vec = (bearing, len) => ({ x: Math.sin(rad(bearing)) * len, y: Math.cos(ra
 export default {
   mount(root, api) {
     const P = "lord-of-the-sea-dead-reckoning-";
+    const art = api.art;
+    const A = art.has("reckon-unwritten");
+    if (A) { NM = 28.75; OX = 25; OY = 513.75; } else { NM = 30; OX = 40; OY = 620; }
+    const VH = A ? 562.5 : 660;
+    const tool = (id) => pic(art, "instrument-" + id, "", `class="${P}tool"`);
     const S = { heading: 62, quarters: 16, laid: [], stir: [], sel: -1, marked: false, erasers: 2, wild: 85, msg: "", refused: null, over: false, checks: 1, beat: "", voice: false, refusals: 0, flash: 0 };
     const losses = +api.store.get("losses", 0) || 0;
     if (losses >= 2) S.checks = 3;
@@ -37,6 +47,10 @@ export default {
       .${P}tray { display:grid; gap:10px; align-content:start; }
       .${P}card { background:${PAPER}; border:1px solid ${INK}; padding:9px 10px; box-shadow:2px 3px 0 rgba(31,46,74,.25); }
       .${P}card h3 { margin:0 0 6px; font-family:'IM Fell English SC',Georgia,serif; font-weight:400; font-size:13px; letter-spacing:.14em; }
+      .${P}tool { width:54px; height:auto; flex:none; border:1px solid ${GRID}; vertical-align:middle; }
+      .${P}card h3 .${P}tool { float:right; margin:-4px -4px 2px 6px; }
+      .${P}tray button .${P}tool { width:34px; margin-right:5px; border:0; }
+      .${P}tray button { display:inline-flex; align-items:center; }
       .${P}row { display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
       .${P}row b { font-family:ui-monospace,'JetBrains Mono',monospace; font-weight:600; font-size:18px; min-width:4.5ch; text-align:center; }
       .${P}tray button, .${P}how button { font:inherit; font-size:15px; padding:5px 10px; border:1px solid ${INK}; background:#fff; color:${INK}; cursor:pointer; }
@@ -79,10 +93,11 @@ export default {
       .${P}pan { display:none; font-size:14px; font-style:italic; text-align:center; margin:4px 0 0; }
     </style>
     <div class="${P}w"><div class="${P}lay">
-      <div style="position:relative"><div class="${P}beat" aria-live="polite"></div><div class="${P}sheetbox"><svg class="${P}sheet" viewBox="0 0 1000 660" role="img" aria-label="Plotting sheet"></svg></div><p class="${P}pan">Swipe the sheet sideways for the boat and the rose; the course buttons below set the heading.</p></div>
+      <div style="position:relative"><div class="${P}beat" aria-live="polite"></div><div class="${P}sheetbox"><svg class="${P}sheet" viewBox="0 0 1000 ${VH}" role="img" aria-label="Plotting sheet"></svg></div><p class="${P}pan">Swipe the sheet sideways for the boat and the rose; the course buttons below set the heading.</p></div>
       <div class="${P}tray"></div>
     </div>
     <div class="${P}how" role="dialog" aria-label="How to play"><div class="${P}card2">
+      ${chapterStrip(art, 4, "Chapter IV: What Is Left of the Old Sea")}
       <div class="hd"><span>PLOTTING SHEET No. 3</span><span>CH. III</span><span>FIX 0600</span></div>
       <h2>Dead Reckoning</h2>
       <p class="goal">Plot a course from the fix to the Gullwife boat, ending inside the red circle and clear of both rocks.</p>
@@ -128,6 +143,11 @@ export default {
     // ---- drawing ----
     function rose() {
       const [cx, cy] = px(ROSE), R = ROSE.r * NM;
+      if (A) { // the sheet carries the rose; the heading is the game's red needle on it
+        const ha = rad(S.heading), Rn = R * 0.86;
+        return `<g class="${P}rose" style="cursor:crosshair"><line x1="${cx}" y1="${cy}" x2="${cx + Math.sin(ha) * Rn}" y2="${cy - Math.cos(ha) * Rn}" stroke="${RED}" stroke-width="2.4"/><circle cx="${cx + Math.sin(ha) * Rn}" cy="${cy - Math.cos(ha) * Rn}" r="6" fill="${RED}" stroke="${PAPER}" stroke-width="1.5"/>
+          <text x="${cx}" y="${cy - R - 10}" text-anchor="middle" font-size="13" font-family="ui-monospace,monospace" fill="${RED}">${String(S.heading).padStart(3, "0")}°</text><circle cx="${cx}" cy="${cy}" r="${R + 16}" fill="transparent" data-rose="1"/></g>`;
+      }
       let s = `<circle cx="${cx}" cy="${cy}" r="${R}" fill="${PAPER}" stroke="${INK}" stroke-width="1.4"/><circle cx="${cx}" cy="${cy}" r="${R - 12}" fill="none" stroke="${INK}" stroke-width=".8"/><circle cx="${cx}" cy="${cy}" r="${R * 0.56}" fill="none" stroke="${RED}" stroke-width=".8" stroke-dasharray="2 3"/>`;
       for (let d = 0; d < 360; d += 5) {
         const a = rad(d), l = d % 30 === 0 ? 12 : d % 10 === 0 ? 8 : 4;
@@ -155,6 +175,13 @@ export default {
     }
     function render() {
       let s = "";
+      const [tx, ty] = px(TARGET);
+      const [fx, fy] = px(FIX);
+      if (A) {
+        s += `<image href="${art.url("reckon-unwritten")}" x="0" y="0" width="1000" height="${VH}"/>`;
+        for (const r of ROCKS) { const [x, y] = px(r); s += `<text x="${x + 20}" y="${y - 14}" font-size="12" font-style="italic" fill="${INK}">rock</text>`; }
+        s += `<text x="${tx - TARGET.r * NM}" y="${ty + TARGET.r * NM + 16}" font-size="13" letter-spacing="2" fill="${RED}" font-family="IM Fell English SC,Georgia,serif">GULLWIFE BOAT</text>`;
+      } else {
       // grid
       for (let i = 0; i <= 31; i++) s += `<line x1="${OX + i * NM}" y1="20" x2="${OX + i * NM}" y2="${OY + 20}" stroke="${GRID}" stroke-width="${i % 5 ? 0.5 : 1.1}"/>`;
       for (let j = -1; j <= 20; j++) s += `<line x1="20" y1="${OY - j * NM}" x2="980" y2="${OY - j * NM}" stroke="${GRID}" stroke-width="${j % 5 ? 0.5 : 1.1}"/>`;
@@ -168,10 +195,9 @@ export default {
         s += `<circle cx="${x}" cy="${y}" r="${r.r * NM}" fill="none" stroke="${INK}" stroke-width="1" stroke-dasharray="2 3"/><path d="M${x - 7} ${y} h14 M${x} ${y - 7} v14 M${x - 5} ${y - 5} l10 10 M${x + 5} ${y - 5} l-10 10" stroke="${INK}" stroke-width="1.6"/><text x="${x + 14}" y="${y - 10}" font-size="12" font-style="italic" fill="${INK}">rock</text>`;
       }
       // target and fix
-      const [tx, ty] = px(TARGET);
       s += `<circle cx="${tx}" cy="${ty}" r="${TARGET.r * NM}" fill="rgba(140,43,43,.06)" stroke="${RED}" stroke-width="1.6" stroke-dasharray="6 4"/><text x="${tx + TARGET.r * NM + 6}" y="${ty - 6}" font-size="13" letter-spacing="2" fill="${RED}" font-family="IM Fell English SC,Georgia,serif">GULLWIFE BOAT</text><circle cx="${tx}" cy="${ty}" r="3" fill="${RED}"/>`;
-      const [fx, fy] = px(FIX);
       s += `<circle cx="${fx}" cy="${fy}" r="8" fill="none" stroke="${INK}" stroke-width="1.6"/><circle cx="${fx}" cy="${fy}" r="2" fill="${INK}"/><text x="${fx - 10}" y="${fy + 24}" font-size="13" font-family="ui-monospace,monospace" fill="${INK}">FIX 0600</text>`;
+      }
       s += rose();
       // parallel rule along the heading, from the fix
       const hv = vec(S.heading, 1);
@@ -199,10 +225,10 @@ export default {
       }
       if (S.refused) { const [rx, ry] = px(S.refused); s += `<circle cx="${rx}" cy="${ry}" r="14" fill="none" stroke="${RED}" stroke-width="3"/><path d="M${rx - 10} ${ry - 10} l20 20 m0 -20 l-20 20" stroke="${RED}" stroke-width="3"/>`; }
       // clock
-      const cx = 925, cy = 70, hr = S.quarters / 4;
+      const cx = A ? 935 : 925, cy = A ? 66 : 70, hr = S.quarters / 4;
       s += `<circle cx="${cx}" cy="${cy}" r="38" fill="#fff" stroke="${INK}" stroke-width="2"/><path d="M${cx} ${cy} L${cx} ${cy - 34} A34 34 0 ${hr > 6 ? 1 : 0} 1 ${cx + Math.sin(rad(hr * 30)) * 34} ${cy - Math.cos(rad(hr * 30)) * 34}Z" fill="#f5dca6"/>${Array.from({ length: 12 }, (_, i) => `<line x1="${cx + Math.sin(rad(i * 30)) * 30}" y1="${cy - Math.cos(rad(i * 30)) * 30}" x2="${cx + Math.sin(rad(i * 30)) * 36}" y2="${cy - Math.cos(rad(i * 30)) * 36}" stroke="${INK}"/>`).join("")}<line x1="${cx}" y1="${cy}" x2="${cx + Math.sin(rad(hr * 30)) * 30}" y2="${cy - Math.cos(rad(hr * 30)) * 30}" stroke="${INK}" stroke-width="2.4"/><text x="${cx}" y="${cy + 56}" text-anchor="middle" font-size="13" font-family="ui-monospace,monospace" fill="${INK}">${Math.floor(hr)} h ${String((S.quarters % 4) * 15).padStart(2, "0")}</text>`;
       // pencil
-      s += `<g transform="translate(560,600) rotate(-14)"><rect x="0" y="0" width="150" height="12" fill="${GOLD}" stroke="${INK}"/><path d="M150 0 l22 6 l-22 6z" fill="#e8cfa0" stroke="${INK}"/><path d="M166 4.5 l6 1.5 l-6 1.5z" fill="${PENCIL}"/><rect x="-14" y="0" width="14" height="12" fill="#d79b9b" stroke="${INK}"/></g>`;
+      if (!A) s += `<g transform="translate(560,600) rotate(-14)"><rect x="0" y="0" width="150" height="12" fill="${GOLD}" stroke="${INK}"/><path d="M150 0 l22 6 l-22 6z" fill="#e8cfa0" stroke="${INK}"/><path d="M166 4.5 l6 1.5 l-6 1.5z" fill="${PENCIL}"/><rect x="-14" y="0" width="14" height="12" fill="#d79b9b" stroke="${INK}"/></g>`;
       svg.innerHTML = s;
       svg.querySelectorAll("[data-vec]").forEach((g) => g.addEventListener("click", (e) => { e.stopPropagation(); S.sel = S.sel === +g.dataset.vec ? -1 : +g.dataset.vec; S.msg = S.sel >= 0 ? "Stir it: circle on the sheet (clockwise turns it right), or use the buttons." : ""; render(); }));
       renderTray(pl);
@@ -213,19 +239,19 @@ export default {
       const rows = Array.from({ length: Math.max(5, hours()) }, (_, h) => `<tr data-h="${h}" class="${S.laid[h] ? "done" : h === next ? "next" : ""}" ${h < hours() ? 'draggable="true"' : 'style="opacity:.4"'}><td>${String(6 + h).padStart(2, "0")}–${String(7 + h).padStart(2, "0")}</td><td>${TIDE.set}°</td><td>${TIDE.rate.toFixed(1)} kn</td><td>${S.laid[h] ? "✓" : h < hours() ? "lay" : ""}</td></tr>`).join("");
       const anyLaid = S.laid.some(Boolean);
       tray.innerHTML = `
-        <div class="${P}card"><h3>COURSE</h3>
+        <div class="${P}card"><h3>${tool("parallel-rule")}COURSE</h3>
           <div class="${P}row">Heading <button type="button" data-a="h-10" ${locked ? "disabled" : ""}>−10</button><button type="button" data-a="h-1" ${locked ? "disabled" : ""}>−1</button><b>${String(S.heading).padStart(3, "0")}°</b><button type="button" data-a="h+1" ${locked ? "disabled" : ""}>+1</button><button type="button" data-a="h+10" ${locked ? "disabled" : ""}>+10</button></div>
           <div class="${P}row" style="margin-top:6px">Time <button type="button" data-a="t-" ${locked ? "disabled" : ""}>−¼</button><b>${(S.quarters / 4).toFixed(2)}h</b><button type="button" data-a="t+" ${locked ? "disabled" : ""}>+¼</button></div>
           <div style="font-size:13px;margin-top:4px;opacity:.8">Log-line: ${SPEED} knots. Run: ${(SPEED * S.quarters / 4).toFixed(1)} nm.</div></div>
-        <div class="${P}card"><h3>TIDAL STREAM</h3><table class="${P}tide"><tr><td>HR</td><td>SET</td><td>RATE</td><td></td></tr>${rows}</table>
+        <div class="${P}card"><h3>${tool("pencil")}TIDAL STREAM</h3><table class="${P}tide"><tr><td>HR</td><td>SET</td><td>RATE</td><td></td></tr>${rows}</table>
           <div style="font-size:13px;margin-top:4px;opacity:.8">Click a row (or drag it onto the sheet, or press T) to lay that hour's tide.</div></div>
         ${anyLaid ? `<div class="${P}card"><h3>STIR · WILD ${S.wild} (+5 AN HOUR)</h3>
           <div class="${P}row"><button type="button" data-a="s-" ${S.sel >= 0 ? "" : "disabled"} aria-label="Turn left 5 degrees ([)">↺ 5°</button><button type="button" data-a="s+" ${S.sel >= 0 ? "" : "disabled"} aria-label="Turn right 5 degrees (])">↻ 5°</button><span style="font-size:14px">${S.sel >= 0 ? `hour ${S.sel + 1}: ${(S.stir[S.sel] || 0)}°` : "click a tide arrow (or 1–6)"}</span></div>
           </div>` : ""}
         <div class="${P}card"><div class="${P}row">
-          <button type="button" data-a="mark" ${allLaid() && !S.marked ? "" : "disabled"}>Mark DR</button>
+          <button type="button" data-a="mark" ${allLaid() && !S.marked ? "" : "disabled"}>${tool("dividers")}Mark DR</button>
           <button type="button" class="main" data-a="commit" ${S.marked && !S.over ? "" : "disabled"}>Commit</button>
-          <button type="button" data-a="erase" ${locked && S.erasers > 0 && !S.over ? "" : "disabled"}>Erase (${S.erasers})</button>
+          <button type="button" data-a="erase" ${locked && S.erasers > 0 && !S.over ? "" : "disabled"}>${tool("eraser")}Erase (${S.erasers})</button>
           ${anyLaid ? `<button type="button" data-a="check" ${S.checks > 0 && !S.over ? "" : "disabled"} title="Trust 40+: she checks the leg">Ask her (${S.checks})</button>` : ""}</div>
           <p class="${P}msg" aria-live="polite">${S.msg}</p></div>`;
       beatEl.textContent = S.beat; beatEl.classList.toggle("voice", S.voice);

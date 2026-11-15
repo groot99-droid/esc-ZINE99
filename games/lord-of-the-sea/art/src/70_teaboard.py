@@ -301,8 +301,8 @@ def crack(a: Art):
 
 @asset(G, "tide-dial", group="pieces", title="Tea Board: the tide dial", w=420, h=420, row=ROW)
 def tide_dial(a: Art):
-    """The tide clock as a porcelain dial: four phases of two rounds each, Low ruled, High in wave hatching, a cobalt
-    hand standing at High."""
+    """The tide clock as a porcelain dial: four phases of two rounds each, Low ruled, High in wave hatching, a pivot
+    at the centre: the cobalt hand is the game's to turn, so the face carries none."""
     glaze(a, 0.7)
     c = 210
     a.circle(c, c, 196, fill=GLAZE, stroke=COB, stroke_width=6)
@@ -326,8 +326,6 @@ def tide_dial(a: Art):
         tx, ty = c + 84 * math.cos(am), c + 84 * math.sin(am)
         a.rect(tx - 52, ty - 16, 104, 30, rx=5, fill=GLAZE, stroke=COB, stroke_width=1.4)
         kit.smallcaps(a, tx, ty + 5, names[q], size=15, col=COB)
-    ah = math.radians(22.5)
-    a.path(f"M{c},{c} L{f(c + 120 * math.cos(ah))},{f(c + 120 * math.sin(ah))}", stroke=INK, stroke_width=7, stroke_linecap="round")
     a.path(a.smooth_d(kit.spiral_pts(c, c, 2, 20, 2.4)), fill="none", stroke=SEAINK, stroke_width=3)
     a.circle(c, c, 24, fill="none", stroke=COB, stroke_width=3)
-    a.circle(c + 120 * math.cos(ah), c + 120 * math.sin(ah), 9, fill=RED, stroke=INK, stroke_width=2)
+    a.circle(c, c, 7, fill=INK)

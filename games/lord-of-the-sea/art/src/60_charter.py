@@ -395,6 +395,34 @@ for _i, _c in enumerate(CHITS):
     make_chit(_i, *_c)
 
 
+# ---- the four pledges that had to be raised ------------------------------------------------------------
+RAISED = {2: "an anchor's hold", 5: "a fair wind, to order", 6: "a shipmate's word", 7: "whatever is left"}
+
+
+def make_raised(i, key, where, pledge):
+    @asset(G, f"chit-{i + 1}-{key}-raised", group="documents", title=f"Chit {i + 1}, its pledge raised", w=460, h=300, row=ROW)
+    def chit(a: Art):
+        a.paper("#3b2a1b", grain=0.3, fibre=0.03)
+        tone = ["#EADFC2", "#E6D9B6", "#D9D2B4", "#EDE2C6", "#CFC6A6", "#EEE9DA", "#EADFC2", kit.LAMP][i]
+        a.open("g", transform=f"translate(40,40) rotate({[-4, 3, -2, 0, 5, -1, 0, 0][i]} 190 105)")
+        a.rect(6, 8, 380, 210, fill="#000", opacity=0.35, filter=a.blur(4))
+        chit_body(a, i, pledge, tone=tone)
+        if i != 2:      # struck out by the Company's clerk, and legible again under the stroke
+            a.path(a.wobble_d([(20, 100), (40 + len(pledge) * 11, 98)], 1.2, 12), fill="none", stroke=BB, stroke_width=1.6, opacity=0.45)
+        kit.salt(a, 300, 176, 30, strength=0.8)
+        kit.salt(a, 40, 190, 22, strength=0.8)
+        a.circle(150, 104, 100, fill=SEAINK, opacity=0.1)
+        a.circle(150, 104, 100, fill="none", stroke=SEAINK, stroke_width=1.2, opacity=0.45, stroke_dasharray="3 5")
+        a.close()
+    chit.__doc__ = (f"Chit {i + 1}, found {where}, after a drop of seawater was stirred onto it: the pledge stands "
+                    f"legible again inside a ring of salt bloom, '{pledge}', over the same clockwise spiral.")
+    return chit
+
+
+for _i, _p in RAISED.items():
+    make_raised(_i, CHITS[_i][0], CHITS[_i][1], _p)
+
+
 # ---- six seals ---------------------------------------------------------------------------------------
 SEALS = [("company", "The Company's seal", RED, INK, "em_company", "the Great British Tea Company's leaf mark crossed by a ruled bar"),
          ("company-false", "The seal that differs", "#96362f", INK, "variant", "the Company's mark reversed and unbarred: the defect a loupe finds"),

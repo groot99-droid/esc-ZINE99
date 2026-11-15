@@ -9,6 +9,10 @@
 // Refine pass: Stir and the princess's pointing unlock as the match goes on, the factor's last move is
 // ringed, ports pulse when they change hands, and the factor's table talk, the tide beats and the
 // closing lines are written for the game (refine additions list).
+// Art pass (2026-11-15): the board is the game's porcelain plate (tea-board-parlour), laid under the play at its
+// own 1600 x 900; the ports and slots below sit where the plate draws them. Hymns and Chests are the piece
+// tiles, the tide clock is the dial with the game's own hand. Without the art the old drawing still runs.
+import { pic, pieceCrop, chapterStrip } from "./_art.js";
 
 const COB = "#24448f", DEEP = "#1F2E4A", WHITE = "#F4F1E8", GLAZE = "#fbfbf8", GOLD = "#E7A93B", RED = "#8C2B2B";
 const PORTS = {
@@ -23,6 +27,10 @@ const LANES = [
   { id: "L3", a: "home", b: "salt", bend: -20 },
   { id: "L5", a: "unw", b: "salt", bend: 40 },
 ];
+// The same four ports and four lanes as the plate draws them (art/src/70_teaboard.py, style 0).
+const ART_XY = { home: [420, 439.4], tide: [847.5, 250], unw: [752.5, 640], salt: [1180, 495.1] };
+const ART_BOW = { L1: -26, L2: 26, L3: -26, L5: -26 };
+const SEA = "#2F6B5E";
 const PHASES = ["Low", "Low", "Rising", "Rising", "High", "High"];
 const ROUNDS = 6;
 
@@ -33,6 +41,11 @@ export default {
     const timers = new Set();
     const later = (fn, ms) => { const id = setTimeout(() => { timers.delete(id); fn(); }, api.reducedMotion ? Math.min(ms, 300) : ms); timers.add(id); };
 
+    const art = api.art;
+    const A = art.has("tea-board-parlour");
+    if (A) { for (const k of Object.keys(PORTS)) { PORTS[k].x = ART_XY[k][0]; PORTS[k].y = ART_XY[k][1]; } for (const l of LANES) l.bend = ART_BOW[l.id]; }
+    const T0 = A ? 0.3 : 0.27, DT = A ? 0.2 : 0.23;
+    const pieceIcon = (id, fallback) => (pieceCrop(art, id) ? `<span style="display:inline-block;width:30px;height:30px;border-radius:50%;${pieceCrop(art, id)}"></span>` : fallback);
     const S = {
       slots: { L1: [null, "C", null], L2: ["A", null, null], L3: [null, "C", null], L5: [null, "A", null] },
       reserve: { A: 5, C: 6 },
@@ -81,6 +94,8 @@ export default {
       .${P}plate .gentle { text-align:center; color:${COB}; font-style:italic; font-size:15px; margin:0 0 10px; }
       .${P}plate button { display:block; margin:0 auto; font:inherit; font-size:18px; padding:8px 26px; background:${COB}; color:${WHITE}; border:0; border-radius:20px; cursor:pointer; }
       .${P}plate button:hover, .${P}plate button:focus-visible { background:${DEEP}; }
+      .${P}shelf { display:block; width:100%; height:auto; margin-top:10px; border:1px solid ${COB}; opacity:.95; }
+      @media (max-width:760px) { .${P}shelf { display:none; } }
       .${P}beat { border:2px solid ${COB}; border-radius:14px; background:${GLAZE}; padding:7px 12px; font-size:16px; line-height:1.35; color:${DEEP}; }
       .${P}beat.voice { font-style:italic; color:#2F6B5E; border-color:#2F6B5E; }
       .${P}beat:empty { display:none; }
@@ -95,9 +110,9 @@ export default {
       @media (max-width:760px) { .${P}lay { grid-template-columns:1fr; } .${P}ledger { order:2; max-height:120px; } .${P}board { max-height:none; } .${P}res { gap:8px; } .${P}res button { font-size:15px; padding:6px 8px; } }
     </style>
     <div class="${P}w"><div class="${P}lay">
-      <aside class="${P}ledger" aria-label="Move ledger"><h3>THE LEDGER</h3><div class="${P}rows"></div></aside>
+      <aside class="${P}ledger" aria-label="Move ledger"><h3>THE LEDGER</h3><div class="${P}rows"></div>${pic(art, "thread-own", "", `class="${P}shelf"`)}</aside>
       <div class="${P}main">
-        <svg class="${P}board" viewBox="0 0 1000 680" role="group" aria-label="The Tea Board"></svg>
+        <svg class="${P}board" viewBox="${A ? "0 0 1600 900" : "0 0 1000 680"}" role="group" aria-label="The Tea Board"></svg>
         <div class="${P}beat" aria-live="polite"></div>
         <div class="${P}bar">
           <div class="${P}res" aria-label="Reserves and actions"></div>
@@ -107,14 +122,15 @@ export default {
     </div>
     <div class="${P}how" role="dialog" aria-label="How to play"><div class="${P}plate">
       <div class="rim"></div>
+      ${chapterStrip(art, 3, "Chapter III: The Ordered Sea")}
       <h2>The Tea Board</h2>
       <p class="goal">After six rounds, hold more ports than the factor. A tie, in his books, is his.</p>
       <p class="open">Chapter II, the Company's parlour at Tidewater. The factor sets out his board as a courtesy to the princess's guest: the same four ports Alexi can see from the window, painted in cobalt.</p>
       ${losses >= 2 ? `<p class="gentle">She has watched you lose twice: she will point five times this match, not three.</p>` : ""}
       <dl>
-        <dt><svg width="28" height="28" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="${GLAZE}" stroke="${COB}" stroke-width="3"/><path d="M10 22 q5 -7 10 0 t10 0" fill="none" stroke="${COB}" stroke-width="2.4"/></svg>Place</dt><dd>Press <b>Hymns</b> (or <kbd>H</kbd>), then a lit slot on a lane by a port you hold or no one holds.</dd>
+        <dt>${pieceIcon("piece-hymn", `<svg width="28" height="28" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="${GLAZE}" stroke="${COB}" stroke-width="3"/><path d="M10 22 q5 -7 10 0 t10 0" fill="none" stroke="${COB}" stroke-width="2.4"/></svg>`)}Place</dt><dd>Press <b>Hymns</b> (or <kbd>H</kbd>), then a lit slot on a lane by a port you hold or no one holds.</dd>
         <dt><svg width="28" height="28" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 20 h22 m-6 -6 l6 6 l-6 6" fill="none" stroke="${COB}" stroke-width="3"/></svg>Shift</dt><dd>Click one of your Hymns, then a lit slot on a lane that shares a port with it.</dd>
-        <dt style="grid-column:1/-1;font-family:inherit;letter-spacing:0;color:${DEEP};font-size:15px">More pieces hold a lane; more lanes hold a port. The tide clock turns every two rounds and changes what counts double.</dt>
+        <dt style="grid-column:1/-1;display:block;font-family:inherit;letter-spacing:0;color:${DEEP};font-size:15px">${pieceIcon("piece-chest", "").replace("display:inline-block;", "display:inline-block;vertical-align:middle;margin-right:6px;")}His pieces are Chests. More pieces hold a lane; more lanes hold a port. The tide clock turns every two rounds and changes what counts double.</dt>
       </dl>
       <button type="button">Sit down</button>
     </div></div>
@@ -303,9 +319,20 @@ export default {
       return s;
     }
     function dial() {
-      const cx = 880, cy = 116, r = 66, idx = Math.min(ROUNDS, S.round) - 1;
+      const idx = Math.min(ROUNDS, S.round) - 1;
       const names = ["Low", "Rising", "High", "Falling"];
       const cur = names.indexOf(PHASES[idx]);
+      if (A && art.has("tide-dial")) { // the porcelain dial; its quadrants run Low, Rising, High, Falling from the upper left, two rounds a quadrant
+        const cx = 1165, cy = 232, r = 92, narrow = w.clientWidth < 640;
+        const first = idx === 0 || PHASES[idx - 1] !== PHASES[idx];
+        const ang = ((-180 + cur * 90 + (first ? 22.5 : 67.5)) * Math.PI) / 180;
+        const hx = cx + Math.cos(ang) * r * 0.62, hy = cy + Math.sin(ang) * r * 0.62;
+        return `<image href="${art.url("tide-dial")}" x="${cx - r}" y="${cy - r}" width="${r * 2}" height="${r * 2}" clip-path="circle(${r - 2}px at ${r}px ${r}px)" style="clip-path:circle(49.5%)"/>
+          <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${COB}" stroke-width="3"/>
+          <line x1="${cx}" y1="${cy}" x2="${hx}" y2="${hy}" stroke="${DEEP}" stroke-width="7" stroke-linecap="round"/><circle cx="${hx}" cy="${hy}" r="8" fill="${RED}" stroke="${DEEP}" stroke-width="2"/><circle cx="${cx}" cy="${cy}" r="6" fill="${DEEP}"/>
+          <text x="${cx}" y="${cy + r + (narrow ? 40 : 32)}" text-anchor="middle" font-size="${narrow ? 36 : 25}" fill="${COB}" font-family="IM Fell English SC, Georgia, serif" stroke="${GLAZE}" stroke-width="6" paint-order="stroke">${names[cur].toUpperCase()} · ${narrow ? "" : "round "}${Math.min(ROUNDS, S.round)} of ${ROUNDS}</text>`;
+      }
+      const cx = 880, cy = 116, r = 66;
       let s = `<circle cx="${cx}" cy="${cy}" r="${r + 6}" fill="${GLAZE}" stroke="${COB}" stroke-width="3"/>`;
       names.forEach((n, i) => {
         const a0 = -Math.PI / 2 + (i * Math.PI) / 2, a1 = a0 + Math.PI / 2;
@@ -316,32 +343,49 @@ export default {
       const nk = w.clientWidth < 640 ? 1.9 : 1;
       return s + (nk > 1 ? `<text x="${cx}" y="${cy + 10}" text-anchor="middle" font-size="30" fill="${cur === 2 ? COB : GLAZE}" stroke="${cur === 2 ? GLAZE : COB}" stroke-width="5" paint-order="stroke" font-family="IM Fell English SC, Georgia, serif">${names[cur].toUpperCase()}</text>` : "") + `<text x="${cx}" y="${cy + r + 30 * nk}" text-anchor="middle" font-size="${18 * nk}" fill="${COB}" font-family="IM Fell English, Georgia, serif">round ${Math.min(ROUNDS, S.round)} of ${ROUNDS}</text>`;
     }
+    // a piece tile cropped to the piece, set on a slot
+    const tile = (id, x, y, r) => `<svg x="${x - r}" y="${y - r}" width="${r * 2}" height="${r * 2}" viewBox="44 56 152 152" style="pointer-events:none"><image href="${art.url(id)}" width="240" height="240"/></svg>`;
     function render() {
       const narrow = w.clientWidth < 640, ks = narrow ? 1.75 : 1;
+      const Z = A ? (narrow ? 1.9 : 1.4) : 1;   // the plate is 1600 wide: text and rings are drawn larger on it
+      if (A) svg.setAttribute("viewBox", narrow ? "338 126 924 650" : "0 0 1600 900");
       const targets = new Set(legalTargets());
       const stirable = S.stirMode && !(S.sel && S.sel.stir) ? new Set(stirTargets(S).map((t) => `${t.lane}:${t.i}`)) : new Set();
-      let out = border() + dial();
+      let out = A ? `<image href="${art.url("tea-board-parlour")}" x="0" y="0" width="1600" height="900"/>` + dial() : border() + dial();
+      const hasPieces = A && art.has("piece-hymn") && art.has("piece-chest");
       for (const l of LANES) {
-        const A = PORTS[l.a], B = PORTS[l.b], [, , cx, cy] = bez(l, 0);
+        const PA = PORTS[l.a], PB = PORTS[l.b], [, , cx, cy] = bez(l, 0);
         const h = laneHolder(S, l);
-        out += `<path d="M${A.x} ${A.y} Q${cx} ${cy} ${B.x} ${B.y}" fill="none" stroke="${COB}" stroke-width="${h ? 7 : 3}" stroke-dasharray="${h === "A" ? "2 10" : h === "C" ? "" : "10 8"}" stroke-linecap="round"/>`;
+        if (!A) out += `<path d="M${PA.x} ${PA.y} Q${cx} ${cy} ${PB.x} ${PB.y}" fill="none" stroke="${COB}" stroke-width="${h ? 7 : 3}" stroke-dasharray="${h === "A" ? "2 10" : h === "C" ? "" : "10 8"}" stroke-linecap="round"/>`;
+        else if (h) out += `<path d="M${PA.x} ${PA.y} Q${cx} ${cy} ${PB.x} ${PB.y}" fill="none" stroke="${h === "A" ? SEA : COB}" stroke-width="22" stroke-opacity=".3" stroke-linecap="round"/>`;
         const [lx, ly] = bez(l, 0.5);
-        out += `<text x="${lx}" y="${ly - 30}" text-anchor="middle" font-size="${16 * (narrow ? 1.5 : 1)}" fill="${COB}" font-style="italic" font-family="IM Fell English, Georgia, serif">${l.id}${h && !narrow ? (h === "A" ? " · yours" : " · his") : ""}</text>`;
+        const nrm = Math.hypot(PB.x - PA.x, PB.y - PA.y), nx = -(PB.y - PA.y) / nrm, ny = (PB.x - PA.x) / nrm, sg = Math.sign(l.bend) || 1;
+        if (!A) out += `<text x="${lx}" y="${ly - 30}" text-anchor="middle" font-size="${16 * (narrow ? 1.5 : 1)}" fill="${COB}" font-style="italic" font-family="IM Fell English, Georgia, serif">${l.id}${h && !narrow ? (h === "A" ? " · yours" : " · his") : ""}</text>`;
+        else if (h) out += `<text x="${lx + nx * sg * 62}" y="${ly + ny * sg * 62 + 8}" text-anchor="middle" font-size="${17 * Z}" fill="${h === "A" ? SEA : COB}" font-style="italic" font-family="IM Fell English, Georgia, serif" stroke="${GLAZE}" stroke-width="6" paint-order="stroke">${h === "A" ? "yours" : "his"}</text>`;
         S.slots[l.id].forEach((v, i) => {
-          const [x, y] = bez(l, 0.27 + i * 0.23);
+          const [x, y] = bez(l, T0 + i * DT);
           const key = `${l.id}:${i}`;
           const sel = S.sel && !S.sel.reserve && S.sel.lane === l.id && S.sel.i === i;
           const isT = targets.has(key), isS = stirable.has(key), isH = S.hint && S.hint.lane === l.id && S.hint.i === i;
+          const dbl = v && weight(S, l, v) > 1;
           out += `<g data-slot="${key}" tabindex="0" role="button" aria-label="${l.id} slot ${i + 1}: ${v === "A" ? "your Hymn" : v === "C" ? "a Chest" : "empty"}">
-            <circle cx="${x}" cy="${y}" r="24" fill="${isT ? "#dfe6f6" : GLAZE}" stroke="${isT || isS || sel ? GOLD : COB}" stroke-width="${isT || isS || sel ? 4 : 2}" ${isT ? 'stroke-dasharray="5 4"' : ""}/>
-            ${v === "A" ? hymn(x, y, weight(S, l, "A") > 1) : v === "C" ? chest(x, y, weight(S, l, "C") > 1) : ""}
-            ${isH ? `<circle cx="${x}" cy="${y}" r="31" fill="none" stroke="${RED}" stroke-width="2.5" stroke-dasharray="2 4"/>` : ""}
-            ${S.last && S.last.lane === l.id && S.last.i === i ? `<circle cx="${x}" cy="${y}" r="29" fill="none" stroke="${GOLD}" stroke-width="3"/>` : ""}</g>`;
+            <circle cx="${x}" cy="${y}" r="${A ? 26 : 24}" fill="${isT ? "#dfe6f6" : A ? "transparent" : GLAZE}" stroke="${isT || isS || sel ? GOLD : A ? "transparent" : COB}" stroke-width="${isT || isS || sel ? (A ? 6 : 4) : 2}" ${isT ? 'stroke-dasharray="5 4"' : ""}/>
+            ${A ? `<circle cx="${x}" cy="${y}" r="38" fill="transparent"/>` : ""}
+            ${!v ? "" : hasPieces ? tile(v === "A" ? "piece-hymn" : "piece-chest", x, y, 30) + (dbl ? `<circle cx="${x}" cy="${y}" r="33" fill="none" stroke="${v === "A" ? SEA : COB}" stroke-width="3" stroke-dasharray="4 4"/><text x="${x + 30}" y="${y - 24}" font-size="${15 * Z}" fill="${v === "A" ? SEA : COB}" font-family="Georgia,serif" stroke="${GLAZE}" stroke-width="5" paint-order="stroke">×2</text>` : "") : v === "A" ? hymn(x, y, dbl) : chest(x, y, dbl)}
+            ${isH ? `<circle cx="${x}" cy="${y}" r="${A ? 38 : 31}" fill="none" stroke="${RED}" stroke-width="${A ? 4 : 2.5}" stroke-dasharray="2 4"/>` : ""}
+            ${S.last && S.last.lane === l.id && S.last.i === i ? `<circle cx="${x}" cy="${y}" r="${A ? 35 : 29}" fill="none" stroke="${GOLD}" stroke-width="${A ? 5 : 3}"/>` : ""}</g>`;
         });
       }
       for (const [k, p] of Object.entries(PORTS)) {
-        out += teahouse(p.x, p.y, S.holder[k]);
-        if (S.flips.includes(k)) out += `<circle class="${P}pulse" cx="${p.x}" cy="${p.y}" r="50" fill="none" stroke="${GOLD}" stroke-width="6"/>`;
+        const hold = S.holder[k];
+        if (!A) out += teahouse(p.x, p.y, hold);
+        else if (hold) out += `<circle cx="${p.x}" cy="${p.y}" r="56" fill="${hold === "C" ? COB : SEA}" fill-opacity=".2" stroke="${hold === "C" ? COB : SEA}" stroke-width="9"/>${hold === "A" ? `<circle cx="${p.x}" cy="${p.y}" r="66" fill="none" stroke="${SEA}" stroke-width="3" stroke-dasharray="3 7"/>` : ""}`;
+        if (S.flips.includes(k)) out += `<circle class="${P}pulse" cx="${p.x}" cy="${p.y}" r="${A ? 66 : 50}" fill="none" stroke="${GOLD}" stroke-width="6"/>`;
+        if (A) {
+          const who = hold === "A" ? "yours" : hold === "C" ? (narrow ? "his" : "the Company's") : "no one's";
+          out += `<text x="${p.x}" y="${p.y + 96 + 19 * Z}" text-anchor="middle" font-size="${17 * Z}" fill="${hold === "A" ? SEA : COB}" font-style="italic" font-family="IM Fell English, Georgia, serif" stroke="${GLAZE}" stroke-width="7" paint-order="stroke">${narrow ? "" : (p.wild <= 40 ? "Ordered" : p.wild >= 60 ? "Wild" : "Contested") + " · "}${who}</text>`;
+          continue;
+        }
         const ly = narrow && p.ny ? p.ny : p.y + (p.ly || 66) * (narrow ? 1.05 : 1), lx = narrow && p.nx ? p.nx : p.x;
         out += `<text x="${lx}" y="${ly}" text-anchor="middle" font-size="${18 * ks}" fill="${COB}" font-family="IM Fell English SC, Georgia, serif" letter-spacing="${narrow ? 0 : 2}" stroke="${GLAZE}" stroke-width="${narrow ? 6 : 0}" paint-order="stroke">${(narrow ? p.short || p.name.replace("The ", "") : p.name).toUpperCase()}</text>`;
         out += `<text x="${lx}" y="${ly + 18 * ks}" text-anchor="middle" font-size="${13 * (narrow ? 1.9 : 1)}" fill="${COB}" font-style="italic" font-family="IM Fell English, Georgia, serif" stroke="${GLAZE}" stroke-width="${narrow ? 6 : 0}" paint-order="stroke">${narrow ? "" : (p.wild <= 40 ? "Ordered" : p.wild >= 60 ? "Wild" : "Contested") + " · "}${S.holder[k] === "A" ? "yours" : S.holder[k] === "C" ? (narrow ? "his" : "the Company's") : "no one's"}</text>`;
@@ -354,14 +398,15 @@ export default {
       });
       const myTurn = S.turn === "A" && !S.over && S.started;
       const canStir = myTurn && phase(S) === "High" && !S.stirUsed && stirTargets(S).length > 0;
-      resEl.innerHTML = `<button type="button" data-r="hymn" class="${S.sel && S.sel.reserve ? "on" : ""}" ${myTurn && S.reserve.A > 0 ? "" : "disabled"}><svg width="26" height="26" viewBox="0 0 40 40">${hymn(20, 20)}</svg>Hymns × ${S.reserve.A}</button>
-        <span style="display:flex;align-items:center;gap:6px"><svg width="26" height="26" viewBox="0 0 40 40">${chest(20, 20)}</svg>Chests × ${S.reserve.C}</span>
+      resEl.innerHTML = `<button type="button" data-r="hymn" class="${S.sel && S.sel.reserve ? "on" : ""}" ${myTurn && S.reserve.A > 0 ? "" : "disabled"}>${pieceIcon("piece-hymn", `<svg width="26" height="26" viewBox="0 0 40 40">${hymn(20, 20)}</svg>`)}Hymns × ${S.reserve.A}</button>
+        <span style="display:flex;align-items:center;gap:6px">${pieceIcon("piece-chest", `<svg width="26" height="26" viewBox="0 0 40 40">${chest(20, 20)}</svg>`)}Chests × ${S.reserve.C}</span>
         ${phase(S) === "High" || S.stirUsed ? `<button type="button" data-r="stir" class="${S.stirMode ? "on" : ""}" ${canStir || S.stirMode ? "" : "disabled"} title="High tide only, once: push a Chest off a lane by the Unwritten (S)">Stir${S.stirUsed ? " (used)" : ""}</button>` : ""}
         ${S.round >= 3 ? `<button type="button" data-r="hint" ${myTurn && S.hints > 0 ? "" : "disabled"} title="Trust 40+: she shows one good move (A)">Ask her (${S.hints})</button>` : ""}
         <span class="${P}score"><b>PORTS</b> you ${portCount(S, "A")} · factor ${portCount(S, "C")}</span>`;
       resEl.querySelectorAll("[data-r]").forEach((b) => b.addEventListener("click", () => {
         const r = b.dataset.r;
-        if (r === "hymn") { S.stirMode = false; S.sel = S.sel && S.sel.reserve ? null : { reserve: true }; S.msg = S.sel ? "Choose a lit slot." : ""; }
+        if (r === "hymn") { S.stirMode = false; S.sel = S.sel && S.sel.reserve ? null : { reserve: true }; S.msg = S.sel ? "Choose a lit slot." : "";
+          if (S.sel && !moves(S, "A").some((m) => m.kind === "place")) { S.sel = null; S.msg = "No free slot on a lane you can reach. Shift one of your Hymns instead: click it, then a lit slot."; } }
         if (r === "stir") { S.stirMode = !S.stirMode; S.sel = null; S.msg = S.stirMode ? "Pick a Chest on a lane by the Unwritten." : ""; }
         if (r === "hint" && S.hints > 0) { S.hints--; const m = bestMove(S, "A"); if (m) { S.hint = { lane: m.lane, i: m.i }; S.msg = `She points: ${m.kind === "place" ? "a Hymn there" : `the Hymn on ${m.from}, moved there`}.`; } }
         render();

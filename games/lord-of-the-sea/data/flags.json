@@ -290,6 +290,12 @@
       "description": "The player has found the king; unlocks the halls' sea-gate stone."
     },
     {
+      "name": "met.halse",
+      "type": "bool",
+      "default": false,
+      "description": "Mother Halse has turned the slate round at the Tidewater chandlery (The Slate, accepted 2026-11-15)."
+    },
+    {
       "name": "has_harbour_book",
       "type": "bool",
       "default": false,
@@ -332,6 +338,24 @@
       "description": "The king's payment reached the halls; its receipt is evidence."
     },
     {
+      "name": "tab.known",
+      "type": "bool",
+      "default": false,
+      "description": "Schedule C of the harbour book has been traced to the bottle: the player knows the Company's title is Alexi's own chit."
+    },
+    {
+      "name": "reckoning.countersigned",
+      "type": "bool",
+      "default": false,
+      "description": "The first Tide Reckoning came back with the Lord of Tea's green tick; every later sheet arrives countersigned."
+    },
+    {
+      "name": "pay_open",
+      "type": "bool",
+      "default": false,
+      "description": "All eight chits were pinned at the tally. Read by the Paid in Kind ending when phase 3 adds it."
+    },
+    {
       "name": "tea.parlour_won",
       "type": "bool",
       "default": false,
@@ -366,6 +390,12 @@
       "type": "counter",
       "default": 0,
       "description": "Times Alexi was caught stirring his cup at Liar's Tide."
+    },
+    {
+      "name": "tab.matched",
+      "type": "counter",
+      "default": 0,
+      "description": "Chits pinned to the region whose order they bought, at the tally (0-8)."
     },
     {
       "name": "chart.wild_regions",
@@ -417,6 +447,18 @@
       "fields": [
         "source",
         "topic"
+      ]
+    },
+    {
+      "name": "chits",
+      "type": "ledger",
+      "default": [],
+      "description": "The tab: Alexi's chits as they are found, one to a region, each a different way. Eight in all.",
+      "fields": [
+        "number",
+        "pledge",
+        "found",
+        "chapter"
       ]
     }
   ]

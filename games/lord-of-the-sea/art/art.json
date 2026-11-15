@@ -1,6 +1,6 @@
 {
  "game": "lord-of-the-sea",
- "count": 135,
+ "count": 151,
  "assets": [
   {
    "id": "title-lettering",
@@ -80,6 +80,70 @@
    "title": "Reef skiff",
    "w": 600,
    "h": 420,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "sprite-boat-full",
+   "group": "figures",
+   "title": "Cut-out: Alexi's boat, full sail",
+   "w": 300,
+   "h": 310,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "sprite-boat-spill",
+   "group": "figures",
+   "title": "Cut-out: Alexi's boat, spilling wind",
+   "w": 300,
+   "h": 310,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "sprite-cutter",
+   "group": "figures",
+   "title": "Cut-out: revenue cutter",
+   "w": 380,
+   "h": 300,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "sprite-ferry",
+   "group": "figures",
+   "title": "Cut-out: the Tidewater ferry",
+   "w": 260,
+   "h": 110,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "sprite-skiff",
+   "group": "figures",
+   "title": "Cut-out: reef skiff",
+   "w": 150,
+   "h": 140,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "sprite-swimmer",
+   "group": "figures",
+   "title": "Cut-out: Alexi swimming, the glide",
+   "w": 300,
+   "h": 150,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "sprite-swimmer-carry",
+   "group": "figures",
+   "title": "Cut-out: Alexi carrying",
+   "w": 300,
+   "h": 150,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "sprite-swimmer-kick",
+   "group": "figures",
+   "title": "Cut-out: Alexi swimming, the kick",
+   "w": 300,
+   "h": 150,
    "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
   },
   {
@@ -699,6 +763,14 @@
    "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
   },
   {
+   "id": "countersign",
+   "group": "ui",
+   "title": "The countersign: the Lord of Tea's tick",
+   "w": 260,
+   "h": 160,
+   "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
+  },
+  {
    "id": "notice-seal",
    "group": "ui",
    "title": "Notice: the Company seal that darkens",
@@ -859,6 +931,14 @@
    "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
   },
   {
+   "id": "chit-3-strongbox-raised",
+   "group": "documents",
+   "title": "Chit 3, its pledge raised",
+   "w": 460,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
    "id": "chit-4-lease-schedule",
    "group": "documents",
    "title": "Chit 4, found pinned to the lease schedule",
@@ -883,6 +963,14 @@
    "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
   },
   {
+   "id": "chit-6-under-the-board-raised",
+   "group": "documents",
+   "title": "Chit 6, its pledge raised",
+   "w": 460,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
    "id": "chit-7-mirror-gallery",
    "group": "documents",
    "title": "Chit 7, found in the mirror gallery",
@@ -891,9 +979,25 @@
    "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
   },
   {
+   "id": "chit-7-mirror-gallery-raised",
+   "group": "documents",
+   "title": "Chit 7, its pledge raised",
+   "w": 460,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
    "id": "chit-8-lords-hand",
    "group": "documents",
    "title": "Chit 8, found in the Lord of Tea's own hand",
+   "w": 460,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "chit-8-lords-hand-raised",
+   "group": "documents",
+   "title": "Chit 8, its pledge raised",
    "w": 460,
    "h": 300,
    "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
@@ -944,6 +1048,30 @@
    "title": "The Tidewater harbour seal",
    "w": 300,
    "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "sprite-bottle-chit",
+   "group": "documents",
+   "title": "The bottle on the cabin wall, a paper at its neck",
+   "w": 190,
+   "h": 380,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "sprite-strongbox",
+   "group": "documents",
+   "title": "The tender's strongbox",
+   "w": 200,
+   "h": 150,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "the-slate",
+   "group": "documents",
+   "title": "Mother Halse's slate",
+   "w": 1000,
+   "h": 560,
    "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
   },
   {
