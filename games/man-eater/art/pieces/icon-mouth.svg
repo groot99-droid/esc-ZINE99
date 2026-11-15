@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="icon-mouth-t icon-mouth-d">
+<title id="icon-mouth-t">Tray icon: the mouth</title>
+<desc id="icon-mouth-d">Isotype icon of the mouth at the bottom edge of the page: an open flat shape, a piece going in.</desc>
+<defs><clipPath id="icon-mouth-clip1"><rect x="3" y="3" width="194" height="194" rx="6"/></clipPath><filter id="icon-mouth-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="82"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.6 -0.2"/></filter></defs>
+<rect x="3" y="3" width="194" height="194" rx="6" fill="#EFE9DC" stroke="#1B1D1F" stroke-width="2"/>
+<line x1="14" y1="160" x2="186" y2="160" stroke="#1B1D1F" stroke-width="2"/>
+<text x="16" y="182" font-size="15" font-family="sans-serif" fill="#1B1D1F" font-weight="bold" letter-spacing="2">EATEN</text>
+<g transform="translate(4,3)" opacity="0.6">
+<path d="M30,84 Q100,40 170,84 Q100,160 30,84Z" fill="#7C8C99"/>
+</g>
+<path d="M30,84 Q100,40 170,84 Q100,160 30,84Z" fill="#1B1D1F"/>
+<path d="M52,86 Q100,64 148,86 Q100,128 52,86Z" fill="#5A4F5E"/>
+<path d="M60,82 h80" stroke="#EFE9DC" stroke-width="7" stroke-dasharray="12 4"/>
+<path d="M79.2,51.7 L84.4,27 Q100,17.9 118.2,28.3 L122.1,53Z" fill="#5A4F5E" stroke="#EFE9DC" stroke-width="2"/>
+<g clip-path="url(#icon-mouth-clip1)">
+<rect x="0" y="0" width="200" height="200" filter="url(#icon-mouth-spk2)"/>
+</g>
+</svg>

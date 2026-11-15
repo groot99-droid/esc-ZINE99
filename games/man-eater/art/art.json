@@ -1,0 +1,1302 @@
+{
+ "game": "man-eater",
+ "count": 162,
+ "assets": [
+  {
+   "id": "title",
+   "group": "title",
+   "title": "Project: Man Eater, title lettering",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lettering, stencil with a HOLD overprint"
+  },
+  {
+   "id": "cutout-fisk-178",
+   "group": "figures",
+   "title": "Halls cut-out: Fisk at 178 cm",
+   "w": 520,
+   "h": 800,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "cutout-fisk-218",
+   "group": "figures",
+   "title": "Halls cut-out: Fisk at 218 cm",
+   "w": 520,
+   "h": 800,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "cutout-fisk-258",
+   "group": "figures",
+   "title": "Halls cut-out: Fisk at 258 cm",
+   "w": 520,
+   "h": 800,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "cutout-fisk-298",
+   "group": "figures",
+   "title": "Halls cut-out: Fisk at 298 cm",
+   "w": 520,
+   "h": 800,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "cutout-fisk-338",
+   "group": "figures",
+   "title": "Halls cut-out: Fisk at 338 cm",
+   "w": 520,
+   "h": 800,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "cutout-fisk-stoop",
+   "group": "figures",
+   "title": "Halls cut-out: Fisk folded down to pass for a man",
+   "w": 520,
+   "h": 800,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "cutout-guard",
+   "group": "figures",
+   "title": "Halls cut-out: the guard",
+   "w": 520,
+   "h": 800,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "cutout-guard-ran",
+   "group": "figures",
+   "title": "Halls cut-out: the guard who backs away",
+   "w": 520,
+   "h": 800,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "cutout-jax",
+   "group": "figures",
+   "title": "Halls cut-out: Jax",
+   "w": 520,
+   "h": 800,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "cutout-orderly",
+   "group": "figures",
+   "title": "Halls cut-out: the orderly",
+   "w": 520,
+   "h": 800,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "hands-duarte",
+   "group": "figures",
+   "title": "Duarte's hands at the table",
+   "w": 640,
+   "h": 440,
+   "row": "Hands at the table, one pair per seat"
+  },
+  {
+   "id": "hands-fisk",
+   "group": "figures",
+   "title": "Fisk's hands at the table",
+   "w": 640,
+   "h": 440,
+   "row": "Hands at the table, one pair per seat"
+  },
+  {
+   "id": "hands-hollis",
+   "group": "figures",
+   "title": "Hollis's hands at the table",
+   "w": 640,
+   "h": 440,
+   "row": "Hands at the table, one pair per seat"
+  },
+  {
+   "id": "hands-jax",
+   "group": "figures",
+   "title": "Jax's hands at the table",
+   "w": 640,
+   "h": 440,
+   "row": "Hands at the table, one pair per seat"
+  },
+  {
+   "id": "hands-kimura",
+   "group": "figures",
+   "title": "Kimura's hands at the table",
+   "w": 640,
+   "h": 440,
+   "row": "Hands at the table, one pair per seat"
+  },
+  {
+   "id": "hands-pell",
+   "group": "figures",
+   "title": "Pell's hands at the table",
+   "w": 640,
+   "h": 440,
+   "row": "Hands at the table, one pair per seat"
+  },
+  {
+   "id": "hands-sam",
+   "group": "figures",
+   "title": "Sam's hands at the table",
+   "w": 640,
+   "h": 440,
+   "row": "Hands at the table, one pair per seat"
+  },
+  {
+   "id": "halls-night-2",
+   "group": "backdrops",
+   "title": "Silhouette halls backdrop, night 2: bunk to latrine",
+   "w": 1600,
+   "h": 900,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "halls-night-4",
+   "group": "backdrops",
+   "title": "Silhouette halls backdrop, night 4: bunk to officers' wing",
+   "w": 1600,
+   "h": 900,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "halls-night-6",
+   "group": "backdrops",
+   "title": "Silhouette halls backdrop, night 6: bunk to cold store",
+   "w": 1600,
+   "h": 900,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "halls-night-7",
+   "group": "backdrops",
+   "title": "Silhouette halls backdrop, night 7: toward the call",
+   "w": 1600,
+   "h": 900,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "yard-plate-night-3",
+   "group": "backdrops",
+   "title": "Snow line plate, night 3: barracks to the kennel shed",
+   "w": 1600,
+   "h": 900,
+   "row": "Yard plates and developed prints"
+  },
+  {
+   "id": "yard-plate-night-5",
+   "group": "backdrops",
+   "title": "Snow line plate, night 5: the bare prints to the adit",
+   "w": 1600,
+   "h": 900,
+   "row": "Yard plates and developed prints"
+  },
+  {
+   "id": "yard-plate-night-7",
+   "group": "backdrops",
+   "title": "Snow line plate, night 7: the wire and the open strip",
+   "w": 1600,
+   "h": 900,
+   "row": "Yard plates and developed prints"
+  },
+  {
+   "id": "card-anchors-1",
+   "group": "cards",
+   "title": "Short Rations: 1 of Anchors",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-anchors-2",
+   "group": "cards",
+   "title": "Short Rations: 2 of Anchors",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-anchors-3",
+   "group": "cards",
+   "title": "Short Rations: 3 of Anchors",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-anchors-4",
+   "group": "cards",
+   "title": "Short Rations: 4 of Anchors",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-anchors-5",
+   "group": "cards",
+   "title": "Short Rations: 5 of Anchors",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-anchors-6",
+   "group": "cards",
+   "title": "Short Rations: 6 of Anchors",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-anchors-7",
+   "group": "cards",
+   "title": "Short Rations: 7 of Anchors",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-anchors-8",
+   "group": "cards",
+   "title": "Short Rations: 8 of Anchors",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-back",
+   "group": "cards",
+   "title": "Short Rations: card back",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-hands-1",
+   "group": "cards",
+   "title": "Short Rations: 1 of Hands",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-hands-2",
+   "group": "cards",
+   "title": "Short Rations: 2 of Hands",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-hands-3",
+   "group": "cards",
+   "title": "Short Rations: 3 of Hands",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-hands-4",
+   "group": "cards",
+   "title": "Short Rations: 4 of Hands",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-hands-5",
+   "group": "cards",
+   "title": "Short Rations: 5 of Hands",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-hands-6",
+   "group": "cards",
+   "title": "Short Rations: 6 of Hands",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-hands-7",
+   "group": "cards",
+   "title": "Short Rations: 7 of Hands",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-hands-8",
+   "group": "cards",
+   "title": "Short Rations: 8 of Hands",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-houses-1",
+   "group": "cards",
+   "title": "Short Rations: 1 of Houses",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-houses-2",
+   "group": "cards",
+   "title": "Short Rations: 2 of Houses",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-houses-3",
+   "group": "cards",
+   "title": "Short Rations: 3 of Houses",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-houses-4",
+   "group": "cards",
+   "title": "Short Rations: 4 of Houses",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-houses-5",
+   "group": "cards",
+   "title": "Short Rations: 5 of Houses",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-houses-6",
+   "group": "cards",
+   "title": "Short Rations: 6 of Houses",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-houses-7",
+   "group": "cards",
+   "title": "Short Rations: 7 of Houses",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-houses-8",
+   "group": "cards",
+   "title": "Short Rations: 8 of Houses",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-keys-1",
+   "group": "cards",
+   "title": "Short Rations: 1 of Keys",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-keys-2",
+   "group": "cards",
+   "title": "Short Rations: 2 of Keys",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-keys-3",
+   "group": "cards",
+   "title": "Short Rations: 3 of Keys",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-keys-4",
+   "group": "cards",
+   "title": "Short Rations: 4 of Keys",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-keys-5",
+   "group": "cards",
+   "title": "Short Rations: 5 of Keys",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-keys-6",
+   "group": "cards",
+   "title": "Short Rations: 6 of Keys",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-keys-7",
+   "group": "cards",
+   "title": "Short Rations: 7 of Keys",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-keys-8",
+   "group": "cards",
+   "title": "Short Rations: 8 of Keys",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-sparks-1",
+   "group": "cards",
+   "title": "Short Rations: 1 of Sparks",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-sparks-2",
+   "group": "cards",
+   "title": "Short Rations: 2 of Sparks",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-sparks-3",
+   "group": "cards",
+   "title": "Short Rations: 3 of Sparks",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-sparks-4",
+   "group": "cards",
+   "title": "Short Rations: 4 of Sparks",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-sparks-5",
+   "group": "cards",
+   "title": "Short Rations: 5 of Sparks",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-sparks-6",
+   "group": "cards",
+   "title": "Short Rations: 6 of Sparks",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-sparks-7",
+   "group": "cards",
+   "title": "Short Rations: 7 of Sparks",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-sparks-8",
+   "group": "cards",
+   "title": "Short Rations: 8 of Sparks",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stamp-1",
+   "group": "cards",
+   "title": "Short Rations: 1 of Stamp",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stamp-2",
+   "group": "cards",
+   "title": "Short Rations: 2 of Stamp",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stamp-3",
+   "group": "cards",
+   "title": "Short Rations: 3 of Stamp",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stamp-4",
+   "group": "cards",
+   "title": "Short Rations: 4 of Stamp",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stamp-5",
+   "group": "cards",
+   "title": "Short Rations: 5 of Stamp",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stamp-6",
+   "group": "cards",
+   "title": "Short Rations: 6 of Stamp",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stamp-7",
+   "group": "cards",
+   "title": "Short Rations: 7 of Stamp",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stamp-8",
+   "group": "cards",
+   "title": "Short Rations: 8 of Stamp",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stars-1",
+   "group": "cards",
+   "title": "Short Rations: 1 of Stars",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stars-2",
+   "group": "cards",
+   "title": "Short Rations: 2 of Stars",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stars-3",
+   "group": "cards",
+   "title": "Short Rations: 3 of Stars",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stars-4",
+   "group": "cards",
+   "title": "Short Rations: 4 of Stars",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stars-5",
+   "group": "cards",
+   "title": "Short Rations: 5 of Stars",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stars-6",
+   "group": "cards",
+   "title": "Short Rations: 6 of Stars",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stars-7",
+   "group": "cards",
+   "title": "Short Rations: 7 of Stars",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-stars-8",
+   "group": "cards",
+   "title": "Short Rations: 8 of Stars",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "card-withdrawn-overprint",
+   "group": "cards",
+   "title": "Short Rations: the WITHDRAWN overprint",
+   "w": 300,
+   "h": 420,
+   "row": "Card faces (7 suits x 8), back, WITHDRAWN overprint"
+  },
+  {
+   "id": "cutout-flashlight",
+   "group": "pieces",
+   "title": "Halls cut-out: the flashlight and its cone",
+   "w": 800,
+   "h": 340,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "cutout-sheet",
+   "group": "pieces",
+   "title": "Halls cut-out: the hung laundry sheet",
+   "w": 560,
+   "h": 800,
+   "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "icon-broth",
+   "group": "pieces",
+   "title": "Tray icon: the cup of broth",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "icon-gaze",
+   "group": "pieces",
+   "title": "Tray icon: the orderly's gaze",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "icon-heel",
+   "group": "pieces",
+   "title": "Tray icon: the bread heel",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "icon-left",
+   "group": "pieces",
+   "title": "Tray icon: pieces left on the tray",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "icon-man-178",
+   "group": "pieces",
+   "title": "Tray icon: tally man, 178 cm",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "icon-man-218",
+   "group": "pieces",
+   "title": "Tray icon: tally man, 218 cm",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "icon-man-258",
+   "group": "pieces",
+   "title": "Tray icon: tally man, 258 cm",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "icon-man-298",
+   "group": "pieces",
+   "title": "Tray icon: tally man, 298 cm",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "icon-man-338",
+   "group": "pieces",
+   "title": "Tray icon: tally man, 338 cm",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "icon-mouth",
+   "group": "pieces",
+   "title": "Tray icon: the mouth",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "icon-napkin",
+   "group": "pieces",
+   "title": "Tray icon: the napkin",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "icon-passed",
+   "group": "pieces",
+   "title": "Tray icon: a piece passed to the next tray",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "icon-piece",
+   "group": "pieces",
+   "title": "Tray icon: one ration piece",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "icon-pill",
+   "group": "pieces",
+   "title": "Tray icon: the pill",
+   "w": 200,
+   "h": 200,
+   "row": "Isotype icons, incl. the tally man at five heights"
+  },
+  {
+   "id": "room-boiler-room",
+   "group": "pieces",
+   "title": "Floor Plan room stamp: Boiler Room",
+   "w": 240,
+   "h": 240,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "room-bunk",
+   "group": "pieces",
+   "title": "Floor Plan room stamp: Bunk",
+   "w": 240,
+   "h": 240,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "room-cafeteria",
+   "group": "pieces",
+   "title": "Floor Plan room stamp: Cafeteria",
+   "w": 240,
+   "h": 240,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "room-cold-store",
+   "group": "pieces",
+   "title": "Floor Plan room stamp: Cold Store",
+   "w": 240,
+   "h": 240,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "room-infirmary",
+   "group": "pieces",
+   "title": "Floor Plan room stamp: Infirmary",
+   "w": 240,
+   "h": 240,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "room-latrine",
+   "group": "pieces",
+   "title": "Floor Plan room stamp: Latrine",
+   "w": 240,
+   "h": 240,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "room-laundry",
+   "group": "pieces",
+   "title": "Floor Plan room stamp: Laundry",
+   "w": 240,
+   "h": 240,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "room-mail-room",
+   "group": "pieces",
+   "title": "Floor Plan room stamp: Mail Room",
+   "w": 240,
+   "h": 240,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "room-rec-room",
+   "group": "pieces",
+   "title": "Floor Plan room stamp: Rec Room",
+   "w": 240,
+   "h": 240,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "room-sams-office",
+   "group": "pieces",
+   "title": "Floor Plan room stamp: Sam'S Office",
+   "w": 240,
+   "h": 240,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "room-staff-mess",
+   "group": "pieces",
+   "title": "Floor Plan room stamp: Staff Mess",
+   "w": 240,
+   "h": 240,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "room-void",
+   "group": "pieces",
+   "title": "Floor Plan stamp: the void",
+   "w": 240,
+   "h": 240,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "chapter-1",
+   "group": "chapters",
+   "title": "Chapter 1: Arrival.",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: six chairs, one more pushed in each day"
+  },
+  {
+   "id": "chapter-2",
+   "group": "chapters",
+   "title": "Chapter 2: Day One. The Ration",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: six chairs, one more pushed in each day"
+  },
+  {
+   "id": "chapter-3",
+   "group": "chapters",
+   "title": "Chapter 3: Day Two. Transferred",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: six chairs, one more pushed in each day"
+  },
+  {
+   "id": "chapter-4",
+   "group": "chapters",
+   "title": "Chapter 4: Day Three. The Yard",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: six chairs, one more pushed in each day"
+  },
+  {
+   "id": "chapter-5",
+   "group": "chapters",
+   "title": "Chapter 5: Day Four. The Measure of the Halls",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: six chairs, one more pushed in each day"
+  },
+  {
+   "id": "chapter-6",
+   "group": "chapters",
+   "title": "Chapter 6: Day Five. Jax's Plan",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: six chairs, one more pushed in each day"
+  },
+  {
+   "id": "chapter-7",
+   "group": "chapters",
+   "title": "Chapter 7: Day Six. Below",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: six chairs, one more pushed in each day"
+  },
+  {
+   "id": "chapter-8",
+   "group": "chapters",
+   "title": "Chapter 8: Day Seven. The Last Call",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: six chairs, one more pushed in each day"
+  },
+  {
+   "id": "chapter-9",
+   "group": "chapters",
+   "title": "Chapter 9: The Endings.",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: six chairs, one more pushed in each day"
+  },
+  {
+   "id": "clock-night-1",
+   "group": "chapters",
+   "title": "The 10:00 clock card, night 1",
+   "w": 1600,
+   "h": 900,
+   "row": "The 10:00 clock card; the rules card"
+  },
+  {
+   "id": "clock-night-2",
+   "group": "chapters",
+   "title": "The 10:00 clock card, night 2",
+   "w": 1600,
+   "h": 900,
+   "row": "The 10:00 clock card; the rules card"
+  },
+  {
+   "id": "clock-night-3",
+   "group": "chapters",
+   "title": "The 10:00 clock card, night 3",
+   "w": 1600,
+   "h": 900,
+   "row": "The 10:00 clock card; the rules card"
+  },
+  {
+   "id": "clock-night-4",
+   "group": "chapters",
+   "title": "The 10:00 clock card, night 4",
+   "w": 1600,
+   "h": 900,
+   "row": "The 10:00 clock card; the rules card"
+  },
+  {
+   "id": "clock-night-5",
+   "group": "chapters",
+   "title": "The 10:00 clock card, night 5",
+   "w": 1600,
+   "h": 900,
+   "row": "The 10:00 clock card; the rules card"
+  },
+  {
+   "id": "clock-night-6",
+   "group": "chapters",
+   "title": "The 10:00 clock card, night 6",
+   "w": 1600,
+   "h": 900,
+   "row": "The 10:00 clock card; the rules card"
+  },
+  {
+   "id": "clock-night-7",
+   "group": "chapters",
+   "title": "The 10:00 clock card, night 7",
+   "w": 1600,
+   "h": 900,
+   "row": "The 10:00 clock card; the rules card"
+  },
+  {
+   "id": "rules-card",
+   "group": "chapters",
+   "title": "The rules card on the bunk door",
+   "w": 1600,
+   "h": 900,
+   "row": "The 10:00 clock card; the rules card"
+  },
+  {
+   "id": "breath-line",
+   "group": "ui",
+   "title": "The breath line",
+   "w": 900,
+   "h": 140,
+   "row": "UI ornaments: frost corners (4 states), breath line, clip, punch holes, dividers"
+  },
+  {
+   "id": "clip",
+   "group": "ui",
+   "title": "The clipboard clip",
+   "w": 600,
+   "h": 220,
+   "row": "UI ornaments: frost corners (4 states), breath line, clip, punch holes, dividers"
+  },
+  {
+   "id": "divider-perforation",
+   "group": "ui",
+   "title": "Divider: perforation with frost",
+   "w": 900,
+   "h": 90,
+   "row": "UI ornaments: frost corners (4 states), breath line, clip, punch holes, dividers"
+  },
+  {
+   "id": "divider-stencil",
+   "group": "ui",
+   "title": "Divider: stencilled crate bar",
+   "w": 900,
+   "h": 90,
+   "row": "UI ornaments: frost corners (4 states), breath line, clip, punch holes, dividers"
+  },
+  {
+   "id": "divider-typed",
+   "group": "ui",
+   "title": "Divider: typed rule with the empty 22:00 box",
+   "w": 900,
+   "h": 90,
+   "row": "UI ornaments: frost corners (4 states), breath line, clip, punch holes, dividers"
+  },
+  {
+   "id": "frost-corner-1",
+   "group": "ui",
+   "title": "Frost corner, state 1",
+   "w": 440,
+   "h": 440,
+   "row": "UI ornaments: frost corners (4 states), breath line, clip, punch holes, dividers"
+  },
+  {
+   "id": "frost-corner-2",
+   "group": "ui",
+   "title": "Frost corner, state 2",
+   "w": 440,
+   "h": 440,
+   "row": "UI ornaments: frost corners (4 states), breath line, clip, punch holes, dividers"
+  },
+  {
+   "id": "frost-corner-3",
+   "group": "ui",
+   "title": "Frost corner, state 3",
+   "w": 440,
+   "h": 440,
+   "row": "UI ornaments: frost corners (4 states), breath line, clip, punch holes, dividers"
+  },
+  {
+   "id": "frost-corner-4",
+   "group": "ui",
+   "title": "Frost corner, state 4",
+   "w": 440,
+   "h": 440,
+   "row": "UI ornaments: frost corners (4 states), breath line, clip, punch holes, dividers"
+  },
+  {
+   "id": "punch-holes",
+   "group": "ui",
+   "title": "Punch holes",
+   "w": 140,
+   "h": 700,
+   "row": "UI ornaments: frost corners (4 states), breath line, clip, punch holes, dividers"
+  },
+  {
+   "id": "stamp-broken",
+   "group": "ui",
+   "title": "Stamp: BROKEN",
+   "w": 460,
+   "h": 220,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "stamp-hold",
+   "group": "ui",
+   "title": "Stamp: HOLD",
+   "w": 460,
+   "h": 220,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "stamp-retained",
+   "group": "ui",
+   "title": "Stamp: RETAINED",
+   "w": 460,
+   "h": 220,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "stamp-see-previous",
+   "group": "ui",
+   "title": "Stamp: SEE PREVIOUS",
+   "w": 460,
+   "h": 220,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "stamp-supported",
+   "group": "ui",
+   "title": "Stamp: SUPPORTED",
+   "w": 460,
+   "h": 220,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "stamp-withdrawn",
+   "group": "ui",
+   "title": "Stamp: WITHDRAWN",
+   "w": 460,
+   "h": 220,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "form-7f",
+   "group": "documents",
+   "title": "Form 7-F: the daily measurements",
+   "w": 800,
+   "h": 1100,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "print-followed",
+   "group": "documents",
+   "title": "Developed print: boot prints, followed",
+   "w": 1000,
+   "h": 780,
+   "row": "Yard plates and developed prints"
+  },
+  {
+   "id": "print-frame-112",
+   "group": "documents",
+   "title": "Developed print: Frame 112",
+   "w": 1000,
+   "h": 780,
+   "row": "Yard plates and developed prints"
+  },
+  {
+   "id": "print-photographed",
+   "group": "documents",
+   "title": "Developed print: bare prints, photographed",
+   "w": 1000,
+   "h": 780,
+   "row": "Yard plates and developed prints"
+  },
+  {
+   "id": "schedule",
+   "group": "documents",
+   "title": "The Schedule: Fisk's sheet",
+   "w": 800,
+   "h": 1100,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "schedule-strip-1",
+   "group": "documents",
+   "title": "Schedule strip, day 1",
+   "w": 800,
+   "h": 260,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "schedule-strip-2",
+   "group": "documents",
+   "title": "Schedule strip, day 2",
+   "w": 800,
+   "h": 260,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "schedule-strip-3",
+   "group": "documents",
+   "title": "Schedule strip, day 3",
+   "w": 800,
+   "h": 260,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "schedule-strip-4",
+   "group": "documents",
+   "title": "Schedule strip, day 4",
+   "w": 800,
+   "h": 260,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "schedule-strip-5",
+   "group": "documents",
+   "title": "Schedule strip, day 5",
+   "w": 800,
+   "h": 260,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "schedule-strip-6",
+   "group": "documents",
+   "title": "Schedule strip, day 6",
+   "w": 800,
+   "h": 260,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "schedule-strip-7",
+   "group": "documents",
+   "title": "Schedule strip, day 7",
+   "w": 800,
+   "h": 260,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "target-sheet",
+   "group": "documents",
+   "title": "The target sheet",
+   "w": 800,
+   "h": 1100,
+   "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "elevation-strip",
+   "group": "maps",
+   "title": "Floor Plan: the elevation strip",
+   "w": 1600,
+   "h": 520,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "ghost-layer",
+   "group": "maps",
+   "title": "Floor Plan: the ghost layer",
+   "w": 1200,
+   "h": 800,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "plan-sheet",
+   "group": "maps",
+   "title": "Floor Plan: the sheet",
+   "w": 1200,
+   "h": 800,
+   "row": "Room stamps, void, elevation strip, ghost layer"
+  },
+  {
+   "id": "thread-guest",
+   "group": "thread",
+   "title": "The tea caddy on the staff shelf",
+   "w": 480,
+   "h": 480,
+   "row": "Thread"
+  },
+  {
+   "id": "thread-own",
+   "group": "thread",
+   "title": "The envelope stamped HOLD",
+   "w": 480,
+   "h": 480,
+   "row": "Thread"
+  }
+ ]
+}

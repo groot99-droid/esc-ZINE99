@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="card-stamp-6-t card-stamp-6-d">
+<title id="card-stamp-6-t">Short Rations: 6 of Stamp</title>
+<desc id="card-stamp-6-d">Ration-issue card, the 6 of Stamp (Sam's suit): worn card stock, the rank in army stencil at two corners, 6 of eight issue holes punched, and drawn by hand in the middle the project stamp struck 6 times on a form.</desc>
+<defs><clipPath id="card-stamp-6-clip1"><rect x="4" y="4" width="292" height="412" rx="16"/></clipPath><filter id="card-stamp-6-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="142"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.7 -0.3"/></filter><mask id="card-stamp-6-st3" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><mask id="card-stamp-6-st4" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><filter id="card-stamp-6-ink5" x="-10%" y="-20%" width="120%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="195" result="n"/><feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.8 1.7" result="m"/><feComposite in="SourceGraphic" in2="m" operator="in" result="s"/><feTurbulence type="turbulence" baseFrequency="0.06" numOctaves="1" seed="198" result="d"/><feDisplacementMap in="s" in2="d" scale="1.5"/></filter><mask id="card-stamp-6-st6" maskUnits="userSpaceOnUse" x="8" y="361.6" width="90.2" height="39.6"><rect x="8" y="361.6" width="90.2" height="39.6" fill="#fff"/><rect x="35.7" y="370.4" width="1.8" height="22" fill="#000"/><rect x="66.5" y="370.4" width="1.8" height="22" fill="#000"/></mask></defs>
+<rect x="4" y="4" width="292" height="412" rx="16" fill="#DDD4BD" stroke="#6f6750" stroke-width="2"/>
+<g clip-path="url(#card-stamp-6-clip1)">
+<rect x="0" y="0" width="300" height="420" filter="url(#card-stamp-6-spk2)"/>
+</g>
+<g clip-path="url(#card-stamp-6-clip1)">
+<ellipse cx="168.8" cy="331.2" rx="27" ry="1.8" fill="#b3a786" opacity="0.3" transform="rotate(22.5 168.8 331.2)"/>
+<ellipse cx="69.8" cy="381.7" rx="16.9" ry="5.3" fill="#b3a786" opacity="0.3" transform="rotate(-34.7 69.8 381.7)"/>
+<ellipse cx="53.7" cy="344.7" rx="12.4" ry="2.1" fill="#b3a786" opacity="0.3" transform="rotate(33.2 53.7 344.7)"/>
+<ellipse cx="184.3" cy="387.7" rx="17.1" ry="4.5" fill="#b3a786" opacity="0.3" transform="rotate(19.9 184.3 387.7)"/>
+<ellipse cx="44.4" cy="213.1" rx="7" ry="2.8" fill="#b3a786" opacity="0.3" transform="rotate(-23.6 44.4 213.1)"/>
+<ellipse cx="119.3" cy="358.5" rx="25.2" ry="2.4" fill="#b3a786" opacity="0.3" transform="rotate(3.5 119.3 358.5)"/>
+<ellipse cx="234.3" cy="122.5" rx="26.2" ry="4.7" fill="#b3a786" opacity="0.3" transform="rotate(-17.4 234.3 122.5)"/>
+<ellipse cx="165.7" cy="207.6" rx="18.4" ry="5.1" fill="#b3a786" opacity="0.3" transform="rotate(-3.7 165.7 207.6)"/>
+<ellipse cx="193" cy="13.7" rx="13.2" ry="5.9" fill="#b3a786" opacity="0.3" transform="rotate(-3.8 193 13.7)"/>
+<line x1="242.4" y1="4" x2="296" y2="57.6" stroke="#9b9072" stroke-width="1.5"/>
+<polygon points="242.4,4 296,4 296,57.6" fill="#000" opacity="0.1"/>
+</g>
+<rect x="16" y="16" width="268" height="388" rx="9" fill="none" stroke="#1B1D1F" stroke-width="2.4" stroke-dasharray="20 5"/>
+<g mask="url(#card-stamp-6-st3)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">6</text>
+</g>
+<path d="M59.6,101.9 L58.5,106 L56.5,109.5 L53.9,112.3 L50.5,113.8 L46.8,114.5 L43.5,113.6 L39.9,111.6 L37.1,109.5 L35.6,105.4 L35,102.1 L35.5,98.1 L37,94.9 L40.2,92.3 L42.8,90.2 L47,89.9 L50.5,90.4 L54.5,91.9 L57,94.4 L58.6,98.6 L59.5,102.4Z" stroke="#9B2F22" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M56.1,101.7 L54.8,105.7 L53.1,108.5 L50.5,110.6 L46.8,111.1 L43.3,110.5 L40.4,108.2 L38.9,105.1 L37.9,101.9 L38.9,98.4 L40.4,95.7 L43.2,93.6 L47.3,93.4 L50.8,93.5 L53.3,95.9 L55.5,98.3 L55.8,102Z" stroke="#9B2F22" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="47" y="104.6" font-size="7.2" font-family="monospace" fill="#9B2F22" font-weight="bold" text-anchor="middle">7-F</text>
+<g transform="rotate(180 150.0 210.0)">
+<g mask="url(#card-stamp-6-st4)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">6</text>
+</g>
+<path d="M59.3,101.7 L58.3,105.5 L57.4,108.9 L54.3,112.4 L50.4,113.6 L46.8,114.3 L43,114.2 L39.8,112.2 L37.1,109.6 L35.3,105.7 L34.4,102.4 L35.7,98.4 L37,94.8 L39.7,91.9 L43.4,90.3 L47,89.4 L51.1,90 L54.2,92.2 L57.4,94.5 L58.4,98.3 L59.1,101.6Z" stroke="#9B2F22" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M55.5,102.1 L55.1,105.6 L53.6,108 L50,110.1 L46.6,110.5 L44.1,110.5 L41.2,108.2 L38.6,105.1 L38.4,101.6 L38.9,98.4 L40.7,95.4 L43.5,93.9 L46.8,93.3 L50.1,93.8 L53.2,96.1 L55.4,98.4 L56.2,101.7Z" stroke="#9B2F22" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="47" y="104.6" font-size="7.2" font-family="monospace" fill="#9B2F22" font-weight="bold" text-anchor="middle">7-F</text>
+</g>
+<circle cx="110" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="108.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="132" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="130.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="154" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="152.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="176" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="174.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="198" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="196.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="220" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="218.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="242" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="264" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<text x="108" y="72" font-size="13" font-family="monospace" fill="#1B1D1F" text-anchor="start">ISSUE 6/8</text>
+<path d="M48,128H252M48,150H252M48,172H252M48,194H252M48,216H252M48,238H252M48,260H252M48,282H252M48,304H252M48,326H252" stroke="#7C8C99" stroke-width="1" opacity="0.7" fill="none"/>
+<text x="48" y="122" font-size="12" font-family="monospace" fill="#3b3a38" text-anchor="start">RESULTS</text>
+<g filter="url(#card-stamp-6-ink5)" opacity="0.9">
+<g transform="rotate(6.2 102 161)">
+<path d="M125.5,161.9 L124.3,168.6 L121.6,175.2 L115.4,179.9 L108.7,183.8 L102.9,185.6 L94.1,183.8 L88,179.4 L82.6,175.7 L79.9,168.2 L78.1,160.2 L80,153.4 L82.3,147.2 L87.4,142.1 L94,138.8 L101.7,137.1 L110.1,137.7 L116.5,141.7 L121.8,147.5 L125.4,152.9 L126.4,161.4Z" stroke="#9B2F22" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M119.6,161 L118.1,167.9 L114.9,172.5 L108.6,176.3 L101.4,178.5 L95.1,176.1 L90.5,173.7 L86.3,167.5 L84.5,161.6 L85.8,154.6 L89.3,148.4 L95,145.7 L101.8,144.3 L108.4,145 L113.7,149.6 L117.1,153.7 L118.2,160.7Z" stroke="#9B2F22" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="102" y="166" font-size="13.8" font-family="monospace" fill="#9B2F22" font-weight="bold" text-anchor="middle">7-F</text>
+</g>
+<g transform="rotate(-24.4 198 161)">
+<path d="M221.4,160.7 L219.9,168.7 L217.6,175 L212.1,180.3 L206.1,182.8 L197.6,184.3 L191.2,183.2 L183.3,180.3 L179.6,175.5 L175.3,169 L173.8,161.9 L174.7,152.9 L179.4,146.6 L183.5,141.6 L190.9,138.6 L197.6,136.9 L205.7,138.7 L212.6,142.1 L218,146.5 L220.6,153.7 L221.6,160.5Z" stroke="#9B2F22" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M215.2,160.6 L214.5,167.6 L210.5,173.8 L203.9,177.6 L197.2,178.7 L192.2,176.6 L185.6,173.5 L181.6,167.5 L181.8,160.9 L182.2,154.9 L185.5,149.6 L191.8,146.2 L197.6,143.8 L203.9,146.2 L209.2,148.4 L214.1,154.3 L215.6,161.3Z" stroke="#9B2F22" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="198" y="166" font-size="13.8" font-family="monospace" fill="#9B2F22" font-weight="bold" text-anchor="middle">7-F</text>
+</g>
+<g transform="rotate(9.2 102 229)">
+<path d="M125.4,228.2 L124.8,236.5 L121.8,243.8 L116.5,247.7 L108.5,252 L102.2,252.5 L95,251 L88.9,247.8 L82.6,242.9 L78.8,237 L78.6,229.8 L78.6,220.9 L83.6,214.7 L88.5,209.2 L95,206 L101.2,204.6 L108.9,206.8 L116.8,210.4 L120.7,214.3 L124.6,222 L126.5,229.6Z" stroke="#9B2F22" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M119.5,229.5 L118.2,235.3 L113.8,241.7 L108.6,245.4 L101.6,245.2 L95.2,244.6 L89.9,241.6 L86.6,235.3 L85.9,228.2 L85.9,223.4 L90.3,216.5 L96.3,213.2 L102.6,212 L109,214.1 L114.8,217.4 L118.2,222.3 L119.6,229.1Z" stroke="#9B2F22" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="102" y="234" font-size="13.8" font-family="monospace" fill="#9B2F22" font-weight="bold" text-anchor="middle">7-F</text>
+</g>
+<g transform="rotate(-19.5 198 229)">
+<path d="M221.3,229.1 L221.4,236.9 L216.6,243.2 L212.7,248.4 L205.9,250.8 L198.2,253.1 L190.1,251.6 L183.2,248 L178.5,242.5 L174.7,236 L173.5,229.2 L176,221.1 L179.3,214.4 L183.2,210.4 L190.7,206.3 L197.6,206 L204.7,206.1 L211.2,209.7 L217.9,215.5 L219.7,221.3 L222.4,229.6Z" stroke="#9B2F22" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M215.6,229.5 L213.7,235.2 L210.7,240.8 L204.4,244.4 L198.4,246.7 L192,245.1 L186.1,240.2 L181.7,236.1 L180.6,228.3 L181.8,222.2 L185.2,216.5 L190.7,213 L197.7,211.6 L204.4,213 L209.6,217.5 L214,223.1 L214.5,228.2Z" stroke="#9B2F22" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="198" y="234" font-size="13.8" font-family="monospace" fill="#9B2F22" font-weight="bold" text-anchor="middle">7-F</text>
+</g>
+<g transform="rotate(27.6 102 297)">
+<path d="M126.3,297.4 L124.8,305 L121.3,311.2 L116.3,316.2 L109.6,320 L101.8,320.4 L94.3,319.1 L87.5,315.6 L82.8,311.7 L79,304.7 L77.7,296.1 L80.2,290.3 L82.7,283.2 L88.9,277.1 L94.1,274.5 L101.4,273.1 L109.6,274.4 L116,278.3 L120.4,282.4 L124.1,289 L126.5,297.1Z" stroke="#9B2F22" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M118.8,296.3 L116.9,304 L113.4,308.4 L107.9,313.3 L102.1,314.7 L96.2,313.5 L89.5,308.6 L85.6,304.3 L84.2,296.2 L86.1,290.7 L89.7,284.2 L96.3,280.5 L102.7,279.3 L108.4,280.5 L114.3,284.9 L117.5,290.9 L119,297Z" stroke="#9B2F22" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="102" y="302" font-size="13.8" font-family="monospace" fill="#9B2F22" font-weight="bold" text-anchor="middle">7-F</text>
+</g>
+<g transform="rotate(-12.2 198 297)">
+<path d="M222.2,297.5 L221,304.4 L217.8,311.6 L211.5,317 L205.9,320.4 L198,321.2 L190.8,319.5 L183.9,315.7 L179,310.3 L174.7,304.5 L173.7,296.8 L174.9,289.5 L179.1,283.8 L183.7,278.4 L191.2,274.2 L197.8,273.1 L206.1,274.1 L212.7,277 L217.5,282.9 L221,289.4 L222.3,296.8Z" stroke="#9B2F22" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M215.6,296.4 L213.1,303.3 L210.5,308.7 L204.8,313.4 L198.5,313.5 L191,312.5 L185.3,308.3 L181.7,304.3 L181.9,297.4 L181.7,291.1 L186.8,285.5 L190.8,281.1 L197.6,279.9 L204.8,281.9 L209.2,284.7 L213.2,291.1 L215.8,296.2Z" stroke="#9B2F22" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="198" y="302" font-size="13.8" font-family="monospace" fill="#9B2F22" font-weight="bold" text-anchor="middle">7-F</text>
+</g>
+</g>
+<g mask="url(#card-stamp-6-st6)">
+<text x="30" y="388" font-size="22" font-family="monospace" fill="#9B2F22" font-weight="bold" letter-spacing="2.2">7-F</text>
+</g>
+<text x="32" y="364" font-size="13" font-family="monospace" fill="#3b3a38" text-anchor="start">SIX</text>
+</svg>

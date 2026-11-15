@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" width="800" height="340" role="img" aria-labelledby="cutout-flashlight-t cutout-flashlight-d">
+<title id="cutout-flashlight-t">Halls cut-out: the flashlight and its cone</title>
+<desc id="cutout-flashlight-d">A guard's flashlight and the cone it throws down the hall: hard and pale at the lens, thinning to nothing, with dust standing in it. Whatever the cone holds for a second and a half is seen.</desc>
+<defs><linearGradient id="cutout-flashlight-cone1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFF3C4" stop-opacity="0.92"/><stop offset="0.6" stop-color="#FFF3C4" stop-opacity="0.4"/><stop offset="1" stop-color="#FFF3C4" stop-opacity="0"/></linearGradient></defs>
+<polygon points="128,158 790,20 790,320 128,182" fill="url(#cutout-flashlight-cone1)"/>
+<polygon points="128,164 790,110 790,230 128,176" fill="url(#cutout-flashlight-cone1)" opacity="0.6"/>
+<path d="M286.8,167.7a2.1,2.1 0 1,0 4.2,0a2.1,2.1 0 1,0 -4.2,0M335.1,150.9a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M642.8,168.9a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M553.8,212.5a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M594.4,155.9a1.8,1.8 0 1,0 3.6,0a1.8,1.8 0 1,0 -3.6,0M498.7,146.8a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M349.7,146.1a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M541.7,142a1.8,1.8 0 1,0 3.6,0a1.8,1.8 0 1,0 -3.6,0M406.2,165.1a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M539,208.2a1.1,1.1 0 1,0 2.3,0a1.1,1.1 0 1,0 -2.3,0M745.3,155.1a1.1,1.1 0 1,0 2.3,0a1.1,1.1 0 1,0 -2.3,0M679.6,171.6a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M577.3,212.1a1.6,1.6 0 1,0 3.3,0a1.6,1.6 0 1,0 -3.3,0M630,232.2a1.7,1.7 0 1,0 3.4,0a1.7,1.7 0 1,0 -3.4,0M198.6,167.6a1.7,1.7 0 1,0 3.3,0a1.7,1.7 0 1,0 -3.3,0M358.2,182.9a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0M548.4,221.8a1.9,1.9 0 1,0 3.7,0a1.9,1.9 0 1,0 -3.7,0M474.3,139.5a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M604.6,145.1a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0" fill="#fff" opacity="0.7"/>
+<rect x="18" y="152" width="84" height="36" rx="6" fill="#1B1D1F"/>
+<polygon points="100,152 130,136 130,204 100,188" fill="#1B1D1F"/>
+<rect x="38" y="146" width="22" height="8" rx="2" fill="#1B1D1F"/>
+<line x1="30" y1="156" x2="30" y2="184" stroke="#4a4e51" stroke-width="2"/>
+<line x1="44" y1="156" x2="44" y2="184" stroke="#4a4e51" stroke-width="2"/>
+<line x1="58" y1="156" x2="58" y2="184" stroke="#4a4e51" stroke-width="2"/>
+<line x1="72" y1="156" x2="72" y2="184" stroke="#4a4e51" stroke-width="2"/>
+<ellipse cx="130" cy="170" rx="5" ry="32" fill="#FFF8DC"/>
+<circle cx="64" cy="170" r="3" fill="#8a7a55"/>
+<line x1="64" y1="170" x2="70" y2="340" stroke="#2b2620" stroke-width="3"/>
+</svg>

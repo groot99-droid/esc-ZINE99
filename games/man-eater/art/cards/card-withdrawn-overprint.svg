@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="card-withdrawn-overprint-t card-withdrawn-overprint-d">
+<title id="card-withdrawn-overprint-t">Short Rations: the WITHDRAWN overprint</title>
+<desc id="card-withdrawn-overprint-d">The rubber stamp that marks an empty chair's eight: WITHDRAWN in red, boxed, struck crooked across the card with a fainter second strike beside it and flecks where the pad was too wet. Transparent, to lay over any eight.</desc>
+<defs><filter id="card-withdrawn-overprint-ink1" x="-10%" y="-20%" width="120%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="802" result="n"/><feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -4.2 2.6" result="m"/><feComposite in="SourceGraphic" in2="m" operator="in" result="s"/><feTurbulence type="turbulence" baseFrequency="0.06" numOctaves="1" seed="805" result="d"/><feDisplacementMap in="s" in2="d" scale="2.5"/></filter><filter id="card-withdrawn-overprint-ink2" x="-10%" y="-20%" width="120%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="26" result="n"/><feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.4 1.9" result="m"/><feComposite in="SourceGraphic" in2="m" operator="in" result="s"/><feTurbulence type="turbulence" baseFrequency="0.06" numOctaves="1" seed="29" result="d"/><feDisplacementMap in="s" in2="d" scale="2.5"/></filter></defs>
+<g transform="translate(158,226) rotate(-27)" opacity="0.2" filter="url(#card-withdrawn-overprint-ink1)">
+<rect x="-143" y="-32" width="286" height="64" fill="none" stroke="#9B2F22" stroke-width="4.5"/>
+<rect x="-136.6" y="-25.6" width="273.2" height="51.2" fill="none" stroke="#9B2F22" stroke-width="1.3"/>
+<text x="0" y="13.5" font-size="39.7" font-family="monospace" fill="#9B2F22" font-weight="bold" text-anchor="middle" letter-spacing="3.2">WITHDRAWN</text>
+</g>
+<g transform="translate(150,214) rotate(-24)" opacity="0.9" filter="url(#card-withdrawn-overprint-ink2)">
+<rect x="-143" y="-32" width="286" height="64" fill="none" stroke="#9B2F22" stroke-width="4.5"/>
+<rect x="-136.6" y="-25.6" width="273.2" height="51.2" fill="none" stroke="#9B2F22" stroke-width="1.3"/>
+<text x="0" y="13.5" font-size="39.7" font-family="monospace" fill="#9B2F22" font-weight="bold" text-anchor="middle" letter-spacing="3.2">WITHDRAWN</text>
+</g>
+<g fill="#9B2F22" opacity="0.7">
+<circle cx="179.5" cy="139.5" r="1.4"/>
+<circle cx="193.8" cy="145.5" r="1.4"/>
+<circle cx="93.8" cy="195.8" r="2.1"/>
+<circle cx="250.5" cy="249.6" r="0.9"/>
+<circle cx="67.1" cy="271.2" r="1.7"/>
+<circle cx="194.3" cy="261.8" r="1"/>
+<circle cx="268" cy="202.3" r="1.3"/>
+<circle cx="256.1" cy="140.7" r="2.5"/>
+<circle cx="211.9" cy="157.6" r="1.8"/>
+<circle cx="128.9" cy="132" r="1.5"/>
+<circle cx="170.2" cy="118.2" r="1"/>
+<circle cx="172.3" cy="231.9" r="2.2"/>
+<circle cx="81.3" cy="119.2" r="2"/>
+<circle cx="62.2" cy="122" r="2.4"/>
+<circle cx="152.8" cy="237.3" r="2.3"/>
+<circle cx="191.8" cy="196" r="2.5"/>
+</g>
+<path d="M34.1,329 L44.8,325.9 L58.7,319.8 L70,312.4 L83.6,308.8 L94.2,303.2 L107.4,297.5 L119,293.4" stroke="#9B2F22" stroke-width="2" opacity="0.3" fill="none"/>
+</svg>

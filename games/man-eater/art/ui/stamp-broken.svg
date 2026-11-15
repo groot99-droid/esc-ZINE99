@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 220" width="460" height="220" role="img" aria-labelledby="stamp-broken-t stamp-broken-d">
+<title id="stamp-broken-t">Stamp: BROKEN</title>
+<desc id="stamp-broken-d">The BROKEN rubber stamp in red: a heavy double box struck hard and a little crooked, the ink cracked through the middle of the word as if the die itself had split.</desc>
+<defs><filter id="stamp-broken-ink1" x="-10%" y="-20%" width="120%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="743" result="n"/><feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.6 2" result="m"/><feComposite in="SourceGraphic" in2="m" operator="in" result="s"/><feTurbulence type="turbulence" baseFrequency="0.06" numOctaves="1" seed="746" result="d"/><feDisplacementMap in="s" in2="d" scale="2.5"/></filter></defs>
+<g transform="translate(230,110) rotate(-7)" opacity="0.9" filter="url(#stamp-broken-ink1)">
+<rect x="-190" y="-60" width="380" height="120" fill="none" stroke="#9B2F22" stroke-width="8.4"/>
+<rect x="-178" y="-48" width="356" height="96" fill="none" stroke="#9B2F22" stroke-width="2.4"/>
+<text x="0" y="25.3" font-size="74.4" font-family="monospace" fill="#9B2F22" font-weight="bold" text-anchor="middle" letter-spacing="6">BROKEN</text>
+</g>
+<path d="M210,30 l14,44 l-18,30 l22,36 l-10,52" fill="none" stroke="#999" stroke-width="5" opacity="0"/>
+<path d="M215.3,32.7 L217,44.5 L220.3,54.8 L224.4,65.2 L228.5,79.2 L220.6,89.8 L215.6,98 L210.6,109.7 L215.8,117.6 L220.8,126.3 L226.1,136.8 L230.6,144.7 L229.7,157 L226.6,170.5 L224.2,183.3 L220.8,193.4" stroke="#9B2F22" stroke-width="1.6" opacity="0.5" fill="none"/>
+<g fill="#9B2F22" opacity="0.6">
+<circle cx="296.4" cy="66.4" r="1.7"/>
+<circle cx="34.2" cy="145.7" r="2"/>
+<circle cx="171.5" cy="136" r="1.9"/>
+<circle cx="309.2" cy="95.5" r="1.5"/>
+<circle cx="324.5" cy="105.8" r="0.9"/>
+<circle cx="183.7" cy="176.3" r="2.4"/>
+<circle cx="263.2" cy="74" r="1.5"/>
+<circle cx="56.6" cy="26" r="1.8"/>
+<circle cx="414.2" cy="181.3" r="1.5"/>
+<circle cx="250.3" cy="104.1" r="0.9"/>
+<circle cx="129.8" cy="53.4" r="1"/>
+<circle cx="134.8" cy="167.9" r="2.1"/>
+<circle cx="306" cy="166.7" r="1.1"/>
+<circle cx="392.3" cy="149.6" r="0.8"/>
+</g>
+</svg>

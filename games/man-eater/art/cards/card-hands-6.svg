@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="card-hands-6-t card-hands-6-d">
+<title id="card-hands-6-t">Short Rations: 6 of Hands</title>
+<desc id="card-hands-6-d">Ration-issue card, the 6 of Hands (Fisk's suit): worn card stock, the rank in army stencil at two corners, 6 of eight issue holes punched, and drawn by hand in the middle a hand counting 6 on its fingers.</desc>
+<defs><clipPath id="card-hands-6-clip1"><rect x="4" y="4" width="292" height="412" rx="16"/></clipPath><filter id="card-hands-6-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="144"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.7 -0.3"/></filter><mask id="card-hands-6-st3" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><mask id="card-hands-6-st4" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><mask id="card-hands-6-st5" maskUnits="userSpaceOnUse" x="8" y="361.6" width="121" height="39.6"><rect x="8" y="361.6" width="121" height="39.6" fill="#fff"/><rect x="35.7" y="370.4" width="1.8" height="22" fill="#000"/><rect x="51.1" y="370.4" width="1.8" height="22" fill="#000"/><rect x="66.5" y="370.4" width="1.8" height="22" fill="#000"/><rect x="81.9" y="370.4" width="1.8" height="22" fill="#000"/><rect x="97.3" y="370.4" width="1.8" height="22" fill="#000"/></mask></defs>
+<rect x="4" y="4" width="292" height="412" rx="16" fill="#DDD4BD" stroke="#6f6750" stroke-width="2"/>
+<g clip-path="url(#card-hands-6-clip1)">
+<rect x="0" y="0" width="300" height="420" filter="url(#card-hands-6-spk2)"/>
+</g>
+<g clip-path="url(#card-hands-6-clip1)">
+<ellipse cx="281.4" cy="259.7" rx="13.3" ry="3.4" fill="#b3a786" opacity="0.3" transform="rotate(33.8 281.4 259.7)"/>
+<ellipse cx="63.1" cy="191" rx="11.2" ry="2.4" fill="#b3a786" opacity="0.3" transform="rotate(-21.3 63.1 191)"/>
+<ellipse cx="173.9" cy="75.7" rx="14.7" ry="3.5" fill="#b3a786" opacity="0.3" transform="rotate(-8.7 173.9 75.7)"/>
+<ellipse cx="126.7" cy="48.8" rx="27" ry="5.2" fill="#b3a786" opacity="0.3" transform="rotate(-23.6 126.7 48.8)"/>
+<ellipse cx="260.2" cy="231.9" rx="21.3" ry="4.9" fill="#b3a786" opacity="0.3" transform="rotate(-20.7 260.2 231.9)"/>
+<ellipse cx="95.7" cy="210.9" rx="24.3" ry="4.3" fill="#b3a786" opacity="0.3" transform="rotate(-7.3 95.7 210.9)"/>
+<ellipse cx="167.6" cy="207.7" rx="16.7" ry="4.7" fill="#b3a786" opacity="0.3" transform="rotate(-34.6 167.6 207.7)"/>
+<ellipse cx="160.6" cy="10.6" rx="12.5" ry="2.4" fill="#b3a786" opacity="0.3" transform="rotate(7.6 160.6 10.6)"/>
+<line x1="35.1" y1="416" x2="4" y2="384.9" stroke="#9b9072" stroke-width="1.5"/>
+<polygon points="35.1,416 4,416 4,384.9" fill="#000" opacity="0.1"/>
+</g>
+<rect x="16" y="16" width="268" height="388" rx="9" fill="none" stroke="#1B1D1F" stroke-width="2.4" stroke-dasharray="20 5"/>
+<g mask="url(#card-hands-6-st3)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">6</text>
+</g>
+<path d="M40.7,114.3 L40.2,108.9 L40.2,103.6 L39.4,102.4 L39.5,94.9 L42.8,94.8 L42.3,102.3 L43.9,102 L43.7,95.8 L43.2,89.9 L46.5,90.7 L46.4,96.6 L46.2,102.3 L47.7,101.6 L47.9,98.3 L47.3,93.7 L47.9,89.5 L50.5,89.5 L50.7,94.1 L50.1,97.5 L50.8,101.6 L51.4,101.6 L51.8,97.3 L51.8,92.6 L53.9,93.1 L54.3,97 L54.3,101.8 L54.7,103.7 L59.3,99.8 L60,102.6 L57.1,105.8 L54.4,109.3 L53.4,114.6 L49.6,114.7 L44.5,114.6 L40.9,114.1Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<g transform="rotate(180 150.0 210.0)">
+<g mask="url(#card-hands-6-st4)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">6</text>
+</g>
+<path d="M40.1,114.5 L40.1,108.5 L40.2,103 L39.7,102.4 L40.1,95.1 L42.8,95.2 L42.3,102.2 L43.5,102 L43.3,96.5 L43.8,90.2 L46.8,90.4 L46.6,95.8 L46.2,102.3 L47.3,101.8 L47.4,98.2 L47.8,94.2 L47.4,89.3 L50.7,89.2 L50.4,93.5 L50.8,98.3 L50.3,102.1 L51,102.4 L51,97.9 L51.7,92.7 L54.3,92.5 L54,97.3 L54.4,102.4 L55,104 L59.2,99.3 L60.4,102.5 L57.6,105.4 L54.8,109.1 L53.8,114.5 L49.5,114.3 L45.2,114.6 L40.2,114.1Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</g>
+<circle cx="110" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="108.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="132" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="130.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="154" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="152.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="176" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="174.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="198" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="196.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="220" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="218.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="242" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="264" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<text x="108" y="72" font-size="13" font-family="monospace" fill="#1B1D1F" text-anchor="start">ISSUE 6/8</text>
+<g transform="translate(100,300) rotate(0) scale(0.9,0.9)">
+<line x1="0" y1="-14" x2="0" y2="-38" stroke="#1B1D1F" stroke-width="59" stroke-linecap="round"/>
+<line x1="0" y1="0" x2="0" y2="-10" stroke="#1B1D1F" stroke-width="51" stroke-linecap="round"/>
+<line x1="-20" y1="-42" x2="-28.4" y2="-76.6" stroke="#1B1D1F" stroke-width="16" stroke-linecap="round"/>
+<line x1="-28.4" y1="-76.6" x2="-37.9" y2="-98.6" stroke="#1B1D1F" stroke-width="14.8" stroke-linecap="round"/>
+<line x1="-6.5" y1="-42" x2="-10.2" y2="-86.1" stroke="#1B1D1F" stroke-width="17" stroke-linecap="round"/>
+<line x1="-10.2" y1="-86.1" x2="-14.5" y2="-117.5" stroke="#1B1D1F" stroke-width="15.8" stroke-linecap="round"/>
+<line x1="7.5" y1="-42" x2="10.8" y2="-89.3" stroke="#1B1D1F" stroke-width="17.5" stroke-linecap="round"/>
+<line x1="10.8" y1="-89.3" x2="14.5" y2="-123.7" stroke="#1B1D1F" stroke-width="16.3" stroke-linecap="round"/>
+<line x1="21" y1="-42" x2="30.7" y2="-82.7" stroke="#1B1D1F" stroke-width="17" stroke-linecap="round"/>
+<line x1="30.7" y1="-82.7" x2="41.8" y2="-110.4" stroke="#1B1D1F" stroke-width="15.8" stroke-linecap="round"/>
+<line x1="16" y1="-12" x2="51.1" y2="-37" stroke="#1B1D1F" stroke-width="21" stroke-linecap="round"/>
+<line x1="51.1" y1="-37" x2="64.9" y2="-61.4" stroke="#1B1D1F" stroke-width="18" stroke-linecap="round"/>
+<line x1="0" y1="-14" x2="0" y2="-38" stroke="#E0D5BC" stroke-width="54" stroke-linecap="round"/>
+<line x1="0" y1="0" x2="0" y2="-10" stroke="#E0D5BC" stroke-width="46" stroke-linecap="round"/>
+<line x1="-20" y1="-42" x2="-28.4" y2="-76.6" stroke="#E0D5BC" stroke-width="11" stroke-linecap="round"/>
+<line x1="-28.4" y1="-76.6" x2="-37.9" y2="-98.6" stroke="#E0D5BC" stroke-width="9.8" stroke-linecap="round"/>
+<line x1="-6.5" y1="-42" x2="-10.2" y2="-86.1" stroke="#E0D5BC" stroke-width="12" stroke-linecap="round"/>
+<line x1="-10.2" y1="-86.1" x2="-14.5" y2="-117.5" stroke="#E0D5BC" stroke-width="10.8" stroke-linecap="round"/>
+<line x1="7.5" y1="-42" x2="10.8" y2="-89.3" stroke="#E0D5BC" stroke-width="12.5" stroke-linecap="round"/>
+<line x1="10.8" y1="-89.3" x2="14.5" y2="-123.7" stroke="#E0D5BC" stroke-width="11.3" stroke-linecap="round"/>
+<line x1="21" y1="-42" x2="30.7" y2="-82.7" stroke="#E0D5BC" stroke-width="12" stroke-linecap="round"/>
+<line x1="30.7" y1="-82.7" x2="41.8" y2="-110.4" stroke="#E0D5BC" stroke-width="10.8" stroke-linecap="round"/>
+<line x1="16" y1="-12" x2="51.1" y2="-37" stroke="#E0D5BC" stroke-width="16" stroke-linecap="round"/>
+<line x1="51.1" y1="-37" x2="64.9" y2="-61.4" stroke="#E0D5BC" stroke-width="13" stroke-linecap="round"/>
+<ellipse cx="-37.9" cy="-99.6" rx="3.3" ry="4" fill="#F1EADB" stroke="#1B1D1F" stroke-width="0.8" opacity="0.9" transform="rotate(-23.4 -37.9 -98.6)"/>
+<ellipse cx="-14.5" cy="-118.5" rx="3.6" ry="4.3" fill="#F1EADB" stroke="#1B1D1F" stroke-width="0.8" opacity="0.9" transform="rotate(-7.8 -14.5 -117.5)"/>
+<ellipse cx="14.5" cy="-124.7" rx="3.8" ry="4.5" fill="#F1EADB" stroke="#1B1D1F" stroke-width="0.8" opacity="0.9" transform="rotate(6.2 14.5 -123.7)"/>
+<ellipse cx="41.8" cy="-111.4" rx="3.6" ry="4.3" fill="#F1EADB" stroke="#1B1D1F" stroke-width="0.8" opacity="0.9" transform="rotate(21.9 41.8 -110.4)"/>
+<path d="M-31.4,-75.6q3.1,-3 6.2,0M-23.3,-50q3.3,-4 6.6,0M-13.6,-85.1q3.4,-3 6.7,0M-10.1,-50q3.6,-4 7.2,0M7.3,-88.3q3.5,-3 7,0M3.8,-50q3.8,-4 7.5,0M27.3,-81.7q3.4,-3 6.7,0M17.4,-50q3.6,-4 7.2,0M-12,-8q12,5 24,0 M-9,-3q9,4 18,0" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-linecap="round" opacity="0.8"/>
+<ellipse cx="41.8" cy="-110.4" rx="4.2" ry="4.8" fill="#F1EADB" stroke="#1B1D1F" stroke-width="0.8" opacity="0.9" transform="rotate(29.4 41.8 -110.4)"/>
+</g>
+<rect x="72.4" y="303.7" width="55.2" height="27.6" rx="4" fill="#56664f" stroke="#1B1D1F" stroke-width="2"/>
+<path d="M79.8,309.2l3.7,14.7M88,309.2l3.7,14.7M96.3,309.2l3.7,14.7M104.6,309.2l3.7,14.7M112.9,309.2l3.7,14.7M121.2,309.2l3.7,14.7" stroke="#1B1D1F" stroke-width="1" opacity="0.4"/>
+<g transform="translate(204,300) rotate(0) scale(-0.9,0.9)">
+<line x1="0" y1="-14" x2="0" y2="-38" stroke="#1B1D1F" stroke-width="59" stroke-linecap="round"/>
+<line x1="0" y1="0" x2="0" y2="-10" stroke="#1B1D1F" stroke-width="51" stroke-linecap="round"/>
+<line x1="-20" y1="-42" x2="-23.7" y2="-63" stroke="#1B1D1F" stroke-width="16" stroke-linecap="round"/>
+<line x1="-23.7" y1="-63" x2="-28" y2="-72.9" stroke="#1B1D1F" stroke-width="14.8" stroke-linecap="round"/>
+<line x1="-6.5" y1="-42" x2="-8.2" y2="-67.3" stroke="#1B1D1F" stroke-width="17" stroke-linecap="round"/>
+<line x1="-8.2" y1="-67.3" x2="-10.1" y2="-81.3" stroke="#1B1D1F" stroke-width="15.8" stroke-linecap="round"/>
+<line x1="7.5" y1="-42" x2="9" y2="-68.7" stroke="#1B1D1F" stroke-width="17.5" stroke-linecap="round"/>
+<line x1="9" y1="-68.7" x2="10.6" y2="-84.1" stroke="#1B1D1F" stroke-width="16.3" stroke-linecap="round"/>
+<line x1="21" y1="-42" x2="30.7" y2="-82.7" stroke="#1B1D1F" stroke-width="17" stroke-linecap="round"/>
+<line x1="30.7" y1="-82.7" x2="41.8" y2="-110.4" stroke="#1B1D1F" stroke-width="15.8" stroke-linecap="round"/>
+<line x1="16" y1="-12" x2="31.7" y2="-51" stroke="#1B1D1F" stroke-width="21" stroke-linecap="round"/>
+<line x1="31.7" y1="-51" x2="6.1" y2="-62.3" stroke="#1B1D1F" stroke-width="18" stroke-linecap="round"/>
+<line x1="0" y1="-14" x2="0" y2="-38" stroke="#E0D5BC" stroke-width="54" stroke-linecap="round"/>
+<line x1="0" y1="0" x2="0" y2="-10" stroke="#E0D5BC" stroke-width="46" stroke-linecap="round"/>
+<line x1="-20" y1="-42" x2="-23.7" y2="-63" stroke="#E0D5BC" stroke-width="11" stroke-linecap="round"/>
+<line x1="-23.7" y1="-63" x2="-28" y2="-72.9" stroke="#E0D5BC" stroke-width="9.8" stroke-linecap="round"/>
+<line x1="-6.5" y1="-42" x2="-8.2" y2="-67.3" stroke="#E0D5BC" stroke-width="12" stroke-linecap="round"/>
+<line x1="-8.2" y1="-67.3" x2="-10.1" y2="-81.3" stroke="#E0D5BC" stroke-width="10.8" stroke-linecap="round"/>
+<line x1="7.5" y1="-42" x2="9" y2="-68.7" stroke="#E0D5BC" stroke-width="12.5" stroke-linecap="round"/>
+<line x1="9" y1="-68.7" x2="10.6" y2="-84.1" stroke="#E0D5BC" stroke-width="11.3" stroke-linecap="round"/>
+<line x1="21" y1="-42" x2="30.7" y2="-82.7" stroke="#E0D5BC" stroke-width="12" stroke-linecap="round"/>
+<line x1="30.7" y1="-82.7" x2="41.8" y2="-110.4" stroke="#E0D5BC" stroke-width="10.8" stroke-linecap="round"/>
+<line x1="16" y1="-12" x2="31.7" y2="-51" stroke="#E0D5BC" stroke-width="16" stroke-linecap="round"/>
+<line x1="31.7" y1="-51" x2="6.1" y2="-62.3" stroke="#E0D5BC" stroke-width="13" stroke-linecap="round"/>
+<ellipse cx="41.8" cy="-111.4" rx="3.6" ry="4.3" fill="#F1EADB" stroke="#1B1D1F" stroke-width="0.8" opacity="0.9" transform="rotate(21.9 41.8 -110.4)"/>
+<path d="M-26.8,-62q3.1,-3 6.2,0M-23.3,-50q3.3,-4 6.6,0M-11.5,-66.3q3.4,-3 6.7,0M-10.1,-50q3.6,-4 7.2,0M5.5,-67.7q3.5,-3 7,0M3.8,-50q3.8,-4 7.5,0M27.3,-81.7q3.4,-3 6.7,0M17.4,-50q3.6,-4 7.2,0M-12,-8q12,5 24,0 M-9,-3q9,4 18,0" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-linecap="round" opacity="0.8"/>
+<ellipse cx="41.8" cy="-110.4" rx="4.2" ry="4.8" fill="#F1EADB" stroke="#1B1D1F" stroke-width="0.8" opacity="0.9" transform="rotate(-66.2 41.8 -110.4)"/>
+</g>
+<rect x="176.4" y="303.7" width="55.2" height="27.6" rx="4" fill="#56664f" stroke="#1B1D1F" stroke-width="2"/>
+<path d="M183.8,309.2l3.7,14.7M192,309.2l3.7,14.7M200.3,309.2l3.7,14.7M208.6,309.2l3.7,14.7M216.9,309.2l3.7,14.7M225.2,309.2l3.7,14.7" stroke="#1B1D1F" stroke-width="1" opacity="0.4"/>
+<g mask="url(#card-hands-6-st5)">
+<text x="30" y="388" font-size="22" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="2.2">HANDS</text>
+</g>
+<text x="32" y="364" font-size="13" font-family="monospace" fill="#3b3a38" text-anchor="start">SIX</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="room-cold-store-t room-cold-store-d">
+<title id="room-cold-store-t">Floor Plan room stamp: Cold Store</title>
+<desc id="room-cold-store-d">Blueprint room stamp for the cold store: doubled insulated walls, a hook rail down the middle, shelving, and frost drawn into one corner.</desc>
+<defs><filter id="room-cold-store-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="208" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter><clipPath id="room-cold-store-clip2"><rect x="8" y="8" width="224" height="224"/></clipPath><filter id="room-cold-store-spk3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="495"/><feColorMatrix values="0 0 0 0 0.04  0 0 0 0 0.11  0 0 0 0 0.23  0 0 0 1 -0.4"/></filter><mask id="room-cold-store-st4" maskUnits="userSpaceOnUse" x="30" y="196" width="180" height="36"><rect x="30" y="196" width="180" height="36" fill="#fff"/><rect x="55.2" y="204" width="1.6" height="20" fill="#000"/><rect x="69.2" y="204" width="1.6" height="20" fill="#000"/><rect x="83.2" y="204" width="1.6" height="20" fill="#000"/><rect x="97.2" y="204" width="1.6" height="20" fill="#000"/><rect x="125.2" y="204" width="1.6" height="20" fill="#000"/><rect x="139.2" y="204" width="1.6" height="20" fill="#000"/><rect x="153.2" y="204" width="1.6" height="20" fill="#000"/><rect x="167.2" y="204" width="1.6" height="20" fill="#000"/><rect x="181.2" y="204" width="1.6" height="20" fill="#000"/></mask></defs>
+<g filter="url(#room-cold-store-rough1)">
+<rect x="8" y="8" width="224" height="224" rx="4" fill="#1D3F73"/>
+</g>
+<g clip-path="url(#room-cold-store-clip2)">
+<rect x="0" y="0" width="240" height="240" filter="url(#room-cold-store-spk3)"/>
+</g>
+<path d="M24,24V216M40,24V216M56,24V216M72,24V216M88,24V216M104,24V216M120,24V216M136,24V216M152,24V216M168,24V216M184,24V216M200,24V216M216,24V216M24,24H216M24,40H216M24,56H216M24,72H216M24,88H216M24,104H216M24,120H216M24,136H216M24,152H216M24,168H216M24,184H216M24,200H216M24,216H216" fill="none" stroke="#F4F7FF" stroke-width="0.4" opacity="0.2"/>
+<path d="M104.5,189.5 L80.9,190.2 L57.8,189.4 L33.4,190.2 L33.6,170.9 L33.8,150.7 L34.2,132 L34.5,112.5 L34.3,92.1 L33.7,73.6 L34.3,53.5 L33.5,34.1 L52.9,34.6 L72.4,34 L91.8,33.3 L110.5,34.6 L129.2,34.6 L148.3,33.4 L167.1,34.5 L186.6,33.6 L205.8,34 L205.3,53.1 L206.4,72.8 L206.2,93 L206.1,112.5 L206.6,131 L205.9,151.2 L205.9,170 L205.7,190.5 L182.1,190.3 L159.6,189.7 L136.6,189.9" fill="none" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<path d="M104,181.6 L83.8,180.7 L62.7,181.7 L43.4,181.7 L42.7,161.2 L43.5,141.8 L43.7,121.3 L43.7,102.6 L43.4,83.1 L43.2,62.5 L43.3,43.5 L62.4,42.6 L81.9,42.4 L100.8,42.9 L120.5,43.2 L139.3,42.6 L158.7,42.9 L177.4,42.4 L197.4,43.7 L196.7,62.8 L197.7,82.2 L197,102 L197.3,121.4 L196.8,141.3 L196.5,161.8 L197.2,181.6 L176,181.3 L155.9,180.9 L136.2,181.3" fill="none" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<path d="M104,190 v-32 a32,32 0 0 1 32,32" fill="none" stroke="#CFE0FF" stroke-width="1.5"/>
+<g mask="url(#room-cold-store-st4)">
+<text x="50" y="220" font-size="20" font-family="monospace" fill="#F4F7FF" font-weight="bold" letter-spacing="2">COLD STORE</text>
+</g>
+<path d="M64,84H176" stroke="#F4F7FF" stroke-width="3"/>
+<path d="M74,84v14a5,5 0 0 0 10,0" fill="none" stroke="#CFE0FF" stroke-width="1.8"/>
+<path d="M95,84v14a5,5 0 0 0 10,0" fill="none" stroke="#CFE0FF" stroke-width="1.8"/>
+<path d="M116,84v14a5,5 0 0 0 10,0" fill="none" stroke="#CFE0FF" stroke-width="1.8"/>
+<path d="M137,84v14a5,5 0 0 0 10,0" fill="none" stroke="#CFE0FF" stroke-width="1.8"/>
+<path d="M158,84v14a5,5 0 0 0 10,0" fill="none" stroke="#CFE0FF" stroke-width="1.8"/>
+<path d="M179,84v14a5,5 0 0 0 10,0" fill="none" stroke="#CFE0FF" stroke-width="1.8"/>
+<path d="M57.5,134.7 L78.1,133.4 L98.6,133.3 L120.5,133.9 L140.9,133.5 L161.2,133.9 L181.7,133.9 L181.9,147.8 L161.3,147.7 L140.8,148.4 L120.7,147.8 L99.4,147.9 L78.1,148.3 L58.7,147.4 L58.4,134.5Z" fill="none" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<path d="M58,155.8 L78.8,155.5 L99.5,155.4 L120,156.4 L140.4,156.2 L162,156.6 L181.5,156.2 L182.3,170.6 L161.6,170.6 L140.4,170.5 L119.9,170.5 L99.7,169.9 L78.9,170.4 L58.2,169.9 L57.8,155.3Z" fill="none" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<path d="M197,43l-3,18l-3,17M191,78l-2,4l-3,3M197,43l-6,15l-6,16M197,43l-11,16l-11,16M197,43l-22,16l-23,14M197,43l-15,8l-14,10M168,61l-2,3l-2,4M197,43l-28,2l-28,1M141,46l-5,-3l-4,-3" fill="none" stroke="#F4F7FF" stroke-width="1" stroke-linecap="round" opacity="0.9"/>
+</svg>

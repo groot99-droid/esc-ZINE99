@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 220" width="600" height="220" role="img" aria-labelledby="clip-t clip-d">
+<title id="clip-t">The clipboard clip</title>
+<desc id="clip-d">The spring clip from the top of the orderly's clipboard: pressed steel with a rolled lip, two rivets, a hanging hole, scratches, and the stencilled form number; it throws a long shadow down the page.</desc>
+<defs><filter id="clip-blur1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter><linearGradient id="clip-lg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c9cdd0"/><stop offset="45%" stop-color="#9aa0a4"/><stop offset="100%" stop-color="#6f7578"/></linearGradient><mask id="clip-st3" maskUnits="userSpaceOnUse" x="218" y="64" width="164" height="72"><rect x="218" y="64" width="164" height="72" fill="#fff"/><rect x="268.4" y="80" width="3.2" height="40" fill="#000"/><rect x="324.4" y="80" width="3.2" height="40" fill="#000"/></mask></defs>
+<polygon points="70,150 530,150 560,214 100,214" fill="#000" opacity="0.3" filter="url(#clip-blur1)"/>
+<rect x="60" y="40" width="480" height="112" rx="16" fill="url(#clip-lg2)" stroke="#1B1D1F" stroke-width="4"/>
+<rect x="60" y="132" width="480" height="24" rx="8" fill="#5c6266" stroke="#1B1D1F" stroke-width="4"/>
+<rect x="74" y="50" width="452" height="10" rx="5" fill="#fff" opacity="0.4"/>
+<rect x="235" y="20" width="130" height="56" rx="14" fill="url(#clip-lg2)" stroke="#1B1D1F" stroke-width="4"/>
+<rect x="270" y="34" width="60" height="18" rx="9" fill="#2b2e30" stroke="#1B1D1F" stroke-width="2"/>
+<circle cx="110" cy="96" r="13" fill="#7b8185" stroke="#1B1D1F" stroke-width="3"/>
+<circle cx="107" cy="93" r="4" fill="#e3e6e8"/>
+<circle cx="490" cy="96" r="13" fill="#7b8185" stroke="#1B1D1F" stroke-width="3"/>
+<circle cx="487" cy="93" r="4" fill="#e3e6e8"/>
+<g mask="url(#clip-st3)">
+<text x="258" y="112" font-size="40" font-family="monospace" fill="#3c4144" font-weight="bold" letter-spacing="4">7-F</text>
+</g>
+<path d="M145.9,82.1l17,-2M372.5,77.2l22.7,2.6M142.7,124.3l45.4,-4.4M299,94.6l26.6,2M379.2,94.3l41.4,1.8M489.6,69.7l40.9,-3.9M167.5,85.8l43.4,3.4M429.5,84.5l15.1,5M452.3,68.1l35.3,3M140.9,122.6l21.7,-3.3M177.5,74.8l25.3,2.8M254.5,93.4l25.3,-3.9M331.4,124.1l40.2,2.5M342.5,100.9l39.1,-0.3M159.6,75l26.8,1.6M278.4,104l27,-1.3" stroke="#e3e6e8" stroke-width="1" opacity="0.6"/>
+<path d="M540,152l-23,-5l-23,-3l-24,-4M494,144l-6,4l-5,5M494,144l-5,-5l-4,-5M540,152l-20,-13l-21,-13M540,152l-21,-12l-20,-13M499,127l-4,0l-4,0M499,127l-2,-6l-2,-5M540,152l-19,-23l-16,-23M505,106l-8,-2l-7,-2M540,152l-15,-20l-16,-20l-17,-19M509,112l-11,-1l-11,0M540,152l-5,-20l-2,-20l0,-21M533,112l4,-5l3,-4M533,91l-2,-3l-2,-4" fill="none" stroke="#EEF1F2" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+</svg>

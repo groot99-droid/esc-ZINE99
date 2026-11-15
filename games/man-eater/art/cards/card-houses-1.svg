@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="card-houses-1-t card-houses-1-d">
+<title id="card-houses-1-t">Short Rations: 1 of Houses</title>
+<desc id="card-houses-1-d">Ration-issue card, the 1 of Houses (Duarte's suit): worn card stock, the rank in army stencil at two corners, 1 of eight issue holes punched, and drawn by hand in the middle a hillside of 1 houses, one window lit.</desc>
+<defs><clipPath id="card-houses-1-clip1"><rect x="4" y="4" width="292" height="412" rx="16"/></clipPath><filter id="card-houses-1-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.7 -0.3"/></filter><mask id="card-houses-1-st3" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/></mask><mask id="card-houses-1-st4" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/></mask><clipPath id="card-houses-1-clip5"><rect x="40" y="296" width="222" height="40"/></clipPath><mask id="card-houses-1-st6" maskUnits="userSpaceOnUse" x="8" y="361.6" width="136.4" height="39.6"><rect x="8" y="361.6" width="136.4" height="39.6" fill="#fff"/><rect x="35.7" y="370.4" width="1.8" height="22" fill="#000"/><rect x="51.1" y="370.4" width="1.8" height="22" fill="#000"/><rect x="66.5" y="370.4" width="1.8" height="22" fill="#000"/><rect x="81.9" y="370.4" width="1.8" height="22" fill="#000"/><rect x="97.3" y="370.4" width="1.8" height="22" fill="#000"/><rect x="112.7" y="370.4" width="1.8" height="22" fill="#000"/></mask></defs>
+<rect x="4" y="4" width="292" height="412" rx="16" fill="#DDD4BD" stroke="#6f6750" stroke-width="2"/>
+<g clip-path="url(#card-houses-1-clip1)">
+<rect x="0" y="0" width="300" height="420" filter="url(#card-houses-1-spk2)"/>
+</g>
+<g clip-path="url(#card-houses-1-clip1)">
+<ellipse cx="263.4" cy="267.2" rx="28.6" ry="2.9" fill="#b3a786" opacity="0.3" transform="rotate(14.3 263.4 267.2)"/>
+<ellipse cx="286" cy="50" rx="29.7" ry="3.2" fill="#b3a786" opacity="0.3" transform="rotate(22 286 50)"/>
+<ellipse cx="250.7" cy="221.1" rx="24.1" ry="3.4" fill="#b3a786" opacity="0.3" transform="rotate(-11.2 250.7 221.1)"/>
+<ellipse cx="184.9" cy="187.8" rx="29.2" ry="3.7" fill="#b3a786" opacity="0.3" transform="rotate(4.5 184.9 187.8)"/>
+<line x1="262.3" y1="416" x2="296" y2="382.3" stroke="#9b9072" stroke-width="1.5"/>
+<polygon points="262.3,416 296,416 296,382.3" fill="#000" opacity="0.1"/>
+</g>
+<rect x="16" y="16" width="268" height="388" rx="9" fill="none" stroke="#1B1D1F" stroke-width="2.4" stroke-dasharray="20 5"/>
+<g mask="url(#card-houses-1-st3)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">1</text>
+</g>
+<path d="M37.7,112.8 L37.5,107.2 L37.9,101.4 L40.7,97.6 L43.8,94.4 L46.6,90.6 L50.2,94.1 L53.3,97.8 L56.1,101.6 L56.3,107 L55.8,112.8 L51.8,113.4 L47.4,113.1 L42.4,113 L38,112.7Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M35.2,103.8 L38.2,99.9 L40.8,97 L43.9,93.4 L46.7,90.2 L49.9,94 L52.7,97.2 L55.7,100.5 L58.7,103.4" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M45.2,113.4 L45.3,106.2 L49.6,106.3 L49.3,113.5" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<g transform="rotate(180 150.0 210.0)">
+<g mask="url(#card-houses-1-st4)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">1</text>
+</g>
+<path d="M38.3,113.2 L37.5,106.9 L37.9,101.6 L41.4,98.3 L44.4,94.8 L47.4,90.9 L50.2,94.2 L52.7,97.5 L56.4,101.4 L56.2,107.4 L56.1,113.3 L51.6,112.6 L46.8,112.8 L42.8,113.3 L38.1,112.6Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M35,103.6 L38.4,100.7 L40.9,96.6 L44.2,93.7 L47.4,90.6 L49.6,93.9 L53,96.7 L56.4,99.8 L58.6,104" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M45.5,113.2 L44.7,105.8 L49.5,105.8 L49.6,113.3" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</g>
+<circle cx="110" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="108.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="132" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="154" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="176" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="198" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="220" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="242" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="264" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<text x="108" y="72" font-size="13" font-family="monospace" fill="#1B1D1F" text-anchor="start">ISSUE 1/8</text>
+<rect x="131.1" y="260.6" width="37.8" height="24.3" fill="#DDD4BD"/>
+<path d="M130.5,284.9 L130.4,277.5 L130.9,269.5 L132,261.2 L138.1,252.6 L143.4,245.4 L150.7,239.2 L156,247.1 L163.3,254.1 L168.2,260.7 L168.9,269.1 L169.7,277.5 L169,284.3 L159,285 L150.9,284.8 L140,284.7 L131.7,284.5Z" stroke="#1B1D1F" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M125.9,265.4 L132.1,258.9 L138.2,250.6 L144.5,244.2 L149.8,237 L155.7,244 L162.2,250.8 L168,258.4 L175.6,265.8" stroke="#1B1D1F" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M145.1,284.3 L146.1,269.9 L155.9,271 L154.9,285.3" stroke="#1B1D1F" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<rect x="158.1" y="236.3" width="5.9" height="13.5" fill="#1B1D1F"/>
+<rect x="136" y="267.4" width="8.1" height="8.1" fill="#D9A441" stroke="#1B1D1F" stroke-width="1.5"/>
+<path d="M161.2,236.4 L164.2,221.7 L158.8,210.9 L165.7,197.3" stroke="#3b3a38" stroke-width="1.6" opacity="0.7" fill="none"/>
+<path d="M39.4,299.4 L52.9,295.8 L66.2,290 L77,285.7 L91.4,280.9 L101.1,283.7 L115.2,286.1 L127.3,287.2 L137.4,288.7 L151.2,290.9 L160.5,287.5 L175.2,281.6 L187,278.5 L197.3,274 L208.8,270.2 L223,272.3 L235.2,278.4 L250.4,281.3 L261.5,282.6" stroke="#1B1D1F" stroke-width="2.4" fill="none"/>
+<g clip-path="url(#card-houses-1-clip5)">
+<path d="M0.3,239.9 L228.2,165.9 M2.3,246 L230.2,172 M3.8,250.6 L231.6,176.5 M6.6,259.3 L234.5,185.3 M8.6,265.4 L236.5,191.4 M11.5,274.2 L239.3,200.1 M13.4,280.3 L241.3,206.2 M15.1,285.2 L242.9,211.2 M17.9,293.9 L245.7,219.9 M19.5,299 L247.4,224.9 M21.5,305.2 L249.4,231.1 M23.8,312 L251.6,238 M25.9,318.8 L253.8,244.7 M27.7,324.1 L255.5,250.1 M30.7,333.3 L258.5,259.3 M33,340.6 L260.9,266.6 M34.3,344.3 L262.1,270.3 M36.7,351.8 L264.5,277.8 M39,359 L266.9,285 M41.3,365.9 L269.1,291.9 M43.4,372.5 L271.3,298.5 M45.8,379.8 L273.6,305.8 M47.8,386 L275.6,311.9 M50.2,393.4 L278,319.3 M51.5,397.5 L279.4,323.5 M54.3,405.9 L282.1,331.9 M56,411.2 L283.8,337.2 M58.7,419.5 L286.5,345.5 M60.4,424.9 L288.3,350.9 M63,432.9 L290.9,358.9 M64.6,437.8 L292.5,363.8 M66.5,443.7 L294.4,369.6 M69.4,452.4 L297.2,378.4 M71.5,459 L299.3,384.9 M74.2,467.1 L302,393.1" fill="none" stroke="#5E7363" stroke-width="1.6" opacity="0.8"/>
+</g>
+<g mask="url(#card-houses-1-st6)">
+<text x="30" y="388" font-size="22" font-family="monospace" fill="#5E7363" font-weight="bold" letter-spacing="2.2">HOUSES</text>
+</g>
+<text x="32" y="364" font-size="13" font-family="monospace" fill="#3b3a38" text-anchor="start">ONE</text>
+</svg>

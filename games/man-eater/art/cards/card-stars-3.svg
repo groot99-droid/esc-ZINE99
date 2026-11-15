@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="card-stars-3-t card-stars-3-d">
+<title id="card-stars-3-t">Short Rations: 3 of Stars</title>
+<desc id="card-stars-3-d">Ration-issue card, the 3 of Stars (Hollis's suit): worn card stock, the rank in army stencil at two corners, 3 of eight issue holes punched, and drawn by hand in the middle 3 stars over the wire, joined in pencil.</desc>
+<defs><clipPath id="card-stars-3-clip1"><rect x="4" y="4" width="292" height="412" rx="16"/></clipPath><filter id="card-stars-3-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="700"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.7 -0.3"/></filter><mask id="card-stars-3-st3" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><mask id="card-stars-3-st4" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><mask id="card-stars-3-st5" maskUnits="userSpaceOnUse" x="8" y="361.6" width="121" height="39.6"><rect x="8" y="361.6" width="121" height="39.6" fill="#fff"/><rect x="35.7" y="370.4" width="1.8" height="22" fill="#000"/><rect x="51.1" y="370.4" width="1.8" height="22" fill="#000"/><rect x="66.5" y="370.4" width="1.8" height="22" fill="#000"/><rect x="81.9" y="370.4" width="1.8" height="22" fill="#000"/><rect x="97.3" y="370.4" width="1.8" height="22" fill="#000"/></mask></defs>
+<rect x="4" y="4" width="292" height="412" rx="16" fill="#DDD4BD" stroke="#6f6750" stroke-width="2"/>
+<g clip-path="url(#card-stars-3-clip1)">
+<rect x="0" y="0" width="300" height="420" filter="url(#card-stars-3-spk2)"/>
+</g>
+<g clip-path="url(#card-stars-3-clip1)">
+<ellipse cx="75" cy="172.4" rx="6.2" ry="4" fill="#b3a786" opacity="0.3" transform="rotate(-28.8 75 172.4)"/>
+<ellipse cx="272.7" cy="287.7" rx="23.5" ry="4.1" fill="#b3a786" opacity="0.3" transform="rotate(-36.6 272.7 287.7)"/>
+<ellipse cx="256.3" cy="310.7" rx="10.5" ry="4.7" fill="#b3a786" opacity="0.3" transform="rotate(38.1 256.3 310.7)"/>
+<ellipse cx="136.5" cy="100" rx="7" ry="2" fill="#b3a786" opacity="0.3" transform="rotate(16.8 136.5 100)"/>
+<ellipse cx="156.4" cy="51.5" rx="28" ry="4.8" fill="#b3a786" opacity="0.3" transform="rotate(34.2 156.4 51.5)"/>
+<line x1="37" y1="416" x2="4" y2="383" stroke="#9b9072" stroke-width="1.5"/>
+<polygon points="37,416 4,416 4,383" fill="#000" opacity="0.1"/>
+</g>
+<rect x="16" y="16" width="268" height="388" rx="9" fill="none" stroke="#1B1D1F" stroke-width="2.4" stroke-dasharray="20 5"/>
+<g mask="url(#card-stars-3-st3)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">3</text>
+</g>
+<path d="M47.3,88.8 L47.9,92.9 L49.6,96.5 L50.5,101 L52.2,105.1 L53,108.2 L54.5,112.7 L50.9,110.1 L48.1,107.4 L44.2,105 L41.4,102.8 L37.7,100.1 L34.4,97.7 L39,97.7 L43.2,97.8 L46.9,97.7 L51.3,98 L55.3,97.8 L59.5,97.8 L56.1,100.5 L53.1,103 L49.1,105.1 L45.6,107.7 L43.1,110.3 L39.5,112.5 L40.5,108.2 L42.1,104.6 L42.9,100.5 L44.8,97 L45.3,93.3 L47,89.1Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<g transform="rotate(180 150.0 210.0)">
+<g mask="url(#card-stars-3-st4)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">3</text>
+</g>
+<path d="M47.3,89.4 L48.2,93.3 L50,96.8 L50.7,100.8 L51.7,105.1 L53.1,108.7 L54.6,112.9 L51.3,110.4 L48.4,107.6 L44.2,105 L41.4,103 L37.8,100.4 L34.9,98 L38.9,98.2 L43.3,97.6 L47,98.4 L50.8,98.1 L55.7,98.4 L58.9,98.1 L56.4,100.8 L52.9,103.2 L49.5,104.8 L45.6,107.3 L42.6,110.3 L39.2,112.2 L41,108.4 L42.1,104.8 L43.3,100.9 L44.1,96.9 L45.4,92.7 L47.2,88.9Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</g>
+<circle cx="110" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="108.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="132" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="130.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="154" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="152.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="176" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="198" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="220" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="242" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="264" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<text x="108" y="72" font-size="13" font-family="monospace" fill="#1B1D1F" text-anchor="start">ISSUE 3/8</text>
+<path d="M150.5,133.3 L137.1,140.6 L124.9,145.9 L111.4,153.6 L99.3,159.2 L86.6,166.1 L101.9,167.4 L116.5,169.2 L132.6,170.4 L148.5,171.6 L163.8,172.1 L178.2,174.2 L193.9,175.8 L209.4,176.4" stroke="#3b3a38" stroke-width="1.2" opacity="0.6" stroke-dasharray="4 4" fill="none"/>
+<g transform="rotate(0.5 150 133.6)">
+<circle cx="150" cy="133.6" r="7.5" fill="#DDD4BD"/>
+<path d="M150.3,118.4 L151.4,122.7 L152.5,127.9 L154.2,131.9 L155.6,136.9 L157.8,141.4 L158.6,145.3 L155.4,143 L151.6,140.5 L146.8,136.9 L143,134.5 L139.7,131.3 L135.6,128.8 L140.1,128.4 L145,128.9 L150.2,128.8 L155,129.3 L159.5,129.2 L164.1,129.2 L160.5,131.9 L156.5,134.6 L152.6,137.4 L149.1,139.6 L145.3,143.3 L141.2,145.5 L142.2,140.8 L144,136.8 L145.1,132.3 L147,127.2 L148.8,123.1 L150.5,118.7Z" stroke="#5A4F5E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</g>
+<g transform="rotate(-11.2 86.4 166)">
+<circle cx="86.4" cy="166" r="9.5" fill="#DDD4BD"/>
+<path d="M86.2,146.7 L88.2,152.4 L90.1,158.6 L91.9,164.8 L93.8,169.8 L95.6,175.9 L98.1,181.7 L92.5,177.5 L88.2,174.6 L82.4,171.2 L77.9,166.9 L73.4,163.5 L68.8,160.1 L73.8,160.4 L79.8,160.1 L86,160.4 L92.3,159.6 L98,160.3 L104.9,160.2 L99.6,164.2 L95.1,167.6 L89.8,171.1 L84.4,173.9 L80.6,177.2 L75.5,181.9 L76.8,175.8 L79.3,169.4 L80.7,164 L82.1,158.9 L84.6,152.2 L86.2,146.4Z" stroke="#5A4F5E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</g>
+<g transform="rotate(1.4 209.4 176.8)">
+<circle cx="209.4" cy="176.8" r="11.5" fill="#DDD4BD"/>
+<path d="M210,153.1 L212.3,160.8 L214.4,167.5 L216.9,174.6 L218.5,182.3 L221,188.7 L222.9,194.9 L217.7,191 L211.3,186.7 L205.7,182.8 L198.8,178 L193.2,174 L188.3,169.1 L194.7,169.3 L201.4,169 L208.7,170.1 L217.2,170.4 L223.2,169 L231.7,169.2 L226,174.5 L219.3,178.1 L214.2,182.3 L207.9,186.3 L202.4,191.3 L195.8,195 L197.3,188.3 L200.6,181.3 L202.6,174.9 L204.9,168.3 L206.5,160.2 L209,154.6Z" stroke="#5A4F5E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</g>
+<path d="M37.5,322.8 L54.3,321.9 L70.3,322.2 L85.3,320.6 L101.7,321.5 L117.7,320.3 L133.9,319.7 L149.5,320.7 L166,319.4 L182.4,319.3 L198.5,318.6 L213.9,318.3 L230.4,319.1 L246.5,318.1 L262.2,317.8" stroke="#1B1D1F" stroke-width="1.6" fill="none"/>
+<path d="M38.4,334.1 L54.5,334 L69.8,334.1 L86.4,332.6 L102,332.7 L118.1,332 L134,332.5 L149.4,332.5 L165.7,331.2 L181.7,331.5 L197.4,331.6 L214,331.1 L230.2,329.9 L245.3,329.8 L262.4,329.4" stroke="#1B1D1F" stroke-width="1.6" fill="none"/>
+<path d="M46.5,344.1 L46.5,330.9 L46.5,318.1 L46.4,305.7" stroke="#1B1D1F" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+<line x1="47" y1="306" x2="55" y2="300" stroke="#1B1D1F" stroke-width="2.4"/>
+<path d="M87.7,343.9 L88.1,330.8 L89.2,318.8 L88.5,305.7" stroke="#1B1D1F" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+<line x1="89" y1="306" x2="97" y2="300" stroke="#1B1D1F" stroke-width="2.4"/>
+<path d="M130.3,344.4 L129.8,331.1 L130.1,318.1 L131.4,306.5" stroke="#1B1D1F" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+<line x1="131" y1="306" x2="139" y2="300" stroke="#1B1D1F" stroke-width="2.4"/>
+<path d="M172.4,343.9 L172.6,331.9 L173,318.5 L172.9,306.1" stroke="#1B1D1F" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+<line x1="173" y1="306" x2="181" y2="300" stroke="#1B1D1F" stroke-width="2.4"/>
+<path d="M213.7,344.1 L214.8,331.7 L214.3,318.3 L215.6,306.2" stroke="#1B1D1F" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+<line x1="215" y1="306" x2="223" y2="300" stroke="#1B1D1F" stroke-width="2.4"/>
+<path d="M255.5,344.4 L256.9,331.4 L257.2,318.8 L257,305.8" stroke="#1B1D1F" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+<line x1="257" y1="306" x2="265" y2="300" stroke="#1B1D1F" stroke-width="2.4"/>
+<g mask="url(#card-stars-3-st5)">
+<text x="30" y="388" font-size="22" font-family="monospace" fill="#5A4F5E" font-weight="bold" letter-spacing="2.2">STARS</text>
+</g>
+<text x="32" y="364" font-size="13" font-family="monospace" fill="#3b3a38" text-anchor="start">THREE</text>
+</svg>

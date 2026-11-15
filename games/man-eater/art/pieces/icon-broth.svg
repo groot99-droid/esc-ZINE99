@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="icon-broth-t icon-broth-d">
+<title id="icon-broth-t">Tray icon: the cup of broth</title>
+<desc id="icon-broth-d">Isotype icon of the cup of broth: a steel mug in profile, three flat curls of steam above it.</desc>
+<defs><clipPath id="icon-broth-clip1"><rect x="3" y="3" width="194" height="194" rx="6"/></clipPath><filter id="icon-broth-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="690"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.6 -0.2"/></filter></defs>
+<rect x="3" y="3" width="194" height="194" rx="6" fill="#EFE9DC" stroke="#1B1D1F" stroke-width="2"/>
+<line x1="14" y1="160" x2="186" y2="160" stroke="#1B1D1F" stroke-width="2"/>
+<text x="16" y="182" font-size="15" font-family="sans-serif" fill="#1B1D1F" font-weight="bold" letter-spacing="2">BROTH</text>
+<g transform="translate(4,3)" opacity="0.6">
+<rect x="52" y="74" width="80" height="68" rx="8" fill="#7C8C99"/>
+<path d="M132,88 q30,2 30,22 q0,20 -30,22" fill="none" stroke="#7C8C99" stroke-width="10"/>
+</g>
+<rect x="52" y="74" width="80" height="68" rx="8" fill="#8A8F93"/>
+<path d="M132,88 q30,2 30,22 q0,20 -30,22" fill="none" stroke="#8A8F93" stroke-width="10"/>
+<rect x="52" y="74" width="80" height="16" rx="6" fill="#D9A441"/>
+<path d="M70,64 q-10,-10 0,-20 q10,-10 0,-20" fill="none" stroke="#1B1D1F" stroke-width="4" stroke-linecap="round"/>
+<path d="M92,64 q-10,-10 0,-20 q10,-10 0,-20" fill="none" stroke="#1B1D1F" stroke-width="4" stroke-linecap="round"/>
+<path d="M114,64 q-10,-10 0,-20 q10,-10 0,-20" fill="none" stroke="#1B1D1F" stroke-width="4" stroke-linecap="round"/>
+<g clip-path="url(#icon-broth-clip1)">
+<rect x="0" y="0" width="200" height="200" filter="url(#icon-broth-spk2)"/>
+</g>
+</svg>
