@@ -270,6 +270,43 @@ def yard3(a: Art):
     _plate_finish(a, 3, 47, "N3  0247H  YARD  1:600")
 
 
+GW, GH, GM = 1280, 880, 20   # the Snow line mode's night-3 yard: 64 m by 44 m at 20 px a metre
+GROUND_BLOCKS = ((2, 40, 20, 4), (26, 25, 10, 6), (6, 15, 8, 6), (48, 2, 12, 6), (44, 33, 8, 5))
+
+
+@asset(G, "yard-ground-night-3", group="backdrops", title="Snow line ground, night 3: the yard as the mode plays it",
+       w=GW, h=GH, row=ROW_Y)
+def ground3(a: Art):
+    """The night-3 yard as one unframed aerial print at the scale the Snow line mode plays on: the barracks,
+    mess, store, latrine and kennel shed as roofs with long shadows, the empty dog run beside the shed, a
+    drift, old vehicle ruts along the service road, the tree line and the wire along the top edge."""
+    a.rect(0, 0, GW, GH, fill=a.gradient([(0, "#e3e7e9"), (1, "#c9cfd2")], 0, 0, 1, 1))
+    for i in range(16):
+        y = a.rng.uniform(0, GH)
+        pts = [(k * 100, y + 18 * math.sin(k * 0.7 + i) + a.rng.uniform(-8, 8)) for k in range(14)]
+        a.path(a.smooth_d(pts), fill="none", stroke="#b4bcc1", stroke_width=a.rng.uniform(6, 20), opacity=0.33)
+    for o in (-14, 14):
+        a.path(a.smooth_d([(0, 460 + o), (380, 440 + o), (780, 480 + o), (GW, 420 + o)]), fill="none", stroke="#8f9aa1",
+               stroke_width=4, opacity=0.5)
+    a.ellipse(40 * GM, 15 * GM, 8 * GM, 4.5 * GM, fill="#aab3b9", opacity=0.55, filter=a.blur(12))
+    a.ellipse(40 * GM - 16, 15 * GM - 12, 6.6 * GM, 3 * GM, fill="#f3f6f7", opacity=0.7, filter=a.blur(9))
+    a.open("g", filter=a.roughen(9, 0.07), fill="#2e3439")
+    for _ in range(46):
+        cx, r = a.rng.uniform(0, GW * 0.72), a.rng.uniform(8, 18)
+        a.circle(cx, a.rng.uniform(-4, 14), r, opacity=0.85)
+        a.circle(cx + r * 0.9, 14 + r * 0.5, r * 0.7, opacity=0.2)
+    a.close()
+    a.rect(40 * GM, 3 * GM, 7 * GM, 8 * GM, fill="#dfe4e6", opacity=0.5, stroke="#4a545b", stroke_width=2,
+           stroke_dasharray="4 6")
+    for bx, by, bw, bh in GROUND_BLOCKS:
+        _roof(a, bx * GM, by * GM, bw * GM, bh * GM, sh=18)
+    a.path("M0,20 L" + " L".join(f"{k * 64},{20 - k * 0.4:.1f}" for k in range(1, 21)), fill="none", stroke="#2c3338",
+           stroke_width=2)
+    a.path("".join(f"M{k * 60 - 3},{20 - k * 0.375:.1f}a3,3 0 1,0 6,0a3,3 0 1,0 -6,0" for k in range(22)), fill="#2c3338")
+    kit.film(a, 0, 0, GW, GH, 0.5, 1.5)
+    a.rect(0, 0, GW, GH, fill=a.radial([(0.6, "#000", 0), (1, "#000", 0.3)], r=0.72))
+
+
 @asset(G, "yard-plate-night-5", group="backdrops", title="Snow line plate, night 5: the bare prints to the adit", w=1600,
        h=900, row=ROW_Y)
 def yard5(a: Art):

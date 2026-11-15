@@ -8,6 +8,17 @@
 // ask the orderly (twice in four mornings: Fisk's pencil then hovers over a telling cell, the
 // design's tier-1 hint). Phases: three mornings on one sheet; on day 5 the printed target sheet
 // slides under the first. Beats: the orderly's lines, and one line a morning in Fisk's hand.
+//
+// Phase 1 of the accepted development (DESIGN.md "Accepted development (2026-11-15)"):
+//   Carbon (night 4, between the day-4 and day-5 mornings): Sam's cabinet is unlocked. The player may
+//   shut it, or open Fisk's folder, turn to the Schedule and find tonight's line and tomorrow's.
+//   The Schedule (a second sheet under the Chart): the torn strips are laid against the list entries
+//   they issued, and on day 7 the player rules on a line that was typed before he chose.
+// The 22:00 box on every strip is shown as the art draws it, empty; the page says nothing about it
+// (its treatment waits for the cultural consultant, DESIGN.md section 20).
+// Art (api.art): the clip, punch holes, frost corners, the stamps, Form 7-F, the target sheet, the
+// Schedule and its strips, the chapter cards as day breaks, the night-4 clock card.
+import { artKit } from "./kit.js";
 
 const P = { ink: "#1B1D1F", paper: "#f3efe3", grid: "#9fbfa6", red: "#9b2f22", steel: "#8A8F93", desk: "#3a2c22", sodium: "#D9A441", bruise: "#5A4F5E" };
 const PIECES_BY_DAY = [3, 5, 6, 6];
@@ -47,6 +58,28 @@ const DAYS = [
     margin: "There is a second sheet under mine." },
 ];
 const ASKS = 2;
+// The Schedule's typed lines (games/man-eater/data/schedule.json; the art's strips carry the same text).
+const SCHED = {
+  1: { time: "06:00", lines: ["Intake. Rules read."], resp: "“Sir yes Sir.”" },
+  2: { time: "14:00", lines: ["False statement issued (transfer).", "Companion (uninformed)."], resp: "curiosity. Retained." },
+  3: { time: "19:00", lines: ["Card table.", "Loss to witness."], resp: "" },
+  4: { time: "23:00", lines: ["Cabinet left unlocked.", "Officers' wing left unwatched."], resp: "" },
+  5: { time: "08:00", lines: ["On schedule."], resp: "" },
+  7: { time: "22:00", lines: ["STAY: retained.", "FOLLOW: see previous.", "FENCE: photographed, not followed."], resp: "" },
+};
+const schedText = (d) => `DAY ${d} · ${SCHED[d].time} · ${SCHED[d].lines.join(" ")}${SCHED[d].resp ? ` Response: ${SCHED[d].resp}` : ""}`;
+// the entries the strips are laid against (ids from data/list_incidents.json; L15 from data/schedule.json)
+const ISSUED = [
+  { id: "L8", text: "“transferred”", why: "Paperwork, he'll write", strip: 2, hint: "Day 2, two in the afternoon. Who told the bunk something then, and got the hour wrong?" },
+  { id: "L10", text: "Chairs empty; nobody mentions it", why: "Rotation", strip: 3, hint: "Day 3, seven in the evening. Where are you at seven, and what did you see there?" },
+  { id: "L15", text: "My file has tomorrow in it. Typed.", why: "", strip: 4, hint: "Day 4, eleven at night. The carbon is blue. Which entry did you write that night?" },
+  { id: "L9", text: "Height measured every day", why: "Routine", strip: 5, hint: "Day 5, eight in the morning. Two words. Who said them, over which page?" },
+];
+const WAYS = [
+  { id: "stay", label: "Stay in the room", typed: "STAY: retained.", stamp: "stamp-retained", stampText: "RETAINED" },
+  { id: "follow", label: "Follow the call", typed: "FOLLOW: see previous.", stamp: "stamp-see-previous", stampText: "SEE PREVIOUS" },
+  { id: "fence", label: "Go over the fence", typed: "FENCE: photographed, not followed.", stamp: "", stampText: "PHOTOGRAPHED" },
+];
 
 export default {
   mount(root, api) {
@@ -117,9 +150,66 @@ export default {
       .${K}fields dt,.${K}fields dd{margin:0;padding:6px 8px;border-bottom:1px solid ${P.grid}}
       .${K}fields dt{font-weight:700;border-right:1px solid ${P.grid};letter-spacing:.06em;white-space:nowrap}
       .${K}scroll{overflow-x:auto}
-      @media (max-width:760px){.${K}main{grid-template-columns:minmax(0,1fr)}.${K}board{padding:30px 10px 14px;width:calc(100% - 12px);margin:14px auto}}
+      .${K}board{padding-left:40px}
+      .${K}clipart{position:absolute;left:50%;top:-30px;transform:translateX(-50%);width:176px;height:auto;z-index:2;pointer-events:none}
+      .${K}holes{position:absolute;left:2px;top:46px;width:30px;height:auto;pointer-events:none;mix-blend-mode:multiply}
+      .${K}frost{position:absolute;right:0;bottom:0;width:min(30%,200px);height:auto;transform:rotate(180deg);pointer-events:none;opacity:.85}
+      .${K}under{background-size:cover;background-position:top right}
+      .${K}stampimg{height:46px;width:auto;vertical-align:middle;transform:rotate(-4deg);margin-right:6px}
+      .${K}stampimg.in{animation:${K}stampin .45s ease-out}
+      .${K}ord{height:56px;width:auto;flex:none;margin:-6px 0}
+      .${K}brk{position:absolute;inset:0;z-index:6;display:grid;place-items:center;align-content:center;gap:14px;background:rgba(27,29,31,.92);padding:16px}
+      .${K}brk img{display:block;max-width:min(100%,820px);max-height:calc(100% - 90px);width:auto;height:auto;box-shadow:0 18px 40px rgba(0,0,0,.6)}
+      .${K}brk button,.${K}night button{font:inherit;min-height:44px;padding:8px 14px;cursor:pointer;border:1.5px solid ${P.paper};background:${P.ink};color:${P.paper};letter-spacing:.06em;font-size:15px}
+      .${K}brk button:hover,.${K}night button:hover{background:#34373a}
+      .${K}brk button:focus-visible,.${K}night button:focus-visible,.${K}sch button:focus-visible,.${K}last button:focus-visible{outline:3px solid ${P.sodium};outline-offset:2px}
+      .${K}night{position:absolute;inset:0;z-index:6;overflow:auto;background:#1B1D1F center/cover no-repeat;color:#D9D2BF;padding:16px;box-sizing:border-box}
+      .${K}desk{max-width:860px;margin:0 auto;display:grid;gap:12px}
+      .${K}desk h3{margin:0;font-family:'Stardos Stencil','Courier Prime',monospace;font-size:clamp(20px,5vw,28px);letter-spacing:.1em;line-height:1.1}
+      .${K}desk .dv{display:block;width:min(100%,420px);height:auto;filter:invert(1);opacity:.7}
+      .${K}desk p{margin:0;font-size:15px;line-height:1.45;max-width:64ch}
+      .${K}things{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+      .${K}things button{padding:6px;display:grid;gap:6px;justify-items:center;text-align:center;min-width:0}
+      .${K}things img{display:block;width:100%;max-width:150px;height:auto;aspect-ratio:1;object-fit:cover;object-position:top}
+      .${K}things small{display:block;opacity:.8;font-size:12px;letter-spacing:0}
+      .${K}folder{background:#2a2420;border:1.5px solid rgba(217,210,191,.5);padding:10px;display:grid;gap:8px;justify-items:center}
+      .${K}tabs{display:flex;flex-wrap:wrap;gap:6px;justify-self:stretch}
+      .${K}tabs button[aria-pressed=true]{background:${P.paper};color:${P.ink}}
+      .${K}pg{position:relative;width:min(100%,460px);aspect-ratio:800/1100;background:#EEE9DA}
+      .${K}pg>img{display:block;width:100%;height:100%}
+      .${K}hit{position:absolute;left:11%;width:82%;background:transparent;border:2px dashed transparent;padding:0;min-height:0;cursor:pointer;box-sizing:border-box}
+      .${K}night .${K}hit{border:2px dashed transparent;background:transparent;min-height:0;padding:0}
+      .${K}night .${K}hit:hover,.${K}night .${K}hit:focus-visible{border-color:${P.sodium};background:rgba(217,164,65,.14)}
+      .${K}night .${K}hit.found{border:2.5px solid ${P.red};background:rgba(155,47,34,.1)}
+      .${K}mask{position:absolute;left:11%;width:82%;top:70%;height:27%;background:#EEE9DA;background-image:repeating-linear-gradient(0deg,transparent 0 23px,rgba(27,29,31,.12) 23px 24px);color:#6b6558;font-size:12px;display:grid;place-items:center;letter-spacing:.1em;pointer-events:none}
+      .${K}nsay{min-height:3em;border-left:2px solid ${P.sodium};padding-left:10px}
+      .${K}nacts{display:flex;flex-wrap:wrap;gap:8px}
+      .${K}nacts .take{background:${P.sodium};color:${P.ink};border-color:${P.sodium};font-weight:700}
+      .${K}sch h4,.${K}last h4{margin:0 0 6px;letter-spacing:.14em;font-size:13px}
+      .${K}sch .dv,.${K}last .dv{display:block;width:min(100%,520px);height:auto;margin:4px 0 8px}
+      .${K}schgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px;align-items:start}
+      .${K}strip{display:block;width:100%;box-sizing:border-box;background:none;border:2px solid transparent;padding:2px;cursor:pointer;text-align:left;font:inherit;color:inherit;margin:0 0 4px}
+      .${K}strip img{display:block;width:100%;height:auto;aspect-ratio:800/260}
+      .${K}strip span{display:block;font-size:13px;line-height:1.35;padding:0 8px 4px}
+      .${K}strip:hover{background:rgba(217,164,65,.14)}
+      .${K}strip[aria-pressed=true]{border-color:${P.red};background:rgba(155,47,34,.08)}
+      .${K}strip.laid{cursor:default;opacity:.9}
+      .${K}ents{display:grid;gap:8px;font-family:'Special Elite','Courier Prime',monospace}
+      .${K}ent{font:inherit;text-align:left;min-height:44px;padding:8px 10px;border:1.5px dashed ${P.ink};background:#fffdf6;cursor:pointer;line-height:1.35;font-size:15px;color:inherit}
+      .${K}ent:hover:not([disabled]){background:#f1e6c8}
+      .${K}ent[disabled]{cursor:default;border-style:solid;border-color:${P.red};background:rgba(155,47,34,.06);color:inherit;opacity:1}
+      .${K}ent em{display:block;font-style:normal;color:${P.red};font-size:13px;font-family:'Courier Prime',monospace}
+      .${K}typed{border:1.5px solid ${P.ink};background:#f6f3ea;padding:10px 12px;font-size:15px;line-height:1.6;white-space:pre-wrap;max-width:560px}
+      .${K}ways{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+      .${K}ways button{font:inherit;min-height:44px;padding:8px 14px;cursor:pointer;border:1.5px solid ${P.ink};background:#fffdf6;font-size:15px;box-shadow:2px 2px 0 rgba(27,29,31,.35);color:inherit}
+      .${K}ways button.pencil{font-family:'Special Elite','Courier Prime',monospace;border-style:dashed;color:${P.bruise}}
+      .${K}ways button[disabled]{opacity:.45;cursor:default}
+      .${K}ways button[aria-pressed=true]{opacity:1;background:${P.ink};color:${P.paper}}
+      .${K}lastimg{display:block;width:min(100%,560px);height:auto;aspect-ratio:800/260}
+      .${K}board [hidden]{display:none!important}
+      @media (max-width:760px){.${K}main,.${K}schgrid{grid-template-columns:minmax(0,1fr)}.${K}board{padding:30px 10px 14px;width:calc(100% - 12px);margin:14px auto}.${K}holes{display:none}.${K}ord{display:none}}
     </style>
-    <div class="${K}board"><div class="${K}under"></div><div class="${K}clip"></div>
+    <div class="${K}board"><div class="${K}under"></div><div class="${K}clip"></div><img class="${K}clipart" alt="" hidden><img class="${K}holes" alt="" hidden><img class="${K}frost" alt="" hidden>
       <div class="${K}head"><span>CASE 7-F · FISK · INFIRMARY</span><span class="${K}day">DAY 2</span><span>WARD B</span></div>
       <div class="${K}main">
         <div><svg class="${K}plot" viewBox="0 0 600 150" aria-label="Height plotted by day"></svg><div class="${K}scroll"><table class="${K}grid"></table></div><p class="${K}read" aria-live="polite"></p></div>
@@ -128,7 +218,14 @@ export default {
       <div class="${K}q" aria-live="polite"></div>
       <div class="${K}steps"><span data-s="cells">① two cells</span><span data-s="card">② a card</span><span data-s="rule">③ rule it</span></div>
       <div class="${K}cards" role="group" aria-label="Hypothesis cards"></div>
-      <div class="${K}acts"><button type="button" data-r="sup">Supported (S)</button><button type="button" data-r="brk">Broken (B)</button><button type="button" class="ask" data-ask>Ask the orderly · ${ASKS}</button><span class="${K}say" aria-live="polite"></span><button type="button" class="go" data-next hidden>Next</button></div>
+      <div class="${K}sch" hidden><h4>THE SCHEDULE · A SECOND SHEET · STRIPS FOUND ON NIGHTS OUT</h4><img class="dv" alt="" hidden>
+        <p style="margin:0 0 10px;font-size:15px;line-height:1.4">Pick a strip, then the list entry it issued. One retry a strip.</p>
+        <div class="${K}schgrid"><div class="${K}strips" role="group" aria-label="Strips of the Schedule"></div><div class="${K}ents" role="group" aria-label="The list, in Fisk's hand"></div></div></div>
+      <div class="${K}last" hidden><h4>DAY 7 · THE LAST LINE · TYPED ONE DAY AHEAD</h4><img class="dv" alt="" hidden>
+        <div class="${K}typed"></div>
+        <p style="margin:10px 0 0;font-size:15px;line-height:1.4">Three ways out of tonight, each with its outcome typed beside it. Rule on the line: which is yours?</p>
+        <div class="${K}ways" role="group" aria-label="Ways out of night 7"></div><div class="${K}lastout"></div></div>
+      <div class="${K}acts"><img class="${K}ord" alt="" hidden><button type="button" data-r="sup">Supported (S)</button><button type="button" data-r="brk">Broken (B)</button><button type="button" class="ask" data-ask>Ask the orderly · ${ASKS}</button><span class="${K}say" aria-live="polite"></span><button type="button" class="go" data-next hidden>Next</button></div>
     </div>
     <div class="${K}intro"><div class="${K}form">
       <div class="hd"><span>FORM 7-F · DAILY MEASURES</span><span>INFIRMARY</span></div>
@@ -149,6 +246,23 @@ export default {
     const grid = $("grid"), plot = $("plot"), qEl = $("q"), cardsEl = $("cards"), sayEl = $("say"), listUl = $("list").querySelector("ul"), noteEl = $("list").querySelector(".note"), readEl = $("read");
     const nextBtn = wrap.querySelector("[data-next]"), rBtns = [...wrap.querySelectorAll("[data-r]")], askBtn = wrap.querySelector("[data-ask]");
     const intro = $("intro");
+    const board = $("board"), schEl = $("sch"), lastEl = $("last"), stripsEl = $("strips"), entsEl = $("ents"), waysEl = $("ways"), lastOut = $("lastout");
+    const chartParts = [$("main"), qEl, $("steps"), cardsEl, ...rBtns, askBtn];
+
+    // ---- art
+    const kit = artKit(api);
+    kit.dressIntro(intro, intro.querySelector(".bd"), "chapter-3", "rgba(58,44,34,.6)");
+    kit.fill(wrap, "." + K + "clipart", "clip", 176).then((ok) => { if (ok) $("clip").style.visibility = "hidden"; });
+    kit.fill(wrap, "." + K + "holes", "punch-holes", 30);
+    kit.fill(wrap, "." + K + "ord", "cutout-orderly", 40);
+    kit.fill(wrap, "." + K + "sch .dv", "divider-stencil", 520);
+    kit.fill(wrap, "." + K + "last .dv", "divider-perforation", 520);
+    const frost = (n) => kit.fill(wrap, "." + K + "frost", "frost-corner-" + Math.max(1, Math.min(4, n)), 200);
+    const stampHtml = (id, text) => `<img class="${K}stampimg${reduce ? "" : " in"}" data-stamp="${id}" alt="${text}" hidden><span class="${K}stamp${reduce ? "" : " in"}" data-stampfb="${id}">${text}</span>`;
+    // swap the CSS stamp for the rubber-stamp art once it is rasterised
+    const inkStamps = (root, id) => { if (id) kit.png(id, 120).then((u) => { if (!u) return; root.querySelectorAll(`[data-stamp="${id}"]`).forEach((im) => { im.src = u; im.hidden = false; }); root.querySelectorAll(`[data-stampfb="${id}"]`).forEach((x) => x.remove()); }); };
+    let phase = "chart";
+    const sched = { offered: false, read: false, found: {}, laid: {}, missed: {}, tries: {}, pick: null, way: null };
 
     let di = 0, shown = 0, sel = new Set(), card = null, tries = 0, idle = 0, hintAt = null, solved = [], broken = {}, filling = false, asks = ASKS, margins = [], justStruck = null;
     const day = () => DAYS[di];
@@ -231,7 +345,9 @@ export default {
       $("day").textContent = `DAY ${D.d + 1}`;
       qEl.textContent = "";
       sayEl.textContent = D.d === 4 ? "The orderly slides a second, printed sheet half under yours before he starts." : "The orderly reads the numbers aloud.";
-      wrap.querySelector("." + K + "board").classList.toggle("two", D.d >= 4);
+      board.classList.toggle("two", D.d >= 4);
+      if (D.d >= 4) kit.fill(wrap, "." + K + "under", "target-sheet", 560, true);
+      frost(di + 1);
       nextBtn.hidden = true; rBtns.forEach((b) => (b.disabled = true)); askBtn.disabled = true;
       renderCards(); renderList(); renderGrid(); renderPlot(); renderRead();
       const fill = () => {
@@ -239,7 +355,7 @@ export default {
         renderGrid(); renderPlot();
         if (shown < ROWS.length) return later(fill, 170);
         filling = false;
-        margins.push(D.margin); renderList();
+        margins.push(D.d === 4 && sched.read ? "L15. My file has tomorrow in it. Typed." : D.margin); renderList();
         sayEl.textContent = `Orderly: “${D.say}”`;
         qEl.textContent = `Question, day ${D.d + 1}: ${D.q}`;
         rBtns.forEach((b) => (b.disabled = false)); askBtn.disabled = asks <= 0;
@@ -258,14 +374,16 @@ export default {
       if (ok) {
         broken[D.list] = (broken[D.list] ? broken[D.list] + "; " : "") + `${D.q.replace("?", "")}: no. ${cells.map((x) => `${x.row} D${x.c + 1}`).join(", ")}`;
         solved.push(D.d); justStruck = D.list;
-        sayEl.innerHTML = `<span class="${K}stamp${reduce ? "" : " in"}">BROKEN</span> “${D.card}” does not hold. Struck through, with the evidence beside it.`;
+        sayEl.innerHTML = `${stampHtml("stamp-broken", "BROKEN")} “${D.card}” does not hold. Struck through, with the evidence beside it.`;
+        inkStamps(sayEl, "stamp-broken");
         renderList(); done();
         return;
       }
       tries++;
       const why = card !== D.card ? "That card is not what this morning's question tests." : r !== "brk" ? "The cells say otherwise. Look at which way they move." : "Those cells do not show it.";
       if (tries < 2) { sayEl.textContent = `${why} One retry.`; if (!reduce) sayEl.animate?.([{ transform: "translateX(-6px)" }, { transform: "translateX(6px)" }, { transform: "none" }], { duration: 300 }); return; }
-      sayEl.innerHTML = `<span class="${K}stamp${reduce ? "" : " in"}">SHELVED</span> ${why} Fisk shelves it: “${LIST.find((l) => l.id === D.list).why}” stands.`;
+      sayEl.innerHTML = `${stampHtml("stamp-supported", "SHELVED")} ${why} Fisk shelves it: “${LIST.find((l) => l.id === D.list).why}” stands.`;
+      inkStamps(sayEl, "stamp-supported");
       done();
     }
     function ask() {
@@ -278,23 +396,237 @@ export default {
     function done() {
       rBtns.forEach((b) => (b.disabled = true)); askBtn.disabled = true;
       sayEl.insertAdjacentText("beforeend", " Orderly: “Next.”");
-      nextBtn.hidden = false; nextBtn.textContent = di < DAYS.length - 1 ? `Morning, day ${DAYS[di + 1].d + 1}` : "Close the chart";
+      nextBtn.hidden = false; nextBtn.textContent = di === 2 && !sched.offered ? "Night 4" : di < DAYS.length - 1 ? `Morning, day ${DAYS[di + 1].d + 1}` : sched.read ? "The second sheet" : "Close the chart";
       renderSteps();
       nextBtn.focus();
     }
-    const onNext = () => {
-      if (di < DAYS.length - 1) { di++; startDay(); return; }
+    // ---- a day break: the chapter card for the day that is starting
+    let brkEl = null;
+    // an overlay covers the page: the page under it goes to its top and stops scrolling
+    const lock = (on) => { if (on) wrap.scrollTop = 0; wrap.style.overflow = on ? "hidden" : ""; };
+    function dayBreak(dayNo, label, then) {
+      const id = "chapter-" + (dayNo + 1);
+      if (!kit.has(id)) return then();
+      const el = document.createElement("div");
+      el.className = K + "brk";
+      const im = kit.img(id, 820, `Chapter card: day ${dayNo}`);
+      const b = document.createElement("button"); b.type = "button"; b.textContent = label;
+      el.append(im, b); lock(true); wrap.appendChild(el); brkEl = el;
+      let gone = false;
+      const go = () => { if (gone) return; gone = true; el.remove(); brkEl = null; lock(false); then(); };
+      b.addEventListener("click", go);
+      later(go, 2600);
+      b.focus();
+    }
+
+    // ---- Carbon: night 4, Sam's office. The cabinet was left open, and can be declined.
+    const PAGES = [
+      { id: "form-7f", tab: "1 · Form 7-F", say: "Your chart, in carbon. Someone keeps a second copy of every number the orderly reads aloud." },
+      { id: "target-sheet", tab: "2 · Target", say: "A printed curve of heights by day, drawn before you arrived. The last number on it is 338." },
+      { id: "schedule", tab: "3 · Schedule", say: "SCHEDULE. SUBJECT: FISK. One typed line a day, and a blank after the word “Response”. Find tonight's line, then tomorrow's." },
+    ];
+    const ROW_SAY = {
+      1: "Day 1, 06:00. Intake. Rules read. Response: “Sir yes Sir.” They wrote down what you said, and how.",
+      2: "Day 2, 14:00. False statement issued (transfer). Companion (uninformed). Response: curiosity. Retained. The lie about the hour was on the sheet before Sam told it.",
+      3: "Day 3, 19:00. Card table. Loss to witness. The empty chair was an item.",
+      4: "Day 4, 23:00. Cabinet left unlocked. Officers' wing left unwatched. That is tonight. The door you crept through was held open.",
+      5: "Day 5, 08:00. On schedule. That is tomorrow, typed already. The blank after “Response” is waiting for you.",
+    };
+    function openCarbon() {
+      phase = "carbon";
+      const el = document.createElement("div");
+      el.className = K + "night";
+      el.innerHTML = `<div class="${K}desk">
+        <h3>NIGHT 4 · SAM'S OFFICE · 23:00</h3><img class="dv" alt="" hidden>
+        <p>Nobody was watching the officers' wing tonight. The cabinet under the staff shelf is not locked, and one folder has your number on its tab.</p>
+        <div class="${K}things">
+          <button type="button" data-t="folder"><img alt="" data-a="form-7f" hidden><span>Folder 7-F · FISK<small>open it</small></span></button>
+          <button type="button" data-t="env"><img alt="" data-a="thread-own" hidden><span>An envelope<small>look</small></span></button>
+          <button type="button" data-t="shelf"><img alt="" data-a="thread-guest" hidden><span>The staff shelf<small>look</small></span></button>
+        </div>
+        <div class="${K}folder" hidden><div class="${K}tabs" role="group" aria-label="Pages in the folder">${PAGES.map((pg, i) => `<button type="button" data-pg="${i}" aria-pressed="false">${pg.tab}</button>`).join("")}</div>
+          <div class="${K}pg"><img alt=""><div class="${K}hits"></div></div></div>
+        <p class="${K}nsay" aria-live="polite">You can open the folder, or shut the cabinet and walk back the way you came.</p>
+        <div class="${K}nacts"><button type="button" class="take" data-take hidden>Tear out tonight's carbon and take it</button><button type="button" data-shut>Shut the cabinet and go back</button></div>
+      </div>`;
+      lock(true); wrap.appendChild(el);
+      kit.png("clock-night-4", 1000).then((u) => { if (u && el.isConnected) el.style.backgroundImage = `linear-gradient(rgba(27,29,31,.84),rgba(27,29,31,.95)),url("${u}")`; });
+      kit.fill(el, ".dv", "divider-stencil", 420);
+      el.querySelectorAll("[data-a]").forEach((im) => kit.png(im.dataset.a, 150).then((u) => { if (u) { im.src = u; im.hidden = false; } }));
+      const nsay = el.querySelector("." + K + "nsay"), folder = el.querySelector("." + K + "folder"), pgImg = folder.querySelector("." + K + "pg>img"), hits = folder.querySelector("." + K + "hits");
+      const takeBtn = el.querySelector("[data-take]"), shutBtn = el.querySelector("[data-shut]");
+      const sayN = (m) => { nsay.textContent = m; };
+      let page = 0;
+      function showPage(i) {
+        page = i;
+        folder.querySelectorAll("[data-pg]").forEach((b) => b.setAttribute("aria-pressed", String(+b.dataset.pg === i)));
+        const pg = PAGES[i];
+        pgImg.alt = pg.say; pgImg.removeAttribute("src");
+        kit.png(pg.id, 460).then((u) => { if (u && page === i) pgImg.src = u; });
+        hits.innerHTML = "";
+        if (pg.id === "schedule") {
+          // rows as the sheet draws them: 800 x 1100, the first at y 160, 122 high
+          for (let d = 1; d <= 5; d++) {
+            const b = document.createElement("button");
+            b.type = "button"; b.className = K + "hit" + (sched.found[d] ? " found" : "");
+            b.style.top = ((160 + (d - 1) * 122) / 1100) * 100 + "%"; b.style.height = (122 / 1100) * 100 + "%";
+            b.setAttribute("aria-label", `Schedule, day ${d}`);
+            b.addEventListener("click", () => readRow(d, b));
+            hits.appendChild(b);
+          }
+          const m = document.createElement("div"); m.className = K + "mask"; m.textContent = "DAYS 6 AND 7 · NOT YET TYPED";
+          hits.appendChild(m);
+        }
+        sayN(pg.say);
+      }
+      function readRow(d, b) {
+        sayN(ROW_SAY[d]);
+        if (d >= 4) { sched.found[d] = true; b.classList.add("found"); }
+        if (sched.found[4] && sched.found[5] && takeBtn.hidden) {
+          takeBtn.hidden = false;
+          if (!reduce) takeBtn.animate?.([{ transform: "scale(1.08)" }, { transform: "none" }], { duration: 500 });
+        }
+      }
+      const LOOK = {
+        env: "An envelope stamped HOLD, a house drawn in one corner in a child's manner. It never left the building. It is not addressed to you.",
+        shelf: "The staff shelf: enamel mugs, a tin marked 7-F, and a blue and white tea caddy that does not belong to this base.",
+      };
+      el.querySelectorAll("[data-t]").forEach((b) => b.addEventListener("click", () => {
+        if (b.dataset.t === "folder") { folder.hidden = false; showPage(0); folder.querySelector("[data-pg]").focus(); shutBtn.textContent = "Shut the cabinet and go back"; return; }
+        sayN(LOOK[b.dataset.t]);
+      }));
+      folder.querySelectorAll("[data-pg]").forEach((b) => b.addEventListener("click", () => showPage(+b.dataset.pg)));
+      const close = () => {
+        el.remove(); lock(false); nightEl = null; nightKey = null; phase = "chart";
+        di++; dayBreak(DAYS[di].d + 1, `Morning, day ${DAYS[di].d + 1}`, startDay);
+      };
+      takeBtn.addEventListener("click", () => {
+        if (sched.read) return close();
+        sched.read = true;
+        sayN("L15. My file has tomorrow in it. Typed. — You fold the blue carbon into your sock. New Mexico killed the ones who complained about the heat. You didn't complain. Lucky.");
+        takeBtn.textContent = "Go back to the bunk"; shutBtn.hidden = true; takeBtn.focus();
+      });
+      shutBtn.addEventListener("click", close);
+      nightEl = el;
+      nightKey = (e) => {
+        if (folder.hidden) return;
+        if (e.key === "ArrowRight") { showPage(Math.min(PAGES.length - 1, page + 1)); e.preventDefault(); }
+        if (e.key === "ArrowLeft") { showPage(Math.max(0, page - 1)); e.preventDefault(); }
+      };
+      el.querySelector("[data-t=folder]").focus();
+    }
+    let nightEl = null, nightKey = null;
+
+    // ---- the Schedule: the strips laid against the list entries they issued
+    const STRIP_ORDER = [4, 2, 5, 3];
+    function openSchedule() {
+      phase = "schedule";
+      chartParts.forEach((x) => (x.hidden = true));
+      schEl.hidden = false; nextBtn.hidden = true;
+      $("day").textContent = "DAY 5 · EVENING";
+      sayEl.textContent = "Four strips, one from each night out and one from this morning's clipboard. Day 1's was in the folder; it is already laid, beside the first thing you said here.";
+      renderSched();
+      stripsEl.querySelector("button:not(.laid)")?.focus();
+    }
+    const stripBtn = (d, laidTo) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = K + "strip" + (laidTo ? " laid" : "");
+      if (!laidTo) b.setAttribute("aria-pressed", String(sched.pick === d)); else b.disabled = true;
+      b.appendChild(kit.img("schedule-strip-" + d, 440, ""));
+      const t = document.createElement("span"); t.textContent = schedText(d) + (laidTo ? ` — laid against ${laidTo}` : ""); b.appendChild(t);
+      if (!laidTo) b.addEventListener("click", () => { sched.pick = d; renderSched(); sayEl.textContent = `Picked: day ${d}'s strip. Now the list entry it issued.`; stripsEl.querySelector('[aria-pressed="true"]')?.focus(); });
+      return b;
+    };
+    function renderSched() {
+      stripsEl.innerHTML = "";
+      stripsEl.appendChild(stripBtn(1, "“Sir yes Sir”"));
+      for (const d of STRIP_ORDER) if (!sched.laid[d] && !sched.missed[d]) stripsEl.appendChild(stripBtn(d, null));
+      entsEl.innerHTML = "";
+      const rows = [LIST[0], ISSUED[0], LIST[1], ISSUED[3], ISSUED[1], ISSUED[2]];
+      for (const e of rows) {
+        const d = Object.keys(sched.laid).find((k) => sched.laid[k] === e.id);
+        const b = document.createElement("button");
+        b.type = "button"; b.className = K + "ent"; b.dataset.e = e.id;
+        b.innerHTML = `<b>${e.id}</b> ${e.text}${d ? `<em>ISSUED · ${schedText(+d)}</em>` : ""}`;
+        if (d) b.disabled = true; else b.addEventListener("click", () => lay(e.id));
+        entsEl.appendChild(b);
+      }
+    }
+    function lay(entryId) {
+      const d = sched.pick;
+      if (d == null) { sayEl.textContent = "Pick a strip first."; return; }
+      const right = ISSUED.find((x) => x.strip === d);
+      if (right.id === entryId) {
+        sched.laid[d] = entryId; sched.pick = null;
+        sayEl.innerHTML = `${d === 2 ? stampHtml("stamp-retained", "RETAINED") : ""} Laid. ${schedText(d)} What you thought you found, they had typed the day before.`;
+        if (d === 2) inkStamps(sayEl, "stamp-retained");
+      } else {
+        sched.tries[d] = (sched.tries[d] || 0) + 1;
+        if (sched.tries[d] >= 2) { sched.missed[d] = true; sched.pick = null; sayEl.textContent = `Not that one either. Day ${d}'s strip goes back in your sock, unread.`; }
+        else { sayEl.textContent = `That line was not written for that. ${right.hint} One retry.`; if (!reduce) sayEl.animate?.([{ transform: "translateX(-6px)" }, { transform: "translateX(6px)" }, { transform: "none" }], { duration: 300 }); }
+      }
+      renderSched();
+      if (STRIP_ORDER.every((x) => sched.laid[x] || sched.missed[x])) {
+        const n = Object.keys(sched.laid).length;
+        sayEl.insertAdjacentText("beforeend", ` ${n} of 4 laid.${n ? " Every discovery on those lines was issued." : ""} There is one more strip, and it is not for today.`);
+        nextBtn.hidden = false; nextBtn.textContent = "Day 7"; nextBtn.focus();
+      } else (stripsEl.querySelector("button:not(.laid)") || entsEl.querySelector("button"))?.focus();
+    }
+    // ---- the last step: day 7's line, typed before the choice
+    function openLast() {
+      phase = "last";
+      schEl.hidden = true; lastEl.hidden = false; nextBtn.hidden = true;
+      $("day").textContent = "DAY 7"; frost(4);
+      $("typed").textContent = `22:00  ${SCHED[7].lines[0]}\n       ${SCHED[7].lines[1]}\n       ${SCHED[7].lines[2]}`;
+      waysEl.innerHTML = WAYS.map((w) => `<button type="button" data-w="${w.id}" aria-pressed="false">${w.label}</button>`).join("") + `<button type="button" class="pencil" data-w="pencil" aria-pressed="false">Write a line they have not typed ✎</button>`;
+      waysEl.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => chooseWay(b.dataset.w)));
+      sayEl.textContent = "The orderly lays the last strip on the clipboard and reads nothing aloud.";
+      waysEl.querySelector("button").focus();
+    }
+    function chooseWay(id) {
+      if (sched.way) return;
+      sched.way = id;
+      waysEl.querySelectorAll("button").forEach((b) => { b.setAttribute("aria-pressed", String(b.dataset.w === id)); b.disabled = true; });
+      const w = WAYS.find((x) => x.id === id);
+      if (w) {
+        lastOut.innerHTML = stampHtml(w.stamp || "none", w.stampText);
+        inkStamps(lastOut, w.stamp);
+        sayEl.textContent = `“${w.typed}” It was typed before you chose it. The orderly ticks the line and does not look up.`;
+      } else {
+        lastOut.appendChild(kit.img("schedule-strip-7", 560, "Day 7's strip, with a line added by hand", K + "lastimg"));
+        sayEl.textContent = "In pencil, under the typed lines: “Carry Jax over. Walk back.” There is no line for it. The orderly, who never looks at your face, looks at the sheet, and writes it in by hand: carried him.";
+      }
+      nextBtn.hidden = false; nextBtn.textContent = "Close the chart"; nextBtn.focus();
+    }
+    function finishAll() {
       const n = solved.length;
       const knows = n >= 3 ? "pattern" : "anomaly";
       api.store.set("losses", n >= 3 ? 0 : losses + 1);
-      if (n === 4) api.end({ outcome: "win", text: `All four broken. The climate, the food, the hunger and the routine: none of it holds against your own numbers, and they keep to a printed curve, “on schedule”. Fisk knows it is a pattern (knows: ${knows}).` });
-      else if (n >= 3) api.end({ outcome: "win", text: `${n} of 4 explanations broken. Your own numbers keep to a printed curve: “on schedule”. Fisk knows it is a pattern (knows: ${knows}), even with one entry left standing on the list.` });
-      else api.end({ outcome: "lose", text: `${n} of 4 broken. Fisk shelved the rest; the explanations stand, and the chart keeps to its curve whether he reads it or not (knows: ${knows}).` });
+      const laid = Object.keys(sched.laid).length;
+      const sheet = !sched.offered ? "" : !sched.read ? " The cabinet stayed shut; whatever is in that folder, you chose not to know it."
+        : ` The Schedule: ${laid} of 4 strips laid against the list. ${sched.way === "pencil" ? "The last line on your sheet is in the orderly's handwriting, not his typewriter's." : "Day 7 went the way it was typed."}`;
+      let result;
+      if (n === 4) result = { outcome: "win", text: `All four broken. The climate, the food, the hunger and the routine: none of it holds against your own numbers, and they keep to a printed curve, “on schedule”. Fisk knows it is a pattern (knows: ${knows}).${sheet}` };
+      else if (n >= 3) result = { outcome: "win", text: `${n} of 4 explanations broken. Your own numbers keep to a printed curve: “on schedule”. Fisk knows it is a pattern (knows: ${knows}), even with one entry left standing on the list.${sheet}` };
+      else result = { outcome: "lose", text: `${n} of 4 broken. Fisk shelved the rest; the explanations stand, and the chart keeps to its curve whether he reads it or not (knows: ${knows}).${sheet}` };
+      const win = n >= 3;
+      kit.endCard(wrap, { card: win ? (sched.way === "pencil" ? "schedule" : "target-sheet") : "form-7f", stamp: win ? (sched.way === "pencil" ? "" : "stamp-broken") : "stamp-supported", caption: win ? "CASE 7-F · KNOWS: PATTERN" : "CASE 7-F · SHELVED" }, result);
+    }
+    const onNext = () => {
+      if (phase === "schedule") return dayBreak(7, "Morning, day 7", openLast);
+      if (phase === "last") return finishAll();
+      if (phase !== "chart") return;
+      if (di === 2 && !sched.offered) { sched.offered = true; nextBtn.hidden = true; return openCarbon(); }
+      if (di < DAYS.length - 1) { di++; return dayBreak(DAYS[di].d + 1, `Morning, day ${DAYS[di].d + 1}`, startDay); }
+      if (sched.read) return openSchedule();
+      finishAll();
     };
     nextBtn.addEventListener("click", onNext);
     rBtns.forEach((b) => b.addEventListener("click", () => rule(b.dataset.r)));
     askBtn.addEventListener("click", ask);
     const onKey = (e) => {
+      if (nightKey && phase === "carbon") return nightKey(e);
+      if (phase !== "chart" || brkEl) return;
       if (intro.isConnected || filling || !nextBtn.hidden) return;
       if (e.key === "s" || e.key === "S") { rule("sup"); e.preventDefault(); }
       if (e.key === "b" || e.key === "B") { rule("brk"); e.preventDefault(); }
@@ -302,7 +634,7 @@ export default {
     window.addEventListener("keydown", onKey);
     // at clarity tier 1 Fisk's pencil hovers over a telling cell after a while, for free (sooner after two lost charts)
     const hintTimer = setInterval(() => {
-      if (filling || !nextBtn.hidden || intro.isConnected) return;
+      if (filling || !nextBtn.hidden || intro.isConnected || phase !== "chart" || brkEl) return;
       idle++;
       if (idle === (losses >= 2 ? 12 : 30) && !hintAt) { const D = day(); hintAt = `${D.need[0]}:${D.d}`; renderGrid(); sayEl.textContent = D.hint; }
     }, 1000);
@@ -317,6 +649,7 @@ export default {
       unmount() {
         timers.forEach(clearTimeout); clearInterval(hintTimer);
         window.removeEventListener("keydown", onKey);
+        kit.dispose();
         wrap.remove();
       },
     };

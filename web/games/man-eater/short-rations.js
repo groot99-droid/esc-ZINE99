@@ -5,6 +5,12 @@
 // seats. Jax taps once per card above 5 he holds in the led suit. Pell's and Duarte's chairs are
 // pushed in and their suits are stamped withdrawn. Table lines are the crew's lines from DESIGN.md 6.
 //
+// Phase 1 of the accepted development: the withdrawn 8. Each empty chair's 8 stays in the deck,
+// stamped WITHDRAWN, and is handed out face up after the deal (the dealer first, then his left). It
+// follows no suit and wins nothing: the one clean way to duck a trick. Its holder has nine cards for
+// eight tricks, and the one he never plays is burned.
+// Art (api.art): the card faces, the back and the WITHDRAWN overprint; each seat's hands; the stamp.
+//
 // Actions: bid; play a card; watch Jax (read his taps before you play); settle each loaf won (keep,
 // eat, or give to a seat). Phases: hand one (Hollis deals, Stars are trumps); hand two (you deal,
 // Hands are trumps, and your bid may not make the table's add up to eight); the settling.
@@ -28,6 +34,8 @@ const EMPTY = [{ name: "Pell", suit: "anchors", pos: "nw" }, { name: "Duarte", s
 // the crew's own lines (DESIGN.md section 6 and 11.1), one per hand
 const LINES = { 1: ["", ""], 2: ["Nothing goes out. Everything comes in.", ""], 3: ["Next week. I mean it.", "Next week. I mean it."] };
 
+import { artKit } from "./kit.js";
+
 const suitSvg = (s, cls, fill = P.ink) => `<svg class="${cls}" viewBox="-1.1 -1.1 2.2 2.2" aria-hidden="true"><path d="${SUITS[s]}" fill="${fill}"/></svg>`;
 
 export default {
@@ -41,7 +49,7 @@ export default {
     const wrap = document.createElement("div");
     wrap.className = K + "wrap";
     wrap.innerHTML = `<style>
-      .${K}wrap{position:absolute;inset:0;overflow:auto;background:radial-gradient(ellipse at 50% 45%,#2b302d 0%,${P.ink} 70%);color:${P.cream};font-family:'Courier Prime','Courier New',monospace}
+      .${K}wrap{position:absolute;inset:0;overflow:auto;overflow-x:hidden;background:radial-gradient(ellipse at 50% 45%,#2b302d 0%,${P.ink} 70%);color:${P.cream};font-family:'Courier Prime','Courier New',monospace}
       .${K}stage{position:relative;min-height:100%;display:grid;grid-template-rows:auto 1fr auto;gap:4px;padding:8px 16px 10px;box-sizing:border-box;max-width:1100px;margin:0 auto}
       .${K}top{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:start}
       .${K}box{background:rgba(27,29,31,.9);border:1px solid rgba(217,210,191,.35);padding:8px 10px;font-size:13px;line-height:1.45;min-width:0}
@@ -112,9 +120,26 @@ export default {
       .${K}stamp{display:inline-block;border:2px solid ${P.red};color:${P.red};font-family:'Stardos Stencil',monospace;font-size:12px;padding:0 4px;transform:rotate(-8deg);letter-spacing:.1em}
       .${K}cardin .${K}stamp{position:absolute;right:20px;top:62px;font-size:14px}
       .${K}cardin [data-start]{background:${P.ink};color:${P.card};padding:10px 22px}.${K}cardin [data-start]:hover{background:#3a3d40}
+      .${K}card.art{background-size:100% 100%;background-color:transparent;border-color:transparent;box-shadow:none;filter:drop-shadow(1px 2px 1px rgba(0,0,0,.4))}
+      .${K}card.art::before,.${K}card.art>.r,.${K}card.art>.s,.${K}card.art>.l{display:none}
+      .${K}card .wd{position:absolute;left:4%;right:4%;top:38%;text-align:center;font-family:'Stardos Stencil',monospace;font-size:max(8px,calc(var(--w)*.13));color:${P.red};border:1.5px solid ${P.red};transform:rotate(-14deg);letter-spacing:.02em;background:rgba(233,226,207,.8)}
+      .${K}card.art>.wd{display:none}
+      .${K}card.w8{filter:saturate(.7)}
+      .${K}seat .hd{display:block;width:92px;height:auto;aspect-ratio:640/440;margin:0 auto 3px;border-radius:5px;box-shadow:0 2px 6px rgba(0,0,0,.5);opacity:.95}
+      .${K}seat .bk{display:inline-block;vertical-align:middle;width:17px;height:24px;margin-left:5px;background:#3d4c41 var(--back,none) center/100% 100%;border-radius:2px;color:#fff;font-size:12px;line-height:24px;font-weight:700;text-shadow:0 1px 2px #000;font-style:normal}
+      .${K}seat.empty .hd{filter:grayscale(1) brightness(.6);opacity:.6;width:64px}
+      .${K}stampart{display:inline-block;height:26px;width:auto;vertical-align:middle;transform:rotate(-6deg)}
+      .${K}cardin .${K}stampart{position:absolute;right:14px;top:56px;height:44px}
+      .${K}suits{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin:0 0 10px}
+      .${K}suits figure{margin:0;position:relative;text-align:center;font-size:11px;line-height:1.2;letter-spacing:.02em}
+      .${K}suits img.h{display:block;width:100%;height:auto;aspect-ratio:640/440;border-radius:3px}
+      .${K}suits figure.out img.h{filter:grayscale(1) brightness(.75)}
+      .${K}suits figure.out::after{content:"";position:absolute;left:0;right:0;top:26%;border-top:2px solid ${P.red};transform:rotate(-12deg)}
+      .${K}suits figure.not img.h{opacity:.45}
+      .${K}new{color:${P.sodium};font-weight:700}
       @media (max-width:640px){.${K}top{grid-template-columns:1fr 1fr}.${K}top>.${K}box:nth-child(2){display:none}.${K}tracker{justify-self:stretch;max-width:none}.${K}box{font-size:12px;padding:6px 8px}.${K}table{width:min(92vw,calc(100vh - 500px));min-width:250px}}
-      @media (max-width:520px){.${K}stage{padding:8px 8px 10px}.${K}seat{width:112px}.${K}seat .n{font-size:12px;padding:2px 5px}.${K}seat .b,.${K}seat .c{font-size:12px}
-        .${K}hand{padding-top:14px}.${K}hand .${K}card{--w:calc((100vw - 24px) / 8);margin:0 1px}.${K}hand .${K}card .s{top:40%}.${K}trk{font-size:12px}.${K}cardin .${K}stamp{display:none}}
+      @media (max-width:520px){.${K}stage{padding:8px 8px 10px}.${K}seat{width:112px}.${K}seat .hd{width:60px}.${K}seat.empty .hd{width:44px}.${K}suits figure{font-size:9px}.${K}seat .n{font-size:12px;padding:2px 5px}.${K}seat .b,.${K}seat .c{font-size:12px}
+        .${K}hand{padding-top:14px}.${K}hand .${K}card{--w:calc((100vw - 20px) / var(--n,8) - 2px);margin:0 1px}.${K}hand .${K}card .s{top:40%}.${K}trk{font-size:12px}.${K}cardin .${K}stamp{display:none}}
     </style>
     <div class="${K}stage">
       <div class="${K}top">
@@ -127,13 +152,15 @@ export default {
     </div>
     <div class="${K}intro"><div class="${K}cardin">
       <div class="${K}issue-no"><span>RATION ISSUE · DAY 4</span><span>EVENING</span></div>
-      <span class="${K}stamp">2 WITHDRAWN</span>
+      <span class="${K}stamp" data-wdfb>2 WITHDRAWN</span><img class="${K}stampart" data-wd alt="Withdrawn" hidden>
       <h2>Short Rations</h2>
       <p class="${K}goal">Take exactly as many tricks as you bid. Exact bidders get a loaf.</p>
-      <p class="${K}beat">Four seats tonight. Pell's chair and Duarte's are pushed in, and their suits are out of the deck. The basket holds three loaves for four men.</p>
+      <div class="${K}suits" aria-label="The seven suits: four seated, two withdrawn, one not yet at the table"></div>
+      <p class="${K}beat">Four seats tonight. Pell's chair and Duarte's are pushed in and their suits are out of the deck, all but each man's 8. Those stay in, stamped WITHDRAWN: they follow no suit and win nothing. The basket holds three loaves for four men.</p>
       <dl class="${K}key">
         <dt>BID</dt><dd>number keys, or the row of buttons: how many of the 8 tricks you will take</dd>
         <dt>PLAY</dt><dd>click a card, or ← → and Enter. Follow the led suit if you can; trumps beat everything</dd>
+        <dt>DUCK</dt><dd>a WITHDRAWN 8 may be played on any trick, and loses it</dd>
       </dl>
       <button type="button" data-start>Deal</button>
     </div></div>`;
@@ -149,18 +176,61 @@ export default {
       const d = document.createElement("div");
       d.className = K + "seat" + (i >= 4 ? " " + K + "empty empty" : "");
       d.style.left = POS[st.pos][0] + "%"; d.style.top = POS[st.pos][1] + "%";
-      d.innerHTML = i >= 4 ? `<div class="chair"></div><span class="n">${suitSvg(st.suit, "", P.cream)}</span>` : `<span class="n">${suitSvg(st.suit, "", P.cream)}${st.name}</span><span class="b"></span><span class="c"></span><span class="c t"></span>`;
+      const hd = i === 0 ? "" : `<img class="hd" data-hands="${st.name.toLowerCase()}" alt="" hidden>`;
+      d.innerHTML = i >= 4 ? `${hd}<div class="chair"></div><span class="n">${suitSvg(st.suit, "", P.cream)}</span>` : `${st.pos === "n" ? "" : hd}<span class="n">${suitSvg(st.suit, "", P.cream)}${st.name}</span><span class="b"></span>${st.pos === "n" ? hd : ""}<span class="c"></span><span class="c t"></span>`;
       if (i >= 4) d.querySelector(".n").setAttribute("aria-label", `${st.name}'s chair, pushed in`);
       tableEl.appendChild(d);
       if (i < 4) seatEls.push(d);
     }
     seatEls[0].style.top = "95%";
+
+    // ---- art: faces are rasterised once, in the background, and cards switch to them as they arrive
+    const kit = artKit(api);
+    const faceUrl = {};
+    const faceId = (c) => `card-${c.suit}-${c.rank}`;
+    const dress = (el, c) => {
+      const set = () => {
+        const u = faceUrl[faceId(c)]; if (!u) return false;
+        el.style.backgroundImage = c.wd && faceUrl.wd ? `url("${faceUrl.wd}"),url("${u}")` : `url("${u}")`;
+        el.classList.add("art"); return true;
+      };
+      if (!set()) el.dataset.face = faceId(c);
+    };
+    const WD = EMPTY.map((e) => ({ suit: e.suit, rank: 8, wd: true, of: e.name }));
+    (async () => {
+      const want = [];
+      for (const st of SEATS) for (let r = 1; r <= 8; r++) want.push(`card-${st.suit}-${r}`);
+      for (const c of WD) want.push(faceId(c));
+      faceUrl.wd = await kit.png("card-withdrawn-overprint", 110);
+      faceUrl.back = await kit.png("card-back", 40);
+      if (faceUrl.back) wrap.style.setProperty("--back", `url("${faceUrl.back}")`);
+      for (const id of want) {
+        const u = await kit.png(id, 110);
+        if (!u) continue;
+        faceUrl[id] = u;
+        wrap.querySelectorAll(`[data-face="${id}"]`).forEach((el) => { el.style.backgroundImage = /-8$/.test(id) && el.classList.contains("w8") && faceUrl.wd ? `url("${faceUrl.wd}"),url("${u}")` : `url("${u}")`; el.classList.add("art"); el.removeAttribute("data-face"); });
+      }
+    })();
+    wrap.querySelectorAll("[data-hands]").forEach((im) => kit.png("hands-" + im.dataset.hands, 92).then((u) => { if (u) { im.src = u; im.hidden = false; } }));
+    kit.png("stamp-withdrawn", 110).then((u) => { if (!u) return; wrap.dataset.wd = u; wrap.querySelectorAll("[data-wd]").forEach((im) => { im.src = u; im.hidden = false; }); wrap.querySelectorAll("[data-wdfb]").forEach((x) => x.remove()); });
+    kit.dressIntro(intro, intro.querySelector("." + K + "cardin"), "chapter-5");
+    {
+      const strip = intro.querySelector("." + K + "suits");
+      const all = [["fisk", "Fisk", ""], ["jax", "Jax", ""], ["kimura", "Kimura", ""], ["hollis", "Hollis", ""], ["pell", "Pell", "out"], ["duarte", "Duarte", "out"], ["sam", "Sam", "not"]];
+      for (const [id, name, cls] of all) {
+        if (!kit.has("hands-" + id)) continue;
+        const f = document.createElement("figure"); f.className = cls;
+        const im = kit.img("hands-" + id, 80, ""); im.className = "h";
+        f.append(im, document.createTextNode(cls === "out" ? name + " ✗" : cls === "not" ? "(" + name + ")" : name));
+        strip.appendChild(f);
+      }
+    }
     if (matchMedia("(max-width:520px)").matches) { seatEls[1].style.left = "14%"; seatEls[3].style.left = "86%"; }
 
     // ---- game state
     let hand = 0, dealer = 3, hands = [[], [], [], []], bids = [null, null, null, null], taken = [0, 0, 0, 0];
     let trick = [], leader = 0, turn = 0, played = [], loaves = 3, fiskBread = 0, phase = "intro", sel = 0;
-    let watching = false, watchedAny = false, exactHands = 0;
+    let watching = false, watchedAny = false, exactHands = 0, w8Told = false, ducked = 0;
     const trump = () => SEATS[dealer].suit;
     const hunger = 72; // day 4 evening: hunger over 70 makes the hand tremble
 
@@ -169,25 +239,30 @@ export default {
       for (const st of SEATS) for (let r = 1; r <= 8; r++) deck.push({ suit: st.suit, rank: r });
       for (let i = deck.length - 1; i > 0; i--) { const j = Math.floor(rng() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; }
       hands = [0, 1, 2, 3].map((p) => deck.slice(p * 8, p * 8 + 8).sort((a, b) => (a.suit === b.suit ? a.rank - b.rank : Object.keys(SUITS).indexOf(a.suit) - Object.keys(SUITS).indexOf(b.suit))));
+      // the withdrawn 8s, face up: the dealer's first, then the seat on his left
+      WD.forEach((c, k) => hands[(dealer + k) % 4].push(c));
       bids = [null, null, null, null]; taken = [0, 0, 0, 0]; played = []; trick = []; loaves = 3;
       leader = (dealer + 1) % 4; turn = leader;
     }
-    const cardHtml = (c) => `<span class="r">${c.rank}</span>${suitSvg(c.suit, "s")}<span class="l">${c.suit.slice(0, 5)}</span>`;
-    const label = (c) => `${c.rank} of ${c.suit}`;
-    const beats = (a, b) => (a.suit === b.suit ? a.rank > b.rank : a.suit === trump());
+    const cardHtml = (c) => `<span class="r">${c.rank}</span>${suitSvg(c.suit, "s")}<span class="l">${c.suit.slice(0, 5)}</span>${c.wd ? `<span class="wd">WITHDRAWN</span>` : ""}`;
+    const label = (c) => (c.wd ? `${c.of}'s withdrawn 8 of ${c.suit}` : `${c.rank} of ${c.suit}`);
+    // a withdrawn 8 beats nothing, and anything beats it
+    const beats = (a, b) => (a.wd ? false : b.wd ? true : a.suit === b.suit ? a.rank > b.rank : a.suit === trump());
+    const ledSuit = () => trick.find((t) => !t.card.wd)?.card.suit ?? null;
     function winnerOf(tr) { let w = tr[0]; for (const t of tr.slice(1)) if (beats(t.card, w.card)) w = t; return w; }
     function legal(p) {
       const h = hands[p];
-      if (!trick.length) return h.slice();
-      const led = trick[0].card.suit;
-      const f = h.filter((c) => c.suit === led);
-      return f.length ? f : h.slice();
+      const led = ledSuit();
+      if (!led) return h.slice();
+      const f = h.filter((c) => !c.wd && c.suit === led);
+      return f.length ? [...f, ...h.filter((c) => c.wd)] : h.slice();
     }
 
     // ---- AI
     function estimate(p) {
       let e = 0;
       for (const c of hands[p]) {
+        if (c.wd) continue;
         if (c.suit === trump()) e += c.rank >= 6 ? 1 : c.rank >= 4 ? 0.5 : 0.15;
         else e += c.rank === 8 ? 0.7 : c.rank === 7 ? 0.35 : 0;
       }
@@ -200,10 +275,14 @@ export default {
       return Math.max(0, Math.min(8, b));
     }
     function aiPlay(p) {
-      const L = legal(p).sort((a, b) => a.rank - b.rank + (a.suit === trump()) * 10 - (b.suit === trump()) * 10);
+      const all = legal(p);
+      const wd = all.filter((c) => c.wd);
+      const L = all.filter((c) => !c.wd).sort((a, b) => a.rank - b.rank + (a.suit === trump()) * 10 - (b.suit === trump()) * 10);
       const need = bids[p] - taken[p];
-      if (!trick.length) {
+      if (!L.length) return wd[0];
+      if (!ledSuit()) {
         if (need > 0) { const hi = L.filter((c) => c.suit !== trump() && c.rank >= 7); if (hi.length) return hi[hi.length - 1]; }
+        if (need <= 0 && wd.length && !trick.length) return wd[0]; // on his bid: he leads the empty chair's card
         return L[0];
       }
       const cur = winnerOf(trick).card;
@@ -211,6 +290,7 @@ export default {
       const loses = L.filter((c) => !beats(c, cur));
       if (need > 0 && wins.length) return wins[0];
       if (need <= 0 && loses.length) return loses[loses.length - 1];
+      if (need <= 0 && wd.length) return wd[0]; // every card he holds would win: he ducks with the withdrawn 8
       return L[0];
     }
 
@@ -222,9 +302,16 @@ export default {
       bidsBox.innerHTML = SEATS.map((st, i) => `<div class="${K}bidrow${i === 0 ? " me" : ""}"><span>${suitSvg(st.suit, "", P.cream)}${st.name}</span><span>${bids[i] ?? "–"} · ${taken[i]}${bids[i] != null && bids[i] === taken[i] && phase !== "bid" ? " ✓" : bids[i] != null && taken[i] > bids[i] ? " ✗" : ""}</span></div>`).join("")
         + `<div style="margin-top:4px;color:${P.sodium}">TRUMPS ${suitSvg(trump(), "", P.sodium)}${trump().toUpperCase()} · HAND ${Math.max(1, hand)}/2</div>`
         + (phase === "play" && need != null ? `<div class="${K}need">${need > 0 ? `TAKE ${need} MORE of ${tricksLeft}` : need === 0 ? `EXACT · LOSE THE REST` : `OVER BY ${-need} · NO LOAF`}</div>` : "");
-      $("issue").innerHTML = `<div style="font-family:'Stardos Stencil',monospace;font-size:28px;line-height:1">32</div><div style="font-size:12px">cards</div><div>${EMPTY.map((e) => `${suitSvg(e.suit, "", P.cream)}<span class="${K}stamp">WITHDRAWN</span>`).join("<br>")}</div>`;
+      const holder = (c) => { const i = hands.findIndex((h) => h.includes(c)); return played.includes(c) ? "played" : i < 0 ? "burned" : i === 0 ? "you hold it" : SEATS[i].name + " holds it"; };
+      const wdMark = wrap.dataset.wd ? `<img class="${K}stampart" alt="withdrawn" src="${wrap.dataset.wd}">` : `<span class="${K}stamp">WITHDRAWN</span>`;
+      $("issue").innerHTML = `<div style="font-family:'Stardos Stencil',monospace;font-size:22px;line-height:1">32 + 2 ${wdMark}</div>${WD.map((c) => `<div style="font-size:12px;white-space:nowrap">${suitSvg(c.suit, "", P.cream)}8 · ${holder(c)}</div>`).join("")}`;
       $("trk").innerHTML = SEATS.map((st) => `<span>${suitSvg(st.suit, "", P.cream)}</span>` + [1, 2, 3, 4, 5, 6, 7, 8].map((r) => (played.some((c) => c.suit === st.suit && c.rank === r) ? `<s>${r}</s>` : `<span>${r}</span>`)).join("")).join("");
-      seatEls.forEach((el, i) => { el.classList.toggle("turn", turn === i && phase === "play"); el.querySelector(".b").textContent = bids[i] == null ? "" : `bid ${bids[i]} · took ${taken[i]}`; });
+      seatEls.forEach((el, i) => {
+        el.classList.toggle("turn", turn === i && phase === "play");
+        const b = el.querySelector(".b");
+        b.textContent = bids[i] == null ? "" : `bid ${bids[i]} · took ${taken[i]}`;
+        if (i > 0 && (phase === "bid" || phase === "play")) { const k = document.createElement("i"); k.className = "bk"; k.textContent = hands[i].length; k.setAttribute("aria-label", `${hands[i].length} cards in hand`); b.appendChild(k); }
+      });
       const have = basketEl.children.length;
       if (have !== loaves) basketEl.innerHTML = `<div class="${K}loaf"></div>`.repeat(loaves);
       basketEl.setAttribute("aria-label", `Bread basket, ${loaves} loaves`);
@@ -234,8 +321,8 @@ export default {
       const best = trick.length ? winnerOf(trick) : null;
       for (const t of trick) {
         const d = document.createElement("div");
-        d.className = K + "card" + (t.card.suit === trump() ? " trump" : "") + (best === t ? " best" : "") + (won && best === t ? " won" : "");
-        d.innerHTML = cardHtml(t.card);
+        d.className = K + "card" + (!t.card.wd && t.card.suit === trump() ? " trump" : "") + (t.card.wd ? " w8" : "") + (best === t ? " best" : "") + (won && best === t ? " won" : "");
+        d.innerHTML = cardHtml(t.card); dress(d, t.card);
         d.style.left = TRICK_POS[t.p][0] + "%"; d.style.top = TRICK_POS[t.p][1] + "%";
         d.setAttribute("aria-label", `${SEATS[t.p].name} played ${label(t.card)}`);
         trickEl.appendChild(d);
@@ -243,17 +330,18 @@ export default {
     }
     function renderHand() {
       handEl.innerHTML = "";
+      handEl.style.setProperty("--n", Math.max(8, hands[0].length));
       handEl.classList.toggle("tremble", !reduce && hunger >= 70);
       const myTurn = phase === "play" && turn === 0;
       const L = myTurn ? legal(0) : [];
       const cur = trick.length ? winnerOf(trick).card : null;
       hands[0].forEach((c) => {
         const b = document.createElement("button");
-        b.type = "button"; b.className = K + "card" + (c.suit === trump() ? " trump" : ""); b.innerHTML = cardHtml(c);
+        b.type = "button"; b.className = K + "card" + (!c.wd && c.suit === trump() ? " trump" : "") + (c.wd ? " w8" : ""); b.innerHTML = cardHtml(c); dress(b, c);
         const ok = L.includes(c);
         if (!ok) b.setAttribute("disabled", "");
         if (ok && cur && beats(c, cur)) b.classList.add("win");
-        b.setAttribute("aria-label", label(c) + (ok ? (cur && beats(c, cur) ? ", would win the trick so far" : "") : ", cannot play now"));
+        b.setAttribute("aria-label", label(c) + (c.wd ? ": follows no suit, wins nothing" : "") + (ok ? (cur && beats(c, cur) ? ", would win the trick so far" : "") : ", cannot play now"));
         b.addEventListener("click", () => fiskPlay(c));
         // a pointer on a card you may not play still answers: it shakes
         b.addEventListener("pointerdown", () => { if (b.hasAttribute("disabled") && !reduce) { b.classList.remove("nope"); void b.offsetWidth; b.classList.add("nope"); } });
@@ -271,9 +359,9 @@ export default {
     }
     function showTaps() {
       const t = seatEls[1].querySelector(".t");
-      if (!watching || !trick.length) { t.textContent = ""; return; }
-      const led = trick[0].card.suit;
-      const n = hands[1].filter((x) => x.suit === led && x.rank > 5).length + (trick.some((x) => x.p === 1) ? 0 : 0);
+      const led = ledSuit();
+      if (!watching || !led) { t.textContent = ""; return; }
+      const n = hands[1].filter((x) => !x.wd && x.suit === led && x.rank > 5).length + (trick.some((x) => x.p === 1) ? 0 : 0);
       t.textContent = trick.some((x) => x.p === 1) ? "(played)" : n ? "tap ".repeat(n).trim() : "no taps";
     }
 
@@ -313,7 +401,11 @@ export default {
       if (trick.length === 4) return later(resolveTrick, 300);
       if (turn === 0) {
         const need = bids[0] - taken[0];
-        bar(trick.length ? `Your play. Follow <b>${trick[0].card.suit}</b> if you can.${need > 0 ? " A red underline marks a card that would win it so far." : " You want to lose this one."}` : `Your lead.${need > 0 ? " You still need tricks." : " You are on your bid: lead low."}`);
+        const mine = hands[0].find((c) => c.wd);
+        const w8 = mine && !w8Told ? ` <span class="${K}new">NEW · ${mine.of}'s 8 is in your hand, stamped WITHDRAWN. It follows no suit and wins nothing: play it on any trick you want to lose. You hold nine cards for eight tricks.</span>` : mine && need <= 0 ? " The WITHDRAWN 8 loses any trick." : "";
+        if (mine) w8Told = true;
+        const led = ledSuit();
+        bar((led ? `Your play. Follow <b>${led}</b> if you can.${need > 0 ? " A red underline marks a card that would win it so far." : " You want to lose this one."}` : trick.length ? `A withdrawn 8 was led: it sets no suit. Yours does.` : `Your lead.${need > 0 ? " You still need tricks." : " You are on your bid: lead low."}`) + w8);
         renderHand(); return;
       }
       later(() => { playCard(turn, aiPlay(turn)); }, 560);
@@ -321,6 +413,7 @@ export default {
     function playCard(p, c) {
       hands[p] = hands[p].filter((x) => x !== c);
       trick.push({ p, card: c }); played.push(c);
+      if (c.wd) { caption(p, p === 0 ? "" : `plays ${c.of}'s 8`); if (p === 0) ducked++; }
       turn = (p + 1) % 4;
       renderTrick(); renderTop();
       if (p === 0) renderHand();
@@ -335,7 +428,7 @@ export default {
       taken[w.p]++;
       renderTrick(true);
       const mine = w.p === 0, over = taken[0] > bids[0];
-      bar(`${mine ? "You take" : SEATS[w.p].name + " takes"} the trick with the ${label(w.card)}.`);
+      bar(`${mine ? "You take" : SEATS[w.p].name + " takes"} the trick with the ${label(w.card)}.${trick.some((t) => t.card.wd && t.p === 0) ? " Your withdrawn 8 took nothing, as it was stamped to." : ""}`);
       if (mine) toast(over ? "OVER YOUR BID" : taken[0] === bids[0] ? "BID MADE" : "TRICK", over);
       renderTop();
       // the table talks once, after the first trick of the evening
@@ -346,7 +439,7 @@ export default {
       }
       later(() => {
         trick = []; renderTrick(); leader = w.p; turn = w.p;
-        if (hands[0].length === 0) return endHand();
+        if (taken.reduce((a, b) => a + b, 0) >= 8) return endHand();
         step();
       }, 1200);
     }
@@ -361,7 +454,9 @@ export default {
       later(renderTop, reduce ? 0 : 450);
       const missed = exact.filter((p) => !got.includes(p));
       const others = got.filter((p) => p);
-      const fisk = got.includes(0) ? "You took exactly your bid: <b>a loaf</b>." : bids[0] === taken[0] ? "You made your bid, but the basket was empty by your turn." : `You bid ${bids[0]} and took ${taken[0]}. <b>No bread.</b>`;
+      const burned = hands[0].length ? ` The card you never played, the ${label(hands[0][0])}, is burned.` : "";
+      hands = [[], [], [], []]; renderHand();
+      const fisk = burned + " " + (got.includes(0) ? "You took exactly your bid: <b>a loaf</b>." : bids[0] === taken[0] ? "You made your bid, but the basket was empty by your turn." : `You bid ${bids[0]} and took ${taken[0]}. <b>No bread.</b>`);
       toast(got.includes(0) ? "A LOAF" : "NO BREAD", !got.includes(0));
       bar(`<span>${fisk} ${others.length ? others.map((p) => SEATS[p].name).join(", ") + " took bread." : "No one else took bread."}${missed.length && !missed.includes(0) ? " " + missed.map((p) => SEATS[p].name).join(", ") + " made the bid and went without." : ""}</span> <button type="button" data-next>${hand < 2 ? "Next hand" : "Settle the bread"}</button>`);
       if (hand === 1) caption(3, "Next week. I mean it.");
@@ -375,7 +470,7 @@ export default {
       if (!fiskBread) {
         bar("No bread tonight.");
         api.store.set("losses", losses + 1);
-        return api.end({ outcome: "lose", text: `No bread tonight: ${exactHands ? "the basket ran out before your turn" : "you missed your bid both hands"}, and the basket passed you by. Without a loaf, staying in the bunk at 10:00 will cost more, and the call will be louder for it.` });
+        return kit.endCard(wrap, { card: "chapter-6", stamp: "stamp-withdrawn", caption: "RATION ISSUE · DAY 4 · NO BREAD" }, { outcome: "lose", text: `No bread tonight: ${exactHands ? "the basket ran out before your turn" : "you missed your bid both hands"}, and the basket passed you by. Without a loaf, staying in the bunk at 10:00 will cost more, and the call will be louder for it.` });
       }
       api.store.set("losses", 0);
       const out = [];
@@ -388,7 +483,7 @@ export default {
           const close = gave.length === fiskBread
             ? `You go to the bunk with nothing. Feeding someone does not save them; it moves the call to someone else, one night at a time. Tonight it moves off ${gave.join(" and ")}.`
             : ate ? "The bread makes you feel full, the first time in four days. At 10:00, staying in the bunk will be possible." : "The loaf is wrapped in your undershirt. Tomorrow evening it can buy you one night in the bunk.";
-          return api.end({ outcome: gave.length === fiskBread ? "done" : "win", text: `Bread: ${fiskBread} ${fiskBread > 1 ? "loaves" : "loaf"}. You ${lines.join("; ")}. ${close}` });
+          return kit.endCard(wrap, { card: "hands-hollis", caption: "RATION ISSUE · DAY 4 · BREAD" }, { outcome: gave.length === fiskBread ? "done" : "win", text: `Bread: ${fiskBread} ${fiskBread > 1 ? "loaves" : "loaf"}. You ${lines.join("; ")}.${ducked ? ` You ducked ${ducked} trick${ducked > 1 ? "s" : ""} with an empty chair's 8.` : ""} ${close}` });
         }
         bar(`<span>Loaf ${i + 1} of ${fiskBread}:</span><button type="button" data-o="keep">Keep it</button><button type="button" data-o="eat">Eat it now</button>` + [1, 2, 3].map((p) => `<button type="button" data-o="${SEATS[p].name}">Give to ${SEATS[p].name}</button>`).join(""));
         barEl.querySelectorAll("[data-o]").forEach((b) => b.addEventListener("click", () => { out.push(b.dataset.o); i++; ask(); }));
@@ -430,6 +525,7 @@ export default {
         window.removeEventListener("keydown", onKey);
         startBtn.removeEventListener("click", start);
         watchBtn.removeEventListener("click", toggleWatch);
+        kit.dispose();
         wrap.remove();
       },
     };

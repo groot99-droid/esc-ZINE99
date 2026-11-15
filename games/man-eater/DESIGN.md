@@ -244,7 +244,11 @@ talk.
 
 ### Fisk
 
-- **Want:** to do the posting and not think about it; later, to know why he was lied to.
+- **Want:** to do the posting and not think about it; later, to know why he was lied to. Under
+  both (accepted 2026-11-15): to be "one of the lucky ones" (line 28) again, the man who gets
+  through, shelves it and complains about nothing.
+- **Need (accepted 2026-11-15):** to try to stop someone, the one thing night 1 took from him, even
+  when trying will not work.
 - **Fear:** being the kind of man who does not try to stop someone. (The game makes him that man on
   night 1.)
 - **Voice:** clipped, flat. "Sir yes Sir," (line 29, replied "flatly"). Inner lines are the list
@@ -256,6 +260,10 @@ talk.
 ### Sam
 
 - **Want:** a surplus of test subjects, and no repeat of "the mistakes as we have with the rest".
+  Accepted 2026-11-15: what he needs is one changed man whose mind is still lit, before his
+  superiors replace him. He is not trying to destroy Fisk's mind. He needs it.
+- **Secret (accepted 2026-11-15):** his own name is on a form in his drawer: "Project head: review,
+  day 8. Results required: 1." The Schedule's header carries the same line.
 - **Fear:** his superiors' dissatisfaction ("his eyes twisted in an attempt to mask his
   dissatisfaction", line 34).
 - **Voice (verbatim):** "You can just call me Sam," (line 29). "Do not, under any circumstances,
@@ -278,6 +286,9 @@ talk.
 
 - **Want:** to know "what it was and why they had been lied to" (line 33).
 - **Fear (added):** being written down. He will not keep a list.
+- **Secret (accepted 2026-11-15):** he was posted here for refusing to sign a statement against a
+  man at his last station. That is why he will not "leave a list". He is not a plant: the Schedule
+  calls him "Companion (uninformed)".
 - **Voice:** sparse. Source gives him no lines; added lines are marked. "So you know which is
   yours." (day 3, the knot). "I counted the posts." (day 5).
 - **Arc by ending:** Zoo, gassed beside Fisk (if he is still there on night 7). Rule Three, stops in
@@ -294,6 +305,9 @@ talk.
 | Hollis | Stars | The youngest; says he is leaving next week | "Next week. I mean it." | Night 5 or 6 |
 
 Fisk's suit is Hands. The first bunkmate's suit is Keys; Jax inherits it with the chair.
+
+Accepted 2026-11-15: Hollis wants out, next week, and has already taken the offer Sam makes to Fisk.
+His scene "Next Week" (day 6) waits for phase 2 (see "Accepted development").
 
 ### The orderly, the cook, the guards (added, unnamed)
 
@@ -805,7 +819,8 @@ evening game is the refuser's lifeline and the place the player meets the people
 1. **The deck** has one suit per occupied seat, ranks 1 to 8. Each player's suit is drawn by them:
    Hands (Fisk), Keys (the first bunkmate, then Jax), Anchors (Pell), Houses (Duarte), Sparks
    (Kimura), Stars (Hollis), and, if he sits, the project stamp (Sam). When a chair empties, its
-   suit is taken out before the next deal. With N seats the deck is 8N cards and each player holds 8.
+   suit is taken out before the next deal, all but its 8 (rule 8). With N seats the deck is 8N cards
+   and each player is dealt 8.
 2. **Trumps:** the dealer's own suit. The deal passes to the left each hand.
 3. **Bidding:** before play, each player in turn from the dealer's left says how many tricks they
    will take, 0 to 8. The dealer bids last and may not make the bids add up to 8, so at least one
@@ -818,6 +833,13 @@ evening game is the refuser's lifeline and the place the player meets the people
 6. **An evening** is two hands (one guided hand and one free hand on day 1).
 7. **After the game** Fisk decides, for each loaf he won: keep it (`bread_banked` +1), give it to a
    seated player (their pull -15; Jax's trust +10), or eat it now (hunger -25).
+8. **The withdrawn 8 (accepted 2026-11-15).** Each empty chair's 8 stays in the deck, stamped
+   WITHDRAWN. After the deal the withdrawn 8s are handed out face up, the first to the dealer and
+   then to each seat on his left, so the table knows who holds one. A withdrawn 8 follows no suit and
+   wins nothing: it may be played on any trick whatever was led, anything beats it, and if it is led
+   the next card played sets the suit. It is the one clean way to duck a trick. Its holder has nine
+   cards for eight tricks, and the card he never plays is burned at the end of the hand. With E empty
+   chairs the deck is 8N + E cards (`chairs_empty` counts E).
 
 **Two-handed play (day 6):** with two seats the deck is 16 cards and both hands are dealt in full,
 so each player knows the other's cards exactly. The basket holds one loaf. It is the only hand of the
@@ -826,7 +848,8 @@ whether to let the other win.
 
 **Page layout:** the table seen from above, round, filling 80% of the page. Fisk's hand fanned at
 the bottom. Each seat shows its occupant's hands and suit symbol, and one line of table talk per
-hand in a small caption at the seat. Empty chairs stay at the table, pushed in, with no caption. The
+hand in a small caption at the seat, with a small stack of card backs counting the cards he still
+holds (nine for the holder of a withdrawn 8). Empty chairs stay at the table, pushed in, with no caption. The
 bread basket sits in the centre with its loaves. Top left: the bids. Top right: the card tracker
 (Fisk's memory of cards played), present only at clarity tier 1.
 
@@ -870,8 +893,13 @@ how much of your mind to trade for strength.
 **Rules:**
 
 1. The tray holds the ration (one slab), a cup of broth, a paper cup with a pill, and on some days a
-   bread heel. The player cuts the slab into pieces by dragging a knife: it divides into five pieces
-   on days 1 to 3, six on days 4 to 6, ten on day 7.
+   bread heel. **The cut is yours (accepted 2026-11-15):** the player puts the knife where they
+   choose and cuts the slab into 3 to 10 pieces of any sizes. The slab is the day's ration whatever
+   the cut: five standard pieces on days 1 to 3, six on days 4 to 6, ten on day 7, and a piece
+   carries the effects in the table below in proportion to its size (a piece twice the standard size
+   is change +4). The orderly counts the pieces left, not their weight (rule 6), so a coarse cut
+   hides a refusal, and each big piece eaten changes more. A piece bigger than one standard piece
+   will not fold into the napkin.
 2. Each piece can be **eaten** (dragged to the mouth at the bottom edge), **pocketed** (dragged to the
    napkin at the left edge; the napkin holds three), **passed** to Jax's tray (from day 3, if he is
    beside you), or **left** on the tray.
@@ -907,8 +935,9 @@ slowly, faster as it rises.
 
 **Inputs:** drag with mouse, touch or a gamepad cursor; hold a key to cheek the pill.
 
-**Finish:** the tray is collected. The meal is logged in `meals`: `kind` ration with the number of
-pieces eaten (eaten later from the napkin counts too), or `refused` if none; `staff` for the staff
+**Finish:** the tray is collected. The meal is logged in `meals`: `cut` is how many pieces the slab
+was cut into, and `kind` ration with the number of standard pieces eaten (a big piece counts for
+more than one; what is eaten later from the napkin counts too), or `refused` if none; `staff` for the staff
 tray.
 
 **Failure:** being seen. Each seen act adds suspicion +20 and logs a seen break of rule one where it
@@ -929,6 +958,9 @@ meal, `contraband_left`.
 | 5 | 6 | 4 s of 8 | The orderly stands closer |
 | 6 | 6 | 4 s of 8 | Two pills |
 | 7 | 10 | 4 s of 8 | Double ration: "Eat up. Big night." |
+
+The "Pieces" column is the size of the slab in standard pieces; how many pieces it is cut into is
+the player's (rule 1).
 
 **Hints:** the orderly's shadow lengthens just before it rests on Fisk. Jax looks at the napkin
 when it is safe.
@@ -958,6 +990,22 @@ change is shown as numbers; nowhere else is there a bar or a figure.
    "lied to" (line 33); "transferred" (line 32); "worse places" (line 28); "Sir yes Sir" (line 29).
    At tier 4 the one word left is "hate": as his mind goes, "he knew he would always hate these
    people" (line 36).
+6. **The Schedule, a second sheet (accepted 2026-11-15).** If Fisk read his folder on night 4
+   (`schedule_read`, the scene "Carbon" in `n4_office`), the Chart has a second sheet under it from
+   day 5: the Schedule, one typed line per day with a blank after "Response", typed a day ahead
+   (`data/schedule.json`). One torn strip of it is found on each night out, and the player lays each
+   strip against the list entry it issued; one retry a strip. A strip laid shows that the discovery
+   was an item: Sam's lie about the hour (L8), the empty chair (L10), the unlocked cabinet (L15), "on
+   schedule" (L9). Each strip laid is written to `schedule_strips`.
+7. **The last line.** Day 7's strip has an outcome typed beside each of the three ways out of night
+   7: "STAY: retained. FOLLOW: see previous. FENCE: photographed, not followed." The player rules on
+   the line. Any of the three was typed before it was chosen. A fourth, written in pencil, is not on
+   the sheet, and the orderly writes it in by hand (the carry; phase 3 builds what it leads to).
+
+Every day's line on the Schedule has a box at 22:00, and on every day it is empty. **Its treatment
+is pending the cultural consultant** (section 20: M0, M6, M9), who sees it before anything is built
+on it. Until then the box is drawn empty, as the art has it, and no page, line or caption says
+anything about it.
 
 **The measurements** (the true values the page shows at tier 1):
 
@@ -989,13 +1037,15 @@ the crew's columns: from day 4 the orderly's clipboard on the scale shows Jax's 
 **Page layout:** a clipboard filling the page. Left two-thirds: the grid, rows as above, columns
 Day 1 to Day 7, the current column outlined. Right third: the list, in Fisk's hand, each entry with
 its explanation. Along the bottom: four to six hypothesis cards. On day 5 a second sheet (the
-target curve) slides half under the first.
+target curve) slides half under the first. From day 5, when `schedule_read` is true, the Schedule's
+strips are laid in the left two-thirds in place of the grid, and the list on the right is what they
+are laid against.
 
 **Inputs:** click cells to select (they underline); click a card; press Supported or Broken.
 
 **Finish:** a ruling is made (or the retry spent), then the orderly says "Next."
 
-**What it writes:** `knows`, `the_list`.
+**What it writes:** `knows`, `the_list`, and from day 5 `schedule_strips`.
 
 **Difficulty curve:** day 2 needs two adjacent cells in one row pair; day 3 needs a correlation
 across two rows and two days; day 4 a correlation where both rows rise; day 5 a comparison against
@@ -1175,6 +1225,12 @@ Each row is written to `the_list`.
 | L12 | 5 | Bare prints the wind does not fill | A joke / Someone's boots / An animal | The pens, night 6 |
 | L13 | 4 | Cold from the drains | The mine / Ground frost / Doesn't matter | Floor Plan, day 6; the pens |
 | L14 | 1 | The flute | A vent / A radio / Doesn't matter | The corner, night 7 |
+
+Accepted 2026-11-15: one entry is written outside this table, on night 4, if Fisk reads his folder:
+**L15**, "My file has tomorrow in it. Typed." It has no explanations to choose from and nothing
+breaks it; it is what the Schedule's strips are laid against. It is kept in `data/schedule.json`
+(`issued_entries`), not in `list_incidents.json`, whose fourteen entries and `knows` thresholds
+stand as they are.
 
 **`knows`** climbs and never falls, as in the vault's cosmic-horror ladder: `anomaly` at the start;
 `pattern` at 3 broken entries; `scale` at 6 broken entries, or `files_read`, or the target curve
@@ -1410,14 +1466,15 @@ Total spoken lines are counted in section 17.
 
 ## 18. Data files
 
-`games/man-eater/data/` holds the four shared files and two extra files.
+`games/man-eater/data/` holds the four shared files and three extra files.
 
 - `game.json`: nine chapters, 112 minutes, target 90 to 120.
 - `scenes.json`: two 2D modes (`silhouette_halls`, `snow_line`), four 1D games (`short_rations`,
   `the_tray`, `the_chart`, `floor_plan`), and 63 scenes: 34 in 3D, 7 in 2D, 22 1D appearances.
   Each scene lists what it reads and writes.
-- `flags.json`: every meter, counter, flag, enum and ledger in section 12, including four ledgers
-  (`meals`, `rules_broken`, `the_list`, `taken`).
+- `flags.json`: every meter, counter, flag, enum and ledger in section 12, including five ledgers
+  (`meals`, `rules_broken`, `the_list`, `taken`, and `schedule_strips`), and the two flags of the
+  Carbon scene (`schedule_read`, `cabinet_declined`).
 - `endings.json`: four endings with the conditions in section 13.
 
 Beyond the shared schemas, two fixed tables (content, not state), each with a schema in
@@ -1432,7 +1489,12 @@ Beyond the shared schemas, two fixed tables (content, not state), each with a sc
   the five hypothesis cards, one question for each of days 2 to 6 with the cells that prove it, and
   day 7's "ready" with its eight word fragments, each with the source line it is taken from.
 
-`tools/check_data.py` checks both against their schemas, against each other and against the four
+- `schedule.json` (`schemas/schedule.schema.json`, accepted 2026-11-15): the Schedule (section
+  11.3, rules 6 and 7): its seven typed lines, the night each strip is found, the list entry each
+  strip is laid against, entry L15, the three typed outcomes of day 7, and the note that the 22:00
+  box is pending the consultant. `tools/check_data.py` does not read it yet.
+
+`tools/check_data.py` checks the first two against their schemas, against each other and against the four
 shared files: every scene, flag, chapter and crew name exists; every scene that adds or breaks an
 entry writes `the_list` and plays on the stated day, after the entry is added; the formulas give
 the values at change 100 and agree with the camera height and Floor Plan's square; the `knows`
@@ -1560,6 +1622,137 @@ institution that exploits the legend:
    `tools/check_data.py` now fails on a scene that writes `the_list` and adds, breaks or ends
    nothing.
 
+## Accepted development (2026-11-15)
+
+The author accepted `DEEP_DIVE.md` whole on 2026-11-15, with every decision its roadmap listed as
+"needs the author first" answered yes. This section states the accepted story. It is built in three
+phases; this pass is phase 1, and each part below says which phase builds it. Nothing here edits the
+source, removes The Zoo or contradicts a quoted line. Everything in it is an addition and is listed
+again in section 21.
+
+### The dramatic question
+
+*Can a man who survives by not minding make one act the base has not already scheduled, before the
+food takes the mind he would need to make it?*
+
+### Want, need and the opposing force
+
+- **Fisk wants** to be "one of the lucky ones" (line 28) again: get through, shelve it, complain
+  about nothing. **He needs** to try to stop someone, the one thing night 1 took from him ("didn't
+  even try to stop his bunkmate", line 30), even when trying will not work.
+- **The project wants** a changed man who still answers "Sir yes Sir." (line 29). It already has
+  monsters. The source says what went wrong with them: "As his mind went blank and his thoughts
+  became those of an animal" (line 36). That is read here as "the same mistakes as we have with the
+  rest" (line 35): the rest went blank. So the project keeps a subject's mind lit while the meat
+  works, the way a zoo keeps an animal from going dull, with enrichment: a companion, a loss to
+  witness, a lie clumsy enough to catch ("about when you would have been asleep", line 32), a card
+  table, a cabinet left unlocked. The author's last line, "He was like an animal in a zoo" (line
+  36), is the seed. Everything Fisk does to resist, and every puzzle the player solves, is the
+  zoo's enrichment.
+- This also explains Sam's face in the cave, "a smirk painted across his face, his eyes twisted in
+  an attempt to mask his dissatisfaction" (line 34). Rule two is the test. The changed man who
+  still stays in the room is the result; a subject who follows the call has given in. The Zoo is
+  Sam's failure too.
+
+### The characters, deepened
+
+| Character | Want | Secret | Scene | Phase |
+| --- | --- | --- | --- | --- |
+| Sam | One result before his superiors replace him | His own name on a form in his drawer: "Project head: review, day 8. Results required: 1." | "Results Required" (day 6): after "Coming along.", if Fisk has read his file, he adds "You read it. Good. The ones who don't read it are the ones we lose." and waits to see whether Fisk can still be angry | 2 |
+| Jax | To know "why they had been lied to" (line 33) | Posted here for refusing to sign a statement against a man at his last station; his file says "companion (uninformed)" | "Jax Unties the Knots" (day 5): shown the page that has his plan typed on it a day early, he undoes the knots on Fisk's bed frame one by one. "So I'm a line." "Then I'm not counting for them." | 2 |
+| Hollis | Out, next week | He has already taken the offer Sam makes to Fisk | "Next Week" (day 6): his chair is empty at breakfast, not at night; he is behind the hatch in staff greys, and the gaze at the Tray is his. If Fisk takes the key instead, Hollis is taken as section 12 has it. Someone always fills the seat | 2 |
+
+### The secret under the story: the Schedule
+
+The seed is the source's: "Even though the barracks are relatively new, they appear rundown;
+deterioration and other issues have already occurred" (line 28,
+`creative-writing/vault/03_Stories/07_Project_-_Man_Eater.md`). This has all run before.
+
+Each subject has a typed sheet, one line per day, with a blank for "Response". Fisk finds his own
+on night 4, in the cabinet in Sam's office, with tonight's line and tomorrow's already typed. The
+lines (`data/schedule.json`):
+
+| Day | Time | Issued | Response |
+| --- | --- | --- | --- |
+| 1 | 06:00 | Intake. Rules read. | "Sir yes Sir." |
+| 2 | 14:00 | False statement issued (transfer). Companion (uninformed). | curiosity. Retained. |
+| 3 | 19:00 | Card table. Loss to witness. | |
+| 4 | 23:00 | Cabinet left unlocked. Officers' wing left unwatched. | |
+| 5 | 08:00 | On schedule. | |
+| 6 | 09:00 | Subject will report companion. Subject will follow. | |
+| 7 | 22:00 | STAY: retained. FOLLOW: see previous. FENCE: photographed, not followed. | |
+
+One slot on every day is empty: 22:00. **Its treatment is pending the cultural consultant**, who
+sees the empty slot before anything is built on it (section 20, and the `DEEP_DIVE.md` roadmap).
+In this pass the box is drawn empty and no text refers to it.
+
+### Acts and scenes
+
+| # | Scene | Status | Scene id | Phase |
+| --- | --- | --- | --- | --- |
+| 1 | The Gate Faces In (day 1) | source | `c1_truck_gate` | built |
+| 2 | Didn't Even Try (night 1) | source | `n1_bunk_call` | built |
+| 3 | "Around 10:00" (day 2: Sam's lie, Jax takes the chair) | source | `d2_sam_bunk`, `d2_rations` | built |
+| 4 | Boots and HOLD (day 3) | existing | `d3_mail_room`, `n3_snow` | built |
+| 5 | The Glovebox (night 3): Duarte asks Fisk to put his letter in the truck, not the sack. The glovebox is already full of letters | new | **scene to add** (`n3_glovebox`, 3D, the truck cab) | 2 |
+| 6 | **Midpoint: Carbon** (night 4, Sam's office). Fisk's own folder. Tonight's line is typed: "Officers' wing left unwatched." The door he crept through was held open | new, inside an existing scene | `n4_office` | **1 (this pass)** |
+| 7 | Jax's Plan, with a fourth answer: show him the page | existing, extended | `d5_jax_plan` | 2 |
+| 8 | Next Week (day 6) | new | **scene to add** (`d6_next_week`, 3D, the cafeteria hatch) | 2 |
+| 9 | Open Hands (day 6, the two-seat game) | existing | `d6_rations` | built; Jax tapping anyway is phase 2 |
+| 10 | **Darkest: Below** (night 6). The pens hold nine; the roster lists thirty-one. The first bunkmate's wall list ends, at full reach, with a sentence in quotes: "we won't make the same mistakes". The crates Fisk carried on day 1 carry roster line numbers | existing, extended | `n6_pens` | 2 |
+| 11 | The Last Door (night 7): stay, follow, fence | existing | `n7_door` | built; the carry is phase 3 |
+| 12 | The corner; the cave; waking | source | `n7_windigo`, `e_cave`, `e_zoo_wake` | built |
+
+**Carbon, as built in phase 1.** After the roster, the cabinet under the staff shelf is unlocked and
+one folder has Fisk's number on its tab. The player may shut the cabinet and go back
+(`cabinet_declined`; nothing else changes, and on a second playthrough this is the informed choice).
+Or open it: a carbon of Form 7-F, the printed target sheet, and the Schedule. On the Schedule the
+player finds tonight's line and then tomorrow's, and may tear out tonight's carbon and take it
+(`schedule_read`). Fisk writes L15: "My file has tomorrow in it. Typed." and one line of his own:
+"New Mexico killed the ones who complained about the heat. I didn't complain. Lucky." Two things
+on the desk can be looked at and nothing more: an envelope stamped HOLD, and the staff shelf.
+No scene is added: Carbon is the second half of `n4_office`, which now also writes `schedule_read`,
+`cabinet_declined` and `schedule_strips`.
+
+### Endings
+
+| Ending | Change accepted | Phase |
+| --- | --- | --- |
+| The Zoo (`as_written`, unchanged) | Before the cave, the Schedule's last cell is stamped "see previous". Nothing is added after the author's last line | 2 (the stamp); the ending itself is untouched |
+| Rule Three | His prints were photographed, not followed | 2 |
+| Call Me Sam | Fisk *is* the result. The sheet reads "retained" | 2 |
+| Transferred | Duarte's letter is in the glovebox in front of him, and the truck slows at no town | 2 |
+| **One Set of Prints (new, the fifth)** | Fisk eats enough to carry Jax over the 400 m Jax's legs cannot cross (strength 88), sets him down at the trees with the list, and walks back in his own prints. The base photographs one trail and counts no crossing. Then the bunk, the cloth, and the author's waking, unchanged. The cost: he chose the zoo, and the list Jax carries is written at whatever clarity that much eating left | 3 |
+
+`data/endings.json` still holds four endings. One Set of Prints is added to it in phase 3, with its
+scenes; The Zoo stays `as_written` and stays the last by priority. (An earlier fifth ending,
+Footsteps, was struck in section 20, answer 2. One Set of Prints is a different ending: nothing
+carries to a next run.) Phase 1 builds one piece of it on paper: the last line of the Schedule,
+where the carry is the line that was not typed (section 11.3, rule 7).
+
+### What phase 1 builds, and what waits
+
+**Built in this pass (phase 1: the reversal, on paper).**
+
+- The Carbon scene and the Schedule as a second sheet under the Chart (section 11.3, rules 6 and 7;
+  `data/schedule.json`; `web/games/man-eater/chart.js`).
+- The withdrawn 8 (section 11.1, rule 8; `short-rations.js`).
+- The free cut (section 11.2, rule 1; `tray.js`).
+- The title lettering, the six stamps, the chapter cards and the card faces, and the rest of the
+  code-drawn art, wired into all six web modes.
+
+**Phase 2: the layers talk.** Shadow cover, the stoop and "He Ran" in the halls. Toe-ward prints and
+the size rule in the snow. Self-reported hunger and the cut column on the Chart, and the day-6 twist
+(the project's hypothesis cards). The staff loaf and Jax tapping at open hands. Heel-for-pieces
+trades and what happens to pocketed pieces. Portraits, Hollis at the hatch, the Glovebox, "Results
+Required", "Jax Unties the Knots", the extensions to Below, and the ending details above.
+
+**Phase 3: the new way out.** The carry and One Set of Prints. The elevation strip, ghost lines and
+knots-to-posts on Floor Plan. The two-height Blender renders. The figure's replacement still.
+
+**The consultant sees first:** the Schedule's empty 22:00 slot, and the new figure still. No new
+figure imagery is made until then; `reference/09-the-flute.jpg` stays flagged for replacement.
+
 ## 21. Added for the game
 
 Everything below is a proposal, not the author's text. The author can approve or strike each.
@@ -1632,6 +1825,58 @@ Everything below is a proposal, not the author's text. The author can approve or
 - The omission of the two origin sentences from Sam's cave lines (a cut, not an addition).
 - The choice and order of the day-7 word fragments; the words themselves are the source's.
 - The laundry as a second way to break L9.
+
+**Accepted 2026-11-15 (from `DEEP_DIVE.md`; all of it invented for the game)**
+
+Built in phase 1:
+
+- The Schedule: one sheet per subject, typed a day ahead, with a blank at 22:00 (the blank's
+  treatment pending the consultant); every line typed on Fisk's sheet; "Results required: 1" in its
+  header. Accepted 2026-11-15.
+- The scene "Carbon" inside `n4_office`: the unlocked cabinet, the folder, the choice to shut it,
+  tearing out the carbon. Accepted 2026-11-15.
+- List entry L15, "My file has tomorrow in it. Typed.", and Fisk's line "New Mexico killed the ones
+  who complained about the heat. I didn't complain. Lucky." Accepted 2026-11-15.
+- Laying strips against list entries, and which entry each strip issued (L8, L10, L15, L9). The
+  last line's three typed outcomes and the pencilled fourth ("Carry Jax over. Walk back."), which
+  the orderly writes in by hand as "carried him". Accepted 2026-11-15.
+- Short Rations: the withdrawn 8, and how it is dealt (face up, the dealer first), played (follows
+  no suit, wins nothing) and burned. The deal order and the burned ninth card are this pass's
+  reading of the accepted rule. Accepted 2026-11-15.
+- The Tray: the free cut of 3 to 10 pieces; effects in proportion to a piece's size; the orderly
+  counting pieces, not weight. That a piece over the standard size will not fold into the napkin
+  is this pass's addition to the accepted rule, to keep a coarse cut from pocketing the whole slab.
+  Accepted 2026-11-15.
+- In the web prototype's Carbon scene, two things that can be looked at: the envelope stamped HOLD
+  (this game's thread object) and a blue and white tea caddy on the staff shelf (a guest thread
+  object from another game of the collection). Accepted 2026-11-15 with the art plan.
+- The art plan as drawn by code (`art/`): the red stamp colour and six stamps, title lettering,
+  chapter and clock cards, card faces and the WITHDRAWN overprint, hands at the table, halls
+  cut-outs, yard plates and prints, Isotype icons, Form 7-F, the target sheet, the Schedule and its
+  strips, room stamps, UI ornaments. Accepted 2026-11-15. One asset was added in this pass:
+  `yard-ground-night-3`, the night-3 yard at the scale the Snow line mode plays on.
+
+Accepted 2026-11-15 and waiting for phases 2 and 3 (stated in "Accepted development"):
+
+- Fisk's want (to be "lucky" again) and need (to try to stop someone).
+- The project's aim read as a changed man who still obeys; "the mistakes" read as minds gone blank;
+  enrichment as protocol; rule two as the real test; The Zoo as Sam's failure.
+- Sam's review form and the scene "Results Required", with his added line.
+- Jax's secret and his file note, "companion (uninformed)"; the fourth answer on day 5 and the
+  scene "Jax Unties the Knots", with his two lines.
+- Hollis's secret, the scene "Next Week", and his gaze at the Tray on days 6 and 7.
+- The scene "The Glovebox".
+- Nine pens against thirty-one on the roster; Sam's sentence on the first bunkmate's wall; roster
+  numbers on the day-1 crates.
+- The ending One Set of Prints, the carry, and its strength threshold of 88; the ending details
+  "see previous", the photographed prints, "retained", Duarte's letter.
+- Halls: shadow cover, the stoop, the guard who runs. Snow: toe-ward trails, big prints
+  photographed not followed, Frame 112. Short Rations: the staff loaf, Jax tapping at open hands.
+  Tray: heel-for-pieces trades, what happens to pocketed pieces. Chart: self-reported hunger, the
+  cut column and pencil rub, the project's hypothesis cards. Floor Plan: ghost lines, knots to
+  posts, the elevation strip and the 338 cm occupant.
+- Portraits, generated key art and ending cards, the Blender renders, and (after the consultant)
+  the figure's replacement still.
 
 **Not added on purpose:** the Windigo's origin in any form the player sees or hears; who the figure
 was; any link to the Grounds 99 material.

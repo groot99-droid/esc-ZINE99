@@ -1,6 +1,6 @@
 {
  "game": "man-eater",
- "count": 162,
+ "count": 163,
  "assets": [
   {
    "id": "title",
@@ -177,6 +177,14 @@
    "w": 1600,
    "h": 900,
    "row": "Halls backdrops and cut-outs (Fisk at five heights, guard, orderly, Jax, sheet, flashlight)"
+  },
+  {
+   "id": "yard-ground-night-3",
+   "group": "backdrops",
+   "title": "Snow line ground, night 3: the yard as the mode plays it",
+   "w": 1280,
+   "h": 880,
+   "row": "Yard plates and developed prints"
   },
   {
    "id": "yard-plate-night-3",

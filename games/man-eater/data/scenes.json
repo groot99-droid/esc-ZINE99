@@ -384,7 +384,8 @@
       "writes": [
         "suspicion",
         "rules_broken",
-        "warmth"
+        "warmth",
+        "schedule_strips"
       ],
       "enter": "flatten",
       "exit": "fade",
@@ -562,7 +563,8 @@
         "suspicion",
         "rules_broken",
         "warmth",
-        "the_list"
+        "the_list",
+        "schedule_strips"
       ],
       "enter": "flatten",
       "exit": "fade",
@@ -767,7 +769,10 @@
         "knows",
         "contraband_left",
         "meals",
-        "rules_broken"
+        "rules_broken",
+        "schedule_read",
+        "cabinet_declined",
+        "schedule_strips"
       ],
       "enter": "pull-out",
       "exit": "fade",
@@ -785,11 +790,13 @@
         "change",
         "clarity",
         "the_list",
-        "day"
+        "day",
+        "schedule_read"
       ],
       "writes": [
         "knows",
-        "the_list"
+        "the_list",
+        "schedule_strips"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -990,11 +997,13 @@
         "change",
         "clarity",
         "the_list",
-        "day"
+        "day",
+        "schedule_read"
       ],
       "writes": [
         "knows",
-        "the_list"
+        "the_list",
+        "schedule_strips"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -1200,11 +1209,13 @@
         "change",
         "clarity",
         "the_list",
-        "day"
+        "day",
+        "schedule_read"
       ],
       "writes": [
         "knows",
-        "the_list"
+        "the_list",
+        "schedule_strips"
       ],
       "enter": "push-in",
       "exit": "pull-out",

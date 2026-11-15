@@ -142,7 +142,7 @@
       "name": "chairs_empty",
       "type": "counter",
       "default": 0,
-      "description": "Empty chairs at the rec-room table. Each one removes a suit from Short Rations."
+      "description": "Empty chairs at the rec-room table. Each one removes a suit from Short Rations, all but its 8, which stays in the deck stamped WITHDRAWN (DESIGN.md section 11.1, rule 8)."
     },
     {
       "name": "bread_banked",
@@ -187,10 +187,11 @@
         "day",
         "meal",
         "kind",
-        "pieces"
+        "pieces",
+        "cut"
       ],
       "default": [],
-      "description": "Every meal. kind is ration, bread, contraband, staff or refused; pieces is how many ration pieces were eaten. A Tray with no piece eaten is logged as refused."
+      "description": "Every meal. kind is ration, bread, contraband, staff or refused; pieces is how many ration pieces were eaten. A Tray with no piece eaten is logged as refused. 'cut' is the number of pieces the player cut the slab into (3 to 10); 'pieces' counts what was eaten in standard pieces, so a big piece counts for more than one."
     },
     {
       "name": "rules_broken",
@@ -297,6 +298,29 @@
       "type": "bool",
       "default": false,
       "description": "Night 4: the project's source file and transfer roster in the officers' wing."
+    },
+    {
+      "name": "schedule_read",
+      "type": "bool",
+      "default": false,
+      "description": "Fisk opened his own folder in Sam's office on night 4 (the Carbon scene), found tonight's and tomorrow's lines on the Schedule and took the carbon. Opens the Schedule as a second sheet under the Chart from day 5."
+    },
+    {
+      "name": "cabinet_declined",
+      "type": "bool",
+      "default": false,
+      "description": "Fisk shut the unlocked cabinet on night 4 without reading his folder. The cabinet was left open for him; this is the one item on the Schedule he can refuse."
+    },
+    {
+      "name": "schedule_strips",
+      "type": "ledger",
+      "fields": [
+        "day_line",
+        "found_night",
+        "laid_against"
+      ],
+      "default": [],
+      "description": "The torn strips of the Schedule Fisk holds: which day's line, the night it was found, and the list entry it was laid against on the Chart's second sheet (empty until laid). See data/schedule.json."
     },
     {
       "name": "adit_found",

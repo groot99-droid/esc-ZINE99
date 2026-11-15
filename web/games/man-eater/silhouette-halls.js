@@ -9,6 +9,10 @@
 // Actions: walk, crouch (and hide in an alcove), listen, slip through a side door (2), climb (eater).
 // Beats: the opening, the drains, the 22:30 check, the call under the floor, the roster.
 // The one quotation is DESIGN.md section 3, beat 6, line 30, verbatim and cited.
+// Art (api.art): the cut-outs (Fisk at his height, the stoop for a crouch, the guard) slide and rock
+// on their rods as shadow puppets do; each is rasterised once per size with its baked shadow removed,
+// and a blurred copy is the cast shadow. The night-4 backdrop is the officers' wing end of the hall.
+import { artKit, bareCutout } from "./kit.js";
 
 const P = { ink: "#1B1D1F", cream: "#D9D2BF", snow: "#EEF1F2", print: "#7C8C99" };
 const CEIL = 4.57, PIPE_Y = 2.7, LEN = 112, DOOR_X = 107;
@@ -59,6 +63,10 @@ export default {
       .${K}row button:focus-visible,.${K}pad button:focus-visible{outline:3px solid #D9A441;outline-offset:2px}
       .${K}row button small{display:block;font-weight:400;opacity:.85;font-size:12px}
       .${K}row label{display:flex;gap:8px;align-items:center;font-size:14px;flex-basis:100%}
+      .${K}heights{display:flex;align-items:flex-end;gap:2px;height:74px;margin:0 0 8px;border-bottom:2px solid ${P.ink};position:relative;z-index:1}
+      .${K}heights img{height:100%;width:auto;opacity:.35}
+      .${K}heights img.pick{opacity:1}
+      .${K}heights .tl{height:auto;width:min(46%,170px);margin-left:auto;opacity:1;align-self:center}
       .${K}pad{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;gap:8px;padding:10px 12px;z-index:2;pointer-events:none}
       .${K}pad div{display:flex;gap:8px;pointer-events:auto}
       .${K}pad button{min-width:54px;min-height:50px;background:rgba(27,29,31,.82);border:1px solid rgba(217,210,191,.5);font-size:14px;touch-action:none;transition:background .1s,color .1s,opacity .3s}
@@ -85,6 +93,7 @@ export default {
         <dt><span>◀ ▶</span> or A D</dt><dd>walk the hall</dd>
         <dt><span>S</span> Crouch</dt><dd>shorten your shadow; crouch in a door alcove to leave the light</dd>
       </dl>
+      <div class="${K}heights" aria-hidden="true"></div>
       <p class="${K}rule">A flashlight that holds your body <b>or your shadow</b> for 1.5 s raises the alarm. More actions come as you go.</p>
       <div class="${K}row">
         <button data-c="8">Start as a refuser<small>change 8 · 1.91 m · no climbing</small></button>
@@ -97,6 +106,44 @@ export default {
     const ctx = cv.getContext("2d");
     const intro = wrap.querySelector("." + K + "intro");
     const padOf = (k) => wrap.querySelector(`.${K}pad [data-k="${k}"]`);
+
+    // ---- art
+    const kit = artKit(api);
+    const FISK_H = [178, 218, 258, 298, 338], ASSET_PPM = 208, BG_PPM = 700 / 4.57, BG_X = DOOR_X - 0.6 - 1132 / (700 / 4.57);
+    const STOOP_TOP = 1.23; // metres, the stooped cut-out's height as drawn
+    let A = null, artScale = 0, artFor = "";
+    {
+      const hs = intro.querySelector("." + K + "heights");
+      for (const h of FISK_H) { if (!kit.has("cutout-fisk-" + h)) continue; const im = kit.img("cutout-fisk-" + h, 60, "", h === 178 || h === 258 ? "pick" : ""); im.style.height = (h / 338) * 100 + "%"; hs.appendChild(im); }
+      if (kit.has("cutout-flashlight")) hs.appendChild(kit.img("cutout-flashlight", 170, "", "tl"));
+      if (hs.children.length) wrap.querySelector("." + K + "puppets")?.remove(); else hs.remove();
+      kit.dressIntro(intro, intro.querySelector("." + K + "bill"), "clock-night-4");
+    }
+    const nearH = () => FISK_H.reduce((b, h) => (Math.abs(h - heightM * 100) < Math.abs(b - heightM * 100) ? h : b), FISK_H[0]);
+    async function prepArt(scale) {
+      const key = scale.toFixed(1) + "/" + heightM.toFixed(2);
+      if (key === artFor) return;
+      artFor = key;
+      const ha = nearH(), kf = (scale / ASSET_PPM) * ((heightM * 100) / ha), kg = scale / ASSET_PPM, ks = (scale / ASSET_PPM) * ((0.6 * heightM) / STOOP_TOP);
+      const o = { edit: bareCutout, key: "bare" };
+      const [fisk, fiskS, stoop, stoopS, guard, guardS, bg, breath, ...frost] = await Promise.all([
+        kit.canvas("cutout-fisk-" + ha, 520 * kf, o), kit.canvas("cutout-fisk-" + ha, 520 * kf, { ...o, blur: 3 }),
+        kit.canvas("cutout-fisk-stoop", 520 * ks, o), kit.canvas("cutout-fisk-stoop", 520 * ks, { ...o, blur: 3 }),
+        kit.canvas("cutout-guard", 520 * kg, o), kit.canvas("cutout-guard", 520 * kg, { ...o, blur: 3 }),
+        kit.canvas("halls-night-4", (1600 / BG_PPM) * scale), kit.canvas("breath-line", 156),
+        ...[1, 2, 3, 4].map((n) => kit.canvas("frost-corner-" + n, Math.max(120, scale * 1.6))),
+      ]);
+      if (key !== artFor) return;
+      A = { fisk, fiskS, stoop, stoopS, guard, guardS, bg, breath, frost, kf, kg, ks };
+      artScale = scale;
+      if (!running) draw();
+    }
+    // a cut-out on its rod: anchored at its feet, rocked a little as it slides
+    function puppetAt(c, x, base, face, ax, tilt = 0, sy = 1) {
+      ctx.save(); ctx.translate(x, base); if (tilt) ctx.rotate(tilt); ctx.scale(face, sy);
+      ctx.drawImage(c, -ax * c.width, -(760 / 800) * c.height);
+      ctx.restore();
+    }
 
     let W = 0, H = 0, dpr = 1, grain = null;
     const resize = () => {
@@ -281,7 +328,7 @@ export default {
       over = true; running = false;
       cancelAnimationFrame(raf);
       draw();
-      api.end({ outcome: win ? "win" : "lose", text });
+      kit.endCard(wrap, win ? { card: "halls-night-4", caption: "NIGHT 4 · THE OFFICERS' WING" } : { card: "rules-card", stamp: "stamp-hold", caption: "NIGHT 4 · WALKED BACK TO THE BUNK" }, { outcome: win ? "win" : "lose", text });
     }
     function enterRoom(d) {
       if (s.doors <= 0) { say("This door is locked. The other side doors are spent for tonight."); return; }
@@ -370,9 +417,12 @@ export default {
       const top = sy(CEIL);
       // the sheet: cream, moonlit high up by the windows, with its weave
       ctx.fillStyle = "#b3ac9b"; ctx.fillRect(0, top, W, floorY - top);
+      prepArt(scale);
+      const art = A && Math.abs(artScale - scale) < 0.5 ? A : null;
       for (const w of WINDOWS) {
         const cx = sx(w);
         if (cx < -scale * 6 || cx > W + scale * 6) continue;
+        if (art && art.bg && w > BG_X) continue;
         const g = ctx.createRadialGradient(cx, sy(3.5), 4, cx, sy(2.2), scale * 5.5);
         g.addColorStop(0, "rgba(238,241,242,.95)"); g.addColorStop(0.45, "rgba(217,210,191,.78)"); g.addColorStop(1, "rgba(217,210,191,0)");
         ctx.fillStyle = g; ctx.fillRect(cx - scale * 6, top, scale * 12, floorY - top);
@@ -383,6 +433,14 @@ export default {
         ctx.beginPath(); ctx.moveTo(cx, sy(3.85)); ctx.lineTo(cx, sy(3.2)); ctx.stroke();
       }
       if (grain) { ctx.fillStyle = grain; ctx.fillRect(0, top, W, floorY - top); }
+      // the officers' wing end of the hall, from the night-4 backdrop
+      if (art && art.bg && sx(BG_X) < W) {
+        const kb = scale / BG_PPM;
+        ctx.save(); ctx.beginPath(); ctx.rect(0, top, W, floorY - top); ctx.clip();
+        ctx.drawImage(art.bg, sx(BG_X), floorY - 760 * kb);
+        ctx.fillStyle = "rgba(27,29,31,.8)"; ctx.fillRect(sx(BG_X) + art.bg.width - 1, top, W, floorY - top);
+        ctx.restore();
+      }
       // alcoves and doors (the high steel lever and the later brass knob); unlocked side doors marked ajar
       for (const [a, w] of ALCOVES) {
         const x0 = sx(a); if (x0 > W || x0 + w * scale < 0) continue;
@@ -395,7 +453,7 @@ export default {
         ctx.fillStyle = P.ink; ctx.fillRect(x0 + w * scale - 12, sy(2.4), 8, 3); ctx.beginPath(); ctx.arc(x0 + w * scale - 10, sy(1.1), 3, 0, 7); ctx.fill();
       }
       // the target door
-      { const x0 = sx(DOOR_X - 0.6); ctx.fillStyle = "rgba(27,29,31,.8)"; ctx.fillRect(x0, sy(3.6), 1.3 * scale, 3.6 * scale);
+      if (!(art && art.bg)) { const x0 = sx(DOOR_X - 0.6); ctx.fillStyle = "rgba(27,29,31,.8)"; ctx.fillRect(x0, sy(3.6), 1.3 * scale, 3.6 * scale);
         ctx.fillStyle = P.cream; ctx.font = `700 ${Math.max(12, scale * 0.17)}px 'Stardos Stencil','Courier Prime',monospace`; ctx.textAlign = "center";
         ctx.fillText("OFFICERS", x0 + 0.65 * scale, sy(2.9)); ctx.fillText("WING", x0 + 0.65 * scale, sy(2.6)); ctx.textAlign = "start"; }
       // pipes
@@ -434,18 +492,24 @@ export default {
         ctx.translate(sx(sh.foot), sy(sh.base));
         ctx.transform(1, 0, -((sh.top - sh.foot) * scale) / (sh.len * scale), 1, 0, 0);
         ctx.globalAlpha = s.alarm > 0.05 ? 0.6 : 0.45;
-        fig(0, 0, sh.len * scale * (crouched() ? 1 / 0.62 : 1), Math.sin(s.step) * 0.5, P.ink, { crouch: crouched(), face: s.facing });
+        const low = crouched() || s.onPipe, sc = art && (low ? art.stoopS : art.fiskS);
+        if (sc) { ctx.filter = "none"; puppetAt(sc, 0, 0, s.facing, low ? 120 / 520 : 170 / 520, 0, (sh.len * scale) / ((low ? 0.6 : 1) * heightM * scale)); }
+        else fig(0, 0, sh.len * scale * (crouched() ? 1 / 0.62 : 1), Math.sin(s.step) * 0.5, P.ink, { crouch: crouched(), face: s.facing });
         ctx.restore();
       }
       for (const g of allGuards()) {
         const gs = Math.max(-3, Math.min(3, (g.x - nearestWindow(g.x)) * 0.9));
-        ctx.save(); if (!reduce) ctx.filter = "blur(3px)"; ctx.globalAlpha = 0.3;
+        ctx.save(); if (!reduce && !(art && art.guardS)) ctx.filter = "blur(3px)"; ctx.globalAlpha = 0.3;
         ctx.translate(sx(g.x + gs * 0.25), floorY); ctx.transform(1, 0, -(gs * 0.75) / (1.8 * 1.6), 1, 0, 0);
-        fig(0, 0, 1.8 * 1.6 * scale, Math.sin(g.step) * 0.5, P.ink, { face: g.dir, cap: true, arm: true }); ctx.restore();
+        if (art && art.guardS) puppetAt(art.guardS, 0, 0, g.dir, 150 / 520, 0, 1.6);
+        else fig(0, 0, 1.8 * 1.6 * scale, Math.sin(g.step) * 0.5, P.ink, { face: g.dir, cap: true, arm: true });
+        ctx.restore();
       }
       // the cut-outs, on their rods
       for (const g of allGuards()) {
-        fig(sx(g.x), floorY, 1.8 * scale, g.pause > 0 ? 0 : Math.sin(g.step) * 0.5, P.ink, { face: g.dir, cap: true, arm: true, rod: true });
+        const rock = reduce || g.pause > 0 ? 0 : Math.sin(g.step) * 0.035;
+        if (art && art.guard) { ctx.fillStyle = P.ink; ctx.fillRect(sx(g.x) - 1, floorY - scale * 0.9, 1.5, scale * 0.9 + 30); puppetAt(art.guard, sx(g.x), floorY, g.dir, 150 / 520, rock * g.dir); }
+        else fig(sx(g.x), floorY, 1.8 * scale, g.pause > 0 ? 0 : Math.sin(g.step) * 0.5, P.ink, { face: g.dir, cap: true, arm: true, rod: true });
         if (g.seen > 0.05) {
           const f = Math.min(1, g.seen / alarmT);
           ctx.strokeStyle = P.ink; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(sx(g.x), sy(2.3), 16, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * f); ctx.stroke();
@@ -453,7 +517,10 @@ export default {
         }
       }
       if (s.inRoom == null) {
-        if (s.onPipe) { ctx.save(); ctx.translate(sx(s.x), sy(PIPE_Y + 0.08)); fig(0, 0, heightM * scale * 0.75, Math.sin(s.step) * 0.3, P.ink, { crouch: true, face: s.facing }); ctx.restore(); }
+        const rock = reduce ? 0 : Math.sin(s.step) * 0.04 * s.facing;
+        if (s.onPipe && art && art.stoop) puppetAt(art.stoop, sx(s.x), sy(PIPE_Y + 0.08), s.facing, 120 / 520, rock, 0.75);
+        else if (s.onPipe) { ctx.save(); ctx.translate(sx(s.x), sy(PIPE_Y + 0.08)); fig(0, 0, heightM * scale * 0.75, Math.sin(s.step) * 0.3, P.ink, { crouch: true, face: s.facing }); ctx.restore(); }
+        else if (art && (crouched() ? art.stoop : art.fisk)) { ctx.fillStyle = P.ink; ctx.fillRect(sx(s.x) - 1, floorY - scale * 0.8, 1.5, scale * 0.8 + 30); puppetAt(crouched() ? art.stoop : art.fisk, sx(s.x), floorY, s.facing, crouched() ? 120 / 520 : 170 / 520, rock); }
         else fig(sx(s.x), floorY, heightM * scale, Math.sin(s.step) * 0.5, P.ink, { crouch: crouched(), face: s.facing, rod: true });
         // a hidden marker: the alcove swallows him
         if (alcoveAt(s.x) && crouched()) { ctx.strokeStyle = P.ink; ctx.setLineDash([4, 4]); ctx.lineWidth = 2; ctx.strokeRect(sx(alcoveAt(s.x)[0]) + 1, sy(3.2), 1.3 * scale - 2, 3.2 * scale); ctx.setLineDash([]); }
@@ -490,6 +557,11 @@ export default {
         vg.addColorStop(0, "rgba(238,241,242,0)"); vg.addColorStop(1, `rgba(238,241,242,${0.55 * s.alarm})`);
         ctx.fillStyle = vg; ctx.fillRect(0, top, W, floorY - top);
       }
+      // frost grows from the sheet's corners as the warmth goes
+      if (art && art.frost) {
+        const f = art.frost[s.warmth > 75 ? 0 : s.warmth > 50 ? 1 : s.warmth > 25 ? 2 : 3];
+        if (f) { ctx.drawImage(f, 0, top); ctx.save(); ctx.translate(W, top); ctx.scale(-1, 1); ctx.drawImage(f, 0, 0); ctx.restore(); }
+      }
       // proscenium: black frame, a scalloped valance hanging over the sheet's top
       ctx.fillStyle = P.ink; ctx.fillRect(0, 0, W, top); ctx.fillRect(0, floorY + Math.max(14, scale * 0.3), W, H);
       const sc = 22;
@@ -509,7 +581,12 @@ export default {
       const meter = (i, label, v, val) => {
         const x = sx0 + i * (colW + (narrow ? 0 : 6));
         ctx.font = "12px 'Courier Prime',monospace"; ctx.fillStyle = "rgba(217,210,191,.85)"; ctx.fillText(label, x, mY);
-        if (v != null) { ctx.fillStyle = "rgba(217,210,191,.2)"; ctx.fillRect(x, mY + 6, colW - 14, 5); ctx.fillStyle = label === "LIGHT" && v > 0.6 ? P.snow : P.cream; ctx.fillRect(x, mY + 6, (colW - 14) * Math.max(0, Math.min(1, v)), 5); }
+        if (v != null && label === "WARMTH" && A && A.breath) {
+          // warmth is a line of breath, as long as it lasts
+          const bw = colW - 14, bh = (bw * A.breath.height) / A.breath.width, vv = Math.max(0, Math.min(1, v));
+          ctx.globalAlpha = 0.25; ctx.drawImage(A.breath, x, mY + 2, bw, bh); ctx.globalAlpha = 1;
+          ctx.save(); ctx.beginPath(); ctx.rect(x, mY, bw * vv, bh + 6); ctx.clip(); ctx.drawImage(A.breath, x, mY + 2, bw, bh); ctx.restore();
+        } else if (v != null) { ctx.fillStyle = "rgba(217,210,191,.2)"; ctx.fillRect(x, mY + 6, colW - 14, 5); ctx.fillStyle = label === "LIGHT" && v > 0.6 ? P.snow : P.cream; ctx.fillRect(x, mY + 6, (colW - 14) * Math.max(0, Math.min(1, v)), 5); }
         if (val) { ctx.font = "700 13px 'Courier Prime',monospace"; ctx.fillStyle = P.cream; ctx.textAlign = "right"; ctx.fillText(val, x + colW - 14, mY); ctx.textAlign = "start"; }
       };
       meter(0, "WARMTH", Math.max(0, s.warmth) / 100, String(Math.max(0, Math.round(s.warmth))));
@@ -586,7 +663,7 @@ export default {
         running = false; over = true;
         cancelAnimationFrame(raf);
         timeouts.forEach(clearTimeout);
-        ro.disconnect();
+        ro.disconnect(); kit.dispose();
         window.removeEventListener("keydown", onKey);
         window.removeEventListener("keyup", onKey);
         window.removeEventListener("blur", blur);

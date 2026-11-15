@@ -9,15 +9,18 @@
 // it against the wall); place the void stamp; and two one-time notes (the drains, the file), the
 // design's hint lines for cold_from_below and files_read. Phases: drawing; the first close (a gap
 // that may not be there); converting; the gap that is there, and the stamp.
+// Art (api.art): the room stamps (in the pencilled entries and on the drawn rooms), the void stamp,
+// the plan sheet (the how-to card and the ending), the day's chapter card.
+import { artKit } from "./kit.js";
 
 const P = { blue: "#1c3d6e", deep: "#142e55", line: "#eaf2ff", faint: "rgba(234,242,255,.16)", pencil: "#f0dfa6", red: "#ff9a7a" };
 const STRIDE = { 1: 75, 2: 81, 3: 90, 4: 101 }; // cm, the Chart's stride row on days 1 to 4
 const ROOMS = [
-  { id: "bunk", name: "BUNK HALL", paces: 39, day: 1 },
-  { id: "caf", name: "CAFETERIA", paces: 27, day: 2 },
-  { id: "rec", name: "REC ROOM", paces: 18, day: 2 },
-  { id: "inf", name: "INFIRMARY", paces: 16, day: 3 },
-  { id: "cold", name: "COLD STORE", paces: 11, day: 4 },
+  { id: "bunk", name: "BUNK HALL", paces: 39, day: 1, art: "room-bunk" },
+  { id: "caf", name: "CAFETERIA", paces: 27, day: 2, art: "room-cafeteria" },
+  { id: "rec", name: "REC ROOM", paces: 18, day: 2, art: "room-rec-room" },
+  { id: "inf", name: "INFIRMARY", paces: 16, day: 3, art: "room-infirmary" },
+  { id: "cold", name: "COLD STORE", paces: 11, day: 4, art: "room-cold-store" },
 ];
 const WALL = { id: "wall", name: "OUTSIDE WALL", paces: 120, day: 3 };
 const conv = (r) => (r.paces * STRIDE[r.day]) / 75;
@@ -25,8 +28,8 @@ const TRUE_END = ROOMS.reduce((a, r) => a + conv(r), 0);
 const TRUE_VOID = (TRUE_END + conv(WALL)) / 2;
 const SQ = 6, X0 = 30, MAXSQ = 150;
 const NOTES = {
-  drains: { label: "Listen at the drains", text: "Cold comes up through the drain at the end of the cold store, colder than the yard. Something under the east end is open to the ground." },
-  file: { label: "Recall the file", text: "The project's file names a lower level under the east wing. No stair to it is drawn on any sheet in the file." },
+  drains: { art: "room-boiler-room", label: "Listen at the drains", text: "Cold comes up through the drain at the end of the cold store, colder than the yard. Something under the east end is open to the ground." },
+  file: { art: "room-sams-office", label: "Recall the file", text: "The project's file names a lower level under the east wing. No stair to it is drawn on any sheet in the file." },
 };
 
 export default {
@@ -75,6 +78,11 @@ export default {
       .${K}tblock div{padding:6px 8px;border-right:1px solid ${P.line}}
       .${K}tblock div:last-child{border-right:0}
       .${K}tblock b{display:block;font-size:13px;letter-spacing:.04em}
+      .${K}entries button img,.${K}notes button img{width:38px;height:38px;flex:none;margin:-4px 0}
+      .${K}entries button{align-items:center}
+      .${K}entries button .nm{flex:1 1 auto}
+      .${K}notes button{display:flex;gap:8px;align-items:center}
+      .${K}sheetart{display:block;width:100%;height:auto;aspect-ratio:1200/800;margin:0 0 10px;border:1px solid ${P.line}}
       @media (max-width:720px){.${K}cols{grid-template-columns:1fr}.${K}planbox{position:sticky;top:0;z-index:2;background:${P.deep}}}
     </style>
     <div class="${K}page">
@@ -94,6 +102,7 @@ export default {
     </div>
     <div class="${K}intro"><div class="${K}sheet">
       <h2>FLOOR PLAN</h2>
+      <img class="${K}sheetart" alt="" hidden>
       <p class="${K}goal">Find where the halls do not close, and stamp the void there.</p>
       <p class="${K}beat">Day 4, the rec room table, after duty. On day 3 you paced the outside wall: 120 paces. Now draw the inside from memory and see if it fits.</p>
       <dl class="${K}key">
@@ -110,6 +119,12 @@ export default {
     const convBtn = wrap.querySelector("[data-conv]"), rawBtn = wrap.querySelector("[data-raw]"), closeBtn = wrap.querySelector("[data-close]"), voidBtn = wrap.querySelector("[data-void]");
     const ruleBox = ruleEl.parentElement;
 
+    const kit = artKit(api);
+    const stamp = {};
+    for (const id of [...ROOMS.map((r) => r.art), "room-void", "room-boiler-room", "room-sams-office"]) kit.png(id, 76).then((u) => { if (u) { stamp[id] = u; if (ready) { render(); renderNotes(); } } });
+    let ready = false;
+    kit.dressIntro(intro, intro.querySelector("." + K + "sheet"), "chapter-5", "rgba(20,46,85,.72)");
+    kit.fill(wrap, "." + K + "sheetart", "plan-sheet", 520);
     const drawn = {};
     const wall = { len: WALL.paces, conv: null };
     let selected = null, stride = 1, closed = false, voidAt = null, tries = 0, over = false, closes = 0, ruleOpen = false, notesOpen = false, lastGap = null;
@@ -124,7 +139,7 @@ export default {
         const isWall = r.id === "wall";
         const d = isWall ? wall : drawn[r.id];
         const state = d ? (d.conv ? `→ ${d.len.toFixed(1)} sq (D${d.conv} stride)` : `→ ${d.len} sq, raw`) : isWall ? "" : "not drawn";
-        return `<button type="button" data-id="${r.id}" class="${d ? "used" : ""}${d && d.conv ? " ok" : ""}" aria-pressed="${selected === r.id}"><span>${r.name.toLowerCase()}: ${r.paces - 1} to ${r.paces + 1}</span><span class="st">paced day ${r.day} ${state}</span></button>`;
+        return `<button type="button" data-id="${r.id}" class="${d ? "used" : ""}${d && d.conv ? " ok" : ""}" aria-pressed="${selected === r.id}">${r.art && stamp[r.art] ? `<img alt="" src="${stamp[r.art]}">` : ""}<span class="nm">${r.name.toLowerCase()}: ${r.paces - 1} to ${r.paces + 1}</span><span class="st">paced day ${r.day} ${state}</span></button>`;
       }).join("");
       entries.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => pick(b.dataset.id)));
     }
@@ -135,7 +150,7 @@ export default {
       ruleEl.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { stride = +b.dataset.d; renderRule(); ruleEl.querySelector('[aria-pressed="true"]').focus(); }));
     }
     function renderNotes() {
-      notesEl.innerHTML = notesOpen ? Object.entries(NOTES).map(([k, n]) => `<button type="button" data-note="${k}" ${notesRead[k] ? "disabled" : ""}>${n.label}${notesRead[k] ? " ✓" : ""}</button>`).join("") : "";
+      notesEl.innerHTML = notesOpen ? Object.entries(NOTES).map(([k, n]) => `<button type="button" data-note="${k}" ${notesRead[k] ? "disabled" : ""}>${stamp[n.art] ? `<img alt="" src="${stamp[n.art]}">` : ""}${n.label}${notesRead[k] ? " ✓" : ""}</button>`).join("") : "";
       notesEl.querySelectorAll("[data-note]").forEach((b) => b.addEventListener("click", () => readNote(b.dataset.note)));
       marginEl.innerHTML = `<p>cold here — behind the cold store, through the drains</p>` + Object.keys(notesRead).map((k) => `<p>· ${NOTES[k].text}</p>`).join("");
     }
@@ -156,8 +171,9 @@ export default {
         const sel = selected === r.id;
         const ink = d.conv != null || r.day === 1;
         s += `<g data-room="${r.id}" style="cursor:pointer"><rect x="${X(at)}" y="76" width="${d.len * SQ}" height="84" fill="${sel ? "rgba(240,223,166,.14)" : "transparent"}" stroke="${sel ? P.pencil : ink ? P.line : P.pencil}" stroke-width="${sel ? 3.2 : 2.4}" ${ink ? `filter="url(#${K}w)"` : `stroke-dasharray="7 4"`}/>
-          <text x="${X(at + d.len / 2)}" y="114" fill="${P.line}" font-size="${d.len < 18 ? 12 : 15}" text-anchor="middle" ${F}>${d.len < 15 ? r.name.split(" ")[0] : r.name}</text>
-          <text x="${X(at + d.len / 2)}" y="134" fill="${d.conv ? P.line : P.pencil}" font-size="13" text-anchor="middle" ${F}>${d.conv ? d.len.toFixed(1) : d.len + " raw"}</text></g>`;
+          ${stamp[r.art] ? `<image href="${stamp[r.art]}" x="${X(at + d.len / 2) - 23}" y="79" width="46" height="46" opacity="${ink ? 1 : 0.7}"/>` : ""}
+          <text x="${X(at + d.len / 2)}" y="${stamp[r.art] ? 139 : 114}" fill="${P.line}" font-size="${d.len < 18 ? 12 : stamp[r.art] ? 13 : 15}" text-anchor="middle" ${F}>${d.len < 15 ? r.name.split(" ")[0] : r.name}</text>
+          <text x="${X(at + d.len / 2)}" y="${stamp[r.art] ? 154 : 134}" fill="${d.conv ? P.line : P.pencil}" font-size="13" text-anchor="middle" ${F}>${d.conv ? d.len.toFixed(1) : d.len + " raw"}</text></g>`;
         at += d.len;
       }
       if (at > 0) s += `<line x1="${X(0)}" x2="${X(at)}" y1="168" y2="168" stroke="${P.line}" stroke-width="2"/>`;
@@ -170,7 +186,7 @@ export default {
       }
       if (losses >= 2 && closed) s += `<text x="${X(TRUE_END) + 4}" y="176" fill="${P.red}" font-size="13" ${F}>↑ cold here</text>`;
       if (voidAt != null) {
-        s += `<g transform="translate(${X(voidAt)},118)"><rect x="-30" y="-16" width="60" height="32" fill="${P.deep}" stroke="${P.red}" stroke-width="3" transform="rotate(-8)"/><text y="6" fill="${P.red}" font-size="16" font-weight="700" text-anchor="middle" ${F} transform="rotate(-8)">VOID</text></g>
+        s += (stamp["room-void"] ? `<g transform="translate(${X(voidAt)},118)"><image href="${stamp["room-void"]}" x="-36" y="-36" width="72" height="72" transform="rotate(-6)"/><rect x="-37" y="-37" width="74" height="74" fill="none" stroke="${P.red}" stroke-width="2.5" transform="rotate(-6)"/></g>` : `<g transform="translate(${X(voidAt)},118)"><rect x="-30" y="-16" width="60" height="32" fill="${P.deep}" stroke="${P.red}" stroke-width="3" transform="rotate(-8)"/><text y="6" fill="${P.red}" font-size="16" font-weight="700" text-anchor="middle" ${F} transform="rotate(-8)">VOID</text></g>`) + `
           <line x1="${X(voidAt)}" x2="${X(voidAt)}" y1="160" y2="176" stroke="${P.red}" stroke-width="2"/><text x="${X(voidAt)}" y="214" fill="${P.red}" font-size="13" text-anchor="middle" ${F}>sq ${voidAt}</text>`;
       }
       s += `<g transform="translate(${X0 + MAXSQ * SQ - 26},212)"><path d="M0-14L4 0L0 14L-4 0Z" fill="${P.line}"/><text y="-17" fill="${P.line}" font-size="12" text-anchor="middle" ${F}>N</text></g>
@@ -265,7 +281,7 @@ export default {
         over = true;
         api.store.set("losses", 0);
         const notes = Object.keys(notesRead).length;
-        return api.end({ outcome: "win", text: `The void is behind the cold store: about ${(conv(WALL) - TRUE_END).toFixed(0)} squares of the base that no hall reaches, and the cold comes up from it. Void located${notes ? ", and the drains and the file agree with the paper" : ""}. The halls never measured what they should; you did.` });
+        return kit.endCard(wrap, { card: "plan-sheet", stamp: "room-void", caption: "SHEET G-1 · VOID LOCATED" }, { outcome: "win", text: `The void is behind the cold store: about ${(conv(WALL) - TRUE_END).toFixed(0)} squares of the base that no hall reaches, and the cold comes up from it. Void located${notes ? ", and the drains and the file agree with the paper" : ""}. The halls never measured what they should; you did.` });
       }
       tries++;
       if (tries < 2) {
@@ -275,7 +291,7 @@ export default {
       }
       over = true;
       api.store.set("losses", losses + 1);
-      api.end({ outcome: "lose", text: `The void stamp is ${off.toFixed(0)} squares out. The plan is saved as it stands, and on night 6 the stair is not where you look. A changed Fisk takes longer strides; the gap you drew was not the gap that is there.` });
+      kit.endCard(wrap, { card: "plan-sheet", stamp: "stamp-hold", caption: "SHEET G-1 · SAVED AS IT STANDS" }, { outcome: "lose", text: `The void stamp is ${off.toFixed(0)} squares out. The plan is saved as it stands, and on night 6 the stair is not where you look. A changed Fisk takes longer strides; the gap you drew was not the gap that is there.` });
     }
     convBtn.addEventListener("click", () => convert(false));
     rawBtn.addEventListener("click", () => convert(true));
@@ -284,7 +300,7 @@ export default {
     const startBtn = intro.querySelector("[data-start]");
     const start = () => { intro.remove(); say("Start with the bunk hall: click its pencilled entry."); entries.querySelector("button")?.focus(); };
     startBtn.addEventListener("click", start);
-    renderRule(); renderNotes(); render();
+    renderRule(); renderNotes(); render(); ready = true;
     const t0 = setTimeout(() => startBtn.focus(), 30);
 
     return {
@@ -292,6 +308,7 @@ export default {
         over = true; clearTimeout(t0);
         window.removeEventListener("keydown", onKey);
         plan.removeEventListener("click", onPlanTap);
+        kit.dispose();
         wrap.remove();
       },
     };

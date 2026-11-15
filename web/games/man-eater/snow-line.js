@@ -8,6 +8,10 @@
 // searchlight passes over, the cold bites four times faster); open the shed door (the design's interact).
 // Phases: the yard; the wind gets up past the mess (prints fill twice as fast, the searchlight's loop
 // tightens); the kennel run. Beats: the opening, the trail found, the wind, the mess window, the boots.
+// Art (api.art): the yard is the night-3 ground print (roofs, drift, ruts, wire, tree line), rasterised
+// once at the size it is played; the reconnaissance plate and the night's clock card open the mode,
+// the developed print closes it, the breath line is the warmth meter and frost grows from the corners.
+import { artKit } from "./kit.js";
 
 const P = { ink: "#1B1D1F", cream: "#D9D2BF", snow: "#EEF1F2", print: "#7C8C99" };
 const WW = 64, WH = 44;
@@ -58,6 +62,7 @@ export default {
       .${K}acts button[disabled]{opacity:.4;cursor:not-allowed}
       .${K}acts button.new{animation:${K}new 1s ease-in-out 3}
       @keyframes ${K}new{50%{background:${P.snow};color:${P.ink}}}
+      .${K}plate{display:block;width:100%;height:auto;aspect-ratio:16/9;margin:0 0 8px}
       @media (max-width:520px){.${K}acts button{padding:8px 10px;font-size:14px}}
     </style>
     <canvas tabindex="0" aria-label="An overhead photograph of the yard at night; your footprints stay in the snow"></canvas>
@@ -69,6 +74,7 @@ export default {
     <div class="${K}intro"><div class="${K}mount"><div class="${K}card">
       <div class="${K}tag"><span>SORTIE N3 · 22:47 H</span><span>YARD 1:600</span><span>FRAME 047</span></div>
       <h2>Snow line</h2>
+      <img class="${K}plate" alt="" hidden>
       <p class="${K}goal">Cross the yard to the kennel shed, top right, without being followed there.</p>
       <p class="${K}beat">Night 3. The first bunkmate was “transferred”. Transferred men take their boots. If his are still on the base, someone lied.</p>
       <dl class="${K}key">
@@ -86,7 +92,11 @@ export default {
     const stepBtn = wrap.querySelector("." + K + "step"), flatBtn = wrap.querySelector("." + K + "flat"), openBtn = wrap.querySelector("." + K + "open");
 
     let W = 0, H = 0, dpr = 1, view = { x: 0, y: 0, s: 10, fit: true };
-    let base = null, grain = null, lastS = 0;
+    let base = null, grain = null, lastS = 0, ground = null, hud = null;
+    const kit = artKit(api);
+    kit.dressIntro(intro, intro.querySelector("." + K + "card"), "clock-night-3");
+    kit.fill(wrap, "." + K + "plate", "yard-plate-night-3", 500);
+    Promise.all([kit.canvas("breath-line", 180), ...[1, 2, 3, 4].map((n) => kit.canvas("frost-corner-" + n, 200))]).then(([breath, ...frost]) => { hud = { breath, frost }; });
     const TOP = 58; let BOT = 92; // film margin above (meters) and below (caption; taller on a phone, above the buttons)
     const resize = () => {
       const r = wrap.getBoundingClientRect();
@@ -113,6 +123,9 @@ export default {
 
     function makeBase() {
       const w = Math.max(2, Math.round(WW * view.s)), h = Math.max(2, Math.round(WH * view.s));
+      ground = null;
+      const forS = view.s;
+      kit.canvas("yard-ground-night-3", w * dpr).then((c) => { if (c && forS === view.s) { ground = c; if (!running) draw(); } });
       base = document.createElement("canvas"); base.width = w; base.height = h;
       const b = base.getContext("2d");
       const rnd = api.rng(7);
@@ -148,6 +161,7 @@ export default {
     let stepToggle = false;
     const unlocked = { step: false, flat: false };
 
+    let endArt = {};
     function newRun() {
       s = {
         x: START.x, y: START.y, prints: [], dist: 0, left: true, t: 0, warmth: 100,
@@ -264,6 +278,7 @@ export default {
         return;
       }
       api.store.set("losses", losses + 1);
+      endArt = { card: "print-followed", stamp: "stamp-hold", caption: "N3 YARD · FOLLOWED TOE-WARD" };
       finish(false, `${why} Fisk is walked back to the bunk past his own prints, which no one bothers to fill. Suspicion +25; the curfew break is logged as seen. The shed stays shut, and “transferred” stays a word.`);
     }
     function openShed() {
@@ -271,12 +286,13 @@ export default {
       api.store.set("losses", 0);
       const sharp = s.prints.filter(isSharp).length;
       const trail = sharp > 12 ? `Behind you ${sharp} sharp prints lead here from the barracks door; by morning someone will have read them.` : sharp ? `Behind you only ${sharp} sharp prints are left for anyone to read.` : "Behind you the wind has filled every print. Nobody can say you were here.";
+      endArt = sharp > 12 ? { card: "print-followed", caption: "N3 YARD · PRINTS, DEVELOPED BY MORNING" } : { card: "yard-plate-night-3", caption: "N3 YARD · NOTHING TO READ" };
       finish(true, `The kennel shed, with no dogs. On a shelf by the door, the first bunkmate's boots, laces still tied, the way he kept them so he could step straight into them. Transferred men take their boots. ${trail}`);
     }
     function finish(win, text) {
       if (over) return;
       over = true; running = false; cancelAnimationFrame(raf); draw();
-      api.end({ outcome: win ? "win" : "lose", text });
+      kit.endCard(wrap, endArt, { outcome: win ? "win" : "lose", text });
     }
     function lieFlat() {
       if (!running || !unlocked.flat) return;
@@ -319,6 +335,10 @@ export default {
       const hole = Math.max(8, Math.min(16, W / 60));
       for (let x = 6; x < W; x += hole * 2) { ctx.fillRect(x, 6, hole, hole * 0.7); ctx.fillRect(x, H - 6 - hole * 0.7, hole, hole * 0.7); }
       ctx.save(); ctx.beginPath(); ctx.rect(0, TOP - 4, W, H - TOP - BOT + 8); ctx.clip();
+      if (ground) {
+        ctx.drawImage(ground, view.x, view.y, WW * view.s, WH * view.s);
+        ctx.strokeStyle = "rgba(124,140,153,.7)"; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.ellipse(X(DRIFT.x), Y(DRIFT.y), DRIFT.rx * view.s, DRIFT.ry * view.s, 0, 0, 7); ctx.stroke(); ctx.setLineDash([]);
+      } else {
       ctx.drawImage(base, view.x, view.y);
       ctx.fillStyle = "rgba(238,241,242,.45)"; ctx.beginPath(); ctx.ellipse(X(DRIFT.x), Y(DRIFT.y), DRIFT.rx * view.s, DRIFT.ry * view.s, 0, 0, 7); ctx.fill();
       ctx.strokeStyle = "rgba(124,140,153,.6)"; ctx.setLineDash([3, 4]); ctx.stroke(); ctx.setLineDash([]);
@@ -326,6 +346,7 @@ export default {
       for (let m = 1; m < WW; m += 3) { ctx.fillStyle = P.ink; ctx.fillRect(X(m) - 1.5, Y(1 - m / WW * 0.4) - 1.5, 3, 3); }
       // the empty dog run beside the shed
       ctx.strokeStyle = "rgba(27,29,31,.5)"; ctx.setLineDash([2, 3]); ctx.strokeRect(X(40), Y(3), 7 * view.s, 8 * view.s); ctx.setLineDash([]);
+      }
       for (const p of s.prints) footprint(p);
       for (const [bx, by, bw, bh, label] of BLOCKS) {
         const dd = 0.9 * view.s;
@@ -334,9 +355,11 @@ export default {
         ctx.strokeStyle = "rgba(27,29,31,.4)"; ctx.lineWidth = 1; ctx.beginPath();
         for (let hx = X(bx) - 2.2 * view.s; hx < X(bx + bw) + 4; hx += 6) { ctx.moveTo(hx, Y(by)); ctx.lineTo(hx + 2.2 * view.s, Y(by) - 2.2 * view.s); }
         ctx.stroke(); ctx.restore();
+        if (!ground) {
         ctx.fillStyle = "#5b6064"; ctx.beginPath(); ctx.moveTo(X(bx + bw), Y(by)); ctx.lineTo(X(bx + bw) + dd, Y(by) + dd); ctx.lineTo(X(bx + bw) + dd, Y(by + bh) + dd); ctx.lineTo(X(bx) + dd, Y(by + bh) + dd); ctx.lineTo(X(bx), Y(by + bh)); ctx.closePath(); ctx.fill();
         ctx.fillStyle = "#8f9599"; ctx.fillRect(X(bx), Y(by), bw * view.s, bh * view.s);
         ctx.strokeStyle = "rgba(27,29,31,.5)"; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(X(bx), Y(by + bh / 2)); ctx.lineTo(X(bx + bw), Y(by + bh / 2)); ctx.stroke();
+        }
         ctx.fillStyle = "rgba(27,29,31,.88)"; ctx.font = `700 ${Math.max(12, view.s * 0.75)}px 'Courier Prime',monospace`; ctx.textAlign = "center";
         ctx.fillText(label, X(bx + bw / 2), Y(by + bh / 2) - 4, bw * view.s - 4); ctx.textAlign = "start";
       }
@@ -385,6 +408,12 @@ export default {
         ctx.fillStyle = "#9b2f22"; ctx.font = "700 14px 'Courier Prime',monospace"; ctx.fillText(s.mark.label, X(s.mark.x) + 2.4 * view.s, Y(s.mark.y) - 6);
         ctx.globalAlpha = 1;
       }
+      // frost grows in from the print's corners as the breath goes
+      if (hud && hud.frost) {
+        const f = hud.frost[s.warmth > 75 ? 0 : s.warmth > 50 ? 1 : s.warmth > 25 ? 2 : 3];
+        const fx = Math.max(0, view.x), fr = Math.min(W, view.x + WW * view.s), fy = Math.max(TOP - 4, view.y);
+        if (f) { ctx.drawImage(f, fx, fy); ctx.save(); ctx.translate(fr, fy); ctx.scale(-1, 1); ctx.drawImage(f, 0, 0); ctx.restore(); }
+      }
       ctx.restore();
       // ---- top margin: meters printed on the film edge
       const mY = 30, cols = narrow ? 3 : 5, cw = (W - 28) / cols;
@@ -392,7 +421,11 @@ export default {
         const x = 14 + i * cw;
         ctx.font = "12px 'Courier Prime',monospace"; ctx.fillStyle = "rgba(217,210,191,.85)"; ctx.fillText(label, x, mY);
         ctx.font = "700 13px 'Courier Prime',monospace"; ctx.fillStyle = hot ? P.snow : P.cream; ctx.textAlign = "right"; ctx.fillText(val, x + cw - 26, mY); ctx.textAlign = "start";
-        if (v != null) { ctx.fillStyle = "rgba(217,210,191,.2)"; ctx.fillRect(x, mY + 6, cw - 26, 5); ctx.fillStyle = hot ? P.snow : P.cream; ctx.fillRect(x, mY + 6, (cw - 26) * Math.max(0, Math.min(1, v)), 5); }
+        if (v != null && label === "BREATH" && hud && hud.breath) {
+          const bw = Math.min(cw - 26, 180), bh = (bw * hud.breath.height) / hud.breath.width, vv = Math.max(0, Math.min(1, v));
+          ctx.globalAlpha = 0.25; ctx.drawImage(hud.breath, x, mY + 1, bw, bh); ctx.globalAlpha = 1;
+          ctx.save(); ctx.beginPath(); ctx.rect(x, mY, bw * vv, bh + 4); ctx.clip(); ctx.drawImage(hud.breath, x, mY + 1, bw, bh); ctx.restore();
+        } else if (v != null) { ctx.fillStyle = "rgba(217,210,191,.2)"; ctx.fillRect(x, mY + 6, cw - 26, 5); ctx.fillStyle = hot ? P.snow : P.cream; ctx.fillRect(x, mY + 6, (cw - 26) * Math.max(0, Math.min(1, v)), 5); }
       };
       meter(0, "BREATH", Math.max(0, s.warmth) / 100, String(Math.max(0, Math.round(s.warmth))), s.flat > 0);
       meter(1, "SEEN", Math.min(1, danger), danger > 0 ? "!" : "no", danger > 0);
@@ -448,7 +481,7 @@ export default {
 
     return {
       unmount() {
-        running = false; over = true; cancelAnimationFrame(raf); clearTimeout(t0); ro.disconnect();
+        running = false; over = true; cancelAnimationFrame(raf); clearTimeout(t0); ro.disconnect(); kit.dispose();
         window.removeEventListener("keydown", onKey); window.removeEventListener("keyup", onKey); window.removeEventListener("blur", blur);
         cv.removeEventListener("pointerdown", pd); cv.removeEventListener("pointermove", pm); cv.removeEventListener("pointerup", pu); cv.removeEventListener("pointercancel", pu);
         stepBtn.removeEventListener("click", toggle); flatBtn.removeEventListener("click", flatClick); openBtn.removeEventListener("click", openShed); startBtn.removeEventListener("click", start);
