@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480" role="img" aria-labelledby="thread-own-t thread-own-d">
+<title id="thread-own-t">Thread: a clock stopped at 2:14</title>
+<desc id="thread-own-d">This game's thread object in gouache: a small travelling alarm clock on the office desk under the green-shaded lamp, stopped at fourteen minutes past two, with three chalk knock marks on the wood beside it, two close and one apart.</desc>
+<defs><filter id="thread-own-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="140" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter><filter id="thread-own-rough2"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="136" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2"/></filter><pattern id="thread-own-wp3" width="46" height="8" patternUnits="userSpaceOnUse"><rect width="14" height="8" fill="#2f5a40" opacity="0.5"/><rect x="24" width="3" height="8" fill="#3d6b4c" opacity="0.5"/><path d="M0,2H46M0,6H46" stroke="#0c1a12" stroke-width="0.6" opacity="0.35"/></pattern><radialGradient id="thread-own-rg4" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#f1c77c" stop-opacity="0.6"/><stop offset="50%" stop-color="#c98a3a" stop-opacity="0.2"/><stop offset="100%" stop-color="#c98a3a" stop-opacity="0"/></radialGradient><filter id="thread-own-blur5" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter><radialGradient id="thread-own-rg6" cx="0.5" cy="0.5" r="0.72"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0.1"/><stop offset="100%" stop-color="#000" stop-opacity="0.8"/></radialGradient></defs>
+<rect x="0" y="0" width="480" height="300" fill="#1f3a2e"/>
+<rect x="0" y="0" width="480" height="300" fill="url(#thread-own-wp3)"/>
+<rect x="0" y="0" width="480" height="300" fill="#000" opacity="0.3"/>
+<rect x="0" y="300" width="480" height="180" fill="#4a2f18"/>
+<path d="M347.3,381.3L367.1,375.5M260,418.9L313.3,428.2M217.8,355.2L277.1,360.1M189.4,477.5L232.4,475.3M11.6,403L57.8,413.5M249.9,341.5L276.9,350.5M353.3,371.9L408.5,385.9M161.6,369.8L191.5,374.8M141.2,305.4L176.3,303.6M83.5,458.8L112.4,469.1M426.4,379.1L472.9,379M289.6,472.7L344.6,464.7M80.5,379.4L127.9,378.2M347.4,445.4L391.1,451.5M275.5,450.8L316.4,438.6M280.5,329.9L333.8,320.6M45,331.2L86.9,328.7M402.6,457.2L437.1,460.7M438.9,447.9L493.3,435.2M444.5,400.9L473.5,409.1M415.7,378.5L468.6,396.2M336.7,357.7L379,371.9M26.4,364.6L52.6,370.9M414.6,410.6L454.2,403M-4.3,423.5L32.8,414.2M303,382.8L326.8,387.8M0,470.6L33.9,463.1M-17.1,426.2L18.1,422.4M262.9,403.1L321,394.6M349.9,367.1L389.9,358.9M144.2,438L189.2,442.8M149.2,473.3L203.9,479.9M259.7,330.7L315.2,346.4M336.6,304.4L387.5,299M316,348.8L351.5,347.8M66.4,415.3L115.7,427M296.6,414.3L341.6,407.6M229.4,314.9L250.2,314M384.7,402.1L431.6,394.3M228,359.8L273.7,371.8M433.4,315.7L463.2,310.9M195.2,381.9L215.3,377.1M217,460.2L238,458.8M110.3,338.4L147.1,350.6M260.8,405.7L289.9,397.9M302.4,310L358.9,316.6M366.1,312L417.2,305.9M240.3,440.5L285.6,434.4M4.4,329.9L28.7,322.4M417.3,339.6L464,332.4M22.3,368.8L65.1,384.2M149.9,379.9L193.1,388.1M-13.3,463.2L32.6,469.6M361.9,431.8L395.3,425.2M190,474.1L213.9,466M37.5,431.2L72.8,437.6M110.8,301.1L151.3,299.2M109.9,311.8L159.4,306M135,474.8L179.1,458.7M149.2,476L190.8,471.9M255.8,395.2L299.5,389.3" fill="none" stroke="#6b4626" stroke-width="5" stroke-linecap="round" opacity="0.3"/>
+<path d="M283,388.2L311.7,380.4M440.9,390.6L495.1,385.6M389.4,304.6L435.8,312.9M138.3,456.1L178.7,467.8M60.5,378.1L88.9,385.3M312,312.5L342.4,305.4M350.4,387.7L406.2,376.6M432.6,427L487.3,419.7M359.3,305.4L383.5,305.4M292.7,385.4L350.1,372.5M229.7,415.6L265.8,418.4M359.8,480.6L384.8,477.7M104.9,452.6L153.2,442.2M350.1,423.6L380.6,413.9M96.3,350.5L145.2,341.1M93,314.1L138.6,309.2M148.4,379.2L194.8,380.1M4.8,415.7L55.2,412.8M47.5,429.2L89.3,416.7M260.4,374.2L302,374.4M249.3,396.7L303.9,378.8M367.1,348.2L409.8,362.3M220,378.1L263.4,363M39.5,407.6L73.8,411.1M41.2,310.4L100.9,310.6M71.1,382.1L114.1,397.6M188.1,371.9L208.6,372.6M156.6,422.5L209.3,435.6M195.7,457.2L238.2,444.1M389.6,349.2L418,347.9M29.9,473L69.2,480.7M211.1,447.9L238,445.8M86.6,421.9L119.1,421.8M184.2,396.1L218.3,383.9M14.9,416.7L68.3,425.7M278.3,449L303.9,449.8M-7.2,363.8L28.3,359.6M389.4,408.6L414.9,415.7M384.7,436.4L417.2,440.6M162.9,473.2L211.1,479.5M419.6,376.3L473.4,393M-17.2,441.1L29.6,427.8M96.5,460L122.4,453.4M321.9,411.6L367.5,421.2M405.5,376.3L460.3,380M130.3,357.7L169,353.4M76.6,312.5L133.8,320M38,375L73.6,377.4M122.9,444.1L163.1,437.4M37.8,399.6L90.3,383.7M244.1,408.7L275.2,405.1M5,402.4L31.8,411.6M57.4,466.1L115.9,465M209,305.2L262.6,297.8M30.1,319.2L65.2,317.4M152.2,437.3L174.7,431.8M418.5,358.1L459.8,368.5M15.6,349.5L55.6,355.3M162.3,308.1L219.4,293" fill="none" stroke="#3a2412" stroke-width="5" stroke-linecap="round" opacity="0.3"/>
+<rect x="0" y="292" width="480" height="12" fill="#2a1a0e"/>
+<circle cx="200" cy="250" r="300" fill="url(#thread-own-rg4)"/>
+<ellipse cx="250" cy="392" rx="130" ry="18" fill="#000" opacity="0.5" filter="url(#thread-own-blur5)"/>
+<polygon points="146,170 346,162 352,380 150,386" fill="#5d4518" filter="url(#thread-own-rough1)"/>
+<polygon points="156,180 336,174 340,370 160,376" fill="#b8913f" filter="url(#thread-own-rough1)"/>
+<circle cx="248" cy="274" r="82" fill="#efe6cf" filter="url(#thread-own-rough2)"/>
+<circle cx="248" cy="274" r="82" fill="none" stroke="#5d4518" stroke-width="4" filter="url(#thread-own-rough2)"/>
+<circle cx="248" cy="206" r="4" fill="#1c1a17"/>
+<circle cx="282" cy="215.1" r="2.4" fill="#1c1a17"/>
+<circle cx="306.9" cy="240" r="2.4" fill="#1c1a17"/>
+<circle cx="316" cy="274" r="4" fill="#1c1a17"/>
+<circle cx="306.9" cy="308" r="2.4" fill="#1c1a17"/>
+<circle cx="282" cy="332.9" r="2.4" fill="#1c1a17"/>
+<circle cx="248" cy="342" r="4" fill="#1c1a17"/>
+<circle cx="214" cy="332.9" r="2.4" fill="#1c1a17"/>
+<circle cx="189.1" cy="308" r="2.4" fill="#1c1a17"/>
+<circle cx="180" cy="274" r="4" fill="#1c1a17"/>
+<circle cx="189.1" cy="240" r="2.4" fill="#1c1a17"/>
+<circle cx="214" cy="215.1" r="2.4" fill="#1c1a17"/>
+<line x1="248" y1="274" x2="283" y2="259.2" stroke="#1c1a17" stroke-width="6" stroke-linecap="round"/>
+<line x1="248" y1="274" x2="309.7" y2="267.5" stroke="#1c1a17" stroke-width="3.5" stroke-linecap="round"/>
+<circle cx="248" cy="274" r="6" fill="#1c1a17"/>
+<rect x="232" y="150" width="32" height="16" rx="4" fill="#e3c47a" filter="url(#thread-own-rough2)"/>
+<path d="M175.3,203.3L169.7,224.4M288.1,357.8L287.3,370.8M339.3,303.8L335.6,327.9" fill="none" stroke="#e3c47a" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+<path d="M320.6,186L319.7,201.1M214.6,354.8L214.2,382.3M322.4,342.1L316.7,364.8" fill="none" stroke="#8a6a28" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+<ellipse cx="60" cy="420" rx="11" ry="7" fill="#f1ede2" opacity="0.8" filter="url(#thread-own-rough2)"/>
+<ellipse cx="84" cy="430" rx="11" ry="7" fill="#f1ede2" opacity="0.8" filter="url(#thread-own-rough2)"/>
+<ellipse cx="140" cy="414" rx="11" ry="7" fill="#f1ede2" opacity="0.8" filter="url(#thread-own-rough2)"/>
+<rect x="0" y="0" width="480" height="480" fill="url(#thread-own-rg6)"/>
+</svg>

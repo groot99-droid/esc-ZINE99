@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="slip-03-t slip-03-d">
+<title id="slip-03-t">Slipped card 3 (night 3)</title>
+<desc id="slip-03-d">Slipped card 3, found on night 3: the 5 of spades from another, river-grey deck, its face written across in blue-black ink: "Past 404 the boards talk. Walk them." A small ink drawing sits under the words.</desc>
+<defs><radialGradient id="slip-03-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="100%" stop-color="#6f7c80" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#f7f2e6" stroke="#6f7c80" stroke-width="2.4"/>
+<rect x="16" y="16" width="268" height="388" rx="8" fill="none" stroke="#6f7c80" stroke-width="1"/>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="url(#slip-03-rg1)"/>
+<g opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">5</text>
+<path d="M40,69 C52.6,78 50.8,87 40,81.6 C29.2,87 27.4,78 40,69Z M40,79.8 L43.6,88.8 L36.4,88.8Z" fill="#6f7c80"/>
+</g>
+<g transform="rotate(180 150 210)" opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">5</text>
+<path d="M40,69 C52.6,78 50.8,87 40,81.6 C29.2,87 27.4,78 40,69Z M40,79.8 L43.6,88.8 L36.4,88.8Z" fill="#6f7c80"/>
+</g>
+<path d="M150,139 C255,214 240,289 150,244 C60,289 45,214 150,139Z M150,229 L180,304 L120,304Z" fill="#a9b4b6" opacity="0.2"/>
+<text x="152" y="150" font-size="24" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(-2.0 152 150)">Past 404</text>
+<text x="152" y="180.7" font-size="24" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(-1.2 152 180.7)">the boards talk.</text>
+<text x="152" y="211.4" font-size="24" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(-0.6 152 211.4)">Walk them.</text>
+<path d="M106.1,337.9 L126,337.6" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<path d="M127.7,334.4 L147.6,340.7" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<path d="M150.6,334.4 L169.8,338.7" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<path d="M171.3,337.8 L191.7,338.6" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<path d="M134,326 l-4,-8 M150,324 v-9 M166,326 l4,-8" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<circle cx="54" cy="370" r="13" fill="none" stroke="#8a826e" stroke-width="1"/>
+<text x="54" y="375" font-size="14" font-family="cursive" fill="#6b6456" text-anchor="middle">3</text>
+<circle cx="150" cy="30" r="4.5" fill="#3a3a3a"/>
+<circle cx="150" cy="30" r="7" fill="none" stroke="#8a826e" stroke-width="0.8"/>
+</svg>

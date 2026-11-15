@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="deck-diamonds-6-t deck-diamonds-6-d">
+<title id="deck-diamonds-6-t">Deco deck: 6 of diamonds</title>
+<desc id="deck-diamonds-6-d">The 6 of diamonds from the office's deco deck: 6 pips over a faint gold lozenge ground in a stepped frame, the house bell in two corners.</desc>
+<defs><radialGradient id="deck-diamonds-6-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="70%" stop-color="#fff" stop-opacity="0"/><stop offset="100%" stop-color="#8a6a28" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#f3ead2" stroke="#7a6630" stroke-width="2"/>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="url(#deck-diamonds-6-rg1)"/>
+<polygon points="50,22 250,22 250,36 264,36 264,50 278,50 278,370 264,370 264,384 250,384 250,398 50,398 50,384 36,384 36,370 22,370 22,50 36,50 36,36 50,36" fill="none" stroke="#d4ad57" stroke-width="2.2"/>
+<rect x="30" y="30" width="240" height="360" fill="none" stroke="#d4ad57" stroke-width="0.8" opacity="0.7"/>
+<path d="M50,210 L150,60 L250,210 L150,360ZM64,210 L150,81 L236,210 L150,339ZM78,210 L150,102 L222,210 L150,318ZM92,210 L150,123 L208,210 L150,297ZM106,210 L150,144 L194,210 L150,276ZM120,210 L150,165 L180,210 L150,255Z" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.5"/>
+<path d="M100,73.3 L113.6,92 L100,110.7 L86.4,92Z" fill="#9b3a26"/>
+<path d="M200,73.3 L213.6,92 L200,110.7 L186.4,92Z" fill="#9b3a26"/>
+<path d="M100,191.3 L113.6,210 L100,228.7 L86.4,210Z" fill="#9b3a26"/>
+<path d="M200,191.3 L213.6,210 L200,228.7 L186.4,210Z" fill="#9b3a26"/>
+<path d="M100,309.3 L113.6,328 L100,346.7 L86.4,328Z" fill="#9b3a26" transform="rotate(180 100 328)"/>
+<path d="M200,309.3 L213.6,328 L200,346.7 L186.4,328Z" fill="#9b3a26" transform="rotate(180 200 328)"/>
+<g >
+<rect x="30" y="30" width="46" height="92" fill="#f3ead2"/>
+<g fill="none" stroke="#9b3a26" stroke-width="0.150" stroke-linecap="round" stroke-linejoin="round">
+<path d="M.46,.04 C.2,.1 .02,.4 .02,.7 A.26,.3 0 1 0 .54,.7 A.26,.28 0 0 0 .04,.6" transform="translate(43.8 40) scale(34)"/>
+</g>
+<path d="M53,87.9 L61.8,100 L53,112.1 L44.2,100Z" fill="#9b3a26"/>
+</g>
+<g transform="rotate(180 150 210)">
+<rect x="30" y="30" width="46" height="92" fill="#f3ead2"/>
+<g fill="none" stroke="#9b3a26" stroke-width="0.150" stroke-linecap="round" stroke-linejoin="round">
+<path d="M.46,.04 C.2,.1 .02,.4 .02,.7 A.26,.3 0 1 0 .54,.7 A.26,.28 0 0 0 .04,.6" transform="translate(43.8 40) scale(34)"/>
+</g>
+<path d="M53,87.9 L61.8,100 L53,112.1 L44.2,100Z" fill="#9b3a26"/>
+</g>
+<path d="M238,66.8 Q238.8,51 247,50.7 Q255.2,51 256,66.8 Z M247,50.7 V47.2 M241.3,63 H252.7" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="247" cy="69.3" r="1.8" fill="#d4ad57"/>
+<path d="M44,366.8 Q44.8,351 53,350.7 Q61.2,351 62,366.8 Z M53,350.7 V347.2 M47.3,363 H58.7" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="53" cy="369.3" r="1.8" fill="#d4ad57"/>
+</svg>

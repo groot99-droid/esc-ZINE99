@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="back-hotel-t back-hotel-d">
+<title id="back-hotel-t">Deco deck: the hotel's own back</title>
+<desc id="back-hotel-d">The back of the office's own deck: gold on deep green, a stepped fan rising from the foot of the card, a second one hanging from the head, and a small brass rose where they meet.</desc>
+<defs><clipPath id="back-hotel-clip1"><rect x="22" y="22" width="256" height="376" rx="6"/></clipPath><radialGradient id="back-hotel-rg2" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#0f2a1e" stroke="#d4ad57" stroke-width="3"/>
+<rect x="14" y="14" width="272" height="392" rx="10" fill="none" stroke="#d4ad57" stroke-width="1.4"/>
+<rect x="22" y="22" width="256" height="376" rx="6" fill="none" stroke="#d4ad57" stroke-width="0.7"/>
+<g clip-path="url(#back-hotel-clip1)">
+<path d="M150,398L-76.5,358.1M150,398L-66.1,319.3M150,398L-49.2,283M150,398L-26.2,250.2M150,398L2.2,221.8M150,398L35,198.8M150,398L71.3,181.9M150,398L110.1,171.5M150,398L150,168M150,398L189.9,171.5M150,398L228.7,181.9M150,398L265,198.8M150,398L297.8,221.8M150,398L326.2,250.2M150,398L349.2,283M150,398L366.1,319.3M150,398L376.5,358.1" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.9"/>
+<path d="M104.7,390 A46,46 0 0,1 195.3,390" fill="none" stroke="#d4ad57" stroke-width="1.3" opacity="0.9"/>
+<path d="M73,384.4 A78.2,78.2 0 0,1 227,384.4" fill="none" stroke="#d4ad57" stroke-width="1.3" opacity="0.9"/>
+<path d="M41.3,378.8 A110.4,110.4 0 0,1 258.7,378.8" fill="none" stroke="#d4ad57" stroke-width="1.3" opacity="0.9"/>
+<path d="M9.6,373.2 A142.6,142.6 0 0,1 290.4,373.2" fill="none" stroke="#d4ad57" stroke-width="1.3" opacity="0.9"/>
+<path d="M150,22L376.5,61.9M150,22L366.1,100.7M150,22L349.2,137M150,22L326.2,169.8M150,22L297.8,198.2M150,22L265,221.2M150,22L228.7,238.1M150,22L189.9,248.5M150,22L150,252M150,22L110.1,248.5M150,22L71.3,238.1M150,22L35,221.2M150,22L2.2,198.2M150,22L-26.2,169.8M150,22L-49.2,137M150,22L-66.1,100.7M150,22L-76.5,61.9" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.9"/>
+<path d="M104,22 A46,46 0 0,0 196,22" fill="none" stroke="#d4ad57" stroke-width="1.3"/>
+<path d="M71.8,22 A78.2,78.2 0 0,0 228.2,22" fill="none" stroke="#d4ad57" stroke-width="1.3"/>
+<path d="M39.6,22 A110.4,110.4 0 0,0 260.4,22" fill="none" stroke="#d4ad57" stroke-width="1.3"/>
+<path d="M7.4,22 A142.6,142.6 0 0,0 292.6,22" fill="none" stroke="#d4ad57" stroke-width="1.3"/>
+</g>
+<circle cx="150" cy="210" r="44" fill="#0f2a1e" stroke="#d4ad57" stroke-width="2"/>
+<path d="M139.2,191.4a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M152.4,196.8a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M157.8,210a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M152.4,223.2a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M139.2,228.6a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M126,223.2a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M120.6,210a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M126,196.8a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0" fill="url(#back-hotel-rg2)" stroke="#5d4518" stroke-width="0.9"/>
+<circle cx="150" cy="210" r="18.6" fill="url(#back-hotel-rg2)" stroke="#5d4518" stroke-width="0.9"/>
+<circle cx="150" cy="210" r="13.2" fill="none" stroke="#5d4518" stroke-width="0.8" opacity="0.7"/>
+<path d="M135,207 A15.6,15.6 0 0,1 153,194.4" fill="none" stroke="#fff3c8" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
+<circle cx="150" cy="210" r="7.8" fill="#0a0806"/>
+<circle cx="147.9" cy="207.6" r="1.8" fill="#59636a" opacity="0.7"/>
+<rect x="115" y="145" width="70" height="5" fill="#d4ad57" opacity="0.8"/>
+<rect x="124" y="137" width="52" height="5" fill="#d4ad57" opacity="0.8"/>
+<rect x="133" y="129" width="34" height="5" fill="#d4ad57" opacity="0.8"/>
+<rect x="115" y="270" width="70" height="5" fill="#d4ad57" opacity="0.8"/>
+<rect x="124" y="278" width="52" height="5" fill="#d4ad57" opacity="0.8"/>
+<rect x="133" y="286" width="34" height="5" fill="#d4ad57" opacity="0.8"/>
+</svg>

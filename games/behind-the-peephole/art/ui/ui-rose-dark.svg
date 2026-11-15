@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300" role="img" aria-labelledby="ui-rose-dark-t ui-rose-dark-d">
+<title id="ui-rose-dark-t">A brass rose, dark</title>
+<desc id="ui-rose-dark-d">The same brass rose gone dark at its centre: an eye is at the hole.</desc>
+<defs><pattern id="ui-rose-dark-wp1" width="46" height="8" patternUnits="userSpaceOnUse"><rect width="14" height="8" fill="#2f5a40" opacity="0.5"/><rect x="24" width="3" height="8" fill="#3d6b4c" opacity="0.5"/><path d="M0,2H46M0,6H46" stroke="#0c1a12" stroke-width="0.6" opacity="0.35"/></pattern><filter id="ui-rose-dark-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter><radialGradient id="ui-rose-dark-rg3" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient><radialGradient id="ui-rose-dark-vig4" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.6"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="300" fill="#1f3a2e"/>
+<rect x="0" y="0" width="300" height="300" fill="url(#ui-rose-dark-wp1)"/>
+<rect x="0" y="0" width="300" height="300" fill="#000" opacity="0.5"/>
+<ellipse cx="156" cy="160" rx="74" ry="74" fill="#000" opacity="0.4" filter="url(#ui-rose-dark-blur2)"/>
+<path d="M124.1,105.4a25.9,25.9 0 1,0 51.8,0a25.9,25.9 0 1,0 -51.8,0M155.6,118.4a25.9,25.9 0 1,0 51.8,0a25.9,25.9 0 1,0 -51.8,0M168.7,150a25.9,25.9 0 1,0 51.8,0a25.9,25.9 0 1,0 -51.8,0M155.6,181.6a25.9,25.9 0 1,0 51.8,0a25.9,25.9 0 1,0 -51.8,0M124.1,194.6a25.9,25.9 0 1,0 51.8,0a25.9,25.9 0 1,0 -51.8,0M92.5,181.6a25.9,25.9 0 1,0 51.8,0a25.9,25.9 0 1,0 -51.8,0M79.4,150a25.9,25.9 0 1,0 51.8,0a25.9,25.9 0 1,0 -51.8,0M92.5,118.4a25.9,25.9 0 1,0 51.8,0a25.9,25.9 0 1,0 -51.8,0" fill="url(#ui-rose-dark-rg3)" stroke="#5d4518" stroke-width="2.2"/>
+<circle cx="150" cy="150" r="44.6" fill="url(#ui-rose-dark-rg3)" stroke="#5d4518" stroke-width="2.2"/>
+<circle cx="150" cy="150" r="31.7" fill="none" stroke="#5d4518" stroke-width="1.8" opacity="0.7"/>
+<path d="M114,142.8 A37.4,37.4 0 0,1 157.2,112.6" fill="none" stroke="#fff3c8" stroke-width="3.6" opacity="0.6" stroke-linecap="round"/>
+<circle cx="150" cy="150" r="18.7" fill="#0a0806"/>
+<circle cx="145" cy="144.2" r="4.3" fill="#59636a" opacity="0.7"/>
+<rect x="0" y="0" width="300" height="300" fill="url(#ui-rose-dark-vig4)"/>
+</svg>

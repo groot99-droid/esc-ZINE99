@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" role="img" aria-labelledby="overlay-403-pictures-2-t overlay-403-pictures-2-d">
+<title id="overlay-403-pictures-2-t">Plate overlay, 403: two rivers pinned up</title>
+<desc id="overlay-403-pictures-2-d">Gouache overlay for room 403 by night two: 2 small watercolours of the river pinned to the green wallpaper, each with a brass dot in its corner, some filled and some hollow.</desc>
+<defs><filter id="overlay-403-pictures-2-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="480" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter><filter id="overlay-403-pictures-2-rough2"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="348" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter><clipPath id="overlay-403-pictures-2-clip3"><path d="M603.3,240 C604.3,272.9 610.4,314.6 611.5,339.6 C612.6,364.6 615,376.7 609.8,390.1 C604.7,403.5 593.5,413 580.7,420.1 C568,427.2 547.9,426.8 533.1,432.9 C518.4,439.1 511.8,451.1 492.4,457 C473,462.8 460.9,467.9 416.8,467.9 C372.7,467.9 273.2,458.3 227.8,457.1 C182.4,455.9 166.5,463.2 144.5,460.8 C122.6,458.4 110.4,449.4 96.1,442.7 C81.8,436 66.1,431.1 58.8,420.4 C51.5,409.7 56,392.5 52.4,378.6 C48.8,364.6 43,359.8 37.1,336.7 C31.2,313.6 16.8,272.1 17,240 C17.3,207.9 35.8,168.5 38.7,143.9 C41.7,119.3 28.6,104.4 34.8,92.3 C41,80.2 64,79.1 75.7,71.3 C87.5,63.5 92.5,52.7 105.4,45.8 C118.3,38.9 133,34.6 153,29.9 C173.1,25.2 183,17.7 225.6,17.8 C268.3,17.9 363.9,30.4 409,30.5 C454,30.7 473.1,17.8 495.9,18.7 C518.6,19.6 532.3,28.3 545.5,35.9 C558.6,43.5 567,53.5 574.6,64.1 C582.3,74.7 586.2,86.4 591.4,99.5 C596.6,112.5 603.8,118.9 605.7,142.4 C607.7,165.8 602.4,207.1 603.3,240Z"/></clipPath><pattern id="overlay-403-pictures-2-wp4" width="46" height="8" patternUnits="userSpaceOnUse"><rect width="14" height="8" fill="#2f5a40" opacity="0.5"/><rect x="24" width="3" height="8" fill="#3d6b4c" opacity="0.5"/><path d="M0,2H46M0,6H46" stroke="#0c1a12" stroke-width="0.6" opacity="0.35"/></pattern><radialGradient id="overlay-403-pictures-2-rg5" cx="0.5" cy="0.45" r="0.55"><stop offset="0%" stop-color="#dfe6d6" stop-opacity="0.5"/><stop offset="50%" stop-color="#dfe6d6" stop-opacity="0.2"/><stop offset="100%" stop-color="#dfe6d6" stop-opacity="0"/></radialGradient><filter id="overlay-403-pictures-2-blur6" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.6"/></filter><filter id="overlay-403-pictures-2-blur7" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.6"/></filter><radialGradient id="overlay-403-pictures-2-rg8" cx="0.5" cy="0.5" r="0.72"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0.1"/><stop offset="100%" stop-color="#000" stop-opacity="0.6"/></radialGradient></defs>
+<g clip-path="url(#overlay-403-pictures-2-clip3)">
+<rect x="0" y="0" width="640" height="400" fill="#1f3a2e"/>
+<rect x="0" y="0" width="640" height="400" fill="url(#overlay-403-pictures-2-wp4)"/>
+<rect x="0" y="386" width="640" height="14" fill="#3a2716"/>
+<rect x="0" y="400" width="640" height="80" fill="#5a3a1e"/>
+<rect x="0" y="0" width="640" height="480" fill="url(#overlay-403-pictures-2-rg5)"/>
+<g transform="rotate(2.6237636784954868 230 180)">
+<rect x="159" y="125" width="150" height="120" fill="#000" opacity="0.3"/>
+<rect x="155" y="120" width="150" height="120" fill="#f4efe2"/>
+<rect x="165.5" y="129.6" width="129" height="43.2" fill="#aeb9bb" filter="url(#overlay-403-pictures-2-blur6)"/>
+<rect x="165.5" y="172.8" width="129" height="43.2" fill="#6f7c80" filter="url(#overlay-403-pictures-2-blur6)"/>
+<rect x="165.5" y="165.9" width="129" height="8.6" fill="#3d4a4e" filter="url(#overlay-403-pictures-2-blur6)" opacity="0.8"/>
+<rect x="178.4" y="178" width="5.2" height="25.9" fill="#f1c77c" opacity="0.6" filter="url(#overlay-403-pictures-2-blur6)"/>
+<rect x="201.6" y="178" width="5.2" height="25.9" fill="#f1c77c" opacity="0.6" filter="url(#overlay-403-pictures-2-blur6)"/>
+<rect x="224.8" y="178" width="5.2" height="25.9" fill="#f1c77c" opacity="0.6" filter="url(#overlay-403-pictures-2-blur6)"/>
+<rect x="248.1" y="178" width="5.2" height="25.9" fill="#f1c77c" opacity="0.6" filter="url(#overlay-403-pictures-2-blur6)"/>
+<rect x="271.3" y="178" width="5.2" height="25.9" fill="#f1c77c" opacity="0.6" filter="url(#overlay-403-pictures-2-blur6)"/>
+<circle cx="290" cy="228" r="4.2" fill="none" stroke="#b8913f" stroke-width="1.2"/>
+<circle cx="230" cy="127" r="4" fill="#c9c2b0" stroke="#555" stroke-width="0.6"/>
+</g>
+<g transform="rotate(-0.5773775116949666 410 180)">
+<rect x="339" y="125" width="150" height="120" fill="#000" opacity="0.3"/>
+<rect x="335" y="120" width="150" height="120" fill="#f4efe2"/>
+<rect x="345.5" y="129.6" width="129" height="43.2" fill="#aeb9bb" filter="url(#overlay-403-pictures-2-blur7)"/>
+<rect x="345.5" y="172.8" width="129" height="43.2" fill="#6f7c80" filter="url(#overlay-403-pictures-2-blur7)"/>
+<rect x="345.5" y="165.9" width="129" height="8.6" fill="#3d4a4e" filter="url(#overlay-403-pictures-2-blur7)" opacity="0.8"/>
+<rect x="358.4" y="178" width="5.2" height="25.9" fill="#f1c77c" opacity="0.6" filter="url(#overlay-403-pictures-2-blur7)"/>
+<rect x="381.6" y="178" width="5.2" height="25.9" fill="#f1c77c" opacity="0.6" filter="url(#overlay-403-pictures-2-blur7)"/>
+<rect x="404.8" y="178" width="5.2" height="25.9" fill="#f1c77c" opacity="0.6" filter="url(#overlay-403-pictures-2-blur7)"/>
+<rect x="428.1" y="178" width="5.2" height="25.9" fill="#f1c77c" opacity="0.6" filter="url(#overlay-403-pictures-2-blur7)"/>
+<rect x="451.3" y="178" width="5.2" height="25.9" fill="#f1c77c" opacity="0.6" filter="url(#overlay-403-pictures-2-blur7)"/>
+<circle cx="470" cy="228" r="4.2" fill="#b8913f" stroke="#b8913f" stroke-width="1.2"/>
+<circle cx="410" cy="127" r="4" fill="#c9c2b0" stroke="#555" stroke-width="0.6"/>
+</g>
+<polygon points="60,400 580,400 580,420 60,420" fill="#6b4a2a" filter="url(#overlay-403-pictures-2-rough1)"/>
+<rect x="0" y="0" width="640" height="480" fill="url(#overlay-403-pictures-2-rg8)"/>
+</g>
+</svg>

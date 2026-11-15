@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="deck-hearts-2-t deck-hearts-2-d">
+<title id="deck-hearts-2-t">Deco deck: 2 of hearts</title>
+<desc id="deck-hearts-2-d">The 2 of hearts from the office's deco deck: 2 pips over a faint gold ring ground in a stepped frame, the house lamp in two corners.</desc>
+<defs><radialGradient id="deck-hearts-2-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="70%" stop-color="#fff" stop-opacity="0"/><stop offset="100%" stop-color="#8a6a28" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#f3ead2" stroke="#7a6630" stroke-width="2"/>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="url(#deck-hearts-2-rg1)"/>
+<polygon points="50,22 250,22 250,36 264,36 264,50 278,50 278,370 264,370 264,384 250,384 250,398 50,398 50,384 36,384 36,370 22,370 22,50 36,50 36,36 50,36" fill="none" stroke="#d4ad57" stroke-width="2.2"/>
+<rect x="30" y="30" width="240" height="360" fill="none" stroke="#d4ad57" stroke-width="0.8" opacity="0.7"/>
+<path d="M60,210 A90,90 0 0,1 240,210" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.5"/>
+<path d="M60,210 A90,90 0 0,0 240,210" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.5"/>
+<path d="M72,210 A78,78 0 0,1 228,210" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.5"/>
+<path d="M72,210 A78,78 0 0,0 228,210" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.5"/>
+<path d="M84,210 A66,66 0 0,1 216,210" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.5"/>
+<path d="M84,210 A66,66 0 0,0 216,210" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.5"/>
+<path d="M96,210 A54,54 0 0,1 204,210" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.5"/>
+<path d="M96,210 A54,54 0 0,0 204,210" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.5"/>
+<path d="M108,210 A42,42 0 0,1 192,210" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.5"/>
+<path d="M108,210 A42,42 0 0,0 192,210" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.5"/>
+<path d="M120,210 A30,30 0 0,1 180,210" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.5"/>
+<path d="M120,210 A30,30 0 0,0 180,210" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.5"/>
+<path d="M150,109 C122.8,88.6 136.4,68.2 150,83.5 C163.6,68.2 177.2,88.6 150,109Z" fill="#9b3a26"/>
+<path d="M150,345 C122.8,324.6 136.4,304.2 150,319.5 C163.6,304.2 177.2,324.6 150,345Z" fill="#9b3a26" transform="rotate(180 150 328)"/>
+<g >
+<rect x="30" y="30" width="46" height="92" fill="#f3ead2"/>
+<g fill="none" stroke="#9b3a26" stroke-width="0.150" stroke-linecap="round" stroke-linejoin="round">
+<path d="M.02,.24 A.26,.25 0 1 1 .46,.44 L0,1 H.54" transform="translate(43.8 40) scale(34)"/>
+</g>
+<path d="M53,111 C35.4,97.8 44.2,84.6 53,94.5 C61.8,84.6 70.6,97.8 53,111Z" fill="#9b3a26"/>
+</g>
+<g transform="rotate(180 150 210)">
+<rect x="30" y="30" width="46" height="92" fill="#f3ead2"/>
+<g fill="none" stroke="#9b3a26" stroke-width="0.150" stroke-linecap="round" stroke-linejoin="round">
+<path d="M.02,.24 A.26,.25 0 1 1 .46,.44 L0,1 H.54" transform="translate(43.8 40) scale(34)"/>
+</g>
+<path d="M53,111 C35.4,97.8 44.2,84.6 53,94.5 C61.8,84.6 70.6,97.8 53,111Z" fill="#9b3a26"/>
+</g>
+<path d="M238.8,59.2 L242.5,48 H251.5 L255.2,59.2Z M247,59.2 V70.5 M241,71.7 H253 M244.6,48 L242.5,59.2 M249.4,48 L251.5,59.2" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44.8,359.2 L48.5,348 H57.5 L61.2,359.2Z M53,359.2 V370.5 M47,371.7 H59 M50.6,348 L48.5,359.2 M55.4,348 L57.5,359.2" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

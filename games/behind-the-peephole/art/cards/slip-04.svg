@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="slip-04-t slip-04-d">
+<title id="slip-04-t">Slipped card 4 (night 3)</title>
+<desc id="slip-04-d">Slipped card 4, found on night 3: the jack of hearts from another, river-grey deck, its face written across in blue-black ink: "The chute doesn't go to a manager." A small ink drawing sits under the words.</desc>
+<defs><radialGradient id="slip-04-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="100%" stop-color="#6f7c80" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#f7f2e6" stroke="#6f7c80" stroke-width="2.4"/>
+<rect x="16" y="16" width="268" height="388" rx="8" fill="none" stroke="#6f7c80" stroke-width="1"/>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="url(#slip-04-rg1)"/>
+<g opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">J</text>
+<path d="M40,87 C25.6,76.2 32.8,65.4 40,73.5 C47.2,65.4 54.4,76.2 40,87Z" fill="#6f7c80"/>
+</g>
+<g transform="rotate(180 150 210)" opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">J</text>
+<path d="M40,87 C25.6,76.2 32.8,65.4 40,73.5 C47.2,65.4 54.4,76.2 40,87Z" fill="#6f7c80"/>
+</g>
+<path d="M150,289 C30,199 90,109 150,176.5 C210,109 270,199 150,289Z" fill="#a9b4b6" opacity="0.2"/>
+<text x="152" y="150" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(0.7 152 150)">The chute</text>
+<text x="152" y="184.6" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(-1.9 152 184.6)">doesn't go</text>
+<text x="152" y="219.1" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(-0.3 152 219.1)">to a manager.</text>
+<path d="M135.3,316.3 L135.9,342.2 L156.6,360.1" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<path d="M162.1,315.7 L161.5,336.3 L177.8,352.7" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<path d="M146,324 v14 l-4,-5 m4,5 l4,-5" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<circle cx="54" cy="370" r="13" fill="none" stroke="#8a826e" stroke-width="1"/>
+<text x="54" y="375" font-size="14" font-family="cursive" fill="#6b6456" text-anchor="middle">4</text>
+<circle cx="150" cy="30" r="4.5" fill="#3a3a3a"/>
+<circle cx="150" cy="30" r="7" fill="none" stroke="#8a826e" stroke-width="0.8"/>
+</svg>

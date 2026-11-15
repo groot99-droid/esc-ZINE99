@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="deck-diamonds-king-t deck-diamonds-king-d">
+<title id="deck-diamonds-king-t">Deco deck: king of diamonds</title>
+<desc id="deck-diamonds-king-d">The king of diamonds, double-ended in gold, cream and red: the auditor under a green eyeshade, his eyes not shown, holding the house bell in a roundel.</desc>
+<defs><radialGradient id="deck-diamonds-king-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="70%" stop-color="#fff" stop-opacity="0"/><stop offset="100%" stop-color="#8a6a28" stop-opacity="0.2"/></radialGradient><clipPath id="deck-diamonds-king-clip2"><polygon points="36,36 264,36 264,180 36,240"/></clipPath><clipPath id="deck-diamonds-king-clip3"><polygon points="36,36 264,36 264,180 36,240"/></clipPath></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#f3ead2" stroke="#7a6630" stroke-width="2"/>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="url(#deck-diamonds-king-rg1)"/>
+<polygon points="50,22 250,22 250,36 264,36 264,50 278,50 278,370 264,370 264,384 250,384 250,398 50,398 50,384 36,384 36,370 22,370 22,50 36,50 36,36 50,36" fill="none" stroke="#d4ad57" stroke-width="2.2"/>
+<rect x="30" y="30" width="240" height="360" fill="none" stroke="#d4ad57" stroke-width="0.8" opacity="0.7"/>
+<g clip-path="url(#deck-diamonds-king-clip2)">
+<rect x="36" y="36" width="228" height="210" fill="#efe2c0"/>
+<path d="M150,150L-19.4,135.2M150,150L-12.4,99.9M150,150L1.7,66.8M150,150L22.5,37.5M150,150L49.1,13.2M150,150L80.1,-5M150,150L114.2,-16.2M150,150L150,-20M150,150L185.8,-16.2M150,150L219.9,-5M150,150L250.9,13.2M150,150L277.5,37.5M150,150L298.3,66.8M150,150L312.4,99.9M150,150L319.4,135.2" fill="none" stroke="#d4ad57" stroke-width="1.2" opacity="0.7"/>
+<path d="M61.9,142.3 A88.4,88.4 0 0,1 238.1,142.3" fill="none" stroke="#d4ad57" stroke-width="1.4" opacity="0.7"/>
+<path d="M17.9,138.4 A132.6,132.6 0 0,1 282.1,138.4" fill="none" stroke="#d4ad57" stroke-width="1.4" opacity="0.7"/>
+<path d="M56,246 L70,170 Q150,138 230,170 L244,246Z" fill="#9b3a26"/>
+<path d="M150,246 L118,160 L150,176 L182,160Z" fill="#f3ead2"/>
+<path d="M118,160 L98,196 L134,246 M182,160 L202,196 L166,246" fill="none" stroke="#d4ad57" stroke-width="2.4"/>
+<circle cx="150" cy="196" r="2.6" fill="#d4ad57"/>
+<circle cx="150" cy="212" r="2.6" fill="#d4ad57"/>
+<circle cx="150" cy="228" r="2.6" fill="#d4ad57"/>
+<rect x="136" y="130" width="28" height="36" fill="#e2c9a2"/>
+<path d="M118,96 Q118,64 150,62 Q182,64 182,96 Q182,128 150,144 Q118,128 118,96Z" fill="#e2c9a2"/>
+<path d="M150,96 V118 h-7" fill="none" stroke="#8a6a48" stroke-width="1.8"/>
+<path d="M140,128 h18" fill="none" stroke="#8a4a3a" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M108,98 Q150,74 192,98 L200,106 Q150,90 100,106Z" fill="#2f5a40" stroke="#d4ad57" stroke-width="1.6"/>
+<path d="M118,90 Q118,56 150,54 Q182,56 182,90" fill="none" stroke="#13140f" stroke-width="7"/>
+<path d="M116,150 q34,26 68,0" fill="none" stroke="#d4ad57" stroke-width="2"/>
+<rect x="88" y="198" width="24" height="26" rx="8" fill="#e2c9a2" stroke="#8a6a48" stroke-width="1"/>
+<circle cx="100" cy="176" r="30" fill="#f3ead2" stroke="#d4ad57" stroke-width="2"/>
+<path d="M87.4,185.4 Q88.5,163.4 100,163 Q111.5,163.4 112.6,185.4 Z M100,163 V158.2 M92,180.2 H108" fill="none" stroke="#9b3a26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="100" cy="189" r="2.5" fill="#9b3a26"/>
+</g>
+<g transform="rotate(180 150 210)">
+<g clip-path="url(#deck-diamonds-king-clip3)">
+<rect x="36" y="36" width="228" height="210" fill="#efe2c0"/>
+<path d="M150,150L-19.4,135.2M150,150L-12.4,99.9M150,150L1.7,66.8M150,150L22.5,37.5M150,150L49.1,13.2M150,150L80.1,-5M150,150L114.2,-16.2M150,150L150,-20M150,150L185.8,-16.2M150,150L219.9,-5M150,150L250.9,13.2M150,150L277.5,37.5M150,150L298.3,66.8M150,150L312.4,99.9M150,150L319.4,135.2" fill="none" stroke="#d4ad57" stroke-width="1.2" opacity="0.7"/>
+<path d="M61.9,142.3 A88.4,88.4 0 0,1 238.1,142.3" fill="none" stroke="#d4ad57" stroke-width="1.4" opacity="0.7"/>
+<path d="M17.9,138.4 A132.6,132.6 0 0,1 282.1,138.4" fill="none" stroke="#d4ad57" stroke-width="1.4" opacity="0.7"/>
+<path d="M56,246 L70,170 Q150,138 230,170 L244,246Z" fill="#9b3a26"/>
+<path d="M150,246 L118,160 L150,176 L182,160Z" fill="#f3ead2"/>
+<path d="M118,160 L98,196 L134,246 M182,160 L202,196 L166,246" fill="none" stroke="#d4ad57" stroke-width="2.4"/>
+<circle cx="150" cy="196" r="2.6" fill="#d4ad57"/>
+<circle cx="150" cy="212" r="2.6" fill="#d4ad57"/>
+<circle cx="150" cy="228" r="2.6" fill="#d4ad57"/>
+<rect x="136" y="130" width="28" height="36" fill="#e2c9a2"/>
+<path d="M118,96 Q118,64 150,62 Q182,64 182,96 Q182,128 150,144 Q118,128 118,96Z" fill="#e2c9a2"/>
+<path d="M150,96 V118 h-7" fill="none" stroke="#8a6a48" stroke-width="1.8"/>
+<path d="M140,128 h18" fill="none" stroke="#8a4a3a" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M108,98 Q150,74 192,98 L200,106 Q150,90 100,106Z" fill="#2f5a40" stroke="#d4ad57" stroke-width="1.6"/>
+<path d="M118,90 Q118,56 150,54 Q182,56 182,90" fill="none" stroke="#13140f" stroke-width="7"/>
+<path d="M116,150 q34,26 68,0" fill="none" stroke="#d4ad57" stroke-width="2"/>
+<rect x="88" y="198" width="24" height="26" rx="8" fill="#e2c9a2" stroke="#8a6a48" stroke-width="1"/>
+<circle cx="100" cy="176" r="30" fill="#f3ead2" stroke="#d4ad57" stroke-width="2"/>
+<path d="M87.4,185.4 Q88.5,163.4 100,163 Q111.5,163.4 112.6,185.4 Z M100,163 V158.2 M92,180.2 H108" fill="none" stroke="#9b3a26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="100" cy="189" r="2.5" fill="#9b3a26"/>
+</g>
+</g>
+<line x1="36" y1="240" x2="264" y2="180" stroke="#d4ad57" stroke-width="5"/>
+<line x1="36" y1="240" x2="264" y2="180" stroke="#5d4518" stroke-width="1"/>
+<rect x="36" y="36" width="228" height="348" fill="none" stroke="#d4ad57" stroke-width="2"/>
+<g >
+<rect x="30" y="30" width="46" height="92" fill="#f3ead2"/>
+<g fill="none" stroke="#9b3a26" stroke-width="0.150" stroke-linecap="round" stroke-linejoin="round">
+<path d="M0,0 V1 M.58,0 L0,.58 M.2,.4 L.6,1" transform="translate(42.8 40) scale(34)"/>
+</g>
+<path d="M53,87.9 L61.8,100 L53,112.1 L44.2,100Z" fill="#9b3a26"/>
+</g>
+<g transform="rotate(180 150 210)">
+<rect x="30" y="30" width="46" height="92" fill="#f3ead2"/>
+<g fill="none" stroke="#9b3a26" stroke-width="0.150" stroke-linecap="round" stroke-linejoin="round">
+<path d="M0,0 V1 M.58,0 L0,.58 M.2,.4 L.6,1" transform="translate(42.8 40) scale(34)"/>
+</g>
+<path d="M53,87.9 L61.8,100 L53,112.1 L44.2,100Z" fill="#9b3a26"/>
+</g>
+</svg>

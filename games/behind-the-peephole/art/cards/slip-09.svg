@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="slip-09-t slip-09-d">
+<title id="slip-09-t">Slipped card 9 (night 6)</title>
+<desc id="slip-09-d">Slipped card 9, found on night 6: the 7 of hearts from another, river-grey deck, its face written across in blue-black ink: "Back office safe: the year they built the passage, then the minute I knock." A small ink drawing sits under the words.</desc>
+<defs><radialGradient id="slip-09-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="100%" stop-color="#6f7c80" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#f7f2e6" stroke="#6f7c80" stroke-width="2.4"/>
+<rect x="16" y="16" width="268" height="388" rx="8" fill="none" stroke="#6f7c80" stroke-width="1"/>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="url(#slip-09-rg1)"/>
+<g opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">7</text>
+<path d="M40,87 C25.6,76.2 32.8,65.4 40,73.5 C47.2,65.4 54.4,76.2 40,87Z" fill="#6f7c80"/>
+</g>
+<g transform="rotate(180 150 210)" opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">7</text>
+<path d="M40,87 C25.6,76.2 32.8,65.4 40,73.5 C47.2,65.4 54.4,76.2 40,87Z" fill="#6f7c80"/>
+</g>
+<path d="M150,289 C30,199 90,109 150,176.5 C210,109 270,199 150,289Z" fill="#a9b4b6" opacity="0.2"/>
+<text x="152" y="126" font-size="24" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(1.3 152 126)">Back office safe:</text>
+<text x="152" y="156.7" font-size="24" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(1.2 152 156.7)">the year they</text>
+<text x="152" y="187.4" font-size="24" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(2.0 152 187.4)">built the passage,</text>
+<text x="152" y="218.2" font-size="24" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(0.0 152 218.2)">then the minute</text>
+<text x="152" y="248.9" font-size="24" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(-1.6 152 248.9)">I knock.</text>
+<circle cx="150" cy="352" r="22" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<circle cx="150" cy="352" r="6" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<path d="M167,352L172,352M164.7,360.5L169.1,363M158.5,366.7L161,371.1M150,369L150,374M141.5,366.7L139,371.1M135.3,360.5L130.9,363M133,352L128,352M135.3,343.5L130.9,341M141.5,337.3L139,332.9M150,335L150,330M158.5,337.3L161,332.9M164.7,343.5L169.1,341" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<circle cx="54" cy="370" r="13" fill="none" stroke="#8a826e" stroke-width="1"/>
+<text x="54" y="375" font-size="14" font-family="cursive" fill="#6b6456" text-anchor="middle">9</text>
+<circle cx="150" cy="30" r="4.5" fill="#3a3a3a"/>
+<circle cx="150" cy="30" r="7" fill="none" stroke="#8a826e" stroke-width="0.8"/>
+</svg>

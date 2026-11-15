@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" width="480" height="360" role="img" aria-labelledby="sprite-seventh-coin-t sprite-seventh-coin-d">
+<title id="sprite-seventh-coin-t">Race sprite: the seventh coin</title>
+<desc id="sprite-seventh-coin-d">The seventh coin of light in the blackout: the office door at the far west end, the lens in it lit from inside, a round patch of amber on the boards, and the edge of a figure crossing it.</desc>
+<defs><clipPath id="sprite-seventh-coin-clip1"><rect x="150" y="30" width="180" height="270"/></clipPath><radialGradient id="sprite-seventh-coin-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#f1c77c" stop-opacity="0.9"/><stop offset="70%" stop-color="#c98a3a" stop-opacity="0.5"/><stop offset="100%" stop-color="#c98a3a" stop-opacity="0"/></radialGradient><radialGradient id="sprite-seventh-coin-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#f1c77c" stop-opacity="0.6"/><stop offset="40%" stop-color="#f1c77c" stop-opacity="0.2"/><stop offset="100%" stop-color="#f1c77c" stop-opacity="0"/></radialGradient><radialGradient id="sprite-seventh-coin-rg4" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient><radialGradient id="sprite-seventh-coin-rg5" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#fff8e0" stop-opacity="1"/><stop offset="60%" stop-color="#f1c77c" stop-opacity="1"/><stop offset="100%" stop-color="#f1c77c" stop-opacity="0.7"/></radialGradient><radialGradient id="sprite-seventh-coin-rg6" cx="0.5" cy="0.55" r="0.7"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0.3"/><stop offset="100%" stop-color="#000" stop-opacity="0.9"/></radialGradient></defs>
+<rect x="0" y="0" width="480" height="360" fill="#050505"/>
+<rect x="150" y="30" width="180" height="270" fill="#0d0a08"/>
+<g clip-path="url(#sprite-seventh-coin-clip1)">
+<path d="M150,106.4 C160,106.5 190,106.7 210,106.9 C230,107.1 250,107.3 270,107.5 C290,107.7 320,108 330,108.1 M150,160.5 C160,160.2 190,158.9 210,158.6 C230,158.3 250,158.3 270,158.6 C290,159 320,160.3 330,160.6 M150,199.6 C160,199.7 190,199.9 210,200.1 C230,200.4 250,200.8 270,201.2 C290,201.6 320,202.4 330,202.6 M150,252.6 C160,251.9 190,249.7 210,248.5 C230,247.3 250,246.1 270,245.4 C290,244.6 320,244.2 330,244 M150,35 C160,35 190,35.1 210,35.1 C230,35.1 250,35 270,34.9 C290,34.8 320,34.6 330,34.5 M150,154.5 C160,154.5 190,154.7 210,154.6 C230,154.6 250,154.4 270,154.1 C290,153.9 320,153.3 330,153.1 M150,292.6 C160,292.6 190,292.7 210,292.9 C230,293 250,293.2 270,293.5 C290,293.7 320,294.2 330,294.3 M150,108.7 C160,108.3 190,107.2 210,106.6 C230,106 250,105.4 270,105.1 C290,104.8 320,104.9 330,104.8 M150,252.1 C160,252.1 190,251.6 210,251.9 C230,252.1 250,252.8 270,253.6 C290,254.5 320,256.4 330,257 M150,164.6 C160,165.5 190,168.1 210,169.7 C230,171.3 250,173.1 270,174.2 C290,175.4 320,176.1 330,176.5 M150,185.2 C160,185 190,184.4 210,184.2 C230,183.9 250,183.8 270,183.8 C290,183.9 320,184.2 330,184.3 M150,238.5 C160,238.8 190,239.6 210,240.6 C230,241.5 250,242.9 270,244.3 C290,245.6 320,247.8 330,248.5 M150,155 C160,154.7 190,153.8 210,153.2 C230,152.6 250,152 270,151.5 C290,151.1 320,150.7 330,150.5 M150,276.1 C160,276 190,275.5 210,275.1 C230,274.8 250,274.3 270,273.9 C290,273.5 320,272.9 330,272.7 M150,68.2 C160,68.4 190,69.1 210,69.5 C230,70 250,70.4 270,70.9 C290,71.3 320,71.9 330,72.1 M150,219.1 C160,219.4 190,220.4 210,221.2 C230,222 250,223 270,223.9 C290,224.8 320,226.2 330,226.6" fill="none" stroke="#c88a4a" stroke-width="1.1" opacity="0.1"/>
+</g>
+<rect x="150" y="30" width="180" height="270" fill="none" stroke="#3a2a18" stroke-width="2"/>
+<rect x="170" y="50" width="140" height="110" fill="none" stroke="#2a1c10" stroke-width="1.5"/>
+<rect x="170" y="180" width="140" height="100" fill="none" stroke="#2a1c10" stroke-width="1.5"/>
+<rect x="0" y="300" width="480" height="60" fill="#080706"/>
+<line x1="0" y1="300" x2="-30" y2="360" stroke="#1a140e" stroke-width="1"/>
+<line x1="60" y1="300" x2="30" y2="360" stroke="#1a140e" stroke-width="1"/>
+<line x1="120" y1="300" x2="90" y2="360" stroke="#1a140e" stroke-width="1"/>
+<line x1="180" y1="300" x2="150" y2="360" stroke="#1a140e" stroke-width="1"/>
+<line x1="240" y1="300" x2="210" y2="360" stroke="#1a140e" stroke-width="1"/>
+<line x1="300" y1="300" x2="270" y2="360" stroke="#1a140e" stroke-width="1"/>
+<line x1="360" y1="300" x2="330" y2="360" stroke="#1a140e" stroke-width="1"/>
+<line x1="420" y1="300" x2="390" y2="360" stroke="#1a140e" stroke-width="1"/>
+<polygon points="236,128 244,128 330,330 150,330" fill="#f1c77c" opacity="0.1"/>
+<ellipse cx="240" cy="330" rx="96" ry="18" fill="url(#sprite-seventh-coin-rg2)"/>
+<circle cx="240" cy="128" r="57.2" fill="url(#sprite-seventh-coin-rg3)"/>
+<path d="M232.1,114.4a7.9,7.9 0 1,0 15.8,0a7.9,7.9 0 1,0 -15.8,0M241.7,118.4a7.9,7.9 0 1,0 15.8,0a7.9,7.9 0 1,0 -15.8,0M245.7,128a7.9,7.9 0 1,0 15.8,0a7.9,7.9 0 1,0 -15.8,0M241.7,137.6a7.9,7.9 0 1,0 15.8,0a7.9,7.9 0 1,0 -15.8,0M232.1,141.6a7.9,7.9 0 1,0 15.8,0a7.9,7.9 0 1,0 -15.8,0M222.4,137.6a7.9,7.9 0 1,0 15.8,0a7.9,7.9 0 1,0 -15.8,0M218.4,128a7.9,7.9 0 1,0 15.8,0a7.9,7.9 0 1,0 -15.8,0M222.4,118.4a7.9,7.9 0 1,0 15.8,0a7.9,7.9 0 1,0 -15.8,0" fill="url(#sprite-seventh-coin-rg4)" stroke="#5d4518" stroke-width="0.7"/>
+<circle cx="240" cy="128" r="13.6" fill="url(#sprite-seventh-coin-rg4)" stroke="#5d4518" stroke-width="0.7"/>
+<circle cx="240" cy="128" r="9.7" fill="none" stroke="#5d4518" stroke-width="0.6" opacity="0.7"/>
+<path d="M229,125.8 A11.4,11.4 0 0,1 242.2,116.6" fill="none" stroke="#fff3c8" stroke-width="1.1" opacity="0.6" stroke-linecap="round"/>
+<circle cx="240" cy="128" r="5.7" fill="#0a0806"/>
+<circle cx="240" cy="128" r="4.4" fill="url(#sprite-seventh-coin-rg5)"/>
+<path d="M300,360 L292,250 Q290,206 318,196 Q352,190 360,236 L372,360Z" fill="#020202"/>
+<ellipse cx="326" cy="176" rx="21" ry="24" fill="#020202"/>
+<rect x="0" y="0" width="480" height="360" fill="url(#sprite-seventh-coin-rg6)"/>
+<rect x="214" y="8" width="52" height="18" rx="2" fill="#b8913f" opacity="0.5"/>
+<text x="240" y="22" font-size="13" font-family="serif" fill="#1a1008" text-anchor="middle" font-weight="bold">400</text>
+</svg>

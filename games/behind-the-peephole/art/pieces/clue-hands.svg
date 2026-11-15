@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="clue-hands-t clue-hands-d">
+<title id="clue-hands-t">Clue kind: Hands</title>
+<desc id="clue-hands-d">Clue-kind icon in technical pen inside a brass ring: a trembling hand holding a keycard, for hands.</desc>
+<defs><radialGradient id="clue-hands-rg1" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#fff" stop-opacity="0.5"/><stop offset="100%" stop-color="#b8ab8a" stop-opacity="0.5"/></radialGradient><clipPath id="clue-hands-clip2"><circle cx="80" cy="70" r="50"/></clipPath></defs>
+<rect x="0" y="0" width="160" height="160" rx="10" fill="#f1ecdf"/>
+<rect x="0" y="0" width="160" height="160" rx="10" fill="url(#clue-hands-rg1)"/>
+<circle cx="80" cy="70" r="56" fill="#f7f3e8" stroke="#b8913f" stroke-width="4"/>
+<circle cx="80" cy="70" r="51" fill="none" stroke="#5d4518" stroke-width="0.8"/>
+<g clip-path="url(#clue-hands-clip2)">
+<path d="M48,116 Q44,84 60,72 L64,44 Q70,40 72,48 L72,70 L76,40 Q82,36 84,44 V70 L90,46 Q96,44 96,52 L94,76 Q110,84 106,116" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="84" y="52" width="40" height="26" rx="3" fill="#f7f3e8" stroke="#1c1a17" stroke-width="2" transform="rotate(-18 104 65)"/>
+<rect x="92" y="58" width="12" height="5" fill="#1c1a17" transform="rotate(-18 104 65)"/>
+<path d="M124,40 q6,8 0,16 M36,66 q-6,8 0,16" fill="none" stroke="#1c1a17" stroke-width="1.2"/>
+<path d="M131,42 q6,8 0,16 M29,66 q-6,8 0,16" fill="none" stroke="#1c1a17" stroke-width="1.2"/>
+</g>
+<text x="80" y="148" font-size="13" font-family="monospace" fill="#2a3a8c" text-anchor="middle" letter-spacing="2" font-weight="bold">HANDS</text>
+</svg>

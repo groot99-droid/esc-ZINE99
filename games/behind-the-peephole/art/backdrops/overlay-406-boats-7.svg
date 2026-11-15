@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" role="img" aria-labelledby="overlay-406-boats-7-t overlay-406-boats-7-d">
+<title id="overlay-406-boats-7-t">Plate overlay, 406: 7 paper boats on the sill</title>
+<desc id="overlay-406-boats-7-d">Gouache overlay for room 406 on night six: 7 folded paper boats on the window sill, the river and the far bank's lamps behind, lit pink by the red-shaded lamp.</desc>
+<defs><filter id="overlay-406-boats-7-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="519" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter><filter id="overlay-406-boats-7-rough2"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="711" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter><clipPath id="overlay-406-boats-7-clip3"><path d="M603.7,240 C603.3,272.5 605.8,313.6 603.7,337 C601.6,360.4 597.1,368.1 591.1,380.4 C585,392.7 574.8,400.1 567.4,410.8 C559.9,421.6 559.2,437.6 546.5,445.1 C533.9,452.6 513.6,453 491.5,455.8 C469.5,458.7 458.4,461.9 414.4,462.2 C370.4,462.4 271.3,459.3 227.6,457.4 C184,455.5 174.2,453.5 152.5,450.8 C130.7,448.2 112.9,446.7 97.3,441.6 C81.8,436.5 68.9,429.5 59.1,420.2 C49.3,410.9 42.6,399.5 38.6,385.7 C34.6,371.9 38.3,361.6 35.1,337.4 C31.9,313.1 21.6,273.2 19.4,240 C17.2,206.8 18.3,162.2 21.7,138.1 C25.2,113.9 30.8,106 40.1,95 C49.3,84.1 68.3,82.3 77.2,72.3 C86.2,62.4 81.1,42.2 93.7,35.2 C106.4,28.2 131.6,33.8 153.2,30.1 C174.8,26.4 179.8,15.8 223.6,13.1 C267.4,10.4 371,12.6 416,14 C461,15.4 472.7,17.3 493.6,21.6 C514.5,25.9 526.9,33.2 541.3,39.6 C555.8,46.1 570.5,51 580.2,60.3 C589.9,69.5 595.3,81.5 599.7,95.2 C604,108.8 605.5,118.1 606.2,142.2 C606.8,166.3 604.2,207.5 603.7,240Z"/></clipPath><linearGradient id="overlay-406-boats-7-lg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1b232b"/><stop offset="70%" stop-color="#39464f"/><stop offset="100%" stop-color="#6f7c80"/></linearGradient><radialGradient id="overlay-406-boats-7-rg5" cx="0.2" cy="0.75" r="0.55"><stop offset="0%" stop-color="#d06a5a" stop-opacity="0.5"/><stop offset="50%" stop-color="#d06a5a" stop-opacity="0.2"/><stop offset="100%" stop-color="#d06a5a" stop-opacity="0"/></radialGradient><filter id="overlay-406-boats-7-blur6" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><filter id="overlay-406-boats-7-blur7" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><filter id="overlay-406-boats-7-blur8" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><filter id="overlay-406-boats-7-blur9" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><filter id="overlay-406-boats-7-blur10" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><filter id="overlay-406-boats-7-blur11" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><filter id="overlay-406-boats-7-blur12" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><radialGradient id="overlay-406-boats-7-rg13" cx="0.5" cy="0.5" r="0.72"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0.1"/><stop offset="100%" stop-color="#000" stop-opacity="0.6"/></radialGradient></defs>
+<g clip-path="url(#overlay-406-boats-7-clip3)">
+<rect x="0" y="300" width="640" height="180" fill="#4a3420"/>
+<rect x="0" y="0" width="640" height="300" fill="url(#overlay-406-boats-7-lg4)"/>
+<path d="M301.7,230.2L326.6,233.1M248.6,231.4L278.1,236.6M70.3,238L122.4,236.6M20.2,203.8L42.1,197.7M287,274L324.3,271.9M224.2,271.5L264,264.6M170.3,199.9L215.1,184.4M592,226.8L616.9,226.4M581.2,271.2L613.9,262.6M545.9,279.2L576.2,273M536.8,268.1L571.8,279M352,220.2L403.8,211.1M326.4,275.7L365.5,279.3M615.8,265.8L642.5,260.5M376.1,271.6L401.1,279.1M104.5,286.4L125.3,289.9M379.4,226.8L434.9,210.6M326.9,259.5L383,260.7M558,241.6L597.7,250.8M419.3,279.1L439.6,279.2M249.9,264.8L270.3,261.6M102.5,255.4L150.3,268.3M318.8,205.1L374,192.4M13.6,211.4L40.4,210.2M135.1,194.1L192.3,211M86.4,268.6L119.4,263.2M549.6,271.9L593.2,281.2M604.6,243.9L628.3,247.1M569.6,200.1L604.4,209.4M589,247.1L640,235M401.6,193.6L435.1,191.1M15.5,223.1L38.5,221.9M157.7,209.6L186.4,217.3M176.9,221.2L225.5,204.6" fill="none" stroke="#6f7c80" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+<path d="M558.2,237L599.7,223.3M290.7,216L316.3,207.5M412.9,266.9L449.9,260.2M177.3,191.5L231.4,198.2M333.9,197.5L361.1,191.8M386,286.4L408.7,291.6M374,219.5L409.8,214.3M484,257.6L521.1,244.8M92.5,256.1L150.9,262.7M513.7,203.4L543.5,213.9M268,270.4L320.2,268.5M267.7,266.5L303.9,262.4M558.6,235.4L587.4,240.5M3.5,224.9L60.8,225.7M239.9,284.1L274.3,281.7M54.5,198.3L104.6,198.9M247,283.9L282.9,288.5M173.1,278.6L221.2,268.3M-6.1,220.5L21.5,211.3M-9.1,237.4L31.8,248.3M456.7,247.3L504.7,235.3M281.9,286.5L309.6,282M205,257.3L257.1,272.5M319.1,217.5L361.6,214.2M419,271.5L461.5,266.4M561,271.4L587.7,280M434.6,246.7L466.8,235.1M613.2,251.4L633.7,245.2M561.9,258.1L590.3,254.7M444.5,257.2L481.3,251.3M314.5,189.3L354.4,203.5M24,206.9L46.3,211.3M56.7,276.6L99.3,290.8M12.1,244.3L50.5,247.5M502.6,192.1L558.5,189.3M75.7,255.9L127.1,261.6M163.4,212.3L210.4,209.9M96.2,206.9L130,209.8M560.1,275.2L583.4,282.1M213.8,252.4L257.8,239.9M474.7,246.5L506.7,252.8M505.2,288.8L529.5,282.7M548.2,270L594.3,277.2" fill="none" stroke="#8a979a" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+<path d="M602.2,204.5L632.4,199.8M254.5,246.5L295.5,239M546.9,286.4L571.4,281.5M158.2,191.1L195.1,193.9M269.5,217.7L313.2,228.9M509.4,203.7L552.6,201.4M283.8,254.6L335.8,252.7M398.4,204L425.3,199.3M-7.9,205.5L30,197.9M126.2,200.4L173.6,184.9M254.1,270.3L290.6,280.3M296.3,214.6L338,204.1M207.1,202L234.3,200.1M472.3,216.6L523.1,225.4M573.2,285.9L616.9,279.2M336.8,229.4L382.7,238.9M608.2,250.2L629.3,248M116.2,232.7L158.8,241.8M58.8,261.6L91.2,250.1M614.3,249.9L661.3,243.1M577.6,222.8L634.2,209.5M232,274.8L256.2,279.9M268.8,212.1L309.3,202M599.4,234L655.8,217.6M414.7,263.7L470.1,243.5M222.3,223.6L244.3,216.2M516.5,273L574.1,281.6M525.9,215L565.1,213.9M507.3,252.3L541,253.6M521.8,203L579.2,218.3M482.4,267.1L513.5,273.9M530.2,233.1L579.3,250.6M427.5,189.6L481.7,207" fill="none" stroke="#2f3b44" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+<rect x="133.9" y="173.9" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="133.9" y="184" width="3" height="22.9" fill="#c98a3a" opacity="0.2"/>
+<rect x="372" y="173.7" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="372" y="184" width="3" height="31.1" fill="#c98a3a" opacity="0.2"/>
+<rect x="251.3" y="171" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="251.3" y="184" width="3" height="37.4" fill="#c98a3a" opacity="0.2"/>
+<rect x="244.4" y="180" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="244.4" y="184" width="3" height="40.9" fill="#c98a3a" opacity="0.2"/>
+<rect x="261.2" y="179.3" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="261.2" y="184" width="3" height="26.2" fill="#c98a3a" opacity="0.2"/>
+<rect x="544.8" y="177.5" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="544.8" y="184" width="3" height="21.4" fill="#c98a3a" opacity="0.2"/>
+<rect x="448.8" y="181.9" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="448.8" y="184" width="3" height="35.2" fill="#c98a3a" opacity="0.2"/>
+<rect x="249.7" y="181.3" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="249.7" y="184" width="3" height="43.2" fill="#c98a3a" opacity="0.2"/>
+<rect x="139.9" y="170.3" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="139.9" y="184" width="3" height="17.8" fill="#c98a3a" opacity="0.2"/>
+<rect x="365.5" y="173.5" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="365.5" y="184" width="3" height="33" fill="#c98a3a" opacity="0.2"/>
+<rect x="140.8" y="170.9" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="140.8" y="184" width="3" height="17.3" fill="#c98a3a" opacity="0.2"/>
+<rect x="22.4" y="179.4" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="22.4" y="184" width="3" height="43.3" fill="#c98a3a" opacity="0.2"/>
+<rect x="332.3" y="178.4" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="332.3" y="184" width="3" height="38.1" fill="#c98a3a" opacity="0.2"/>
+<rect x="456.5" y="178.6" width="3" height="3" fill="#f1c77c" opacity="0.8"/>
+<rect x="456.5" y="184" width="3" height="27" fill="#c98a3a" opacity="0.2"/>
+<rect x="0" y="0" width="20" height="300" fill="#3a2716"/>
+<rect x="312" y="0" width="20" height="300" fill="#3a2716"/>
+<rect x="620" y="0" width="20" height="300" fill="#3a2716"/>
+<rect x="0" y="300" width="640" height="26" fill="#6b4a2a"/>
+<path d="M470.4,428.4L491.9,424.4M590.3,412.1L602.1,410.8M26.4,440.7L45.5,435.5M65.1,356.2L76.2,354.7M558.7,377L568.7,374.2M479.8,325.2L503.9,330.6M550.6,310.1L573.1,304.2M610.6,399.1L635.2,397M475.5,360.2L488.5,358.2M210.7,405.9L233.7,398M249.9,425.1L274.7,425.4M602,408.1L627.7,408.4M226.4,319.7L246.1,314.2M629.6,398L647,401.9M11.1,331.7L36.1,336.2M399.9,315.3L422.4,310.7M522.6,437.5L535.1,434.4M185,390.6L199.8,391.9M5.3,455.5L17.4,456.1M515.6,479.1L532.6,476.3M420.6,307.3L433.5,307.7M34.5,454.5L58.3,447.8M554.7,350.3L575.7,357.5M330.7,379.5L346.9,375.1M432.9,362.2L447.8,358.4M439.5,333.6L453.7,332.4M248,332.6L271.8,338.9M618.6,431.9L630.5,432.5M282.3,392.4L305.2,395.4M45.1,448.3L55.9,446.1M147.8,340.4L170.6,340.2" fill="none" stroke="#5a3e22" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+<path d="M347.9,308L358.8,308.5M43.6,370.1L65.6,377.8M379.2,369.8L397.6,370.8M273.4,448.6L286.7,446.3M128,304.1L139.7,303.1M302.2,402.6L317,399.6M28.5,397.8L51.3,395.7M47.5,441.6L60.2,438.7M382.3,407.9L404.4,410.8M121.6,467L137.7,465.2M360.2,475.6L379.5,468.6M1.7,349.2L21.1,354.9M212.2,364L232,363.6M75,335.1L96,331.8M478,478.5L492.2,479M387.6,343.4L406.8,338M-10.6,342.9L14.2,350.3M446.4,449.9L464.5,444.3M316.1,440.8L332.2,446.2M60.8,396.9L72.3,399.5M86.3,323.3L98.3,323.1M564.6,354.8L588.8,361.4M389.6,348.9L408.8,345.4M340.6,369.1L352.1,370.9M381.7,338.9L395.5,341.6M301.4,357.7L316.4,357.7M370.5,373.5L383.6,376.1M326.5,366.5L349.1,365.3M572.7,429.6L595.1,430.7" fill="none" stroke="#3a2716" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+<rect x="0" y="0" width="640" height="480" fill="url(#overlay-406-boats-7-rg5)"/>
+<ellipse cx="86" cy="322" rx="32.8" ry="6" fill="#000" opacity="0.4" filter="url(#overlay-406-boats-7-blur6)"/>
+<polygon points="47.2,299.7 112.8,299.7 99.7,316.1 60.3,316.1" fill="#f3efe2" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="80,271.8 98,299.7 63.6,299.7" fill="#f3efe2" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="80,271.8 98,299.7 80,299.7" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="60.3,316.1 99.7,316.1 104.6,309.5 55.4,309.5" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)" opacity="0.6"/>
+<ellipse cx="166" cy="322" rx="32.8" ry="6" fill="#000" opacity="0.4" filter="url(#overlay-406-boats-7-blur7)"/>
+<polygon points="127.2,297.6 192.8,297.6 179.7,314 140.3,314" fill="#f3efe2" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="160,269.8 178,297.6 143.6,297.6" fill="#f3efe2" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="160,269.8 178,297.6 160,297.6" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="140.3,314 179.7,314 184.6,307.5 135.4,307.5" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)" opacity="0.6"/>
+<ellipse cx="246" cy="322" rx="32.8" ry="6" fill="#000" opacity="0.4" filter="url(#overlay-406-boats-7-blur8)"/>
+<polygon points="207.2,297.1 272.8,297.1 259.7,313.5 220.3,313.5" fill="#f3efe2" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="240,269.2 258,297.1 223.6,297.1" fill="#f3efe2" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="240,269.2 258,297.1 240,297.1" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="220.3,313.5 259.7,313.5 264.6,306.9 215.4,306.9" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)" opacity="0.6"/>
+<ellipse cx="326" cy="322" rx="32.8" ry="6" fill="#000" opacity="0.4" filter="url(#overlay-406-boats-7-blur9)"/>
+<polygon points="287.2,299.5 352.8,299.5 339.7,315.9 300.3,315.9" fill="#f3efe2" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="320,271.7 338,299.5 303.6,299.5" fill="#f3efe2" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="320,271.7 338,299.5 320,299.5" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="300.3,315.9 339.7,315.9 344.6,309.4 295.4,309.4" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)" opacity="0.6"/>
+<ellipse cx="406" cy="322" rx="32.8" ry="6" fill="#000" opacity="0.4" filter="url(#overlay-406-boats-7-blur10)"/>
+<polygon points="367.2,297.6 432.8,297.6 419.7,314 380.3,314" fill="#f3efe2" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="400,269.7 418,297.6 383.6,297.6" fill="#f3efe2" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="400,269.7 418,297.6 400,297.6" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="380.3,314 419.7,314 424.6,307.4 375.4,307.4" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)" opacity="0.6"/>
+<ellipse cx="486" cy="322" rx="32.8" ry="6" fill="#000" opacity="0.4" filter="url(#overlay-406-boats-7-blur11)"/>
+<polygon points="447.2,298.7 512.8,298.7 499.7,315.1 460.3,315.1" fill="#f3efe2" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="480,270.8 498,298.7 463.6,298.7" fill="#f3efe2" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="480,270.8 498,298.7 480,298.7" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="460.3,315.1 499.7,315.1 504.6,308.6 455.4,308.6" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)" opacity="0.6"/>
+<ellipse cx="566" cy="322" rx="32.8" ry="6" fill="#000" opacity="0.4" filter="url(#overlay-406-boats-7-blur12)"/>
+<polygon points="527.2,299.9 592.8,299.9 579.7,316.3 540.3,316.3" fill="#fffaf0" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="560,272 578,299.9 543.6,299.9" fill="#fffaf0" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="560,272 578,299.9 560,299.9" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)"/>
+<polygon points="540.3,316.3 579.7,316.3 584.6,309.7 535.4,309.7" fill="#c9c2b0" filter="url(#overlay-406-boats-7-rough2)" opacity="0.6"/>
+<rect x="0" y="0" width="640" height="480" fill="url(#overlay-406-boats-7-rg13)"/>
+</g>
+</svg>

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="lock-lever-t lock-lever-d">
+<title id="lock-lever-t">Lock plate: your own door, two levers, worked from the wrong side</title>
+<desc id="lock-lever-d">Patent plate of the lever lock in the office door: the case opened, two levers lifted toward the gate while the bolt is thrown, the key drawn apart on its axis, and above the keyhole the brass rose, which goes dark when someone looks in.</desc>
+<defs><filter id="lock-lever-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="782"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><clipPath id="lock-lever-clip2"><rect x="120" y="130" width="190" height="590"/></clipPath><clipPath id="lock-lever-clip3"><rect x="360" y="370" width="70" height="54"/></clipPath></defs>
+<rect x="0" y="0" width="1200" height="800" fill="#f4eedd"/>
+<rect x="0" y="0" width="1200" height="800" filter="url(#lock-lever-grain1)"/>
+<rect x="22" y="22" width="1156" height="756" fill="none" stroke="#1c1a17" stroke-width="1.2"/>
+<text x="600" y="60" font-size="18" font-family="serif" fill="#1c1a17" text-anchor="middle">Sheet 5 of 5</text>
+<text x="600" y="96" font-size="30" font-family="serif" fill="#1c1a17" text-anchor="middle" font-style="italic" letter-spacing="4">FIG. 5</text>
+<text x="1150" y="732" font-size="22" font-family="serif" fill="#1c1a17" text-anchor="end" font-style="italic">The office door</text>
+<text x="1150" y="756" font-size="15" font-family="serif" fill="#1c1a17" text-anchor="end">lever lock, two levers; work only while the rose is lit</text>
+<rect x="120" y="130" width="190" height="590" fill="#f7f1e2" stroke="#1c1a17" stroke-width="1.6"/>
+<g clip-path="url(#lock-lever-clip2)">
+<path d="M524.6,93.1 L547,734.5 M516.1,93.4 L538.5,734.8 M505.5,93.7 L527.9,735.2 M491.5,94.2 L513.9,735.7 M483.3,94.5 L505.7,736 M472,94.9 L494.4,736.4 M460.7,95.3 L483.1,736.8 M447.2,95.8 L469.6,737.2 M439.1,96.1 L461.5,737.5 M424.1,96.6 L446.5,738 M413.4,97 L435.8,738.4 M404,97.3 L426.4,738.7 M393.9,97.6 L416.3,739.1 M381.1,98.1 L403.5,739.5 M372.4,98.4 L394.8,739.8 M359.3,98.8 L381.7,740.3 M350.9,99.1 L373.3,740.6 M339.2,99.5 L361.6,741 M326.9,100 L349.3,741.4 M313.4,100.4 L335.8,741.9 M304.2,100.8 L326.6,742.2 M296.3,101 L318.7,742.5 M284.4,101.5 L306.8,742.9 M270.8,101.9 L293.2,743.4 M262.2,102.2 L284.6,743.7 M251.1,102.6 L273.5,744.1 M240.6,103 L263,744.4 M228.4,103.4 L250.8,744.9 M213.9,103.9 L236.3,745.4 M204.8,104.2 L227.2,745.7 M191.8,104.7 L214.2,746.1 M182.3,105 L204.7,746.5 M170.7,105.4 L193.1,746.9 M163.5,105.7 L185.9,747.1 M151.8,106.1 L174.2,747.5 M140.6,106.5 L163,747.9 M127.3,106.9 L149.7,748.4 M117.6,107.3 L140,748.7 M107.9,107.6 L130.3,749.1 M94.6,108.1 L117,749.5 M82,108.5 L104.4,750 M73.7,108.8 L96.1,750.3 M65.1,109.1 L87.5,750.6 M54.1,109.5 L76.5,751 M38.1,110.1 L60.5,751.5 M30.5,110.3 L52.9,751.8 M18.3,110.8 L40.7,752.2 M5,111.2 L27.4,752.7 M-5.6,111.6 L16.8,753 M-15,111.9 L7.4,753.4 M-23.7,112.2 L-1.3,753.7 M-35.3,112.6 L-12.9,754.1 M-48.4,113.1 L-26,754.5 M-58.8,113.4 L-36.4,754.9 M-71.6,113.9 L-49.2,755.3 M-80.3,114.2 L-57.9,755.6 M-89.4,114.5 L-67,756 M-104.5,115 L-82.1,756.5 M-115,115.4 L-92.6,756.9" fill="none" stroke="#1c1a17" stroke-width="0.3"/>
+</g>
+<path d="M202.8,278.9a12.2,12.2 0 1,0 24.5,0a12.2,12.2 0 1,0 -24.5,0M217.7,285.1a12.2,12.2 0 1,0 24.5,0a12.2,12.2 0 1,0 -24.5,0M223.8,300a12.2,12.2 0 1,0 24.5,0a12.2,12.2 0 1,0 -24.5,0M217.7,314.9a12.2,12.2 0 1,0 24.5,0a12.2,12.2 0 1,0 -24.5,0M202.8,321.1a12.2,12.2 0 1,0 24.5,0a12.2,12.2 0 1,0 -24.5,0M187.9,314.9a12.2,12.2 0 1,0 24.5,0a12.2,12.2 0 1,0 -24.5,0M181.7,300a12.2,12.2 0 1,0 24.5,0a12.2,12.2 0 1,0 -24.5,0M187.9,285.1a12.2,12.2 0 1,0 24.5,0a12.2,12.2 0 1,0 -24.5,0" fill="#f7f1e2" stroke="none" stroke-width="1"/>
+<circle cx="215" cy="300" r="21.1" fill="#f7f1e2" stroke="none" stroke-width="1"/>
+<circle cx="215" cy="300" r="8.8" fill="#0a0806"/>
+<circle cx="212.6" cy="297.3" r="2" fill="#59636a" opacity="0.7"/>
+<circle cx="215" cy="300" r="21.1" fill="none" stroke="#1c1a17" stroke-width="1.2"/>
+<circle cx="215" cy="279" r="12.2" fill="none" stroke="#1c1a17" stroke-width="1"/>
+<circle cx="229.8" cy="285.2" r="12.2" fill="none" stroke="#1c1a17" stroke-width="1"/>
+<circle cx="236" cy="300" r="12.2" fill="none" stroke="#1c1a17" stroke-width="1"/>
+<circle cx="229.8" cy="314.8" r="12.2" fill="none" stroke="#1c1a17" stroke-width="1"/>
+<circle cx="215" cy="321" r="12.2" fill="none" stroke="#1c1a17" stroke-width="1"/>
+<circle cx="200.2" cy="314.8" r="12.2" fill="none" stroke="#1c1a17" stroke-width="1"/>
+<circle cx="194" cy="300" r="12.2" fill="none" stroke="#1c1a17" stroke-width="1"/>
+<circle cx="200.2" cy="285.2" r="12.2" fill="none" stroke="#1c1a17" stroke-width="1"/>
+<circle cx="215" cy="300" r="9" fill="#1c1a17"/>
+<path d="M215,520 a11,11 0 1,1 0.1,0 M208,538 L203,574 H227 L222,538" fill="#f4eedd" stroke="#1c1a17" stroke-width="1.3"/>
+<circle cx="215" cy="531" r="11" fill="#1c1a17"/>
+<polygon points="208,538 203,574 227,574 222,538" fill="#1c1a17"/>
+<line x1="96" y1="300" x2="96" y2="531" stroke="#1c1a17" stroke-width="0.9"/>
+<line x1="88" y1="305" x2="104" y2="295" stroke="#1c1a17" stroke-width="1.4"/>
+<line x1="96" y1="300" x2="180" y2="300" stroke="#1c1a17" stroke-width="0.4"/>
+<line x1="88" y1="536" x2="104" y2="526" stroke="#1c1a17" stroke-width="1.4"/>
+<line x1="96" y1="531" x2="180" y2="531" stroke="#1c1a17" stroke-width="0.4"/>
+<text x="84" y="420" font-size="13" font-family="serif" fill="#1c1a17" text-anchor="middle" transform="rotate(-90 84 420)">200</text>
+<line x1="240" y1="531" x2="1130" y2="531" stroke="#1c1a17" stroke-width="0.8" stroke-dasharray="2 5"/>
+<rect x="430" y="330" width="400" height="330" rx="6" fill="#f7f1e2" stroke="#1c1a17" stroke-width="1.8"/>
+<rect x="438" y="338" width="384" height="314" rx="3" fill="#f4eedd" stroke="#1c1a17" stroke-width="0.6"/>
+<rect x="360" y="370" width="300" height="54" fill="#f7f1e2" stroke="#1c1a17" stroke-width="1.5"/>
+<g clip-path="url(#lock-lever-clip3)">
+<path d="M395,327.4 L464.6,397 M391.5,331 L461,400.5 M387.9,334.5 L457.5,404.1 M384.4,338 L454,407.6 M380.9,341.6 L450.4,411.1 M377.3,345.1 L446.9,414.7 M373.8,348.6 L443.4,418.2 M370.3,352.2 L439.8,421.7 M366.7,355.7 L436.3,425.3 M363.2,359.2 L432.8,428.8 M359.6,362.8 L429.2,432.4 M356.1,366.3 L425.7,435.9 M352.6,369.8 L422.2,439.4 M349,373.4 L418.6,443 M345.5,376.9 L415.1,446.5 M342,380.4 L411.6,450 M338.4,384 L408,453.6 M334.9,387.5 L404.5,457.1 M331.4,391.1 L400.9,460.6 M327.8,394.6 L397.4,464.2" fill="none" stroke="#1c1a17" stroke-width="0.4"/>
+</g>
+<rect x="580" y="424" width="20" height="30" fill="#1c1a17"/>
+<g transform="rotate(-9 780 480)">
+<path d="M794,458 H490 Q470,510 500,558 H740 Q800,540 794,458Z" fill="#f7f1e2" stroke="#1c1a17" stroke-width="1.3" opacity="1"/>
+<path d="M560,476 h90 v18 h-36 v22 h-18 v-22 h-36 Z" fill="#f4eedd" stroke="#1c1a17" stroke-width="1"/>
+<circle cx="780" cy="480" r="6" fill="#f4eedd" stroke="#1c1a17" stroke-width="1"/>
+<line x1="520" y1="542" x2="550" y2="550" stroke="#1c1a17" stroke-width="0.4"/>
+<line x1="580" y1="542" x2="610" y2="550" stroke="#1c1a17" stroke-width="0.4"/>
+<line x1="640" y1="542" x2="670" y2="550" stroke="#1c1a17" stroke-width="0.4"/>
+<line x1="700" y1="542" x2="730" y2="550" stroke="#1c1a17" stroke-width="0.4"/>
+</g>
+<path d="M810,460 q22,30 6,62" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<g transform="rotate(0 780 506)">
+<path d="M794,484 H490 Q470,536 500,584 H740 Q800,566 794,484Z" fill="#f7f1e2" stroke="#1c1a17" stroke-width="1.3" opacity="1"/>
+<path d="M560,502 h90 v18 h-36 v22 h-18 v-22 h-36 Z" fill="#f4eedd" stroke="#1c1a17" stroke-width="1"/>
+<circle cx="780" cy="506" r="6" fill="#f4eedd" stroke="#1c1a17" stroke-width="1"/>
+<line x1="520" y1="568" x2="550" y2="576" stroke="#1c1a17" stroke-width="0.4"/>
+<line x1="580" y1="568" x2="610" y2="576" stroke="#1c1a17" stroke-width="0.4"/>
+<line x1="640" y1="568" x2="670" y2="576" stroke="#1c1a17" stroke-width="0.4"/>
+<line x1="700" y1="568" x2="730" y2="576" stroke="#1c1a17" stroke-width="0.4"/>
+</g>
+<path d="M810,486 q22,30 6,62" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<path d="M530,630 C510,600 514,580 530,566" fill="none" stroke="#1c1a17" stroke-width="1.4"/>
+<polygon points="534,558 522,570 536,574" fill="#1c1a17"/>
+<circle cx="630" cy="591" r="16" fill="#f4eedd" stroke="#1c1a17" stroke-width="1.2"/>
+<ellipse cx="1090" cy="531" rx="34" ry="44" fill="#f7f1e2" stroke="#1c1a17" stroke-width="1.5"/>
+<ellipse cx="1090" cy="531" rx="18" ry="26" fill="#f4eedd" stroke="#1c1a17" stroke-width="1"/>
+<rect x="900" y="524" width="160" height="14" fill="#f7f1e2" stroke="#1c1a17" stroke-width="1.3"/>
+<path d="M906,538 v40 h18 v-12 h14 v12 h18 v-40" fill="#f7f1e2" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="910" y1="534" x2="936" y2="534" stroke="#1c1a17" stroke-width="0.4"/>
+<line x1="946" y1="534" x2="972" y2="534" stroke="#1c1a17" stroke-width="0.4"/>
+<line x1="982" y1="534" x2="1008" y2="534" stroke="#1c1a17" stroke-width="0.4"/>
+<line x1="1018" y1="534" x2="1044" y2="534" stroke="#1c1a17" stroke-width="0.4"/>
+<path d="M330,300 q40,-30 80,0 q-40,30 -80,0Z" fill="#f4eedd" stroke="#1c1a17" stroke-width="1.1"/>
+<circle cx="370" cy="300" r="10" fill="#1c1a17"/>
+<line x1="256" y1="300" x2="326" y2="300" stroke="#1c1a17" stroke-width="0.8" stroke-dasharray="2 5"/>
+<text x="330" y="262" font-size="15" font-family="serif" fill="#1c1a17" font-style="italic">while dark: freeze</text>
+<path d="M380,190 Q327,190 250,280" fill="none" stroke="#1c1a17" stroke-width="0.6"/>
+<text x="386" y="195" font-size="17" font-family="serif" fill="#1c1a17" text-anchor="start" font-style="italic">70</text>
+<path d="M360,600 Q308,600 232,560" fill="none" stroke="#1c1a17" stroke-width="0.6"/>
+<text x="366" y="605" font-size="17" font-family="serif" fill="#1c1a17" text-anchor="start" font-style="italic">72</text>
+<path d="M900,300 Q879,300 834,350" fill="none" stroke="#1c1a17" stroke-width="0.6"/>
+<text x="906" y="305" font-size="17" font-family="serif" fill="#1c1a17" text-anchor="start" font-style="italic">74</text>
+<path d="M380,470 Q397,470 390,424" fill="none" stroke="#1c1a17" stroke-width="0.6"/>
+<text x="374" y="475" font-size="17" font-family="serif" fill="#1c1a17" text-anchor="end" font-style="italic">76</text>
+<path d="M900,430 Q827,430 730,480" fill="none" stroke="#1c1a17" stroke-width="0.6"/>
+<text x="906" y="435" font-size="17" font-family="serif" fill="#1c1a17" text-anchor="start" font-style="italic">78</text>
+<path d="M900,470 Q832,470 740,526" fill="none" stroke="#1c1a17" stroke-width="0.6"/>
+<text x="906" y="475" font-size="17" font-family="serif" fill="#1c1a17" text-anchor="start" font-style="italic">78</text>
+<path d="M1010,640 Q997,640 960,580" fill="none" stroke="#1c1a17" stroke-width="0.6"/>
+<text x="1016" y="645" font-size="17" font-family="serif" fill="#1c1a17" text-anchor="start" font-style="italic">80</text>
+</svg>

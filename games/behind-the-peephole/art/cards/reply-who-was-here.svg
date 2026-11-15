@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="reply-who-was-here-t reply-who-was-here-d">
+<title id="reply-who-was-here-t">Reply card: Who was here before you?</title>
+<desc id="reply-who-was-here-d">A reply card: a hotel card with the green and gold head of The Crossing, and one question in soft pencil, "Who was here before you?", left on the spike for Fenn.</desc>
+<defs><radialGradient id="reply-who-was-here-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.4"/><stop offset="100%" stop-color="#b8ab8a" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="10" fill="#f4efe2" stroke="#b8ab8a" stroke-width="1.6"/>
+<rect x="0" y="0" width="300" height="420" rx="10" fill="url(#reply-who-was-here-rg1)"/>
+<rect x="0" y="0" width="300" height="74" rx="10" fill="#1f3a2e"/>
+<rect x="0" y="40" width="300" height="34" fill="#1f3a2e"/>
+<line x1="0" y1="74" x2="300" y2="74" stroke="#d4ad57" stroke-width="2.4"/>
+<line x1="0" y1="80" x2="300" y2="80" stroke="#d4ad57" stroke-width="0.8"/>
+<g fill="none" stroke="#d4ad57" stroke-width="0.130" stroke-linecap="round" stroke-linejoin="round">
+<path d="M0,0 H.6 M.3,0 V1" transform="translate(35.8 26) scale(22)"/>
+<path d="M0,0 V1 M.62,0 V1 M0,.48 H.62" transform="translate(56.5 26) scale(22)"/>
+<path d="M.5,0 H0 V1 H.5 M0,.48 H.38" transform="translate(77.6 26) scale(22)"/>
+<path d="M.64,.2 A.36,.5 0 1 0 .64,.8" transform="translate(111.5 26) scale(22)"/>
+<path d="M0,1 V0 H.28 A.26,.26 0 0 1 .28,.52 H0 M.26,.52 L.6,1" transform="translate(133.9 26) scale(22)"/>
+<path d="M.38,0 A.38,.5 0 1 0 .38,1 A.38,.5 0 1 0 .38,0" transform="translate(154.6 26) scale(22)"/>
+<path d="M.52,.2 C.5,-.06 .02,-.06 .04,.26 C.06,.5 .52,.46 .54,.74 C.56,1.06 .04,1.06 .02,.8" transform="translate(178.8 26) scale(22)"/>
+<path d="M.52,.2 C.5,-.06 .02,-.06 .04,.26 C.06,.5 .52,.46 .54,.74 C.56,1.06 .04,1.06 .02,.8" transform="translate(198.6 26) scale(22)"/>
+<path d="M.02,0 V1 h.004" transform="translate(218.4 26) scale(22)"/>
+<path d="M0,1 V0 L.64,1 V0" transform="translate(226.8 26) scale(22)"/>
+<path d="M.64,.2 A.36,.5 0 1 0 .71,.6 H.42" transform="translate(248.3 26) scale(22)"/>
+</g>
+<text x="150" y="66" font-size="10" font-family="sans-serif" fill="#d4ad57" text-anchor="middle" letter-spacing="5">FOURTH FLOOR</text>
+<line x1="34" y1="138" x2="266" y2="138" stroke="#a9b4b6" stroke-width="0.8"/>
+<line x1="34" y1="174" x2="266" y2="174" stroke="#a9b4b6" stroke-width="0.8"/>
+<line x1="34" y1="210" x2="266" y2="210" stroke="#a9b4b6" stroke-width="0.8"/>
+<line x1="34" y1="246" x2="266" y2="246" stroke="#a9b4b6" stroke-width="0.8"/>
+<line x1="34" y1="282" x2="266" y2="282" stroke="#a9b4b6" stroke-width="0.8"/>
+<line x1="34" y1="318" x2="266" y2="318" stroke="#a9b4b6" stroke-width="0.8"/>
+<line x1="34" y1="354" x2="266" y2="354" stroke="#a9b4b6" stroke-width="0.8"/>
+<rect x="110" y="392" width="80" height="4" fill="#d4ad57" opacity="0.8"/>
+<rect x="121" y="385" width="58" height="4" fill="#d4ad57" opacity="0.8"/>
+<rect x="132" y="378" width="36" height="4" fill="#d4ad57" opacity="0.8"/>
+<text x="150" y="164" font-size="30" font-family="cursive" fill="#4a4a4a" font-style="italic" text-anchor="middle" transform="rotate(-1.1 150 164)">Who was here</text>
+<text x="150" y="200" font-size="30" font-family="cursive" fill="#4a4a4a" font-style="italic" text-anchor="middle" transform="rotate(-1.5 150 200)">before you?</text>
+<path d="M96.7,249.9 L110.7,249.6 L127.3,251.2 L142.5,250.5 L157.5,251.5 L173.8,251.1 L189.1,251.1 L203.5,251.9" stroke="#4a4a4a" stroke-width="1.4" opacity="0.7" fill="none"/>
+<path d="M101.6,201.2a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M204.9,174a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M124.9,218.3a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M208.1,195.9a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M185.9,186.5a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M178.6,157.7a0.4,0.4 0 1,0 0.9,0a0.4,0.4 0 1,0 -0.9,0M67.1,231.1a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M69.7,248.4a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M164,143.8a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M75.1,160.8a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M177.7,199.8a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M149.4,176.1a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M100.5,131.4a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M192.3,177.4a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M223.8,228.6a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M206.7,225.4a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M140.4,236.7a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M172.3,193a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M226.3,233.6a0.4,0.4 0 1,0 0.9,0a0.4,0.4 0 1,0 -0.9,0M141.4,181a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M139.4,149.8a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M207.8,187.8a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M157.6,181.7a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M126.6,207.8a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M85.1,212.3a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M131,162.3a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M144,232.2a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M79.5,220.8a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M179.4,180.5a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M70.1,159.7a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M152,139a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M158.3,180.9a0.4,0.4 0 1,0 0.9,0a0.4,0.4 0 1,0 -0.9,0M148.2,152.2a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M110.3,191.1a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M86.7,200.5a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M235.8,233.8a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M221.3,178.7a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M212.6,227.4a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M202.1,170.2a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M81.9,185.2a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M212.2,249.3a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M90.6,220.9a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M200,181.3a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M108.2,204.4a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M149.1,216.8a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M118.4,246.2a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M116.4,131.8a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M191.7,217.2a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M107.1,175.8a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M211.7,223.3a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M227.9,209.1a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M120.3,248.3a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M204.3,236.6a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M125,170a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M118,135a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M107.2,239.7a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M68.3,157.4a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M223.1,178.2a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M184.5,190.8a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M146.7,210.9a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0" fill="#4a4a4a" opacity="0.3"/>
+<circle cx="150" cy="104" r="4.5" fill="#3a3a3a"/>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" role="img" aria-labelledby="overlay-404-miniature-t overlay-404-miniature-d">
+<title id="overlay-404-miniature-t">Plate overlay, 404: one miniature, into the sink</title>
+<desc id="overlay-404-miniature-d">Gouache overlay for room 404: on the edge of the basin under the yellow bulb, one empty miniature on its side and the hotel notepad with the day's number.</desc>
+<defs><filter id="overlay-404-miniature-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="656" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter><filter id="overlay-404-miniature-rough2"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="791" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter><clipPath id="overlay-404-miniature-clip3"><path d="M631.1,240 C628,272.9 602.7,310.3 599.3,335.5 C596,360.6 613.8,376.4 611.2,390.8 C608.6,405.2 594.2,412.9 583.5,422 C572.8,431.1 562,439.3 547.2,445.7 C532.4,452 517,457.3 494.9,460.1 C472.8,462.9 458.6,464.2 414.5,462.6 C370.5,461 274.1,452.6 230.6,450.4 C187.2,448.1 174.1,452.3 153.8,449.2 C133.4,446 123.1,437 108.6,431.4 C94,425.7 77.7,422.9 66.4,415.1 C55.1,407.3 49.2,396.4 40.9,384.5 C32.5,372.7 17.8,367.9 16.3,343.8 C14.8,319.7 30.6,274.1 32.1,240 C33.6,205.9 23.3,163.1 25.4,139.3 C27.4,115.5 39.5,111 44.5,97.3 C49.4,83.6 46.8,67.3 55.1,57 C63.3,46.7 76.7,38.8 93.9,35.3 C111.1,31.9 135.6,37.8 158.3,36.5 C181,35.3 187.7,29.9 229.9,27.9 C272.1,25.9 367.4,25.8 411.6,24.4 C455.7,23.1 474.8,16 494.9,19.9 C515.1,23.8 517.4,41.5 532.5,47.7 C547.5,53.8 572.6,49.6 585.1,56.9 C597.6,64.1 601.9,77.6 607.4,91.2 C612.9,104.7 614.2,113.3 618.1,138.1 C622.1,162.9 634.2,207.1 631.1,240Z"/></clipPath><pattern id="overlay-404-miniature-wp4" width="46" height="8" patternUnits="userSpaceOnUse"><rect width="14" height="8" fill="#2f5a40" opacity="0.5"/><rect x="24" width="3" height="8" fill="#3d6b4c" opacity="0.5"/><path d="M0,2H46M0,6H46" stroke="#0c1a12" stroke-width="0.6" opacity="0.35"/></pattern><pattern id="overlay-404-miniature-tile5" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M0,0H64V64" fill="none" stroke="#9a957f" stroke-width="2"/></pattern><radialGradient id="overlay-404-miniature-rg6" cx="0.6" cy="0.35" r="0.55"><stop offset="0%" stop-color="#e8c060" stop-opacity="0.6"/><stop offset="50%" stop-color="#e8c060" stop-opacity="0.2"/><stop offset="100%" stop-color="#e8c060" stop-opacity="0"/></radialGradient><filter id="overlay-404-miniature-blur7" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter><radialGradient id="overlay-404-miniature-rg8" cx="0.5" cy="0.5" r="0.72"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0.1"/><stop offset="100%" stop-color="#000" stop-opacity="0.6"/></radialGradient></defs>
+<g clip-path="url(#overlay-404-miniature-clip3)">
+<rect x="0" y="0" width="640" height="200" fill="#1f3a2e"/>
+<rect x="0" y="0" width="640" height="200" fill="url(#overlay-404-miniature-wp4)"/>
+<rect x="0" y="186" width="640" height="14" fill="#3a2716"/>
+<rect x="0" y="200" width="640" height="280" fill="#d9d5c8"/>
+<rect x="0" y="0" width="640" height="200" fill="#c9c4b2"/>
+<rect x="0" y="0" width="640" height="200" fill="url(#overlay-404-miniature-tile5)"/>
+<rect x="0" y="0" width="640" height="480" fill="url(#overlay-404-miniature-rg6)"/>
+<ellipse cx="250" cy="410" rx="300" ry="130" fill="#bdb9aa" filter="url(#overlay-404-miniature-rough2)"/>
+<ellipse cx="250" cy="430" rx="250" ry="100" fill="#a9a596" filter="url(#overlay-404-miniature-rough2)"/>
+<ellipse cx="250" cy="440" rx="16" ry="8" fill="#2a2a2a" filter="url(#overlay-404-miniature-rough2)"/>
+<path d="M250,300 q-6,60 0,132" fill="none" stroke="#c98a3a" stroke-width="3" opacity="0.5"/>
+<ellipse cx="430" cy="268" rx="80" ry="10" fill="#000" opacity="0.3" filter="url(#overlay-404-miniature-blur7)"/>
+<polygon points="370,228 480,228 480,264 370,264" fill="#7a4a1c" filter="url(#overlay-404-miniature-rough2)"/>
+<polygon points="480,236 510,236 510,256 480,256" fill="#7a4a1c" filter="url(#overlay-404-miniature-rough2)"/>
+<polygon points="510,234 528,234 528,258 510,258" fill="#2a2a2a" filter="url(#overlay-404-miniature-rough2)"/>
+<polygon points="392,230 448,230 448,262 392,262" fill="#efe6cf" filter="url(#overlay-404-miniature-rough2)"/>
+<rect x="374" y="232" width="100" height="6" fill="#fff" opacity="0.3"/>
+<g transform="rotate(-7 130 250)">
+<rect x="74" y="196" width="120" height="96" fill="#000" opacity="0.2"/>
+<rect x="70" y="190" width="120" height="96" fill="#f4efe2"/>
+<rect x="70" y="190" width="120" height="14" fill="#1f3a2e"/>
+<text x="130" y="256" font-size="40" font-family="cursive" fill="#3a3a3a" font-style="italic" text-anchor="middle" transform="rotate(-1.3 130 256)">400</text>
+</g>
+<rect x="0" y="0" width="640" height="480" fill="url(#overlay-404-miniature-rg8)"/>
+</g>
+</svg>

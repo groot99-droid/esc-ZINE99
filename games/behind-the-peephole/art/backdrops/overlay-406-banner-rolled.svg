@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" role="img" aria-labelledby="overlay-406-banner-rolled-t overlay-406-banner-rolled-d">
+<title id="overlay-406-banner-rolled-t">Plate overlay, 406: rolled and tied</title>
+<desc id="overlay-406-banner-rolled-d">Gouache overlay for room 406 on night six: the banner rolled and tied with the blue rope, leaning in the corner by the sill with the red-shaded lamp behind it.</desc>
+<defs><filter id="overlay-406-banner-rolled-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="108" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter><filter id="overlay-406-banner-rolled-rough2"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="812" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter><clipPath id="overlay-406-banner-rolled-clip3"><path d="M625.9,240 C624,273.4 611.2,313.8 607.4,338.2 C603.5,362.6 607.9,373.3 602.7,386.4 C597.5,399.5 587.2,408.7 576.2,417 C565.2,425.3 552.6,431.9 536.8,436.2 C521,440.6 501.5,438.3 481.2,442.9 C460.9,447.5 457.2,461.4 415,463.7 C372.8,466 270.6,460.1 228,456.5 C185.4,452.9 181.3,444.5 159.4,442.1 C137.5,439.7 112.3,446.5 96.8,442.1 C81.2,437.6 75.9,424.7 66.1,415.4 C56.2,406.1 42.6,399.3 37.7,386.2 C32.7,373.1 36.8,361.3 36.4,336.9 C36.1,312.5 38.6,273.3 35.6,240 C32.5,206.7 18,161.3 18.2,136.9 C18.4,112.4 27.6,104.6 36.6,93.3 C45.7,81.9 63.2,79 72.3,69 C81.5,58.9 77.7,39.3 91.4,33.1 C105.1,26.9 132,33.8 154.5,31.8 C177.1,29.7 183.9,22.2 226.9,20.8 C269.8,19.3 368.1,22.5 412.1,23.1 C456.2,23.8 470.8,20.8 491.1,24.7 C511.3,28.7 518.2,41.1 533.5,46.8 C548.8,52.4 570.3,51.2 582.8,58.5 C595.2,65.8 602.1,77.5 608.2,90.8 C614.3,104 616.2,112.9 619.1,137.8 C622.1,162.7 627.9,206.6 625.9,240Z"/></clipPath><pattern id="overlay-406-banner-rolled-wp4" width="46" height="8" patternUnits="userSpaceOnUse"><rect width="14" height="8" fill="#2f5a40" opacity="0.5"/><rect x="24" width="3" height="8" fill="#3d6b4c" opacity="0.5"/><path d="M0,2H46M0,6H46" stroke="#0c1a12" stroke-width="0.6" opacity="0.35"/></pattern><radialGradient id="overlay-406-banner-rolled-rg5" cx="0.72" cy="0.3" r="0.55"><stop offset="0%" stop-color="#d06a5a" stop-opacity="0.6"/><stop offset="50%" stop-color="#d06a5a" stop-opacity="0.2"/><stop offset="100%" stop-color="#d06a5a" stop-opacity="0"/></radialGradient><radialGradient id="overlay-406-banner-rolled-rg6" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#ffd9c0" stop-opacity="0.6"/><stop offset="100%" stop-color="#d06a5a" stop-opacity="0"/></radialGradient><filter id="overlay-406-banner-rolled-blur7" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter><radialGradient id="overlay-406-banner-rolled-rg8" cx="0.5" cy="0.5" r="0.72"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0.1"/><stop offset="100%" stop-color="#000" stop-opacity="0.6"/></radialGradient></defs>
+<g clip-path="url(#overlay-406-banner-rolled-clip3)">
+<rect x="0" y="0" width="640" height="360" fill="#1f3a2e"/>
+<rect x="0" y="0" width="640" height="360" fill="url(#overlay-406-banner-rolled-wp4)"/>
+<rect x="0" y="346" width="640" height="14" fill="#3a2716"/>
+<rect x="0" y="360" width="640" height="120" fill="#6d4526"/>
+<rect x="0" y="0" width="640" height="480" fill="url(#overlay-406-banner-rolled-rg5)"/>
+<polygon points="430,150 540,150 520,70 450,70" fill="#b5483c" filter="url(#overlay-406-banner-rolled-rough1)"/>
+<polygon points="480,150 492,150 492,250 480,250" fill="#b8913f" filter="url(#overlay-406-banner-rolled-rough1)"/>
+<polygon points="380,250 640,250 640,270 380,270" fill="#4a2f18" filter="url(#overlay-406-banner-rolled-rough1)"/>
+<circle cx="486" cy="150" r="120" fill="url(#overlay-406-banner-rolled-rg6)"/>
+<ellipse cx="260" cy="400" rx="110" ry="18" fill="#000" opacity="0.5" filter="url(#overlay-406-banner-rolled-blur7)"/>
+<polygon points="238.6,36.4 311.7,48 255.4,403.6 182.3,392" fill="#eee8d8" filter="url(#overlay-406-banner-rolled-rough1)"/>
+<polygon points="238.6,36.4 260.3,39.9 204,395.4 182.3,392" fill="#fffdf4" filter="url(#overlay-406-banner-rolled-rough1)" opacity="0.8"/>
+<polygon points="290,44.6 311.7,48 255.4,403.6 233.7,400.1" fill="#b9b09a" filter="url(#overlay-406-banner-rolled-rough1)" opacity="0.9"/>
+<ellipse cx="275.2" cy="42.2" rx="37" ry="12" fill="#cfc7b2" filter="url(#overlay-406-banner-rolled-rough2)"/>
+<path d="M255.2,42.2 a20,6 0 1,0 40,0 a12,4 0 1,0 -24,0" fill="none" stroke="#8a826e" stroke-width="2"/>
+<line x1="220.6" y1="124.7" x2="300.9" y2="141.5" stroke="#2b56a0" stroke-width="5.5" stroke-linecap="round"/>
+<line x1="220.6" y1="131.7" x2="300.9" y2="148.5" stroke="#2b56a0" stroke-width="5.5" stroke-linecap="round"/>
+<line x1="220.6" y1="138.7" x2="300.9" y2="155.5" stroke="#2b56a0" stroke-width="5.5" stroke-linecap="round"/>
+<line x1="194" y1="292.6" x2="274.4" y2="309.4" stroke="#2b56a0" stroke-width="5.5" stroke-linecap="round"/>
+<line x1="194" y1="299.6" x2="274.4" y2="316.4" stroke="#2b56a0" stroke-width="5.5" stroke-linecap="round"/>
+<line x1="194" y1="306.6" x2="274.4" y2="323.4" stroke="#2b56a0" stroke-width="5.5" stroke-linecap="round"/>
+<path d="M262,304 q40,30 20,70 q-12,20 16,34" fill="none" stroke="#2b56a0" stroke-width="5.5" stroke-linecap="round"/>
+<rect x="0" y="0" width="640" height="480" fill="url(#overlay-406-banner-rolled-rg8)"/>
+</g>
+</svg>
