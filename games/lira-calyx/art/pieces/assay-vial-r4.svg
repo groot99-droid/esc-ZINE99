@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 280" width="160" height="280" role="img" aria-labelledby="assay-vial-r4-t assay-vial-r4-d">
+<title id="assay-vial-r4-t">Reagent vial R4</title>
+<desc id="assay-vial-r4-d">A conical flask of moss-green reagent on the dark bench, its paper label numbered R4 in Lira's hand with a small sketch of what it does to a peak.</desc>
+<defs><filter id="assay-vial-r4-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="629"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><radialGradient id="assay-vial-r4-rg2" cx="0.5" cy="0.35" r="0.75"><stop offset="0%" stop-color="#3a4a44" stop-opacity="0.9"/><stop offset="100%" stop-color="#1d2221" stop-opacity="0"/></radialGradient><linearGradient id="assay-vial-r4-lg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4a3a2a"/><stop offset="100%" stop-color="#17120e"/></linearGradient><filter id="assay-vial-r4-blur4" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter><clipPath id="assay-vial-r4-clip5"><path d="M68,56 V110 L30,206.4 Q28,212.4 36,212.4 H124 Q132,212.4 130,206.4 L92,110 V56 Z"/></clipPath></defs>
+<rect x="0" y="0" width="160" height="280" fill="#1d2221"/>
+<rect x="0" y="0" width="160" height="280" filter="url(#assay-vial-r4-grain1)"/>
+<rect x="0" y="0" width="160" height="280" fill="url(#assay-vial-r4-rg2)"/>
+<path d="M0,0V218.4M20,0V218.4M40,0V218.4M60,0V218.4M80,0V218.4M100,0V218.4M120,0V218.4M140,0V218.4M160,0V218.4M0,0H160M0,20H160M0,40H160M0,60H160M0,80H160M0,100H160M0,120H160M0,140H160M0,160H160M0,180H160M0,200H160" fill="none" stroke="#7dff9a" stroke-width="0.5" opacity="0.1"/>
+<rect x="0" y="218.4" width="160" height="61.6" fill="#120f0c"/>
+<rect x="0" y="218.4" width="160" height="61.6" fill="url(#assay-vial-r4-lg3)" opacity="0.9"/>
+<line x1="0" y1="218.4" x2="160" y2="218.4" stroke="#7a6248" stroke-width="1.5"/>
+<ellipse cx="80" cy="222.4" rx="54" ry="8" fill="#000" opacity="0.5" filter="url(#assay-vial-r4-blur4)"/>
+<path d="M68,56 V110 L30,206.4 Q28,212.4 36,212.4 H124 Q132,212.4 130,206.4 L92,110 V56 Z" fill="#dff2ee" fill-opacity="0.1"/>
+<g clip-path="url(#assay-vial-r4-clip5)">
+<rect x="28" y="162" width="104" height="50.4" fill="#7fae4a" opacity="0.8"/>
+<rect x="28" y="162" width="31.2" height="50.4" fill="#fff" opacity="0.2"/>
+<rect x="102.9" y="162" width="29.1" height="50.4" fill="#000" opacity="0.2"/>
+<ellipse cx="80" cy="162" rx="52" ry="5" fill="#fff" opacity="0.3"/>
+</g>
+<path d="M68,56 V110 L30,206.4 Q28,212.4 36,212.4 H124 Q132,212.4 130,206.4 L92,110 V56 Z" fill="none" stroke="#f2f4f5" stroke-width="2.6" stroke-linejoin="round" opacity="0.9"/>
+<path d="M68,56 V110 L30,206.4 Q28,212.4 36,212.4 H124 Q132,212.4 130,206.4 L92,110 V56 Z" fill="none" stroke="#7dff9a" stroke-width="1" opacity="0.5" transform="translate(-2,0)"/>
+<polygon points="58,58 62,30 98,30 102,58" fill="#a07a4a" stroke="#3b2618" stroke-width="2"/>
+<path d="M83.1,50.4a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M59.8,53.5a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M81.7,44.2a1.2,1.2 0 1,0 2.3,0a1.2,1.2 0 1,0 -2.3,0M73.4,44.1a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M85.6,55.1a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M72.6,33.6a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M90,47.6a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M60,50.7a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M78.2,35.6a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M82.4,46.1a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M72.7,37a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M65,38.4a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M86.8,54.9a1.4,1.4 0 1,0 2.7,0a1.4,1.4 0 1,0 -2.7,0M95.2,47.7a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M64.6,32.2a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M98.3,37.5a1.2,1.2 0 1,0 2.3,0a1.2,1.2 0 1,0 -2.3,0M83.2,42.2a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M90.5,50.9a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M64.1,42.3a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M98.6,50.2a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M70.2,36.8a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M95.1,49.8a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M61.1,47.6a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M63,33.3a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M91.8,33.7a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M98.9,45.4a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0" fill="#3b2618" opacity="0.6"/>
+<g transform="rotate(0 36 132.4)">
+<rect x="36" y="132.4" width="88" height="56" fill="#f1e8d2" stroke="#3b2618" stroke-width="1.6"/>
+<rect x="36" y="132.4" width="88" height="56" fill="#7a5a2e" opacity="0.1"/>
+<path d="M42,152.4 L44.6,139.4 L49.8,139.4 L51.1,141.6 L50.6,144.2 L48.4,146.3 L43.2,146.3 M46.7,146.3 L48.9,152.4 M57.8,152.4 L60.4,139.4 L53.5,148.1 L60.4,148.1" fill="none" stroke="#3b2618" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="43" y1="182.4" x2="117" y2="182.4" stroke="#3b2618" stroke-width="1.2"/>
+<path d="M67,182.4 C68.3,182.1 73,184.4 75,180.4 C77,176.4 77.7,158.4 79,158.4 C80.3,158.4 81,176.4 83,180.4 C85,184.4 89.7,182.1 91,182.4" stroke-width="1.8" stroke="#7d7a74" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M53,182.4 C54.3,182.1 59,182.9 61,180.4 C63,177.9 63.7,167.4 65,167.4 C66.3,167.4 67,177.9 69,180.4 C71,182.9 75.7,182.1 77,182.4" stroke-width="1.8" stroke="#3b2618" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M81,182.4 C82.3,182.1 87,182.9 89,180.4 C91,177.9 91.7,167.4 93,167.4 C94.3,167.4 95,177.9 97,180.4 C99,182.9 103.7,182.1 105,182.4" stroke-width="1.8" stroke="#3b2618" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<circle cx="22" cy="266" r="3.2" fill="none" stroke="#7dff9a" stroke-width="1" opacity="0.8"/>
+<circle cx="32" cy="266" r="3.2" fill="none" stroke="#7dff9a" stroke-width="1" opacity="0.8"/>
+<circle cx="42" cy="266" r="3.2" fill="none" stroke="#7dff9a" stroke-width="1" opacity="0.8"/>
+<circle cx="52" cy="266" r="3.2" fill="#7dff9a" stroke="#7dff9a" stroke-width="1" opacity="0.8"/>
+<circle cx="62" cy="266" r="3.2" fill="none" stroke="#7dff9a" stroke-width="1" opacity="0.8"/>
+<circle cx="72" cy="266" r="3.2" fill="none" stroke="#7dff9a" stroke-width="1" opacity="0.8"/>
+</svg>

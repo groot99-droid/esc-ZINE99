@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 480" width="200" height="480" role="img" aria-labelledby="bracket-ink-t bracket-ink-d">
+<title id="bracket-ink-t">Margin bracket: Lira's brace</title>
+<desc id="bracket-ink-d">Lira's own margin brace in iron-gall ink, pressed hard at the point, with her delta beside it.</desc>
+<defs><filter id="bracket-ink-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="545"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="bracket-ink-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="bracket-ink-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient><filter id="bracket-ink-rough4"><feTurbulence type="turbulence" baseFrequency="0.3" numOctaves="2" seed="179" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.5"/></filter></defs>
+<rect x="0" y="0" width="200" height="480" fill="#f1e8d2"/>
+<rect x="0" y="0" width="200" height="480" filter="url(#bracket-ink-grain1)"/>
+<rect x="0" y="0" width="200" height="480" fill="url(#bracket-ink-pat2)"/>
+<rect x="0" y="0" width="200" height="480" fill="url(#bracket-ink-vig3)"/>
+<path d="M128,30 C122.7,32.3 102,29 96,44 C90,59 93,94 92,120 C91,146 95.3,180 90,200 C84.7,220 60,226.7 60,240 C60,253.3 84.7,260 90,280 C95.3,300 91,334 92,360 C93,386 90,421 96,436 C102,451 122.7,447.7 128,450" fill="none" stroke="#3b2618" stroke-width="4.2" stroke-linecap="round" filter="url(#bracket-ink-rough4)"/>
+<path d="M92,120 C91.7,133.3 95.3,180 90,200 C84.7,220 60,226.7 60,240 C60,253.3 84.7,260 90,280 C95.3,300 91.7,346.7 92,360" fill="none" stroke="#3b2618" stroke-width="6.5" stroke-linecap="round" opacity="0.8"/>
+<path d="M61.5,240 C61.3,240.8 61.1,241.9 60.7,242.4 C60.3,242.9 59.7,242.7 59.1,243.1 C58.4,243.4 57.7,244.5 57,244.5 C56.4,244.5 55.6,243.9 55.2,243.1 C54.8,242.4 54.8,241 54.7,240 C54.6,239 54.4,238.1 54.8,237.3 C55.2,236.6 56.3,235.7 57,235.4 C57.7,235.2 58.2,235.6 59,235.9 C59.8,236.2 61.3,236.7 61.7,237.4 C62.1,238 61.7,239.2 61.5,240Z" fill="#3b2618" opacity="0.8"/>
+<circle cx="64.9" cy="242.2" r="0.7" fill="#3b2618" opacity="0.8"/>
+<circle cx="62" cy="247.5" r="0.6" fill="#3b2618" opacity="0.8"/>
+<circle cx="62" cy="231" r="0.7" fill="#3b2618" opacity="0.8"/>
+<path d="M19.3,248.8 C21.3,244.9 28.9,225 31,225 C33,225 33.6,245 31.6,249.1 C29.7,253.1 21.6,249.2 19.5,249.2" fill="none" stroke="#3b2618" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="140" y1="60" x2="196" y2="60" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="140" y1="98" x2="196" y2="98" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="140" y1="136" x2="196" y2="136" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="140" y1="174" x2="196" y2="174" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="140" y1="212" x2="196" y2="212" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="140" y1="250" x2="196" y2="250" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="140" y1="288" x2="196" y2="288" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="140" y1="326" x2="196" y2="326" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="140" y1="364" x2="196" y2="364" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="140" y1="402" x2="196" y2="402" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+</svg>

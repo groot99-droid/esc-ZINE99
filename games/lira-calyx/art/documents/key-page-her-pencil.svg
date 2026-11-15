@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100" role="img" aria-labelledby="key-page-her-pencil-t key-page-her-pencil-d">
+<title id="key-page-her-pencil-t">The Key: her pencil</title>
+<desc id="key-page-her-pencil-d">The same printed page after Book I: Lira's pencil has bracketed the Ember Wolf couplet and written a new branch beside it, found above 2 000 m, with a pup sketched in the margin, its altitude tag, and the open triangle that marks her hand.</desc>
+<defs><filter id="key-page-her-pencil-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="431"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="key-page-her-pencil-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="key-page-her-pencil-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="800" height="1100" fill="#f1e8d2"/>
+<rect x="0" y="0" width="800" height="1100" filter="url(#key-page-her-pencil-grain1)"/>
+<rect x="0" y="0" width="800" height="1100" fill="url(#key-page-her-pencil-pat2)"/>
+<rect x="0" y="0" width="800" height="1100" fill="url(#key-page-her-pencil-vig3)"/>
+<rect x="60" y="56" width="680" height="988" fill="none" stroke="#3b2618" stroke-width="1.2"/>
+<rect x="66" y="62" width="668" height="976" fill="none" stroke="#3b2618" stroke-width="0.6"/>
+<text x="400" y="122" font-size="34" font-family="serif" fill="#3b2618" text-anchor="middle" letter-spacing="6">DICHOTOMOUS KEY</text>
+<text x="400" y="152" font-size="18" font-family="serif" font-style="italic" fill="#3b2618" text-anchor="middle">Mid-Slopes</text>
+<path d="M250,170 H550 M390,176 l10,8 l10,-8" stroke="#3b2618" stroke-width="1.2" fill="none"/>
+<rect x="83" y="219" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="230" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">1a.</text>
+<text x="154" y="230" font-size="20" font-family="serif" fill="#3b2618">Glow period under 4 s, go to 2.</text>
+<rect x="83" y="251" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="262" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">1b.</text>
+<text x="154" y="262" font-size="20" font-family="serif" fill="#3b2618">Glow period 4 s or more, go to 5.</text>
+<rect x="83" y="319" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="330" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">2a.</text>
+<text x="154" y="330" font-size="20" font-family="serif" fill="#3b2618">Found below 2 000 m</text>
+<line x1="360" y1="326" x2="540" y2="326" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="330" font-size="20" font-family="serif" font-style="italic" fill="#3b2618" text-anchor="end">Ember Wolf</text>
+<path d="M96,350 q-14,40 0,82" stroke="#7d7a74" stroke-width="2.2" fill="none"/>
+<polygon points="104,397 110,385 116,397" fill="none" stroke="#7d7a74" stroke-width="2"/>
+<text x="132" y="398" font-size="30" font-family="serif" font-style="italic" fill="#7d7a74" transform="rotate(-0 132 398)">2b.  Found above 2 000 m</text>
+<path d="M470,388 C481.7,386.7 520,374.7 540,380 C560,385.3 580,405 590,420 C600,435 598.3,461.7 600,470" stroke-width="1.8" stroke="#7d7a74" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M592,458 l8,14 l10,-12" stroke="#7d7a74" stroke-width="1.8" fill="none"/>
+<text x="132" y="438" font-size="24" font-family="serif" font-style="italic" fill="#7d7a74" transform="rotate(-0.4 132 438)">Ember Wolf, juvenile</text>
+<rect x="83" y="509" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="520" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">3a.</text>
+<path d="M154,515.2h35.1M196.8,515.2h23.8M228.2,515.2h31M266.9,515.2h43.6M318.1,515.2h48.3M374.1,515.2h26.7M408.4,515.2h33.3M449.3,515.2h42.5" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="526" y1="516" x2="520" y2="516" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="520" font-size="20" font-family="serif" font-style="italic" fill="#3b2618" text-anchor="end">Ridgeback Strider</text>
+<rect x="83" y="541" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="552" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">3b.</text>
+<path d="M154,547.2h46M207.7,547.2h47.2M262.5,547.2h29M299.1,547.2h50.6M357.4,547.2h16.5M381.5,547.2h33.2M422.3,547.2h32.6" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="606" y1="548" x2="636" y2="548" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="552" font-size="20" font-family="serif" fill="#3b2618" text-anchor="end">4</text>
+<rect x="83" y="595" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="606" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">4a.</text>
+<path d="M154,601.2h18.8M180.5,601.2h33.5M221.6,601.2h54.8M284,601.2h21.2M312.9,601.2h51.5M372,601.2h57M436.7,601.2h34.9M479.3,601.2h19.2" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="526" y1="602" x2="520" y2="602" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="606" font-size="20" font-family="serif" font-style="italic" fill="#3b2618" text-anchor="end">Spore-Weaver</text>
+<rect x="83" y="627" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="638" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">4b.</text>
+<path d="M154,633.2h22M183.6,633.2h26.6M217.9,633.2h20.8M246.3,633.2h42.6M296.6,633.2h55.6M359.9,633.2h33.2M400.7,633.2h32.1M440.4,633.2h19.5M467.6,633.2h38.7M514,633.2h16.2M537.8,633.2h36" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="606" y1="634" x2="636" y2="634" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="638" font-size="20" font-family="serif" fill="#3b2618" text-anchor="end">6</text>
+<rect x="83" y="681" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="692" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">5a.</text>
+<path d="M154,687.2h40.4M202.1,687.2h19M228.7,687.2h25.4M261.7,687.2h22.6M292,687.2h38.1M337.8,687.2h24.5" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="526" y1="688" x2="520" y2="688" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="692" font-size="20" font-family="serif" font-style="italic" fill="#3b2618" text-anchor="end">Aether-Vine</text>
+<rect x="83" y="713" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="724" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">5b.</text>
+<path d="M154,719.2h55.9M217.6,719.2h46.8M272,719.2h33.6M313.3,719.2h47.7M368.7,719.2h18.6M395,719.2h46M448.7,719.2h19.2M475.5,719.2h31.1" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="606" y1="720" x2="636" y2="720" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="724" font-size="20" font-family="serif" fill="#3b2618" text-anchor="end">6</text>
+<path d="M520,820 C520.5,805.5 527,779 532,775 C537,771 541,793 550,796 C559,799 577.5,797.5 586,793 C594.5,788.5 596.5,765.5 601,769 C605.5,772.5 605.5,801.5 613,814 C620.5,826.5 641.5,836.5 646,844 C650.5,851.5 647,855.5 640,859 C633,862.5 616.5,861.5 604,865 C591.5,868.5 577.5,880.5 565,880 C552.5,879.5 536.5,872 529,862 C521.5,852 519.5,834.5 520,820Z" stroke-width="2.2" stroke="#7d7a74" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="586" cy="826" r="5.1" fill="#7d7a74"/>
+<circle cx="643" cy="847" r="6" fill="#7d7a74"/>
+<path d="M529,862 C522.5,870 497.5,893 490,910 C482.5,927 485,955 484,964" stroke-width="2.2" stroke="#7d7a74" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M565,880 C566,887.5 571.5,911 571,925 C570.5,939 563.5,957.5 562,964" stroke-width="2.2" stroke="#7d7a74" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="508" cy="889" r="4.5" fill="#f08a2c" opacity="0.8"/>
+<circle cx="521.5" cy="896.5" r="4.5" fill="#f08a2c" opacity="0.8"/>
+<circle cx="535" cy="904" r="4.5" fill="#f08a2c" opacity="0.8"/>
+<circle cx="548.5" cy="911.5" r="4.5" fill="#f08a2c" opacity="0.8"/>
+<polygon points="300,852 420,836 426,880 306,896" fill="#efe2c0" stroke="#3b2618" stroke-width="1.6"/>
+<circle cx="312" cy="874" r="4" fill="#f1e8d2" stroke="#3b2618" stroke-width="1.4"/>
+<path d="M312,874 q-40,10 -70,-14" stroke="#b9a078" stroke-width="1.4" fill="none"/>
+<path d="M329.5,861.9 C330,861.3 331.4,858.7 332.7,858.1 C334,857.5 336.2,857.6 337.2,858.2 C338.3,858.7 338.7,860.1 338.9,861.3 C339,862.5 340.3,862.6 338.1,865.4 C336,868.1 326.5,875.7 326,877.7 C325.5,879.7 333.7,877.6 335.2,877.6 M362.6,859.4 C362,859.1 360.3,857.6 359,858 C357.8,858.4 356.3,860.3 355.1,861.9 C353.9,863.6 352.7,865.9 351.9,868 C351.1,870.2 350.4,873 350.4,874.8 C350.4,876.5 350.8,877.8 351.9,878.4 C353,879 355.5,878.8 356.8,878.2 C358.2,877.6 359.3,876 360,874.8 C360.7,873.5 361.2,871.9 361,870.7 C360.9,869.5 360.3,868.2 359.2,867.7 C358.1,867.2 355.7,867.3 354.4,867.8 C353,868.3 351.7,870.3 351.1,870.7 M372.1,858.2 C372.8,858.3 375.4,857.7 376.2,858.4 C377.1,859.2 377.7,859.8 377.5,862.5 C377.2,865.3 375.6,872 374.6,874.7 C373.6,877.4 372.5,878 371.3,878.7 C370.1,879.4 368.2,879.4 367.3,878.8 C366.4,878.1 365.7,877.5 365.9,874.8 C366.2,872.1 367.6,865.3 368.7,862.6 C369.7,859.8 371.6,859.1 372.2,858.4 M386.2,859 C386.8,859 389.2,858.4 390.1,859 C391,859.7 391.7,860.3 391.6,862.9 C391.4,865.5 390.1,872 389.1,874.7 C388.2,877.3 387,878 385.9,878.7 C384.7,879.4 383.1,879.4 382.2,878.8 C381.3,878.1 380.6,877.5 380.7,874.8 C380.9,872.2 382.1,865.5 383.1,862.9 C384,860.2 385.8,859.7 386.3,859.1" fill="none" stroke="#3b2618" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="396" y="874" font-size="22" font-family="serif" font-style="italic" fill="#3b2618" transform="rotate(-8 396 874)">m</text>
+<text x="400" y="1070" font-size="16" font-family="serif" fill="#3b2618" text-anchor="middle">12</text>
+</svg>

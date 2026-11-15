@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 110" width="260" height="110" role="img" aria-labelledby="tab-dossier-t tab-dossier-d">
+<title id="tab-dossier-t">Journal tab: Dossier</title>
+<desc id="tab-dossier-d">A journal tab cut from laid paper with a band of wash along its top edge, lettered Dossier in Lira's hand beside a small ink sign for that section.</desc>
+<defs><clipPath id="tab-dossier-clip1"><path d="M8,104 L11.3,26 L22,12 L236,11.5 L250,24 L252,104Z"/></clipPath><filter id="tab-dossier-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><filter id="tab-dossier-grain3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="408"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="tab-dossier-pat4" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="tab-dossier-vig5" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient></defs>
+<path d="M8,104 L11.3,26 L22,12 L236,11.5 L250,24 L252,104Z" fill="#000" opacity="0.2" transform="translate(3,3)" filter="url(#tab-dossier-blur2)"/>
+<g clip-path="url(#tab-dossier-clip1)">
+<rect x="0" y="0" width="260" height="110" fill="#f1e8d2"/>
+<rect x="0" y="0" width="260" height="110" filter="url(#tab-dossier-grain3)"/>
+<rect x="0" y="0" width="260" height="110" fill="url(#tab-dossier-pat4)"/>
+<rect x="0" y="0" width="260" height="110" fill="url(#tab-dossier-vig5)"/>
+<rect x="0" y="0" width="260" height="26" fill="#b3212b" opacity="0.5"/>
+<rect x="0" y="24" width="260" height="4" fill="#b3212b" opacity="0.5"/>
+<rect x="0" y="92" width="260" height="20" fill="#7a5a2e" opacity="0.2"/>
+</g>
+<path d="M8.2,104.3 L9.1,84 L9.9,64.5 L10.7,45 L11.4,26.3 L21.5,11.6 L38.9,12.3 L55.2,11.7 L70.9,11.3 L87.9,12.2 L104.6,11.2 L120.7,12.1 L137.2,11.4 L154,11.3 L169.6,11.9 L187.2,11.4 L202.4,11.4 L219.8,11.1 L235.8,11 L250,24.7 L250.7,39.9 L250.8,55.4 L251.3,72 L252,87.4 L252.3,104.4" stroke-width="2.4" stroke="#3b2618" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<circle cx="46" cy="62" r="13" fill="none" stroke="#3b2618" stroke-width="2.4"/>
+<circle cx="46" cy="62" r="4" fill="#b3212b"/>
+<line x1="62" y1="62" x2="67" y2="62" stroke="#3b2618" stroke-width="1.6"/>
+<line x1="54" y1="75.9" x2="56.5" y2="80.2" stroke="#3b2618" stroke-width="1.6"/>
+<line x1="38" y1="75.9" x2="35.5" y2="80.2" stroke="#3b2618" stroke-width="1.6"/>
+<line x1="30" y1="62" x2="25" y2="62" stroke="#3b2618" stroke-width="1.6"/>
+<line x1="38" y1="48.1" x2="35.5" y2="43.8" stroke="#3b2618" stroke-width="1.6"/>
+<line x1="54" y1="48.1" x2="56.5" y2="43.8" stroke="#3b2618" stroke-width="1.6"/>
+<text x="82" y="72" font-size="28" font-family="serif" font-style="italic" fill="#3b2618" transform="rotate(-0.6 82 72)">Dossier</text>
+<text x="216" y="22" font-size="12" font-family="monospace" fill="#3b2618" letter-spacing="1">2</text>
+</svg>

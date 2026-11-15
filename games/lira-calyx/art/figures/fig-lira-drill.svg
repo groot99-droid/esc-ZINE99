@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" width="240" height="320" role="img" aria-labelledby="fig-lira-drill-t fig-lira-drill-d">
+<title id="fig-lira-drill-t">Lira: core drill</title>
+<desc id="fig-lira-drill-d">Lira kneeling over the core drill, both hands on its crossbar, two cut cores laid out on the ledge beside her, banded like the strata.</desc>
+<defs><filter id="fig-lira-drill-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="229"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="fig-lira-drill-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="fig-lira-drill-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient><clipPath id="fig-lira-drill-clip4"><polygon points="10,262 24,260.4 42,263.1 60,261 78,260.3 96,261.2 114,263.1 132,262.6 150,261.9 168,261.1 186,263.9 204,260.8 222,262.9 232,262 226,308 18,308"/></clipPath></defs>
+<rect x="0" y="0" width="240" height="320" fill="#f1e8d2"/>
+<rect x="0" y="0" width="240" height="320" filter="url(#fig-lira-drill-grain1)"/>
+<rect x="0" y="0" width="240" height="320" fill="url(#fig-lira-drill-pat2)"/>
+<rect x="0" y="0" width="240" height="320" fill="url(#fig-lira-drill-vig3)"/>
+<text x="16" y="26" font-size="12" font-family="monospace" fill="#7d7a74" letter-spacing="1">LIRA  CORE  4 s</text>
+<rect x="6" y="6" width="228" height="308" fill="none" stroke="#3b2618" stroke-width="1" opacity="0.5"/>
+<polygon points="10,262 24,260.4 42,263.1 60,261 78,260.3 96,261.2 114,263.1 132,262.6 150,261.9 168,261.1 186,263.9 204,260.8 222,262.9 232,262 226,308 18,308" fill="#56606a" opacity="0.3"/>
+<g clip-path="url(#fig-lira-drill-clip4)">
+<path d="M71.2,122.2 L283.8,235.2 M67.9,128.4 L280.5,241.4 M64.7,134.6 L277.2,247.6 M61.4,140.8 L273.9,253.8 M58.1,146.9 L270.6,260 M54.8,153.1 L267.3,266.1 M51.5,159.3 L264.1,272.3 M48.2,165.5 L260.8,278.5 M44.9,171.7 L257.5,284.7 M41.7,177.9 L254.2,290.9 M38.4,184 L250.9,297 M35.1,190.2 L247.6,303.2 M31.8,196.4 L244.3,309.4 M28.5,202.6 L241.1,315.6 M25.2,208.8 L237.8,321.8 M21.9,214.9 L234.5,327.9 M18.7,221.1 L231.2,334.1 M15.4,227.3 L227.9,340.3 M12.1,233.5 L224.6,346.5 M8.8,239.7 L221.3,352.7 M5.5,245.8 L218,358.8 M2.2,252 L214.8,365 M-1.1,258.2 L211.5,371.2 M-4.4,264.4 L208.2,377.4 M-7.6,270.6 L204.9,383.6 M-10.9,276.7 L201.6,389.8 M-14.2,282.9 L198.3,395.9 M-17.5,289.1 L195,402.1 M-20.8,295.3 L191.8,408.3 M-24.1,301.5 L188.5,414.5 M-27.4,307.6 L185.2,420.7 M-30.6,313.8 L181.9,426.8 M-33.9,320 L178.6,433 M-37.2,326.2 L175.3,439.2 M-40.5,332.4 L172,445.4" fill="none" stroke="#3b2618" stroke-width="1" opacity="0.7"/>
+</g>
+<path d="M9.6,261.5 L24.9,259.5 L42.2,263.5 L59.8,261.8 L77.7,261.1 L95.8,261.9 L113.4,263.3 L132.1,261.9 L150,261.6 L167.6,260.5 L185.3,263.8 L203.9,261 L221.5,262.4 L231.9,262.8" stroke-width="3" stroke="#3b2618" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M135,164.3 L156.9,190.4 L178.7,216.4" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M135,164.3 L156.9,190.4 L178.7,216.4" fill="none" stroke="#6f5c4a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M104,218 L149.9,221.2 L104.1,226" fill="none" stroke="#3b2618" stroke-width="15.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M104,218 L149.9,221.2 L104.1,226" fill="none" stroke="#6f5c4a" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M104.1,226 L116.1,227" fill="none" stroke="#3b2618" stroke-width="12.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M104.1,226 L116.1,227" fill="none" stroke="#3a2c22" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="137.3" y="172.3" width="28" height="44" fill="#c8913a" stroke="#3b2618" stroke-width="2.4" rx="7" transform="rotate(30 152.3 174.3)"/>
+<line x1="139.3" y1="188.3" x2="163.3" y2="188.3" stroke="#3b2618" stroke-width="1.4" transform="rotate(30 152.3 174.3)"/>
+<path d="M104,218 L119.7,261.2 L73.8,262.8" fill="none" stroke="#3b2618" stroke-width="16.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M104,218 L119.7,261.2 L73.8,262.8" fill="none" stroke="#5b4a3a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M73.8,262.8 L86.8,263.8" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M73.8,262.8 L86.8,263.8" fill="none" stroke="#3a2c22" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M104,218 L135,164.3" fill="none" stroke="#3b2618" stroke-width="30.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M104,218 L135,164.3" fill="none" stroke="#3f5a2c" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M89,220 l-4,14 l34,2 l-2,-16Z" fill="#3f5a2c" stroke="#3b2618" stroke-width="2.2" stroke-linejoin="round"/>
+<line x1="91" y1="216" x2="117" y2="214" stroke="#3b2618" stroke-width="2.4"/>
+<path d="M135,164.3 L161.8,185.2 L178.8,214.7" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M135,164.3 L161.8,185.2 L178.8,214.7" fill="none" stroke="#3f5a2c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="178.8" cy="214.7" r="5" fill="#d2a47c" stroke="#3b2618" stroke-width="1.8"/>
+<circle cx="152.8" cy="151.4" r="14.5" fill="#d2a47c" stroke="#3b2618" stroke-width="2.4"/>
+<path d="M138.8,154.4 A14.5,14.5 0 0,1 162.8,140.4 Q152.8,146.4 148.8,155.4Z" fill="#3b2618"/>
+<path d="M139.8,149.4 C138,150.7 130.3,153.4 128.8,157.4 C127.3,161.4 130.5,170.7 130.8,173.4" stroke-width="5" stroke="#3b2618" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="159.8" cy="150.4" r="1.6" fill="#3b2618"/>
+<rect x="174.8" y="214.7" width="9" height="67.3" fill="#c9ced0" stroke="#3b2618" stroke-width="2"/>
+<line x1="158.8" y1="214.7" x2="200.8" y2="214.7" stroke="#3b2618" stroke-width="5" stroke-linecap="round"/>
+<path d="M174.8,228.7l9,6 M174.8,240.7l9,6 M174.8,252.7l9,6" stroke="#3b2618" stroke-width="1.4"/>
+<rect x="186" y="216" width="12" height="44" fill="#c8913a" stroke="#3b2618" stroke-width="1.8"/>
+<rect x="186" y="224" width="12" height="5" fill="#9c4a25"/>
+<rect x="186" y="234" width="12" height="5" fill="#56606a"/>
+<rect x="186" y="244" width="12" height="5" fill="#e7dcc3"/>
+<rect x="204" y="222" width="12" height="38" fill="#c8913a" stroke="#3b2618" stroke-width="1.8"/>
+<rect x="204" y="230" width="12" height="5" fill="#9c4a25"/>
+<rect x="204" y="240" width="12" height="5" fill="#56606a"/>
+<rect x="204" y="250" width="12" height="5" fill="#e7dcc3"/>
+</svg>

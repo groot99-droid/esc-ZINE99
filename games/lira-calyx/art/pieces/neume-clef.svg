@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="neume-clef-t neume-clef-d">
+<title id="neume-clef-t">Neume: clef</title>
+<desc id="neume-clef-d">Neume tile on vellum with a red four-line staff: the clef, the C clef that names its line; its name beneath in italic and its reading in red.</desc>
+<defs><filter id="neume-clef-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="203"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="neume-clef-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="neume-clef-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="200" height="200" fill="#f0e2bf"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#neume-clef-grain1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#neume-clef-pat2)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#neume-clef-vig3)"/>
+<rect x="8" y="8" width="184" height="184" fill="none" stroke="#3b2618" stroke-width="1"/>
+<line x1="18" y1="52" x2="182" y2="52" stroke="#a8281e" stroke-width="2"/>
+<line x1="18" y1="76" x2="182" y2="76" stroke="#a8281e" stroke-width="2"/>
+<line x1="18" y1="100" x2="182" y2="100" stroke="#a8281e" stroke-width="2"/>
+<line x1="18" y1="124" x2="182" y2="124" stroke="#a8281e" stroke-width="2"/>
+<path d="M70,56.0 h22 v14 h-12 v12 h12 v14 h-22 Z" fill="#3b2618"/>
+<path d="M96,56.0 h10 v14 h-10 M96,82.0 h10 v14 h-10" fill="#3b2618" stroke="#3b2618" stroke-width="1"/>
+<line x1="66" y1="44.8" x2="66" y2="107.2" stroke="#3b2618" stroke-width="3"/>
+<text x="20" y="172" font-size="21" font-family="serif" font-style="italic" fill="#3b2618">clef</text>
+<text x="182" y="172" font-size="13" font-family="monospace" fill="#a8281e" text-anchor="end">the line of do</text>
+<text x="182" y="28" font-size="12" font-family="monospace" fill="#7d7a74" text-anchor="end">13</text>
+</svg>

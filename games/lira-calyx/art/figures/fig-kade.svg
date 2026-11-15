@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" width="240" height="320" role="img" aria-labelledby="fig-kade-t fig-kade-d">
+<title id="fig-kade-t">Kade, scout</title>
+<desc id="fig-kade-d">Kade the Lowland scout moving low in a rust poncho, respirator and goggles on, a satchel of charges with one red band slung at the hip.</desc>
+<defs><filter id="fig-kade-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="371"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="fig-kade-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="fig-kade-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient><clipPath id="fig-kade-clip4"><polygon points="10,262 24,263.3 42,261.5 60,261.7 78,262.7 96,263.8 114,262 132,260.1 150,263.9 168,260.8 186,261.2 204,260.1 222,260.7 232,262 226,302 18,302"/></clipPath></defs>
+<rect x="0" y="0" width="240" height="320" fill="#f1e8d2"/>
+<rect x="0" y="0" width="240" height="320" filter="url(#fig-kade-grain1)"/>
+<rect x="0" y="0" width="240" height="320" fill="url(#fig-kade-pat2)"/>
+<rect x="0" y="0" width="240" height="320" fill="url(#fig-kade-vig3)"/>
+<text x="16" y="26" font-size="12" font-family="monospace" fill="#7d7a74" letter-spacing="1">KADE  SCOUT</text>
+<rect x="6" y="6" width="228" height="308" fill="none" stroke="#3b2618" stroke-width="1" opacity="0.5"/>
+<polygon points="10,262 24,263.3 42,261.5 60,261.7 78,262.7 96,263.8 114,262 132,260.1 150,263.9 168,260.8 186,261.2 204,260.1 222,260.7 232,262 226,302 18,302" fill="#9c4a25" opacity="0.3"/>
+<g clip-path="url(#fig-kade-clip4)">
+<path d="M71.5,120 L283,232.5 M68.2,126.2 L279.7,238.7 M64.9,132.4 L276.4,244.8 M61.6,138.5 L273.1,251 M58.3,144.7 L269.9,257.2 M55,150.9 L266.6,263.4 M51.8,157.1 L263.3,269.6 M48.5,163.3 L260,275.7 M45.2,169.4 L256.7,281.9 M41.9,175.6 L253.4,288.1 M38.6,181.8 L250.1,294.3 M35.3,188 L246.9,300.5 M32,194.2 L243.6,306.6 M28.7,200.3 L240.3,312.8 M25.5,206.5 L237,319 M22.2,212.7 L233.7,325.2 M18.9,218.9 L230.4,331.4 M15.6,225.1 L227.1,337.5 M12.3,231.2 L223.8,343.7 M9,237.4 L220.6,349.9 M5.7,243.6 L217.3,356.1 M2.5,249.8 L214,362.3 M-0.8,256 L210.7,368.4 M-4.1,262.2 L207.4,374.6 M-7.4,268.3 L204.1,380.8 M-10.7,274.5 L200.8,387 M-14,280.7 L197.6,393.2 M-17.3,286.9 L194.3,399.3 M-20.5,293.1 L191,405.5 M-23.8,299.2 L187.7,411.7 M-27.1,305.4 L184.4,417.9 M-30.4,311.6 L181.1,424.1 M-33.7,317.8 L177.8,430.3 M-37,324 L174.6,436.4 M-40.3,330.1 L171.3,442.6" fill="none" stroke="#3b2618" stroke-width="1" opacity="0.7"/>
+</g>
+<path d="M10.7,262.8 L24.6,262.4 L42.2,261 L59.9,260.9 L78.2,262.4 L96.5,264.6 L114.4,261.4 L131.5,260.6 L150.5,263.9 L169,261.2 L186,261.9 L203.2,260 L222.4,260.9 L232.6,261.2" stroke-width="3" stroke="#3b2618" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M143.2,134.3 L169.2,156.1 L203,152.6" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M143.2,134.3 L169.2,156.1 L203,152.6" fill="none" stroke="#6f5c4a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M116,190 L90.3,228.1 L55,257.7" fill="none" stroke="#3b2618" stroke-width="15.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M116,190 L90.3,228.1 L55,257.7" fill="none" stroke="#6f5c4a" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55,257.7 L67,258.7" fill="none" stroke="#3b2618" stroke-width="12.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55,257.7 L67,258.7" fill="none" stroke="#3a2c22" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M116,190 L148,223.1 L140,268.4" fill="none" stroke="#3b2618" stroke-width="16.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M116,190 L148,223.1 L140,268.4" fill="none" stroke="#55483a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M140,268.4 L153,269.4" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M140,268.4 L153,269.4" fill="none" stroke="#3a2c22" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M116,190 L143.2,134.3" fill="none" stroke="#3b2618" stroke-width="30.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M116,190 L143.2,134.3" fill="none" stroke="#9c4a25" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M101,192 l-4,14 l34,2 l-2,-16Z" fill="#9c4a25" stroke="#3b2618" stroke-width="2.2" stroke-linejoin="round"/>
+<line x1="103" y1="188" x2="129" y2="186" stroke="#3b2618" stroke-width="2.4"/>
+<path d="M143.2,134.3 L149.1,167.8 L179.1,183.7" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M143.2,134.3 L149.1,167.8 L179.1,183.7" fill="none" stroke="#9c4a25" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="179.1" cy="183.7" r="5" fill="#d2a47c" stroke="#3b2618" stroke-width="1.8"/>
+<circle cx="148.5" cy="112.9" r="14.5" fill="#d2a47c" stroke="#3b2618" stroke-width="2.4"/>
+<path d="M142.5,127.9 Q124.5,112.9 140.5,95.9 Q160.5,90.9 161.5,106.9 Q146.5,104.9 142.5,127.9Z" fill="#9c4a25" stroke="#3b2618" stroke-width="2.4" stroke-linejoin="round"/>
+<circle cx="155.5" cy="111.9" r="1.6" fill="#3b2618"/>
+<rect x="149.5" y="105.9" width="13" height="8" fill="#b9d8ea" stroke="#3b2618" stroke-width="2" rx="3"/>
+<circle cx="157.5" cy="119.9" r="6.5" fill="#55483a" stroke="#3b2618" stroke-width="2"/>
+<circle cx="157.5" cy="119.9" r="2" fill="#3b2618"/>
+<line x1="147.2" y1="134.3" x2="104" y2="194" stroke="#3b2618" stroke-width="2.4"/>
+<rect x="90" y="188" width="28" height="22" fill="#8a7a5c" stroke="#3b2618" stroke-width="2.2" rx="3"/>
+<rect x="90" y="196" width="28" height="5" fill="#b3212b"/>
+<path d="M119.3,230.6a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M113.2,238.8a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M132.2,233.5a1.4,1.4 0 1,0 2.7,0a1.4,1.4 0 1,0 -2.7,0M84.6,249.5a1.8,1.8 0 1,0 3.7,0a1.8,1.8 0 1,0 -3.7,0M28.5,254a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M130.7,250.3a1.3,1.3 0 1,0 2.7,0a1.3,1.3 0 1,0 -2.7,0M76.6,248.3a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M144.4,256.1a1.9,1.9 0 1,0 3.9,0a1.9,1.9 0 1,0 -3.9,0M28.1,258.2a1.8,1.8 0 1,0 3.7,0a1.8,1.8 0 1,0 -3.7,0M63.8,236.4a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M46.4,257.5a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M31.2,243.8a1.7,1.7 0 1,0 3.5,0a1.7,1.7 0 1,0 -3.5,0M19.7,244.6a1.6,1.6 0 1,0 3.3,0a1.6,1.6 0 1,0 -3.3,0M122,256.6a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M161.4,241.4a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M27.4,255.6a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M213.5,257.2a1.9,1.9 0 1,0 3.8,0a1.9,1.9 0 1,0 -3.8,0M183.6,246.3a2,2 0 1,0 4,0a2,2 0 1,0 -4,0M85,257.7a1.6,1.6 0 1,0 3.3,0a1.6,1.6 0 1,0 -3.3,0M205,260a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M55.4,254.3a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M30.6,235.7a1.5,1.5 0 1,0 2.9,0a1.5,1.5 0 1,0 -2.9,0M35.7,245.4a1.2,1.2 0 1,0 2.3,0a1.2,1.2 0 1,0 -2.3,0M172.2,243.7a1.8,1.8 0 1,0 3.5,0a1.8,1.8 0 1,0 -3.5,0M33.7,239.5a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M206.6,236.2a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M65.4,234.9a1.8,1.8 0 1,0 3.5,0a1.8,1.8 0 1,0 -3.5,0M88,244.4a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M66.3,231.2a1.9,1.9 0 1,0 3.9,0a1.9,1.9 0 1,0 -3.9,0M50,251.2a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M161.3,241.5a1.7,1.7 0 1,0 3.4,0a1.7,1.7 0 1,0 -3.4,0M180.4,237.7a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M76.4,259a2,2 0 1,0 3.9,0a2,2 0 1,0 -3.9,0M165.3,249.7a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M49.9,257.9a1.5,1.5 0 1,0 3,0a1.5,1.5 0 1,0 -3,0M61.5,230.9a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M142.4,232.3a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M59,250.7a1.8,1.8 0 1,0 3.6,0a1.8,1.8 0 1,0 -3.6,0M24.1,241.9a1.8,1.8 0 1,0 3.5,0a1.8,1.8 0 1,0 -3.5,0M214.1,245.9a1.8,1.8 0 1,0 3.5,0a1.8,1.8 0 1,0 -3.5,0" fill="#c8913a" opacity="0.7"/>
+</svg>

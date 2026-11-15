@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" width="240" height="320" role="img" aria-labelledby="fig-lira-stand-t fig-lira-stand-d">
+<title id="fig-lira-stand-t">Lira: standing, reading</title>
+<desc id="fig-lira-stand-d">Lira at rest on a ledge in her moss coat and ochre pack, head bent to the open journal in her hands, pencil moving.</desc>
+<defs><filter id="fig-lira-stand-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="856"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="fig-lira-stand-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="fig-lira-stand-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient><clipPath id="fig-lira-stand-clip4"><polygon points="30,262 44,261.6 62,260.4 80,262.3 98,261.5 116,261.6 134,262.9 152,262.3 170,262.4 188,260.5 206,263.7 210,262 204,302 38,302"/></clipPath></defs>
+<rect x="0" y="0" width="240" height="320" fill="#f1e8d2"/>
+<rect x="0" y="0" width="240" height="320" filter="url(#fig-lira-stand-grain1)"/>
+<rect x="0" y="0" width="240" height="320" fill="url(#fig-lira-stand-pat2)"/>
+<rect x="0" y="0" width="240" height="320" fill="url(#fig-lira-stand-vig3)"/>
+<text x="16" y="26" font-size="12" font-family="monospace" fill="#7d7a74" letter-spacing="1">LIRA  REST</text>
+<rect x="6" y="6" width="228" height="308" fill="none" stroke="#3b2618" stroke-width="1" opacity="0.5"/>
+<polygon points="30,262 44,261.6 62,260.4 80,262.3 98,261.5 116,261.6 134,262.9 152,262.3 170,262.4 188,260.5 206,263.7 210,262 204,302 38,302" fill="#56606a" opacity="0.3"/>
+<g clip-path="url(#fig-lira-stand-clip4)">
+<path d="M79,147.8 L254.2,241 M75.7,154 L250.9,247.2 M72.4,160.2 L247.6,253.3 M69.1,166.4 L244.3,259.5 M65.8,172.6 L241,265.7 M62.6,178.7 L237.7,271.9 M59.3,184.9 L234.4,278.1 M56,191.1 L231.1,284.2 M52.7,197.3 L227.9,290.4 M49.4,203.5 L224.6,296.6 M46.1,209.7 L221.3,302.8 M42.8,215.8 L218,309 M39.5,222 L214.7,315.2 M36.3,228.2 L211.4,321.3 M33,234.4 L208.1,327.5 M29.7,240.6 L204.9,333.7 M26.4,246.7 L201.6,339.9 M23.1,252.9 L198.3,346.1 M19.8,259.1 L195,352.2 M16.5,265.3 L191.7,358.4 M13.3,271.5 L188.4,364.6 M10,277.6 L185.1,370.8 M6.7,283.8 L181.9,377 M3.4,290 L178.6,383.1 M0.1,296.2 L175.3,389.3 M-3.2,302.4 L172,395.5 M-6.5,308.5 L168.7,401.7 M-9.7,314.7 L165.4,407.9 M-13,320.9 L162.1,414" fill="none" stroke="#3b2618" stroke-width="1" opacity="0.7"/>
+</g>
+<path d="M30.7,262.7 L43.7,261.3 L61.3,259.5 L80.6,262.3 L97.4,261.9 L115.9,262 L133.1,262.6 L152.3,262.3 L169.9,261.4 L187.7,261.2 L205.6,263.9 L209.8,262.8" stroke-width="3" stroke="#3b2618" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M122.3,106.2 L134,138.1 L165.9,126.5" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M122.3,106.2 L134,138.1 L165.9,126.5" fill="none" stroke="#6f5c4a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118,168 L113.2,213.7 L111.6,259.7" fill="none" stroke="#3b2618" stroke-width="15.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118,168 L113.2,213.7 L111.6,259.7" fill="none" stroke="#6f5c4a" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M111.6,259.7 L123.6,260.7" fill="none" stroke="#3b2618" stroke-width="12.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M111.6,259.7 L123.6,260.7" fill="none" stroke="#3a2c22" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="127.3" y="105.5" width="28" height="44" fill="#c8913a" stroke="#3b2618" stroke-width="2.4" rx="7" transform="rotate(4 142.3 107.5)"/>
+<line x1="129.3" y1="121.5" x2="153.3" y2="121.5" stroke="#3b2618" stroke-width="1.4" transform="rotate(4 142.3 107.5)"/>
+<path d="M118,168 L124.4,213.6 L126,259.5" fill="none" stroke="#3b2618" stroke-width="16.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118,168 L124.4,213.6 L126,259.5" fill="none" stroke="#5b4a3a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M126,259.5 L139,260.5" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M126,259.5 L139,260.5" fill="none" stroke="#3a2c22" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118,168 L122.3,106.2" fill="none" stroke="#3b2618" stroke-width="30.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118,168 L122.3,106.2" fill="none" stroke="#3f5a2c" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M103,170 l-4,14 l34,2 l-2,-16Z" fill="#3f5a2c" stroke="#3b2618" stroke-width="2.2" stroke-linejoin="round"/>
+<line x1="105" y1="166" x2="131" y2="164" stroke="#3b2618" stroke-width="2.4"/>
+<path d="M122.3,106.2 L130.6,139.1 L164,133.2" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M122.3,106.2 L130.6,139.1 L164,133.2" fill="none" stroke="#3f5a2c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="164" cy="133.2" r="5" fill="#d2a47c" stroke="#3b2618" stroke-width="1.8"/>
+<circle cx="130.6" cy="85.8" r="14.5" fill="#d2a47c" stroke="#3b2618" stroke-width="2.4"/>
+<path d="M116.6,88.8 A14.5,14.5 0 0,1 140.6,74.8 Q130.6,80.8 126.6,89.8Z" fill="#3b2618"/>
+<path d="M117.6,83.8 C115.7,85.1 108.1,87.8 106.6,91.8 C105.1,95.8 108.2,105.1 108.6,107.8" stroke-width="5" stroke="#3b2618" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="137.6" cy="84.8" r="1.6" fill="#3b2618"/>
+<polygon points="158,125.2 186,119.2 190,137.2 162,143.2" fill="#f1e8d2" stroke="#3b2618" stroke-width="2"/>
+<line x1="174" y1="122.2" x2="176" y2="140.2" stroke="#3b2618" stroke-width="1.2"/>
+<line x1="178" y1="111.2" x2="172" y2="127.2" stroke="#7d7a74" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

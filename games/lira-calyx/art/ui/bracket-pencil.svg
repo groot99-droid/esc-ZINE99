@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 480" width="200" height="480" role="img" aria-labelledby="bracket-pencil-t bracket-pencil-d">
+<title id="bracket-pencil-t">Margin bracket: the circling pencil</title>
+<desc id="bracket-pencil-d">Lira's pencil going twice round a margin note she did not write, and her question under it.</desc>
+<defs><filter id="bracket-pencil-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="821"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="bracket-pencil-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="bracket-pencil-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="200" height="480" fill="#f1e8d2"/>
+<rect x="0" y="0" width="200" height="480" filter="url(#bracket-pencil-grain1)"/>
+<rect x="0" y="0" width="200" height="480" fill="url(#bracket-pencil-pat2)"/>
+<rect x="0" y="0" width="200" height="480" fill="url(#bracket-pencil-vig3)"/>
+<path d="M173,199.5 C172.5,209.7 173.9,242.7 170,260.6 C166,278.4 156.1,293.9 149.5,306.7 C142.8,319.5 138.3,330 130.1,337.4 C121.8,344.7 109.7,350.9 100.1,350.7 C90.5,350.5 81.2,343.3 72.6,336.2 C64,329.2 54.2,321.8 48.3,308.4 C42.4,294.9 40,273.4 37.3,255.6 C34.5,237.7 32.3,219.3 31.7,201.1 C31.2,182.9 30.9,164.4 34,146.2 C37,127.9 43.8,105.1 50,91.5 C56.1,77.9 62.7,70.9 70.9,64.5 C79.1,58.1 89.6,53.7 99.3,53.4 C109,53.1 120.4,56.1 129,62.7 C137.6,69.3 144.4,79.3 150.9,93.1 C157.4,107 164.3,127.6 168,145.9 C171.7,164.1 172.3,193.1 173.2,202.5" fill="none" stroke="#7d7a74" stroke-width="2.2" opacity="0.8" stroke-linecap="round"/>
+<path d="M176.3,248.8 C173.4,257.3 165.7,285.3 159,300 C152.3,314.8 145.2,327.8 135.9,337.2 C126.7,346.5 113.1,353.7 103.5,356.1 C93.9,358.5 87.7,357.4 78.5,351.6 C69.3,345.9 56.6,334.5 48.3,321.6 C40.1,308.6 33.4,291.1 29.1,273.9 C24.9,256.6 22.9,238.1 22.7,218.1 C22.6,198.2 24.9,173.4 28,154.1 C31.1,134.8 34.7,117.4 41.3,102.2 C48,87 58.7,73.6 67.8,63.1 C77,52.5 87.4,41.1 96.1,38.9 C104.9,36.8 111.9,43.9 120.3,50.2 C128.7,56.6 138,63.8 146.5,77.1 C155,90.4 166.3,112.5 171.5,130 C176.7,147.5 176.9,162.6 177.6,182 C178.2,201.4 175.7,235.6 175.4,246.3" fill="none" stroke="#7d7a74" stroke-width="2.2" opacity="0.8" stroke-linecap="round"/>
+<path d="M66,130 q30,3 66,0" stroke="#3c5a8c" stroke-width="1.4" fill="none" transform="skewX(14) translate(-30 0)"/>
+<path d="M66,164 q30,-5 54,0" stroke="#3c5a8c" stroke-width="1.4" fill="none" transform="skewX(14) translate(-30 0)"/>
+<path d="M66,198 q30,3 65,0" stroke="#3c5a8c" stroke-width="1.4" fill="none" transform="skewX(14) translate(-30 0)"/>
+<path d="M66,232 q30,6 56,0" stroke="#3c5a8c" stroke-width="1.4" fill="none" transform="skewX(14) translate(-30 0)"/>
+<path d="M66,266 q30,-3 57,0" stroke="#3c5a8c" stroke-width="1.4" fill="none" transform="skewX(14) translate(-30 0)"/>
+<text x="22" y="420" font-size="23" font-family="serif" font-style="italic" fill="#7d7a74" transform="rotate(-0.4 22 420)">Who wrote this?</text>
+</svg>

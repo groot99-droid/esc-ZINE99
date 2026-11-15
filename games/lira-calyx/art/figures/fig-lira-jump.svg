@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" width="240" height="320" role="img" aria-labelledby="fig-lira-jump-t fig-lira-jump-d">
+<title id="fig-lira-jump-t">Lira: jumping</title>
+<desc id="fig-lira-jump-d">Lira in the air between two ledges, knees drawn up and both arms thrown forward, pack lifting off her back.</desc>
+<defs><filter id="fig-lira-jump-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="967"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="fig-lira-jump-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="fig-lira-jump-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient><clipPath id="fig-lira-jump-clip4"><polygon points="6,270 20,268.2 38,268 56,271.6 70,270 64,300 14,300"/></clipPath><clipPath id="fig-lira-jump-clip5"><polygon points="176,236 190,236.9 208,237.9 226,234.6 236,236 230,270 184,270"/></clipPath></defs>
+<rect x="0" y="0" width="240" height="320" fill="#f1e8d2"/>
+<rect x="0" y="0" width="240" height="320" filter="url(#fig-lira-jump-grain1)"/>
+<rect x="0" y="0" width="240" height="320" fill="url(#fig-lira-jump-pat2)"/>
+<rect x="0" y="0" width="240" height="320" fill="url(#fig-lira-jump-vig3)"/>
+<text x="16" y="26" font-size="12" font-family="monospace" fill="#7d7a74" letter-spacing="1">LIRA  JUMP  0.9 m</text>
+<rect x="6" y="6" width="228" height="308" fill="none" stroke="#3b2618" stroke-width="1" opacity="0.5"/>
+<polygon points="6,270 20,268.2 38,268 56,271.6 70,270 64,300 14,300" fill="#56606a" opacity="0.3"/>
+<g clip-path="url(#fig-lira-jump-clip4)">
+<path d="M20.5,227.7 L95.3,267.5 M17.2,233.9 L92,273.7 M13.9,240.1 L88.7,279.9 M10.6,246.3 L85.4,286 M7.3,252.5 L82.1,292.2 M4.1,258.6 L78.8,298.4 M0.8,264.8 L75.5,304.6 M-2.5,271 L72.3,310.8 M-5.8,277.2 L69,316.9 M-9.1,283.4 L65.7,323.1 M-12.4,289.5 L62.4,329.3 M-15.7,295.7 L59.1,335.5 M-18.9,301.9 L55.8,341.7" fill="none" stroke="#3b2618" stroke-width="1" opacity="0.7"/>
+</g>
+<path d="M5,269.2 L19.5,267.6 L38.9,267.8 L55.8,271 L70.5,269.1" stroke-width="3" stroke="#3b2618" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<polygon points="176,236 190,236.9 208,237.9 226,234.6 236,236 230,270 184,270" fill="#56606a" opacity="0.3"/>
+<g clip-path="url(#fig-lira-jump-clip5)">
+<path d="M188.8,196.9 L262.1,235.8 M185.6,203.1 L258.8,242 M182.3,209.3 L255.5,248.2 M179,215.4 L252.2,254.4 M175.7,221.6 L249,260.6 M172.4,227.8 L245.7,266.8 M169.1,234 L242.4,272.9 M165.8,240.2 L239.1,279.1 M162.6,246.3 L235.8,285.3 M159.3,252.5 L232.5,291.5 M156,258.7 L229.2,297.7 M152.7,264.9 L226,303.8" fill="none" stroke="#3b2618" stroke-width="1" opacity="0.7"/>
+</g>
+<path d="M175.5,235.5 L190.5,236.4 L207.4,238 L225.6,234.7 L235.9,236.3" stroke-width="3" stroke="#3b2618" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M127,89.8 L156.4,72.8 L173.4,43.4" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M127,89.8 L156.4,72.8 L173.4,43.4" fill="none" stroke="#6f5c4a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,150 L146.2,180.8 L116.6,216" fill="none" stroke="#3b2618" stroke-width="15.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,150 L146.2,180.8 L116.6,216" fill="none" stroke="#6f5c4a" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M116.6,216 L128.6,217" fill="none" stroke="#3b2618" stroke-width="12.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M116.6,216 L128.6,217" fill="none" stroke="#3a2c22" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="131.4" y="92.7" width="28" height="44" fill="#c8913a" stroke="#3b2618" stroke-width="2.4" rx="7" transform="rotate(14 146.4 94.7)"/>
+<line x1="133.4" y1="108.7" x2="157.4" y2="108.7" stroke="#3b2618" stroke-width="1.4" transform="rotate(14 146.4 94.7)"/>
+<path d="M112,150 L154,168.7 L139.8,212.5" fill="none" stroke="#3b2618" stroke-width="16.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,150 L154,168.7 L139.8,212.5" fill="none" stroke="#5b4a3a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M139.8,212.5 L152.8,213.5" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M139.8,212.5 L152.8,213.5" fill="none" stroke="#3a2c22" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,150 L127,89.8" fill="none" stroke="#3b2618" stroke-width="30.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,150 L127,89.8" fill="none" stroke="#3f5a2c" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M97,152 l-4,14 l34,2 l-2,-16Z" fill="#3f5a2c" stroke="#3b2618" stroke-width="2.2" stroke-linejoin="round"/>
+<line x1="99" y1="148" x2="125" y2="146" stroke="#3b2618" stroke-width="2.4"/>
+<path d="M127,89.8 L160.5,83.9 L172.1,52" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M127,89.8 L160.5,83.9 L172.1,52" fill="none" stroke="#3f5a2c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="172.1" cy="52" r="5" fill="#d2a47c" stroke="#3b2618" stroke-width="1.8"/>
+<circle cx="132.3" cy="68.5" r="14.5" fill="#d2a47c" stroke="#3b2618" stroke-width="2.4"/>
+<path d="M118.3,71.5 A14.5,14.5 0 0,1 142.3,57.5 Q132.3,63.5 128.3,72.5Z" fill="#3b2618"/>
+<path d="M119.3,66.5 C117.5,67.8 109.8,70.5 108.3,74.5 C106.8,78.5 110,87.8 110.3,90.5" stroke-width="5" stroke="#3b2618" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="139.3" cy="67.5" r="1.6" fill="#3b2618"/>
+<path d="M52,262 Q110,150 182,228" stroke="#7d7a74" stroke-width="1.6" stroke-dasharray="5 6" fill="none"/>
+</svg>
