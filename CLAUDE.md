@@ -25,6 +25,9 @@ Ten games adapted from the author's creative-writing vault. Read `README.md` for
   `docs/COLLECTION.md` section 7); no style is used twice. Pictographs are drawn by code in
   `games/<slug>/pictographs/make.py`, never by hand: change the code and run
   `python tools/pictographs/build.py`; `--check` must pass before a commit.
+- **Game art drawn by code** lives in `games/<slug>/art/`: the code in `art/src/`, one SVG per asset
+  under `art/<group>/`, with `art.json` and a gallery `README.md`. Never edit an SVG by hand: change the
+  code and run `python tools/art/build.py <slug>`; `--check` must pass before a commit.
 - **3D assets start from `games/<slug>/assets/assets.json`**: one location image per 3D place (the
   Blender reference) and one isolated object image per Meshy prop. Keep the prompt, model and job
   id with each image, never a link. No characters or creatures are Meshy props. After changing
