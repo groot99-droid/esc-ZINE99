@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="peg-wes-t peg-wes-d">
+<title id="peg-wes-t">Wes's button peg</title>
+<desc id="peg-wes-d">Wes's peg for the counting game: a flat button on a felt mark, with a cloth name tag.</desc>
+<defs><filter id="peg-wes-felt1" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dx="1.8" dy="3"/><feComponentTransfer result="s"><feFuncA type="linear" slope="0"/></feComponentTransfer><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="28" result="n"/><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 -1.2 0.45"/><feComposite in2="SourceAlpha" operator="in" result="l"/><feColorMatrix in="n" values="0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0 0.03  0 0 0 1.3 -0.74"/><feComposite in2="SourceAlpha" operator="in" result="d"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/><feMergeNode in="l"/><feMergeNode in="d"/></feMerge></filter><filter id="peg-wes-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter><filter id="peg-wes-felt3" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dx="1.8" dy="3"/><feComponentTransfer result="s"><feFuncA type="linear" slope="0.3"/></feComponentTransfer><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="28" result="n"/><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 -1.2 0.45"/><feComposite in2="SourceAlpha" operator="in" result="l"/><feColorMatrix in="n" values="0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0 0.03  0 0 0 1.3 -0.74"/><feComposite in2="SourceAlpha" operator="in" result="d"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/><feMergeNode in="l"/><feMergeNode in="d"/></feMerge></filter><radialGradient id="peg-wes-vig4" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#1a0f08" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="200" height="200" fill="#85472a"/>
+<rect x="0" y="0" width="200" height="200" fill="#85472a" filter="url(#peg-wes-felt1)"/>
+<path d="M24,96a76,76 0 1,0 152,0a76,76 0 1,0 -152,0z" fill="none" stroke="#1a0f08" stroke-width="2" stroke-dasharray="6 5" stroke-linecap="round" opacity="0.3" transform="translate(0.8 1.4)"/>
+<path d="M24,96a76,76 0 1,0 152,0a76,76 0 1,0 -152,0z" fill="none" stroke="#F2EBDD" stroke-width="2" stroke-dasharray="6 5" stroke-linecap="round"/>
+<ellipse cx="108" cy="108" rx="54" ry="51.8" fill="#1a0f08" opacity="0.3" filter="url(#peg-wes-blur2)"/>
+<circle cx="100" cy="96" r="54" fill="#8FA9B5" stroke="#5e6b70" stroke-width="4.9"/>
+<circle cx="100" cy="96" r="37.8" fill="none" stroke="#74878f" stroke-width="3.8"/>
+<path d="M66.5,79.8a37.8,37.8 0 0,1 37.8,-22.7" fill="none" stroke="#cad1cd" stroke-width="4.9" stroke-linecap="round" opacity="0.8"/>
+<circle cx="85.4" cy="96" r="5.9" fill="#404445"/>
+<circle cx="114.6" cy="96" r="5.9" fill="#404445"/>
+<path d="M85.4,96L114.6,96" stroke="#5B3A24" stroke-width="8.6" stroke-linecap="round"/>
+<g transform="rotate(-6 148 173)">
+<path d="M111,158h74a3,3 0 0,1 3,3v24a3,3 0 0,1 -3,3h-74a3,3 0 0,1 -3,-3v-24a3,3 0 0,1 3,-3z" fill="#F2EBDD" filter="url(#peg-wes-felt3)"/>
+<path d="M114,162h68a2,2 0 0,1 2,2v18a2,2 0 0,1 -2,2h-68a2,2 0 0,1 -2,-2v-18a2,2 0 0,1 2,-2z" fill="none" stroke="#988f83" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="148" y="179.5" font-size="18" font-family="serif" fill="#2b1e15" text-anchor="middle" font-style="italic">Wes</text>
+</g>
+<rect x="0" y="0" width="200" height="200" fill="url(#peg-wes-vig4)"/>
+</svg>

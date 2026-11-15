@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="ui-corner-t ui-corner-d">
+<title id="ui-corner-t">Corner ornament</title>
+<desc id="ui-corner-d">A corner ornament: two rows of stitching turning a corner on linen, a four-hole button sewn on at the turn and a small cross-stitch flower inside it.</desc>
+<defs><filter id="ui-corner-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="326"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><pattern id="ui-corner-wv2" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0,1.5H6M0,4.5H6" stroke="#F2EBDD" stroke-width="1.4" opacity="0.28"/><path d="M1.5,0V6M4.5,0V6" stroke="#2b1e15" stroke-width="1.2" opacity="0.16"/></pattern><pattern id="ui-corner-x3" x="106" y="106" width="11" height="11" patternUnits="userSpaceOnUse"><path d="M2.2,2.2L8.8,8.8M8.8,2.2L2.2,8.8" stroke="#A8512E" stroke-width="3.5" stroke-linecap="round" opacity="1"/></pattern><pattern id="ui-corner-x4" x="106" y="106" width="11" height="11" patternUnits="userSpaceOnUse"><path d="M2.2,2.2L8.8,8.8M8.8,2.2L2.2,8.8" stroke="#E0902A" stroke-width="3.5" stroke-linecap="round" opacity="1"/></pattern><pattern id="ui-corner-x5" x="106" y="106" width="11" height="11" patternUnits="userSpaceOnUse"><path d="M2.2,2.2L8.8,8.8M8.8,2.2L2.2,8.8" stroke="#6F7A4B" stroke-width="3.5" stroke-linecap="round" opacity="1"/></pattern><radialGradient id="ui-corner-vig6" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#1a0f08" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="240" height="240" fill="#d8c8a6"/>
+<rect x="0" y="0" width="240" height="240" filter="url(#ui-corner-grain1)"/>
+<rect x="0" y="0" width="240" height="240" fill="url(#ui-corner-wv2)"/>
+<path d="M30,230V52a22,22 0 0,1 22,-22H230" fill="none" stroke="#1a0f08" stroke-width="4" stroke-dasharray="14 8" stroke-linecap="round" opacity="0.3" transform="translate(0.8 1.4)"/>
+<path d="M30,230V52a22,22 0 0,1 22,-22H230" fill="none" stroke="#5B3A24" stroke-width="4" stroke-dasharray="14 8" stroke-linecap="round"/>
+<path d="M52,230V74a22,22 0 0,1 22,-22H230" fill="none" stroke="#A8512E" stroke-width="12" stroke-dasharray="2 9"/>
+<path d="M52,230V74a22,22 0 0,1 22,-22H230" fill="none" stroke="#A8512E" stroke-width="1.6" stroke-dasharray="9.5 1.5" opacity="0.9"/>
+<circle cx="54.6" cy="56" r="22" fill="#1a0f08" opacity="0.3"/>
+<circle cx="52" cy="52" r="22" fill="#6F7A4B" stroke="#4b4e30" stroke-width="2"/>
+<circle cx="52" cy="52" r="15.4" fill="none" stroke="#5b623c" stroke-width="1.5"/>
+<path d="M38.4,45.4a15.4,15.4 0 0,1 15.4,-9.2" fill="none" stroke="#bebea3" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+<circle cx="46.1" cy="46.1" r="2.4" fill="#34331f"/>
+<circle cx="57.9" cy="46.1" r="2.4" fill="#34331f"/>
+<circle cx="46.1" cy="57.9" r="2.4" fill="#34331f"/>
+<circle cx="57.9" cy="57.9" r="2.4" fill="#34331f"/>
+<path d="M46.1,46.1L57.9,57.9M57.9,46.1L46.1,57.9" stroke="#F2EBDD" stroke-width="2.9" stroke-linecap="round"/>
+<path d="M128,106h11v11h-11zM117,117h33v11h-33zM106,128h22v11h-22zM139,128h22v11h-22zM117,139h33v11h-33zM128,150h11v11h-11z" fill="url(#ui-corner-x3)"/>
+<path d="M128,128h11v11h-11z" fill="url(#ui-corner-x4)"/>
+<path d="M128,161h11v11h-11zM128,172h22v11h-22zM117,183h22v11h-22zM128,194h11v11h-11z" fill="url(#ui-corner-x5)"/>
+<rect x="0" y="0" width="240" height="240" fill="url(#ui-corner-vig6)"/>
+</svg>

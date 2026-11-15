@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120" role="img" aria-labelledby="ui-rule-knots-t ui-rule-knots-d">
+<title id="ui-rule-knots-t">Thread rule: knotted thread</title>
+<desc id="ui-rule-knots-d">A divider: a length of bone thread on night felt tied with small knots, the last of them amber.</desc>
+<defs><filter id="ui-rule-knots-felt1" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dx="1.8" dy="3"/><feComponentTransfer result="s"><feFuncA type="linear" slope="0"/></feComponentTransfer><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="65" result="n"/><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 -1.2 0.45"/><feComposite in2="SourceAlpha" operator="in" result="l"/><feColorMatrix in="n" values="0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0 0.03  0 0 0 1.3 -0.74"/><feComposite in2="SourceAlpha" operator="in" result="d"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/><feMergeNode in="l"/><feMergeNode in="d"/></feMerge></filter><radialGradient id="ui-rule-knots-vig2" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#1a0f08" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="600" height="120" fill="#2E3A47" filter="url(#ui-rule-knots-felt1)"/>
+<path d="M20,54 C29.3,56 57.3,66 76,66 C94.7,66 113.3,54 132,54 C150.7,54 169.3,66 188,66 C206.7,66 225.3,54 244,54 C262.7,54 281.3,66 300,66 C318.7,66 337.3,54 356,54 C374.7,54 393.3,66 412,66 C430.7,66 449.3,54 468,54 C486.7,54 505.3,66 524,66 C542.7,66 570.7,56 580,54" fill="none" stroke="#141a22" stroke-width="4" opacity="0.5" transform="translate(1.5 3)"/>
+<path d="M20,54 C29.3,56 57.3,66 76,66 C94.7,66 113.3,54 132,54 C150.7,54 169.3,66 188,66 C206.7,66 225.3,54 244,54 C262.7,54 281.3,66 300,66 C318.7,66 337.3,54 356,54 C374.7,54 393.3,66 412,66 C430.7,66 449.3,54 468,54 C486.7,54 505.3,66 524,66 C542.7,66 570.7,56 580,54" fill="none" stroke="#F2EBDD" stroke-width="3" stroke-linecap="round"/>
+<circle cx="76" cy="66" r="7" fill="#A8512E" stroke="#6d361f" stroke-width="1.2"/>
+<path d="M71,63q5,6 10,0M72,69q4,-5 8,0" fill="none" stroke="#cd9e86" stroke-width="1.2"/>
+<path d="M76,72q-3,9 2,16" fill="none" stroke="#A8512E" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="132" cy="54" r="7" fill="#8FA9B5" stroke="#5e6b70" stroke-width="1.2"/>
+<path d="M127,51q5,6 10,0M128,57q4,-5 8,0" fill="none" stroke="#c0cac9" stroke-width="1.2"/>
+<path d="M132,60q3,9 -2,16" fill="none" stroke="#8FA9B5" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="188" cy="66" r="7" fill="#6F7A4B" stroke="#4b4e30" stroke-width="1.2"/>
+<path d="M183,63q5,6 10,0M184,69q4,-5 8,0" fill="none" stroke="#b0b294" stroke-width="1.2"/>
+<path d="M188,72q-3,9 2,16" fill="none" stroke="#6F7A4B" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="244" cy="54" r="7" fill="#D9CBB0" stroke="#8b7f6d" stroke-width="1.2"/>
+<path d="M239,51q5,6 10,0M240,57q4,-5 8,0" fill="none" stroke="#e6dbc6" stroke-width="1.2"/>
+<path d="M244,60q3,9 -2,16" fill="none" stroke="#D9CBB0" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="300" cy="66" r="7" fill="#A8512E" stroke="#6d361f" stroke-width="1.2"/>
+<path d="M295,63q5,6 10,0M296,69q4,-5 8,0" fill="none" stroke="#cd9e86" stroke-width="1.2"/>
+<path d="M300,72q-3,9 2,16" fill="none" stroke="#A8512E" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="356" cy="54" r="7" fill="#8FA9B5" stroke="#5e6b70" stroke-width="1.2"/>
+<path d="M351,51q5,6 10,0M352,57q4,-5 8,0" fill="none" stroke="#c0cac9" stroke-width="1.2"/>
+<path d="M356,60q3,9 -2,16" fill="none" stroke="#8FA9B5" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="412" cy="66" r="7" fill="#6F7A4B" stroke="#4b4e30" stroke-width="1.2"/>
+<path d="M407,63q5,6 10,0M408,69q4,-5 8,0" fill="none" stroke="#b0b294" stroke-width="1.2"/>
+<path d="M412,72q-3,9 2,16" fill="none" stroke="#6F7A4B" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="468" cy="54" r="7" fill="#D9CBB0" stroke="#8b7f6d" stroke-width="1.2"/>
+<path d="M463,51q5,6 10,0M464,57q4,-5 8,0" fill="none" stroke="#e6dbc6" stroke-width="1.2"/>
+<path d="M468,60q3,9 -2,16" fill="none" stroke="#D9CBB0" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="524" cy="66" r="7" fill="#E0902A" stroke="#8f5c1c" stroke-width="1.2"/>
+<path d="M519,63q5,6 10,0M520,69q4,-5 8,0" fill="none" stroke="#e9be84" stroke-width="1.2"/>
+<path d="M524,72q-3,9 2,16" fill="none" stroke="#E0902A" stroke-width="1.6" stroke-linecap="round"/>
+<rect x="0" y="0" width="600" height="120" fill="url(#ui-rule-knots-vig2)"/>
+</svg>

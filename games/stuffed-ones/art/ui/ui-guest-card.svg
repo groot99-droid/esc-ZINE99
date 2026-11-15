@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="ui-guest-card-t ui-guest-card-d">
+<title id="ui-guest-card-t">Guest card frame</title>
+<desc id="ui-guest-card-d">A guest card frame for the dollhouse HUD: a felt mount with an oval window for the portrait, a name tag, and a dread scale up one side with the flee line stitched across it at seventy.</desc>
+<defs><filter id="ui-guest-card-felt1" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dx="1.8" dy="3"/><feComponentTransfer result="s"><feFuncA type="linear" slope="0"/></feComponentTransfer><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="18" result="n"/><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 -1.2 0.45"/><feComposite in2="SourceAlpha" operator="in" result="l"/><feColorMatrix in="n" values="0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0 0.03  0 0 0 1.3 -0.74"/><feComposite in2="SourceAlpha" operator="in" result="d"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/><feMergeNode in="l"/><feMergeNode in="d"/></feMerge></filter><radialGradient id="ui-guest-card-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#8FA9B5" stop-opacity="0.3"/><stop offset="100%" stop-color="#2E3A47" stop-opacity="0"/></radialGradient><filter id="ui-guest-card-felt3" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dx="1.8" dy="3"/><feComponentTransfer result="s"><feFuncA type="linear" slope="0.3"/></feComponentTransfer><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="18" result="n"/><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 -1.2 0.45"/><feComposite in2="SourceAlpha" operator="in" result="l"/><feColorMatrix in="n" values="0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0 0.03  0 0 0 1.3 -0.74"/><feComposite in2="SourceAlpha" operator="in" result="d"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/><feMergeNode in="l"/><feMergeNode in="d"/></feMerge></filter><radialGradient id="ui-guest-card-vig4" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#1a0f08" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" fill="#c6c2b1" filter="url(#ui-guest-card-felt1)"/>
+<path d="M26,12h248a14,14 0 0,1 14,14v368a14,14 0 0,1 -14,14h-248a14,14 0 0,1 -14,-14v-368a14,14 0 0,1 14,-14z" fill="none" stroke="#5B3A24" stroke-width="11" stroke-dasharray="2 8"/>
+<path d="M26,12h248a14,14 0 0,1 14,14v368a14,14 0 0,1 -14,14h-248a14,14 0 0,1 -14,-14v-368a14,14 0 0,1 14,-14z" fill="none" stroke="#5B3A24" stroke-width="1.6" stroke-dasharray="8.5 1.5" opacity="0.9"/>
+<ellipse cx="132" cy="180" rx="92" ry="116" fill="#2E3A47"/>
+<ellipse cx="132" cy="180" rx="92" ry="116" fill="url(#ui-guest-card-rg2)"/>
+<path d="M32,180a100,124 0 1,0 200,0a100,124 0 1,0 -200,0z" fill="none" stroke="#1a0f08" stroke-width="3" stroke-dasharray="9 5" stroke-linecap="round" opacity="0.3" transform="translate(0.8 1.4)"/>
+<path d="M32,180a100,124 0 1,0 200,0a100,124 0 1,0 -200,0z" fill="none" stroke="#F2EBDD" stroke-width="3" stroke-dasharray="9 5" stroke-linecap="round"/>
+<rect x="248" y="330" width="22" height="10" rx="2" fill="#d9cbb0" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="316" width="22" height="10" rx="2" fill="#d2c5ac" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="302" width="22" height="10" rx="2" fill="#cbbfa7" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="288" width="22" height="10" rx="2" fill="#c4b9a3" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="274" width="22" height="10" rx="2" fill="#bcb39e" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="260" width="22" height="10" rx="2" fill="#b5ad9a" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="246" width="22" height="10" rx="2" fill="#aea796" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="232" width="22" height="10" rx="2" fill="#a7a191" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="218" width="22" height="10" rx="2" fill="#a09b8d" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="204" width="22" height="10" rx="2" fill="none" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="190" width="22" height="10" rx="2" fill="none" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="176" width="22" height="10" rx="2" fill="none" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="162" width="22" height="10" rx="2" fill="none" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="148" width="22" height="10" rx="2" fill="none" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="134" width="22" height="10" rx="2" fill="none" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="120" width="22" height="10" rx="2" fill="none" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="106" width="22" height="10" rx="2" fill="none" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="92" width="22" height="10" rx="2" fill="none" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="78" width="22" height="10" rx="2" fill="none" stroke="#81664e" stroke-width="1"/>
+<rect x="248" y="64" width="22" height="10" rx="2" fill="none" stroke="#81664e" stroke-width="1"/>
+<path d="M236,153h46" fill="none" stroke="#1a0f08" stroke-width="3" stroke-dasharray="6 3" stroke-linecap="round" opacity="0.3" transform="translate(0.8 1.4)"/>
+<path d="M236,153h46" fill="none" stroke="#B3261E" stroke-width="3" stroke-dasharray="6 3" stroke-linecap="round"/>
+<text x="259" y="56" font-size="15" font-family="serif" fill="#B3261E" text-anchor="middle" font-weight="bold">70</text>
+<g transform="rotate(-2 132 367)">
+<path d="M47,346h170a3,3 0 0,1 3,3v36a3,3 0 0,1 -3,3h-170a3,3 0 0,1 -3,-3v-36a3,3 0 0,1 3,-3z" fill="#F2EBDD" filter="url(#ui-guest-card-felt3)"/>
+<path d="M50,350h164a2,2 0 0,1 2,2v30a2,2 0 0,1 -2,2h-164a2,2 0 0,1 -2,-2v-30a2,2 0 0,1 2,-2z" fill="none" stroke="#988f83" stroke-width="1.2" stroke-dasharray="4 3"/>
+</g>
+<rect x="0" y="0" width="300" height="420" fill="url(#ui-guest-card-vig4)"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="ui-needle-cursor-t ui-needle-cursor-d">
+<title id="ui-needle-cursor-t">The needle cursor</title>
+<desc id="ui-needle-cursor-d">The cursor: a steel needle entering linen at a pricked hole, a tail of bone thread curling behind it.</desc>
+<defs><filter id="ui-needle-cursor-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="77"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><pattern id="ui-needle-cursor-wv2" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0,1.5H6M0,4.5H6" stroke="#F2EBDD" stroke-width="1.4" opacity="0.28"/><path d="M1.5,0V6M4.5,0V6" stroke="#2b1e15" stroke-width="1.2" opacity="0.16"/></pattern><linearGradient id="ui-needle-cursor-lg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f4f1ea"/><stop offset="50%" stop-color="#9aa0a4"/><stop offset="100%" stop-color="#5b6166"/></linearGradient><radialGradient id="ui-needle-cursor-vig4" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#1a0f08" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="200" height="200" fill="#d8c8a6"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#ui-needle-cursor-grain1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#ui-needle-cursor-wv2)"/>
+<path d="M150,34 C154.3,40 179.3,59.7 176,70 C172.7,80.3 132.7,84.3 130,96 C127.3,107.7 161.7,126.7 160,140 C158.3,153.3 126.7,170 120,176" fill="none" stroke="#1a0f08" stroke-width="3.4" opacity="0.3" transform="translate(2 3)"/>
+<path d="M150,34 C154.3,40 179.3,59.7 176,70 C172.7,80.3 132.7,84.3 130,96 C127.3,107.7 161.7,126.7 160,140 C158.3,153.3 126.7,170 120,176" fill="none" stroke="#F2EBDD" stroke-width="3" stroke-linecap="round"/>
+<circle cx="40" cy="158" r="4" fill="#2b1e15"/>
+<path d="M24,158a16,16 0 1,0 32,0a16,16 0 1,0 -32,0z" fill="none" stroke="#A8512E" stroke-width="1.6" stroke-dasharray="3 4" stroke-linecap="round"/>
+<g transform="translate(152 30) rotate(131.2)">
+<path d="M0,-4.0h136.1L170.1,0L136.1,4.0H0a4.0,4.0 0 0,1 0,-8z" fill="#1a0f08" opacity="0.3" transform="translate(3 5)"/>
+<path d="M0,-4.0h136.1L170.1,0L136.1,4.0H0a4.0,4.0 0 0,1 0,-8z" fill="url(#ui-needle-cursor-lg3)" stroke="#4a4f54" stroke-width="0.8"/>
+<ellipse cx="12.8" cy="0" rx="9.6" ry="1.8" fill="#2b1e15"/>
+</g>
+<rect x="0" y="0" width="200" height="200" fill="url(#ui-needle-cursor-vig4)"/>
+</svg>

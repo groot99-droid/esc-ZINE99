@@ -1,0 +1,1718 @@
+{
+ "game": "stuffed-ones",
+ "count": 214,
+ "assets": [
+  {
+   "id": "letter-a",
+   "group": "title",
+   "title": "Cross-stitch letter A",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-b",
+   "group": "title",
+   "title": "Cross-stitch letter B",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-c",
+   "group": "title",
+   "title": "Cross-stitch letter C",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-d",
+   "group": "title",
+   "title": "Cross-stitch letter D",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-e",
+   "group": "title",
+   "title": "Cross-stitch letter E",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-f",
+   "group": "title",
+   "title": "Cross-stitch letter F",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-g",
+   "group": "title",
+   "title": "Cross-stitch letter G",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-h",
+   "group": "title",
+   "title": "Cross-stitch letter H",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-i",
+   "group": "title",
+   "title": "Cross-stitch letter I",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-j",
+   "group": "title",
+   "title": "Cross-stitch letter J",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-k",
+   "group": "title",
+   "title": "Cross-stitch letter K",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-l",
+   "group": "title",
+   "title": "Cross-stitch letter L",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-m",
+   "group": "title",
+   "title": "Cross-stitch letter M",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-n",
+   "group": "title",
+   "title": "Cross-stitch letter N",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-o",
+   "group": "title",
+   "title": "Cross-stitch letter O",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-p",
+   "group": "title",
+   "title": "Cross-stitch letter P",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-q",
+   "group": "title",
+   "title": "Cross-stitch letter Q",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-r",
+   "group": "title",
+   "title": "Cross-stitch letter R",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-s",
+   "group": "title",
+   "title": "Cross-stitch letter S",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-t",
+   "group": "title",
+   "title": "Cross-stitch letter T",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-u",
+   "group": "title",
+   "title": "Cross-stitch letter U",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-v",
+   "group": "title",
+   "title": "Cross-stitch letter V",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-w",
+   "group": "title",
+   "title": "Cross-stitch letter W",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-x",
+   "group": "title",
+   "title": "Cross-stitch letter X",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-y",
+   "group": "title",
+   "title": "Cross-stitch letter Y",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "letter-z",
+   "group": "title",
+   "title": "Cross-stitch letter Z",
+   "w": 240,
+   "h": 300,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "wordmark",
+   "group": "title",
+   "title": "The Stuffed Ones: wordmark",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lettering and cross-stitch alphabet"
+  },
+  {
+   "id": "medallion-ana",
+   "group": "figures",
+   "title": "Ana: a cat",
+   "w": 360,
+   "h": 360,
+   "row": "Pack and guest toys, felt medallions"
+  },
+  {
+   "id": "medallion-dani",
+   "group": "figures",
+   "title": "Dani: a large bear",
+   "w": 360,
+   "h": 360,
+   "row": "Pack and guest toys, felt medallions"
+  },
+  {
+   "id": "medallion-jamie",
+   "group": "figures",
+   "title": "Jamie: a bear",
+   "w": 360,
+   "h": 360,
+   "row": "Pack and guest toys, felt medallions"
+  },
+  {
+   "id": "medallion-kit",
+   "group": "figures",
+   "title": "Kit: a cat",
+   "w": 360,
+   "h": 360,
+   "row": "Pack and guest toys, felt medallions"
+  },
+  {
+   "id": "medallion-lila",
+   "group": "figures",
+   "title": "Lila: a rabbit",
+   "w": 360,
+   "h": 360,
+   "row": "Pack and guest toys, felt medallions"
+  },
+  {
+   "id": "medallion-marcus",
+   "group": "figures",
+   "title": "Marcus: a dog",
+   "w": 360,
+   "h": 360,
+   "row": "Pack and guest toys, felt medallions"
+  },
+  {
+   "id": "medallion-narrator",
+   "group": "figures",
+   "title": "The narrator: a cat",
+   "w": 360,
+   "h": 360,
+   "row": "Pack and guest toys, felt medallions"
+  },
+  {
+   "id": "medallion-noor",
+   "group": "figures",
+   "title": "Noor: a rabbit",
+   "w": 360,
+   "h": 360,
+   "row": "Pack and guest toys, felt medallions"
+  },
+  {
+   "id": "medallion-rosa",
+   "group": "figures",
+   "title": "Rosa: a bear",
+   "w": 360,
+   "h": 360,
+   "row": "Pack and guest toys, felt medallions"
+  },
+  {
+   "id": "medallion-sol",
+   "group": "figures",
+   "title": "Sol: a rabbit",
+   "w": 360,
+   "h": 360,
+   "row": "Pack and guest toys, felt medallions"
+  },
+  {
+   "id": "medallion-wes",
+   "group": "figures",
+   "title": "Wes: a bear",
+   "w": 360,
+   "h": 360,
+   "row": "Pack and guest toys, felt medallions"
+  },
+  {
+   "id": "dollhouse-cupboard",
+   "group": "backdrops",
+   "title": "Dollhouse plate: the linen cupboard",
+   "w": 1600,
+   "h": 900,
+   "row": "Dollhouse plates: night, day, cupboard"
+  },
+  {
+   "id": "dollhouse-day",
+   "group": "backdrops",
+   "title": "Dollhouse plate: the cabin by day",
+   "w": 1600,
+   "h": 900,
+   "row": "Dollhouse plates: night, day, cupboard"
+  },
+  {
+   "id": "dollhouse-night",
+   "group": "backdrops",
+   "title": "Dollhouse plate: the cabin by night",
+   "w": 1600,
+   "h": 900,
+   "row": "Dollhouse plates: night, day, cupboard"
+  },
+  {
+   "id": "ground-altar",
+   "group": "backdrops",
+   "title": "Fabric ground: the edge of the circle",
+   "w": 1600,
+   "h": 900,
+   "row": "Stitch charts and fabric grounds"
+  },
+  {
+   "id": "ground-own-felt",
+   "group": "backdrops",
+   "title": "Fabric ground: your own seam",
+   "w": 1600,
+   "h": 900,
+   "row": "Stitch charts and fabric grounds"
+  },
+  {
+   "id": "ground-torn-seam",
+   "group": "backdrops",
+   "title": "Fabric ground: a friend's torn seam",
+   "w": 1600,
+   "h": 900,
+   "row": "Stitch charts and fabric grounds"
+  },
+  {
+   "id": "ground-webbing",
+   "group": "backdrops",
+   "title": "Fabric ground: Marcus's strap",
+   "w": 1600,
+   "h": 900,
+   "row": "Stitch charts and fabric grounds"
+  },
+  {
+   "id": "tapestry-centre",
+   "group": "backdrops",
+   "title": "Labyrinth tapestry: the centre",
+   "w": 1200,
+   "h": 1220,
+   "row": "Labyrinth tapestry rings and wallpaper repeats"
+  },
+  {
+   "id": "tapestry-inner",
+   "group": "backdrops",
+   "title": "Labyrinth tapestry: the inner ring",
+   "w": 1200,
+   "h": 1220,
+   "row": "Labyrinth tapestry rings and wallpaper repeats"
+  },
+  {
+   "id": "tapestry-outer",
+   "group": "backdrops",
+   "title": "Labyrinth tapestry: the outer ring",
+   "w": 1200,
+   "h": 1220,
+   "row": "Labyrinth tapestry rings and wallpaper repeats"
+  },
+  {
+   "id": "wallpaper-1-sprig",
+   "group": "backdrops",
+   "title": "Wallpaper repeat: sprigs",
+   "w": 480,
+   "h": 480,
+   "row": "Labyrinth tapestry rings and wallpaper repeats"
+  },
+  {
+   "id": "wallpaper-2-trellis",
+   "group": "backdrops",
+   "title": "Wallpaper repeat: rosebud trellis",
+   "w": 480,
+   "h": 480,
+   "row": "Labyrinth tapestry rings and wallpaper repeats"
+  },
+  {
+   "id": "wallpaper-3-birds",
+   "group": "backdrops",
+   "title": "Wallpaper repeat: small birds",
+   "w": 480,
+   "h": 480,
+   "row": "Labyrinth tapestry rings and wallpaper repeats"
+  },
+  {
+   "id": "wallpaper-4-stripe",
+   "group": "backdrops",
+   "title": "Wallpaper repeat: stripe and bud",
+   "w": 480,
+   "h": 480,
+   "row": "Labyrinth tapestry rings and wallpaper repeats"
+  },
+  {
+   "id": "wallpaper-5-acorns",
+   "group": "backdrops",
+   "title": "Wallpaper repeat: acorns",
+   "w": 480,
+   "h": 480,
+   "row": "Labyrinth tapestry rings and wallpaper repeats"
+  },
+  {
+   "id": "wallpaper-6-selvage",
+   "group": "backdrops",
+   "title": "Wallpaper repeat: the paper with the glyphs",
+   "w": 480,
+   "h": 480,
+   "row": "Labyrinth tapestry rings and wallpaper repeats"
+  },
+  {
+   "id": "glyph-01-they",
+   "group": "pieces",
+   "title": "Book glyph: they",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-02-we",
+   "group": "pieces",
+   "title": "Book glyph: we",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-03-it",
+   "group": "pieces",
+   "title": "Book glyph: it",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-04-one",
+   "group": "pieces",
+   "title": "Book glyph: one",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-05-you",
+   "group": "pieces",
+   "title": "Book glyph: you",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-06-guest",
+   "group": "pieces",
+   "title": "Book glyph: guest",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-07-keeper",
+   "group": "pieces",
+   "title": "Book glyph: keeper",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-08-toy",
+   "group": "pieces",
+   "title": "Book glyph: toy",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-09-needle",
+   "group": "pieces",
+   "title": "Book glyph: needle",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-10-thread",
+   "group": "pieces",
+   "title": "Book glyph: thread",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-11-knot",
+   "group": "pieces",
+   "title": "Book glyph: knot",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-12-mouth",
+   "group": "pieces",
+   "title": "Book glyph: mouth",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-13-hand",
+   "group": "pieces",
+   "title": "Book glyph: hand",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-14-house",
+   "group": "pieces",
+   "title": "Book glyph: house",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-15-door",
+   "group": "pieces",
+   "title": "Book glyph: door",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-16-book",
+   "group": "pieces",
+   "title": "Book glyph: book",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-17-fabric",
+   "group": "pieces",
+   "title": "Book glyph: fabric",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-18-seam",
+   "group": "pieces",
+   "title": "Book glyph: seam",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-19-filling",
+   "group": "pieces",
+   "title": "Book glyph: filling",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-20-skin",
+   "group": "pieces",
+   "title": "Book glyph: skin",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-21-altar",
+   "group": "pieces",
+   "title": "Book glyph: altar",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-22-circle",
+   "group": "pieces",
+   "title": "Book glyph: circle",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-23-summon",
+   "group": "pieces",
+   "title": "Book glyph: summon",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-24-bind",
+   "group": "pieces",
+   "title": "Book glyph: bind",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-25-feed",
+   "group": "pieces",
+   "title": "Book glyph: feed",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-26-keep",
+   "group": "pieces",
+   "title": "Book glyph: keep",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-27-begin",
+   "group": "pieces",
+   "title": "Book glyph: begin",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-28-read",
+   "group": "pieces",
+   "title": "Book glyph: read",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-29-hold",
+   "group": "pieces",
+   "title": "Book glyph: hold",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-30-make",
+   "group": "pieces",
+   "title": "Book glyph: make",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-01-seven",
+   "group": "pieces",
+   "title": "Back of a strip: seven",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-02-play",
+   "group": "pieces",
+   "title": "Back of a strip: play",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-03-stay",
+   "group": "pieces",
+   "title": "Back of a strip: stay",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-04-warm",
+   "group": "pieces",
+   "title": "Back of a strip: warm",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-05-cold",
+   "group": "pieces",
+   "title": "Back of a strip: cold",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-06-company",
+   "group": "pieces",
+   "title": "Back of a strip: company",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-07-still",
+   "group": "pieces",
+   "title": "Back of a strip: still",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-08-go",
+   "group": "pieces",
+   "title": "Back of a strip: go",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-09-unpick",
+   "group": "pieces",
+   "title": "Back of a strip: unpick",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-10-cut",
+   "group": "pieces",
+   "title": "Back of a strip: cut",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-11-i",
+   "group": "pieces",
+   "title": "Back of a strip: i",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-12-mother",
+   "group": "pieces",
+   "title": "Back of a strip: mother",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-13-hunger",
+   "group": "pieces",
+   "title": "Back of a strip: hunger",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "glyph-back-14-home",
+   "group": "pieces",
+   "title": "Back of a strip: home",
+   "w": 220,
+   "h": 320,
+   "row": "Book glyphs, fronts and backs"
+  },
+  {
+   "id": "patch-borrowed-dani-gerald",
+   "group": "pieces",
+   "title": "Borrowed patch: Dani moved Gerald.",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-borrowed-dani-weird",
+   "group": "pieces",
+   "title": "Borrowed patch: Don't make it weird.",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-borrowed-jamie-hiker",
+   "group": "pieces",
+   "title": "Borrowed patch: The rare hiker",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-borrowed-jamie-nine",
+   "group": "pieces",
+   "title": "Borrowed patch: Since we were nine",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-borrowed-lila-flat",
+   "group": "pieces",
+   "title": "Borrowed patch: Two years, one flat",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-borrowed-lila-laugh",
+   "group": "pieces",
+   "title": "Borrowed patch: Don't laugh.",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-borrowed-marcus-compass",
+   "group": "pieces",
+   "title": "Borrowed patch: The compass",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-borrowed-marcus-held",
+   "group": "pieces",
+   "title": "Borrowed patch: Your stitches held",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-chili",
+   "group": "pieces",
+   "title": "Memory patch: The chili",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-dani-glad",
+   "group": "pieces",
+   "title": "Memory patch: Dani is glad she came",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-dani-names",
+   "group": "pieces",
+   "title": "Memory patch: Dani names the toys",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-drive-up",
+   "group": "pieces",
+   "title": "Memory patch: The drive up",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-guest-ana",
+   "group": "pieces",
+   "title": "Guest patch: so she isn't alone",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-guest-kit",
+   "group": "pieces",
+   "title": "Guest patch: Kit, awake until three",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-guest-noor",
+   "group": "pieces",
+   "title": "Guest patch: Noor at the mirror",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-guest-rosa",
+   "group": "pieces",
+   "title": "Guest patch: Rosa's sketchbook",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-guest-sol",
+   "group": "pieces",
+   "title": "Guest patch: No birds.",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-guest-wes",
+   "group": "pieces",
+   "title": "Guest patch: Wes sleeps with a lamp on",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-jamie-narration",
+   "group": "pieces",
+   "title": "Memory patch: Jamie's narration",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-jamie-postcard",
+   "group": "pieces",
+   "title": "Memory patch: Jamie's bad postcard",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-jamie-question",
+   "group": "pieces",
+   "title": "Memory patch: Jamie's question",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-lila-door",
+   "group": "pieces",
+   "title": "Memory patch: Why Lila locks her door",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-lila-hum",
+   "group": "pieces",
+   "title": "Memory patch: Lila's hum",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-lila-mushroom",
+   "group": "pieces",
+   "title": "Memory patch: Lila's mushroom photo",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-marcus-map",
+   "group": "pieces",
+   "title": "Memory patch: Marcus's paper map",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-marcus-strap",
+   "group": "pieces",
+   "title": "Memory patch: Marcus's strap",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-my-hands",
+   "group": "pieces",
+   "title": "Memory patch: My hands",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-my-name",
+   "group": "pieces",
+   "title": "Memory patch: My name",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-the-door",
+   "group": "pieces",
+   "title": "Memory patch: The door",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-trips-before",
+   "group": "pieces",
+   "title": "Memory patch: The trips before",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "patch-way-out",
+   "group": "pieces",
+   "title": "Memory patch: There's always a way out",
+   "w": 240,
+   "h": 240,
+   "row": "Memory, borrowed and guest patches"
+  },
+  {
+   "id": "peg-ana",
+   "group": "pieces",
+   "title": "Ana's button peg",
+   "w": 200,
+   "h": 200,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "peg-kit",
+   "group": "pieces",
+   "title": "Kit's button peg",
+   "w": 200,
+   "h": 200,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "peg-noor",
+   "group": "pieces",
+   "title": "Noor's button peg",
+   "w": 200,
+   "h": 200,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "peg-rosa",
+   "group": "pieces",
+   "title": "Rosa's button peg",
+   "w": 200,
+   "h": 200,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "peg-ruth",
+   "group": "pieces",
+   "title": "The peg that is nobody's",
+   "w": 200,
+   "h": 200,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "peg-sol",
+   "group": "pieces",
+   "title": "Sol's button peg",
+   "w": 200,
+   "h": 200,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "peg-wes",
+   "group": "pieces",
+   "title": "Wes's button peg",
+   "w": 200,
+   "h": 200,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-01-door",
+   "group": "pieces",
+   "title": "Parlour space 1: the Door",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-02-leaf",
+   "group": "pieces",
+   "title": "Parlour space 2: the Leaf",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-03-cup",
+   "group": "pieces",
+   "title": "Parlour space 3: the Cup",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-04-key",
+   "group": "pieces",
+   "title": "Parlour space 4: the Key",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-05-bird",
+   "group": "pieces",
+   "title": "Parlour space 5: the Bird",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-06-boot",
+   "group": "pieces",
+   "title": "Parlour space 6: the Boot",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-07-knot",
+   "group": "pieces",
+   "title": "Parlour space 7: the Knot",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-08-star",
+   "group": "pieces",
+   "title": "Parlour space 8: the Star",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-09-chair",
+   "group": "pieces",
+   "title": "Parlour space 9: the Chair",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-10-two",
+   "group": "pieces",
+   "title": "Parlour space 10: Two",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-11-fish",
+   "group": "pieces",
+   "title": "Parlour space 11: the Fish",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-12-bell",
+   "group": "pieces",
+   "title": "Parlour space 12: the Bell",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-13-window",
+   "group": "pieces",
+   "title": "Parlour space 13: the Window",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-14-acorn",
+   "group": "pieces",
+   "title": "Parlour space 14: the Acorn",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-15-thimble",
+   "group": "pieces",
+   "title": "Parlour space 15: the Thimble",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-16-lamp",
+   "group": "pieces",
+   "title": "Parlour space 16: the Lamp",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-17-feather",
+   "group": "pieces",
+   "title": "Parlour space 17: the Feather",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-18-spool",
+   "group": "pieces",
+   "title": "Parlour space 18: the Spool",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-19-stair",
+   "group": "pieces",
+   "title": "Parlour space 19: the Stair",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-20-tree",
+   "group": "pieces",
+   "title": "Parlour space 20: the Tree",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-21-hat",
+   "group": "pieces",
+   "title": "Parlour space 21: the Hat",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-22-button",
+   "group": "pieces",
+   "title": "Parlour space 22: the Button",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-23-moon",
+   "group": "pieces",
+   "title": "Parlour space 23: the Moon",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-24-scissors",
+   "group": "pieces",
+   "title": "Parlour space 24: the Scissors",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-25-bed",
+   "group": "pieces",
+   "title": "Parlour space 25: the Bed",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-26-mushroom",
+   "group": "pieces",
+   "title": "Parlour space 26: the Mushroom",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-27-candle",
+   "group": "pieces",
+   "title": "Parlour space 27: the Candle",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-28-book",
+   "group": "pieces",
+   "title": "Parlour space 28: the Book",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-29-needle",
+   "group": "pieces",
+   "title": "Parlour space 29: the Needle",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "symbol-30-hearth",
+   "group": "pieces",
+   "title": "Parlour space 30: the Hearth",
+   "w": 180,
+   "h": 180,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "chapter-01",
+   "group": "chapters",
+   "title": "Chapter 1: The Cabin That Felt Too Quiet",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-02",
+   "group": "chapters",
+   "title": "Chapter 2: The First Night",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-03",
+   "group": "chapters",
+   "title": "Chapter 3: The Smell, the Warmth, the Dog",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-04",
+   "group": "chapters",
+   "title": "Chapter 4: Fuller",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-05",
+   "group": "chapters",
+   "title": "Chapter 5: The Cabin Turns",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-06",
+   "group": "chapters",
+   "title": "Chapter 6: Waking Warm",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-07",
+   "group": "chapters",
+   "title": "Chapter 7: The New Guests Arrive",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-08",
+   "group": "chapters",
+   "title": "Chapter 8: Giving In",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-09",
+   "group": "chapters",
+   "title": "Chapter 9: We Don't Move at First",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-10",
+   "group": "chapters",
+   "title": "Chapter 10: The First Game: Sound",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-11",
+   "group": "chapters",
+   "title": "Chapter 11: The Second Game: Movement",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-12",
+   "group": "chapters",
+   "title": "Chapter 12: Scent, then Proximity",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-13",
+   "group": "chapters",
+   "title": "Chapter 13: The Third Morning",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-14",
+   "group": "chapters",
+   "title": "Chapter 14: The Final Game: The Chase",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "chapter-15",
+   "group": "chapters",
+   "title": "Chapter 15: The Cycle Continues",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "movement-1",
+   "group": "chapters",
+   "title": "First Movement: The Cabin",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "movement-2",
+   "group": "chapters",
+   "title": "Second Movement: The Hunger",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "movement-3",
+   "group": "chapters",
+   "title": "Third Movement: The Hunt",
+   "w": 1600,
+   "h": 900,
+   "row": "Movement and chapter cards"
+  },
+  {
+   "id": "ui-corner",
+   "group": "ui",
+   "title": "Corner ornament",
+   "w": 240,
+   "h": 240,
+   "row": "UI ornaments: thread rules, hold-still ring, pulse, needle cursor"
+  },
+  {
+   "id": "ui-guest-card",
+   "group": "ui",
+   "title": "Guest card frame",
+   "w": 300,
+   "h": 420,
+   "row": "UI ornaments: thread rules, hold-still ring, pulse, needle cursor"
+  },
+  {
+   "id": "ui-hold-still-ring",
+   "group": "ui",
+   "title": "The hold-still ring",
+   "w": 320,
+   "h": 320,
+   "row": "UI ornaments: thread rules, hold-still ring, pulse, needle cursor"
+  },
+  {
+   "id": "ui-join-hold",
+   "group": "ui",
+   "title": "Join or Hold",
+   "w": 900,
+   "h": 200,
+   "row": "UI ornaments: thread rules, hold-still ring, pulse, needle cursor"
+  },
+  {
+   "id": "ui-needle-cursor",
+   "group": "ui",
+   "title": "The needle cursor",
+   "w": 200,
+   "h": 200,
+   "row": "UI ornaments: thread rules, hold-still ring, pulse, needle cursor"
+  },
+  {
+   "id": "ui-night-clock",
+   "group": "ui",
+   "title": "The night clock",
+   "w": 1200,
+   "h": 140,
+   "row": "UI ornaments: thread rules, hold-still ring, pulse, needle cursor"
+  },
+  {
+   "id": "ui-pulse-ring",
+   "group": "ui",
+   "title": "The pulse",
+   "w": 320,
+   "h": 320,
+   "row": "UI ornaments: thread rules, hold-still ring, pulse, needle cursor"
+  },
+  {
+   "id": "ui-rule-band",
+   "group": "ui",
+   "title": "Thread rule: sampler band",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: thread rules, hold-still ring, pulse, needle cursor"
+  },
+  {
+   "id": "ui-rule-knots",
+   "group": "ui",
+   "title": "Thread rule: knotted thread",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: thread rules, hold-still ring, pulse, needle cursor"
+  },
+  {
+   "id": "ui-rule-running",
+   "group": "ui",
+   "title": "Thread rule: running stitch",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: thread rules, hold-still ring, pulse, needle cursor"
+  },
+  {
+   "id": "ui-steady-mark",
+   "group": "ui",
+   "title": "The Steady mark",
+   "w": 480,
+   "h": 160,
+   "row": "UI ornaments: thread rules, hold-still ring, pulse, needle cursor"
+  },
+  {
+   "id": "ui-warmth-meter",
+   "group": "ui",
+   "title": "The hunger meter",
+   "w": 900,
+   "h": 140,
+   "row": "UI ornaments: thread rules, hold-still ring, pulse, needle cursor"
+  },
+  {
+   "id": "chart-1-running",
+   "group": "documents",
+   "title": "Stitch chart 1: running stitch",
+   "w": 900,
+   "h": 1100,
+   "row": "Stitch charts and fabric grounds"
+  },
+  {
+   "id": "chart-2-ladder",
+   "group": "documents",
+   "title": "Stitch chart 2: ladder stitch",
+   "w": 900,
+   "h": 1100,
+   "row": "Stitch charts and fabric grounds"
+  },
+  {
+   "id": "chart-3-whip",
+   "group": "documents",
+   "title": "Stitch chart 3: whip stitch",
+   "w": 900,
+   "h": 1100,
+   "row": "Stitch charts and fabric grounds"
+  },
+  {
+   "id": "chart-4-backstitch",
+   "group": "documents",
+   "title": "Stitch chart 4: backstitch",
+   "w": 900,
+   "h": 1100,
+   "row": "Stitch charts and fabric grounds"
+  },
+  {
+   "id": "chart-5-jamies-seam",
+   "group": "documents",
+   "title": "Stitch chart 5: Jamie's Seam",
+   "w": 900,
+   "h": 1100,
+   "row": "Stitch charts and fabric grounds"
+  },
+  {
+   "id": "parlour-scoresheet",
+   "group": "documents",
+   "title": "The scoresheet",
+   "w": 800,
+   "h": 1100,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "pattern-dani",
+   "group": "documents",
+   "title": "Body pattern: Dani, a large bear",
+   "w": 800,
+   "h": 1100,
+   "row": "Body patterns and Ruth's patterns"
+  },
+  {
+   "id": "pattern-jamie",
+   "group": "documents",
+   "title": "Body pattern: Jamie, a bear",
+   "w": 800,
+   "h": 1100,
+   "row": "Body patterns and Ruth's patterns"
+  },
+  {
+   "id": "pattern-lila",
+   "group": "documents",
+   "title": "Body pattern: Lila, a rabbit",
+   "w": 800,
+   "h": 1100,
+   "row": "Body patterns and Ruth's patterns"
+  },
+  {
+   "id": "pattern-marcus",
+   "group": "documents",
+   "title": "Body pattern: Marcus, a dog",
+   "w": 800,
+   "h": 1100,
+   "row": "Body patterns and Ruth's patterns"
+  },
+  {
+   "id": "pattern-narrator",
+   "group": "documents",
+   "title": "Body pattern: the narrator, a cat",
+   "w": 800,
+   "h": 1100,
+   "row": "Body patterns and Ruth's patterns"
+  },
+  {
+   "id": "ruth-pattern-1-seven",
+   "group": "documents",
+   "title": "Ruth's pattern: the first, at seven",
+   "w": 800,
+   "h": 1100,
+   "row": "Body patterns and Ruth's patterns"
+  },
+  {
+   "id": "ruth-pattern-2-larger",
+   "group": "documents",
+   "title": "Ruth's pattern: cut larger",
+   "w": 800,
+   "h": 1100,
+   "row": "Body patterns and Ruth's patterns"
+  },
+  {
+   "id": "ruth-pattern-3-and-larger",
+   "group": "documents",
+   "title": "Ruth's pattern: and larger",
+   "w": 800,
+   "h": 1100,
+   "row": "Body patterns and Ruth's patterns"
+  },
+  {
+   "id": "ruth-pattern-4-recut",
+   "group": "documents",
+   "title": "Ruth's pattern: the newest, pinned to be cut",
+   "w": 800,
+   "h": 1100,
+   "row": "Body patterns and Ruth's patterns"
+  },
+  {
+   "id": "parlour-board",
+   "group": "maps",
+   "title": "The counting-game cloth",
+   "w": 1400,
+   "h": 1400,
+   "row": "Parlour board, symbols, button pegs, scoresheet"
+  },
+  {
+   "id": "thread-guest",
+   "group": "thread",
+   "title": "A knock answered through a wall",
+   "w": 480,
+   "h": 480,
+   "row": "Thread"
+  },
+  {
+   "id": "thread-own",
+   "group": "thread",
+   "title": "A small felt cat with button eyes",
+   "w": 480,
+   "h": 480,
+   "row": "Thread"
+  }
+ ]
+}

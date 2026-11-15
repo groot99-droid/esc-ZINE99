@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="patch-borrowed-lila-laugh-t patch-borrowed-lila-laugh-d">
+<title id="patch-borrowed-lila-laugh-t">Borrowed patch: Don't laugh.</title>
+<desc id="patch-borrowed-lila-laugh-d">A square patch that is not yours: "Don't laugh.", a friend's memory come down the pulse on an amber thread, stitched in that friend's own thread colour.</desc>
+<defs><filter id="patch-borrowed-lila-laugh-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="2" seed="486"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="patch-borrowed-lila-laugh-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#D9CBB0" stop-opacity="0.3"/><stop offset="60%" stop-color="#D9CBB0" stop-opacity="0.1"/><stop offset="100%" stop-color="#D9CBB0" stop-opacity="0"/></radialGradient><filter id="patch-borrowed-lila-laugh-felt3" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dx="1.8" dy="3"/><feComponentTransfer result="s"><feFuncA type="linear" slope="0.3"/></feComponentTransfer><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="38" result="n"/><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 -1.2 0.45"/><feComposite in2="SourceAlpha" operator="in" result="l"/><feColorMatrix in="n" values="0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0 0.03  0 0 0 1.3 -0.74"/><feComposite in2="SourceAlpha" operator="in" result="d"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/><feMergeNode in="l"/><feMergeNode in="d"/></feMerge></filter><pattern id="patch-borrowed-lila-laugh-sat4" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(195)"><path d="M0,0H3" stroke="#2b1e15" stroke-width="1" opacity="0.3"/></pattern><radialGradient id="patch-borrowed-lila-laugh-vig5" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#1a0f08" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="240" height="240" fill="#4d3220"/>
+<rect x="0" y="0" width="240" height="240" filter="url(#patch-borrowed-lila-laugh-grain1)"/>
+<circle cx="110" cy="50" r="230" fill="url(#patch-borrowed-lila-laugh-rg2)"/>
+<path d="M160.9,-6 C165.9,-0.7 204.4,20 190.9,26 C177.4,32 91.8,24.7 80,30 C68.2,35.3 113.3,53.3 120,58" fill="none" stroke="#1a0f08" stroke-width="2.4" stroke-dasharray="9 4" stroke-linecap="round" opacity="0.3" transform="translate(0.8 1.4)"/>
+<path d="M160.9,-6 C165.9,-0.7 204.4,20 190.9,26 C177.4,32 91.8,24.7 80,30 C68.2,35.3 113.3,53.3 120,58" fill="none" stroke="#E0902A" stroke-width="2.4" stroke-dasharray="9 4" stroke-linecap="round"/>
+<g transform="rotate(6.7 120 104)">
+<path d="M42.1,27.5 L51.9,27.7 L58.2,27.3 L69,24.8 L80.8,24.6 L89.5,27.4 L96,24.9 L105.8,26 L114.6,24.5 L125.2,27.1 L132.2,24.9 L140.9,25.8 L150.1,28 L161.9,24 L170.8,24 L180.4,27.7 L190.4,24.1 L196.8,27.1 L197.4,33.2 L199.9,44.2 L195.9,55.2 L198.7,63.1 L198.2,73.8 L198.4,80.1 L197.6,92.4 L199.2,98.5 L198.6,110.7 L199.4,115.9 L196.8,128.2 L196.4,135.5 L197.8,147.2 L196.7,156.6 L196,165.5 L198.9,173.7 L197.7,183.7 L188.6,181 L179.9,183.1 L170.7,181.4 L162.4,183.4 L152,181.2 L141.3,180.5 L134,181.2 L123.3,180.4 L116.3,181.3 L105.3,182.8 L98.7,181.4 L89.2,183.6 L78.9,182 L69.3,182.4 L61.1,181.9 L52.5,181 L42.3,183.9 L40.5,172.7 L43.6,161.9 L41.4,155.8 L39.9,144.9 L41.1,137.1 L43.5,128.2 L40.3,118.8 L40.6,108.5 L43.9,100.7 L43.1,88.1 L40.4,80.5 L41.9,69.8 L41.2,62.5 L43.7,53.7 L43,42.2 L40.5,35.4 L42.7,26Z" fill="#dfd3bb" filter="url(#patch-borrowed-lila-laugh-felt3)"/>
+<path d="M54,34h132a4,4 0 0,1 4,4v132a4,4 0 0,1 -4,4h-132a4,4 0 0,1 -4,-4v-132a4,4 0 0,1 4,-4z" fill="none" stroke="#8FA9B5" stroke-width="11" stroke-dasharray="2.6 5"/>
+<path d="M54,34h132a4,4 0 0,1 4,4v132a4,4 0 0,1 -4,4h-132a4,4 0 0,1 -4,-4v-132a4,4 0 0,1 4,-4z" fill="none" stroke="#8FA9B5" stroke-width="2.1" stroke-dasharray="6.1 1.5" opacity="0.9"/>
+<path d="M65,46h110a3,3 0 0,1 3,3v110a3,3 0 0,1 -3,3h-110a3,3 0 0,1 -3,-3v-110a3,3 0 0,1 3,-3z" fill="none" stroke="#8FA9B5" stroke-width="1.6" stroke-dasharray="2 5" stroke-linecap="round"/>
+<g transform="translate(72 54) scale(1)">
+<path d="M8,52h84v18h-84zM8,24h9v66h-9zM83,40h9v50h-9z" fill="#8FA9B5"/>
+<path d="M8,52h84v18h-84zM8,24h9v66h-9zM83,40h9v50h-9z" fill="url(#patch-borrowed-lila-laugh-sat4)"/>
+<path d="M25,39h14a5,5 0 0,1 5,5v3a5,5 0 0,1 -5,5h-14a5,5 0 0,1 -5,-5v-3a5,5 0 0,1 5,-5z" fill="#c0cac9"/>
+<path d="M25,39h14a5,5 0 0,1 5,5v3a5,5 0 0,1 -5,5h-14a5,5 0 0,1 -5,-5v-3a5,5 0 0,1 5,-5z" fill="url(#patch-borrowed-lila-laugh-sat4)"/>
+<path d="M48,54v14M62,54v14M74,54v14" fill="none" stroke="#535655" stroke-width="3.4" stroke-dasharray="5 4" stroke-linecap="round"/>
+</g>
+</g>
+<g transform="rotate(-0.4642518719901907 120 204)">
+<path d="M52.6,189L187.4,189L179.4,204L187.4,219L52.6,219L60.6,204z" fill="#8FA9B5" filter="url(#patch-borrowed-lila-laugh-felt3)"/>
+<path d="M66.6,194H173.4M66.6,214H173.4" fill="none" stroke="#677175" stroke-width="1.1" stroke-dasharray="4 3" stroke-linecap="round"/>
+<text x="120" y="209.5" font-size="16" font-family="serif" fill="#2b1e15" text-anchor="middle" font-style="italic">Don't laugh.</text>
+</g>
+<rect x="0" y="0" width="240" height="240" fill="url(#patch-borrowed-lila-laugh-vig5)"/>
+</svg>
