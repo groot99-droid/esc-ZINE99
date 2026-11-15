@@ -7,7 +7,21 @@
 // Refinements: Lead a face (added): twice a page, spend a flip to lead a face-down card you have seen
 // so it cannot blank. Halfway through the flips the plague quickens and the blank interval drops to 5.
 // A blank falls on a card the player has already seen, when there is one (retuned: a never-seen card
-// that blanked was pure luck). After two losses in a row: 50 flips and a blank every 7 (api.store).
+// that blanked was pure luck). After two losses in a row: more flips and a slower candle (api.store).
+//
+// Phase 1 (accepted 2026-11-15), "Names become ground": the page now opens on a choice of two pages.
+//   I  The ward (s_conc_ward: 12 cards, 6 pairs of a patient's face and their name; blank interval 8;
+//      30 flips). Every name kept is a lit lantern, with that name on it, on the bone bridge and in the
+//      Expanse (forgetting runs III and IV); lose three and those stretches are dark, which is this
+//      page's loss in the prototype. The six patients' names and lines are added for the game.
+//   II The bestiary (s_conc_bestiary), as before. The Star Moth takes the Stormrider's place, so that
+//      every picture is one of the game's glass cards.
+// Art (games/wrymwretch/art): the stained-glass card back, the ten creature panes and the six ward
+// patients as the card faces; chapter cards 2 and 8 above the how-to; the Record behind the result.
+// The name cards, the clear-glass blank and the old picture faces are drawn here (the last only when
+// a pane is missing).
+
+import { png, opening, openingSet, recordPage } from "./_art.js";
 
 const LEAD = "#15130f", GLASS = "#f3eee2", CLEAR = "#dfe8ea", NIGHT = "#1d1c26", GOLD = "#e2b33c";
 const REALM = { west: ["#4f6b2e", "#d79a2b"], north: ["#7fa6cf", "#c7ccd3"], south: ["#c88a2e", "#e8571c"], east: ["#1f5f8b", "#8fb7c9"], below: ["#5b3a7a", "#2e2440"], above: ["#d4a72c", "#fbf6e4"] };
@@ -16,8 +30,8 @@ const CREATURES = [
     art: `<path d="M50,82 L41,56 L43,42 L50,37 L57,42 L59,56 Z"/><path d="M45,42 L34,26 L26,30 M34,26 L31,13 M55,42 L66,26 L74,30 M66,26 L69,13" fill="none" stroke-width="5"/>` },
   { id: "whisperfox", name: "Whisperfox", realm: "west", line: "It carried the rangers' calls from tree to tree, so no one in the groves was ever lost.",
     art: `<path d="M28,24 L42,46 L58,46 L72,24 L68,58 L50,80 L32,58 Z"/><circle cx="42" cy="56" r="3" fill="${LEAD}"/><circle cx="58" cy="56" r="3" fill="${LEAD}"/>` },
-  { id: "stormrider", name: "Stormrider", realm: "north", line: "It ran messages between the sky-cities on the high winds, faster than any sail.",
-    art: `<path d="M10,50 Q30,26 50,46 Q70,26 90,50 Q70,42 50,62 Q30,42 10,50 Z"/><path d="M50,46 L46,74 L50,68 L54,74 Z"/>` },
+  { id: "star_moth", name: "Star Moth", realm: "north", line: "Galechanters followed its flight at night to find the stars they were singing to.",
+    art: `<path d="M50,40 Q20,12 12,40 Q14,60 50,54 Q86,60 88,40 Q80,12 50,40 Z"/><path d="M50,54 Q30,62 28,80 Q44,78 50,62 Q56,78 72,80 Q70,62 50,54 Z"/><path d="M50,36 V70 M46,34 L40,22 M54,34 L60,22" fill="none" stroke-width="4"/>` },
   { id: "cloud_serpent", name: "Cloud Serpent", realm: "north", line: "It held the drifting sky-cities together in storms, coiled round their moorings.",
     art: `<path d="M16,74 C30,36 48,84 62,50 S82,24 88,34" fill="none" stroke-width="11" stroke="${LEAD}"/><path d="M16,74 C30,36 48,84 62,50 S82,24 88,34" fill="none" stroke-width="6" stroke="${GLASS}"/><circle cx="26" cy="30" r="9"/><circle cx="38" cy="26" r="11"/>` },
   { id: "crystal_crawler", name: "Crystal Crawler", realm: "south", line: "They polished the gem veins of the deep cities and made them shine.",
@@ -33,7 +47,22 @@ const CREATURES = [
   { id: "starborn_owl", name: "Starborn Owl", realm: "above", line: "It kept watch over the Priory's sleepers and woke them when the stars moved.",
     art: `<path d="M30,30 L40,40 L60,40 L70,30 L72,60 Q72,82 50,84 Q28,82 28,60 Z"/><circle cx="41" cy="52" r="8" fill="${GOLD}"/><circle cx="59" cy="52" r="8" fill="${GOLD}"/><circle cx="41" cy="52" r="3" fill="${LEAD}"/><circle cx="59" cy="52" r="3" fill="${LEAD}"/>` },
 ];
-const WIN = 8, LEADS = 2;
+// The ward's six (names and lines added for the game). A bust in the old hand, for when a pane is missing.
+const BUST = `<path d="M50,20 Q70,20 70,44 Q70,62 50,66 Q30,62 30,44 Q30,20 50,20 Z"/><path d="M30,40 L14,30 L28,50 Z M70,40 L86,30 L72,50 Z"/><path d="M22,92 Q24,70 50,68 Q76,70 78,92 Z"/>`;
+const PATIENTS = [
+  { id: "patient_1", n: 1, name: "Maerith", realm: "north", line: "She hung the bells on the east moorings, and knows each one by its note.", art: BUST },
+  { id: "patient_2", n: 2, name: "Illeth", realm: "north", line: "She mends sky-sails. Her own hangs half stitched by the door.", art: BUST },
+  { id: "patient_3", n: 3, name: "Corvane", realm: "north", line: "He ran the rope bridges as a boy and never once looked down.", art: BUST },
+  { id: "patient_4", n: 4, name: "Dovra", realm: "north", line: "She keeps the ward's lamp oil, and counts it aloud every night.", art: BUST },
+  { id: "patient_5", n: 5, name: "Hesk", realm: "north", line: "He sang the low part in the Gale choir, the part nobody hears until it stops.", art: BUST },
+  { id: "patient_6", n: 6, name: "Ansel", realm: "north", line: "He is the healer's brother. The healer has begun to call him the sixth bed.", art: BUST },
+];
+const PAGES = {
+  ward: { key: "ward", label: "I · The ward", what: "six names", chapter: "chapter-02", realm: "north", items: PATIENTS, cols: 4, budget: [30, 36], interval: [8, 9], win: 4, leads: 2,
+    artId: (c) => "glass-patient-" + c.n, noun: "name", goal: "Keep the fevered elves' names before their faces go." },
+  bestiary: { key: "bestiary", label: "II · The bestiary", what: "ten creatures", chapter: "chapter-08", realm: "wrymreach", items: CREATURES, cols: 5, budget: [44, 50], interval: [6, 7], win: 8, leads: 2,
+    artId: (c) => "glass-" + c.id.replace(/_/g, "-"), noun: "creature", goal: "Keep eight of the ten creatures before their faces go." },
+};
 
 // a jewel-glass ground: wedges in the realm's pair of colours, leaded
 function ground(realm, seed) {
@@ -76,7 +105,19 @@ const CSS = `
 .wrymwretch-concentration-card.fading{animation:wrymwretch-concentration-fade 1.2s}
 @keyframes wrymwretch-concentration-fade{0%{filter:brightness(2.2) saturate(0)}100%{filter:none}}
 .wrymwretch-concentration-card .lead{position:absolute;right:6%;top:4%;width:22%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 35%,#9aa3ad,#3d434b);border:2px solid ${LEAD};box-shadow:0 1px 3px #000}
-.wrymwretch-concentration-card svg{width:100%;height:100%;display:block}
+.wrymwretch-concentration-card svg,.wrymwretch-concentration-card img{width:100%;height:100%;display:block}
+.wrymwretch-concentration-card img{object-fit:fill;border-radius:3px}
+.wrymwretch-concentration-grid.c4{grid-template-columns:repeat(4,minmax(0,1fr));max-width:min(620px,calc((100vh - 165px) / 3 * .714 * 4 + 60px))}
+.wrymwretch-concentration-lamps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 6px}
+.wrymwretch-concentration-lamp{display:flex;flex-direction:column;align-items:center;gap:2px;font:700 11.5px 'Cinzel',Georgia,serif;letter-spacing:.06em;color:#6f6a78;text-align:center}
+.wrymwretch-concentration-lamp i{width:16px;height:22px;border:2px solid #6f6a78;border-radius:3px 3px 2px 2px;position:relative;display:block}
+.wrymwretch-concentration-lamp i::before{content:"";position:absolute;left:3px;right:3px;top:-6px;height:4px;border:2px solid #6f6a78;border-bottom:0;border-radius:4px 4px 0 0}
+.wrymwretch-concentration-lamp.lit{color:#f6e3b4}
+.wrymwretch-concentration-lamp.lit i{border-color:${GOLD};background:radial-gradient(circle at 50% 60%,#fff6c8,#f2a93a 70%);box-shadow:0 0 14px rgba(242,169,58,.75)}
+.wrymwretch-concentration-lamp.lit i::before{border-color:${GOLD}}
+.wrymwretch-concentration-lamp.dark{color:#57525f;text-decoration:line-through}
+.wrymwretch-concentration-pages{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.wrymwretch-concentration-pages button small{display:block;font:italic 13px 'Cormorant Garamond',Georgia,serif;letter-spacing:0;text-transform:none}
 .wrymwretch-concentration-card:focus-visible{box-shadow:0 0 0 3px ${GOLD}}
 .wrymwretch-concentration-card.up{transform:translateY(-3px);box-shadow:0 0 0 3px ${GOLD},0 6px 14px rgba(0,0,0,.6)}
 .wrymwretch-concentration-card.locked{cursor:default;box-shadow:0 0 0 2px #c7a24a,0 0 14px rgba(226,179,60,.35)}
@@ -85,6 +126,7 @@ const CSS = `
 .wrymwretch-concentration-kept{display:flex;flex-wrap:wrap;gap:6px;min-height:40px}
 .wrymwretch-concentration-kept span{width:34px;height:34px;border-radius:50%;overflow:hidden;border:2px solid ${GOLD};display:block}
 .wrymwretch-concentration-kept svg{width:100%;height:auto;transform:translateY(-22%)}
+.wrymwretch-concentration-kept img{width:100%;height:140%;object-fit:cover;object-position:50% 30%}
 .wrymwretch-concentration-line{font-style:italic;font-size:16px;line-height:1.3;color:#e9e1cc;min-height:3.9em}
 .wrymwretch-concentration-stats{display:flex;flex-direction:column;gap:10px}
 .wrymwretch-concentration-beat{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);width:min(520px,calc(100% - 28px));box-sizing:border-box;z-index:2;background:linear-gradient(135deg,#2a4fa8 0 25%,#1f3f8f 25% 50%,#2a4fa8 50% 75%,#1f3f8f 75%) 0 0/22px 22px;border:5px solid ${LEAD};outline:2px solid #6b5a3a;padding:4px;opacity:0;transition:opacity .5s;pointer-events:none}
@@ -113,7 +155,7 @@ const CSS = `
 .wrymwretch-concentration-cardx .wrymwretch-concentration-btn{display:block;margin:0 auto}
 .wrymwretch-concentration-btn:hover:not(:disabled){filter:brightness(1.15)}
 .wrymwretch-concentration-btn.on{background:#c7ccd3;color:${NIGHT}}
-@media (max-width:560px){.wrymwretch-concentration-page{flex-direction:column-reverse;flex-wrap:nowrap;align-items:stretch;padding:10px;gap:10px}.wrymwretch-concentration-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:6px;flex:none;max-width:none}.wrymwretch-concentration-side{flex:none;min-width:0;padding:10px 12px;gap:6px}.wrymwretch-concentration-stats{flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 14px}.wrymwretch-concentration-big{font-size:24px}.wrymwretch-concentration-candle{height:auto;align-items:center}.wrymwretch-concentration-wax{max-height:30px;margin-top:16px}.wrymwretch-concentration-kept{min-height:0}.wrymwretch-concentration-kept span{width:26px;height:26px}.wrymwretch-concentration-line{min-height:2.6em;font-size:15px}}
+@media (max-width:560px){.wrymwretch-concentration-page{flex-direction:column-reverse;flex-wrap:nowrap;align-items:stretch;padding:10px;gap:10px}.wrymwretch-concentration-grid,.wrymwretch-concentration-grid.c4{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:6px;flex:none;max-width:none}.wrymwretch-concentration-lamps{grid-template-columns:repeat(6,1fr)}.wrymwretch-concentration-lamp{font-size:10px}.wrymwretch-concentration-side{flex:none;min-width:0;padding:10px 12px;gap:6px}.wrymwretch-concentration-stats{flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 14px}.wrymwretch-concentration-big{font-size:24px}.wrymwretch-concentration-candle{height:auto;align-items:center}.wrymwretch-concentration-wax{max-height:30px;margin-top:16px}.wrymwretch-concentration-kept{min-height:0}.wrymwretch-concentration-kept span{width:26px;height:26px}.wrymwretch-concentration-line{min-height:2.6em;font-size:15px}}
 `;
 
 export default {
@@ -121,50 +163,53 @@ export default {
     const R = api.rng();
     const losses = api.store.get("losses", 0) || 0;
     const gentle = losses >= 2;
-    const BUDGET = gentle ? 50 : 44;
-    let INTERVAL = gentle ? 7 : 6;
     const wrap = document.createElement("div");
     wrap.className = "wrymwretch-concentration-root";
     wrap.innerHTML = `<style>${CSS}</style><div class="wrymwretch-concentration-page">
-        <div class="wrymwretch-concentration-grid" role="grid" aria-label="Creature cards"></div>
+        <div class="wrymwretch-concentration-grid" role="grid" aria-label="Cards"></div>
         <div class="wrymwretch-concentration-side">
-          <div class="wrymwretch-concentration-h">PAIRS KEPT <span data-n>0</span> / 10 · song at ${WIN}</div>
+          <div class="wrymwretch-concentration-h" data-head>PAIRS KEPT</div>
           <div class="wrymwretch-concentration-kept"></div>
-          <div class="wrymwretch-concentration-line" aria-live="polite">The healers' creature cards. Their faces are going.</div>
+          <div class="wrymwretch-concentration-lamps" hidden aria-label="Lanterns for the bone bridge and the Expanse"></div>
+          <div class="wrymwretch-concentration-line" aria-live="polite"></div>
           <div class="wrymwretch-concentration-stats">
           <div><div class="wrymwretch-concentration-h">FLIPS LEFT</div>
-          <div class="wrymwretch-concentration-big"><span data-flips>${BUDGET}</span> <small>/ ${BUDGET}</small></div></div>
+          <div class="wrymwretch-concentration-big"><span data-flips></span> <small data-of></small></div></div>
           <div><div class="wrymwretch-concentration-h">NEXT BLANK</div>
           <div class="wrymwretch-concentration-candle"><div class="wrymwretch-concentration-wax"></div><i data-next></i></div></div>
           </div>
           <div data-ask></div>
-          <button type="button" class="wrymwretch-concentration-btn ghost" data-lead hidden>Lead a face (${LEADS})</button>
+          <button type="button" class="wrymwretch-concentration-btn ghost" data-lead hidden>Lead a face</button>
           <button type="button" class="wrymwretch-concentration-btn ghost" data-hint>Aetherius: show a blank</button>
         </div></div>
       <div class="wrymwretch-concentration-beat" aria-live="polite"><div></div></div>
       <div class="wrymwretch-concentration-intro"><div class="wrymwretch-concentration-cardx"><div class="pane">
         <h2>Concentration</h2>
-        <p class="goal">Keep ${WIN} of the ten creatures before their faces go.</p>
+        <p class="goal">Keep the faces before they go to clear glass.</p>
         <dl>
-          <dt>Turn two</dt><dd>match a creature's picture to its name; a match is kept</dd>
-          <dt>The candle</dt><dd>every ${INTERVAL} flips a face fades to clear glass</dd>
-          <dt>Flips</dt><dd>${BUDGET} in all; when they run out, the page closes</dd>
+          <dt>Turn two</dt><dd>match a face or a picture to its name; a match is kept</dd>
+          <dt>The candle</dt><dd>every few flips one face fades to clear glass for good</dd>
+          <dt>Flips</dt><dd>each page has its count; when they run out, the page closes</dd>
         </dl>
-        <p class="more">${gentle ? `A kinder page this time: ${BUDGET} flips, a blank every ${INTERVAL}. ` : ""}A blank can still be kept. You will see how when the first face goes.</p>
-        <button type="button" class="wrymwretch-concentration-btn" data-start>Begin</button></div></div></div>`;
+        <p class="more">${gentle ? "Kinder pages this time: more flips, a slower candle. " : ""}A blank can still be kept. You will see how when the first face goes. Choose a page:</p>
+        <div class="wrymwretch-concentration-pages">
+          ${Object.values(PAGES).map((p) => `<button type="button" class="wrymwretch-concentration-btn" data-start data-page="${p.key}">${p.label}<small>${p.what}</small></button>`).join("")}
+        </div></div></div></div>`;
     root.appendChild(wrap);
-    const gridEl = wrap.querySelector(".wrymwretch-concentration-grid"), keptEl = wrap.querySelector(".wrymwretch-concentration-kept");
-    const lineEl = wrap.querySelector(".wrymwretch-concentration-line"), flipsEl = wrap.querySelector("[data-flips]"), nEl = wrap.querySelector("[data-n]");
+    const gridEl = wrap.querySelector(".wrymwretch-concentration-grid"), keptEl = wrap.querySelector(".wrymwretch-concentration-kept"), lampsEl = wrap.querySelector(".wrymwretch-concentration-lamps");
+    const lineEl = wrap.querySelector(".wrymwretch-concentration-line"), flipsEl = wrap.querySelector("[data-flips]"), headEl = wrap.querySelector("[data-head]");
     const wax = wrap.querySelector(".wrymwretch-concentration-wax"), nextEl = wrap.querySelector("[data-next]"), askEl = wrap.querySelector("[data-ask]");
     const hintBtn = wrap.querySelector("[data-hint]"), leadBtn = wrap.querySelector("[data-lead]");
     const beatEl = wrap.querySelector(".wrymwretch-concentration-beat");
     const timers = new Set();
     const later = (fn, ms) => { const t = setTimeout(() => { timers.delete(t); fn(); }, ms); timers.add(t); };
+    let dead = false;
 
-    const cards = [];
-    CREATURES.forEach((c, p) => { cards.push({ p, kind: "pic" }, { p, kind: "name" }); });
-    for (let i = cards.length - 1; i > 0; i--) { const j = Math.floor(R() * (i + 1)); [cards[i], cards[j]] = [cards[j], cards[i]]; }
-    const st = { up: [], flips: BUDGET, since: 0, kept: 0, busy: false, over: false, hint: true, peek: -1, started: false, leads: LEADS, leading: false, claims: 0, quick: false, beats: new Set(), blanks: 0 };
+    let P = PAGES.ward, ITEMS = P.items, WIN = P.win, BUDGET = 30, INTERVAL = 8, LEADS = 2;
+    let cards = [];
+    const st = { up: [], flips: 0, since: 0, kept: 0, busy: false, over: false, hint: true, peek: -1, started: false, leads: 0, leading: false, claims: 0, quick: false, beats: new Set(), blanks: 0 };
+    const pics = {};   // art id -> data URL, as each pane is drawn
+    let backUrl = "";
     let beatTimer = null;
     function beat(html, ms = 6500) {
       beatEl.firstChild.innerHTML = html; beatEl.classList.add("on");
@@ -173,25 +218,51 @@ export default {
     }
     const once = (id, html, ms) => { if (st.beats.has(id)) return; st.beats.add(id); beat(html, ms); };
     const fx = (el, cls) => { if (api.reducedMotion) return; el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); };
-    cards.forEach((c, i) => {
-      c.blank = false; c.locked = false; c.i = i; c.seen = false; c.leaded = false;
-      c.faceSvg = face(CREATURES[c.p], c.kind, i * 0.37);
-      c.el = document.createElement("button");
-      c.el.type = "button"; c.el.className = "wrymwretch-concentration-card";
-      c.el.addEventListener("click", () => pick(c));
-      gridEl.appendChild(c.el);
-    });
     const BACK = back();
-    function paint() {
+    const picOf = (c) => (c.kind === "pic" && pics[c.artId] ? `<img alt="" draggable="false" src="${pics[c.artId]}">` : c.faceSvg);
+
+    function begin(pageKey) {
+      P = PAGES[pageKey] || PAGES.ward; ITEMS = P.items; WIN = P.win; LEADS = P.leads;
+      BUDGET = P.budget[gentle ? 1 : 0]; INTERVAL = P.interval[gentle ? 1 : 0];
+      st.flips = BUDGET; st.leads = LEADS;
+      gridEl.classList.toggle("c4", P.cols === 4);
+      wrap.querySelector("[data-of]").textContent = "/ " + BUDGET;
+      cards = [];
+      ITEMS.forEach((c, p) => { cards.push({ p, kind: "pic" }, { p, kind: "name" }); });
+      for (let i = cards.length - 1; i > 0; i--) { const j = Math.floor(R() * (i + 1)); [cards[i], cards[j]] = [cards[j], cards[i]]; }
+      cards.forEach((c, i) => {
+        c.blank = false; c.locked = false; c.i = i; c.seen = false; c.leaded = false;
+        c.artId = P.artId(ITEMS[c.p]);
+        c.faceSvg = face(ITEMS[c.p], c.kind, i * 0.37);
+        c.el = document.createElement("button");
+        c.el.type = "button"; c.el.className = "wrymwretch-concentration-card";
+        c.el.addEventListener("click", () => pick(c));
+        gridEl.appendChild(c.el);
+      });
+      // the glass panes, drawn once each at card size
+      png(api.art, "glass-back", { w: 180 }).then((u) => { if (u && !dead) { backUrl = u; paint(true); } });
+      ITEMS.forEach((it) => { const id = P.artId(it); png(api.art, id, { w: 180 }).then((u) => { if (u && !dead) { pics[id] = u; paint(true); } }); });
+      if (P.key === "ward") {
+        lampsEl.hidden = false; keptEl.hidden = true;
+        lampsEl.innerHTML = ITEMS.map((it) => `<span class="wrymwretch-concentration-lamp" data-lamp="${it.id}"><i></i>${it.name}</span>`).join("");
+        lineEl.textContent = "Twelve sleepers in blankets, wings drooping. Their names are going.";
+      } else lineEl.textContent = "The healers' creature cards. Their faces are going.";
+      paint(true);
+    }
+    function paint(force) {
       cards.forEach((c, i) => {
         const shown = c.locked || st.up.includes(c) || st.peek === i;
-        const html = (shown ? (c.blank && st.peek !== i ? blankFace : c.faceSvg) : BACK) + (c.leaded && !c.locked ? `<i class="lead" aria-hidden="true"></i>` : "");
-        if (c.el._html !== html) { c.el.innerHTML = html; c.el._html = html; }
+        const state = (shown ? (c.blank && st.peek !== i ? "blank" : "face") : "back") + (c.leaded && !c.locked ? "+lead" : "");
+        if (force || c.el._state !== state) {
+          c.el._state = state;
+          c.el.innerHTML = (shown ? (c.blank && st.peek !== i ? blankFace : picOf(c)) : backUrl ? `<img alt="" draggable="false" src="${backUrl}">` : BACK) + (c.leaded && !c.locked ? `<i class="lead" aria-hidden="true"></i>` : "");
+        }
         c.el.classList.toggle("up", st.up.includes(c));
         c.el.classList.toggle("locked", c.locked);
-        c.el.setAttribute("aria-label", c.locked ? `${CREATURES[c.p].name}, kept` : shown ? (c.blank ? "blank card, face up" : `${CREATURES[c.p].name} ${c.kind === "pic" ? "picture" : "name"}`) : "face-down card");
+        c.el.setAttribute("aria-label", c.locked ? `${ITEMS[c.p].name}, kept` : shown ? (c.blank ? "blank card, face up" : `${ITEMS[c.p].name} ${c.kind === "pic" ? (P.key === "ward" ? "face" : "picture") : "name"}`) : "face-down card");
       });
-      flipsEl.textContent = st.flips; nEl.textContent = st.kept;
+      flipsEl.textContent = st.flips;
+      headEl.textContent = P.key === "ward" ? `NAMES KEPT ${st.kept} / ${ITEMS.length} · LANTERNS` : `PAIRS KEPT ${st.kept} / ${ITEMS.length} · song at ${WIN}`;
       wax.style.height = 10 + 60 * (1 - st.since / INTERVAL) + "px";
       nextEl.textContent = `in ${INTERVAL - st.since} flip${INTERVAL - st.since === 1 ? "" : "s"}`;
       hintBtn.disabled = !st.hint || !cards.some((c) => c.blank && !c.locked) || st.over;
@@ -215,34 +286,58 @@ export default {
     }
     function keep(a, b) {
       a.locked = b.locked = true; a.blank = b.blank = false; st.kept++;
-      const c = CREATURES[a.p];
-      const m = document.createElement("span"); m.innerHTML = cards.find((x) => x.p === a.p && x.kind === "pic").faceSvg; m.title = c.name;
+      const c = ITEMS[a.p];
+      const m = document.createElement("span"); m.innerHTML = picOf(cards.find((x) => x.p === a.p && x.kind === "pic")); m.title = c.name;
       keptEl.appendChild(m);
       lineEl.textContent = `${c.name}. ${c.line}`;
       fx(a.el, "won"); fx(b.el, "won");
+      if (P.key === "ward") {
+        const lamp = lampsEl.querySelector(`[data-lamp="${c.id}"]`); lamp && lamp.classList.add("lit");
+        if (st.kept === 1) once("lamp1", `The healer writes <b>${c.name}</b> on a slip and ties it to a lantern. <q>A name somebody kept is a light somebody can walk by.</q> <cite>Names become ground · a lantern for the bone bridge and the Expanse</cite>`, 8000);
+        if (st.kept === WIN) once("kw", `Four lanterns named. Whatever is lost now, the road at the end will not be all dark. <cite>Lose three names and three stretches go dark</cite>`);
+        return;
+      }
       if (st.kept === 4) once("k4", `A Tidecaller healer reads the kept pages aloud, one by one, so the room will not forget them twice. <cite>4 kept · the song needs ${WIN}</cite>`);
       if (st.kept === WIN) once("k8", `Eight creatures held. The healers begin to hum the healing song the Galechanters asked for. <cite>The song is safe · keep going if you can</cite>`);
     }
     function settle() {
       st.up = []; st.busy = false; askEl.innerHTML = ""; paint();
-      if (st.kept === CREATURES.length) return finish();
+      if (st.kept === ITEMS.length) return finish();
       if (st.flips <= 0) return finish();
     }
     function finish() {
       st.over = true; paint();
       const win = st.kept >= WIN;
       api.store.set("losses", win ? 0 : losses + 1);
-      const lost = CREATURES.filter((c, p) => !cards.some((x) => x.p === p && x.locked)).map((c) => c.name);
-      later(() => api.end(win
-        ? { outcome: "win", text: `${st.kept} of 10 creatures kept${st.claims ? `, ${st.claims} of them from clear glass` : ""}. The healing song is written into the Record for the Galechanters, and the kept pages ink back in.${lost.length ? ` Still clear glass: ${lost.join(", ")}.` : " Not one face was lost."}` }
-        : { outcome: "lose", text: `${st.kept} of 10 creatures kept, short of the ${WIN} the healing song needs. The healers stop humming; ${lost.slice(0, 3).join(", ")}${lost.length > 3 ? " and the rest" : ""} stay clear glass.${losses + 1 >= 2 ? " The next page will be kinder." : ""}` }), 500);
+      const keptNames = ITEMS.filter((c, p) => cards.some((x) => x.p === p && x.locked)).map((c) => c.name);
+      const lost = ITEMS.filter((c, p) => !cards.some((x) => x.p === p && x.locked)).map((c) => c.name);
+      if (P.key === "ward") lampsEl.querySelectorAll(".wrymwretch-concentration-lamp:not(.lit)").forEach((l) => l.classList.add("dark"));
+      const kinder = losses + 1 >= 2 ? " The next page will be kinder." : "";
+      const result = P.key === "ward"
+        ? (win ? { outcome: "win", text: `${st.kept} of 6 names kept in the ward${st.claims ? `, ${st.claims} of them from clear glass` : ""}: ${keptNames.join(", ")}. Each is a lantern now, with the name on it, waiting on the bone bridge and in the Expanse.${lost.length ? ` ${lost.join(" and ")} could not be held; ${lost.length === 1 ? "that stretch" : "those stretches"} will be dark.` : " Not one sleeper was lost."}${st.kept >= 5 ? " The Galechanters will trust Aeris for this." : ""}` }
+          : { outcome: "lose", text: `${st.kept} of 6 names kept. ${lost.join(", ")} have gone to clear glass, and three stretches or more of the last road will be dark. The whisper goes on through the ward: “Remember me.” (WW 49)${kinder}` })
+        : (win ? { outcome: "win", text: `${st.kept} of 10 creatures kept${st.claims ? `, ${st.claims} of them from clear glass` : ""}. The healing song is written into the Record for the Galechanters, and the kept pages ink back in.${lost.length ? ` Still clear glass: ${lost.join(", ")}.` : " Not one face was lost."}` }
+          : { outcome: "lose", text: `${st.kept} of 10 creatures kept, short of the ${WIN} the healing song needs. The healers stop humming; ${lost.slice(0, 3).join(", ")}${lost.length > 3 ? " and the rest" : ""} stay clear glass.${kinder}` });
+      later(() => {
+        if (dead) return;
+        recordPage(wrap, api, P.key === "ward"
+          ? { realm: "north", title: "Concentration I: the fevered's names", sub: "Galewing page · chapter 2, Remember Me", divider: 2, lines: [
+            ...keptNames.map((n) => ({ t: `${n}: kept. A lantern carries the name.`, kind: "link" })),
+            ...lost.map((n) => ({ t: `${n}: gone to clear glass. That stretch is dark.`, kind: "lost" })),
+            { t: `Galewing memory +${st.kept * 2}.${st.kept >= 5 ? " The Galechanters trust Aeris." : ""}`, note: "Names become ground: the lanterns stand on the bone bridge and in the Expanse." }] }
+          : { realm: "wrymreach", title: "Concentration II: the bestiary", sub: "The Rim Moot · chapter 8", divider: 2, lines: [
+            `Pages restored: ${keptNames.join(", ") || "none"}.`,
+            lost.length ? { t: `Still clear glass: ${lost.join(", ")}.`, kind: "lost" } : null,
+            win ? "The healing song, for the Priest of the Gale." : { t: "The healing song: not learned.", kind: "lost" }] });
+        api.end(result);
+      }, 500);
     }
     function pick(c) {
       if (!st.started || st.busy || st.over || c.locked || st.up.includes(c)) return;
       if (st.leading) {
         if (!c.seen || c.blank || c.leaded) { lineEl.textContent = c.blank ? "A blank face cannot be led." : c.leaded ? "That card is already led." : "Lead only a card you have already seen face-up."; return; }
         st.leading = false; st.leads--; c.leaded = true; countFlip();
-        lineEl.textContent = `Lead set round the ${CREATURES[c.p].name} ${c.kind === "pic" ? "picture" : "name"}. It will not blank.`;
+        lineEl.textContent = `Lead set round ${P.key === "ward" ? "" : "the "}${ITEMS[c.p].name}${c.kind === "pic" ? (P.key === "ward" ? "'s face" : " picture") : P.key === "ward" ? "'s name" : " name"}. It will not blank.`;
         paint(); if (st.flips <= 0) later(settle, 300); return;
       }
       st.up.push(c); c.seen = true; countFlip(); paint();
@@ -275,13 +370,18 @@ export default {
       lineEl.textContent = "Aetherius's telepathy: one lost face, for two seconds.";
       later(() => { st.peek = -1; paint(); }, 2000);
     });
-    const intro = wrap.querySelector(".wrymwretch-concentration-intro"), sb = wrap.querySelector("[data-start]");
-    sb.addEventListener("click", () => {
-      intro.remove(); st.started = true; cards[0].el.focus();
-      beat(`With the Tidecaller healers. The bestiary's creature pages are going blank with the plague, and the healers need eight of them whole to sing the healing song. <cite>Turn two cards</cite>`, 7000);
+    const intro = wrap.querySelector(".wrymwretch-concentration-intro");
+    opening(api.art, intro, PAGES.ward.chapter);
+    intro.querySelectorAll("[data-page]").forEach((b) => {
+      const show = () => openingSet(api.art, intro, PAGES[b.dataset.page].chapter);
+      b.addEventListener("pointerenter", show); b.addEventListener("focus", show);
+      b.addEventListener("click", () => {
+        intro.remove(); begin(b.dataset.page); st.started = true; cards[0].el.focus();
+        if (P.key === "ward") beat(`The healers' ward, in the sky-city. <q>They speak of voices in the wind. They say the stars are calling them by name.</q> Match each sleeper's face to their name before the face goes. <cite>WW 47 · turn two cards</cite>`, 8000);
+        else beat(`With the Tidecaller healers. The bestiary's creature pages are going blank with the plague, and the healers need eight of them whole to sing the healing song. <cite>Turn two cards</cite>`, 7000);
+      });
     });
-    sb.focus();
-    paint();
-    return { unmount() { st.over = true; timers.forEach(clearTimeout); wrap.remove(); } };
+    intro.querySelector("[data-page]").focus();
+    return { unmount() { st.over = true; dead = true; timers.forEach(clearTimeout); wrap.remove(); } };
   },
 };

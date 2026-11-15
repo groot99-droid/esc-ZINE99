@@ -2,11 +2,15 @@
 <title id="flight-gaia-rise-t">Gaia: wing up</title>
 <desc id="flight-gaia-rise-d">Gaia, the Earth tribe's dragon, in a few sumi strokes on silk with Rhyla riding: the wings at the top of a beat, climbing.</desc>
 <defs><filter id="flight-gaia-rise-silk1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.35" numOctaves="3" seed="131"/><feColorMatrix values="0 0 0 0 0.45  0 0 0 0 0.38  0 0 0 0 0.25  0 0 0 0.22 0"/></filter><filter id="flight-gaia-rise-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter><filter id="flight-gaia-rise-blur3" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter><filter id="flight-gaia-rise-blur4" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><filter id="flight-gaia-rise-blur5" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.5"/></filter><filter id="flight-gaia-rise-blur6" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.5"/></filter><filter id="flight-gaia-rise-rough7"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="32" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.5"/></filter></defs>
+<g class="plate">
 <rect x="0" y="0" width="480" height="360" fill="#EDE4CF"/>
 <rect x="0" y="0" width="480" height="360" filter="url(#flight-gaia-rise-silk1)"/>
+</g>
+<g class="plate">
 <circle cx="350" cy="96" r="54" fill="#E0762E" opacity="0.3" filter="url(#flight-gaia-rise-blur2)"/>
 <ellipse cx="240" cy="318" rx="300" ry="22" fill="#1b1a1c" opacity="0.1" filter="url(#flight-gaia-rise-blur3)"/>
 <path d="M-10,305.5 L5.6,302.7 L21.2,298.9 L36.9,299.1 L52.5,299.9 L68.1,299.2 L83.8,298.5 L99.4,293.5 L115,288.7 L130.6,288.3 L146.2,290.6 L161.9,286.9 L177.5,288 L193.1,289.1 L208.8,292.9 L224.4,293.7 L240,297.9 L255.6,297.9 L271.2,297.9 L286.9,297.5 L302.5,293.9 L318.1,295 L333.8,299.2 L349.4,299.5 L365,299 L380.6,299.2 L396.2,301.9 L411.9,299.6 L427.5,296.3 L443.1,296.7 L458.8,293.3 L474.4,296.6 L490,297.6 L490,370 L-10,370Z" fill="#1b1a1c" opacity="0.1" filter="url(#flight-gaia-rise-blur4)"/>
+</g>
 <g transform="translate(250,222) rotate(0) scale(0.9)">
 <path d="M48.1,-9.7 L48.1,-9.7 L47.1,-13.5 L45.4,-18.5 L43.3,-24.5 L41.2,-31.1 L39.4,-38.3 L38.1,-45.6 L37.7,-52.9 L38.4,-59.9 L40.7,-67.3 L44.4,-75.4 L49,-83.9 L54.2,-92.4 L59.5,-100.5 L64.3,-107.8 L68.4,-113.9 L71.2,-118.5 L23.2,-115 L-20.4,-50 L-11.3,2.2 L2.1,-1.7Z" fill="#1b1a1c" opacity="0.1" filter="url(#flight-gaia-rise-blur5)"/>
 <path d="M34.2,-41.8 L32.6,-39.9 L32.8,-36.5 L29.7,-33.7 L27.7,-30.5 L24.7,-26.7 L22.5,-22.8 L20.3,-19.2 L17.4,-16.1 L14.6,-12.8 L12.5,-10.8 L11.2,-8.5 L8,-7.3 L5.1,-5.8 L2.4,-4 L0.2,-3.1 L-3.1,-2 L-5.5,-1 L-7.7,-0.3 L-10,0.7 L-11.9,1.5 L-11.1,3.1 L-9.5,2.7 L-7.4,2.1 L-4.9,1.7 L-2.1,1.1 L0.9,0.4 L4,-0.1 L7.4,-0.9 L10.7,-1.3 L13.7,-3.4 L17,-5 L19.8,-8.5 L23.4,-10.9 L26.3,-13.8 L29.3,-17.9 L32.7,-21 L35.6,-24.2 L38,-27.5 L39.8,-31 L42.7,-32.4 L44,-35.2Z" fill="#1b1a1c" opacity="0.5"/>
@@ -43,10 +47,12 @@
 <path d="M20,-14 L10,-34 L4,-14Z M40,6 L52,16 L36,12Z" fill="#1b1a1c"/>
 <circle cx="40.2" cy="-6.3" r="2.6" fill="#EDE4CF"/>
 </g>
+<g class="rider">
 <path d="M3.4,-8.6 L5.8,-9.2 L6.4,-10.2 L7.1,-11.6 L8.7,-13 L9.2,-14.5 L10.7,-16.3 L10.4,-18.2 L11.6,-19.9 L11.4,-21.7 L12.1,-23.2 L13,-24.7 L13.7,-26.5 L13.6,-28.3 L13.9,-30.3 L14.2,-32.3 L14.5,-34.2 L14.8,-36 L14.7,-37.6 L13.8,-39.2 L12.6,-40.6 L12,-40.4 L10.1,-39.9 L8.7,-39.4 L7.7,-38.7 L6.7,-36.9 L5.7,-34.5 L4.6,-32.9 L3.4,-31.2 L2.7,-30 L2,-28.5 L2,-25.8 L1.8,-24.7 L1,-22.6 L1.3,-20 L0.4,-19 L0.1,-16.5 L0.7,-15.1 L1.1,-13.2 L0.9,-11.7 L1.5,-10.7 L3,-8.3Z" fill="#1b1a1c"/>
 <circle cx="14.2" cy="-47.7" r="6.4" fill="#1b1a1c"/>
 <path d="M11.7,-40.7 L10.7,-40.5 L8.5,-40.6 L6.6,-41.3 L3.1,-42 L0.5,-42.3 L-2.3,-42.8 L-5.4,-43.4 L-9.1,-43.5 L-11.5,-43.7 L-14.9,-43.2 L-18.2,-42.8 L-21.6,-41.6 L-23.9,-40.3 L-26.3,-38.8 L-29.6,-37.5 L-32,-36 L-34.4,-34.6 L-37.1,-33.5 L-38.4,-32.6 L-41.3,-32.3 L-43.6,-32.4 L-45.7,-33.2 L-47.5,-34 L-50,-34.8 L-52.9,-36.1 L-55.3,-37.4 L-57.5,-38.7 L-59.7,-39.7 L-60.8,-40.8 L-62.3,-41.3 L-63.1,-40.2 L-62,-39.2 L-60.3,-37.9 L-58.5,-36.8 L-56.3,-35.6 L-54,-33.8 L-51.5,-32.9 L-49,-31.3 L-46.3,-29.3 L-43.5,-29.8 L-40.8,-29.2 L-38,-29.7 L-35.2,-30.1 L-32.4,-31.1 L-29.6,-31.7 L-26.9,-33.5 L-24.3,-34.8 L-21.6,-36 L-19.1,-36.7 L-16.7,-37.1 L-14.5,-38.2 L-12.1,-38.1 L-9.4,-37.6 L-6.6,-37.5 L-3.7,-37.2 L-0.8,-35.8 L1.9,-35.6 L4.5,-35.3 L6.9,-33.8 L8.9,-33.6 L10.4,-33Z" fill="#9c5220" opacity="0.9"/>
 <path d="M8.6,-30.6 L9.8,-30 L11.3,-29.3 L14,-28.2 L15.9,-27.2 L18.3,-26.5 L19.9,-25.4 L22.6,-24.2 L24.4,-23.1 L26.8,-21.9 L28.5,-21.1 L29.4,-20.3 L30.9,-19.6 L33.4,-18.5 L34.9,-17.8 L35.1,-17 L37.3,-16 L38.1,-15.5 L38.6,-14.9 L40.5,-14.3 L41.2,-13.9 L41.8,-15.7 L41.1,-15.4 L40.3,-16.5 L39.4,-16.8 L38.4,-18.8 L37.1,-19.5 L35.9,-19.8 L34.6,-21.2 L33,-22.6 L31.6,-23.3 L30.1,-24.1 L28.4,-25.3 L26.4,-26.5 L24.3,-27.8 L22,-28.5 L19.8,-30 L17.9,-30.9 L15.9,-32.2 L13.9,-33.6 L12.4,-34.4 L11.3,-34.7Z" fill="#1b1a1c"/>
+</g>
 <path d="M36.1,-7.7 L36.1,-7.7 L33.3,-10.9 L29.2,-15 L24.4,-19.8 L19.1,-25.4 L13.9,-31.4 L9.2,-38 L5.3,-44.9 L2.7,-52.2 L1.4,-60.4 L1.2,-70.1 L1.7,-80.6 L2.7,-91.4 L3.9,-101.8 L5.2,-111.3 L6.3,-119.2 L6.8,-125 L-45.4,-121.2 L-69.2,-42.5 L-41.2,12.5 L-9.9,0.3Z" fill="#1b1a1c" opacity="0.3" filter="url(#flight-gaia-rise-blur6)"/>
 <path d="M9,-35 L7.4,-33.2 L6.4,-30.2 L3.5,-26.6 L0.8,-22.9 L-2.1,-19.1 L-4.7,-15.2 L-7.7,-11.3 L-11.3,-8 L-14,-5.1 L-16.3,-2.2 L-18.2,-0.5 L-21.2,1.7 L-23.8,3.6 L-27.3,4.9 L-30.2,6.2 L-32.7,7.7 L-35.8,8.7 L-37.4,9.9 L-39.5,10.6 L-41,11.6 L-40.8,13.2 L-39.1,13.6 L-37,12.3 L-34.4,12.4 L-31.5,11.8 L-28.3,11.5 L-24.9,10.1 L-21.6,7.8 L-18,7.1 L-14.4,5.5 L-11.4,2.9 L-7.7,0.6 L-4.5,-2.4 L-1.3,-5.9 L2.2,-9.3 L5.4,-13.2 L8.6,-16.9 L11.6,-21.1 L14.6,-22.9 L17,-25.5 L18.3,-28Z" fill="#1b1a1c" opacity="1"/>
 <line x1="-38" y1="10" x2="-55.3" y2="21" stroke="#1b1a1c" stroke-width="0.8" opacity="0.4"/>
@@ -65,9 +71,11 @@
 <line x1="-20.6" y1="-123" x2="-43.4" y2="-117" stroke="#1b1a1c" stroke-width="0.7" opacity="0.4"/>
 <path d="M49.4,-19.1 L45.3,-21 L41.7,-23.7 L36.8,-26.3 L32.8,-29.8 L28,-33.6 L23.9,-37.7 L20.8,-41.9 L19,-47 L13.4,-50.2 L11.6,-54.5 L10.5,-59.6 L8.8,-66.2 L8.5,-73.9 L9,-82.2 L8.1,-90.7 L8.3,-99.1 L9.5,-106.9 L9.4,-114.1 L8.8,-120.3 L7.9,-125 L5.9,-125.1 L3.9,-121.1 L1.4,-115.8 L-0.5,-107.9 L-1.4,-100.9 L-3.3,-92.1 L-5,-83.3 L-6,-74.9 L-6.8,-65.7 L-7.7,-57.3 L-6.8,-50 L-4.6,-42.3 L-3.4,-34.9 L1.7,-29.2 L5.8,-22.3 L10,-17.4 L14.2,-12 L17.9,-7.7 L20.4,-2.3 L22.1,1.1 L22.8,4Z" fill="#1b1a1c" opacity="1"/>
 </g>
+<g class="plate">
 <rect x="418" y="296" width="44" height="44" rx="3" fill="#a85822" filter="url(#flight-gaia-rise-rough7)" opacity="0.9"/>
 <path d="M0,-1 L.62,-.42 L.62,.42 L0,1 L-.62,.42 L-.62,-.42Z" fill="#EDE4CF" transform="translate(440,318) scale(14.1)"/>
 <path d="M-.62,-.42 L0,-.05 L.62,-.42 M0,-.05 V1" fill="none" stroke="#a85822" stroke-width="0.1" stroke-linecap="round" transform="translate(440,318) scale(14.1)" opacity="0.8"/>
 <text x="22" y="40" font-size="17" font-family="serif" fill="#2a2826" letter-spacing="3">GAIA</text>
 <text x="106.4" y="40" font-size="15" font-family="serif" font-style="italic" fill="#55514a">wing up</text>
+</g>
 </svg>

@@ -162,6 +162,7 @@ def plate1(a: Art):
     their figures in hairline, and across all three, in cold silver, the lines that move on their own into the Sigil."""
     g = plate(a, 1, "THE PRIORY SKY")
     page = PAGES[0]
+    a.open("g", class_="answer")   # what the player has to redraw; play strips it and lays its own lines
     for c in page["constellations"]:
         figure(a, c["id"], M_plate)
     # the Sigil, forming: silver, not gold
@@ -169,13 +170,19 @@ def plate1(a: Art):
         (x1, y1), (x2, y2) = M_plate(STARS[s1]["x"], STARS[s1]["y"]), M_plate(STARS[s2]["x"], STARS[s2]["y"])
         a.line(x1, y1, x2, y2, stroke=kit.VIOLET, stroke_width=7, opacity=0.5, stroke_linecap="round")
         a.line(x1, y1, x2, y2, stroke=SILVERINK, stroke_width=1.8, stroke_dasharray="14 8", stroke_linecap="round")
+    a.close()
     other_stars(a, page, M_plate, g)
+    a.open("g", class_="answer")
     for c in page["constellations"]:
         lines(a, c["lines"], M_plate, g)
+    a.close()
+    for c in page["constellations"]:
         cons_stars(a, c, M_plate, g)
+    a.open("g", class_="answer")
     name_label(a, CONS["first_light"], M_plate, g, dy=1)
     name_label(a, CONS["gale_harp"], M_plate, g, dy=1)
     name_label(a, CONS["stag"], M_plate, g, dy=-1)
+    a.close()
 
 
 @asset(G, "chart-plate-moot", group="maps", title="Star Chart plate II: the sky over the Moot", w=1200, h=1200, row=ROW)

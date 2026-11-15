@@ -519,7 +519,9 @@
       "id": "the_unwriter",
       "name": "The Unwriter",
       "role": "Boss: un-names one ability per round; at half Life burns his own Record for a heal",
-      "life": 260
+      "life": 260,
+      "given_up_name": "Dorrin Vael",
+      "was": "Wyrmguard, Ilvarra's wingmate; his dragon Tarn died in the long sleep (accepted 2026-11-15)"
     },
     {
       "id": "architects_echo",

@@ -13,11 +13,31 @@
 // Quoted on the win, verbatim as DESIGN.md section 3 quotes them (creative-writing/vault/02_Novels/02_WrymWretch.md):
 //   "When the last memory fades, the Astral Architect shall rise." (WW 77)
 //   "Shallock Izladar. A name the world was trying to forget." (WW 79)
+//
+// Phase 1 (accepted 2026-11-15), "The Heartstone's memory changes rooms": if Rhyla kept the founding in
+// the Heartstone (chapter 3), Stonekeeper home hexes cannot be tide-taken in any match. The full game
+// reads heartstone_kept; here the how-to card asks, since each mode keeps its own storage.
+// Art (games/wrymwretch/art): the mosaic board under the hexes, the tribes' mosaic discs as the pieces,
+// chapter card 5 above the how-to, the Record behind the result. "A tribe moves as its dragon does": a
+// selected piece shows its dragon in ink, using its gift, with the piece's rule; a revealed piece of the
+// elder's, tapped, shows its dragon gliding. Without the board the hexes are laid
+// in tesserae here, and without a disc a piece is the old ringed token.
+
+import { png, opening, recordPage } from "./_art.js";
 
 const GOLD = "#c9a33a", GOLDDK = "#8a6a1c", BONE = "#f3eee2", OBS = "#1a1520", RED = "#8b2a20";
 const REALM_COL = { north: "#a9c8e4", above: "#d4a72c", east: "#1f5f8b", south: "#c88a2e", below: "#5b3a7a", west: "#4f6b2e", centre: "#e9e1cc" };
 const TRIBE = { wood: "west", sky: "north", earth: "south", water: "east", dark: "below", celestial: "above" };
 const NAMES = { wood: "Wood", sky: "Sky", earth: "Earth", water: "Water", dark: "Dark", celestial: "Celestial" };
+const DRAGON = { wood: "sylvan", sky: "aetherius", earth: "gaia", water: "aquatica", dark: "umbra", celestial: "astraia" };
+const MOVES = {
+  wood: "Moves 1 hex. Leaves a Grove on the hex it left: the other side cannot enter it for 2 turns.",
+  sky: "Up to 3 hexes in a straight line, jumping pieces.",
+  earth: "Moves 1 hex. Cannot be taken on a home hex. May raise a Stone instead of moving, twice a game.",
+  water: "Up to 2 hexes. May push an adjacent piece 1 hex instead of taking it.",
+  dark: "Moves 1 hex, or trades places with a friend within 2. Face-down until it takes or an enemy stands beside it.",
+  celestial: "Moves 1 hex. Friendly pieces beside it cannot be taken.",
+};
 const HEXES = [
   ["centre", 0, 0], ["threshold_north", 0, -1], ["threshold_above", 1, -1], ["threshold_east", 1, 0], ["threshold_south", 0, 1], ["threshold_below", -1, 1], ["threshold_west", -1, 0],
   ["home_north_a", 0, -2], ["home_north_b", 1, -2], ["home_above_a", 2, -2], ["home_above_b", 2, -1], ["home_east_a", 2, 0], ["home_east_b", 1, 1],
@@ -33,12 +53,12 @@ const other = (s) => (s === "p" ? "e" : "p");
 const hexName = (key) => { const h = HEX[key]; if (!h) return "?"; const R = h.realm[0].toUpperCase() + h.realm.slice(1); return h.kind === "centre" ? "Wrymreach" : h.kind === "threshold" ? `the ${R} Threshold` : `${/^[AEIOU]/.test(R) ? "an" : "a"} ${R} home`; };
 
 // ---- rules (pure; the AI plays them too) -------------------------------------------------------
-function initial() {
+function initial(founding) {
   const P = (id, side, tribe, q, r) => ({ id, side, tribe, q, r, alive: true, rev: tribe !== "dark", stones: tribe === "earth" ? 2 : 0 });
   return {
     pieces: [P("p_dark", "p", "dark", -1, 2), P("p_earth", "p", "earth", 0, 2), P("p_wood", "p", "wood", 1, 1),
       P("e_dark", "e", "dark", 0, -2), P("e_water", "e", "water", 1, -2), P("e_sky", "e", "sky", -1, -1)],
-    groves: {}, stones: [], voids: [], tideNext: null, round: 1, turn: "p", recall: { p: false, e: false }, winner: null, reason: "",
+    founding: !!founding, groves: {}, stones: [], voids: [], tideNext: null, round: 1, turn: "p", recall: { p: false, e: false }, winner: null, reason: "",
   };
 }
 const at = (s, key) => s.pieces.find((p) => p.alive && K(p.q, p.r) === key);
@@ -131,7 +151,8 @@ function apply(s0, side, m) {
   if (!s.winner && side === "e") {
     const ev = every(s.round);
     if (s.round % ev === ev - 1 && !s.tideNext) {
-      const pool = HEXES.filter((h) => h.kind === "home" && !s.voids.includes(h.key));
+      // the founding, kept in the Heartstone, anchors the Stonekeepers' homes against the tide
+      const pool = HEXES.filter((h) => h.kind === "home" && !s.voids.includes(h.key) && !(s.founding && h.realm === "south"));
       if (pool.length) s.tideNext = pool[(s.round * 7 + 3 + s.voids.length * 5) % pool.length].key;
     }
     if (s.round % ev === 0 && s.tideNext) {
@@ -194,6 +215,9 @@ const CSS = `
 .wrymwretch-six-realms-btn:hover:not(:disabled){border-color:${BONE};color:${BONE}}
 .wrymwretch-six-realms-btn.on:hover:not(:disabled){color:${OBS}}
 .wrymwretch-six-realms-btn:disabled{opacity:.35;cursor:default}
+.wrymwretch-six-realms-who{display:flex;gap:10px;align-items:center;background:#efe4cb;color:#3b2a14;border:3px solid ${OBS};box-shadow:inset 0 0 0 2px ${GOLD};padding:6px 10px;font-size:15.5px;line-height:1.25}
+.wrymwretch-six-realms-who img{width:104px;height:78px;flex:none;object-fit:contain}
+.wrymwretch-six-realms-who b{display:block;font:700 12.5px 'Cinzel',Georgia,serif;letter-spacing:.08em;color:${RED};margin-bottom:2px}
 .wrymwretch-six-realms-ilv{background:rgba(26,21,32,.85);border-left:4px solid ${GOLD};padding:8px 10px;font-size:16px;min-height:2.6em}
 .wrymwretch-six-realms-log{flex:1;min-height:120px;max-height:40vh;overflow:auto;background:#f1e8d2;color:#3b2a14;padding:10px 12px;font-style:italic;font-size:16px;line-height:1.35;border:3px solid ${OBS}}
 .wrymwretch-six-realms-log p{margin:0 0 4px}
@@ -210,6 +234,10 @@ const CSS = `
 .wrymwretch-six-realms-card dd{margin:0}
 .wrymwretch-six-realms-card .more{font-size:15px;margin:0 0 12px}
 .wrymwretch-six-realms-card .wrymwretch-six-realms-btn{display:block;margin:0 auto;font-size:15px;padding:10px 26px}
+.wrymwretch-six-realms-card .wrymwretch-six-realms-keep{font-size:13px;padding:8px 12px;margin-bottom:10px;text-align:left;width:100%;box-sizing:border-box}
+.wrymwretch-six-realms-keep small{display:block;font:italic 14px 'Cormorant Garamond',Georgia,serif;letter-spacing:0;margin-top:2px}
+.wrymwretch-six-realms-keep::before{content:"☐ "}.wrymwretch-six-realms-keep[aria-pressed="true"]::before{content:"☑ "}
+.wrymwretch-six-realms-keep[aria-pressed="true"]{background:#c88a2e;color:${OBS};border-color:${OBS}}
 .wrymwretch-six-realms-drop{transition:transform 1.4s ease-in,opacity 1.4s ease-in}
 `;
 
@@ -234,6 +262,7 @@ export default {
           <button type="button" class="wrymwretch-six-realms-btn" data-threat>Show threats</button>
           <button type="button" class="wrymwretch-six-realms-btn" data-undo>Undo</button>
         </div>
+        <div class="wrymwretch-six-realms-who" hidden></div>
         <div class="wrymwretch-six-realms-ilv" aria-live="polite"></div>
         <div class="wrymwretch-six-realms-log" aria-label="Turn log"></div>
       </div></div>
@@ -246,6 +275,7 @@ export default {
           <dt>The tide</dt><dd>every third round it forgets a dimmed home hex</dd>
         </dl>
         <p class="more">${gentle ? "The elder is in a forgiving mood: two undos, and two careless moves. " : ""}Ilvarra will tell you each tribe's power as it becomes useful.</p>
+        <button type="button" class="wrymwretch-six-realms-btn wrymwretch-six-realms-keep" data-founding aria-pressed="false">The Heartstone kept the founding<small>what Rhyla chose in chapter 3: Stonekeeper homes cannot be tide-taken</small></button>
         <button type="button" class="wrymwretch-six-realms-btn on" data-start>Sit down</button></div></div></div>`;
     root.appendChild(wrap);
     const svg = wrap.querySelector("svg");
@@ -267,13 +297,16 @@ export default {
     }
     mk("rect", { x: -260, y: -240, width: 520, height: 480, fill: "url(#wwsr-gold)" }, svg);
     const shade = (hex, f) => { const n = parseInt(hex.slice(1), 16); const c = [n >> 16, (n >> 8) & 255, n & 255].map((v) => Math.max(0, Math.min(255, Math.round(v * f)))); return `rgb(${c.join(",")})`; };
+    const gBoard = mk("g", { "pointer-events": "none" }, svg);
     const gHex = mk("g", {}, svg), gMark = mk("g", {}, svg), gPiece = mk("g", {}, svg);
+    const A = { board: false, piece: {}, dragon: {} };
+    let dead = false;
     const hexEls = {};
     for (const h of HEXES) {
       const [cx, cy] = px(h.q, h.r);
       const g = mk("g", { class: "wrymwretch-six-realms-hex", tabindex: 0, role: "button", "aria-label": hexName(h.key), "data-key": h.key }, gHex);
       const clip = mk("clipPath", { id: "wwsr-c" + h.id }, defs); mk("polygon", { points: hexPts(cx, cy, S - 3) }, clip);
-      mk("polygon", { points: hexPts(cx, cy, S - 1), fill: "#2a2018" }, g);
+      const under = mk("polygon", { points: hexPts(cx, cy, S - 1), fill: "#2a2018" }, g);
       const tiles = mk("g", { "clip-path": `url(#wwsr-c${h.id})` }, g);
       const base = REALM_COL[h.realm];
       // opus vermiculatum: rings of tesserae following the hexagon
@@ -290,8 +323,18 @@ export default {
       }
       mk("circle", { cx, cy, r: 6, fill: h.kind === "centre" ? GOLD : shade(base, 0.7) }, tiles);
       mk("polygon", { class: "wrymwretch-six-realms-edge", points: hexPts(cx, cy, S - 2), fill: "none", stroke: OBS, "stroke-width": 2.5 }, g);
-      hexEls[h.key] = { g, tiles, cx, cy };
+      hexEls[h.key] = { g, tiles, cx, cy, under };
     }
+    // the mosaic board from the art, laid under the hexes (its hexes are the data's own, at twice this scale)
+    png(api.art, "realms-board", { w: 900, jpeg: true }).then((u) => {
+      if (!u || dead) return;
+      mk("image", { href: u, x: -300, y: -300, width: 600, height: 600, preserveAspectRatio: "none" }, gBoard);
+      A.board = true;
+      for (const h of HEXES) { const el = hexEls[h.key]; el.tiles.style.display = "none"; el.under.setAttribute("fill", "transparent"); }
+      render();
+    });
+    for (const [t, pose] of [["wood", "gift"], ["earth", "gift"], ["dark", "gift"], ["dark", "glide"], ["water", "glide"], ["sky", "glide"]]) png(api.art, `flight-${DRAGON[t]}-${pose}`, { w: 208, strip: [".plate"] }).then((u) => { if (u && !dead) { A.dragon[t + pose] = u; render(); } });
+    for (const t of ["wood", "sky", "earth", "water", "dark", "celestial"]) png(api.art, "realms-piece-" + t, { w: 120, strip: [".plate"] }).then((u) => { if (u && !dead) { A.piece[t] = u; render(); } });
     const ICON = {
       wood: "M0,-9 C8,-5 8,5 0,10 C-8,5 -8,-5 0,-9 Z M0,-6 V8", sky: "M-11,4 L0,-7 L11,4 M-6,8 L0,2 L6,8",
       earth: "M-7,-7 H7 V7 H-7 Z", water: "M-11,0 Q-5.5,-7 0,0 T11,0 M-11,6 Q-5.5,-1 0,6 T11,6",
@@ -330,8 +373,13 @@ export default {
       for (const h of HEXES) {
         const el = hexEls[h.key];
         const isVoid = s.voids.includes(h.key);
-        if (isVoid && !el.dropped) { el.dropped = true; [...el.tiles.children].forEach((t, i) => { if (api.reducedMotion) t.setAttribute("opacity", 0); else { t.style.transitionDelay = (i % 17) * 0.03 + "s"; t.style.transform = "translateY(40px)"; t.style.opacity = "0"; } }); }
+        if (isVoid && !el.dropped && !A.board) { el.dropped = true; [...el.tiles.children].forEach((t, i) => { if (api.reducedMotion) t.setAttribute("opacity", 0); else { t.style.transitionDelay = (i % 17) * 0.03 + "s"; t.style.transform = "translateY(40px)"; t.style.opacity = "0"; } }); }
         el.g.setAttribute("opacity", s.tideNext === h.key ? "0.55" : "1");
+        if (A.board && isVoid) {   // on the art board a forgotten hex is a dark bed with a few tesserae left in it
+          mk("polygon", { points: hexPts(el.cx, el.cy, S - 3), fill: "#0d0a0e", opacity: 0.94, "pointer-events": "none" }, gMark);
+          for (let i = 0; i < 7; i++) mk("rect", { x: el.cx + Math.cos(i * 2.4) * (12 + i * 4) - 3, y: el.cy + Math.sin(i * 2.4) * (10 + i * 3.5) - 3, width: 6, height: 5.5, fill: shade(REALM_COL[h.realm], 0.5), opacity: 0.7, transform: `rotate(${i * 37} ${el.cx} ${el.cy})`, "pointer-events": "none" }, gMark);
+        } else if (A.board && s.tideNext === h.key) mk("polygon", { points: hexPts(el.cx, el.cy, S - 3), fill: "rgba(13,10,14,.5)", "pointer-events": "none" }, gMark);
+        if (s.founding && h.kind === "home" && h.realm === "south" && !isVoid) mk("path", { d: `M${el.cx},${el.cy - S * 0.78} l5,7 l-5,7 l-5,-7 Z`, fill: "#fff2b0", stroke: OBS, "stroke-width": 1.2, "pointer-events": "none" }, gMark);
         if (s.stones.includes(h.key)) { mk("polygon", { points: hexPts(el.cx, el.cy, 22), fill: "#7d858f", stroke: OBS, "stroke-width": 3 }, gMark); mk("path", { d: `M${el.cx - 12},${el.cy - 4} h24 M${el.cx - 12},${el.cy + 6} h24`, stroke: OBS, "stroke-width": 1.5 }, gMark); }
         const gr = s.groves[h.key];
         if (gr) mk("circle", { cx: el.cx, cy: el.cy, r: S * 0.62, fill: "none", stroke: gr.side === "p" ? "#7fae4a" : "#2e4a1a", "stroke-width": 5, "stroke-dasharray": "3 5" }, gMark);
@@ -354,13 +402,29 @@ export default {
         const [cx, cy] = px(p.q, p.r);
         const g = mk("g", { "pointer-events": "none" }, gPiece);
         const hidden = p.side === "e" && !p.rev;
+        const disc = !hidden && A.piece[p.tribe];
         mk("circle", { cx, cy: cy + 3, r: 25, fill: "rgba(0,0,0,.35)" }, g);
+        if (disc) {   // the tribe's mosaic disc, ringed in its side's colours
+          mk("image", { href: disc, x: cx - 31, y: cy - 30, width: 62, height: 62 }, g);
+          mk("circle", { cx, cy, r: 27, fill: "none", stroke: p.side === "p" ? BONE : OBS, "stroke-width": 4.5 }, g);
+          mk("circle", { cx, cy, r: 30.2, fill: "none", stroke: p.side === "p" ? GOLD : RED, "stroke-width": 2, "stroke-dasharray": "3 2" }, g);
+        } else {
         mk("circle", { cx, cy, r: 25, fill: hidden ? "#3a3440" : REALM_COL[TRIBE[p.tribe]], stroke: p.side === "p" ? BONE : OBS, "stroke-width": 6 }, g);
         mk("circle", { cx, cy, r: 19, fill: "none", stroke: p.side === "p" ? GOLD : RED, "stroke-width": 2, "stroke-dasharray": "3 2" }, g);
+        }
         if (hidden) mk("text", { x: cx, y: cy + 8, "text-anchor": "middle", "font-size": 22, "font-family": "Cinzel, Georgia, serif", fill: BONE }, g).textContent = "?";
-        else mk("path", { d: ICON[p.tribe], transform: `translate(${cx},${cy})`, fill: p.tribe === "earth" || p.tribe === "celestial" ? BONE : "none", stroke: p.tribe === "earth" || p.tribe === "celestial" ? OBS : BONE, "stroke-width": 2.6, "stroke-linecap": "round" }, g);
+        else if (!disc) mk("path", { d: ICON[p.tribe], transform: `translate(${cx},${cy})`, fill: p.tribe === "earth" || p.tribe === "celestial" ? BONE : "none", stroke: p.tribe === "earth" || p.tribe === "celestial" ? OBS : BONE, "stroke-width": 2.6, "stroke-linecap": "round" }, g);
         if (p.side === "p" && p.tribe === "dark" && !p.rev) { mk("rect", { x: cx - 30, y: cy + 17, width: 60, height: 15, rx: 2, fill: OBS, opacity: 0.85 }, g); mk("text", { x: cx, y: cy + 28.5, "text-anchor": "middle", "font-size": 12, fill: BONE, "font-family": "Georgia, serif", "font-style": "italic" }, g).textContent = "face-down"; }
-        if (ui.sel === p.id) mk("circle", { cx, cy, r: 31, fill: "none", stroke: "#fff", "stroke-width": 3 }, g);
+        if (ui.sel === p.id) mk("circle", { cx, cy, r: 34, fill: "none", stroke: "#fff", "stroke-width": 3 }, g);
+      }
+      {   // the piece in hand, or the elder's piece just looked at: its dragon, and how it moves
+        const who = wrap.querySelector(".wrymwretch-six-realms-who");
+        const p = s.pieces.find((x) => x.alive && x.id === (ui.sel || ui.look));
+        const key = p ? p.id + (ui.sel ? "s" : "l") : "";
+        if (who._key !== key || who._n !== Object.keys(A.dragon).length) {
+          who._key = key; who._n = Object.keys(A.dragon).length; who.hidden = !p;
+          if (p) { const pose = p.side === "p" ? "gift" : "glide", u = A.dragon[p.tribe + pose] || A.dragon[p.tribe + "glide"]; const D = DRAGON[p.tribe]; who.innerHTML = `${u ? `<img alt="${D[0].toUpperCase() + D.slice(1)} in ink" src="${u}">` : ""}<div><b>${p.side === "p" ? "YOUR" : "THE ELDER'S"} ${NAMES[p.tribe].toUpperCase()} · MOVES AS ${D.toUpperCase()} DOES</b>${MOVES[p.tribe]}</div>`; }
+        }
       }
       wrap.querySelector("[data-round]").textContent = Math.min(s.round, ROUNDS);
       const ev = every(s.round);
@@ -390,7 +454,11 @@ export default {
       const how = s.reason === "centre" ? (win ? "You end a turn on Wrymreach while holding a Threshold." : "The elder ends a turn on Wrymreach while holding a Threshold.")
         : s.reason === "taken" ? (win ? "You have taken all three of the elder's tribes." : "All three of your tribes are taken.")
         : `After ${ROUNDS} rounds the Thresholds stand ${thresholds(s, "p")} to ${thresholds(s, "e")}${win ? "" : " (a tie goes to the elder)"}.`;
-      later(() => api.end(win ? { outcome: "win", text: `${how} The Syndicate Elder sets down the key, and Kael opens the forbidden chamber. On the pedestal of bone: “When the last memory fades, the Astral Architect shall rise.” (WW 77) “Shallock Izladar. A name the world was trying to forget.” (WW 79)` } : { outcome: "lose", text: `${how} The Syndicate keeps its key and its trust. Kael will have to go round through the guarded gallery instead.${losses + 1 >= 2 ? " The elder will be more forgiving at the next sitting." : ""}` }), 700);
+      later(() => { if (dead) return; recordPage(wrap, api, { realm: "below", title: "Six Realms I: the Syndicate Elder", sub: "Duskbane page · chapter 5, The Hunt", divider: 1, lines: [
+        win ? `Won: ${how}` : { t: `Lost: ${how}`, kind: "lost" },
+        win ? "The Syndicate trusts Kael. The forbidden chamber is open, and THE NAME enters the Record, fading." : { t: "No Syndicate trust yet. The guarded gallery, then.", kind: "lost" },
+        s.founding ? { t: `The founding held: the tide ${s.voids.length ? "took " + s.voids.length + " home" + (s.voids.length > 1 ? "s" : "") + ", none of them Stonekeeper" : "took nothing"}.`, kind: "link", note: "The Heartstone's memory changes rooms: what Rhyla kept in chapter 3 anchors the Stonekeeper homes on every board." } : null,
+      ] }); api.end(win ? { outcome: "win", text: `${how} The Syndicate Elder sets down the key, and Kael opens the forbidden chamber. On the pedestal of bone: “When the last memory fades, the Astral Architect shall rise.” (WW 77) “Shallock Izladar. A name the world was trying to forget.” (WW 79)` } : { outcome: "lose", text: `${how} The Syndicate keeps its key and its trust. Kael will have to go round through the guarded gallery instead.${losses + 1 >= 2 ? " The elder will be more forgiving at the next sitting." : ""}` }); }, 700);
     }
     function play(side, m) {
       log(describe(s, side, m), side === "p");
@@ -442,8 +510,8 @@ export default {
         if (m) return playerMove(m);
         if (!here || here.side !== "p") { flashHex(key); ilv.textContent = "Ilvarra: that piece cannot go there. The bone dots are where it can."; }
       }
-      if (here && here.side === "p") { ui.sel = ui.sel === here.id ? null : here.id; ui.mode = null; }
-      else { ui.sel = null; ui.mode = null; }
+      if (here && here.side === "p") { ui.sel = ui.sel === here.id ? null : here.id; ui.mode = null; ui.look = null; }
+      else { ui.sel = null; ui.mode = null; ui.look = here && here.rev ? here.id : null; }
       render();
     }
     gHex.addEventListener("click", (e) => { const g = e.target.closest(".wrymwretch-six-realms-hex"); if (g) clickHex(g.dataset.key); });
@@ -454,11 +522,15 @@ export default {
     btn("undo").addEventListener("click", () => {
       if (!ui.undo || ui.undoLeft < 1 || ui.busy) return;
       s = JSON.parse(ui.undo.s); logEl.innerHTML = ui.undo.log; ui.undo = null; ui.undoLeft--;
-      HEXES.forEach((h) => { const el = hexEls[h.key]; if (el.dropped && !s.voids.includes(h.key)) { el.dropped = false; [...el.tiles.children].forEach((t) => { t.style.transform = ""; t.style.opacity = ""; t.removeAttribute("opacity"); }); } });
+      if (!A.board) HEXES.forEach((h) => { const el = hexEls[h.key]; if (el.dropped && !s.voids.includes(h.key)) { el.dropped = false; [...el.tiles.children].forEach((t) => { t.style.transform = ""; t.style.opacity = ""; t.removeAttribute("opacity"); }); } });
       ilv.textContent = "Ilvarra: once. The elder will not allow it twice."; render();
     });
     const intro = wrap.querySelector(".wrymwretch-six-realms-intro"), sb = wrap.querySelector("[data-start]");
+    const keepBtn = wrap.querySelector("[data-founding]");
+    keepBtn.addEventListener("click", () => keepBtn.setAttribute("aria-pressed", keepBtn.getAttribute("aria-pressed") === "true" ? "false" : "true"));
+    opening(api.art, intro, "chapter-05");
     sb.addEventListener("click", () => {
+      if (keepBtn.getAttribute("aria-pressed") === "true") { s = initial(true); beat("found", `The two Stonekeeper homes are set with a chip of living crystal. <q>The stone remembers who laid it,</q> the elder says, not pleased. <b>The tide cannot forget a Stonekeeper home.</b>`); }
       intro.remove(); ui.started = true;
       log("The Syndicate Elder sets out the board. You move first.");
       beat("open", `Under the Syndicate's labyrinth, Kael Duskbane sits across from the Syndicate Elder. Behind the elder hangs the key to the forbidden chamber. “Play the tribes' game,” the elder says, “and I will know whether you understand the world.”`);
@@ -467,6 +539,6 @@ export default {
     });
     sb.focus();
     render();
-    return { unmount() { ui.over = true; timers.forEach(clearTimeout); wrap.remove(); } };
+    return { unmount() { ui.over = true; dead = true; timers.forEach(clearTimeout); wrap.remove(); } };
   },
 };

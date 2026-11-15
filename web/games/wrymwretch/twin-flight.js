@@ -16,7 +16,17 @@
 // Quoted, verbatim as DESIGN.md sections 3 and 8 quote them:
 //   "We were born together, Aeris. You are the breath I cannot take. I am the thought you cannot
 //    speak." (WW 145)   "Our bond was dormant too long." (WW 149)   "silver trails across the sky" (WW 155)
+//   "is it because of me?" (WW 147)   "Because of us, Aetherius corrected gently." (WW 149)
 //   creative-writing/vault/02_Novels/02_WrymWretch.md
+//
+// Phase 1 (accepted 2026-11-15), "Because of Us": when Aetherius answers her, the line can be Recorded
+// (R, or the Record button, for ten seconds). It costs Aeris her song for eight seconds, and it is the
+// first step toward what Ilvarra tells at her fire (flag because_of_us_recorded).
+// Art (games/wrymwretch/art): the Galewing scroll behind the flight, Aetherius's four ink poses as the
+// dragon, the North seal as the checkpoint stamp, chapter card 2 behind the how-to, the Record behind
+// the result. Each falls back to the hand drawing below when the art is missing.
+
+import { raster, opening, recordPage } from "./_art.js";
 
 const INK = "#1c1b1a", PAPER = "#efe6d1", WASH = "#3a3936", SEAL = "#a42a1c", CURRENT = "#4a7fb0", SILVER = "#9aa3ad";
 const COURSE = 1500;          // metres to the far peak
@@ -40,6 +50,7 @@ const CSS = `
 .wrymwretch-twin-flight-beat::before{content:"";position:absolute;left:14px;top:12px;width:28px;height:28px;background:${SEAL};box-shadow:inset 0 0 0 3px ${SEAL},inset 0 0 0 5px rgba(239,230,209,.7)}
 .wrymwretch-twin-flight-beat cite{display:block;font:600 13px 'Cormorant Garamond',Georgia,serif;font-style:normal;letter-spacing:.08em;color:${WASH};margin-top:3px}
 .wrymwretch-twin-flight-beat q{font-style:italic}
+@media (max-width:460px){.wrymwretch-twin-flight-pad{gap:4px;padding:10px 6px}.wrymwretch-twin-flight-pad div{gap:4px}.wrymwretch-twin-flight-pad button{min-width:42px;padding:4px 6px;font-size:13.5px;letter-spacing:0}}
 @media (max-width:600px){.wrymwretch-twin-flight-beat{top:auto;bottom:72px;left:12px;right:12px;font-size:16px}}
 .wrymwretch-twin-flight-intro{position:absolute;inset:0;display:grid;place-items:center;padding:16px;background:rgba(239,230,209,.72);overflow:auto}
 .wrymwretch-twin-flight-scroll{position:relative;width:min(430px,100%);box-sizing:border-box}
@@ -65,7 +76,7 @@ export default {
     wrap.innerHTML = `<style>${CSS}</style><canvas></canvas>
       <div class="wrymwretch-twin-flight-pad">
         <div><button type="button" data-k="up" aria-label="Pitch up">▲</button><button type="button" data-k="down" aria-label="Pitch down">▼</button></div>
-        <div><button type="button" data-k="song">Song<small>Q</small></button><button type="button" data-k="gift" hidden>Wind<small>E</small></button><button type="button" data-k="wing" hidden>Wing<small>␣</small></button></div>
+        <div><button type="button" data-k="record" hidden>Record<small>R</small></button><button type="button" data-k="song">Song<small>Q</small></button><button type="button" data-k="gift" hidden>Wind<small>E</small></button><button type="button" data-k="wing" hidden>Wing<small>␣</small></button></div>
       </div>
       <div class="wrymwretch-twin-flight-beat" aria-live="polite"></div>
       <div class="wrymwretch-twin-flight-intro"><div class="wrymwretch-twin-flight-scroll">
@@ -115,8 +126,23 @@ export default {
     const s = {
       phase: "sail", x: 0, y: 9, vy: 0, speed: 9, stamina: 100, lastBeat: -9, hits: 0, resets: 0, cp: 0, totalHits: 0,
       inv: 0, calm: 0, songCd: 0, giftCd: 0, flap: 0, t: 0, trail: [], silver: [], currents: [], drawing: null, running: false, over: false,
-      rider: null, fallT: 0, caught: "", flash: 0, stamp: 0, songs: 0, currentsUsed: 0, beats: new Set(),
+      rider: null, fallT: 0, caught: "", flash: 0, stamp: 0, songs: 0, currentsUsed: 0, beats: new Set(), rec: 0, recorded: false,
     };
+    // ---- art ----------------------------------------------------------------------------------
+    const A = { back: null, seal: null, sp: {}, w: 0 };
+    let dead = false, artTok = 0;
+    raster(api.art, "scroll-north", { w: 1280, strip: [".label"] }).then((c) => { if (!dead) A.back = c; });
+    raster(api.art, "ui-seal-north", { w: 110, strip: [".plate"] }).then((c) => { if (!dead) A.seal = c; });
+    function loadSprites() {
+      const w = Math.max(70, Math.round(9.5 * scale));
+      if (A.w === w) return;
+      A.w = w; const tok = ++artTok;
+      for (const pose of ["glide", "rise", "beat", "gift"]) for (const bare of [0, 1]) {
+        if (bare && pose === "gift") continue;
+        raster(api.art, "flight-aetherius-" + pose, { w, strip: bare ? [".plate", ".fx", ".rider"] : [".plate", ".fx"] })
+          .then((c) => { if (c && tok === artTok && !dead) A.sp[pose + bare] = c; });
+      }
+    }
     const keys = { up: false, down: false };
     let W = 1, H = 1, scale = 1, dpr = 1, oy = 0;
 
@@ -125,6 +151,7 @@ export default {
       W = Math.max(1, wrap.clientWidth); H = Math.max(1, wrap.clientHeight);
       cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
       scale = Math.min(H / VIEW_H, W / 42); oy = H - VIEW_H * scale;
+      loadSprites();
       draw();
     }
     const camX = () => s.x - (W * 0.28) / scale;
@@ -155,6 +182,12 @@ export default {
       s.currents.push({ pts: [[s.x + 1, s.y], [s.x + 1 + Math.cos(ang) * 22, s.y + Math.sin(ang) * 22]], ttl: 4 });
       s.giftCd = 5; s.currentsUsed++;
     }
+    function record() {
+      if (!s.running || s.rec <= 0 || s.recorded) return;
+      s.recorded = true; s.rec = 0; s.songCd = Math.max(s.songCd, 8); s.stamp = 1;
+      btn("record").hidden = true;
+      beat(`Aeris writes it down as he says it, one hand in his mane: <q>Because of us.</q> It is in the Record now, and can be said again at a fire. <cite>Recorded · her song rests for 8 s</cite>`, 5200);
+    }
     function hit() {
       if (s.inv > 0 || s.phase === "fall") return;
       s.hits++; s.totalHits++; s.inv = 1.3; s.vy = -4; s.flash = 1;
@@ -178,15 +211,24 @@ export default {
       s.stamp = 1;
       btn("gift").hidden = false;
       beat(`${late ? "He reaches her only at the last, and her shoulder strikes his scales." : "She lands on his neck as if she had always ridden there."} Aetherius speaks into her mind: <q>We were born together, Aeris. You are the breath I cannot take. I am the thought you cannot speak.</q> <cite>WW 145 · then <b>E</b> or drag across the sky: turn the wind</cite>`, 8000);
-      later(() => { if (!s.over) beat(`<q>Our bond was dormant too long.</q> <cite>WW 149 · thermals lift; flaps are weak, wind is everything</cite>`, 5000); }, 8400);
+      later(() => {
+        if (s.over) return;
+        s.rec = 10; btn("record").hidden = false;
+        beat(`She asks whether the sickness in the sky-cities <q>is it because of me?</q> <q>Because of us,</q> Aetherius corrected gently. <q>Our bond was dormant too long.</q> <cite>WW 147–149 · <b>R</b> or Record keeps his answer; her song rests 8 s</cite>`, 9000);
+      }, 8400);
     }
     function finish(win) {
       if (s.over) return;
       s.over = true; s.running = false;
       api.store.set("losses", win ? 0 : losses + 1);
-      later(() => api.end(win
-        ? { outcome: "win", text: `Aetherius rides the last thermal over the far peak with Aeris on his neck${s.caught === "late" ? ", her shoulder still bruised from the late catch" : ""}. ${s.resets ? `Turned back ${s.resets} time${s.resets > 1 ? "s" : ""}, ` : "Never turned back, "}${s.totalHits} scale hit${s.totalHits === 1 ? "" : "s"} on the way down${s.songs ? `; she sang ${s.songs} time${s.songs > 1 ? "s" : ""}` : ""}. The help her people sent her for is below.` }
-        : { outcome: "lose", text: `Sent back a third time, ${dragon() ? "the pair loses" : "Aeris loses"} the road between the sky-cities in the cloud, ${s.cp ? `${s.cp} seal${s.cp > 1 ? "s" : ""} short` : "before the first seal"} of the far peak. The scroll rolls shut.${losses + 1 >= 2 ? " Next time the wind will be gentler." : ""}` }), 450);
+      later(() => { recordPage(wrap, api, { realm: "north", title: "Twin flight: the sky-sail and Aetherius", sub: "Galewing page · chapter 2, Remember Me", divider: 1, crystal: s.recorded, lines: [
+        win ? `The road down from the sky-cities, flown to the far peak (${s.cp} of 3 seals, turned back ${s.resets} of 3).` : { t: `The road down from the sky-cities: lost in cloud ${s.cp ? `after ${s.cp} seal${s.cp > 1 ? "s" : ""}` : "before the first seal"}.`, kind: "lost" },
+        s.caught ? `The catch: ${s.caught === "late" ? "late, at the last of the six seconds" : "clean"}. Elf and dragon are one life from here.` : null,
+        s.recorded ? { t: "“Because of us.” Aetherius's answer to Aeris, kept as a Record entry.", note: "It can be retold at Ilvarra's fire, where it will mean something else." }
+          : s.caught ? { t: "Aetherius's answer was not written down. Only Aeris heard it.", kind: "lost", note: "The Record has no line to retell at the fire." } : null,
+      ] }); api.end(win
+        ? { outcome: "win", text: `Aetherius rides the last thermal over the far peak with Aeris on his neck${s.caught === "late" ? ", her shoulder still bruised from the late catch" : ""}. ${s.resets ? `Turned back ${s.resets} time${s.resets > 1 ? "s" : ""}, ` : "Never turned back, "}${s.totalHits} scale hit${s.totalHits === 1 ? "" : "s"} on the way down${s.songs ? `; she sang ${s.songs} time${s.songs > 1 ? "s" : ""}` : ""}. ${s.recorded ? "In the Record: “Because of us.” " : ""}The help her people sent her for is below.` }
+        : { outcome: "lose", text: `Sent back a third time, ${dragon() ? "the pair loses" : "Aeris loses"} the road between the sky-cities in the cloud, ${s.cp ? `${s.cp} seal${s.cp > 1 ? "s" : ""} short` : "before the first seal"} of the far peak. The scroll rolls shut.${losses + 1 >= 2 ? " Next time the wind will be gentler." : ""}` }); }, 450);
     }
 
     // ---- simulation -------------------------------------------------------------------------
@@ -195,6 +237,7 @@ export default {
       s.t += dt;
       s.inv = Math.max(0, s.inv - dt); s.calm = Math.max(0, s.calm - dt);
       s.songCd = Math.max(0, s.songCd - dt); s.giftCd = Math.max(0, s.giftCd - dt);
+      if (s.rec > 0) { s.rec -= dt; if (s.rec <= 0 && !s.recorded) { btn("record").hidden = true; beat(`The wind takes the words. Only Aeris heard them. <cite>Not recorded</cite>`, 3200); } }
       s.flap = Math.max(0, s.flap - dt * 2.5); s.flash = Math.max(0, s.flash - dt * 1.6); s.stamp = Math.max(0, s.stamp - dt * 0.6);
       if (s.t - s.lastBeat > 0.35) s.stamina = Math.min(100, s.stamina + 20 * dt);
       const sail = s.phase === "sail";
@@ -290,7 +333,19 @@ export default {
       brush([[x - 30, y - 30], [x - 10, y - 44], [x + 10, y - 38]], 2.4, 0.6, WASH, 0.6);
     }
     function dragonShape() {
-      if (s.trail.length < 3 || (s.inv > 0 && Math.floor(s.t * 12) % 2 === 0)) return;
+      if (s.inv > 0 && Math.floor(s.t * 12) % 2 === 0) return;
+      const bare = s.phase === "fall" ? 1 : 0;
+      const pose = s.giftCd > 4.3 && !bare ? "gift" : s.flap > 0.45 ? "beat" : s.vy < -2.5 ? "rise" : "glide";
+      const im = A.sp[pose + bare] || A.sp["glide" + bare];
+      if (im) {   // Aetherius in ink: the art's pose for what he is doing
+        const w = 9.5 * scale, h = w * 0.75;
+        g.save(); g.translate(sx(s.x), sy(s.y) + (rm ? 0 : Math.sin(s.t * 5) * 1.5));
+        g.rotate(Math.max(-0.35, Math.min(0.4, s.vy * 0.035)));
+        g.drawImage(im, -w * 0.62, -h * 0.52, w, h);
+        g.restore();
+        return;
+      }
+      if (s.trail.length < 3) return;
       const body = s.trail.filter((_, i) => i % 2 === 0).slice(0, 14).map(([x, y], i) => [sx(x) - i * 5, sy(y) + Math.sin(s.t * 6 - i * 0.6) * (rm ? 0 : 2)]);
       brush(body, 13, 1.5, INK);
       const [hx, hy] = body[0];
@@ -313,11 +368,25 @@ export default {
       const sky = g.createLinearGradient(0, 0, 0, H);
       sky.addColorStop(0, s.phase === "sail" ? "#dcd8cf" : "#e7e1d3"); sky.addColorStop(0.6, PAPER); sky.addColorStop(1, "#e3dccb");
       g.fillStyle = sky; g.fillRect(0, 0, W, H);
+      const cam = camX();
+      if (A.back) {   // the Galewing scroll, unrolling slowly behind the flight, washed back so the hard ink stays the hazards
+        const bh = Math.max(H * 0.6, VIEW_H * scale), by = H - bh, bw = bh * 16 / 9, off = (((cam * scale * 0.1) % (bw * 2)) + bw * 2) % (bw * 2);
+        g.globalAlpha = 0.5;
+        for (let k = 0; k * bw - off < W; k++) {   // tiles meet edge to edge on whole pixels: an overlap would show as a seam at half alpha
+          const x = Math.round(k * bw - off), wk = Math.round((k + 1) * bw - off) - x; if (x + wk < 0) continue;
+          const iw = A.back.width, ih = A.back.height, m = 4;
+          if (k % 2) { g.save(); g.translate(x + wk, by); g.scale(-1, 1); g.drawImage(A.back, m, 0, iw - 2 * m, ih, 0, 0, wk, bh); g.restore(); }
+          else g.drawImage(A.back, m, 0, iw - 2 * m, ih, x, by, wk, bh);
+        }
+        g.globalAlpha = 1;
+      }
       // paper fibre
+      if (!A.back) {
       g.strokeStyle = "rgba(58,57,54,.06)"; g.lineWidth = 1;
       for (let i = 0; i < 70; i++) { const fx = ((i * 197 + 31) % 1000) / 1000 * W, fy = ((i * 389 + 77) % 1000) / 1000 * H, L = 20 + (i * 53) % 70; g.beginPath(); g.moveTo(fx, fy); g.quadraticCurveTo(fx + L / 2, fy + ((i % 5) - 2), fx + L, fy + ((i % 3) - 1) * 2); g.stroke(); }
-      const cam = camX();
+      }
       [[0.12, 0.62, 0.16], [0.3, 0.72, 0.24], [0.55, 0.83, 0.34]].forEach(([par, base, a], li) => {
+        if (A.back && li < 2) return;
         const fn = ridges[li];
         const grad = g.createLinearGradient(0, H * (base - 0.25), 0, H);
         grad.addColorStop(0, `rgba(42,41,40,${a})`); grad.addColorStop(0.55, `rgba(42,41,40,${a * 0.35})`); grad.addColorStop(1, "rgba(239,230,209,0)");
@@ -329,7 +398,7 @@ export default {
         g.fillStyle = m; g.fillRect(0, H * base - 10, W, 50);
       });
       // in the sail phase the sky-cities hang above, in faint wash
-      if (s.x < TEAR + 120) {
+      if (s.x < TEAR + 120 && !A.back) {
         g.fillStyle = "rgba(58,57,54,.16)";
         for (let k = 0; k < 4; k++) { const cx = sx(40 + k * 95) - cam * 0.2, by = Math.max(14, oy + 4); g.beginPath(); g.ellipse(cx, by, 64, 16, 0, 0, Math.PI); g.fill(); for (let t = -2; t <= 2; t++) g.fillRect(cx + t * 20 - 4, by - 26 - Math.abs(t) * -6 - (t === 0 ? 14 : 0), 8, 26 + (t === 0 ? 14 : 0)); g.beginPath(); g.moveTo(cx, by + 16); g.lineTo(cx - 10, by + 40); g.lineTo(cx + 10, by + 40); g.closePath(); g.fill(); }
       }
@@ -414,8 +483,11 @@ export default {
       if (s.stamp > 0 && !rm) {
         const k = 1 + (1 - s.stamp) * 0.25, a = Math.min(1, s.stamp * 1.4) * 0.8, cx = W / 2, cy = H * 0.42;
         g.save(); g.translate(cx, cy); g.scale(k, k); g.rotate(-0.08); g.globalAlpha = a;
+        if (A.seal) g.drawImage(A.seal, -44, -44, 88, 88);
+        else {
         g.fillStyle = SEAL; g.fillRect(-34, -34, 68, 68);
         g.strokeStyle = PAPER; g.lineWidth = 4; g.beginPath(); g.moveTo(-20, -20); g.lineTo(20, -20); g.moveTo(0, -20); g.lineTo(0, 20); g.moveTo(-18, 0); g.lineTo(18, 0); g.moveTo(-20, 20); g.lineTo(20, 20); g.stroke();
+        }
         g.restore(); g.globalAlpha = 1;
       }
       // HUD: the ribbon with the far peak, on a paper plate; hits; stamina; turned back
@@ -428,7 +500,8 @@ export default {
       const tx = rx0 + (rx1 - rx0) * TEAR / COURSE; g.strokeStyle = "rgba(74,127,176,.8)"; g.lineWidth = 2; g.beginPath(); g.moveTo(tx, ry - 7); g.lineTo(tx, ry + 7); g.stroke();
       CHECKS.slice(1).forEach((c, i) => { const x = rx0 + (rx1 - rx0) * c / COURSE; g.fillStyle = i < s.cp ? SEAL : "rgba(164,42,28,.38)"; g.fillRect(x - 5, ry - 5, 10, 10); });
       const hy = 44, low = s.stamina < 30;
-      plate(8, hy, 214, dragon() ? 92 : 70);
+      plate(8, hy, 214, (dragon() ? 92 : 70) + (s.recorded ? 20 : 0));
+      if (s.recorded) { g.font = "700 12.5px Cinzel, Georgia, serif"; g.fillStyle = CURRENT; g.fillText("RECORDED · BECAUSE OF US", 18, hy + 103); }
       g.font = "700 12.5px Cinzel, Georgia, serif"; g.fillStyle = INK;
       g.fillText("SCALE HITS", 18, hy + 18);
       for (let i = 0; i < HITS; i++) { g.beginPath(); g.arc(122 + i * 17, hy + 13, 6.5, 0, 7); g.lineWidth = 2; g.strokeStyle = INK; g.stroke(); if (i < s.hits) { g.fillStyle = SEAL; g.fill(); } }
@@ -460,6 +533,7 @@ export default {
       else if (down && (k === " " || k === "a")) beat_();
       else if (down && k === "e") gift();
       else if (down && k === "q") song();
+      else if (down && k === "r") record();
       else return;
       if (intro.isConnected && !down) return;
       e.preventDefault();
@@ -473,7 +547,7 @@ export default {
       e.preventDefault();
       const k = b.dataset.k;
       if (k === "up" || k === "down") { keys[k] = true; b.classList.add("on"); }
-      else if (k === "wing") beat_(); else if (k === "gift") gift(); else if (k === "song") song();
+      else if (k === "wing") beat_(); else if (k === "gift") gift(); else if (k === "song") song(); else if (k === "record") record();
     };
     const padUp = () => { keys.up = keys.down = false; pad.querySelectorAll(".on").forEach((b) => b.classList.remove("on")); };
     pad.addEventListener("pointerdown", padDown);
@@ -503,6 +577,7 @@ export default {
       beat(`Aeris Galewing steps off the edge of the sky-city on a sky-sail. Her people sent her down to seek aid; the road below is cloud and confused wind. <cite>Tilt with <b>W</b>/<b>S</b> · keep clear of ink</cite>`, 6000);
     });
     startBtn.focus();
+    opening(api.art, intro, "chapter-02");
     const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(resize) : null;
     ro ? ro.observe(wrap) : addEventListener("resize", resize);
     resize();
@@ -510,7 +585,7 @@ export default {
 
     return {
       unmount() {
-        s.over = true;
+        s.over = true; dead = true;
         cancelAnimationFrame(raf);
         timers.forEach(clearTimeout); timers.clear();
         removeEventListener("keydown", kd); removeEventListener("keyup", ku);

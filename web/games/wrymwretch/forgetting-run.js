@@ -16,6 +16,13 @@
 // Quoted, verbatim as DESIGN.md section 3 quotes them (creative-writing/vault/02_Novels/02_WrymWretch.md):
 //   "into dust that didn’t even remember how to be soil" (WW 33)
 //   "The forest is… forgetting," he managed. "Something is making it forget." (WW 39)
+//
+// Art (games/wrymwretch/art): the run's own sketch set, taken apart by layer: its hill and firs scroll
+// behind the path, its palisade gates stand at the end and ink in as Thalen nears them; the West seal
+// carries Cedarheart's memory in the HUD; chapter card 1 behind the how-to; the Record behind the
+// result. Without the art the mode draws its own firs and gate, as before.
+
+import { raster, opening, recordPage } from "./_art.js";
 
 const PAPER = "#f1e8d6", BLANK = "#f8f3e8", GRAPHITE = "#45464a", LEAD = "#2c2d30", FAINT = "#8f8a7e", LAMP = "#f6d27a", MOSS = "#8c8f86";
 const LEN = 400, VIEW_H = 14, RUN = 6, DASH = 10.5, GRAV = 30, JUMP = 11.2, EDGE0 = 4.0;
@@ -78,6 +85,11 @@ export default {
     const rm = api.reducedMotion;
     const EDGE_K = gentle ? 0.7 : 1;
     const timers = new Set();
+    const A = { far: null, gate: null, seal: null };
+    let dead = false;
+    raster(api.art, "run-outpost", { w: 1280, strip: [".plate", ".fore", ".gate"] }).then((c) => { if (!dead) A.far = c; });
+    raster(api.art, "run-outpost", { w: 1600, strip: [".plate", ".far", ".fore"] }).then((c) => { if (!dead) A.gate = c; });
+    raster(api.art, "ui-seal-west", { w: 96, strip: [".plate"] }).then((c) => { if (!dead) A.seal = c; });
 
     // ---- the level --------------------------------------------------------------------------
     const R = api.rng("wrymwretch/forgetting-run/outpost");
@@ -136,6 +148,11 @@ export default {
       if (s.over) return;
       s.over = true; s.running = false;
       api.store.set("losses", win ? 0 : losses + 1);
+      recordPage(wrap, api, { realm: "west", title: "Forgetting run: to the outpost gates", sub: "Cedarheart page · chapter 1, The Forest Is Forgetting", divider: 2, lines: [
+        win ? "The outpost gates, reached and inked in. The rangers will hear what Thalen saw." : { t: `The outpost gates: forgotten, ${Math.round(Math.min(1, s.x / LEN) * 100)}% of the way there.`, kind: "lost" },
+        `Touchstones lit: ${s.lamps} of 3. Setbacks: ${s.setbacks} of 4.`,
+        s.firstCatch ? { t: "Cedarheart memory −3: the edge caught him once.", kind: "lost" } : "Cedarheart's memory untouched by the edge.",
+      ] });
       api.end(win
         ? { outcome: "win", text: `The outpost gates ink in and Thalen is through, ${s.setbacks ? `after ${s.setbacks} setback${s.setbacks > 1 ? "s" : ""}` : "untouched by the edge"}, with ${Math.round(s.focus)} Focus left. The rangers look up. “The forest is… forgetting,” he managed. “Something is making it forget.” (WW 39)` }
         : { outcome: "lose", text: `The blank page closes over the path a fourth time, ${Math.round(Math.min(1, s.x / LEN) * 100)}% of the way to the gates. The outpost never hears what Thalen saw at the split tree.${losses + 1 >= 2 ? " Next time the edge will come slower." : ""}` });
@@ -218,7 +235,19 @@ export default {
       g.fillStyle = pattern; g.fillRect(0, 0, W, H);
       g.strokeStyle = "rgba(69,70,74,.32)"; g.lineWidth = 1.2;
       const cam = camX();
-      for (const tr of trees) {
+      if (A.far) {   // the sketch set's hill and firs, scrolling at half speed (mirrored tile by tile)
+        const bh = Math.max(H * 0.9, 14 * scale), bw = bh * 16 / 9, top = sy(10) - bh * 0.72;
+        const off = (((cam * scale * 0.5) % (bw * 2)) + bw * 2) % (bw * 2);
+        g.globalAlpha = 0.85;
+        for (let k = 0; k * bw - off < W; k++) {
+          const x = Math.round(k * bw - off), wk = Math.round((k + 1) * bw - off) - x; if (x + wk < 0) continue;
+          const iw = A.far.width, ih = A.far.height, m = 4;
+          if (k % 2) { g.save(); g.translate(x + wk, 0); g.scale(-1, 1); g.drawImage(A.far, m, 0, iw - 2 * m, ih, 0, top, wk, bh); g.restore(); }
+          else g.drawImage(A.far, m, 0, iw - 2 * m, ih, x, top, wk, bh);
+        }
+        g.globalAlpha = 1;
+      }
+      for (const tr of A.far ? [] : trees) {
         const px = (tr.x - cam * 0.5) * scale; if (px < -30 || px > W + 30) continue;
         const by = sy(tr.y), th = tr.h * scale;
         g.strokeStyle = tr.x * 2 > CPS[0] * 1.1 && tr.x * 2 < CPS[1] * 1.1 ? "rgba(140,143,134,.4)" : "rgba(69,70,74,.32)";
@@ -228,7 +257,12 @@ export default {
       }
       const prog = Math.max(0, Math.min(1, s.x / LEN));
       const gx = sx(LEN + 2), gy = sy(last.y);
-      if (gx < W + 200) {
+      if (gx < W + 400 && A.gate) {   // the palisade gates from the sketch set, inking in with the distance left
+        const k = (5.6 * scale) / 360;
+        g.globalAlpha = 0.22 + 0.78 * prog * prog;
+        g.drawImage(A.gate, gx + 1.8 * scale - 1478 * k, gy - 620 * k, 1600 * k, 900 * k);
+        g.globalAlpha = 1;
+      } else if (gx < W + 200) {
         const gw = 3.6 * scale, gh = 5 * scale;
         g.strokeStyle = GRAPHITE; g.setLineDash(prog < 0.98 ? [6, 5] : []); g.lineWidth = 1.5;
         g.strokeRect(gx, gy - gh, gw, gh); g.strokeRect(gx - 0.5 * scale, gy - gh - 0.6 * scale, gw + scale, 0.6 * scale);
@@ -331,6 +365,11 @@ export default {
       for (let i = 0; i < 4; i++) { g.strokeRect(220 + i * 12, 67, 9, 9); if (i < s.setbacks) { g.beginPath(); g.moveTo(220 + i * 12, 67); g.lineTo(229 + i * 12, 76); g.moveTo(229 + i * 12, 67); g.lineTo(220 + i * 12, 76); g.stroke(); } }
       g.fillStyle = "rgba(44,45,48,.8)"; g.font = "600 12px ui-monospace, Menlo, monospace";
       g.fillText(s.recalling ? "RECALLING: the next 6 m hold" : s.dashOn ? (s.dashCd > 0 ? "dash recovering" : "X / DASH: a burst, 15 Focus") : "SHIFT / RECALL: hold the path", 20, 94);
+      if (A.seal && W > 430) {   // Cedarheart's seal: whole until the edge first catches him
+        g.globalAlpha = s.firstCatch ? 0.45 : 1; g.drawImage(A.seal, 280, 12, 50, 50); g.globalAlpha = 1;
+        g.font = "700 12px ui-monospace, Menlo, monospace"; g.fillStyle = s.firstCatch ? "#8b2a20" : LEAD;
+        g.fillText(s.firstCatch ? "CEDARHEART −3" : "CEDARHEART", 280, 76);
+      }
       if (s.tick > 0) { g.globalAlpha = Math.min(1, s.tick); g.font = "italic 22px Georgia, serif"; g.fillStyle = LEAD; g.fillText("✓ post", sx(s.x) - 20, sy(s.y) - 2.8 * scale); g.globalAlpha = 1; }
     }
 
@@ -359,6 +398,7 @@ export default {
       note(`Thalen Cedarheart has seen the moss grey at the split tree. Behind him the western groves are going blank, and the outpost has to hear it from him. <small>run right · the white edge follows</small>`, 6000);
     });
     startBtn.focus();
+    opening(api.art, intro, "chapter-01");
     const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(resize) : null;
     ro ? ro.observe(wrap) : addEventListener("resize", resize);
     resize();
@@ -366,7 +406,7 @@ export default {
 
     return {
       unmount() {
-        s.over = true; cancelAnimationFrame(raf);
+        s.over = true; dead = true; cancelAnimationFrame(raf);
         timers.forEach(clearTimeout); timers.clear();
         removeEventListener("keydown", kd); removeEventListener("keyup", ku);
         removeEventListener("pointerup", pu); removeEventListener("pointercancel", pu);

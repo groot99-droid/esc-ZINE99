@@ -1585,5 +1585,19 @@
       "scene": "s_chart_expanse",
       "how": "Draw the Scholar's constellation in Star Chart III"
     }
-  ]
+  ],
+  "descent_bands": {
+    "accepted": "2026-11-15",
+    "scene": "s_flight_descent",
+    "rule": "Each constellation named lights its realm's band for good; the band is flown lit, not from memory.",
+    "by_constellation": {
+      "stag": "west",
+      "gale_harp": "north",
+      "delvers_lamp": "south",
+      "moons_tear": "east",
+      "eclipse": "below",
+      "first_light": "above"
+    },
+    "phase_2": "A black-gilded figure (the lying strip) lights a false band."
+  }
 }

@@ -9,23 +9,33 @@
 // Read a star (R, three a page) shows how many lines a star holds; after the Stag is named a cloud of
 // forgetting drifts over the field and lifts any unnamed line it covers. After two losses in a row,
 // dawn waits for eight wrong namings and five reads (api.store).
+//
+// Phase 1 (accepted 2026-11-15), "Stars become the route": each constellation gilded lights its realm's
+// band, for good, in the descent down the chasm wall. The page shows the bands as it is played: a
+// realm seal lights beside each gilded figure (flag stars_redrawn and the constellation's Record entry).
+// Art (games/wrymwretch/art): atlas plate I under the field, with its answer layer stripped (the game's
+// stars stand on the plate's own, by the data's coordinates); each figure's plate as it is gilded; the
+// realm seals as the descent bands; the Sigil's plate and the Record behind the result; chapter card 6
+// above the how-to. Without the plate the lapis, dust and graticule are drawn here, as before.
 // Quoted, verbatim as DESIGN.md section 3 quotes them (creative-writing/vault/02_Novels/02_WrymWretch.md):
 //   "The Sigil of Izladar." (WW 87)
 //   "The prison weakens," she said. "The cosmos trembles. The Remnants move in shadow." (WW 91)
 //   "And the name?" "Already fading." (WW 93–95)
 
+import { png, opening, recordPage } from "./_art.js";
+
 const LAPIS = "#1d2f6e", DEEP = "#070c24", GOLD = "#e3b74a", GOLDHI = "#fff2b0", PAPER = "#efe2c4", INKBROWN = "#3b2a14";
 
 const CONST = [
-  { id: "stag", name: "The Stag",
+  { id: "stag", name: "The Stag", realm: "west", band: "Cedarheart's",
     stars: [["st1", 30, 40, 1], ["st2", 26, 48, 3], ["st3", 22, 55, 3], ["st4", 17, 63, 3], ["st5", 12, 70, 3], ["st6", 35, 33, 3], ["st7", 42, 26, 3]],
     lines: [["st1", "st2"], ["st2", "st3"], ["st3", "st4"], ["st4", "st5"], ["st1", "st6"], ["st6", "st7"]],
     fragments: ["The Stag's antlers are five stars climbing to the left", "From the root of the antlers, two stars run down and to the right"] },
-  { id: "gale_harp", name: "The Gale Harp",
+  { id: "gale_harp", name: "The Gale Harp", realm: "north", band: "Galewing's",
     stars: [["gh1", 50, 85, 1], ["gh2", 60.2, 80.1, 3], ["gh3", 62.7, 69.1, 3], ["gh4", 55.6, 60.3, 3], ["gh5", 44.4, 60.3, 3], ["gh6", 37.3, 69.1, 3], ["gh7", 39.8, 80.1, 3]],
     lines: [["gh1", "gh2"], ["gh2", "gh3"], ["gh3", "gh4"], ["gh4", "gh5"], ["gh5", "gh6"], ["gh6", "gh7"], ["gh7", "gh1"]],
     fragments: ["No line of the Harp crosses another", "The Harp is one frame: every star of it holds two lines", "Seven strings, no more"] },
-  { id: "first_light", name: "The First Light",
+  { id: "first_light", name: "The First Light", realm: "above", band: "the High Realm's",
     stars: [["fl1", 78, 40, 1], ["fl2", 72, 48, 3], ["fl3", 84, 48, 3], ["fl4", 70, 33, 3], ["fl5", 86, 33, 3], ["fl6", 78, 53, 3]],
     lines: [["fl1", "fl2"], ["fl1", "fl3"], ["fl1", "fl4"], ["fl1", "fl5"], ["fl1", "fl6"]],
     fragments: ["The First Light's brightest star touches all the others", "Nothing joins the outer lights to one another"] },
@@ -67,7 +77,18 @@ const CSS = `
 .wrymwretch-star-chart-count{font-size:15px;color:#f0d690}
 .wrymwretch-star-chart-dawn b{display:inline-block;margin-left:3px;color:${GOLD}}
 .wrymwretch-star-chart-dawn b.out{color:rgba(227,183,74,.2)}
-.wrymwretch-star-chart-intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(7,12,36,.72);padding:16px;z-index:3}
+.wrymwretch-star-chart-bands{display:flex;gap:8px;align-items:flex-start}
+.wrymwretch-star-chart-band{flex:1 1 0;min-width:0;text-align:center;font:700 11px 'Cinzel',Georgia,serif;letter-spacing:.08em;color:rgba(227,183,74,.5);line-height:1.25}
+.wrymwretch-star-chart-band .fig{aspect-ratio:1;border:1px dashed rgba(227,183,74,.4);display:grid;place-items:center;font-size:22px;position:relative;background:rgba(7,12,36,.4)}
+.wrymwretch-star-chart-band .fig img{width:100%;height:100%;display:block}
+.wrymwretch-star-chart-band .seal{width:34px;height:34px;margin:-17px auto 2px;position:relative;display:block;border-radius:50%;background:${DEEP};border:1px solid rgba(227,183,74,.4);opacity:.5}
+.wrymwretch-star-chart-band .seal img{width:100%;height:100%;display:block;filter:grayscale(1) brightness(.6)}
+.wrymwretch-star-chart-band.lit{color:${GOLDHI}}
+.wrymwretch-star-chart-band.lit .fig{border:1px solid ${GOLD}}
+.wrymwretch-star-chart-band.lit .seal{opacity:1;box-shadow:0 0 12px rgba(255,242,176,.7)}
+.wrymwretch-star-chart-band.lit .seal img{filter:none}
+.wrymwretch-star-chart-bandh{font-size:14px;color:#d8c48f;margin:-4px 0 0;font-style:italic}
+.wrymwretch-star-chart-intro{overflow:auto;position:absolute;inset:0;display:grid;place-items:center;background:rgba(7,12,36,.72);padding:16px;z-index:3}
 .wrymwretch-star-chart-card{max-width:430px;width:100%;box-sizing:border-box;background:radial-gradient(ellipse at 50% 0%,#2a3f86,${LAPIS} 60%,#12204f);color:#f6e7bd;padding:20px 24px 22px;font-size:16px;line-height:1.4;border:4px double ${GOLD};box-shadow:0 0 0 6px ${DEEP},0 0 0 7px rgba(227,183,74,.5);position:relative}
 .wrymwretch-star-chart-card .plate{font:600 13px 'Cinzel',Georgia,serif;letter-spacing:.3em;color:${GOLD};text-align:center}
 .wrymwretch-star-chart-card h2{font:700 26px 'Cinzel',Georgia,serif;letter-spacing:.14em;margin:2px 0 4px;text-align:center;color:${GOLDHI};text-shadow:0 0 12px rgba(227,183,74,.5)}
@@ -97,6 +118,8 @@ export default {
         <div class="wrymwretch-star-chart-side">
           <div data-frags style="display:flex;flex-direction:column;gap:12px"></div>
           <div class="wrymwretch-star-chart-count"></div>
+          <div class="wrymwretch-star-chart-bands" aria-label="The descent's bands">${CONST.map((c) => `<div class="wrymwretch-star-chart-band" data-band="${c.id}"><div class="fig">?</div><span class="seal"></span>${c.realm === "above" ? "ABOVE" : c.realm.toUpperCase()} BAND</div>`).join("")}</div>
+          <p class="wrymwretch-star-chart-bandh">A figure gilded here lights its realm's band on the way down the chasm.</p>
           <div class="wrymwretch-star-chart-note" aria-live="polite"></div>
           <div class="wrymwretch-star-chart-row">
             <button type="button" class="wrymwretch-star-chart-btn" data-name>Name it</button>
@@ -130,6 +153,8 @@ export default {
     const timers = new Set();
     const later = (fn, ms) => { const t = setTimeout(() => { timers.delete(t); fn(); }, ms); timers.add(t); return t; };
 
+    const art = api.art;
+    let dead = false;
     const stars = {};
     CONST.forEach((c) => c.stars.forEach(([id, x, y, m]) => (stars[id] = { id, x, y: 100 - y, m, c: c.id })));
     DIM.forEach(([id, x, y, m]) => (stars[id] = { id, x, y: 100 - y, m, c: null }));
@@ -147,6 +172,20 @@ export default {
     for (let k = 0; k < 4; k++) mk("circle", { cx: 30, cy: 150, r: 70 + k * 18, fill: "none", stroke: GOLD, "stroke-width": 0.15, opacity: 0.45 }, base);
     for (let k = 0; k < 7; k++) mk("line", { x1: 30, y1: 150, x2: -20 + k * 24, y2: -2, stroke: GOLD, "stroke-width": 0.12, opacity: 0.35 }, base);
     mk("rect", { x: -1.5, y: -1.5, width: 103, height: 103, fill: "none", stroke: GOLD, "stroke-width": 0.4 }, base);
+    // Atlas plate I under the field. The plate maps a star at (x, y) to (115 + 9.7x, 1100 - 9.3y) of 1200.
+    png(art, "chart-plate-priory", { w: 1000, strip: [".answer"], jpeg: true }).then((u) => {
+      if (!u || dead) return;
+      [...base.children].forEach((n) => n.setAttribute("display", "none"));
+      base.removeAttribute("clip-path");
+      mk("image", { href: u, x: -115 / 9.7, y: -170 / 9.3, width: 1200 / 9.7, height: 1200 / 9.3, preserveAspectRatio: "none", "pointer-events": "none" }, base);
+      svg.setAttribute("viewBox", `${(-115 / 9.7).toFixed(2)} ${(-170 / 9.3).toFixed(2)} ${(1200 / 9.7).toFixed(2)} ${(1200 / 9.3).toFixed(2)}`);
+    });
+    CONST.forEach((c) => png(art, "ui-seal-" + c.realm, { w: 68, strip: [".plate"] }).then((u) => { if (!u || dead) return; const el = wrap.querySelector(`[data-band="${c.id}"] .seal`); if (el) el.innerHTML = `<img alt="" src="${u}">`; }));
+    function lightBand(c) {
+      const el = wrap.querySelector(`[data-band="${c.id}"]`); if (!el) return;
+      el.classList.add("lit"); el.querySelector(".fig").textContent = "✦";
+      png(art, "chart-figure-" + c.id.replace(/_/g, "-"), { w: 160 }).then((u) => { if (u && !dead) el.querySelector(".fig").innerHTML = `<img alt="${c.name}, gilded" src="${u}">`; });
+    }
     const gLines = mk("g", {}, svg), gGhost = mk("g", {}, svg), gTemp = mk("g", {}, svg), gStars = mk("g", {}, svg);
     const temp = mk("line", { stroke: GOLDHI, "stroke-width": 0.35, "stroke-dasharray": "1 1", opacity: 0 }, gTemp);
 
@@ -257,7 +296,8 @@ export default {
       if (ok) {
         st.fresh = new Set(st.lines);
         st.lines.forEach((k) => st.solved.add(k)); st.lines.clear();
-        noteEl.textContent = `${cur().name} is gilded and recorded.`;
+        noteEl.textContent = `${cur().name} is gilded and recorded. ${cur().band[0].toUpperCase() + cur().band.slice(1)} band of the descent is lit.`;
+        lightBand(cur());
         st.ci++; st.wrongHere = 0; st.dim.clear(); st.sel = null;
         if (st.ci >= CONST.length) return sigil();
         all(); st.fresh = null;
@@ -273,7 +313,11 @@ export default {
       if (st.wrong >= DAWN) {
         st.over = true; all();
         api.store.set("losses", losses + 1);
-        later(() => api.end({ outcome: "lose", text: `Dawn comes up over the Priory. ${st.solved.size ? CONST.slice(0, st.ci).map((c) => c.name).join(" and ") + " kept in gold; the rest" : "The three constellations"} fade with the night, and the sigil Seraphyne feared stays unseen.${losses + 1 >= 2 ? " Dawn will wait longer next time." : ""}` }), 600);
+        later(() => { if (dead) return; recordPage(wrap, api, { realm: "above", title: "Star Chart I: the Priory sky", sub: "High Realm page · chapter 6, The Sigil", divider: 3, lines: [
+          ...CONST.slice(0, st.ci).map((c) => ({ t: `${c.name}: gilded. ${c.band[0].toUpperCase() + c.band.slice(1)} band of the descent is lit.`, kind: "link" })),
+          ...CONST.slice(st.ci).map((c) => ({ t: `${c.name}: lost with the night. Its band stays dark.`, kind: "lost" })),
+          { t: "The Sigil: unseen.", kind: "lost" }] });
+        api.end({ outcome: "lose", text: `Dawn comes up over the Priory. ${st.solved.size ? CONST.slice(0, st.ci).map((c) => c.name).join(" and ") + " kept in gold; the rest" : "The three constellations"} fade with the night, and the sigil Seraphyne feared stays unseen.${losses + 1 >= 2 ? " Dawn will wait longer next time." : ""}` }); }, 600);
         return;
       }
       all();
@@ -308,7 +352,10 @@ export default {
       later(() => old.forEach((o) => o.setAttribute("opacity", "0.25")), 300);
       api.store.set("losses", 0);
       beat(`The gold lines lift from the stars they were laid on. <cite>The Sigil forms</cite>`, 4000);
-      later(() => api.end({ outcome: "win", text: `Three constellations gilded and recorded, ${st.wrong} wrong naming${st.wrong === 1 ? "" : "s"}${st.reads < (gentle ? 5 : READS) ? `, ${(gentle ? 5 : READS) - st.reads} star${(gentle ? 5 : READS) - st.reads === 1 ? "" : "s"} read` : ""}. The lines gather into “The Sigil of Izladar.” (WW 87) The Priory elder asks, “And the name?” Seraphyne answers: “Already fading.” (WW 93–95)` }), api.reducedMotion ? 800 : 3600);
+      later(() => { if (dead) return; recordPage(wrap, api, { realm: "above", title: "Star Chart I: the Priory sky", sub: "High Realm page · chapter 6, The Sigil", divider: 3, pic: "chart-figure-sigil", lines: [
+        ...CONST.map((c) => ({ t: `${c.name}: gilded. ${c.band[0].toUpperCase() + c.band.slice(1)} band of the descent is lit.`, kind: "link" })),
+        { t: "The Sigil of Izladar, seen. What he was: one fragment more.", note: "Stars become the route: three of the six bands down the chasm wall are lit for good." }] });
+        api.end({ outcome: "win", text: `Three constellations gilded and recorded, ${st.wrong} wrong naming${st.wrong === 1 ? "" : "s"}${st.reads < (gentle ? 5 : READS) ? `, ${(gentle ? 5 : READS) - st.reads} star${(gentle ? 5 : READS) - st.reads === 1 ? "" : "s"} read` : ""}. The lines gather into “The Sigil of Izladar.” (WW 87) The Priory elder asks, “And the name?” Seraphyne answers: “Already fading.” (WW 93–95)` }); }, api.reducedMotion ? 800 : 3600);
     }
 
     // ---- input --------------------------------------------------------------------------------
@@ -366,8 +413,9 @@ export default {
       const f = svg.querySelector(".wrymwretch-star-chart-star"); f && f.focus();
     });
     sb.focus();
+    opening(art, intro, "chapter-06");
     all();
 
-    return { unmount() { st.over = true; timers.forEach(clearTimeout); timers.clear(); removeEventListener("keydown", gk); wrap.remove(); } };
+    return { unmount() { st.over = true; dead = true; timers.forEach(clearTimeout); timers.clear(); removeEventListener("keydown", gk); wrap.remove(); } };
   },
 };

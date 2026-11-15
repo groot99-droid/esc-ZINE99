@@ -86,7 +86,7 @@
       "name": "ward_names_kept",
       "type": "counter",
       "default": 0,
-      "description": "Pairs kept in Concentration I (0-6). 5+ gives the Galechanters trust."
+      "description": "Pairs kept in Concentration I (0-6). 5+ gives the Galechanters trust. Accepted 2026-11-15 (names become ground): each name kept is a lit lantern, with that patient's name on it, in s_run_bone_bridge and s_run_expanse; three or more lost leave those stretches dark."
     },
     {
       "name": "monolith_rows",
@@ -98,7 +98,7 @@
       "name": "stars_redrawn",
       "type": "counter",
       "default": 0,
-      "description": "Constellations named across all Star Chart pages."
+      "description": "Constellations named across all Star Chart pages. Accepted 2026-11-15 (stars become the route): each constellation's Record entry lights its realm's band in s_flight_descent for good."
     },
     {
       "name": "tribes_trusted",
@@ -218,13 +218,25 @@
       "name": "unwriter_name_known",
       "type": "bool",
       "default": false,
-      "description": "The Unwriter's given-up name is known (Kael followed the Eraser, or the kill-list's fifth row was read); enables Remind in his battle."
+      "description": "The Unwriter's given-up name is known (Kael followed the Eraser, or the kill-list's fifth row was read); enables Remind in his battle. Accepted 2026-11-15: the name is Dorrin Vael, and the kill-list's fifth row is signed with it."
     },
     {
       "name": "unwriter_reminded",
       "type": "bool",
       "default": false,
       "description": "The Unwriter was reminded of his name instead of defeated."
+    },
+    {
+      "name": "because_of_us_recorded",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15. Aetherius's answer to Aeris, \"Because of us\" (WW 149), was written into the Record during s_flight_aetherius (Record, within ten seconds of the line; her song rests 8 s). At Ilvarra's fire a party that holds it can say it back when she tells The Price."
+    },
+    {
+      "name": "price_told",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15. Ilvarra has told The Price at the Moot fire: the dragons' dormancy was what the six tribes paid for the seal. Set in s_moot_camp. Read at the choice and by the endings: with it, their closing text names the bargain (section 13)."
     },
     {
       "name": "choir_opened",
@@ -260,7 +272,7 @@
       "name": "heartstone_kept",
       "type": "enum",
       "default": "none",
-      "description": "Which memory Rhyla keeps in Heartstone I. vision gives a fragment.",
+      "description": "Which memory Rhyla keeps in Heartstone I. vision gives a fragment. Accepted 2026-11-15 (the Heartstone's memory changes rooms): founding, Stonekeeper home hexes cannot be tide-taken in any Six Realms match; vision, the Architect's Echo's intents are shown in s_battle_echo; song, s_heart_choir starts with one rib tuned and the tuned rib is audible in s_bone_choir.",
       "values": [
         "none",
         "founding",
@@ -278,6 +290,17 @@
         "saved_witness",
         "followed"
       ]
+    },
+    {
+      "name": "ysolde",
+      "type": "enum",
+      "values": [
+        "none",
+        "kept",
+        "let_off"
+      ],
+      "default": "none",
+      "description": "Accepted 2026-11-15. Ysolde, the archivist Kael saved in the tunnels, asks at the Moot fire to have her Record entry Burned. none: she is not at the fire (kael_choice is not saved_witness). kept: the party keeps her entry; she stays on the kill-list as a witness. let_off: her entry was Burned as a mercy (burned ledger, memory.below -4); her row on the kill-list is struck and she is no longer a witness."
     },
     {
       "name": "final_choice",
@@ -322,7 +345,7 @@
       "name": "burned",
       "type": "ledger",
       "default": [],
-      "description": "Entries burned in battle.",
+      "description": "Entries burned in battle. Accepted 2026-11-15: a Burn made at a witness's own asking is a mercy, and takes that witness off the kill-list (see ysolde).",
       "fields": [
         "entry",
         "realm",

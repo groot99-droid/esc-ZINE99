@@ -520,7 +520,15 @@
       "requires": "record_entry",
       "effect": "Spend a Record entry: full Bond refill for the party, or 30 damage; the entry is forgotten, logged in burned, and its realm loses 4",
       "damage": 30,
-      "realm_loss": 4
+      "realm_loss": 4,
+      "mercy": {
+        "accepted": "2026-11-15",
+        "when": "A witness asks for their own Record entry to be Burned (Ysolde, at the Moot fire).",
+        "effect": "The entry is forgotten and logged in burned, and its realm loses 4, as any Burn; no Bond or damage is taken from it. The witness leaves the witnesses ledger and the kill-list, and cannot be killed for what they knew.",
+        "sets": {
+          "ysolde": "let_off"
+        }
+      }
     },
     {
       "id": "guard",

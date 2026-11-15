@@ -118,8 +118,10 @@ def reg_piece(i):
 
     @asset(G, f"realms-piece-{realm['tribe'].lower()}", group="pieces", title=f"Six Realms piece: {realm['tribe']}", w=240, h=240, row=ROW)
     def draw(a: Art):
+        a.open("g", class_="plate")   # the gold ground; on the board the disc stands alone
         gold_ground(a, 0, 0, 240, 240)
         a.rect(0, 0, 240, 240, fill=a.radial([(0.4, "#000000", 0), (1, "#000000", 0.45)], 0.5, 0.5, 0.75))
+        a.close()
         T = Tiles(a)
         main, light, dark = TONES[i]
         disc(a, T, 120, 116, 96, i, dark if i in (4,) else main, "#f6f0dc" if i != 5 else "#fff3c0", kit.BONE)

@@ -146,7 +146,11 @@ def run_outpost(a: Art):
     """Sketch set for the first forgetting run, in graphite: the forest path to the ranger outpost. Blank paper eats the
     world from the left; the ground near it is dense pencil, the path ahead a dashed outline, and the palisade gates at
     the right edge are still only half inked in. Three touchstone lanterns stand along the way."""
+    # four layers a mode can take apart: plate (paper), far (hill and firs), fore (path, lanterns, edge), gate
+    a.open("g", class_="plate")
     a.paper(kit.PAPER, grain=0.14, fibre=1.1)
+    a.close()
+    a.open("g", class_="far")
     r = a.rng
     EDGE = 250
     p = Pencil(a, strength_x(EDGE, 900, 1500))
@@ -166,6 +170,8 @@ def run_outpost(a: Art):
     for k in range(17):
         x = EDGE + 30 + k * 76 + r.uniform(-22, 22)
         fir(p, x, hy(x) + r.uniform(0, 30), r.uniform(120, 240))
+    a.close()
+    a.open("g", class_="fore")
     # the path: remembered, held, unremembered
     plats = [(60, 420, 660), (470, 700, 640), (760, 1010, 610), (1080, 1230, 570), (1290, 1600, 620)]
     for i, (x0, x1, y) in enumerate(plats):
@@ -188,6 +194,8 @@ def run_outpost(a: Art):
     p.lantern(580, 580, 0.9)
     p.lantern(900, 548, 0.9)
     p.lantern(1160, 506, 0.9)
+    a.close()
+    a.open("g", class_="gate")
     # the outpost gates, inking in from outline: two towers, a lintel, a half-drawn door
     gx, gy = 1370, 620
     p.line([(gx, gy), (gx, gy - 300), (gx + 46, gy - 300), (gx + 46, gy)], w=1.8, op=0.8)
@@ -204,10 +212,13 @@ def run_outpost(a: Art):
         p.line([(x, gy - 40), (x, gy - 150 - (k % 2) * 14), (x + 12, gy - 168 - (k % 2) * 14), (x + 24, gy - 150 - (k % 2) * 14), (x + 24, gy - 40)],
                w=1.2, passes=1, op=max(0.1, 0.5 - k * 0.07))
     a.path(f"M{gx + 23},{gy - 356} v-60 M{gx + 23},{gy - 412} q30,6 50,-4 q-18,16 -50,24", stroke=GR, stroke_width=1.6, fill="none", opacity=0.7)
+    a.close()
+    a.open("g", class_="fore")
     p.blank_wall(EDGE)
     for k in range(5):
         a.path(f"M{EDGE + 22},{130 + k * 120} h{44 + k * 6}", stroke=GR, stroke_width=1.2, opacity=0.4, fill="none")
     p.title("I", "the outpost gates")
+    a.close()
 
 
 @asset(G, "run-surface", group="backdrops", title="Forgetting run II: the surface light", w=W, h=H, row=ROW)

@@ -39,6 +39,7 @@ def reg_part(kind, i):
     def draw(a: Art):
         gold = kit.gold_grad(a)
         r = a.rng
+        a.open("g", class_="plate")   # the tile; the part alone is what a glyph in play is built from
         a.rect(0, 0, 160, 160, fill=gold)
         a.rect(7, 7, 146, 146, fill="#7a5310", opacity=0.55)
         a.rect(11, 11, 138, 138, fill=FIELD[kind])
@@ -54,12 +55,13 @@ def reg_part(kind, i):
         for other, (zx, zy, zw, zh) in ZONE.items():
             if other != kind:
                 a.rect(zx, zy, zw, zh, rx=5, fill="none", stroke="#f3eee2", stroke_width=0.9, stroke_dasharray="2 4", opacity=0.45, transform=t)
+        sprig(a, 18, 146, -8, 0.7)
+        a.circle(144, 16, 5, fill="#a3322a", stroke=gold, stroke_width=1.5)
+        a.close()
         d = PARTS[kind][i]
         a.path(d, fill="none", stroke="#1a1208", stroke_width=11, stroke_linecap="round", stroke_linejoin="round", opacity=0.5, transform="translate(16.5,17.5) scale(1.32)")
         a.path(d, fill="none", stroke=gold, stroke_width=9, stroke_linecap="round", stroke_linejoin="round", transform=t)
         a.path(d, fill="none", stroke="#fff6cf", stroke_width=2.2, stroke_linecap="round", stroke_linejoin="round", opacity=0.9, transform="translate(13,12.6) scale(1.32)")
-        sprig(a, 18, 146, -8, 0.7)
-        a.circle(144, 16, 5, fill="#a3322a", stroke=gold, stroke_width=1.5)
     draw.__doc__ = (f"Slipping Glyph part {name} as an illuminated tile: the {kind} alone in raised gold on a painted field, the places of the "
                     "glyph's other three parts left as dotted ghosts.")
     return draw

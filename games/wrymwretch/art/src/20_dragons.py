@@ -171,11 +171,13 @@ def dragon(a, kind, pose, cx, cy, s=1.0, rider=True, ink=None, angle=0.0, alpha=
     # rider: three strokes and a scarf in the realm's colour
     if rider:
         rx, ry = saddle[0], saddle[1] - th * 0.34
+        a.open("g", class_="rider")   # stripped while the elf is not yet on its back
         kit.brush(a, [(rx - 4, ry + 2), (rx, ry - 14), (rx + 5, ry - 30)], 11, fill=ink)
         a.circle(rx + 7, ry - 37, 6.4, fill=ink)
         kit.brush(a, [(rx + 4, ry - 26), (rx - 22, ry - 30), (rx - 48, ry - 20), (rx - 70, ry - 30)], 7.5, lambda t: 1 - 0.8 * t,
                   fill=kit.shade(acc, -0.3), opacity=0.92)
         kit.brush(a, [(rx + 3, ry - 22), (rx + 22, ry - 12), (rx + 34, ry - 4)], 5, lambda t: 1 - 0.6 * t, fill=ink)
+        a.close()
     # near wing
     tip, tips = wing(a, kind, S, t1, wl, sp["ww"], sp["fingers"], ink, 0.96)
     if kind == "astraia":
@@ -259,25 +261,33 @@ def register(kind, pose, label):
         r = a.rng
         acc = realm["acc"]
         cx, cy = 250, 196 - (22 if pose == "beat" else 0) - (10 if pose == "gift" and kind == "aquatica" else 0)
-        # a pale sun of the realm's colour and a mist band
+        # a pale sun of the realm's colour and a mist band (class "plate": stripped when the figure flies in play)
+        a.open("g", class_="plate")
         a.circle(350, 96, 54, fill=acc, opacity=0.28, filter=a.blur(6))
         a.ellipse(240, 318, 300, 22, fill=kit.WASH, opacity=0.1, filter=a.blur(10))
         far = kit.ridge(r, -10, 490, 300, 26, 0.55, 5)
         a.path(kit.pd(far, False) + " L490,370 L-10,370Z", fill=kit.WASH, opacity=0.13, filter=a.blur(3))
+        a.close()
         if pose == "gift":
+            a.open("g", class_="fx")
             gift_fx(a, kind, cx, cy, True)
+            a.close()
             if kind == "umbra":   # where it was, a moment ago
                 dragon(a, kind, pose, cx - 120, cy + 34, 0.74, rider=False, alpha=0.2)
         ang = {"aquatica": -22, "astraia": -8}.get(kind, 0) if pose == "gift" else 0
         dragon(a, kind, pose, cx + (30 if pose == "gift" and kind == "umbra" else 0), cy + (26 if base_of(kind, pose) == "rise" else 0), 0.8 if kind == "aetherius" else 0.9, angle=ang)
         if pose == "gift":
+            a.open("g", class_="fx")
             gift_fx(a, kind, cx, cy, False)
+            a.close()
+        a.open("g", class_="plate")
         if pose == "beat":   # the puff of a wing beat
             for k in range(3):
                 a.path(f"M{180 + k * 34},{318 + k * 5} q12,10 26,0", fill="none", stroke=kit.shade(acc, -0.35), stroke_width=2, opacity=0.7)
         kit.seal_stamp(a, sp["realm"], 418, 296)
         a.text(22, 40, name.upper(), size=17, family="serif", fill="#2a2826", letter_spacing=3)
         a.text(22 + len(name) * 17.6 + 14, 40, GIFT[kind] if pose == "gift" else label, size=15, family="serif", font_style="italic", fill="#55514a")
+        a.close()
     fig.__doc__ = (f"{name}, the {realm['tribe']} tribe's dragon, in a few sumi strokes on silk with {realm['elf']} riding: "
                    + {"glide": "wings spread in a glide.", "rise": "the wings at the top of a beat, climbing.",
                       "beat": "the wings swept down under the body.",

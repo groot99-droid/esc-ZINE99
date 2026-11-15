@@ -272,7 +272,8 @@
           "names": {
             "kind": "witness_slot",
             "slot": 2,
-            "place": "sky_watch"
+            "place": "sky_watch",
+            "witness": "ysolde"
           }
         },
         {
@@ -318,7 +319,12 @@
             "kind": "ilvarra",
             "place": "bone_bridge"
           },
-          "signed_by": "the_unwriter"
+          "signed_by": "the_unwriter",
+          "signature": {
+            "name": "Dorrin Vael",
+            "where": "under the fifth row, where a scribe signs; the same name is cut inside the Unwriter's mask",
+            "sets": "unwriter_name_known"
+          }
         }
       ],
       "on_rows_read": {
@@ -326,6 +332,14 @@
         "at": 4,
         "flag": "killlist_read",
         "row_5_flag": "unwriter_name_known"
+      },
+      "mercy": {
+        "accepted": "2026-11-15",
+        "reads": "ysolde",
+        "when": "let_off",
+        "row": 2,
+        "effect": "The row is struck and counts as settled: no one hunts a name nobody keeps.",
+        "otherwise": "The row is read like the others; she is warned, though she asked not to be."
       }
     },
     {

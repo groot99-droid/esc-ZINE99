@@ -40,6 +40,7 @@
 <text x="600" y="1166" font-size="18" font-family="serif" fill="#e3b74a" text-anchor="middle" letter-spacing="8">PLATE I</text>
 <polygon points="150,82 152.8,95.2 166,98 152.8,100.8 150,114 147.2,100.8 134,98 147.2,95.2" fill="url(#chart-plate-priory-lg1)"/>
 <polygon points="1050,82 1052.8,95.2 1066,98 1052.8,100.8 1050,114 1047.2,100.8 1034,98 1047.2,95.2" fill="url(#chart-plate-priory-lg1)"/>
+<g class="answer">
 <g opacity="0.3" fill="none" stroke="#f3d27a" stroke-width="1.4" stroke-linecap="round">
 <path d="M871.6,728 C852.2,746.6 774.6,821 755.2,839.6 M871.6,728 C891,746.6 968.6,821 988,839.6 M871.6,728 C855.4,707.9 790.8,627.2 774.6,607.1 M871.6,728 C887.8,707.9 952.4,627.2 968.6,607.1 M871.6,728 C871.6,697 871.6,573 871.6,542 M871.6,728 C871.6,752.8 871.6,852 871.6,876.8 M910.4,728 C909.5,724.9 908.4,714.8 905.2,709.4 C902,704 896.6,698.9 891,695.8 C885.4,692.7 878.1,690.8 871.6,690.8 C865.1,690.8 857.8,692.7 852.2,695.8 C846.6,698.9 841.2,704 838,709.4 C834.8,714.8 832.8,721.8 832.8,728 C832.8,734.2 834.8,741.2 838,746.6 C841.2,752 846.6,757.1 852.2,760.2 C857.8,763.3 865.1,765.2 871.6,765.2 C878.1,765.2 885.4,763.3 891,760.2 C896.6,757.1 902,752 905.2,746.6 C908.4,741.2 909.5,731.1 910.4,728 M1017.1,728 C1016.5,722.8 1015.9,707 1013.5,697 C1011.1,686.9 1007.4,676.8 1002.7,667.5 C998,658.2 992.1,649.1 985.4,641 C978.6,632.9 970.8,625.4 962.3,618.9 C953.9,612.5 944.5,606.8 934.7,602.3 C925,597.8 914.5,594.3 904,592 C893.5,589.7 877,589.1 871.6,588.5 M726.1,728 C726.7,733.2 727.3,749 729.7,759 C732.1,769.1 735.8,779.2 740.5,788.5 C745.2,797.8 751.1,806.9 757.8,815 C764.6,823.1 772.4,830.6 780.9,837.1 C789.3,843.5 798.7,849.2 808.5,853.7 C818.2,858.2 828.7,861.7 839.2,864 C849.7,866.3 860.8,867.5 871.6,867.5 C882.4,867.5 893.5,866.3 904,864 C914.5,861.7 929.6,855.4 934.7,853.7"/>
 </g>
@@ -63,6 +64,7 @@
 <line x1="522.4" y1="858.2" x2="231.4" y2="449" stroke="#dfe6f2" stroke-width="1.8" stroke-dasharray="14 8" stroke-linecap="round"/>
 <line x1="600" y1="309.5" x2="406" y2="728" stroke="#6B3FA0" stroke-width="7" opacity="0.5" stroke-linecap="round"/>
 <line x1="600" y1="309.5" x2="406" y2="728" stroke="#dfe6f2" stroke-width="1.8" stroke-dasharray="14 8" stroke-linecap="round"/>
+</g>
 <polygon points="832.8,847.3 834.6,854.6 841.8,856.3 834.6,858.1 832.8,865.3 831,858.1 823.8,856.3 831,854.6" fill="url(#chart-plate-priory-lg1)" opacity="0.8"/>
 <polygon points="836.6,852.5 834.6,856.3 836.6,860.2 832.8,858.1 829,860.2 831,856.3 829,852.5 832.8,854.5" fill="url(#chart-plate-priory-lg1)" opacity="0.7"/>
 <circle cx="832.8" cy="856.3" r="2" fill="#fff6cf" opacity="0.8"/>
@@ -81,6 +83,7 @@
 <polygon points="390.5,996.1 392.3,1003.4 399.5,1005.1 392.3,1006.9 390.5,1014.1 388.7,1006.9 381.5,1005.1 388.7,1003.4" fill="url(#chart-plate-priory-lg1)" opacity="0.8"/>
 <polygon points="394.3,1001.3 392.3,1005.1 394.3,1009 390.5,1006.9 386.7,1009 388.7,1005.1 386.7,1001.3 390.5,1003.3" fill="url(#chart-plate-priory-lg1)" opacity="0.7"/>
 <circle cx="390.5" cy="1005.1" r="2" fill="#fff6cf" opacity="0.8"/>
+<g class="answer">
 <line x1="871.6" y1="728" x2="813.4" y2="653.6" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
 <line x1="871.6" y1="728" x2="813.4" y2="653.6" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
 <line x1="871.6" y1="728" x2="929.8" y2="653.6" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
@@ -91,6 +94,33 @@
 <line x1="871.6" y1="728" x2="949.2" y2="793.1" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
 <line x1="871.6" y1="728" x2="871.6" y2="607.1" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
 <line x1="871.6" y1="728" x2="871.6" y2="607.1" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+<line x1="600" y1="309.5" x2="698.9" y2="355.1" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
+<line x1="600" y1="309.5" x2="698.9" y2="355.1" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+<line x1="698.9" y1="355.1" x2="723.2" y2="457.4" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
+<line x1="698.9" y1="355.1" x2="723.2" y2="457.4" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+<line x1="723.2" y1="457.4" x2="654.3" y2="539.2" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
+<line x1="723.2" y1="457.4" x2="654.3" y2="539.2" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+<line x1="654.3" y1="539.2" x2="545.7" y2="539.2" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
+<line x1="654.3" y1="539.2" x2="545.7" y2="539.2" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+<line x1="545.7" y1="539.2" x2="476.8" y2="457.4" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
+<line x1="545.7" y1="539.2" x2="476.8" y2="457.4" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+<line x1="476.8" y1="457.4" x2="501.1" y2="355.1" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
+<line x1="476.8" y1="457.4" x2="501.1" y2="355.1" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+<line x1="501.1" y1="355.1" x2="600" y2="309.5" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
+<line x1="501.1" y1="355.1" x2="600" y2="309.5" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+<line x1="406" y1="728" x2="367.2" y2="653.6" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
+<line x1="406" y1="728" x2="367.2" y2="653.6" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+<line x1="367.2" y1="653.6" x2="328.4" y2="588.5" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
+<line x1="367.2" y1="653.6" x2="328.4" y2="588.5" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+<line x1="328.4" y1="588.5" x2="279.9" y2="514.1" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
+<line x1="328.4" y1="588.5" x2="279.9" y2="514.1" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+<line x1="279.9" y1="514.1" x2="231.4" y2="449" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
+<line x1="279.9" y1="514.1" x2="231.4" y2="449" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+<line x1="406" y1="728" x2="454.5" y2="793.1" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
+<line x1="406" y1="728" x2="454.5" y2="793.1" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+<line x1="454.5" y1="793.1" x2="522.4" y2="858.2" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
+<line x1="454.5" y1="793.1" x2="522.4" y2="858.2" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
+</g>
 <polygon points="871.6,706 876,723.6 893.6,728 876,732.4 871.6,750 867.2,732.4 849.6,728 867.2,723.6" fill="url(#chart-plate-priory-lg1)" opacity="1"/>
 <polygon points="880.9,718.7 876,728 880.9,737.3 871.6,732.4 862.3,737.3 867.2,728 862.3,718.7 871.6,723.6" fill="url(#chart-plate-priory-lg1)" opacity="0.9"/>
 <circle cx="871.6" cy="728" r="4.8" fill="#fff6cf" opacity="1"/>
@@ -109,20 +139,6 @@
 <polygon points="871.6,593.1 874.4,604.3 885.6,607.1 874.4,609.9 871.6,621.1 868.8,609.9 857.6,607.1 868.8,604.3" fill="url(#chart-plate-priory-lg1)" opacity="1"/>
 <polygon points="877.5,601.2 874.4,607.1 877.5,613 871.6,609.9 865.7,613 868.8,607.1 865.7,601.2 871.6,604.3" fill="url(#chart-plate-priory-lg1)" opacity="0.9"/>
 <circle cx="871.6" cy="607.1" r="3.1" fill="#fff6cf" opacity="1"/>
-<line x1="600" y1="309.5" x2="698.9" y2="355.1" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
-<line x1="600" y1="309.5" x2="698.9" y2="355.1" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
-<line x1="698.9" y1="355.1" x2="723.2" y2="457.4" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
-<line x1="698.9" y1="355.1" x2="723.2" y2="457.4" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
-<line x1="723.2" y1="457.4" x2="654.3" y2="539.2" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
-<line x1="723.2" y1="457.4" x2="654.3" y2="539.2" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
-<line x1="654.3" y1="539.2" x2="545.7" y2="539.2" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
-<line x1="654.3" y1="539.2" x2="545.7" y2="539.2" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
-<line x1="545.7" y1="539.2" x2="476.8" y2="457.4" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
-<line x1="545.7" y1="539.2" x2="476.8" y2="457.4" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
-<line x1="476.8" y1="457.4" x2="501.1" y2="355.1" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
-<line x1="476.8" y1="457.4" x2="501.1" y2="355.1" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
-<line x1="501.1" y1="355.1" x2="600" y2="309.5" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
-<line x1="501.1" y1="355.1" x2="600" y2="309.5" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
 <polygon points="600,287.5 604.4,305.1 622,309.5 604.4,313.9 600,331.5 595.6,313.9 578,309.5 595.6,305.1" fill="url(#chart-plate-priory-lg1)" opacity="1"/>
 <polygon points="609.3,300.2 604.4,309.5 609.3,318.8 600,313.9 590.7,318.8 595.6,309.5 590.7,300.2 600,305.1" fill="url(#chart-plate-priory-lg1)" opacity="0.9"/>
 <circle cx="600" cy="309.5" r="4.8" fill="#fff6cf" opacity="1"/>
@@ -144,18 +160,6 @@
 <polygon points="501.1,341.1 503.8,352.3 515.1,355.1 503.8,357.8 501.1,369.1 498.3,357.8 487.1,355.1 498.3,352.3" fill="url(#chart-plate-priory-lg1)" opacity="1"/>
 <polygon points="507,349.1 503.9,355.1 507,361 501.1,357.9 495.1,361 498.3,355.1 495.1,349.1 501.1,352.3" fill="url(#chart-plate-priory-lg1)" opacity="0.9"/>
 <circle cx="501.1" cy="355.1" r="3.1" fill="#fff6cf" opacity="1"/>
-<line x1="406" y1="728" x2="367.2" y2="653.6" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
-<line x1="406" y1="728" x2="367.2" y2="653.6" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
-<line x1="367.2" y1="653.6" x2="328.4" y2="588.5" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
-<line x1="367.2" y1="653.6" x2="328.4" y2="588.5" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
-<line x1="328.4" y1="588.5" x2="279.9" y2="514.1" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
-<line x1="328.4" y1="588.5" x2="279.9" y2="514.1" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
-<line x1="279.9" y1="514.1" x2="231.4" y2="449" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
-<line x1="279.9" y1="514.1" x2="231.4" y2="449" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
-<line x1="406" y1="728" x2="454.5" y2="793.1" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
-<line x1="406" y1="728" x2="454.5" y2="793.1" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
-<line x1="454.5" y1="793.1" x2="522.4" y2="858.2" stroke="#7a5310" stroke-width="7.2" stroke-linecap="round" opacity="0.6"/>
-<line x1="454.5" y1="793.1" x2="522.4" y2="858.2" stroke="url(#chart-plate-priory-lg1)" stroke-width="4" stroke-linecap="round"/>
 <polygon points="406,706 410.4,723.6 428,728 410.4,732.4 406,750 401.6,732.4 384,728 401.6,723.6" fill="url(#chart-plate-priory-lg1)" opacity="1"/>
 <polygon points="415.3,718.7 410.4,728 415.3,737.3 406,732.4 396.7,737.3 401.6,728 396.7,718.7 406,723.6" fill="url(#chart-plate-priory-lg1)" opacity="0.9"/>
 <circle cx="406" cy="728" r="4.8" fill="#fff6cf" opacity="1"/>
@@ -177,7 +181,9 @@
 <polygon points="522.4,844.2 525.2,855.4 536.4,858.2 525.2,861 522.4,872.2 519.6,861 508.4,858.2 519.6,855.4" fill="url(#chart-plate-priory-lg1)" opacity="1"/>
 <polygon points="528.3,852.3 525.2,858.2 528.3,864.1 522.4,861 516.5,864.1 519.6,858.2 516.5,852.3 522.4,855.4" fill="url(#chart-plate-priory-lg1)" opacity="0.9"/>
 <circle cx="522.4" cy="858.2" r="3.1" fill="#fff6cf" opacity="1"/>
+<g class="answer">
 <text x="871.6" y="573.1" font-size="24" font-family="serif" fill="url(#chart-plate-priory-lg1)" text-anchor="middle" letter-spacing="4">THE FIRST LIGHT</text>
 <text x="600" y="275.5" font-size="24" font-family="serif" fill="url(#chart-plate-priory-lg1)" text-anchor="middle" letter-spacing="4">THE GALE HARP</text>
 <text x="376.9" y="902.2" font-size="24" font-family="serif" fill="url(#chart-plate-priory-lg1)" text-anchor="middle" letter-spacing="4">THE STAG</text>
+</g>
 </svg>

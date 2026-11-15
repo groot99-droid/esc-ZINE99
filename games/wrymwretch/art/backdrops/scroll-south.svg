@@ -2,9 +2,11 @@
 <title id="scroll-south-t">Scroll: Mosswhisper Depths</title>
 <desc id="scroll-south-d">Twin flight backdrop for the South: a cavern in ink wash, stalactites above and broken floor below, strata in dry-brush lines, crystal clusters left as bare silk, and one molten seam glowing orange along the rock.</desc>
 <defs><filter id="scroll-south-silk1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.35" numOctaves="3" seed="648"/><feColorMatrix values="0 0 0 0 0.45  0 0 0 0 0.38  0 0 0 0 0.25  0 0 0 0.22 0"/></filter><filter id="scroll-south-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.5"/></filter><filter id="scroll-south-blur3" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter><filter id="scroll-south-blur4" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter><filter id="scroll-south-blur5" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter><filter id="scroll-south-rough6"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="966" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.5"/></filter></defs>
+<g class="plate">
 <rect x="0" y="0" width="1600" height="900" fill="#EDE4CF"/>
 <rect x="0" y="0" width="1600" height="900" filter="url(#scroll-south-silk1)"/>
 <rect x="0" y="0" width="1600" height="900" fill="#E0762E" opacity="0.1"/>
+</g>
 <rect x="0" y="0" width="1600" height="900" fill="#1b1a1c" opacity="0.2"/>
 <ellipse cx="800" cy="880" rx="1000" ry="200" fill="#E0762E" opacity="0.3" filter="url(#scroll-south-blur5)"/>
 <path d="M-40,291.3 L-13.8,302.5 L12.5,302.1 L38.8,307.2 L65,309.6 L91.2,301.7 L117.5,290.2 L143.8,293.6 L170,293.3 L196.2,284.7 L222.5,282.3 L248.8,280.6 L275,276.9 L301.2,285.6 L327.5,296.1 L353.8,293.4 L380,294.9 L406.2,291.4 L432.5,289.2 L458.8,294.7 L485,296.1 L511.2,311.9 L537.5,322.6 L563.8,321.5 L590,329 L616.2,341.7 L642.5,356.1 L668.8,363.6 L695,369 L721.2,364.6 L747.5,368.9 L773.8,379.9 L800,383.6 L826.2,375.8 L852.5,376.3 L878.8,361.7 L905,350.1 L931.2,343.7 L957.5,331.8 L983.8,327.8 L1010,336.2 L1036.2,341.9 L1062.5,335.6 L1088.8,339.9 L1115,338.3 L1141.2,340.9 L1167.5,342.8 L1193.8,334.4 L1220,324.7 L1246.2,326.5 L1272.5,340.5 L1298.8,342.3 L1325,346.4 L1351.2,341.2 L1377.5,335.5 L1403.8,334.3 L1430,333.2 L1456.2,332.3 L1482.5,324.1 L1508.8,325.6 L1535,329.8 L1561.2,317.5 L1587.5,314.1 L1613.8,310.2 L1640,299.6 L1640,-40 L-40,-40Z" fill="#1b1a1c" opacity="0.2" filter="url(#scroll-south-blur4)"/>
@@ -139,6 +141,7 @@
 <polygon points="1198,170 1221.7,244 1207.9,164.4" fill="#e8bd96" opacity="0.8"/>
 <polygon points="1196.4,181 1243.2,249.9 1248.5,236.4 1217.6,159" fill="#EDE4CF" opacity="0.9" stroke="#1b1a1c" stroke-width="1.4"/>
 <polygon points="1207,170 1248.5,236.4 1217.6,159" fill="#e8bd96" opacity="0.8"/>
+<g class="label">
 <rect x="0" y="0" width="1600" height="900" fill="none" stroke="#8c6f45" stroke-width="10"/>
 <rect x="14" y="14" width="1572" height="872" fill="none" stroke="#2e241c" stroke-width="1.2" opacity="0.6"/>
 <rect x="1496" y="50" width="66" height="400" fill="#EDE4CF" opacity="0.9" stroke="#2e241c" stroke-width="1"/>
@@ -147,4 +150,5 @@
 <rect x="1504" y="796" width="56" height="56" rx="3" fill="#a85822" filter="url(#scroll-south-rough6)" opacity="0.9"/>
 <path d="M0,-1 L.62,-.42 L.62,.42 L0,1 L-.62,.42 L-.62,-.42Z" fill="#EDE4CF" transform="translate(1532,824) scale(17.9)"/>
 <path d="M-.62,-.42 L0,-.05 L.62,-.42 M0,-.05 V1" fill="none" stroke="#a85822" stroke-width="0.1" stroke-linecap="round" transform="translate(1532,824) scale(17.9)" opacity="0.8"/>
+</g>
 </svg>

@@ -208,7 +208,10 @@
         "s_cloud_platform"
       ],
       "reads": [],
-      "writes": [],
+      "writes": [
+        "because_of_us_recorded",
+        "record"
+      ],
       "mode": "twin_flight"
     },
     {
@@ -451,7 +454,9 @@
       "next": [
         "s_forbidden_chamber"
       ],
-      "reads": [],
+      "reads": [
+        "heartstone_kept"
+      ],
       "writes": [
         "trust.dark",
         "tribes_trusted",
@@ -738,7 +743,9 @@
         "trust.earth",
         "trust.water",
         "trust.dark",
-        "trust.celestial"
+        "trust.celestial",
+        "because_of_us_recorded",
+        "kael_choice"
       ],
       "writes": [
         "ilvarra_met",
@@ -762,7 +769,10 @@
         "memory.east",
         "memory.below",
         "memory.above",
-        "world_memory"
+        "world_memory",
+        "price_told",
+        "ysolde",
+        "burned"
       ]
     },
     {
@@ -776,7 +786,8 @@
         "s_moot_camp"
       ],
       "reads": [
-        "moot_watches_left"
+        "moot_watches_left",
+        "heartstone_kept"
       ],
       "writes": [
         "trust.wood",
@@ -799,7 +810,8 @@
         "s_moot_camp"
       ],
       "reads": [
-        "moot_watches_left"
+        "moot_watches_left",
+        "heartstone_kept"
       ],
       "writes": [
         "trust.sky",
@@ -822,7 +834,8 @@
         "s_moot_camp"
       ],
       "reads": [
-        "moot_watches_left"
+        "moot_watches_left",
+        "heartstone_kept"
       ],
       "writes": [
         "trust.earth",
@@ -845,7 +858,8 @@
         "s_moot_camp"
       ],
       "reads": [
-        "moot_watches_left"
+        "moot_watches_left",
+        "heartstone_kept"
       ],
       "writes": [
         "trust.water",
@@ -928,7 +942,8 @@
         "memory.south",
         "memory.east",
         "memory.below",
-        "memory.above"
+        "memory.above",
+        "ysolde"
       ],
       "writes": [
         "witnesses",
@@ -956,7 +971,9 @@
       "next": [
         "s_run_bone_bridge"
       ],
-      "reads": [],
+      "reads": [
+        "ysolde"
+      ],
       "writes": [
         "witnesses",
         "killlist_read",
@@ -976,7 +993,8 @@
         "s_conc_ilvarra"
       ],
       "reads": [
-        "record"
+        "record",
+        "ward_names_kept"
       ],
       "writes": [
         "ilvarra_alive",
@@ -1024,7 +1042,8 @@
         "memory.south",
         "memory.east",
         "memory.below",
-        "memory.above"
+        "memory.above",
+        "record"
       ],
       "writes": [
         "memory.west",
@@ -1054,7 +1073,8 @@
         "memory.south",
         "memory.east",
         "memory.below",
-        "memory.above"
+        "memory.above",
+        "heartstone_kept"
       ],
       "writes": [
         "record",
@@ -1078,7 +1098,9 @@
       "next": [
         "s_glyph_seal"
       ],
-      "reads": [],
+      "reads": [
+        "heartstone_kept"
+      ],
       "writes": [
         "choir_opened",
         "memory.south"
@@ -1207,7 +1229,8 @@
         "memory.south",
         "memory.east",
         "memory.below",
-        "memory.above"
+        "memory.above",
+        "ward_names_kept"
       ],
       "writes": [
         "memory.west",
@@ -1287,7 +1310,8 @@
         "trust.water",
         "trust.dark",
         "trust.celestial",
-        "record"
+        "record",
+        "heartstone_kept"
       ],
       "writes": [
         "record",
@@ -1323,7 +1347,8 @@
         "memory.above",
         "world_memory",
         "izladar_fragments",
-        "anchor_forged"
+        "anchor_forged",
+        "price_told"
       ],
       "writes": [
         "final_choice",

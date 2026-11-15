@@ -2,6 +2,7 @@
 <title id="heart-ring-t">The Heartstone ring setting</title>
 <desc id="heart-ring-d">The ring setting on the Stonekeeper's bench, in facets: a gold band of twenty-four planes, the twelve-step pitch wheel inside it, five sockets round it. Four hold shards and one, outlined only, is the rest that must stay empty.</desc>
 <defs><filter id="heart-ring-blur1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter></defs>
+<g class="plate">
 <polygon points="0,0 63.5,0 0,66.3" fill="#18131d" stroke="#18131d" stroke-width="0.6"/>
 <polygon points="63.5,0 87.3,66.2 0,66.3" fill="#2a262f" stroke="#2a262f" stroke-width="0.6"/>
 <polygon points="63.5,0 150.6,0 146.6,72.7" fill="#2c2730" stroke="#2c2730" stroke-width="0.6"/>
@@ -164,6 +165,7 @@
 <polygon points="487,521.9 521.3,600 485.7,600" fill="#62311a" stroke="#62311a" stroke-width="0.6"/>
 <polygon points="531.9,526.3 600,528.3 521.3,600" fill="#653926" stroke="#653926" stroke-width="0.6"/>
 <polygon points="600,528.3 600,600 521.3,600" fill="#5e2f1a" stroke="#5e2f1a" stroke-width="0.6"/>
+</g>
 <circle cx="308" cy="314" r="206" fill="#000" opacity="0.5" filter="url(#heart-ring-blur1)"/>
 <polygon points="450,300 475,300 469,345.3 444.9,338.8" fill="#785428" stroke="#2a1608" stroke-width="1"/>
 <polygon points="475,300 500,300 493.2,351.8 469,345.3" fill="#61411d" stroke="#2a1608" stroke-width="1"/>
@@ -213,6 +215,7 @@
 <polygon points="451.6,212.5 473.2,200 493.2,248.2 469,254.7" fill="#825e2c" stroke="#2a1608" stroke-width="1"/>
 <polygon points="444.9,261.2 469,254.7 475,300 450,300" fill="#8b6631" stroke="#2a1608" stroke-width="1"/>
 <polygon points="469,254.7 493.2,248.2 500,300 475,300" fill="#745126" stroke="#2a1608" stroke-width="1"/>
+<g class="wheel">
 <polygon points="300,300 268.4,182.2 331.6,182.2" fill="#cd9441" stroke="#1a1010" stroke-width="1"/>
 <polygon points="300,300 331.6,182.2 386.3,213.7" fill="#352626" stroke="#1a1010" stroke-width="1"/>
 <polygon points="300,300 386.3,213.7 417.8,268.4" fill="#382929" stroke="#1a1010" stroke-width="1"/>
@@ -238,6 +241,8 @@
 <text x="200" y="306" font-size="15" font-family="sans-serif" fill="#fbf6e4" text-anchor="middle" opacity="0.8">9</text>
 <text x="213.4" y="256" font-size="15" font-family="sans-serif" fill="#fbf6e4" text-anchor="middle" opacity="0.8">10</text>
 <text x="250" y="219.4" font-size="15" font-family="sans-serif" fill="#fbf6e4" text-anchor="middle" opacity="0.8">11</text>
+</g>
+<g class="socket">
 <polygon points="475.6,139.5 434,163.5 392.4,139.5 392.4,91.5 434,67.5 475.6,91.5" fill="#2a1608" stroke="#f0c060" stroke-width="3"/>
 <polygon points="431.4,114.4 467.7,119.4 445.6,145.3" fill="#edb38c" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.5"/>
 <polygon points="431.4,114.4 445.6,145.3 430.4,155.6" fill="#e69157" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.5"/>
@@ -274,4 +279,5 @@
 <polygon points="170.3,116.5 185,88.3 198.2,123.3" fill="#a5c084" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.5"/>
 <polygon points="180,18 420,18 436,40 420,62 180,62 164,40" fill="#1a1016" stroke="#c88a2e" stroke-width="2"/>
 <line x1="184" y1="40" x2="416" y2="40" stroke="#fbf6e4" stroke-width="2.5"/>
+</g>
 </svg>

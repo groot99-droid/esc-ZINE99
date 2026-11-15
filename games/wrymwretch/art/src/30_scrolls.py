@@ -50,6 +50,7 @@ class Wash:
 
 def finish(a, i, name, sub):
     """Colophon: the place's name down the right edge and the realm's seal."""
+    a.open("g", class_="label")   # the mount and colophon; a mode that scrolls the silk behind play strips them
     a.rect(0, 0, W, H, fill="none", stroke="#8c6f45", stroke_width=10)
     a.rect(14, 14, W - 28, H - 28, fill="none", stroke="#2e241c", stroke_width=1.2, opacity=0.6)
     a.rect(W - 104, 50, 66, 40 + len(name) * 20, fill=kit.SILK, opacity=0.86, stroke="#2e241c", stroke_width=1)
@@ -58,6 +59,7 @@ def finish(a, i, name, sub):
     a.text(W - 86, 70, sub, size=16, family="serif", font_style="italic", fill="#55514a", transform=f"rotate(90 {W - 86} 70)")
     if i is not None:
         kit.seal_stamp(a, i, W - 96, H - 104, 56)
+    a.close()
 
 
 def reg(key, i, title, doc):

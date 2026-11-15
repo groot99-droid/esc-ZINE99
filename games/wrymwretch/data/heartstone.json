@@ -67,7 +67,17 @@
             0,
             4,
             7
-          ]
+          ],
+          "carries": {
+            "scenes": [
+              "s_realms_syndicate",
+              "s_realms_seasons",
+              "s_realms_galechanters",
+              "s_realms_stonekeepers",
+              "s_realms_tidecallers"
+            ],
+            "effect": "Stonekeeper home hexes cannot be tide-taken."
+          }
         },
         {
           "memory": "vision",
@@ -75,7 +85,13 @@
             0,
             3,
             8
-          ]
+          ],
+          "carries": {
+            "scenes": [
+              "s_battle_echo"
+            ],
+            "effect": "The Architect's Echo's intents are shown."
+          }
         },
         {
           "memory": "song",
@@ -83,7 +99,14 @@
             2,
             5,
             9
-          ]
+          ],
+          "carries": {
+            "scenes": [
+              "s_heart_choir",
+              "s_bone_choir"
+            ],
+            "effect": "The Bone Choir starts with one rib tuned; the tuned rib is audible in the 3D hall before the page opens."
+          }
         }
       ],
       "on_win": {

@@ -9,12 +9,30 @@
 // crack, and says whether its pitch is in the chord at all. Each shard keeps a note of what it sounded
 // in each slot. After the second strike a tremor runs through the hall and cracks one shard in the
 // tray. After two losses in a row: seven strikes and Gaia twice (api.store).
+//
+// Phase 1 (accepted 2026-11-15), "The Heartstone's memory changes rooms": the memory chosen here is no
+// longer only a chord. Each choice says what it will change elsewhere, before the player chooses, and the
+// Record says it again when the crystal is set: the founding holds the Stonekeeper homes against the tide
+// on every Six Realms board; the vision shows the Architect's Echo's intents; the song starts the Bone
+// Choir with one rib tuned (flag heartstone_kept, already written here).
+// Art (games/wrymwretch/art): the gold ring setting (its band; the wheel and sockets are set here, where
+// the chosen chord puts them), the Mosswhisper shards as the crystals (their pitch, cracks and writing
+// stripped: play keeps the pitch hidden and draws its own cracks), chapter card 3 above the how-to, the
+// Record behind the result. Without them the bench is drawn in facets here, as before.
 // Quoted, verbatim as DESIGN.md sections 3 and 11 quote them (creative-writing/vault/02_Novels/02_WrymWretch.md):
 //   "Its power was tied to memory" (WW 61)   "Not yet," she whispered. "You cannot fade. Not now." (WW 59)
+
+import { png, opening, recordPage } from "./_art.js";
 
 const OCHRE = "#c88a2e", MOLTEN = "#e8571c", GOLD = "#d4a72c", BONE = "#f3eee2", NIGHT = "#140f12", LEAD = "#0d0a0b";
 const TRAY = [["r1", 0, 0], ["r2", 4, 1], ["r3", 7, 0], ["r4", 3, 0], ["r5", 8, 1], ["r6", 2, 0], ["r7", 5, 0], ["r8", 9, 1]];
 const CHOICES = [["founding", "The founding", [0, 4, 7]], ["vision", "The vision", [0, 3, 8]], ["song", "The song", [2, 5, 9]]];
+// what each memory changes in another room (phase 1, layer link 3)
+const CARRIES = {
+  founding: ["holds the Stonekeepers' homes", "On every Six Realms board, the tide cannot take a Stonekeeper home hex."],
+  vision: ["shows the Echo's hand", "At the end, the Architect's Echo shows its intents. And one fragment of who Izladar was."],
+  song: ["tunes one rib of the choir", "The Bone Choir starts with one rib tuned, and it can be heard in the hall before the page opens."],
+};
 const SHATTER = 3, RINGS = 3;
 const NUM = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
 
@@ -49,6 +67,10 @@ const CSS = `
 .wrymwretch-heartstone-choices{justify-content:center}
 .wrymwretch-heartstone-card q{font-style:italic;color:#e9d8b0}
 .wrymwretch-heartstone-choices{display:flex;flex-wrap:wrap;gap:8px}
+.wrymwretch-heartstone-choices button{clip-path:polygon(6% 0,94% 0,100% 50%,94% 100%,6% 100%,0 50%);padding:8px 18px}
+.wrymwretch-heartstone-choices small{display:block;font:italic 13.5px 'Cormorant Garamond',Georgia,serif;letter-spacing:0;margin-top:1px}
+.wrymwretch-heartstone-card .carry{font-size:14.5px;color:#cdbb92;margin:10px 0 0;text-align:center}
+.wrymwretch-heartstone-intro{overflow:auto}
 `;
 
 export default {
@@ -74,7 +96,8 @@ export default {
           <dt>Cracks</dt><dd>every strike cracks the shards it sounds; three cracks shatter one</dd>
         </dl>
         <p class="more">${gentle ? "Seven strikes this time, and Gaia will listen twice. " : ""}<q>Its power was tied to memory.</q> First, choose which memory the stone keeps:</p>
-        <div class="wrymwretch-heartstone-choices">${CHOICES.map(([id, label]) => `<button type="button" class="wrymwretch-heartstone-btn" data-choice="${id}">${label}</button>`).join("")}</div></div></div>`;
+        <div class="wrymwretch-heartstone-choices">${CHOICES.map(([id, label]) => `<button type="button" class="wrymwretch-heartstone-btn" data-choice="${id}">${label}<small>${CARRIES[id][0]}</small></button>`).join("")}</div>
+        <p class="carry">A memory kept here is carried into other rooms. It cannot be changed afterwards.</p></div></div>`;
     root.appendChild(wrap);
     const svg = wrap.querySelector("svg"), note = wrap.querySelector(".wrymwretch-heartstone-bar i");
     const strikeBtn = wrap.querySelector("[data-strike]"), gaiaBtn = wrap.querySelector("[data-gaia]"), ringBtn = wrap.querySelector("[data-ring]");
@@ -83,6 +106,8 @@ export default {
     const mk = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; };
     const timers = new Set();
     const later = (fn, ms) => { const t = setTimeout(() => { timers.delete(t); fn(); }, ms); timers.add(t); };
+    const A = { ring: "", shard: ["", ""] };
+    let dead = false;
     const shade = (hex, f) => { const n = parseInt(hex.slice(1), 16); return `rgb(${[n >> 16, (n >> 8) & 255, n & 255].map((v) => Math.max(0, Math.min(255, Math.round(v * f)))).join(",")})`; };
 
     // ---- low-poly ground ----------------------------------------------------------------------
@@ -131,6 +156,14 @@ export default {
       const pts = Array.from({ length: n }, (_, i) => { const a = (i / n) * Math.PI * 2 - Math.PI / 2 + (r() - 0.5) * 0.4; const rr = size * (i % 2 ? 0.62 : 1) * (0.85 + r() * 0.3); return [cx + Math.cos(a) * rr * 0.7, cy + Math.sin(a) * rr]; });
       const col = s.col % 2 ? OCHRE : MOLTEN;
       const g = mk("g", {});
+      const spr = A.shard[s.col % 2];
+      if (spr) {   // a Mosswhisper shard from the art; which of the two says nothing of its pitch
+        const h = size * 3.3, w = h * 200 / 240;
+        mk("image", { href: spr, x: cx - w / 2, y: cy - h * 0.49, width: w, height: h, "pointer-events": "none" }, g);
+        mk("ellipse", { class: "wrymwretch-heartstone-focus", cx, cy, rx: size * 0.62, ry: size * 1.12, fill: "transparent", stroke: "none" }, g);
+        for (let c = 0; c < s.cracks; c++) { const a = r() * Math.PI * 2, x0 = cx + (r() - 0.5) * size * 0.4, y0 = cy - size * 0.5 + c * size * 0.45; mk("path", { d: `M${x0},${y0} l${Math.cos(a) * size * 0.3},${size * 0.3} l${(r() - 0.5) * size * 0.5},${size * 0.28}`, stroke: "#fff8e8", "stroke-width": 2.2, fill: "none", "stroke-linejoin": "round", "pointer-events": "none" }, g); }
+        return g;
+      }
       pts.forEach((p, i) => { const q = pts[(i + 1) % n]; mk("polygon", { points: `${cx},${cy} ${p} ${q}`, fill: shade(col, 0.6 + ((i * 37) % 9) / 14), stroke: shade(col, 0.45), "stroke-width": 0.8 }, g); });
       mk("polygon", { class: "wrymwretch-heartstone-focus", points: pts.map((p) => p.join(",")).join(" "), fill: "none", stroke: LEAD, "stroke-width": 1.6 }, g);
       for (let c = 0; c < s.cracks; c++) { const a = r() * Math.PI * 2; mk("path", { d: `M${cx},${cy} l${Math.cos(a) * size * 0.5},${Math.sin(a) * size * 0.5} l${(r() - 0.5) * size * 0.4},${(r() - 0.5) * size * 0.4}`, stroke: LEAD, "stroke-width": 2, fill: "none" }, g); }
@@ -145,12 +178,13 @@ export default {
       let d = "";
       for (let x = 0; x <= L.ww; x += 3) { const t = x / L.ww * 6 * Math.PI; const y = st.chord.reduce((acc, p) => acc + Math.sin(t * Math.pow(2, p / 12) * 2), 0) / st.chord.length; d += `${x ? "L" : "M"}${L.wx + x},${66 - y * 22}`; }
       mk("path", { d, fill: "none", stroke: BONE, "stroke-width": 2 }, gTop);
-      // the wheel and ring setting
+      // the wheel (the chord in hand lit on it) and ring setting
       for (let i = 0; i < 12; i++) {
-        const a0 = (-105 + i * 30) * Math.PI / 180, a1 = (-75 + i * 30) * Math.PI / 180;
-        mk("polygon", { points: `${CX},${CY} ${CX + Math.cos(a0) * 110},${CY + Math.sin(a0) * 110} ${CX + Math.cos(a1) * 110},${CY + Math.sin(a1) * 110}`, fill: i % 2 ? "#3a2a22" : "#5a3e2a", stroke: LEAD, "stroke-width": 1 }, gRing);
+        const a0 = (-105 + i * 30) * Math.PI / 180, a1 = (-75 + i * 30) * Math.PI / 180, lit = st.started && st.chord.includes(i);
+        mk("polygon", { points: `${CX},${CY} ${CX + Math.cos(a0) * 110},${CY + Math.sin(a0) * 110} ${CX + Math.cos(a1) * 110},${CY + Math.sin(a1) * 110}`, fill: lit ? (i % 2 ? "#b87a26" : "#d39a3a") : i % 2 ? "#3a2a22" : "#5a3e2a", stroke: LEAD, "stroke-width": 1 }, gRing);
       }
       mk("circle", { cx: CX, cy: CY, r: 18, fill: LEAD }, gRing);
+      if (A.ring) { mk("image", { href: A.ring, x: CX - 257, y: CY - 257, width: 514, height: 514, "pointer-events": "none" }, gRing); return; }
       mk("circle", { cx: CX, cy: CY, r: RING, fill: "none", stroke: shade(GOLD, 0.7), "stroke-width": 34 }, gRing);
       for (let i = 0; i < 24; i++) { const a = i * 15 * Math.PI / 180; mk("line", { x1: CX + Math.cos(a) * (RING - 17), y1: CY + Math.sin(a) * (RING - 17), x2: CX + Math.cos(a) * (RING + 17), y2: CY + Math.sin(a) * (RING + 17), stroke: i % 2 ? shade(GOLD, 1.1) : shade(GOLD, 0.5), "stroke-width": 1.4 }, gRing); }
       mk("circle", { cx: CX, cy: CY, r: RING + 17, fill: "none", stroke: LEAD, "stroke-width": 1.5 }, gRing);
@@ -241,7 +275,12 @@ export default {
         note.textContent = "Every line lies still. The crystal is set.";
         api.store.set("losses", 0);
         const kept = { founding: "the tribe's founding", vision: "Rhyla's vision", song: "the Stonekeepers' song" }[st.memId];
-        return later(() => api.end({ outcome: "win", text: `Every line lies still. The Heartstone cannot be saved, but its tuned shard keeps ${kept}, with ${st.strikes} strike${st.strikes === 1 ? "" : "s"} to spare. Mosswhisper's memory is anchored through the next two drains, and Rhyla sets out for the Deep Core.` }), 1200);
+        return later(() => { if (dead) return; recordPage(wrap, api, { realm: "south", title: "Heartstone I: one memory kept", sub: "Mosswhisper page · chapter 3, The Heartstone", divider: 1, crystal: true, lines: [
+          `Kept in the tuned shard: ${kept}.`,
+          { t: CARRIES[st.memId][1], kind: "link", note: "The Heartstone's memory changes rooms." },
+          ...Object.keys(CARRIES).filter((k) => k !== st.memId).map((k) => ({ t: `Not kept: ${{ founding: "the founding", vision: "the vision", song: "the song" }[k]}.`, kind: "lost" })),
+          "Mosswhisper memory skips its next two drains.",
+        ] }); api.end({ outcome: "win", text: `Every line lies still. The Heartstone cannot be saved, but its tuned shard keeps ${kept}, with ${st.strikes} strike${st.strikes === 1 ? "" : "s"} to spare. ${CARRIES[st.memId][1]} Mosswhisper's memory is anchored through the next two drains, and Rhyla sets out for the Deep Core.` }); }, 1200);
       }
       const broke = [];
       placed.forEach((s) => { s.cracks++; if (s.cracks >= SHATTER) { s.gone = true; s.slot = -1; broke.push(NUM[s.n]); } });
@@ -256,7 +295,10 @@ export default {
         st.over = true; render();
         api.store.set("losses", losses + 1);
         const lostMem = { founding: "the founding of the tribe", vision: "the vision", song: "the Stonekeepers' song" }[st.memId];
-        return later(() => api.end({ outcome: "lose", text: `${left < st.chord.length ? "Too few shards are left whole to fill the ring." : "The last strike fades with the lines still shaking."} The Heartstone goes dark, and ${lostMem} goes with it. Rhyla keeps her hand on the cold stone a long moment before she rises.${losses + 1 >= 2 ? " Next time: seven strikes, and Gaia twice." : ""}` }), 1200);
+        return later(() => { if (dead) return; recordPage(wrap, api, { realm: "south", title: "Heartstone I: one memory kept", sub: "Mosswhisper page · chapter 3, The Heartstone", divider: 1, lines: [
+          { t: `The Heartstone is dark. ${lostMem[0].toUpperCase() + lostMem.slice(1)} was not kept.`, kind: "lost" },
+          { t: "Nothing is carried from this hall into the other rooms.", kind: "lost" },
+        ] }); api.end({ outcome: "lose", text: `${left < st.chord.length ? "Too few shards are left whole to fill the ring." : "The last strike fades with the lines still shaking."} The Heartstone goes dark, and ${lostMem} goes with it. Rhyla keeps her hand on the cold stone a long moment before she rises.${losses + 1 >= 2 ? " Next time: seven strikes, and Gaia twice." : ""}` }); }, 1200);
       }
       render();
     }
@@ -314,6 +356,9 @@ export default {
       const first = svg.querySelector("[data-shard]"); first && first.focus();
     }));
     intro.querySelector("[data-choice]").focus();
+    opening(api.art, intro, "chapter-03");
+    png(api.art, "heart-ring", { w: 514, strip: [".plate", ".socket", ".wheel"] }).then((u) => { if (u && !dead) { A.ring = u; drawStatic(); } });
+    ["heart-shard-02", "heart-shard-08"].forEach((id, k) => png(api.art, id, { w: 180, strip: [".plate", ".mark"] }).then((u) => { if (u && !dead) { A.shard[k] = u; render(); } }));
     st.chord = CHOICES[0][2];
     const relayout = () => {
       const tall = wrap.clientWidth / Math.max(1, svg.clientHeight || wrap.clientHeight) < 0.85;
@@ -326,6 +371,6 @@ export default {
     drawStatic(); render(); relayout();
     raf = requestAnimationFrame(tick);
 
-    return { unmount() { st.over = true; cancelAnimationFrame(raf); ro && ro.disconnect(); timers.forEach(clearTimeout); try { ac && ac.close(); } catch { /* closed */ } wrap.remove(); } };
+    return { unmount() { st.over = true; dead = true; cancelAnimationFrame(raf); ro && ro.disconnect(); timers.forEach(clearTimeout); try { ac && ac.close(); } catch { /* closed */ } wrap.remove(); } };
   },
 };

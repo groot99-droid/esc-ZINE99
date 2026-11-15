@@ -240,7 +240,13 @@
     "recall_per_game": 1,
     "round_limit": 16,
     "tie_goes_to": "elder",
-    "undo_per_match": 1
+    "undo_per_match": 1,
+    "heartstone_founding": {
+      "accepted": "2026-11-15",
+      "reads": "heartstone_kept",
+      "when": "founding",
+      "effect": "The tide never marks or takes a Stonekeeper (south) home hex, in any match."
+    }
   },
   "win_rewards": {
     "realm_gain": 3,

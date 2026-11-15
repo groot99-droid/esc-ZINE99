@@ -16,7 +16,7 @@ retelling and re-drawing what the world lets go.
 | Core verb | **Remember** |
 | Structure | Six short prologues (one per pair), a convergence on Wrymreach, then a proposed Act III (added, replaceable) |
 | Camera in 3D | Third person; a single pair in the prologues, a party of six from the convergence on |
-| Endings | Four, all proposals: the author's text stops at Act II, so none is marked as written |
+| Endings | Four, all proposals: the author's text stops at Act II, so none is marked as written. A fifth, The Empty Saddle, is accepted (section 21) and waits for phase 3 |
 
 ## 2. Why this game
 
@@ -106,7 +106,7 @@ and replace (section 8, "The Act III contract").
 The source tells all six signs (Act I), cracks the first seal, then tells all six awakenings
 (Act II). The game plays each pair's sign and awakening together as one prologue, so that each pair
 is one continuous chapter in one realm. The first seal cracks after the third prologue, the second
-after the sixth. Every line keeps its own speaker and wording. This is listed in section 21.
+after the sixth. Every line keeps its own speaker and wording. This is listed in section 22.
 
 ## 4. Investment
 
@@ -128,7 +128,7 @@ un-writing itself, and you are standing on it.
 | Each pair, as one life | Each prologue is a whole chapter alone with one pair: the elf's own way of moving, then the dragon's arrival, then the first flight on its back, each dragon flying differently. The two halves share one life bar from the first battle. | From the convergence on, the realm's memory sets whether that pair's abilities keep their names. A pair whose realm forgets grows weaker in your hands. |
 | The places | The player walks each realm whole first: the forest, the sky-cities, the gem cities, the shore, the Underworld, the crystalline forests. They record places at crystals and see their names inked on the map. | Map names fade by realm tier. In the Astral Expanse the platforms exist only for places the party remembers. |
 | The people's small requests | Six people each ask one thing (a ranger, a priest, a stonekeeper, a tide elder, a Syndicate elder, a Priory elder). The asks are personal and small. | Below 60 in their realm the giver forgets having asked. The player can still deliver by retelling the request, if they remember it themselves. |
-| Ilvarra, the last of the Wyrmguard (added) | She hosts the Rim Moot, referees Six Realms, cooks for the party, and at the fire tells how her own dragon gave its memory to the seal. The player spends a whole night (about 15 minutes) in her camp before anything goes wrong. | At dawn the Remnants come for her: she is the last living witness of the Imprisonment. |
+| Ilvarra, the last of the Wyrmguard (added) | She hosts the Rim Moot, referees Six Realms, cooks for the party, and at the fire tells how her own dragon gave its memory to the seal, and then what that means for every dragon in the camp (The Price, section 8). The player spends a whole night (about 15 minutes) in her camp before anything goes wrong. | At dawn the Remnants come for her: she is the last living witness of the Imprisonment. |
 | The names themselves | The player sees what forgetting does to a thing they used: an ability they relied on loses its name mid-battle and can no longer be paired. | Throughout, and most in the final battle. |
 
 ### The question that pulls them to the end
@@ -226,7 +226,7 @@ their lines in italics with no voice in the room. Dragons are "it", as in the so
 | **Thalen of Cedarheart** (Wood) | To make someone believe the forest is in danger | That the forest leans away from him, "as if ashamed" (WW 37) | "The forest is… forgetting," (WW 39); "Then we must go." (WW 132) | Archer and tracker. Steady, mid Life |
 | **Sylvan** | To steady the forest | Memory dying | "It is not rot. It is memory dying." (WW 126) | Plants, healing, roots |
 | **Lady Aeris Galewing** (Sky) | To save her trembling people | That the sickness is her fault: "is it because of me?" (WW 147) | "You’re real," she whispered (WW 141); "Then we fly." (WW 153) | Singer and navigator. Fast, fragile |
-| **Aetherius** | To end the dormancy | Confused winds, stars remembering what they should not | "Because of us, Aetherius corrected gently." (WW 149) | Wind, calm, shared thought |
+| **Aetherius** | To end the dormancy | Confused winds, stars remembering what they should not | "Because of us, Aetherius corrected gently." (WW 149). The player can Record this line as it is spoken (section 10) | Wind, calm, shared thought |
 | **Elder Rhyla Mosswhisper** (Earth) | To keep the crystals alive | That the Heartstone fades | "Not yet," she whispered. "You cannot fade. Not now." (WW 59) | Old; walks with a staff. High Life, slow |
 | **Gaia** | To reach "the place where the first stones were laid" (WW 178) | That "something is stealing the ending" (WW 174) | "We are one, Rhyla." (WW 168) | Stone, crystal resonance, fossil memory |
 | **Lunessa Tidecaller** (Water) | To make the sea alive again | What the monolith took from her | "The monolith I found… it erased itself from my mind." (WW 201) | Healer and diver |
@@ -259,8 +259,9 @@ wakes in their own realm with no dragon and no memory of one, and each dragon sl
 
 | Character | Want | Fear | Sample lines (all added) | Arc by ending |
 | --- | --- | --- | --- | --- |
-| **Ilvarra, last of the Wyrmguard** | That someone remembers her dragon's name after she dies | Being the last one who remembers | "Play the board. It teaches you the world faster than I can." / "Her name was Cendre. Say it back to me." | Survives Act III if protected. Rememberer: she stays with the keeper pair. Whole: she flies home with the party. Dormant: she is the only elf who still remembers dragons. Architect: she is the first to forget |
-| **The Unwriter** | That reality be raised, as the Remnants believe | That he is wrong, and gave up his name for nothing | "Forget, and be lifted." / "I had a name. It was heavy." | Defeated or reminded of his name in Act III. If reminded, he is present at the end and speaks once |
+| **Ilvarra, last of the Wyrmguard** | That someone remembers her dragon's name after she dies | Being the last one who remembers | "Play the board. It teaches you the world faster than I can." / "Her name was Cendre. Say it back to me." / "They bound him with our names." | Survives Act III if protected. Rememberer: she stays with the keeper pair. Whole: she flies home with the party. Dormant: she is the only elf who still remembers dragons. Architect: she is the first to forget |
+| **The Unwriter**, who was **Dorrin Vael** (name and past accepted 2026-11-15) | That no one wakes as half of something again. He was Wyrmguard and Ilvarra's wingmate; when the dragons woke, his did not: Tarn died in the long sleep. The Remnants' creed, that reality be raised, is what he teaches | That he is wrong about what will rise, and gave up his name for nothing | "Forget, and be lifted." / "I had a name. It was heavy." | Defeated or reminded of his name in Act III. The name is Dorrin Vael: it signs the kill-list's fifth row and is cut inside his mask. If reminded, he is present at the end and speaks once |
+| **Ysolde, the archivist** (the wounded archivist of Kael's tunnels, named and deepened; accepted 2026-11-15) | To put down what the dying sage told her | Being kept: whoever is in a Record is hunted | "I am not asking to be saved. I am asking to be let off." | If Kael saved her, she comes to the Moot fire and asks to have her Record entry Burned. Let off: she leaves the list and the story alive. Kept: she is on the kill-list with the rest. Her part in the list itself waits for phase 2 |
 | **The Syndicate Elder** | To keep the Underworld's secrets | That Kael is reckless | "Win, and the door is yours." | Plays Kael at Six Realms |
 | **Four Moot elders** (Circle of Seasons, Galechanters, Stonekeepers, Tidecallers) | Proof that the pairs understand their realm | That the pairs serve only themselves | One line each before and after a match | Send aid to the final battle if they trust you |
 | **Remnant footsoldiers** | To be lifted | Remembering what they gave up | "We do not need it." | Each can be reminded of the name inside their mask, and leave |
@@ -349,11 +350,11 @@ frame, a fade to the next realm's sky.
 | 1 | `s_galewing_ward` | 3D | 2 | Balcony over drifting sky-cities. The healer's line (WW 47). The ward: twelve elves in blankets, wings drooping. Each whispers a fragment; "Remember me" (WW 49) threads through the wind |
 | 2 | `s_conc_ward` | 1D Concentration I | 3.5 | Match each patient's face to their name before the faces blank (section 11) |
 | 3 | `s_storm_chamber` | 3D | 1.5 | Lightning on crystalline walls. Aeris is chosen (WW 51). A priest's request: "Bring back a song that heals." Crystal: Record |
-| 4 | `s_flight_aetherius` | 2D flight | 2.5 | Sky-sail descent; the confused winds tear the sail; Aeris falls; Aetherius descends with glowing runes; the flight pauses on WW 145 and 149; then thermals and "silver trails across the sky" (WW 155) |
+| 4 | `s_flight_aetherius` | 2D flight | 2.5 | Sky-sail descent; the confused winds tear the sail; Aeris falls; Aetherius descends with glowing runes; the flight pauses on WW 145 and 149; then thermals and "silver trails across the sky" (WW 155). As Aetherius answers her question with "Because of us" (WW 149), the line can be Recorded for ten seconds (accepted 2026-11-15, "Because of Us": section 10) |
 | 5 | `s_cloud_platform` | 3D + battle | 1.5 | A Cloud Serpent and two Stormriders on a floating platform. Aetherius's Shared Thought shows each enemy's next action |
 
 **Learns:** people forget their own names; requests exist. **Sets:** `ward_names_kept`,
-`memory.north`, `requests`. **Ends:** Aetherius lands on a peak; fade.
+`memory.north`, `requests`, `because_of_us_recorded`. **Ends:** Aetherius lands on a peak; fade.
 
 ### Chapter 3, `pr_rhyla`: The Heartstone (12 min, South)
 
@@ -459,10 +460,34 @@ retell a forgotten request for 1 Echo; record at the great crystal (6 entries).
 | --- | --- | --- | --- |
 | 1 | `s_moot_camp` | 2 | Arrival. Ilvarra teaches the board in one sample turn ("Play the board. It teaches you the world faster than I can.") |
 | 2–5 | four watches | 15 | As chosen |
-| 6 | `s_moot_camp` (the fire) | 3 | Ilvarra tells the Great Imprisonment and asks the party to say her dragon's name back to her. The player retells three entries from the Record to the fire; anyone who listens becomes a **witness**. If THE NAME is retold and recorded, Ilvarra recognises it (`izladar_fragments` +1) |
+| 6 | `s_moot_camp` (the fire) | 3 | Ilvarra tells the Great Imprisonment and asks the party to say her dragon's name back to her. The player retells three entries from the Record to the fire; anyone who listens becomes a **witness**. If THE NAME is retold and recorded, Ilvarra recognises it (`izladar_fragments` +1). Then **The Price** and **Ysolde's request** (both accepted 2026-11-15, below) |
+
+**The Price (the midpoint; accepted 2026-11-15).** When the three entries are told, Ilvarra tells
+what the Imprisonment cost. The six tribes sealed Izladar with a memory large enough to make a
+wall: their memory of their own dragons. "They bound him with our names." The dragons did not
+sleep. They were spent, and they are waking now because the wall is coming down. Every bonding
+the player loved in the first hour was the seal failing. The dragons answer in their elves' minds
+(lines added): *We did not sleep,* Gaia said. *We were spent.* And: *You were glad when I woke,*
+Sylvan said. *So was the thing in the chasm.* If the party holds "Because of us" in the Record
+(`because_of_us_recorded`), the player can retell it here at no cost: Aetherius said it first, at
+minute 20, and now it means what it says. It counts as a fourth retelling (+3 `memory.north`),
+and Ilvarra does not have to say the worst of it herself. Told either way, it sets `price_told`.
+Nothing the player was taught is taken back: remembering still holds the world. What changes is
+what the player knows it costs, and who was made to pay.
+
+**Ysolde's request (accepted 2026-11-15).** If Kael saved the archivist (`kael_choice` =
+`saved_witness`), she is at the fire, and she has a name: Ysolde. She listens to the retelling,
+which makes her a witness twice over, and then asks Kael for one thing: to Burn her Record entry.
+"I am not asking to be saved," Ysolde said. "I am asking to be let off." Burn it and she is let
+off (`ysolde` = `let_off`): the entry is forgotten and logged in `burned`, `memory.below` −4 as
+for any Burn, and no list can name her; her row on the kill-list is struck and the Remnants do
+not come for her at dawn. Keep her (`ysolde` = `kept`) and nothing is lost tonight: she stays a
+witness, on the list with the others, and must be warned or defended like them. This is the
+game's first case for forgetting: the verb the player has used as a weapon is asked for as a
+mercy, by the person it would be done to.
 
 **Sets:** `trust.*`, `tribes_trusted`, `moot_watches_left`, `ilvarra_met`, `witnesses`,
-`requests_done`. **Ends:** the fire burns down; first light; masks at the edge of the camp.
+`requests_done`, `price_told`, `ysolde`, `burned`. **Ends:** the fire burns down; first light; masks at the edge of the camp.
 
 ### Chapter 9, `a3_witness`: The Last Witness (20 min, added)
 
@@ -471,14 +496,15 @@ retell a forgotten request for 1 Echo; record at the great crystal (6 entries).
 | Order | Scene | Layer | Minutes | What happens |
 | --- | --- | --- | --- | --- |
 | 1 | `s_moot_dawn` | 3D + battle | 7 | The Remnants burn the banners (names first). A defend battle across three tents: each tent holds witnesses (from the fire). Each round a Hollow moves one step toward a tent; a witness killed is −6 to their realm. Remind a Remnant with the name inside its mask and it leaves |
-| 2 | `s_glyph_killlist` | 1D Glyph II | 3 | A dropped slate in slipping glyphs: the Remnants' list. Each row read names a witness and where they will be; warning them saves them (`witnesses` fate "warned"). The last row names Ilvarra and the bone bridge |
+| 2 | `s_glyph_killlist` | 1D Glyph II | 3 | A dropped slate in slipping glyphs: the Remnants' list. Each row read names a witness and where they will be; warning them saves them (`witnesses` fate "warned"). The second row is Ysolde's, at the sky-watch: struck already if she was let off, read like the rest if she was kept. The last row names Ilvarra and the bone bridge, and is signed: the signature is the name its writer gave up, **Dorrin Vael** (accepted 2026-11-15) |
 | 3 | `s_run_bone_bridge` | 2D run III | 3.5 | Escort Ilvarra across a bridge of wyrm ribs as the Remnants unwrite it behind |
 | 4 | `s_conc_ilvarra` | 1D Concentration III | 3.5 | A Remnant curse is taking her memories. Match them before they blank. At 9 of 12 pairs she keeps the knowledge of the Imprisonment (`ilvarra_memory_kept`, fragment +1) |
 | 5 | (in `s_conc_ilvarra`'s exit) | 3D | 3 | On the far side she says what she now holds: "They bound him with our names." Crystal: Record |
 
 **Ilvarra's fate:** she dies only if the party loses the bone-bridge run three times in a row and
 declines the retry (an explicit "let her go" choice), or if Burn is used on her Record entry. Both
-are on purpose. Otherwise she lives, and `ilvarra_alive` stays true.
+are on purpose. Otherwise she lives, and `ilvarra_alive` stays true. (Ilvarra never asks to be
+forgotten. A Burn is a mercy only at the witness's own asking, as Ysolde's is.)
 
 ### Chapter 10, `a3_bones`: The Bone Choir (18 min, added)
 
@@ -516,7 +542,9 @@ are on purpose. Otherwise she lives, and `ilvarra_alive` stays true.
 
 Act III (chapters 9–12) is added, so it is built to be removed. It reads only this state from the
 first eight chapters: the six realm meters and `world_memory`; `izladar_fragments`;
-`unwriter_name_known`; `trust.*`; the `record`, `witnesses` and `burned` ledgers; `ilvarra_met`.
+`unwriter_name_known`; `trust.*`; the `record`, `witnesses` and `burned` ledgers; `ilvarra_met`;
+and, since 2026-11-15, `price_told`, `ysolde`, and the three layer links' values
+(`ward_names_kept`, `stars_redrawn`, `heartstone_kept`; section 21).
 It writes only what the endings read: `final_choice`, `keeper_pair`, `anchor_forged`, and the meters.
 If the author writes their own Act III, the team replaces the `a3_*` chapters and their scenes,
 keeps the convergence's hand-off, and rewrites `endings.json` if the author's ending differs. No
@@ -600,13 +628,13 @@ drawn at its right end, and the landscape below is the painted world map with it
 | Scene | Dragon(s) | Length | Notes |
 | --- | --- | --- | --- |
 | `s_flight_sylvan` | Sylvan | 75 s | Tutorial; no fail |
-| `s_flight_aetherius` | Aeris on a sky-sail, then Aetherius | 150 s | The sail tears at 45 s; Aeris falls for 6 s; Aetherius catches her |
+| `s_flight_aetherius` | Aeris on a sky-sail, then Aetherius | 150 s | The sail tears at 45 s; Aeris falls for 6 s; Aetherius catches her. **Record the line** (accepted 2026-11-15): when he says "Because of us" (WW 149) a Record action opens for ten seconds (R / Y). Taking it writes the line into the Record (`because_of_us_recorded`) and rests Aeris's song for 8 s, in the stretch where the gusts begin to strengthen. Leaving it costs nothing now |
 | `s_flight_gaia` | Gaia | 120 s | Mostly burrow |
 | `s_flight_aquatica` | Aquatica | 60 s | Short, joyous |
 | `s_flight_umbra` | Umbra | 90 s | Light puzzles |
 | `s_flight_astraia` | Astraia | 90 s | Trails over voids |
 | `s_flight_six_roads` | All six, relay then formation | 300 s | Swap the lead at a gate with the shoulder buttons; six gates |
-| `s_flight_descent` | All six, formation | 240 s | Six bands down the chasm wall, one per dragon; a wrong lead costs a hit |
+| `s_flight_descent` | All six, formation | 240 s | Six bands down the chasm wall, one per dragon; a wrong lead costs a hit. **Stars become the route** (accepted 2026-11-15): a realm whose constellation is in the Record has its band lit for good; an unlit band is flown from what the party remembers of it |
 
 ### Mode B: Forgetting run (`forgetting_run`, scroll)
 
@@ -629,8 +657,8 @@ the player nears it: outline at 0%, colour at 100%.
 | --- | --- | --- | --- | --- |
 | `s_run_outpost` | The outpost gates | 90 s | 4.0 m/s | Tutorial; 3 touchstones regardless of Record |
 | `s_run_surface` | The surface light | 75 s | 3.5 m/s | Vertical: swim upward, forgetting rises from below; air bubbles as touchstones |
-| `s_run_bone_bridge` | The far side of the bridge | 180 s | 4.5 m/s | Escort: Ilvarra follows 2 m behind and cannot jump gaps over 2 m; the player must solidify a bridge for her. Remnant archers above; three catches in a row offer "Go on without her" (a real choice) |
-| `s_run_expanse` | The voice | 210 s | 5.0 m/s | Platforms exist only for recorded places; realms below 20 give no platforms; the route bends |
+| `s_run_bone_bridge` | The far side of the bridge | 180 s | 4.5 m/s | Escort: Ilvarra follows 2 m behind and cannot jump gaps over 2 m; the player must solidify a bridge for her. Remnant archers above; three catches in a row offer "Go on without her" (a real choice). **Names become ground** (accepted 2026-11-15): six of its touchstones are the ward's lanterns, one for each name kept in Concentration I, with the name on it; a name not kept leaves its stretch dark (no touchstone, and the outline is not drawn until Recalled) |
+| `s_run_expanse` | The voice | 210 s | 5.0 m/s | Platforms exist only for recorded places; realms below 20 give no platforms; the route bends. The ward's lanterns stand here too, by the same rule |
 
 Accessibility: an option slows the edge by 30%, and another lets Recall be toggled, not held.
 
@@ -672,8 +700,21 @@ Bottom: hint button.
 **Hints.** Aetherius's telepathy (if Aeris is in the party): once per game, show one blank card's
 face for 2 seconds. On the ward page, the healer reads one name aloud.
 
+**The ward's six (names and lines added; accepted 2026-11-15).** The link below needs a name on
+each lantern, so the six pairs of `s_conc_ward` are six named patients, each with one line read
+when the pair is kept: Maerith ("She hung the bells on the east moorings, and knows each one by
+its note."), Illeth ("She mends sky-sails. Her own hangs half stitched by the door."), Corvane ("He
+ran the rope bridges as a boy and never once looked down."), Dovra ("She keeps the ward's lamp oil,
+and counts it aloud every night."), Hesk ("He sang the low part in the Gale choir, the part nobody
+hears until it stops."), Ansel ("He is the healer's brother. The healer has begun to call him the
+sixth bed.").
+
+**Names become ground (layer link; accepted 2026-11-15).** As each name is kept the healer ties
+it to a lantern; the page shows the six lanterns filling. Each is a touchstone, with that name on
+it, in forgetting runs III and IV (section 10). Lose three and those stretches are dark.
+
 **Writes.** `ward_names_kept` (0–6; +2 `memory.north` each; at 5 or more the Galechanters trust
-Aeris at the Moot without a match). `s_conc_bestiary`: +1 to each pair's realm and restores those
+Aeris at the Moot without a match; read by `s_run_bone_bridge` and `s_run_expanse`). `s_conc_bestiary`: +1 to each pair's realm and restores those
 pages (Remind works on them); at 8+, the healing song is added to the Record. `s_conc_ilvarra`: at
 9+, `ilvarra_memory_kept` true and `izladar_fragments` +1.
 
@@ -711,7 +752,14 @@ Delver's Lamp (Mosswhisper), the Moon's Tear (Tidecaller), the Eclipse (Duskbane
 **Hints.** Seraphyne's Glimpse (if in party): once per page, ghost one correct line for 3 seconds.
 After three wrong attempts, the strongest fragment is underlined.
 
-**Writes.** Each constellation named: +4 to its realm, +1 `memory.above`, `stars_redrawn` +1.
+**Stars become the route (layer link; accepted 2026-11-15).** Each constellation named lights its
+realm's band in `s_flight_descent` for good (the Stag West, the Gale Harp North, the Delver's Lamp
+South, the Moon's Tear East, the Eclipse Below, the First Light Above). The page shows it as it is
+played: a realm seal lights beside each gilded figure. (A black-gilded figure lighting a false band
+needs the lying strip, which is phase 2.)
+
+**Writes.** Each constellation named: +4 to its realm, +1 `memory.above`, `stars_redrawn` +1,
+and its Record entry, which the descent reads.
 `s_chart_priory` with all three: `priory_charts_complete`, `izladar_fragments` +1, `sigil_seen`.
 `s_chart_moot` with the Scholar's Lamp: `izladar_fragments` +1. `s_chart_expanse` full:
 `izladar_constellation_drawn`, `izladar_fragments` +1.
@@ -742,7 +790,7 @@ rune key (twelve runes, recorded, so they do not slip). Right margin: one slot p
 | Scene | Rows | Slip delay | Special |
 | --- | --- | --- | --- |
 | `s_glyph_monolith` | 4 | 1.5 s | The fourth row has no stable part: it is unreadable by design. After the third row (or the third failure), the monolith devours and the run up begins |
-| `s_glyph_killlist` | 5 | 1.2 s | Each row read names a witness and a place; the fifth names Ilvarra. `world_runs: true`: smoke rises in the camp; after 3 minutes the Remnants retrieve the slate and unread rows stay unread |
+| `s_glyph_killlist` | 5 | 1.2 s | Each row read names a witness and a place; the fifth names Ilvarra. `world_runs: true`: smoke rises in the camp; after 3 minutes the Remnants retrieve the slate and unread rows stay unread. Accepted 2026-11-15: the second row is Ysolde's, struck if she was let off at the fire (it then counts as read); the fifth row is signed, and reading it turns the signature over: **Dorrin Vael**, cut on the inside of a mask where only its wearer could read it |
 | `s_glyph_seal` | 6 | 1.0 s, and the stable part moves once per minute | Rows read on the monolith are already filled in. The sixth row is the name |
 
 **Hints.** Aquatica's Purify (if in party): one row holds still for 5 seconds. Accessibility mode
@@ -750,7 +798,8 @@ replaces gaze with a timer (glyphs change every 4 seconds) and slows slips.
 
 **Writes.** `monolith_rows` (0–3; at 3, `izladar_fragments` +1); `s_glyph_killlist`: each row
 sets that witness's fate to "warned" in `witnesses`; 4+ rows also sets `killlist_read` and, if
-the fifth row is read, `unwriter_name_known` (his given-up name is the signature); `s_glyph_seal`
+the fifth row is read, `unwriter_name_known` (his given-up name, Dorrin Vael, is the signature);
+the page reads `ysolde`; `s_glyph_seal`
 all six: `seal_text_read`, `izladar_fragments` +1.
 
 ### Six Realms (`six_realms`): the tribes' hex board game
@@ -780,6 +829,9 @@ Thresholds, one per realm colour. Ring 2 (12 hexes) are homes, two per realm.
    empty home hex instead of moving.
 4. **Win.** End your turn on the centre while also holding a Threshold; or take all three enemy
    pieces; or, after 16 rounds, hold more Thresholds (a tie goes to the elder).
+5. **The founding** (layer link; accepted 2026-11-15). If Rhyla kept the tribe's founding in the
+   Heartstone (`heartstone_kept` = `founding`), the two Stonekeeper home hexes are set with a chip
+   of living crystal and the tide never marks or takes them, in any match, for either side.
 
 **Layout.** The board on a carved table seen straight down; the elder's portrait and pieces at the
 top, the player's at the bottom; a turn log on the right in the elder's handwriting; a "show
@@ -830,6 +882,16 @@ a row of small hammers, the target waveform above.
 **Hints.** Gaia (if in party): once per page, one slot glows when its correct shard is hovered.
 Rhyla, if she leads, hears pitches named aloud.
 
+**The Heartstone's memory changes rooms (layer link; accepted 2026-11-15).** The memory chosen in
+`s_heart_rekindle` is carried into other rooms, and the page says where before the choice is made
+and again when the crystal is set. It cannot be changed afterwards, and a lost page carries nothing.
+
+| Kept | Carried to | What it changes |
+| --- | --- | --- |
+| The founding | Every Six Realms match | Stonekeeper home hexes cannot be tide-taken (rule 5 of the board) |
+| The vision | `s_battle_echo` | The Architect's Echo's intents are shown (as Celestial trust also gives); and `izladar_fragments` +1, as before |
+| The song | `s_heart_choir`, `s_bone_choir` | The Bone Choir starts with one rib tuned, and that rib is audible in the 3D hall before the page opens |
+
 **Writes.** `heartstone_kept` (vision: `izladar_fragments` +1); a won rekindle also anchors
 `memory.south` (it skips the next two drains). `choir_opened`. `anchor_forged`.
 
@@ -866,7 +928,7 @@ whatever its realm's tier. This is the main choice of the game: what to keep.
 | The plague: each chapter boundary (11) | −4 every realm |
 | A seal cracks (after ch 3, after ch 6, entering the Expanse) | −4 every realm |
 | A witness killed | −6 their realm |
-| Burn a memory in battle | −4 the entry's realm |
+| Burn a memory in battle, or at a witness's asking (a mercy) | −4 the entry's realm |
 | Caught by a forgetting run (first catch per run) | −3 that realm |
 | A Slipping Glyph page devours | −3 that realm |
 
@@ -922,7 +984,8 @@ the right one from their own memory.
 ### Witnesses
 
 `witnesses` ledger (`who`, `realm`, `fate`: safe, warned, killed). The archivist in Kael's
-prologue, the fire's listeners, and Ilvarra. In `s_moot_dawn` the Remnants go for witnesses first.
+prologue (Ysolde; a witness let off by a mercy Burn leaves the ledger), the fire's listeners, and
+Ilvarra. In `s_moot_dawn` the Remnants go for witnesses first.
 Each killed: −6 to their realm, `witnesses_lost` +1. Warned witnesses (from the kill-list) are not
 in the camp.
 
@@ -963,7 +1026,9 @@ dormant until healed after battle or revived by Rainbloom.
 **Commands for every pair.** Remind (1 action; needs the creature's remembrance line known: the
 creature leaves, recorded); Recall (1 action, 1 Echo: restore one Unnamed ability); Burn (1 action:
 spend a Record entry for a full Bond refill for the party or 30 damage; the entry is forgotten and
-logged in `burned`); Guard; Swap (bring in a reserve pair; the outgoing pair's actions are spent).
+logged in `burned`; since 2026-11-15 a Burn can also be a mercy, made outside battle at a
+witness's own asking: it gives no Bond and no damage, costs the same 4, and takes the witness
+off the kill-list); Guard; Swap (bring in a reserve pair; the outgoing pair's actions are spent).
 
 **Statuses.** Unnamed (an ability's name blank: usable alone at 75% power, unusable in a Concord);
 Hidden; Shielded; Rooted; Slowed; Marked.
@@ -1065,7 +1130,9 @@ Too much was forgotten. The choice the player made is attempted, and fails: ther
 memory left to make a seal of. Final scenes: `s_choice`, `s_end_architect`. The pairs stand on the
 rim as the shape Rhyla saw steps through. The game does not say whether the Remnants were right.
 **Last image:** the sky above the six realms, full of new constellations that no one has a name
-for, and the Star Chart page, blank, waiting. **Cost:** everything the world forgot stays forgotten.
+for, and the Star Chart page, blank, waiting. **Cost:** everything the world forgot stays forgotten. Accepted 2026-11-15: what steps
+through does not know it was a scholar. (The voice losing its last word first, "I… remember…",
+needs the party to have reached him in scene 12, which is still to be added: section 21.)
 
 ### Remembered Whole
 
@@ -1074,7 +1141,10 @@ The party has remembered enough to learn who he was before he ascended: a Celest
 voice finishes its sentence. He does not choose anything: the prison is "sealed by memory itself"
 (Codex 30), and now the whole world remembers him, so no one pair has to keep watch. Final scenes: `s_choice`, `s_end_whole`. **Last line (added):** "I… remember… me.
 I was a scholar." **Cost:** the witnesses who died are not restored; their names are read out over
-the six realms, and the ones the player did not record are read as blanks.
+the six realms, and the ones the player did not record are read as blanks. **New cost (accepted
+2026-11-15):** a world that holds the seal by remembering can never let anything fade. Grief does
+not soften in the six realms; the names of the dead are read every year and hurt as they did the
+first year. Dorrin was half right.
 
 ### Dormant Again
 
@@ -1083,7 +1153,10 @@ world is saved, and elves and dragons forget each other, as before the story beg
 `s_choice`, `s_end_dormant`. Six shots, one per realm: each elf wakes with no dragon and no memory
 of one; each dragon sleeps under its forest, cloud, stone, sea, shadow or star. **Last image:**
 Thalen in the grove, tracking a silver-antlered stag, his pulse keeping time with something he
-cannot name. **Cost:** the bonds.
+cannot name. **Cost:** the bonds. Accepted 2026-11-15: with The Price told (`price_told`) this is
+the ancestral bargain made a second time, and this time by the ones who pay it, with open eyes;
+the closing narration says so. (Each elf leaving one line for whoever wakes next needs the fourth
+row, which is phase 2, as does any change to the wording of the three answers.)
 
 ### The Rememberer
 
@@ -1094,7 +1167,9 @@ remembering them: a ranger carving Thalen's name at the outpost, the ward singin
 Heartstone keeping Rhyla's, the tide elders saying Lunessa's, the Syndicate keeping Kael's in its
 records, the Priory dome drawing Seraphyne and Astraia as a constellation). **Last image:** the
 keeper pair alone with the statues; the elf says the name once, every dawn. **Cost:** that pair
-never goes home.
+never goes home. Accepted 2026-11-15: the pair that stays does knowingly what the tribes did to
+their dragons blind; a memory always has a carrier, and this one was asked. If Seraphyne keeps
+watch, the last shot is the sealed page in her lap, unopened.
 
 ### How a player reaches each one on purpose
 
@@ -1231,8 +1306,9 @@ chasm is one recording of three words. All spoken lines subtitled (TECH accessib
 - `flags.json`: the six realm meters and `world_memory`; counters (`echoes`, `izladar_fragments`,
   `ward_names_kept`, `monolith_rows`, `stars_redrawn`, `tribes_trusted`, `realms_matches_won`,
   `witnesses_lost`, `requests_done`, `seals_cracked`, `moot_watches_left`); the bools and enums
-  used in sections 8–13; and four ledgers (`record`, `burned`, `witnesses`, `requests`).
-- `endings.json`: the four endings and conditions of section 13.
+  used in sections 8–13 (with `because_of_us_recorded`, `price_told` and `ysolde` since
+  2026-11-15); and four ledgers (`record`, `burned`, `witnesses`, `requests`).
+- `endings.json`: the four endings and conditions of section 13, each with its `cost`.
 
 Beyond the shared schemas, six per-game files, each with its schema in `data/schemas/`
 (`<name>.schema.json`):
@@ -1243,8 +1319,8 @@ Beyond the shared schemas, six per-game files, each with its schema in `data/sch
 | `abilities.json` | The six pairs (Life, tribe, trust flag, final-battle aid); their thirty abilities; Bond; the five commands; the six statuses; the fifteen Concords and the Concord rule |
 | `six_realms.json` | The 19-hex board, the six pieces, the rules, the win rewards, and each of the five matches: the elder's pieces, the house rule and the AI's depth, style, deliberate errors and weights |
 | `star_chart.json` | The three pages' star fields; the nine constellations with their lines and fragments (each fragment a checkable rule); the Sigil on the Priory and Expanse pages; the nine sources of Izladar fragments |
-| `glyph_pages.json` | The rune key (twelve runes from 48 glyph parts) and the three pages row by row: each row's rune and stable parts, the kill-list's witnesses and places, the seal's prefilled rows and the name |
-| `heartstone.json` | The three pages' trays, chords and the Anchor's six realm shard sets |
+| `glyph_pages.json` | The rune key (twelve runes from 48 glyph parts) and the three pages row by row: each row's rune and stable parts, the kill-list's witnesses and places, Ysolde's row and its `mercy`, the fifth row's `signature`, the seal's prefilled rows and the name |
+| `heartstone.json` | The three pages' trays, chords and the Anchor's six realm shard sets; what each kept memory `carries` |
 
 `tools/check_data.py` checks each file against its schema, against the others, and against the
 four shared files: scene, flag, pair and ability names; every value a page changes is in that
@@ -1292,7 +1368,7 @@ writing it back) in 15 minutes.
    once more, for the Architect: "The prison weakens. The Architect stirs." (WW 243), and the
    voice's three words answer the whisper that asked to be remembered ("Remember me", WW 49) and
    Rhyla's "name dissolving into silence" (WW 57). The text never writes "WrymWretch is Izladar", so
-   this is a reading, and it is listed in section 21. Changed: the voice in the chasm (section 6) is
+   this is a reading, and it is listed in section 22. Changed: the voice in the chasm (section 6) is
    named as WrymWretch, Izladar as he is now; the chasm keeps its own name, Wrymreach. Nothing else
    in play changes: the voice stays heard and unseen until the endings.
 2. **No. Izladar does not choose; he is remembered.** The source gives him no will beyond three
@@ -1328,7 +1404,125 @@ writing it back) in 15 minutes.
    it; the request is fulfilled by that shard (section 8, section 12). The condition "if not
    shattered in Heartstone I" is cut. No flag was needed: `s_deep_core` already writes `requests`.
 
-## 21. Added for the game
+## 21. Accepted development (2026-11-15)
+
+The author accepted `DEEP_DIVE.md` whole on 2026-11-15, and with it the five decisions its roadmap
+held back for the author (the dormancy as the price; the voice as the seal's last witness;
+Seraphyne having read the forbidden page; a fifth ending and the new cost of Remembered Whole; the
+names Dorrin, Tarn and Ysolde). This section states the accepted story. All of it is added for the
+game and listed in section 22. No line of the source is changed, and the source still stops at
+"Act II ends." (WW 268), so no ending is `as_written`.
+
+Quotations are verbatim from `creative-writing/vault/02_Novels/02_WrymWretch.md` (WW) and
+`creative-writing/vault/05_Worldbuilding/03_World_Codex_of_Wyrmreach.md` (Codex).
+
+### The question
+
+**Dramatic question:** when a world is held together by remembering, who is made to carry the
+memory, and did anyone ask them?
+
+| | |
+| --- | --- |
+| The party **wants** | Everything back: the names, the pages, the places, the six realms whole |
+| The party **needs** | To learn that a memory always has a carrier, and that its ancestors once chose the carrier for it |
+| The opposing force **wants** | Dorrin Vael, the Unwriter: that no one wakes as half of something again |
+
+### The secret, and the lines that seed it
+
+**The dormancy was the price.** Aeris asks whether the sickness is her fault, and her dragon
+answers: "Because of us, Aetherius corrected gently. Our bond was dormant too long." (WW 149,
+`creative-writing/vault/02_Novels/02_WrymWretch.md`). The prison is "sealed by memory itself"
+(Codex 30, `creative-writing/vault/05_Worldbuilding/03_World_Codex_of_Wyrmreach.md`), and only now
+do "Dragons awaken from dormancy" (Codex 30). The source does not say why the dragons slept. The
+accepted reading: the six tribes sealed Izladar with a memory large enough to make a wall, their
+memory of their own dragons. Ilvarra's line, "They bound him with our names", already says it.
+The dragons waking is not the cure. It is the coin coming back because the wall is coming down.
+
+**The last memory is his own.** The prophecy reads "When the last memory fades, the Astral
+Architect shall rise." (WW 77). The thing in the chasm is "a voice half‑formed, a memory refusing to
+die" (WW 260) that says "I… remember… me…" (WW 101). The accepted reading: the scholar is the last
+witness to himself, and his remembering is the last nail in his own prison. The Remnants believe
+they are freeing him. They are erasing him. This adds no biography and gives him no choice (section
+20, answer 2, stands).
+
+### Characters, new or deepened
+
+| Character | Want | Secret | Scene that carries it | Built |
+| --- | --- | --- | --- | --- |
+| **Seraphyne** (deepened) | To hold the name | She has read the page Izladar read: the stars formed "a sigil she had hoped never to see again" (WW 85). She stopped one page short of him | The Second Reader, in Star Chart II: a line draws itself in her hand, and Kael sees | Phase 2 |
+| **Dorrin Vael, the Unwriter** (deepened) | That no one carries a half-soul again | He still dreams Tarn's dreams. He cannot forget, which is why he teaches forgetting | The Empty Saddle, in the Bone Choir: one rib is not ancient | His name: phase 1 (the kill-list's fifth row). The rib: phase 2 |
+| **Ysolde, the archivist** (deepened from the unnamed witness) | To put down what the dying sage told her | She wrote the Remnants' kill-list; they took her daughter's face from her memory and offered it back, row by row | The Witness Who Asks to Forget, at the Moot fire | Her name and her request: phase 1. The list as her hand: phase 2 |
+| **Tarn** | — | Dorrin's dragon, dead in the long sleep | Named with Dorrin | Phase 1 (name), phase 2 (rib) |
+
+### Three acts, twelve scenes
+
+Act I is the six prologues (scenes 1–5 below fall in it), Act II the convergence to the midpoint
+(6–8), Act III the added act (9–12). "Source" is the author's text; "existing" was already in this
+design; "new" is accepted here.
+
+| # | Scene | Plays in | Status | What turns | Built |
+| --- | --- | --- | --- | --- | --- |
+| 1 | The Split Tree | `s_cedar_grove` | Source (WW 31–39) | The world un-writes itself under your feet | Existing |
+| 2 | The Fourth Row | `s_glyph_monolith` | Existing; deepened | Lunessa keeps one part of the unreadable row without knowing | Phase 2 |
+| 3 | Because of Us | `s_flight_aetherius` | Source (WW 141–153); new emphasis | Aetherius's line can be Recorded: the first step to the secret | **Phase 1** |
+| 4 | The Witness in the Tunnels | `s_underworld_tunnels` | Existing | Save Ysolde, or follow the Eraser | Existing; her name phase 1 |
+| 5 | The Sigil She Had Seen Before | `s_chart_priory` | Source (WW 85–95); new beat | Seraphyne names the sigil a second before it finishes forming | Phase 2 |
+| 6 | Six Roads | `s_flight_six_roads`, `s_rim` | Existing; friction new | Six strangers; Kael will not fly behind a scholar | Phase 2 |
+| 7 | The Second Reader | `s_chart_moot` | New | Kael now watches Seraphyne, not the Remnants | Phase 2 |
+| 8 | **Midpoint: The Price** | `s_moot_camp` (the fire) | Existing scene; new content | The dormancy was the coin. Your dragon is yours again because the seal is failing | **Phase 1** |
+| 9 | The List Has Two Hands | `s_glyph_killlist` | Existing scene; new content | The kill-list is Ysolde's. The witness you saved named the others | Phase 1: Ysolde's row and the signature, Dorrin Vael. Later: her hand |
+| 10 | The Empty Saddle | `s_bone_choir`, `s_heart_choir` | New | The enemy has a name, and a dragon's name | Phase 2 |
+| 11 | **Darkest moment: Guests of Honour** | `s_expanse` | Existing scene; new framing | "Reality thins, time folds, and memory bleeds." (Codex 59). The third seal cracks because the six best witnesses in the world walked in | Later |
+| 12 | The Last Witness Is the Prisoner | **scene to add** (after `s_run_expanse`, before `s_heart_of_wound`) | New | The party Retells his name to him, as it did for forgetful elders. Then the choice | Later |
+
+### The endings
+
+Five. The four of section 13 keep their conditions and gain a cost the player chose (written into
+section 13 and `endings.json` in this pass). The fifth is accepted and not yet built.
+
+| Ending | What it now costs |
+| --- | --- |
+| The Rememberer | The pair that stays does knowingly what the tribes did to their dragons blind. If Seraphyne keeps watch, the last shot is the sealed page in her lap, unopened |
+| Remembered Whole | A world that holds the seal by remembering can never let anything fade. Grief does not soften in the six realms. Dorrin was half right |
+| Dormant Again | The ancestral bargain, chosen with open eyes. (With the fourth row read, each elf leaves one line for whoever wakes next: phase 2) |
+| The Architect Rises | What steps through does not know it was a scholar. (With scene 12 reached, the voice loses its last word first: later) |
+| **The Empty Saddle** (new; phase 3) | Dorrin, reminded of his own name and Tarn's, takes the watch. He has no one to go home to. Conditions: a fourth answer at the statues, open only with `unwriter_reminded`, Tarn's rib tuned, and the fourth row read. Cost: the man who killed the witnesses keeps the world's memory, and he is mortal; the debt is passed forward again. Last image: the Record's final page, headed "Who next?" It needs an **ending scene to add** and a fifth entry in `endings.json`; neither is added in this pass |
+
+### What this pass builds (phase 1), and what waits
+
+Phase 1 is the roadmap's "most effect for least work": text, flags and rules that need no new
+scene.
+
+| Phase 1 item | In the design | In `data/` | In play (web build) |
+| --- | --- | --- | --- |
+| Because of Us, as a Record entry | Sections 6, 8 (chapter 2), 10 | `because_of_us_recorded`; `s_flight_aetherius` writes it | Twin flight: a Record action for ten seconds when the line is spoken; it rests Aeris's song for 8 s |
+| The Price, at Ilvarra's fire | Sections 4, 8 (chapter 8) | `price_told`; `s_moot_camp` reads the Record line and writes it | A 3D scene: not in the web build |
+| Ysolde's request; Burn as a mercy | Sections 6, 8, 12 | `ysolde`; `abilities.json` Burn `mercy`; `glyph_pages.json` `mercy` | The Slipping Glyph, page II: her ask is put before the slate, and decides whether her row is struck or must be read |
+| Dorrin's name on the fifth row | Sections 6, 8 (chapter 9), 11 | `glyph_pages.json` `signature`; `bestiary.json` | The Slipping Glyph, page II: reading the fifth row turns the signature over |
+| The new costs in the four endings | Section 13 | `endings.json` `cost` | 3D scenes: not in the web build |
+| Names become ground | Sections 10, 11 | `ward_names_kept`, read by runs III and IV | Concentration, page I (the ward): each name kept lights a named lantern; three lost is the page's loss |
+| Stars become the route | Sections 10, 11 | `star_chart.json` `descent_bands`; the descent reads the Record | Star Chart: a realm seal lights beside each gilded figure |
+| The Heartstone's memory changes rooms | Section 11 (Heartstone, Six Realms rule 5) | `heartstone.json` `carries`; `six_realms.json` `heartstone_founding` | Heartstone: each choice says what it carries. Six Realms: with the founding kept, the tide cannot take a Stonekeeper home |
+| Title lettering | Section 15 | — | On the Record page that closes every mode |
+| Pair portraits | Section 14 (the HUD's joined portraits) | — | **Deferred**: they are generated images under `assets/`, which this pass does not change |
+
+**Waits for phase 2:** the fourth row and its six world-held parts; The Second Reader inside Star
+Chart II; Tarn's rib inside Heartstone II; the Ghost-fire descent; the bone-bridge outline beat; The
+one new element per mode, starting with false outlines and false faces.
+
+**Waits for phase 3:** The Empty Saddle ending and its card; the five unbuilt flight models;
+selectable prologue order; the remaining new mode elements; chapter cards and ornaments inside the
+3D game.
+
+**Accepted, and not given a phase by the roadmap:** the new content of The List Has Two Hands (the
+list as Ysolde's hand), the framing of Guests of Honour, and scene 12. They are marked "Later"
+above; The Empty Saddle's fourth answer depends on them.
+
+**Scenes to add later (none added in this pass):** scene 12, The Last Witness Is the Prisoner; the
+ending scene of The Empty Saddle. `data/scenes.json` keeps its scenes; only `reads` and `writes`
+changed.
+
+## 22. Added for the game
 
 None of the following is in the author's text. Each can be approved or struck.
 
@@ -1377,3 +1571,55 @@ Architect's Echo as a battle; the three answers at the end; all four endings' sc
 map re-lettering game and the prophecy lock are not 1D games (COLLECTION assigns those types to
 other games); Lunessa's dive is 3D and her ascent is a forgetting run, and Kael's hunt is 3D, since
 COLLECTION gives this game only twin flight and the forgetting run as 2D modes.
+
+**Accepted 2026-11-15, from `DEEP_DIVE.md` (section 21).** Marked so the author can still strike
+any of them.
+
+- *Readings (accepted 2026-11-15).* The dragons' dormancy was the price the six tribes paid for the
+  seal. The voice's remembering of itself is the last thing holding the prison; the Remnants are
+  erasing the one they mean to free. The party's arrival in the Expanse is what cracks the third
+  seal.
+- *Characters (accepted 2026-11-15).* The Unwriter as Dorrin Vael, Wyrmguard and Ilvarra's
+  wingmate; his dragon Tarn, dead in the long sleep; his want. Seraphyne's secret, the self-drawn
+  line and Kael's suspicion. Ysolde: the archivist's name, her daughter, her authorship of the
+  kill-list, her request to be forgotten.
+- *Scenes (accepted 2026-11-15).* Because of Us as a Record entry; The Second Reader; The Price;
+  The List Has Two Hands; The Empty Saddle; Guests of Honour; The Last Witness Is the Prisoner;
+  the friction at Six Roads.
+- *Rules (accepted 2026-11-15).* Burn as a mercy that removes a witness from the list. Retelling
+  the name to the voice.
+- *Endings (accepted 2026-11-15).* The new cost of Remembered Whole; the changed text of the other
+  three; the fifth ending, The Empty Saddle, with its conditions, last image and the fourth answer
+  at the statues.
+- *Layer links (accepted 2026-11-15).* Names as lanterns; constellations as descent bands; the
+  Heartstone memory's three effects.
+- *Still to build, accepted 2026-11-15.* The eighteen new mode rules and seven set-pieces of
+  `DEEP_DIVE.md` section 3; the long puzzle of the fourth row; selectable prologue order.
+- *Sample lines (accepted 2026-11-15).* "*You were glad when I woke,* Sylvan said. *So was the
+  thing in the chasm.*" / "I am not asking to be saved," Ysolde said. "I am asking to be let off."
+  / "Her name was Cendre. His was Tarn. Say them both, or do not say hers." / "*We did not sleep,*
+  Gaia said. *We were spent.*" / "You read it," Kael said. Seraphyne looked at her hand. "Most of
+  it." / "He is the only one still doing our work," Ilvarra said, and looked down into the wound.
+
+**Written while building phase 1 (accepted 2026-11-15 in scope; each can be struck).**
+
+- *Flags.* `because_of_us_recorded`, `price_told`, `ysolde`.
+- *Because of Us in play.* The ten-second Record window; its cost (Aeris's song rests 8 s); the
+  line counting as a fourth retelling at the fire (+3 `memory.north`).
+- *The Price.* Its wording in section 8; that it sets `price_told` whether or not the Record line
+  is held.
+- *Ysolde's request.* That it is put to Kael, at the fire, after the retelling; that a mercy Burn
+  gives no Bond or damage; that her row is the kill-list's second, at the sky-watch; that Ilvarra
+  never asks.
+- *The kill-list in the web build.* Its four other witnesses as roles (the Tidecaller healer, the
+  Circle of Seasons' elder, the Stonekeeper who listened, Ilvarra) and its losses (three wrong runes,
+  or the three minutes).
+- *The ward's six.* Maerith, Illeth, Corvane, Dovra, Hesk and Ansel, and their six lines (section
+  11); the ward page's loss in the web build (three names lost).
+- *The founding on the board.* The chip of living crystal on the Stonekeeper homes; that it holds
+  for both sides.
+- *The Record page.* The page shown behind each mode's result in the web build, saying what that
+  page wrote.
+- *Lines written for the web build.* The healer: "A name somebody kept is a light somebody can
+  walk by." The Syndicate Elder, of the founding: "The stone remembers who laid it." The beats that
+  introduce the Record action, the lanterns, the struck row and the signature.

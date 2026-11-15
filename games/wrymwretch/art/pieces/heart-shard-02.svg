@@ -2,6 +2,7 @@
 <title id="heart-shard-02-t">Heartstone shard, step 2</title>
 <desc id="heart-shard-02-d">Heartstone shard at step 2 of the twelve-step pitch wheel, flat-shaded facets in the South's colour, a Record line cut into one face.</desc>
 <defs><radialGradient id="heart-shard-02-rg1" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#E0762E" stop-opacity="0.4"/><stop offset="100%" stop-color="#E0762E" stop-opacity="0"/></radialGradient><filter id="heart-shard-02-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter></defs>
+<g class="plate">
 <polygon points="0,0 44.7,0 0,49.9" fill="#17121b" stroke="#17121b" stroke-width="0.6"/>
 <polygon points="44.7,0 29.3,45.4 0,49.9" fill="#17121b" stroke="#17121b" stroke-width="0.6"/>
 <polygon points="44.7,0 80.7,0 72.6,31.8" fill="#332e37" stroke="#332e37" stroke-width="0.6"/>
@@ -63,6 +64,7 @@
 <polygon points="146.7,206.4 200,201.3 200,240" fill="#5a2e1a" stroke="#5a2e1a" stroke-width="0.6"/>
 <polygon points="146.7,206.4 200,240 148.6,240" fill="#733d22" stroke="#733d22" stroke-width="0.6"/>
 <circle cx="100" cy="118" r="78" fill="url(#heart-shard-02-rg1)"/>
+</g>
 <ellipse cx="108" cy="197.9" rx="47.6" ry="9" fill="#000" opacity="0.5" filter="url(#heart-shard-02-blur2)"/>
 <polygon points="109.5,34.9 68.9,79.7 93.8,62.7" fill="#f3caaf" stroke="#ffffff" stroke-width="0.7" stroke-opacity="0.6" stroke-linejoin="round"/>
 <polygon points="109.5,34.9 93.8,62.7 116.4,70.1" fill="#eaa475" stroke="#ffffff" stroke-width="0.7" stroke-opacity="0.6" stroke-linejoin="round"/>
@@ -79,7 +81,10 @@
 <polygon points="138.7,86.5 128.8,167.7 126.5,119.6" fill="#b96126" stroke="#ffffff" stroke-width="0.7" stroke-opacity="0.6" stroke-linejoin="round"/>
 <polygon points="128.8,167.7 108.9,197.3 126.5,119.6" fill="#9c5220" stroke="#ffffff" stroke-width="0.7" stroke-opacity="0.6" stroke-linejoin="round"/>
 <polygon points="108.9,197.3 116.4,70.1 126.5,119.6" fill="#e07a34" stroke="#ffffff" stroke-width="0.7" stroke-opacity="0.6" stroke-linejoin="round"/>
+<g class="mark">
 <path d="M97.8,88.7h7M107.9,88.7h8.7M99.3,99.7h7.2M111.2,99.7h6.4M100.8,110.7h6.3M110.5,110.7h6.9M102.3,121.7h8.8M103.8,132.7h7.6" fill="none" stroke="#fbf6e4" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>
+</g>
+<g class="plate">
 <polygon points="34,206 28.3,184.7 39.7,184.7" fill="#4d3f3f" stroke="#1a1010" stroke-width="1"/>
 <polygon points="34,206 39.7,184.7 49.6,190.4" fill="#372828" stroke="#1a1010" stroke-width="1"/>
 <polygon points="34,206 49.6,190.4 55.3,200.3" fill="#e17e3a" stroke="#1a1010" stroke-width="1"/>
@@ -95,4 +100,5 @@
 <circle cx="34" cy="206" r="4.8" fill="#1a1520" stroke="#E0762E" stroke-width="1.5"/>
 <text x="64" y="214" font-size="22" font-family="sans-serif" fill="#fbf6e4" font-weight="bold">2</text>
 <path d="M104,208 L107,211.4 L110,214.3 L113,216.3 L116,217 L119,216.4 L122,214.5 L125,211.6 L128,208.2 L131,204.8 L134,201.8 L137,199.8 L140,199 L143,199.6 L146,201.4 L149,204.2 L152,207.6 L155,211.1 L158,214 L161,216.1 L164,217 L167,216.5 L170,214.7 L173,212 L176,208.6 L179,205.1 L182,202.1 L185,200 L188,199" fill="none" stroke="#E0762E" stroke-width="2" stroke-linejoin="bevel"/>
+</g>
 </svg>

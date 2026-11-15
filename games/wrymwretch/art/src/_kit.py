@@ -149,6 +149,7 @@ def void(a, glow=None, stars=260, x=0, y=0, w=None, h=None, big=7):
     """Near-black starry void, with one accent glow (colour, cx, cy, r in 0..1 of the box)."""
     w = a.w if w is None else w
     h = a.h if h is None else h
+    a.open("g", class_="plate")   # the ground: a mode strips it to use the piece alone
     a.rect(x, y, w, h, fill=VOID)
     a.rect(x, y, w, h, fill=a.radial([(0, "#1d2248", 0.75), (1, "#1d2248", 0)], 0.5, 0.35, 0.75))
     if glow:
@@ -159,6 +160,7 @@ def void(a, glow=None, stars=260, x=0, y=0, w=None, h=None, big=7):
     for _ in range(big):
         sx, sy, s = x + a.rng.uniform(0.04, 0.96) * w, y + a.rng.uniform(0.04, 0.96) * h, a.rng.uniform(3, 7)
         a.poly(a.star_pts(sx, sy, s, s * 0.22, n=4), fill="#f6f3ea", opacity=0.85)
+    a.close()
 
 
 def bone_grad(a, dark=False):
@@ -277,6 +279,7 @@ def emblem(a, i, cx, cy, s, fill, line=INK, raised=True):
 
 def silk(a, tint=None):
     """The handscroll's silk ground (twin flight)."""
+    a.open("g", class_="plate")
     a.rect(0, 0, a.w, a.h, fill=SILK)
     gid = a.uid("silk")
     a.defn(f'<filter id="{gid}" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" '
@@ -285,6 +288,7 @@ def silk(a, tint=None):
     a.rect(0, 0, a.w, a.h, filter=f"url(#{gid})")
     if tint:
         a.rect(0, 0, a.w, a.h, fill=tint, opacity=0.08)
+    a.close()
 
 
 def seal_stamp(a, i, x, y, s=44):

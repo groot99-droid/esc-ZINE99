@@ -49,6 +49,7 @@ def crystal(a, cx, cy, hgt, wd, col, lean=0.0, n_cracks=0, written=False):
         a.poly([quad[1], quad[2], mid], fill=kit.shade(col, tones[k] - 0.12), **st)
         a.poly([quad[2], quad[3], mid], fill=kit.shade(col, tones[k] - 0.25), **st)
         a.poly([quad[3], quad[0], mid], fill=kit.shade(col, tones[k] + 0.08), **st)
+    a.open("g", class_="mark")   # what happened to this shard; play draws its own cracks
     if written:   # a Record line cut into one face
         x0, y0 = S[1][0] + 4, S[1][1] + 26
         d = []
@@ -62,6 +63,7 @@ def crystal(a, cx, cy, hgt, wd, col, lean=0.0, n_cracks=0, written=False):
     for c in range(n_cracks):
         x, y = cx + r.uniform(-wd * .3, wd * .3), cy - hgt * 0.24 + c * 20
         a.path(kit.crack_d(r, x, y, 1.5 + r.uniform(-0.4, 0.4), hgt * 0.42, 9, 0.3), fill="none", stroke="#fff", stroke_width=1.8, stroke_linejoin="round")
+    a.close()
     return top
 
 
@@ -79,17 +81,21 @@ def reg_shard(p):
 
     @asset(G, f"heart-shard-{p:02d}", group="pieces", title=f"Heartstone shard, step {p}", w=200, h=240, row=ROW)
     def draw(a: Art):
+        a.open("g", class_="plate")
         mesh(a, 200, 240, 5, 6)
         col = realm["acc"]
         hgt = 172 - p * 6.5
         wd = 54 + (p % 4) * 7
         a.circle(100, 118, 78, fill=a.radial([(0, col, 0.4), (1, col, 0)]))
+        a.close()
         crystal(a, 100, 112 + p * 1.2, hgt, wd, col, lean=((p * 7) % 5 - 2) * 0.03, n_cracks=CRACKS[p], written=p in WRITTEN)
+        a.open("g", class_="plate")   # its pitch, which play keeps hidden
         wheel(a, 34, 206, 22, {p}, col)
         a.text(64, 214, str(p), size=22, family="sans-serif", fill=STARW, font_weight="bold")
         # its pitch as a still line: a low step is a long wave, a high one short
         wl = [(104 + k * 3, 208 + 9 * math.sin(k * (0.25 + p * 0.07))) for k in range(29)]
         a.path(kit.pd(wl, False), fill="none", stroke=col, stroke_width=2, stroke_linejoin="bevel")
+        a.close()
     draw.__doc__ = (f"Heartstone shard at step {p} of the twelve-step pitch wheel, flat-shaded facets in the {realm['name']}'s colour"
                     + (f", {CRACKS[p]} crack{'s' if CRACKS[p] > 1 else ''} from earlier strikes" if CRACKS[p] else "")
                     + (", a Record line cut into one face" if p in WRITTEN else "") + ".")
@@ -105,7 +111,9 @@ def ring(a: Art):
     """The ring setting on the Stonekeeper's bench, in facets: a gold band of twenty-four planes, the twelve-step pitch wheel
     inside it, five sockets round it. Four hold shards and one, outlined only, is the rest that must stay empty."""
     r = a.rng
+    a.open("g", class_="plate")
     mesh(a, 600, 600, 9, 9, glow=(0.5, 1.1))
+    a.close()
     cx, cy, R0, R1 = 300, 300, 150, 200
     a.circle(cx + 8, cy + 14, R1 + 6, fill="#000", opacity=0.45, filter=a.blur(8))
     for k in range(24):
@@ -115,11 +123,14 @@ def ring(a: Art):
             quad = [(cx + ra * math.cos(a1), cy + ra * math.sin(a1)), (cx + rb * math.cos(a1), cy + rb * math.sin(a1)),
                     (cx + rb * math.cos(a2), cy + rb * math.sin(a2)), (cx + ra * math.cos(a2), cy + ra * math.sin(a2))]
             a.poly(quad, fill=kit.mix("#5a3a1a", "#f0c060", max(0, min(1, light + dl + r.uniform(-0.08, 0.08)))), stroke="#2a1608", stroke_width=1)
+    a.open("g", class_="wheel")   # one chord's steps lit; play lights the chord in hand
     wheel(a, cx, cy, 122, {0, 3, 5, 8, 10}, "#c88a2e")
     for k in range(12):
         an = 2 * math.pi * k / 12 - math.pi / 2
         a.text(cx + 100 * math.cos(an), cy + 100 * math.sin(an) + 6, str(k), size=15, family="sans-serif", fill=STARW, text_anchor="middle", opacity=0.85)
+    a.close()
     slots = [(36, 2), (108, 5), (180, None), (252, 3), (324, 0)]
+    a.open("g", class_="socket")   # play sets its own sockets, where the chosen chord puts them
     for ang, realm in slots:
         an = math.radians(ang - 90)
         sx, sy = cx + 228 * math.cos(an), cy + 228 * math.sin(an)
@@ -133,6 +144,7 @@ def ring(a: Art):
     # the beat line across the top: still
     a.poly([(180, 18), (420, 18), (436, 40), (420, 62), (180, 62), (164, 40)], fill="#1a1016", stroke="#c88a2e", stroke_width=2)
     a.line(184, 40, 416, 40, stroke=STARW, stroke_width=2.5)
+    a.close()
 
 
 @asset(G, "heart-tarns-rib", group="pieces", title="Tarn's rib", w=600, h=600, row=ROW)
