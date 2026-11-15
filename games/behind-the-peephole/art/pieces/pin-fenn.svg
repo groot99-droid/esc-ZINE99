@@ -10,7 +10,7 @@
 <g transform="rotate(2.0 130 121)">
 <rect x="29" y="37" width="212" height="182" fill="#000" opacity="0.3"/>
 <rect x="24" y="30" width="212" height="182" fill="#efe4c8" stroke="#b8ab8a" stroke-width="0.8"/>
-<line x1="32" y1="190" x2="228" y2="190" stroke="#c26a5a" stroke-width="1" opacity="0.7"/>
+<line x1="32" y1="184" x2="228" y2="184" stroke="#c26a5a" stroke-width="1" opacity="0.7"/>
 <line x1="32" y1="64" x2="228" y2="64" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
 <line x1="32" y1="90" x2="228" y2="90" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
 <line x1="32" y1="116" x2="228" y2="116" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
@@ -21,7 +21,7 @@
 <polygon points="101.3,82.4 169.1,76.5 171.7,106.3 103.9,112.3" fill="#f1ecdf" stroke="#1c1a17" stroke-width="1"/>
 <text x="138" y="100" font-size="13" font-family="monospace" fill="#1c1a17" text-anchor="middle" transform="rotate(-5 130 112)">A. FENN</text>
 <text x="138" y="142" font-size="14" font-family="cursive" fill="#d4ad57" text-anchor="middle" font-style="italic" transform="rotate(-5 130 112)">aud.</text>
-<text x="130" y="206" font-size="14" font-family="monospace" fill="#1c1a17" text-anchor="middle" font-weight="bold" letter-spacing="2">FENN</text>
+<text x="130" y="208" font-size="24" font-family="monospace" fill="#1c1a17" text-anchor="middle" font-weight="bold" letter-spacing="0.5">FENN</text>
 </g>
 <ellipse cx="134.1" cy="45.9" rx="8.1" ry="4" fill="#000" opacity="0.3"/>
 <circle cx="130" cy="40" r="9" fill="#eee" stroke="#000" stroke-width="0.6" stroke-opacity="0.4"/>

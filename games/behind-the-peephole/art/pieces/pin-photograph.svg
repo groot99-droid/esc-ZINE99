@@ -10,7 +10,7 @@
 <g transform="rotate(-0.1 130 121)">
 <rect x="29" y="37" width="212" height="182" fill="#000" opacity="0.3"/>
 <rect x="24" y="30" width="212" height="182" fill="#efe4c8" stroke="#b8ab8a" stroke-width="0.8"/>
-<line x1="32" y1="190" x2="228" y2="190" stroke="#c26a5a" stroke-width="1" opacity="0.7"/>
+<line x1="32" y1="184" x2="228" y2="184" stroke="#c26a5a" stroke-width="1" opacity="0.7"/>
 <line x1="32" y1="64" x2="228" y2="64" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
 <line x1="32" y1="90" x2="228" y2="90" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
 <line x1="32" y1="116" x2="228" y2="116" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
@@ -21,7 +21,7 @@
 <polygon points="133.6,72 173.4,75.5 167,149.2 127.1,145.7" fill="#70777a"/>
 <path d="M112,146 V116 Q112,102 124,102 Q136,102 136,116 V148Z" fill="#17191a"/>
 <circle cx="124" cy="92" r="9" fill="#c9c2b0"/>
-<text x="130" y="206" font-size="14" font-family="monospace" fill="#1c1a17" text-anchor="middle" font-weight="bold" letter-spacing="2">THE PHOTOGRAPH</text>
+<text x="130" y="208" font-size="21" font-family="monospace" fill="#1c1a17" text-anchor="middle" font-weight="bold" letter-spacing="0.5">THE PHOTOGRAPH</text>
 </g>
 <ellipse cx="134.1" cy="45.9" rx="8.1" ry="4" fill="#000" opacity="0.3"/>
 <circle cx="130" cy="40" r="9" fill="#d9b02a" stroke="#000" stroke-width="0.6" stroke-opacity="0.4"/>

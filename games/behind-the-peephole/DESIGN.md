@@ -182,6 +182,11 @@ hiring papers in the safe give only "Night auditor, fourth floor", and in the la
 stays under the lamp's shade. The six guests are the lives the player watches; the watcher stays
 the empty place they are watched from.
 
+**Want and need (accepted 2026-11-15).** The watcher *wants* to see everything and never be seen: that is
+the job, the pay and the safety, and the game teaches it as a skill. The watcher *needs* to be seen
+by one person and not step back. Neither takes a face or a name; the need is an action, first asked
+for at The Sitting on night four (section 10).
+
 ### Room 401: Tomas Vell, the mercenary
 
 | | |
@@ -214,6 +219,8 @@ the empty place they are watched from.
 | Fear | Being made a forger of herself: a copy. |
 | Root or fear | Root: she finds Drost's ledger in the painting's backing and copies it by hand, all of night five, so there are two. |
 | Lines | (to the photograph) "You'd have liked the varnish." / (phone message) "It's with me. It's heavier than it should be." |
+| What she knows (accepted 2026-11-15) | She has known about the rose since night one: brass does not go dark by itself. Every picture she pins up carries a brass dot in its corner, filled if the rose was dark while she painted, hollow if it stayed lit (`mara_dots`). She has been logging you. She wants a witness, because she knows the job ends with her blamed. |
+| Her scene (accepted 2026-11-15) | The Sitting, night four, 03:40 (section 10). Pencil line under the picture: "Eleven times. I count too. Don't stop." (the number is the run's own, `mara_count`). |
 
 ### Room 404: Jonah Ferrer, the undercover journalist
 
@@ -260,7 +267,10 @@ three." / "Walk with me." / (in a slipped card) "They see the dark."
 
 A voice on the office phone at 22:58 each night. Polite, unhurried, never threatening, never
 named beyond the initial. Wants a complete file. Lines: "Log the returns. Only the returns." /
-"Tonight you only confirm." / "You went downstairs." Wren is never seen and never caught.
+"Tonight you only confirm." / "You went downstairs." Wren is never seen and never caught. His creed (accepted 2026-11-15): a complete file is a
+mercy, because a client with a partial one guesses, and guesses get people hurt. Line: "An accurate
+file is a kindness. It is the guesses that get people hurt." So every Statement row the player gets
+right proves him right.
 
 ### Lew, the night porter
 
@@ -429,7 +439,7 @@ includes a solver that proves this for every night.
 | 404 | 00:45 | 00:57 clothing: a white catering jacket flecked with gold; a badge reading "J." · 01:05 ritual: pours a miniature into the sink, writes "400" on the notepad · 01:10 TV: a black-and-white film · 01:30 calls: a voice memo, inaudible | The Assembly Rooms |
 | 401 | 01:30 | 01:42 clothing: red clay on collar and knees · 01:45 ritual: kit laid out in order; bedspread folded back a hand's width · 01:55 calls: reads his daughter chapter one of *The Lamplighter's Mouse*; "I know. Papa's late." · 02:20 TV: the news, muted | The Bonded House |
 | 405 | 02:05 | 02:17 hands: grease under the nails · 02:20 luggage: three laptops in one bag · 02:30 calls: chess by phone, "e4." · 02:40 ritual: dry cereal from the box | The tram depot |
-| 403 | 02:45 | 02:57 clothing: salt rime on her boots; she smells her gloves · 03:00 ritual: white gloves on before she touches the lamp · 03:10 luggage: a flat portfolio · 03:30 ritual: paints the river, pins it up · 03:45 TV: an art auction channel | The fish market |
+| 403 | 02:45 | 02:57 clothing: salt rime on her boots; she smells her gloves · 03:00 ritual: white gloves on before she touches the lamp · 03:10 luggage: a flat portfolio · 03:30 ritual: paints the river, pins it up · 03:40 ritual: the picture, wet, with a brass-coloured dot in its corner (accepted 2026-11-15) · 03:45 TV: an art auction channel | The fish market |
 
 **Office clues (always found).** The evening paper's listings: Glasshouse late opening ends 23:00;
 Printworks night run ends 23:30; Assembly Rooms gala rehearsal ends 00:30; fish market trade ends
@@ -494,7 +504,7 @@ was nothing last night, is a flat hard case: "A suitcase that wasn’t there yes
 | 405 | 00:55 | 01:00 luggage: reads a printed list, stops on one line · 01:05 calls: dials the room phone, "Ruthie, it's—" · 01:06 hands: sets the receiver down very slowly · 01:30 calls: chess, "Bb5." | Room 406 · cut short |
 | 404 | 01:10 | 01:20 calls: "Then who is the source?" and slams the receiver · 01:25 ritual: the miniature; "402" · 01:40 TV: a film, sound off | His editor · hung up angry |
 | 402 | 01:40 | 01:50 TV: game show turned up · 01:52 calls: whispers to her neighbour under the noise · 02:10 ritual: knits | Her neighbour · whispered |
-| 403 | in | 23:00 luggage: the case under the bed · 01:00 calls: leaves a message, "It's with me. It's heavier than it should be." · 01:30 ritual: gloves; paints · 03:00 hands: runs a gloved hand along the case's back | Abbot Fine Art · left a message |
+| 403 | in | 23:00 luggage: the case under the bed · 01:00 calls: leaves a message, "It's with me. It's heavier than it should be." · 01:30 ritual: gloves; paints · 01:40 ritual: a second river beside the first, each with a brass dot, and the dots are not the same (accepted 2026-11-15) · 03:00 hands: runs a gloved hand along the case's back | Abbot Fine Art · left a message |
 
 **The back stair (optional).** The stair door at the passage's east end has a five-pin lock with
 two spool pins. Behind it: the service stair down to the back of house, Lew's lodge window, and
@@ -529,7 +539,15 @@ slid across the floor between them, and two people sitting down on the floor.
 | 402 | 00:05 | Jonah (404), 00:30–01:00 · a knitting needle | 00:30 visitors: 404 at her door · 00:45 hands: she unscrews a knitting needle's end; it is hollow · 00:50 she gives it to him |
 | 404 | 00:20 (out to 402, back 01:00) | The stranger, 02:14 · an envelope of money | 00:25 ritual: the miniature; "403" · 01:05 luggage: the needle on the desk · 02:14 visitors: the stranger · 02:20 hands: drops the envelope in the bin; at 02:40 takes it out |
 | 406 | 01:00 | Kit (405), 01:10–01:50 · a photograph | Gap only, from 01:00: two pairs of feet; a photograph on the floor |
-| 403 | in | Room service, 01:30 · a pot of tea | 01:30 visitors: tea · 02:30 luggage: the case open on the desk; she peels the painting's backing · 02:50 hands: folded pages inside; she reads them with gloves on · 03:30 ritual: paints, but the picture is of the room |
+| 403 | in | Room service, 01:30 · a pot of tea | 01:30 visitors: tea · 02:30 luggage: the case open on the desk; she peels the painting's backing · 02:50 hands: folded pages inside; she reads them with gloves on · 03:30 ritual: paints, but the picture is of the room · 03:40 ritual: The Sitting: she pins the picture facing the rose (accepted 2026-11-15) · 03:42 hands: she looks straight in, and taps twice (accepted 2026-11-15) |
+
+**The Sitting (midpoint reversal(accepted 2026-11-15).** At 03:40 Mara takes tonight's picture off the
+desk and pins it up facing the rose. It is the valet door, the rose a black dot, and under it in
+pencil the run's own count of visits to her lens and a line: "Eleven times. I count too. Don't
+stop." Then she looks straight in. Everything the player has learned says step back inside half a
+second. Step back and she writes "gone" under the count and turns the picture to the wall. Hold, and
+the catch ring closes on her eye: `sitting_held`. Then two taps of her pencil on the desk, the first
+question of Answering (section 10). Rules in section 10; her dots in section 12.
 
 **Lost property.** A tall cabinet in the passage, between 403 and 404, where Dora leaves what
 guests forget. Five-wafer lock (section 11). Bottom drawer: Abel Fenn's log, last season. The same
@@ -557,7 +575,7 @@ minutes.
 | 401 | 00:30 | 00:40 reads chapter five; after she hangs up, says "No" to the photograph | Postcard to his daughter signed "T. Vell" | Insurance assessor's folder |
 | 406 | 01:00 | 01:20 sews the last letter of the banner; talks to the river report about her father | A letter from her group: "Dear Ruth" | Nurse's watch pinned to her coat |
 | 405 | 01:40 | 01:50 records a message she does not send: "It's Kit. Kit Saelens. Your sister. Remember her?" | Spoken | Student card |
-| 403 | in | All night she copies the ledger pages by hand at the desk | Luggage label "M. LINDE" | Same label: "restorer" |
+| 403 | in | All night she copies the ledger pages by hand at the desk. If the player held at The Sitting, at 23:40 she holds a copied page to the rose (the held page, section 10) (accepted 2026-11-15). At 01:00 a small river between two pages, with its brass dot (accepted 2026-11-15) | Luggage label "M. LINDE" | Same label: "restorer" |
 
 The 2:14 knock is at 406: an envelope with the gala's timings.
 
@@ -589,7 +607,7 @@ three difficulty).
 | 401 | 00:40 | 00:45 calls: a woman answers; "She's asleep." He sits on the bed for a long time · 01:30 he leaves by the main door; the room is empty till 01:55 |
 | 404 | 00:50 | 01:00 luggage: a Courant envelope, the booking confirmation inside · 01:10 ritual: an empty notepad |
 | 405 | 01:00 | 01:10 luggage: her screen shows a job board, handle "LANTERN" · 01:40 calls: chess, she loses on purpose |
-| 403 | in | 01:30 visitors: 401 at her door; she lets him in. He stands; she sits. She shows him the folded pages. He reads. At 01:55 he leaves without the case. · 02:14 visitors: the stranger; an envelope (payment, and "the service stair, 05:30 Monday") · 02:30 luggage: an "Abbot Fine Art" invoice |
+| 403 | in | 01:30 visitors: 401 at her door; she lets him in. He stands; she sits. She shows him the folded pages. He reads. At 01:55 he leaves without the case. · 02:14 visitors: the stranger; an envelope (payment, and "the service stair, 05:30 Monday") · 02:30 luggage: an "Abbot Fine Art" invoice · 03:00 ritual: tonight's picture goes up last in the row, with its dot (accepted 2026-11-15) |
 
 **The back office and the safe.** The night manager's office behind the front desk, empty after
 midnight. The safe holds the booking ledger: six rooms, six names of booker (Corvane Risk, Ashdown
@@ -776,6 +794,9 @@ not move; the eye does.
 | Sound | The room is heard through the door, muffled; voices are subtitled in square brackets. Words are clear only within 1.5 m of the valet door, or with a TV off. |
 | The gap | Crouching shows a strip the full screen width and 9 % of its height, at floor level, moving on X only, over a floor plane 2.6 view-widths across. Only beats tagged *floor* can be caught here (feet, shadows, envelopes under the main door, things dropped). The gap never raises suspicion. |
 | Being looked at | See suspicion (section 12). When a guest's suspicion passes 40, they glance at the rose. When the guest looks straight at the lens, their eye fills a quarter of the view: stepping back within 0.5 s halves the suspicion gained from that look. |
+| Holding under a look (accepted 2026-11-15) | With a guest who knows (Mara, from The Sitting on), the rule turns over. Her direct look still fills a quarter of the view, but stepping back is the mistake: hold still for 1.5 real seconds and the catch ring closes on her eye. No suspicion is gained from a knowing guest's look. |
+| Answering (accepted 2026-11-15) | A knowing guest taps twice (subtitled). Darken the rose twice within three seconds for yes: step back and return, twice. Staying at the lens, or staying away, is no. Each question is written to `answers`; a yes from Mara on nights four to six counts in `mara_answers`. |
+| The held page (accepted 2026-11-15) | A page held to the lens fills the circle, too near to take in: only the middle third is sharp. Tilt across it and hold on each third in turn (three holds of 1.5 s). Each hold counts in `held_pages_read`; three make the page one clue card. Night five, 403, only if `sitting_held`. |
 | A blind lens | A guest at 70 suspicion (or by script, 406 on night four) covers the rose. The view shows terry cloth for the rest of the night. The gap still works. |
 | Progress | Diegetic. The clue cards caught tonight fan at the bottom-left of the screen, small, one per beat; the pocket watch is raised with Tab. |
 | Failure and retry | There is no failure, only what is missed. A missed beat shows as a dot on the night strip in the morning. |
@@ -787,6 +808,7 @@ not move; the eye does.
 | `n1_first_look` | 406, empty | Teaches looking; no beats to catch; 45 s. |
 | `n1_shift_eye` to `n7_shift_eye` | All six | The shift. One scene per night, any door. |
 | `n4_gap_406` | 406 | Teaches the gap; Kit's visit by feet and a photograph on the floor. |
+| The Sitting (accepted 2026-11-15) | 403 | Night four, 03:40, inside `n4_shift_eye` for now. Teach: hold still on Ines's hands. Test: Tomas's photograph, face up for two minutes while he faces the door. Twist: under Mara's look, holding is what earns the beat. Scene to add: `n4_sitting`, scripted like `n4_gap_406`, so no player can miss it. |
 | `end_next_watcher` | Your office, from the passage | The last image of The Next Watcher: the player tilts across a figure at the desk writing the log. The figure is the player. 40 s; nothing to catch; it ends when the figure lifts its head toward the rose, the face still under the lamp's green shade. |
 
 ### Mode B: Corridor race (`race`, scroll)
@@ -891,6 +913,15 @@ fish market and came back at 02:45."). A pen nib at the foot: "Sign".
 | `n6_statement` | Room × Booked by × Night of the 2:14 knock | The booking ledger (if opened) or scattered beats; the `knocks` ledger | The night column needs the player's memory of six nights |
 | `n7_account` | Room × Mission (6), and three single questions: who booked them all (Wren / Drost / the porter / the stranger / you), who the stranger is (Abel Fenn / Drost / Wren / Lew / a guest), and what the product is (the log / the painting / the ledger / the logger / the banner) | Every card the player holds, and every stamped row | Nine answers; no second look |
 
+6. **The carbon (accepted 2026-11-15).** The player keeps a carbon of every signed form. Each morning from
+   night two, before the new grid, the carbons of the earlier nights lie beside it with their struck
+   rows, and one new card that bears on an earlier night is among the morning's cards. The player may
+   amend one earlier row, on the carbon only: pick the row, tick a new answer, and it is stamped
+   AMENDED. Wren's copy went down the chute and keeps the mistake; `rows_correct` does not change.
+   The carbon can become true: `carbon_rows_correct` counts the rows right on the carbons, and
+   `carbon_amends` keeps each amendment. Nothing reads `carbon_rows_correct` yet; the endings that
+   use the carbons wait for phase 3 (section 21).
+
 **Truth for the Account.**
 
 | Room | Mission |
@@ -908,7 +939,8 @@ Single answers: Wren; Abel Fenn; the log.
 that settles a row; a slipped patience card can name a room.
 
 **Writes.** `stmt.n1` to `stmt.n6` (0–6 each), `rows_correct` (their sum, 0–36), `statements`,
-`account_correct` (0–9), `account_scapegoat`.
+`account_correct` (0–9), `account_scapegoat`; and, from the carbon, `carbon_rows_correct` (0–36) and
+`carbon_amends`.
 
 `account_scapegoat` is set at the Account: the room the player put against "Steal *The Night
 Visitor*" if that row is wrong; otherwise the room put against "Wipe the cameras and plant the
@@ -1074,6 +1106,17 @@ so there is less to watch before the knock. In the slide run, pages pushed under
 valet door come back out unread a moment later and do not count toward `pages_delivered`: that
 guest already knows someone is in the passage and will not take paper from it. A player with three
 or more exposed guests cannot reach Under the Door.
+
+### Mara's dots (accepted 2026-11-15)
+
+Mara paints on nights one, three, four, five and six. While she paints, the game notes whether the
+rose in 403 went dark (an eye at it) at any time. When she pins the picture up, its brass dot is
+filled if it did and left a hollow ring if it did not, and a row goes into `mara_dots`. The dot is
+a beat like any other (`dots_read`), small, at the picture's lower right corner. Suspicion still
+runs for Mara on nights one to three and she still covers the rose at 70; from The Sitting on, if
+the player held, her meter stops rising from looks and she never covers the rose again. If the
+player stepped back, she behaves as any guest does. `mara_count` is the number of separate visits
+to her lens before The Sitting; she pencils it under the picture.
 
 ### Watching and attention
 
@@ -1317,9 +1360,9 @@ a visual equivalent.
 | --- | --- |
 | `data/game.json` | Slug, title, source path, target 120–150, one player, the core verb, the eight chapters with minutes (143 in all) and layers. |
 | `data/scenes.json` | The two 2D modes (`eye`, `race`), the four 1D games (`lockwork`, `statement`, `patience`, `mosaic`), and every scene in sections 8–10 with chapter, mode or game, transitions, what it reads and writes, and what can follow. |
-| `data/flags.json` | Every meter, counter, flag, enumeration and ledger in sections 8–13. |
+| `data/flags.json` | Every meter, counter, flag, enumeration and ledger in sections 8–13, and the nine added for phase 1 on 2026-11-15 (`mara_dots`, `dots_read`, `mara_count`, `sitting_held`, `answers`, `mara_answers`, `held_pages_read`, `carbon_rows_correct`, `carbon_amends`). |
 | `data/endings.json` | The four endings with the conditions in section 13 and their final scenes. |
-| `data/beats.json` | The per-night room scripts of section 8: each night's returns (bell and door), the 2:14 knock, and every beat (139) with its id, room, night, scene, time window, kind, region of the room plate, whether it is floor-visible, and the clue card it writes; the office clues; and the false-sign substitutions of section 12 (what an exposed guest stages instead of one true beat, nights two to six). |
+| `data/beats.json` | The per-night room scripts of section 8: each night's returns (bell and door), the 2:14 knock, and every beat (146, seven of them accepted 2026-11-15: Mara's dots, The Sitting and the held page) with its id, room, night, scene, time window, kind, region of the room plate, whether it is floor-visible, and the clue card it writes; the office clues; and the false-sign substitutions of section 12 (what an exposed guest stages instead of one true beat, nights two to six). |
 | `data/truth.json` | The true answers: the six Statement grids (36 rows, one true answer per row and category, each with the clue cards it rests on), the Account (six missions and three single questions, and the scapegoat rule), and the Mosaic's pins, thread lengths and 16 true links. |
 | `data/deals.json` | The Night Patience deals for nights two to seven: the six columns, the stock, the two slipped cards and where they sit, and a winning line for each deal within its passes. |
 | `data/schemas/` | `beats.schema.json`, `truth.schema.json` and `deals.schema.json`, the JSON Schemas (draft 2020-12) for the three files above. The shared schemas in `schemas/` cover only the first four. |
@@ -1395,7 +1438,117 @@ consistent and cited, not that the grids are unique.
    `tools/check_data.py` passed before and after these answers; `passes: null` in
    `data/deals.json` means the unlimited passes of night two, as section 11 says.
 
-## 21. Added for the game
+## 21. Accepted development (2026-11-15)
+
+The author accepted the development proposed in `DEEP_DIVE.md` on 2026-11-15, all of it, including
+the decisions its roadmap marked as needing the author first. This section states the accepted
+story. It is built in three phases. **Phase 1 is in this design and in `data/` now**; phases 2 and
+3 are accepted but not yet worked into sections 6 to 13, and are marked below. Nothing here changes
+the source, and the four endings of section 13 stand; none is `as_written`, because the author
+wrote no ending.
+
+**Dramatic question.** When one of the people behind the glass looks back and asks you to keep
+watching, do you stay a lens or become a witness?
+
+**Want and need.** The watcher wants to see everything and never be seen: the job, the pay and the
+safety, taught as a skill. The watcher needs to be seen by one person and not step back. No face or
+name is required; the need is an action.
+
+**The opposing force's want.** H. Wren wants a complete file because he believes completeness is
+mercy: with a full record a client buys a journalist, relocates a clerk, pays a thief; with a
+partial one the client guesses, and guesses get people hurt. So the Statement's scoring is his
+creed, and every row the player gets right proves him right. He is wrong about one thing: a file
+that complete leaves the six nothing of their own to bargain with. His secret (phase 3): Wren was
+the first night auditor, in 1971, and his incomplete log sent the wrong guest out through the lobby.
+
+**Characters, new or deepened.**
+
+| Character | Want | Secret | Scene | Phase |
+| --- | --- | --- | --- | --- |
+| Mara Linde, 403 | A witness. She knows the job ends with her blamed. | She has known about the rose since night one. Each nightly watercolour carries a brass dot in the corner, filled if the rose was dark while she painted. She has been logging you. | The Sitting (night four, 03:40) | 1, built |
+| Dora, the night maid | That somebody counts what the guests leave behind. | Lew's tea at 01:00 is her cue: while you drink it, her eye is at a rose in your door. When a watcher stops writing, she finishes the log herself, which is what Fenn's card 12, "They didn't stop me", means. Her only line: "Somebody has to count what they leave." | The Linen Count (night five, the blackout) | 2 |
+| Abel Fenn | For you to refuse the promotion he took. | The job is a ladder: watcher, then courier, then the one who books. He is one rung from holding the phone. | Tea at One (night three), heard through your own door | 2 and 3 |
+| H. Wren | A complete file. | The first night auditor, 1971; his wrong row. | The 1971 Page (night six) | creed 1; secret 3 |
+
+**The secret under the story: the seventh row.** Seeded by two lines of the source, quoted
+verbatim: "Their stories overlap. Their secrets rhyme. Their patterns converge." and "They’re not
+alone. / And someone is watching them all." (`creative-writing/vault/04_Book_Concepts/01_Behind_the_Peephole.md`).
+"All" includes the one at the glass. The seasons rhyme: Fenn's six match yours type for type, and
+every season's file has seven rows. What Wren sells is six lives and the signed witness who vouches
+for them, someone a client can produce or blame. The player proves it from five marks: Mara's dots,
+Dora's chalk ticks inside the lost-property door, an unlabelled seventh pull on the bell board, a
+column headed "aud." in Fenn's log, and a seventh line in the booking ledger ("400, linen room,
+night auditor"). The first mark, Mara's dots, is built in phase 1; the other four, the *watcher*
+clue kind, and the Account's tenth line are phase 2 and 3.
+
+**Acts and scenes.**
+
+| # | Night | Act | Scene | Status | Phase |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 1 | I | The Coin of Light: empty 406, one paper boat (`n1_first_look`) | Existing | – |
+| 2 | 2 | I | The Seventh Bell: the board has seven pulls; the bare one rings once when you leave the office | New | 2 |
+| 3 | 3 | II | The Suitcase (`n3_shift_eye`): "A suitcase that wasn’t there yesterday" | Source | – |
+| 4 | 3 | II | Tea at One: Lew talks; trolley wheels stop outside your door for a minute | New | 2 |
+| 5 | 4 | II | **The Sitting (midpoint reversal)**: Mara pins tonight's picture facing the rose, with the count and "I count too. Don't stop.", and looks straight in | Existing beat ("the picture is of the room"), the rest new | **1, built** |
+| 6 | 4 | II | Lost Property: Fenn's log, and beside it six left things from last season | Log existing; the six things new | 2 |
+| 7 | 5 | III | Two Sets: Ines at the mirror; Mara holds each ledger page to the rose as she copies it | Ines existing; the held page new | **1, built** (the held page) |
+| 8 | 5 | III | The Linen Count: in the blackout Dora stands at the open cabinet; behind you, a seventh coin of light, your own door | New | 2 |
+| 9 | 6 | IV | The 1971 Page: behind the booking ledger, a statement form signed "H. Wren, night auditor", one row struck through in another hand | Safe existing; page new | 3 |
+| 10 | 6 | IV | The Hollow Dot (darkest moment): Tomas is in 403 at 01:30 and Mara has asked you to be there; the safe is open at the same minute | The clash existing; her asking and the dot new | 3 (the dot beat is in `data/beats.json` now) |
+| 11 | 7 | IV | Tonight You Only Confirm: the Account arrives already typed | Account existing; pre-typed new | 3 |
+| 12 | 7 | IV | The Lens in Your Door (`n7_your_door`) | Existing | – |
+
+**Endings.** The four of section 13 stand, each with its cost sharpened, and a fifth is accepted.
+All are phase 3; phase 1 changes no ending and no condition in `data/endings.json`.
+
+| Ending | Accepted change | Phase |
+| --- | --- | --- |
+| The Next Watcher | Adds the ladder: the contract comes with Fenn's old key, and the cabinet holds six new things you can name. | 3 |
+| The Open Door | Walking out does not break the file. From the alley you see the office lamp still on: Dora is finishing your log. The most-watched guest still does not come back. | 3 |
+| Under the Door | The guests get your carbons, not Wren's copy; only rows right on the carbon are believed (`carbon_rows_correct`, kept from phase 1). Tomas's last chapter stays unread, and you are alone when the knock comes. | 3 |
+| The Wrong Picture | Wren's last line gains one sentence: "I did that once." | 3 |
+| **The Sitter (new)** | Conditions: you answered Mara on nights four to six (`mara_answers`), slid your carbons under 403, got the seventh row right, and at the knock put your eye to your own rose and held still. Five leave. Mara walks into the lobby at dawn with the case, her paintings and your carbons, and hands the police a second file. Cost: she is arrested by her own choice, and the witness in her file is you. You will be called. Last image: her painting of your door, the rose lit. | 3 |
+
+**Built in this pass (phase 1: make the middle turn).**
+
+| Item | Where it lives | Data |
+| --- | --- | --- |
+| The brass dot on Mara's pictures | Section 6 (Mara), section 8 (nights one, three, four, five, six), section 12 (Mara's dots) | Five dot beats in `beats.json`; `mara_dots`, `dots_read` |
+| The Sitting | Section 8 (night four), section 10 (Holding under a look) | `n4.r403.sitting`, `n4.r403.look`; `sitting_held`, `mara_count` |
+| Answering | Section 10 | `answers`, `mara_answers` |
+| The held page | Section 8 (night five), section 10 | `n5.r403.held_page` (needs `sitting_held`); `held_pages_read` |
+| The carbon | Section 11 (the Statement, rule 6) | `carbon_rows_correct`, `carbon_amends` |
+| Chapter cards | Eight cards drawn by code (`art/chapters/`): seven roses, n lit, the act's word. Shown between nights and as the opening card of a mode. | – |
+| Room 402 and room 403 plates | Drawn by code (`art/backdrops/plate-402`, `plate-403`) for the eye; the generated gouache paint-over of section 15 still waits for the Blender room set. | – |
+
+Key art is a generated image (`DEEP_DIVE.md` section 4) and is not made in this pass.
+
+**Scenes to add** (not in `data/scenes.json` yet; the storyboards and build files follow later).
+
+| Scene | Layer | What | Phase |
+| --- | --- | --- | --- |
+| `n4_sitting` | 2D eye | The Sitting, scripted at 03:40 in 403, 90 s. Until it exists its two beats sit in `n4_shift_eye`. | 1 |
+| `n2_seventh_bell` | 3D | The office bell board; the bare pull rings once as you leave. | 2 |
+| `n3_tea` | 3D | Tea at One, heard through the office door. | 2 |
+| `n5_linen_count` | 2D race | The seventh coin, inside the blackout. | 2 |
+| `n7_lever_lock` | 1D Lockwork | The lever lock on your own door (`docs/COLLECTION.md` must name it first). | 3 |
+| `end_sitter` | 3D | The Sitter's last scene. | 3 |
+
+**Waiting for phase 2 (tie the layers).** Quiet columns, reply cards and nicked backs in Night
+Patience; bell wires and the parked trolley in the race; lost property's six things and the rhyme
+spool; the seventh coin; the seventh row across forms, cabinet, bell board and ledger; Dora at your
+rose.
+
+**Waiting for phase 3 (endings and replay).** Wren's 1971 page; the typed Account and typed rows;
+the lever lock; The Sitter; the changes to the four endings; the second-shift cabinet; the
+remaining art.
+
+**In the web prototypes.** The eye module gains a second shift, 403 on night four, which folds the
+dot, The Sitting, Answering and (from night five) the held page into one sitting of about three
+minutes; the Statement module adds the next morning's carbon after signing. Both say what they cut
+in their file headers.
+
+## 22. Added for the game
 
 Everything below is my proposal and not in the author's text. The pitch supplies the premise, the
 six kinds of guest, the seven details, the four roles of the peephole, and the last three lines.
@@ -1413,6 +1566,8 @@ six kinds of guest, the seven details, the four roles of the peephole, and the l
 | 1D games | All rules, layouts, appearances and contents of Lockwork, the Statement, Night Patience (including all twelve slipped cards) and the Mosaic. |
 | Endings | All four endings, their names (from `docs/ADAPTATIONS.md`), their conditions, final scenes and last lines; naming The Next Watcher "the pitch's ending" (a reading of the last three lines, not the author's ending). |
 | Lines | Every spoken or written line in the game. The only verbatim lines are the pitch quotations in section 3, cited to `04_Book_Concepts/01_Behind_the_Peephole.md`. |
+| Accepted 2026-11-15, phase 1 | The watcher's want (see all, never be seen) and need (be seen once, and hold). Wren's creed that a complete file is mercy, and his line. That Mara has known about the rose since night one; the brass dot on her watercolours and her log of the watcher (`mara_dots`); her count and pencil line, "Eleven times. I count too. Don't stop."; "gone". The Sitting. Holding under a knowing guest's look; Answering (two taps, the rose darkened twice); the held page and its three columns. The carbon, the one amendment a morning, the AMENDED stamp, `carbon_rows_correct`. Seven beats in `data/beats.json` (the five dots, The Sitting, her look, the held page) and their clue lines. The chapter cards and the code-drawn plates of 402 and 403. |
+| Accepted 2026-11-15, phases 2 and 3 (stated in section 21, not yet built) | Dora at your rose, her line and her chalk ticks; Fenn's ladder and the new reading of card 12; the seventh row and its five marks; Wren as the first night auditor of 1971; the scenes The Seventh Bell, Tea at One, The Linen Count, The 1971 Page, The Hollow Dot and the typed Account; the six left things; the fifth ending, The Sitter, and the changes to the other four; the remaining obstacles of `DEEP_DIVE.md` section 3; the 2:14 thread across the collection. |
 
 ### Changes from `docs/ADAPTATIONS.md`
 

@@ -6,6 +6,10 @@
 // slips, in the reading panel) and the PENCIL RINGS (the design's hint: a ring round a pin with an
 // unused true link). Phases: the first threads; new cards go up as true links open them; the last
 // lengths.
+// Art (games/behind-the-peephole/art): the pin cards and the six guest cards are the art's own,
+// each with its pin where the thread ties on; the question cards that have a drawn card pin up as
+// that card; the evening paper's clippings and the stopped clock show in the reading panel; chapter
+// card three heads the opening note. The thread, the rings and the typed rows stay drawn here.
 
 const TYPES = [
   { id: "met", name: "met", col: "#b8322a", dash: "", key: "1" },
@@ -66,6 +70,7 @@ export default {
   mount(root, api) {
     const P = "behind-the-peephole-mosaic-";
     const NS = "http://www.w3.org/2000/svg";
+    const art = api.art || { has: () => false, url: () => "" };
     const RM = api.reducedMotion;
     const streak = api.store.get("lossStreak", 0);
     let gentle = api.store.get("gentle", false);
@@ -75,6 +80,10 @@ export default {
     .${P}qs{grid-column:1 / -1;display:flex;gap:8px;overflow-x:auto;padding:8px 10px;min-height:46px;background:#5a3e22;align-items:center;box-shadow:inset 0 -2px 0 #2a1a0c}
     .${P}qs .q{flex:none;background:#fbf6e8;padding:6px 12px 6px 22px;font:italic 15px Georgia,serif;position:relative;transform:rotate(-1deg);box-shadow:2px 3px 0 #0005}
     .${P}qs .q::before{content:"";position:absolute;left:7px;top:50%;width:9px;height:9px;margin-top:-5px;border-radius:50%;background:#a3302a}
+    .${P}qs img.qa{flex:none;height:clamp(64px,9vh,84px);width:auto;box-shadow:2px 3px 0 #0005;transform:rotate(-1deg)}
+    .${P}qs img.qa.fresh{animation:${P}pin .5s ease-out}
+    .${P}read img.ra{display:block;width:min(100%,220px);height:auto;margin:8px auto 2px;box-shadow:2px 3px 0 #0004}
+    .${P}note img.ch{display:block;width:100%;height:84px;object-fit:cover;object-position:0 0;margin:0 0 10px}
     .${P}qs .q.fresh{animation:${P}pin .5s ease-out}
     @keyframes ${P}pin{0%{transform:translateY(-30px) rotate(-6deg);opacity:0}100%{transform:rotate(-1deg);opacity:1}}
     .${P}qs .none{color:#f4ecd6;opacity:.8;font-size:14px;letter-spacing:.06em}
@@ -178,7 +187,10 @@ export default {
     }
     function paintQs() {
       qsEl.innerHTML = questions.length ? "" : `<span class="none">QUESTIONS PIN HERE WHEN A THREAD PULLS TAUT</span>`;
-      questions.forEach((q) => { const d = document.createElement("span"); d.className = "q" + (q === fresh && !RM ? " fresh" : ""); d.textContent = q; qsEl.appendChild(d); });
+      questions.forEach((q) => {
+        if (QART[q] && art.has(QART[q])) { const im = document.createElement("img"); im.className = "qa" + (q === fresh && !RM ? " fresh" : ""); im.alt = q; im.title = q; im.src = art.url(QART[q]); qsEl.appendChild(im); return; }
+        const d = document.createElement("span"); d.className = "q" + (q === fresh && !RM ? " fresh" : ""); d.textContent = q; qsEl.appendChild(d);
+      });
     }
     function readCard(id) {
       const g = GUESTS.find((x) => x.id === id), o = OTHERS.find((x) => x.id === id);
@@ -186,11 +198,16 @@ export default {
       const h = document.createElement("h3"); h.textContent = g ? `ROOM ${g.name}` : o.name; readEl.appendChild(h);
       if (g) g.clues.forEach((c) => { const p = document.createElement("p"); p.textContent = "· " + c; readEl.appendChild(p); });
       else { const p = document.createElement("p"); p.className = "t"; p.textContent = o.about; readEl.appendChild(p); }
+      if (READART[id] && art.has(READART[id][0])) { const im = document.createElement("img"); im.className = "ra"; im.alt = READART[id][1]; im.title = READART[id][1]; im.src = art.url(READART[id][0]); readEl.appendChild(im); }
       const links = threads.filter((t) => t.a === id || t.b === id);
       if (links.length) { const s = document.createElement("small"); s.textContent = "Threads: " + links.map((t) => `${t.taut ? "taut" : "slack"} ${TYPES.find((x) => x.id === t.type).name} to ${label(t.a === id ? t.b : t.a)}`).join("; "); readEl.appendChild(s); }
     }
     const label = (id) => { const g = GUESTS.find((x) => x.id === id); return g ? g.name : OTHERS.find((x) => x.id === id).name.replace(/^THE /, "").toLowerCase(); };
 
+    const ARTID = (id) => (id[0] === "r" && id.length === 4 ? "pin-guest-" + id.slice(1) : "pin-" + id.replace(/_/g, "-"));
+    const hasArt = (id) => art.has(ARTID(id));
+    const QART = { "What did she give him?": "question-give", "What did she take?": "question-take", "Who is he guarding it for?": "question-guarding", "Why did she call?": "question-sisters" };
+    const READART = { gala: ["clipping-caterers", "The Evening Courant: Gala caterers briefed tonight"], r402: ["clipping-orchid", "The Evening Courant: Orchid week at the Glasshouse"], stranger: ["thread-own", "A clock stopped at 2:14"] };
     function computeLayout() {
       const w = board.clientWidth || 1000, h = board.clientHeight || 700;
       portrait = w < 640 || w / h < 0.95;
@@ -199,20 +216,31 @@ export default {
       if (!portrait) {
         VB = [1200, 900];
         const n = others.length, cw = Math.min(150, 1120 / n);
-        others.forEach((o, i) => { pos[o.id] = { x: 600 - (n - 1) * cw / 2 + i * cw, y: 150, w: cw - 16, h: 66 }; });
-        GUESTS.forEach((g, i) => { pos[g.id] = { x: 115 + i * 194, y: 430, w: 150, h: 170, guest: true }; });
+        const cwa = Math.min(162, 1130 / n);
+        others.forEach((o, i) => { pos[o.id] = hasArt(o.id) ? { x: 600 - (n - 1) * cwa / 2 + i * cwa, y: 158, w: cwa - 12, h: (cwa - 12) * 240 / 260, art: true } : { x: 600 - (n - 1) * cw / 2 + i * cw, y: 150, w: cw - 16, h: 66 }; });
+        GUESTS.forEach((g, i) => { pos[g.id] = hasArt(g.id) ? { x: 115 + i * 194, y: 448, w: 156, h: 216, guest: true, art: true } : { x: 115 + i * 194, y: 430, w: 150, h: 170, guest: true }; });
         pos.rows = { x: 40, y: 712, cols: 2, cw: 560, rh: 42 };
       } else {
         VB = [800, Math.max(900, Math.min(1300, 800 * h / w))];
+        const pa = others.every((o) => hasArt(o.id)) && GUESTS.every((g) => hasArt(g.id));
+        if (pa) {
+          // the art's cards: four across for the things, three across for the guests
+          others.forEach((o, i) => { pos[o.id] = { x: 108 + (i % 4) * 195, y: 112 + Math.floor(i / 4) * 184, w: 184, h: 170, big: true, art: true }; });
+          const gy1 = 112 + Math.ceil(others.length / 4) * 184 + 110;
+          GUESTS.forEach((g, i) => { pos[g.id] = { x: 140 + (i % 3) * 260, y: gy1 + Math.floor(i / 3) * 370, w: 204, h: 282, guest: true, big: true, art: true }; });
+          VB[1] = Math.max(VB[1], gy1 + 370 + 220);
+        } else {
         others.forEach((o, i) => { pos[o.id] = { x: 140 + (i % 3) * 260, y: 90 + Math.floor(i / 3) * 112, w: 236, h: 88, big: true }; });
         const gy0 = 90 + Math.ceil(others.length / 3) * 112 + 150;
         GUESTS.forEach((g, i) => { pos[g.id] = { x: 140 + (i % 3) * 260, y: gy0 + Math.floor(i / 3) * 330, w: 220, h: 230, guest: true, big: true }; });
         VB[1] = Math.max(VB[1], gy0 + 330 + 160);
+        }
         pos.rows = null;
       }
       svg.setAttribute("viewBox", `0 0 ${VB[0]} ${VB[1]}`);
     }
-    const pinPt = (id) => ({ x: pos[id].x, y: pos[id].y - (pos[id].guest ? pos[id].h / 2 + 4 : pos[id].h / 2 - 6) });
+    // where the thread ties on: the art's own pin, or the brass pin drawn here
+    const pinPt = (id) => (pos[id].art ? { x: pos[id].x, y: pos[id].y - pos[id].h / 2 + pos[id].h * (pos[id].guest ? 34 / 360 : 40 / 240) } : { x: pos[id].x, y: pos[id].y - (pos[id].guest ? pos[id].h / 2 + 4 : pos[id].h / 2 - 6) });
 
     function threadPath(a, b, taut) {
       if (taut) return `M${a.x},${a.y} L${b.x},${b.y}`;
@@ -237,7 +265,7 @@ export default {
       svg.innerHTML = "";
       const defs = el("defs", {}, svg);
       const pat = el("pattern", { id: P + "cork", width: 60, height: 60, patternUnits: "userSpaceOnUse" }, defs);
-      el("rect", { width: 60, height: 60, fill: "#b07a45" }, pat);
+      el("rect", { width: 60, height: 60, fill: art.has("pin-case") ? "#b5824e" : "#b07a45" }, pat);
       const rng = api.rng(7);
       for (let i = 0; i < 40; i++) el("circle", { cx: rng() * 60, cy: rng() * 60, r: 0.6 + rng() * 1.6, fill: rng() < 0.5 ? "#7a4a24" : "#d29a5e", opacity: 0.7 }, pat);
       el("rect", { x: 0, y: 0, width: VB[0], height: VB[1], fill: "#5a3e22" }, svg);
@@ -269,8 +297,19 @@ export default {
       const all = [...OTHERS.filter((o) => pos[o.id]), ...GUESTS];
       all.forEach((o, i) => {
         const p = pos[o.id];
-        const g = el("g", { class: P + "pin", "data-pin": o.id, tabindex: 0, role: "button", "aria-label": `Pin: ${p.guest ? "Room " + o.name : o.name}`, transform: `rotate(${((i * 37) % 7) - 3} ${p.x} ${p.y})` }, cards);
-        if (p.guest) {
+        const g = el("g", { class: P + "pin", "data-pin": o.id, tabindex: 0, role: "button", "aria-label": `Pin: ${p.guest ? "Room " + o.name : o.name}`, transform: p.art ? "" : `rotate(${((i * 37) % 7) - 3} ${p.x} ${p.y})` }, cards);
+        if (p.art) {
+          const top = p.y - p.h / 2;
+          if (o.id === fresh) el("rect", { x: p.x - p.w / 2 - 5, y: top - 5, width: p.w + 10, height: p.h + 10, fill: "none", stroke: "#f6cf86", "stroke-width": 4, rx: 4 }, g);
+          const im = el("image", { class: P + "card", x: p.x - p.w / 2, y: top, width: p.w, height: p.h, preserveAspectRatio: "none" }, g);
+          im.setAttribute("href", art.url(ARTID(o.id)));
+          if (p.guest) {
+            const sw = p.w - 8, sh = p.big ? 50 : 34;
+            el("rect", { x: p.x - sw / 2, y: top + p.h + 4, width: sw, height: sh, fill: "#fbf6e8", stroke: "#c9bc98", transform: `rotate(${(i % 2) ? 1.2 : -1} ${p.x} ${top + p.h})` }, g);
+            const ct = el("text", { x: p.x, y: top + p.h + sh - (p.big ? 12 : 7), "text-anchor": "middle", "font-family": "Courier New,monospace", "font-weight": 700, "font-size": p.big ? 25 : 16, fill: "#2a3a8c" }, g);
+            ct.textContent = `${o.clues.length} CARD${o.clues.length === 1 ? "" : "S"} · READ`;
+          }
+        } else if (p.guest) {
           const top = p.y - p.h / 2;
           el("rect", { class: P + "card", x: p.x - p.w / 2, y: top, width: p.w, height: p.h, fill: "#f4f1ea", stroke: "#cfc6b0", "stroke-width": 1.5 }, g);
           el("rect", { x: p.x - p.w / 2 + 10, y: top + 10, width: p.w - 20, height: p.h * 0.6, fill: "#2b3540" }, g);
@@ -295,8 +334,11 @@ export default {
         const pp = pinPt(o.id), pr = p.big ? 14 : 9;
         if (unused.has(o.id)) el("circle", { cx: pp.x, cy: pp.y, r: pr * 2.1, fill: "none", stroke: gentle ? TYPES.find((t) => t.id === unused.get(o.id)).col : "#3a3a3a", "stroke-width": gentle ? 3 : 1.6, "stroke-dasharray": "5 4", opacity: 0.85 }, g);
         const sel = (drag && drag.from === o.id) || kbFrom === o.id;
+        if (p.art) { if (sel) el("circle", { cx: pp.x, cy: pp.y, r: pr * 1.5, fill: "none", stroke: "#f6cf86", "stroke-width": 4 }, g); }
+        else {
         el("circle", { cx: pp.x + 1.5, cy: pp.y + 2.5, r: pr, fill: "#0005" }, g);
         el("circle", { cx: pp.x, cy: pp.y, r: sel ? pr * 1.3 : pr, fill: sel ? "#f6cf86" : "#b8913f", stroke: "#3b2a0e", "stroke-width": 1.5 }, g);
+        }
       });
       for (const th of threads) if (th.taut) drawThread(over_, pinPt(th.a), pinPt(th.b), th.type, true, { "pointer-events": "none" });
       if (drag && drag.pt) {
@@ -420,7 +462,7 @@ export default {
 
     const intro = document.createElement("div");
     intro.className = P + "intro";
-    intro.innerHTML = `<div class="${P}note"><h2>THE MOSAIC · NIGHT 3</h2>
+    intro.innerHTML = `<div class="${P}note">${art.has("chapter-n3") ? `<img class="ch" alt="Night Three: The Suitcase" src="${art.url("chapter-n3")}">` : ""}<h2>THE MOSAIC · NIGHT 3</h2>
       <p class="goal">Pull at least five threads taut with six lengths.</p>
       <p class="open"></p>
       <ul>

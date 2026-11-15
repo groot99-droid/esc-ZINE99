@@ -10,7 +10,7 @@
 <g transform="rotate(3.1 130 121)">
 <rect x="29" y="37" width="212" height="182" fill="#000" opacity="0.3"/>
 <rect x="24" y="30" width="212" height="182" fill="#efe4c8" stroke="#b8ab8a" stroke-width="0.8"/>
-<line x1="32" y1="190" x2="228" y2="190" stroke="#c26a5a" stroke-width="1" opacity="0.7"/>
+<line x1="32" y1="184" x2="228" y2="184" stroke="#c26a5a" stroke-width="1" opacity="0.7"/>
 <line x1="32" y1="64" x2="228" y2="64" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
 <line x1="32" y1="90" x2="228" y2="90" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
 <line x1="32" y1="116" x2="228" y2="116" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
@@ -22,7 +22,7 @@
 <path d="M115,74 q0,-18 15,-18 q15,0 15,18Z" fill="#1c1a17"/>
 <polygon points="163.4,133.2 202.3,123.5 208.6,148.8 169.7,158.5" fill="#efe6cf" stroke="#1c1a17" stroke-width="1.2"/>
 <text x="60" y="86" font-size="18" font-family="monospace" fill="#2a3a8c" font-weight="bold">2:14</text>
-<text x="130" y="206" font-size="14" font-family="monospace" fill="#1c1a17" text-anchor="middle" font-weight="bold" letter-spacing="2">THE STRANGER</text>
+<text x="130" y="208" font-size="24" font-family="monospace" fill="#1c1a17" text-anchor="middle" font-weight="bold" letter-spacing="0.5">THE STRANGER</text>
 </g>
 <ellipse cx="134.1" cy="45.9" rx="8.1" ry="4" fill="#000" opacity="0.3"/>
 <circle cx="130" cy="40" r="9" fill="#d9b02a" stroke="#000" stroke-width="0.6" stroke-opacity="0.4"/>

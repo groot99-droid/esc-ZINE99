@@ -443,6 +443,17 @@
       "clue": {"id": "c.n1.r403.paints", "text": "Paints the river and pins it up."}
     },
     {
+      "id": "n1.r403.dot",
+      "night": 1,
+      "room": "r403",
+      "scene": "n1_shift_eye",
+      "window": {"start": "03:40", "end": "03:50"},
+      "kind": "ritual",
+      "region": "window",
+      "floor_visible": false,
+      "clue": {"id": "c.n1.r403.dot", "text": "Tonight's river, pinned up wet. A brass-coloured dot in its corner."}
+    },
+    {
       "id": "n1.r403.auction",
       "night": 1,
       "room": "r403",
@@ -965,6 +976,17 @@
       "clue": {"id": "c.n3.r403.paints", "text": "Gloves on; paints."}
     },
     {
+      "id": "n3.r403.dot",
+      "night": 3,
+      "room": "r403",
+      "scene": "n3_shift_eye",
+      "window": {"start": "01:40", "end": "01:50"},
+      "kind": "ritual",
+      "region": "window",
+      "floor_visible": false,
+      "clue": {"id": "c.n3.r403.dot", "text": "A second river beside the first. Each has a brass dot in its corner; they are not the same."}
+    },
+    {
       "id": "n3.r403.caseback",
       "night": 3,
       "room": "r403",
@@ -1185,6 +1207,28 @@
       "clue": {"id": "c.n4.r403.room", "text": "Paints, but the picture is of the room."}
     },
     {
+      "id": "n4.r403.sitting",
+      "night": 4,
+      "room": "r403",
+      "scene": "n4_shift_eye",
+      "window": {"start": "03:40", "end": "03:48"},
+      "kind": "ritual",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r403.sitting", "text": "She pins tonight's picture facing the rose: the valet door, the rose a black dot. In pencil under it, a count of your visits, and \"I count too. Don't stop.\""}
+    },
+    {
+      "id": "n4.r403.look",
+      "night": 4,
+      "room": "r403",
+      "scene": "n4_shift_eye",
+      "window": {"start": "03:42", "end": "03:50"},
+      "kind": "hands",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "clue": {"id": "c.n4.r403.look", "text": "She looks straight into the rose and does not look away. Two taps of the pencil on the desk."}
+    },
+    {
       "id": "n5.r404.drinks",
       "night": 5,
       "room": "r404",
@@ -1371,6 +1415,18 @@
       "clue": {"id": "c.n5.r403.copies", "text": "Copies the folded pages by hand at the desk, all night."}
     },
     {
+      "id": "n5.r403.held_page",
+      "night": 5,
+      "room": "r403",
+      "scene": "n5_shift_eye",
+      "window": {"start": "23:40", "end": "23:55"},
+      "kind": "hands",
+      "region": "desk_tv",
+      "floor_visible": false,
+      "requires": {"is": "sitting_held", "eq": true},
+      "clue": {"id": "c.n5.r403.held_page", "text": "She holds a copied page to the rose, too near to take in at once: a column of dates, a column of sums, a column of initials."}
+    },
+    {
       "id": "n5.r403.label_name",
       "night": 5,
       "room": "r403",
@@ -1391,6 +1447,17 @@
       "region": "bed",
       "floor_visible": false,
       "clue": {"id": "c.n5.r403.label_trade", "text": "The same label, second line: \"restorer\"."}
+    },
+    {
+      "id": "n5.r403.dot",
+      "night": 5,
+      "room": "r403",
+      "scene": "n5_shift_eye",
+      "window": {"start": "01:00", "end": "01:10"},
+      "kind": "ritual",
+      "region": "window",
+      "floor_visible": false,
+      "clue": {"id": "c.n5.r403.dot", "text": "A small river painted between two pages, pinned with the others. The brass dot in its corner."}
     },
     {
       "id": "n6.r406.boat",
@@ -1541,6 +1608,17 @@
       "region": "desk_tv",
       "floor_visible": false,
       "clue": {"id": "c.n6.r403.invoice", "text": "An \"Abbot Fine Art\" invoice."}
+    },
+    {
+      "id": "n6.r403.dot",
+      "night": 6,
+      "room": "r403",
+      "scene": "n6_shift_eye",
+      "window": {"start": "03:00", "end": "03:10"},
+      "kind": "ritual",
+      "region": "window",
+      "floor_visible": false,
+      "clue": {"id": "c.n6.r403.dot", "text": "Tonight's picture goes up last in the row. The dot in its corner."}
     },
     {
       "id": "n7.r402.coat",

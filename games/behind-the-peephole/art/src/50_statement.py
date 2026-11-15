@@ -177,10 +177,7 @@ def account(a: Art):
 def _stamp(key, lines, color, sub, doc, deg):
     @asset(G, f"stamp-{key}", group="ui", title=f"Rubber stamp: {' '.join(lines)}", w=400, h=240, row=ROW)
     def draw(a: Art):
-        a.paper("#f1ecdf", grain=0.2)
-        kit.carbon_smudge(a, 20, 20, 360, 200, n=3, op=0.14)
-        for k in range(3):
-            kit.typed(a, 24, 60 + k * 70, "4" + "0%d  . . . . . . . . . . . . . . . ." % (k + 3), size=15, op=0.5)
+        # no paper under it: the stamp is laid over a form row, a slip or a carbon in play
         kit.stamp(a, 200, 122, 300, 130, lines, color=color, deg=deg, size=44 if len(lines) == 1 else 36, sub=sub)
         # ink starvation
         a.stipple(50, 50, 300, 150, n=260, r=(0.5, 1.6), fill="#f1ecdf")

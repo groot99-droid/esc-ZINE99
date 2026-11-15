@@ -5,6 +5,14 @@
 // Actions: MARK a cell (blank, cross, tick), CONSULT a clue card (it marks the cells it bears on),
 // SECOND LOOK at a row (two, from the first tick) and SIGN. Phases: the office cards; Lew's note
 // arrives once three rows are ticked; signing inks the rows one by one.
+//
+// The carbon (accepted 2026-11-15, phase 1; DESIGN.md section 11, rule 6): after signing, the next
+// morning. Wren's copy has gone down the chute with its mistakes; the carbon is in the drawer, two
+// night-two cards have turned up (data/beats.json), and ONE struck row may be amended on the carbon
+// only. Cut: one morning, so the carbon holds one form; the game keeps every night's.
+// Art (games/behind-the-peephole/art): the clue-kind icons on the seen cards, the evening paper's
+// clipping, the rubber stamps (ENTERED, CARBON COPY, AMENDED), the typed row slips where the art's
+// row is the row on the carbon, form S-1, Wren's envelope, and the chapter cards.
 
 const ROOMS = ["r401", "r402", "r403", "r404", "r405", "r406"];
 const RETURN = { r402: "23:25", r406: "00:05", r404: "00:45", r401: "01:30", r405: "02:05", r403: "02:45" };
@@ -27,13 +35,13 @@ const CLUES = [
   { id: "o.n1.paper_printworks", src: "paper", text: "Evening paper: the Printworks night run ends 23:30.", end: "printworks" },
   { id: "o.n1.paper_assembly", src: "paper", text: "Evening paper: the Assembly Rooms gala rehearsal ends 00:30.", end: "assembly" },
   { id: "o.n1.paper_fishmarket", src: "paper", text: "Evening paper: fish market trade ends 02:15.", end: "fishmarket" },
-  { id: "c.n1.r401.clay", src: "401", text: "Red clay on his collar and knees.", fix: ["r401", "bonded"] },
-  { id: "c.n1.r403.salt", src: "403", text: "Salt rime on her boots; she smells her gloves.", fix: ["r403", "fishmarket"] },
-  { id: "c.n1.r406.ink", src: "406", text: "Ink on her fingertips; she scrubs at the sink.", fix: ["r406", "printworks"] },
-  { id: "c.n1.r406.leaflets", src: "406", text: "A tube of rolled leaflets.", fix: ["r406", "printworks"] },
-  { id: "c.n1.r402.tv", src: "402", text: "A game show, loud." },
-  { id: "c.n1.r404.ritual", src: "404", text: "Pours a miniature into the sink; writes \"400\" on the notepad." },
-  { id: "c.n1.r405.ritual", src: "405", text: "Dry cereal from the box." },
+  { id: "c.n1.r401.clay", src: "401", kind: "clothing", text: "Red clay on his collar and knees.", fix: ["r401", "bonded"] },
+  { id: "c.n1.r403.salt", src: "403", kind: "clothing", text: "Salt rime on her boots; she smells her gloves.", fix: ["r403", "fishmarket"] },
+  { id: "c.n1.r406.ink", src: "406", kind: "hands", text: "Ink on her fingertips; she scrubs at the sink.", fix: ["r406", "printworks"] },
+  { id: "c.n1.r406.leaflets", src: "406", kind: "luggage", text: "A tube of rolled leaflets.", fix: ["r406", "printworks"] },
+  { id: "c.n1.r402.tv", src: "402", kind: "television", text: "A game show, loud." },
+  { id: "c.n1.r404.ritual", src: "404", kind: "rituals", text: "Pours a miniature into the sink; writes \"400\" on the notepad." },
+  { id: "c.n1.r405.ritual", src: "405", kind: "rituals", text: "Dry cereal from the box." },
   { id: "o.n1.lew", src: "told", text: "Lew: \"Nowhere in this town's more than half an hour from here.\"", late: true },
 ];
 const NOTES = {
@@ -41,6 +49,17 @@ const NOTES = {
   first: "The first row in your hand. On the carbon it already reads like a fact. You may ask the cards twice whether a row agrees with them.",
   lew: "Lew puts his head round the door on his way off shift and leaves you a line, as if it were nothing.",
   full: "Six rows, six ticks. The pen is on the desk. Once you sign, the top copy goes down the chute and you keep the carbon.",
+};
+// The second morning's cards, verbatim from data/beats.json (night two).
+const MORNING = [
+  { src: "405", kind: "hands", text: "Grease under her nails again." },
+  { src: "401", kind: "luggage", text: "A laminated pass on a lanyard: \"BH\"." },
+];
+const CARBON = {
+  open: "The second morning. Wren's copy of night one went down the chute as you signed it, mistakes and all. The carbon is in your drawer, and nobody reads the carbon but you.",
+  rule: "You may amend one struck row, on the carbon only. Wren's copy keeps the mistake; yours can become true.",
+  none: "Nothing is struck. The carbon and Wren's copy say the same six things.",
+  kept: "You close the drawer on it as signed.",
 };
 const mins = (t) => { const [h, m] = t.split(":").map(Number); return (h < 12 ? h + 24 : h) * 60 + m; };
 function disagreeing(room, place) {
@@ -122,6 +141,41 @@ export default {
     .${P}stamp{position:absolute;right:6%;bottom:22px;border:4px double ${C.ev};color:${C.ev};font-weight:700;font-size:clamp(20px,3vw,32px);letter-spacing:.14em;padding:4px 14px;transform:rotate(-8deg);opacity:.85;pointer-events:none}
     .${P}stamp.go{animation:${P}st .35s ease-out}
     @keyframes ${P}st{0%{transform:rotate(-8deg) scale(2.2);opacity:0}100%{transform:rotate(-8deg) scale(1);opacity:.85}}
+    .${P}card.beat.ic{padding-left:50px;background-repeat:no-repeat;background-position:8px 50%;background-size:34px 34px;min-height:36px}
+    .${P}clip{display:block;width:100%;max-width:240px;margin:0 auto;border:0;padding:0;background:none;cursor:pointer;transition:transform .12s}
+    .${P}clip:hover,.${P}clip:focus-visible{transform:rotate(-1.5deg) scale(1.03);outline:none}
+    .${P}clip img{display:block;width:100%;height:auto}
+    .${P}stampimg{position:absolute;right:-64px;top:50%;width:62px;height:auto;transform:translateY(-50%) rotate(-5deg);mix-blend-mode:multiply;pointer-events:none;z-index:2}
+    .${P}stampimg.go{animation:${P}sti .3s ease-out}
+    @keyframes ${P}sti{0%{transform:translateY(-50%) rotate(-5deg) scale(1.9);opacity:0}100%{transform:translateY(-50%) rotate(-5deg) scale(1);opacity:1}}
+    @media (max-width:520px){.${P}stampimg{right:-28px;width:54px;opacity:.9}}
+    .${P}cb{position:absolute;inset:0;z-index:6;overflow:auto;background:rgba(19,39,28,.93);padding:12px}
+    .${P}cbs{max-width:920px;margin:0 auto 30px;background:#dfe3ee;color:${C.carbon};box-shadow:0 8px 30px #000a;padding:0 0 18px;position:relative;
+      background-image:radial-gradient(ellipse at 20% 30%,rgba(42,58,140,.18),transparent 40%),radial-gradient(ellipse at 80% 70%,rgba(42,58,140,.14),transparent 42%),repeating-linear-gradient(0deg,transparent 0 27px,rgba(42,58,140,.08) 27px 28px)}
+    .${P}cbs>img.ch{display:block;width:100%;height:clamp(84px,16vw,150px);object-fit:cover;object-position:0 0}
+    .${P}cbin{padding:12px clamp(12px,3vw,30px) 0}
+    .${P}cbh{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;border-bottom:1.5px solid ${C.carbon};padding-bottom:8px;margin-bottom:10px;font-size:14px;letter-spacing:.08em}
+    .${P}cbh b{font-size:clamp(16px,2vw,20px)}
+    .${P}cbh img{height:56px;width:auto;mix-blend-mode:multiply;transform:rotate(-4deg)}
+    .${P}cbg{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px}
+    @media (max-width:720px){.${P}cbg{grid-template-columns:minmax(0,1fr)}}
+    .${P}slips{display:grid;gap:8px;background:#a97848 radial-gradient(circle at 30% 20%,#b98a58,#946a3e);padding:8px;box-shadow:inset 0 0 12px #0005}
+    .${P}slip{position:relative;display:block;width:100%;text-align:left;font:inherit;font-size:14px;line-height:1.45;letter-spacing:.04em;color:${C.carbon};background:#f6f1e4;border:1px solid #b9b3a2;box-sizing:border-box;padding:9px 96px 9px 12px;min-height:56px;box-shadow:1px 2px 0 #0002;text-transform:uppercase}
+    button.${P}slip{cursor:pointer}
+    button.${P}slip:hover,button.${P}slip:focus-visible{outline:2.5px dashed ${C.ev};outline-offset:2px}
+    .${P}slip.sel{outline:2.5px solid ${C.ev};outline-offset:2px}
+    .${P}slip s{color:${C.ev};text-decoration-thickness:2px}
+    .${P}slip .st{position:absolute;right:6px;top:50%;height:46px;width:auto;transform:translateY(-50%) rotate(-5deg);mix-blend-mode:multiply}
+    .${P}slip .tx{position:absolute;right:8px;top:50%;transform:translateY(-50%) rotate(-5deg);border:2px solid currentColor;padding:1px 5px;font-size:11px;font-weight:700;letter-spacing:.08em}
+    .${P}slip.art{padding:0;border:0;background:none;box-shadow:none;min-height:0}
+    .${P}slip.art img{display:block;width:100%;height:auto}
+    .${P}pl{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+    .${P}pl .${P}btn{font-size:13px;padding:6px 9px}
+    .${P}pl .${P}btn.on{background:${C.carbon};color:#f6f1e4}
+    .${P}top{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+    .${P}top p{flex:1;margin:0}
+    .${P}top img{flex:none;height:auto;box-shadow:1px 2px 6px #0004}
+    @media (max-width:520px){.${P}top img{display:none}}
     .${P}foot{font-size:12px;opacity:.7;margin-top:16px;letter-spacing:.06em}
     .${P}opt{font-size:13px;display:flex;gap:6px;align-items:center}
     .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(19,39,28,.88);z-index:5;padding:12px;overflow:auto}
@@ -138,6 +192,8 @@ export default {
     .${P}form .ft span{font-size:12px;opacity:.75}
     `;
     root.appendChild(style);
+    const art = api.art || { has: () => false, url: () => "" };
+    const ICON = (k) => (k && art.has("clue-" + k) ? art.url("clue-" + k) : "");
     const page = document.createElement("div");
     page.className = P + "page";
     root.appendChild(page);
@@ -176,6 +232,7 @@ export default {
         <div class="${P}foot">COPY · NOT VALID WITHOUT THE SEAL OF THE MANAGEMENT · RETURN TIMES ARE THE VALET BELL</div>
       </div>
       <div class="${P}intro"><div class="${P}form">
+        ${art.has("chapter-n1") ? `<img alt="Night One: Returns" src="${art.url("chapter-n1")}" style="display:block;width:calc(100% + 40px);max-width:none;margin:-18px -20px 12px;height:96px;object-fit:cover;object-position:0 0">` : ""}
         <div class="hd"><span>FORM S-1</span><span>INSTRUCTIONS TO THE NIGHT AUDITOR</span></div>
         <h2>THE STATEMENT</h2>
         <p class="goal">Place all six guests: one place to each room. Then sign, once.</p>
@@ -226,7 +283,14 @@ export default {
       b.innerHTML = `<small>${c.src === "office" ? "OFFICE" : c.src === "paper" ? "EVENING PAPER" : c.src === "told" ? "TOLD · LEW" : "SEEN · ROOM " + c.src}${fresh ? " · NEW" : ""}</small>`;
       b.appendChild(document.createTextNode(c.text));
       b.dataset.id = c.id;
+      if (ICON(c.kind)) { b.classList.add("ic"); b.style.backgroundImage = `url(${ICON(c.kind)})`; }
       if (fresh) clueBox.prepend(b); else clueBox.appendChild(b);
+    }
+    if (art.has("clipping-listings")) {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = P + "clip"; b.dataset.id = "paper.all"; b.title = "The evening paper: tonight in town";
+      b.innerHTML = `<img alt="The Evening Courant, Tonight in town: the four closing times" src="${art.url("clipping-listings")}">`;
+      clueBox.appendChild(b);
     }
     CLUES.filter((c) => held.has(c.id)).forEach((c) => addCard(c, false));
 
@@ -297,6 +361,7 @@ export default {
       b.classList.remove("fresh");
       clueBox.querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b && activeClue !== b.dataset.id));
       if (activeClue === b.dataset.id) { activeClue = null; hl = new Set(); hlCols = new Set(); }
+      else if (b.dataset.id === "paper.all") { activeClue = b.dataset.id; hl = new Set(); hlCols = new Set(Object.keys(ENDS)); for (const r of ROOMS) for (const p of hlCols) hl.add(r + p); }
       else { activeClue = b.dataset.id; [hl, hlCols] = bears(CLUES.find((c) => c.id === b.dataset.id)); }
       draw();
     });
@@ -337,7 +402,11 @@ export default {
       results.forEach(([r, ok, complete], i) => later(() => {
         const tr = table.querySelector(`tr[data-room="${r}"]`);
         const mark = tr.querySelector("." + P + "rowmark");
-        if (ok) { tr.classList.add("inked"); mark.textContent = "ENTERED"; mark.classList.add("ok"); }
+        if (ok && art.has("stamp-entered")) {
+          tr.classList.add("inked");
+          const im = document.createElement("img"); im.className = P + "stampimg" + (RM ? "" : " go"); im.alt = "ENTERED"; im.src = art.url("stamp-entered");
+          tr.lastElementChild.appendChild(im);
+        } else if (ok) { tr.classList.add("inked"); mark.textContent = "ENTERED"; mark.classList.add("ok"); }
         else { tr.classList.add("struck"); mark.textContent = complete ? "" : "INCOMPLETE"; mark.classList.add("no"); }
       }, RM ? 0 : 250 + i * 260));
       later(() => {
@@ -350,14 +419,116 @@ export default {
       api.store.set("best", Math.max(api.store.get("best", 0), correct));
       const outcome = correct === 6 ? "win" : correct >= 4 ? "done" : "lose";
       api.store.set("lossStreak", outcome === "lose" ? streak + 1 : 0);
-      later(() => api.end({
-        outcome,
-        text: correct === 6
-          ? "Six rows inked and stamped. Every return placed, and placed right. The top copy goes down the chute at 05:00; the carbon stays in your drawer, and so does the feeling that someone will read it closely."
-          : correct >= 4
-            ? `${correct} of 6 rows inked and stamped. The rest stay in pencil, struck through, and go down the chute anyway. Nobody calls to ask which.`
-            : `${correct} of 6 rows inked. The rest stay in pencil, struck through. Read the closing times against the bell, and the traces against the city, before you sign again.`,
-      }), RM ? 600 : 3200);
+      later(() => carbonPhase(results, correct, outcome), RM ? 900 : 3400);
+    }
+
+    // ---- the carbon: the next morning, one amendment, on your copy only
+    function carbonPhase(results, correct, outcome) {
+      const wrong = results.filter(([, ok]) => !ok).map(([r]) => r);
+      const row = {}; for (const r of ROOMS) { const ts = rowTicks(r); row[r] = ts.length === 1 ? ts[0].id : null; }
+      let sel = null, pick = null, amended = null;
+      const el = document.createElement("div");
+      el.className = P + "cb";
+      el.innerHTML = `<div class="${P}cbs" role="dialog" aria-label="The carbon copy">
+        ${art.has("chapter-n2") ? `<img class="ch" alt="Night Two: The Bell Board" src="${art.url("chapter-n2")}">` : ""}
+        <div class="${P}cbin">
+          <div class="${P}cbh"><b>FORM S-1 · NIGHT 1 · COPY 2 OF 2</b>${art.has("stamp-carbon") ? `<img alt="CARBON COPY" src="${art.url("stamp-carbon")}">` : `<span>CARBON COPY</span>`}</div>
+          <div class="${P}top"><p class="${P}story"></p>
+          ${art.has("ui-wren-blind-stamp") ? `<img alt="" title="Wren's envelope: his copy is gone" style="width:96px;transform:rotate(-3deg)" src="${art.url("ui-wren-blind-stamp")}">` : ""}
+          ${art.has("form-s1") ? `<img alt="" title="Form S-1, your copy" style="width:62px;transform:rotate(2deg)" src="${art.url("form-s1")}">` : ""}</div>
+          <div class="${P}cbg">
+            <div><div class="${P}slips"></div></div>
+            <div>
+              <div style="font-weight:700;letter-spacing:.08em;margin-bottom:6px;font-size:14px">THIS MORNING'S CARDS · NIGHT TWO</div>
+              <div class="${P}clues" style="max-height:none"></div>
+              <p class="${P}msg" aria-live="polite"></p>
+              <div class="${P}pl" hidden></div>
+              <div class="${P}btns"><button type="button" class="${P}btn sign" data-a="amend" disabled>AMEND THIS ROW</button><button type="button" class="${P}btn" data-a="keep">CLOSE THE DRAWER</button></div>
+            </div>
+          </div>
+        </div></div>`;
+      const q = (x) => el.querySelector(x);
+      q("." + P + "story").textContent = CARBON.open;
+      const cmsg = q("." + P + "msg"), slips = q("." + P + "slips"), pl = q("." + P + "pl"), amendBtn = q('[data-a="amend"]'), keepBtn = q('[data-a="keep"]');
+      cmsg.textContent = wrong.length ? CARBON.rule + " Pick a struck row." : CARBON.none;
+      for (const c of MORNING) {
+        const d = document.createElement("div");
+        d.className = `${P}card beat`; d.style.cursor = "default";
+        d.innerHTML = `<small>SEEN · ROOM ${c.src} · NIGHT TWO</small>`; d.appendChild(document.createTextNode(c.text));
+        if (ICON(c.kind)) { d.classList.add("ic"); d.style.backgroundImage = `url(${ICON(c.kind)})`; }
+        q("." + P + "clues").appendChild(d);
+      }
+      {
+        const d = document.createElement("div"); d.className = `${P}card paper`; d.style.cursor = "default";
+        d.innerHTML = `<small>OFFICE · KEPT FROM NIGHT ONE</small>`; d.appendChild(document.createTextNode(CLUES.find((c) => c.id === "o.city").text));
+        q("." + P + "clues").appendChild(d);
+      }
+      const nameOf = (id) => PLACES.find((p) => p.id === id).name.replace(/^The/, "the");
+      const stampEl = (id, word, col) => (art.has(id) ? `<img class="st" alt="${word}" src="${art.url(id)}">` : `<span class="tx" style="color:${col}">${word}</span>`);
+      function paintSlips() {
+        slips.innerHTML = "";
+        for (const r of ROOMS) {
+          const ok = !wrong.includes(r), isAm = amended && amended.room === r, no = r.slice(1);
+          // the art's typed slips carry these exact rows: use them where the carbon says the same
+          const artId = "slip-row-" + no, artFits = art.has(artId) && ((ok && (no === "402" || no === "403")) || (isAm && no === "401" && amended.place === "bonded"));
+          let d;
+          if (artFits) {
+            d = document.createElement("div"); d.className = `${P}slip art`;
+            d.innerHTML = `<img alt="Room ${no} went to ${nameOf(TRUTH[r])} and came back at ${RETURN[r]}. ${isAm ? "Amended" : "Entered"}." src="${art.url(artId)}">`;
+          } else if (ok) {
+            d = document.createElement("div"); d.className = P + "slip";
+            d.innerHTML = `Room ${no} went to ${nameOf(row[r])} and came back at ${RETURN[r]}.${stampEl("stamp-entered", "ENTERED", C.carbon)}`;
+          } else {
+            d = document.createElement(amended ? "div" : "button"); d.className = P + "slip" + (sel === r ? " sel" : "");
+            if (!amended) { d.type = "button"; d.dataset.room = r; }
+            const was = row[r] ? `<s>${nameOf(row[r])}</s>` : `<s>______</s>`;
+            d.innerHTML = isAm ? `Room ${no} went to ${was} ${nameOf(amended.place)} and came back at ${RETURN[r]}.${stampEl("stamp-amended", "AMENDED", "#2f6b45")}`
+              : `<span style="opacity:.75">Room ${no} went to ${was} and came back at ${RETURN[r]}.</span><span class="tx" style="color:${C.ev}">STRUCK</span>`;
+          }
+          slips.appendChild(d);
+        }
+      }
+      function paintPlaces() {
+        pl.hidden = !sel || !!amended;
+        pl.innerHTML = "";
+        if (pl.hidden) return;
+        for (const p of PLACES) {
+          const b = document.createElement("button");
+          b.type = "button"; b.className = P + "btn" + (pick === p.id ? " on" : ""); b.dataset.place = p.id; b.textContent = p.name.replace(/^The /, "").toUpperCase();
+          pl.appendChild(b);
+        }
+        amendBtn.disabled = !pick;
+      }
+      on(slips, "click", (e) => {
+        const b = e.target.closest("button[data-room]"); if (!b || amended) return;
+        sel = b.dataset.room; pick = null; paintSlips(); paintPlaces();
+        cmsg.textContent = `Room ${sel.slice(1)}, bell ${RETURN[sel]}. Where did they go? Choose, then amend. You get one.`;
+        const f = slips.querySelector(".sel"); if (f) f.focus();
+      });
+      on(pl, "click", (e) => { const b = e.target.closest("button[data-place]"); if (!b) return; pick = b.dataset.place; paintPlaces(); });
+      on(amendBtn, "click", () => {
+        if (!sel || !pick || amended) return;
+        amended = { room: sel, place: pick, ok: TRUTH[sel] === pick };
+        sel = null; paintSlips(); paintPlaces(); amendBtn.hidden = true;
+        cmsg.textContent = "Amended, on the carbon only. Wren's copy still says what you signed. The carbon does not say whether it is true now.";
+        keepBtn.focus();
+      });
+      on(keepBtn, "click", () => {
+        keepBtn.disabled = true; amendBtn.disabled = true;
+        const carbon = correct + (amended && amended.ok ? 1 : 0);
+        api.store.set("bestCarbon", Math.max(api.store.get("bestCarbon", 0), carbon));
+        let text;
+        if (correct === 6) text = "Six rows inked and stamped; the carbon and Wren's copy agree. The top copy went down the chute at 05:00, and the carbon stays in your drawer with the feeling that someone will read it closely.";
+        else if (!amended) text = `Wren's copy: ${correct} of 6, and it keeps the rest struck through. Your carbon: the same, left as signed. ${correct >= 4 ? "Nobody calls to ask which rows." : "Read the closing times against the bell, and the traces against the city, before you sign again."}`;
+        else if (amended.ok) text = `Wren's copy: ${correct} of 6, mistakes and all. Your carbon: ${carbon} of 6. Room ${amended.room.slice(1)} is true now, in a drawer, in blue, where only you can read it.${carbon === 6 ? " For the first time your record and his are not the same record." : ""}`;
+        else text = `Wren's copy: ${correct} of 6. Your carbon: ${carbon} of 6. You changed room ${amended.room.slice(1)} and it is still not where they went; now the two copies are wrong in different ways.`;
+        const out = outcome === "lose" && amended && amended.ok && carbon >= 4 ? "done" : outcome;
+        api.store.set("lossStreak", out === "lose" ? streak + 1 : 0);
+        later(() => api.end({ outcome: out, text }), 300);
+      });
+      paintSlips(); paintPlaces();
+      page.appendChild(el);
+      (wrong.length ? slips.querySelector("button") : keepBtn).focus();
     }
     on(signBtn, "click", sign);
 

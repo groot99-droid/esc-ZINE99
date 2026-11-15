@@ -1,6 +1,6 @@
 {
  "game": "behind-the-peephole",
- "count": 175,
+ "count": 177,
  "assets": [
   {
    "id": "title-lettering",
@@ -217,6 +217,22 @@
    "w": 3200,
    "h": 520,
    "row": "Passage long section: lit, dark, blackout"
+  },
+  {
+   "id": "plate-402",
+   "group": "backdrops",
+   "title": "Room plate, 402: the chain, the bed, the television",
+   "w": 1280,
+   "h": 960,
+   "row": "Room plates, gouache paint-over"
+  },
+  {
+   "id": "plate-403",
+   "group": "backdrops",
+   "title": "Room plate, 403: the desk under the north window",
+   "w": 1280,
+   "h": 960,
+   "row": "Room plates, gouache paint-over"
   },
   {
    "id": "back-fenn",

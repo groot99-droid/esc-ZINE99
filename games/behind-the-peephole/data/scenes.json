@@ -132,7 +132,8 @@
         "exposed.r403",
         "exposed.r404",
         "exposed.r405",
-        "exposed.r406"
+        "exposed.r406",
+        "watch_log"
       ],
       "writes": [
         "beats",
@@ -158,7 +159,9 @@
         "blind.r403",
         "blind.r404",
         "blind.r405",
-        "blind.r406"
+        "blind.r406",
+        "mara_dots",
+        "dots_read"
       ],
       "next": [
         "n1_shift_race"
@@ -414,7 +417,9 @@
         "blind.r403",
         "blind.r404",
         "blind.r405",
-        "blind.r406"
+        "blind.r406",
+        "mara_dots",
+        "dots_read"
       ],
       "next": [
         "n3_shift_race"
@@ -518,7 +523,8 @@
         "exposed.r403",
         "exposed.r404",
         "exposed.r405",
-        "exposed.r406"
+        "exposed.r406",
+        "watch_log"
       ],
       "writes": [
         "beats",
@@ -544,7 +550,13 @@
         "blind.r403",
         "blind.r404",
         "blind.r405",
-        "blind.r406"
+        "blind.r406",
+        "mara_dots",
+        "dots_read",
+        "mara_count",
+        "sitting_held",
+        "answers",
+        "mara_answers"
       ],
       "next": [
         "n4_shift_race"
@@ -648,7 +660,8 @@
         "exposed.r403",
         "exposed.r404",
         "exposed.r405",
-        "exposed.r406"
+        "exposed.r406",
+        "sitting_held"
       ],
       "writes": [
         "beats",
@@ -674,7 +687,12 @@
         "blind.r403",
         "blind.r404",
         "blind.r405",
-        "blind.r406"
+        "blind.r406",
+        "mara_dots",
+        "dots_read",
+        "answers",
+        "mara_answers",
+        "held_pages_read"
       ],
       "next": [
         "n5_shift_race"
@@ -778,7 +796,8 @@
         "exposed.r403",
         "exposed.r404",
         "exposed.r405",
-        "exposed.r406"
+        "exposed.r406",
+        "sitting_held"
       ],
       "writes": [
         "beats",
@@ -804,7 +823,11 @@
         "blind.r403",
         "blind.r404",
         "blind.r405",
-        "blind.r406"
+        "blind.r406",
+        "mara_dots",
+        "dots_read",
+        "answers",
+        "mara_answers"
       ],
       "next": [
         "n6_shift_race"
@@ -1187,7 +1210,8 @@
       "writes": [
         "stmt.n1",
         "rows_correct",
-        "statements"
+        "statements",
+        "carbon_rows_correct"
       ],
       "next": [
         "n1_morning"
@@ -1221,12 +1245,15 @@
       "exit": "pull-out",
       "reads": [
         "beats",
-        "statements"
+        "statements",
+        "carbon_amends"
       ],
       "writes": [
         "stmt.n2",
         "rows_correct",
-        "statements"
+        "statements",
+        "carbon_rows_correct",
+        "carbon_amends"
       ],
       "next": [
         "n2_mosaic"
@@ -1286,12 +1313,15 @@
       "exit": "pull-out",
       "reads": [
         "beats",
-        "statements"
+        "statements",
+        "carbon_amends"
       ],
       "writes": [
         "stmt.n3",
         "rows_correct",
-        "statements"
+        "statements",
+        "carbon_rows_correct",
+        "carbon_amends"
       ],
       "next": [
         "n3_mosaic"
@@ -1352,12 +1382,15 @@
       "exit": "pull-out",
       "reads": [
         "beats",
-        "statements"
+        "statements",
+        "carbon_amends"
       ],
       "writes": [
         "stmt.n4",
         "rows_correct",
-        "statements"
+        "statements",
+        "carbon_rows_correct",
+        "carbon_amends"
       ],
       "next": [
         "n4_mosaic"
@@ -1419,12 +1452,15 @@
       "exit": "pull-out",
       "reads": [
         "beats",
-        "statements"
+        "statements",
+        "carbon_amends"
       ],
       "writes": [
         "stmt.n5",
         "rows_correct",
-        "statements"
+        "statements",
+        "carbon_rows_correct",
+        "carbon_amends"
       ],
       "next": [
         "n5_mosaic"
@@ -1486,12 +1522,15 @@
         "beats",
         "statements",
         "ledger_read",
-        "knocks"
+        "knocks",
+        "carbon_amends"
       ],
       "writes": [
         "stmt.n6",
         "rows_correct",
-        "statements"
+        "statements",
+        "carbon_rows_correct",
+        "carbon_amends"
       ],
       "next": [
         "n6_mosaic"

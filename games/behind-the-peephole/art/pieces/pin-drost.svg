@@ -10,7 +10,7 @@
 <g transform="rotate(-3.7 130 121)">
 <rect x="29" y="37" width="212" height="182" fill="#000" opacity="0.3"/>
 <rect x="24" y="30" width="212" height="182" fill="#efe4c8" stroke="#b8ab8a" stroke-width="0.8"/>
-<line x1="32" y1="190" x2="228" y2="190" stroke="#c26a5a" stroke-width="1" opacity="0.7"/>
+<line x1="32" y1="184" x2="228" y2="184" stroke="#c26a5a" stroke-width="1" opacity="0.7"/>
 <line x1="32" y1="64" x2="228" y2="64" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
 <line x1="32" y1="90" x2="228" y2="90" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
 <line x1="32" y1="116" x2="228" y2="116" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
@@ -22,7 +22,7 @@
 <path d="M130,10.9 L231.1,112 M123.6,17.3 L224.7,118.4 M117.3,23.6 L218.4,124.7 M110.9,30 L212,131.1 M104.5,36.4 L205.6,137.5 M98.2,42.7 L199.3,143.8 M91.8,49.1 L192.9,150.2 M85.5,55.5 L186.5,156.5 M79.1,61.8 L180.2,162.9 M72.7,68.2 L173.8,169.3 M66.4,74.5 L167.5,175.6 M60,80.9 L161.1,182 M53.6,87.3 L154.7,188.4 M47.3,93.6 L148.4,194.7 M40.9,100 L142,201.1 M34.5,106.4 L135.6,207.5" fill="none" stroke="#1c1a17" stroke-width="0.4"/>
 </g>
 <text x="130" y="124" font-size="44" font-family="serif" fill="#1c1a17" text-anchor="middle" font-style="italic">?</text>
-<text x="130" y="206" font-size="14" font-family="monospace" fill="#1c1a17" text-anchor="middle" font-weight="bold" letter-spacing="2">DROST</text>
+<text x="130" y="208" font-size="24" font-family="monospace" fill="#1c1a17" text-anchor="middle" font-weight="bold" letter-spacing="0.5">DROST</text>
 </g>
 <ellipse cx="134.1" cy="45.9" rx="8.1" ry="4" fill="#000" opacity="0.3"/>
 <circle cx="130" cy="40" r="9" fill="#2a5ab0" stroke="#000" stroke-width="0.6" stroke-opacity="0.4"/>

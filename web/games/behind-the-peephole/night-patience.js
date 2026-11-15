@@ -6,6 +6,9 @@
 // HINT (three, one legal move each), UNDO (three: put back your last move) and the SPIKE (read the
 // slipped cards). Phases: the first pass and slipped card A; column six and slipped card B; the
 // last passes, when the stock runs thin.
+// Art (games/behind-the-peephole/art): the deco deck's fifty-two faces and the hotel's own back; the
+// slipped cards and their nicked rose back (Fenn's deck); cards 1 and 2 already on the spike from
+// night two; the brass number plates over the columns; the deco divider and chapter card three.
 
 const DEAL = {
   columns: [["8S"], ["3C", "AS"], ["JD", "7H", "QC"], ["KH", "JS", "TD", "4D"], ["7S", "AH", "6D", "KS", "QS"], ["JH", "TH", "4H", "KC", "5C", "3D"]],
@@ -62,6 +65,19 @@ export default {
     .${P}face .m{position:absolute;left:15%;right:15%;top:30%;height:34%;background-repeat:no-repeat;background-position:center;background-size:contain}
     .${P}face .s{position:absolute;right:0;left:0;bottom:8%;text-align:center;font-size:calc(var(--fs)*1.5)}
     .${P}back{background:#1f3d2c ${SUN} center/88% 92% no-repeat;border:1.5px solid #b8913f;box-shadow:0 2px 3px #0006}
+    .${P}face.art{background-size:100% 100%;background-color:#f4ecd6;border:0;box-shadow:0 2px 3px #0006;overflow:hidden}
+    .${P}face.art:hover{box-shadow:0 0 0 2px rgba(246,207,134,.8),0 2px 3px #0006}
+    .${P}face.art .ix{position:absolute;left:0;top:0;background:#f4ecd6;color:#1c1a17;font:700 var(--fs)/1 'IBM Plex Mono',monospace;padding:2px 3px 2px 2px;border-radius:5px 0 5px 0}
+    .${P}face.art .ix.r{color:#a3302a}
+    .${P}back.art{background-size:100% 100%;background-color:#12241b;border:0}
+    .${P}slip.art{background-size:100% 100%;background-color:#e9e9e4;padding:0;border:0;box-shadow:0 2px 3px #0006}
+    .${P}plate.art{background-color:transparent;background-size:300% 200%;border-radius:3px;color:transparent;box-shadow:0 1px 2px #0008}
+    .${P}big div.art{background:none;border:0;padding:0;box-shadow:none;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-content:center;width:min(92vw,720px);aspect-ratio:auto}
+    .${P}big div.art img{width:min(300px,72vw);height:auto;border-radius:10px;box-shadow:0 10px 40px #000;display:block}
+    .${P}big div.art.many img{width:min(158px,42vw)}
+    .${P}big div.art small{flex-basis:100%;text-align:center;color:#f6cf86;margin-top:6px}
+    .${P}deco img.ch{display:block;width:calc(100% + 44px);max-width:none;margin:-22px -22px 10px;height:84px;object-fit:cover;object-position:0 0;border-radius:9px 9px 0 0}
+    .${P}deco img.dv{display:block;width:min(300px,90%);height:auto;margin:0 auto 2px}
     .${P}slot{position:absolute;border:1.5px dashed rgba(184,145,63,.6);border-radius:6px;box-sizing:border-box;display:grid;place-items:center;font-size:calc(var(--fs)*1.4);color:rgba(227,196,122,.7)}
     .${P}sel{outline:3px solid #f6cf86;outline-offset:1px;z-index:5}
     .${P}bad{animation:${P}bad .35s}
@@ -97,6 +113,10 @@ export default {
     .${P}deco label{display:block;margin:0 0 10px;font-size:13px}
     `;
     root.appendChild(st);
+    const art = api.art || { has: () => false, url: () => "" };
+    const SUITN = { S: "spades", H: "hearts", D: "diamonds", C: "clubs" }, RANKN = { A: "ace", T: "10", J: "jack", Q: "queen", K: "king" };
+    const deckId = (c) => `deck-${SUITN[c[1]]}-${RANKN[c[0]] || c[0]}`;
+    const slipId = (s) => "slip-" + String(s.no).padStart(2, "0");
     const felt = document.createElement("div");
     felt.className = P + "felt";
     root.appendChild(felt);
@@ -106,7 +126,9 @@ export default {
 
     // ---- state
     let cols = DEAL.columns.map((c) => c.map((card, i) => ({ c: card, up: i === c.length - 1 })));
-    let stock = DEAL.stock.slice(), waste = [], found = { S: [], H: [], D: [], C: [] }, spike = [];
+    let stock = DEAL.stock.slice(), waste = [], found = { S: [], H: [], D: [], C: [] };
+    // the spike already holds night two's cards (DESIGN.md section 11, slipped cards 1 and 2)
+    let spike = [{ no: 1, text: "Don't watch one door too long. They see the dark." }, { no: 2, text: "The bell gives you less time than you think. Run." }];
     let pass = 1, turnsThisPass = 0, peeked = false, peekShow = false, hints = gentle ? 5 : 3, undos = 3, sel = null, over = false;
     let slipAShown = false, slipBShown = false, modal = null, pulse = null, lastAct = performance.now();
     let moves = 0, history = [], fxHome = null, fxBad = null;
@@ -218,8 +240,16 @@ export default {
       spike.push(s);
       modal = document.createElement("div");
       modal.className = P + "big" + (RM ? "" : " in");
-      modal.innerHTML = `<div><span></span><small>CARD ${s.no} · FROM ANOTHER DECK · TO THE SPIKE</small></div>`;
-      modal.querySelector("span").textContent = s.text;
+      if (art.has(slipId(s))) {
+        // the back first (the rose with one petal nicked), then its face
+        const back = art.has("back-fenn") && !RM;
+        modal.innerHTML = `<div class="art"><img alt="" src="${art.url(back ? "back-fenn" : slipId(s))}"><small>CARD ${s.no} · FROM ANOTHER DECK · TO THE SPIKE</small></div>`;
+        const im = modal.querySelector("img"); im.alt = s.text;
+        if (back) later(() => { im.src = art.url(slipId(s)); }, 700);
+      } else {
+        modal.innerHTML = `<div><span></span><small>CARD ${s.no} · FROM ANOTHER DECK · TO THE SPIKE</small></div>`;
+        modal.querySelector("span").textContent = s.text;
+      }
       felt.appendChild(modal);
       later(() => { if (modal) { modal.remove(); modal = null; tell(line); layout(); checkEnd(); } }, RM ? 2200 : 3000);
     }
@@ -291,14 +321,23 @@ export default {
         felt.appendChild(d); return d;
       };
       const face = (card, l, t, attrs) => {
+        if (art.has(deckId(card))) {
+          const d = mk(`${P}card ${P}face art`, l, t, attrs);
+          d.style.backgroundImage = `url(${art.url(deckId(card))})`; d.setAttribute("role", "img"); d.setAttribute("aria-label", label(card));
+          // on a small card the art's own index is too fine to read: set it again, larger
+          if (cw < 66) { const ix = document.createElement("span"); ix.className = "ix" + (red(card) ? " r" : ""); ix.textContent = label(card); d.appendChild(ix); }
+          return d;
+        }
         const d = mk(`${P}card ${P}face${red(card) ? " r" : ""}`, l, t, attrs);
         d.innerHTML = `<span class="c">${label(card).replace(/(.)$/, "<br>$1")}</span><span class="m" style="background-image:${FAN(red(card) ? "#a3302a" : "#b8913f")}"></span><span class="s">${SUITS[card[1]]}</span>`;
         d.setAttribute("aria-label", label(card));
         return d;
       };
+      const BACK = art.has("back-hotel") ? ` art` : "";
+      const backOf = (d) => { if (BACK) d.style.backgroundImage = `url(${art.url("back-hotel")})`; return d; };
       const isPulse = (m) => pulse && Object.keys(m).every((k) => pulse[k] === m[k]);
       const badNow = fxBad && performance.now() - fxBad < 400 && !RM;
-      if (stock.length) { const b = mk(`${P}card ${P}back`, x(0), yTop, { w: "stock" }); if (pulse && pulse.from === "stock") b.classList.add(P + "pulse"); }
+      if (stock.length) { const b = backOf(mk(`${P}card ${P}back${BACK}`, x(0), yTop, { w: "stock" })); if (pulse && pulse.from === "stock") b.classList.add(P + "pulse"); }
       else { const s = mk(`${P}slot`, x(0), yTop, { w: "stock" }); s.textContent = pass < DEAL.passes && waste.length ? "↺" : "×"; s.style.cursor = "pointer"; }
       if (waste.length) {
         if (waste.length > 1) face(waste[waste.length - 2].c, x(1), yTop, { w: "waste" });
@@ -308,7 +347,7 @@ export default {
       } else mk(`${P}slot`, x(1), yTop, { w: "waste" });
       if (peekShow && stock.length) { const d = face(stock[0], x(0) + cw * 0.18, yTop + ch * 0.32, { w: "stock" }); d.style.opacity = 0.88; d.style.transform = "rotate(-6deg)"; }
       const sp = mk(`${P}slot`, x(2), yTop, { w: "spike" }); sp.textContent = "⟟"; sp.title = "The spike: tap to read";
-      spike.forEach((s, i) => { const d = mk(`${P}card ${P}slip`, x(2) + cw * 0.1 + i * 4, yTop + ch * 0.1 + i * 6, { w: "spike", n: i }); d.style.width = cw * 0.8 + "px"; d.style.height = ch * 0.8 + "px"; d.textContent = s.text; });
+      spike.forEach((s, i) => { const d = mk(`${P}card ${P}slip`, x(2) + cw * 0.1 + i * 4, yTop + ch * 0.1 + i * 6, { w: "spike", n: i }); d.style.width = cw * 0.8 + "px"; d.style.height = ch * 0.8 + "px"; if (art.has(slipId(s))) { d.classList.add("art"); d.style.backgroundImage = `url(${art.url(slipId(s))})`; d.setAttribute("aria-label", s.text); } else d.textContent = s.text; });
       ["S", "H", "D", "C"].forEach((s, i) => {
         const f = found[s];
         if (f.length) { const d = face(f[f.length - 1], x(3 + i), yTop, { w: "found" }); if (fxHome === s && !RM) d.classList.add(P + "home"); }
@@ -321,6 +360,7 @@ export default {
         const pl = document.createElement("div");
         pl.className = P + "plate"; pl.textContent = "40" + (i + 1);
         pl.style.left = x(i) + cw * 0.2 + "px"; pl.style.width = cw * 0.6 + "px"; pl.style.top = yCols - 22 + "px";
+        if (art.has("ui-number-plates") && cw >= 60) { pl.classList.add("art"); pl.style.backgroundImage = `url(${art.url("ui-number-plates")})`; pl.style.backgroundPosition = `${(i % 3) * 50}% ${Math.floor(i / 3) * 100}%`; pl.style.height = cw * 0.6 * 0.4 + "px"; pl.style.top = yCols - cw * 0.6 * 0.4 - 4 + "px"; }
         felt.appendChild(pl);
         if (!col.length) { mk(`${P}slot`, x(i), yCols, { w: "col", i, idx: "" }).textContent = "K"; return; }
         let dDown = ch * 0.16, dUp = ch * 0.27;
@@ -328,7 +368,7 @@ export default {
         if (need > avail - ch && need > 0) { const f = Math.max(0.3, (avail - ch) / need); dDown *= f; dUp *= f; }
         let y = yCols;
         col.forEach((c, k) => {
-          const d = c.up ? face(c.c, x(i), y, { w: "col", i, idx: k }) : mk(`${P}card ${P}back`, x(i), y, { w: "col", i, idx: k });
+          const d = c.up ? face(c.c, x(i), y, { w: "col", i, idx: k }) : backOf(mk(`${P}card ${P}back${BACK}`, x(i), y, { w: "col", i, idx: k }));
           if (sel && sel.from === i && k >= sel.idx) { d.classList.add(P + "sel"); if (badNow) d.classList.add(P + "bad"); }
           if (isPulse({ from: i, idx: k })) d.classList.add(P + "pulse");
           y += c.up ? dUp : dDown;
@@ -366,7 +406,7 @@ export default {
       if (!d || !felt.contains(d) || d.closest(`.${P}hud`)) return;
       const w = d.dataset.w;
       if (w === "spike") {
-        if (spike.length) { const m = document.createElement("div"); m.className = P + "big"; m.innerHTML = `<div><span></span><small>THE SPIKE · TAP TO CLOSE</small></div>`; m.querySelector("span").textContent = spike.map((x) => x.text).join(" / "); on(m, "pointerdown", () => m.remove()); felt.appendChild(m); }
+        if (spike.length) { const m = document.createElement("div"); m.className = P + "big"; if (spike.every((x) => art.has(slipId(x)))) { m.innerHTML = `<div class="art${spike.length > 1 ? " many" : ""}">${spike.map((x) => `<img alt="" src="${art.url(slipId(x))}">`).join("")}<small>THE SPIKE · TAP TO CLOSE</small></div>`; m.querySelectorAll("img").forEach((im, k) => { im.alt = spike[k].text; }); } else { m.innerHTML = `<div><span></span><small>THE SPIKE · TAP TO CLOSE</small></div>`; m.querySelector("span").textContent = spike.map((x) => x.text).join(" / "); } on(m, "pointerdown", () => m.remove()); felt.appendChild(m); }
         return;
       }
       clickCard(w, d.dataset.i != null ? +d.dataset.i : null, d.dataset.idx !== "" && d.dataset.idx != null ? +d.dataset.idx : null);
@@ -411,7 +451,7 @@ export default {
 
     const intro = document.createElement("div");
     intro.className = P + "intro";
-    intro.innerHTML = `<div class="${P}deco"><div class="fan"></div><h2>Night Patience</h2>
+    intro.innerHTML = `<div class="${P}deco">${art.has("chapter-n3") ? `<img class="ch" alt="Night Three: The Suitcase" src="${art.url("chapter-n3")}">` : ""}${art.has("ui-deco-divider") ? `<img class="dv" alt="" src="${art.url("ui-deco-divider")}">` : `<div class="fan"></div>`}<h2>Night Patience</h2>
       <p class="goal">Bring all fifty-two home, Ace to King by suit.</p>
       <p class="open"></p>
       <dl>

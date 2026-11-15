@@ -10,7 +10,7 @@
 <g transform="rotate(-3.3 130 121)">
 <rect x="29" y="37" width="212" height="182" fill="#000" opacity="0.3"/>
 <rect x="24" y="30" width="212" height="182" fill="#efe4c8" stroke="#b8ab8a" stroke-width="0.8"/>
-<line x1="32" y1="190" x2="228" y2="190" stroke="#c26a5a" stroke-width="1" opacity="0.7"/>
+<line x1="32" y1="184" x2="228" y2="184" stroke="#c26a5a" stroke-width="1" opacity="0.7"/>
 <line x1="32" y1="64" x2="228" y2="64" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
 <line x1="32" y1="90" x2="228" y2="90" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
 <line x1="32" y1="116" x2="228" y2="116" stroke="#9fb0c0" stroke-width="0.6" opacity="0.6"/>
@@ -21,7 +21,7 @@
 <text x="140" y="114" font-size="18" font-family="monospace" fill="#1c1a17" text-anchor="middle" font-weight="bold">BH-0611</text>
 <path d="M169.3,137.3L180.4,139.7M189.8,120.3L204.6,122.8M145.3,136.8L159.6,138.9M190.5,126.2L200.8,128M204.5,124.5L216.2,126.3M203.2,133.3L212.1,139.8M188.1,134.1L198.5,139.5M180.5,144.8L189.4,146.2M215.5,123.6L222.2,127.9M179,125.1L185.3,129.4" fill="none" stroke="#a3302a" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
 <path d="M173.7,144.2L184.6,146.5M214.3,136.3L220.4,139.8M165.8,117.5L176.3,123.5M165.9,119.9L177.1,125.6M173.5,130.7L183.5,138M157.1,147.2L164.6,151.9M179.4,122.6L191,123.7M172.1,127.2L182,132.2M183.3,134.7L190.3,138.5M159.5,129.3L166.8,131.5M171.8,124.9L182.3,124.7M182.4,134.2L193.2,142.2" fill="none" stroke="#8a2a22" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
-<text x="130" y="206" font-size="14" font-family="monospace" fill="#1c1a17" text-anchor="middle" font-weight="bold" letter-spacing="2">BONDED HOUSE</text>
+<text x="130" y="208" font-size="24" font-family="monospace" fill="#1c1a17" text-anchor="middle" font-weight="bold" letter-spacing="0.5">BONDED HOUSE</text>
 </g>
 <ellipse cx="134.1" cy="45.9" rx="8.1" ry="4" fill="#000" opacity="0.3"/>
 <circle cx="130" cy="40" r="9" fill="#c33" stroke="#000" stroke-width="0.6" stroke-opacity="0.4"/>

@@ -8,6 +8,10 @@
 // Phases: Dora's round (01:00 to 01:30) with 401's return, then two bells inside a quarter hour,
 // ten metres apart. Cut: no full push-in to the lens; the stranger and the blackout belong to
 // other nights.
+// Art (games/behind-the-peephole/art): the passage long section is the backdrop (passage-lit, drawn
+// at 47 px to the metre from x = 96, floor at y = 300); the watcher and Dora are the scale-figure
+// sprites, keyed out of their paper; the bell board strip rings with each bell; chapter card two
+// opens the sheet. The pipe run and the loose boards follow the drawing: 16 to 38 m, 38 to 42 m.
 
 const LEN = 64;
 const DOORS = { r401: 8, r402: 16, r403: 28, r404: 36, r405: 46, r406: 56 };
@@ -25,7 +29,7 @@ const GLIMPSE = {
   r406: "Boat three on the sill.",
 };
 const IN_AT_START = ["r404", "r402"];
-const WINDOWS = [18, 26], BOARDS = [38, 41], LEDGE = [15, 37], LEDGE_H = 0.6;
+const WINDOWS = [18, 26], BOARDS = [38, 42], LEDGE = [16, 38], LEDGE_H = 0.6;
 const ALCOVES = [12, 50];
 const MIN = (t) => { const [h, m] = t.split(":").map(Number); return (h < 12 ? h + 24 : h) * 60 + m; };
 const START = MIN("01:00"), END = MIN("02:15");
@@ -89,6 +93,31 @@ export default {
     wrap.appendChild(pad);
     const btn = (a) => pad.querySelector(`[data-a="${a}"]`);
 
+    // ---- the art: the long section as the backdrop, the scale figures keyed out of their paper
+    const art = api.art || { has: () => false, url: () => "", img: () => Promise.resolve(null) };
+    const A = {};
+    let disposed = false;
+    const PX = 47, AX0 = 96, AFL = 300, BGK = 1.5;
+    async function raster(id, w, h, key) {
+      const im = await art.img(id); if (!im || disposed) return null;
+      const c = document.createElement("canvas"); c.width = w; c.height = h;
+      const g = c.getContext("2d", key ? { willReadFrequently: true } : undefined);
+      try {
+        g.drawImage(im, 0, 0, w, h);
+        if (key) { // paper to nothing, ink stays: alpha from darkness
+          const d = g.getImageData(0, 0, w, h), q = d.data;
+          for (let i = 0; i < q.length; i += 4) { const l = (q[i] * 0.3 + q[i + 1] * 0.59 + q[i + 2] * 0.11); const a = Math.max(0, Math.min(1, (222 - l) / 120)); q[i + 3] = Math.round(a * 255); }
+          g.putImageData(d, 0, 0);
+        }
+      } catch { return null; }
+      return (A[id] = c);
+    }
+    (async () => {
+      await raster("passage-lit", 3200 * BGK, 520 * BGK);
+      await Promise.all([raster("sprite-watcher", 840, 360, true), raster("sprite-dora-trolley", 640, 360, true), raster("ui-bell-strip", 480, 150)]);
+      if (!disposed) resize();
+    })();
+
     // ---- state
     let game = 0, started = false, over = false;
     const me = { x: 1, level: 0, dir: 1, hop: 0, crawl: false, run: false, phase: 0, moving: 0 };
@@ -125,7 +154,7 @@ export default {
       if (!unlocked.has("doraGone") && t >= MIN("01:30")) { unlocked.add("doraGone"); tell(NOTES.doraGone); }
       if (!unlocked.has("two") && t >= MIN("02:00")) { unlocked.add("two"); tell(NOTES.two); }
       if (me.x > 11) unlock("up", "The pipe run, +0.60 under the light-well windows: nobody sees you up there. ▲ / W.");
-      if (me.x > 32) unlock("hop", "Loose boards ahead, 38 to 41 m. Walk them, or hop one: Space.");
+      if (me.x > 32) unlock("hop", "Loose boards ahead, the four from 38 m. Walk them, or hop one: Space.");
       if (t >= MIN("01:04")) unlock("rose", "Between bells, an occupied rose is a glimpse for the log: hold E at its door. They feel it.");
       // bells
       for (const r of RETURNS) {
@@ -224,6 +253,7 @@ export default {
       const secH = 3.3 * S + 70;
       const top = 82, avail = blockTop - 10 - top;
       gy = top + Math.max(0, (avail - secH) / 2) + 3.3 * S;
+      if (A["passage-lit"]) gy = Math.min(top + Math.max(0, avail - secH) + 3.3 * S, Math.max(gy, 76 + 4.4 * S));
     }
     let lastBlock = "";
     function paintBlock() {
@@ -256,6 +286,17 @@ export default {
     const sy = (h) => gy - h * S;
 
     function figure(x, h, pose) {
+      const sp = A["sprite-watcher"];
+      if (sp) {
+        // crops of the sheet: walk, run, crawl (ground line at y = 300, 120 px to the metre)
+        const cr = pose === "crawl" ? [585, 190, 200, 114, 105] : pose === "run" && me.moving > 2 ? [318, 88, 188, 216, 102] : [96, 92, 90, 212, 44];
+        const k = S / 120, X = sx(x), Y = sy(h), bob = RM || me.moving < 0.1 ? 0 : Math.abs(Math.sin(me.phase * 2)) * 2.5 * k;
+        ctx.save(); ctx.translate(X, Y - bob); ctx.scale(me.dir * k, k);
+        ctx.drawImage(sp, cr[0], cr[1], cr[2], cr[3], -cr[4], -(300 - cr[1]) , cr[2], cr[3]);
+        ctx.restore();
+        txt("YOU", X, Y + Math.max(13, 0.38 * S), 12, "center", C.ink, true);
+        return;
+      }
       ctx.strokeStyle = C.ink; ctx.lineWidth = Math.max(2, S / 22); ctx.lineCap = "round";
       const X = sx(x), Y = sy(h), k = S / 46;
       const sw = Math.sin(me.phase * 2) * (me.moving > 0.1 ? 1 : 0);
@@ -315,8 +356,16 @@ export default {
       if (mp != null) { ctx.fillStyle = C.ev; ctx.fillRect(km(mp) - 4, ky + 12, 8, 12); }
 
       // the section
-      const ceil = sy(3.0), slab = 0.3 * S;
+      const bg = A["passage-lit"], roseH = bg ? 1.55 : 1.6;
+      const ceil = sy(3.0), slab = (bg ? 0.68 : 0.3) * S;
+      if (bg) {
+        // the drawing, from just above its soffit labels to the underside of the floor slab
+        const z = S / PX, sy0 = AFL - 3 * PX - 64, sy1 = AFL + 32;
+        let x0 = AX0 + camX * PX, x1 = x0 + W / z; x0 = Math.max(30, x0); x1 = Math.min(3200 - 30, x1);
+        if (x1 > x0) ctx.drawImage(bg, x0 * BGK, sy0 * BGK, (x1 - x0) * BGK, (sy1 - sy0) * BGK, sx(0) + (x0 - AX0) * z, gy - (AFL - sy0) * z, (x1 - x0) * z, (sy1 - sy0) * z);
+      }
       ctx.strokeStyle = C.ink; ctx.lineWidth = 1.6;
+      if (!bg) {
       ctx.strokeRect(sx(0), ceil - slab, LEN * S, slab); hatch(sx(0), ceil - slab, LEN * S, slab, 7);
       ctx.strokeRect(sx(0), gy, LEN * S, slab); hatch(sx(0), gy, LEN * S, slab, 7);
       txt("+3.00 SOFFIT", Math.min(W - 16, sx(LEN)) - 4, ceil - slab - 5, 11, "right");
@@ -324,16 +373,20 @@ export default {
       hatch(sx(-1), ceil - slab, S, gy + slab - ceil + slab, 4, C.ink); txt("OFFICE", sx(0) + 6, ceil + 16, 12);
       hatch(sx(LEN), ceil - slab, S, gy + slab - ceil + slab, 4, C.ink); txt("STAIR", sx(LEN) - 6, ceil + 16, 12, "right");
       L(sx(0), sy(1.0), sx(LEN), sy(1.0), 0.6, C.faint);
+      } else txt("±0.00 FFL", 14, gy + slab + 14, 11);
       // light-well windows, and the bathroom windows lit across the well
+      if (!bg) {
       ctx.fillStyle = "rgba(111,124,128,.18)"; ctx.fillRect(sx(WINDOWS[0]), sy(2.6), (WINDOWS[1] - WINDOWS[0]) * S, 1.0 * S);
       ctx.strokeStyle = C.ink; ctx.lineWidth = 1.2; ctx.strokeRect(sx(WINDOWS[0]), sy(2.6), (WINDOWS[1] - WINDOWS[0]) * S, 1.0 * S);
       for (let m = WINDOWS[0]; m <= WINDOWS[1]; m += 2) L(sx(m), sy(2.6), sx(m), sy(1.6), 0.8);
       txt("LIGHT WELL 18–26 m · CRAWL OR PIPE RUN", sx((WINDOWS[0] + WINDOWS[1]) / 2), sy(2.6) - 6, 11, "center");
+      } else txt("CRAWL OR PIPE RUN", sx((WINDOWS[0] + WINDOWS[1]) / 2), sy(1.12), 11, "center", C.ev);
       const lit = Object.keys(DOORS).filter((r) => atWindow(r, t));
       lit.forEach((r, i) => { const x = sx(WINDOWS[0] + 1 + i * 2.6); ctx.fillStyle = C.amber; ctx.fillRect(x, sy(2.45), 0.7 * S, 0.5 * S); ctx.strokeRect(x, sy(2.45), 0.7 * S, 0.5 * S); txt(r.slice(1), x + 0.35 * S, sy(1.75), 12, "center", C.ev, true); });
       // the danger zone below the windows when a window is lit
       if (lit.length) { ctx.fillStyle = "rgba(163,48,42,.08)"; ctx.fillRect(sx(WINDOWS[0]), sy(1.6), (WINDOWS[1] - WINDOWS[0]) * S, 1.1 * S); }
       // pipe run
+      if (!bg) {
       L(sx(LEDGE[0]), sy(LEDGE_H), sx(LEDGE[1]), sy(LEDGE_H), 2.2);
       L(sx(LEDGE[0]), sy(0.42), sx(LEDGE[1]), sy(0.42), 0.8); L(sx(LEDGE[0]), sy(0.3), sx(LEDGE[1]), sy(0.3), 0.8);
       for (let m = LEDGE[0]; m <= LEDGE[1]; m += 3) L(sx(m), sy(LEDGE_H), sx(m), sy(0), 0.6, C.faint);
@@ -343,18 +396,25 @@ export default {
       for (let b = BOARDS[0]; b <= BOARDS[1]; b++) L(sx(b), gy - 7, sx(b), gy + 5, 1, C.ev);
       // alcoves
       for (const a of ALCOVES) { ctx.setLineDash([3, 3]); ctx.strokeStyle = C.ink; ctx.lineWidth = 1; ctx.strokeRect(sx(a - 0.7), sy(2.2), 1.4 * S, 2.2 * S); ctx.setLineDash([]); txt("ALCOVE", sx(a), sy(2.2) - 5, 11, "center"); }
+      } else {
+        // the loose boards in evidence red over the drawing; the alcoves named as cover
+        ctx.fillStyle = "rgba(163,48,42,.16)"; ctx.fillRect(sx(BOARDS[0]), gy - 7, (BOARDS[1] - BOARDS[0]) * S, 9);
+        for (const a of ALCOVES) txt("HIDE", sx(a), sy(0.2), 11, "center", C.ev, true);
+      }
       // doors with their roses
       const here = doorHere();
       for (const r in DOORS) {
         const x = sx(DOORS[r] - 0.45);
-        ctx.strokeStyle = C.ink; ctx.lineWidth = 1.2; ctx.strokeRect(x, sy(2.1), 0.9 * S, 2.1 * S);
-        ctx.strokeRect(x + 0.1 * S, sy(2.0), 0.7 * S, 0.8 * S); ctx.strokeRect(x + 0.1 * S, sy(1.0), 0.7 * S, 0.9 * S);
-        txt(r.slice(1), sx(DOORS[r]), sy(2.1) - 7, Math.max(14, S * 0.3), "center", C.ink, true);
+        if (!bg) {
+          ctx.strokeStyle = C.ink; ctx.lineWidth = 1.2; ctx.strokeRect(x, sy(2.1), 0.9 * S, 2.1 * S);
+          ctx.strokeRect(x + 0.1 * S, sy(2.0), 0.7 * S, 0.8 * S); ctx.strokeRect(x + 0.1 * S, sy(1.0), 0.7 * S, 0.9 * S);
+          txt(r.slice(1), sx(DOORS[r]), sy(2.1) - 7, Math.max(14, S * 0.3), "center", C.ink, true);
+        }
         const occ = occupied(r, t), isT = tgt && tgt.room === r;
         const rr = Math.max(5, S * 0.1);
-        ctx.beginPath(); ctx.arc(sx(DOORS[r]), sy(1.6), rr, 0, 7);
+        ctx.beginPath(); ctx.arc(sx(DOORS[r]), sy(roseH), rr, 0, 7);
         ctx.fillStyle = blind.has(r) ? C.ink : isT ? C.amberL : occ ? C.amber : C.paper; ctx.fill(); ctx.strokeStyle = C.ink; ctx.lineWidth = 1.2; ctx.stroke();
-        if (isT) { const pul = RM ? 0.5 : Math.abs(Math.sin(now / 220)); ctx.beginPath(); ctx.arc(sx(DOORS[r]), sy(1.6), rr + 4 + 5 * pul, 0, 7); ctx.strokeStyle = C.amber; ctx.lineWidth = 2; ctx.stroke(); }
+        if (isT) { const pul = RM ? 0.5 : Math.abs(Math.sin(now / 220)); ctx.beginPath(); ctx.arc(sx(DOORS[r]), sy(roseH), rr + 4 + 5 * pul, 0, 7); ctx.strokeStyle = C.amber; ctx.lineWidth = 2; ctx.stroke(); }
         if (occ) {
           // unease, as a pencilled gauge on the door, with the 70 mark
           const gw = 0.7 * S;
@@ -363,8 +423,8 @@ export default {
           L(x + 0.1 * S + gw * 0.7, sy(0.3) - 2, x + 0.1 * S + gw * 0.7, sy(0.3) + 9, 1, C.ev);
         }
         if (here === r && occ && !blind.has(r) && !glimpsed.has(r) && unlocked.has("rose") && !RETURNS.some((q) => q.room === r && t < MIN(q.door))) {
-          txt("E · ROSE", sx(DOORS[r]), sy(2.1) - 7 - Math.max(16, S * 0.32), 12, "center", C.ev, true);
-          if (roseT > 0) { ctx.strokeStyle = C.ev; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(sx(DOORS[r]), sy(1.6), rr + 8, -Math.PI / 2, -Math.PI / 2 + (roseT / 1.5) * Math.PI * 2); ctx.stroke(); }
+          txt("E · ROSE", sx(DOORS[r]), sy(2.1) - 7 - Math.max(16, S * 0.32) - (bg ? S * 0.34 : 0), 12, "center", C.ev, true);
+          if (roseT > 0) { ctx.strokeStyle = C.ev; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(sx(DOORS[r]), sy(roseH), rr + 8, -Math.PI / 2, -Math.PI / 2 + (roseT / 1.5) * Math.PI * 2); ctx.stroke(); }
         }
         if (glimpsed.has(r)) txt("◉", sx(DOORS[r]) + 0.62 * S, sy(1.6) + 4, 12, "left", C.blue, true);
       }
@@ -388,10 +448,18 @@ export default {
         ctx.fillStyle = "rgba(163,48,42,.12)"; ctx.beginPath(); ctx.moveTo(x - 0.4 * S, sy(1.6)); ctx.lineTo(x - reach * S, sy(2.4)); ctx.lineTo(x - reach * S, sy(0)); ctx.lineTo(x - 0.4 * S, sy(0)); ctx.fill();
         L(x - reach * S, sy(2.4), x - reach * S, sy(0), 1, C.ev, [4, 3]);
         txt(`DORA'S VIEW ${reach} m`, x - reach * S / 2, sy(2.4) - 6, 11, "center", C.ev);
+        const ds = A["sprite-dora-trolley"];
+        if (ds) {
+          // the sheet's trolley and figure, ground line at y = 296, Dora 1.65 m tall; the trolley's centre is hers to push
+          const k = 1.65 * S / 214;
+          ctx.drawImage(ds, 28, 50, 470, 252, x - (205 - 28) * k, gy - (296 - 50) * k, 470 * k, 252 * k);
+          txt("DORA →W", x + 0.3 * S, gy - 252 * k + 2, 12, "center", C.ev, true);
+        } else {
         ctx.strokeStyle = C.ev; ctx.lineWidth = 1.4; ctx.strokeRect(x - 0.4 * S, sy(1.0), 1.1 * S, 0.9 * S);
         ctx.beginPath(); ctx.arc(x - 0.25 * S, sy(0.06), 0.06 * S + 2, 0, 7); ctx.arc(x + 0.55 * S, sy(0.06), 0.06 * S + 2, 0, 7); ctx.stroke();
         ctx.beginPath(); ctx.arc(x + 1.0 * S, sy(1.72), 0.12 * S, 0, 7); ctx.moveTo(x + 1.0 * S, sy(1.6)); ctx.lineTo(x + 1.0 * S, sy(0.8)); ctx.lineTo(x + 0.8 * S, sy(0)); ctx.moveTo(x + 1.0 * S, sy(0.8)); ctx.lineTo(x + 1.2 * S, sy(0)); ctx.moveTo(x + 1.0 * S, sy(1.4)); ctx.lineTo(x + 0.7 * S, sy(1.0)); ctx.stroke();
         txt("DORA →W", x + 0.3 * S, sy(1.0) - 6, 12, "center", C.ev, true);
+        }
       }
       // the watcher
       const h = me.level ? LEDGE_H : me.hop > 0 ? 0.25 * Math.sin(Math.PI * (1 - me.hop / 0.35)) : 0;
@@ -411,6 +479,14 @@ export default {
       }
       if (bellFlash && now - bellFlash.t < 2600) {
         const n = +bellFlash.room.slice(3);
+        const bs = A["ui-bell-strip"];
+        if (bs && !narrow) {
+          // the office bell board: six pulls and a bare seventh; the ringing pull swings
+          const bw = 300, bh = bw * 150 / 480, bx = W / 2 - bw / 2, byy = ky + 96, kk = (now - bellFlash.t) / 2600;
+          ctx.save(); ctx.globalAlpha = kk > 0.8 ? (1 - kk) * 5 : 1; ctx.drawImage(bs, bx, byy, bw, bh);
+          const px = bx + bw * (0.115 + (n - 1) * 0.128);
+          ctx.strokeStyle = C.amberL; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(px, byy + bh * 0.42, 13 + (RM ? 0 : 4 * Math.abs(Math.sin(now / 90))), 0, 7); ctx.stroke(); ctx.restore();
+        }
         txt(`BELL · ${bellFlash.room.slice(1)}`, W / 2, ky + 74, 18, "center", C.ev, true);
         for (let i = 0; i < n; i++) { ctx.beginPath(); ctx.arc(W / 2 - (n - 1) * 10 + i * 20, ky + 88, 6, 0, 7); ctx.fillStyle = (now - bellFlash.t) / 300 > i ? C.ev : "transparent"; ctx.fill(); ctx.strokeStyle = C.ev; ctx.lineWidth = 1.2; ctx.stroke(); }
       }
@@ -420,7 +496,7 @@ export default {
     const loop = (now) => { const dt = Math.max(0, Math.min(0.05, (now - last) / 1000)); last = now; step(dt); render(now); raf = requestAnimationFrame(loop); };
 
     // ---- input
-    const up = () => { if (!unlocked.has("up")) return; if (me.level === 0 && me.x >= LEDGE[0] && me.x <= LEDGE[1] && me.hop === 0) { me.level = 1; note("UP ONTO THE PIPE RUN"); } else if (me.level === 0) note("NO PIPE RUN HERE: IT RUNS 15–37 m"); };
+    const up = () => { if (!unlocked.has("up")) return; if (me.level === 0 && me.x >= LEDGE[0] && me.x <= LEDGE[1] && me.hop === 0) { me.level = 1; note("UP ONTO THE PIPE RUN"); } else if (me.level === 0) note("NO PIPE RUN HERE: IT RUNS 16–38 m"); };
     const down = () => { if (me.level === 1) { me.level = 0; return true; } return false; };
     const hop = () => { if (!unlocked.has("hop")) return; if (me.hop === 0 && !me.crawl) { me.hop = 0.35; } };
     on(window, "keydown", (e) => {
@@ -471,6 +547,7 @@ export default {
     const intro = document.createElement("div");
     intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}sheet">
+      ${art.has("chapter-n2") ? `<img alt="Night Two: The Bell Board" src="${art.url("chapter-n2")}" style="display:block;width:100%;height:92px;object-fit:cover;object-position:0 0;border-bottom:1.4px solid ${C.ink}">` : ""}
       <div class="hd"><span>SECTION B-B · SERVICE PASSAGE 4F</span><span>SHEET 4 / 7</span></div>
       <h2>CORRIDOR RACE</h2>
       <p class="goal">Be at each door as it opens: 401, 405, 406. Dora must not see you twice.</p>
@@ -492,6 +569,7 @@ export default {
 
     return {
       unmount() {
+        disposed = true;
         cancelAnimationFrame(raf);
         timers.forEach(clearTimeout);
         ro.disconnect();

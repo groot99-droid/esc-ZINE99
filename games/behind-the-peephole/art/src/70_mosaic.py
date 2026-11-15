@@ -92,7 +92,7 @@ def _guest(room, kind, who, fn, tell, pincol):
         a.close()
         a.rect(34, 38, 192, 216, fill="none", stroke="#8a826e", stroke_width=1)
         a.text(130, 296, str(room), size=38, family="monospace", fill=INK, text_anchor="middle", font_weight="bold")
-        a.text(130, 320, kind, size=12.5, family="monospace", fill=kit.CARBON, text_anchor="middle", letter_spacing=1.5)
+        a.text(130, 321, kind, size=15.5, family="monospace", fill=kit.CARBON, text_anchor="middle", letter_spacing=0.4, font_weight="bold")
         a.close()
         kit.pin(a, 130, 34, pincol)
     draw.__doc__ = (f"Mosaic guest card for room {room}, {who}, pinned to cork: a silhouette against the room's own colour of lamp, "
@@ -208,11 +208,12 @@ def _thing(key, label, fn, tell):
     def draw(a: Art):
         board(a)
         kit.paper_card(a, 24, 30, 212, 182, a.rng.uniform(-4, 4), fill="#efe4c8")
-        a.line(32, 190, 228, 190, stroke="#c26a5a", stroke_width=1, opacity=0.7)
+        a.line(32, 184, 228, 184, stroke="#c26a5a", stroke_width=1, opacity=0.7)
         for k in range(5):
             a.line(32, 64 + k * 26, 228, 64 + k * 26, stroke="#9fb0c0", stroke_width=0.6, opacity=0.6)
         fn(a)
-        a.text(130, 206, label, size=14, family="monospace", fill=INK, text_anchor="middle", font_weight="bold", letter_spacing=2)
+        # the label is set large: on the board the card is shown about a hundred pixels wide
+        a.text(130, 208, label, size=24 if len(label) <= 12 else 21, family="monospace", fill=INK, text_anchor="middle", font_weight="bold", letter_spacing=0.5)
         a.close()
         kit.pin(a, 130, 40, a.rng.choice(["#c33", "#2a5ab0", "#d9b02a", "#eee"]))
     draw.__doc__ = f"Mosaic pin card for {label.title()}: a ruled index card pinned to cork, with a pen sketch of {tell}."

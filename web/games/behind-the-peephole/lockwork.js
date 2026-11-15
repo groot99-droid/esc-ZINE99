@@ -6,6 +6,10 @@
 // Actions: TENSION (the wrench), LIFT (the hook), FEEL (read the pin under the hook: binding, set,
 // loose, or a spool) and the RAKE from the tool roll (DESIGN.md section 11 names it): fast and
 // risky, two strokes. Phases: plain pins, then the spools' false set, then the last pin.
+// Art (games/behind-the-peephole/art): the patent plates. Lock plate FIG. 2 (the stair door) heads
+// the opening card, hangs in the margin of a wide sheet as the reference figure, and comes up behind
+// the result; the other four plates are the tool roll on the opening card. The live lock is still
+// drawn by this code, because every part of it moves; sheet and figure numbers follow the plates.
 
 const N = 5;
 const ORDER = [2, 4, 0, 3, 1];            // binding order (pin indices), fixed for this lock
@@ -56,9 +60,22 @@ export default {
     .${P}patent li span:first-child{font-style:italic}
     .${P}patent li b{font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.06em}
     .${P}patent kbd{font:12px 'IBM Plex Mono',monospace;border:1px solid ${C.faint};padding:0 4px;background:#fff}
+    .${P}patent .fig{display:block;width:100%;height:auto;max-height:230px;object-fit:contain;border:1px solid ${C.ink};margin:6px 0 8px;background:#e4dccb}
+    .${P}roll{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:0 0 10px}
+    .${P}roll figure{margin:0;font:11px 'IBM Plex Mono',monospace;text-align:center;letter-spacing:.04em;line-height:1.25}
+    .${P}roll img{display:block;width:100%;height:auto;border:1px solid ${C.faint};margin-bottom:2px}
+    .${P}roll .now img{border:2px solid ${C.ev}}
+    .${P}roll .later{opacity:.55}
+    .${P}plate{position:absolute;inset:0;z-index:2;display:grid;place-items:center;background:rgba(239,230,207,.82);padding:14px 14px 150px;pointer-events:none;opacity:0;transition:opacity .7s}
+    .${P}plate.in{opacity:1}
+    .${P}plate img{max-width:min(760px,100%);max-height:100%;border:1.5px solid ${C.ink};box-shadow:6px 6px 0 rgba(28,26,23,.14)}
+    @media (max-height:700px),(max-width:560px){.${P}patent .fig{max-height:120px}}
     .${P}patent .ft{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;border-top:1px solid ${C.ink};padding-top:10px}
     `;
     root.appendChild(st);
+    const art = api.art || { has: () => false, url: () => "", img: () => Promise.resolve(null) };
+    let plateCv = null, disposed = false;
+    art.img("lock-stair").then((im) => { if (!im || disposed) return; const c = document.createElement("canvas"); c.width = 480; c.height = 320; try { c.getContext("2d").drawImage(im, 0, 0, 480, 320); plateCv = c; } catch { /* keep the list */ } });
     const wrap = document.createElement("div");
     wrap.className = P + "wrap";
     root.appendChild(wrap);
@@ -182,6 +199,11 @@ export default {
       over = true; turning = performance.now();
       api.store.set("opened", true); api.store.set("lossStreak", 0);
       say("All five set. The plug turns.");
+      if (art.has("lock-stair")) { // the plate, as filed: behind the result
+        const pl = document.createElement("div"); pl.className = P + "plate";
+        pl.innerHTML = `<img alt="Lock plate, FIG. 2: the stair door, five pins, two spools" src="${art.url("lock-stair")}">`;
+        wrap.appendChild(pl); timers.push(setTimeout(() => pl.classList.add("in"), RM ? 0 : 500));
+      }
       const neat = oversets === 0 ? "Not one overset: a locksmith's opening." : `${oversets} overset${oversets === 1 ? "" : "s"} on the way.`;
       timers.push(setTimeout(() => api.end({ outcome: "win", text: `The plug turns and the stair door opens on the back stair, and the chute's steel box below it. Whoever empties it comes up this way. ${picks} spare pick${picks === 1 ? "" : "s"} left. ${neat}` }), 1600));
     }
@@ -283,8 +305,8 @@ export default {
       ctx.strokeStyle = C.ink; ctx.lineWidth = 1.2; ctx.strokeRect(8, 8, W - 16, H - 16);
       ctx.lineWidth = 0.6; ctx.strokeRect(12, 12, W - 24, H - 24);
       ctx.fillStyle = C.ink; ctx.textAlign = "center";
-      ctx.font = `13px Georgia,serif`; ctx.fillText("Sheet 2 of 4", W / 2, 30);
-      ctx.font = `italic ${G.narrow ? 20 : 26}px Georgia,serif`; ctx.fillText("FIG. 3  ·  the stair door", W / 2, G.narrow ? 76 : 70);
+      ctx.font = `13px Georgia,serif`; ctx.fillText("Sheet 2 of 5", W / 2, 30);
+      ctx.font = `italic ${G.narrow ? 20 : 26}px Georgia,serif`; ctx.fillText("FIG. 2  ·  the stair door", W / 2, G.narrow ? 76 : 70);
       ctx.font = "italic 13px Georgia,serif"; ctx.fillText("Inventor: the night clerk", W / 2, G.narrow ? 96 : 92);
       ctx.textAlign = "left";
       const gm = Math.floor(((now - t0) / 1000) * 10 / 60);
@@ -398,6 +420,10 @@ export default {
         const lx = W - Math.max(W * 0.16, 200) + 40, ly = 130;
         ctx.font = "italic 14px Georgia,serif"; ctx.fillStyle = C.ink;
         [["10", "shell"], ["12", "springs"], ["14", "drivers"], ["16", "spool driver"], ["18", "key pins"], ["20", "plug"], ["22", "hook"], ["24", "wrench"], ["26", "tension"]].forEach(([n, s], i) => ctx.fillText(`${n}  ${s}`, lx, ly + i * 19));
+        if (plateCv) { // the plate as filed, for reference
+          const pw2 = Math.min(190, W - lx - 22), ph2 = pw2 * 2 / 3, py2 = ly + 9 * 19 + 10;
+          if (py2 + ph2 < gBot - 60) { ctx.drawImage(plateCv, lx, py2, pw2, ph2); ctx.strokeStyle = C.ink; ctx.lineWidth = 0.8; ctx.strokeRect(lx, py2, pw2, ph2); ctx.font = "italic 12px Georgia,serif"; ctx.fillText("as filed", lx, py2 + ph2 + 15); }
+        }
       }
       if (now - msgT > 7000 && capMsg.textContent && !over) capMsg.textContent = "";
     }
@@ -471,8 +497,9 @@ export default {
     const intro = document.createElement("div");
     intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}patent">
-      <div class="no"><span>PAT. No. 4·0·3</span><span>SHEET 2 OF 4</span></div>
+      <div class="no"><span>PAT. No. 4·0·3</span><span>SHEET 2 OF 5</span></div>
       <h2>Lockwork · the stair door</h2>
+      ${art.has("lock-stair") ? `<img class="fig" alt="FIG. 2: the stair door lock, exploded: five pins, two of them spools" src="${art.url("lock-stair")}">` : ""}
       <p class="goal">Set all five pins on the shear line <i>S</i> before your picks run out.</p>
       <p class="open"></p>
       <ol>
@@ -480,6 +507,7 @@ export default {
         <li><span>22</span><b>HOOK</b><span><kbd>←</kbd><kbd>→</kbd> or tap a pin.</span></li>
         <li><span>18</span><b>LIFT</b><span>hold <kbd>↑</kbd> or drag up; let go as the pin meets <i>S</i> and the line glows.</span></li>
       </ol>
+      ${["lock-drawer", "lock-stair", "lock-wafer", "lock-safe", "lock-lever"].every((id) => art.has(id)) ? `<div class="${P}roll">${[["lock-drawer", "FIG. 1", "night 1 ✓", ""], ["lock-stair", "FIG. 2", "tonight", "now"], ["lock-wafer", "FIG. 3", "night 4", "later"], ["lock-safe", "FIG. 4", "night 6", "later"], ["lock-lever", "FIG. 5", "night 7", "later"]].map(([id, f, n, c]) => `<figure class="${c}"><img alt="" src="${art.url(id)}">${f}<br>${n}</figure>`).join("")}</div>` : ""}
       <div class="ft">${streak >= 2 ? `<label><input type="checkbox" ${gentle ? "checked" : ""}> a fourth pick, a wider line, the binding pin shown</label>` : `<span>Only the binding pin will set. Lift past <i>S</i> and it oversets.</span>`}<button type="button" class="${P}b">START</button></div></div>`;
     intro.querySelector(".open").textContent = NOTES.open;
     wrap.appendChild(intro);
@@ -492,6 +520,7 @@ export default {
 
     return {
       unmount() {
+        disposed = true;
         cancelAnimationFrame(raf);
         timers.forEach(clearTimeout);
         ro.disconnect();

@@ -459,6 +459,75 @@
       "type": "counter",
       "default": 0,
       "description": "Valet doors whose guests took the pages in the slide run, 0 to 6. Exposed guests' doors do not count."
+    },
+    {
+      "name": "mara_dots",
+      "type": "ledger",
+      "default": [],
+      "description": "Accepted 2026-11-15. Mara's own log of the watcher: one row per night she paints (1, 3, 4, 5, 6), written when she pins the picture up. The brass dot in the picture's corner is filled if the rose in 403 was dark at any time while she painted (an eye at it), hollow if it stayed lit.",
+      "fields": [
+        "night",
+        "filled"
+      ]
+    },
+    {
+      "name": "dots_read",
+      "type": "counter",
+      "default": 0,
+      "description": "Accepted 2026-11-15. Nights on which the player caught the brass-dot beat on that night's watercolour, 0 to 5."
+    },
+    {
+      "name": "mara_count",
+      "type": "counter",
+      "default": 0,
+      "description": "Accepted 2026-11-15. The number of separate visits to 403's lens from night one to the start of The Sitting, read from watch_log. It is the number Mara pencils under the picture on night four (\"Eleven times.\" in a run with eleven)."
+    },
+    {
+      "name": "sitting_held",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15. At The Sitting (night four, 03:40) the player kept the eye at 403's lens under Mara's direct look until the catch ring closed. False if the player stepped back; she writes \"gone\"."
+    },
+    {
+      "name": "answers",
+      "type": "ledger",
+      "default": [],
+      "description": "Accepted 2026-11-15. Answering: a knowing guest taps twice, and darkening the rose twice within three seconds is yes; staying away is no. One row per question asked.",
+      "fields": [
+        "night",
+        "room",
+        "reply"
+      ]
+    },
+    {
+      "name": "mara_answers",
+      "type": "counter",
+      "default": 0,
+      "description": "Accepted 2026-11-15. Nights (four to six) on which the player answered Mara's two taps with yes, 0 to 3."
+    },
+    {
+      "name": "held_pages_read",
+      "type": "counter",
+      "default": 0,
+      "description": "Accepted 2026-11-15. Thirds of the ledger page Mara holds to the rose on night five that the player read by holding the tilt on each, 0 to 3. Three makes the page a clue card."
+    },
+    {
+      "name": "carbon_rows_correct",
+      "type": "counter",
+      "default": 0,
+      "description": "Accepted 2026-11-15. Statement rows that are right on the player's carbon copies, 0 to 36: rows_correct plus every wrong row put right by a morning's one amendment. Wren's copy never changes."
+    },
+    {
+      "name": "carbon_amends",
+      "type": "ledger",
+      "default": [],
+      "description": "Accepted 2026-11-15. The one amendment a morning (nights two to six) made on the carbon of an earlier night's form.",
+      "fields": [
+        "morning",
+        "night",
+        "room",
+        "correct"
+      ]
     }
   ]
 }
