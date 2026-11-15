@@ -1,0 +1,85 @@
+{
+  "game": "heartstream",
+  "style": "Stylised cinematic 3D animated film still: a fantasy world inside a living body shown as cave cathedrals lit from within. Soft, wet, translucent tissue with subsurface scattering for everything living; dry chalky ivory for bone. Deep mineral blues in the marrow, crimson to carmine with orange highlights in the river, red into gold at the heart. Light comes from inside the walls. Slender simplified Blue-Born figures with large readable hands; hands carry the picture and faces are not shown. No gore, no wounds, no anatomy beyond architecture.",
+  "images": [
+    {
+      "id": "key-art-wide",
+      "kind": "key-art",
+      "title": "Four hands on one oar",
+      "aspect_ratio": "16:9",
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, soft wet translucent tissue with subsurface scattering, dry chalky ivory bone, no gore, no wounds. Close view from directly above of four slender young hands gripping one pale ivory bone oar that crosses the frame on a diagonal from lower left to right of centre, the hands deep mineral blue, a thread of glowing red climbing each wrist, a small carved bone hook hanging on a sinew cord from one wrist. The hands and oar sit in the right two thirds; the left third is calm open crimson water, slow and unbroken, for a title. Below everything the river is lit from within, crimson to carmine with thin orange highlights, and warm gold light falls from the upper right across the knuckles. Forearms only, no faces, no bodies. Wet translucent skin, chalk-dry bone, pale wrapped grip. Still and tender, no text, no lettering, no watermark, no logo",
+      "model": "soul_cinematic",
+      "job_id": "3146574d-8e8f-4a70-ab38-0a174de285ee",
+      "image": "keyart/key-art-wide.jpg"
+    },
+    {
+      "id": "key-art-tall",
+      "kind": "key-art",
+      "title": "Four hands on one oar",
+      "aspect_ratio": "2:3",
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, soft wet translucent tissue with subsurface scattering, dry chalky ivory bone, no gore, no wounds. Tall composition, close view from directly above of four slender young hands gripping one pale ivory bone oar that runs upright through the lower half of the frame, the hands stacked one above another, deep mineral blue, a thread of glowing red climbing each wrist, a small carved bone hook hanging on a sinew cord from one wrist. The hands fill the lower two thirds; the upper third is calm open crimson water, slow and unbroken, darkening toward the top edge, for a title. The river is lit from within, crimson to carmine with thin orange highlights, and warm gold light falls from the upper right across the knuckles. Forearms only, no faces, no bodies. Wet translucent skin, chalk-dry bone, pale wrapped grip. Still and tender, no text, no lettering, no watermark, no logo",
+      "model": "soul_cinematic",
+      "job_id": "7ac132ef-3057-4e77-93c2-60e6a320062c",
+      "image": "keyart/key-art-tall.jpg"
+    },
+    {
+      "id": "ending-stayed",
+      "kind": "ending",
+      "ending": "stayed",
+      "title": "The One Who Stayed",
+      "aspect_ratio": "16:9",
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, soft wet translucent tissue with subsurface scattering, dry chalky ivory bone, no gore, no wounds. Inside a large cave of soft blue marrow, an old elder seen from behind in the upper left: the same slender simplified Blue-Born build grown thin and stooped, pale mineral blue skin, large readable hands, a long wrap of pale woven fibre. One hand is raised to cup a small warm marrow lamp set in the wall, dimming it; the lamps further along are already low. Far across the hall, small sleeping niches hollowed in the wall glow faintly, their sleepers only soft blue shapes at a distance. On a low pale shelf beside him rests an ivory game board with counters left in its hollows, unfinished. Deep mineral blue walls with a pale blue glow, one point of warm steady gold. The lower quarter is empty dark cave floor. Quiet, patient, lonely, no text, no lettering, no watermark, no logo",
+      "model": "soul_cinematic",
+      "job_id": "2784fcf7-2824-491c-962b-2b4883604050",
+      "image": "keyart/ending-stayed.jpg",
+      "needs_review": "Not retried (retry budget spent). The elder's head is bowed out of sight so he reads as headless; he stands mid-frame rather than upper left, and the lower quarter is not empty floor."
+    },
+    {
+      "id": "ending-taken",
+      "kind": "ending",
+      "ending": "taken",
+      "title": "Taken by the River",
+      "aspect_ratio": "16:9",
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, soft wet translucent tissue with subsurface scattering, dry chalky ivory bone, no gore, no wounds. Seen from behind, a slender young Blue-Born brother in his late teens, large readable hands, a short pale fibre wrap at the waist, sits alone inside a narrow rounded vessel with a pale translucent wall like lantern glass. His skin is deep crimson but still mineral blue at the wrists. Both hands hold a small carved bone hook against his chest. Through the wall ahead of him, far off and small in the upper right, the warm glow of a raft draws away down a wide crimson river between dark canyon walls. He leans toward it. Cool pale light inside the vessel, crimson and carmine beyond it, a single orange point for the raft. The lower quarter is the dark smooth vessel floor. Hushed, turned aside, no face shown, no text, no lettering, no watermark, no logo",
+      "model": "soul_cinematic",
+      "job_id": "4e818c75-cc07-4461-a827-214349ae14c5",
+      "image": "keyart/ending-taken.jpg",
+      "needs_review": "First image kept; the one retry was blocked by the service's content filter. The figure has spiky blue hair, his hands and the hook sit on his back (wrong anatomy), and the waist wrap carries small dark stains."
+    },
+    {
+      "id": "ending-two-together",
+      "kind": "ending",
+      "ending": "two_together",
+      "title": "Two Together",
+      "aspect_ratio": "16:9",
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, soft wet translucent tissue with subsurface scattering, no gore, no wounds. Close view inside one small rounded chamber with smooth soft red walls lit gold from within: two slender young hands clasped together at the centre of the frame, each hand with five clearly separate fingers, natural proportions, smooth deep red skin. Forearms only, entering from the left and the right edges, no faces, no bodies. From one wrist a small carved ivory bone hook hangs on a thin cord; from the other wrist a short ivory bone flute hangs on a thin cord; each gives off a soft warm glow. Far behind the hands, out of focus, the smooth wall has three plain round dark tunnel openings side by side with no light in them. The walls are smooth and soft everywhere: no teeth, no spikes, no fangs, no mouth. Carmine and deep crimson, gold on the knuckles, shadow beyond. The lower quarter is calm dark red water. Close, held, nobody else anywhere, no text, no lettering, no watermark, no logo",
+      "model": "soul_cinematic",
+      "job_id": "4117ecb5-6c1d-4c4c-a141-7663d50382f3",
+      "image": "keyart/ending-two-together.jpg",
+      "needs_review": "Retry kept (the first showed tooth-like forms like a mouth). Fingers are tangled, the wrist tools do not read as a hook and a flute, and the three openings are rimmed with light rather than dark."
+    },
+    {
+      "id": "ending-carried-away",
+      "kind": "ending",
+      "ending": "carried_away",
+      "title": "Carried Away",
+      "aspect_ratio": "16:9",
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, soft wet translucent tissue with subsurface scattering, no gore, no wounds. Seen from behind and slightly above, small in the middle of the frame, one slender hairless young figure with natural human proportions, a smooth bald rounded head, narrow shoulders and a whole back, sitting cross-legged and alone, drifting away from the camera down a narrow tunnel of smooth soft red tissue on a slow crimson current. His smooth skin is deep red all over. A short pale fibre wrap at the waist. His right arm hangs at his side and the hand holds a small carved ivory bone hook on a cord. The tunnel is only wide enough for one and runs away into dimness ahead of him. A faint glow breathes in the walls, carmine with thin orange highlights, and a last trace of gold light from behind the camera edges his shoulders and head. The lower quarter is smooth dark crimson water. Still, small, alone, his face not visible, no text, no lettering, no watermark, no logo",
+      "model": "soul_cinematic",
+      "job_id": "2bfbb724-e892-4cff-b8d8-4a5fffb21c96",
+      "image": "keyart/ending-carried-away.jpg"
+    },
+    {
+      "id": "ending-the-open-hand",
+      "kind": "ending",
+      "ending": "The Open Hand",
+      "title": "The Open Hand",
+      "aspect_ratio": "16:9",
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, soft wet translucent tissue with subsurface scattering, no gore, no wounds. In the foreground at the right, a single open hand, large and simplified, smooth deep red skin with no nails and no bone showing, palm up and fingers loose, forearm only entering from the right edge. A small carved ivory bone hook hangs on a thin cord from the wrist. Behind it a vast cathedral hall of soft red walls and gold light, wide beams falling from above. Far back at the left, very small and out of focus, a long flat raft with pale ivory ribs floats on the water carrying three tiny seated backlit figures, slender and pale blue, only soft silhouettes with no facial detail, their hands joined. Crimson and carmine walls, heart gold in the beams, a rim of gold on the open fingers. The lower quarter is calm dark red water. Given, not taken; no faces shown, no text, no lettering, no watermark, no logo",
+      "model": "soul_cinematic",
+      "job_id": "5733c9fc-9352-4ffa-a186-23600832b611",
+      "image": "keyart/ending-the-open-hand.jpg",
+      "needs_review": "Retry kept (the first showed readable faces and bone outside the forearm). It came out as flat 2D illustration with two heart shapes in the wall, so it breaks the 3D style of the set."
+    }
+  ]
+}

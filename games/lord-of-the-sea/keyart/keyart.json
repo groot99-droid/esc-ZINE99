@@ -1,0 +1,84 @@
+{
+  "game": "lord-of-the-sea",
+  "style": "Painterly cinematic realism, like a hand-finished film matte painting of an age-of-sail world: tarred wood, salt-dulled brass, glass bottles and paper. Company order reads as ink-blue, ledger red, tea brown and flat lamp-white light from above; the wild sea as sea-green, foam, storm violet and low dawn gold from the left. Alexi is always seen from behind, his face not shown; never a body, a trident, a crown or a halo. The engraved line is added afterwards by code, not by the image model.",
+  "images": [
+    {
+      "id": "key-art-wide",
+      "kind": "key-art",
+      "title": "The boat on the wave, between the ordered sea and the wild",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic realism, a hand-finished film matte painting of an age-of-sail world. A small old single-masted wooden sailing boat climbs the face of one great sea-green wave. At the tiller, seen from behind, a heavy, sun-damaged, barefoot middle-aged sailor with a short grey beard, in a salt-stained linen shirt and rolled dark canvas trousers, one hand raised and turning in the air as if stirring it. The sea is split down the middle: the left half a flat, glassy, ink-blue calm with evenly spaced buoys in ruled rows; the right half wild water, foam and storm-violet cloud. Wide composition: the boat right of centre on the seam; the upper left third is calm, empty dawn sky, left clear. Low dawn-gold light from the left on the wave crest. Palette: ink-blue, sea-green, foam white, storm violet, dawn gold. His face is not shown; no trident, no crown, no halo, no text, no lettering, no watermark, no logo",
+      "job_id": "063bf76c-b6a4-4a96-96b2-7a3c1446965f",
+      "image": "keyart/key-art-wide.jpg"
+    },
+    {
+      "id": "key-art-tall",
+      "kind": "key-art",
+      "title": "The boat on the wave, between the ordered sea and the wild (tall)",
+      "aspect_ratio": "2:3",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic realism, a hand-finished film matte painting of an age-of-sail world. Tall composition. In the lower half of the frame, one small old single-masted wooden sailing boat with a patched brown sail climbs the face of one great sea-green wave, seen from behind and slightly above. Sitting inside the boat at the stern, holding the tiller, seen from behind, is a heavy, sun-damaged, barefoot middle-aged sailor with a short grey beard, in a salt-stained linen shirt and rolled dark canvas trousers, his free hand raised and turning in the air as if stirring it. He is in the boat, not in the water; there is only this one boat and no other ship. To the left of the boat the sea is a flat, glassy, ink-blue calm with evenly spaced round buoys in ruled rows; to the right it is wild water, foam and storm-violet cloud low on the horizon. The whole upper third of the frame is calm, empty dawn sky, left clear. Low dawn-gold light from the left on the wave crest. Palette: ink-blue, sea-green, foam white, storm violet, dawn gold. His face is not shown; no trident, no crown, no halo, no text, no lettering, no watermark, no logo",
+      "job_id": "40334440-9c3d-4a93-a8dc-24008a35f1a5",
+      "image": "keyart/key-art-tall.jpg"
+    },
+    {
+      "id": "ending-the-charter",
+      "kind": "ending",
+      "ending": "the-charter",
+      "title": "The Charter: a calm lane, and wild water beyond it",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic realism, a hand-finished film matte painting of an age-of-sail world. Dawn over a quiet crescent bay. A broad wooden ferry crosses one glassy, ink-blue lane of perfectly calm water, its small crew standing together on deck, heads lifted as if singing; just beyond the lane the open sea rises and falls on its own in sea-green swells and foam. At the tideline in the middle distance, small and seen from behind, stand a heavy, sun-damaged, barefoot middle-aged sailor with a short grey beard, in a salt-stained linen shirt and rolled dark canvas trousers, and beside him a young woman in her twenties with long dark hair and a pale dress stained with sand and salt, holding a thick sheaf of pages whose last sheet hangs longest. Dawn-gold light from the low left. Palette: dawn gold, ink-blue, sea-green, foam white. The lower quarter of the frame is smooth wet sand, empty and calm. No faces shown, no text, no lettering, no watermark, no logo",
+      "job_id": "9396903d-5943-473e-a404-554e6666db63",
+      "image": "keyart/ending-the-charter.jpg"
+    },
+    {
+      "id": "ending-no-lord",
+      "kind": "ending",
+      "ending": "no-lord",
+      "title": "No Lord: an ordinary man rowing in at dawn",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic realism, a hand-finished film matte painting of an age-of-sail world. Dawn on an ordinary sea, neither glassy nor stormy, small grey-green waves. In a small wooden dinghy, a heavy, sun-damaged, barefoot middle-aged sailor with a short grey beard, in a salt-stained linen shirt and rolled dark canvas trousers rows toward shore, seen from behind and slightly above, shoulders bent, hands wrapped in strips of rag on the worn oars. He does not look round. Far off an old fishing boat rides at anchor with a few small figures at its rail, and on the headland a white lamp tower stands dark and unlit, its buoys drifting out of line. Soft dawn-gold light from the low left, thin mist, nothing uncanny in the light: he is only a man. Palette: dawn gold, tea brown, muted sea-green, foam white. The lower quarter of the frame is plain open water, calm and empty. His face is not shown, no text, no lettering, no watermark, no logo",
+      "job_id": "c87e5773-4b63-4e41-a68b-8b6b9f0a5df2",
+      "image": "keyart/ending-no-lord.jpg",
+      "needs_review": "He rows standing and the dinghy fills the lower quarter, so there is no empty water for the caption; the far boat is a two-masted ship. The retry (job 59eafbb9-9eef-4721-9dea-ec995a21e06d) showed his face in profile, looking round, so the first image was kept."
+    },
+    {
+      "id": "ending-the-wild-sea",
+      "kind": "ending",
+      "ending": "the-wild-sea",
+      "title": "The Wild Sea: the storm he made, and the moorings lifting",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic realism, a hand-finished film matte painting of an age-of-sail world. A storm at sea under storm-violet cloud, a torn seam of dawn gold at the horizon. On the bowsprit of an old single-masted wooden sailing boat stands a heavy, sun-damaged, barefoot middle-aged sailor with a short grey beard, in a salt-stained linen shirt and rolled dark canvas trousers, seen from behind, feet planted, one arm raised and turning, a faint sea-green rim of light on his shoulders. Great sea-green waves and foam climb around the bow. Along the bottom of the frame runs a low, dark strip of harbour coast: stone quays, small moored boats lifting on their lines, lamps guttering, and one small figure, a woman in a pale dress, walking away along the quay with her back to the sea. Driving rain. Palette: storm violet, sea-green, foam white, dawn gold. The lower quarter stays dark and quiet. No trident, no crown, no wreckage, no text, no lettering, no watermark, no logo",
+      "job_id": "8a3c1523-dec5-459d-8d0a-eab4685b087c",
+      "image": "keyart/ending-the-wild-sea.jpg",
+      "needs_review": "The figure reads as a giant on a shapeless dark hull rather than a man on a bowsprit. The retry (job 922d4d8c-2e1c-4bea-ad3f-99766ec2fc1e) drew the boat but lost the woman on the quay and stood him on a spar, so the first image was kept."
+    },
+    {
+      "id": "ending-the-lords-peace",
+      "kind": "ending",
+      "ending": "the-lords-peace",
+      "title": "The Lord's Peace: he stirs the water, and it does nothing",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic realism, a hand-finished film matte painting of an age-of-sail world. Flat white noon on a clean sandy beach, almost no shadows. a heavy, sun-damaged, barefoot middle-aged sailor with a short grey beard, in a salt-stained linen shirt and rolled dark canvas trousers stands ankle-deep at the water's edge, seen from behind, head lowered; one hand turns a glass bottle, the other trails in the water at his ankles, stirring. The water does not answer: the sea is one sheet of ink-blue glass to the horizon, without a ripple or a line of foam. Across it, identical buoys with small bells stand at exactly even intervals in ruled rows, and a tidy white trading port sits too clean on the far shore. Flat lamp-white light from directly above. Palette: ink-blue, lamp white, tea brown, a little ledger red on the buoys. The lower quarter is pale, empty sand. His face is not shown, no text, no lettering, no watermark, no logo",
+      "job_id": "e31c3cb7-339a-42ab-a19a-b364f6f0ae20",
+      "image": "keyart/ending-the-lords-peace.jpg"
+    },
+    {
+      "id": "ending-paid-in-kind",
+      "kind": "ending",
+      "ending": "Paid in Kind",
+      "title": "Paid in Kind: all he asked for was a ripple",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Painterly cinematic realism, a hand-finished film matte painting of an age-of-sail world. Dawn at the tideline of a quiet bay, beside a standing stone. a heavy, sun-damaged, barefoot middle-aged sailor with a short grey beard, in a salt-stained linen shirt and rolled dark canvas trousers crouches at the water's edge, seen from behind, one finger turning in the shallows; a single small ring of ripples spreads from it and nothing more. Around his feet eight small scraps of old paper float in the foam, their ink dissolving in sea-green threads, the paper going blank. Out in the bay a white lamp tower still burns and a row of evenly spaced buoys still stands; beyond them the open water heaves wild, sea-green under storm-violet cloud, out of his reach. Dawn-gold light from the low left. Palette: dawn gold, sea-green, foam white, ink-blue. The lower quarter is smooth wet sand, calm and empty. His face is not shown; no halo, no glow, no text, no lettering, no watermark, no logo",
+      "job_id": "d955545b-e65d-434e-9ac1-93a2d10d3748",
+      "image": "keyart/ending-paid-in-kind.jpg",
+      "needs_review": "He is younger, dark-haired and partly in profile, the paper scraps carry text-like marks and lie on dark sand in the lower quarter. The retry (job 30e6f044-05ca-4ccc-99e1-754122c0de9a) had an awkward squat with the ripple between his legs, so the first image was kept."
+    }
+  ]
+}

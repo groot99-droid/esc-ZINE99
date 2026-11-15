@@ -1,0 +1,83 @@
+{
+  "game": "stuffed-ones",
+  "style": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream) with bone-white thread, warm practical light. Small handmade wool-felt toys with visible fibres, cotton thread with a sheen and button eyes that catch light; worn knotty pine, rag rugs, small-flower wallpaper. One practical light source per image at 3200 to 4500 K; the second light is a faint amber warmth under a toy, the only saturated colour, deepening to red with hunger. Night is blue-grey, never black. Horror is suggested: nothing emptied, no wounds, no faces of the keepers.",
+  "images": [
+    {
+      "id": "key-art-wide",
+      "kind": "key-art",
+      "title": "The shelf with one empty place",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream) with bone-white thread, warm practical light. A worn pine shelf unit against a log cabin wall, seen straight on in a wide frame, two long shelves in the lower two thirds, each a single tight row of small handmade wool-felt animals with button eyes, bears, rabbits, cats and dogs, shoulder to shoulder. On the upper shelf, right of centre, the row is broken by one conspicuous empty place: bare wood where exactly one toy is missing, a clean toy-sized patch in the grey dust, the neighbours on either side leaning slightly toward it. The upper third of the frame is calm: bare knotty pine wall and faded small-flower wallpaper in soft shadow, left empty. Light rakes from the left, the lamp itself not in frame; beneath the toys a faint amber warmth on the wood, the only saturated colour. Dust, cotton thread, buttons catching light. No people, no lamp in frame, no text, no lettering, no watermark, no logo",
+      "job_id": "e226674a-0195-49f1-a0fd-ef47f0f088a1",
+      "image": "keyart/key-art-wide.jpg"
+    },
+    {
+      "id": "key-art-tall",
+      "kind": "key-art",
+      "title": "The shelf with one empty place (tall)",
+      "aspect_ratio": "2:3",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream) with bone-white thread, warm practical light. Vertical composition. A tall worn pine shelf unit in a log cabin, seen straight on, four shelves stacked through the lower two thirds of the frame, crowded with small handmade wool-felt animals with button eyes, bears, rabbits, cats and dogs, arranged as if stopped mid-conversation. On the second shelf from the top, at the centre, one clean gap in the dust the width of a single toy. The upper third is calm: bare knotty pine wall and faded small-flower wallpaper in soft shadow, left empty for a title. A single lamp out of frame at left rakes light across the felt fibres; beneath the toys a faint amber warmth on the wood that no lamp explains, the only saturated colour. Dust, cotton thread, buttons catching light. No people, no text, no lettering, no watermark, no logo",
+      "job_id": "c3855188-27cc-4300-9cc8-21123bc45850",
+      "image": "keyart/key-art-tall.jpg"
+    },
+    {
+      "id": "ending-keeper",
+      "kind": "ending",
+      "ending": "keeper",
+      "title": "The Keeper: the porch",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream) with bone-white thread, warm practical light. Afternoon on the plank porch of a log cabin, three figures seen from behind in the upper frame, facing a gravel forest road where an old station wagon approaches, small among tall pines. In the middle stands a young adult in a cedar-brown wool jacket and jeans, hands held carefully. At left a white-haired woman in her eighties in a moss-green cardigan and long rust skirt sits in a ladder-back chair. At right stands a grey-haired woman in her seventies in a sky-grey dress with a high buttoned cream collar. Behind them a cabin window shows a pine shelf with four felt toys: a bear, a rabbit, a dog, a bear, a faint amber warmth beneath them. Flat daylight. The lower quarter is calm bare porch boards in shade. No faces, no text, no lettering, no watermark, no logo",
+      "job_id": "805c180a-2133-4ca8-a3c4-2a64fe8ea9cb",
+      "image": "keyart/ending-keeper.jpg"
+    },
+    {
+      "id": "ending-warning",
+      "kind": "ending",
+      "ending": "warning",
+      "title": "The Warning: unpicked",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream) with bone-white thread, warm practical light. A scrubbed pine kitchen table in a cabin, seen low at table height in morning window light. In the upper middle the careful hands of a grey-haired woman in her seventies in a sky-grey dress with a high buttoned cream collar, only hands and collar in frame, hold small embroidery scissors and draw out a long bone-white thread. On the table lie the flat cut pieces of a small hand-sewn grey felt cat with mismatched button eyes and a bone-white chest seam, laid apart like a sewing pattern, with two loose buttons. Beyond, out of focus, a cream refrigerator with one sheet of paper under a magnet, and a window onto an empty gravel drive. The edges of the view bleach toward white. The lower quarter is calm bare table wood. No face, no text, no lettering, no watermark, no logo",
+      "job_id": "37ce0787-6742-40ca-a200-7a5f828a2a3e",
+      "image": "keyart/ending-warning.jpg"
+    },
+    {
+      "id": "ending-empty-toy",
+      "kind": "ending",
+      "ending": "empty_toy",
+      "title": "The Empty Toy: awake and still",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream) with bone-white thread, warm practical light. Morning on a worn, solid pine shelf in a log cabin, seen level with the shelf. At the centre sits one small stuffed hand-sewn grey felt cat, the same small size as the other toys, with mismatched button eyes and a bone-white chest seam, upright and perfectly still, its felt pale, a film of grey dust on its head and shoulders. The shelf around it is coated in grey dust, with two clean bare-wood patches beside it where toys once sat. At the far right sit three newer felt toys, a rabbit, a bear and a cat, with a faint amber warmth on the wood beneath them, none beneath the grey cat. At the left edge an elderly woman's hand in a moss-green cardigan sleeve holds a feather duster low over the shelf, well short of the cat, a clear space between duster and cat. Cool window light. The lower quarter is the calm dark front edge of the shelf. No face, no holes in the shelf, no text, no lettering, no watermark, no logo",
+      "job_id": "981a7e99-b539-4f04-b0d0-7d903bcac693",
+      "image": "keyart/ending-empty-toy.jpg",
+      "needs_review": "Retry kept (duster now clear of the cat, solid shelf). The grey toy reads bear-like with matching eyes and no clear chest seam, the gaps are pale wood tiles rather than dust patches, and there is no amber under the newer toys."
+    },
+    {
+      "id": "ending-cycle",
+      "kind": "ending",
+      "ending": "cycle",
+      "title": "The Cycle: on the shelf, waiting",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream) with bone-white thread, warm practical light. A pine shelf in a log cabin living room in late afternoon, seen level with the shelf. At the left, in the foreground, a small hand-sewn grey felt cat with mismatched button eyes and a bone-white chest seam sits on its shelf, waiting. Along the same shelf sit three new felt toys, a rabbit, a bear and a cat, freshly sewn, their clean button eyes staring back at it. Behind them, out of focus, a porch window with dusty sunlight and the pale blurred shape of a car on gravel among pines. One lamp out of frame at right; a low amber warmth, deepening toward red, glows on the wood beneath the grey cat, the only saturated colour. The lower quarter is the calm shadowed front edge of the shelf. No people, no text, no lettering, no watermark, no logo",
+      "job_id": "d8b6d9c1-b36d-48f5-a25b-a84e937cce81",
+      "image": "keyart/ending-cycle.jpg"
+    },
+    {
+      "id": "ending-the-page",
+      "kind": "ending",
+      "ending": "The Page",
+      "title": "The Page: down here",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 1970s folk-horror film still, 35mm film grain, muted palette of cedar brown, attic-dust beige and faded felt colours (moss, rust, sky, cream) with bone-white thread. A round stone cellar under a cabin with a low dome, seen from a high angle looking down at the floor. The walls are hung with plain dark cloth embroidered with rows of tiny abstract stitched knots and crosses, almost lost in darkness, no writing. On the stone floor a ring of flat, empty, unstuffed felt animal shapes laid edge to edge like a circle of pressed leaves. Resting on the floor inside the ring, small in the upper middle of the frame, a small hand-sewn grey felt cat with mismatched button eyes and a bone-white chest seam lies on its side on the stone, alone, limp. A slack bone-white thread trails across the floor from a needle beside the cat to the foot of a wooden lectern at the edge of the ring, where a book of hand-sewn blank fabric pages lies open, one new pale linen page stitched in. One thin shaft of grey light falls from an open trapdoor above onto the cat; no amber glow anywhere. The lower quarter is calm bare stone floor. Nothing hangs or floats in the air. No people, no text, no lettering, no letters, no watermark, no logo",
+      "job_id": "41fbef75-b250-4923-8ce7-b0232c61bf32",
+      "image": "keyart/ending-the-page.jpg",
+      "needs_review": "Retry kept (cat on the floor, abstract stitches, no lettering). The open book lies on the floor in the lower-left calm space instead of on the lectern, and the cat sits on the ring rather than inside it."
+    }
+  ]
+}
