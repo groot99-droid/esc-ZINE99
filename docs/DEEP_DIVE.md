@@ -8,8 +8,10 @@ This page is the collection-level view. Each game has its own full plan in
 `games/<slug>/DEEP_DIVE.md` (about 3 600 words each): a diagnosis, the story developed, obstacles and
 puzzles for every mode, an art plan, a roadmap, and a register of everything invented.
 
-**Nothing here is built yet, and nothing here is canon.** Every new character, secret, scene and
-ending is a proposal written for the games. The source works are untouched, every `as_written`
+**Accepted by the author on 2026-11-15** ("i accept, make the 1444 drawn by code images"): the proposals here and in the ten game plans stand, and the code-drawn art is being made first (`tools/art/`, `games/<slug>/art/`). `DESIGN.md` and `data/` have not been updated to them yet.
+
+**Nothing here is built yet.** Every new character, secret, scene and
+ending was written for the games, not taken from the source. The source works are untouched, every `as_written`
 ending stays, and each plan ends with an additions register for the author to approve or strike.
 
 ## 1. What is wrong, in all ten at once
