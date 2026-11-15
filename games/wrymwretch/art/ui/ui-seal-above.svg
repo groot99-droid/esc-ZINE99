@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="ui-seal-above-t ui-seal-above-d">
+<title id="ui-seal-above-t">Realm seal: Above</title>
+<desc id="ui-seal-above-d">Realm seal for the HUD and the Record: the Celestial tribe's emblem in carved bone on a silver-ringed boss, lit in the Above's colour.</desc>
+<defs><radialGradient id="ui-seal-above-rg1" cx="0.5" cy="0.35" r="0.75"><stop offset="0%" stop-color="#1d2248" stop-opacity="0.8"/><stop offset="100%" stop-color="#1d2248" stop-opacity="0"/></radialGradient><radialGradient id="ui-seal-above-rg2" cx="0.5" cy="0.5" r="0.6"><stop offset="0%" stop-color="#E7C566" stop-opacity="0.5"/><stop offset="50%" stop-color="#E7C566" stop-opacity="0.1"/><stop offset="100%" stop-color="#E7C566" stop-opacity="0"/></radialGradient><linearGradient id="ui-seal-above-lg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fbf7ec"/><stop offset="45%" stop-color="#E9E2D0"/><stop offset="100%" stop-color="#a8a08a"/></linearGradient><clipPath id="ui-seal-above-clip4"><circle cx="100" cy="100" r="88"/></clipPath><filter id="ui-seal-above-iv5" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9 0.03" numOctaves="2" seed="52"/><feColorMatrix values="0 0 0 0 0.25  0 0 0 0 0.22  0 0 0 0 0.16  0 0 0 0.7 -0.2"/></filter><linearGradient id="ui-seal-above-lg6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e4e8ee"/><stop offset="40%" stop-color="#8E97A3"/><stop offset="75%" stop-color="#4c5361"/><stop offset="100%" stop-color="#a7afba"/></linearGradient><radialGradient id="ui-seal-above-rg7" cx="0.5" cy="0.5" r="0.6"><stop offset="0%" stop-color="#968042" stop-opacity="1"/><stop offset="100%" stop-color="#0b0d1a" stop-opacity="1"/></radialGradient></defs>
+<rect x="0" y="0" width="200" height="200" fill="#0B0D1A"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#ui-seal-above-rg1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#ui-seal-above-rg2)"/>
+<path d="M163,58.5a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M196.5,95a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M12.1,14a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M173.4,165.5a0.4,0.4 0 1,0 0.9,0a0.4,0.4 0 1,0 -0.9,0M189.9,39a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M176.2,152a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M186.8,126.9a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M109.7,63.1a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M96.2,27.2a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M0.7,18.4a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M169.4,46.4a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M79.5,60.5a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M94,35.7a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M71.7,199.4a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M177.9,164.4a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M12.8,61.3a1.1,1.1 0 1,0 2.3,0a1.1,1.1 0 1,0 -2.3,0M73,49a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M168,14.2a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M101,139.3a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M182,134.3a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M72.6,75.6a1.1,1.1 0 1,0 2.3,0a1.1,1.1 0 1,0 -2.3,0M83.2,74.6a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M3.9,187.2a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M187.8,152.3a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M168.8,117.5a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M36.2,125.9a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M140.2,74a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M78.6,101.5a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M178.7,166.1a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M19.1,136.6a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M146.9,111.4a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M181,32.6a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M53.5,95.6a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M6.6,63.9a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M114.4,15.2a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M176.2,100.7a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M156.9,135.9a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M189.2,115.7a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M103,142.8a0.4,0.4 0 1,0 0.9,0a0.4,0.4 0 1,0 -0.9,0M197.5,128.9a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0" fill="#E9E2D0" opacity="0.7"/>
+<path d="M34.4,48.6a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M92.7,118.4a1.6,1.6 0 1,0 3.1,0a1.6,1.6 0 1,0 -3.1,0M97.2,166.2a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M14.2,128.3a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M115.3,48.1a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M193.5,115.8a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M146.6,73.9a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M87.9,0.4a1.5,1.5 0 1,0 3,0a1.5,1.5 0 1,0 -3,0M158.1,61.7a1.6,1.6 0 1,0 3.1,0a1.6,1.6 0 1,0 -3.1,0M78.2,128.7a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M71.4,3.3a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M126.5,85.6a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M91.8,131.8a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0" fill="#A9C7E8" opacity="0.6"/>
+<polygon points="154.2,172.8 155,177 159.3,177.8 155,178.6 154.2,182.8 153.4,178.6 149.2,177.8 153.4,177" fill="#f6f3ea" opacity="0.8"/>
+<path d="M12,100 a88,88 0 1,0 176,0 a88,88 0 1,0 -176,0z" fill="#05060d" opacity="0.8" transform="translate(3,3.9)"/>
+<path d="M12,100 a88,88 0 1,0 176,0 a88,88 0 1,0 -176,0z" fill="#ffffff" opacity="0.9" transform="translate(-1.7,-2.2)"/>
+<path d="M12,100 a88,88 0 1,0 176,0 a88,88 0 1,0 -176,0z" fill="url(#ui-seal-above-lg3)"/>
+<rect x="12" y="12" width="176" height="176" filter="url(#ui-seal-above-iv5)" clip-path="url(#ui-seal-above-clip4)"/>
+<circle cx="100" cy="100" r="70" fill="none" stroke="url(#ui-seal-above-lg6)" stroke-width="9"/>
+<circle cx="100" cy="100" r="64" fill="url(#ui-seal-above-rg7)"/>
+<path d="M0,-1 L.22,-.22 L1,0 L.22,.22 L0,1 L-.22,.22 L-1,0 L-.22,-.22Z" fill="#05060d" opacity="0.7" transform="translate(102.4,103.2) scale(40)"/>
+<path d="M0,-1 L.22,-.22 L1,0 L.22,.22 L0,1 L-.22,.22 L-1,0 L-.22,-.22Z" fill="#ffffff" opacity="0.8" transform="translate(98.6,98) scale(40)"/>
+<path d="M0,-1 L.22,-.22 L1,0 L.22,.22 L0,1 L-.22,.22 L-1,0 L-.22,-.22Z" fill="#E9E2D0" transform="translate(100,100) scale(40)"/>
+<path d="M0,-.5 V.5 M-.5,0 H.5" fill="none" stroke="#17151A" stroke-width="0.1" stroke-linecap="round" transform="translate(100,100) scale(40)" opacity="0.8"/>
+<path d="M0,-1 L.22,-.22 L1,0 L.22,.22 L0,1 L-.22,.22 L-1,0 L-.22,-.22Z" fill="#E7C566" opacity="0.3" transform="translate(100,100) scale(40)"/>
+<circle cx="176.8" cy="120.6" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="177.6" cy="121.6" r="2.6" fill="#59606c"/>
+<circle cx="156.2" cy="156.2" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="157" cy="157.2" r="2.6" fill="#59606c"/>
+<circle cx="120.6" cy="176.8" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="121.4" cy="177.8" r="2.6" fill="#59606c"/>
+<circle cx="79.4" cy="176.8" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="80.2" cy="177.8" r="2.6" fill="#59606c"/>
+<circle cx="43.8" cy="156.2" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="44.6" cy="157.2" r="2.6" fill="#59606c"/>
+<circle cx="23.2" cy="120.6" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="24" cy="121.6" r="2.6" fill="#59606c"/>
+<circle cx="23.2" cy="79.4" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="24" cy="80.4" r="2.6" fill="#59606c"/>
+<circle cx="43.8" cy="43.8" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="44.6" cy="44.8" r="2.6" fill="#59606c"/>
+<circle cx="79.4" cy="23.2" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="80.2" cy="24.2" r="2.6" fill="#59606c"/>
+<circle cx="120.6" cy="23.2" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="121.4" cy="24.2" r="2.6" fill="#59606c"/>
+<circle cx="156.2" cy="43.8" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="157" cy="44.8" r="2.6" fill="#59606c"/>
+<circle cx="176.8" cy="79.4" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="177.6" cy="80.4" r="2.6" fill="#59606c"/>
+<path d="M37.2,154.5L45.7,148.1L49.9,141.2L53.1,133.6L54.3,128.8L52.5,120.6M45.7,148.1L50.4,152.5L56.3,159.2M140.5,107.4L135.5,110.2L125.4,113.8L120.4,114L115.6,111.7L108.9,113L103.1,114.1L95.2,117.6L89.1,120.9M135.5,110.2L129.7,107.2L124.9,97.9L116.9,92.8M129.7,107.2L130.2,98.1M108.9,113L102.4,121.5M103.1,114.1L100.3,123.1M89.8,23.3L84,21.2L73.1,22.4L65.6,22.4L60,27.2L50.8,33.2" fill="none" stroke="#17151A" stroke-width="0.9" stroke-linejoin="round" opacity="0.8" clip-path="url(#ui-seal-above-clip4)"/>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="ui-seal-east-t ui-seal-east-d">
+<title id="ui-seal-east-t">Realm seal: East</title>
+<desc id="ui-seal-east-d">Realm seal for the HUD and the Record: the Water tribe's emblem in carved bone on a silver-ringed boss, lit in the East's colour.</desc>
+<defs><radialGradient id="ui-seal-east-rg1" cx="0.5" cy="0.35" r="0.75"><stop offset="0%" stop-color="#1d2248" stop-opacity="0.8"/><stop offset="100%" stop-color="#1d2248" stop-opacity="0"/></radialGradient><radialGradient id="ui-seal-east-rg2" cx="0.5" cy="0.5" r="0.6"><stop offset="0%" stop-color="#2F7FA8" stop-opacity="0.5"/><stop offset="50%" stop-color="#2F7FA8" stop-opacity="0.1"/><stop offset="100%" stop-color="#2F7FA8" stop-opacity="0"/></radialGradient><linearGradient id="ui-seal-east-lg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fbf7ec"/><stop offset="45%" stop-color="#E9E2D0"/><stop offset="100%" stop-color="#a8a08a"/></linearGradient><clipPath id="ui-seal-east-clip4"><circle cx="100" cy="100" r="88"/></clipPath><filter id="ui-seal-east-iv5" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9 0.03" numOctaves="2" seed="11"/><feColorMatrix values="0 0 0 0 0.25  0 0 0 0 0.22  0 0 0 0 0.16  0 0 0 0.7 -0.2"/></filter><linearGradient id="ui-seal-east-lg6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e4e8ee"/><stop offset="40%" stop-color="#8E97A3"/><stop offset="75%" stop-color="#4c5361"/><stop offset="100%" stop-color="#a7afba"/></linearGradient><radialGradient id="ui-seal-east-rg7" cx="0.5" cy="0.5" r="0.6"><stop offset="0%" stop-color="#1e526d" stop-opacity="1"/><stop offset="100%" stop-color="#0b0d1a" stop-opacity="1"/></radialGradient></defs>
+<rect x="0" y="0" width="200" height="200" fill="#0B0D1A"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#ui-seal-east-rg1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#ui-seal-east-rg2)"/>
+<path d="M126.6,31.4a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M70.9,73.8a0.4,0.4 0 1,0 0.9,0a0.4,0.4 0 1,0 -0.9,0M48.7,95.6a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M126.4,76.1a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M128.5,41a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M80.4,110.6a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M165.5,25.6a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M75.1,6.5a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M49.6,100.6a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M98.4,183.8a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M62.9,57.2a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M3.7,47.4a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M180.8,197.6a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M159.8,91.7a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M161.6,138.1a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M83.7,84.6a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M32.5,24.7a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M129.7,22.7a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M151.4,55.8a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M117.5,188.2a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M46.8,109.8a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M88,101.2a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M94.7,148.3a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M191.4,148.4a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M159.2,188.9a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M91.7,115a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M103.7,166.5a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M50.6,45.2a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M165.2,45.5a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M158.1,77.3a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M140.7,22.1a1.2,1.2 0 1,0 2.3,0a1.2,1.2 0 1,0 -2.3,0M138.7,110.8a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M52.2,2.2a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M62.4,175.9a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M86,179a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M105,49.4a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M5.6,35a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M88.3,173.4a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M10.1,97.9a0.4,0.4 0 1,0 0.9,0a0.4,0.4 0 1,0 -0.9,0M72.7,29.8a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0" fill="#E9E2D0" opacity="0.7"/>
+<path d="M145.2,83.8a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M99,107.3a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M184.4,98.4a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M162.9,47.2a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M13.6,192.4a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M38.4,49.8a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M67.1,25.6a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M188.8,168a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M28,89.8a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M170.7,15.9a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M83.2,14.6a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M35.1,140.5a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M149.2,96a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0" fill="#A9C7E8" opacity="0.6"/>
+<polygon points="188.6,16.8 189.4,21 193.6,21.8 189.4,22.6 188.6,26.8 187.8,22.6 183.6,21.8 187.8,21" fill="#f6f3ea" opacity="0.8"/>
+<path d="M12,100 a88,88 0 1,0 176,0 a88,88 0 1,0 -176,0z" fill="#05060d" opacity="0.8" transform="translate(3,3.9)"/>
+<path d="M12,100 a88,88 0 1,0 176,0 a88,88 0 1,0 -176,0z" fill="#ffffff" opacity="0.9" transform="translate(-1.7,-2.2)"/>
+<path d="M12,100 a88,88 0 1,0 176,0 a88,88 0 1,0 -176,0z" fill="url(#ui-seal-east-lg3)"/>
+<rect x="12" y="12" width="176" height="176" filter="url(#ui-seal-east-iv5)" clip-path="url(#ui-seal-east-clip4)"/>
+<circle cx="100" cy="100" r="70" fill="none" stroke="url(#ui-seal-east-lg6)" stroke-width="9"/>
+<circle cx="100" cy="100" r="64" fill="url(#ui-seal-east-rg7)"/>
+<path d="M0,-1 Q.95,.15 .56,.62 A.79,.79 0 0 1 -.56,.62 Q-.95,.15 0,-1Z" fill="#05060d" opacity="0.7" transform="translate(102.4,103.2) scale(40)"/>
+<path d="M0,-1 Q.95,.15 .56,.62 A.79,.79 0 0 1 -.56,.62 Q-.95,.15 0,-1Z" fill="#ffffff" opacity="0.8" transform="translate(98.6,98) scale(40)"/>
+<path d="M0,-1 Q.95,.15 .56,.62 A.79,.79 0 0 1 -.56,.62 Q-.95,.15 0,-1Z" fill="#E9E2D0" transform="translate(100,100) scale(40)"/>
+<path d="M-.3,.45 Q0,.7 .3,.45" fill="none" stroke="#17151A" stroke-width="0.1" stroke-linecap="round" transform="translate(100,100) scale(40)" opacity="0.8"/>
+<path d="M0,-1 Q.95,.15 .56,.62 A.79,.79 0 0 1 -.56,.62 Q-.95,.15 0,-1Z" fill="#2F7FA8" opacity="0.3" transform="translate(100,100) scale(40)"/>
+<circle cx="176.8" cy="120.6" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="177.6" cy="121.6" r="2.6" fill="#59606c"/>
+<circle cx="156.2" cy="156.2" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="157" cy="157.2" r="2.6" fill="#59606c"/>
+<circle cx="120.6" cy="176.8" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="121.4" cy="177.8" r="2.6" fill="#59606c"/>
+<circle cx="79.4" cy="176.8" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="80.2" cy="177.8" r="2.6" fill="#59606c"/>
+<circle cx="43.8" cy="156.2" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="44.6" cy="157.2" r="2.6" fill="#59606c"/>
+<circle cx="23.2" cy="120.6" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="24" cy="121.6" r="2.6" fill="#59606c"/>
+<circle cx="23.2" cy="79.4" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="24" cy="80.4" r="2.6" fill="#59606c"/>
+<circle cx="43.8" cy="43.8" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="44.6" cy="44.8" r="2.6" fill="#59606c"/>
+<circle cx="79.4" cy="23.2" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="80.2" cy="24.2" r="2.6" fill="#59606c"/>
+<circle cx="120.6" cy="23.2" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="121.4" cy="24.2" r="2.6" fill="#59606c"/>
+<circle cx="156.2" cy="43.8" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="157" cy="44.8" r="2.6" fill="#59606c"/>
+<circle cx="176.8" cy="79.4" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="177.6" cy="80.4" r="2.6" fill="#59606c"/>
+<path d="M93.2,134.4L85.4,136.3L78,138.4L68.8,136.2L61.9,138.4L51.5,135.7L48,131.9L47,125.5L43.9,120.5M68.8,136.2L69.8,129.7L73.5,122.9L82.1,116.5M48,131.9L39.5,132.9M47,125.5L40.1,123.8M15.2,113.6L11.8,105.2L8.2,101.1L-1.7,99L-10.9,93.8L-15.6,89.4L-19.2,86L-25.3,82.5M158.7,16.5L164.6,17.3L173.9,12.1L177.2,7.3L178.1,-1.1L173.6,-10.8L170.6,-21.4M178.1,-1.1L175.8,-8.2L175.8,-15.2M173.6,-10.8L165.9,-14.2M165.9,-14.2" fill="none" stroke="#17151A" stroke-width="0.9" stroke-linejoin="round" opacity="0.8" clip-path="url(#ui-seal-east-clip4)"/>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="ui-seal-south-t ui-seal-south-d">
+<title id="ui-seal-south-t">Realm seal: South</title>
+<desc id="ui-seal-south-d">Realm seal for the HUD and the Record: the Earth tribe's emblem in carved bone on a silver-ringed boss, lit in the South's colour.</desc>
+<defs><radialGradient id="ui-seal-south-rg1" cx="0.5" cy="0.35" r="0.75"><stop offset="0%" stop-color="#1d2248" stop-opacity="0.8"/><stop offset="100%" stop-color="#1d2248" stop-opacity="0"/></radialGradient><radialGradient id="ui-seal-south-rg2" cx="0.5" cy="0.5" r="0.6"><stop offset="0%" stop-color="#E0762E" stop-opacity="0.5"/><stop offset="50%" stop-color="#E0762E" stop-opacity="0.1"/><stop offset="100%" stop-color="#E0762E" stop-opacity="0"/></radialGradient><linearGradient id="ui-seal-south-lg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fbf7ec"/><stop offset="45%" stop-color="#E9E2D0"/><stop offset="100%" stop-color="#a8a08a"/></linearGradient><clipPath id="ui-seal-south-clip4"><circle cx="100" cy="100" r="88"/></clipPath><filter id="ui-seal-south-iv5" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9 0.03" numOctaves="2" seed="841"/><feColorMatrix values="0 0 0 0 0.25  0 0 0 0 0.22  0 0 0 0 0.16  0 0 0 0.7 -0.2"/></filter><linearGradient id="ui-seal-south-lg6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e4e8ee"/><stop offset="40%" stop-color="#8E97A3"/><stop offset="75%" stop-color="#4c5361"/><stop offset="100%" stop-color="#a7afba"/></linearGradient><radialGradient id="ui-seal-south-rg7" cx="0.5" cy="0.5" r="0.6"><stop offset="0%" stop-color="#914c1d" stop-opacity="1"/><stop offset="100%" stop-color="#0b0d1a" stop-opacity="1"/></radialGradient></defs>
+<rect x="0" y="0" width="200" height="200" fill="#0B0D1A"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#ui-seal-south-rg1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#ui-seal-south-rg2)"/>
+<path d="M120.3,57.9a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M69.8,69.9a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M172.4,175.6a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M64.4,128.4a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M198.4,197.4a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M47.3,17a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M3.5,105.8a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M7.2,140.8a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M28.3,18.2a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M124.2,156a0.4,0.4 0 1,0 0.9,0a0.4,0.4 0 1,0 -0.9,0M106.1,27.9a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M26,16.9a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M18.2,35.3a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M156,94.3a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M170.8,117.4a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M194,71.8a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M165.3,54.9a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M6.4,196.5a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M78,79.5a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M47.5,66.1a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M183.6,24.7a0.4,0.4 0 1,0 0.9,0a0.4,0.4 0 1,0 -0.9,0M99.5,77.9a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M157.1,136.8a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M92.5,174.7a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M11,85a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M139.7,73.7a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M161.9,94.6a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M97.7,11.7a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M196.9,152.9a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M39.1,19.2a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M152.8,17.8a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M173.7,41.5a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M140.3,74.7a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M54.6,142.8a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M45.6,26.3a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M68.7,11.9a1.1,1.1 0 1,0 2.3,0a1.1,1.1 0 1,0 -2.3,0M51.5,64.2a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M51.4,35.1a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M193.4,160.5a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M155.5,89.6a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0" fill="#E9E2D0" opacity="0.7"/>
+<path d="M164.8,80.1a1.4,1.4 0 1,0 2.9,0a1.4,1.4 0 1,0 -2.9,0M84.5,40.5a1.5,1.5 0 1,0 2.9,0a1.5,1.5 0 1,0 -2.9,0M143.4,12.2a1.6,1.6 0 1,0 3.1,0a1.6,1.6 0 1,0 -3.1,0M131.2,173.9a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M130.9,29.4a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M100.9,157.1a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M86.8,121.8a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M71.3,194.4a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M31.7,90.2a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M28.7,130.1a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M21.5,93.3a1.4,1.4 0 1,0 2.9,0a1.4,1.4 0 1,0 -2.9,0M25.5,162.8a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M139.6,171.8a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0" fill="#A9C7E8" opacity="0.6"/>
+<polygon points="26.5,73.5 27.4,78.4 32.2,79.2 27.4,80.1 26.5,85 25.6,80.1 20.8,79.2 25.6,78.4" fill="#f6f3ea" opacity="0.8"/>
+<path d="M12,100 a88,88 0 1,0 176,0 a88,88 0 1,0 -176,0z" fill="#05060d" opacity="0.8" transform="translate(3,3.9)"/>
+<path d="M12,100 a88,88 0 1,0 176,0 a88,88 0 1,0 -176,0z" fill="#ffffff" opacity="0.9" transform="translate(-1.7,-2.2)"/>
+<path d="M12,100 a88,88 0 1,0 176,0 a88,88 0 1,0 -176,0z" fill="url(#ui-seal-south-lg3)"/>
+<rect x="12" y="12" width="176" height="176" filter="url(#ui-seal-south-iv5)" clip-path="url(#ui-seal-south-clip4)"/>
+<circle cx="100" cy="100" r="70" fill="none" stroke="url(#ui-seal-south-lg6)" stroke-width="9"/>
+<circle cx="100" cy="100" r="64" fill="url(#ui-seal-south-rg7)"/>
+<path d="M0,-1 L.62,-.42 L.62,.42 L0,1 L-.62,.42 L-.62,-.42Z" fill="#05060d" opacity="0.7" transform="translate(102.4,103.2) scale(40)"/>
+<path d="M0,-1 L.62,-.42 L.62,.42 L0,1 L-.62,.42 L-.62,-.42Z" fill="#ffffff" opacity="0.8" transform="translate(98.6,98) scale(40)"/>
+<path d="M0,-1 L.62,-.42 L.62,.42 L0,1 L-.62,.42 L-.62,-.42Z" fill="#E9E2D0" transform="translate(100,100) scale(40)"/>
+<path d="M-.62,-.42 L0,-.05 L.62,-.42 M0,-.05 V1" fill="none" stroke="#17151A" stroke-width="0.1" stroke-linecap="round" transform="translate(100,100) scale(40)" opacity="0.8"/>
+<path d="M0,-1 L.62,-.42 L.62,.42 L0,1 L-.62,.42 L-.62,-.42Z" fill="#E0762E" opacity="0.3" transform="translate(100,100) scale(40)"/>
+<circle cx="176.8" cy="120.6" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="177.6" cy="121.6" r="2.6" fill="#59606c"/>
+<circle cx="156.2" cy="156.2" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="157" cy="157.2" r="2.6" fill="#59606c"/>
+<circle cx="120.6" cy="176.8" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="121.4" cy="177.8" r="2.6" fill="#59606c"/>
+<circle cx="79.4" cy="176.8" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="80.2" cy="177.8" r="2.6" fill="#59606c"/>
+<circle cx="43.8" cy="156.2" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="44.6" cy="157.2" r="2.6" fill="#59606c"/>
+<circle cx="23.2" cy="120.6" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="24" cy="121.6" r="2.6" fill="#59606c"/>
+<circle cx="23.2" cy="79.4" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="24" cy="80.4" r="2.6" fill="#59606c"/>
+<circle cx="43.8" cy="43.8" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="44.6" cy="44.8" r="2.6" fill="#59606c"/>
+<circle cx="79.4" cy="23.2" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="80.2" cy="24.2" r="2.6" fill="#59606c"/>
+<circle cx="120.6" cy="23.2" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="121.4" cy="24.2" r="2.6" fill="#59606c"/>
+<circle cx="156.2" cy="43.8" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="157" cy="44.8" r="2.6" fill="#59606c"/>
+<circle cx="176.8" cy="79.4" r="2.6" fill="#fff" opacity="0.9"/>
+<circle cx="177.6" cy="80.4" r="2.6" fill="#59606c"/>
+<path d="M85.2,160.4L78.7,166.3L75.6,171.7L71.3,179.3L71.3,185.2L72.7,189.8L70.7,197.3M70.7,197.3M126.6,113.7L127.3,103L128.6,98.2L134.4,91.1M119.9,158.3L114.9,157.3L109.5,155.6L101.7,152.9L94.2,152.5L88.4,149.6" fill="none" stroke="#17151A" stroke-width="0.9" stroke-linejoin="round" opacity="0.8" clip-path="url(#ui-seal-south-clip4)"/>
+</svg>
