@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 200" width="1600" height="200" role="img" aria-labelledby="coast-strait-t coast-strait-d">
+<title id="coast-strait-t">Coast strip: The Lamplit Strait</title>
+<desc id="coast-strait-d">The coast strip for The Lamplit Strait, in silhouette: a chain of Company lights on wreckers' rocks, the ribs of old wrecks between them, the keeper at his door.</desc>
+<defs><filter id="coast-strait-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="28"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><pattern id="coast-strait-pat2" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(0)"><path d="M0,2 H4" stroke="#6B4A2B" stroke-width="0.5" opacity="0.1"/></pattern><pattern id="coast-strait-pat3" width="47" height="47" patternUnits="userSpaceOnUse" patternTransform="rotate(90)"><path d="M0,23.5 H47" stroke="#6B4A2B" stroke-width="0.7" opacity="0.1"/></pattern><clipPath id="coast-strait-clip4"><rect x="20" y="14" width="1560" height="172"/></clipPath><linearGradient id="coast-strait-lg5" x1="1" y1="0" x2="0" y2="0"><stop offset="0%" stop-color="#E7A93B"/><stop offset="100%" stop-color="#EFE6D0"/></linearGradient><linearGradient id="coast-strait-lg6" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#E7A93B"/><stop offset="100%" stop-color="#EFE6D0"/></linearGradient><linearGradient id="coast-strait-lg7" x1="1" y1="0" x2="0" y2="0"><stop offset="0%" stop-color="#E7A93B"/><stop offset="100%" stop-color="#EFE6D0"/></linearGradient><linearGradient id="coast-strait-lg8" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#E7A93B"/><stop offset="100%" stop-color="#EFE6D0"/></linearGradient><linearGradient id="coast-strait-lg9" x1="1" y1="0" x2="0" y2="0"><stop offset="0%" stop-color="#E7A93B"/><stop offset="100%" stop-color="#EFE6D0"/></linearGradient><linearGradient id="coast-strait-lg10" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#E7A93B"/><stop offset="100%" stop-color="#EFE6D0"/></linearGradient></defs>
+<rect x="0" y="0" width="1600" height="200" fill="#EFE6D0"/>
+<rect x="0" y="0" width="1600" height="200" filter="url(#coast-strait-grain1)"/>
+<rect x="0" y="0" width="1600" height="200" fill="url(#coast-strait-pat2)"/>
+<rect x="0" y="0" width="1600" height="200" fill="url(#coast-strait-pat3)"/>
+<rect x="20" y="14" width="1560" height="172" fill="#fff" opacity="0.2"/>
+<path d="M20,14H1580M20,20H1580M20,25.9H1580M20,31.7H1580M20,37.4H1580M20,43.1H1580M20,48.6H1580M20,54.1H1580M20,59.5H1580M20,64.8H1580M20,70H1580M20,75.1H1580M20,80.2H1580M20,85.2H1580M20,90.1H1580M20,94.9H1580M20,99.6H1580M20,104.3H1580M20,108.9H1580M20,113.5H1580M20,117.9H1580M20,122.3H1580M20,126.6H1580M20,130.9H1580M20,135.1H1580M20,139.2H1580M20,143.3H1580M20,147.3H1580" stroke="#1F2E4A" stroke-width="0.7" fill="none" opacity="0.4"/>
+<g clip-path="url(#coast-strait-clip4)">
+<path d="M60,150 L95,133 L134.8,133.2 L168,142.9 L198.2,139 L222.4,141 L247.4,136.1 L288.1,139 L313,130.9 L332.2,137.1 L370.2,135.1 L402.3,140.7 L436,139.6 L454.7,124.8 L482.8,141.8 L516,140.9 L548.3,137.2 L580.6,125.3 L601.6,142.8 L622.9,132.5 L666.2,136.1 L710,130 L732,127.3 L758.9,133.8 L781.9,137 L815.2,141.4 L849.7,125.1 L868.4,130.9 L886.8,142.9 L928.5,124.2 L974.3,132 L998,142.1 L1035.2,134.6 L1080.7,130.7 L1110.9,142 L1147.7,128.1 L1170.8,129.5 L1203.6,130.9 L1232.6,140.9 L1270.9,143.1 L1310.3,127.7 L1344.9,124.6 L1364.5,142.7 L1390.6,139.1 L1432.1,141.2 L1456.6,145.8 L1477.2,135.4 L1517.6,129.8 L1551,143.6 L1540,150 Z" fill="#1F2E4A"/>
+<path d="M170,58 L20,34 L20,88Z" fill="url(#coast-strait-lg5)" opacity="0.6"/>
+<path d="M159.9,136 L163.9,67.4 L176.1,67.4 L180.1,136Z" fill="#FBF8EF" stroke="#1F2E4A" stroke-width="1.5"/>
+<path d="M161,116.5 L179,116.5 L178.1,105.6 L161.9,105.6Z" fill="#1F2E4A"/>
+<path d="M162.4,93.1 L177.6,93.1 L176.8,82.2 L163.2,82.2Z" fill="#1F2E4A"/>
+<rect x="161.9" y="65.8" width="16.2" height="2.3" fill="#1F2E4A"/>
+<rect x="164.9" y="56.4" width="10.1" height="9.4" fill="#E7A93B" stroke="#1F2E4A" stroke-width="1.2"/>
+<path d="M162.9,56.4 L170,48.6 L177.1,56.4Z" fill="#1F2E4A"/>
+<path d="M430,72 L580,48 L580,102Z" fill="url(#coast-strait-lg6)" opacity="0.6"/>
+<path d="M421.7,136 L425,79.7 L435,79.7 L438.3,136Z" fill="#FBF8EF" stroke="#1F2E4A" stroke-width="1.5"/>
+<path d="M422.6,120 L437.4,120 L436.6,111 L423.4,111Z" fill="#1F2E4A"/>
+<path d="M423.8,100.8 L436.2,100.8 L435.6,91.8 L424.4,91.8Z" fill="#1F2E4A"/>
+<rect x="423.3" y="78.4" width="13.3" height="1.9" fill="#1F2E4A"/>
+<rect x="425.8" y="70.7" width="8.3" height="7.7" fill="#E7A93B" stroke="#1F2E4A" stroke-width="1.2"/>
+<path d="M424.2,70.7 L430,64.3 L435.8,70.7Z" fill="#1F2E4A"/>
+<path d="M700,58 L550,34 L550,88Z" fill="url(#coast-strait-lg7)" opacity="0.6"/>
+<path d="M689.9,136 L693.9,67.4 L706.1,67.4 L710.1,136Z" fill="#FBF8EF" stroke="#1F2E4A" stroke-width="1.5"/>
+<path d="M691,116.5 L709,116.5 L708.1,105.6 L691.9,105.6Z" fill="#1F2E4A"/>
+<path d="M692.4,93.1 L707.6,93.1 L706.8,82.2 L693.2,82.2Z" fill="#1F2E4A"/>
+<rect x="691.9" y="65.8" width="16.2" height="2.3" fill="#1F2E4A"/>
+<rect x="694.9" y="56.4" width="10.1" height="9.4" fill="#E7A93B" stroke="#1F2E4A" stroke-width="1.2"/>
+<path d="M692.9,56.4 L700,48.6 L707.1,56.4Z" fill="#1F2E4A"/>
+<path d="M980,72 L1130,48 L1130,102Z" fill="url(#coast-strait-lg8)" opacity="0.6"/>
+<path d="M971.7,136 L975,79.7 L985,79.7 L988.3,136Z" fill="#FBF8EF" stroke="#1F2E4A" stroke-width="1.5"/>
+<path d="M972.6,120 L987.4,120 L986.6,111 L973.4,111Z" fill="#1F2E4A"/>
+<path d="M973.8,100.8 L986.2,100.8 L985.6,91.8 L974.4,91.8Z" fill="#1F2E4A"/>
+<rect x="973.3" y="78.4" width="13.3" height="1.9" fill="#1F2E4A"/>
+<rect x="975.8" y="70.7" width="8.3" height="7.7" fill="#E7A93B" stroke="#1F2E4A" stroke-width="1.2"/>
+<path d="M974.2,70.7 L980,64.3 L985.8,70.7Z" fill="#1F2E4A"/>
+<path d="M1250,58 L1100,34 L1100,88Z" fill="url(#coast-strait-lg9)" opacity="0.6"/>
+<path d="M1239.9,136 L1243.9,67.4 L1256.1,67.4 L1260.1,136Z" fill="#FBF8EF" stroke="#1F2E4A" stroke-width="1.5"/>
+<path d="M1241,116.5 L1259,116.5 L1258.1,105.6 L1241.9,105.6Z" fill="#1F2E4A"/>
+<path d="M1242.4,93.1 L1257.6,93.1 L1256.8,82.2 L1243.2,82.2Z" fill="#1F2E4A"/>
+<rect x="1241.9" y="65.8" width="16.2" height="2.3" fill="#1F2E4A"/>
+<rect x="1244.9" y="56.4" width="10.1" height="9.4" fill="#E7A93B" stroke="#1F2E4A" stroke-width="1.2"/>
+<path d="M1242.9,56.4 L1250,48.6 L1257.1,56.4Z" fill="#1F2E4A"/>
+<path d="M1480,72 L1630,48 L1630,102Z" fill="url(#coast-strait-lg10)" opacity="0.6"/>
+<path d="M1471.7,136 L1475,79.7 L1485,79.7 L1488.3,136Z" fill="#FBF8EF" stroke="#1F2E4A" stroke-width="1.5"/>
+<path d="M1472.6,120 L1487.4,120 L1486.6,111 L1473.4,111Z" fill="#1F2E4A"/>
+<path d="M1473.8,100.8 L1486.2,100.8 L1485.6,91.8 L1474.4,91.8Z" fill="#1F2E4A"/>
+<rect x="1473.3" y="78.4" width="13.3" height="1.9" fill="#1F2E4A"/>
+<rect x="1475.8" y="70.7" width="8.3" height="7.7" fill="#E7A93B" stroke="#1F2E4A" stroke-width="1.2"/>
+<path d="M1474.2,70.7 L1480,64.3 L1485.8,70.7Z" fill="#1F2E4A"/>
+<path d="M300,144 q40,-30 96,-8" fill="none" stroke="#1F2E4A" stroke-width="2.4"/>
+<path d="M308,138.0 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M320,133.68517015256216 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M332,130.42676113672894 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M344,129.0225451205635 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M356,129.81632315856888 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M368,132.6137507030644 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M380,136.7299199274612 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<line x1="370" y1="140" x2="396" y2="80" stroke="#1F2E4A" stroke-width="2"/>
+<path d="M840,144 q40,-30 96,-8" fill="none" stroke="#1F2E4A" stroke-width="2.4"/>
+<path d="M848,138.0 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M860,133.68517015256216 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M872,130.42676113672894 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M884,129.0225451205635 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M896,129.81632315856888 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M908,132.6137507030644 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M920,136.7299199274612 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<line x1="910" y1="140" x2="936" y2="80" stroke="#1F2E4A" stroke-width="2"/>
+<path d="M1120,144 q40,-30 96,-8" fill="none" stroke="#1F2E4A" stroke-width="2.4"/>
+<path d="M1128,138.0 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M1140,133.68517015256216 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M1152,130.42676113672894 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M1164,129.0225451205635 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M1176,129.81632315856888 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M1188,132.6137507030644 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<path d="M1200,136.7299199274612 q4,-22 -6,-34" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<line x1="1190" y1="140" x2="1216" y2="80" stroke="#1F2E4A" stroke-width="2"/>
+<path d="M560,150 v-18 l18,-16.2 l18,16.2 v18z" fill="#1F2E4A"/>
+<rect x="573.7" y="138.8" width="8.6" height="4.3" fill="#EFE6D0"/>
+<circle cx="610" cy="120.4" r="2.4" fill="#1F2E4A"/>
+<path d="M608,122.8 L612,122.8 L614.8,138 L605.2,138Z" fill="#1F2E4A"/>
+<line x1="610" y1="124.8" x2="618.4" y2="120" stroke="#1F2E4A" stroke-width="1.4" stroke-linecap="round"/>
+<g transform="translate(640,156) rotate(0) scale(0.8,0.8)">
+<line x1="-6" y1="2.5" x2="-19" y2="19" stroke-width="1.5" stroke="#1F2E4A" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="8" y1="2.4" x2="-5" y2="19" stroke-width="1.5" stroke="#1F2E4A" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-37,-6 Q-7.4,3.3 20.4,-0.9 Q31.4,-3.6 42,-9 Q33.3,7.5 22.9,10 L-29.6,10 Q-38.2,5.5 -37,-6Z" fill="#FBF8EF" stroke-width="2" stroke="#1F2E4A" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-35,-2.8 Q-7.4,5.9 30.5,1.4M-35,0 Q-7.4,8.1 27.4,4.2" fill="none" stroke="#1F2E4A" stroke-width="0.8" opacity="0.8"/>
+</g>
+</g>
+<rect x="20" y="150" width="1560" height="36" fill="#EFE6D0" opacity="0.6"/>
+<path d="M20,152H1580" stroke="#1F2E4A" stroke-width="0.5" fill="none" stroke-dasharray="243.5 3 97.4 2" stroke-dashoffset="204.2"/>
+<path d="M20,158H1580" stroke="#1F2E4A" stroke-width="0.7" fill="none" stroke-dasharray="201.2 4 80.5 2.6" stroke-dashoffset="283"/>
+<path d="M20,164H1580" stroke="#1F2E4A" stroke-width="0.8" fill="none" stroke-dasharray="214.8 5 85.9 3.2" stroke-dashoffset="289.6"/>
+<path d="M20,170H1580" stroke="#1F2E4A" stroke-width="1" fill="none" stroke-dasharray="215.5 6 86.2 3.8" stroke-dashoffset="105"/>
+<path d="M20,176H1580" stroke="#1F2E4A" stroke-width="1.1" fill="none" stroke-dasharray="80.7 7 32.3 4.4" stroke-dashoffset="76.5"/>
+<path d="M20,182H1580" stroke="#1F2E4A" stroke-width="1.3" fill="none" stroke-dasharray="215.4 8 86.2 5" stroke-dashoffset="84.8"/>
+<line x1="20" y1="150" x2="1580" y2="150" stroke="#1F2E4A" stroke-width="1.2"/>
+<rect x="20" y="14" width="1560" height="172" fill="none" stroke="#1F2E4A" stroke-width="1.6"/>
+<rect x="15" y="9" width="1570" height="182" fill="none" stroke="#1F2E4A" stroke-width="0.6"/>
+<rect x="34" y="24" width="273" height="28" fill="#EFE6D0" stroke="#1F2E4A" stroke-width="1"/>
+<text x="48" y="44" font-size="15" font-family="serif" fill="#1F2E4A" text-anchor="start" letter-spacing="3.3" font-weight="normal">THE LAMPLIT STRAIT</text>
+</svg>

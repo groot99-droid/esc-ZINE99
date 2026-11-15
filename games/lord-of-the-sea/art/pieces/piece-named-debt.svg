@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="piece-named-debt-t piece-named-debt-d">
+<title id="piece-named-debt-t">Tea Board piece: Named Debt</title>
+<desc id="piece-named-debt-d">A Named Debt for the final match: the same red-centred counter with a paper label tied to it, a name from the toll written on the label.</desc>
+<defs><radialGradient id="piece-named-debt-rg1" cx="0.4" cy="0.35" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.9"/><stop offset="60%" stop-color="#fff" stop-opacity="0"/><stop offset="100%" stop-color="#A9BCE3" stop-opacity="0.7"/></radialGradient></defs>
+<rect x="0" y="0" width="240" height="240" fill="#F7F8FB"/>
+<rect x="0" y="0" width="240" height="240" fill="url(#piece-named-debt-rg1)"/>
+<rect x="8" y="8" width="224" height="224" fill="none" stroke="#1E3F8C" stroke-width="3"/>
+<rect x="18" y="18" width="204" height="204" fill="none" stroke="#3D63B8" stroke-width="5" stroke-dasharray="0.1 11" stroke-linecap="round"/>
+<ellipse cx="126" cy="176" rx="64" ry="14" fill="#1F2E4A" opacity="0.2"/>
+<path d="M49.2,151 v21 a58.8,25.2 0 0,0 117.6,0 v-21z" fill="#dfe5f2" stroke="#1E3F8C" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="M49.2,162.6 a58.8,25.2 0 0,0 117.6,0" fill="none" stroke="#3D63B8" stroke-width="5" stroke-dasharray="2 7"/>
+<ellipse cx="108" cy="151" rx="58.8" ry="25.2" fill="#F7F8FB" stroke="#1E3F8C" stroke-width="2.8"/>
+<ellipse cx="108" cy="151" rx="49.4" ry="20.7" fill="none" stroke="#3D63B8" stroke-width="1.2" stroke-dasharray="2 4"/>
+<ellipse cx="108" cy="151" rx="40" ry="16.1" fill="#8C2B2B" stroke="#5e1818" stroke-width="2"/>
+<text x="108" y="158.3" font-size="19.9" font-family="serif" fill="#F4F1E8" text-anchor="middle" font-style="italic">Dr.</text>
+<path d="M132,120 q30,-40 50,-58" fill="none" stroke="#6B4A2B" stroke-width="1.6"/>
+<g transform="rotate(-12 170 60)">
+<path d="M120,40 h96 v40 h-96 l-12,-20z" fill="#F4F1E8" stroke="#1F2E4A" stroke-width="1.6" stroke-linejoin="round"/>
+<circle cx="122" cy="60" r="3" fill="#1F2E4A"/>
+<text x="170" y="68" font-size="22" font-family="serif" fill="#1B2238" text-anchor="middle" font-style="italic">Corran</text>
+</g>
+</svg>

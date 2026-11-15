@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 300" width="260" height="300" role="img" aria-labelledby="die-face-3-rope-t die-face-3-rope-d">
+<title id="die-face-3-rope-t">Tide die face 3: Rope</title>
+<desc id="die-face-3-rope-d">Face 3 of a tide die in tattoo flash, bold outline and flat colour: a figure-of-eight knot in gold rope with whipped red ends.</desc>
+<defs><filter id="die-face-3-rope-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="443"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter></defs>
+<rect x="0" y="0" width="260" height="300" fill="#DCCBA2"/>
+<rect x="0" y="0" width="260" height="300" filter="url(#die-face-3-rope-grain1)"/>
+<path d="M162.1,138.4a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M28.2,287.5a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M60.6,55.8a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M227.9,241.3a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M16.4,105.8a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M149.7,281.5a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M174,186.7a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M126,270.5a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M193.7,233.4a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M190.4,246.2a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M220.6,251.5a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M7.6,242a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M45.8,133.6a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M8.3,164.6a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M69.8,215.4a1.4,1.4 0 1,0 2.9,0a1.4,1.4 0 1,0 -2.9,0M135.2,260.5a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M155.2,37.6a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M54.9,17a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M73.2,92.3a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M30.4,41.2a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M183.3,95.1a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M55.3,141.8a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M43.3,232.9a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M124.4,113.7a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M122.5,247a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M109.3,258.1a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M191.6,150.7a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M244.6,97a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M215.4,46.6a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M200.9,215.5a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0" fill="#6B4A2B" opacity="0.3"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="13"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#E7A93B" stroke-width="8"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="8" stroke-dasharray="2.5 9"/>
+<path d="M40,37 Q40,44 47,44 Q40,44 40,51 Q40,44 33,44 Q40,44 40,37Z" fill="#16130F"/>
+<path d="M222,43 Q222,52 231,52 Q222,52 222,61 Q222,52 213,52 Q222,52 222,43Z" fill="#16130F"/>
+<path d="M36,192 Q36,200 44,200 Q36,200 36,208 Q36,200 28,200 Q36,200 36,192Z" fill="#16130F"/>
+<path d="M226,190 Q226,196 232,196 Q226,196 226,202 Q226,196 220,196 Q226,196 226,190Z" fill="#16130F"/>
+<g transform="translate(130,124) rotate(3)">
+<rect x="-61.5" y="-61.5" width="150" height="150" rx="25.5" fill="#16130F"/>
+<rect x="-75" y="-75" width="150" height="150" rx="25.5" fill="#F6ECD2" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M-61,-45 q0,-16 16,-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+<g transform="scale(1)">
+<path d="M-46,34 C-60,-30 -6,-52 4,-10 C12,22 44,24 46,-4 C48,-40 0,-44 -4,-10 C-8,24 30,50 52,36" fill="none" stroke="#16130F" stroke-width="20" stroke-linecap="round"/>
+<path d="M-46,34 C-60,-30 -6,-52 4,-10 C12,22 44,24 46,-4 C48,-40 0,-44 -4,-10 C-8,24 30,50 52,36" fill="none" stroke="#E7A93B" stroke-width="11" stroke-linecap="round"/>
+<path d="M-46,34 C-60,-30 -6,-52 4,-10 C12,22 44,24 46,-4 C48,-40 0,-44 -4,-10 C-8,24 30,50 52,36" fill="none" stroke="#16130F" stroke-width="11" stroke-dasharray="2.5 8"/>
+<circle cx="-46" cy="34" r="8" fill="#8C2B2B" stroke="#16130F" stroke-width="4"/>
+<circle cx="52" cy="36" r="8" fill="#8C2B2B" stroke="#16130F" stroke-width="4"/>
+</g>
+<circle cx="-59" cy="61" r="2.8" fill="#16130F"/>
+<circle cx="-50" cy="61" r="2.8" fill="#16130F"/>
+<circle cx="-41" cy="61" r="2.8" fill="#16130F"/>
+</g>
+<path d="M24,242 l34,0 l0,40 l-34,0 l15,-20.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M236,242 l-34,0 l0,40 l34,0 l-15,-20.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M64,228 Q130,214 196,228 L196,268 Q130,254 64,268Z" fill="#8C2B2B" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="130" y="253.3" font-size="22" font-family="serif" fill="#F6ECD2" text-anchor="middle" font-weight="bold" letter-spacing="3">ROPE</text>
+</svg>

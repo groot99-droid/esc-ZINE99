@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 300" width="260" height="300" role="img" aria-labelledby="die-face-1-gull-t die-face-1-gull-d">
+<title id="die-face-1-gull-t">Tide die face 1: Gull</title>
+<desc id="die-face-1-gull-d">Face 1 of a tide die in tattoo flash, bold outline and flat colour: a white gull on the wing over a line of water; Gulls are wild.</desc>
+<defs><filter id="die-face-1-gull-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="972"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter></defs>
+<rect x="0" y="0" width="260" height="300" fill="#DCCBA2"/>
+<rect x="0" y="0" width="260" height="300" filter="url(#die-face-1-gull-grain1)"/>
+<path d="M39.1,64.5a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M107.9,101.1a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M28.1,228.1a1.2,1.2 0 1,0 2.3,0a1.2,1.2 0 1,0 -2.3,0M224.4,16.7a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M2,66.2a1.4,1.4 0 1,0 2.7,0a1.4,1.4 0 1,0 -2.7,0M106.6,294.2a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M233,80.4a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M115.3,228.2a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M9.3,139.9a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M105.3,168.1a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M247.6,267.6a1.2,1.2 0 1,0 2.3,0a1.2,1.2 0 1,0 -2.3,0M92.8,223.5a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M125.7,285.2a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M146.6,250.9a1.3,1.3 0 1,0 2.7,0a1.3,1.3 0 1,0 -2.7,0M122.1,124.2a1.2,1.2 0 1,0 2.3,0a1.2,1.2 0 1,0 -2.3,0M130.8,185.6a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M256.3,298.7a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M184.2,92a1.5,1.5 0 1,0 3,0a1.5,1.5 0 1,0 -3,0M256.9,202.2a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M187.8,193.5a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M103.2,50.9a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M39.5,259.4a1.3,1.3 0 1,0 2.7,0a1.3,1.3 0 1,0 -2.7,0M246.4,15.9a1.4,1.4 0 1,0 2.9,0a1.4,1.4 0 1,0 -2.9,0M53.9,198.8a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M126.8,117.3a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M144.5,218.3a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M33.8,196.1a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M105.4,226.3a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M48.7,119.4a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M206.8,270.5a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0" fill="#6B4A2B" opacity="0.3"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="13"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#E7A93B" stroke-width="8"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="8" stroke-dasharray="2.5 9"/>
+<path d="M40,37 Q40,44 47,44 Q40,44 40,51 Q40,44 33,44 Q40,44 40,37Z" fill="#16130F"/>
+<path d="M222,43 Q222,52 231,52 Q222,52 222,61 Q222,52 213,52 Q222,52 222,43Z" fill="#16130F"/>
+<path d="M36,192 Q36,200 44,200 Q36,200 36,208 Q36,200 28,200 Q36,200 36,192Z" fill="#16130F"/>
+<path d="M226,190 Q226,196 232,196 Q226,196 226,202 Q226,196 220,196 Q226,196 226,190Z" fill="#16130F"/>
+<g transform="translate(130,124) rotate(-3)">
+<rect x="-61.5" y="-61.5" width="150" height="150" rx="25.5" fill="#16130F"/>
+<rect x="-75" y="-75" width="150" height="150" rx="25.5" fill="#F6ECD2" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M-61,-45 q0,-16 16,-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+<g transform="scale(1)">
+<path d="M-56,10 Q-34,-44 -6,-10 Q0,-18 6,-10 Q34,-44 56,10 Q30,-12 8,10 L0,26 L-8,10 Q-30,-12 -56,10Z" fill="#fff" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M-56,10 Q-46,-12 -36,-22 L-30,-6Z M56,10 Q46,-12 36,-22 L30,-6Z" fill="#16130F"/>
+<path d="M-5,-8 L0,-22 L5,-8Z" fill="#E7A93B" stroke="#16130F" stroke-width="3" stroke-linejoin="round"/>
+<path d="M-40,40 q10,-9 20,0 t20,0 t20,0 t20,0" fill="none" stroke="#2F4E8A" stroke-width="5" stroke-linecap="round"/>
+</g>
+<circle cx="-59" cy="61" r="2.8" fill="#16130F"/>
+</g>
+<path d="M24,242 l34,0 l0,40 l-34,0 l15,-20.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M236,242 l-34,0 l0,40 l34,0 l-15,-20.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M64,228 Q130,214 196,228 L196,268 Q130,254 64,268Z" fill="#2F4E8A" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="130" y="253.3" font-size="22" font-family="serif" fill="#F6ECD2" text-anchor="middle" font-weight="bold" letter-spacing="3">GULL</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 300" width="260" height="300" role="img" aria-labelledby="die-face-6-wave-t die-face-6-wave-d">
+<title id="die-face-6-wave-t">Tide die face 6: Wave</title>
+<desc id="die-face-6-wave-d">Face 6 of a tide die in tattoo flash, bold outline and flat colour: a green curling wave throwing white foam.</desc>
+<defs><filter id="die-face-6-wave-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="825"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter></defs>
+<rect x="0" y="0" width="260" height="300" fill="#DCCBA2"/>
+<rect x="0" y="0" width="260" height="300" filter="url(#die-face-6-wave-grain1)"/>
+<path d="M154.3,257.8a1.2,1.2 0 1,0 2.3,0a1.2,1.2 0 1,0 -2.3,0M62.8,130.3a1.4,1.4 0 1,0 2.7,0a1.4,1.4 0 1,0 -2.7,0M144.2,7.9a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M116.3,248.3a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M23.8,270.5a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M152.4,287.9a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M152.8,150.3a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M115.4,171.3a1.5,1.5 0 1,0 2.9,0a1.5,1.5 0 1,0 -2.9,0M186,199.6a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M100,16.7a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M83.7,74.6a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M139.3,81.8a1.5,1.5 0 1,0 3,0a1.5,1.5 0 1,0 -3,0M71.3,154.8a1.4,1.4 0 1,0 2.7,0a1.4,1.4 0 1,0 -2.7,0M206.6,62.9a1.4,1.4 0 1,0 2.9,0a1.4,1.4 0 1,0 -2.9,0M231.8,15.4a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M63.5,286.8a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M9,161.1a1.4,1.4 0 1,0 2.7,0a1.4,1.4 0 1,0 -2.7,0M32.5,17.6a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M200.6,240.6a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M149.1,260.2a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M36.8,120a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M123.5,2.5a1.1,1.1 0 1,0 2.3,0a1.1,1.1 0 1,0 -2.3,0M148.4,42.8a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M142.6,42.4a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M233.8,269.5a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M127.2,101.1a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M133.8,47a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M192.7,69.2a1.3,1.3 0 1,0 2.7,0a1.3,1.3 0 1,0 -2.7,0M95.6,41.1a1.3,1.3 0 1,0 2.7,0a1.3,1.3 0 1,0 -2.7,0M108.5,125.5a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0" fill="#6B4A2B" opacity="0.3"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="13"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#E7A93B" stroke-width="8"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="8" stroke-dasharray="2.5 9"/>
+<path d="M40,37 Q40,44 47,44 Q40,44 40,51 Q40,44 33,44 Q40,44 40,37Z" fill="#16130F"/>
+<path d="M222,43 Q222,52 231,52 Q222,52 222,61 Q222,52 213,52 Q222,52 222,43Z" fill="#16130F"/>
+<path d="M36,192 Q36,200 44,200 Q36,200 36,208 Q36,200 28,200 Q36,200 36,192Z" fill="#16130F"/>
+<path d="M226,190 Q226,196 232,196 Q226,196 226,202 Q226,196 220,196 Q226,196 226,190Z" fill="#16130F"/>
+<g transform="translate(130,124) rotate(3)">
+<rect x="-61.5" y="-61.5" width="150" height="150" rx="25.5" fill="#16130F"/>
+<rect x="-75" y="-75" width="150" height="150" rx="25.5" fill="#F6ECD2" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M-61,-45 q0,-16 16,-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+<g transform="scale(1)">
+<path d="M-56,38 Q-52,-40 6,-36 Q46,-34 44,0 Q42,22 20,18 Q4,14 8,0 Q0,22 22,34 Q40,42 56,38Z" fill="#2F6B5E" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M-40,30 Q-36,-18 2,-22 M-24,32 Q-20,-2 6,-8" fill="none" stroke="#E8F2EE" stroke-width="4" stroke-linecap="round"/>
+<circle cx="28" cy="-40" r="7" fill="#fff" stroke="#16130F" stroke-width="3"/>
+<circle cx="44" cy="-28" r="5" fill="#fff" stroke="#16130F" stroke-width="3"/>
+<circle cx="52" cy="-10" r="4" fill="#fff" stroke="#16130F" stroke-width="3"/>
+<circle cx="14" cy="-46" r="5" fill="#fff" stroke="#16130F" stroke-width="3"/>
+<circle cx="56" cy="8" r="3" fill="#fff" stroke="#16130F" stroke-width="3"/>
+</g>
+<circle cx="-59" cy="61" r="2.8" fill="#16130F"/>
+<circle cx="-50" cy="61" r="2.8" fill="#16130F"/>
+<circle cx="-41" cy="61" r="2.8" fill="#16130F"/>
+<circle cx="-32" cy="61" r="2.8" fill="#16130F"/>
+<circle cx="-23" cy="61" r="2.8" fill="#16130F"/>
+<circle cx="-14" cy="61" r="2.8" fill="#16130F"/>
+</g>
+<path d="M24,242 l34,0 l0,40 l-34,0 l15,-20.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M236,242 l-34,0 l0,40 l34,0 l-15,-20.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M64,228 Q130,214 196,228 L196,268 Q130,254 64,268Z" fill="#8C2B2B" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="130" y="253.3" font-size="22" font-family="serif" fill="#F6ECD2" text-anchor="middle" font-weight="bold" letter-spacing="3">WAVE</text>
+</svg>

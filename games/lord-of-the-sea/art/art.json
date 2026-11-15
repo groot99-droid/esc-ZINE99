@@ -1,0 +1,1086 @@
+{
+ "game": "lord-of-the-sea",
+ "count": 135,
+ "assets": [
+  {
+   "id": "title-lettering",
+   "group": "title",
+   "title": "The Lord of the Sea: title lettering",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lettering, spiral in the O"
+  },
+  {
+   "id": "boat-capsized",
+   "group": "figures",
+   "title": "Alexi's boat, capsized",
+   "w": 600,
+   "h": 420,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "boat-full",
+   "group": "figures",
+   "title": "Alexi's boat, full sail",
+   "w": 600,
+   "h": 420,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "boat-spill",
+   "group": "figures",
+   "title": "Alexi's boat, spilling wind",
+   "w": 600,
+   "h": 420,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "boat-surf",
+   "group": "figures",
+   "title": "Alexi's boat, surfing a face",
+   "w": 600,
+   "h": 420,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "carried-person",
+   "group": "figures",
+   "title": "Alexi carrying a person up",
+   "w": 600,
+   "h": 420,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "convoy",
+   "group": "figures",
+   "title": "Company convoy",
+   "w": 600,
+   "h": 420,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "cutter",
+   "group": "figures",
+   "title": "Revenue cutter",
+   "w": 600,
+   "h": 420,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "ferry",
+   "group": "figures",
+   "title": "The Tidewater ferry",
+   "w": 600,
+   "h": 420,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "skiff",
+   "group": "figures",
+   "title": "Reef skiff",
+   "w": 600,
+   "h": 420,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "swimmer",
+   "group": "figures",
+   "title": "Alexi swimming",
+   "w": 600,
+   "h": 420,
+   "row": "2D figures: boat \u00d74, swimmer, cutter, convoy, ferry, skiff, carried person"
+  },
+  {
+   "id": "coast-halls",
+   "group": "backdrops",
+   "title": "Coast strip: The King's Halls",
+   "w": 1600,
+   "h": 200,
+   "row": "Engraved Sea: procedural sea, 6 coast strips, lamp-black and oiled states"
+  },
+  {
+   "id": "coast-lanes",
+   "group": "backdrops",
+   "title": "Coast strip: Tidewater",
+   "w": 1600,
+   "h": 200,
+   "row": "Engraved Sea: procedural sea, 6 coast strips, lamp-black and oiled states"
+  },
+  {
+   "id": "coast-pearl",
+   "group": "backdrops",
+   "title": "Coast strip: The Pearl Banks",
+   "w": 1600,
+   "h": 200,
+   "row": "Engraved Sea: procedural sea, 6 coast strips, lamp-black and oiled states"
+  },
+  {
+   "id": "coast-salt",
+   "group": "backdrops",
+   "title": "Coast strip: The Salt Steps",
+   "w": 1600,
+   "h": 200,
+   "row": "Engraved Sea: procedural sea, 6 coast strips, lamp-black and oiled states"
+  },
+  {
+   "id": "coast-spice",
+   "group": "backdrops",
+   "title": "Coast strip: The Spice Mouth",
+   "w": 1600,
+   "h": 200,
+   "row": "Engraved Sea: procedural sea, 6 coast strips, lamp-black and oiled states"
+  },
+  {
+   "id": "coast-strait",
+   "group": "backdrops",
+   "title": "Coast strip: The Lamplit Strait",
+   "w": 1600,
+   "h": 200,
+   "row": "Engraved Sea: procedural sea, 6 coast strips, lamp-black and oiled states"
+  },
+  {
+   "id": "deep-band-1",
+   "group": "backdrops",
+   "title": "The Deep, 0 to 20 metres: bright",
+   "w": 1600,
+   "h": 900,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "deep-band-2",
+   "group": "backdrops",
+   "title": "The Deep, 20 to 60 metres: blue",
+   "w": 1600,
+   "h": 900,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "deep-band-3",
+   "group": "backdrops",
+   "title": "The Deep, 60 to 150 metres: dark",
+   "w": 1600,
+   "h": 900,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "deep-band-4",
+   "group": "backdrops",
+   "title": "The Deep, below 150 metres: only what glows",
+   "w": 1600,
+   "h": 900,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "fleet-hull-1",
+   "group": "backdrops",
+   "title": "Standing Fleet hull 1: merchant",
+   "w": 520,
+   "h": 680,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "fleet-hull-2",
+   "group": "backdrops",
+   "title": "Standing Fleet hull 2: brig",
+   "w": 520,
+   "h": 680,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "fleet-hull-3",
+   "group": "backdrops",
+   "title": "Standing Fleet hull 3: cutter",
+   "w": 520,
+   "h": 680,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "fleet-hull-4",
+   "group": "backdrops",
+   "title": "Standing Fleet hull 4: ketch",
+   "w": 520,
+   "h": 680,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "fleet-hull-5",
+   "group": "backdrops",
+   "title": "Standing Fleet hull 5: lugger",
+   "w": 520,
+   "h": 680,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "fleet-hull-6",
+   "group": "backdrops",
+   "title": "Standing Fleet hull 6: galley",
+   "w": 520,
+   "h": 680,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "fleet-hull-7",
+   "group": "backdrops",
+   "title": "Standing Fleet hull 7: pinnace",
+   "w": 520,
+   "h": 680,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "fleet-hull-8",
+   "group": "backdrops",
+   "title": "Standing Fleet hull 8: packet",
+   "w": 520,
+   "h": 680,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "sea-lamp-black",
+   "group": "backdrops",
+   "title": "The Engraved Sea: lamp-black state",
+   "w": 1600,
+   "h": 900,
+   "row": "Engraved Sea: procedural sea, 6 coast strips, lamp-black and oiled states"
+  },
+  {
+   "id": "sea-oiled",
+   "group": "backdrops",
+   "title": "The Engraved Sea: oiled state",
+   "w": 1600,
+   "h": 900,
+   "row": "Engraved Sea: procedural sea, 6 coast strips, lamp-black and oiled states"
+  },
+  {
+   "id": "sea-plate",
+   "group": "backdrops",
+   "title": "The Engraved Sea: the sea plate",
+   "w": 1600,
+   "h": 900,
+   "row": "Engraved Sea: procedural sea, 6 coast strips, lamp-black and oiled states"
+  },
+  {
+   "id": "specimen-01-radiolarian",
+   "group": "backdrops",
+   "title": "Glowing specimen 1: radiolarian",
+   "w": 360,
+   "h": 360,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "specimen-02-spined",
+   "group": "backdrops",
+   "title": "Glowing specimen 2: spined",
+   "w": 360,
+   "h": 360,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "specimen-03-lattice",
+   "group": "backdrops",
+   "title": "Glowing specimen 3: lattice",
+   "w": 360,
+   "h": 360,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "specimen-04-sun-animalcule",
+   "group": "backdrops",
+   "title": "Glowing specimen 4: sun animalcule",
+   "w": 360,
+   "h": 360,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "specimen-05-jelly",
+   "group": "backdrops",
+   "title": "Glowing specimen 5: jelly",
+   "w": 360,
+   "h": 360,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "specimen-06-comb-jelly",
+   "group": "backdrops",
+   "title": "Glowing specimen 6: comb jelly",
+   "w": 360,
+   "h": 360,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "specimen-07-sea-pen",
+   "group": "backdrops",
+   "title": "Glowing specimen 7: sea pen",
+   "w": 360,
+   "h": 360,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "specimen-08-brittle-star",
+   "group": "backdrops",
+   "title": "Glowing specimen 8: brittle star",
+   "w": 360,
+   "h": 360,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "specimen-09-spiral-shell",
+   "group": "backdrops",
+   "title": "Glowing specimen 9: spiral shell",
+   "w": 360,
+   "h": 360,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "specimen-10-salp-chain",
+   "group": "backdrops",
+   "title": "Glowing specimen 10: salp chain",
+   "w": 360,
+   "h": 360,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "specimen-11-siphonophore",
+   "group": "backdrops",
+   "title": "Glowing specimen 11: siphonophore",
+   "w": 360,
+   "h": 360,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "specimen-12-lantern-fish",
+   "group": "backdrops",
+   "title": "Glowing specimen 12: lantern fish",
+   "w": 360,
+   "h": 360,
+   "row": "The Deep: 4 depth bands, 8 Standing Fleet hulls, 12 glowing specimens"
+  },
+  {
+   "id": "die-face-1-gull",
+   "group": "pieces",
+   "title": "Tide die face 1: Gull",
+   "w": 260,
+   "h": 300,
+   "row": "Liar's Tide: 6 faces, tide die, loaded die, cup, 3 table skins"
+  },
+  {
+   "id": "die-face-2-shell",
+   "group": "pieces",
+   "title": "Tide die face 2: Shell",
+   "w": 260,
+   "h": 300,
+   "row": "Liar's Tide: 6 faces, tide die, loaded die, cup, 3 table skins"
+  },
+  {
+   "id": "die-face-3-rope",
+   "group": "pieces",
+   "title": "Tide die face 3: Rope",
+   "w": 260,
+   "h": 300,
+   "row": "Liar's Tide: 6 faces, tide die, loaded die, cup, 3 table skins"
+  },
+  {
+   "id": "die-face-4-bottle",
+   "group": "pieces",
+   "title": "Tide die face 4: Bottle",
+   "w": 260,
+   "h": 300,
+   "row": "Liar's Tide: 6 faces, tide die, loaded die, cup, 3 table skins"
+  },
+  {
+   "id": "die-face-5-lantern",
+   "group": "pieces",
+   "title": "Tide die face 5: Lantern",
+   "w": 260,
+   "h": 300,
+   "row": "Liar's Tide: 6 faces, tide die, loaded die, cup, 3 table skins"
+  },
+  {
+   "id": "die-face-6-wave",
+   "group": "pieces",
+   "title": "Tide die face 6: Wave",
+   "w": 260,
+   "h": 300,
+   "row": "Liar's Tide: 6 faces, tide die, loaded die, cup, 3 table skins"
+  },
+  {
+   "id": "horn-cup",
+   "group": "pieces",
+   "title": "The horn cup",
+   "w": 260,
+   "h": 300,
+   "row": "Liar's Tide: 6 faces, tide die, loaded die, cup, 3 table skins"
+  },
+  {
+   "id": "instrument-dividers",
+   "group": "pieces",
+   "title": "Dead Reckoning: the dividers",
+   "w": 520,
+   "h": 340,
+   "row": "Dead Reckoning: 5 sheets, 4 instruments, lead line"
+  },
+  {
+   "id": "instrument-eraser",
+   "group": "pieces",
+   "title": "Dead Reckoning: the eraser",
+   "w": 520,
+   "h": 340,
+   "row": "Dead Reckoning: 5 sheets, 4 instruments, lead line"
+  },
+  {
+   "id": "instrument-parallel-rule",
+   "group": "pieces",
+   "title": "Dead Reckoning: the parallel rule",
+   "w": 520,
+   "h": 340,
+   "row": "Dead Reckoning: 5 sheets, 4 instruments, lead line"
+  },
+  {
+   "id": "instrument-pencil",
+   "group": "pieces",
+   "title": "Dead Reckoning: the pencil",
+   "w": 520,
+   "h": 340,
+   "row": "Dead Reckoning: 5 sheets, 4 instruments, lead line"
+  },
+  {
+   "id": "lead-line",
+   "group": "pieces",
+   "title": "Dead Reckoning: the lead line",
+   "w": 520,
+   "h": 340,
+   "row": "Dead Reckoning: 5 sheets, 4 instruments, lead line"
+  },
+  {
+   "id": "loaded-die",
+   "group": "pieces",
+   "title": "The loaded die",
+   "w": 260,
+   "h": 300,
+   "row": "Liar's Tide: 6 faces, tide die, loaded die, cup, 3 table skins"
+  },
+  {
+   "id": "piece-chest",
+   "group": "pieces",
+   "title": "Tea Board piece: Chest",
+   "w": 240,
+   "h": 240,
+   "row": "The Tea Board: 3 boards, 5 piece types, crack, tide dial"
+  },
+  {
+   "id": "piece-clause",
+   "group": "pieces",
+   "title": "Tea Board piece: Clause",
+   "w": 240,
+   "h": 240,
+   "row": "The Tea Board: 3 boards, 5 piece types, crack, tide dial"
+  },
+  {
+   "id": "piece-debt",
+   "group": "pieces",
+   "title": "Tea Board piece: Debt",
+   "w": 240,
+   "h": 240,
+   "row": "The Tea Board: 3 boards, 5 piece types, crack, tide dial"
+  },
+  {
+   "id": "piece-hymn",
+   "group": "pieces",
+   "title": "Tea Board piece: Hymn",
+   "w": 240,
+   "h": 240,
+   "row": "The Tea Board: 3 boards, 5 piece types, crack, tide dial"
+  },
+  {
+   "id": "piece-named-debt",
+   "group": "pieces",
+   "title": "Tea Board piece: Named Debt",
+   "w": 240,
+   "h": 240,
+   "row": "The Tea Board: 3 boards, 5 piece types, crack, tide dial"
+  },
+  {
+   "id": "tea-board-crack",
+   "group": "pieces",
+   "title": "Tea Board: a cracked lane",
+   "w": 640,
+   "h": 240,
+   "row": "The Tea Board: 3 boards, 5 piece types, crack, tide dial"
+  },
+  {
+   "id": "tide-dial",
+   "group": "pieces",
+   "title": "Tea Board: the tide dial",
+   "w": 420,
+   "h": 420,
+   "row": "The Tea Board: 3 boards, 5 piece types, crack, tide dial"
+  },
+  {
+   "id": "tide-die",
+   "group": "pieces",
+   "title": "The tide die",
+   "w": 260,
+   "h": 300,
+   "row": "Liar's Tide: 6 faces, tide die, loaded die, cup, 3 table skins"
+  },
+  {
+   "id": "chapter-01",
+   "group": "chapters",
+   "title": "Chapter plate I: The Shore Between Worlds",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter plates I\u2013VIII"
+  },
+  {
+   "id": "chapter-02",
+   "group": "chapters",
+   "title": "Chapter plate II: The Princess on the Shore",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter plates I\u2013VIII"
+  },
+  {
+   "id": "chapter-03",
+   "group": "chapters",
+   "title": "Chapter plate III: The Ordered Sea",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter plates I\u2013VIII"
+  },
+  {
+   "id": "chapter-04",
+   "group": "chapters",
+   "title": "Chapter plate IV: What Is Left of the Old Sea",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter plates I\u2013VIII"
+  },
+  {
+   "id": "chapter-05",
+   "group": "chapters",
+   "title": "Chapter plate V: The Open Chart",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter plates I\u2013VIII"
+  },
+  {
+   "id": "chapter-06",
+   "group": "chapters",
+   "title": "Chapter plate VI: Debts and Halls",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter plates I\u2013VIII"
+  },
+  {
+   "id": "chapter-07",
+   "group": "chapters",
+   "title": "Chapter plate VII: The Lord of Tea",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter plates I\u2013VIII"
+  },
+  {
+   "id": "chapter-08",
+   "group": "chapters",
+   "title": "Chapter plate VIII: The Tideline",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter plates I\u2013VIII"
+  },
+  {
+   "id": "toll-lost-corran",
+   "group": "chapters",
+   "title": "Toll vignette: Corran",
+   "w": 600,
+   "h": 440,
+   "row": "Tide Reckoning sheet and toll vignettes"
+  },
+  {
+   "id": "toll-lost-dock-warden",
+   "group": "chapters",
+   "title": "Toll vignette: The dock-warden",
+   "w": 600,
+   "h": 440,
+   "row": "Tide Reckoning sheet and toll vignettes"
+  },
+  {
+   "id": "toll-lost-ide",
+   "group": "chapters",
+   "title": "Toll vignette: Ide",
+   "w": 600,
+   "h": 440,
+   "row": "Tide Reckoning sheet and toll vignettes"
+  },
+  {
+   "id": "toll-lost-old-marrow",
+   "group": "chapters",
+   "title": "Toll vignette: Old Marrow",
+   "w": 600,
+   "h": 440,
+   "row": "Tide Reckoning sheet and toll vignettes"
+  },
+  {
+   "id": "toll-lost-old-oarsman",
+   "group": "chapters",
+   "title": "Toll vignette: An old oarsman",
+   "w": 600,
+   "h": 440,
+   "row": "Tide Reckoning sheet and toll vignettes"
+  },
+  {
+   "id": "toll-lost-wenna",
+   "group": "chapters",
+   "title": "Toll vignette: Wenna",
+   "w": 600,
+   "h": 440,
+   "row": "Tide Reckoning sheet and toll vignettes"
+  },
+  {
+   "id": "toll-wreck-diving-boat",
+   "group": "chapters",
+   "title": "Toll vignette: A diving boat",
+   "w": 600,
+   "h": 440,
+   "row": "Tide Reckoning sheet and toll vignettes"
+  },
+  {
+   "id": "toll-wreck-ferry",
+   "group": "chapters",
+   "title": "Toll vignette: The ferry",
+   "w": 600,
+   "h": 440,
+   "row": "Tide Reckoning sheet and toll vignettes"
+  },
+  {
+   "id": "toll-wreck-lighter",
+   "group": "chapters",
+   "title": "Toll vignette: The pay lighter",
+   "w": 600,
+   "h": 440,
+   "row": "Tide Reckoning sheet and toll vignettes"
+  },
+  {
+   "id": "toll-wreck-packet",
+   "group": "chapters",
+   "title": "Toll vignette: A Company packet",
+   "w": 600,
+   "h": 440,
+   "row": "Tide Reckoning sheet and toll vignettes"
+  },
+  {
+   "id": "toll-wreck-skiffs",
+   "group": "chapters",
+   "title": "Toll vignette: Two reef skiffs",
+   "w": 600,
+   "h": 440,
+   "row": "Tide Reckoning sheet and toll vignettes"
+  },
+  {
+   "id": "toll-wreck-supply-boat",
+   "group": "chapters",
+   "title": "Toll vignette: The supply boat",
+   "w": 600,
+   "h": 440,
+   "row": "Tide Reckoning sheet and toll vignettes"
+  },
+  {
+   "id": "corner-order",
+   "group": "ui",
+   "title": "Corner ornament: Order",
+   "w": 320,
+   "h": 320,
+   "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
+  },
+  {
+   "id": "corner-wild",
+   "group": "ui",
+   "title": "Corner ornament: Wild",
+   "w": 320,
+   "h": 320,
+   "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
+  },
+  {
+   "id": "notice-seal",
+   "group": "ui",
+   "title": "Notice: the Company seal that darkens",
+   "w": 800,
+   "h": 240,
+   "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
+  },
+  {
+   "id": "port-seal-bound",
+   "group": "ui",
+   "title": "Port seal: bound",
+   "w": 260,
+   "h": 260,
+   "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
+  },
+  {
+   "id": "port-seal-broken",
+   "group": "ui",
+   "title": "Port seal: broken",
+   "w": 260,
+   "h": 260,
+   "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
+  },
+  {
+   "id": "port-seal-rewritten",
+   "group": "ui",
+   "title": "Port seal: rewritten",
+   "w": 260,
+   "h": 260,
+   "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
+  },
+  {
+   "id": "rose-ring",
+   "group": "ui",
+   "title": "HUD: the rose ring",
+   "w": 400,
+   "h": 400,
+   "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
+  },
+  {
+   "id": "rose-ring-tideline",
+   "group": "ui",
+   "title": "HUD: the rose ring at the tideline",
+   "w": 400,
+   "h": 400,
+   "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
+  },
+  {
+   "id": "rule-order",
+   "group": "ui",
+   "title": "Divider rule: Order",
+   "w": 800,
+   "h": 90,
+   "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
+  },
+  {
+   "id": "rule-wild",
+   "group": "ui",
+   "title": "Divider rule: Wild",
+   "w": 800,
+   "h": 90,
+   "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
+  },
+  {
+   "id": "stir-spiral-clockwise",
+   "group": "ui",
+   "title": "Stir gesture: clockwise",
+   "w": 400,
+   "h": 400,
+   "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
+  },
+  {
+   "id": "stir-spiral-counter",
+   "group": "ui",
+   "title": "Stir gesture: counter-clockwise",
+   "w": 400,
+   "h": 400,
+   "row": "UI ornaments: rose ring, stir spiral, corners, rules, seal states"
+  },
+  {
+   "id": "charter-deed",
+   "group": "documents",
+   "title": "The sale deed of the halls",
+   "w": 800,
+   "h": 1100,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "charter-diving-deed",
+   "group": "documents",
+   "title": "The diving-rights deed",
+   "w": 800,
+   "h": 1100,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "charter-halls-deed",
+   "group": "documents",
+   "title": "The halls' deed and its debt schedule",
+   "w": 800,
+   "h": 1100,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "charter-harbour-book",
+   "group": "documents",
+   "title": "The Tidewater harbour book",
+   "w": 800,
+   "h": 1100,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "charter-lighthouse-lease",
+   "group": "documents",
+   "title": "The lighthouse lease",
+   "w": 800,
+   "h": 1100,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "charter-schedule-c",
+   "group": "documents",
+   "title": "Schedule C",
+   "w": 1100,
+   "h": 1100,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "charter-writ",
+   "group": "documents",
+   "title": "The writ",
+   "w": 800,
+   "h": 1100,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "chit-1-bottle-neck",
+   "group": "documents",
+   "title": "Chit 1, found tied at a bottle's neck",
+   "w": 460,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "chit-2-dice-stake",
+   "group": "documents",
+   "title": "Chit 2, found laid as a dice stake",
+   "w": 460,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "chit-3-strongbox",
+   "group": "documents",
+   "title": "Chit 3, found in the strongbox of the sunken tender",
+   "w": 460,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "chit-4-lease-schedule",
+   "group": "documents",
+   "title": "Chit 4, found pinned to the lease schedule",
+   "w": 460,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "chit-5-trench",
+   "group": "documents",
+   "title": "Chit 5, found on the trench floor",
+   "w": 460,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "chit-6-under-the-board",
+   "group": "documents",
+   "title": "Chit 6, found under the Comptroller's board",
+   "w": 460,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "chit-7-mirror-gallery",
+   "group": "documents",
+   "title": "Chit 7, found in the mirror gallery",
+   "w": 460,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "chit-8-lords-hand",
+   "group": "documents",
+   "title": "Chit 8, found in the Lord of Tea's own hand",
+   "w": 460,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "seal-company",
+   "group": "documents",
+   "title": "The Company's seal",
+   "w": 300,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "seal-company-false",
+   "group": "documents",
+   "title": "The seal that differs",
+   "w": 300,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "seal-kings-house",
+   "group": "documents",
+   "title": "The seal of the king's house",
+   "w": 300,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "seal-lights",
+   "group": "documents",
+   "title": "The seal of the lights",
+   "w": 300,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "seal-pearl-compact",
+   "group": "documents",
+   "title": "The divers' compact seal",
+   "w": 300,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "seal-tidewater",
+   "group": "documents",
+   "title": "The Tidewater harbour seal",
+   "w": 300,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "tide-reckoning-sheet",
+   "group": "documents",
+   "title": "The Tide Reckoning sheet",
+   "w": 800,
+   "h": 1100,
+   "row": "Tide Reckoning sheet and toll vignettes"
+  },
+  {
+   "id": "wreck-book-account",
+   "group": "documents",
+   "title": "Wreck Book: The Sea, Dr.",
+   "w": 1600,
+   "h": 1000,
+   "row": "Wreck Book spreads"
+  },
+  {
+   "id": "wreck-book-lost-list",
+   "group": "documents",
+   "title": "Wreck Book: the lost list",
+   "w": 1600,
+   "h": 1000,
+   "row": "Wreck Book spreads"
+  },
+  {
+   "id": "wreck-book-open-year",
+   "group": "documents",
+   "title": "Wreck Book: the year with no name in it",
+   "w": 1600,
+   "h": 1000,
+   "row": "Wreck Book spreads"
+  },
+  {
+   "id": "reckon-back-plot",
+   "group": "maps",
+   "title": "Dead Reckoning sheet: the back-plot",
+   "w": 1600,
+   "h": 900,
+   "row": "Dead Reckoning: 5 sheets, 4 instruments, lead line"
+  },
+  {
+   "id": "reckon-blockade",
+   "group": "maps",
+   "title": "Dead Reckoning sheet: the blockade",
+   "w": 1600,
+   "h": 900,
+   "row": "Dead Reckoning: 5 sheets, 4 instruments, lead line"
+  },
+  {
+   "id": "reckon-lane",
+   "group": "maps",
+   "title": "Dead Reckoning sheet: laying a lane",
+   "w": 1600,
+   "h": 900,
+   "row": "Dead Reckoning: 5 sheets, 4 instruments, lead line"
+  },
+  {
+   "id": "reckon-strait",
+   "group": "maps",
+   "title": "Dead Reckoning sheet: the Lamplit Strait",
+   "w": 1600,
+   "h": 900,
+   "row": "Dead Reckoning: 5 sheets, 4 instruments, lead line"
+  },
+  {
+   "id": "reckon-unwritten",
+   "group": "maps",
+   "title": "Dead Reckoning sheet: off the chart's edge",
+   "w": 1600,
+   "h": 900,
+   "row": "Dead Reckoning: 5 sheets, 4 instruments, lead line"
+  },
+  {
+   "id": "table-flooding",
+   "group": "maps",
+   "title": "Liar's Tide table: the Flooding Table",
+   "w": 1600,
+   "h": 900,
+   "row": "Liar's Tide: 6 faces, tide die, loaded die, cup, 3 table skins"
+  },
+  {
+   "id": "table-gullwife",
+   "group": "maps",
+   "title": "Liar's Tide table: the Gullwife's deck",
+   "w": 1600,
+   "h": 900,
+   "row": "Liar's Tide: 6 faces, tide die, loaded die, cup, 3 table skins"
+  },
+  {
+   "id": "table-tidewater",
+   "group": "maps",
+   "title": "Liar's Tide table: the Tidewater tavern",
+   "w": 1600,
+   "h": 900,
+   "row": "Liar's Tide: 6 faces, tide die, loaded die, cup, 3 table skins"
+  },
+  {
+   "id": "tea-board-comptroller",
+   "group": "maps",
+   "title": "The Tea Board: the Comptroller's board",
+   "w": 1600,
+   "h": 900,
+   "row": "The Tea Board: 3 boards, 5 piece types, crack, tide dial"
+  },
+  {
+   "id": "tea-board-final",
+   "group": "maps",
+   "title": "The Tea Board: the Lord of Tea's board",
+   "w": 1600,
+   "h": 900,
+   "row": "The Tea Board: 3 boards, 5 piece types, crack, tide dial"
+  },
+  {
+   "id": "tea-board-parlour",
+   "group": "maps",
+   "title": "The Tea Board: the tavern parlour board",
+   "w": 1600,
+   "h": 900,
+   "row": "The Tea Board: 3 boards, 5 piece types, crack, tide dial"
+  },
+  {
+   "id": "thread-guest",
+   "group": "thread",
+   "title": "Thread: the left-slanted correction",
+   "w": 480,
+   "h": 480,
+   "row": "Thread"
+  },
+  {
+   "id": "thread-own",
+   "group": "thread",
+   "title": "Thread: the tea caddy",
+   "w": 480,
+   "h": 480,
+   "row": "Thread"
+  }
+ ]
+}

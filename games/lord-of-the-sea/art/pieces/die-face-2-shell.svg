@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 300" width="260" height="300" role="img" aria-labelledby="die-face-2-shell-t die-face-2-shell-d">
+<title id="die-face-2-shell-t">Tide die face 2: Shell</title>
+<desc id="die-face-2-shell-d">Face 2 of a tide die in tattoo flash, bold outline and flat colour: a gold scallop shell with a red hinge.</desc>
+<defs><filter id="die-face-2-shell-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="70"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter></defs>
+<rect x="0" y="0" width="260" height="300" fill="#DCCBA2"/>
+<rect x="0" y="0" width="260" height="300" filter="url(#die-face-2-shell-grain1)"/>
+<path d="M244,10.8a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M65.6,263.2a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M15.4,232.7a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M160.8,226.8a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M43.8,272.3a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M240.5,49a1.3,1.3 0 1,0 2.7,0a1.3,1.3 0 1,0 -2.7,0M2,51.7a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M48.4,81.5a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M154.7,123a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M226.3,176.4a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M205.8,168.2a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M26.7,83.6a1.3,1.3 0 1,0 2.7,0a1.3,1.3 0 1,0 -2.7,0M215.5,149.3a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M104.1,119.6a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M110.8,124.1a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M196.4,83.4a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M68.6,22.4a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M49.9,183.3a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M162.1,266.3a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M49.9,13.3a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M98,162.2a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M22,173.5a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M148.7,247.9a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M252.5,259.1a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M157.7,90.9a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M92.8,282.3a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M198.8,50.5a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M108.7,102.7a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M144.9,149.1a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M53.5,210.2a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0" fill="#6B4A2B" opacity="0.3"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="13"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#E7A93B" stroke-width="8"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="8" stroke-dasharray="2.5 9"/>
+<path d="M40,37 Q40,44 47,44 Q40,44 40,51 Q40,44 33,44 Q40,44 40,37Z" fill="#16130F"/>
+<path d="M222,43 Q222,52 231,52 Q222,52 222,61 Q222,52 213,52 Q222,52 222,43Z" fill="#16130F"/>
+<path d="M36,192 Q36,200 44,200 Q36,200 36,208 Q36,200 28,200 Q36,200 36,192Z" fill="#16130F"/>
+<path d="M226,190 Q226,196 232,196 Q226,196 226,202 Q226,196 220,196 Q226,196 226,190Z" fill="#16130F"/>
+<g transform="translate(130,124) rotate(0)">
+<rect x="-61.5" y="-61.5" width="150" height="150" rx="25.5" fill="#16130F"/>
+<rect x="-75" y="-75" width="150" height="150" rx="25.5" fill="#F6ECD2" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M-61,-45 q0,-16 16,-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+<g transform="scale(1)">
+<path d="M-50,2 A50,50 0 0,1 50,2 L16,40 L-16,40Z" fill="#E7A93B" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="0" y1="40" x2="-41.6" y2="-19" stroke="#16130F" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="0" y1="40" x2="-28.2" y2="-33.2" stroke="#16130F" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="0" y1="40" x2="-10" y2="-41" stroke="#16130F" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="0" y1="40" x2="10" y2="-41" stroke="#16130F" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="0" y1="40" x2="28.2" y2="-33.2" stroke="#16130F" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="0" y1="40" x2="41.6" y2="-19" stroke="#16130F" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M-16,40 h32 v10 h-32z" fill="#8C2B2B" stroke="#16130F" stroke-width="4" stroke-linejoin="round"/>
+<path d="M-36,-14 A40,40 0 0,1 -8,-40" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+</g>
+<circle cx="-59" cy="61" r="2.8" fill="#16130F"/>
+<circle cx="-50" cy="61" r="2.8" fill="#16130F"/>
+</g>
+<path d="M19.5,242 l34,0 l0,40 l-34,0 l15,-20.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M240.5,242 l-34,0 l0,40 l34,0 l-15,-20.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M59.5,228 Q130,214 200.5,228 L200.5,268 Q130,254 59.5,268Z" fill="#8C2B2B" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="130" y="253.3" font-size="22" font-family="serif" fill="#F6ECD2" text-anchor="middle" font-weight="bold" letter-spacing="3">SHELL</text>
+</svg>

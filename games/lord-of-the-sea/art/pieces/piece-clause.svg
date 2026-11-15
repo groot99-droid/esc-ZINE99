@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="piece-clause-t piece-clause-d">
+<title id="piece-clause-t">Tea Board piece: Clause</title>
+<desc id="piece-clause-d">A Clause token: a folded slip of vellum with one line underlined in red and a pin through it.</desc>
+<defs><radialGradient id="piece-clause-rg1" cx="0.4" cy="0.35" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.9"/><stop offset="60%" stop-color="#fff" stop-opacity="0"/><stop offset="100%" stop-color="#A9BCE3" stop-opacity="0.7"/></radialGradient></defs>
+<rect x="0" y="0" width="240" height="240" fill="#F7F8FB"/>
+<rect x="0" y="0" width="240" height="240" fill="url(#piece-clause-rg1)"/>
+<rect x="8" y="8" width="224" height="224" fill="none" stroke="#1E3F8C" stroke-width="3"/>
+<rect x="18" y="18" width="204" height="204" fill="none" stroke="#3D63B8" stroke-width="5" stroke-dasharray="0.1 11" stroke-linecap="round"/>
+<ellipse cx="126" cy="176" rx="64" ry="14" fill="#1F2E4A" opacity="0.2"/>
+<g transform="rotate(-8 120 124)">
+<path d="M56,84 h128 v82 h-128z" fill="#EBDDB8" stroke="#6B4A2B" stroke-width="1.6"/>
+<path d="M56,84 l64,30 l64,-30" fill="none" stroke="#6B4A2B" stroke-width="1.2" opacity="0.7"/>
+<path d="M70,126 C71.1,119.7 74.4,119.7 72.7,126 C76.5,119.7 79.8,119.7 78.2,126 C81.9,119.7 85.2,119.7 83.6,126 C87.2,119.7 89.8,119.7 88.5,126 C91.7,112.8 94.7,112.8 93.2,126 M107,126 C108.1,119.7 111.1,119.7 109.6,126 C113.2,112.8 116.2,112.8 114.7,126 C118.4,119.7 121.8,119.7 120.1,126 C123.9,119.7 126.9,119.7 125.4,126 C128.8,119.7 131.5,119.7 130.2,126 C133.4,119.7 136.2,119.7 134.8,138 C138.1,119.7 141,119.7 139.6,126 M151,126 C151.9,119.7 154.8,119.7 153.4,126 C156.7,112.8 159.5,112.8 158.1,126 C161.5,119.7 164.8,119.7 163.2,126" fill="none" stroke="#1B2238" stroke-width="1" stroke-linecap="round"/>
+<path d="M70,141 C71,134.7 74.2,134.7 72.6,141 C76.5,134.7 80.1,134.7 78.3,141 C82.4,134.7 85.8,134.7 84.1,141 C88,127.8 91.3,127.8 89.7,141 C93.5,127.8 96.7,127.8 95.1,141 C99,134.7 102.7,134.7 100.9,141 C105.2,127.8 108.9,127.8 107,141 M118.8,141 C119.9,134.7 123.1,134.7 121.5,141 C125,134.7 127.6,134.7 126.3,141 C129.5,134.7 132.6,134.7 131.1,141 M143,141 C144.3,134.7 148,134.7 146.1,141 C150.2,134.7 153.2,134.7 151.7,141 C155.4,134.7 159.2,134.7 157.3,141 C161.3,134.7 163.9,134.7 162.6,153 C165.8,134.7 168.7,134.7 167.2,141" fill="none" stroke="#1B2238" stroke-width="1" stroke-linecap="round"/>
+<path d="M70,156 C71,149.7 73.9,149.7 72.4,156 C75.8,149.7 78.5,149.7 77.2,156 C80.7,149.7 84.4,149.7 82.6,156 C86.7,149.7 89.7,149.7 88.2,156 M100.8,156 C101.8,149.7 104.7,149.7 103.3,156 C106.8,149.7 110.1,149.7 108.5,156 C112.2,142.8 114.9,142.8 113.5,156 C117.1,149.7 120.7,149.7 118.9,168 C123.2,149.7 126.7,149.7 124.9,156 C128.9,149.7 131.9,149.7 130.4,156 C133.9,149.7 136.7,149.7 135.3,156 C138.4,149.7 141,149.7 139.7,156 M151.7,156 C152.6,149.7 155.3,149.7 154,168 C157.2,149.7 159.9,149.7 158.5,156 C161.7,142.8 164.5,142.8 163.1,156 C166.2,149.7 168.9,149.7 167.6,156" fill="none" stroke="#1B2238" stroke-width="1" stroke-linecap="round"/>
+<path d="M68.8,147.3 L81.2,147.3 L94.6,146.7 L106.3,146.9 L120.5,146.5 L132.8,146.4 L146.4,146.6 L159.4,147.3 L172.2,147.2" fill="none" stroke="#8C2B2B" stroke-width="2.6"/>
+</g>
+<line x1="150" y1="96" x2="160" y2="112" stroke="#555" stroke-width="2"/>
+<circle cx="150" cy="96" r="8" fill="#8C2B2B" stroke="#000" stroke-width="1"/>
+<circle cx="147" cy="93" r="2.4" fill="#fff" opacity="0.7"/>
+</svg>

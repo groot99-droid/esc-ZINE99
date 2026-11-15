@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 300" width="260" height="300" role="img" aria-labelledby="loaded-die-t loaded-die-d">
+<title id="loaded-die-t">The loaded die</title>
+<desc id="loaded-die-d">A Company-issue die weighted to Lantern: ink-blue, the Company's leaf mark on one face, the Lantern always on top, and a plug of lead showing at the low corner.</desc>
+<defs><filter id="loaded-die-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="851"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><pattern id="loaded-die-pat2" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0,3 H6" stroke="#16130F" stroke-width="2" opacity="1"/></pattern></defs>
+<rect x="0" y="0" width="260" height="300" fill="#DCCBA2"/>
+<rect x="0" y="0" width="260" height="300" filter="url(#loaded-die-grain1)"/>
+<path d="M83.6,270.4a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M129.6,52.8a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M126.3,168.8a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M212.6,17.7a1.5,1.5 0 1,0 2.9,0a1.5,1.5 0 1,0 -2.9,0M195,72.4a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M208.7,18.5a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M220.8,246.1a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M168.7,238.3a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M57.2,25.6a1.4,1.4 0 1,0 2.7,0a1.4,1.4 0 1,0 -2.7,0M175.9,92.4a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M71.6,190.7a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M122.9,228.2a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M255.9,233.3a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M22.3,57.6a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M200.4,80.3a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M92.3,160.2a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M102.1,68.6a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M165.6,217.8a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M105,27.8a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M140.2,202.9a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M77.4,295.1a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M109.4,62.4a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M96.7,258.7a1.5,1.5 0 1,0 2.9,0a1.5,1.5 0 1,0 -2.9,0M241.5,241.7a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M11.4,56.3a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M223.2,82.1a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M82.4,178.6a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M204.5,42.5a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M108.3,280.2a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M41.3,236.5a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0" fill="#6B4A2B" opacity="0.3"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="13"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#E7A93B" stroke-width="8"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="8" stroke-dasharray="2.5 9"/>
+<ellipse cx="134" cy="196" rx="86" ry="20" fill="#16130F" opacity="0.3"/>
+<g transform="matrix(0.866,0.5,-0.866,0.5,130,44)">
+<rect x="0" y="0" width="78" height="78" rx="9.4" fill="#3f5a94" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<g transform="translate(39,39) scale(0.5)">
+<line x1="42.7" y1="19.2" x2="55.6" y2="24.5" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="18" y1="44.3" x2="23.4" y2="57.2" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="-17.2" y1="44.7" x2="-22.5" y2="57.6" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="-42.3" y1="20" x2="-55.2" y2="25.4" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="-42.7" y1="-15.2" x2="-55.6" y2="-20.5" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="-18" y1="-40.3" x2="-23.4" y2="-53.2" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="17.2" y1="-40.7" x2="22.5" y2="-53.6" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="42.3" y1="-16" x2="55.2" y2="-21.4" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<path d="M-10,-34 a10,10 0 1,1 20,0" fill="none" stroke="#16130F" stroke-width="5"/>
+<path d="M-22,-30 h44 l-6,10 h-32z M-22,34 h44 l-6,-10 h-32z" fill="#2F4E8A" stroke="#16130F" stroke-width="5" stroke-linejoin="round"/>
+<rect x="-20" y="-20" width="40" height="44" rx="5" fill="#E7A93B" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M0,16 q-14,-12 0,-30 q14,18 0,30z" fill="#8C2B2B" stroke="#16130F" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M-12,-14 v30" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+</g>
+</g>
+<g transform="matrix(0.866,0.5,0,1,62.5,83)">
+<rect x="0" y="0" width="78" height="78" rx="9.4" fill="#3f5a94" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="0" y="0" width="78" height="78" rx="9.4" fill="#000" opacity="0.2"/>
+<g transform="translate(39,39) scale(0.5)">
+<g opacity="1" fill="none" stroke="#F6ECD2" stroke-width="6" stroke-linecap="round">
+<circle cx="0" cy="0" r="44"/>
+<path d="M0,30.8 Q-33,0 0,-33 Q33,0 0,30.8 M0,30.8 V-22"/>
+<path d="M-13.2,-2.2 L0,8.8 L13.2,-2.2 M-10.6,-15.4 L0,-5.3 L10.6,-15.4" stroke-width="3.6"/>
+</g>
+</g>
+</g>
+<g transform="matrix(0.866,-0.5,0,1,130,122)">
+<rect x="0" y="0" width="78" height="78" rx="9.4" fill="#3f5a94" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="0" y="0" width="78" height="78" rx="9.4" fill="#000" opacity="0.4"/>
+<g transform="translate(39,39) scale(0.5)">
+<circle cx="26" cy="30" r="24" fill="#8f9299" stroke="#16130F" stroke-width="5"/>
+<circle cx="26" cy="30" r="24" fill="url(#loaded-die-pat2)" opacity="0.6"/>
+<path d="M-46,-44 l22,22 M-46,-22 l22,-22" stroke="#F6ECD2" stroke-width="5" stroke-linecap="round"/>
+</g>
+</g>
+<path d="M40,37 Q40,44 47,44 Q40,44 40,51 Q40,44 33,44 Q40,44 40,37Z" fill="#16130F"/>
+<path d="M222,43 Q222,52 231,52 Q222,52 222,61 Q222,52 213,52 Q222,52 222,43Z" fill="#16130F"/>
+<path d="M15,243 l34,0 l0,38 l-34,0 l15,-19.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M245,243 l-34,0 l0,38 l34,0 l-15,-19.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M55,229 Q130,215 205,229 L205,267 Q130,253 55,267Z" fill="#2F4E8A" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="130" y="252.8" font-size="20" font-family="serif" fill="#F6ECD2" text-anchor="middle" font-weight="bold" letter-spacing="3">COMPANY</text>
+</svg>
