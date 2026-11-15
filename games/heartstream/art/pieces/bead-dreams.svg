@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="bead-dreams-t bead-dreams-d">
+<title id="bead-dreams-t">Song bead: the one who dreams</title>
+<desc id="bead-dreams-d">A song bead in the timbre of the one who dreams (soft and far, haloed), threaded on its strand against the marrow dark; its height on the five faint lines is its pitch.</desc>
+<defs><linearGradient id="bead-dreams-lg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e1a2e"/><stop offset="100%" stop-color="#1E3557"/></linearGradient><filter id="bead-dreams-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="830"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><radialGradient id="bead-dreams-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#7FB2E0" stop-opacity="0.6"/><stop offset="100%" stop-color="#7FB2E0" stop-opacity="0"/></radialGradient><radialGradient id="bead-dreams-rg4" cx="0.38" cy="0.34" r="0.8"><stop offset="0%" stop-color="#d4e8fa" stop-opacity="1"/><stop offset="55%" stop-color="#7FB2E0" stop-opacity="1"/><stop offset="100%" stop-color="#2F5D8C" stop-opacity="1"/></radialGradient></defs>
+<rect x="0" y="0" width="160" height="160" fill="url(#bead-dreams-lg1)"/>
+<rect x="0" y="0" width="160" height="160" fill="none"/>
+<rect x="0" y="0" width="160" height="160" filter="url(#bead-dreams-grain2)"/>
+<path d="M67.5,34.7a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M111.5,26.3a1.1,1.1 0 1,0 2.3,0a1.1,1.1 0 1,0 -2.3,0M124.3,97.9a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M127.3,115.5a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M58.1,100.8a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M110.7,90.4a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M121.5,96.8a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M151.4,15.1a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M128.6,156.1a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M54.5,2.2a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M103.6,24.5a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M79.4,65.6a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M137.4,42.3a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M25.2,71.3a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M95.2,55.5a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M26.4,146a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M79.6,45.1a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M9.8,69.2a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M99.2,97.8a1.1,1.1 0 1,0 2.3,0a1.1,1.1 0 1,0 -2.3,0M123,117a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M77.1,76.8a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M122.1,111.5a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M114.4,12.8a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M24.2,156.1a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M1.2,77.3a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M14.4,127.1a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M20.7,158.5a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M131.3,124.6a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0" fill="#7FB2E0" opacity="0.3"/>
+<line x1="8" y1="25.6" x2="152" y2="25.6" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<line x1="8" y1="52.8" x2="152" y2="52.8" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<line x1="8" y1="80" x2="152" y2="80" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<line x1="8" y1="107.2" x2="152" y2="107.2" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<line x1="8" y1="134.4" x2="152" y2="134.4" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<circle cx="80" cy="44" r="62" fill="url(#bead-dreams-rg3)"/>
+<circle cx="124.2" cy="62.7" r="1.6" fill="#E8DCC4"/>
+<circle cx="92.8" cy="90.3" r="1.6" fill="#E8DCC4"/>
+<circle cx="51.8" cy="82.8" r="1.6" fill="#E8DCC4"/>
+<circle cx="32" cy="46" r="1.6" fill="#E8DCC4"/>
+<circle cx="48.6" cy="7.7" r="1.6" fill="#E8DCC4"/>
+<circle cx="89" cy="-3.2" r="1.6" fill="#E8DCC4"/>
+<circle cx="122.5" cy="21.7" r="1.6" fill="#E8DCC4"/>
+<path d="M0,96 Q40.0,76.0 58,44" fill="none" stroke="#E8DCC4" stroke-width="2.4" stroke-linecap="round" opacity="0.8"/>
+<path d="M102,44 Q120.0,51.0 160,70" fill="none" stroke="#E8DCC4" stroke-width="2.4" stroke-linecap="round" opacity="0.8"/>
+<circle cx="80" cy="44" r="24" fill="url(#bead-dreams-rg4)" stroke="#17110f" stroke-width="3"/>
+<ellipse cx="71.6" cy="34.4" rx="7.2" ry="4.3" fill="#fff" opacity="0.8" transform="rotate(-30 71.6 34.4)"/>
+<circle cx="59" cy="44" r="2.4" fill="#17110f"/>
+<circle cx="101" cy="44" r="2.4" fill="#17110f"/>
+<path d="M129.2,137.1 Q136,148.8 142.8,137.1 Q136,142.9 129.2,137.1Z" fill="none" stroke="#7FB2E0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="136" cy="132.6" r="2.2" fill="#7FB2E0"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="ui-beat-rim-t ui-beat-rim-d">
+<title id="ui-beat-rim-t">The beat rim</title>
+<desc id="ui-beat-rim-d">The beat rim that glows round every page on the heartbeat: a thin red-gold line with a soft halo, a pulse cut into it at the middle of each side, and the page itself left clear.</desc>
+<defs><filter id="ui-beat-rim-blur1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="12"/></filter><filter id="ui-beat-rim-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><radialGradient id="ui-beat-rim-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2B544" stop-opacity="0.8"/><stop offset="100%" stop-color="#F2B544" stop-opacity="0"/></radialGradient><radialGradient id="ui-beat-rim-rg4" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2B544" stop-opacity="0.8"/><stop offset="100%" stop-color="#F2B544" stop-opacity="0"/></radialGradient><radialGradient id="ui-beat-rim-rg5" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2B544" stop-opacity="0.8"/><stop offset="100%" stop-color="#F2B544" stop-opacity="0"/></radialGradient><radialGradient id="ui-beat-rim-rg6" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2B544" stop-opacity="0.8"/><stop offset="100%" stop-color="#F2B544" stop-opacity="0"/></radialGradient></defs>
+<path d="M40,14 H1560 Q1586,14 1586,40 V860 Q1586,886 1560,886 H40 Q14,886 14,860 V40 Q14,14 40,14Z" fill="none" stroke="#B3202E" stroke-width="26" filter="url(#ui-beat-rim-blur1)" opacity="0.8"/>
+<path d="M40,14 H1560 Q1586,14 1586,40 V860 Q1586,886 1560,886 H40 Q14,886 14,860 V40 Q14,14 40,14Z" fill="none" stroke="#E0603A" stroke-width="9" filter="url(#ui-beat-rim-blur2)" opacity="0.9"/>
+<path d="M40,14 H1560 Q1586,14 1586,40 V860 Q1586,886 1560,886 H40 Q14,886 14,860 V40 Q14,14 40,14Z" fill="none" stroke="#F2B544" stroke-width="2.6"/>
+<path d="M740,14 h43 l10,-22 l14,44 l10,-22 h43 M740,886 h43 l10,-22 l14,44 l10,-22 h43" fill="none" stroke="#fff3d0" stroke-width="3" stroke-linejoin="round"/>
+<path d="M14,400 v33 l-18,10 l36,14 l-18,10 v33 M1586,400 v33 l18,10 l-36,14 l18,10 v33" fill="none" stroke="#fff3d0" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="40" cy="40" r="30" fill="url(#ui-beat-rim-rg3)"/>
+<circle cx="40" cy="40" r="4" fill="#fff3d0"/>
+<circle cx="1560" cy="40" r="30" fill="url(#ui-beat-rim-rg4)"/>
+<circle cx="1560" cy="40" r="4" fill="#fff3d0"/>
+<circle cx="40" cy="860" r="30" fill="url(#ui-beat-rim-rg5)"/>
+<circle cx="40" cy="860" r="4" fill="#fff3d0"/>
+<circle cx="1560" cy="860" r="30" fill="url(#ui-beat-rim-rg6)"/>
+<circle cx="1560" cy="860" r="4" fill="#fff3d0"/>
+<path d="M42.4,593.5l-7.5,2.6M1121.8,44.9l-6,10.1M1414.9,858.9l14.4,2.3M229.6,32l-6.5,5.6M962.7,853.2l10.7,8.3M33.5,66l-6,6.5M1315,863l-12.8,0.1M881.6,868l4.8,3.7M1559.4,360.8l1.3,6.9M1552.5,84.9l-9,6.1M1425.9,852.3l2.9,10.2M263,862.2l-1.5,8.6M1184.8,860.5l-4.7,5.9" fill="none" stroke="#E0603A" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+</svg>

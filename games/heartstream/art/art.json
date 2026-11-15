@@ -1,0 +1,942 @@
+{
+ "game": "heartstream",
+ "count": 117,
+ "assets": [
+  {
+   "id": "numeral-1",
+   "group": "title",
+   "title": "Chapter numeral I: The Marrow Lights",
+   "w": 300,
+   "h": 300,
+   "row": "Title lettering and nine chapter numerals, scrimshaw-cut"
+  },
+  {
+   "id": "numeral-2",
+   "group": "title",
+   "title": "Chapter numeral II: The Gift",
+   "w": 300,
+   "h": 300,
+   "row": "Title lettering and nine chapter numerals, scrimshaw-cut"
+  },
+  {
+   "id": "numeral-3",
+   "group": "title",
+   "title": "Chapter numeral III: The Marrow-Song",
+   "w": 300,
+   "h": 300,
+   "row": "Title lettering and nine chapter numerals, scrimshaw-cut"
+  },
+  {
+   "id": "numeral-4",
+   "group": "title",
+   "title": "Chapter numeral IV: The Recognition",
+   "w": 300,
+   "h": 300,
+   "row": "Title lettering and nine chapter numerals, scrimshaw-cut"
+  },
+  {
+   "id": "numeral-5",
+   "group": "title",
+   "title": "Chapter numeral V: The Ascent",
+   "w": 300,
+   "h": 300,
+   "row": "Title lettering and nine chapter numerals, scrimshaw-cut"
+  },
+  {
+   "id": "numeral-6",
+   "group": "title",
+   "title": "Chapter numeral VI: The River",
+   "w": 300,
+   "h": 300,
+   "row": "Title lettering and nine chapter numerals, scrimshaw-cut"
+  },
+  {
+   "id": "numeral-7",
+   "group": "title",
+   "title": "Chapter numeral VII: The Delta",
+   "w": 300,
+   "h": 300,
+   "row": "Title lettering and nine chapter numerals, scrimshaw-cut"
+  },
+  {
+   "id": "numeral-8",
+   "group": "title",
+   "title": "Chapter numeral VIII: The Heart",
+   "w": 300,
+   "h": 300,
+   "row": "Title lettering and nine chapter numerals, scrimshaw-cut"
+  },
+  {
+   "id": "numeral-9",
+   "group": "title",
+   "title": "Chapter numeral IX: Alone",
+   "w": 300,
+   "h": 300,
+   "row": "Title lettering and nine chapter numerals, scrimshaw-cut"
+  },
+  {
+   "id": "title-lettering",
+   "group": "title",
+   "title": "Title lettering: A Journey Into the Heartstream",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lettering and nine chapter numerals, scrimshaw-cut"
+  },
+  {
+   "id": "seat-argues-blue",
+   "group": "figures",
+   "title": "The one who argues (blue)",
+   "w": 480,
+   "h": 600,
+   "row": "Seat portraits, 4 temperaments \u00d7 3 colour states, linocut heads"
+  },
+  {
+   "id": "seat-argues-red",
+   "group": "figures",
+   "title": "The one who argues (red)",
+   "w": 480,
+   "h": 600,
+   "row": "Seat portraits, 4 temperaments \u00d7 3 colour states, linocut heads"
+  },
+  {
+   "id": "seat-argues-turning",
+   "group": "figures",
+   "title": "The one who argues (turning)",
+   "w": 480,
+   "h": 600,
+   "row": "Seat portraits, 4 temperaments \u00d7 3 colour states, linocut heads"
+  },
+  {
+   "id": "seat-dreams-blue",
+   "group": "figures",
+   "title": "The one who dreams (blue)",
+   "w": 480,
+   "h": 600,
+   "row": "Seat portraits, 4 temperaments \u00d7 3 colour states, linocut heads"
+  },
+  {
+   "id": "seat-dreams-red",
+   "group": "figures",
+   "title": "The one who dreams (red)",
+   "w": 480,
+   "h": 600,
+   "row": "Seat portraits, 4 temperaments \u00d7 3 colour states, linocut heads"
+  },
+  {
+   "id": "seat-dreams-turning",
+   "group": "figures",
+   "title": "The one who dreams (turning)",
+   "w": 480,
+   "h": 600,
+   "row": "Seat portraits, 4 temperaments \u00d7 3 colour states, linocut heads"
+  },
+  {
+   "id": "seat-fears-blue",
+   "group": "figures",
+   "title": "The one who fears (blue)",
+   "w": 480,
+   "h": 600,
+   "row": "Seat portraits, 4 temperaments \u00d7 3 colour states, linocut heads"
+  },
+  {
+   "id": "seat-fears-red",
+   "group": "figures",
+   "title": "The one who fears (red)",
+   "w": 480,
+   "h": 600,
+   "row": "Seat portraits, 4 temperaments \u00d7 3 colour states, linocut heads"
+  },
+  {
+   "id": "seat-fears-turning",
+   "group": "figures",
+   "title": "The one who fears (turning)",
+   "w": 480,
+   "h": 600,
+   "row": "Seat portraits, 4 temperaments \u00d7 3 colour states, linocut heads"
+  },
+  {
+   "id": "seat-laughs-blue",
+   "group": "figures",
+   "title": "The one who laughs (blue)",
+   "w": 480,
+   "h": 600,
+   "row": "Seat portraits, 4 temperaments \u00d7 3 colour states, linocut heads"
+  },
+  {
+   "id": "seat-laughs-red",
+   "group": "figures",
+   "title": "The one who laughs (red)",
+   "w": 480,
+   "h": 600,
+   "row": "Seat portraits, 4 temperaments \u00d7 3 colour states, linocut heads"
+  },
+  {
+   "id": "seat-laughs-turning",
+   "group": "figures",
+   "title": "The one who laughs (turning)",
+   "w": 480,
+   "h": 600,
+   "row": "Seat portraits, 4 temperaments \u00d7 3 colour states, linocut heads"
+  },
+  {
+   "id": "climb-1-far",
+   "group": "backdrops",
+   "title": "Climb 1, far plane",
+   "w": 900,
+   "h": 1600,
+   "row": "Climb backdrops, 2 sequences \u00d7 3 planes, and the Stencil Wall"
+  },
+  {
+   "id": "climb-1-mid",
+   "group": "backdrops",
+   "title": "Climb 1, mid plane",
+   "w": 900,
+   "h": 1600,
+   "row": "Climb backdrops, 2 sequences \u00d7 3 planes, and the Stencil Wall"
+  },
+  {
+   "id": "climb-1-near",
+   "group": "backdrops",
+   "title": "Climb 1, near plane",
+   "w": 900,
+   "h": 1600,
+   "row": "Climb backdrops, 2 sequences \u00d7 3 planes, and the Stencil Wall"
+  },
+  {
+   "id": "climb-2-far",
+   "group": "backdrops",
+   "title": "Climb 2, far plane",
+   "w": 900,
+   "h": 1600,
+   "row": "Climb backdrops, 2 sequences \u00d7 3 planes, and the Stencil Wall"
+  },
+  {
+   "id": "climb-2-mid",
+   "group": "backdrops",
+   "title": "Climb 2, mid plane",
+   "w": 900,
+   "h": 1600,
+   "row": "Climb backdrops, 2 sequences \u00d7 3 planes, and the Stencil Wall"
+  },
+  {
+   "id": "climb-2-near",
+   "group": "backdrops",
+   "title": "Climb 2, near plane",
+   "w": 900,
+   "h": 1600,
+   "row": "Climb backdrops, 2 sequences \u00d7 3 planes, and the Stencil Wall"
+  },
+  {
+   "id": "climb-stencil-wall",
+   "group": "backdrops",
+   "title": "The Stencil Wall",
+   "w": 1600,
+   "h": 900,
+   "row": "Climb backdrops, 2 sequences \u00d7 3 planes, and the Stencil Wall"
+  },
+  {
+   "id": "counters-hall-wall",
+   "group": "backdrops",
+   "title": "The hall wall of unfinished boards",
+   "w": 1600,
+   "h": 900,
+   "row": "Counters: board, counter, 6 mark pieces, the finished board, the hall wall"
+  },
+  {
+   "id": "river-1-far",
+   "group": "backdrops",
+   "title": "River 1, far plane",
+   "w": 1600,
+   "h": 900,
+   "row": "River backdrops, 3 sequences \u00d7 3 planes, and the Inspection plate"
+  },
+  {
+   "id": "river-1-mid",
+   "group": "backdrops",
+   "title": "River 1, mid plane",
+   "w": 1600,
+   "h": 900,
+   "row": "River backdrops, 3 sequences \u00d7 3 planes, and the Inspection plate"
+  },
+  {
+   "id": "river-1-near",
+   "group": "backdrops",
+   "title": "River 1, near plane",
+   "w": 1600,
+   "h": 900,
+   "row": "River backdrops, 3 sequences \u00d7 3 planes, and the Inspection plate"
+  },
+  {
+   "id": "river-2-far",
+   "group": "backdrops",
+   "title": "River 2, far plane",
+   "w": 1600,
+   "h": 900,
+   "row": "River backdrops, 3 sequences \u00d7 3 planes, and the Inspection plate"
+  },
+  {
+   "id": "river-2-mid",
+   "group": "backdrops",
+   "title": "River 2, mid plane",
+   "w": 1600,
+   "h": 900,
+   "row": "River backdrops, 3 sequences \u00d7 3 planes, and the Inspection plate"
+  },
+  {
+   "id": "river-2-near",
+   "group": "backdrops",
+   "title": "River 2, near plane",
+   "w": 1600,
+   "h": 900,
+   "row": "River backdrops, 3 sequences \u00d7 3 planes, and the Inspection plate"
+  },
+  {
+   "id": "river-3-far",
+   "group": "backdrops",
+   "title": "River 3, far plane",
+   "w": 1600,
+   "h": 900,
+   "row": "River backdrops, 3 sequences \u00d7 3 planes, and the Inspection plate"
+  },
+  {
+   "id": "river-3-mid",
+   "group": "backdrops",
+   "title": "River 3, mid plane",
+   "w": 1600,
+   "h": 900,
+   "row": "River backdrops, 3 sequences \u00d7 3 planes, and the Inspection plate"
+  },
+  {
+   "id": "river-3-near",
+   "group": "backdrops",
+   "title": "River 3, near plane",
+   "w": 1600,
+   "h": 900,
+   "row": "River backdrops, 3 sequences \u00d7 3 planes, and the Inspection plate"
+  },
+  {
+   "id": "river-inspection",
+   "group": "backdrops",
+   "title": "The Inspection plate",
+   "w": 1600,
+   "h": 900,
+   "row": "River backdrops, 3 sequences \u00d7 3 planes, and the Inspection plate"
+  },
+  {
+   "id": "bead-argues",
+   "group": "pieces",
+   "title": "Song bead: the one who argues",
+   "w": 160,
+   "h": 160,
+   "row": "Song: beads in 4 timbres, rest bead, hollow bead, membrane"
+  },
+  {
+   "id": "bead-dreams",
+   "group": "pieces",
+   "title": "Song bead: the one who dreams",
+   "w": 160,
+   "h": 160,
+   "row": "Song: beads in 4 timbres, rest bead, hollow bead, membrane"
+  },
+  {
+   "id": "bead-fears",
+   "group": "pieces",
+   "title": "Song bead: the one who fears",
+   "w": 160,
+   "h": 160,
+   "row": "Song: beads in 4 timbres, rest bead, hollow bead, membrane"
+  },
+  {
+   "id": "bead-hollow",
+   "group": "pieces",
+   "title": "Hollow bead",
+   "w": 160,
+   "h": 160,
+   "row": "Song: beads in 4 timbres, rest bead, hollow bead, membrane"
+  },
+  {
+   "id": "bead-laughs",
+   "group": "pieces",
+   "title": "Song bead: the one who laughs",
+   "w": 160,
+   "h": 160,
+   "row": "Song: beads in 4 timbres, rest bead, hollow bead, membrane"
+  },
+  {
+   "id": "bead-rest",
+   "group": "pieces",
+   "title": "Rest bead",
+   "w": 160,
+   "h": 160,
+   "row": "Song: beads in 4 timbres, rest bead, hollow bead, membrane"
+  },
+  {
+   "id": "blank-cracked",
+   "group": "pieces",
+   "title": "Carving blank: cracked",
+   "w": 300,
+   "h": 420,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "blank-knuckle",
+   "group": "pieces",
+   "title": "Carving blank: knuckle",
+   "w": 300,
+   "h": 420,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "blank-long",
+   "group": "pieces",
+   "title": "Carving blank: long",
+   "w": 300,
+   "h": 420,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "blank-wedge",
+   "group": "pieces",
+   "title": "Carving blank: wedge",
+   "w": 300,
+   "h": 420,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "counter-fork",
+   "group": "pieces",
+   "title": "Counter piece: fork",
+   "w": 160,
+   "h": 160,
+   "row": "Counters: board, counter, 6 mark pieces, the finished board, the hall wall"
+  },
+  {
+   "id": "counter-notch",
+   "group": "pieces",
+   "title": "Counter piece: notch",
+   "w": 160,
+   "h": 160,
+   "row": "Counters: board, counter, 6 mark pieces, the finished board, the hall wall"
+  },
+  {
+   "id": "counter-plain",
+   "group": "pieces",
+   "title": "A plain counter",
+   "w": 160,
+   "h": 160,
+   "row": "Counters: board, counter, 6 mark pieces, the finished board, the hall wall"
+  },
+  {
+   "id": "counter-ring",
+   "group": "pieces",
+   "title": "Counter piece: ring",
+   "w": 160,
+   "h": 160,
+   "row": "Counters: board, counter, 6 mark pieces, the finished board, the hall wall"
+  },
+  {
+   "id": "counter-spiral",
+   "group": "pieces",
+   "title": "Counter piece: spiral",
+   "w": 160,
+   "h": 160,
+   "row": "Counters: board, counter, 6 mark pieces, the finished board, the hall wall"
+  },
+  {
+   "id": "counter-star",
+   "group": "pieces",
+   "title": "Counter piece: star",
+   "w": 160,
+   "h": 160,
+   "row": "Counters: board, counter, 6 mark pieces, the finished board, the hall wall"
+  },
+  {
+   "id": "counter-wave",
+   "group": "pieces",
+   "title": "Counter piece: wave",
+   "w": 160,
+   "h": 160,
+   "row": "Counters: board, counter, 6 mark pieces, the finished board, the hall wall"
+  },
+  {
+   "id": "form-awl",
+   "group": "pieces",
+   "title": "Carving form: the awl",
+   "w": 300,
+   "h": 420,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "form-comb",
+   "group": "pieces",
+   "title": "Carving form: the comb",
+   "w": 300,
+   "h": 420,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "form-flute",
+   "group": "pieces",
+   "title": "Carving form: the flute",
+   "w": 300,
+   "h": 420,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "form-hook",
+   "group": "pieces",
+   "title": "Carving form: the hook",
+   "w": 300,
+   "h": 420,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "form-scraper",
+   "group": "pieces",
+   "title": "Carving form: the scraper",
+   "w": 300,
+   "h": 420,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "glyph-calm-pool",
+   "group": "pieces",
+   "title": "Branch glyph: calm pool",
+   "w": 160,
+   "h": 160,
+   "row": "Chart: 2 plates, the back of the chart, 8 branch glyphs"
+  },
+  {
+   "id": "glyph-current-1",
+   "group": "pieces",
+   "title": "Branch glyph: current i",
+   "w": 160,
+   "h": 160,
+   "row": "Chart: 2 plates, the back of the chart, 8 branch glyphs"
+  },
+  {
+   "id": "glyph-current-2",
+   "group": "pieces",
+   "title": "Branch glyph: current ii",
+   "w": 160,
+   "h": 160,
+   "row": "Chart: 2 plates, the back of the chart, 8 branch glyphs"
+  },
+  {
+   "id": "glyph-current-3",
+   "group": "pieces",
+   "title": "Branch glyph: current iii",
+   "w": 160,
+   "h": 160,
+   "row": "Chart: 2 plates, the back of the chart, 8 branch glyphs"
+  },
+  {
+   "id": "glyph-listen",
+   "group": "pieces",
+   "title": "Branch glyph: listen",
+   "w": 160,
+   "h": 160,
+   "row": "Chart: 2 plates, the back of the chart, 8 branch glyphs"
+  },
+  {
+   "id": "glyph-narrow",
+   "group": "pieces",
+   "title": "Branch glyph: narrow",
+   "w": 160,
+   "h": 160,
+   "row": "Chart: 2 plates, the back of the chart, 8 branch glyphs"
+  },
+  {
+   "id": "glyph-patrol",
+   "group": "pieces",
+   "title": "Branch glyph: patrol",
+   "w": 160,
+   "h": 160,
+   "row": "Chart: 2 plates, the back of the chart, 8 branch glyphs"
+  },
+  {
+   "id": "glyph-tendrils",
+   "group": "pieces",
+   "title": "Branch glyph: tendrils",
+   "w": 160,
+   "h": 160,
+   "row": "Chart: 2 plates, the back of the chart, 8 branch glyphs"
+  },
+  {
+   "id": "mark-fork",
+   "group": "pieces",
+   "title": "Mark: fork",
+   "w": 160,
+   "h": 160,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "mark-notch",
+   "group": "pieces",
+   "title": "Mark: notch",
+   "w": 160,
+   "h": 160,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "mark-ring",
+   "group": "pieces",
+   "title": "Mark: ring",
+   "w": 160,
+   "h": 160,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "mark-spiral",
+   "group": "pieces",
+   "title": "Mark: spiral",
+   "w": 160,
+   "h": 160,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "mark-star",
+   "group": "pieces",
+   "title": "Mark: star",
+   "w": 160,
+   "h": 160,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "mark-wave",
+   "group": "pieces",
+   "title": "Mark: wave",
+   "w": 160,
+   "h": 160,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "song-membrane",
+   "group": "pieces",
+   "title": "The song membrane",
+   "w": 1600,
+   "h": 500,
+   "row": "Song: beads in 4 timbres, rest bead, hollow bead, membrane"
+  },
+  {
+   "id": "underside-counter",
+   "group": "pieces",
+   "title": "Underside sign: a counter in its hollow",
+   "w": 160,
+   "h": 160,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "underside-home",
+   "group": "pieces",
+   "title": "Underside sign: three beads, the last one home",
+   "w": 160,
+   "h": 160,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "underside-lamp",
+   "group": "pieces",
+   "title": "Underside sign: a lamp left burning",
+   "w": 160,
+   "h": 160,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "underside-open-hand",
+   "group": "pieces",
+   "title": "Underside sign: an open hand",
+   "w": 160,
+   "h": 160,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "underside-raft",
+   "group": "pieces",
+   "title": "Underside sign: the raft on the line",
+   "w": 160,
+   "h": 160,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "underside-two-hands",
+   "group": "pieces",
+   "title": "Underside sign: two hands meeting",
+   "w": 160,
+   "h": 160,
+   "row": "Carving: 5 forms, 6 marks, 4 blanks, 6 underside signs"
+  },
+  {
+   "id": "ending-carried-away",
+   "group": "endings",
+   "title": "Ending: Carried Away",
+   "w": 1600,
+   "h": 900,
+   "row": "Ending cards, one per ending"
+  },
+  {
+   "id": "ending-taken-by-the-river",
+   "group": "endings",
+   "title": "Ending: Taken by the River",
+   "w": 1600,
+   "h": 900,
+   "row": "Ending cards, one per ending"
+  },
+  {
+   "id": "ending-the-one-who-stayed",
+   "group": "endings",
+   "title": "Ending: The One Who Stayed",
+   "w": 1600,
+   "h": 900,
+   "row": "Ending cards, one per ending"
+  },
+  {
+   "id": "ending-the-open-hand",
+   "group": "endings",
+   "title": "Ending: The Open Hand",
+   "w": 1600,
+   "h": 900,
+   "row": "Ending cards, one per ending"
+  },
+  {
+   "id": "ending-two-together",
+   "group": "endings",
+   "title": "Ending: Two Together",
+   "w": 1600,
+   "h": 900,
+   "row": "Ending cards, one per ending"
+  },
+  {
+   "id": "chapter-1",
+   "group": "chapters",
+   "title": "Chapter 1: The Marrow Lights",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards"
+  },
+  {
+   "id": "chapter-2",
+   "group": "chapters",
+   "title": "Chapter 2: The Gift",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards"
+  },
+  {
+   "id": "chapter-3",
+   "group": "chapters",
+   "title": "Chapter 3: The Marrow-Song",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards"
+  },
+  {
+   "id": "chapter-4",
+   "group": "chapters",
+   "title": "Chapter 4: The Recognition",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards"
+  },
+  {
+   "id": "chapter-5",
+   "group": "chapters",
+   "title": "Chapter 5: The Ascent",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards"
+  },
+  {
+   "id": "chapter-6",
+   "group": "chapters",
+   "title": "Chapter 6: The River",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards"
+  },
+  {
+   "id": "chapter-7",
+   "group": "chapters",
+   "title": "Chapter 7: The Delta",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards"
+  },
+  {
+   "id": "chapter-8",
+   "group": "chapters",
+   "title": "Chapter 8: The Heart",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards"
+  },
+  {
+   "id": "chapter-9",
+   "group": "chapters",
+   "title": "Chapter 9: Alone",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards"
+  },
+  {
+   "id": "interstitial-cut-to-red",
+   "group": "chapters",
+   "title": "Interstitial: the cut to red",
+   "w": 1600,
+   "h": 900,
+   "row": "Interstitials: the dimming, days later, the cut to red"
+  },
+  {
+   "id": "interstitial-days-later",
+   "group": "chapters",
+   "title": "Interstitial: days later",
+   "w": 1600,
+   "h": 900,
+   "row": "Interstitials: the dimming, days later, the cut to red"
+  },
+  {
+   "id": "interstitial-dimming",
+   "group": "chapters",
+   "title": "Interstitial: the dimming",
+   "w": 1600,
+   "h": 900,
+   "row": "Interstitials: the dimming, days later, the cut to red"
+  },
+  {
+   "id": "ui-beat-rim",
+   "group": "ui",
+   "title": "The beat rim",
+   "w": 1600,
+   "h": 900,
+   "row": "UI ornaments: beat rim, 4 glyphs, emote wheel, vessel line, frames"
+  },
+  {
+   "id": "ui-emote-wheel",
+   "group": "ui",
+   "title": "The emote wheel",
+   "w": 480,
+   "h": 480,
+   "row": "UI ornaments: beat rim, 4 glyphs, emote wheel, vessel line, frames"
+  },
+  {
+   "id": "ui-frame-card",
+   "group": "ui",
+   "title": "Card frame (linocut)",
+   "w": 300,
+   "h": 420,
+   "row": "UI ornaments: beat rim, 4 glyphs, emote wheel, vessel line, frames"
+  },
+  {
+   "id": "ui-frame-end-card",
+   "group": "ui",
+   "title": "End card frame",
+   "w": 1600,
+   "h": 900,
+   "row": "UI ornaments: beat rim, 4 glyphs, emote wheel, vessel line, frames"
+  },
+  {
+   "id": "ui-frame-page",
+   "group": "ui",
+   "title": "Page frame (bone)",
+   "w": 1600,
+   "h": 900,
+   "row": "UI ornaments: beat rim, 4 glyphs, emote wheel, vessel line, frames"
+  },
+  {
+   "id": "ui-glyph-argues",
+   "group": "ui",
+   "title": "Temperament glyph: argues",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: beat rim, 4 glyphs, emote wheel, vessel line, frames"
+  },
+  {
+   "id": "ui-glyph-dreams",
+   "group": "ui",
+   "title": "Temperament glyph: dreams",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: beat rim, 4 glyphs, emote wheel, vessel line, frames"
+  },
+  {
+   "id": "ui-glyph-fears",
+   "group": "ui",
+   "title": "Temperament glyph: fears",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: beat rim, 4 glyphs, emote wheel, vessel line, frames"
+  },
+  {
+   "id": "ui-glyph-laughs",
+   "group": "ui",
+   "title": "Temperament glyph: laughs",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: beat rim, 4 glyphs, emote wheel, vessel line, frames"
+  },
+  {
+   "id": "ui-vessel-line",
+   "group": "ui",
+   "title": "The vessel line",
+   "w": 1600,
+   "h": 120,
+   "row": "UI ornaments: beat rim, 4 glyphs, emote wheel, vessel line, frames"
+  },
+  {
+   "id": "chart-back",
+   "group": "maps",
+   "title": "The Back of the Chart",
+   "w": 1600,
+   "h": 1100,
+   "row": "Chart: 2 plates, the back of the chart, 8 branch glyphs"
+  },
+  {
+   "id": "chart-plate-vi",
+   "group": "maps",
+   "title": "Branch Chart, plate VI: the river",
+   "w": 1600,
+   "h": 1100,
+   "row": "Chart: 2 plates, the back of the chart, 8 branch glyphs"
+  },
+  {
+   "id": "chart-plate-vii",
+   "group": "maps",
+   "title": "Branch Chart, plate VII: the delta",
+   "w": 1600,
+   "h": 1100,
+   "row": "Chart: 2 plates, the back of the chart, 8 branch glyphs"
+  },
+  {
+   "id": "counters-board",
+   "group": "maps",
+   "title": "The Bone Counters board",
+   "w": 1600,
+   "h": 900,
+   "row": "Counters: board, counter, 6 mark pieces, the finished board, the hall wall"
+  },
+  {
+   "id": "counters-finished-board",
+   "group": "maps",
+   "title": "The Finished Board",
+   "w": 1600,
+   "h": 900,
+   "row": "Counters: board, counter, 6 mark pieces, the finished board, the hall wall"
+  },
+  {
+   "id": "thread-guest",
+   "group": "thread",
+   "title": "Thread (guest): the ring a cup leaves",
+   "w": 480,
+   "h": 480,
+   "row": "Thread"
+  },
+  {
+   "id": "thread-own",
+   "group": "thread",
+   "title": "Thread: the unfinished board and the closed hand",
+   "w": 480,
+   "h": 480,
+   "row": "Thread"
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600" role="img" aria-labelledby="seat-argues-turning-t seat-argues-turning-d">
+<title id="seat-argues-turning-t">The one who argues (turning)</title>
+<desc id="seat-argues-turning-d">Seat portrait of the one who argues, half turned, red climbing from the wrist: a linocut head and shoulders, brows down, a finger pointing the other way, his seat stripe on the shoulder.</desc>
+<defs><filter id="seat-argues-turning-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="49"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><filter id="seat-argues-turning-rough2"><feTurbulence type="turbulence" baseFrequency="0" numOctaves="2" seed="349" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/></filter><clipPath id="seat-argues-turning-clip3"><rect x="22" y="22" width="436" height="556"/></clipPath><linearGradient id="seat-argues-turning-skin4" gradientUnits="userSpaceOnUse" x1="0" y1="560" x2="0" y2="110"><stop offset="0" stop-color="#B3202E"/><stop offset="0.3" stop-color="#8a2a4a"/><stop offset="0.6" stop-color="#5a4a8a"/><stop offset="1" stop-color="#2F5D8C"/></linearGradient><clipPath id="seat-argues-turning-clip5"><path d="M148,240 C144,140 190,120 240,120 C290,120 336,140 332,240 C328,320 280,372 240,374 C200,372 152,320 148,240Z"/></clipPath><clipPath id="seat-argues-turning-clip6"><rect x="140" y="115" width="62" height="270"/></clipPath><clipPath id="seat-argues-turning-clip7"><rect x="292" y="115" width="50" height="270"/></clipPath></defs>
+<rect x="0" y="0" width="480" height="600" fill="#f0e6cf"/>
+<rect x="0" y="0" width="480" height="600" filter="url(#seat-argues-turning-grain1)"/>
+<g filter="url(#seat-argues-turning-rough2)">
+<rect x="22" y="22" width="436" height="556" fill="#17110f"/>
+<g clip-path="url(#seat-argues-turning-clip3)">
+<path d="M50.7,114.1l-1.3,59.3M49.6,518.1l0.6,36.6M420.6,356.6l-2.5,47.5M301.8,386.8l-2.6,44.5M333.4,442.6l3.5,65.3M105,422.9l0.3,41M421.3,124.2l-2.8,63.5M78,472l2,42.2M357.4,83.1l-1.6,26.5M115.3,59.9l1.6,44.9M381.7,442.2l-0.8,41.2M416.8,53.3l-2.3,41.3M102.6,126l-2.7,54.5M208.9,507.1l-1.6,58M70.5,218.7l-0.7,52.1M454.8,89.5l-0.6,43.3M39.9,291.2l-1.8,27.9M442,317.3l2,44.4M388.5,511.2l2.2,49.8M363.7,319l1.4,53.9M402.4,32.8l3.5,51M431.8,474l1.6,34.2M299,502.6l0,25.3M381.2,65.8l-0.5,34.3M68.5,59.1l1.3,25.5M33.3,24.1l-0.9,26.2M432.7,417.8l1.5,37.8M124.2,91.2l-0.2,54.2M32.4,197.2l-1.8,53.2M279.9,36.3l1.2,43.6M252.3,36.6l1.7,28M418.5,116.6l1.1,59.2M109.2,391.2l-1.3,37.9M335.3,78.2l0.7,53.2M443.7,24.9l1.5,38.9M50.8,209.8l-2.4,62.8M341.8,50.5l2.3,36.6M119.6,386.2l-0.3,56.2M384.8,350.1l-3,46.1M228.3,71.4l-1.5,56.1M315.6,441.6l1.1,26.2M400.8,117.1l-0.1,41.2M42,67.5l-1.3,29.5M450.5,391.8l-2,47.2M452.9,197l-0.6,29.3M53.4,408.4l1.2,27.5M311.8,380.6l0.9,39.3M450.1,453.8l-0.2,38.2M51.5,122.8l-0.1,31.4M423.9,473.9l1.3,29.8M427.1,203.9l-1.5,63.8M281.2,51.6l3.8,61.1M334.7,49.5l-1.3,55.4M457.2,138.8l-1.7,61.8M175.3,435l2,28.7M160.2,485.5l1,62.2M107,469.6l0.1,65.5M285,489.6l0.1,58.1M90.5,298.2l1.8,43.3M56,127.7l-1,43.9M31.5,381.5l-1.5,54.8M137.6,438.3l-0.1,60.5M44,101.4l-1.5,27.8M398.2,350.9l-0.2,29.4M100.3,50.6l-0.1,24.7M54.2,378.1l0.7,26.2M392.5,188.7l1.9,57.3M433.8,422l1.7,38.3M28.5,47.4l-0.3,52.1M294.6,446.3l-1.5,53.4M439.9,491.6l3.2,47.9M32.4,412.5l0.5,44.9M103.9,500.9l1,38M169.6,40l1.6,24.9M23.1,374.5l1.5,30.2M435.2,499.7l1,24.6" fill="none" stroke="#E8DCC4" stroke-width="2.6" stroke-linecap="round" opacity="0.6"/>
+<path d="M43.5,56.7l2.4,57.9M199.7,85.7l-0.6,22.6M356.5,176.2l0.4,46.1M430.9,42.9l-2.1,40.1M384.6,137.4l-0.8,33.2M444.3,22.5l-2.4,57.1M85.5,183.3l-1.7,26.5M397.7,142l1.9,30.5M377.7,40.3l-0.5,25.9M34.7,194.9l-2.6,51.2M64.5,115.8l0.9,22.2M273.6,51.5l-4,58.5M420.8,55.9l0.3,39.9M366.7,99.8l-0.4,41.8M103.7,184l0.4,26.2M46.5,51.8l-1.1,23.2M413.8,178.2l0.8,31.1M156.1,29.3l0,27.5M455.4,182.2l1.2,51.1M404,199.2l0.5,56.9M55.3,80.8l-1.1,23.4M323.7,68.9l-0.6,42.4M335.4,74.1l0.7,41.2M384.3,108.8l-1,46.9M308.9,27l-0.2,41.4M345.3,74.2l-0.8,52.6M93.1,56l-2.5,38.7M69.7,126.8l-0.9,22.9M62.3,118.2l-3.4,54M157.7,49.8l-2.5,57.1" fill="none" stroke="#E0603A" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+<path d="M30,570 C56,452 140,424 206,416 L274,416 C340,424 424,452 450,570Z" fill="url(#seat-argues-turning-skin4)" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<path d="M210,346 L204,424 L276,424 L270,346Z" fill="url(#seat-argues-turning-skin4)" stroke="#17110f" stroke-width="6"/>
+<path d="M237.6,503.5l27.7,9.3M333.8,485.2l20.5,-0.2M342.5,458.4l16.2,2.7M145.1,454.3l31.6,-1.3M242.3,470.2l24.7,-1.6M325.7,477.5l20.5,2.9M258.7,459.2l26.3,0.5M136.5,449.8l28.1,5M338.4,451.6l21.2,1.8M135.4,499.7l18.6,4.8M148.9,490.1l15.4,3.2M294.5,481.3l32.6,7.1M323.9,480.7l17,-0.3M345.7,453.6l22.2,0.2M299.5,476.4l15.9,-0.7M228.8,464.1l31.4,-1.6M194.4,488.1l30.7,9.2M181.2,497.7l31.2,3.1M265.5,473.7l14.7,5.2M247,454.3l19,1.1M235.4,485.2l25.5,4.5M218.3,507.8l14.3,-0.5M230.2,506l27.1,2.1M279,478.2l23.9,6.8M239.5,471.5l19.7,1.3M212,504l20.3,3.3" fill="none" stroke="#e7b7a8" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+<path d="M70,498.0 L150,452.0 L166,480.0 L78,530.0Z" fill="#E0603A" stroke="#17110f" stroke-width="4"/>
+<polygon points="106,498 116,480 126,498" fill="#17110f"/>
+<g transform="rotate(6 240 310)">
+<ellipse cx="146" cy="258" rx="13" ry="26" fill="url(#seat-argues-turning-skin4)" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<ellipse cx="334" cy="258" rx="13" ry="26" fill="url(#seat-argues-turning-skin4)" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<path d="M148,240 C144,140 190,120 240,120 C290,120 336,140 332,240 C328,320 280,372 240,374 C200,372 152,320 148,240Z" fill="url(#seat-argues-turning-skin4)" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<g clip-path="url(#seat-argues-turning-clip5)">
+<g clip-path="url(#seat-argues-turning-clip6)">
+<path d="M-20.9,176.7 L243.3,59.1 M-16,187.7 L248.2,70.1 M-11.1,198.7 L253,81 M-6.2,209.6 L257.9,92 M-1.4,220.6 L262.8,103 M3.5,231.5 L267.7,113.9 M8.4,242.5 L272.6,124.9 M13.3,253.5 L277.4,135.9 M18.2,264.4 L282.3,146.8 M23,275.4 L287.2,157.8 M27.9,286.4 L292.1,168.7 M32.8,297.3 L297,179.7 M37.7,308.3 L301.8,190.7 M42.6,319.2 L306.7,201.6 M47.5,330.2 L311.6,212.6 M52.3,341.2 L316.5,223.6 M57.2,352.1 L321.4,234.5 M62.1,363.1 L326.2,245.5 M67,374.1 L331.1,256.4 M71.9,385 L336,267.4 M76.7,396 L340.9,278.4 M81.6,406.9 L345.8,289.3 M86.5,417.9 L350.7,300.3 M91.4,428.9 L355.5,311.3 M96.3,439.8 L360.4,322.2" fill="none" stroke="#17110f" stroke-width="5"/>
+</g>
+<g clip-path="url(#seat-argues-turning-clip7)">
+<path d="M121.8,177.7 L382.3,61.8 M125.8,186.9 L386.3,70.9 M129.9,196 L390.4,80 M134,205.1 L394.5,89.2 M138,214.3 L398.5,98.3 M142.1,223.4 L402.6,107.4 M146.2,232.6 L406.7,116.6 M150.2,241.7 L410.7,125.7 M154.3,250.8 L414.8,134.8 M158.4,260 L418.9,144 M162.4,269.1 L422.9,153.1 M166.5,278.2 L427,162.3 M170.6,287.4 L431.1,171.4 M174.6,296.5 L435.1,180.5 M178.7,305.6 L439.2,189.7 M182.8,314.8 L443.3,198.8 M186.8,323.9 L447.3,207.9 M190.9,333 L451.4,217.1 M195,342.2 L455.5,226.2 M199,351.3 L459.5,235.3 M203.1,360.5 L463.6,244.5 M207.2,369.6 L467.7,253.6 M211.2,378.7 L471.7,262.7 M215.3,387.9 L475.8,271.9 M219.4,397 L479.9,281 M223.4,406.1 L483.9,290.1 M227.5,415.3 L488,299.3 M231.6,424.4 L492.1,308.4 M235.6,433.5 L496.1,317.6" fill="none" stroke="#e7b7a8" stroke-width="3" opacity="0.9"/>
+</g>
+</g>
+<path d="M238,244 L229,290 q10,11 24,2" fill="none" stroke="#17110f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M178,238 Q200,224 222,238 Q200,250 178,238Z" fill="#17110f" stroke="#17110f" stroke-width="3"/>
+<ellipse cx="204" cy="238" rx="5" ry="4" fill="#e7b7a8"/>
+<path d="M230,220 L174,198" fill="none" stroke="#17110f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M258,238 Q280,224 302,238 Q280,250 258,238Z" fill="#17110f" stroke="#17110f" stroke-width="3"/>
+<ellipse cx="276" cy="238" rx="5" ry="4" fill="#e7b7a8"/>
+<path d="M250,220 L306,198" fill="none" stroke="#17110f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M212,324 L270,312 L264,332 L222,336Z" fill="#17110f" stroke="#17110f" stroke-width="4" stroke-linejoin="round"/>
+<path d="M196,352 q10,-10 20,-4" fill="none" stroke="#17110f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M145,234 C138,128 190,110 240,110 C290,110 342,128 335,234 C312,172 270,158 240,158 C210,158 168,172 145,234Z" fill="#17110f" stroke="#e7b7a8" stroke-width="3"/>
+<circle cx="244" cy="84" r="30" fill="#17110f" stroke="#e7b7a8" stroke-width="3"/>
+<path d="M218,110 q26,-12 52,0" fill="none" stroke="#E0603A" stroke-width="7" stroke-linecap="round"/>
+<path d="M232.7,127.9l2.2,-11.1M290.4,128.2l-3.8,-16.9M207,124.1l-0.9,-17.9M264.7,119.8l-2.9,-11.7M190.5,129.6l-3.9,-12.7M230.9,147.4l0.5,-14.5M250.8,125.8l-5.3,-14.3M227.6,133.3l-6.4,-11.5M215.9,134.5l4.5,-13M309.4,126.8l2.9,-18.6M292.8,138.4l3.4,-9.6M257.3,120.2l-0.9,-17.9M296.4,124.8l5.4,-13.4M180.6,133l5.7,-13.2M260.9,135.1l7.4,-14.2M287.4,140.9l-2.8,-16.4" fill="none" stroke="#e7b7a8" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M230,74 q14,-10 28,2 M228,90 q16,-8 32,2" fill="none" stroke="#e7b7a8" stroke-width="2.4" stroke-linecap="round"/>
+</g>
+<path d="M109,397 L65.2,595.1 L126.8,604.9 L147,403Z" fill="url(#seat-argues-turning-skin4)" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<line x1="101.5" y1="436.8" x2="141.7" y2="443.2" stroke="#E0603A" stroke-width="5"/>
+<path d="M119.8,408.4 L92.7,384.3 L85.3,364.1 L91.7,350.2 L100.7,339.4 L113.1,332.3 L128.1,330.9 L145.8,344.6 L162.9,369.6 L147.4,394.2Z M99.4,391.7 L81,392.2 L73.2,377.6 L85,369.7 L101.6,376.3Z M89.6,362.9 L42.6,313.7 L41.9,300.9 L54.5,303 L97.3,350.5Z" fill="#17110f" stroke="#17110f" stroke-width="7" stroke-linejoin="round"/>
+<path d="M119.8,408.4 L92.7,384.3 L85.3,364.1 L91.7,350.2 L100.7,339.4 L113.1,332.3 L128.1,330.9 L145.8,344.6 L162.9,369.6 L147.4,394.2Z M99.4,391.7 L81,392.2 L73.2,377.6 L85,369.7 L101.6,376.3Z M89.6,362.9 L42.6,313.7 L41.9,300.9 L54.5,303 L97.3,350.5Z" fill="url(#seat-argues-turning-skin4)"/>
+<rect x="22" y="520" width="436" height="58" fill="#17110f"/>
+<line x1="40" y1="524" x2="440" y2="524" stroke="#E8DCC4" stroke-width="3" stroke-dasharray="14 6" opacity="0.9"/>
+<path d="M53.6,542.9 L62.4,552 L53.6,561.1 M78.3,542.9 L69.6,552 L78.3,561.1" fill="none" stroke="#E0603A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="262" y="559" font-size="23" font-family="serif" fill="#f0e6cf" text-anchor="middle" letter-spacing="3.5" font-weight="bold">THE ONE WHO ARGUES</text>
+</g>
+</g>
+</svg>

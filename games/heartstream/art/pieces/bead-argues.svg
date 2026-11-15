@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="bead-argues-t bead-argues-d">
+<title id="bead-argues-t">Song bead: the one who argues</title>
+<desc id="bead-argues-d">A song bead in the timbre of the one who argues (hard-edged, with the accent cut above it), threaded on its strand against the marrow dark; its height on the five faint lines is its pitch.</desc>
+<defs><linearGradient id="bead-argues-lg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e1a2e"/><stop offset="100%" stop-color="#1E3557"/></linearGradient><filter id="bead-argues-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="819"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><radialGradient id="bead-argues-rg3" cx="0.38" cy="0.34" r="0.8"><stop offset="0%" stop-color="#f6a17a" stop-opacity="1"/><stop offset="60%" stop-color="#E0603A" stop-opacity="1"/><stop offset="100%" stop-color="#7A1020" stop-opacity="1"/></radialGradient></defs>
+<rect x="0" y="0" width="160" height="160" fill="url(#bead-argues-lg1)"/>
+<rect x="0" y="0" width="160" height="160" fill="none"/>
+<rect x="0" y="0" width="160" height="160" filter="url(#bead-argues-grain2)"/>
+<path d="M44.9,154.4a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M95.1,134.5a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M96,29.7a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M100.1,108.3a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M3.3,107.5a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M87.5,122.2a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M13.3,112.7a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M40.4,90.8a1.1,1.1 0 1,0 2.3,0a1.1,1.1 0 1,0 -2.3,0M14.3,126a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M87.4,151.5a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M151.2,52.9a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M28.8,127a1.2,1.2 0 1,0 2.3,0a1.2,1.2 0 1,0 -2.3,0M153.6,93.4a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M61.3,90.4a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M35.4,120.3a1.1,1.1 0 1,0 2.3,0a1.1,1.1 0 1,0 -2.3,0M20.2,148a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M117.5,95.1a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0M52.4,6.6a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M74.4,118.6a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M118.8,28.6a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M111,23.8a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M131.8,80.5a1.2,1.2 0 1,0 2.3,0a1.2,1.2 0 1,0 -2.3,0M120.1,118.1a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M142.2,122a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M47.1,39.3a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M62,6.3a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M147.1,51.3a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M48.2,145.7a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0" fill="#7FB2E0" opacity="0.3"/>
+<line x1="8" y1="25.6" x2="152" y2="25.6" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<line x1="8" y1="52.8" x2="152" y2="52.8" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<line x1="8" y1="80" x2="152" y2="80" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<line x1="8" y1="107.2" x2="152" y2="107.2" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<line x1="8" y1="134.4" x2="152" y2="134.4" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<path d="M0,96 Q40.0,97.0 59,86" fill="none" stroke="#E8DCC4" stroke-width="2.4" stroke-linecap="round" opacity="0.8"/>
+<path d="M101,86 Q120.0,72.0 160,70" fill="none" stroke="#E8DCC4" stroke-width="2.4" stroke-linecap="round" opacity="0.8"/>
+<path d="M101.7,98.5 L80,111 L58.3,98.5 L58.3,73.5 L80,61 L101.7,73.5Z" fill="url(#bead-argues-rg3)" stroke="#17110f" stroke-width="3" stroke-linejoin="round"/>
+<path d="M67,41 L80,53 L93,41" fill="none" stroke="#E0603A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M80,86 L105,86M80,86 L67.5,64.3M80,86 L67.5,107.7" stroke="#17110f" stroke-width="1.2" opacity="0.4" fill="none"/>
+<ellipse cx="72" cy="76.8" rx="6.9" ry="4.1" fill="#fff" opacity="0.8" transform="rotate(-30 71.95 76.8)"/>
+<circle cx="60" cy="86" r="2.4" fill="#17110f"/>
+<circle cx="100" cy="86" r="2.4" fill="#17110f"/>
+<path d="M127.5,131.7 L133.5,138 L127.5,144.3 M144.6,131.7 L138.5,138 L144.6,144.3" fill="none" stroke="#E0603A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

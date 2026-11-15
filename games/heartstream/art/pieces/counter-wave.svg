@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="counter-wave-t counter-wave-d">
+<title id="counter-wave-t">Counter piece: wave</title>
+<desc id="counter-wave-d">A brother's own counter piece, carved with the wave mark and printed as a linocut: the piece cream on black, the mark in the one red of the print.</desc>
+<defs><filter id="counter-wave-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="309"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><filter id="counter-wave-rough2"><feTurbulence type="turbulence" baseFrequency="0" numOctaves="2" seed="103" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter><clipPath id="counter-wave-clip3"><rect x="10" y="10" width="140" height="140"/></clipPath></defs>
+<rect x="0" y="0" width="160" height="160" fill="#f0e6cf"/>
+<rect x="0" y="0" width="160" height="160" filter="url(#counter-wave-grain1)"/>
+<g filter="url(#counter-wave-rough2)">
+<rect x="10" y="10" width="140" height="140" fill="#17110f"/>
+<path d="M133.2,49.1l9.7,-4.2M26.2,138l-6.8,7.2M127.4,44.3l6.1,-3.6M133.3,38.8l7.6,-7.6M41.6,121.3l-4.6,5.7M136.7,16.4l8,-9.7M112.3,134l3.8,6.7M45.2,30.5l-3.7,-5M84.2,23.3l-0.4,-8.8M30.9,29.3l-7.5,-8.1M70.9,12l-1.5,-12.4M139.7,14.3l4.4,-4.4M97.3,14.1l1.7,-9.3M23.8,108.1l-6.8,2.5M140.4,50.2l12.2,-5.2M54.9,23.8l-3.4,-8M123.6,137.1l5.3,8.1M92,132.7l1.8,12.9M82.4,133.8l0.8,8.8M107.7,31.7l7.5,-10M93.3,129.8l1.8,12.6M26.5,142.7l-5.9,7.2M121,40.1l9.2,-6.9M34.4,146.1l-6.5,11.7M13.3,62.1l-13.6,-1.8M10.4,76.4l-9.2,-1.2M130.2,16.3l4.8,-7M149.9,99.1l11.4,4.2M142.2,126.3l6.5,4.6" fill="none" stroke="#f0e6cf" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M24,80 C24,52 52,40 80,40 C108,40 136,52 136,80 C136,108 108,120 80,120 C52,120 24,108 24,80Z" fill="#f0e6cf"/>
+<path d="M36,94 q44,28 88,2" fill="none" stroke="#17110f" stroke-width="4" stroke-linecap="round"/>
+<path d="M60.5,81.5 C67.3,59.6 73.1,59.6 80,78 C86.9,96.4 92.7,96.4 99.5,74.5" fill="none" stroke="#B3202E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

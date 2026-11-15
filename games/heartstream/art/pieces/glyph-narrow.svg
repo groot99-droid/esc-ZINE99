@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="glyph-narrow-t glyph-narrow-d">
+<title id="glyph-narrow-t">Branch glyph: narrow</title>
+<desc id="glyph-narrow-d">A branch glyph from the chart, in red ink on vellum: the vessel pinched thin between two folds, drawn on a short length of vessel.</desc>
+<defs><filter id="glyph-narrow-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="210"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="glyph-narrow-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#c9a36a" stop-opacity="0.3"/><stop offset="100%" stop-color="#c9a36a" stop-opacity="0"/></radialGradient><radialGradient id="glyph-narrow-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#c9a36a" stop-opacity="0.3"/><stop offset="100%" stop-color="#c9a36a" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="160" height="160" fill="#e6d6b4"/>
+<rect x="0" y="0" width="160" height="160" filter="url(#glyph-narrow-grain1)"/>
+<circle cx="12.7" cy="74.5" r="15.8" fill="url(#glyph-narrow-rg2)"/>
+<circle cx="133.5" cy="48.8" r="24.2" fill="url(#glyph-narrow-rg3)"/>
+<rect x="8" y="8" width="144" height="144" fill="none" stroke="#B3202E" stroke-width="1.4"/>
+<rect x="15" y="15" width="130" height="130" fill="none" stroke="#B3202E" stroke-width="0.7"/>
+<text x="80" y="142" font-size="13" font-family="serif" fill="#7A1020" text-anchor="middle" letter-spacing="2.5" font-weight="bold">NARROW</text>
+<path d="M14,84 C20,84 44,84 50,84" fill="none" stroke="#B3202E" stroke-width="16" stroke-linecap="round" opacity="1"/>
+<path d="M14,84 C20,84 44,84 50,84" fill="none" stroke="#f5e4c6" stroke-width="13.4" stroke-linecap="round" opacity="1"/>
+<path d="M14,84 C20,84 44,84 50,84" fill="none" stroke="#B3202E" stroke-width="13" stroke-dasharray="1 9" opacity="0.5"/>
+<path d="M50,84 C60,84 100,84 110,84" fill="none" stroke="#B3202E" stroke-width="5" stroke-linecap="round" opacity="1"/>
+<path d="M50,84 C60,84 100,84 110,84" fill="none" stroke="#f5e4c6" stroke-width="2.4" stroke-linecap="round" opacity="1"/>
+<path d="M50,84 C60,84 100,84 110,84" fill="none" stroke="#B3202E" stroke-width="2" stroke-dasharray="1 9" opacity="0.5"/>
+<path d="M110,84 C116,84 140,84 146,84" fill="none" stroke="#B3202E" stroke-width="16" stroke-linecap="round" opacity="1"/>
+<path d="M110,84 C116,84 140,84 146,84" fill="none" stroke="#f5e4c6" stroke-width="13.4" stroke-linecap="round" opacity="1"/>
+<path d="M110,84 C116,84 140,84 146,84" fill="none" stroke="#B3202E" stroke-width="13" stroke-dasharray="1 9" opacity="0.5"/>
+<path d="M64,56 q16,20 32,0 M64,112 q16,-20 32,0" fill="none" stroke="#B3202E" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

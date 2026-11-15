@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="chapter-8-t chapter-8-d">
+<title id="chapter-8-t">Chapter 8: The Heart</title>
+<desc id="chapter-8-d">Chapter card VIII, The Heart, as a block print: the cathedral of the heart, rib inside rib around gold light, and four red hands holding on in a row.</desc>
+<defs><filter id="chapter-8-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="898"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><filter id="chapter-8-rough2"><feTurbulence type="turbulence" baseFrequency="0" numOctaves="2" seed="246" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter><clipPath id="chapter-8-clip3"><rect x="22" y="22" width="1556" height="856"/></clipPath><radialGradient id="chapter-8-rg4" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#fff6da" stop-opacity="1"/><stop offset="50%" stop-color="#F2B544" stop-opacity="0.8"/><stop offset="100%" stop-color="#F2B544" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="1600" height="900" fill="#f0e6cf"/>
+<rect x="0" y="0" width="1600" height="900" filter="url(#chapter-8-grain1)"/>
+<g filter="url(#chapter-8-rough2)">
+<rect x="22" y="22" width="1556" height="856" fill="#17110f"/>
+<g clip-path="url(#chapter-8-clip3)">
+<rect x="22" y="22" width="1556" height="856" fill="#7a2a14"/>
+<path d="M800,330 L1744.9,283 L1744.9,377ZM800,330 L1644.6,435.4 L1635.8,490.8ZM800,330 L1622.6,554.9 L1597.7,631.6ZM800,330 L1767.6,779.8 L1732.6,848.4ZM800,330 L1389.6,734 L1366.4,765.9ZM800,330 L1512.8,994.8 L1464.8,1042.8ZM800,330 L1434,1142.9 L1377.2,1184.2ZM800,330 L1314.9,1251 L1242.4,1287.9ZM800,330 L1061.7,1078.1 L1028,1089ZM800,330 L984.9,1215.2 L897.7,1229ZM800,330 L835,1303 L765,1303ZM800,330 L669.7,1287.6 L628,1281ZM800,330 L555.9,1185.8 L494.4,1165.8ZM800,330 L472.8,1043.3 L415.3,1014ZM800,330 L205.8,1198.9 L157.3,1163.6ZM800,330 L83.8,1119.4 L10.6,1046.2ZM800,330 L7.3,961.3 L-45.4,888.8ZM800,330 L158.7,693.2 L129.2,635.4ZM800,330 L-61,629.2 L-72.5,594ZM800,330 L84.2,473.8 L74.8,414.4ZM800,330 L-78,350.1 L-78,309.9ZM800,330 L-118.8,218.1 L-108.4,152.5ZM800,330 L-53.1,92.2 L-29.9,20.9ZM800,330 L48.8,-13.1 L80.9,-76ZM800,330 L97.7,-133.4 L142.3,-194.7ZM800,330 L7.1,-401 L69,-462.9ZM800,330 L236.2,-372.5 L306.1,-423.3ZM800,330 L361.3,-462.1 L417,-490.5ZM800,330 L435.4,-654.1 L516.5,-680.4ZM800,330 L616.4,-673.7 L664.5,-681.3ZM800,330 L768.5,-374.4 L831.5,-374.4ZM800,330 L903.2,-475.9 L950.9,-468.3ZM800,330 L1081.5,-663.8 L1156.4,-639.4ZM800,330 L1125.2,-381.2 L1184.3,-351.1ZM800,330 L1327.3,-439.7 L1369.1,-409.3ZM800,330 L1314.4,-228.6 L1358.6,-184.4ZM800,330 L1579.3,-285.6 L1626.3,-220.9ZM800,330 L1728.4,-198.1 L1773,-110.7ZM800,330 L1727,-16.6 L1753.7,65.5ZM800,330 L1512,192.1 L1519.8,241.1Z" fill="#F2B544" opacity="0.8"/>
+<path d="M40,878 C40,90 420,-166 800,-166 C1180,-166 1560,90 1560,878L1490,878 C1490,114 1145,-116.4 800,-116.4 C455,-116.4 110,114 110,878Z" fill="#5a0b17" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<path d="M192,878 C192,138 496,-66.8 800,-66.8 C1104,-66.8 1408,138 1408,878L1338,878 C1338,162 1069,-17.2 800,-17.2 C531,-17.2 262,162 262,878Z" fill="#7A1020" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<path d="M328.8,878 C328.8,181.2 564.4,22.5 800,22.5 C1035.6,22.5 1271.2,181.2 1271.2,878L1201.2,878 C1201.2,205.2 1000.6,72.1 800,72.1 C599.4,72.1 398.8,205.2 398.8,878Z" fill="#B3202E" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<path d="M450.4,878 C450.4,219.6 625.2,101.8 800,101.8 C974.8,101.8 1149.6,219.6 1149.6,878L1079.6,878 C1079.6,243.6 939.8,151.4 800,151.4 C660.2,151.4 520.4,243.6 520.4,878Z" fill="#c8452e" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<path d="M572,878 C572,258 686,181.2 800,181.2 C914,181.2 1028,258 1028,878L958,878 C958,282 879,230.8 800,230.8 C721,230.8 642,282 642,878Z" fill="#E0603A" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<circle cx="800" cy="370" r="150" fill="url(#chapter-8-rg4)"/>
+<path d="M724,900 L730,760 L810,760 L816,900Z" fill="#B3202E" stroke="#17110f" stroke-width="8" stroke-linejoin="round"/>
+<path d="M710,780 L702,708 L718,668 L746,656 L774,652 L802,658 L826,676 L834,720 L826,780 L770,796Z M702,728 L674,704 L682,672 L710,676 L726,708Z" fill="#17110f" stroke="#17110f" stroke-width="10" stroke-linejoin="round"/>
+<path d="M710,780 L702,708 L718,668 L746,656 L774,652 L802,658 L826,676 L834,720 L826,780 L770,796Z M702,728 L674,704 L682,672 L710,676 L726,708Z" fill="#B3202E"/>
+<path d="M830,730 h80" stroke="#17110f" stroke-width="26" stroke-linecap="round" fill="none"/>
+<path d="M830,730 h80" stroke="#B3202E" stroke-width="12" stroke-linecap="round" fill="none"/>
+<path d="M726,664 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M750,668 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M774,664 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M798,668 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M904,900 L910,760 L990,760 L996,900Z" fill="#B3202E" stroke="#17110f" stroke-width="8" stroke-linejoin="round"/>
+<path d="M890,780 L882,708 L898,668 L926,656 L954,652 L982,658 L1006,676 L1014,720 L1006,780 L950,796Z M882,728 L854,704 L862,672 L890,676 L906,708Z" fill="#17110f" stroke="#17110f" stroke-width="10" stroke-linejoin="round"/>
+<path d="M890,780 L882,708 L898,668 L926,656 L954,652 L982,658 L1006,676 L1014,720 L1006,780 L950,796Z M882,728 L854,704 L862,672 L890,676 L906,708Z" fill="#B3202E"/>
+<path d="M1010,730 h80" stroke="#17110f" stroke-width="26" stroke-linecap="round" fill="none"/>
+<path d="M1010,730 h80" stroke="#B3202E" stroke-width="12" stroke-linecap="round" fill="none"/>
+<path d="M906,664 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M930,668 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M954,664 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M978,668 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M1084,900 L1090,760 L1170,760 L1176,900Z" fill="#B3202E" stroke="#17110f" stroke-width="8" stroke-linejoin="round"/>
+<path d="M1070,780 L1062,708 L1078,668 L1106,656 L1134,652 L1162,658 L1186,676 L1194,720 L1186,780 L1130,796Z M1062,728 L1034,704 L1042,672 L1070,676 L1086,708Z" fill="#17110f" stroke="#17110f" stroke-width="10" stroke-linejoin="round"/>
+<path d="M1070,780 L1062,708 L1078,668 L1106,656 L1134,652 L1162,658 L1186,676 L1194,720 L1186,780 L1130,796Z M1062,728 L1034,704 L1042,672 L1070,676 L1086,708Z" fill="#B3202E"/>
+<path d="M1190,730 h80" stroke="#17110f" stroke-width="26" stroke-linecap="round" fill="none"/>
+<path d="M1190,730 h80" stroke="#B3202E" stroke-width="12" stroke-linecap="round" fill="none"/>
+<path d="M1086,664 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M1110,668 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M1134,664 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M1158,668 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M1264,900 L1270,760 L1350,760 L1356,900Z" fill="#B3202E" stroke="#17110f" stroke-width="8" stroke-linejoin="round"/>
+<path d="M1250,780 L1242,708 L1258,668 L1286,656 L1314,652 L1342,658 L1366,676 L1374,720 L1366,780 L1310,796Z M1242,728 L1214,704 L1222,672 L1250,676 L1266,708Z" fill="#17110f" stroke="#17110f" stroke-width="10" stroke-linejoin="round"/>
+<path d="M1250,780 L1242,708 L1258,668 L1286,656 L1314,652 L1342,658 L1366,676 L1374,720 L1366,780 L1310,796Z M1242,728 L1214,704 L1222,672 L1250,676 L1266,708Z" fill="#B3202E"/>
+<path d="M1266,664 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M1290,668 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M1314,664 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<path d="M1338,668 q10,-12 22,0" fill="none" stroke="#f0e6cf" stroke-width="4" stroke-linecap="round"/>
+<rect x="64" y="716" width="600" height="124" fill="#E8DCC4" stroke="#17110f" stroke-width="5"/>
+<rect x="74" y="726" width="580" height="104" fill="none" stroke="#17110f" stroke-width="1.5"/>
+<text x="135.3" y="807.6" font-size="52" font-family="serif" fill="#fffaf0" text-anchor="middle" letter-spacing="0" opacity="0.7" font-weight="bold">VIII</text>
+<text x="134" y="806" font-size="52" font-family="serif" fill="#a8431f" text-anchor="middle" letter-spacing="0" stroke="#17110f" stroke-width="2" stroke-linejoin="round" paint-order="stroke" font-weight="bold">VIII</text>
+<line x1="206" y1="738" x2="206" y2="818" stroke="#17110f" stroke-width="2"/>
+<text x="226" y="792" font-size="34" font-family="serif" fill="#17110f" text-anchor="start" letter-spacing="5" font-weight="bold">THE HEART</text>
+<text x="228" y="752" font-size="15" font-family="serif" fill="#5a4a3a" text-anchor="start" letter-spacing="6">CHAPTER 8</text>
+</g>
+</g>
+</svg>
