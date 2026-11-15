@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" role="img" aria-labelledby="list-11-t list-11-d">
+<title id="list-11-t">The List, 11: a paddle</title>
+<desc id="list-11-d">One tile of the List on Tam's notebook paper, in a single pencil weight with hatching: site 11 held a paddle. The number is its place in the order the campground packed it; said backwards, the nineteen are the way out.</desc>
+<defs><filter id="list-11-blur1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter><filter id="list-11-rough2"><feTurbulence type="turbulence" baseFrequency="0.6" numOctaves="2" seed="325" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/></filter><clipPath id="list-11-clip3"><polygon points="165.5,58 167.1,62.4 165.6,69 161.1,76.3 154.7,83 147.5,87.7 141,89.5 136.5,88 134.9,83.6 136.4,77 140.9,69.7 147.3,63 154.5,58.3 161,56.5"/></clipPath><filter id="list-11-tooth4" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="9"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="220" height="220" fill="#F6F1E2"/>
+<path d="M0,40h220M0,66h220M0,92h220M0,118h220M0,144h220M0,170h220M0,196h220" stroke="#A9C3CF" stroke-width="1" fill="none"/>
+<line x1="34" y1="0" x2="34" y2="220" stroke="#D58A7A" stroke-width="1.2"/>
+<ellipse cx="122" cy="104" rx="74" ry="62" fill="#4A4A48" opacity="0.1" filter="url(#list-11-blur1)"/>
+<path d="M81.8,145.9 L87.4,139.3 L94.8,131.3 L100.1,125.2 L107.1,118.8 L113.9,111.7 L119.9,105.3 L126.2,98.7 L133.3,91 L139.7,84.2" fill="none" stroke="#4A4A48" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-11-rough2)"/>
+<polygon points="165.5,58 167.1,62.4 165.6,69 161.1,76.3 154.7,83 147.5,87.7 141,89.5 136.5,88 134.9,83.6 136.4,77 140.9,69.7 147.3,63 154.5,58.3 161,56.5" fill="#F8F4E8" opacity="0.9"/>
+<g clip-path="url(#list-11-clip3)">
+<path d="M162.6,37.7 L186.3,84.7 M159.1,39.5 L182.7,86.5 M156.7,40.7 L180.3,87.7 M154.1,42 L177.8,88.9 M150.7,43.7 L174.4,90.7 M149,44.6 L172.7,91.5 M145.7,46.2 L169.3,93.2 M142.4,47.9 L166.1,94.8 M139.7,49.3 L163.3,96.2 M136.9,50.7 L160.5,97.6 M134.8,51.7 L158.4,98.7 M130.8,53.7 L154.5,100.7 M128.7,54.8 L152.3,101.8 M125.3,56.5 L148.9,103.5 M122.2,58.1 L145.8,105 M119.1,59.7 L142.7,106.6 M116.9,60.8 L140.5,107.7" fill="none" stroke="#4A4A48" stroke-width="1.1" opacity="0.8"/>
+</g>
+<g clip-path="url(#list-11-clip3)">
+<path d="M111.9,66.1 L157.9,33.9 M114.5,69.9 L160.5,37.7 M117.9,74.7 L163.9,42.5 M120.1,77.8 L166.1,45.6 M123.4,82.6 L169.5,50.4 M126.3,86.7 L172.3,54.5 M129.1,90.8 L175.2,58.5 M132.4,95.4 L178.4,63.2 M134.5,98.4 L180.5,66.2 M137.7,103 L183.7,70.7 M140.3,106.7 L186.3,74.5 M143.3,111 L189.3,78.8" fill="none" stroke="#4A4A48" stroke-width="0.9" opacity="0.6"/>
+</g>
+<path d="M165.2,57.9 L167.8,62.7 L165.7,68.8 L161.2,76.2 L155.4,83.4 L148.2,88.2 L141.5,89.3 L136,88.6 L134.4,83.2 L136.3,77.2 L140.5,70.4 L147.7,62.9 L153.9,58.9 L160.7,56.4 L165.1,58.2Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-11-rough2)"/>
+<path d="M166.2,57.8 L167.8,63 L165.5,69.4 L161.6,75.9 L154.6,83.5 L148.2,87.5 L141.5,89.6 L136.2,88.4 L134.5,84 L137,76.6 L141.3,69.4 L146.7,62.7 L154.8,57.8 L160.5,56.7 L164.8,57.5Z" fill="none" stroke="#4A4A48" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-11-rough2)"/>
+<path d="M76.1,140.5 L85.7,150.9" fill="none" stroke="#4A4A48" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-11-rough2)"/>
+<text x="8" y="34" font-size="30" font-family="serif" fill="#4A4A48" transform="rotate(-1.2 8 34)" font-weight="bold" font-style="italic">11</text>
+<text x="42" y="198" font-size="19" font-family="serif" fill="#4A4A48" transform="rotate(-0.8 42 198)" font-style="italic">a paddle</text>
+<text x="168" y="26" font-size="13" font-family="serif" fill="#77756f" transform="rotate(-3 168 26)" font-style="italic">then 10</text>
+<path d="M41,206.2 L55.9,206.5 L69.2,205.5 L80.2,207.1 L95,207.5 L106.8,206.2" fill="none" stroke="#4A4A48" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" filter="url(#list-11-rough2)"/>
+<rect x="0" y="0" width="220" height="220" filter="url(#list-11-tooth4)"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" role="img" aria-labelledby="list-08-t list-08-d">
+<title id="list-08-t">The List, 8: a kite</title>
+<desc id="list-08-d">One tile of the List on Tam's notebook paper, in a single pencil weight with hatching: site 8 held a kite. The number is its place in the order the campground packed it; said backwards, the nineteen are the way out.</desc>
+<defs><filter id="list-08-blur1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter><clipPath id="list-08-clip2"><polygon points="122,55.6 148.1,87.5 122,122.3 95.9,87.5"/></clipPath><filter id="list-08-rough3"><feTurbulence type="turbulence" baseFrequency="0.6" numOctaves="2" seed="877" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/></filter><clipPath id="list-08-clip4"><polygon points="128.3,127 135.4,131 133.1,135 126,131"/></clipPath><clipPath id="list-08-clip5"><polygon points="129,145.3 136.6,142.5 138.2,146.9 130.6,149.6"/></clipPath><filter id="list-08-tooth6" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="13"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="220" height="220" fill="#F6F1E2"/>
+<path d="M0,40h220M0,66h220M0,92h220M0,118h220M0,144h220M0,170h220M0,196h220" stroke="#A9C3CF" stroke-width="1" fill="none"/>
+<line x1="34" y1="0" x2="34" y2="220" stroke="#D58A7A" stroke-width="1.2"/>
+<ellipse cx="122" cy="104" rx="74" ry="62" fill="#4A4A48" opacity="0.1" filter="url(#list-08-blur1)"/>
+<polygon points="122,55.6 148.1,87.5 122,122.3 95.9,87.5" fill="#F8F4E8" opacity="0.9"/>
+<g clip-path="url(#list-08-clip2)">
+<path d="M146.5,27.7 L182.9,114.3 M142.7,29.3 L179.1,115.9 M138.5,31.1 L174.9,117.6 M134.6,32.7 L171,119.3 M130,34.6 L166.4,121.2 M125.2,36.7 L161.6,123.2 M121,38.4 L157.4,125 M117,40.1 L153.4,126.7 M112.7,41.9 L149,128.5 M108.5,43.7 L144.9,130.2 M104.2,45.5 L140.6,132.1 M100.3,47.1 L136.7,133.7 M95.9,49 L132.2,135.6 M92.3,50.5 L128.6,137.1 M87.4,52.6 L123.7,139.1 M83.3,54.3 L119.7,140.8 M79.9,55.7 L116.2,142.3 M74.9,57.8 L111.2,144.4 M70.7,59.6 L107.1,146.1 M66.9,61.2 L103.3,147.7 M62,63.2 L98.4,149.8" fill="none" stroke="#4A4A48" stroke-width="1.1" opacity="0.8"/>
+</g>
+<path d="M121.8,55.8 L128.8,63.3 L134.7,71 L141.4,79.9 L147.9,88 L141.8,96 L134.4,104.5 L128.8,113.5 L122.2,123 L116,112.9 L108.8,104.5 L102,96.4 L95.5,87.5 L103.1,79.8 L109.5,71.1 L115.8,64 L122.3,55.9Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-08-rough3)"/>
+<path d="M121.4,55.8 L128.3,63.4 L135.1,71.2 L141,79.6 L147.7,87 L142.1,96.8 L135.5,104.8 L129,113.7 L121.9,122.4 L115.9,113.1 L108.5,104.5 L103,96.4 L95.8,88 L102,79.1 L108.4,71.3 L115.3,64.1 L122.1,55.6Z" fill="none" stroke="#4A4A48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-08-rough3)"/>
+<path d="M121.7,56.2 L122.1,65.1 L121.6,75.1 L122,83.5 L122,93.2 L121.7,102.8 L122.1,112.8 L121.9,122.9" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-08-rough3)"/>
+<path d="M95.7,86.8 L106.5,87.2 L116.4,88.2 L127.4,87.6 L137.5,87.6 L147.7,87.7" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-08-rough3)"/>
+<path d="M121.4,122.8 L130.3,131.7 L118.9,137.5 L133.7,145.5 L124.6,153.2" fill="none" stroke="#4A4A48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-08-rough3)"/>
+<polygon points="128.3,127 135.4,131 133.1,135 126,131" fill="#F8F4E8" opacity="0.9"/>
+<g clip-path="url(#list-08-clip4)">
+<path d="M132.9,113.1 L148.7,132.9 M127.4,117.4 L143.2,137.2 M123.1,120.9 L138.9,140.7 M117.2,125.6 L133,145.4" fill="none" stroke="#4A4A48" stroke-width="1.1" opacity="0.8"/>
+</g>
+<path d="M128.3,127.2 L135.4,131.3 L133.4,134.8 L126.1,131.6 L128.7,127.4Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-08-rough3)"/>
+<polygon points="129,145.3 136.6,142.5 138.2,146.9 130.6,149.6" fill="#F8F4E8" opacity="0.9"/>
+<g clip-path="url(#list-08-clip5)">
+<path d="M135.6,129.1 L150.5,148.8 M130.6,132.9 L145.5,152.5 M125,137.2 L139.8,156.8 M120.6,140.4 L135.5,160.1" fill="none" stroke="#4A4A48" stroke-width="1.1" opacity="0.8"/>
+</g>
+<path d="M128.5,144.9 L136.7,142.6 L138.1,147 L130.6,149.6 L128.4,145.5Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-08-rough3)"/>
+<text x="8" y="34" font-size="30" font-family="serif" fill="#4A4A48" transform="rotate(-2.1 8 34)" font-weight="bold" font-style="italic">8</text>
+<text x="42" y="198" font-size="19" font-family="serif" fill="#4A4A48" transform="rotate(1 42 198)" font-style="italic">a kite</text>
+<text x="168" y="26" font-size="13" font-family="serif" fill="#77756f" transform="rotate(-3 168 26)" font-style="italic">then 7</text>
+<path d="M42.9,205.9 L53.2,206.3 L67.5,206.3 L78.7,207.3 L91.5,206.3" fill="none" stroke="#4A4A48" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" filter="url(#list-08-rough3)"/>
+<rect x="0" y="0" width="220" height="220" filter="url(#list-08-tooth6)"/>
+</svg>

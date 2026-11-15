@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-labelledby="topdown-van-t topdown-van-d">
+<title id="topdown-van-t">The van from above</title>
+<desc id="topdown-van-d">The friends' dull red van from above, roof rack loaded with a tarp roll and the cooler, headlights throwing two cones down the gravel into charcoal dark.</desc>
+<defs><filter id="topdown-van-blur1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter><filter id="topdown-van-rough2"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="298" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="7"/></filter><linearGradient id="topdown-van-lg3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ffe7a3"/><stop offset="100%" stop-color="#141518"/></linearGradient><filter id="topdown-van-blur4" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter><filter id="topdown-van-tooth5" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.3" numOctaves="2" seed="31"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="400" height="400" fill="#141518"/>
+<ellipse cx="359.8" cy="363.8" rx="73.3" ry="46.7" fill="rgb(19,19,23)" opacity="0.8" filter="url(#topdown-van-blur1)"/>
+<ellipse cx="55.3" cy="340.5" rx="105.7" ry="89.1" fill="rgb(21,21,25)" opacity="0.8" filter="url(#topdown-van-blur1)"/>
+<ellipse cx="377.6" cy="374.6" rx="75.6" ry="86.3" fill="rgb(20,20,24)" opacity="0.8" filter="url(#topdown-van-blur1)"/>
+<ellipse cx="15.7" cy="96" rx="82.5" ry="49.5" fill="rgb(27,27,31)" opacity="0.8" filter="url(#topdown-van-blur1)"/>
+<ellipse cx="212.3" cy="325.1" rx="107.2" ry="30.9" fill="rgb(22,22,26)" opacity="0.8" filter="url(#topdown-van-blur1)"/>
+<ellipse cx="112.8" cy="82.7" rx="124.8" ry="84" fill="rgb(44,44,48)" opacity="0.8" filter="url(#topdown-van-blur1)"/>
+<ellipse cx="294.7" cy="243.7" rx="53.3" ry="62.7" fill="rgb(30,30,34)" opacity="0.8" filter="url(#topdown-van-blur1)"/>
+<ellipse cx="56.6" cy="42.1" rx="127.6" ry="35.5" fill="rgb(28,28,32)" opacity="0.8" filter="url(#topdown-van-blur1)"/>
+<ellipse cx="225.5" cy="377.3" rx="90.3" ry="65.8" fill="rgb(20,20,24)" opacity="0.8" filter="url(#topdown-van-blur1)"/>
+<line x1="165.2" y1="249" x2="222.6" y2="240.6" stroke="#000" stroke-width="3.7" opacity="0.1" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="349.1" y1="235.7" x2="468.3" y2="219" stroke="#000" stroke-width="7.2" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="67" y1="396.6" x2="153.8" y2="360.3" stroke="#000" stroke-width="7.1" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="254" y1="192" x2="309.4" y2="169.1" stroke="#000" stroke-width="3.7" opacity="0.1" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="240.7" y1="34.1" x2="377.2" y2="8" stroke="#000" stroke-width="3.1" opacity="0.1" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="128.6" y1="18.5" x2="241.8" y2="-22.6" stroke="#000" stroke-width="2.8" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="332.7" y1="35.6" x2="439.8" y2="11" stroke="#000" stroke-width="2.1" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="288.1" y1="73.9" x2="349.1" y2="39.7" stroke="#000" stroke-width="2.8" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="274.4" y1="287.7" x2="405.1" y2="266.2" stroke="#000" stroke-width="4.6" opacity="0.1" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="173.5" y1="282.5" x2="291.5" y2="263.7" stroke="#000" stroke-width="4.3" opacity="0.1" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="281.4" y1="232.7" x2="351.7" y2="197.6" stroke="#000" stroke-width="3.1" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="174.2" y1="366.8" x2="273.5" y2="328.1" stroke="#000" stroke-width="3.3" opacity="0.1" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="349" y1="336.1" x2="426.7" y2="316.8" stroke="#000" stroke-width="3.1" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="338.7" y1="263.2" x2="414.5" y2="265.4" stroke="#000" stroke-width="5.8" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="314" y1="248.1" x2="429" y2="234" stroke="#000" stroke-width="3.3" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="34.7" y1="66.6" x2="80.9" y2="62.3" stroke="#000" stroke-width="2.8" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="112.7" y1="52" x2="186.7" y2="41.5" stroke="#000" stroke-width="3.2" opacity="0.1" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="254.6" y1="121.4" x2="313.3" y2="131.5" stroke="#000" stroke-width="5.9" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="60.8" y1="135" x2="134.3" y2="97.6" stroke="#000" stroke-width="6.9" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="192.1" y1="380.6" x2="318.9" y2="380.2" stroke="#000" stroke-width="2" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="387.9" y1="177.9" x2="485" y2="137.3" stroke="#000" stroke-width="7" opacity="0.1" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="15.7" y1="24.9" x2="155.4" y2="-16.1" stroke="#000" stroke-width="4.3" opacity="0.3" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="140.6" y1="48.4" x2="229.9" y2="43.4" stroke="#000" stroke-width="7.3" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="180.5" y1="6.3" x2="285.3" y2="-5.2" stroke="#000" stroke-width="7" opacity="0.2" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="10.9" y1="188.7" x2="151.1" y2="173.7" stroke="#000" stroke-width="7.6" opacity="0.1" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<line x1="44.3" y1="320.2" x2="153.5" y2="279.9" stroke="#000" stroke-width="4.7" opacity="0.1" stroke-linecap="round" filter="url(#topdown-van-rough2)"/>
+<g transform="translate(150 220) rotate(-22)">
+<polygon points="121,-34.8 335,-104.8 335,35.2" fill="url(#topdown-van-lg3)" opacity="0.5"/>
+<polygon points="121,34.8 335,-35.2 335,104.8" fill="url(#topdown-van-lg3)" opacity="0.5"/>
+<rect x="-119" y="-50" width="250" height="116" rx="22" fill="#000" opacity="0.4" filter="url(#topdown-van-blur4)"/>
+<rect x="-125" y="-58" width="250" height="116" rx="16" fill="#8E3B32" stroke="#0b0d12" stroke-width="2.5"/>
+<rect x="-119" y="-53" width="238" height="8" rx="4" fill="#fff" opacity="0.1"/>
+<polygon points="85,-46 111,-38 111,38 85,46" fill="#1a2532" stroke="#0b0d12" stroke-width="1.5"/>
+<rect x="-105" y="-44" width="170" height="88" rx="8" fill="none" stroke="#0b0d12" stroke-width="1.5" opacity="0.7"/>
+<line x1="-91" y1="-44" x2="-91" y2="44" stroke="#0b0d12" stroke-width="3"/>
+<line x1="-49" y1="-44" x2="-49" y2="44" stroke="#0b0d12" stroke-width="3"/>
+<line x1="-7" y1="-44" x2="-7" y2="44" stroke="#0b0d12" stroke-width="3"/>
+<line x1="35" y1="-44" x2="35" y2="44" stroke="#0b0d12" stroke-width="3"/>
+<rect x="-85" y="-30" width="70" height="34" fill="#2f6fb5" stroke="#0b0d12" stroke-width="1.5"/>
+<rect x="-5" y="-6" width="44" height="36" fill="#d9d2c0" stroke="#0b0d12" stroke-width="1.5"/>
+<rect x="117" y="-43.8" width="8" height="18" fill="#fff3c4"/>
+<rect x="-125" y="-42.8" width="6" height="16" fill="#a02a22"/>
+<ellipse cx="79" cy="-63" rx="9" ry="5" fill="#8E3B32" stroke="#0b0d12" stroke-width="1.5"/>
+<rect x="117" y="25.8" width="8" height="18" fill="#fff3c4"/>
+<rect x="-125" y="26.8" width="6" height="16" fill="#a02a22"/>
+<ellipse cx="79" cy="63" rx="9" ry="5" fill="#8E3B32" stroke="#0b0d12" stroke-width="1.5"/>
+</g>
+<rect x="0" y="0" width="400" height="400" filter="url(#topdown-van-tooth5)"/>
+</svg>

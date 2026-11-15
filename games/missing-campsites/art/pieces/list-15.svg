@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" role="img" aria-labelledby="list-15-t list-15-d">
+<title id="list-15-t">The List, 15: a radio</title>
+<desc id="list-15-d">One tile of the List on Tam's notebook paper, in a single pencil weight with hatching: site 15 held a radio. The number is its place in the order the campground packed it; said backwards, the nineteen are the way out.</desc>
+<defs><filter id="list-15-blur1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter><filter id="list-15-rough2"><feTurbulence type="turbulence" baseFrequency="0.6" numOctaves="2" seed="237" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/></filter><clipPath id="list-15-clip3"><polygon points="81.4,86 162.6,86 162.6,135.3 81.4,135.3"/></clipPath><clipPath id="list-15-clip4"><polygon points="118.5,112.4 116.5,120 111,125.5 103.4,127.5 95.9,125.5 90.4,120 88.4,112.4 90.4,104.9 95.9,99.4 103.4,97.4 111,99.4 116.5,104.9"/></clipPath><clipPath id="list-15-clip5"><polygon points="137.7,124 135.6,127.6 131.6,127.6 129.5,124 131.6,120.5 135.6,120.5"/></clipPath><clipPath id="list-15-clip6"><polygon points="152.7,124 150.7,127.6 146.7,127.6 144.6,124 146.7,120.5 150.7,120.5"/></clipPath><filter id="list-15-tooth7" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="58"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="220" height="220" fill="#F6F1E2"/>
+<path d="M0,40h220M0,66h220M0,92h220M0,118h220M0,144h220M0,170h220M0,196h220" stroke="#A9C3CF" stroke-width="1" fill="none"/>
+<line x1="34" y1="0" x2="34" y2="220" stroke="#D58A7A" stroke-width="1.2"/>
+<ellipse cx="122" cy="104" rx="74" ry="62" fill="#4A4A48" opacity="0.1" filter="url(#list-15-blur1)"/>
+<path d="M145.8,84.8 L149.7,76 L155.1,68.2 L160.9,60.5 L165.3,53.4" fill="none" stroke="#4A4A48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-15-rough2)"/>
+<polygon points="81.4,86 162.6,86 162.6,135.3 81.4,135.3" fill="#F8F4E8" opacity="0.9"/>
+<g clip-path="url(#list-15-clip3)">
+<path d="M150,44.6 L188.1,138.6 M146.8,45.9 L184.9,139.9 M143.9,47.1 L182,141 M140.8,48.4 L178.9,142.3 M138.8,49.2 L176.9,143.1 M135.9,50.4 L174,144.3 M131.8,52 L169.9,146 M128.5,53.3 L166.6,147.3 M126.1,54.3 L164.2,148.3 M123.5,55.4 L161.6,149.3 M120.7,56.5 L158.8,150.5 M116.8,58.1 L155,152 M114.6,59 L152.8,152.9 M111.2,60.4 L149.4,154.3 M108,61.7 L146.1,155.6 M105.6,62.6 L143.8,156.6 M103.2,63.6 L141.3,157.6 M100.2,64.8 L138.3,158.8 M96.2,66.5 L134.3,160.4 M92.9,67.8 L131,161.8 M90.6,68.7 L128.7,162.7 M88.2,69.7 L126.4,163.6 M84.6,71.2 L122.8,165.1 M82.3,72.1 L120.5,166 M79.5,73.2 L117.6,167.2 M76.2,74.6 L114.3,168.5 M73.2,75.8 L111.3,169.7 M69.6,77.3 L107.7,171.2 M67.4,78.2 L105.5,172.1 M63.1,79.9 L101.3,173.8 M60.5,80.9 L98.6,174.9 M57.9,82 L96,175.9" fill="none" stroke="#4A4A48" stroke-width="1.1" opacity="0.8"/>
+</g>
+<g clip-path="url(#list-15-clip3)">
+<path d="M49,98 L135,37.8 M51.5,101.5 L137.5,41.3 M54.8,106.3 L140.8,46 M57.4,110 L143.4,49.8 M60.4,114.3 L146.4,54 M63,118 L149,57.7 M65.7,121.9 L151.7,61.7 M69.1,126.7 L155.1,66.5 M72,130.8 L158,70.5 M75,135.1 L161,74.9 M78,139.4 L164,79.2 M80.6,143.1 L166.6,82.9 M83.6,147.4 L169.6,87.2 M86.5,151.5 L172.5,91.3 M89.3,155.6 L175.3,95.4 M91.8,159.1 L177.8,98.9 M94.3,162.6 L180.3,102.4 M97.2,166.8 L183.2,106.5 M100.5,171.5 L186.5,111.3 M103.6,176 L189.6,115.7 M106.1,179.5 L192.1,119.3" fill="none" stroke="#4A4A48" stroke-width="0.9" opacity="0.6"/>
+</g>
+<path d="M82.1,86 L89.8,85.8 L99.6,85.6 L108,86 L117.9,86.3 L126.4,86.4 L135,86.6 L144.8,85.8 L154.1,86.1 L162.3,85.5 L162.9,95.4 L162.6,106.1 L162.7,115.4 L163.1,124.8 L162,135.5 L153.1,135.3 L145.2,135.6 L135.9,134.8 L126.8,134.9 L117.7,134.8 L108.1,135.1 L99.5,135.6 L90.2,136 L81.3,136 L82.1,126.1 L80.9,116 L81.3,105.2 L81.6,95.4 L82.1,86.5Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-15-rough2)"/>
+<path d="M81.3,85.8 L90.9,86.5 L99.2,86 L108.8,86.4 L117,86.6 L126.2,86.3 L135,86.2 L144.9,85.7 L154.1,86.7 L163.2,86.2 L162.3,95.3 L162,105.3 L162.6,115.3 L163.2,125.6 L163.3,135.9 L153.5,135.3 L144.9,135.1 L135.2,135.3 L126.8,135.4 L116.9,134.8 L108.2,135 L99,135 L91,135.6 L81.4,135.4 L81.9,125.2 L80.9,116.2 L81.8,105.3 L80.8,95.6 L81.2,86.4Z" fill="none" stroke="#4A4A48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-15-rough2)"/>
+<polygon points="118.5,112.4 116.5,120 111,125.5 103.4,127.5 95.9,125.5 90.4,120 88.4,112.4 90.4,104.9 95.9,99.4 103.4,97.4 111,99.4 116.5,104.9" fill="#F8F4E8" opacity="0.9"/>
+<g clip-path="url(#list-15-clip4)">
+<path d="M116.8,80.4 L135.6,125.7 M113.5,81.7 L132.2,127.1 M111.5,82.6 L130.2,127.9 M108,84 L126.7,129.3 M104.2,85.6 L122.9,130.9 M102.5,86.3 L121.3,131.6 M98.4,88 L117.1,133.3 M95.9,89 L114.6,134.3 M93.7,89.9 L112.4,135.3 M90.5,91.2 L109.3,136.6 M86.4,93 L105.2,138.3 M84.3,93.8 L103.1,139.1 M80.6,95.3 L99.4,140.7 M79,96 L97.8,141.3 M75.4,97.5 L94.2,142.8 M72.9,98.6 L91.6,143.9" fill="none" stroke="#4A4A48" stroke-width="1.1" opacity="0.8"/>
+</g>
+<g clip-path="url(#list-15-clip4)">
+<path d="M66.9,106.1 L110,75.9 M69.4,109.7 L112.5,79.5 M72.3,113.8 L115.4,83.6 M75,117.7 L118.1,87.5 M78.6,122.8 L121.7,92.6 M81,126.3 L124.1,96.1 M84.2,130.9 L127.4,100.7 M86.4,134.1 L129.6,103.9 M89.7,138.7 L132.8,108.5 M92.3,142.4 L135.4,112.2 M95.2,146.6 L138.4,116.4" fill="none" stroke="#4A4A48" stroke-width="0.9" opacity="0.6"/>
+</g>
+<path d="M118.8,112.6 L116.1,120.2 L110.8,125.7 L103,127.7 L96.1,125.7 L90,120.2 L87.9,112.6 L91,104.2 L96.5,99.3 L103.9,97.4 L111.7,99.9 L116,104.8 L118.1,112Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-15-rough2)"/>
+<path d="M110.9,112.5 L108.6,118 L104,121.2 L98.2,118.1 L95.6,112.7 L97,107.3 L103.1,103.7 L109.8,107.4 L111.9,112.1Z" fill="none" stroke="#4A4A48" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-15-rough2)"/>
+<polygon points="128.4,95.6 155.1,95.6 155.1,108.4 128.4,108.4" fill="#F8F4E8" opacity="0.9"/>
+<path d="M128.3,95.4 L141.9,95.9 L154.9,95.1 L154.6,109 L142.3,108.1 L128.3,108.5 L128,96Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-15-rough2)"/>
+<path d="M139.3,96.8 L139,108.2" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-15-rough2)"/>
+<polygon points="137.7,124 135.6,127.6 131.6,127.6 129.5,124 131.6,120.5 135.6,120.5" fill="#F8F4E8" opacity="0.9"/>
+<g clip-path="url(#list-15-clip5)">
+<path d="M139.7,108.1 L149.8,129.6 M133.2,111.1 L143.3,132.6 M127.9,113.6 L138,135.1 M121.4,116.6 L131.5,138.1" fill="none" stroke="#4A4A48" stroke-width="1.1" opacity="0.8"/>
+</g>
+<path d="M138,123.5 L135.3,128.2 L131.2,127.9 L129.1,123.5 L131.2,120.8 L135.7,120.9 L137.6,124.2Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-15-rough2)"/>
+<polygon points="152.7,124 150.7,127.6 146.7,127.6 144.6,124 146.7,120.5 150.7,120.5" fill="#F8F4E8" opacity="0.9"/>
+<g clip-path="url(#list-15-clip6)">
+<path d="M152.1,108 L164.6,128.2 M147.1,111.1 L159.6,131.3 M142,114.2 L154.4,134.4 M135.6,118.1 L148.1,138.3" fill="none" stroke="#4A4A48" stroke-width="1.1" opacity="0.8"/>
+</g>
+<path d="M152.2,124.1 L151.3,127.9 L147,127.8 L145.2,123.9 L147.3,120.6 L150.6,120.3 L152.1,123.7Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-15-rough2)"/>
+<text x="8" y="34" font-size="30" font-family="serif" fill="#4A4A48" transform="rotate(-2.5 8 34)" font-weight="bold" font-style="italic">15</text>
+<text x="42" y="198" font-size="19" font-family="serif" fill="#4A4A48" transform="rotate(-0.5 42 198)" font-style="italic">a radio</text>
+<text x="168" y="26" font-size="13" font-family="serif" fill="#77756f" transform="rotate(-3 168 26)" font-style="italic">then 14</text>
+<path d="M41.3,205.8 L56.3,206 L69.5,205.9 L85.9,207.7 L99.5,207.7" fill="none" stroke="#4A4A48" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" filter="url(#list-15-rough2)"/>
+<rect x="0" y="0" width="220" height="220" filter="url(#list-15-tooth7)"/>
+</svg>

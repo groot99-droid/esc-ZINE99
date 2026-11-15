@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600" role="img" aria-labelledby="postcard-after-noon-t postcard-after-noon-d">
+<title id="postcard-after-noon-t">Agnes's postcard, after noon</title>
+<desc id="postcard-after-noon-d">The writing side of Agnes's postcard to Tam, in her slanted blue biro, with a heron stamp and a postmark, after noon on day 2: the line for site 12 has gone too. Nothing shows where a line was.</desc>
+<defs><filter id="postcard-after-noon-tooth1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="900" height="600" fill="#2b2622"/>
+<g transform="rotate(-1.2 450 300)">
+<rect x="34" y="30" width="840" height="544" fill="#000" opacity="0.3"/>
+<rect x="26" y="22" width="840" height="544" fill="#EFE4C8"/>
+<line x1="540" y1="60" x2="540" y2="530" stroke="#2F6B3A" stroke-width="1.2"/>
+<text x="300" y="50" font-size="13" font-family="sans-serif" fill="#2F6B3A" letter-spacing="6" font-weight="normal">POST CARD</text>
+<rect x="740" y="50" width="96" height="116" fill="#F6EFDC" stroke="#2F6B3A" stroke-width="1.5" stroke-dasharray="3 3"/>
+<rect x="748" y="58" width="80" height="100" fill="#6F8A5B" opacity="0.8"/>
+<path d="M778,140 C779,135.3 780.3,119 784,112 C787.7,105 798.7,103 800,98 C801.3,93 792,86.7 792,82 C792,77.3 798.7,72 800,70" fill="none" stroke="#F6EFDC" stroke-width="4"/>
+<ellipse cx="780" cy="122" rx="16" ry="9" fill="#F6EFDC"/>
+<line x1="800" y1="70" x2="818" y2="74" stroke="#F6EFDC" stroke-width="3"/>
+<circle cx="706" cy="118" r="44" fill="none" stroke="#444" stroke-width="1.6" opacity="0.6"/>
+<circle cx="706" cy="118" r="36" fill="none" stroke="#444" stroke-width="1.6" opacity="0.6"/>
+<path d="M730,96 C735,95.3 750,91.3 760,92 C770,92.7 778.3,99.7 790,100 C801.7,100.3 823.3,95 830,94" fill="none" stroke="#444" stroke-width="1.6" opacity="0.5"/>
+<path d="M730,108 C735,107.3 750,103.3 760,104 C770,104.7 778.3,111.7 790,112 C801.7,112.3 823.3,107 830,106" fill="none" stroke="#444" stroke-width="1.6" opacity="0.5"/>
+<path d="M730,120 C735,119.3 750,115.3 760,116 C770,116.7 778.3,123.7 790,124 C801.7,124.3 823.3,119 830,118" fill="none" stroke="#444" stroke-width="1.6" opacity="0.5"/>
+<path d="M730,132 C735,131.3 750,127.3 760,128 C770,128.7 778.3,135.7 790,136 C801.7,136.3 823.3,131 830,130" fill="none" stroke="#444" stroke-width="1.6" opacity="0.5"/>
+<line x1="580" y1="300" x2="830" y2="300" stroke="#2F6B3A" stroke-width="1"/>
+<line x1="580" y1="356" x2="830" y2="356" stroke="#2F6B3A" stroke-width="1"/>
+<line x1="580" y1="412" x2="830" y2="412" stroke="#2F6B3A" stroke-width="1"/>
+<text x="590" y="290" font-size="34" font-family="serif" fill="#27386b" font-style="italic" transform="translate(590 290) skewX(-14) translate(-590 -290)">Tam</text>
+<text x="60" y="330" font-size="21" font-family="serif" fill="#27386b" font-style="italic" transform="translate(60 330) skewX(-14) translate(-60 -330)">Site 16. The tall cedar.</text>
+<text x="60" y="363" font-size="21" font-family="serif" fill="#27386b" font-style="italic" transform="translate(60 363) skewX(-14) translate(-60 -363)">You fell out of it once, and laughed.</text>
+<text x="60" y="408" font-size="21" font-family="serif" fill="#27386b" font-style="italic" transform="translate(60 408) skewX(-14) translate(-60 -408)">The heron sign. Wave at it</text>
+<text x="60" y="441" font-size="21" font-family="serif" fill="#27386b" font-style="italic" transform="translate(60 441) skewX(-14) translate(-60 -441)">on the way in. We always did.</text>
+<text x="60" y="486" font-size="21" font-family="serif" fill="#27386b" font-style="italic" transform="translate(60 486) skewX(-14) translate(-60 -486)">Site 21. The split boulder.</text>
+<text x="60" y="519" font-size="21" font-family="serif" fill="#27386b" font-style="italic" transform="translate(60 519) skewX(-14) translate(-60 -519)">You slept in the crack of it.</text>
+</g>
+<rect x="0" y="0" width="900" height="600" filter="url(#postcard-after-noon-tooth1)"/>
+</svg>
