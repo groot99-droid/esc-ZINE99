@@ -415,3 +415,94 @@ def ruths_car(a):
     sm = a.blur(6)
     for k in range(5):
         a.circle(296 + k * 18, 150 - k * 10 + (k % 2) * 12, 12 + k * 5, fill="#b9b7ae", opacity=0.22 - k * 0.03, filter=sm)
+
+
+# ---- sprites: the same figures cut loose from their ground, for the torchlight loop to draw -----------
+SW = 240
+
+
+def sprite(key, title, doc):
+    def deco(fn):
+        @asset(G, f"sprite-{key}", group="figures", title=title, w=SW, h=SW,
+               row="Top-down sprites, no ground (accepted 2026-11-15)")
+        def draw(a: Art):
+            fn(a)
+        draw.__doc__ = doc
+        return draw
+    return deco
+
+
+def blank_post(a, x, y, rot):
+    a.open("g", transform=f"translate({x} {y}) rotate({rot})")
+    a.rect(-78, -10, 156, 20, fill=kit.CEDAR, stroke="#3a2212", stroke_width=2)
+    for k in range(5):
+        a.line(-70 + k * 30, -8 + (k % 3) * 2, -50 + k * 30, 8 - (k % 2) * 3, stroke="#5c3a24", stroke_width=1.2)
+    a.rect(48, -9, 26, 18, fill="#e8d9a8", stroke="#3a2212", stroke_width=1.2)
+    a.poly([(-78, -10), (-100, 0), (-78, 10)], fill="#3a2a1a")
+    a.close()
+
+
+@sprite("tam-walk", "Sprite: Tam from above, walking",
+        "Tam from straight above on a clear ground, facing right, the torch held forward; no road and no light, so the game can lay it on its own charcoal.")
+def s_tam_walk(a):
+    person(a, 116, 120, 0)
+    a.rect(140, 96, 30, 11, fill="#222", stroke="#555", stroke_width=1)
+    a.circle(174, 101, 6, fill="#fff3c4")
+
+
+@sprite("tam-carry-one", "Sprite: Tam from above, one post",
+        "Tam from above on a clear ground, facing right, one pulled cedar post across the right shoulder with its number plate left blank for the game to write on.")
+def s_tam_one(a):
+    person(a, 116, 116, 0, step=0.6)
+    blank_post(a, 122, 156, 4)
+    a.rect(140, 92, 30, 11, fill="#222", stroke="#555", stroke_width=1)
+    a.circle(174, 97, 6, fill="#fff3c4")
+
+
+@sprite("tam-carry-two", "Sprite: Tam from above, two posts",
+        "Tam from above on a clear ground, facing right, a cedar post on each shoulder and the torch clamped under one; the plates are blank.")
+def s_tam_two(a):
+    person(a, 116, 120, 0, step=0.35)
+    blank_post(a, 118, 82, -3); blank_post(a, 122, 158, 4)
+    a.circle(206, 120, 6, fill="#fff3c4")
+
+
+@sprite("june-lantern", "Sprite: June from above, with a lantern",
+        "June from above on a clear ground, facing right, two puffs of hair, the walkie-talkie's aerial behind her and a lit lantern held out ahead.")
+def s_june(a):
+    person(a, 110, 124, 0, jacket="#6a3f6e", hair="#241a16", broad=0.85, puffs=True)
+    a.line(96, 150, 70, 176, stroke="#111", stroke_width=3)
+    a.circle(160, 100, 34, fill=a.radial([(0, "#fff0c8", 0.7), (1, kit.AMBER, 0)]))
+    a.circle(160, 100, 13, fill="#3b3a36", stroke="#111", stroke_width=2); a.circle(160, 100, 7, fill="#ffe7a3")
+
+
+@sprite("post", "Sprite: a site post from above",
+        "A cedar site post seen from straight above: the square cut end with its growth rings, a tin cap nail, and a short soft shadow; the number is written by the game.")
+def s_post(a):
+    a.rect(74, 78, 100, 100, fill="#000", opacity=0.35, filter=a.blur(8))
+    a.rect(66, 66, 108, 108, fill=kit.CEDAR, stroke="#3a2212", stroke_width=6)
+    for k in range(1, 5):
+        a.circle(120, 120, k * 11, fill="none", stroke="#5c3a24", stroke_width=3)
+    a.line(72, 72, 100, 100, stroke="#5c3a24", stroke_width=2); a.line(168, 168, 146, 146, stroke="#5c3a24", stroke_width=2)
+    a.circle(120, 120, 6, fill="#c9c2b0", stroke="#3a2212", stroke_width=2)
+
+
+@sprite("van", "Sprite: the van from above",
+        "The friends' dull red van from above on a clear ground, facing right, roof rack loaded with the tarp roll and the cooler; no headlight cones.")
+def s_van(a):
+    L, Wd = 200, 96
+    a.open("g", transform="translate(120 120)")
+    a.rect(-L / 2 + 6, -Wd / 2 + 8, L, Wd, rx=18, fill="#000", opacity=0.4, filter=a.blur(6))
+    a.rect(-L / 2, -Wd / 2, L, Wd, rx=14, fill=kit.RED, stroke="#0b0d12", stroke_width=2.5)
+    a.rect(-L / 2 + 6, -Wd / 2 + 5, L - 12, 7, rx=3, fill="#fff", opacity=0.14)
+    wx = L / 2 - 34
+    a.poly([(wx, -Wd / 2 + 10), (wx + 22, -Wd / 2 + 17), (wx + 22, Wd / 2 - 17), (wx, Wd / 2 - 10)], fill="#1a2532", stroke="#0b0d12", stroke_width=1.5)
+    a.rect(-L / 2 + 16, -Wd / 2 + 12, L - 66, Wd - 24, rx=7, fill="none", stroke="#0b0d12", stroke_width=1.5, opacity=0.7)
+    for k in range(4):
+        a.line(-L / 2 + 28 + k * 34, -Wd / 2 + 12, -L / 2 + 28 + k * 34, Wd / 2 - 12, stroke="#0b0d12", stroke_width=3)
+    a.rect(-L / 2 + 32, -26, 56, 28, fill="#2f6fb5", stroke="#0b0d12", stroke_width=1.5)
+    a.rect(-L / 2 + 96, -6, 36, 30, fill="#d9d2c0", stroke="#0b0d12", stroke_width=1.5)
+    for s in (-1, 1):
+        a.rect(L / 2 - 7, s * Wd * 0.3 - 8, 7, 16, fill="#fff3c4")
+        a.rect(-L / 2, s * Wd * 0.3 - 7, 5, 14, fill="#a02a22")
+    a.close()

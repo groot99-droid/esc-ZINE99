@@ -1,6 +1,6 @@
 {
  "game": "missing-campsites",
- "count": 154,
+ "count": 162,
  "assets": [
   {
    "id": "title-gone",
@@ -129,6 +129,54 @@
    "w": 480,
    "h": 600,
    "row": "Portrait outlines: each sitter as an empty contour"
+  },
+  {
+   "id": "sprite-june-lantern",
+   "group": "figures",
+   "title": "Sprite: June from above, with a lantern",
+   "w": 240,
+   "h": 240,
+   "row": "Top-down sprites, no ground (accepted 2026-11-15)"
+  },
+  {
+   "id": "sprite-post",
+   "group": "figures",
+   "title": "Sprite: a site post from above",
+   "w": 240,
+   "h": 240,
+   "row": "Top-down sprites, no ground (accepted 2026-11-15)"
+  },
+  {
+   "id": "sprite-tam-carry-one",
+   "group": "figures",
+   "title": "Sprite: Tam from above, one post",
+   "w": 240,
+   "h": 240,
+   "row": "Top-down sprites, no ground (accepted 2026-11-15)"
+  },
+  {
+   "id": "sprite-tam-carry-two",
+   "group": "figures",
+   "title": "Sprite: Tam from above, two posts",
+   "w": 240,
+   "h": 240,
+   "row": "Top-down sprites, no ground (accepted 2026-11-15)"
+  },
+  {
+   "id": "sprite-tam-walk",
+   "group": "figures",
+   "title": "Sprite: Tam from above, walking",
+   "w": 240,
+   "h": 240,
+   "row": "Top-down sprites, no ground (accepted 2026-11-15)"
+  },
+  {
+   "id": "sprite-van",
+   "group": "figures",
+   "title": "Sprite: the van from above",
+   "w": 240,
+   "h": 240,
+   "row": "Top-down sprites, no ground (accepted 2026-11-15)"
   },
   {
    "id": "topdown-friend-lantern",
@@ -521,6 +569,14 @@
    "w": 220,
    "h": 220,
    "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-kettle-said",
+   "group": "pieces",
+   "title": "Pack List tile, as said: a blue enamel kettle",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19) (accepted 2026-11-15)"
   },
   {
    "id": "item-keys",
@@ -1049,6 +1105,14 @@
    "w": 1600,
    "h": 1000,
    "row": "Logbook spreads, with the first page"
+  },
+  {
+   "id": "logbook-first-page-unread",
+   "group": "documents",
+   "title": "The Ranger's Book: the first page, before Tam reads it",
+   "w": 1600,
+   "h": 1000,
+   "row": "Logbook spreads, with the first page (accepted 2026-11-15)"
   },
   {
    "id": "postcard-after-dusk",

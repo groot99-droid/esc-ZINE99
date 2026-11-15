@@ -31,9 +31,11 @@ ITEMS = [
 BORDERS = [kit.C_BLUE, kit.C_GRN, kit.C_RED, kit.C_PUR, "#c48a1a", kit.C_BRN]
 
 
-def item_tile(i, key, name, icon, kind):
-    @asset(G, f"item-{key}", group="pieces", title=f"Pack List tile: {name}", w=S, h=S,
-           row="Item tiles (36) and List tiles (19)")
+def item_tile(i, key, name, icon, kind, said=False):
+    """`said` draws a phantom the way it sits in the tray when it has only been said: no ring yet."""
+    @asset(G, f"item-{key}" + ("-said" if said else ""), group="pieces",
+           title=f"Pack List tile{', as said' if said else ''}: {name}", w=S, h=S,
+           row="Item tiles (36) and List tiles (19)" + (" (accepted 2026-11-15)" if said else ""))
     def draw(a: Art):
         r = a.rng
         a.paper(kit.KRAFT, grain=0.4, fibre=0.7)
@@ -45,11 +47,11 @@ def item_tile(i, key, name, icon, kind):
         a.open("g", filter=kit.wax(a))
         sq = [(16, 14), (204, 16), (203, 176), (15, 174)]
         kit.crayon_fill(a, sq, kit.C_WHT, width=11, spacing=6, angle=r.uniform(-8, 8), opacity=0.92)
-        col = BORDERS[i % len(BORDERS)] if kind is None else {"phantom": kit.C_RED, "seat": kit.C_BLK, "guest": "#c48a1a"}[kind]
+        col = BORDERS[i % len(BORDERS)] if kind is None or said else {"phantom": kit.C_RED, "seat": kit.C_BLK, "guest": "#c48a1a"}[kind]
         kit.crayon(a, sq, col, width=7, passes=3, closed=True)
         pen = kit.CrayonPen(a, 110, 96, 62)
         kit.ICONS[icon](pen)
-        if kind == "phantom":       # circled where nobody put it
+        if kind == "phantom" and not said:       # circled where nobody put it
             ring = [(110 + 92 * math.cos(t) + r.uniform(-3, 3), 96 + 76 * math.sin(t) + r.uniform(-3, 3))
                     for t in [k * math.pi / 10 - 2 for k in range(22)]]
             kit.crayon(a, ring, kit.C_RED, width=7, passes=3)
@@ -61,7 +63,8 @@ def item_tile(i, key, name, icon, kind):
         a.text(110, 202, name, size=size, family="sans-serif", fill="#2b1d14", font_weight="bold",
                text_anchor="middle")
     draw.__doc__ = (f"A Pack List tray tile in wax crayon on brown kraft paper: {name}, drawn the way a child draws "
-                    f"what goes in the bag" + (", and circled in red because nobody at the fire added it."
+                    f"what goes in the bag" + (", as it lies in the tray when a friend has just said it: an ordinary tile, not yet circled."
+                                                if said else ", and circled in red because nobody at the fire added it."
                                                 if kind == "phantom" else
                                                 ", the item the seat nobody filled adds: one Tam wrote and never said."
                                                 if kind == "seat" else
@@ -71,6 +74,7 @@ def item_tile(i, key, name, icon, kind):
 
 for _i, _row in enumerate(ITEMS):
     item_tile(_i, *_row)
+item_tile(4, "kettle", "a blue enamel kettle", "kettle", "phantom", said=True)   # the tray shows no ring until Tam catches it
 
 
 # ---- the List: one thing for each lost site, in the order the place packed them --------------------

@@ -267,6 +267,30 @@
       "type": "counter",
       "default": 0,
       "description": "Rows Tam can still write at home (One Who Left)."
+    },
+    {
+      "name": "list_items",
+      "type": "counter",
+      "default": 0,
+      "description": "Items written on the notebook's List page, 0-19: one thing for each lost site, in the order the place packed them (DESIGN section 12, The List). Accepted 2026-11-15."
+    },
+    {
+      "name": "first_page_read",
+      "type": "bool",
+      "default": false,
+      "description": "Tam read the pencil first page of Marisol's logbook (The Ranger's Book 2): three or more of its five odd things in four looks. Gives the List its order."
+    },
+    {
+      "name": "backwards_lap_clean",
+      "type": "bool",
+      "default": false,
+      "description": "Tam said the chain last thing first on June's backwards lap without a slip (Pack List)."
+    },
+    {
+      "name": "recited",
+      "type": "counter",
+      "default": 0,
+      "description": "List items said at their own glyph on the pattern walk, where the true glyph hums."
     }
   ]
 }

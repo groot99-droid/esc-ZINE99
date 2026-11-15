@@ -14,6 +14,15 @@
 // Outcomes: three or four posts held (win); fewer, but three or more ticked in the Tally (done: the
 // pencil keeps them); otherwise lose. After two losses in a row the posts go 25 s later.
 // Every narrative line in TEXT is written for the game (listed for approval), not quoted.
+//
+// Art (api.art): Tam (walking, one post, two posts), the posts, June with her lantern, the van at the
+// five sites and Dell's chalk on the free slots are the game's sprites, each rasterised once into an
+// offscreen canvas at the size it is drawn and again only on resize. The walkie dial marks a line that
+// comes over the walkie, the pencil tick heads the Tally, chapter 4's card and Tam's top-down figure
+// open the run, and the result stands over the figure that fits how it ended. The charcoal ground is
+// still drawn here; the flat shapes are the fallback for any sprite that is missing.
+
+import { pic, chapterCard, resultCard, raster } from "./kit.js";
 
 const PPM = 24;                       // pixels per metre in the pre-drawn ground
 const WX0 = -9, WX1 = 11, WY0 = -7, WY1 = 62;
@@ -91,6 +100,9 @@ const CSS = (p) => `
 .${PFX}msg.bad{color:#ffb09c}
 .${PFX}msg.shake{animation:${PFX}shake .35s}
 @keyframes ${PFX}shake{25%{margin-left:-8px}75%{margin-left:8px}}
+.${PFX}msg .dial{width:44px;height:44px;vertical-align:middle;margin-right:8px;border-radius:50%;box-shadow:0 0 0 1px rgba(233,226,210,.4)}
+.${PFX}tally .tk{display:block;width:100%;height:38px;object-fit:cover;object-position:50% 62%;margin-bottom:4px}
+.${PFX}card .fig{float:right;width:96px;height:96px;margin:0 0 8px 12px;border-radius:50%;box-shadow:0 0 0 2px rgba(233,226,210,.25)}
 .${PFX}intro{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(60% 60% at 50% 50%,rgba(60,40,18,.55),rgba(8,9,11,.95));z-index:5;padding:16px;overflow:auto}
 .${PFX}card{max-width:450px;width:100%;box-sizing:border-box;background:#1c1d21;color:#e9e2d2;padding:22px 24px 20px;
   background-image:radial-gradient(120% 70% at 50% 0%,rgba(255,179,92,.22),transparent 60%),repeating-linear-gradient(-28deg,rgba(255,255,255,.035) 0 2px,transparent 2px 9px);
@@ -184,12 +196,35 @@ export default {
     $(".when").textContent = TEXT.when; $(".goal").textContent = TEXT.goal; $(".warn").textContent = TEXT.warn;
     if (gentle) { $(".gentle").hidden = false; $(".gentle").textContent = TEXT.gentle; }
     const msgEl = $(`.${PFX}msg`);
+    const art = api.art;
+    chapterCard(art, "chapter-4", $(`.${PFX}card`));
+    { const fig = pic(art, "topdown-tam-walk", "fig", ""); if (fig) $(`.${PFX}card .goal`).before(fig);
+      const tk = pic(art, "tick", "tk", ""); if (tk) $(`.${PFX}tally b`).after(tk); }
+    const dial = pic(art, "walkie-dial", "dial", "");
+    // sprites: id -> size in metres; rasterised at the drawn size, again only when the scale changes
+    const SPR = { "sprite-tam-walk": 2.2, "sprite-tam-carry-one": 2.2, "sprite-tam-carry-two": 2.2, "sprite-june-lantern": 2.2, "sprite-post": 1.3, "sprite-van": 5.2, "slot-chalk": 0.62 };
+    const spr = {};
+    let sprS = 0, sprGen = 0;
+    function buildSprites() {
+      if (!art || !art.has) return;
+      const gen = ++sprGen, scale = S * dpr;
+      sprS = scale;
+      for (const id of Object.keys(SPR)) raster(art, id, SPR[id] * scale).then((c) => { if (c && gen === sprGen) spr[id] = c; });
+    }
+    function blit(c, id, x, y, rot = 0) {
+      const im = spr[id];
+      if (!im) return false;
+      const d = SPR[id] * S;
+      if (rot) { c.save(); c.translate(x, y); c.rotate(rot); c.drawImage(im, -d / 2, -d / 2, d, d); c.restore(); }
+      else c.drawImage(im, x - d / 2, y - d / 2, d, d);
+      return true;
+    }
     const ground = drawGround(rng), dark = drawDark(rng);
     const btn = { pull: $(".pull"), tick: $(".tick"), raise: $(".raise"), swap: $(".swap") };
 
     const st = {
       x: roadX(1), y: 1, t: 0, battery: 100, carried: [], slotted: [], running: false, over: false,
-      pullT: 0, pulling: false, raising: false, keys: new Set(), ptr: null, msgT: 0, ticked: new Set(), juneT: -1, flick: 0,
+      heading: Math.PI / 2, pullT: 0, pulling: false, raising: false, keys: new Set(), ptr: null, msgT: 0, ticked: new Set(), juneT: -1, flick: 0,
       swapT: -1, swapsLeft: 1, unlocked: { tick: false, raise: false, swap: false }, beats: new Set(), fx: [],
     };
     const posts = POSTS.map((o) => ({ ...o, due: o.due + (gentle ? 25 : 0), x: roadX(o.y) + 2.5, gone: false, pulled: false, gapSeen: false }));
@@ -197,6 +232,7 @@ export default {
 
     function say(text, secs = 3, bad = false) {
       msgEl.textContent = text; st.msgT = secs;
+      if (dial && /on the walkie/.test(text)) msgEl.prepend(dial);
       msgEl.classList.toggle("bad", bad);
       if (bad && !api.reducedMotion) { msgEl.classList.remove("shake"); void msgEl.offsetWidth; msgEl.classList.add("shake"); }
     }
@@ -216,6 +252,7 @@ export default {
       W = Math.max(1, r.width); H = Math.max(1, r.height);
       canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
       S = Math.max(26, Math.min(70, Math.min(W, H) / 11.5));
+      if (Math.abs(S * dpr - sprS) > 0.5) buildSprites();
     }
     const ro = new ResizeObserver(resize); ro.observe(wrap); resize();
 
@@ -284,10 +321,14 @@ export default {
       const held = st.slotted.length + (reason === "june" ? st.carried.length : 0);
       const ticks = st.ticked.size;
       const lead = TEXT.end[reason] + " ";
-      let outcome;
-      if (held >= 3) { outcome = "win"; api.end({ outcome, text: lead + TEXT.end.win(held) }); }
-      else if (ticks >= 3) { outcome = "done"; api.end({ outcome, text: lead + TEXT.end.done(held, ticks) }); }
-      else { outcome = "lose"; api.end({ outcome, text: lead + TEXT.end.lose(held) }); }
+      const outcome = held >= 3 ? "win" : ticks >= 3 ? "done" : "lose";
+      resultCard(wrap, art, {
+        cards: [reason === "june" ? "topdown-june-lantern" : outcome === "win" ? "topdown-tam-carry-two" : outcome === "done" ? "topdown-tam-carry-one" : "topdown-van"],
+        lost: Math.max(0, 4 - held) + (outcome === "lose" ? 1 : 0), reducedMotion: api.reducedMotion,
+      });
+      if (outcome === "win") api.end({ outcome, text: lead + TEXT.end.win(held) });
+      else if (outcome === "done") api.end({ outcome, text: lead + TEXT.end.done(held, ticks) });
+      else api.end({ outcome, text: lead + TEXT.end.lose(held) });
       api.store.set("losses", outcome === "lose" ? losses + 1 : 0);
     }
 
@@ -309,6 +350,7 @@ export default {
         const d = Math.hypot(mx, my);
         const mult = st.carried.length === 2 ? 0.45 : st.carried.length === 1 ? 0.6 : 1;
         st.x += mx / d * SPEED * mult * dt; st.y += my / d * SPEED * mult * dt;
+        st.heading = Math.atan2(my, mx);
         st.x = Math.max(roadX(st.y) - 6, Math.min(roadX(st.y) + 6, st.x));
         st.y = Math.max(-5, Math.min(57, st.y));
         if (st.y > 56.5) say("Past 16 the road is only forest floor now.", 2);
@@ -380,9 +422,11 @@ export default {
         c.beginPath(); c.arc(wx(o.x + 2.1), wy(o.y + 0.7), 0.5 * S, 0, 7); c.stroke(); c.setLineDash([]);
         c.fillStyle = "#2b2420"; c.beginPath(); c.arc(wx(o.x + 2.1), wy(o.y + 0.7), 0.38 * S, 0, 7); c.fill();
         if (!o.pulled) {
-          c.fillStyle = "#8a5a3b"; c.strokeStyle = "#4a2e1c"; c.lineWidth = 2;
-          c.fillRect(wx(o.x) - 0.3 * S, wy(o.y) - 0.3 * S, 0.6 * S, 0.6 * S);
-          c.strokeRect(wx(o.x) - 0.3 * S, wy(o.y) - 0.3 * S, 0.6 * S, 0.6 * S);
+          if (!blit(c, "sprite-post", wx(o.x), wy(o.y))) {
+            c.fillStyle = "#8a5a3b"; c.strokeStyle = "#4a2e1c"; c.lineWidth = 2;
+            c.fillRect(wx(o.x) - 0.3 * S, wy(o.y) - 0.3 * S, 0.6 * S, 0.6 * S);
+            c.strokeRect(wx(o.x) - 0.3 * S, wy(o.y) - 0.3 * S, 0.6 * S, 0.6 * S);
+          }
           c.fillStyle = "#f6e7c8"; c.font = `bold ${Math.round(0.55 * S)}px 'IBM Plex Mono', monospace`;
           c.fillText(String(o.n), wx(o.x) - 0.45 * S, wy(o.y) - 0.45 * S);
           if (st.ticked.has(o.n)) { c.strokeStyle = "#e8e1cf"; c.lineWidth = 2.5; c.beginPath(); c.moveTo(wx(o.x) + 0.4 * S, wy(o.y) - 0.1 * S); c.lineTo(wx(o.x) + 0.55 * S, wy(o.y) + 0.1 * S); c.lineTo(wx(o.x) + 0.85 * S, wy(o.y) - 0.35 * S); c.stroke(); }
@@ -390,13 +434,16 @@ export default {
           c.fillStyle = "#2b2420"; c.beginPath(); c.arc(wx(o.x), wy(o.y), 0.2 * S, 0, 7); c.fill();
         }
       }
+      blit(c, "sprite-van", wx(6.2), wy(-4.6), -0.38);     // the van, parked at site 20
       for (let i = 0; i < 10; i++) {                     // the slots at the five sites
         const sx = -3.4 + i * 0.95, sy = -3.2;
         const filled = st.slotted[i];
-        c.strokeStyle = "#3a2c1c"; c.lineWidth = 1.5;
-        c.strokeRect(wx(sx) - 0.3 * S, wy(sy) - 0.3 * S, 0.6 * S, 0.6 * S);
+        if (filled ? !blit(c, "sprite-post", wx(sx), wy(sy)) : !blit(c, "slot-chalk", wx(sx), wy(sy))) {
+          c.strokeStyle = "#3a2c1c"; c.lineWidth = 1.5;
+          c.strokeRect(wx(sx) - 0.3 * S, wy(sy) - 0.3 * S, 0.6 * S, 0.6 * S);
+          if (filled) { c.fillStyle = "#8a5a3b"; c.fillRect(wx(sx) - 0.3 * S, wy(sy) - 0.3 * S, 0.6 * S, 0.6 * S); }
+        }
         if (filled) {
-          c.fillStyle = "#8a5a3b"; c.fillRect(wx(sx) - 0.3 * S, wy(sy) - 0.3 * S, 0.6 * S, 0.6 * S);
           c.fillStyle = "#f6e7c8"; c.font = `bold ${Math.round(0.4 * S)}px 'IBM Plex Mono', monospace`;
           c.fillText(String(filled), wx(sx) - 0.24 * S, wy(sy) + 0.14 * S);
         }
@@ -414,9 +461,12 @@ export default {
         c.strokeStyle = f.color; c.globalAlpha = 1 - k; c.lineWidth = 3;
         c.beginPath(); c.arc(wx(f.x), wy(f.y), (0.4 + k * 1.4) * S, 0, 7); c.stroke(); c.globalAlpha = 1;
       }
-      c.fillStyle = "#2a3346"; c.beginPath(); c.ellipse(cx, cy + 0.06 * S, 0.34 * S, 0.24 * S, 0, 0, 7); c.fill();   // Tam
-      c.fillStyle = "#3b2b22"; c.beginPath(); c.arc(cx, cy, 0.17 * S, 0, 7); c.fill();
-      st.carried.forEach((n, i) => { c.fillStyle = "#8a5a3b"; c.fillRect(cx - 0.55 * S + i * 0.75 * S, cy + 0.35 * S, 0.35 * S, 0.35 * S); });
+      const tamId = ["sprite-tam-walk", "sprite-tam-carry-one", "sprite-tam-carry-two"][st.carried.length];
+      if (!blit(c, tamId, cx, cy, st.heading)) {          // Tam (the flat shapes, if the sprite is missing)
+        c.fillStyle = "#2a3346"; c.beginPath(); c.ellipse(cx, cy + 0.06 * S, 0.34 * S, 0.24 * S, 0, 0, 7); c.fill();
+        c.fillStyle = "#3b2b22"; c.beginPath(); c.arc(cx, cy, 0.17 * S, 0, 7); c.fill();
+        st.carried.forEach((n, i) => { c.fillStyle = "#8a5a3b"; c.fillRect(cx - 0.55 * S + i * 0.75 * S, cy + 0.35 * S, 0.35 * S, 0.35 * S); });
+      }
       const q = near();
       if (q && st.running && st.pullT <= 0 && st.carried.length < 2) {   // a prompt, in the light
         c.font = `600 ${Math.max(13, Math.round(0.36 * S))}px 'IBM Plex Mono', monospace`;
@@ -434,7 +484,7 @@ export default {
       }
       if (st.battery <= 0) {                              // June's lantern on the road
         const t = Math.max(0, st.juneT) / 2.5;
-        c.fillStyle = "rgba(255,190,110,.6)"; c.beginPath(); c.arc(cx, cy - (1 + t * 3) * S, 0.45 * S, 0, 7); c.fill();
+        if (!blit(c, "sprite-june-lantern", cx, cy - (1.2 + t * 3) * S, Math.PI / 2)) { c.fillStyle = "rgba(255,190,110,.6)"; c.beginPath(); c.arc(cx, cy - (1 + t * 3) * S, 0.45 * S, 0, 7); c.fill(); }
       }
     }
 

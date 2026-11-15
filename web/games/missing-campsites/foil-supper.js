@@ -18,6 +18,14 @@
 // Outcomes: six packets, average 1.5 or better (win); six packets, average 1 or better (done);
 // otherwise lose. After two losses in a row the coals last four minutes.
 // Lines in TEXT are written for the game (listed for approval); the card lines are this prototype's.
+//
+// Art (api.art): the riso ingredient tiles in the cooler and on the sheets (the store's and the gifts'
+// tiles stay on the shelf, struck through); Bea's card, blank as it is on day 2, with yesterday's
+// legible card on the how-to; the diners' portrait outlines on their sheets (Tam's sheet has none:
+// Tam's face is never drawn); chapter 4's card on the how-to; and the title lettering over chapter
+// 5's card behind the result. The dotted swatches and the typed card lines are the fallback.
+
+import { pic, chapterCard, resultCard } from "./kit.js";
 
 const PINK = "#ff4fa3", TEAL = "#0f8a8a", NAVY = "#24344f", PAPER = "#efe7dc";
 const P = "missing-campsites-foil-supper-";
@@ -32,7 +40,11 @@ const INGR = [
   { id: "corn", name: "Store corn", home: "Base", n: 0 },
   { id: "butter", name: "Butter pats", home: "Fat", n: 0 },
   { id: "onion", name: "Garden onions", home: "Flavour", n: 0 },
+  { id: "ramps", name: "Wild ramps", home: "Flavour", n: 0 },
 ];
+const TILE = { potato: ["ingredient-potatoes"], sausage: ["ingredient-sausages"], lentil: ["ingredient-lentil-cakes"], oil: ["ingredient-olive-oil"],
+  salt: ["ingredient-salt", "ingredient-pepper"], corn: ["ingredient-store-corn"], butter: ["ingredient-butter-pats"], onion: ["ingredient-garden-onions"], ramps: ["ingredient-wild-ramps"] };
+const FACE = { Dell: "outline-dell", Rafe: "outline-rafe", "Inés": "outline-ines", June: "outline-june", Marisol: "outline-marisol" };
 const OWN = { Base: "potato", Body: "sausage", Fat: "butter", Flavour: "salt" };
 const DINERS = ["Tam", "Dell", "Rafe", "Inés", "June", "Marisol"];
 const JAR_AT = 60, TASTE_COST = 20;
@@ -115,6 +127,19 @@ const CSS = `
 .${P}bar button:disabled{opacity:.4;cursor:default}
 .${P}bar button[hidden]{display:none}
 .${P}bar label{font-size:14px;display:flex;gap:6px;align-items:center}
+.${P}ing .tl{display:flex;flex:none}
+.${P}ing .tl img{width:46px;height:46px;display:block;box-shadow:1px 1px 0 ${NAVY}55}
+.${P}ing .tl img+img{margin-left:-22px}
+.${P}ing.out .tl img{filter:grayscale(1);opacity:.5}
+.${P}role .mini{float:right;width:30px;height:30px;margin:0 0 0 4px;box-shadow:0 0 0 1px #fff8}
+.${P}sheet>b{display:flex;align-items:center;gap:6px}
+.${P}sheet>b img{width:30px;height:36px;object-fit:cover;object-position:50% 20%;border:1px solid ${NAVY}}
+.${P}card .cardart{display:block;width:100%;height:auto;max-width:300px;margin:0 auto}
+.${P}card.hasart .lines{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.${P}card{position:relative}
+.${P}rcard .yest{float:right;width:112px;margin:0 0 6px 12px;text-align:center;font-size:12px;color:${TEAL}}
+.${P}rcard .yest img{display:block;width:100%;height:auto;box-shadow:2px 2px 0 ${PINK}88}
+.${P}rcard .pk{width:34px;height:34px;vertical-align:middle;margin-left:6px}
 .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(239,231,220,.94);z-index:4;padding:16px;overflow:auto}
 .${P}rcard{max-width:470px;width:100%;box-sizing:border-box;border:2px solid ${PINK};box-shadow:5px 4px 0 ${TEAL};background:${PAPER};padding:18px 22px;position:relative;
   background-image:linear-gradient(${PAPER},${PAPER}),repeating-linear-gradient(180deg,transparent 0 27px,${TEAL}44 27px 28px);background-clip:content-box,padding-box}
@@ -127,7 +152,7 @@ const CSS = `
 .${P}rcard button{font:600 15px 'IBM Plex Mono',monospace;background:${NAVY};color:${PAPER};border:2px solid ${PINK};padding:10px 22px;cursor:pointer;box-shadow:3px 2px 0 ${TEAL}}
 .${P}rcard button:focus-visible{outline:3px solid ${TEAL};outline-offset:3px}
 @media (max-width:820px){.${P}main{grid-template-columns:1fr}.${P}sheets{grid-template-columns:repeat(2,minmax(0,1fr))}.${P}main>.${P}box:first-child{position:sticky;top:-12px;z-index:2}
-  .cool{display:flex;flex-wrap:wrap;gap:2px}.${P}ing{width:auto;font-size:13px;padding:4px}.${P}ing i{width:22px;height:22px;font-size:12px}.${P}ing small{display:none}.${P}ing.out{display:none}.${P}role{font-size:12px;min-height:44px}.${P}say{font-size:20px}}
+  .cool{display:flex;flex-wrap:wrap;gap:2px}.${P}ing{width:auto;font-size:13px;padding:4px}.${P}ing i{width:22px;height:22px;font-size:12px}.${P}ing .tl img{width:36px;height:36px}.${P}card .cardart{max-width:220px}.${P}rcard .yest{width:84px}.${P}ing small{display:none}.${P}ing.out{display:none}.${P}role{font-size:12px;min-height:44px}.${P}say{font-size:20px}}
 `;
 
 export default {
@@ -155,6 +180,13 @@ export default {
     $(".when").textContent = TEXT.when; $(`.${P}rcard .goal`).textContent = TEXT.goal;
     TEXT.steps.forEach((t) => { const li = document.createElement("li"); li.textContent = t; $("ol").appendChild(li); });
     if (gentle) { $(".gentle").hidden = false; $(".gentle").textContent = TEXT.gentle; }
+    const art = api.art;
+    chapterCard(art, "chapter-4", $(`.${P}rcard`));
+    { const y = pic(art, "recipe-legible", "", "Bea's card as it read yesterday");
+      if (y) { const f = document.createElement("div"); f.className = "yest"; f.append(y, document.createTextNode("the card, yesterday")); $(`.${P}rcard .goal`).before(f); }
+      const pk = pic(art, "ingredient-packet", "pk", ""); if (pk) $(`.${P}rcard ol`).lastElementChild.appendChild(pk);
+      const blank = pic(art, "recipe-blank", "cardart", "Bea's card today: the heading and every line naming the store are blank");
+      if (blank) { $(".lines").before(blank); $(`.${P}card`).classList.add("hasart"); } }
     const counts = Object.fromEntries(INGR.map((i) => [i.id, i.n]));
     const packets = DINERS.map(() => ({}));
     let sel = null, coal = COALS_S, running = false, over = false, iv = 0, t = 0, tasted = false;
@@ -182,6 +214,8 @@ export default {
       b.type = "button"; b.className = P + "ing";
       ing.key = ing.n > 0 || ing.late ? ++key : null;
       b.innerHTML = `<i>${ing.key || ""}</i><span></span>`;
+      const ims = (TILE[ing.id] || []).map((id) => pic(art, id, "", "")).filter(Boolean);
+      if (ims.length) { const tl = document.createElement("span"); tl.className = "tl"; tl.append(...ims); b.querySelector("i").after(tl); b.querySelector("i").style.cssText = `width:20px;height:20px;font-size:12px;background:${NAVY};mix-blend-mode:normal;visibility:${ing.key ? "visible" : "hidden"}`; }
       if (ing.late) b.hidden = true;
       b.addEventListener("click", () => pick(ing.id));
       cool.appendChild(b);
@@ -194,6 +228,7 @@ export default {
       const s = document.createElement("div");
       s.className = P + "sheet";
       s.innerHTML = `<b>${d.toUpperCase()}${i === 5 ? " · GUEST" : ""}</b><span class="sc">–</span><div class="${P}roles"></div>`;
+      { const f = pic(art, FACE[d], "", ""); if (f) s.querySelector("b").prepend(f); }
       const rr = s.querySelector(`.${P}roles`);
       roleBtns[i] = {};
       ROLES.forEach((r) => {
@@ -210,7 +245,7 @@ export default {
     function paint() {
       INGR.forEach((ing) => {
         const b = ingBtns[ing.id];
-        const sp = b.querySelector("span"); sp.innerHTML = "";
+        const sp = b.querySelector("span:not(.tl)"); sp.innerHTML = "";
         const nm = document.createElement("span"); nm.textContent = ing.id === "jar" && tasted ? "The jar: lard" : ing.name;
         const sm = document.createElement("small"); sm.textContent = `×${counts[ing.id]} · ${ing.id === "jar" ? (tasted ? "fat" : "unknown") : ing.home.toLowerCase()}`;
         sp.append(nm, sm);
@@ -223,7 +258,7 @@ export default {
           const b = roleBtns[i][r], v = packets[i][r];
           b.className = P + "role" + (v ? "" : " empty");
           b.innerHTML = `<em>${r.toUpperCase()}</em>`;
-          if (v) b.appendChild(document.createTextNode(v === "jar" && tasted ? "Lard" : nameOf(v)));
+          if (v) { const mi = pic(art, (TILE[v] || [])[0], "mini", ""); if (mi) b.appendChild(mi); b.appendChild(document.createTextNode(v === "jar" && tasted ? "Lard" : nameOf(v))); }
           if (!v && sel) { const pv = document.createElement("span"); const f = fit(r, sel); pv.className = "pv p" + f; pv.textContent = "= " + f; b.appendChild(pv); }
           b.setAttribute("aria-label", `${DINERS[i]} ${r}: ${v ? nameOf(v) : "empty"}${!v && sel ? `, would score ${fit(r, sel)}` : ""}`);
         });
@@ -285,6 +320,7 @@ export default {
       if (made === 6 && avg >= 1.5) { outcome = "win"; tail = E.win; }
       else if (made === 6 && avg >= 1) { outcome = "done"; tail = E.done; }
       api.store.set("losses", outcome === "lose" ? losses + 1 : 0);
+      resultCard(wrap, art, { cards: ["chapter-5"], lost: outcome === "win" ? 0 : outcome === "done" ? 2 : 4, reducedMotion: api.reducedMotion });
       api.end({ outcome, text: `${base} ${tail}` });
     }
 

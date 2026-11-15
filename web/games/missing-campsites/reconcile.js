@@ -21,6 +21,14 @@
 // No fail state: a good page (17 rows right, the forecast right) is a win; anything else is done.
 // Every narrative line in TEXT is written for the game (listed for approval), not quoted; the
 // postcard lines are DESIGN.md section 12's own.
+//
+// Art (api.art): the survey sheet printing 7 to 24 is the map itself (the hit squares sit on the art's
+// own sites); the legend strip of step 2; the three ground stamps on the Ground chip; Agnes's postcard
+// as it reads after night 1, under the torch when tilted, and its picture side; Agnes's outline; the
+// compass rose and chapter 3's card on the how-to; and behind the result the two sheets still to come
+// (12 to 24 by noon, 16 to 24 by dark) under the title lettering. The old drawn map is the fallback.
+
+import { pic, chapterCard, resultCard } from "./kit.js";
 
 const GREEN = "#2f6b3a", GRAPH = "#4a4a4c", CREAM = "#f1ead6", BROWN = "#9b6a3c", RED = "#9c3b30";
 
@@ -131,6 +139,18 @@ const CSS = `
 .${P}fc button.on{outline:3px solid ${RED}}
 .${P}fc button:disabled{opacity:.4;cursor:default}
 .${P}say{font-family:Caveat,'Segoe Print',cursive;font-size:21px;line-height:1.15;color:#2a2a2c;border-left:4px solid ${RED};padding:2px 10px;min-height:24px}
+.${P}legend.art{display:block;padding:0;border-width:1.5px}
+.${P}legend.art>img{display:block;width:100%;height:auto}
+.${P}legend.art h4{position:absolute;right:6px;top:4px;margin:0}
+.${P}legend.art h4>span{display:none}
+.${P}legend .gvs{display:none;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 12px;padding:2px 10px;font-size:14px}
+.${P}tilt .${P}legend .gvs{display:grid}
+.${P}chip img{float:right;width:46px;height:46px;margin:-2px -4px -2px 6px}
+.${P}card .pc{display:block;width:100%;height:auto;margin:4px 0 6px;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.${P}card .hd{display:flex;align-items:center;justify-content:flex-start;gap:8px}
+.${P}card .hd img{width:34px;height:42px;object-fit:cover;object-position:50% 18%;border:1px solid #b9b09a}
+.${P}card .hd button{margin-left:auto}
+.${P}plate .rose{float:right;width:84px;height:84px;margin:0 0 6px 10px}
 .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(241,234,214,.93);z-index:4;padding:16px;overflow:auto}
 .${P}plate{max-width:480px;width:100%;box-sizing:border-box;background:#fbf8ee;border:3px double ${GREEN};padding:18px 22px;color:#222;position:relative;
   background-image:repeating-radial-gradient(circle at 115% -10%,transparent 0 22px,rgba(155,106,60,.16) 22px 23.5px)}
@@ -180,8 +200,22 @@ export default {
     const say = (t) => { sayEl.textContent = t; };
     const said = new Set();
     const beat = (k, t) => { if (said.has(k)) return false; said.add(k); say(t); return true; };
+    const art = api.art;
+    const sheet = art && art.has("map-from-7");
+    chapterCard(art, "chapter-3", $(`.${P}plate`));
+    { const rose = pic(art, "compass-rose", "rose", ""); if (rose) $(`.${P}plate h2`).before(rose); }
 
-    // ---- the survey print ----
+    // ---- the survey print: the art's sheet, or (without it) the drawn one ----
+    let CX = 360, CY = 215, RX = 255, RY = 150, U = 1;
+    let sitePos = (n) => { const a = (150 + (n - 0.5) * 15) * Math.PI / 180; return { x: CX + RX * Math.cos(a), y: CY + RY * Math.sin(a), a }; };
+    if (sheet) {
+      // the sheet is 1100 x 800; its sites stand where art/src/40_maps.py puts them
+      svg.setAttribute("viewBox", "0 0 1100 800");
+      mk("image", { x: 0, y: 0, width: 1100, height: 800 }).setAttribute("href", art.url("map-from-7"));
+      CX = 560; CY = 440; RX = 300; RY = 250; U = 1.5;
+      const theta = (n) => (n <= 12 ? 106 + (n - 1) * 156 / 11 : 74 - (n - 13) * 156 / 11) * Math.PI / 180;
+      sitePos = (n) => ({ x: CX + RX * 1.12 * Math.cos(theta(n)), y: CY + RY * 1.12 * Math.sin(theta(n)) });
+    } else {
     const hgt = (x, y) => [[220, 150, 110, 1], [500, 300, 100, 0.7], [470, 100, 80, 0.45], [120, 360, 90, -0.35]]
       .reduce((v, [px, py, s, a]) => v + a * Math.exp(-((x - px) ** 2 + (y - py) ** 2) / (2 * s * s)), 0) + 0.06 * Math.sin(x / 47) * Math.cos(y / 61);
     const step = 10;
@@ -198,8 +232,6 @@ export default {
       if (d) mk("path", { d, fill: "none", stroke: BROWN, "stroke-width": li % 5 === 0 ? 1.8 : 0.8, opacity: 0.8, "stroke-linecap": "round" });
     }
     mk("path", { d: "M0 400 C80 360 150 410 230 430 S330 440 360 440", fill: "none", stroke: "#3d7fa6", "stroke-width": 3 });
-    const CX = 360, CY = 215, RX = 255, RY = 150;
-    const sitePos = (n) => { const a = (150 + (n - 0.5) * 15) * Math.PI / 180; return { x: CX + RX * Math.cos(a), y: CY + RY * Math.sin(a), a }; };
     let road = "";
     for (let k = 0; k <= 96; k++) { const a = k / 96 * Math.PI * 2; road += `${k ? "L" : "M"}${(CX + RX * Math.cos(a)).toFixed(1)} ${(CY + RY * Math.sin(a)).toFixed(1)}`; }
     mk("path", { d: road + "Z", fill: "none", stroke: "#222", "stroke-width": 9 });
@@ -213,15 +245,16 @@ export default {
     for (let k = 0; k < 4; k++) mk("rect", { x: 520 + k * 28, y: 412, width: 28, height: 6, fill: k % 2 ? "#f6f0dc" : "#222", stroke: "#222" });
     const ttl = mk("text", { x: 22, y: 34, "font-size": 20, "font-weight": 700, "letter-spacing": 4, fill: "#222", "font-family": "'Zilla Slab',Georgia,serif" });
     ttl.textContent = "HOLLIN CREEK";
+    }
     const fcLayer = mk("g", {});
-    const selRing = mk("circle", { r: 17, fill: "none", stroke: RED, "stroke-width": 3, "stroke-dasharray": "5 3", visibility: "hidden", "pointer-events": "none" });
+    const selRing = mk("circle", { r: 17 * U, fill: "none", stroke: RED, "stroke-width": 3 * U, "stroke-dasharray": "5 3", visibility: "hidden", "pointer-events": "none" });
     const squares = {};
     for (let n = 1; n <= 24; n++) {
       const s = sitePos(n);
-      const sx = s.x + (s.x - CX) * 0.13, sy = s.y + (s.y - CY) * 0.17;
+      const sx = sheet ? s.x : s.x + (s.x - CX) * 0.13, sy = sheet ? s.y : s.y + (s.y - CY) * 0.17;
       const g = mk("g", { class: "sq" });
-      mk("rect", { class: "hl", x: sx - 14, y: sy - 14, width: 28, height: 28, fill: "transparent", stroke: "none" }, g);   // hit area
-      if (MAP(n)) {
+      mk("rect", { class: "hl", x: sx - 14 * U * (sheet ? 1.3 : 1), y: sy - 14 * U * (sheet ? 1.3 : 1), width: 28 * U * (sheet ? 1.3 : 1), height: 28 * U * (sheet ? 1.3 : 1), fill: "transparent", stroke: "none" }, g);   // hit area
+      if (MAP(n) && !sheet) {
         mk("rect", { x: sx - 8, y: sy - 8, width: 16, height: 16, fill: "#222" }, g);
         const t = mk("text", { x: sx + (s.x >= CX ? 13 : -13), y: sy + 6, "text-anchor": s.x >= CX ? "start" : "end", "font-size": 16, "font-family": "'IBM Plex Mono',monospace", fill: "#222" }, g);
         t.textContent = n;
@@ -232,8 +265,11 @@ export default {
 
     // ---- legend: entries 7–24, the box keeps its height; six grooves in the blank band ----
     const lg = $(`.${P}legend`);
-    for (let n = 7; n <= 24; n++) { const s = document.createElement("span"); s.innerHTML = `<i></i><b>${n}</b> ${LEG_WHAT[n % 3]}`; lg.appendChild(s); }
-    for (let k = 0; k < 6; k++) { const s = document.createElement("span"); s.className = "gv"; s.textContent = "▪ ~~ ~~~~~~"; lg.appendChild(s); }
+    const strip = pic(art, "legend-18", "", "The legend strip: entries 7 to 24, and a blank band where six lines were");
+    let gvBox = lg;
+    if (strip) { lg.classList.add("art"); lg.appendChild(strip); gvBox = document.createElement("div"); gvBox.className = "gvs"; lg.appendChild(gvBox); }
+    else for (let n = 7; n <= 24; n++) { const s = document.createElement("span"); s.innerHTML = `<i></i><b>${n}</b> ${LEG_WHAT[n % 3]}`; lg.appendChild(s); }
+    for (let k = 0; k < 6; k++) { const s = document.createElement("span"); s.className = "gv"; s.textContent = "▪ ~~ ~~~~~~"; gvBox.appendChild(s); }
 
     // ---- notebook ----
     const rows = {};
@@ -268,7 +304,12 @@ export default {
       const chips = $(`.${P}chips`);
       chips.innerHTML = "";
       const src = [["GROUND", GROUND(n)], ["MAP", MAP(n) ? "printed square" : "nothing printed"], ["LEGEND", LEGEND(n) ? `■ ${n} ${LEG_WHAT[n % 3]}` : "no entry"], ["PHOTOS", photos ? (PHOTOS[n] || "none") : "not yet"]];
-      src.forEach(([h, v], i) => { const c = document.createElement("div"); c.className = P + "chip" + (i === 3 && !photos ? " off" : ""); c.innerHTML = `<b>${h}</b>`; c.appendChild(document.createTextNode(v)); chips.appendChild(c); });
+      src.forEach(([h, v], i) => {
+        const c = document.createElement("div"); c.className = P + "chip" + (i === 3 && !photos ? " off" : "");
+        if (i === 0) { const st = pic(art, { "here": "stamp-here", "not here": "stamp-gone", "not walked": "stamp-not-walked" }[v], "", ""); if (st) c.appendChild(st); }
+        const hb = document.createElement("b"); hb.textContent = h; c.appendChild(hb);
+        c.appendChild(document.createTextNode(v)); chips.appendChild(c);
+      });
       const acts = $(`.${P}acts`);
       acts.innerHTML = "";
       [["Here", "H"], ["Gone", "G"], ["Unknown", "U"]].forEach(([s, k]) => {
@@ -341,9 +382,9 @@ export default {
       for (const m of ["noon", "dark"]) {
         if (!fc[m]) continue;
         const s = squares[fc[m]];
-        mk("path", { d: `M${CX} ${CY} L${s.x} ${s.y}`, stroke: GRAPH, "stroke-width": 3.5, "stroke-linecap": "round", fill: "none" }, fcLayer);
-        mk("circle", { cx: s.x, cy: s.y, r: 13, fill: "none", stroke: GRAPH, "stroke-width": 2.5 }, fcLayer);
-        const t = mk("text", { x: (CX + s.x) / 2 + 6, y: (CY + s.y) / 2 - 6, "font-size": 24, fill: GRAPH, "font-family": "Caveat,cursive", "font-weight": 700 }, fcLayer);
+        mk("path", { d: `M${CX} ${CY} L${s.x} ${s.y}`, stroke: GRAPH, "stroke-width": 3.5 * U, "stroke-linecap": "round", fill: "none" }, fcLayer);
+        mk("circle", { cx: s.x, cy: s.y, r: 13 * U, fill: "none", stroke: GRAPH, "stroke-width": 2.5 * U }, fcLayer);
+        const t = mk("text", { x: (CX + s.x) / 2 + 6, y: (CY + s.y) / 2 - 6, "font-size": 24 * U, fill: GRAPH, stroke: "#f4edd9", "stroke-width": 5 * U, "paint-order": "stroke", "font-family": "Caveat,cursive", "font-weight": 700 }, fcLayer);
         t.textContent = `by ${m}`;
       }
       if (fcMode === "noon" && !fc.dark) { fcMode = "dark"; beat("dell", TEXT.dell); }
@@ -353,6 +394,26 @@ export default {
     // ---- postcard in the margin ----
     const card = $(`.${P}card`);
     card.innerHTML = `<b>AGNES'S POSTCARD</b>`;
+    const pcIds = { front: "postcard-after-night-1", torch: "postcard-under-torch", back: "postcard-picture-side" };
+    const pc = pic(art, pcIds.front, "pc", "The postcard's written side: four lines left, and two blank where lines were");
+    let pcSide = "front";
+    const paintPc = () => {
+      if (!pc) return;
+      const id = pcSide === "back" ? pcIds.back : wrap.classList.contains(P + "tilt") && art.has(pcIds.torch) ? pcIds.torch : pcIds.front;
+      pc.src = art.url(id);
+    };
+    if (pc) {
+      const hd = document.createElement("div"); hd.className = "hd";
+      const ag = pic(art, "outline-agnes", "", ""); if (ag) hd.appendChild(ag);
+      const lab = document.createElement("b"); lab.textContent = "AGNES'S POSTCARD"; lab.style.cssText = "font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#6b6b6b";
+      hd.appendChild(lab);
+      if (art.has(pcIds.back)) {
+        const fl = document.createElement("button"); fl.type = "button"; fl.textContent = "Turn it over";
+        fl.addEventListener("click", () => { pcSide = pcSide === "back" ? "front" : "back"; fl.textContent = pcSide === "back" ? "The written side" : "Turn it over"; paintPc(); });
+        hd.appendChild(fl);
+      }
+      card.innerHTML = ""; card.append(hd, pc);
+    }
     for (const line of POSTCARD) {
       const d = document.createElement("div");
       if (!line.text) { d.innerHTML = `<span class="groove">— — — — — — — — —</span>`; card.appendChild(d); continue; }
@@ -364,8 +425,8 @@ export default {
 
     // ---- tilt to the torch ----
     const noteBtn = $(".note");
-    const tiltOn = () => { if (!tiltOk || over) return; wrap.classList.add(P + "tilt"); $(`.${P}tb`).classList.add("on"); if (!grooveLine) noteBtn.hidden = false; };
-    const tiltOff = () => { wrap.classList.remove(P + "tilt"); $(`.${P}tb`).classList.remove("on"); };
+    const tiltOn = () => { if (!tiltOk || over) return; wrap.classList.add(P + "tilt"); $(`.${P}tb`).classList.add("on"); if (!grooveLine) noteBtn.hidden = false; paintPc(); };
+    const tiltOff = () => { wrap.classList.remove(P + "tilt"); $(`.${P}tb`).classList.remove("on"); paintPc(); };
     const tb = $(`.${P}tb`);
     tb.addEventListener("pointerdown", (e) => { e.preventDefault(); tiltOn(); });
     for (const ev of ["pointerup", "pointerleave", "pointercancel"]) tb.addEventListener(ev, tiltOff);
@@ -380,6 +441,8 @@ export default {
       const good = right >= 17 && fr;
       api.store.set("last", { right, accepted, forecast_right: fr, mother_lines_kept: copied.size, grooves: grooveLine });
       const E = TEXT.end;
+      tiltOff();
+      resultCard(wrap, art, { cards: ["map-from-12", "map-from-16"], lost: good ? 0 : Math.min(5, 1 + accepted + (fr ? 0 : 1)), caption: "The sheets to come: by noon, by dark.", reducedMotion: api.reducedMotion });
       api.end({
         outcome: good ? "win" : "done",
         text: [good ? E.winLead : E.doneLead, E.rows(right), accepted ? E.accepted(accepted) : "", fr ? E.fcRight : E.fcWrong,

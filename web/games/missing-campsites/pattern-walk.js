@@ -19,6 +19,17 @@
 // the car is at the window first). After two losses in a row the limit is DESIGN.md's own 6.
 // Every narrative line in TEXT is written for the game (listed for approval), not quoted; row 17's
 // detail is DESIGN.md's own example.
+//
+// Phase 1 (accepted 2026-11-15, DESIGN.md "Accepted development"):
+//   Recite  the List, said backwards, is the route. Tam holds four of its items here (19, 17, 15, 12).
+//           Tap a held tile (or R, then Enter) to say it: if it is the item of the site Tam is looking
+//           for, the true glyph hums. Each item can be said once; said at the wrong junction it is
+//           spent and nothing answers. Every glyph passed gives up its item to the List strip.
+// Art (api.art): the glyph kit and detail saplings as the key, the List tiles as the strip, Marisol's
+// outline on Ask, chapter 7's card on the how-to, and the title lettering over the lit window behind
+// the result. The field's glyphs stay drawn from each junction's spec: the kit is their legend.
+
+import { pic, chapterCard, resultCard, LIST, listId } from "./kit.js";
 
 const NS = "http://www.w3.org/2000/svg";
 const INK = "#111", PEARL = "#ecebe6", GREEN = "#2e6a5c", DEEP = "#0f3a33";
@@ -35,6 +46,7 @@ const ROWS = [
   { n: 12, text: "the creek bend; four slept here", want: { persons: 4 } },
 ];
 const COUNTS = [3, 2, 3, 3, 3, 4, 3, 4];
+const HELD = [19, 17, 15, 12];        // the List items Tam carries into this walk
 
 const TEXT = {
   when: "The other side · the path out · glyphs 19 to 12",
@@ -43,6 +55,10 @@ const TEXT = {
   gentle: "A gentler walk: the car waits for six forgotten steps, not four.",
   open: "Pearl light, no shadows. The trees stand in exact rows, and the rows are sites.",
   ask: "Marisol walks beside you. \"I checked every one of these in. Ask me.\" (A: ask her, three times.)",
+  recite: "June's backwards lap, for real. You hold four things off the List: say one where it belongs and the trees answer. (R, or tap a tile.)",
+  hum: (name) => `"…and ${name}." The trees of one glyph hum.`,
+  dud: (name) => `"…${name}." Nothing answers. That was not what comes next, and it is said now.`,
+  gave: (n, name) => `${n}: ${name}. It goes on the List.`,
   count: "Fifteen is blank in your notebook. You never walked it. But the ranger's book kept its counts. (C: read them, twice.)",
   r17: "A ring of saplings, like a wheel lying down. Somebody's bike stood here.",
   r16: "One tree here is taller than the rest, and darker.",
@@ -92,6 +108,22 @@ const CSS = `
 .${P}key svg{width:30px;height:30px;flex:none}
 .${P}voice{font-family:Caveat,'Segoe Print',cursive;font-size:21px;line-height:1.15;background:${INK};color:${PEARL};padding:8px 10px;min-height:24px}
 .${P}voice:empty{display:none}
+.${P}list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.${P}list button{position:relative;aspect-ratio:1;padding:0;border:1.5px dashed #9a948a;background:#f6f1e2;font:600 12px 'IBM Plex Mono',monospace;color:#8a857b;cursor:default;overflow:hidden;min-width:0}
+.${P}list button img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.${P}list button.held{border:2px solid ${INK};cursor:pointer;box-shadow:0 0 0 2px #c9a862}
+.${P}list button.held:hover,.${P}list button.held:focus-visible{outline:3px solid ${GREEN};outline-offset:1px}
+.${P}list button.walked{border:1.5px solid #9a948a}
+.${P}list button.spent{box-shadow:none;border:1.5px solid #9a948a;cursor:default}
+.${P}list button.spent img{opacity:.45}
+.${P}list button.now{outline:3px solid ${INK};outline-offset:1px}
+.${P}lh{display:flex;justify-content:space-between;align-items:baseline;gap:6px;font-size:13px;letter-spacing:.14em;font-weight:600}
+.${P}lh small{letter-spacing:0;font-weight:400;font-size:12px}
+.${P}wrap g.hum .ring{stroke:${GREEN};stroke-width:10;fill:#e9f3ee}
+.${P}wrap g.hum.live .ring{animation:${P}hum .9s ease-in-out infinite}
+@keyframes ${P}hum{50%{stroke-width:18;stroke:${DEEP}}}
+.${P}acts button img{width:22px;height:27px;object-fit:cover;object-position:50% 22%;vertical-align:middle;margin-right:6px;border:1px solid ${INK}}
+.${P}key li img{width:76px;height:76px;flex:none;border:1px solid #c9c8c2}
 .${P}flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;transition:opacity .12s}
 .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(236,235,230,.92);z-index:4;padding:16px;overflow:auto}
 .${P}card{max-width:460px;width:100%;box-sizing:border-box;background:#fff;padding:20px 22px;border:4px solid ${INK};position:relative;
@@ -111,7 +143,7 @@ const CSS = `
 .${P}wrap g[role=button]{cursor:pointer;outline:none}
 .${P}wrap g[role=button]:focus .ring,.${P}wrap g[role=button]:hover .ring{stroke:${INK};stroke-width:6;fill:#fff}
 .${P}wrap g.hint .ring{stroke:${GREEN};stroke-width:7;stroke-dasharray:14 8}
-@media (max-width:640px){.${P}wrap{flex-direction:column}.${P}side{width:auto;border-left:0;border-top:3px solid ${INK};order:2;padding:8px 10px;gap:6px;max-height:40%}.${P}acts button{padding:6px 8px;min-height:36px}.${P}side h3{display:none}.${P}row:not(.now){display:none}.${P}key ul{grid-template-columns:1fr 1fr}.${P}voice{font-size:19px}}
+@media (max-width:640px){.${P}wrap{flex-direction:column}.${P}side{width:auto;border-left:0;border-top:3px solid ${INK};order:2;padding:8px 10px;gap:6px;max-height:40%}.${P}acts button{padding:6px 8px;min-height:36px}.${P}side h3{display:none}.${P}row:not(.now){display:none}.${P}key ul{grid-template-columns:1fr 1fr}.${P}lh small{display:none}.${P}list{grid-template-columns:repeat(8,minmax(0,1fr));gap:3px}.${P}key li img{width:56px;height:56px}.${P}voice{font-size:19px}}
 `;
 
 export default {
@@ -124,13 +156,15 @@ export default {
     wrap.innerHTML = `<style>${CSS}</style>
       <div class="${P}field"><svg viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" aria-label="Glyphs of trees"></svg><div class="${P}flash"></div></div>
       <div class="${P}side"><h3>SITES</h3><div class="rows"></div>
+        <div class="${P}lh"><span>THE LIST</span><small>say one you hold (R)</small></div>
+        <div class="${P}list" aria-label="The List, items 19 to 12"></div>
         <div class="${P}drift" aria-live="polite"></div>
         <div class="${P}voice" aria-live="polite"></div>
         <div class="${P}acts"><button type="button" class="ask" hidden>Ask Marisol (A) ·3</button><button type="button" class="cnt" hidden>Count (C) ·2</button></div>
         <details class="${P}key" open><summary>GLYPH KEY</summary><ul></ul></details></div>
       <div class="${P}intro"><div class="${P}card"><h2>The pattern walk</h2><div class="when"></div>
         <p class="goal"></p><p class="rule"></p>
-        <dl><dt>Step</dt><dd>click or tap a glyph, or press 1–4</dd><dt>Look</dt><dd>← → to look along the glyphs, Enter to step</dd></dl>
+        <dl><dt>Step</dt><dd>click or tap a glyph, or press 1–4</dd><dt>Look</dt><dd>← → to look along the glyphs, Enter to step</dd><dt>Recite</dt><dd>tap a List tile you hold (or R): said at its own site, the true glyph hums</dd></dl>
         <p class="gentle" hidden></p>
         <button type="button">Step off the five sites</button></div></div>`;
     root.appendChild(wrap);
@@ -140,6 +174,41 @@ export default {
     const svg = wrap.querySelector("svg");
     const flash = $(`.${P}flash`), rowsEl = $(".rows"), driftEl = $(`.${P}drift`), voice = $(`.${P}voice`);
     const askBtn = $(".ask"), cntBtn = $(".cnt");
+    const art = api.art;
+    chapterCard(art, "chapter-7", $(`.${P}card`));
+    // ---- the List strip: 19 down to 12; four tiles held, the rest given up by the glyphs as Tam passes ----
+    const listEl = $(`.${P}list`), tiles = {}, held = new Set(HELD), spent = new Set();
+    let humming = false;
+    function fillTile(n) {
+      const b = tiles[n]; b.textContent = "";
+      const im = pic(art, listId(n), "", "");
+      if (im) b.appendChild(im); else b.textContent = n;
+    }
+    ROWS.forEach((r) => {
+      const b = document.createElement("button"); b.type = "button"; b.textContent = r.n;
+      b.addEventListener("click", () => recite(r.n));
+      listEl.appendChild(b); tiles[r.n] = b;
+      if (held.has(r.n)) fillTile(r.n);
+    });
+    function paintList() {
+      ROWS.forEach((r, i) => {
+        const b = tiles[r.n], can = held.has(r.n) && !spent.has(r.n);
+        b.className = (can ? "held " : "") + (spent.has(r.n) ? "spent " : "") + (b.dataset.walked ? "walked " : "") + (i === j && !over ? "now" : "");
+        b.disabled = !can || busy || over;
+        b.setAttribute("aria-label", `The List, ${r.n}: ${held.has(r.n) || b.dataset.walked ? LIST[r.n] : "not known"}${can ? ". Say it" : spent.has(r.n) ? ", said" : ""}`);
+      });
+    }
+    function recite(n) {
+      if (busy || over || !held.has(n) || spent.has(n) || $(`.${P}intro`)) return;
+      spent.add(n);
+      if (n === ROWS[j].n) {
+        const c = cands.find((x) => x.ok);
+        c.g.classList.add("hum"); if (!api.reducedMotion) c.g.classList.add("live");
+        humming = true;
+        speak(TEXT.hum(LIST[n]));
+      } else speak(TEXT.dud(LIST[n]));
+      paintList();
+    }
     if (window.matchMedia && matchMedia("(max-width:640px)").matches) $(`.${P}key`).open = false;
     const timers = [];
     let raf = 0, j = 0, drift = 0, busy = true, over = false, cands = [], focusIdx = 0;
@@ -171,8 +240,11 @@ export default {
       driftEl.innerHTML = "DRIFT " + Array.from({ length: DRIFT_LOSE }, (_, k) => `<i class="${k < drift ? "on" : ""}${k === DRIFT_LOSE - 1 ? " edge" : ""}"></i>`).join("");
       driftEl.setAttribute("aria-label", `Drift ${drift} of ${DRIFT_LOSE}`);
     }
+    const face = pic(art, "outline-marisol", "", "");
     function paintActs() {
+      paintList();
       askBtn.textContent = `Ask Marisol (A) ·${asks}`; askBtn.disabled = !asks || asked || busy;
+      if (face) askBtn.prepend(face);
       cntBtn.textContent = counting ? "Counting…" : `Count (C) ·${counts}`; cntBtn.disabled = !counts || counting || busy;
     }
 
@@ -193,11 +265,18 @@ export default {
       ["tall cedar", (g) => { el("circle", { cx: 15, cy: 15, r: 12, fill: "none", stroke: INK, "stroke-width": 2.4 }, g); el("circle", { cx: 15, cy: 15, r: 7.5, fill: INK }, g); }],
     ];
     const keyUl = $(`.${P}key ul`);
-    keyItems.forEach(([label, draw]) => {
+    const KEY_ART = ["glyph-post", "glyph-table", "glyph-ring", "glyph-persons", "sapling-crooked-pad", null, "sapling-wheel", "sapling-cedar"];
+    keyItems.forEach(([label, draw], i) => {
       const li = document.createElement("li");
-      const s = document.createElementNS(NS, "svg"); s.setAttribute("viewBox", "0 0 30 30"); s.setAttribute("aria-hidden", "true");
-      li.appendChild(s); li.appendChild(document.createTextNode(label)); keyUl.appendChild(li);
-      draw(s);
+      const im = pic(art, KEY_ART[i], "", "");
+      if (im) li.appendChild(im);                    // the kit's own module; the small drawing is the fallback
+      else { const s = document.createElementNS(NS, "svg"); s.setAttribute("viewBox", "0 0 30 30"); s.setAttribute("aria-hidden", "true"); li.appendChild(s); draw(s); }
+      li.appendChild(document.createTextNode(label)); keyUl.appendChild(li);
+    });
+    [["glyph-whole", "a whole glyph: one lost site"], ["glyph-pad", "tent pad, nobody in it"], ["glyph-decoy", "a decoy: same build, one detail off"], ["glyph-path", "the path between glyphs"]].forEach(([id, label]) => {
+      const im = pic(art, id, "", "");
+      if (!im) return;
+      const li = document.createElement("li"); li.appendChild(im); li.appendChild(document.createTextNode(label)); keyUl.appendChild(li);
     });
 
     function baseSpec() {
@@ -273,7 +352,7 @@ export default {
     let hereSpec = null, hereLabel = "20";
     function layout() {
       layer.innerHTML = "";
-      cands = []; asked = false; counting = false;
+      cands = []; asked = false; counting = false; humming = false;
       const row = ROWS[j];
       const n = COUNTS[j];
       const t = trueSpec(row);
@@ -318,7 +397,8 @@ export default {
       focusIdx = 0;
       busy = false;
       // beats and unlocks by junction
-      if (!row.text && cntBtn.hidden) { cntBtn.hidden = false; if (!api.reducedMotion) cntBtn.classList.add("fresh"); beat("count", TEXT.count); }
+      if (row.n === 18) beat("recite", TEXT.recite);
+      else if (!row.text && cntBtn.hidden) { cntBtn.hidden = false; if (!api.reducedMotion) cntBtn.classList.add("fresh"); beat("count", TEXT.count); }
       else if (row.n === 17) beat("17", TEXT.r17);
       else if (row.n === 16) beat("16", TEXT.r16);
       else if (row.n === 13) { beat("13", TEXT.r13); if (!api.reducedMotion) breath.setAttribute("opacity", "0.55"); }
@@ -385,6 +465,8 @@ export default {
           ripple(c);
           unlockAsk();
           hereSpec = c.spec; hereLabel = String(ROWS[j].n);
+          const n = ROWS[j].n;                         // the glyph gives its item up to the List
+          if (!held.has(n)) { tiles[n].dataset.walked = "1"; fillTile(n); if (!humming) speak(TEXT.gave(n, LIST[n])); }
           j++;
           if (j >= ROWS.length) return finish();
           timers.push(setTimeout(layout, api.reducedMotion ? 0 : 520));
@@ -413,6 +495,8 @@ export default {
       [...rowsEl.children].forEach((d) => d.classList.add("done"));
       const lose = drift >= DRIFT_LOSE;
       api.store.set("losses", lose ? losses + 1 : 0);
+      paintList();
+      resultCard(wrap, art, { cards: ["thread-own"], lost: lose ? 5 : Math.min(4, drift), reducedMotion: api.reducedMotion });
       if (lose) api.end({ outcome: "lose", text: TEXT.end.lose(drift, ROWS[Math.min(j, ROWS.length - 1)].n) });
       else api.end({ outcome: "win", text: drift <= 1 ? TEXT.end.clean(drift) : TEXT.end.win(drift) });
     }
@@ -423,6 +507,7 @@ export default {
       const k = e.key.toLowerCase();
       if (/^[1-4]$/.test(k)) { const c = cands[+k - 1]; if (c && !c.dead) choose(c); }
       else if (k === "a") ask();
+      else if (k === "r") { const b = ROWS.map((r) => tiles[r.n]).find((x) => x.classList.contains("held")); if (b) b.focus(); }
       else if (k === "c") count();
       else if (k === "arrowright" || k === "arrowleft") {
         e.preventDefault();

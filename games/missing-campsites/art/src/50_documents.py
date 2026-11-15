@@ -198,6 +198,19 @@ def logbook_first(a: Art):
     Marisol's hand, with ink columns ruled over it later. A party of five is written in at 20 to 24 with the
     check-out column empty, and its row 21 is the same sentence as Tam's. On the facing page, Tam's two
     notebook lines about it."""
+    first_page(a, read=True)
+
+
+@asset(G, "logbook-first-page-unread", group="documents", title="The Ranger's Book: the first page, before Tam reads it",
+       w=BW, h=BH, row="Logbook spreads, with the first page (accepted 2026-11-15)")
+def logbook_first_unread(a: Art):
+    """The same front page as Marisol turns to it, before Tam has marked anything: the pencil Sites page under
+    the later ink columns, the party of five with no check-out, the first ink row. No pencil ring, no note
+    beside the ink, and Tam's notebook lies open on the facing page with its lines still empty."""
+    first_page(a, read=False)
+
+
+def first_page(a, read):
     book(a, left="#EDE3C6", rules=(False, True))
     # the old notebook page: narrower rules, a red margin, foxing
     d = "".join(f"M{LX + 12},{TOP + 64 + k * 34}h{PW - 24}" for k in range(25))
@@ -232,14 +245,16 @@ def logbook_first(a: Art):
         kit.printed(a, LX + 22 + dx, TOP + 46, nm, size=13, letter_spacing="1.5")
     # Tam's pencil ring round row 21
     y21 = TOP + 64 + 5 * 34 - 16
-    kit.pencil(a, kit.E(LX + 300, y21, 270, 26, -1, 26), w=2.4, closed=True, smooth=True)
+    if read:
+        kit.pencil(a, kit.E(LX + 300, y21, 270, 26, -1, 26), w=2.4, closed=True, smooth=True)
     # facing page: the first true ledger rows in ink, and Tam's notebook lines
     columns(a, RX0)
     row(a, RX0, 1, "20–24", "Teague", 5, "—", "—", "0001")
     row(a, RX0, 2, "3", "", 2, "1", "$12", "0002")
     row(a, RX0, 3, "9", "", 4, "2", "$24", "0003")
-    kit.pencil(a, [(RX0 + 100, TOP + 70 + ROW - 2), (RX0 + 230, TOP + 70 + ROW - 4)], w=2.2)
-    kit.hand(a, RX0 + 250, TOP + 70 + ROW + 34 + ROW * 3, "the hand that kept the book", size=24, rot=-2)
+    if read:
+        kit.pencil(a, [(RX0 + 100, TOP + 70 + ROW - 2), (RX0 + 230, TOP + 70 + ROW - 4)], w=2.2)
+        kit.hand(a, RX0 + 250, TOP + 70 + ROW + 34 + ROW * 3, "the hand that kept the book", size=24, rot=-2)
     # Tam's notebook, laid on the page
     nx, ny, nw, nh = RX0 + 70, 420, 580, 430
     a.open("g", transform=f"rotate(-3 {nx + nw / 2} {ny + nh / 2})")
@@ -249,7 +264,7 @@ def logbook_first(a: Art):
     for k, s in enumerate(["Marisol turned to the front to show", "me how a book is kept.",
                            "The front is in pencil.", "", "21  the split boulder, slept in the crack",
                            "Her row 21 and my row 21 are the", "same sentence. Hers is older. Check."]):
-        if s:
+        if s and read:
             kit.hand(a, nx + 76, ny + 56 + (k + 1) * 38, s, size=27, rot=0)
     a.close()
     pencil_prop(a, 1380, 900, -12)

@@ -178,7 +178,9 @@
         "accepted",
         "phantoms_caught",
         "notebook_lines",
-        "warmth"
+        "warmth",
+        "list_items",
+        "backwards_lap_clean"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -345,7 +347,8 @@
         "notebook_lines",
         "time_units",
         "anchors",
-        "hold"
+        "hold",
+        "first_page_read"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -474,7 +477,8 @@
         "accepted",
         "phantoms_caught",
         "notebook_lines",
-        "warmth"
+        "warmth",
+        "list_items"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -665,10 +669,13 @@
         "sites_written",
         "pattern_key",
         "person_brought",
-        "posts_pulled"
+        "posts_pulled",
+        "list_items"
       ],
       "writes": [
-        "drift"
+        "drift",
+        "recited",
+        "list_items"
       ],
       "enter": "flatten",
       "exit": "pull-out",
@@ -700,10 +707,13 @@
         "sites_written",
         "pattern_key",
         "person_brought",
-        "drift"
+        "drift",
+        "list_items"
       ],
       "writes": [
-        "drift"
+        "drift",
+        "recited",
+        "list_items"
       ],
       "enter": "flatten",
       "exit": "pull-out",

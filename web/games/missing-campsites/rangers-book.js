@@ -20,6 +20,19 @@
 // timer). Hints by idle time: 60 s partial sums, 120 s the disagreeing total underlined, 180 s a
 // ghost filled. After two losses in a row the clock runs eight minutes and hints come twice as fast.
 // Lines in TEXT are written for the game (listed for approval), not quoted.
+//
+// Phase 1 (accepted 2026-11-15, DESIGN.md "Accepted development"): the first page. When the totals
+// balance, Marisol turns to the front "to show you how a book is kept", and the front is a notebook's
+// Sites page in pencil. Tam has four looks before she turns back (seven things can be looked at; five
+// of them do not belong in a ranger's logbook). Three or more of the five and the page is read: the
+// game's midpoint reversal, and the row 21 that is the same sentence as Tam's. Fewer, and the totals
+// still balance but the page goes unread. (In the design this page belongs to The Ranger's Book 2;
+// the prototype plays book 1, so it follows book 1's totals here.)
+// Art (api.art): the first-page spread, unread and read; the spread of book 1 on the how-to and behind
+// a loss; the drop-box envelope, the seam notch under the torch, the time units over the clock,
+// Marisol's outline on Ask, chapter 3's card, and the title lettering behind the result.
+
+import { pic, chapterCard, resultCard } from "./kit.js";
 
 const P = "missing-campsites-rangers-book-";
 const ROWS = [
@@ -49,11 +62,32 @@ const TEXT = {
   noBlank: "No blank rows left in the tray. Rub one out first.",
   hint180: "Marisol, over your shoulder: \"Permit 402. That would be… two?\"",
   partial: "Partial sums, in the margin.",
+  fp: {
+    turn: "Marisol: \"Let me show you how a book is kept.\" She turns to the front. The front is not a ledger.",
+    task: "Four looks before she turns back. What on this page does not belong in a ranger's logbook?",
+    keep: "Marisol, not looking at it: \"I've never been able to throw that page out.\"",
+    left: (n) => (n ? `${n} look${n > 1 ? "s" : ""} left` : "She turns back to today"),
+    read: " Then Marisol turned to the front to show you how a book is kept, and the front is in pencil: a party of five at 20 to 24, no check-out, and a row 21 that is the same sentence as yours, and older. \"I've never been able to throw that page out.\" The question was what is taking this place. Now it is what keeping a record made of her.",
+    unread: " Then Marisol turned to the front to show you how a book is kept, and turned back before you had seen enough of it. Pencil, where there should be ink; nothing you could write down.",
+  },
   end: {
     win: (lines) => `Every total balances. Three parties stayed at sites nobody remembers: ${lines}. The world rewrote its own records, and missed the sums. Three lines in your notebook, and Marisol has stopped smiling.`,
     lose: (n) => `18:00. Marisol closes the book gently and takes it home. ${n ? `${n} ghost row${n > 1 ? "s" : ""} locked in your pencil; the rest did not.` : "Nothing locked."} The totals still don't add up, and nobody but you minds.`,
   },
 };
+
+// The first page: where each thing is on the spread (left, top, width, height, in % of the art), what
+// Tam sees, and the line it writes. `odd` marks the five that do not belong in a logbook.
+const LOOKS = [
+  { k: "heading", label: "the heading", box: [8.5, 7, 10, 7.5], odd: true, see: "\"Sites.\" Not ink. Pencil, in a younger hand than the one that keeps this book.", line: "The front is in pencil." },
+  { k: "row21", label: "row 21", box: [5, 23.5, 36, 8], odd: true, see: "21, the split boulder, slept in the crack. You open your own Sites page at row 21.", line: "Her row 21 and my row 21 are the same sentence. Hers is older. Check." },
+  { k: "party", label: "the party of five", box: [9.5, 55, 24, 7], odd: true, see: "A party of five, 20 to 24. Five strokes, and not your five.", line: "A party of five at 20 to 24, in pencil. Not us." },
+  { k: "out", label: "the check-out", box: [9.5, 68.5, 22, 7], odd: true, see: "In: August. Out: a pencil rule with nothing written on it.", line: "No check-out." },
+  { k: "teague", label: "the first ink row", box: [52, 12.5, 44, 6], odd: true, see: "Permit 0001. Sites 20–24, five persons, no nights, no fee. Party: Teague.", line: "Permit 0001 is hers. The hand that kept the book." },
+  { k: "cols", label: "the ruled columns", box: [31, 7, 14, 5.5], odd: false, see: "PERS., NTS, FEE, ruled in ink over the pencil, later. That is only how a notebook gets to be a logbook.", line: "" },
+  { k: "rows", label: "permits 0002, 0003", box: [52, 18.6, 44, 8.4], odd: false, see: "Sites 3 and 9, two people and four. Ordinary rows. They add up.", line: "" },
+];
+const FP_LOOKS = 4, FP_NEED = 3;
 
 function tally(n) {
   let s = "";
@@ -128,6 +162,37 @@ button.${P}hd.done{text-decoration:none;color:#5a6a70}
 .${P}lcard .gentle{font-size:14px;color:#2f6b3a;margin:0 0 10px}
 .${P}lcard button{font:600 15px 'IBM Plex Mono',monospace;background:#33302c;color:#ece6d6;border:0;padding:11px 22px;cursor:pointer}
 .${P}lcard button:focus-visible{outline:3px solid #9c3b30;outline-offset:3px}
+.${P}fp{position:absolute;inset:0;z-index:5;background:#2b2a27;overflow:auto;padding:12px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:8px}
+.${P}fp .spx{width:100%;overflow-x:auto;flex:none}
+.${P}fp .sp{position:relative;width:min(1100px,100%,calc((100vh - 370px)*1.6));min-width:min(760px,200vw);margin:0 auto;box-shadow:0 10px 30px #000}
+.${P}fp .swipe{display:none;font:600 12px 'IBM Plex Mono',monospace;color:#d9cfb6;letter-spacing:.08em}
+@media (max-width:780px){.${P}fp .swipe{display:block}}
+.${P}fp .sp>img{display:block;width:100%;height:auto;aspect-ratio:1600/1000;background:#ece6d6}
+.${P}fp .sp.noart{background:#ece6d6;aspect-ratio:1600/1000}
+.${P}fp .hot{position:absolute;border:2px dashed rgba(43,93,138,.0);background:transparent;cursor:pointer;padding:0;border-radius:6px}
+.${P}fp .hot:hover,.${P}fp .hot:focus-visible{border-color:#2b5d8a;background:rgba(43,93,138,.12);outline:none}
+.${P}fp .hot.seen{border:2.5px solid #4a4a48;border-radius:50%/60%;background:transparent;cursor:default}
+.${P}fp .hot.seen.plain{border-style:dotted;border-radius:6px;opacity:.6}
+.${P}fp .hot:disabled:not(.seen){cursor:default;border-color:transparent;background:transparent}
+.${P}fp .pane{width:min(1100px,100%);background:#ece6d6;padding:10px 14px;box-sizing:border-box;display:grid;gap:8px}
+.${P}fp .task{font:600 14px 'IBM Plex Mono',monospace;color:#22303a;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.${P}fp .task b{color:#9c3b30}
+.${P}fp .chips{display:flex;flex-wrap:wrap;gap:6px}
+.${P}fp .chips button{font:600 14px 'IBM Plex Mono',monospace;border:1.5px solid #4a4a4c;background:#f6f2e6;color:#222;padding:8px 10px;min-height:40px;cursor:pointer}
+.${P}fp .chips button:hover:not(:disabled),.${P}fp .chips button:focus-visible{background:#22303a;color:#ece6d6;outline:none}
+.${P}fp .chips button:disabled{opacity:.45;cursor:default}
+.${P}fp .chips button.seen{background:#d9cfb6;text-decoration:line-through}
+.${P}fp .see{font-family:Caveat,cursive;font-size:22px;line-height:1.15;color:#2e2e30;border-left:3px solid #9c3b30;padding-left:8px;min-height:26px}
+.${P}fp .nb{font-family:Caveat,cursive;font-size:21px;line-height:1.2;color:#3d3d3f;background:#f6f1e2;padding:4px 10px;border-left:3px solid #d58a7a;background-image:repeating-linear-gradient(180deg,transparent 0 24px,#a9c3cf 24px 25px)}
+.${P}fp .nb:empty{display:none}
+.${P}fp .nb div::before{content:"✎ ";color:#9c3b30}
+.${P}fp .done{font:600 15px 'IBM Plex Mono',monospace;background:#33302c;color:#ece6d6;border:0;padding:11px 22px;cursor:pointer;justify-self:start}
+.${P}fp .done[hidden]{display:none}
+.${P}tu{display:block;width:150px;max-width:60%;height:auto;margin-top:10px}
+.${P}env{width:44px;height:44px;vertical-align:middle;margin-left:8px}
+.${P}ctl button img{width:22px;height:27px;object-fit:cover;object-position:50% 20%;vertical-align:middle;margin-right:6px;border:1px solid #4a4a4c}
+.${P}groove img{width:22px;height:22px;opacity:.75}
+.${P}lcard .spread{display:block;width:100%;height:auto;margin:0 0 10px;box-shadow:0 2px 8px rgba(0,0,0,.4)}
 @media (max-width:860px){.${P}book{grid-template-columns:1fr}.${P}book::after{display:none}.${P}left{border-right:0;border-bottom:1px solid #c9bfa8}}
 @media (max-width:480px){.${P}wrap{padding:6px}.${P}grid{grid-template-columns:2em minmax(3em,1fr) 3.3em 1.6em 2.8em 3.8em;column-gap:3px}.${P}cell{font-size:14px}.${P}hd{font-size:12px;letter-spacing:0}.${P}page{padding:10px 8px}.${P}left{padding-left:32px}.${P}left::before{left:24px}.${P}tot .ink{font-size:21px}.${P}tot .pen{font-size:24px}.${P}lcard{padding-left:36px}}
 `;
@@ -152,7 +217,8 @@ export default {
         <p class="goal"></p><p class="rule"></p>
         <table><tr><td>SUM</td><td>tap a column heading: Pers., Fee, or Site to count rows</td></tr>
           <tr><td>INSERT</td><td>press + between two rows where a line is missing</td></tr>
-          <tr><td>FILL</td><td>− / + on the ghost row's site, persons, nights and permit until it locks</td></tr></table>
+          <tr><td>FILL</td><td>− / + on the ghost row's site, persons, nights and permit until it locks</td></tr>
+          <tr><td>AFTER</td><td>when it balances, she shows you the front of the book: you get four looks</td></tr></table>
         <p class="gentle" hidden></p>
         <button type="button">Open the book</button></div></div>`;
     root.appendChild(wrap);
@@ -160,6 +226,10 @@ export default {
     $(".when").textContent = TEXT.when; $(".goal").textContent = TEXT.goal; $(".rule").textContent = TEXT.rule;
     if (gentle) { $(".gentle").hidden = false; $(".gentle").textContent = TEXT.gentle; }
     const grid = $(".lg"), msgEl = $(`.${P}msg`);
+    const art = api.art;
+    chapterCard(art, "chapter-3", $(`.${P}lcard`));
+    { const tu = pic(art, "time-units", P + "tu", "Time units: four spent"); if (tu) $(`.${P}clock`).before(tu);
+      const mf = pic(art, "outline-marisol", "", ""); if (mf) $(".askb").prepend(mf); }
     let ghosts = [];            // { after: index into ROWS (-1..8), site, pers, nights, permit, locked }
     const summed = new Set();
     let running = false, over = false, iv = 0, t = 0, idle = 0, partial = false, underline = false, hinted = false, asked = false;
@@ -230,6 +300,7 @@ export default {
         if (lostHere && !ghosts.some((g) => g.site === lostHere && g.locked)) {
           const gv = document.createElement("span"); gv.className = P + "groove";
           gv.innerHTML = `<span>~~~~~~</span>${tally(LOST[lostHere])}<span>~~~~</span>`;
+          const notch = pic(art, "seam-notch", "", ""); if (notch) gv.prepend(notch);
           s.appendChild(gv);
         }
         grid.appendChild(s);
@@ -280,6 +351,7 @@ export default {
         if (underline && show && gap !== 0) row.classList.add("under");
         row.innerHTML = `<span></span><span class="ink">${money}${TOTALS[k]}</span><span class="pen">${show ? money + s[k] : ""}</span><span class="gap ${show ? (gap ? "bad" : "ok") : ""}">${show ? (gap ? "≠ " + money + gap : "= ✓") : ""}</span>`;
         row.firstChild.textContent = names[k];
+        if (k === "envelopes") { const env = pic(art, "thread-guest", P + "env", ""); if (env) row.firstChild.appendChild(env); }
         tots.appendChild(row);
       }
       const left = GHOSTS - ghosts.length;
@@ -334,7 +406,65 @@ export default {
       over = true; running = false; clearInterval(iv);
       api.store.set("losses", 0);
       const lines = ghosts.map((g) => `site ${g.site}, ${g.pers} ${g.pers === 1 ? "person" : "people"}`).sort();
-      api.end({ outcome: "win", text: TEXT.end.win(lines.join("; ")) });
+      const base = TEXT.end.win(lines.join("; "));
+      say(TEXT.fp.turn);
+      timers.push(setTimeout(() => firstPage(base), api.reducedMotion ? 300 : 2200));
+    }
+
+    // ---- the first page (phase 1): four looks at the front of the book ----
+    let fpOpen = false;
+    function firstPage(base) {
+      fpOpen = true;
+      const fp = document.createElement("div"); fp.className = P + "fp";
+      fp.innerHTML = `<div class="spx" tabindex="0" aria-label="The front of the logbook (scrolls sideways)"><div class="sp"></div></div><div class="swipe">← drag the book sideways to read both pages →</div><div class="pane"><div class="task"><span></span><b class="left"></b></div>
+        <div class="chips" role="group" aria-label="Things on the page to look at"></div>
+        <div class="see" aria-live="polite"></div><div class="nb" aria-label="Your notebook"></div>
+        <button type="button" class="done" hidden>Close the book</button></div>`;
+      wrap.appendChild(fp);
+      const sp = fp.querySelector(".sp");
+      const page = pic(art, "logbook-first-page-unread", "", "The front of the logbook: a Sites page in pencil, ink columns ruled over it") || pic(art, "logbook-first-page", "", "The front of the logbook");
+      if (page) sp.appendChild(page); else sp.classList.add("noart");
+      fp.querySelector(".task span").textContent = TEXT.fp.task;
+      const see = fp.querySelector(".see"), nb = fp.querySelector(".nb"), chips = fp.querySelector(".chips"), doneB = fp.querySelector(".done");
+      see.textContent = TEXT.fp.turn;
+      let looks = FP_LOOKS, odd = 0;
+      const seen = new Set(), btns = {};
+      const left = () => { fp.querySelector(".left").textContent = TEXT.fp.left(looks); };
+      function close() {
+        if (!fpOpen) return;
+        fpOpen = false;
+        const read = odd >= FP_NEED;
+        api.store.set("last", { first_page_seen: read, looks: [...seen] });
+        fp.remove();
+        resultCard(wrap, art, { cards: [read ? "logbook-first-page" : "logbook-1"], lost: read ? 0 : 1, reducedMotion: api.reducedMotion });
+        api.end({ outcome: "win", text: base + (read ? TEXT.fp.read : TEXT.fp.unread) });
+      }
+      function look(L) {
+        if (!fpOpen || looks <= 0 || seen.has(L.k)) return;
+        looks--; seen.add(L.k); if (L.odd) odd++;
+        see.textContent = L.see;
+        if (L.line) { const d = document.createElement("div"); d.textContent = L.line; nb.appendChild(d); }
+        btns[L.k].forEach((b) => { b.classList.add("seen"); if (!L.odd) b.classList.add("plain"); b.disabled = true; });
+        left();
+        if (looks <= 0) {
+          Object.values(btns).flat().forEach((b) => { b.disabled = true; });
+          if (odd >= FP_NEED && page && art.has("logbook-first-page")) page.src = art.url("logbook-first-page");   // Tam's ring and lines are on it now
+          timers.push(setTimeout(() => { if (!fpOpen) return; see.textContent = TEXT.fp.keep; doneB.hidden = false; doneB.focus(); }, api.reducedMotion ? 200 : 1800));
+        }
+      }
+      LOOKS.forEach((L) => {
+        const hot = document.createElement("button"); hot.type = "button"; hot.className = "hot"; hot.tabIndex = -1;
+        hot.setAttribute("aria-hidden", "true");
+        [hot.style.left, hot.style.top, hot.style.width, hot.style.height] = L.box.map((v) => v + "%");
+        const chip = document.createElement("button"); chip.type = "button"; chip.textContent = L.label;
+        btns[L.k] = [hot, chip];
+        for (const b of btns[L.k]) b.addEventListener("click", () => look(L));
+        if (page) sp.appendChild(hot);
+        chips.appendChild(chip);
+      });
+      doneB.addEventListener("click", close);
+      left();
+      chips.querySelector("button").focus();
     }
 
     // tilt to the torch: hold F or the button
@@ -373,7 +503,9 @@ export default {
       if (left <= 0) {
         over = true; running = false; clearInterval(iv);
         api.store.set("losses", losses + 1);
-        api.end({ outcome: "lose", text: TEXT.end.lose(ghosts.filter((g) => g.locked).length) });
+        const nl = ghosts.filter((g) => g.locked).length;
+        resultCard(wrap, art, { cards: ["logbook-1"], lost: 5 - nl, reducedMotion: api.reducedMotion });
+        api.end({ outcome: "lose", text: TEXT.end.lose(nl) });
       }
     }
 
@@ -384,7 +516,7 @@ export default {
 
     return {
       unmount() {
-        over = true; running = false; clearInterval(iv);
+        over = true; running = false; fpOpen = false; clearInterval(iv);
         timers.forEach(clearTimeout);
         window.removeEventListener("keydown", kd); window.removeEventListener("keyup", ku);
       },
