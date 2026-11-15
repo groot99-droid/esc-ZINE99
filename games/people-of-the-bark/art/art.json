@@ -1,6 +1,6 @@
 {
  "game": "people-of-the-bark",
- "count": 133,
+ "count": 139,
  "assets": [
   {
    "id": "title-lettering",
@@ -579,6 +579,46 @@
    "row": "Defence pieces: warrior, barricade, Beetle, ant, mud wall, plugged door"
   },
   {
+   "id": "defence-sprite-beetle",
+   "group": "pieces",
+   "title": "Crack defence sprite: the Beetle",
+   "w": 360,
+   "h": 240,
+   "row": "Defence sprites: warrior, Burr, people, the Beetle, mite"
+  },
+  {
+   "id": "defence-sprite-burr",
+   "group": "pieces",
+   "title": "Crack defence sprite: Captain Burr",
+   "w": 120,
+   "h": 200,
+   "row": "Defence sprites: warrior, Burr, people, the Beetle, mite"
+  },
+  {
+   "id": "defence-sprite-mite",
+   "group": "pieces",
+   "title": "Crack defence sprite: mite",
+   "w": 120,
+   "h": 90,
+   "row": "Defence sprites: warrior, Burr, people, the Beetle, mite"
+  },
+  {
+   "id": "defence-sprite-people",
+   "group": "pieces",
+   "title": "Crack defence sprite: people in the crack",
+   "w": 200,
+   "h": 160,
+   "row": "Defence sprites: warrior, Burr, people, the Beetle, mite"
+  },
+  {
+   "id": "defence-sprite-warrior",
+   "group": "pieces",
+   "title": "Crack defence sprite: warrior",
+   "w": 120,
+   "h": 200,
+   "row": "Defence sprites: warrior, Burr, people, the Beetle, mite"
+  },
+  {
    "id": "glyph-eaten-arc",
    "group": "pieces",
    "title": "Chronicle glyph: The eaten arc",
@@ -1038,6 +1078,14 @@
    "id": "scroll-pulse-map",
    "group": "maps",
    "title": "Tremor Scroll: the Pulse map strip",
+   "w": 420,
+   "h": 1100,
+   "row": "Glyph set, weather marks, faceless row, Pulse map strip"
+  },
+  {
+   "id": "scroll-pulse-map-blank",
+   "group": "maps",
+   "title": "Tremor Scroll: the Pulse map strip, not yet filled",
    "w": 420,
    "h": 1100,
    "row": "Glyph set, weather marks, faceless row, Pulse map strip"

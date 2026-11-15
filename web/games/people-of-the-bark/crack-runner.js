@@ -9,6 +9,11 @@
 // tremor shook loose, so rolling matters most at the end. Each action is introduced when first needed.
 // After two late runs, the limit is 3:25 and the brace marker shows 5 s early.
 
+// Art (api.art): Mossa, the people on the ledges and the hazards are read from their pixel sheets once
+// (the canvas runs at two device pixels to a world pixel so a 20 x 26 sprite fits her 6 x 9 body); the
+// spring backdrop is the far wall seen through the crack. Each falls back to the old hand-set pixels.
+import * as kit from "./_art.js";
+
 const PIX16 = ["#1b120c", "#2e2016", "#4a3324", "#5a3d2b", "#7a5a40", "#7d6c5a", "#a8977f", "#8fa37a",
   "#c4d65a", "#d9902a", "#f0c050", "#e8742a", "#b8402a", "#efe2c4", "#c9b99a", "#fff6dc"];
 const T = 8;
@@ -18,6 +23,10 @@ const GRAV = 720;
 const JUMP = Math.sqrt(2 * GRAV * 2.6 * BODY);
 const TREMOR_AT = 46;
 const SEGS = 3, SEG_W = 140, COLS = SEGS * SEG_W + 8, ROWS = 46;
+const Z = 2;   // device pixels to a world pixel
+const MOSSA = { run: [0, 1, 2, 3], jump: 4, cling: 5, roll: 6, brace: 7, slide: 8, stun: 9, idle: 14, count: 15 };
+const CROWD = { elder: 2, child: 3, priest: 4, tapper: 5, pass: 6, cook: 14, wait: 15 };
+const HAZ = { drip: 0, dust: 2, spikes: 3, lichen: 4, bead: 6, brace: 11 };
 
 function rngFrom(seed) {
   let s = seed >>> 0 || 1;
@@ -132,13 +141,15 @@ export default {
 <div class="${P}pad"><div class="${P}grp"><button class="${P}k" data-k="left">◀</button><button class="${P}k" data-k="right">▶</button><button class="${P}k" data-k="brace" hidden>BRACE</button></div>
 <div class="${P}grp"><button class="${P}k" data-k="roll">ROLL</button><button class="${P}k" data-k="cling" hidden>CLING</button><button class="${P}k" data-k="jump">JUMP</button></div></div>
 <div class="${P}intro"><div class="${P}tix" role="dialog" aria-label="How to play">
-<h2>CRACK RUNNER</h2>
+${kit.chapter(api.art, "chapter-2-spring")}
+<div style="display:flex;gap:10px;align-items:center;margin-top:10px">${kit.mark(api.art, "mossa", "Mossa, the messenger")}<h2>CRACK RUNNER</h2></div>
 <div class="${P}route">HIGHRIDGE ▸ THE LONG CRACK ▸ LOWRIDGE · SPRING DAWN</div>
 <p class="${P}lede">You are Mossa, the fastest runner in Highridge. The Knot has read the night's omen, and Lowridge must hear it from you before it hears the rumour.</p>
 <p class="${P}goal">Reach Lowridge before <b>${fmt(LIMIT)}</b>. A fall is caught by lichen, but costs 8 seconds.</p>
 <div class="${P}key"><kbd>A D · ◀ ▶</kbd><span>run</span><kbd>SPACE · W</kbd><span>jump (hop on lichen to fly high)</span><kbd>C</kbd><span>roll: a dash, low under falling dust</span></div>
 <button class="${P}btn" type="button">Start the run</button></div></div>`;
     root.appendChild(wrap);
+    kit.styles(wrap);
     const $ = (s) => wrap.querySelector("." + P + s);
     const cv = $("cv"), g = cv.getContext("2d"), msgEl = $("msg"), intro = $("intro"), beatEl = $("beat"), toastEl = $("toast"), hitEl = $("hit");
 
@@ -152,7 +163,7 @@ export default {
       const aspect = Math.max(0.45, r.width / Math.max(1, r.height));
       LH = r.width < 520 ? 150 : 100;
       LW = Math.max(80, Math.min(300, Math.round(LH * aspect)));
-      cv.width = LW; cv.height = LH;
+      cv.width = LW * Z; cv.height = LH * Z;
       const sc = Math.min(r.width / LW, r.height / LH);
       cv.style.width = Math.floor(LW * sc) + "px";
       cv.style.height = Math.floor(LH * sc) + "px";
@@ -173,7 +184,7 @@ export default {
       for (let py = 0; py < LVH; py++) {
         for (let px = 0; px < LVW; px++) {
           const c = Math.floor(px / T), row = py / T;
-          let col;
+          let col, open = false;
           const gr = ground[c], ce = ceil[c];
           if (row >= gr && !pit[c]) {
             const d = py - gr * T;
@@ -188,9 +199,11 @@ export default {
           } else {
             col = ((px % 11 === 0) && ((py >> 2) % 3 !== 0)) ? 1 : 0;
             if ((px + py) % 2 === 0 && r() < 0.05) col = 1;
+            open = true;
           }
           const k = (py * LVW + px) * 4, v = rgb[col];
-          img.data[k] = v[0]; img.data[k + 1] = v[1]; img.data[k + 2] = v[2]; img.data[k + 3] = 255;
+          // the open crack is left see-through (a thin veil of dark), so the far wall can show behind it
+          img.data[k] = v[0]; img.data[k + 1] = v[1]; img.data[k + 2] = v[2]; img.data[k + 3] = open ? (col ? 150 : 120) : 255;
         }
       }
       bg.putImageData(img, 0, 0);
@@ -202,6 +215,32 @@ export default {
       for (let s = 1; s < SEGS; s++) { let c = s * SEG_W; while (pit[c]) c++; px(c * T + 2, ground[c] * T - 10, 3, 10, 6); px(c * T + 1, ground[c] * T - 12, 5, 3, 10); }
       // pits: a faint lichen glow far below, the catch that saves her
       for (let c = 0; c < COLS; c++) if (pit[c]) for (let y = LVH - 6; y < LVH; y += 2) px(c * T + ((y >> 1) % 3) * 2, y, 2, 1, 7);
+    })();
+
+    // ---- the art, read once ----
+    const A = { mossa: null, crowd: null, haz: null, far: null, dust: null };
+    let dead = false;
+    (async () => {
+      const art = api.art;
+      if (!art) return;
+      const [mossa, crowd, haz, far] = await Promise.all([
+        kit.pixelSheet(art, "runner-sheet-mossa", { cols: 8, rows: 2, cw: 20, ch: 32, scale: 6 }),
+        kit.pixelSheet(art, "runner-sheet-crowd", { cols: 8, rows: 2, cw: 20, ch: 32, scale: 6 }),
+        kit.pixelSheet(art, "runner-sheet-hazards", { cols: 6, rows: 2, cw: 22, ch: 36, scale: 7 }),
+        kit.raster(art, "runner-backdrop-spring", 320, 180),
+      ]);
+      if (dead) return;
+      A.mossa = mossa; A.crowd = crowd; A.haz = haz; A.far = far;
+      if (haz && haz.frame(HAZ.dust)) { A.dust = document.createElement("canvas"); A.dust.width = 20; A.dust.height = 24; A.dust.getContext("2d").drawImage(haz.frame(HAZ.dust), 0, 1, 20, 24, 0, 0, 20, 24); }
+    })();
+    // the people standing on the ledges: who sees her off, the tapper at the checkpoint, Lowridge waiting
+    const people = [];
+    (function place() {
+      const at = (c, who, flip) => { let k = c; while (pit[k] || pit[k + 1]) k++; people.push({ c: k, who, flip }); };
+      at(0, "priest", false); at(1, "elder", false);
+      at(SEG_W + 2, "tapper", true);
+      at(2 * SEG_W + 3, "wait", true);
+      at(COLS - 4, "pass", true); at(COLS - 3, "child", true); at(COLS - 1, "cook", true);
     })();
 
     // ---- state ----
@@ -260,7 +299,7 @@ export default {
       intro.remove(); S.started = true; last = performance.now();
       beat("Mossa", "“If it shakes, I go faster. That's the rule.” Spring rain is running down the groove: jump the beads, or they sweep you back.");
     });
-    startBtn.focus();
+    startBtn.focus({ preventScroll: true });
 
     // ---- simulation ----
     function update(dt) {
@@ -395,12 +434,28 @@ export default {
     }
 
     // ---- drawing ----
+    // one sheet frame, drawn a device pixel to a sprite pixel, its foot at world (fx, fy)
+    function stamp(sheet, n, fx, fy, flip, sy = 0, sh = 0) {
+      const fr = sheet && sheet.frame(n); if (!fr) return false;
+      const h = sh || fr.height - sy;
+      g.save(); g.translate(fx, fy); if (flip) g.scale(-1, 1);
+      g.drawImage(fr, 0, sy, fr.width, h, -9.5 / Z, -h / Z, fr.width / Z, h / Z);
+      g.restore();
+      return true;
+    }
     function sprite(x, y) {
       const px = (dx, dy, c) => { g.fillStyle = PIX16[c]; g.fillRect(x + dx, y + dy, 1, 1); };
       const f = S.face;
       const X = (dx) => (f > 0 ? dx : 5 - dx);
       const blink = S.inv > 0 && Math.floor(S.anim * 14) % 2;
       if (blink) return;
+      if (A.mossa) {
+        const bracing = keys.brace && S.onGround && S.unlocked.has("brace");
+        const moving = S.onGround && Math.abs(S.vx) > 5;
+        const n = S.rollT > 0 ? MOSSA.roll : S.stun > 0 ? MOSSA.stun : bracing ? MOSSA.brace : S.clinging ? MOSSA.cling : !S.onGround ? MOSSA.jump
+          : moving ? MOSSA.run[Math.floor(S.anim * 11) % 4] : S.over ? MOSSA.count : MOSSA.idle;
+        if (stamp(A.mossa, n, x + 3, y + S.h, f < 0)) { if (S.sticky > 0) { px(X(1), S.h - 1, 9); px(X(4), S.h - 1, 9); } return; }
+      }
       if (S.rollT > 0) {
         const rows = [".hhh..", "hbbbbr", "hbbbbr", ".bbbr."];
         rows.forEach((row, j) => [...row].forEach((ch, i) => { if (ch !== ".") px(X(i), 9 - rows.length + j, ch === "h" ? 14 : ch === "r" ? 12 : 5); }));
@@ -424,24 +479,56 @@ export default {
       const shake = S.shake > 0 && !api.reducedMotion ? Math.round(Math.sin(S.t * 70) * 2) : 0;
       let cx = Math.round(S.x - LW * (LW < 120 ? 0.3 : 0.38)), cy = Math.round(S.y - LH * 0.55);
       cx = Math.max(0, Math.min(LVW - LW, cx)); cy = Math.max(0, Math.min(LVH - LH, cy));
+      g.setTransform(Z, 0, 0, Z, 0, 0);
+      g.imageSmoothingEnabled = false;
       g.fillStyle = PIX16[0]; g.fillRect(0, 0, LW, LH);
+      // the far wall of the crack: the spring backdrop, a third as fast as the near wall
+      if (A.far) {
+        const k = Math.max(1, Math.ceil(LH / (A.far.height / Z))), fw = A.far.width / Z * k, fh = A.far.height / Z * k;
+        const ox = -((cx * 0.35) % fw), oy = -Math.round((cy / Math.max(1, LVH - LH)) * Math.max(0, fh - LH));
+        for (let x = ox; x < LW; x += fw) g.drawImage(A.far, Math.round(x), oy, fw, fh);
+      }
       g.drawImage(bark, cx - shake, cy, LW, LH, 0, 0, LW, LH);
       g.save(); g.translate(-cx + shake, -cy);
       const px = (x, y, w, h, c) => { g.fillStyle = PIX16[c]; g.fillRect(x, y, w, h); };
-      for (const c of haz.spikes) { const x = c * T, y = ground[c] * T; px(x + 1, y - 2, 6, 2, 6); px(x + 2, y - 4, 1, 2, 15); px(x + 5, y - 4, 1, 2, 15); px(x + 3, y - 5, 2, 3, 15); px(x + 3, y - 6, 1, 1, 12); }
-      for (const c of haz.lichen) { const x = c * T, y = ground[c] * T; px(x, y - 3, 8, 3, 7); px(x + 1, y - 5, 2, 2, 8); px(x + 5, y - 5, 2, 2, 8); px(x + 3, y - 4, 2, 1, 8); }
+      const seen = (c) => c * T > cx - 24 && c * T < cx + LW + 24;
+      for (const q of people) if (seen(q.c) && A.crowd) stamp(A.crowd, CROWD[q.who], q.c * T + 4, ground[q.c] * T, q.flip);
+      for (const c of haz.spikes) {
+        if (!seen(c)) continue;
+        const x = c * T, y = ground[c] * T;
+        if (stamp(A.haz, HAZ.spikes, x + 4, y, false, 0, 25)) continue;
+        px(x + 1, y - 2, 6, 2, 6); px(x + 2, y - 4, 1, 2, 15); px(x + 5, y - 4, 1, 2, 15); px(x + 3, y - 5, 2, 3, 15); px(x + 3, y - 6, 1, 1, 12);
+      }
+      for (const c of haz.lichen) {
+        if (!seen(c)) continue;
+        const x = c * T, y = ground[c] * T;
+        if (stamp(A.haz, HAZ.lichen, x + 4, y, false, 0, 25)) continue;
+        px(x, y - 3, 8, 3, 7); px(x + 1, y - 5, 2, 2, 8); px(x + 5, y - 5, 2, 2, 8); px(x + 3, y - 4, 2, 1, 8);
+      }
       for (const c of haz.drips) {
+        if (!seen(c)) continue;
         const top = (ceil[c] + 1) * T, bot = ground[c] * T, ph = ((S.t + c * 0.37) % 1.7) / 1.7;
-        px(c * T + 2, top, 4, 2, 9); px(c * T + 3, top + 2, 2, 1, 10);
-        const dy = top + ph * (bot - top); px(c * T + 3, dy, 2, 3, 10); px(c * T + 3, dy + 2, 2, 1, 9);
-        px(c * T + 1, bot - 1, 6, 1, 9);
+        const fr = A.haz && A.haz.frame(HAZ.drip);
+        if (fr) { g.drawImage(fr, 0, 1, 20, 12, c * T - 1, top, 10, 6); g.drawImage(fr, 0, 25, 20, 4, c * T - 1, bot - 2, 10, 2); }
+        else { px(c * T + 2, top, 4, 2, 9); px(c * T + 3, top + 2, 2, 1, 10); px(c * T + 1, bot - 1, 6, 1, 9); }
+        const dy = top + ph * (bot - top); px(c * T + 3, dy, 2, 3, 10); px(c * T + 3, dy + 2, 2, 1, 9); px(c * T + 3.5, dy + 0.5, 0.5, 1, 15);
       }
       for (const c of haz.dust) {
+        if (!seen(c)) continue;
         const top = (ceil[c] + 1) * T, bot = ground[c] * T - 6, off = Math.floor(S.t * 30);
-        for (let y = top; y < bot; y++) for (let x = 0; x < 16; x++) if (((x + y + off) & 1) === 0 && ((x * 7 + y + off) % 5 !== 0)) px(c * T + x, y, 1, 1, ((y + off) % 9 === 0) ? 15 : 14);
+        if (A.dust) {
+          // the dust sheet tile, falling: two columns of it, clipped to the gap she can roll under
+          g.save(); g.beginPath(); g.rect(c * T, top, 16, bot - top); g.clip();
+          const th = 12, o = (S.t * 26) % th;
+          for (let y = top - th + o; y < bot; y += th) { g.drawImage(A.dust, c * T - 1, y, 10, th); g.drawImage(A.dust, c * T + 7, y + 3, 10, th); }
+          g.restore();
+        } else for (let y = top; y < bot; y++) for (let x = 0; x < 16; x++) if (((x + y + off) & 1) === 0 && ((x * 7 + y + off) % 5 !== 0)) px(c * T + x, y, 1, 1, ((y + off) % 9 === 0) ? 15 : 14);
         px(c * T, bot + 1, 16, 1, 9); // the gap at the floor she can roll through
       }
-      for (const b of S.beads) { px(b.x + 1, b.y, 4, 6, 6); px(b.x, b.y + 1, 6, 4, 6); px(b.x + 1, b.y + 1, 2, 2, 15); }
+      for (const b of S.beads) {
+        if (stamp(A.haz, HAZ.bead, b.x + 3.5, b.y + 6, false, 0, 25)) continue;
+        px(b.x + 1, b.y, 4, 6, 6); px(b.x, b.y + 1, 6, 4, 6); px(b.x + 1, b.y + 1, 2, 2, 15);
+      }
       for (const p of S.puffs) { const r = Math.round((1 - p.t) * 6); px(p.x - r, p.y, 1, 1, p.c); px(p.x + r, p.y, 1, 1, p.c); px(p.x, p.y - r, 1, 1, p.c); }
       sprite(Math.round(S.x), Math.round(S.y));
       if (S.clinging || (S.stamina < 1 && !S.onGround)) {
@@ -478,6 +565,8 @@ export default {
         const ok = keys.brace && S.onGround;
         g.fillStyle = PIX16[0]; g.fillRect(LW / 2 - 26, 17, 52, 15);
         g.fillStyle = ok ? PIX16[8] : blink ? PIX16[11] : PIX16[10]; g.fillText(ok ? "BRACED" : "BRACE S", LW / 2 - 22, 19);
+        const bm = A.haz && A.haz.frame(HAZ.brace);
+        if (bm && (blink || ok)) g.drawImage(bm, 0, 2, 20, 22, LW / 2 - 40, 17, 10, 11);
         px(LW / 2 - 24, 29, Math.round(48 * (TREMOR_AT - S.t) / WARN), 2, ok ? 8 : 11);
       }
       if (S.sticky > 0) { g.fillStyle = PIX16[0]; g.fillRect(LW - 38, LH - 12, 36, 11); g.fillStyle = PIX16[9]; g.fillText("STICKY", LW - 36, LH - 11); }
@@ -495,10 +584,10 @@ export default {
     }
     beatEl.style.opacity = "0"; toastEl.style.opacity = "0";
     raf = requestAnimationFrame(loop);
-    wrap._test = { S, ground, pit, haz, ceil, keys, T, SEG_W, COLS };
 
     return {
       unmount() {
+        dead = true;
         cancelAnimationFrame(raf);
         timers.forEach(clearTimeout);
         offs.forEach((f) => f());

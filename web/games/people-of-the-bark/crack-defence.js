@@ -12,6 +12,12 @@
 // Lost warriors go on the Roll of the Bark by name (DESIGN 12.6). After two lost defences the squad
 // is six and the Beetle's will is 45 s; an escort gets a third hush.
 
+// Art (api.art): Burr, the warriors, the people, the mites and the Beetle are sprites rendered once at the
+// size they are drawn (again on a resize); the crack's backdrop lies dimmed behind the diorama; the piece
+// plates and the summer chapter card dress the opening; a lost defence ends on the Roll of the Bark. Every
+// one falls back to the old drawn shapes.
+import * as kit from "./_art.js";
+
 const C = { umber: "#5a3d2b", umberD: "#3a281c", umberL: "#7a5a40", grey: "#7d6c5a", greyL: "#a8977f", dark: "#1b120c",
   sage: "#8fa37a", lime: "#c4d65a", amber: "#d9902a", gold: "#f0c050", lantern: "#e8742a", paper: "#efe2c4", red: "#c8482e" };
 const LEN = 32, WID = 3;
@@ -40,7 +46,14 @@ export default {
     wrap.innerHTML = `
 <style>
 .${P}wrap{position:absolute;inset:0;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#3d2a1d,#1b120c 78%);color:#efe2c4;font-family:'Cormorant Garamond',Georgia,serif;touch-action:none;user-select:none;-webkit-user-select:none}
+.${P}bg{position:absolute;inset:-12px;background-size:cover;background-position:50% 50%;opacity:.55;filter:blur(5px);transition:opacity .6s}
+.${P}bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(27,18,12,.35),rgba(27,18,12,.9) 80%)}
 .${P}cv{position:absolute;inset:0;width:100%;height:100%;cursor:pointer}
+.${P}plates{display:flex;gap:8px;margin:10px 0}
+.${P}plates img{flex:1 1 0;min-width:0;width:33%;height:auto;aspect-ratio:1;border:1px solid ${C.umberL};display:block}
+.${P}who{display:flex;gap:10px;align-items:center}
+.${P}hud img{width:18px;height:18px;vertical-align:-4px}
+.${P}plaque{max-height:100%;overflow:auto}
 .${P}hud{position:absolute;right:12px;top:10px;border:1px solid ${C.amber};background:linear-gradient(180deg,rgba(58,40,28,.94),rgba(27,18,12,.94));padding:8px 12px;font:13px ui-monospace,monospace;letter-spacing:.06em;min-width:250px;max-width:calc(100% - 24px);box-sizing:border-box;box-shadow:0 3px 0 #120c08}
 .${P}row{display:flex;align-items:center;gap:10px;margin:4px 0}
 .${P}row>span:first-child{width:62px;color:#d8c8a4;flex:none}
@@ -85,14 +98,17 @@ export default {
 @media (max-width:640px){.${P}hud{left:10px;right:10px;top:8px;min-width:0;padding:6px 10px}.${P}beat{top:auto;bottom:178px;max-width:none;right:12px;font-size:15px}.${P}msg{bottom:124px;font-size:13px}.${P}pad button{font-size:13px;padding:6px 8px;min-height:42px}.${P}row>span:first-child{width:50px}}
 @media (prefers-reduced-motion:reduce){.${P}msg.${P}shake,.${P}pad button.${P}new{animation:none}}
 </style>
+<div class="${P}bg"></div>
 <canvas class="${P}cv" aria-label="The crack, seen as a diorama. Tap the crack to send Burr there."></canvas>
 <div class="${P}hud"></div>
 <div class="${P}beat" aria-live="polite"></div>
 <div class="${P}msg" aria-live="polite"></div>
 <div class="${P}pad"></div>
 <div class="${P}intro"><div class="${P}plaque" role="dialog" aria-label="How to play">
- <h2>Crack defence · the Beetle</h2><div class="${P}sub">SUMMER · THE LONG CRACK BELOW SPLINTERWATCH</div>
+ ${kit.chapter(api.art, "chapter-3-summer")}
+ <div class="${P}who" style="margin-top:10px">${kit.mark(api.art, "burr", "Captain Burr")}<div><h2>Crack defence · the Beetle</h2><div class="${P}sub">SUMMER · THE LONG CRACK BELOW SPLINTERWATCH</div></div></div>
  <p class="${P}lead">You are Captain Burr. You have never fought anything bigger than a mite. Something as big as a city is climbing the crack from the Under, and the Knot's reading will say what it is.</p>
+ ${["defence-piece-warrior", "defence-piece-barricade", "defence-piece-beetle"].every((id) => api.art && api.art.has(id)) ? `<div class="${P}plates">${["defence-piece-warrior", "defence-piece-barricade", "defence-piece-beetle"].map((id) => `<img src="${api.art.url(id)}" alt="${api.art.info(id).title}" width="120" height="120">`).join("")}</div>` : ""}
  <p><b>Goal:</b> five barricade lines, ${gentle ? "six" : "five"} warriors. Choose the reading:</p>
  <div class="${P}choice">
   <button data-r="monster" type="button"><b>A monster</b>Fight. Hold the lines until its will runs out. Warriors left on a falling line are lost.</button>
@@ -100,7 +116,39 @@ export default {
  </div>
 </div></div>`;
     root.appendChild(wrap);
+    kit.styles(wrap);
+    const art = api.art || { has: () => false, url: () => "", info: () => null };
     const $ = (s) => wrap.querySelector("." + P + s);
+    const bgEl = $("bg");
+    const setBg = (id) => { if (art.has(id)) bgEl.style.backgroundImage = `url(${art.url(id)})`; };
+    setBg("defence-backdrop-mite-crack");
+    // sprites: id, size in the asset's own pixels, the foot point, and how many K wide it is drawn
+    const SPR = {
+      warrior: ["defence-sprite-warrior", 120, 200, 52, 184, 1.45],
+      burr: ["defence-sprite-burr", 120, 200, 52, 184, 1.6],
+      people: ["defence-sprite-people", 200, 160, 104, 150, 2.5],
+      beetle: ["defence-sprite-beetle", 360, 240, 196, 156, 5.0],
+      mite: ["defence-sprite-mite", 120, 90, 60, 66, 0.75],
+    };
+    const sprites = {};
+    let spriteK = 0, dead = false;
+    async function renderSprites() {
+      const k = K, dpr = Math.min(2, devicePixelRatio || 1);
+      if (Math.abs(k - spriteK) < 0.5) return;
+      spriteK = k;
+      for (const [name, [id, w, h, fx, fy, wide]] of Object.entries(SPR)) {
+        const sc = wide * k / w;
+        const c = await kit.raster(art, id, w * sc * dpr, h * sc * dpr);
+        if (dead || spriteK !== k) return;
+        sprites[name] = c ? { c, w: w * sc, h: h * sc, fx: fx * sc, fy: fy * sc } : null;
+      }
+    }
+    // draw sprite `name` with its foot at screen (x, y); false when it is not ready (the caller draws the old shape)
+    function spr(name, x, y, dy = 0) {
+      const s = sprites[name]; if (!s) return false;
+      g.drawImage(s.c, x - s.fx, y - s.fy + dy, s.w, s.h);
+      return true;
+    }
     const cv = $("cv"), g = cv.getContext("2d"), hud = $("hud"), msgEl = $("msg"), intro = $("intro"), pad = $("pad"), beatEl = $("beat");
     const rnd = api.rng();
 
@@ -218,10 +266,11 @@ export default {
       S.target = Math.max(1, Math.min(LEN - 1, best));
     });
     intro.querySelectorAll("button[data-r]").forEach((b) => on(b, "click", () => chooseReading(b.dataset.r)));
-    intro.querySelector("button[data-r]").focus();
+    intro.querySelector("button[data-r]").focus({ preventScroll: true });
 
     function chooseReading(mode) {
       S.mode = mode;
+      setBg(mode === "monster" ? "defence-backdrop-beetle-crack" : "defence-backdrop-knuckle");
       const legend = mode === "monster"
         ? `<kbd>A D · tap the crack</kbd><span>move Burr along it</span><kbd>Q</kbd><span>assign: pull a warrior to the line Burr stands by</span><kbd>E</kbd><span>shore a line that is not under attack</span>`
         : `<kbd>A D · tap the crack</kbd><span>move Burr along it</span><kbd>Q</kbd><span>lead aside a group of people near Burr</span><kbd>F</kbd><span>lay an offering at Burr's line (2 sap)</span>`;
@@ -232,7 +281,7 @@ export default {
 <button class="${P}go" type="button">${mode === "monster" ? "Hold the lines" : "Clear the way"}</button></div>`;
       const b = intro.querySelector("button");
       on(b, "click", start);
-      b.focus();
+      b.focus({ preventScroll: true });
     }
     function start() {
       intro.remove(); S.started = true;
@@ -261,6 +310,7 @@ export default {
       K = Math.min((W - 16) / spanX, (H - top - bottom) / spanY);
       OX = (W - spanX * K) / 2 + (WID + 1) * cos * K;
       OY = top + 4 * K + ((H - top - bottom) - spanY * K) / 2;
+      renderSprites();
     }
     function proj(u, v, z) { return { x: OX + (u - v) * 0.866 * K, y: OY + (u + v) * 0.5 * K - z * K }; }
     fit();
@@ -282,6 +332,7 @@ export default {
     }
     function figure(u, v, col, spear, crest, s = 1, flat = false) {
       const p = proj(u, v, 0); const k = K * 0.55 * s;
+      if (!flat && spear && spr(crest ? "burr" : "warrior", p.x, p.y)) return;
       g.fillStyle = "rgba(0,0,0,.35)"; g.beginPath(); g.ellipse(p.x, p.y, k * 0.5, k * 0.22, 0, 0, 7); g.fill();
       if (flat) { g.fillStyle = col; g.beginPath(); g.ellipse(p.x, p.y - k * 0.15, k * 0.55, k * 0.2, 0, 0, 7); g.fill(); return; }
       g.fillStyle = col; g.fillRect(p.x - k * 0.22, p.y - k * 1.3, k * 0.44, k * 1.1);
@@ -318,7 +369,10 @@ export default {
       if (front() < 0) {
         S.over = true;
         api.store.set("losses", losses + 1);
-        later(() => api.end({ outcome: "lose", text: `The crack is breached and the Beetle walks on toward Highridge, not hurrying. Bark integrity −5, the Battlements −3.${S.lost.length ? ` On the Roll of the Bark: ${S.lost.join("; ")}.` : " No one was left on a falling line."}${losses + 1 >= 2 ? " Next time a sixth warrior joins the squad." : ""}` }), 900);
+        later(() => {
+          const res = { outcome: "lose", text: `The crack is breached and the Beetle walks on toward Highridge, not hurrying. Bark integrity −5, the Battlements −3.${S.lost.length ? ` On the Roll of the Bark: ${S.lost.join("; ")}.` : " No one was left on a falling line."}${losses + 1 >= 2 ? " Next time a sixth warrior joins the squad." : ""}` };
+          if (S.lost.length) endEl = kit.endCard(root, api, "roll-of-the-bark", res, "<b>THE ROLL OF THE BARK</b>Carved on the Knot temple wall: a name and one habit for each."); else api.end(res);
+        }, 900);
       }
     }
 
@@ -454,14 +508,15 @@ export default {
         if (q.gone && !q.leaving) continue;
         const v = q.gone ? q.v - (1 - q.leaving) * 3 : q.v;
         const flat = S.hushT > 0 && !q.gone;
-        items.push({ d: q.u + v, f: () => { for (let k = 0; k < 3; k++) figure(q.u + k * 0.35, v + (k % 2) * 0.3, q.hit ? C.red : C.sage, false, false, 1.15, flat); if (!flat) { const p = proj(q.u, v, 0); g.fillStyle = C.lantern; g.beginPath(); g.arc(p.x + K * 0.2, p.y - K * 0.9, K * 0.1, 0, 7); g.fill(); } } });
+        items.push({ d: q.u + v, f: () => { if (!flat && !q.hit) { const p = proj(q.u + 0.35, v + 0.15, 0); if (spr("people", p.x, p.y)) return; } for (let k = 0; k < 3; k++) figure(q.u + k * 0.35, v + (k % 2) * 0.3, q.hit ? C.red : C.sage, false, false, 1.15, flat); if (!flat) { const p = proj(q.u, v, 0); g.fillStyle = C.lantern; g.beginPath(); g.arc(p.x + K * 0.2, p.y - K * 0.9, K * 0.1, 0, 7); g.fill(); } } });
       }
-      for (const m of S.mites) items.push({ d: m.u + m.v, f: () => { const p = proj(m.u, m.v, 0); g.fillStyle = C.red; g.beginPath(); g.ellipse(p.x, p.y - K * 0.12, K * 0.2, K * 0.13, 0, 0, 7); g.fill(); g.strokeStyle = C.dark; g.lineWidth = 1; for (let s = -1; s <= 1; s++) { g.beginPath(); g.moveTo(p.x + s * K * 0.1, p.y - K * 0.1); g.lineTo(p.x + s * K * 0.22, p.y + K * 0.05); g.stroke(); } } });
+      for (const m of S.mites) items.push({ d: m.u + m.v, f: () => { const p = proj(m.u, m.v, 0); if (spr("mite", p.x, p.y, api.reducedMotion ? 0 : Math.sin(S.t * 14 + m.v * 9) * K * 0.03)) return; g.fillStyle = C.red; g.beginPath(); g.ellipse(p.x, p.y - K * 0.12, K * 0.2, K * 0.13, 0, 0, 7); g.fill(); g.strokeStyle = C.dark; g.lineWidth = 1; for (let s = -1; s <= 1; s++) { g.beginPath(); g.moveTo(p.x + s * K * 0.1, p.y - K * 0.1); g.lineTo(p.x + s * K * 0.22, p.y + K * 0.05); g.stroke(); } } });
       if (S.beetle && S.beetle.u < LEN + 2.5) {
         const b = S.beetle;
         items.push({ d: b.u + 1.5, f: () => {
           const wob = S.rear && !api.reducedMotion ? Math.sin(S.t * 9) * K * 0.08 : 0;
           const p = proj(b.u + 0.8, 1.5, 0), k = K;
+          if (spr("beetle", p.x + k * 0.2, p.y + k * 0.25, wob)) return;
           g.fillStyle = "rgba(0,0,0,.4)"; g.beginPath(); g.ellipse(p.x, p.y, k * 1.9, k * 0.9, 0, 0, 7); g.fill();
           g.strokeStyle = "#0b0f0c"; g.lineWidth = Math.max(1.5, k * 0.12);
           for (let s = -1; s <= 1; s++) for (const side of [-1, 1]) { g.beginPath(); g.moveTo(p.x + s * k * 0.7, p.y - k * 0.5); g.lineTo(p.x + s * k * 0.9 + side * k * 0.4, p.y + side * k * 0.55); g.stroke(); }
@@ -478,6 +533,8 @@ export default {
       if (S.hushT > 0) { g.fillStyle = `rgba(27,18,12,${0.18 * Math.min(1, S.hushT)})`; g.fillRect(0, 0, W, H); }
     }
 
+    const handsIcon = art.has("ui-icon-hands") ? `<img src="${art.url("ui-icon-hands")}" alt=""> ` : "";
+    const sapIcon = art.has("ui-icon-sap") ? `<img src="${art.url("ui-icon-sap")}" alt=""> ` : "";
     function renderHud() {
       const notches = S.lines.map((l, i) => `<i class="${P}notch${l.fallen ? " " + P + "off" : l.hp < 3.5 ? " " + P + "low" : S.engaged[i] ? " " + P + "hit" : ""}"></i>`).join("");
       let second = "", note = "";
@@ -485,13 +542,13 @@ export default {
         const pct = S.beetle ? Math.max(0, Math.min(1, 1 - (S.beetle.u + 2) / (LEN + 4))) : 0;
         const off = S.lines.filter((l) => l.offering).length;
         second = `<div class="${P}row"><span>PASSAGE</span><div class="${P}bar"><i style="width:${(pct * 100).toFixed(1)}%;background:${C.lime}"></i></div></div>
-<div class="${P}row"><span>OFFER</span>${off}/5 · sap ${S.sap}${S.unlocked.has("back") ? ` · hush ${S.hush}` : ""}</div>
+<div class="${P}row"><span>OFFER</span>${off}/5 · ${sapIcon}sap ${S.sap}${S.unlocked.has("back") ? ` · hush ${S.hush}` : ""}</div>
 <div class="${P}row"><span>STARTLED</span><span style="color:${S.disturbed ? C.red : C.lime}">${"●".repeat(Math.min(2, S.disturbed))}${"○".repeat(Math.max(0, 2 - S.disturbed))}</span>${S.hushT > 0 ? ` <span style="color:${C.gold}">hush ${S.hushT.toFixed(0)}s</span>` : ""}</div>`;
         note = "the Beetle, read as a god";
       } else {
         const draining = S.beetle && S.engaged.some((x) => x >= 3) && S.lines[front()]?.w > 0;
         second = `<div class="${P}row"><span>WILL</span><div class="${P}bar${draining ? " " + P + "drain" : ""}"><i style="width:${(S.will / WILL * 100).toFixed(1)}%"></i></div><span>${Math.ceil(S.will)}s</span></div>
-<div class="${P}row"><span>SQUAD</span>${S.lines.reduce((a, l) => a + l.w, 0)} standing${S.lost.length ? ` · lost ${S.lost.length}` : ""} · sap ${S.sap}</div>`;
+<div class="${P}row"><span>SQUAD</span>${handsIcon}${S.lines.reduce((a, l) => a + l.w, 0)} standing${S.lost.length ? ` · lost ${S.lost.length}` : ""} · ${sapIcon}sap ${S.sap}</div>`;
         note = S.beetle ? (draining ? "its will drains while warriors face it" : "no warrior faces it: its will holds") : "mites first";
       }
       hud.innerHTML = `<div class="${P}row"><span>LINES</span><div>${notches}</div></div>${second}<div class="${P}note">${S.mode ? note : ""}</div>`;
@@ -505,6 +562,7 @@ export default {
       });
     }
 
+    let endEl = null;
     let last = performance.now(), hudT = 0;
     function loop(now) {
       const dt = Math.min(0.05, (now - last) / 1000); last = now;
@@ -518,9 +576,9 @@ export default {
     }
     beatEl.style.opacity = "0";
     raf = requestAnimationFrame(loop);
-    wrap._test = { S, front, nearestLine };
     return {
       unmount() {
+        dead = true; if (endEl) endEl.remove();
         cancelAnimationFrame(raf);
         S.over = true; S.started = false;
         pending.forEach(clearTimeout);

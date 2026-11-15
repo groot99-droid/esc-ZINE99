@@ -8,6 +8,13 @@
 // ladle: three per visit, no sap, she says the word and the thickness the pot would come out); empty
 // the order; cook. After two lost visits Resin gives 60 sap and the heat × boil table is filled in.
 
+// Art (api.art): each recipe found is shown as its plate from Old Resin's book (in the book's entry, large
+// beside it, and behind the result of a won visit); the sap jar and the food basket are the HUD icons;
+// Resin's mark sits by her words; the spring chapter card heads the opening card. Plates of recipes not yet
+// found are never shown: they would give the pot away.
+import * as kit from "./_art.js";
+
+const plateId = (r) => `recipe-${String(r.n).padStart(2, "0")}-${r.name.toLowerCase().replace(/['’]/g, "").replace(/[^a-z]+/g, "-")}`;
 const INK = "#3a281c", RED = "#b8402a", AMBER = "#d9902a", GOLD = "#f0c050", LANT = "#e8742a", LIME = "#c4d65a", PAPER = "#efe2c4", GREY = "#7d6c5a";
 const THICK = { low: { short: "runny", long: "syrup" }, middle: { short: "syrup", long: "glue" }, high: { short: "glue", long: "hard" } };
 const ING = {
@@ -109,6 +116,14 @@ export default {
 .${P}ent.${P}got i{font-weight:400;font-size:13px}
 .${P}ent.${P}locked{opacity:.5}
 .${P}ent small{font:12px ui-monospace,monospace;letter-spacing:.04em}
+.${P}ent img{width:44px;height:auto;display:block;margin:0 auto 2px;border:1px solid ${INK}}
+.${P}leafbox{display:flex;gap:10px;align-items:flex-start}
+.${P}leafbox img{width:min(46%,150px);height:auto;border:1px solid ${INK};box-shadow:2px 3px 0 rgba(58,40,28,.3);flex:none}
+.${P}leafbox p{margin:0;font-size:16px;line-height:1.3}
+.${P}leafbox b{display:block;font-family:'IM Fell English',Georgia,serif;font-weight:400;font-size:20px;color:${RED}}
+.${P}sayrow{display:flex;gap:8px;align-items:flex-start}
+.${P}sayrow .${P}say{flex:1}
+.${P}card{max-height:100%;overflow:auto}
 .${P}ent.${P}new{animation:${P}ink 1.4s ease-out}
 @keyframes ${P}ink{0%{transform:scale(1.15);box-shadow:0 0 0 6px ${GOLD}}100%{transform:scale(1);box-shadow:0 0 0 0 transparent}}
 .${P}say{font-family:'IM Fell English',Georgia,serif;font-size:22px;color:${RED};min-height:1.4em;text-align:center;border-bottom:1px solid rgba(58,40,28,.4);padding-bottom:8px}
@@ -141,14 +156,16 @@ export default {
   <div class="${P}row"><button class="${P}ghost" data-a="taste" type="button"></button><button class="${P}ghost" data-a="clear" type="button">Empty</button><button class="${P}btn" data-a="cook" type="button">Cook · 10 sap</button><button class="${P}ghost" data-a="close" type="button">Close the book</button></div>
  </div>
  <div class="${P}side">
-  <div class="${P}say" aria-live="polite"></div>
+  <div class="${P}sayrow">${kit.mark(api.art, "resin", "Old Resin")}<div class="${P}say" aria-live="polite"></div></div>
+  <div class="${P}box ${P}page1" hidden><h3>THE LAST PAGE WRITTEN</h3><div class="${P}leafbox"></div></div>
   <div class="${P}box"><h3>HEAT × BOIL = THICKNESS</h3><div class="${P}tbl"></div></div>
   <div class="${P}box"><h3>OLD RESIN'S BOOK · <span class="${P}cnt"></span></h3><div class="${P}book"></div></div>
  </div>
 </div>
 <div class="${P}intro"><div class="${P}card" role="dialog" aria-label="How to play">
  <svg class="${P}seal" viewBox="-30 -30 60 60" aria-hidden="true"><circle r="27" fill="none" stroke="${RED}" stroke-width="2"/><path d="M0 -20 L17 10 L-17 10Z" fill="none" stroke="${RED}" stroke-width="2"/><path d="M0 -8 Q6 2 0 7 Q-6 2 0 -8Z" fill="${AMBER}"/></svg>
- <h2>Sap Kitchen</h2><div class="${P}sub">HIGHRIDGE · SPRING</div>
+ ${kit.chapter(api.art, "chapter-2-spring")}
+ <h2 style="margin-top:8px">Sap Kitchen</h2><div class="${P}sub">HIGHRIDGE · SPRING</div>
  <p class="${P}beat">Old Resin's kitchen, the first warm week. Her book is mostly blank and she means to fill it before she dies. Today your hands do the lifting. “Sacred water. Lovely. Pass me the sacred water and a spoon.”</p>
  <p class="${P}goal"><b>Goal:</b> find <b>three</b> recipes before the jar runs dry. ${SAP0} sap; each pot costs 10.</p>
  <div class="${P}key">
@@ -159,6 +176,10 @@ export default {
  <button class="${P}btn" type="button">Light the fire</button>
 </div></div>`;
     root.appendChild(wrap);
+    kit.styles(wrap);
+    const art = api.art || { has: () => false, url: () => "", info: () => null };
+    let endEl = null;
+    const page1 = wrap.querySelector("." + P + "page1");
     const $ = (s) => wrap.querySelector("." + P + s);
     const svg = wrap.querySelector("svg[aria-label]");
     const sayEl = $("say"), tbl = $("tbl"), book = $("book"), cnt = $("cnt"), shelf = $("shelf");
@@ -214,7 +235,9 @@ export default {
       const sapP = pos(-90);
       const jar = Math.max(0, S.sap / SAP0);
       out += `<g transform="translate(${sapP[0]} ${sapP[1]})"><circle r="21" fill="${PAPER}" stroke="${AMBER}" stroke-width="2.4"/>${GLYPH.sap}</g>
-<g transform="translate(${CX + 128} ${CY - 214})"><rect x="0" y="0" width="30" height="40" rx="5" fill="${PAPER}" stroke="${INK}" stroke-width="1.6"/><rect x="2" y="${2 + 36 * (1 - jar)}" width="26" height="${36 * jar}" rx="3" fill="${AMBER}"/><text x="38" y="26" font-family="ui-monospace,monospace" font-size="17" fill="${INK}">SAP ${S.sap}</text></g>`;
+<g transform="translate(${CX + 128} ${CY - 214})">${art.has("ui-icon-sap")
+        ? `<image href="${art.url("ui-icon-sap")}" x="-8" y="-6" width="46" height="46"/><rect x="-4" y="42" width="38" height="6" rx="3" fill="${PAPER}" stroke="${INK}" stroke-width="1"/><rect x="-3" y="43" width="${36 * jar}" height="4" rx="2" fill="${AMBER}"/>`
+        : `<rect x="0" y="0" width="30" height="40" rx="5" fill="${PAPER}" stroke="${INK}" stroke-width="1.6"/><rect x="2" y="${2 + 36 * (1 - jar)}" width="26" height="${36 * jar}" rx="3" fill="${AMBER}"/>`}<text x="42" y="26" font-family="ui-monospace,monospace" font-size="17" fill="${INK}">SAP ${S.sap}</text></g>`;
       for (const [k, v] of Object.entries(ING)) {
         const [x, y] = pos(v.ang);
         const cs = Math.cos(v.ang * Math.PI / 180), sn = Math.sin(v.ang * Math.PI / 180);
@@ -254,7 +277,7 @@ export default {
         const n = S.pots.filter((p) => p.recipe && p.recipe.cat === cat).length + (cat === "food" ? S.pots.filter((p) => !p.recipe && !p.crumbly).length : 0);
         const lit = n > 0;
         out += `<path d="M${CX + (x - CX) * 0.25} ${CY + 78} L${x} ${CY + 222}" stroke="${INK}" stroke-width="1.1" marker-end="url(#${P}ai)" opacity=".5"/>
-<g transform="translate(${x} ${CY + 250})"><path d="M-8 -26 V-12 Q-26 -2 -22 14 Q-18 24 0 24 Q18 24 22 14 Q26 -2 8 -12 V-26Z" fill="${lit ? CAT_COL[cat] : "url(#" + P + "hatch)"}" stroke="${INK}" stroke-width="1.8"/>
+<g transform="translate(${x} ${CY + 250})">${cat === "food" && art.has("ui-icon-food") ? `<image href="${art.url("ui-icon-food")}" x="-28" y="-30" width="56" height="56" opacity="${lit ? 1 : 0.4}"/>` : `<path d="M-8 -26 V-12 Q-26 -2 -22 14 Q-18 24 0 24 Q18 24 22 14 Q26 -2 8 -12 V-26Z" fill="${lit ? CAT_COL[cat] : "url(#" + P + "hatch)"}" stroke="${INK}" stroke-width="1.8"/>`}
 <text x="${x < CX ? -30 : 30}" y="10" text-anchor="${x < CX ? "end" : "start"}" font-family="ui-monospace,monospace" font-size="14" letter-spacing="1">${cat.toUpperCase()}${n ? " ×" + n : ""}</text></g>`;
       });
       svg.innerHTML = out;
@@ -279,10 +302,16 @@ export default {
       }).join("")).join("");
       book.innerHTML = RECIPES.map((r) => {
         if (!r.open) return `<div class="${P}ent ${P}locked"><small>${r.n}</small><i>${r.when}</i></div>`;
-        if (S.found.has(r.n)) return `<div class="${P}ent ${P}got" data-n="${r.n}" style="--c:${CAT_COL[r.cat]}"><small>${r.n}</small>${r.name}<i>${r.eff}</i></div>`;
+        if (S.found.has(r.n)) return `<div class="${P}ent ${P}got" data-n="${r.n}" style="--c:${CAT_COL[r.cat]}">${art.has(plateId(r)) ? `<img src="${art.url(plateId(r))}" alt="">` : `<small>${r.n}</small>`}${r.name}<i>${r.eff}</i></div>`;
         return `<div class="${P}ent"><small>${r.n}</small><i>“${r.hint}”</i></div>`;
       }).join("");
       cnt.textContent = `${S.found.size} / 3 FOUND`;
+      const lastR = S.lastFound && art.has(plateId(S.lastFound)) ? S.lastFound : null;
+      page1.hidden = !lastR;
+      if (lastR && page1.dataset.n !== String(lastR.n)) {
+        page1.dataset.n = String(lastR.n);
+        page1.querySelector("div").innerHTML = `<img src="${art.url(plateId(lastR))}" alt="${art.info(plateId(lastR)).title}" width="150" height="200"><p><b>${lastR.name}</b>${lastR.thick}, ${lastR.stirs}${lastR.ing.length ? `; ${lastR.ing.map((k) => ING[k].name.toLowerCase()).join(", then ")}` : "; sap alone"}. ${lastR.eff}.</p>`;
+      }
       cookBtn.disabled = S.sap < 10 || S.over || S.cooking;
       tasteBtn.textContent = `Taste · ${S.tastes}`;
       tasteBtn.disabled = S.tastes <= 0 || S.over || S.cooking;
@@ -337,7 +366,7 @@ export default {
       let line = `“${word(pot)}.”`, sub = "", fresh = false;
       if (pot.recipe) {
         fresh = !S.found.has(pot.recipe.n);
-        S.found.add(pot.recipe.n); S.misses = 0;
+        S.found.add(pot.recipe.n); S.misses = 0; S.lastFound = pot.recipe;
         sub = `${fresh ? "Into the book: " : "Again: "}${pot.recipe.name}. ${pot.recipe.eff}.`;
         if (pot.recipe.cat === "food") S.food += parseInt(pot.recipe.eff.match(/\d+/)[0], 10);
         if (pot.recipe.n === 3) S.morale += 2;
@@ -373,7 +402,9 @@ export default {
       const tally = `Food +${S.food}${S.knot ? ", Knot +" + S.knot : ""}${S.morale ? ", morale +" + S.morale : ""}; ${S.sap} sap left in the jar.`;
       api.store.set("found", [...S.found]);
       api.store.set("losses", won ? 0 : losses + 1);
-      later(() => api.end(won
+      later(() => won && S.lastFound && art.has(plateId(S.lastFound))
+        ? (endEl = kit.endCard(root, api, plateId(S.lastFound), { outcome: "win", text: `Three new pages in Old Resin's book: ${names}. She closes it with her ladle and tastes the ladle. ${tally}` }, `<b>OLD RESIN'S BOOK</b>The last page written today: ${S.lastFound.name}.`))
+        : api.end(won
         ? { outcome: "win", text: `Three new pages in Old Resin's book: ${names}. She closes it with her ladle and tastes the ladle. ${tally}` }
         : { outcome: "lose", text: `${closed ? "You close the book" : "The sap jar is empty"} with ${S.found.size} of 3 recipes found (${names}). Resin scrapes the pot: “Next time we taste first.” ${tally}${losses + 1 >= 2 ? " Next visit she will fill in the heat chart for you, and spare 60 sap." : ""}` }), 1500);
     }
@@ -400,10 +431,9 @@ export default {
       say("“Sap first. Always sap.”", gentle ? "Resin has chalked the heat chart for you. Taste before you cook (T): three dips of the ladle cost nothing." : "Old Resin stirs an empty pot. Taste before you cook (T): three dips of the ladle cost nothing.");
       svg.querySelector("[data-a=heat]").focus();
     });
-    startBtn.focus();
+    startBtn.focus({ preventScroll: true });
     refresh();
-    wrap._test = { S };
 
-    return { unmount() { timers.forEach(clearTimeout); offs.forEach((f) => f()); wrap.remove(); } };
+    return { unmount() { timers.forEach(clearTimeout); offs.forEach((f) => f()); if (endEl) endEl.remove(); wrap.remove(); } };
   },
 };

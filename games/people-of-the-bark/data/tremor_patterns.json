@@ -86,5 +86,27 @@
         {"day": 21, "part": "noon", "answer": {"face": "all", "strength": 1}, "sets": "tread_forecast"}
       ]
     }
-  ]
+  ],
+  "faceless_row": {
+    "status": "accepted 2026-11-15; built in phase 1 (web/games/people-of-the-bark/tremor-scroll.js)",
+    "scene": "c4_scroll",
+    "column": "no face",
+    "input": "strength only (1 to 3), or none; a face cannot be given",
+    "rule": "The faceless marks come from inside the Trunk and follow warmth: loud on sun days, faint on rain days, silent in frost. From phase 2 they also follow the hidden pulse meter.",
+    "by_weather": {"sun": 3, "rain": 1, "storm": 1, "frost": 0},
+    "counts_toward_forecasts": false,
+    "forecasts": [
+      {"day": 13, "answer": 3},
+      {"day": 14, "answer": 1}
+    ],
+    "correct_effects": [{"state": "faceless_marks", "add": 1}],
+    "pulse_map": {
+      "kept_in": "the back pages of Old Resin's recipe book",
+      "plates": {"across": 4, "down": 13},
+      "shade_per_mark": 1,
+      "complete_flag": "pulse_map.complete",
+      "complete_at": 2,
+      "shows": "the plate the second tap of c6_touch will find (the Sounding, phase 2)"
+    }
+  }
 }

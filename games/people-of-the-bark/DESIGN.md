@@ -69,7 +69,7 @@ backyard, and the moral is the last line. That ending is **The Shadow Passes**, 
 warriors prepare, the scholars record, and no one institution decides for the others.
 
 The treatment names no one, does not say which season it is, and does not say what the hand does
-after reaching the trunk. Everything that fills those gaps is listed in section 21.
+after reaching the trunk. Everything that fills those gaps is listed in section 22.
 
 ## 4. Investment
 
@@ -104,7 +104,7 @@ dialogue or a saying), **seen** (on screen, including the pull-back), **done** (
 
 ### History and timeline
 
-All history below is added for the game (see section 21). The people count years by rings, as
+All history below is added for the game (see section 22). The people count years by rings, as
 the tree does, and do not know that the rings they count are the tree's.
 
 | When | What happened | How the player learns it |
@@ -201,6 +201,9 @@ source lines to quote for them; the sample lines are proposals.
 - **Habit:** Taps each card's edge twice before he lays it.
 - **Lines:** "The Trunk does not shout twice. Write it down." / "A card means what we do after
   it." / "Leaves fall. I know which one is mine."
+- **After him (accepted 2026-11-15, phase 1):** While Pell deals, a card of the event's suit is
+  always in the hand, because he deals by the notches. Nobody else can. From his death the deal is
+  **honest** (section 11.1).
 - **Arc:** Pell dies in winter, of age, in every run. It is the one certain loss of the year,
   foretold by the autumn leaf he reads as his own (section 20, answer 1). Who he leaves the deck to is the player's last
   reading with him, and it shapes the Shadow. In every ending his saying is painted on a wall.
@@ -215,6 +218,8 @@ source lines to quote for them; the sample lines are proposals.
 - **Lines:** "Battlements! Everyone on the— yes, you too, Fenn." / "Small ones we fight. Big
   ones we bow to. Middling ones, we ask the Knot." / "I'm not afraid. I'm ready. They feel the
   same from inside."
+- **As heir (accepted 2026-11-15, phase 1):** His hands run Spear-heavy: three of his five cards
+  carry the Spear.
 - **Arc by ending:** *Shadow Passes*: stands ready, the hand goes, and he is glad not to have
   needed to fight. *War on the God*: leads the charge up the knuckle and drives a splinter into it.
   He becomes a legend; his spear is finally blooded, and he is never the same gentle man.
@@ -229,6 +234,12 @@ source lines to quote for them; the sample lines are proposals.
 - **Habit:** Draws a tiny tremor glyph in the margin whenever anyone speaks to her.
 - **Lines:** "Dawn. East face. Strength two. Again." / "It is not a god. Or it is a god with a
   routine." / "If it comes every seventh day, then it is coming."
+- **Her own row (accepted 2026-11-15, phase 1):** From autumn she keeps a fourth column on the
+  drum in chalk: marks that come from no face of the Trunk, which the Scroll House does not
+  record (section 11.5). Added lines: "It has no face. I gave it one twice, to make it fit. I
+  scraped them off." / "It answers us."
+- **As heir (accepted 2026-11-15, phase 1):** She shows the next two cards of the deck, and one
+  may be taken for a hand card, once.
 - **Arc by ending:** *Shadow Passes*: records the Shadow, three taps and a press, and files it
   with the rest. *War on the God*: records the victory, and quietly records that the
   Shadow pulled away before the spear struck. *Edge of the World*: draws the first map with an edge
@@ -256,6 +267,9 @@ source lines to quote for them; the sample lines are proposals.
 - **Habit:** Asks "and then what?" after every answer.
 - **Lines:** "And then what?" / "What if the Shadow is just playing?" / "I made a new rule. The
   Hand picks you up and puts you down somewhere else."
+- **As heir (accepted 2026-11-15, phase 1):** Twig deals one card face down. It must be placed
+  unseen and turns over when the reading is laid. Added line, of the Pulse: "Is it knocking to
+  come in, or knocking to see who's home?"
 - **Arc:** Twig invents the Hand piece in winter's Trunk and Shadow. In every ending the last
   bark-scale image includes Twig's kite. If Pell leaves the deck to Twig, Twig reads the Shadow.
 
@@ -265,6 +279,7 @@ source lines to quote for them; the sample lines are proposals.
 - **Lines:** "Trunk, hear us. Trunk, hold us." / "Bend, and do not break."
 - **Role:** Leads the chant in chapter 6 in every ending; becomes the Knot's leader if Pell
   leaves the deck to the priests.
+- **As heir (accepted 2026-11-15, phase 1):** Hollow allows one redeal of the whole hand.
 
 ### The squirrel, the beetle, the bird and the hand
 
@@ -468,7 +483,16 @@ Each chapter lists its scenes in order with scene ids from `data/scenes.json`.
      open.
   8. `c4_door` (1D The Ring Door, 3 min). The Deep Knot door: four rings. Its third ring shows
      the Great Flake.
-- **What the player learns:** The Fit rule; that something is coming at the year's turn.
+- **Scene to add (accepted 2026-11-15, phase 1; not yet in `data/scenes.json`):** `c4_omen_pulse`
+  (1D Omen Spread, 3 min), after `c4_scroll` and before `c4_ants`. One autumn night a small steady
+  tapping wakes Highridge. It comes from no face of the Trunk. The Knot calls it the Trunk's Pulse
+  and lays a spread. The player holds Tab, as always: the camera rises over a dark yard and a lit
+  window, nothing moving, and the Backyard card turns over **blank**. This is the midpoint: for
+  the first time the player knows no more than Pell does (section 11.1, The Pulse). Its 3 minutes
+  come out of chapter 4's 32 when the scene joins the data; `c4_scroll` gains the faceless row
+  (section 11.5) in the same pass.
+- **What the player learns:** The Fit rule; that something is coming at the year's turn; and,
+  from the Pulse, that not every cause can be looked up.
 - **Flags set:** `prophecy.suit`, `expedition.heard`, `ant_reading`, `recipes_found`.
 - **Ends:** On the bark groaning (if integrity is under 40), or on the city sealing its doors.
 
@@ -682,8 +706,8 @@ card for each sigil. Each card has a weight from 1 to 3.
 | Mandible (monster or god) | The Great Visitor, 1 | The Biting Thing, 3 | The Measured Shell, 2 |
 
 Two more cards are not dealt. The **event card** (one per event: Tremor, Rain, Wind, Beetle,
-Leaf, Song, the Year, the Shadow) sits at the centre and has weight 2 in its own suit (the Year
-and the Shadow have no suit). The **Backyard card** lies face down at the side if the player
+Leaf, Song, the Pulse, the Year, the Shadow) sits at the centre and has weight 2 in its own suit
+(the Pulse, the Year and the Shadow have no suit; the Pulse was accepted on 2026-11-15). The **Backyard card** lies face down at the side if the player
 pulled back during the event. Turning it shows the real cause, drawn small and plain, and in its
 corner the suit that **fits** the cause. It can never be placed.
 
@@ -700,7 +724,8 @@ it."). A "Lay the reading" button seals it.
 **Rules.**
 
 1. Pell (or the heir) deals a hand of `4 + (inst.elders >= 40) + (inst.elders >= 60)` cards from
-   the shuffled 18. At least one card of the event's suit is guaranteed.
+   the shuffled 18. While Pell deals, at least one card of the event's suit is guaranteed. After
+   his death the deal is honest and nothing is guaranteed (accepted 2026-11-15; see Honest deals).
 2. The player places exactly three cards, one per slot.
 3. **Meaning** is the suit with the highest total weight among the three placed cards plus the
    event card. Ties go to the suit of the Root card.
@@ -725,6 +750,16 @@ it."). A "Lay the reading" button seals it.
   Policy names the heir of the deck: Eye → Chanter Hollow (`pell.heir = hollow`, Knot +8);
   Spear → Captain Burr (`burr`, Battlements +8); Quill → Fenn (`fenn`, Scroll House +8); balanced →
   Twig (`twig`, each +3). Meaning has no effect here.
+- **The Pulse** (`c4_omen_pulse`, a scene to add; accepted 2026-11-15, phase 1). The event card
+  is the Pulse: no suit, so the Meaning comes from the three placed cards alone (ties still go to
+  Root). There is no Clear and no Bold. The Backyard card is there, because the player looked up,
+  and it turns over blank: no cause and no fit suit, so no Fit can be had and the preview says
+  "There is no cause to fit it to." Pell, feeling the player hesitate: "Then for once we are
+  holding the same hand." (added). The Policy says who answers the Pulse and is written to
+  `pulse.answer`: Eye, the Knot keeps it holy and unread (`elders`); Spear, the Battlements stand
+  a watch on the wall (`warriors`); Quill, the Scroll House may write down a thing with no face
+  (`scholars`); balanced, all three (`all`). The standings move as in rule 4. Sets `pulse.heard`,
+  and `pulse.blank_turned` if the card was turned.
 - **The Reading of the Shadow** (`c6_omen`). See below.
 
 **The Reading of the Shadow.** The deck is the **Year deck**: twelve cards. The number of each
@@ -743,6 +778,20 @@ The reading is set by the placed cards' sigils:
 The preview shows the reading before the player lays it, so the player always knows which branch
 they are choosing. The result is written to `shadow_reading`.
 
+**Honest deals** (accepted 2026-11-15, phase 1). From Pell's death (`deck.honest`) the heir deals
+and no card of the event's suit is guaranteed. Each heir deals in character:
+
+| Heir | The deal |
+| --- | --- |
+| Captain Burr | Spear-heavy: three of the five cards carry the Spear |
+| Fenn | The next two cards of the deck lie face up beside it; one may be taken for a hand card, once |
+| Twig | One card is dealt face down; it must be placed unseen and turns over when the reading is laid. Until then the preview says only that the reading is not whole |
+| Chanter Hollow | One redeal of the whole hand |
+
+In the year as designed the only spread after Pell is the Reading of the Shadow, so this is where
+honest deals are met. Two more rules from the same accepted set wait for phase 2: the contested
+slot and notch-reading.
+
 **Win or finish state.** A spread always finishes; there is no losing hand. Its quality shows in
 Clear, Bold and Fit.
 
@@ -756,8 +805,9 @@ Clear, Bold and Fit.
 | 4 | `c3_omen_beetle` | 4–5 | The reading decides god or monster: lives at stake |
 | 5 | `c4_omen_leaf` | 4–6 | Also decides the ants, later this season; Pell reads his own death in it |
 | 6 | `c4_omen_song` | 4–6 | The Crown card becomes the prophecy |
+| 6a | `c4_omen_pulse` (to add) | 4–6 | The Pulse: no suit, and a blank Backyard card |
 | 7 | `c5_omen_pell` | 6 | The heir |
-| 8 | `c6_omen` | 4–7 | The Shadow; the Year deck |
+| 8 | `c6_omen` | 4–7 | The Shadow; the Year deck; the first honest deal |
 
 **Hints.** The reading preview always states meaning, policy, Clear or Bold, and (if the
 Backyard card is turned) Fit, before the player commits. On easy settings Pell suggests a slot
@@ -765,7 +815,14 @@ for one card.
 
 **Writes:** `readings`, `inst.elders`, `inst.warriors`, `inst.scholars`, `morale`,
 `beetle_reading`, `ant_reading`, `prophecy.suit`, `pell.heir`, `shadow_reading`, `fit_hits`, and
-the Fit effects.
+the Fit effects; from phase 1 also `pulse.heard`, `pulse.blank_turned`, `pulse.answer` and
+`deck.honest`.
+
+**In the web build (phase 1).** `omen-spread` plays four readings: the Windstorm, the Beetle, the
+Pulse and the Shadow. It has no Winter Count and no `c5_omen_pell`, so the heir is whoever the
+three earlier policies point to (two or more of one sigil; otherwise Twig), an institution leads
+if its strand is 12 ahead, and the forecast gate on the scholars' reading is not checked. The
+result is shown over the ending's own card.
 
 ### 11.2 Sap Kitchen (`sap_kitchen`, cooking by discovery)
 
@@ -979,6 +1036,28 @@ Strength right as well is a **fine** forecast (scholars +1 more). Each correct f
 
 That is 18 forecasts in all. The scholars' ending needs 8 correct.
 
+**The faceless row** (accepted 2026-11-15, phase 1). From `c4_scroll` the scroll has a fourth row
+under the three day-parts, in cold chalk grey: marks that come from no face of the Trunk, because
+they come from inside it. Fenn keeps it; the Scroll House does not record a mark with no face. A
+faceless cell takes a strength (1 to 3) or "none", and no face. The row follows warmth: loud
+(strength 3) on sun days, faint (1) on rain days, silent in frost. From phase 2 it also follows
+the hidden `pulse` meter, so seasons of heavy tapping and offerings make it louder. `c4_scroll`
+has two faceless cells, on its two forecast days. They do not count toward the 18 forecasts or
+the scholars' ending.
+
+**The Pulse map** (accepted 2026-11-15; first step in phase 1). A margin strip kept in the back
+pages of Old Resin's recipe book: the bark's plates as a grid, four across and thirteen down from
+the Crown. Each faceless mark placed rightly shades one plate and adds 1 to `faceless_marks`.
+When every faceless mark of the year is right the map is whole (`pulse_map.complete`) and one
+plate is ringed: the plate the second tap of `c6_touch` will find. Using the map at the touch
+(the Sounding) is phase 2.
+
+**In the web build (phase 1).** `tremor-scroll` plays summer and autumn. In autumn the faceless
+row is on the drum and two of its cells are forecast; each mark placed shades a plate on the map
+strip beside the drum. After the autumn seal the player is shown the map (ringed if both marks
+held, unringed if not) and chooses the plate the city should clear. That one choice stands in for
+the Sounding until phase 2.
+
 **Hints.** Scholar standing sets how much Fenn helps: at 40 or more, repeated cells are underlined;
 at 60 or more, a faint suggested pattern overlays the blank days. The `scroll.hint_level` counter
 adds one level for each Tremor-reading Fit (section 12). A player who watched the squirrel in the
@@ -986,7 +1065,8 @@ pull-back knows its route, which is an honest advantage: the game rewards lookin
 
 **Win or finish state.** The scroll finishes when the forecasts are sealed and revealed.
 
-**Writes:** `forecasts_made`, `forecasts_correct`, `inst.scholars`, `tread_forecast`.
+**Writes:** `forecasts_made`, `forecasts_correct`, `inst.scholars`, `tread_forecast`; from phase 1
+also `faceless_marks` and `pulse_map.complete`.
 
 ## 12. Core systems
 
@@ -1089,10 +1169,13 @@ A reading whose Meaning is the fit suit pays off in practice. The people never l
 | The Beetle | `c3_omen_beetle` | A shape as big as a city climbs from the Under | A ground beetle, wandering | Mandible | Read as god: no losses; read as monster: −1 line of will to drain |
 | The Leaf | `c4_omen_leaf` | A country-sized leaf falls past | Autumn | Leaf | Food +15 (they store against the dark) |
 | The Birdsong | `c4_omen_song` | A singer above, five phrases | A small bird before it migrates | Song | Food +10, and the prophecy line names "the seventh day" |
+| The Pulse (accepted 2026-11-15) | `c4_omen_pulse` (to add) | A small steady tapping in the night, from no face of the Trunk | None is shown: the Backyard card is blank | — | — |
 | The Year | `c5_omen_pell` | Pell's last reading | — | — | — |
 | The Shadow | `c6_omen` | The world goes dark | A hand, checking for termites | — | — |
 
-Each Fit adds +1 to `fit_hits`. Fenn names the pattern in autumn whatever the count.
+Each Fit adds +1 to `fit_hits`. Fenn names the pattern in autumn whatever the count. The Pulse is
+the one event the pull-back does not explain: it has no cause the player can see, so it has no fit
+suit and no Fit.
 
 ### 12.6 Losses and the Roll of the Bark
 
@@ -1107,7 +1190,9 @@ loss on the Roll; he has his own place on the temple wall.
 
 Available in every 3D scene. It costs nothing and changes no meter. It is counted in `pullbacks`
 for the debug panel and for one line in chapter 7 ("You looked up N times."). It sets the
-Backyard card for the next Omen Spread: no pull-back during an event, no Backyard card.
+Backyard card for the next Omen Spread: no pull-back during an event, no Backyard card. On the
+night of the Pulse (accepted 2026-11-15) the pull-back shows a dark yard and one lit window,
+nothing moving, and the card it sets is blank.
 
 ## 13. Endings
 
@@ -1357,6 +1442,14 @@ the same folder, each with a schema in `data/schemas/`:
 | `recipes.json` | `recipes.schema.json` | Section 11.2: the thickness table, stir bands, the ruined pot, 8 ingredients with the seasons they can be had, the 12 recipes (thickness, ingredients, stirs, effects, season, hint word), the unmatched pot, caps, and the 4 visits |
 | `tremor_patterns.json` | `tremor_patterns.schema.json` | Section 11.5: faces, parts, weathers, scoring and hints, and the 4 scrolls, each with its pattern rules, a weather mark for every day, and its forecast cells with their answers (18 in all; one is the tread day) |
 
+Phase 1 (2026-11-15) added six flags to `flags.json` (`pulse.heard`, `pulse.blank_turned`,
+`pulse.answer`, `faceless_marks`, `pulse_map.complete`, `deck.honest`); two blocks to
+`omen_deck.json` (`pulse_spread`: the Pulse event card, its blank Backyard card, who answers by
+policy, and the scene to add; `honest_deals`: the four heirs' deals); and one block to
+`tremor_patterns.json` (`faceless_row`: the rule by weather, the two faceless cells of `c4_scroll`
+and the Pulse map). The schemas and `scenes.json` are unchanged; the Pulse is not yet among the
+event cards that the appearances list checks, because its scene is not yet in `scenes.json`.
+
 `tools/check_data.py` checks the three against their schemas, against each other and against the
 four shared files: every scene, flag, value and ending it names; that each 1D appearance matches
 `scenes.json`; that every forecast answer follows from its scroll's rules; that no two recipes come
@@ -1405,7 +1498,7 @@ land as both funny and tender, the game does not work, and that is the thing to 
    people, cannot change, which is the game's own rule about what the player knows. This is not a
    horror game (COLLECTION: "Comic, mythic"), so no ending needs a cost added for its own sake, and
    a saveable Pell would add a rescue system and turn old age into a failure the player is blamed
-   for. Nothing is added: section 6 no longer says the question is open, and section 21 now names
+   for. Nothing is added: section 6 no longer says the question is open, and section 22 now names
    the leaf as the omen. Pell stays off the Roll of the Bark.
 2. **Only the as-written ending.** The treatment heads it "The Moral (woven, not stated)", and
    what it rules out is a stated lesson: "The moral isn’t “your worries don’t matter.”" The
@@ -1423,7 +1516,128 @@ land as both funny and tender, the game does not work, and that is the thing to 
    people's victory gets no comic sting). Changed: sections 6, 13, 16 and 21, and the as-written
    summary in `data/endings.json`.
 
-## 21. Added for the game
+## 21. Accepted development (2026-11-15)
+
+The author accepted the whole deep dive (`DEEP_DIVE.md`) on 2026-11-15 and answered yes to the
+three questions its roadmap put first: the game may say there is something in the wood; Sorrel
+joins the cast and Pell has his secret; The Ring is an ending. This section states what was
+accepted. It is built in three phases. **Phase 1 is built in this pass**; phases 2 and 3 are
+decided but not built. Nothing here changes the source, the as-written ending or its last line.
+
+**Dramatic question.** When the god finally comes to listen, what will the Trunk sound like, and
+can a people be led to sound whole by someone who may never tell them why?
+
+**Want and need.** The people want every event to have one meaning they can act on. They need to
+act well on a thing they cannot name. The player wants to stay the one who knows, and needs to
+interpret honestly once that is taken away.
+
+**The seed.** Two lines of the source, both from
+`creative-writing/vault/05_Worldbuilding/01_People_of_the_Bark.md`: "To us, it’s someone checking
+for termites." and "The scholars scramble to record the tremor’s pattern, believing it to be a
+message from the gods." The treatment never says whether there are termites. The lore already
+carried an answer without noticing: the lost district is called Underhollow.
+
+**The secret: the Pulse.** Something is in the wood. Under the squirrel's hours the Tremor Scroll
+holds a fainter rhythm that comes from no face of the Trunk, because it comes from inside. The
+Knot calls it the Trunk's Pulse. It is the tree's other tenants, drumming on their own walls.
+Underhollow did not fall for greed; its floor had been eaten to paper. The game still never says
+what the hand found: the player learns what is in the wood from inside it, and what the person in
+the yard concludes stays unsaid, as section 20's third answer decided.
+
+**The opposing force and what it wants.** The Pulse never gets a face (the rule for causes in
+section 6 holds, and no whole body of what lives in the wood is ever shown: only its walls, its
+mud and one plugged door). It wants what the bark people want: a home in the Trunk, dark, damp
+and sealed. It walls up every breach from its own side, and it follows sweetness, toward wherever
+sap is tapped hardest and offerings are poured. It is a people who never look up. The second
+opposition is bark-sized: the Knot's wish that the Pulse stay holy and unread.
+
+**Characters, new and deepened.**
+
+| Who | Want | Secret | Scene | Phase |
+| --- | --- | --- | --- | --- |
+| **Sorrel, wall-listener of Lowridge** (new), a blunt tapper forewoman | For Highridge to believe that Lowridge's walls tick at night | Her grandmother came up out of Underhollow and said the floor went first, quietly, weeks before the plate. The Knot's version blames her people, so she has never told it | *Sorrel's Wall*: at the end of the spring run she puts Mossa's ear to a wall. Mossa stops counting | 2 |
+| **Elder Pell** (deepened) | To leave the deck in good hands | For forty years he has dealt by the notches so that no hand could pull the Rope too far. The balance of Highridge has been one old man's thumb | *The Thumb on the Deck*: at the summer festival Twig deals an ugly hand for him. Pell gathers it up, "clumsy me", and deals again | 2 (its consequence, the honest deal, is in phase 1) |
+| **Fenn** (deepened) | The pattern under everything | A second scroll at home: marks with no face, which the Scroll House forbids recording. She fears they are her own tired hand | *The Faceless Marks*: in autumn she unrolls it for the player and asks, "Is it me?" | 2 (the faceless row itself is on the drum in phase 1) |
+
+**Acts and scenes.** "Source" is the author's treatment; "existing" was already in this design;
+"new" is accepted from the deep dive.
+
+| # | Scene | Season | Status | Where it lives | Phase |
+| --- | --- | --- | --- | --- | --- |
+| 1 | The Tremor and the first pull-back | Dawn | Source | `c1_city_dawn` to `c1_omen` | — |
+| 2 | The year is named | Dawn | Existing | `c1_city_year` | — |
+| 3 | Sorrel's Wall | Spring | New | The end of `c2_run` | 2 |
+| 4 | God or monster: the Beetle | Summer | Existing (the belief is source) | `c3_omen_beetle`, `c3_beetle` | — |
+| 5 | The Thumb on the Deck | Summer | New | The summer festival, `c3_tns` | 2 |
+| 6 | Pell reads his leaf | Autumn | Existing | `c4_omen_leaf` | — |
+| 7 | The Faceless Marks | Autumn | New | Fenn's home; the row is on `c4_scroll` from phase 1 | 2 |
+| 8 | **The Blank Card** (midpoint reversal) | Autumn | New | `c4_omen_pulse`, **a scene to add** | **1** |
+| 9 | Pell's last spread; the heir finds the notches | Winter | Existing, deepened | `c5_temple`, `c5_omen_pell`; honest deals from here | **1** (honest deals) |
+| 10 | **Lowridge Comes Up the Crack** (darkest moment) | Winter | New | `c5_run`, re-routed (Against the Tide) | 2 |
+| 11 | The Shadow, the reading, the Sounding | Year's turn | Source; the Sounding is new | `c6_shadow`, `c6_omen`, `c6_touch` | 2 (the Sounding) |
+| 12 | The pull-back | | Source | `c7_backyard` | — |
+
+**The midpoint: The Blank Card.** One autumn night the Pulse wakes Highridge. The Knot lays a
+spread. The player holds Tab, as always. The camera rises over a dark yard and a lit window,
+nothing moving. The Backyard card turns over blank. For the first time the player knows no more
+than Pell does, and the joke the game has told six times is no longer available.
+
+**The darkest moment: Lowridge Comes Up the Crack** (phase 2). In deep winter the lowest street of
+Lowridge settles into a gallery. If the player gave Sorrel's listeners one autumn council token,
+the street was empty; if not, the Roll gains names. A city walks up the Long Crack in frost
+carrying its doors. Pell is dead, the heir is dealing honest hands for the first time in forty
+years, and the Winter Count must seat people nobody budgeted for. Then the seventh-day tread
+begins.
+
+**The Sounding** (phase 2, an addition to `c6_touch`). The three taps are a question and the bark
+answers each: tap one on the plate the people carved most, tap two on the plate the Pulse map
+marks, tap three where the city stands.
+
+**Endings, and what each costs.**
+
+| Ending | What is accepted | Phase |
+| --- | --- | --- |
+| The Shadow Passes (**as written**; conditions and last line unchanged) | Cost: nothing is settled. If the player found the Pulse, one image is added before the verbatim lines: at the feast, Fenn lays her ear on the wall | 3 |
+| The War on the God | Added cost: the third tap never lands, so the question was never finished. Fenn's last entry is the next seventh day, already inked | 3 |
+| The Edge of the World | Added cost: Fenn's map has an outer edge and an inner one. The heresy is double | 3 |
+| The Flake | Added: in the pull-back the flake lies face down in the grass and its underside is not solid. Underhollow is cleared, too late for anyone who could be told | 3 |
+| **The Ring** (new) | The Knot leads, the Shadow is read as a hungry god, the Great Offering is poured and `pulse` is 60 or more. The bark holds, and the second tap sounds like a drum. The hand goes and comes back, and when the light returns a band of colour circles the world. The people take it for a covenant. The pull-back shows a ribbon tied round the trunk and, over the fence, a stump the game has shown since spring. Last line (added): "The god had left them a ring. They counted it with the others." | 3 |
+
+Until phase 3 `data/endings.json` keeps its four endings and section 13 stands as written; the
+offering route still resolves to The Shadow Passes.
+
+**Phase 1, built in this pass: make interpreting hard.**
+
+| Item | Rule | Where it is written | Playable in |
+| --- | --- | --- | --- |
+| The Pulse event and the blank Backyard card | Section 11.1, The Pulse; section 12.5 | `data/omen_deck.json` `pulse_spread`; flags `pulse.heard`, `pulse.blank_turned`, `pulse.answer` | `web/games/people-of-the-bark/omen-spread.js`, the third reading |
+| Honest deals after Pell | Section 11.1, Honest deals | `data/omen_deck.json` `honest_deals`; flag `deck.honest` | `omen-spread.js`, the fourth reading (the Shadow), dealt by whichever heir the year's policies point to |
+| The faceless row on the Tremor Scroll | Section 11.5, The faceless row | `data/tremor_patterns.json` `faceless_row`; flag `faceless_marks` | `tremor-scroll.js`, the autumn page |
+| The long puzzle's first step: a faceless mark shades a plate of the Pulse map | Section 11.5, The Pulse map | `faceless_row.pulse_map`; flag `pulse_map.complete` | `tremor-scroll.js`, the map strip beside the drum |
+| The long puzzle's last step, in miniature: the map shows where the second tap will land | Section 11.5, In the web build | — (the Sounding itself is phase 2) | `tremor-scroll.js`, one choice of plate after the autumn seal |
+| The first six art items | `DEEP_DIVE.md` section 4 | `art/` holds the four drawn by code: the Omen cards (18 faces, 9 event cards, 8 Backyard faces with the blank one, the back), Mossa's sprite sheet. The key art, Pell's figure and the yard plate with the fence and stump are generated or rendered images and are not made yet | Every mode now draws with `art/` (see `docs/WEB.md`, `api.art`) |
+
+**Scene to add.** `c4_omen_pulse` (ch4_autumn, 1D `omen_spread`, 3 min, after `c4_scroll`): reads
+`pullbacks`, `inst.elders`; writes `readings`, the three standings, `pulse.heard`,
+`pulse.blank_turned`, `pulse.answer`. It needs a storyboard row, and when it joins
+`data/scenes.json` the Pulse joins `event_cards` and `appearances` in `data/omen_deck.json`.
+
+**Phase 2, decided, not built: give the year its turn.** Sorrel and her wall; The Thumb on the
+Deck, with notch-reading and the contested slot; The Faceless Marks; Lowridge Comes Up the Crack
+and Against the Tide; paper floors and the crowd in the runner; the paper wall, the plugged door
+and The Procession and the Wall in the defence; sour sap, recipe 13 Gallery Plug and The Great
+Mending; the eaten arc, the turned Heartwood and closing a door; the Hollow square card; listening
+posts on the scroll; the hidden `pulse` meter (0–100) and what moves it; the Sounding; the three
+links between layers (a Plug pot makes that site's paper floors solid in the next run; a door's
+scars are side entrances in the next defence and a clean cut is a knot shelter in `c6_shadow`; a
+winter win as the Shadow shows the three tap sites ten seconds early).
+
+**Phase 3, decided, not built: endings and replay.** The added images in the four existing
+endings; The Ring; playing the Shadow in winter's Trunk and Shadow; the second-playthrough changes
+(the notches readable from the first deal, the faceless row from chapter 1, the stump over the
+fence in the first pull-back, Sorrel as a festival opponent); the remaining art.
+
+## 22. Added for the game
 
 Everything below is not in the author's text and is proposed for the author to approve or strike.
 
@@ -1451,3 +1665,28 @@ Everything below is not in the author's text and is proposed for the author to a
 | Twig's kite as a recurring image | Throughout |
 | The sample lines of every character, and Chanter Hollow's chant | Section 6 |
 | The year being named after the first reading | Chapter 1 |
+| **Accepted 2026-11-15, from `DEEP_DIVE.md`** | |
+| The Pulse: a second rhythm from inside the Trunk; the Knot's name for it; the reading of "Underhollow" as eaten from below (accepted 2026-11-15) | Section 21 |
+| The Blank Card: a pull-back that shows nothing, a blank Backyard face, the Pulse event card with no suit, and who answers it by policy (accepted 2026-11-15; built in phase 1) | Sections 11.1, 12.5, 21 |
+| Honest deals after Pell and the four heirs' dealing styles (accepted 2026-11-15; built in phase 1) | Sections 6, 11.1 |
+| The faceless row on the Tremor Scroll, and the rule that it follows warmth (accepted 2026-11-15; built in phase 1) | Section 11.5 |
+| The Pulse map kept in Old Resin's recipe book; a mark shades a plate; a whole map rings the plate the second tap will find (accepted 2026-11-15; first step built in phase 1) | Section 11.5 |
+| The flags `pulse.heard`, `pulse.blank_turned`, `pulse.answer`, `faceless_marks`, `pulse_map.complete`, `deck.honest` (accepted 2026-11-15; phase 1) | Section 18 |
+| Added lines: Pell, "Then for once we are holding the same hand."; Fenn, "It has no face. I gave it one twice, to make it fit. I scraped them off." and "It answers us."; Twig, "Is it knocking to come in, or knocking to see who's home?" (accepted 2026-11-15; used in phase 1) | Sections 6, 11.1 |
+| Sorrel of Lowridge, her grandmother, and Sorrel's Wall; her line "You Highridge lot hear the Trunk when it shouts. Down here it mutters." (accepted 2026-11-15; phase 2) | Section 21 |
+| Pell's secret (dealing by the notches to keep the balance) and The Thumb on the Deck; notch-reading and the contested slot (accepted 2026-11-15; phase 2) | Section 21 |
+| Fenn's second scroll, The Faceless Marks, and the Scroll House rule against faceless records (accepted 2026-11-15; the rule is used in phase 1, the scene is phase 2) | Sections 11.5, 21 |
+| Chanter Hollow pouring offerings into the Heartwood crack (accepted 2026-11-15; phase 2) | Section 21 |
+| Lowridge Comes Up the Crack, its losses if Sorrel was not backed, and her council token (accepted 2026-11-15; phase 2) | Section 21 |
+| The hidden `pulse` meter and what moves it; the Sounding (accepted 2026-11-15; phase 2) | Section 21 |
+| Runner: paper floor, the crowd, Against the Tide and the passed lantern. Defence: paper wall, the plugged door, The Procession and the Wall, ants lowering the Pulse; Burr's line "I have a spear and it has a wall. Neither of us wants to find out." (accepted 2026-11-15; phase 2) | Section 21 |
+| Kitchen: sour sap, recipe 13 Gallery Plug, The Great Mending. Ring Door: the eaten arc, closing a door, the turned Heartwood, the open interior. Trunk and Shadow: the Hollow square card. Tremor Scroll: listening posts (accepted 2026-11-15; phase 2) | Section 21 |
+| The three links between layers (accepted 2026-11-15; phase 2) | Section 21 |
+| Yard details: a stump over the fence from spring; the hollow underside of the flake (accepted 2026-11-15; phase 3) | Section 21 |
+| The added images in the four existing endings; the ending The Ring, the ribbon and its last line; playing the Shadow; the second-playthrough changes (accepted 2026-11-15; phase 3) | Section 21 |
+| **New in phase 1, not in `DEEP_DIVE.md`: for the author to approve or strike** | |
+| The wording of who answers the Pulse: "The Knot will keep it holy, and unread." / "The Battlements will stand a watch on the wall." / "The Scroll House will write down a thing with no face."; and `pulse.answer` recording it | Section 11.1 |
+| Fenn's deal read as a trade: one of the two shown cards may be taken for a hand card, once (the deep dive says only that she shows them) | Section 11.1 |
+| The faceless row's strengths: 3 on sun days, 1 on rain days, silent in frost; its cells taking a strength and no face; two faceless cells on `c4_scroll` that do not count toward the 18 | Section 11.5 |
+| The map's size (four plates across, thirteen down) and "whole" meaning every faceless mark right | Section 11.5 |
+| Web build only: the heir chosen by the year's three policies; the choice of a plate after the autumn seal as a stand-in for the Sounding; Fenn's and Pell's connecting lines in `omen-spread.js` and `tremor-scroll.js` that are not listed above | Sections 11.1, 11.5 |

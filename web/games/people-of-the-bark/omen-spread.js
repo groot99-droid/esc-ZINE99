@@ -1,16 +1,26 @@
 // People of the Bark — Omen Spread (1D, marginalia drolleries).
-// DESIGN.md 11.1, the two summer spreads read one after the other:
+// DESIGN.md 11.1 and "Accepted development (2026-11-15)", four readings across the year:
 //   The Windstorm (c3_omen_wind): Fit is shown once the Backyard card is turned.
 //   The Beetle (c3_omen_beetle): the reading decides god or monster; a Spear policy reads it as a
 //   monster, anything else as a god. The preview says so before the reading is laid.
+//   The Pulse (autumn night; the midpoint, phase 1): the event card has no suit and the Backyard card
+//   turns over blank. For once the player knows no more than Pell does.
+//   The Shadow (c6_omen, cut down): Pell is dead and the heir deals honest hands in character. The heir
+//   is whoever the year's policies point to (two or more of one sigil; otherwise Twig). Burr's hand runs
+//   Spear-heavy; Fenn shows the next two cards and one may be taken; Twig deals one card face down that
+//   must be placed unseen; Hollow allows one redeal. The reading follows the Reading of the Shadow table:
+//   one of each sigil is a trial; a majority is that institution's reading only if it leads the rope by
+//   12, otherwise a trial. (The forecast gate on the scholars' reading is not checked here.)
 // Lay three cards from the hand in Root, Branch and Crown around the event card. Meaning = the suit
-// with the highest weight (event card counts 2; ties go to Root's suit). Policy = the sigil on two or
-// three cards; one of each is a balanced reading. Clear = all three of the event's suit; Bold = none.
+// with the highest weight (a suited event card counts 2; ties go to Root's suit). Policy = the sigil on
+// two or three cards; one of each is a balanced reading. Clear = all three of the event's suit; Bold = none.
 // Fit = the meaning matches the real cause on the Backyard card (section 12.5). A spread always
-// finishes ("done").
+// finishes ("done"): DESIGN 11.1, "there is no losing hand".
 // Actions: lay a card (drag, tap card then slot, or 1–6 then R/B/C); take one back; turn the
-// Backyard card (see the real cause and the suit that fits it); ask Pell (once a spread he names a
-// slot for one card: DESIGN's easy-setting hint); lay the reading.
+// Backyard card; ask Pell (once a spread) or use the heir's allowance; lay the reading.
+// Art: the 18 Omen faces, the back, the event cards, the Backyard faces, cast marks, sigils, chapter
+// cards, the saying wall and the ending diptychs come from api.art; each has its old drawing as a fallback.
+import * as kit from "./_art.js";
 
 const SUITS = {
   wind: { name: "Wind", belief: "a Trial" },
@@ -32,11 +42,29 @@ const DECK = [
 ].map(([suit, sigil, name, w], id) => ({ id, suit, sigil, name, w }));
 const INK = "#3a281c", RED = "#a8321e", BLUE = "#2f5a8c", GOLD = "#c98a1e", GREEN = "#5f7a3a", PAPER = "#efe2c4", LANT = "#e8742a";
 const EVENTS = [
-  { key: "wind", suit: "wind", fit: "wind", name: "THE WINDSTORM", title: "The Windstorm", sees: "Bands of wind sweep the bark. Towers lean. The Knot lays out a spread.",
+  { key: "wind", suit: "wind", fit: "wind", name: "THE WINDSTORM", title: "The Windstorm", season: "SUMMER", sees: "Bands of wind sweep the bark. Towers lean. The Knot lays out a spread.",
     cause: ["a summer gust,", "nothing more"], fitPay: "the next storm does no damage; the towers count as lashed" },
-  { key: "beetle", suit: "mandible", fit: "mandible", name: "THE BEETLE", title: "The Beetle", sees: "A shape as big as a city climbs from the Under. The Knot lays out a spread.",
+  { key: "beetle", suit: "mandible", fit: "mandible", name: "THE BEETLE", title: "The Beetle", season: "SUMMER", sees: "A shape as big as a city climbs from the Under. The Knot lays out a spread.",
     cause: ["a ground beetle,", "wandering"], fitPay: null },
+  { key: "pulse", suit: null, fit: null, name: "THE PULSE", title: "The Pulse", season: "AUTUMN NIGHT", sees: "Something wakes Highridge in the dark: a tapping with no face to it, from inside the wall. The Knot lays out a spread.",
+    cause: null, fitPay: null },
+  { key: "shadow", suit: null, fit: null, name: "THE SHADOW", title: "The Shadow", season: "THE YEAR'S TURN", sees: "The world goes dark from edge to edge. The deck is in new hands, and nobody's thumb knows the notches.",
+    cause: ["a hand,", "checking for termites"], fitPay: null },
 ];
+const HEIRS = {
+  hollow: { name: "Chanter Hollow", who: "hollow", sigil: "eye", rule: "Hollow allows <b>one redeal</b>: the whole hand goes back and five new cards come.", line: "“Trunk, hear us. Trunk, hold us.”" },
+  burr: { name: "Captain Burr", who: "burr", sigil: "spear", rule: "Burr's hands run <b>Spear-heavy</b>: three of his five cards carry the Spear.", line: "“I'm not afraid. I'm ready. They feel the same from inside.”" },
+  fenn: { name: "Fenn", who: "fenn", sigil: "quill", rule: "Fenn shows <b>the next two cards</b> of the deck. You may take one of them for a card in your hand, once.", line: "“If it comes every seventh day, then it is coming.”" },
+  twig: { name: "Twig", who: "twig", sigil: null, rule: "Twig deals <b>one card face down</b>. It must be laid in a slot unseen, and turns over when the reading is laid.", line: "“What if the Shadow is just playing?”" },
+};
+const SHADOW = {
+  trial: { line: "The Trunk tests us. Chant, stand, record.", end: "ending-the-shadow-passes" },
+  enemy: { line: "It is an enemy. We go up to meet it.", end: "ending-the-war-on-the-god", lead: "spear" },
+  habit: { line: "It is a thing with a habit. We will learn its shape.", end: "ending-the-edge-of-the-world", lead: "quill" },
+  offering: { line: "It is a hungry god. Give it everything.", end: "ending-the-shadow-passes", lead: "eye" },
+};
+const BY_SIGIL = { spear: "enemy", quill: "habit", eye: "offering" };
+const slug = (name) => name.toLowerCase().replace(/^the /, "").replace(/[^a-z]+/g, "-");
 
 const SIGIL_SVG = {
   eye: `<path d="M-26 0 Q0 -22 26 0 Q0 22 -26 0Z" fill="none" stroke="${INK}" stroke-width="3"/><circle r="8" fill="${INK}"/><circle r="3" cx="-2" cy="-2" fill="${PAPER}"/>`,
@@ -55,6 +83,7 @@ const SUIT_SVG = {
 export default {
   mount(root, api) {
     const P = "people-of-the-bark-omen-spread-";
+    const art = api.art || { has: () => false, url: () => "", info: () => null };
     const offs = [];
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); offs.push(() => t.removeEventListener(e, f, o)); };
     const timers = [];
@@ -62,20 +91,42 @@ export default {
     const rnd = api.rng();
 
     let ev = 0, E = EVENTS[0], hand = [], slots = {}, selected = null, turned = false, done = false, askLeft = 1, pellTip = null;
+    let deck = [], heir = null, redeals = 0, swaps = 0, shown = [], down = null;
     const readings = [];
     const rope = { eye: 30, spear: 30, quill: 30 };
     let morale = 0;
+    const lead = () => { for (const k in rope) if (Object.keys(rope).every((o) => o === k || rope[k] >= rope[o] + 12)) return k; return null; };
+    let leading = null;
 
+    function shuffle() {
+      const d = DECK.slice();
+      for (let i = d.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [d[i], d[j]] = [d[j], d[i]]; }
+      return d;
+    }
     function deal() {
       E = EVENTS[ev];
-      const deck = DECK.slice();
-      for (let i = deck.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; }
-      hand = deck.slice(0, 5);
-      if (!hand.some((c) => c.suit === E.suit)) hand[4] = deck.find((c) => c.suit === E.suit);
+      deck = shuffle(); shown = []; down = null;
+      if (heir && heir.who === "burr") {
+        // Burr's hand runs Spear-heavy: three Spear cards and two of whatever comes
+        const sp = deck.filter((c) => c.sigil === "spear").slice(0, 3), rest = deck.filter((c) => !sp.includes(c));
+        hand = sp.concat(rest.slice(0, 2)); deck = rest.slice(2);
+        for (let i = hand.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [hand[i], hand[j]] = [hand[j], hand[i]]; }
+      } else {
+        hand = deck.slice(0, 5); deck = deck.slice(5);
+        // Pell deals by the notches: one card of the event's suit is always there. An heir's deal is honest.
+        if (!heir && E.suit && !hand.some((c) => c.suit === E.suit)) { const k = deck.findIndex((c) => c.suit === E.suit); const [c] = deck.splice(k, 1); deck.push(hand[4]); hand[4] = c; }
+      }
+      if (heir && heir.who === "fenn") shown = deck.slice(0, 2);
+      if (heir && heir.who === "twig") down = hand[Math.floor(rnd() * hand.length)];
       slots = { root: null, branch: null, crown: null }; selected = null; turned = false; done = false; askLeft = 1; pellTip = null;
     }
     deal();
 
+    // what the year has already read: an event card beside the Backyard card only the player turned
+    function yearStrip(items, wheel) {
+      const figs = items.filter(([k]) => art.has("event-" + k)).map(([k, cap]) => `<figure><img src="${art.url("event-" + k)}" alt="Event card">${art.has("backyard-" + k) ? `<img src="${art.url("backyard-" + k)}" alt="Its Backyard card">` : ""}<figcaption>${cap}</figcaption></figure>`).join("");
+      return figs ? `<div class="${P}year">${figs}${wheel && art.has("ui-season-wheel") ? `<img class="${P}wheel" src="${art.url("ui-season-wheel")}" alt="The year's wheel" width="64" height="64">` : ""}</div>` : "";
+    }
     const wrap = document.createElement("div");
     wrap.className = P + "wrap";
     wrap.innerHTML = `
@@ -97,13 +148,13 @@ export default {
 .${P}phase{font:12px ui-monospace,monospace;letter-spacing:.18em;color:${RED}}
 .${P}table{grid-area:table;display:grid;grid-template-columns:repeat(3,auto);grid-template-rows:auto auto;justify-content:center;align-content:center;gap:34px clamp(12px,3vw,42px);
  grid-template-areas:". crown ." "root event branch";padding-bottom:22px}
-.${P}slot{width:var(--cw);height:calc(var(--cw)*1.45);border:2px dashed rgba(168,50,30,.65);border-radius:8px;position:relative;display:grid;place-items:center;cursor:pointer;background:rgba(255,250,235,.3);transition:background .15s,border-color .15s}
+.${P}slot{width:var(--cw);height:calc(var(--cw)*1.4 + 20px);border:2px dashed rgba(168,50,30,.65);border-radius:8px;position:relative;display:grid;place-items:center;cursor:pointer;background:rgba(255,250,235,.3);transition:background .15s,border-color .15s}
 .${P}slot:hover,.${P}slot.${P}hot{border-color:${GOLD};border-style:solid;background:rgba(240,192,80,.28)}
 .${P}slot.${P}want{animation:${P}glow 1.2s ease-in-out infinite alternate}
 @keyframes ${P}glow{from{box-shadow:0 0 0 0 rgba(201,138,30,.0)}to{box-shadow:0 0 0 6px rgba(201,138,30,.45)}}
 .${P}slot>span{position:absolute;bottom:-23px;left:-10px;right:-10px;text-align:center;font:600 12px ui-monospace,monospace;letter-spacing:.14em;color:${RED};white-space:nowrap}
 .${P}slot>em{font-size:15px;color:${RED};opacity:.8;text-align:center;padding:4px;line-height:1.15}
-.${P}card{width:var(--cw);height:calc(var(--cw)*1.45);background:#fbf3df;border:1.5px solid ${INK};border-radius:8px;box-shadow:2px 3px 0 rgba(58,40,28,.35);position:relative;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;transition:transform .15s,box-shadow .15s}
+.${P}card{width:var(--cw);height:calc(var(--cw)*1.4 + 20px);background:#fbf3df;overflow:hidden;border:1.5px solid ${INK};border-radius:8px;box-shadow:2px 3px 0 rgba(58,40,28,.35);position:relative;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;transition:transform .15s,box-shadow .15s}
 .${P}card svg{width:100%;height:100%;display:block}
 .${P}card:hover{box-shadow:0 0 0 2px rgba(201,138,30,.6),2px 4px 0 rgba(58,40,28,.35)}
 .${P}card:focus-visible{outline:3px solid ${BLUE};outline-offset:3px}
@@ -111,10 +162,10 @@ export default {
 .${P}card.${P}ev{border:2px solid ${GOLD};cursor:default}
 .${P}card.${P}land{animation:${P}land .35s ease-out}
 @keyframes ${P}land{0%{transform:scale(1.12) rotate(-3deg)}100%{transform:none}}
-.${P}hand{grid-area:hand;display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding-top:16px;min-height:calc(var(--cw)*1.45 + 22px)}
+.${P}hand{grid-area:hand;display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding-top:16px;min-height:calc(var(--cw)*1.4 + 42px)}
 .${P}hand .${P}card:nth-child(odd){transform:rotate(-3deg)}.${P}hand .${P}card:nth-child(even){transform:rotate(2.5deg)}
 .${P}hand .${P}card.${P}sel{transform:translateY(-14px)}
-.${P}num{position:absolute;top:-10px;left:-8px;background:${INK};color:${PAPER};font:12px ui-monospace,monospace;width:20px;height:20px;border-radius:50%;display:grid;place-items:center}
+.${P}num{position:absolute;top:2px;left:2px;z-index:1;background:${INK};color:${PAPER};font:12px ui-monospace,monospace;width:20px;height:20px;border-radius:50%;display:grid;place-items:center}
 .${P}side{grid-area:side;display:flex;flex-direction:column;gap:12px}
 .${P}preview{font-family:'IM Fell English',Georgia,serif;font-size:20px;line-height:1.3;color:${INK};min-height:5.4em}
 .${P}preview em{color:${RED}}
@@ -125,7 +176,7 @@ export default {
 .${P}rope div{display:grid;grid-template-columns:52px 1fr 64px;align-items:center;gap:6px}
 .${P}strand{display:block;height:9px;border-radius:5px;background:repeating-linear-gradient(60deg,var(--c) 0 6px,rgba(0,0,0,.2) 6px 8px);transition:width .4s}
 .${P}back{display:flex;gap:10px;align-items:flex-end}
-.${P}bk{width:calc(var(--cw)*.8);height:calc(var(--cw)*1.16);border-radius:6px;border:1.5px solid ${INK};background:repeating-linear-gradient(45deg,#7a3a22 0 5px,#8e4a2a 5px 10px);display:grid;place-items:center;color:#f0c050;font:28px 'IM Fell English',serif;cursor:pointer;flex:none;transition:transform .15s}
+.${P}bk{width:calc(var(--cw)*.8);height:calc(var(--cw)*1.12);overflow:hidden;border-radius:6px;border:1.5px solid ${INK};background:repeating-linear-gradient(45deg,#7a3a22 0 5px,#8e4a2a 5px 10px);display:grid;place-items:center;color:#f0c050;font:28px 'IM Fell English',serif;cursor:pointer;flex:none;transition:transform .15s}
 .${P}bk:hover{transform:rotate(-3deg) translateY(-3px)}
 .${P}bk:focus-visible{outline:3px solid ${BLUE};outline-offset:3px}
 .${P}bk.${P}up{background:#fbf3df;color:${INK};cursor:default;padding:0;place-items:stretch;transform:none}
@@ -148,6 +199,40 @@ export default {
 .${P}ghost{position:fixed;pointer-events:none;z-index:50;opacity:.92;transform:rotate(-4deg)}
 @media (max-width:760px){.${P}page{grid-template-columns:1fr;grid-template-areas:"head" "table" "hand" "side";padding:16px 30px 20px}.${P}preview{position:sticky;bottom:0;z-index:3;background:#f3e4c0;border:1px solid ${RED};padding:6px 10px;box-shadow:0 -4px 14px rgba(58,40,28,.25)}.${P}table{gap:32px 8px}.${P}preview{min-height:0;font-size:19px}.${P}vine{width:24px}.${P}frame{inset:8px 20px}.${P}init{font-size:38px}}
 @media (prefers-reduced-motion:reduce){.${P}slot.${P}want,.${P}card.${P}land{animation:none}}
+
+.${P}card>img{display:block;width:100%;height:calc(100% - 20px);object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.${P}card>svg{height:calc(100% - 20px)}
+.${P}cap{position:absolute;left:0;right:0;bottom:0;height:20px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:2px;padding:0 4px 0 5px;background:#fbf3df;border-top:1px solid ${INK};font:600 11px ui-monospace,monospace;letter-spacing:0;color:${INK};white-space:nowrap;pointer-events:none}
+.${P}cap img,.${P}cap svg{width:15px;height:15px;flex:none}
+.${P}cap b{font-weight:600;color:${RED}}
+.${P}card.${P}down .${P}cap{background:#3a281c;color:${PAPER};border-top-color:#1b120c;justify-content:center}
+.${P}bk img{display:block;width:100%;height:100%;object-fit:cover}
+.${P}rope div img{width:20px;height:20px;vertical-align:-5px;margin-right:3px}
+.${P}rope div{grid-template-columns:74px 1fr 64px}
+.${P}next{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap}
+.${P}next .${P}card{cursor:pointer;--cw:72px}
+.${P}next small{flex:1 1 100%;font-size:15px;font-style:italic;color:#4a3324;line-height:1.25}
+.${P}who{display:flex;gap:10px;align-items:center;margin:0 0 8px}
+.${P}who b{font-family:'IM Fell English',Georgia,serif;font-weight:400;font-size:21px;display:block}
+.${P}who span{font-size:16px;line-height:1.3}
+.${P}pellrow{display:flex;gap:8px;align-items:flex-start}
+.${P}leaf>span[role=img]{margin:-4px 0 10px}
+.${P}wall{position:relative;margin:0 0 10px;font-family:'IM Fell English',Georgia,serif;font-style:italic;color:#e6ecc0;container-type:inline-size}
+.${P}wall i{position:absolute;left:61%;width:34%;font-size:3.4cqw;line-height:1.15;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.${P}wall i+i{left:16%}
+.${P}leaf{max-height:100%;overflow:auto}
+.${P}year{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:flex-end;margin:0 0 10px;clear:both}
+.${P}year figure{margin:0;display:flex;gap:3px;align-items:flex-end}
+.${P}year figure img{width:46px;height:auto;display:block;border-radius:3px;box-shadow:1px 2px 0 rgba(58,40,28,.35)}
+.${P}year figure img+img{width:38px}
+.${P}year figcaption{font:italic 15px/1.2 'Cormorant Garamond',Georgia,serif;margin-left:4px;max-width:9em}
+.${P}year .${P}wheel{width:64px;height:64px;margin-left:auto}
+.${P}thread{float:right;width:104px;height:104px;margin:0 0 6px 10px;border-radius:6px}
+.${P}two{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 0 8px}
+.${P}leaf img[class$="art-title"]{width:min(100%,250px)}
+.${P}ropewrap{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:center}
+.${P}ropewrap>img{height:74px;width:auto}
+@media (max-width:760px){.${P}cap{font-size:10.5px;padding:0 3px}.${P}cap img,.${P}cap svg{width:13px;height:13px}}
 </style>
 <div class="${P}page">
  <div class="${P}frame"></div>
@@ -162,18 +247,21 @@ export default {
  <div class="${P}side">
   <div class="${P}preview" aria-live="polite"></div>
   <div class="${P}selinfo"></div>
-  <div class="${P}rope" aria-label="The Balance Rope"></div>
+  <div class="${P}ropewrap">${art.has("ui-balance-rope") ? `<img src="${art.url("ui-balance-rope")}" alt="" width="23" height="74">` : "<span></span>"}<div class="${P}rope" aria-label="The Balance Rope"></div></div>
   <div class="${P}back"><div class="${P}bk" role="button" tabindex="0" aria-label="Turn the Backyard card (Y)">?</div><div class="${P}help">The Backyard card. Only you can turn it (Y). It is never placed.</div></div>
-  <div class="${P}pell" aria-live="polite"></div>
+  <div class="${P}next" hidden></div>
+  <div class="${P}pellrow"><span class="${P}face"></span><div class="${P}pell" aria-live="polite"></div></div>
   <div class="${P}acts"><button class="${P}ask" type="button"></button><button class="${P}lay" type="button" disabled>Lay the reading</button></div>
  </div>
  <div class="${P}hand"></div>
 </div>
 <div class="${P}intro"><div class="${P}leaf" role="dialog" aria-label="How to play">
+ ${kit.title(art)}
  <div class="${P}init">S</div>
  <h2>Omen Spread</h2>
- <p class="${P}beat">Summer, at the Knot's table in Highridge. Elder Pell reads by the notches on the card edges now; his eyes are going. Two things have happened this week, and the city waits to be told what they meant.</p>
- <p class="${P}goal"><b>Goal:</b> read two events. Lay three cards around each: the heaviest suit is what it <i>means</i>; a sigil on two cards decides <i>who answers</i>.</p>
+ <p class="${P}beat">Summer, at the Knot's table in Highridge. Elder Pell reads by the notches on the card edges now; his eyes are going. Things happen, and the city waits to be told what they meant.</p>
+ ${yearStrip([["tremor", "The Tremor: a squirrel, landing"], ["rain", "The Rain: a spring shower"]], true)}
+ <p class="${P}goal"><b>Goal:</b> read four events across the year. Lay three cards around each: the heaviest suit is what it <i>means</i>; a sigil on two cards decides <i>who answers</i>.</p>
  <div class="${P}key">
   <kbd>drag · or tap</kbd><span>a card, then a slot: Root, Branch, Crown</span>
   <kbd>1–6 · R B C</kbd><span>the same, from the keys</span>
@@ -182,15 +270,16 @@ export default {
  <button class="${P}lay" type="button">Begin the reading</button>
 </div></div>`;
     root.appendChild(wrap);
+    kit.styles(wrap);
     const sizeCards = () => {
       const r = wrap.getBoundingClientRect();
-      const cw = r.width < 760 ? Math.min(100, Math.max(76, (r.width - 76) / 3.3)) : Math.min(128, Math.max(80, (r.height - 320) / 4.7), r.width / 11);
+      const cw = r.width < 760 ? Math.min(100, Math.max(76, (r.width - 76) / 3.3)) : Math.min(128, Math.max(84, (r.height - 300) / 4.6), r.width / 11);
       wrap.style.setProperty("--cw", Math.round(cw) + "px");
     };
     sizeCards();
     const ro = new ResizeObserver(sizeCards); ro.observe(wrap);
     const $ = (s) => wrap.querySelector("." + P + s);
-    const handEl = $("hand"), preview = $("preview"), ropeEl = $("rope"), layBtn = wrap.querySelector(`.${P}side .${P}lay`), bk = $("bk"), askBtn = $("ask"), pellEl = $("pell"), selInfo = $("selinfo");
+    const handEl = $("hand"), preview = $("preview"), ropeEl = $("rope"), layBtn = wrap.querySelector(`.${P}side .${P}lay`), bk = $("bk"), askBtn = $("ask"), pellEl = $("pell"), selInfo = $("selinfo"), nextEl = $("next"), faceEl = $("face");
 
     function vineSvg(seed, flip) {
       const r = api.rng(seed);
@@ -208,29 +297,41 @@ export default {
     const vines = wrap.querySelectorAll("." + P + "vine");
     vines[0].innerHTML = vineSvg(3, false); vines[1].innerHTML = vineSvg(8, true);
 
-    function cardSvg(c, isEvent) {
-      if (isEvent) {
-        const big = E.suit === "mandible"
-          ? `<g transform="translate(50 74)"><ellipse rx="22" ry="15" fill="none" stroke="${INK}" stroke-width="1.5"/><path d="M-12 -12 Q-24 -26 -30 -18 M12 -12 Q24 -26 30 -18" fill="none" stroke="${INK}" stroke-width="1.5"/></g>`
-          : `<g transform="translate(50 74)" fill="none" stroke="${INK}" stroke-width="1.6"><path d="M-30 -14 Q-10 -26 10 -14 T40 -14"/><path d="M-34 0 Q-14 -12 6 0 T36 0"/><path d="M-30 14 Q-10 2 10 14 T40 14"/></g>`;
-        return `<svg viewBox="0 0 100 145"><rect x="4" y="4" width="92" height="137" rx="6" fill="none" stroke="${GOLD}" stroke-width="1"/>
+    // ---- card faces: the art where it exists, the old inked drawing where it does not ----
+    const sigilIcon = (k) => (art.has("ui-sigil-" + k) ? `<img src="${art.url("ui-sigil-" + k)}" alt="${cap(k)}">` : `<svg viewBox="-34 -34 68 68" aria-label="${cap(k)}">${SIGIL_SVG[k]}</svg>`);
+    function eventFace() {
+      const id = "event-" + E.key;
+      const capLine = `<span class="${P}cap"><span>${E.suit ? SUITS[E.suit].name : "no suit"}</span><b>${E.suit ? "weight 2" : "—"}</b></span>`;
+      if (art.has(id)) return `<img src="${art.url(id)}" alt="Event card: ${E.title}${E.suit ? ", " + SUITS[E.suit].name + ", weight 2" : ", no suit"}">${capLine}`;
+      const big = E.suit === "mandible"
+        ? `<g transform="translate(50 74)"><ellipse rx="22" ry="15" fill="none" stroke="${INK}" stroke-width="1.5"/><path d="M-12 -12 Q-24 -26 -30 -18 M12 -12 Q24 -26 30 -18" fill="none" stroke="${INK}" stroke-width="1.5"/></g>`
+        : `<g transform="translate(50 74)" fill="none" stroke="${INK}" stroke-width="1.6"><path d="M-30 -14 Q-10 -26 10 -14 T40 -14"/><path d="M-34 0 Q-14 -12 6 0 T36 0"/><path d="M-30 14 Q-10 2 10 14 T40 14"/></g>`;
+      return `<svg viewBox="0 0 100 145"><rect x="4" y="4" width="92" height="137" rx="6" fill="none" stroke="${GOLD}" stroke-width="1"/>
 <rect x="18" y="14" width="64" height="17" fill="${RED}"/><text x="50" y="27" text-anchor="middle" font-family="IM Fell English,serif" font-size="12" fill="${PAPER}" letter-spacing="1.5">EVENT</text>
-<g transform="translate(50 74) scale(1.4)">${SUIT_SVG[E.suit]}</g>${big}
-<text x="50" y="120" text-anchor="middle" font-family="IM Fell English,serif" font-size="11.5" fill="${INK}" ${E.name.length > 10 ? 'textLength="84" lengthAdjust="spacingAndGlyphs"' : ""}>${E.name}</text>
-<text x="50" y="134" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic" font-size="11" fill="${RED}">${SUITS[E.suit].name} · weight 2</text></svg>`;
+${E.suit ? `<g transform="translate(50 74) scale(1.4)">${SUIT_SVG[E.suit]}</g>${big}` : `<circle cx="50" cy="74" r="20" fill="none" stroke="${INK}" stroke-width="1.5" stroke-dasharray="3 4"/>`}
+<text x="50" y="122" text-anchor="middle" font-family="IM Fell English,serif" font-size="11.5" fill="${INK}" ${E.name.length > 10 ? 'textLength="84" lengthAdjust="spacingAndGlyphs"' : ""}>${E.name}</text></svg>${capLine}`;
+    }
+    function cardFace(c, hidden) {
+      if (hidden) {
+        const capLine = `<span class="${P}cap">unseen</span>`;
+        return (art.has("omen-back") ? `<img src="${art.url("omen-back")}" alt="A card dealt face down">` : `<svg viewBox="0 0 100 145"><rect width="100" height="145" fill="#4a2a18"/><circle cx="50" cy="72" r="26" fill="none" stroke="${GOLD}" stroke-width="2"/></svg>`) + capLine;
       }
+      const capLine = `<span class="${P}cap"><span>${SUITS[c.suit].name} <b>${c.w}</b></span>${sigilIcon(c.sigil)}</span>`;
+      const label = `${c.name}, ${SUITS[c.suit].name}, ${c.sigil}, weight ${c.w}`;
+      const id = "omen-" + slug(c.name);
+      if (art.has(id)) return `<img src="${art.url(id)}" alt="${label}">${capLine}`;
       const dots = Array.from({ length: c.w }, (_, i) => `<circle cx="${86 - i * 9}" cy="14" r="3.4" fill="none" stroke="${GOLD}" stroke-width="1.8"/>`).join("");
-      return `<svg viewBox="0 0 100 145" role="img" aria-label="${c.name}, ${SUITS[c.suit].name}, ${c.sigil}, weight ${c.w}">
+      return `<svg viewBox="0 0 100 145" role="img" aria-label="${label}">
 <path d="M8 12 q4 -6 8 0 t8 0 t8 0" fill="none" stroke="${RED}" stroke-width="1.5"/>
 <g transform="translate(17 28) scale(1.2)">${SUIT_SVG[c.suit]}</g>${dots}
 <g transform="translate(50 68)">${SIGIL_SVG[c.sigil]}</g>
-<text x="50" y="118" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic" font-weight="600" font-size="12.5" fill="${INK}">${c.name}</text>
-<text x="50" y="134" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9.5" fill="${RED}" letter-spacing="1">${SUITS[c.suit].name.toUpperCase()}</text></svg>`;
+<text x="50" y="122" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic" font-weight="600" font-size="12.5" fill="${INK}">${c.name}</text></svg>${capLine}`;
     }
     function makeCard(c, numberLabel) {
       const d = document.createElement("div");
-      d.className = P + "card"; d.tabIndex = 0; d.dataset.id = c.id;
-      d.innerHTML = cardSvg(c) + (numberLabel ? `<span class="${P}num">${numberLabel}</span>` : "");
+      const hidden = c === down && !done;
+      d.className = P + "card" + (hidden ? " " + P + "down" : ""); d.tabIndex = 0; d.dataset.id = c.id;
+      d.innerHTML = cardFace(c, hidden) + (numberLabel ? `<span class="${P}num">${numberLabel}</span>` : "");
       attachDrag(d, c);
       on(d, "pointerenter", () => showInfo(c));
       on(d, "focus", () => showInfo(c));
@@ -238,28 +339,54 @@ export default {
     }
     function showInfo(c) {
       const cc = c || selected;
+      if (cc && cc === down && !done) { selInfo.innerHTML = `<b>A card face down</b><br>Twig dealt it that way. It must be laid, and turns over with the reading.`; return; }
       selInfo.innerHTML = cc ? `<b>${cc.name}</b><br>${SUITS[cc.suit].name} (${SUITS[cc.suit].belief.replace(/^an? /, "")}) · ${cap(cc.sigil)}, ${SIGILS[cc.sigil]} · weight ${cc.w}` : `<i>Point at a card to read its edge.</i>`;
     }
 
     function setupHead() {
-      $("phase").textContent = `SPREAD ${ev + 1} OF 2 · SUMMER`;
+      $("phase").textContent = `SPREAD ${ev + 1} OF ${EVENTS.length} · ${E.season}`;
       wrap.querySelector(`.${P}head h2`).textContent = E.title;
       $("sees").textContent = E.sees;
       wrap.querySelector(`.${P}head .${P}init`).textContent = E.title[4];
       const ew = $("evwrap"); ew.innerHTML = "";
       const evCard = document.createElement("div");
-      evCard.className = P + "card " + P + "ev"; evCard.innerHTML = cardSvg(null, true);
+      evCard.className = P + "card " + P + "ev"; evCard.innerHTML = eventFace();
       ew.appendChild(evCard);
       bk.className = P + "bk"; bk.setAttribute("role", "button"); bk.tabIndex = 0; bk.textContent = "?";
       $("help").textContent = "The Backyard card. Only you can turn it (Y). It is never placed.";
-      askBtn.textContent = `Ask Pell · ${askLeft}`;
+      faceEl.innerHTML = kit.mark(art, heir ? heir.who : "pell", heir ? heir.name : "Elder Pell");
+      renderNext();
+    }
+    function renderNext() {
+      nextEl.hidden = !(heir && heir.who === "fenn");
+      if (nextEl.hidden) return;
+      nextEl.innerHTML = "";
+      shown.forEach((c, i) => {
+        const d = document.createElement("div");
+        d.className = P + "card"; d.tabIndex = swaps || done ? -1 : 0; d.setAttribute("role", "button");
+        d.setAttribute("aria-label", `Next in the deck: ${c.name}. Take it for the chosen card (${i ? "G" : "F"})`);
+        d.innerHTML = cardFace(c, false);
+        on(d, "click", () => swap(i));
+        on(d, "keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); swap(i); } });
+        on(d, "pointerenter", () => showInfo(c));
+        nextEl.appendChild(d);
+      });
+      nextEl.insertAdjacentHTML("beforeend", `<small>${swaps ? "Fenn has squared the deck again." : "The next two in the deck, shown. Choose a hand card, then one of these (F, G), to trade them. Once."}</small>`);
+    }
+    function swap(i) {
+      if (done || swaps || !shown[i]) return;
+      if (!selected || !hand.includes(selected)) { pellSays("“Choose the card you would give up first.”", "Fenn"); return; }
+      const k = hand.indexOf(selected);
+      [hand[k], shown[i]] = [shown[i], hand[k]];
+      swaps = 1; selected = null; renderHand(); renderNext();
+      pellSays("writes the trade down, with the hour.", "Fenn");
     }
 
     // ---- reading logic ----
     function reading() {
       const placed = Object.values(slots).filter(Boolean);
       const wsum = {};
-      wsum[E.suit] = 2;
+      if (E.suit) wsum[E.suit] = 2;
       for (const c of placed) wsum[c.suit] = (wsum[c.suit] || 0) + c.w;
       let best = -1, meaning = null;
       for (const [s, w] of Object.entries(wsum)) if (w > best) { best = w; meaning = s; }
@@ -274,34 +401,52 @@ export default {
       if (policy && count[policy] === 2) delta[policy] += 6;
       if (policy && count[policy] === 3) { delta[policy] += 9; for (const k in delta) if (k !== policy) delta[k] -= 2; }
       if (balanced) for (const k in delta) delta[k] += 2;
-      const clear = placed.length === 3 && placed.every((c) => c.suit === E.suit);
-      const bold = placed.length === 3 && placed.every((c) => c.suit !== E.suit);
+      const clear = !!E.suit && placed.length === 3 && placed.every((c) => c.suit === E.suit);
+      const bold = !!E.suit && placed.length === 3 && placed.every((c) => c.suit !== E.suit);
       if (clear) mor += 5;
       if (bold) { mor -= 3; delta.quill += 2; }
-      const fit = meaning === E.fit;
+      const fit = !!E.fit && meaning === E.fit;
       const monster = E.key === "beetle" && policy === "spear";
-      return { placed, meaning, policy, balanced, delta, morale: mor, clear, bold, fit, monster, n: placed.length };
+      // the Reading of the Shadow: a majority reading holds only if that institution leads the rope
+      let shadow = null, fell = false;
+      if (E.key === "shadow" && placed.length === 3) {
+        const want = policy ? BY_SIGIL[policy] : "trial";
+        if (want !== "trial" && leading !== policy) { shadow = "trial"; fell = want; } else shadow = want;
+      }
+      return { placed, meaning, policy, balanced, delta, morale: mor, clear, bold, fit, monster, shadow, fell, n: placed.length };
     }
+    const PULSE_WHO = { eye: "The Knot will keep it holy, and unread.", spear: "The Battlements will stand a watch on the wall.", quill: "The Scroll House will write down a thing with no face." };
     function renderPreview() {
       const r = reading();
+      const blind = !!down && !done && r.placed.includes(down);
       if (!r.n) {
         preview.innerHTML = `The reader's pen waits.<small>Lay a card in Root, Branch or Crown. The reading writes itself here as you go.</small>`;
+      } else if (blind) {
+        preview.innerHTML = `One card lies face down. <em>The reading is not whole until it turns.</em><small>Twig is watching your hand, not the cards.</small>`;
+      } else if (E.key === "shadow") {
+        const line = r.shadow ? `“${SHADOW[r.shadow].line}”` : "The reading is not yet whole.";
+        const why = r.fell ? ` ${cap(SIGILS[BY_SIGIL_KEY(r.fell)])} ${BY_SIGIL_KEY(r.fell) === "spear" ? "do" : "does"} not lead the year, so its reading cannot be laid: it falls to a trial.` : "";
+        preview.innerHTML = `${line}<small>${r.shadow ? `It will be read as <em>${r.shadow === "trial" ? "a trial" : r.shadow === "enemy" ? "an enemy" : r.shadow === "habit" ? "a thing with a habit" : "a hungry god"}</em>.${why}` : "One of each sigil is a trial. Two of one is that house's reading, if it leads the rope by 12."}${slots.crown && slots.crown !== down ? ` The saying on the wall: “${slots.crown.name}.”` : ""}</small>`;
       } else {
-        const who = r.policy ? `${cap(SIGILS[r.policy])} will answer it.` : r.balanced ? "All three will answer it together." : "Who answers is not yet plain.";
+        const who = E.key === "pulse" ? (r.policy ? PULSE_WHO[r.policy] : r.balanced ? "All three will answer it together." : "Who answers is not yet plain.")
+          : r.policy ? `${cap(SIGILS[r.policy])} will answer it.` : r.balanced ? "All three will answer it together." : "Who answers is not yet plain.";
         const kind = r.clear ? " A <em>clear</em> reading." : r.bold ? " A <em>bold</em> reading." : "";
-        const fit = turned ? (r.fit ? " <em>It fits the cause.</em>" : " It does not fit the cause.") : "";
+        const fit = !turned ? "" : E.fit ? (r.fit ? " <em>It fits the cause.</em>" : " It does not fit the cause.") : E.key === "pulse" ? " <em>There is no cause to fit it to.</em>" : "";
         const beast = E.key === "beetle" ? (r.monster ? "The Beetle will be met as a <em>monster</em>: the warriors hold the crack." : "The Beetle will be met as a <em>god</em>: it will be escorted.") : "";
         preview.innerHTML = `It is ${SUITS[r.meaning].belief}. ${who}${kind}${fit}<small>${beast}${slots.crown ? ` The saying on the wall: “${slots.crown.name}.”` : ""}</small>`;
       }
       const labels = { eye: "Eye", spear: "Spear", quill: "Quill" }, cols = { eye: BLUE, spear: RED, quill: GOLD };
       ropeEl.innerHTML = Object.keys(labels).map((k) => {
-        const v = rope[k] + r.delta[k];
-        return `<div><span>${labels[k]}</span><i class="${P}strand" style="--c:${cols[k]};width:${Math.max(8, Math.min(100, v * 1.8))}%"></i><span>${v}${r.delta[k] ? ` (${r.delta[k] > 0 ? "+" : ""}${r.delta[k]})` : ""}</span></div>`;
+        const d = blind ? 0 : r.delta[k], v = rope[k] + d;
+        return `<div><span>${art.has("ui-sigil-" + k) ? `<img src="${art.url("ui-sigil-" + k)}" alt="">` : ""}${labels[k]}${leading === k ? " ★" : ""}</span><i class="${P}strand" style="--c:${cols[k]};width:${Math.max(8, Math.min(100, v * 1.8))}%"></i><span>${v}${d ? ` (${d > 0 ? "+" : ""}${d})` : ""}</span></div>`;
       }).join("");
-      layBtn.disabled = r.n < 3 || done;
-      askBtn.disabled = askLeft <= 0 || done;
-      askBtn.textContent = `Ask Pell · ${askLeft}`;
+      layBtn.disabled = r.n < 3 || done || (!!down && !r.placed.includes(down));
+      layBtn.textContent = down && r.n === 3 && !r.placed.includes(down) && !done ? "Lay Twig's card first" : "Lay the reading";
+      if (!heir) { askBtn.hidden = false; askBtn.disabled = askLeft <= 0 || done; askBtn.textContent = `Ask Pell · ${askLeft}`; }
+      else if (heir.who === "hollow") { askBtn.hidden = false; askBtn.disabled = redeals <= 0 || done; askBtn.textContent = `Redeal · ${redeals}`; }
+      else askBtn.hidden = true;
     }
+    const BY_SIGIL_KEY = (reading) => Object.keys(BY_SIGIL).find((k) => BY_SIGIL[k] === reading);
     const cap = (s) => s[0].toUpperCase() + s.slice(1);
 
     let landed = null;
@@ -329,14 +474,15 @@ export default {
       renderHand();
       const n = Object.values(slots).filter(Boolean).length;
       if (n === 1 && ev === 0) pellSays("He taps the card's edge twice. “A card means what we do after it.”");
-      if (n === 3 && !turned) pellSays("“Before you lay it: the Backyard card is yours to turn, not mine.”");
+      if (n === 3 && !turned && ev < 2) pellSays("“Before you lay it: the Backyard card is yours to turn, not mine.”");
+      if (n === 3 && !turned && ev === 2) pellSays("waits. He can hear that you have not turned your card.");
     }
     function unplace(c) {
       for (const k in slots) if (slots[k] === c) { slots[k] = null; hand.push(c); }
       selected = null; renderHand();
     }
     const inSlot = (c) => Object.values(slots).includes(c);
-    const pellSays = (t, who = "Pell") => { pellEl.textContent = (who ? who + ": " : "") + t; };
+    const pellSays = (t, who) => { const w = who === undefined ? (heir ? heir.name : "Pell") : who; pellEl.textContent = (w ? w + ": " : "") + t; };
 
     // ---- drag and tap ----
     let drag = null;
@@ -391,19 +537,36 @@ export default {
     function turn() {
       if (turned || done) return; turned = true;
       bk.classList.add(P + "up"); bk.removeAttribute("role"); bk.tabIndex = -1;
-      const art = E.key === "beetle"
-        ? `<ellipse cx="40" cy="70" rx="15" ry="9" fill="#222"/><circle cx="25" cy="68" r="5" fill="#222"/><path d="M28 76 l-6 7 M40 78 l0 8 M52 76 l6 7" stroke="#222" stroke-width="1.5"/>`
-        : `<path d="M10 104 Q14 84 22 72 M24 104 Q26 82 36 70 M40 104 Q42 84 52 74 M56 104 Q58 86 66 76" stroke="#3e7a2e" stroke-width="2.4" fill="none"/><path d="M8 52 Q30 44 52 52 T76 50 M14 62 Q34 56 54 62" stroke="#7aa0c0" stroke-width="1.6" fill="none"/>`;
-      bk.innerHTML = `<svg viewBox="0 0 80 116" style="width:100%;height:100%"><rect x="2" y="2" width="76" height="112" fill="#e6f0dc" rx="4"/><rect x="2" y="78" width="76" height="36" fill="#8fbf6a"/>
-${art}<text x="40" y="20" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#222">${E.cause[0]}</text><text x="40" y="31" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#222">${E.cause[1]}</text>
-<rect x="52" y="92" width="24" height="20" rx="3" fill="#fbf3df" stroke="#333" stroke-width=".6"/><g transform="translate(64 102) scale(.8)">${SUIT_SVG[E.fit]}</g><text x="48" y="106" text-anchor="end" font-family="sans-serif" font-size="8" fill="#222">fits</text></svg>`;
-      $("help").textContent = `The real cause, drawn plain. The suit in its corner, ${SUITS[E.fit].name}, fits it. The people never see this card.`;
+      const id = E.key === "pulse" ? "backyard-blank" : "backyard-" + E.key;
+      if (art.has(id)) bk.innerHTML = `<img src="${art.url(id)}" alt="${E.cause ? "The Backyard card: " + E.cause.join(" ") : "The Backyard card, blank"}">`;
+      else {
+        const pic = E.key === "beetle"
+          ? `<ellipse cx="40" cy="70" rx="15" ry="9" fill="#222"/><circle cx="25" cy="68" r="5" fill="#222"/><path d="M28 76 l-6 7 M40 78 l0 8 M52 76 l6 7" stroke="#222" stroke-width="1.5"/>`
+          : E.key === "wind" ? `<path d="M10 104 Q14 84 22 72 M24 104 Q26 82 36 70 M40 104 Q42 84 52 74 M56 104 Q58 86 66 76" stroke="#3e7a2e" stroke-width="2.4" fill="none"/><path d="M8 52 Q30 44 52 52 T76 50 M14 62 Q34 56 54 62" stroke="#7aa0c0" stroke-width="1.6" fill="none"/>` : "";
+        bk.innerHTML = E.cause ? `<svg viewBox="0 0 80 116" style="width:100%;height:100%"><rect x="2" y="2" width="76" height="112" fill="#e6f0dc" rx="4"/><rect x="2" y="78" width="76" height="36" fill="#8fbf6a"/>
+${pic}<text x="40" y="20" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#222">${E.cause[0]}</text><text x="40" y="31" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#222">${E.cause[1]}</text></svg>`
+          : `<svg viewBox="0 0 80 116" style="width:100%;height:100%"><rect x="2" y="2" width="76" height="112" fill="#efe9dc" rx="4" stroke="#bdb6a6"/></svg>`;
+      }
+      if (E.key === "pulse") {
+        $("help").textContent = "You looked up, as always. A dark yard, one lit window, nothing moving. The card is blank. For the first time you know no more than Pell does.";
+        pellSays("feels you hesitate. “Then for once we are holding the same hand.”");
+        api.store.set("blank", true);
+      } else if (E.key === "shadow") {
+        $("help").textContent = `The real cause, drawn plain: ${E.cause.join(" ")}. No suit fits it, and no reading of yours can tell them.`;
+      } else $("help").textContent = `The real cause, drawn plain: ${E.cause.join(" ")}. The suit in its corner, ${SUITS[E.fit].name}, fits it. The people never see this card.`;
       renderPreview();
     }
     on(bk, "click", turn);
     on(bk, "keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); turn(); } });
     function ask() {
-      if (done || askLeft <= 0) return;
+      if (done) return;
+      if (heir) {
+        if (heir.who !== "hollow" || redeals <= 0) return;
+        redeals--; const keep = heir; deal(); heir = keep; renderHand();
+        pellSays("gathers the cards without a word and deals five more.", "Hollow");
+        return;
+      }
+      if (askLeft <= 0) return;
       // Pell's notch-reading: the hand card that would most raise the event's own suit, into the first empty slot
       const empty = ["root", "branch", "crown"].filter((k) => !slots[k]);
       if (!empty.length || !hand.length) { pellSays("“The table is full. Take one back first.”"); return; }
@@ -423,55 +586,95 @@ ${art}<text x="40" y="20" text-anchor="middle" font-family="sans-serif" font-siz
       if (map[k]) { if (selected) place(selected, map[k]); else pellSays("“Which card? Pick one with its number.”"); }
       if (k === "y") turn();
       if (k === "p") ask();
+      if (k === "f" && shown.length) swap(0);
+      if (k === "g" && shown.length) swap(1);
       if (e.key === "Enter" && !layBtn.disabled && !(document.activeElement && document.activeElement.closest && document.activeElement.closest("button,[role=button]," + "." + P + "card"))) lay();
     });
 
+    // ---- between the spreads ----
+    function card(html, btnLabel, go) {
+      const el = document.createElement("div");
+      el.className = P + "intro";
+      el.innerHTML = `<div class="${P}leaf" role="dialog">${html}<button class="${P}lay" type="button">${btnLabel}</button></div>`;
+      wrap.appendChild(el);
+      const b = el.querySelector("button");
+      on(b, "click", () => { el.remove(); go(); });
+      b.focus({ preventScroll: true });
+    }
+    function nextSpread() { ev++; deal(); setupHead(); pellEl.textContent = ""; renderHand(); handEl.querySelector("." + P + "card")?.focus(); }
+    function chooseHeir() {
+      const n = { eye: 0, spear: 0, quill: 0 };
+      for (const x of readings) if (x.r.policy) n[x.r.policy]++;
+      const top = Object.keys(n).sort((a, b) => n[b] - n[a])[0];
+      return n[top] >= 2 ? HEIRS[{ eye: "hollow", spear: "burr", quill: "fenn" }[top]] : HEIRS.twig;
+    }
+
     function lay() {
-      const r = reading(); if (r.n < 3 || done) return;
+      const r = reading(); if (r.n < 3 || done || (down && !r.placed.includes(down))) return;
       done = true;
       for (const k in rope) rope[k] += r.delta[k];
       morale += r.morale;
       readings.push({ ev: E, r, crown: slots.crown.name, turned });
-      renderPreview();
-      api.store.set("last", { event: E.key, meaning: r.meaning, policy: r.policy || (r.balanced ? "balanced" : null), monster: r.monster });
+      renderHand();
+      api.store.set("last", { event: E.key, meaning: r.meaning, policy: r.policy || (r.balanced ? "balanced" : null), monster: r.monster, shadow: r.shadow });
+      const wait = api.reducedMotion ? 600 : 1700;
       if (ev === 0) {
         pellSays(r.fit ? "“A trial. Yes. Lash the towers.” He does not know why it will work. It will." : "“So it is written.” He sets the cards back in the deck, in order.");
-        later(() => {
-          const card = document.createElement("div");
-          card.className = P + "intro";
-          card.innerHTML = `<div class="${P}leaf" role="dialog" aria-label="The Beetle"><div class="${P}init">B</div><h2>The Beetle</h2>
+        later(() => card(`${kit.mark(art, "burr", "Captain Burr")}<div class="${P}init">B</div><h2>The Beetle</h2>
 <p class="${P}beat">The wind has hardly dropped when a runner from Splinterwatch falls through the door. Something as big as a city is climbing from the Under. Captain Burr, at the window: “Small ones we fight. Big ones we bow to. Middling ones, we ask the Knot.”</p>
 <p class="${P}goal">This reading decides it. A <b>Spear</b> policy makes the Beetle a <b>monster</b>, fought at the barricades. Anything else makes it a <b>god</b>, to be escorted. Lives depend on which.</p>
-<div class="${P}key"><kbd>Y</kbd><span>turn the Backyard card: see the real cause</span><kbd>Ask Pell · P</kbd><span>once a spread, he names a card and a slot</span></div>
-<button class="${P}lay" type="button">Lay out the second spread</button></div>`;
-          wrap.appendChild(card);
-          const b = card.querySelector("button");
-          on(b, "click", () => { card.remove(); ev = 1; deal(); setupHead(); pellEl.textContent = ""; renderHand(); handEl.querySelector("." + P + "card")?.focus(); });
-          b.focus();
-        }, api.reducedMotion ? 600 : 1700);
-        return;
+<div class="${P}key"><kbd>Y</kbd><span>turn the Backyard card: see the real cause</span><kbd>Ask Pell · P</kbd><span>once a spread, he names a card and a slot</span></div>`, "Lay out the second spread", nextSpread), wait);
+      } else if (ev === 1) {
+        if (r.monster) pellSays("Burr is already buckling his helmet.", ""); else pellSays("“Then we bow, and we get out of its way.”");
+        const [w, b] = readings;
+        const wall = art.has("saying-wall") ? `<div class="${P}wall">${kit.chapter(art, "saying-wall", false)}<i style="top:14%">${w.crown}.</i><i style="top:40%">${b.crown}.</i></div>` : "";
+        later(() => card(`${kit.chapter(art, "chapter-4-autumn")}${art.has("thread-own") ? `<img class="${P}thread" src="${art.url("thread-own")}" alt="A knock, answered from the other side of a wall" width="104" height="104">` : `<div class="${P}init">P</div>`}<h2>The Pulse</h2>${wall}
+<p class="${P}beat">Autumn. Your two sayings are on the wall with Pell's own: “${w.crown}” and “${b.crown}.” Then one night something wakes Highridge. Not the dawn tremor. A small steady tapping, from no face of the Trunk, because it comes from inside. The Knot calls it the Trunk's Pulse and lays out a spread.</p>
+<p class="${P}goal">The event card has <b>no suit</b>: only your three cards give it a meaning. Look up, as you always do, and turn the Backyard card.</p>`, "Lay out the night spread", nextSpread), wait);
+      } else if (ev === 2) {
+        pellSays(r.policy === "eye" ? "“Holy, then. And we do not ask it questions.”" : r.policy === "quill" ? "“Write it, Fenn. Even without a face.”" : r.policy === "spear" ? "“A watch on a wall. Burr will like that less than he thinks.”" : "“All of us, then. Good. I would not want to answer this one alone.”");
+        api.store.set("pulse", { policy: r.policy || "balanced", meaning: r.meaning, sawBlank: turned });
+        later(() => {
+          heir = chooseHeir(); leading = lead(); redeals = heir.who === "hollow" ? 1 : 0; swaps = 0;
+          const why = heir.who === "twig" ? "No house answered the year twice, so the deck went to the one who asks “and then what?”" : `${cap(SIGILS[heir.sigil])} answered the year more than once, and Pell's last reading left the deck there.`;
+          card(`<div class="${P}two">${kit.chapter(art, "chapter-5-winter")}${kit.chapter(art, "chapter-6-the-shadow")}</div><div class="${P}who">${kit.mark(art, heir.who, heir.name)}<span><b>${heir.name} has the deck</b>${heir.line}</span></div>
+<p class="${P}beat">Twig, at the door, of the tapping: “Is it knocking to come in, or knocking to see who's home?” Nobody answers. Winter comes. Elder Pell dies in the frost, of age, as his leaf said he would. ${why}</p>
+<p class="${P}goal"><b>An honest deal.</b> Pell dealt by the notches, and a card of the event's suit was always in your hand. No one else can. ${heir.rule}</p>
+${yearStrip([["leaf", "The Leaf: autumn"], ["song", "The Birdsong: a small bird"], ["year", "The Year: Pell's last reading"]])}
+<p class="${P}beat">Then the world goes dark. ${leading ? `${cap(SIGILS[leading])} lead${leading === "spear" ? "" : "s"} the year (★): two of its sigil lays its own reading of the Shadow.` : "No house leads the year by 12: whatever is laid, the Shadow will be read as a trial."}</p>`, "Lay out the last spread", nextSpread);
+        }, wait);
+      } else {
+        const twigWas = down ? ` Twig's card turns over: ${down.name}.` : "";
+        pellSays((r.shadow === "enemy" ? "“Battlements!”" : r.shadow === "habit" ? "“Stakes and string. We measure it.”" : r.shadow === "offering" ? "“Pour it. All of it.”" : "“Chant. Stand. Record.”") + twigWas, heir.who === "hollow" ? "The city" : heir.name);
+        later(finish, api.reducedMotion ? 300 : 1500);
       }
-      if (r.monster) pellSays("Burr is already buckling his helmet.", ""); else pellSays("“Then we bow, and we get out of its way.”");
-      later(finish, api.reducedMotion ? 300 : 1200);
     }
     function finish() {
-      const [w, b] = readings;
+      const [w, b, pu, sh] = readings;
       const ch = Object.entries(rope).map(([k, v]) => `${INST[k]} ${v}`).join(", ");
-      const windTxt = `The wind was read as ${SUITS[w.r.meaning].belief}${w.r.fit ? ", which fits the gust: the towers are lashed and the next storm does no harm" : ""}.`;
-      const beast = b.r.monster ? "The Beetle is read as a monster: the warriors will hold the crack" : "The Beetle is read as a god: it will be escorted";
-      const bfit = b.r.fit ? (b.r.monster ? " The meaning fits the real cause, so its will is a line shorter to drain." : " The meaning fits the real cause: it passes with no losses.") : "";
-      const kinds = [w, b].map((x) => x.r.clear ? "clear" : x.r.bold ? "bold" : null).filter(Boolean);
-      const unturned = [w, b].filter((x) => !x.turned).length;
-      api.end({ outcome: "done", text: `${windTxt} ${beast}.${bfit} Painted on the ridge: “${w.crown}” and “${b.crown}.” The rope stands at ${ch}${morale ? `; morale ${morale > 0 ? "+" : "−"}${Math.abs(morale)}` : ""}${kinds.length ? ` (${kinds.join(" and ")} reading${kinds.length > 1 ? "s" : ""})` : ""}.${unturned ? ` You left ${unturned === 2 ? "both Backyard cards" : "one Backyard card"} face down.` : ""}` });
+      const beast = b.r.monster ? "the Beetle was fought as a monster" : "the Beetle was escorted as a god";
+      const fits = [w, b].filter((x) => x.r.fit).length;
+      const unturned = readings.filter((x) => !x.turned).length;
+      const pulse = pu.turned ? "On the night of the Pulse your card came up blank, and you read it knowing no more than they did." : "On the night of the Pulse you did not look up.";
+      const s = sh.r.shadow;
+      const ends = {
+        trial: "The Shadow is read as a trial. The priests chant, the warriors stand, the scholars record, and the Shadow passes. “Even the smallest world is a universe to the ones who live in it.”",
+        offering: "The Shadow is read as a hungry god, and the Knot pours out everything the city has. The Shadow passes. “Even the smallest world is a universe to the ones who live in it.”",
+        enemy: "The Shadow is read as an enemy, and the Battlements go up the wall to meet it. The War on the God.",
+        habit: "The Shadow is read as a thing with a habit, and the Scroll House walks to its edge with stakes and string. The Edge of the World.",
+      };
+      const names = { trial: "THE SHADOW PASSES · AS WRITTEN", offering: "THE SHADOW PASSES · AS WRITTEN", enemy: "THE WAR ON THE GOD", habit: "THE EDGE OF THE WORLD" };
+      const text = `${ends[s]} ${heir.name} dealt the last hand honestly. Over the year: the wind was ${SUITS[w.r.meaning].belief}, ${beast}${fits ? ` (${fits} reading${fits > 1 ? "s" : ""} fitted the real cause)` : ""}. ${pulse} The rope stands at ${ch}${morale ? `; morale ${morale > 0 ? "+" : "−"}${Math.abs(morale)}` : ""}.${unturned ? ` Backyard cards left face down: ${unturned}.` : ""}`;
+      endEl = kit.endCard(root, api, SHADOW[s].end, { outcome: "done", text }, `<b>${names[s]}</b>Painted on the ridge: “${w.crown}”, “${b.crown}”, “${pu.crown}”, “${sh.crown}.”`);
     }
+    let endEl = null;
     on(layBtn, "click", lay);
     const startBtn = wrap.querySelector(`.${P}intro .${P}lay`);
     on(startBtn, "click", () => { wrap.querySelector("." + P + "intro").remove(); pellSays("“The Trunk does not shout twice. Write it down.”"); handEl.querySelector("." + P + "card")?.focus(); });
-    startBtn.focus();
+    startBtn.focus({ preventScroll: true });
     setupHead();
     renderHand();
-    wrap._test = { get hand() { return hand; }, get ev() { return ev; } };
 
-    return { unmount() { timers.forEach(clearTimeout); offs.forEach((f) => f()); ro.disconnect(); wrap.remove(); } };
+    return { unmount() { timers.forEach(clearTimeout); offs.forEach((f) => f()); ro.disconnect(); if (endEl) endEl.remove(); wrap.remove(); } };
   },
 };

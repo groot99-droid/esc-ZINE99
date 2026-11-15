@@ -10,6 +10,11 @@ DARK, EDGE, BOARD, BOARD_D = "#2e1f15", "#140d08", "#8c6a48", "#7a5a3c"
 CREAM = "#f7ecd2"
 
 
+UP = ["11111", "11011", "10111", "11111", "11101", "11111", "11111", "00000"]
+RIGHT = ["0011", "0101", "1000", "1110", "0111", "1001", "0010", "1101"]
+KNOTS = [(1, 2), (3, 3), (0, 5), (4, 5)]
+
+
 def ground(a):
     a.rect(0, 0, a.w, a.h, fill="#24170f")
     a.paper(DARK, grain=0.25, fibre=0.5)
@@ -54,28 +59,19 @@ def board(a: Art):
     a.grid(bx, by, COLS * C, ROWS * C, C, stroke=kit.UMBER, stroke_width=1.4)
     a.rect(bx, by + (ROWS - 1) * C, COLS * C, C, fill=kit.SAGE, opacity=0.3)
     a.rect(bx, by, COLS * C, C, fill=kit.GOLD, opacity=0.3)
-    # open cracks: a spanning tree plus extras
-    edges, seen = set(), {(0, 0)}
-    frontier = [((0, 0), (1, 0)), ((0, 0), (0, 1))]
-    while frontier:
-        p, q = frontier.pop(r.randrange(len(frontier)))
-        if q in seen:
-            continue
-        seen.add(q)
-        edges.add((p, q) if p < q else (q, p))
-        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
-            c = (q[0] + dx, q[1] + dy)
-            if 0 <= c[0] < COLS and 0 <= c[1] < ROWS and c not in seen:
-                frontier.append((q, c))
-    for i in range(COLS):
-        for j in range(ROWS):
-            for c in ((i + 1, j), (i, j + 1)):
-                if c[0] < COLS and c[1] < ROWS and r.random() < 0.34:
-                    edges.add(((i, j), c))
+    # open cracks: the festival board the web game plays on (web/games/people-of-the-bark/trunk-and-shadow.js
+    # carries the same two tables). UP[j][i]: square (i, j) opens upward; RIGHT[j][i]: it opens to the right.
+    edges = set()
+    for j in range(ROWS):
+        for i in range(COLS):
+            if UP[j][i] == "1":
+                edges.add(((i, j), (i, j + 1)))
+            if i < COLS - 1 and RIGHT[j][i] == "1":
+                edges.add(((i, j), (i + 1, j)))
 
     def ctr(c):
         return bx + c[0] * C + C / 2, by + (ROWS - 1 - c[1]) * C + C / 2
-    knots = {(0, 3), (4, 2), (2, 5), (3, 6)}
+    knots = set(KNOTS)
     for c in knots:
         x, y = ctr(c)
         a.rect(x - C / 2 + 4, y - C / 2 + 4, C - 8, C - 8, fill=kit.UMBER)

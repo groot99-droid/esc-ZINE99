@@ -5,11 +5,22 @@
 //                       Every fourth day, no dusk (it stays at the cache). 6 forecasts.
 // A forecast is correct when the day-part and face are right (or "none" is right); fine when the
 // strength is right too. Six of the nine correct and the scholars are vindicated.
+// Phase 1 (DESIGN "Accepted development"): in autumn the drum grows a fourth column in cold chalk grey, the
+// faceless row. Its marks come from no face of the Trunk; they are loud on sun days and faint on rain days.
+// The two faceless cells are forecast by strength alone and do not count toward the nine. Each one placed
+// shades a plate on the Pulse map (the long puzzle's first step); both right completes the map, which then
+// shows where the second tap will land (its last step, played here as one choice of plate).
+// Art (api.art): the glyph set and weather marks are cut from their sheets once into small images; the
+// chapter cards, Fenn's mark, the faceless-row scroll and the Pulse map strip are shown as they are.
 // Actions: mark a cell (face and strength, or none); Fenn's lamp (3 uses) lights every recorded day
 // with the same weather as the chosen forecast day; seal a page of forecasts. After two lost
 // sittings, Fenn underlines what each column usually holds (DESIGN 11.5 hints, standing 40+).
 
+import * as kit from "./_art.js";
+
 const PARTS = ["dawn", "noon", "dusk"];
+const PULSE = "pulse";   // the faceless column
+const CHALK = "#b9c2c4";
 const FACES = { E: { name: "east", ang: 0 }, S: { name: "south", ang: 90 }, W: { name: "west", ang: 180 }, N: { name: "north", ang: 270 } };
 const PHASES = [
   {
@@ -34,10 +45,16 @@ const PHASES = [
       if (part === "dusk") return day % 4 === 0 ? null : { face: "W", s: 1 };
       return null;
     },
-    cells: [[15, "dawn"], [15, "noon"], [15, "dusk"], [16, "dawn"], [16, "noon"], [16, "dusk"]],
+    cells: [[15, "dawn"], [15, "noon"], [15, "dusk"], [15, PULSE], [16, "dawn"], [16, "noon"], [16, "dusk"], [16, PULSE]],
+    pulse: true,
+    // the faceless row follows warmth: loud on sun days, faint on rain days
+    pulseAt(day) { return { s: this.weather[day - 1] === "sun" ? 3 : 1 }; },
   },
 ];
 const WIN_AT = 6;
+// The Pulse map (art/src/70_tremor_scroll.py): 4 plates across, 13 down, in a 420 x 1100 strip.
+const MAP = { x0: 110, y0: 96, cw: 62, ch: 70, cols: 4, rows: 13, w: 420, h: 1100, tap: [2, 6],
+  fenn: [[1, 5], [2, 5], [1, 6], [1, 7], [0, 6], [2, 7], [3, 7]], mine: [[3, 6], [3, 5]] };
 const TRACE = "#efe2c4", GOLD = "#f0c050", AMBER = "#d9902a", RED = "#e0573a", LIME = "#c4d65a", MUTED = "#c9b99a", DRUM = "#141010";
 
 export default {
@@ -48,6 +65,9 @@ export default {
     const timers = [];
     const later = (f, ms) => timers.push(setTimeout(f, ms));
     let raf = 0;
+    const art = api.art || { has: () => false, url: () => "", info: () => null };
+    const urls = [];
+    let ART = null, dead = false;
     const losses = api.store.get("losses", 0);
     const gentle = losses >= 2;
 
@@ -56,6 +76,9 @@ export default {
     const results = []; // per phase: [{ok, fine}]
     const phase = () => PHASES[ph];
     const startPhase = (i) => { ph = i; guess = phase().cells.map(() => null); cur = 0; sealed = false; revealT = 0; lampDay = null; marks = 0; };
+    const truthOf = (d, p) => (p === PULSE ? phase().pulseAt(d) : phase().truth(d, p));
+    const isP = (i) => phase().cells[i][1] === PULSE;
+    let faceless = 0, saidFaceless = false;
     startPhase(0);
 
     const wrap = document.createElement("div");
@@ -72,7 +95,23 @@ export default {
 .${P}ttl small{font:13px ui-monospace,monospace;letter-spacing:.16em;color:${MUTED};margin-left:8px}
 .${P}score{font:13px ui-monospace,monospace;letter-spacing:.1em;color:${MUTED}}
 .${P}score b{color:${GOLD};font-weight:400}
-.${P}page>svg{width:100%;display:block;max-height:calc(100vh - 250px);min-height:300px}
+.${P}row{display:flex;gap:10px;align-items:center;min-width:0}
+.${P}row>svg{flex:1 1 auto;min-width:0;width:100%;display:block;max-height:calc(100vh - 250px);min-height:300px}
+.${P}map{flex:none;width:clamp(96px,11vw,140px);position:relative;line-height:0;margin:0;box-shadow:0 2px 0 #0d0805,0 0 0 1px #7a5a40}
+.${P}map img{width:100%;height:auto;display:block}
+.${P}map i,.${P}pick i{position:absolute;background:repeating-linear-gradient(35deg,rgba(93,103,106,.9) 0 1.5px,rgba(185,194,196,.55) 1.5px 5px);pointer-events:none}
+.${P}map i.${P}new{outline:2px solid ${GOLD}}
+.${P}map figcaption{font:11px/1.3 ui-monospace,monospace;letter-spacing:.08em;color:${CHALK};text-align:center;padding:4px 0 0}
+.${P}pick{position:relative;width:min(100%,230px);margin:0 auto 10px;line-height:0}
+@media (min-width:761px){.${P}pick{width:min(230px,max(170px,calc((100vh - 390px)*.382)))}}
+.${P}pick img{width:100%;height:auto;display:block}
+.${P}pick button{position:absolute;background:transparent;border:0;padding:0;cursor:pointer}
+.${P}pick button:hover,.${P}pick button:focus-visible{outline:3px solid ${AMBER};outline-offset:-2px;background:rgba(240,192,80,.3)}
+.${P}pick button.${P}hit{outline:3px solid ${LIME};background:rgba(196,214,90,.35)}
+.${P}pick button.${P}miss{outline:3px solid ${RED};background:rgba(224,87,58,.3)}
+.${P}who{display:flex;gap:10px;align-items:center;margin:0 0 6px}
+.${P}pic{display:block;width:100%;height:auto;margin:0 0 8px;border:1px solid #5a3d2b}
+.${P}slip{max-height:100%;overflow:auto}
 .${P}cell{cursor:pointer}
 .${P}cell:hover rect{stroke:${GOLD}}
 .${P}cell:focus{outline:none}
@@ -105,12 +144,13 @@ export default {
 @keyframes ${P}shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 .${P}bump{animation:${P}pop .35s}
 .${P}no{animation:${P}shake .3s}
-@media (max-width:560px){.${P}lab{min-width:0;width:100%}.${P}ttl{font-size:19px}.${P}page>svg{max-height:none}}
+@media (max-width:760px){.${P}map{display:none}}
+@media (max-width:560px){.${P}lab{min-width:0;width:100%}.${P}ttl{font-size:19px}.${P}row>svg{max-height:none}}
 @media (prefers-reduced-motion:reduce){.${P}bump,.${P}no{animation:none}}
 </style>
 <div class="${P}page">
  <div class="${P}top"><div class="${P}ttl">The Tremor Scroll<small></small></div><div class="${P}score" aria-live="polite"></div></div>
- <svg aria-label="The Tremor Scroll"></svg>
+ <div class="${P}row"><svg aria-label="The Tremor Scroll"></svg><figure class="${P}map" hidden></figure></div>
  <div class="${P}fenn" aria-live="polite"></div>
  <div class="${P}panel">
   <span class="${P}lab"></span>
@@ -121,7 +161,8 @@ export default {
  </div>
 </div>
 <div class="${P}intro"><div class="${P}slip" role="dialog" aria-label="How to play">
- <h2>Tremor Scroll</h2>
+ ${kit.chapter(art, "chapter-3-summer")}
+ <div class="${P}who">${kit.mark(art, "fenn", "Fenn of the Scroll House")}<h2>Tremor Scroll</h2></div>
  <svg viewBox="0 0 400 34" aria-hidden="true"><path d="M0 17 H120 l4 -9 l4 18 l4 -14 l4 10 l4 -5 H260 l3 -4 l3 8 l3 -4 H400" fill="none" stroke="${TRACE}" stroke-width="1.4"/></svg>
  <p class="${P}beat">The Scroll House, summer. Fenn has not slept. The drum has a line for every day the world shook, and the Battlements want to know when it will shake next.</p>
  <p class="${P}goal"><b>Goal:</b> forecast the blank cells. ${WIN_AT} of 9 right over two seasons and the scholars are believed.</p>
@@ -133,8 +174,9 @@ export default {
  <button class="${P}seal" type="button">Unroll the scroll</button>
 </div></div>`;
     root.appendChild(wrap);
+    kit.styles(wrap);
     const $ = (s) => wrap.querySelector("." + P + s);
-    const svg = wrap.querySelector(`.${P}page>svg`);
+    const svg = wrap.querySelector(`.${P}row>svg`), mapEl = $("map");
     const lab = $("lab"), fenn = $("fenn"), sealBtn = wrap.querySelector(`.${P}panel .${P}seal`), lampBtn = $("lamp"), scoreEl = $("score"), sub = wrap.querySelector(`.${P}ttl small`);
     const say = (who, text) => { fenn.innerHTML = (who ? `<b>${who}</b>` : "") + text; };
 
@@ -145,7 +187,9 @@ export default {
       const VW = narrow ? 440 : 860;
       const X0 = narrow ? 52 : 112, X1 = VW - (narrow ? 36 : 70);
       const span = X1 - X0;
-      G = { narrow, VW, X0, X1, XP: { dawn: X0 + span * 0.2, noon: X0 + span * 0.5, dusk: X0 + span * 0.8 }, Y0: 58, DY: narrow ? 34 : 33, F: narrow ? 13 : 13, CW: narrow ? 70 : 92 };
+      const four = !!phase().pulse;
+      G = { narrow, VW, X0, X1, XP: four ? { dawn: X0 + span * 0.13, noon: X0 + span * 0.38, dusk: X0 + span * 0.63, pulse: X0 + span * 0.88 } : { dawn: X0 + span * 0.2, noon: X0 + span * 0.5, dusk: X0 + span * 0.8 },
+        Y0: 58, DY: narrow ? 34 : 33, F: narrow ? 13 : 13, CW: narrow ? (four ? 64 : 70) : 92, TX: four ? X0 + span * 0.76 : X1 };
     }
     geom();
     const Yd = (d) => G.Y0 + (d - 1) * G.DY;
@@ -164,27 +208,46 @@ export default {
         const x = G.X0 + (G.X1 - G.X0) * i / n;
         if ((x - G.X0) / (G.X1 - G.X0) > upto) break;
         let dy = jitter[day - 1][i];
+        if (x > G.TX) break;
         const reach = G.narrow ? 18 : 30;
-        for (const b of bursts) { const d = Math.abs(x - b.x); if (d < reach) dy += Math.sin(i * 2.6) * (b.t.s * 4.6) * (1 - d / reach); }
+        if (!ART) for (const b of bursts) { const d = Math.abs(x - b.x); if (d < reach) dy += Math.sin(i * 2.6) * (b.t.s * 4.6) * (1 - d / reach); }
         pts.push(`${x.toFixed(1)},${(y + dy).toFixed(1)}`);
       }
       let s = pts.length > 1 ? `<polyline points="${pts.join(" ")}" fill="none" stroke="${lit ? GOLD : TRACE}" stroke-width="${lit ? 1.6 : 1.2}" opacity="${lit ? 1 : 0.88}"/>` : "";
-      for (const b of bursts) if ((b.x - G.X0) / (G.X1 - G.X0) <= upto) s += faceMark(b.x + (G.narrow ? 14 : 30), y, b.t.face, lit ? GOLD : TRACE, G.narrow ? 0.8 : 1);
+      for (const b of bursts) if ((b.x - G.X0) / (G.X1 - G.X0) <= upto) s += ART ? glyphArt(b.x, y, b.t.face, b.t.s, lit) : faceMark(b.x + (G.narrow ? 14 : 30), y, b.t.face, lit ? GOLD : TRACE, G.narrow ? 0.8 : 1);
+      if (phase().pulse && (G.XP.pulse - G.X0) / (G.X1 - G.X0) <= upto) s += ticks(G.XP.pulse, y, phase().pulseAt(day).s, day, lit ? "#e6eef0" : CHALK);
       return s;
+    }
+    // a cut of the glyph sheet: the burst, its face arrow and letter, and the strength strokes
+    function glyphArt(x, y, face, s, lit) {
+      const h = G.narrow ? 32 : 38, w = h * 202 / 110;
+      return `<image href="${ART.g[face + s]}" x="${(x - w * 0.45).toFixed(1)}" y="${(y - h / 2).toFixed(1)}" width="${w.toFixed(1)}" height="${h}" ${lit ? 'style="filter:sepia(1) saturate(4)"' : ""}/>`;
+    }
+    // the faceless marks: small chalk ticks with no arrow at all (the hand of art/documents/scroll-faceless-row)
+    function ticks(x, y, n, seed, col) {
+      let d = "";
+      const r = api.rng(900 + seed * 7 + n);
+      const k = n >= 3 ? 7 : n === 2 ? 4 : 2;
+      for (let i = 0; i < k; i++) d += `M${(x - 22 + r() * 40).toFixed(1)} ${(y - 8 + r() * 14).toFixed(1)} l4 -2.4 l-0.8 4 l4.8 -1.6`;
+      return `<path d="${d}" fill="none" stroke="${col}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`;
     }
     function weather(d) {
       const w = phase().weather[d - 1], y = Yd(d), x = G.narrow ? 20 : 84;
+      if (ART && ART.w[w]) return `<image href="${ART.w[w]}" x="${x - 12}" y="${y - 12}" width="24" height="24"/>`;
       if (w === "sun") return `<g transform="translate(${x} ${y})" stroke="#e7d6b0" fill="none" stroke-width="1.4"><circle r="4.5"/>${[0, 60, 120, 180, 240, 300].map((a) => `<path d="M0 -7 V-10" transform="rotate(${a})"/>`).join("")}</g>`;
       if (w === "rain") return `<g transform="translate(${x} ${y})" fill="#8ab4d4"><path d="M-4 -7 q3 4.5 0 7 q-3 -2.5 0 -7Z"/><path d="M4 -2 q3 4.5 0 7 q-3 -2.5 0 -7Z"/></g>`;
       return `<g transform="translate(${x} ${y})"><path d="M-5 -10 L2 -1 L-3 0 L4 10" stroke="${GOLD}" stroke-width="1.8" fill="none"/></g>`;
     }
-    function glyphFor(gs, x, y, col) {
+    function glyphFor(gs, x, y, col, pulse) {
+      if (pulse && gs && !gs.none) return ticks(x, y, gs.s, 77, col === GOLD ? "#e6eef0" : CHALK) + `<text x="${x + G.CW / 2 - 6}" y="${y + 11}" text-anchor="end" font-family="ui-monospace,monospace" font-size="11" fill="${CHALK}">${gs.s}</text>`;
+      if (ART && gs && !gs.none) return glyphArt(x, y, gs.face, gs.s, col === GOLD);
+      if (ART && gs && gs.none && ART.none) return `<image href="${ART.none}" x="${x - 11}" y="${y - 11}" width="22" height="22"/>`;
       if (!gs) return `<text x="${x}" y="${y + 6}" text-anchor="middle" font-family="IM Fell English,serif" font-size="19" fill="${col}" opacity=".7">?</text>`;
       if (gs.none) return `<text x="${x}" y="${y + 5}" text-anchor="middle" font-family="ui-monospace,monospace" font-size="15" fill="${col}">∅</text>`;
       const amp = gs.s * 3.6, w = G.narrow ? 12 : 18;
       return `<path d="M${x - w - 4} ${y} ${Array.from({ length: 7 }, (_, i) => `L${x - w + i * (w / 3)} ${y + (i % 2 ? -amp : amp) * (1 - Math.abs(i - 3) / 4)}`).join(" ")} L${x + w + 4} ${y}" stroke="${col}" stroke-width="1.6" fill="none"/>` + faceMark(x + w + (G.narrow ? 0 : 6), y, gs.face, col, 0.8);
     }
-    const ok = (gs, t) => !!gs && (gs.none ? !t : !!t && gs.face === t.face);
+    const ok = (gs, t, pulse) => !!gs && (gs.none ? !t : !!t && (pulse ? gs.s === t.s : gs.face === t.face));
     // the most common entry per column in the record (gentle hint)
     function usual(part) {
       const c = {};
@@ -200,6 +263,7 @@ export default {
 <filter id="${P}soot" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 .95  0 0 0 0 .85  0 0 0 .07 0"/></filter></defs>
 <rect x="${L}" y="30" width="${R - L}" height="${H - 8}" rx="10" fill="url(#${P}dr)"/><rect x="${L}" y="30" width="${R - L}" height="${H - 8}" rx="10" filter="url(#${P}soot)"/>
 <rect x="${L - 10}" y="24" width="12" height="${H + 4}" rx="5" fill="#6b4a33"/><rect x="${R - 2}" y="24" width="12" height="${H + 4}" rx="5" fill="#6b4a33"/>`;
+      if (PH.pulse) s += `<rect x="${G.XP.pulse - G.CW / 2 - 4}" y="34" width="${G.CW + 8}" height="${H - 16}" fill="${CHALK}" opacity=".07"/><text x="${G.XP.pulse}" y="20" text-anchor="middle" font-family="ui-monospace,monospace" font-size="${G.F}" letter-spacing="${G.narrow ? 1 : 3}" fill="${CHALK}">NO FACE</text>`;
       for (const p of PARTS) {
         s += `<text x="${G.XP[p]}" y="20" text-anchor="middle" font-family="ui-monospace,monospace" font-size="${G.F}" letter-spacing="3" fill="${MUTED}">${p.toUpperCase()}</text><line x1="${G.XP[p]}" y1="38" x2="${G.XP[p]}" y2="${Yd(PH.days) + 20}" stroke="${MUTED}" stroke-width=".6" opacity=".2"/>`;
         if (gentle) s += `<text x="${G.XP[p]}" y="${Yd(PH.first) - G.DY / 2 - 4}" text-anchor="middle" font-family="ui-monospace,monospace" font-size="${G.F - 1}" fill="${LIME}">usually ${usual(p).replace("none", "∅")}</text>`;
@@ -217,14 +281,15 @@ export default {
       s += `<line x1="${L + 8}" y1="${Yd(PH.first) - G.DY / 2}" x2="${R - 8}" y2="${Yd(PH.first) - G.DY / 2}" stroke="${AMBER}" stroke-width="1.2" stroke-dasharray="6 4"/>
 ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-anchor="end" font-family="ui-monospace,monospace" font-size="${G.F - 2}" letter-spacing="2" fill="${AMBER}">FORECAST</text>`}`;
       PH.cells.forEach(([d, p], i) => {
-        const x = G.XP[p], y = Yd(d), t = PH.truth(d, p), gs = guess[i], sel = i === cur && !sealed;
+        const pulse = p === PULSE;
+        const x = G.XP[p], y = Yd(d), t = truthOf(d, p), gs = guess[i], sel = i === cur && !sealed;
         let verdict = "";
         if (sealed && revealT >= 1) {
-          const good = ok(gs, t);
+          const good = ok(gs, t, pulse);
           verdict = `<g class="${P}bump" style="transform-box:fill-box;transform-origin:center"><circle cx="${x - G.CW / 2 - 12}" cy="${y}" r="10" fill="${good ? LIME : RED}"/><text x="${x - G.CW / 2 - 12}" y="${y + 5}" text-anchor="middle" font-family="ui-monospace,monospace" font-size="14" fill="${DRUM}">${good ? "✓" : "✗"}</text></g>`;
         }
-        s += `<g class="${P}cell" data-i="${i}" tabindex="${sealed ? -1 : 0}" role="button" aria-label="Day ${d} ${p}${gs ? (gs.none ? ", none" : `, ${FACES[gs.face].name} ${gs.s}`) : ", blank"}"><rect x="${x - G.CW / 2}" y="${y - 15}" width="${G.CW}" height="30" rx="4" fill="${sel ? "rgba(240,192,80,.22)" : "rgba(239,226,196,.06)"}" stroke="${sel ? GOLD : "#8a7864"}" stroke-width="${sel ? 2.2 : 1}"/>${sealed ? "" : glyphFor(gs, x, y, sel ? GOLD : "#e7d6b0")}</g>${verdict}`;
-        if (sealed) s += `<g opacity=".6">${glyphFor(gs, x, y + 11, GOLD)}</g>`;
+        s += `<g class="${P}cell" data-i="${i}" tabindex="${sealed ? -1 : 0}" role="button" aria-label="Day ${d} ${pulse ? "no face" : p}${gs ? (gs.none ? ", none" : pulse ? `, strength ${gs.s}` : `, ${FACES[gs.face].name} ${gs.s}`) : ", blank"}"><rect x="${x - G.CW / 2}" y="${y - 15}" width="${G.CW}" height="30" rx="4" fill="${sel ? "rgba(240,192,80,.22)" : "rgba(239,226,196,.06)"}" stroke="${sel ? GOLD : pulse ? CHALK : "#8a7864"}" stroke-width="${sel ? 2.2 : 1}"/>${sealed ? "" : glyphFor(gs, x, y, sel ? GOLD : "#e7d6b0", pulse)}</g>${verdict}`;
+        if (sealed && !pulse && !ART) s += `<g opacity=".6">${glyphFor(gs, x, y + 11, GOLD)}</g>`;
       });
       // the stylus arm: parked at the side until the drum turns
       const pivot = G.narrow ? G.VW - 14 : R + 30;
@@ -240,24 +305,51 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
     function pick(i) {
       if (sealed) return;
       cur = i; panel(); draw();
+      if (isP(i) && !saidFaceless) { saidFaceless = true; say("Fenn", "lowers her voice. “That column is mine. The House does not record a mark with no face. Strength only: faint, or loud, or nothing.”"); }
       const c = svg.querySelector(`[data-i="${i}"]`); c && c.focus({ preventScroll: true });
     }
     function panel() {
       const PH = phase(), [d, p] = PH.cells[cur], gs = guess[cur];
-      lab.innerHTML = `DAY ${d} · ${p.toUpperCase()}<small>${PH.weather[d - 1]} · cell ${cur + 1} of ${PH.cells.length}</small>`;
-      wrap.querySelectorAll("[data-f]").forEach((b) => { b.setAttribute("aria-pressed", String(!!gs && (gs.none ? b.dataset.f === "none" : b.dataset.f === gs.face))); b.disabled = sealed; });
-      wrap.querySelectorAll("[data-s]").forEach((b) => { b.setAttribute("aria-pressed", String(!!gs && !gs.none && gs.s === +b.dataset.s)); b.disabled = sealed || !gs || !!gs.none; });
+      const pulse = p === PULSE;
+      lab.innerHTML = `DAY ${d} · ${pulse ? "NO FACE" : p.toUpperCase()}<small>${PH.weather[d - 1]} · cell ${cur + 1} of ${PH.cells.length}${pulse ? " · strength only" : ""}</small>`;
+      wrap.querySelectorAll("[data-f]").forEach((b) => { b.setAttribute("aria-pressed", String(!!gs && (gs.none ? b.dataset.f === "none" : !pulse && b.dataset.f === gs.face))); b.disabled = sealed || (pulse && b.dataset.f !== "none"); });
+      wrap.querySelectorAll("[data-s]").forEach((b) => { b.setAttribute("aria-pressed", String(!!gs && !gs.none && gs.s === +b.dataset.s)); b.disabled = sealed || (!pulse && (!gs || !!gs.none)); });
       lampBtn.textContent = `lamp · ${lamps}`;
       lampBtn.disabled = sealed || lamps <= 0;
       const left = guess.filter((g) => !g).length;
       sealBtn.disabled = sealed || left > 0;
       sealBtn.textContent = left ? `${left} blank` : "Seal the forecast";
       sub.textContent = `${PH.title} · ${PH.cells.length} forecasts`;
-      scoreEl.innerHTML = `correct <b>${tally.correct}</b> / ${tally.made} · need ${WIN_AT} of 9`;
+      scoreEl.innerHTML = `correct <b>${tally.correct}</b> / ${tally.made} · need ${WIN_AT} of 9${PH.pulse ? ` · <span style="color:${CHALK}">faceless marks ${guess.filter((g, i) => isP(i) && g && !g.none).length} / 2</span>` : ""}`;
+      drawMap();
+    }
+    // ---- the Pulse map strip, from the back pages of Old Resin's recipe book ----
+    const plateBox = ([i, j]) => `left:${((MAP.x0 + i * MAP.cw + 4) / MAP.w * 100).toFixed(2)}%;top:${((MAP.y0 + j * MAP.ch + 4) / MAP.h * 100).toFixed(2)}%;width:${((MAP.cw - 8) / MAP.w * 100).toFixed(2)}%;height:${((MAP.ch - 8) / MAP.h * 100).toFixed(2)}%`;
+    function shaded(final) {
+      // Fenn's own plates, and one more for each faceless mark the player has placed (after the seal: each one right)
+      const out = MAP.fenn.map((q) => ({ q, mine: false }));
+      let k = 0;
+      PHASES[1].cells.forEach(([d, p], i) => {
+        if (p !== PULSE) return;
+        const gs = ph === 1 ? guess[i] : null, n = k++;
+        if (gs && !gs.none && (!final || ok(gs, PHASES[1].pulseAt(d), true))) out.push({ q: MAP.mine[n], mine: true });
+      });
+      return out;
+    }
+    let mapKey = "";
+    function drawMap() {
+      const show = ph === 1 && art.has("scroll-pulse-map-blank");
+      mapEl.hidden = !show;
+      if (!show) return;
+      const sh = shaded(sealed && revealT >= 1), key = sh.map((x) => x.q.join()).join(";");
+      if (key === mapKey) return;
+      mapKey = key;
+      mapEl.innerHTML = `<img src="${art.url("scroll-pulse-map-blank")}" alt="The Pulse map: a strip of the bark's plates">` + sh.map((x) => `<i class="${x.mine ? P + "new" : ""}" style="${plateBox(x.q)}"></i>`).join("") + `<figcaption>THE PULSE MAP</figcaption>`;
     }
     function flash(el, cls) { if (!el || api.reducedMotion) return; el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
     function setFace(f) {
       if (sealed) return;
+      if (isP(cur) && f !== "none") { flash(wrap.querySelector(`[data-f="${f}"]`), P + "no"); say("Fenn", "“It has no face. I gave it one twice, to make it fit. I scraped them off.”"); return; }
       const was = guess[cur];
       if (f === "none") guess[cur] = { none: true };
       else guess[cur] = { face: f, s: was && !was.none ? was.s : 1 };
@@ -269,6 +361,13 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
     }
     function setStr(n) {
       if (sealed) return;
+      if (isP(cur)) {
+        const was = guess[cur];
+        guess[cur] = { s: n }; if (!was) onMarked();
+        panel(); draw(); flash(wrap.querySelector(`[data-s="${n}"]`), P + "bump");
+        say("The Pulse map", "in the back of Resin's recipe book: a plate is shaded for the mark.");
+        advance(); return;
+      }
       if (!guess[cur] || guess[cur].none) { flash(wrap.querySelector(`[data-s="${n}"]`), P + "no"); say("Fenn", "Choose a face before a strength."); return; }
       guess[cur].s = n; panel(); draw(); flash(wrap.querySelector(`[data-s="${n}"]`), P + "bump");
       advance();
@@ -318,36 +417,84 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
     function score() {
       const PH = phase();
       let c = 0, f = 0;
-      PH.cells.forEach(([d, p], i) => { const t = PH.truth(d, p), gs = guess[i]; if (ok(gs, t)) { c++; if (!gs.none && t.s === gs.s) f++; } });
-      tally.correct += c; tally.fine += f; tally.made += PH.cells.length; results.push({ c, f, n: PH.cells.length });
+      let n = 0;
+      PH.cells.forEach(([d, p], i) => {
+        const gs = guess[i];
+        if (p === PULSE) { if (ok(gs, truthOf(d, p), true)) faceless++; return; }
+        n++;
+        const t = PH.truth(d, p); if (ok(gs, t)) { c++; if (!gs.none && t.s === gs.s) f++; }
+      });
+      tally.correct += c; tally.fine += f; tally.made += n; results.push({ c, f, n });
       panel();
       if (ph === 0) {
-        say("Fenn", c === PH.cells.length ? "“Dawn. East face. Strength two. Again.” She is almost smiling."
-          : c ? `${c} of ${PH.cells.length}. “Close. The storms keep it in. Write that down.”` : "“Nothing. Then we were reading the wrong thing.”");
+        say("Fenn", c === n ? "“Dawn. East face. Strength two. Again.” She is almost smiling."
+          : c ? `${c} of ${n}. “Close. The storms keep it in. Write that down.”` : "“Nothing. Then we were reading the wrong thing.”");
         later(() => {
           const card = document.createElement("div");
           card.className = P + "intro";
           card.innerHTML = `<div class="${P}slip" role="dialog" aria-label="Autumn">
- <h2>Autumn</h2><svg viewBox="0 0 400 34" aria-hidden="true"><path d="M0 17 H80 l3 -6 l3 12 l3 -6 H200 l4 -12 l4 24 l4 -18 l4 12 H320 l3 -4 l3 8 l3 -4 H400" fill="none" stroke="${TRACE}" stroke-width="1.4"/></svg>
+ ${kit.chapter(art, "chapter-4-autumn")}<h2>Autumn</h2>
  <p class="${P}beat">A leaf the size of a country has fallen past the Scroll House. The drum has turned on, and the tremors keep new hours: something now shakes the world at noon, every noon, from the north.</p>
- <p class="${P}goal">Six cells this time. ${tally.correct} right so far; ${WIN_AT} of 9 wins the sitting.</p>
- <div class="${P}key"><kbd>L</kbd><span>Fenn's lamp: light every day with the same weather as the cell you are on (${lamps} left)</span></div>
+ ${art.has("scroll-faceless-row") ? `<img class="${P}pic" src="${art.url("scroll-faceless-row")}" alt="A stretch of scroll: the recorded tremors above, and a row of small marks with no face below" width="1600" height="420">` : ""}
+ <p class="${P}beat">And under the hours Fenn has begun a row of her own, in chalk: small marks that come from no face of the Trunk at all.</p>
+ <p class="${P}goal">Six cells this time, and two in the <b style="color:${CHALK}">faceless</b> column. ${tally.correct} right so far; ${WIN_AT} of 9 wins the sitting. The faceless marks are not counted: they go on a map.</p>
+ <div class="${P}key"><kbd>L</kbd><span>Fenn's lamp: light every day with the same weather as the cell you are on (${lamps} left)</span><kbd>1 2 3 · 0</kbd><span>a faceless mark has no face: give its strength only, or none</span></div>
  <button class="${P}seal" type="button">Turn the drum</button></div>`;
           wrap.appendChild(card);
           const b = card.querySelector("button");
-          on(b, "click", () => { card.remove(); startPhase(1); panel(); draw(); say("Fenn", "“It is not a god. Or it is a god with a routine.”"); pick(0); });
-          b.focus();
+          on(b, "click", () => { card.remove(); startPhase(1); geom(); panel(); draw(); say("Fenn", "“It is not a god. Or it is a god with a routine.”"); pick(0); });
+          b.focus({ preventScroll: true });
         }, api.reducedMotion ? 600 : 1800);
-      } else finish();
+      } else {
+        say("Fenn", faceless === 2 ? "looks at the chalk column for a long time. “Warm days, loud. Cold days, faint. It answers us.”" : faceless ? "scrapes one chalk mark off the drum with her thumbnail, and leaves the other." : "scrapes both chalk marks off the drum. “Then it was my tired hand.”");
+        later(sounding, api.reducedMotion ? 600 : 2000);
+      }
+    }
+    // ---- the long puzzle's last step: where will the second tap land? ----
+    let tapRight = null;
+    function sounding() {
+      if (!art.has("scroll-pulse-map-blank")) { finish(); return; }
+      const complete = faceless === 2 && art.has("scroll-pulse-map");
+      const card = document.createElement("div");
+      card.className = P + "intro";
+      const cells = [];
+      for (let j = 0; j < MAP.rows; j++) for (let i = 0; i < MAP.cols; i++) cells.push(`<button type="button" data-i="${i}" data-j="${j}" aria-label="Plate ${i + 1} across, ${j + 1} down from the Crown" style="${plateBox([i, j])}"></button>`);
+      card.innerHTML = `<div class="${P}slip" role="dialog" aria-label="The Pulse map">
+ <h2>The Pulse map</h2>
+ <p class="${P}beat">${complete ? "Both chalk marks held. Fenn shades the last plates and the map closes on itself: the marks gather under Highridge, around one plate. She rings it." : `The map is ${faceless ? "one plate" : "two plates"} short. The shading gathers under Highridge, but nothing is ringed.`} If something ever knocks on the Trunk from outside, she says, it will knock three times, and the second knock will land where the wood is thinnest.</p>
+ <p class="${P}goal"><b>Choose the plate</b> the city should clear before then.${complete ? "" : " The marks lie all round it."}</p>
+ <div class="${P}pick"><img src="${art.url(complete ? "scroll-pulse-map" : "scroll-pulse-map-blank")}" alt="The Pulse map">${complete ? "" : shaded(true).map((x) => `<i style="${plateBox(x.q)}"></i>`).join("")}${cells.join("")}</div>
+ <p class="${P}beat ${P}res" aria-live="polite">Tap a plate, or move with the arrow keys and press Enter.</p></div>`;
+      wrap.appendChild(card);
+      const btns = [...card.querySelectorAll(`.${P}pick button`)];
+      const at = (i, j) => btns[j * MAP.cols + i];
+      let done = false;
+      btns.forEach((b) => {
+        on(b, "click", () => {
+          if (done) return; done = true;
+          tapRight = +b.dataset.i === MAP.tap[0] && +b.dataset.j === MAP.tap[1];
+          b.classList.add(P + (tapRight ? "hit" : "miss")); if (!tapRight) at(...MAP.tap).classList.add(P + "hit");
+          card.querySelector("." + P + "res").textContent = tapRight ? "Fenn nods once, and writes the plate's number on her wrist." : "Fenn shakes her head and touches another plate. “Here. I think. I am not sure.”";
+          api.store.set("map", { marks: faceless, plate: tapRight });
+          later(() => { card.remove(); finish(); }, api.reducedMotion ? 500 : 1600);
+        });
+        on(b, "keydown", (e) => {
+          const i = +b.dataset.i, j = +b.dataset.j;
+          const to = e.key === "ArrowRight" ? at(Math.min(MAP.cols - 1, i + 1), j) : e.key === "ArrowLeft" ? at(Math.max(0, i - 1), j) : e.key === "ArrowDown" ? at(i, Math.min(MAP.rows - 1, j + 1)) : e.key === "ArrowUp" ? at(i, Math.max(0, j - 1)) : null;
+          if (to) { e.preventDefault(); to.focus(); }
+        });
+      });
+      at(1, 5).focus({ preventScroll: true });
     }
     function finish() {
       const { correct, fine } = tally, scholars = correct * 2 + fine, won = correct >= WIN_AT;
       api.store.set("correct", correct);
       api.store.set("losses", won ? 0 : losses + 1);
       say("Fenn", won ? "quietly: “It keeps hours. Like us.”" : "turns the drum back and reads it again.");
+      const pulse = tapRight == null ? "" : ` The faceless row: ${faceless} of 2 marks held${faceless === 2 ? ", and the Pulse map is whole" : ""}. ${tapRight ? "The plate you chose is the one the second tap will find; the city has time to clear it." : "The second tap will land on a plate nobody cleared."} Nothing in the backyard explains that row.`;
       later(() => api.end(won
-        ? { outcome: "win", text: `${correct} of 9 forecasts right, ${fine} of them fine. The Scroll House +${scholars}. Fenn can now say when the world will shake, if not why. In the backyard, a squirrel keeps its hours.` }
-        : { outcome: "lose", text: `${correct} of 9 right; the Battlements laugh at the scribes, and the Scroll House gains only ${scholars}. The pattern was on the drum: dawn east, dusk west, nothing in storms; in autumn a noon from the north, rain days only noon, and every fourth dusk empty.${losses + 1 >= 2 ? " Next sitting, Fenn will underline what each column usually holds." : ""}` }), 1300);
+        ? { outcome: "win", text: `${correct} of 9 forecasts right, ${fine} of them fine. The Scroll House +${scholars}. Fenn can now say when the world will shake, if not why. In the backyard, a squirrel keeps its hours.${pulse}` }
+        : { outcome: "lose", text: `${correct} of 9 right; the Battlements laugh at the scribes, and the Scroll House gains only ${scholars}. The pattern was on the drum: dawn east, dusk west, nothing in storms; in autumn a noon from the north, rain days only noon, and every fourth dusk empty.${pulse}${losses + 1 >= 2 ? " Next sitting, Fenn will underline what each column usually holds." : ""}` }), 1300);
     }
     on(sealBtn, "click", seal);
     const startBtn = wrap.querySelector(`.${P}intro .${P}seal`);
@@ -356,13 +503,24 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
       say("Fenn", gentle ? "has underlined what each column usually holds. “Look at the dawns first.”" : "in the margin: “Look at the dawns first. Then look at the storms.”");
       pick(0);
     });
-    startBtn.focus();
+    startBtn.focus({ preventScroll: true });
+    // cut the sheets once: twelve glyphs, the none mark and the weather marks, as light-on-nothing images
+    (async () => {
+      if (!art.has("scroll-glyph-set")) return;
+      const out = { g: {}, w: {}, none: "" };
+      const cut = async (id, crop, w, h, floor) => { const u = await kit.blobUrl(kit.lumaAlpha(await kit.raster(art, id, w, h, crop), floor)); if (u) urls.push(u); return u; };
+      const faces = ["E", "S", "W", "N"];
+      for (let i = 0; i < 4; i++) for (let j = 0; j < 3; j++) out.g[faces[i] + (j + 1)] = await cut("scroll-glyph-set", [150 + i * 210 + 4, 120 + j * 118 + 4, 202, 110], 202, 110, 95);
+      out.none = await cut("scroll-glyph-set", [1069, 161, 60, 60], 60, 60, 95);
+      if (art.has("scroll-weather-marks")) { const ws = ["sun", "rain", "storm", "frost"]; for (let i = 0; i < 4; i++) out.w[ws[i]] = await cut("scroll-weather-marks", [118 + i * 188 - 52, 60, 104, 104], 72, 72, 110); }
+      if (dead) { urls.forEach((u) => URL.revokeObjectURL(u)); return; }
+      if (Object.values(out.g).every(Boolean)) { ART = out; draw(); }
+    })();
     let rw = 0;
     const ro = new ResizeObserver(() => { const w = wrap.getBoundingClientRect().width; if (Math.abs(w - rw) > 2) { rw = w; geom(); draw(); } });
     ro.observe(wrap);
     draw(); panel();
-    wrap._test = { get phase() { return ph; }, truth: (d, p) => phase().truth(d, p), cells: () => phase().cells };
 
-    return { unmount() { cancelAnimationFrame(raf); timers.forEach(clearTimeout); offs.forEach((f) => f()); ro.disconnect(); wrap.remove(); } };
+    return { unmount() { dead = true; urls.forEach((u) => URL.revokeObjectURL(u)); cancelAnimationFrame(raf); timers.forEach(clearTimeout); offs.forEach((f) => f()); ro.disconnect(); wrap.remove(); } };
   },
 };

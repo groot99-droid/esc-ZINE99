@@ -9,6 +9,12 @@
 // Actions: turn (click or 1–4), turn back (right-click, Shift, or the toggle), Pell's hand (a limited
 // hint: shows the best next turn), reset. Hovering a ring previews which rings it will move.
 
+// Art (api.art): each door's printed plate heads its card (the First Ring, the Deep Knot) and the Heartwood
+// Door closes the sitting; Pell's mark sits by his lines; the bark-song crack is drawn over the scar count;
+// the paper frame and the Long Crack divider dress the cards. The turning rings stay drawn by code: the
+// plates are still pictures and cannot turn.
+import * as kit from "./_art.js";
+
 const POS = 8;
 const BROWN = "#5a3d2b", DARK = "#3a281c", ORANGE = "#e8742a", AMBER = "#d9902a", PAPER = "#efe2c4", INK = "#2e2016", RED = "#b8402a";
 const DOORS = [
@@ -101,6 +107,13 @@ export default {
 .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(226,209,172,.94);z-index:4;padding:16px;overflow:auto}
 .${P}plate{max-width:460px;width:100%;box-sizing:border-box;background:#f6ecd4;border:2px solid ${BROWN};outline:1px solid ${BROWN};outline-offset:4px;padding:18px 22px;text-align:center;position:relative}
 .${P}plate svg{width:120px;height:120px;display:block;margin:0 auto 4px}
+.${P}plate{max-height:100%;overflow:auto}
+.${P}plate .${P}pic{display:block;width:min(100%,230px);height:auto;margin:8px auto 6px;border:1px solid ${BROWN}}
+.${P}picwrap{aspect-ratio:4/3;width:min(100%,250px);margin:8px auto 6px;background:center/100% 100% no-repeat;display:grid;place-items:center}
+.${P}picwrap .${P}pic{width:auto;height:72%;margin:0;border:0;box-shadow:0 1px 0 rgba(58,40,28,.4)}
+.${P}song{display:block;width:100%;height:auto;margin:10px 0 2px;border:1px solid ${DARK}}
+.${P}pellrow{display:flex;gap:8px;align-items:flex-start;margin-top:12px}
+.${P}pellrow .${P}pell{margin-top:0;flex:1}
 .${P}plate h2{margin:0;font-family:'IM Fell English',Georgia,serif;font-weight:400;font-size:28px;letter-spacing:.08em;text-transform:uppercase}
 .${P}plate .${P}sub{font:12px ui-monospace,monospace;letter-spacing:.24em;color:${RED};margin:2px 0 10px}
 .${P}plate .${P}beat{font-style:italic;font-size:17px;line-height:1.4;margin:0 0 10px}
@@ -115,14 +128,18 @@ export default {
  <div class="${P}left"><div class="${P}h ${P}name"></div>
   <div class="${P}lab">MOVES</div><div class="${P}big ${P}mv">00</div>
   <div class="${P}lab">PAR</div><div class="${P}big ${P}par">00</div>
+  ${api.art && api.art.has("ui-bark-song") ? `<img class="${P}song" src="${api.art.url("ui-bark-song")}" alt="" width="1200" height="140">` : ""}
   <div class="${P}scar" aria-live="polite"></div>
   <div class="${P}btns"><button class="${P}btn ${P}dir" type="button" aria-pressed="false" title="Shift">↺ turn back</button><button class="${P}btn ${P}hand" type="button" title="H"></button><button class="${P}btn ${P}reset" type="button" title="R">reset</button></div>
   <div class="${P}key"><kbd>tap / 1–4</kbd><span>turn a ring clockwise</span><kbd>right-click / ⇧</kbd><span>turn it back</span></div>
  </div>
  <div class="${P}door"><svg viewBox="-210 -230 420 440" aria-label="The knot door"></svg></div>
- <div class="${P}right"><div class="${P}h">CHRONICLE</div><div class="${P}chron"></div><div class="${P}pell" aria-live="polite"></div></div>
+ <div class="${P}right"><div class="${P}h">CHRONICLE</div><div class="${P}chron"></div><div class="${P}pellrow">${kit.mark(api.art, "pell", "Elder Pell")}<div class="${P}pell" aria-live="polite"></div></div></div>
 </div>`;
     root.appendChild(wrap);
+    kit.styles(wrap);
+    const art = api.art || { has: () => false, url: () => "", info: () => null };
+    let endEl = null;
     const $ = (s) => wrap.querySelector("." + P + s);
     const svg = wrap.querySelector("svg");
     const mvEl = $("mv"), parEl = $("par"), chron = $("chron"), pell = $("pell"), scarEl = $("scar"), nameEl = $("name");
@@ -249,7 +266,7 @@ ${ringsTexture(r0, r1, 11 + i * 7 + di * 50)}
         `${r.scars ? `The First Ring is open, with ${r.scars} scar${r.scars > 1 ? "s" : ""}.` : "The First Ring is open, clean."} Pell leads you down, under Knotholm, to an older door. The second ring here is stiff with age: it moves two steps for one push.`,
         `Line up four rings. Par is 9.`,
         `<kbd>H</kbd><span>Pell's hand: shows the best next turn (${hands} left)</span><kbd>R</kbd><span>reset: rings back as found, moves still count</span>`,
-        "Lay hands on the Deep Knot", () => setupDoor(1));
+        "Lay hands on the Deep Knot", () => setupDoor(1), "door-deep-knot");
     }
     function finish() {
       const total = record.reduce((a, r) => a + r.scars, 0), clean = record.filter((r) => !r.scars).length;
@@ -257,20 +274,24 @@ ${ringsTexture(r0, r1, 11 + i * 7 + di * 50)}
       api.store.set("losses", total ? losses + 1 : 0);
       const knot = clean * 4;
       const parts = record.map((r, i) => `${DOORS[i].short} in ${r.moves} (par ${r.par})`).join(", ");
-      api.end(total === 0
+      endEl = kit.endCard(root, api, "door-heartwood", total === 0
         ? { outcome: "win", text: `Both doors open on clean cuts: ${parts}. The Knot +${knot}. Pell runs his thumb along the Great Flake ring and says nothing for a long time.` }
-        : { outcome: "done", text: `Both doors open: ${parts}. The careless turns cost the bark ${total} point${total > 1 ? "s" : ""} of integrity${knot ? `; the clean door pleases the Knot, +${knot}` : ""}. The temples are open all the same.${losses + 1 >= 2 ? " Next time Pell will lend his hand more often." : ""}` });
+        : { outcome: "done", text: `Both doors open: ${parts}. The careless turns cost the bark ${total} point${total > 1 ? "s" : ""} of integrity${knot ? `; the clean door pleases the Knot, +${knot}` : ""}. The temples are open all the same.${losses + 1 >= 2 ? " Next time Pell will lend his hand more often." : ""}` },
+        "<b>DEEPER STILL · WINTER</b>The Heartwood Door: five rings, and the last the Knot will ask of your hands.");
     }
-    function plate(title, sub, beat, goal, keys, btn, go) {
+    function plate(title, sub, beat, goal, keys, btn, go, doorArt, chap) {
       const card = document.createElement("div");
       card.className = P + "intro";
       const rings = Array.from({ length: 7 }, (_, k) => `<circle r="${54 - k * 7}" fill="none" stroke="${BROWN}" stroke-width="${k % 2 ? 1 : 2.4}"/>`).join("");
-      card.innerHTML = `<div class="${P}plate" role="dialog" aria-label="${title}"><svg viewBox="-60 -60 120 120" aria-hidden="true">${rings}<path d="M-6 -54 L6 -54 L3 -40 L-3 -40Z" fill="${ORANGE}"/><path d="M0 -60 V0" stroke="${INK}" stroke-width="1.6"/></svg>
-<h2>${title}</h2><div class="${P}sub">${sub}</div><p class="${P}beat">${beat}</p><p class="${P}goal">${goal}</p><div class="${P}key">${keys}</div><button class="${P}go" type="button">${btn}</button></div>`;
+      const pic = doorArt && art.has(doorArt)
+        ? `<div class="${P}picwrap" ${art.has("ui-frame-paper") ? `style="background-image:url(${art.url("ui-frame-paper")})"` : ""}><img class="${P}pic" src="${art.url(doorArt)}" alt="${art.info(doorArt).title}, as the chronicle prints it" width="230" height="230"></div>`
+        : `<svg viewBox="-60 -60 120 120" aria-hidden="true">${rings}<path d="M-6 -54 L6 -54 L3 -40 L-3 -40Z" fill="${ORANGE}"/><path d="M0 -60 V0" stroke="${INK}" stroke-width="1.6"/></svg>`;
+      card.innerHTML = `<div class="${P}plate" role="dialog" aria-label="${title}">${chap ? kit.chapter(art, chap) : ""}${pic}
+<h2>${title}</h2><div class="${P}sub">${sub}</div><p class="${P}beat">${beat}</p><p class="${P}goal">${goal}</p><div class="${P}key">${keys}</div>${kit.divider(art)}<button class="${P}go" type="button">${btn}</button></div>`;
       wrap.appendChild(card);
       const b = card.querySelector("button");
       on(b, "click", () => { card.remove(); go && go(); });
-      b.focus();
+      b.focus({ preventScroll: true });
     }
 
     // ---- input ----
@@ -305,9 +326,8 @@ ${ringsTexture(r0, r1, 11 + i * 7 + di * 50)}
       "Their temples are carved into knots. Elder Pell's eyes are failing, so tonight your hands are his. The door is the knot's own growth rings, cut free.",
       "Turn each ring until its orange notch sits on the crack at the top. Two doors; stay at par and the bark is not scarred.",
       `<kbd>tap a ring</kbd><span>turn it one step clockwise</span><kbd>right-click / ⇧</kbd><span>turn it back</span><kbd>watch</kbd><span>the next ring in turns too, the other way</span>`,
-      "Lay hands on the door", () => say("Pell", gentle ? "“Take my hand when you need it. I have four turns of help in me tonight.”" : "“Count before you cut.”"));
-    wrap._test = { best: () => SV.best(st), get door() { return di; } };
+      "Lay hands on the door", () => say("Pell", gentle ? "“Take my hand when you need it. I have four turns of help in me tonight.”" : "“Count before you cut.”"), "door-first-ring");
 
-    return { unmount() { timers.forEach(clearTimeout); offs.forEach((f) => f()); wrap.remove(); } };
+    return { unmount() { timers.forEach(clearTimeout); offs.forEach((f) => f()); if (endEl) endEl.remove(); wrap.remove(); } };
   },
 };

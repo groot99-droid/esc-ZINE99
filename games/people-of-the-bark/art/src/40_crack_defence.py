@@ -389,3 +389,58 @@ def pc_plug(a: Art):
     pts = [P(1 + 0.95 * math.cos(t), 1.2 + 0.75 * abs(math.sin(t)), 0.02) for t in [math.pi * i / 16 for i in range(17)]]
     a.path(a.smooth_d(pts), fill="none", stroke=kit.GOLD, stroke_width=3, stroke_dasharray="6 8", stroke_linecap="round")
     a.vignette(0.5)
+
+
+# ---------------------------------------------------------------------------------------------
+# sprites: the same figures with no tile and no ground, for the web mode to stand on its own floor
+# ---------------------------------------------------------------------------------------------
+ROW_S = "Defence sprites: warrior, Burr, people, the Beetle, mite"
+
+
+@asset(G, "defence-sprite-warrior", group="pieces", title="Crack defence sprite: warrior", w=120, h=200, row=ROW_S)
+def sp_warrior(a: Art):
+    """One warrior of the Battlements with nothing behind him: bark-plate, a splinter spear held upright, a
+    small shadow at his feet. Drawn to be set on the web mode's own floor."""
+    kit.iso_folk(a, 52, 184, 2.1)
+
+
+@asset(G, "defence-sprite-burr", group="pieces", title="Crack defence sprite: Captain Burr", w=120, h=200, row=ROW_S)
+def sp_burr(a: Art):
+    """Captain Burr with nothing behind him: the orange crest, the paler plate, the polished spear upright."""
+    kit.iso_folk(a, 52, 184, 2.1, crest=kit.LANTERN, cloth="#9a7a52")
+
+
+@asset(G, "defence-sprite-people", group="pieces", title="Crack defence sprite: people in the crack", w=200, h=160, row=ROW_S)
+def sp_people(a: Art):
+    """Three of the people of Highridge who have wandered into the crack, with nothing behind them: sage robes,
+    no spears, one of them carrying a lit lantern."""
+    kit.iso_folk(a, 150, 132, 1.5, cloth=kit.SAGE, robe=True, spear_up=False)
+    kit.iso_folk(a, 54, 140, 1.6, cloth="#7d8f6a", robe=True, spear_up=False)
+    kit.iso_folk(a, 104, 152, 1.7, cloth=kit.SAGE, robe=True, spear_up=False)
+    kit.glow(a, 132, 104, 26, kit.LANTERN, 0.7)
+    a.circle(132, 104, 6.5, fill=kit.LANTERN, stroke=kit.CRACK, stroke_width=1.2)
+    a.circle(131, 103, 2.6, fill=kit.GOLD)
+
+
+@asset(G, "defence-sprite-beetle", group="pieces", title="Crack defence sprite: the Beetle", w=360, h=240, row=ROW_S)
+def sp_beetle(a: Art):
+    """The Beetle with nothing behind it: the domed dark-green shell on six legs, feelers forward, one highlight
+    on its back, its shadow under it. It has no face."""
+    beetle(a, 196, 128, 1.0)
+
+
+@asset(G, "defence-sprite-mite", group="pieces", title="Crack defence sprite: mite", w=120, h=90, row=ROW_S)
+def sp_mite(a: Art):
+    """A mite with nothing behind it: a small red body low to the floor on six bent legs, two pale eye spots.
+    The small ones always come first."""
+    a.ellipse(60, 66, 44, 12, fill="#000", opacity=0.35)
+    for lx in (-22, 0, 22):
+        for sgn in (-1, 1):
+            a.path(f"M{60 + lx},{48} q{sgn * 6 - 8},{-16 if sgn < 0 else 4} {lx * 0.5 - 14 + sgn * 4},{20 + sgn * 6}", fill="none",
+                   stroke=kit.CRACK, stroke_width=4, stroke_linecap="round")
+    a.ellipse(60, 44, 36, 24, fill=a.radial([(0, "#e06a3c", 1), (0.7, "#b8402a", 1), (1, "#6a1e12", 1)], cx=0.4, cy=0.3),
+              stroke=kit.CRACK, stroke_width=2.5)
+    a.ellipse(34, 48, 14, 11, fill="#8a2a1a", stroke=kit.CRACK, stroke_width=2)
+    a.circle(28, 45, 2.6, fill=kit.PAPER)
+    a.circle(36, 42, 2.2, fill=kit.PAPER)
+    a.ellipse(66, 34, 14, 6, fill="#ffd0a8", opacity=0.35)

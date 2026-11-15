@@ -111,5 +111,37 @@
       {"placed": "quill", "reading": "habit", "line": "It is a thing with a habit. We will learn its shape.", "allowed_if": {"all": [{"is": "year.leading", "eq": "scholars"}, {"is": "forecasts_correct", "gte": 8}]}, "scene": "c6_edge"},
       {"placed": "eye", "reading": "offering", "line": "It is a hungry god. Give it everything.", "allowed_if": {"is": "year.leading", "eq": "elders"}, "scene": "c6_offering"}
     ]
+  },
+  "pulse_spread": {
+    "status": "accepted 2026-11-15; built in phase 1 (web/games/people-of-the-bark/omen-spread.js)",
+    "scene_to_add": "c4_omen_pulse",
+    "chapter": "ch4_autumn",
+    "after_scene": "c4_scroll",
+    "event_card": {"id": "pulse", "name": "The Pulse", "suit": null, "weight": 2,
+      "seen": "A small steady tapping in the night, from no face of the Trunk", "cause": null, "backyard": "blank",
+      "fit_suit": null, "fit_effects": [], "fit_note": null},
+    "hand": [4, 6],
+    "event_suit_guaranteed": 0,
+    "backyard_note": "The pull-back shows a dark yard and one lit window, nothing moving. The Backyard card turns over blank: no cause, no fit suit.",
+    "answers": [
+      {"policy": "eye", "answer": "elders", "line": "The Knot will keep it holy, and unread."},
+      {"policy": "spear", "answer": "warriors", "line": "The Battlements will stand a watch on the wall."},
+      {"policy": "quill", "answer": "scholars", "line": "The Scroll House will write down a thing with no face."},
+      {"policy": "balanced", "answer": "all", "line": "All three will answer it together."}
+    ],
+    "sets": ["pulse.heard", "pulse.blank_turned", "pulse.answer"]
+  },
+  "honest_deals": {
+    "status": "accepted 2026-11-15; built in phase 1 (web/games/people-of-the-bark/omen-spread.js)",
+    "flag": "deck.honest",
+    "applies_to": ["c6_omen"],
+    "event_suit_guaranteed": 0,
+    "note": "While Pell deals, rules.hand.event_suit_guaranteed holds. After c5_omen_pell the heir deals and nothing is guaranteed.",
+    "by_heir": [
+      {"heir": "burr", "rule": "spear_heavy", "spear_cards": 3, "text": "Three of his five cards carry the Spear."},
+      {"heir": "fenn", "rule": "show_next", "shown": 2, "take": 1, "text": "She shows the next two cards of the deck; one may be taken for a hand card, once."},
+      {"heir": "twig", "rule": "face_down", "cards": 1, "text": "One card is dealt face down and must be placed unseen; it turns over when the reading is laid."},
+      {"heir": "hollow", "rule": "redeal", "redeals": 1, "text": "One redeal of the whole hand is allowed."}
+    ]
   }
 }

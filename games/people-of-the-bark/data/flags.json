@@ -352,6 +352,49 @@
       "type": "bool",
       "default": false,
       "description": "Fenn drew the map with an edge (habit branch)."
+    },
+    {
+      "name": "pulse.heard",
+      "type": "bool",
+      "default": false,
+      "description": "The Pulse woke Highridge and the night spread was laid (c4_omen_pulse, a scene to add). Accepted 2026-11-15, phase 1."
+    },
+    {
+      "name": "pulse.blank_turned",
+      "type": "bool",
+      "default": false,
+      "description": "The player turned the Backyard card on the night of the Pulse and found it blank."
+    },
+    {
+      "name": "pulse.answer",
+      "type": "enum",
+      "default": "none",
+      "description": "Who answers the Pulse, from the night spread's policy: the Knot keeps it holy and unread, the Battlements stand a watch, the Scroll House records it, or all three.",
+      "values": [
+        "none",
+        "elders",
+        "warriors",
+        "scholars",
+        "all"
+      ]
+    },
+    {
+      "name": "faceless_marks",
+      "type": "counter",
+      "default": 0,
+      "description": "Faceless marks the player placed rightly on the Tremor Scroll (c4_scroll). Each shades one plate of the Pulse map."
+    },
+    {
+      "name": "pulse_map.complete",
+      "type": "bool",
+      "default": false,
+      "description": "Every faceless mark of the year was placed rightly, so the Pulse map shows the plate the second tap will find."
+    },
+    {
+      "name": "deck.honest",
+      "type": "bool",
+      "default": false,
+      "description": "Pell is dead and the heir deals: no card of the event's suit is guaranteed, and each heir deals in character."
     }
   ]
 }

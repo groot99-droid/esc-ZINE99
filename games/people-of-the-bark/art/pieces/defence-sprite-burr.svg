@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 200" width="120" height="200" role="img" aria-labelledby="defence-sprite-burr-t defence-sprite-burr-d">
+<title id="defence-sprite-burr-t">Crack defence sprite: Captain Burr</title>
+<desc id="defence-sprite-burr-d">Captain Burr with nothing behind him: the orange crest, the paler plate, the polished spear upright.</desc>
+<g transform="translate(52 184) scale(2.1)">
+<ellipse cx="0" cy="0" rx="12" ry="5" fill="#000" opacity="0.4"/>
+<path d="M-5,0 L-4,-16 M5,0 L4,-16" stroke="#1b120c" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M-8,-14 L-6,-36 L6,-36 L8,-14Z" fill="#9a7a52" stroke="#1b120c" stroke-width="1.4"/>
+<circle cx="0" cy="-46" r="10.5" fill="#d9b88a" stroke="#1b120c" stroke-width="1.4"/>
+<path d="M-11,-48 a11,11 0 0,1 22,0Z" fill="#3a281c" stroke="#1b120c" stroke-width="1"/>
+<path d="M-4,-58 q8,-22 22,-14 q-10,2 -14,16Z" fill="#e8742a" stroke="#1b120c" stroke-width="1"/>
+<line x1="12" y1="4" x2="17" y2="-72" stroke="#e6cfa0" stroke-width="2.6" stroke-linecap="round"/>
+<polygon points="17.5,-80 13,-66 21,-66" fill="#f6e8c8" stroke="#1b120c" stroke-width="0.8"/>
+</g>
+</svg>

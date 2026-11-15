@@ -335,8 +335,12 @@ def bd_shadow(a: Art):
 # ---------------------------------------------------------------------------------------------
 # sprite sheets
 # ---------------------------------------------------------------------------------------------
+SHEET_KEY = "#2a1c14"   # the sheets' ground: one step off palette colour 1, so the web modes can key it out
+
+
 def sheet(a, cols, rows, cell_w, cell_h, labels, s=6):
-    buf = kit.pixbuf(cols * cell_w, rows * cell_h, 1)
+    a.rect(0, 0, a.w, a.h, fill=SHEET_KEY)
+    buf = kit.pixbuf(cols * cell_w, rows * cell_h, None)
     for j in range(rows * cell_h):
         for i in range(cols * cell_w):
             if i % cell_w == 0 or j % cell_h == 0:

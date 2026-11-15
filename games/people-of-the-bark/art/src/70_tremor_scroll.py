@@ -190,12 +190,7 @@ def faceless_row(a: Art):
            fill="#3a281c")
 
 
-@asset(G, "scroll-pulse-map", group="maps", title="Tremor Scroll: the Pulse map strip", w=420, h=1100, row=ROW)
-def pulse_map(a: Art):
-    """The Pulse map: a margin strip on the back pages of Old Resin's recipe book, the bark's plates drawn as a
-    grid from the Crown down to the roots with the three listening posts beside it. Each faceless mark placed has
-    shaded one plate in chalk grey; the shading gathers under Highridge, and one plate is ringed in gold: where
-    the second tap will land."""
+def _pulse_map(a, filled):
     a.paper("#ead9b4", grain=0.3, fibre=0.6)
     a.vignette(0.4, "#4a2a10")
     kit.stain(a, 330, 960, 70)
@@ -224,7 +219,7 @@ def pulse_map(a: Art):
     for j in range(rows):
         for i in range(cols):
             quad = [pts[j][i], pts[j][i + 1], pts[j + 1][i + 1], pts[j + 1][i]]
-            v = level[(i, j)]
+            v = level[(i, j)] if filled else 0
             a.poly(quad, fill=kit.CHALK if v else "none", fill_opacity=(0, 0.3, 0.6, 0.95)[v], stroke=INK, stroke_width=1.5,
                    stroke_linejoin="round")
             if v:
@@ -234,11 +229,14 @@ def pulse_map(a: Art):
     gi, gj = 2, 6
     gx = sum(p[0] for p in (pts[gj][gi], pts[gj][gi + 1], pts[gj + 1][gi + 1], pts[gj + 1][gi])) / 4
     gy = sum(p[1] for p in (pts[gj][gi], pts[gj][gi + 1], pts[gj + 1][gi + 1], pts[gj + 1][gi])) / 4
-    a.circle(gx, gy, 40, fill="none", stroke=kit.GOLD, stroke_width=4)
-    a.circle(gx, gy, 40, fill="none", stroke=INK, stroke_width=1, stroke_dasharray="3 4")
-    a.text(gx, gy + 7, "II", size=22, family="serif", fill=INK, text_anchor="middle", font_weight="bold")
+    if filled:
+        a.circle(gx, gy, 40, fill="none", stroke=kit.GOLD, stroke_width=4)
+        a.circle(gx, gy, 40, fill="none", stroke=INK, stroke_width=1, stroke_dasharray="3 4")
+        a.text(gx, gy + 7, "II", size=22, family="serif", fill=INK, text_anchor="middle", font_weight="bold")
     # listening posts
     for name, jj, word in (("KNOTHOLM", 2.5, "nothing"), ("HIGHRIDGE", 6.5, "loud"), ("LOWRIDGE", 10.5, "faint")):
+        if not filled:
+            word = ""
         y = y0 + jj * ch
         a.line(x0 + cols * cw + 6, y, x0 + cols * cw + 26, y, stroke=kit.RUBRIC, stroke_width=1.5)
         a.text(x0 + cols * cw + 44, y, name, size=13, family="serif", fill=INK, letter_spacing=2,
@@ -256,3 +254,21 @@ def pulse_map(a: Art):
         a.path("".join(f"M{118 + (v - 1) * 74 + k * 18 - 6},{1072} l5,-3 l-1,5 l6,-2" for k in range(v)), fill="none", stroke="#5d676a",
                stroke_width=1.6, stroke_linecap="round")
     a.rect(14, 14, 392, 1072, fill="none", stroke=INK, stroke_width=1.4)
+
+
+@asset(G, "scroll-pulse-map", group="maps", title="Tremor Scroll: the Pulse map strip", w=420, h=1100, row=ROW)
+def pulse_map(a: Art):
+    """The Pulse map: a margin strip on the back pages of Old Resin's recipe book, the bark's plates drawn as a
+    grid from the Crown down to the roots with the three listening posts beside it. Each faceless mark placed has
+    shaded one plate in chalk grey; the shading gathers under Highridge, and one plate is ringed in gold: where
+    the second tap will land."""
+    _pulse_map(a, True)
+
+
+@asset(G, "scroll-pulse-map-blank", group="maps", title="Tremor Scroll: the Pulse map strip, not yet filled", w=420, h=1100,
+       row=ROW)
+def pulse_map_blank(a: Art):
+    """The Pulse map as Fenn first rules it on the back pages of Old Resin's recipe book: the same grid of the
+    bark's plates from the Crown down to the roots and the three listening posts named beside it, with no plate
+    shaded yet and nothing ringed. The web game shades a plate for each faceless mark the player places."""
+    _pulse_map(a, False)

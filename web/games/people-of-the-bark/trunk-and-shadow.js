@@ -13,7 +13,16 @@
 // and the Eye card can be used once more. Retuned: bands run up a square 90% of the time (was 80%).
 // After two lost festivals Burr plays carelessly and gives four looks.
 
+// Art (api.art): the board is the festival board of art/maps/tns-board.svg, so its cracks are the fixed
+// tables below (the same two tables as art/src/60_trunk_and_shadow.py) and no longer rolled each game; the
+// Folk and the Shadow are their piece art; spring's three rule cards show their faces; Captain Burr's mark
+// is his portrait. Without the art the board, pieces and cards are drawn as before, on the same cracks.
+import * as kit from "./_art.js";
+
 const COLS = 5, ROWS = 8, ROUNDS = 16, GUARD_AT = 9;
+const UP = ["11111", "11011", "10111", "11111", "11101", "11111", "11111", "00000"];
+const RIGHT = ["0011", "0101", "1000", "1110", "0111", "1001", "0010", "1101"];
+const LATER_CARDS = [["gust", "Gust"], ["leaf", "Leaf"], ["mandible", "Mandible"], ["prophecy", "Prophecy"], ["spear", "Spear"], ["quill", "Quill"], ["hand", "The Hand"], ["hollow-square", "Hollow Square"]];
 const GOLD = "#f0c050", AMBER = "#d9902a", DARK = "#1b120c", UMBER = "#5a3d2b", SAGE = "#8fa37a", LIME = "#c4d65a", LANT = "#e8742a", PAPER = "#efe2c4", BLUE = "#6f9ab8", MUTED = "#d8c8a4";
 const KNOTS = [[1, 2], [3, 3], [0, 5], [4, 5]];
 const RAIN = [[2, 1], [4, 2], [1, 4]];
@@ -33,18 +42,8 @@ export default {
     const gentle = losses >= 2;
 
     // ---- the cracks: which sides of each square are open ----
-    const up = [], right = [];
-    for (let r = 0; r < ROWS; r++) { up.push([]); right.push([]); for (let c = 0; c < COLS; c++) { up[r].push(r < ROWS - 1 && rnd() < 0.9); right[r].push(c < COLS - 1 && rnd() < 0.5); } }
-    const par = Array.from({ length: COLS * ROWS }, (_, i) => i);
-    const find = (i) => (par[i] === i ? i : (par[i] = find(par[i])));
-    const id = (c, r) => r * COLS + c;
-    for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) { if (up[r][c]) par[find(id(c, r))] = find(id(c, r + 1)); if (right[r][c]) par[find(id(c, r))] = find(id(c + 1, r)); }
-    for (let guard = 0; guard < 500; guard++) {
-      const roots = new Set(par.map((_, i) => find(i))); if (roots.size === 1) break;
-      const c = Math.floor(rnd() * COLS), r = Math.floor(rnd() * ROWS);
-      if (rnd() < 0.5 && r < ROWS - 1 && find(id(c, r)) !== find(id(c, r + 1))) { up[r][c] = true; par[find(id(c, r))] = find(id(c, r + 1)); }
-      else if (c < COLS - 1 && find(id(c, r)) !== find(id(c + 1, r))) { right[r][c] = true; par[find(id(c, r))] = find(id(c + 1, r)); }
-    }
+    const up = UP.map((row) => [...row].map((x) => x === "1"));
+    const right = RIGHT.map((row) => [...row].map((x) => x === "1").concat(false));
     const open = (c, r, dc, dr) => {
       const c2 = c + dc, r2 = r + dr;
       if (c2 < 0 || c2 >= COLS || r2 < 0 || r2 >= ROWS) return false;
@@ -101,6 +100,17 @@ export default {
  background:radial-gradient(ellipse at 50% 40%,#33241a,#1b120c 80%)}
 .${P}page{box-sizing:border-box;min-height:100%;max-width:1200px;margin:0 auto;padding:14px clamp(12px,3vw,32px);display:grid;grid-template-columns:200px minmax(0,1fr) 230px;gap:18px;align-items:center}
 .${P}cards{display:flex;flex-direction:column;gap:10px}
+.${P}rc.${P}art{display:grid;grid-template-columns:76px 1fr;gap:4px 8px;align-items:center;text-align:left;padding:7px 8px}
+.${P}rc.${P}art::before{display:none}
+.${P}rc.${P}art img{grid-row:1 / span 3;width:76px;height:auto;display:block;border-radius:4px}
+.${P}rc.${P}art b{margin-top:0;font-size:18px}
+.${P}later{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;align-items:center;font:12px ui-monospace,monospace;letter-spacing:.1em;color:${MUTED}}
+.${P}later span{flex:1 1 100%;text-align:center}
+.${P}later img{width:38px;height:auto;border-radius:3px;opacity:.75;filter:saturate(.6)}
+.${P}por img{width:120px;height:120px;border-radius:50%;display:block}
+.${P}picwrap{aspect-ratio:4/3;width:min(100%,220px);margin:0 auto 8px;background:center/100% 100% no-repeat;display:grid;place-items:center}
+.${P}picwrap img{height:76%;width:auto;display:block}
+.${P}knot{max-height:100%;overflow:auto}
 .${P}rc{border:1.5px solid #6a5a48;border-radius:6px;padding:9px 10px;background:rgba(58,40,28,.7);text-align:center;position:relative;transition:border-color .2s,box-shadow .2s}
 .${P}rc::before{content:"";position:absolute;left:10px;right:10px;top:4px;height:5px;background:repeating-radial-gradient(circle at 3px 2.5px,transparent 0 1.6px,${SAGE} 1.7px 2.4px,transparent 2.5px) 0 0/7px 5px}
 .${P}rc b{display:block;font-family:'IM Fell English',Georgia,serif;font-weight:400;font-size:20px;letter-spacing:.08em;margin-top:6px}
@@ -146,14 +156,14 @@ export default {
 .${P}key kbd{font:13px ui-monospace,monospace;color:${GOLD};border:1px solid #7d6c5a;padding:1px 6px;border-radius:2px;white-space:nowrap;align-self:start}
 .${P}knot button{font:inherit;font-size:19px;background:${AMBER};color:${DARK};border:0;padding:8px 18px;cursor:pointer;border-radius:3px}
 @media (max-width:820px){.${P}page{grid-template-columns:1fr 1fr;grid-template-areas:"board board" "opp opp" "cards cards"}.${P}board{grid-area:board}.${P}cards{grid-area:cards;display:grid;grid-template-columns:1fr 1fr}.${P}opp{grid-area:opp;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;text-align:left;align-items:center}
- .${P}opp .${P}por svg{width:72px;height:72px}.${P}opp .${P}who{grid-column:2}.${P}opp .${P}rest{grid-column:1 / -1}.${P}dots{justify-content:start}.${P}acts{justify-content:start}.${P}board svg{height:auto;width:100%;min-height:0;max-height:none}}
+ .${P}opp .${P}por svg,.${P}opp .${P}por img{width:72px;height:72px}.${P}opp .${P}who{grid-column:2}.${P}opp .${P}rest{grid-column:1 / -1}.${P}dots{justify-content:start}.${P}acts{justify-content:start}.${P}board svg{height:auto;width:100%;min-height:0;max-height:none}}
 @media (prefers-reduced-motion:reduce){.${P}no{animation:none}}
 </style>
 <div class="${P}page">
  <div class="${P}cards"></div>
- <div class="${P}board"><svg viewBox="-34 -56 368 590" aria-label="The board: five columns, eight rows"></svg></div>
+ <div class="${P}board"><svg viewBox="${api.art && api.art.has("tns-board") ? "-66 -62 432 604" : "-34 -56 368 590"}" aria-label="The board: five columns, eight rows"></svg></div>
  <div class="${P}opp">
-  <button class="${P}por" type="button" title="Read Burr (W)" aria-label="Read Burr: see where the Shadow goes next"><svg viewBox="-60 -60 120 120" width="120" height="120" aria-hidden="true">
+  <button class="${P}por" type="button" title="Read Burr (W)" aria-label="Read Burr: see where the Shadow goes next">${api.art && api.art.has("mark-burr") ? `<img src="${api.art.url("mark-burr")}" alt="" width="120" height="120">` : ""}<svg ${api.art && api.art.has("mark-burr") ? "hidden" : ""} viewBox="-60 -60 120 120" width="120" height="120" aria-hidden="true">
    ${Array.from({ length: 18 }, (_, i) => { const a = i / 18 * Math.PI * 2; return `<circle cx="${Math.cos(a) * 50}" cy="${Math.sin(a) * 50}" r="6" fill="none" stroke="${SAGE}" stroke-width="2"/>`; }).join("")}
    <path d="M-22 30 V-6 Q-22 -26 0 -26 Q22 -26 22 -6 V30 H8 V6 H-8 V30Z" fill="#7d6c5a" stroke="${DARK}" stroke-width="2"/>
    <path d="M-6 -30 Q14 -48 34 -34 Q16 -34 6 -22Z" fill="${LANT}"/>
@@ -168,7 +178,8 @@ export default {
  </div>
 </div>
 <div class="${P}intro"><div class="${P}knot" role="dialog" aria-label="How to play">
- <h2>Trunk and Shadow</h2><div class="${P}sub">THE SPRING FESTIVAL · HIGHRIDGE</div>
+ ${api.art && api.art.has("ui-frame-bark") && api.art.has("tns-board") ? `<div class="${P}picwrap" style="background-image:url(${api.art.url("ui-frame-bark")})"><img src="${api.art.url("tns-board")}" alt="The festival board" width="160" height="220"></div>` : ""}
+ <h2 style="margin-top:8px">Trunk and Shadow</h2><div class="${P}sub">THE SPRING FESTIVAL · HIGHRIDGE</div>
  <p class="${P}beat">Lanterns in the square, the whole city watching. The festival board is a flat flake; you play the Folk, and Captain Burr, who has never fought anything bigger than a mite, plays the Shadow.</p>
  <p class="${P}goal"><b>Goal:</b> three Folk on the Crown row before round 16 ends.</p>
  <div class="${P}key">
@@ -178,6 +189,24 @@ export default {
  <button type="button">Sit down to play</button>
 </div></div>`;
     root.appendChild(wrap);
+    kit.styles(wrap);
+    const art = api.art || { has: () => false, url: () => "", info: () => null };
+    const hasBoard = art.has("tns-board");
+    // the plates carry bark and paper filters: draw each once to a bitmap, and use the SVG only until it is ready
+    const IMG = { board: art.url("tns-board"), folk: art.url("tns-piece-folk"), shadow: art.url("tns-piece-shadow") };
+    const blobs = [];
+    let dead = false;
+    (async () => {
+      await null;
+      if (!hasBoard) return;
+      for (const [k, id, w, h] of [["board", "tns-board", 800, 1100], ["folk", "tns-piece-folk", 160, 160], ["shadow", "tns-piece-shadow", 300, 300]]) {
+        if (!art.has(id)) continue;
+        const u = await kit.blobUrl(await kit.raster(art, id, w, h));
+        if (dead) { if (u) URL.revokeObjectURL(u); return; }
+        if (u) { blobs.push(u); IMG[k] = u; }
+      }
+      drawBoard(); dyn = svg.querySelector("." + P + "dyn"); refresh();
+    })();
     const $ = (s) => wrap.querySelector("." + P + s);
     const svg = wrap.querySelector("svg[aria-label]");
     const cardsEl = $("cards"), sayEl = $("say"), dots = $("dots"), rd = $("rd"), stat = $("stat"), mood = $("mood"), por = $("por");
@@ -187,6 +216,17 @@ export default {
     function drawBoard() {
       let s = `<defs><pattern id="${P}hat" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#000" stroke-width="2" opacity=".35"/></pattern>
 <filter id="${P}grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".05 .6" numOctaves="2" seed="5"/><feColorMatrix values="0 0 0 0 .2  0 0 0 0 .12  0 0 0 0 .06  0 0 0 .35 0"/><feComposite in2="SourceGraphic" operator="in"/></filter></defs>`;
+      if (hasBoard) {
+        // the printed board: its squares are 108 px in an 800 x 1100 plate, with the Crown row's corner at (130, 116)
+        const k = Z / 108;
+        s += `<image href="${IMG.board}" x="${-130 * k}" y="${-116 * k}" width="${800 * k}" height="${1100 * k}" pointer-events="none"/>
+<clipPath id="${P}cf"><circle r="21"/></clipPath><clipPath id="${P}cs"><rect x="-56" y="-56" width="112" height="112" rx="14"/></clipPath>`;
+        for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) s += `<rect class="${P}sq" data-c="${c}" data-r="${r}" x="${c * Z + 1}" y="${(ROWS - 1 - r) * Z + 1}" width="${Z - 2}" height="${Z - 2}" fill="transparent"/>`;
+        for (const [c, r] of RAIN) s += `<g transform="translate(${X(c) + 18} ${Y(r) - 18})" pointer-events="none"><circle r="10" fill="#1b120c" opacity=".7"/><path d="M0 -8 Q6 1 0 6 Q-6 1 0 -8Z" fill="${BLUE}" stroke="${PAPER}" stroke-width=".8"/></g>`;
+        s += `<g class="${P}dyn"></g>`;
+        svg.innerHTML = s;
+        return;
+      }
       const flake = "M-14 -12 Q150 -26 314 -12 Q328 240 314 492 Q150 506 -14 492 Q-28 240 -14 -12Z";
       s += `<path d="${flake}" fill="#6b4c33" stroke="${DARK}" stroke-width="3"/><path d="${flake}" fill="#6b4c33" filter="url(#${P}grain)"/>`;
       // braided border: two interlaced chains
@@ -220,7 +260,7 @@ export default {
       svg.innerHTML = s;
     }
     drawBoard();
-    const dyn = svg.querySelector("." + P + "dyn");
+    let dyn = svg.querySelector("." + P + "dyn");
 
     function drawDyn() {
       let s = "";
@@ -238,12 +278,13 @@ export default {
         if (f.hidden) continue;
         const sel = S.sel === f;
         s += `<g class="${P}sq" data-f="${f.i}" transform="translate(${X(f.c)} ${Y(f.r)})">
-<circle r="19" fill="${sel ? GOLD : LIME}" stroke="${DARK}" stroke-width="2.5"/><circle r="13" fill="${SAGE}" stroke="${DARK}" stroke-width="1.5"/>
-<circle cy="-3" r="4" fill="${DARK}"/><path d="M-7 8 Q0 -2 7 8" fill="${DARK}"/><circle cx="14" cy="-14" r="8" fill="${DARK}"/><text x="14" y="-10" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="${PAPER}">${f.i + 1}</text>${isKnot(f.c, f.r) ? `<circle r="23" fill="none" stroke="${LANT}" stroke-width="1.8" stroke-dasharray="3 3"/>` : ""}</g>`;
+${art.has("tns-piece-folk") ? `<circle r="24" fill="transparent"/>${sel ? `<circle r="23.5" fill="${GOLD}" stroke="${DARK}" stroke-width="1.5"/>` : ""}<image href="${IMG.folk}" x="-31" y="-31" width="62" height="62" clip-path="url(#${P}cf)"/>` : `<circle r="19" fill="${sel ? GOLD : LIME}" stroke="${DARK}" stroke-width="2.5"/><circle r="13" fill="${SAGE}" stroke="${DARK}" stroke-width="1.5"/>
+<circle cy="-3" r="4" fill="${DARK}"/><path d="M-7 8 Q0 -2 7 8" fill="${DARK}"/>`}<circle cx="14" cy="-14" r="8" fill="${DARK}"/><text x="14" y="-10" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="${PAPER}">${f.i + 1}</text>${isKnot(f.c, f.r) ? `<circle r="23" fill="none" stroke="${LANT}" stroke-width="1.8" stroke-dasharray="3 3"/>` : ""}</g>`;
       }
       s += `<g pointer-events="none" style="transition:transform .4s;transform:translate(${sh.c * Z + 4}px,${(ROWS - 2 - sh.r) * Z + 4}px)">
-<rect width="${2 * Z - 8}" height="${2 * Z - 8}" rx="14" fill="#1a1020" opacity=".74" stroke="#6a5a7a" stroke-width="2"/><rect width="${2 * Z - 8}" height="${2 * Z - 8}" rx="14" fill="url(#${P}hat)"/>
-<text x="${Z - 4}" y="${Z + 1}" text-anchor="middle" font-family="IM Fell English,serif" font-size="15" fill="#cdbfdc" letter-spacing="2">SHADOW</text></g>`;
+${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${Z - 4})" opacity=".8"><image href="${IMG.shadow}" x="-72" y="-72" width="144" height="144" clip-path="url(#${P}cs)"/></g><text x="${Z - 4}" y="${2 * Z - 18}" text-anchor="middle" font-family="IM Fell English,serif" font-size="13" fill="#cdbfdc" letter-spacing="2">SHADOW</text>`
+        : `<rect width="${2 * Z - 8}" height="${2 * Z - 8}" rx="14" fill="#1a1020" opacity=".74" stroke="#6a5a7a" stroke-width="2"/><rect width="${2 * Z - 8}" height="${2 * Z - 8}" rx="14" fill="url(#${P}hat)"/>
+<text x="${Z - 4}" y="${Z + 1}" text-anchor="middle" font-family="IM Fell English,serif" font-size="15" fill="#cdbfdc" letter-spacing="2">SHADOW</text>`}</g>`;
       dyn.innerHTML = s;
     }
 
@@ -251,11 +292,25 @@ export default {
       const t = S.round;
       const cards = [
         { k: "old", t: "OLD RULES", d: "a Folk on a knot cannot be hidden" },
-        { k: "rain", t: "BLESSING", d: "end on rain: move again" },
-        { k: "tremor", t: "TREMOR", d: `every 4th round: ↑ → ↑ ←${[4, 8, 12, 16].includes(t) ? "" : ` · next round ${[4, 8, 12, 16].find((x) => x >= t) || "—"}`}` },
-        { k: "eye", t: "EYE", d: "once, a chant: the Shadow skips a turn", btn: true },
+        { k: "rain", t: "BLESSING", d: "end on rain: move again", art: "tns-rule-blessing" },
+        { k: "tremor", t: "TREMOR", d: `every 4th round: ↑ → ↑ ←${[4, 8, 12, 16].includes(t) ? "" : ` · next round ${[4, 8, 12, 16].find((x) => x >= t) || "—"}`}`, art: "tns-rule-tremor" },
+        { k: "eye", t: "EYE", d: "once, a chant: the Shadow skips a turn", btn: true, art: "tns-rule-eye" },
       ];
-      cardsEl.innerHTML = cards.map((c) => `<div class="${P}rc ${S.fired === c.k ? P + "fire" : ""}"><b>${c.t}</b><i>${c.d}</i>${c.btn ? `<button type="button" title="E" ${S.chantUsed || S.over || S.turn !== "player" ? "disabled" : ""}>${S.chantUsed ? (S.skipNext ? "chanting…" : "chanted") : "Chant · E"}</button>` : ""}</div>`).join("");
+      // the card faces are built once (their art is costly to draw again); a refresh only changes words and states
+      const sig = (c) => `${c.d}|${S.fired === c.k ? 1 : 0}|${c.btn ? `${S.chantUsed}${S.skipNext}${S.over}${S.turn}` : ""}`;
+      if (!cardsEl.dataset.built) {
+        cardsEl.dataset.built = "1";
+        const later8 = LATER_CARDS.filter(([k]) => art.has("tns-rule-" + k));
+        cardsEl.innerHTML = cards.map((c) => `<div class="${P}rc ${c.art && art.has(c.art) ? P + "art" : ""}" data-k="${c.k}">${c.art && art.has(c.art) ? `<img src="${art.url(c.art)}" alt="">` : ""}<b>${c.t}</b><i></i>${c.btn ? `<button type="button" title="E"></button>` : ""}</div>`).join("") + (later8.length ? `<div class="${P}later"><span>RULES OTHER SEASONS ADD</span>${later8.map(([k, n]) => `<img src="${art.url("tns-rule-" + k)}" alt="${n}" title="${n}">`).join("")}</div>` : "");
+      }
+      for (const c of cards) {
+        const el = cardsEl.querySelector(`[data-k="${c.k}"]`);
+        if (!el || el.dataset.sig === sig(c)) continue;
+        el.dataset.sig = sig(c);
+        el.classList.toggle(P + "fire", S.fired === c.k);
+        el.querySelector("i").textContent = c.d;
+        if (c.btn) { const bt = el.querySelector("button"); bt.disabled = S.chantUsed || S.over || S.turn !== "player"; bt.textContent = S.chantUsed ? (S.skipNext ? "chanting…" : "chanted") : "Chant · E"; }
+      }
       const b = cardsEl.querySelector("button"); if (b) b.onclick = chant;
       dots.innerHTML = Array.from({ length: ROUNDS }, (_, i) => `<i class="${i < t - 1 ? P + "d" : i === t - 1 ? P + "now" : ""} ${[3, 7, 11, 15].includes(i) ? P + "trem" : ""}"></i>`).join("");
       rd.textContent = `ROUND ${Math.min(t, ROUNDS)} / ${ROUNDS}`;
@@ -398,10 +453,9 @@ export default {
       S.log = gentle ? "Burr, cheerfully: “I'll go easy. Watch my eyes, if you like.” (W: read Burr, 4 looks)" : "New: tap Burr's portrait (W) to read where the Shadow will go next. Two looks a game.";
       refresh();
     });
-    startBtn.focus();
+    startBtn.focus({ preventScroll: true });
     refresh();
-    wrap._test = { S, reach, isKnot, under, open, plan: () => plan() };
 
-    return { unmount() { timers.forEach(clearTimeout); offs.forEach((f) => f()); wrap.remove(); } };
+    return { unmount() { dead = true; blobs.forEach((u) => URL.revokeObjectURL(u)); timers.forEach(clearTimeout); offs.forEach((f) => f()); wrap.remove(); } };
   },
 };
