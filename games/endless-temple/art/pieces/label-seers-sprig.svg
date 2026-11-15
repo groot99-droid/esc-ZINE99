@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="label-seers-sprig-t label-seers-sprig-d">
+<title id="label-seers-sprig-t">Jar label: Seer'S Sprig</title>
+<desc id="label-seers-sprig-d">The apothecary label on the seer's sprig jar: the herb drawn in a round window between whiplash stems, its name, and its marks for depth 3, length 0 and binding 1.</desc>
+<defs><clipPath id="label-seers-sprig-clip1"><path d="M22,402 V120 C22,52 80,22 150,22 C220,22 278,52 278,120 V402 Q150,418 22,402Z"/></clipPath><filter id="label-seers-sprig-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="456"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><linearGradient id="label-seers-sprig-lg3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ffffff"/><stop offset="20%" stop-color="#ffffff"/><stop offset="100%" stop-color="#3A2A1A"/></linearGradient></defs>
+<rect x="0" y="0" width="300" height="420" fill="#DCE5DC"/>
+<rect x="0" y="0" width="40" height="420" fill="#fff" opacity="0.3"/>
+<rect x="270" y="0" width="30" height="420" fill="#7A8A80" opacity="0.2"/>
+<path d="M22,402 V120 C22,52 80,22 150,22 C220,22 278,52 278,120 V402 Q150,418 22,402Z" fill="#F5ECD4" stroke="#4A3220" stroke-width="3.4" stroke-linejoin="round"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#label-seers-sprig-gr2)" clip-path="url(#label-seers-sprig-clip1)"/>
+<path d="M36,394 V122 C36,66 86,38 150,38 C214,38 264,66 264,122 V394" fill="none" stroke="#9A6F1E" stroke-width="1.6"/>
+<path d="M36.5,392.2 L40.8,384.2 L45.2,372.3 L49.5,358.2 L52.7,343.6 L53.8,329.9 L51.2,317.4 L45.9,305.3 L40.1,293.3 L35.7,281.4 L33.9,270 L36.2,258.6 L41.9,247.1 L48.2,235.1 L53.7,222.8 L56.2,210.1 L54.6,197.4 L50.1,185 L44.7,172.9 L40.6,161.3 L39.1,150.1 L42.1,138.3 L48,125.7 L55.1,113.7 L61.9,103.5 L66.2,96.1 L65.8,95.9 L61.1,103 L54.3,113.1 L46.7,125 L40.3,137.6 L36.9,149.9 L37.4,162 L41.4,174.2 L46.4,186.4 L50.5,198.4 L51.8,209.9 L49,221.2 L43.6,232.9 L37.3,244.9 L32.4,257.4 L30.1,270 L32,282.5 L37.3,294.5 L43.3,306.4 L48,318.4 L50.2,330.1 L49,343 L45.3,357 L40.7,370.8 L36.7,382.8 L35.5,391.8Z" fill="#5F7A5E"/>
+<path d="M52,330 C51.6,319 61.4,312.6 73.1,314.8 C72.4,326.4 62.6,332.9 52,330Z" fill="#7F9A5C" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="54" y1="328.4" x2="69.3" y2="316.3" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M32,270 C42.5,266.7 51.3,274.4 52.3,286.3 C40.9,288.7 32.1,281 32,270Z" fill="#7F9A5C" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="34.1" y1="271.5" x2="49.9" y2="283" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M54,210 C53.6,199 63.4,192.6 75.1,194.8 C74.4,206.4 64.6,212.9 54,210Z" fill="#7F9A5C" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="56" y1="208.4" x2="71.3" y2="196.3" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M38,150 C48.5,146.7 57.3,154.4 58.3,166.3 C46.9,168.7 38.1,161 38,150Z" fill="#7F9A5C" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="40.1" y1="151.5" x2="55.9" y2="163" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M66,96 q16,-16 6,-28 q-10,-6 -10,6 q2,8 8,5" fill="none" stroke="#5F7A5E" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M264.3,391.9 L262.6,383.1 L258.9,370.9 L254.8,357 L251.4,342.9 L250.7,330.1 L252.9,318.7 L258.2,307.1 L264.1,295.1 L268.9,282.8 L270.4,270 L268,257.3 L262.5,245 L255.8,233.2 L250.2,221.5 L247.1,209.9 L248.8,198.2 L253.1,186.2 L258.1,174 L262.1,161.9 L263.2,149.9 L259.8,137.6 L253.6,124.9 L246.1,112.9 L239.2,102.8 L234.3,95.8 L233.7,96.2 L237.9,103.7 L244.5,114 L251.7,125.9 L257.7,138.4 L260.8,150.1 L259.9,161.4 L255.8,173.1 L250.5,185.2 L246.2,197.6 L244.9,210.1 L247.1,222.5 L252.4,234.8 L258.3,247 L263.3,258.7 L265.6,270 L263.3,281.2 L258.5,292.7 L252.7,304.6 L247.8,317.1 L245.3,329.9 L246.9,343.6 L250.3,358.3 L255.2,372.2 L259.9,384 L263.7,392.1Z" fill="#5F7A5E"/>
+<path d="M248,330 C237.4,332.9 228.9,324.8 228.4,312.9 C239.9,310.9 248.4,319 248,330Z" fill="#7F9A5C" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="246" y1="328.4" x2="230.7" y2="316.3" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M268,270 C267.9,281 257.9,287 246.2,284.3 C247.5,272.7 257.5,266.7 268,270Z" fill="#7F9A5C" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="265.9" y1="271.5" x2="250.1" y2="283" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M246,210 C235.4,212.9 226.9,204.8 226.4,192.9 C237.9,190.9 246.4,199 246,210Z" fill="#7F9A5C" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="244" y1="208.4" x2="228.7" y2="196.3" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M262,150 C261.9,161 251.9,167 240.2,164.3 C241.5,152.7 251.5,146.7 262,150Z" fill="#7F9A5C" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="259.9" y1="151.5" x2="244.1" y2="163" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M234,96 q-16,-16 -6,-28 q10,-6 10,6 q2,8 8,5" fill="none" stroke="#5F7A5E" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="150" cy="168" r="84" fill="#FBF5E4" stroke="#4A3220" stroke-width="2.2"/>
+<circle cx="150" cy="168" r="92" fill="none" stroke="#9A6F1E" stroke-width="1.2"/>
+<path d="M204.6,172 C205.3,181.3 204.7,191.8 200.3,201.1 C196,210.4 188.4,222.7 178.4,227.9 C168.4,233.1 150.9,235.4 140.4,232.1 C129.9,228.8 123.8,215.4 115.2,208.1 C106.6,200.8 91.6,196.4 88.9,188.2 C86.1,179.9 94.3,167.1 98.7,158.5 C103.2,149.8 108.5,143.6 115.5,136.2 C122.5,128.7 131.3,114.9 140.7,113.7 C150.1,112.5 162.6,123.6 171.9,128.9 C181.2,134.1 191.1,137.9 196.6,145.1 C202,152.3 204,162.7 204.6,172Z" fill="#7F9A5C" opacity="0.2"/>
+<path d="M204.6,172 C205.3,181.3 204.7,191.8 200.3,201.1 C196,210.4 188.4,222.7 178.4,227.9 C168.4,233.1 150.9,235.4 140.4,232.1 C129.9,228.8 123.8,215.4 115.2,208.1 C106.6,200.8 91.6,196.4 88.9,188.2 C86.1,179.9 94.3,167.1 98.7,158.5 C103.2,149.8 108.5,143.6 115.5,136.2 C122.5,128.7 131.3,114.9 140.7,113.7 C150.1,112.5 162.6,123.6 171.9,128.9 C181.2,134.1 191.1,137.9 196.6,145.1 C202,152.3 204,162.7 204.6,172Z" fill="none" stroke="#7F9A5C" stroke-width="2" opacity="0.4"/>
+<g transform="translate(150 168) scale(1.1)">
+<path d="M-5.7,58 L-3.9,55.7 L-3.1,52.4 L-2,48.5 L-1,44 L-0.5,39.2 L0.3,34.2 L1,29.3 L1.3,24.5 L1.3,20 L0.9,15.3 L0.7,10.6 L-0.3,6.1 L-1.3,1.6 L-2.1,-2.9 L-2.8,-7.3 L-3.1,-11.6 L-2.9,-15.9 L-2.1,-20.4 L-1.1,-25.2 L0.2,-30.1 L1.8,-34.9 L3.2,-39.5 L4.4,-43.7 L5.6,-47.2 L6.2,-49.9 L5.8,-50.1 L4.7,-47.5 L3.3,-44.1 L1.6,-40.1 L-0.3,-35.6 L-1.8,-30.7 L-3.4,-25.7 L-4.6,-20.8 L-5.1,-16.1 L-5.1,-11.6 L-4.7,-7.1 L-4.1,-2.6 L-3.2,1.9 L-2.4,6.5 L-1.9,11 L-1.2,15.5 L-1.3,20 L-1.8,24.2 L-2.5,28.8 L-3.3,33.6 L-4.2,38.5 L-5.4,43.2 L-6.2,47.7 L-6.7,51.7 L-7.2,55.1 L-6.3,58Z" fill="#5A6E3C"/>
+<path d="M-4,44 q-14,-10 -30,-6" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M-4,44 q14,-10 30,-6" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M-1.5,31 q-14,-10 -28,-7" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M-1.5,31 q14,-10 28,-7" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M-1.3,18 q-14,-10 -26,-8" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M-1.3,18 q14,-10 26,-8" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M-3.6,5 q-14,-10 -24,-9" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M-3.6,5 q14,-10 24,-9" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M-6.3,-8 q-14,-10 -22,-10" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M-6.3,-8 q14,-10 22,-10" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M-6.9,-21 q-14,-10 -20,-11" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M-6.9,-21 q14,-10 20,-11" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M-4.8,-34 q-14,-10 -18,-12" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<path d="M-4.8,-34 q14,-10 18,-12" stroke="#5A6E3C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<ellipse cx="8" cy="-52" rx="15" ry="10" fill="#F3EAD2" stroke="#33241A" stroke-width="1.6" transform="rotate(-20 8 -52)"/>
+<circle cx="9" cy="-52" r="5.5" fill="#D4A23A" stroke="#33241A" stroke-width="1.2"/>
+<circle cx="9" cy="-52" r="2.2" fill="#33241A"/>
+<circle cx="-30" cy="10" r="3.4" fill="#D4A23A" stroke="#33241A" stroke-width="1"/>
+<circle cx="28" cy="-6" r="3.4" fill="#D4A23A" stroke="#33241A" stroke-width="1"/>
+<circle cx="-26" cy="-22" r="3.4" fill="#D4A23A" stroke="#33241A" stroke-width="1"/>
+</g>
+<path d="M40,268 Q150,248 260,268 V312 Q150,330 40,312Z" fill="#4A3220"/>
+<path d="M46,273 Q150,254 254,273 M46,307 Q150,325 254,307" fill="none" stroke="#D4A23A" stroke-width="1"/>
+<text x="150" y="298.2" font-size="24" font-family="serif" fill="#F5ECD4" text-anchor="middle" letter-spacing="2" font-weight="bold">SEER'S SPRIG</text>
+<path d="M30,336 h72 v34 q-36,12 -72,0Z" fill="#F8F0DA" stroke="#4A3220" stroke-width="1.4"/>
+<text x="42" y="364" font-size="22" font-family="serif" fill="#4A3220" font-weight="bold">D</text>
+<rect x="62" y="344" width="7" height="22" rx="1.5" fill="#4A3220"/>
+<rect x="73" y="344" width="7" height="22" rx="1.5" fill="#4A3220"/>
+<rect x="84" y="344" width="7" height="22" rx="1.5" fill="#4A3220"/>
+<path d="M114,336 h72 v34 q-36,12 -72,0Z" fill="#F8F0DA" stroke="#4A3220" stroke-width="1.4"/>
+<text x="126" y="364" font-size="22" font-family="serif" fill="#4A3220" font-weight="bold">L</text>
+<line x1="148" y1="357" x2="172" y2="357" stroke="#4A3220" stroke-width="1.2" stroke-dasharray="2 4" opacity="0.7"/>
+<path d="M198,336 h72 v34 q-36,12 -72,0Z" fill="#F8F0DA" stroke="#4A3220" stroke-width="1.4"/>
+<text x="210" y="364" font-size="22" font-family="serif" fill="#4A3220" font-weight="bold">B</text>
+<rect x="230" y="344" width="7" height="22" rx="1.5" fill="#4A3220"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#label-seers-sprig-lg3)" opacity="0.1"/>
+</svg>

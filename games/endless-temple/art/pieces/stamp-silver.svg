@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="stamp-silver-t stamp-silver-d">
+<title id="stamp-silver-t">Tooling stamp: Silver (place)</title>
+<desc id="stamp-silver-d">A leather tile from the Place tray, stamped in gold: five four-pointed glints. Below it, the word SILVER.</desc>
+<defs><clipPath id="stamp-silver-clip1"><rect x="0" y="0" width="200" height="200" rx="10"/></clipPath><filter id="stamp-silver-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="18"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><filter id="stamp-silver-gr3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="479"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="stamp-silver-rg4" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#140904" stop-opacity="0.5"/></radialGradient><linearGradient id="stamp-silver-gold5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="84" spreadMethod="reflect"><stop offset="0" stop-color="#F0D488"/><stop offset="0.45" stop-color="#D4A23A"/><stop offset="0.75" stop-color="#9A6F1E"/><stop offset="1" stop-color="#D4A23A"/></linearGradient><filter id="stamp-silver-gr6" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="859"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="200" height="200" fill="#6B4423" rx="10"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-silver-gr2)" clip-path="url(#stamp-silver-clip1)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-silver-gr3)" clip-path="url(#stamp-silver-clip1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#stamp-silver-rg4)" rx="10"/>
+<path d="M16,16 H184 V150 H16Z" fill="#4E3018" opacity="0.8"/>
+<path d="M16,16 H184 V150 H16Z" fill="none" stroke="#140904" stroke-width="5" opacity="0.5" transform="translate(1.5 2)"/>
+<path d="M16,16 H184 V150 H16Z" fill="none" stroke="url(#stamp-silver-gold5)" stroke-width="3"/>
+<path d="M23,23 H177 V143 H23Z" fill="none" stroke="url(#stamp-silver-gold5)" stroke-width="0.9"/>
+<g transform="translate(101.6 86.2) scale(1.06)" opacity="0.7">
+<path d="M0,-30 Q3,-7 26,-4 Q3,-1 0,22 Q-3,-1 -26,-4 Q-3,-7 0,-30Z" fill="#140904"/>
+<path d="M-28,5 Q-26.5,16.5 -15,18 Q-26.5,19.5 -28,31 Q-29.5,19.5 -41,18 Q-29.5,16.5 -28,5Z" fill="#140904"/>
+<path d="M26,6.4 Q27.8,20.2 41.6,22 Q27.8,23.8 26,37.6 Q24.2,23.8 10.4,22 Q24.2,20.2 26,6.4Z" fill="#140904"/>
+<path d="M-22,-37.7 Q-20.6,-27.4 -10.3,-26 Q-20.6,-24.6 -22,-14.3 Q-23.4,-24.6 -33.7,-26 Q-23.4,-27.4 -22,-37.7Z" fill="#140904"/>
+<path d="M28,-31.1 Q29.1,-23.1 37.1,-22 Q29.1,-20.9 28,-12.9 Q26.9,-20.9 18.9,-22 Q26.9,-23.1 28,-31.1Z" fill="#140904"/>
+<path d="M-41.5,-4a1.5,1.5 0 1,0 3.0,0a1.5,1.5 0 1,0 -3.0,0M38.5,2a1.5,1.5 0 1,0 3.0,0a1.5,1.5 0 1,0 -3.0,0M0.5,36a1.5,1.5 0 1,0 3.0,0a1.5,1.5 0 1,0 -3.0,0M-7.5,-40a1.5,1.5 0 1,0 3.0,0a1.5,1.5 0 1,0 -3.0,0M12.5,38a1.5,1.5 0 1,0 3.0,0a1.5,1.5 0 1,0 -3.0,0M-37.5,34a1.5,1.5 0 1,0 3.0,0a1.5,1.5 0 1,0 -3.0,0" fill="#140904"/>
+</g>
+<g transform="translate(100 84) scale(1.06)" opacity="1">
+<path d="M0,-30 Q3,-7 26,-4 Q3,-1 0,22 Q-3,-1 -26,-4 Q-3,-7 0,-30Z" fill="url(#stamp-silver-gold5)"/>
+<path d="M-28,5 Q-26.5,16.5 -15,18 Q-26.5,19.5 -28,31 Q-29.5,19.5 -41,18 Q-29.5,16.5 -28,5Z" fill="url(#stamp-silver-gold5)"/>
+<path d="M26,6.4 Q27.8,20.2 41.6,22 Q27.8,23.8 26,37.6 Q24.2,23.8 10.4,22 Q24.2,20.2 26,6.4Z" fill="url(#stamp-silver-gold5)"/>
+<path d="M-22,-37.7 Q-20.6,-27.4 -10.3,-26 Q-20.6,-24.6 -22,-14.3 Q-23.4,-24.6 -33.7,-26 Q-23.4,-27.4 -22,-37.7Z" fill="url(#stamp-silver-gold5)"/>
+<path d="M28,-31.1 Q29.1,-23.1 37.1,-22 Q29.1,-20.9 28,-12.9 Q26.9,-20.9 18.9,-22 Q26.9,-23.1 28,-31.1Z" fill="url(#stamp-silver-gold5)"/>
+<path d="M-41.5,-4a1.5,1.5 0 1,0 3.0,0a1.5,1.5 0 1,0 -3.0,0M38.5,2a1.5,1.5 0 1,0 3.0,0a1.5,1.5 0 1,0 -3.0,0M0.5,36a1.5,1.5 0 1,0 3.0,0a1.5,1.5 0 1,0 -3.0,0M-7.5,-40a1.5,1.5 0 1,0 3.0,0a1.5,1.5 0 1,0 -3.0,0M12.5,38a1.5,1.5 0 1,0 3.0,0a1.5,1.5 0 1,0 -3.0,0M-37.5,34a1.5,1.5 0 1,0 3.0,0a1.5,1.5 0 1,0 -3.0,0" fill="url(#stamp-silver-gold5)"/>
+</g>
+<text x="100.7" y="180.9" font-size="19" font-family="serif" fill="#1A0B05" opacity="0.8" text-anchor="middle" letter-spacing="2.4" font-weight="bold">SILVER</text>
+<text x="100" y="180" font-size="19" font-family="serif" fill="url(#stamp-silver-gold5)" text-anchor="middle" letter-spacing="2.4" font-weight="bold">SILVER</text>
+<text x="99.8" y="179.7" font-size="19" font-family="serif" fill="none" stroke="#F0D488" stroke-width="0.4" opacity="0.6" text-anchor="middle" letter-spacing="2.4" font-weight="bold">SILVER</text>
+<path d="M30,160 H170" stroke="url(#stamp-silver-gold5)" stroke-width="0.8" fill="none"/>
+<path d="M22,160 l4,-4 l4,4 l-4,4Z" fill="url(#stamp-silver-gold5)"/>
+<path d="M178,160 l-4,-4 l-4,4 l4,4Z" fill="url(#stamp-silver-gold5)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-silver-gr6)"/>
+</svg>

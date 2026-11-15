@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120" role="img" aria-labelledby="fleuron-cup-t fleuron-cup-d">
+<title id="fleuron-cup-t">Fleuron: cup</title>
+<desc id="fleuron-cup-d">A divider for the journal and the chapter pages: the cup on its saucer, steaming, between tapering pen rules.</desc>
+<defs><clipPath id="fleuron-cup-clip1"><rect x="0" y="0" width="600" height="120" rx="0"/></clipPath><filter id="fleuron-cup-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="845"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><radialGradient id="fleuron-cup-rg3" cx="0.5" cy="0.5" r="0.78"><stop offset="0%" stop-color="#8a6a3a" stop-opacity="0"/><stop offset="62%" stop-color="#8a6a3a" stop-opacity="0"/><stop offset="100%" stop-color="#6a4a22" stop-opacity="0.2"/></radialGradient><clipPath id="fleuron-cup-clip4"><path d="M271.2,50 C271.2,82.4 280.1,93.2 288.1,93.2 L303.9,93.2 C311.9,93.2 320.8,82.4 320.8,50Z"/></clipPath></defs>
+<rect x="0" y="0" width="600" height="120" fill="#F3EAD2" rx="0"/>
+<rect x="0" y="0" width="600" height="120" filter="url(#fleuron-cup-gr2)" clip-path="url(#fleuron-cup-clip1)"/>
+<rect x="0" y="0" width="600" height="120" fill="url(#fleuron-cup-rg3)" rx="0"/>
+<g transform="translate(300 60) scale(1.3) translate(-300 -60)">
+<path d="M216,59.6 L212.9,57.9 L209,58 L204.3,58 L199.2,57.2 L193.6,56.8 L187.6,56.3 L181.4,56.2 L175,55.7 L168.5,55.2 L162.2,54.8 L155.9,55.2 L150,55.1 L144.4,55.4 L138.5,55.9 L132.3,56.2 L125.9,56.8 L119.4,57 L113,57.6 L106.7,58.1 L100.7,58.3 L95,58.6 L89.8,58.9 L85.2,59.2 L81.2,59.3 L78,59.7 L78,60.3 L81.2,60.5 L85.2,60.3 L89.8,60.3 L95.1,60.2 L100.8,60.1 L106.8,59.9 L113.1,59.9 L119.5,60.1 L126,59.9 L132.4,60.2 L138.6,60.3 L144.5,60.7 L150,60.9 L155.9,60.9 L162.1,61.4 L168.4,61.3 L174.8,61.1 L181.2,61.1 L187.4,61.4 L193.4,61.4 L199,61.5 L204.2,61.1 L208.8,61.5 L212.8,61.9 L216,60.4Z" fill="#9A6F1E"/>
+<path d="M202,67.8 L199.7,66.7 L196.6,66.6 L193,66.5 L188.9,66.3 L184.5,66.3 L179.8,66.2 L174.9,66.3 L170,66.5 L166.2,66.5 L161.9,66.6 L157.2,66.5 L152.4,66.7 L147.4,66.7 L142.6,66.9 L137.9,67.1 L133.6,67.3 L129.7,67.5 L126.5,67.7 L124,67.8 L124,68.2 L126.5,68.2 L129.8,68.2 L133.6,68.2 L137.9,68.1 L142.6,68.1 L147.5,68 L152.4,67.8 L157.2,67.8 L161.9,67.6 L166.2,67.5 L170,67.5 L174.9,67.8 L179.7,68 L184.4,68.2 L188.8,68.5 L192.9,68.7 L196.5,69 L199.6,69.1 L202,68.2Z" fill="#9A6F1E"/>
+<path d="M216,60 l8,-7 l8,7 l-8,7Z" fill="#9A6F1E"/>
+<path d="M384,60.6 L387.3,62.7 L391.2,62.7 L395.8,62.1 L401,61.6 L406.6,61 L412.6,61 L418.8,60.7 L425.2,60.4 L431.6,60.5 L437.9,60.3 L444.1,60.1 L450,60.3 L455.5,60.2 L461.4,60.7 L467.6,60.6 L474,60.7 L480.5,60.4 L486.9,60.7 L493.2,60.6 L499.2,60.4 L504.9,60.3 L510.2,60.3 L514.8,60.3 L518.8,60.3 L522,60.2 L522,59.8 L518.8,59.5 L514.8,59.2 L510.2,58.9 L505,58.5 L499.3,58 L493.3,57.4 L487,56.9 L480.6,56.8 L474.1,56.1 L467.7,55.9 L461.5,55.5 L455.6,55.8 L450,55.7 L444.1,56 L437.8,55.9 L431.5,56.1 L425.1,56.5 L418.7,56.6 L412.4,56.7 L406.4,57.2 L400.8,57 L395.6,57 L391,56.7 L387.1,57.1 L384,59.4Z" fill="#9A6F1E"/>
+<path d="M398,68.2 L400.4,69 L403.5,69 L407.1,68.8 L411.2,68.6 L415.6,68.4 L420.3,68 L425.1,67.8 L430,67.7 L433.8,67.6 L438.1,67.6 L442.8,67.7 L447.6,67.8 L452.5,68 L457.4,68.1 L462.1,68.2 L466.4,68.2 L470.2,68.2 L473.5,68.2 L476,68.2 L476,67.8 L473.5,67.7 L470.3,67.5 L466.4,67.3 L462.1,67.1 L457.4,66.9 L452.6,66.8 L447.6,66.7 L442.8,66.6 L438.1,66.5 L433.8,66.4 L430,66.3 L425.1,66.2 L420.2,66.3 L415.5,66.2 L411.1,66.3 L407,66.4 L403.4,66.5 L400.3,66.8 L398,67.8Z" fill="#9A6F1E"/>
+<path d="M384,60 l-8,-7 l-8,7 l8,7Z" fill="#9A6F1E"/>
+<ellipse cx="296" cy="95.6" rx="47.1" ry="5.6" fill="#F3EAD2" stroke="#33241A" stroke-width="1.3"/>
+<path d="M319.3,56.9 c17.6,-3.2 19.2,20.8 -4.8,24" fill="none" stroke="#33241A" stroke-width="4.8" stroke-linecap="round"/>
+<path d="M319.3,56.9 c17.6,-3.2 19.2,20.8 -4.8,24" fill="none" stroke="#F3EAD2" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M271.2,50 C271.2,82.4 280.1,93.2 288.1,93.2 L303.9,93.2 C311.9,93.2 320.8,82.4 320.8,50Z" fill="#F3EAD2" stroke="#33241A" stroke-width="1.4" stroke-linejoin="round"/>
+<g clip-path="url(#fleuron-cup-clip4)">
+<rect x="271.2" y="63" width="49.6" height="6.9" fill="#8FA58A" opacity="0.9"/>
+<rect x="271.2" y="50" width="10.9" height="43.2" fill="#fff" opacity="0.3"/>
+<rect x="306.9" y="50" width="14.9" height="43.2" fill="#5A4230" opacity="0.2"/>
+</g>
+<ellipse cx="296" cy="50" rx="24.8" ry="5.6" fill="#E9DFC4" stroke="#33241A" stroke-width="1.3"/>
+<ellipse cx="296" cy="52" rx="21.6" ry="3.6" fill="#8C6A2A" opacity="0.9"/>
+<path d="M287.4,50.8 q6,-2 11.9,0" fill="none" stroke="#F0D488" stroke-width="1" opacity="0.8" stroke-linecap="round"/>
+<path d="M285,44 C284.3,42.7 280.3,38.7 281,36 C281.7,33.3 288.5,30.7 289,28 C289.5,25.3 284.8,21.3 284,20" stroke="#5A4230" stroke-width="1.3" opacity="0.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M296,44 C295.3,42.7 291.3,38.7 292,36 C292.7,33.3 299.5,30.7 300,28 C300.5,25.3 295.8,21.3 295,20" stroke="#5A4230" stroke-width="1.3" opacity="0.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M307,44 C306.3,42.7 302.3,38.7 303,36 C303.7,33.3 310.5,30.7 311,28 C311.5,25.3 306.8,21.3 306,20" stroke="#5A4230" stroke-width="1.3" opacity="0.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

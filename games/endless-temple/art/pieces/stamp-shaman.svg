@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="stamp-shaman-t stamp-shaman-d">
+<title id="stamp-shaman-t">Tooling stamp: Shaman (person)</title>
+<desc id="stamp-shaman-d">A leather tile from the Person tray, stamped in gold: A feather headdress over a plain band. Below it, the word SHAMAN.</desc>
+<defs><clipPath id="stamp-shaman-clip1"><rect x="0" y="0" width="200" height="200" rx="10"/></clipPath><filter id="stamp-shaman-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="556"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><filter id="stamp-shaman-gr3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="33"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="stamp-shaman-rg4" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#140904" stop-opacity="0.5"/></radialGradient><linearGradient id="stamp-shaman-gold5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="84" spreadMethod="reflect"><stop offset="0" stop-color="#F0D488"/><stop offset="0.45" stop-color="#D4A23A"/><stop offset="0.75" stop-color="#9A6F1E"/><stop offset="1" stop-color="#D4A23A"/></linearGradient><filter id="stamp-shaman-gr6" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="323"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="200" height="200" fill="#5E2A1E" rx="10"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-shaman-gr2)" clip-path="url(#stamp-shaman-clip1)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-shaman-gr3)" clip-path="url(#stamp-shaman-clip1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#stamp-shaman-rg4)" rx="10"/>
+<path d="M34,16 H166 L184,34 V132 L166,150 H34 L16,132 V34Z" fill="#431B12" opacity="0.8"/>
+<path d="M34,16 H166 L184,34 V132 L166,150 H34 L16,132 V34Z" fill="none" stroke="#140904" stroke-width="5" opacity="0.5" transform="translate(1.5 2)"/>
+<path d="M34,16 H166 L184,34 V132 L166,150 H34 L16,132 V34Z" fill="none" stroke="url(#stamp-shaman-gold5)" stroke-width="3"/>
+<path d="M37,23 H163 L177,37 V129 L163,143 H37 L23,129 V37Z" fill="none" stroke="url(#stamp-shaman-gold5)" stroke-width="0.9"/>
+<g transform="translate(101.6 86.2) scale(1.06)" opacity="0.7">
+<path d="M0,0 C6,-10.0 5,-20.0 0,-25 C-5,-20.0 -6,-10.0 0,0Z" fill="#140904" transform="translate(0 16) rotate(-60)"/>
+<path d="M0,0 C6,-12.0 5,-24.0 0,-30 C-5,-24.0 -6,-12.0 0,0Z" fill="#140904" transform="translate(0 16) rotate(-40)"/>
+<path d="M0,0 C6,-14.0 5,-28.0 0,-35 C-5,-28.0 -6,-14.0 0,0Z" fill="#140904" transform="translate(0 16) rotate(-20)"/>
+<path d="M0,0 C6,-16.0 5,-32.0 0,-40 C-5,-32.0 -6,-16.0 0,0Z" fill="#140904" transform="translate(0 16) rotate(0)"/>
+<path d="M0,0 C6,-14.0 5,-28.0 0,-35 C-5,-28.0 -6,-14.0 0,0Z" fill="#140904" transform="translate(0 16) rotate(20)"/>
+<path d="M0,0 C6,-12.0 5,-24.0 0,-30 C-5,-24.0 -6,-12.0 0,0Z" fill="#140904" transform="translate(0 16) rotate(40)"/>
+<path d="M0,0 C6,-10.0 5,-20.0 0,-25 C-5,-20.0 -6,-10.0 0,0Z" fill="#140904" transform="translate(0 16) rotate(60)"/>
+<path d="M-36,22 Q0,10 36,22 L34,32 Q0,20 -34,32Z" fill="#140904"/>
+<path d="M-26.2,40a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0M-10.2,37a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0M5.8,37a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0M21.8,40a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0" fill="#140904"/>
+</g>
+<g transform="translate(100 84) scale(1.06)" opacity="1">
+<path d="M0,0 C6,-10.0 5,-20.0 0,-25 C-5,-20.0 -6,-10.0 0,0Z" fill="url(#stamp-shaman-gold5)" transform="translate(0 16) rotate(-60)"/>
+<path d="M0,0 C6,-12.0 5,-24.0 0,-30 C-5,-24.0 -6,-12.0 0,0Z" fill="url(#stamp-shaman-gold5)" transform="translate(0 16) rotate(-40)"/>
+<path d="M0,0 C6,-14.0 5,-28.0 0,-35 C-5,-28.0 -6,-14.0 0,0Z" fill="url(#stamp-shaman-gold5)" transform="translate(0 16) rotate(-20)"/>
+<path d="M0,0 C6,-16.0 5,-32.0 0,-40 C-5,-32.0 -6,-16.0 0,0Z" fill="url(#stamp-shaman-gold5)" transform="translate(0 16) rotate(0)"/>
+<path d="M0,0 C6,-14.0 5,-28.0 0,-35 C-5,-28.0 -6,-14.0 0,0Z" fill="url(#stamp-shaman-gold5)" transform="translate(0 16) rotate(20)"/>
+<path d="M0,0 C6,-12.0 5,-24.0 0,-30 C-5,-24.0 -6,-12.0 0,0Z" fill="url(#stamp-shaman-gold5)" transform="translate(0 16) rotate(40)"/>
+<path d="M0,0 C6,-10.0 5,-20.0 0,-25 C-5,-20.0 -6,-10.0 0,0Z" fill="url(#stamp-shaman-gold5)" transform="translate(0 16) rotate(60)"/>
+<path d="M-36,22 Q0,10 36,22 L34,32 Q0,20 -34,32Z" fill="url(#stamp-shaman-gold5)"/>
+<path d="M-26.2,40a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0M-10.2,37a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0M5.8,37a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0M21.8,40a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0" fill="url(#stamp-shaman-gold5)"/>
+</g>
+<text x="100.7" y="180.9" font-size="19" font-family="serif" fill="#1A0B05" opacity="0.8" text-anchor="middle" letter-spacing="2.4" font-weight="bold">SHAMAN</text>
+<text x="100" y="180" font-size="19" font-family="serif" fill="url(#stamp-shaman-gold5)" text-anchor="middle" letter-spacing="2.4" font-weight="bold">SHAMAN</text>
+<text x="99.8" y="179.7" font-size="19" font-family="serif" fill="none" stroke="#F0D488" stroke-width="0.4" opacity="0.6" text-anchor="middle" letter-spacing="2.4" font-weight="bold">SHAMAN</text>
+<path d="M30,160 H170" stroke="url(#stamp-shaman-gold5)" stroke-width="0.8" fill="none"/>
+<path d="M22,160 l4,-4 l4,4 l-4,4Z" fill="url(#stamp-shaman-gold5)"/>
+<path d="M178,160 l-4,-4 l-4,4 l4,4Z" fill="url(#stamp-shaman-gold5)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-shaman-gr6)"/>
+</svg>

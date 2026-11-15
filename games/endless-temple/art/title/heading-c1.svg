@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 300" width="1600" height="300" role="img" aria-labelledby="heading-c1-t heading-c1-d">
+<title id="heading-c1-t">Chapter heading I: The Waking</title>
+<desc id="heading-c1-d">Chapter I, The Waking, tooled in gold on a strip of leather: the numeral in a dotted roundel under a window and its beam, the name between ruled lines, and silver sand gathering along the lower fillet as the book leaks.</desc>
+<defs><clipPath id="heading-c1-clip1"><rect x="0" y="0" width="1600" height="300" rx="0"/></clipPath><filter id="heading-c1-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="746"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><filter id="heading-c1-gr3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="750"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="heading-c1-rg4" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#140904" stop-opacity="0.6"/></radialGradient><linearGradient id="heading-c1-gold5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="180" y2="126" spreadMethod="reflect"><stop offset="0" stop-color="#F0D488"/><stop offset="0.45" stop-color="#D4A23A"/><stop offset="0.75" stop-color="#9A6F1E"/><stop offset="1" stop-color="#D4A23A"/></linearGradient></defs>
+<rect x="0" y="0" width="1600" height="300" fill="#4A2B18" rx="0"/>
+<rect x="0" y="0" width="1600" height="300" filter="url(#heading-c1-gr2)" clip-path="url(#heading-c1-clip1)"/>
+<rect x="0" y="0" width="1600" height="300" filter="url(#heading-c1-gr3)" clip-path="url(#heading-c1-clip1)"/>
+<rect x="0" y="0" width="1600" height="300" fill="url(#heading-c1-rg4)" rx="0"/>
+<rect x="26" y="26" width="1548" height="248" fill="none" stroke="url(#heading-c1-gold5)" stroke-width="4" rx="6"/>
+<rect x="36" y="36" width="1528" height="228" fill="none" stroke="url(#heading-c1-gold5)" stroke-width="1.2" rx="0"/>
+<circle cx="170" cy="150" r="96" fill="#1A0E08" opacity="0.6"/>
+<circle cx="170" cy="150" r="96" fill="none" stroke="url(#heading-c1-gold5)" stroke-width="4"/>
+<circle cx="170" cy="150" r="86" fill="none" stroke="url(#heading-c1-gold5)" stroke-width="1.2"/>
+<path d="M261,150m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M259.9,164.2m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M256.5,178.1m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M251.1,191.3m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M243.6,203.5m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M234.3,214.3m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M223.5,223.6m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M211.3,231.1m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M198.1,236.5m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M184.2,239.9m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M170,241m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M155.8,239.9m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M141.9,236.5m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M128.7,231.1m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M116.5,223.6m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M105.7,214.3m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M96.4,203.5m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M88.9,191.3m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M83.5,178.1m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M80.1,164.2m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M79,150m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M80.1,135.8m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M83.5,121.9m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M88.9,108.7m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M96.4,96.5m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M105.7,85.7m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M116.5,76.4m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M128.7,68.9m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M141.9,63.5m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M155.8,60.1m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M170,59m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M184.2,60.1m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M198.1,63.5m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M211.3,68.9m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M223.5,76.4m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M234.3,85.7m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M243.6,96.5m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M251.1,108.7m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M256.5,121.9m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M259.9,135.8m-1.6,0a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0" fill="url(#heading-c1-gold5)"/>
+<g transform="translate(170 144) scale(1.18)">
+<path d="M-22,34 V-10 A22,22 0 0,1 22,-10 V34Z M0,-32 V34 M-22,2 H22" fill="none" stroke="url(#heading-c1-gold5)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22,-6 L46,30 M22,8 L40,38 M22,22 L32,42" fill="none" stroke="url(#heading-c1-gold5)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="170.8" y="229.1" font-size="22" font-family="serif" fill="#1A0B05" opacity="0.8" text-anchor="middle" letter-spacing="3" font-weight="bold">I</text>
+<text x="170" y="228" font-size="22" font-family="serif" fill="url(#heading-c1-gold5)" text-anchor="middle" letter-spacing="3" font-weight="bold">I</text>
+<text x="169.7" y="227.6" font-size="22" font-family="serif" fill="none" stroke="#F0D488" stroke-width="0.4" opacity="0.6" text-anchor="middle" letter-spacing="3" font-weight="bold">I</text>
+<text x="902.6" y="178.9" font-size="74" font-family="serif" fill="#1A0B05" opacity="0.8" text-anchor="middle" letter-spacing="8" font-weight="bold">THE WAKING</text>
+<text x="900" y="175.2" font-size="74" font-family="serif" fill="url(#heading-c1-gold5)" text-anchor="middle" letter-spacing="8" font-weight="bold">THE WAKING</text>
+<text x="899.1" y="173.8" font-size="74" font-family="serif" fill="none" stroke="#F0D488" stroke-width="0.9" opacity="0.6" text-anchor="middle" letter-spacing="8" font-weight="bold">THE WAKING</text>
+<path d="M320,66 H860 M940,66 H1480" stroke="url(#heading-c1-gold5)" stroke-width="1.6" fill="none"/>
+<path d="M900,58 l10,8 l-10,8 l-10,-8Z" fill="url(#heading-c1-gold5)"/>
+<path d="M872,66 l8,0 M920,66 l8,0" stroke="url(#heading-c1-gold5)" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M320,234 H860 M940,234 H1480" stroke="url(#heading-c1-gold5)" stroke-width="1.6" fill="none"/>
+<path d="M900,226 l10,8 l-10,8 l-10,-8Z" fill="url(#heading-c1-gold5)"/>
+<path d="M872,234 l8,0 M920,234 l8,0" stroke="url(#heading-c1-gold5)" stroke-width="3" fill="none" stroke-linecap="round"/>
+<g transform="translate(1500 150) rotate(45) scale(0.6)">
+<path d="M0,0 C10,-14 8,-34 0,-46 C-8,-34 -10,-14 0,0Z" fill="url(#heading-c1-gold5)" transform="rotate(0)"/>
+<path d="M0,0 C14,-6 26,-4 30,-18 C18,-20 8,-14 0,0Z" fill="url(#heading-c1-gold5)" transform="rotate(45)"/>
+<path d="M0,0 C10,-14 8,-34 0,-46 C-8,-34 -10,-14 0,0Z" fill="url(#heading-c1-gold5)" transform="rotate(90)"/>
+<path d="M0,0 C14,-6 26,-4 30,-18 C18,-20 8,-14 0,0Z" fill="url(#heading-c1-gold5)" transform="rotate(135)"/>
+<path d="M0,0 C10,-14 8,-34 0,-46 C-8,-34 -10,-14 0,0Z" fill="url(#heading-c1-gold5)" transform="rotate(180)"/>
+<path d="M0,0 C14,-6 26,-4 30,-18 C18,-20 8,-14 0,0Z" fill="url(#heading-c1-gold5)" transform="rotate(225)"/>
+<path d="M0,0 C10,-14 8,-34 0,-46 C-8,-34 -10,-14 0,0Z" fill="url(#heading-c1-gold5)" transform="rotate(270)"/>
+<path d="M0,0 C14,-6 26,-4 30,-18 C18,-20 8,-14 0,0Z" fill="url(#heading-c1-gold5)" transform="rotate(315)"/>
+<circle cx="0" cy="0" r="6" fill="#4A2B18" stroke="url(#heading-c1-gold5)" stroke-width="2"/>
+</g>
+</svg>

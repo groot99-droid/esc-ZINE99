@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="label-gutter-sand-t label-gutter-sand-d">
+<title id="label-gutter-sand-t">Jar label: Gutter Sand</title>
+<desc id="label-gutter-sand-d">The ninth jar's label, a plain hand-ruled slip: an open book's gutter and the silver sand swept out of it, named in pen, with its marks for depth 2, length 0 and binding minus 3.</desc>
+<defs><clipPath id="label-gutter-sand-clip1"><path d="M22,402 V120 C22,52 80,22 150,22 C220,22 278,52 278,120 V402 Q150,418 22,402Z"/></clipPath><filter id="label-gutter-sand-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="68"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><clipPath id="label-gutter-sand-clip3"><path d="M-46,54 Q-13.8,15 6.9,28 Q27.6,41 46,54Z"/></clipPath><linearGradient id="label-gutter-sand-lg4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ffffff"/><stop offset="20%" stop-color="#ffffff"/><stop offset="100%" stop-color="#3A2A1A"/></linearGradient></defs>
+<rect x="0" y="0" width="300" height="420" fill="#DCE5DC"/>
+<rect x="0" y="0" width="40" height="420" fill="#fff" opacity="0.3"/>
+<rect x="270" y="0" width="30" height="420" fill="#7A8A80" opacity="0.2"/>
+<path d="M22,402 V120 C22,52 80,22 150,22 C220,22 278,52 278,120 V402 Q150,418 22,402Z" fill="#EDE4CC" stroke="#4A3220" stroke-width="3.4" stroke-linejoin="round"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#label-gutter-sand-gr2)" clip-path="url(#label-gutter-sand-clip1)"/>
+<path d="M40,396 V124 C40,70 90,42 150,42 C210,42 260,70 260,124 V396" fill="none" stroke="#5A4230" stroke-width="1.2" stroke-dasharray="7 5"/>
+<circle cx="150" cy="168" r="84" fill="#FBF5E4" stroke="#4A3220" stroke-width="2.2"/>
+<g transform="translate(150 168) scale(1.1)">
+<path d="M0,-40 C-14,-50 -40,-50 -56,-42 V10 C-40,2 -14,2 0,12 C14,2 40,2 56,10 V-42 C40,-50 14,-50 0,-40Z" fill="#F3EAD2" stroke="#33241A" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M0,-40 V12 M-46,-32 q20,-6 38,0 M-46,-20 q20,-6 38,0 M46,-32 q-20,-6 -38,0 M46,-20 q-20,-6 -38,0" stroke="#33241A" stroke-width="1" fill="none" opacity="0.6"/>
+<path d="M-1,-4h0M6,9h0M-2,20h0M-2,-24h0M-3,-32h0M1,4h0M-4,-9h0M3,-7h0M4,-23h0M-2,-24h0M-4,14h0M6,-30h0M-4,-37h0M-0,10h0M-4,-36h0M5,-29h0M-1,-34h0M5,14h0M3,-5h0" fill="none" stroke="#AEB4C0" stroke-width="1.2" stroke-linecap="round" opacity="0.9"/>
+<path d="M-1,-17h0M4,-22h0M-1,2h0M5,-13h0M-6,-19h0M5,-10h0M-1,-30h0" fill="none" stroke="#AEB4C0" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+<path d="M5,-32h0M1,-39h0M4,10h0M0,13h0M-4,6h0M0,-20h0M-4,5h0M1,-18h0M-3,-25h0M0,-15h0" fill="none" stroke="#AEB4C0" stroke-width="2.8" stroke-linecap="round" opacity="0.9"/>
+<path d="M2,15h0M-3,-8h0M3,-22h0M-6,4h0M-5,-8h0" fill="none" stroke="#C58B3A" stroke-width="1.2" stroke-linecap="round" opacity="0.9"/>
+<path d="M-3,-3h0M1,-16h0M-5,-13h0M-1,-35h0M-5,-33h0M5,2h0M0,-10h0M-1,-9h0" fill="none" stroke="#C58B3A" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+<path d="M-5,3h0M1,-1h0" fill="none" stroke="#C58B3A" stroke-width="2.8" stroke-linecap="round" opacity="0.9"/>
+<path d="M-2,-10h0M-5,17h0M-1,-11h0M4,18h0M1,8h0M5,-28h0" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.8"/>
+<path d="M6,-16h0M0,19h0M5,15h0" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity="0.8"/>
+<path d="M-46,54 Q-13.8,15 6.9,28 Q27.6,41 46,54Z" fill="#D5D8DF" stroke="#5A4230" stroke-width="0.8" opacity="0.9"/>
+<g clip-path="url(#label-gutter-sand-clip3)">
+<path d="M-5,27h0M22,36h0M-27,53h0M6,53h0M-1,27h0M-31,50h0M-28,22h0M-22,43h0M36,44h0M15,26h0M7,53h0M-40,46h0M-16,26h0M3,40h0M-43,45h0M23,30h0M11,21h0M2,34h0M28,27h0M-7,21h0M-42,46h0M-24,21h0M-33,54h0M38,49h0M6,41h0M-24,32h0M32,42h0M5,45h0M36,26h0M-22,44h0M-44,53h0M-15,27h0M16,49h0M-7,44h0M16,23h0M-3,48h0M1,38h0M19,25h0M39,46h0M-25,26h0M14,42h0M44,32h0M-46,49h0M19,38h0M-16,34h0M-15,35h0M34,36h0M-16,47h0M18,22h0M-30,27h0M-30,50h0M14,31h0M44,34h0M-28,45h0M-25,31h0M-44,49h0M23,49h0M2,42h0M-36,35h0M-39,28h0M7,32h0" fill="none" stroke="#AEB4C0" stroke-width="1" stroke-linecap="round" opacity="0.9"/>
+<path d="M-24,32h0M31,23h0M20,43h0M-40,49h0M-6,51h0M-18,35h0M-34,53h0M-39,38h0M19,40h0M42,27h0M-2,27h0M21,33h0M19,44h0M36,29h0M23,30h0M-1,52h0M-2,52h0M39,34h0M-23,44h0M-41,44h0M34,25h0M-30,29h0M-6,35h0M18,43h0M23,37h0M42,23h0M14,52h0M-41,24h0M7,45h0M-39,52h0M-34,49h0M1,44h0M30,40h0M34,42h0M9,42h0M33,33h0M-22,52h0M-8,29h0M44,53h0M-13,47h0M35,49h0" fill="none" stroke="#AEB4C0" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/>
+<path d="M-34,43h0M-16,47h0M-35,36h0M46,41h0M-12,21h0M-36,36h0M-45,46h0M33,39h0M12,49h0M-2,25h0M32,30h0M-7,52h0M-24,37h0M-46,32h0M-29,27h0M37,24h0M-14,29h0M46,25h0" fill="none" stroke="#AEB4C0" stroke-width="2.6" stroke-linecap="round" opacity="0.9"/>
+<path d="M36,33h0M13,21h0M-19,41h0M-6,35h0M-34,24h0M32,49h0M-34,26h0M4,30h0M33,41h0M-20,26h0M29,32h0M36,48h0M38,44h0M14,21h0M20,26h0M13,28h0M-18,43h0M38,32h0M-5,29h0M6,52h0M-12,21h0M28,24h0M-39,41h0" fill="none" stroke="#C58B3A" stroke-width="1" stroke-linecap="round" opacity="0.9"/>
+<path d="M-2,24h0M32,52h0M44,21h0M-40,42h0M11,25h0M-24,38h0M21,39h0M-21,53h0M-2,28h0M33,31h0M36,41h0M39,47h0M-24,39h0M-22,32h0M42,26h0" fill="none" stroke="#C58B3A" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/>
+<path d="M-25,25h0M11,28h0M-29,49h0M33,20h0M34,26h0M28,30h0M-11,36h0M-27,47h0M-39,30h0M-29,41h0M-11,47h0M20,25h0" fill="none" stroke="#C58B3A" stroke-width="2.6" stroke-linecap="round" opacity="0.9"/>
+<path d="M11,41h0M21,49h0M26,24h0M-43,51h0M31,48h0M-44,50h0M-13,24h0M-42,54h0M-23,32h0M-5,44h0M-24,50h0M2,33h0M29,26h0M19,54h0" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+<path d="M1,34h0M16,32h0M-25,35h0M29,54h0M-42,26h0M24,43h0M-8,25h0M-3,46h0M45,32h0M38,47h0" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+<path d="M28,30h0M-22,40h0M34,49h0M39,38h0M-38,29h0M-22,33h0" fill="none" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" opacity="0.8"/>
+</g>
+<path d="M-3,12h0M1,34h0M-3,29h0M-7,37h0M-6,21h0M7,20h0M-3,16h0M6,13h0M-6,38h0M8,33h0M2,32h0" fill="none" stroke="#AEB4C0" stroke-width="1.2" stroke-linecap="round" opacity="0.9"/>
+<path d="M2,24h0M-5,19h0M-2,17h0M6,17h0M-8,39h0M-2,32h0M-8,36h0M5,18h0" fill="none" stroke="#AEB4C0" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+<path d="M2,22h0M4,25h0M-5,37h0M-3,36h0M-5,20h0" fill="none" stroke="#AEB4C0" stroke-width="2.8" stroke-linecap="round" opacity="0.9"/>
+<path d="M4,28h0M3,25h0M-2,38h0M1,30h0M-0,19h0" fill="none" stroke="#C58B3A" stroke-width="1.2" stroke-linecap="round" opacity="0.9"/>
+<path d="M5,39h0M6,34h0M0,30h0M-3,25h0" fill="none" stroke="#C58B3A" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+<path d="M5,11h0" fill="none" stroke="#C58B3A" stroke-width="2.8" stroke-linecap="round" opacity="0.9"/>
+<path d="M-3,14h0" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.8"/>
+<path d="M2,13h0M-2,39h0M1,16h0M-6,14h0M-7,15h0" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity="0.8"/>
+</g>
+<text x="150" y="298" font-size="34" font-family="cursive" fill="#33241A" text-anchor="middle" font-style="italic" transform="rotate(-2 150 298)">gutter sand</text>
+<path d="M70,308 q80,8 160,-2" stroke="#33241A" stroke-width="1.4" fill="none"/>
+<path d="M30,336 h72 v34 q-36,12 -72,0Z" fill="#F8F0DA" stroke="#4A3220" stroke-width="1.4"/>
+<text x="42" y="364" font-size="22" font-family="serif" fill="#4A3220" font-weight="bold">D</text>
+<rect x="62" y="344" width="7" height="22" rx="1.5" fill="#4A3220"/>
+<rect x="73" y="344" width="7" height="22" rx="1.5" fill="#4A3220"/>
+<path d="M114,336 h72 v34 q-36,12 -72,0Z" fill="#F8F0DA" stroke="#4A3220" stroke-width="1.4"/>
+<text x="126" y="364" font-size="22" font-family="serif" fill="#4A3220" font-weight="bold">L</text>
+<line x1="148" y1="357" x2="172" y2="357" stroke="#4A3220" stroke-width="1.2" stroke-dasharray="2 4" opacity="0.7"/>
+<path d="M198,336 h72 v34 q-36,12 -72,0Z" fill="#F8F0DA" stroke="#4A3220" stroke-width="1.4"/>
+<text x="210" y="364" font-size="22" font-family="serif" fill="#4A3220" font-weight="bold">B</text>
+<circle cx="235" cy="356" r="4.6" fill="none" stroke="#A0412B" stroke-width="2.2"/>
+<circle cx="247" cy="356" r="4.6" fill="none" stroke="#A0412B" stroke-width="2.2"/>
+<circle cx="259" cy="356" r="4.6" fill="none" stroke="#A0412B" stroke-width="2.2"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#label-gutter-sand-lg4)" opacity="0.1"/>
+</svg>
