@@ -12,6 +12,13 @@
 // drawer, in the Cinder Reach archive of Book II, holding the key's first printing, initialled S.V.,
 // with the couplet the player wrote already pencilled in it by a third hand. Drawn with the game's
 // art (api.art): the key's pages, the wolf plate, Pell's page, the dial faces.
+// Phase 2 (DEEP_DIVE section 3): three stages. Teach (Book I): three jars, the last the wolf that
+// breaks the key. Test (Book III): low-gravity specimens that drift on the plate, and three breaks,
+// each on a different measure. Twist (the Flyleaf, Cinder Reach): reverse keying. His pencil has left
+// three leaves blank for species that do not exist yet; the player chooses the measures that would
+// have to be true to arrive there, and the plate draws what the Second Genesis selects for.
+// Layer link 3: the wolf couplet written here (or not) changes what the climbs draw.
+import { runStages } from "./_stages.js";
 const P = "lira-calyx-key-";
 const INK = "#3b2618", PAPER = "#ebe0c4", PENCIL = "#7d7a74", SEAL = "#b3212b", TEAL = "#25c2a8";
 const NAMES = {
@@ -25,7 +32,7 @@ const NAMES = {
 };
 const TRAIT = { glow: "Glow period", len: "Length", alt: "Found at" };
 const fmt = (t, v) => (t === "glow" ? `${v.toFixed(1)} s` : t === "len" ? `${Math.round(v)} mm` : `${String(Math.round(v)).replace(/(\d)(\d{3})$/, "$1 $2")} m`);
-const SPECS = [
+const SPECS_ALL = [
   { id: 1, kind: "frond", glow: 2.2, len: 58, alt: 2300, name: "Glassleaf", label: "Frond, terrace edge" },
   { id: 2, kind: "fern", glow: 3.1, len: 28, alt: 1700, name: "Ash-fern", label: "Fern, river stair", pell: 3.0 },
   { id: 3, kind: "strand", glow: 5.0, len: 44, alt: 2100, name: "Spore-Weaver strand", label: "Thread, valley web", pell: 3.5 },
@@ -33,9 +40,29 @@ const SPECS = [
   { id: 5, kind: "moss", glow: 1.6, len: 22, alt: 2450, name: "Spire-moss", label: "Moss, schoolroom wall", pell: 1.5 },
   { id: 6, kind: "plate", glow: 4.6, len: 92, alt: 2200, name: "Ridgeback Strider", label: "Dorsal plate, bridge", pell: 3.8 },
 ];
+const WOLF_FIX = { trait: "alt", thr: 2000, newName: "Ember Wolf, upland form (new)" };
+const SPECS_T = [
+  { id: 1, kind: "moss", glow: 1.8, len: 24, alt: 3900, name: "Spire-moss", label: "Moss, storm-singing ledge", pell: 2.0, drift: true },
+  { id: 2, kind: "frond", glow: 2.0, len: 56, alt: 4200, name: "Glassleaf", anomaly: true, fix: { trait: "alt", thr: 3000, newName: "Glassleaf, high form (new)" }, label: "Frond, low-gravity pocket", pell: 2.0, drift: true },
+  { id: 3, kind: "plate", glow: 4.4, len: 64, alt: 2300, name: "Ridgeback Strider", anomaly: true, fix: { trait: "len", thr: 70, newName: "Ridgeback Strider, dwarf form (new)" }, label: "Dorsal plate, Kade’s report", pell: 4.5, drift: true },
+  { id: 4, kind: "strand", glow: 6.6, len: 44, alt: 2900, name: "Spore-Weaver strand", anomaly: true, fix: { trait: "glow", thr: 6, newName: "Spore-Weaver strand, slow form (new)" }, label: "Thread, harvest terrace", pell: 6.5, drift: true },
+];
+const STG = [
+  { specs: [SPECS_ALL[0], SPECS_ALL[1], { ...SPECS_ALL[3], id: 3, fix: WOLF_FIX }], limit: 3, plate: "PLATE XIV · THE TERRACE COLLECTION" },
+  { specs: SPECS_T, limit: 2, plate: "PLATE XXXI · THE HIGH PEAKS, AND KADE’S REPORTS" },
+  { specs: [SPECS_ALL[0]], limit: 3, plate: "THE FLYLEAF · KEY, MID-SLOPES, FIRST PRINTING" },
+];
+// the twist: his blank leaves, and the measures on offer
+const OPTS = { glow: [1.5, 3, 5, 7.5], len: [25, 50, 80, 105], alt: [1200, 2400, 3200, 3800] };
+const BLANKS = [
+  { id: "x", at: 7, label: "7a", hint: "a hunter, large, slow-glowing, above the line" },
+  { id: "y", at: 8, label: "8a", hint: "a moss for the highest ledges" },
+  { id: "z", at: 9, label: "9a", hint: "a strider that keeps to the Peaks" },
+];
 
-export default {
-  mount(root, api) {
+function mountStage(root, api, stage) {
+  {
+    const SPECS = STG[stage].specs;
     const off = []; let raf = 0;
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); off.push(() => t.removeEventListener(e, f, o)); };
     const A = api.art || { has: () => false, url: () => "" };
@@ -101,9 +128,16 @@ export default {
       .${P}fly p{margin:0 0 8px}.${P}fly .said{font:italic 16px/1.4 'IM Fell English',Georgia,serif;color:#2f4c86;min-height:3em}
       .${P}fly .his{font:italic 16px/1.4 Georgia,serif;color:${PENCIL};border-left:3px solid ${PENCIL};padding-left:10px}
       .${P}fly button.done{opacity:.55}
+      .${P}drift{animation:${P}dr 5s ease-in-out infinite}@keyframes ${P}dr{50%{transform:translate(5px,-7px)}}
+      @media (prefers-reduced-motion:reduce){.${P}drift{animation:none}}
+      .${P}opt{display:grid;grid-template-columns:5.5em 1fr;gap:6px 8px;align-items:center;margin:6px 0}
+      .${P}opt b{font-weight:400;font-style:italic}
+      .${P}cp.his{color:#4d5b6e;font-style:italic}.${P}cp.tgt{outline:2px dashed ${SEAL};outline-offset:1px;background:rgba(179,33,43,.06)}
+      .${P}cp.got{background:rgba(47,107,63,.12)}
+      .${P}hd.h{color:#4d5b6e;border-style:dotted}
       .${P}zoom{max-width:min(520px,100%);max-height:100%;overflow:auto;background:${PAPER};padding:10px;border:1.5px solid ${INK}}.${P}zoom img{display:block;width:100%;height:auto;margin-bottom:8px}
     </style>
-    <div class="${P}plate"><h2>${pic("tab-specimens")}PLATE XIV · THE TERRACE COLLECTION</h2>
+    <div class="${P}plate"><h2>${pic("tab-specimens")}${STG[stage].plate}</h2>
       <section class="${P}left" aria-label="Specimen card">
         <div class="${P}tally"></div>
         <svg viewBox="0 0 400 270" aria-label="Specimen drawing with rule"></svg>
@@ -177,7 +211,7 @@ export default {
         });
         g.push(`<path d="M${x1 - L * 0.05},${CY - L * 0.06} L${x1},${CY} L${x1 - L * 0.05},${CY + L * 0.06}" ${ink} stroke-width="1.4"/>`);
       }
-      d += `<g>${g.join("")}</g>`;
+      d += `<g class="${s.drift && !api.reducedMotion ? P + "drift" : ""}">${g.join("")}</g>`;
       // rule
       const RY = 226;
       d += `<rect x="${X0 - 6}" y="${RY}" width="${110 * MM + 12}" height="22" fill="#e7d6a8" stroke="${INK}"/>`;
@@ -204,7 +238,7 @@ export default {
     // glow: flashes once per period (opacity only)
     const loop = (now) => {
       const h = svg.querySelector("." + P + "halo");
-      if (h && st.started) { const per = spec().glow * 1000, ph = ((now - st.t0) % per) / per; h.setAttribute("opacity", ph < 0.12 ? 1 - ph / 0.12 * 0.3 : 0.12); }
+      if (h && st.started && stage < 2) { const per = spec().glow * 1000, ph = ((now - st.t0) % per) / per; h.setAttribute("opacity", ph < 0.12 ? 1 - ph / 0.12 * 0.3 : 0.12); }
       raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
@@ -213,7 +247,7 @@ export default {
     const renderMeas = () => {
       const s = spec(), m = st.m;
       $("." + P + "meas").innerHTML = ["glow", "len", "alt"].map((t) => `<b>${TRAIT[t]}</b><span>${m[t] != null ? fmt(t, m[t]) + (t === "glow" && st.pellTold ? " (Pell’s count)" : "") : t === "glow" && st.taps.length ? `tapping <span class="${P}taps">${[0, 1, 2, 3].map((k) => `<i class="${k < st.taps.length ? "f" : ""}"></i>`).join("")}</span>` : "not measured"}</span>`).join("");
-      $("." + P + "tally").textContent = `SPECIMEN ${st.i + 1} OF 6 · NAMED ${st.named} · KEYED NEW ${st.keyedNew} · MISCLASSIFIED ${st.misclassified}`;
+      $("." + P + "tally").textContent = `SPECIMEN ${st.i + 1} OF ${SPECS.length} · NAMED ${st.named} · KEYED NEW ${st.keyedNew} · MISCLASSIFIED ${st.misclassified}`;
       void s;
     };
     const tool = (t) => {
@@ -304,21 +338,25 @@ export default {
       act.querySelectorAll("[data-th]").forEach((b) => on(b, "click", () => { a.thr = +b.dataset.th; renderAnomaly(); }));
       act.querySelectorAll("[data-at]").forEach((b) => on(b, "click", () => { a.at = b.dataset.at; renderAnomaly(); }));
       const w = act.querySelector("[data-w]");
-      on(w, "click", () => { if (st.over) return;
-        const ok = a.trait === "alt" && a.thr === 2000 && a.at === "leaf";
+      on(w, "click", () => { if (st.over) return; const s = spec();
+        const fix = s.fix || WOLF_FIX, ok = a.trait === fix.trait && a.thr === fix.thr && a.at === "leaf";
         if (!ok) {
           a.tries++;
-          log(a.tries >= 2 ? "Lira's note: the tag says 2 640 m; the description says below 2 000 m. Separate there, just before the name." : "That couplet does not separate it from the name it reached. Try again.");
+          log(a.tries >= 2 || stage === 0 ? `Lira's note: ${TRAIT[fix.trait].toLowerCase()} is ${fmt(fix.trait, s[fix.trait])} here, and the description stops at ${fmt(fix.trait, fix.thr)}. Separate there, just before the name.` : "That couplet does not separate it from the name it reached. Try again.");
           return;
         }
-        const id = KEY.length + 1;
+        const id = KEY.length + 1, T2 = fix.trait, hi = s[T2] >= fix.thr, old = st.atName;
+        const word = T2 === "alt" ? ["Found below", "Found", "or above"] : T2 === "len" ? ["Length under", "Length", "or more"] : ["Glow period under", "Glow period", "or more"];
         st.leaf.c[st.leaf.side].go = id;
-        KEY.push({ id, t: "alt", pencil: true, a: { txt: "Found below 2 000 m", go: "Ember Wolf" }, b: { txt: "Found 2 000 m or above", go: "Ember Wolf, upland form (new)" }, test: (v) => (v < 2000 ? "a" : "b") });
-        st.keyedNew++; log("Couplet written in pencil. The juvenile is keyed as new: an Ember Wolf, too high. Lira underlines the altitude twice.", true); stamp("KEYED NEW", true);
+        KEY.push({ id, t: T2, pencil: true, a: { txt: `${word[0]} ${fmt(T2, fix.thr)}`, go: hi ? old : fix.newName }, b: { txt: `${word[1]} ${fmt(T2, fix.thr)} ${word[2]}`, go: hi ? fix.newName : old }, test: (v) => (v < fix.thr ? "a" : "b") });
+        NAMES[fix.newName] = NAMES[fix.newName] || { ...NAMES[old], text: "Keyed in pencil by Lira." };
+        st.keyedNew++; stamp("KEYED NEW", true);
+        const wolf = fix === WOLF_FIX;
+        log(wolf ? "Couplet written in pencil. The juvenile is keyed as new: an Ember Wolf, too high. Lira underlines the altitude twice." : `Couplet ${id} written in pencil: ${fix.newName.replace(" (new)", "")}. ${st.keyedNew === 3 ? "Three breaks in one plate. A key that breaks this often is describing a country that has moved." : "The key is one branch longer, and the branch is hers."}`, true);
         renderKey();
-        const found = pic("fig-wolf", "", "Ember Wolf, juvenile, 2 600 m") + pic("pell-page-5", "", "Pell's page: WOLF BABY ONE. 2 600 M TOO HIGH");
+        const found = wolf ? pic("fig-wolf", "", "Ember Wolf, juvenile, 2 600 m") + pic("pell-page-5", "", "Pell's page: WOLF BABY ONE. 2 600 M TOO HIGH") : "";
         act.innerHTML = found ? `<div class="${P}found">${found}<span>Pell copies it into her own book that evening, in capitals: 2 600 M. TOO HIGH.</span></div>` : "";
-        later(next, found ? (api.reducedMotion ? 1800 : 3600) : 1400);
+        later(next, found ? (api.reducedMotion ? 1800 : 3600) : 1600);
       });
     };
     const settle = (ok, name) => {
@@ -326,9 +364,9 @@ export default {
       else {
         st.misclassified++; stamp("MISCLASSIFIED", false);
         const s = spec();
-        log(s.anomaly && name === s.name ? `${name}? The tag says ${fmt("alt", s.alt)}; the description says below 2 000 m. Lira writes it in, and it sits there wrong.` : `${name}: logged misclassified. ${st.pellTold ? "Pell’s count was off; she looks at her fingers and goes quiet." : "It was not that."}`);
+        log(s.anomaly && name === s.name ? `${name}? ${TRAIT[(s.fix || WOLF_FIX).trait]} ${fmt((s.fix || WOLF_FIX).trait, s[(s.fix || WOLF_FIX).trait])}: outside the description. Lira writes the name in, and it sits there wrong.` : `${name}: logged misclassified. ${st.pellTold ? "Pell’s count was off; she looks at her fingers and goes quiet." : "It was not that."}`);
       }
-      if (st.misclassified >= 2) { st.over = true; renderMeas(); act.innerHTML = ""; api.store.set("losses", losses + 1); later(() => api.end({ outcome: "lose", text: `Two specimens misclassified. The terrace collection goes into the journal unverified (${st.named} named, ${st.keyedNew} keyed new), and Pell copies the wrong names into her own book in her careful capitals.` }), 900); return; }
+      if (st.misclassified >= STG[stage].limit) { st.over = true; renderMeas(); act.innerHTML = ""; api.store.set("losses", losses + 1); if (stage === 0) api.shared.set("wolf", "misclassified"); later(() => api.end({ outcome: "lose", text: `${stage === 0 ? "Every jar" : "Two specimens"} misclassified. The collection goes into the journal unverified (${st.named} named, ${st.keyedNew} keyed new), and Pell copies the wrong names into her own book in her careful capitals.` }), 900); return; }
       later(next, 900);
     };
     const timers = []; const later = (f, ms) => timers.push(setTimeout(f, ms));
@@ -336,15 +374,19 @@ export default {
       st.i++; st.cp = 1; st.m = {}; st.taps = []; st.atName = null; st.anomaly = null; st.path = []; st.jaw = 0; act.innerHTML = "";
       if (st.i >= SPECS.length) {
         st.over = true; st.i = SPECS.length - 1; api.store.set("losses", 0);
-        const clean = st.misclassified === 0 && st.keyedNew === 1;
-        const text = `All six specimens keyed: ${st.named} named, ${st.keyedNew} keyed as new${st.misclassified ? `, ${st.misclassified} misclassified` : ""}. ${clean ? "The anomaly now has its own couplet in Lira's pencil, and the key is one branch truer than it was this morning. Pell asks why the wolf came up so high. Lira says she does not know yet, and writes that down too." : st.keyedNew ? "The anomaly has its couplet; one name on the plate is wrong and will stay wrong in the journal." : "The anomaly went in under the wrong name. Nothing on the page says the wolves are climbing."}`;
-        flyleaf(clean ? "win" : "done", text);
+        const breaks = SPECS.filter((x) => x.anomaly).length, clean = st.misclassified === 0 && st.keyedNew === breaks;
+        if (stage === 0) api.shared.set("wolf", st.keyedNew ? "keyed" : "misclassified");
+        const text = stage === 0 ? `Three jars keyed: ${st.named} named, ${st.keyedNew} keyed as new${st.misclassified ? `, ${st.misclassified} misclassified` : ""}. ${st.keyedNew ? "The wolf now has its own couplet in Lira's pencil, and the key is one branch truer than it was this morning. Pell asks why it came up so high. Lira says she does not know yet, and writes that down too." : "The wolf went in under the old name. Nothing on the page says the wolves are climbing."}`
+          : `Four specimens keyed: ${st.named} named, ${st.keyedNew} of ${breaks} breaks mended in pencil${st.misclassified ? `, ${st.misclassified} misclassified` : ""}. ${clean ? "The key broke three times in one plate, on altitude, on length and on the glow itself, and each time she wrote the branch it lacked. Three is not an anomaly. Three is a direction." : "Not every break was mended; the plate goes into Book III with a name on it that the specimen does not fit."}`;
+        api.end({ outcome: clean ? "win" : "done", text });
         return;
       }
       st.t0 = performance.now(); st.pellTold = false; drawSpec(); renderMeas(); renderKey();
-      if (st.i === 1) { pellBtn.hidden = false; log("Pell drags a stool to the bench. “I can count glows faster than you. Ask me.” She means it. Her numbers are not always right.", true); }
-      else if (st.i === 3) log("A track cast from the upper bridge, still damp. Joren brought it down this morning, wrapped in his scarf.", true);
-      else if (st.i === 4) log(st.keyedNew ? "Lira looks at her new pencil couplet for a while before she picks up the next jar." : "The next jar. The wolf’s card stays at the edge of the bench.", true);
+      if (stage === 0 && st.i === 1) { pellBtn.hidden = false; log("Pell drags a stool to the bench. “I can count glows faster than you. Ask me.” She means it. Her numbers are not always right.", true); }
+      else if (stage === 0 && st.i === 2) log("A track cast from the upper bridge, still damp. Joren brought it down this morning, wrapped in his scarf. Follow the key to its name, then look at the tag.", true);
+      else if (stage === 1 && st.i === 1) log("A frond from a low-gravity pocket. It will not lie still on the plate; nothing from up there does.", true);
+      else if (stage === 1 && st.i === 2) log("One of the Lowland mutation reports Kade forwarded, with the plate itself wrapped in oilcloth.", true);
+      else if (stage === 1 && st.i === 3) log("A web thread from Joren’s harvest terrace. Count its glow twice, or ask Pell’s tally: it is in no hurry.", true);
     };
 
     // ---- overlays: a page looked at closely, and the Flyleaf (Book II, Cinder Reach)
@@ -355,20 +397,21 @@ export default {
       over.innerHTML = `<div class="${P}zoom" role="dialog" aria-label="The key's page">${pic(id, "", cap)}<p style="font:italic 15px/1.4 Georgia,serif;margin:0 0 8px">${cap}</p><button type="button">Back to the bench</button></div>`;
       el.appendChild(over); on(over, "click", (e) => { if (e.target === over || e.target.closest("button")) closeOver(); }); over.querySelector("button").focus();
     };
-    const flyleaf = (outcome, text) => {
+    // ---- the twist. First the Flyleaf (phase 1's drawer, now the way in), then reverse keying.
+    const wolfKeyed = api.shared.get("wolf", null) === "keyed";
+    const flyleaf = (then) => {
       closeOver(); over = document.createElement("div"); over.className = P + "over";
       const fl = { read: new Set(), tries: 0, done: false };
-      const end = (tail) => { closeOver(); api.end({ outcome, text: text + tail }); };
-      const mine = st.keyedNew ? "6b. Found 2 000 m or above …… Ember Wolf, upland form (new)" : null;
-      const draw = (stage) => {
+      const mine = wolfKeyed ? "6b. Found 2 000 m or above …… Ember Wolf, upland form (new)" : null;
+      const draw = (stg) => {
         const tx = over.querySelector(".tx");
-        if (stage === "door") {
+        if (stg === "door") {
           tx.innerHTML = `<div class="ch">BOOK II · CINDER REACH ARCHIVE</div><h3>One more drawer</h3>
-            <p>Weeks later and two thousand metres down, in the archive at Cinder Reach, the drawer under the specimen bench is not on the index. The label says only: <i>Key, Mid-Slopes. First printing.</i></p>
+            <p>Two thousand metres below Hollin, in the archive at Cinder Reach, the drawer under the specimen bench is not on the index. The label says only: <i>Key, Mid-Slopes. First printing.</i></p>
             <p>You have used this key since your first morning on the terrace.</p>
             <div class="${P}row"><button type="button" data-f="open">Open the drawer</button><button type="button" data-f="leave">Leave it shut</button></div>`;
-          over.querySelector(".im").innerHTML = pic(st.keyedNew ? "key-page-her-pencil" : "key-page-print", "", "Your copy of the key") || `<div class="fb">Your copy of the key.</div>`;
-        } else if (stage === "leaf") {
+          over.querySelector(".im").innerHTML = pic(wolfKeyed ? "key-page-her-pencil" : "key-page-print", "", "Your copy of the key") || `<div class="fb">Your copy of the key.</div>`;
+        } else if (stg === "leaf") {
           over.querySelector(".im").innerHTML = pic("key-flyleaf", "", "The flyleaf of the key's first printing") || `<div class="fb">CINDER REACH · FIRST PRINTING<br>S.V.<br>2b. Found above 2 000 m: not yet. Leave room.</div>`;
           const all = fl.read.size === 3;
           tx.innerHTML = `<div class="ch">THE FLYLEAF</div><h3>The key, first printing</h3>
@@ -376,7 +419,7 @@ export default {
             <div class="${P}row">${[["stamp", "The stamp"], ["init", "The initials"], ["pencil", "The pencil"]].map(([k, l]) => `<button type="button" data-r="${k}" class="${fl.read.has(k) ? "done" : ""}">${l}</button>`).join("")}</div>
             <p class="said" aria-live="polite">${fl.said || ""}</p>
             ${all ? `<div class="${P}row"><button type="button" data-f="lay">${mine ? "Lay your couplet beside it" : "Lay your key beside it"}</button></div>` : ""}`;
-        } else if (stage === "lay") {
+        } else if (stg === "lay") {
           tx.innerHTML = `<div class="ch">THE FLYLEAF</div><h3>Whose hand?</h3>
             ${mine ? `<p><span class="${P}hd p">HER PENCIL</span> ${mine}</p>` : `<p>Your copy has no couplet for it: the wolf went in under the old name.</p>`}
             <p class="his">2b. Found above 2 000 m: not yet. Leave room.</p>
@@ -384,18 +427,18 @@ export default {
             <div class="${P}row"><button type="button" data-h="print">Print</button><button type="button" data-h="hers">Her pencil</button><button type="button" data-h="his">A third hand: his pencil</button></div>
             <p class="said" aria-live="polite">${fl.said || ""}</p>`;
         } else {
-          tx.innerHTML = `<div class="ch">THE FLYLEAF</div><h3><span class="${P}hd p" style="font-size:13px">HIS PENCIL</span></h3>
+          tx.innerHTML = `<div class="ch">THE FLYLEAF</div><h3><span class="${P}hd h" style="font-size:13px">HIS PENCIL</span></h3>
             <p class="his">2b. Found above 2 000 m: not yet. Leave room.</p>
             <p class="said">Upright, precise, patient. Not print, and not mine. Whoever S.V. is wrote the key I have trusted since the first morning, and left room in it for an animal that had not climbed yet.</p>
-            <p>Every couplet you have followed is his prose. From here the key marks three hands, not two.</p>
-            <div class="${P}row"><button type="button" data-f="close">Close the drawer</button></div>`;
+            <p>Below it he has pencilled three more couplets, and each ends in a name left blank. A key is read from the measure to the name. These must be read the other way.</p>
+            <div class="${P}row"><button type="button" data-f="close">Turn the leaf over</button></div>`;
         }
         tx.querySelectorAll("[data-f]").forEach((b) => on(b, "click", () => {
           const k = b.dataset.f;
-          if (k === "open") { st.flyleaf = true; draw("leaf"); }
+          if (k === "open") { api.shared.set("flyleaf", true); draw("leaf"); }
           else if (k === "lay") { fl.said = ""; draw("lay"); }
-          else if (k === "leave") end(" In Book II, at Cinder Reach, one drawer under the bench stays shut, and the key stays a printed thing with no author.");
-          else end(mine ? " At Cinder Reach, in Book II, the key's first printing turns up in a drawer: initialled S.V., with your wolf couplet already pencilled on its flyleaf. “Not yet. Leave room.” The key now marks three hands: print, hers, his." : " At Cinder Reach, in Book II, the key's first printing turns up in a drawer, initialled S.V., with a couplet for an upland wolf pencilled on its flyleaf: the one your own key still lacks.");
+          else if (k === "leave") { closeOver(); st.over = true; api.end({ outcome: "done", text: "At Cinder Reach one drawer under the bench stays shut, and the key stays a printed thing with no author. Whatever was pencilled on its first leaf waits for another reader." }); }
+          else { closeOver(); then(); }
         }));
         tx.querySelectorAll("[data-r]").forEach((b) => on(b, "click", () => {
           const k = b.dataset.r; fl.read.add(k);
@@ -414,28 +457,117 @@ export default {
       el.appendChild(over); draw("door");
     };
 
+    // reverse keying: from his blank leaf back to the measures that would have to be true
+    const rv = { i: 0, pick: {}, got: [], misses: 0, said: "" };
+    const KEYR = [
+      { id: 1, t: "glow", a: ["Glow period under 4 s", 2], b: ["Glow period 4 s or more", 4], test: (v) => v < 4 },
+      { id: 2, t: "len", a: ["Length over 40 mm", "Glassleaf"], b: ["Length 40 mm or less", 3], test: (v) => v > 40 },
+      { id: 3, t: "alt", a: ["Found below 2 000 m", "Ash-fern"], b: ["Found 2 000 m or above", 8], test: (v) => v < 2000 },
+      { id: 4, t: "len", a: ["Length over 60 mm", 5], b: ["Length 60 mm or less", "Spore-Weaver strand"], test: (v) => v > 60 },
+      { id: 5, t: "glow", a: ["Glow period 6 s or more", 6], b: ["Glow period under 6 s", 9], test: (v) => v >= 6 },
+      { id: 6, t: "alt", hand: wolfKeyed ? "p" : "h", a: ["Found below 2 000 m", "Ember Wolf"], b: ["Found 2 000 m or above", 7], test: (v) => v < 2000 },
+      { id: 7, t: "len", hand: "h", a: ["Length 100 mm or more", "x"], b: ["Length under 100 mm", "Ember Wolf, upland form"], test: (v) => v >= 100 },
+      { id: 8, t: "alt", hand: "h", a: ["Found 3 500 m or above", "y"], b: ["Found below 3 500 m", "Spire-moss"], test: (v) => v >= 3500 },
+      { id: 9, t: "alt", hand: "h", a: ["Found 3 000 m or above", "z"], b: ["Found below 3 000 m", "Ridgeback Strider"], test: (v) => v >= 3000 },
+    ];
+    const follow = (m) => { let c = 1; const path = []; for (;;) { const k = KEYR.find((x) => x.id === c), side = k.test(m[k.t]) ? "a" : "b"; path.push(k.id + side); const go = k[side][1]; if (typeof go === "number") c = go; else return { leaf: go, path }; } };
+    const isBlank = (x) => BLANKS.some((b) => b.id === x);
+    const renderRev = (path = []) => {
+      const tgt = BLANKS[rv.i];
+      keyEl.innerHTML = `<div class="${P}tally">HIS LEAF · hands: <span class="${P}hd">PRINT</span> <span class="${P}hd p">HER PENCIL</span> <span class="${P}hd h">HIS PENCIL</span></div>`;
+      for (const c of KEYR) {
+        const row = document.createElement("div");
+        const hasT = tgt && (c.a[1] === tgt.id || c.b[1] === tgt.id), hasG = [c.a[1], c.b[1]].some((x) => rv.got.some((g) => g.id === x));
+        row.className = P + "cp" + (c.hand === "h" ? " his" : c.hand === "p" ? " pencil" : "") + (hasT ? " tgt" : hasG ? " got" : "");
+        const hd = `<span class="${P}hd${c.hand ? " " + c.hand : ""}">${c.hand === "h" ? "HIS PENCIL" : c.hand === "p" ? "HER PENCIL" : "PRINT"}</span>`;
+        for (const side of ["a", "b"]) {
+          const go = c[side][1], lit = path.includes(c.id + side);
+          const nm = isBlank(go) ? (rv.got.some((g) => g.id === go) ? "drawn" : "not yet") : go;
+          row.insertAdjacentHTML("beforeend", `<span style="${lit ? "font-weight:700" : ""}">${c.id}${side}.</span><span style="${lit ? "text-decoration:underline" : ""}">${c[side][0]} ……${side === "a" ? hd : ""}</span><span style="text-align:right">${nm}</span>`);
+        }
+        keyEl.appendChild(row);
+      }
+      if (!tgt) { act.innerHTML = ""; return; }
+      const row = (t) => `<b>${TRAIT[t]}</b><div class="${P}row" style="margin:0">${OPTS[t].map((v) => `<button type="button" data-o="${t}:${v}" class="${rv.pick[t] === v ? "sel" : ""}" aria-pressed="${rv.pick[t] === v}">${fmt(t, v)}</button>`).join("")}</div>`;
+      const ready = ["glow", "len", "alt"].every((t) => rv.pick[t] != null);
+      act.innerHTML = `<div class="${P}box"><p>Leaf <b>${tgt.label}</b>, in his pencil: <i>not yet. Leave room.</i> ${rv.i === 0 ? "Choose the measures a specimen would need for the key to end there." : `(${tgt.hint})`}</p>
+        <div class="${P}opt">${row("glow")}${row("len")}${row("alt")}</div>
+        <div class="${P}row"><button type="button" data-go="1" ${ready ? "" : "disabled"}>Follow the key with these</button></div>
+        <p class="said" style="font:italic 15px/1.4 Georgia,serif;margin:6px 0 0;min-height:2.8em" aria-live="polite">${rv.said}</p></div>`;
+      act.querySelectorAll("[data-o]").forEach((b) => on(b, "click", () => { const [t, v] = b.dataset.o.split(":"); rv.pick[t] = +v; rv.said = ""; renderRev(); act.querySelector(`[data-o="${b.dataset.o}"]`)?.focus(); }));
+      on(act.querySelector("[data-go]"), "click", () => {
+        if (st.over) return;
+        const r = follow(rv.pick);
+        if (r.leaf === tgt.id) {
+          rv.got.push({ id: tgt.id, ...rv.pick }); rv.i++; rv.pick = {}; rv.said = "";
+          log(["It keys out at his blank leaf. Lira draws what the measures describe, lightly, the way she draws anything she has not seen: a wolf the size of a strider, glowing slow, above the line.", "A second leaf filled. A moss for ledges where nothing grows yet.", "The third. A strider that never comes down."][rv.got.length - 1], true);
+          drawRev(); renderRev(r.path);
+          if (rv.i >= BLANKS.length) {
+            st.over = true; api.store.set("losses", 0);
+            later(() => api.end({ outcome: "win", text: `Three blank leaves, three drawings, every one of them above ${fmt("alt", Math.min(...rv.got.map((g) => g.alt)) < 3000 ? 2000 : 3000)}. Read backwards, the key is not a description of the mountain. It is an order placed with it: higher, larger, slower, and room left for each. She had written it herself in Book I and not known whose sentence she was finishing: “Life is not choosing upward. It is being chosen.”${rv.misses ? "" : " Not one false start on his page."}` }), api.reducedMotion ? 600 : 2200);
+          }
+          return;
+        }
+        rv.misses++;
+        rv.said = isBlank(r.leaf) ? "Those measures reach a blank leaf, but not this one." : `Those measures key out at ${r.leaf}: something that already exists. (${r.path.join(" → ")})`;
+        if (rv.misses >= STG[2].limit) { st.over = true; api.store.set("losses", losses + 1); later(() => api.end({ outcome: "lose", text: `Three sets of measures, and each time the key led back to a creature already on the plate. ${rv.got.length} of his three blank leaves drawn. The flyleaf goes back in its drawer, and what he left room for stays a line of pencil.` }), 700); }
+        renderRev(r.path);
+      });
+    };
+    // the plate: an altitude ladder with every named form on it, and the three drawn as they are found
+    const drawRev = () => {
+      const yA = (m) => 246 - m / 4000 * 214, known = [["Ash-fern", 1000], ["Ember Wolf", 1200], ["Glassleaf", 2250], ["Spore-Weaver strand", 2500], ["Ridgeback Strider", 2250], ["Spire-moss", 2800]];
+      let d = `<rect x="4" y="4" width="392" height="262" fill="none" stroke="${INK}" stroke-width=".8"/><line x1="60" x2="60" y1="${yA(4000)}" y2="${yA(0)}" stroke="${INK}" stroke-width="1.2"/>`;
+      for (let m = 0; m <= 4000; m += 1000) d += `<line x1="54" x2="60" y1="${yA(m)}" y2="${yA(m)}" stroke="${INK}"/><text x="50" y="${yA(m) + 4}" font-size="10" text-anchor="end" fill="${INK}" font-family="Courier Prime,monospace">${m ? m / 1000 + " 000" : "0"}</text>`;
+      d += `<line x1="60" x2="392" y1="${yA(2000)}" y2="${yA(2000)}" stroke="${PENCIL}" stroke-dasharray="3 4"/><text x="388" y="${yA(2000) + 12}" font-size="10" text-anchor="end" font-style="italic" fill="${PENCIL}">2 000 m: the line his pencil drew</text>`;
+      known.forEach(([n, m], k) => { d += `<circle cx="${76 + k * 9}" cy="${yA(m)}" r="2.6" fill="${INK}"/><text x="${86 + k * 9}" y="${yA(m) + 3}" font-size="9" font-style="italic" fill="${INK}" opacity=".75">${k === 0 || k === 5 ? n : ""}</text>`; });
+      rv.got.forEach((g, k) => {
+        const x = 150 + k * 82, y = yA(g.alt), w = 14 + g.len * 0.42, h = 8 + g.len * 0.12;
+        d += `<ellipse cx="${x}" cy="${y}" rx="${w / 2 + 14}" ry="${h / 2 + 12}" fill="${TEAL}" opacity="${0.1 + 0.02 * g.glow}"/>`;
+        d += g.id === "y" ? [...Array(7)].map((_, j) => `<path d="M${x - 18 + j * 6},${y + 6} q-2,-${8 + (j % 3) * 4} 1,-${14 + (j % 3) * 5}" fill="none" stroke="${PENCIL}" stroke-width="1.2" stroke-dasharray="3 2"/>`).join("")
+          : `<path d="M${x - w / 2},${y} C${x - w / 4},${y - h} ${x + w / 4},${y - h} ${x + w / 2},${y} C${x + w / 4},${y + h * 0.7} ${x - w / 4},${y + h * 0.7} ${x - w / 2},${y}Z" fill="rgba(125,122,116,.12)" stroke="${PENCIL}" stroke-width="1.3" stroke-dasharray="4 2"/>` +
+            (g.id === "x" ? `<path d="M${x + w / 2},${y} l9,-7 l-2,8 M${x - w / 2},${y} l-12,4" fill="none" stroke="${PENCIL}" stroke-width="1.3"/>` : [...Array(5)].map((_, j) => `<path d="M${x - w / 3 + j * w / 6},${y - h * 0.7} l2,-6" stroke="${PENCIL}" stroke-width="1.2"/>`).join(""));
+        d += `<text x="${x}" y="${y - h - 14}" font-size="10" text-anchor="middle" font-style="italic" fill="${PENCIL}">${BLANKS.find((b) => b.id === g.id).label}: ${fmt("glow", g.glow)}, ${fmt("len", g.len)}</text><line x1="60" x2="${x - w / 2 - 14}" y1="${y}" y2="${y}" stroke="${PENCIL}" stroke-width=".6"/>`;
+      });
+      d += `<text x="390" y="22" text-anchor="end" font-size="15" font-style="italic" fill="${INK}" font-family="IM Fell English,Georgia,serif">fig. 0. Not yet</text>`;
+      svg.innerHTML = d; svg.setAttribute("aria-label", "An altitude ladder with the forms the key names, and the ones it leaves room for");
+    };
+
     const pellBtn = el.querySelector("[data-t=pell]"); const pellIco = pic("token-witness-pell"); pellBtn.innerHTML = `${pellIco}Pell’s tally (3)`;
-    st.jaw = 0; drawSpec(); renderMeas(); renderKey();
+    st.jaw = 0;
+    if (stage === 2) { $("." + P + "kit").hidden = true; $("." + P + "meas").hidden = true; $("." + P + "tally").textContent = "HIS THREE BLANK LEAVES"; drawRev(); renderRev(); }
+    else { drawSpec(); renderMeas(); renderKey(); if (stage === 1) pellBtn.hidden = false; }
     const intro = document.createElement("div"); intro.className = P + "intro";
-    intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="pl">PLATE XIV</div><h3>The Key</h3>
-      <p class="goal">Name six specimens from the terrace by following the key, couplet by couplet.</p>
-      <ol><li><b>T</b><span>Stopwatch: tap four times, once at each glow</span></li>
+    intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="pl">${["PLATE XIV", "PLATE XXXI", "THE FLYLEAF"][stage]}</div><h3>${["The Key", "The Key breaks", "The Key, read backwards"][stage]}</h3>
+      <p class="goal">${["Name three specimens from the terrace by following the key, couplet by couplet. The last one will not fit.", "Four specimens from the Peaks and the Lowlands. Three of them break the key, each on a different measure: write the couplet it lacks.", "Open the drawer at Cinder Reach. Then, for each leaf his pencil left blank, choose the measures that lead there."][stage]}</p>
+      ${stage === 2 ? `<ol><li><b>hand</b><span>Read the flyleaf: stamp, initials, pencil. Say whose hand.</span></li>
+      <li><b>pick</b><span>One glow period, one length, one altitude</span></li>
+      <li><b>follow</b><span>The key is walked from couplet 1 with your measures</span></li>
+      <li><b>3</b><span>Three false starts and the leaf is put away</span></li></ol>` : `<ol><li><b>T</b><span>Stopwatch: tap four times, once at each glow</span></li>
       <li><b>R</b><span>Drag the red jaw to the specimen’s tip, then read the rule</span></li>
       <li><b>G</b><span>Read the altimeter tag</span></li>
       <li><b>1a/1b</b><span>Choose the branch your measure fits</span></li>
-      <li><b>hands</b><span>Each couplet is marked print or pencil. Notice whose.</span></li></ol>
-      ${losses >= 2 ? `<label><input type="checkbox" class="gentle" checked> Lira’s annotated key: show the measure each couplet uses</label>` : ""}
-      <button type="button">Open the collection</button></div>`;
+      <li><b>${stage ? "break" : "hands"}</b><span>${stage ? "At a name that does not fit: Anomaly, then the measure, the threshold, and where the couplet goes" : "Each couplet is marked print or pencil. Notice whose."}</span></li></ol>`}
+      ${losses >= 2 && stage < 2 ? `<label><input type="checkbox" class="gentle" checked> Lira’s annotated key: show the measure each couplet uses</label>` : ""}
+      <button type="button">${["Open the collection", "Open the next plate", "Go down to Cinder Reach"][stage]}</button></div>`;
     el.appendChild(intro);
     const sb = intro.querySelector("button");
     on(sb, "click", () => {
       const g = intro.querySelector(".gentle"); st.helped = !!(g && g.checked);
-      intro.remove(); st.started = true; st.t0 = performance.now(); renderKey();
-      log("Book I, Hollin Terrace. Six jars on the bench from this week's walks, and Pell watching from the doorway. Two misclassified and the plate goes in unverified.", true);
+      intro.remove(); st.started = true; st.t0 = performance.now();
+      if (stage === 2) { flyleaf(() => { log("The flyleaf, turned over. Three couplets in his pencil, each ending in a blank. Begin with 7a.", true); renderRev(); const f = act.querySelector("[data-o]"); if (f) f.focus(); }); return; }
+      renderKey();
+      log(stage === 0 ? "Book I, Hollin Terrace. Three jars on the bench from this week's walks, and Pell watching from the doorway." : "Book III. Specimens from the low-gravity ledges, and the Lowland mutation reports Kade forwarded. Two misclassified and the plate goes in unverified.", true);
     });
     sb.focus();
-    on(window, "keydown", (e) => { if (!st.started || st.over || e.target.closest("input")) return; const k = e.key.toLowerCase(); if (k === "t") { tool("tap"); e.preventDefault(); } else if (k === "r") tool("rule"); else if (k === "g") tool("tag"); else if (k === "p" && !pellBtn.hidden) tool("pell"); });
-    if (window.__ezTest) window.__ezTest[api.key] = { st, spec, tool, choose: (side) => { const c = KEY.find((x) => x.id === st.cp); choose(c, side); }, KEY };
+    on(window, "keydown", (e) => { if (stage === 2 || !st.started || st.over || e.target.closest("input")) return; const k = e.key.toLowerCase(); if (k === "t") { tool("tap"); e.preventDefault(); } else if (k === "r") tool("rule"); else if (k === "g") tool("tag"); else if (k === "p" && !pellBtn.hidden) tool("pell"); });
+    if (window.__ezTest) window.__ezTest[api.key] = { st, spec, rv, stage };
     return { unmount() { cancelAnimationFrame(raf); off.forEach((f) => f()); timers.forEach(clearTimeout); } };
+  }
+}
+
+export default {
+  mount(root, api) {
+    return runStages(root, api, { names: ["The terrace jars", "Three breaks", "The Flyleaf"], colors: { bg: "#3b2618", fg: "#ebe0c4", accent: "#c8913a", paper: PAPER, ink: INK }, mount: mountStage });
   },
 };

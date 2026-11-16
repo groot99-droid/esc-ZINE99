@@ -12,16 +12,38 @@
 // kneel of a hand reading), pre-rendered once; the pose plate sits above the legend on wide screens;
 // the how-to card opens on the survey sheets, this climb's section marked. The stick figure remains
 // as the fallback.
+// Phase 2 (DEEP_DIVE section 3): three stages, one sheet each. Teach (Book I, 2 100 to 2 700 m):
+// anchor through a front, watch your air; one reading station; the shapes at 2 600 m. Test (Book III,
+// 3 700 to 4 500 m): low gravity and storm rock together; sung gaps (after Mara each front carries a
+// neume: a note must be anchored through, a rest is a gap to stand in); two core marks (hold still
+// 4 s while air drains). Twist (the escape from the city): the sheet has been redacted. Inside a
+// black bar the lamps cannot see you and you cannot see the ledges; dust falling on the 7-second
+// period outlines them for one beat. There are no rings: standing in the open, the old safe move,
+// is how you are seen. Layer links: bars ruled at the Excision Desk (Journal Audit) decide which
+// strata are black here; the wolf couplet (The Key) changes what the shapes at 2 600 m are; cores
+// drilled here add true lines to the Assay's reference card.
+import { runStages } from "./_stages.js";
 const P = "lira-calyx-cross-section-climb-";
 const INK = "#3b2618", PAPER = "#f1e8d2", SEAL = "#b3212b", CYAN = "#3fc4d0", VIOLET = "#5a3f7a", SLATE = "#56606a", OCHRE = "#c8913a";
-const LW = 640, ALT0 = 2800, ALT1 = 4600, S = 2.4; // logical px per metre of altitude
-const WORLD_H = (ALT1 - ALT0) * S, TOP = 60, BASE = TOP + WORLD_H;
-const yOf = (alt) => BASE - (alt - ALT0) * S;
-const altOf = (y) => ALT0 + (BASE - y) / S;
+const LW = 640, S = 2.4; // logical px per metre of altitude
 const fmtM = (m) => `${Math.round(m).toLocaleString("en").replace(",", " ")} m`;
+const STG = [
+  { a0: 2100, a1: 2700, tier: 0, sheet: "section-b1-climb", no: 1, book: "BOOK I", legend: "Book I climb, 2 100–2 700 m", base: "Hollin, upper stair", goal: "Aether-Vine ridge, 2 700 m",
+    camps: [{ alt: 2400, name: "Joren's cairn", x: 150, w: 360, anchor: 440 }], stations: [{ alt: 2620, name: "Vine-sighting compass" }], front: [16, 10], rock: 9999 },
+  { a0: 3700, a1: 4500, tier: 2, sheet: "section-b3-climb", no: 3, book: "BOOK III", legend: "Book III climb, 3 700–4 500 m", base: "Mara's camp", goal: "Summit camp, 4 500 m",
+    camps: [{ alt: 4180, name: "High camp", x: 220, w: 300, anchor: 250 }], stations: [{ alt: 3900, name: "Core mark: crystal vein", core: true }, { alt: 4330, name: "Core mark: ice schist", core: true }], front: [13, 9], rock: 3760 },
+  { a0: 1400, a1: 2000, tier: 2, sheet: "section-b3-escape", no: 4, book: "BOOK III", legend: "The escape, 1 400–2 000 m", base: "Record gallery", goal: "Shaft mouth, 2 000 m",
+    camps: [{ alt: 1745, name: "Pump niche", x: 170, w: 300, anchor: null }], stations: [], front: null, rock: 9999, noRings: true },
+];
+// the twist: four strata of the sheet that a bar can lie on (metres), one per line of the Excision Desk page
+const SLOTS = [[1470, 1560], [1620, 1710], [1790, 1880], [1920, 1985]];
 
-export default {
-  mount(root, api) {
+function mountStage(root, api, stage) {
+  {
+    const G = STG[stage], ALT0 = G.a0, ALT1 = G.a1;
+    const WORLD_H = (ALT1 - ALT0) * S, TOP = 60, BASE = TOP + WORLD_H;
+    const yOf = (alt) => BASE - (alt - ALT0) * S;
+    const altOf = (y) => ALT0 + (BASE - y) / S;
     const off = [], timers = [];
     let raf = 0, alive = true;
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); off.push(() => t.removeEventListener(e, f, o)); };
@@ -102,6 +124,8 @@ export default {
     const SPR = {}, PLATE = {};
     const bake = (img, w, h, flip) => { const c = document.createElement("canvas"); c.width = w; c.height = h; const g = c.getContext("2d"); if (flip) { g.translate(w, 0); g.scale(-1, 1); } g.drawImage(img, 0, 0, w, h); return c; };
     ["stand", "walk", "walk-2", "jump", "anchor", "drill"].forEach((k) => A.img("spr-lira-" + k).then((im) => { if (im && alive) SPR[k] = [bake(im, 132, 165), bake(im, 132, 165, true)]; }).catch(() => {}));
+    A.img("fig-wolf").then((im) => { if (im && alive) SPR.wolf = [bake(im, 120, 160), bake(im, 120, 160, true)]; }).catch(() => {});
+    ["punctum", "rest"].forEach((k) => A.img("neume-" + k).then((im) => { if (im && alive) SPR["n-" + k] = bake(im, 96, 96); }).catch(() => {}));
     A.img("spr-mara").then((im) => { if (im && alive) SPR.mara = [bake(im, 132, 165, true)]; }).catch(() => {});
     [["stand", "fig-lira-stand"], ["walk", "fig-lira-walk"], ["jump", "fig-lira-jump"], ["anchor", "fig-lira-anchor"], ["drill", "fig-lira-drill"], ["climb", "fig-lira-climb"]].forEach(([k, id]) => A.img(id).then((im) => { if (im && alive) PLATE[k] = bake(im, 240, 320); }).catch(() => {}));
 
@@ -126,39 +150,53 @@ export default {
 
     // ---- the section: ledges, anchors, storm rock, camps, reading stations
     const rng = api.rng();
-    const ledges = [{ x: 48, w: LW - 48, y: BASE, camp: "Base camp", anchor: null, rock: false }];
+    const ledges = [{ x: 48, w: LW - 48, y: BASE, camp: G.base, anchor: null, rock: false }];
     let y = BASE, cx = 300;
-    const MID = 3700, HIGH = 4250;
-    let midDone = false, highDone = false;
-    const STATIONS = [{ alt: 3300, name: "Station 1: gravimeter" }, { alt: 4150, name: "Station 2: vine-sighting compass" }];
-    let si = 0;
+    const camps = G.camps.map((c) => ({ ...c })), STATIONS = G.stations;
+    let si = 0, ci = 0;
     while (y > yOf(ALT1) + 70) {
       y -= 62 + rng() * 16;
       const alt = altOf(y);
-      if (!midDone && alt >= MID) {
-        midDone = true;
-        ledges.push({ x: 140, w: 380, y, camp: "Mara's camp", anchor: 470, rock: false });
-        cx = 330; continue;
-      }
-      if (!highDone && alt >= HIGH) {
-        highDone = true;
-        ledges.push({ x: 220, w: 300, y, camp: "High camp", anchor: 250, rock: false });
-        cx = 370; continue;
+      if (ci < camps.length && alt >= camps[ci].alt) {
+        const c = camps[ci++];
+        ledges.push({ x: c.x, w: c.w, y, camp: c.name, anchor: c.anchor, rock: false });
+        cx = c.x + c.w / 2; continue;
       }
       cx = Math.max(110, Math.min(LW - 80, cx + (rng() < 0.5 ? -1 : 1) * (60 + rng() * 100)));
       const w = 74 + rng() * 54;
       const L = { x: Math.max(56, cx - w / 2), w, y, camp: null, anchor: null, rock: false };
-      if (si < STATIONS.length && alt >= STATIONS[si].alt) { L.station = { ...STATIONS[si], done: null, prog: 0 }; L.w = Math.max(L.w, 110); L.anchor = L.x + L.w - 18; si++; }
-      else if (alt > 3450 && rng() < 0.28 && !ledges[ledges.length - 1].rock) L.rock = true;
-      else if (rng() < 0.42) L.anchor = L.x + 14 + rng() * (L.w - 28);
+      if (si < STATIONS.length && alt >= STATIONS[si].alt) { L.station = { ...STATIONS[si], done: null, prog: 0 }; L.w = Math.max(L.w, 110); L.anchor = G.noRings ? null : L.x + L.w - 18; si++; }
+      else if (alt > G.rock && rng() < 0.28 && !ledges[ledges.length - 1].rock) L.rock = true;
+      else if (!G.noRings && rng() < (stage === 0 ? 0.6 : 0.42)) L.anchor = L.x + 14 + rng() * (L.w - 28);
       ledges.push(L);
     }
-    ledges.push({ x: 160, w: 340, y: yOf(ALT1), camp: "Summit camp, 4 600 m", anchor: 200, rock: false, goal: true });
+    ledges.push({ x: 160, w: 340, y: yOf(ALT1), camp: G.goal, anchor: G.noRings ? null : 200, rock: false, goal: true });
     ledges.forEach((L, i) => { L.i = i; L.state = 0; L.t = 0; });
+    // layer link 3 (The Key -> here): what lives at 2 600 m
+    const wolfKey = api.shared.get("wolf", null), wolves = [];
+    if (stage === 0) {
+      const at = ledges.filter((L) => !L.camp && !L.station && altOf(L.y) > 2520 && altOf(L.y) < 2680);
+      [at[0], at[2]].filter(Boolean).forEach((L, k) => { L.anchor = null; wolves.push({ L, x: L.x + L.w * 0.7, dir: k ? 1 : -1, hit: 0 }); });
+      if (wolfKey === "keyed") for (const w of wolves) for (const L of ledges) if (!L.camp && Math.abs(L.i - w.L.i) <= 2 && L !== w.L) L.warm = true;
+    }
+    // layer link 1 (the Excision Desk -> here): which strata of the sheet are black
+    const desk = api.shared.get("desk", null), bars = [];
+    if (stage === 2) {
+      const mine = desk && desk.played;
+      SLOTS.forEach(([a, b], k) => {
+        const kind = mine ? (desk.clumsy ? "brushed" : desk.bars.includes(k) ? "ruled" : "word") : ["word", "ruled", "brushed", "ruled"][k];
+        if (kind !== "word") { bars.push({ y0: yOf(b), y1: yOf(a), kind, k }); return; }
+        // only the word was cut on this line: a patch of black one ledge wide, where a full bar would have covered the stratum
+        const mid = (a + b) / 2, L = ledges.filter((q) => !q.camp && altOf(q.y) > a && altOf(q.y) < b).sort((p, q) => Math.abs(altOf(p.y) - mid) - Math.abs(altOf(q.y) - mid))[0];
+        if (L) bars.push({ y0: L.y - 80, y1: L.y + 16, x0: L.x - 16, x1: L.x + L.w + 16, kind, k });
+      });
+    }
+    const inBar = (yy, xx = pl.x) => bars.some((b) => yy - 20 >= b.y0 && yy - 20 <= b.y1 && (b.x0 == null || (xx >= b.x0 && xx <= b.x1)));
+    const barAt = (yy, xx) => bars.some((b) => yy >= b.y0 && yy <= b.y1 && (b.x0 == null || (xx >= b.x0 && xx <= b.x1)));
 
     // ---- state
     const pl = { x: 300, y: BASE, vx: 0, vy: 0, ground: ledges[0], anchored: false, fallFrom: BASE, face: 1, walk: 0 };
-    const st = { air: 100, tier: 1, camp: 0, blackouts: 0, best: ALT0, time: 0, storm: { next: 11, warn: 0, x: null, hit: false }, route: [[pl.x, pl.y]],
+    const st = { cores: 0, lamp: { next: 8, x: null, warn: 0 }, dust: 7, dustT: 0, seen: 0, air: 100, tier: G.tier, camp: 0, blackouts: 0, best: ALT0, time: 0, storm: { next: G.front ? 9 : 1e9, warn: 0, x: null, hit: false, rest: false }, route: [[pl.x, pl.y]],
       started: false, over: false, gentle: false, readings: [], beats: {}, knock: 0 };
     const keys = { left: false, right: false, jump: false, anchor: false, read: false };
     let msgTimer = 0;
@@ -198,8 +236,8 @@ export default {
     const ro = new ResizeObserver(resize); ro.observe(wrap);
 
     // ---- helpers
-    const lowG = () => altOf(pl.y) >= 4000;
-    const drainRate = (alt) => (alt < 2000 ? 0 : alt < 3200 ? 1 : 2.5) / (1 + 0.25 * st.tier) * (st.gentle ? 0.7 : 1);
+    const lowG = () => stage === 1 && altOf(pl.y) >= 4000;
+    const drainRate = (alt) => (stage === 2 ? 1.05 : stage === 0 ? 0.8 : (alt < 3200 ? 1 : 2.1) / (1 + 0.25 * st.tier)) * (st.gentle ? 0.7 : 1) * (pl.ground && pl.ground.warm ? 0 : 1);
     const ledgeBelow = () => {
       let best = 0;
       for (const L of ledges) if (L.y >= pl.y - 1 && (best === 0 || L.y < ledges[best].y) && L.state !== 2) best = L.i;
@@ -214,10 +252,10 @@ export default {
       const camp = ledges[st.camp];
       placeOn(camp); st.air = 100; st.time += 25;
       for (const L of ledges) if (L.station && !L.station.done) L.station.prog = 0;
-      say(`${why} Black-out ${st.blackouts} of 3: you wake at ${camp.camp.toLowerCase()}, 25 s lost.`, 4.5, "bad");
+      say(stage === 2 ? `${why} ${st.blackouts} of 3: you come to at the ${camp.camp.toLowerCase()}, and the boots below are closer.` : `${why} Black-out ${st.blackouts} of 3: you wake at ${camp.camp.toLowerCase()}, 25 s lost.`, 4.5, "bad");
     };
     const relay = () => {
-      const s = station(); if (!s || st.over) return;
+      const s = station(); if (!s || st.over || s.core) return;
       s.done = "relay"; st.readings.push("relay");
       say(`${s.name}: the relay beacon gives its number at once. You write it down in a smaller hand.`, 4);
       flash("rgba(90,63,122,.35)");
@@ -229,13 +267,18 @@ export default {
       const t = `${mins}:${String(secs).padStart(2, "0")}`;
       const hand = st.readings.filter((r) => r === "hand").length, rel = st.readings.filter((r) => r === "relay").length;
       api.store.set("losses", won ? 0 : losses + 1);
-      if (won) {
-        const rd = hand === 2 ? "Both station readings are in her own hand, taken still and slow, and they will hold." :
-          hand === 1 ? `One reading by hand${rel ? ", one from the relay, written smaller" : "; the other station was passed by"}.` :
-          rel ? "The station numbers came from the relay. They are quick, and nobody checked them." : "The stations were passed by; the page carries the route and nothing else.";
-        api.end({ outcome: hand === 2 ? "win" : "done", text: `Summit camp, 4 600 m, in ${t} with ${st.blackouts} black-out${st.blackouts === 1 ? "" : "s"}. ${rd} The dotted route stays in the journal as a page.` });
+      if (stage === 1 && st.cores) api.shared.set("cores", Math.max(api.shared.get("cores", 0) | 0, st.cores));
+      if (won && stage === 0) {
+        const rd = hand ? "The vine azimuth is in her own hand, taken still and slow: node N2, and it will hold." : rel ? "The azimuth came from the relay. It was quick, and nobody checked it." : "The station was passed by; the page carries the route and nothing else.";
+        const wf = wolfKey === "keyed" ? " Two juvenile Ember Wolves at 2 600 m, exactly where her pencil couplet said they might be." : " Two grey shapes at 2 600 m that the key has no name for.";
+        api.end({ outcome: hand ? "win" : "done", text: `The Aether-Vine ridge, 2 700 m, in ${t} with ${st.blackouts} black-out${st.blackouts === 1 ? "" : "s"}. ${rd}${wf} The dotted route stays in the journal as a page.` });
+      } else if (won && stage === 1) {
+        const cr = st.cores === 2 ? "Two cores in the pack, drilled still while the air ran down: rock nobody has written on. They will stand on the next reference card in her own hand." : st.cores === 1 ? "One core in the pack; the other mark was passed by." : "The core marks were passed by. The next bench will have only the printed card to go on.";
+        api.end({ outcome: st.cores === 2 ? "win" : "done", text: `Summit camp, 4 500 m, in ${t} with ${st.blackouts} black-out${st.blackouts === 1 ? "" : "s"}. ${cr} Mara sang the fronts in from below, and the rests in her song were places to stand.` });
+      } else if (won) {
+        api.end({ outcome: "win", text: `The shaft mouth, in ${t}, seen ${st.seen} time${st.seen === 1 ? "" : "s"}. You climbed through the censor's own bars, blind, counting to seven, with the lamps crossing the white paper on either side. Whoever ruled those lines gave you somewhere to stand. The stolen logs are still against your ribs.` });
       } else {
-        api.end({ outcome: "lose", text: `${why} A third black-out at ${fmtM(st.best)}: the climb is called off and you are walked down on a short rope. The route ends in a broken line.` });
+        api.end({ outcome: "lose", text: stage === 2 ? `${why} A third time, at ${fmtM(st.best)}: hands close on your collar on the open paper. The logs go back down the shaft with you.` : `${why} A third black-out at ${fmtM(st.best)}: the climb is called off and you are walked down on a short rope. The route ends in a broken line.` });
       }
     };
 
@@ -248,15 +291,16 @@ export default {
       const was = pl.anchored;
       pl.anchored = keys.anchor && !!pl.ground && near;
       if (pl.anchored && !was) flash("rgba(179,33,43,.18)");
-      if (keys.anchor && pl.ground && !near && !st.anchorTold) { st.anchorTold = 1.6; say(pl.ground.anchor == null ? "No anchor ring on this ledge. Rings are marked ○." : "Walk to the ring ○ to clip on.", 1.6); }
+      if (keys.anchor && pl.ground && !near && !st.anchorTold) { st.anchorTold = 1.6; say(G.noRings ? "No rings in these shafts. Nothing here holds you but the dark." : pl.ground.anchor == null ? "No anchor ring on this ledge. Rings are marked ○." : "Walk to the ring ○ to clip on.", 1.6); }
       st.anchorTold = Math.max(0, (st.anchorTold || 0) - dt);
       // reading station
       const s = station();
       readBtn.hidden = relayBtn.hidden = !s;
-      if (s && !st.beats["st" + s.name]) { beat("st" + s.name, `${s.name}. Hold READ (R) still for 3 s to take it by hand, or press RELAY (B): instant, never verified.`, 5.5); }
+      readBtn.textContent = s && s.core ? "DRILL" : "READ"; if (s && s.core) relayBtn.hidden = true;
+      if (s && !st.beats["st" + s.name]) { beat("st" + s.name, s.core ? `${s.name}. Hold DRILL (R) still for 4 s to take a core. Your air drains while you do.` : `${s.name}. Hold READ (R) still for 3 s to take it by hand, or press RELAY (B): instant, never verified.`, 5.5); }
       const reading = s && keys.read && !keys.left && !keys.right;
       if (s) {
-        if (reading) { s.prog += dt / 3; if (s.prog >= 1) { s.done = "hand"; st.readings.push("hand"); say(`${s.name}: read by hand. The number goes in the journal in her own ink.`, 3.5); flash("rgba(63,196,208,.3)"); } }
+        if (reading) { s.prog += dt / (s.core ? 4 : 3); if (s.prog >= 1) { s.done = "hand"; st.readings.push("hand"); if (s.core) st.cores++; say(s.core ? `Core ${st.cores} of 2, a finger of ${s.name.split(": ")[1]}, wrapped and labelled. A true line for the next bench.` : `${s.name}: read by hand. The number goes in the journal in her own ink.`, 3.5); flash("rgba(63,196,208,.3)"); } }
         else if (s.prog > 0 && (keys.left || keys.right)) { s.prog = 0; say("You moved: the needle settles again. Start the reading over.", 1.8, "bad"); }
       }
       // move
@@ -286,20 +330,49 @@ export default {
           if (landed.camp && landed.i > st.camp) {
             st.camp = landed.i; st.air = 100;
             if (landed.goal) { finish(true); return; }
-            if (landed.camp === "High camp") say("High camp, 4 250 m: a tarp, a cairn, a tin of chalk. Air refilled. The last stretch is the pale rock above.", 4.5, "voice");
-            else if (st.tier < 2) {
-              st.tier = 2; flash("rgba(200,145,58,.35)");
-              say("Mara’s camp, 3 700 m. The storm-singer looks at your cracked mask, unbuckles her rebreather and holds it out: “Above here the air is thin as a song. Take it.” Gear tier 2: air lasts 50% longer.", 7, "voice");
-            }
+            if (stage === 1) say("High camp: a tarp, a cairn, a tin of chalk. Air refilled. The last stretch is the pale rock above.", 4.5, "voice");
+            else if (stage === 0) say("Joren’s cairn, 2 400 m. Air refilled. Above here something has been using the ledges; the moss is worn in a line.", 5, "voice");
+            else say("The pump niche. Breath back. The lamps do not reach in here, and the dust comes down the shaft every seven seconds, like a clock.", 5, "voice");
           } else if (landed.camp) st.air = 100;
         } else pl.y = ny;
       }
       if (pl.ground && pl.ground.camp) st.air = 100;
       st.best = Math.max(st.best, altOf(pl.y));
       // progress beats
-      if (st.best > 3250) beat("thin", "Above 3 200 m the air thins: it drains two and a half times faster. Camps refill it.", 4.5);
-      if (st.best > 4000) beat("lowg", "4 000 m. The rock goes pale and shimmers: low gravity. Jumps go twice as high, falls half as fast, and the fronts come quicker.", 5.5);
-      if (st.best > 4450) beat("near", "The summit flag is in sight. Mara’s voice comes up from below, singing the gaps between the gusts.", 4);
+      if (stage === 1 && st.best > 4000) beat("lowg", "4 000 m. The rock goes pale and shimmers: low gravity. Jumps go twice as high, falls half as fast, and the fronts come quicker.", 5.5);
+      if (stage === 1 && st.best > 4380) beat("near", "The summit flag is in sight. Mara’s voice comes up from below, singing the gaps between the gusts.", 4);
+      if (stage === 0 && st.best > 2500) beat("shapes", wolfKey === "keyed" ? "2 600 m. Juvenile Ember Wolves, too high, as the pencil couplet says. Their trail is warm: on a ledge they have crossed, your air holds." : "2 600 m. Grey shapes on the ledges ahead, too high for anything the key names. Keep clear of them.", 5.5);
+      if (stage === 2 && inBar(pl.y)) beat("dark", "Inside the bar. The lamps cannot find you here, and you cannot find the ledges. Dust falls every 7 s and lies on them for one beat: count.", 6);
+      // the shapes at 2 600 m (teach): wolves if the key has a couplet for them, grey shapes if not
+      for (const w of wolves) {
+        w.x += w.dir * 34 * dt; if (w.x < w.L.x + 14) w.dir = 1; if (w.x > w.L.x + w.L.w - 14) w.dir = -1; w.hit = Math.max(0, w.hit - dt);
+        if (wolfKey !== "keyed" && pl.ground === w.L && Math.abs(pl.x - w.x) < 20 && w.hit <= 0) {
+          w.hit = 2; const tgt = Math.max(0, w.L.i - 1); placeOn(ledges[tgt]); st.knock = 0.5; flash("rgba(86,96,106,.6)");
+          say("A grey shape shoulders you off the ledge: knocked back one. You never keyed what lives this high.", 3, "bad");
+        }
+      }
+      // the lamps and the dust (twist)
+      if (stage === 2) {
+        st.dust -= dt; st.dustT = Math.max(0, st.dustT - dt);
+        if (st.dust <= 0) { st.dust += 7; st.dustT = 1.3; }
+        const lp = st.lamp;
+        if (lp.x == null) {
+          lp.next -= dt;
+          if (lp.next <= 3 && !lp.warn) { lp.warn = 1; if (!inBar(pl.y)) say("Lamps swinging up the shaft: 3 s. Get into the black.", 2.6, "bad"); }
+          if (lp.next <= 0) { lp.x = -200; lp.hit = false; lp.warn = 0; }
+        } else {
+          lp.x += 560 * dt;
+          if (!lp.hit && lp.x + 90 > pl.x && lp.x - 90 < pl.x) {
+            lp.hit = true;
+            if (inBar(pl.y) || (pl.ground && pl.ground.camp === "Pump niche")) { beat("unseen", "The lamp crosses the white paper on either side of you and finds nothing to light.", 4); }
+            else { st.seen++; st.blackouts++; flash("rgba(255,236,170,.7)");
+              if (st.blackouts >= 3) { finish(false, "Seen on the open paper."); return; }
+              const tgt = Math.max(0, ledgeBelow() - 2); placeOn(ledges[tgt]); st.knock = 0.5;
+              say(`Seen on the open paper: ${st.blackouts} of 3. A shout from below, and you drop two ledges.`, 3, "bad"); }
+          }
+          if (lp.x > LW + 260) { lp.x = null; lp.next = (st.gentle ? 9 : 6.5) + rng() * 2; }
+        }
+      }
       // storm rock
       for (const L of ledges) {
         if (L.state === 1) { L.t -= dt; if (L.t <= 0) { L.state = 2; L.t = 4.5; } }
@@ -312,13 +385,15 @@ export default {
       const sm = st.storm;
       if (sm.x == null) {
         sm.next -= dt;
-        if (sm.next <= 3 && sm.warn === 0) { sm.warn = 1; say("The page edge darkens: storm front in 3 s. Walk to a ring ○ and hold ANCHOR.", 3, "bad"); }
+        if (sm.next <= 3 && sm.warn === 0) { sm.warn = 1; sm.rest = stage === 1 && rng() < 0.4;
+          say(stage === 1 ? (sm.rest ? "Mara sings the front in, and leaves a rest: a gap. Stand in it, unanchored. Keep climbing." : "Mara sings the front in on a held note: no gap. Walk to a ring ○ and hold ANCHOR.") : "The page edge darkens: storm front in 3 s. Walk to a ring ○ and hold ANCHOR.", 3, sm.rest ? "voice" : "bad"); }
         if (sm.next <= 0) { sm.x = -260; sm.hit = false; sm.warn = 0; }
       } else {
         sm.x += 520 * dt;
         if (!sm.hit && sm.x + 120 > pl.x && sm.x - 120 < pl.x) {
           sm.hit = true;
-          if (pl.anchored) { say("Clipped on. The front passes over you.", 2); beat("anch1", "In the margin of the route, in her hand: ring held, front passed, 0 m lost.", 4); }
+          if (sm.rest) { beat("gap1", "The front opens round you where she left the rest, and closes behind. A silence in a song is a place.", 4.5); }
+          else if (pl.anchored) { say("Clipped on. The front passes over you.", 2); beat("anch1", "In the margin of the route, in her hand: ring held, front passed, 0 m lost.", 4); }
           else {
             const tgt = Math.max(0, ledgeBelow() - 2);
             placeOn(ledges[tgt]); st.knock = 0.5; flash("rgba(86,96,106,.6)");
@@ -326,7 +401,7 @@ export default {
             say("Unanchored in the front: knocked back two ledges.", 2.6, "bad");
           }
         }
-        if (sm.x > LW + 300) { sm.x = null; sm.next = (lowG() ? 13 : 20) + rng() * (lowG() ? 12 : 20); }
+        if (sm.x > LW + 300) { sm.x = null; sm.next = (lowG() ? G.front[0] - 3 : G.front[0]) + rng() * G.front[1]; }
       }
       st.land = Math.max(0, (st.land || 0) - dt); st.knock = Math.max(0, st.knock - dt);
     };
@@ -365,7 +440,7 @@ export default {
       }
       // altitude grid
       ctx.font = "12px 'Courier Prime', monospace";
-      for (let a = 2800; a <= 4600; a += 100) {
+      for (let a = ALT0; a <= ALT1; a += 100) {
         const yy = yOf(a); if (yy < y0 || yy > y1) continue;
         ctx.strokeStyle = SLATE; ctx.globalAlpha = 0.45; ctx.lineWidth = 0.6; ctx.setLineDash([2, 6]);
         ctx.beginPath(); ctx.moveTo(48, yy); ctx.lineTo(LW, yy); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
@@ -373,7 +448,7 @@ export default {
       }
       // low gravity
       const lg = yOf(4000);
-      if (lg > y0) {
+      if (stage === 1 && lg > y0) {
         ctx.fillStyle = "rgba(90,63,122,0.10)"; ctx.fillRect(48, TOP - 160, LW - 48, lg - TOP + 160);
         ctx.strokeStyle = VIOLET; ctx.setLineDash([6, 4]); ctx.lineWidth = 1.2;
         ctx.beginPath(); ctx.moveTo(48, lg); ctx.lineTo(LW, lg); ctx.stroke(); ctx.setLineDash([]);
@@ -385,9 +460,24 @@ export default {
         }
         ctx.globalAlpha = 1;
       }
+      // the redaction (twist): black bars across the section; ruled ones have blue under the black
+      for (const b of bars) {
+        if (b.y1 < y0 || b.y0 > y1) continue;
+        ctx.fillStyle = "#141414"; ctx.beginPath();
+        if (b.kind === "ruled") { ctx.rect(44, b.y0, LW - 44, b.y1 - b.y0); ctx.fill(); ctx.fillStyle = "#3c5a8c"; ctx.fillRect(40, b.y1, LW - 40, 3); }
+        else if (b.kind === "word") { ctx.rect(b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0); ctx.fill(); ctx.fillStyle = "rgba(241,232,210,.5)"; ctx.font = "700 11px 'Courier Prime', monospace"; ctx.fillText(`WORD · C.${b.k + 1}`, b.x0 + 6, b.y0 + 14); continue; }
+        else { ctx.moveTo(52, b.y0 + 9); for (let x = 52; x <= LW; x += 28) ctx.lineTo(x, b.y0 + 6 * Math.sin(x / 31 + b.k)); for (let x = LW; x >= 52; x -= 28) ctx.lineTo(x, b.y1 + 7 * Math.sin(x / 23 + b.k * 2)); ctx.closePath(); ctx.fill(); }
+        ctx.fillStyle = "rgba(241,232,210,.5)"; ctx.font = "700 11px 'Courier Prime', monospace"; ctx.fillText(b.kind === "ruled" ? `RULED · LINE C.${b.k + 1}` : "BRUSHED", 60, b.y0 + 16);
+      }
       // ledges
       for (const L of ledges) {
         if (L.y < y0 - 40 || L.y > y1 + 40) continue;
+        if (bars.length && !L.camp && barAt(L.y + 4, L.x + L.w / 2)) { // unseen in the black, but for the beat when the dust lies on it
+          const k = st.gentle ? Math.max(0.3, st.dustT / 1.3) : st.dustT / 1.3;
+          if (k > 0) { ctx.globalAlpha = Math.min(1, k * 1.4); ctx.fillStyle = "#e9e0c8"; for (let x = L.x + 2; x < L.x + L.w; x += 5) ctx.fillRect(x, L.y - 1 - ((x * 7) % 3), 2.4, 2.4); ctx.globalAlpha = 1; }
+          continue;
+        }
+        if (L.warm) { ctx.fillStyle = OCHRE; for (let x = L.x + 12; x < L.x + L.w - 8; x += 22) { ctx.beginPath(); ctx.arc(x, L.y - 4, 2.6, 0, 7); ctx.arc(x + 5, L.y - 8, 1.7, 0, 7); ctx.arc(x - 4, L.y - 8, 1.7, 0, 7); ctx.fill(); } }
         if (L.state === 2) { ctx.strokeStyle = INK; ctx.setLineDash([3, 4]); ctx.strokeRect(L.x, L.y, L.w, 10); ctx.setLineDash([]); continue; }
         const flashOn = L.state === 1 && Math.floor(L.t * 3) % 2 === 0;
         ctx.fillStyle = L.rock ? (flashOn ? "#e8c9c9" : "#a59bb3") : "#f6efdc";
@@ -411,11 +501,16 @@ export default {
           ctx.beginPath(); ctx.moveTo(tx2, L.y); ctx.lineTo(tx2 + 14, L.y - 20); ctx.lineTo(tx2 + 28, L.y); ctx.closePath(); ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 1.2; ctx.stroke();
           ctx.beginPath(); ctx.moveTo(tx2 + 14, L.y - 20); ctx.lineTo(tx2 + 14, L.y - 34); ctx.stroke(); ctx.fillStyle = SEAL; ctx.beginPath(); ctx.moveTo(tx2 + 14, L.y - 34); ctx.lineTo(tx2 + 25, L.y - 30); ctx.lineTo(tx2 + 14, L.y - 26); ctx.fill();
           ctx.fillStyle = INK; ctx.font = "italic 14px 'IM Fell English', Georgia, serif"; ctx.fillText(L.camp, tx2 + 34, L.y - 6);
-          if (L.camp === "Mara's camp" && st.tier < 2 && SPR.mara) ctx.drawImage(SPR.mara[0], L.x + L.w - 60 - 22, L.y - 52, 44, 55);
-          else if (L.camp === "Mara's camp" && st.tier < 2) { // Mara, a seated figure by her tent
+          if (L.camp === "Mara's camp" && SPR.mara) ctx.drawImage(SPR.mara[0], L.x + L.w - 60 - 22, L.y - 52, 44, 55);
+          else if (L.camp === "Mara's camp") { // Mara, a seated figure by her tent
             const mx = L.x + L.w - 60; ctx.strokeStyle = INK; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(mx, L.y - 26, 4.5, 0, 7); ctx.moveTo(mx, L.y - 21); ctx.lineTo(mx, L.y - 8); ctx.lineTo(mx + 8, L.y - 4); ctx.stroke();
           }
         }
+      }
+      // the shapes at 2 600 m
+      for (const w of wolves) {
+        if (wolfKey === "keyed" && SPR.wolf) ctx.drawImage(SPR.wolf[w.dir > 0 ? 0 : 1], w.x - 21, w.L.y - 54, 42, 56);
+        else { ctx.fillStyle = wolfKey === "keyed" ? "#9c4a25" : "rgba(86,96,106,.75)"; ctx.beginPath(); ctx.ellipse(w.x, w.L.y - 13, 19, 12, 0, 0, 7); ctx.ellipse(w.x + w.dir * 15, w.L.y - 22, 8, 7, 0, 0, 7); ctx.fill(); if (wolfKey !== "keyed") { ctx.strokeStyle = SLATE; ctx.setLineDash([3, 3]); ctx.lineWidth = 1; ctx.stroke(); ctx.setLineDash([]); ctx.fillStyle = INK; ctx.font = "italic 13px 'IM Fell English', Georgia, serif"; ctx.fillText("?", w.x - 3, w.L.y - 32); } }
       }
       // dotted route in journal ink
       ctx.strokeStyle = INK; ctx.lineWidth = 2; ctx.lineCap = "round"; ctx.setLineDash([0.5, 6]);
@@ -426,7 +521,10 @@ export default {
       const reading = !!(keys.read && pl.ground && pl.ground.station && !pl.ground.station.done && !pl.vx);
       pose = pl.anchored ? "anchor" : reading ? "drill" : !pl.ground ? "jump" : pl.vx ? (Math.floor(pl.walk / 14) % 2 ? "walk-2" : "walk") : "stand";
       const spr = SPR[pose] || SPR.stand;
-      if (spr) {
+      if (bars.length && inBar(pl.y)) { // in the black she is a breath of pale chalk, no more
+        ctx.strokeStyle = "rgba(241,232,210,.75)"; ctx.lineWidth = 1.6; ctx.setLineDash([2, 3]); ctx.beginPath(); ctx.arc(fx, fy - 24, 13, 0, 7); ctx.stroke(); ctx.setLineDash([]);
+        ctx.fillStyle = "rgba(241,232,210,.75)"; ctx.fillRect(fx - 5, fy - 1, 10, 2);
+      } else if (spr) {
         if (st.knock > 0) { ctx.strokeStyle = SEAL; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(fx, fy - 24, 26, 0, 7); ctx.stroke(); }
         ctx.drawImage(spr[pl.face < 0 ? 1 : 0], fx - 22, fy - 52 + sq, 44, 55 - sq);
         if (st.tier >= 2) { ctx.fillStyle = CYAN; ctx.strokeStyle = INK; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(fx + pl.face * 5, fy - 40 + sq, 3, 0, 7); ctx.fill(); ctx.stroke(); }
@@ -445,11 +543,24 @@ export default {
         ctx.strokeStyle = "rgba(242,244,245,0.85)"; ctx.lineWidth = 1.4;
         for (let i = 0; i < 14; i++) { const yy = camY + 20 + i * (viewH / 14); ctx.beginPath(); ctx.moveTo(sm.x - 100, yy); ctx.lineTo(sm.x + 70, yy); ctx.lineTo(sm.x + 58, yy - 5); ctx.moveTo(sm.x + 70, yy); ctx.lineTo(sm.x + 58, yy + 5); ctx.stroke(); }
       }
+      if (sm.x != null && stage === 1) { const n = SPR[sm.rest ? "n-rest" : "n-punctum"], ny = camY + Math.max(96, viewH * 0.2);
+        if (n) { ctx.drawImage(n, sm.x - 30, ny, 60, 60); ctx.strokeStyle = INK; ctx.lineWidth = 1; ctx.strokeRect(sm.x - 30, ny, 60, 60); }
+        if (sm.rest) { ctx.clearRect(0, 0, 0, 0); ctx.fillStyle = "rgba(241,232,210,.55)"; ctx.fillRect(sm.x - 60, camY - 20, 120, viewH + 40); } }
+      // the lamps from below (twist)
+      const lp = st.lamp;
+      if (lp.x != null) { const gr = ctx.createLinearGradient(lp.x - 90, 0, lp.x + 90, 0); gr.addColorStop(0, "rgba(255,236,170,0)"); gr.addColorStop(0.5, "rgba(255,236,170,.6)"); gr.addColorStop(1, "rgba(255,236,170,0)"); ctx.fillStyle = gr;
+        ctx.beginPath(); ctx.rect(lp.x - 90, camY - 20, 180, viewH + 40); ctx.fill();
+        for (const b of bars) { ctx.fillStyle = "#141414"; const xa = Math.max(b.x0 != null ? b.x0 : 44, lp.x - 90), xb = Math.min(b.x1 != null ? b.x1 : LW, lp.x + 90); if (xb > xa) ctx.fillRect(xa, b.y0 + (b.kind === "brushed" ? 8 : 0), xb - xa, b.y1 - b.y0 - (b.kind === "brushed" ? 14 : 0)); } }
       ctx.restore();
       // section frame
       ctx.strokeStyle = INK; ctx.lineWidth = 1.6; ctx.strokeRect(40, camY - 200, LW - 40, viewH + 400);
       // ---- screen space
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      if (lp.x == null && lp.next < 3 && stage === 2) {
+        const a = Math.min(1, (3 - lp.next) / 3) * 0.6;
+        const gr = ctx.createLinearGradient(0, H, 0, H * 0.55); gr.addColorStop(0, `rgba(255,226,150,${a})`); gr.addColorStop(1, "rgba(255,226,150,0)");
+        ctx.fillStyle = gr; ctx.fillRect(0, H * 0.55, W, H * 0.45);
+      }
       if (sm.x == null && sm.next < 3) {
         const a = Math.min(1, (3 - sm.next) / 3) * 0.75;
         const gr = ctx.createLinearGradient(0, 0, W * 0.4, 0); gr.addColorStop(0, `rgba(20,20,20,${a})`); gr.addColorStop(1, "rgba(20,20,20,0)");
@@ -461,7 +572,7 @@ export default {
       const fr = (st.best - ALT0) / (ALT1 - ALT0);
       ctx.fillStyle = CYAN; ctx.fillRect(sx + 1, sTop + sH * (1 - fr), 12, sH * fr);
       ctx.font = "12px 'Courier Prime', monospace"; ctx.fillStyle = INK;
-      for (let a = ALT0; a <= ALT1; a += 300) { const yy = sTop + sH * (1 - (a - ALT0) / (ALT1 - ALT0)); ctx.beginPath(); ctx.moveTo(sx + 14, yy); ctx.lineTo(sx + 20, yy); ctx.stroke(); if (sH > 220 && W > 700) ctx.fillText(`${(a / 1000).toFixed(1)}k`, sx + 22, yy + 4); }
+      for (let a = ALT0; a <= ALT1; a += 200) { const yy = sTop + sH * (1 - (a - ALT0) / (ALT1 - ALT0)); ctx.beginPath(); ctx.moveTo(sx + 14, yy); ctx.lineTo(sx + 20, yy); ctx.stroke(); if (sH > 220 && W > 700) ctx.fillText(`${(a / 1000).toFixed(1)}k`, sx + 22, yy + 4); }
       for (const L of ledges) if (L.camp || L.station) { const yy = sTop + sH * (1 - (altOf(L.y) - ALT0) / (ALT1 - ALT0)); ctx.fillStyle = L.station ? VIOLET : L.goal ? SEAL : OCHRE; ctx.beginPath(); if (L.station) ctx.rect(sx + 3, yy - 4, 8, 8); else { ctx.moveTo(sx - 2, yy); ctx.lineTo(sx + 7, yy - 9); ctx.lineTo(sx + 16, yy); } ctx.fill(); }
       const cur = sTop + sH * (1 - (altOf(pl.y) - ALT0) / (ALT1 - ALT0)); ctx.fillStyle = SEAL; ctx.beginPath(); ctx.moveTo(sx - 6, cur - 6); ctx.lineTo(sx + 1, cur); ctx.lineTo(sx - 6, cur + 6); ctx.fill();
       // legend block on the right margin (wide screens), as on a survey sheet
@@ -472,8 +583,8 @@ export default {
         ctx.fillStyle = INK; ctx.font = "700 13px 'Courier Prime', monospace"; ctx.fillText("SECTION A–A′  LEGEND", lx + 10, ly + 20);
         PATS.forEach(([name, , p], i) => { ctx.fillStyle = p; ctx.fillRect(lx + 10, ly + 32 + i * 24, 26, 16); ctx.strokeStyle = INK; ctx.strokeRect(lx + 10, ly + 32 + i * 24, 26, 16); ctx.fillStyle = INK; ctx.font = "14px Georgia, serif"; ctx.fillText(name, lx + 44, ly + 45 + i * 24); });
         ctx.font = "13px 'Courier Prime', monospace"; ctx.fillStyle = INK;
-        ctx.fillText("○ anchor ring   ▲ camp", lx + 10, ly + 196); ctx.fillStyle = VIOLET; ctx.fillText("■ reading station", lx + 10, ly + 216);
-        ctx.fillStyle = INK; ctx.globalAlpha = 0.8; ctx.fillText("Book III climb, 2 800–4 600 m", lx + 10, ly + 244); ctx.globalAlpha = 1;
+        ctx.fillText(stage === 2 ? "▬ a bar: unseen, unseeing" : "○ anchor ring   ▲ camp", lx + 10, ly + 196); ctx.fillStyle = VIOLET; ctx.fillText(stage === 2 ? "dust falls every 7 s" : stage === 1 ? "■ core mark" : "■ reading station", lx + 10, ly + 216);
+        ctx.fillStyle = INK; ctx.globalAlpha = 0.8; ctx.fillText(G.legend, lx + 10, ly + 244); ctx.globalAlpha = 1;
         const pk = pose === "walk-2" ? "walk" : pose, plate = PLATE[pk] || PLATE.stand;
         if (plate && ly - 186 > 96) { ctx.drawImage(plate, lx, ly - 180, 126, 168); ctx.strokeStyle = INK; ctx.strokeRect(lx, ly - 180, 126, 168); }
       }
@@ -481,7 +592,9 @@ export default {
       hudAir.style.width = Math.max(0, st.air) + "%"; hudAirBox.classList.toggle("low", st.air < 25);
       hudA.textContent = `${Math.ceil(st.air)}  −${drainRate(altOf(pl.y)).toFixed(1)}/s`;
       const stormTxt = sm.x != null ? `<span class="storm">FRONT</span>` : sm.next < 3 ? `<span class="storm">FRONT ${Math.ceil(sm.next)} s</span>` : "";
-      const r2 = `<span><b>${fmtM(altOf(pl.y))}</b></span><span>GEAR ${st.tier}</span><span>BLACK-OUTS ${"●".repeat(st.blackouts)}${"○".repeat(3 - st.blackouts)}</span><span>READINGS ${st.readings.length}/2</span>${pl.anchored ? '<span class="anc">ANCHORED</span>' : ""}${stormTxt}`;
+      const lampTxt = stage === 2 ? (lp.x != null ? `<span class="storm">LAMPS</span>` : lp.next < 3 ? `<span class="storm">LAMPS ${Math.ceil(lp.next)} s</span>` : "") : "";
+      const r2 = `<span><b>${fmtM(altOf(pl.y))}</b></span>${stage === 2 ? `<span>CAUGHT ${"●".repeat(st.blackouts)}${"○".repeat(3 - st.blackouts)}</span><span>DUST ${st.dustT > 0 ? "NOW" : Math.ceil(st.dust) + " s"}</span>${inBar(pl.y) ? '<span class="anc">IN THE BLACK</span>' : ""}${lampTxt}` :
+        `<span>GEAR ${st.tier}</span><span>BLACK-OUTS ${"●".repeat(st.blackouts)}${"○".repeat(3 - st.blackouts)}</span><span>${stage === 1 ? `CORES ${st.cores}/2` : `READING ${st.readings.length}/1`}</span>${pl.ground && pl.ground.warm ? '<span class="anc">WARM LEDGE</span>' : ""}${pl.anchored ? '<span class="anc">ANCHORED</span>' : ""}${stormTxt}`}`;
       if (r2 !== lastR2) { hudR2.innerHTML = r2; lastR2 = r2; }
     };
     const hudAir = hud.querySelector("i"), hudAirBox = hud.querySelector("." + P + "air"), hudA = hud.querySelector(".a"), hudR2 = hud.querySelector(".r2");
@@ -496,29 +609,35 @@ export default {
       if (!st.over) raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
-    if (window.__ezTest) window.__ezTest[api.key] = { st, pl, ledges, keys, altOf };
+    if (window.__ezTest) window.__ezTest[api.key] = { st, pl, ledges, keys, altOf, bars, wolves, stage, inBar };
 
     // ---- how to play: a survey sheet's title block
     const intro = document.createElement("div");
     intro.className = P + "intro";
-    intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="tb"><span>SECTION A–A′</span><span>BOOK III</span></div><div class="in">
-      ${A.has("section-b3-climb") ? `<img class="bd" alt="Section: the High Peaks" src="${A.url("section-b3-climb")}"><div class="sheets" aria-hidden="true">${["section-b1-climb", "section-b2-descent", "section-b3-climb", "section-b3-escape", "section-b4-descent"].filter((id) => A.has(id)).map((id) => `<img alt="" class="${id === "section-b3-climb" ? "on" : ""}" src="${A.url(id)}">`).join("")}<span>SHEET 3 OF 5</span></div>` : ""}
-      <h2>Cross-section climb</h2>
-      <p class="goal">Climb from 2 800 m to the summit camp at 4 600 m before your air gives out three times.</p>
+    intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="tb"><span>SECTION A–A′</span><span>${G.book} · ${["TEACH", "TEST", "TWIST"][stage]}</span></div><div class="in">
+      ${A.has(G.sheet) ? `<img class="bd" alt="The survey sheet" src="${A.url(G.sheet)}"><div class="sheets" aria-hidden="true">${["section-b1-climb", "section-b2-descent", "section-b3-climb", "section-b3-escape", "section-b4-descent"].filter((id) => A.has(id)).map((id) => `<img alt="" class="${id === G.sheet ? "on" : ""}" src="${A.url(id)}">`).join("")}<span>SHEET ${G.no} OF 5</span></div>` : ""}
+      <h2>${["Cross-section climb", "Cross-section climb: the Peaks", "Cross-section climb: the escape"][stage]}</h2>
+      <p class="goal">${["Climb from Hollin’s upper stair to the Aether-Vine ridge at 2 700 m before your air gives out three times.", "Climb from Mara’s camp to the summit at 4 500 m, and drill both core marks on the way.", "Climb out of the city with the logs. The survey sheet has been redacted: the black bars are the only place the lamps cannot see."][stage]}</p>
       <table>
         <tr><td>← →  ◀ ▶</td><td>Walk the ledge</td></tr>
         <tr><td>↑ / Space</td><td>Jump to the next ledge</td></tr>
-        <tr><td>hold ↓  ANCHOR</td><td>Clip on at a ring ○ when the page edge darkens: a storm front</td></tr>
+        ${stage === 2 ? `<tr><td>the black</td><td>Inside a bar you are unseen, and the ledges are too. Dust shows them for one beat every 7 s. Some bars are only a word wide</td></tr><tr><td>the lamps</td><td>Be in the black when they sweep. There are no rings down here</td></tr>`
+          : `<tr><td>hold ↓  ANCHOR</td><td>Clip on at a ring ○ when the page edge darkens: a storm front</td></tr>`}
+        ${stage === 1 ? `<tr><td>her song</td><td>Each front carries a neume: a note, anchor; a rest, a gap you can stand in</td></tr><tr><td>hold R  DRILL</td><td>At a core mark, hold still 4 s. Your air keeps draining</td></tr>` : ""}
       </table>
-      <p class="note">Mara waits at the camp halfway. Reading stations on the way give you a choice when you reach them.</p>
-      ${losses >= 2 ? `<label><input type="checkbox" class="gentle"> Climb at Mara’s pace: air drains 30% slower</label>` : ""}
+      <p class="note">${["A reading station near the top gives you a choice when you reach it. Something has been seen on the ledges at 2 600 m.", "Low gravity above 4 000 m: jumps go twice as high. Storm rock flashes twice, then bursts.", "Joren brought the guards. Their lamps come up the shafts every few seconds."][stage]}</p>
+      ${losses >= 2 ? `<label><input type="checkbox" class="gentle"> ${stage === 2 ? "A little chalk on the ledges: they stay faintly visible in the black, and air drains 30% slower" : "Climb at Mara’s pace: air drains 30% slower"}</label>` : ""}
       <button type="button">Start the climb</button></div></div>`;
     wrap.appendChild(intro);
     const startBtn = intro.querySelector("button");
     on(startBtn, "click", () => {
       const g = intro.querySelector(".gentle"); st.gentle = !!(g && g.checked);
       intro.remove(); st.started = true;
-      say("Base camp, 2 800 m, Book III. The Peakborn ledges are above you. A storm-singer is said to camp halfway up, and nobody works above 3 200 m without what she carries.", 6, "voice");
+      say(["Hollin’s upper stair, 2 100 m, Book I. The Aether-Vines are on the ridge above, and Joren says the weather comes through in fronts you can see on the page before you feel them.",
+        "Mara’s camp, 3 700 m, Book III. Her rebreather is on your back. “I will sing the fronts in from here,” she says. “Listen for where I do not.”",
+        "The record gallery, under the city. The logs are inside your coat. Above you the sheet is barred in black, and below you the lamps are starting up the shaft."][stage], 6.5, "voice");
+      if (stage === 0 && wolfKey) api.linkNote(wolfKey === "keyed" ? "Because you wrote the upland-wolf couplet in The Key, the shapes at 2 600 m are wolves, and their trail marks warm ledges where your air holds." : "Because the wolf went into The Key under the old name, the shapes at 2 600 m stay grey shapes, and they knock you back.");
+      if (stage === 2 && desk && desk.played) api.linkNote(desk.clumsy ? "Because your page at the Excision Desk (Journal Audit) went to the clerk with the brush, all four strata of this sheet are brushed black." : `Because you ruled ${desk.bars.length} full bar${desk.bars.length === 1 ? "" : "s"} at the Excision Desk in Journal Audit, ${desk.bars.length} strat${desk.bars.length === 1 ? "um" : "a"} of this sheet ${desk.bars.length === 1 ? "is" : "are"} black: ${desk.bars.map((k) => "C." + (k + 1)).join(", ")}.${desk.bars.length < 4 ? ` Where you cut only the word, the black is one ledge wide.` : ""}`);
     });
     startBtn.focus();
 
@@ -529,5 +648,11 @@ export default {
         if (window.__ezTest) delete window.__ezTest[api.key];
       },
     };
+  }
+}
+
+export default {
+  mount(root, api) {
+    return runStages(root, api, { names: ["To the ridge", "The Peaks", "The escape"], colors: { bg: "#3b2618", fg: "#f1e8d2", accent: "#c8913a", paper: "#f6efdc", ink: INK }, mount: mountStage });
   },
 };

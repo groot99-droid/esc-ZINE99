@@ -664,6 +664,20 @@
         0,
         35
       ]
+    },
+    {
+      "id": "pell-book",
+      "object": "field-journal",
+      "location": [
+        -9.6,
+        -17.2,
+        8.75
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        25
+      ]
     }
   ],
   "scenes": {
@@ -747,7 +761,8 @@
         "packet",
         "emitter-1",
         "emitter-2",
-        "books-rubble"
+        "books-rubble",
+        "pell-book"
       ],
       "interactions": [
         {
@@ -869,7 +884,8 @@
         "emitter-1",
         "emitter-2",
         "books-rubble",
-        "clicker"
+        "clicker",
+        "pell-book"
       ],
       "interactions": [
         {
@@ -957,7 +973,7 @@
           ]
         }
       ],
-      "note": "Book IV. Synchronized storms crack the tiers (a damage pass on the tier pieces); Pell's family packs; the siren sounds at the baseline the player set. Mara, Kade and Joren at the gate; the emitter crates. Joren's choice, then the Node Board on Hollin's six nodes.",
+      "note": "Book IV. Synchronized storms crack the tiers (a damage pass on the tier pieces); Pell's family packs; the siren sounds at the baseline the player set. Mara, Kade and Joren at the gate; the emitter crates. Joren's choice, then the Node Board on Hollin's six nodes. Phase 2: Pell's Book. While her family packs she puts her copy-book of Book I on the bench: DOCTOR SAYS, and every number (writes pell_book_given).",
       "camera": {
         "location": [
           1.5,
@@ -986,6 +1002,10 @@
         "clicker"
       ],
       "interactions": [
+        {
+          "prop": "pell-book",
+          "verb": "Take Pell's book"
+        },
         {
           "prop": "emitter-1",
           "verb": "Check the emitter crates"
@@ -1104,7 +1124,8 @@
         "emitter-2",
         "journal",
         "clicker",
-        "relay"
+        "relay",
+        "pell-book"
       ],
       "interactions": [
         {

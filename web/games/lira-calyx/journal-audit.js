@@ -14,28 +14,62 @@
 // twelve); Pell's book, her copy of Book I, as a second field card for the two lines carried forward
 // from Book I (one of them forged, and caught only there). Drawn with the game's art (api.art); every
 // element keeps its old drawing as the fallback.
+// Phase 2 (DEEP_DIVE section 3): three stages. Teach (Book II): the published brief against her
+// journal, six lines and the first ruled bar. Test (Book III): the stolen log, with the forgery only
+// the clock catches and the one only Pell's book catches. Twist: Three Nights, where the loupe fails
+// on her own lines and only the field card, the clock and physics tell hands apart; then the
+// set-piece, the Excision Desk, the same kind of page read from the other side: the player is the
+// clerk, with her brief, a black pen and a quota. Layer link 1 starts here: full bars ruled at the
+// desk black out strata in the escape (Cross-section climb, twist) and nodes on the Node Board.
+// The collection thread's guest object lies on the desk.
+import { runStages } from "./_stages.js";
 const P = "lira-calyx-journal-audit-";
 const INK = "#2b1d14", SEAL = "#b3212b", ARCH = "#3c5a8c", BLACK = "#141414", PAGE = "#f4efe2";
 const T = " "; // the thin space Lira puts before a unit
-const LINES = [
+const LINES_T = [
   { id: 1, pg: 0, who: "hers", day: 201, time: "06:12", text: `N7 ledge, 3${T}840${T}m. Δφ 0.31; glow 3${T}s, steady.`, card: "N7 · 06:12 · Δφ 0.31 · 3 840 m", loupe: "Firm downstrokes, upright. The seven is crossed." },
   { id: 2, pg: 0, who: "forged", day: 201, time: "07:40", text: "N7 bearing 214 deg. Readings nominal.", card: "N7 · 07:38 · bearing 124°", loupe: "Even pressure on every stroke. An uncrossed seven. It writes deg." },
   { id: 3, pg: 0, who: "hers", day: 201, time: "09:05", text: `Mara sings at the ledge. Δφ 0.02 since yesterday; she breathes on the fourth beat.`, card: "N7 · 09:05 · Δφ 0.29 → 0.31 (song)", loupe: "Firm, upright, quick. Her hand." },
-  { red: true, id: "b1", kind: "surgical", mm: 41, pg: 0, day: 201, time: "09:44" },
+  { red: true, id: "b1", kind: "surgical", mm: 28, pg: 0, day: 201, time: "09:44" },
   { id: 4, pg: 0, who: "arch", text: "not her reading: see field card, D201 07:40", loupe: "Small, slanted left, blue-black ink. Not Lira's hand, and not the flat one." },
   { id: 5, pg: 0, who: "forged", day: 201, time: "11:20", text: "Ridgeback Stryders absent above 3000m. Migration within parameters.", card: "Strider count · 11:20 · 14 crossing at 3 100 m", loupe: "Even pressure. The name is misspelled; no space before the m." },
   { id: 6, pg: 0, who: "forged", day: 201, time: "10:02", text: `N8 ledge, 4${T}120${T}m. Δφ 0.12; glow 2${T}s.`, card: null, loupe: "Upright and firm. It looks like her hand." },
   { id: 7, pg: 0, who: "hers", day: 201, time: "13:47", text: `Spore-Weaver web, 0.44${T}AFU; pulses 7${T}s apart, as below.`, card: "Web · 13:47 · 0.44 AFU · period 7 s", loupe: "Firm, upright; both sevens crossed." },
   { id: 15, pg: 0, who: "hers", day: 201, time: "14:20", book1: true, text: `Carried forward from Book I: strider count, bridge, 06:10: 17. Pell says 18.`, card: null, loupe: "Firm, upright; both sevens crossed. Her hand." },
-  { id: 8, pg: 1, who: "hers", day: 202, time: "05:58", text: `Wind 40${T}km/h, gusts to 70. Gravimeter 9.71 → 9.64, Δ −0.07.`, card: "Gravimeter · 05:58 · 9.71, 9.64", loupe: "Firm, upright, the sevens crossed. Written fast, in the cold." },
   { id: 9, pg: 1, who: "forged", day: 202, time: "06:30", text: "N9 chant node, 2900m. Gravity 12.4 m/s2, stable.", card: "N9 · 06:30 · g 9.62 m/s²", loupe: "Even pressure. No space before the unit." },
-  { id: 10, pg: 1, who: "hers", day: 202, time: "08:15", text: `Joren's lift cable reads 7${T}kN. He will not meet my eye.`, card: "Lift cable · 08:15 · 7 kN", loupe: "Firm, upright; the seven crossed, pressed hard." },
   { red: true, id: "b2", kind: "clumsy", pg: 1, day: 202, time: "08:50" },
   { id: 11, pg: 1, who: "arch", text: "the chant has its rest in bar 6, not 5", loupe: "Small, slanted left, blue-black ink. Corrections only." },
-  { id: 12, pg: 1, who: "forged", day: 202, time: "09:40", text: "Subject relocated to N10, bearing 090 deg. Compliance satisfactory.", card: null, loupe: "Even pressure, typed-flat. It writes deg." },
   { id: 13, pg: 1, who: "hers", day: 202, time: "11:02", text: `N10 by the chant, 3${T}270${T}m. Δφ 0.38; glow 4${T}s.`, card: "N10 · 11:02 · Δφ 0.38 · 3 270 m", loupe: "Firm, upright, quick. Her hand." },
   { id: 16, pg: 1, who: "forged", lens: "hers", day: 202, time: "11:40", book1: true, text: `Carried forward from Book I: N1 valley web, 0.47${T}AFU by hand.`, card: null, loupe: "Upright and firm, the seven crossed. It looks like her hand." },
-  { id: 14, pg: 1, who: "hers", day: 202, time: "12:30", text: "Margin again, the small hand. I have circled it.", card: null, loupe: "Firm, upright. Her hand, pressed harder at the end." },
+];
+const LINES_0 = [
+  { id: 1, pg: 0, who: "hers", day: 148, time: "08:10", text: `Well N5, Lowland. Isotope lines 1 : 0.61; Δ from natural, 0.39.`, card: "N5 · 08:10 · 1 : 0.61 · Δ 0.39", loupe: "Set in the Continuum's type, but the figures are the ones she filed." },
+  { id: 2, pg: 0, who: "forged", day: 148, time: "08:40", text: "Well N5 ratio within natural variation. No further sampling advised.", card: "N5 · 08:10 · 1 : 0.61, not natural", loupe: "The same type. A flat register; she does not advise, she measures." },
+  { id: 3, pg: 0, who: "hers", day: 148, time: "09:30", text: `Ridge harmonic at the harvester, 17${T}Hz and rising; gauge held 40${T}s.`, card: "N6 · 09:30 · 17 Hz, rising · 40 s", loupe: "The figures she filed. The thin space before the unit survived the typesetter." },
+  { red: true, id: "b0", kind: "surgical", mm: 41, pg: 0, day: 148, time: "09:52" },
+  { id: 4, pg: 1, who: "forged", day: 148, time: "10:15", text: "Harvester ridge stable. Bearing 041 deg.", card: "N6 · 09:30 · 17 Hz, rising: not stable", loupe: "It writes deg. Nothing in her journal says stable." },
+  { id: 5, pg: 1, who: "hers", day: 148, time: "11:05", text: `Fragment lattice matches patent drawing 7; consortium mark present.`, card: "Archive · 11:05 · drawing 7 · mark present", loupe: "As she filed it, to the word." },
+  { id: 6, pg: 1, who: "forged", day: 148, time: "10:50", text: "Fragment of natural origin. Matter closed.", card: "Archive · 11:05 · lattice, made", loupe: "The same type as every line here. Type has no hand: check it against the journal, and the hour." },
+];
+const LINES_2 = [
+  { id: 1, pg: 0, who: "hers", day: 231, time: "03:02", text: `Coupling matrix, row 4: K 0.31, 0.27, 0.17.`, card: "Matrix · 03:02 · 0.31, 0.27, 0.17", loupe: "" },
+  { id: 2, pg: 0, who: "forged", day: 231, time: "03:09", text: `N9 again: gravity 7.9${T}m/s², steady.`, card: "N9 · D202 06:30 · g 9.62 m/s²", loupe: "" },
+  { id: 3, pg: 0, who: "hers", day: 231, time: "03:12", text: "The seven is not crossed. I watched my hand not cross it.", card: null, loupe: "" },
+  { id: 4, pg: 1, who: "forged", day: 231, time: "03:10", text: "Broadcast confirmed by relay at 02:50. All nodes nominal.", card: null, loupe: "" },
+  { id: 5, pg: 1, who: "hers", day: 231, time: "03:31", text: `Dust on the sill, every 7${T}s. Counted 40 falls. The period holds.`, card: "Sill · 03:31 · 7 s × 40", loupe: "" },
+];
+const STG = [
+  { lines: LINES_0, file: "CONTINUUM / PUBLISHED BRIEF / FILE 9-A", sub: "Technical brief as published, against Lira Calyx's journal, day 148", cols: ["BRIEF · PAGE 1", "BRIEF · PAGE 2"], card: "Her journal", tools: ["loupe", "card", "clock", "gauge", "hands"] },
+  { lines: LINES_T, file: "CONTINUUM / RECOVERED FIELD LOG / FILE 12-C", sub: "Lira Calyx, field journal, days 201–202", cols: ["LEFT PAGE · D201", "RIGHT PAGE · D202"], card: "Field card, as taken by hand", tools: ["loupe", "card", "clock", "gauge", "pell", "hands"] },
+  { lines: LINES_2, file: "L. CALYX / FIELD JOURNAL / NO FILE NUMBER", sub: "The hideout, day 231, the third night without sleep", cols: ["LEFT PAGE · 03:00", "RIGHT PAGE"], card: "Field card, as taken by hand", tools: ["loupe", "card", "clock", "hands"] },
+];
+// the Excision Desk: four lines of her brief's Appendix C, each with a flagged term; the crib gives
+// the bar length that carries the message. DESK[k].node is the Node Board node the line names.
+const DESK = [
+  { pre: "C.1 Water lifts: cable gauge 7 kN; station ", flag: "tier 2, lift head", post: ".", crib: 28, node: "H2" },
+  { pre: "C.2 Market awnings: spore density 0.44; station ", flag: "tier 1, bay 9", post: ".", crib: 41, node: "H5" },
+  { pre: "C.3 Rope bridge: strider count 17; station ", flag: "bridge post 3", post: ".", crib: 14, node: "H3" },
+  { pre: "C.4 Her own bench: river glow 3 s; station ", flag: "tier 3, north wall", post: ".", crib: 41, node: "H6" },
 ];
 const MARKS = { H: "Hers", F: "Forged", O: "Other hand" };
 const STAMP = { H: "stamp-hers", F: "stamp-forged", O: "stamp-other-hand" };
@@ -43,8 +77,9 @@ const HANDS = [["hers", "hand-lira", "Hers", "Slants right; sevens crossed; Δ; 
   ["arch", "hand-archivist", "The other hand", "Small, slanted left, blue-black. Corrections only."], ["pell", "hand-pell", "Pell", "Capitals, copied each evening. Exactly what the Doctor said."]];
 const PELL = ["PELLS BOOK. BOOK I. HOLLIN TERRACE.", "STRIDERS BRIDGE 06:10. DOCTOR 17. ME 18. ONE WAS A BABY.", "N1 VALLEY. DOCTOR SAYS 0.44. I WROTE IT SAME.", "SIREN. DOCTORS LINE. RIVER GLOW.", "WOLF BABY ONE. GLOW UNDER 4 S. 2 600 M: TOO HIGH.", "HAND / RELAY. N1: 0.44 / 0.47. N2, N3. SAME DAY."];
 
-export default {
-  mount(root, api) {
+function mountStage(root, api, stage) {
+  {
+    const S = STG[stage], LINES = S.lines;
     const off = [], timers = [];
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); off.push(() => t.removeEventListener(e, f, o)); };
     const later = (f, ms) => timers.push(setTimeout(f, ms));
@@ -147,15 +182,15 @@ export default {
       @media (prefers-reduced-motion:reduce){.${P}fin img,.${P}stamp.new{animation:none}}
     </style>
     <div class="${P}scroll"><div class="${P}tabs" aria-hidden="true">${pic("tab-entries", "on")}${pic("tab-margin")}</div><div class="${P}folder"><div class="${P}page">
-      <div class="${P}head"><span>CONTINUUM / RECOVERED FIELD LOG / FILE 12-C<br><span style="font-weight:400;opacity:.7">Lira Calyx, field journal, days 201–202</span></span><div class="${P}tally">CHECKED<b>0 / ${real.length}</b></div></div>
-      <div class="${P}cols"><div class="${P}col" data-pg="0"><h4>LEFT PAGE · D201</h4></div><div class="${P}col" data-pg="1"><h4>RIGHT PAGE · D202</h4></div></div>
+      <div class="${P}head"><span>${S.file}<br><span style="font-weight:400;opacity:.7">${S.sub}</span></span><div class="${P}tally">CHECKED<b>0 / ${real.length}</b></div></div>
+      <div class="${P}cols"><div class="${P}col" data-pg="0"><h4>${S.cols[0]}</h4></div><div class="${P}col" data-pg="1"><h4>${S.cols[1]}</h4></div></div>
       ${pic("seal-press-imprint", P + "seal") || `<div class="${P}seal">AUDIT</div>`}
     </div></div></div>
     <div class="${P}tray">
       <button type="button" data-m="H"><u>H</u>ERS</button><button type="button" class="F" data-m="F"><u>F</u>ORGED</button><button type="button" class="O" data-m="O"><u>O</u>THER HAND</button>
       <span style="width:6px"></span>
-      <button type="button" class="tool" data-t="loupe">◯ <u>l</u>oupe</button><button type="button" class="tool" data-t="card">▭ <u>c</u>ard</button><button type="button" class="tool" data-t="clock">◷ clock (<u>t</u>)</button>
-      <button type="button" class="tool" data-t="gauge">▬ <u>g</u>auge</button><button type="button" class="tool" data-t="pell">▤ <u>P</u>ell’s book</button><button type="button" class="tool" data-t="hands">✎ ha<u>n</u>ds</button>
+      <button type="button" class="tool" data-t="loupe">◯ <u>l</u>oupe</button><button type="button" class="tool" data-t="card">▭ ${stage ? "<u>c</u>ard" : "her journal (<u>c</u>)"}</button><button type="button" class="tool" data-t="clock">◷ clock (<u>t</u>)</button>
+      ${S.tools.includes("gauge") ? `<button type="button" class="tool" data-t="gauge">▬ <u>g</u>auge</button>` : ""}${S.tools.includes("pell") ? `<button type="button" class="tool" data-t="pell">▤ <u>P</u>ell’s book</button>` : ""}<button type="button" class="tool" data-t="hands">✎ ha<u>n</u>ds</button>
       <span style="flex:1"></span><button type="button" class="close" data-a="close">CLOSE THE AUDIT</button>
       <div class="${P}out" aria-live="polite"><div class="${P}lens"></div><span>Select a line, then use a tool or mark it.</span></div>
     </div>`;
@@ -179,7 +214,7 @@ export default {
     };
     const handHTML = (l) => {
       const esc = l.text.replace(/&/g, "&amp;").replace(/</g, "&lt;");
-      return l.who === "hers" || l.lens === "hers" ? esc.replace(/7/g, `<span class="${P}x7">7</span>`) : esc;
+      return stage === 1 && (l.who === "hers" || l.lens === "hers") ? esc.replace(/7/g, `<span class="${P}x7">7</span>`) : esc;
     };
     const rows = {};
     const barHTML = (l) => {
@@ -219,7 +254,7 @@ export default {
       const left = real.filter((l) => l.who === "forged" && st.marks[l.id] !== "F").length;
       const called = bars.filter((l) => (st.bars[l.id] || {}).call).length;
       $("." + P + "tally").innerHTML = `CHECKED<b>${done} / ${real.length}</b><small>BARS ${called} / ${bars.length}</small>${st.helped ? `<small style="color:#f3b4b4">${left} FORGED LEFT</small>` : ""}`;
-      if (done >= 8 && !st.beats7) { st.beats7 = true; out("Halfway. Above the hideout, boots cross the grating and stop, and go on. Lira does not look up from the page.", null, true); }
+      if (stage === 1 && done >= 7 && !st.beats7) { st.beats7 = true; out("Halfway. Above the hideout, boots cross the grating and stop, and go on. Lira does not look up from the page.", null, true); }
     };
     const smallHand = (after, text) => { const a = document.createElement("span"); a.className = P + "reply a"; a.innerHTML = `${pic("bracket-small-hand")}<span></span>`; a.querySelector("span").textContent = text; after.after(a); return a; };
     const marginFor = (l) => {
@@ -297,6 +332,7 @@ export default {
     const tool = (t) => {
       if (st.over || !st.started) return;
       if (t === "hands") { showHands(); return; }
+      if (!S.tools.includes(t)) return;
       if (t === "pell") { showPell(); return; }
       if (st.sel == null) { out("Select a line first."); return; }
       const l = byId(st.sel);
@@ -308,13 +344,19 @@ export default {
         return;
       }
       if (t === "gauge") { out("Bar gauge: nothing ruled here. It measures the black bars."); return; }
+      if (t === "loupe" && stage === 2) {
+        const word = l.text.split(/\s+/).slice(-3).join(" ");
+        st.louped = (st.louped || 0) + 1;
+        out(st.louped === 1 ? "Loupe: even pressure. The seven is not crossed. It reads as the flat hand. But you wrote this line an hour ago." : st.louped === 2 ? "Loupe: the seven is not crossed. The same on every line tonight. The loupe is not wrong. Your hand is." : "Loupe: an uncrossed seven. It cannot tell you from them tonight. The card, the clock and the physics still can.", word, st.louped <= 2, { id: "hand-continuum" });
+        return;
+      }
       if (t === "loupe") {
-        const who = l.lens || l.who, hand = HANDS.find((h) => h[0] === who);
+        const who = stage === 0 ? "forged" : l.lens || l.who, hand = HANDS.find((h) => h[0] === who);
         const word = l.text.split(/\s+/).slice(-3).join(" ");
         const lens = l.who === "arch" ? `<span style="color:${ARCH};font-style:italic;transform:skewX(14deg)">${word}</span>` : who === "hers" ? word.replace(/7/g, `<span class="${P}x7">7</span>`) : word;
         out(`Loupe: ${l.loupe}`, lens, false, hand && { id: hand[1] });
       }
-      if (t === "card") out(l.who === "arch" ? "Field card: no card. This is a note, not a reading." : l.card ? `Field card, as taken by hand: ${l.card}` : l.book1 ? "Field card: none. Book I’s cards went with the stolen log. Pell’s book is the only other copy." : "Field card: none filed for this line.");
+      if (t === "card") out(l.who === "arch" ? "Field card: no card. This is a note, not a reading." : l.card ? `${S.card}: ${l.card}` : l.book1 ? "Field card: none. Book I’s cards went with the stolen log. Pell’s book is the only other copy." : stage === 2 ? "Field card: none. This is not a reading. Nothing contradicts it, or vouches for it, but the hour." : "Field card: none filed for this line.");
       if (t === "clock") {
         if (!l.time) { out("Clock: no timestamp on this line."); return; }
         const day = LINES.filter((x) => x.day === l.day && x.time && !x.red);
@@ -357,28 +399,167 @@ export default {
         else if (l.who === "arch") { if (m === "O") archOk++; else if (m === "F") falseAcc++; }
       }
       st.over = true; closeOverlay();
+      if (stage === 2) {
+        if (missed + falseAcc >= 3) { api.store.set("losses", losses + 1); finish("lose", `03:40. ${caught} of ${nF} false lines caught, ${falseAcc} of her own struck out. She cannot tell her hand from theirs tonight, and she stops trying. “Or maybe it’s him. Or maybe it’s me.” The page goes into the book as it is.`, ["stamp-doubted", "stamp-sealed"]); return; }
+        st.night = { caught, nF, falseAcc };
+        desk(); return;
+      }
+      if (stage === 0) {
+        const b0 = st.bars.b0 || {};
+        if (b0.right) api.shared.set("bar41", true);
+        const bt = b0.right ? ` And one bar on page 1 was ruled, 41 mm, with blue under the black${st.sorry ? ", and a small hand has owned it" : ""}: the first you have measured. A censor who rules a line to the millimetre means something by its length.` : b0.gauged ? " You laid the gauge on the bar and wrote down the wrong kind." : " The black bar on page 1 went unmeasured.";
+        const sum0 = `${caught} of ${nF} changed lines found, ${missed} missed, ${falseAcc} of your own doubted.`;
+        if (missed === 0 && falseAcc === 0) { api.store.set("losses", 0); finish("win", `Audit closed. ${sum0} The brief they published under your name says the well is natural, the ridge is stable and the fragment grew. Your journal says otherwise, line by line, and now you can show where.${bt}`, ["stamp-restored", "seal-broken"]); }
+        else if (missed + falseAcc >= 3) { api.store.set("losses", losses + 1); finish("lose", `Audit closed. ${sum0} Too much of the published brief stands as if you had written it.${bt}`, ["stamp-continuum", "stamp-sealed"]); }
+        else finish("done", `Audit closed. ${sum0} Most of what they changed is marked; the rest will be quoted back at you as your own.${bt}`, ["stamp-doubted", "seal-continuum-wax"]);
+        return;
+      }
       const summary = `${caught} of ${nF} forgeries caught (nodes restored), ${missed} missed, ${falseAcc} true line${falseAcc === 1 ? "" : "s"} struck${archOk ? `, ${archOk} of 2 notes in the other hand recognised` : ""}.`;
       const margin = st.replies ? ` You answered the small hand ${st.replies === 1 ? "once" : "twice"}; the Continuum reads this book too, and now it knows someone writes back.` : st.circled ? " You circled the small hand's notes and asked, and left it there." : "";
       const sb = st.bars.b1 || {}, cb = st.bars.b2 || {};
-      const barTxt = sb.right ? ` One bar on the left page was ruled, 41 mm, with blue under the black${st.sorry ? ", and the small hand has owned it" : ""}: the first you have measured${cb.right ? "; the other was only brushed" : ""}. A censor who rules a line to the millimetre means something by its length.` : sb.gauged || cb.gauged ? " You laid the gauge on a bar and wrote down the wrong kind; the bars stay black shapes on the page." : " The two black bars went unmeasured.";
+      const barTxt = sb.right ? ` One bar on the left page was ruled, 28 mm, with blue under the black${st.sorry ? ", and the small hand has owned it" : ""}${cb.right ? "; the other was only brushed" : ""}. Two kinds of bar, then: one that hides, and one that is measured out.` : sb.gauged || cb.gauged ? " You laid the gauge on a bar and wrote down the wrong kind; the bars stay black shapes on the page." : " The two black bars went unmeasured.";
       const n1 = real.find((l) => l.id === 16), pell = st.marks[16] === "F" ? " Pell’s capitals caught the line your own hand could not: DOCTOR SAYS 0.44." : n1 && st.pellSeen.size ? " Pell’s book was open on the table, and the line that misquotes Book I still stands." : "";
       if (missed === 0 && falseAcc === 0) { api.store.set("losses", 0); finish("win", `Audit closed. ${summary} Every forged line restored, nothing of hers doubted. The journal is hers again, line by line.${pell}${barTxt}${margin}`, ["stamp-restored", "seal-broken"]); }
       else if (missed + falseAcc >= 3) { api.store.set("losses", losses + 1); finish("lose", `Audit closed. ${summary} Too much of the record stays forged or doubted, and the nodes it names go into the dossier unverified.${barTxt}${margin}`, ["stamp-continuum", "stamp-sealed"]); }
       else finish("done", `Audit closed. ${summary} Most of the page is hers; the rest will follow her into the Peaks as it is.${pell}${barTxt}${margin}`, ["stamp-doubted", "seal-continuum-wax"]);
     });
-    later(() => { if (!st.over) out("Lira's note: the left page holds the most of them. One keeps my hand but not my hour. And one quotes Book I: Pell would know.", null, true); }, 120000);
+    later(() => { if (!st.over && !st.deskOn) out(["Lira's note: three of the six are not what I filed. One of them is out of its hour.", "Lira's note: the left page holds the most of them. One keeps my hand but not my hour. And one quotes Book I: Pell would know.", "Lira's note: put the loupe down. The card, the clock, the physics."][stage], null, true); }, stage === 1 ? 120000 : 70000);
 
+    // ---- the set-piece (twist): the Excision Desk. The same kind of page, read from the other side.
+    const desk = () => {
+      st.deskOn = true;
+      $("." + P + "scroll").hidden = true; $("." + P + "tray").hidden = true;
+      const d = { sel: 0, cut: {}, crib: false, over: false, found: api.thread.isFound() };
+      const w = document.createElement("div"); w.className = P + "deskw";
+      w.innerHTML = `<style>
+        .${P}deskw{position:absolute;inset:0;overflow:auto;background:#0d0e10;color:#e8e2d0;font-family:Georgia,serif}
+        .${P}wrap [hidden]{display:none!important}
+        .${P}desk{position:relative;max-width:1120px;margin:10px auto;padding:16px;display:grid;grid-template-columns:150px minmax(0,1fr) 250px;gap:14px;align-items:start;
+          background:radial-gradient(ellipse 60% 70% at 46% 30%,#4b4f55 0,#2b2e33 45%,#17181b 100%);border:1px solid #000;box-shadow:inset 0 0 0 3px #1c1d20}
+        @media (max-width:820px){.${P}desk{grid-template-columns:1fr;padding:10px}.${P}things{flex-direction:row!important;justify-content:space-between;align-items:flex-end!important;order:3}}
+        .${P}things{display:flex;flex-direction:column;gap:14px;align-items:center}
+        .${P}things .ink{width:54px;height:62px;border-radius:8px 8px 12px 12px;background:linear-gradient(#16222e,#0a0f16);border:2px solid #000;position:relative}
+        .${P}things .ink::before{content:"";position:absolute;left:14px;top:-12px;width:22px;height:12px;background:#222;border:2px solid #000;border-bottom:0}
+        .${P}things .rule{width:120px;height:14px;background:repeating-linear-gradient(90deg,#9aa0a6 0 5px,#7d838a 5px 6px);border:1px solid #000;transform:rotate(-8deg)}
+        .${P}things img.press{width:76px;height:76px;opacity:.85}
+        .${P}guest{padding:0;border:0;background:transparent;cursor:pointer;width:96px;height:96px;transform:rotate(7deg);box-shadow:2px 3px 0 rgba(0,0,0,.45);display:block}
+        .${P}guest img{display:block;width:100%;height:100%}
+        .${P}guest:focus-visible{outline:2px dashed #9aa0a6;outline-offset:3px}
+        .${P}brief{background:${PAGE};color:${INK};padding:16px 18px 20px;box-shadow:0 10px 30px rgba(0,0,0,.6);font:15px/1.5 'Courier Prime',monospace;min-width:0}
+        .${P}brief h3{font:700 12px 'Courier Prime',monospace;letter-spacing:.12em;margin:0 0 10px;border-bottom:1.5px solid ${INK};padding-bottom:6px}
+        .${P}dl{position:relative;display:block;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid rgba(43,29,20,.18);padding:10px 4px;margin:0;color:${INK};font:inherit;cursor:pointer;min-height:48px}
+        .${P}dl.sel{outline:2px solid ${INK};outline-offset:-2px;background:rgba(201,168,106,.2)}
+        .${P}dl:focus-visible{outline:2px dashed ${ARCH};outline-offset:-2px}
+        .${P}dl .fl{border-bottom:2px solid ${SEAL};background:rgba(179,33,43,.08)}
+        .${P}dl .wd{background:${BLACK};color:${BLACK};border-radius:1px;user-select:none}
+        .${P}dl .full{position:absolute;left:0;top:50%;transform:translateY(-50%);height:16px;background:${BLACK};box-shadow:0 2px 0 ${ARCH};border-radius:1px}
+        .${P}dl .mm{position:absolute;right:4px;bottom:1px;font:700 11px 'Courier Prime',monospace;background:${PAGE};border:1px solid ${INK};padding:0 5px}
+        .${P}dl.barred .tx{opacity:.16}.${P}dl.barred .fl{visibility:hidden}
+        .${P}dl .full{top:7px;bottom:7px;height:auto;transform:none}
+        .${P}panel{background:#1c1d20;border:1px solid #000;padding:10px;font:13px/1.4 'Courier Prime',monospace}
+        .${P}panel h4{margin:0 0 6px;font:700 12px 'Courier Prime',monospace;letter-spacing:.12em;color:#cfd8e6}
+        .${P}panel .m{display:flex;justify-content:space-between;margin:0 0 6px}
+        .${P}panel .eye b{color:${SEAL}}
+        .${P}panel button{display:block;width:100%;margin:5px 0 0;font:700 13px 'Courier Prime',monospace;letter-spacing:.04em;min-height:42px;padding:6px 8px;cursor:pointer;border:1.5px solid #888;background:#26262a;color:#f2f4f5;text-align:left}
+        .${P}panel button:hover:not(:disabled){border-color:#fff}
+        .${P}panel button:disabled{opacity:.4;cursor:default}
+        .${P}panel button.pass{background:${SEAL};border-color:${SEAL};text-align:center;margin-top:10px}
+        .${P}panel .len{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.${P}panel .len button{text-align:center}
+        .${P}crib{margin-top:8px;padding:8px 10px;background:${PAGE};color:${ARCH};font:italic 15px/1.5 'IM Fell English',Georgia,serif;transform:rotate(-1deg)}
+        .${P}crib i{display:inline-block;height:7px;background:${BLACK};vertical-align:middle;margin:0 6px;box-shadow:0 1.5px 0 ${ARCH}}
+        .${P}dout{margin-top:8px;min-height:5.6em;font:italic 16px/1.4 'IM Fell English',Georgia,serif;color:#f3e3b8}
+      </style>
+      <div class="${P}desk">
+        <div class="${P}things" aria-hidden="false"><span class="ink" aria-hidden="true"></span><span class="rule" aria-hidden="true"></span>${pic("stamp-continuum", "press", "")}
+          ${A.has("thread-guest") ? `<button type="button" class="${P}guest" aria-label="Something left at the edge of the desk">${pic("thread-guest")}</button>` : ""}</div>
+        <div class="${P}brief"><h3>TECHNICAL BRIEF · APPENDIX C · HOLLIN BASELINES · L. CALYX<br><span style="font-weight:400">FOR EXCISION BEFORE RELEASE · FLAGGED: STATIONS</span></h3><div class="${P}dls"></div></div>
+        <div class="${P}panel"><h4>EXCISION DESK 4</h4><div class="m"><span>QUOTA</span><span class="q"></span></div><div class="m eye"><span>SUPERVISOR</span><span class="e"></span></div>
+          <button type="button" data-k="word">Cut the word only (W)</button>
+          <div class="len"><button type="button" data-k="14">14 mm (1)</button><button type="button" data-k="28">28 mm (2)</button><button type="button" data-k="41">41 mm (3)</button></div>
+          <button type="button" data-k="lift">Lift the pen: undo (⌫)</button>
+          <button type="button" data-k="crib">Open the drawer (D)</button>
+          <div class="${P}crib" hidden></div>
+          <button type="button" class="pass" data-k="pass">PASS THE PAGE UP (Enter)</button>
+          <div class="${P}dout" aria-live="polite"></div></div>
+      </div>`;
+      el.appendChild(w);
+      const q = (s) => w.querySelector(s), say = (t) => { q("." + P + "dout").textContent = t; };
+      const dls = q("." + P + "dls");
+      const render = () => {
+        dls.innerHTML = "";
+        DESK.forEach((L, k) => {
+          const c = d.cut[k], b = document.createElement("button"); b.type = "button";
+          b.className = P + "dl" + (d.sel === k ? " sel" : "") + (c && c !== "word" ? " barred" : "");
+          b.setAttribute("aria-label", `${L.pre}${c ? "" : L.flag}${L.post} ${c === "word" ? "The flagged term is struck out." : c ? `The whole line is ruled out, ${c} millimetres.` : "Flagged term still showing."}`);
+          b.innerHTML = `<span class="tx">${L.pre}<span class="${c === "word" ? "wd" : "fl"}">${L.flag}</span>${L.post}</span>${c && c !== "word" ? `<span class="full" style="width:${Math.min(96, 30 + c * 1.6)}%"></span><span class="mm">${c} mm</span>` : ""}`;
+          on(b, "click", () => { d.sel = k; render(); dls.children[k].focus(); });
+          dls.appendChild(b);
+        });
+        const cov = Object.keys(d.cut).length, words = Object.values(d.cut).filter((c) => c === "word").length;
+        q(".q").textContent = `${cov} / 4 covered`;
+        q(".e").innerHTML = `<b>${"●".repeat(words)}</b>${"○".repeat(Math.max(0, 3 - words))}`;
+        q(".e").setAttribute("aria-label", `${words} of 3`);
+      };
+      const act = (k) => {
+        if (d.over) return;
+        const L = DESK[d.sel];
+        if (k === "crib") { d.crib = !d.crib; const c = q("." + P + "crib"); c.hidden = !d.crib; c.innerHTML = DESK.map((x, i) => `C.${i + 1}<i style="width:${x.crib}px"></i>${x.crib}`).join("<br>") + "<br>on the line, never through it";
+          say(d.crib ? "Under the blotter, in your own small hand: four lengths. A bar ruled to its length is a note someone can read. A word struck out is only a word struck out." : "The drawer, shut."); return; }
+        if (k === "lift") { delete d.cut[d.sel]; render(); say("You lift the pen. The line is as she wrote it."); return; }
+        if (k === "pass") {
+          const cov = Object.keys(d.cut).length, words = Object.entries(d.cut).filter(([, c]) => c === "word").map(([i]) => +i), bars = Object.entries(d.cut).filter(([, c]) => c !== "word").map(([i]) => +i);
+          if (cov < 4) { say(`The supervisor sends it back down without a word: ${4 - cov} flagged term${4 - cov > 1 ? "s" : ""} still showing.`); return; }
+          d.over = true;
+          const nt = st.night ? ` At 03:40 on the third night she will catch ${st.night.caught} of ${st.night.nF} false lines without her loupe.` : "";
+          if (words.length >= 3) {
+            api.shared.set("desk", { played: true, bars: [0, 1, 2, 3], words: [], msg: 0, clumsy: true }); api.store.set("losses", losses + 1);
+            api.end({ outcome: "lose", text: `Three lines with only a word gone. The supervisor's eye stops on desk 4, and the page is lifted off your blotter and carried down the hall to a clerk with a brush. Every line on it goes black, clumsily, and the stations it named are lost to her. You sit with your hands flat on the steel.${nt}` }); return;
+          }
+          const msg = bars.filter((i) => d.cut[i] === DESK[i].crib).length;
+          api.shared.set("desk", { played: true, bars, words, msg, clumsy: false }); api.store.set("losses", 0);
+          api.end({ outcome: "win", text: `Passed up, and passed. ${words.length ? `${words.length} line${words.length > 1 ? "s" : ""} left for her to read with one term gone` : "No line left whole for her"}; ${bars.length} ruled out entire${msg ? `, ${msg} of them to the length on the crib: a note, for anyone who ever lays a staff on the page` : ", and none to the crib's length: only black"}. She will measure one of your bars and not know what else to do with it. “I ruled that line. I am sorry for its length.”${nt}` });
+          return;
+        }
+        if (k === "word") {
+          d.cut[d.sel] = "word"; render();
+          const words = Object.values(d.cut).filter((c) => c === "word").length;
+          say(words === 1 ? `Only “${L.flag}” goes under the pen. The rest of C.${d.sel + 1} is hers to read. At the far desk, the supervisor looks up.` : words === 2 ? "A second line with only a word gone. The supervisor has put down his cup. One more and this page is not yours to finish." : "A third. Pass this up and you will not see the page again."); return;
+        }
+        const mm = +k; d.cut[d.sel] = mm; render();
+        say(mm === L.crib ? `The rule down, the pen along it: ${mm} mm, the whole of C.${d.sel + 1}. She loses the line. The length is the one on the crib.` : `${mm} mm, the whole of C.${d.sel + 1}. She loses the line. ${d.crib ? "It is not the length on the crib." : "A bar of some length. The drawer would say which."}`);
+      };
+      w.querySelectorAll("[data-k]").forEach((b) => on(b, "click", () => act(b.dataset.k)));
+      const guest = q("." + P + "guest");
+      if (guest) on(guest, "click", () => { api.thread.found(); say("Not on the inventory. Somebody’s game, stopped mid-move. I leave it as it lies."); });
+      on(window, "keydown", (e) => {
+        if (d.over || !w.isConnected) return;
+        const k = e.key.toLowerCase();
+        if (e.key === "ArrowDown" || e.key === "ArrowUp") { d.sel = (d.sel + (e.key === "ArrowDown" ? 1 : 3)) % 4; render(); dls.children[d.sel].focus(); e.preventDefault(); }
+        else if (k === "w") act("word"); else if (k === "1") act("14"); else if (k === "2") act("28"); else if (k === "3") act("41");
+        else if (e.key === "Backspace" || e.key === "Delete") act("lift"); else if (k === "d") act("crib");
+        else if (e.key === "Enter" && !e.target.closest("button")) act("pass");
+      });
+      render(); dls.children[0].focus();
+      say("Weeks before that night, at a steel desk under one cold lamp. You are not Lira here. Her brief, a black pen, a quota of four: every flagged station covered before the page goes up. Cut a word, or rule a whole line.");
+      if (window.__ezTest) window.__ezTest[api.key + "-desk"] = d;
+    };
+
+    const HOW = [
+      ["Journal Audit: the brief", "The Continuum has published your brief. Find every line they changed, and doubt nothing you wrote."],
+      ["Journal Audit", "Find every line someone else wrote in your journal, and strike nothing that is yours."],
+      ["Journal Audit: three nights", "No sleep in three nights. Find the lines that are not yours. Tonight the loupe will not help you. Then the page turns over."],
+    ][stage];
     const intro = document.createElement("div"); intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="pg">${pic("title-lettering", "ttl", "The Redacted Testament of Lira Calyx")}${pic("seal-broken", "sl")}<span class="cls">AUDIT</span>
-      <h2>Journal Audit</h2>
-      <p class="goal">Find every line someone else wrote in your journal, and strike nothing that is yours.</p>
-      <table><tr><td>H</td><td>Hers: crossed sevens, Δ, a thin space before units</td></tr>
-      <tr><td style="color:${SEAL}">F</td><td>Forged: “deg”, a flat voice, misspelled names, wrong hours</td></tr>
-      <tr><td style="color:${ARCH}">O</td><td>Other hand: small, blue, slanted left</td></tr>
-      <tr><td>L · C · T</td><td>Loupe, field card, clock: evidence for the selected line</td></tr>
-      <tr><td>P · N</td><td>Pell’s book (her copy of Book I) · the four hands on file</td></tr>
-      <tr><td>G</td><td>Bar gauge: measure a black bar, then say how it was made</td></tr></table>
-      ${pic("bar-lifted", "lift", "A black bar, lifted")}
+      <h2>${HOW[0]}</h2>
+      <p class="goal">${HOW[1]}</p>
+      <table><tr><td>H</td><td>Hers: ${stage === 0 ? "what your journal says, as you filed it" : stage === 2 ? "nothing contradicts it" : "crossed sevens, Δ, a thin space before units"}</td></tr>
+      <tr><td style="color:${SEAL}">F</td><td>Forged: ${stage === 0 ? "the journal says otherwise, or the hour is wrong" : stage === 2 ? "the card, the clock or the physics says no" : "“deg”, a flat voice, misspelled names, wrong hours"}</td></tr>
+      ${stage === 1 ? `<tr><td style="color:${ARCH}">O</td><td>Other hand: small, blue, slanted left</td></tr>` : ""}
+      <tr><td>L · C · T</td><td>Loupe, ${stage ? "field card" : "her journal"}, clock: evidence for the selected line</td></tr>
+      ${stage === 1 ? `<tr><td>P · N</td><td>Pell’s book (her copy of Book I) · the four hands on file</td></tr>` : ""}
+      ${stage < 2 ? `<tr><td>G</td><td>Bar gauge: measure a black bar, then say how it was made</td></tr>` : `<tr><td>then</td><td>The Excision Desk: cut a word or rule a line (W, 1–3)</td></tr>`}</table>
+      ${stage < 2 ? pic("bar-lifted", "lift", "A black bar, lifted") : ""}
       ${losses >= 2 ? `<label><input type="checkbox" class="gentle" checked> Keep a count of the forgeries left</label>` : ""}
       <button type="button">Open the file</button></div></div>`;
     el.appendChild(intro);
@@ -386,10 +567,19 @@ export default {
     on(sb, "click", () => {
       const g = intro.querySelector(".gentle"); st.helped = !!(g && g.checked);
       intro.remove(); st.started = true; refresh(); select(real[0].id); rows[real[0].id].focus();
-      out("Book III, the hideout. The stolen log came back to you overwritten with false timestamps and fabricated sensor readings. Pell’s copy-book of Book I lies beside it. Find their lines before they become your nodes.", null, true);
+      out(["Book II. Your technical brief has come back from the Continuum's press, and your name is on it. Your journal for the same morning lies open beside it. Find what they changed.",
+        "Book III, the hideout. The stolen log came back to you overwritten with false timestamps and fabricated sensor readings. Pell’s copy-book of Book I lies beside it. Find their lines before they become your nodes.",
+        "The hideout. “I have not slept in three nights.” Five lines from the last hour, and you are no longer sure which of them you wrote. “Or maybe it’s him. Or maybe it’s me.”"][stage], null, true);
     });
     sb.focus();
     refresh();
-    return { unmount() { timers.forEach(clearTimeout); off.forEach((f) => f()); } };
+    if (window.__ezTest) window.__ezTest[api.key] = { st, stage, LINES };
+    return { unmount() { timers.forEach(clearTimeout); off.forEach((f) => f()); if (window.__ezTest) { delete window.__ezTest[api.key]; delete window.__ezTest[api.key + "-desk"]; } } };
+  }
+}
+
+export default {
+  mount(root, api) {
+    return runStages(root, api, { names: ["The published brief", "The stolen log", "Three nights, and the desk"], colors: { bg: "#141414", fg: "#f4efe2", accent: "#b3212b", paper: PAGE, ink: INK }, mount: mountStage });
   },
 };

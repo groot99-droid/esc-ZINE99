@@ -78,7 +78,8 @@
       ],
       "writes": [
         "readings",
-        "key_branches_added"
+        "key_branches_added",
+        "wolf_couplet"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -132,7 +133,8 @@
       "chapter": "book-1",
       "mode": "climb",
       "reads": [
-        "gear_tier"
+        "gear_tier",
+        "wolf_couplet"
       ],
       "writes": [
         "readings",
@@ -145,7 +147,7 @@
       "next": [
         "b1-outpost"
       ],
-      "minutes": 5
+      "minutes": 4
     },
     {
       "id": "b1-outpost",
@@ -221,14 +223,15 @@
         "gear_tier"
       ],
       "writes": [
-        "gear_tier"
+        "gear_tier",
+        "cores_drilled"
       ],
       "enter": "flatten",
       "exit": "fade",
       "next": [
         "b2-lowlands"
       ],
-      "minutes": 4
+      "minutes": 3
     },
     {
       "id": "b2-lowlands",
@@ -283,7 +286,10 @@
       "next": [
         "b2-hearing"
       ],
-      "minutes": 5
+      "minutes": 5,
+      "reads": [
+        "cores_drilled"
+      ]
     },
     {
       "id": "b2-hearing",
@@ -357,9 +363,30 @@
       "enter": "push-in",
       "exit": "cut",
       "next": [
-        "b2-audit-1"
+        "b2-excision-desk"
       ],
       "minutes": 3
+    },
+    {
+      "id": "b2-excision-desk",
+      "layer": "1d",
+      "name": "The Excision Desk: you redact her brief",
+      "chapter": "book-2",
+      "game": "audit",
+      "reads": [
+        "brief_redacted"
+      ],
+      "writes": [
+        "desk_bars",
+        "desk_page_lost",
+        "bars_gauged"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "b2-audit-1"
+      ],
+      "minutes": 4
     },
     {
       "id": "b2-audit-1",
@@ -396,7 +423,8 @@
         "gear_tier"
       ],
       "writes": [
-        "gear_tier"
+        "gear_tier",
+        "cores_drilled"
       ],
       "enter": "flatten",
       "exit": "fade",
@@ -465,14 +493,15 @@
       "chapter": "book-3",
       "writes": [
         "margin_notes",
-        "margin_notes_answered"
+        "margin_notes_answered",
+        "sluice_log_read"
       ],
       "enter": "fade",
       "exit": "push-in",
       "next": [
         "b3-cipher-3"
       ],
-      "minutes": 3
+      "minutes": 4
     },
     {
       "id": "b3-cipher-3",
@@ -512,7 +541,7 @@
       "next": [
         "b3-city"
       ],
-      "minutes": 4
+      "minutes": 1
     },
     {
       "id": "b3-city",
@@ -534,12 +563,14 @@
     {
       "id": "b3-escape",
       "layer": "2d",
-      "name": "Cross-section: out through the shafts",
+      "name": "Cross-section: the escape up the redacted shafts, the outpost's lamps below",
       "chapter": "book-3",
       "mode": "climb",
       "reads": [
         "gear_tier",
-        "exposure"
+        "exposure",
+        "desk_bars",
+        "desk_page_lost"
       ],
       "enter": "flatten",
       "exit": "fade",
@@ -590,11 +621,53 @@
         "margin_notes_acted"
       ],
       "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "b3-three-nights"
+      ],
+      "minutes": 2
+    },
+    {
+      "id": "b3-three-nights",
+      "layer": "1d",
+      "name": "Three Nights: the loupe fails her own hand",
+      "chapter": "book-3",
+      "game": "audit",
+      "reads": [
+        "readings",
+        "broadcast_sent"
+      ],
+      "writes": [
+        "three_nights_kept",
+        "forgeries_caught",
+        "forgeries_missed",
+        "false_accusations"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "b3-dream-slide"
+      ],
+      "minutes": 2
+    },
+    {
+      "id": "b3-dream-slide",
+      "layer": "2d",
+      "name": "Under the lens: the dream slide",
+      "chapter": "book-3",
+      "mode": "lens",
+      "reads": [
+        "fragment_salvaged"
+      ],
+      "writes": [
+        "maker_mark_seen"
+      ],
+      "enter": "flatten",
       "exit": "fade",
       "next": [
         "b4-terraces"
       ],
-      "minutes": 2
+      "minutes": 1
     },
     {
       "id": "b4-terraces",
@@ -604,14 +677,15 @@
       "writes": [
         "joren_forgiven",
         "emitters_available",
-        "gear_tier"
+        "gear_tier",
+        "pell_book_given"
       ],
       "enter": "fade",
       "exit": "push-in",
       "next": [
         "b4-board-terrace"
       ],
-      "minutes": 4
+      "minutes": 5
     },
     {
       "id": "b4-board-terrace",
@@ -622,7 +696,11 @@
       "world_runs": true,
       "reads": [
         "readings",
-        "nodes_verified"
+        "nodes_verified",
+        "desk_bars",
+        "desk_page_lost",
+        "pell_book_given",
+        "sluice_log_read"
       ],
       "writes": [
         "home_terrace_held",
@@ -643,11 +721,13 @@
       "chapter": "book-4",
       "game": "assay",
       "reads": [
-        "margin_notes_acted"
+        "margin_notes_acted",
+        "cores_drilled"
       ],
       "writes": [
         "gamma_remeasured",
-        "readings"
+        "readings",
+        "ringdown_measured"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -684,7 +764,8 @@
       "chapter": "book-4",
       "mode": "climb",
       "reads": [
-        "gear_tier"
+        "gear_tier",
+        "ringdown_measured"
       ],
       "writes": [
         "margin_notes",
@@ -740,7 +821,11 @@
         "verified_share",
         "gamma_remeasured",
         "emitters_available",
-        "joren_forgiven"
+        "joren_forgiven",
+        "desk_bars",
+        "desk_page_lost",
+        "pell_book_given",
+        "sluice_log_read"
       ],
       "writes": [
         "core_choice",

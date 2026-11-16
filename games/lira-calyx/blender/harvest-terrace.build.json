@@ -329,6 +329,38 @@
         17.9
       ],
       "material": "timber"
+    },
+    {
+      "id": "sluice-house",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4,
+        3,
+        2.6
+      ],
+      "location": [
+        16.5,
+        9,
+        16.3
+      ],
+      "material": "drystone"
+    },
+    {
+      "id": "sluice-desk",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.6,
+        0.8
+      ],
+      "location": [
+        16.5,
+        6.9,
+        15.4
+      ],
+      "material": "drystone"
     }
   ],
   "props": [
@@ -362,6 +394,15 @@
         17.1,
         -4.3,
         15.75
+      ]
+    },
+    {
+      "id": "sluice-log",
+      "object": "field-journal",
+      "location": [
+        16.5,
+        6.9,
+        15.8
       ]
     }
   ],
@@ -419,7 +460,7 @@
           ]
         }
       ],
-      "note": "Book III. Joren's harvest terrace in amber harvest light; the chant and the sickles. Record the chant; page 112 appears twice in the journal (margin note 5); across the gorge, the terrace's drowned twin.",
+      "note": "Book III. Joren's harvest terrace in amber harvest light; the chant and the sickles. Record the chant; page 112 appears twice in the journal (margin note 5); across the gorge, the terrace's drowned twin. Phase 2: the Sluice Log. In the sluice house above the gorge, the logbook for the night the twin terrace drowned: the river level is a relay figure, in Joren's own hand (writes sluice_log_read).",
       "camera": {
         "location": [
           2.5,
@@ -447,6 +488,10 @@
         {
           "prop": "table",
           "verb": "Look across at the drowned terrace"
+        },
+        {
+          "prop": "sluice-log",
+          "verb": "Read the sluice log"
         },
         {
           "prop": "journal",

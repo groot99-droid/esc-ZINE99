@@ -8,7 +8,7 @@ You are Dr. Lira Calyx, a field scientist who climbs a mountain world remade by 
 | --- | --- |
 | Source | *The Redacted Testament of Lira Calyx*, `05_Worldbuilding/02_The_Redacted_Testament_of_Lira_Calyx.md` (four-book world bible plus a final found-document chapter) |
 | Companion note | `_Annotations/05_Worldbuilding/02_The_Redacted_Testament_of_Lira_Calyx.md` |
-| Target length | 160 to 180 minutes; this design runs 176 |
+| Target length | 160 to 180 minutes; this design runs 180 (176 before phase 2 of the accepted development; section 21) |
 | Players | 1 |
 | Core verb | **Measure** |
 | Register | Science fiction, conspiracy. Wonder, then paranoia |
@@ -201,12 +201,12 @@ Dialogue is sparse throughout, as in the source: a burst of lines, never a scene
 | Chapter id | Chapter | Minutes | Layers | New mechanic or revelation | Tension (1–5) |
 | --- | --- | --- | --- | --- | --- |
 | `cold-open` | The Torn Book | 4 | 3D | Someone else holds the book | 2 |
-| `book-1` | Book I: Biology of the Modern World | 38 | 3D, 2D, 1D | Hand measurement, the relay, The Key, The Assay, the climb, the lens; Pattern α; page 47; the threat | 1 rising to 3 |
-| `book-2` | Book II: The Aetheric Systems | 35 | 3D, 2D, 1D | Exposure; isotope assay; stealth in the lab; the cipher's first glimpse; Journal Audit; Veylor named | 3 |
-| `book-3` | Book III: The Human Threshold | 44 | 3D, 2D, 1D | Songs as data; the broken key; betrayal; forged entries; the Second Genesis | 3 rising to 4 |
-| `book-4` | Book IV: Final Reckoning | 41 | 3D, 2D, 1D | The Node Board, drill then finale; Veylor; the choice | 4 to 5 |
+| `book-1` | Book I: Biology of the Modern World | 37 | 3D, 2D, 1D | Hand measurement, the relay, The Key, The Assay, the climb, the lens; Pattern α; page 47; the threat | 1 rising to 3 |
+| `book-2` | Book II: The Aetheric Systems | 38 | 3D, 2D, 1D | Exposure; isotope assay; stealth in the lab; the cipher's first glimpse; the Excision Desk (midpoint); Journal Audit; Veylor named | 3 |
+| `book-3` | Book III: The Human Threshold | 45 | 3D, 2D, 1D | Songs as data; the broken key; the Sluice Log; betrayal; forged entries; Three Nights; the Second Genesis | 3 rising to 4 |
+| `book-4` | Book IV: Final Reckoning | 42 | 3D, 2D, 1D | Pell's Book; the Node Board, drill then finale; Veylor; the choice | 4 to 5 |
 | `epilogue` | The Redacted Testament | 14 | 3D, 1D | You are the archivist; you decide what stays black | 3 falling to 2 |
-| | **Total** | **176** | | | |
+| | **Total** | **180** | | | |
 
 ### Beat chart
 
@@ -221,44 +221,46 @@ Minutes are cumulative from the start. No gap between new elements exceeds 7 min
 | 16 | The Assay I | 1D game | 1 |
 | 20 | Third night: Pattern α | Revelation | 2 |
 | 24 | Page 47 | The hand in the margins | 3 |
-| 26 | The climb to the ridge; juvenile Ember Wolves too high | 2D mode | 2 |
-| 31 | The outpost in a storm | Timed hand reading | 3 |
-| 35 | Under the lens I: the lattice | 2D mode | 2 |
-| 39 | Hypothesis 1; publish or not; the threat; a black bar | Choice, exposure | 3 |
-| 42 | Down into the Scorched Biome | Climb in reverse, chemical storm | 3 |
-| 46 | Kade; the radiation pocket | Dose clock | 3 |
-| 50 | Cinder Reach archive | Place | 2 |
-| 53 | The Assay II: seeding | Revelation | 3 |
-| 58 | The hearing; the ridge fails | Set piece | 4 |
-| 62 | The corporate lab; "She’s close. Move the logs." | Stealth | 4 |
-| 68 | Under the lens II: the fragment rewrites itself | Revelation | 3 |
-| 71 | The sealed archive: Veylor, ReGenesis | 1D game | 3 |
-| 74 | The brief is redacted; Journal Audit I | 1D game | 3 |
-| 77 | Up to the High Peaks; meet Mara | Low gravity | 3 |
-| 82 | The storm-singing ledge | Place | 2 |
-| 86 | Mara's song decoded into nodes | 1D game | 3 |
-| 91 | The Key II breaks three times | Difficulty step | 3 |
-| 95 | Joren's terrace; the harvest chant | Place, person | 2 |
-| 98 | The chant decoded | 1D game | 3 |
-| 102 | The Continuum outpost | Stealth | 4 |
+| 26 | The climb to the ridge (one camp, not two); juvenile Ember Wolves too high | 2D mode | 2 |
+| 30 | The outpost in a storm | Timed hand reading | 3 |
+| 34 | Under the lens I: the lattice | 2D mode | 2 |
+| 38 | Hypothesis 1; publish or not; the threat; a black bar | Choice, exposure | 3 |
+| 41 | Down into the Scorched Biome (one camp) | Climb in reverse, chemical storm | 3 |
+| 44 | Kade; the radiation pocket | Dose clock | 3 |
+| 48 | Cinder Reach archive; the Flyleaf | Place | 2 |
+| 51 | The Assay II: seeding | Revelation | 3 |
+| 56 | The hearing; the ridge fails | Set piece | 4 |
+| 60 | The corporate lab; "She’s close. Move the logs." | Stealth | 4 |
+| 66 | Under the lens II: the fragment rewrites itself | Revelation | 3 |
+| 69 | The sealed archive: Veylor, ReGenesis | 1D game | 3 |
+| 72 | **The Excision Desk** (midpoint): you are the clerk, and you redact her brief | Point of view change | 4 |
+| 76 | The brief is redacted; Journal Audit I | 1D game | 3 |
+| 79 | Up to the High Peaks; meet Mara | Low gravity | 3 |
+| 84 | The storm-singing ledge | Place | 2 |
+| 88 | Mara's song decoded into nodes | 1D game | 3 |
+| 93 | The Key II breaks three times | Difficulty step | 3 |
+| 97 | Joren's terrace; the harvest chant; the Sluice Log | Place, person, his secret | 3 |
+| 101 | The chant decoded | 1D game | 3 |
+| 105 | The Continuum outpost: the logs, taken in one minute | Stealth (merged into the escape) | 4 |
 | 106 | The city; the hooded archivist; Joren betrays | Revelation, betrayal | 5 |
-| 111 | The escape up the shafts | 2D chase | 5 |
+| 111 | The escape up the redacted shafts, the outpost's lamps below | 2D chase | 5 |
 | 114 | Journal Audit II: forgeries | 1D game | 4 |
 | 119 | The hideout; broadcast or not; the damping note | Choice | 4 |
-| 121 | Hollin Terrace cracking; the coalition; forgive Joren or not | Choice | 4 |
-| 125 | The Node Board I: the terrace drill | 1D game | 4 |
-| 130 | The Assay III: threshold and damping | 1D game | 3 |
-| 134 | The Key III: which arrays are oscillators | 1D game | 3 |
-| 137 | The descent under Peak 12; "North shaft." | 2D, timing | 4 |
-| 142 | Under the lens III: the timing crystal | 2D | 4 |
-| 145 | Veylor | Confrontation | 5 |
-| 149 | The Node Board II, the choice | 1D finale | 5 |
-| 159 | The shear | Consequence | 5 |
-| 162 | The follower in the tunnels | Point of view change | 4 |
-| 165 | The record vault | Place | 3 |
-| 169 | Journal Audit III: the testament | 1D game | 3 |
-| 174 | The last page | Ending | 2 |
-| 176 | End | | |
+| 121 | **Three Nights** (darkest moment): the loupe fails her own hand; the dream slide | 1D game, 2D mode | 5 |
+| 124 | Hollin Terrace cracking; Pell's Book; the coalition; forgive Joren or not | Choice | 4 |
+| 129 | The Node Board I: the terrace drill | 1D game | 4 |
+| 134 | The Assay III: threshold and damping | 1D game | 3 |
+| 138 | The Key III: which arrays are oscillators | 1D game | 3 |
+| 141 | The descent under Peak 12; "North shaft." | 2D, timing | 4 |
+| 146 | Under the lens III: the timing crystal | 2D | 4 |
+| 149 | Veylor | Confrontation | 5 |
+| 153 | The Node Board II, the choice | 1D finale | 5 |
+| 163 | The shear | Consequence | 5 |
+| 166 | The follower in the tunnels | Point of view change | 4 |
+| 169 | The record vault | Place | 3 |
+| 173 | Journal Audit III: the testament | 1D game | 3 |
+| 178 | The last page | Ending | 2 |
+| 180 | End | | |
 
 ## 8. Levels
 
@@ -273,7 +275,7 @@ Every hand reading below can instead be taken from a relay beacon (section 12). 
 - **Flags.** None.
 - **Ends.** Push-in to `b1-terrace`.
 
-### Book I: Biology of the Modern World (38 min)
+### Book I: Biology of the Modern World (37 min)
 
 - **Goal.** Re-establish baselines; explain the anomalies.
 - **Where.** Hollin Terrace, the Spore-Weaver valley, the Aether-Vine ridge, the storm-struck outpost. Nodes N1 to N3.
@@ -282,7 +284,7 @@ Every hand reading below can instead be taken from a relay beacon (section 12). 
   2. `b1-key-1` (1D, 5 min). Classify the terrace collection. The juvenile Ember Wolf pelt breaks the key. Writes `readings`, `key_branches_added`.
   3. `b1-assay-1` (1D, 4 min). Crystalline-bark spectra baseline. Writes `readings`.
   4. `b1-valley` (3D, 6 min). The third night. Place three photodiode posts; set the sampling dial; watch the pulse cross the valley. Pattern α is drawn into the margin. Node **N1**. Then page 47: margin note 1 appears beneath the Strider gait sketch. The player may circle it, reply, re-sample at 0.5 s, or leave it. Writes `readings`, `pattern_alpha`, `margin_notes`, `margin_notes_answered`, `margin_notes_acted`, `nodes_verified`, `relay_used`, `exposure`.
-  5. `b1-climb` (2D, 5 min). Up the cross-section to the ridge. Juvenile Ember Wolves at 2,600 m, above their limit. At the top, sight the Aether-Vine azimuth: node **N2**.
+  5. `b1-climb` (2D, 4 min; one camp, trimmed from two on 2026-11-16). Up the cross-section to the ridge. Juvenile Ember Wolves at 2,600 m, above their limit: drawn as wolves whose trail marks warm ledges if the couplet was written in The Key I, as grey shapes that knock Lira back if not (reads `wolf_couplet`). At the top, sight the Aether-Vine azimuth: node **N2**.
   6. `b1-outpost` (3D, 4 min). A localized aetheric storm returns every 90 seconds. Read the gravimeter between gusts: node **N3**. Margin note 2 ("Not lightning. Read the gravimeter first."). Salvage the fragment. Writes `fragment_salvaged`.
   7. `b1-lens-1` (2D, 4 min). The fragment under magnification; find the lattice.
   8. `b1-terrace-night` (3D, 3 min). Link three anomalies in the journal to write Hypothesis 1. Publish a cautious note (as the source does) or keep it private. If published: the threat letter arrives under the door; one page of the official field log comes back with a black bar; an anonymous packet names Operation ReGenesis. Margin note 3 ("Publish less than you know."). Lira writes "Life is not choosing upward. It is being chosen." Writes `hypothesis_1`, `note_published`, `exposure`.
@@ -291,12 +293,12 @@ Every hand reading below can instead be taken from a relay beacon (section 12). 
 
 If the player keeps the note private, the threat and packet still arrive (the patron has read the official log, not the note), and exposure does not rise. The story's beats hold either way.
 
-### Book II: The Aetheric Systems (35 min)
+### Book II: The Aetheric Systems (38 min)
 
 - **Goal.** Follow the fragment to its makers.
 - **Where.** The Scorched Biome, Cinder Reach archive, the harvester ridge, the corporate lab. Nodes N4 to N6.
 - **Sequence.**
-  1. `b2-descent` (2D, 4 min). Down the cross-section; a chemical storm front sweeps right to left; glassback crawlers react to AFU spikes. Kade meets you at the bottom and gives you a Lowland mask: gear tier 1.
+  1. `b2-descent` (2D, 3 min; one camp, trimmed from two on 2026-11-16). Down the cross-section; a chemical storm front sweeps right to left; glassback crawlers react to AFU spikes. Kade meets you at the bottom and gives you a Lowland mask: gear tier 1.
   2. `b2-lowlands` (3D, 4 min). Kade guides you across the fungal mats. The reading for node **N4** sits inside a radiation pocket: 45 seconds of dose before you must step out. Kade: "Count to forty in there. Not forty-one."
   3. `b2-archive` (3D, 3 min). Cross-reference the fragment's microstructure with pre-Convergence patents. Pull drawers; match lattice drawings. Find the consortium's signature.
   4. `b2-assay-2` (1D, 5 min). Isotope fractionation on a core sample from a Lowland well: node **N5**. Non-natural ratios: `seeding_evidence`.
@@ -304,10 +306,11 @@ If the player keeps the note private, the threat and packet still arrive (the pa
   6. `b2-lab` (3D, 6 min). Infiltrate the corporate lab after hours. Take logs, not fights: guards walk fixed routes with lamp cones. Watch pulse rigs alter fungal cultures. Find the scrap behind the console: "She’s close. Move the logs." Find the Continuum manifest with a misfiled footnote in the margin hand: margin note 4 ("Batch 9 is not from the well.").
   7. `b2-lens-2` (2D, 3 min). The fragment under a lab pulse: its filaments rearrange, the same motion as the cultures.
   8. `b2-cipher-1` (1D, 3 min). The sealed archive index is written in a notation you cannot fully read. You recover two names, Dr. Solace Veylor and Operation ReGenesis; the coordinates stay locked. You publish the technical brief (required: it is the story's spine); it comes back surgically redacted and you are branded a saboteur. A clandestine note arrives, loose, unsigned: "You are looking at the wrong end of the needle. Look below." *(source)* It is not in the margin hand or any hand the journal knows, it is not a margin note, and it cannot be answered. Writes `veylor_named`, `brief_redacted`, `exposure`.
-  9. `b2-audit-1` (1D, 3 min). Compare your journal against the published brief and the official log. Find what was changed.
+  9. `b2-excision-desk` (1D, 4 min, Journal Audit; added 2026-11-16). The midpoint, and a cut away from Lira. A steel desk under one cold lamp; hands only. The player is a Continuum clerk of excisions with her brief, a black pen and a quota: every flagged term covered. For each flagged line, cut only the word (the line survives for Lira; the supervisor's eye rises by one) or rule the whole line to a length. A crib in the desk drawer, in the small left-slanted hand, gives the lengths that carry the message. Three word-cuts and the page goes down the hall to a clumsy censor, who brushes all of it black. From here the player knows the hand that helps is the hand that cuts; Lira does not. Writes `desk_bars`, `desk_page_lost`.
+  10. `b2-audit-1` (1D, 3 min). Compare your journal against the published brief and the official log. Find what was changed. The first ruled bar, 41 mm, is on this page.
 - **Ends.** Flatten into the climb to the Peaks.
 
-### Book III: The Human Threshold (44 min)
+### Book III: The Human Threshold (45 min)
 
 - **Goal.** Read the people's songs as data; find who is below.
 - **Where.** The High Peaks, the storm-singing ledge, Joren's harvest terrace, the Continuum outpost, the subterranean city, the hideout. Nodes N7 to N10.
@@ -316,21 +319,23 @@ If the player keeps the note private, the threat and packet still arrive (the pa
   2. `b3-peakborn` (3D, 4 min). The singing circle. Record the songs with the AFU meter running beside them; Mara sings a storm in and out. "Don't write the words. Write where I breathe."
   3. `b3-cipher-2` (1D, 5 min). Decode Mara's storm-song into phase offsets and locate nodes **N7** and **N8**.
   4. `b3-key-2` (1D, 4 min). Classify the low-gravity creatures and the Lowland mutation reports Kade forwarded. The key breaks three times.
-  5. `b3-midlander` (3D, 3 min). Joren takes you to his harvest terrace. The chant is recorded. He shows the terrace's drowned twin across the gorge. Margin note 5: page 112 appears twice in your journal; the second copy reads "The chant has a rest you did not write."
+  5. `b3-midlander` (3D, 4 min). Joren takes you to his harvest terrace. The chant is recorded. He shows the terrace's drowned twin across the gorge. **The Sluice Log** (added 2026-11-16, 1 min): in the sluice house above the gorge the logbook lies open at the night the twin drowned, and the river level that opened the gates is a relay figure, in his own hand. It is the first false number anyone here trusted. Writes `sluice_log_read`. Margin note 5: page 112 appears twice in your journal; the second copy reads "The chant has a rest you did not write."
   6. `b3-cipher-3` (1D, 4 min). Decode the harvest chant into a nodal map: nodes **N9** and **N10**. Acting on note 5 means inserting the missing rest.
-  7. `b3-outpost` (3D, 4 min). With Mara, slip into the Continuum outpost; take the logs from three cabinets; patrol count depends on exposure.
+  7. `b3-outpost` (3D, 1 min; trimmed from 4 on 2026-11-16). With Mara, take the logs from the Continuum outpost's three cabinets. The outpost's stealth is merged into the escape: its patrols are the lamps that sweep the shafts in `b3-escape`, and their count still depends on exposure.
   8. `b3-city` (3D, 5 min). The subterranean city lit by Aetheric cores. A hooded archivist in the record galleries "speaks in half‑truths and riddles" (source) and hands you a coordinate misfiled under the wrong peak: margin note 6 ("Peak 12, not 11."), written in the small, left-slanted margin hand. Nothing in Book III says this is the follower (the source's follower is still "not yet revealed"); a player who knows the hand can match it, as Lira matches the footnote in Book II. Joren leads Continuum guards to you. He says one line: "They said they could raise it again." You take the logs that prove the Second Genesis and run. Writes `second_genesis_proof`.
-  9. `b3-escape` (2D, 3 min). Up the shafts out of the city; lamp sweeps from below; the climb against a clock.
+  9. `b3-escape` (2D, 3 min). Up the shafts out of the city; lamp sweeps from below; the climb against a clock. The survey sheet itself has been redacted: every line the player ruled whole at the Excision Desk is a black stratum here (reads `desk_bars`, `desk_page_lost`). Inside a bar the lamps cannot see Lira and she cannot see the ledges; dust falling on the mountain's 7-second period outlines them for one beat.
   10. `b3-audit-2` (1D, 5 min). The logs you stole, and your own journal, now carry forged entries: false timestamps, fabricated readings. Find them.
   11. `b3-hiding` (3D, 2 min). The hideout. Broadcast the raw data dump or hold it (the source broadcasts; holding it is allowed). Margin note 7, beside your coupling matrix: "Your damping is not yours. Measure it." Writes `broadcast_sent`, `exposure`.
+  12. `b3-three-nights` (1D, 2 min, Journal Audit; added 2026-11-16). The darkest moment, at the same table. "I have not slept in three nights." (source) Five lines from the last hour. She puts the loupe on her own line and it reports an uncrossed seven; her tells are failing, and only the field card, the clock and physics still tell hands apart. "Or maybe it’s him. Or maybe it’s me." (source) Writes `three_nights_kept`.
+  13. `b3-dream-slide` (2D, 1 min, Under the lens; added 2026-11-16). She sleeps at the bench. A slide she never mounted: every cell on it is seeded, and the ghost filaments that flicker at 12 Hz (the source's "a 0.003 lux fluctuation at 12 Hz") are the true channel. Held for ten seconds, the field steps to ×1 600: the lattice is ruled, and signed with a maker's mark, a 9. Writes `maker_mark_seen`.
 - **Ends.** Fade to the terraces.
 
-### Book IV: Final Reckoning (41 min)
+### Book IV: Final Reckoning (42 min)
 
 - **Goal.** Calm the mountain without destroying it.
 - **Where.** Hollin Terrace, then down under Peak 12. Nodes N11 and N12.
 - **Sequence.**
-  1. `b4-terraces` (3D, 4 min). Synchronized storms crack Hollin's terraces; Pell's family is packing. The coalition gathers: Mara, Kade, and Joren, who comes back. Choose: take him back (the source's path) or send him away. If taken: gravity anchors, gear tier 3. Writes `joren_forgiven`, `emitters_available`, `gear_tier`.
+  1. `b4-terraces` (3D, 5 min). Synchronized storms crack Hollin's terraces; Pell's family is packing. **Pell's Book** (added 2026-11-16, 1 min): she puts her copy-book of Book I on the bench, in capitals, DOCTOR SAYS and every number: a control copy nobody seeded. Writes `pell_book_given`. The coalition gathers: Mara, Kade, and Joren, who comes back. Choose: take him back (the source's path) or send him away. If taken: gravity anchors, gear tier 3. Writes `joren_forgiven`, `emitters_available`, `gear_tier`.
   2. `b4-board-terrace` (1D, 5 min). The Node Board on Hollin's own six-node network. The game's only full win is possible here. Success holds the home terrace and verifies node **N11**.
   3. `b4-assay-3` (1D, 4 min). The fragment at AFU 0.7: confirm the threshold. Optional damping test (prompted by note 7): `gamma_remeasured`.
   4. `b4-key-3` (1D, 3 min). Map nodal points: classify Spore-Weaver arrays as coherent oscillators, incoherent, or seeded. `verified_share` is frozen at the end.
@@ -368,11 +373,11 @@ Shared for every 3D scene: third-person camera on a spring arm, 3.5 m behind and
 | `b2-hearing` | Harvester ridge | 150 × 80 m | Strain gauge clamp, the harvester, the Council's rostrum | Overcast, then dust | Crowd murmur, rising engine, crack | N6 read or relay; flee route opens at 40 s | fade / fade |
 | `b2-lab` | Corporate lab | Two floors, 14 rooms | Log cabinets (4), pulse rigs, console with scrap, manifest | Clean blue-white; guard lamp cones | Air handlers; footsteps | Logs taken; scrap and manifest found | fade / push-in |
 | `b3-peakborn` | Storm-singing ledge | 60 × 30 m | AFU meter, recorder, Mara, singers | Violet dusk; moss glow | Song over storm; wind | Song recorded | fade / push-in |
-| `b3-midlander` | Joren's harvest terrace | 100 × 40 m | Recorder, journal (page 112), the drowned terrace view | Amber harvest light | Chant, sickles | Chant recorded | fade / push-in |
-| `b3-outpost` | Continuum outpost | 80 × 60 m | Three log cabinets, relay mast, patrol routes (2 or 4) | Cold floodlights | Mast hum | Three cabinets emptied | fade / fade |
+| `b3-midlander` | Joren's harvest terrace | 100 × 40 m | Recorder, journal (page 112), the drowned terrace view, the sluice house and its logbook | Amber harvest light | Chant, sickles | Chant recorded | fade / push-in |
+| `b3-outpost` | Continuum outpost | 80 × 60 m | Three log cabinets, relay mast (the patrols now play as lamps in `b3-escape`) | Cold floodlights | Mast hum | Three cabinets emptied | fade / fade |
 | `b3-city` | Subterranean city | 200 m gallery and a record hall | Hooded archivist, misfiled coordinate card, logs, Joren | Core glow, deep teal | Machine breathing; echo | Logs taken; betrayal sequence | fade / flatten |
-| `b3-hiding` | Hideout | 10 × 8 m | Transmitter, journal (note 7) | One bulb | Static | Broadcast choice | fade / fade |
-| `b4-terraces` | Hollin Terrace in storm | As `b1-terrace`, with cracks and evacuees | Pell's family, Joren at the gate, Mara, Kade, emitter crates | Storm-dark green, lightning | Siren (the baseline you set) | Joren choice | fade / push-in |
+| `b3-hiding` | Hideout | 10 × 8 m | Transmitter, journal (note 7; then Three Nights) | One bulb | Static | Broadcast choice | fade / push-in |
+| `b4-terraces` | Hollin Terrace in storm | As `b1-terrace`, with cracks and evacuees | Pell's family, Pell's book on the bench, Joren at the gate, Mara, Kade, emitter crates | Storm-dark green, lightning | Siren (the baseline you set) | Joren choice | fade / push-in |
 | `b4-core` | Core beneath Peak 12 | 90 m crystal cavern | Veylor, the emitter array, the board table | Humming white-violet | A deep tone at the mountain's frequency | Veylor's last line | pull-out / push-in |
 | `b4-collapse` | Core and tunnels | 200 m of tunnel | None; run toward the shaft | Strobing core light | "A sound like a thousand small fractures" (source) | Ending branch | pull-out / fade |
 | `ep-tunnel` | Shear tunnel (archivist) | As `co-tunnel` | The north shaft, Lira's lamp (in one ending) | Lamp cone | Rock settling | Reach the shaft or the rubble | fade / fade |
@@ -746,9 +751,9 @@ collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg
 
 ## 18. Data files
 
-- `data/game.json`: title, source path, target 160–180, players 1, core verb `measure`, six chapters totalling 176.
-- `data/scenes.json`: 2D modes `climb` and `lens` (both `scroll`); 1D games `assay`, `key`, `cipher`, `audit`, `board`; 45 scenes (23 3D, 8 2D, 14 1D), each with reads, writes, transitions and next. Each scene also carries a `minutes` field, which is beyond the shared schema: the planned play time of that appearance; scene minutes add up to each chapter's minutes (the four ending scenes are alternatives, counted once).
-- `data/flags.json`: 35 entries, including two ledgers (`readings`, `margin_notes`). Three were added on 2026-11-15 for phase 1: `bars_gauged`, `pell_book_checked`, `flyleaf_found` (written by `b2-audit-1` and `b3-audit-2`, by `b3-audit-2`, and by `b2-archive`).
+- `data/game.json`: title, source path, target 160–180, players 1, core verb `measure`, six chapters totalling 180 (4, 37, 38, 45, 42, 14).
+- `data/scenes.json`: 2D modes `climb` and `lens` (both `scroll`); 1D games `assay`, `key`, `cipher`, `audit`, `board`; 48 scenes (23 3D, 9 2D, 16 1D; `b2-excision-desk`, `b3-three-nights` and `b3-dream-slide` were added on 2026-11-16), each with reads, writes, transitions and next. Each scene also carries a `minutes` field, which is beyond the shared schema: the planned play time of that appearance; scene minutes add up to each chapter's minutes (the four ending scenes are alternatives, counted once).
+- `data/flags.json`: 44 entries, including three ledgers (`readings`, `margin_notes`, `desk_bars`). Nine were added on 2026-11-16 for phase 2: `desk_bars`, `desk_page_lost`, `wolf_couplet`, `cores_drilled`, `ringdown_measured`, `sluice_log_read`, `pell_book_given`, `three_nights_kept`, `maker_mark_seen` (section 21 says which scene writes and reads each). Three were added on 2026-11-15 for phase 1: `bars_gauged`, `pell_book_checked`, `flyleaf_found` (written by `b2-audit-1` and `b3-audit-2`, by `b3-audit-2`, and by `b2-archive`).
 - `data/endings.json`: four endings, as in section 13.
 
 ## 19. Build plan
@@ -771,7 +776,7 @@ collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg
 | The Node Board is too mathematical | The rule is shown as bells and springs, one bar and one ring per node; the drill teaches with full information; the equations are there for those who want them |
 | Players never learn the relay is poisoned until too late | Lira's notes grow uneasy from Book II; Audit II forgeries cluster on relay nodes; the drill shows a mistuned emitter on a relay node |
 | Exposure punishes answering the archivist too hard | Tune +5 per reply in playtest; relay credit and note 3 give counterweights |
-| 176 minutes overruns | Each chapter has a hard ceiling in playtest; the climbs can lose a camp each |
+| 180 minutes is the ceiling, with no slack | Each chapter has a hard ceiling in playtest. The first two climbs have already lost a camp each and the outpost its stealth (2026-11-16); the next trims, if playtest needs them, are a spread from Journal Audit II and a magnification from Under the lens III |
 | Dialogue creep | Two lines per companion per scene, enforced in the script tool |
 
 **Answered** (by Claude at the author's request, 2026-11-12, from the source text; the author can overrule any of them).
@@ -782,7 +787,7 @@ collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg
 
 ## 21. Accepted development (2026-11-15)
 
-The author accepted the deep dive (`DEEP_DIVE.md`) whole on 2026-11-15. This section states the accepted story. Nothing here edits the source or contradicts it; the source lines are quoted verbatim from `05_Worldbuilding/02_The_Redacted_Testament_of_Lira_Calyx.md`. **Phase 1 is built in this pass**: the four hands, the bar and the bar gauge, Pell's book as a tool in Journal Audit, whose-couplet marks in The Key, the Flyleaf as one extra drawer in `b2-archive`, and the sample lines those carry. Everything else below is accepted and waits: phase 2 is the midpoint (the Excision Desk, Three Nights, the Sluice Log, Pell's Book as a scene), phase 3 the long puzzle, the layer links, the new mode rules and the endings.
+The author accepted the deep dive (`DEEP_DIVE.md`) whole on 2026-11-15. This section states the accepted story. Nothing here edits the source or contradicts it; the source lines are quoted verbatim from `05_Worldbuilding/02_The_Redacted_Testament_of_Lira_Calyx.md`. **Phase 1 was built on 2026-11-15 and phase 2 on 2026-11-16 (see "Phase 2, as built" below)**: the four hands, the bar and the bar gauge, Pell's book as a tool in Journal Audit, whose-couplet marks in The Key, the Flyleaf as one extra drawer in `b2-archive`, and the sample lines those carry. Phase 2 is the midpoint (the Excision Desk, Three Nights, the Sluice Log, Pell's Book as a scene) and, by the author's word "start phase 2" with every open decision answered yes, the three-stage ladders of every mode with their new rules and set-pieces, and the three layer links. Phase 3 keeps the long puzzle's final payoff, the ending changes and the second playthrough.
 
 **Dramatic question.** When the instruments, the record and her own hand can all be written on by someone else, what can one honest observer still vouch for?
 
@@ -810,15 +815,15 @@ The author accepted the deep dive (`DEEP_DIVE.md`) whole on 2026-11-15. This sec
 | 3 | **Page 47.** Pattern α, the first note, "Who wrote this?" | Source | Yes |
 | 4 | **The Flyleaf.** Veylor's key, and your couplet in it. | New, inside `b2-archive` | **Phase 1** |
 | 5 | **The Ridge.** The hearing; the harvester; the scrap. | Source | Yes |
-| 6 | **The Excision Desk** (midpoint). You redact her brief. | New. Scene to add: `b2-excision-desk` (1D, audit) | Phase 2 |
-| 7 | **The Sluice Log.** Joren's terrace and what he trusted. | New, inside an existing Book III scene | Phase 2 |
+| 6 | **The Excision Desk** (midpoint). You redact her brief. | New. Scene `b2-excision-desk` (1D, audit) | **Phase 2**, built 2026-11-16 |
+| 7 | **The Sluice Log.** Joren's terrace and what he trusted. | New, inside `b3-midlander` | **Phase 2**, built 2026-11-16 |
 | 8 | **The City.** The hooded archivist; Joren brings the guards. | Source | Yes |
-| 9 | **Three Nights** (darkest moment). The loupe fails her own lines. | New, from the source's final chapter. Scenes to add: `b3-three-nights` (1D, audit) and its dream slide (2D, lens) | Phase 2 |
-| 10 | **Pell's Book.** A control copy in a child's capitals. | New, inside an existing scene | Phase 2 (the book itself is a tool from phase 1) |
+| 9 | **Three Nights** (darkest moment). The loupe fails her own lines. | New, from the source's final chapter. Scenes `b3-three-nights` (1D, audit) and `b3-dream-slide` (2D, lens) | **Phase 2**, built 2026-11-16 |
+| 10 | **Pell's Book.** A control copy in a child's capitals. | New, inside `b4-terraces` | **Phase 2**, built 2026-11-16 (the book itself is a tool from phase 1) |
 | 11 | **The Constant.** Veylor, the damping term, the board. | Source | Yes |
 | 12 | **The Shear and the Desk.** | Source | Yes |
 
-Phase 2 adds 9 minutes and trims 5 (the outpost stealth merges into the escape; one camp leaves each of the first two climbs), to finish at the 180-minute ceiling. Until then the design stays at 176.
+Phase 2 adds 9 minutes (the Excision Desk 4, Three Nights with its dream slide 3, the Sluice Log 1, Pell's Book 1) and trims 5 (the outpost stealth merges into the escape, `b3-outpost` 4 to 1; one camp leaves each of the first two climbs, `b1-climb` 5 to 4 and `b2-descent` 4 to 3), to finish at the 180-minute ceiling. Done on 2026-11-16: the chapters are 4, 37, 38, 45, 42 and 14.
 
 **Endings.** Accepted; all of it phase 3. `data/endings.json` is unchanged in this pass.
 
@@ -828,7 +833,37 @@ Phase 2 adds 9 minutes and trims 5 (the outpost stealth merges into the escape; 
 - **Fire.** As designed, plus: the songs measured a core that is gone, and now decode to nothing.
 - **Errata (new).** Offered only if the damping was re-measured (`gamma_remeasured`) and the Flyleaf found (`flyleaf_found`): Lira withdraws her schedule and publishes the correction to her own model, unsigned. No pulse, no pause: the storms take the terraces, Hollin among them, evacuated on the siren baseline the player set in minute 6. She lives with her name on nothing, and a hundred settlements start re-measuring. Scene to add: `end-errata`.
 
-**New rules by mode (accepted; phase 3 unless marked).** Climb: redacted strata, the core drill, sung gaps. Lens: phase dye, rewiring planes, ghost filaments, the maker's mark 9. Assay: the standard, the blank run, the false line on the Continuum's reference card. Key: whose couplet (**phase 1**), reverse keying. Cipher: the bar staff, the dirge. Audit: the four hands, Pell's book, the bar gauge (**phase 1**); the Excision Desk (phase 2). Board: witness tokens, the honest pencil, the calm line dropping. The three links between layers (bars cut at the Desk black out strata and nodes; cores add reference lines to the next Assay; a written couplet changes what the climbs draw) are phase 3.
+**New rules by mode (accepted 2026-11-15; all built on 2026-11-16 in the three-stage ladders below, except where a rule's payoff is the long puzzle).** Climb: redacted strata, the core drill, sung gaps. Lens: phase dye, rewiring planes, ghost filaments, the maker's mark 9. Assay: the standard, the blank run, the false line on the Continuum's reference card. Key: whose couplet (**phase 1**), reverse keying. Cipher: the bar staff, the dirge. Audit: the four hands, Pell's book, the bar gauge (**phase 1**); the Excision Desk (phase 2). Board: witness tokens, the honest pencil, the calm line dropping. The three links between layers (bars cut at the Desk black out strata and nodes; cores add reference lines to the next Assay; a written couplet changes what the climbs draw) were built on 2026-11-16.
+
+### Phase 2, as built (2026-11-16)
+
+The author wrote "start phase 2" with every decision left open in `DEEP_DIVE.md` answered yes: the archivist as the Continuum's redactor and the one told to move the logs; Veylor as author of the key and planter of the Mid-Slope forests; Joren drowning his own terrace on a relay reading; Errata as a fifth ending; solving the bars standing in for two replies; the 180-minute ceiling and the trims. Phase 3 still holds the ending changes in `data/endings.json` (Errata included), the second playthrough, and the final payoff of the twelve bars. Nothing built here pre-empts them: the cipher reads four bars of twelve and stops where the others begin.
+
+**The ladders.** Every 2D mode and 1D game now runs teach, test and twist. A player may stop after any stage with that stage's result.
+
+| Mode | Teach | Test | Twist | Set-piece | New rules in play |
+| --- | --- | --- | --- | --- | --- |
+| Cross-section climb | Book I, 2,100 to 2,700 m: anchor through a front, watch your air, one reading station, the shapes at 2,600 m | Book III, 3,700 to 4,500 m: low gravity and storm rock together | The escape: the sheet has been redacted. There are no rings; standing in the open is how you are seen | Climbing through the censor's bars, blind, counting to seven, lamps crossing the white paper | Redacted strata; the core drill (hold 4 s, air draining); sung gaps (a front with a rest neume is a gap to stand in) |
+| Under the lens | ×100: only the focus plane is solid | ×400 under the lab pulse: on each pulse the focus plane swaps with the one below | The dream slide: every cell is seeded; the 12 Hz ghost filaments are the true channel | At ×1 600 the lattice is ruled lines and a maker's mark, a 9 | Phase dye (one use, 5 s); rewiring planes; seeded cells cost steadiness; ghost filaments |
+| The Assay | The bark baseline: eliminate with reagents, re-runs allowed | The well: the composition, and a ratio from two precise peaks | The fragment: the bench reads 4 nm high, iron oxide was left in the cell, and one printed line of the Continuum's card is false | Pulsed, the scope draws Pattern α | The standard (cost 1); the blank run (cost 1); doubting a printed line; core lines in her own hand |
+| The Key | Three terrace jars, the last the wolf that breaks the key | Four drifting specimens, three breaks, each on a different measure | The Flyleaf, then reverse keying: from his blank leaves back to the measures that would have to be true | The Flyleaf | Whose couplet, now three hands; reverse keying |
+| Storm-Song Cipher | The sealed archive index: three glyph lines, two names | Mara's song: her breaths mark N7 and N8 | The fourth song is not sung: it is the redacted brief. A brushed bar is only ink, and the page is a dirge | Lira plays the bars aloud. Mara: "That is ours. Who taught your censor to sing?" | The bar staff (a ruled bar's line is its pitch, 14 mm a rest); the dirge (the same path walked backwards) |
+| Journal Audit | The published brief against her journal; the first ruled bar, 41 mm | The stolen log: the forgery only the clock catches, the one only Pell's book catches | Three Nights: the loupe fails on her own lines | The Excision Desk | Pell's book; the bar gauge; the desk's quota, supervisor and crib |
+| The Node Board | The drill with full information | Veylor's hidden move: once two emitters are out he goes over the figure under the first; only a re-read dossier shows it | Six of the Peak's nodes at his table: on the third emitter the damping is re-measured and the calm line drops from 4 to 3 | The calm line dropping, every node's tone rising | Witness tokens (Pell's book, the sluice log, Mara's song, the bar cipher); the honest pencil (the Strain becomes a band) |
+
+**The three layer links**, and the flags that carry them.
+
+1. **The Desk, the escape and the board** (`desk_bars`, `desk_page_lost`; written by `b2-excision-desk`). A line ruled whole at the desk is a black stratum in `b3-escape`, where it is the only cover from the lamps, and a struck-out figure (■) on that line's node in `b4-board-terrace` and `b4-board-core`. Cutting only the word keeps the node readable and leaves the stratum white. Every full bar helps the escape and blinds the board. Playable now between Journal Audit, the climb and the Node Board.
+2. **The cores, the card and the platforms** (`cores_drilled`, written by the climbs; `ringdown_measured`, written by `b4-assay-3`). Each core drilled on a climb adds a true line in her own hand to the next Assay's reference card; in Assay III one contradicts the Continuum's false line. Playable now between the climb and The Assay. The second half is written for a scene the web build does not stage: the ring-down measured in Assay III draws the beat marks on the rhythm platforms of `b4-descent`.
+3. **The couplet and the wolves** (`wolf_couplet`, written by `b1-key-1`; read by `b1-climb`). Keyed, the shapes at 2,600 m are wolves whose trail marks warm ledges where air holds; misclassified or never keyed, they are grey shapes that knock Lira back. Playable now between The Key and the climb.
+
+Two smaller ties were built with them: winning Mara's song or the fourth song in Storm-Song Cipher puts that witness token by the map on the Node Board, and `sluice_log_read` and `pell_book_given` are the 3D scenes' flags for the other two tokens.
+
+**Scenes.** Added: `b2-excision-desk` (1D, audit, 4 min), `b3-three-nights` (1D, audit, 2 min), `b3-dream-slide` (2D, lens, 1 min). Changed: `b3-midlander` (the Sluice Log, +1), `b4-terraces` (Pell's Book, +1), `b3-outpost` (4 to 1), `b1-climb` (5 to 4), `b2-descent` (4 to 3), `b3-hiding` (now pushes in to Three Nights). No new 3D location: the desk is a page, Three Nights is the hideout's table, and the two 3D beats are props in existing sets (`blender/harvest-terrace.build.json`, `blender/hollin-terrace.build.json`, `blender/small-room.build.json`).
+
+**The collection thread.** The object this game hides for another, an unfinished game board with one counter closed in a hand, lies at the edge of the Excision Desk. It is not on the clerk's inventory and nothing is said of it but one line.
+
+**Lines written for the game and used in phase 2** (not the author's text). From `DEEP_DIVE.md`: "I ruled that line. I am sorry for its length." (now also the clerk's, at the desk); "03:12. The seven is not crossed. I watched my hand not cross it."; Mara's "That is ours. Who taught your censor to sing?". Written on 2026-11-16: the lines listed as invented under section 22.
 
 **Lines written for the game and used in phase 1** (not the author's text): "Strider count, bridge, 06:10: 17. Pell says 18." / "The bar is 41 mm long. I measured it. I do not know what else to do with it." / *(the small hand)* "I ruled that line. I am sorry for its length." / *(Pell's book)* "DOCTOR SAYS 0.44. I WROTE IT SAME." / *(pencil, the flyleaf)* "2b. Found above 2 000 m: not yet. Leave room."
 
@@ -856,5 +891,7 @@ Everything below is a proposal for the game, not the author's text.
 - The epilogue's restore-or-leave decisions and `names_protected`; the close-or-keep-going prompt as an interactive choice.
 - From `docs/ADAPTATIONS.md`, replaced to fit `docs/COLLECTION.md`: the specimen card game became The Key (taxonomy), and the archive cipher lock became Storm-Song Cipher (lock picking belongs to Behind the Peephole).
 - **Accepted 2026-11-15** (from `DEEP_DIVE.md`; the author's "i accept"). Built in phase 1: the four hands as drawn stroke sets and reference cards; the two kinds of bar, the bar gauge, the 41 mm bar, and `bars_gauged`; Pell copying Lira's numbers, Pell's book as a second field card, the forged line only it catches, and `pell_book_checked`; whose-couplet marks; the Flyleaf, the unindexed drawer in `b2-archive`, the initials S.V., the archive stamp, and `flyleaf_found`; Veylor as author of the key; the lines listed in section 21; the cut-out climb sprites in `art/`.
-- **Accepted 2026-11-15, waiting for phase 2**: the archivist as a Continuum clerk of excisions and the scrap as an order to them; the Excision Desk, its quota, supervisor and crib; Joren drowning his own terrace on a relay reading, and the Sluice Log; Pell's Book as a scene; Three Nights, the loupe failing on her own hand, the dream slide; the time trims to 180.
-- **Accepted 2026-11-15, waiting for phase 3**: the surgical bars as a neume cipher and the twelve bars as the long puzzle; Veylor as planter of the Mid-Slope forests, and "You love that terrace. I planted it."; the new rules of each mode listed in section 21; the three layer links; the ending changes and the ending Errata with its condition; solving the bars standing in for two replies; the archivist's desk log on a second playthrough.
+- **Accepted 2026-11-15, built 2026-11-16** (phase 2): the archivist as a Continuum clerk of excisions and the scrap as an order to them; the Excision Desk, its quota, supervisor and crib; Joren drowning his own terrace on a relay reading, and the Sluice Log; Pell's Book as a scene; Three Nights, the loupe failing on her own hand, the dream slide; the time trims to 180.
+- **Accepted 2026-11-15, built 2026-11-16** (the ladders and links, brought forward from phase 3 by "start phase 2"): redacted strata, the core drill and sung gaps; the phase dye, rewiring planes, ghost filaments and the maker's mark 9; the standard, the blank run and the false line on the Continuum's card; the scope drawing Pattern α; reverse keying; the bar staff and the dirge; Mara's line "That is ours. Who taught your censor to sing?"; witness tokens, the honest pencil and the calm line dropping; the three layer links.
+- **Invented on 2026-11-16 to build the above, for the author to approve or strike**: the desk's page as Appendix C of the brief, "Hollin baselines", four lines whose flagged terms are station coordinates, and the crib's lengths 28, 41, 14 and 41 mm; 14 mm of bar to one rest; the brushed bar that is only ink; the supervisor as an eye that rises with each word-cut; the clerk's lines at the desk; the false card line being storm-rock salt at 596 for 606, the bench reading 4 nm high and the iron oxide left in the cell; the candidate "Lattice in iron slag"; Veylor's hidden move as going over the figure under the first emitter placed; the damping falling from 8 to 6; the six Peak nodes' names on his table (Singing ledge, High ledge, Harvest terrace, Drowned terrace, Hollin, Peak 12 shaft) and the drowned terrace's node as the relay-fed one; his three blank leaves (a large slow upland hunter, a moss for the highest ledges, a strider that keeps to the Peaks) and the couplets that reach them; the three specimens that break the key in Book III (a Glassleaf at 4,200 m, a dwarf Strider plate of 64 mm from Kade's reports, a Spore-Weaver strand glowing every 6.6 s); the archive index's two drawers; seeded cells costing steadiness; warm ledges on the wolves' trail; the pump niche; Joren's cairn; the sluice house; the new flags of section 18; the Three Nights lines other than the two the source gives; every stage's result text.
+- **Accepted 2026-11-15, waiting for phase 3**: the twelve bars as the long puzzle (its last step, plotting all twelve as the route to the north shaft, and its payoff in the epilogue); Veylor as planter of the Mid-Slope forests, and "You love that terrace. I planted it."; the ending changes and the ending Errata with its condition and its scene `end-errata`; solving the bars standing in for two replies; the archivist's desk log on a second playthrough.

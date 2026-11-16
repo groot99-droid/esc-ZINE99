@@ -235,6 +235,72 @@
       "type": "bool",
       "default": false,
       "description": "Lira opened the unindexed drawer in the Cinder Reach archive and found the key's first printing, initialled S.V., with her own Book I pencil couplet already on its flyleaf in a third hand. From then on every couplet in The Key is marked print, her pencil or his pencil. One of the two conditions of the accepted ending Errata, which is not in endings.json until phase 3. Accepted 2026-11-15."
+    },
+    {
+      "name": "desk_bars",
+      "type": "ledger",
+      "default": [],
+      "description": "What the player, as the archivist, did to each flagged line of Lira's brief at the Excision Desk (b2-excision-desk): cut the word only, or rule the whole line to a length. A line ruled whole is a black stratum in the escape (b3-escape), where it is cover from the lamps, and a struck-out figure (■) on that line's node on both Node Boards. A bar ruled to the crib's length carries the message and counts toward the twelve. Layer link 1. Accepted 2026-11-15, built 2026-11-16.",
+      "fields": [
+        "line",
+        "node",
+        "cut",
+        "length_mm",
+        "on_crib"
+      ]
+    },
+    {
+      "name": "desk_page_lost",
+      "type": "bool",
+      "default": false,
+      "description": "At the Excision Desk the player cut only the word on three lines, the supervisor took the page, and a clumsy censor blacked all of it with a brush: every stratum of the escape is brushed black and every node the page named is struck out. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "wolf_couplet",
+      "type": "enum",
+      "default": "none",
+      "description": "Whether the juvenile Ember Wolf was keyed with a new pencil couplet in The Key I (keyed) or went in under the old name (misclassified). The climbs read it: keyed, the shapes at 2,600 m are drawn as wolves whose trail marks warm ledges where air holds; otherwise they are grey shapes that knock Lira back a ledge. Layer link 3. Accepted 2026-11-15, built 2026-11-16.",
+      "values": [
+        "none",
+        "keyed",
+        "misclassified"
+      ]
+    },
+    {
+      "name": "cores_drilled",
+      "type": "counter",
+      "default": 0,
+      "description": "Rock cores taken at the marked strata of a climb (hold still 4 s while air drains). Each adds one true line in Lira's own hand to the next Assay's reference card; in The Assay III one of them contradicts the false line on the Continuum's printed card. 0 to 2 in the web build. Layer link 2. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "ringdown_measured",
+      "type": "bool",
+      "default": false,
+      "description": "In The Assay III the player pulsed the fragment and the scope drew its ring-down as Pattern α. The descent under Peak 12 (b4-descent) reads it: measured, the rhythm platforms carry beat marks at the ring-down's three arrivals; unmeasured, they carry none and are timed by eye. The second half of layer link 2. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "sluice_log_read",
+      "type": "bool",
+      "default": false,
+      "description": "On Joren's harvest terrace Lira read the logbook in the sluice house: the night the twin terrace drowned, the river level is a relay figure, in his own hand. On the Node Boards it is a witness token. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "pell_book_given",
+      "type": "bool",
+      "default": false,
+      "description": "While her family packs, Pell gave Lira her copy-book of Book I: the one off-site copy of those numbers. On the Node Boards it is a witness token; in Journal Audit it is already a tool (pell_book_checked). Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "three_nights_kept",
+      "type": "bool",
+      "default": false,
+      "description": "In Three Nights (b3-three-nights) Lira told her own lines from the false ones with the field card, the clock and physics, after the loupe failed on her own hand. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "maker_mark_seen",
+      "type": "bool",
+      "default": false,
+      "description": "In the dream slide (b3-dream-slide) the player held the true channel, the ghost filaments that flicker at 12 Hz, until the lattice resolved at ×1 600 into ruled lines and a maker's mark, a 9. Accepted 2026-11-15, built 2026-11-16."
     }
   ]
 }

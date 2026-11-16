@@ -22,6 +22,8 @@ const TIPS = [
   "On the Node Board, opposite phases on one edge cancel it. Timing is everything.",
   "At a reading station the relay beacon is instant. Nobody has ever checked its numbers.",
   "Pell counts glows faster than anyone on the terrace. Not always correctly.",
+  "Every mode has three stages: teach, test, twist. Stop after any of them; the page remembers where you were.",
+  "What you do on one page changes another. A bar ruled at a desk is a place to hide on a climb.",
 ];
 
 export function render(root, ctx) {

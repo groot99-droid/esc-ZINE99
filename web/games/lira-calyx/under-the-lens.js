@@ -7,6 +7,13 @@
 // Actions: steer; change focus plane; from x400, hold your breath (slows the flow and the pulses for
 // up to 3 s, then refills); and capture a cell by touching it on its own plane. Phases: x100 teaches;
 // x400 adds charge bursts (three pulses down one filament after a flicker); x1 600 is above AFU 0.7.
+// Phase 2 (DEEP_DIVE section 3): three stages, one slide each. Teach (Book I, ×100): only the focus
+// plane is solid. Test (Book II, ×400, under the lab pulse): on each pulse the focus plane's filaments
+// swap with the plane below; some cells are seeded and cost steadiness; the phase dye (one use) shows
+// the seeded lattice for 5 s. Twist (Three Nights, the dream slide): every cell is seeded, and the
+// ghost filaments that flicker at 12 Hz, the sign she learned to steer clear of, are the true channel:
+// ride them. Set-piece: at ×1 600 the lattice resolves into ruled lines and a maker's mark, a 9.
+import { runStages } from "./_stages.js";
 const P = "lira-calyx-under-the-lens-";
 const TEAL = "#25c2a8", MAG = "#d6409f", VIO = "#5a3f7a", BLACK = "#06080a", ICE = "#b9d8ea";
 const STAGES = [
@@ -14,11 +21,12 @@ const STAGES = [
   { mag: "×400", afu: 0.61, pulse: 0.75, wig: 0.15, plate: "Plate 2: the lattice repeats, every cell the same." },
   { mag: "×1 600", afu: 0.78, pulse: 0.62, wig: 0.2, plate: "Plate 3: a pattern too regular to be natural." },
 ];
-const NEEDS = [5, 6, 7], PLANES = ["upper", "middle", "lower"];
+const NEEDS = [4, 5, 0], PLANES = ["upper", "middle", "lower"], RIDE = 10;
+const SLIDE = ["B1-LENS · OUTPOST FRAGMENT", "B2-LENS · UNDER THE LAB PULSE", "THE DREAM SLIDE · 03:12"];
 
-export default {
-  mount(root, api) {
-    const off = [];
+function mountStage(root, api, stage) {
+  {
+    const off = [], timers = [];
     let raf = 0, alive = true;
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); off.push(() => t.removeEventListener(e, f, o)); };
     root.style.background = BLACK;
@@ -28,7 +36,9 @@ export default {
       .${P}wrap{position:absolute;inset:0;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none;color:${ICE};font-family:'Courier Prime',monospace}
       .${P}wrap canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:crosshair}
       .${P}focus{position:absolute;right:12px;bottom:12px;display:flex;gap:8px;z-index:3}
-      .${P}focus button{font:700 14px 'Courier Prime',monospace;color:${TEAL};background:rgba(6,8,10,.85);border:1.5px solid ${TEAL};height:50px;min-width:92px;cursor:pointer;letter-spacing:.05em;touch-action:none}
+      .${P}focus{flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 24px)}
+      .${P}focus button:disabled{opacity:.35;cursor:default}
+      .${P}focus button{font:700 14px 'Courier Prime',monospace;color:${TEAL};background:rgba(6,8,10,.85);border:1.5px solid ${TEAL};height:50px;min-width:80px;cursor:pointer;letter-spacing:.05em;touch-action:none}
       .${P}focus button:hover{background:rgba(37,194,168,.18)}
       .${P}focus button.hold{color:${ICE};border-color:${ICE}}.${P}focus button.hold.on{background:${ICE};color:${BLACK}}
       .${P}focus button[hidden]{display:none}
@@ -52,7 +62,7 @@ export default {
       .${P}dial img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover}
       .${P}dial i{position:absolute;left:50%;bottom:50%;width:2px;height:40%;background:#b48cff;transform-origin:50% 100%;border-radius:2px}
       @media (max-width:520px){.${P}dial{width:48px;height:48px;bottom:70px}}
-    </style><canvas></canvas>${api.art && api.art.has("dial-afu") ? `<div class="${P}dial" aria-hidden="true"><img alt="" src="${api.art.url("dial-afu")}"><i></i></div>` : ""}<div class="${P}focus"><button type="button" class="hold" data-h="1" hidden>HOLD BREATH</button><button type="button" data-d="-1">FOCUS ▲</button><button type="button" data-d="1">FOCUS ▼</button></div>`;
+    </style><canvas></canvas>${api.art && api.art.has("dial-afu") ? `<div class="${P}dial" aria-hidden="true"><img alt="" src="${api.art.url("dial-afu")}"><i></i></div>` : ""}<div class="${P}focus"><button type="button" class="hold" data-y="1" ${stage ? "" : "hidden"}>DYE</button><button type="button" class="hold" data-h="1" ${stage ? "" : "hidden"}>HOLD BREATH</button><button type="button" data-d="-1">FOCUS ▲</button><button type="button" data-d="1">FOCUS ▼</button></div>`;
     root.appendChild(wrap);
     const cv = wrap.querySelector("canvas"), ctx = cv.getContext("2d");
     const rng = api.rng();
@@ -72,18 +82,22 @@ export default {
 
     // ---- state
     const losses = api.store.get("losses", 0);
-    const st = { stage: 0, got: 0, total: 0, steady: 3, drifts: 0, focus: 1, refocus: 0, inv: 0, flow: 0, t: 0, breath: 1, holding: false, gentle: false,
+    const st = { ghosts: [], ride: 0, dye: stage ? 1 : 0, dyeT: 0, nextWire: 8, wireWarn: false, reveal: 0, stage, got: 0, total: 0, steady: 3, drifts: 0, focus: 1, refocus: 0, inv: 0, flow: 0, t: 0, breath: 1, holding: false, gentle: false,
       fils: [], pulses: [], frags: [], bursts: [], pops: [], pt: { x: 0, y: 0.55 }, aim: null, msg: "", msgT: 0, voice: false, started: false, over: false, pause: 0, shake: 0, hurt: 0, beats: {}, nextBurst: 9 };
     const say = (m, t = 3, voice = false) => { st.msg = m; st.msgT = t; st.voice = voice; };
     const NEED = () => NEEDS[st.stage];
-    const holdBtn = wrap.querySelector("[data-h]");
+    const holdBtn = wrap.querySelector("[data-h]"), dyeBtn = wrap.querySelector("[data-y]");
     const setupStage = () => {
       const S = STAGES[st.stage];
       st.fils = [];
       for (let i = 0; i < 9; i++) st.fils.push({ plane: i % 3, x0: -0.85 + (i / 8) * 1.7 + (rng() - 0.5) * 0.12, amp: 0.05 + rng() * S.wig, fr: 2.2 + rng() * 2.5, ph: rng() * 6.3 });
       st.pulses = []; st.frags = []; st.got = 0; st.steady = 3; st.inv = 1; st.pt = { x: 0, y: 0.55 };
-      st.nextPulse = 1; st.nextFrag = 1.2; st.bursts = []; st.nextBurst = 7;
+      st.nextPulse = 1; st.nextFrag = 1.2; st.bursts = []; st.nextBurst = 7; st.nextWire = 8; st.wireWarn = false;
+      st.ghosts = stage === 2 ? [newGhost(-0.45), newGhost(0.4)] : [];
     };
+    const newGhost = (x0) => ({ x0: x0 != null ? x0 : -0.7 + rng() * 1.4, amp: 0.1 + rng() * 0.12, fr: 2 + rng() * 2, ph: rng() * 6.3, life: 6 + rng() * 3, age: 0 });
+    const useDye = () => { if (!st.started || st.over || st.dye <= 0) return; st.dye--; st.dyeT = 5; dyeBtn.disabled = true;
+      say(stage === 2 ? "Phase dye. Every cell on the slide goes magenta: all of it seeded, all of it theirs. Only the flicker takes no dye." : "Phase dye, one drop. For five seconds the seeded lattice shows magenta: leave those cells alone.", 4.5, true); };
     const fx = (f, y) => f.x0 + f.amp * Math.sin(f.fr * (y - st.flow) + f.ph);
 
     // ---- sizing / layout
@@ -110,7 +124,9 @@ export default {
       if (e.key === "e" || e.key === "E" || e.key === "PageDown") changeFocus(1);
       if (e.key >= "1" && e.key <= "3") { const n = +e.key - 1; if (n !== st.focus) { st.focus = n; st.refocus = 0.25; } }
       if (e.key === " " || e.key === "Shift") { keys.hold = true; e.preventDefault(); }
+      if (e.key === "d" || e.key === "D") useDye();
     });
+    on(dyeBtn, "click", useDye);
     on(window, "keyup", (e) => { keys[e.key] = false; if (e.key === " " || e.key === "Shift") keys.hold = false; });
     on(holdBtn, "pointerdown", (e) => { e.preventDefault(); keys.hold = true; holdBtn.classList.add("on"); try { holdBtn.setPointerCapture(e.pointerId); } catch {} });
     const holdUp = () => { keys.hold = false; holdBtn.classList.remove("on"); };
@@ -119,20 +135,22 @@ export default {
     on(cv, "pointermove", (e) => { if (st.started) st.aim = toLens(e); });
     on(cv, "pointerdown", (e) => { if (st.started) { st.aim = toLens(e); try { cv.setPointerCapture(e.pointerId); } catch {} } });
     on(cv, "wheel", (e) => { e.preventDefault(); changeFocus(e.deltaY > 0 ? 1 : -1); }, { passive: false });
-    wrap.querySelectorAll(`.${P}focus button`).forEach((b) => on(b, "click", () => changeFocus(+b.dataset.d)));
+    wrap.querySelectorAll(`.${P}focus button[data-d]`).forEach((b) => on(b, "click", () => changeFocus(+b.dataset.d)));
 
     // ---- update
     const drift = () => {
       st.drifts++;
-      if (st.drifts >= 3) { st.over = true; api.store.set("losses", losses + 1); api.end({ outcome: "lose", text: `The slide drifts a third time at ${STAGES[st.stage].mag} and the fragment slips out of the clip. ${st.total} lattice cell${st.total === 1 ? "" : "s"} recorded, ${st.stage} plate${st.stage === 1 ? "" : "s"} kept; whatever lies under the filaments stays unproven for now.` }); return; }
-      setupStage(); st.pause = 1.6;
+      if (st.drifts >= 3) { st.over = true; api.store.set("losses", losses + 1); api.end({ outcome: "lose", text: stage === 2 ? `The slide drifts a third time and she wakes with her cheek on the bench. ${Math.floor(st.ride)} of ${RIDE} seconds on the flicker. The dream keeps what it was about to show her.` : `The slide drifts a third time at ${STAGES[st.stage].mag} and the fragment slips out of the clip. ${st.total} lattice cell${st.total === 1 ? "" : "s"} recorded; whatever lies under the filaments stays unproven for now.` }); return; }
+      const keep = st.ride * 0.5; setupStage(); st.ride = keep; st.pause = 1.6;
       say(`Steadiness gone: the slide drifts. Back to the ${STAGES[st.stage].mag} checkpoint (${3 - st.drifts} drift${3 - st.drifts === 1 ? "" : "s"} left).`, 3.5);
     };
     const update = (dt) => {
       st.t += dt; st.msgT -= dt; st.refocus = Math.max(0, st.refocus - dt); st.inv = Math.max(0, st.inv - dt); st.shake = Math.max(0, st.shake - dt); st.hurt = Math.max(0, st.hurt - dt);
       st.pops = st.pops.filter((p) => (p.t -= dt) > 0);
+      if (st.reveal) return;
       if (st.pause > 0) { st.pause -= dt; return; }
-      const S = STAGES[st.stage], hot = S.afu > 0.7;
+      st.dyeT = Math.max(0, st.dyeT - dt);
+      const S = STAGES[st.stage], hot = S.afu > 0.7 && stage !== 2;
       // hold breath (from x400): slows everything to 35% while the breath lasts
       st.holding = st.stage >= 1 && keys.hold && st.breath > 0;
       if (st.holding) st.breath = Math.max(0, st.breath - dt / 3); else st.breath = Math.min(1, st.breath + dt / 7);
@@ -147,8 +165,25 @@ export default {
       // pulses
       st.nextPulse -= gdt * (hot ? 2 : 1);
       if (st.nextPulse <= 0) { st.nextPulse = S.pulse * (0.6 + rng() * 0.8); st.pulses.push({ f: st.fils[Math.floor(rng() * st.fils.length)], y: -1.1, v: 0.55 + rng() * 0.45 + st.stage * 0.12 }); }
+      // the lab pulse (test): after a 1.2 s warning the focus plane's filaments swap with the plane below
+      if (stage === 1) {
+        st.nextWire -= gdt;
+        if (st.nextWire <= 1.2 && !st.wireWarn) { st.wireWarn = true; if (!st.beats.wire) { st.beats.wire = 1; say("The lab pulse is charging. When it fires, the plane in focus trades filaments with the one below it.", 4.5, true); } }
+        if (st.nextWire <= 0) { const a = st.focus, b = (st.focus + 1) % 3; for (const f of st.fils) f.plane = f.plane === a ? b : f.plane === b ? a : f.plane; st.nextWire = 7 + rng() * 3; st.wireWarn = false; st.inv = Math.max(st.inv, 0.5); st.rewired = 0.5; }
+        st.rewired = Math.max(0, (st.rewired || 0) - dt);
+      }
+      // the dream slide (twist): ride a ghost filament; it takes no plane, and it does not stay
+      if (stage === 2) {
+        for (const g of st.ghosts) { g.age += dt; if (g.age > g.life) Object.assign(g, newGhost()); }
+        const on2 = st.ghosts.some((g) => g.age > 0.5 && Math.abs(fx(g, st.pt.y) - st.pt.x) < 0.075);
+        st.riding = on2;
+        if (on2) { st.ride += dt; if (!st.beats.ride) { st.beats.ride = 1; say("The flicker holds under the cross-hair, and nothing strikes. It is not a charge coming. It is a channel.", 4.5, true); } }
+        if (st.ride >= (st.gentle ? RIDE - 2 : RIDE)) { st.reveal = performance.now(); st.over = false; api.store.set("losses", 0);
+          timers.push(setTimeout(() => { st.over = true; api.end({ outcome: "win", text: `Ten seconds on the true channel, and the field steps up by itself: ×1 600. The lattice is not a lattice. It is ruled, line by line, with a straightedge, and in one corner there is a maker's mark: a 9. She wakes with the loupe still in her hand. Someone wrote in the margin of a manifest, weeks ago: “Batch 9 is not from the well.”${st.drifts ? "" : " Not one drift, on no sleep."}` }); }, api.reducedMotion ? 1600 : 3600));
+          return; }
+      }
       // charge bursts (from x400): a filament flickers for 1.5 s, then three pulses run down it close together
-      if (st.stage >= 1) {
+      if (st.stage === 1) {
         st.nextBurst -= gdt;
         if (st.nextBurst <= 0) {
           st.nextBurst = 9 + rng() * 5;
@@ -172,22 +207,28 @@ export default {
       }
       // lattice cells
       st.nextFrag -= gdt;
-      if (st.nextFrag <= 0 && st.frags.length < 2) { st.nextFrag = 2.4 + rng() * 1.6; let pl = Math.floor(rng() * 3); if (pl === st.focus && rng() < 0.6) pl = (pl + 1 + Math.floor(rng() * 2)) % 3; const onPl = st.fils.filter((f) => f.plane === pl); st.frags.push({ f: onPl[Math.floor(rng() * onPl.length)], y: -1.1, plane: pl, v: 0.2 + rng() * 0.08 }); }
-      for (const f of st.frags) { f.y += f.v * gdt; f.x = fx(f.f, f.y); }
+      if (st.nextFrag <= 0 && st.frags.length < 2) { st.nextFrag = 2.4 + rng() * 1.6; let pl = Math.floor(rng() * 3); if (pl === st.focus && rng() < 0.6) pl = (pl + 1 + Math.floor(rng() * 2)) % 3; const onPl = st.fils.filter((f) => f.plane === pl); if (onPl.length) st.frags.push({ f: onPl[Math.floor(rng() * onPl.length)], y: -1.1, plane: pl, v: 0.2 + rng() * 0.08, seeded: stage === 2 || (stage === 1 && rng() < 0.3) }); }
+      for (const f of st.frags) { f.y += f.v * gdt; f.x = fx(f.f, f.y); f.plane = f.f.plane; }
       for (const f of st.frags) {
         if (f.plane === st.focus && st.refocus <= 0 && Math.hypot(f.x - st.pt.x, f.y - st.pt.y) < 0.1) {
-          f.done = true; st.got++; st.total++; st.pops.push({ x: f.x, y: f.y, t: 0.6 });
+          f.done = true;
+          if (f.seeded) {
+            st.steady--; st.inv = 1.2; st.shake = api.reducedMotion ? 0 : 0.3; st.hurt = 0.5;
+            say(stage === 2 ? (st.beats.seed2 ? `Seeded. Steadiness ${Math.max(0, st.steady)} of 3.` : "The cell you were taught to catch is seeded. In this slide they all are. Steadiness lost.") : `A seeded cell: its lattice is theirs, not the fragment's. Steadiness ${Math.max(0, st.steady)} of 3.${st.dye ? " The dye would have shown it." : ""}`, 3.2, stage === 2 && !st.beats.seed2);
+            st.beats.seed2 = 1;
+            if (st.steady <= 0) { drift(); return; }
+            break;
+          }
+          st.got++; st.total++; st.pops.push({ x: f.x, y: f.y, t: 0.6 });
           if (st.got >= NEED()) {
-            const plate = S.plate;
-            if (st.stage === 2) { st.over = true; api.store.set("losses", 0); api.end({ outcome: "win", text: `Three plates go into the journal as evidence, ${st.drifts ? `after ${st.drifts} drift${st.drifts === 1 ? "" : "s"}` : "without a single drift"}. Under the living filaments sits a lattice that repeats to the cell: a pattern too regular to be natural. Lira writes the word “made” and does not cross it out.` }); return; }
-            st.stage++; setupStage(); st.pause = 2.4;
-            const extra = st.stage === 1 ? " Hold your breath (Space or HOLD) to slow the flow for three seconds." : " AFU above 0.7: pulses double, the field tints violet.";
-            say(`Plate captured. ${plate} Magnification ${STAGES[st.stage].mag}.${extra}`, 5.5, true);
-            if (st.stage === 1) holdBtn.hidden = false;
+            st.over = true; api.store.set("losses", 0);
+            api.end({ outcome: "win", text: stage === 0 ? `Plate 1 goes into the journal, ${st.drifts ? `after ${st.drifts} drift${st.drifts === 1 ? "" : "s"}` : "without a single drift"}: filaments laid over a lattice that repeats to the cell. A pattern too regular to be natural. Lira writes the word “made” and does not cross it out.`
+              : `Plate 2, taken between pulses${st.drifts ? `, after ${st.drifts} drift${st.drifts === 1 ? "" : "s"}` : ""}. Each time the rig fired, the fragment's filaments rearranged themselves, the same motion as the cultures in the tanks across the room. It is not a sample of their work. It is a part of the machine.` });
+            return;
           } else {
             say(`Lattice cell recorded (${st.got} of ${NEED()}).`, 1.4);
             if (st.stage === 0 && st.got === 2 && !st.beats.joren) { st.beats.joren = 1; say("Joren, over your shoulder: “Bark doesn’t grow in hexagons, Doctor.” You say nothing yet. You count.", 4.5, true); }
-            if (st.stage === 2 && st.got === 3 && !st.beats.reg) { st.beats.reg = 1; say("Every cell the same width to the micron. Nothing that grows keeps time like this.", 4, true); }
+            if (st.stage === 1 && st.got === 3 && !st.beats.reg) { st.beats.reg = 1; say("Every cell the same width to the micron. Nothing that grows keeps time like this.", 4, true); }
           }
           break;
         }
@@ -207,14 +248,20 @@ export default {
       ctx.save();
       ctx.beginPath(); ctx.arc(cx, cy, R, 0, 7); ctx.clip();
       // texture scrolls with the flow; scale by magnification
-      const ts = [1.0, 1.6, 2.4][st.stage] * R / 256, off = ((st.flow * R * 0.9) % (512 * ts));
+      const ts = [1.0, 1.6, 1.6][st.stage] * R / 256, off = ((st.flow * R * 0.9) % (512 * ts));
       for (let ty = -1; ty <= Math.ceil(2 * R / (512 * ts)) + 1; ty++) for (let tx = -1; tx <= Math.ceil(2 * R / (512 * ts)) + 1; tx++)
-        ctx.drawImage(tex, cx - R + tx * 512 * ts, cy - R + ty * 512 * ts + off - 512 * ts, 512 * ts + 1, 512 * ts + 1);
-      if (S.afu > 0.7) { ctx.fillStyle = "rgba(120,70,200,0.18)"; ctx.fillRect(cx - R, cy - R, 2 * R, 2 * R); }
+        { const T2 = 512 * ts, tx0 = tx * T2, ty0 = ty * T2 + off - T2; if (tx0 < 2 * R && tx0 + T2 > 0 && ty0 < 2 * R && ty0 + T2 > 0) ctx.drawImage(tex, cx - R + tx0, cy - R + ty0, T2 + 1, T2 + 1); }
+      if (stage === 2) { ctx.fillStyle = "rgba(20,24,60,0.42)"; ctx.fillRect(cx - R, cy - R, 2 * R, 2 * R); }
       // faint lattice underneath
       ctx.strokeStyle = "rgba(185,216,234,0.10)"; ctx.lineWidth = 1;
-      const hr = R * [0.16, 0.11, 0.075][st.stage], hy2 = hr * 1.5, hw = hr * Math.sqrt(3), loff = (st.flow * R * 0.9) % (hy2 * 2);
-      for (let j = -2; j * hy2 < 2 * R + hy2 * 2; j++) for (let i = -1; i * hw < 2 * R + hw; i++) hexPath(cx - R + i * hw + (j % 2 ? hw / 2 : 0), cy - R + j * hy2 + loff, hr), ctx.stroke();
+      const hr = R * [0.16, 0.11, 0.11][st.stage], hy2 = hr * 1.5, hw = hr * Math.sqrt(3), loff = (st.flow * R * 0.9) % (hy2 * 2);
+      ctx.beginPath(); // one path for the whole lattice
+      for (let j = -2; j * hy2 < 2 * R + hy2 * 2; j++) for (let i = -1; i * hw < 2 * R + hw; i++) {
+        const hx0 = cx - R + i * hw + (j % 2 ? hw / 2 : 0), hy0 = cy - R + j * hy2 + loff;
+        for (let q = 0; q < 6; q++) { const an = Math.PI / 3 * q + Math.PI / 6, px2 = hx0 + hr * Math.cos(an), py2 = hy0 + hr * Math.sin(an); q ? ctx.lineTo(px2, py2) : ctx.moveTo(px2, py2); }
+        ctx.closePath();
+      }
+      ctx.stroke();
       // filaments: blurred planes first, then the solid focus plane
       const blur = st.refocus > 0;
       const order = [0, 1, 2].sort((a, b) => Math.abs(b - st.focus) - Math.abs(a - st.focus));
@@ -237,7 +284,8 @@ export default {
       for (const f of st.frags) {
         const solid = f.plane === st.focus && !blur;
         const r = R * 0.06, x = X(f.x), y = Y(f.y);
-        if (solid) { hexPath(x, y, r); ctx.fillStyle = "rgba(37,194,168,0.25)"; ctx.fill(); ctx.strokeStyle = "#e9fffb"; ctx.lineWidth = 2; ctx.stroke(); hexPath(x, y, r * 0.5); ctx.stroke(); }
+        if (f.seeded && st.dyeT > 0) { hexPath(x, y, r * 1.1); ctx.fillStyle = "rgba(214,64,159,0.75)"; ctx.fill(); ctx.strokeStyle = "#ffe4f6"; ctx.lineWidth = 2; ctx.stroke(); ctx.beginPath(); ctx.moveTo(x - r * 0.5, y - r * 0.5); ctx.lineTo(x + r * 0.5, y + r * 0.5); ctx.moveTo(x + r * 0.5, y - r * 0.5); ctx.lineTo(x - r * 0.5, y + r * 0.5); ctx.stroke(); }
+        else if (solid) { hexPath(x, y, r); ctx.fillStyle = "rgba(37,194,168,0.25)"; ctx.fill(); ctx.strokeStyle = "#e9fffb"; ctx.lineWidth = 2; ctx.stroke(); hexPath(x, y, r * 0.5); ctx.stroke(); }
         else { hexPath(x, y, r * 1.3); ctx.fillStyle = "rgba(214,64,159,0.15)"; ctx.fill(); ctx.strokeStyle = "rgba(214,64,159,0.45)"; ctx.lineWidth = 4; ctx.stroke();
           ctx.fillStyle = "rgba(242,244,245,0.6)"; ctx.font = `700 ${Math.max(10, R * 0.04)}px 'Courier Prime',monospace`; ctx.textAlign = "center"; ctx.fillText(PLANES[f.plane][0].toUpperCase(), x, y + 4); ctx.textAlign = "left"; }
       }
@@ -248,10 +296,29 @@ export default {
         ctx.beginPath(); for (let v = -1.05; v <= 1.05; v += 0.04) ctx.lineTo(X(fx(b.f, v)), Y(v));
         ctx.strokeStyle = b.f.plane === st.focus ? "rgba(255,228,246,0.9)" : "rgba(214,64,159,0.5)"; ctx.lineWidth = R * 0.012; ctx.setLineDash([R * 0.03, R * 0.03]); ctx.stroke(); ctx.setLineDash([]);
       }
+      // ghost filaments (the dream slide): a faint line that flickers at 12 Hz; steady and dashed under reduced motion
+      for (const gh of st.ghosts) {
+        const fade = Math.min(1, gh.age / 0.5, (gh.life - gh.age) / 0.6), fl = api.reducedMotion ? 0.8 : (Math.floor(now / 1000 * 24) % 2 ? 0.95 : 0.6);
+        ctx.beginPath(); for (let v = -1.05; v <= 1.05; v += 0.04) ctx.lineTo(X(fx(gh, v)), Y(v));
+        ctx.strokeStyle = `rgba(233,238,255,${Math.max(0, fade) * fl * (st.dyeT > 0 ? 1 : 0.8)})`; ctx.lineWidth = R * 0.01; if (api.reducedMotion) ctx.setLineDash([R * 0.02, R * 0.025]); ctx.stroke(); ctx.setLineDash([]);
+      }
+      if (st.riding) { ctx.strokeStyle = "rgba(233,238,255,.9)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(X(st.pt.x), Y(st.pt.y), R * 0.075, 0, 7); ctx.stroke(); }
+      if (st.wireWarn) { ctx.strokeStyle = api.reducedMotion || Math.floor(now / 150) % 2 ? "rgba(180,140,255,.9)" : "rgba(180,140,255,.3)"; ctx.lineWidth = R * 0.02; ctx.beginPath(); ctx.arc(cx, cy, R * 0.97, 0, 7); ctx.stroke(); }
+      if (st.rewired > 0) { ctx.fillStyle = `rgba(180,140,255,${st.rewired * 0.5})`; ctx.fillRect(cx - R, cy - R, 2 * R, 2 * R); }
+      // the set-piece: ×1 600, the lattice is ruled, and signed
+      if (st.reveal) {
+        const k = api.reducedMotion ? 1 : Math.min(1, (performance.now() - st.reveal) / 2200);
+        ctx.fillStyle = `rgba(6,8,10,${0.82 * k})`; ctx.fillRect(cx - R, cy - R, 2 * R, 2 * R);
+        ctx.strokeStyle = `rgba(185,216,234,${0.75 * k})`; ctx.lineWidth = 1;
+        for (let i = -9; i <= 9; i++) { ctx.beginPath(); ctx.moveTo(cx - R, cy + i * R * 0.11); ctx.lineTo(cx - R + 2 * R * k, cy + i * R * 0.11); ctx.stroke(); }
+        for (let i = -9; i <= 9; i += 3) { ctx.beginPath(); ctx.moveTo(cx + i * R * 0.11, cy - R); ctx.lineTo(cx + i * R * 0.11, cy - R + 2 * R * k); ctx.stroke(); }
+        if (k > 0.6) { const a = (k - 0.6) / 0.4; ctx.strokeStyle = `rgba(242,244,245,${a})`; ctx.lineWidth = 1.5; ctx.strokeRect(cx + R * 0.36, cy + R * 0.38, R * 0.2, R * 0.2);
+          ctx.fillStyle = `rgba(242,244,245,${a})`; ctx.font = `400 ${R * 0.17}px 'IM Fell English',Georgia,serif`; ctx.textAlign = "center"; ctx.fillText("9", cx + R * 0.46, cy + R * 0.54); ctx.textAlign = "left"; }
+      }
       // captured cells: a ring that opens out
       for (const p of st.pops) { const k = 1 - p.t / 0.6; ctx.strokeStyle = `rgba(233,255,251,${1 - k})`; ctx.lineWidth = 3; hexPath(X(p.x), Y(p.y), R * (0.06 + k * (api.reducedMotion ? 0 : 0.12))); ctx.stroke(); }
       // pulses
-      for (const p of st.pulses) {
+      for (const p of st.reveal ? [] : st.pulses) {
         const x = X(fx(p.f, p.y)), y = Y(p.y), solid = p.f.plane === st.focus && !blur;
         if (solid) { ctx.fillStyle = "rgba(255,120,210,0.35)"; ctx.beginPath(); ctx.arc(x, y, R * 0.045, 0, 7); ctx.fill(); ctx.fillStyle = "#ffe4f6"; ctx.beginPath(); ctx.arc(x, y, R * 0.018, 0, 7); ctx.fill(); }
         else { ctx.fillStyle = "rgba(214,64,159,0.25)"; ctx.beginPath(); ctx.arc(x, y, R * 0.04, 0, 7); ctx.fill(); }
@@ -267,28 +334,29 @@ export default {
       ctx.restore();
       // lens ring and progress
       ctx.strokeStyle = "#20282c"; ctx.lineWidth = R * 0.07; ctx.beginPath(); ctx.arc(cx, cy, R + R * 0.035, 0, 7); ctx.stroke();
-      const prog = st.total / (NEEDS[0] + NEEDS[1] + NEEDS[2]);
+      const prog = stage === 2 ? Math.min(1, st.ride / RIDE) : st.got / NEED();
       ctx.strokeStyle = TEAL; ctx.lineWidth = R * 0.03; ctx.beginPath(); ctx.arc(cx, cy, R + R * 0.035, -Math.PI / 2, -Math.PI / 2 + prog * Math.PI * 2); ctx.stroke();
-      for (let k = 0; k < 3; k++) { const a = -Math.PI / 2 + (k + 1) / 3 * Math.PI * 2; ctx.fillStyle = BLACK; ctx.strokeStyle = k < st.stage ? TEAL : MAG; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(cx + Math.cos(a) * (R * 1.035), cy + Math.sin(a) * (R * 1.035), R * 0.03, 0, 7); ctx.fill(); ctx.stroke(); }
+
       // HUD
       let hx = L.hx, hy = L.hy;
       const line = (txt, size, col, gap = 8) => { ctx.font = `${size}px 'Courier Prime',monospace`; ctx.fillStyle = col; ctx.fillText(txt, hx, hy + size); hy += size + gap; };
       if (L.side) {
-        line("B1-LENS · OUTPOST FRAGMENT", 13, ICE, 16);
-        line(S.mag, 40, "#f2f4f5", 4); line(`MAG ${st.stage + 1} / 3`, 13, ICE, 16);
+        line(SLIDE[stage], 13, ICE, 16);
+        line(st.reveal ? "×1 600" : stage === 2 ? "×400" : S.mag, 40, "#f2f4f5", 4); line(["TEACH", "TEST", "TWIST"][stage], 13, ICE, 16);
         line("FOCUS PLANE  (Q / E, 1–3)", 13, ICE, 6);
         PLANES.forEach((p, i) => { const sel = i === st.focus; ctx.strokeStyle = sel ? TEAL : MAG; ctx.lineWidth = 1.2; ctx.strokeRect(hx, hy, 170, 22); if (sel) { ctx.fillStyle = TEAL; ctx.fillRect(hx, hy, 170, 22); } ctx.fillStyle = sel ? BLACK : "#f08acb"; ctx.font = "14px 'Courier Prime',monospace"; ctx.fillText(`${i + 1} ${p} ${sel ? (blur ? "focusing…" : "SOLID") : "blur"}`, hx + 6, hy + 16); hy += 26; });
         hy += 10; line("STEADINESS", 13, ICE, 6);
         for (let i = 0; i < 3; i++) { const x = hx + 10 + i * 26, y = hy + 10; ctx.beginPath(); ctx.moveTo(x, y - 10); ctx.lineTo(x + 9, y); ctx.lineTo(x, y + 10); ctx.lineTo(x - 9, y); ctx.closePath(); ctx.fillStyle = "#f2f4f5"; ctx.strokeStyle = "#f2f4f5"; ctx.lineWidth = 1.5; i < st.steady ? ctx.fill() : ctx.stroke(); }
         hy += 30;
-        line(`CELLS ${st.got} / ${NEED()}  DRIFTS ${st.drifts} / 3`, 14, ICE, 10);
-        line(`AFU ${S.afu.toFixed(2)}${S.afu > 0.7 ? "  PULSES ×2" : ""}`, 15, S.afu > 0.7 ? "#b48cff" : "#f08acb", 12);
+        line(stage === 2 ? `CHANNEL ${st.ride.toFixed(1)} / ${RIDE} s  DRIFTS ${st.drifts} / 3` : `CELLS ${st.got} / ${NEED()}  DRIFTS ${st.drifts} / 3`, 14, ICE, 10);
+        line(stage === 2 ? "0.003 lux · 12 Hz" : `AFU ${S.afu.toFixed(2)}${stage === 1 ? `  PULSE ${Math.max(0, st.nextWire).toFixed(0)} s` : ""}`, 15, stage === 2 ? "#e9eeff" : "#f08acb", 12);
+        if (stage) line(`DYE (D) ${st.dye ? "● ready" : st.dyeT > 0 ? `${st.dyeT.toFixed(0)} s` : "○ spent"}`, 13, st.dyeT > 0 ? MAG : ICE, 10);
         if (st.stage >= 1) { line(`BREATH (Space)${st.holding ? "  HELD" : ""}`, 13, ICE, 4); ctx.strokeStyle = ICE; ctx.lineWidth = 1; ctx.strokeRect(hx, hy, 170, 10); ctx.fillStyle = st.breath < 0.25 ? MAG : ICE; ctx.fillRect(hx + 1, hy + 1, 168 * st.breath, 8); hy += 20; }
         ctx.fillStyle = "#f2f4f5"; ctx.fillRect(hx, hy, 60, 3); line("", 4, ICE, 4); line(`${[100, 25, 6][st.stage]} µm`, 13, ICE);
       } else {
-        line(`${S.mag}  MAG ${st.stage + 1}/3   FOCUS ${PLANES[st.focus].toUpperCase()} ${blur ? "…" : "SOLID"}`, 13, "#f2f4f5", 6);
-        line(`STEADY ${"◆".repeat(st.steady)}${"◇".repeat(3 - st.steady)}  CELLS ${st.got}/${NEED()}  DRIFT ${st.drifts}/3`, 13, ICE, 6);
-        line(`AFU ${S.afu.toFixed(2)}${S.afu > 0.7 ? "  PULSES ×2" : ""}${st.stage >= 1 ? `   BREATH ${"▮".repeat(Math.ceil(st.breath * 5))}${"▯".repeat(5 - Math.ceil(st.breath * 5))}` : ""}`, 13, S.afu > 0.7 ? "#b48cff" : "#f08acb", 6);
+        line(`${stage === 2 ? "DREAM" : S.mag}   FOCUS ${PLANES[st.focus].toUpperCase()} ${blur ? "…" : "SOLID"}${stage === 1 ? `  PULSE ${Math.max(0, st.nextWire).toFixed(0)}s` : ""}`, 13, "#f2f4f5", 6);
+        line(`STEADY ${"◆".repeat(Math.max(0, st.steady))}${"◇".repeat(3 - Math.max(0, st.steady))}  ${stage === 2 ? `CHANNEL ${st.ride.toFixed(1)}/${RIDE}s` : `CELLS ${st.got}/${NEED()}`}  DRIFT ${st.drifts}/3`, 13, ICE, 6);
+        line(`${stage ? `DYE ${st.dye ? "●" : st.dyeT > 0 ? st.dyeT.toFixed(0) + "s" : "○"}` : `AFU ${S.afu.toFixed(2)}`}${st.stage >= 1 ? `   BREATH ${"▮".repeat(Math.ceil(st.breath * 5))}${"▯".repeat(5 - Math.ceil(st.breath * 5))}` : ""}`, 13, S.afu > 0.7 ? "#b48cff" : "#f08acb", 6);
       }
       if (st.msgT > 0 && st.msg) {
         // wrapped caption in the micrograph's data-bar style
@@ -313,24 +381,32 @@ export default {
       const dt = Math.min(0.05, (now - (last || now)) / 1000); last = now;
       if (st.started && !st.over) update(dt);
       draw(now);
-      if (!st.over) raf = requestAnimationFrame(loop);
+      if (!st.over || st.reveal) raf = requestAnimationFrame(loop);
     };
     setupStage();
     raf = requestAnimationFrame(loop);
 
     const intro = document.createElement("div"); intro.className = P + "intro";
-    intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="disc">×100</div><div class="in">
-      <div class="lab">SLIDE B1 · FALSE COLOUR</div><h2>Under the lens</h2>
-      <p class="goal">Capture the lattice cells at three magnifications without losing the slide.</p>
+    intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="disc">${["×100", "×400", "03:12"][stage]}</div><div class="in">
+      <div class="lab">${["SLIDE B1 · FALSE COLOUR", "SLIDE B2 · LAB PULSE", "NO SLIDE NUMBER"][stage]}</div><h2>${["Under the lens", "Under the lens: the pulse", "Under the lens: the dream slide"][stage]}</h2>
+      <p class="goal">${["Capture four lattice cells without losing the slide.", "Capture five true cells while the lab pulse rewires the planes.", "Three nights without sleep. Hold the cross-hair on the true channel for ten seconds. It is not where you were taught to look."][stage]}</p>
       <dl><dt>steer</dt><dd>mouse, touch or arrows</dd><dt>focus</dt><dd>wheel, Q / E or the buttons</dd>
-      <dt>rule</dt><dd><b class="t">Teal</b> is solid: touch its cells, dodge its pulses. <b class="m">Magenta</b> passes through.</dd></dl>
+      <dt>rule</dt><dd><b class="t">Teal</b> is solid: touch its cells, dodge its pulses. <b class="m">Magenta</b> passes through.</dd>
+      ${stage === 1 ? `<dt>pulse</dt><dd>the ring flashes violet, then the focus plane swaps with the one below</dd><dt>dye</dt><dd>D, once: seeded cells show for 5 s. A seeded cell costs steadiness</dd><dt>breath</dt><dd>hold Space: the flow slows for 3 s</dd>` : ""}
+      ${stage === 2 ? `<dt>dye</dt><dd>D, once: shows what is seeded</dd><dt>breath</dt><dd>hold Space: the flow slows</dd>` : ""}</dl>
       ${losses >= 2 ? `<label><input type="checkbox" class="gentle"> Steadier hands: the flow runs 20% slower</label>` : ""}
       <button type="button">Place the slide</button></div></div>`;
     wrap.appendChild(intro);
     const sb = intro.querySelector("button");
-    on(sb, "click", () => { const g = intro.querySelector(".gentle"); st.gentle = !!(g && g.checked); intro.remove(); st.started = true; say("Book I. The fragment from the storm-struck outpost, threaded with micro‑filaments, clipped under the lens. ×100: capture five lattice cells.", 5.5, true); });
+    on(sb, "click", () => { const g = intro.querySelector(".gentle"); st.gentle = !!(g && g.checked); intro.remove(); st.started = true; say(["Book I. The fragment from the storm-struck outpost, threaded with micro‑filaments, clipped under the lens. ×100: capture four lattice cells.", "Book II, the corporate lab, after hours. The fragment sits under their own lens while the pulse rig cycles. Capture five cells, and not the seeded ones.", "The hideout, the third night. She has fallen asleep at the bench, and the slide under the lens is one she never mounted. Somewhere in the field: a 0.003 lux fluctuation at 12 Hz."][stage], 6, true); });
     sb.focus();
-    if (window.__ezTest) window.__ezTest[api.key] = { st, keys };
-    return { unmount() { alive = false; cancelAnimationFrame(raf); ro.disconnect(); off.forEach((f) => f()); if (window.__ezTest) delete window.__ezTest[api.key]; } };
+    if (window.__ezTest) window.__ezTest[api.key] = { st, keys, stage, fx, L };
+    return { unmount() { alive = false; cancelAnimationFrame(raf); ro.disconnect(); off.forEach((f) => f()); timers.forEach(clearTimeout); if (window.__ezTest) delete window.__ezTest[api.key]; } };
+  }
+}
+
+export default {
+  mount(root, api) {
+    return runStages(root, api, { names: ["The lattice", "The lab pulse", "The dream slide"], colors: { bg: "#06080a", fg: "#b9d8ea", accent: "#25c2a8", paper: "#0b1013", ink: "#f2f4f5" }, mount: mountStage });
   },
 };

@@ -512,7 +512,7 @@
           ]
         }
       ],
-      "note": "Book III, the hideout. One bare bulb, static from the transmitter. Broadcast the raw data dump or hold it; margin note 7 beside the coupling matrix: 'Your damping is not yours. Measure it.' (The design's 10 x 8 m hideout is played in this 8 x 6 m room.)",
+      "note": "Book III, the hideout. One bare bulb, static from the transmitter. Broadcast the raw data dump or hold it; margin note 7 beside the coupling matrix: 'Your damping is not yours. Measure it.' (The design's 10 x 8 m hideout is played in this 8 x 6 m room.) Phase 2: Three Nights begins at this table (push-in to b3-three-nights, then the dream slide, then the terraces).",
       "camera": {
         "location": [
           1.2,
@@ -545,8 +545,8 @@
         },
         {
           "prop": "journal",
-          "verb": "Read the margin",
-          "leads_to": "b4-terraces"
+          "verb": "Read the margin, and the last hour",
+          "leads_to": "b3-three-nights"
         }
       ]
     },
