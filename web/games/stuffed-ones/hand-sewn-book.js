@@ -34,8 +34,15 @@
 // side: her order runs right to left. A back whose mark you have met elsewhere (the Parlour cloth,
 // your own pattern in Stuffing, the tapestry in the Labyrinth: api.shared "glossary") names itself;
 // the walls name the rest, at the usual cost. Ruth's two lines are written for the game.
+//
+// Phase 3 (DESIGN.md section 21, built 2026-11-16): the twist turns three backs, spreads I, III and V,
+// which are lines 1, 3 and 5 of Ruth's sentence, the selvage; each back pulled taut is a piece of it
+// (stages.js). On a later playthrough (api.shared "turns") the backs are readable from the first
+// sitting: spread I's back shows through the linen in the teach stage. And if a page was sewn in The
+// Page (api.shared "page"), the twist ends on it: a page with no front, numbered with the sewer's
+// strokes, read right to left like Ruth's. It is the line the last player wrote.
 import { artKit } from "./art-kit.js";
-import { runStages, stagePicker, linkNote } from "./stages.js";
+import { runStages, stagePicker, linkNote, LINES } from "./stages.js";
 const PRE = "stuffed-ones-hand-sewn-book-";
 const C = { linen: "#e3d6bb", linenD: "#cdbd9c", silk: "#1d1712", red: "#b8322a", white: "#f6f1e4", black: "#1d1712",
   cedar: "#6b4a32", cedarD: "#3d2a1d", amber: "#e39a2d", ink: "#2a211b", moss: "#4f6b2c" };
@@ -72,14 +79,18 @@ const SPREADS = [
     text: ["We were the next filling.", "The ritual had already begun the moment we stepped inside."] },
 ];
 const WALL_COST = 8, SAMPLER = 2, MAKE_COST = 4;
-const STAGE_SPREADS = [[0], [1, 2], [0, 1]], CLOCK = [0, 150, 120];
+const STAGE_SPREADS = [[0], [1, 2], [0, 1, 2]], CLOCK = [0, 150, 175];
 const BLURBS = ["Spread I: colour is role.", "Order rules, a decoy and a missing strip, under the clock.", "Every strip has a back."];
 // the missing strip of spread III and the two glyphs it is sewn from; the radicals offered
 const MISSING = { 1: "feed" }, MAKES = { feed: ["needle", "mouth"] }, RADICALS = ["thread", "needle", "they", "mouth", "knot"];
 // Ruth's lines on the backs, in her order (her strokes count it); the art of each back
-const BACKS = { 0: ["i", "seven", "still", "play"], 1: ["hunger", "play", "company", "stay", "i", "warm"] };
-const RUTH = { 0: "{i} am {seven} {still}. {i} {play}.", 1: "When the {hunger} {play}s, {company} {stay}s, and {i} am {warm}." };
-const PAGE_B = [3, 6, 1, 5, 2, 4];
+const BACKS = { 0: LINES[0].marks, 1: LINES[2].marks, 2: LINES[4].marks };
+const RUTH = { 0: "{i} am {seven} {still}. {i} {play}.", 1: "When the {hunger} {play}s, {company} {stay}s, and {i} am {warm}.",
+  2: "{unpick} the {seven}; {cut} while {mother} is {still}; {i} {go} {home}." };
+const PAGE_B = [3, 6, 1, 5, 2, 4], PAGE_V = [3, 7, 1, 5, 8, 2, 6, 4];
+const PIECE = { 0: 1, 1: 3, 2: 5 };
+// a tally order that is neither Mabel's way nor Ruth's, for a page of n marks
+const scramble = (n) => { const out = []; for (let k = 0; k < n; k++) out.push(((k * 3 + 1) % n) + 1); if (new Set(out).size !== n || out.every((v, i) => !i || out[i - 1] < v)) return Array.from({ length: n }, (_, k) => [2, 1, 3, 5, 4, 6].filter((v) => v <= n)[k] || k + 1); return out; };
 const BACK_ART = { seven: "glyph-back-01-seven", play: "glyph-back-02-play", stay: "glyph-back-03-stay", warm: "glyph-back-04-warm", cold: "glyph-back-05-cold", company: "glyph-back-06-company",
   still: "glyph-back-07-still", go: "glyph-back-08-go", unpick: "glyph-back-09-unpick", cut: "glyph-back-10-cut", i: "glyph-back-11-i", mother: "glyph-back-12-mother", hunger: "glyph-back-13-hunger", home: "glyph-back-14-home" };
 
@@ -113,8 +124,14 @@ export default { mount(root, api) { return runStages(root, api, run, BLURBS); } 
 
 function run(root, api, flow) {
   {
-    const stage = flow.stage, seq = STAGE_SPREADS[stage], backMode = stage === 2;
-    const SP = (k = si) => SPREADS[seq[k]];
+    const stage = flow.stage, backMode = stage === 2;
+    // a later playthrough: the backs show from the first sitting, and the page the last player sewed
+    const turns = flow.S.turns(), mine = flow.S.get("page", []);
+    const myPage = backMode && turns > 0 && Array.isArray(mine) && mine.length >= 3 ? mine.slice(0, 6) : null;
+    const SPX = myPage ? SPREADS.concat([{ no: "VII", title: "A page with no front", rules: 0, page: true, slots: myPage.map(() => "red"),
+      strips: myPage.map(() => ["needle", "red"]), text: ["A page with no front.", "Nobody sewed a front to it. The stitches are the size of yours."] }]) : SPREADS;
+    const seq = myPage ? STAGE_SPREADS[stage].concat([3]) : STAGE_SPREADS[stage];
+    const SP = (k = si) => SPX[seq[k]];
     const K = kit();
     const rng = api.rng("stuffed-ones/book");
     const A = artKit(api), ART = A.has("glyph-09-needle");
@@ -179,7 +196,8 @@ function run(root, api, flow) {
     let missing = null, flips = 0, page = { said: false }, linkT = null;
     const namedBack = new Set();
     const knowsBack = (w) => namedBack.has(w) || flow.S.knows(w);
-    const ruthLine = (k = si) => RUTH[seq[k]].replace(/\{(\w+)\}/g, (_, w) => (knowsBack(w) ? (w === "i" ? "I" : w) : "▒▒"));
+    const cap1 = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+    const ruthLine = (k = si) => cap1((seq[k] === 3 ? myPage.map((w) => (knowsBack(w) ? (w === "i" ? "I" : w === "mother" ? "Mother" : w) : "▒▒")).join(" ") + "." : RUTH[seq[k]]).replace(/\{(\w+)\}/g, (_, w) => (knowsBack(w) ? (w === "i" ? "I" : w === "mother" ? "Mother" : w) : "▒▒")));
     let tautStart = 0, si = 0, strips = [], row = [], taut = 0, read = [];
     const named = new Set(["they", "needle", "thread", "summon"]);
     let wallT = 0, wallNew = [];
@@ -208,9 +226,14 @@ function run(root, api, flow) {
       taut = 0; tautStart = 0; held = null; cursor = 0; idle = 0; hintPair = null;
       if (backMode) {
         // the front lies solved, as you left it; the backs are still face down
-        solution().forEach((s, q) => { s.slot = q; row[q] = s; });
+        if (sp.page) strips.forEach((s, q) => { s.slot = q; row[q] = s; });
+        else solution().forEach((s, q) => { s.slot = q; row[q] = s; });
+        // the decoy has no place in a solved line: it stays off the page
+        strips = strips.filter((s) => s.slot !== null); strips.forEach((s, q) => (s.i = q));
         page = { said: false };
         if (seq[k] === 1) PAGE_B.forEach((tl, q) => { row[q].tally = tl; row[q].back = BACKS[1][tl - 1]; });
+        if (seq[k] === 2) PAGE_V.forEach((tl, q) => { row[q].tally = tl; row[q].back = BACKS[2][tl - 1]; });
+        if (sp.page) scramble(myPage.length).forEach((tl, q) => { row[q].tally = tl; row[q].back = myPage[tl - 1]; row[q].flipped = true; });
       }
       layout(); syncButtons();
     }
@@ -397,6 +420,15 @@ function run(root, api, flow) {
         g.fillStyle = broken ? C.red : C.ink;
         g.fillText(`${broken ? "×" : "·"}  ${r.text}`, rp.x + 26, y); y += 22;
       });
+      // a later playthrough: Ruth's red wool shows through the linen from the first sitting
+      if (stage === 0 && turns) {
+        const bw = Math.min(46, (rp.w - 80) / 5), bh = bw * 320 / 220, n = BACKS[0].length, x0 = rp.x + rp.w - 30 - n * (bw + 6);
+        g.globalAlpha = 0.5;
+        BACKS[0].slice().reverse().forEach((w, k) => A.draw(g, BACK_ART[w], x0 + k * (bw + 6), y - 18, bw, bh));
+        g.globalAlpha = 1; g.font = "italic 13px 'IM Fell English',Georgia,serif"; g.fillStyle = C.red; g.textAlign = "right";
+        g.fillText("red wool, through the linen", rp.x + rp.w - 30, y + bh - 6); g.textAlign = "left";
+        y += bh - 10;
+      }
       g.font = "14px Karla,Arial,sans-serif"; g.fillStyle = C.ink;
       g.fillStyle = C.red; g.fillText("red", rp.x + 26, y + 4); let xx = rp.x + 26 + g.measureText("red").width;
       g.fillStyle = C.ink; const rest = backMode ? " wool, every back: it fits any slot" : missing ? ": an act (missing: Make it) · black: a thing · white: who" : ": an act · black: a thing · white: who"; g.fillText(rest, xx, y + 4);
@@ -412,7 +444,7 @@ function run(root, api, flow) {
       if (msg && now - msgT < 2600) { g.fillStyle = msgCol; g.textAlign = "center"; g.font = "600 15px Karla,Arial,sans-serif"; g.fillText(msg, rp.x + rp.w / 2, slotPos[0].y - 26); }
       // left page
       g.fillStyle = "rgba(42,33,27,.85)"; g.font = "italic 15px 'IM Fell English',Georgia,serif"; g.textAlign = "left"; g.textBaseline = "alphabetic";
-      g.fillText(backMode ? "the front, as Mabel sewed it:" : "loose strips", lp.x + 22, backMode ? lp.y + 54 : lp.y + lp.h - 22);
+      g.fillText(backMode ? (sp.page ? "where the front should be:" : "the front, as Mabel sewed it:") : "loose strips", lp.x + 22, backMode ? lp.y + 54 : lp.y + lp.h - 22);
       if (backMode) { g.font = `italic ${Math.round(Math.min(24, lp.w / 16))}px 'IM Fell English',Georgia,serif`; g.fillStyle = C.ink; let ty = lp.y + 92; sp.text.forEach((t) => { ty = wrapText(t, lp.x + 26, ty, lp.w - 52, 28) + 30; }); g.font = "14px Karla,Arial,sans-serif"; g.fillStyle = "rgba(42,33,27,.8)"; wrapText(`Turned: ${strips.filter((q) => q.flipped).length} of ${strips.length}. Drag a strip onto another to change their places.`, lp.x + 26, Math.min(lp.y + lp.h - 44, ty + 8), lp.w - 52, 18); }
       strips.forEach((s) => {
         if (drag && drag.s === s) return;
@@ -492,6 +524,7 @@ function run(root, api, flow) {
     // turning a strip over; on spread I the first one turned is the glyph for seven
     function flip(s) {
       if (!backMode || taut || over || !started) return;
+      if (SP().page) { say("This page has no front. It is all back.", C.ink); return; }
       if (seq[si] === 0 && !strips.some((q) => q.back)) {
         const others = strips.filter((q) => q !== s).sort((a, b) => a.slot - b.slot);
         const seen = (rest) => { const t = []; others.forEach((q, n) => (t[q.slot] = rest[n])); t[s.slot] = 2; return t.join(""); };
@@ -513,7 +546,8 @@ function run(root, api, flow) {
       if (t.every((v, i) => !i || t[i - 1] < v)) { say("It counts up, but back to front: this is how Mabel would read it."); return; }
       if (!t.every((v, i) => !i || t[i - 1] > v)) return;
       taut = 0.01; read.push(SP().no); tautStart = performance.now();
-      say("Her line pulls taut.", C.moss);
+      if (PIECE[seq[si]]) { const fresh = flow.S.piece(PIECE[seq[si]]); say(fresh ? `Her line pulls taut: line ${PIECE[seq[si]]} of the selvage.` : "Her line pulls taut.", C.moss); }
+      else say("The page pulls taut. Somebody sewed this who knew her marks.", C.moss);
       K.after(api.reducedMotion ? 2600 : 4400, () => {
         if (over) return;
         if (si + 1 < seq.length) { si++; loadSpread(si); spreadBeat(); }
@@ -545,7 +579,12 @@ function run(root, api, flow) {
       });
     }
     function spreadBeat() {
-      if (backMode) { if (si === 1) beat("Spread III, the back", "Six this time, and the glows have not stopped. Turn them, and set her strokes in her order.", null, 5500); return; }
+      if (backMode) {
+        if (si === 1) beat("Spread III, the back", "Six this time, and the glows have not stopped. Turn them, and set her strokes in her order.", null, 5500);
+        if (seq[si] === 2) beat("Spread V, the back", "Eight. The decoy strip has no back worth reading; it stays off the page. Her strokes run to eight, and her line runs on from the last one.", null, 6500);
+        if (seq[si] === 3) beat("A page that was not here before", "Sewn in after the others, in red wool, with strokes along the top the size of your own. No front. Read it the way you read hers.", null, 7500);
+        return;
+      }
       if (seq[si] === 1) beat("New glyphs, and a gap", "It, a mouth, a knot: you don't know these yet; the walls do (R), but the glows come on while your back is turned. And the red strip is gone from this page. Make it (M): two glyphs sewn together, what does the feeding over what is fed.", null, 9000);
       if (seq[si] === 2) beat("In your pocket", "Mabel's sampler from the parlour wall: one line already solved in her small, even stitches. Use it (H) to set a strip, twice. One strip on this page fits no line at all.", null, 6500);
     }
@@ -617,17 +656,19 @@ function run(root, api, flow) {
     }
     function win() {
       const best = api.store.get("best", 0); if (left > best) api.store.set("best", Math.round(left));
-      if (stage === 0) outcome("win", "Spread I pulls taut: “They weren't made. / They were summoned.” White thread is who, red is what they do, black is what it is done with, and a needle leads its thread.");
+      if (stage === 0) outcome("win", "Spread I pulls taut: “They weren't made. / They were summoned.” White thread is who, red is what they do, black is what it is done with, and a needle leads its thread." + (turns ? ` And through the linen, this time, the red wool on the back shows from the first sitting: ${ruthLine(0)}` : ""));
       else if (stage === 1) outcome("win", `Both spreads read, with ${Math.ceil(left)} s to spare${wallsUsed ? "" : ", and never once turning your back on the glows"}. You know how to feed it, and what the filling is: “The ritual had already begun the moment we stepped inside.”`);
       else {
-        const words = [...new Set(BACKS[0].concat(BACKS[1]))].filter(knowsBack);
-        flow.S.learn(words); flow.S.set("backs_read", 2);
-        outcome("win", `Two backs read, with ${Math.ceil(left)} s to spare. In red wool, right to left: ${ruthLine(0)} And under the page that says how to feed it: ${ruthLine(1)} The front is a ritual. The back is somebody small, counting her own stitches. There are four more spreads, and her sentence is not finished.${(ruthLine(0) + ruthLine(1)).includes("▒") ? " (The marks you could not name are on the walls, and here and there about the cabin.)" : ""}`);
+        const words = [...new Set(BACKS[0].concat(BACKS[1], BACKS[2]))].filter(knowsBack);
+        flow.S.learn(words); flow.S.set("backs_read", 3);
+        const lines = [ruthLine(0), ruthLine(1), ruthLine(2)].join(" ");
+        const got = flow.S.pieces().length;
+        outcome("win", `Three backs read, with ${Math.ceil(left)} s to spare. In red wool, right to left: ${ruthLine(0)} Under the page that says how to feed it: ${ruthLine(1)} And under the filling: ${ruthLine(2)} The front is a ritual. The back is somebody small, counting her own stitches, and telling you how a thing is let go.${myPage ? ` Last, the page with no front: ${ruthLine(3)} It is the line that was sewn in last time, in marks somebody learned here.` : ""} ${got >= 6 ? "Every line of her sentence is in your selvage: it can be read whole where the Chase ends, in the doorway." : `Lines 2, 4 and 6 are not in the book. She copied them onto her own patterns, about the cabin. (${got} of 6 in your selvage.)`}${lines.includes("▒") ? " (The marks you could not name are on the walls, and here and there about the cabin.)" : ""}`);
       }
     }
     function lose() {
       if (backMode) {
-        if (read.length) { flow.S.set("backs_read", 1); outcome("done", `The glows close over the margins. You read one back: ${ruthLine(0)} The other stays face down, and something soft leans against your ankle and waits.`); }
+        if (read.length) { flow.S.set("backs_read", read.length); outcome("done", `The glows close over the margins. You read ${read.length === 1 ? "one back" : `${read.length} backs`}: ${read.map((_, k) => ruthLine(k)).join(" ")} The rest stay face down, and something soft leans against your ankle and waits.`); }
         else outcome("lose", "The glows close over the margins with her strips still out of order. The book stays shut to you, and something soft leans against your ankle and waits.");
         return;
       }
@@ -781,7 +822,7 @@ function run(root, api, flow) {
       else if (stage === 1) spreadBeat();
       else {
         beat("The backs", "Spread I lies solved, as you left it. Tap a strip and turn it over.", null, 5000);
-        const met = [...new Set(BACKS[0].concat(BACKS[1]))].filter((w) => flow.S.knows(w));
+        const met = [...new Set(BACKS[0].concat(BACKS[1], BACKS[2]))].filter((w) => flow.S.knows(w));
         if (met.length) K.after(5600, () => { if (!over) linkT = linkNote(wrap, api, `Because you met Ruth's marks elsewhere in the cabin, these backs name themselves: ${met.join(", ")}.`, 8000); });
       }
     });

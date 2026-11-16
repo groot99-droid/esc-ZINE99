@@ -144,7 +144,8 @@
               "increment",
               "append_by_ending",
               "set_to_ending",
-              "append_new_spreads"
+              "append_new_spreads",
+              "replace_by_page"
             ]
           },
           "write_note": {

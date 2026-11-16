@@ -111,3 +111,36 @@ def _movement(k, row):
 
 for _k, _r in enumerate(MOVEMENTS):
     _movement(_k, _r)
+
+
+# ---- ending-card lettering (phase 3) -------------------------------------------------------------
+# The generated ending cards carry no text; these are the names in cross-stitch on a sampler band, laid
+# over a card (or under it on a narrow screen) in the modes that end on one.
+ENDINGS = [("the-page", "The Page", "a proposal", kit.SKY), ("cycle", "The Cycle", "as written", kit.RED),
+           ("warning", "The Warning", "a proposal", kit.MOSS), ("empty-toy", "The Empty Toy", "a proposal", kit.DUST),
+           ("keeper", "The Keeper", "a proposal", kit.AMBER)]
+
+
+def _ending_title(k, row):
+    eid, name, tag, thr = row
+
+    @asset(G, f"ending-title-{eid}", group="endings", title=f"Ending lettering: {name}", w=1200, h=300, row="Ending cards")
+    def draw(a: Art):
+        ground = kit.mix(kit.LINEN, kit.CEDAR, 0.62)
+        kit.linen(a, ground, cell=3.5, grain=0.3)
+        kit.lamp(a, 600, 150, 520, thr, 0.28)
+        kit.band(a, 60, 22, 1080, 5, kit.mix(thr, ground, 0.25), kit.mix(kit.BONE, ground, 0.3), seed=k + 91, rows=5, unit=6)
+        kit.band(a, 60, 250, 1080, 5, kit.mix(thr, ground, 0.25), kit.mix(kit.BONE, ground, 0.3), seed=k + 91, rows=5, unit=6)
+        cells, wc = kit.text_cells(name)
+        cs = min(11, 1000 / wc)
+        kit.xtext(a, name, 600, 78, cs, kit.BONE, shadow=kit.mix(thr, kit.INK, 0.3), align="center")
+        a.text(600, 236, tag, size=24, family="serif", fill=kit.mix(kit.BONE, ground, 0.25), text_anchor="middle", font_style="italic",
+               letter_spacing=4)
+        kit.thread(a, "M40,14V286M1160,14V286", kit.mix(thr, ground, 0.4), w=2.4, dash="9 6")
+        kit.shade(a, 0.45)
+    draw.__doc__ = (f"The name of the ending \"{name}\" in bone-white cross-stitch on a dark linen band between two sampler "
+                    f"borders, with \"{tag}\" beneath in an italic hand.")
+
+
+for _k, _r in enumerate(ENDINGS):
+    _ending_title(_k, _r)

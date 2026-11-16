@@ -31,6 +31,11 @@
 // shelf no longer hides you. The one move left is the Door sentence, and lying down beside it. The
 // guest made It is remembered for the Dollhouse (api.shared "it"); three of Ruth's marks are stitched
 // into the cloth's hem and cross into the book's glossary.
+//
+// Phase 3 (DESIGN.md section 21, built 2026-11-16): lying beside the board puts your eye at the cloth's
+// height, and under its turned hem is Ruth's newest pattern, with her line 6 in red wool along the
+// edge: a piece of the selvage (stages.js), kept if you held still while they found you. On a later
+// playthrough (api.shared "turns") Ruth's peg starts one space on.
 import { artKit, PEG } from "./art-kit.js";
 import { runStages, stagePicker } from "./stages.js";
 const PRE = "stuffed-ones-parlour-";
@@ -141,7 +146,7 @@ function run(root, api, flow) {
     let watchSeen = false, watches = [], watchI = 0, watchState = "none", watchT = 0, stepSaid = 0, personalSaid = false, firstSaid = false;
     const pops = [];
     // phase 1: the peg that is nobody's, It, and the Door sentence
-    const ruth = { at: RUTH_START + stage, moves: 0 };
+    const ruth = { at: RUTH_START + stage + (flow.S.turns() ? 1 : 0), moves: 0 };
     let it = null, sentenceSaid = false, lying = false, foundAt = -1, ruthSaid = false;
     const groupDread = () => BASE_DREAD + (dread.noor + dread.wes + dread.ana) / 3;
     const onDoor = () => pegs.every((p) => p.at === 0);
@@ -519,9 +524,10 @@ function run(root, api, flow) {
     }
     function sentenceEnd(moved) {
       const gd = Math.round(groupDread());
+      const hem = moved ? "" : (flow.S.piece(6) ? " And lying there, eye to the cloth, you saw what the hem was folded over: tissue, pencilled RUTH, cut to be cut again, and along its edge her line 6 in red wool. It is in your selvage now." : " Under the cloth's hem, the tissue is still there.");
       if (moved) { dread.noor += 15; finishWith("lose", `They are in the doorway when you move. Noor sees the cat's head turn and screams, and the three pegs go over with the table. A slip: one memory goes, and nobody remembers what the board said. ${it ? it.gu.name + " is still It." : ""}`); return; }
-      if (gd >= 50) finishWith("win", `They come in and find three pegs on the Door, and a felt cat lying beside the board with one paw on the cloth. ${PROOF ? "Wes holds the photograph beside it, then puts it down. " : ""}Nobody laughs. Noor reads it out loud, once: leave. Group dread ${gd}: the flee line falls from ${FLEE} to ${FLEE - 15}. Wes puts you back on the shelf with two fingers, and goes to look at where the car keys are.`);
-      else finishWith("done", `They come in and find three pegs on the Door and a cat beside the board. Group dread ${gd}, under 50: Wes says “Seriously, stop messing around.” and they take it for one another's joke. The sentence was said. It was not heard.`);
+      if (gd >= 50) finishWith("win", `They come in and find three pegs on the Door, and a felt cat lying beside the board with one paw on the cloth. ${PROOF ? "Wes holds the photograph beside it, then puts it down. " : ""}Nobody laughs. Noor reads it out loud, once: leave. Group dread ${gd}: the flee line falls from ${FLEE} to ${FLEE - 15}. Wes puts you back on the shelf with two fingers, and goes to look at where the car keys are.${hem}`);
+      else finishWith("done", `They come in and find three pegs on the Door and a cat beside the board. Group dread ${gd}, under 50: Wes says “Seriously, stop messing around.” and they take it for one another's joke. The sentence was said. It was not heard.${hem}`);
     }
     function leave() { if (over || climbing >= 0 || lying) return; setStill(false); climbing = 0; undoBtn.disabled = true; leaveBtn.disabled = true; stillBtn.disabled = true; drag = null; }
     function finishWith(kind, text) {

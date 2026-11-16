@@ -11,7 +11,29 @@
 //   it       "noor" | "wes" | "ana"       Parlour, the guest made It  -> Dollhouse: who wedged the chair
 //   jamie    "mended" | "open"            Stitchwork, Jamie's Seam    -> (3D; written into the design)
 //   glossary [words]                      Ruth's marks met in any mode -> The Hand-Sewn Book, the backs
+//
+// Phase 3 (DESIGN.md section 21, built 2026-11-16): the long puzzle, the selvage. Ruth's sentence is six
+// lines. The book holds three on its backs (spreads I, III and V); she copied the other three onto her
+// own tissue patterns, which turn up in Stuffing (under your pattern), the Dollhouse (the cupboard
+// shelf) and Parlour (under the cloth's hem). Stitchwork's ripper uncovers Mabel's pencil key to three
+// marks. Each piece is written here; the selvage view (the button on every how-to card) shows what is
+// gathered. The Labyrinth's last stage is where it is set in order and paid off.
+//   selvage  [line numbers]   pieces gathered        selvage_read true   set in order at the threshold
+//   threshold "in" | "held"   walked in, or held     page [marks]        the line sewn in The Page
+//   turns    n                finished runs (a selvage paid off); 1 or more is a second playthrough
 const P = "stuffed-ones-stage-";
+export const BACK_ART = { seven: "glyph-back-01-seven", play: "glyph-back-02-play", stay: "glyph-back-03-stay", warm: "glyph-back-04-warm", cold: "glyph-back-05-cold", company: "glyph-back-06-company",
+  still: "glyph-back-07-still", go: "glyph-back-08-go", unpick: "glyph-back-09-unpick", cut: "glyph-back-10-cut", i: "glyph-back-11-i", mother: "glyph-back-12-mother", hunger: "glyph-back-13-hunger", home: "glyph-back-14-home" };
+// Ruth's six lines in her order (games/stuffed-ones/data/book.json, backs.lines), and where each is found.
+export const LINES = [
+  { n: 1, marks: ["i", "seven", "still", "play"], reads: "I am seven still. I play.", where: "The Hand-Sewn Book: the back of spread I", sheet: null },
+  { n: 2, marks: ["mother", "cut", "i", "warm"], reads: "Mother cut me warm.", where: "Stuffing: under your own pattern, the second night", sheet: "ruth-pattern-1-seven" },
+  { n: 3, marks: ["hunger", "play", "company", "stay", "i", "warm"], reads: "When the hunger plays, company stays, and I am warm.", where: "The Hand-Sewn Book: the back of spread III", sheet: null },
+  { n: 4, marks: ["company", "go", "i", "cold", "mother", "cut"], reads: "When company goes I am cold, and Mother cuts again.", where: "Dollhouse: the linen cupboard's shelf, night two", sheet: "ruth-pattern-2-larger" },
+  { n: 5, marks: ["unpick", "seven", "cut", "mother", "still", "i", "go", "home"], reads: "Unpick the seven; cut while Mother is still; I go home.", where: "The Hand-Sewn Book: the back of spread V", sheet: null },
+  { n: 6, marks: ["i", "go", "cold", "play", "stay", "still", "company", "home"], reads: "I go cold. The play stays still. Company goes home.", where: "Parlour: under the cloth's hem, lying beside the board", sheet: "ruth-pattern-4-recut" },
+];
+export const ALL_MARKS = Object.keys(BACK_ART);
 export const STAGES = ["Teach", "Test", "Twist"];
 
 export function stageKit(api) {
@@ -23,6 +45,14 @@ export function stageKit(api) {
     reach(n) { try { if (clamp(n) > clamp(api.store.get("stage", 0))) api.store.set("stage", clamp(n)); } catch { /* storage off */ } },
     get, set,
     knows: (w) => { const gl = get("glossary", []); return Array.isArray(gl) && gl.includes(w); },
+    // the selvage: a piece gathered (a line number), the pieces so far, and whether this is a later run
+    piece(n) {
+      const have = get("selvage", []), list = Array.isArray(have) ? have.slice() : [];
+      if (list.includes(n)) return false;
+      set("selvage", list.concat([n]).sort((a, b) => a - b)); return true;
+    },
+    pieces() { const v = get("selvage", []); return Array.isArray(v) ? v.filter((n) => n >= 1 && n <= 6) : []; },
+    turns() { const v = get("turns", 0); return typeof v === "number" && v > 0 ? v : 0; },
     // Ruth's marks met outside the book: returns the ones that were new
     learn(words) {
       const gl = get("glossary", []), have = Array.isArray(gl) ? gl.slice() : [];
@@ -53,6 +83,20 @@ function css(pal) {
 .${P}pick button:disabled{opacity:.42;cursor:not-allowed}
 .${P}pick button:focus-visible{outline:3px solid ${ac}!important;outline-offset:1px}
 .${P}note{position:absolute;left:50%;transform:translateX(-50%);bottom:74px;z-index:7;width:min(440px,calc(100% - 28px));box-sizing:border-box;background:${bg};color:${fg};border-left:6px solid ${ac};padding:9px 14px;font:italic 15px/1.4 'IM Fell English',Georgia,serif;pointer-events:none;transition:opacity .6s;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+button.${P}selv{display:block!important;width:100%!important;margin:10px 0 0!important;min-height:44px;font:600 13px Karla,Arial,sans-serif!important;text-align:left;padding:8px 12px!important;cursor:pointer;background:rgba(246,241,228,.5)!important;color:#2a211b!important;border:1.5px solid #b8322a!important;border-left-width:6px!important;border-radius:0!important;outline:0!important;box-shadow:none!important}
+button.${P}selv:focus-visible{outline:3px solid ${ac}!important;outline-offset:2px}
+.${P}sv{z-index:30}
+.${P}book{width:min(560px,100%)}
+.${P}book ol{margin:6px 0 0;padding:0 0 0 22px;max-height:min(56vh,520px);overflow:auto}
+.${P}book li{margin:0 0 10px;font:14px/1.35 Karla,Arial,sans-serif}
+.${P}book li.${P}miss{opacity:.62;font-style:italic}
+.${P}marks{display:flex;flex-wrap:wrap;gap:4px;margin:0}
+.${P}marks figure{margin:0;width:40px;text-align:center}
+.${P}marks img{width:40px;height:48px;display:block;object-fit:cover;object-position:top;border:1px solid rgba(0,0,0,.25)}
+.${P}marks figcaption{font:600 11px Karla,Arial,sans-serif;color:#b8322a}
+.${P}book q{display:block;margin:4px 0 0;font:italic 16px/1.35 'IM Fell English',Georgia,serif;color:#b8322a}
+.${P}found{display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:start}
+.${P}found img{grid-row:span 2;width:54px;height:74px;object-fit:cover;border:1px solid ${ac}}
 .${P}note b{font:700 11px Karla,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;display:block;font-style:normal;opacity:.8}
 </style>`;
 }
@@ -74,7 +118,67 @@ export function stagePicker(host, api, stage, blurbs, onPick) {
     row.appendChild(b);
   });
   host.appendChild(row);
+  selvageButton(host, api);
   return row;
+}
+
+// The selvage: a small notebook page of Ruth's six lines, the ones gathered in her red wool. Reachable
+// from every mode's how-to card and from the card between stages.
+export function selvageButton(host, api) {
+  const S = stageKit(api), n = S.pieces().length;
+  const b = document.createElement("button");
+  b.type = "button"; b.className = P + "selv";
+  b.innerHTML = css(api.palette || {});
+  b.append(document.createTextNode(n ? `Ruth's selvage · ${n} of 6 lines` : "Ruth's selvage · nothing yet"));
+  b.addEventListener("click", (e) => { e.preventDefault(); selvageView(host.closest(".play") || host.closest("[class$='-wrap']") || document.body, api); });
+  host.appendChild(b);
+  return b;
+}
+export function selvageView(root, api) {
+  const S = stageKit(api), got = S.pieces(), art = api.art;
+  const known = (w) => S.knows(w) || S.get("selvage_read", false) === true;
+  const veil = document.createElement("div");
+  veil.className = P + "veil " + P + "sv";
+  veil.innerHTML = css(api.palette || {}) + `<div class="${P}card ${P}book" role="dialog" aria-label="Ruth's selvage"><small>The selvage · ${got.length} of 6 lines</small><h3>Ruth's sentence</h3><p>Her lines, in red wool, read right to left. A mark you have met elsewhere names itself.</p><ol></ol><div><button type="button">Close</button></div></div>`;
+  const ol = veil.querySelector("ol");
+  LINES.forEach((ln) => {
+    const li = document.createElement("li");
+    if (!got.includes(ln.n)) { li.className = P + "miss"; li.textContent = `Not found yet · ${ln.where}`; ol.appendChild(li); return; }
+    const marks = document.createElement("span"); marks.className = P + "marks";
+    ln.marks.slice().reverse().forEach((w) => {
+      const f = document.createElement("figure");
+      const u = art && art.has && art.has(BACK_ART[w]) ? art.url(BACK_ART[w]) : "";
+      if (u) { const im = document.createElement("img"); im.src = u; im.alt = ""; f.appendChild(im); }
+      const c = document.createElement("figcaption"); c.textContent = known(w) ? (w === "i" ? "I" : w) : "?";
+      f.appendChild(c); marks.appendChild(f);
+    });
+    li.appendChild(marks);
+    if (ln.marks.every(known)) { const q = document.createElement("q"); q.textContent = ln.reads; li.appendChild(q); }
+    ol.appendChild(li);
+  });
+  const close = () => { veil.remove(); document.removeEventListener("keydown", esc, true); };
+  const esc = (e) => { if (e.key === "Escape") { e.stopPropagation(); close(); } };
+  document.addEventListener("keydown", esc, true);
+  veil.querySelector("button").addEventListener("click", close);
+  veil.addEventListener("click", (e) => { if (e.target === veil) close(); });
+  root.appendChild(veil);
+  veil.querySelector("button").focus();
+  return { close };
+}
+
+// A piece of the selvage found: a strip with the sheet's picture and the line in her marks.
+export function foundNote(wrap, api, n, ms = 9000) {
+  const S = stageKit(api), fresh = S.piece(n), ln = LINES[n - 1];
+  const el = document.createElement("div");
+  el.className = P + "note " + P + "found"; el.setAttribute("role", "status");
+  el.innerHTML = css(api.palette || {});
+  if (ln.sheet && api.art && api.art.has && api.art.has(ln.sheet)) { const im = document.createElement("img"); im.src = api.art.url(ln.sheet); im.alt = ""; el.appendChild(im); }
+  const b = document.createElement("b"); b.textContent = fresh ? `A piece of the selvage · ${S.pieces().length} of 6` : "A piece of the selvage, again";
+  el.append(b, document.createTextNode(`Ruth's line ${n}, in red wool along the edge of her pattern, copied from the back of the book. It is in your selvage now.`));
+  wrap.appendChild(el);
+  const t1 = setTimeout(() => { el.style.opacity = "0"; }, ms);
+  const t2 = setTimeout(() => el.remove(), ms + 700);
+  return { fresh, remove() { clearTimeout(t1); clearTimeout(t2); el.remove(); } };
 }
 
 // A quiet strip that says a layer link has fired: "Because you ... in ...".
@@ -128,6 +232,7 @@ export function runStages(root, api, run, blurbs) {
         go.textContent = `Go on: ${STAGES[stage + 1]}`;
         go.addEventListener("click", () => start(stage + 1, false));
         veil.querySelector('[data-go="stop"]').addEventListener("click", () => { if (veil) { veil.remove(); veil = null; } api.end(result); });
+        selvageButton(veil.querySelector("." + P + "card"), api);
         root.appendChild(veil);
         go.focus();
       },

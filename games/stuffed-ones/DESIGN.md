@@ -384,7 +384,7 @@ Every chapter below lists its scenes in order. Flags named are declared in `data
 
 ### Chapter 15: The Cycle Continues (4 min)
 
-- One of `e_cycle_shelf`, `e_warning_unpick`, `e_empty_toy`, `e_keeper_porch` (section 13). The profile shelf is written (section 12, "The loop"). Credits roll over the shelf.
+- One of `e_cycle_shelf`, `e_warning_unpick`, `e_empty_toy`, `e_keeper_porch` or (phase 3, a proposal) `e_page_circle` (section 13). The profile shelf is written (section 12, "The loop"). Credits roll over the shelf, or, for The Page, over the dark of the ritual room.
 
 ## 9. 3D scenes
 
@@ -441,6 +441,7 @@ Cameras: **guest camera**, first person at 1.65 m, walk 1.4 m/s, run 3.2 m/s (Ac
 | `e_empty_toy` | Shelf | Shelf, locked | — | Grey | Others leaving the shelf | 2 min | fade / fade |
 | `e_warning_unpick` | Kitchen table | Shelf height, on the table | — | Flat lamp | Scissors, thread | 2 min | fade / fade |
 | `e_keeper_porch` | Porch | Guest | — | Afternoon | A car arriving | 2 min | fade / fade |
+| `e_page_circle` (phase 3) | Ritual room, inside the circle of skins | Toy height, fixed; one interaction: Sew your page | The book on the lectern (a picker of the marks the player has learned, 3 to 6) | No amber anywhere; one grey shaft from the open trapdoor | Silence: no pulse. Thread pulled through linen | Page sewn → black, "I don't know how long I've been down here." (ch 1) | fade / fade |
 
 ## 10. 2D modes
 
@@ -690,6 +691,7 @@ What the ending writes:
 | Empty Toy | The same, since the others herd them |
 | Warning | Nothing; three empty places |
 | Keeper | Jamie, Lila, Marcus and Dani, as the shelf you keep |
+| The Page (phase 3) | Each herded guest, as in the Cycle (the friends herded them); and `book.player_page`, the line you sewed. The cat is not on the shelf: one clean place in the dust where it sat |
 
 What the next run changes:
 
@@ -700,6 +702,7 @@ What the next run changes:
 | Four Act 1 incidents are theirs | The smell (I3), the warmth (I4), the toy at the top of the stairs and the one outside Lila's door (I8) are done by last run's guests in their forms; one habit of each carries over (Noor's hum is the giggle's pitch; Wes's camera strap fabric is the bear's collar; Ana's toy faces the window "so it isn't alone") |
 | The book | Spreads read before start already ordered, so the Keeper ending is within reach |
 | Elders in Act 3 | The shelf's guests have "button eyes that haven't yet learned to hunger" and are learning: three extra toys with their own hunger who slip on their own (`elders.slips`), which you can vent by leading them, like friends |
+| Your page (phase 3) | The book holds the page you sewed as a page with no front, numbered with your strokes and read right to left like Ruth's; and the backs are readable from the first sitting (`a3_book_1`) |
 | Previous ending | Warning: three empty places on the shelf, and a printed listing on the fridge ("Cheap. Close to the hiking trails."). Empty Toy: one toy on the top shelf never moves, and in Act 2 you feel it awake. Keeper: a third figure stands in the keepers' lit window and never comes out |
 
 The shelf keeps one generation. Older entries move to the circle of torn fabric skins: in run 3 and later, the ritual room's skins carry the patterns of the run-before-last's guests.
@@ -713,31 +716,43 @@ The resolver checks endings in priority order at the end of a run and returns th
 | 1 | `keeper` | The Keeper | No | `{"is": "altar.choice", "eq": "stitch"}` |
 | 2 | `warning` | The Warning | No | `{"all": [{"is": "guests_fled", "eq": true}, {"is": "memory.kept", "gte": 5}]}` |
 | 3 | `empty_toy` | The Empty Toy | No | `{"any": [{"ledger": "hunt_log", "count_gte": 5, "where": {"joined": false}}, {"is": "seams.all_wadded", "eq": true}]}` |
-| 4 | `cycle` | The Cycle | **Yes** | `true` |
+| 4 | `the_page` | The Page (phase 3; a proposal) | No | `{"all": [{"is": "book.backs_read", "gte": 6}, {"is": "threshold.walked_in", "eq": true}]}` |
+| 5 | `cycle` | The Cycle | **Yes** | `true` |
 
 ### The Keeper
 
 - **Plain words:** you read all six spreads before the ritual room closed, and at the altar you chose to stitch, and finished the binding seam.
 - **Final scenes:** `a5_altar_stitch`, `e_keeper_porch`. A cut to an ordinary afternoon on the porch. Mabel and Ruth stand either side of you. Through the window, four toys sit on the north shelf: a bear, a rabbit, a dog, a bear. A car comes up Ridgeway Road. Your hands, when they move at the edge of the frame, move at the keepers' pace, slowly, "like they were afraid of breaking" (ch 1); nothing explains it. You are given one input, **Speak**.
 - **Last line:** you say "They like company." The cost: you are whole, and your friends are on your shelf.
+- **Cost added (accepted 2026-11-15, built 2026-11-16, phase 3):** your first task is to re-cut Ruth's pattern, a size larger, at the table where Mabel sat; you replace her there. On the porch Mabel, for the first time in the game, sits down (the ladder-back chair in the ending card).
 
 ### The Warning
 
 - **Plain words:** the group's dread reached 70 before the third morning while you still held at least five memories, so they left alive.
 - **Final scenes:** `c13_flight`, then `e_warning_unpick`. On the kitchen table, at toy height. Ruth's hands. The scissors. The thread pulled; with each seam opened, the blurred edge of the view widens to white. Before the last seam, the game plays your five (or more) kept memories back as single lines in the journal, one per seam.
 - **Last image:** the printed listing on the fridge: "Cheap. Close to the hiking trails." The cost: you saved three strangers and were unmade for it; your friends stay on the shelf.
+- **Cost added (accepted 2026-11-15, phase 2 read):** if you mended Jamie (`jamie.seam` mended), he is on the shelf across the kitchen, hungry, watching it done.
 
 ### The Empty Toy
 
 - **Plain words:** you held for all five games and joined none; or (accepted 2026-11-15) you packed all six seams with wadding at a Stuffing, so that no game could be joined. Either way you keep nothing; the second way it is done by hand.
 - **Final scenes:** `c14_hold_shelf`, then `e_empty_toy`. The others climb down, the guests go below, and you watch it all in a fixed view you cannot turn. Morning. The new stuffed ones arrive on the shelf. Mabel dusts around you.
 - **Last line:** "And the worst part? / We were awake." (ch 15)
+- **Cost:** you keep nothing, the guests go down all the same, and you are awake for every minute of it. Chosen by hand (wadding), it is played, not waited out.
 
 ### The Cycle (as written)
 
 - **Plain words:** everything else: you played the hunt (in whole or in part) and the guests went down. This is what follows when the player keeps to the novel's path: joins the games, spends memories on the hunt, lets go at the door.
 - **Final scenes:** `c14_labyrinth_inner`, then `e_cycle_shelf`. "I sit on my shelf now, waiting." The new stuffed ones "stare back at me with button eyes that haven't yet learned to hunger." Car doors. Laughter. If any memories remain, one is shown and unravels.
 - **Last line:** "And we are so very hungry." (ch 33)
+- **Cost made visible (accepted 2026-11-15, built 2026-11-16, phase 3):** the new stuffed ones carry what you used against them. The guest you made It in Parlour (`parlour.it`) sits beside you on the shelf facing the door. The text and condition of the ending are unchanged.
+
+### The Page (phase 3; a proposal, not the author's ending)
+
+- **Plain words:** you read all six of Ruth's backs (`book.backs_read` 6; three are in the book, three she copied onto her own patterns), the selvage sentence that says how a bound thing is let go, and at the end of the Chase, at the centre doorway, you walked in after the guests instead of holding it (`threshold.walked_in`).
+- **Final scenes:** `c14_labyrinth_inner`, then `e_page_circle`. You lie down inside the "circle of torn fabric skins" (ch 11). The pulse goes out of you. On the lectern's open book is a new page with no front; you sew a line of your own on it, three to six of Ruth's marks, only marks you have learned (`book.player_page`). Black.
+- **Last line:** "I don't know how long I've been down here." (ch 1): the novel's first line, spoken from the circle.
+- **Cost:** the guests went down all the same (your friends herd them without you), your friends hunt without you, and you are awake in the dark with no pulse for company. **What it buys:** your page is in the next run's book, a page with no front, the line the next player translates.
 
 ### Reaching each one on purpose
 
@@ -746,9 +761,10 @@ The resolver checks endings in priority order at the end of a run and returns th
 | Keeper | Keep at least six of the eight incidents; find all six exploration pages (guestbook, game box, shed, bear's seam, sampler, lectern); translate fast in the ritual room. Easiest on a second run, when earlier spreads carry over |
 | Warning | Earn many memory tokens (Shelve early, stay with the friends); pack precious memories away from the Head and Legs; join Sound and Movement hard; use Personal tampers in Parlour; Scent and Proximity if needed; watch for bags by the door at 60 and push past 70 before 06:00 on day 3 |
 | Empty Toy | Choose Hold at all five games, or pack every slot of all six seams with wadding at any Stuffing |
-| Cycle | Play the hunt. The default for anyone who joins the games and does not reach the flee line |
+| The Page | Read all six backs: the three in the book (spreads I, III, V, at any sitting), and the three Ruth copied onto her patterns (under your own in the second Stuffing; on the linen-cupboard shelf when the heap spills out; under the counting-game cloth's hem, seen lying beside the board after the Door sentence). Then join the Chase, and at the centre doorway set her lines in order and walk in |
+| Cycle | Play the hunt. The default for anyone who joins the games and does not reach the flee line; and the ending of a player who read the whole selvage and held the doorway anyway |
 
-No two can both hold, because the resolver takes the first true in priority order. Keeper ends the run in chapter 5, before any hunt flag is written. Warning ends the run at the flight, before the Chase. A run with every game refused cannot reach the flee line: the pack's rhythm share stays near 20.
+No two can both hold, because the resolver takes the first true in priority order, and the conditions also exclude each other in play. Keeper ends the run in chapter 5, before any hunt flag is written. Warning ends the run at the flight, before the Chase. A run with every game refused, or with every seam wadded, never reaches the doorway, so `threshold.walked_in` stays false and The Page cannot hold with the Empty Toy. The Page and the Cycle are told apart by one choice at the doorway: walking in sets `threshold.walked_in`; holding sets `threshold.held`. The doorway is shut to a toy whose selvage is not whole, so a player who keeps to the story's own path (does not gather all six lines, or holds) reaches the Cycle, as written.
 
 ## 14. UI and HUD
 
@@ -833,9 +849,9 @@ collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg
 | File | Holds |
 | --- | --- |
 | `data/game.json` | Title, source, 120–150 target, 15 chapters (149 minutes), layers per chapter |
-| `data/scenes.json` | 2 modes (`dollhouse`, `labyrinth_above`), 4 1D games, 60 scenes (40 3D, 6 2D, 14 1D), with reads, writes, transitions and next. Four were added for phase 2 on 2026-11-16: `a2_gerald`, `a4_sixty_knots`, `c11_cupboard_shut`, `c13_jamies_seam` |
-| `data/flags.json` | 70 names: flags, meters, counters and 7 ledgers (`incident_log`, `memory_log`, `hunt_log`, `shelf.generations`, `book.carried`, `borrowed.kept`, `glossary.ruth`). Nine were added for phase 2 on 2026-11-16: `gerald.promised`, `knots.seen`, `collar.seen`, `ruth.patterns_seen`, `map.kept`, `book.backs_read`, `glossary.ruth`, `jamie.seam`, `lila.hum_kept`. Nine were added for phase 1 on 2026-11-15: `borrowed.kept`, `seams.wadded`, `seams.all_wadded`, `parlour.ruth_peg`, `parlour.it`, `parlour.sentence`, `flee_line`, `cupboard.opened`, `threshold.held` |
-| `data/endings.json` | The four endings above |
+| `data/scenes.json` | 2 modes (`dollhouse`, `labyrinth_above`), 4 1D games, 61 scenes (41 3D, 6 2D, 14 1D), with reads, writes, transitions and next. Four were added for phase 2 on 2026-11-16: `a2_gerald`, `a4_sixty_knots`, `c11_cupboard_shut`, `c13_jamies_seam`; one for phase 3 the same day: `e_page_circle` (the ritual room, in its build file) |
+| `data/flags.json` | 70 names: flags, meters, counters and 7 ledgers (`incident_log`, `memory_log`, `hunt_log`, `shelf.generations`, `book.carried`, `borrowed.kept`, `glossary.ruth`). Nine were added for phase 2 on 2026-11-16: `gerald.promised`, `knots.seen`, `collar.seen`, `ruth.patterns_seen`, `map.kept`, `book.backs_read`, `glossary.ruth`, `jamie.seam`, `lila.hum_kept`. Nine were added for phase 1 on 2026-11-15: `borrowed.kept`, `seams.wadded`, `seams.all_wadded`, `parlour.ruth_peg`, `parlour.it`, `parlour.sentence`, `flee_line`, `cupboard.opened`, `threshold.held`. Three were added for phase 3 on 2026-11-16: `threshold.walked_in`, `book.player_page` (a fifth profile key) and the ledger `guest.patches_kept`; `shelf.previous_ending` gained `the_page` |
+| `data/endings.json` | The five endings above (The Page added in phase 3, priority 4; the Cycle moved to 5 and is unchanged otherwise) |
 
 Beyond the shared schemas, six extra files, each with a schema in `data/schemas/<name>.schema.json` and all checked by `tools/check_data.py` (which `tools/validate.py` runs):
 
@@ -923,15 +939,15 @@ The author accepted the deep dive (`DEEP_DIVE.md`) whole on 2026-11-15, includin
 | 11 | The Statue at the Threshold | Source ch 31–32; staging new | The end of `c14_labyrinth_inner` | **Phase 1** |
 | 12 | The Cycle Continues | Source ch 33, as written | `e_cycle_shelf` | Before |
 
-**Endings.** The four in section 13 stand, and the resolver is unchanged except that the Empty Toy can now be chosen by hand.
+**Endings.** The four in section 13 stand, the Empty Toy can now be chosen by hand, and phase 3 adds The Page (section 13) at priority 4, before the Cycle.
 
 | Ending | What the accepted story adds to its cost | Phase |
 | --- | --- | --- |
 | The Cycle (as written; text and conditions unchanged) | The new stuffed ones carry what you used against them: the guest you made It faces the door | 3 (the flag `parlour.it` is written now) |
 | The Warning | If you mended Jamie he is still on the shelf, hungry, watching (`e_warning_unpick` reads `jamie.seam`). The Door sentence can lower its line to 55 | The sentence: **1**. Jamie: **2** |
 | The Empty Toy | It is played: you pack yourself with nothing (wadding) | **1** |
-| The Keeper | Your first task is to re-cut Ruth's pattern; you replace Mabel at the table | 3 |
-| The Page (new, fifth) | Read all six backs, and at the threshold walk into the centre after the guests instead of holding the doorway. You lie down in the "circle of torn fabric skins" (ch 11) and sew a page of your own into the book; it is where the novel's first line is spoken from: "I don't know how long I've been down here." (ch 1). Cost: the guests went down, your friends hunt without you, and you are awake in the dark with no pulse for company. It buys your page in the next run's book | 3. Not in `data/endings.json` yet; the Cycle stays the only `as_written` ending |
+| The Keeper | Your first task is to re-cut Ruth's pattern; you replace Mabel at the table, and Mabel sits down | **3** (in `endings.json` and section 13) |
+| The Page (new, fifth) | Read all six backs, and at the threshold walk into the centre after the guests instead of holding the doorway. You lie down in the "circle of torn fabric skins" (ch 11) and sew a page of your own into the book; it is where the novel's first line is spoken from: "I don't know how long I've been down here." (ch 1). Cost: the guests went down, your friends hunt without you, and you are awake in the dark with no pulse for company. It buys your page in the next run's book | **3**: `the_page` in `data/endings.json`, scene `e_page_circle`; the Cycle stays the only `as_written` ending |
 
 **Built in this pass (phase 1).** Each is in the section it belongs to, in `data/`, and playable in the web build.
 
@@ -981,9 +997,35 @@ The author accepted the deep dive (`DEEP_DIVE.md`) whole on 2026-11-15, includin
 | 2 | Stuffing (1D): "Lila's hum" kept through a packing | Lila does not walk in the next Dollhouse night (2D) | `lila.hum_kept` | Playable: any Stuffing stage to Dollhouse stage 3 |
 | 3 | Parlour (1D): the guest made It | Who finds the toy in the morning and wedges the chair (3D, `c11_cupboard_shut`), and who comes out under the hall light in the heap (2D) | `parlour.it` | Playable for the heap: Parlour stages 2 or 3 to Dollhouse stage 3. The 3D end is in `data/` and the upstairs-hall build file |
 
-**Waiting.** Phase 3, the loop: The Page, the player-composed line carried in the profile, the second-run changes (Ruth's peg one space on, one more knot, backs readable from the first sitting), guest patches, the Cycle carrying your tampers, the Keeper re-cutting Ruth, Mabel sitting down, and the selvage's last four lines and its payoff at the threshold.
+**Built in phase 3 (2026-11-16): the loop.** The author wrote "start phase 3"; every held-back decision stands. All three phases are now built.
 
-**Scenes to add** (phase 3): The Page's ending scene.
+| Item | Where in this design | Flags | Playable in |
+| --- | --- | --- | --- |
+| The Page, the fifth ending | Section 13; section 9 (`e_page_circle`) | `threshold.walked_in`, `book.player_page` | `labyrinth.js`, third stage: walk in at the doorway; the menu's finale. `e_page_circle` is 3D (ritual-room build file) |
+| The selvage sentence, settled, and its payoff | Section 11, the Hand-Sewn Book; `data/book.json` `backs.selvage` | `book.backs_read` (6), `glossary.ruth` | Gathered across the modes (below); set in order, named and paid off at the Labyrinth's doorway |
+| The player-composed line, carried to the next run | Section 12, the loop; `data/profile.json` | `book.player_page` (profile) | Sewn in `labyrinth.js`; read in `hand-sewn-book.js`, third stage, on a later run |
+| The second-run changes | Section 12, the loop | `run.number`, `book.player_page` | Below |
+| Guest patches | Section 11, Stuffing; `data/memories.json` `guest_patches` | `guest.patches_kept` | `stuffing.js`, second stage |
+| Costs added to every ending | Section 13; `data/endings.json` summaries | `parlour.it`, `jamie.seam` | The Cycle's and the Page's cards behind the Labyrinth's result; the Empty Toy's behind Stuffing's |
+| Ruth's patterns redrawn; a page with no front; ending-card lettering | `art/src/80_documents.py`, `60_chapters.py` | | Shown when a piece is found, in the selvage view, and over the ending cards |
+
+**The long puzzle, as built.** Ruth's sentence is six lines (`data/book.json`, `backs`). Each mode that holds a piece writes it to the game's shared storage, and every how-to card and every card between stages has a button that opens the selvage: the six lines in her red wool, read right to left, each mark named only where the player has met it.
+
+| Line | Reads (written for the game) | Found in |
+| --- | --- | --- |
+| 1 | I am seven still. I play. | The Hand-Sewn Book, third stage: the back of spread I |
+| 2 | Mother cut me warm. | Stuffing, second stage: when Ruth turns you over on her evening round, the tissue lifts, and her first pattern is under yours |
+| 3 | When the hunger plays, company stays, and I am warm. | The Hand-Sewn Book, third stage: the back of spread III |
+| 4 | When company goes I am cold, and Mother cuts again. | Dollhouse, third stage: her second pattern slides off the cupboard shelf with the heap |
+| 5 | Unpick the seven; cut while Mother is still; I go home. | The Hand-Sewn Book, third stage: the back of spread V (new to the web build in phase 3) |
+| 6 | I go cold. The play stays still. Company goes home. | Parlour, after the Door sentence: lying beside the board, eye to the cloth, her newest pattern under the hem |
+| Key | mother, cut, unpick | Stitchwork, second stage: under Ruth's five stitches, once the ripper has them out in order, Mabel's pencil key on her third pattern |
+
+When all six are in, the Labyrinth's last stage changes at the doorway: the selvage runs along the wallpaper, and standing in the doorway opens it. The player sews the six lines in her order (her strokes number them; a wrong line costs 4 hunger), names by elimination any mark never met (4 hunger a wrong name), and the sentence pulls taut: how a bound thing is let go. Then the centre opens. **Walk in** and you sew a line of your own, three to six marks you know, and the stage ends on The Page's card; **hold the doorway** and the statue plays as before and ends on the Cycle's card. The menu's finale (`loading.js`) shows the ending the doorway earned, with its card.
+
+**The second playthrough, as built.** A doorway resolved after the sentence was read counts a finished run (shared `turns`). On a later run, without being told: the Hand-Sewn Book's first stage shows Ruth's red wool through the linen under spread I, and its last stage ends on a page that was not there before, the line the last player sewed, numbered with their strokes, to be read right to left like hers; Parlour's bone peg starts one space on (the Hat, not the Tree); and the Labyrinth's old thread is run by the other group, Sol, Rosa and Kit, with Kit kneeling at the doorway and asking about the page, and, if you walked in last time, your own way into the centre is woven in beside the old route. A first run has none of these.
+
+**Still not built.** Every 3D scene is a design until it is built in Blender from its location's build file (`e_page_circle` included). The full game's profile, Group C through all of Act 3, the elders, and the shelf of named toys are designed (sections 6 and 12) and shown in the web build only as far as the table above says. One more knot on the door-frame and the other group in Acts 2 and 3 as a whole are 3D-only and not playable in the web build.
 
 ## 22. Added for the game
 
@@ -1003,6 +1045,8 @@ Everything below is a proposal, not the author's text, except where it is marked
 
 **Added while building phase 2, beyond the deep dive, for the author to approve or strike:** Ruth's six lines on the backs (`data/book.json`, `backs.lines`; those of spreads 1 and 3 are in play, the other four are drafts) and the rule that she numbered her strips with her own strokes and that a back is read right to left; which three marks each place teaches (play, company, stay on the cloth's hem; warm, cold, hunger in Mabel's pencil; still, go, home on the wallpaper); what the two mirrors show (Ana the stair, Wes the landing); Lila's speed, her goal (a guest's bedside) and the 0.9 m within which the cat holds her; the test-stage herd split with one guest on each side of the cat; the old thread's three wrong turns, their order, the rule that a guest never goes back for a door it has turned from, and hunger +8 for a door taken; Ana's line when she lifts the cat ("How did you get down here?"); Ruth's five tightening stitches as what the ripper undoes; the eye strip's numbers (three sightings, 150 s) and Wes as the one watching; the lines the guests speak at the table in Marcus's strap; what Dani says on the landing ("Don't tell."); the guests putting every toy in a different room when the photograph proves a tamper; the fourth packing's starting layout and its numbers; every other number in the phase-2 rules.
 
-**Accepted 2026-11-15, not yet built (phase 3):** the hunger as something that answered Mabel's request for a warm toy (stated in section 21; shown only through Ruth so far); Ruth as the bound child, re-cut to seem to age (seeded by the knots, the patterns and the backs; said outright only by the full selvage); Mabel's want for an heir to the needle and the scattered pages as an audition; Mabel sitting down on the Keeper's porch; Jamie's glow running cool; guest patches; the Cycle carrying your tampers and the Keeper re-cutting Ruth; The Page as a fifth ending, the novel's first line placed in the circle of skins, and the player-composed line carried to the next run; the second-run changes.
+**Accepted 2026-11-15, built 2026-11-16 (phase 3):** The Page as a fifth ending, the novel's first line placed in the circle of skins (`e_page_circle`), and the player-composed line carried to the next run (`book.player_page`); Ruth as the bound child, re-cut to seem to age, said outright by the full selvage and the finale; the selvage's six lines settled as one sentence; guest patches; the Cycle carrying your tampers (the guest made It faces the door) and the Keeper re-cutting Ruth; Mabel sitting down on the Keeper's porch; the second-run changes (backs readable from the first sitting, your page in the book, Ruth's peg one space on, the other group). Designed but not yet visible in play: the hunger as something that answered Mabel's request for a warm toy (stated in section 21 and the finale's reading); Mabel's want for an heir to the needle and the scattered pages as an audition; Jamie's glow running cool; one more knot on the door-frame (3D).
+
+**Added while building phase 3, beyond the deep dive, for the author to approve or strike:** which modes hold which of Ruth's lines, and that she copied lines 2, 4 and 6 onto her own patterns (a copy counts as the back read); Mabel's pencil key (mother, cut, unpick) on her third pattern under the ripper's stitches; the wording of all six lines and of the whole sentence (`data/book.json`); setting the lines in order at the doorway by her strokes, naming unknown marks by elimination, and 4 hunger for each wrong one; that the centre stays shut until the sentence is read; three to six marks for your page, only marks you know; the guest patches' names and recollections ("Noor at the mirror", "Wes's lamp, left on", "Ana talks to the toys", "Sol at the window, no birds", "Rosa's sketchbook", "Kit awake at three"); Kit's five lines at the doorway on a later run; the woven thread of your own walk in; the redrawn Ruth sheets' details (a darn in red wool, foxing, a thimble, a tape measure, the bone button, the column of pencil ticks at one height, the 7 written again and crossed through); the page with no front; the ending-card lettering; the finale's texts; Stitchwork's test stage at the design's ten stitches with 75 s (60 for the seam, 15 for the ripper); the Book's third stage reading spread V's back as well, with 175 s; the Empty Toy's and the Cycle's cards shown behind the modes' results.
 
 **Not added on purpose:** what happens behind the bedroom door in Act 2; any close view of an emptied body; Ruth below the collar; the child.

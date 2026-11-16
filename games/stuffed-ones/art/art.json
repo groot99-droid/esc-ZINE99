@@ -1,6 +1,6 @@
 {
  "game": "stuffed-ones",
- "count": 214,
+ "count": 220,
  "assets": [
   {
    "id": "letter-a",
@@ -1331,6 +1331,46 @@
    "row": "Parlour board, symbols, button pegs, scoresheet"
   },
   {
+   "id": "ending-title-cycle",
+   "group": "endings",
+   "title": "Ending lettering: The Cycle",
+   "w": 1200,
+   "h": 300,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-title-empty-toy",
+   "group": "endings",
+   "title": "Ending lettering: The Empty Toy",
+   "w": 1200,
+   "h": 300,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-title-keeper",
+   "group": "endings",
+   "title": "Ending lettering: The Keeper",
+   "w": 1200,
+   "h": 300,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-title-the-page",
+   "group": "endings",
+   "title": "Ending lettering: The Page",
+   "w": 1200,
+   "h": 300,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-title-warning",
+   "group": "endings",
+   "title": "Ending lettering: The Warning",
+   "w": 1200,
+   "h": 300,
+   "row": "Ending cards"
+  },
+  {
    "id": "chapter-01",
    "group": "chapters",
    "title": "Chapter 1: The Cabin That Felt Too Quiet",
@@ -1609,6 +1649,14 @@
    "w": 900,
    "h": 1100,
    "row": "Stitch charts and fabric grounds"
+  },
+  {
+   "id": "page-yours",
+   "group": "documents",
+   "title": "Your page: a page with no front",
+   "w": 800,
+   "h": 1100,
+   "row": "Body patterns and Ruth's patterns"
   },
   {
    "id": "parlour-scoresheet",

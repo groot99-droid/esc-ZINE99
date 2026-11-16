@@ -35,10 +35,19 @@
     ]
   },
   "wadding": {"note": "Accepted 2026-11-15 (phase 1). Plain fill, always in the tray. A wadded slot is cold: not warm, no memory, no game. Every open slot of all six seams wadded sets seams.all_wadded.", "hunger_rate_percent": 0, "plays_a_game": false},
-  "fourth_packing": {
-    "note": "Accepted 2026-11-15, built 2026-11-16 (phase 2). The set-piece of c14_stuffing_4: one hollow is left open. In the tray are \"My name\" and Jamie's bad postcard with nothing on it (a blank: packed, it closes the hollow and keeps nothing), with two borrowed patches. The Chase needs warm hollows in three seams, so the player must leave the hollow empty or take something out; whatever is in the tray at the close unravels.",
-    "scene": "c14_stuffing_4", "open_hollows": 1, "tray": ["My name", "A postcard with nothing on it", "Don't make it weird.", "Since we were nine"],
-    "chase_needs_warm_seams": 3
-  },
-  "lila_hum": {"note": "Accepted 2026-11-15, built 2026-11-16 (phase 2). Layer link 2: while the token \"Lila's hum\" comes through a Stuffing in a slot, Lila does not walk in the next Dollhouse night.", "flag": "lila.hum_kept"}
+  "fourth_packing": {"note": "Accepted 2026-11-15, built 2026-11-16 (phase 2). The set-piece of c14_stuffing_4: one hollow is left open. In the tray are \"My name\" and Jamie's bad postcard with nothing on it (a blank: packed, it closes the hollow and keeps nothing), with two borrowed patches. The Chase needs warm hollows in three seams, so the player must leave the hollow empty or take something out; whatever is in the tray at the close unravels.", "scene": "c14_stuffing_4", "open_hollows": 1, "tray": ["My name", "A postcard with nothing on it", "Don't make it weird.", "Since we were nine"], "chase_needs_warm_seams": 3},
+  "lila_hum": {"note": "Accepted 2026-11-15, built 2026-11-16 (phase 2). Layer link 2: while the token \"Lila's hum\" comes through a Stuffing in a slot, Lila does not walk in the next Dollhouse night.", "flag": "lila.hum_kept"},
+  "guest_patches": {
+    "note": "Accepted 2026-11-15, built 2026-11-16 (phase 3). What the toy learned about a guest from the shelf (c09) arrives in the tray as a patch in that guest's colour. Packed, it counts as kept (memory.kept) and the toy will not act against that guest within 4 m until the next packing; it pays costs like a memory of your own. From the second packing (c10_stuffing_2) on. The names are written for the game.",
+    "flag": "guest.patches_kept",
+    "from_packing": 2,
+    "patches": [
+      {"guest": "noor", "group": "b", "name": "Noor at the mirror", "art": "patch-guest-noor"},
+      {"guest": "wes", "group": "b", "name": "Wes's lamp, left on", "art": "patch-guest-wes"},
+      {"guest": "ana", "group": "b", "name": "Ana talks to the toys", "art": "patch-guest-ana"},
+      {"guest": "sol", "group": "c", "name": "Sol at the window, no birds", "art": "patch-guest-sol"},
+      {"guest": "rosa", "group": "c", "name": "Rosa's sketchbook", "art": "patch-guest-rosa"},
+      {"guest": "kit", "group": "c", "name": "Kit awake at three", "art": "patch-guest-kit"}
+    ]
+  }
 }

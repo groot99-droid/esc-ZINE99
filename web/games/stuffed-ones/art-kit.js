@@ -87,7 +87,23 @@ export function artKit(api) {
       setTimeout(() => { if (alive) res(); }, api.reducedMotion ? 250 : ms || 1500);
     });
   }
-  return { art, has: (id) => art.has(id), sprite, draw, picture, word, finale,
+  // An ending's generated card (a path from api.keyart, or "") laid over the mode before api.end, with
+  // its cross-stitch name across the foot. With no card it falls back to the code-drawn picture.
+  function card(root, src, titleId, fallbackId, ms) {
+    if (!src) return finale(root, fallbackId, ms);
+    return new Promise((res) => {
+      const box = document.createElement("div");
+      box.style.cssText = "position:absolute;inset:0;z-index:6;opacity:0;transition:opacity .6s;background:#1d1712 center/cover no-repeat";
+      box.style.backgroundImage = `url("${src}")`;
+      box.setAttribute("role", "img"); box.setAttribute("aria-label", (art.info(titleId) || {}).title || "An ending");
+      const t = art.has(titleId) ? picture(titleId, Math.max(200, Math.min(560, root.clientWidth - 32))) : null;
+      if (t) { t.style.cssText += ";position:absolute;left:50%;top:16px;transform:translateX(-50%);box-shadow:0 6px 18px rgba(0,0,0,.5)"; box.appendChild(t); }
+      root.appendChild(box);
+      requestAnimationFrame(() => { box.style.opacity = "1"; });
+      setTimeout(() => { if (alive) res(); }, api.reducedMotion ? 250 : ms || 1800);
+    });
+  }
+  return { art, has: (id) => art.has(id), sprite, draw, picture, word, finale, card,
     flush() { cache.clear(); }, dispose() { alive = false; cache.clear(); } };
 }
 

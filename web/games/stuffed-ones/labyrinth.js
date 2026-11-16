@@ -35,8 +35,17 @@
 // the whole game, there are three wrong turns and two toys, and it ends in the statue at the
 // threshold. A Strong strap in Stitchwork kept Marcus's map: his marks show as chalk (api.shared
 // "strap"). Three of Ruth's marks on the wallpaper by the doorway cross into the book's glossary.
+//
+// Phase 3 (DESIGN.md section 21, built 2026-11-16): the selvage pays off here. With all six of Ruth's
+// lines gathered across the modes (stages.js), the centre doorway is where her sentence is set in her
+// order (her strokes number the lines; a wrong one costs hunger) and any mark still nameless is named
+// by elimination. Then the centre opens: walk in after them, and in the circle of skins you sew a page
+// of your own from the marks you learned (The Page), or hold the doorway as before (The Cycle). The
+// twist ends on that ending's generated card. A finished run is counted (api.shared "turns"); on a
+// later one the other guest group runs the old thread (Sol, Rosa and Kit, and Kit kneels), and if you
+// walked in last time your own way into the centre is woven in beside the old route.
 import { artKit, FACE } from "./art-kit.js";
-import { runStages, stagePicker, linkNote } from "./stages.js";
+import { runStages, stagePicker, linkNote, LINES, BACK_ART, ALL_MARKS } from "./stages.js";
 const PRE = "stuffed-ones-labyrinth-";
 const C = { moss: "#7d8a5a", mossD: "#56623d", rust: "#a5553a", cedar: "#6b4a32", cedarD: "#4a3222", dust: "#e6dcc6", cream: "#efe5cf",
   bone: "#f6f1e4", amber: "#e39a2d", red: "#b8322a", sky: "#8fa9bf", night: "#56627a", nightL: "#7f8ca3", ink: "#2a211b", bear: "#c2925f" };
@@ -79,7 +88,15 @@ const TOY_SPEED = 2.6, GUEST_SPEED = TOY_SPEED * 1.2, SEE = 5, STEP_SEE = 7;
 const HUNGER_RATE = 1 / 3, STEP_COST = 12, TWITCH_COST = 2;
 const STATUE = 20;
 const FACES = { cat: "medallion-narrator", rabbit: "medallion-lila", bear: "medallion-jamie" };
-const SHELF = { Noor: "medallion-noor", Wes: "medallion-wes", Ana: "medallion-ana" };
+const SHELF = { Noor: "medallion-noor", Wes: "medallion-wes", Ana: "medallion-ana", Sol: "medallion-sol", Rosa: "medallion-rosa", Kit: "medallion-kit" };
+// a later playthrough brings the other group, and Kit kneels (lines written for the game)
+const KNEEL_C = [
+  [1, "At the threshold", "Kit comes back to the doorway and kneels in front of you.", "Hey. You're the white one from the second shelf. I sat up with you till three."],
+  [5, "Kit", "", "I do nights. I know what it looks like when somebody is still in there."],
+  [9, "Kit", "", "There's a page sewn into that book down there, and it isn't like the others."],
+  [13, "Kit", "", "Was it you?"],
+  [17, "Kit", "She stands up, and backs into the warm room.", "…Okay."],
+];
 const WALLP = [["wallpaper-1-sprig", "wallpaper-2-trellis"], ["wallpaper-3-birds", "wallpaper-4-stripe"], ["wallpaper-5-acorns", "wallpaper-6-selvage"]];
 const KNEEL = [
   [1, "At the threshold", "Ana comes back to the doorway and kneels in front of you.", "It's you. The white one, from the second shelf."],
@@ -106,6 +123,10 @@ function run(root, api, flow) {
     const stage = flow.stage, LIMIT = LIMITS[stage];
     const { MAP, ringOf, START, DOORWAY, ENTRY, TRAPS, ROUTE, COLUMN, IN, o1 } = maze(stage);
     const chalk = stage === 2 && flow.S.get("strap", "") === "strong";
+    const later = stage === 2 && flow.S.turns() > 0, walkedBefore = later && flow.S.get("threshold", "") === "in";
+    const KN = later ? KNEEL_C : KNEEL, KNAME = later ? "Kit" : "Ana";
+    const ready = stage === 2 && flow.S.pieces().length === 6;
+    let paused = false, selv = null, chose = "";
     const fresh = stage === 2 ? flow.S.learn(["still", "go", "home"]) : [];
     const K = kit();
     const rng = api.rng();
@@ -146,6 +167,31 @@ function run(root, api, flow) {
 .${PRE}card button:focus-visible{outline:3px solid ${C.ink};outline-offset:2px}
 .${PRE}card label{font:14px Karla,Arial,sans-serif;display:flex;gap:8px;align-items:center;margin-top:12px}
 .${PRE}card .${PRE}kind{margin:10px 0 0;font:italic 15px 'IM Fell English',Georgia,serif;color:${C.red}}
+.${PRE}sel{position:absolute;inset:0;z-index:5;display:grid;place-items:center;padding:12px;background:rgba(42,33,27,.6);overflow:auto}
+.${PRE}selcard{width:min(620px,100%);box-sizing:border-box;${weaveCss(C.cream, "rgba(165,85,58,.07)")};color:${C.ink};border:6px solid ${C.red};outline:2px dashed ${C.amber};outline-offset:-11px;padding:16px 16px 14px;max-height:100%;overflow:auto}
+.${PRE}selh{display:block;font:400 26px 'IM Fell English',Georgia,serif}
+.${PRE}selp{margin:4px 0 8px;font:15px/1.45 Karla,Arial,sans-serif}
+.${PRE}selp[data-err="1"]{color:${C.red};font-weight:600}
+.${PRE}selp q{display:block;font:italic 18px/1.4 'IM Fell English',Georgia,serif;color:${C.red};margin:0 0 8px}
+.${PRE}sewn{margin:0 0 8px;padding:0 0 0 22px}
+.${PRE}sewn li{margin:0 0 4px}
+.${PRE}pool{display:flex;flex-wrap:wrap;gap:6px}
+.${PRE}line{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:44px;padding:6px 8px;background:${C.bone};border:2px solid ${C.rust};cursor:pointer;color:${C.ink};max-width:100%}
+.${PRE}line:focus-visible,.${PRE}word:focus-visible,.${PRE}acts2 button:focus-visible{outline:3px solid ${C.amber};outline-offset:2px}
+.${PRE}strokes{display:flex;gap:3px;height:12px}
+.${PRE}strokes i{display:block;width:3px;height:12px;background:${C.red};transform:rotate(12deg);border-radius:2px}
+.${PRE}mk,.${PRE}mine{display:flex;flex-wrap:wrap;gap:3px}
+.${PRE}mk>span,.${PRE}mine>span{display:flex;flex-direction:column;align-items:center}
+.${PRE}mk img,.${PRE}mine img,.${PRE}word img,.${PRE}ask img{display:block;border:1px solid rgba(42,33,27,.35)}
+.${PRE}mk em,.${PRE}mine em{font:600 11px Karla,Arial,sans-serif;color:${C.red};font-style:normal}
+.${PRE}mine{min-height:70px;align-items:flex-end;padding:4px;border:1.5px dashed ${C.red};margin:0 0 6px;width:100%;box-sizing:border-box}
+.${PRE}marks{display:flex;flex-wrap:wrap;gap:4px}
+.${PRE}word{display:flex;align-items:center;gap:4px;min-height:44px;min-width:44px;padding:4px 8px;background:${C.bone};border:1.5px solid ${C.cedar};cursor:pointer;font:600 14px Karla,Arial,sans-serif;color:${C.ink}}
+.${PRE}ask{width:100%}
+.${PRE}acts2{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.${PRE}acts2 button{font:600 15px Karla,Arial,sans-serif;min-height:46px;padding:10px 16px;cursor:pointer;border:2px solid ${C.ink};background:transparent;color:${C.ink}}
+.${PRE}acts2 button.${PRE}in{background:${C.red};color:${C.bone};border-color:${C.red}}
+.${PRE}acts2 button:disabled{opacity:.45;cursor:not-allowed}
 </style><canvas aria-label="The labyrinth from above, woven like a tapestry"></canvas>
 <div class="${PRE}btns"><button type="button" data-a="switch">Switch toy<i>Tab</i></button><button type="button" data-a="twitch" hidden>Twitch<i>T</i></button><button type="button" data-a="step" hidden>Step<i>S</i></button><button type="button" data-a="hold" aria-pressed="false" hidden>Hold still<i>Space</i></button></div>
 <div class="${PRE}beat" aria-live="polite" style="opacity:0"></div>`;
@@ -179,9 +225,9 @@ function run(root, api, flow) {
       { name: "Jamie", kind: "bear", x: 11, y: 9, px: 11, py: 9, path: [], still: 9, active: false },
     ];
     const guests = [
-      { name: "Noor", col: C.sky, x: 0, y: 0, px: 0, py: 0, ring: 0, freeze: 0, immune: 0, frozenTotal: 0, loops: 0, scared: 0, done: false },
-      { name: "Wes", col: C.nightL, x: 0, y: 0, px: 0, py: 0, ring: 0, freeze: 0, immune: 0, frozenTotal: 0, loops: 0, scared: 0, done: false },
-      { name: "Ana", col: C.rust, x: 0, y: 0, px: 0, py: 0, ring: 0, freeze: 0, immune: 0, frozenTotal: 0, loops: 0, scared: 0, done: false },
+      { name: later ? "Sol" : "Noor", col: C.sky, x: 0, y: 0, px: 0, py: 0, ring: 0, freeze: 0, immune: 0, frozenTotal: 0, loops: 0, scared: 0, done: false },
+      { name: later ? "Rosa" : "Wes", col: C.nightL, x: 0, y: 0, px: 0, py: 0, ring: 0, freeze: 0, immune: 0, frozenTotal: 0, loops: 0, scared: 0, done: false },
+      { name: later ? "Kit" : "Ana", col: C.rust, x: 0, y: 0, px: 0, py: 0, ring: 0, freeze: 0, immune: 0, frozenTotal: 0, loops: 0, scared: 0, done: false },
     ];
     let sel = 0, memories = 3, freezes = 0, t = 0, speed = 1, started = false, over = false, msg = "", msgT = 0, msgCol = C.bone, held = null;
     let hunger = 40, holding = false, stepT = 0, lurches = 0, steps = 0, twitches = 0, loopSaid = false, innerSaid = false, centreSaid = false, unlocked = 1;
@@ -278,6 +324,13 @@ function run(root, api, flow) {
           const [ex, ey] = cc(line[line.length - 1]);
           x.lineWidth = Math.max(1.5, s * 0.05); for (let k = 0; k < 5; k++) { const a = k * 1.26 + n; x.beginPath(); x.moveTo(ex + off, ey + off); x.lineTo(ex + off + Math.cos(a) * s * 0.26, ey + off + Math.sin(a) * s * 0.26); x.stroke(); }
         });
+        if (walkedBefore) {
+          // your own way in, last time: one more thread, bone-white, from the doorway to the circle
+          const [ax, ay] = cc(DOORWAY), [bx, by] = cc([7, 7]);
+          x.strokeStyle = "rgba(143,169,191,.85)"; x.lineWidth = Math.max(2, s * 0.1); x.setLineDash([s * 0.18, s * 0.12]);
+          x.beginPath(); x.moveTo(ax, ay); x.lineTo(bx, by); x.stroke(); x.setLineDash([]);
+          x.beginPath(); x.arc(bx, by, s * 0.32, 0, 7); x.stroke();
+        }
         if (chalk) {
           // Marcus's pencil marks, as chalk: a cross on each door that leads back, an arrow at the true one
           x.strokeStyle = "rgba(255,255,255,.95)"; x.lineCap = "round";
@@ -333,7 +386,7 @@ function run(root, api, flow) {
         const dx = ox + DOORWAY[0] * s, dy = oy + DOORWAY[1] * s, pl = api.reducedMotion ? 0.6 : 0.5 + 0.5 * Math.sin(now / 260);
         g.strokeStyle = `rgba(227,154,45,${0.5 + 0.5 * pl})`; g.lineWidth = 3; g.strokeRect(dx + 1.5, dy + 1.5, s - 3, s - 3);
         if (!statue.on) { g.font = "700 12px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "bottom"; const tw = g.measureText("STAND HERE").width + 8; g.fillStyle = C.amber; g.fillRect(dx + s / 2 - tw / 2, dy - 17, tw, 16); g.fillStyle = C.ink; g.fillText("STAND HERE", dx + s / 2, dy - 2); }
-        if (statue.on && statue.t < 17.6) { const ax = dx + s / 2 + IN[0] * s, ay = dy + s / 2 + IN[1] * s; sprite(ax, ay + s * 0.06, s * 0.92, GUEST.slice(0, 4), { h: C.cedar, f: C.dust, b: C.rust, l: C.night }); g.font = `700 ${Math.max(12, s * 0.3)}px Karla,Arial,sans-serif`; g.textAlign = "center"; g.textBaseline = "top"; g.fillStyle = C.bone; g.fillText("Ana", ax, ay + s * 0.3); }
+        if (statue.on && statue.t < 17.6) { const ax = dx + s / 2 + IN[0] * s, ay = dy + s / 2 + IN[1] * s; sprite(ax, ay + s * 0.06, s * 0.92, GUEST.slice(0, 4), { h: C.cedar, f: C.dust, b: C.rust, l: C.night }); g.font = `700 ${Math.max(12, s * 0.3)}px Karla,Arial,sans-serif`; g.textAlign = "center"; g.textBaseline = "top"; g.fillStyle = C.bone; g.fillText(KNAME, ax, ay + s * 0.3); }
       }
       const at = (e) => [ox + e.px * s + s / 2, oy + e.py * s + s / 2];
       // the hover cell and the planned path
@@ -464,23 +517,28 @@ function run(root, api, flow) {
     function startStatue() {
       statue = { on: false, t: 0, breaks: 0, line: -1, armed: false };
       sel = 0; unlock(2); hunger = Math.min(hunger, 45); t = Math.min(t, (LIMIT - 75) * speed);
-      beat("The threshold", "All three are inside. The Chase is not over: stand the cat in the centre doorway (the lit square) and hold Still. You are the wall that keeps them in.", null, 7000, "tapestry-centre");
+      if (ready) beat("The threshold", "All three are inside. Stand the cat in the centre doorway (the lit square). Low on the wallpaper either side runs a selvage in red wool: everything of Ruth's you have gathered, the whole of her sentence, can be read here.", null, 8000, "wallpaper-6-selvage");
+      else beat("The threshold", "All three are inside. The Chase is not over: stand the cat in the centre doorway (the lit square) and hold Still. You are the wall that keeps them in.", null, 7000, "tapestry-centre");
     }
     function breakStatue(why) {
       statue.breaks++; statue.t = 0; statue.armed = false; statue.line = -1;
-      if (statue.breaks >= 2) { lose("You moved, and she saw it twice. Ana is past you and up the corridor before the pulse can turn the pack, and the two inside come after her. The herd is loose in the rings again, and the grey is coming."); return; }
+      if (statue.breaks >= 2) { lose(`You moved, and she saw it twice. ${KNAME} is past you and up the corridor before the pulse can turn the pack, and the two inside come after her. The herd is loose in the rings again, and the grey is coming.`); return; }
       loseMemory(why);
-      if (!over) beat("She saw", "Ana scrambles back from the doorway. Then, slowly, she comes forward again. Hold still: the count begins over.", null, 5000);
+      if (!over) beat("She saw", `${KNAME} scrambles back from the doorway. Then, slowly, she comes forward again. Hold still: the count begins over.`, null, 5000);
     }
     function updateStatue(dt) {
       const cat = toys[0], there = cat.x === DOORWAY[0] && cat.y === DOORWAY[1] && Math.hypot(cat.x - cat.px, cat.y - cat.py) < 0.05;
-      if (!statue.on) { if (there) { statue.on = true; say("In the doorway. Hold still (hold Space).", C.amber); btn("hold").classList.add(PRE + "new"); } return; }
+      if (!statue.on) {
+        if (there && ready && !chose) { openSelvage(); return; }
+        if (there) { statue.on = true; say("In the doorway. Hold still (hold Space).", C.amber); btn("hold").classList.add(PRE + "new"); }
+        return;
+      }
       if (!there) { statue.on = false; if (statue.armed) breakStatue("You stepped out of the doorway while she was looking. One memory gone."); return; }
       if (holding) {
         statue.armed = statue.armed || statue.t > 0.4;
         statue.t += dt / speed; hunger += 1.2 * dt / speed;
-        const k = KNEEL.findIndex(([at], i) => i > statue.line && statue.t >= at);
-        if (k >= 0) { statue.line = k; beat(KNEEL[k][1], KNEEL[k][2], KNEEL[k][3], 3800); }
+        const k = KN.findIndex(([at], i) => i > statue.line && statue.t >= at);
+        if (k >= 0) { statue.line = k; beat(KN[k][1], KN[k][2], KN[k][3], 3800); }
         if (statue.t >= STATUE) win();
       } else if (statue.armed) breakStatue("You let go, and the cat's head turned. One memory gone.");
     }
@@ -672,8 +730,101 @@ function run(root, api, flow) {
       const best = api.store.get("best", null); if (best === null || t < best) api.store.set("best", Math.round(t));
       over = true; holding = false; api.store.set("losses", 0);
       const back = guests.reduce((a, gu) => a + gu.loops, 0);
-      const text = `They ran the way your own group ran, ${back ? `through ${back} door${back === 1 ? "" : "s"} that led back, ` : "and not one door led them back, "}and all three went down to the centre. For twenty seconds you were a toy in a doorway while one of them asked you to be anything else. ${memories} memor${memories === 1 ? "y" : "ies"} left${lurches ? "" : ", and no lurch"}${statue && statue.breaks ? "; she saw you move once" : ""}. The warmth rises through the floor. We were the hunters.`;
-      A.finale(wrap, "chapter-15").then(() => flow.done({ outcome: "win", text }));
+      if (chose === "held") { flow.S.set("threshold", "held"); flow.S.set("turns", flow.S.turns() + 1); }
+      const text = `${chose === "held" ? "You read her sentence whole, and held the doorway anyway. " : ""}They ran the way your own group ran, ${back ? `through ${back} door${back === 1 ? "" : "s"} that led back, ` : "and not one door led them back, "}and all three went down to the centre. For twenty seconds you were a toy in a doorway while one of them asked you to be anything else. ${memories} memor${memories === 1 ? "y" : "ies"} left${lurches ? "" : ", and no lurch"}${statue && statue.breaks ? "; she saw you move once" : ""}. The warmth rises through the floor. We were the hunters.`;
+      A.card(wrap, api.keyart("ending-cycle"), "ending-title-cycle", "chapter-15").then(() => flow.done({ outcome: "win", text }));
+    }
+
+    // ---- the selvage at the doorway (phase 3) --------------------------------------------------
+    function openSelvage() {
+      paused = true; holding = false;
+      const known = (w) => flow.S.knows(w);
+      selv = document.createElement("div");
+      selv.className = PRE + "sel"; selv.setAttribute("role", "dialog"); selv.setAttribute("aria-label", "The selvage");
+      selv.innerHTML = `<div class="${PRE}selcard"><b class="${PRE}selh">The selvage</b><p class="${PRE}selp"></p><ol class="${PRE}sewn"></ol><div class="${PRE}pool"></div><div class="${PRE}acts2"></div></div>`;
+      wrap.appendChild(selv);
+      const P = selv.querySelector("." + PRE + "selp"), sewn = selv.querySelector("." + PRE + "sewn"), pool = selv.querySelector("." + PRE + "pool"), acts = selv.querySelector("." + PRE + "acts2");
+      const markImg = (w, sz = 30) => { const u = A.art.url ? A.art.url(BACK_ART[w]) : ""; return u ? `<img src="${u}" alt="" style="width:${sz}px;height:${Math.round(sz * 1.2)}px;object-fit:cover;object-position:top">` : `<span class="${PRE}nm">${w}</span>`; };
+      const lineHtml = (ln, words) => `<span class="${PRE}strokes" aria-label="${ln.n} stroke${ln.n === 1 ? "" : "s"}">${"<i></i>".repeat(ln.n)}</span><span class="${PRE}mk">${ln.marks.slice().reverse().map((w) => `<span>${markImg(w)}${words ? `<em>${known(w) ? (w === "i" ? "I" : w) : "?"}</em>` : ""}</span>`).join("")}</span>`;
+      const bump = (why) => { hunger += 4; say(why, C.red); P.dataset.err = "1"; P.textContent = why + " (hunger +4)"; };
+      function order() {
+        if (flow.S.get("selvage_read", false) === true) { whole(); return; }
+        let next = 1;
+        P.textContent = "Her six lines lie loose on the carpet. Sew them in her order: her strokes along the top count it, one, two, three. You hold the doorway while you do; the hunger does not wait.";
+        const shuffled = [3, 6, 1, 4, 2, 5].map((n) => LINES[n - 1]);
+        shuffled.forEach((ln) => {
+          const b = document.createElement("button"); b.type = "button"; b.className = PRE + "line"; b.innerHTML = lineHtml(ln, true);
+          b.setAttribute("aria-label", `A line of Ruth's marks with ${ln.n} stroke${ln.n === 1 ? "" : "s"} above it`);
+          b.addEventListener("click", () => {
+            if (ln.n !== next) { bump(`That line has ${ln.n} stroke${ln.n === 1 ? "" : "s"}. It does not come next.`); return; }
+            const li = document.createElement("li"); li.innerHTML = lineHtml(ln, true); sewn.appendChild(li); b.remove(); next++;
+            P.dataset.err = ""; P.textContent = next <= 6 ? `Sewn: ${next - 1} of 6. Next, the line with ${next} strokes.` : "";
+            if (next > 6) name();
+            else { const f = pool.querySelector("button"); if (f) f.focus(); }
+          });
+          pool.appendChild(b);
+        });
+        const f = pool.querySelector("button"); if (f) f.focus();
+      }
+      function name() {
+        pool.innerHTML = "";
+        const left = ALL_MARKS.filter((w) => LINES.some((ln) => ln.marks.includes(w)) && !known(w));
+        if (!left.length) { whole(); return; }
+        const cur = left[0];
+        P.textContent = `One of her marks you have never met. The rest of the sentence leaves only ${left.length === 1 ? "one word" : `${left.length} words`} it can be. Which is this?`;
+        const box = document.createElement("div"); box.className = PRE + "ask"; box.innerHTML = markImg(cur, 46); pool.appendChild(box);
+        left.slice().sort().forEach((w) => {
+          const b = document.createElement("button"); b.type = "button"; b.className = PRE + "word"; b.textContent = w === "i" ? "I" : w;
+          b.addEventListener("click", () => { if (w !== cur) { bump(`Not “${w}”: the line will not read.`); return; } flow.S.learn([cur]); sewn.querySelectorAll("em").forEach((e) => { if (e.textContent === "?") e.textContent = ""; }); name(); });
+          pool.appendChild(b);
+        });
+        const f = pool.querySelector("button"); if (f) f.focus();
+      }
+      function whole() {
+        flow.S.set("selvage_read", true); flow.S.set("backs_read", 6);
+        sewn.innerHTML = ""; pool.innerHTML = "";
+        P.dataset.err = "";
+        P.innerHTML = "";
+        const q = document.createElement("q"); q.className = PRE + "whole"; q.textContent = LINES.map((ln) => ln.reads).join(" ");
+        const t = document.createElement("span"); t.textContent = "Her sentence pulls taut along the doorway, the whole of it. It does not say how to feed a thing. It says how a bound thing is let go. Behind you the pack waits on one pulse. Ahead, in the warm room, the circle of skins.";
+        P.append(q, document.createElement("br"), t);
+        const go = document.createElement("button"); go.type = "button"; go.className = PRE + "in"; go.textContent = "Walk in after them";
+        const hold = document.createElement("button"); hold.type = "button"; hold.textContent = "Hold the doorway";
+        go.addEventListener("click", compose);
+        hold.addEventListener("click", () => { chose = "held"; closeSel(); statue.on = true; say("In the doorway. Hold still (hold Space).", C.amber); btn("hold").classList.add(PRE + "new"); });
+        acts.append(go, hold); go.focus();
+      }
+      function compose() {
+        acts.innerHTML = ""; sewn.innerHTML = ""; pool.innerHTML = "";
+        const line = [];
+        P.textContent = "You walk in. Nobody turns. You lie down inside the circle of torn fabric skins, and the pulse goes out of you like a held breath let go. The book is open beside you on a new page with no front. Sew a line of your own, three marks to six, from the marks you learned. Whoever comes next will read it.";
+        const shown = document.createElement("div"); shown.className = PRE + "mine"; pool.appendChild(shown);
+        const marks = document.createElement("div"); marks.className = PRE + "marks"; pool.appendChild(marks);
+        const sewB = document.createElement("button"); sewB.type = "button"; sewB.className = PRE + "in"; sewB.textContent = "Sew it into the book"; sewB.disabled = true;
+        const undo = document.createElement("button"); undo.type = "button"; undo.textContent = "Take the last one out";
+        const draw2 = () => { shown.innerHTML = line.length ? line.slice().reverse().map((w) => `<span>${markImg(w, 38)}<em>${w === "i" ? "I" : w}</em></span>`).join("") : "<em>(right to left, as she sewed)</em>"; sewB.disabled = line.length < 3; undo.disabled = !line.length; };
+        ALL_MARKS.filter(known).forEach((w) => {
+          const b = document.createElement("button"); b.type = "button"; b.className = PRE + "word"; b.innerHTML = `${markImg(w, 24)}<span>${w === "i" ? "I" : w}</span>`;
+          b.addEventListener("click", () => { if (line.length < 6) { line.push(w); draw2(); } });
+          marks.appendChild(b);
+        });
+        undo.addEventListener("click", () => { line.pop(); draw2(); });
+        sewB.addEventListener("click", () => sew(line.slice()));
+        acts.append(sewB, undo); draw2();
+        const f = marks.querySelector("button"); if (f) f.focus();
+      }
+      order();
+    }
+    function closeSel() { if (selv) { selv.remove(); selv = null; } paused = false; wrap.focus(); }
+    function sew(line) {
+      if (over) return;
+      chose = "in"; over = true; holding = false;
+      flow.S.set("page", line); flow.S.set("threshold", "in"); flow.S.set("turns", flow.S.turns() + 1);
+      api.store.set("losses", 0);
+      const words = line.map((w) => (w === "i" ? "I" : w)).join(" ");
+      closeSel(); paused = true;
+      const text = `You walked in after them, and nobody turned. In the circle of torn fabric skins you lay down, and sewed a page of your own into the book: “${words}.” Upstairs the pack herds without you, and the guests go down all the same. You are awake in the dark, with no pulse for company, and your line is in the book for whoever comes next. “I don't know how long I've been down here.” This is The Page.`;
+      A.card(wrap, api.keyart("ending-the-page"), "ending-title-the-page", "tapestry-centre").then(() => flow.done({ outcome: "win", text }));
     }
     function lose(text) { end("lose", text); }
 
@@ -711,7 +862,7 @@ function run(root, api, flow) {
     K.on(cv, "pointerleave", () => (hoverCell = null));
     const DIR = { ArrowUp: [0, -1], ArrowDown: [0, 1], ArrowLeft: [-1, 0], ArrowRight: [1, 0], w: [0, -1], a: [-1, 0], d: [1, 0] };
     K.on(wrap, "keydown", (e) => {
-      if (!started || over) return;
+      if (!started || over || paused) return;
       const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
       if (k === " ") { e.preventDefault(); if (!e.repeat) setHold(true); return; }
       if (e.repeat && !DIR[k]) return;
@@ -734,7 +885,7 @@ function run(root, api, flow) {
     let prev = performance.now(), tickRaf = 0;
     function tick(now) {
       const dt = Math.min(0.05, (now - prev) / 1000); prev = now;
-      if (started && !over) {
+      if (started && !over && !paused) {
         if (held && !holding && !toys[sel].path.length && Math.hypot(toys[sel].x - toys[sel].px, toys[sel].y - toys[sel].py) < 0.05) nudge(...held);
         update(dt);
         if (stage === 0 && unlocked < 2 && t > 12 * speed) { unlock(2); beat("Twitch, and hold", "A twitch is seen without a step: it turns a guest without closing on them (T). And when you need nothing to move at all, the whole pack holds still (hold Space)."); }

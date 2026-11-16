@@ -697,6 +697,80 @@
         "page"
       ],
       "interactions": []
+    },
+    "e_page_circle": {
+      "note": "The Page (phase 3; a proposal). The cat has walked in after the guests; the room is empty of them. It lies down inside the circle of torn fabric skins, on its side on the stone, and sews one page of its own into the book from the marks on the walls (a diegetic picker on the lectern's open book, shown as a 1D overlay). No amber anywhere: the toy is cold, off the pulse. One shaft of grey from the open trapdoor. Then black, and the novel's first line: 'I don't know how long I've been down here.'",
+      "world": {
+        "color": [
+          0.08,
+          0.09,
+          0.1
+        ],
+        "strength": 0.12
+      },
+      "lights": [
+        {
+          "name": "trapdoor-shaft",
+          "type": "SPOT",
+          "location": [
+            0.2,
+            -0.6,
+            3.4
+          ],
+          "energy": 220,
+          "size": 0.25,
+          "color": [
+            0.78,
+            0.82,
+            0.86
+          ]
+        },
+        {
+          "name": "wall-cold",
+          "type": "POINT",
+          "location": [
+            0,
+            0.2,
+            2.6
+          ],
+          "energy": 12,
+          "size": 1.5,
+          "color": [
+            0.7,
+            0.74,
+            0.8
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.1,
+          -0.5,
+          0.28
+        ],
+        "look_at": [
+          1.4,
+          -0.1,
+          1.0
+        ],
+        "lens_mm": 28,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          0.1,
+          -0.5,
+          0
+        ],
+        "facing_deg": 70
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "book",
+          "verb": "Sew your page"
+        }
+      ]
     }
   }
 }

@@ -383,60 +383,171 @@ def _body(k, row):
 for _k, _r in enumerate(BODIES):
     _body(_k, _r)
 
-DRESS = {  # Ruth's pieces: drawn as plain outlines, the same six seams
-    "A": CHEST, "B": ARM, "C": LEG_L,
-}
-RUTH = [
-    ("1-seven", "the first, at seven", [0.5], "Seven.",
-     "The oldest tissue from the linen cupboard: small pattern pieces pencilled RUTH and the number 7, yellowed and "
-     "soft at the folds."),
-    ("2-larger", "cut larger", [0.5, 0.72], "cut larger",
-     "A later sheet: the same pieces cut larger, in fresher tissue, with the small first pattern showing through from beneath."),
-    ("3-and-larger", "and larger", [0.5, 0.72, 0.95], "and larger",
-     "The same pieces a third time, grown again, the two earlier sizes ghosted beneath; someone had let her grow up on paper."),
-    ("4-recut", "the newest, pinned to be cut", [0.5, 0.72, 0.95, 1.12], "",
-     "The newest sheet, pinned and ready, with embroidery scissors lying on it: every earlier size nested inside the "
-     "new cut line like growth rings."),
+# ---- Ruth's patterns (redrawn in phase 3) -----------------------------------------------------------
+# A child's body cut on tissue: the same six seams as the toys' patterns, every earlier size ghosted
+# under the newest cut line. Mabel's pencil labels the pieces; Ruth's red wool runs along the bottom
+# selvage, one of her lines copied from the backs of the book (her strokes number the marks; her
+# line is read from the other side, so it runs right to left). The third sheet carries no line of hers:
+# Mabel's pencil key names three of the marks. DEEP_DIVE.md section 2; DESIGN.md section 21.
+CHILD_HEAD = [(-70, 10), (-66, -52), (-38, -84), (0, -92), (38, -84), (66, -52), (70, 10), (48, 58), (22, 70), (22, 92), (-22, 92),
+              (-22, 70), (-48, 58)]
+SLEEVE = [(-40, -112), (40, -112), (46, -20), (36, 96), (0, 112), (-36, 96), (-46, -20)]
+DRESS = {"head": CHILD_HEAD, "bodice": CHEST, "sleeve": SLEEVE, "leg_l": LEG_L, "leg_r": LEG_R}
+LAYOUT = [  # piece, centre, rotation, Mabel's label
+    ("head", (400, 300), 0, "HEAD · CUT 2"), ("bodice", (400, 610), 0, "BODICE · ON THE FOLD"),
+    ("sleeve", (138, 560), 7, "SLEEVE · CUT 2"), ("sleeve", (662, 560), -7, "SLEEVE"),
+    ("leg_l", (262, 870), -4, "LEG · CUT 2"), ("leg_r", (538, 870), 4, "LEG"),
+]
+BACK_RADS = {name: (top, bottom) for name, top, bottom, _ in gl.BACKS}
+RUTH = [  # id, title, sizes (earlier cuts first), Mabel's age note, what runs along the selvage, details, doc
+    ("1-seven", "the first, at seven", [0.55], "7", ("line", ["mother", "cut", "i", "warm"]), {"foxing": 60, "tear": True, "darn": True},
+     "The oldest tissue from the linen cupboard: a child's six pattern pieces pencilled RUTH and 7, yellowed, foxed and torn "
+     "at the fold, with a darn in red wool; along the bottom selvage four of Ruth's marks in big red wool stitches, numbered "
+     "with her strokes (\"Mother cut me warm.\", read right to left)."),
+    ("2-larger", "cut larger", [0.55, 0.64], "7", ("line", ["company", "go", "i", "cold", "mother", "cut"]), {"foxing": 34, "thimble": True, "pins": 4},
+     "A later sheet: the same six pieces cut larger, the first size ghosted inside them, Mabel's pencil still writing 7; a "
+     "thimble and pins on the tissue, and six of Ruth's marks along the selvage (\"When company goes I am cold, and Mother cuts again.\")."),
+    ("3-and-larger", "and larger", [0.55, 0.64, 0.73], "7", ("key", ["mother", "cut", "unpick"]), {"foxing": 18, "pins": 5, "peg": True, "tape": True},
+     "The same pieces a third time, two earlier sizes ghosted beneath and a tape measure across the corner; at the foot, "
+     "in Mabel's small pencil, a key to three of Ruth's marks: mother, cut, unpick. A bone button tied with red wool lies on it."),
+    ("4-recut", "the newest, pinned to be cut", [0.55, 0.64, 0.73, 0.82], "7", ("line", ["i", "go", "cold", "play", "stay", "still", "company", "home"]),
+     {"foxing": 6, "pins": 7, "scissors": True, "ticks": True},
+     "The newest sheet, pinned and ready, embroidery scissors lying on it, every earlier size nested inside the new cut line "
+     "like growth rings and a column of pencil ticks at one height in the margin; along the selvage eight of Ruth's marks "
+     "(\"I go cold. The play stays still. Company goes home.\")."),
 ]
 
 
+def wool(a, segs, x, y, u, color, w=3.0, jit=0.0, **kw):
+    """Stitches of a glyph worked in wool: each lattice step one stitch, a little crooked."""
+    d = []
+    for (ax, ay), (bx, by) in segs:
+        x1, y1, x2, y2 = x + ax * u, y + ay * u, x + bx * u, y + by * u
+        if jit:
+            x1 += a.rng.uniform(-jit, jit); y1 += a.rng.uniform(-jit, jit); x2 += a.rng.uniform(-jit, jit); y2 += a.rng.uniform(-jit, jit)
+        L = math.hypot(x2 - x1, y2 - y1) or 1
+        g = (w * 0.7) / L
+        d.append(f"M{f(x1 + (x2 - x1) * g)},{f(y1 + (y2 - y1) * g)}L{f(x2 - (x2 - x1) * g)},{f(y2 - (y2 - y1) * g)}")
+    a.path("".join(d), fill="none", stroke=color, stroke_width=w, stroke_linecap="round", **kw)
+
+
+def ruth_mark(a, name, x, y, u, tally=0, pencil=None):
+    """One of Ruth's marks: red wool (or, for Mabel's key, pencil), with her strokes above it."""
+    top, bottom = BACK_RADS[name]
+    segs = gl.segments(top, bottom)
+    if pencil:
+        wool(a, segs, x, y, u, pencil, w=2.2, jit=0.4, opacity=0.95)
+        return
+    seed = a.rng.random()
+    a.rng.seed(seed); wool(a, segs, x + 1, y + 1.6, u, "#1a0f08", w=u * 0.62, jit=u * 0.12, opacity=0.25)
+    a.rng.seed(seed); wool(a, segs, x, y, u, kit.RED, w=u * 0.55, jit=u * 0.12)
+    a.rng.seed(seed); wool(a, segs, x - 0.6, y - 0.8, u, kit.mix(kit.RED, kit.AMBER, 0.5), w=u * 0.12, jit=u * 0.12, opacity=0.8,
+                           stroke_dasharray="2 2")
+    for n in range(tally):  # her strokes along the top
+        sx = x + 3 * u + (n - (tally - 1) / 2) * u * 0.8 + a.rng.uniform(-1, 1)
+        a.path(f"M{f(sx + 1)},{f(y - u * 2.2)}L{f(sx - 1)},{f(y - u * 1.0)}", stroke=kit.RED, stroke_width=u * 0.34, stroke_linecap="round")
+
+
 def _ruth(k, row):
-    rid, title, sizes, note, doc = row
+    rid, title, sizes, age_note, run, extra, doc = row
 
     @asset(G, f"ruth-pattern-{rid}", group="documents", title=f"Ruth's pattern: {title}", w=800, h=1100, row=ROW_P)
     def draw(a: Art):
         table(a)
         fl = crinkle(a)
-        age = kit.mix(kit.TISSUE, kit.AMBER, 0.22 - 0.05 * k)
+        age = kit.mix(kit.TISSUE, kit.AMBER, 0.26 - 0.06 * k)
         a.open("g", transform=f"rotate({f(a.rng.uniform(-3, 3))} 400 550)")
         sheet(a, [(40, 50), (764, 38), (756, 1060), (48, 1052)], color=kit.mix(age, kit.DUST, 0.2), flt=fl)
-        a.path("M44,390L760,380M44,724L758,716M398,42V1056", stroke=kit.mix(age, kit.CEDAR, 0.3), stroke_width=1.2, opacity=0.7)
+        # an older sheet showing under this one at the edge, and the folds the tissue was kept in
+        a.path(a.wobble_d([(60, 1046), (744, 1054), (742, 1074), (62, 1066)], 1.4, 30, closed=True), fill=kit.mix(age, kit.AMBER, 0.2), opacity=0.7)
+        fold = kit.mix(age, kit.CEDAR, 0.3)
+        a.path("M44,390L760,380M44,724L758,716M398,42V1056", stroke=fold, stroke_width=1.3, opacity=0.75)
+        a.path("M44,392L760,382M44,726L758,718", stroke=kit.BONE, stroke_width=0.8, opacity=0.4)
+        if extra.get("foxing"):  # foxing: small brown spots, thickest on the oldest sheet
+            a.stipple(56, 60, 690, 980, n=extra["foxing"], r=(1.2, 4.2), fill=kit.mix(kit.CEDAR, kit.AMBER, 0.4), opacity=0.32)
         pc = kit.mix(INK, kit.TISSUE, 0.3)
-        a.text(96, 138, "RUTH", size=58, family="cursive", fill=pc, transform="rotate(-5 96 138)", letter_spacing=4)
-        a.path("M92,152q90,-14 190,-12", fill="none", stroke=pc, stroke_width=1.6)
-        if k == 0:
-            a.text(330, 136, "7", size=64, family="cursive", fill=pc, transform="rotate(4 330 136)")
-            a.circle(346, 114, 40, fill="none", stroke=pc, stroke_width=1.4)
-        lay = [(400, 400, "A", 0), (150, 770, "B", 6), (650, 770, "B", -6), (400, 836, "C", 0)]
+        # Mabel's pencil: the name, the pattern's number, the age that never changes
+        a.text(84, 136, "RUTH", size=58, family="cursive", fill=pc, transform="rotate(-5 84 136)", letter_spacing=4)
+        a.path("M80,150q90,-14 190,-12", fill="none", stroke=pc, stroke_width=1.6)
+        a.text(84, 182, f"No. {k + 1}  ·  six seams  ·  same as before, larger" if k else "No. 1  ·  six seams", size=17, family="cursive", fill=pc,
+               transform="rotate(-3 84 182)")
+        a.text(612, 132, age_note, size=70, family="cursive", fill=pc, transform="rotate(4 612 132)")
+        a.circle(628, 108, 44, fill="none", stroke=pc, stroke_width=1.4)
+        if k:  # each later sheet: the 7 written again and again, the old ones crossed through
+            for n in range(k):
+                x = 520 - n * 38
+                a.text(x, 96, "7", size=30, family="cursive", fill=pc, opacity=0.7)
+                a.path(f"M{x - 6},{86}l26,-14", stroke=pc, stroke_width=1.2, opacity=0.7)
+        # the pieces: earlier sizes ghosted, the newest cut line dark, labelled in pencil
         for n, sz in enumerate(sizes):
             last = n == len(sizes) - 1
-            ink = INK if last else kit.mix(INK, age, 0.45 + 0.12 * (len(sizes) - 2 - n))
-            for (cx, cy, key, rot) in lay:
-                piece(a, cx, cy, DRESS[key], "", "", 0, rot=rot, s=sz * 1.3, ink=ink, arrow=last and key == "A", lw=2.6 if last else 1.3,
-                      dash="13 6" if last else "5 5", inner=last)
-        if note:
-            a.text(520, 150, note, size=30, family="cursive", fill=pc, transform="rotate(-3 520 150)")
-        a.text(400, 1042, "SIX SEAMS", size=13, family="sans-serif", fill=INK, letter_spacing=4, text_anchor="middle")
-        if k == 3:
-            for (x, y, ang) in ((250, 330, 30), (560, 300, 140), (120, 700, 80), (690, 720, 100), (400, 620, 0), (330, 960, 20)):
-                pin(a, x, y, ang, kit.RED)
-            # embroidery scissors lying on the sheet
-            a.open("g", transform="translate(590 520) rotate(28) scale(1.9)")
+            ink = INK if last else kit.mix(INK, age, 0.42 + 0.12 * (len(sizes) - 2 - n))
+            for (key, (cx, cy), rot, label) in LAYOUT:
+                piece(a, cx, cy, DRESS[key], "", "", 0, rot=rot, s=sz * 1.32, ink=ink, arrow=last and key in ("bodice", "head"),
+                      lw=2.6 if last else 1.2, dash="13 6" if last else "5 5", inner=last)
+        for (key, (cx, cy), rot, label) in LAYOUT:
+            a.text(cx, cy + 8, label, size=13, family="cursive", fill=pc, text_anchor="middle", transform=f"rotate({rot - 3} {cx} {cy})")
+        a.path("M332,610h136", stroke=pc, stroke_width=1, stroke_dasharray="2 4")  # centre front
+        if extra.get("tear"):  # a tear at the fold, mended once
+            a.path("M44,724l40,-6l-6,10l30,-4", fill="none", stroke=kit.mix(kit.CEDAR, age, 0.3), stroke_width=2)
+        if extra.get("darn"):  # a darn in red wool over a split in the tissue
+            for j in range(7):
+                a.path(f"M{584 + j * 6},{742}v34", stroke=kit.RED, stroke_width=2, stroke_linecap="round", opacity=0.85)
+            for j in range(6):
+                a.path(f"M{580},{745 + j * 6}h44", stroke=kit.mix(kit.RED, kit.AMBER, 0.4), stroke_width=1.6, stroke_dasharray="3 3",
+                       stroke_linecap="round", opacity=0.8)
+        if extra.get("ticks"):  # a column of pencil ticks at one height: the knots on the door-frame, on paper
+            for j in range(24):
+                a.path(f"M{718 + (j % 3) * 7},{420 + j * 2.2}h{12 + (j * 5) % 7}", stroke=pc, stroke_width=1, opacity=0.6 + 0.015 * j)
+            a.text(712, 410, "7", size=20, family="cursive", fill=pc)
+        if extra.get("tape"):  # a cloth tape measure across the lower left corner
+            a.open("g", transform="rotate(90 60 220) translate(0 -14)")
+            a.rect(20, 944 - 724, 300, 26, fill=kit.mix(kit.BONE, kit.AMBER, 0.15), stroke=kit.mix(INK, kit.BONE, 0.5), stroke_width=1)
+            for j in range(31):
+                a.path(f"M{24 + j * 9.6},{220}v{9 if j % 5 else 15}", stroke=INK, stroke_width=0.9)
+                if j % 5 == 0:
+                    a.text(24 + j * 9.6, 243, str(j // 5 + 18), size=9, family="sans-serif", fill=INK, text_anchor="middle")
+            a.close()
+        for j in range(extra.get("pins", 0)):  # pins, red-headed on the newest
+            x, y, ang = [(250, 330, 30), (560, 300, 140), (120, 700, 80), (690, 720, 100), (400, 470, 0), (330, 960, 20), (600, 960, 160)][j]
+            pin(a, x, y, ang, kit.RED if k == 3 else [kit.SKY, kit.MOSS, kit.RUST][j % 3])
+        if extra.get("thimble"):
+            a.open("g", transform="translate(612 196) scale(0.9)")
+            a.path(kit.ICONS["thimble"][0][1], fill="#1a0f08", opacity=0.25, transform="translate(4 5)")
+            a.path(kit.ICONS["thimble"][0][1], fill=a.gradient([(0, "#e4e1d8"), (1, "#8a8e92")], 0, 0, 1, 0), stroke="#4a4f54", stroke_width=1)
+            a.stipple(30, 42, 40, 40, n=26, r=(0.8, 1.4), fill="#4a4f54", opacity=0.6)
+            a.close()
+        if extra.get("peg"):  # the bone button tied with red wool: the peg that is nobody's
+            kit.button(a, 664, 230, 26, kit.mix(kit.BONE, kit.DUST, 0.3), thr=kit.RED)
+            a.path("M664,256q-30,40 -80,46t-70,30", fill="none", stroke=kit.RED, stroke_width=2.2, stroke_linecap="round")
+        if extra.get("scissors"):
+            a.open("g", transform="translate(560 440) rotate(28) scale(1.7)")
             a.path(kit.ICONS["scissors"][0][1], fill="#1a0f08", opacity=0.3, transform="translate(3 4)")
             a.path(kit.ICONS["scissors"][0][1], fill=a.gradient([(0, "#e9e6de"), (1, "#8d9296")]), stroke="#4a4f54", stroke_width=0.6)
             a.path(kit.ICONS["scissors"][1][1], fill="none", stroke=kit.mix(kit.AMBER, kit.CEDAR, 0.5), stroke_width=4.4)
             a.path(kit.ICONS["scissors"][2][1], fill="#4a4f54")
             a.close()
+        # the bottom selvage: a strip of the sheet's edge, and what is worked along it
+        kind, marks = run
+        a.path(a.wobble_d([(58, 950), (742, 944), (744, 1036), (60, 1042)], 1.2, 26, closed=True), fill=kit.mix(age, kit.BONE, 0.35), opacity=0.85)
+        a.path("M60,954L742,948", stroke=fold, stroke_width=1, stroke_dasharray="3 3")
+        n = len(marks)
+        u = min(9.0, 640 / (n * 8.2))
+        step = u * 8.2
+        x0 = 400 - (n * step) / 2 + u * 0.6
+        if kind == "line":
+            # right to left: Ruth's first mark is at the right end
+            for j, name in enumerate(marks):
+                ruth_mark(a, name, x0 + (n - 1 - j) * step, 978, u * (0.82 if n > 6 else 0.9), tally=j + 1)
+            a.text(80, 940, "hers, from the book", size=15, family="cursive", fill=pc, transform="rotate(-2 80 972)")
+        else:
+            for j, name in enumerate(marks):
+                x = 230 + j * 170
+                ruth_mark(a, name, x, 956, 6.4, pencil=pc)
+                a.text(x + 19, 1028, name, size=24, family="cursive", fill=pc, text_anchor="middle")
+            a.text(66, 990, "her marks:", size=15, family="cursive", fill=pc, transform="rotate(-2 80 972)")
+        # a loose strand of red wool across the sheet
+        a.path(f"M{60 + k * 40},{470}q160,-60 290,10t240,-20", fill="none", stroke=kit.RED, stroke_width=1.8, stroke_linecap="round", opacity=0.75)
         a.close()
         kit.shade(a, 0.4)
     draw.__doc__ = doc
@@ -444,3 +555,34 @@ def _ruth(k, row):
 
 for _k, _r in enumerate(RUTH):
     _ruth(_k, _r)
+
+
+# ---- your page (phase 3) ------------------------------------------------------------------------
+@asset(G, "page-yours", group="documents", title="Your page: a page with no front", w=800, h=1100, row=ROW_P)
+def page_yours(a: Art):
+    """A new linen page for the hand-sewn book with no front: six empty places along a red-wool rule, each with room for the
+    sewer's strokes above it, and a needle and a slack bone thread lying across the corner."""
+    a.paper(kit.mix(kit.CEDAR, kit.INK, 0.45), grain=0.3, fibre=0.4)
+    kit.lamp(a, 400, 300, 640, kit.SKY, 0.18)
+    edge = a.wobble_d([(60, 60), (744, 54), (740, 1046), (64, 1040)], amp=1.8, step=12, closed=True)
+    a.path(edge, fill="#1a0f08", opacity=0.3, transform="translate(6 9)", filter=a.blur(6))
+    a.path(edge, fill=kit.mix(kit.LINEN, kit.BONE, 0.35), filter=kit.felt_filter(a, freq=0.9))
+    a.path(kit.R(64, 58, 676, 984), fill=kit.weave_pattern(a, 3.0))
+    # the sewn edge where it is bound into the book
+    kit.thread(a, "M92,70V1030", kit.BONE, w=2.6, dash="10 8")
+    kit.thread(a, "M104,70V1030", kit.RED, w=1.6, dash="4 10", shadow=False)
+    a.text(420, 170, "a page with no front", size=34, family="serif", fill=kit.mix(kit.INK, kit.CEDAR, 0.4), text_anchor="middle", font_style="italic")
+    a.text(420, 210, "read from the other side", size=20, family="serif", fill=kit.mix(kit.INK, kit.CEDAR, 0.5), text_anchor="middle", font_style="italic")
+    for j in range(6):
+        x, y = 150 + j * 100, 420
+        a.rect(x, y, 80, 116, fill="none", stroke=kit.RED, stroke_width=2, stroke_dasharray="6 5", opacity=0.7)
+        a.path(f"M{x + 10},{y - 22}h60", stroke=kit.mix(kit.RED, kit.LINEN, 0.5), stroke_width=1.4, stroke_dasharray="2 4")
+    kit.thread(a, "M140,580H700", kit.RED, w=3, dash="9 6")
+    a.path("M150,640q200,30 280,-10t250,16", fill="none", stroke=kit.mix(kit.RED, kit.LINEN, 0.4), stroke_width=1.2, stroke_dasharray="3 6")
+    # needle and slack thread
+    a.open("g", transform="translate(560 860) rotate(-28)")
+    a.path("M0,0L150,-5L156,0L150,5Z", fill=a.gradient([(0, "#e9e6de"), (1, "#8d9296")]), stroke="#4a4f54", stroke_width=0.8)
+    a.path("M136,0a6,2 0 1,0 12,0a6,2 0 1,0 -12,0", fill="#3a3028")
+    a.close()
+    a.path("M690,790q-200,90 -360,40t-200,120", fill="none", stroke=kit.BONE, stroke_width=2.2, stroke_linecap="round")
+    kit.shade(a, 0.45)

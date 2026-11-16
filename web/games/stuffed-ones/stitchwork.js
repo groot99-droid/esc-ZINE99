@@ -24,6 +24,11 @@
 // last sewn first, or the cloth tears. Twist: Jamie's Seam (`c13_jamies_seam`): stitching is moving.
 // A guest's eye runs along the top of the chart and the needle may travel only while it is shut. Ten
 // stitches, or you may put the needle down and leave him open; the game does not say which is kinder.
+//
+// Phase 3 (DESIGN.md section 21, built 2026-11-16): Lila's seam is the design's ten whip stitches
+// (appearance 3), with 75 s: 60 for the seam and 15 for the ripper. When Ruth's five stitches come out
+// in order, the lining under them is tissue: Ruth's third pattern, with Mabel's pencil key to three of
+// Ruth's marks (mother, cut, unpick). They cross into the glossary, and the selvage reads more of itself.
 import { artKit, FACE } from "./art-kit.js";
 import { runStages, stagePicker } from "./stages.js";
 const PRE = "stuffed-ones-stitchwork-";
@@ -35,7 +40,7 @@ function setN(n) { N = n; SP = 34 / n; POINTS = Array.from({ length: n }, (_, i)
 const BLURBS = ["Marcus's strap: eight stitches, no clock.", "Lila's seam on the pulse, your own thread, and the ripper.", "Jamie's Seam: sew only while the eye is shut."];
 const STAGE = [
   { n: 8, time: 0, pulse: false, eye: false, ground: "ground-webbing", chart: "chart-1-running", head: "MARCUS'S STRAP", card: "CARD 1" },
-  { n: 8, time: 60, pulse: true, eye: false, ground: "ground-torn-seam", chart: "chart-3-whip", head: "LILA'S SEAM", card: "CARD 3" },
+  { n: 10, time: 75, pulse: true, eye: false, ground: "ground-torn-seam", chart: "chart-3-whip", head: "LILA'S SEAM", card: "CARD 3" },
   { n: 10, time: 150, pulse: false, eye: true, ground: "ground-torn-seam", chart: "chart-5-jamies-seam", head: "JAMIE'S SEAM", card: "CARD 5" },
 ];
 const MY_SEAMS = ["head", "chest", "left arm", "right arm", "left leg", "right leg"];
@@ -529,7 +534,9 @@ function run(root, api, flow) {
           : gr === "Fair" ? "Marcus hauls on it once and nods. It will do for a hike. The map goes into his back pocket, where maps get lost."
             : "It holds if nobody runs. Marcus says thanks, and means it, and carries the pack by its other strap.");
       } else if (stage === 1) {
-        const slot = rip && rip.cut.length === 5 ? ` Ruth's five stitches came out in the order they went in, backwards, and the hollow in your ${mySeam} is yours again.` : rip && rip.torn ? ` You cut Ruth's stitches out of order and the cloth tore: the hollow in your ${mySeam} is gone for good.` : ` Ruth's stitches are still in your ${mySeam}; the hollow you gave stays shut.`;
+        let key = "";
+        if (rip && rip.cut.length === 5) { const fresh = flow.S.learn(["mother", "cut", "unpick"]); flow.S.set("key", true); key = ` Under them the lining is not felt but tissue, pencilled RUTH: an older pattern of hers, cut larger, and at its foot Mabel's small pencil key to three of Ruth's marks: mother, cut, unpick.${fresh.length ? " You will know them in her wool now." : ""}`; }
+        const slot = rip && rip.cut.length === 5 ? ` Ruth's five stitches came out in the order they went in, backwards, and the hollow in your ${mySeam} is yours again.${key}` : rip && rip.torn ? ` You cut Ruth's stitches out of order and the cloth tore: the hollow in your ${mySeam} is gone for good.` : ` Ruth's stitches are still in your ${mySeam}; the hollow you gave stays shut.`;
         const effect = gr === "Poor" ? "Lila's seam is closed, barely; the hunger will find the gaps." : "Lila's hunger will rise more slowly now. She does not say thank you; she cannot. She is very still.";
         text = `${gr} seam, ${q} percent, with ${Math.max(0, Math.ceil(timeLeft))} s of dark to spare. ${effect}${slot}${gr !== "Poor" && steadies >= 2 && !drifts ? " The pulse never once got into your hands." : ""}`;
       } else {

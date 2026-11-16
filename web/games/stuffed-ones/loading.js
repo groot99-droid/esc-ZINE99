@@ -30,6 +30,7 @@ const TIPS = [
   "The Hand-Sewn Book: red thread is an act, black a thing, white who. A slot takes only its colour.",
   "Parlour: when a face comes to the window, hold still. A toy on the table is a toy someone left there.",
   "Stuffing: a slot left empty is warm. The hunger lives there.",
+  "Ruth's selvage: six lines in red wool, three in the book and three on her own patterns. Every how-to card shows what you have.",
 ];
 
 export function render(root, ctx) {
@@ -149,4 +150,37 @@ export function render(root, ctx) {
     progress(v) { p = Math.max(p, Math.min(1, v || 0)); },
     close() { closed = true; cancelAnimationFrame(raf); clearInterval(tipTimer); el.remove(); },
   };
+}
+
+// The finale (docs/WEB.md): the long puzzle, Ruth's selvage, paid off at the Labyrinth's threshold.
+// Null until her sentence has been read whole there; then the ending the threshold earned: The Page
+// if you walked in and sewed a line of your own, The Cycle (as written) if you held the doorway.
+export function finale({ shared, keyart }) {
+  const get = (k, d) => { try { const v = shared.get(k, d); return v === undefined || v === null ? d : v; } catch { return d; } };
+  if (get("selvage_read", false) !== true) return null;
+  const choice = get("threshold", ""), page = get("page", []);
+  const card = (id) => { try { return keyart(id) || ""; } catch { return ""; } };
+  if (choice === "in" && Array.isArray(page) && page.length) {
+    const words = page.map((w) => (w === "i" ? "I" : String(w))).join(" ");
+    return {
+      title: "The Page",
+      text: "Ruth was the first one bound: seven in a sickroom bed, re-cut on tissue every few years so that she would seem to grow up beside her mother, and the red wool on the backs of the book was her sentence for how a bound thing is let go. " +
+        `You read it whole in the doorway, walked in after them, lay down in the circle of torn fabric skins, and sewed your own line into the book: “${words}.” ` +
+        "The guests went down all the same, your friends hunt without you, and you are awake in the dark with no pulse for company. " +
+        "“I don't know how long I've been down here.”",
+      image: card("ending-the-page"),
+    };
+  }
+  if (choice === "held") {
+    const it = get("it", ""), who = it ? it[0].toUpperCase() + it.slice(1) : "";
+    return {
+      title: "The Cycle",
+      text: "You read Ruth's sentence whole in the doorway: she was the first one bound, a seven-year-old re-cut on tissue so that she would seem to grow up, and her backs say how a bound thing is let go. " +
+        "You held the doorway anyway, a toy in a door while a guest asked you to be anything else. " +
+        `The new stuffed ones sit beside you now${who ? `, and ${who}, whom you made It, faces the door` : ", carrying what you used against them"}. ` +
+        "“And we are so very hungry.”",
+      image: card("ending-cycle"),
+    };
+  }
+  return null;
 }

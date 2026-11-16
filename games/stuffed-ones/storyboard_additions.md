@@ -13,3 +13,14 @@ a reference still yet. Quotations are verbatim from
 | 15 | 3D | `a4_sixty_knots` | Day three, crouched outside Lila's locked door with the cat plush in your hand: the edge of the pine door-frame at eye level, knots of thread pinned up it like a child's height marks | The knots climb to a seven-year-old's height. Then sixty more are tied at that same height, faded to fresh. Nobody says anything | Push-in on the Hand-Sewn Book |  |
 | 16 | 3D | `c11_cupboard_shut` | Toy height, from the floor of the linen cupboard looking out at the lit landing: a guest's legs, the door swinging to, the line of light under it cut by a chair's feet | The guest you made It shuts the whole pack in and wedges the chair. Hold still. In the dark, on the shelf above you: tissue patterns pencilled RUTH, cut small, then larger, then larger | Fade |  |
 | 17 | 1D | `c13_jamies_seam` | Stitchwork: Jamie's split side as a counted chart, ten numbered stitches, and a strip of eyes along the top that open and shut | "Jamie didn't move. / Not yet. / We were still playing." The needle may travel only while the guest's eye is shut. Mend him and he stays, hungry; or put the needle down | Cut |  |
+
+## Phase 3 (2026-11-16)
+
+One row for the scene added in phase 3, continuing the numbering. In story order it follows panel 12's
+place as the alternative last scene: The Page, a proposal, not the author's ending. Quotations are
+verbatim from `02_Novels/01_The_Stuffed_Ones.md`; everything else is an addition for the game
+(DESIGN.md sections 13, 21 and 22).
+
+| # | Layer | Scene | Shot | Beat | Into next | Still |
+| --- | --- | --- | --- | --- | --- | --- |
+| 18 | 3D | `e_page_circle` | Toy height on the stone floor of the ritual room, from inside the "circle of torn fabric skins": the cat on its side, a slack bone thread to the lectern where the book lies open on one new linen page; one grey shaft from the open trapdoor, no amber anywhere | The guests are gone below and the pulse is gone from the cat. It sews a page of its own, in marks it learned, and lies still. Black, and the novel's first line: "I don't know how long I've been down here." | Fade (credits) | `keyart/ending-the-page.jpg` (generated ending card) |

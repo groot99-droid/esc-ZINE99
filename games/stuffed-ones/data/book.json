@@ -54,28 +54,42 @@
   ],
   "hints": {"idle_role_glow_s": 90, "sampler_solved_lines": 1},
   "backs": {
-    "note": "Accepted 2026-11-15, built 2026-11-16 (phase 2). Every strip has a back, stitched in a child's large uneven hand in red wool. Each spread has two legal lines: Mabel's ritual on the front and Ruth's on the back. A back fits any slot; Ruth numbered her strips with her own strokes, and her line is read from the other side of the page, so her order runs right to left. Time on a back is time not spent on spread 6. The fourteen marks are the art's glyph-back-01 to glyph-back-14. The lines of spreads 1 and 3 are written for the game and playable in the web build; spreads 2, 4, 5 and 6 are drafts for the author, and the whole selvage sentence is settled with The Page (phase 3).",
+    "note": "Accepted 2026-11-15, built 2026-11-16 (phase 2). Every strip has a back, stitched in a child's large uneven hand in red wool. Each spread has two legal lines: Mabel's ritual on the front and Ruth's on the back. A back fits any slot; Ruth numbered her strips with her own strokes, and her line is read from the other side of the page, so her order runs right to left. Time on a back is time not spent on spread 6. The fourteen marks are the art's glyph-back-01 to glyph-back-14. All six lines are written for the game, for the author to approve or strike. Phase 3 (built 2026-11-16) settles the selvage sentence: the six lines read in Ruth's order are one sentence that says how a bound thing is let go. Ruth copied lines 2, 4 and 6 onto her own tissue patterns, and a copy read counts as that back read (book.backs_read). 'found' says where each line is met in the web build.",
     "marks": ["seven", "play", "stay", "warm", "cold", "company", "still", "go", "unpick", "cut", "i", "mother", "hunger", "home"],
     "first_flip": "seven",
     "flag": "book.backs_read",
     "lines": [
-      {"spread": 1, "marks": ["i", "seven", "still", "play"], "reads": "I am seven still. I play.", "status": "built"},
-      {"spread": 2, "marks": ["mother", "cut", "i", "warm"], "reads": "Mother cut me warm.", "status": "draft"},
-      {"spread": 3, "marks": ["hunger", "play", "company", "stay", "i", "warm"], "reads": "When the hunger plays, company stays, and I am warm.", "status": "built"},
-      {"spread": 4, "marks": ["company", "go", "i", "cold", "mother", "cut"], "reads": "When company goes I am cold, and Mother cuts again.", "status": "draft"},
-      {"spread": 5, "marks": ["unpick", "seven", "cut", "mother", "still", "i", "go", "home"], "reads": "Unpick the seven; cut while Mother is still; I go home.", "status": "draft"},
-      {"spread": 6, "marks": ["i", "go", "cold", "play", "stay", "still", "company", "home"], "reads": "I go cold. The play stays still. Company goes home.", "status": "draft"}
+      {"spread": 1, "marks": ["i", "seven", "still", "play"], "reads": "I am seven still. I play.", "status": "built", "found": "the book, spread I's back"},
+      {"spread": 2, "marks": ["mother", "cut", "i", "warm"], "reads": "Mother cut me warm.", "status": "built", "found": "Ruth's first pattern, under the toy's own (Stuffing, second packing)"},
+      {"spread": 3, "marks": ["hunger", "play", "company", "stay", "i", "warm"], "reads": "When the hunger plays, company stays, and I am warm.", "status": "built", "found": "the book, spread III's back"},
+      {"spread": 4, "marks": ["company", "go", "i", "cold", "mother", "cut"], "reads": "When company goes I am cold, and Mother cuts again.", "status": "built", "found": "Ruth's second pattern, on the linen-cupboard shelf (Dollhouse night two, the heap)"},
+      {"spread": 5, "marks": ["unpick", "seven", "cut", "mother", "still", "i", "go", "home"], "reads": "Unpick the seven; cut while Mother is still; I go home.", "status": "built", "found": "the book, spread V's back"},
+      {"spread": 6, "marks": ["i", "go", "cold", "play", "stay", "still", "company", "home"], "reads": "I go cold. The play stays still. Company goes home.", "status": "built", "found": "Ruth's newest pattern, under the counting-game cloth's turned hem, seen lying beside the board (Parlour, the Door sentence)"}
     ],
     "glossary": {"flag": "glossary.ruth", "taught": [
       {"where": "The hem of the counting-game cloth (a1_dinner, c11_parlour_1)", "marks": ["play", "company", "stay"]},
       {"where": "Mabel's pencil on the toy's own pattern (b6_stuffing_1)", "marks": ["warm", "cold", "hunger"]},
       {"where": "The wallpaper by the labyrinth's centre door (a5_labyrinth, c14_labyrinth_inner)", "marks": ["still", "go", "home"]},
-      {"where": "The ritual-room walls, low down (a5_book_3, 8 s a reading)", "marks": ["seven", "i", "mother", "unpick", "cut"]}
+      {"where": "The ritual-room walls, low down (a5_book_3, 8 s a reading)", "marks": ["seven", "i", "mother", "unpick", "cut"]},
+      {"where": "Mabel's pencil key on Ruth's third pattern, under the five stitches the ripper takes out (c12_stitch_mend; phase 3)", "marks": ["mother", "cut", "unpick"]}
     ]}
   },
   "missing_strips": {
     "note": "Accepted 2026-11-15, built 2026-11-16 (phase 2). One strip of each late spread is gone; the player sews it from two glossary radicals. A wrong pair costs 4 s where the world runs.",
     "wrong_pair_cost_s": 4,
     "strips": [{"spread": 3, "glyph": "feed", "from": ["needle", "mouth"], "status": "built"}]
+  },
+  "selvage": {
+    "note": "Accepted 2026-11-15, built 2026-11-16 (phase 3). Written for the game, not the author's text. The six lines of the backs in Ruth's order, as one sentence. At the centre doorway at the end of the Chase the player sets the pieces gathered in her order (her strokes number them); once it reads whole, the centre is open to the toy (threshold.walked_in, The Page).",
+    "reads": "I am seven still. I play. Mother cut me warm. When the hunger plays, company stays, and I am warm. When company goes I am cold, and Mother cuts again. Unpick the seven; cut while Mother is still; I go home. I go cold. The play stays still. Company goes home.",
+    "solved_at": "c14_labyrinth_inner",
+    "flag": "book.backs_read"
+  },
+  "player_page": {
+    "note": "Accepted 2026-11-15, built 2026-11-16 (phase 3). In The Page the player sews a line of three to six marks into the book, chosen only from marks they have learned (e_page_circle). It is kept in the profile (book.player_page), and the next run's book holds it as a page with no front, numbered with the player's own strokes and read right to left like Ruth's: the exact line the next player translates.",
+    "flag": "book.player_page",
+    "min_marks": 3,
+    "max_marks": 6,
+    "written_by": "e_page_circle"
   }
 }

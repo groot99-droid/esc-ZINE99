@@ -296,7 +296,9 @@
    "game": "sewn_book",
    "reads": [
     "book.pages_found",
-    "book.carried"
+    "book.carried",
+    "book.player_page",
+    "run.number"
    ],
    "writes": [
     "book.spreads_read",
@@ -410,7 +412,9 @@
    "chapter": "c04_fuller",
    "game": "sewn_book",
    "reads": [
-    "book.pages_found"
+    "book.pages_found",
+    "book.player_page",
+    "run.number"
    ],
    "writes": [
     "book.spreads_read",
@@ -496,7 +500,9 @@
    "reads": [
     "book.pages_found",
     "book.spreads_read",
-    "glossary.ruth"
+    "glossary.ruth",
+    "book.player_page",
+    "run.number"
    ],
    "writes": [
     "book.spreads_read",
@@ -864,7 +870,8 @@
     "borrowed.kept",
     "seams.wadded",
     "seams.all_wadded",
-    "lila.hum_kept"
+    "lila.hum_kept",
+    "guest.patches_kept"
    ],
    "enter": "push-in",
    "exit": "pull-out",
@@ -1144,7 +1151,8 @@
     "borrowed.kept",
     "seams.wadded",
     "seams.all_wadded",
-    "lila.hum_kept"
+    "lila.hum_kept",
+    "guest.patches_kept"
    ],
    "enter": "cut",
    "exit": "pull-out",
@@ -1266,7 +1274,8 @@
     "borrowed.kept",
     "seams.wadded",
     "seams.all_wadded",
-    "lila.hum_kept"
+    "lila.hum_kept",
+    "guest.patches_kept"
    ],
    "enter": "push-in",
    "exit": "pull-out",
@@ -1372,7 +1381,9 @@
     "dread.guest_2",
     "dread.guest_3",
     "dread.group",
-    "map.kept"
+    "map.kept",
+    "book.backs_read",
+    "glossary.ruth"
    ],
    "writes": [
     "guests.herded",
@@ -1381,12 +1392,14 @@
     "memory.kept",
     "memory_log",
     "threshold.held",
-    "glossary.ruth"
+    "glossary.ruth",
+    "threshold.walked_in"
    ],
    "enter": "cut",
    "exit": "fade",
    "next": [
-    "e_cycle_shelf"
+    "e_cycle_shelf",
+    "e_page_circle"
    ]
   },
   {
@@ -1452,6 +1465,27 @@
     "altar.choice"
    ],
    "writes": [
+    "shelf.generations",
+    "shelf.previous_ending",
+    "run.number",
+    "book.carried"
+   ],
+   "enter": "fade",
+   "exit": "fade"
+  },
+  {
+   "id": "e_page_circle",
+   "layer": "3d",
+   "name": "The Page: the circle of skins",
+   "chapter": "c15_cycle",
+   "reads": [
+    "threshold.walked_in",
+    "book.backs_read",
+    "glossary.ruth",
+    "guests.herded"
+   ],
+   "writes": [
+    "book.player_page",
     "shelf.generations",
     "shelf.previous_ending",
     "run.number",

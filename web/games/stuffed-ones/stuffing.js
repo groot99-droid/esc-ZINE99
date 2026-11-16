@@ -31,8 +31,15 @@
 // hollow empty or take something out. "Lila's hum", kept through any packing, is what stops her
 // walking in the Dollhouse (api.shared "lila_hum"). Mabel's pencil marks on the pattern are three
 // of Ruth's glyphs, and cross into the book's glossary.
+//
+// Phase 3 (DESIGN.md section 21, built 2026-11-16). Guest patches: in the test stage what you watched
+// from the shelf comes down too, one patch per guest in the guest's colour ("Noor at the mirror").
+// Packed, it counts as kept and pays costs like your own; the toy will not act against that guest
+// within 4 m until the next packing. And when Ruth turns you over on her evening round, the tissue
+// lifts: under your pattern is an older one pencilled RUTH, with her line 2 in red wool along its
+// edge, a piece of the selvage (stages.js).
 import { artKit, PATCH, FACE } from "./art-kit.js";
-import { runStages, stagePicker } from "./stages.js";
+import { runStages, stagePicker, foundNote } from "./stages.js";
 const PRE = "stuffed-ones-stuffing-";
 const C = { cedar: "#6b4a32", cedarD: "#4a3222", dust: "#e6dcc6", moss: "#7d8a5a", rust: "#a5553a", sky: "#8fa9bf",
   cream: "#efe5cf", bone: "#f6f1e4", amber: "#e39a2d", red: "#b8322a", ink: "#2a211b", gold: "#c9a227", rose: "#c07a8e", green: "#4f6b2c" };
@@ -70,6 +77,12 @@ const SHEET = { you: "pattern-narrator", jamie: "pattern-jamie", lila: "pattern-
 const BORROW_AFTER = 2, BORROW_EASE = 6;
 const WHO = { you: [C.cream, "Y", "You"], jamie: [C.sky, "J", "Jamie"], lila: [C.rose, "L", "Lila"], marcus: [C.moss, "M", "Marcus"], dani: [C.amber, "D", "Dani"] };
 const FRIENDS = ["jamie", "lila", "marcus", "dani"];
+// Guest patches (data/memories.json, guest_patches): what you watched from the shelf. Names written for the game.
+const GUESTS = [["noor", "Noor at the mirror", "Rehearsing something at the bathroom mirror, twice, and stopping when the tap ran.", "patch-guest-noor"],
+  ["wes", "Wes's lamp, left on", "A lamp on all night in his room, switched off when anyone knocked.", "patch-guest-wes"],
+  ["ana", "Ana talks to the toys", "She told the rabbit it wasn't alone, and meant it.", "patch-guest-ana"]];
+Object.assign(WHO, { noor: [C.rust, "N", "Noor"], wes: [C.sky, "W", "Wes"], ana: ["#8a9a5e", "A", "Ana"] });
+const KEPT = (t) => t.kind === "mine" || t.kind === "guest";
 
 // Pattern pieces in a 690 x 410 pattern space. Cost order: Head, Chest, Arms, Legs.
 const SEAMS = [
@@ -178,9 +191,10 @@ function run(root, api, flow) {
       [["dani", "Don't make it weird.", "“I'm glad I came.” She said it at the stove, not looking up. This is hers, not yours.", "patch-borrowed-dani-weird"], ["jamie", BORROWED.jamie[1][0], BORROWED.jamie[1][1], BORROWED.jamie[1][2]]].forEach(([who, name, line, art]) =>
         tokens.push({ i: tokens.length, name, who, line, art, kind: "borrowed", slot: null, lost: false, fade: 0 }));
     }
+    if (stage === 1) GUESTS.forEach(([who, name, line, art]) => tokens.push({ i: tokens.length, name, who, line, art, kind: "guest", slot: null, lost: false, fade: 0 }));
     const fresh = stage > 0 ? flow.S.learn(["warm", "cold", "hunger"]) : [];
     let kbUsed = false, started = false, closing = false, dragging = null, hover = null, cursor = 0, held = null, binding = false, bindUsed = false;
-    let ruthDone = stage !== 1, packedEver = 0;
+    let ruthDone = stage !== 1, packedEver = 0, foundN = null;
     let borrowedCame = stage !== 1, wadSaid = false;
     const pops = [], seenLine = new Set();
     let L = null, beatTimer = 0;
@@ -252,7 +266,7 @@ function run(root, api, flow) {
       function take(si, why) {
         for (let step = 0; step < SEAMS.length; step++) {
           const sj = (si + step) % SEAMS.length;
-          const idx = slots.findIndex((s, k) => s.seam === sj && !s.bound && fill[k] !== null && tokens[fill[k]].kind === "mine");
+          const idx = slots.findIndex((s, k) => s.seam === sj && !s.bound && fill[k] !== null && KEPT(tokens[fill[k]]));
           if (idx >= 0) {
             const tk = fill[idx]; fill[idx] = null;
             events.push({ kind: "cost", token: tk, text: `${why}: ${tokens[tk].name} goes from the ${SEAMS[sj].name.toLowerCase()}${step ? " (its own seam had nothing to give)" : ""}.` });
@@ -275,12 +289,13 @@ function run(root, api, flow) {
       let warmest = 0, ww = -1;
       SEAMS.forEach((s, si) => { if (warmIn(si) > ww) { ww = warmIn(si); warmest = si; } });
       for (let k = 0; k < lurches; k++) { take(warmest, `Lurch at 100, the ${SEAMS[warmest].name.toLowerCase()} jerks`); take(warmest, "The same lurch"); }
-      const keptIdx = fill.filter((x) => x !== null && tokens[x].kind === "mine");
+      const keptIdx = fill.filter((x) => x !== null && KEPT(tokens[x]));
+      const spared = keptIdx.filter((i) => tokens[i].kind === "guest").map((i) => WHO[tokens[i].who][2]);
       const friends = FRIENDS.map((f) => [f, keptIdx.some((i) => tokens[i].who === f)]);
       const kept = keptIdx.length;
       const ok = stage === 2 ? joined > 0 && kept >= 3 && lurches === 0 : kept >= 5 && friends.every((x) => x[1]) && lurches === 0;
       const hum = fill.some((x) => x !== null && tokens[x].name === "Lila's hum");
-      return { w, joined, hunger: Math.round(hunger), lurches, warmest, events, kept, fill, friends, ok, lent, emptyToy, hum };
+      return { w, joined, hunger: Math.round(hunger), lurches, warmest, events, kept, fill, friends, ok, lent, emptyToy, hum, spared };
     }
 
     function renderPanel() {
@@ -294,7 +309,7 @@ function run(root, api, flow) {
       }).join("");
       const mark = (b) => `<b style="color:${b ? C.green : C.red}">${b ? "✓" : "✗"}</b>`;
       const sel = held !== null ? `<div class="${PRE}row"><small>Holding <b>${held === "wad" ? "wadding" : tokens[held].name}</b>: tap a hollow.</small></div>` : binding ? `<div class="${PRE}row"><small><b style="color:#6b5410">Tap a slot to bind it in gold.</b></small></div>` : "";
-      const ease = stage === 2 ? 10 : BORROW_EASE, have = tokens.filter((t) => t.kind === "mine" && !t.lost).length;
+      const ease = stage === 2 ? 10 : BORROW_EASE, have = tokens.filter((t) => KEPT(t) && !t.lost).length;
       const keptLine = stage === 2
         ? `<li>${mark(r.joined > 0)}<span>The Chase: warm hollows in <b>${warmSeams()}</b> of 3 seams</span></li><li>${mark(r.kept >= 3)}<span>Kept by morning: <b>${r.kept}</b> of ${have} (three, to know who you are herding with)</span></li>`
         : `<li>${mark(r.kept >= 5)}<span>Kept by morning: <b>${r.kept}</b> of ${TOKENS.length} (the Warning needs 5)</span></li>`;
@@ -571,7 +586,8 @@ function run(root, api, flow) {
       if (sl.token !== null) { const t = tokens[sl.token]; t.slot = null; sl.token = null; }
       sl.closed = true;
       layout(); renderPanel();
-      beat("Ruth's evening round", `She checks the windows, then the shelves. She turns you over, says nothing, and pulls your ${SEAMS[sl.seam].name.toLowerCase()} seam tighter by hand. One hollow is gone; whatever was in it is back in the tray.`, 6500);
+      beat("Ruth's evening round", `She checks the windows, then the shelves. She turns you over, says nothing, and pulls your ${SEAMS[sl.seam].name.toLowerCase()} seam tighter by hand. One hollow is gone; whatever was in it is back in the tray. When she lays you down the tissue lifts at one corner.`, 6500);
+      foundN = foundNote(wrap, api, 2, 9000);
     }
     const pt = (e) => { const b = cv.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; };
     function select(i) {
@@ -652,12 +668,13 @@ function run(root, api, flow) {
         }
       }));
       K.after(step * (r.events.length + 2), () => {
-        const kept = tokens.filter((t) => !t.lost && t.kind === "mine").map((t) => t.name);
+        const kept = tokens.filter((t) => !t.lost && KEPT(t)).map((t) => t.name);
+        const spareTail = r.spared.length ? ` You know ${r.spared.join(" and ")} too well now: tonight your toy will not act against ${r.spared.length === 1 ? "that guest" : "them"} within four metres.` : "";
         const voices = r.lent.map((t) => `${WHO[t.who][2]}, later, once: ${VOICE[t.who]}`);
         flow.S.set("lila_hum", !!r.hum);
         const humTail = r.hum ? " Lila's hum is in you still: three notes, kept for her." : "";
         if (r.emptyToy) {
-          A.finale(wrap, "movement-2").then(() => flow.done({ outcome: "done", text: `Six seams of wadding. You pack yourself with nothing: no memory to lose, no hunger to feed, no game you can be made to play. The others climb down without you. In the morning Mabel dusts around a toy that does not move. “And the worst part? / We were awake.” This is the Empty Toy, chosen by hand.` }));
+          A.card(wrap, api.keyart("ending-empty-toy"), "ending-title-empty-toy", "movement-2").then(() => flow.done({ outcome: "done", text: `Six seams of wadding. You pack yourself with nothing: no memory to lose, no hunger to feed, no game you can be made to play. The others climb down without you. In the morning Mabel dusts around a toy that does not move. “And the worst part? / We were awake.” This is the Empty Toy, chosen by hand.` }));
           return;
         }
         const best = api.store.get("best", 0);
@@ -676,7 +693,7 @@ function run(root, api, flow) {
           return;
         }
         const games = GAMES.length === 1 ? (r.joined ? "You joined the Sound game." : "You held through the Sound game.") : r.joined ? `You joined ${r.joined === 2 ? "both games" : "one game"}.` : "You held through both games.";
-        flow.done({ outcome: r.ok ? "win" : r.lurches ? "lose" : "done", text: `Kept ${r.kept} of ${TOKENS.length}: ${kept.join(", ") || "nothing"}. ${why} ${games}${voices.length ? " Borrowed and kept: " + voices.join(" ") : ""}${humTail}` });
+        flow.done({ outcome: r.ok ? "win" : r.lurches ? "lose" : "done", text: `Kept ${r.kept}: ${kept.join(", ") || "nothing"}. ${why} ${games}${voices.length ? " Borrowed and kept: " + voices.join(" ") : ""}${spareTail}${humTail}` });
       });
     }
     K.on(closeBtn, "click", closeSeams);
@@ -717,7 +734,7 @@ function run(root, api, flow) {
     K.on(startBtn, "click", () => {
       intro.remove(); started = true; wrap.focus(); renderPanel();
       if (stage === 0) beat("Thirteen and twelve", "Thirteen memories, twelve hollows, and the Sound game tonight needs one hollow of the head left warm. Tap a patch to remember what it is.", 6000);
-      else if (stage === 1) beat("Gold thread", "Spread 2 taught you to bind one slot. Choose it with Bind (B): whatever sits there, the night cannot take.", 5000);
+      else if (stage === 1) { beat("Gold thread", "Spread 2 taught you to bind one slot. Choose it with Bind (B): whatever sits there, the night cannot take.", 5000); K.after(5400, () => { if (!closing) beat("Guests, in the tray", "Three more patches, in the guests' colours: what you watched them do from the shelf. Packed, one counts as kept, and your toy will not go near that guest tonight.", 7000); }); }
       else beat("One hollow left", "In the tray: your name, and Jamie's bad postcard with nothing on it. Two more patches are in other people's thread. Whatever is in the tray when you close is gone.", 8000);
       if (fresh.length) K.after(stage === 2 ? 8400 : 5400, () => beat("Mabel's pencil", `Small marks beside your seams, copied from an older pattern in a child's hand: ${fresh.join(", ")}. You will know them if you see them again.`, 6000));
     });
@@ -727,6 +744,6 @@ function run(root, api, flow) {
     ro.observe(wrap);
     // a read-only probe for automated play tests
     layout(); renderPanel(); K.frame(draw);
-    return { unmount() { K.dispose(); A.dispose(); ro.disconnect(); wrap.remove(); } };
+    return { unmount() { K.dispose(); A.dispose(); ro.disconnect(); if (foundN) foundN.remove(); wrap.remove(); } };
   }
 }

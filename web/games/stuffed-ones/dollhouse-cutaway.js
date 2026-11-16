@@ -39,8 +39,12 @@
 // links are read here (api.shared): "Lila's hum" kept in Stuffing stops her walking, and the guest
 // made It in Parlour is the one who wedged the chair and comes out under the hall light. The
 // collection thread's guest object sits on a wall at the cut in the twist's night.
+//
+// Phase 3 (DESIGN.md section 21, built 2026-11-16): when the chair goes over, the tissue on the
+// cupboard's shelf comes down with the heap. Ruth's second pattern, cut larger, has her line 4 along
+// its edge in red wool: a piece of the selvage (stages.js), kept once the heap has held still.
 import { artKit, FACE } from "./art-kit.js";
-import { runStages, stagePicker, linkNote } from "./stages.js";
+import { runStages, stagePicker, linkNote, foundNote } from "./stages.js";
 const PRE = "stuffed-ones-dollhouse-cutaway-";
 const C = { paper: "#efe4c9", ink: "#2a211b", cedar: "#6b4a32", cedarD: "#4a3222", dust: "#e6dcc6", moss: "#7d8a5a", rust: "#a5553a",
   sky: "#8fa9bf", cream: "#efe5cf", bone: "#f6f1e4", amber: "#e39a2d", red: "#b8322a", night: "#56627a", nightL: "#7f8ca3", rose: "#c9a7b0" };
@@ -197,7 +201,7 @@ function run(root, api, flow) {
     let lightBy = null, lightT = 0, pulseT = 2, pulseOn = false, steadied = false, tremor = false, shakes = 0, shakeT = 0, gentle = false;
     let saidAna = false, saidVoice = false, saidHunger = false, saidThree = false, saidLight = false;
     // night two: the heap in the cupboard, then Proximity
-    let variant = "sound", stage = "night", heapT = 0, pushes = 0, misses = 0, beatUsed = -1, foundT = 0, heapLine = -1, heapSteady = 0, settled = 0;
+    let foundN = null, variant = "sound", stage = "night", heapT = 0, pushes = 0, misses = 0, beatUsed = -1, foundT = 0, heapLine = -1, heapSteady = 0, settled = 0;
     let climbed = false;
     function knockRect() { const [x, y] = S(KNOCK.x, KNOCK.lvl * FLOOR + KNOCK.h), w = Math.max(20, 0.4 * L.k), h2 = w * 250 / 180; return { x: x - w / 2, y: y - h2 / 2, w, h: h2 }; }
     function knock() { try { if (api.thread) api.thread.found(); } catch { /* storage off */ } capEl.style.opacity = 0; msg = "Three knocks in the wall. Three back, a little lower. None of us had hands for it."; msgT = performance.now() + 2600; }
@@ -583,7 +587,7 @@ function run(root, api, flow) {
         pop(["the door gives", "the chair shifts", "the chair goes over"][pushes - 1], R.x + (940 - R.src[0]) * R.sc, R.y + (520 - R.src[1]) * R.sc, C.red);
         if (pushes >= 3) {
           stage = "found"; foundT = 0; heapLine = -1; heapSteady = 0; pushBtn.hidden = true; stillBtn.hidden = false; steadyBtn.hidden = false;
-          cap("The chair goes over", "The door swings. Five toys spill onto the landing in a heap, touching, for the first time since the change. A bedroom door opens. Hold still (Space), all of you.", null, 5200);
+          cap("The chair goes over", "The door swings. Five toys spill onto the landing in a heap, touching, for the first time since the change, and the tissue from the cupboard shelf slides down over them. A bedroom door opens. Hold still (Space), all of you.", null, 5200);
         }
       } else {
         misses++; hunger += 3;
@@ -621,6 +625,7 @@ function run(root, api, flow) {
       toys[0].x = ART ? 4.95 : 5.2; toys[1].x = ART ? 5.4 : 5.6; toys.forEach((ty) => { ty.lvl = 1; ty.y = FLOOR; ty.plan = []; ty.grace = 1; });
       lightT = 6 * speed; lightBy = gIt;
       settleBtn.hidden = false; switchBtn.hidden = false;
+      K.after(600, () => { if (!over) foundN = foundNote(wrap, api, 4, 7400); });
       cap("03:00 · Proximity", `${gIt.name} puts nobody back, and goes to bed with the light on; it will go out. Then walk each toy to a red cross and Settle (1): somewhere to be found in the morning. Mind the mirror by the banister: it shows Wes the landing.`, null, 8000);
       if (hum) K.after(8400, () => { if (!over) linkT = linkNote(wrap, api, "Because you kept “Lila's hum” through a packing in Stuffing, Lila does not walk tonight. She stays where the door let her fall, three notes under her breath.", 9000); });
     }
@@ -970,6 +975,6 @@ function run(root, api, flow) {
     ro.observe(wrap);
     // a read-only probe for automated play tests
     layout(); K.frame(draw);
-    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); A.dispose(); ro.disconnect(); if (linkT) linkT.remove(); wrap.remove(); } };
+    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); A.dispose(); ro.disconnect(); if (linkT) linkT.remove(); if (foundN) foundN.remove(); wrap.remove(); } };
   }
 }

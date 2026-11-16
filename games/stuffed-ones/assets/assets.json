@@ -259,7 +259,8 @@
       "name": "The ritual room",
       "scenes": [
         "a5_ritual_room",
-        "a5_last_thing"
+        "a5_last_thing",
+        "e_page_circle"
       ],
       "dimensions_m": [
         7,
