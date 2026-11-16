@@ -138,12 +138,15 @@ export function flashPlate(wrap, api, id, ms, reduced, css = "") {
 }
 // opts: { numeral, inset (a second art id shown small, lower right), caption (a line under the inset or the card) }
 export function endCard(wrap, api, id, opts = {}) {
-  if (!hasArt(api, id)) return null;
+  if (!hasArt(api, id) && !opts.keyart) return null;
   const el = document.createElement("div");
-  el.style.cssText = "position:absolute;inset:0;z-index:12;background:rgba(14,8,8,.86);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:14px 14px 150px;box-sizing:border-box;overflow:hidden;animation:none";
+  // opts.keyart: a generated ending card (api.keyart(id)) laid behind the result; "" falls back to the plain ground
+  if (opts.keyart) el.style.backgroundImage = `linear-gradient(rgba(14,8,8,.62),rgba(14,8,8,.78)),url("${String(opts.keyart).replace(/"/g, "%22")}")`;
+  el.style.cssText += ";position:absolute;inset:0;z-index:12;background-color:rgba(14,8,8,.86);background-size:cover;background-position:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:14px 14px 150px;box-sizing:border-box;overflow:hidden;animation:none";
   const box = document.createElement("div");
   box.style.cssText = "position:relative;max-width:min(100%,860px);max-height:100%;display:flex;min-height:0";
-  box.appendChild(artImg(api, id, "display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 10px 40px rgba(0,0,0,.6)"));
+  const main = artImg(api, id, "display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 10px 40px rgba(0,0,0,.6)");
+  if (main) box.appendChild(main);
   const n = artImg(api, opts.numeral, "position:absolute;left:8px;top:8px;width:clamp(36px,9%,72px);height:auto;box-shadow:0 2px 8px rgba(0,0,0,.5)");
   if (n) box.appendChild(n);
   const ins = artImg(api, opts.inset, "position:absolute;right:3%;bottom:6%;width:clamp(84px,30%,250px);height:auto;border:3px solid #E8DCC4;box-shadow:0 6px 22px rgba(0,0,0,.7)");
@@ -213,7 +216,12 @@ export function ladder(run, opts = {}) {
         },
       };
       inner = run(root, api, ctl);
-      return { unmount() { drop(); if (inner) inner.unmount(); inner = null; } };
+      // phase 3: the ledger of the Four Marks, reachable from every stage of every mode
+      let led = null;
+      try { led = ledger(root, api); } catch (e) { console.error(e); }
+      const onMark = (e) => { if (led) led.refresh(e.detail && e.detail.fresh); };
+      root.addEventListener("heartstream-mark", onMark);
+      return { unmount() { drop(); if (inner) inner.unmount(); inner = null; root.removeEventListener("heartstream-mark", onMark); if (led) led.remove(); led = null; } };
     },
   };
 }
@@ -234,3 +242,165 @@ export function stagePicker(P, intro, ctl) {
     start.parentNode.appendChild(b);
   }
 }
+
+// ---- phase 3: the Four Marks, the old phrase, the crossing record ---------------------------------
+// The Lamp-Keeper's group left four marks through the world. Each sits at a height, one to five; read from
+// the hall to the heart, the heights are the old phrase, which ends home. Each mode that holds one shows it
+// once (revealMark) and writes it to api.shared ("marks"); The Carving's Wall at Night gives the key (the
+// Lamp-Keeper's tool, turned over). The ledger (a tab on the right edge of every mode, once anything is
+// found) shows what has been gathered. Marrow-Song's heart verse takes the phrase when all five are in.
+//   shared keys: "marks" {board, wall, hook, chamber, key: true}; "oldPhrase" {solved, choice, ending, crossing};
+//   "crossings" (finished crossings, a number); "lastCrossing" {boardRow, song, hands, ending}
+export const MARKS = [
+  { id: "board", n: "I", where: "the rim of the oldest board in the hall", sign: "the wave", h: 3, mode: "Bone Counters", art: "marks-board",
+    who: "the brother sent up the shaft with nothing; the game he left is still one move from finished" },
+  { id: "wall", n: "II", where: "the gap in a row of three on the Stencil Wall", sign: "the spiral", h: 4, mode: "The climb", art: "marks-wall",
+    who: "the Lamp-Keeper, who stayed; the gap is his" },
+  { id: "hook", n: "III", where: "the old hook in the Warden's hold", sign: "the fork", h: 2, mode: "River section", art: "marks-hook",
+    who: "the one the Warden took" },
+  { id: "chamber", n: "IV", where: "the mouth of the shared chamber, on the back of the chart", sign: "the wave and the star", h: 1, mode: "The Branch Chart", art: "marks-chamber",
+    who: "two who held together at the heart, side by side at the mouth and apart at the outlets" },
+];
+export const OLD_PHRASE = MARKS.map((m) => m.h);
+export function marks(api) {
+  const sh = shared(api);
+  const all = () => { const v = sh.get("marks", {}); return v && typeof v === "object" ? v : {}; };
+  return {
+    all, has: (id) => !!all()[id],
+    add(id) { const v = all(); if (v[id]) return false; v[id] = true; sh.set("marks", v); return true; },
+    count: () => MARKS.filter((m) => all()[m.id]).length + (all().key ? 1 : 0),
+    complete: () => MARKS.every((m) => all()[m.id]) && !!all().key,
+    crossings: () => Math.max(0, sh.get("crossings", 0) | 0),
+    last: () => sh.get("lastCrossing", null),
+  };
+}
+// a later crossing: a finished one is on record (a first run never sees any of this)
+export const secondRun = (api) => marks(api).crossings() > 0;
+
+const LP = "heartstream-ledger-";
+function ledgerCss() {
+  if (document.getElementById(LP + "css")) return;
+  const s = document.createElement("style"); s.id = LP + "css";
+  s.textContent = `
+.${LP}tab{position:absolute;right:0;top:50%;transform:translateY(-50%);z-index:11;writing-mode:vertical-rl;font:700 12px/1 var(--g-body,sans-serif);letter-spacing:.18em;text-transform:uppercase;background:#efe3c8;color:#17110f;border:1.5px solid #17110f;border-right:0;padding:12px 8px;min-width:34px;cursor:pointer;box-shadow:-3px 3px 0 rgba(23,17,15,.35)}
+.${LP}tab:hover,.${LP}tab:focus-visible{background:#fff7e4;outline:2px solid #7A1020;outline-offset:1px}
+.${LP}tab.${LP}new{animation:${LP}pulse 1s 3}
+@keyframes ${LP}pulse{50%{background:#F2B544}}
+.${LP}ov{position:absolute;inset:0;z-index:40;background:rgba(23,17,15,.72);display:grid;place-items:center;padding:12px;box-sizing:border-box;overflow:auto}
+.${LP}pg{position:relative;width:100%;max-width:880px;box-sizing:border-box;background:#efe3c8;color:#17110f;border:2px solid #17110f;outline:1px solid #17110f;outline-offset:4px;padding:16px 18px;font-family:var(--g-display,Georgia,serif);
+  background-image:repeating-linear-gradient(88deg,rgba(26,20,16,.06) 0 1px,transparent 1px 11px)}
+.${LP}pg h2{margin:0 0 4px;font-weight:500;font-size:26px;letter-spacing:.06em}
+.${LP}pg>p{margin:0 0 10px;font-size:16px;line-height:1.4;font-style:italic}
+.${LP}row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 10px}
+.${LP}row figure{margin:0;min-width:0}
+.${LP}row img{display:block;width:100%;height:auto;border:1px solid #17110f}
+.${LP}row figcaption{font-size:13px;line-height:1.3;margin-top:4px}
+.${LP}row figcaption b{display:block;font:700 11px var(--g-body,sans-serif);letter-spacing:.16em;text-transform:uppercase;color:#7A1020}
+.${LP}key{display:flex;gap:12px;align-items:center;border-top:1px dashed rgba(23,17,15,.4);padding-top:10px;margin-bottom:10px}
+.${LP}key img{width:min(46%,260px);height:auto;border:1px solid #17110f;flex:none}
+.${LP}key p{margin:0;font-size:15px;line-height:1.4;font-style:italic}
+.${LP}pg button,.${LP}rv button{font:700 15px var(--g-body,sans-serif);letter-spacing:.06em;background:#17110f;color:#efe3c8;border:0;padding:10px 18px;min-height:44px;cursor:pointer}
+.${LP}rv{position:absolute;inset:0;z-index:41;background:rgba(23,17,15,.84);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:14px;box-sizing:border-box;overflow:auto;text-align:center;color:#efe3c8}
+.${LP}rv img{display:block;width:min(78vw,300px);height:auto;border:2px solid #efe3c8;box-shadow:0 8px 30px rgba(0,0,0,.6)}
+.${LP}rv p{margin:0;max-width:600px;font:italic 18px/1.4 var(--g-display,Georgia,serif)}
+.${LP}rv b{display:block;font:700 12px var(--g-body,sans-serif);letter-spacing:.2em;text-transform:uppercase;color:#F2B544;margin-bottom:4px;font-style:normal}
+.${LP}rv button{background:#efe3c8;color:#17110f}
+@media (max-width:640px){.${LP}row{grid-template-columns:repeat(2,minmax(0,1fr))}.${LP}key{flex-direction:column;align-items:stretch}.${LP}key img{width:100%}.${LP}pg h2{font-size:22px}}
+@media (prefers-reduced-motion:reduce){.${LP}tab.${LP}new{animation:none}}`;
+  document.head.appendChild(s);
+}
+// a modal that keeps the mode's own keys away while it is up; returns close()
+function modal(root, el, onClose) {
+  const onKey = (e) => {
+    if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); return; }
+    if (e.key === "Tab") return;
+    e.stopPropagation();
+    if ((e.key === "Enter" || e.key === " ") && !el.contains(document.activeElement)) { e.preventDefault(); const b = el.querySelector("button"); b && b.focus(); }
+  };
+  window.addEventListener("keydown", onKey, true);
+  root.appendChild(el);
+  let done = false;
+  function close() { if (done) return; done = true; window.removeEventListener("keydown", onKey, true); el.remove(); if (onClose) onClose(); }
+  return close;
+}
+const imgTag = (api, id, alt) => (artUrl(api, id) ? `<img alt="${esc(alt)}" src="${artUrl(api, id)}">` : "");
+// the ledger: the tab on the right edge, and the page it opens
+export function ledger(root, api) {
+  ledgerCss();
+  const M = marks(api);
+  const tab = document.createElement("button"); tab.type = "button"; tab.className = LP + "tab";
+  let closeIt = null;
+  const label = () => { const n = M.count(); tab.textContent = `The Four Marks · ${n}/5`; tab.setAttribute("aria-label", `The Four Marks: ${n} of 5 pieces found. Open the ledger.`); tab.hidden = n === 0 && !secondRun(api); };
+  const open = () => {
+    if (closeIt) return;
+    const v = M.all(), n = MARKS.filter((m) => v[m.id]).length;
+    const ov = document.createElement("div"); ov.className = LP + "ov"; ov.setAttribute("role", "dialog"); ov.setAttribute("aria-label", "The Four Marks");
+    const cards = MARKS.map((m) => v[m.id]
+      ? `<figure>${imgTag(api, m.art, `${m.where}: ${m.sign}, cut beside a notch of the five`)}<figcaption><b>${m.n} · found</b>${esc(m.where.charAt(0).toUpperCase() + m.where.slice(1))}: ${esc(m.sign)}. ${esc(m.who.charAt(0).toUpperCase() + m.who.slice(1))}.</figcaption></figure>`
+      : `<figure>${imgTag(api, "marks-unknown", "A page not yet filled")}<figcaption><b>${m.n} · not found</b>Somewhere in ${esc(m.mode)}.</figcaption></figure>`).join("");
+    const last = M.last();
+    const pencil = secondRun(api) && last && Array.isArray(last.song) ? `<p>On the facing page, in your own hand from the last crossing: ${esc(last.song.join(" · "))}.</p>` : "";
+    const keyHtml = v.key
+      ? `<div class="${LP}key">${imgTag(api, "keeper-underside", "The Lamp-Keeper's tool, turned over: four signs over four beads, the last one home")}<p>The Lamp-Keeper's tool, turned over at the pulse wall: four signs in a row, and over each a bead on a strand, the last one home. They are a phrase.${n === 4 ? " Read from the hall to the heart, by the height each is cut at. The heart verse in Marrow-Song has room for it, last." : ""}</p></div>`
+      : `<div class="${LP}key"><p>${n ? "Each is cut beside one of five notches, at a height. What the heights are for, nobody has told you. Somebody at the pulse wall, at night, might." : "Nothing found yet."} (The fifth piece is in The Carving.)</p></div>`;
+    ov.innerHTML = `<div class="${LP}pg"><h2>The Four Marks</h2><p>Four signs an older group left behind them, from the hall to the heart.</p><div class="${LP}row">${cards}</div>${keyHtml}${pencil}<button type="button">Close <small>Esc</small></button></div>`;
+    closeIt = modal(root, ov, () => { closeIt = null; tab.focus(); });
+    ov.querySelector("button").addEventListener("click", () => closeIt && closeIt());
+    ov.addEventListener("click", (e) => { if (e.target === ov && closeIt) closeIt(); });
+    ov.querySelector("button").focus();
+  };
+  tab.addEventListener("click", open);
+  label();
+  root.appendChild(tab);
+  return { refresh(fresh) { label(); if (fresh) flourish(tab, LP + "new", api.reducedMotion, 3000); }, open, remove() { if (closeIt) closeIt(); tab.remove(); } };
+}
+// show one mark as it is found, copy it into the ledger, then go on. `text` is the moment's own line.
+export function revealMark(root, api, id, text, then) {
+  ledgerCss();
+  const m = MARKS.find((x) => x.id === id), M = marks(api), had = M.has(id);
+  const el = document.createElement("div"); el.className = LP + "rv"; el.setAttribute("role", "dialog"); el.setAttribute("aria-label", `A mark: ${m.where}`);
+  el.innerHTML = `${imgTag(api, m.art, `${m.where}: ${m.sign}, cut beside a notch of the five`)}<p><b>${had ? "A mark you have copied before" : "A mark"} · ${m.n} of the Four</b>${esc(text)}</p><button type="button">${had ? "Go on" : "Copy it into the ledger"} <small>Enter</small></button>`;
+  const close = modal(root, el, () => {
+    const fresh = M.add(id);
+    try { root.dispatchEvent(new CustomEvent("heartstream-mark", { detail: { id, fresh } })); } catch { /* old browsers */ }
+    if (then) then(fresh);
+  });
+  el.querySelector("button").addEventListener("click", close);
+  el.querySelector("button").focus();
+  return close;
+}
+// the Lamp-Keeper's key, found at the Wall at Night (The Carving)
+export function addKey(root, api) {
+  const v = marks(api).all(); if (v.key) return false;
+  v.key = true; shared(api).set("marks", v);
+  try { root.dispatchEvent(new CustomEvent("heartstream-mark", { detail: { id: "key", fresh: true } })); } catch { /* old browsers */ }
+  return true;
+}
+// a finished crossing: the long puzzle solved. The marks are cleared for the next crossing, and what this one
+// left (board row, the heart verse, the hands on the wall, the ending) is kept for it.
+export function recordCrossing(api, solve, left) {
+  const sh = shared(api), n = marks(api).crossings() + 1;
+  sh.set("oldPhrase", Object.assign({ solved: true, crossing: n }, solve));
+  sh.set("lastCrossing", left);
+  sh.set("crossings", n);
+  sh.set("marks", {});
+}
+// a line on the how-to card (used for what a later crossing finds changed)
+export function introNote(P, intro, kicker, text) {
+  const start = intro.querySelector("." + P + "start"); if (!start) return null;
+  const el = document.createElement("p");
+  el.style.cssText = "margin:0 0 12px;padding:8px 10px;border:1.5px dashed currentColor;font-size:15px;line-height:1.4;font-style:italic;position:relative;z-index:1";
+  el.innerHTML = `<b style="display:block;font:700 11px var(--g-body,sans-serif);letter-spacing:.18em;text-transform:uppercase;font-style:normal;margin-bottom:2px">${esc(kicker)}</b>${esc(text)}`;
+  el.dataset.crossing = "2";
+  start.parentNode.insertBefore(el, start);
+  return el;
+}
+// the long puzzle's payoff: which ending a solved crossing earned, in the game's voice (loading.js finale reads it)
+export const FINALES = {
+  open_hand: { title: "The Open Hand", card: "ending-the-open-hand", art: "ending-the-open-hand",
+    text: "On the last note of the old phrase he opened his hand before the heart could open it for him, and his grip passed to the brothers either side. He went into his vessel first, red, the gift lying in his open palm. At its far end the vessel was cold and blue, and the wall there had a pulse in it: somebody carried away long ago, still keeping the beat for a marrow full of the not yet born. He cut his mark beside an old one and began to keep it too, and his friends, who watched his hand open, never learned why." },
+  two_together: { title: "Two Together", card: "ending-two-together", art: "ending-two-together",
+    text: "They held on through the old phrase, in time, and the heart swept the two of them into one chamber, the way a wave and a star were swept once, side by side at its mouth. For three minutes nobody else existed; then a valve opened between them without struggle, and each was carried on alone. At the end of each vessel a blue wall kept somebody's borrowed beat, and each cut his mark beside an old one. “…never lets you hold what you love for long.”" },
+  carried_away: { title: "Carried Away", card: "ending-carried-away", art: "ending-carried-away",
+    text: "The current split in the heart and every brother was swept a different way, holding the tool another carved for him. At the end of his vessel the wall was blue and cold and beating: the light in the marrow is the carried, keeping time for those not yet born, and he cut his mark beside an old one and began to keep it too. He turned the gift over and read what his brother had cut, when he could no longer answer it. “No one stays together. / Everyone is carried away. / Life is a river that never lets you hold what you love for long.”" },
+};

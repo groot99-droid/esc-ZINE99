@@ -1,6 +1,6 @@
 {
  "game": "heartstream",
- "count": 119,
+ "count": 125,
  "assets": [
   {
    "id": "numeral-1",
@@ -897,6 +897,54 @@
    "w": 1600,
    "h": 120,
    "row": "UI ornaments: beat rim, 4 glyphs, emote wheel, vessel line, frames"
+  },
+  {
+   "id": "keeper-underside",
+   "group": "documents",
+   "title": "The Lamp-Keeper's tool, turned over",
+   "w": 480,
+   "h": 260,
+   "row": "Phase 3: the Four Marks, the Lamp-Keeper's tool"
+  },
+  {
+   "id": "marks-board",
+   "group": "documents",
+   "title": "The first mark: the rim of the oldest board",
+   "w": 320,
+   "h": 320,
+   "row": "Phase 3: the Four Marks, the Lamp-Keeper's tool"
+  },
+  {
+   "id": "marks-chamber",
+   "group": "documents",
+   "title": "The fourth mark: the mouth of the shared chamber",
+   "w": 320,
+   "h": 320,
+   "row": "Phase 3: the Four Marks, the Lamp-Keeper's tool"
+  },
+  {
+   "id": "marks-hook",
+   "group": "documents",
+   "title": "The third mark: the hook in the Warden's hold",
+   "w": 320,
+   "h": 320,
+   "row": "Phase 3: the Four Marks, the Lamp-Keeper's tool"
+  },
+  {
+   "id": "marks-unknown",
+   "group": "documents",
+   "title": "A mark not yet found",
+   "w": 320,
+   "h": 320,
+   "row": "Phase 3: the Four Marks, the Lamp-Keeper's tool"
+  },
+  {
+   "id": "marks-wall",
+   "group": "documents",
+   "title": "The second mark: the gap on the Stencil Wall",
+   "w": 320,
+   "h": 320,
+   "row": "Phase 3: the Four Marks, the Lamp-Keeper's tool"
   },
   {
    "id": "chart-back",

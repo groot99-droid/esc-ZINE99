@@ -26,7 +26,7 @@
 //
 // The companions' "Down." and "Hush." are the one who fears's lines from DESIGN.md section 6.
 
-import { howTo, Legend, Beats, Streak, flourish, disposeKit, artUrl, artImg, raster, plate, endCard, ladder, stagePicker, shared } from "./_kit.js";
+import { howTo, Legend, Beats, Streak, flourish, disposeKit, artUrl, artImg, raster, plate, endCard, ladder, stagePicker, shared, revealMark } from "./_kit.js";
 //
 // Phase 2 (DEEP_DIVE.md section 3, built 2026-11-16): the mode is a ladder of three reaches.
 //   Teach  open water: four oars on one beat; trim under a fold and over a swell. Nothing hunts here.
@@ -456,7 +456,7 @@ ${rowSvg()}<div class="${P}crew"></div><button type="button" class="${P}start">B
       else if (insp.phase === "look") {
         const stroked = b.player != null;
         if (st.arm && !st.hush && !st.lift && !stroked) { insp.held++; say(["", "It looks at the one who fears.", "It looks at the one who dreams.", "It looks at the one who argues.", "It looks at you."][insp.held] || ""); thump(true);
-          if (insp.held >= 4) { insp.phase = "done"; beats.show("It is not hungry. It is counting.", 4200, "counted", "The Inspection"); later(() => finish(true), RM ? 1200 : 3200); } }
+          if (insp.held >= 4) { insp.phase = "done"; beats.show("It is not hungry. It is counting.", 4200, "counted", "The Inspection"); later(() => { if (st.over) return; st.paused = true; revealMark(root, api, "hook", "As it sinks it turns, and for a moment you see its underside through the surface: a milky skin set with old gifts healed into it, dozens of them. One is a hook, grey and smooth, ringed with five cut bands, and a fork is cut beside the second band. It keeps what it turns aside.", () => finish(true)); }, RM ? 1200 : 3200); } }
         else { if (insp.held > 0) say("Your arm came back. It begins again with the bow."); else if (st.hush) say("Crouching hides nothing now. Hold your arm out."); insp.held = 0; st.notice += st.hush ? 9 : 5; }
       }
     }
@@ -580,9 +580,10 @@ ${rowSvg()}<div class="${P}crew"></div><button type="button" class="${P}start">B
       } else {
         text = "The eye found the stern. You are lifted into the beast in one movement, without a struggle, and your seat stays empty. Your brothers row on with three. Taken by the river.";
       }
+      sh.set("river", { inTime, taken: !win, stage: SG });
       if (!win && insp.phase) text = "It looked along the raft and stopped at the stern. You are lifted into the beast in one movement, without a struggle, and your seat stays empty. Taken by the river.";
       ctl.end({ outcome: win ? "win" : "lose", text: text + (!win && streak.losses >= 2 ? " (Gentle Current is offered on the next start.)" : "") },
-        () => endCard(wrap, api, win ? (SG === 2 ? "river-inspection" : "chapter-8") : "ending-taken-by-the-river", win && SG !== 2 ? { numeral: "numeral-8" } : {}));
+        () => endCard(wrap, api, win ? (SG === 2 ? "river-inspection" : "chapter-8") : "ending-taken-by-the-river", win && SG !== 2 ? { numeral: "numeral-8" } : win ? {} : { keyart: api.keyart ? api.keyart("ending-taken") : "" }));
     }
 
     // ---- drawing (woodblock) --------------------------------------------------------------------
@@ -858,7 +859,7 @@ ${rowSvg()}<div class="${P}crew"></div><button type="button" class="${P}start">B
 
     function frame(now) {
       const dt = Math.min(60, now - lastNow); lastNow = now;
-      if (st.started && !st.over) step(dt, now);
+      if (st.started && !st.over && !st.paused) step(dt, now);
       draw(now);
       if (!st.over) raf = requestAnimationFrame(frame);
     }

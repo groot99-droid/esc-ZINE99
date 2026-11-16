@@ -10,7 +10,7 @@ the end, and the grip almost always fails.
 | Item | Value |
 | --- | --- |
 | Source | *A Journey Into the Heartstream: The Rite of the Blue-Born*, vault path `03_Stories/02_A_Journey_Into_the_Heartstream_-_The_Rite_of_the_Blue-Born.md` |
-| Target length | 50–70 minutes; this design runs 63 minutes. Never under 45. |
+| Target length | 50–70 minutes; this design runs 65 minutes (63 before phase 3 added The Wall at Night). Never under 45. |
 | Players | 2–4 in co-op; solo with three companion brothers. The raft always carries four. |
 | Core verb | **Row together** |
 | Structure | One unbroken session, played once, no saves |
@@ -28,7 +28,7 @@ only one in which the other players are what you lose.
 | What the bond is for | Nothing. It exists so there is something to lose. | Memory and combat; bonds win fights | Hunting together; the pulse is a weapon |
 | The rhythm | A heartbeat you row on, from the marrow to the heart | None | Stillness, not rhythm |
 | How it ends | Separation is certain; only its manner changes | Pair choice at #Wrymreach | The cycle continues to the next group |
-| Length and saves | 63 minutes, no saves, played once | 170–180 minutes, saves | 120–150 minutes, saves |
+| Length and saves | 65 minutes, no saves, played once | 170–180 minutes, saves | 120–150 minutes, saves |
 | Combat | None. Hide, row, hold on. | Yes | Predation |
 
 Its 2D modes (the river section and the climb), its 1D games (The Carving, Marrow-Song, Bone
@@ -77,7 +77,7 @@ the middle of a game: counters still in the hollows, a hand's worth left on a ri
 finished one. An elder sets a fresh board between you and your brother, and the first counter you
 drop lands on the heartbeat. The question is planted before a word is said: why does no one finish?
 
-**What the players come to care about: each other's characters.** The game spends 26 of its 63
+**What the players come to care about: each other's characters.** The game spends 26 of its 65
 minutes (chapters 1 to 3) on closeness before anything threatens it, and all of it is done, not
 shown:
 
@@ -238,14 +238,14 @@ Wall at Night, and the Four Marks belong to phase 3.
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | `c1_marrow` | The Marrow Lights | 8 | 3D, 1D | The heartbeat clock; marks; carving a counter; Bone Counters | 1 |
 | 2 | `c2_gift` | The Gift | 9 | 3D, 1D | A recipient; finding their mark; The Carving; the exchange | 1 |
-| 3 | `c3_song` | The Marrow-Song | 9 | 3D, 1D | Humming for phrases; Marrow-Song; the match cut off | 2 |
+| 3 | `c3_song` | The Marrow-Song | 11 | 3D, 1D | Humming for phrases; Marrow-Song; The Wall at Night (phase 3); the match cut off | 2 |
 | 4 | `c4_recognition` | The Recognition | 5 | 3D | The lights dim; hands redden; the choice to stay | 3 |
 | 5 | `c5_ascent` | The Ascent | 6 | 3D, 2D | The climb; lifting each other; heat | 3 |
 | 6 | `c6_river` | The River | 9 | 3D, 2D, 1D | Rowing on the beat; steering together; Branch Chart; first patrol | 4 |
 | 7 | `c7_delta` | The Delta | 8 | 3D, 2D, 1D | Narrower, faster; the heart verse; two patrols | 4 |
 | 8 | `c8_heart` | The Heart | 6 | 3D | The grip; voices cut one by one | 5 |
 | 9 | `c9_alone` | Alone | 3 | 3D | Each player alone | 2 |
-| | | **Total** | **63** | | | |
+| | | **Total** | **65** | | | |
 
 Variance: a slow group runs about 70 minutes, a quick one about 55. The river's length is fixed in
 distance; good rowing shortens it by up to 2 minutes and poor rowing lengthens it by up to 3. The
@@ -288,6 +288,10 @@ beat bpm 60----------------------------64-68-76-72-80-84-92-96->120-60
 
 No stretch passes 6 minutes without a new place, mechanic or choice.
 
+Phase 3 (accepted 2026-11-15, built 2026-11-16) adds The Wall at Night (`s3_wall_at_night`, about 2
+minutes, optional) between verse one and the second sitting: every minute in the chart from 24 on
+moves two later, chapter 3 runs 11 minutes, and the whole runs 65.
+
 ## 8. Levels
 
 ### Chapter 1: The Marrow Lights (`c1_marrow`, 8 minutes)
@@ -323,12 +327,17 @@ No stretch passes 6 minutes without a new place, mechanic or choice.
 - **Ends.** Each player holds the Give button facing their recipient; the gift moves to the
   recipient's belt. A recipient sees their own mark on it, if the carver cut it.
 
-### Chapter 3: The Marrow-Song (`c3_song`, 9 minutes)
+### Chapter 3: The Marrow-Song (`c3_song`, 11 minutes)
 
 - **Goal.** Make the group's song; return to the match.
 - **Where.** The singing hollow; the board is carried in on its slab.
-- **Order.** `s3_hollow` (humming search, 3 min) → `s1_song_1` (4 min) → `s1_counters_2` (2 min,
-  cut short).
+- **Order.** `s3_hollow` (humming search, 3 min) → `s1_song_1` (4 min) → `s3_wall_at_night` (2 min,
+  optional; phase 3) → `s1_counters_2` (2 min, cut short).
+- **The Wall at Night** (phase 3, accepted 2026-11-15, built 2026-11-16). That night a player who
+  cannot sleep finds the Lamp-Keeper at the pulse wall, tapping for a raft that crossed long ago.
+  Tapping sixteen beats beside him on the wall's pulse makes him turn his worn tool over: on its
+  inside face, four signs over four beads, the last one home (`self.tapped_with_keeper`). It is the
+  key to the Four Marks (section 20A). A player may go back to his alcove instead.
 - **Obstacles.** Phrases are found by humming (holding the voice button, or the Hum button for
   players without a microphone) near resonant growths; each growth answers only one temperament.
 - **Learned.** Each brother's phrases sound like him; the song needs all of them.
@@ -413,7 +422,11 @@ No stretch passes 6 minutes without a new place, mechanic or choice.
 
 - **Goal.** None. Ride.
 - **Order.** `s3_vessel` (Carried Away, Taken by the River), `s3_vessel_two` (Two Together),
-  `s3_lamps` (The One Who Stayed).
+  `s3_vessel_open` (The Open Hand, phase 3), `s3_lamps` (The One Who Stayed).
+- **The blue wall** (phase 3). When the old phrase was sung (`run.old_phrase_sung`), the vessel of
+  every brother on the raft ends at a cold blue wall with a pulse in it and an old mark; he cuts his
+  own beside it (`self.cut_beside_old`). This is where the secret is seen, before the source's three
+  lines, which stay last.
 - **Ends.** The ending's last image, the title, and a quiet return to the title screen. There is
   no lobby afterwards. Each client resolves its own ending when it leaves the shared session
   (section 13).
@@ -467,6 +480,14 @@ and a storyboard row in `storyboard_additions.md`.
 | `s2_inspection` | 2D (`m2_river`), c6 | The Inspection, the river's set-piece, after the first patrol: a raft that hushes perfectly is not passed over (section 10) |
 | `s3_backwater` | 3D, c7 | The backwater: flat grey-rose water, steady flat light, the red of the living river through the pool's mouth. An old raft of dried pale tissue is moored against the wall. On it: a board with every hollow empty and both keeps counted, and four gifts in a row. No brothers, and none are ever shown. Interactables: the two keeps, the gifts (look). 60 to 90 seconds; the raft rows itself back out to the fork, which is now three ways wide. Writes `run.saw_finished_board` |
 | `s3_bank_years_on` | 3D, c9 | The last image of The One Who Stayed, after `s3_lamps`: old, he climbs the shaft alone. A raft waits at the bank with his mark in its flank, and four small figures come out of the bone |
+
+**Scenes added in phase 3 (accepted 2026-11-15, built 2026-11-16).** Two scenes, each with its place
+in an existing location (`assets/assets.json`), a build file entry and a storyboard row.
+
+| Scene | Layer, chapter | What it is |
+| --- | --- | --- |
+| `s3_wall_at_night` | 3D, c3 (pulse wall chamber) | The Wall at Night: the Lamp-Keeper at the pulse wall, lamps low, tapping. Tap sixteen beats beside him and he turns his tool over (section 8, chapter 3) |
+| `s3_vessel_open` | 3D, c9 (narrow vessel) | The Open Hand's last scene: he rides first, the gift in his open palm. With the old phrase sung, the vessel's far end is the blue wall; `s3_vessel` and `s3_vessel_two` gain the same far end |
 
 ## 10. 2D modes
 
@@ -934,6 +955,11 @@ lamps (c9).
   rowing record) and always squeezes on the last note, so in solo the player can hold with the
   companion who carved his gift; in co-op a companion locks with a human only if no second human
   squeezed. The game never says this is possible.
+- **Opening the hand** (phase 3, accepted 2026-11-15, built 2026-11-16 as design and data). On the
+  song's last note a brother whose grip is above 0 may press Release instead of Squeeze. He gets
+  `self.opened_hand`, is separated on that beat (first, if no grip has failed yet) and cannot lock.
+  `run.hand_opened` is set: on that same beat the brothers either side of him may lock without 85 in
+  time (Two Together's condition, section 13). A companion never opens his hand.
 - `self.swept_order` records the order of separation (1 = first). Each separation is also appended
   to the shared `run.separations` (seat, beat), which every client reads to cut that brother's voice
   and which the stayer's wall reads to skip a beat.
@@ -1054,8 +1080,16 @@ needs in `docs/TECH.md` is listed in the report to the author, not made here.
 | --- | --- | --- | --- | --- | --- |
 | 1 | `stayed` | The One Who Stayed | No | This player sat on the elders' bench at the Recognition | `{"is":"self.refused","eq":true}` |
 | 2 | `taken` | Taken by the River | No | This player was taken by an immune beast | `{"is":"self.taken","eq":true}` |
-| 3 | `two_together` | Two Together | No | This player's hand locked with another's on the song's last note, with both in time | `{"all":[{"is":"self.held_together","eq":true},{"is":"self.in_time","gte":85},{"is":"run.taken_count","eq":0}]}` |
-| 4 | `carried_away` | Carried Away | **Yes** | Everything else: the story's own path | `true` |
+| 3 | `open_hand` | The Open Hand (phase 3) | No | This player opened his own hand on the song's last note, before any grip failed | `{"is":"self.opened_hand","eq":true}` |
+| 4 | `two_together` | Two Together | No | This player's hand locked with another's on the song's last note, in time or with an open hand beside them, and nobody was taken | `{"all":[{"is":"self.held_together","eq":true},{"any":[{"is":"self.in_time","gte":85},{"is":"run.hand_opened","eq":true}]},{"is":"run.taken_count","eq":0}]}` |
+| 5 | `carried_away` | Carried Away | **Yes** | Everything else: the story's own path | `true` |
+
+**Every ending keeps a cost** (phase 3 wrote each into its `summary` in `data/endings.json`). The One
+Who Stayed: no goodbye, and in the end he carries others to the parting he refused. Taken by the
+River: the gift or his brothers' sync, and no lock at the heart for anyone. The Open Hand: he goes
+first, and his friends watch his hand open without knowing why. Two Together: three minutes nobody
+else got, then a second parting. Carried Away: he reads what his brother cut when he can no longer
+answer it.
 
 ### Carried Away (as written)
 
@@ -1107,23 +1141,41 @@ another there as written (Carried Away); the taking still costs them, because wi
 Accepted 2026-11-15: his gift begins to sink into the Warden's skin (section 12). He ends holding
 it, having given the raft no knocks, or with an empty hand and a steadier raft behind him.
 
+### The Open Hand (phase 3, accepted 2026-11-15, built 2026-11-16)
+
+Final scenes: `s3_heart`, `s3_vessel_open`. On the heart verse's last note, the one beat on which a
+lock can form, a brother may open his own hand instead of squeezing (`self.opened_hand`). He is
+separated first, by choice, before any grip has failed. His grip passes to the brothers either side
+(`run.hand_opened`): the two of them may lock on that note without 85 in time, so Two Together opens
+for them. He rides his vessel first, red, the gift lying in his open palm. The cost: he goes first,
+and his friends watch his hand open without knowing why. With the old phrase sung, his vessel ends
+at the blue wall like everyone's. The source's lines are not changed and not shown here; Carried
+Away keeps them.
+
 ### Why these are mutually exclusive
 
 The resolver returns one ending per player. Priority 1 is a choice at the Recognition and removes
 the player from the raft, so he can be neither taken nor held. Priority 2 needs this player to have
 been taken, which removes him from the raft before the heart, so he cannot be held. Priority 3 needs
-a lock that the grip system only grants to in-time brothers on the raft and no taking. Priority 4 is
-the catch-all.
+a hand opened by choice on the last note, which only a brother on the raft at the heart can do, and
+an opened hand cannot also be locked. Priority 4 needs a lock that the grip system only grants on
+the last note to in-time brothers on the raft (or the two beside an opened hand) and no taking.
+Priority 5 is the catch-all. No two can be true together: refusing removes a player from the raft,
+taking removes him before the heart, and on the last note a hand is either opened or locked.
 
 ### How a player reaches each one on purpose
 
 - **Carried Away.** Climb, row, hide well, hold on. It is the default for any group that keeps to
   the story.
 - **Two Together.** Row in time all river long (85% or more), keep notice low so nobody is taken,
-  listen to the heart verse, and squeeze on its last note with one other brother. Learned on a
+  listen to the heart verse, and squeeze on its last note with one other brother. Or: be one of the
+  two beside a brother who opens his hand on that note, and squeeze with the other. Learned on a
   second crossing, or by intuition: the last note is the loudest moment of the song.
 - **The One Who Stayed.** At the Recognition, walk away from the shaft and sit in the empty seat on
   the elders' bench for 3 seconds.
+- **The Open Hand.** At the heart, on the song's last note, press Release instead of Squeeze (the
+  release is offered only on that beat, and only while the grip is above zero). Learned from the
+  Four Marks: in the web build the choice is put to the player when the old phrase is sung.
 - **Taken by the River.** Stand during a patrol until the beast comes: a brother who stands on
   purpose always has the highest exposure, so it takes him. Steering into patrol branches and rowing
   loudly in hush raise everyone's notice, and the beast then takes whoever is most exposed. The
@@ -1234,7 +1286,7 @@ collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg
 
 `data/` holds the four shared files:
 
-- `game.json`: the nine chapters, their minutes (63 total) and layers.
+- `game.json`: the nine chapters, their minutes (65 total) and layers.
 - `scenes.json`: two 2D modes (`m2_river`, `m2_climb`), four 1D games (`g1_carving`, `g1_song`,
   `g1_counters`, `g1_chart`), and 35 scenes: 18 3D, 7 2D and 10 1D appearances.
 - `flags.json`: every flag, meter, counter and ledger. Names that begin with `self.` are per-player
@@ -1342,8 +1394,11 @@ decisions its roadmap held for him: that the raft is grown from elders, that the
 is carried there, and the change to Two Together. This section states the accepted story. It is
 built in three phases. **Phase 1 was built on 2026-11-15 and phase 2 on 2026-11-16** (the author
 wrote "start phase 2"; the roadmap's one decision held for him, colour as a state, was decided with
-it): the design, the data and the web modules carry both. Phase 3 is accepted and not yet built,
-and nothing in sections 1 to 19 describes it as built. Everything here is added for the game (section 21); the source is not changed, and
+it): the design, the data and the web modules carry both. **Phase 3 was built on 2026-11-16**
+(the author wrote "start phase 3", and both decisions the roadmap held for it were decided yes: a
+fifth ending is wanted, and the crossing record may hold a board, a song and four handprints). All
+three phases are now built in the design, the data and the web build; the 3D scenes remain designs
+until they are built in Blender. Everything here is added for the game (section 21); the source is not changed, and
 Carried Away keeps its condition and its last three lines.
 
 ### The dramatic question
@@ -1367,9 +1422,9 @@ The seed is the source's own line:
 
 The pulse in the walls is carried there. Every vessel from the heart ends somewhere cold and blue,
 and the brother it carries gives that place's wall its beat. The light the players woke under is
-somebody carried away before they were born. Nobody tells them. The secret is accepted in this
-pass and shown in phase 3, to a player who solves the Four Marks: he sees it in his last scene,
-before the source's three lines, which stay last and stay true.
+somebody carried away before they were born. Nobody tells them. It is shown (phase 3, built) to a
+group that solves the Four Marks: each player's last scene ends at the blue wall, its pulse and an
+old mark, where he cuts his own, before the source's three lines, which stay last and stay true.
 
 ### Characters, new or deepened
 
@@ -1377,7 +1432,7 @@ before the source's three lines, which stay last and stay true.
 | --- | --- | --- | --- | --- |
 | The small one (the child of the next group, moved to minute 6) | To be let into the game now | He hums the group's song from his alcove with one note wrong | The Small One Moves a Counter | 1, built |
 | The Warden (the immune beast) | That nothing blue reaches the heart | It keeps what it turns aside: its hold is set with old gifts healed into the skin | The Inspection | Name and the hold's gifts: 1. The Inspection: 2, built (`s2_inspection`) |
-| The Lamp-Keeper (an elder, wordless) | To know whether the hook he carved ever reached a hand | He stayed because his gift was unfinished when the lights dimmed, and sent his brother up the shaft with nothing | The Wall at Night | 3 |
+| The Lamp-Keeper (an elder, wordless) | To know whether the hook he carved ever reached a hand | He stayed because his gift was unfinished when the lights dimmed, and sent his brother up the shaft with nothing | The Wall at Night | 3, built (`s3_wall_at_night`; in the web build, The Carving's twist) |
 | The elders, all of them | That the young leave well | When old, each climbs the shaft alone and lies down on the bank. The raft is grown from them | The Raft Has a Mark | 1, built |
 
 ### Acts and scenes
@@ -1389,7 +1444,7 @@ Source: the author's text. Existing: already in this design. New: accepted 2026-
 | 1 | 0 | The Hall of Unfinished Boards | Existing | The question: why does no one finish? | Built before |
 | 2 | 6 | The Small One Moves a Counter | New | Someone will be left by you | 1, built (`s1_counters_1`) |
 | 3 | 16 | The Exchange, and the Underside | Existing + new | A hidden cut the recipient cannot see yet | 1, built (`s1_carve_gift`, `s3_gallery`) |
-| 4 | 22 | The Wall at Night | New | An elder still taps for brothers long gone | 3 |
+| 4 | 24 | The Wall at Night | New | An elder still taps for brothers long gone | 3, built (`s3_wall_at_night`) |
 | 5 | 26 | The Recognition | Source + new | The empty seat is warm: its elder left last night | The seat's mark: 1 (it is the mark on the raft). The warm seat: 2, built (`s3_recognition`) |
 | 6 | 34 | The Stencil Wall | New | Every group's hands, and gaps where someone stayed | 2, built (`s3_stencil_gallery`, `s2_stencil_wall`) |
 | 7 | 37 | **Midpoint: The Raft Has a Mark** | Source + new | Staying is not staying | 1, built (`s3_river`, and the head of the web river section) |
@@ -1420,7 +1475,7 @@ group still playing, somewhere.
 | **Two Together** | After three minutes a valve opens between the two, without struggle or prompt: "…never lets you hold what you love for long." | Three minutes nobody else got, then a second parting | 1 |
 | **The One Who Stayed** | A last image after the lamps: old, he climbs the shaft alone; a raft waits with his mark in its flank, and four small figures come out of the bone | He carries others to the parting he refused | 1 (the image is `s3_bank_years_on`, added in phase 2) |
 | **Taken by the River** | His gift begins to sink into the Warden's skin. Holding it means he cannot knock for the raft | The gift or his brothers' sync | 1 |
-| **The Open Hand** (new, a fifth ending) | On the song's last note he releases by choice. His grip passes to the brothers either side, and their lock no longer needs 85 in time | He goes first, and his friends watch his hand open without knowing why | 3. Not in `data/endings.json` yet |
+| **The Open Hand** (new, a fifth ending) | On the song's last note he releases by choice. His grip passes to the brothers either side, and their lock no longer needs 85 in time | He goes first, and his friends watch his hand open without knowing why | 3, built (`open_hand`, priority 3; `s3_vessel_open`) |
 
 ### What is built in this pass (phase 1)
 
@@ -1460,13 +1515,66 @@ any stage with a result, and the stage reached is remembered.
 | The backwater in 3D; the Stayer's last image | Section 9 | 3D only | `s3_backwater`, `s3_bank_years_on` |
 | The collection thread: the ring a cup leaves on a table (from The Endless Temple) | `docs/DEEP_DIVE.md` section 4 | `carving` (twist): the corner of the slab, in the picture | none |
 
-### What waits
+### What is built in phase 3 (2026-11-16)
 
-- **Phase 3, depth and return.** The Four Marks and the old phrase; The Open Hand as a fifth
-  ending; The Wall at Night; the second-playthrough record of board, song and handprints; the
-  remaining art. Phase 2 leaves room for them: `run.song_ends_on_gap` and the heart verse's last
-  note are recorded and not yet read, the Stencil Wall has rows of three for the Lamp-Keeper's
-  mark, and no ending's condition has changed.
+| Item | Where it is designed | Where it plays in the web build | Data |
+| --- | --- | --- | --- |
+| The Open Hand, a fifth ending | Section 13 | `marrow-song` (test): the last-note choice, once the old phrase is sung | `open_hand` in `endings.json`; `self.opened_hand`, `run.hand_opened`; `s3_vessel_open` |
+| The costs of every ending, written into each summary | Section 13 | The menu's endings list | `endings.json` |
+| The Wall at Night | Section 8, chapter 3 | `carving` (twist): that night, kneel beside the Lamp-Keeper and tap sixteen beats on the wall's pulse; he turns his tool over | `s3_wall_at_night`, `self.tapped_with_keeper` |
+| The Four Marks | Below | One in each of four modes' twist, copied into the ledger | `run.marks_found` |
+| The old phrase, and the blue wall | Below; sections 8 and 13 | `marrow-song` (test): set it from the ledger, last; the raft sings it with you | `run.old_phrase_sung`, `self.cut_beside_old` |
+| The second-playthrough record | Below | Every mode reads it; the menu's finale shows the last solved crossing | `run.crossings` |
+| The remaining art | Section 15 | The ledger, the reveals, the Lamp-Keeper's tool; the ending cards behind the results | `art/src/98_phase3.py`; `keyart/` |
+
+**The Four Marks.** The Lamp-Keeper's group (four brothers: the Lamp-Keeper, his brother whom he sent
+up the shaft with nothing, one the Warden took, and one who held that brother by the hand at the
+heart) left four marks. Each is cut beside one of five notches, at a height:
+
+| # | Where | Sign | Height | Whose fate | Found in |
+| --- | --- | --- | --- | --- | --- |
+| I | The rim of the oldest board in the hall: the tally stopped at the third notch | the wave | 3 | The brother sent up with nothing; their game is still one move from finished | `bone-counters` (twist), after One Move on the Oldest Board |
+| II | The gap in a row of three on the Stencil Wall | the spiral | 4 | The Lamp-Keeper, who stayed (The One Who Stayed) | `climb` (twist), when the wall lights |
+| III | The old hook in the Warden's hold | the fork | 2 | The one the Warden took (Taken by the River) | `river-section` (twist), as the Warden sinks after the Inspection |
+| IV | The mouth of the shared chamber, on the back of the chart: two signs side by side, and apart at the outlets | the wave and the star | 1 | Two who held together, and the valve (Two Together, then Carried Away) | `branch-chart` (twist), "Look closer at the heart" with the chart held to the light |
+
+The fifth piece is the key: at The Wall at Night the Lamp-Keeper's tool shows the four signs over four
+beads, the last one home, which says the marks are a phrase. Read from the hall to the heart the
+heights are **the old phrase, 3 4 2 1**, which ends home. A ledger (a tab on the right edge of every
+mode once anything is found) shows the pieces gathered. When all five are in, Marrow-Song's heart
+verse offers the old phrase with four beads the player sets from the ledger; a verse that holds with
+it last, at the right heights, is the puzzle solved (the generator keeps one such verse possible).
+The raft sings it with the group. In 3D this is `run.old_phrase_sung`, and every raft ending's last
+scene gains the blue wall (section 8, chapter 9).
+
+**Which ending the solve earns** (the web build's finale, `loading.js`): on the last note the player
+chooses. Open the hand: The Open Hand. Hold on: Two Together if the river was rowed at 85% or more
+in time with nobody taken (the river section records it), otherwise Carried Away, as written.
+
+**The second playthrough.** A solved crossing is recorded (`run.crossings`; in the web build the
+shared keys `crossings`, `lastCrossing` and `oldPhrase`), and the marks are cleared for the next
+crossing. A later crossing changes, and a first crossing is unchanged:
+
+| Mode | What a returning player sees |
+| --- | --- |
+| `bone-counters` (teach) | The first crossing's board hangs in the hall, its row as it was left; the how-to card and a line at the board say so |
+| `climb` (twist) | The group's row from the last crossing is on the Stencil Wall, high up, labelled; a line says somebody else's group will walk past it |
+| `marrow-song` (teach) | One growth in the hollow is lit before anyone hums, and at The First Listen it answers first with the last crossing's heart verse |
+| `carving` (test, twist) | The elder's old tool is turned over this time: its inside face, the key, shows on the first look |
+| The ledger | The facing page carries the last crossing's heart verse, in the player's own hand |
+
+The stayer's and the taken brother's half-hours as games of their own are not built.
+
+### What is still not built
+
+- Every 3D scene, phase 3's included (`s3_wall_at_night`, `s3_vessel_open`, the blue wall at the far
+  end of the narrow vessel), is a design and a Blender build file until it is built in Blender. The
+  blue wall has no generated reference image; the narrow vessel's image shows the vessel only.
+- The heart's Release control and the grip passing to neighbours are designed (section 13) and
+  exist only as data; the web build has no heart.
+- The second playthrough as the stayer's or the taken brother's own game.
+- The DEEP_DIVE's third new place, the blue cavern, is folded into the narrow vessel's far end
+  rather than built as its own location.
 
 ## 21. Added for the game
 
@@ -1521,7 +1629,7 @@ None of the following is in the author's text. Each can be approved or struck.
 | The colour #8C7A78, dead grey-rose, for the backwater only (accepted 2026-11-15) | Art, section 11 |
 | Ending changes: the Underside in Carried Away; the valve in Two Together and its one line, the end of the author's last sentence; the Stayer's climb, raft and four small figures; the taken brother's gift sinking into the hold, and his choice between it and knocking (accepted 2026-11-15) | Sections 12, 13 |
 | The Warden's hold set with kept gifts (accepted 2026-11-15) | Sections 6, 12 |
-| The Lamp-Keeper and his secret; The Wall at Night; the Four Marks and the old phrase; The Open Hand; the second-playthrough record (accepted 2026-11-15; phase 3, not built) | Section 20A |
+| The Lamp-Keeper and his secret; The Wall at Night; the Four Marks and the old phrase; The Open Hand; the second-playthrough record (accepted 2026-11-15, built 2026-11-16) | Sections 8, 12, 13, 20A |
 | Colour as a state: red climbs with `self.in_time`; the bluest brother draws the eye (accepted 2026-11-15, built 2026-11-16) | Section 12 |
 | The three links between layers: song to river (rests and the Wardens' eyes), carving to 3D (hand-fit), board to song (the row as a phrase, hummed by the raft) (accepted 2026-11-15, built 2026-11-16) | Section 12 |
 | Scenes: The Stencil Wall, The Inspection, The Back of the Chart, The Blue Arm, and the warm seat at the Recognition (accepted 2026-11-15, built 2026-11-16) | Sections 8 to 11 |
@@ -1539,3 +1647,13 @@ None of the following is in the author's text. Each can be approved or struck.
 | Two code-drawn pictures added for phase 1: the small one at the rim of the board, and the raft's flank with its mark (accepted 2026-11-15 as part of the art plan's families) | `art/src/97_phase1.py` |
 | In the web modules: "Choose your sign." opens Bone Counters (the mark stone's choice, staged on the how-to card), and the recipient's mark in The Carving is the notch (written in this pass) | Web build |
 | Other lines written in this pass for the web modules, in the design's voice: the river's win line "The raft knew the way. It is grown from everyone who never went."; on the chart, "In d, nothing. No pulse at all, not even the heart's.", "You tell them: nothing beats in it. The one who dreams lifts his piece and sets it on the grey line, beside where yours would stand.", "Nobody speaks. The oars find the current again, and the fork is in front of you, three ways wide." and the result line "You have seen the only finished game in the world, and you know why no one finishes: an unfinished game is a group still playing, somewhere."; in The Carving, "Nobody carves the inside face of a grip. Two strokes would cut one small sign there, where he would not find it until the tool was all he had." (for the author to approve or strike) | Web build |
+| Phase 3, the costs written into every ending's summary, as the deep dive's table gave them (accepted 2026-11-15, built 2026-11-16) | Section 13, `endings.json` |
+| Phase 3, The Open Hand's rule as data: priority 3, `self.opened_hand`; Two Together may also be reached by the two beside an opened hand (`run.hand_opened`); Release is offered only on the last note and only above zero grip; a companion never opens his hand (accepted 2026-11-15, built 2026-11-16; the last two rules written in this pass) | Sections 12, 13 |
+| Phase 3, written in this pass to make the Four Marks playable (for the author to approve or strike): the Lamp-Keeper's group as four brothers (the Lamp-Keeper; the brother he sent up with nothing; one the Warden took; one who held that brother by the hand at the heart); their signs (the wave, the spiral, the fork, the star); where each mark is found (the oldest board's rim, the gap in a row of three, the hook in the hold, the two signs on the back of the chart at the shared chamber's mouth); the five-notch scale beside each mark; the old phrase 3 4 2 1; the Lamp-Keeper's tool showing four signs over four beads as the key; the ledger; the old phrase's beads set by the player; that holding on after the solve gives Two Together only when the river was rowed at 85% with nobody taken | Section 20A, web build |
+| Phase 3, the blue wall at the end of every raft brother's vessel when the old phrase was sung, and the mark he cuts beside an old one (`self.cut_beside_old`); the blue cavern folded into the narrow vessel's far end | Sections 8, 9 |
+| Phase 3, The Wall at Night's playable form: sixteen beats tapped on the wall's own pulse, missed taps taking a beat back every third miss; that a player may go back to his alcove instead; its two lines "He does not look at you. His tool and your knuckles fall together." and "Somewhere on the far side of the bone, something keeps the same time." (written in this pass) | Section 8, `carving` |
+| Phase 3, the second-playthrough record and what it changes: the board in the hall, the row on the Stencil Wall, the growth that answers with the last heart verse, the elder's tool turned over, the verse on the ledger's facing page; the marks cleared for each new crossing (accepted 2026-11-15, built 2026-11-16; the last two written in this pass) | Section 20A, web build |
+| Phase 3, Marrow-Song's twist coda "Sing it back": the verse sung once as it will be rowed, his beats kept empty (written in this pass from the design's own elements, to lengthen the stage) | Section 11, `marrow-song` |
+| Phase 3, lines written for the web build, in the design's voice (for the author to approve or strike): the four marks' reveals ("Before you go you look at the rim. Four signs are cut along it…", "As the light reaches the row of three you see what is in its gap…", "As it sinks it turns, and for a moment you see its underside through the surface…", "Under the heart, where one vessel opens into a small chamber and leaves it as two…"); The Wall at Night's opening and its last line ("On the sixteenth beat he stops. He turns his tool over…"); the old phrase's lines ("On the last phrase the raft sings with you, low, from the wood of it…", "At the heart you will sing this verse back…", "The raft hums it with you, low, from the wood of it. It has known this phrase longer than any of you. It wants it last."); the three finale texts in `_kit.js` (The Open Hand, Two Together, Carried Away; the last two end on the author's own words, quoted verbatim); the second crossing's lines ("At the end of the lowest shelf hangs a board you know…", "High on the wall, a row of four you know…", "Before you sing, one growth at the back of the hollow lights on its own…", "This time you turn the elder's tool over…") | Web build |
+| Phase 3 art drawn by code: the four mark pages, the blank page, the Lamp-Keeper's tool turned over (`art/src/98_phase3.py`); the thread guest redrawn without a ground or frame so it lies on the slab (accepted 2026-11-15 as part of the art plan's families) | `art/` |
+| Phase 3, the two phase-2 location images (`stencil-gallery`, `backwater`) generated again from new prompts in the same model and style, so the gallery reads in depth and the backwater reads as water | `assets/assets.json` |

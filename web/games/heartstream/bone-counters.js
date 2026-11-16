@@ -21,7 +21,7 @@
 // portraits, the beat rim, the small one, chapter cards 1 and 4, the two interstitials, the hall wall
 // and the thread. Every one falls back to the mode's own drawing when the id is missing.
 
-import { howTo, Beats, flourish, disposeKit, artUrl, artImg, pngUrl, plate, flashPlate, endCard, ladder, stagePicker, shared } from "./_kit.js";
+import { howTo, Beats, flourish, disposeKit, artUrl, artImg, pngUrl, plate, flashPlate, endCard, ladder, stagePicker, shared, revealMark, secondRun, marks, introNote } from "./_kit.js";
 //
 // Phase 2 (DEEP_DIVE.md section 3, built 2026-11-16): a ladder of three sittings.
 //   Teach  the first sitting: sow on the beat. Eight turns, the glows on, and the small one at the rim.
@@ -96,7 +96,7 @@ function run(root, api, ctl) {
 .${P}drop:disabled{opacity:.3;box-shadow:none}
 .${P}drop.${P}live{animation:${P}pulse ${"var(--beat,1s)"} infinite}
 @keyframes ${P}pulse{0%{background:${C.red}}25%{background:${C.ink}}}
-.${P}choice{display:flex;gap:10px}
+.${P}choice{display:flex;gap:10px}.${P}choice[hidden]{display:none}
 .${P}choice button{font:700 17px var(--g-display);letter-spacing:.12em;background:${C.cream};color:${C.ink};border:4px solid ${C.ink};padding:12px 22px;cursor:pointer;box-shadow:5px 5px 0 ${C.ink}}
 .${P}choice button:hover{background:#fff7e6}
 .${P}legend{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 16px;font-size:15px;font-family:var(--g-body);justify-content:center}
@@ -208,6 +208,11 @@ function run(root, api, ctl) {
     }
     plate(api, intro, P, { card: SG === 2 ? "chapter-3" : "chapter-1", numeral: SG === 2 ? "numeral-3" : "numeral-1", at: "30% 60%" });
     stagePicker(P, intro, ctl);
+    // a later crossing: the first crossing's board hangs in the hall
+    const lastX = secondRun(api) ? marks(api).last() : null;
+    const lastRow = lastX && Array.isArray(lastX.boardRow) ? lastX.boardRow.slice(0, 5).map((v) => v | 0) : null;
+    const rowWords = lastRow ? (lastRow.some((v) => v > 0) ? `Your row is still in it as you left it, ${lastRow.join(" · ")}` : "Your row is empty in it, as you left it") : "";
+    if (lastRow && SG === 0) introNote(P, intro, "The hall, this time", `At the end of the lowest shelf hangs a board you know. ${rowWords}, and nobody has finished that one either.`);
     let myMark = (api.store && api.store.get("mark", "ring")) || "ring"; if (!MARKS.includes(myMark)) myMark = "ring";
     let pieceUrl = "", plainUrl = "";
     const setMark = (m) => {
@@ -415,7 +420,11 @@ ${Array.from({ length: 14 }, (_, k) => `<ellipse cx="${36 + (k % 2) * 20}" cy="$
       const act = () => {
         if (step === 0) { step = 1; row[4] = 0; paint("You lift it. One counter, and the keep in front of it. When it lands this row is empty, and the oldest game in the world is over. The heart beats, and you let go on the beat, as you were taught.", "DROP <small>(Space)</small>"); }
         else if (step === 1) { step = 2; st.oldDone = true; paint("As it falls an old hand covers the keep. The counter drops into the palm instead. The hand turns over, and closes your fingers round it. Nobody says anything.", "GO TO THE ELDERS <small>(Enter)</small>"); }
-        else { oldEl.remove(); oldEl = null; finish("cut"); }
+        else if (step === 2) {
+          // phase 3: the first of the Four Marks, on this board's rim
+          step = 3;
+          revealMark(root, api, "board", "Before you go you look at the rim. Four signs are cut along it, worn almost smooth: a wave, a spiral, a fork, a star. Beside them the tally this group kept stops at the third of five notches, and the wave is cut there, deeper than the rest. Their game is still one move from finished.", () => { if (oldEl) { oldEl.remove(); oldEl = null; } finish("cut"); });
+        }
       };
       wrap.appendChild(oldEl);
       on(oldEl, "click", (e) => { if (e.target.closest("button, g[role=button]")) act(); });
@@ -619,6 +628,7 @@ ${Array.from({ length: 14 }, (_, k) => `<ellipse cx="${36 + (k % 2) * 20}" cy="$
       t0 = performance.now(); dropBtn.style.setProperty("--beat", `${PERIOD()}ms`);
       legend.add("pick", "Pick", "tap · ←/→ Enter"); legend.add("drop", "Drop", "Space · tap · DROP"); if (SG < 2) legend.add("read", "Read", "hover · focus (first sitting)");
       if (SG === 0) beats.show("“Sow with the heart.”", 2600, "elder", "The elder");
+      if (SG === 0 && lastRow) later(() => beats.show(`Your old board is on the wall behind him. ${rowWords}. The small one has been looking at it.`, 5200, "oldboard", "A board you know"), RM ? 0 : 3000);
       if (SG === 2) {
         beats.show("The board is not the one you set. The elders have stopped showing where counters land.", 5200, "sit2", "The second sitting");
         later(() => { st.cutDue = true; if (st.phase === "pick" && st.who === 0 && !st.over) cut(); }, SIT2_MS);

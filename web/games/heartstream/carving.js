@@ -25,7 +25,7 @@
 //   "They have grown up side by side, carved tools together, sung marrow‑songs together, dreamed of the world above the bone."
 // "Carve for him." is the elders' line from DESIGN.md section 6; "Not that one." is the one who argues's.
 
-import { howTo, Legend, Beats, flourish, disposeKit, artUrl, plate, endCard, ladder, stagePicker, shared } from "./_kit.js";
+import { howTo, Legend, Beats, flourish, disposeKit, artUrl, plate, endCard, ladder, stagePicker, shared, addKey, secondRun, introNote, flashPlate, artImg } from "./_kit.js";
 //
 // Phase 2 (DEEP_DIVE.md section 3, built 2026-11-16): a ladder of three carvings.
 //   Teach  eight strokes, with the grain, on a blank the elder has roughed out.
@@ -163,6 +163,13 @@ function run(root, api, ctl) {
 .${P}vessel .${P}vs i{display:block;aspect-ratio:1;background:${C.ivory} repeating-linear-gradient(88deg,rgba(26,20,16,.1) 0 1px,transparent 1px 11px)}
 .${P}vessel p{margin:0;max-width:600px;font-size:19px;line-height:1.4;font-style:italic;min-height:2.8em}
 .${P}vessel button{font:600 17px var(--g-display);letter-spacing:.12em;background:${C.ivory};color:${C.ink};border:0;padding:11px 24px;min-height:46px;cursor:pointer}
+.${P}night .${P}wallp{position:relative;width:min(84vw,340px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 45%,#7FB2E0 0,#2F5D8C 45%,#1E3557 75%,#0e1a2e 100%);border:3px solid ${C.ivory};box-shadow:0 0 0 0 rgba(127,178,224,.0);transition:box-shadow .12s,filter .12s;filter:brightness(.75)}
+.${P}night .${P}wallp.${P}on{filter:brightness(1.15);box-shadow:0 0 40px 8px rgba(127,178,224,.55)}
+.${P}night .${P}wallp svg{position:absolute;inset:0;width:100%;height:100%}
+.${P}night .${P}cnt{font:700 14px var(--g-body);letter-spacing:.2em;text-transform:uppercase;color:#c9d8ec}
+.${P}night .${P}row2{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.${P}night .${P}ghost{background:transparent;color:${C.ivory};border:1.5px solid ${C.ivory}}
+.${P}night .${P}tool{display:block;width:min(92vw,480px);height:auto;border:2px solid ${C.ivory}}
 .${P}under{position:absolute;inset:0;z-index:4;background:rgba(239,227,200,.94);display:grid;place-items:center;padding:12px;overflow:auto}
 .${P}under>div{max-width:440px;width:100%;background:${C.ivory};border:2px solid ${C.ink};outline:1px solid ${C.ink};outline-offset:4px;padding:14px}
 .${P}under h3{margin:0 0 4px;font-size:22px;font-weight:500}
@@ -222,6 +229,8 @@ ${SG > 0 ? `<p class="${P}h">Grip</p><div class="${P}fit" role="group" aria-labe
       extra: `<div class="${P}blank">${artUrl(api, "blank-cracked") ? `<img alt="A blank with a crack across it" src="${artUrl(api, "blank-cracked")}">` : ""}<span>All the slab's tools are to hand from the start.</span></div>`,
     }][SG]);
     stagePicker(P, intro, ctl);
+    const later2 = secondRun(api);
+    if (later2 && SG > 0) introNote(P, intro, "The slab, this time", "The elder's old tool lies at the edge of the slab, worn smooth, as before. You know now that it has an inside face.");
     plate(api, intro, P, { card: "chapter-2", numeral: "numeral-2" });
     wrap.appendChild(intro);
     root.appendChild(wrap);
@@ -425,6 +434,11 @@ ${SG > 0 ? `<p class="${P}h">Grip</p><div class="${P}fit" role="group" aria-labe
       btn("elder").querySelector("small").textContent = `${st.looks} look${st.looks === 1 ? "" : "s"} left · E`;
       if (!st.looks) btn("elder").disabled = true;
       say.textContent = "The elder's own old tool: the form as it should be, and the bone still to come away."; draw();
+      // a later crossing: you know to turn it over
+      if (later2 && st.looks === LOOKS - 1) {
+        flashPlate(stage, api, "keeper-underside", 5200, RM, "width:min(86%,420px)");
+        beats.show("This time you turn the elder's tool over. On its inside face, four signs over four beads, the last one home. Nobody ever told you to look there.", 6000, "turned", "The elder's tool, again");
+      }
     }
     // ---- phase 1: the Underside -------------------------------------------------------------------
     let underEl = null;
@@ -588,11 +602,70 @@ ${SG > 0 ? `<p class="${P}h">Grip</p><div class="${P}fit" role="group" aria-labe
       on(b, "click", go); on(vesselEl, "keydown", (e) => { if (e.key === "Enter" && e.target !== b) { e.preventDefault(); go(); } });
       b.focus();
     }
+    // ---- phase 3: The Wall at Night ----------------------------------------------------------------
+    // That night, at the pulse wall, the Lamp-Keeper taps for a raft that crossed long ago. Sixteen beats
+    // tapped beside him, on the wall's own pulse, and he turns his worn tool over: the key to the Four Marks.
+    let nightEl = null;
+    function wallAtNight(then) {
+      const PER = 1000, WIN = 190, NEED = 16;
+      nightEl = document.createElement("div"); nightEl.className = P + "vessel " + P + "night"; nightEl.setAttribute("role", "dialog"); nightEl.setAttribute("aria-label", "The Wall at Night");
+      nightEl.innerHTML = `<p aria-live="polite">That night you cannot sleep. The gift is wrapped and under your alcove. In the small chamber where the wall pulses, an old elder is kneeling, the one who keeps the lamps. He is tapping the wall with a worn tool, softly, on the beat, the way you would knock for somebody on the other side.</p>
+<div class="${P}row2"><button type="button" data-n="kneel">Kneel beside him <small>Enter</small></button><button type="button" class="${P}ghost" data-n="leave">Go back to your alcove</button></div>`;
+      try { wrap.scrollTop = 0; wrap.style.overflow = "hidden"; } catch { /* cover the stage */ }
+      wrap.appendChild(nightEl);
+      const text = nightEl.querySelector("p");
+      let t0 = 0, iv = 0, count = 0, misses = 0, last = -1, wallP = null, cnt = null, tapB = null, phase = "ask";
+      const done = () => { clearInterval(iv); if (nightEl) { nightEl.remove(); nightEl = null; } then(); };
+      const tap = () => {
+        if (phase !== "tap") return;
+        const now = performance.now(), k = Math.round((now - t0) / PER), off = now - (t0 + k * PER);
+        if (Math.abs(off) <= WIN && k !== last && k >= 0) { last = k; count++; }
+        else { misses++; if (count > 0 && misses % 3 === 0) count = Math.max(0, count - 1); }
+        cnt.textContent = `${count} of ${NEED}`;
+        if (count === 4) text.textContent = "He does not look at you. His tool and your knuckles fall together.";
+        if (count === 10) text.textContent = "Somewhere on the far side of the bone, something keeps the same time.";
+        if (count >= NEED) turn();
+      };
+      const turn = () => {
+        phase = "tool"; clearInterval(iv);
+        const fresh = addKey(root, api);
+        const pic = artImg(api, "keeper-underside", "", "The Lamp-Keeper's tool, turned over: four signs in a row, and over each a bead on a strand, the last one home.");
+        nightEl.innerHTML = "";
+        if (pic) { pic.className = P + "tool"; nightEl.appendChild(pic); }
+        const p2 = document.createElement("p"); p2.setAttribute("aria-live", "polite");
+        p2.textContent = "On the sixteenth beat he stops. He turns his tool over and holds it out on his palm, the inside face up: four signs cut small in a row, a wave, a spiral, a fork, a star, and over each a bead on a strand, the last one home. Then he closes his hand on it and goes back to the lamps." + (fresh ? " (The Lamp-Keeper's tool is in your ledger of the Four Marks.)" : "");
+        const b = document.createElement("button"); b.type = "button"; b.innerHTML = "Sleep <small>Enter</small>";
+        nightEl.append(p2, b); on(b, "click", done); b.focus();
+      };
+      const start = () => {
+        phase = "tap";
+        nightEl.querySelector("." + P + "row2").remove();
+        text.textContent = "Tap the wall beside him, on its pulse: when it brightens. Sixteen beats.";
+        const w = document.createElement("div"); w.className = P + "wallp"; w.setAttribute("aria-hidden", "true");
+        w.innerHTML = `<svg viewBox="0 0 100 100"><path d="M18,60 q14,-10 30,0 t32,0 M22,40 q12,-8 26,0 t30,0" fill="none" stroke="#E8DCC4" stroke-opacity=".35" stroke-width="1"/></svg>`;
+        cnt = document.createElement("div"); cnt.className = P + "cnt"; cnt.textContent = `0 of ${NEED}`;
+        tapB = document.createElement("button"); tapB.type = "button"; tapB.innerHTML = "Tap <small>Space</small>";
+        const lv = document.createElement("button"); lv.type = "button"; lv.className = P + "ghost"; lv.textContent = "Leave him to it";
+        const r = document.createElement("div"); r.className = P + "row2"; r.append(tapB, lv);
+        nightEl.append(w, cnt, r); wallP = w;
+        on(tapB, "pointerdown", (e) => { e.preventDefault(); tap(); });
+        on(tapB, "click", (e) => { if (e.detail === 0) tap(); });
+        on(lv, "click", () => { phase = "gone"; done(); });
+        t0 = performance.now() + 600;
+        // the wall brightens for the first part of each beat, read from one clock so it never drifts
+        iv = setInterval(() => { if (!wallP || phase !== "tap") return; const t = performance.now() - t0; wallP.classList.toggle(P + "on", t >= 0 && t % PER < 170); }, 30);
+        timers.push(iv);
+        tapB.focus();
+      };
+      on(nightEl, "click", (e) => { const b = e.target.closest("[data-n]"); if (!b) return; if (b.dataset.n === "kneel") start(); else done(); });
+      on(window, "keydown", (e) => { if (!nightEl || phase !== "tap") return; if (e.key === " " || e.code === "Space") { e.preventDefault(); if (!e.repeat) tap(); } });
+      nightEl.querySelector("button").focus();
+    }
     function finish() {
       if (st.over) return;
       if (!st.form) { say.textContent = "Pick a form first."; flourish(formsEl, P + "flash", RM, 450); if (st.time > 0) return; setForm("flute"); }
       st.over = true; if (underEl) { underEl.remove(); underEl = null; } draw();
-      if (SG === 2) return vessel(result);
+      if (SG === 2) return wallAtNight(() => vessel(result));
       result();
     }
     function result() {

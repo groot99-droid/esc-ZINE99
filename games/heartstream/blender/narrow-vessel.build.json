@@ -439,6 +439,127 @@
           "verb": "Look at the gift"
         }
       ]
+    },
+    "s3_vessel_open": {
+      "note": "Chapter 9, The Open Hand (built in phase 3): he goes first, the gift in his open palm, the vessel ahead still empty of anyone; with the old phrase sung, the far end of the vessel is a cold blue wall with a pulse in it and an old mark, and a place to cut his own beside it. The same far end serves s3_vessel and s3_vessel_two when run.old_phrase_sung is true.",
+      "world": {
+        "color": [
+          0.2,
+          0.02,
+          0.02
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "glow-ahead",
+          "type": "AREA",
+          "location": [
+            0,
+            19,
+            1.5
+          ],
+          "energy": 800,
+          "size": 3,
+          "look_at": [
+            0,
+            0,
+            1
+          ],
+          "color": [
+            1.0,
+            0.35,
+            0.25
+          ]
+        },
+        {
+          "name": "stream",
+          "type": "AREA",
+          "location": [
+            0.5,
+            -10,
+            0.1
+          ],
+          "energy": 120,
+          "size": 2,
+          "look_at": [
+            0.5,
+            -10,
+            3
+          ],
+          "color": [
+            0.878,
+            0.376,
+            0.227
+          ]
+        },
+        {
+          "name": "blue-wall",
+          "type": "AREA",
+          "location": [
+            0,
+            19.5,
+            1.2
+          ],
+          "energy": 180,
+          "size": 2.5,
+          "look_at": [
+            0,
+            0,
+            1
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.5,
+          -19,
+          2.2
+        ],
+        "look_at": [
+          0.5,
+          -10,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0.5,
+          -16,
+          0.1
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "gift-hook",
+          "verb": "Open the hand"
+        },
+        {
+          "prop": "gift-awl",
+          "verb": "Open the hand"
+        },
+        {
+          "prop": "gift-comb",
+          "verb": "Open the hand"
+        },
+        {
+          "prop": "gift-scraper",
+          "verb": "Open the hand"
+        },
+        {
+          "prop": "gift-flute",
+          "verb": "Open the hand"
+        }
+      ]
     }
   }
 }

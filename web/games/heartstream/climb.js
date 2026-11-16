@@ -21,7 +21,7 @@
 //   "A narrow shaft opens in the bone — a vertical tunnel lined with soft, living tissue. The Blue‑Born climb, feeling the temperature rise, feeling the pulse grow louder."
 // "Look up." is the one who dreams's line from DESIGN.md section 6.
 
-import { howTo, Legend, Beats, Streak, flourish, disposeKit, artImg, raster, plate, endCard, ladder, stagePicker } from "./_kit.js";
+import { howTo, Legend, Beats, Streak, flourish, disposeKit, artImg, raster, plate, endCard, ladder, stagePicker, revealMark, secondRun, marks, introNote } from "./_kit.js";
 //
 // Phase 2 (DEEP_DIVE.md section 3, built 2026-11-16): a ladder of three pitches.
 //   Teach  the foot of the shaft: grab on the beat. The count is long; nobody loses height for good.
@@ -154,6 +154,9 @@ function run(root, api, ctl) {
       extra: gentleBox,
     }][SG]);
     stagePicker(P, intro, ctl);
+    // a later crossing: your group's hands from the last one are on the Stencil Wall
+    const lastX = secondRun(api) ? marks(api).last() : null;
+    if (lastX && SG === 2) introNote(P, intro, "The wall, this time", "Somewhere on the Stencil Wall is a row of four hands you know. You pressed it, last crossing.");
     plate(api, intro, P, { card: "chapter-5", numeral: "numeral-5", css: "border-radius:18px 12px 20px 10px;border:3px solid #1d1612", at: "50% 30%" });
     { // the four in the shaft: you, the one beside you, the two ahead
       const crew = document.createElement("div"); crew.className = P + "crew";
@@ -309,7 +312,8 @@ function run(root, api, ctl) {
         st.phase = "lit"; st.wallLit = performance.now(); st.good++;
         say("Four hands, one beat.");
         beats.show("Four hands on the bare row, on one beat, and the whole wall lights: every group that ever climbed, in rows of four. Some rows have three.", 5600, "lit", "The Stencil Wall");
-        timers.push(setTimeout(() => finish(true), RM ? 1400 : 4200));
+        // phase 3: the second of the Four Marks, in the gap of the row of three
+        timers.push(setTimeout(() => { if (st.over) return; revealMark(root, api, "wall", "As the light reaches the row of three you see what is in its gap. Not a hand: a spiral, scratched with a tool rather than blown, at the height of the fourth of five notches cut down the gap's edge. His brothers cut it for him. That gap is somebody's, and he stayed.", () => finish(true)); }, RM ? 1400 : 4200));
       } else { st.wallMiss++; st.bad++; say(count === 3 ? "Three hands, and yours a moment after. The wall stays dark." : "Not yet. They press on the fourth beat: count with them."); flourish(wrap, P + "shake", RM, 300); }
     }
     function enterWall() {
@@ -318,6 +322,7 @@ function run(root, api, ctl) {
       legend.add("press", "Press", "Space · tap the bare row, on the fourth beat", true);
       beats.show("Above the last ledge the shaft opens into a gallery. Hundreds of hands, in rows of four. One row is bare. The others are already standing at it: press your hand with theirs, on the fourth beat.", 7000, "wall", "The Stencil Wall");
       raster(api, "climb-stencil-wall", 1600, 900, "fill").then((c) => { wall.img = c; });
+      if (lastX) timers.push(setTimeout(() => beats.show("High on the wall, a row of four you know: your own hands, from the last crossing, already dry. Somebody else's group will walk past them.", 6000, "ownrow", "Your row"), RM ? 0 : 7200));
     }
     function onBeat() {
       thump(st.slickNext); st.flash = 1; st.beatsLeft--; st.n++;
@@ -467,6 +472,13 @@ function run(root, api, ctl) {
         g.font = "700 13px sans-serif"; g.textAlign = "left"; g.fillStyle = C.char;
         g.fillText(r === 0 ? "a row of three" : lit ? "your row" : "the bare row", x0 + 10, y - 58 * hs);
       });
+      // a later crossing: the last crossing's row, high on the wall
+      if (lastX) {
+        const ry = Math.max(30, rows[0] - 112 * hs), rw = Math.min(rowW * 0.62, 320), rx0 = (W - rw) / 2, gap = lastX.hands === 3;
+        g.fillStyle = "rgba(230,210,176,.92)"; g.strokeStyle = C.red; g.lineWidth = 2; g.beginPath(); g.rect(rx0, ry - 26 * hs, rw, 52 * hs); g.fill(); g.stroke();
+        for (let i = 0; i < 4; i++) if (!(gap && i === 3)) stencil(rx0 + rw * (i + 0.5) / 4, ry + 4 * hs, hs * 0.48, (i - 1.5) * 0.1, i % 2 === 0);
+        g.font = "700 12px sans-serif"; g.textAlign = "left"; g.fillStyle = C.char; g.fillText("your row, last crossing", rx0 + 6, ry - 30 * hs);
+      }
       // the four at the wall
       const fy = rows[1] + 52 * hs + Math.min(150, H * 0.2);
       for (let i = 0; i < 4; i++) figure(x0 + rowW * (i + 0.5) / 4, fy, "reach", i === 3 ? C.red : i === 2 ? C.ochre : C.char, 0.9, i === 3);

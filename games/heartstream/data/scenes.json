@@ -162,6 +162,24 @@
       "enter": "push-in",
       "exit": "cut",
       "next": [
+        "s3_wall_at_night",
+        "s1_counters_2"
+      ]
+    },
+    {
+      "id": "s3_wall_at_night",
+      "layer": "3d",
+      "name": "The Wall at Night",
+      "chapter": "c3_song",
+      "reads": [
+        "self.mark"
+      ],
+      "writes": [
+        "self.tapped_with_keeper"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
         "s1_counters_2"
       ]
     },
@@ -181,7 +199,8 @@
         "self.kept_counter",
         "self.board_row",
         "self.lent_counters",
-        "self.old_counter"
+        "self.old_counter",
+        "run.marks_found"
       ],
       "enter": "cut",
       "exit": "fade",
@@ -288,7 +307,8 @@
       ],
       "writes": [
         "run.sync",
-        "self.stencil_pressed"
+        "self.stencil_pressed",
+        "run.marks_found"
       ],
       "enter": "flatten",
       "exit": "flatten",
@@ -441,7 +461,8 @@
         "self.exposure",
         "run.taken_count",
         "run.taken_seat",
-        "self.taken"
+        "self.taken",
+        "run.marks_found"
       ],
       "enter": "cut",
       "exit": "flatten",
@@ -535,7 +556,8 @@
         "run.calm_count",
         "run.saw_finished_board",
         "run.dissent",
-        "run.saw_chart_back"
+        "run.saw_chart_back",
+        "run.marks_found"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -573,7 +595,9 @@
         "run.calm_count",
         "self.board_row",
         "run.stayers",
-        "run.taken_count"
+        "run.taken_count",
+        "run.marks_found",
+        "self.tapped_with_keeper"
       ],
       "writes": [
         "run.song",
@@ -582,7 +606,8 @@
         "run.song_rests",
         "run.song_child",
         "run.song_hollow",
-        "run.song_ends_on_gap"
+        "run.song_ends_on_gap",
+        "run.old_phrase_sung"
       ],
       "enter": "push-in",
       "exit": "flatten",
@@ -653,19 +678,23 @@
         "self.gift_received",
         "self.gift_quality",
         "self.gift_fit",
-        "self.colour"
+        "self.colour",
+        "run.old_phrase_sung"
       ],
       "writes": [
         "self.grip",
         "self.held_together",
         "self.swept_order",
-        "run.separations"
+        "run.separations",
+        "self.opened_hand",
+        "run.hand_opened"
       ],
       "enter": "fade",
       "exit": "cut",
       "next": [
         "s3_vessel",
-        "s3_vessel_two"
+        "s3_vessel_two",
+        "s3_vessel_open"
       ]
     },
     {
@@ -708,10 +737,14 @@
         "self.kept_counter",
         "self.taken",
         "self.underside_held",
-        "self.hold_kept_gift"
+        "self.hold_kept_gift",
+        "run.old_phrase_sung"
       ],
       "enter": "cut",
-      "exit": "fade"
+      "exit": "fade",
+      "writes": [
+        "self.cut_beside_old"
+      ]
     },
     {
       "id": "s3_vessel_two",
@@ -719,7 +752,28 @@
       "name": "The shared chamber",
       "chapter": "c9_alone",
       "reads": [
-        "self.held_together"
+        "self.held_together",
+        "run.old_phrase_sung"
+      ],
+      "enter": "cut",
+      "exit": "fade",
+      "writes": [
+        "self.cut_beside_old"
+      ]
+    },
+    {
+      "id": "s3_vessel_open",
+      "layer": "3d",
+      "name": "The narrow vessel, first",
+      "chapter": "c9_alone",
+      "reads": [
+        "self.opened_hand",
+        "self.gift_received",
+        "self.underside_held",
+        "run.old_phrase_sung"
+      ],
+      "writes": [
+        "self.cut_beside_old"
       ],
       "enter": "cut",
       "exit": "fade"

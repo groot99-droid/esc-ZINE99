@@ -30,7 +30,7 @@
 // "Sing it whole." is the elders' line from DESIGN.md section 6. The stage cards, the First Listen's lines and
 // the hollow bead's lines are written for the game.
 
-import { howTo, Beats, flourish, disposeKit, artUrl, pngUrl, plate, endCard, ladder, stagePicker, shared } from "./_kit.js";
+import { howTo, Beats, flourish, disposeKit, artUrl, pngUrl, plate, endCard, ladder, stagePicker, shared, marks, secondRun, introNote, recordCrossing, OLD_PHRASE, MARKS, FINALES, artImg } from "./_kit.js";
 
 const SEATS = [
   { name: "you, the one who laughs", short: "You", col: "#7FB2E0", wave: "sine", t: "laughs" },
@@ -38,6 +38,7 @@ const SEATS = [
   { name: "the one who dreams", short: "Dreams", col: "#E0603A", wave: "square", t: "dreams" },
   { name: "the one who fears", short: "Fears", col: "#F2B544", wave: "sawtooth", t: "fears" },
   { name: "the small one", short: "Small", col: "#b9a7d6", wave: "sine", t: null },
+  { name: "the old phrase", short: "Old", col: "#d9c7a0", wave: "triangle", t: null },
 ];
 const PITCH = [0, 196, 220, 262, 294, 330];
 const SOCIETY = "Their society is calm, cold, and ceremonial. Everything they do prepares them for the moment they will leave the bones forever.";
@@ -142,6 +143,25 @@ function run(root, api, ctl) {
     const holds = (slots) => { const f = slots.map((p) => p && firstNote(p)).find((v) => v != null), sounded = slots.filter((p) => p && !silent(p)), l = sounded.length ? lastNote(sounded[sounded.length - 1]) : null; const sc = score(slots);
       return { near: f != null && Math.abs(f - lastHeight) <= 1, home: l === 1, sc, win: f != null && Math.abs(f - lastHeight) <= 1 && l === 1 && sc.breaks === 0 && (SG === 2 ? sc.rough === 0 : sc.h + 8 * sc.child >= 68) }; };
     const perms = (a) => (a.length <= 1 ? [a] : a.flatMap((x, i) => perms([...a.slice(0, i), ...a.slice(i + 1)]).map((r) => [x, ...r])));
+    // phase 3: the old phrase. With the Four Marks and the Lamp-Keeper's key gathered, the heart verse has room
+    // for it; a verse that holds with it last is the long puzzle solved. The generator keeps one such verse open.
+    const oldReady = SG === 1 && marks(api).complete();
+    const oldHolds = (all) => {
+      const old = mk("old", 5, OLD_PHRASE.slice(), 1);
+      for (const skip of [0, 1, 2, 3]) {
+        const seats = [0, 1, 2, 3].filter((x) => x !== skip);
+        for (let m = 0; m < 8; m++) {
+          const pick = seats.map((x, i) => all.find((p) => p.seat === x && p.id.endsWith(m >> i & 1 ? "b" : "a"))).filter(Boolean);
+          if (pick.length < 3) continue;
+          for (const o of perms(pick)) {
+            const v = [...o, old];
+            if (holds(v).win) return true;
+            v[2].rest.add(3); const ok = holds(v).win; v[2].rest.delete(3); if (ok) return true;
+          }
+        }
+      }
+      return false;
+    };
     function makeTest() {
       for (let tries = 0; tries < 4000; tries++) {
         const chain = [], order = [0, 1, 2, 3].sort(() => rng() - 0.5);
@@ -163,6 +183,7 @@ function run(root, api, ctl) {
         if (open) continue;
         chain[k].rest.add(3); const ok = holds(chain).win; chain[k].rest.delete(3);
         if (!ok) continue;
+        if (oldReady && tries < 3600 && !oldHolds(all)) continue;
         return { chain, restAt: [k, 3], all: all.sort((a, b) => a.seat - b.seat || (a.id < b.id ? -1 : 1)) };
       }
       const chain = [0, 1, 2, 3].map((s, i) => mk(`h${s}a`, s, [lastHeight, 2, 2, i === 3 ? 1 : 2], i % 2 ? 3 : 1));
@@ -184,6 +205,9 @@ function run(root, api, ctl) {
       return { chain: [...c, gap], inside: [c[0], gap, c[1], c[2]], all: [...c, gap] };
     }
     const heart = SG === 1 ? makeTest() : SG === 2 ? makeTwist() : null;
+    const oldP = oldReady ? Object.assign(mk("old", 5, [3, 3, 3, 3], 1), { editable: true }) : null;
+    if (oldP) heart.all.push(oldP);
+    const oldRight = () => !!oldP && oldP.notes.every((h, j) => h === OLD_PHRASE[j]);
     let linkBoard = false;
     if (SG === 1) {
       // the wrong note: the small one's phrase is yours with one bead wrong
@@ -267,6 +291,8 @@ function run(root, api, ctl) {
 @media (max-width:640px){.${P}scroll{flex:0 0 auto;min-height:0}.${P}mem{height:auto;max-height:none}.${P}hbar span{width:100px}.${P}top h2{flex-basis:100%}.${P}beat{top:110px;font-size:17px}.${P}trays{grid-template-columns:1fr 1fr}.${P}tray h3{font-size:12px}.${P}tray h3 img{height:30px}.${P}tray h3 img.${P}sm{height:22px}.${P}keys li{grid-template-columns:20px 76px 1fr}}
 .${P}btn[aria-pressed=true]{background:#7FB2E0}
 .${P}mem [data-beat]{cursor:pointer}
+.${P}sb{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:620px}.${P}sb i{display:block;width:22px;height:22px;border-radius:50%;background:#E8DCC4;border:2px solid #7FB2E0;opacity:.55}.${P}sb i.${P}sbh{background:#0d1a30;border-color:#8a93a3}.${P}sb i.${P}sbr{background:transparent;border-style:dashed}.${P}sb i.${P}sbnow{opacity:1;transform:scale(1.25);box-shadow:0 0 10px #7FB2E0}.${P}sb i.${P}sbok{background:#7ed38a;opacity:1}.${P}sb i.${P}sbx{background:#B3202E;opacity:1}@media (prefers-reduced-motion:reduce){.${P}sb i.${P}sbnow{transform:none}}
+.${P}oldset{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 6px}.${P}oldset .${P}btn{min-height:40px;padding:6px 10px;font-size:14px;background:#d9c7a0}
 .${P}tag{display:block;font:italic 12px var(--g-body);color:#c9d8ec;margin:2px 0 4px}
 .${P}fl{position:absolute;inset:0;z-index:12;background:#0a1322;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:14px;box-sizing:border-box;overflow:auto;text-align:center}
 .${P}fl .${P}hol{position:relative;width:min(100%,820px);aspect-ratio:16/8;background:#0d1a30 center/cover no-repeat;border:1.5px solid #7FB2E0;border-radius:18px;overflow:hidden}
@@ -321,6 +347,10 @@ function run(root, api, ctl) {
     }][SG]);
     plate(api, intro, P, { card: SG === 0 ? "chapter-3" : "chapter-7", numeral: SG === 0 ? "numeral-3" : "numeral-7", css: "border-radius:12px", at: "50% 50%" });
     stagePicker(P, intro, ctl);
+    // a later crossing: a growth in the hollow answers with the last crossing's song
+    const lastX = secondRun(api) ? marks(api).last() : null;
+    const lastSong = lastX && Array.isArray(lastX.song) ? lastX.song.map(String) : null;
+    if (lastSong && SG === 0) introNote(P, intro, "The hollow, this time", "One growth at the back of the hollow is lit before anyone has hummed. It is waiting for you.");
     let memUrl = "";
     pngUrl(api, "song-membrane", 1200, 375).then((u) => { memUrl = u; drawMem(); });
     wrap.appendChild(intro);
@@ -445,7 +475,7 @@ function run(root, api, ctl) {
         const t = document.createElement("div"); t.className = P + "tray"; t.style.borderColor = seat.col;
         const pic = (id, cls) => (artUrl(api, id) ? `<img alt="" ${cls ? `class="${cls}"` : ""} src="${artUrl(api, id)}">` : "");
         const gone = SG === 2 && s === 3;
-        t.innerHTML = `<h3 style="color:${seat.col}">${s === 4 ? pic("small-one") : pic(`seat-${seat.t}-${SG === 0 ? "blue" : gone ? "blue" : "turning"}`)}${s === 4 ? "" : pic("ui-glyph-" + seat.t, P + "sm")}<span>${seat.name}${gone ? " · gone" : ""}</span>${pic(gone ? "bead-hollow" : s === 4 ? "" : "bead-" + seat.t, P + "sm")}</h3>${gone ? `<span class="${P}tag">his phrase keeps its slot, and sounds as silence</span>` : s === 4 ? `<span class="${P}tag">your phrase, with one note wrong; it breaks one join, and it is the only phrase he will remember</span>` : ""}<div class="${P}ph"></div>`;
+        t.innerHTML = `<h3 style="color:${seat.col}">${s === 4 ? pic("small-one") : pic(`seat-${seat.t}-${SG === 0 ? "blue" : gone ? "blue" : "turning"}`)}${s === 4 ? "" : pic("ui-glyph-" + seat.t, P + "sm")}<span>${seat.name}${gone ? " · gone" : ""}</span>${pic(gone ? "bead-hollow" : s === 4 ? "" : "bead-" + seat.t, P + "sm")}</h3>${gone ? `<span class="${P}tag">his phrase keeps its slot, and sounds as silence</span>` : s === 4 ? `<span class="${P}tag">your phrase, with one note wrong; it breaks one join, and it is the only phrase he will remember</span>` : s === 5 ? `<span class="${P}tag">four marks, four heights, read from the hall to the heart; set each bead from your ledger, then set the phrase last</span><div class="${P}oldset" role="group" aria-label="The old phrase: set each bead's height">${oldP.notes.map((h, j) => `<button type="button" class="${P}btn" data-ob="${j}" aria-label="Bead ${j + 1} (${MARKS[j].n}, ${MARKS[j].where}): height ${h}. Press to raise it.">${MARKS[j].n} · ${h}</button>`).join("")}</div>` : ""}<div class="${P}ph"></div>`;
         for (const p of list) {
           const placed = st.slots.includes(p);
           const b = document.createElement("button"); b.type = "button"; b.className = P + "phr"; b.dataset.id = p.id;
@@ -504,6 +534,14 @@ function run(root, api, ctl) {
       if (st.slots.every(Boolean) && holds(st.slots).win) beats.show("It comes home. Low, on the first note any of you ever learned.", 3800, "home");
     }
     on(trays, "click", (e) => {
+      const ob = e.target.closest("[data-ob]");
+      if (ob && oldP && !st.over) {
+        const j = +ob.dataset.ob; oldP.notes[j] = oldP.notes[j] % 5 + 1; oldP.rest.delete(j);
+        note(5, oldP.notes[j], 0, j === 0);
+        say.textContent = oldRight() ? "The raft hums under you as the last bead settles. It knows this one." : `Bead ${j + 1} of the old phrase: height ${oldP.notes[j]}.`;
+        if (oldRight()) beats.show("The raft hums it with you, low, from the wood of it. It has known this phrase longer than any of you. It wants it last.", 5200, "oldknown", "The old phrase");
+        redraw(); const nb = trays.querySelector(`[data-ob="${j}"]`); nb && nb.focus(); return;
+      }
       const b = e.target.closest("." + P + "phr"); if (!b || b.disabled) return;
       const p = pool().find((q) => q.id === b.dataset.id);
       st.sel = st.sel === p ? null : p; if (st.sel) say.textContent = "Now tap a slot in the verse."; playPhrase(p); redraw();
@@ -581,10 +619,11 @@ function run(root, api, ctl) {
       let g = "";
       for (let k = 0; k < 12; k++) {
         const seat = k % 4, x = 60 + k * 62 + (k % 2) * 8, hgt = 150 + ((k * 37) % 70), col = SEATS[seat].col, dk = dark && seat === 3;
-        g += `<g class="${P}gr${dk ? " " + P + "dk" : ""}"><path d="M${x},330 C${x - 14},${330 - hgt * 0.5} ${x + 14},${330 - hgt * 0.8} ${x},${330 - hgt}" stroke="${col}" stroke-width="7" fill="none" stroke-linecap="round"/><ellipse cx="${x}" cy="${330 - hgt - 16}" rx="17" ry="24" fill="${col}"/><ellipse cx="${x}" cy="${330 - hgt - 16}" rx="42" ry="52" fill="${col}" opacity=".22"/></g>`;
+        const own = !dark && lastSong && k === 11;
+        g += `<g class="${P}gr${dk ? " " + P + "dk" : ""}"${own ? ' style="opacity:1"' : ""}><path d="M${x},330 C${x - 14},${330 - hgt * 0.5} ${x + 14},${330 - hgt * 0.8} ${x},${330 - hgt}" stroke="${col}" stroke-width="7" fill="none" stroke-linecap="round"/><ellipse cx="${x}" cy="${330 - hgt - 16}" rx="17" ry="24" fill="${col}"/><ellipse cx="${x}" cy="${330 - hgt - 16}" rx="42" ry="52" fill="${col}" opacity=".22"/></g>`;
       }
       flEl.innerHTML = `<div class="${P}hol" style="${bg ? `background-image:linear-gradient(rgba(10,19,34,.72),rgba(10,19,34,.72)),url(${bg})` : ""}"><svg viewBox="0 0 820 410" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${g}</svg></div>
-<p aria-live="polite"><b>The First Listen</b>${dark ? "The first night, every growth in the hollow answered at once. You remember the sound of it as you sing." : "You sing verse one whole, the four of you, for the first time."}</p><button type="button" class="${P}btn ${P}sing">${dark ? "Sing" : "Listen"} <small>Enter</small></button>`;
+<p aria-live="polite"><b>The First Listen</b>${dark ? "The first night, every growth in the hollow answered at once. You remember the sound of it as you sing." : lastSong ? `Before you sing, one growth at the back of the hollow lights on its own and sings a verse you know: ${lastSong.join(" / ")}. It is your heart verse, from the last crossing. The others look at you, and you say nothing.` : "You sing verse one whole, the four of you, for the first time."}</p><button type="button" class="${P}btn ${P}sing">${dark ? "Sing" : "Listen"} <small>Enter</small></button>`;
       try { wrap.scrollTop = 0; } catch { /* keep the card in view */ }
       wrap.appendChild(flEl);
       const b = flEl.querySelector("button"); let step = 0;
@@ -618,9 +657,100 @@ function run(root, api, ctl) {
         redraw();
         if (SG === 1) sh.set("song", { rests: restCount(), child: st.slots.some((p) => p.seat === 4), board: st.slots.some((p) => p.id === "board") });
         say.textContent = SG === 2 ? "The three of you sing it, and keep his beat empty." : "The four of you sing it, quietly, so the river will not hear.";
-        const after = () => (SG === 2 && holds(st.slots).win ? firstListen(true, finish) : finish());
+        const solved = solvedOld();
+        if (solved && audio && !RM) raftSings();
+        const after = () => (SG === 2 && holds(st.slots).win ? singBack(() => firstListen(true, finish)) : solved ? oldScene() : finish());
         if (audio && !RM) listen(st.slots, after); else after();
       }
+    }
+    // ---- the twist's coda: sing it back as you will row it, and keep his beats empty ---------------
+    // (DESIGN.md section 11: the song is the rowing chant, sung back at the heart; his hollow beads sound as silence)
+    function singBack(then) {
+      const SB = 700, WIN = 210, beatsAll = [];
+      st.slots.forEach((p) => p.notes.forEach((h, j) => beatsAll.push({ p, h, j, sounded: !isRest(p, j), hollow: !!p.hollow, hit: false, over: false })));
+      flEl = document.createElement("div"); flEl.className = P + "fl"; flEl.setAttribute("role", "dialog"); flEl.setAttribute("aria-label", "Sing it back");
+      flEl.innerHTML = `<p aria-live="polite"><b>Sing it back</b>At the heart you will sing this verse back, rowing. Sing it once now, as you will row it: tap on every bead that sounds, and leave his beats empty.</p>
+<div class="${P}sb" aria-hidden="true">${beatsAll.map((b, i) => `<i data-i="${i}" class="${b.hollow ? P + "sbh" : b.sounded ? "" : P + "sbr"}"></i>`).join("")}</div>
+<div class="${P}cnt" style="font:700 14px var(--g-body);letter-spacing:.16em;color:#c9d8ec">ready</div>
+<button type="button" class="${P}btn ${P}sing" data-sb="go">Begin <small>Enter</small></button>`;
+      try { wrap.scrollTop = 0; } catch { /* keep it in view */ }
+      wrap.appendChild(flEl);
+      const btnEl = flEl.querySelector("button"), cnt = flEl.querySelector("." + P + "cnt"), dots = [...flEl.querySelectorAll("." + P + "sb i")];
+      let t0 = 0, iv = 0, phase = "ready", cur = -1;
+      const tap = () => {
+        if (phase !== "sing") return;
+        const t = performance.now() - t0, k = Math.round(t / SB), off = t - k * SB;
+        if (k < 0 || k >= beatsAll.length || Math.abs(off) > WIN) { cnt.textContent = "between beats"; return; }
+        const b = beatsAll[k];
+        if (b.hollow) { b.over = true; dots[k].classList.add(P + "sbx"); cnt.textContent = "that beat was his"; }
+        else if (b.sounded && !b.hit) { b.hit = true; dots[k].classList.add(P + "sbok"); note(b.p.seat, b.h, 0, b.j + 1 === accentOf(b.p), 0.3); }
+      };
+      const end = () => {
+        phase = "done"; clearInterval(iv);
+        const need = beatsAll.filter((b) => b.sounded && !b.hollow).length, got = beatsAll.filter((b) => b.hit).length, over = beatsAll.filter((b) => b.over).length;
+        st.sungBack = { got, need, over };
+        flEl.querySelector("p").innerHTML = `<b>Sing it back</b>${got} of ${need} beads sung on their beat. ${over ? `You sang into his silence ${over === 1 ? "once" : over + " times"}, and the others stopped to let it pass.` : "His four beats stayed empty, every one. Nobody had to say why."}`;
+        btnEl.innerHTML = "Go on <small>Enter</small>"; btnEl.dataset.sb = "on"; btnEl.focus();
+      };
+      on(btnEl, "click", () => {
+        if (btnEl.dataset.sb === "on") { flEl.remove(); flEl = null; then(); return; }
+        if (phase !== "ready") { tap(); return; }
+        phase = "sing"; btnEl.innerHTML = "Sing <small>Space</small>"; btnEl.dataset.sb = "tap";
+        t0 = performance.now() + 1400;
+        cnt.textContent = "four beats in";
+        iv = setInterval(() => {
+          const t = performance.now() - t0, k = Math.floor((t + SB / 2) / SB);
+          if (k !== cur && k >= 0 && k < beatsAll.length) { cur = k; dots.forEach((d, i) => d.classList.toggle(P + "sbnow", i === k)); if (!beatsAll[k].hollow && beatsAll[k].sounded) cnt.textContent = `${k + 1} / ${beatsAll.length}`; else if (beatsAll[k].hollow) cnt.textContent = "his beat"; else cnt.textContent = "rest"; }
+          if (t > beatsAll.length * SB) end();
+        }, 30);
+        timers.push(iv);
+      });
+      on(btnEl, "pointerdown", (e) => { if (phase === "sing") { e.preventDefault(); tap(); } });
+      on(window, "keydown", (e) => { if (!flEl || phase !== "sing" || !(e.key === " " || e.code === "Space")) return; e.preventDefault(); if (!e.repeat) tap(); });
+      btnEl.focus();
+    }
+    // ---- phase 3: the old phrase sung last, the raft singing it with you, and the last note ----------
+    const solvedOld = () => SG === 1 && !!oldP && st.slots[3] === oldP && oldRight() && holds(st.slots).win;
+    function raftSings() {
+      if (!audio) return;
+      const t = 3 * 4 * BEAT;   // the fourth slot
+      OLD_PHRASE.forEach((h, j) => {
+        const o = audio.createOscillator(), v = audio.createGain(), at = audio.currentTime + t + j * BEAT;
+        o.type = "sine"; o.frequency.value = PITCH[h] / 2;
+        v.gain.setValueAtTime(0.0001, at); v.gain.exponentialRampToValueAtTime(0.2, at + 0.06); v.gain.exponentialRampToValueAtTime(0.0001, at + BEAT * 1.6);
+        o.connect(v).connect(audio.destination); o.start(at); o.stop(at + BEAT * 1.7);
+      });
+    }
+    function oldScene() {
+      flEl = document.createElement("div"); flEl.className = P + "fl"; flEl.setAttribute("role", "dialog"); flEl.setAttribute("aria-label", "The old phrase");
+      try { wrap.scrollTop = 0; } catch { /* keep it in view */ }
+      wrap.appendChild(flEl);
+      const step = (html, buttons) => {
+        flEl.innerHTML = `${html}<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">${buttons.map(([k, t], i) => `<button type="button" class="${P}btn ${i === 0 ? P + "sing" : ""}" data-o="${k}">${t}</button>`).join("")}</div>`;
+        const b = flEl.querySelector("button"); b && b.focus();
+      };
+      step(`<p aria-live="polite"><b>The old phrase</b>On the last phrase the raft sings with you, low, from the wood of it: three, four, two, and home on one. The Lamp-Keeper's group sang it in a pool like this one, the four of them, before the heart. Somewhere under the bone a wall is keeping its beat.</p>`, [["on", "Go on <small>Enter</small>"]]);
+      on(flEl, "click", (e) => {
+        const b = e.target.closest("[data-o]"); if (!b) return;
+        const k = b.dataset.o;
+        if (k === "on") step(`<p aria-live="polite"><b>The last note</b>At the heart you will sing this verse back, and on its last note his hand will be locked in yours, as every hand will be. The heart opens hands one beat at a time. Nobody has ever opened his own.</p>`,
+          [["open", "Open your hand <small>O</small>"], ["hold", "Hold on <small>H</small>"]]);
+        else if (k === "open" || k === "hold") {
+          const river = sh.get("river", null);
+          const ending = k === "open" ? "open_hand" : river && river.inTime >= 85 && !river.taken ? "two_together" : "carried_away";
+          const F = FINALES[ending];
+          const song = st.slots.map((p) => p.notes.map((h, j) => (isRest(p, j) ? "–" : h)).join(" "));
+          recordCrossing(api, { choice: k, ending }, { boardRow: sh.get("boardRow", null), song, hands: 4, ending });
+          const pic = api.keyart ? api.keyart(F.card) : "";
+          const why = k === "open" ? "You open your hand on the last note, before anything asks it to. His grip goes to the brothers either side of you."
+            : ending === "two_together" ? "You hold on. You kept the heart's time on the river, all of it, and nobody was taken: the lock holds, for a while."
+            : "You hold on, as everyone does, and the heart opens your hand for you on its own beat.";
+          flEl.innerHTML = `${pic ? `<div class="${P}hol" style="background-image:url(&quot;${pic}&quot;)" role="img" aria-label="The ending card: ${F.title}"></div>` : ""}<p aria-live="polite"><b>${F.title}</b>${why} ${F.text}</p><button type="button" class="${P}btn ${P}sing" data-o="end">Go on <small>Enter</small></button>`;
+          flEl.querySelector("button").focus();
+          st.ending = ending;
+        } else if (k === "end") { flEl.remove(); flEl = null; finish(); }
+      });
+      on(flEl, "keydown", (e) => { const k = e.key.toLowerCase(); const b = flEl && flEl.querySelector(`[data-o="${k === "o" ? "open" : k === "h" ? "hold" : ""}"]`); if (b) { e.preventDefault(); b.click(); } });
     }
     function finish() {
       st.over = true;
@@ -641,12 +771,14 @@ function run(root, api, ctl) {
       else if (sc.breaks >= 2) text = `The verse breaks in ${sc.breaks} places. It cannot be rowed to.`;
       else if (SG === 1) {
         const rests = restCount();
-        text = `${v.win ? `The heart verse comes home without a stumble (${sc.h}); its last note falls on the sixteenth beat.` : `The heart verse comes home, though it stumbles on the way (${sc.h}).`}${rests ? ` ${rests === 1 ? "One beat of it is" : `${rests} beats of it are`} silent. On the river the eye will open there, where nobody rows.` : ""}${sc.child ? " One phrase of it is the small one's, wrong note and all. It is the only phrase he will remember." : ""}${st.slots.some((p) => p.id === "board") ? " One phrase of it is the row you left on the board." : ""}`;
+        const oldNote = st.ending ? ` Its last phrase is the old one, and the raft sang it with you. The Four Marks are paid: ${FINALES[st.ending].title}. Open the game's menu to read it again; the next crossing will remember this one.` : oldP && st.slots.includes(oldP) ? (oldRight() ? " The old phrase is in the verse, but not last, and the raft only hums along." : " The raft is silent under the phrase you set from the marks. Whatever it knows, it is not this.") : "";
+        text = `${v.win ? `The heart verse comes home without a stumble (${sc.h}); its last note falls on the sixteenth beat.` : `The heart verse comes home, though it stumbles on the way (${sc.h}).`}${oldNote}${rests ? ` ${rests === 1 ? "One beat of it is" : `${rests} beats of it are`} silent. On the river the eye will open there, where nobody rows.` : ""}${sc.child ? " One phrase of it is the small one's, wrong note and all. It is the only phrase he will remember." : ""}${st.slots.some((p) => p.id === "board") ? " One phrase of it is the row you left on the board." : ""}`;
       } else {
         const last = st.slots[3].hollow;
-        text = `${v.win ? "Three voices, and every join holds." : "Three voices, and one join that drags."} ${last ? "The song ends on his gap: the three of you stop, and the last beat is his." : "His silence sits inside the song, and the song closes over it and comes home."} ${last ? "Nobody decided it aloud." : "Nobody looks at the empty seat while you sing it."}`;
+        const back = st.sungBack ? ` Sung back, ${st.sungBack.got} of ${st.sungBack.need} beads on the beat${st.sungBack.over ? `, and his silence sung into ${st.sungBack.over === 1 ? "once" : st.sungBack.over + " times"}` : ", his beats left empty"}.` : "";
+        text = `${v.win ? "Three voices, and every join holds." : "Three voices, and one join that drags."}${back} ${last ? "The song ends on his gap: the three of you stop, and the last beat is his." : "His silence sits inside the song, and the song closes over it and comes home."} ${last ? "Nobody decided it aloud." : "Nobody looks at the empty seat while you sing it."}`;
       }
-      ctl.end({ outcome: lost ? "lose" : v.win ? "win" : "done", text }, () => endCard(wrap, api, "chapter-7", { numeral: "numeral-7" }));
+      ctl.end({ outcome: lost ? "lose" : v.win ? "win" : "done", text }, () => (st.ending ? endCard(wrap, api, FINALES[st.ending].art, { keyart: api.keyart ? api.keyart(FINALES[st.ending].card) : "" }) : endCard(wrap, api, "chapter-7", { numeral: "numeral-7" })));
     }
 
     on(intro.querySelector("." + P + "start"), "click", () => {

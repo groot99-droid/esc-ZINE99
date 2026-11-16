@@ -7,6 +7,21 @@
 //   creative-writing/vault/03_Stories/02_A_Journey_Into_the_Heartstream_-_The_Rite_of_the_Blue-Born.md
 //   "They live in a labyrinth of glowing marrow tunnels, where the walls pulse faintly with the rhythm of the distant heart."
 
+import { FINALES } from "./_kit.js";
+
+// The long puzzle's payoff (phase 3): null until the Four Marks are gathered across the modes and the old phrase
+// is sung last in Marrow-Song's heart verse; then the ending that crossing earned, its card and its text. The
+// choice on the last note decides which: open the hand (The Open Hand), or hold on (Two Together when the river
+// was rowed in time with nobody taken, otherwise Carried Away, as written).
+export function finale({ shared, keyart }) {
+  let o = null;
+  try { o = shared.get("oldPhrase", null); } catch { o = null; }
+  if (!o || !o.solved) return null;
+  const F = FINALES[o.ending] || FINALES.open_hand;
+  const n = Math.max(1, o.crossing | 0);
+  return { title: F.title, text: F.text + (n > 1 ? ` (Crossing ${n}.)` : ""), image: (keyart && keyart(F.card)) || "" };
+}
+
 export const meta = {
   cover: "assets/stills/heartstream/01-marrow-caverns.jpg",
   palette: { bg: "#1E3557", fg: "#E8DCC4", accent: "#E0603A" },

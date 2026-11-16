@@ -436,6 +436,107 @@
           "leads_to": "s3_lamps"
         }
       ]
+    },
+    "s3_wall_at_night": {
+      "note": "Chapter 3, The Wall at Night (accepted 2026-11-15, built in phase 3): the night before the second sitting, the lamps low; the Lamp-Keeper, wordless, kneels at the pulse wall tapping for a raft that crossed long ago. A player who taps sixteen beats beside him sees him turn his worn tool over: on its inside face, four signs over four beads, the last one home. The wall stays blue; it does not skip.",
+      "world": {
+        "color": [
+          0.02,
+          0.04,
+          0.09
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "behind-wall",
+          "type": "AREA",
+          "location": [
+            0,
+            5.8,
+            3.3
+          ],
+          "energy": 260,
+          "size": 5,
+          "look_at": [
+            0,
+            0,
+            1.5
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.95
+          ]
+        },
+        {
+          "name": "lamps",
+          "type": "POINT",
+          "location": [
+            -4.8,
+            -2.5,
+            1.5
+          ],
+          "energy": 12,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.66,
+            0.3
+          ]
+        },
+        {
+          "name": "blue",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            7.8
+          ],
+          "energy": 150,
+          "size": 6,
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -4.6,
+          2.6
+        ],
+        "look_at": [
+          0,
+          4,
+          2.5
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -2,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "bowl-wall",
+          "verb": "Tap the beat beside him",
+          "leads_to": "s1_counters_2"
+        }
+      ]
     }
   }
 }

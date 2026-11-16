@@ -197,7 +197,8 @@
       "id": "narrow-vessel",
       "name": "The narrow vessel",
       "scenes": [
-        "s3_vessel"
+        "s3_vessel",
+        "s3_vessel_open"
       ],
       "dimensions_m": [
         3,
@@ -266,7 +267,8 @@
       "id": "pulse-wall-chamber",
       "name": "The pulse wall chamber",
       "scenes": [
-        "s3_marrow_pulse"
+        "s3_marrow_pulse",
+        "s3_wall_at_night"
       ],
       "dimensions_m": [
         12,
@@ -298,9 +300,9 @@
       "objects": [
         "membrane-pillar"
       ],
-      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A long gallery cave at the top of a vertical shaft, one tall gently curved wall of warm pale chalky bone-rock covered with hundreds of small hand stencils blown in red ochre and dark charcoal pigment, arranged in neat horizontal rows of four hands side by side, a few rows with only three hands and an empty gap, one bare patch of clean wall at reaching height, soft living pink-red tissue framing the ceiling and floor edges, a smooth worn floor, the dark round mouth of the shaft in the floor at the near end, warm red-gold light and heat haze spilling from an opening at the far end. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A long low gallery cave seen at a three-quarter angle down its length, 24 metres long and 7 metres high: on the left one tall gently curved wall of warm pale chalky bone-rock receding into depth, covered with hundreds of small hand stencils blown in red ochre and charcoal, arranged in neat horizontal rows of four hands side by side, a few rows with only three hands and an empty gap, one bare patch of clean wall at reaching height near the camera; on the right soft living pink-red tissue walls and a low ribbed tissue ceiling; a smooth worn bone floor; the dark round mouth of a vertical shaft in the floor in the near foreground; at the far end a bright opening spilling warm red-gold light and heat haze down the gallery, raking across the stencils. Wide establishing view of the empty set, eye level, strong perspective and depth, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "43d9787f-ebcd-4f4b-b4b0-0fea21e1844b",
+      "job_id": "6f6ad4b5-0792-4957-8d1a-c7626a09492d",
       "image": "assets/locations/stencil-gallery.jpg"
     },
     {
@@ -324,9 +326,9 @@
         "gift-comb",
         "gift-flute"
       ],
-      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A quiet backwater: a wide still pool of flat dull grey-rose water with no current, enclosed by smooth curved canyon walls of dark crimson tissue under a low arched ceiling. In the middle distance a long shallow boat-shaped raft of dried pale grey tissue with ivory bone ribs floats moored against the left wall, old and faded, empty; on its flat deck lies a small ivory game board and a short row of four small carved bone tools. Steady flat grey light with no glow from the pool, and far at the back a narrow opening through which the bright red glow of a living river shows. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A quiet backwater cave: a wide still pool of liquid water filling the floor, its glassy surface flat and dull grey-rose, mirror-like, holding soft reflections of the walls and a long faint reflection of the raft, a thin line of scum and a few slow ripples where the raft's hull meets the water. Smooth curved canyon walls of dark crimson tissue rise from the waterline under a low arched ceiling. In the middle distance a long shallow boat-shaped raft of dried pale grey tissue with ivory bone ribs floats moored against the left wall by a sinew rope, half sunk in the water, old and faded, empty; on its flat deck a small ivory game board and a short row of four small carved bone tools. Steady flat grey light with no pulse, and far at the back a narrow opening where the bright red glow of a living river spills a red sheen across the still water. Wide establishing view of the empty set, eye level just above the water, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
-      "job_id": "72d2752b-0b3a-4386-b468-411b5b508286",
+      "job_id": "f75d2ab9-7e83-449e-9c02-3085634443f0",
       "image": "assets/locations/backwater.jpg"
     }
   ],
@@ -480,7 +482,8 @@
         "s3_recognition",
         "s3_marrow_after",
         "s3_marrow_pulse",
-        "s3_lamps"
+        "s3_lamps",
+        "s3_wall_at_night"
       ],
       "size_m": [
         0.3,
@@ -501,7 +504,8 @@
         "s3_marrow",
         "s3_marrow_after",
         "s3_marrow_pulse",
-        "s3_lamps"
+        "s3_lamps",
+        "s3_wall_at_night"
       ],
       "size_m": [
         0.22,
@@ -724,7 +728,8 @@
         "s3_heart",
         "s3_vessel",
         "s3_vessel_two",
-        "s3_backwater"
+        "s3_backwater",
+        "s3_vessel_open"
       ],
       "size_m": [
         0.06,
@@ -746,7 +751,8 @@
         "s3_heart",
         "s3_vessel",
         "s3_vessel_two",
-        "s3_backwater"
+        "s3_backwater",
+        "s3_vessel_open"
       ],
       "size_m": [
         0.03,
@@ -768,7 +774,8 @@
         "s3_heart",
         "s3_vessel",
         "s3_vessel_two",
-        "s3_backwater"
+        "s3_backwater",
+        "s3_vessel_open"
       ],
       "size_m": [
         0.12,
@@ -790,7 +797,8 @@
         "s3_river",
         "s3_heart",
         "s3_vessel",
-        "s3_vessel_two"
+        "s3_vessel_two",
+        "s3_vessel_open"
       ],
       "size_m": [
         0.1,
@@ -812,7 +820,8 @@
         "s3_heart",
         "s3_vessel",
         "s3_vessel_two",
-        "s3_backwater"
+        "s3_backwater",
+        "s3_vessel_open"
       ],
       "size_m": [
         0.03,

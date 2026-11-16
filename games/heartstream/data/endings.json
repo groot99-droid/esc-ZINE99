@@ -9,7 +9,7 @@
         "is": "self.refused",
         "eq": true
       },
-      "summary": "He sat on the elders' bench at the Recognition. The shaft sealed and cut his brothers' voices at once; he kept his blue a while longer, felt each of them go as a skipped beat in the wall, and dims the lamps for the next group. A last image, years on: old, he climbs the shaft alone; a raft waits with his mark in its flank, and four small figures come out of the bone. He carries others to the parting he refused.",
+      "summary": "He sat on the elders' bench at the Recognition. The shaft sealed and cut his brothers' voices at once; he kept his blue a while longer, felt each of them go as a skipped beat in the wall, and dims the lamps for the next group. A last image, years on: old, he climbs the shaft alone; a raft waits with his mark in its flank, and four small figures come out of the bone. The cost: no goodbye, and in the end he carries others to the parting he refused.",
       "final_scenes": [
         "s3_marrow_after",
         "s1_carve_next",
@@ -28,7 +28,7 @@
         "is": "self.taken",
         "eq": true
       },
-      "summary": "A Warden took him before the heart. In its hold his gift begins to sink into the skin among the gifts it has kept; holding it means he cannot knock for the raft. He is turned aside into his own vessel, with the gift or without it. The ending is his alone: the rest of the raft reach the heart with an empty place and are separated as written.",
+      "summary": "A Warden took him before the heart. In its hold his gift begins to sink into the skin among the gifts it has kept; holding it means he cannot knock for the raft. He is turned aside into his own vessel, with the gift or without it. The ending is his alone: the rest of the raft reach the heart with an empty place and are separated as written. The cost: the gift or his brothers' sync, and no hand at the heart can lock while he is gone.",
       "final_scenes": [
         "s3_hold",
         "s3_hold_turn",
@@ -36,10 +36,25 @@
       ]
     },
     {
+      "id": "open_hand",
+      "name": "The Open Hand",
+      "as_written": false,
+      "priority": 3,
+      "when": {
+        "is": "self.opened_hand",
+        "eq": true
+      },
+      "summary": "On the heart verse's last note, before any grip has failed, he opens his hand by choice. His grip passes to the brothers either side, and their lock no longer needs to be in time. He goes into his vessel first, red, with the gift in his open palm. The cost: he goes first, and his friends watch his hand open without knowing why. If the old phrase was sung, the vessel ends at a blue wall with a pulse in it and an old mark, and he cuts his own beside it.",
+      "final_scenes": [
+        "s3_heart",
+        "s3_vessel_open"
+      ]
+    },
+    {
       "id": "two_together",
       "name": "Two Together",
       "as_written": false,
-      "priority": 3,
+      "priority": 4,
       "when": {
         "all": [
           {
@@ -47,8 +62,16 @@
             "eq": true
           },
           {
-            "is": "self.in_time",
-            "gte": 85
+            "any": [
+              {
+                "is": "self.in_time",
+                "gte": 85
+              },
+              {
+                "is": "run.hand_opened",
+                "eq": true
+              }
+            ]
           },
           {
             "is": "run.taken_count",
@@ -56,7 +79,7 @@
           }
         ]
       },
-      "summary": "Two brothers who rowed in time all river long squeezed on the song's last note and were swept into one chamber. Everyone else is lost to them. After three minutes a valve opens between the two, without struggle or prompt, and each is carried on alone: \"…never lets you hold what you love for long.\"",
+      "summary": "Two brothers squeezed on the song's last note and were swept into one chamber: they rowed in time all river long, or a brother between them opened his hand and passed them his grip. Everyone else is lost to them. After three minutes a valve opens between the two, without struggle or prompt, and each is carried on alone: \"…never lets you hold what you love for long.\" The cost: three minutes nobody else got, then a second parting.",
       "final_scenes": [
         "s3_heart",
         "s3_vessel_two"
@@ -66,9 +89,9 @@
       "id": "carried_away",
       "name": "Carried Away",
       "as_written": true,
-      "priority": 4,
+      "priority": 5,
       "when": true,
-      "summary": "The current splits in the heart and every brother is swept a different way, holding the tool another carved for him. In the vessel he turns it over and finds the Underside, if his brother cut one. \"No one stays together.\"",
+      "summary": "The current splits in the heart and every brother is swept a different way, holding the tool another carved for him. In the vessel he turns it over and finds the Underside, if his brother cut one. \"No one stays together.\" The cost: he reads what his brother cut when he can no longer answer it.",
       "final_scenes": [
         "s3_heart",
         "s3_vessel"

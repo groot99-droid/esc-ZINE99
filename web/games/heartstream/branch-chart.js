@@ -28,7 +28,7 @@
 //   "The river grows narrower. / The current grows faster. / The heart draws near."
 //   "The body simply moves them on."
 
-import { howTo, Beats, Streak, flourish, disposeKit, artUrl, artImg, pngUrl, plate, endCard, ladder, stagePicker, shared } from "./_kit.js";
+import { howTo, Beats, Streak, flourish, disposeKit, artUrl, artImg, pngUrl, plate, endCard, ladder, stagePicker, shared, revealMark } from "./_kit.js";
 //
 // Phase 2 (DEEP_DIVE.md section 3, built 2026-11-16): a ladder of three plates.
 //   Teach  vote: two forks, thirty seconds each. The one who fears marks the only beast, and nobody stands on it.
@@ -449,10 +449,12 @@ function run(root, api, ctl) {
       lightEl.innerHTML = `<div class="${P}lp">${url ? `<img alt="The back of the chart held to the light: a heart, and every vessel leaving it alone, none beside another." src="${url}">` : `<div style="aspect-ratio:16/11;width:min(92vw,860px);background:#6b4a1e"></div>`}<svg viewBox="0 0 460 300" role="img" aria-label="This fork seen from behind, turned over. Dark knots sit in ${J.branches.filter((b) => b.patrol).length} of its branches."><g>${g}</g></svg></div>
 <p aria-live="polite">Held to the light, the vellum shows what the front never drew: every vessel leaving the heart, apart. No two of them run side by side.
 Where the awl went through, this fork shows from behind, turned over: its first branch is the last one here. A dark knot sits in each vessel that something swims in.</p>
-<button type="button" class="${P}go">Turn it face up, and show them <small>Enter</small></button>`;
+${SG === 2 ? `<button type="button" class="${P}go" data-c="chamber">Look closer at the heart</button> ` : ""}<button type="button" class="${P}go" data-c="up">Turn it face up, and show them <small>Enter</small></button>`;
       wrap.appendChild(lightEl);
-      on(lightEl.querySelector("button"), "click", () => closeLight(false));
-      lightEl.querySelector("button").focus();
+      // phase 3: the fourth of the Four Marks, at the mouth of the shared chamber
+      const closer = () => revealMark(root, api, "chamber", "Under the heart, where one vessel opens into a small chamber and leaves it as two, somebody pricked two signs into the vellum side by side at the mouth, low, on the first of five notches: a wave and a star. At the outlets the same two signs again, apart.", () => { const b = lightEl && lightEl.querySelector('[data-c="up"]'); b && b.focus(); });
+      on(lightEl, "click", (e) => { const b = e.target.closest("button"); if (!b) return; if (b.dataset.c === "chamber") closer(); else closeLight(false); });
+      (lightEl.querySelector('[data-c="chamber"]') || lightEl.querySelector("button")).focus();
     }
     function closeLight(silent) {
       if (!lightEl) return;
@@ -517,7 +519,7 @@ Where the awl went through, this fork shows from behind, turned over: its first 
       if (st.awl[J.chart] || st.phase !== "vote" || bAwl.hidden) return; st.awl[J.chart] = true; st.revealed = true; st.awlUsed++; say.textContent = "The awl's point finds every patrol at this junction."; draw(); }
     on(window, "keydown", (e) => {
       if (!st.started || st.over) return;
-      if (lightEl) { if (e.key === "Enter" || e.key === "Escape") { e.preventDefault(); closeLight(false); } return; }
+      if (lightEl) { if (e.key === "Enter" && lightEl.contains(document.activeElement) && document.activeElement.tagName === "BUTTON") return; if (e.key === "Enter" || e.key === "Escape") { e.preventDefault(); closeLight(false); } return; }
       if (st.phase === "back") { const k = e.key.toLowerCase(); if (k === "enter" && backEl && !backEl.querySelector("." + P + "go").disabled) { e.preventDefault(); leaveBack(); } else if (/^[1-3]$/.test(k)) lookAt(Object.keys(LOOKS)[+k - 1]); return; }
       const n = route[st.j] ? route[st.j].branches.length : 0;
       const d = parseInt(e.key, 10);

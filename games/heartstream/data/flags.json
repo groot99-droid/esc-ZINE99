@@ -540,6 +540,61 @@
       "type": "bool",
       "default": false,
       "description": "Per player: touched the empty seat on the elders' bench and found it warm; its elder left the night before (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "self.tapped_with_keeper",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: The Wall at Night. He tapped sixteen beats beside the Lamp-Keeper at the pulse wall, and the old man turned his worn tool over: on its inside face, four signs over four beads, the last one home (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "run.marks_found",
+      "type": "ledger",
+      "default": [],
+      "fields": [
+        "mark",
+        "where",
+        "sign",
+        "height"
+      ],
+      "description": "The Four Marks the Lamp-Keeper's group left: the rim of their board in the hall, the gap in their row on the Stencil Wall, the hook in the Warden's hold, the two signs at the mouth of the shared chamber. Each sits at a height, one to five; read from the hall to the heart they are the old phrase, 3 4 2 1 (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "run.old_phrase_sung",
+      "type": "bool",
+      "default": false,
+      "description": "The group set the old phrase last in the heart verse and the raft sang it with them. Each player's last scene then gains the pulse in a blue wall and a place to cut his mark beside an old one (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "self.cut_beside_old",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: at the end of his vessel, with the old phrase sung, he cut his mark into the blue wall beside an old one (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "self.opened_hand",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: on the heart verse's last note he opened his hand by choice, before any grip failed. He goes first; his grip passes to the brothers either side. Decides The Open Hand for him (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "run.hand_opened",
+      "type": "bool",
+      "default": false,
+      "description": "A brother opened his hand on the last note. The two either side of him may lock without 85 in time: Two Together then needs only the lock and no taking (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "run.crossings",
+      "type": "ledger",
+      "default": [],
+      "fields": [
+        "board_row",
+        "song",
+        "hands",
+        "ending",
+        "old_phrase"
+      ],
+      "description": "The crossing record, kept between sessions on the host: each finished crossing's board row, heart verse, Stencil Wall row (four hands or three and a gap), endings and whether the old phrase was sung. A second crossing hangs the board in the hall, puts the hands on the Stencil Wall and lets one growth in the hollow answer with the song (accepted 2026-11-15, built 2026-11-16)."
     }
   ]
 }
