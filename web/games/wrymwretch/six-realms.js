@@ -1,6 +1,6 @@
 // WrymWretch · Six Realms (1D, Byzantine mosaic). DESIGN.md section 11, Six Realms.
-// One match: s_realms_syndicate, against the Syndicate Elder (elder: Dark, Water, Sky; player:
-// Dark, Earth, Wood; no house rule; depth-2 AI that makes one deliberate error; a tutorial note on
+// One match: s_realms_syndicate, against the Syndicate Elder (elder: Dark, Earth, Wood since phase 3,
+// once Dark, Water, Sky; player: Dark, Earth, Wood; no house rule; depth-2 AI that makes one deliberate error; a tutorial note on
 // the first two turns). 19 hexes; Wrymreach at the centre, six Thresholds, twelve homes. The
 // forgetting tide voids one home hex after every third round (marked a round ahead). Recall once a
 // game from the centre. Win: end a turn on the centre while also holding a Threshold; or take all
@@ -44,8 +44,8 @@ import { staged } from "./_stages.js";
 // The Heartstone's memory changes rooms (layer link 3): the founding, if it was kept in Heartstone, is
 // read from api.shared and holds the Stonekeeper homes here without being asked.
 const LADDER = [
-  { name: "The Syndicate Elder", sub: "The tribes' game, as it is played below.", elder: ["dark", "water", "sky"], mine: ["dark", "earth", "wood"],
-    rules: { tide: "quicken", rounds: 16, groveTtl: 2, centreOpens: 4 }, who: "the Syndicate Elder", chapter: "chapter-05", realm: "below" },
+  { name: "The Syndicate Elder", sub: "The tribes' game, as it is played below.", elder: ["dark", "earth", "wood"], mine: ["dark", "earth", "wood"],
+    rules: { tide: "quicken", rounds: 16, groveTtl: 2, centreOpens: 4 }, who: "the Syndicate Elder", chapter: "chapter-05", realm: "below", rings: 3 },
   { name: "Three house rules", sub: "Longer groves, standing Stones, a wind; and a blank piece.", elder: ["wood", "sky", "celestial"], mine: ["dark", "earth", "wood"],
     rules: { tide: 3, rounds: 14, groveTtl: 3, wind: true, stones: ["2,-2", "-2,2"], blank: true, centreOpens: 4 }, who: "the Circle of Seasons' elder", chapter: "chapter-08", realm: "west" },
   { name: "The centre falls", sub: "Against the Tidecallers: the board loses its goal.", elder: ["water", "sky", "celestial"], mine: ["dark", "earth", "wood"],
@@ -252,7 +252,26 @@ function aiMove(s, rnd, err) {
   if (!scored.length) return null;
   return err && scored.length > 1 && scored[1].v > -900 ? scored[1].m : scored[0].m;
 }
-export const rules = { LADDER, initial, genMoves, apply, evaluate, aiMove, thresholds };
+// Phase 3 (built 2026-11-16): the teach stage teaches. In the first sitting the Syndicate Elder plays
+// the same three tribes as you (Dark, Earth, Wood), so every move it makes is one of yours being shown,
+// and Ilvarra rings a good move for each of your first three turns (gold rings: the piece and where it
+// goes). Retuned because a bot needed three sittings to win the old table (the elder's Sky reached a
+// Threshold on its first move and its Water could take the centre at round 4). Offline (40 seeds): a
+// player who follows the rings and then looks one move ahead wins 40; one who ignores the rings and
+// looks one move ahead, 32; one who follows them and then plays a quarter of its moves at random, 37.
+// Ilvarra's ring: the player's move that leaves the elder's best answer least good (two plies).
+function hintMove(s) {
+  let bm = null, bv = Infinity;
+  for (const m of genMoves(s, "p")) {
+    const s1 = apply(s, "p", m);
+    if (s1.winner === "p") return m;
+    const rep = genMoves(s1, "e");
+    const v = rep.length ? Math.max(...rep.map((r) => evaluate(apply(s1, "e", r)))) : evaluate(s1);
+    if (v < bv) { bv = v; bm = m; }
+  }
+  return bm;
+}
+export const rules = { LADDER, initial, genMoves, apply, evaluate, aiMove, hintMove, thresholds };
 
 // ---- page -----------------------------------------------------------------------------------
 const CSS = `
@@ -334,7 +353,8 @@ function play(root, api, ctx) {
         <div data-tabs></div>
         ${[`<p class="goal">Beat the Syndicate Elder at the tribes' own game.</p>
         <dl>
-          <dt>Pick, then a hex</dt><dd>move one of your tribes (Dark, Earth, Wood); onto an enemy takes it</dd>
+          <dt>Pick, then a hex</dt><dd>move one of your tribes (Dark, Earth, Wood); onto an enemy takes it. The elder plays the same three, so watch how it uses them</dd>
+          <dt>Gold rings</dt><dd>for your first three turns Ilvarra rings a good move: the piece, and where it goes. Follow it or not</dd>
           <dt>Win</dt><dd>end a turn on Wrymreach, the gold centre, while you also hold a Threshold (the six white-ringed hexes), or take all three</dd>
           <dt>The tide</dt><dd>every third round it forgets a dimmed home hex. Wrymreach is shut until the first tide has come: nobody steps onto it before round 4</dd>
         </dl>`,
@@ -374,7 +394,7 @@ function play(root, api, ctx) {
     mk("rect", { x: -260, y: -240, width: 520, height: 480, fill: "url(#wwsr-gold)" }, svg);
     const shade = (hex, f) => { const n = parseInt(hex.slice(1), 16); const c = [n >> 16, (n >> 8) & 255, n & 255].map((v) => Math.max(0, Math.min(255, Math.round(v * f)))); return `rgb(${c.join(",")})`; };
     const gBoard = mk("g", { "pointer-events": "none" }, svg);
-    const gHex = mk("g", {}, svg), gMark = mk("g", {}, svg), gPiece = mk("g", {}, svg);
+    const gHex = mk("g", {}, svg), gMark = mk("g", {}, svg), gPiece = mk("g", {}, svg), gRing = mk("g", { "pointer-events": "none" }, svg);
     const A = { board: false, piece: {}, dragon: {}, blank: "", guest: "" };
     png(api.art, "realms-piece-blank-tessera", { w: 120, strip: [".plate"] }).then((u) => { if (u && !dead) { A.blank = u; render(); } });
     let dead = false;
@@ -432,7 +452,7 @@ function play(root, api, ctx) {
       const found = () => { try { api.thread.found(); } catch { /* no storage */ } ilv.textContent = "Ilvarra does not look up. “It was on the table when I sat down,” she says. “I left it where it was.”"; };
       g.addEventListener("click", found); g.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); found(); } });
     });
-    const ui = { sel: null, mode: null, threats: false, undo: null, undoLeft: gentle ? 2 : 1, busy: false, started: false, over: false, eTurns: 0, errTurn: 2 + Math.floor(R() * 4), errTurn2: gentle ? 7 + Math.floor(R() * 3) : -1, lastE: null, last: [], fx: [], beats: new Set() };
+    const ui = { pTurns: 0, hint: null, sel: null, mode: null, threats: false, undo: null, undoLeft: gentle ? 2 : 1, busy: false, started: false, over: false, eTurns: 0, errTurn: 2 + Math.floor(R() * 4), errTurn2: gentle ? 7 + Math.floor(R() * 3) : -1, lastE: null, last: [], fx: [], beats: new Set() };
     const logEl = wrap.querySelector(".wrymwretch-six-realms-log"), ilv = wrap.querySelector(".wrymwretch-six-realms-ilv");
     const btn = (k) => wrap.querySelector(`[data-${k}]`);
     const log = (text, you) => { const p = document.createElement("p"); p.textContent = text; if (you) p.className = "you"; logEl.prepend(p); };
@@ -475,6 +495,13 @@ function play(root, api, ctx) {
         if (gr) mk("circle", { cx: el.cx, cy: el.cy, r: S * 0.62, fill: "none", stroke: gr.side === "p" ? "#7fae4a" : "#2e4a1a", "stroke-width": 5, "stroke-dasharray": "3 5" }, gMark);
         if (h.kind === "centre" && s.rules.centreOpens && s.round < s.rules.centreOpens && !ui.over) { mk("circle", { cx: el.cx, cy: el.cy, r: S * 0.5, fill: "rgba(26,21,32,.55)", stroke: OBS, "stroke-width": 2, "stroke-dasharray": "4 4", "pointer-events": "none" }, gMark); mk("text", { x: el.cx, y: el.cy + 4, "text-anchor": "middle", "font-size": 11, fill: BONE, "font-family": "Cinzel, Georgia, serif", "font-weight": 700, "pointer-events": "none" }, gMark).textContent = `SHUT · R${s.rules.centreOpens}`; }
         if (s.tideNext === h.key) mk("text", { x: el.cx, y: el.cy + S * 0.72, "text-anchor": "middle", "font-size": 11, fill: OBS, "font-family": "Cinzel, Georgia, serif", "font-weight": 700 }, gMark).textContent = "TIDE";
+      }
+      // phase 3: Ilvarra's ring, a good move for the first turns of the teaching sitting
+      gRing.innerHTML = "";
+      if (ui.hint && !ui.busy && !ui.over && ui.started) {
+        const m = ui.hint, p0 = s.pieces.find((x) => x.id === m.pid);
+        const to = m.type === "swap" ? (() => { const o = s.pieces.find((x) => x.id === m.other); return K(o.q, o.r); })() : m.to || m.at;
+        for (const [k, r] of [[p0 && K(p0.q, p0.r), 36], [to, 22]]) { const el = k && hexEls[k]; if (el) { mk("circle", { cx: el.cx, cy: el.cy, r: r + 1, fill: "none", stroke: OBS, "stroke-width": 7, opacity: 0.6 }, gRing); mk("circle", { cx: el.cx, cy: el.cy, r, fill: "none", stroke: "#fff2b0", "stroke-width": 4, "stroke-dasharray": "6 4", class: "wrymwretch-six-realms-ring" }, gRing); } }
       }
       // the last move, outlined in gold; a burst of tesserae where something was taken
       for (const k of ui.last) { const el = hexEls[k]; if (el) mk("polygon", { points: hexPts(el.cx, el.cy, S - 5), fill: "none", stroke: "#fff2b0", "stroke-width": 3, "stroke-dasharray": "6 4", "pointer-events": "none" }, gMark); }
@@ -600,7 +627,12 @@ function play(root, api, ctx) {
       if (s.tideNext && s.tideNext !== tideBefore && side === "e") { const h = hexName(s.tideNext); log(`${h[0].toUpperCase() + h.slice(1)} dims: the tide comes for it next.`); }
       if (side === "e" && s.rules.tide === "quicken" && s.round === QUICKEN) beat("quick", `The elder turns the tide-glass over. “The Tidecallers play it faster. So shall we.” <b>From now the tide forgets every second round.</b>`);
     }
+    function ring() {   // phase 3: the teaching sitting rings a good move for the first CFG.rings turns
+      ui.hint = CFG.rings && ui.pTurns < CFG.rings && !ui.over ? hintMove(s) : null;
+      if (ui.hint) ilv.textContent += ` (Gold rings: a good move, ${CFG.rings - ui.pTurns} more time${CFG.rings - ui.pTurns > 1 ? "s" : ""}.)`;
+    }
     function playerMove(m) {
+      ui.pTurns = (ui.pTurns || 0) + 1; ui.hint = null;
       ui.undo = { s: JSON.stringify(s), log: logEl.innerHTML };
       ui.sel = null; ui.mode = null;
       play("p", m);
@@ -620,7 +652,7 @@ function play(root, api, ctx) {
         else if (ui.eTurns === 4) ilv.textContent = "Ilvarra: 'Show threats' marks every hex the elder can reach. Undo takes back one move, once.";
         if (!ui.beats.has("recall") && genMoves(s, "p").some((m) => m.type === "recall")) { beat("recall", `You stand on Wrymreach with a tribe lost. <b>Recall</b> is open: once a game, bring it back to an empty home hex instead of moving.`); }
         if (!genMoves(s, "p").length) { s.winner = "e"; s.reason = "taken"; return end(); }
-        render();
+        ring(); render();
       }, api.reducedMotion ? 200 : 650);
     }
 
@@ -648,7 +680,7 @@ function play(root, api, ctx) {
       if (!ui.undo || ui.undoLeft < 1 || ui.busy) return;
       s = JSON.parse(ui.undo.s); logEl.innerHTML = ui.undo.log; ui.undo = null; ui.undoLeft--;
       if (!A.board) HEXES.forEach((h) => { const el = hexEls[h.key]; if (el.dropped && !s.voids.includes(h.key)) { el.dropped = false; [...el.tiles.children].forEach((t) => { t.style.transform = ""; t.style.opacity = ""; t.removeAttribute("opacity"); }); } });
-      ilv.textContent = "Ilvarra: once. The elder will not allow it twice."; render();
+      ilv.textContent = "Ilvarra: once. The elder will not allow it twice."; ui.pTurns = Math.max(0, (ui.pTurns || 1) - 1); ring(); render();
     });
     const intro = wrap.querySelector(".wrymwretch-six-realms-intro"), sb = wrap.querySelector("[data-start]");
     const keepBtn = wrap.querySelector("[data-founding]");
@@ -669,9 +701,10 @@ function play(root, api, ctx) {
         ilv.textContent = "Ilvarra: do not go for the centre. Look at it. Put two of yours on Thresholds, and keep them there one turn.";
         s.tideNext = "0,0"; render(); hexEls["0,2"].g.focus(); return; }
       log("The Syndicate Elder sets out the board. You move first.");
+      ctx.notice(wrap, "below", { after: 2500, stay: Infinity, css: "left:12px;top:12px" });   // phase 3: the candle's shadow
       beat("open", `Under the Syndicate's labyrinth, Kael Duskbane sits across from the Syndicate Elder. Behind the elder hangs the key to the forbidden chamber. “Play the tribes' game,” the elder says, “and I will know whether you understand the world.”`);
       ilv.textContent = "Ilvarra: pick one of your pieces at the bottom. Earth cannot be taken on a home hex. Wrymreach is shut until round 4: be standing beside it by then, with a Threshold held.";
-      render(); hexEls["0,2"].g.focus();
+      ring(); render(); hexEls["0,2"].g.focus();
     });
     sb.focus();
     render();

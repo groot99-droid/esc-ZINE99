@@ -1,7 +1,47 @@
 {
  "game": "wrymwretch",
- "count": 160,
+ "count": 173,
  "assets": [
+  {
+   "id": "ending-title-architect-rises",
+   "group": "title",
+   "title": "Ending lettering: The Architect Rises",
+   "w": 1200,
+   "h": 220,
+   "row": "Fourth-row parts, the notebook page, ending lettering (phase 3)"
+  },
+  {
+   "id": "ending-title-dormant-again",
+   "group": "title",
+   "title": "Ending lettering: Dormant Again",
+   "w": 1200,
+   "h": 220,
+   "row": "Fourth-row parts, the notebook page, ending lettering (phase 3)"
+  },
+  {
+   "id": "ending-title-remembered-whole",
+   "group": "title",
+   "title": "Ending lettering: Remembered Whole",
+   "w": 1200,
+   "h": 220,
+   "row": "Fourth-row parts, the notebook page, ending lettering (phase 3)"
+  },
+  {
+   "id": "ending-title-the-empty-saddle",
+   "group": "title",
+   "title": "Ending lettering: The Empty Saddle",
+   "w": 1200,
+   "h": 220,
+   "row": "Fourth-row parts, the notebook page, ending lettering (phase 3)"
+  },
+  {
+   "id": "ending-title-the-rememberer",
+   "group": "title",
+   "title": "Ending lettering: The Rememberer",
+   "w": 1200,
+   "h": 220,
+   "row": "Fourth-row parts, the notebook page, ending lettering (phase 3)"
+  },
   {
    "id": "title-wrymwretch",
    "group": "title",
@@ -289,6 +329,14 @@
    "w": 1600,
    "h": 900,
    "row": "Twin flight scroll backdrops, six realms and the chasm"
+  },
+  {
+   "id": "doc-who-next",
+   "group": "cards",
+   "title": "The Record's last page: Who next?",
+   "w": 600,
+   "h": 800,
+   "row": "Fourth-row parts, the notebook page, ending lettering (phase 3)"
   },
   {
    "id": "glass-back",
@@ -1123,6 +1171,14 @@
    "row": "Chapter cards"
   },
   {
+   "id": "fourth-row-page",
+   "group": "ui",
+   "title": "The notebook: the fourth row (page head)",
+   "w": 1000,
+   "h": 240,
+   "row": "Fourth-row parts, the notebook page, ending lettering (phase 3)"
+  },
+  {
    "id": "ui-divider-crack-1",
    "group": "ui",
    "title": "Crack divider 1",
@@ -1265,6 +1321,54 @@
    "w": 1200,
    "h": 1200,
    "row": "Six Realms pieces and board, with blank tessera and Wyrmguard"
+  },
+  {
+   "id": "fourth-part-above",
+   "group": "thread",
+   "title": "The fourth row: a star in the Priory dome",
+   "w": 200,
+   "h": 200,
+   "row": "Fourth-row parts, the notebook page, ending lettering (phase 3)"
+  },
+  {
+   "id": "fourth-part-below",
+   "group": "thread",
+   "title": "The fourth row: a candle shadow in the forbidden chamber",
+   "w": 200,
+   "h": 200,
+   "row": "Fourth-row parts, the notebook page, ending lettering (phase 3)"
+  },
+  {
+   "id": "fourth-part-east",
+   "group": "thread",
+   "title": "The fourth row: a kelp line on the seabed",
+   "w": 200,
+   "h": 200,
+   "row": "Fourth-row parts, the notebook page, ending lettering (phase 3)"
+  },
+  {
+   "id": "fourth-part-north",
+   "group": "thread",
+   "title": "The fourth row: a rune on Aetherius's scales",
+   "w": 200,
+   "h": 200,
+   "row": "Fourth-row parts, the notebook page, ending lettering (phase 3)"
+  },
+  {
+   "id": "fourth-part-south",
+   "group": "thread",
+   "title": "The fourth row: a vein in the Heartstone",
+   "w": 200,
+   "h": 200,
+   "row": "Fourth-row parts, the notebook page, ending lettering (phase 3)"
+  },
+  {
+   "id": "fourth-part-west",
+   "group": "thread",
+   "title": "The fourth row: the crack in the split tree",
+   "w": 200,
+   "h": 200,
+   "row": "Fourth-row parts, the notebook page, ending lettering (phase 3)"
   },
   {
    "id": "thread-guest",

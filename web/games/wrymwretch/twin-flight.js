@@ -264,11 +264,14 @@ function play(root, api, ctx) {
       if (late) { s.hits = Math.min(HITS, s.hits + 1); s.totalHits++; s.flash = 0.8; }
       s.stamp = 1;
       btn("gift").hidden = false;
+      ctx.notice(wrap, "north", { after: 2500, stay: 9000, every: 18000, css: "right:12px;top:40px" });   // phase 3: the rune on his scales
       beat(`${late ? "He reaches her only at the last, and her shoulder strikes his scales." : "She lands on his neck as if she had always ridden there."} Aetherius speaks into her mind: <q>We were born together, Aeris. You are the breath I cannot take. I am the thought you cannot speak.</q> <cite>WW 145 · then <b>E</b> or drag across the sky: turn the wind</cite>`, 8000);
       later(() => {
         if (s.over) return;
         s.rec = 10; btn("record").hidden = false;
-        beat(`She asks whether the sickness in the sky-cities <q>is it because of me?</q> <q>Because of us,</q> Aetherius corrected gently. <q>Our bond was dormant too long.</q> <cite>WW 147–149 · <b>R</b> or Record keeps his answer; her song rests 8 s</cite>`, 9000);
+        beat(ctx.second
+          ? `She asks whether the sickness in the sky-cities <q>is it because of me?</q> <q>Because of us,</q> Aetherius corrected gently. <q>Our bond was dormant too long.</q> This time you know what the dormancy bought, and that he does not. <cite>WW 147–149 · the second time · <b>R</b> or Record keeps his answer</cite>`
+          : `She asks whether the sickness in the sky-cities <q>is it because of me?</q> <q>Because of us,</q> Aetherius corrected gently. <q>Our bond was dormant too long.</q> <cite>WW 147–149 · <b>R</b> or Record keeps his answer; her song rests 8 s</cite>`, 9000);
       }, 8400);
     }
     function finish(win) {
@@ -291,7 +294,7 @@ function play(root, api, ctx) {
       later(() => { ctx.done(wrap, { win, record: { realm: "north", title: "Twin flight I: the sky-sail and Aetherius", sub: "Galewing page · chapter 2, Remember Me", divider: 1, crystal: s.recorded, lines: [
         win ? `The road down from the sky-cities, flown past the tear (${s.cp} of ${NSEAL} seals, turned back ${s.resets} of 3).` : { t: `The road down from the sky-cities: lost in cloud ${s.cp ? `after ${s.cp} seal${s.cp > 1 ? "s" : ""}` : "before the first seal"}.`, kind: "lost" },
         s.caught ? `The catch: ${s.caught === "late" ? "late, at the last of the six seconds" : "clean"}. Elf and dragon are one life from here.` : null,
-        s.recorded ? { t: "“Because of us.” Aetherius's answer to Aeris, kept as a Record entry.", note: "It can be retold at Ilvarra's fire, where it will mean something else." }
+        s.recorded ? { t: "“Because of us.” Aetherius's answer to Aeris, kept as a Record entry.", note: ctx.second ? "Read the second time: the dormancy was the coin the tribes paid for the seal, and his waking is the coin coming back." : "It can be retold at Ilvarra's fire, where it will mean something else." }
           : s.caught ? { t: "Aetherius's answer was not written down. Only Aeris heard it.", kind: "lost", note: "The Record has no line to retell at the fire." } : null,
       ] }, text: (win
         ? { outcome: "win", text: `Aetherius rides the last thermal over the far peak with Aeris on his neck${s.caught === "late" ? ", her shoulder still bruised from the late catch" : ""}. ${s.resets ? `Turned back ${s.resets} time${s.resets > 1 ? "s" : ""}, ` : "Never turned back, "}${s.totalHits} scale hit${s.totalHits === 1 ? "" : "s"} on the way down${s.songs ? `; she sang ${s.songs} time${s.songs > 1 ? "s" : ""}` : ""}. ${s.recorded ? "In the Record: “Because of us.” " : ""}The help her people sent her for is below.` }

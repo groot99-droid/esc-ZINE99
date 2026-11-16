@@ -759,6 +759,11 @@
           "prop": "queen-statue",
           "verb": "Give back the bond",
           "leads_to": "s_end_dormant"
+        },
+        {
+          "prop": "king-statue",
+          "verb": "Give the watch to Dorrin Vael (only when he was reminded, Tarn's rib was tuned and the fourth row read)",
+          "leads_to": "s_end_saddle"
         }
       ]
     },
@@ -925,6 +930,109 @@
       "hide": [
         "crystal-wound"
       ],
+      "interactions": []
+    },
+    "s_end_saddle": {
+      "note": "Ending, The Empty Saddle (phase 3): the same place at night, between the statues; one small seated figure, back to camera, facing the column of light; sun gold and moon silver meeting on him, one dim ember-orange glow where the saddle would be. The open Record beside him is a character prop of the scene, not a Meshy prop.",
+      "world": {
+        "color": [
+          0.08,
+          0.09,
+          0.14
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "sun-gold",
+          "type": "SPOT",
+          "location": [
+            -20,
+            -10,
+            22
+          ],
+          "energy": 2600,
+          "size": 1,
+          "color": [
+            0.886,
+            0.702,
+            0.235
+          ],
+          "look_at": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "moon-silver",
+          "type": "SPOT",
+          "location": [
+            20,
+            -10,
+            22
+          ],
+          "energy": 2600,
+          "size": 1,
+          "color": [
+            0.851,
+            0.867,
+            0.886
+          ],
+          "look_at": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "ember",
+          "type": "POINT",
+          "location": [
+            1.2,
+            -1,
+            0.6
+          ],
+          "energy": 120,
+          "size": 0.5,
+          "color": [
+            0.878,
+            0.463,
+            0.18
+          ]
+        },
+        {
+          "name": "veil-column",
+          "type": "AREA",
+          "location": [
+            0,
+            12,
+            10
+          ],
+          "energy": 1800,
+          "size": 4,
+          "color": [
+            0.78,
+            0.72,
+            0.95
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -16,
+          2.2
+        ],
+        "look_at": [
+          0,
+          6,
+          3
+        ],
+        "lens_mm": 35,
+        "mode": "fixed"
+      },
+      "hide": [],
       "interactions": []
     }
   }

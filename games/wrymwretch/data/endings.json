@@ -9,18 +9,50 @@
         "is": "world_memory",
         "lt": 25
       },
-      "summary": "Too much was forgotten: whatever answer is given at the choice fails, the shape Rhyla saw steps out of the Astral Expanse, and the sky fills with constellations no one has a name for.",
+      "summary": "Too much was forgotten: whatever answer is given at the choice fails, the shape Rhyla saw steps out of the Astral Expanse, and the sky fills with constellations no one has a name for. What steps through does not know it was a scholar. Phase 3 (built 2026-11-16): if the party Retold his name to him in s_last_witness (name_retold_to_voice), the voice loses its last word first, \"I… remember…\", and the cost is that the party heard it go.",
       "final_scenes": [
         "s_choice",
         "s_end_architect"
       ],
-      "cost": "Everything the world forgot stays forgotten. What steps through does not know it was a scholar. (Once scene 12, The Last Witness Is the Prisoner, exists and was reached, the voice loses its last word first: \"I… remember…\".)"
+      "cost": "Everything the world forgot stays forgotten. What steps through does not know it was a scholar. With name_retold_to_voice, the voice loses its last word first (\"I… remember…\"): the party gave him his name back and watched him lose it again."
+    },
+    {
+      "id": "empty_saddle",
+      "name": "The Empty Saddle",
+      "as_written": false,
+      "priority": 2,
+      "when": {
+        "all": [
+          {
+            "is": "final_choice",
+            "eq": "dorrin_watch"
+          },
+          {
+            "is": "unwriter_reminded",
+            "eq": true
+          },
+          {
+            "is": "tarns_rib_tuned",
+            "eq": true
+          },
+          {
+            "is": "fourth_row_read",
+            "eq": true
+          }
+        ]
+      },
+      "summary": "Dorrin Vael, the Unwriter, reminded of his own name and of Tarn's, takes the watch between the statues. He has no one to go home to, and he is the only one who never forgot anything. The fourth answer at the statues, open only when he was reminded (unwriter_reminded), Tarn's rib was tuned (tarns_rib_tuned) and the fourth row was read (fourth_row_read). Accepted 2026-11-15, built 2026-11-16 (phase 3).",
+      "final_scenes": [
+        "s_choice",
+        "s_end_saddle"
+      ],
+      "cost": "The man who killed the witnesses keeps the world's memory, and he is mortal: the debt is not paid, only passed forward again. Last image: the Record's final page, headed \"Who next?\", empty."
     },
     {
       "id": "remembered_whole",
       "name": "Remembered Whole",
       "as_written": false,
-      "priority": 2,
+      "priority": 3,
       "when": {
         "all": [
           {
@@ -41,41 +73,41 @@
           }
         ]
       },
-      "summary": "The party remembers who Izladar was, a Celestial Elf scholar; the Anchor holds his whole name and the voice finishes its sentence. The prison is sealed by memory, and now the whole world holds it, so no pair has to keep watch; he does not choose this. The dead witnesses stay dead. New cost (accepted 2026-11-15): a world that holds the seal by remembering can never let anything fade; grief does not soften in the six realms.",
+      "summary": "The party remembers who Izladar was, a Celestial Elf scholar; the Anchor holds his whole name and the voice finishes its sentence. The prison is sealed by memory, and now the whole world holds it, so no pair has to keep watch; he does not choose this. The dead witnesses stay dead. New cost (accepted 2026-11-15): a world that holds the seal by remembering can never let anything fade; grief does not soften in the six realms. Phase 3: with the fourth row read, the closing names the terms the world now keeps (everyone carries it, and no one was asked).",
       "final_scenes": [
         "s_choice",
         "s_end_whole"
       ],
-      "cost": "The dead witnesses stay dead, and their unrecorded names are read as blanks. A world that holds the seal by remembering can never let anything fade: grief does not soften in the six realms. Dorrin was half right."
+      "cost": "The dead witnesses stay dead, and their unrecorded names are read as blanks. A world that holds the seal by remembering can never let anything fade: grief does not soften in the six realms. Dorrin was half right. With the fourth row read (fourth_row_read), the answer at the statues is worded as the bargain's own last term, \"Let everyone carry it\", and everyone does, without being asked."
     },
     {
       "id": "dormant_again",
       "name": "Dormant Again",
       "as_written": false,
-      "priority": 3,
+      "priority": 4,
       "when": {
         "is": "final_choice",
         "eq": "give_bonds"
       },
-      "summary": "The six pairs seal the wound by giving up the Twin-Soul Bond; the world is saved, and elves and dragons forget each other. Accepted 2026-11-15: once The Price is told (price_told), this is the ancestral bargain made again, with open eyes.",
+      "summary": "The six pairs seal the wound by giving up the Twin-Soul Bond; the world is saved, and elves and dragons forget each other. Accepted 2026-11-15: once The Price is told (price_told), this is the ancestral bargain made again, with open eyes. Phase 3 (built 2026-11-16): with the fourth row read (fourth_row_read), each elf leaves one line in the Record for whoever wakes next, and the cost is that they write it knowing they will not remember writing it.",
       "final_scenes": [
         "s_choice",
         "s_end_dormant"
       ],
-      "cost": "The bonds. It is the tribes' own bargain, the dragons' memory for the wall, chosen this time by those who pay it and knowing what it is."
+      "cost": "The bonds. It is the tribes' own bargain, the dragons' memory for the wall, chosen this time by those who pay it and knowing what it is. With fourth_row_read, each elf writes one line for whoever wakes next, and forgets the dragon it was written about."
     },
     {
       "id": "the_rememberer",
       "name": "The Rememberer",
       "as_written": false,
-      "priority": 4,
+      "priority": 5,
       "when": true,
       "summary": "One pair, chosen by the player (keeper_pair), stays at the heart of the wound to hold the name for good; the seal holds and the world slowly remembers. Also the result of a failed attempt to speak his whole name. Accepted 2026-11-15: the pair that stays does knowingly what the tribes did to their dragons blind.",
       "final_scenes": [
         "s_choice",
         "s_end_rememberer"
       ],
-      "cost": "That pair never goes home. A memory always has a carrier, and this time the carrier was asked. If Seraphyne keeps watch, the last shot is the sealed page in her lap, unopened."
+      "cost": "That pair never goes home. A memory always has a carrier, and this time the carrier was asked. If Seraphyne keeps watch, the last shot is the sealed page in her lap, unopened. With the fourth row read, the keeper knows the last term (until someone else carries it) and that it is now them."
     }
   ]
 }

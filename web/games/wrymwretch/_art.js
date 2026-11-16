@@ -107,7 +107,8 @@ const CSS = `
 `;
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-// spec: { realm, title, sub, pic (an art id shown beside the heading), lines: [text | { t, kind: "kept"|"lost"|"link", note }] }
+// spec: { realm, title, sub, pic (an art id shown beside the heading), lines: [text | { t, kind: "kept"|"lost"|"link", note }],
+//         card (phase 3: an ending's generated card, api.keyart(id), set behind the page; "" or missing shows none) }
 // Call it just before api.end: the result bar sits over its foot.
 export function recordPage(wrap, api, spec) {
   const art = api.art, has = (id) => art && art.has && art.has(id);
@@ -120,8 +121,14 @@ export function recordPage(wrap, api, spec) {
     <div data-head><div class="wrymwretch-record-headtxt">THE RECORD</div></div>
     <div class="wrymwretch-record-top"><span data-seal></span><div><h3>${esc(spec.title || "")}</h3><p>${esc(spec.sub || (REALM_NAME[spec.realm] ? REALM_NAME[spec.realm] + " page" : ""))}</p></div><span data-pic style="margin-left:auto"></span></div>
     <div data-div><div class="wrymwretch-record-rule"></div></div>
+    ${spec.cardTitle && has(spec.cardTitle) ? `<span data-ctitle></span>` : ""}
     <ul>${lines.map((l) => `<li class="${l.kind === "lost" ? "lost" : l.kind === "link" ? "link" : ""}">${esc(l.t)}${l.note ? `<small>${esc(l.note)}</small>` : ""}</li>`).join("")}</ul>
     <span data-title></span></div>`;
+  if (spec.card) {   // the ending this page earned, behind it; a missing card leaves the void as it was
+    const im = new Image();
+    im.onload = () => { if (!el.isConnected) return; el.style.background = `linear-gradient(rgba(11,13,26,.62),rgba(11,13,26,.86) 60%,rgba(11,13,26,.96)),url("${spec.card}") center 30%/cover no-repeat`; };
+    im.src = spec.card;
+  }
   wrap.appendChild(el);
   requestAnimationFrame(() => el.classList.add("on"));
   const put = (sel, id, cls, opts, alt = "") => png(art, id, opts).then((u) => { if (!u || !el.isConnected) return; el.querySelector(sel).innerHTML = `<img class="${cls}" alt="${esc(alt)}" src="${u}">`; });
@@ -130,6 +137,7 @@ export function recordPage(wrap, api, spec) {
   if (has(seal)) put("[data-seal]", seal, "seal", { w: 62, strip: [".plate"] });
   const dv = "ui-divider-crack-" + (spec.divider || 1);
   if (has(dv)) put("[data-div]", dv, "wrymwretch-record-div", { w: 500, strip: [".plate"] });
+  if (spec.cardTitle && has(spec.cardTitle)) put("[data-ctitle]", spec.cardTitle, "wrymwretch-record-div", { w: 500, strip: [".plate"] }, art.info(spec.cardTitle).title);
   if (spec.pic && has(spec.pic)) put("[data-pic]", spec.pic, "pic", { w: 192 }, art.info(spec.pic).title);
   if (has("title-wrymwretch")) put("[data-title]", "title-wrymwretch", "wrymwretch-record-title", { w: 300, strip: [".plate"] }, "WrymWretch");
   const corner = spec.crystal && has("ui-record-corner-crystal") ? "ui-record-corner-crystal" : "ui-record-corner";

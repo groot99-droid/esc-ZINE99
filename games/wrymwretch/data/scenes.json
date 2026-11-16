@@ -1161,7 +1161,8 @@
       ],
       "writes": [
         "seal_text_read",
-        "izladar_fragments"
+        "izladar_fragments",
+        "fourth_row_read"
       ],
       "game": "slipping_glyph"
     },
@@ -1400,6 +1401,7 @@
         "s_end_rememberer",
         "s_end_whole",
         "s_end_dormant",
+        "s_end_saddle",
         "s_end_architect"
       ],
       "reads": [
@@ -1412,7 +1414,10 @@
         "world_memory",
         "izladar_fragments",
         "anchor_forged",
-        "price_told"
+        "price_told",
+        "fourth_row_read",
+        "tarns_rib_tuned",
+        "unwriter_reminded"
       ],
       "writes": [
         "final_choice",
@@ -1431,7 +1436,8 @@
         "keeper_pair",
         "witnesses",
         "ilvarra_alive",
-        "unwriter_reminded"
+        "unwriter_reminded",
+        "fourth_row_read"
       ],
       "writes": []
     },
@@ -1447,7 +1453,25 @@
         "keeper_pair",
         "witnesses",
         "ilvarra_alive",
-        "unwriter_reminded"
+        "unwriter_reminded",
+        "fourth_row_read"
+      ],
+      "writes": []
+    },
+    {
+      "id": "s_end_saddle",
+      "layer": "3d",
+      "name": "Ending: The Empty Saddle",
+      "chapter": "a3_choice",
+      "enter": "fade",
+      "exit": "fade",
+      "next": [],
+      "reads": [
+        "unwriter_reminded",
+        "tarns_rib_tuned",
+        "fourth_row_read",
+        "witnesses",
+        "ilvarra_alive"
       ],
       "writes": []
     },
@@ -1463,7 +1487,8 @@
         "keeper_pair",
         "witnesses",
         "ilvarra_alive",
-        "unwriter_reminded"
+        "unwriter_reminded",
+        "fourth_row_read"
       ],
       "writes": []
     },
@@ -1479,7 +1504,8 @@
         "keeper_pair",
         "witnesses",
         "ilvarra_alive",
-        "unwriter_reminded"
+        "unwriter_reminded",
+        "name_retold_to_voice"
       ],
       "writes": []
     }

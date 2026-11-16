@@ -190,7 +190,7 @@ function play(root, api, ctx) {
             <button type="button" class="wrymwretch-star-chart-btn" data-name>Name it</button>
             <button type="button" class="wrymwretch-star-chart-btn" data-unpick hidden>Unpick the black</button>
             <button type="button" class="wrymwretch-star-chart-btn" data-read>Read a star</button>
-            <button type="button" class="wrymwretch-star-chart-btn" data-glimpse>Glimpse</button>
+            <button type="button" class="wrymwretch-star-chart-btn" data-glimpse>${ctx.second ? "Her Glimpse" : "Glimpse"}</button>
             <button type="button" class="wrymwretch-star-chart-btn" data-clear>Clear</button>
           </div>
           <div class="wrymwretch-star-chart-beat" aria-live="polite"></div>
@@ -482,8 +482,8 @@ function play(root, api, ctx) {
       if (!miss) return;
       st.glimpse = false; drawDawn();
       const [a, b] = miss.split("|");
-      const l = mk("line", { x1: stars[a].x, y1: stars[a].y, x2: stars[b].x, y2: stars[b].y, stroke: GOLDHI, "stroke-width": 0.8, opacity: 0.55, "stroke-dasharray": "0.6 0.8" }, gGhost);
-      noteEl.textContent = "Seraphyne's Glimpse: one true line, for three seconds.";
+      const l = mk("line", { x1: stars[a].x, y1: stars[a].y, x2: stars[b].x, y2: stars[b].y, stroke: ctx.second ? "#c9786a" : GOLDHI, "stroke-width": 0.8, opacity: 0.55, "stroke-dasharray": "0.6 0.8" }, gGhost);
+      noteEl.textContent = ctx.second ? "Seraphyne's Glimpse, in her own hand: one line, for three seconds. Kael checks it against the strips before he lets you lay it." : "Seraphyne's Glimpse: one true line, for three seconds.";
       later(() => l.remove(), 3000);
     }
     function won() {   // II and III
@@ -584,6 +584,7 @@ function play(root, api, ctx) {
       if (ST === 2) { noteEl.textContent = "Seven silver lines: the Sigil. Drag along one to lift it."; st.unlockRead = true; drawDawn();
         beat(`In the Expanse the sky is paper and the stars are ink. The Sigil of Izladar stands on it already, drawn by no hand of yours. Seraphyne says, very quietly: <i>lift it</i>. <cite>Undo the figure to find the one beneath</cite>`, 9000); f0 && f0.focus(); return; }
       noteEl.textContent = "Begin with the Stag. Its seven stars are ringed.";
+      ctx.notice(wrap, "above", { after: 10000, stay: Infinity, key: "m", css: "right:12px;top:12px" });   // phase 3: the star in the dome
       beat(`The Priory of First Light, at night. The constellations flicker <q>like dying embers</q>, and Scholar Seraphyne asks you to lay the lost lines back while the party still remembers them. <cite>WW 85 · Cedarheart's Stag first</cite>`, 9000);
       const f = svg.querySelector(".wrymwretch-star-chart-star"); f && f.focus();
     });

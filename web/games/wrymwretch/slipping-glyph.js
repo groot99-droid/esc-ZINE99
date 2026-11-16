@@ -29,6 +29,19 @@
 
 import { png, opening, openingSet } from "./_art.js";
 import { staged } from "./_stages.js";
+import { PARTS as FOURTH, TERMS, gathered as fourthGathered, openNotebook } from "./_fourth.js";
+
+// Phase 3 (accepted 2026-11-15, built 2026-11-16): the long puzzle pays off here.
+//   Row IV of the seal. Its six still parts are noticed in six other modes (_fourth.js) and kept in the
+//   notebook. With all six in, the row holds like any other: its four glyphs keep a crown, a stem, a foot
+//   and a mark (two realms kept the same crown, two the same foot), and they make rune 10. Read, it gives
+//   the terms of the bargain (TERMS) and sets fourth_row_read. If Tarn's rib was tuned (Heartstone III) and
+//   the kill-list's signature was read (page II: dorrin_named), Ilvarra asks for both names to be said at
+//   the door: said, they are the reminding (unwriter_reminded) and the run earns The Empty Saddle; left
+//   unsaid, or without the rib or the name, it earns Dormant Again with a line left by each elf. Either
+//   way the run is finished (runs_done), and the ending's generated card stands behind the result.
+//   Second run (ctx.second): the kill-list shows what was hidden. Row II is in Ysolde's own hand, and the
+//   signature shows through the slate from the start, before the fifth row is read.
 
 // Phase 2 (accepted 2026-11-15, built 2026-11-16): the ladder. The two pages are stages, and the seal follows.
 //   I   Teach, the monolith: find what stays.      II  Test, the kill-list, on the camp's clock.
@@ -76,7 +89,7 @@ PAGES.seal = { key: "seal", label: "III · The seal", what: "six rows", chapter:
     { answer: 4, stable: ["stem", "crown", "mark", "foot"], mono: true },
     { answer: 9, stable: ["stem", "mark", "crown", "foot"], mono: true },
     { answer: 2, stable: ["stem", "mark", "crown", "foot"], mono: true },
-    { answer: null, stable: [null, null, null, null], world: true },
+    { answer: null, stable: [null, null, null, null], world: true },   // phase 3: rune 10, once its six parts are in
     { answer: 6, stable: ["stem", "crown", "mark", "foot"], shy: [1, 3], moving: true },
     { answer: 8, stable: ["mark", "crown", "stem", "foot"], name: true },
   ] };
@@ -122,6 +135,9 @@ const CSS = `
 .wrymwretch-slipping-glyph-list li.x{text-decoration:line-through;color:#8a7a5c}
 .wrymwretch-slipping-glyph-sign{position:absolute;inset:0;z-index:2;display:grid;place-items:center;background:rgba(11,13,26,.9);padding:10px;text-align:center;color:#E9E2D0;opacity:0;transition:opacity .6s;pointer-events:none;border-radius:2px}
 .wrymwretch-slipping-glyph-sign.on{opacity:1}
+.wrymwretch-slipping-glyph-ghost{position:absolute;left:0;right:0;bottom:4px;z-index:1;text-align:center;pointer-events:none;color:#E9E2D0;opacity:.42;text-shadow:0 1px 3px #000}
+.wrymwretch-slipping-glyph-ghost b{display:block;font:700 18px 'Cinzel',Georgia,serif;letter-spacing:.2em}
+.wrymwretch-slipping-glyph-ghost span{display:block;font:italic 13px 'Cormorant Garamond',Georgia,serif}
 .wrymwretch-slipping-glyph-sign img{width:min(250px,62%);height:auto;display:block;margin:0 auto 6px}
 .wrymwretch-slipping-glyph-sign b{display:block;font:700 22px 'Cinzel',Georgia,serif;letter-spacing:.12em;color:#fbf7ec}
 .wrymwretch-slipping-glyph-sign span{display:block;font-size:16px;line-height:1.3;max-width:340px;margin:4px auto 0}
@@ -281,8 +297,11 @@ function play(root, api, ctx) {
       RUNES.forEach((ru) => png(art, "rune-" + pad2(ru.id), { w: 96 }).then((u) => { if (dead || !u || !useArt) return; runeUrl[ru.id] = u; const b = keyBtns[ru.id - 1]; b.classList.add("art"); b.innerHTML = runeHtml(ru.id); slots.forEach((s, ri) => { if (st.read[ri] && ROWS[ri].answer === ru.id) { s.classList.add("art"); s.innerHTML = runeHtml(ru.id); } }); }));
     }
 
+    const got = fourthGathered(api), allSix = FOURTH.every((p) => got[p.realm]);
     function build(pageKey) {
-      P = PAGES[pageKey] || PAGES.monolith; ROWS = P.rows; NR = ROWS.length; SLIP = P.slip[gentle ? 1 : 0];
+      P = PAGES[pageKey] || PAGES.monolith; SLIP = P.slip[gentle ? 1 : 0];
+      ROWS = P.key === "seal" && allSix ? P.rows.map((r) => (r.world ? { answer: 10, stable: ["crown", "stem", "foot", "mark"], world: true, held: true } : r)) : P.rows;
+      NR = ROWS.length;
       st.read = ROWS.map(() => false); st.fy = 1.5 / NR;
       surface.classList.toggle("r5", NR === 5); surface.classList.toggle("r6", NR === 6);
       surface.setAttribute("aria-label", (P.key === "killlist" ? "The dropped slate." : P.key === "seal" ? "The seal." : "The monolith.") + " Arrow keys move the focus circle.");
@@ -307,9 +326,9 @@ function play(root, api, ctx) {
         line.innerHTML = `<b>${ROMAN[ri]}</b>`; line.appendChild(b);
         const struck = row.ysolde && st.mercy === true;
         const pre = row.mono && ri < monoRead;
-        if (row.world) {
+        if (row.world && !row.held) {
           b.type = "button"; b.className = "wrymwretch-slipping-glyph-slot world"; b.textContent = "······"; b.setAttribute("aria-label", "row 4: its six still parts are held in the world, not on this page");
-          b.addEventListener("click", () => { note.textContent = `Nothing on the door holds row IV. Its parts are kept elsewhere, one a realm: ${HELD.join("; ")}.`; });
+          b.addEventListener("click", () => { const k = FOURTH.filter((p) => got[p.realm]).length; note.textContent = `Nothing on the door holds row IV: the notebook has ${k} of its 6 parts. They are kept elsewhere, one a realm.`; openNotebook(root, api); });
           slotsEl.appendChild(line); return b;
         }
         b.type = "button"; b.className = "wrymwretch-slipping-glyph-slot" + (struck ? " struck" : row.answer ? "" : " void");
@@ -341,7 +360,8 @@ function play(root, api, ctx) {
     }
     function drawList() {
       if (!listEl) return;
-      listEl.innerHTML = ROWS.map((row, ri) => (row.ysolde && st.mercy ? `<li class="x">${ROMAN[ri]} · struck</li>` : st.read[ri] ? `<li class="w">${ROMAN[ri]} · ${row.who}, ${row.where}: warned</li>` : `<li>${ROMAN[ri]} · unread</li>`)).join("");
+      const hand = (row) => (ctx.second && row.ysolde ? " <i>(in her own hand)</i>" : "");
+      listEl.innerHTML = ROWS.map((row, ri) => (row.ysolde && st.mercy ? `<li class="x">${ROMAN[ri]} · struck${hand(row)}</li>` : st.read[ri] ? `<li class="w">${ROMAN[ri]} · ${row.who}, ${row.where}: warned${hand(row)}</li>` : `<li>${ROMAN[ri]} · unread${hand(row)}</li>`)).join("");
     }
     function drawClock() {
       const s = Math.max(0, Math.ceil(st.clock));
@@ -384,11 +404,15 @@ function play(root, api, ctx) {
       later(() => {
         if (dead) return;
         if (P.key === "seal") {
-          const mine = ROWS.filter((r, i) => r.answer && st.read[i]).length;
-          return ctx.done(wrap, { win, text: text + kinder, record: { realm: "wrymreach", title: "The Slipping Glyph III: the seal", sub: "The Bone Choir's door · chapter 10", divider: 3, lines: [
-            win ? `Rows read: ${mine} of 5${monoRead ? ` (${Math.min(3, monoRead)} of them at the monolith, long before)` : ""}.` : { t: `Rows read: ${mine} of 5. The seal devoured the rest.`, kind: "lost" },
+          const mine = ROWS.filter((r, i) => r.answer && st.read[i]).length, of = allSix ? 6 : 5;
+          const E = st.ending;
+          return ctx.done(wrap, { win, text: text + kinder, record: { realm: "wrymreach", title: "The Slipping Glyph III: the seal", sub: "The Bone Choir's door · chapter 10", divider: 3, card: E ? E.card : "", cardTitle: E ? E.lettering : "", lines: [
+            win ? `Rows read: ${mine} of ${of}${monoRead ? ` (${Math.min(3, monoRead)} of them at the monolith, long before)` : ""}.` : { t: `Rows read: ${mine} of ${of}. The seal devoured the rest.`, kind: "lost" },
             st.read[5] ? { t: "The sixth row is THE NAME. It did not slip. Someone has been holding it still.", kind: "link" } : { t: "The sixth row: unread.", kind: "lost" },
-            { t: "The fourth row: six parts, none of them on the door.", kind: "lost", note: `Held in the world, one a realm: ${HELD.join("; ")}.` },
+            allSix && st.read[3] ? { t: `The fourth row: ${TERMS.map(([a, b]) => `${a.toLowerCase()}, ${b}`).join("; ")}.`, kind: "link", note: "Its six parts were noticed in the world and kept in the notebook: the long puzzle, paid off." }
+              : allSix ? { t: "The fourth row held on the door, and was not read.", kind: "lost" }
+              : { t: `The fourth row: ${FOURTH.filter((q) => got[q.realm]).length} of six parts in the notebook, none of them on the door.`, kind: "lost", note: `Held in the world, one a realm: ${HELD.join("; ")}.` },
+            E ? { t: `Earned: ${E.title}.`, kind: "link", note: E.note } : null,
             monoRead ? { t: `Because the monolith was read (The Slipping Glyph I), ${monoRead === 3 ? "its three rows" : "its rows"} stood here already.`, kind: "link" } : null ] } });
         }
         if (P.key === "monolith") {
@@ -419,8 +443,46 @@ function play(root, api, ctx) {
         : `${reason === "wrong" ? "Three wrong runes, and the slate smears itself blank." : "The smoke reaches the tents and a masked hand takes the slate back."} Only ${warned} witness${warned === 1 ? "" : "es"} warned. “Someone was erasing memories. Someone was killing witnesses.” (WW 81)`);
     }
 
+    // ---- phase 3: after row IV, the names at the door ------------------------------------------------
+    const ENDS = {
+      empty_saddle: { title: "The Empty Saddle", card: "ending-the-empty-saddle", lettering: "ending-title-the-empty-saddle", note: "Dorrin Vael was reminded of his own name and Tarn's, and takes the watch." },
+      dormant_again: { title: "Dormant Again", card: "ending-dormant-again", lettering: "ending-title-dormant-again", note: "The bargain is made again with open eyes; each elf leaves one line for whoever wakes next." },
+    };
+    function earn(id) {
+      const E = { ...ENDS[id], card: (api.keyart && api.keyart(ENDS[id].card)) || "" };
+      st.ending = E;
+      try {
+        api.shared.set("unwriter_reminded", id === "empty_saddle");
+        api.shared.set("finale_ending", id);
+        api.shared.set("runs_done", (+api.shared.get("runs_done", 0) || 0) + 1);
+      } catch { /* no storage */ }
+      const said = id === "empty_saddle";
+      finish(true, said
+        ? `The seal is read, all six rows, and the fourth says what was paid. Ilvarra says Cendre's name, and you say the other two: Dorrin Vael, and Tarn. Somewhere above the choir a man in a blank mask stops walking. He has nobody to go home to, and he is the only one who has never forgotten anything. The door opens on the Expanse.`
+        : `The seal is read, all six rows, and the fourth says what was paid. Nobody at the door says the other name. The bargain will be made again, this time by the ones who pay it, and each elf will leave one line in the Record for whoever wakes next. The door opens on the Expanse.`);
+    }
+    function askNames() {
+      if (dead) return;
+      let tarn = false, dorrin = false;
+      try { tarn = !!api.shared.get("tarns_rib", false); dorrin = !!api.shared.get("dorrin_named", false); } catch { /* no storage */ }
+      const ov = document.createElement("div"); ov.className = "wrymwretch-slipping-glyph-intro";
+      const both = tarn && dorrin;
+      ov.innerHTML = `<div class="wrymwretch-slipping-glyph-card"><div class="cap" aria-hidden="true">IV</div><h2>Until someone else carries it</h2>
+        <p class="goal">The fourth row is the terms, and the last term is a question nobody at the door can answer for anyone else.</p>
+        ${both ? `<p class="ask">The rib that rang no chord was Tarn's, and the hand that signed the list was Dorrin Vael's. Ilvarra has not looked away from the door. <q>Her name was Cendre. His was Tarn. Say them both, or do not say hers.</q></p>
+        <p class="more">Saying them is a Remind: the one who took names given his own back. It cannot be unsaid.</p>
+        <div class="row"><button type="button" class="wrymwretch-slipping-glyph-btn" data-say="1">Say both names<small>Dorrin Vael, and Tarn</small></button>
+        <button type="button" class="wrymwretch-slipping-glyph-btn" data-say="0">Say neither<small>and let the bargain stand</small></button></div>`
+        : `<p class="ask">Ilvarra reads the last term twice. <q>Someone else,</q> she says. <q>It was always going to be someone else.</q></p>
+        <p class="more">${!tarn && !dorrin ? "One rib in this hall rang no chord, and nobody tuned it. One name on the Remnants' slate was never turned over." : !tarn ? "One rib in this hall rang no chord, and nobody tuned it." : "One name on the Remnants' slate was never turned over."} Without it there is no one here to ask.</p>
+        <div class="row"><button type="button" class="wrymwretch-slipping-glyph-btn" data-say="0">Let the bargain stand<small>each elf leaves one line</small></button></div>`}</div>`;
+      wrap.appendChild(ov);
+      ov.querySelectorAll("[data-say]").forEach((b) => b.addEventListener("click", () => { ov.remove(); earn(b.dataset.say === "1" ? "empty_saddle" : "dormant_again"); }));
+      ov.querySelector("[data-say]").focus();
+    }
     function showSignature() {
       st.signed = true; st.hold = 6;
+      try { api.shared.set("dorrin_named", true); } catch { /* no storage */ }
       const cap = `<b>Dorrin Vael</b><span>Where a scribe signs his work, the list is signed with a name its writer gave up. It is cut on the inside of a mask, where only the wearer could read it.</span>`;
       signEl.innerHTML = cap; signEl.classList.add("on");
       png(art, "thread-own", { w: 250 }).then((u) => { if (u && !dead) signEl.innerHTML = `<div><img alt="A bone mask seen from inside, with a name cut where only its wearer could read it" src="${u}">${cap}</div>`; });
@@ -451,6 +513,9 @@ function play(root, api, ctx) {
         if (P.key === "seal") {
           if (row.name) beat(`The sixth row gives its rune at a glance. It is the name, and it is the first glyph anywhere that does not slip. Someone has been holding it still for millennia. <cite>THE NAME · held</cite>`, 10000);
           else if (row.moving) beat(`The fifth row holds, though it would not be looked at. <cite>Read from the rim of the circle</cite>`, 6000);
+          else if (row.world) { try { api.shared.set("fourth_row_read", true); } catch { /* no storage */ }
+            beat(`The fourth row reads at last, in the parts the world kept: a crack, a rune, a vein, a line of kelp, a shadow, a star. It is the terms of a bargain. <b>${TERMS.map(([a, b]) => `${a}: ${b}.`).join(" ")}</b> <cite>The fourth row · what was given, by whom</cite>`, 14000); }
+          if (ROWS.every((r, i) => !r.answer || st.read[i]) && allSix) { st.over = true; note.textContent = "Six rows read."; later(() => askNames(), 2600); return; }
           if (ROWS.every((r, i) => !r.answer || st.read[i])) { st.over = true; note.textContent = "Five rows read. The fourth is not on the door.";
             finish(true, `The seal is read: five rows of six${st.wrong ? `, ${st.wrong} wrong` : ""}. The sixth is the name, and it never slipped: somebody has held it still since the Imprisonment. The fourth row has no still part on the door at all. Lunessa says its parts are somewhere she has already been, and does not know why she thinks so.`); }
           return;
@@ -563,6 +628,11 @@ function play(root, api, ctx) {
       if (P.key === "seal") { beat(`The door of the Bone Choir is sealed with six rows. The three from the monolith are cut here too${monoRead ? ", and Lunessa knows them" : ""}. The fourth runs like water. The fifth looks away. The sixth is waiting. <cite>Read V and VI${monoRead >= 3 ? "" : ", and what was not read of I to III"}</cite>`, 10000);
         if (monoRead) ctx.link(wrap, `Because you read ${monoRead === 3 ? "three rows" : monoRead + " row" + (monoRead > 1 ? "s" : "")} of the monolith in <b>The Slipping Glyph I</b>, ${monoRead > 1 ? "they stand" : "it stands"} on the seal already read.`, 9000, "low"); }
       else if (P.key === "monolith") beat(`Lunessa Tidecaller dives through a sea that clings like oil, down to <q>a monolith carved with symbols her mind refused to hold</q>. <cite>WW 71 · watch what stays</cite>`, 8000);
+      else if (ctx.second) {   // phase 3, the second run: the slate shows what was hidden
+        const g = document.createElement("div"); g.className = "wrymwretch-slipping-glyph-ghost"; g.setAttribute("aria-hidden", "true");
+        g.innerHTML = `<b>Dorrin Vael</b><span>showing through the slate</span>`; surface.appendChild(g);
+        beat(`Dawn at the Rim Moot, again. You know this slate now. The second row is cut in a different hand from the rest, small and careful, an archivist's: Ysolde's own. And under the last row the signature shows through the stone before anyone has read a line of it. <cite>Second reading · what was hidden is in plain sight</cite>`, 11000);
+      }
       else beat(st.mercy
         ? `Dawn at the Rim Moot. A Remnant dropped this slate: their list. Ysolde's row is already blank; the entry Kael burned at the fire took her off it. <cite>Each row read warns a witness · three minutes</cite>`
         : `Dawn at the Rim Moot. A Remnant dropped this slate: their list of who remembers, and where each will be. Ysolde is on it still. <cite>Each row read warns a witness · three minutes</cite>`, 9000);

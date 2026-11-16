@@ -513,6 +513,9 @@ function play(root, api, ctx) {
     const startBtn = wrap.querySelector("[data-start]");
     startBtn.addEventListener("click", () => {
       intro.remove(); s.running = true; lastT = performance.now();
+      // phase 3, the fourth row: the split tree on the outpost run, the kelp line under the climb
+      if (ST === 0) ctx.notice(wrap, "west", { after: 15000, stay: 11000, every: 24000, css: "right:12px;top:12px" });
+      if (ST === 1) ctx.notice(wrap, "east", { after: 12000, stay: 11000, every: 22000, css: "right:12px;top:12px" });
       if (CLIMB) note(`Lunessa Tidecaller kicks up from the monolith with three rows held in her head. Below her the sea is going blank, and it is rising. <small>run and jump upward · look under each outline for its shadow</small>`, 6500);
       else if (ESCORT) {
         note(`Dawn, and the Remnants have their list back. Ilvarra's name is on it, and the only way off the Rim is the bridge of wyrm ribs. <small>she follows · hold the path for two</small>`, 6500);

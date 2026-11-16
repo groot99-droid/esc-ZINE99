@@ -536,7 +536,7 @@ forgotten. A Burn is a mercy only at the witness's own asking, as Ysolde's is.)
 | 2 | `s_heart_anchor` | 1D Heartstone III | 4 | Forge the Anchor from one shard set per realm at 40 or more, or whose tribe trusts you (`anchor_forged`) |
 | 3 | `s_battle_echo` | 3D + battle | 4 | The Architect's Echo, the shape Rhyla saw. Trusted tribes send aid (section 12) |
 | 4 | `s_choice` | 3D | 2 | Three answers (section 13) |
-| 5 | one ending scene | 3D | 3 | `s_end_rememberer`, `s_end_whole`, `s_end_dormant` or `s_end_architect` |
+| 5 | one ending scene | 3D | 3 | `s_end_rememberer`, `s_end_whole`, `s_end_saddle`, `s_end_dormant` or `s_end_architect` |
 
 ### The Act III contract
 
@@ -595,6 +595,7 @@ forgotten thing in 3D is drawn the same way: colour drains to pencil line, then 
 | `s_choice` | The heart of the wound | 20 m | Three answers set in the statues | Still | A held note | Answer given → ending | cut / fade |
 | `s_end_rememberer` | Same, years after | Camera rail | — | Dawn | The keeper pair's motif alone | Credits | fade / fade |
 | `s_end_whole` | Same, then the six realms | Camera rail | — | Whole colour | All six motifs and a seventh resolving | Credits | fade / fade |
+| `s_end_saddle` | Same, at night (phase 3: accepted 2026-11-15, built 2026-11-16 as a design and a build file) | Fixed, low, behind the seated figure | The statues, the open Record | Sun gold and moon silver meeting on one seated figure; one ember glow where a saddle would be | No motif; the seventh note from the Bone Choir, once | The Record's last page, "Who next?" → credits | fade / fade |
 | `s_end_dormant` | Six realms, one shot each | Camera rail | — | Colour, but no dragons | Motifs without their low half | Credits | fade / fade |
 | `s_end_architect` | The sky above the realms | Camera rail | — | New stars nobody knows | One unfamiliar melody | Credits | fade / fade |
 
@@ -845,7 +846,7 @@ threatened hexes" toggle.
 
 | Scene | Opponent | Player's pieces | House rule | AI |
 | --- | --- | --- | --- | --- |
-| `s_realms_syndicate` | Syndicate Elder | Dark, Earth, Wood | None (tutorial overlay first two turns) | Depth 2, makes one deliberate error |
+| `s_realms_syndicate` | Syndicate Elder (plays Dark, Earth, Wood: the player's own three; retuned in phase 3, it played Dark, Water, Sky) | Dark, Earth, Wood | None (Ilvarra rings a good move for the first three turns) | Depth 2, makes one deliberate error |
 | `s_realms_seasons` | Circle of Seasons | Choose 3 from the party's tribes | Groves last 3 turns | Depth 3, defensive |
 | `s_realms_galechanters` | Galechanters | Same | A wind blows each round (shown); moves with it go 1 further | Depth 3, aggressive |
 | `s_realms_stonekeepers` | Stonekeepers | Same | Two Stones on the board at start | Depth 3, slow |
@@ -1110,15 +1111,25 @@ more action per round.
 
 ## 13. Endings
 
-The author's text stops at Act II, so all four endings are proposals and none is `as_written`.
-The resolver checks them in priority order at `s_choice`.
+The author's text stops at Act II, so all five endings are proposals and none is `as_written`.
+The resolver checks them in priority order at `s_choice`. The fifth, The Empty Saddle, was accepted
+2026-11-15 and built 2026-11-16 (phase 3); every ending now names what it costs, and a horror
+game keeps a cost in every ending.
 
-**The choice** (`s_choice`). Three answers, set in the statues of the King and Queen:
+**The choice** (`s_choice`). Three answers, set in the statues of the King and Queen, and a fourth
+that only some runs see:
 
 - **Keep watch**: one pair stays. Only pairs whose realm is 20 or more can be chosen (a pair that
   has forgotten itself cannot hold a name). Sets `final_choice` = `keep_watch` and `keeper_pair`.
 - **Speak his whole name**: always offered. Sets `final_choice` = `remember_him`.
 - **Give back the bond**: sets `final_choice` = `give_bonds`.
+- **Give the watch to Dorrin Vael** (phase 3): offered only when the Unwriter was reminded of his
+  name (`unwriter_reminded`), Tarn's rib was tuned (`tarns_rib_tuned`) and the fourth row was read
+  (`fourth_row_read`). Sets `final_choice` = `dorrin_watch`.
+
+With the fourth row read, the other three answers are worded as the bargain's last term ("until
+someone else carries it"): *Keep watch* becomes "We will carry it", *Speak his whole name* "Let
+everyone carry it", *Give back the bond* "Make the bargain again".
 
 If "Speak his whole name" is chosen without enough remembered, the name breaks in the speaking,
 and the game asks at once which pair will keep watch, so the run ends in The Rememberer.
@@ -1126,9 +1137,14 @@ and the game asks at once which pair will keep watch, so the run ends in The Rem
 | Priority | Id | Name | Conditions (plain) | Conditions (`endings.json`) |
 | --- | --- | --- | --- | --- |
 | 1 | `architect_rises` | The Architect Rises | The world remembers less than a quarter, whatever is chosen | `{"is":"world_memory","lt":25}` |
-| 2 | `remembered_whole` | Remembered Whole | Speak his whole name, with 6+ fragments, the Anchor forged, and the world at 65+ | `all`: `final_choice` eq `remember_him`; `izladar_fragments` gte 6; `anchor_forged` eq true; `world_memory` gte 65 |
-| 3 | `dormant_again` | Dormant Again | Give back the bond | `{"is":"final_choice","eq":"give_bonds"}` |
-| 4 | `the_rememberer` | The Rememberer | Anything else: one pair keeps watch | `true` |
+| 2 | `empty_saddle` | The Empty Saddle | Give Dorrin the watch: he was reminded, Tarn's rib was tuned and the fourth row read | `all`: `final_choice` eq `dorrin_watch`; `unwriter_reminded` eq true; `tarns_rib_tuned` eq true; `fourth_row_read` eq true |
+| 3 | `remembered_whole` | Remembered Whole | Speak his whole name, with 6+ fragments, the Anchor forged, and the world at 65+ | `all`: `final_choice` eq `remember_him`; `izladar_fragments` gte 6; `anchor_forged` eq true; `world_memory` gte 65 |
+| 4 | `dormant_again` | Dormant Again | Give back the bond | `{"is":"final_choice","eq":"give_bonds"}` |
+| 5 | `the_rememberer` | The Rememberer | Anything else: one pair keeps watch | `true` |
+
+No two can both be true at the end of a run: the four answers set four different values of
+`final_choice`, The Architect Rises is checked first and takes any run under 25, and The
+Rememberer takes only what is left. Each is reachable on purpose (below).
 
 ### The Architect Rises
 
@@ -1137,8 +1153,9 @@ memory left to make a seal of. Final scenes: `s_choice`, `s_end_architect`. The 
 rim as the shape Rhyla saw steps through. The game does not say whether the Remnants were right.
 **Last image:** the sky above the six realms, full of new constellations that no one has a name
 for, and the Star Chart page, blank, waiting. **Cost:** everything the world forgot stays forgotten. Accepted 2026-11-15: what steps
-through does not know it was a scholar. (The voice losing its last word first, "I… remember…",
-needs the party to have reached him in scene 12, which is still to be added: section 21.)
+through does not know it was a scholar. **Cost added in phase 3 (built 2026-11-16):** if the party
+Retold his name to him in scene 12 (`name_retold_to_voice`), the voice loses its last word first,
+"I… remember…", and the party hears it go: they gave him his name back and watched him lose it.
 
 ### Remembered Whole
 
@@ -1150,7 +1167,20 @@ I was a scholar." **Cost:** the witnesses who died are not restored; their names
 the six realms, and the ones the player did not record are read as blanks. **New cost (accepted
 2026-11-15):** a world that holds the seal by remembering can never let anything fade. Grief does
 not soften in the six realms; the names of the dead are read every year and hurt as they did the
-first year. Dorrin was half right.
+first year. Dorrin was half right. **Phase 3:** with the fourth row read, the closing names the
+term the world now keeps (everyone carries it), and no one in the six realms was asked.
+
+### The Empty Saddle
+
+Added (accepted 2026-11-15, built 2026-11-16 as phase 3). Dorrin Vael, the Unwriter, reminded of
+his own name and of Tarn's, takes the watch between the statues. He has no one to go home to, and
+he is the only one who never forgot anything: he still dreams Tarn's dreams. Final scenes:
+`s_choice`, `s_end_saddle`. **Conditions:** the fourth answer at the statues, open only when he was
+reminded instead of defeated (`unwriter_reminded`), Tarn's rib was tuned after the Bone Choir's
+door opened (`tarns_rib_tuned`), and the fourth row was read on the seal (`fourth_row_read`).
+**Cost:** the man who killed the witnesses keeps the world's memory, and he is mortal; the debt is
+not paid, only passed forward again. **Last image:** the Record's final page, headed "Who next?",
+empty. "He is the only one still doing our work," Ilvarra said, and looked down into the wound.
 
 ### Dormant Again
 
@@ -1161,8 +1191,9 @@ of one; each dragon sleeps under its forest, cloud, stone, sea, shadow or star. 
 Thalen in the grove, tracking a silver-antlered stag, his pulse keeping time with something he
 cannot name. **Cost:** the bonds. Accepted 2026-11-15: with The Price told (`price_told`) this is
 the ancestral bargain made a second time, and this time by the ones who pay it, with open eyes;
-the closing narration says so. (Each elf leaving one line for whoever wakes next needs the fourth
-row, which is phase 2, as does any change to the wording of the three answers.)
+the closing narration says so. **Cost added in phase 3 (built 2026-11-16):** with the fourth row
+read (`fourth_row_read`), each elf leaves one line in the Record for whoever wakes next, and
+forgets the dragon it was written about: they write it knowing they will not remember writing it.
 
 ### The Rememberer
 
@@ -1175,7 +1206,8 @@ records, the Priory dome drawing Seraphyne and Astraia as a constellation). **La
 keeper pair alone with the statues; the elf says the name once, every dawn. **Cost:** that pair
 never goes home. Accepted 2026-11-15: the pair that stays does knowingly what the tribes did to
 their dragons blind; a memory always has a carrier, and this one was asked. If Seraphyne keeps
-watch, the last shot is the sealed page in her lap, unopened.
+watch, the last shot is the sealed page in her lap, unopened. **Phase 3:** with the fourth row
+read, the keeper knows the last term, "until someone else carries it", and that it is now them.
 
 ### How a player reaches each one on purpose
 
@@ -1186,6 +1218,10 @@ watch, the last shot is the sealed page in her lap, unopened.
   and retell it at the fire; keep Ilvarra's memory; read the whole seal; draw the Scholar's
   constellation (9 fragment sources, 6 needed). Keep at least four realms at 40+ or trusted for the
   Anchor. Keep the world at 65+. Then speak his name.
+- **The Empty Saddle:** notice all six parts of the fourth row (section 21, "What phase 3 built"),
+  read the kill-list's fifth row so his name is known, tune Tarn's rib anyway, remind the Unwriter
+  of his name instead of defeating him, read row IV on the seal; keep the world at 25+; then give
+  him the watch.
 - **Dormant Again:** at the choice, give back the bond (world at 25+).
 - **The Rememberer:** at the choice, keep watch and pick the pair. Also the result of a failed
   "speak his whole name".
@@ -1296,7 +1332,7 @@ chasm is one recording of three words. All spoken lines subtitled (TECH accessib
 | 1D page layouts | Concentration, Star Chart, Slipping Glyph, Six Realms, Heartstone; plus the Record, map, bestiary, party, crystal and Moot screens | 5 games, 6 system screens |
 | 1D art | 36 Concentration faces, 8 constellations, 12 runes and 48 glyph parts, 6 Six Realms pieces and the board, 30 shard variants | |
 | Battle VFX | 30 ability effects, 15 Concords, 5 statuses | |
-| Music cues | 6 realm motifs (explore and battle versions = 12), convergence theme, Moot, Act III (layered), 4 endings, 1D page loops (5) | 24 cues |
+| Music cues | 6 realm motifs (explore and battle versions = 12), convergence theme, Moot, Act III (layered), 4 endings, 1D page loops (5) | 24 cues (The Empty Saddle, phase 3, uses no new cue: the Bone Choir's seventh note) |
 | Ambience beds | 10 | |
 | Sound effects | About 180 | |
 | Voice line groups | 12 heroes (source lines plus about 15 barks each), the healer, priests, elders (8), Ilvarra (about 40), the Unwriter (about 15), Remnants (about 20), the voice (1) | About 330 lines |
@@ -1314,7 +1350,7 @@ chasm is one recording of three words. All spoken lines subtitled (TECH accessib
   `witnesses_lost`, `requests_done`, `seals_cracked`, `moot_watches_left`); the bools and enums
   used in sections 8–13 (with `because_of_us_recorded`, `price_told` and `ysolde` since
   2026-11-15); and four ledgers (`record`, `burned`, `witnesses`, `requests`).
-- `endings.json`: the four endings and conditions of section 13, each with its `cost`.
+- `endings.json`: the five endings and conditions of section 13 (the fifth, The Empty Saddle, phase 3), each with its `cost`.
 
 Beyond the shared schemas, six per-game files, each with its schema in `data/schemas/`
 (`<name>.schema.json`):
@@ -1345,7 +1381,7 @@ but no three. `tools/validate.py` runs it.
 | 4. The other four 1D games | Star Chart, Slipping Glyph, Six Realms (with AI), Heartstone, each at all its difficulty levels, playable from a debug menu |
 | 5. All six prologues | Chapters 1–6 in greybox, all six flight models |
 | 6. Convergence | Six Roads, the party, the Moot hub with watches and trust |
-| 7. Act III | Chapters 9–12 and the four endings, with the debug panel that explains which ending fired |
+| 7. Act III | Chapters 9–12 and the five endings, with the debug panel that explains which ending fired |
 | 8. Art and audio pass | Final environments, creatures, music layering by `world_memory` |
 | 9. Tuning and accessibility | Drain tuned to the targets in section 12; every timed thing slowable |
 
@@ -1411,6 +1447,12 @@ writing it back) in 15 minutes.
    shattered in Heartstone I" is cut. No flag was needed: `s_deep_core` already writes `requests`.
 
 ## 21. Accepted development (2026-11-15)
+
+**Where it stands (2026-11-16).** All three phases of the roadmap are built: phase 1 (text and flags)
+and phase 2 (new play) earlier on 2026-11-16, phase 3 (the endings and the return) last; see "What
+phase 3 built" below. What is still not built is listed at the end of that subsection. Every 3D
+scene, the new ones included, is a design and a Blender build file until it is built in Blender;
+the web build plays the 2D and 1D layers only.
 
 The author accepted `DEEP_DIVE.md` whole on 2026-11-15, and with it the five decisions its roadmap
 held back for the author (the dormancy as the price; the voice as the seal's last witness;
@@ -1484,7 +1526,7 @@ design; "new" is accepted here.
 ### The endings
 
 Five. The four of section 13 keep their conditions and gain a cost the player chose (written into
-section 13 and `endings.json` in this pass). The fifth is accepted and not yet built.
+section 13 and `endings.json`). The fifth was built in phase 3 (2026-11-16).
 
 | Ending | What it now costs |
 | --- | --- |
@@ -1492,7 +1534,7 @@ section 13 and `endings.json` in this pass). The fifth is accepted and not yet b
 | Remembered Whole | A world that holds the seal by remembering can never let anything fade. Grief does not soften in the six realms. Dorrin was half right |
 | Dormant Again | The ancestral bargain, chosen with open eyes. (With the fourth row read, each elf leaves one line for whoever wakes next: phase 2) |
 | The Architect Rises | What steps through does not know it was a scholar. (With scene 12 reached, the voice loses its last word first: later) |
-| **The Empty Saddle** (new; phase 3) | Dorrin, reminded of his own name and Tarn's, takes the watch. He has no one to go home to. Conditions: a fourth answer at the statues, open only with `unwriter_reminded`, Tarn's rib tuned, and the fourth row read. Cost: the man who killed the witnesses keeps the world's memory, and he is mortal; the debt is passed forward again. Last image: the Record's final page, headed "Who next?" It needs an **ending scene to add** and a fifth entry in `endings.json`; neither is added in this pass |
+| **The Empty Saddle** (new; built in phase 3) | Dorrin, reminded of his own name and Tarn's, takes the watch. He has no one to go home to. Conditions: a fourth answer at the statues, open only with `unwriter_reminded`, Tarn's rib tuned, and the fourth row read. Cost: the man who killed the witnesses keeps the world's memory, and he is mortal; the debt is passed forward again. Last image: the Record's final page, headed "Who next?". **Built 2026-11-16:** `endings.json` `empty_saddle` (priority 2), the ending scene `s_end_saddle` (heart of the wound), the flag `fourth_row_read`, the answer value `dorrin_watch` |
 
 ### What this pass builds (phase 1), and what waits
 
@@ -1578,6 +1620,104 @@ and `s_last_witness` (3D, the approach to the heart of the wound, between `s_run
 `name_retold_to_voice` changes in the endings; the five whole flight models; selectable prologue
 order; the mode elements not built here (unpainted silk, borrowed gift, carried lantern, turn and
 face, shared stars, paired glyphs, triples, the worn seventh colour, sympathy, written shards).
+
+### What phase 3 built (2026-11-16)
+
+The author wrote "start phase 3"; every decision the roadmap held back stands as yes. Phase 3 is the
+endings and the return: the fifth ending, a cost in every ending, the long puzzle's last steps and
+payoff, a second playthrough, and the remaining art. Everything here was accepted 2026-11-15 with
+`DEEP_DIVE.md` and built 2026-11-16; section 22 lists what had to be written beyond its words.
+
+| Phase 3 item | In the design and `data/` | In play (web build) |
+| --- | --- | --- |
+| The Empty Saddle | Section 13; `endings.json` `empty_saddle` (priority 2); `s_end_saddle` in `scenes.json`, `assets.json` and `blender/heart-of-wound.build.json`; flag `fourth_row_read`; `final_choice` value `dorrin_watch` | The menu's finale (`loading.js` `finale`), and its generated card behind the seal's result |
+| A cost in every ending | Section 13 and `endings.json` (`summary`, `cost`): the voice losing its last word (`name_retold_to_voice`), each elf's line (`fourth_row_read`), the wording of the answers, the keeper knowing the last term | The Dormant Again finale names its cost |
+| What row IV says | Flag `fourth_row_read`; `s_glyph_seal` writes it | The terms of the bargain, on the seal and in the notebook: *what was given*, the dragons' memory of us; *by whom*, six tribes, and not the dragons; *for how long*, until someone else carries it |
+| The long puzzle's last steps | `fourth_row_parts` (six world-held parts, one a realm) | **Playable** (below) |
+| A second playthrough | — | **Playable**: four changes on a later run (below) |
+| Ending lettering, the fourth row's art, the Record's last page | — | Art (below) |
+| The teach stage of Six Realms | `six_realms.json` `phase_3.teach_retune`; section 11's table | **Playable**: the elder plays your own three tribes, and Ilvarra rings a good move for three turns |
+
+**The long puzzle, as built.** Each of the six world-held parts is noticed in the mode that stands in
+for its place, as a glint shown in play for a while (a tap, or N; M in Star Chart, where N names a
+figure): the crack in the split tree in Forgetting run I (Thalen's run to the outpost), the rune on
+Aetherius's scales in Twin flight I (once Aeris is caught), the vein in the Heartstone in Heartstone I,
+the kelp line on the seabed in Forgetting run II (Lunessa's climb), the candle shadow in Six Realms I
+(at the Syndicate Elder's table), the star in the Priory dome in Star Chart I. Each is written to
+`api.shared` (`fourth_row`). The notebook (on every stage's how-to card, on every stage-won card, and
+behind row IV's slot on the seal) shows the six sockets, what was seen in each, and where to look for
+the missing ones. With all six in, row IV of the seal (The Slipping Glyph III) holds like any row: its
+glyphs keep a crown, a stem, a foot and a mark (two realms keep the same crown and two the same foot)
+and make rune 10; reading it sets `fourth_row_read`. Then the names at the door: if Tarn's rib was
+tuned (Heartstone III) and the kill-list's signature was read (The Slipping Glyph II: `dorrin_named`),
+Ilvarra says "Her name was Cendre. His was Tarn. Say them both, or do not say hers." Saying both is
+the reminding (`unwriter_reminded`) and the run earns **The Empty Saddle**; saying neither, or
+lacking the rib or the name, earns **Dormant Again**, with each elf's line. In the full game the
+reminding is the Remind in `s_battle_unwriter`; the web build has no battle, so the seal's door
+stands in for it. The run is recorded (`runs_done`, `finale_ending`), the ending's generated card
+and its lettering stand behind the seal's Record page, and the game's menu shows the finale.
+
+**The second playthrough, as built.** Once a run has reached the finale (`runs_done` ≥ 1), four
+things read differently, and a first run sees none of them:
+
+1. Concentration I, the ward: the opening is the whisper "Remember me." (WW 49), heard as a request
+   to carry something.
+2. Twin flight I: "Because of us" (WW 149) comes with what the player now knows and Aetherius does
+   not; its Record note says what the dormancy paid for.
+3. Star Chart: Seraphyne's Glimpse is "Her Glimpse", drawn in her own red-brown hand, and Kael checks
+   it against the strips before you lay it (a helper trusted less).
+4. The Slipping Glyph II: the kill-list shows what was hidden. Row II is marked as in Ysolde's own
+   hand, and Dorrin Vael's signature shows through the slate before the fifth row is read.
+
+After The Empty Saddle the notebook also carries the Record's last page, "Who next?", empty.
+
+**Art drawn in phase 3** (`art/src/66_fourth.py`, and `62_mosaic.py` redrawn): the six fourth-row
+parts in their places (`fourth-part-<realm>`); the notebook's page head (`fourth-row-page`); the
+five endings' names in cracked bone capitals (`ending-title-<id>`); the Record's last page
+(`doc-who-next`). The Six Realms pieces, which the art pass named the weakest family (coarse at
+tessera scale), are redrawn: each emblem is now laid the way a mosaicist lays it, one course of
+dark tesserae on its outline and pale courses following it inward, larger tesserae, so the
+silhouette reads at the 62 px the board draws a piece.
+
+**Fixes from earlier reports.** Six Realms' teach stage took a bot three sittings even after the
+round-4 retune; now the elder plays the player's own three tribes and Ilvarra rings a good move
+for the first three turns (offline, over 40 seeds, a player who follows the rings and then looks
+one move ahead wins 40, one who ignores them 32). The lantern link's dark-stretch branch was replayed on
+2026-11-16 by input: all six ward names let go in Concentration I, then Forgetting run I and II won,
+and on the bridge the link note reads "no name was kept ... the bridge has no lantern at all" and the
+ground ahead is undrawn until Recalled. The Six Realms pieces are redrawn (above).
+
+**Shared flags the web build writes** (`api.shared`): `ward`, `stars`, `second_reader`,
+`monolith_rows`, `heartstone`, `tarns_rib` (phase 2); `fourth_row`, `fourth_row_read`,
+`dorrin_named`, `unwriter_reminded`, `finale_ending`, `runs_done` (phase 3).
+
+**Still not built.**
+
+- **Every 3D scene is a design** until it is built in Blender, `s_end_saddle` included (it has its
+  build file).
+- **Twin flight: the dragons' own flight models.** Built: Aetherius riding the wind (the current he
+  draws), Aeris's song, the sail's tear and the catch; Umbra's blink (8 m, shadow to shadow); the
+  wake (Umbra's ink in the descent). **Not built:** Sylvan's weave through branches and his gift,
+  Grow; Gaia's burrowing and her gift, Shape stone; Aquatica's swimming, her 2 s leaps and her gift,
+  Current; Astraia's straight beams and her gift, Starlight trail; the rest of Umbra's model (fast in
+  shadow, slow in light) and her gift, Eclipse; the five riders' actions (Thalen's thorn knots,
+  Rhyla's veins, Lunessa's moonfish, Kael's marks, Seraphyne's glimpse of the path). The deep dive's
+  phase 3 named "the five unbuilt flight models"; they are not built in the web build.
+- **Selectable prologue order** is a structure of the 3D game; it is not built, and the web build
+  has no prologue order to choose.
+- **Mode elements not built:** unpainted silk, borrowed gift, carried lantern, turn and face, shared
+  stars, paired glyphs, triples, the worn seventh colour (its piece is drawn, `realms-piece-wyrmguard`,
+  but no board uses it), sympathy, written shards.
+- **Generated images** still deferred: the six pair portraits, Dorrin masked and unmasked, Ilvarra,
+  Ysolde and the elders (they belong under `assets/`).
+- **Chapter cards and ornaments inside the 3D game**: drawn (code art), used in the web build; the 3D
+  game is not built.
+
+**For the author: names the plan never gave.** The ward's six patients in Concentration I were named
+while building phase 1 and stand in until you name them or approve these: **Maerith, Illeth,
+Corvane, Dovra, Hesk, Ansel** (each with one line, section 11). The kill-list's four other witnesses
+are still roles, not names: the Tidecaller healer, the Circle of Seasons' elder, the Stonekeeper who
+listened, and Ilvarra.
 
 ## 22. Added for the game
 
@@ -1671,6 +1811,50 @@ any of them.
   Reader inside Star Chart II; Seraphyne naming the sigil early; Kael's refusal at Six Roads.
 - *Long puzzle (accepted 2026-11-15, built 2026-11-16).* The six world-held parts and where each is
   held; the count the seal reads.
+
+**Built in phase 3 (each item accepted 2026-11-15, built 2026-11-16; each can still be struck).**
+
+- *Ending (accepted 2026-11-15, built 2026-11-16).* The Empty Saddle: its conditions, its cost, its
+  last image (the Record's final page, "Who next?") and the fourth answer at the statues; its ending
+  scene `s_end_saddle`.
+- *Costs (accepted 2026-11-15, built 2026-11-16).* The changed text of the other endings: the voice
+  losing its last word first in The Architect Rises once scene 12 was reached; each elf's line in
+  Dormant Again once the fourth row was read; the new cost of Remembered Whole (phase 1) kept.
+- *Long puzzle (accepted 2026-11-15, built 2026-11-16).* What row IV says (the terms of the bargain:
+  what was given, by whom), read with all six parts; that reading it opens the fourth answer and
+  changes the text of the other three.
+- *Replay (accepted 2026-11-15, built 2026-11-16 in part).* Lines that read differently once the
+  price is known ("Remember me.", Aetherius's answer); Seraphyne trusted less; a document showing what
+  was hidden. Selectable prologue order: accepted, **not built**.
+- *Art (accepted 2026-11-15, built 2026-11-16).* The ending cards' lettering; the remaining code art
+  the plan names for phase 3.
+
+**Written while building phase 3 (in the accepted scope, but not in the deep dive's words; each can be struck).**
+
+- *The terms' wording.* "What was given: the dragons' memory of us. By whom: six tribes, and not the
+  dragons. For how long: until someone else carries it."
+- *Row IV as a rune.* Rune 10 (crown 2, stem 1, foot 1, mark 3), and which part each place keeps: the
+  crack, a stem; the rune on the scales and the painted star, the same crown; the vein and the kelp
+  line, the same foot; the candle shadow, a mark (a small diamond). Each place's one-line description
+  in the notebook.
+- *Where the web build holds each part* (section 21, "What phase 3 built"), the glint that shows it,
+  how long it shows, and the keys (N; M in Star Chart). The notebook and where it can be opened.
+- *The names at the door.* The seal's door standing in for the Remind of `s_battle_unwriter` in the
+  web build; that Ilvarra speaks "Her name was Cendre. His was Tarn. Say them both, or do not say
+  hers." there; the two answers, "Say both names" and "Say neither"; Ilvarra's line when there is no
+  one to ask: "Someone else. It was always going to be someone else."; the flag `dorrin_named` (the
+  web build's record of the signature read).
+- *The answers' wording once the fourth row is read.* "We will carry it", "Let everyone carry it",
+  "Make the bargain again", and the fourth answer, "Give the watch to Dorrin Vael".
+- *Ending text.* The Rememberer's keeper knowing the last term; the closing of Remembered Whole naming
+  it; "the party hears it go" in The Architect Rises; Dormant Again's elves forgetting the dragon each
+  line was written about; The Empty Saddle's staging in `s_end_saddle` (night, a seated figure, one
+  ember glow, the seventh note once) and "he is the only one who never forgot anything".
+- *The finale texts* in the web build's menu (`loading.js`), for The Empty Saddle and Dormant Again.
+- *The second run's four changes* and their wording (section 21), and that they appear once any run
+  has reached the finale.
+- *Six Realms' teach stage.* The Syndicate Elder playing the player's own three tribes; Ilvarra's
+  rings for three turns. The mosaic pieces' redraw (outline course and inset courses).
 
 **Written while building phase 2 (in the accepted scope, but not in the deep dive's words; each can be struck).**
 

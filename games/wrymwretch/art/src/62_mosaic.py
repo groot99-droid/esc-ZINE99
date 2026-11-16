@@ -109,6 +109,130 @@ def disc(a, T, cx, cy, R, emblem_i, main, light, rim, worn=0.0, ts=8.6):
     T.flush()
 
 
+# ---- phase 3 (2026-11-16): the pieces redrawn. The ring-sampled emblems blurred to mush at tessera scale, and in play a
+# disc is drawn 62 px wide. Now each emblem is an outline laid in tesserae the way a mosaicist lays it (andamento): one
+# course of dark tesserae on the emblem's outline, inset courses of pale ones following it inward, and the ground's
+# rings stopping a course short of the outline. Fewer, larger, higher-contrast tesserae, so the silhouette reads small.
+def _circle(cx, cy, r, n=28, a0=0.0, a1=2 * math.pi):
+    return [(cx + r * math.cos(a0 + (a1 - a0) * k / n), cy + r * math.sin(a0 + (a1 - a0) * k / n)) for k in range(n + 1)]
+
+
+def _crescent():
+    outer = _circle(0, 0, 0.95, 30, math.radians(55), math.radians(305))
+    # the inner arc: a circle at (0.42, 0) of radius 0.72, the part inside the outer circle, walked back through its left side
+    inner = _circle(0.38, 0, 0.7, 24, math.radians(-128), math.radians(-232))
+    return outer + inner
+
+
+def _wyrm():
+    left, right = [], []
+    n = 22
+    for k in range(n + 1):
+        y = -0.62 + 1.5 * k / n
+        x = 0.42 * math.sin(y * 3.3)
+        dx = 0.42 * 3.3 * math.cos(y * 3.3) * 1.5 / n
+        L = math.hypot(dx, 1.5 / n)
+        nx, ny = (1.5 / n) / L, -dx / L
+        w = 0.17 * (0.55 + 0.45 * math.sin(math.pi * min(1, k / n + 0.1)))
+        left.append((x + nx * w, y + ny * w))
+        right.append((x - nx * w, y - ny * w))
+    head = _circle(-0.2, -0.82, 0.24, 14)
+    return [left + right[::-1], head]
+
+
+EMB = {
+    0: [[(0, -1), (0.32, -0.62), (0.44, -0.1), (0.36, 0.42), (0.12, 0.8), (0, 1), (-0.12, 0.8), (-0.36, 0.42), (-0.44, -0.1), (-0.32, -0.62)]],
+    1: [WING],
+    2: [[(0, -1), (0.62, -0.42), (0.62, 0.46), (0, 1), (-0.62, 0.46), (-0.62, -0.42)]],
+    3: [[(0, -1), (0.22, -0.55), (0.62, 0.05)] + _circle(0, 0.32, 0.66, 18, math.radians(-25), math.radians(205))[1:] + [(-0.62, 0.05), (-0.22, -0.55)]],
+    4: [_crescent()],
+    5: [[(0, -1), (0.2, -0.2), (1, 0), (0.2, 0.2), (0, 1), (-0.2, 0.2), (-1, 0), (-0.2, -0.2)]],
+    6: _wyrm(),
+}
+# the emblem's own vein: a centre line in the light courses (leaf rib, crystal facet, wing quill)
+VEIN = {0: [(0, -0.8), (0, 0.85)], 2: [(0, -1), (0, 1)], 1: [(-0.85, 0.32), (0.75, -0.62)]}
+
+
+def _inside_any(polys, x, y):
+    return any(_in_poly(x, y, pl) for pl in polys)
+
+
+def _walk(pts, step):
+    """Points every `step` along a closed polyline, with the direction there."""
+    out, carry = [], 0.0
+    P = pts + [pts[0]]
+    for (x1, y1), (x2, y2) in zip(P, P[1:]):
+        L = math.hypot(x2 - x1, y2 - y1)
+        if L == 0:
+            continue
+        ang = math.atan2(y2 - y1, x2 - x1)
+        d = carry
+        while d < L:
+            out.append((x1 + (x2 - x1) * d / L, y1 + (y2 - y1) * d / L, ang))
+            d += step
+        carry = d - L
+    return out
+
+
+def _inset(poly, k):
+    """The polygon shrunk toward its centroid by k (a fraction of its size)."""
+    cx = sum(p[0] for p in poly) / len(poly)
+    cy = sum(p[1] for p in poly) / len(poly)
+    return [(cx + (x - cx) * (1 - k), cy + (y - cy) * (1 - k)) for x, y in poly]
+
+
+def disc2(a, T, cx, cy, R, ei, main, light, rim, contour, worn=0.0, ts=10.5):
+    r = a.rng
+    a.circle(cx + 5, cy + 8, R + 6, fill="#000", opacity=0.4, filter=a.blur(5))
+    a.circle(cx, cy, R + 5, fill=GROUT)
+    S = R * 0.66   # the emblem's unit, in px
+    polys = [[(cx + x * S, cy + y * S) for x, y in pl] for pl in EMB[ei]] if ei is not None else []
+    near = lambda x, y: any(_in_poly(x, y, pl) for pl in polys) or any(  # inside, or within a course of the outline
+        min(math.hypot(x - px, y - py) for px, py, _ in _walk(pl, ts * 0.5)) < ts * 0.95 for pl in polys)
+    # the ground: rings from the rim inward, a course short of the emblem
+    rr, k = R, 0
+    while rr > ts * 0.45:
+        n = max(1, int(2 * math.pi * rr / ts))
+        off = r.uniform(0, 6.28)
+        for t in range(n):
+            an = off + 2 * math.pi * t / n
+            x, y = cx + rr * math.cos(an), cy + rr * math.sin(an)
+            if (worn and r.random() < worn) or (polys and near(x, y)):
+                continue
+            col = rim if k == 0 else (kit.shade(main, -0.28) if k == 1 else main)
+            T.tile(x, y, ts, an + math.pi / 2, T.vary(col, 0.09))
+        rr -= ts
+        k += 1
+    # the outline: one course of dark tesserae laid along it
+    for pl in polys:
+        for x, y, ang in _walk(pl, ts * 0.92):
+            if worn and r.random() < worn:
+                continue
+            T.tile(x, y, ts * 0.95, ang, T.vary(contour, 0.08))
+    # the fill: inset courses following the outline inward
+    for pl in polys:
+        span = max(max(p[0] for p in pl) - min(p[0] for p in pl), max(p[1] for p in pl) - min(p[1] for p in pl))
+        kk = 1
+        while True:
+            frac = kk * ts * 1.0 / (span / 2)
+            if frac >= 0.97:
+                break
+            ip = _inset(pl, frac)
+            for x, y, ang in _walk(ip, ts * 0.92):
+                if (worn and r.random() < worn) or not _in_poly(x, y, pl):   # a concave emblem (the crescent) keeps its hollow
+                    continue
+                T.tile(x, y, ts * 0.9, ang, T.vary(light, 0.06))
+            kk += 1
+        ccx = sum(p[0] for p in pl) / len(pl)
+        ccy = sum(p[1] for p in pl) / len(pl)
+        if _in_poly(ccx, ccy, pl):
+            T.tile(ccx, ccy, ts * 0.9, 0.2, T.vary(light, 0.06))
+    T.flush()
+    if ei in VEIN:
+        (x1, y1), (x2, y2) = VEIN[ei]
+        a.path(f"M{f(cx + x1 * S)},{f(cy + y1 * S)} L{f(cx + x2 * S)},{f(cy + y2 * S)}", stroke=contour, stroke_width=2.4, opacity=0.55, stroke_linecap="round")
+
+
 MOVES = ["Moves 1 hex; leaves a Grove", "Up to 3 in a line, jumping", "Moves 1; safe at home; raises a Stone", "Up to 2; may push a piece",
          "Moves 1, or swaps within 2", "Moves 1; shelters its neighbours"]
 
@@ -124,10 +248,11 @@ def reg_piece(i):
         a.close()
         T = Tiles(a)
         main, light, dark = TONES[i]
-        disc(a, T, 120, 116, 96, i, dark if i in (4,) else main, "#f6f0dc" if i != 5 else "#fff3c0", kit.BONE)
+        disc2(a, T, 120, 116, 96, i, dark if i in (4,) else main, "#f6f0dc" if i != 5 else "#fff3c0", kit.BONE, "#14111a")
         a.circle(120, 116, 101, fill="none", stroke="#fff", stroke_width=1.2, opacity=0.25)
     draw.__doc__ = (f"Six Realms piece in tesserae on a gold ground: the {realm['tribe']} tribe, its emblem laid in pale stone on {realm['name']} colour, "
-                    f"bone-white rim. {MOVES[i]}.")
+                    f"outlined by one course of near-black tesserae and filled in courses that follow the outline (redrawn 2026-11-16 to read "
+                    f"at tessera scale), bone-white rim. {MOVES[i]}.")
     return draw
 
 
@@ -159,7 +284,7 @@ def wyrmguard(a: Art):
     gold_ground(a, 0, 0, 240, 240)
     a.rect(0, 0, 240, 240, fill=a.radial([(0.4, "#000000", 0), (1, "#000000", 0.45)], 0.5, 0.5, 0.75))
     T = Tiles(a)
-    disc(a, T, 120, 116, 96, 6, "#59616d", kit.BONE, "#aab1bb", worn=0.08)
+    disc2(a, T, 120, 116, 96, 6, "#59616d", kit.BONE, "#aab1bb", "#14111a", worn=0.05)
 
 
 @asset(G, "realms-board", group="maps", title="The Six Realms board", w=1200, h=1200, row=ROW)

@@ -117,6 +117,35 @@ function sealSvg() {
   </svg>`;
 }
 
+// Phase 3 (built 2026-11-16): the long puzzle's payoff on the menu. The fourth row is gathered across six
+// modes (web/games/wrymwretch/_fourth.js) and read on the seal (The Slipping Glyph III), where the names
+// said at the door decide which ending the run earned (finale_ending). Until then: null.
+const FINALE = {
+  empty_saddle: {
+    title: "The Empty Saddle",
+    card: "ending-the-empty-saddle",
+    text: "The fourth row was the terms: the dragons' memory of us, given by six tribes and not by the dragons, until someone else carries it. " +
+      "You said Dorrin Vael's name to him, and Tarn's, and the man who killed the witnesses sat down between the statues to keep the world's memory, because he is the only one who never forgot. " +
+      "He is mortal, and he has nobody to go home to; the debt is not paid, only passed forward again. " +
+      "The Record's last page is headed “Who next?”, and it is empty.",
+  },
+  dormant_again: {
+    title: "Dormant Again",
+    card: "ending-dormant-again",
+    text: "The fourth row was the terms: the dragons' memory of us, given by six tribes and not by the dragons, until someone else carries it. " +
+      "Nobody at the door could be asked, so the six pairs make the old bargain again, this time knowing what it is. " +
+      "Each elf leaves one line in the Record for whoever wakes next, and then forgets the dragon it was written about. " +
+      "The bonds are the price, as they were the first time.",
+  },
+};
+export function finale({ shared, keyart } = {}) {
+  const get = (k, d) => { try { const v = shared && shared.get(k, d); return v == null ? d : v; } catch { return d; } };
+  if (!get("fourth_row_read", false)) return null;
+  const F = FINALE[get("finale_ending", "")] || null;
+  if (!F) return null;   // the row is read, but the names at the door have not been said yet
+  return { title: F.title, text: F.text, image: (keyart && keyart(F.card)) || "" };
+}
+
 export function render(root, ctx) {
   const wrap = document.createElement("div");
   wrap.className = "wrymwretch-load-root" + (ctx.reducedMotion ? " still" : "");

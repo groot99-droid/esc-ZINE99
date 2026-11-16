@@ -10,10 +10,16 @@
 //                            behind the result. A win on teach or test offers the next stage, or stopping
 //                            here with the result.
 //   ctx.link(wrap, html)     the short note shown when a layer link fires ("because you ... in ...")
+//   ctx.notice(wrap, realm, o)  phase 3: a part of the fourth row, shown in play to be noticed (_fourth.js);
+//                            stopped when the stage ends. The picker and the stage-won card carry the
+//                            notebook, so the parts gathered so far can always be looked at.
+//   ctx.second               phase 3: true when a run has already reached the finale (the second
+//                            playthrough); a mode reads differently then. A first run never sees it.
 //
 // Progress is kept in api.store, so a returning player starts at the stage they reached.
 
 import { recordPage } from "./_art.js";
+import { notice as fourthNotice, notebookButton, fourthStyle, runs } from "./_fourth.js";
 
 export const STAGE = ["Teach", "Test", "Twist"];
 const ROMAN = ["I", "II", "III"];
@@ -48,15 +54,26 @@ export function staged(def, play) {
       const get = (k, d) => { try { const v = api.store.get(k, d); return v == null ? d : v; } catch { return d; } };
       const set = (k, v) => { try { api.store.set(k, v); } catch { /* no storage */ } };
       let reached = Math.max(0, Math.min(2, +get("stage", 0) || 0));
-      let inner = null, gone = false, linkT = null;
+      let inner = null, gone = false, linkT = null, notices = [];
       const style = document.createElement("style"); style.textContent = CSS; root.appendChild(style);
+      fourthStyle(root);
+      const stopNotices = () => { notices.forEach((n) => { try { n.stop(); } catch { /* gone */ } }); notices = []; };
 
       function start(stage) {
         if (gone) return;
         if (inner) { try { inner.unmount(); } catch { /* already gone */ } inner = null; }
         if (linkT) { clearTimeout(linkT); linkT = null; }
+        stopNotices();
         const ctx = {
-          stage, reached, def: def.stages[stage],
+          stage, reached, def: def.stages[stage], second: runs(api) > 0,
+          notice(wrap, realm, o = {}) {
+            if (gone) return;
+            const n = fourthNotice(wrap, api, realm, { ...o, onTake: (k, P) => {
+              ctx.link(wrap, `Recorded: <b>${P.what}</b>. ${k === 6 ? "All six parts of the fourth row are in the notebook. On the seal, row IV will hold." : `The fourth row: ${k} of 6 parts in the notebook.`}`, 7000, o.low ? "low" : "");
+              if (o.onTake) o.onTake(k, P);
+            } });
+            notices.push(n); return n;
+          },
           picker(el) {
             if (!el) return;
             const box = document.createElement("div");
@@ -70,6 +87,7 @@ export function staged(def, play) {
               box.appendChild(b);
             });
             el.appendChild(box);
+            el.appendChild(notebookButton(api, () => root));
           },
           link(wrap, html, ms = 9000, pos = "") {
             if (!wrap || gone) return;
@@ -84,6 +102,7 @@ export function staged(def, play) {
           done(wrap, r) {
             if (gone) return;
             const close = (text) => { if (gone) return; if (r.record) recordPage(wrap, api, r.record); api.end({ outcome: r.win ? "win" : "lose", text: text || r.text }); };
+            stopNotices();
             if (!r.win) return close();
             if (stage >= 2) { set("stage", 2); set("cleared", true); return close(); }
             reached = Math.max(reached, stage + 1); set("stage", reached);
@@ -93,6 +112,7 @@ export function staged(def, play) {
             el.innerHTML = `<div><h3>${ROMAN[stage]} · ${STAGE[stage]}: held</h3><p>${esc(r.text)}</p>
               <p class="then">${ROMAN[stage + 1]} · ${STAGE[stage + 1]}: ${esc(nx.name)}. ${esc(nx.sub || "")}</p>
               <div class="row"><button type="button" data-go>Go on</button><button type="button" class="ghost" data-stop>Stop here</button></div></div>`;
+            el.firstElementChild.insertBefore(notebookButton(api, () => root, true), el.firstElementChild.querySelector(".row"));
             wrap.appendChild(el);
             requestAnimationFrame(() => el.classList.add("on"));
             el.querySelector("[data-go]").addEventListener("click", () => start(stage + 1));
@@ -103,7 +123,7 @@ export function staged(def, play) {
         inner = play(root, api, ctx);
       }
       start(reached);
-      return { unmount() { gone = true; if (linkT) clearTimeout(linkT); if (inner) { try { inner.unmount(); } catch { /* gone */ } } style.remove(); } };
+      return { unmount() { gone = true; stopNotices(); if (linkT) clearTimeout(linkT); if (inner) { try { inner.unmount(); } catch { /* gone */ } } style.remove(); root.querySelectorAll(":scope > style[data-fourth], :scope > .wrymwretch-fourth-book").forEach((n) => n.remove()); } };
     },
   };
 }

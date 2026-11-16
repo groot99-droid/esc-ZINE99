@@ -224,7 +224,7 @@
       "name": "unwriter_reminded",
       "type": "bool",
       "default": false,
-      "description": "The Unwriter was reminded of his name instead of defeated."
+      "description": "The Unwriter was reminded of his name instead of defeated. Phase 3: one of the conditions of The Empty Saddle. In the web build the seal page stands in for the battle: both names said at the door after row IV is read."
     },
     {
       "name": "because_of_us_recorded",
@@ -306,7 +306,13 @@
       "name": "fourth_row_parts",
       "type": "counter",
       "default": 0,
-      "description": "Still parts of the monolith's fourth row noticed and recorded in the world (0-6), one a realm: the crack in the split tree (s_cedar_grove), a rune on Aetherius's scales (s_cloud_platform), a vein in the Heartstone (s_heartstone_hall), a kelp line on the seabed (s_seabed), a candle shadow (s_forbidden_chamber), a star in the Priory dome (s_priory_halls). Read by s_glyph_seal, where each fills one part of row IV. Accepted 2026-11-15, built 2026-11-16 (phase 2); what the row says with all six is phase 3."
+      "description": "Still parts of the monolith's fourth row noticed and recorded in the world (0-6), one a realm: the crack in the split tree (s_cedar_grove), a rune on Aetherius's scales (s_cloud_platform), a vein in the Heartstone (s_heartstone_hall), a kelp line on the seabed (s_seabed), a candle shadow (s_forbidden_chamber), a star in the Priory dome (s_priory_halls). Read by s_glyph_seal, where each fills one part of row IV. Accepted 2026-11-15, built 2026-11-16 (phase 2); phase 3 (built 2026-11-16): with all six, row IV of the seal holds and can be read (fourth_row_read)."
+    },
+    {
+      "name": "fourth_row_read",
+      "type": "bool",
+      "default": false,
+      "description": "Row IV of the seal was read in s_glyph_seal, possible only with all six fourth_row_parts: the terms of the bargain (what was given: the dragons' memory of us; by whom: six tribes, and not the dragons; for how long: until someone else carries it). Opens the fourth answer at s_choice (with unwriter_reminded and tarns_rib_tuned) and changes the closing of the other endings. Accepted 2026-11-15, built 2026-11-16 (phase 3)."
     },
     {
       "name": "second_reader_seen",
@@ -342,18 +348,19 @@
       "name": "name_retold_to_voice",
       "type": "bool",
       "default": false,
-      "description": "In s_last_witness the party Retold the prisoner's name to him, as it did for forgetful elders. Accepted 2026-11-15, built 2026-11-16 (phase 2); what it changes in the endings is phase 3."
+      "description": "In s_last_witness the party Retold the prisoner's name to him, as it did for forgetful elders. Accepted 2026-11-15, built 2026-11-16 (phase 2); phase 3 (built 2026-11-16): in The Architect Rises the voice then loses its last word first."
     },
     {
       "name": "final_choice",
       "type": "enum",
       "default": "none",
-      "description": "The answer at s_choice.",
+      "description": "The answer at s_choice. dorrin_watch (phase 3, built 2026-11-16) is the fourth answer, offered only with unwriter_reminded, tarns_rib_tuned and fourth_row_read: Dorrin Vael takes the watch.",
       "values": [
         "none",
         "keep_watch",
         "remember_him",
-        "give_bonds"
+        "give_bonds",
+        "dorrin_watch"
       ]
     },
     {

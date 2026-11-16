@@ -512,6 +512,7 @@ function play(root, api, ctx) {
       b.addEventListener("click", () => {
         intro.remove(); begin(b.dataset.page); st.started = true; cards[0].el.focus();
         if (IL) beat(`The night before the bridge, at Ilvarra's fire. She lays out what she has left of the Imprisonment, in glass, and asks you to help her hold it. Some of these panes were put among hers. <cite>Turn two cards · a face that changes is not hers</cite>`, 9000);
+        else if (P.key === "ward" && ctx.second) beat(`The healers' ward again. From the beds the whisper goes round as it did before: <q>Remember me.</q> You know now what remembering is. Each name you keep here is a name somebody will have to carry. <cite>WW 49 · the second time · turn two cards</cite>`, 9000);
         else if (P.key === "ward") beat(`The healers' ward, in the sky-city. <q>They speak of voices in the wind. They say the stars are calling them by name.</q> Match each sleeper's face to their name before the face goes. <cite>WW 47 · turn two cards</cite>`, 8000);
         else beat(`With the Tidecaller healers. The bestiary's creature pages are going blank with the plague, and the healers need eight of them whole to sing the healing song. <cite>Turn two cards</cite>`, 7000);
       });

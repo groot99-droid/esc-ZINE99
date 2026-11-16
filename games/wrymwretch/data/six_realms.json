@@ -266,8 +266,8 @@
       "realm": "below",
       "elder_pieces": [
         "dark",
-        "water",
-        "sky"
+        "earth",
+        "wood"
       ],
       "player_pieces": [
         "dark",
@@ -279,7 +279,7 @@
         "depth": 2,
         "style": "balanced",
         "deliberate_errors": 1,
-        "tutorial_turns": 2,
+        "tutorial_turns": 3,
         "weights": {
           "material": 1.0,
           "thresholds": 1.0,
@@ -452,6 +452,19 @@
         "s_realms_stonekeepers"
       ],
       "rule": "Retuned 2026-11-16: nobody may step onto Wrymreach before round 4, the round after the first tide. Before this the elder had a forced win in two rounds (a piece to a Threshold, then Water onto the centre), which no play could stop."
+    }
+  },
+  "phase_3": {
+    "accepted": "2026-11-15",
+    "built": "2026-11-16",
+    "teach_retune": {
+      "scene": "s_realms_syndicate",
+      "rule": "The teaching sitting teaches. The Syndicate Elder plays the same three tribes as the player (Dark, Earth, Wood), so each of its moves shows a player's piece being used, and Ilvarra rings a good move (the piece and its hex) for the player's first three turns. Before this a bot needed three sittings to win: the elder's Sky reached a Threshold on its first move and its Water could take the centre at round 4.",
+      "previous_elder_pieces": [
+        "dark",
+        "water",
+        "sky"
+      ]
     }
   }
 }

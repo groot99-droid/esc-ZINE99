@@ -479,6 +479,7 @@ function play(root, api, ctx) {
     intro.querySelectorAll("[data-choice]").forEach((b) => b.addEventListener("click", () => {
       const c = CHOICES.find((x) => x[0] === b.dataset.choice);
       st.memory = c[1]; st.memId = c[0]; st.chord = c[2]; st.started = true; intro.remove();
+      ctx.notice(wrap, "south", { after: 9000, stay: Infinity, css: "right:12px;top:12px" });   // phase 3: the level vein
       drawStatic(); render();
       note.textContent = `The stone will keep ${c[1].toLowerCase()}. Choose a shard from the tray, then a slot in the ring.`;
       beat(`The Heartstone hall, under the Stonekeepers' city. The great crystal is going dim and cannot be saved, but one shard tuned to it can keep ${c[1].toLowerCase()}. Elder Rhyla kneels at the bench. <cite>Set three shards, then Strike</cite>`, 8000);
