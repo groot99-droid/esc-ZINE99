@@ -490,7 +490,8 @@
       ],
       "writes": [
         "warmth",
-        "supper_shared"
+        "supper_shared",
+        "seat_fed"
       ],
       "enter": "push-in",
       "exit": "flatten",
@@ -527,14 +528,17 @@
       "reads": [
         "bicycle_borrowed",
         "person_brought",
-        "warmth"
+        "warmth",
+        "seat_fed",
+        "list_items"
       ],
       "writes": [
         "accepted",
         "phantoms_caught",
         "notebook_lines",
         "warmth",
-        "list_items"
+        "list_items",
+        "notebook_burned"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -550,7 +554,8 @@
       "reads": [
         "accepted",
         "knows",
-        "warmth"
+        "warmth",
+        "notebook_burned"
       ],
       "writes": [
         "theory_night2",
@@ -571,7 +576,8 @@
       "reads": [
         "sites_written",
         "accepted",
-        "first_page_read"
+        "first_page_read",
+        "notebook_burned"
       ],
       "writes": [
         "sites_written",
@@ -731,7 +737,9 @@
         "posts_pulled",
         "list_items",
         "sure_stamps",
-        "sure_wrong"
+        "sure_wrong",
+        "notebook_burned",
+        "first_page_read"
       ],
       "writes": [
         "drift",
@@ -771,17 +779,21 @@
         "drift",
         "list_items",
         "sure_stamps",
-        "sure_wrong"
+        "sure_wrong",
+        "notebook_burned",
+        "first_page_read"
       ],
       "writes": [
         "drift",
         "recited",
-        "list_items"
+        "list_items",
+        "list_said"
       ],
       "enter": "flatten",
       "exit": "pull-out",
       "next": [
-        "other_entrance"
+        "other_entrance",
+        "past_the_window"
       ]
     },
     {
@@ -794,7 +806,9 @@
         "drift",
         "warmth",
         "sure_wrong",
-        "window_seen"
+        "window_seen",
+        "list_said",
+        "notebook_burned"
       ],
       "enter": "pull-out",
       "exit": "fade"
@@ -853,6 +867,20 @@
         "proof_kept"
       ],
       "enter": "cut",
+      "exit": "fade"
+    },
+    {
+      "id": "past_the_window",
+      "layer": "3d",
+      "name": "Unlisted: past the window",
+      "chapter": "ch7_other_side",
+      "reads": [
+        "notebook_burned",
+        "person_brought",
+        "list_said",
+        "warmth"
+      ],
+      "enter": "pull-out",
       "exit": "fade"
     }
   ]

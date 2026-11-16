@@ -32,7 +32,19 @@
 //            is the off switch (F): walk dark by the pencil strip, and past post 24, where there is no
 //            ground, wait in the dark for the set-piece: one small square of light, a window. Tick it.
 
-import { pic, chapterCard, resultCard, raster, ladder, stageTabs, linkNote } from "./kit.js";
+//
+// Phase 3 (2026-11-16, DESIGN.md section 20a):
+//   Teach   the walk to the payphone is the whole of torch_loop_1's last stretch, posts 11 to 4. A tick
+//           writes what stood at the post beside it (the List, items 4 to 11: details Tam wrote).
+//   Flash   Inés's camera (C): three times a run, its flash holds the nearest post for three seconds,
+//           lit or not. Teach and test.
+//   Short   in the carrying run the printed loop on the HUD loses 35 m for every site that goes; only
+//   road    the pencil strip keeps the true length.
+//   The List always one button away (L).
+//   Second  (api.shared "runs" > 0): the walkie's first line comes over channel two a half-second
+//   run     before Rafe says it.
+
+import { pic, chapterCard, resultCard, raster, ladder, stageTabs, linkNote, listButton, sharedList, LIST, runsDone } from "./kit.js";
 
 const PPM = 24;                       // pixels per metre in the pre-drawn ground
 const WX0 = -9, WX1 = 11, WY0 = -7, WY1 = 62;
@@ -41,7 +53,8 @@ const RAISE_K = 1.85;                 // raised, the circle reaches further
 const SPEED = 1.4;
 const NAMES = ["Ticking", "The carrying run", "The off switch"];
 const STAGE = {
-  1: { run: 85, base: 12, battery: 100, posts: [{ n: 7, y: 10, due: 1e9 }, { n: 6, y: 19, due: 62 }, { n: 5, y: 28, due: 50 }, { n: 4, y: 37, due: 38 }] },
+  1: { run: 100, base: 8, battery: 100, posts: [{ n: 11, y: 4, due: 1e9 }, { n: 10, y: 8.5, due: 1e9 }, { n: 9, y: 13, due: 1e9 }, { n: 8, y: 17.5, due: 1e9 },
+    { n: 7, y: 22, due: 1e9 }, { n: 6, y: 27, due: 70 }, { n: 5, y: 32, due: 58 }, { n: 4, y: 37, due: 46 }] },
   2: { run: 150, base: 5, battery: 100, posts: [{ n: 19, y: 11, due: 135 }, { n: 18, y: 20, due: 110 }, { n: 17, y: 29, due: 100, lantern: true }, { n: 16, y: 38, due: 36 }] },
   3: { run: 110, base: 0, battery: 10, posts: [{ n: 20, y: 4, due: 1e9 }, { n: 21, y: 12, due: 1e9 }, { n: 22, y: 20, due: 1e9 }, { n: 23, y: 28, due: 1e9 }, { n: 24, y: 36, due: 1e9 }] },
 };
@@ -53,10 +66,10 @@ const PFX = "missing-campsites-torchlight-loop-";
 
 const TEXT = {
   when: ["Night 1 · the walk down to the payphone", "Day 2 · dusk · the carrying run", "Night 2 · the circle of five"],
-  goal: ["Tick three of posts 7 to 4 in your Tally before you reach the payphone.", "Carry three of posts 16 to 19 into the five sites before Dell calls the van.", "Find what is past post 24 before the torch dies."],
+  goal: ["Tick five of posts 11 to 4 in your Tally before you reach the payphone, and write what stands at each.", "Carry three of posts 16 to 19 into the five sites before Dell calls the van.", "Find what is past post 24 before the torch dies."],
   warn: ["A post goes the first moment no light is on it. What is ticked in pencil stays ticked.", "A post goes the first moment no light is on it. Sixteen is furthest. It will go first. The Ashbys' lantern is still lit at 17.", "The batteries are nearly flat, and there is nothing left out here to keep lit. The torch has an off switch."],
   gentle: ["A gentler walk: the posts hold on twenty-five seconds longer.", "A gentler run: the posts hold on twenty-five seconds longer.", "A gentler night: the torch has a little more in it."],
-  open: ["Dark. The bulb over the payphone is the one light ahead. Seven, six, five, four.", "Dusk. The five sites behind you, the road ahead. Sixteen is furthest.", "The road you carried from is forest floor now. Twenty to twenty-four stand in their slots. The torch is browning already."],
+  open: ["Dark. The bulb over the payphone is the one light ahead. Eleven down to four.", "Dusk. The five sites behind you, the road ahead. Sixteen is furthest.", "The road you carried from is forest floor now. Twenty to twenty-four stand in their slots. The torch is browning already."],
   phone: "The payphone. One bulb, and moths. Behind you the road is shorter than it was.",
   lantern: "The Ashbys' lantern is lit on the table at 17. While it burns, 17 holds without you.",
   lanternOut: "At 17 the Ashbys' lantern goes out. Nobody is seen putting it out.",
@@ -70,6 +83,12 @@ const TEXT = {
   noWindow: "Nothing to tick here.",
   firstPull: "Heavy. The post comes up with a clod of the road still on it.",
   raise: "Rafe, on the walkie: \"Point it up the road. Further. There.\" Hold Space to raise the torch.",
+  raiseAgain: "On the walkie, a half-second before Rafe says it: \"Point it up the road. Further. There.\" Then Rafe, saying it. Hold Space to raise the torch.",
+  flash: "Inés, on the walkie: \"Take the camera. The flash holds a thing while it's lit.\" C: three flashes.",
+  flashed: (n) => `Flash. Post ${n} stands white for three seconds, whoever is looking.`,
+  noFlash: "No flashes left.",
+  shortRoad: "The map's loop on your HUD is 35 m shorter. Your pencil strip is not.",
+  wrote: (n, what) => `Post ${n}: ticked. Beside it, in pencil: ${what}. (The List, ${n}.)`,
   tick: "Your pencil is in your pocket. T ticks a post in the Tally, and the Tally does not forget.",
   swap: "The torch is yellowing. You packed spare batteries: B swaps them, if you stand still.",
   gap: "The gravel narrows here by a hand's width. Nothing else to see.",
@@ -220,15 +239,18 @@ function mountStage(root, api, stage) {
         <button type="button" class="swap" hidden>Batteries (B)</button>
         <button type="button" class="tick" hidden>Tick (T)</button>
         <button type="button" class="off" hidden>Torch off (F)</button>
+        <button type="button" class="flash" hidden>Flash (C) ·3</button>
         <button type="button" class="pull">Pull (hold E)</button></div>
       <div class="${PFX}msg" aria-live="polite"></div>
       <div class="${PFX}intro"><div class="${PFX}card"><h2>Torchlight loop</h2><div class="when"></div>
         <p class="goal"></p><p class="warn"></p>
         <dl><dt>Walk</dt><dd><kbd>WASD</kbd> or arrows, or hold a finger where you want to go</dd>
           ${stage === 1 ? `<dt>Tick</dt><dd>at a post, press <kbd>T</kbd> or Tick: it goes in the Tally, in pencil</dd>
-          <dt>Light</dt><dd>hold <kbd>Space</kbd> to raise the torch and reach a post from further off</dd>`
+          <dt>Light</dt><dd>hold <kbd>Space</kbd> to raise the torch and reach a post from further off</dd>
+          <dt>Flash</dt><dd><kbd>C</kbd>: Inés's camera holds the nearest post for three seconds, three times</dd>`
     : stage === 2 ? `<dt>Pull</dt><dd>at a post, hold <kbd>E</kbd> or Pull for two seconds; carry two at most</dd>
-          <dt>Set</dt><dd>walk back into the five sites; carried posts go into the slots</dd>`
+          <dt>Set</dt><dd>walk back into the five sites; carried posts go into the slots</dd>
+          <dt>Flash</dt><dd><kbd>C</kbd>: Inés's camera holds the nearest post for three seconds, three times</dd>`
     : `<dt>Torch</dt><dd><kbd>F</kbd> or the button switches it off and on; off, it does not drain</dd>
           <dt>Strip</dt><dd>the pencil strip at the bottom shows where you are, light or no light</dd>
           <dt>Tick</dt><dd><kbd>T</kbd> puts what you find in the Tally</dd>`}</dl>
@@ -266,7 +288,9 @@ function mountStage(root, api, stage) {
       return true;
     }
     const ground = drawGround(rng, stage), dark = drawDark(rng);
-    const btn = { pull: $(".pull"), tick: $(".tick"), raise: $(".raise"), swap: $(".swap"), off: $(".off") };
+    const btn = { pull: $(".pull"), tick: $(".tick"), raise: $(".raise"), swap: $(".swap"), off: $(".off"), flash: $(".flash") };
+    const shList = sharedList(api), again = runsDone(api) > 0;
+    const listB = listButton(wrap, api, { where: "left:10px;bottom:76px" });
     if (stage !== 2) btn.pull.hidden = true;
     if (stage === 3) btn.off.hidden = false;
     if (stage !== 2) wrap.querySelector(`.${PFX}carry`).hidden = true;
@@ -275,7 +299,7 @@ function mountStage(root, api, stage) {
       x: roadX(1), y: 1, t: 0, battery: 100, carried: [], slotted: [], running: false, over: false,
       off: false, offT: 0, windowSeen: false, windowTicked: false, winT: -1,
       heading: Math.PI / 2, pullT: 0, pulling: false, raising: false, keys: new Set(), ptr: null, msgT: 0, ticked: new Set(), juneT: -1, flick: 0,
-      swapT: -1, swapsLeft: stage === 2 ? 1 : 0, unlocked: { tick: stage !== 2, raise: false, swap: false }, beats: new Set(), fx: [],
+      swapT: -1, swapsLeft: stage === 2 ? 1 : 0, flashes: stage === 3 ? 0 : 3, flashT: 0, lost: 0, unlocked: { tick: stage !== 2, raise: false, swap: false, flash: false }, beats: new Set(), fx: [],
     };
     st.battery = CFG.battery + (gentle && stage === 3 ? 5 : 0);
     if (stage !== 2) btn.tick.hidden = false;
@@ -320,7 +344,7 @@ function mountStage(root, api, stage) {
     const skX = (y) => 30 + (y + 3) / 50 * 500;
     if (stage !== 3) {
       sv("rect", { x: skX(-2) - 16, y: 14, width: 32, height: 16, fill: "none", stroke: "#2f6b3a", "stroke-width": 1.6 });
-      const t5 = sv("text", { x: skX(-2), y: 50, "text-anchor": "middle", "font-size": 15, fill: "#2b2a27", "font-family": "Caveat, cursive", "font-weight": 700 }); t5.textContent = stage === 1 ? "8" : "20–24";
+      const t5 = sv("text", { x: skX(-2), y: 50, "text-anchor": "middle", "font-size": 15, fill: "#2b2a27", "font-family": "Caveat, cursive", "font-weight": 700 }); t5.textContent = stage === 1 ? "12" : "20–24";
     } else {
       sv("path", { d: `M${skX(EDGE_Y)} 8 V36`, stroke: "#4a4a4c", "stroke-width": 1.5, "stroke-dasharray": "3 3" });
       const te = sv("text", { x: skX(EDGE_Y) + 26, y: 50, "text-anchor": "middle", "font-size": 15, fill: "#2b2a27", "font-family": "Caveat, cursive", "font-weight": 700 }); te.textContent = "edge";
@@ -343,6 +367,8 @@ function mountStage(root, api, stage) {
       const mins = 5 + Math.floor(st.t / RUN_S * 25);      // the run compresses dusk to 19:05–19:30
       $(".k").textContent = stage === 1 ? `night 1 · ${Math.max(0, Math.ceil(RUN_S - st.t))} s to the payphone` : stage === 3 ? `night 2 · Dell calls in ${Math.max(0, Math.ceil(RUN_S - st.t))} s` : `19:${String(Math.min(30, mins)).padStart(2, "0")} · van at 19:30`;
       btn.off.textContent = st.off ? "Torch on (F)" : "Torch off (F)"; btn.off.classList.toggle("on", st.off);
+      btn.flash.textContent = `Flash (C) ·${st.flashes}`; btn.flash.disabled = st.flashes <= 0;
+      if (stage === 2) $(".c").textContent = `POSTS: ${existing()} · LOOP ${35 * existing()} m`;
       skWin.setAttribute("visibility", st.windowTicked ? "visible" : "hidden");
       const b = Math.max(0, st.battery);
       $(`.${PFX}bat i`).style.width = b + "%";
@@ -366,7 +392,7 @@ function mountStage(root, api, stage) {
       const tl = [...st.ticked].sort((a, b) => b - a).map((n) => `<div class="${n === fresh ? "new" : ""}">${n} |</div>`).join("");
       $(".t").innerHTML = tl || "&nbsp;";
       if (st.windowTicked) $(".t").innerHTML = `<div class="new">a window, lit</div>`;
-      $(".slot").textContent = stage === 1 ? `ticks ${st.ticked.size}/4` : stage === 3 ? "past 24:" + (st.windowTicked ? " ✓" : " ?") : `slots ${st.slotted.length}/10`;
+      $(".slot").textContent = stage === 1 ? `ticks ${st.ticked.size}/8` : stage === 3 ? "past 24:" + (st.windowTicked ? " ✓" : " ?") : `slots ${st.slotted.length}/10`;
     }
 
     function tick() {
@@ -380,7 +406,18 @@ function mountStage(root, api, stage) {
       const q = near();
       if (!q) { say("No post in the light to tick.", 1.4, true); return; }
       if (st.ticked.has(q.n)) { say(`Post ${q.n} is already in the Tally.`, 1.4); return; }
-      st.ticked.add(q.n); paintTally(q.n); say(`Post ${q.n}: ticked in pencil.`, 1.6); fx(q.x, q.y, "#e8e1cf"); hud();
+      st.ticked.add(q.n); paintTally(q.n); fx(q.x, q.y, "#e8e1cf");
+      if (q.n <= 19) { shList.add(q.n); listB.refresh(); say(TEXT.wrote(q.n, LIST[q.n]), 2.6); } else say(`Post ${q.n}: ticked in pencil.`, 1.6);
+      hud();
+    }
+    function flash() {
+      if (!st.running || stage === 3) return;
+      if (st.flashes <= 0) { say(TEXT.noFlash, 1.4, true); return; }
+      const q = posts.filter((o) => !o.gone && !o.pulled && Math.hypot(o.x - st.x, o.y - st.y) < 7)
+        .sort((a, b) => Math.hypot(a.x - st.x, a.y - st.y) - Math.hypot(b.x - st.x, b.y - st.y))[0];
+      st.flashes--; st.flashT = 0.35;
+      if (q) { q.heldUntil = st.t + 3; fx(q.x, q.y, "#ffffff"); say(TEXT.flashed(q.n), 2.4); } else say("Flash. Nothing in reach to hold.", 1.6);
+      hud();
     }
     function swap() {
       if (!st.running || !st.unlocked.swap || st.swapsLeft <= 0 || st.swapT >= 0 || st.battery <= 0) return;
@@ -392,8 +429,8 @@ function mountStage(root, api, stage) {
       st.over = true; st.running = false;
       const ticks = st.ticked.size;
       if (stage === 1) {
-        const ok = ticks >= 3;
-        resultCard(wrap, art, { cards: ["topdown-tam-walk"], lost: ok ? 4 - ticks : 3, reducedMotion: api.reducedMotion });
+        const ok = ticks >= 5;
+        resultCard(wrap, art, { cards: ["topdown-tam-walk"], lost: ok ? Math.max(0, 8 - ticks) : 3, reducedMotion: api.reducedMotion });
         api.store.set("losses", ok ? 0 : losses + 1);
         api.end({ outcome: ok ? "win" : "lose", text: (reason === "june" ? TEXT.end.june + " " : "") + (ok ? TEXT.end.t1win(ticks) : TEXT.end.t1lose(ticks)), next: "The carrying run: now the posts can be pulled." });
         return;
@@ -488,10 +525,15 @@ function mountStage(root, api, stage) {
       }
       const R = st.off ? 0 : TORCH_R * (raised ? RAISE_K : 1);        // erasure: only outside the light, never seen
       for (const o of posts) {
-        if (!o.gone && !o.pulled && st.t >= o.due && Math.hypot(o.x - st.x, o.y - st.y) > R) o.gone = true;
+        if (!o.gone && !o.pulled && st.t >= o.due && !(o.heldUntil > st.t) && Math.hypot(o.x - st.x, o.y - st.y) > R) {
+          o.gone = true;
+          if (stage === 2) { st.lost++; beat("short", TEXT.shortRoad, 4); }
+        }
         if (o.gone && !o.gapSeen && Math.abs(o.y - st.y) < 1.2) { o.gapSeen = true; beat("gap", TEXT.gap, 3.5); }
       }
-      if (st.t > 9) unlock("raise", TEXT.raise);         // unlocks and beats as the run goes
+      if (st.t > 9) unlock("raise", again ? TEXT.raiseAgain : TEXT.raise);
+      if (stage !== 3 && st.t > (stage === 1 ? 4 : 14)) unlock("flash", TEXT.flash);
+      if (st.flashT > 0) st.flashT -= dt;         // unlocks and beats as the run goes
       if (q && !st.unlocked.tick) unlock("tick", TEXT.tick);
       if (stage === 2 && st.battery < 55) unlock("swap", TEXT.swap);
       if (stage === 2 && st.t > RUN_S - 35) beat("dell", TEXT.dell, 4);
@@ -621,6 +663,7 @@ function mountStage(root, api, stage) {
         c.strokeStyle = "#fff0c8"; c.lineWidth = 4;
         c.beginPath(); c.arc(cx, cy, 0.85 * S, -Math.PI / 2, -Math.PI / 2 + (1 - st.swapT / 3) * Math.PI * 2); c.stroke();
       }
+      if (st.flashT > 0 && !api.reducedMotion) { c.fillStyle = `rgba(255,255,255,${(st.flashT / 0.35) * 0.55})`; c.fillRect(0, 0, W, H); }
       if (st.battery <= 0) {                              // June's lantern on the road
         const t = Math.max(0, st.juneT) / 2.5;
         if (!blit(c, "sprite-june-lantern", cx, cy - (1.2 + t * 3) * S, Math.PI / 2)) { c.fillStyle = "rgba(255,190,110,.6)"; c.beginPath(); c.arc(cx, cy - (1 + t * 3) * S, 0.45 * S, 0, 7); c.fill(); }
@@ -649,6 +692,7 @@ function mountStage(root, api, stage) {
       if (k === "t" && !e.repeat) tick();
       if (k === "f" && !e.repeat) toggleOff();
       if (k === "b" && !e.repeat) swap();
+      if (k === "c" && !e.repeat) flash();
     };
     const ku = (e) => { const k = e.key.toLowerCase(); st.keys.delete(k); if (k === "e") st.pulling = false; if (k === " ") st.raising = false; };
     const blur = () => { st.keys.clear(); st.pulling = false; st.raising = false; };
@@ -663,6 +707,7 @@ function mountStage(root, api, stage) {
     hold(btn.raise, () => { st.raising = true; }, () => { st.raising = false; });
     btn.tick.addEventListener("click", () => st.running && tick());
     btn.swap.addEventListener("click", swap);
+    btn.flash.addEventListener("click", flash);
     function toggleOff() {
       if (!st.running || stage !== 3 || st.battery <= 0 || st.winT >= 0) return;
       st.off = !st.off; st.offT = 0;
@@ -688,6 +733,7 @@ function mountStage(root, api, stage) {
         cancelAnimationFrame(raf);
         ro.disconnect();
         window.removeEventListener("keydown", kd); window.removeEventListener("keyup", ku); window.removeEventListener("blur", blur);
+        listB.destroy();
       },
     };
   }

@@ -39,7 +39,9 @@
 //            fill it or leave it. The set-piece: a packet opens on Bea's supper, exactly right, and
 //            tastes of nothing.
 
-import { pic, chapterCard, resultCard, ladder, stageTabs } from "./kit.js";
+// Phase 3 (2026-11-16): the List is one button away (L). The spare sheet (api.shared "seat_fed") is now
+// read: at Pack List's twist the seat nobody filled takes its last turn slower, and its words stay.
+import { pic, chapterCard, resultCard, ladder, stageTabs, listButton } from "./kit.js";
 
 const NAMES = ["The card's own", "Coal zones", "Breakfast"];
 
@@ -240,6 +242,7 @@ function mountStage(root, api, stage) {
         <p class="goal"></p><ol></ol><p class="gentle" hidden></p>
         <button type="button">Light the coals</button></div></div>`;
     root.appendChild(wrap);
+    const listB = listButton(root, api, { where: "right:12px;bottom:12px" });
     const $ = (s) => wrap.querySelector(s);
     $(".when").textContent = TEXT.when[stage - 1]; $(`.${P}rcard .goal`).textContent = TEXT.goal[stage - 1];
     stageTabs(api, $(`.${P}rcard>button`));
@@ -498,6 +501,6 @@ function mountStage(root, api, stage) {
     });
     go.focus();
 
-    return { unmount() { over = true; running = false; clearInterval(iv); window.removeEventListener("keydown", kd); } };
+    return { unmount() { over = true; running = false; clearInterval(iv); window.removeEventListener("keydown", kd); listB.destroy(); } };
   }
 }

@@ -85,7 +85,7 @@ nobody else mind?
 | **Lottie Ashby's bicycle** | Day 1, the player fixes the slipped chain for an eight-year-old at site 17; she lends the bike so the player can ride to the payphone. | Day 2 morning: Lottie does not remember having a bicycle. |
 | **Marisol Teague, the ranger** | Day 1, through the booth window, she radios her wife: "Tell Ruth I'll be home for supper Sunday." She is kind and exact. | Day 2: she tells the player the numbering has always started at twelve. |
 | **The four friends** | Day 1 setup and two suppers: each has a want the player helps with (section 6). | Day 2 dusk: the world beyond the five sites goes. |
-| **The notebook** | Every 1D game writes into it. It is the only surface that never changes. | Never. It is the thing that holds. |
+| **The notebook** | Every 1D game writes into it. It is the only surface that never changes. | Only by Tam's hand: at the second fire Tam may put it on the fire (phase 3, built 2026-11-16; section 20a). Nothing else ever touches it. |
 
 The rule is that nothing the player has not touched is taken from them on screen. The first
 erasures (sites 1 to 6) take strangers' sites. Site 7 is the first loss that is the player's, and by
@@ -242,7 +242,8 @@ Say it. Nobody said that." / "Channel two. I'm here."
 lap**: the second time round, the chain is said last thing first (section 11; built in phase 1). It
 is the practice for the pattern walk, where the List is said backwards (section 12). **Voice:**
 "House rule. Second lap goes backwards. Last thing in, first thing out." Her secret, the voice on
-channel two and the chain kept on her forearm in biro, waits for phase 2 (section 20a).
+channel two and the chain kept on her forearm in biro, is built in phase 2; in phase 3 her arm also holds
+the List's first three items, and is its only copy once the notebook is burned (section 20a).
 
 | Ending | June |
 | --- | --- |
@@ -513,6 +514,7 @@ Branch slots:
 
 | Ending | Scenes | Minutes |
 | --- | --- | --- |
+| Unlisted | `past_the_window` (3D), in place of `other_entrance`, at the same booth: the window lit, nobody to say the line; the five walk past it, up the road. Phase 3, built 2026-11-16 (section 20a). | 3 |
 | Held | `mothers_door` (3D): the drive home; Agnes's door. | 9 |
 | Nothing Missing | `drive_home` (3D): the van on the highway. | 7 |
 | The One Who Left | `reconcile_home` (1D), then `recital` (3D). | 11 |
@@ -546,6 +548,7 @@ over. No jump, no crouch, no sprint beyond the jog. Interaction range 2 m.
 | `home_apartment` | Tam's flat in the city | 3 rooms | First person | Inés's door (a stranger's study), the phone (calls), the notebook | Monday daylight | Traffic | The laptop opens Reconcile at home | fade / push-in |
 | `the_clearing` | The creek bend on the other side | 40 m circle | First person | Sapling ring (register box), the silent creek, Abel if brought | No sun | The creek makes no sound | Walking out the far side | pull-out / flatten |
 | `other_entrance` | The booth on the other side | 60 × 40 m | First person | The empty booth, the map rack, the car | No sun; the car's headlights are the only warm light | An engine, the first in a day | The car stops at the window | pull-out / fade |
+| `past_the_window` | The same booth on the other side (Unlisted) | 60 × 40 m | Third person, from behind the five | The lit window (nobody in it), the map rack (nobody to hand a map to), the road | No sun; the window lit amber from inside; the car's headlights pass it | An engine; five sets of footsteps on gravel | Walking past post 24 up the road | pull-out / fade |
 | `mothers_door` | The drive home, Agnes's flat door | Van interior, then a stairwell | First person | Postcard or notebook (read aloud) | Evening | Highway, a doorbell | Reading or not | cut / fade |
 | `drive_home` | The van on the highway | Van interior | First person, seated | The notebook on the dash (cannot be opened), the radio | Afternoon | Radio, tyres | None; it plays to the end | cut / fade |
 | `recital` | A school hall | 30 × 20 m | First person, seated | The saved seat, the programme | Stage light | Piano, applause | Ada's piece ends | cut / fade |
@@ -873,7 +876,7 @@ trace that a careful player can catch without the notebook:
 The accessibility option **Show seams** adds a small hollow notch at every erased place. It is off by
 default and named plainly in the settings.
 
-**The notebook.** Never changes. Pages: Sites, People, Copied, Tally. Copying another hand's line
+**The notebook.** Never changes by itself; only Tam can lose it, by putting it on the second fire (phase 3, built 2026-11-16: `notebook_burned`; section 20a). Then June's forearm, where she has kept the chain in biro, is the only copy of the List. Pages: Sites, People, Copied, Tally. Copying another hand's line
 into it is one press when the line is on screen, costs no time, and keeps the line: a copied
 postcard line raises `mother_lines_kept` (0–6).
 
@@ -987,21 +990,51 @@ item up, so a Tam who walks the whole path holds the whole List at the booth. In
 also decides who can say the line at the window (section 20a, Unlisted).
 
 **First step and last step.** The first item most players write is the kettle, at the first fire.
-The last use is the recital on the walk out. Everything between (June's arm, Ruth's list, the stubs)
-waits for phase 2.
+The last use is the recital on the walk out.
+
+**Where each item is had** (built 2026-11-16 in the web modes; the 3D game uses the same sources):
+
+| Items | Source |
+| --- | --- |
+| 1, 2, 3 | June's arm at the backwards lap: three things at her wrist, in a different biro, that channel two said before anyone sat down |
+| 4, 6, 8, 9, 10, 11 | Ticks on the walk to the payphone (`torch_loop_1`): each tick writes what stood at the post |
+| 5, 7, 16, 17 | Pack List: the kettle and Puddle caught as phantoms; the tall cedar and the owl box said by the seat nobody filled |
+| 12 to 19 | The glyphs of the pattern walk, each giving its item up as Tam passes |
+| The order | The first page of Marisol's logbook (`first_page_read`) |
+
+**The payoff** (phase 3). At the end of the pattern walk the booth is ahead, lit. With the whole List
+and its order, Tam says it last thing first, nineteen to one (`list_said`): from the notebook's List
+page, and Tam can say the line (Slipped Through, or Brought Along with a guest); or, if the notebook
+went on the fire, from June's arm, and nobody can say it (Unlisted).
+
+**Placeholders.** Thirteen of the nineteen items were never named by the deep dive and stand in for
+things the author has not chosen: 1 a washing line, 2 a camp chair, 3 a hammock, 4 a dog's bowl, 6 a
+fishing rod, 8 a kite, 10 a guitar, 11 a paddle, 13 a windbreak, 14 a red wagon, 15 a radio, 18 a tyre
+swing, 19 a lantern on a pole. The six with a place in the design are 5 (the kettle), 7 (the owl box),
+9 (the shallow pool), 12 (milk in the creek), 16 (the tall cedar) and 17 (Puddle). Section 21 lists the
+thirteen for the author to name.
 
 ## 13. Endings
 
 The resolver checks endings in priority order after the last chapter. Conditions are copied from
-`data/endings.json`.
+`data/endings.json`. Every ending keeps a cost (phase 3, accepted 2026-11-15, built 2026-11-16); the
+cost is in `data/endings.json` as `cost`, and the added beat is in each ending below.
 
 | Priority | Id | Name | As written | Condition (plain) | Condition (data) |
 | --- | --- | --- | --- | --- | --- |
 | 1 | `one_who_left` | The One Who Left | No | Tam drove out alone at dusk on day 2. | `{"is": "left_alone", "eq": true}` |
-| 2 | `nothing_missing` | Nothing Missing | No | Tam accepted the world's word five or more times and took "Nothing's wrong" at the second fire. | `{"all": [{"is": "accepted", "gte": 5}, {"is": "theory_night2", "eq": "nothing_wrong"}]}` |
-| 3 | `held` | Held | No | The five sites held 12 or more weight at dark. | `{"is": "hold", "gte": 12}` |
-| 4 | `brought_along` | Brought Along | No | A person slept inside, but the sites held less than 12. | `{"not": {"is": "person_brought", "eq": "none"}}` |
-| 5 | `slipped_through` | Slipped Through | **Yes** | Everything else: Tam stayed, kept watching, and the sites did not hold. | `true` |
+| 2 | `unlisted` | Unlisted | No | Tam put the notebook on the fire at the second fire, no guest slept inside, and the sites did not hold. | `{"all": [{"is": "notebook_burned", "eq": true}, {"is": "person_brought", "eq": "none"}, {"is": "hold", "lt": 12}]}` |
+| 3 | `nothing_missing` | Nothing Missing | No | Tam accepted the world's word five or more times and took "Nothing's wrong" at the second fire. | `{"all": [{"is": "accepted", "gte": 5}, {"is": "theory_night2", "eq": "nothing_wrong"}]}` |
+| 4 | `held` | Held | No | The five sites held 12 or more weight at dark. | `{"is": "hold", "gte": 12}` |
+| 5 | `brought_along` | Brought Along | No | A person slept inside, but the sites held less than 12. | `{"not": {"is": "person_brought", "eq": "none"}}` |
+| 6 | `slipped_through` | Slipped Through | **Yes** | Everything else: Tam stayed, kept watching, and the sites did not hold. | `true` |
+
+**Why the order.** The One Who Left first: a Tam who drove out is at no second fire, so cannot burn
+the notebook. Unlisted before Nothing Missing, because Nothing Missing ends with the notebook on the
+dash; a burned notebook cannot ride there. Unlisted names its own two exclusions (a guest inside, the
+sites holding), so a burned notebook with a guest is Brought Along and a burned notebook with 12 or
+more in the slots is Held: the price of a burned notebook lands only where the crossing comes and
+nobody else was asked to stay. No two endings are both first-true: the resolver takes the first.
 
 ### Slipped Through (as written)
 
@@ -1012,7 +1045,21 @@ close: the walk out through the trees that were the campground, to a booth with 
 car pulling in. Its passengers ask if they are in the right place. Tam looks at the map in the rack,
 which shows 24 sites. **Last line,** Tam's, the first time Tam speaks aloud: "You're at the far end.
 Twenty through twenty-four." The player has become the one who acts as if nothing is missing. (In
-the vault's terms, a handoff ending.)
+the vault's terms, a handoff ending.) **Added cost (phase 3):** after the line, Tam sets the notebook
+on the counter and rules the first column. Every row kept, and no one to show them to. The condition
+and the last line are unchanged; the cost is an image after the line.
+
+### Unlisted (proposal; phase 3, built 2026-11-16)
+
+Final scenes: `wrong_forest`, `foil_supper_3`, `pattern_walk_1`, `the_clearing`, `pattern_walk_2`,
+`past_the_window`. At Pack List 2 the seat nobody filled said the whole chain without a slip and added
+a twentieth thing, "a notebook", and Dell said, "Put it on the fire or put it away. I can't eat with it
+open." Tam put it on the fire (`notebook_burned`), and no guest slept inside. The crossing still comes,
+and the author's morning is unchanged: the wrong sky, the heavy air, the patterned trees, the phones.
+The walk out is by June's arm alone: the List in biro, said last thing first. At the booth the window is
+lit and nobody is in it, and nobody can say the line, so nobody is kept: the five walk past the window
+together, up a road into a world that is not theirs, with no proof of anything. **Cost:** Agnes's
+lines went on the fire with the rest; nothing Tam saw is written anywhere.
 
 ### Brought Along (proposal)
 
@@ -1020,7 +1067,8 @@ As Slipped Through, with the guest. Marisol reads the trees from memory and, at 
 the empty booth and says the line herself. Abel signs a register that has no other names. **Last
 image:** the
 guest at the window, the car's headlights on their face, someone at home who no longer knows to
-wait.
+wait. **Added cost (phase 3):** Marisol says the line for the second time. Abel signs the register and
+finds his own name eleven years up the page.
 
 ### Held (proposal)
 
@@ -1031,7 +1079,8 @@ outside: the guest's family does not know them, and the friends' families do not
 The van drives home. At Agnes's door: if Tam kept her line about site 21, Tam reads it to her: "Site
 21. The split boulder. You slept in the crack of it." **Last line,** Agnes: "That sounds like a
 lovely place." She does not know who Tam is. If no line was kept, she asks politely who Tam is
-looking for.
+looking for. **Added cost (phase 3):** if Marisol was carried in, Ruth parks at the end of the gravel
+with a covered dish and cannot say why she cooked for two.
 
 ### Nothing Missing (proposal)
 
@@ -1040,7 +1089,7 @@ the world's word. The morning is ordinary and the campground is whole from post 
 one more packet than anyone needs. In the van, the friends whose portrait line Tam never wrote are
 not there, and no one mentions them; if Tam wrote all four, a sleeping bag in the back belongs to no
 one. The notebook rides on the dash and cannot be opened. **Last image:** the highway, a seat with
-nobody in it, the radio giving the date.
+nobody in it, the radio giving the date. **Added cost (phase 3):** June's forearm is clean.
 
 ### The One Who Left (proposal)
 
@@ -1049,21 +1098,27 @@ before dark on day 2. Tam gets home. The city is ordinary; nobody remembers the 
 campground. A highway rest area is where Hollin Creek was. Reconcile at home compares the notebook
 against the online map, Inés's camera roll and the phone's contacts. Then Monday at four: Ada's
 recital. **Last image:** Tam in the second row with a programme on the empty seat beside them, and
-the notebook open at Rafe's page: "Rafe. Four o'clock Monday. That's all I've got."
+the notebook open at Rafe's page: "Rafe. Four o'clock Monday. That's all I've got." **Added cost
+(phase 3):** in the flat, the walkie in Tam's pack hisses on channel two, and a voice begins the list.
 
 ### How a player reaches each one on purpose
 
 | Ending | What to do |
 | --- | --- |
-| Slipped Through | Stay. Keep writing. Do not ask anyone to stay, and do not fill the slots past 11. This is what a player who simply follows the friends will get. |
+| Slipped Through | Stay. Keep writing, and keep the notebook when the seat adds it. Do not ask anyone to stay, and do not fill the slots past 11. This is what a player who simply follows the friends will get. |
+| Unlisted | Ask nobody to stay at dusk and carry little (under 12), then at Pack List 2, when Dell says "Put it on the fire or put it away", choose "Put the notebook on the fire". |
 | Brought Along | Persuade one person (finish The Ranger's Book 2 with Marisol, or show Abel his copied line), ask them to stay at dusk, and carry little else. |
 | Held | Carry 12 or more weight into the slots. The easy way: a person plus the logbook. The hard way, with no person: buy the firewood and borrow the bike on day 1, call the forecast right, spend every unit on anchors, and take all four posts. |
-| Nothing Missing | Accept five times (each "Correct your note", each phantom repeated, each "Must have read it wrong"), then choose "Nothing's wrong" at the second fire. |
+| Nothing Missing | Accept five times (each "Correct your note", each phantom repeated, each "Must have read it wrong"), keep the notebook, then choose "Nothing's wrong" at the second fire. |
 | The One Who Left | At dusk on day 2, take the keys from Rafe and choose "Drive out alone". |
 
 **Why this run got this ending.** The debug panel shows the resolver's trace: each condition in
-priority order, the values it read (`left_alone`, `accepted`, `theory_night2`, `hold`,
-`person_brought`), and the first that was true.
+priority order, the values it read (`left_alone`, `notebook_burned`, `accepted`, `theory_night2`,
+`hold`, `person_brought`), and the first that was true.
+
+**Length.** Unlisted swaps one 3D scene for another at the same booth (`past_the_window` for
+`other_entrance`, about the same three minutes), so its path is the as-written path's 92 minutes; the
+choice at Pack List 2 adds under a minute. Every ending stays inside 75 to 100.
 
 ## 14. UI and HUD
 
@@ -1074,7 +1129,7 @@ game's whole visual argument.
 | --- | --- | --- |
 | HUD, 3D | Bottom right: a small printed objective line. Top left: the day and time, in printed type (blank on the final morning). Centre: a dot reticle; a hand icon on interactables. | Overlaid, and erasable |
 | Map lens | The paper map held up at 40% opacity over the view, aligned to the ground by a compass rose; printed squares sit where sites should be. | Diegetic |
-| Notebook (N) | A full-screen spread in Tam's hand: Sites, People, Copied, Tally tabs, and the List (accepted 2026-11-15; section 12). Never changes. | Diegetic |
+| Notebook (N) | A full-screen spread in Tam's hand: Sites, People, Copied, Tally tabs, and the List (accepted 2026-11-15; section 12). Never changes, unless Tam burns it at the second fire (phase 3); then the List page is June's forearm, in biro. | Diegetic |
 | Camera (C) | Inés's camera back: a 3 × 3 gallery with file numbers. | Diegetic |
 | Time units | A row of small pencil circles on the notebook's cover corner, struck through as spent. | Diegetic |
 | Slots | At each site, the two slots show as chalk marks Dell drew on the table and the pad edge. | Diegetic |
@@ -1184,9 +1239,9 @@ last line of Slipped Through. Subtitles for every line.
 | File | Holds |
 | --- | --- |
 | `data/game.json` | Slug, title, source, target 75–100, one player, core verb "compare", the seven chapters of the as-written path with minutes summing to 92. |
-| `data/scenes.json` | The two 2D modes (`torchlight_loop`, `pattern_walk`), the four 1D games (`reconcile`, `pack_list`, `foil_supper`, `rangers_book`), and all 39 scene entries, including every branch scene, with reads, writes, transitions and next. Branch scenes sit in the chapter whose slot they fill. |
-| `data/flags.json` | Every flag, meter, counter and ledger in sections 8–13, and phase 1's four (`list_items`, `first_page_read`, `backwards_lap_clean`, `recited`; section 20a). The `anchors` ledger has fields item, weight, site, chapter. |
-| `data/endings.json` | The five endings with the conditions in section 13. |
+| `data/scenes.json` | The two 2D modes (`torchlight_loop`, `pattern_walk`), the four 1D games (`reconcile`, `pack_list`, `foil_supper`, `rangers_book`), and all 40 scene entries (`past_the_window` added in phase 3), including every branch scene, with reads, writes, transitions and next. Branch scenes sit in the chapter whose slot they fill. |
+| `data/flags.json` | Every flag, meter, counter and ledger in sections 8–13, phase 1's four (`list_items`, `first_page_read`, `backwards_lap_clean`, `recited`; section 20a), phase 2's, and phase 3's three (`notebook_burned`, `seat_fed`, `list_said`). The `anchors` ledger has fields item, weight, site, chapter. |
+| `data/endings.json` | The six endings with the conditions and costs in section 13 (Unlisted added in phase 3). |
 
 Beyond the shared schemas the game has two small tables the engine reads, each with a schema in
 `data/schemas/`:
@@ -1283,9 +1338,11 @@ reads as the one trustworthy surface.
 
 ## 20a. Accepted development (2026-11-15)
 
-The author accepted the whole of `DEEP_DIVE.md` on 2026-11-15 and asked for phase 1 to be started.
-This section states what was accepted, in the design's own terms, and says which parts are built
-now. Nothing here changes the source or the as-written ending, and all of it is listed in section
+The author accepted the whole of `DEEP_DIVE.md` on 2026-11-15 and asked for phase 1 to be started;
+phase 2 and phase 3 followed on 2026-11-16. **All three phases are built** in the design, the data and
+the web modes. What is still not built is listed at the end of this section ("Still not built"): above
+all, every 3D scene is a design and a Blender build file until it is built in Blender. This section
+states what was accepted, in the design's own terms, and says which parts are built. Nothing here changes the source or the as-written ending, and all of it is listed in section
 21. Where this section and an earlier one disagree about a thing phase 2 or 3 will build, the
 earlier section stands until that phase lands.
 
@@ -1338,22 +1395,22 @@ day 2, and as an engine running in the lot at the dusk choice. **Voice** (the de
 | 7 | Supper for Two | New | Ruth, the dish, the tin. | Phase 2, built 2026-11-16: `supper_for_two` |
 | 8 | The Gravel Bar | Existing, deepened | Abel reads his name. | Phase 2, built 2026-11-16: `creek_trail` reads `tin_list_copied`, writes `abel_named` |
 | 9 | Who Sleeps Inside | Existing, deepened | The dusk choice, with Ruth's engine running in the lot. | Phase 2, built 2026-11-16: `dusk_choice` reads `ruth_met`, `abel_named` |
-| 10 | The Seat Nobody Filled | Existing, deepened, **darkest moment** | Pack List 2. The empty seat says all nineteen without a slip and adds a twentieth: "a notebook". Tam may put the notebook on the fire. | Phase 3 |
+| 10 | The Seat Nobody Filled | Existing, deepened, **darkest moment** | Pack List 2. The empty seat says all nineteen without a slip and adds a twentieth: "a notebook". Tam may put the notebook on the fire. | Phase 3, built 2026-11-16: `pack_list_2` writes `notebook_burned` |
 | 11 | The Wrong Sky | Source | "Their phones show no signal, no time, no date." | Existing |
-| 12 | Nineteen Things, then The Window | Existing, deepened | The walk, recited backwards. The booth. The car. | Reciting: phase 1. The window: phase 3 |
+| 12 | Nineteen Things, then The Window | Existing, deepened | The walk, recited backwards. The booth. The car. | Reciting: phase 1. The window: phase 3, built 2026-11-16 (`list_said`; `past_the_window` for Unlisted) |
 
 **Endings.** Still decided by what was carried in (COLLECTION section 6). Slipped Through keeps its
-condition, its `as_written` mark and its last line. The sharpened costs and the sixth ending are
-accepted and wait for phase 3; `data/endings.json` and section 13 are unchanged until then.
+condition, its `as_written` mark and its last line. The sharpened costs and the sixth ending were
+built in phase 3 (2026-11-16): they are in `data/endings.json` and section 13.
 
 | Ending | Cost, sharpened | Phase |
 | --- | --- | --- |
-| Slipped Through (as written) | After the line, Tam sets the notebook on the counter and rules the first column. Every row kept, and no one to show them to. | 3 |
-| Brought Along | Marisol says the line for the second time. Abel signs the register and finds his own name eleven years up the page. | 3 |
-| Held | If Marisol was carried in, Ruth parks at the end of the gravel with a covered dish and cannot say why she cooked for two. | 3 |
-| Nothing Missing | June's forearm is clean. | 3 |
-| The One Who Left | In the flat, the walkie in Tam's pack hisses on channel two, and a voice begins the list. | 3 |
-| **Unlisted** (new) | Tam burned the notebook at the second fire and no guest slept inside. The crossing still comes; the author's morning is unchanged. The walk out is by June's arm alone. At the booth nobody can say the line, so nobody is kept: the five walk past the window into a world that is not theirs, together, with no proof of anything. Agnes's lines went on the fire with the rest. | 3 |
+| Slipped Through (as written) | After the line, Tam sets the notebook on the counter and rules the first column. Every row kept, and no one to show them to. | 3, built 2026-11-16 |
+| Brought Along | Marisol says the line for the second time. Abel signs the register and finds his own name eleven years up the page. | 3, built 2026-11-16 |
+| Held | If Marisol was carried in, Ruth parks at the end of the gravel with a covered dish and cannot say why she cooked for two. | 3, built 2026-11-16 |
+| Nothing Missing | June's forearm is clean. | 3, built 2026-11-16 |
+| The One Who Left | In the flat, the walkie in Tam's pack hisses on channel two, and a voice begins the list. | 3, built 2026-11-16 |
+| **Unlisted** (new) | Tam burned the notebook at the second fire and no guest slept inside. The crossing still comes; the author's morning is unchanged. The walk out is by June's arm alone. At the booth nobody can say the line, so nobody is kept: the five walk past the window into a world that is not theirs, together, with no proof of anything. Agnes's lines went on the fire with the rest. | 3, built 2026-11-16 |
 
 **The author's decisions, all yes (2026-11-15).** Marisol as an earlier camper and Abel as one of
 her five; Ruth on stage; the notebook may be burned (section 14's "Never changes" and the notebook's
@@ -1418,12 +1475,62 @@ rules for them, and section 14's "Never changes" for the notebook, stand as writ
 *The collection thread.* An envelope stamped HOLD (Project: Man Eater's object) lies on the last
 pages of the logbook in The Ranger's Book's twist. It is not announced and changes nothing.
 
-**Waits for phase 3.** The notebook on the fire and Unlisted; the seat's twentieth item, "a
-notebook" (in phase 2 the seat adds only rows Tam wrote: the tall cedar, the owl box); the flash and
-the short road; counted in; "read it to me" and `seat_fed`'s effect on the seat's next item (the
-web build records whether the spare sheet was filled, nothing reads it yet); carbons; creases; the
-sharpened ending costs and the window at `other_entrance`; second-run details; the generated
-portraits, Ruth's dish, the tin and the two cars as props.
+**Built in phase 3 (2026-11-16).** The author wrote "start phase 3".
+
+*The price.* At Pack List 2 the seat nobody filled takes a third turn, says everything without a slip
+and adds a twentieth thing, "a notebook". Dell: "Put it on the fire or put it away. I can't eat with it
+open." Tam chooses: on the fire (`notebook_burned`; from then the List lives on June's arm, and with no
+guest inside and the sites not holding the ending is Unlisted), or keep it and say the whole chain back
+a third time, the notebook included. If the spare sheet was filled at Foil Supper (`seat_fed`), the
+seat's third turn is slower and its words stay in the air. The notebook was "never threatened" in this
+design until now; the author accepted the change (sections 5, 12, 14 are updated).
+
+*The endings.* Unlisted (priority 2) and the added cost of every other ending: section 13,
+`data/endings.json` (`cost`), the scene `past_the_window` (3D, at the other entrance; in
+`assets/assets.json`, the location's build file and `storyboard_additions.md`).
+
+*The long puzzle pays off.* The List is gathered across four modes (section 12, "Where each item is
+had") and is always one button away in every mode (L): the notebook's List page, or June's forearm once
+the notebook is burned. At the end of the pattern walk, with all nineteen and the first page read, the
+booth is ahead and Tam says the List last thing first, nineteen to one, with two looks at the page and
+three breaths for slips (`list_said`). The result shows the earned ending's generated card under its
+code-drawn lettering: Unlisted if the notebook was burned, Slipped Through if it was kept. The menu's
+finale shows the same. Short of a piece, the result names what is missing and where it is had.
+
+*Mode rules built now.* Torchlight loop: the teach stage is the whole of the walk to the payphone,
+posts 11 to 4, and a tick writes what stood at the post (the List, 4 to 11); **the flash** (Inés's
+camera, C: three a run, holds the nearest post three seconds); **the short road** (the carrying run's HUD
+prints the loop 35 m shorter for every site that goes; the pencil strip keeps the true length). Pack
+List: June's arm also gives items 1 to 3 (what channel two said before anyone sat down).
+
+*The second playthrough.* A run is finished when the List is said; `runs` counts them, and "Begin again"
+on the ending card clears the run's pieces and starts every mode at its first stage. On a later run:
+
+| Mode | What a returning player sees |
+| --- | --- |
+| The Ranger's Book, book 1 | The logbook already lies open on the counter at its pencil front page, and Marisol's first line ("Yesterday's. It's never been wrong before.") is said the way Tam would say it. Abel is at the window, and a choice a first run never offers: introduce him to Marisol (`introduced`), which gives them a day and a half |
+| Reconcile, sheet 1 | Under the map lens the logbook's front page reads upside down: Sites, a party of five at 20 to 24, no check-out |
+| Pack List, night 1 | June turns the walkie down before she starts ("It knows this one. It played last time."), and channel two says every word half a second early from the first lap |
+| Torchlight loop, teach | The walkie's first line comes over channel two a half-second before Rafe says it: the helper is trusted less |
+
+A first run shows none of these.
+
+*Art.* Ending-card lettering for all six endings (`ending-lettering-*`), June's forearm with the List
+in biro (`june-arm-list`), the notebook on the fire (`notebook-on-fire`), and the second run's document,
+the front page upside down under the lens (`lens-front-page`): `art/src/95_phase3.py`.
+
+**Still not built.**
+
+- Every 3D scene, `past_the_window` included, is a design, an asset list and a Blender build file;
+  none is built in Blender.
+- The deep dive's generated portraits (ten, in pencil), Ruth's dish, the tin, the jar, the grey apples,
+  the sixth sleeping bag, and the six Blender stills are not made. The six ending cards are made
+  (`keyart/`); the web modes draw code art where a portrait would go.
+- Counted in (the pattern walk), carbons (The Ranger's Book), creases (Reconcile) and "read it to me"
+  (Foil Supper) are accepted rules with no build: phase 3 did not need them.
+- In the web build the ending is chosen by the notebook alone (burned: Unlisted; kept: Slipped
+  Through). The other four endings depend on 3D choices (dusk, the slots, the second fire) that the web
+  modes do not play.
 
 ## 21. Added for the game
 
@@ -1468,3 +1575,12 @@ Everything below is not in the author's text and is offered for approval or stri
 | Added 2026-11-16, for approval: the ten rows of Marisol's first page used in Reconcile 3 (a footbridge, a flagpole, a pump, a stone oven and the rest), and row 12 of Tam's page written wrong as "three slept here" | `reconcile.js`, `pattern-walk.js` |
 | Added 2026-11-16, for approval: Pack List's second and third rounds (Dell's "a heron sign" and Inés's "Puddle the bicycle" as the backwards lap's phantoms; the seat adding the tall cedar and the owl box; Dell's "I'm not playing against a chair."); the coal-zone rule (sausage hot or middle, lentil cake cool or middle, the middle takes two); every new line of dialogue and notebook text in the six modules. None of it is the author's | `web/games/missing-campsites/` |
 | Added 2026-11-16, for approval: Abel's line at the dusk choice, "I was one of five once. I'd like to be one of six." | Section 8 |
+| **Accepted 2026-11-15, built 2026-11-16 (phase 3):** the seat's twentieth item, "a notebook", Dell's line ("Put it on the fire or put it away. I can't eat with it open."), the choice to burn the notebook, and the flag `notebook_burned` | Sections 5, 12, 13, 20a; `data/flags.json`, `pack-list.js` |
+| Accepted 2026-11-15, built 2026-11-16: the ending Unlisted, its condition (`notebook_burned`, no guest, the sites not holding) and priority 2, its cost, and the scene `past_the_window` | Section 13; `data/endings.json`, `data/scenes.json`, the other entrance's build file |
+| Accepted 2026-11-15, built 2026-11-16: the added cost in the five existing endings (`cost` in `data/endings.json`) | Section 13 |
+| Accepted 2026-11-15, built 2026-11-16: the window at the end of the walk (the List said nineteen to one, `list_said`), and the menu's finale | Sections 12, 20a; `pattern-walk.js`, `loading.js` |
+| Accepted 2026-11-15, built 2026-11-16: the flash and the short road (Torchlight loop); `seat_fed` read by the seat's last turn | Section 20a |
+| Accepted 2026-11-15, built 2026-11-16: the second-run details (the logbook open at its front page, the lens reading it upside down, Abel and Marisol introduced on day 1, channel two from the first lap, the walkie trusted less) and the flag `runs` in the web build | Section 20a |
+| **Added 2026-11-16, not in the deep dive, for approval or striking:** where the List's items come from (1 to 3 at June's wrist, written off channel two before anyone sat down; 4 to 11 from ticks on the walk to the payphone); the walk to the payphone lengthened to posts 11 to 4; the window's two looks and three breaths; Unlisted's priority above Nothing Missing and its two exclusions; Marisol's line said "the way Tam would say it" on a second run; every new line of dialogue and notebook text in the web modules and the finale's two texts. None of it is the author's | Sections 12, 13, 20a; `web/games/missing-campsites/` |
+| **Placeholders for the author to name:** thirteen of the List's nineteen items were never named by the deep dive and stand in for camp things the author has not chosen: 1 a washing line, 2 a camp chair, 3 a hammock, 4 a dog's bowl, 6 a fishing rod, 8 a kite, 10 a guitar, 11 a paddle, 13 a windbreak, 14 a red wagon, 15 a radio, 18 a tyre swing, 19 a lantern on a pole | Section 12; `art/src/60_tiles.py`, `web/games/missing-campsites/kit.js` |
+| Added 2026-11-16, art: ending-card lettering for the six endings, June's forearm with the List, the notebook on the fire, the front page through the lens | `art/src/95_phase3.py` |

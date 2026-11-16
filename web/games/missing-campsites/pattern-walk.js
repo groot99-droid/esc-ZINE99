@@ -40,7 +40,19 @@
 // a right row loses a decoy, a wrong row stands built as written), and "pattern_key", the counts
 // matched to trees in The Ranger's Book's twist (one more Count, from the first junction).
 
-import { pic, chapterCard, resultCard, LIST, listId, ladder, stageTabs, linkNote, sharedList } from "./kit.js";
+//
+// Phase 3 (2026-11-16, DESIGN.md section 20a): the long puzzle pays off here.
+//   The window  after glyph 12, if the List is whole (all nineteen, gathered across the modes) and its
+//               order is known (the first page, read in The Ranger's Book), the booth is ahead: say the
+//               List last thing first, nineteen to one (kit.recital). From the notebook's List page, or,
+//               if the notebook went on the fire at Pack List, from June's arm. Solved, it sets
+//               api.shared "list_said", records the run ("runs", "last_ending") and shows the ending's
+//               generated card behind the result: Slipped Through (the notebook kept: Tam says the line
+//               and rules the first column) or Unlisted (the notebook burned: nobody can say it). Not
+//               whole yet, the result says which pieces are missing and where they are found.
+//   The List    always one button away (L).
+
+import { pic, chapterCard, resultCard, LIST, listId, ladder, stageTabs, linkNote, sharedList, listButton, recital, endingCard, burned, beginAgain, FINALE } from "./kit.js";
 
 const NS = "http://www.w3.org/2000/svg";
 const INK = "#111", PEARL = "#ecebe6", GREEN = "#2e6a5c", DEEP = "#0f3a33";
@@ -179,6 +191,7 @@ function mountStage(root, api, stage) {
     const sure = (api.shared && api.shared.get("sure", {})) || {};
     const keyed = !!(api.shared && api.shared.get("pattern_key", false));
     const shList = sharedList(api);
+    let listB = null, rc = null;
     const ROWS = CFG.rows.map((n) => {
       const r = { ...ALL_ROWS.find((x) => x.n === n) }, s = sure[n];
       if (s && s.right) { r.sure = "right"; if (r.written) { r.text = r.right; delete r.written; } }
@@ -218,6 +231,7 @@ function mountStage(root, api, stage) {
     const svg = wrap.querySelector("svg");
     const flash = $(`.${P}flash`), rowsEl = $(".rows"), driftEl = $(`.${P}drift`), voice = $(`.${P}voice`);
     const askBtn = $(".ask"), cntBtn = $(".cnt");
+    listB = listButton($(`.${P}field`), api, { where: "left:10px;bottom:10px" });
     const art = api.art;
     chapterCard(art, "chapter-7", $(`.${P}card`));
     // ---- the List strip: 19 down to 12; four tiles held, the rest given up by the glyphs as Tam passes ----
@@ -523,7 +537,7 @@ function mountStage(root, api, stage) {
           hereSpec = c.spec; hereLabel = String(ROWS[j].n);
           const n = ROWS[j].n;                         // the glyph gives its item up to the List
           if (!held.has(n)) { tiles[n].dataset.walked = "1"; fillTile(n); if (!humming) speak(TEXT.gave(n, LIST[n])); }
-          shList.add(n);
+          shList.add(n); if (listB) listB.refresh();
           j++;
           if (j >= ROWS.length) return finish();
           timers.push(setTimeout(layout, api.reducedMotion ? 0 : 520));
@@ -555,11 +569,49 @@ function mountStage(root, api, stage) {
       api.store.set("losses", lose ? losses + 1 : 0);
       paintList();
       if (api.shared) api.shared.set("drift", drift);
+      if (stage === 3 && !lose) { atWindow(); return; }
       resultCard(wrap, art, { cards: [stage === 3 ? "thread-own" : stage === 2 ? "glyph-whole" : "sapling-wheel"], lost: lose ? 5 : Math.min(4, drift), reducedMotion: api.reducedMotion });
       if (lose) api.end({ outcome: "lose", text: TEXT.end.lose(drift, ROWS[Math.min(j, ROWS.length - 1)].n) });
       else if (stage === 1) api.end({ outcome: "win", text: TEXT.end1(drift), next: "Four glyphs at a junction, and the List to say." });
       else if (stage === 2) api.end({ outcome: "win", text: TEXT.end2(drift), next: "The place has read your notebook." });
       else api.end({ outcome: "win", text: drift <= 1 ? TEXT.end.clean(drift) : TEXT.end.win(drift) });
+    }
+
+    // ---- phase 3: the window, where the List is said ----
+    const WHERE = (n) => (n <= 3 ? "June's arm, in Pack List's backwards lap" : n === 5 || n === 7 ? "Pack List" : n >= 12 ? "the glyphs of this walk" : "ticks on the walk to the payphone, in the Torchlight loop");
+    function atWindow() {
+      const lead = drift <= 1 ? TEXT.end.clean(drift) : TEXT.end.win(drift);
+      const have = shList.read(), fp = !!(api.shared && api.shared.get("first_page_read", false));
+      if (have.size < 19 || !fp) {
+        const miss = [];
+        for (let n = 1; n <= 19; n++) if (!have.has(n)) miss.push(n);
+        const by = {};
+        miss.forEach((n) => { const w = WHERE(n); (by[w] ||= []).push(n); });
+        const parts = Object.entries(by).map(([w, ns]) => `${ns.join(", ")} (${w})`);
+        resultCard(wrap, art, { cards: ["thread-own"], lost: Math.min(4, drift), caption: `The List: ${have.size} of 19.`, reducedMotion: api.reducedMotion });
+        api.end({ outcome: "win", text: `${lead} Ahead, a booth window, lit. To walk the rest you would have to say the List, last thing first, and you cannot yet.${miss.length ? ` Missing: ${parts.join("; ")}.` : ""}${fp ? "" : " And you do not know their order: that is on the first page of Marisol's book, in The Ranger's Book."}` });
+        return;
+      }
+      speak(burned(api) ? "June pushes her sleeve up. The booth is ahead, lit." : "Your notebook is open at the List. The booth is ahead, lit.");
+      rc = recital(wrap, api, {
+        rng,
+        onWin() {
+          rc = null;
+          const id = burned(api) ? "unlisted" : "slipped_through", F = FINALE[id];
+          if (api.shared) {
+            api.shared.set("list_said", true); api.shared.set("last_ending", id);
+            api.shared.set("runs", (+api.shared.get("runs", 0) || 0) + 1);
+          }
+          endingCard(wrap, api, { keyart: F.keyart, lettering: F.lettering, caption: F.text,
+            again() { beginAgain(api); location.hash = api.game; } });
+          api.end({ outcome: "win", text: `${F.title}. The List is said, nineteen to one.` });
+        },
+        onLose() {
+          rc = null;
+          resultCard(wrap, art, { cards: ["thread-own"], lost: 5, reducedMotion: api.reducedMotion });
+          api.end({ outcome: "lose", text: "You lose the List in the middle, three times. By the time you find it again the car is at the window, and the passengers have taken a map from the rack themselves." });
+        },
+      });
     }
 
     const kd = (e) => {
@@ -591,6 +643,8 @@ function mountStage(root, api, stage) {
         cancelAnimationFrame(raf);
         timers.forEach(clearTimeout);
         window.removeEventListener("keydown", kd);
+        if (listB) listB.destroy();
+        if (rc) rc.destroy();
       },
     };
   }

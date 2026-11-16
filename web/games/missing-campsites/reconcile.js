@@ -44,7 +44,15 @@
 //            row 21 one sentence in two hands.
 // Link read here: "first_page_read" (The Ranger's Book's twist) marks the rows of hers that Tam ringed.
 
-import { pic, chapterCard, resultCard, ladder, stageTabs, linkNote } from "./kit.js";
+//
+// Phase 3 (2026-11-16, DESIGN.md section 20a):
+//   The List   one button away (L).
+//   Burned     if the notebook went on the fire at Pack List, sheet 3 says so: the rows are the ones June
+//              copied onto her arm and the back of the map.
+//   Second run (api.shared "runs" > 0): on sheet 1 the booth's logbook lies open on the counter, and the
+//              map lens reads its front page upside down: Sites, a party of five at 20 to 24, no check-out.
+
+import { pic, chapterCard, resultCard, ladder, stageTabs, linkNote, listButton, runsDone, burned } from "./kit.js";
 
 const NAMES = ["Three rows", "Three ways wrong", "Her page"];
 // Marisol's first page, rows 12 to 21: her campground, eleven summers ago. `spec` is how a row of hers
@@ -198,6 +206,8 @@ const CSS = `
 .${P}fc button.on{outline:3px solid ${RED}}
 .${P}fc button:disabled{opacity:.4;cursor:default}
 .${P}say{font-family:Caveat,'Segoe Print',cursive;font-size:21px;line-height:1.15;color:#2a2a2c;border-left:4px solid ${RED};padding:2px 10px;min-height:24px}
+.${P}lens{display:flex;gap:10px;align-items:center;background:#3a3530;color:#efe8d4;padding:8px;font-family:Caveat,'Segoe Print',cursive;font-size:19px;line-height:1.15}
+.${P}lens img{width:92px;height:92px;flex:none}
 .${P}book tr.off td{opacity:.5}
 .${P}book tr.off{cursor:default}
 .${P}book td.h img{width:24px;height:24px;vertical-align:middle;margin-left:4px}
@@ -284,6 +294,14 @@ function mountStage(root, api, stage) {
     $(".sheet").textContent = TEXT.sheet[stage - 1]; $(`.${P}plate .goal`).textContent = TEXT.goal[stage - 1]; $(`.${P}plate .rule`).textContent = TEXT.rule[stage - 1];
     stageTabs(api, $(`.${P}plate>button`));
     if (ringed) linkNote($(`.${P}right`), "Because you read the first page in The Ranger's Book, the rows of hers you ringed there are marked here: not this campground.");
+    if (stage === 3 && burned(api)) linkNote($(`.${P}right`), "Your notebook went on the fire at the second fire. These rows are the ones June copied onto her arm and the back of the map, in biro.");
+    if (stage === 1 && runsDone(api) > 0) {             // the second run: the logbook open on the counter, under the lens
+      const ln = document.createElement("div"); ln.className = P + "lens";
+      const im = pic(api.art, "lens-front-page", "", "The logbook's front page, upside down under the map lens"); if (im) ln.appendChild(im);
+      const t = document.createElement("span"); t.textContent = "The booth's logbook lies open on the counter. Under the map lens its front page reads upside down: Sites, a party of five at 20 to 24, no check-out. Pencil.";
+      ln.appendChild(t); $(`.${P}say`).after(ln);
+    }
+    const listB = listButton(root, api, { where: "right:12px;bottom:12px" });
     const NS = "http://www.w3.org/2000/svg";
     const svg = $(`.${P}map`);
     const mk = (tag, a, parent = svg) => { const n = document.createElementNS(NS, tag); for (const k in a) n.setAttribute(k, a[k]); parent.appendChild(n); return n; };
@@ -684,6 +702,7 @@ function mountStage(root, api, stage) {
         over = true;
         clearInterval(hint);
         window.removeEventListener("keydown", kd); window.removeEventListener("keyup", ku);
+        listB.destroy();
       },
     };
   }

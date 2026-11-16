@@ -6,6 +6,8 @@
 // erasure is never seen happening"), and Tam's pencil writes its number where it stood (rule 6,
 // "the player's own handwriting holds"). At the end only the five sites, 20 to 24, are still printed.
 
+import { FINALE } from "./kit.js";
+
 export const meta = {
   cover: "assets/stills/missing-campsites/01-entrance.jpg",
   // DESIGN.md section 15: night (blue-black field, torch amber), paper (cream stock, graphite,
@@ -153,4 +155,16 @@ export function render(root, ctx) {
       el.remove();
     },
   };
+}
+
+// Phase 3 (2026-11-16): the long puzzle's payoff in the menu. Null until the List has been said at the
+// window (the pattern walk's twist); then the ending that run earned, with its generated card: Unlisted
+// if the notebook went on the fire at Pack List, Slipped Through (the author's ending) if it was kept.
+export function finale({ shared, keyart }) {
+  const id = shared && shared.get("last_ending", null);
+  const F = id && FINALE[id];
+  if (!F) return null;
+  const runs = +shared.get("runs", 0) || 0;
+  const more = runs > 1 ? ` (${runs} runs finished.)` : runs === 1 && !shared.get("list_said", false) ? " A second run has begun: some things are where you left them." : "";
+  return { title: F.title, text: F.text + more, image: keyart(F.keyart) || "" };
 }

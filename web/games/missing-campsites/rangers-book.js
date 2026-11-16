@@ -46,7 +46,15 @@
 //            the glyph that slept that many (api.shared "pattern_key", "first_page_read").
 // The collection thread: on book 3's page lies an envelope stamped HOLD (art "thread-guest").
 
-import { pic, chapterCard, resultCard, ladder, stageTabs } from "./kit.js";
+//
+// Phase 3 (2026-11-16, DESIGN.md section 20a):
+//   The List    one button away (L).
+//   Second run  (api.shared "runs" > 0): the book is already open on the counter at the front when
+//               Marisol slides it over, and her first line reads differently. Abel is at the window
+//               signing in, and a choice is offered that a first run never has: introduce him to her
+//               (api.shared "introduced"), which gives them a day and a half instead of an evening.
+
+import { pic, chapterCard, resultCard, ladder, stageTabs, listButton, runsDone } from "./kit.js";
 
 const NAMES = ["One day", "Two days and a refund", "The first page"];
 
@@ -97,6 +105,10 @@ const TEXT = {
     hold: "An envelope, stamped HOLD, with nothing written where the plate goes. Not one of this drop box's. You leave it where it lies.",
   },
   gentle: "A gentler evening: the booth stays open till 18:00 on a slower clock, and Marisol's hints come sooner.",
+  openAgain: "The logbook is already open on the counter, at the front. Pencil. Marisol closes it before she slides it over, and says it the way you would: \"Yesterday's. It's never been wrong before.\"",
+  abel: "Abel Strand is at the window, signing in, the way he signs every register.",
+  introBtn: "Introduce Abel to Marisol",
+  introduced: "\"Abel, this is Marisol. Marisol, Abel.\" They shake hands like strangers, and both keep looking. A day and a half, now, instead of an evening.",
   open: ["Marisol slides the logbook across the counter. \"Yesterday's. It's never been wrong before.\"", "Marisol turns the page for you. \"Today's. And the drop box, I haven't banked it.\" She tips the envelope stubs onto the counter.", ""],
   firstSum: "The pencil sum sits beside her ink, and they disagree.",
   tilt: "Your torch is on the counter. Hold F to tilt the page under it: lost lines leave grooves.",
@@ -306,6 +318,17 @@ function mountStage(root, api, stage) {
     if (stage === 3) { $(`.${P}lcard table`).remove(); $(`.${P}lcard>button`).textContent = "Look at the front"; }
     if (gentle) { $(".gentle").hidden = false; $(".gentle").textContent = TEXT.gentle; }
     const grid = $(".lg"), msgEl = $(`.${P}msg`);
+    const again = runsDone(api) > 0 && stage === 1;
+    const listB = listButton(root, api, { where: "right:12px;bottom:12px" });
+    let introB = null;
+    if (again) {                                        // the second run: the front page, and a choice a first run never has
+      const fp = pic(api.art, "logbook-first-page", "", "The logbook open at its front page"); if (fp) { fp.style.cssText = "display:block;width:100%;height:auto;margin:0 0 10px;box-shadow:0 0 0 1px rgba(0,0,0,.3)"; $(`.${P}lcard .goal`).before(fp); }
+      if (!(api.shared && api.shared.get("introduced", false))) {
+        introB = document.createElement("button"); introB.type = "button"; introB.textContent = TEXT.introBtn;
+        introB.style.cssText = "font:600 14px 'IBM Plex Mono',monospace;background:#fff;color:#222;border:1.5px solid #4a4a4c;padding:8px 12px;min-height:40px;cursor:pointer;margin:6px 0";
+        introB.addEventListener("click", () => { if (api.shared) api.shared.set("introduced", true); introB.remove(); introB = null; say(TEXT.introduced); });
+      }
+    }
     const art = api.art;
     chapterCard(art, "chapter-3", $(`.${P}lcard`));
     { const tu = pic(art, "time-units", P + "tu", "Time units: four spent"); if (tu) $(`.${P}clock`).before(tu);
@@ -694,7 +717,8 @@ function mountStage(root, api, stage) {
     go.addEventListener("click", () => {
       $(`.${P}intro`).remove();
       if (stage === 3) { firstPage("The totals balance; Marisol has stopped smiling."); return; }
-      running = true; say(TEXT.open[stage - 1]); iv = setInterval(tick, 1000); grid.querySelector("button")?.focus();
+      running = true; say(again ? TEXT.openAgain : TEXT.open[stage - 1]); iv = setInterval(tick, 1000); grid.querySelector("button")?.focus();
+      if (introB) { msgEl.after(introB); timers.push(setTimeout(() => { if (introB && !over) say(TEXT.abel); }, api.reducedMotion ? 800 : 5200)); }
     });
     go.focus();
 
@@ -703,6 +727,7 @@ function mountStage(root, api, stage) {
         over = true; running = false; fpOpen = false; clearInterval(iv);
         timers.forEach(clearTimeout);
         window.removeEventListener("keydown", kd); window.removeEventListener("keyup", ku);
+        listB.destroy();
       },
     };
   }

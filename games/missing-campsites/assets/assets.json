@@ -226,14 +226,15 @@
       "id": "other-entrance",
       "name": "The other entrance",
       "scenes": [
-        "other_entrance"
+        "other_entrance",
+        "past_the_window"
       ],
       "dimensions_m": [
         60,
         40,
         8
       ],
-      "lighting": "No sun; pearl light, no shadows; a car's headlights are the only warm light.",
+      "lighting": "No sun; pearl light, no shadows; a car's headlights are the only warm light. Unlisted (past_the_window): the same pearl light; the booth window lit amber from inside with nobody in it; the car's headlights pass it.",
       "objects": [
         "heron-sign",
         "site-post"

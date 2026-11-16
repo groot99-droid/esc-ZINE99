@@ -82,7 +82,7 @@
     {
       "id": "ending-unlisted",
       "kind": "ending",
-      "ending": "Unlisted (proposed in DEEP_DIVE.md section 2; not yet in data/endings.json)",
+      "ending": "unlisted",
       "title": "Unlisted",
       "aspect_ratio": "16:9",
       "model": "soul_cinematic",

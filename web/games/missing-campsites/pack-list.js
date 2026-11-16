@@ -43,8 +43,21 @@
 //            never said (the tall cedar, then the owl box). It plays to win. The move the first two
 //            rounds taught, "Nobody said that", is now the wrong one: it was said, and challenging it
 //            puts Tam out. Say it back, twice, and Dell goes out, not cheerfully.
+//
+// Phase 3 (2026-11-16, DESIGN.md section 20a): the price.
+//   June's arm  in the backwards lap, reading her arm (J) also shows three things at her wrist in a
+//               different biro, written before anyone sat down: what channel two said first. Items 1,
+//               2 and 3 of the List (a washing line, a camp chair, a hammock).
+//   The seat    after its owl box it takes a third turn, says everything without a slip, and adds a
+//               twentieth thing: "a notebook". Dell: "Put it on the fire or put it away." Tam chooses:
+//               put the notebook on the fire (api.shared "notebook_burned": the List now lives on June's
+//               arm, and the ending is Unlisted's if no guest sleeps inside), or keep it and say the
+//               whole chain back a third time, the notebook included. If the spare sheet was filled at
+//               Foil Supper (api.shared "seat_fed"), the seat's turn is slower and its words stay.
+//   Second run  (api.shared "runs" > 0): channel two is on from the first lap of night 1, and June
+//               turns the walkie down before she starts.
 
-import { pic, chapterCard, resultCard, listPage, LIST, listId, ladder, stageTabs, sharedList } from "./kit.js";
+import { pic, chapterCard, resultCard, listPage, LIST, listId, ladder, stageTabs, sharedList, runsDone, burned } from "./kit.js";
 
 const NAMES = ["The chain", "Backwards", "The empty seat"];
 
@@ -101,6 +114,16 @@ const TEXT = {
   backDone: "June, grinning: \"See? You can walk it either way.\"",
   listUnlock: "A new page in your notebook, after Tally: the List. (L: open it.)",
   listNote: "Things nobody packed, in the order they were said.",
+  wrist: "At her wrist, in a different biro, three more, written before anyone sat down: a washing line, a camp chair, a hammock. \"Channel two said those first.\"",
+  wristNote: "The List, 1 to 3: a washing line, a camp chair, a hammock. Nobody at this fire said them. June wrote them down off channel two.",
+  seatAdds3: "All of it, without a slip, fast. Then a twentieth thing, one nobody at the fire has ever said: \"…and a notebook.\"",
+  seatAdds3fed: "All of it, slower this time, as if it had eaten, and the words stay in the air. Then a twentieth thing: \"…and a notebook.\"",
+  dellFire: "Dell, not looking at you: \"Put it on the fire or put it away. I can't eat with it open.\"",
+  burnBtn: "Put the notebook on the fire",
+  keepBtn: "Keep it. Say it back",
+  burnt: "You put it on the coals open, the List page up. It takes a long time to catch. Nobody stops you. June pulls her sleeve down over her arm and then, after a while, pushes it back up.",
+  keepTurn: "You close the notebook on your knee and keep your hand on it. Your turn. All of it, the notebook too.",
+  again: "June turns the walkie down before she starts. \"It knows this one,\" she says, to nobody. \"It played last time.\"",
   notebookUnlock: "Your notebook is open on your knee. You've been writing down what each of them added, without meaning to. (B: check it, once.)",
 
   challengeUnlock: "If you heard something nobody added, say so: Nobody said that (N), then tap it.",
@@ -115,6 +138,8 @@ const TEXT = {
   addNow: "Now add something of yours.",
   end: {
     t2: (got, w) => `June is out, laughing, and the backwards lap is yours. ${got === 2 ? "You caught both: the sign is a line in your notebook, and Puddle is on the List." : got === 1 ? "You caught one of the two things nobody packed. The other is packed now." : "Two things went round that nobody packed, and now they are packed."} Warmth ${w}.`,
+    t3burn: (w) => `The notebook burned, and the seat nobody filled did not take another turn. The tall cedar and the owl box, and everything else on the List, are on June's arm now and nowhere else. Agnes's lines went on the fire with the rest. Warmth ${w}.`,
+    t3keep: (w) => `Dell is out, and not laughing. You said all of it back, the notebook too, and you still have it. It is the twentieth thing on somebody's list now. Warmth ${w}.`,
     t3: (w) => `Dell is out, and not laughing. The seat nobody filled said every item and never slipped, and so did you. The tall cedar and the owl box were on your Sites page; they are on the List now too, and you did not put them there. Warmth ${w}.`,
     seatLose: (w) => `You said nobody said "${w}". Everybody heard it said. The seat nobody filled is still in the round, and you are not.`,
     win: (w) => `June is out, laughing, and the round is yours. You caught the kettle; the line is in your notebook, in your hand. Warmth ${w}.`,
@@ -233,15 +258,18 @@ function mountStage(root, api, stage) {
     const FACE = { June: "outline-june", Dell: "outline-dell", Rafe: "outline-rafe", "Inés": "outline-ines", Abel: "outline-abel", Tam: "item-notebook" };
     const shList = sharedList(api);
     const found = shList.read();
-    const list = listPage(wrap, art, { note: TEXT.listNote });
+    const again = runsDone(api) > 0, fed = !!(api.shared && api.shared.get("seat_fed", false));
+    if (art && art.has && art.has("item-notebook")) TILE["a notebook"] = "item-notebook";
+    const list = listPage(wrap, art, { note: TEXT.listNote, arm: burned(api) });
     list.set(found);
     listBtn.addEventListener("click", () => list.toggle());
-    if (found.size) listBtn.hidden = false;
+    listBtn.hidden = false;                             // phase 3: the List is always one button away
     holdBox.checked = gentle;
     const timers = [];
     const later = (fn, ms) => { const t = setTimeout(fn, api.reducedMotion ? Math.min(ms, 400) : ms); timers.push(t); return t; };
     let over = false, chain = CFG.chain.slice(), warmth = 4, mistakes = 0, nbLeft = 1, nbShowing = false;
     let turn = null;
+    const fedHold = stage === 3 && fed;                // the seat, fed at supper, speaks slower and its words stay
 
     // ---- the fire and the seats, in crayon ----
     const NS = "http://www.w3.org/2000/svg";
@@ -286,7 +314,7 @@ function mountStage(root, api, stage) {
       s.textContent = word;
       s.style.color = who.color;
       words.appendChild(s);
-      if (!holdBox.checked) later(() => s.classList.add("fade"), stay);
+      if (!holdBox.checked && !(fedHold && who.empty)) later(() => s.classList.add("fade"), stay);
       if (words.children.length > 14) words.firstChild.remove();
       return s;
     }
@@ -452,6 +480,19 @@ function mountStage(root, api, stage) {
       words.innerHTML = ""; words.classList.add(CFG.peek === "arm" ? "arm" : "nb");
       chain.forEach((w, k) => { const sp = document.createElement("span"); sp.textContent = `${k + 1}. ${w}${seatItems.has(w) ? " (your hand, yesterday)" : ""}`; words.appendChild(sp); });
       say(CFG.peek === "arm" ? TEXT.armShow : seatItems.size ? TEXT.notebookSeat : TEXT.notebookShow);
+      if (CFG.peek === "arm") {                          // phase 3: what channel two said first, at her wrist
+        for (const n of [3, 2, 1]) { const sp = document.createElement("span"); sp.textContent = `${n}. ${LIST[n]}`; sp.style.color = "#5a2fa0"; words.appendChild(sp); }
+        later(() => {
+          if (over) return;
+          say(TEXT.wrist);
+          for (const n of [1, 2, 3]) { found.add(n); shList.add(n); }
+          list.set(found, 1);
+          noteEl.hidden = false; noteEl.textContent = "";
+          const lt = pic(art, listId(1), "", "The List, 1"); if (lt) noteEl.appendChild(lt);
+          const sp = document.createElement("span"); sp.textContent = TEXT.wristNote; noteEl.appendChild(sp);
+          if (listBtn.hidden) listBtn.hidden = false;
+        }, 2200);
+      }
       later(() => { words.classList.remove("nb", "arm"); words.innerHTML = ""; keep.forEach((n) => words.appendChild(n)); nbShowing = false; }, 5000);
     }
     noBtn.addEventListener("click", challenge);
@@ -468,6 +509,26 @@ function mountStage(root, api, stage) {
     window.addEventListener("keydown", kd);
 
     // ---- the three rounds ----
+    // Phase 3: the seat's twentieth item, and the choice by the fire.
+    function fireChoice(done) {
+      light(null); say(TEXT.dellFire);
+      tray.innerHTML = "";
+      const mk = (label, cls, fn) => { const b = document.createElement("button"); b.type = "button"; b.className = P + "tile " + P + cls; b.textContent = label; b.addEventListener("click", fn); tray.appendChild(b); return b; };
+      const im = pic(art, "notebook-on-fire", "", "");
+      const bb = mk(TEXT.burnBtn, "burn", () => {
+        if (over) return;
+        fire = "burn"; if (api.shared) api.shared.set("notebook_burned", true);
+        tray.innerHTML = ""; say(TEXT.burnt);
+        noteEl.hidden = false; noteEl.textContent = ""; const fi = pic(art, "notebook-on-fire", "", "The notebook on the fire"); if (fi) noteEl.appendChild(fi);
+        const sp = document.createElement("span"); sp.textContent = "The List: on June's arm, and nowhere else."; noteEl.appendChild(sp);
+        later(() => { roundOver(); }, 3600);
+      });
+      if (im) { bb.classList.add("art"); bb.prepend(im); }
+      mk(TEXT.keepBtn, "keep", () => { if (over) return; fire = "keep"; tray.innerHTML = ""; later(done, 300); });
+      tray.querySelector("button").focus();
+    }
+    let fire = "";
+
     function roundOver() {
       over = true;
       if (!mistakes) warmth += 1;
@@ -484,22 +545,26 @@ function mountStage(root, api, stage) {
       } else {
         for (const n of [16, 7]) { found.add(n); shList.add(n); }
         list.set(found, 16);
-        text = E.t3(w);
+        text = fire === "burn" ? E.t3burn(w) : fire === "keep" ? E.t3keep(w) : E.t3(w);
+        if (fire === "burn") how = "burn";
       }
       later(() => { showResult(how); api.end({ outcome, text, advance: true, next: stage === 1 ? "June's house rule: the second lap goes backwards." : "Night 2. Seven seats, and one of them is empty." }); }, 1800);
     }
     const J = seat("June"), D = seat("Dell"), R = seat("Rafe"), I = seat("Inés"), A = seat("Abel"), S = seat("—");
     const SCRIPT = {
-      1: [(n) => recite(J, { add: "a tarp" }, n), (n) => recite(D, { add: "marshmallows" }, n), (n) => recite(R, { slip: phantoms[0], add: "rope" }, n),
-        (n) => recite(I, { add: "a tin cup" }, n), (n) => tamTurn({ pack: TAM_PACK[0] }, n), (n) => recite(J, { stopAt: 3, outLine: TEXT.juneOut }, n)],
+      1: [(n) => recite(J, { add: "a tarp", voice: again }, n), (n) => recite(D, { add: "marshmallows", voice: again }, n), (n) => recite(R, { slip: phantoms[0], add: "rope", voice: again }, n),
+        (n) => recite(I, { add: "a tin cup", voice: again }, n), (n) => tamTurn({ pack: TAM_PACK[0] }, n), (n) => recite(J, { stopAt: 3, outLine: TEXT.juneOut }, n)],
       2: [(n) => { say(TEXT.lap1); later(n, 2200); }, (n) => recite(J, { back: true, voice: true, add: "tent pegs", then: TEXT.voice }, n),
         (n) => recite(D, { back: true, slip: phantoms[0], add: "foil" }, n), (n) => recite(I, { back: true, slip: phantoms[1], add: "a sun hat" }, n),
         (n) => tamTurn({ back: true, pack: TAM_PACK[1] }, n), (n) => recite(J, { stopAt: 5, outLine: TEXT.juneOut }, n)],
       3: [(n) => recite(J, { add: "tent pegs" }, n), (n) => recite(A, { add: "Nell's telephone number", addLine: TEXT.abelAdds }, n),
         (n) => recite(S, { nobody: true, add: "the tall cedar", addLine: TEXT.seatAdds }, n), (n) => tamTurn({ pack: TAM_PACK[0], line: TEXT.seatYourTurn }, n),
         (n) => recite(S, { nobody: true, fast: true, add: "the owl box", addLine: TEXT.seatAdds2 }, n), (n) => tamTurn({ pack: TAM_PACK[1], line: TEXT.seatYourTurn2 }, n),
+        (n) => recite(S, { nobody: true, fast: !fed, add: "a notebook", addLine: fed ? TEXT.seatAdds3fed : TEXT.seatAdds3 }, n),
+        (n) => fireChoice(n), (n) => tamTurn({ pack: ["a pocket knife", "a blanket"], line: TEXT.keepTurn }, n),
         (n) => recite(D, { stopAt: 4, outLine: TEXT.dellOut }, n)],
     }[stage];
+    if (stage === 1 && again) { SCRIPT[0] = ((f) => (n) => { say(TEXT.again); later(() => f(n), 2600); })(SCRIPT[0]); }
     function run(k) {
       if (over) return;
       if (k >= SCRIPT.length) { roundOver(); return; }
@@ -511,11 +576,11 @@ function mountStage(root, api, stage) {
       list.close();
       const night = stage === 3 ? "night-2" : "night-1";
       const got = phantoms.find((x) => x.caught && x.list);
-      const first = stage === 3 && how !== "lose" ? "list-16" : got ? listId(got.list) : how === "lose" ? night : stage === 1 ? "item-kettle" : "item-puddle";
+      const first = how === "burn" ? "notebook-on-fire" : stage === 3 && how !== "lose" ? "list-16" : got ? listId(got.list) : how === "lose" ? night : stage === 1 ? "item-kettle" : "item-puddle";
       resultCard(wrap, art, {
         cards: [first, night].filter((v, i, a) => a.indexOf(v) === i),
-        lost: { win: 0, missed: 1, accepted: 2, lose: 3 }[how],
-        caption: stage === 3 && how !== "lose" ? `The List, 16 and 7: ${LIST[16]}, ${LIST[7]}.` : got ? `The List, ${got.list}: ${LIST[got.list]}.` : "", reducedMotion: api.reducedMotion,
+        lost: { win: 0, missed: 1, accepted: 2, lose: 3, burn: 5 }[how],
+        caption: how === "burn" ? "The notebook, on the fire. The List is on June's arm." : stage === 3 && how !== "lose" ? `The List, 16 and 7: ${LIST[16]}, ${LIST[7]}.` : got ? `The List, ${got.list}: ${LIST[got.list]}.` : "", reducedMotion: api.reducedMotion,
       });
     }
 

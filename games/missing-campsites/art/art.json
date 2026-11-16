@@ -1,7 +1,55 @@
 {
  "game": "missing-campsites",
- "count": 162,
+ "count": 171,
  "assets": [
+  {
+   "id": "ending-lettering-brought-along",
+   "group": "title",
+   "title": "Ending lettering: Brought Along",
+   "w": 1600,
+   "h": 320,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-lettering-held",
+   "group": "title",
+   "title": "Ending lettering: Held",
+   "w": 1600,
+   "h": 320,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-lettering-nothing-missing",
+   "group": "title",
+   "title": "Ending lettering: Nothing Missing",
+   "w": 1600,
+   "h": 320,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-lettering-one-who-left",
+   "group": "title",
+   "title": "Ending lettering: The One Who Left",
+   "w": 1600,
+   "h": 320,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-lettering-slipped-through",
+   "group": "title",
+   "title": "Ending lettering: Slipped Through",
+   "w": 1600,
+   "h": 320,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-lettering-unlisted",
+   "group": "title",
+   "title": "Ending lettering: Unlisted",
+   "w": 1600,
+   "h": 320,
+   "row": "Ending cards"
+  },
   {
    "id": "title-gone",
    "group": "title",
@@ -907,6 +955,14 @@
    "row": "Item tiles (36) and List tiles (19)"
   },
   {
+   "id": "notebook-on-fire",
+   "group": "pieces",
+   "title": "The notebook on the fire",
+   "w": 480,
+   "h": 480,
+   "row": "Phase 3: the notebook on the fire"
+  },
+  {
    "id": "chapter-1",
    "group": "chapters",
    "title": "Chapter 1: Hollin Creek",
@@ -1073,6 +1129,22 @@
    "w": 400,
    "h": 400,
    "row": "UI ornaments: stamps, tick, compass rose, slot chalk, seam notch, tabs, walkie dial"
+  },
+  {
+   "id": "june-arm-list",
+   "group": "documents",
+   "title": "June's forearm: the List in biro",
+   "w": 1200,
+   "h": 520,
+   "row": "Phase 3: June's arm"
+  },
+  {
+   "id": "lens-front-page",
+   "group": "documents",
+   "title": "The logbook's front page through the map lens, upside down",
+   "w": 600,
+   "h": 600,
+   "row": "Phase 3: second-run documents"
   },
   {
    "id": "logbook-1",

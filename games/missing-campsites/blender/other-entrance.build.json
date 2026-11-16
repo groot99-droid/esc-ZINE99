@@ -722,6 +722,136 @@
           "verb": "Wait for the car"
         }
       ]
+    },
+    "past_the_window": {
+      "note": "Unlisted. The same booth, its window lit amber from inside with nobody in it. The notebook went on the second fire, so nobody can say the line: the car's headlights pass the window and the five walk on past it, together, up the road into a world that is not theirs. No one is kept.",
+      "world": {
+        "color": [
+          0.88,
+          0.86,
+          0.86
+        ],
+        "strength": 0.9
+      },
+      "lights": [
+        {
+          "name": "pearl-dome",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            30
+          ],
+          "energy": 5000,
+          "size": 80,
+          "color": [
+            0.95,
+            0.96,
+            0.94
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "headlight-l",
+          "type": "SPOT",
+          "location": [
+            -10.4,
+            13.8,
+            0.8
+          ],
+          "energy": 300,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.85,
+            0.6
+          ],
+          "look_at": [
+            -4,
+            -6,
+            0.5
+          ]
+        },
+        {
+          "name": "headlight-r",
+          "type": "SPOT",
+          "location": [
+            -11.8,
+            14.2,
+            0.8
+          ],
+          "energy": 300,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.85,
+            0.6
+          ],
+          "look_at": [
+            -5,
+            -6,
+            0.5
+          ]
+        },
+        {
+          "name": "window-glow",
+          "type": "AREA",
+          "location": [
+            5.0,
+            -4.6,
+            1.6
+          ],
+          "energy": 60,
+          "size": 1.2,
+          "color": [
+            1.0,
+            0.72,
+            0.36
+          ],
+          "look_at": [
+            5.0,
+            -8.0,
+            1.2
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -2.5,
+          -9.0,
+          1.7
+        ],
+        "look_at": [
+          -8,
+          12,
+          1.4
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -3.5,
+          -6.0,
+          0.15
+        ],
+        "facing_deg": -20
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "map-1",
+          "verb": "Look at the maps in the rack: nobody to hand one to"
+        },
+        {
+          "prop": "post-24",
+          "verb": "Walk past the window, up the road"
+        }
+      ]
     }
   }
 }

@@ -345,6 +345,24 @@
       "type": "bool",
       "default": false,
       "description": "On Torchlight loop 3, past post 24, Tam switched the torch off and saw one lit window where there is no ground."
+    },
+    {
+      "name": "notebook_burned",
+      "type": "bool",
+      "default": false,
+      "description": "At Pack List 2, by the second fire, the seat nobody filled said the List and added a twentieth item, \"a notebook\", and Tam put the notebook on the fire. Every pencil line goes with it; June's arm is the only copy of the List left. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "seat_fed",
+      "type": "bool",
+      "default": false,
+      "description": "Tam filled the spare sheet at Foil Supper (one sheet too many). The seat nobody filled takes its next turn slower, and its words stay in the air longer."
+    },
+    {
+      "name": "list_said",
+      "type": "bool",
+      "default": false,
+      "description": "The long puzzle solved: on the walk out Tam said the whole List, nineteen to one, last thing first, from the List page, or from June's arm if the notebook was burned (the pattern walk's window)."
     }
   ]
 }
