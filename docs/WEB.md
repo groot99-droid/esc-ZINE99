@@ -58,6 +58,12 @@ and keyboard, opens with a short how-to-play, ends with a win or a loss, and res
 SVG text, for inlining), `art.url(id)` (a blob URL for `<img>` or a CSS background) and `art.img(id)` (a
 promise of a decoded image, for canvas). Unknown ids give `""` or `null`; a mode must still run then.
 
+`api.shared.get/set` is storage shared by all of one game's modes (use it for layer links: something done in
+one mode changes another); `api.store` stays per mode. `api.keyart(id)` gives the path of a generated key-art
+image or ending card (`games/<slug>/keyart/`, ids as in `keyart.json`), or `""`. `api.thread.found()` records
+that the player found the object this game hides for the collection thread, and `api.thread.isFound()` reads
+it; the hub shows the ten threads and, when all are found, the eleventh page (`docs/DEEP_DIVE.md` section 4).
+
 No network requests and no libraries; Google Fonts only through `meta.fonts`. Styles are scoped by a
 class prefix so modes cannot collide.
 

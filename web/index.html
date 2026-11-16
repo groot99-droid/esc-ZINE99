@@ -65,6 +65,17 @@ a { color: inherit; }
 .loader { position: absolute; inset: 0; }
 .err { padding: 24px; font-family: var(--mono); }
 @media (prefers-reduced-motion: reduce) { .cover img { transition: none; } }
+.cover .stamp { position: absolute; right: 8px; bottom: 8px; border: 2px solid var(--riso); color: var(--riso); background: var(--paper); font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; padding: 2px 6px; transform: rotate(-4deg); }
+.threads { margin-top: 44px; border-top: 3px solid var(--ink); padding-top: 14px; }
+.threads h2 { font-family: var(--display); font-weight: 800; font-size: 30px; line-height: 1; margin: 0 0 4px; text-transform: uppercase; }
+.threads p { margin: 0 0 14px; max-width: 60ch; color: var(--ink-dim); }
+.threads .slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 8px; }
+.threads .slot { aspect-ratio: 1; border: 1px dashed var(--ink-dim); display: grid; place-items: center; font-family: var(--mono); font-size: 12px; color: var(--ink-dim); }
+.threads .slot.got { border: 2px solid var(--riso); }
+.threads .slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.threads .table { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 18px; padding: 26px; background: #3b2a1c linear-gradient(175deg, #4a3523, #2a1d12); }
+.threads .thing { transform: rotate(var(--r, 0deg)); box-shadow: 0 6px 14px rgba(0, 0, 0, .5); background: #111; }
+.threads .thing img { width: 100%; display: block; }
 </style>
 
 <main class="wrap" id="hub" aria-labelledby="hub-title">
@@ -74,6 +85,7 @@ a { color: inherit; }
   </header>
   <p class="dek">Ten stories from the author's creative-writing vault, each made into a game that moves between <b>3D places</b>, <b>2D spaces you cross</b> and <b>1D puzzles you work out</b>. Pick a cover to load the game and play its 2D modes and 1D games here in the page.</p>
   <section class="sheet" id="sheet" aria-label="The games"></section>
+  <section class="threads" id="threads" aria-label="The collection thread"></section>
   <p class="colophon">The 3D scenes are built in Blender from each game's build files and are not playable on this page. Every 2D mode and 1D game is drawn in its own graphic style, and no style is used twice across the ten games. Progress is kept in this browser only.</p>
 </main>
 

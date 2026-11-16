@@ -35,7 +35,7 @@ function renderHub() {
     a.href = "#" + g.slug;
     const m = g.minutes ? `${g.minutes.min}–${g.minutes.max} min` : "";
     const p = g.players && g.players.max > 1 ? `${g.players.min}–${g.players.max} players` : "1 player";
-    a.innerHTML = `<div class="frame"><img alt="" loading="lazy" src="${g.cover || g.stills[0]}"><span class="no">${String(i + 1).padStart(2, "0")}</span></div>
+    a.innerHTML = `<div class="frame"><img alt="" loading="lazy" src="${(g.keyart && g.keyart["key-art-wide"]) || g.cover || g.stills[0]}"><span class="no">${String(i + 1).padStart(2, "0")}</span>${store.get("thread:" + g.slug, false) ? '<span class="stamp">thread found</span>' : ""}</div>
       <h2></h2><div class="facts"><span>${m}</span><span>${p}</span><span>Verb <b></b></span><span>${g.modes.length} playable</span></div>`;
     a.querySelector("h2").textContent = g.title;
     a.querySelector("b").textContent = (g.verb || "").toLowerCase();
@@ -175,6 +175,12 @@ async function playMode(game, mode, modModule, meta) {
     rng: (seed) => seededRng(seed ?? `${game.slug}/${mode.key}/${Date.now()}`),
     store: { get: (k, d) => store.get(`${game.slug}/${mode.key}/${k}`, d), set: (k, v) => store.set(`${game.slug}/${mode.key}/${k}`, v) },
     asset: (p) => p,
+    // per-game storage, shared by all of the game's modes (layer links); `store` above is per mode
+    shared: { get: (k, d) => store.get(`${game.slug}/_shared/${k}`, d), set: (k, v) => store.set(`${game.slug}/_shared/${k}`, v) },
+    // generated key art and ending cards: keyart("ending-...") gives a path, or "" when there is none
+    keyart: (id) => (game.keyart && game.keyart[id]) || "",
+    // the collection thread: the object this game hides for another game (docs/DEEP_DIVE.md section 4)
+    thread: { found() { store.set("thread:" + game.slug, true); }, isFound: () => !!store.get("thread:" + game.slug, false) },
     art: await loadArt(game),
     end(result = {}) {
       const done = store.get("done:" + game.slug, {});
@@ -208,6 +214,8 @@ async function route() {
   if (!h) {
     stage.hidden = true;
     hub.hidden = false;
+    renderHub();
+    renderThreads();
     document.title = "esc-ZINE99";
     return;
   }
@@ -253,7 +261,53 @@ async function warmCovers() {
   renderHub();
 }
 
+// The collection thread on the hub: ten slots, and the eleventh page when all ten are found.
+let threadData = null;
+async function renderThreads() {
+  const box = $("threads");
+  if (!box) return;
+  if (!threadData) {
+    try { threadData = await (await fetch("assets/threads.json")).json(); } catch { threadData = {}; }
+  }
+  const slugs = catalog.games.map((g) => g.slug).filter((s) => threadData[s]);
+  const found = slugs.filter((s) => store.get("thread:" + s, false));
+  const img = (svg, alt) => {
+    const im = document.createElement("img");
+    im.alt = alt;
+    im.src = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
+    return im;
+  };
+  box.innerHTML = "";
+  const all = slugs.length > 0 && found.length === slugs.length;
+  const h = document.createElement("h2");
+  h.textContent = all ? "The eleventh page" : "Threads";
+  const p = document.createElement("p");
+  p.textContent = all
+    ? "Ten things, each carried out of its own game and left in another. Here they are on one table."
+    : `Each game hides one small thing that belongs to another. Found ${found.length} of ${slugs.length}.`;
+  const row = document.createElement("div");
+  row.className = all ? "table" : "slots";
+  slugs.forEach((s, i) => {
+    const d = document.createElement("div");
+    const t = threadData[s];
+    if (all && t.own) {
+      d.className = "thing";
+      d.style.setProperty("--r", ((i * 37) % 9 - 4) + "deg");
+      d.appendChild(img(t.own.svg, t.own.title));
+    } else if (found.includes(s) && t.guest) {
+      d.className = "slot got";
+      d.appendChild(img(t.guest.svg, t.guest.title));
+    } else {
+      d.className = "slot";
+      d.textContent = String(i + 1).padStart(2, "0");
+    }
+    row.appendChild(d);
+  });
+  box.append(h, p, row);
+}
+
 renderHub();
+renderThreads();
 warmCovers();
 addEventListener("hashchange", route);
 route();
