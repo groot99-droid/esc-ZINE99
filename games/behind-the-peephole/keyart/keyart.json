@@ -32,7 +32,8 @@
       "prompt": "Painterly cinematic still, an old 1920s river hotel at night, 1970s paranoid-thriller restraint, opaque gouache brush drag, practical lamps only, bottle-green cloth wallpaper, worn varnish, thumb-polished brass, tobacco-amber lamplight against river-grey light, brown-black shadow, soft film grain. Five in the morning in a very long, very narrow hidden service passage, camera centred looking straight down its length, symmetrical one-point perspective, no people. Along the left wall a row of six narrow dark varnished doors, each with a small round brass peephole rose that is dark and unlit, no light behind any of them. The bottle-green walls and the ceiling are completely bare and dark: no frames, no pictures, no wall lamps, no ceiling lamps. A small postcard-sized sheet of blue-black carbon paper lies half slid under the nearest door, its corner showing on the dark floorboards, a thin dark sliver rather than a mat. Dead centre at the far end, a seventh plain door whose peephole alone glows: one tiny bright amber point, the only warm light in the picture. Thin river-grey dawn from high windows on the right, threadbare runner, dark wainscot. Emptied, waiting. The lower quarter is quiet dark floorboards. No text, no lettering, no watermark, no logo.",
       "job_id": "030f7234-7981-413c-aad4-c5431b1fcc15",
       "image": "keyart/ending-under-the-door.jpg",
-      "needs_review": "Retry 2 kept (frames, wall and ceiling lamps gone, only the far peephole lit). Still off: the carbon sheet sits at the bottom-left corner of the frame with faint pseudo-print on it, not clearly sliding under the nearest door."
+      "known_issues": "Retry 2 kept (frames, wall and ceiling lamps gone, only the far peephole lit). Still off: the carbon sheet sits at the bottom-left corner of the frame with faint pseudo-print on it, not clearly sliding under the nearest door.",
+      "accepted": "author, 2026-11-16"
     },
     {
       "id": "ending-wrong-picture",
@@ -77,7 +78,8 @@
       "prompt": "Painterly cinematic still, an old 1920s river hotel at night, 1970s paranoid-thriller restraint, opaque gouache brush drag, practical lamps only, bottle-green cloth wallpaper, worn varnish, thumb-polished brass, tobacco-amber lamplight against river-grey light, brown-black shadow, soft film grain. Close view of a small watercolour on cream paper, pinned with one brass pin to bottle-green cloth wallpaper, no people. The watercolour shows a plain varnished door at the end of a narrow passage; the door's peephole is painted as a single warm glowing amber dot, the brightest point in the frame, with no separate dark rose or ring beside it. In the paper's bottom corner a tiny filled circle of brass-gold paint, not red. Loose washes of river grey and amber, pencil lines showing, one corner of the sheet curling. On a desk edge below, out of focus, a folded pair of white cotton gloves. Soft dim even light, no lamp or bulb visible in frame, no glare, a soft shadow behind the paper. The watercolour sits high in the frame, fully inside it; the lower quarter is calm green wallpaper and shadow. No text, no lettering, no watermark, no logo.",
       "job_id": "2cc1869b-2bb9-42fc-bdcd-f87ed7ec5261",
       "image": "keyart/ending-the-sitter.jpg",
-      "needs_review": "Retry kept (glare and red corner dot fixed). Still off: the lit dot has a separate dark circle beside it, two dots instead of one; two further retries were worse."
+      "known_issues": "Retry kept (glare and red corner dot fixed). Still off: the lit dot has a separate dark circle beside it, two dots instead of one; two further retries were worse.",
+      "accepted": "author, 2026-11-16"
     }
   ]
 }

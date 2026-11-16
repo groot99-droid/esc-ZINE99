@@ -32,7 +32,8 @@
       "prompt": "Muted cinematic photographic realism of a remote 1950s Arctic military research base, a cold desaturated film still with fine photo grain: matte surfaces, nothing glossy. A heavy grey steel door seen from inside a bare white-tiled room, camera low, door upright in the upper centre of the frame. Set in the door is a small square wired-glass window, frosted, no larger than a hand-width pane, lit softly from the corridor behind it. Against that glow stands one backlit upright human-shaped silhouette, a tall narrow dark shape with a head and shoulders, completely out of focus, no face, no detail, no outline of features. The room is spotless and empty: clearly visible square white tiles with fine dark grout lines on the walls and the pale floor, freshly scrubbed. Flat cold fluorescent light from above. Palette only white, pale grey, steel grey, frost blue-grey. The lower quarter is plain empty tiled floor. Clinical and still. No objects on the floor, no stains, no warm colours, no text, no lettering, no watermark, no logo",
       "job_id": "55899e1b-7cb0-48a2-9480-7a1bcce8b25f",
       "image": "keyart/ending-the-zoo.jpg",
-      "needs_review": "Regenerated again. Remaining: the backlit silhouette in the pane is a crisp dark shape rather than a soft blur, and the door has a lever handle and double-leaf seam; palette is slightly blue-violet."
+      "known_issues": "Regenerated again. Remaining: the backlit silhouette in the pane is a crisp dark shape rather than a soft blur, and the door has a lever handle and double-leaf seam; palette is slightly blue-violet.",
+      "accepted": "author, 2026-11-16"
     },
     {
       "id": "ending-rule-three",

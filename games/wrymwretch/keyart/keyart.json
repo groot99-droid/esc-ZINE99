@@ -32,7 +32,8 @@
       "prompt": "Bone-and-silver reliquary style: carved ivory bone and tarnished silver relief with fine black crack lines, hard cool rim light, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary. Full-bleed wide 16:9 panorama filling the whole frame edge to edge, no white margins, no border. Near-black night sky across the upper four fifths, crossed by thin straight white constellation lines joining stars into angular webs, no animals, no people. At the centre a modest round cracked dome-shaped swelling pushing the sky toward us, nothing visible inside it. Very low in the frame a thin curved rim of pale silver-grey carved stone crosses the bottom edge. On it stand six tiny elves in a row, count six, seen from behind, wearing long hooded cloaks of white ivory, each with one small white ivory dragon beside it, all gazing up. A small open book with blank pages lies at the rim's end. Only blue-silver, white and ivory over black: nothing gold, yellow, orange or brown. Below the rim plain dark shadow, empty. no text, no lettering, no watermark, no logo",
       "job_id": "8b67b2e8-8794-4743-ba8b-809b10c3e690",
       "image": "keyart/ending-architect-rises.jpg",
-      "needs_review": "Six cloaked elves with six dragons, cool palette, no border (fixed). Remaining: the swelling reads as a cracked sphere rather than a pressure in the sky, a faint dark-red tint at the very bottom edge, and the rim and figures fill the lower quarter so the caption strip is thin."
+      "known_issues": "Six cloaked elves with six dragons, cool palette, no border (fixed). Remaining: the swelling reads as a cracked sphere rather than a pressure in the sky, a faint dark-red tint at the very bottom edge, and the rim and figures fill the lower quarter so the caption strip is thin.",
+      "accepted": "author, 2026-11-16"
     },
     {
       "id": "ending-remembered-whole",
@@ -55,7 +56,8 @@
       "prompt": "Bone-and-silver reliquary style, painted like a 1970s fantasy paperback cover crossed with a cathedral reliquary, fine black crack lines, hard cool rim light. Full-frame wide landscape painting, no frame, no border: an ancient cedar grove whose trunks are pale ribbed ivory bone columns, silver filigree ferns. Seen from far back, a tiny wood elf archer with olive skin and green hair, back to the viewer, crouches at the left of centre at the foot of a trunk, in the middle band of the picture, bow lowered and resting against the ground, no arrow, watching a silver-antlered stag far off between the trunks, looking back. Beyond, the roots of one colossal elder tree curl in the shape of a sleeping bark-scaled dragon, eyes closed, mossy, unnoticed. Dappled moss-green and amber light between the trunks, cold blue-silver elsewhere, morning stillness. The bottom third of the frame is only calm dark forest floor and shadow, with no figures, no plants, no objects. no text, no lettering, no watermark, no logo",
       "job_id": "a81e7297-b610-4e22-8317-1098ada3db46",
       "image": "keyart/ending-dormant-again.jpg",
-      "needs_review": "Bow lowered with no arrow, bottom third dark and empty, no frame (fixed). Remaining: the elf crouches at the edge of the dark floor with the bow tip just inside the lower quarter, and the sleeping dragon reads only as mossy hills with one eye, not clearly roots."
+      "known_issues": "Bow lowered with no arrow, bottom third dark and empty, no frame (fixed). Remaining: the elf crouches at the edge of the dark floor with the bow tip just inside the lower quarter, and the sleeping dragon reads only as mossy hills with one eye, not clearly roots.",
+      "accepted": "author, 2026-11-16"
     },
     {
       "id": "ending-the-rememberer",
@@ -78,7 +80,8 @@
       "prompt": "Ivory-and-silver reliquary style: weathered matte carved bone and tarnished silver relief with fine black crack lines, hard cool rim light, near-black starry void, frontal icon-like composition, painted like a 1970s fantasy paperback cover crossed with a cathedral treasure. Full-bleed wide landscape filling the frame edge to edge, no border, no white margins. At far left the King of Dragons as a colossal crowned dragon statue, sleek, seated upright, wings folded, jaws fully closed with nothing in the mouth. At far right a crowned robed elf queen statue of cracked silver-white stone with open hands, her base bare. Between them a tall thin column of violet-white light from the top of the frame to the floor. At its foot, tiny and seen from behind, one kneeling young adult elf man with dark hair and pointed ears in worn leather harness. Beside him on the floor an empty leather riding saddle with stirrups, a closed book resting on its seat. No living dragon, no one else. Lower quarter calm dark stone, empty. No skeleton, no mask, no orange, no fire, no text, no lettering, no watermark, no logo",
       "job_id": "125939dc-fbc9-4b3c-9fef-1e190c9e1809",
       "image": "keyart/ending-the-empty-saddle.jpg",
-      "needs_review": "Borderless, solid crowned dragon statue, no second winged shape, no sword or mask (fixed). Remaining: the dragon is smooth cream with little crack texture, its jaw is slightly open, the saddle reads as a tangle of tack beside a satchel with the book not clearly on it, and the light column stops at the floor line with a bright flat edge."
+      "known_issues": "Borderless, solid crowned dragon statue, no second winged shape, no sword or mask (fixed). Remaining: the dragon is smooth cream with little crack texture, its jaw is slightly open, the saddle reads as a tangle of tack beside a satchel with the book not clearly on it, and the light column stops at the floor line with a bright flat edge.",
+      "accepted": "author, 2026-11-16"
     }
   ]
 }

@@ -43,7 +43,8 @@
       "prompt": "Photographic 35mm film still, naturalistic late-summer state-park realism: matte surfaces, fine film grain, sun-faded greens, cedar brown, dust gold, cream paper and graphite. Interior of a small cedar-plank ranger booth, looking out past the shoulder of an older adult in a plain work jacket who stands at the sliding service window, seen from behind as a dark shape, face not visible. Far across the gravel, at the edge of the pines, a car has just pulled in, small and distant, seen only as two blazing headlight flares shining straight through the glass and rimming the figure's hair and shoulder in warm amber; the car body is a dark smudge in the glare, its bumper and lower front lost in blinding light and dust, nothing legible on it. On the counter lies a closed plain cream register book with a single pencil resting on its blank cover. Pines at exact equal intervals under a flat pearl-white sky with no sun and no shadows. Cedar brown, pearl, greens with no yellow, headlight amber. The lower quarter is the plain dark wood of the counter front, left calm for a caption. No plate, no text, no lettering, no numbers, no watermark, no logo",
       "job_id": "6828fd02-7685-4e08-9c63-06b2aa369646",
       "image": "keyart/ending-brought-along.jpg",
-      "needs_review": "Mostly fixed. The car is small and distant with a tiny plate that is not legible; the closed register book shows faint print lines on its cover; trees are not at exact intervals and headlights are weaker than asked."
+      "known_issues": "Mostly fixed. The car is small and distant with a tiny plate that is not legible; the closed register book shows faint print lines on its cover; trees are not at exact intervals and headlights are weaker than asked.",
+      "accepted": "author, 2026-11-16"
     },
     {
       "id": "ending-held",

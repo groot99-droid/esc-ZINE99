@@ -54,7 +54,8 @@
       "prompt": "Painterly cinematic realism, a hand-finished film matte painting of an age-of-sail world. A storm at sea under storm-violet cloud, a torn seam of dawn gold at the horizon. The whole of an old single-masted wooden sailing boat is visible in three-quarter rear view, bow rising on a great sea-green wave, its long bowsprit pointing into the storm; a small human-sized sailor, barefoot, in a salt-stained linen shirt and rolled dark trousers, seen from behind, stands on the bowsprit with one arm raised, tiny against the waves, a faint sea-green rim of light on his shoulders. Foam climbs around the bow. Along the bottom of the frame runs a low dark strip of harbour coast: stone quays, small moored boats lifting on their lines, lamps guttering, and one small woman in a pale dress walking away along the quay with her back to the sea. Driving rain. Palette: storm violet, sea-green, foam white, dawn gold. The lower quarter stays dark and quiet. No trident, no crown, no wreckage, no text, no lettering, no watermark, no logo",
       "job_id": "0b242c06-ad42-4892-ba6d-b66caf388b66",
       "image": "keyart/ending-the-wild-sea.jpg",
-      "needs_review": "Mostly fixed: he is now a man-sized figure on the bowsprit, seen from behind, with the woman on the quay. The ship is a large two-masted carrack, not the single-masted boat asked for, and the lower quarter holds quay stonework rather than dark calm."
+      "known_issues": "Mostly fixed: he is now a man-sized figure on the bowsprit, seen from behind, with the woman on the quay. The ship is a large two-masted carrack, not the single-masted boat asked for, and the lower quarter holds quay stonework rather than dark calm.",
+      "accepted": "author, 2026-11-16"
     },
     {
       "id": "ending-the-lords-peace",
@@ -77,7 +78,8 @@
       "prompt": "Painterly cinematic realism, a hand-finished film matte painting of an age-of-sail world. Dawn at the tideline of a quiet bay, beside a standing stone at the left. An older sailor with short grey hair and a grey beard, in a salt-stained linen shirt and rolled dark canvas trousers, kneels upright on the wet sand at the water's edge, seen from behind in natural proportions, head and grey hair clearly visible, shoulders level, one hand reaching down with a single finger in the shallows; a single small ring of ripples spreads from it and nothing more. Beside him eight small scraps of blank pale paper float in the foam, their faint ink dissolving in sea-green threads. Out in the bay a white lamp tower still burns and a row of evenly spaced buoys still stands; beyond them the open water heaves wild, sea-green under storm-violet cloud. Dawn-gold light from the low left. Palette: dawn gold, sea-green, foam white, ink-blue. The lower quarter is smooth empty pale wet sand with nothing on it. No halo, no glow, no text, no lettering, no watermark, no logo",
       "job_id": "1c1bf1ff-fcf6-42a3-975e-cca95edc45dc",
       "image": "keyart/ending-paid-in-kind.jpg",
-      "needs_review": "Mostly fixed: older grey-haired man, blank paper, empty lower quarter. His head is turned in near profile so part of his bearded face shows, the stone is on the left and the buoys read as posts on a pier by the tower, and the paper floats in the surf rather than around his feet."
+      "known_issues": "Mostly fixed: older grey-haired man, blank paper, empty lower quarter. His head is turned in near profile so part of his bearded face shows, the stone is on the left and the buoys read as posts on a pier by the tower, and the paper floats in the surf rather than around his feet.",
+      "accepted": "author, 2026-11-16"
     }
   ]
 }

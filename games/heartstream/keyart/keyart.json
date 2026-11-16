@@ -32,7 +32,8 @@
       "model": "soul_cinematic",
       "job_id": "30265f16-46cb-4546-9d7a-1129d1c20660",
       "image": "keyart/ending-stayed.jpg",
-      "needs_review": "Regenerated twice more (3 passes total, final job kept). Fixed: elder is pale blue, bowed head, natural raised arm, lit alcoves, deeper cave, ivory board with counters in hollows. Remaining: the head is large and ball-like for the body, and the board floats on a thin shelf."
+      "known_issues": "Regenerated twice more (3 passes total, final job kept). Fixed: elder is pale blue, bowed head, natural raised arm, lit alcoves, deeper cave, ivory board with counters in hollows. Remaining: the head is large and ball-like for the body, and the board floats on a thin shelf.",
+      "accepted": "author, 2026-11-16"
     },
     {
       "id": "ending-taken",
@@ -44,7 +45,8 @@
       "model": "soul_cinematic",
       "job_id": "97bbc1a8-c098-4eab-b32b-e0bcce3cefc6",
       "image": "keyart/ending-taken.jpg",
-      "needs_review": "Regenerated; the first of two passes kept (the retry made the hook an upright faucet-like post and the hand misshapen). Fixed: lit ledge, palm down, unmarked skin, charm sunk in a glow ring. Remaining: the charm reads as a small fish with a hook loop rather than a plain hook, and the hand is dim and dark against the red."
+      "known_issues": "Regenerated; the first of two passes kept (the retry made the hook an upright faucet-like post and the hand misshapen). Fixed: lit ledge, palm down, unmarked skin, charm sunk in a glow ring. Remaining: the charm reads as a small fish with a hook loop rather than a plain hook, and the hand is dim and dark against the red.",
+      "accepted": "author, 2026-11-16"
     },
     {
       "id": "ending-two-together",
@@ -56,7 +58,8 @@
       "model": "soul_cinematic",
       "job_id": "91bcf0e6-d220-4a63-9bb3-841f8e3d9156",
       "image": "keyart/ending-two-together.jpg",
-      "needs_review": "No tooth- or mouth-like forms; a clear handshake with drawn fingers. Remaining: the hook is carved as a fish hanging from a small hook rather than a plain fish hook."
+      "known_issues": "No tooth- or mouth-like forms; a clear handshake with drawn fingers. Remaining: the hook is carved as a fish hanging from a small hook rather than a plain fish hook.",
+      "accepted": "author, 2026-11-16"
     },
     {
       "id": "ending-carried-away",
@@ -79,7 +82,8 @@
       "model": "soul_cinematic",
       "job_id": "cfc39603-b351-421e-a7b4-71c60111f949",
       "image": "keyart/ending-the-open-hand.jpg",
-      "needs_review": "Retry kept (the first drew claw-like pointed fingertips). The raft is now a clear reed raft with three seated figures seen from behind; one open hand; no hearts, symbols or sunburst. Remaining: the whole forearm is blue rather than a wash at the wrist, the render is flatter than the other stills, the hook is drawn as a fish pendant, and the hand and fish reach into the lower quarter."
+      "known_issues": "Retry kept (the first drew claw-like pointed fingertips). The raft is now a clear reed raft with three seated figures seen from behind; one open hand; no hearts, symbols or sunburst. Remaining: the whole forearm is blue rather than a wash at the wrist, the render is flatter than the other stills, the hook is drawn as a fish pendant, and the hand and fish reach into the lower quarter.",
+      "accepted": "author, 2026-11-16"
     }
   ]
 }
