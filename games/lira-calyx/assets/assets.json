@@ -33,14 +33,15 @@
         "b1-terrace",
         "b1-terrace-night",
         "b4-terraces",
-        "end-fire"
+        "end-fire",
+        "end-errata"
       ],
       "dimensions_m": [
         120,
         60,
         30
       ],
-      "lighting": "Day: clear morning, green and cyan. Night: lamp and river glow at the bench. Storm: storm-dark green with lightning, cracked tiers. Fire ending: ash, green light through, rubble on an 80 m slope.",
+      "lighting": "Day: clear morning, green and cyan. Night: lamp and river glow at the bench. Storm: storm-dark green with lightning, cracked tiers. Fire ending: ash, green light through, rubble on an 80 m slope. Errata ending: violet storm dusk, the tiers emptied and shuttered, lantern points climbing away on the far path.",
       "objects": [
         "strider-clicker",
         "river-glow-meter",

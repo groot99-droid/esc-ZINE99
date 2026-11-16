@@ -1,6 +1,6 @@
 {
  "game": "lira-calyx",
- "count": 99,
+ "count": 107,
  "assets": [
   {
    "id": "title-lettering",
@@ -435,6 +435,46 @@
    "row": "Board tokens"
   },
   {
+   "id": "lettering-archivist-in-time",
+   "group": "endings",
+   "title": "Ending lettering: The Archivist in Time",
+   "w": 1200,
+   "h": 210,
+   "row": "Ending cards"
+  },
+  {
+   "id": "lettering-directed-resilience",
+   "group": "endings",
+   "title": "Ending lettering: Directed Resilience",
+   "w": 1200,
+   "h": 210,
+   "row": "Ending cards"
+  },
+  {
+   "id": "lettering-errata",
+   "group": "endings",
+   "title": "Ending lettering: Errata",
+   "w": 1200,
+   "h": 210,
+   "row": "Ending cards"
+  },
+  {
+   "id": "lettering-fire",
+   "group": "endings",
+   "title": "Ending lettering: Fire",
+   "w": 1200,
+   "h": 210,
+   "row": "Ending cards"
+  },
+  {
+   "id": "lettering-redacted-testament",
+   "group": "endings",
+   "title": "Ending lettering: The Redacted Testament",
+   "w": 1200,
+   "h": 210,
+   "row": "Ending cards"
+  },
+  {
    "id": "bar-clumsy",
    "group": "ui",
    "title": "Bar: clumsy",
@@ -659,12 +699,36 @@
    "row": "UI ornaments"
   },
   {
+   "id": "bar-ledger",
+   "group": "documents",
+   "title": "The ledger of twelve bars",
+   "w": 640,
+   "h": 900,
+   "row": "Audit set"
+  },
+  {
    "id": "bar-staff",
    "group": "documents",
    "title": "The bar staff",
    "w": 1200,
    "h": 640,
    "row": "Cipher set"
+  },
+  {
+   "id": "desk-log",
+   "group": "documents",
+   "title": "The archivist's desk log",
+   "w": 600,
+   "h": 860,
+   "row": "Audit set"
+  },
+  {
+   "id": "errata-sheet",
+   "group": "documents",
+   "title": "Errata: the correction, unsigned",
+   "w": 600,
+   "h": 820,
+   "row": "Ending cards"
   },
   {
    "id": "hand-archivist",

@@ -4,6 +4,10 @@
 // player can stop with that result or go on. A stage gets the mode's api with three additions:
 // api.stage (0..2), api.end (stage-aware) and api.linkNote(text), the short note shown when a layer
 // link fires ("Because you ... in ...").
+// Phase 3: the strip also carries the ledger of the twelve bars (_bars.js), reachable from every stage;
+// api.held() is true while it is open (real-time stages pause), and api.endOn(id, result) lays an
+// ending's generated card behind a result.
+import { ledger, cardBehind } from "./_bars.js";
 const P = "lira-calyx-stages-";
 const LABELS = ["TEACH", "TEST", "TWIST"];
 
@@ -42,11 +46,13 @@ export function runStages(root, api, cfg) {
   const stageRoot = document.createElement("div"); stageRoot.className = P + "stage";
   const notes = document.createElement("div"); notes.className = P + "notes"; notes.setAttribute("aria-live", "polite");
   root.append(style, strip, stageRoot, notes);
-  let pause = null;
+  let pause = null, cards = [];
+  const led = ledger(root, api, { strip, end: (r) => { root.querySelectorAll(":scope > .ending").forEach((e) => e.remove()); api.end(r); }, card: (id) => cards.push(cardBehind(root, api, id)) });
 
   const renderStrip = () => {
     const r = reached();
     strip.innerHTML = LABELS.map((l, i) => `<button type="button" data-s="${i}" class="${i === stage ? "on" : ""}" ${i > r ? "disabled" : ""} aria-pressed="${i === stage}" title="${cfg.names[i]}">${i + 1} ${l}<small>${cfg.names[i]}</small></button>`).join("");
+    strip.appendChild(led.btn);
   };
   on(strip, "click", (e) => { const b = e.target.closest("[data-s]"); if (b && !b.disabled && +b.dataset.s !== stage) go(+b.dataset.s); });
 
@@ -56,6 +62,7 @@ export function runStages(root, api, cfg) {
     if (cur && cur.unmount) { try { cur.unmount(); } catch (e) { console.error(e); } }
     cur = null; stageRoot.innerHTML = ""; stageRoot.removeAttribute("style"); notes.innerHTML = "";
     noteTimers.forEach(clearTimeout); noteTimers = [];
+    cards.forEach((c) => c && c.remove()); cards = [];
   };
   const linkNote = (text) => {
     const n = document.createElement("div"); n.className = P + "note"; n.setAttribute("role", "status");
@@ -65,9 +72,12 @@ export function runStages(root, api, cfg) {
     noteTimers.push(setTimeout(() => n.remove(), 11000));
   };
   const go = (s) => {
-    teardown(); stage = s; renderStrip();
+    teardown(); stage = s; renderStrip(); led.stage(s);
     const sapi = Object.create(api);
     sapi.stage = s; sapi.linkNote = linkNote;
+    sapi.held = () => led.isOpen();
+    sapi.ledger = led;
+    sapi.endOn = (id, result) => { cards.push(cardBehind(root, api, id)); sapi.end(result); };
     sapi.end = (result = {}) => {
       if (result.outcome === "lose" || s >= 2) { api.end(result); return; }
       if (reached() < s + 1) api.store.set("stage", s + 1);
@@ -85,5 +95,5 @@ export function runStages(root, api, cfg) {
     catch (e) { console.error(e); stageRoot.innerHTML = `<div class="err">This stage failed to start: ${String(e.message || e)}</div>`; }
   };
   go(stage);
-  return { unmount() { teardown(); off.forEach((f) => f()); } };
+  return { unmount() { teardown(); led.unmount(); off.forEach((f) => f()); } };
 }

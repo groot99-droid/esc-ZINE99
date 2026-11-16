@@ -23,6 +23,7 @@
 // strata are black here; the wolf couplet (The Key) changes what the shapes at 2 600 m are; cores
 // drilled here add true lines to the Assay's reference card.
 import { runStages } from "./_stages.js";
+import { again } from "./_bars.js";
 const P = "lira-calyx-cross-section-climb-";
 const INK = "#3b2618", PAPER = "#f1e8d2", SEAL = "#b3212b", CYAN = "#3fc4d0", VIOLET = "#5a3f7a", SLATE = "#56606a", OCHRE = "#c8913a";
 const LW = 640, S = 2.4; // logical px per metre of altitude
@@ -50,6 +51,7 @@ function mountStage(root, api, stage) {
     const later = (f, ms) => { const id = setTimeout(f, ms); timers.push(id); return id; };
     const RM = api.reducedMotion;
     const losses = api.store.get("losses", 0);
+    const TWO = again(api); // a later reading of the book (phase 3): she knows what the relay is
     root.style.background = PAPER;
     const style = document.createElement("style");
     style.textContent = `
@@ -114,7 +116,7 @@ function mountStage(root, api, stage) {
     const mk = (pad, label, key, aria) => { const b = document.createElement("button"); b.type = "button"; b.textContent = label; b.dataset.k = key; b.setAttribute("aria-label", aria); pad.appendChild(b); return b; };
     const btns = [mk(padL, "◀", "left", "Move left"), mk(padL, "▶", "right", "Move right"), mk(padR, "ANCHOR", "anchor", "Hold to anchor"), mk(padR, "JUMP", "jump", "Jump")];
     const readBtn = mk(padR, "READ", "read", "Hold for a hand reading"); readBtn.classList.add("st"); readBtn.hidden = true;
-    const relayBtn = mk(padR, "RELAY", "relay", "Take the relay beacon's number"); relayBtn.classList.add("st"); relayBtn.hidden = true;
+    const relayBtn = mk(padR, TWO ? "RELAY ✕" : "RELAY", "relay", TWO ? "Take the relay beacon's number, knowing it is theirs" : "Take the relay beacon's number"); relayBtn.classList.add("st"); relayBtn.hidden = true;
     padR.prepend(readBtn, relayBtn);
     wrap.append(padL, padR);
     root.appendChild(wrap);
@@ -257,7 +259,7 @@ function mountStage(root, api, stage) {
     const relay = () => {
       const s = station(); if (!s || st.over || s.core) return;
       s.done = "relay"; st.readings.push("relay");
-      say(`${s.name}: the relay beacon gives its number at once. You write it down in a smaller hand.`, 4);
+      say(TWO ? `${s.name}: she takes the relay's number knowing whose it is, and writes it in pencil with a question mark. It is quick. It is theirs.` : `${s.name}: the relay beacon gives its number at once. You write it down in a smaller hand.`, 4);
       flash("rgba(90,63,122,.35)");
     };
     const finish = (won, why) => {
@@ -297,7 +299,7 @@ function mountStage(root, api, stage) {
       const s = station();
       readBtn.hidden = relayBtn.hidden = !s;
       readBtn.textContent = s && s.core ? "DRILL" : "READ"; if (s && s.core) relayBtn.hidden = true;
-      if (s && !st.beats["st" + s.name]) { beat("st" + s.name, s.core ? `${s.name}. Hold DRILL (R) still for 4 s to take a core. Your air drains while you do.` : `${s.name}. Hold READ (R) still for 3 s to take it by hand, or press RELAY (B): instant, never verified.`, 5.5); }
+      if (s && !st.beats["st" + s.name]) { beat("st" + s.name, s.core ? `${s.name}. Hold DRILL (R) still for 4 s to take a core. Your air drains while you do.` : TWO ? `${s.name}. The relay mast hums beside it. She has read this book before: every number it has given her was poisoned at the source. Hold READ (R) still for 3 s.` : `${s.name}. Hold READ (R) still for 3 s to take it by hand, or press RELAY (B): instant, never verified.`, 5.5); }
       const reading = s && keys.read && !keys.left && !keys.right;
       if (s) {
         if (reading) { s.prog += dt / (s.core ? 4 : 3); if (s.prog >= 1) { s.done = "hand"; st.readings.push("hand"); if (s.core) st.cores++; say(s.core ? `Core ${st.cores} of 2, a finger of ${s.name.split(": ")[1]}, wrapped and labelled. A true line for the next bench.` : `${s.name}: read by hand. The number goes in the journal in her own ink.`, 3.5); flash("rgba(63,196,208,.3)"); } }
@@ -473,7 +475,9 @@ function mountStage(root, api, stage) {
       for (const L of ledges) {
         if (L.y < y0 - 40 || L.y > y1 + 40) continue;
         if (bars.length && !L.camp && barAt(L.y + 4, L.x + L.w / 2)) { // unseen in the black, but for the beat when the dust lies on it
-          const k = st.gentle ? Math.max(0.3, st.dustT / 1.3) : st.dustT / 1.3;
+          // the dust lies on the ledge for one beat, then its chalk fades over the next five; the last second before the next fall is dark
+          const since = 7 - st.dust - 1.3, after = st.dustT > 0 ? 0 : 0.42 * Math.max(0, 1 - since / 4.6);
+          const k = Math.max(st.gentle ? 0.3 : 0, st.dustT / 1.3, after);
           if (k > 0) { ctx.globalAlpha = Math.min(1, k * 1.4); ctx.fillStyle = "#e9e0c8"; for (let x = L.x + 2; x < L.x + L.w; x += 5) ctx.fillRect(x, L.y - 1 - ((x * 7) % 3), 2.4, 2.4); ctx.globalAlpha = 1; }
           continue;
         }
@@ -495,6 +499,7 @@ function mountStage(root, api, stage) {
           if (!done && L.station.prog > 0) { ctx.fillStyle = CYAN; ctx.fillRect(sx - 9, L.y - 44, 18 * L.station.prog, 4); }
           ctx.fillStyle = VIOLET; ctx.font = "italic 13px 'IM Fell English', Georgia, serif";
           ctx.fillText(done ? (done === "hand" ? "read by hand" : "relay, unverified") : "reading station", sx + 14, L.y - 8);
+          if (TWO && !L.station.core) { ctx.fillStyle = SEAL; ctx.font = "700 11px 'Courier Prime', monospace"; ctx.fillText("RELAY: POISONED AT SOURCE", sx + 14, L.y + 22); }
         }
         if (L.camp) {
           const tx2 = L.x + 26; ctx.fillStyle = L.goal ? SEAL : OCHRE;
@@ -593,7 +598,7 @@ function mountStage(root, api, stage) {
       hudA.textContent = `${Math.ceil(st.air)}  −${drainRate(altOf(pl.y)).toFixed(1)}/s`;
       const stormTxt = sm.x != null ? `<span class="storm">FRONT</span>` : sm.next < 3 ? `<span class="storm">FRONT ${Math.ceil(sm.next)} s</span>` : "";
       const lampTxt = stage === 2 ? (lp.x != null ? `<span class="storm">LAMPS</span>` : lp.next < 3 ? `<span class="storm">LAMPS ${Math.ceil(lp.next)} s</span>` : "") : "";
-      const r2 = `<span><b>${fmtM(altOf(pl.y))}</b></span>${stage === 2 ? `<span>CAUGHT ${"●".repeat(st.blackouts)}${"○".repeat(3 - st.blackouts)}</span><span>DUST ${st.dustT > 0 ? "NOW" : Math.ceil(st.dust) + " s"}</span>${inBar(pl.y) ? '<span class="anc">IN THE BLACK</span>' : ""}${lampTxt}` :
+      const r2 = `<span><b>${fmtM(altOf(pl.y))}</b></span>${stage === 2 ? `<span>CAUGHT ${"●".repeat(st.blackouts)}${"○".repeat(3 - st.blackouts)}</span><span>DUST ${st.dustT > 0 ? "NOW" : "●".repeat(Math.max(0, 7 - Math.ceil(st.dust))) + "○".repeat(Math.min(7, Math.ceil(st.dust)))}</span>${inBar(pl.y) ? '<span class="anc">IN THE BLACK</span>' : ""}${lampTxt}` :
         `<span>GEAR ${st.tier}</span><span>BLACK-OUTS ${"●".repeat(st.blackouts)}${"○".repeat(3 - st.blackouts)}</span><span>${stage === 1 ? `CORES ${st.cores}/2` : `READING ${st.readings.length}/1`}</span>${pl.ground && pl.ground.warm ? '<span class="anc">WARM LEDGE</span>' : ""}${pl.anchored ? '<span class="anc">ANCHORED</span>' : ""}${stormTxt}`}`;
       if (r2 !== lastR2) { hudR2.innerHTML = r2; lastR2 = r2; }
     };
@@ -604,12 +609,11 @@ function mountStage(root, api, stage) {
     const loop = (now) => {
       if (!alive) return;
       const dt = Math.min(0.05, (now - (last || now)) / 1000); last = now;
-      if (st.started && !st.over) update(dt);
+      if (st.started && !st.over && !(api.held && api.held())) update(dt);
       draw(now);
       if (!st.over) raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
-    if (window.__ezTest) window.__ezTest[api.key] = { st, pl, ledges, keys, altOf, bars, wolves, stage, inBar };
 
     // ---- how to play: a survey sheet's title block
     const intro = document.createElement("div");
@@ -621,7 +625,7 @@ function mountStage(root, api, stage) {
       <table>
         <tr><td>← →  ◀ ▶</td><td>Walk the ledge</td></tr>
         <tr><td>↑ / Space</td><td>Jump to the next ledge</td></tr>
-        ${stage === 2 ? `<tr><td>the black</td><td>Inside a bar you are unseen, and the ledges are too. Dust shows them for one beat every 7 s. Some bars are only a word wide</td></tr><tr><td>the lamps</td><td>Be in the black when they sweep. There are no rings down here</td></tr>`
+        ${stage === 2 ? `<tr><td>the black</td><td>Inside a bar you are unseen, and the ledges are too. Dust shows them for one beat every 7 s, and its chalk fades over the next five: count the seven dots on the DUST meter and jump while you can still see where</td></tr><tr><td>the lamps</td><td>Be in the black when they sweep. There are no rings down here</td></tr>`
           : `<tr><td>hold ↓  ANCHOR</td><td>Clip on at a ring ○ when the page edge darkens: a storm front</td></tr>`}
         ${stage === 1 ? `<tr><td>her song</td><td>Each front carries a neume: a note, anchor; a rest, a gap you can stand in</td></tr><tr><td>hold R  DRILL</td><td>At a core mark, hold still 4 s. Your air keeps draining</td></tr>` : ""}
       </table>
@@ -645,7 +649,6 @@ function mountStage(root, api, stage) {
       unmount() {
         alive = false; cancelAnimationFrame(raf); ro.disconnect();
         off.forEach((f) => f()); timers.forEach(clearTimeout); clearTimeout(msgTimer);
-        if (window.__ezTest) delete window.__ezTest[api.key];
       },
     };
   }

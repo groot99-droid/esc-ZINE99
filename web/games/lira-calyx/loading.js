@@ -2,6 +2,8 @@
 // A page of Lira's journal: the terrace still pasted in as an ink-wash plate, the title in a field
 // naturalist's type, the torn last line of the testament, and a survey cross-section whose dotted
 // route climbs the ridge as the game loads (the route "stays in the journal as a page", DESIGN 10).
+import { FINALE } from "./_bars.js";
+
 export const meta = {
   cover: "assets/stills/lira-calyx/01-terrace.jpg",
   palette: { bg: "#efe4cb", fg: "#3b2618", accent: "#b3212b" }, // journal paper, iron-gall ink, seal red
@@ -138,4 +140,16 @@ export function render(root, ctx) {
     progress(p) { target = Math.max(target, Math.min(1, p)); if (!raf) raf = requestAnimationFrame(step); },
     close() { cancelAnimationFrame(raf); timers.forEach((t) => { clearInterval(t); clearTimeout(t); }); },
   };
+}
+
+// The finale (phase 3): the long puzzle paid off. Null until the twelve bars have been walked from the
+// core to the north shaft in Storm-Song Cipher (the ledger, _bars.js) and a choice made with the route.
+// Errata, the new ending, needs the damping measured by hand (The Assay, the fragment) and the flyleaf
+// found (The Key); without both, or by choice, the route earns The Archivist in Time.
+export function finale({ shared, keyart }) {
+  const f = shared.get("finale", null);
+  if (!f || !f.ending || !FINALE[f.ending]) return null;
+  const e = FINALE[f.ending];
+  const runs = Math.max(1, shared.get("runs", 1) | 0);
+  return { title: e.title, text: e.text + (runs > 1 ? ` (Read ${runs} times.)` : ""), image: keyart("ending-" + f.ending) };
 }

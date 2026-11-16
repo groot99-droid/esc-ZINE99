@@ -21,7 +21,7 @@ const STAGES = [
   { mag: "×400", afu: 0.61, pulse: 0.75, wig: 0.15, plate: "Plate 2: the lattice repeats, every cell the same." },
   { mag: "×1 600", afu: 0.78, pulse: 0.62, wig: 0.2, plate: "Plate 3: a pattern too regular to be natural." },
 ];
-const NEEDS = [4, 5, 0], PLANES = ["upper", "middle", "lower"], RIDE = 10;
+const NEEDS = [4, 5, 0], PLANES = ["upper", "middle", "lower"], RIDE = 10, GHOST_W = 0.09;
 const SLIDE = ["B1-LENS · OUTPOST FRAGMENT", "B2-LENS · UNDER THE LAB PULSE", "THE DREAM SLIDE · 03:12"];
 
 function mountStage(root, api, stage) {
@@ -175,7 +175,7 @@ function mountStage(root, api, stage) {
       // the dream slide (twist): ride a ghost filament; it takes no plane, and it does not stay
       if (stage === 2) {
         for (const g of st.ghosts) { g.age += dt; if (g.age > g.life) Object.assign(g, newGhost()); }
-        const on2 = st.ghosts.some((g) => g.age > 0.5 && Math.abs(fx(g, st.pt.y) - st.pt.x) < 0.075);
+        const on2 = st.ghosts.some((g) => g.age > 0.5 && g.age < g.life - 0.3 && Math.abs(fx(g, st.pt.y) - st.pt.x) < GHOST_W);
         st.riding = on2;
         if (on2) { st.ride += dt; if (!st.beats.ride) { st.beats.ride = 1; say("The flicker holds under the cross-hair, and nothing strikes. It is not a charge coming. It is a channel.", 4.5, true); } }
         if (st.ride >= (st.gentle ? RIDE - 2 : RIDE)) { st.reveal = performance.now(); st.over = false; api.store.set("losses", 0);
@@ -299,6 +299,11 @@ function mountStage(root, api, stage) {
       // ghost filaments (the dream slide): a faint line that flickers at 12 Hz; steady and dashed under reduced motion
       for (const gh of st.ghosts) {
         const fade = Math.min(1, gh.age / 0.5, (gh.life - gh.age) / 0.6), fl = api.reducedMotion ? 0.8 : (Math.floor(now / 1000 * 24) % 2 ? 0.95 : 0.6);
+        // the channel: a pale band as wide as the cross-hair can hold, so the player sees where riding counts;
+        // it thins over the ghost's last 1.5 s, the warning that it is about to go
+        const thin = Math.max(0, Math.min(1, (gh.life - gh.age) / 1.5));
+        if (fade > 0) { ctx.beginPath(); for (let v = -1.05; v <= 1.05; v += 0.04) ctx.lineTo(X(fx(gh, v)), Y(v));
+          ctx.strokeStyle = `rgba(160,175,255,${0.13 * fade})`; ctx.lineWidth = R * GHOST_W * 2 * (0.35 + 0.65 * thin); ctx.lineCap = "round"; ctx.stroke(); ctx.lineCap = "butt"; }
         ctx.beginPath(); for (let v = -1.05; v <= 1.05; v += 0.04) ctx.lineTo(X(fx(gh, v)), Y(v));
         ctx.strokeStyle = `rgba(233,238,255,${Math.max(0, fade) * fl * (st.dyeT > 0 ? 1 : 0.8)})`; ctx.lineWidth = R * 0.01; if (api.reducedMotion) ctx.setLineDash([R * 0.02, R * 0.025]); ctx.stroke(); ctx.setLineDash([]);
       }
@@ -379,7 +384,7 @@ function mountStage(root, api, stage) {
       if (!alive) return;
       if (dialEl && STAGES[st.stage].afu !== dialAfu) { dialAfu = STAGES[st.stage].afu; dialEl.classList.toggle("hot", dialAfu > 0.7); dialEl.querySelector("i").style.transform = `translateX(-50%) rotate(${(dialAfu - 0.5) * 240}deg)`; }
       const dt = Math.min(0.05, (now - (last || now)) / 1000); last = now;
-      if (st.started && !st.over) update(dt);
+      if (st.started && !st.over && !(api.held && api.held())) update(dt);
       draw(now);
       if (!st.over || st.reveal) raf = requestAnimationFrame(loop);
     };
@@ -389,7 +394,7 @@ function mountStage(root, api, stage) {
     const intro = document.createElement("div"); intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}card" role="dialog" aria-label="How to play"><div class="disc">${["×100", "×400", "03:12"][stage]}</div><div class="in">
       <div class="lab">${["SLIDE B1 · FALSE COLOUR", "SLIDE B2 · LAB PULSE", "NO SLIDE NUMBER"][stage]}</div><h2>${["Under the lens", "Under the lens: the pulse", "Under the lens: the dream slide"][stage]}</h2>
-      <p class="goal">${["Capture four lattice cells without losing the slide.", "Capture five true cells while the lab pulse rewires the planes.", "Three nights without sleep. Hold the cross-hair on the true channel for ten seconds. It is not where you were taught to look."][stage]}</p>
+      <p class="goal">${["Capture four lattice cells without losing the slide.", "Capture five true cells while the lab pulse rewires the planes.", "Three nights without sleep. Hold the cross-hair on the true channel for ten seconds. It is not where you were taught to look: the faint flicker, and the pale band around it, is the channel; when the band thins, that flicker is about to go out."][stage]}</p>
       <dl><dt>steer</dt><dd>mouse, touch or arrows</dd><dt>focus</dt><dd>wheel, Q / E or the buttons</dd>
       <dt>rule</dt><dd><b class="t">Teal</b> is solid: touch its cells, dodge its pulses. <b class="m">Magenta</b> passes through.</dd>
       ${stage === 1 ? `<dt>pulse</dt><dd>the ring flashes violet, then the focus plane swaps with the one below</dd><dt>dye</dt><dd>D, once: seeded cells show for 5 s. A seeded cell costs steadiness</dd><dt>breath</dt><dd>hold Space: the flow slows for 3 s</dd>` : ""}
@@ -400,8 +405,7 @@ function mountStage(root, api, stage) {
     const sb = intro.querySelector("button");
     on(sb, "click", () => { const g = intro.querySelector(".gentle"); st.gentle = !!(g && g.checked); intro.remove(); st.started = true; say(["Book I. The fragment from the storm-struck outpost, threaded with micro‑filaments, clipped under the lens. ×100: capture four lattice cells.", "Book II, the corporate lab, after hours. The fragment sits under their own lens while the pulse rig cycles. Capture five cells, and not the seeded ones.", "The hideout, the third night. She has fallen asleep at the bench, and the slide under the lens is one she never mounted. Somewhere in the field: a 0.003 lux fluctuation at 12 Hz."][stage], 6, true); });
     sb.focus();
-    if (window.__ezTest) window.__ezTest[api.key] = { st, keys, stage, fx, L };
-    return { unmount() { alive = false; cancelAnimationFrame(raf); ro.disconnect(); off.forEach((f) => f()); timers.forEach(clearTimeout); if (window.__ezTest) delete window.__ezTest[api.key]; } };
+    return { unmount() { alive = false; cancelAnimationFrame(raf); ro.disconnect(); off.forEach((f) => f()); timers.forEach(clearTimeout); } };
   }
 }
 

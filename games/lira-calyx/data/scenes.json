@@ -74,12 +74,14 @@
       "chapter": "book-1",
       "game": "key",
       "reads": [
-        "readings"
+        "readings",
+        "testament_read"
       ],
       "writes": [
         "readings",
         "key_branches_added",
-        "wolf_couplet"
+        "wolf_couplet",
+        "bars_gauged"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -95,7 +97,8 @@
       "chapter": "book-1",
       "game": "assay",
       "writes": [
-        "readings"
+        "readings",
+        "bars_gauged"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -134,13 +137,15 @@
       "mode": "climb",
       "reads": [
         "gear_tier",
-        "wolf_couplet"
+        "wolf_couplet",
+        "testament_read"
       ],
       "writes": [
         "readings",
         "nodes_verified",
         "relay_used",
-        "exposure"
+        "exposure",
+        "bars_gauged"
       ],
       "enter": "flatten",
       "exit": "fade",
@@ -181,7 +186,8 @@
         "fragment_salvaged"
       ],
       "writes": [
-        "readings"
+        "readings",
+        "bars_gauged"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -279,7 +285,8 @@
       "writes": [
         "readings",
         "nodes_verified",
-        "seeding_evidence"
+        "seeding_evidence",
+        "bars_gauged"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -340,7 +347,8 @@
         "fragment_salvaged"
       ],
       "writes": [
-        "readings"
+        "readings",
+        "bars_gauged"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -374,7 +382,8 @@
       "chapter": "book-2",
       "game": "audit",
       "reads": [
-        "brief_redacted"
+        "brief_redacted",
+        "testament_read"
       ],
       "writes": [
         "desk_bars",
@@ -396,7 +405,8 @@
       "game": "audit",
       "reads": [
         "brief_redacted",
-        "readings"
+        "readings",
+        "testament_read"
       ],
       "writes": [
         "readings",
@@ -424,7 +434,8 @@
       ],
       "writes": [
         "gear_tier",
-        "cores_drilled"
+        "cores_drilled",
+        "bars_gauged"
       ],
       "enter": "flatten",
       "exit": "fade",
@@ -516,7 +527,8 @@
         "readings",
         "nodes_verified",
         "cipher_nodes_decoded",
-        "margin_notes_acted"
+        "margin_notes_acted",
+        "bars_gauged"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -587,7 +599,8 @@
       "game": "audit",
       "reads": [
         "exposure",
-        "readings"
+        "readings",
+        "testament_read"
       ],
       "writes": [
         "readings",
@@ -603,7 +616,7 @@
       "next": [
         "b3-hiding"
       ],
-      "minutes": 5
+      "minutes": 4
     },
     {
       "id": "b3-hiding",
@@ -753,9 +766,28 @@
       "enter": "push-in",
       "exit": "flatten",
       "next": [
-        "b4-descent"
+        "b4-route"
       ],
       "minutes": 3
+    },
+    {
+      "id": "b4-route",
+      "layer": "1d",
+      "name": "Storm-Song Cipher IV: the twelve bars",
+      "chapter": "book-4",
+      "game": "cipher",
+      "reads": [
+        "bars_gauged"
+      ],
+      "writes": [
+        "bars_route_plotted"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "b4-descent"
+      ],
+      "minutes": 2
     },
     {
       "id": "b4-descent",
@@ -792,7 +824,7 @@
       "next": [
         "b4-core"
       ],
-      "minutes": 3
+      "minutes": 2
     },
     {
       "id": "b4-core",
@@ -825,7 +857,9 @@
         "desk_bars",
         "desk_page_lost",
         "pell_book_given",
-        "sluice_log_read"
+        "sluice_log_read",
+        "flyleaf_found",
+        "bars_route_plotted"
       ],
       "writes": [
         "core_choice",
@@ -847,7 +881,9 @@
         "core_choice",
         "terraces_held",
         "verified_share",
-        "margin_notes_answered"
+        "margin_notes_answered",
+        "bars_route_plotted",
+        "gamma_remeasured"
       ],
       "enter": "pull-out",
       "exit": "fade",
@@ -864,7 +900,8 @@
       "reads": [
         "core_choice",
         "margin_notes_answered",
-        "verified_share"
+        "verified_share",
+        "bars_route_plotted"
       ],
       "enter": "fade",
       "exit": "fade",
@@ -896,7 +933,8 @@
       "game": "audit",
       "reads": [
         "readings",
-        "margin_notes"
+        "margin_notes",
+        "bars_route_plotted"
       ],
       "writes": [
         "pages_restored",
@@ -908,7 +946,8 @@
         "end-written",
         "end-in-time",
         "end-resilience",
-        "end-fire"
+        "end-fire",
+        "end-errata"
       ],
       "minutes": 5
     },
@@ -924,7 +963,8 @@
         "book_closed"
       ],
       "writes": [
-        "book_closed"
+        "book_closed",
+        "testament_read"
       ],
       "enter": "pull-out",
       "exit": "fade",
@@ -942,7 +982,8 @@
         "book_closed"
       ],
       "writes": [
-        "book_closed"
+        "book_closed",
+        "testament_read"
       ],
       "enter": "pull-out",
       "exit": "fade",
@@ -960,7 +1001,8 @@
         "book_closed"
       ],
       "writes": [
-        "book_closed"
+        "book_closed",
+        "testament_read"
       ],
       "enter": "pull-out",
       "exit": "fade",
@@ -978,7 +1020,27 @@
         "book_closed"
       ],
       "writes": [
+        "book_closed",
+        "testament_read"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "minutes": 2
+    },
+    {
+      "id": "end-errata",
+      "layer": "3d",
+      "name": "Hollin Terrace in the storm: the correction, unsigned",
+      "chapter": "epilogue",
+      "reads": [
+        "pages_restored",
+        "names_protected",
+        "terraces_held",
         "book_closed"
+      ],
+      "writes": [
+        "book_closed",
+        "testament_read"
       ],
       "enter": "pull-out",
       "exit": "fade",

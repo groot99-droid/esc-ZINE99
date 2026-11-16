@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 210" width="1200" height="210" role="img" aria-labelledby="lettering-fire-t lettering-fire-d">
+<title id="lettering-fire-t">Ending lettering: Fire</title>
+<desc id="lettering-fire-d">The ending's name, Fire, in iron-gall ink on laid paper between pencil guide lines, with its subtitle in pencil and one small sign of what it cost.</desc>
+<defs><filter id="lettering-fire-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="808"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="lettering-fire-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="lettering-fire-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient><filter id="lettering-fire-blur4" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter><filter id="lettering-fire-rough5"><feTurbulence type="turbulence" baseFrequency="0.3" numOctaves="2" seed="449" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2"/></filter></defs>
+<rect x="0" y="0" width="1200" height="210" fill="#f1e8d2"/>
+<rect x="0" y="0" width="1200" height="210" filter="url(#lettering-fire-grain1)"/>
+<rect x="0" y="0" width="1200" height="210" fill="url(#lettering-fire-pat2)"/>
+<rect x="0" y="0" width="1200" height="210" fill="url(#lettering-fire-vig3)"/>
+<line x1="40" y1="57.8" x2="1160" y2="58.9" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="40" y1="137.7" x2="1160" y2="137.9" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="40" y1="176.2" x2="1160" y2="175.1" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="72" y1="20" x2="72" y2="194" stroke="#b3212b" stroke-width="0.8" opacity="0.4"/>
+<text x="100" y="136" font-size="92" font-family="serif" fill="#8a5a2c" stroke="#8a5a2c" stroke-width="6.4" opacity="0.3" filter="url(#lettering-fire-blur4)" font-style="italic" textLength="158.2" lengthAdjust="spacingAndGlyphs">Fire</text>
+<text x="100" y="136" font-size="92" font-family="serif" fill="#3b2618" stroke="#3b2618" stroke-width="1.1" filter="url(#lettering-fire-rough5)" font-style="italic" textLength="158.2" lengthAdjust="spacingAndGlyphs">Fire</text>
+<text x="104" y="180" font-size="22" font-family="serif" font-style="italic" fill="#7d7a74" transform="rotate(-0.3 104 180)">silent water lifts, the river still glowing</text>
+<line x1="900" y1="70" x2="1110" y2="70" stroke="#a8281e" stroke-width="1.4"/>
+<line x1="900" y1="80" x2="1110" y2="80" stroke="#a8281e" stroke-width="1.4"/>
+<line x1="900" y1="90" x2="1110" y2="90" stroke="#a8281e" stroke-width="1.4"/>
+<line x1="900" y1="100" x2="1110" y2="100" stroke="#a8281e" stroke-width="1.4"/>
+<rect x="910" y="92" width="10" height="8" fill="none" stroke="#3b2618" stroke-width="1.2" opacity="0.5"/>
+<rect x="954" y="92" width="10" height="8" fill="none" stroke="#3b2618" stroke-width="1.2" opacity="0.5"/>
+<rect x="998" y="92" width="10" height="8" fill="none" stroke="#3b2618" stroke-width="1.2" opacity="0.5"/>
+<rect x="1042" y="92" width="10" height="8" fill="none" stroke="#3b2618" stroke-width="1.2" opacity="0.5"/>
+<rect x="1086" y="92" width="10" height="8" fill="none" stroke="#3b2618" stroke-width="1.2" opacity="0.5"/>
+<text x="0" y="0" font-size="18" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(900 140) skewX(24) rotate(-1.5)">decodes to nothing</text>
+</svg>

@@ -16,6 +16,7 @@
 // out; and the page is a dirge, the same path walked backwards from the mark. Set-piece: Lira plays
 // the bars aloud. It reads four of the twelve bars; where all twelve lead waits for phase 3.
 import { runStages } from "./_stages.js";
+import { record, got } from "./_bars.js";
 const P = "lira-calyx-storm-song-cipher-";
 const INK = "#3b2618", RED = "#b3212b", PAPER = "#e9dcbd", BLUE = "#2f4c86", GOLD = "#c8913a", PENCIL = "#6f6a62";
 const STG = [
@@ -291,10 +292,10 @@ function mountStage(root, api, stage) {
         if (TW && st.mine.filter((x) => typeof x === "number").length < 2) { msg("Nothing to walk yet: write a note where a ruled bar sits.", true); return; }
         st.plotted = walk(st.mine, TW && st.dirge, TW); drawMap();
         const res = TRUE.nodes.map((t, k) => { const n = st.plotted.nodes[k]; return n && Math.hypot(n[0] - t[0], n[1] - t[1]) <= 1; });
-        if (res.every(Boolean)) { st.over = true; api.store.set("losses", 0); if (stage === 1) api.shared.set("song", true); if (TW) api.shared.set("bars_read", true);
+        if (res.every(Boolean)) { st.over = true; api.store.set("losses", 0); if (stage === 1) api.shared.set("song", true); if (TW) { api.shared.set("bars_read", true); S.page.filter((q) => q.k === "s").forEach((q, i) => record(api, 7 + i, q.mm)); if (api.ledger) api.ledger.refresh(); }
           const text = stage === 0 ? `Two drawers, two names${st.tries ? `, on plot ${st.tries + 1}` : ""}: Dr. Solace Veylor, and Operation ReGenesis. The rest of the index is in a notation you cannot fully read yet, and the coordinates stay locked. Someone wrote a filing system as a song.`
             : stage === 1 ? `N7 and N8 located within a square each${st.tries ? ", on the second plot" : ""}. Entries: cipher, ok. They never passed through the relay. Mara reads the pencil path upside down and nods once: a Peakborn song, walked out on paper.`
-            : `Four ruled bars, read as neumes and walked as a dirge, end on a square the survey leaves blank${st.tries ? ", on the second plot" : ""}. The brushed bar sang nothing. ${st.beats.sing ? "Mara is still in the doorway. “Who taught your censor to sing?”" : "Mara reads the page over your shoulder and says, slowly: “That is ours. Who taught your censor to sing?”"} Four bars of twelve; the others are in other books, and this path stops where they begin.`;
+            : `Four ruled bars, read as neumes and walked as a dirge, end on a square the survey leaves blank${st.tries ? ", on the second plot" : ""}. The brushed bar sang nothing. ${st.beats.sing ? "Mara is still in the doorway. “Who taught your censor to sing?”" : "Mara reads the page over your shoulder and says, slowly: “That is ours. Who taught your censor to sing?”"} ${Object.keys(got(api)).length >= 12 ? "Four bars of twelve, and with these the ledger holds all twelve: open it (the ruled bar in the strip above) and lay them under this staff." : `Four bars of twelve, in the ledger now (${Object.keys(got(api)).length} of 12); the others are in other books, and this path stops where they begin. When all twelve are measured, the ledger lays them under this staff.`}`;
           const t = setTimeout(() => api.end({ outcome: "win", text }), api.reducedMotion ? 0 : 2400); timers.push(t); return; }
         st.tries++;
         const bad = TW ? "The path" : NODES.filter((_, k) => !res[k]).join(" and ");
@@ -345,8 +346,7 @@ function mountStage(root, api, stage) {
     const sb = intro.querySelector("button");
     on(sb, "click", () => { intro.remove(); msg(["Book II, the sealed archive at Cinder Reach. The index is not in letters. Three lines of square notes on a red staff, and a table you have only begun to trust.", "Book III, the storm-singing ledge. Mara sings the storm-song once through, the way the Peakborn teach it, and three slots on the old staff have worn away. Mara: “Write where I breathe.”", "Book III, after the audit. The published brief lies beside the bar staff: five black bars where your coordinates were. You have measured one of them already. 41 mm."][stage]); });
     sb.focus();
-    if (window.__ezTest) window.__ezTest[api.key] = { st, stage, SONG };
-    return { unmount() { if (window.__ezTest) delete window.__ezTest[api.key]; timers.forEach(clearTimeout); playing.forEach(clearTimeout); try { drone && drone.stop(); } catch {} try { ac && ac.close(); } catch {} off.forEach((f) => f()); } };
+    return { unmount() { timers.forEach(clearTimeout); playing.forEach(clearTimeout); try { drone && drone.stop(); } catch {} try { ac && ac.close(); } catch {} off.forEach((f) => f()); } };
   }
 }
 

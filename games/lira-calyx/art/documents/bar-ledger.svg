@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 900" width="640" height="900" role="img" aria-labelledby="bar-ledger-t bar-ledger-d">
+<title id="bar-ledger-t">The ledger of twelve bars</title>
+<desc id="bar-ledger-d">A journal page ruled into twelve numbered slots down a red margin, each slot a pencil guide where a measured bar is copied to length; the heading in Lira's hand asks what they are for.</desc>
+<defs><filter id="bar-ledger-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="245"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="bar-ledger-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="bar-ledger-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="640" height="900" fill="#f1e8d2"/>
+<rect x="0" y="0" width="640" height="900" filter="url(#bar-ledger-grain1)"/>
+<rect x="0" y="0" width="640" height="900" fill="url(#bar-ledger-pat2)"/>
+<rect x="0" y="0" width="640" height="900" fill="url(#bar-ledger-vig3)"/>
+<text x="40" y="64" font-size="30" font-family="serif" font-style="italic" fill="#3b2618" transform="rotate(-0.2 40 64)">Twelve bars, ruled. What for?</text>
+<line x1="36" y1="84" x2="604" y2="84" stroke="#3b2618" stroke-width="1.2"/>
+<line x1="92" y1="96" x2="92" y2="876" stroke="#b3212b" stroke-width="0.9" opacity="0.5"/>
+<path d="M51.9,123.4 C52.4,122.7 55.3,116.5 55,119.1 C54.8,121.6 51.2,135.4 50.4,138.7" fill="none" stroke="#3b2618" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="110" y1="144" x2="600" y2="144" stroke="#7d7a74" stroke-width="0.7" opacity="0.6"/>
+<path d="M110,124h171" stroke="#7d7a74" stroke-width="0.6" stroke-dasharray="2 5" fill="none" opacity="0.5"/>
+<path d="M49.6,184 C50.2,183.3 51.8,180.5 53.2,179.8 C54.6,179.1 57,179.2 58.1,179.7 C59.2,180.3 59.4,182.1 59.5,183.3 C59.6,184.6 60.9,184.4 58.6,187.2 C56.4,190 46.4,198.1 45.9,200.3 C45.4,202.5 54,200.2 55.7,200.2" fill="none" stroke="#3b2618" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="110" y1="206" x2="600" y2="206" stroke="#7d7a74" stroke-width="0.7" opacity="0.6"/>
+<path d="M110,186h155" stroke="#7d7a74" stroke-width="0.6" stroke-dasharray="2 5" fill="none" opacity="0.5"/>
+<path d="M50.1,245 C50.6,244.6 51.7,242.9 53,242.5 C54.2,242.1 56.7,242 57.8,242.5 C58.9,243.1 59.4,244.6 59.5,245.8 C59.7,247 59.4,248.7 58.7,249.7 C58.1,250.8 56.8,251.9 55.7,252.3 C54.6,252.7 52.7,252.3 52.1,252.2 M55.8,252.1 C56,252.6 57.3,253.7 57.4,254.9 C57.6,256.1 57.2,257.8 56.5,259.1 C55.9,260.3 55,261.8 53.7,262.3 C52.4,262.9 49.9,262.8 48.8,262.4 C47.7,261.9 47.4,260 47.1,259.6" fill="none" stroke="#3b2618" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="110" y1="268" x2="600" y2="268" stroke="#7d7a74" stroke-width="0.7" opacity="0.6"/>
+<path d="M110,248h157" stroke="#7d7a74" stroke-width="0.6" stroke-dasharray="2 5" fill="none" opacity="0.5"/>
+<path d="M52.8,324.1 C53.5,320.8 57.9,305.4 57,304.3 C56.1,303.2 47.2,315.3 47.2,317.5 C47.1,319.8 55.1,317.7 56.6,317.7" fill="none" stroke="#3b2618" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="110" y1="330" x2="600" y2="330" stroke="#7d7a74" stroke-width="0.7" opacity="0.6"/>
+<path d="M110,310h163" stroke="#7d7a74" stroke-width="0.6" stroke-dasharray="2 5" fill="none" opacity="0.5"/>
+<path d="M59.8,365.9 C58.4,365.9 53,364.5 51.1,366 C49.2,367.5 47.7,373.5 48.4,374.9 C49.1,376.4 54.1,374.2 55.5,374.8 C57,375.3 57,377 57.1,378.4 C57.2,379.7 56.9,381.6 56.2,382.9 C55.5,384.3 54.3,385.9 53,386.5 C51.6,387.1 49.2,386.9 48.1,386.4 C46.9,386 46.4,384.3 46.1,383.8" fill="none" stroke="#3b2618" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="110" y1="392" x2="600" y2="392" stroke="#7d7a74" stroke-width="0.7" opacity="0.6"/>
+<path d="M110,372h146" stroke="#7d7a74" stroke-width="0.6" stroke-dasharray="2 5" fill="none" opacity="0.5"/>
+<path d="M58.9,429.6 C58.4,429.3 56.7,427.6 55.5,428 C54.3,428.4 52.9,430.3 51.7,432 C50.6,433.6 49.4,435.8 48.6,438 C47.9,440.2 47.1,443.3 47.2,445 C47.3,446.7 48,447.5 49.2,448.1 C50.3,448.6 52.6,448.9 53.9,448.3 C55.2,447.8 56.4,445.9 57.1,444.7 C57.7,443.5 57.8,442 57.6,440.9 C57.4,439.7 57.1,438.3 56,437.8 C54.9,437.3 52.4,437.3 51,437.8 C49.7,438.3 48.5,440.4 48,440.9" fill="none" stroke="#3b2618" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="110" y1="454" x2="600" y2="454" stroke="#7d7a74" stroke-width="0.7" opacity="0.6"/>
+<path d="M110,434h189" stroke="#7d7a74" stroke-width="0.6" stroke-dasharray="2 5" fill="none" opacity="0.5"/>
+<path d="M49.6,490.6 C51.1,490.6 59,487.6 58.9,490.9 C58.8,494.1 50.7,507.1 49.1,510.3 M50.3,500.8 L56.6,500.2" fill="none" stroke="#3b2618" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="110" y1="516" x2="600" y2="516" stroke="#7d7a74" stroke-width="0.7" opacity="0.6"/>
+<path d="M110,496h162" stroke="#7d7a74" stroke-width="0.6" stroke-dasharray="2 5" fill="none" opacity="0.5"/>
+<path d="M50.5,561.6 C50.2,561 49,559.2 48.9,558 C48.7,556.8 48.9,555.7 49.6,554.6 C50.2,553.5 51.6,551.7 53,551.1 C54.4,550.6 56.8,550.7 57.9,551.3 C59,551.9 59.3,553.5 59.4,554.7 C59.5,555.8 59.3,556.8 58.6,557.9 C58,559.1 56.8,560.9 55.4,561.5 C54.1,562.1 52,561 50.7,561.5 C49.3,562.1 48.1,563.9 47.4,565 C46.7,566.1 46.4,567 46.6,568.2 C46.7,569.3 47.2,571.1 48.3,571.7 C49.4,572.3 51.8,572.1 53.1,571.6 C54.4,571.1 55.5,569.6 56.2,568.4 C56.9,567.3 57.4,565.9 57.3,564.8 C57.2,563.6 55.8,562 55.5,561.5" fill="none" stroke="#3b2618" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="110" y1="578" x2="600" y2="578" stroke="#7d7a74" stroke-width="0.7" opacity="0.6"/>
+<path d="M110,558h165" stroke="#7d7a74" stroke-width="0.6" stroke-dasharray="2 5" fill="none" opacity="0.5"/>
+<path d="M58.7,621.4 C58.2,621.9 57.1,623.9 55.8,624.5 C54.5,625 52,625 50.9,624.5 C49.8,624 49.3,622.6 49.1,621.4 C49,620.2 49.5,618.6 50.1,617.4 C50.8,616.2 51.8,614.8 53.1,614.2 C54.4,613.6 57,613.5 58.1,614 C59.2,614.5 59.6,615.6 59.6,617.3 C59.6,619 58.8,622 58,624.2 C57.2,626.3 56,628.4 54.9,630.1 C53.7,631.7 52.3,633.4 51.2,633.9 C50.1,634.5 48.5,633.4 48,633.3" fill="none" stroke="#3b2618" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="110" y1="640" x2="600" y2="640" stroke="#7d7a74" stroke-width="0.7" opacity="0.6"/>
+<path d="M110,620h196" stroke="#7d7a74" stroke-width="0.6" stroke-dasharray="2 5" fill="none" opacity="0.5"/>
+<path d="M51.5,680.6 C52,679.9 54.9,673.6 54.6,676.3 C54.4,678.9 50.8,693.3 50,696.8 M65.7,675 C66.4,675 68.7,674.3 69.6,674.9 C70.5,675.6 71.4,676.3 71.2,679 C71,681.7 69.5,688.4 68.5,691.1 C67.6,693.8 66.6,694.4 65.5,695.1 C64.3,695.8 62.5,695.9 61.6,695.2 C60.7,694.6 59.9,693.8 60,691.1 C60.2,688.4 61.5,681.8 62.4,679.1 C63.4,676.5 65.1,675.9 65.7,675.2" fill="none" stroke="#3b2618" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="110" y1="702" x2="600" y2="702" stroke="#7d7a74" stroke-width="0.7" opacity="0.6"/>
+<path d="M110,682h179" stroke="#7d7a74" stroke-width="0.6" stroke-dasharray="2 5" fill="none" opacity="0.5"/>
+<path d="M50.5,742.2 C51,741.5 53.8,735.2 53.6,737.7 C53.4,740.3 50.2,754.3 49.5,757.6 M64,743.2 C64.5,742.5 67.4,736.3 67.2,738.8 C66.9,741.4 63.3,755.2 62.5,758.5" fill="none" stroke="#3b2618" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="110" y1="764" x2="600" y2="764" stroke="#7d7a74" stroke-width="0.7" opacity="0.6"/>
+<path d="M110,744h160" stroke="#7d7a74" stroke-width="0.6" stroke-dasharray="2 5" fill="none" opacity="0.5"/>
+<path d="M51.2,805 C51.8,804.3 54.6,798.3 54.3,800.8 C54.1,803.3 50.6,817 49.9,820.2 M61.4,805 C62,804.3 63.3,801.7 64.6,801.1 C65.9,800.4 68.2,800.3 69.3,800.9 C70.3,801.4 70.8,803.2 70.9,804.4 C71.1,805.6 72.3,805.4 70.2,808.1 C68,810.8 58.5,818.6 58,820.7 C57.6,822.7 65.9,820.5 67.4,820.4" fill="none" stroke="#3b2618" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="110" y1="826" x2="600" y2="826" stroke="#7d7a74" stroke-width="0.7" opacity="0.6"/>
+<path d="M110,806h131" stroke="#7d7a74" stroke-width="0.6" stroke-dasharray="2 5" fill="none" opacity="0.5"/>
+</svg>

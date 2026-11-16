@@ -19,6 +19,7 @@
 // have to be true to arrive there, and the plate draws what the Second Genesis selects for.
 // Layer link 3: the wolf couplet written here (or not) changes what the climbs draw.
 import { runStages } from "./_stages.js";
+import { again } from "./_bars.js";
 const P = "lira-calyx-key-";
 const INK = "#3b2618", PAPER = "#ebe0c4", PENCIL = "#7d7a74", SEAL = "#b3212b", TEAL = "#25c2a8";
 const NAMES = {
@@ -63,6 +64,7 @@ const BLANKS = [
 function mountStage(root, api, stage) {
   {
     const SPECS = STG[stage].specs;
+    const TWO = again(api); // a later reading (phase 3): the printed couplets carry his initials
     const off = []; let raf = 0;
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); off.push(() => t.removeEventListener(e, f, o)); };
     const A = api.art || { has: () => false, url: () => "" };
@@ -279,12 +281,12 @@ function mountStage(root, api, stage) {
     const nameText = (n) => typeof n === "number" ? `${n}` : n;
     function renderKey() {
       const pg = st.keyedNew ? "key-page-her-pencil" : "key-page-print";
-      keyEl.innerHTML = A.has(pg) ? `<button type="button" class="${P}kp" aria-label="Look at the key's page">${pic(pg)}<span>THE KEY · Mid-Slopes edition<br>Each couplet is marked with its hand: <span class="${P}hd">PRINT</span> <span class="${P}hd p">HER PENCIL</span></span></button>` : `<div class="${P}tally">THE KEY · each couplet is marked with its hand: PRINT, or HER PENCIL</div>`;
-      const kp = keyEl.querySelector("." + P + "kp"); if (kp) on(kp, "click", () => zoom(pg, st.keyedNew ? "The key's page, with your couplet in pencil in its margin. Who printed the rest, the page does not say." : "The key as printed. No author on the page; the title leaf is missing from the terrace copy."));
+      keyEl.innerHTML = A.has(pg) ? `<button type="button" class="${P}kp" aria-label="Look at the key's page">${pic(pg)}<span>THE KEY · Mid-Slopes edition${TWO ? ", by S.V." : ""}<br>Each couplet is marked with its hand: <span class="${P}hd${TWO ? " h" : ""}">${TWO ? "PRINT · S.V." : "PRINT"}</span> <span class="${P}hd p">HER PENCIL</span></span></button>` : `<div class="${P}tally">THE KEY · each couplet is marked with its hand: PRINT, or HER PENCIL</div>`;
+      const kp = keyEl.querySelector("." + P + "kp"); if (kp) on(kp, "click", () => zoom(pg, st.keyedNew ? "The key's page, with your couplet in pencil in its margin. Who printed the rest, the page does not say." : (TWO ? "The key as printed. No author on the page, and you know the author now: S.V., Veylor, who planted the forest it describes. Every printed couplet is his prose." : "The key as printed. No author on the page; the title leaf is missing from the terrace copy.")));
       for (const c of KEY) {
         const lit = st.cp === c.id && !st.anomaly && !st.atName;
         const row = document.createElement("div"); row.className = P + "cp" + (lit ? " lit" : "") + (c.pencil ? " pencil" : "");
-        const hd = `<span class="${P}hd${c.pencil ? " p" : ""}">${c.pencil ? "HER PENCIL" : "PRINT"}</span>`;
+        const hd = `<span class="${P}hd${c.pencil ? " p" : TWO ? " h" : ""}">${c.pencil ? "HER PENCIL" : TWO ? "PRINT · S.V." : "PRINT"}</span>`;
         for (const side of ["a", "b"]) {
           const br = c[side];
           const lab = `${c.id}${side}.`, dest = typeof br.go === "number" ? br.go : br.go;
@@ -561,7 +563,6 @@ function mountStage(root, api, stage) {
     });
     sb.focus();
     on(window, "keydown", (e) => { if (stage === 2 || !st.started || st.over || e.target.closest("input")) return; const k = e.key.toLowerCase(); if (k === "t") { tool("tap"); e.preventDefault(); } else if (k === "r") tool("rule"); else if (k === "g") tool("tag"); else if (k === "p" && !pellBtn.hidden) tool("pell"); });
-    if (window.__ezTest) window.__ezTest[api.key] = { st, spec, rv, stage };
     return { unmount() { cancelAnimationFrame(raf); off.forEach((f) => f()); timers.forEach(clearTimeout); } };
   }
 }

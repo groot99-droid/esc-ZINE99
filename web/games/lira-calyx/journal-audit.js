@@ -23,6 +23,7 @@
 // desk black out strata in the escape (Cross-section climb, twist) and nodes on the Node Board.
 // The collection thread's guest object lies on the desk.
 import { runStages } from "./_stages.js";
+import { again, record } from "./_bars.js";
 const P = "lira-calyx-journal-audit-";
 const INK = "#2b1d14", SEAL = "#b3212b", ARCH = "#3c5a8c", BLACK = "#141414", PAGE = "#f4efe2";
 const T = " "; // the thin space Lira puts before a unit
@@ -88,6 +89,11 @@ function mountStage(root, api, stage) {
     root.style.background = "#1c1c1e";
     const st = { sel: null, marks: {}, over: false, started: false, bars: {}, pellSeen: new Set(), pellPg: 0 };
     const real = LINES.filter((l) => !l.red), bars = LINES.filter((l) => l.red);
+    const TWO = again(api); // a later reading (phase 3): the archivist's desk log lies beside her entries
+    const DLOG = [
+      [["D 146 · desk 4", "Appendix C of her brief. Four stations flagged. I ruled line 1 at 41 mm, on the line, never through it."], ["D 148 · 09:52", "Their press set my bar into her published brief. She will lay a gauge on it. Let her."], ["D 148", "The well, the ridge, the fragment: they changed three lines. I changed none. I only covered."]],
+      [["D 186", "The Peaks sheet: 28 mm on the drone line. She drilled the cores anyway."], ["D 202 · 09:44", "Her stolen log, left page. 28 mm, ruled. The last of the twelve. She has eleven of mine and does not know it."], ["D 202", "The forger used her hand on the N8 line. I could not bar a forgery. I wrote in the margin instead."]],
+    ][stage];
     const el = document.createElement("div"); el.className = P + "wrap";
     el.innerHTML = `<style>
       .${P}wrap{position:absolute;inset:0;display:flex;flex-direction:column;background:#1c1c1e;color:${INK}}
@@ -101,6 +107,10 @@ function mountStage(root, api, stage) {
       .${P}tally b{display:block;font-size:20px}.${P}tally small{display:block;font-size:12px;color:#cfd8e6}
       .${P}cols{display:flex;flex-wrap:wrap;gap:6px 26px}.${P}col{flex:1 1 380px;min-width:0}
       .${P}col h4{font:700 11px 'Courier Prime',monospace;letter-spacing:.14em;margin:6px 0;opacity:.7}
+      .${P}dlog{flex:1 1 100%!important;border-top:1.5px dashed ${ARCH};padding-top:6px;color:${ARCH};display:block}
+      .${P}dlog h4{color:${ARCH};opacity:1}.${P}dlog .dli{float:right;width:min(120px,30%);height:auto;margin:0 0 6px 10px;box-shadow:2px 2px 0 rgba(0,0,0,.2)}
+      .${P}dlog p{margin:0 0 6px;font:italic 15px/1.35 'IM Fell English',Georgia,serif}.${P}dlog p b{font:700 11px 'Courier Prime',monospace;letter-spacing:.06em;display:block;font-style:normal}
+      .${P}dlog p span{display:inline-block;transform:skewX(12deg);transform-origin:left bottom;padding-left:4px}
       .${P}ln{display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:start;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid rgba(43,29,20,.18);padding:7px 54px 7px 4px;cursor:pointer;color:${INK};font:16px/1.35 'IM Fell English',Georgia,serif;position:relative;min-height:44px}
       .${P}ln:hover{background:rgba(43,29,20,.07)}
       .${P}ln:focus-visible{outline:2px dashed ${ARCH};outline-offset:-2px}
@@ -183,7 +193,8 @@ function mountStage(root, api, stage) {
     </style>
     <div class="${P}scroll"><div class="${P}tabs" aria-hidden="true">${pic("tab-entries", "on")}${pic("tab-margin")}</div><div class="${P}folder"><div class="${P}page">
       <div class="${P}head"><span>${S.file}<br><span style="font-weight:400;opacity:.7">${S.sub}</span></span><div class="${P}tally">CHECKED<b>0 / ${real.length}</b></div></div>
-      <div class="${P}cols"><div class="${P}col" data-pg="0"><h4>${S.cols[0]}</h4></div><div class="${P}col" data-pg="1"><h4>${S.cols[1]}</h4></div></div>
+      <div class="${P}cols"><div class="${P}col" data-pg="0"><h4>${S.cols[0]}</h4></div><div class="${P}col" data-pg="1"><h4>${S.cols[1]}</h4></div>
+      ${TWO && DLOG ? `<aside class="${P}col ${P}dlog" aria-label="The archivist's desk log"><h4>DESK LOG · EXCISION DESK 4 · NOT FOR FILE</h4>${pic("desk-log", "dli", "The archivist's desk log")}${DLOG.map(([d, t]) => `<p><b>${d}</b><span>${t}</span></p>`).join("")}</aside>` : ""}</div>
       ${pic("seal-press-imprint", P + "seal") || `<div class="${P}seal">AUDIT</div>`}
     </div></div></div>
     <div class="${P}tray">
@@ -284,6 +295,8 @@ function mountStage(root, api, stage) {
       box.querySelectorAll("[data-c]").forEach((q) => on(q, "click", () => {
         b.call = q.dataset.c; b.right = b.call === l.kind; box.remove(); refresh();
         if (l.kind === "surgical" && b.right) {
+          if (stage === 0 && l.id === "b0") record(api, 7, l.mm); else if (stage === 1 && l.id === "b1") record(api, 12, l.mm);
+          if (api.ledger) api.ledger.refresh();
           const rep = document.createElement("span"); rep.className = P + "reply"; rep.innerHTML = `${pic("bracket-ink")}<span>The bar is ${l.mm}${T}mm long. I measured it. I do not know what else to do with it.</span>`; row.after(rep);
           out("A censor in a hurry does not rule a line to the millimetre. You write its length beside it, as you would any reading.", null, true);
           later(() => { if (st.over || !rep.isConnected) return; smallHand(rep, "I ruled that line. I am sorry for its length."); st.sorry = true; out("Under your measurement, in blue-black, slanted left: the small hand has written again.", null, true); }, api.reducedMotion ? 600 : 9000);
@@ -455,6 +468,7 @@ function mountStage(root, api, stage) {
         .${P}dl .full{position:absolute;left:0;top:50%;transform:translateY(-50%);height:16px;background:${BLACK};box-shadow:0 2px 0 ${ARCH};border-radius:1px}
         .${P}dl .mm{position:absolute;right:4px;bottom:1px;font:700 11px 'Courier Prime',monospace;background:${PAGE};border:1px solid ${INK};padding:0 5px}
         .${P}dl.barred .tx{opacity:.16}.${P}dl.barred .fl{visibility:hidden}
+        .${P}cost{display:block;margin-top:4px;font:italic 13px/1.3 'IM Fell English',Georgia,serif;color:${ARCH}}
         .${P}dl .full{top:7px;bottom:7px;height:auto;transform:none}
         .${P}panel{background:#1c1d20;border:1px solid #000;padding:10px;font:13px/1.4 'Courier Prime',monospace}
         .${P}panel h4{margin:0 0 6px;font:700 12px 'Courier Prime',monospace;letter-spacing:.12em;color:#cfd8e6}
@@ -491,7 +505,7 @@ function mountStage(root, api, stage) {
           const c = d.cut[k], b = document.createElement("button"); b.type = "button";
           b.className = P + "dl" + (d.sel === k ? " sel" : "") + (c && c !== "word" ? " barred" : "");
           b.setAttribute("aria-label", `${L.pre}${c ? "" : L.flag}${L.post} ${c === "word" ? "The flagged term is struck out." : c ? `The whole line is ruled out, ${c} millimetres.` : "Flagged term still showing."}`);
-          b.innerHTML = `<span class="tx">${L.pre}<span class="${c === "word" ? "wd" : "fl"}">${L.flag}</span>${L.post}</span>${c && c !== "word" ? `<span class="full" style="width:${Math.min(96, 30 + c * 1.6)}%"></span><span class="mm">${c} mm</span>` : ""}`;
+          b.innerHTML = `<span class="tx">${L.pre}<span class="${c === "word" ? "wd" : "fl"}">${L.flag}</span>${L.post}</span>${c && c !== "word" ? `<span class="full" style="width:${Math.min(96, 30 + c * 1.6)}%"></span><span class="mm">${c} mm</span>` : ""}${TWO ? `<span class="${P}cost">ruled whole: stratum C.${k + 1} goes black in the shafts, and ${L.node} is ■ on the board · the word only: the supervisor looks up, and the station stays hers</span>` : ""}`;
           on(b, "click", () => { d.sel = k; render(); dls.children[k].focus(); });
           dls.appendChild(b);
         });
@@ -540,8 +554,7 @@ function mountStage(root, api, stage) {
         else if (e.key === "Enter" && !e.target.closest("button")) act("pass");
       });
       render(); dls.children[0].focus();
-      say("Weeks before that night, at a steel desk under one cold lamp. You are not Lira here. Her brief, a black pen, a quota of four: every flagged station covered before the page goes up. Cut a word, or rule a whole line.");
-      if (window.__ezTest) window.__ezTest[api.key + "-desk"] = d;
+      say(TWO ? "The desk again. You know this time what each cut costs her, and it is written under each line in your own small hand. Cover all four." : "Weeks before that night, at a steel desk under one cold lamp. You are not Lira here. Her brief, a black pen, a quota of four: every flagged station covered before the page goes up. Cut a word, or rule a whole line.");
     };
 
     const HOW = [
@@ -573,8 +586,7 @@ function mountStage(root, api, stage) {
     });
     sb.focus();
     refresh();
-    if (window.__ezTest) window.__ezTest[api.key] = { st, stage, LINES };
-    return { unmount() { timers.forEach(clearTimeout); off.forEach((f) => f()); if (window.__ezTest) { delete window.__ezTest[api.key]; delete window.__ezTest[api.key + "-desk"]; } } };
+    return { unmount() { timers.forEach(clearTimeout); off.forEach((f) => f()); } };
   }
 }
 

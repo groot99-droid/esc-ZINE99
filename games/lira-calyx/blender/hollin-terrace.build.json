@@ -1133,6 +1133,123 @@
           "verb": "Dig out the books"
         }
       ]
+    },
+    "end-errata": {
+      "note": "Errata ending (accepted 2026-11-15, built 2026-11-16). No pulse: violet storm dusk on the mountain's own period. Hollin is emptied and shuttered on the siren baseline the player set in Book I; lantern points climb the far path. On the second tier Lira pins one printed sheet, the correction to her own model, unsigned, to the Continuum's relay mast, a sheaf of copies under her arm. The storm front rolls onto the upper tier.",
+      "world": {
+        "color": [
+          0.188,
+          0.149,
+          0.259
+        ],
+        "strength": 0.28
+      },
+      "lights": [
+        {
+          "name": "storm-dusk",
+          "type": "SUN",
+          "location": [
+            0,
+            -30,
+            40
+          ],
+          "energy": 0.9,
+          "size": 6,
+          "color": [
+            0.549,
+            0.443,
+            0.71
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "front-edge",
+          "type": "AREA",
+          "location": [
+            10,
+            24,
+            34
+          ],
+          "energy": 9000,
+          "size": 14,
+          "color": [
+            0.722,
+            0.635,
+            0.878
+          ],
+          "look_at": [
+            0,
+            20,
+            20
+          ]
+        },
+        {
+          "name": "river-glow",
+          "type": "AREA",
+          "location": [
+            -52,
+            0,
+            1.5
+          ],
+          "energy": 3000,
+          "size": 6,
+          "color": [
+            0.22,
+            0.878,
+            0.847
+          ],
+          "look_at": [
+            -52,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -29.5,
+          -4.0,
+          16.4
+        ],
+        "look_at": [
+          -36.0,
+          1.0,
+          15.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -33,
+          -2,
+          14
+        ],
+        "facing_deg": 45
+      },
+      "hide": [
+        "packet",
+        "emitter-1",
+        "emitter-2",
+        "books-rubble",
+        "clicker",
+        "pell-book",
+        "journal"
+      ],
+      "interactions": [
+        {
+          "prop": "relay",
+          "verb": "Pin the correction to the relay mast"
+        },
+        {
+          "prop": "siren",
+          "verb": "Listen to the siren: the baseline you set"
+        }
+      ]
     }
   }
 }

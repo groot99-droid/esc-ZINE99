@@ -354,7 +354,8 @@ function mountStage(root, api, stage) {
         } else {
           api.store.set("losses", losses + 1);
           const why = stage === 2 && !amp.some((n, k) => L[NODES.indexOf(n)] > 2 + 1e-9) ? "They were safe against a mark of 2. The mark is 1.5 now." : sd.some((i) => st.em[i] != null) ? `The emitter on ${NODES[sd.find((i) => st.em[i] != null)].n} was mistuned: the figure under it was not yours.` : "Some nodes damp; others amplify.";
-          api.end({ outcome: "lose", text: `${names} amplif${amp.length > 1 ? "y" : "ies"}; Strain ${lam.toFixed(2)}. ${why} ${stage === 2 ? "Under Peak 12 that is not a drill." : "It is only a drill. On the night it is not, those houses shake."}` });
+          // under Peak 12 a loss is the author's own ending: a partial fracture on partly corrupted data
+          (stage === 2 && api.endOn ? (r) => api.endOn("redacted-testament", r) : (r) => api.end(r))({ outcome: "lose", text: `${names} amplif${amp.length > 1 ? "y" : "ies"}; Strain ${lam.toFixed(2)}. ${why} ${stage === 2 ? "Under Peak 12 that is not a drill." : "It is only a drill. On the night it is not, those houses shake."}` });
         }
         void raw;
       }, api.reducedMotion ? 50 : 350 * 7 + 300);
@@ -401,12 +402,12 @@ function mountStage(root, api, stage) {
       say(stage === 0 ? "Book IV. Hollin Terrace is cracking under synchronized storms, and the coalition runs a drill on its six nodes before anyone goes near the core. Select a node to begin."
         : stage === 1 ? "The drill again, by lamplight, and this time someone is playing against you. Pell’s book lies by the map: one witness. Select a node to begin."
         : "Book IV, the core. Veylor has laid the inner ring out on his table. “Show me,” he says. Joren’s sluice log is in your coat: one witness. Select a node to begin.", true);
+      if (stage === 2) later(() => { if (!st.over) say("Veylor sets the Hollin node down in front of you, and does not let go of it at once. “You love that terrace. I planted it.”", true); }, api.reducedMotion ? 1500 : 6000);
       if (stage >= 1 && desk && desk.played) api.linkNote(barred.size ? `Because you ruled ${barred.size} full bar${barred.size > 1 ? "s" : ""} at the Excision Desk in Journal Audit, ${[...barred].map((i) => NODES[i].n).join(", ")} ${barred.size > 1 ? "are" : "is"} struck out on this sheet: ■ where the figure was.` : "Because you cut only words at the Excision Desk in Journal Audit, every node on this sheet still shows its figure.");
       if (stage >= 1 && tokens.length > S.wit.length) api.linkNote(`Because you ${tokens.includes("bars") ? "read the bars" : "walked Mara’s song"} in Storm-Song Cipher, ${tokens.length - S.wit.length > 1 ? "two more witnesses lie" : "one more witness lies"} by the map.`);
       if (g && g.checked) later(() => say(stage === 2 ? "Joren's sketch in the margin: the High ledge carries the heavy springs here. Put it opposite the emitters round it, and keep off the drowned terrace." : "Joren's sketch in the margin: the Market carries three heavy springs. Put the Market opposite the emitters around it, and keep those emitters in step with each other.", true, "fig-joren"), 6000);
     });
     sb.focus();
-    if (window.__ezTest) window.__ezTest[api.key] = { st, stage, NODES, EDGES };
     return { unmount() { off.forEach((f) => f()); timers.forEach(clearTimeout); ro.disconnect(); try { ac && ac.close(); } catch {} } };
   }
 }

@@ -186,12 +186,13 @@
       "name": "core_choice",
       "type": "enum",
       "default": "none",
-      "description": "What Lira does at the end of the Node Board II.",
+      "description": "What Lira does at the end of the Node Board II: fire the pulses (pulse), stand down (withhold), set Kade's charges (fire), or, offered only when gamma_remeasured and flyleaf_found are both true, withdraw her schedule and publish the correction to her own model, unsigned (withdraw; the ending Errata). Accepted 2026-11-15, the fourth choice built 2026-11-16.",
       "values": [
         "none",
         "pulse",
         "withhold",
-        "fire"
+        "fire",
+        "withdraw"
       ]
     },
     {
@@ -222,7 +223,7 @@
       "name": "bars_gauged",
       "type": "counter",
       "default": 0,
-      "description": "Black bars the player has measured with the bar gauge and called correctly (ruled with blue under the black is surgical; brushed is clumsy). 0 to 12 across the four books; one surgical bar per stage is the long puzzle of the twelve bars. Phase 1 builds the gauge and the first bar (41 mm) in the Journal Audits; reading the bars on the staff and plotting them wait for phase 3. No ending reads it yet. Accepted 2026-11-15."
+      "description": "Surgical bars the player has measured with the bar gauge and called correctly (ruled with blue under the black is surgical; brushed is clumsy). 0 to 12: one surgical bar per stage, twelve across the four books, the long puzzle. Book I: The Key I, The Assay I, the Book I climb, Under the lens I. Book II: The Assay II, Under the lens II, and the four bars of the brief's Appendix C (ruled at the Excision Desk; the first gauged in Journal Audit I, all four read in Storm-Song Cipher III). Book III: the Book III climb and Journal Audit II. Read on the staff and plotted in b4-route (bars_route_plotted)."
     },
     {
       "name": "pell_book_checked",
@@ -301,6 +302,18 @@
       "type": "bool",
       "default": false,
       "description": "In the dream slide (b3-dream-slide) the player held the true channel, the ghost filaments that flicker at 12 Hz, until the lattice resolved at ×1 600 into ruled lines and a maker's mark, a 9. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "bars_route_plotted",
+      "type": "bool",
+      "default": false,
+      "description": "In b4-route, before the descent, Lira laid all twelve surgical bars under the staff (a bar's line is its pitch, 14 mm of it a rest) and walked them from the core under Peak 12 to the north shaft: the route the archivist ruled into her books. Read by The Archivist in Time, where it stands in for two of the six replies (4 replies and the route), by b4-collapse and by ep-audit-3, where an unplotted route is decoded by the archivist alone. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "testament_read",
+      "type": "bool",
+      "default": false,
+      "description": "A finished run exists in this save profile: an ending scene has been reached once. It is never reset. On a second playthrough the scenes that read it change: the relay at the Book I reading station is marked poisoned, the printed couplets of The Key carry Veylor's initials, Journal Audit shows the archivist's desk log beside her entries, and the Excision Desk shows what each cut will cost. A first run is unchanged. Accepted 2026-11-15, built 2026-11-16."
     }
   ]
 }

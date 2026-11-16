@@ -391,7 +391,8 @@ function mountStage(root, api, stage) {
           st.over = true; sync(); api.store.set("losses", 0);
           const right = st.doubt === S.falseLine[0];
           const tail = right ? ` And one printed line is struck through in pencil: storm-rock salt is at 606, not 596. The Continuum's card was set wrong on purpose, for anyone who read a card before a peak.${cores ? " Your own core said so before the scope did." : ""}` : st.doubt ? ` But the line you doubted on the printed card was a true one; the false one is still there for the next reader.` : " The printed card goes back in its sleeve undoubted, one false line and all.";
-          const ring = st.alpha ? " Pulsed, the fragment rang down in the shape of Pattern α. The thing in the valley and the thing in the cell keep the same time." : "";
+          const ring = st.alpha ? " Pulsed, the fragment rang down in the shape of Pattern α. The thing in the valley and the thing in the cell keep the same time. From how fast the ring-down dies she reads the damping herself: 6, not the 8 that came up the relay." : "";
+          if (st.alpha) api.shared.set("gamma", true);
           api.end({ outcome: right ? "win" : "done", text: `${pick.name}: no iron in it, whatever the bench said. Entry: hand, ok, ${MASS - st.mass} of ${MASS} mass.${tail}${ring}` }); return;
         }
         if (pick === st.sample && st.precise) {
@@ -432,7 +433,6 @@ function mountStage(root, api, stage) {
       if (cores) api.linkNote(`Because you drilled ${cores === 1 ? "a core" : "two cores"} on the climb (Cross-section climb), ${cores === 1 ? "one true line" : "two true lines"} in your own hand ${cores === 1 ? "sits" : "sit"} on this reference card.`);
     });
     sb.focus();
-    if (window.__ezTest) window.__ezTest[api.key] = { get st() { return st; }, CANDS, COMP, stage };
     return { unmount() { cancelAnimationFrame(raf); ro.disconnect(); off.forEach((f) => f()); timers.forEach(clearTimeout); } };
   }
 }
