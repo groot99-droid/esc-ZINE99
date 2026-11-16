@@ -366,6 +366,71 @@
         "facing_deg": 0
       },
       "interactions": []
+    },
+    "c3_thumb": {
+      "note": "The Thumb on the Deck: the summer festival in the square. Twig deals an ugly hand for Pell; he gathers it up, \"clumsy me\", and deals again. The camera holds on his thumb finding the notch.",
+      "world": {
+        "color": [
+          0.95,
+          0.8,
+          0.55
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "festival-evening",
+          "type": "SUN",
+          "location": [
+            -0.08,
+            -0.1,
+            0.2
+          ],
+          "energy": 2.2,
+          "color": [
+            1.0,
+            0.82,
+            0.55
+          ],
+          "look_at": [
+            0,
+            0.015,
+            0.015
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.022,
+          0.024
+        ],
+        "look_at": [
+          0,
+          0.008,
+          0.015
+        ],
+        "lens_mm": 50,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.006999999999999999,
+          0.015
+        ],
+        "facing_deg": 0
+      },
+      "interactions": [
+        {
+          "prop": "drum-west",
+          "verb": "Sit down at the festival board",
+          "leads_to": "c3_tns"
+        }
+      ],
+      "hide": [
+        "rope"
+      ]
     }
   }
 }

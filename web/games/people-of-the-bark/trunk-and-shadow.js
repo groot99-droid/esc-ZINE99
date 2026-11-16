@@ -18,6 +18,21 @@
 // Folk and the Shadow are their piece art; spring's three rule cards show their faces; Captain Burr's mark
 // is his portrait. Without the art the board, pieces and cards are drawn as before, on the same cracks.
 import * as kit from "./_art.js";
+import * as ladder from "./_ladder.js";
+
+// Phase 2: three sittings. Teach: Old Rules, against Burr, with the Eye card for help. Test: four mutated
+// cards on the table (Blessing, Tremor, the Eye, and the Hollow Square: every fourth round one square falls
+// out of the board for good). Twist, winter: the player sits on Twig's side and plays the Shadow. Its rule, by
+// Twig: it may only move toward the last square where a Folk knocked (moved twice). It is won by answering
+// three knocks, and then the Hand lifts the Shadow too. A win here is remembered (api.shared
+// "shadow_played"): in c6_touch the three tap sites show ten seconds early.
+const CHALK = "#b9c2c4";
+const SPEC = { title: "Trunk and Shadow", chip: "left:auto;right:8px;bottom:auto;top:4px", stages: [
+  { name: "Old Rules", blurb: "Three Folk to the Crown. A Folk on a knot cannot be hidden." },
+  { name: "Four mutated cards", blurb: "Blessing, Tremor, the Eye, and the Hollow Square: the board itself starts to go." },
+  { name: "Play the Shadow", blurb: "Winter. Sit on Twig's side. The Shadow has one rule, and it is not the one you have been running from." },
+] };
+const TWIG_LINES = ["“It only goes where we knock. Watch.”", "“And then what?”", "“Is it hunting, or is it looking?”", "“You don't get to choose much, do you.”", "“Knock, knock.”"];
 
 const COLS = 5, ROWS = 8, ROUNDS = 16, GUARD_AT = 9;
 const UP = ["11111", "11011", "10111", "11111", "11101", "11111", "11111", "00000"];
@@ -31,8 +46,14 @@ const BURR_LINES = ["“Forward! The nearest first.”", "“Hold still and I'll
 const BURR_GUARD = ["“I'm not afraid. I'm ready. They feel the same from inside.”", "“Chant all you like!”", "“Forward! The nearest first.”"];
 
 export default {
-  mount(root, api) {
+  mount(root, api) { return ladder.run(root, api, SPEC, play); },
+};
+
+function play(root, api, stage) {
+  {
     const P = "people-of-the-bark-trunk-and-shadow-";
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const asShadow = stage === 2;
     const offs = [];
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); offs.push(() => t.removeEventListener(e, f, o)); };
     const timers = [];
@@ -51,21 +72,23 @@ export default {
       if (dc === 1) return right[r][c]; return right[r][c2];
     };
     const isKnot = (c, r) => KNOTS.some(([x, y]) => x === c && y === r);
-    const isRain = (c, r) => RAIN.some(([x, y]) => x === c && y === r);
+    const isRain = (c, r) => stage === 1 && RAIN.some(([x, y]) => x === c && y === r);
+    const isHole = (c, r) => S.holes.some(([x, y]) => x === c && y === r);
 
     const S = {
       round: 1, turn: "player", folk: [0, 1, 3, 4].map((c, i) => ({ i, c, r: 0, hidden: 0 })),
       shadow: { c: 1, r: 6 }, sel: null, again: null, chantUsed: false, skipNext: false, over: false, line: BURR_LINES[0], fired: null, log: "",
-      looks: gentle ? 4 : 2, peek: null, guard: false, hiddenTotal: 0, beats: new Set(),
+      holes: [], knock: null, taps: 0, twigN: 0,
+      looks: stage === 0 ? 8 : gentle ? 4 : 2, peek: null, guard: false, hiddenTotal: 0, beats: new Set(),
     };
     const under = (f, sh = S.shadow) => f.c >= sh.c && f.c <= sh.c + 1 && f.r >= sh.r && f.r <= sh.r + 1;
-    const occupied = (c, r, except) => S.folk.some((f) => f !== except && !f.hidden && f.c === c && f.r === r);
+    const occupied = (c, r, except) => isHole(c, r) || S.folk.some((f) => f !== except && !f.hidden && f.c === c && f.r === r);
     function reach(f) {
       const seen = new Map([[f.c + "," + f.r, 0]]), q = [[f.c, f.r, 0]], out = [];
       while (q.length) {
         const [c, r, d] = q.shift(); if (d === 2) continue;
         for (const [dc, dr] of [[0, 1], [0, -1], [1, 0], [-1, 0]]) {
-          if (!open(c, r, dc, dr)) continue;
+          if (!open(c, r, dc, dr) || isHole(c + dc, r + dr)) continue;
           const k = (c + dc) + "," + (r + dr); if (seen.has(k)) continue;
           seen.set(k, d + 1); q.push([c + dc, r + dr, d + 1]);
           if (!occupied(c + dc, r + dr, f)) out.push([c + dc, r + dr]);
@@ -85,7 +108,7 @@ export default {
         let near = 99, top = 0;
         for (const f of live) { const dx = Math.max(0, c - f.c, f.c - (c + 1)), dy = Math.max(0, r - f.r, f.r - (r + 1)); near = Math.min(near, Math.max(dx, dy)); top = Math.max(top, f.r); }
         let score = caught.length * 10 + caught.reduce((a, f) => a + f.r, 0) * 0.5 - near;
-        score += rnd() * (gentle ? 6 : 0.3);
+        score += rnd() * (gentle || stage === 0 ? 6 : 0.3);
         opts.push({ sh, score });
       }
       opts.sort((a, b) => b.score - a.score);
@@ -179,12 +202,17 @@ export default {
 </div>
 <div class="${P}intro"><div class="${P}knot" role="dialog" aria-label="How to play">
  ${api.art && api.art.has("ui-frame-bark") && api.art.has("tns-board") ? `<div class="${P}picwrap" style="background-image:url(${api.art.url("ui-frame-bark")})"><img src="${api.art.url("tns-board")}" alt="The festival board" width="160" height="220"></div>` : ""}
- <h2 style="margin-top:8px">Trunk and Shadow</h2><div class="${P}sub">THE SPRING FESTIVAL · HIGHRIDGE</div>
- <p class="${P}beat">Lanterns in the square, the whole city watching. The festival board is a flat flake; you play the Folk, and Captain Burr, who has never fought anything bigger than a mite, plays the Shadow.</p>
- <p class="${P}goal"><b>Goal:</b> three Folk on the Crown row before round 16 ends.</p>
+ <h2 style="margin-top:8px">Trunk and Shadow</h2><div class="${P}sub">${["THE SPRING FESTIVAL", "THE SUMMER FESTIVAL", "A WINTER EVENING"][stage]} · HIGHRIDGE</div>
+ <p class="${P}beat">${["Lanterns in the square, the whole city watching. The festival board is a flat flake; you play the Folk, and Captain Burr, who has never fought anything bigger than a mite, plays the Shadow.",
+   "Summer. The board has four cards on it now, and one of them is new: somebody in Lowridge carved it after listening to a wall. Every fourth round a square falls out of the board and does not come back.",
+   "Winter, and no festival. Twig has the board out on the floor. “You always play the Folk. Sit here. You be the Shadow. I'll tell you its rule, I made it up: it can only go toward the last place somebody knocked.”"][stage]}</p>
+ <p class="${P}goal"><b>Goal:</b> ${asShadow ? "<b>answer three knocks</b>: bring the Shadow over the square where a Folk last knocked, three times, before three Folk reach the Crown or round 16 ends." : "three Folk on the Crown row before round 16 ends."}</p>
  <div class="${P}key">
-  <kbd>tap a Folk · 1–4</kbd><span>then a glowing square: up to 2 steps, only along the gold bands</span>
-  <kbd>the Shadow</kbd><span>steps after you; a Folk under it is hidden for 2 rounds, unless it stands on a knot</span>
+  ${asShadow ? `<kbd>a knock</kbd><span>a Folk that moves two squares knocks where it lands (the chalk ring)</span>
+  <kbd>tap a marked square · 1–8</kbd><span>move the Shadow one step; only steps that bring it nearer the knock are offered</span>
+  <kbd>wait · .</kbd><span>when there is no knock to go to, there is nothing the Shadow can do</span>`
+  : `<kbd>tap a Folk · 1–4</kbd><span>then a glowing square: up to 2 steps, only along the gold bands</span>
+  <kbd>the Shadow</kbd><span>steps after you; a Folk under it is hidden for ${stage === 0 ? "a round" : "2 rounds"}, unless it stands on a knot</span>${stage === 1 ? "<kbd>hollow square</kbd><span>rounds 6, 10 and 14: a square falls out for good</span>" : ""}`}
  </div>
  <button type="button">Sit down to play</button>
 </div></div>`;
@@ -274,6 +302,11 @@ export default {
         const danger = !isKnot(c, r) && c >= sh.c - 1 && c <= sh.c + 2 && r >= sh.r - 1 && r <= sh.r + 2;
         s += `<g class="${P}tgt" data-c="${c}" data-r="${r}"><rect x="${c * Z + 2}" y="${(ROWS - 1 - r) * Z + 2}" width="${Z - 4}" height="${Z - 4}" fill="transparent"/><circle cx="${X(c)}" cy="${Y(r)}" r="12" fill="${danger ? "#e0a050" : LIME}" opacity=".9" stroke="${DARK}" stroke-width="1.5"/>${danger ? `<text x="${X(c)}" y="${Y(r) + 4}" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="${DARK}">!</text>` : ""}</g>`;
       }
+      for (const [c, r] of S.holes) s += `<g pointer-events="none"><rect x="${c * Z + 3}" y="${(ROWS - 1 - r) * Z + 3}" width="${Z - 6}" height="${Z - 6}" fill="#0d0805" stroke="${CHALK}" stroke-width="1.5" stroke-dasharray="3 4"/>${art.has("tns-piece-hollow-square") ? `<image href="${art.url("tns-piece-hollow-square")}" x="${c * Z + 6}" y="${(ROWS - 1 - r) * Z + 6}" width="${Z - 12}" height="${Z - 12}" opacity=".85"/>` : ""}</g>`;
+      if (S.knock) s += `<g pointer-events="none"><circle cx="${X(S.knock.c)}" cy="${Y(S.knock.r)}" r="26" fill="none" stroke="${CHALK}" stroke-width="3"/><circle cx="${X(S.knock.c)}" cy="${Y(S.knock.r)}" r="18" fill="none" stroke="${CHALK}" stroke-width="1.5" stroke-dasharray="3 3"/><text x="${X(S.knock.c)}" y="${Y(S.knock.r) + 40}" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="${CHALK}">KNOCK</text></g>`;
+      if (asShadow && S.turn === "player" && !S.over) allowed().forEach((q, i) => {
+        s += `<g class="${P}tgt" data-sc="${q.c}" data-sr="${q.r}"><rect x="${q.c * Z + 6}" y="${(ROWS - 2 - q.r) * Z + 6}" width="${2 * Z - 12}" height="${2 * Z - 12}" rx="12" fill="rgba(205,191,220,.08)" stroke="#cdbfdc" stroke-width="2" stroke-dasharray="6 5"/><circle cx="${q.c * Z + Z}" cy="${(ROWS - 2 - q.r) * Z + Z}" r="13" fill="#cdbfdc" stroke="${DARK}" stroke-width="1.5"/><text x="${q.c * Z + Z}" y="${(ROWS - 2 - q.r) * Z + Z + 4}" text-anchor="middle" font-family="ui-monospace,monospace" font-size="13" fill="${DARK}">${i + 1}</text></g>`;
+      });
       for (const f of S.folk) {
         if (f.hidden) continue;
         const sel = S.sel === f;
@@ -295,7 +328,10 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
         { k: "rain", t: "BLESSING", d: "end on rain: move again", art: "tns-rule-blessing" },
         { k: "tremor", t: "TREMOR", d: `every 4th round: ↑ → ↑ ←${[4, 8, 12, 16].includes(t) ? "" : ` · next round ${[4, 8, 12, 16].find((x) => x >= t) || "—"}`}`, art: "tns-rule-tremor" },
         { k: "eye", t: "EYE", d: "once, a chant: the Shadow skips a turn", btn: true, art: "tns-rule-eye" },
-      ];
+        { k: "hollow", t: "HOLLOW SQUARE", d: `rounds 6, 10, 14: a square falls out for good${S.holes.length ? ` · ${S.holes.length} gone` : ""}`, art: "tns-rule-hollow-square" },
+        { k: "twig", t: "TWIG'S RULE", d: `the Shadow may only move toward the last knock · answered ${S.taps} / 3` },
+        { k: "hand", t: "THE HAND", d: "it lifts every piece under it, the Shadow included", art: "tns-rule-hand" },
+      ].filter((c) => (stage === 0 ? ["old", "eye"] : stage === 1 ? ["old", "rain", "tremor", "eye", "hollow"] : ["old", "twig", "hand"]).includes(c.k));
       // the card faces are built once (their art is costly to draw again); a refresh only changes words and states
       const sig = (c) => `${c.d}|${S.fired === c.k ? 1 : 0}|${c.btn ? `${S.chantUsed}${S.skipNext}${S.over}${S.turn}` : ""}`;
       if (!cardsEl.dataset.built) {
@@ -312,12 +348,13 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
         if (c.btn) { const bt = el.querySelector("button"); bt.disabled = S.chantUsed || S.over || S.turn !== "player"; bt.textContent = S.chantUsed ? (S.skipNext ? "chanting…" : "chanted") : "Chant · E"; }
       }
       const b = cardsEl.querySelector("button"); if (b) b.onclick = chant;
+      lookBtn.hidden = asShadow;
       dots.innerHTML = Array.from({ length: ROUNDS }, (_, i) => `<i class="${i < t - 1 ? P + "d" : i === t - 1 ? P + "now" : ""} ${[3, 7, 11, 15].includes(i) ? P + "trem" : ""}"></i>`).join("");
       rd.textContent = `ROUND ${Math.min(t, ROUNDS)} / ${ROUNDS}`;
       const crown = S.folk.filter((f) => !f.hidden && f.r === ROWS - 1).length, hid = S.folk.filter((f) => f.hidden);
-      stat.innerHTML = `On the Crown: <b>${crown}</b> / 3${hid.length ? ` · hidden: ${hid.map((f) => `${f.i + 1} (back in ${f.hidden - 1 || 1})`).join(", ")}` : ""}${S.log ? `<br><i>${S.log}</i>` : ""}`;
+      stat.innerHTML = `${asShadow ? `Knocks answered: <b>${S.taps}</b> / 3 · Twig's Folk on the Crown: ` : "On the Crown: "}<b>${crown}</b> / 3${hid.length ? ` · hidden: ${hid.map((f) => `${f.i + 1} (back in ${f.hidden - 1 || 1})`).join(", ")}` : ""}${S.log ? `<br><i>${S.log}</i>` : ""}`;
       sayEl.textContent = S.line;
-      mood.textContent = S.guard ? "charges, with the crowd chanting" : "charges the nearest";
+      mood.textContent = asShadow ? "has given you his seat; Twig plays the Folk" : S.guard ? "charges, with the crowd chanting" : "charges the nearest";
       lookBtn.textContent = `read Burr · ${S.looks}`;
       lookBtn.disabled = por.disabled = S.looks <= 0 || S.over || S.turn !== "player" || !!S.peek;
       waitBtn.disabled = S.over || S.turn !== "player";
@@ -326,17 +363,18 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
     function nope(el) { if (!el || api.reducedMotion) return; el.classList.remove(P + "no"); void el.offsetWidth; el.classList.add(P + "no"); }
 
     function chant() {
-      if (S.chantUsed || S.over || S.turn !== "player") return;
+      if (asShadow || S.chantUsed || S.over || S.turn !== "player") return;
       S.chantUsed = true; S.skipNext = true; S.peek = null; S.log = "The Folk chant. The Shadow will skip its next turn."; S.fired = "eye"; refresh();
     }
     function look() {
-      if (S.looks <= 0 || S.over || S.turn !== "player" || S.peek) return;
+      if (asShadow || S.looks <= 0 || S.over || S.turn !== "player" || S.peek) return;
       S.looks--; S.peek = S.skipNext ? { ...S.shadow } : plan();
       S.log = S.skipNext ? "Burr glances at the chanters and does not move." : "Burr glances at the board. That is where the Shadow will go, whatever you do now.";
       refresh();
     }
     function wait() {
       if (S.over || S.turn !== "player") return;
+      if (asShadow) return shadowStep(null);
       S.sel = null; S.again = null; S.log = "The Folk hold where they are."; S.turn = "shadow"; refresh();
       later(shadowTurn, api.reducedMotion ? 150 : 520);
     }
@@ -369,7 +407,7 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
       if (S.skipNext) { S.skipNext = false; S.line = "“…” Burr bows his head for the chant."; S.log = "The Shadow stands still."; S.fired = "eye"; return endRound(); }
       S.shadow = promised || plan();
       const caught = S.folk.filter((f) => !f.hidden && under(f) && !isKnot(f.c, f.r));
-      for (const f of caught) f.hidden = 3;
+      for (const f of caught) f.hidden = stage === 0 ? 2 : 3;   // the teach game hides a Folk for one round, not two
       S.hiddenTotal += caught.length;
       S.line = caught.length ? "“Got you! Back to the Root with you.”" : (S.guard ? BURR_GUARD : BURR_LINES)[Math.floor(rnd() * (S.guard ? BURR_GUARD : BURR_LINES).length)];
       S.log = caught.length ? `${caught.length} Folk hidden by the Shadow. They will come back at the Root.` : (S.log || "");
@@ -389,8 +427,30 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
         S.over = true; refresh();
         const crown = S.folk.filter((f) => !f.hidden && f.r === ROWS - 1).length;
         api.store.set("losses", losses + 1);
-        later(() => api.end({ outcome: "lose", text: `Round 16 ends with ${crown} Folk on the Crown. Burr wins the festival game and looks almost sorry about it; a loss takes nothing. The Folk will try again at summer's festival.${losses + 1 >= 2 ? " Next time, Burr says, he will go easier, and let you read him more." : ""}` }), 600);
+        later(() => api.end(asShadow ? { outcome: "lose", text: `Round 16 ends with ${S.taps} of 3 knocks answered. Twig yawns and tips the board. “It didn't get to finish asking.” Nobody won.` } : { outcome: "lose", text: `Round 16 ends with ${crown} Folk on the Crown. Burr wins the festival game and looks almost sorry about it; a loss takes nothing. The Folk will try again at summer's festival.${losses + 1 >= 2 ? " Next time, Burr says, he will go easier, and let you read him more." : ""}` }), 600);
         return;
+      }
+      if (asShadow) {
+        if (S.folk.filter((f) => !f.hidden && f.r === ROWS - 1).length >= 3) {
+          S.over = true; S.line = "Twig: “Three! That's the game.” She looks at the Shadow piece. “It never had a chance, did it. It only goes where we knock.”"; refresh();
+          api.store.set("losses", losses + 1);
+          later(() => api.end({ outcome: "lose", text: `Three of Twig's Folk reach the Crown with ${S.taps} of 3 knocks answered. The Shadow went where it was called and nowhere else, and that was not enough. Twig packs the pieces away one at a time. “I don't think it was trying to win.”` }), 700);
+          return;
+        }
+        S.turn = "twig"; refresh(); later(twigMove, api.reducedMotion ? 150 : 600);
+        return;
+      }
+      if (stage === 1 && [6, 10, 14].includes(S.round)) {
+        // the Hollow Square: one square falls out of the board for good (never one that cuts the Crown off)
+        const cands = [];
+        for (let r = 2; r <= 6; r++) for (let c = 0; c < COLS; c++) if (!isKnot(c, r) && !isRain(c, r) && !isHole(c, r) && !S.folk.some((f) => !f.hidden && f.c === c && f.r === r)) cands.push([c, r]);
+        const linked = () => { const seen = new Set(), q = []; for (let c = 0; c < COLS; c++) { q.push([c, 0]); seen.add(c + ",0"); } let tops = new Set(); while (q.length) { const [c, r] = q.shift(); if (r === ROWS - 1) tops.add(c); for (const [dc, dr] of [[0, 1], [0, -1], [1, 0], [-1, 0]]) { if (!open(c, r, dc, dr) || isHole(c + dc, r + dr)) continue; const k = (c + dc) + "," + (r + dr); if (!seen.has(k)) { seen.add(k); q.push([c + dc, r + dr]); } } } return tops.size >= 4; };
+        for (let n = 0; n < 12 && cands.length; n++) {
+          const [h] = cands.splice(Math.floor(rnd() * cands.length), 1);
+          S.holes.push(h);
+          if (linked()) { S.fired = "hollow"; S.log = (S.log ? S.log + " " : "") + "A square falls out of the board. Under it there is nothing printed at all."; break; }
+          S.holes.pop();
+        }
       }
       if (S.round === GUARD_AT && !S.guard) {
         S.guard = true;
@@ -398,7 +458,7 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
         S.line = "“Louder, then! Let's hear it!” Burr waves the crowd on, grinning.";
         S.log = (S.log ? S.log + " " : "") + "The lanterns are lit and the whole square takes up the chant: the Eye card can be used once more.";
       }
-      const tp = TREMOR_PATTERN[S.round];
+      const tp = stage === 1 ? TREMOR_PATTERN[S.round] : null;
       if (tp) {
         S.fired = "tremor";
         const [dc, dr, name] = tp;
@@ -410,9 +470,67 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
       S.turn = "player"; refresh();
     }
 
+    // ---- the twist: the player is the Shadow ----
+    const gap = (sh, k) => Math.max(Math.max(0, sh.c - k.c, k.c - (sh.c + 1)), Math.max(0, sh.r - k.r, k.r - (sh.r + 1)));
+    function allowed() {
+      if (!S.knock) return [];
+      const d0 = gap(S.shadow, S.knock), out = [];
+      for (let dr = 1; dr >= -1; dr--) for (let dc = -1; dc <= 1; dc++) {
+        if (!dc && !dr) continue;
+        const c = S.shadow.c + dc, r = S.shadow.r + dr;
+        if (c < 0 || c > COLS - 2 || r < 0 || r > ROWS - 2) continue;
+        if (gap({ c, r }, S.knock) < d0) out.push({ c, r });
+      }
+      return out;
+    }
+    function twigMove() {
+      if (S.over) return;
+      const sh = S.shadow, opts = [];
+      for (const f of S.folk) {
+        if (f.hidden || f.r === ROWS - 1) continue;
+        for (const [c, r] of reach(f)) {
+          const two = Math.abs(c - f.c) + Math.abs(r - f.r) === 2;
+          const danger = !isKnot(c, r) && c >= sh.c && c <= sh.c + 1 && r >= sh.r && r <= sh.r + 1;
+          opts.push({ f, c, r, two, score: (r - f.r) * 2 + r * 0.3 + (isKnot(c, r) ? 0.8 : 0) - (danger ? 6 : 0) + (two ? 0.6 : 0) + rnd() * 1.2 });
+        }
+      }
+      opts.sort((a, b) => b.score - a.score);
+      const m = opts[0];
+      if (m) {
+        m.f.c = m.c; m.f.r = m.r;
+        if (m.two) { S.knock = { c: m.c, r: m.r }; S.log = `Folk ${m.f.i + 1} moves twice and knocks. The Shadow may go toward it.`; }
+        else S.log = `Folk ${m.f.i + 1} moves one square, quietly. No new knock.`;
+        S.line = "Twig: " + TWIG_LINES[S.twigN++ % TWIG_LINES.length];
+      } else S.log = "Twig's Folk hold where they are.";
+      S.turn = "player"; refresh();
+    }
+    function shadowStep(q) {
+      if (S.over || S.turn !== "player") return;
+      if (q) {
+        if (!allowed().some((a) => a.c === q.c && a.r === q.r)) { nope(stat); return; }
+        S.shadow = { c: q.c, r: q.r };
+        const caught = S.folk.filter((f) => !f.hidden && under(f) && !isKnot(f.c, f.r));
+        for (const f of caught) f.hidden = 3;
+        S.hiddenTotal += caught.length;
+        S.log = caught.length ? `${caught.length} Folk hidden under the Shadow. It was not looking for them.` : "";
+        if (S.knock && gap(S.shadow, S.knock) === 0) {
+          S.taps++; S.knock = null;
+          S.log += ` The Shadow answers the knock (${S.taps} of 3).`;
+          if (S.taps >= 3) {
+            S.over = true; S.line = "Twig lifts the Shadow piece off the board, and everything under it. “The Hand takes the Shadow too. That's the last card.” The square falls silent."; refresh();
+            api.store.set("losses", 0); shared.set("shadow_played", true);
+            later(() => api.end({ outcome: "win", text: `Three knocks, three answers. Playing the Shadow you never chose a Folk to chase: you went where the last knock was, and stopped. Then the Hand lifted the Shadow too, and the square fell silent. Twig: “So it isn't hunting. It's listening for where we are.” ${S.hiddenTotal ? `${S.hiddenTotal} Folk were hidden on the way, by accident.` : "Not one Folk was hidden."}` }), 900);
+            return;
+          }
+        }
+      } else S.log = S.knock ? "The Shadow holds still." : "No knock to go to. The Shadow cannot move.";
+      S.turn = "shadow"; refresh();
+      later(endRound, api.reducedMotion ? 120 : 420);
+    }
     // ---- input ----
     on(svg, "click", (e) => {
       if (S.over || S.turn !== "player") return;
+      if (asShadow) { const q = e.target.closest("[data-sc]"); if (q) shadowStep({ c: +q.dataset.sc, r: +q.dataset.sr }); return; }
       const t = e.target.closest("[data-f],[data-c]");
       if (!t) return;
       if (t.dataset.f != null) {
@@ -431,6 +549,7 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
     let kpath = null;
     on(window, "keydown", (e) => {
       if (S.over || S.turn !== "player" || wrap.querySelector("." + P + "intro") || e.ctrlKey || e.metaKey || e.altKey) return;
+      if (asShadow) { if (/^Digit[1-8]$/.test(e.code)) { const q = allowed()[+e.code.slice(5) - 1]; if (q) shadowStep(q); else nope(stat); } else if (e.key === ".") shadowStep(null); return; }
       if (/^Digit[1-4]$/.test(e.code)) { const f = S.folk[+e.code.slice(5) - 1]; if (!f.hidden && (!S.again || S.again === f)) { S.sel = f; kpath = { c: f.c, r: f.r, n: 0 }; refresh(); } else nope(stat); return; }
       if (e.key === "e" || e.key === "E") return chant();
       if (e.key === "w" || e.key === "W") return look();
@@ -451,11 +570,13 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
     on(startBtn, "click", () => {
       wrap.querySelector("." + P + "intro").remove();
       S.log = gentle ? "Burr, cheerfully: “I'll go easy. Watch my eyes, if you like.” (W: read Burr, 4 looks)" : "New: tap Burr's portrait (W) to read where the Shadow will go next. Two looks a game.";
+      if (stage === 0) S.log = "Old Rules only. Tap Burr's portrait (W) to read where the Shadow will go next: eight looks, half the game.";
+      if (asShadow) { S.shadow = { c: 2, r: 3 }; S.line = "Twig: “Folk first. Then you. Remember: only toward the knock.”"; S.log = ""; S.turn = "twig"; refresh(); later(twigMove, 500); return; }
       refresh();
     });
     startBtn.focus({ preventScroll: true });
     refresh();
 
     return { unmount() { dead = true; blobs.forEach((u) => URL.revokeObjectURL(u)); timers.forEach(clearTimeout); offs.forEach((f) => f()); wrap.remove(); } };
-  },
-};
+  }
+}

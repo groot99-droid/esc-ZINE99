@@ -17,6 +17,21 @@
 // plates and the summer chapter card dress the opening; a lost defence ends on the Roll of the Bark. Every
 // one falls back to the old drawn shapes.
 import * as kit from "./_art.js";
+import * as ladder from "./_ladder.js";
+
+// Phase 2: three stages (DEEP_DIVE.md 3). Teach: mites, the rule alone. Test: the Beetle as before, with the
+// plugged door beside line 3 (a hole stopped by one living head; a warrior left in its reach for 10 s is
+// lost, so they are moved on). Twist, autumn: ants, and a crack with a paper wall. Fought, they are turned
+// back and nothing checks the Pulse. Read as gods, the procession follows sweetness: one offering, at the
+// papered branch and nowhere near the dry one, and the wall opens (pulse −15). The safe habit of the Beetle
+// escort, an offering at every line, is now the mistake. A scar left on a Ring Door (api.shared
+// "door_scars") is a side entrance in this crack. The collection's guest object hangs in the twist.
+const DOOR_LINE = 2, DRY_LINE = 3, PAPER_LINE = 1;
+const SPEC = { title: "Crack defence", chip: "left:6px;bottom:auto;top:46%", stages: [
+  { name: "Mites", blurb: "The rule alone: hold the lines, move warriors, shore what is quiet." },
+  { name: "The Beetle, and the plugged door", blurb: "God or monster. And beside line 3, a hole with a head in it that takes whoever stands too long." },
+  { name: "The Procession and the Wall", blurb: "Autumn ants, and a crack with a paper wall. What kept everyone safe from the Beetle is wrong here." },
+] };
 
 const C = { umber: "#5a3d2b", umberD: "#3a281c", umberL: "#7a5a40", grey: "#7d6c5a", greyL: "#a8977f", dark: "#1b120c",
   sage: "#8fa37a", lime: "#c4d65a", amber: "#d9902a", gold: "#f0c050", lantern: "#e8742a", paper: "#efe2c4", red: "#c8482e" };
@@ -30,8 +45,15 @@ const ROLL = ["Hob, who counted ridges to fall asleep", "Wren, who saved the las
   "Ash, who always offered to carry the planks"];
 
 export default {
-  mount(root, api) {
+  mount(root, api) { return ladder.run(root, api, SPEC, play); },
+};
+
+function play(root, api, stage) {
+  {
     const P = "people-of-the-bark-crack-defence-";
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const scars = Math.max(0, Math.min(2, shared.get("door_scars", 0) | 0));
+    const SIDE = [19.5, 14.5].slice(0, scars);   // side entrances: one for each scar left on a Ring Door
     const offs = [];
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); offs.push(() => t.removeEventListener(e, f, o)); };
     let raf = 0;
@@ -40,6 +62,8 @@ export default {
     const losses = api.store.get("losses", 0);
     const gentle = losses >= 2;
     const WILL = gentle ? 45 : 60;
+    const PLATES = [["defence-piece-warrior", "defence-piece-barricade"], ["defence-piece-warrior", "defence-piece-plugged-door", "defence-piece-beetle"], ["defence-piece-ant", "defence-piece-mud-wall", "defence-piece-warrior"]];
+    let offNote = null, slipEl = null;
 
     const wrap = document.createElement("div");
     wrap.className = P + "wrap";
@@ -80,6 +104,8 @@ export default {
 @keyframes ${P}pulse{50%{box-shadow:0 0 0 5px rgba(196,214,90,.4)}}
 .${P}pad button i{position:absolute;left:0;bottom:0;height:3px;background:${C.gold}}
 .${P}pad button:focus-visible{outline:3px solid ${C.lime};outline-offset:2px}
+.${P}slip{position:absolute;padding:0;border:0;background-color:transparent;background-size:215%;background-position:50% 44%;cursor:default;border-radius:2px;transform:skewY(30deg)}
+.${P}slip:focus-visible{outline:1px solid ${C.greyL}}
 .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(27,18,12,.9);padding:16px;z-index:4;overflow:auto}
 .${P}plaque{max-width:560px;width:100%;box-sizing:border-box;background:linear-gradient(160deg,#4a3324,#2e2016);border:1px solid ${C.amber};padding:18px 22px;position:relative;
  box-shadow:8px 8px 0 #120c08,inset 0 0 0 1px rgba(240,192,80,.15);transform:perspective(900px) rotateX(4deg)}
@@ -105,15 +131,18 @@ export default {
 <div class="${P}msg" aria-live="polite"></div>
 <div class="${P}pad"></div>
 <div class="${P}intro"><div class="${P}plaque" role="dialog" aria-label="How to play">
- ${kit.chapter(api.art, "chapter-3-summer")}
- <div class="${P}who" style="margin-top:10px">${kit.mark(api.art, "burr", "Captain Burr")}<div><h2>Crack defence · the Beetle</h2><div class="${P}sub">SUMMER · THE LONG CRACK BELOW SPLINTERWATCH</div></div></div>
- <p class="${P}lead">You are Captain Burr. You have never fought anything bigger than a mite. Something as big as a city is climbing the crack from the Under, and the Knot's reading will say what it is.</p>
- ${["defence-piece-warrior", "defence-piece-barricade", "defence-piece-beetle"].every((id) => api.art && api.art.has(id)) ? `<div class="${P}plates">${["defence-piece-warrior", "defence-piece-barricade", "defence-piece-beetle"].map((id) => `<img src="${api.art.url(id)}" alt="${api.art.info(id).title}" width="120" height="120">`).join("")}</div>` : ""}
- <p><b>Goal:</b> five barricade lines, ${gentle ? "six" : "five"} warriors. Choose the reading:</p>
+ ${kit.chapter(api.art, ["chapter-2-spring", "chapter-3-summer", "chapter-4-autumn"][stage])}
+ <div class="${P}who" style="margin-top:10px">${kit.mark(api.art, "burr", "Captain Burr")}<div><h2>Crack defence · ${["mites", "the Beetle", "the ants"][stage]}</h2><div class="${P}sub">${["SPRING", "SUMMER", "AUTUMN"][stage]} · THE LONG CRACK BELOW SPLINTERWATCH</div></div></div>
+ <p class="${P}lead">${["You are Captain Burr of the Battlements. Mites are in the Long Crack. “Small ones we fight. Big ones we bow to. Middling ones, we ask the Knot.” Nobody needs to ask the Knot about mites.",
+   "You are Captain Burr. You have never fought anything bigger than a mite. Something as big as a city is climbing the crack from the Under, and the Knot's reading will say what it is.",
+   "Autumn, and ants are coming up the crack in a column with no end. One side branch of this crack is dry. The other is walled across with something thin and pale, and the wall ticks. Ants hunt what lives behind paper, and they follow sweetness."][stage]}</p>
+ ${PLATES[stage].every((id) => api.art && api.art.has(id)) ? `<div class="${P}plates">${PLATES[stage].map((id) => `<img src="${api.art.url(id)}" alt="${api.art.info(id).title}" width="120" height="120">`).join("")}</div>` : ""}
+ ${stage === 0 ? `<p><b>Goal:</b> five barricade lines, ${gentle ? "six" : "five"} warriors, three swarms. Keep one line standing.</p><div class="${P}choice"><button data-r="monster" type="button"><b>To the lines</b>The orders are on the next plaque.</button></div>`
+  : `<p><b>Goal:</b> five barricade lines, ${gentle ? "six" : "five"} warriors. Choose the reading:</p>
  <div class="${P}choice">
-  <button data-r="monster" type="button"><b>A monster</b>Fight. Hold the lines until its will runs out. Warriors left on a falling line are lost.</button>
-  <button data-r="god" type="button"><b>A god</b>Escort. Keep the people out of its path and lay an offering at every line it passes.</button>
- </div>
+  <button data-r="monster" type="button"><b>${stage === 2 ? "Monsters" : "A monster"}</b>${stage === 2 ? "Fight. Hold the lines until the column turns back, as with mites." : "Fight. Hold the lines until its will runs out. Warriors left on a falling line are lost."}</button>
+  <button data-r="god" type="button"><b>${stage === 2 ? "Gods" : "A god"}</b>${stage === 2 ? "Escort the procession. Keep the people out of its road, and lay sweetness where you want it to turn." : "Escort. Keep the people out of its path and lay an offering at every line it passes."}</button>
+ </div>`}
 </div></div>`;
     root.appendChild(wrap);
     kit.styles(wrap);
@@ -156,7 +185,8 @@ export default {
       mode: null, started: false, over: false, t: 0,
       burr: 24, target: null, sap: 12,
       lines: LINE_U.map((u) => ({ u, hp: 10, w: 0, fallen: false, offering: false, flash: 0 })),
-      lost: [], will: WILL, mites: [], waves: [{ at: 4, n: 7 }, { at: 30, n: 8 }, { at: 56, n: 9 }],
+      lost: [], will: WILL, mites: [], waves: stage === 0 ? [{ at: 4, n: 6 }, { at: 24, n: 8 }, { at: 44, n: 9 }] : stage === 2 ? [{ at: 4, n: 9 }, { at: 22, n: 11 }, { at: 40, n: 12 }] : [{ at: 4, n: 7 }, { at: 30, n: 8 }, { at: 56, n: 9 }],
+      door: { t: 0, taken: 0, seen: false }, detour: 0, detourBad: false, won: false, wallBeat: false,
       beetle: null, glue: [], groups: [], groupPlan: [{ at: 6 }, { at: 22 }, { at: 36 }, { at: 50 }],
       disturbed: 0, cleared: 0, cds: { build: 0 }, msg: "", msgT: 0, bad: false, unlocked: new Set(), beats: new Set(), rear: false,
       hush: gentle ? 3 : 2, hushT: 0, engaged: [0, 0, 0, 0, 0], fx: [],
@@ -216,6 +246,7 @@ export default {
         if (li < 0) { say("STAND BY A LINE TO ASSIGN", 1.4, true); return; }
         let src = -1, most = 0;
         S.lines.forEach((l, i) => { if (i !== li && !l.fallen && l.w > most) { most = l.w; src = i; } });
+        if (stage === 1 && li !== DOOR_LINE && !S.lines[DOOR_LINE].fallen && S.lines[DOOR_LINE].w > 0) src = DOOR_LINE;   // move them on from the plugged door first
         if (src < 0) { say("NO WARRIOR TO SPARE", 1.4, true); return; }
         S.lines[src].w--; S.lines[li].w++; say(`A WARRIOR TO LINE ${li + 1}`, 1.2); fx(S.lines[li].u, 1.5, C.gold);
       } else if (a === "build") {
@@ -270,7 +301,18 @@ export default {
 
     function chooseReading(mode) {
       S.mode = mode;
-      setBg(mode === "monster" ? "defence-backdrop-beetle-crack" : "defence-backdrop-knuckle");
+      setBg(stage === 2 ? "defence-backdrop-paper-wall" : stage === 0 ? "defence-backdrop-mite-crack" : mode === "monster" ? "defence-backdrop-beetle-crack" : "defence-backdrop-knuckle");
+      if (stage !== 1) {
+        const mon = mode === "monster";
+        intro.innerHTML = `<div class="${P}plaque" role="dialog" aria-label="How to play"><h2>${stage === 0 ? "Mites" : mon ? "Monsters" : "Gods"}</h2><div class="${P}sub">${mon ? "HOLD THE CRACK" : "THE PROCESSION AND THE WALL"}</div>
+<p class="${P}lead">${stage === 0 ? "Burr: “Battlements! Everyone on the— yes, you too.”" : mon ? "The Knot has said: monsters. Burr knows how to do this. It is mites, only more." : "The Knot has said: gods. Burr lowers his spear. Somebody will have to hold the people back, and somebody will have to decide where the sweetness goes."}</p>
+<p><b>Goal:</b> ${mon ? "hold until the last swarm is spent. A line falls when its strength runs out; warriors left on it are lost." : "bring the procession to the <b>papered branch</b>. Ants turn where an offering lies beside an opening, so lay one by the wall that ticks and none by the dry branch. Twice startled, or let past to Highridge's larders, and the escort fails."}</p>
+<div class="${P}key">${mon ? `<kbd>A D · tap the crack</kbd><span>move Burr along it</span><kbd>Q</kbd><span>assign: pull a warrior to the line Burr stands by</span><kbd>E</kbd><span>shore a line that is not under attack</span>${stage === 2 ? "<kbd>F</kbd><span>pour sap-glue (2 sap)</span><kbd>R</kbd><span>sound the fall-back</span>" : ""}`
+          : `<kbd>A D · tap the crack</kbd><span>move Burr along it</span><kbd>Q</kbd><span>lead aside a group of people near Burr</span><kbd>F</kbd><span>lay an offering at Burr's line (2 sap)</span><kbd>R</kbd><span>sound the hush</span>`}</div>
+<button class="${P}go" type="button">${mon ? "Hold the lines" : "Clear the way"}</button></div>`;
+        const b0 = intro.querySelector("button"); on(b0, "click", start); b0.focus({ preventScroll: true });
+        return;
+      }
       const legend = mode === "monster"
         ? `<kbd>A D · tap the crack</kbd><span>move Burr along it</span><kbd>Q</kbd><span>assign: pull a warrior to the line Burr stands by</span><kbd>E</kbd><span>shore a line that is not under attack</span>`
         : `<kbd>A D · tap the crack</kbd><span>move Burr along it</span><kbd>Q</kbd><span>lead aside a group of people near Burr</span><kbd>F</kbd><span>lay an offering at Burr's line (2 sap)</span>`;
@@ -287,14 +329,19 @@ export default {
       intro.remove(); S.started = true;
       ["left", "right", "assign", S.mode === "monster" ? "build" : "glue"].forEach((a) => S.unlocked.add(a));
       buildPad();
+      if (stage === 2) ["glue", "back"].forEach((a) => S.unlocked.add(a));
+      if (stage === 2) buildPad();
       if (S.mode === "god") {
         S.beetle = { u: LEN + 2 }; S.lines.forEach((l) => (l.w = 0));
-        say("THE VISITOR COMES. CLEAR ITS PATH", 2.5);
-        beat("Burr", "“Spears down. Heads down. Nobody stands in its road.”");
+        say(stage === 2 ? "THE PROCESSION COMES. CLEAR ITS ROAD" : "THE VISITOR COMES. CLEAR ITS PATH", 2.5);
+        beat("Burr", stage === 2 ? "“Hold the people back. Not the ants. The people.” He has never given that order before." : "“Spears down. Heads down. Nobody stands in its road.”");
+        if (SIDE.length) S.groupPlan.push({ at: 14, side: SIDE[0] });
       } else {
         say("HOLD THE LINES", 2);
-        beat("Burr", "“Battlements! Everyone on the— yes, you too.” Mites first: the small ones always come first.");
+        beat("Burr", stage === 2 ? "“Ants. Mites with a plan.” The column does not slow down for the first line." : stage === 1 ? "“Battlements! Everyone on the— yes, you too.” Mites first. “And nobody stands by that hole on line three. It has a head in it.”" : "Mites first: the small ones always come first. Stand Burr by a line and pull warriors to it.");
       }
+      if (SIDE.length) later(() => { offNote = ladder.note(wrap, `Because you left ${scars === 1 ? "a scar" : "two scars"} on a door in The Ring Door, this crack has ${scars === 1 ? "a side entrance" : "two side entrances"}: ${S.mode === "god" ? "people come out of it into the road" : "some of every swarm comes in behind your front line"}.`); }, 1200);
+      if (stage === 2) placeSlip();
       last = performance.now();
     }
 
@@ -311,6 +358,20 @@ export default {
       OX = (W - spanX * K) / 2 + (WID + 1) * cos * K;
       OY = top + 4 * K + ((H - top - bottom) - spanY * K) / 2;
       renderSprites();
+      placeSlip();
+    }
+    // the collection's guest: a slip pinned to the wall of the crack. It is part of the picture and of nothing else.
+    function placeSlip() {
+      if (stage !== 2 || !art.has("thread-guest") || !S.started) return;
+      if (!slipEl) {
+        slipEl = document.createElement("button"); slipEl.type = "button"; slipEl.className = P + "slip";
+        slipEl.setAttribute("aria-label", "A slip pinned to the wall of the crack");
+        slipEl.style.backgroundImage = `url(${art.url("thread-guest")})`;
+        on(slipEl, "click", () => { try { api.thread.found(); } catch { /* */ } beat("", "A runner's slip, pinned with a splinter, in a hand Burr does not know. He reads it twice and leaves it where it is.", 8); });
+        wrap.insertBefore(slipEl, hud);
+      }
+      const p = proj(4.4, 0, 1.15), s = Math.max(30, K * 1.5);
+      slipEl.style.cssText += `;left:${(p.x - s / 2).toFixed(1)}px;top:${(p.y - s / 2).toFixed(1)}px;width:${s.toFixed(1)}px;height:${s.toFixed(1)}px`;
     }
     function proj(u, v, z) { return { x: OX + (u - v) * 0.866 * K, y: OY + (u + v) * 0.5 * K - z * K }; }
     fit();
@@ -380,8 +441,33 @@ export default {
       for (const w of S.waves) if (!w.done && S.t >= w.at) {
         w.done = true; say(`MITES: ${w.n} IN THE CRACK`, 1.8);
         for (let i = 0; i < w.n; i++) S.mites.push({ u: LEN + 1 + i * 0.7, v: 0.4 + rnd() * 2.2, hp: 1 });
+        SIDE.forEach((su) => { for (let i = 0; i < 2; i++) S.mites.push({ u: su, v: 0.2 + i * 0.5, hp: 1, side: true }); });
+        if (SIDE.length) fx(SIDE[0], 0.3, C.red);
       }
-      if (!S.beetle && S.t >= 14) {
+      // the plugged door: whoever stands in its reach for ten seconds is taken
+      if (stage === 1) {
+        const dl = S.lines[DOOR_LINE], d = S.door;
+        if (!dl.fallen && dl.w > 0) {
+          if (!d.seen) { d.seen = true; beat("Burr", "“Line three! Off it. That hole is stopped with a head, and the head is alive.” Stand Burr by another line and press Q: they come from line three first."); }
+          d.t += dt;
+          if (d.t >= 10) {
+            d.t = 0; d.taken++; dl.w--;
+            const n = ROLL[S.lost.length % ROLL.length]; S.lost.push(n);
+            say(`THE PLUGGED DOOR TAKES ${n.split(",")[0].toUpperCase()}`, 3, true);
+            beat("The Roll of the Bark", n + ". Nothing came out of the hole. Something went in.", 8);
+          }
+        } else d.t = Math.max(0, d.t - 2 * dt);
+      }
+      if (stage !== 1) {
+        if (!S.over && S.waves.every((w) => w.done) && !S.mites.length) {
+          S.over = true;
+          const heldN = S.lines.filter((l) => !l.fallen).length;
+          say(stage === 2 ? "THE COLUMN TURNS BACK" : "THE LAST OF THEM", 3);
+          api.store.set("losses", 0);
+          if (stage === 0) later(() => api.end({ outcome: "win", text: `The mites are spent. ${heldN} of 5 lines still stand. ${S.lost.length ? `The Roll of the Bark gains ${S.lost.length === 1 ? "a name" : S.lost.length + " names"}: ${S.lost.join("; ")}.` : "No one is lost."} Burr counts his squad twice, as he always does, and gets the same number, as he always hopes to.` }), 1400);
+          else later(() => api.end({ outcome: "done", text: `The ants are turned back down the crack; ${heldN} of 5 lines still stand.${S.lost.length ? ` On the Roll of the Bark: ${S.lost.join("; ")}.` : ""} The Battlements +3. Behind the pale wall the ticking goes on, and now nothing that hunts it will come this way before spring. Nothing checks the Pulse all winter. (The other reading was open.)` }), 1400);
+        }
+      } else if (!S.beetle && S.t >= 14) {
         S.beetle = { u: LEN + 3 }; say("THE BEETLE CLIMBS FROM THE UNDER", 2.6);
         beat("Burr", "“I'm not afraid. I'm ready. They feel the same from inside.”");
         later(() => unlock("glue", "NEW ORDER: F POURS SAP-GLUE, SLOWING WHATEVER WALKS IN IT"), 2500);
@@ -389,9 +475,12 @@ export default {
       const f = front();
       const engaged = [0, 0, 0, 0, 0];
       for (const m of S.mites) {
-        const stop = f >= 0 ? S.lines[f].u + 0.6 : -5;
-        if (m.u > stop) m.u -= 1.3 * slow(m.u) * dt;
-        else if (f >= 0) { engaged[f]++; S.lines[f].hp -= 0.2 * slow(m.u) * dt; S.lines[f].flash = 0.2; }
+        // each goes for the next standing line down the crack from it (a side entrance lets some in behind the front)
+        let ti = -1; for (let i = 4; i >= 0; i--) if (!S.lines[i].fallen && S.lines[i].u + 0.6 <= m.u + 0.05) { ti = i; break; }
+        const stop = ti >= 0 ? S.lines[ti].u + 0.6 : -5;
+        if (m.u > stop + 0.02) m.u = Math.max(stop, m.u - 1.3 * slow(m.u) * dt);
+        else if (ti >= 0) { engaged[ti]++; S.lines[ti].hp -= 0.2 * slow(m.u) * dt; S.lines[ti].flash = 0.2; }
+        if (m.u < 0) m.hp = 0;
       }
       S.lines.forEach((l) => {
         if (l.fallen || !l.w) return;
@@ -415,8 +504,8 @@ export default {
       S.engaged = engaged;
       S.lines.forEach((l, i) => { if (!l.fallen && l.w && !engaged[i]) l.hp = Math.min(10, l.hp + 0.9 * dt); });
       if (f >= 0 && S.lines[f].hp < 5 && S.lines[f].w > 0 && f > 0) unlock("back", "NEW ORDER: R SOUNDS THE FALL-BACK. CALL THEM BEFORE THE LINE BREAKS");
-      if (f >= 0 && S.lines[f].hp <= 0) lineFalls(f);
-      if (S.will <= 0 && !S.over) {
+      S.lines.forEach((l, i) => { if (!l.fallen && l.hp <= 0 && !S.over) lineFalls(i); });
+      if (stage === 1 && S.will <= 0 && !S.over) {
         S.over = true;
         const heldN = S.lines.filter((l) => !l.fallen).length;
         say("IT TURNS BACK", 3);
@@ -428,10 +517,14 @@ export default {
 
     function updateGod(dt) {
       const b = S.beetle;
-      b.u -= 0.42 * dt;
+      if (S.detour > 0) {
+        S.detour -= dt;
+        if (S.detour <= 0 && S.detourBad) { S.detourBad = false; S.disturbed++; say("THEY COME OUT OF THE DRY BRANCH WITH NOTHING, AND ANGRY", 2.8, true); }
+      } else b.u -= (stage === 2 ? 0.5 : 0.42) * dt;
+      if (stage === 2 && !S.wallBeat && Math.abs(S.burr - S.lines[PAPER_LINE].u) < 1.5) { S.wallBeat = true; beat("Burr, at the paper wall", "“I have a spear and it has a wall. Neither of us wants to find out.”", 8); }
       for (const p of S.groupPlan) if (!p.done && S.t >= p.at) {
         p.done = true;
-        const u = Math.max(3, Math.min(b.u - 6, 6 + rnd() * (b.u - 12)));
+        const u = p.side ? Math.min(p.side, b.u - 3) : Math.max(3, Math.min(b.u - 6, 6 + rnd() * (b.u - 12)));
         S.groups.push({ u, v: 0.6 + rnd() * 1.8, gone: false });
         say("PEOPLE WANDER INTO THE CRACK", 1.8);
         if (S.groups.length === 2) later(() => unlock("back", `NEW: R SOUNDS THE HUSH. EVERYONE IN THE CRACK LIES FLAT FOR 6 S (${S.hush} LEFT)`), 1800);
@@ -447,7 +540,18 @@ export default {
       for (const l of S.lines) if (!l.passed && b.u < l.u) {
         l.passed = true;
         const i = S.lines.indexOf(l);
-        if (!l.offering) say(`IT PASSED LINE ${i + 1} WITH NO OFFERING`, 2, true);
+        if (stage === 2) {
+          if (l.offering && i === PAPER_LINE) {
+            S.over = true; S.won = true; say("THE SWEETNESS TURNS THEM. THE WALL OPENS", 3.4);
+            ladder.pulse(api, -15); shared.set("ants_escorted", true); api.store.set("losses", 0);
+            beat("Burr", "Two kinds of god meet in a crack. The warriors stand with their backs to it, facing the people, and nobody is allowed to look for long.", 9);
+            later(() => api.end({ outcome: "win", text: `The procession turns at the sweetness and goes into the paper wall, and keeps going in. ${S.disturbed ? "One group of people was startled on the way." : "No one stood in its road."} Nobody is lost. By evening the ticking in this crack has stopped. From far above, if anyone were looking: an ant trail going into a hole in a tree. Burr: “I have a spear and it has a wall. Neither of us wants to find out.” Today neither of them had to.` }), 4200);
+            return;
+          }
+          if (l.offering && i === DRY_LINE) { S.detour = 6; S.detourBad = true; l.offering = false; say("THE SWEETNESS TURNS THEM INTO THE DRY BRANCH", 2.6, true); }
+          else if (l.offering) { S.detour = 2.2; l.offering = false; say("THEY STOP TO EAT, AND COME ON", 1.8); }
+          else if (i === PAPER_LINE) say("THEY PASS THE PAPER WALL. NOTHING SWEET TURNED THEM", 2.6, true);
+        } else if (!l.offering) say(`IT PASSED LINE ${i + 1} WITH NO OFFERING`, 2, true);
         if (i === 2 && !S.beats.has("mid")) { S.beats.add("mid"); beat("A child in a side groove", "“It has six feet. Gods have six feet?” Someone hushes her."); }
       }
       if (S.disturbed >= 2 && !S.over) {
@@ -455,7 +559,11 @@ export default {
         api.store.set("losses", losses + 1);
         later(() => api.end({ outcome: "lose", text: `Twice the god walked into its people. They scattered into the side grooves; hands −2, morale −4. The Knot will say the visitor was angered.${losses + 1 >= 2 ? " Next time Burr will have breath for a third hush." : ""}` }), 1000);
       }
-      if (b.u < -2 && !S.over) {
+      if (stage === 2 && b.u < 3 && !S.over) {
+        S.over = true; api.store.set("losses", losses + 1);
+        later(() => api.end({ outcome: "lose", text: `The procession walks past the paper wall, since nothing sweet lay there, and finds Highridge's larders instead. Food −6, morale −3. Behind the wall the ticking goes on.${losses + 1 >= 2 ? " Next time Burr will have breath for a third hush." : ""}` }), 1000);
+      }
+      if (stage !== 2 && b.u < -2 && !S.over) {
         S.over = true;
         const offered = S.lines.filter((l) => l.offering).length;
         api.store.set("losses", 0);
@@ -482,6 +590,28 @@ export default {
         const h = 2 + ((u * 7) % 5 === 0 ? 2 : (u * 3) % 4 === 0 ? 1 : 0);
         items.push({ d: u - 1, f: () => { for (let z = 0; z < h; z++) cube(u, -1, z, 1, 1, 1, z === h - 1 ? C.grey : C.umberL, C.umber, C.umberD); } });
         items.push({ d: u + WID + 0.2, f: () => cube(u, WID, 0, 1, 0.6, 0.35, C.umberL, C.umber, C.umberD) });
+      }
+      // openings in the back wall: side entrances (Ring Door scars), the plugged door, the dry branch, the paper wall
+      const face = (u0, u1, z, fill) => poly([proj(u0, 0, 0), proj(u1, 0, 0), proj(u1, 0, z), proj(u0, 0, z)], fill);
+      SIDE.forEach((su) => items.push({ d: su - 0.4, f: () => { face(su - 0.6, su + 0.6, 1.5, "#0d0805"); const p = proj(su, 0, 1.75); g.strokeStyle = C.paper; g.lineWidth = 2; g.beginPath(); g.moveTo(p.x - K * 0.3, p.y - K * 0.1); g.lineTo(p.x + K * 0.35, p.y + K * 0.25); g.stroke(); } }));
+      if (stage === 1) items.push({ d: S.lines[DOOR_LINE].u + 0.2, f: () => {
+        const du = S.lines[DOOR_LINE].u + 0.9, p = proj(du, 0, 0.9), r = K * 0.62;
+        g.fillStyle = "#0d0805"; g.beginPath(); g.ellipse(p.x, p.y, r, r * 0.9, 0, 0, 7); g.fill();
+        g.fillStyle = "#cdbf9d"; g.beginPath(); g.ellipse(p.x, p.y + r * 0.08, r * 0.72, r * 0.66, 0, 0, 7); g.fill();
+        g.strokeStyle = "#8d7c5c"; g.lineWidth = 1; g.beginPath(); g.arc(p.x, p.y + r * 0.08, r * 0.4, 0.3, 2.8); g.stroke();
+        if (S.door.t > 0) { g.strokeStyle = S.door.t > 6 ? C.red : C.gold; g.lineWidth = 3; g.beginPath(); g.arc(p.x, p.y, r + 4, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * Math.min(1, S.door.t / 10)); g.stroke(); }
+      } });
+      if (stage === 2) {
+        const du = S.lines[DRY_LINE].u - 1, pu = S.lines[PAPER_LINE].u - 1;
+        items.push({ d: du - 0.4, f: () => { face(du - 1, du + 1, 1.9, "#0d0805"); g.strokeStyle = "#3a281c"; g.lineWidth = 1; for (let k = 0; k < 4; k++) { const a = proj(du - 0.7 + k * 0.45, 0, 0), b2 = proj(du - 0.6 + k * 0.45, 0, 0.5 + (k % 2) * 0.3); g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b2.x, b2.y); g.stroke(); } } });
+        items.push({ d: pu - 0.4, f: () => {
+          const open = S.won ? Math.min(1, (S.lines[PAPER_LINE].u - S.beetle.u) / 3) : 0;
+          face(pu - 1, pu + 1, 1.9, "#0d0805");
+          if (open < 1) { face(pu - 1 + open, pu + 1 - open, 1.9, "#d8ccb0"); g.strokeStyle = "#a89c80"; g.lineWidth = 1; for (let k = 1; k < 5; k++) { const z = k * 0.38, a = proj(pu - 1 + open, 0, z), b2 = proj(pu + 1 - open, 0, z); g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b2.x, b2.y); g.stroke(); } }
+          // the wall ticks: chalk-grey marks, the Pulse's only face
+          const ph = api.reducedMotion ? 1 : (S.t * 1.3) % 1;
+          if (!S.won) for (let k = 0; k < 3; k++) { const p = proj(pu - 0.5 + k * 0.5, 0, 0.7 + (k % 2) * 0.5); g.strokeStyle = `rgba(185,194,196,${k === Math.floor(S.t * 1.3) % 3 || api.reducedMotion ? 0.95 : 0.3})`; g.lineWidth = 2; g.beginPath(); g.moveTo(p.x - 4, p.y); g.lineTo(p.x - 1, p.y + 4); g.lineTo(p.x + 5, p.y - 5); g.stroke(); void ph; }
+        } });
       }
       const fr = front();
       S.lines.forEach((l, i) => {
@@ -511,7 +641,17 @@ export default {
         items.push({ d: q.u + v, f: () => { if (!flat && !q.hit) { const p = proj(q.u + 0.35, v + 0.15, 0); if (spr("people", p.x, p.y)) return; } for (let k = 0; k < 3; k++) figure(q.u + k * 0.35, v + (k % 2) * 0.3, q.hit ? C.red : C.sage, false, false, 1.15, flat); if (!flat) { const p = proj(q.u, v, 0); g.fillStyle = C.lantern; g.beginPath(); g.arc(p.x + K * 0.2, p.y - K * 0.9, K * 0.1, 0, 7); g.fill(); } } });
       }
       for (const m of S.mites) items.push({ d: m.u + m.v, f: () => { const p = proj(m.u, m.v, 0); if (spr("mite", p.x, p.y, api.reducedMotion ? 0 : Math.sin(S.t * 14 + m.v * 9) * K * 0.03)) return; g.fillStyle = C.red; g.beginPath(); g.ellipse(p.x, p.y - K * 0.12, K * 0.2, K * 0.13, 0, 0, 7); g.fill(); g.strokeStyle = C.dark; g.lineWidth = 1; for (let s = -1; s <= 1; s++) { g.beginPath(); g.moveTo(p.x + s * K * 0.1, p.y - K * 0.1); g.lineTo(p.x + s * K * 0.22, p.y + K * 0.05); g.stroke(); } } });
-      if (S.beetle && S.beetle.u < LEN + 2.5) {
+      if (S.beetle && stage === 2) {
+        // the procession: a column with no end, and when the wall opens it turns in
+        const b = S.beetle, turn = S.lines[PAPER_LINE].u - 1, det = S.detourBad ? S.lines[DRY_LINE].u - 1 : null;
+        for (let k = 0; k < 26; k++) {
+          const s = b.u + k * 0.6; if (s > LEN + 1) break;
+          let u = s, v = 1.5 + Math.sin(k * 1.7 + (api.reducedMotion ? 0 : S.t * 3)) * 0.45;
+          if (S.won && s < turn) { v = 1.5 - (turn - s) * 1.1; u = turn; if (v < 0.1) continue; }
+          if (det != null && s < det + 1.2 && k < 8) { v = 0.4 + (k % 3) * 0.2; u = det - 0.6 + (k % 4) * 0.4; }
+          items.push({ d: u + v, f: () => { const p = proj(u, v, 0), k2 = K * 0.2; g.fillStyle = "#1a0f08"; for (const o of [-1, 0, 1]) { g.beginPath(); g.ellipse(p.x + o * k2 * 0.9, p.y - k2 * 0.5 - o * k2 * 0.45, k2 * (o ? 0.5 : 0.38), k2 * 0.36, -0.5, 0, 7); g.fill(); } g.strokeStyle = "#7a3c1c"; g.lineWidth = 1; g.beginPath(); g.moveTo(p.x - k2, p.y - k2 * 0.2); g.lineTo(p.x + k2, p.y - k2 * 0.9); g.stroke(); } });
+        }
+      } else if (S.beetle && S.beetle.u < LEN + 2.5) {
         const b = S.beetle;
         items.push({ d: b.u + 1.5, f: () => {
           const wob = S.rear && !api.reducedMotion ? Math.sin(S.t * 9) * K * 0.08 : 0;
@@ -542,14 +682,14 @@ export default {
         const pct = S.beetle ? Math.max(0, Math.min(1, 1 - (S.beetle.u + 2) / (LEN + 4))) : 0;
         const off = S.lines.filter((l) => l.offering).length;
         second = `<div class="${P}row"><span>PASSAGE</span><div class="${P}bar"><i style="width:${(pct * 100).toFixed(1)}%;background:${C.lime}"></i></div></div>
-<div class="${P}row"><span>OFFER</span>${off}/5 · ${sapIcon}sap ${S.sap}${S.unlocked.has("back") ? ` · hush ${S.hush}` : ""}</div>
+<div class="${P}row"><span>OFFER</span>${stage === 2 ? off + " laid" : off + "/5"} · ${sapIcon}sap ${S.sap}${S.unlocked.has("back") ? ` · hush ${S.hush}` : ""}</div>
 <div class="${P}row"><span>STARTLED</span><span style="color:${S.disturbed ? C.red : C.lime}">${"●".repeat(Math.min(2, S.disturbed))}${"○".repeat(Math.max(0, 2 - S.disturbed))}</span>${S.hushT > 0 ? ` <span style="color:${C.gold}">hush ${S.hushT.toFixed(0)}s</span>` : ""}</div>`;
-        note = "the Beetle, read as a god";
+        note = stage === 2 ? (S.detour > 0 ? "they have stopped" : "ants, read as gods: they turn at sweetness") : "the Beetle, read as a god";
       } else {
         const draining = S.beetle && S.engaged.some((x) => x >= 3) && S.lines[front()]?.w > 0;
-        second = `<div class="${P}row"><span>WILL</span><div class="${P}bar${draining ? " " + P + "drain" : ""}"><i style="width:${(S.will / WILL * 100).toFixed(1)}%"></i></div><span>${Math.ceil(S.will)}s</span></div>
+        second = `${stage === 1 ? `<div class="${P}row"><span>WILL</span><div class="${P}bar${draining ? " " + P + "drain" : ""}"><i style="width:${(S.will / WILL * 100).toFixed(1)}%"></i></div><span>${Math.ceil(S.will)}s</span></div>` : `<div class="${P}row"><span>SWARMS</span>${S.waves.filter((w) => w.done).length}/3 · ${S.mites.length} in the crack</div>`}${stage === 1 && S.door.t > 0 ? `<div class="${P}row"><span>DOOR</span><div class="${P}bar"><i style="width:${Math.min(100, S.door.t * 10).toFixed(0)}%;background:${C.red}"></i></div><span>${Math.ceil(10 - S.door.t)}s</span></div>` : ""}
 <div class="${P}row"><span>SQUAD</span>${handsIcon}${S.lines.reduce((a, l) => a + l.w, 0)} standing${S.lost.length ? ` · lost ${S.lost.length}` : ""} · ${sapIcon}sap ${S.sap}</div>`;
-        note = S.beetle ? (draining ? "its will drains while warriors face it" : "no warrior faces it: its will holds") : "mites first";
+        note = stage === 0 ? "mites" : stage === 2 ? "ants, read as monsters" : S.beetle ? (draining ? "its will drains while warriors face it" : "no warrior faces it: its will holds") : "mites first";
       }
       hud.innerHTML = `<div class="${P}row"><span>LINES</span><div>${notches}</div></div>${second}<div class="${P}note">${S.mode ? note : ""}</div>`;
       pad.querySelectorAll("button").forEach((b) => {
@@ -568,6 +708,7 @@ export default {
       const dt = Math.min(0.05, (now - last) / 1000); last = now;
       if (S.started && !S.over) update(dt);
       else if (S.over && S.beetle && S.beetle.leaving) S.beetle.u += 1.2 * dt;
+      else if (S.over && S.won) { S.beetle.u -= 1.6 * dt; S.t += dt; }
       if (beatT > 0) { beatT -= dt; if (beatT <= 0) beatEl.style.opacity = "0"; }
       draw();
       hudT -= dt; if (hudT <= 0) { renderHud(); hudT = 0.12; }
@@ -578,7 +719,7 @@ export default {
     raf = requestAnimationFrame(loop);
     return {
       unmount() {
-        dead = true; if (endEl) endEl.remove();
+        dead = true; if (endEl) endEl.remove(); if (offNote) offNote(); if (slipEl) slipEl.remove();
         cancelAnimationFrame(raf);
         S.over = true; S.started = false;
         pending.forEach(clearTimeout);
@@ -587,5 +728,5 @@ export default {
         wrap.remove();
       },
     };
-  },
-};
+  }
+}

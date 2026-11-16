@@ -14,6 +14,20 @@
 // the paper frame and the Long Crack divider dress the cards. The turning rings stay drawn by code: the
 // plates are still pictures and cannot turn.
 import * as kit from "./_art.js";
+import * as ladder from "./_ladder.js";
+
+// Phase 2: one door a stage. Teach: the First Ring, the link rule. Test: the Deep Knot, the stiff ring, and
+// five scars end the sitting. Twist: the Heartwood Door. It does not start where the chronicle says the Knot
+// left it, and ring four has an eaten arc: while its notch lies in those three places it drags nothing, so the
+// one rule the first two doors taught does not hold there. Opened, the push-in keeps going; then it may be
+// sealed again (closing a door: par 11, pulse −10, the Knot −4). Scars are remembered (api.shared
+// "door_scars"): each is a side entrance in the next Crack defence; a clean cut is a knot shelter in c6_shadow.
+const CHALK = "#b9c2c4";
+const SPEC = { title: "The Ring Door", chip: "left:auto;right:8px;bottom:auto;top:4px", stages: [
+  { name: "The Door of the First Ring", blurb: "The link rule alone: a ring drags the next one in, the other way." },
+  { name: "The Deep Knot", blurb: "Four rings, one stiff with age. Five scars and Pell takes your hands off the door." },
+  { name: "The Heartwood Door", blurb: "Five rings. Someone has turned it since. On ring four the rule you learned does not hold." },
+] };
 
 const POS = 8;
 const BROWN = "#5a3d2b", DARK = "#3a281c", ORANGE = "#e8742a", AMBER = "#d9902a", PAPER = "#efe2c4", INK = "#2e2016", RED = "#b8402a";
@@ -37,26 +51,57 @@ const DOORS = [
       { name: "The Year of Two Shadows", line: "A shadow twice in one year. They hid in the knots; nothing happened.", d: "M-9 0 A5 5 0 1 0 -1 0 A5 5 0 1 0 -9 0 M1 0 A5 5 0 1 0 9 0 A5 5 0 1 0 1 0" },
     ],
   },
+  {
+    name: "THE HEARTWOOD DOOR", short: "The Heartwood Door", n: 5, par: 9, stiff: -1, eaten: { ring: 3, pos: [3, 4, 5] },
+    bands: [[196, 164], [164, 133], [133, 102], [102, 72], [72, 44]],
+    glyphs: [
+      { name: "Underhollow", line: "The Knot's chronicle: they carved too many temples, and the plate fell.", d: "M-9 -6 L9 -6 L5 8 L-7 4Z M-4 -6 L-2 8" },
+      { name: "The Floor Went First", line: "Scratched beside it, in another hand: the floor went first.", d: "M-9 -3 H9 M-9 3 H-3 M3 3 H9 M-2 5 L0 9 L2 5" },
+      { name: "Turned Since", line: "This ring is not where the chronicle says the Knot left it. Someone has turned it since.", d: "M-7 4 A8 8 0 1 1 6 5 M6 5 L9 0 M6 5 L1 4" },
+      { name: "The Eaten Arc", line: "Three places on this ring are thin as paper. There it turns alone.", d: "M-9 2 A9 9 0 0 1 9 2 M-5 6 h2 M-1 7 h2 M3 6 h2" },
+      { name: "The Pulse", line: "At the heart there is no carving. Only a small steady tapping, and nobody's hand.", d: "M-9 0 H-4 L-2 -6 L1 6 L3 0 H9" },
+    ],
+  },
 ];
 
 function solver(door) {
   const N = door.n, STEP = Array.from({ length: N }, (_, i) => (i === door.stiff ? 2 : 1));
   const enc = (s) => s.reduce((a, v) => a * POS + v, 0);
   const dec = (k) => { const s = new Array(N); for (let i = N - 1; i >= 0; i--) { s[i] = k % POS; k = Math.floor(k / POS); } return s; };
-  const apply = (s, i, d) => { const t = s.slice(); t[i] = (t[i] + d * STEP[i] + POS * 4) % POS; if (i + 1 < N) t[i + 1] = (t[i + 1] - d + POS * 4) % POS; return t; };
+  const E = door.eaten || null;
+  // the eaten arc: while that ring's notch lies in it, turning the ring drags nothing
+  const loose = (s, i) => !!E && i === E.ring && E.pos.includes(s[i]);
+  const apply = (s, i, d) => { const t = s.slice(); t[i] = (t[i] + d * STEP[i] + POS * 4) % POS; if (i + 1 < N && !loose(s, i)) t[i + 1] = (t[i + 1] - d + POS * 4) % POS; return t; };
   const dist = new Int16Array(POS ** N).fill(-1);
-  const q = [0]; dist[0] = 0;
-  for (let h = 0; h < q.length; h++) {
-    const s = dec(q[h]);
-    for (let i = 0; i < N; i++) for (const d of [1, -1]) { const k = enc(apply(s, i, d)); if (dist[k] < 0) { dist[k] = dist[q[h]] + 1; q.push(k); } }
+  if (!E) {
+    const q = [0]; dist[0] = 0;
+    for (let h = 0; h < q.length; h++) {
+      const s = dec(q[h]);
+      for (let i = 0; i < N; i++) for (const d of [1, -1]) { const k = enc(apply(s, i, d)); if (dist[k] < 0) { dist[k] = dist[q[h]] + 1; q.push(k); } }
+    }
+  } else {
+    // with the arc a turn cannot always be undone, so distances are found backwards from the open door
+    const M = N * 2, total = POS ** N, nxt = new Int32Array(total * M), cnt = new Int32Array(total + 1);
+    for (let k = 0; k < total; k++) { const s = dec(k); for (let i = 0; i < N; i++) for (let j = 0; j < 2; j++) { const t = enc(apply(s, i, j ? -1 : 1)); nxt[k * M + i * 2 + j] = t; cnt[t + 1]++; } }
+    for (let k = 0; k < total; k++) cnt[k + 1] += cnt[k];
+    const fill = cnt.slice(0, total), pred = new Int32Array(total * M);
+    for (let k = 0; k < total; k++) for (let m = 0; m < M; m++) { const t = nxt[k * M + m]; pred[fill[t]++] = k; }
+    const q = [0]; dist[0] = 0;
+    for (let h = 0; h < q.length; h++) { const t = q[h]; for (let p = cnt[t]; p < cnt[t + 1]; p++) { const k = pred[p]; if (dist[k] < 0) { dist[k] = dist[t] + 1; q.push(k); } } }
   }
   const best = (s) => { const dd = dist[enc(s)]; for (let r = 0; r < N; r++) for (const d of [1, -1]) if (dist[enc(apply(s, r, d))] === dd - 1) return [r, d]; return null; };
-  return { N, STEP, enc, dec, apply, dist, best };
+  return { N, STEP, enc, dec, apply, dist, best, loose };
 }
 
 export default {
-  mount(root, api) {
+  mount(root, api) { return ladder.run(root, api, SPEC, play); },
+};
+
+function play(root, api, stage) {
+  {
     const P = "people-of-the-bark-ring-door-";
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    let sealing = false, arcSaid = false;
     const offs = [];
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); offs.push(() => t.removeEventListener(e, f, o)); };
     const timers = [];
@@ -148,7 +193,12 @@ export default {
 
     function setupDoor(i) {
       di = i; D = DOORS[i]; SV = solver(D);
-      const pool = []; for (let k = 0; k < SV.dist.length; k++) if (SV.dist[k] === D.par && SV.dec(k).every((v) => v !== 0)) pool.push(k);
+      let par = sealing ? 11 : D.par;
+      const pool = [];
+      for (; par > 2 && !pool.length; par--) for (let k = 0; k < SV.dist.length; k++) if (SV.dist[k] === par && SV.dec(k).every((v) => v !== 0)) pool.push(k);
+      par++;
+      if (par !== D.par) D = Object.assign({}, D, { par });
+
       start = SV.dec(pool[Math.floor(rnd() * pool.length)]);
       st = start.slice(); moves = 0; sinceNew = 0; over = false; busy = false; revealed = new Set(); hintRing = -1; hover = -1;
       angle = st.map((v) => v * 45);
@@ -187,6 +237,13 @@ ${ringsTexture(r0, r1, 11 + i * 7 + di * 50)}
 </g>`;
       });
       out += `<circle r="${B[N - 1][1]}" fill="#c9a76c" stroke="${DARK}" stroke-width="2"/>${ringsTexture(B[N - 1][1], 6, 99)}<circle r="9" fill="${BROWN}"/>`;
+      if (D.eaten) {
+        // the eaten arc: fixed on the frame, pale and ribbed, where ring four turns alone
+        const [e0, e1] = B[D.eaten.ring], em = (e0 + e1) / 2, a0 = (D.eaten.pos[0] - 0.5) * 45, a1 = (D.eaten.pos[D.eaten.pos.length - 1] + 0.5) * 45;
+        const pt = (a, r) => [Math.sin(a * Math.PI / 180) * r, -Math.cos(a * Math.PI / 180) * r];
+        const [x0, y0] = pt(a0, em), [x1, y1] = pt(a1, em);
+        out += `<path d="M${x0.toFixed(1)} ${y0.toFixed(1)} A${em} ${em} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}" fill="none" stroke="${CHALK}" stroke-width="${e0 - e1 - 6}" opacity=".62" stroke-dasharray="3 5" pointer-events="none"/>`;
+      }
       out += `<path d="M0 -9 L1.5 -60 L-1 -110 L1.2 -160 L0 -228" stroke="${INK}" stroke-width="2.4" fill="none"/>`;
       out += `<g class="${P}marks"></g><g class="${P}hint" pointer-events="none"></g><g class="${P}prev" pointer-events="none"></g>`;
       svg.innerHTML = out;
@@ -217,18 +274,19 @@ ${ringsTexture(r0, r1, 11 + i * 7 + di * 50)}
       if (hover >= 0 && !over) {
         const d = ccw ? -1 : 1, [h0, h1] = D.bands[hover], m = (h0 + h1) / 2;
         let s = `<circle r="${m}" fill="none" stroke="#fff6dc" stroke-width="${h0 - h1}" opacity=".22"/>` + arc(m, d > 0 ? 25 : -25, d > 0 ? 25 + 30 * SV.STEP[hover] : -25 - 30 * SV.STEP[hover], RED, 3);
-        if (hover + 1 < D.n) { const [n0, n1] = D.bands[hover + 1], mn = (n0 + n1) / 2; s += arc(mn, d > 0 ? 55 : -55, d > 0 ? 25 : -25, RED, 2.5, "5 4"); }
+        if (hover + 1 < D.n && !SV.loose(st, hover)) { const [n0, n1] = D.bands[hover + 1], mn = (n0 + n1) / 2; s += arc(mn, d > 0 ? 55 : -55, d > 0 ? 25 : -25, RED, 2.5, "5 4"); }
         prev.innerHTML = s;
       } else prev.innerHTML = "";
       chron.innerHTML = D.glyphs.map((gl, i) => `<div class="${P}e ${revealed.has(i) ? "" : P + "hid"}" data-g="${i}"><svg viewBox="-12 -12 24 24" width="24" height="24"><path d="${revealed.has(i) ? gl.d : "M-9 -9 H9 V9 H-9Z"}" stroke="${INK}" stroke-width="2" fill="none" ${revealed.has(i) ? "" : 'stroke-dasharray="2 2"'}/></svg><span>RING ${i + 1}${revealed.has(i) ? `<br><b>${gl.name}</b><br><i>${gl.line}</i>` : ""}</span></div>`).join("");
-      handBtn.textContent = `Pell's hand · ${hands}`;
+      handBtn.textContent = stage === 2 ? `A steady hand · ${hands}` : `Pell's hand · ${hands}`;
       handBtn.disabled = hands <= 0 || over;
     }
     function turn(i, d) {
       if (over || busy || wrap.querySelector("." + P + "intro") || i < 0 || i >= D.n) return;
+      const alone = SV.loose(st, i);
       st = SV.apply(st, i, d);
       angle[i] += d * SV.STEP[i] * 45;
-      if (i + 1 < D.n) angle[i + 1] -= d * 45;
+      if (i + 1 < D.n && !alone) angle[i + 1] -= d * 45;
       moves++; sinceNew++;
       if (hintRing === i) hintRing = -1;
       const fresh = [];
@@ -240,15 +298,23 @@ ${ringsTexture(r0, r1, 11 + i * 7 + di * 50)}
         const el = chron.querySelector(`[data-g="${k}"]`); if (el) el.classList.add(P + "new");
       }
       if (moves === 1 && di === 0) say("Pell", i + 1 < D.n ? `“See? Ring ${i + 2} moved too, the other way. The knot grew them together.”` : "“The heart ring turns alone. The others drag their neighbour.”");
-      else if (fresh.length) say("Pell", `“${D.glyphs[fresh[0]].name}. The Trunk does not shout twice. Write it down.”`);
+      else if (fresh.length) say(stage === 2 ? "Chanter Hollow" : "Pell", stage === 2 ? `holds the lantern to the ring. ${D.glyphs[fresh[0]].name}. He reads it, and does not chant.` : `“${D.glyphs[fresh[0]].name}. The Trunk does not shout twice. Write it down.”`);
       else if (moves === D.par + 1) say("Pell", "“Gently. Every extra turn is a cut in the living bark.”");
+      if (alone && !arcSaid) { arcSaid = true; say("The grain", "Ring four turns and ring five does not follow. Under your hand the wood here is thin as paper. In the pale arc it drags nothing."); }
+      else if (stage === 2 && moves === 1 && !sealing) say("Chanter Hollow", "“This is not how the chronicle says the Knot left it.” Someone has turned it since. He does not say who he thinks it was.");
       if (st.every((v) => v === 0)) open();
+      else if (stage === 1 && moves - D.par >= 5) {
+        over = true; busy = true; paint();
+        shared.set("door_scars", 2); api.store.set("losses", losses + 1);
+        say("Pell", "takes your hands off the door.");
+        later(() => api.end({ outcome: "lose", text: `Five scars round the Deep Knot, and the door still shut. Pell takes your hands off it. “The Trunk remembers the turns. So will the crack below this temple.” Bark integrity −5.${losses + 1 >= 2 ? " Next time Pell will lend his hand more often." : ""}` }), 1200);
+      }
     }
     function hand() {
       if (over || hands <= 0) return;
       const b = SV.best(st); if (!b) return;
       hands--; [hintRing, hintDir] = b;
-      say("Pell's hand", `rests on ring ${b[0] + 1}: ${b[1] > 0 ? "“This way, with the sun.”" : "“Back. Against the sun.”"}`);
+      say(stage === 2 ? "Your own hand" : "Pell's hand", `rests on ring ${b[0] + 1}: ${b[1] > 0 ? "“This way, with the sun.”" : "“Back. Against the sun.”"}`);
       paint();
     }
     function open() {
@@ -257,9 +323,41 @@ ${ringsTexture(r0, r1, 11 + i * 7 + di * 50)}
       record.push({ moves, scars, par: D.par });
       paint();
       say("The door", scars ? `swings in, grinding. ${scars} scar${scars > 1 ? "s" : ""} in the bark around it.` : "swings in without a sound. A clean cut.");
-      if (di === 0) later(interlude, api.reducedMotion ? 500 : 1500);
-      else later(finish, api.reducedMotion ? 300 : 1100);
+      // what the door remembers goes to the other layers: scars are side entrances, a clean cut is a shelter
+      shared.set("door_scars", Math.min(2, scars)); if (!scars) shared.set("door_clean", (shared.get("door_clean", 0) | 0) + 1);
+      api.store.set("losses", scars ? losses + 1 : 0);
+      const cut = scars ? `${scars} scar${scars > 1 ? "s" : ""} in the living bark (integrity −${scars})` : "a clean cut (the Knot +4)";
+      const wait = api.reducedMotion ? 400 : 1300;
+      if (stage === 0) later(() => api.end({ outcome: "win", text: `The Door of the First Ring opens in ${moves} turns (par ${D.par}): ${cut}. Pell: “The knot grew them together. Now you know it in your hands.”` }), wait);
+      else if (stage === 1) later(() => api.end({ outcome: "win", text: `The Deep Knot opens in ${moves} turns (par ${D.par}): ${cut}. Pell runs his thumb along the Great Flake ring and says nothing for a long time.` }), wait);
+      else if (!sealing) later(pushIn, wait);
+      else later(() => finishTwist(true, scars), wait);
     }
+    // the set-piece: the door opens and the push-in keeps going
+    let openScars = 0;
+    function pushIn() {
+      openScars = record[record.length - 1].scars;
+      plate("The Heartwood, opened", "WINTER · UNDER KNOTHOLM",
+        "The door swings in and the push-in keeps going. Where the hall of ancestors should be there is lantern light travelling a long way down, and walls of something thin and pale, ribbed with dried mud. Nothing moves. Chanter Hollow's offering bowls stand by the crack in the threshold, where “the Trunk drinks them”, all of them empty.",
+        "The Knot wants the door <b>closed</b> again and never spoken of: bring every notch back to the crack once more (par 11; the Pulse falls, the Knot −4). Or leave it standing open.",
+        `<kbd>the pale arc</kbd><span>ring four still turns alone there</span>`,
+        "Seal the Heartwood", () => { sealing = true; over = false; busy = false; setupDoor(2); say("Chanter Hollow", "“Trunk, hear us. Trunk, hold us.” He does not look through the door while you work."); }, "door-heartwood");
+      const card = wrap.querySelector("." + P + "intro"), b = document.createElement("button");
+      b.type = "button"; b.className = P + "go"; b.style.marginLeft = "8px"; b.textContent = "Leave it open";
+      card.querySelector("." + P + "plate").appendChild(b);
+      on(b, "click", () => { card.remove(); finishTwist(false, openScars); });
+    }
+    function finishTwist(sealed, scars) {
+      const total = record.reduce((a, r) => a + r.scars, 0);
+      if (sealed) { ladder.pulse(api, -10); shared.set("heartwood", "sealed"); } else shared.set("heartwood", "open");
+      shared.set("door_scars", Math.min(2, total));
+      const res = { outcome: "win", text: sealed
+        ? `The Heartwood Door is opened and sealed again${total ? `, with ${total} scar${total > 1 ? "s" : ""} round it` : ", on clean cuts"}. Behind it the tapping goes on, fainter. The Knot −4: a thing that had to be shut is a thing that was seen. Nobody speaks of the hall.`
+        : `The Heartwood Door stands open${total ? `, with ${total} scar${total > 1 ? "s" : ""} round it` : ", on a clean cut"}. Lantern light goes a long way down between paper walls. The Knot sets a novice at the threshold to say that nothing is there.` };
+      const id = sealed && art.has("door-heartwood-sealed") ? "door-heartwood-sealed" : "door-heartwood";
+      endEl = kit.endCard(root, api, id, res, sealed ? "<b>THE HEARTWOOD · SEALED</b>Turned back to the line, and the line chalked over." : "<b>THE HEARTWOOD · OPEN</b>Where the hall of ancestors should be.");
+    }
+    function interludeOld() {}
     function interlude() {
       const r = record[0];
       plate("The Deep Knot", "AUTUMN · THE SECOND DOOR",
@@ -321,13 +419,23 @@ ${ringsTexture(r0, r1, 11 + i * 7 + di * 50)}
       else if (e.key === "r" || e.key === "R") resetBtn.click();
     });
 
-    setupDoor(0);
-    plate("The Ring Door", "KNOTHOLM · THE FIRST DOOR",
+    setupDoor(stage);
+    if (stage === 1) plate("The Deep Knot", "AUTUMN · THE SECOND DOOR",
+      "Pell leads you down, under Knotholm, to an older door. The second ring here is stiff with age: it moves two steps for one push.",
+      "Line up four rings. Par is 9. <b>Five scars</b> and Pell stops you: the bark will not take more.",
+      `<kbd>H</kbd><span>Pell's hand: shows the best next turn (${hands} left)</span><kbd>R</kbd><span>reset: rings back as found, moves still count</span>`,
+      "Lay hands on the Deep Knot", () => say("Pell", "“Count before you cut.”"), "door-deep-knot", "chapter-4-autumn");
+    else if (stage === 2) plate("The Heartwood Door", "WINTER · THE LAST DOOR",
+      "Five rings, and the last the Knot will ask of your hands. Pell is dead; Chanter Hollow holds the lantern. The chronicle says how the Knot left this door. It is not how you find it.",
+      "Line up five rings. Par is 9. On ring four a pale arc is marked: while that ring's notch lies in it, the ring <b>drags nothing</b>.",
+      `<kbd>tap a ring · 1–5</kbd><span>turn it; ⇧ or right-click turns it back</span><kbd>H</kbd><span>a hand on the right ring (${hands} left)</span>`,
+      "Lay hands on the Heartwood", () => say("Chanter Hollow", "“The Trunk drinks what we pour here. It has always been thirsty at this door.”"), "door-heartwood", "chapter-5-winter");
+    else plate("The Ring Door", "KNOTHOLM · THE FIRST DOOR",
       "Their temples are carved into knots. Elder Pell's eyes are failing, so tonight your hands are his. The door is the knot's own growth rings, cut free.",
-      "Turn each ring until its orange notch sits on the crack at the top. Two doors; stay at par and the bark is not scarred.",
+      "Turn each ring until its orange notch sits on the crack at the top. Stay at par and the bark is not scarred.",
       `<kbd>tap a ring</kbd><span>turn it one step clockwise</span><kbd>right-click / ⇧</kbd><span>turn it back</span><kbd>watch</kbd><span>the next ring in turns too, the other way</span>`,
       "Lay hands on the door", () => say("Pell", gentle ? "“Take my hand when you need it. I have four turns of help in me tonight.”" : "“Count before you cut.”"), "door-first-ring");
 
     return { unmount() { timers.forEach(clearTimeout); offs.forEach((f) => f()); if (endEl) endEl.remove(); wrap.remove(); } };
-  },
-};
+  }
+}

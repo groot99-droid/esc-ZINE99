@@ -1,0 +1,505 @@
+{
+  "game": "people-of-the-bark",
+  "location": "lowridge",
+  "name": "Lowridge, the lowest street, at the foot of the Long Crack",
+  "reference": "assets/locations/lowridge.jpg",
+  "bounds_m": [
+    0.1,
+    0.06,
+    0.08
+  ],
+  "origin": "centre of the set's floor, at the base of the bark slab; the bark wall stands at +y and the god camera looks along +y at it from -y. +z is up the Trunk; the Long Crack comes down the wall at x = +0.012 and widens toward the street. Real metres: a stretch of bark 10 cm wide and 8 cm tall.",
+  "materials": {
+    "bark-umber": {
+      "color": [
+        0.353,
+        0.243,
+        0.169
+      ],
+      "roughness": 0.95
+    },
+    "bark-damp": {
+      "color": [
+        0.2,
+        0.15,
+        0.11
+      ],
+      "roughness": 0.8
+    },
+    "crack-dark": {
+      "color": [
+        0.06,
+        0.04,
+        0.03
+      ],
+      "roughness": 1.0
+    },
+    "lichen-sage": {
+      "color": [
+        0.56,
+        0.64,
+        0.48
+      ],
+      "roughness": 0.9
+    },
+    "paper-wall": {
+      "color": [
+        0.85,
+        0.8,
+        0.69
+      ],
+      "roughness": 0.7
+    },
+    "frost": {
+      "color": [
+        0.85,
+        0.92,
+        0.97
+      ],
+      "roughness": 0.3
+    }
+  },
+  "blockout": [
+    {
+      "id": "bark-slab",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.1,
+        0.02,
+        0.08
+      ],
+      "location": [
+        0,
+        0.02,
+        0.04
+      ],
+      "material": "bark-damp"
+    },
+    {
+      "id": "street-ledge",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        0.09,
+        0.008,
+        0.002
+      ],
+      "location": [
+        0,
+        0.006,
+        0.018
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "upper-ledge",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.05,
+        0.006,
+        0.002
+      ],
+      "location": [
+        -0.02,
+        0.007,
+        0.04
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "long-crack",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.006,
+        0.004,
+        0.06
+      ],
+      "location": [
+        0.012,
+        0.009,
+        0.05
+      ],
+      "material": "crack-dark",
+      "collide": false
+    },
+    {
+      "id": "crack-road",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.008,
+        0.006,
+        0.001
+      ],
+      "location": [
+        0.012,
+        0.007,
+        0.03
+      ],
+      "rotation_deg": [
+        0,
+        12,
+        0
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "sorrels-wall",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.012,
+        0.0006,
+        0.012
+      ],
+      "location": [
+        0.036,
+        0.0097,
+        0.026
+      ],
+      "material": "paper-wall"
+    },
+    {
+      "id": "lichen-patch",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.014,
+        0.0005,
+        0.02
+      ],
+      "location": [
+        -0.04,
+        0.0098,
+        0.05
+      ],
+      "material": "lichen-sage",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "low-home-1",
+      "object": "dwelling",
+      "location": [
+        -0.036,
+        0.008,
+        0.019
+      ]
+    },
+    {
+      "id": "low-home-2",
+      "object": "dwelling",
+      "location": [
+        -0.024,
+        0.008,
+        0.019
+      ]
+    },
+    {
+      "id": "low-home-3",
+      "object": "dwelling",
+      "location": [
+        -0.012,
+        0.008,
+        0.019
+      ]
+    },
+    {
+      "id": "low-home-4",
+      "object": "dwelling",
+      "location": [
+        0.026,
+        0.008,
+        0.019
+      ]
+    },
+    {
+      "id": "low-home-5",
+      "object": "dwelling",
+      "location": [
+        -0.03,
+        0.008,
+        0.041
+      ]
+    },
+    {
+      "id": "low-home-6",
+      "object": "dwelling",
+      "location": [
+        -0.012,
+        0.008,
+        0.041
+      ]
+    },
+    {
+      "id": "low-shutter-1",
+      "object": "window-shutter",
+      "location": [
+        -0.036,
+        0.0075,
+        0.024
+      ],
+      "ground": false
+    },
+    {
+      "id": "low-shutter-2",
+      "object": "window-shutter",
+      "location": [
+        0.026,
+        0.0075,
+        0.024
+      ],
+      "ground": false
+    },
+    {
+      "id": "low-tap-1",
+      "object": "sap-tap",
+      "location": [
+        0.002,
+        0.0095,
+        0.03
+      ],
+      "ground": false
+    },
+    {
+      "id": "low-tap-2",
+      "object": "sap-tap",
+      "location": [
+        0.03,
+        0.0095,
+        0.036
+      ],
+      "ground": false
+    },
+    {
+      "id": "low-cup-1",
+      "object": "sap-cup",
+      "location": [
+        0.002,
+        0.008,
+        0.019
+      ]
+    },
+    {
+      "id": "low-jar",
+      "object": "sap-jar",
+      "location": [
+        0.02,
+        0.008,
+        0.019
+      ]
+    },
+    {
+      "id": "low-lantern-1",
+      "object": "lichen-lantern",
+      "location": [
+        -0.042,
+        0.008,
+        0.019
+      ]
+    },
+    {
+      "id": "low-lantern-2",
+      "object": "lichen-lantern",
+      "location": [
+        0.008,
+        0.008,
+        0.019
+      ]
+    },
+    {
+      "id": "low-lantern-wall",
+      "object": "lichen-lantern",
+      "location": [
+        0.044,
+        0.008,
+        0.019
+      ]
+    },
+    {
+      "id": "pells-lantern",
+      "object": "pells-lantern",
+      "location": [
+        0.012,
+        0.008,
+        0.031
+      ]
+    }
+  ],
+  "scenes": {
+    "c2_sorrel_wall": {
+      "note": "Sorrel's Wall: at the end of the spring run Sorrel puts Mossa's ear to the pale stretch of wall at the street's end. Something in it ticks. Mossa stops counting.",
+      "world": {
+        "color": [
+          0.62,
+          0.72,
+          0.6
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "spring-morning",
+          "type": "SUN",
+          "location": [
+            0.1,
+            -0.2,
+            0.3
+          ],
+          "energy": 2.6,
+          "color": [
+            0.9,
+            1.0,
+            0.86
+          ],
+          "look_at": [
+            0.03,
+            0.01,
+            0.026
+          ]
+        },
+        {
+          "name": "glow-wall",
+          "type": "POINT",
+          "location": [
+            0.044,
+            0.004,
+            0.022
+          ],
+          "energy": 0.02,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        }
+      ],
+      "camera": {
+        "location": [
+          0.03,
+          -0.028,
+          0.028
+        ],
+        "look_at": [
+          0.036,
+          0.01,
+          0.026
+        ],
+        "lens_mm": 50,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0.02,
+          0.006,
+          0.019
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "pells-lantern"
+      ],
+      "interactions": [
+        {
+          "prop": "low-lantern-wall",
+          "verb": "Listen at the wall by the lantern",
+          "leads_to": "c2_kitchen"
+        }
+      ]
+    },
+    "c5_lowridge": {
+      "note": "Lowridge Comes Up the Crack: deep winter. The lowest street has settled into a gallery; a city walks up the Long Crack in frost carrying its doors, and Mossa goes down against it with Pell's lantern. The three lowest homes are gone (hidden): where they stood the ledge has dropped into the dark.",
+      "world": {
+        "color": [
+          0.3,
+          0.38,
+          0.52
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "winter-dusk",
+          "type": "SUN",
+          "location": [
+            -0.2,
+            -0.3,
+            0.2
+          ],
+          "energy": 1.2,
+          "color": [
+            0.7,
+            0.8,
+            1.0
+          ],
+          "look_at": [
+            0.012,
+            0.01,
+            0.04
+          ]
+        },
+        {
+          "name": "pells-light",
+          "type": "POINT",
+          "location": [
+            0.012,
+            0.004,
+            0.034
+          ],
+          "energy": 0.04,
+          "color": [
+            1.0,
+            0.55,
+            0.2
+          ],
+          "size": 0.002
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -0.029,
+          0.04
+        ],
+        "look_at": [
+          0.006,
+          0.01,
+          0.036
+        ],
+        "lens_mm": 18,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0.012,
+          0.006,
+          0.05
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "low-home-1",
+        "low-home-2",
+        "low-home-3",
+        "low-lantern-1",
+        "low-cup-1"
+      ],
+      "interactions": [
+        {
+          "prop": "pells-lantern",
+          "verb": "Take the lantern down the crack",
+          "leads_to": "c5_run"
+        },
+        {
+          "prop": "low-lantern-2",
+          "verb": "Hold a light over the street that settled"
+        }
+      ]
+    }
+  }
+}

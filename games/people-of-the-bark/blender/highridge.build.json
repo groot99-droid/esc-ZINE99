@@ -1662,6 +1662,75 @@
           "leads_to": "c5_temple"
         }
       ]
+    },
+    "c4_faceless": {
+      "note": "The Faceless Marks: an autumn evening at Fenn's home on the second terrace. She unrolls the scroll the Scroll House forbids and asks, \"Is it me?\" The camera pushes in on the one lit shutter.",
+      "world": {
+        "color": [
+          0.45,
+          0.3,
+          0.22
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "autumn-sun",
+          "type": "SUN",
+          "location": [
+            0.3,
+            -0.3,
+            0.5
+          ],
+          "energy": 3.5,
+          "color": [
+            1.0,
+            0.62,
+            0.35
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.19
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -0.016,
+          -0.02,
+          0.222
+        ],
+        "look_at": [
+          -0.016,
+          0.03,
+          0.222
+        ],
+        "lens_mm": 50,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.018,
+          0.165
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "kite",
+        "bead-1",
+        "bead-2",
+        "bead-3",
+        "bead-4"
+      ],
+      "interactions": [
+        {
+          "prop": "home-13",
+          "verb": "Look at Fenn's second scroll",
+          "leads_to": "c4_ants"
+        }
+      ]
     }
   }
 }

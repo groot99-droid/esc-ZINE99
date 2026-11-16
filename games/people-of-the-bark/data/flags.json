@@ -395,6 +395,105 @@
       "type": "bool",
       "default": false,
       "description": "Pell is dead and the heir deals: no card of the event's suit is guaranteed, and each heir deals in character."
+    },
+    {
+      "name": "pulse",
+      "type": "meter",
+      "default": 40,
+      "description": "Hidden. How loud the Trunk's Pulse is. Tap tokens beyond 3, Knot Sanctums and offering pots raise it; frost, the ants' procession (−15), each Gallery Plug pot (−8) and sealing the Heartwood (−10) lower it. Shown only as marks on the faceless row.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "sorrel.met",
+      "type": "bool",
+      "default": false,
+      "description": "Sorrel's Wall was played: at the end of the spring run she put Mossa's ear to a wall."
+    },
+    {
+      "name": "sorrel.backed",
+      "type": "bool",
+      "default": false,
+      "description": "One autumn council token went to Sorrel's listeners. If true, the lowest street of Lowridge was empty when it settled."
+    },
+    {
+      "name": "pell.thumb_seen",
+      "type": "bool",
+      "default": false,
+      "description": "The Thumb on the Deck was played: the player saw Pell deal by the notches. Opens notch-reading (once a spread)."
+    },
+    {
+      "name": "fenn.second_scroll",
+      "type": "bool",
+      "default": false,
+      "description": "The Faceless Marks was played: Fenn showed the player the scroll the Scroll House forbids."
+    },
+    {
+      "name": "lowridge.settled",
+      "type": "bool",
+      "default": false,
+      "description": "Lowridge Comes Up the Crack has happened: the lowest street settled into a gallery and Lowridge climbed to Highridge."
+    },
+    {
+      "name": "gallery_plug.site",
+      "type": "enum",
+      "default": "none",
+      "description": "Where the Gallery Plug pots were poured. That site's paper floors are solid in the next Crack runner.",
+      "values": [
+        "none",
+        "stair",
+        "ledges",
+        "gate"
+      ]
+    },
+    {
+      "name": "gallery_plug.pots",
+      "type": "counter",
+      "default": 0,
+      "description": "Gallery Plug pots cooked in The Great Mending. Each is pulse −8."
+    },
+    {
+      "name": "door.scars",
+      "type": "counter",
+      "default": 0,
+      "description": "Scars left on the last Ring Door (moves over par, at most 2 counted). Each is an extra side entrance in the next Crack defence."
+    },
+    {
+      "name": "door.clean_cuts",
+      "type": "counter",
+      "default": 0,
+      "description": "Ring Doors opened at or under par. Each is one more knot shelter in c6_shadow."
+    },
+    {
+      "name": "heartwood.state",
+      "type": "enum",
+      "default": "shut",
+      "description": "The Heartwood Door: never opened, standing open, or opened and sealed again (pulse −10, the Knot −4).",
+      "values": [
+        "shut",
+        "open",
+        "sealed"
+      ]
+    },
+    {
+      "name": "ants.escorted",
+      "type": "bool",
+      "default": false,
+      "description": "The autumn ants were read as gods and brought to the paper wall: the procession opened it (pulse −15)."
+    },
+    {
+      "name": "shadow.played",
+      "type": "bool",
+      "default": false,
+      "description": "The player won winter's Trunk and Shadow from Twig's side, as the Shadow. In c6_touch the three tap sites show ten seconds early."
+    },
+    {
+      "name": "sounding.heard",
+      "type": "bool",
+      "default": false,
+      "description": "The Sounding was played in c6_touch: each of the three taps answered by a plate."
     }
   ]
 }

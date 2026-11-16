@@ -21,6 +21,19 @@
 // Art: the 18 Omen faces, the back, the event cards, the Backyard faces, cast marks, sigils, chapter
 // cards, the saying wall and the ending diptychs come from api.art; each has its old drawing as a fallback.
 import * as kit from "./_art.js";
+import * as ladder from "./_ladder.js";
+
+// Phase 2: three stages. Teach: the Windstorm, meaning and policy, and no reading is wrong. Test: the Beetle,
+// after The Thumb on the Deck; the reading must fit the cause, and lives ride on it. Twist: the Pulse and the
+// Shadow. The leading house lays the Crown first and it cannot be moved (the contested slot); the Backyard
+// card is blank; then Pell is gone, the deal is honest, and the only help is the player's own thumb on the
+// notches (once: feel the top card, and trade a hand card for it). The twist is won when the Shadow's
+// reading stands as laid, and not when it falls to a trial the player did not mean.
+const SPEC = { title: "Omen Spread", chip: "left:auto;right:8px;bottom:auto;top:6px", stages: [
+  { name: "The Windstorm", blurb: "Meaning and policy, and Pell's thumb to help." },
+  { name: "The Beetle", blurb: "The reading must fit the real cause. Lives ride on it." },
+  { name: "The Blank Card, then an honest deal", blurb: "The card you always turn has nothing on it. After Pell, nobody deals you what you need." },
+] };
 
 const SUITS = {
   wind: { name: "Wind", belief: "a Trial" },
@@ -81,7 +94,11 @@ const SUIT_SVG = {
 };
 
 export default {
-  mount(root, api) {
+  mount(root, api) { return ladder.run(root, api, SPEC, play); },
+};
+
+function play(root, api, stage) {
+  {
     const P = "people-of-the-bark-omen-spread-";
     const art = api.art || { has: () => false, url: () => "", info: () => null };
     const offs = [];
@@ -90,10 +107,11 @@ export default {
     const later = (f, ms) => timers.push(setTimeout(f, ms));
     const rnd = api.rng();
 
-    let ev = 0, E = EVENTS[0], hand = [], slots = {}, selected = null, turned = false, done = false, askLeft = 1, pellTip = null;
+    let ev = stage, E = EVENTS[stage], locked = null, notch = 0, hand = [], slots = {}, selected = null, turned = false, done = false, askLeft = 1, pellTip = null;
     let deck = [], heir = null, redeals = 0, swaps = 0, shown = [], down = null;
     const readings = [];
-    const rope = { eye: 30, spear: 30, quill: 30 };
+    const rope = Object.assign({ eye: 30, spear: 30, quill: 30 }, stage > 0 ? api.store.get("rope", {}) : {});
+    const past = (k, d) => Object.assign({ crown: d, r: { meaning: "wind", policy: null, monster: false, fit: false }, turned: true }, api.store.get(k, {}));
     let morale = 0;
     const lead = () => { for (const k in rope) if (Object.keys(rope).every((o) => o === k || rope[k] >= rope[o] + 12)) return k; return null; };
     let leading = null;
@@ -118,7 +136,14 @@ export default {
       }
       if (heir && heir.who === "fenn") shown = deck.slice(0, 2);
       if (heir && heir.who === "twig") down = hand[Math.floor(rnd() * hand.length)];
-      slots = { root: null, branch: null, crown: null }; selected = null; turned = false; done = false; askLeft = 1; pellTip = null;
+      slots = { root: null, branch: null, crown: null }; selected = null; turned = false; done = false; askLeft = 1; pellTip = null; locked = null;
+      // the contested slot: from autumn the leading house lays the Crown first, and it stays
+      if (E.key === "pulse") {
+        const top = lead() || Object.keys(rope).sort((a, b) => rope[b] - rope[a])[0];
+        const k = deck.findIndex((c) => c.sigil === top);
+        if (k >= 0) { locked = deck.splice(k, 1)[0]; slots.crown = locked; }
+      }
+      notch = E.key === "shadow" ? 1 : 0;
     }
     deal();
 
@@ -251,7 +276,7 @@ export default {
   <div class="${P}back"><div class="${P}bk" role="button" tabindex="0" aria-label="Turn the Backyard card (Y)">?</div><div class="${P}help">The Backyard card. Only you can turn it (Y). It is never placed.</div></div>
   <div class="${P}next" hidden></div>
   <div class="${P}pellrow"><span class="${P}face"></span><div class="${P}pell" aria-live="polite"></div></div>
-  <div class="${P}acts"><button class="${P}ask" type="button"></button><button class="${P}lay" type="button" disabled>Lay the reading</button></div>
+  <div class="${P}acts"><button class="${P}ask" type="button"></button><button class="${P}ask ${P}notch" type="button" hidden></button><button class="${P}lay" type="button" disabled>Lay the reading</button></div>
  </div>
  <div class="${P}hand"></div>
 </div>
@@ -261,7 +286,7 @@ export default {
  <h2>Omen Spread</h2>
  <p class="${P}beat">Summer, at the Knot's table in Highridge. Elder Pell reads by the notches on the card edges now; his eyes are going. Things happen, and the city waits to be told what they meant.</p>
  ${yearStrip([["tremor", "The Tremor: a squirrel, landing"], ["rain", "The Rain: a spring shower"]], true)}
- <p class="${P}goal"><b>Goal:</b> read four events across the year. Lay three cards around each: the heaviest suit is what it <i>means</i>; a sigil on two cards decides <i>who answers</i>.</p>
+ <p class="${P}goal"><b>Goal:</b> read the windstorm. Lay three cards around the event card: the heaviest suit is what it <i>means</i>; a sigil on two cards decides <i>who answers</i>. No reading is wrong here. Try a few before you seal one.</p>
  <div class="${P}key">
   <kbd>drag · or tap</kbd><span>a card, then a slot: Root, Branch, Crown</span>
   <kbd>1–6 · R B C</kbd><span>the same, from the keys</span>
@@ -279,6 +304,7 @@ export default {
     sizeCards();
     const ro = new ResizeObserver(sizeCards); ro.observe(wrap);
     const $ = (s) => wrap.querySelector("." + P + s);
+    const notchBtn = $("notch");
     const handEl = $("hand"), preview = $("preview"), ropeEl = $("rope"), layBtn = wrap.querySelector(`.${P}side .${P}lay`), bk = $("bk"), askBtn = $("ask"), pellEl = $("pell"), selInfo = $("selinfo"), nextEl = $("next"), faceEl = $("face");
 
     function vineSvg(seed, flip) {
@@ -445,6 +471,7 @@ ${E.suit ? `<g transform="translate(50 74) scale(1.4)">${SUIT_SVG[E.suit]}</g>${
       if (!heir) { askBtn.hidden = false; askBtn.disabled = askLeft <= 0 || done; askBtn.textContent = `Ask Pell · ${askLeft}`; }
       else if (heir.who === "hollow") { askBtn.hidden = false; askBtn.disabled = redeals <= 0 || done; askBtn.textContent = `Redeal · ${redeals}`; }
       else askBtn.hidden = true;
+      notchBtn.hidden = E.key !== "shadow"; notchBtn.disabled = notch <= 0 || done; notchBtn.textContent = `Feel the notch · ${notch}`;
     }
     const BY_SIGIL_KEY = (reading) => Object.keys(BY_SIGIL).find((k) => BY_SIGIL[k] === reading);
     const cap = (s) => s[0].toUpperCase() + s.slice(1);
@@ -466,6 +493,7 @@ ${E.suit ? `<g transform="translate(50 74) scale(1.4)">${SUIT_SVG[E.suit]}</g>${
     }
     function place(c, slot) {
       if (done) return;
+      if (locked && (c === locked || slots[slot] === locked)) { pellSays(`“That one is ${SIGILS[locked.sigil]}'s. It was laid before you sat down.”`); selected = null; renderHand(); return; }
       for (const k in slots) if (slots[k] === c) slots[k] = null;
       hand = hand.filter((x) => x !== c);
       if (slots[slot]) hand.push(slots[slot]);
@@ -478,6 +506,7 @@ ${E.suit ? `<g transform="translate(50 74) scale(1.4)">${SUIT_SVG[E.suit]}</g>${
       if (n === 3 && !turned && ev === 2) pellSays("waits. He can hear that you have not turned your card.");
     }
     function unplace(c) {
+      if (c === locked) { pellSays(`“Leave it. ${cap(SIGILS[locked.sigil])} laid it first, and it stays.”`); return; }
       for (const k in slots) if (slots[k] === c) { slots[k] = null; hand.push(c); }
       selected = null; renderHand();
     }
@@ -577,6 +606,15 @@ ${pic}<text x="40" y="20" text-anchor="middle" font-family="sans-serif" font-siz
       pellSays(`He runs a thumb over the notches. “${pick.name}. In the ${empty[0] === "root" ? "Root" : empty[0] === "branch" ? "Branch" : "Crown"}, I think. But you choose.”`);
     }
     on(askBtn, "click", ask);
+    // notch-reading: what Pell's thumb did for forty years, done once, by the player
+    function feel() {
+      if (done || notch <= 0 || !deck.length) return;
+      const top = deck[0];
+      if (!selected || !hand.includes(selected) || selected === down) { pellSays(`Your thumb finds the notch on the top card: ${top.name} (${SUITS[top.suit].name}, ${cap(top.sigil)}, weight ${top.w}). Choose a hand card first to trade for it, then feel again.`, ""); return; }
+      notch--; const k = hand.indexOf(selected); deck[0] = hand[k]; hand[k] = top; selected = null; renderHand();
+      pellSays(`You deal yourself ${top.name} off the top, the way he did. “Clumsy me,” says nobody.`, "");
+    }
+    on(notchBtn, "click", feel);
 
     on(window, "keydown", (e) => {
       if (done || wrap.querySelector("." + P + "intro") || e.ctrlKey || e.metaKey || e.altKey) return;
@@ -586,6 +624,7 @@ ${pic}<text x="40" y="20" text-anchor="middle" font-family="sans-serif" font-siz
       if (map[k]) { if (selected) place(selected, map[k]); else pellSays("“Which card? Pick one with its number.”"); }
       if (k === "y") turn();
       if (k === "p") ask();
+      if (k === "n") feel();
       if (k === "f" && shown.length) swap(0);
       if (k === "g" && shown.length) swap(1);
       if (e.key === "Enter" && !layBtn.disabled && !(document.activeElement && document.activeElement.closest && document.activeElement.closest("button,[role=button]," + "." + P + "card"))) lay();
@@ -604,7 +643,7 @@ ${pic}<text x="40" y="20" text-anchor="middle" font-family="sans-serif" font-siz
     function nextSpread() { ev++; deal(); setupHead(); pellEl.textContent = ""; renderHand(); handEl.querySelector("." + P + "card")?.focus(); }
     function chooseHeir() {
       const n = { eye: 0, spear: 0, quill: 0 };
-      for (const x of readings) if (x.r.policy) n[x.r.policy]++;
+      for (const x of [past("r0"), past("r1")].concat(readings)) if (x.r.policy) n[x.r.policy]++;
       const top = Object.keys(n).sort((a, b) => n[b] - n[a])[0];
       return n[top] >= 2 ? HEIRS[{ eye: "hollow", spear: "burr", quill: "fenn" }[top]] : HEIRS.twig;
     }
@@ -614,23 +653,34 @@ ${pic}<text x="40" y="20" text-anchor="middle" font-family="sans-serif" font-siz
       done = true;
       for (const k in rope) rope[k] += r.delta[k];
       morale += r.morale;
-      readings.push({ ev: E, r, crown: slots.crown.name, turned });
+      // an honest hand may hold no reading that can stand; then laying the trial knowingly is not a failure
+      let could = true;
+      if (E.key === "shadow") {
+        const all = hand.concat(Object.values(slots).filter(Boolean)); could = false;
+        for (let a = 0; a < all.length; a++) for (let b = a + 1; b < all.length; b++) for (let c = b + 1; c < all.length; c++) {
+          const t = [all[a], all[b], all[c]]; if (down && !t.includes(down)) continue;
+          const n = { eye: 0, spear: 0, quill: 0 }; t.forEach((x) => n[x.sigil]++);
+          const pol = Object.keys(n).find((k) => n[k] >= 2);
+          if (!pol || pol === leading) could = true;
+        }
+      }
+      readings.push({ ev: E, r, crown: slots.crown.name, turned, could });
       renderHand();
       api.store.set("last", { event: E.key, meaning: r.meaning, policy: r.policy || (r.balanced ? "balanced" : null), monster: r.monster, shadow: r.shadow });
       const wait = api.reducedMotion ? 600 : 1700;
+      api.store.set("rope", rope);
+      const keepR = { crown: slots.crown.name, r: { meaning: r.meaning, policy: r.policy, monster: r.monster, fit: r.fit }, turned };
       if (ev === 0) {
+        api.store.set("r0", keepR);
         pellSays(r.fit ? "“A trial. Yes. Lash the towers.” He does not know why it will work. It will." : "“So it is written.” He sets the cards back in the deck, in order.");
-        later(() => card(`${kit.mark(art, "burr", "Captain Burr")}<div class="${P}init">B</div><h2>The Beetle</h2>
-<p class="${P}beat">The wind has hardly dropped when a runner from Splinterwatch falls through the door. Something as big as a city is climbing from the Under. Captain Burr, at the window: “Small ones we fight. Big ones we bow to. Middling ones, we ask the Knot.”</p>
-<p class="${P}goal">This reading decides it. A <b>Spear</b> policy makes the Beetle a <b>monster</b>, fought at the barricades. Anything else makes it a <b>god</b>, to be escorted. Lives depend on which.</p>
-<div class="${P}key"><kbd>Y</kbd><span>turn the Backyard card: see the real cause</span><kbd>Ask Pell · P</kbd><span>once a spread, he names a card and a slot</span></div>`, "Lay out the second spread", nextSpread), wait);
+        later(() => api.end({ outcome: "win", text: `The wind is read as ${SUITS[r.meaning].belief}. ${r.policy ? cap(SIGILS[r.policy]) + " will answer it" : "All three houses will answer it together"}, and “${slots.crown.name}” goes up on the saying wall.${turned ? (r.fit ? " It fitted the real cause: the towers are lashed before the next gust, and nobody on the bark knows why that was right." : " It did not fit the real cause, and nobody on the bark will ever know that either.") : " You did not turn the Backyard card."} No reading is wrong at this table. Some are only more use.` }), wait);
       } else if (ev === 1) {
+        api.store.set("r1", keepR);
         if (r.monster) pellSays("Burr is already buckling his helmet.", ""); else pellSays("“Then we bow, and we get out of its way.”");
-        const [w, b] = readings;
-        const wall = art.has("saying-wall") ? `<div class="${P}wall">${kit.chapter(art, "saying-wall", false)}<i style="top:14%">${w.crown}.</i><i style="top:40%">${b.crown}.</i></div>` : "";
-        later(() => card(`${kit.chapter(art, "chapter-4-autumn")}${art.has("thread-own") ? `<img class="${P}thread" src="${art.url("thread-own")}" alt="A knock, answered from the other side of a wall" width="104" height="104">` : `<div class="${P}init">P</div>`}<h2>The Pulse</h2>${wall}
-<p class="${P}beat">Autumn. Your two sayings are on the wall with Pell's own: “${w.crown}” and “${b.crown}.” Then one night something wakes Highridge. Not the dawn tremor. A small steady tapping, from no face of the Trunk, because it comes from inside. The Knot calls it the Trunk's Pulse and lays out a spread.</p>
-<p class="${P}goal">The event card has <b>no suit</b>: only your three cards give it a meaning. Look up, as you always do, and turn the Backyard card.</p>`, "Lay out the night spread", nextSpread), wait);
+        const lives = r.monster ? "Burr holds the crack against a monster, and names go on the Roll of the Bark." : "The Beetle is escorted as a god, and nobody stands in its road.";
+        later(() => api.end(r.fit
+          ? { outcome: "win", text: `The Beetle is read as ${SUITS[r.meaning].belief}: it fits. ${lives} “${slots.crown.name}” goes up on the wall. A wandering thing was met as a wandering thing, and it wandered on.` }
+          : { outcome: "lose", text: `The Beetle is read as ${SUITS[r.meaning].belief}. It was a ground beetle, wandering, and the reading did not fit it. ${lives} The city spends the week answering ${SUITS[r.meaning].belief} that never came, and the crack is short-handed for it. Mandible has to be the heaviest suit on the table.` }), wait);
       } else if (ev === 2) {
         pellSays(r.policy === "eye" ? "“Holy, then. And we do not ask it questions.”" : r.policy === "quill" ? "“Write it, Fenn. Even without a face.”" : r.policy === "spear" ? "“A watch on a wall. Burr will like that less than he thinks.”" : "“All of us, then. Good. I would not want to answer this one alone.”");
         api.store.set("pulse", { policy: r.policy || "balanced", meaning: r.meaning, sawBlank: turned });
@@ -649,8 +699,22 @@ ${yearStrip([["leaf", "The Leaf: autumn"], ["song", "The Birdsong: a small bird"
         later(finish, api.reducedMotion ? 300 : 1500);
       }
     }
+    function beetleCard() {
+      return `${kit.mark(art, "twig", "Twig")}<div class="${P}init">T</div><h2>The Thumb on the Deck</h2>
+<p class="${P}beat">The summer festival. Pell lets Twig deal for him, for a treat, and Twig deals him an ugly hand: nothing in it that answers anything. Pell gathers the cards up. “Clumsy me.” He squares the deck and deals again, and you see his thumb go along the edge and stop at a notch. The second hand is a good one. It always has been.</p>
+<p class="${P}beat">Then a runner from Splinterwatch falls through the door. Something as big as a city is climbing from the Under. Captain Burr, at the window: “Small ones we fight. Big ones we bow to. Middling ones, we ask the Knot.”</p>
+<p class="${P}goal"><b>Goal:</b> a reading that <b>fits</b>. Turn the Backyard card (Y) to see the real cause and its suit; that suit must be the heaviest on the table. A <b>Spear</b> policy makes the Beetle a <b>monster</b>, fought at the barricades; anything else a <b>god</b>, escorted. Lives depend on which.</p>
+<div class="${P}key"><kbd>Y</kbd><span>turn the Backyard card: see the real cause</span><kbd>Ask Pell · P</kbd><span>once a spread, his thumb names a card and a slot</span></div>`;
+    }
+    function pulseCard() {
+      const w = past("r0", "The Bowed Elder"), b = past("r1", "The Great Visitor");
+      const wall = art.has("saying-wall") ? `<div class="${P}wall">${kit.chapter(art, "saying-wall", false)}<i style="top:14%">${w.crown}.</i><i style="top:40%">${b.crown}.</i></div>` : "";
+      return `${kit.chapter(art, "chapter-4-autumn")}${art.has("thread-own") ? `<img class="${P}thread" src="${art.url("thread-own")}" alt="A knock, answered from the other side of a wall" width="104" height="104">` : `<div class="${P}init">P</div>`}<h2>The Pulse</h2>${wall}
+<p class="${P}beat">Autumn. Your two sayings are on the wall with Pell's own: “${w.crown}” and “${b.crown}.” Then one night something wakes Highridge. Not the dawn tremor. A small steady tapping, from no face of the Trunk, because it comes from inside. The Knot calls it the Trunk's Pulse and lays out a spread.</p>
+<p class="${P}goal">The event card has <b>no suit</b>: only the cards give it a meaning. From autumn the leading house lays the <b>Crown</b> before you sit down, and that card cannot be moved. Look up, as you always do, and turn the Backyard card.</p>`;
+    }
     function finish() {
-      const [w, b, pu, sh] = readings;
+      const [pu, sh] = readings, w = past("r0", "The Bowed Elder"), b = past("r1", "The Great Visitor");
       const ch = Object.entries(rope).map(([k, v]) => `${INST[k]} ${v}`).join(", ");
       const beast = b.r.monster ? "the Beetle was fought as a monster" : "the Beetle was escorted as a god";
       const fits = [w, b].filter((x) => x.r.fit).length;
@@ -665,7 +729,8 @@ ${yearStrip([["leaf", "The Leaf: autumn"], ["song", "The Birdsong: a small bird"
       };
       const names = { trial: "THE SHADOW PASSES · AS WRITTEN", offering: "THE SHADOW PASSES · AS WRITTEN", enemy: "THE WAR ON THE GOD", habit: "THE EDGE OF THE WORLD" };
       const text = `${ends[s]} ${heir.name} dealt the last hand honestly. Over the year: the wind was ${SUITS[w.r.meaning].belief}, ${beast}${fits ? ` (${fits} reading${fits > 1 ? "s" : ""} fitted the real cause)` : ""}. ${pulse} The rope stands at ${ch}${morale ? `; morale ${morale > 0 ? "+" : "−"}${Math.abs(morale)}` : ""}.${unturned ? ` Backyard cards left face down: ${unturned}.` : ""}`;
-      endEl = kit.endCard(root, api, SHADOW[s].end, { outcome: "done", text }, `<b>${names[s]}</b>Painted on the ridge: “${w.crown}”, “${b.crown}”, “${pu.crown}”, “${sh.crown}.”`);
+      const stood = !sh.r.fell || !sh.could;
+      endEl = kit.endCard(root, api, SHADOW[s].end, { outcome: stood ? "win" : "done", text: stood ? text + (sh.r.fell ? " No three cards in that honest hand could have stood; you laid the trial knowing it." : "") : text + " You laid another reading and it fell to a trial, because its house does not lead the year: the twist is not yet won." }, `<b>${names[s]}</b>Painted on the ridge: “${w.crown}”, “${b.crown}”, “${pu.crown}”, “${sh.crown}.”`);
     }
     let endEl = null;
     on(layBtn, "click", lay);
@@ -674,7 +739,11 @@ ${yearStrip([["leaf", "The Leaf: autumn"], ["song", "The Birdsong: a small bird"
     startBtn.focus({ preventScroll: true });
     setupHead();
     renderHand();
+    if (stage > 0) {
+      wrap.querySelector("." + P + "intro").remove();
+      card(stage === 1 ? beetleCard() : pulseCard(), stage === 1 ? "Lay out the spread" : "Lay out the night spread", () => { pellEl.textContent = ""; handEl.querySelector("." + P + "card")?.focus(); });
+    }
 
     return { unmount() { timers.forEach(clearTimeout); offs.forEach((f) => f()); ro.disconnect(); if (endEl) endEl.remove(); wrap.remove(); } };
-  },
-};
+  }
+}

@@ -12,7 +12,8 @@
         "c2_rain",
         "c3_city",
         "c4_city",
-        "c5_city"
+        "c5_city",
+        "c4_faceless"
       ],
       "dimensions_m": [
         0.12,
@@ -113,7 +114,8 @@
       "id": "highridge-square",
       "name": "Highridge square",
       "scenes": [
-        "c5_count"
+        "c5_count",
+        "c3_thumb"
       ],
       "dimensions_m": [
         0.04,
@@ -220,6 +222,33 @@
       "model": "soul_cinematic",
       "job_id": "625ddf3b-cc25-4d43-8aa8-2ec9c6435f4b",
       "image": "assets/locations/backyard.jpg"
+    },
+    {
+      "id": "lowridge",
+      "name": "Lowridge, the lowest street, at the foot of the Long Crack",
+      "scenes": [
+        "c2_sorrel_wall",
+        "c5_lowridge"
+      ],
+      "dimensions_m": [
+        0.1,
+        0.02,
+        0.08
+      ],
+      "lighting": "Spring: cool morning from above, lantern glow below. Winter: frost-dark, the street's lanterns going out one by one as the doors are carried up.",
+      "objects": [
+        "dwelling",
+        "window-shutter",
+        "sap-tap",
+        "sap-cup",
+        "lichen-lantern",
+        "sap-jar",
+        "pells-lantern"
+      ],
+      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field. Deserted, uninhabited architecture only. The lowest street of a tiny city carved into the foot of a vertical wall of deep umber tree bark, where one long dark crack runs down the wall and widens: small round carved dwellings with closed round shutters crowded along narrow ledges, tiny wooden sap-tap spouts and little amber cups fixed to the wall, a stack of bark planks, damp darker bark with patches of sage and lime lichen, a few small orange glowing lanterns, and at the street's end one bare stretch of wall, pale and thin like paper. Cool spring morning light from above, warm lantern glow below. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no figures, no statues, no dolls, no animals, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "e002bdc3-3283-4dc1-832a-225c6fc96f9a",
+      "image": "assets/locations/lowridge.jpg"
     }
   ],
   "objects": [

@@ -13,6 +13,16 @@
 // (the canvas runs at two device pixels to a world pixel so a 20 x 26 sprite fits her 6 x 9 body); the
 // spring backdrop is the far wall seen through the crack. Each falls back to the old hand-set pixels.
 import * as kit from "./_art.js";
+import * as ladder from "./_ladder.js";
+
+// Phase 2: the run is a ladder of three (DEEP_DIVE.md 3). Teach, spring: paper floors, each with a tick
+// mark; one holds one footfall. Test, summer: sap falls that end on three ledges, one of them paper, picked
+// while sliding. Twist, Against the Tide: winter, dark, all Lowridge coming up the crack; the ticks are out,
+// she listens for them (hold brace), the crowd cannot be rolled through, and at each wide gap Pell's lantern
+// is dropped to the crowd and passed across below her. A Gallery Plug poured in the Sap Kitchen makes one
+// site's paper floors solid (api.shared "plug_site"); a whole Pulse map (Tremor Scroll) keeps every tick lit.
+const SITES = [["stair", "the Tapper's Stair"], ["ledges", "the Middle Ledges"], ["gate", "Lowridge Gate"]];
+const CHALK = "#b9c2c4";
 
 const PIX16 = ["#1b120c", "#2e2016", "#4a3324", "#5a3d2b", "#7a5a40", "#7d6c5a", "#a8977f", "#8fa37a",
   "#c4d65a", "#d9902a", "#f0c050", "#e8742a", "#b8402a", "#efe2c4", "#c9b99a", "#fff6dc"];
@@ -21,52 +31,87 @@ const BODY = 10;
 const RUN = 6 * BODY;
 const GRAV = 720;
 const JUMP = Math.sqrt(2 * GRAV * 2.6 * BODY);
-const TREMOR_AT = 46;
-const SEGS = 3, SEG_W = 140, COLS = SEGS * SEG_W + 8, ROWS = 46;
+const TREMOR_AT = 30;
+const SEGS = 2, SEG_W = 130, COLS = SEGS * SEG_W + 8, ROWS = 46;
 const Z = 2;   // device pixels to a world pixel
 const MOSSA = { run: [0, 1, 2, 3], jump: 4, cling: 5, roll: 6, brace: 7, slide: 8, stun: 9, idle: 14, count: 15 };
 const CROWD = { elder: 2, child: 3, priest: 4, tapper: 5, pass: 6, cook: 14, wait: 15 };
 const HAZ = { drip: 0, dust: 2, spikes: 3, lichen: 4, bead: 6, brace: 11 };
+const STAGE_SEED = [20261113, 20261116, 20261121];
 
 function rngFrom(seed) {
   let s = seed >>> 0 || 1;
   return () => { s ^= s << 13; s >>>= 0; s ^= s >>> 17; s ^= s << 5; s >>>= 0; return s / 4294967296; };
 }
 
-function buildLevel() {
-  const r = rngFrom(20261113);
+function buildLevel(stage) {
+  const r = rngFrom(STAGE_SEED[stage]);
   const ground = new Array(COLS).fill(14);
   const pit = new Array(COLS).fill(false);
   const haz = { spikes: [], lichen: [], drips: [], dust: [], walls: [] };
+  // phase 2: thin ledges (plats), paper among them; sap falls that end in a fork; the crowd; the tide gaps
+  const plats = [], forks = [], crowd = [], gaps = [], keep = new Set(), roof = {};
   let g = 14, x = 0;
   const flat = (n) => { for (let i = 0; i < n && x < COLS; i++) ground[x++] = g; };
+  const hold = (n) => { for (let i = 0; i < n && x < COLS; i++) { keep.add(x); ground[x++] = g; } };
+  // the features of each stage, by the column they start near
+  const FEATS = [
+    [[30, "paper"], [64, "paper"], [98, "paper"], [140, "paper"], [182, "paper"], [224, "paper"]],
+    [[26, "paper"], [52, "fork", 1], [96, "fork", 0], [134, "paper"], [156, "wall"], [176, "fork", 2], [214, "fork", 1], [240, "paper"]],
+    [[24, "crowd"], [42, "paper"], [64, "gap"], [88, "paper"], [108, "crowd"], [128, "gap"], [150, "paper"], [170, "crowd"], [190, "gap"], [212, "paper"], [236, "paper"]],
+  ][stage].slice();
+  function feature(f) {
+    const kind = f[1];
+    if (g < 13) g = 13;
+    hold(kind === "gap" ? 8 : 4);
+    if (kind === "paper") {
+      const c0 = x; for (let i = 0; i < 3; i++) { keep.add(x); ground[x++] = g + 2; }
+      plats.push({ c0, c1: c0 + 3, row: g, paper: true, broken: false, stood: 0, heard: 0 });
+      hold(3);
+    } else if (kind === "fork") {
+      const s0 = x; hold(8);
+      const c0 = x; for (let i = 0; i < 5; i++) { keep.add(x); roof[x] = g - 3; ground[x++] = g + 5; }
+      const rows = [g - 3, g, g + 3];
+      const ps = rows.map((row, i) => { const p = { c0, c1: c0 + 5, row, paper: i === f[2], broken: false, stood: 0, heard: 0, fork: true }; plats.push(p); return p; });
+      forks.push({ s0, c0, rows, ps, lane: 1, done: false });
+      g += 3; hold(2); g -= 2; hold(4);
+    } else if (kind === "wall") {
+      keep.delete(x - 2); haz.lichen.push(x - 2); g -= 4; haz.walls.push(x); hold(4);
+    } else if (kind === "crowd") {
+      crowd.push({ c: x, n: 3 }); hold(3); hold(3);
+    } else if (kind === "gap") {
+      const c0 = x; for (let i = 0; i < 4; i++) { pit[x] = true; keep.add(x); ground[x++] = 99; }
+      gaps.push({ c0, c1: c0 + 4 }); hold(4);
+    }
+  }
   flat(9);
   while (x < COLS - 8) {
     const seg = Math.min(SEGS - 1, Math.floor(x / SEG_W));
+    if (FEATS.length && x >= FEATS[0][0]) { feature(FEATS.shift()); continue; }
     flat(4 + Math.floor(r() * 4));
     const roll = r();
-    if (roll < 0.42 || g < 12) { g = Math.min(ROWS - 6, g + 2 + Math.floor(r() * 3)); }
+    if (roll < 0.42 || g < 12) { g = Math.min(ROWS - 14, g + 2 + Math.floor(r() * 3)); }
     else if (roll < 0.56) { g = Math.max(8, g - 1 - Math.floor(r() * 2)); }
-    else if (roll < 0.82) {
+    else if (roll < 0.82 && stage < 2) {
       const w = 2 + Math.floor(r() * 2);
       for (let i = 0; i < w && x < COLS; i++) { pit[x] = true; ground[x++] = 99; }
-      g = Math.min(ROWS - 6, g + Math.floor(r() * 2));
-    } else if (seg >= 1 && g > 22) { g -= 4; haz.walls.push(x); }
-    else { g = Math.min(ROWS - 6, g + 3); }
+      g = Math.min(ROWS - 14, g + Math.floor(r() * 2));
+    } else if (stage === 1 && seg >= 1 && g > 22) { g -= 4; haz.walls.push(x); }
+    else { g = Math.min(ROWS - 14, g + (stage === 2 ? 1 : 3)); }
   }
   while (x < COLS) ground[x++] = g;
   const ceil = ground.map((_, i) => {
     let m = 99;
-    for (let k = -2; k <= 2; k++) { const j = i + k; if (j >= 0 && j < COLS && !pit[j]) m = Math.min(m, ground[j]); }
+    for (let k = -2; k <= 2; k++) { const j = i + k; if (j >= 0 && j < COLS && !pit[j]) m = Math.min(m, roof[j] != null ? roof[j] : ground[j]); }
     return m - 7 - Math.floor(r() * 2);
   });
-  const okCol = (i) => i > 10 && i < COLS - 8 && [-2, -1, 0, 1, 2].every((k) => !pit[i + k] && ground[i + k] === ground[i]);
+  const okCol = (i) => i > 10 && i < COLS - 8 && [-2, -1, 0, 1, 2].every((k) => !pit[i + k] && !keep.has(i + k) && ground[i + k] === ground[i]);
   // segment 1 is rain and drips; segment 2 walls and the tremor; segment 3 the dust it shook loose
   const plan = [
-    { spikes: 3, drips: 5, lichen: 2, dust: 0 },
-    { spikes: 4, drips: 3, lichen: 3, dust: 2 },
-    { spikes: 5, drips: 2, lichen: 3, dust: 6 },
-  ];
+    [{ spikes: 2, drips: 3, lichen: 2, dust: 0 }, { spikes: 3, drips: 2, lichen: 2, dust: 0 }],
+    [{ spikes: 2, drips: 4, lichen: 2, dust: 2 }, { spikes: 3, drips: 3, lichen: 2, dust: 3 }],
+    [{ spikes: 1, drips: 0, lichen: 1, dust: 1 }, { spikes: 2, drips: 0, lichen: 1, dust: 2 }],
+  ][stage];
   const used = new Set();
   for (let s = 0; s < SEGS; s++) {
     for (const kind of ["spikes", "drips", "lichen", "dust"]) {
@@ -80,12 +125,27 @@ function buildLevel() {
       }
     }
   }
-  for (const w of haz.walls) if (!pit[w - 2]) haz.lichen.push(w - 2);
-  return { ground, ceil, pit, haz };
+  for (const w of haz.walls) if (!pit[w - 2] && !keep.has(w - 2) && !haz.lichen.includes(w - 2)) haz.lichen.push(w - 2);
+  // the three sites of the Long Crack: a Gallery Plug poured at one makes its paper floors solid
+  plats.forEach((p) => { p.site = SITES[Math.min(2, Math.floor(p.c0 / (COLS / 3)))][0]; });
+  return { ground, ceil, pit, haz, plats, forks, crowd, gaps };
 }
 
+const SPEC = { title: "Crack runner", chip: "left:auto;right:6px;bottom:auto;top:30px", stages: [
+  { name: "Spring, and paper floors", blurb: "The rule alone: a ledge with a tick mark holds one footfall." },
+  { name: "Summer, the sap falls", blurb: "Each fall ends on three ledges and one of them is paper. Pick while sliding." },
+  { name: "Against the Tide", blurb: "Winter, in the dark. The tick marks are out, and all Lowridge is coming up the crack." },
+] };
+const STAGE_ART = [["chapter-2-spring", "runner-backdrop-spring", "HIGHRIDGE ▸ THE LONG CRACK ▸ LOWRIDGE · SPRING DAWN"],
+  ["chapter-3-summer", "runner-backdrop-sap-flow", "HIGHRIDGE ▸ THE SAP FALLS ▸ LOWRIDGE · SUMMER NOON"],
+  ["chapter-5-winter", "runner-backdrop-frost-crowd", "HIGHRIDGE ▸ DOWN THE LONG CRACK · DEEP WINTER, NIGHT"]];
+
 export default {
-  mount(root, api) {
+  mount(root, api) { return ladder.run(root, api, SPEC, play); },
+};
+
+function play(root, api, stage) {
+  {
     const P = "people-of-the-bark-crack-runner-";
     const offs = [];
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); offs.push(() => t.removeEventListener(e, f, o)); };
@@ -94,7 +154,11 @@ export default {
     const later = (f, ms) => timers.push(setTimeout(f, ms));
     const losses = api.store.get("losses", 0);
     const gentle = losses >= 2;
-    const LIMIT = gentle ? 205 : 165;
+    const LIMIT = [100, 110, 150][stage] + (gentle ? 40 : 0);
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const plugSite = shared.get("plug_site", "");
+    const mapWhole = !!shared.get("pulse_map_whole", false);
+    const dark = stage === 2;
     const WARN = gentle ? 5 : 3;
     const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
 
@@ -138,23 +202,34 @@ export default {
 <div class="${P}beat" aria-live="polite"></div>
 <div class="${P}toast" aria-live="polite"></div>
 <div class="${P}msg" aria-live="polite"></div>
-<div class="${P}pad"><div class="${P}grp"><button class="${P}k" data-k="left">◀</button><button class="${P}k" data-k="right">▶</button><button class="${P}k" data-k="brace" hidden>BRACE</button></div>
+<div class="${P}pad"><div class="${P}grp"><button class="${P}k" data-k="left">◀</button><button class="${P}k" data-k="right">▶</button><button class="${P}k" data-k="brace" hidden>${["BRACE", "LOW ▼", "LISTEN"][stage]}</button><button class="${P}k" data-k="lantern" ${stage === 2 ? "" : "hidden"}>LAMP</button></div>
 <div class="${P}grp"><button class="${P}k" data-k="roll">ROLL</button><button class="${P}k" data-k="cling" hidden>CLING</button><button class="${P}k" data-k="jump">JUMP</button></div></div>
 <div class="${P}intro"><div class="${P}tix" role="dialog" aria-label="How to play">
-${kit.chapter(api.art, "chapter-2-spring")}
+${kit.chapter(api.art, STAGE_ART[stage][0])}
 <div style="display:flex;gap:10px;align-items:center;margin-top:10px">${kit.mark(api.art, "mossa", "Mossa, the messenger")}<h2>CRACK RUNNER</h2></div>
-<div class="${P}route">HIGHRIDGE ▸ THE LONG CRACK ▸ LOWRIDGE · SPRING DAWN</div>
-<p class="${P}lede">You are Mossa, the fastest runner in Highridge. The Knot has read the night's omen, and Lowridge must hear it from you before it hears the rumour.</p>
-<p class="${P}goal">Reach Lowridge before <b>${fmt(LIMIT)}</b>. A fall is caught by lichen, but costs 8 seconds.</p>
-<div class="${P}key"><kbd>A D · ◀ ▶</kbd><span>run</span><kbd>SPACE · W</kbd><span>jump (hop on lichen to fly high)</span><kbd>C</kbd><span>roll: a dash, low under falling dust</span></div>
+<div class="${P}route">${STAGE_ART[stage][2]}</div>
+<p class="${P}lede">${["You are Mossa, the fastest runner in Highridge. The Knot has read the night's omen, and Lowridge must hear it from you before it hears the rumour.",
+  "Summer, and the sap is running. The falls are the fast way down, and every one of them ends in a choice.",
+  "Deep winter. The lowest street of Lowridge has settled into a gallery, and a city is walking up the Long Crack carrying its doors. Mossa is the only one going down, with Pell's lantern."][stage]}</p>
+<p class="${P}goal">${["Reach Lowridge before <b>" + fmt(LIMIT) + "</b>. A ledge with a <b>tick mark</b> is a paper floor over a gallery: it holds one footfall. Jump it.",
+  "Reach Lowridge before <b>" + fmt(LIMIT) + "</b>. Each sap fall carries her to three ledges; the ticked one is paper and costs 4 seconds. Pick while sliding.",
+  "Reach the settled street before <b>" + fmt(LIMIT) + "</b>. In the dark the tick marks are out. Stand and <b>listen</b>: a paper floor mutters. Nobody rolls through a crowd."][stage]}</p>
+<div class="${P}key"><kbd>A D · ◀ ▶</kbd><span>run</span><kbd>SPACE · W</kbd><span>jump (hop on lichen to fly high)</span><kbd>C</kbd><span>roll: a dash, low under falling dust</span>${stage === 1 ? "<kbd>W · S</kbd><span>on a sap fall: pick the high, middle or low ledge</span>" : ""}${stage === 2 ? "<kbd>S</kbd><span>hold still and listen for paper</span><kbd>F</kbd><span>at a wide gap: drop the lantern to the crowd, then jump</span>" : ""}</div>
 <button class="${P}btn" type="button">Start the run</button></div></div>`;
     root.appendChild(wrap);
     kit.styles(wrap);
     const $ = (s) => wrap.querySelector("." + P + s);
     const cv = $("cv"), g = cv.getContext("2d"), msgEl = $("msg"), intro = $("intro"), beatEl = $("beat"), toastEl = $("toast"), hitEl = $("hit");
 
-    const L = buildLevel();
-    const { ground, ceil, pit, haz } = L;
+    const L = buildLevel(stage);
+    const { ground, ceil, pit, haz, plats, forks, crowd, gaps } = L;
+    let chalked = 0;
+    plats.forEach((p) => {
+      if (!p.paper) return;
+      p.plugged = !!plugSite && p.site === plugSite;
+      p.marked = !dark || mapWhole || (!p.plugged && chalked++ === 0);   // Sorrel chalked the one she knew
+    });
+    const platAt = (tx, ty) => { for (const p of plats) if (!p.broken && ty === p.row && tx >= p.c0 && tx < p.c1) return p; return null; };
     const LVW = COLS * T, LVH = ROWS * T;
 
     let LW = 200, LH = 112;
@@ -215,6 +290,8 @@ ${kit.chapter(api.art, "chapter-2-spring")}
       for (let s = 1; s < SEGS; s++) { let c = s * SEG_W; while (pit[c]) c++; px(c * T + 2, ground[c] * T - 10, 3, 10, 6); px(c * T + 1, ground[c] * T - 12, 5, 3, 10); }
       // pits: a faint lichen glow far below, the catch that saves her
       for (let c = 0; c < COLS; c++) if (pit[c]) for (let y = LVH - 6; y < LVH; y += 2) px(c * T + ((y >> 1) % 3) * 2, y, 2, 1, 7);
+      // sap falls: the amber run that carries her to the fork
+      for (const f of forks) { const y = ground[f.s0] * T; px(f.s0 * T, y, 8 * T, 2, 10); for (let k = 0; k < 8 * T; k += 5) px(f.s0 * T + k, y + 2 + (k % 3), 3, 1, 9); }
     })();
 
     // ---- the art, read once ----
@@ -227,7 +304,7 @@ ${kit.chapter(api.art, "chapter-2-spring")}
         kit.pixelSheet(art, "runner-sheet-mossa", { cols: 8, rows: 2, cw: 20, ch: 32, scale: 6 }),
         kit.pixelSheet(art, "runner-sheet-crowd", { cols: 8, rows: 2, cw: 20, ch: 32, scale: 6 }),
         kit.pixelSheet(art, "runner-sheet-hazards", { cols: 6, rows: 2, cw: 22, ch: 36, scale: 7 }),
-        kit.raster(art, "runner-backdrop-spring", 320, 180),
+        kit.raster(art, STAGE_ART[stage][1], 320, 180),
       ]);
       if (dead) return;
       A.mossa = mossa; A.crowd = crowd; A.haz = haz; A.far = far;
@@ -244,17 +321,19 @@ ${kit.chapter(api.art, "chapter-2-spring")}
     })();
 
     // ---- state ----
-    const keys = { left: false, right: false, jump: false, cling: false, roll: false, brace: false };
+    const keys = { left: false, right: false, jump: false, cling: false, roll: false, brace: false, lantern: false };
     const S = {
       started: false, over: false, t: 0, penalty: 0,
       x: 3 * T, y: ground[3] * T - 9, vx: 0, vy: 0, w: 6, h: 9, onGround: true, face: 1,
       stamina: 1, clinging: false, rollT: 0, rollCd: 0, stun: 0, sticky: 0, knock: 0, inv: 0, fallFrom: null,
       checkpoint: 3, tremorDone: false, braced: null, shake: 0, dustT: 0, jumpHeld: false,
+      papers: 0, listen: 0, braceHeld: false, lanHeld: false, lan: { state: "held", x: 0, y: 0, t: 0, gap: null }, passes: 0, bumped: 0,
       beads: [], beadClock: 3, msg: "", msgT: 0, bad: false, anim: 0, falls: 0, hits: 0, puffs: [], unlocked: new Set(["left", "right", "jump", "roll"]),
     };
     const solid = (tx, ty) => {
       if (tx < 0 || tx >= COLS) return true;
       if (ty <= ceil[tx]) return true;
+      if (platAt(tx, ty)) return true;
       return !pit[tx] && ty >= ground[tx];
     };
     const say = (m, t = 1.6, bad = false) => { S.msg = m; S.msgT = t; S.bad = bad; msgEl.classList.toggle(P + "bad", bad); };
@@ -275,13 +354,15 @@ ${kit.chapter(api.art, "chapter-2-spring")}
     function respawn() {
       let c = Math.max(S.checkpoint, S.safe || 3); while (pit[c]) c--;
       S.x = c * T + 1; S.y = ground[c] * T - S.h; S.vx = 0; S.vy = 0; S.fallFrom = null; S.stun = 0.4;
-      S.penalty += 8; S.falls++; say("CAUGHT BY LICHEN  −8 S", 2, true); hurt();
-      if (S.falls === 1) beat("Mossa", "“Not the Long Fall. Not today.” The lichen far below is soft, and slow to climb out of.");
+      S.penalty += 8; S.falls++; say(dark ? "THE CROWD HANDS HER BACK UP  −8 S" : "CAUGHT BY LICHEN  −8 S", 2, true); hurt();
+      S.lan.state = "held";
+      if (S.falls === 1 && dark) beat("Hands in the dark", "“Up you go, runner.” Nobody below asks where she is going. They can see which way.");
+      else if (S.falls === 1) beat("Mossa", "“Not the Long Fall. Not today.” The lichen far below is soft, and slow to climb out of.");
     }
 
     // ---- input ----
     const KEYMAP = { KeyA: "left", ArrowLeft: "left", KeyD: "right", ArrowRight: "right", Space: "jump", KeyW: "jump", ArrowUp: "jump",
-      ShiftLeft: "cling", ShiftRight: "cling", KeyC: "roll", KeyS: "brace", ArrowDown: "brace" };
+      ShiftLeft: "cling", ShiftRight: "cling", KeyC: "roll", KeyS: "brace", ArrowDown: "brace", KeyF: "lantern" };
     on(window, "keydown", (e) => {
       const k = KEYMAP[e.code]; if (!k || !S.started || e.ctrlKey || e.metaKey || e.altKey) return;
       e.preventDefault(); keys[k] = true;
@@ -297,9 +378,17 @@ ${kit.chapter(api.art, "chapter-2-spring")}
     const startBtn = intro.querySelector("button");
     on(startBtn, "click", () => {
       intro.remove(); S.started = true; last = performance.now();
-      beat("Mossa", "“If it shakes, I go faster. That's the rule.” Spring rain is running down the groove: jump the beads, or they sweep you back.");
+      if (stage === 0) beat("Mossa", "“If it shakes, I go faster. That's the rule.” Spring rain is running down the groove: jump the beads, or they sweep you back.");
+      if (stage === 1) beat("Mossa", "“Tappers call it the fast road. Tappers also call it the short road, and they mean something else.”");
+      if (stage === 2) beat("Mossa", "Pell's lantern, in her hand. Below, the whole of Lowridge is climbing toward her with its doors on its backs.", 7);
+      if (stage > 0) { S.unlocked.add("brace"); const b = wrap.querySelector(`.${P}k[data-k="brace"]`); if (b) b.hidden = false; }
+      const pl = plats.filter((p) => p.plugged).length;
+      if (pl) later(() => { offNote = ladder.note(wrap, `Because you poured a Gallery Plug at ${SITES.find((q) => q[0] === plugSite)[1]} in the Sap Kitchen, ${pl === 1 ? "its paper floor is" : "its " + pl + " paper floors are"} solid on this run.`); }, 900);
+      else if (dark && mapWhole) later(() => { offNote = ladder.note(wrap, "Because you kept the Pulse map whole on the Tremor Scroll, every paper floor stays marked in the dark."); }, 900);
     });
     startBtn.focus({ preventScroll: true });
+    let offNote = null;
+    if (stage !== 0) S.tremorDone = true;
 
     // ---- simulation ----
     function update(dt) {
@@ -326,12 +415,59 @@ ${kit.chapter(api.art, "chapter-2-spring")}
       if (S.stun > 0) S.stun -= dt;
       const canAct = S.stun <= 0;
       let speed = RUN * (S.sticky > 0 ? 0.5 : 1);
+      // a sap fall carries her; she only picks the ledge
+      let slide = null;
+      for (const f of forks) if (!f.done && S.x + S.w / 2 >= f.s0 * T && S.x < f.c0 * T) slide = f;
+      if (slide) {
+        if (!slide.seen) { slide.seen = true; toastEl.innerHTML = `SAP FALL · <kbd>W</kbd> higher ledge · <kbd>S</kbd> lower ledge`; toastEl.style.opacity = "1"; toastT = 4; }
+        if (keys.jump && !S.jumpHeld) slide.lane = Math.max(0, slide.lane - 1);
+        if (keys.brace && !S.braceHeld) slide.lane = Math.min(2, slide.lane + 1);
+      }
+      // the crowd: slow to push through, and never rolled through
+      let inCrowd = null;
+      for (const q of crowd) { const x0 = q.c * T, y0 = ground[q.c] * T - 9; if (S.x + S.w > x0 + 1 && S.x < x0 + 2 * T - 1 && S.y + S.h > y0) inCrowd = q; }
+      if (inCrowd) {
+        if (S.rollT > 0) { S.rollT = 0; S.x = inCrowd.c * T - S.w; S.knock = 0.3; S.vx = -50; S.bumped++; say("NOBODY ROLLS THROUGH A CROWD", 1.4, true); hurt(); }
+        else { speed *= 0.3; if (S.msgT <= 0) say("“MIND— SORRY— MIND.”", 0.9); }
+      }
+      // listening: stand still and the paper mutters
+      if (dark && keys.brace && S.onGround && canAct) {
+        S.listen += dt;
+        if (S.listen > 0.3) for (const p of plats) if (p.paper && !p.broken && !p.plugged && Math.abs((p.c0 + 1.5) * T - S.x) < 130) { if (p.heard <= 0 && !S.heardOnce) { S.heardOnce = true; beat("Mossa", "She stops counting. Ahead, one ledge is ticking, the way Sorrel's wall did."); } p.heard = 5; }
+      } else S.listen = 0;
+      for (const p of plats) if (p.heard > 0) p.heard -= dt;
+      // the lantern: dropped to the crowd at a wide gap, passed below her, taken back on the far side
+      const lan = S.lan;
+      if (dark) {
+        if (keys.lantern && !S.lanHeld && lan.state === "held") {
+          const gp = gaps.find((q) => q.c0 * T - (S.x + S.w) >= -2 && q.c0 * T - (S.x + S.w) < 44);
+          if (gp && S.onGround) { lan.state = "pass"; lan.t = 0; lan.gap = gp; S.passes++; say("THE LANTERN GOES DOWN INTO THE CROWD", 1.6); if (S.passes === 1) beat("A voice below", "“Pell's lamp. Pass it on. Pass it on.” It goes hand to hand under her, the way he would have liked."); }
+          else say("NO HANDS BELOW TO TAKE IT HERE", 1.2, true);
+        }
+        if (lan.state === "pass") {
+          lan.t += dt; const k = Math.min(1, lan.t / 1.7), gp = lan.gap, gy = ground[gp.c0 - 1] * T;
+          lan.x = (gp.c0 * T - 4) + k * ((gp.c1 * T + 6) - (gp.c0 * T - 4)); lan.y = gy + 12 - Math.abs(Math.sin(k * Math.PI * 4)) * 3 - (k > 0.85 ? (k - 0.85) / 0.15 * 20 : 0);
+          if (k >= 1) { lan.state = "wait"; lan.x = gp.c1 * T + 6; lan.y = ground[gp.c1] * T - 8; }
+        } else if (lan.state === "wait") {
+          if (S.x + 3 > lan.x - 9 && S.onGround) { lan.state = "held"; say("THE LANTERN, BACK IN HER HAND", 1.2); }
+        }
+        if (lan.state === "held") {
+          lan.x = S.x + 3 + S.face * 4; lan.y = S.y + 3;
+          // nobody jumps a wide gap with a lamp in one hand
+          const over = gaps.find((q) => S.x + S.w / 2 > q.c0 * T + 3 && S.x + S.w / 2 < q.c1 * T);
+          if (over && !S.onGround) { S.knock = 0.4; S.vx = 0; S.vy = Math.max(S.vy, 160); if (S.msgT <= 0) say("TOO WIDE WITH A LAMP IN ONE HAND. DROP IT TO THEM (F)", 2.4, true); }
+        } else if (!S.onGround) speed *= 1.3;   // both hands free
+      }
+      S.lanHeld = keys.lantern;
+      const sliding = !!slide;
+      if (sliding) speed = RUN * 1.7;
       if (canAct && keys.roll && S.rollCd <= 0 && S.onGround) { S.rollT = 0.38; S.rollCd = 0.9; keys.roll = false; }
       if (S.rollT > 0) { S.rollT -= dt; speed *= 1.9; }
       const rolling = S.rollT > 0;
-      const bracing = keys.brace && S.onGround && canAct && S.unlocked.has("brace");
+      const bracing = keys.brace && S.onGround && canAct && S.unlocked.has("brace") && !sliding;
       let dir = 0;
       if (canAct && !bracing) { if (keys.left) dir -= 1; if (keys.right) dir += 1; }
+      if (sliding) dir = 1;
       if (rolling && dir === 0) dir = S.face;
       if (dir) S.face = dir;
       if (S.knock > 0) S.knock -= dt;
@@ -341,11 +477,11 @@ ${kit.chapter(api.art, "chapter-2-spring")}
       if (!S.onGround && (wallL || wallR) && S.x / T > SEG_W * 0.8) unlock("cling", `NEW · hold <kbd>SHIFT</kbd> CLING to a wall (3 s), then jump to climb`);
       S.clinging = canAct && !S.onGround && keys.cling && (wallL || wallR) && S.stamina > 0 && S.unlocked.has("cling");
       if (S.clinging) { S.stamina = Math.max(0, S.stamina - dt / 3); S.vy = Math.min(S.vy, 8); S.fallFrom = S.y; }
-      if (keys.jump && !S.jumpHeld && canAct && (S.onGround || S.clinging)) {
+      if (keys.jump && !S.jumpHeld && canAct && !sliding && (S.onGround || S.clinging)) {
         S.vy = -JUMP; S.onGround = false; S.fallFrom = S.y;
         if (S.clinging) { S.clinging = false; }
       }
-      S.jumpHeld = keys.jump;
+      S.jumpHeld = keys.jump; S.braceHeld = keys.brace;
       if (!S.clinging) S.vy = Math.min(420, S.vy + GRAV * dt);
 
       const h = rolling ? 5 : 9;
@@ -374,14 +510,36 @@ ${kit.chapter(api.art, "chapter-2-spring")}
       if (!S.onGround && wasGround && S.vy >= 0 && S.fallFrom == null) S.fallFrom = S.y;
       if (S.onGround) { S.stamina = 1; const sc = Math.floor((S.x + S.w / 2) / T); if (!pit[sc] && !pit[sc + 1] && !pit[sc - 1]) S.safe = sc; }
       if (S.y > LVH + 20) respawn();
+      // the fork at the foot of a sap fall: she lands on the ledge she picked
+      if (slide && S.x + S.w >= slide.c0 * T) {
+        slide.done = true; S.x = slide.c0 * T + 1; S.y = slide.rows[slide.lane] * T - S.h; S.vy = 0; S.onGround = true; S.fallFrom = null;
+        for (let k = 0; k < 5; k++) S.puffs.push({ x: S.x + k * 2, y: S.y + S.h, t: 0.5, c: 10 });
+        say(["THE HIGH LEDGE", "THE MIDDLE LEDGE", "THE LOW LEDGE"][slide.lane], 0.9);
+      }
+      // paper: one footfall
+      if (S.onGround) {
+        const fy = Math.round((S.y + S.h) / T);
+        for (const p of plats) {
+          if (p.broken || !p.paper || p.plugged || fy !== p.row || S.x + S.w <= p.c0 * T || S.x >= p.c1 * T) continue;
+          p.stood += dt;
+          if (p.stood > 0.2) {
+            p.broken = true; S.papers++; S.onGround = false; S.stun = 0.35; S.fallFrom = null;
+            if (stage > 0) S.penalty += 4;
+            for (let k = 0; k < 8; k++) S.puffs.push({ x: p.c0 * T + k * 3, y: p.row * T + 2, t: 0.7, c: 15 });
+            say(stage > 0 ? "PAPER. IT GOES  −4 S" : "PAPER. IT HELD ONE FOOTFALL", 1.6, true); hurt();
+            if (S.papers === 1) beat("Mossa", stage === 2 ? "No mark on it. There was a mark on it in spring." : "Under the ledge there is no bark, only a long low room with ribbed walls. She does not look for long.");
+          }
+        }
+      }
 
       const col = Math.floor((S.x + S.w / 2) / T);
       const seg = Math.floor(col / SEG_W);
       if (seg > 0 && seg * SEG_W > S.checkpoint && col >= seg * SEG_W) {
         S.checkpoint = seg * SEG_W; say(`SEGMENT ${seg + 1}/${SEGS} · CHECKPOINT`, 1.6);
         for (let k = 0; k < 6; k++) S.puffs.push({ x: S.x + 3 + (k - 3) * 3, y: S.y - 4 - (k % 2) * 3, t: 0.8, c: 10 });
-        if (seg === 1) beat("A tapper at the checkpoint", "“The walls get tall past here. Cling if you must, child, and climb.”");
-        if (seg === 2) beat("Mossa", "Below, the lanterns of Lowridge, and someone waving one. She stops counting her steps.");
+        if (seg === 1) beat(...[["A tapper at the checkpoint", "“Paper's worse lower down. Don't ask me why. Ask Sorrel, she'll tell you whether you ask or not.”"],
+          ["A tapper at the checkpoint", "“The walls get tall past here. Cling if you must, child, and climb.”"],
+          ["Sorrel, going up", "“You're going the wrong way, runner.” She looks at the lantern. “No. You're not. Listen at the floors.”"]][stage]);
       }
       if (S.inv <= 0) for (const c of haz.spikes) {
         const sx = c * T + 1, sy = ground[c] * T - 4;
@@ -398,7 +556,7 @@ ${kit.chapter(api.art, "chapter-2-spring")}
         if (S.x < dx + 2 && S.x + S.w > dx && S.y < dy + 3 && S.y + S.h > dy && S.sticky <= 0) { S.sticky = 2; say("STICKY SAP: SLOWED", 1, true); }
       }
       S.beadClock -= dt;
-      if (S.beadClock <= 0 && col < SEG_W - 4) {
+      if (S.beadClock <= 0 && stage === 0 && col < SEG_W - 4) {
         S.beadClock = 4 + Math.random() * 2.5;
         const bc = Math.min(COLS - 2, col + Math.floor(LW / T * 0.6));
         if (!pit[bc]) S.beads.push({ x: bc * T, y: ground[bc] * T - 6, vx: -55 });
@@ -424,12 +582,23 @@ ${kit.chapter(api.art, "chapter-2-spring")}
       const brace = S.braced ? " She braced through the tremor and kept her feet." : " The tremor threw her down a ledge.";
       const cost = S.falls ? ` The lichen caught her ${S.falls === 1 ? "once" : S.falls + " times"}.` : "";
       api.store.set("best", Math.min(api.store.get("best", 9999), elapsed));
+      const paper = S.papers ? ` ${S.papers === 1 ? "One paper floor" : S.papers + " paper floors"} went under her.` : stage === 2 ? " Not one paper floor went under her." : "";
+      if (offNote) offNote();
       if (elapsed <= LIMIT) {
         api.store.set("losses", 0);
-        api.end({ outcome: "win", text: `Mossa reaches Lowridge in ${fmt(elapsed)}, on time, and gives the Knot's reading before the rumour does. On time +1.${brace}${cost} “Three hundred and— never mind. I'm here.”` });
+        if (stage === 0) {
+          shared.set("sorrel_met", true);
+          api.end({ outcome: "win", text: `Mossa reaches Lowridge in ${fmt(elapsed)}, on time, and gives the Knot's reading before the rumour does.${brace}${cost}${paper} A tapper forewoman called Sorrel hears her out, then puts Mossa's ear to a wall. Something in it is ticking. Mossa stops counting. “You Highridge lot hear the Trunk when it shouts. Down here it mutters.”` });
+        } else if (stage === 1) {
+          api.end({ outcome: "win", text: `Mossa comes off the last sap fall into Lowridge in ${fmt(elapsed)}, sticky to the knees and on time.${cost}${paper} “Three hundred and— never mind. I'm here.”` });
+        } else {
+          api.end({ outcome: "win", text: `Against the tide, in ${fmt(elapsed)}: Mossa reaches the street that settled.${cost}${paper} The lantern crossed ${S.passes} gap${S.passes === 1 ? "" : "s"} in other people's hands and came back each time. Above her a city is still climbing, carrying its doors. She holds Pell's light over the gallery where the street was, and listens, and does not count.` });
+        }
       } else {
         api.store.set("losses", losses + 1);
-        api.end({ outcome: "lose", text: `Mossa reaches Lowridge in ${fmt(elapsed)}, after the limit of ${fmt(LIMIT)}. The rumour got there first, and it was worse than the reading; morale −3.${brace}${cost}${losses + 1 >= 2 ? " Next run the Knot will send her earlier: a longer limit, and an earlier brace marker." : ""}` });
+        api.end({ outcome: "lose", text: stage === 2
+          ? `Mossa reaches the settled street in ${fmt(elapsed)}, after the limit of ${fmt(LIMIT)}. The last of Lowridge has already gone up past her, and nobody is left to tell her who was in the street.${cost}${paper}${losses + 1 >= 2 ? " Next run she sets out earlier." : ""}`
+          : `Mossa reaches Lowridge in ${fmt(elapsed)}, after the limit of ${fmt(LIMIT)}. The rumour got there first, and it was worse than the reading; morale −3.${stage === 0 ? brace : ""}${cost}${paper}${losses + 1 >= 2 ? " Next run the Knot will send her earlier: a longer limit." : ""}` });
       }
     }
 
@@ -475,6 +644,13 @@ ${kit.chapter(api.art, "chapter-2-spring")}
       if (S.stun > 0 && Math.floor(S.anim * 8) % 2) { px(X(1), -2, 10); px(X(4), -3, 10); }
     }
 
+    let shade = null;
+    // a tick mark: the chalk on a paper floor; `heard` is the same mark, sounding
+    function tick(x, y, heard) {
+      g.fillStyle = CHALK;
+      g.fillRect(x - 4, y + 2, 2, 1); g.fillRect(x - 3, y + 3, 2, 2); g.fillRect(x - 1, y + 2, 2, 2); g.fillRect(x + 1, y, 2, 2); g.fillRect(x + 3, y - 2, 1, 2);
+      if (heard) { const r = api.reducedMotion ? 6 : 4 + ((S.t * 8) % 6); g.strokeStyle = CHALK; g.lineWidth = 1; g.beginPath(); g.arc(x - 0.5, y + 1.5, r, Math.PI, 0); g.stroke(); }
+    }
     function draw() {
       const shake = S.shake > 0 && !api.reducedMotion ? Math.round(Math.sin(S.t * 70) * 2) : 0;
       let cx = Math.round(S.x - LW * (LW < 120 ? 0.3 : 0.38)), cy = Math.round(S.y - LH * 0.55);
@@ -493,6 +669,30 @@ ${kit.chapter(api.art, "chapter-2-spring")}
       const px = (x, y, w, h, c) => { g.fillStyle = PIX16[c]; g.fillRect(x, y, w, h); };
       const seen = (c) => c * T > cx - 24 && c * T < cx + LW + 24;
       for (const q of people) if (seen(q.c) && A.crowd) stamp(A.crowd, CROWD[q.who], q.c * T + 4, ground[q.c] * T, q.flip);
+      // the fork's lane marker, the ledges and the paper among them
+      for (const f of forks) if (!f.done && seen(f.c0)) { const y = f.rows[f.lane] * T, ax = f.c0 * T - 8; px(ax, y - 5, 5, 3, 10); px(ax + 5, y - 6, 1, 5, 10); px(ax + 6, y - 5, 1, 3, 15); px(ax + 7, y - 4, 1, 1, 15); }
+      for (const p of plats) {
+        if (!seen(p.c0) && !seen(p.c1)) continue;
+        const x = p.c0 * T, y = p.row * T, w = (p.c1 - p.c0) * T;
+        if (p.broken) { px(x, y, 2, 2, 14); px(x + w - 2, y, 2, 2, 14); px(x + 3, y + 5, 2, 1, 6); px(x + w - 6, y + 7, 2, 1, 6); continue; }
+        if (!p.paper) { px(x, y, w, 1, 14); px(x, y + 1, w, 2, 4); px(x, y + 3, w, 2, 3); px(x + 2, y + 5, w - 4, 1, 2); continue; }
+        if (p.plugged) { px(x, y, w, 1, 10); px(x, y + 1, w, 3, 9); px(x, y + 4, w, 2, 5); for (let k = 3; k < w; k += 6) px(x + k, y + 2, 2, 1, 15); continue; }
+        px(x, y, w, 1, 14); px(x, y + 1, w, 1, 6); px(x, y + 2, w, 2, 4); for (let k = 1; k < w; k += 4) px(x + k, y + 4, 2, 1, 6);
+        if (p.marked) tick(x + (w >> 1), y);
+      }
+      for (const q of crowd) {
+        if (!seen(q.c)) continue;
+        const y = ground[q.c] * T, who = ["elder", "cook", "child", "priest", "tapper"];
+        for (let k = 0; k < q.n; k++) { const fx = q.c * T + 2 + k * 6; if (!(A.crowd && stamp(A.crowd, CROWD[who[(q.c + k) % 5]], fx, y, true))) { px(fx - 2, y - 8, 4, 8, 5); px(fx - 1, y - 11, 3, 3, 14); } }
+        px(q.c * T + 1, y - 14, 5, 1, 4); px(q.c * T + 1, y - 17, 5, 3, 2);   // a door, carried
+      }
+      // the tide in the gaps: heads and doors going up under her
+      for (const q of gaps) {
+        if (!seen(q.c0)) continue;
+        const gy = ground[q.c0 - 1] * T + 16, off = api.reducedMotion ? 0 : Math.floor(S.t * 5);
+        for (let k = 0; k < 6; k++) { const hx = q.c0 * T + ((k * 5 + off) % 26) - 1, hy = gy + (k % 3) * 5; px(hx, hy, 3, 3, 14); px(hx - 1, hy + 3, 5, 5, k % 2 ? 5 : 2); }
+        px(q.c0 * T + 2, ground[q.c0 - 1] * T - 13, 1, 9, 6); px(q.c0 * T - 1, ground[q.c0 - 1] * T - 14, 4, 1, 6); px(q.c0 * T - 1, ground[q.c0 - 1] * T - 13, 1, 3, 11);  // the hook where a lamp is lowered
+      }
       for (const c of haz.spikes) {
         if (!seen(c)) continue;
         const x = c * T, y = ground[c] * T;
@@ -531,11 +731,29 @@ ${kit.chapter(api.art, "chapter-2-spring")}
       }
       for (const p of S.puffs) { const r = Math.round((1 - p.t) * 6); px(p.x - r, p.y, 1, 1, p.c); px(p.x + r, p.y, 1, 1, p.c); px(p.x, p.y - r, 1, 1, p.c); }
       sprite(Math.round(S.x), Math.round(S.y));
+      if (dark) { const lx = Math.round(S.lan.x), ly = Math.round(S.lan.y); px(lx - 1, ly - 2, 3, 1, 4); px(lx - 2, ly - 1, 5, 4, 11); px(lx - 1, ly, 3, 2, 10); px(lx, ly, 1, 1, 15); }
       if (S.clinging || (S.stamina < 1 && !S.onGround)) {
         g.strokeStyle = PIX16[8]; g.lineWidth = 1;
         g.beginPath(); g.arc(Math.round(S.x + 3) + 0.5, Math.round(S.y + 4) + 0.5, 8, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * S.stamina); g.stroke();
       }
       g.restore();
+      if (dark) {
+        // the dark, with the lantern's reach cut out of it (and a breath of sight round Mossa without it)
+        if (!shade) { shade = document.createElement("canvas"); }
+        if (shade.width !== LW || shade.height !== LH) { shade.width = LW; shade.height = LH; }
+        const sg = shade.getContext("2d");
+        sg.globalCompositeOperation = "source-over"; sg.clearRect(0, 0, LW, LH); sg.fillStyle = "rgba(9,7,12,.95)"; sg.fillRect(0, 0, LW, LH);
+        sg.globalCompositeOperation = "destination-out";
+        const hole = (x, y, r) => { const gr = sg.createRadialGradient(x, y, r * 0.35, x, y, r); gr.addColorStop(0, "rgba(0,0,0,1)"); gr.addColorStop(1, "rgba(0,0,0,0)"); sg.fillStyle = gr; sg.beginPath(); sg.arc(x, y, r, 0, 7); sg.fill(); };
+        const fl = api.reducedMotion ? 0 : Math.sin(S.t * 9) * 1.5;
+        hole(S.lan.x - cx, S.lan.y - cy, (S.lan.state === "held" ? 46 : 30) + fl);
+        if (S.lan.state !== "held") hole(S.x + 3 - cx, S.y + 4 - cy, 16);
+        g.drawImage(shade, 0, 0);
+        // what she has heard shows through the dark
+        g.save(); g.translate(-cx, -cy);
+        for (const p of plats) if (p.paper && !p.broken && !p.plugged && !p.marked && p.heard > 0) tick((p.c0 + 1.5) * T, p.row * T, true);
+        g.restore();
+      }
 
       if (S.dustT > 0) {
         const off = Math.floor(S.t * 20);
@@ -554,9 +772,10 @@ ${kit.chapter(api.art, "chapter-2-spring")}
       // the clock
       g.font = "8px Silkscreen, monospace"; g.textBaseline = "top";
       const el = S.t + S.penalty, left = Math.max(0, LIMIT - el);
-      g.fillStyle = PIX16[0]; g.fillRect(2, LH - 12, 74, 11);
+      const ky = LW < 130 ? 36 : LH - 12;   // on a phone the pad covers the foot of the picture
+      g.fillStyle = PIX16[0]; g.fillRect(2, ky, 74, 11);
       g.fillStyle = left < 30 ? (Math.floor(S.t * 4) % 2 || api.reducedMotion ? PIX16[11] : PIX16[12]) : PIX16[10];
-      g.fillText(`SEG ${Math.min(SEGS, Math.floor(S.x / T / SEG_W) + 1)}/${SEGS} ${fmt(left)}`, 4, LH - 11);
+      g.fillText(`SEG ${Math.min(SEGS, Math.floor(S.x / T / SEG_W) + 1)}/${SEGS} ${fmt(left)}`, 4, ky + 1);
       // time bar under the strip: shrinks as the limit nears
       px(0, 13, Math.round(LW * left / LIMIT), 1, left < 30 ? 11 : 9);
       // brace marker, early (the forecast was right)
@@ -592,8 +811,9 @@ ${kit.chapter(api.art, "chapter-2-spring")}
         timers.forEach(clearTimeout);
         offs.forEach((f) => f());
         ro.disconnect();
+        if (offNote) offNote();
         wrap.remove();
       },
     };
-  },
-};
+  }
+}

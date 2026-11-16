@@ -9,7 +9,7 @@ what really happened, and the people can never be told.
 | Item | Value |
 | --- | --- |
 | Source | *People of the Bark*, `creative-writing/vault/05_Worldbuilding/01_People_of_the_Bark.md` (a world concept and screen treatment) |
-| Target length | 150–180 minutes; this design runs 170 minutes on a first playthrough |
+| Target length | 150–180 minutes; this design runs 179 minutes on a first playthrough (170 before the five scenes added on 2026-11-16) |
 | Players | 1 |
 | Core verb | **Interpret** |
 | Structure | Seven chapters: the Tremor, four seasons, the Coming of the Shadow, the pull-back |
@@ -301,13 +301,13 @@ rule: the lost have small habits and the dignity of more than plot points.
 | # | Chapter id | Chapter | Minutes | Layers | New mechanic or revelation | Tension (1–5) |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | `ch1_tremor` | The Tremor | 20 | 3D, 1D | The city, the pull-back, Omen Spread, Tremor Scroll | 2 |
-| 2 | `ch2_spring` | Spring: The Rain Blessing | 30 | 3D, 2D, 1D | The council, building, crack runner, Sap Kitchen, the Ring Door, Trunk and Shadow | 1 → 2 |
-| 3 | `ch3_summer` | Summer: Trials and Monsters | 34 | 3D, 2D, 1D | Crack defence; god or monster; the windstorm; the rules of the board game mutate | 3 |
-| 4 | `ch4_autumn` | Autumn: The Falling Leaves | 32 | 3D, 2D, 1D | The expedition; the prophecy; the Fit rule is noticed; the bark groans | 3 → 4 |
-| 5 | `ch5_winter` | Winter: The Sap Sleeps | 28 | 3D, 2D, 1D | Pell's death and heir; the Heartwood Door; the Hand piece; the Winter Count | 4 → 2 |
+| 2 | `ch2_spring` | Spring: The Rain Blessing | 32 | 3D, 2D, 1D | The council, building, crack runner, Sap Kitchen, the Ring Door, Trunk and Shadow | 1 → 2 |
+| 3 | `ch3_summer` | Summer: Trials and Monsters | 36 | 3D, 2D, 1D | Crack defence; god or monster; the windstorm; the rules of the board game mutate | 3 |
+| 4 | `ch4_autumn` | Autumn: The Falling Leaves | 35 | 3D, 2D, 1D | The expedition; the prophecy; the Fit rule is noticed; the bark groans | 3 → 4 |
+| 5 | `ch5_winter` | Winter: The Sap Sleeps | 30 | 3D, 2D, 1D | Pell's death and heir; the Heartwood Door; the Hand piece; the Winter Count | 4 → 2 |
 | 6 | `ch6_shadow` | The Coming of the Shadow | 22 | 3D, 2D, 1D | The seventh-day tread; the Shadow; the final reading; the touch | 5 |
 | 7 | `ch7_pullback` | The Pull-back | 4 | 3D | The backyard; the moral | 1 |
-| | | **Total** | **170** | | | |
+| | | **Total** | **179** | | | |
 
 ### Beat chart
 
@@ -362,6 +362,12 @@ Minutes are from the start of a first playthrough. Tension is 1 (calm) to 5 (pea
 | 166 | The pull-back to the backyard; the ending | 3D | 1 |
 | 170 | End | | |
 
+The chart above is the year as first timed. Five scenes added on 2026-11-16 (section 21) lengthen it
+by 9 minutes, to 179, and every later mark shifts by the minutes before it: Sorrel's Wall (2 minutes,
+after the spring run), The Thumb on the Deck (2, before the summer festival game), the Blank Card
+(2) and The Faceless Marks (1) after the autumn scroll, and Lowridge Comes Up the Crack (2, before
+the winter run). The autumn stretch gains its reversal there, at about minute 106.
+
 No stretch is longer than 7 minutes without a new place, mechanic, revelation or choice. The
 longest single scene is the expedition (7 minutes), and it has three hazards and a choice inside it.
 
@@ -399,7 +405,7 @@ Each chapter lists its scenes in order with scene ids from `data/scenes.json`.
   `forecasts_correct`, institution standings, `morale`.
 - **Ends:** On the year's name painted on the ridge.
 
-### Chapter 2 — Spring: The Rain Blessing (`ch2_spring`, 30 minutes)
+### Chapter 2 — Spring: The Rain Blessing (`ch2_spring`, 32 minutes)
 
 - **Goal:** Build Highridge, connect it to Lowridge and Knotholm, read the rain, open the first
   temple, hold the spring festival.
@@ -425,7 +431,7 @@ Each chapter lists its scenes in order with scene ids from `data/scenes.json`.
   Great Flake (that the bark can break).
 - **Ends:** On fireflies of lichen-light over the festival.
 
-### Chapter 3 — Summer: Trials and Monsters (`ch3_summer`, 34 minutes)
+### Chapter 3 — Summer: Trials and Monsters (`ch3_summer`, 36 minutes)
 
 - **Goal:** Hold the cracks, survive the windstorm, decide what the Beetle is.
 - **Scenes in order:**
@@ -454,7 +460,7 @@ Each chapter lists its scenes in order with scene ids from `data/scenes.json`.
   readings cost or save lives.
 - **Ends:** On the summer festival, or (if lives were lost) on the first names cut into the Roll.
 
-### Chapter 4 — Autumn: The Falling Leaves (`ch4_autumn`, 32 minutes)
+### Chapter 4 — Autumn: The Falling Leaves (`ch4_autumn`, 35 minutes)
 
 - **Goal:** Read death and prophecy; prepare for winter.
 - **Scenes in order:**
@@ -496,7 +502,7 @@ Each chapter lists its scenes in order with scene ids from `data/scenes.json`.
 - **Flags set:** `prophecy.suit`, `expedition.heard`, `ant_reading`, `recipes_found`.
 - **Ends:** On the bark groaning (if integrity is under 40), or on the city sealing its doors.
 
-### Chapter 5 — Winter: The Sap Sleeps (`ch5_winter`, 28 minutes)
+### Chapter 5 — Winter: The Sap Sleeps (`ch5_winter`, 30 minutes)
 
 - **Goal:** Lose Pell well; feed the city; learn which institution leads.
 - **Scenes in order:**
@@ -575,12 +581,16 @@ available in every 3D scene and is counted (`pullbacks`).
 | `c1_city_year` | Highridge | As above | God camera | None but Tab | The painted name | Full dawn | Chant and cheering, small | Plays out | pull-out / fade |
 | `c2_city` | Highridge and the Long Crack | 12 × 30 cm, opens downward as roads are built | God camera, full zoom | Council panel, build menu, Tab | Grooves, cracks, ridges, splinters, knots (section 12) | Spring green-gold | Sap trickle, carving taps | Council closed → build; build budget spent or 6 min → run | fade / flatten |
 | `c2_rain` | Highridge | 12 × 8 cm | God camera | Click cups open; drag people out of bead lanes | 6 sap cups; 4 bead lanes | Grey-silver, wet sheen | Thunderous drops, then patter | Rain lasts 2:30; pull-back prompt | cut / push-in |
+| `c2_sorrel_wall` | Lowridge, the lowest street, at the foot of the Long Crack | 10 × 8 cm | God camera, close on the street's end | Click the wall to listen; Tab | The pale stretch of wall, Sorrel, the tappers' yard | Cool spring morning, lantern glow below | A faint steady ticking under the street noise; Mossa's counting stops | Listening done → kitchen | flatten / cut |
 | `c2_temple` | First Ring temple, Knotholm | A round hall 2 cm across, carved into the knot | God camera, tilted 20 degrees into the hall | Click wall to paint a saying; Tab | Saying wall, the Roll, the altar | Amber lamp-light | Low chant, echo | Saying placed → festival | fade / push-in |
 | `c3_city` | Highridge and Splinterwatch | 12 × 30 cm | God camera | Council, build | Splinters for watchtowers | High summer, hard shadows | Insects far off, heat shimmer | Build done → mites | fade / flatten |
+| `c3_thumb` | Highridge square, the summer festival | 4 × 4 cm | God camera, still, then pushed in to the table | None but Tab | Pell's deck, Twig, the festival board | Warm evening, lanterns being lit | Crowd, Twig's shuffle, a card edge under a thumb | Plays out: Twig's deal, "clumsy me", the second deal | flatten / push-in |
 | `c3_wind` | The battlements and the city | 12 × 12 cm | God camera; gust bands visible as moving streaks | Click towers to lash (4); drag people into grooves | 4 towers, 12 people outside | Bleached, streaking | Roaring wind; tower creaks | 3 gusts over 2:30; damage resolves | cut / push-in |
 | `c4_city` | Highridge | 12 × 30 cm | God camera; at 1:00 the leaf passes | Council, build; Tab | The leaf (no interaction) | Copper, then dark for 8 s | Silence while the leaf passes | Leaf gone → reading | fade / push-in |
+| `c4_faceless` | Fenn's home, second terrace of Highridge | One dwelling, 1 cm | God camera pushed in on one lit shutter | Click the scroll; Tab | Fenn's second scroll, the lit shutter | Copper dusk, one lamp | The drum far off; chalk on bark-paper | The scroll unrolled → ants | pull-out / flatten |
 | `c4_branch` | The Branch to the Listening Knot | A path 35 cm long, 1 cm wide | God camera follows the party, rotated to the branch | Click to move the party a stage; hold to tie silk; Tab | 5 silk points, the aphid herd, cover hollows, the Listening Knot | Open sky light, swaying | Wind, the bird's song, huge and close | Bird hops (4); departure window 3 min after the song | cut / push-in |
 | `c5_city` | Highridge | 12 × 30 cm | God camera | Council, mend and seal only | Frost in grooves (slick) | White-blue, low sun | Ice ticks | Council done → temple | fade / cut |
+| `c5_lowridge` | Lowridge and the Long Crack above it | 10 × 8 cm | God camera, wide, tilted up the crack | Click to seat the arrivals in Highridge (the Winter Count's new line); Tab | The settled street, the crowd on the crack, Pell's lantern | Frost-dark, lanterns going out below | Ice ticks, many feet, doors knocking on walls as they are carried | The lantern taken → the run (Against the Tide) | pull-out / flatten |
 | `c5_temple` | Highridge to the First Ring temple | The route, 6 cm | God camera follows Pell at walking pace | Click to walk Pell on; he stops at each saying | The sayings the player made (3–6) | Lantern-light in snow-dark | Pell's breathing, one chant | Pell sits → spread | cut / push-in |
 | `c5_count` | Highridge square | 4 × 4 cm | God camera, still | None | The Balance Rope, held by the three heads | Cold noon | Drums, three voices | Plays out | fade / fade |
 | `c6_shadow` | All of the bark | Zoom forced out to 12 cm | God camera | Tab; click to send people into knots | Knot shelters (6), the chanters, the battlements | Light swallowed west to east | All sound drops as the dark arrives | 40 s darkening; 4 min | cut / flatten |
@@ -1428,8 +1438,8 @@ speaks, in any ending.
 
 | File | Holds |
 | --- | --- |
-| `game.json` | Title, source, 150–180 minutes, one player, core verb "interpret", the seven chapters with minutes (total 170) and layers |
-| `scenes.json` | Two 2D modes (`crack_runner`, `crack_defence`, both `scroll`); five 1D games; 48 scenes, every 3D scene, 2D sequence and 1D appearance in this document, with chapter, reads, writes, transitions, next and minutes. `c6_stand`, `c6_war`, `c6_edge` and `c6_offering` are alternatives: a run plays one, so chapter 6's minutes count one of them |
+| `game.json` | Title, source, 150–180 minutes, one player, core verb "interpret", the seven chapters with minutes (total 179) and layers |
+| `scenes.json` | Two 2D modes (`crack_runner`, `crack_defence`, both `scroll`); five 1D games; 53 scenes, every 3D scene, 2D sequence and 1D appearance in this document, with chapter, reads, writes, transitions, next and minutes. `c6_stand`, `c6_war`, `c6_edge` and `c6_offering` are alternatives: a run plays one, so chapter 6's minutes count one of them |
 | `flags.json` | Every flag, meter, counter and ledger used: the three standings, `year.leading`, `shadow_reading`, the economy meters, forecasts, readings, councils, the Roll, the cast flags |
 | `endings.json` | The four endings with their conditions as in section 13; `shadow_passes` is `as_written` and the catch-all |
 
@@ -1449,6 +1459,17 @@ policy, and the scene to add; `honest_deals`: the four heirs' deals); and one bl
 `tremor_patterns.json` (`faceless_row`: the rule by weather, the two faceless cells of `c4_scroll`
 and the Pulse map). The schemas and `scenes.json` are unchanged; the Pulse is not yet among the
 event cards that the appearances list checks, because its scene is not yet in `scenes.json`.
+
+Phase 2 (2026-11-16) added five scenes to `scenes.json` (`c2_sorrel_wall`, `c3_thumb`,
+`c4_omen_pulse`, `c4_faceless`, `c5_lowridge`), so the Pulse is now an event card with its own
+appearance; fourteen flags to `flags.json` (the hidden meter `pulse`; `sorrel.met`,
+`sorrel.backed`, `pell.thumb_seen`, `fenn.second_scroll`, `lowridge.settled`; the links
+`gallery_plug.site`, `gallery_plug.pots`, `door.scars`, `door.clean_cuts`, `heartwood.state`,
+`ants.escorted`, `shadow.played`; and `sounding.heard`); the blocks `contested_slot` and
+`notch_reading` in `omen_deck.json`, `gallery_plug` in `recipes.json` (outside the twelve, because
+it breaks their rule) and `winter_sitting` in `tremor_patterns.json`; the chapter minutes in
+`game.json`; one location (`lowridge`) in `assets/assets.json` with its build file; and the new 3D
+scenes in the build files of `highridge` and `highridge-square`.
 
 `tools/check_data.py` checks the three against their schemas, against each other and against the
 four shared files: every scene, flag, value and ending it names; that each 1D appearance matches
@@ -1483,7 +1504,7 @@ land as both funny and tender, the game does not work, and that is the thing to 
 | The joke repeats: every pull-back is "it was only an animal" | Each pull-back escalates scale (a squirrel, a shower, a gust, a beetle, autumn, a bird, a hand) and the game teaches the player to use what they see (Backyard card, Fit). By autumn the joke has become a tool, and at the Shadow it becomes dread |
 | The people's courage reads as the punchline | Design rule: no comic sting over the people; the camera always returns to them; their lines never wink; losses go on the Roll with names and habits |
 | A city-builder on a vertical wall is hard to read | Gravity runs down the screen; only five surface types; build menu filters by surface under cursor |
-| Five 1D games plus two 2D modes in 170 minutes feel bitty | No 1D appearance over 4 minutes; each is entered from the scene it belongs to (the table, the wall, the knot) |
+| Five 1D games plus two 2D modes in 179 minutes feel bitty | No 1D appearance over 4 minutes; each is entered from the scene it belongs to (the table, the wall, the knot) |
 | Players do not find the endings | The Rope's 12-point knot is always visible; the final spread's preview states the reading before it is laid; the Codex lists the four readings after the first playthrough |
 | Pell's death feels forced | It is prepared from autumn (his leaf) and played slowly, by the player, through the sayings they made |
 
@@ -1521,7 +1542,7 @@ land as both funny and tender, the game does not work, and that is the thing to 
 The author accepted the whole deep dive (`DEEP_DIVE.md`) on 2026-11-15 and answered yes to the
 three questions its roadmap put first: the game may say there is something in the wood; Sorrel
 joins the cast and Pell has his secret; The Ring is an ending. This section states what was
-accepted. It is built in three phases. **Phase 1 is built in this pass**; phases 2 and 3 are
+accepted. It is built in three phases. **Phase 1 was built on 2026-11-15 and phase 2 on 2026-11-16**; phase 3 is
 decided but not built. Nothing here changes the source, the as-written ending or its last line.
 
 **Dramatic question.** When the god finally comes to listen, what will the Trunk sound like, and
@@ -1566,15 +1587,15 @@ opposition is bark-sized: the Knot's wish that the Pulse stay holy and unread.
 | --- | --- | --- | --- | --- | --- |
 | 1 | The Tremor and the first pull-back | Dawn | Source | `c1_city_dawn` to `c1_omen` | — |
 | 2 | The year is named | Dawn | Existing | `c1_city_year` | — |
-| 3 | Sorrel's Wall | Spring | New | The end of `c2_run` | 2 |
+| 3 | Sorrel's Wall | Spring | New | `c2_sorrel_wall`, after `c2_run` | 2 (built) |
 | 4 | God or monster: the Beetle | Summer | Existing (the belief is source) | `c3_omen_beetle`, `c3_beetle` | — |
-| 5 | The Thumb on the Deck | Summer | New | The summer festival, `c3_tns` | 2 |
+| 5 | The Thumb on the Deck | Summer | New | `c3_thumb`, before `c3_tns` | 2 (built) |
 | 6 | Pell reads his leaf | Autumn | Existing | `c4_omen_leaf` | — |
-| 7 | The Faceless Marks | Autumn | New | Fenn's home; the row is on `c4_scroll` from phase 1 | 2 |
-| 8 | **The Blank Card** (midpoint reversal) | Autumn | New | `c4_omen_pulse`, **a scene to add** | **1** |
+| 7 | The Faceless Marks | Autumn | New | `c4_faceless`; the row is on `c4_scroll` from phase 1 | 2 (built) |
+| 8 | **The Blank Card** (midpoint reversal) | Autumn | New | `c4_omen_pulse` | **1** (scene added in phase 2) |
 | 9 | Pell's last spread; the heir finds the notches | Winter | Existing, deepened | `c5_temple`, `c5_omen_pell`; honest deals from here | **1** (honest deals) |
-| 10 | **Lowridge Comes Up the Crack** (darkest moment) | Winter | New | `c5_run`, re-routed (Against the Tide) | 2 |
-| 11 | The Shadow, the reading, the Sounding | Year's turn | Source; the Sounding is new | `c6_shadow`, `c6_omen`, `c6_touch` | 2 (the Sounding) |
+| 10 | **Lowridge Comes Up the Crack** (darkest moment) | Winter | New | `c5_lowridge`, then `c5_run` re-routed (Against the Tide) | 2 (built) |
+| 11 | The Shadow, the reading, the Sounding | Year's turn | Source; the Sounding is new | `c6_shadow`, `c6_omen`, `c6_touch` | 2 (the Sounding: flags on `c6_touch`) |
 | 12 | The pull-back | | Source | `c7_backyard` | — |
 
 **The midpoint: The Blank Card.** One autumn night the Pulse wakes Highridge. The Knot lays a
@@ -1617,23 +1638,74 @@ offering route still resolves to The Shadow Passes.
 | The long puzzle's last step, in miniature: the map shows where the second tap will land | Section 11.5, In the web build | — (the Sounding itself is phase 2) | `tremor-scroll.js`, one choice of plate after the autumn seal |
 | The first six art items | `DEEP_DIVE.md` section 4 | `art/` holds the four drawn by code: the Omen cards (18 faces, 9 event cards, 8 Backyard faces with the blank one, the back), Mossa's sprite sheet. The key art, Pell's figure and the yard plate with the fence and stump are generated or rendered images and are not made yet | Every mode now draws with `art/` (see `docs/WEB.md`, `api.art`) |
 
-**Scene to add.** `c4_omen_pulse` (ch4_autumn, 1D `omen_spread`, 3 min, after `c4_scroll`): reads
-`pullbacks`, `inst.elders`; writes `readings`, the three standings, `pulse.heard`,
-`pulse.blank_turned`, `pulse.answer`. It needs a storyboard row, and when it joins
-`data/scenes.json` the Pulse joins `event_cards` and `appearances` in `data/omen_deck.json`.
+**Scene added 2026-11-16.** `c4_omen_pulse` (ch4_autumn, 1D `omen_spread`, 2 min, after
+`c4_scroll`): reads `pullbacks`, `inst.elders`, `pell.thumb_seen`, `year.leading`; writes
+`readings`, the three standings, `pulse.heard`, `pulse.blank_turned`, `pulse.answer`. The Pulse is
+now among `event_cards` and `appearances` in `data/omen_deck.json`; its storyboard row is in
+`storyboard_additions.md`.
 
-**Phase 2, decided, not built: give the year its turn.** Sorrel and her wall; The Thumb on the
-Deck, with notch-reading and the contested slot; The Faceless Marks; Lowridge Comes Up the Crack
-and Against the Tide; paper floors and the crowd in the runner; the paper wall, the plugged door
-and The Procession and the Wall in the defence; sour sap, recipe 13 Gallery Plug and The Great
-Mending; the eaten arc, the turned Heartwood and closing a door; the Hollow square card; listening
-posts on the scroll; the hidden `pulse` meter (0–100) and what moves it; the Sounding; the three
-links between layers (a Plug pot makes that site's paper floors solid in the next run; a door's
-scars are side entrances in the next defence and a clean cut is a knot shelter in `c6_shadow`; a
-winter win as the Shadow shows the three tap sites ten seconds early).
+**Phase 2, built 2026-11-16: give the year its turn.** The author wrote "start phase 2" and every
+question the roadmap put first was already answered yes. What was built:
+
+*The ladders.* Every 2D mode and 1D game is now three stages, teach, test and twist; a stage won
+may be kept as the result, and the stage reached is remembered.
+
+| Mode | Teach | Test | Twist, and its set-piece |
+| --- | --- | --- | --- |
+| Crack runner | Spring: paper floors, each with a tick mark; one holds one footfall | Summer: four sap falls, each ending on three ledges of which one is paper, picked while sliding; the tall wall | Against the Tide (`c5_run`): dark, the tick marks out, the crowd that cannot be rolled through, and at each wide gap Pell's lantern dropped to the crowd and passed across below her |
+| Crack defence | Mites: three swarms | The Beetle, god or monster, with the plugged door beside line 3 (10 seconds in its reach and a warrior is taken) | The Procession and the Wall (`c4_ants`): fought, the ants turn back and nothing checks the Pulse; escorted, they turn at one offering laid by the papered branch, and the wall opens (`pulse` −15) |
+| Omen Spread | The Windstorm: meaning and policy; no reading is wrong | The Beetle, after The Thumb on the Deck: the reading must fit | The Blank Card with the contested slot, then an honest deal and one notch-reading; won when the Shadow's reading stands as laid |
+| Sap Kitchen | Spring: three pages | Autumn: two of the three sealants | The thirteenth page: Gallery Plug from sour sap, then The Great Mending (five pots against the tread) and the choice of where to pour |
+| The Ring Door | The First Ring | The Deep Knot; five scars end the sitting | The Heartwood Door: turned since, and the eaten arc on ring four; the push-in keeps going; then closing the door (par 11) or leaving it open |
+| Trunk and Shadow | Old Rules | Four mutated cards: Blessing, Tremor, the Eye, the Hollow Square | Play the Shadow, by Twig's rule; three knocks answered and the Hand lifts the Shadow too |
+| Tremor Scroll | Summer: the squirrel's hours | Autumn: weather, caching, the faceless row and the Pulse map | The winter sitting: the faceless column alone, with listening posts; it turns out to be the city's own budget |
+
+*The hidden meter.* `pulse` runs 0 to 100 and starts at 40. A council that gives more than 3 tap
+tokens adds 3 for each token past the third; each Knot Sanctum standing adds 2 a season; each
+offering pot adds 2. A frost season takes 5; the ants' procession 15; each Gallery Plug pot 8;
+sealing the Heartwood 10. It is never shown as a number: the player sees it as marks in the
+faceless column. (The Ring, in phase 3, will read it.)
+
+*The three links between layers.*
+
+| Link | From | To | State | Playable |
+| --- | --- | --- | --- | --- |
+| A Plug pot makes one site's paper floors solid | `c5_kitchen`: the player picks the Tapper's Stair, the Middle Ledges or Lowridge Gate | The next crack runner (`c5_run`, `c6_run`; in the web build, every stage of the runner) | `gallery_plug.site`, `gallery_plug.pots` | Now, in the web build |
+| A door's scars are side entrances; a clean cut is a shelter | Any Ring Door (`c2_door`, `c4_door`, `c5_door`) | The next crack defence (`c3_mites`, `c3_beetle`, `c4_ants`, `c6_war`): one side entrance for each scar, at most two. `c6_shadow`: one more knot shelter (7, 8 or 9 in place of 6) for each clean cut | `door.scars`, `door.clean_cuts` | The scars now, in the web build; the shelters are for the 3D build |
+| A winter win as the Shadow shows the tap sites early | `c5_tns`, played from Twig's side | `c6_touch`: the three tap sites are ringed ten seconds before the first tap, long enough to move one district | `shadow.played` | Written for the 3D build; the web build records the flag |
+
+Each mode works when the other was never played. When a link fires the receiving mode says so in
+one line ("Because you …"). One more join was built because the twist needs it: a whole Pulse map
+on the Tremor Scroll (`pulse_map.complete`) keeps every tick mark lit in the dark of Against the
+Tide.
+
+*Scenes added to `data/scenes.json`.*
+
+| Scene | Layer | Chapter | Minutes | Reads | Writes |
+| --- | --- | --- | --- | --- | --- |
+| `c2_sorrel_wall` Sorrel's Wall | 3D, `lowridge` | ch2_spring | 2 | `mossa.on_time` | `sorrel.met` |
+| `c3_thumb` The Thumb on the Deck | 3D, `highridge-square` | ch3_summer | 2 | `pell.alive` | `pell.thumb_seen` |
+| `c4_omen_pulse` The Blank Card | 1D, `omen_spread` | ch4_autumn | 2 | `pullbacks`, `inst.elders`, `pell.thumb_seen`, `year.leading` | `readings`, the standings, `pulse.heard`, `pulse.blank_turned`, `pulse.answer` |
+| `c4_faceless` The Faceless Marks | 3D, `highridge` | ch4_autumn | 1 | `faceless_marks`, `pulse.heard` | `fenn.second_scroll` |
+| `c5_lowridge` Lowridge Comes Up the Crack | 3D, `lowridge` | ch5_winter | 2 | `sorrel.backed`, `sorrel.met`, `pulse`, `gallery_plug.site` | `lowridge.settled`, `roll`, `fallen`, `hands`, `morale` |
+
+Sorrel's council token: at the autumn council (`c4_city`) one effort token may go to Sorrel's
+listeners if `sorrel.met` is true; it sets `sorrel.backed`. In `c5_lowridge`, if it is set the
+street was empty; if not, three names go on the Roll. Either way hands rise by the arrivals and the
+Winter Count seats them.
+
+*The Sounding* is written into `c6_touch` (it reads `pulse`, `pulse_map.complete` and
+`shadow.played`, and writes `sounding.heard`): tap one lands on the plate the people carved most
+(the lowest `bark.integrity`), tap two on the plate the Pulse map rings, tap three where the city
+stands, and each is answered by rings spreading from that plate. No new scene; the web build still
+plays its stand-in, the choice of a plate after the autumn seal. The payoff of the long puzzle
+(which plate is cleared, and the twelve names in the Flake) stays in phase 3.
+
+*The Heartwood, opened* is the exit of `c5_door`, not a scene of its own: the push-in keeps going
+and the page shows what is behind the door. Its two interior plates are phase-3 art.
 
 **Phase 3, decided, not built: endings and replay.** The added images in the four existing
-endings; The Ring; playing the Shadow in winter's Trunk and Shadow; the second-playthrough changes
+endings; The Ring; the second-playthrough changes
 (the notches readable from the first deal, the faceless row from chapter 1, the stump over the
 fence in the first pull-back, Sorrel as a festival opponent); the remaining art.
 
@@ -1673,17 +1745,29 @@ Everything below is not in the author's text and is proposed for the author to a
 | The Pulse map kept in Old Resin's recipe book; a mark shades a plate; a whole map rings the plate the second tap will find (accepted 2026-11-15; first step built in phase 1) | Section 11.5 |
 | The flags `pulse.heard`, `pulse.blank_turned`, `pulse.answer`, `faceless_marks`, `pulse_map.complete`, `deck.honest` (accepted 2026-11-15; phase 1) | Section 18 |
 | Added lines: Pell, "Then for once we are holding the same hand."; Fenn, "It has no face. I gave it one twice, to make it fit. I scraped them off." and "It answers us."; Twig, "Is it knocking to come in, or knocking to see who's home?" (accepted 2026-11-15; used in phase 1) | Sections 6, 11.1 |
-| Sorrel of Lowridge, her grandmother, and Sorrel's Wall; her line "You Highridge lot hear the Trunk when it shouts. Down here it mutters." (accepted 2026-11-15; phase 2) | Section 21 |
-| Pell's secret (dealing by the notches to keep the balance) and The Thumb on the Deck; notch-reading and the contested slot (accepted 2026-11-15; phase 2) | Section 21 |
-| Fenn's second scroll, The Faceless Marks, and the Scroll House rule against faceless records (accepted 2026-11-15; the rule is used in phase 1, the scene is phase 2) | Sections 11.5, 21 |
-| Chanter Hollow pouring offerings into the Heartwood crack (accepted 2026-11-15; phase 2) | Section 21 |
-| Lowridge Comes Up the Crack, its losses if Sorrel was not backed, and her council token (accepted 2026-11-15; phase 2) | Section 21 |
-| The hidden `pulse` meter and what moves it; the Sounding (accepted 2026-11-15; phase 2) | Section 21 |
-| Runner: paper floor, the crowd, Against the Tide and the passed lantern. Defence: paper wall, the plugged door, The Procession and the Wall, ants lowering the Pulse; Burr's line "I have a spear and it has a wall. Neither of us wants to find out." (accepted 2026-11-15; phase 2) | Section 21 |
-| Kitchen: sour sap, recipe 13 Gallery Plug, The Great Mending. Ring Door: the eaten arc, closing a door, the turned Heartwood, the open interior. Trunk and Shadow: the Hollow square card. Tremor Scroll: listening posts (accepted 2026-11-15; phase 2) | Section 21 |
-| The three links between layers (accepted 2026-11-15; phase 2) | Section 21 |
+| Sorrel of Lowridge, her grandmother, and Sorrel's Wall; her line "You Highridge lot hear the Trunk when it shouts. Down here it mutters." (accepted 2026-11-15, built 2026-11-16) | Section 21 |
+| Pell's secret (dealing by the notches to keep the balance) and The Thumb on the Deck; notch-reading and the contested slot (accepted 2026-11-15, built 2026-11-16) | Section 21 |
+| Fenn's second scroll, The Faceless Marks, and the Scroll House rule against faceless records (accepted 2026-11-15, built 2026-11-16) | Sections 11.5, 21 |
+| Chanter Hollow pouring offerings into the Heartwood crack (accepted 2026-11-15, built 2026-11-16) | Section 21 |
+| Lowridge Comes Up the Crack, its losses if Sorrel was not backed, and her council token (accepted 2026-11-15, built 2026-11-16) | Section 21 |
+| The hidden `pulse` meter and what moves it; the Sounding (accepted 2026-11-15, built 2026-11-16: the meter in the web build, the Sounding as flags `c6_touch` reads) | Section 21 |
+| Runner: paper floor, the crowd, Against the Tide and the passed lantern. Defence: paper wall, the plugged door, The Procession and the Wall, ants lowering the Pulse; Burr's line "I have a spear and it has a wall. Neither of us wants to find out." (accepted 2026-11-15, built 2026-11-16) | Section 21 |
+| Kitchen: sour sap, recipe 13 Gallery Plug, The Great Mending. Ring Door: the eaten arc, closing a door, the turned Heartwood, the open interior. Trunk and Shadow: the Hollow square card. Tremor Scroll: listening posts (accepted 2026-11-15, built 2026-11-16) | Section 21 |
+| The three links between layers (accepted 2026-11-15, built 2026-11-16) | Section 21 |
 | Yard details: a stump over the fence from spring; the hollow underside of the flake (accepted 2026-11-15; phase 3) | Section 21 |
 | The added images in the four existing endings; the ending The Ring, the ribbon and its last line; playing the Shadow; the second-playthrough changes (accepted 2026-11-15; phase 3) | Section 21 |
+| The scenes `c2_sorrel_wall`, `c3_thumb`, `c4_omen_pulse`, `c4_faceless`, `c5_lowridge`; the location Lowridge (accepted 2026-11-15, built 2026-11-16) | Sections 9, 21 |
+| Playing the Shadow by Twig's rule (accepted 2026-11-15; roadmapped for phase 3, built 2026-11-16 as the board's twist stage because section 3 of the deep dive names it there and the third link needs it) | Section 21 |
+| **New in phase 2, not in `DEEP_DIVE.md`: for the author to approve or strike** | |
+| Runner: listening (stand still and a paper floor is heard) as the way through the dark; Sorrel having chalked one floor; the lantern's rule (no wide gap is jumped with it in hand); the three named sites of the Long Crack (the Tapper's Stair, the Middle Ledges, Lowridge Gate); penalties of 4 seconds for paper | Section 21 |
+| Defence: the dry branch beside the papered one; ants turning where an offering lies by an opening, pausing to eat anywhere else, and coming out of the dry branch angry; the monster reading of the ants ending as "done", not a win | Section 21 |
+| Omen Spread: the teach reading never failing; the test reading lost when it does not fit; the twist won when the Shadow's reading stands; the contested card laid in the Crown; notch-reading as a one-card trade | Section 21 |
+| Kitchen: sour sap as a second jar; the Plug read by Resin as "wrong"; The Great Mending as five pots in 75 seconds; one site poured | Section 21 |
+| Ring Door: the eaten arc as positions 3 to 5 of ring four; the Heartwood's opening par of 9; five scars ending the Deep Knot; the choice to seal or leave open; the five Heartwood chronicle lines | Section 21 |
+| Trunk and Shadow: the Hollow Square falling on rounds 6, 10 and 14; a knock defined as a Folk moving two squares; three knocks answered as the Shadow's win | Section 21 |
+| Tremor Scroll: the winter rule (a hard-tapping or offering day is two louder, to at most 3); what each listening post can hear; Knotholm hearing nothing | Section 21 |
+| The amounts that move `pulse`, and its start at 40 | Section 21 |
+| New lines for Mossa, Sorrel, Burr, Resin, Twig, Fenn, Chanter Hollow and the crowd in the seven web modes that are not listed above | Section 21 |
 | **New in phase 1, not in `DEEP_DIVE.md`: for the author to approve or strike** | |
 | The wording of who answers the Pulse: "The Knot will keep it holy, and unread." / "The Battlements will stand a watch on the wall." / "The Scroll House will write down a thing with no face."; and `pulse.answer` recording it | Section 11.1 |
 | Fenn's deal read as a trade: one of the two shown cards may be taken for a hand card, once (the deep dive says only that she shows them) | Section 11.1 |

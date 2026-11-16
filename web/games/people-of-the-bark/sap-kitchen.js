@@ -13,11 +13,26 @@
 // Resin's mark sits by her words; the spring chapter card heads the opening card. Plates of recipes not yet
 // found are never shown: they would give the pot away.
 import * as kit from "./_art.js";
+import * as ladder from "./_ladder.js";
+
+// Phase 2: three visits. Teach, spring: thickness (as before). Test, autumn: two of the three sealants before
+// winter. Twist, winter: the thirteenth page, Gallery Plug (glue; ash and leaf-skin; 5–6 stirs; sour sap).
+// It needs froth, which Resin has taught all year ruins glue, and sour sap, which spoils everything else.
+// Her one word under the blank entry is "wrong". Once it is found: The Great Mending, every pot in the city
+// on the boil, cooked down the line against the tread. Each Plug pot is pulse −8, and the player picks the
+// site of the Long Crack where they are poured (api.shared "plug_site"): its paper floors are solid in the
+// next Crack runner.
+const SITES = [["stair", "the Tapper's Stair"], ["ledges", "the Middle Ledges"], ["gate", "Lowridge Gate"]];
+const SPEC = { title: "Sap Kitchen", chip: "left:auto;right:8px;bottom:auto;top:4px", stages: [
+  { name: "Spring: thickness", blurb: "Heat and boil make thickness. Three pages before the jar runs dry." },
+  { name: "Autumn: sealant before winter", blurb: "Two of the three sealants, with the leaf-skin now on the shelf." },
+  { name: "The thirteenth page", blurb: "A blank entry with one word under it: “wrong”. Everything Resin taught about glue is in the way." },
+] };
 
 const plateId = (r) => `recipe-${String(r.n).padStart(2, "0")}-${r.name.toLowerCase().replace(/['’]/g, "").replace(/[^a-z]+/g, "-")}`;
 const INK = "#3a281c", RED = "#b8402a", AMBER = "#d9902a", GOLD = "#f0c050", LANT = "#e8742a", LIME = "#c4d65a", PAPER = "#efe2c4", GREY = "#7d6c5a";
 const THICK = { low: { short: "runny", long: "syrup" }, middle: { short: "syrup", long: "glue" }, high: { short: "glue", long: "hard" } };
-const ING = {
+const ING0 = {
   lichen: { name: "Lichen", ang: -45, open: true },
   pollen: { name: "Pollen", ang: 0, open: true },
   honeydew: { name: "Honeydew", ang: 45, open: true },
@@ -26,7 +41,7 @@ const ING = {
   frost: { name: "Frost", ang: 180, open: false, when: "winter" },
   leaf: { name: "Leaf-skin", ang: 225, open: false, when: "autumn" },
 };
-const RECIPES = [
+const RECIPES0 = [
   { n: 1, name: "Groove Syrup", cat: "food", thick: "syrup", ing: [], stirs: "clear", eff: "Food +6", hint: "sticky", open: true },
   { n: 2, name: "Lichen Loaf", cat: "food", thick: "hard", ing: ["lichen"], stirs: "smooth", eff: "Food +8", hint: "keeps", open: true },
   { n: 3, name: "Pollen Cake", cat: "food", thick: "hard", ing: ["pollen", "honeydew"], stirs: "smooth", eff: "Food +10, morale +2", hint: "sweet", open: true },
@@ -39,7 +54,15 @@ const RECIPES = [
   { n: 10, name: "Frost Candy", cat: "food", open: false, when: "winter" },
   { n: 11, name: "Winter Bread", cat: "food", open: false, when: "winter" },
   { n: 12, name: "Pell's Tear", cat: "offering", open: false, when: "winter" },
+  { n: 13, name: "Gallery Plug", cat: "sealant", open: false, when: "", late: true },
 ];
+// what autumn and winter open (data/recipes.json)
+const LATER = {
+  5: { thick: "glue", ing: ["resin"], stirs: "clear", eff: "Bark integrity +4", hint: "holds" },
+  6: { thick: "glue", ing: ["resin", "ash"], stirs: "smooth", eff: "Bark integrity +6", hint: "gritty" },
+  7: { thick: "hard", ing: ["leaf", "resin"], stirs: "clear", eff: "Bark integrity +5", hint: "keeps" },
+  13: { thick: "glue", ing: ["ash", "leaf"], stirs: "frothy", eff: "Pulse falls", hint: "wrong", sour: true },
+};
 const CAT_COL = { food: LIME, sealant: GREY, offering: GOLD };
 const GLYPH = {
   sap: `<circle r="13" fill="none" stroke="${INK}" stroke-width="2"/><path d="M0 -8 Q7 2 0 8 Q-7 2 0 -8Z" fill="${AMBER}"/>`,
@@ -53,8 +76,18 @@ const GLYPH = {
 };
 
 export default {
-  mount(root, api) {
+  mount(root, api) { return ladder.run(root, api, SPEC, play); },
+};
+
+function play(root, api, stage) {
+  {
     const P = "people-of-the-bark-sap-kitchen-";
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const RECIPES = RECIPES0.filter((r) => !r.late || stage === 2).map((r) => (stage > 0 && LATER[r.n] ? Object.assign({}, r, LATER[r.n], { open: true }) : Object.assign({}, r)));
+    const ING = JSON.parse(JSON.stringify(ING0)); if (stage > 0) ING.leaf.open = true;
+    const GOAL = [null, [5, 6, 7], [13]][stage], NEED = [3, 2, 1][stage];
+    const got = () => (GOAL ? GOAL.filter((n) => S.found.has(n)).length : S.found.size);
+    let tick = 0, siteEl = null;
     const offs = [];
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); offs.push(() => t.removeEventListener(e, f, o)); };
     const timers = [];
@@ -63,7 +96,7 @@ export default {
     const gentle = losses >= 2;
 
     const SAP0 = gentle ? 60 : 50;
-    const S = { sap: SAP0, heat: "middle", boil: "short", stirs: 0, order: [], found: new Set(), seen: {}, misses: 0, pots: [], food: 0, knot: 0, morale: 0, over: false, last: null, tastes: 3, cooking: false, beats: new Set() };
+    const S = { base: "sweet", mend: null, sap: SAP0, heat: "middle", boil: "short", stirs: 0, order: [], found: new Set(), seen: {}, misses: 0, pots: [], food: 0, knot: 0, morale: 0, over: false, last: null, tastes: 3, cooking: false, beats: new Set() };
     if (gentle) for (const h of ["low", "middle", "high"]) for (const b of ["short", "long"]) S.seen[h + "/" + b] = true;
 
     const wrap = document.createElement("div");
@@ -90,6 +123,8 @@ export default {
 .${P}ing[aria-pressed=true]{background:${GOLD};box-shadow:0 0 0 2px ${RED}}
 .${P}ing b{font:12px ui-monospace,monospace;background:${RED};color:${PAPER};border-radius:50%;width:18px;height:18px;display:grid;place-items:center}
 .${P}ing:disabled{opacity:.4;cursor:default}
+.${P}mend{border:1px solid ${RED};background:rgba(184,64,42,.1);padding:6px 10px;font:13px ui-monospace,monospace;letter-spacing:.08em;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
+.${P}mend b{color:${RED};font-weight:600}.${P}mend span{font-size:18px;letter-spacing:.2em}.${P}mend i{margin-left:auto}
 .${P}seg{display:inline-flex;border:1px solid ${INK};border-radius:3px;overflow:hidden}
 .${P}seg button{font:14px ui-monospace,monospace;background:rgba(251,243,223,.6);border:0;border-left:1px solid rgba(58,40,28,.4);color:${INK};padding:6px 10px;cursor:pointer;min-height:36px}
 .${P}seg button:first-child{border-left:0}
@@ -151,6 +186,7 @@ export default {
   <div class="${P}row ${P}set">
    <span class="${P}tag">HEAT</span><span class="${P}seg" data-g="heat"><button type="button" data-v="low">low</button><button type="button" data-v="middle">mid</button><button type="button" data-v="high">high</button></span>
    <span class="${P}tag">BOIL</span><span class="${P}seg" data-g="boil"><button type="button" data-v="short">short</button><button type="button" data-v="long">long</button></span>
+   ${stage === 2 ? `<span class="${P}tag">SAP</span><span class="${P}seg" data-g="base"><button type="button" data-v="sweet">sweet</button><button type="button" data-v="sour">sour</button></span>` : ""}
    <span class="${P}tag">STIRS</span><span class="${P}seg" data-g="stir"><button type="button" data-v="-">−</button><button type="button" data-v="n" disabled style="min-width:34px;opacity:1">0</button><button type="button" data-v="+">+</button></span>
   </div>
   <div class="${P}row"><button class="${P}ghost" data-a="taste" type="button"></button><button class="${P}ghost" data-a="clear" type="button">Empty</button><button class="${P}btn" data-a="cook" type="button">Cook · 10 sap</button><button class="${P}ghost" data-a="close" type="button">Close the book</button></div>
@@ -164,13 +200,18 @@ export default {
 </div>
 <div class="${P}intro"><div class="${P}card" role="dialog" aria-label="How to play">
  <svg class="${P}seal" viewBox="-30 -30 60 60" aria-hidden="true"><circle r="27" fill="none" stroke="${RED}" stroke-width="2"/><path d="M0 -20 L17 10 L-17 10Z" fill="none" stroke="${RED}" stroke-width="2"/><path d="M0 -8 Q6 2 0 7 Q-6 2 0 -8Z" fill="${AMBER}"/></svg>
- ${kit.chapter(api.art, "chapter-2-spring")}
- <h2 style="margin-top:8px">Sap Kitchen</h2><div class="${P}sub">HIGHRIDGE · SPRING</div>
- <p class="${P}beat">Old Resin's kitchen, the first warm week. Her book is mostly blank and she means to fill it before she dies. Today your hands do the lifting. “Sacred water. Lovely. Pass me the sacred water and a spoon.”</p>
- <p class="${P}goal"><b>Goal:</b> find <b>three</b> recipes before the jar runs dry. ${SAP0} sap; each pot costs 10.</p>
+ ${kit.chapter(api.art, ["chapter-2-spring", "chapter-4-autumn", "chapter-5-winter"][stage])}
+ <h2 style="margin-top:8px">Sap Kitchen</h2><div class="${P}sub">HIGHRIDGE · ${["SPRING", "AUTUMN", "DEEP WINTER"][stage]}</div>
+ <p class="${P}beat">${["Old Resin's kitchen, the first warm week. Her book is mostly blank and she means to fill it before she dies. Today your hands do the lifting. “Sacred water. Lovely. Pass me the sacred water and a spoon.”",
+   "Autumn. The council wants every crack on the weather side sealed before frost, and sealant is cooked, not wished for. The leaf-skin is on the shelf now. “Glue's the one that punishes you. Stir it to froth and it crumbles.”",
+   "Deep winter. Lowridge is in Highridge's doorways, and the walls down there are paper. Resin opens the book at the back. One entry has never been filled. Her mother wrote a single word under it. “Sour sap comes from taps over a gallery. It spoils food. I keep a jar for scouring pots.”"][stage]}</p>
+ <p class="${P}goal"><b>Goal:</b> ${[`find <b>three</b> recipes before the jar runs dry. ${SAP0} sap; each pot costs 10.`,
+   `find <b>two of the three sealants</b> (pages 5, 6, 7) before the jar runs dry. ${SAP0} sap; each pot costs 10.`,
+   `fill the <b>thirteenth page</b> before the jar runs dry. ${SAP0} sap; each pot costs 10. Then cook it down the line.`][stage]}</p>
  <div class="${P}key">
   <kbd>heat + boil</kbd><span>together they set how thick it comes out</span>
   <kbd>shelf</kbd><span>add up to three things, in order</span>
+  ${stage === 2 ? "<kbd>sap · O</kbd><span>sweet, or the sour jar</span>" : ""}
   <kbd>Cook · C</kbd><span>each blank page has one word: aim for it</span>
  </div>
  <button class="${P}btn" type="button">Light the fire</button>
@@ -211,6 +252,7 @@ export default {
       if (S.over || S.cooking) return;
       if (g === "heat") S.heat = v;
       if (g === "boil") S.boil = v;
+      if (g === "base") { S.base = v; if (v === "sour" && !S.beats.has("sour")) { S.beats.add("sour"); say("“That jar?”", "Resin raises an eyebrow and says nothing else. It smells of the Under."); } }
       if (g === "stir") S.stirs = v === "reset" ? 0 : Math.max(0, Math.min(6, S.stirs + (v === "+" ? 1 : -1)));
       refresh();
     }
@@ -305,7 +347,8 @@ export default {
         if (S.found.has(r.n)) return `<div class="${P}ent ${P}got" data-n="${r.n}" style="--c:${CAT_COL[r.cat]}">${art.has(plateId(r)) ? `<img src="${art.url(plateId(r))}" alt="">` : `<small>${r.n}</small>`}${r.name}<i>${r.eff}</i></div>`;
         return `<div class="${P}ent"><small>${r.n}</small><i>“${r.hint}”</i></div>`;
       }).join("");
-      cnt.textContent = `${S.found.size} / 3 FOUND`;
+      cnt.textContent = stage === 2 ? (S.found.has(13) ? "PAGE 13 WRITTEN" : "PAGE 13 BLANK") : `${got()} / ${NEED} ${stage === 1 ? "SEALANTS" : "FOUND"}`;
+      wrap.querySelectorAll(`.${P}seg[data-g=base] button`).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === S.base)));
       const lastR = S.lastFound && art.has(plateId(S.lastFound)) ? S.lastFound : null;
       page1.hidden = !lastR;
       if (lastR && page1.dataset.n !== String(lastR.n)) {
@@ -331,12 +374,18 @@ export default {
       const thick = THICK[S.heat][S.boil];
       const stirs = S.stirs <= 2 ? "clear" : S.stirs <= 4 ? "smooth" : "frothy";
       const crumbly = thick === "glue" && stirs === "frothy";
-      const pot = { thick, stirs, ing: S.order.slice(), crumbly };
+      const pot = { thick, stirs, ing: S.order.slice(), crumbly, sour: S.base === "sour" };
       const same = (a, b) => a.length === b.length && a.every((x) => b.includes(x));
-      pot.recipe = crumbly ? null : RECIPES.find((r) => r.open && r.thick === thick && r.stirs === stirs && same(r.ing, pot.ing)) || null;
+      // sour sap spoils every pot but one, and that one is the pot froth is supposed to ruin
+      const plug = pot.sour && RECIPES.find((r) => r.open && r.sour && r.thick === thick && r.stirs === stirs && same(r.ing, pot.ing));
+      if (plug) pot.crumbly = false;
+      pot.spoiled = pot.sour && !plug;
+      pot.recipe = plug || (pot.crumbly || pot.spoiled ? null : RECIPES.find((r) => r.open && !r.sour && r.thick === thick && r.stirs === stirs && same(r.ing, pot.ing)) || null);
       return pot;
     }
     function word(pot) {
+      if (pot.recipe && pot.recipe.sour) return "wrong";
+      if (pot.spoiled) return "sour";
       if (pot.crumbly) return "gritty";
       if (pot.ing.includes("pollen") && pot.ing.includes("honeydew") && pot.thick === "runny") return "gold";
       if (pot.ing.includes("pollen")) return "sweet";
@@ -373,8 +422,8 @@ export default {
         if (pot.recipe.cat === "offering") S.knot += 3;
       } else {
         S.misses++;
-        sub = pot.crumbly ? "Froth ruins glue: it crumbles. A failed pot." : `${cap(pot.thick)}, ${pot.stirs}. Edible, just: food +2.`;
-        if (!pot.crumbly) S.food += 2;
+        sub = pot.spoiled ? `Sour sap spoils it: ${pot.thick}, ${pot.stirs}, and fit for nothing.${pot.thick === "glue" && pot.stirs !== "frothy" ? " It sets, though. It sets like something else's wall." : ""}` : pot.crumbly ? "Froth ruins glue: it crumbles. A failed pot." : `${cap(pot.thick)}, ${pot.stirs}. Edible, just: food +2.`;
+        if (!pot.crumbly && !pot.spoiled) S.food += 2;
         if (S.misses >= 3) {
           const near = RECIPES.find((r) => r.open && !S.found.has(r.n));
           if (near) sub += ` Resin, not looking up: “The ${near.hint} one wants to be ${near.thick}.”`;
@@ -385,7 +434,13 @@ export default {
       refresh();
       if (fresh) { const el = book.querySelector(`[data-n="${pot.recipe.n}"]`); if (el && !api.reducedMotion) el.classList.add(P + "new"); }
       beats(fresh);
-      if (S.found.size >= 3) finish(true);
+      if (S.mend) {
+        if (pot.recipe && pot.recipe.n === 13) { S.mend.pots++; say("“Wrong. Next!”", `Pot ${S.mend.pots} of 5 goes down the line, hand to hand, still frothing.`); if (S.mend.pots >= 5) endMending(); }
+        else say("“Not that. The wrong one!”", "A pot wasted, and the tread is coming.", true);
+        return;
+      }
+      if (stage === 2 && got() >= NEED) { startMending(); return; }
+      if (got() >= NEED) finish(true);
       else if (S.sap < 10) finish(false);
     }
     function beats(fresh) {
@@ -395,7 +450,47 @@ export default {
       if (S.sap === 10 && S.found.size < 3) once("last", () => later(() => say("The jar", "One pot of sap left. Resin taps the book where it is still blank."), 2400));
     }
     const cap = (s) => s[0].toUpperCase() + s.slice(1);
+    // ---- the set-piece: The Great Mending ----
+    function startMending() {
+      S.mend = { t: gentle ? 100 : 75, pots: 0 }; S.sap = 99;
+      say("“Wrong,” says Resin, and writes it in.", "Gallery Plug. Now THE GREAT MENDING: every pot in the city is on the boil. Cook it again, down the line, before the seventh-day tread. Five pots.");
+      const bar = document.createElement("div"); bar.className = P + "mend"; wrap.querySelector("." + P + "side").prepend(bar); S.mend.bar = bar;
+      const paint = () => { bar.innerHTML = `<b>THE GREAT MENDING</b><span>${"●".repeat(S.mend.pots)}${"○".repeat(5 - S.mend.pots)}</span><i>the tread in ${Math.max(0, Math.ceil(S.mend.t))} s</i>`; };
+      paint();
+      tick = setInterval(() => { if (S.over || !S.mend || S.mend.done) return; S.mend.t -= 0.5; paint(); if (S.mend.t <= 0) endMending(); }, 500);
+      refresh();
+    }
+    function endMending() {
+      if (!S.mend || S.mend.done) return;
+      S.mend.done = true; clearInterval(tick); S.over = true; sideboard();
+      const n = S.mend.pots + 1;
+      ladder.pulse(api, -8 * n);
+      siteEl = document.createElement("div"); siteEl.className = P + "intro";
+      siteEl.innerHTML = `<div class="${P}card" role="dialog" aria-label="Where the Plug is poured"><h2>The tread begins</h2><div class="${P}sub">${n} POT${n === 1 ? "" : "S"} OF GALLERY PLUG</div>
+<p class="${P}beat">The pots stand cooling in a row. They will stop one stretch of the Long Crack, and only one. Sorrel's listeners can name three where the floors tick.</p>
+<p class="${P}goal"><b>Pour them where?</b> The paper floors at that site will be solid the next time Mossa runs the crack.</p>
+<div style="display:grid;gap:8px">${SITES.map(([k, name]) => `<button class="${P}btn" type="button" data-site="${k}">${cap(name)}</button>`).join("")}</div></div>`;
+      wrap.appendChild(siteEl);
+      siteEl.querySelectorAll("button").forEach((b) => on(b, "click", () => {
+        const name = SITES.find((q) => q[0] === b.dataset.site)[1];
+        shared.set("plug_site", b.dataset.site); shared.set("plug_pots", n);
+        siteEl.remove(); siteEl = null; api.store.set("losses", 0);
+        const res = { outcome: "win", text: `The thirteenth page is filled: Gallery Plug, glue made with sour sap, ash and leaf-skin, stirred to a froth. Everything Resin taught about glue said it would crumble. ${n} pot${n === 1 ? "" : "s"} went down the line before the tread and ${n === 1 ? "was" : "were"} poured at ${name}. Behind the plug the ticking stops. Resin, tasting the ladle and spitting: “Wrong. My mother could have said why.”` };
+        if (art.has("recipe-13-gallery-plug")) endEl = kit.endCard(root, api, "recipe-13-gallery-plug", res, `<b>OLD RESIN'S BOOK · THE BACK PAGES</b>Gallery Plug, poured at ${name}.`); else api.end(res);
+      }));
+      siteEl.querySelector("button").focus({ preventScroll: true });
+    }
     function finish(won, closed) {
+      if (stage > 0) {
+        if (S.over) return;
+        S.over = true; sideboard(); api.store.set("losses", won ? 0 : losses + 1);
+        const names = RECIPES.filter((r) => S.found.has(r.n)).map((r) => r.name).join(", ") || "none";
+        later(() => api.end(won
+          ? { outcome: "win", text: `Sealant before winter: ${names}. The pots go out to the weather side on a pole between two tappers. Resin: “Glue's the one that punishes you.” She says it as if she is warning someone in particular. ${S.sap} sap left in the jar.` }
+          : { outcome: "lose", text: stage === 1 ? `${closed ? "You close the book" : "The sap jar is empty"} with ${got()} of 2 sealants found (${names}). The weather side goes into the frost with its cracks open; bark integrity −3.${losses + 1 >= 2 ? " Next visit Resin spares 60 sap and chalks the heat chart." : ""}`
+            : `${closed ? "You close the book" : "The sap jar is empty"} and the thirteenth page is still blank. Resin looks at the word under it for a while. “Wrong,” she reads. “Well. We were careful.”${losses + 1 >= 2 ? " Next visit she spares 60 sap." : ""}` }), 1200);
+        return;
+      }
       if (S.over) return;
       S.over = true; sideboard();
       const names = RECIPES.filter((r) => S.found.has(r.n)).map((r) => r.name).join(", ") || "none";
@@ -411,7 +506,7 @@ export default {
     on(cookBtn, "click", cook);
     on(tasteBtn, "click", taste);
     on(wrap.querySelector("[data-a=clear]"), "click", () => { if (S.over || S.cooking) return; S.order = []; S.stirs = 0; refresh(); say("“Start again.”", "The order is emptied and the paddle set down."); });
-    on(wrap.querySelector("[data-a=close]"), "click", () => finish(S.found.size >= 3, true));
+    on(wrap.querySelector("[data-a=close]"), "click", () => { if (S.mend) endMending(); else finish(got() >= NEED, true); });
     on(window, "keydown", (e) => {
       if (S.over || wrap.querySelector("." + P + "intro") || e.ctrlKey || e.metaKey || e.altKey) return;
       const k = e.key.toLowerCase();
@@ -420,20 +515,23 @@ export default {
       else if (k === "t") taste();
       else if (k === "h") set("heat", { low: "middle", middle: "high", high: "low" }[S.heat]);
       else if (k === "b") set("boil", S.boil === "short" ? "long" : "short");
+      else if (k === "o" && stage === 2) set("base", S.base === "sweet" ? "sour" : "sweet");
       else if (k === "+" || k === "=" || k === "s") set("stir", "+");
       else if (k === "-") set("stir", "-");
-      else if (/^[1-5]$/.test(k)) toggleIng(Object.keys(ING)[+k - 1]);
+      else if (/^[1-7]$/.test(k)) toggleIng(Object.keys(ING)[+k - 1]);
       else if (k === "backspace" || k === "x") { S.order = []; refresh(); }
     });
     const startBtn = wrap.querySelector(`.${P}intro .${P}btn`);
     on(startBtn, "click", () => {
       wrap.querySelector("." + P + "intro").remove();
-      say("“Sap first. Always sap.”", gentle ? "Resin has chalked the heat chart for you. Taste before you cook (T): three dips of the ladle cost nothing." : "Old Resin stirs an empty pot. Taste before you cook (T): three dips of the ladle cost nothing.");
+      if (stage === 1) say("“Sealant. Before the frost, not after.”", "Pages 5, 6 and 7 each have a word. Two of them will do. Taste before you cook (T).");
+      else if (stage === 2) say("“Thirteen.”", "The blank page's one word is “wrong”. Sweet sap or the sour jar (O); the shelf; the paddle. Taste before you cook (T).");
+      else say("“Sap first. Always sap.”", gentle ? "Resin has chalked the heat chart for you. Taste before you cook (T): three dips of the ladle cost nothing." : "Old Resin stirs an empty pot. Taste before you cook (T): three dips of the ladle cost nothing.");
       svg.querySelector("[data-a=heat]").focus();
     });
     startBtn.focus({ preventScroll: true });
     refresh();
 
-    return { unmount() { timers.forEach(clearTimeout); offs.forEach((f) => f()); if (endEl) endEl.remove(); wrap.remove(); } };
-  },
-};
+    return { unmount() { clearInterval(tick); timers.forEach(clearTimeout); offs.forEach((f) => f()); if (endEl) endEl.remove(); if (siteEl) siteEl.remove(); wrap.remove(); } };
+  }
+}

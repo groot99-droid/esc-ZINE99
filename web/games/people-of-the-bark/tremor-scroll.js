@@ -17,6 +17,21 @@
 // sittings, Fenn underlines what each column usually holds (DESIGN 11.5 hints, standing 40+).
 
 import * as kit from "./_art.js";
+import * as ladder from "./_ladder.js";
+
+// Phase 2: three sittings. Teach, summer: the squirrel's hours (two of three). Test, autumn: weather and
+// caching, with the faceless row and the Pulse map as phase 1 built them (four of six). Twist, the winter
+// sitting: only the faceless column is forecast. It followed warmth all autumn; now the days the council
+// tapped hard or poured offerings are marked on the scroll, and on those days the row is loud whatever the
+// weather. "It answers us." Listening posts (runners' notes from Lowridge, Highridge and Knotholm: loud,
+// faint or nothing) come with each cell. The set-piece: the column being forecast is the city's own budget.
+// A whole Pulse map is remembered (api.shared "pulse_map_whole") and keeps the runner's ticks lit in the dark.
+const SPEC = { title: "Tremor Scroll", chip: "left:auto;right:8px;bottom:auto;top:4px", stages: [
+  { name: "The squirrel's hours", blurb: "Summer. Dawn, dusk, and what a storm does to them." },
+  { name: "Weather and caching", blurb: "Autumn. New hours, and a chalk column that comes from no face of the Trunk." },
+  { name: "The faceless row", blurb: "The winter sitting. The chalk column stops following the weather alone." },
+] };
+const HEAVY = [2, 3, 6, 7, 9, 11];   // winter days the council tapped past three, or poured
 
 const PARTS = ["dawn", "noon", "dusk"];
 const PULSE = "pulse";   // the faceless column
@@ -50,6 +65,17 @@ const PHASES = [
     // the faceless row follows warmth: loud on sun days, faint on rain days
     pulseAt(day) { return { s: this.weather[day - 1] === "sun" ? 3 : 1 }; },
   },
+  {
+    key: "winter", title: "WINTER", days: 12, first: 9,
+    weather: ["rain", "frost", "rain", "frost", "sun", "frost", "sun", "frost", "frost", "frost", "rain", "sun"],
+    heavy: HEAVY,
+    // the squirrel sleeps through frost, and comes out at dawn otherwise
+    truth(day, part) { return this.weather[day - 1] !== "frost" && part === "dawn" ? { face: "E", s: 2 } : null; },
+    cells: [[9, PULSE], [10, PULSE], [11, PULSE], [12, PULSE]],
+    pulse: true,
+    // warmth still counts (sun 3, rain 1, frost silent); a day of heavy tapping or offerings is two louder
+    pulseAt(day) { const w = this.weather[day - 1], base = w === "sun" ? 3 : w === "rain" ? 1 : 0, s = Math.min(3, base + (this.heavy.includes(day) ? 2 : 0)); return s ? { s } : null; },
+  },
 ];
 const WIN_AT = 6;
 // The Pulse map (art/src/70_tremor_scroll.py): 4 plates across, 13 down, in a 420 x 1100 strip.
@@ -58,7 +84,13 @@ const MAP = { x0: 110, y0: 96, cw: 62, ch: 70, cols: 4, rows: 13, w: 420, h: 110
 const TRACE = "#efe2c4", GOLD = "#f0c050", AMBER = "#d9902a", RED = "#e0573a", LIME = "#c4d65a", MUTED = "#c9b99a", DRUM = "#141010";
 
 export default {
-  mount(root, api) {
+  mount(root, api) { return ladder.run(root, api, SPEC, play); },
+};
+
+function play(root, api, stage) {
+  {
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const NEED = [2, 4, 3][stage], OF = [3, 6, 4][stage];
     const P = "people-of-the-bark-tremor-scroll-";
     const offs = [];
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); offs.push(() => t.removeEventListener(e, f, o)); };
@@ -79,7 +111,7 @@ export default {
     const truthOf = (d, p) => (p === PULSE ? phase().pulseAt(d) : phase().truth(d, p));
     const isP = (i) => phase().cells[i][1] === PULSE;
     let faceless = 0, saidFaceless = false;
-    startPhase(0);
+    startPhase(stage);
 
     const wrap = document.createElement("div");
     wrap.className = P + "wrap";
@@ -161,15 +193,21 @@ export default {
  </div>
 </div>
 <div class="${P}intro"><div class="${P}slip" role="dialog" aria-label="How to play">
- ${kit.chapter(art, "chapter-3-summer")}
+ ${kit.chapter(art, ["chapter-3-summer", "chapter-4-autumn", "chapter-5-winter"][stage])}
  <div class="${P}who">${kit.mark(art, "fenn", "Fenn of the Scroll House")}<h2>Tremor Scroll</h2></div>
  <svg viewBox="0 0 400 34" aria-hidden="true"><path d="M0 17 H120 l4 -9 l4 18 l4 -14 l4 10 l4 -5 H260 l3 -4 l3 8 l3 -4 H400" fill="none" stroke="${TRACE}" stroke-width="1.4"/></svg>
- <p class="${P}beat">The Scroll House, summer. Fenn has not slept. The drum has a line for every day the world shook, and the Battlements want to know when it will shake next.</p>
- <p class="${P}goal"><b>Goal:</b> forecast the blank cells. ${WIN_AT} of 9 right over two seasons and the scholars are believed.</p>
+ <p class="${P}beat">${["The Scroll House, summer. Fenn has not slept. The drum has a line for every day the world shook, and the Battlements want to know when it will shake next.",
+   "Autumn. A leaf the size of a country has fallen past the Scroll House, and the tremors keep new hours: something now shakes the world at noon, every noon, from the north. And under the hours Fenn has begun a row of her own, in chalk: small marks that come from no face of the Trunk at all.",
+   "The winter sitting. Fenn unrolls a second scroll from home, the one the Scroll House forbids: nothing on it but the chalk row. “Is it me?” she asks. All autumn it followed the warmth. In the frost it should be silent. It is not always silent. She has marked, with a drop of sap, every day the council tapped past three or poured an offering."][stage]}</p>
+ ${stage === 1 && art.has("scroll-faceless-row") ? `<img class="${P}pic" src="${art.url("scroll-faceless-row")}" alt="A stretch of scroll: the recorded tremors above, and a row of small marks with no face below" width="1600" height="420">` : ""}
+ <p class="${P}goal"><b>Goal:</b> ${["forecast the three blank cells. Two right and the scholars are believed.",
+   "six cells this time, and two in the <b style=\"color:" + CHALK + "\">faceless</b> column. Four of the six right wins the sitting. The faceless marks are not counted: they go on a map.",
+   "forecast the <b style=\"color:" + CHALK + "\">faceless</b> column for four days. Three right and Fenn has her answer. Runners' notes from three listening posts come with each day."][stage]}</p>
  <div class="${P}key">
   <kbd>tap a cell</kbd><span>pick it (or <b>← →</b>)</span>
-  <kbd>E S W N · 0</kbd><span>the face it will shake from, or none</span>
-  <kbd>1 2 3</kbd><span>its strength: the height of the burst</span>
+  ${stage === 2 ? "" : "<kbd>E S W N · 0</kbd><span>the face it will shake from, or none</span>"}
+  <kbd>1 2 3${stage ? " · 0" : ""}</kbd><span>${stage === 2 ? "a faceless mark has no face: its strength, or none" : "its strength: the height of the burst"}</span>
+  ${stage ? `<kbd>L</kbd><span>Fenn's lamp: light every day with the same weather as the cell you are on</span>` : ""}
  </div>
  <button class="${P}seal" type="button">Unroll the scroll</button>
 </div></div>`;
@@ -215,7 +253,7 @@ export default {
       }
       let s = pts.length > 1 ? `<polyline points="${pts.join(" ")}" fill="none" stroke="${lit ? GOLD : TRACE}" stroke-width="${lit ? 1.6 : 1.2}" opacity="${lit ? 1 : 0.88}"/>` : "";
       for (const b of bursts) if ((b.x - G.X0) / (G.X1 - G.X0) <= upto) s += ART ? glyphArt(b.x, y, b.t.face, b.t.s, lit) : faceMark(b.x + (G.narrow ? 14 : 30), y, b.t.face, lit ? GOLD : TRACE, G.narrow ? 0.8 : 1);
-      if (phase().pulse && (G.XP.pulse - G.X0) / (G.X1 - G.X0) <= upto) s += ticks(G.XP.pulse, y, phase().pulseAt(day).s, day, lit ? "#e6eef0" : CHALK);
+      if (phase().pulse && phase().pulseAt(day) && (G.XP.pulse - G.X0) / (G.X1 - G.X0) <= upto) s += ticks(G.XP.pulse, y, phase().pulseAt(day).s, day, lit ? "#e6eef0" : CHALK);
       return s;
     }
     // a cut of the glyph sheet: the burst, its face arrow and letter, and the strength strokes
@@ -231,8 +269,10 @@ export default {
       for (let i = 0; i < k; i++) d += `M${(x - 22 + r() * 40).toFixed(1)} ${(y - 8 + r() * 14).toFixed(1)} l4 -2.4 l-0.8 4 l4.8 -1.6`;
       return `<path d="${d}" fill="none" stroke="${col}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`;
     }
-    function weather(d) {
+    function weather(d) { return weather0(d) + (phase().heavy && phase().heavy.includes(d) ? `<g transform="translate(${(G.narrow ? 20 : 84) + (G.narrow ? 13 : 20)} ${Yd(d)})"><path d="M0 -7 Q6 2 0 6 Q-6 2 0 -7Z" fill="${AMBER}" stroke="#1b120c" stroke-width=".8"/></g>` : ""); }
+    function weather0(d) {
       const w = phase().weather[d - 1], y = Yd(d), x = G.narrow ? 20 : 84;
+      if (w === "frost" && !(ART && ART.w[w])) return `<g transform="translate(${x} ${y})" stroke="#cfe3ea" stroke-width="1.5"><path d="M0 -8 V8 M-7 -4 L7 4 M-7 4 L7 -4"/></g>`;
       if (ART && ART.w[w]) return `<image href="${ART.w[w]}" x="${x - 12}" y="${y - 12}" width="24" height="24"/>`;
       if (w === "sun") return `<g transform="translate(${x} ${y})" stroke="#e7d6b0" fill="none" stroke-width="1.4"><circle r="4.5"/>${[0, 60, 120, 180, 240, 300].map((a) => `<path d="M0 -7 V-10" transform="rotate(${a})"/>`).join("")}</g>`;
       if (w === "rain") return `<g transform="translate(${x} ${y})" fill="#8ab4d4"><path d="M-4 -7 q3 4.5 0 7 q-3 -2.5 0 -7Z"/><path d="M4 -2 q3 4.5 0 7 q-3 -2.5 0 -7Z"/></g>`;
@@ -311,7 +351,9 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
     function panel() {
       const PH = phase(), [d, p] = PH.cells[cur], gs = guess[cur];
       const pulse = p === PULSE;
-      lab.innerHTML = `DAY ${d} · ${pulse ? "NO FACE" : p.toUpperCase()}<small>${PH.weather[d - 1]} · cell ${cur + 1} of ${PH.cells.length}${pulse ? " · strength only" : ""}</small>`;
+      const pt = pulse && stage === 2 ? PH.pulseAt(d) : null, ps = pt ? pt.s : 0;
+      const posts = pulse && stage === 2 ? `<small style="color:#3d4a4f;opacity:1">listening posts · Lowridge: ${ps >= 2 ? "loud" : ps ? "faint" : "nothing"} · Highridge: ${ps === 3 ? "faint" : "nothing"} · Knotholm: nothing</small>` : "";
+      lab.innerHTML = `DAY ${d} · ${pulse ? "NO FACE" : p.toUpperCase()}<small>${PH.weather[d - 1]}${PH.heavy ? (PH.heavy.includes(d) ? " · the council tapped hard" : " · a quiet day in council") : ""} · cell ${cur + 1} of ${PH.cells.length}${pulse ? " · strength only" : ""}</small>${posts}`;
       wrap.querySelectorAll("[data-f]").forEach((b) => { b.setAttribute("aria-pressed", String(!!gs && (gs.none ? b.dataset.f === "none" : !pulse && b.dataset.f === gs.face))); b.disabled = sealed || (pulse && b.dataset.f !== "none"); });
       wrap.querySelectorAll("[data-s]").forEach((b) => { b.setAttribute("aria-pressed", String(!!gs && !gs.none && gs.s === +b.dataset.s)); b.disabled = sealed || (!pulse && (!gs || !!gs.none)); });
       lampBtn.textContent = `lamp · ${lamps}`;
@@ -320,7 +362,7 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
       sealBtn.disabled = sealed || left > 0;
       sealBtn.textContent = left ? `${left} blank` : "Seal the forecast";
       sub.textContent = `${PH.title} · ${PH.cells.length} forecasts`;
-      scoreEl.innerHTML = `correct <b>${tally.correct}</b> / ${tally.made} · need ${WIN_AT} of 9${PH.pulse ? ` · <span style="color:${CHALK}">faceless marks ${guess.filter((g, i) => isP(i) && g && !g.none).length} / 2</span>` : ""}`;
+      scoreEl.innerHTML = stage === 2 ? `<span style="color:${CHALK}">the faceless column</span> · need ${NEED} of ${OF}` : `correct <b>${tally.correct}</b> / ${tally.made} · need ${NEED} of ${OF}${PH.pulse ? ` · <span style="color:${CHALK}">faceless marks ${guess.filter((g, i) => isP(i) && g && !g.none).length} / 2</span>` : ""}`;
       drawMap();
     }
     // ---- the Pulse map strip, from the back pages of Old Resin's recipe book ----
@@ -365,7 +407,7 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
         const was = guess[cur];
         guess[cur] = { s: n }; if (!was) onMarked();
         panel(); draw(); flash(wrap.querySelector(`[data-s="${n}"]`), P + "bump");
-        say("The Pulse map", "in the back of Resin's recipe book: a plate is shaded for the mark.");
+        if (stage !== 2) say("The Pulse map", "in the back of Resin's recipe book: a plate is shaded for the mark.");
         advance(); return;
       }
       if (!guess[cur] || guess[cur].none) { flash(wrap.querySelector(`[data-s="${n}"]`), P + "no"); say("Fenn", "Choose a face before a strength."); return; }
@@ -420,15 +462,27 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
       let n = 0;
       PH.cells.forEach(([d, p], i) => {
         const gs = guess[i];
-        if (p === PULSE) { if (ok(gs, truthOf(d, p), true)) faceless++; return; }
+        if (p === PULSE) { if (ok(gs, truthOf(d, p), true)) faceless++; if (stage !== 2) return; }
         n++;
         const t = PH.truth(d, p); if (ok(gs, t)) { c++; if (!gs.none && t.s === gs.s) f++; }
       });
       tally.correct += c; tally.fine += f; tally.made += n; results.push({ c, f, n });
       panel();
+      if (ph === 2) {
+        // the set-piece: what was being forecast
+        const won = faceless >= NEED;
+        api.store.set("losses", won ? 0 : losses + 1);
+        say("Fenn", won ? "lays the council ledger beside the chalk row. They are the same shape. “It answers us.”" : "turns the scroll back. “Then I still do not know whose hand it is.”");
+        if (won) { shared.set("faceless_read", true); ladder.pulse(api, 0); }
+        later(() => api.end(won
+          ? { outcome: "win", text: `${faceless} of 4 faceless marks forecast. Frost should have silenced the row, and on quiet days it did. On the days the council tapped past three or poured an offering, it was loud whatever the weather. Fenn lays the council's ledger beside her forbidden scroll and they are the same shape: the column you were forecasting was the city's own budget. “It answers us.” Lowridge heard every mark. Knotholm, where the offerings are poured, heard nothing.` }
+          : { outcome: "lose", text: `${faceless} of 4 faceless marks forecast. The row did not keep to the weather: warmth still counts (sun three, rain one, frost silent), but a day the council tapped hard or poured is two louder. The sap drops beside the days said so.${losses + 1 >= 2 ? " Next sitting, Fenn will underline what each column usually holds." : ""}` }), api.reducedMotion ? 500 : 1700);
+        return;
+      }
       if (ph === 0) {
         say("Fenn", c === n ? "“Dawn. East face. Strength two. Again.” She is almost smiling."
           : c ? `${c} of ${n}. “Close. The storms keep it in. Write that down.”` : "“Nothing. Then we were reading the wrong thing.”");
+        if (stage === 0) { finish(); return; }
         later(() => {
           const card = document.createElement("div");
           card.className = P + "intro";
@@ -487,20 +541,31 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
       at(1, 5).focus({ preventScroll: true });
     }
     function finish() {
-      const { correct, fine } = tally, scholars = correct * 2 + fine, won = correct >= WIN_AT;
+      const { correct, fine } = tally, scholars = correct * 2 + fine, won = correct >= NEED;
+      if (stage === 1 && faceless === 2) shared.set("pulse_map_whole", true);
+      if (stage === 0) {
+        api.store.set("losses", won ? 0 : losses + 1);
+        later(() => api.end(won
+          ? { outcome: "win", text: `${correct} of 3 forecasts right, ${fine} of them fine. The Scroll House +${scholars}. Dawn from the east, dusk from the west, and nothing on a storm day. Fenn: “It is not a god. Or it is a god with a routine.” In the backyard, a squirrel keeps its hours.` }
+          : { outcome: "lose", text: `${correct} of 3 right; the Battlements laugh at the scribes. The pattern was on the drum: dawn east at strength two, dusk west at strength one, and nothing at all on storm days.${losses + 1 >= 2 ? " Next sitting, Fenn will underline what each column usually holds." : ""}` }), 1300);
+        return;
+      }
       api.store.set("correct", correct);
       api.store.set("losses", won ? 0 : losses + 1);
       say("Fenn", won ? "quietly: “It keeps hours. Like us.”" : "turns the drum back and reads it again.");
       const pulse = tapRight == null ? "" : ` The faceless row: ${faceless} of 2 marks held${faceless === 2 ? ", and the Pulse map is whole" : ""}. ${tapRight ? "The plate you chose is the one the second tap will find; the city has time to clear it." : "The second tap will land on a plate nobody cleared."} Nothing in the backyard explains that row.`;
       later(() => api.end(won
-        ? { outcome: "win", text: `${correct} of 9 forecasts right, ${fine} of them fine. The Scroll House +${scholars}. Fenn can now say when the world will shake, if not why. In the backyard, a squirrel keeps its hours.${pulse}` }
-        : { outcome: "lose", text: `${correct} of 9 right; the Battlements laugh at the scribes, and the Scroll House gains only ${scholars}. The pattern was on the drum: dawn east, dusk west, nothing in storms; in autumn a noon from the north, rain days only noon, and every fourth dusk empty.${pulse}${losses + 1 >= 2 ? " Next sitting, Fenn will underline what each column usually holds." : ""}` }), 1300);
+        ? { outcome: "win", text: `${correct} of 6 forecasts right, ${fine} of them fine. The Scroll House +${scholars}. Fenn can now say when the world will shake, if not why. In the backyard, a squirrel keeps its hours.${pulse}` }
+        : { outcome: "lose", text: `${correct} of 6 right; the Battlements laugh at the scribes, and the Scroll House gains only ${scholars}. The pattern was on the drum: dawn east, dusk west, nothing in storms; in autumn a noon from the north, rain days only noon, and every fourth dusk empty.${pulse}${losses + 1 >= 2 ? " Next sitting, Fenn will underline what each column usually holds." : ""}` }), 1300);
     }
     on(sealBtn, "click", seal);
     const startBtn = wrap.querySelector(`.${P}intro .${P}seal`);
     on(startBtn, "click", () => {
       wrap.querySelector("." + P + "intro").remove();
       say("Fenn", gentle ? "has underlined what each column usually holds. “Look at the dawns first.”" : "in the margin: “Look at the dawns first. Then look at the storms.”");
+      if (stage === 1) say("Fenn", "“It is not a god. Or it is a god with a routine.” A runner's note is pinned to the drum for each post that listens.");
+      if (stage === 2) say("Fenn", "“It has no face. I gave it one twice, to make it fit. I scraped them off.” The sap drops are the council's days.");
+      geom(); panel(); draw();
       pick(0);
     });
     startBtn.focus({ preventScroll: true });
@@ -522,5 +587,5 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
     draw(); panel();
 
     return { unmount() { dead = true; urls.forEach((u) => URL.revokeObjectURL(u)); cancelAnimationFrame(raf); timers.forEach(clearTimeout); offs.forEach((f) => f()); ro.disconnect(); wrap.remove(); } };
-  },
-};
+  }
+}
