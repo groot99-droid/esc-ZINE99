@@ -186,6 +186,7 @@ export default {
     let ready = false;
     kit.dressIntro(intro, intro.querySelector("." + K + "sheet"), stage === 1 ? "chapter-3" : "chapter-5", "rgba(20,46,85,.72)");
     lad.picker(intro.querySelector("." + K + "sheet"), intro.querySelector("[data-start]"), stage, go, P.line, P.deep);
+    kit.sock(root);
     kit.fill(wrap, "." + K + "sheetart", "plan-sheet", 520);
     const drawn = {};
     const wall = { len: WALL.paces, conv: null };
@@ -459,6 +460,7 @@ export default {
       const kit = artKit(api);
       kit.dressIntro(intro, intro.querySelector("." + K + "sheet"), "chapter-7", "rgba(20,46,85,.72)");
       lad.picker(intro.querySelector("." + K + "sheet"), intro.querySelector("[data-start]"), stage, go, P.line, P.deep);
+      kit.sock(root);
       const losses = api.store.get("losses", 0);
       const state = {}; // mark id -> { day, inked }
       let sel = MARKS[0].id, wrong = 0, over = false, done = false;

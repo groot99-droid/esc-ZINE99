@@ -45,7 +45,7 @@ const LINES = { 1: ["", ""], 2: ["Nothing goes out. Everything comes in.", ""], 
 //     The deal has 170,592 lines of play; 3,672 of them (2%) give Jax the loaf. One is in WIN_LINE.
 // Layer links (api.shared): the staff loaf, and a loaf given to Hollis, change the gaze in The Tray;
 // a loaf given away is an entry the Chart's twist can use.
-import { artKit, ladder } from "./kit.js";
+import { artKit, ladder, week } from "./kit.js";
 
 const NAMES = { 1: "Day 2 · bid exact", 2: "Day 4 · the deck shrinks", 3: "Day 6 · open hands" };
 const OPEN = { fisk: "h1 h8 k1 k2 k3 k4 k7 k8", jax: "h2 h3 h4 h5 h6 h7 k5 k6" };
@@ -254,6 +254,9 @@ export default {
     kit.png("stamp-withdrawn", 110).then((u) => { if (!u) return; wrap.dataset.wd = u; wrap.querySelectorAll("[data-wd]").forEach((im) => { im.src = u; im.hidden = false; }); wrap.querySelectorAll("[data-wdfb]").forEach((x) => x.remove()); });
     kit.dressIntro(intro, intro.querySelector("." + K + "cardin"), "chapter-" + (DAY + 1));
     lad.picker(intro.querySelector("." + K + "cardin"), intro.querySelector("[data-start]"), stage, go, P.ink, P.card);
+    const wk = week(api);
+    if (wk.second()) { const n = document.createElement("p"); n.dataset.week = wk.n(); n.style.cssText = "border-left:4px solid #9b2f22;padding-left:8px;margin:0 0 10px;font-size:14px;line-height:1.4;position:relative;z-index:1"; n.textContent = `Week ${wk.n()}, in pencil: ` + (teach ? "Jax taps once for every high card he holds. Last week you trusted every tap. His file says “companion (uninformed)”, and you have read it." : twist ? "He will tap anyway, with every card face up. You know why now: it is the one thing at this table nobody typed for him." : "The basket will hold one loaf too few, as it did. The empty chairs are an item on a sheet: “Card table. Loss to witness.”"); intro.querySelector("[data-start]").before(n); }
+    kit.sock(root);
     {
       const strip = intro.querySelector("." + K + "suits");
       const out = (n) => (GONE.some((g) => g.name === n) ? "out" : teach && (n === "Pell" || n === "Duarte") ? "not" : "");

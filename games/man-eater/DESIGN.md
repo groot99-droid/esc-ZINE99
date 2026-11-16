@@ -342,7 +342,7 @@ in every night (the Transferred route) lasts about 100 minutes.
 | `ch6_day5` | Day Five: Jax's Plan | 14 | 3D, 1D, 2D | "On schedule"; Jax's plan and the report choice; the bare footprints; the adit | 4 |
 | `ch7_day6` | Day Six: Below | 15 | 3D, 1D, 2D | Sam's offer; the void placed; the last card game; the pens | 5 |
 | `ch8_day7` | Day Seven: The Last Call | 14 | 3D, 1D, 2D | The halls fit; the last ration; the last door: stay, follow or the fence | 5 |
-| `ch9_end` | The Endings | 6 | 3D | One of four endings | 5, then 1 |
+| `ch9_end` | The Endings | 6 | 3D | One of five endings | 5, then 1 |
 | | **Total** | **112** | | | |
 
 ### The day template
@@ -607,6 +607,15 @@ each names which earlier explanation it breaks (section 12, "The list").
   halfway mark; the patrol follows his prints; `cave_reached`. With 60 or more he reaches the trees
   (`fence_crossed`). If Jax came, he stops at the halfway mark; the player can turn back for him
   (both are caught: `cave_reached`) or go on (`jax_fell`). `n7_perimeter` is the last look back.
+- **Fence, carrying Jax (One Set of Prints; accepted 2026-11-15, built 2026-11-16):** with strength 88
+  or more, the player can lift Jax at the halfway mark instead. `n7_snow` is then the carry out: 0.8
+  m/s, deep prints, 400 m. `n7_set_down` (3D, 1): at the first trees Fisk sets him down with the list
+  inside his coat (`jax_carried`, `fence_crossed`) and turns back. `n7_snow_back` (2D, 3): back to the
+  wire alone, treading every print he made; the call pulls him home faster than he left. Every print
+  trodden turns its toes for the base; at 85% of them, with no more than six beside the line, the
+  frame shows one line (`walked_back`). Fewer, and the patrol reads a crossing and walks the line out
+  to its end: `cave_reached`. The call in both scenes is heard and never seen, and its treatment is
+  **pending the consultant** with the 22:00 slot.
 - **Stay:** `n7_bunk_stay`. The clock reaches 10:00. What follows depends on the ledger:
   - Staff (offer accepted): the sound comes and Fisk is not called. He sleeps. (Call Me Sam.)
   - Refuser (no more than one ration eaten, no night followed): the sound comes, and Fisk is too
@@ -622,6 +631,7 @@ One branch plays. See section 13 for each.
 - Rule Three: `e_tree_line` (3D, 3) after `n7_perimeter`.
 - Call Me Sam: `e_new_recruit` (3D, 5).
 - Transferred: `e_transfer_truck` (3D, 4).
+- One Set of Prints: `e_prints_bunk` (3D, 2), then `e_zoo_wake` (3D, 3), unchanged.
 
 ## 9. 3D scenes
 
@@ -676,6 +686,8 @@ One branch plays. See section 13 for each.
 | `n7_bunk_stay` | Bunk room | as `c1_bunk` | Bed frame (hold), bread | Moonlight | The call, long | Resolves by ledger (section 8) | cut / cut |
 | `e_cave` | The cave | 25 x 18 m, stalagmites to 3 m | None; Fisk is tied to a stalagmite; look only | Work lamps on stands, dark beyond | Dripping, Sam's voice, a generator | Sam's lines, then cloth, then black | fade / fade |
 | `e_zoo_wake` | A room below | 5 x 5 m | None; the camera cannot rise | Surgical white, one window in the door | A pump, a tube's slow drip | The last line | fade / fade |
+| `n7_set_down` (accepted 2026-11-15, built 2026-11-16) | The first trees beyond the wire | 30 m into the wood, looking back over 400 m of snow | Jax, set down against a trunk; the list in his coat; the wire (look back) | Night, moonlight; the searchlight far behind | Wind; Jax's breathing; the call, from the base (pending the consultant) | Setting him down sets `jax_carried` and `fence_crossed`; turning to the wire leads to `n7_snow_back` | pull-out / cut |
+| `e_prints_bunk` (accepted 2026-11-15, built 2026-11-16) | Bunk room, before dawn | as `c1_bunk` | The bed (lie down); Jax's bed, flat and empty; snow melting off Fisk's boots | Pre-dawn blue through the high window | The clock; the door opening from outside | Lying down: the cloth, the gas, black, as in the source (line 34); then `e_zoo_wake` | fade / fade |
 | `e_tree_line` | The trees | 30 m into the wood | None | Dawn blue | Wind dropping, Fisk's breath slowing | The last line | fade / fade |
 | `e_transfer_truck` | Truck bed, leaving | Truck interior | Fisk's kit | Grey | Engine, gate chains | The gate closes behind | fade / fade |
 | `e_new_recruit` | The gate and the halls | as `c1_halls` | A new recruit walking ahead | Overcast | Boots, the recruit's breathing | Fisk gives the three rules | fade / fade |
@@ -1352,6 +1364,7 @@ condition is true. Every condition below is copied from `data/endings.json`.
 | Priority | Id | Name | As written |
 | --- | --- | --- | --- |
 | 10 | `rule_three` | Rule Three | no |
+| 20 | `one_set_of_prints` | One Set of Prints (accepted 2026-11-15, built 2026-11-16) | no |
 | 30 | `call_me_sam` | Call Me Sam | no |
 | 40 | `transferred` | Transferred | no |
 | 50 | `the_zoo` | The Zoo | **yes** |
@@ -1360,9 +1373,9 @@ condition is true. Every condition below is copied from `data/endings.json`.
 
 - **Condition:** `true`. It is the last ending checked. It follows when the player keeps to the
   story's path (eats what is served, follows the call with Jax, `cave_reached`), and it also catches
-  every run that reaches night 7 without meeting one of the three ways out: caught at the fence,
-  followed alone, or stayed in without being staff or a refuser. The
-  base takes him another way.
+  every run that reaches night 7 without meeting one of the four ways out: caught at the fence,
+  caught walking back from the carry, followed alone, or stayed in without being staff or a
+  refuser. The base takes him another way.
 - **In `data/endings.json`:** `"when": true`, `"as_written": true`.
 - **Final scenes:** `n7_windigo` (or `n7_snow` or `n7_bunk_stay`), `e_cave`, `e_zoo_wake`.
 - **What happens:** the cave. Fisk tied to a stalagmite. Sam steps out. Sam's lines from line 35,
@@ -1375,19 +1388,25 @@ condition is true. Every condition below is copied from `data/endings.json`.
   `implicated`, Fisk recognises the room from the pens.
 - **Last image:** the door's small window. Fisk's reflection in it, very tall, very thin. The last
   line, as a caption: "He was like an animal in a zoo..." (line 36).
+- **Added detail (accepted 2026-11-15):** before the cave, the Schedule's last cell is stamped "see
+  previous". Nothing is added after the author's last line.
+- **The cost:** the mind. (In `data/endings.json`: `cost`.)
 
 ### Rule Three, priority 10
 
 - **Condition, plain:** Fisk chose the fence on night 7, crossed it, had `change` 60 or more, and the
   ledger holds at least one break of the base rule.
 - **In `data/endings.json`:**
-  `{"all":[{"is":"night7_choice","eq":"fence"},{"is":"fence_crossed","eq":true},{"is":"change","gte":60},{"ledger":"rules_broken","count_gte":1,"where":{"rule":"base"}}]}`
+  `{"all":[{"is":"night7_choice","eq":"fence"},{"is":"fence_crossed","eq":true},{"is":"change","gte":60},{"ledger":"rules_broken","count_gte":1,"where":{"rule":"base"}},{"is":"walked_back","eq":false}]}`.
+  The last clause (2026-11-16) keeps it apart from One Set of Prints, which also crosses the fence.
 - **Final scenes:** `n7_snow`, `n7_perimeter`, `e_tree_line`.
 - **What happens:** under the trees the cold stops hurting. Fisk sits against a trunk and looks at
   his hands in the dawn. They are not a man's hands. If `jax_fell`, the player can see Jax's prints
   stop in the open snow behind him, filling with wind.
 - **Last image and line:** Fisk stands, and his head is among the low branches. Caption: "Deep down,
   this would only spread." (line 36).
+- **Added detail (accepted 2026-11-15):** his prints were photographed, not followed. The base had
+  the route on the orderly's board and let it be.
 - **The cost:** he is out, and he is the thing he was fed to become, loose. If Jax came, he is left.
 
 ### Call Me Sam, priority 30
@@ -1403,7 +1422,10 @@ condition is true. Every condition below is copied from `data/endings.json`.
   subtitles. The recruit answers "Sir yes Sir."
 - **Last line:** "You can just call me Sam," is not said by Fisk. The player sees Sam at the end of
   the hall, nodding. Caption: the third rule.
-- **The cost:** complicity. Jax's chair is the recruit's.
+- **Added detail (accepted 2026-11-15):** Fisk *is* the result. His Schedule's last line reads
+  "retained".
+- **The cost:** complicity. Fisk is the changed man who still answers "Sir yes Sir." (line 29) that
+  the project wanted, and Jax's chair is the recruit's.
 
 ### Transferred, priority 40
 
@@ -1418,8 +1440,41 @@ condition is true. Every condition below is copied from `data/endings.json`.
   transferred, and he will no longer be stationed here." (line 32).
 - **Last image:** the road through the trees. The truck does not slow at any town. The list, at
   whatever `knows` the run reached, with its unbroken explanations still standing.
-- **The cost:** he never learns what the base was, and the truck may be the same truck as everyone
-  else's. The game does not say.
+- **Added detail (accepted 2026-11-15):** Duarte's letter is in the glovebox in front of him
+  (`e_transfer_truck` reads `glovebox_seen`), and the truck slows at no town.
+- **The cost:** he never learns what the base was, and the letters he carried never leave the truck.
+  The truck may be the same truck as everyone else's. The game does not say.
+
+### One Set of Prints, priority 20 (accepted 2026-11-15, built 2026-11-16)
+
+- **Condition, plain:** Fisk chose the fence on night 7, carried Jax to the trees, walked back in his
+  own prints, has strength 88 or more, and the ledger holds a break of the base rule.
+- **In `data/endings.json`:**
+  `{"all":[{"is":"night7_choice","eq":"fence"},{"is":"jax_carried","eq":true},{"is":"walked_back","eq":true},{"is":"strength","gte":88},{"ledger":"rules_broken","count_gte":1,"where":{"rule":"base"}}]}`
+- **Final scenes:** `n7_snow`, `n7_set_down`, `n7_snow_back`, `e_prints_bunk`, `e_zoo_wake`.
+- **What happens:** the carry (section 8, chapter 8). The base photographs one trail and counts no
+  crossing; the frame's caption is typed "No crossing." Back in the bunk before dawn, Jax's bed is
+  flat. The door opens from outside: the cloth, the gas, black, as the source has it on night 7
+  ("cloths wrapped around their mouths, and a gas leaked into their lungs", line 34). Then
+  `e_zoo_wake`, the author's waking, unchanged, with its last line. The cave is skipped: Sam has
+  nothing to explain to a man who walked back in.
+- **On the Schedule:** day 7's typed lines are STAY, FOLLOW and FENCE. The carry is not on it; the
+  orderly writes it in by hand: "carried him".
+- **Pending the consultant:** wherever these scenes touch the call or the figure. The call is heard
+  in `n7_set_down` and `n7_snow_back` and never seen; no figure is staged, drawn or rendered.
+- **The cost:** he chose the zoo. He walked back in to be gassed in his bunk and wake as the author
+  wrote it, and the list Jax carries is written at whatever clarity that much eating left.
+
+### How the endings stay apart
+
+- One Set of Prints and Rule Three both cross the fence; `walked_back` splits them (true for one,
+  false for the other), so they never fire together. A carry that is not walked back cleanly is
+  caught, and ends in The Zoo.
+- Call Me Sam needs a report and Sam's key; Transferred needs a refuser's meals ledger and no night
+  followed. Most runs meet one or neither. A refuser who also reported Jax and took the key meets
+  both, and Call Me Sam, checked first, wins: the key is the act the base remembers.
+- The Zoo is `true` and last: every run reaches it unless one of the four ways out is met, and the
+  story's own path (eat, follow with Jax) meets none of them.
 
 ### How a player reaches each one on purpose
 
@@ -1429,6 +1484,7 @@ condition is true. Every condition below is copied from `data/endings.json`.
 | Rule Three | Eat enough to reach `change` 60 by night 7 (about half the ration with pills swallowed). Learn the fence route (Jax's plan, or counting posts on day 3 and reading the files). Choose the fence. If Jax comes, go on without him |
 | Call Me Sam | Keep seen breaks to two or fewer and suspicion under 60. Report Jax on day 5. Accept Sam's key on day 6. Stay in on night 7 |
 | Transferred | Refuse the ration on at least six days. Live on bread from the card table and the kit chocolate. Never follow the call. Stay in on night 7 |
+| One Set of Prints | Eat for strength 88 (clear the tray on day 7), eat bread that evening so the door still offers the fence, and learn the fence route with Jax (agree on day 5). Choose the fence with Jax, lift him at the halfway mark, set him down at the trees, and walk back treading every print |
 
 A debug panel in development builds lists every condition of every ending with its current truth,
 so a designer can say why a run ended where it did.
@@ -1576,7 +1632,7 @@ Total spoken lines are counted in section 17.
 - `flags.json`: every meter, counter, flag, enum and ledger in section 12, including five ledgers
   (`meals`, `rules_broken`, `the_list`, `taken`, and `schedule_strips`), and the two flags of the
   Carbon scene (`schedule_read`, `cabinet_declined`).
-- `endings.json`: four endings with the conditions in section 13.
+- `endings.json`: five endings with the conditions in section 13 (One Set of Prints added in phase 3), each with a `cost`.
 
 Beyond the shared schemas, two fixed tables (content, not state), each with a schema in
 `data/schemas/`:
@@ -1732,8 +1788,10 @@ institution that exploits the legend:
 ## Accepted development (2026-11-15)
 
 The author accepted `DEEP_DIVE.md` whole on 2026-11-15, with every decision its roadmap listed as
-"needs the author first" answered yes. This section states the accepted story. It is built in three
-phases; this pass is phase 1, and each part below says which phase builds it. Nothing here edits the
+"needs the author first" answered yes. This section states the accepted story. It was built in three
+phases, all three now built (phase 3 on 2026-11-16); each part
+below says which phase built it, and "What the three phases built, and what waits" says what is not
+built yet. Nothing here edits the
 source, removes The Zoo or contradicts a quoted line. Everything in it is an addition and is listed
 again in section 21.
 
@@ -1807,7 +1865,7 @@ In this pass the box is drawn empty and no text refers to it.
 | 8 | Next Week (day 6) | new | `d6_next_week` (3D, the cafeteria hatch) | built 2026-11-16 |
 | 9 | Open Hands (day 6, the two-seat game) | existing | `d6_rations` | built; Jax tapping anyway built 2026-11-16 |
 | 10 | **Darkest: Below** (night 6). The pens hold nine; the roster lists thirty-one. The first bunkmate's wall list ends, at full reach, with a sentence in quotes: "we won't make the same mistakes". The crates Fisk carried on day 1 carry roster line numbers | existing, extended | `n6_pens` (`wall_sentence_read`) | built 2026-11-16 |
-| 11 | The Last Door (night 7): stay, follow, fence | existing | `n7_door` | built; the carry is phase 3 |
+| 11 | The Last Door (night 7): stay, follow, fence, and the carry | existing, extended | `n7_door`; the carry: `n7_snow`, `n7_set_down`, `n7_snow_back` | built; the carry built 2026-11-16 |
 | 12 | The corner; the cave; waking | source | `n7_windigo`, `e_cave`, `e_zoo_wake` | built |
 
 **Carbon, as built in phase 1.** After the roster, the cabinet under the staff shelf is unlocked and
@@ -1825,21 +1883,24 @@ No scene is added: Carbon is the second half of `n4_office`, which now also writ
 
 | Ending | Change accepted | Phase |
 | --- | --- | --- |
-| The Zoo (`as_written`, unchanged) | Before the cave, the Schedule's last cell is stamped "see previous". Nothing is added after the author's last line | 2 (the stamp); the ending itself is untouched |
-| Rule Three | His prints were photographed, not followed | 2 |
-| Call Me Sam | Fisk *is* the result. The sheet reads "retained" | 2 |
-| Transferred | Duarte's letter is in the glovebox in front of him, and the truck slows at no town | 2 |
-| **One Set of Prints (new, the fifth)** | Fisk eats enough to carry Jax over the 400 m Jax's legs cannot cross (strength 88), sets him down at the trees with the list, and walks back in his own prints. The base photographs one trail and counts no crossing. Then the bunk, the cloth, and the author's waking, unchanged. The cost: he chose the zoo, and the list Jax carries is written at whatever clarity that much eating left | 3 |
+| The Zoo (`as_written`, unchanged) | Before the cave, the Schedule's last cell is stamped "see previous". Nothing is added after the author's last line | 2 (the stamp); its cost written into `endings.json` 2026-11-16; the ending itself is untouched |
+| Rule Three | His prints were photographed, not followed | 2; summary and cost 2026-11-16 |
+| Call Me Sam | Fisk *is* the result. The sheet reads "retained" | 2; summary and cost 2026-11-16 |
+| Transferred | Duarte's letter is in the glovebox in front of him, and the truck slows at no town | 2; summary and cost 2026-11-16 |
+| **One Set of Prints (new, the fifth)** | Fisk eats enough to carry Jax over the 400 m Jax's legs cannot cross (strength 88), sets him down at the trees with the list, and walks back in his own prints. The base photographs one trail and counts no crossing. Then the bunk, the cloth, and the author's waking, unchanged. The cost: he chose the zoo, and the list Jax carries is written at whatever clarity that much eating left | 3, built 2026-11-16 |
 
-`data/endings.json` still holds four endings. One Set of Prints is added to it in phase 3, with its
-scenes; The Zoo stays `as_written` and stays the last by priority. (An earlier fifth ending,
-Footsteps, was struck in section 20, answer 2. One Set of Prints is a different ending: nothing
-carries to a next run.) Phase 1 builds one piece of it on paper: the last line of the Schedule,
-where the carry is the line that was not typed (section 11.3, rule 7).
+`data/endings.json` holds five endings since 2026-11-16: One Set of Prints is priority 20, with its
+scenes (section 13); The Zoo stays `as_written`, unrenamed, and stays the last by priority. (An earlier
+fifth ending, Footsteps, was struck in section 20, answer 2. One Set of Prints is a different ending:
+in the story nothing carries to a next run.) Phase 1 built one piece of it on paper: the last line of
+the Schedule, where the carry is the line that was not typed (section 11.3, rule 7).
 
-### What phase 1 builds, and what waits
+### What the three phases built, and what waits
 
-**Built in this pass (phase 1: the reversal, on paper).**
+All three phases are built (phase 3 on 2026-11-16). What is still not built is at the end of this
+part.
+
+**Built in phase 1 (the reversal, on paper).**
 
 - The Carbon scene and the Schedule as a second sheet under the Chart (section 11.3, rules 6 and 7;
   `data/schedule.json`; `web/games/man-eater/chart.js`).
@@ -1870,10 +1931,46 @@ below was accepted on 2026-11-15.
   glovebox) are carried by the flags and by `e_transfer_truck` reading `glovebox_seen`; their final
   images wait with the ending cards.
 
-**Phase 3: the new way out.** One Set of Prints as an ending in `data/endings.json`, with its scenes
-(the carry in 3D, the bunk, the cloth, and the author's waking, unchanged). What a second
-playthrough changes. The Schedule's last payoff. Portraits, the two-height Blender renders, and the
-figure's replacement still.
+**Built 2026-11-16 (phase 3: the new way out).** The author wrote "start phase 3"; every item below
+was accepted on 2026-11-15.
+
+- **One Set of Prints** in `data/endings.json` (priority 20, with `jax_carried` and `walked_back`
+  added to `flags.json`), and its scenes: `n7_set_down` (3D, the perimeter build file),
+  `n7_snow_back` (2D, Snow line), `e_prints_bunk` (3D, the bunk-room build file), then `e_zoo_wake`
+  unchanged. Rule Three now needs `walked_back` false. Every ending has a `cost`, and the added
+  details of phase 2 are in their summaries.
+- **The long puzzle's last steps and payoff** (web). One torn strip of the Schedule is found on each
+  night out and two more by day: day 2's in Silhouette halls on night 2 (the latrine drain), day 3's
+  in Snow line on night 3 (under the boots), day 4's as the carbon torn out in The Chart's Carbon on
+  night 4, day 5's in Snow line on night 5 (the adit), day 6's in Silhouette halls on night 6 (the
+  stair), day 7's in The Tray on day 7 (under the slab). Each is written with `api.shared`. Every
+  mode has a small button, "STRIPS n/6", that opens the sock page: the strips found, where the rest
+  are, and whether the carry is done. With all six in, The Chart offers "Lay the whole Schedule",
+  from its opening card or after the day-6 ruling: strips 2 to 6 against the entries they issued,
+  then day 7's line. The pencilled line ("Carry Jax over. Walk back.") can be ruled only once Snow
+  line's Frame 112 is won. The line ruled is the week's ending, written as `schedule_solved`; the
+  menu's finale (`loading.js`, `finale()`) shows that ending's name, a paragraph and its generated
+  card. A typed line earns its typed ending: FOLLOW The Zoo, FENCE Rule Three, STAY Call Me Sam, or
+  Transferred if the last tray was refused.
+- **Ending cards in the modes.** Snow line's Frame 112 and The Chart's day-7 ruling end on an ending,
+  and show its generated card behind the result.
+- **The second week.** A finished week is counted (`weeks_done`) and the sock page then offers "Begin
+  the week again", which clears the week's strips, carry and layer marks and raises `week`. In a
+  second week: The Chart's orderly can be asked once, not twice, and says so; the folder's Schedule
+  in Carbon shows days 6 and 7, which the first week covered; on night 3 in Snow line a choice is
+  offered that was not there, to take the first bunkmate's boots back to the bunk, which The Chart's
+  day-6 ruling can then use as an entry nobody issued; and the opening cards of Silhouette halls,
+  Snow line, The Tray and Short Rations carry a line in Fisk's pencil that reads them differently.
+  A first week is unchanged.
+- **Art drawn by code:** the lettering for each of the five ending cards, the NO CROSSING stamp, and
+  the sock page (`art/src/95_phase3.py`).
+
+**Still not built.** Every 3D scene, including the new three, is a design until Blender: the build
+files, the location images and the Meshy props are the inputs, and nothing is rendered. The
+two-height Blender renders and the portraits wait with them. The figure's replacement still is not
+made, and the 22:00 slot is still drawn empty: both wait for the cultural consultant, as do the parts
+of `n7_set_down` and `n7_snow_back` that touch the call. The web modes play the carry in Snow line;
+`n7_set_down` and `e_prints_bunk` are not playable on the web.
 
 **The consultant sees first:** the Schedule's empty 22:00 slot, and the new figure still. No new
 figure imagery is made until then; `reference/09-the-flute.jpg` stays flagged for replacement.
@@ -2032,15 +2129,45 @@ or strike:
   is not on any shelf I have counted."
 - The truck cab as a location, its image, and the staging of `n3_glovebox` and `d6_next_week`.
 
-Accepted 2026-11-15 and waiting for phase 3 (stated in "Accepted development"):
+Built in phase 3 (each accepted 2026-11-15, built 2026-11-16):
+
+- The ending One Set of Prints in `data/endings.json`, its scenes `n7_set_down`, `n7_snow_back` and
+  `e_prints_bunk`, and its strength threshold of 88. Accepted 2026-11-15, built 2026-11-16.
+- The ending details "see previous", the photographed prints, "retained" and Duarte's letter, written
+  into each ending's summary, with each ending's cost. Accepted 2026-11-15, built 2026-11-16.
+- The long puzzle's payoff: one strip found per night out, the strips laid against what they issued,
+  day 7's typed outcomes and the carry written in by hand. Accepted 2026-11-15, built 2026-11-16.
+- A second playthrough in which nothing carries over but what the player knows, and the cabinet can
+  be declined. Accepted 2026-11-15, built 2026-11-16.
+
+Invented in the phase-3 pass, to make the accepted items playable. Each is for the author to approve
+or strike:
+
+- Where each strip is found: day 2's in the latrine drain, day 3's under the boots in the kennel
+  shed, day 4's as the carbon, day 5's at the adit mouth, day 6's on the stair's bottom tread, day 7's
+  under the slab on the day-7 tray; and Fisk keeping them in his sock (the sock page, its six rows).
+- The flags `jax_carried` and `walked_back`; `walked_back` added to Rule Three's condition; One Set
+  of Prints at priority 20; the cave skipped in One Set of Prints ("Sam has nothing to explain to a
+  man who walked back in"); the staging of `n7_set_down` and `e_prints_bunk`.
+- The `cost` lines of all five endings, as worded in `data/endings.json`.
+- The pencilled line ruled only after the carry; a typed line on day 7 earning its typed ending; STAY
+  read as Transferred when the last tray was refused.
+- The finale's five paragraphs (`loading.js`).
+- The second week's changes: the orderly asked once; days 6 and 7 uncovered in the folder; the boots
+  taken back on night 3, and the entry "Took his boots back to the bunk, laces tied. Nobody typed
+  it."; the pencilled lines on four opening cards; "Begin the week again" and what it clears.
+- The lettering of the ending cards (each with its Schedule line, and "as written" in pencil on The
+  Zoo's, "carried him" on One Set of Prints'), the NO CROSSING stamp with its line of prints.
+
+Accepted 2026-11-15 and still waiting:
 
 - Fisk's want (to be "lucky" again) and need (to try to stop someone), as scenes of their own.
 - The project's aim read as a changed man who still obeys; "the mistakes" read as minds gone blank;
   enrichment as protocol; rule two as the real test; The Zoo as Sam's failure.
-- The ending One Set of Prints in `data/endings.json`, its 3D scenes, and its strength threshold of
-  88; the final images of the ending details "see previous", the photographed prints and "retained".
-- Portraits, generated key art and ending cards, the Blender renders, and (after the consultant)
-  the figure's replacement still.
+- The final rendered images of the ending details "see previous", the photographed prints and
+  "retained" (3D, with Blender).
+- Portraits and the Blender renders, and (after the consultant) the figure's replacement still. The
+  key art and the five ending cards are generated (`keyart/keyart.json`).
 
 **Not added on purpose:** the Windigo's origin in any form the player sees or hears; who the figure
 was; any link to the Grounds 99 material.

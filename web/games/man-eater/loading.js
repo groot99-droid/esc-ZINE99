@@ -148,3 +148,28 @@ export function render(root, ctx) {
     close() { cancelAnimationFrame(raf); clearInterval(tipTimer); },
   };
 }
+
+// ---- The finale (phase 3): the long puzzle's payoff, once the whole Schedule is laid in The Chart.
+// The strips are gathered across the modes (kit.js: week()) and laid in The Chart; the line ruled on
+// for day 7 is the week's ending. The pencilled line, the carry, earns One Set of Prints; a typed line
+// earns the ending it was typed for. Quoted lines are verbatim from the source, line 29 or 36.
+const FINALE = {
+  one_set_of_prints: { title: "One Set of Prints", card: "ending-one-set-of-prints",
+    text: "Every line on your Schedule was typed a day before you found it; every discovery was issued. The one line in handwriting is the orderly's: carried him. You ate enough to lift Jax over the 400 m, set him down at the trees with the list, and walked back in your own prints, so Frame 112 shows one line and the caption reads “No crossing.” It cost the rest of you: you chose the zoo, and the list in Jax's coat is written at whatever mind that much eating left." },
+  the_zoo: { title: "The Zoo", card: "ending-the-zoo",
+    text: "Every line on your Schedule was typed a day before you found it, and on day 7 you took the one they had typed: FOLLOW: see previous. The cell was stamped before the cave, because the rest went the same way. Sam has his subject, and his dissatisfaction is that you are no better than the others. It cost the mind: “He was like an animal in a zoo...”" },
+  rule_three: { title: "Rule Three", card: "ending-rule-three",
+    text: "Every line on your Schedule was typed a day before you found it, and on day 7 you ruled for the fence. The fence was typed too: photographed, not followed. You are past the wire, and you are the thing they fed you to become, loose. It cost Jax, if he came, and everyone after: “Deep down, this would only spread.”" },
+  call_me_sam: { title: "Call Me Sam", card: "ending-call-me-sam",
+    text: "Every line on your Schedule was typed a day before you found it, and on day 7 you ruled for STAY: retained. A changed man who stays in the room and still answers “Sir yes Sir.” is the result the sheet was typed for, and you are it. It cost Jax's chair, which is the recruit's now." },
+  transferred: { title: "Transferred", card: "ending-transferred",
+    text: "Every line on your Schedule was typed a day before you found it, and on day 7 you ruled for STAY on an empty stomach, no use to anyone. Retained becomes transferred. It cost you ever knowing what the base was: Duarte's letter is in the glovebox in front of you, and the truck slows at no town." },
+};
+export function finale({ shared, keyart }) {
+  const week = Math.max(1, Math.floor(+shared.get("week", 1) || 1));
+  const s = shared.get("schedule_solved", null);
+  if (!s || s.week !== week || !FINALE[s.ending]) return null;
+  const f = FINALE[s.ending];
+  const done = Math.max(1, +shared.get("weeks_done", 1) || 1);
+  return { title: f.title + (done > 1 ? ` · week ${week}` : ""), text: f.text, image: keyart(f.card) };
+}

@@ -23,7 +23,7 @@
 //     ceiling-high shadow, drops his flashlight and backs away for 20 seconds.
 // Layer links (api.shared): the pipes inked on Floor Plan's elevation put the pipe route on the strip;
 // the void stamped there marks the stair.
-import { artKit, bareCutout, ladder } from "./kit.js";
+import { artKit, bareCutout, ladder, week } from "./kit.js";
 
 const NAMES = { 1: "Night 2 · light, shadow, crouch", 2: "Night 4 · the pipes, the sheet", 3: "Night 6 · Jax, in your shadow" };
 const HALLS = {
@@ -56,6 +56,7 @@ export default {
     const reduce = api.reducedMotion;
     const rng = api.rng();
     const losses = api.store.get("losses", 0);
+    const wk = week(api);
     const wrap = document.createElement("div");
     wrap.className = K + "wrap";
     // a cut-out man and his taller shadow, for the playbill
@@ -146,6 +147,14 @@ export default {
       if (hs.children.length) wrap.querySelector("." + K + "puppets")?.remove(); else hs.remove();
       kit.dressIntro(intro, intro.querySelector("." + K + "bill"), HC.card);
       lad.picker(intro.querySelector("." + K + "bill"), intro.querySelector("[data-row]"), stage, go, P.ink, P.cream);
+      // phase 3: a second week reads the same hall differently (only after a week has been finished)
+      if (wk.second()) {
+        const n = document.createElement("p"); n.className = K + "beat"; n.dataset.week = wk.n();
+        n.style.cssText = "border-left:4px solid #9b2f22;padding-left:8px;font-style:normal;position:relative;z-index:1";
+        n.textContent = `Week ${wk.n()}, in pencil: ` + (stage === 1 ? "The guard turns at the same window he turned at last time. You knew he would. Last time you thought that was luck." : stage === 2 ? "The officers' wing will be unwatched tonight. It was typed. You walk it anyway, and you know who is holding the door." : "Jax walks in your shadow again. Last time you were the only one who knew where the stair goes. You still are.");
+        intro.querySelector("." + K + "key").before(n);
+      }
+      kit.sock(root);
     }
     const nearH = () => FISK_H.reduce((b, h) => (Math.abs(h - heightM * 100) < Math.abs(b - heightM * 100) ? h : b), FISK_H[0]);
     async function prepArt(scale) {
@@ -394,6 +403,8 @@ export default {
       over = true; running = false;
       cancelAnimationFrame(raf);
       draw();
+      // phase 3: the night's strip of the Schedule (night 2 by the latrine drain, night 6 on the stair)
+      if (win && stage !== 2 && wk.find(stage === 1 ? 2 : 6)) text += stage === 1 ? " In the drain grate by the door, a torn strip of typed paper, frozen flat: DAY 2 · 14:00. It goes in your sock." : " On the bottom tread, where Jax's boot was, a strip of typed paper: DAY 6 · 09:00. Typed yesterday. It goes in your sock.";
       lad.conclude(wrap, kit, stage, win ? { card: "halls-night-" + HC.night, caption: `NIGHT ${HC.night} · ${HC.to.toUpperCase()}` } : { card: "rules-card", stamp: "stamp-hold", caption: `NIGHT ${HC.night} · WALKED BACK TO THE BUNK` }, { outcome: win ? "win" : "lose", text }, go);
     }
     function enterRoom(d) {

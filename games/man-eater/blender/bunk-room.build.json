@@ -1442,6 +1442,90 @@
           "verb": "Stay in"
         }
       ]
+    },
+    "e_prints_bunk": {
+      "world": {
+        "color": [
+          0.12,
+          0.14,
+          0.2
+        ],
+        "strength": 0.22
+      },
+      "lights": [
+        {
+          "name": "moon",
+          "type": "AREA",
+          "location": [
+            0,
+            2.3,
+            3.5
+          ],
+          "look_at": [
+            0,
+            -1.5,
+            0
+          ],
+          "energy": 60,
+          "size": 1.2,
+          "color": [
+            0.55,
+            0.62,
+            0.85
+          ]
+        },
+        {
+          "name": "clock-face",
+          "type": "POINT",
+          "location": [
+            0,
+            2.25,
+            2.6
+          ],
+          "energy": 3,
+          "size": 0.1,
+          "color": [
+            0.9,
+            0.95,
+            0.8
+          ]
+        }
+      ],
+      "note": "One Set of Prints, before dawn: back in the bunk, Jax's bed empty and its sleeping bags flat, snow melting off Fisk's boots by the door. He lies down. The door opens from outside; cloth, gas, black, as in the source (line 34). Then e_zoo_wake, unchanged. Nothing of the figure is staged here.",
+      "camera": {
+        "location": [
+          -1.4,
+          0.9,
+          1.25
+        ],
+        "look_at": [
+          0,
+          -2.5,
+          1.6
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -1.4,
+          0.9,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [
+        "boots-mate",
+        "bags-mate",
+        "bread"
+      ],
+      "interactions": [
+        {
+          "prop": "bed-fisk",
+          "verb": "Lie down",
+          "leads_to": "e_zoo_wake"
+        }
+      ]
     }
   }
 }

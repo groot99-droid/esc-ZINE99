@@ -91,7 +91,8 @@
         "d6_sam_offer",
         "d7_bunk_evening",
         "n7_door",
-        "n7_bunk_stay"
+        "n7_bunk_stay",
+        "e_prints_bunk"
       ],
       "dimensions_m": [
         4,
@@ -327,7 +328,8 @@
       "name": "Beyond the wire and the tree line",
       "scenes": [
         "n7_perimeter",
-        "e_tree_line"
+        "e_tree_line",
+        "n7_set_down"
       ],
       "dimensions_m": [
         30,

@@ -25,7 +25,7 @@
 // The size rule (both ways): at 38 cm and over (change 64) patrols step over prints and photograph them.
 // Layer links (api.shared): what was eaten in The Tray sets the print size; the gap marked on Floor
 // Plan is on the wire on night 7; a photographed route is on the Chart's clipboard next morning.
-import { artKit, ladder } from "./kit.js";
+import { artKit, ladder, week } from "./kit.js";
 
 const NAMES = { 1: "Night 3 · prints stay", 2: "Night 5 · the bare prints", 3: "Night 7 · Frame 112" };
 const YARD = [[2, 40, 20, 4, "BARRACKS"], [26, 25, 10, 6, "MESS"], [6, 15, 8, 6, "STORE"], [48, 2, 12, 6, "KENNEL SHED"], [44, 33, 8, 5, "LATRINE"]]; // x, y, w, h (metres), label
@@ -51,7 +51,7 @@ export default {
     return { unmount() { if (cur) cur.unmount(); cur = null; lad.dispose(); } };
 
     function run(stage) {
-    const M = MAPS[stage], twist = stage === 3, shared = api.shared;
+    const M = MAPS[stage], twist = stage === 3, shared = api.shared, wk = week(api);
     // what was eaten at the Tray sets the size of the prints (and the stride that leaves them)
     const tray = shared.get("tray", null), links = [];
     let CHANGE = M.change;
@@ -141,6 +141,14 @@ export default {
     const kit = artKit(api);
     kit.dressIntro(intro, intro.querySelector("." + K + "card"), M.card);
     lad.picker(intro.querySelector("." + K + "card"), intro.querySelector("[data-start]"), stage, go, P.ink, P.snow);
+    // phase 3: a second week reads the same yard differently (only after a week has been finished)
+    if (wk.second()) {
+      const n = document.createElement("p"); n.className = K + "note"; n.dataset.week = wk.n();
+      n.style.cssText = "border-left:4px solid #9b2f22;padding-left:8px";
+      n.textContent = `Week ${wk.n()}, in pencil: ` + (stage === 1 ? "His boots will be on the shelf by the door, laces tied. You know that now. You could do something about it this time." : stage === 2 ? "The bare prints end at the adit. Last time you followed them to find out. This time you already know, and they are still two metres apart." : "Frame 112 was typed as “No crossing.” last week too. Whoever walked back in his own prints, the frame shows the same one line.");
+      intro.querySelector("." + K + "key").before(n);
+    }
+    kit.sock(root);
     kit.fill(wrap, "." + K + "plate", M.plate, 500);
     Promise.all([kit.canvas("breath-line", 180), ...[1, 2, 3, 4].map((n) => kit.canvas("frost-corner-" + n, 200))]).then(([breath, ...frost]) => { hud = { breath, frost }; });
     const TOP = 58; let BOT = 92; // film margin above (meters) and below (caption; taller on a phone, above the buttons)
@@ -406,11 +414,20 @@ export default {
       const sharp = s.prints.filter(isSharp).length;
       const trail = sharp > 12 ? `Behind you ${sharp} sharp prints lead here from the barracks door; by morning someone will have read them.` : sharp ? `Behind you only ${sharp} sharp prints are left for anyone to read.` : "Behind you the wind has filled every print. Nobody can say you were here.";
       endArt = BIG && s.photos ? { card: "print-photographed", caption: "N3 YARD · PHOTOGRAPHED, NOT FOLLOWED" } : sharp > 12 ? { card: "print-followed", caption: "N3 YARD · PRINTS, DEVELOPED BY MORNING" } : { card: "yard-plate-night-3", caption: "N3 YARD · NOTHING TO READ" };
-      finish(true, `The kennel shed, with no dogs. On a shelf by the door, the first bunkmate's boots, laces still tied, the way he kept them so he could step straight into them. Transferred men take their boots. ${BIG && s.photos ? `Your prints, ${Math.round(PRINT * 100)} cm, were photographed and not followed; the route will be on the orderly's clipboard in the morning.` : trail}`);
+      const shed = (extra) => finish(true, `The kennel shed, with no dogs. On a shelf by the door, the first bunkmate's boots, laces still tied, the way he kept them so he could step straight into them. Transferred men take their boots. ${BIG && s.photos ? `Your prints, ${Math.round(PRINT * 100)} cm, were photographed and not followed; the route will be on the orderly's clipboard in the morning.` : trail}${extra}`);
+      if (!wk.second()) return shed("");
+      running = false; cancelAnimationFrame(raf);
+      kit.ask(wrap, `NIGHT 3 · THE KENNEL SHED · WEEK ${wk.n()}`, "His boots, on the shelf by the door, laces still tied so he could step straight into them. Last week you looked, and left them there.", [{ id: "take", label: "Take them back to the bunk" }, { id: "leave", label: "Leave them on the shelf" }])
+        .then((c) => { if (over) return; if (c === "take") shared.set("boots_kept", true); shed(c === "take" ? " You carry them back under your coat and set them under his bed, laces tied. Nothing typed told you to." : " You leave them on the shelf, the way you did before."); });
+
     }
     function finish(win, text) {
       if (over) return;
       over = true; running = false; cancelAnimationFrame(raf); draw();
+      // phase 3: the night's strip of the Schedule (night 3 in the shed, night 5 at the adit); the carry is on none
+      if (win && stage === 1 && wk.find(3)) text += " Under the boots, a torn strip of typed paper: DAY 3 · 19:00. It goes in your sock.";
+      if (win && stage === 2 && wk.find(5)) text += " In the snow at the adit mouth, frozen flat, a strip of typed paper: DAY 5 · 08:00. It goes in your sock.";
+      if (win && twist) { shared.set("carried", true); endArt = { ...endArt, ending: "ending-one-set-of-prints" }; }
       lad.conclude(wrap, kit, stage, endArt, { outcome: win ? "win" : "lose", text }, go);
     }
     function lieFlat() {

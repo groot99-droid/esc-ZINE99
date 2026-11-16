@@ -669,6 +669,91 @@
       },
       "hide": [],
       "interactions": []
+    },
+    "n7_set_down": {
+      "note": "One Set of Prints, night 7 (accepted 2026-11-15, built 2026-11-16): the first trees, from just inside the line. Fisk sets Jax down against a trunk with the list in his coat and turns back toward the wire; one deep line of prints runs out across the open snow behind him to the searchlight. The call that pulls him home is heard and never seen: its treatment, like the 22:00 slot, is pending the cultural consultant, and nothing of the figure is staged here.",
+      "world": {
+        "color": [
+          0.08,
+          0.1,
+          0.16
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "moon",
+          "type": "SUN",
+          "location": [
+            0,
+            0,
+            50
+          ],
+          "energy": 0.6,
+          "size": 2,
+          "color": [
+            0.62,
+            0.7,
+            0.9
+          ],
+          "look_at": [
+            10,
+            30,
+            0
+          ]
+        },
+        {
+          "name": "searchlight",
+          "type": "SPOT",
+          "location": [
+            -12,
+            -228,
+            12
+          ],
+          "energy": 5000,
+          "size": 1,
+          "color": [
+            1.0,
+            0.97,
+            0.9
+          ],
+          "look_at": [
+            0,
+            -150,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2,
+          206,
+          2.9
+        ],
+        "look_at": [
+          0,
+          -200,
+          1.8
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          2,
+          206,
+          0.0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "post-3",
+          "verb": "Turn back toward the wire",
+          "leads_to": "n7_snow_back"
+        }
+      ]
     }
   }
 }

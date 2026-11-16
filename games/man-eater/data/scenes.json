@@ -1531,7 +1531,8 @@
         "warmth",
         "jax_fate",
         "fence_gap_marked",
-        "strength"
+        "strength",
+        "jax_plan_answer"
       ],
       "writes": [
         "fence_crossed",
@@ -1539,13 +1540,15 @@
         "rules_broken",
         "warmth",
         "cave_reached",
-        "route_photographed"
+        "route_photographed",
+        "jax_carried"
       ],
       "enter": "flatten",
       "exit": "pull-out",
       "next": [
         "n7_perimeter",
-        "e_cave"
+        "e_cave",
+        "n7_set_down"
       ]
     },
     {
@@ -1560,6 +1563,51 @@
       "exit": "fade",
       "next": [
         "e_tree_line"
+      ]
+    },
+    {
+      "id": "n7_set_down",
+      "layer": "3d",
+      "name": "Night 7: set down at the trees (One Set of Prints)",
+      "chapter": "ch8_day7",
+      "reads": [
+        "strength",
+        "clarity",
+        "jax_fate"
+      ],
+      "writes": [
+        "jax_carried",
+        "fence_crossed",
+        "rules_broken"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "n7_snow_back"
+      ]
+    },
+    {
+      "id": "n7_snow_back",
+      "layer": "2d",
+      "name": "Night 7: back in his own prints",
+      "chapter": "ch8_day7",
+      "mode": "snow_line",
+      "reads": [
+        "change",
+        "warmth",
+        "jax_carried"
+      ],
+      "writes": [
+        "walked_back",
+        "route_photographed",
+        "warmth",
+        "cave_reached"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "e_prints_bunk",
+        "e_cave"
       ]
     },
     {
@@ -1622,6 +1670,22 @@
       "enter": "fade",
       "exit": "fade",
       "next": []
+    },
+    {
+      "id": "e_prints_bunk",
+      "layer": "3d",
+      "name": "One Set of Prints: the bunk and the cloth",
+      "chapter": "ch9_end",
+      "reads": [
+        "walked_back",
+        "jax_carried",
+        "clarity"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "e_zoo_wake"
+      ]
     },
     {
       "id": "e_transfer_truck",

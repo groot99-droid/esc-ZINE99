@@ -1,6 +1,6 @@
 {
  "game": "man-eater",
- "count": 163,
+ "count": 170,
  "assets": [
   {
    "id": "title",
@@ -899,6 +899,46 @@
    "row": "Room stamps, void, elevation strip, ghost layer"
   },
   {
+   "id": "ending-title-call-me-sam",
+   "group": "endings",
+   "title": "Ending lettering: Call Me Sam",
+   "w": 1200,
+   "h": 300,
+   "row": "Phase 3: ending lettering, the NO CROSSING stamp, the sock page"
+  },
+  {
+   "id": "ending-title-one-set-of-prints",
+   "group": "endings",
+   "title": "Ending lettering: One Set Of Prints",
+   "w": 1200,
+   "h": 300,
+   "row": "Phase 3: ending lettering, the NO CROSSING stamp, the sock page"
+  },
+  {
+   "id": "ending-title-rule-three",
+   "group": "endings",
+   "title": "Ending lettering: Rule Three",
+   "w": 1200,
+   "h": 300,
+   "row": "Phase 3: ending lettering, the NO CROSSING stamp, the sock page"
+  },
+  {
+   "id": "ending-title-the-zoo",
+   "group": "endings",
+   "title": "Ending lettering: The Zoo",
+   "w": 1200,
+   "h": 300,
+   "row": "Phase 3: ending lettering, the NO CROSSING stamp, the sock page"
+  },
+  {
+   "id": "ending-title-transferred",
+   "group": "endings",
+   "title": "Ending lettering: Transferred",
+   "w": 1200,
+   "h": 300,
+   "row": "Phase 3: ending lettering, the NO CROSSING stamp, the sock page"
+  },
+  {
    "id": "chapter-1",
    "group": "chapters",
    "title": "Chapter 1: Arrival.",
@@ -1131,6 +1171,14 @@
    "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
   },
   {
+   "id": "stamp-no-crossing",
+   "group": "ui",
+   "title": "Stamp: NO CROSSING",
+   "w": 460,
+   "h": 220,
+   "row": "Phase 3: ending lettering, the NO CROSSING stamp, the sock page"
+  },
+  {
    "id": "stamp-retained",
    "group": "ui",
    "title": "Stamp: RETAINED",
@@ -1169,6 +1217,14 @@
    "w": 800,
    "h": 1100,
    "row": "Form 7-F, target sheet, Schedule, 7 strips, 6 stamps"
+  },
+  {
+   "id": "ledger-page",
+   "group": "documents",
+   "title": "The sock page: strips gathered",
+   "w": 760,
+   "h": 1000,
+   "row": "Phase 3: ending lettering, the NO CROSSING stamp, the sock page"
   },
   {
    "id": "print-followed",

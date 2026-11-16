@@ -24,7 +24,7 @@
 // Layer links (api.shared): Short Rations' staff loaf lengthens the gaze by a second, a loaf given to
 // Hollis shortens his on day 7; what is eaten here sets the size of Fisk's prints in Snow line.
 // The collection thread's guest object sits on the shelf behind the hatch in the twist.
-import { artKit, ladder } from "./kit.js";
+import { artKit, ladder, week } from "./kit.js";
 
 const P = { ink: "#1B1D1F", paper: "#ece6d8", steel: "#8A8F93", tray: "#c9ccce", meat: "#5A4F5E", red: "#b4432f", green: "#5E7363", sodium: "#D9A441", bread: "#b98a4e" };
 const MIN_CUT = 3, MAX_CUT = 10, CYCLE = 8, NEED = 88;
@@ -233,6 +233,9 @@ export default {
     kit.fill(wrap, "." + K + "dv", "divider-perforation", 860);
     kit.dressIntro(intro, intro.querySelector("." + K + "panel"), C.card, "rgba(236,230,216,.72)");
     lad.picker(intro.querySelector("." + K + "panel"), intro.querySelector("[data-start]"), stage, go, P.ink, P.paper);
+    const wk = week(api);
+    if (wk.second()) { const n = document.createElement("p"); n.dataset.week = wk.n(); n.style.cssText = "border-left:4px solid #9b2f22;padding-left:8px;margin:0 0 10px;font-size:14px;line-height:1.4;position:relative;z-index:1"; n.textContent = `Week ${wk.n()}, in pencil: ` + (stage === 1 ? "The orderly's eyes leave you on the eighth second, the way they did last week. You counted them then. You count them now." : stage === 2 ? "Jax will slide you his heel again at the same minute. Last time you thought it was kindness. It may still be." : "“Eat up. Big night.” Last week you heard it as an order. This week you know what eighty-eight is for."); intro.querySelector("[data-start]").before(n); }
+    kit.sock(root);
     // the shelf behind the hatch (twist): part of the picture; one thing on it is not this base's
     const shelf = wrap.querySelector("[data-shelf]");
     if (shelf) {
@@ -558,7 +561,7 @@ export default {
         const ok = st.strength >= NEED - 0.05;
         api.store.set("losses", ok ? 0 : losses + 1);
         return lad.conclude(wrap, kit, stage, ok ? { card: "icon-man-" + manFor(st.change), caption: `TRAY · DAY 7 · STRENGTH ${NEED}` } : { card: "icon-left", stamp: "stamp-hold", caption: "TRAY · DAY 7 · NOT ENOUGH" },
-          ok ? { outcome: "win", text: `The tray goes back clean, and Hollis has written nothing he can use. Strength ${r1(st.strength)}: enough to carry a man 400 m over snow. You cleared it for a decent reason, and it was the same meat. Clarity ${st.clarity}: whatever is written tonight will be written at that. ${ledger}` }
+          ok ? { outcome: "win", text: `The tray goes back clean, and Hollis has written nothing he can use.${wk.find(7) ? " Under where the slab was, on the bare steel: a strip of typed paper, DAY 7 · 22:00, put there for you to find. It goes in your sock." : ""} Strength ${r1(st.strength)}: enough to carry a man 400 m over snow. You cleared it for a decent reason, and it was the same meat. Clarity ${st.clarity}: whatever is written tonight will be written at that. ${ledger}` }
             : { outcome: "lose", text: `Strength ${r1(st.strength)} of ${NEED}. Not enough to carry a man 400 m over snow; what you kept back, you kept from him. The tray is counted and taken. ${ledger}` }, go);
       }
       api.store.set("losses", 0);

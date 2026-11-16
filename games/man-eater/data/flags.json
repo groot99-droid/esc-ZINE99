@@ -465,6 +465,18 @@
       "type": "bool",
       "default": false,
       "description": "Night 6, Below: the last line of the first bunkmate's wall list, at full reach, in quotes; nine pens against thirty-one on the roster; roster line numbers on the day-1 crates."
+    },
+    {
+      "name": "jax_carried",
+      "type": "bool",
+      "default": false,
+      "description": "Night 7, fence, 'One Set of Prints' (accepted 2026-11-15, built 2026-11-16): Fisk, at strength 88 or more, carried Jax on his shoulders over the 400 m of open snow and set him down at the trees with the list. Set in n7_set_down."
+    },
+    {
+      "name": "walked_back",
+      "type": "bool",
+      "default": false,
+      "description": "Night 7, after the carry: Fisk walked back to the wire treading every print he made, so the frame shows one line and the caption reads 'No crossing.' Set in n7_snow_back. Rule Three needs it false."
     }
   ]
 }

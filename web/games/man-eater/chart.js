@@ -30,7 +30,18 @@
 //     Schedule did not issue can break a card. Stamp one Broken and the orderly looks up. Day 7's
 //     last line (phase 1) follows it when the carbon was taken.
 // The 22:00 box stays as the art draws it, empty, and no text here refers to it.
-import { artKit, ladder } from "./kit.js";
+//
+// Phase 3 (the long puzzle pays off; the second week). The strips are no longer all handed out here:
+//   one is found on each night out (Silhouette halls 2 and 6, Snow line 3 and 5), one is the carbon
+//   torn out here on night 4, one is under the day-7 slab in The Tray (kit.js: week(), the sock).
+//   The test stage lays what is in the sock. Once all six are in, the whole Schedule can be laid,
+//   from the opening card or after day 6: strips 2 to 6 against what they issued, then day 7's line.
+//   The pencilled fourth line is open only to a player who has made the carry (Snow line, night 7).
+//   The line chosen is the week's ending (the finale on the menu reads it).
+//   A second week (after one is finished): the orderly is asked once, not twice, and is believed less;
+//   the folder's Schedule shows days 6 and 7, which the first week hid; the boots taken back on
+//   night 3 (Snow line) are one more entry nobody issued.
+import { artKit, ladder, week, ENDING_NAMES } from "./kit.js";
 
 const NAMES = { 1: "Day 2 · two cells and a card", 2: "Days 3 to 5 · the second sheet", 3: "Day 6 · their hypotheses" };
 const CUT = [ // the ward sheet on day 5: three columns scissored off; each man's last line, raised by a pencil rub
@@ -88,6 +99,7 @@ const SCHED = {
   3: { time: "19:00", lines: ["Card table.", "Loss to witness."], resp: "" },
   4: { time: "23:00", lines: ["Cabinet left unlocked.", "Officers' wing left unwatched."], resp: "" },
   5: { time: "08:00", lines: ["On schedule."], resp: "" },
+  6: { time: "09:00", lines: ["Subject will report companion.", "Subject will follow."], resp: "" },
   7: { time: "22:00", lines: ["STAY: retained.", "FOLLOW: see previous.", "FENCE: photographed, not followed."], resp: "" },
 };
 const schedText = (d) => `DAY ${d} · ${SCHED[d].time} · ${SCHED[d].lines.join(" ")}${SCHED[d].resp ? ` Response: ${SCHED[d].resp}` : ""}`;
@@ -98,6 +110,10 @@ const ISSUED = [
   { id: "L15", text: "My file has tomorrow in it. Typed.", why: "", strip: 4, hint: "Day 4, eleven at night. The carbon is blue. Which entry did you write that night?" },
   { id: "L9", text: "Height measured every day", why: "Routine", strip: 5, hint: "Day 5, eight in the morning. Two words. Who said them, over which page?" },
 ];
+// day 6's strip, laid against the cards it issued (the whole Schedule only)
+const ISSUED6 = { id: "C6", text: "Their two cards about me, on day 6's clipboard", why: "", strip: 6, hint: "Day 6, nine in the morning. Two hypotheses, about you. Where did you read them?" };
+// the week's ending, by the line chosen on day 7 (DESIGN.md section 13; stay splits on what was eaten)
+const ENDING_BY_WAY = { pencil: "one_set_of_prints", follow: "the_zoo", fence: "rule_three" };
 const WAYS = [
   { id: "stay", label: "Stay in the room", typed: "STAY: retained.", stamp: "stamp-retained", stampText: "RETAINED" },
   { id: "follow", label: "Follow the call", typed: "FOLLOW: see previous.", stamp: "stamp-see-previous", stampText: "SEE PREVIOUS" },
@@ -113,7 +129,8 @@ export default {
     return { unmount() { if (cur) cur.unmount(); cur = null; lad.dispose(); } };
 
     function run(stage) {
-    const sh = api.shared, twist = stage === 3;
+    const sh = api.shared, twist = stage === 3, wk = week(api);
+    const ASK_N = wk.second() ? 1 : ASKS; // a second week: the orderly is trusted less
     const FIRST = stage === 1 ? 0 : 1, LAST = stage === 1 ? 0 : DAYS.length - 1, TRIES = stage === 1 ? 3 : 2;
     const reported = {}; // day index -> the hunger Fisk said aloud (test)
     const hungerOf = (d) => (reported[d] != null ? reported[d] : HUNGER[d]);
@@ -126,7 +143,7 @@ export default {
     wrap.className = K + "wrap";
     wrap.innerHTML = `<style>
       .${K}wrap{position:absolute;inset:0;overflow:auto;background:${P.desk};background-image:repeating-linear-gradient(95deg,rgba(0,0,0,.12) 0 2px,transparent 2px 9px);color:${P.ink};font-family:'Courier Prime','Courier New',monospace}
-      .${K}board{position:relative;max-width:1080px;margin:18px auto;padding:34px 16px 16px;background:${P.paper};box-shadow:0 18px 40px rgba(0,0,0,.55);box-sizing:border-box;width:calc(100% - 24px);background-image:radial-gradient(rgba(27,29,31,.04) 1px,transparent 1.3px);background-size:5px 5px}
+      .${K}board{position:relative;max-width:1080px;margin:18px auto 72px;padding:34px 16px 16px;background:${P.paper};box-shadow:0 18px 40px rgba(0,0,0,.55);box-sizing:border-box;width:calc(100% - 24px);background-image:radial-gradient(rgba(27,29,31,.04) 1px,transparent 1.3px);background-size:5px 5px}
       .${K}under{position:absolute;inset:26px -10px -10px 22px;background:#f6f0dc;box-shadow:0 6px 16px rgba(0,0,0,.35);transform:rotate(1.4deg);z-index:-1;transition:transform .8s}
       .${K}board.two .${K}under{transform:rotate(2.6deg) translate(10px,6px)}
       .${K}clip{position:absolute;left:50%;top:-12px;transform:translateX(-50%);width:160px;height:30px;background:${P.steel};border-radius:6px;box-shadow:inset 0 -4px 0 rgba(0,0,0,.25)}
@@ -286,7 +303,7 @@ export default {
         <div class="${K}typed"></div>
         <p style="margin:10px 0 0;font-size:15px;line-height:1.4">Three ways out of tonight, each with its outcome typed beside it. Rule on the line: which is yours?</p>
         <div class="${K}ways" role="group" aria-label="Ways out of night 7"></div><div class="${K}lastout"></div></div>
-      <div class="${K}acts"><img class="${K}ord" alt="" hidden><button type="button" data-r="sup">Supported (S)</button><button type="button" data-r="brk">Broken (B)</button><button type="button" class="ask" data-ask>Ask the orderly · ${ASKS}</button><span class="${K}say" aria-live="polite"></span><button type="button" class="go" data-next hidden>Next</button></div>
+      <div class="${K}acts"><img class="${K}ord" alt="" hidden><button type="button" data-r="sup">Supported (S)</button><button type="button" data-r="brk">Broken (B)</button><button type="button" class="ask" data-ask>Ask the orderly · ${ASK_N}</button><span class="${K}say" aria-live="polite"></span><button type="button" class="go" data-next hidden>Next</button></div>
     </div>
     <div class="${K}intro"><div class="${K}form">
       <div class="hd"><span>FORM 7-F · DAILY MEASURES</span><span>INFIRMARY</span></div>
@@ -305,6 +322,7 @@ export default {
         <dt>② CARD</dt><dd>pick the hypothesis ${twist ? "you are ruling on" : "the question tests"}</dd>
         <dt>③ RULE</dt><dd>Supported or Broken (S or B). ${TRIES === 3 ? "Two retries" : "One retry"}${twist ? "" : " a morning"}</dd>
       </dl>
+      ${wk.all() && !wk.solved() ? `<p class="new"><b>All six strips are in your sock.</b> The whole Schedule can be laid now, and day 7's line ruled on.</p><button type="button" data-full style="margin:0 8px 8px 0">Lay the whole Schedule</button>` : ""}${wk.second() ? `<p class="new" data-week="${wk.n()}"><b>Week ${wk.n()}, in pencil.</b> “Up again.” He said it last week in the same voice, to the same page. You will ask him once this time, not twice.</p>` : ""}
       <button type="button" data-start>Morning, day ${stage === 1 ? 2 : stage === 2 ? 3 : 6}</button>
       </div>
     </div></div>`;
@@ -321,6 +339,7 @@ export default {
     const kit = artKit(api);
     kit.dressIntro(intro, intro.querySelector(".bd"), stage === 1 ? "chapter-3" : stage === 2 ? "chapter-4" : "chapter-7", "rgba(58,44,34,.6)");
     lad.picker(intro.querySelector(".bd"), intro.querySelector("[data-start]"), stage, go, P.ink, P.paper);
+    kit.sock(root);
     kit.fill(wrap, "." + K + "clipart", "clip", 176).then((ok) => { if (ok) $("clip").style.visibility = "hidden"; });
     kit.fill(wrap, "." + K + "holes", "punch-holes", 30);
     kit.fill(wrap, "." + K + "ord", "cutout-orderly", 40);
@@ -331,9 +350,9 @@ export default {
     // swap the CSS stamp for the rubber-stamp art once it is rasterised
     const inkStamps = (root, id) => { if (id) kit.png(id, 120).then((u) => { if (!u) return; root.querySelectorAll(`[data-stamp="${id}"]`).forEach((im) => { im.src = u; im.hidden = false; }); root.querySelectorAll(`[data-stampfb="${id}"]`).forEach((x) => x.remove()); }); };
     let phase = "chart";
-    const sched = { offered: false, read: twist && !!api.store.get("sched_read", false), found: {}, laid: {}, missed: {}, tries: {}, pick: null, way: null };
+    const sched = { offered: false, read: twist && (wk.has(4) || (!wk.second() && api.store.get("sched_read", false) === true)), found: {}, laid: {}, missed: {}, tries: {}, pick: null, way: null, full: false, final: false };
 
-    let di = FIRST, shown = 0, sel = new Set(), card = null, tries = 0, idle = 0, hintAt = null, solved = [], broken = {}, filling = false, asks = ASKS, margins = [], justStruck = null;
+    let di = FIRST, shown = 0, sel = new Set(), card = null, tries = 0, idle = 0, hintAt = null, solved = [], broken = {}, filling = false, asks = ASK_N, margins = [], justStruck = null;
     if (stage >= 2) broken.L2 = "Is it the climate: no. height D1, height D2";
     let mismatches = 0, under = false, rubbed = 0, twSel = new Set(), twCard = null, twWon = false;
     ROWS.find((r) => r.id === "hunger").v = (d) => String(hungerOf(d));
@@ -518,7 +537,7 @@ export default {
       if (phase === "twist") { sayEl.textContent = "You ask what the cards mean. The orderly, to the clipboard: “On schedule.” His pencil is already over the box marked Supported. He has never been asked to hold it anywhere else."; return; }
       const D = day();
       hintAt = `${D.need[D.need.length - 1]}:${D.d}`; renderGrid();
-      sayEl.textContent = `You ask what the numbers mean. The orderly: “${D.say}” He writes a line about the question. Fisk's pencil goes to one cell. (${D.hint})`;
+      sayEl.textContent = `You ask what the numbers mean. The orderly: “${D.say}” He writes a line about the question. Fisk's pencil goes to one cell. (${D.hint})` + (wk.second() ? " He said that last week too, word for word. You do not ask again." : "");
     }
     function done() {
       rBtns.forEach((b) => (b.disabled = true)); askBtn.disabled = true;
@@ -565,7 +584,7 @@ export default {
       el.className = K + "night";
       el.innerHTML = `<div class="${K}desk">
         <h3>NIGHT 4 · SAM'S OFFICE · 23:00</h3><img class="dv" alt="" hidden>
-        <p>Nobody was watching the officers' wing tonight. The cabinet under the staff shelf is not locked, and one folder has your number on its tab.</p>
+        <p>${wk.second() ? `Week ${wk.n()}. The officers' wing is unwatched again, and the cabinet is open again. You know it was left open for you. You can still shut it.` : "Nobody was watching the officers' wing tonight. The cabinet under the staff shelf is not locked, and one folder has your number on its tab."}</p>
         <div class="${K}things">
           <button type="button" data-t="folder"><img alt="" data-a="form-7f" hidden><span>Folder 7-F · FISK<small>open it</small></span></button>
           <button type="button" data-t="env"><img alt="" data-a="thread-own" hidden><span>An envelope<small>look</small></span></button>
@@ -601,10 +620,9 @@ export default {
             b.addEventListener("click", () => readRow(d, b));
             hits.appendChild(b);
           }
-          const m = document.createElement("div"); m.className = K + "mask"; m.textContent = "DAYS 6 AND 7 · NOT YET TYPED";
-          hits.appendChild(m);
+          if (!wk.second()) { const m = document.createElement("div"); m.className = K + "mask"; m.textContent = "DAYS 6 AND 7 · NOT YET TYPED"; hits.appendChild(m); }
         }
-        sayN(pg.say);
+        sayN(pg.id === "schedule" && wk.second() ? pg.say + " And days 6 and 7 are typed already, down to “carried him” in pencil. Last week you never saw them; this week the page is not covered. You know what it says." : pg.say);
       }
       function readRow(d, b) {
         sayN(ROW_SAY[d]);
@@ -629,7 +647,7 @@ export default {
       };
       takeBtn.addEventListener("click", () => {
         if (sched.read) return close();
-        sched.read = true; api.store.set("sched_read", true);
+        sched.read = true; api.store.set("sched_read", true); wk.find(4);
         sayN("L15. My file has tomorrow in it. Typed. — You fold the blue carbon into your sock. New Mexico killed the ones who complained about the heat. You didn't complain. Lucky.");
         takeBtn.textContent = "Go back to the bunk"; shutBtn.hidden = true; takeBtn.focus();
       });
@@ -646,12 +664,15 @@ export default {
 
     // ---- the Schedule: the strips laid against the list entries they issued
     const STRIP_ORDER = [4, 2, 5, 3];
+    const inSock = (d) => d === 4 ? sched.read || wk.has(4) : wk.has(d);
+    const order = () => (sched.full ? [2, 3, 4, 5, 6] : STRIP_ORDER.filter(inSock));
     function openSchedule() {
       phase = "schedule";
       chartParts.forEach((x) => (x.hidden = true));
       schEl.hidden = false; nextBtn.hidden = true;
-      $("day").textContent = "DAY 5 · EVENING";
-      sayEl.textContent = "Four strips, one from each night out and one from this morning's clipboard. Day 1's was in the folder; it is already laid, beside the first thing you said here.";
+      $("day").textContent = sched.full ? "THE SCHEDULE · SIX STRIPS" : "DAY 5 · EVENING";
+      const n = order().length, lost = STRIP_ORDER.filter((d) => !inSock(d));
+      sayEl.textContent = sched.full ? "The whole Schedule. Five strips to lay against what they issued; day 1's is laid already, beside the first thing you said here. Then day 7's line." : `${n} strip${n === 1 ? "" : "s"} in your sock, laid against the list. Day 1's was in the folder; it is already laid, beside the first thing you said here.${lost.length ? ` Not in your sock yet: day ${lost.join(", day ")}. They are found on nights out.` : ""}`;
       renderSched();
       stripsEl.querySelector("button:not(.laid)")?.focus();
     }
@@ -667,9 +688,9 @@ export default {
     function renderSched() {
       stripsEl.innerHTML = "";
       stripsEl.appendChild(stripBtn(1, "“Sir yes Sir”"));
-      for (const d of STRIP_ORDER) if (!sched.laid[d] && !sched.missed[d]) stripsEl.appendChild(stripBtn(d, null));
+      for (const d of order()) if (!sched.laid[d] && !sched.missed[d]) stripsEl.appendChild(stripBtn(d, null));
       entsEl.innerHTML = "";
-      const rows = [LIST[0], ISSUED[0], LIST[1], ISSUED[3], ISSUED[1], ISSUED[2]];
+      const rows = sched.full ? [LIST[0], ISSUED[0], LIST[1], ISSUED[3], ISSUED[1], ISSUED6, ISSUED[2]] : [LIST[0], ISSUED[0], LIST[1], ISSUED[3], ISSUED[1], ISSUED[2]];
       for (const e of rows) {
         const d = Object.keys(sched.laid).find((k) => sched.laid[k] === e.id);
         const b = document.createElement("button");
@@ -682,21 +703,27 @@ export default {
     function lay(entryId) {
       const d = sched.pick;
       if (d == null) { sayEl.textContent = "Pick a strip first."; return; }
-      const right = ISSUED.find((x) => x.strip === d);
+      const right = [...ISSUED, ISSUED6].find((x) => x.strip === d);
       if (right.id === entryId) {
         sched.laid[d] = entryId; sched.pick = null;
         sayEl.innerHTML = `${d === 2 ? stampHtml("stamp-retained", "RETAINED") : ""} Laid. ${schedText(d)} What you thought you found, they had typed the day before.`;
         if (d === 2) inkStamps(sayEl, "stamp-retained");
       } else {
         sched.tries[d] = (sched.tries[d] || 0) + 1;
-        if (sched.tries[d] >= 2) { sched.missed[d] = true; sched.pick = null; sayEl.textContent = `Not that one either. Day ${d}'s strip goes back in your sock, unread.`; }
+        if (sched.full) { sayEl.textContent = `That line was not written for that. ${right.hint}`; if (!reduce) sayEl.animate?.([{ transform: "translateX(-6px)" }, { transform: "translateX(6px)" }, { transform: "none" }], { duration: 300 }); }
+        else if (sched.tries[d] >= 2) { sched.missed[d] = true; sched.pick = null; sayEl.textContent = `Not that one either. Day ${d}'s strip goes back in your sock, unread.`; }
         else { sayEl.textContent = `That line was not written for that. ${right.hint} One retry.`; if (!reduce) sayEl.animate?.([{ transform: "translateX(-6px)" }, { transform: "translateX(6px)" }, { transform: "none" }], { duration: 300 }); }
       }
       renderSched();
-      if (STRIP_ORDER.every((x) => sched.laid[x] || sched.missed[x])) {
-        const n = Object.keys(sched.laid).length;
-        sayEl.insertAdjacentText("beforeend", ` ${n} of 4 laid.${n ? " Every discovery on those lines was issued." : ""} There are two more strips, and they are not for today.`);
-        nextBtn.hidden = false; nextBtn.textContent = "Close the chart"; nextBtn.focus();
+      if (order().every((x) => sched.laid[x] || sched.missed[x])) {
+        const n = Object.keys(sched.laid).length, of = order().length;
+        if (sched.full) {
+          sayEl.insertAdjacentText("beforeend", " Five of five laid. Every discovery on those lines was issued, a day ahead. One strip is left: day 7, 22:00.");
+          nextBtn.hidden = false; nextBtn.textContent = "The last strip · day 7"; nextBtn.focus();
+        } else {
+          sayEl.insertAdjacentText("beforeend", ` ${n} of ${of} laid.${n ? " Every discovery on those lines was issued." : ""} There are more strips, and they are not for today.`);
+          nextBtn.hidden = false; nextBtn.textContent = "Close the chart"; nextBtn.focus();
+        }
       } else (stripsEl.querySelector("button:not(.laid)") || entsEl.querySelector("button"))?.focus();
     }
     // ---- the twist: day 6. The cards are the project's; the evidence is the list, and only what was not issued.
@@ -710,8 +737,10 @@ export default {
       for (const e of ISSUED.filter((x) => sched.read || x.id !== "L15")) { const d = document.createElement("div"); d.appendChild(kit.img("schedule-strip-" + e.strip, 440, "")); const s = document.createElement("span"); s.textContent = schedText(e.strip); d.appendChild(s); iss.appendChild(d); }
       const given = sh.get("bread_given", "");
       if (given) lad.note(wrap, `because you gave bread to ${given} in Short Rations, there is one more line on the list that nobody issued.`);
-      const ents = [...ISSUED.filter((e) => sched.read || e.id !== "L15").map((e) => ({ ...e, issued: true })), ...OWN, ...(given ? [{ id: "A3", text: `Gave my loaf to ${given}. It is not on any strip.` }] : [])];
-      const order = ["L8", "A1", "L10", "L15", "A2", "L9", "A3"].map((id) => ents.find((e) => e.id === id)).filter(Boolean);
+      const boots = !!sh.get("boots_kept", false);
+      if (boots) lad.note(wrap, "because you took his boots back to the bunk in Snow line, there is a line on the list that nobody issued.");
+      const ents = [...ISSUED.filter((e) => sched.read || e.id !== "L15").map((e) => ({ ...e, issued: true })), ...OWN, ...(given ? [{ id: "A3", text: `Gave my loaf to ${given}. It is not on any strip.` }] : []), ...(boots ? [{ id: "A4", text: "Took his boots back to the bunk, laces tied. Nobody typed it." }] : [])];
+      const order = ["L8", "A1", "L10", "L15", "A2", "L9", "A3", "A4"].map((id) => ents.find((e) => e.id === id)).filter(Boolean);
       twEnts.innerHTML = "";
       for (const e of order) {
         const b = document.createElement("button");
@@ -738,7 +767,7 @@ export default {
         twOut.appendChild(kit.img("schedule-strip-6", 520, "Day 6's strip, stamped Broken", "strip"));
         twOut.appendChild(kit.img("icon-gaze", 84, "He is looking at you", "eye"));
         rBtns.forEach((b) => (b.disabled = true)); askBtn.disabled = true;
-        nextBtn.hidden = false; nextBtn.textContent = sched.read ? "Day 7" : "Close the chart"; nextBtn.focus();
+        nextBtn.hidden = false; nextBtn.textContent = wk.all() && !wk.solved() ? "Lay the whole Schedule" : sched.read ? "Day 7" : "Close the chart"; nextBtn.focus();
         return;
       }
       tries++;
@@ -752,15 +781,23 @@ export default {
       nextBtn.hidden = false; nextBtn.textContent = "Close the chart"; nextBtn.focus();
     }
     // ---- the last step: day 7's line, typed before the choice
-    function openLast() {
-      phase = "last";
+    function openFull() {
+      sched.full = true; sched.laid = {}; sched.missed = {}; sched.tries = {}; sched.pick = null; sched.read = true;
+      schEl.querySelector("h4").textContent = "THE SCHEDULE · ALL SIX STRIPS · LAID AGAINST WHAT THEY ISSUED";
+      schEl.querySelector("p").textContent = "Pick a strip, then the list entry it issued. A wrong entry earns a hint, not a loss.";
+      frost(4);
+      openSchedule();
+    }
+    function openLast(final = false) {
+      phase = "last"; sched.final = final;
       schEl.hidden = true; twEl.hidden = true; lastEl.hidden = false; nextBtn.hidden = true;
       rBtns.forEach((b) => (b.hidden = true)); askBtn.hidden = true;
       $("day").textContent = "DAY 7"; frost(4);
-      $("typed").textContent = `22:00  ${SCHED[7].lines[0]}\n       ${SCHED[7].lines[1]}\n       ${SCHED[7].lines[2]}`;
-      waysEl.innerHTML = WAYS.map((w) => `<button type="button" data-w="${w.id}" aria-pressed="false">${w.label}</button>`).join("") + `<button type="button" class="pencil" data-w="pencil" aria-pressed="false">Write a line they have not typed ✎</button>`;
-      waysEl.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => chooseWay(b.dataset.w)));
-      sayEl.textContent = "The orderly lays the last strip on the clipboard and reads nothing aloud.";
+      lastEl.querySelector("." + K + "typed").textContent = `22:00  ${SCHED[7].lines[0]}\n       ${SCHED[7].lines[1]}\n       ${SCHED[7].lines[2]}`;
+      const carried = !!sh.get("carried", false), pencilOpen = !final || carried;
+      waysEl.innerHTML = WAYS.map((w) => `<button type="button" data-w="${w.id}" aria-pressed="false">${w.label}</button>`).join("") + `<button type="button" class="pencil" data-w="pencil" aria-pressed="false"${pencilOpen ? "" : " disabled"}>Write a line they have not typed ✎${pencilOpen ? "" : " (not done)"}</button>`;
+      waysEl.querySelectorAll("button:not([disabled])").forEach((b) => b.addEventListener("click", () => chooseWay(b.dataset.w)));
+      sayEl.textContent = "The orderly lays the last strip on the clipboard and reads nothing aloud." + (final ? (carried ? " Frame 112 is clipped beside it: one line of prints, every toe toward the base. That is not on the strip." : " A pencilled line would have to be something you did. You have not done anything they did not type: the carry is Snow line's, night 7.") : "");
       waysEl.querySelector("button").focus();
     }
     function chooseWay(id) {
@@ -776,7 +813,27 @@ export default {
         lastOut.appendChild(kit.img("schedule-strip-7", 560, "Day 7's strip, with a line added by hand", K + "lastimg"));
         sayEl.textContent = "In pencil, under the typed lines: “Carry Jax over. Walk back.” There is no line for it. The orderly, who never looks at your face, looks at the sheet, and writes it in by hand: carried him.";
       }
-      nextBtn.hidden = false; nextBtn.textContent = "Close the chart"; nextBtn.focus();
+      if (sched.final) {
+        const ending = ENDING_BY_WAY[id] || ((sh.get("tray", null) || {}).ate < 1 ? "transferred" : "call_me_sam");
+        wk.solve(id, ending);
+        sayEl.insertAdjacentText("beforeend", ` The Schedule is laid, every line. This week ends: ${ENDING_NAMES[ending]}.`);
+      }
+      nextBtn.hidden = false; nextBtn.textContent = sched.final ? "Close the folder" : "Close the chart"; nextBtn.focus();
+    }
+    // the whole Schedule laid: the week's ending, its generated card behind the result
+    const FULL_TEXT = {
+      one_set_of_prints: "The Schedule is laid: every discovery on it was issued a day ahead, and you laid each against the thing it gave you. The last line is in pencil, in the orderly's hand: carried him. It is the one act on the sheet nobody typed, and it was to carry Jax to the trees and walk back in. Open the game's menu: the week is written up there.",
+      the_zoo: "The Schedule is laid, every line issued a day ahead. On day 7 you ruled for the line they typed: FOLLOW: see previous. The cell was stamped before you chose it. Open the game's menu: the week is written up there.",
+      rule_three: "The Schedule is laid, every line issued a day ahead. On day 7 you ruled for FENCE: photographed, not followed. They knew the route; it was clipped to the board. Open the game's menu: the week is written up there.",
+      call_me_sam: "The Schedule is laid, every line issued a day ahead. On day 7 you ruled for STAY: retained. The changed man who stays in the room is the result they wanted. Open the game's menu: the week is written up there.",
+      transferred: "The Schedule is laid, every line issued a day ahead. On day 7 you ruled for STAY, and you had eaten nothing: no use to them. Retained becomes transferred. Open the game's menu: the week is written up there.",
+    };
+    const FULL_STAMP = { one_set_of_prints: "stamp-no-crossing", the_zoo: "stamp-see-previous", call_me_sam: "stamp-retained", transferred: "stamp-hold", rule_three: "" };
+    function finishFull() {
+      const sol = wk.solved(); if (!sol) return finishAll();
+      const e = sol.ending;
+      api.store.set("losses", 0);
+      kit.endCard(wrap, { ending: "ending-" + e.replace(/_/g, "-"), card: "ending-title-" + e.replace(/_/g, "-"), stamp: FULL_STAMP[e], caption: `SCHEDULE · SUBJECT: FISK · WEEK ${wk.n()} · ${ENDING_NAMES[e].toUpperCase()}` }, { outcome: "win", text: FULL_TEXT[e] });
     }
     function finishAll() {
       if (stage === 1) {
@@ -788,8 +845,9 @@ export default {
       }
       if (twist) {
         if (!twWon) api.store.set("losses", losses + 1);
+        const wayEnd = !sched.way ? "" : "ending-" + (ENDING_BY_WAY[sched.way] || "call_me_sam").replace(/_/g, "-");
         const coda = !sched.way ? "" : sched.way === "pencil" ? " Day 7: the last line on your sheet is in the orderly's handwriting, not his typewriter's." : " Day 7 went the way it was typed.";
-        return lad.conclude(wrap, kit, stage, twWon ? { card: "schedule", caption: "SCHEDULE · DAY 6 · RESPONSE: BROKEN" } : { card: "schedule", stamp: "stamp-supported", caption: "SCHEDULE · DAY 6 · ON SCHEDULE" },
+        return lad.conclude(wrap, kit, stage, twWon ? { card: "schedule", ending: wayEnd, caption: "SCHEDULE · DAY 6 · RESPONSE: BROKEN" } : { card: "schedule", stamp: "stamp-supported", caption: "SCHEDULE · DAY 6 · ON SCHEDULE" },
           twWon ? { outcome: "win", text: `Day 6. Their card said you would report him, and their own sheet could not show it: everything they could point to, they had issued. What broke it was in your hand, and it was not on any strip. The orderly looked up. He will have to write that down, and there is no box for it.${coda}` }
             : { outcome: "lose", text: `Day 6. The card stands as typed. Their numbers could not break their own hypothesis, and the things they issued could not either. The orderly did not look up.${coda}` }, go);
       }
@@ -809,8 +867,10 @@ export default {
       lad.conclude(wrap, kit, stage, { card: win ? "target-sheet" : "form-7f", stamp: win ? "stamp-broken" : "stamp-supported", caption: win ? "CASE 7-F · KNOWS: PATTERN" : "CASE 7-F · SHELVED" }, result, go);
     }
     const onNext = () => {
+      if (phase === "schedule" && sched.full) return dayBreak(7, "Morning, day 7", () => openLast(true));
+      if (phase === "last" && sched.final) return finishFull();
       if (phase === "schedule" || phase === "last") return finishAll();
-      if (phase === "twist") return twWon && sched.read ? dayBreak(7, "Morning, day 7", openLast) : finishAll();
+      if (phase === "twist") return twWon && wk.all() && !wk.solved() ? (twEl.hidden = true, openFull()) : twWon && sched.read ? dayBreak(7, "Morning, day 7", openLast) : finishAll();
       if (phase !== "chart") return;
       if (stage === 1) return finishAll();
       if (di === 2 && !sched.offered) { sched.offered = true; nextBtn.hidden = true; return openCarbon(); }
@@ -839,6 +899,8 @@ export default {
     const startBtn = intro.querySelector("[data-start]");
     const start = () => { intro.remove(); if (twist) dayBreak(6, "Morning, day 6", openTwist); else startDay(); };
     startBtn.addEventListener("click", start);
+    const fullBtn = intro.querySelector("[data-full]");
+    if (fullBtn) fullBtn.addEventListener("click", () => { intro.remove(); openFull(); });
     renderGrid(); renderPlot(); renderList(); renderCards(); renderRead();
     rBtns.forEach((b) => (b.disabled = true)); askBtn.disabled = true;
     timers.push(setTimeout(() => startBtn.focus(), 30));
