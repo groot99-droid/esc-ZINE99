@@ -66,7 +66,7 @@ game), the column on the right says what makes each one different.
 | The Stuffed Ones | The Hand-Sewn Book | Translation | Stitched symbols ordered into meaning; each spread teaches part of the ritual |
 | The Stuffed Ones | Parlour | Board game, tampering | You never play it; you move the guests' pieces while they are not looking |
 | The Stuffed Ones | Stuffing | Allocation | Choose which memories are packed into which seam; what you pack is what you keep |
-| Behind the Peephole | Lockwork | Lock picking | The only lock game in the collection: pin tumblers, wafer locks, a safe dial |
+| Behind the Peephole | Lockwork | Lock picking | The only lock game in the collection: pin tumblers, wafer locks, a safe dial, a lever lock |
 | Behind the Peephole | The Statement | Logic grid | Who, what, where, which night; a correct statement locks in |
 | Behind the Peephole | Night Patience | Solitaire | A patience game for quiet hours; slipped-in cards carry messages |
 | Behind the Peephole | The Mosaic | Link board | Pins and thread between guests; links unlock questions |
