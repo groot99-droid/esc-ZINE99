@@ -6,6 +6,15 @@
 // Quoted line: "At dawn, the bark people wake to a strange vibration."
 //   creative-writing/vault/05_Worldbuilding/01_People_of_the_Bark.md (DESIGN.md section 3, The Tremor)
 
+import { finaleFor } from "./_pulse.js";
+
+// The finale (phase 3): once the Pulse map has been read at the Tremor Scroll (_pulse.js), the ending that year
+// earned: The Ring when the Knot pours the Great Offering into the rung plate while the Pulse is loud, or the
+// ending another answer earns. null until then.
+export function finale({ shared, keyart }) {
+  try { return finaleFor(shared, keyart); } catch { return null; }
+}
+
 export const meta = {
   cover: "assets/stills/people-of-the-bark/01-the-tremor.jpg",
   // DESIGN.md 15: bark umber and grey-brown; lichen sage and lime; sap amber and gold; lantern orange.

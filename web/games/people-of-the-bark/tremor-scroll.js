@@ -18,6 +18,19 @@
 
 import * as kit from "./_art.js";
 import * as ladder from "./_ladder.js";
+import * as book from "./_pulse.js";
+
+// Phase 3. The autumn sitting with both chalk marks right is Fenn's note for the Pulse map (_pulse.js), and the map
+// is read here once all seven notes are in (the book's tab: ring the plate, the Sounding, the city's answer). The
+// winter sitting's set-piece is played, not told: three ledgers lie on Fenn's table and the player picks the one
+// with the chalk row's shape. A second playthrough (book.secondRun) has the chalk column on the drum from summer,
+// recorded and not forecast.
+const LEDGERS = [
+  { id: "council", name: "The autumn council's ledger", sub: "days a house tapped past three, or poured", days: HEAVY_DAYS() },
+  { id: "weather", name: "Fenn's weather book", sub: "the sun days", days: [5, 7, 12] },
+  { id: "watch", name: "Burr's watch roster", sub: "nights the wall was walked", days: [1, 4, 8, 10, 12] },
+];
+function HEAVY_DAYS() { return [2, 3, 6, 7, 9, 11]; }
 
 // Phase 2: three sittings. Teach, summer: the squirrel's hours (two of three). Test, autumn: weather and
 // caching, with the faceless row and the Pulse map as phase 1 built them (four of six). Twist, the winter
@@ -26,7 +39,7 @@ import * as ladder from "./_ladder.js";
 // weather. "It answers us." Listening posts (runners' notes from Lowridge, Highridge and Knotholm: loud,
 // faint or nothing) come with each cell. The set-piece: the column being forecast is the city's own budget.
 // A whole Pulse map is remembered (api.shared "pulse_map_whole") and keeps the runner's ticks lit in the dark.
-const SPEC = { title: "Tremor Scroll", chip: "left:auto;right:8px;bottom:auto;top:4px", stages: [
+const SPEC = { title: "Tremor Scroll", chip: "left:auto;right:8px;bottom:auto;top:4px", tabSide: "right", tabTop: "40%", stages: [
   { name: "The squirrel's hours", blurb: "Summer. Dawn, dusk, and what a storm does to them." },
   { name: "Weather and caching", blurb: "Autumn. New hours, and a chalk column that comes from no face of the Trunk." },
   { name: "The faceless row", blurb: "The winter sitting. The chalk column stops following the weather alone." },
@@ -106,7 +119,11 @@ function play(root, api, stage) {
     let ph = 0, guess = [], cur = 0, sealed = false, revealT = 0, lamps = 3, lampDay = null, marks = 0;
     const tally = { correct: 0, fine: 0, made: 0 };
     const results = []; // per phase: [{ok, fine}]
-    const phase = () => PHASES[ph];
+    const again = book.secondRun(api);
+    // a second year: the chalk column is on the drum from summer, recorded (sun 2, rain 1, nothing in storms), not forecast
+    const PHS = PHASES.slice();
+    if (again) PHS[0] = Object.assign({}, PHASES[0], { pulse: true, pulseAt(day) { const w = this.weather[day - 1]; return w === "storm" || day >= this.first ? null : { s: w === "sun" ? 2 : 1 }; } });
+    const phase = () => PHS[ph];
     const startPhase = (i) => { ph = i; guess = phase().cells.map(() => null); cur = 0; sealed = false; revealT = 0; lampDay = null; marks = 0; };
     const truthOf = (d, p) => (p === PULSE ? phase().pulseAt(d) : phase().truth(d, p));
     const isP = (i) => phase().cells[i][1] === PULSE;
@@ -362,7 +379,7 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
       sealBtn.disabled = sealed || left > 0;
       sealBtn.textContent = left ? `${left} blank` : "Seal the forecast";
       sub.textContent = `${PH.title} · ${PH.cells.length} forecasts`;
-      scoreEl.innerHTML = stage === 2 ? `<span style="color:${CHALK}">the faceless column</span> · need ${NEED} of ${OF}` : `correct <b>${tally.correct}</b> / ${tally.made} · need ${NEED} of ${OF}${PH.pulse ? ` · <span style="color:${CHALK}">faceless marks ${guess.filter((g, i) => isP(i) && g && !g.none).length} / 2</span>` : ""}`;
+      scoreEl.innerHTML = stage === 2 ? `<span style="color:${CHALK}">the faceless column</span> · need ${NEED} of ${OF}` : `correct <b>${tally.correct}</b> / ${tally.made} · need ${NEED} of ${OF}${PH.cells.some((c) => c[1] === PULSE) ? ` · <span style="color:${CHALK}">faceless marks ${guess.filter((g, i) => isP(i) && g && !g.none).length} / 2</span>` : ""}`;
       drawMap();
     }
     // ---- the Pulse map strip, from the back pages of Old Resin's recipe book ----
@@ -473,7 +490,7 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
         const won = faceless >= NEED;
         api.store.set("losses", won ? 0 : losses + 1);
         say("Fenn", won ? "lays the council ledger beside the chalk row. They are the same shape. “It answers us.”" : "turns the scroll back. “Then I still do not know whose hand it is.”");
-        if (won) { shared.set("faceless_read", true); ladder.pulse(api, 0); }
+        if (won) { shared.set("faceless_read", true); ladder.pulse(api, 0); later(ledgers, api.reducedMotion ? 500 : 1700); return; }
         later(() => api.end(won
           ? { outcome: "win", text: `${faceless} of 4 faceless marks forecast. Frost should have silenced the row, and on quiet days it did. On the days the council tapped past three or poured an offering, it was loud whatever the weather. Fenn lays the council's ledger beside her forbidden scroll and they are the same shape: the column you were forecasting was the city's own budget. “It answers us.” Lowridge heard every mark. Knotholm, where the offerings are poured, heard nothing.` }
           : { outcome: "lose", text: `${faceless} of 4 faceless marks forecast. The row did not keep to the weather: warmth still counts (sun three, rain one, frost silent), but a day the council tapped hard or poured is two louder. The sap drops beside the days said so.${losses + 1 >= 2 ? " Next sitting, Fenn will underline what each column usually holds." : ""}` }), api.reducedMotion ? 500 : 1700);
@@ -503,6 +520,33 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
         say("Fenn", faceless === 2 ? "looks at the chalk column for a long time. “Warm days, loud. Cold days, faint. It answers us.”" : faceless ? "scrapes one chalk mark off the drum with her thumbnail, and leaves the other." : "scrapes both chalk marks off the drum. “Then it was my tired hand.”");
         later(sounding, api.reducedMotion ? 600 : 2000);
       }
+    }
+    // ---- the winter set-piece, played: which ledger has the chalk row's shape? ----
+    function ledgers() {
+      const card = document.createElement("div");
+      card.className = P + "intro";
+      const row = (L) => `<svg viewBox="0 0 252 30" aria-hidden="true" style="height:30px;margin:4px 0 0">${Array.from({ length: 12 }, (_, k) => `<rect x="${2 + k * 21}" y="4" width="17" height="22" rx="2" fill="${L.days.includes(k + 1) ? AMBER : "rgba(239,226,196,.12)"}" stroke="#7d6c5a"/><text x="${10.5 + k * 21}" y="20" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="${L.days.includes(k + 1) ? DRUM : MUTED}">${k + 1}</text>`).join("")}</svg>`;
+      const order = [1, 0, 2];
+      card.innerHTML = `<div class="${P}slip" role="dialog" aria-label="Three ledgers">
+ <h2>Three ledgers</h2>
+ <p class="${P}beat">Fenn clears the table and lays three ledgers beside the chalk row, open at the winter weeks. “One of these is the same shape,” she says. “I want you to find it, not me. Then I will know it is not my hand.”</p>
+ <p class="${P}goal">Which ledger marks the days the chalk row was <b>louder than the weather allows</b>? (Frost should silence it; rain should keep it faint.)</p>
+ <div style="display:grid;gap:8px">${order.map((k) => { const L = LEDGERS[k]; return `<button class="${P}b" type="button" data-l="${L.id}" style="text-align:left;background:rgba(239,226,196,.06);color:#efe2c4;border-color:#7d6c5a;padding:8px 10px;min-height:44px"><b style="font:13px ui-monospace,monospace;letter-spacing:.08em;color:${GOLD};font-weight:400">${L.name.toUpperCase()}</b><br><span style="font-family:'Cormorant Garamond',serif;font-size:16px">${L.sub}</span>${row(L)}</button>`; }).join("")}</div>
+ <p class="${P}beat ${P}res" aria-live="polite" style="margin-top:10px"></p></div>`;
+      wrap.appendChild(card);
+      let tries = 0, done = false;
+      card.querySelectorAll("[data-l]").forEach((b) => on(b, "click", () => {
+        if (done) return;
+        if (b.dataset.l !== "council") {
+          tries++; flash(b, P + "no"); b.disabled = true;
+          card.querySelector("." + P + "res").textContent = b.dataset.l === "weather" ? "Fenn: “Day nine was frost, and the row was loud. The sun had nothing to do with it.”" : "Fenn: “Day eight the wall was walked, and the row said nothing. Not that one.”";
+          return;
+        }
+        done = true; b.style.borderColor = LIME;
+        card.querySelector("." + P + "res").textContent = "Fenn lays the council's ledger along the chalk row. They are the same shape. “It answers us.”";
+        later(() => { card.remove(); api.end({ outcome: "win", text: `${faceless} of 4 faceless marks forecast. Frost should have silenced the row, and on quiet days it did. On the days the council tapped past three or poured an offering, it was loud whatever the weather. ${tries ? "At the second look" : "At once"} you laid the council's ledger beside Fenn's forbidden scroll, and they were the same shape: the column you were forecasting was the city's own budget. “It answers us.” Lowridge heard every mark. Knotholm, where the offerings are poured, heard nothing.` }); }, api.reducedMotion ? 600 : 2000);
+      }));
+      const first = card.querySelector("[data-l]"); first && first.focus({ preventScroll: true });
     }
     // ---- the long puzzle's last step: where will the second tap land? ----
     let tapRight = null;
@@ -542,7 +586,7 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
     }
     function finish() {
       const { correct, fine } = tally, scholars = correct * 2 + fine, won = correct >= NEED;
-      if (stage === 1 && faceless === 2) shared.set("pulse_map_whole", true);
+      if (stage === 1 && faceless === 2) { shared.set("pulse_map_whole", true); book.gather(root, api, "scroll"); }
       if (stage === 0) {
         api.store.set("losses", won ? 0 : losses + 1);
         later(() => api.end(won
@@ -563,6 +607,7 @@ ${G.narrow ? "" : `<text x="${R - 12}" y="${Yd(PH.first) - G.DY / 2 + 13}" text-
     on(startBtn, "click", () => {
       wrap.querySelector("." + P + "intro").remove();
       say("Fenn", gentle ? "has underlined what each column usually holds. “Look at the dawns first.”" : "in the margin: “Look at the dawns first. Then look at the storms.”");
+      if (stage === 0 && again) say("Fenn", "has ruled a fourth column already, in chalk, and filled it back to the first day of summer. “It was there all along. I only had to stop scraping it off.”");
       if (stage === 1) say("Fenn", "“It is not a god. Or it is a god with a routine.” A runner's note is pinned to the drum for each post that listens.");
       if (stage === 2) say("Fenn", "“It has no face. I gave it one twice, to make it fit. I scraped them off.” The sap drops are the council's days.");
       geom(); panel(); draw();

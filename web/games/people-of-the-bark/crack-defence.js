@@ -18,6 +18,7 @@
 // one falls back to the old drawn shapes.
 import * as kit from "./_art.js";
 import * as ladder from "./_ladder.js";
+import * as book from "./_pulse.js";
 
 // Phase 2: three stages (DEEP_DIVE.md 3). Teach: mites, the rule alone. Test: the Beetle as before, with the
 // plugged door beside line 3 (a hole stopped by one living head; a warrior left in its reach for 10 s is
@@ -27,7 +28,7 @@ import * as ladder from "./_ladder.js";
 // escort, an offering at every line, is now the mistake. A scar left on a Ring Door (api.shared
 // "door_scars") is a side entrance in this crack. The collection's guest object hangs in the twist.
 const DOOR_LINE = 2, DRY_LINE = 3, PAPER_LINE = 1;
-const SPEC = { title: "Crack defence", chip: "left:6px;bottom:auto;top:46%", stages: [
+const SPEC = { title: "Crack defence", chip: "left:6px;bottom:auto;top:46%", tabTop: "18%", stages: [
   { name: "Mites", blurb: "The rule alone: hold the lines, move warriors, shore what is quiet." },
   { name: "The Beetle, and the plugged door", blurb: "God or monster. And beside line 3, a hole with a head in it that takes whoever stands too long." },
   { name: "The Procession and the Wall", blurb: "Autumn ants, and a crack with a paper wall. What kept everyone safe from the Beetle is wrong here." },
@@ -465,7 +466,8 @@ function play(root, api, stage) {
           say(stage === 2 ? "THE COLUMN TURNS BACK" : "THE LAST OF THEM", 3);
           api.store.set("losses", 0);
           if (stage === 0) later(() => api.end({ outcome: "win", text: `The mites are spent. ${heldN} of 5 lines still stand. ${S.lost.length ? `The Roll of the Bark gains ${S.lost.length === 1 ? "a name" : S.lost.length + " names"}: ${S.lost.join("; ")}.` : "No one is lost."} Burr counts his squad twice, as he always does, and gets the same number, as he always hopes to.` }), 1400);
-          else later(() => api.end({ outcome: "done", text: `The ants are turned back down the crack; ${heldN} of 5 lines still stand.${S.lost.length ? ` On the Roll of the Bark: ${S.lost.join("; ")}.` : ""} The Battlements +3. Behind the pale wall the ticking goes on, and now nothing that hunts it will come this way before spring. Nothing checks the Pulse all winter. (The other reading was open.)` }), 1400);
+          else { book.gather(root, api, "wall"); }
+          if (stage !== 0) later(() => api.end({ outcome: "done", text: `The ants are turned back down the crack; ${heldN} of 5 lines still stand.${S.lost.length ? ` On the Roll of the Bark: ${S.lost.join("; ")}.` : ""} The Battlements +3. Behind the pale wall the ticking goes on, and now nothing that hunts it will come this way before spring. Nothing checks the Pulse all winter. (The other reading was open.)` }), 1400);
         }
       } else if (!S.beetle && S.t >= 14) {
         S.beetle = { u: LEN + 3 }; say("THE BEETLE CLIMBS FROM THE UNDER", 2.6);
@@ -544,6 +546,7 @@ function play(root, api, stage) {
           if (l.offering && i === PAPER_LINE) {
             S.over = true; S.won = true; say("THE SWEETNESS TURNS THEM. THE WALL OPENS", 3.4);
             ladder.pulse(api, -15); shared.set("ants_escorted", true); api.store.set("losses", 0);
+            book.gather(root, api, "wall");   // phase 3: Burr's note for the Pulse map, either reading
             beat("Burr", "Two kinds of god meet in a crack. The warriors stand with their backs to it, facing the people, and nobody is allowed to look for long.", 9);
             later(() => api.end({ outcome: "win", text: `The procession turns at the sweetness and goes into the paper wall, and keeps going in. ${S.disturbed ? "One group of people was startled on the way." : "No one stood in its road."} Nobody is lost. By evening the ticking in this crack has stopped. From far above, if anyone were looking: an ant trail going into a hole in a tree. Burr: “I have a spear and it has a wall. Neither of us wants to find out.” Today neither of them had to.` }), 4200);
             return;

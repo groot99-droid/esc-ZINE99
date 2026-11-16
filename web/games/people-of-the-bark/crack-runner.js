@@ -14,6 +14,7 @@
 // spring backdrop is the far wall seen through the crack. Each falls back to the old hand-set pixels.
 import * as kit from "./_art.js";
 import * as ladder from "./_ladder.js";
+import * as book from "./_pulse.js";
 
 // Phase 2: the run is a ladder of three (DEEP_DIVE.md 3). Teach, spring: paper floors, each with a tick
 // mark; one holds one footfall. Test, summer: sap falls that end on three ledges, one of them paper, picked
@@ -588,6 +589,7 @@ ${kit.chapter(api.art, STAGE_ART[stage][0])}
         api.store.set("losses", 0);
         if (stage === 0) {
           shared.set("sorrel_met", true);
+          book.gather(root, api, "sorrel");   // phase 3: Sorrel's note for the Pulse map
           api.end({ outcome: "win", text: `Mossa reaches Lowridge in ${fmt(elapsed)}, on time, and gives the Knot's reading before the rumour does.${brace}${cost}${paper} A tapper forewoman called Sorrel hears her out, then puts Mossa's ear to a wall. Something in it is ticking. Mossa stops counting. “You Highridge lot hear the Trunk when it shouts. Down here it mutters.”` });
         } else if (stage === 1) {
           api.end({ outcome: "win", text: `Mossa comes off the last sap fall into Lowridge in ${fmt(elapsed)}, sticky to the knees and on time.${cost}${paper} “Three hundred and— never mind. I'm here.”` });

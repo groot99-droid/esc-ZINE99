@@ -114,13 +114,16 @@ export function divider(art) {
 
 // Show a card (an ending diptych, a chapter card, a plate) over the play, then hand the result to api.end.
 // Returns the overlay node (or null when the art is missing; api.end is still called).
-export function endCard(root, api, id, result, caption) {
+// Phase 3: `keyartId` names a generated ending card (api.keyart); when there is one it is shown in place of the
+// code-drawn card, which stays the fallback when the path is "".
+export function endCard(root, api, id, result, caption, keyartId) {
   let el = null;
-  if (api.art && api.art.has(id)) {
+  const ka = keyartId && api.keyart ? api.keyart(keyartId) : "";
+  if (ka || (api.art && api.art.has(id))) {
     el = document.createElement("div");
     el.className = A + "end";
-    const info = api.art.info(id);
-    el.innerHTML = `<figure><img src="${api.art.url(id)}" alt="${(info.title || "").replace(/"/g, "")}" width="${info.w}" height="${info.h}">${caption ? `<figcaption>${caption}</figcaption>` : ""}</figure>`;
+    const info = ka ? { title: "", w: 1600, h: 900 } : api.art.info(id);
+    el.innerHTML = `<figure><img src="${ka || api.art.url(id)}" alt="${(info.title || "").replace(/"/g, "")}" width="${info.w}" height="${info.h}"${ka ? ` data-keyart="${keyartId}"` : ""}>${caption ? `<figcaption>${caption}</figcaption>` : ""}</figure>`;
     root.appendChild(el);
     requestAnimationFrame(() => el.classList.add(A + "on"));
   }

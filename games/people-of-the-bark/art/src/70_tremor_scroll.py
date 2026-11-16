@@ -190,7 +190,7 @@ def faceless_row(a: Art):
            fill="#3a281c")
 
 
-def _pulse_map(a, filled):
+def _pulse_map(a, filled, sounded=False):
     a.paper("#ead9b4", grain=0.3, fibre=0.6)
     a.vignette(0.4, "#4a2a10")
     kit.stain(a, 330, 960, 70)
@@ -233,6 +233,19 @@ def _pulse_map(a, filled):
         a.circle(gx, gy, 40, fill="none", stroke=kit.GOLD, stroke_width=4)
         a.circle(gx, gy, 40, fill="none", stroke=INK, stroke_width=1, stroke_dasharray="3 4")
         a.text(gx, gy + 7, "II", size=22, family="serif", fill=INK, text_anchor="middle", font_weight="bold")
+    if sounded:
+        # the Sounding: each tap answered by rings from its plate; the second answers like a drum
+        def centre(ii, jj):
+            q = (pts[jj][ii], pts[jj][ii + 1], pts[jj + 1][ii + 1], pts[jj + 1][ii])
+            return sum(p[0] for p in q) / 4, sum(p[1] for p in q) / 4
+        for (ii, jj), num, col in (((1, 2), "I", kit.RUBRIC), ((1, 5), "III", kit.RUBRIC), ((2, 6), "", kit.CHALK)):
+            sx, sy = centre(ii, jj)
+            for k in range(4 if num else 6):
+                a.circle(sx, sy, 16 + k * (14 if num else 11), fill="none", stroke=col if num else "#5d676a", stroke_width=2.2 - k * 0.35,
+                         opacity=0.85 - k * 0.17, stroke_dasharray=None if (num or k % 2) else "4 3")
+            if num:
+                a.circle(sx, sy, 15, fill="#ead9b4", stroke=INK, stroke_width=1.2)
+                a.text(sx, sy + 6, num, size=16, family="serif", fill=INK, text_anchor="middle", font_weight="bold")
     # listening posts
     for name, jj, word in (("KNOTHOLM", 2.5, "nothing"), ("HIGHRIDGE", 6.5, "loud"), ("LOWRIDGE", 10.5, "faint")):
         if not filled:
@@ -272,3 +285,11 @@ def pulse_map_blank(a: Art):
     bark's plates from the Crown down to the roots and the three listening posts named beside it, with no plate
     shaded yet and nothing ringed. The web game shades a plate for each faceless mark the player places."""
     _pulse_map(a, False)
+
+
+@asset(G, "scroll-pulse-map-sounded", group="maps", title="Tremor Scroll: the Pulse map after the Sounding", w=420, h=1100, row=ROW)
+def pulse_map_sounded(a: Art):
+    """The Pulse map once the Sounding has been read: the shaded plates and the gold ring of the second tap, as on the
+    whole map, and the three taps answered as rings spreading from their plates: I from the plate the people carved
+    most, by the Heartwood; II from the ringed plate, in chalk, doubled like a drum; III from where the city stands."""
+    _pulse_map(a, True, sounded=True)

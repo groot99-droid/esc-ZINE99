@@ -14,6 +14,11 @@
 // found are never shown: they would give the pot away.
 import * as kit from "./_art.js";
 import * as ladder from "./_ladder.js";
+import * as pmap from "./_pulse.js";
+
+// Phase 3: the thirteenth page found is Old Resin's note for the Pulse map (_pulse.js); every offering pot goes to
+// the Knot, who pours it at the Heartwood crack (pulse +2, DESIGN.md 21). A second playthrough shows the thirteenth
+// entry in the book from spring, locked, with its one word.
 
 // Phase 2: three visits. Teach, spring: thickness (as before). Test, autumn: two of the three sealants before
 // winter. Twist, winter: the thirteenth page, Gallery Plug (glue; ash and leaf-skin; 5–6 stirs; sour sap).
@@ -83,7 +88,8 @@ function play(root, api, stage) {
   {
     const P = "people-of-the-bark-sap-kitchen-";
     const shared = api.shared || { get: (k, d) => d, set() {} };
-    const RECIPES = RECIPES0.filter((r) => !r.late || stage === 2).map((r) => (stage > 0 && LATER[r.n] ? Object.assign({}, r, LATER[r.n], { open: true }) : Object.assign({}, r)));
+    const again = pmap.secondRun(api);
+    const RECIPES = RECIPES0.filter((r) => !r.late || stage === 2 || again).map((r) => (r.late && stage < 2 ? Object.assign({}, r, { open: false }) : stage > 0 && LATER[r.n] ? Object.assign({}, r, LATER[r.n], { open: true }) : Object.assign({}, r)));
     const ING = JSON.parse(JSON.stringify(ING0)); if (stage > 0) ING.leaf.open = true;
     const GOAL = [null, [5, 6, 7], [13]][stage], NEED = [3, 2, 1][stage];
     const got = () => (GOAL ? GOAL.filter((n) => S.found.has(n)).length : S.found.size);
@@ -343,7 +349,7 @@ function play(root, api, stage) {
         return `<span class="${cur ? P + "lit" : ""}">${S.seen[k] ? THICK[h][b] : "?"}</span>`;
       }).join("")).join("");
       book.innerHTML = RECIPES.map((r) => {
-        if (!r.open) return `<div class="${P}ent ${P}locked"><small>${r.n}</small><i>${r.when}</i></div>`;
+        if (!r.open) return r.late ? `<div class="${P}ent ${P}locked" title="In Resin's mother's hand"><small>${r.n}</small><i>“wrong”</i></div>` : `<div class="${P}ent ${P}locked"><small>${r.n}</small><i>${r.when}</i></div>`;
         if (S.found.has(r.n)) return `<div class="${P}ent ${P}got" data-n="${r.n}" style="--c:${CAT_COL[r.cat]}">${art.has(plateId(r)) ? `<img src="${art.url(plateId(r))}" alt="">` : `<small>${r.n}</small>`}${r.name}<i>${r.eff}</i></div>`;
         return `<div class="${P}ent"><small>${r.n}</small><i>“${r.hint}”</i></div>`;
       }).join("");
@@ -419,7 +425,7 @@ function play(root, api, stage) {
         sub = `${fresh ? "Into the book: " : "Again: "}${pot.recipe.name}. ${pot.recipe.eff}.`;
         if (pot.recipe.cat === "food") S.food += parseInt(pot.recipe.eff.match(/\d+/)[0], 10);
         if (pot.recipe.n === 3) S.morale += 2;
-        if (pot.recipe.cat === "offering") S.knot += 3;
+        if (pot.recipe.cat === "offering") { S.knot += 3; ladder.pulse(api, 2); }
       } else {
         S.misses++;
         sub = pot.spoiled ? `Sour sap spoils it: ${pot.thick}, ${pot.stirs}, and fit for nothing.${pot.thick === "glue" && pot.stirs !== "frothy" ? " It sets, though. It sets like something else's wall." : ""}` : pot.crumbly ? "Froth ruins glue: it crumbles. A failed pot." : `${cap(pot.thick)}, ${pot.stirs}. Edible, just: food +2.`;
@@ -452,6 +458,7 @@ function play(root, api, stage) {
     const cap = (s) => s[0].toUpperCase() + s.slice(1);
     // ---- the set-piece: The Great Mending ----
     function startMending() {
+      pmap.gather(root, api, "plug");
       S.mend = { t: gentle ? 100 : 75, pots: 0 }; S.sap = 99;
       say("“Wrong,” says Resin, and writes it in.", "Gallery Plug. Now THE GREAT MENDING: every pot in the city is on the boil. Cook it again, down the line, before the seventh-day tread. Five pots.");
       const bar = document.createElement("div"); bar.className = P + "mend"; wrap.querySelector("." + P + "side").prepend(bar); S.mend.bar = bar;
@@ -526,6 +533,7 @@ function play(root, api, stage) {
       wrap.querySelector("." + P + "intro").remove();
       if (stage === 1) say("“Sealant. Before the frost, not after.”", "Pages 5, 6 and 7 each have a word. Two of them will do. Taste before you cook (T).");
       else if (stage === 2) say("“Thirteen.”", "The blank page's one word is “wrong”. Sweet sap or the sour jar (O); the shelf; the paddle. Taste before you cook (T).");
+      else if (again) say("“Sap first. Always sap.”", "Resin opens the book. At the back, one entry has a single word under it in her mother's hand. She turns past it quickly. Taste before you cook (T).");
       else say("“Sap first. Always sap.”", gentle ? "Resin has chalked the heat chart for you. Taste before you cook (T): three dips of the ladle cost nothing." : "Old Resin stirs an empty pot. Taste before you cook (T): three dips of the ladle cost nothing.");
       svg.querySelector("[data-a=heat]").focus();
     });

@@ -474,3 +474,61 @@ for key, kind, name, doc in GLYPHS:
         draw.__doc__ = "A new chronicle glyph, printed letterpress in brown over an off-register tint. " + doc
         return draw
     asset(G, f"glyph-{key}", group="pieces", title=f"Chronicle glyph: {name}", w=240, h=240, row=ROW_D)(_mk())
+
+
+# ---------------------------------------------------------------------------------------------
+# Phase 3: the Heartwood interior, opened (the web build's stand-in for the Blender render that
+# DEEP_DIVE.md section 4 lists). Only walls, mud and one lantern: nothing alive is drawn.
+# ---------------------------------------------------------------------------------------------
+@asset(G, "heartwood-interior-open", group="maps", title="The Heartwood, opened", w=1200, h=800, row=ROW_D)
+def heartwood_interior_open(a: Art):
+    """Through the round door of concentric rings, the inside of the Trunk: a tall dark void walled in thin pale layers
+    like paper, ribbed with dried mud, a lantern on the threshold lighting a few centimetres, and cold chalk grey
+    beyond. Chanter Hollow's offering bowls stand empty by the crack in the sill. Nothing alive is shown."""
+    import math as _m
+    r = a.rng
+    a.rect(0, 0, 1200, 800, fill="#1b120c")
+    kit.bark(a, 0, 0, 1200, 800, base="#7a5a40", scale=10, freq=(0.02, 0.004))
+    a.rect(0, 0, 1200, 800, fill="#1b120c", opacity=0.45)
+    cx, cy, R = 600, 420, 330
+    # the opening: a void that goes a long way down
+    hole = a.clip(f'<circle cx="{cx}" cy="{cy}" r="{R - 46}"/>')
+    a.open("g", clip_path=hole)
+    a.rect(0, 0, 1200, 800, fill=a.gradient([(0, "#0d0a09"), (0.55, "#2a2b2c"), (1, "#0b0807")]))
+    # paper walls: thin pale layers receding, each a little greyer and smaller
+    for k in range(9):
+        t = k / 8
+        w = 520 - t * 380
+        x0, x1 = cx - w / 2, cx + w / 2
+        top, bot = 120 + t * 210, 760 - t * 250
+        col = kit.mix("#d9d2c0", kit.CHALK, min(1, t * 1.2))
+        op = 0.9 - t * 0.55
+        for side, x in ((-1, x0), (1, x1)):
+            pts = [(x + side * (6 * _m.sin(j * 1.7 + k)), top + (bot - top) * j / 10) for j in range(11)]
+            a.path(a.smooth_d(pts), fill="none", stroke=col, stroke_width=10 - t * 7, opacity=op)
+            a.path(a.smooth_d([(px - side * 5, py) for px, py in pts]), fill="none", stroke="#5d676a", stroke_width=2, opacity=op * 0.8)
+        # mud ribs across the gap between the walls
+        for j in range(3):
+            y = top + (bot - top) * (0.25 + 0.25 * j) + r.uniform(-8, 8)
+            a.path(f"M{f(x0)},{f(y)} Q{f(cx)},{f(y + 14 - t * 8)} {f(x1)},{f(y)}", fill="none", stroke="#6a5644", stroke_width=5 - t * 3,
+                   opacity=op * 0.7, stroke_linecap="round")
+    # cold chalk light far down, and the lantern's few centimetres near the sill
+    kit.glow(a, cx, 330, 160, kit.CHALK, 0.35)
+    kit.glow(a, cx - 90, 690, 210, kit.LANTERN, 0.8)
+    a.close()
+    # the door's rings, standing open round the hole
+    for i in range(7):
+        rr = R - 40 + i * 7
+        a.circle(cx + 2, cy + 3, rr, fill="none", stroke="#e9b77c", stroke_width=2.2, opacity=0.4)
+        a.circle(cx, cy, rr, fill="none", stroke="#3a281c" if i % 2 else "#5a3d2b", stroke_width=6)
+    a.circle(cx, cy, R - 46, fill="none", stroke="#0d0805", stroke_width=5)
+    # the sill: a crack in it, the offering bowls by it, empty
+    a.path(f"M{cx - 250},{cy + 250} Q{cx},{cy + 300} {cx + 250},{cy + 250} L{cx + 290},{cy + 330} H{cx - 290}Z", fill="#4a3324", stroke="#1b120c",
+           stroke_width=3)
+    a.path(f"M{cx + 30},{cy + 270} l12,22 l-8,16 l14,22", fill="none", stroke="#0d0805", stroke_width=5, stroke_linecap="round")
+    for bx in (cx + 92, cx + 150, cx + 204):
+        a.ellipse(bx, cy + 296, 22, 7, fill="#2a1d14", stroke="#e9b77c", stroke_width=1.6)
+        a.path(f"M{bx - 22},{cy + 296} Q{bx},{cy + 320} {bx + 22},{cy + 296}", fill="#6a4a33", stroke="#1b120c", stroke_width=1.6)
+    kit.lantern(a, cx - 90, cy + 262, 1.6, halo=70)
+    kit.dust(a, cx - 260, 120, 520, 560, n=200, col="#e6eef0", opacity=0.35)
+    a.vignette(0.55)

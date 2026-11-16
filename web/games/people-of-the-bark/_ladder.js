@@ -3,6 +3,9 @@
 // on the first two stages offers "go on" or "stop here with this result", the stage reached is remembered
 // (api.store "stage"), and a returning player may start at any stage reached. note() is the short line a
 // layer link shows when something done in another mode changes this one. pulse() moves the hidden meter.
+// Phase 3: every mode also carries the tab of the Pulse map (_pulse.js), the long puzzle's book.
+
+import * as book from "./_pulse.js";
 
 const L = "people-of-the-bark-ladder-";
 export const STAGES = ["Teach", "Test", "Twist"];
@@ -77,6 +80,8 @@ export function run(root, api, spec, play) {
     root.appendChild(chip);
   }
 
+  // the long puzzle's book is reachable from every stage of every mode (phase 3, _pulse.js)
+  const offTab = book.tab(root, api, spec.tabTop, spec.tabSide);
   const r = reached();
   if (r > 0) {
     over = veil(root, `<h3>${spec.title}</h3><h2>Where to start</h2>${pips(r, -1)}
@@ -87,7 +92,8 @@ export function run(root, api, spec, play) {
 
   return {
     unmount() {
-      dead = true; clear();
+      dead = true; clear(); offTab();
+      const bv = root.querySelector(".people-of-the-bark-pulse-veil"); if (bv) (bv._close ? bv._close() : bv.remove());
       timers.forEach(clearTimeout);
       if (cur && cur.unmount) { try { cur.unmount(); } catch (e) { console.error(e); } }
       if (chip) chip.remove();

@@ -533,7 +533,7 @@ Each chapter lists its scenes in order with scene ids from `data/scenes.json`.
 
 - **Goal:** Meet the Shadow with the culture the player built.
 - **Scenes in order:**
-  1. `c6_scroll` (1D Tremor Scroll, 4 min). Late winter. A new pattern: a faint ripple at noon
+  1. `c6_scroll` (1D Tremor Scroll, 3 min; 4 until phase 3 trimmed it to make room for `c6_ring`). Late winter. A new pattern: a faint ripple at noon
      every seventh day, on all faces at once (the human's footsteps, through the roots). Five
      forecasts. If the player forecasts the next tread day, the city gets one day of warning:
      the final spread's hand gains one card.
@@ -551,6 +551,10 @@ Each chapter lists its scenes in order with scene ids from `data/scenes.json`.
        into gold tears for the god.
   6. `c6_touch` (3D, 2 min). The hand touches the bark. Three taps, a press of the thumb into a
      crack. The people endure it. Then the light returns, unless the bark breaks.
+  7. On The Ring's route only, `c6_ring` (3D, 1 min, phase 3). The hand goes, and the dark comes
+     back once. When the light returns a band of colour lies level across the whole world, and the
+     people come out of the knots and lift their arms to it. The chapter stays at 22 minutes on
+     every route, because `c6_scroll` gave up the minute.
 - **Ends:** On the light returning, or on the plate breaking.
 
 ### Chapter 7 — The Pull-back (`ch7_pullback`, 4 minutes)
@@ -597,6 +601,7 @@ available in every 3D scene and is counted (`pullbacks`).
 | `c6_stand` | Highridge and Splinterwatch under the Shadow | 12 × 12 cm | God camera | Place the three institutions: chanters at knots, warriors on battlements, scholars at the scroll | Posts | Dark, lit only by lanterns | Chant, steady drums | All posts filled → touch | cut / cut |
 | `c6_edge` | The shadow's edge, east face | A 20 cm loop | God camera follows Fenn's party | Click to place stakes along the edge (12) | Stakes, the edge line | Half light, half dark | Fenn counting | 12 stakes → touch | cut / cut |
 | `c6_touch` | All the bark | 12 × 12 cm | God camera; the screen shakes on each tap | None but Tab | None | Dark, then light | Three taps like thunder, a long press | Plays out; ending check | cut / pull-out |
+| `c6_ring` | All the bark (phase 3, The Ring only) | 12 × 12 cm | God camera, still | None but Tab | None | The dark once more, then light with a level band of red across the bark | The second tap's drum note held, then birdsong from very far | Plays out | cut / pull-out |
 | `c7_backyard` | The yard | About 25 m | The camera rises past the tree and holds | None | None | Afternoon daylight, ordinary | Birds, a far lawnmower, a door closing | Ending image | pull-out / fade |
 
 ## 10. 2D modes
@@ -1218,12 +1223,24 @@ carry it in the image (the camera always comes back to the people) and end on th
 | 1 | `the_flake` | The Flake | No | The bark's integrity is 25 or below at the touch | `{"is": "bark.integrity", "lte": 25}` |
 | 2 | `war_on_the_god` | The War on the God | No | The Battlements lead the year, the Shadow is read as an enemy, and the bark holds | `{"all": [{"is": "shadow_reading", "eq": "enemy"}, {"is": "year.leading", "eq": "warriors"}, {"is": "bark.integrity", "gt": 25}]}` |
 | 3 | `edge_of_the_world` | The Edge of the World | No | The Scroll House leads the year, at least 8 forecasts were right, the Shadow is read as a thing with a habit, and the bark holds | `{"all": [{"is": "shadow_reading", "eq": "habit"}, {"is": "year.leading", "eq": "scholars"}, {"is": "forecasts_correct", "gte": 8}, {"is": "bark.integrity", "gt": 25}]}` |
-| 4 | `shadow_passes` | The Shadow Passes | **Yes** | Every other run: the bark holds and the Shadow is read as a trial (or, if the Knot leads, as a god to be fed) | `true` |
+| 4 | `the_ring` | The Ring (phase 3) | No | The Knot leads the year, the Great Offering was poured (which only the offering reading leads to), the hidden `pulse` is 60 or more, and the bark holds | `{"all": [{"is": "year.leading", "eq": "elders"}, {"is": "great_offering", "eq": true}, {"is": "pulse", "gte": 60}, {"is": "bark.integrity", "gt": 25}]}` |
+| 5 | `shadow_passes` | The Shadow Passes | **Yes** | Every other run: the bark holds and the Shadow is read as a trial (or, if the Knot leads, as a god to be fed while the Pulse is quieter than 60) | `true` |
 
 Because the enemy and habit readings can only be laid when their conditions hold (section 11.1),
-the last ending is in practice exactly "bark above 25 and the reading is trial or offering". No two
-endings can be true together: the first three exclude each other by `shadow_reading` and by
-integrity, and the fourth is the remainder.
+the last ending is in practice exactly "bark above 25, and the reading is trial, or offering with
+`pulse` under 60". No two endings can be true together: the first three exclude each other by
+`shadow_reading` and by integrity; The Ring needs `great_offering`, which only `c6_offering` writes and
+only the offering reading reaches, so it cannot meet the enemy or habit readings, and it needs the
+bark above 25, so it cannot meet the Flake; and the fifth is the remainder. The Ring's condition names
+`great_offering` and not `shadow_reading` so that the offering reading's gate (the Knot leads, section
+11.1 and `omen_deck.json`) stays exactly the as-written route's own: an offering made while the Pulse is
+quiet still ends as written.
+
+**What every ending costs** (phase 3). A horror game keeps a cost in every ending, the kindest
+included. Each ending below has an added cost, also in `data/endings.json` (`cost`), where the menu of
+the web build shows it: the Shadow Passes settles nothing; the War never finishes the question; the
+Edge draws two edges; the Flake clears Underhollow's name too late; and The Ring is the one ending
+where the yard's verdict can be guessed, which the game never states.
 
 ### The Shadow Passes (as written)
 
@@ -1240,6 +1257,10 @@ integrity, and the fourth is the remainder.
   appear, verbatim: "And yet — their lives still matter." / "Their stories still matter." /
   "Their courage still matters."
 - **Last line, verbatim:** "Even the smallest world is a universe to the ones who live in it."
+- **Added cost (phase 3):** nothing is settled. The hand will come again and nobody on the bark will
+  know why it came. If the player found the Pulse (`pulse_map.complete` or `sounding.heard`), one
+  image comes before the three verbatim lines: at the feast, Fenn lays her ear on the wall. The
+  conditions and the last line are unchanged.
 
 ### The War on the God
 
@@ -1256,6 +1277,8 @@ integrity, and the fourth is the remainder.
 - **Last image:** The bark at night, a victory fire on every ridge, and Burr alone, polishing a
   spear that is no longer clean. Last line (added): "They won. The Trunk will remember it as long
   as they do."
+- **Added cost (phase 3):** the third tap never lands, so the question the hand was asking was never
+  finished. Fenn's last entry on the scroll is the next seventh day, already inked.
 
 ### The Edge of the World
 
@@ -1272,6 +1295,8 @@ integrity, and the fourth is the remainder.
   over the yard and the fence and the next yard.
 - **Last image:** Mossa at the top of Highridge at dawn, looking toward the edge on the map.
   Last line (added): "They did not know what lay past the edge. They knew there was one."
+- **Added cost (phase 3):** Fenn's map has an outer edge and an inner one, drawn round the plates the
+  Pulse lives behind. The heresy is double, and the Knot will not forgive the second edge.
 
 ### The Flake
 
@@ -1287,6 +1312,28 @@ integrity, and the fourth is the remainder.
 - **Last image:** Back on the bark, the survivors at the new edge of their city. Old Resin lights
   the pot. Someone starts carving the first ring of a new door. Last line (added): "The Trunk
   shrugged. They began again."
+- **Added (phase 3):** in the pull-back the flake lies face down in the grass, and its underside is not
+  solid. Underhollow's name is cleared, too late for anyone who could be told. The long puzzle decides
+  whether the twelve names were on the plate: with a whole Pulse map the plate was cleared first, and
+  the names are those who would not leave it.
+
+### The Ring (phase 3, an added ending)
+
+- **The path:** Let the Knot lead the year by 12 (Eye policies, Knot Sanctums, offerings), keep the
+  Pulse loud (tap past three, build Sanctums, pour offerings; do not plug, seal or escort it down),
+  read the Shadow with an Eye majority, and pour the Great Offering. The bark must still hold above 25,
+  so the route runs between The Ring and The Flake: sealant matters more here than anywhere.
+- **Final scenes:** `c6_offering`, `c6_touch`, `c6_ring`, `c7_backyard`.
+- **What happens:** The offering is poured into the crack by the Heartwood, where "the Trunk drinks".
+  Something in the wood drinks it. At the touch the bark holds, and the second tap sounds like a drum.
+  The hand goes away, and the dark comes back once (`c6_ring`): the hand has returned. When the light
+  comes back a band of colour circles the world. The people take it for a covenant.
+- **The pull-back:** A ribbon is tied round the trunk. Over the fence, in the next yard, is the stump
+  the game has shown since spring. Nobody is in the yard; the back door is shut.
+- **Last line (added):** "The god had left them a ring. They counted it with the others."
+- **Cost:** it is the kindest-looking ending and the one where the yard's verdict can be guessed. The
+  game never says what a ribbon on a trunk is for, and nothing on the bark could know. The offering
+  fed what is in the wood.
 
 ### How a player reaches each one on purpose
 
@@ -1296,10 +1343,11 @@ integrity, and the fourth is the remainder.
 | The War on the God | Give the Battlements 4+ tokens every council; lay Spear-majority readings; read the Beetle and the ants as monsters and hold the cracks; pick Burr as festival opponent and win; pass the deck to Burr; at the Shadow, lay a Spear majority |
 | The Edge of the World | Give the Scroll House 4+ tokens every council; lay Quill-majority readings; pull back during events and turn the Backyard cards to win Fit; forecast well (8 of 18); pass the deck to Fenn; at the Shadow, lay a Quill majority |
 | The Flake | Put 5+ tokens in Taps each season; build Knot Sanctums; open the Heartwood; overrun par on the doors; skip sealant; or let the Knot lead and make the Great Offering on weak bark |
+| The Ring | Give the Knot 4+ tokens every council and lay Eye policies; answer the Pulse with the Knot (keep it holy); tap past three, build Sanctums and cook offerings; leave the Heartwood open; fight the ants rather than escort them; skip the Gallery Plug; keep integrity above 25 with sealant; at the Shadow, lay an Eye majority and pour the Great Offering |
 
 **Why a run got its ending.** The debug panel prints the resolver's walk, for example: "the_flake:
 bark.integrity 41, needs ≤ 25: no. war_on_the_god: shadow_reading trial: no. edge_of_the_world:
-shadow_reading trial: no. shadow_passes: true." It also shows the four standings at the Winter
+shadow_reading trial: no. the_ring: great_offering false: no. shadow_passes: true." It also shows the four standings at the Winter
 Count and the `year.leading` they produced.
 
 ## 14. UI and HUD
@@ -1441,7 +1489,7 @@ speaks, in any ending.
 | `game.json` | Title, source, 150–180 minutes, one player, core verb "interpret", the seven chapters with minutes (total 179) and layers |
 | `scenes.json` | Two 2D modes (`crack_runner`, `crack_defence`, both `scroll`); five 1D games; 53 scenes, every 3D scene, 2D sequence and 1D appearance in this document, with chapter, reads, writes, transitions, next and minutes. `c6_stand`, `c6_war`, `c6_edge` and `c6_offering` are alternatives: a run plays one, so chapter 6's minutes count one of them |
 | `flags.json` | Every flag, meter, counter and ledger used: the three standings, `year.leading`, `shadow_reading`, the economy meters, forecasts, readings, councils, the Roll, the cast flags |
-| `endings.json` | The four endings with their conditions as in section 13; `shadow_passes` is `as_written` and the catch-all |
+| `endings.json` | The five endings with their conditions and costs as in section 13 (The Ring added in phase 3); `shadow_passes` is `as_written` and the catch-all |
 
 Beyond the shared schemas, three tables are not state and so are not in `flags.json`. They sit in
 the same folder, each with a schema in `data/schemas/`:
@@ -1470,6 +1518,13 @@ appearance; fourteen flags to `flags.json` (the hidden meter `pulse`; `sorrel.me
 it breaks their rule) and `winter_sitting` in `tremor_patterns.json`; the chapter minutes in
 `game.json`; one location (`lowridge`) in `assets/assets.json` with its build file; and the new 3D
 scenes in the build files of `highridge` and `highridge-square`.
+
+Phase 3 (2026-11-16) added the ending `the_ring` and a `cost` to every ending in `endings.json`; one
+scene to `scenes.json` (`c6_ring`, 1 minute, with `c6_scroll` trimmed from 4 to 3 so the year stays at
+179 minutes on every route); one flag to `flags.json` (`playthroughs`, the second-playthrough counter,
+read by `c1_omen`, `c1_scroll`, `c2_kitchen` and `c2_tns`, written by `c7_backyard`); `c6_ring` in the
+`bark-face` location of `assets/assets.json` and in `blender/bark-face.build.json`; and The Ring's
+ending id in `keyart/keyart.json`. `tools/check_data.py` is unchanged.
 
 `tools/check_data.py` checks the three against their schemas, against each other and against the
 four shared files: every scene, flag, value and ending it names; that each 1D appearance matches
@@ -1542,8 +1597,8 @@ land as both funny and tender, the game does not work, and that is the thing to 
 The author accepted the whole deep dive (`DEEP_DIVE.md`) on 2026-11-15 and answered yes to the
 three questions its roadmap put first: the game may say there is something in the wood; Sorrel
 joins the cast and Pell has his secret; The Ring is an ending. This section states what was
-accepted. It is built in three phases. **Phase 1 was built on 2026-11-15 and phase 2 on 2026-11-16**; phase 3 is
-decided but not built. Nothing here changes the source, the as-written ending or its last line.
+accepted. It is built in three phases. **Phase 1 was built on 2026-11-15, and phases 2 and 3 on 2026-11-16: all three are
+built.** Nothing here changes the source, the as-written ending or its last line.
 
 **Dramatic question.** When the god finally comes to listen, what will the Trunk sound like, and
 can a people be led to sound whole by someone who may never tell them why?
@@ -1624,8 +1679,9 @@ marks, tap three where the city stands.
 | The Flake | Added: in the pull-back the flake lies face down in the grass and its underside is not solid. Underhollow is cleared, too late for anyone who could be told | 3 |
 | **The Ring** (new) | The Knot leads, the Shadow is read as a hungry god, the Great Offering is poured and `pulse` is 60 or more. The bark holds, and the second tap sounds like a drum. The hand goes and comes back, and when the light returns a band of colour circles the world. The people take it for a covenant. The pull-back shows a ribbon tied round the trunk and, over the fence, a stump the game has shown since spring. Last line (added): "The god had left them a ring. They counted it with the others." | 3 |
 
-Until phase 3 `data/endings.json` keeps its four endings and section 13 stands as written; the
-offering route still resolves to The Shadow Passes.
+All five are built in phase 3: `data/endings.json` holds The Ring and a `cost` for every ending, and
+section 13 says how each is reached. The offering route resolves to The Shadow Passes unless the Pulse
+is at 60 or more.
 
 **Phase 1, built in this pass: make interpreting hard.**
 
@@ -1704,10 +1760,84 @@ plays its stand-in, the choice of a plate after the autumn seal. The payoff of t
 *The Heartwood, opened* is the exit of `c5_door`, not a scene of its own: the push-in keeps going
 and the page shows what is behind the door. Its two interior plates are phase-3 art.
 
-**Phase 3, decided, not built: endings and replay.** The added images in the four existing
-endings; The Ring; the second-playthrough changes
-(the notches readable from the first deal, the faceless row from chapter 1, the stump over the
-fence in the first pull-back, Sorrel as a festival opponent); the remaining art.
+**Phase 3, built 2026-11-16: endings and replay.** The author wrote "start phase 3"; The Ring was
+already answered yes. What was built:
+
+*The endings* (section 13). The Ring is the fourth ending by priority, with its own last scene
+`c6_ring`; every existing ending has the cost the deep dive gave it, in section 13 and in
+`data/endings.json`. The as-written ending keeps its conditions, its route and its last line.
+
+*The long puzzle pays off: the Pulse map* (`web/games/people-of-the-bark/_pulse.js`). The map lives on
+the back pages of Old Resin's recipe book, and every mode now carries a small tab, "PULSE MAP n/7",
+that opens it at any time: the map strip (`art/maps/scroll-pulse-map-blank`), the chalk row's
+loudness drawn as marks (the hidden `pulse`, never a number), and seven lines, one per mode, each
+signed with a cast mark. A line is filled when its mode is played to the moment that holds it:
+
+| Note | Mode, and the moment | What it says (the clue) |
+| --- | --- | --- |
+| Fenn | Tremor Scroll, the autumn sitting with both chalk marks right (it also shades the map) | The marks gather from the sixth plate down to the eighth |
+| Sorrel | Crack runner, the spring run won (Sorrel's wall) | The outer columns are thick; it ticks in the two middle columns |
+| Elder Pell | Omen Spread, the night of the Pulse with the blank card turned | It woke the east terraces: the two right-hand columns |
+| Captain Burr | Crack defence, the autumn ants, either reading | The ants hunted the whole eighth plate and found nothing |
+| Chanter Hollow | The Ring Door, the Heartwood opened | The Heartwood is the third plate; the paper walls begin four plates lower |
+| Old Resin | Sap Kitchen, the thirteenth page found | Only the third column's taps ran sour |
+| Twig | Trunk and Shadow, won as the Shadow | Why the second tap goes to the plate that knocks back |
+
+When all seven are in, the map is read at the Tremor Scroll (section 11.5 puts the map there): the
+player rings the plate the second tap will find (third column, seventh plate; a wrong plate is
+answered with the note that rules it out). That is **the Sounding**, played: the map turns to
+`art/maps/scroll-pulse-map-sounded` and the three taps are answered as rings from their plates. Then
+the city answers the second plate, and the answer and the Pulse decide the ending the year earns,
+which the game's menu shows as its finale (`loading.js` exports `finale`):
+
+| Answer | Who | Ending |
+| --- | --- | --- |
+| Keep it holy: pour the Great Offering into it | the Knot | **The Ring** if the Pulse, with the offering's +10, reaches 60; otherwise The Shadow Passes |
+| Clear it, and plug it | Old Resin and Sorrel's listeners | The Shadow Passes, with Fenn's ear on the wall |
+| Stand a watch on it | the Battlements | The War on the God; The Flake if the Pulse is 60 or more |
+| Write it down, a thing with no face | the Scroll House | The Edge of the World |
+
+In the web build the Pulse is moved by the modes: it starts at 40; an offering pot in the Sap Kitchen
+adds 2, the Pulse answered by the Knot in the Omen Spread adds 4 (Chanter Hollow pours at the
+Heartwood crack), the Heartwood left open adds 6; a Gallery Plug pot takes 8, the escorted ants 15, the
+sealed Heartwood 10. The Ring is reached on purpose by cooking offerings, keeping the Pulse holy,
+leaving the Heartwood open, fighting the ants and plugging only once. The Omen Spread's own twist
+follows the same rule: an offering reading ends on The Ring's card when the Pulse is loud enough.
+Where a twist ends on an ending (the Omen Spread's Reading of the Shadow, and the reading of the map),
+the ending's generated card from `keyart/` is shown behind the result, and the code-drawn card is the
+fallback.
+
+*The second playthrough.* A year whose map has been read is counted (`api.shared` "runs"; in the
+design, `playthroughs`), and "Begin the year again" in the book clears the notes and the meter. From
+then on, without a word of explanation:
+
+| Where | What changes |
+| --- | --- |
+| Omen Spread, the Windstorm | The notches can be felt from the first deal ("Feel the notch"), and Pell says he sees your thumb on the edge of the deck |
+| Omen Spread, the first pull-back | The Backyard card shows a stump over the fence (`art/cards/backyard-wind-stump`) |
+| Tremor Scroll, summer | The chalk column is on the drum from the first summer, recorded and not forecast, and Fenn says it was there all along |
+| Trunk and Shadow, the spring festival | Sorrel of Lowridge takes Burr's seat and plays the Shadow, with her own lines |
+| Sap Kitchen, spring | The thirteenth entry is in Resin's book from the start, locked, with its one word, "wrong", in her mother's hand |
+
+A first run is unchanged.
+
+*Art, phase 3.* Drawn by code: the Heartwood opened (`art/maps/heartwood-interior-open`, the web
+stand-in for the Blender render of section 4, now shown when the door opens), the Pulse map after the
+Sounding (`art/maps/scroll-pulse-map-sounded`) and the second-run Backyard card
+(`art/cards/backyard-wind-stump`). The five ending cards drawn by code were already in `art/endings/`;
+the five generated ending cards are in `keyart/`.
+
+*Fixes.* The Sounding was flags and text only: it is now played on the map. The Heartwood interior was
+text only: it is now drawn. The Tremor Scroll's winter sitting ended on a told set-piece: the player
+now lays the three ledgers beside the chalk row and finds the one with its shape. Every mode's
+twist was played by touch at 390 px on 2026-11-16. Every mode carries the Pulse map's tab, a bookmark on
+its left edge (on the right in the Tremor Scroll), which stays clear of each mode's controls at 390 px.
+
+*Not built.* The 3D scenes, `c6_ring` included, are designs until they are built in Blender; the
+Sounding and the second-playthrough changes that belong to 3D scenes (`c6_touch`, the first
+pull-back of `c1_omen`, the stump in `c7_backyard`) are written for that build and played in the web
+build only through the modes above. The Ring's council route (tap tokens past three, Knot Sanctums)
+exists only in the 3D design; the web build moves the Pulse with the modes' own amounts.
 
 ## 22. Added for the game
 
@@ -1754,10 +1884,23 @@ Everything below is not in the author's text and is proposed for the author to a
 | Runner: paper floor, the crowd, Against the Tide and the passed lantern. Defence: paper wall, the plugged door, The Procession and the Wall, ants lowering the Pulse; Burr's line "I have a spear and it has a wall. Neither of us wants to find out." (accepted 2026-11-15, built 2026-11-16) | Section 21 |
 | Kitchen: sour sap, recipe 13 Gallery Plug, The Great Mending. Ring Door: the eaten arc, closing a door, the turned Heartwood, the open interior. Trunk and Shadow: the Hollow square card. Tremor Scroll: listening posts (accepted 2026-11-15, built 2026-11-16) | Section 21 |
 | The three links between layers (accepted 2026-11-15, built 2026-11-16) | Section 21 |
-| Yard details: a stump over the fence from spring; the hollow underside of the flake (accepted 2026-11-15; phase 3) | Section 21 |
-| The added images in the four existing endings; the ending The Ring, the ribbon and its last line; playing the Shadow; the second-playthrough changes (accepted 2026-11-15; phase 3) | Section 21 |
+| Yard details: a stump over the fence from spring; the hollow underside of the flake (accepted 2026-11-15, built 2026-11-16) | Sections 13, 21 |
+| The added images and costs in the four existing endings; the ending The Ring, its scene `c6_ring`, the ribbon and its last line (accepted 2026-11-15, built 2026-11-16) | Sections 13, 21 |
+| The second-playthrough changes: the notches from the first deal, the faceless row from chapter 1, the stump in the first pull-back, Sorrel as a festival opponent (accepted 2026-11-15, built 2026-11-16) | Section 21 |
+| The long puzzle's payoff: the Pulse map deciding which plate is cleared, and whether the twelve names are on it in the Flake (accepted 2026-11-15, built 2026-11-16) | Sections 13, 21 |
 | The scenes `c2_sorrel_wall`, `c3_thumb`, `c4_omen_pulse`, `c4_faceless`, `c5_lowridge`; the location Lowridge (accepted 2026-11-15, built 2026-11-16) | Sections 9, 21 |
 | Playing the Shadow by Twig's rule (accepted 2026-11-15; roadmapped for phase 3, built 2026-11-16 as the board's twist stage because section 3 of the deep dive names it there and the third link needs it) | Section 21 |
+| **New in phase 3, not in `DEEP_DIVE.md`: for the author to approve or strike** | |
+| The Ring's condition written with `great_offering` in place of the offering reading (the same runs, and the as-written gate untouched); The Ring at priority 4, above The Shadow Passes | Section 13 |
+| `c6_ring` as a scene of its own (1 minute) and `c6_scroll` trimmed from 4 minutes to 3 to pay for it | Sections 8, 13 |
+| The seven notes of the Pulse map, one per mode, in the voices of Fenn, Sorrel, Pell, Burr, Chanter Hollow, Old Resin and Twig, and what each rules out; the map read at the Tremor Scroll; the plate (third column, seventh plate down); the Heartwood placed at the third plate | Section 21 |
+| The Sounding's three plates in the web build (the Heartwood's plate, the rung plate, Highridge's square) | Section 21 |
+| The four answers to the rung plate and the endings they earn: pour (The Ring at 60 with the offering's +10, otherwise The Shadow Passes), plug (The Shadow Passes), watch (The War on the God, or The Flake at 60), write it down (The Edge of the World) | Section 21 |
+| The web build's amounts that raise the Pulse: an offering pot +2 (the design's own), the Pulse kept holy +4, the Heartwood left open +6; the Great Offering +10 (five pots) | Section 21 |
+| The finale texts for each ending, in the game's voice; "Fenn put her chalk away"; the tapping under Highridge going on, fed; the twelve of Burr's watch on the plate in the Flake | Section 21 |
+| The winter sitting's three ledgers (the council's, Fenn's weather book, Burr's watch roster) and Fenn's lines over them | Section 21 |
+| Second run: Pell's line about the player's thumb; Fenn's line about the chalk column; Sorrel's festival lines; the thirteenth entry's word "in her mother's hand" shown from spring; a "year" counted when the map is read, and "Begin the year again" | Section 21 |
+| Art: the Heartwood interior drawn by code (a web stand-in for the planned Blender render); the Pulse map after the Sounding; the Backyard card with the stump | Section 21 |
 | **New in phase 2, not in `DEEP_DIVE.md`: for the author to approve or strike** | |
 | Runner: listening (stand still and a paper floor is heard) as the way through the dark; Sorrel having chalked one floor; the lantern's rule (no wide gap is jumped with it in hand); the three named sites of the Long Crack (the Tapper's Stair, the Middle Ledges, Lowridge Gate); penalties of 4 seconds for paper | Section 21 |
 | Defence: the dry branch beside the papered one; ants turning where an offering lies by an opening, pausing to eat anywhere else, and coming out of the dry branch angry; the monster reading of the ants ending as "done", not a win | Section 21 |

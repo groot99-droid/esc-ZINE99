@@ -15,6 +15,11 @@
 // plates are still pictures and cannot turn.
 import * as kit from "./_art.js";
 import * as ladder from "./_ladder.js";
+import * as book from "./_pulse.js";
+
+// Phase 3: the Heartwood opened is drawn (art maps/heartwood-interior-open) where it was only words; opening it
+// is Chanter Hollow's note for the Pulse map (_pulse.js); left open, his offerings go on into the crack and the
+// Pulse drinks them (pulse +6).
 
 // Phase 2: one door a stage. Teach: the First Ring, the link rule. Test: the Deep Knot, the stiff ring, and
 // five scars end the sitting. Twist: the Heartwood Door. It does not start where the chronicle says the Knot
@@ -337,11 +342,12 @@ ${ringsTexture(r0, r1, 11 + i * 7 + di * 50)}
     let openScars = 0;
     function pushIn() {
       openScars = record[record.length - 1].scars;
+      book.gather(root, api, "arc");
       plate("The Heartwood, opened", "WINTER · UNDER KNOTHOLM",
         "The door swings in and the push-in keeps going. Where the hall of ancestors should be there is lantern light travelling a long way down, and walls of something thin and pale, ribbed with dried mud. Nothing moves. Chanter Hollow's offering bowls stand by the crack in the threshold, where “the Trunk drinks them”, all of them empty.",
         "The Knot wants the door <b>closed</b> again and never spoken of: bring every notch back to the crack once more (par 11; the Pulse falls, the Knot −4). Or leave it standing open.",
         `<kbd>the pale arc</kbd><span>ring four still turns alone there</span>`,
-        "Seal the Heartwood", () => { sealing = true; over = false; busy = false; setupDoor(2); say("Chanter Hollow", "“Trunk, hear us. Trunk, hold us.” He does not look through the door while you work."); }, "door-heartwood");
+        "Seal the Heartwood", () => { sealing = true; over = false; busy = false; setupDoor(2); say("Chanter Hollow", "“Trunk, hear us. Trunk, hold us.” He does not look through the door while you work."); }, art.has("heartwood-interior-open") ? "heartwood-interior-open" : "door-heartwood");
       const card = wrap.querySelector("." + P + "intro"), b = document.createElement("button");
       b.type = "button"; b.className = P + "go"; b.style.marginLeft = "8px"; b.textContent = "Leave it open";
       card.querySelector("." + P + "plate").appendChild(b);
@@ -349,12 +355,12 @@ ${ringsTexture(r0, r1, 11 + i * 7 + di * 50)}
     }
     function finishTwist(sealed, scars) {
       const total = record.reduce((a, r) => a + r.scars, 0);
-      if (sealed) { ladder.pulse(api, -10); shared.set("heartwood", "sealed"); } else shared.set("heartwood", "open");
+      if (sealed) { ladder.pulse(api, -10); shared.set("heartwood", "sealed"); } else { ladder.pulse(api, 6); shared.set("heartwood", "open"); }
       shared.set("door_scars", Math.min(2, total));
       const res = { outcome: "win", text: sealed
         ? `The Heartwood Door is opened and sealed again${total ? `, with ${total} scar${total > 1 ? "s" : ""} round it` : ", on clean cuts"}. Behind it the tapping goes on, fainter. The Knot −4: a thing that had to be shut is a thing that was seen. Nobody speaks of the hall.`
-        : `The Heartwood Door stands open${total ? `, with ${total} scar${total > 1 ? "s" : ""} round it` : ", on a clean cut"}. Lantern light goes a long way down between paper walls. The Knot sets a novice at the threshold to say that nothing is there.` };
-      const id = sealed && art.has("door-heartwood-sealed") ? "door-heartwood-sealed" : "door-heartwood";
+        : `The Heartwood Door stands open${total ? `, with ${total} scar${total > 1 ? "s" : ""} round it` : ", on a clean cut"}. Lantern light goes a long way down between paper walls. The Knot sets a novice at the threshold to say that nothing is there, and Chanter Hollow goes on pouring the bowls into the crack, where the Trunk drinks them. Something does.` };
+      const id = sealed && art.has("door-heartwood-sealed") ? "door-heartwood-sealed" : !sealed && art.has("heartwood-interior-open") ? "heartwood-interior-open" : "door-heartwood";
       endEl = kit.endCard(root, api, id, res, sealed ? "<b>THE HEARTWOOD · SEALED</b>Turned back to the line, and the line chalked over." : "<b>THE HEARTWOOD · OPEN</b>Where the hall of ancestors should be.");
     }
     function interludeOld() {}
@@ -381,7 +387,9 @@ ${ringsTexture(r0, r1, 11 + i * 7 + di * 50)}
       const card = document.createElement("div");
       card.className = P + "intro";
       const rings = Array.from({ length: 7 }, (_, k) => `<circle r="${54 - k * 7}" fill="none" stroke="${BROWN}" stroke-width="${k % 2 ? 1 : 2.4}"/>`).join("");
-      const pic = doorArt && art.has(doorArt)
+      const pic = doorArt && /^heartwood-interior/.test(doorArt) && art.has(doorArt)
+        ? `<img src="${art.url(doorArt)}" alt="${art.info(doorArt).title}: walls of something thin and pale, ribbed with mud, and a lantern on the sill" width="1200" height="800" style="display:block;width:100%;height:auto;border:1px solid ${DARK};margin:0 0 8px">`
+        : doorArt && art.has(doorArt)
         ? `<div class="${P}picwrap" ${art.has("ui-frame-paper") ? `style="background-image:url(${art.url("ui-frame-paper")})"` : ""}><img class="${P}pic" src="${art.url(doorArt)}" alt="${art.info(doorArt).title}, as the chronicle prints it" width="230" height="230"></div>`
         : `<svg viewBox="-60 -60 120 120" aria-hidden="true">${rings}<path d="M-6 -54 L6 -54 L3 -40 L-3 -40Z" fill="${ORANGE}"/><path d="M0 -60 V0" stroke="${INK}" stroke-width="1.6"/></svg>`;
       card.innerHTML = `<div class="${P}plate" role="dialog" aria-label="${title}">${chap ? kit.chapter(art, chap) : ""}${pic}

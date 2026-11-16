@@ -1,6 +1,6 @@
 {
  "game": "people-of-the-bark",
- "count": 139,
+ "count": 142,
  "assets": [
   {
    "id": "title-lettering",
@@ -214,6 +214,14 @@
    "id": "backyard-wind",
    "group": "cards",
    "title": "Backyard card: a summer gust",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "backyard-wind-stump",
+   "group": "cards",
+   "title": "Backyard card: a summer gust, and a stump over the fence",
    "w": 300,
    "h": 420,
    "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
@@ -1075,6 +1083,14 @@
    "row": "Doors and new chronicle glyphs"
   },
   {
+   "id": "heartwood-interior-open",
+   "group": "maps",
+   "title": "The Heartwood, opened",
+   "w": 1200,
+   "h": 800,
+   "row": "Doors and new chronicle glyphs"
+  },
+  {
    "id": "scroll-pulse-map",
    "group": "maps",
    "title": "Tremor Scroll: the Pulse map strip",
@@ -1086,6 +1102,14 @@
    "id": "scroll-pulse-map-blank",
    "group": "maps",
    "title": "Tremor Scroll: the Pulse map strip, not yet filled",
+   "w": 420,
+   "h": 1100,
+   "row": "Glyph set, weather marks, faceless row, Pulse map strip"
+  },
+  {
+   "id": "scroll-pulse-map-sounded",
+   "group": "maps",
+   "title": "Tremor Scroll: the Pulse map after the Sounding",
    "w": 420,
    "h": 1100,
    "row": "Glyph set, weather marks, faceless row, Pulse map strip"

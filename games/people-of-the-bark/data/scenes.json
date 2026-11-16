@@ -84,7 +84,8 @@
       "world_runs": false,
       "reads": [
         "inst.elders",
-        "pullbacks"
+        "pullbacks",
+        "playthroughs"
       ],
       "writes": [
         "readings",
@@ -111,7 +112,8 @@
       "world_runs": false,
       "reads": [
         "inst.scholars",
-        "scroll.hint_level"
+        "scroll.hint_level",
+        "playthroughs"
       ],
       "writes": [
         "forecasts_made",
@@ -219,7 +221,8 @@
       "world_runs": false,
       "reads": [
         "sap",
-        "recipes_found"
+        "recipes_found",
+        "playthroughs"
       ],
       "writes": [
         "food",
@@ -328,7 +331,8 @@
       "game": "trunk_and_shadow",
       "world_runs": false,
       "reads": [
-        "readings"
+        "readings",
+        "playthroughs"
       ],
       "writes": [
         "tns.wins",
@@ -1101,7 +1105,7 @@
       "next": [
         "c6_shadow"
       ],
-      "minutes": 4
+      "minutes": 3
     },
     {
       "id": "c6_shadow",
@@ -1272,7 +1276,9 @@
         "shadow_reading",
         "shadow.played",
         "pulse",
-        "pulse_map.complete"
+        "pulse_map.complete",
+        "great_offering",
+        "year.leading"
       ],
       "writes": [
         "fallen",
@@ -1283,9 +1289,32 @@
       "enter": "cut",
       "exit": "pull-out",
       "next": [
-        "c7_backyard"
+        "c7_backyard",
+        "c6_ring"
       ],
       "minutes": 2
+    },
+    {
+      "id": "c6_ring",
+      "layer": "3d",
+      "name": "The Ring: the hand comes back",
+      "chapter": "ch6_shadow",
+      "reads": [
+        "pulse",
+        "great_offering",
+        "shadow_reading",
+        "year.leading",
+        "bark.integrity"
+      ],
+      "writes": [
+        "pullbacks"
+      ],
+      "enter": "cut",
+      "exit": "pull-out",
+      "minutes": 1,
+      "next": [
+        "c7_backyard"
+      ]
     },
     {
       "id": "c7_backyard",
@@ -1296,9 +1325,15 @@
         "roll",
         "pullbacks",
         "shadow_reading",
-        "bark.integrity"
+        "bark.integrity",
+        "pulse",
+        "great_offering",
+        "sounding.heard",
+        "playthroughs"
       ],
-      "writes": [],
+      "writes": [
+        "playthroughs"
+      ],
       "enter": "pull-out",
       "exit": "fade",
       "next": [],

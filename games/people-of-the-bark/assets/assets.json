@@ -160,7 +160,8 @@
       "scenes": [
         "c6_shadow",
         "c6_stand",
-        "c6_touch"
+        "c6_touch",
+        "c6_ring"
       ],
       "dimensions_m": [
         0.12,

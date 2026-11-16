@@ -22,6 +22,14 @@
 // cards, the saying wall and the ending diptychs come from api.art; each has its old drawing as a fallback.
 import * as kit from "./_art.js";
 import * as ladder from "./_ladder.js";
+import * as book from "./_pulse.js";
+
+// Phase 3: the night of the Pulse with the blank card turned is Pell's note for the Pulse map (_pulse.js); the
+// Pulse answered by the Knot is kept holy, and Chanter Hollow pours at the Heartwood crack (pulse +4); the
+// Shadow read as a hungry god ends on The Ring when the Pulse is loud enough to drink the Great Offering, and on
+// The Shadow Passes otherwise; the twist's last card shows the ending's generated card. A second playthrough
+// (book.secondRun): the notches can be felt from the first deal, Pell says so, and the first Backyard card has a
+// stump over the fence.
 
 // Phase 2: three stages. Teach: the Windstorm, meaning and policy, and no reading is wrong. Test: the Beetle,
 // after The Thumb on the Deck; the reading must fit the cause, and lives ride on it. Twist: the Pulse and the
@@ -106,6 +114,7 @@ function play(root, api, stage) {
     const timers = [];
     const later = (f, ms) => timers.push(setTimeout(f, ms));
     const rnd = api.rng();
+    const again = book.secondRun(api);
 
     let ev = stage, E = EVENTS[stage], locked = null, notch = 0, hand = [], slots = {}, selected = null, turned = false, done = false, askLeft = 1, pellTip = null;
     let deck = [], heir = null, redeals = 0, swaps = 0, shown = [], down = null;
@@ -143,7 +152,7 @@ function play(root, api, stage) {
         const k = deck.findIndex((c) => c.sigil === top);
         if (k >= 0) { locked = deck.splice(k, 1)[0]; slots.crown = locked; }
       }
-      notch = E.key === "shadow" ? 1 : 0;
+      notch = E.key === "shadow" || (E.key === "wind" && again) ? 1 : 0;
     }
     deal();
 
@@ -471,7 +480,7 @@ ${E.suit ? `<g transform="translate(50 74) scale(1.4)">${SUIT_SVG[E.suit]}</g>${
       if (!heir) { askBtn.hidden = false; askBtn.disabled = askLeft <= 0 || done; askBtn.textContent = `Ask Pell · ${askLeft}`; }
       else if (heir.who === "hollow") { askBtn.hidden = false; askBtn.disabled = redeals <= 0 || done; askBtn.textContent = `Redeal · ${redeals}`; }
       else askBtn.hidden = true;
-      notchBtn.hidden = E.key !== "shadow"; notchBtn.disabled = notch <= 0 || done; notchBtn.textContent = `Feel the notch · ${notch}`;
+      notchBtn.hidden = !(E.key === "shadow" || (E.key === "wind" && again)); notchBtn.disabled = notch <= 0 || done; notchBtn.textContent = `Feel the notch · ${notch}`;
     }
     const BY_SIGIL_KEY = (reading) => Object.keys(BY_SIGIL).find((k) => BY_SIGIL[k] === reading);
     const cap = (s) => s[0].toUpperCase() + s.slice(1);
@@ -566,7 +575,7 @@ ${E.suit ? `<g transform="translate(50 74) scale(1.4)">${SUIT_SVG[E.suit]}</g>${
     function turn() {
       if (turned || done) return; turned = true;
       bk.classList.add(P + "up"); bk.removeAttribute("role"); bk.tabIndex = -1;
-      const id = E.key === "pulse" ? "backyard-blank" : "backyard-" + E.key;
+      const id = E.key === "pulse" ? "backyard-blank" : E.key === "wind" && again && art.has("backyard-wind-stump") ? "backyard-wind-stump" : "backyard-" + E.key;
       if (art.has(id)) bk.innerHTML = `<img src="${art.url(id)}" alt="${E.cause ? "The Backyard card: " + E.cause.join(" ") : "The Backyard card, blank"}">`;
       else {
         const pic = E.key === "beetle"
@@ -580,6 +589,7 @@ ${pic}<text x="40" y="20" text-anchor="middle" font-family="sans-serif" font-siz
         $("help").textContent = "You looked up, as always. A dark yard, one lit window, nothing moving. The card is blank. For the first time you know no more than Pell does.";
         pellSays("feels you hesitate. “Then for once we are holding the same hand.”");
         api.store.set("blank", true);
+        book.gather(root, api, "blank");
       } else if (E.key === "shadow") {
         $("help").textContent = `The real cause, drawn plain: ${E.cause.join(" ")}. No suit fits it, and no reading of yours can tell them.`;
       } else $("help").textContent = `The real cause, drawn plain: ${E.cause.join(" ")}. The suit in its corner, ${SUITS[E.fit].name}, fits it. The people never see this card.`;
@@ -684,6 +694,7 @@ ${pic}<text x="40" y="20" text-anchor="middle" font-family="sans-serif" font-siz
       } else if (ev === 2) {
         pellSays(r.policy === "eye" ? "“Holy, then. And we do not ask it questions.”" : r.policy === "quill" ? "“Write it, Fenn. Even without a face.”" : r.policy === "spear" ? "“A watch on a wall. Burr will like that less than he thinks.”" : "“All of us, then. Good. I would not want to answer this one alone.”");
         api.store.set("pulse", { policy: r.policy || "balanced", meaning: r.meaning, sawBlank: turned });
+        if (r.policy === "eye") ladder.pulse(api, 4);   // kept holy: Chanter Hollow pours at the Heartwood crack
         later(() => {
           heir = chooseHeir(); leading = lead(); redeals = heir.who === "hollow" ? 1 : 0; swaps = 0;
           const why = heir.who === "twig" ? "No house answered the year twice, so the deck went to the one who asks “and then what?”" : `${cap(SIGILS[heir.sigil])} answered the year more than once, and Pell's last reading left the deck there.`;
@@ -720,22 +731,27 @@ ${yearStrip([["leaf", "The Leaf: autumn"], ["song", "The Birdsong: a small bird"
       const fits = [w, b].filter((x) => x.r.fit).length;
       const unturned = readings.filter((x) => !x.turned).length;
       const pulse = pu.turned ? "On the night of the Pulse your card came up blank, and you read it knowing no more than they did." : "On the night of the Pulse you did not look up.";
-      const s = sh.r.shadow;
+      const s0 = sh.r.shadow;
+      const ring = s0 === "offering" && book.ringEarned(ladder.pulse(api));
+      const s = ring ? "ring" : s0;
       const ends = {
         trial: "The Shadow is read as a trial. The priests chant, the warriors stand, the scholars record, and the Shadow passes. “Even the smallest world is a universe to the ones who live in it.”",
         offering: "The Shadow is read as a hungry god, and the Knot pours out everything the city has. The Shadow passes. “Even the smallest world is a universe to the ones who live in it.”",
         enemy: "The Shadow is read as an enemy, and the Battlements go up the wall to meet it. The War on the God.",
         habit: "The Shadow is read as a thing with a habit, and the Scroll House walks to its edge with stakes and string. The Edge of the World.",
+        ring: "The Shadow is read as a hungry god, and the Knot pours out everything the city has, into the crack by the Heartwood where “the Trunk drinks”. Something in the wood drinks it. At the second tap the Trunk sounds like a drum; the hand goes, and comes back, and when the light returns a band of colour circles the world. The people take it for a covenant. The Ring.",
       };
-      const names = { trial: "THE SHADOW PASSES · AS WRITTEN", offering: "THE SHADOW PASSES · AS WRITTEN", enemy: "THE WAR ON THE GOD", habit: "THE EDGE OF THE WORLD" };
+      const names = { trial: "THE SHADOW PASSES · AS WRITTEN", offering: "THE SHADOW PASSES · AS WRITTEN", enemy: "THE WAR ON THE GOD", habit: "THE EDGE OF THE WORLD", ring: "THE RING" };
+      const ART_END = Object.assign({ ring: "ending-the-ring" }, Object.fromEntries(Object.entries(SHADOW).map(([k, v]) => [k, v.end])));
+      const KEYART = { trial: "ending-shadow-passes", offering: "ending-shadow-passes", enemy: "ending-war-on-the-god", habit: "ending-edge-of-the-world", ring: "ending-the-ring" };
       const text = `${ends[s]} ${heir.name} dealt the last hand honestly. Over the year: the wind was ${SUITS[w.r.meaning].belief}, ${beast}${fits ? ` (${fits} reading${fits > 1 ? "s" : ""} fitted the real cause)` : ""}. ${pulse} The rope stands at ${ch}${morale ? `; morale ${morale > 0 ? "+" : "−"}${Math.abs(morale)}` : ""}.${unturned ? ` Backyard cards left face down: ${unturned}.` : ""}`;
       const stood = !sh.r.fell || !sh.could;
-      endEl = kit.endCard(root, api, SHADOW[s].end, { outcome: stood ? "win" : "done", text: stood ? text + (sh.r.fell ? " No three cards in that honest hand could have stood; you laid the trial knowing it." : "") : text + " You laid another reading and it fell to a trial, because its house does not lead the year: the twist is not yet won." }, `<b>${names[s]}</b>Painted on the ridge: “${w.crown}”, “${b.crown}”, “${pu.crown}”, “${sh.crown}.”`);
+      endEl = kit.endCard(root, api, ART_END[s], { outcome: stood ? "win" : "done", text: stood ? text + (sh.r.fell ? " No three cards in that honest hand could have stood; you laid the trial knowing it." : "") : text + " You laid another reading and it fell to a trial, because its house does not lead the year: the twist is not yet won." }, `<b>${names[s]}</b>Painted on the ridge: “${w.crown}”, “${b.crown}”, “${pu.crown}”, “${sh.crown}.”`, KEYART[s]);
     }
     let endEl = null;
     on(layBtn, "click", lay);
     const startBtn = wrap.querySelector(`.${P}intro .${P}lay`);
-    on(startBtn, "click", () => { wrap.querySelector("." + P + "intro").remove(); pellSays("“The Trunk does not shout twice. Write it down.”"); handEl.querySelector("." + P + "card")?.focus(); });
+    on(startBtn, "click", () => { wrap.querySelector("." + P + "intro").remove(); pellSays(again ? "watches your thumb run along the edge of the deck before the first card is down. “You know where the notches are,” he says, and does not ask who showed you." : "“The Trunk does not shout twice. Write it down.”"); handEl.querySelector("." + P + "card")?.focus(); });
     startBtn.focus({ preventScroll: true });
     setupHead();
     renderHand();

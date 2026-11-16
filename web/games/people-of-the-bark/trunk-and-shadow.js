@@ -19,6 +19,13 @@
 // is his portrait. Without the art the board, pieces and cards are drawn as before, on the same cracks.
 import * as kit from "./_art.js";
 import * as ladder from "./_ladder.js";
+import * as book from "./_pulse.js";
+
+// Phase 3: winning as the Shadow is Twig's note for the Pulse map (_pulse.js). On a second playthrough
+// (book.secondRun) Sorrel of Lowridge, down for the spring festival, takes Burr's seat at the first board: the same
+// Shadow, her portrait and her lines.
+const SORREL_LINES = ["“Down here we listen before we step.”", "“Hold still. I can hear you breathing.”", "“That one's on paper. Off it, quick.”", "“You Highridge lot run as if it's shouting.”", "“Knock, and I'll come.”"];
+const SORREL_GUARD = ["“Chant away. The wall still ticks.”", "“Louder doesn't help in Lowridge.”", "“Down here it mutters.”"];
 
 // Phase 2: three sittings. Teach: Old Rules, against Burr, with the Eye card for help. Test: four mutated
 // cards on the table (Blessing, Tremor, the Eye, and the Hollow Square: every fourth round one square falls
@@ -54,6 +61,9 @@ function play(root, api, stage) {
     const P = "people-of-the-bark-trunk-and-shadow-";
     const shared = api.shared || { get: (k, d) => d, set() {} };
     const asShadow = stage === 2;
+    const sorrel = book.secondRun(api) && stage === 0;
+    const OPPN = sorrel ? "Sorrel" : "Burr", OPPM = sorrel ? "mark-sorrel" : "mark-burr";
+    const LINES = sorrel ? SORREL_LINES : BURR_LINES, GUARD = sorrel ? SORREL_GUARD : BURR_GUARD;
     const offs = [];
     const on = (t, e, f, o) => { t.addEventListener(e, f, o); offs.push(() => t.removeEventListener(e, f, o)); };
     const timers = [];
@@ -77,7 +87,7 @@ function play(root, api, stage) {
 
     const S = {
       round: 1, turn: "player", folk: [0, 1, 3, 4].map((c, i) => ({ i, c, r: 0, hidden: 0 })),
-      shadow: { c: 1, r: 6 }, sel: null, again: null, chantUsed: false, skipNext: false, over: false, line: BURR_LINES[0], fired: null, log: "",
+      shadow: { c: 1, r: 6 }, sel: null, again: null, chantUsed: false, skipNext: false, over: false, line: LINES[0], fired: null, log: "",
       holes: [], knock: null, taps: 0, twigN: 0,
       looks: stage === 0 ? 8 : gentle ? 4 : 2, peek: null, guard: false, hiddenTotal: 0, beats: new Set(),
     };
@@ -186,24 +196,24 @@ function play(root, api, stage) {
  <div class="${P}cards"></div>
  <div class="${P}board"><svg viewBox="${api.art && api.art.has("tns-board") ? "-66 -62 432 604" : "-34 -56 368 590"}" aria-label="The board: five columns, eight rows"></svg></div>
  <div class="${P}opp">
-  <button class="${P}por" type="button" title="Read Burr (W)" aria-label="Read Burr: see where the Shadow goes next">${api.art && api.art.has("mark-burr") ? `<img src="${api.art.url("mark-burr")}" alt="" width="120" height="120">` : ""}<svg ${api.art && api.art.has("mark-burr") ? "hidden" : ""} viewBox="-60 -60 120 120" width="120" height="120" aria-hidden="true">
+  <button class="${P}por" type="button" title="Read ${OPPN} (W)" aria-label="Read ${OPPN}: see where the Shadow goes next">${api.art && api.art.has(OPPM) ? `<img src="${api.art.url(OPPM)}" alt="" width="120" height="120">` : ""}<svg ${api.art && api.art.has(OPPM) ? "hidden" : ""} viewBox="-60 -60 120 120" width="120" height="120" aria-hidden="true">
    ${Array.from({ length: 18 }, (_, i) => { const a = i / 18 * Math.PI * 2; return `<circle cx="${Math.cos(a) * 50}" cy="${Math.sin(a) * 50}" r="6" fill="none" stroke="${SAGE}" stroke-width="2"/>`; }).join("")}
    <path d="M-22 30 V-6 Q-22 -26 0 -26 Q22 -26 22 -6 V30 H8 V6 H-8 V30Z" fill="#7d6c5a" stroke="${DARK}" stroke-width="2"/>
    <path d="M-6 -30 Q14 -48 34 -34 Q16 -34 6 -22Z" fill="${LANT}"/>
   </svg></button>
-  <div class="${P}who"><h3>CAPTAIN BURR</h3><p class="${P}mood">charges the nearest</p></div>
+  <div class="${P}who"><h3>${sorrel ? "SORREL OF LOWRIDGE" : "CAPTAIN BURR"}</h3><p class="${P}mood">${sorrel ? "listens for the nearest" : "charges the nearest"}</p></div>
   <div class="${P}rest">
    <div class="${P}say" aria-live="polite"></div>
    <div class="${P}dots"></div><div class="${P}rd"></div>
    <div class="${P}stat" aria-live="polite"></div>
-   <div class="${P}acts"><button type="button" data-a="look">read Burr · W</button><button type="button" data-a="wait">wait · .</button></div>
+   <div class="${P}acts"><button type="button" data-a="look">read ${OPPN} · W</button><button type="button" data-a="wait">wait · .</button></div>
   </div>
  </div>
 </div>
 <div class="${P}intro"><div class="${P}knot" role="dialog" aria-label="How to play">
  ${api.art && api.art.has("ui-frame-bark") && api.art.has("tns-board") ? `<div class="${P}picwrap" style="background-image:url(${api.art.url("ui-frame-bark")})"><img src="${api.art.url("tns-board")}" alt="The festival board" width="160" height="220"></div>` : ""}
  <h2 style="margin-top:8px">Trunk and Shadow</h2><div class="${P}sub">${["THE SPRING FESTIVAL", "THE SUMMER FESTIVAL", "A WINTER EVENING"][stage]} · HIGHRIDGE</div>
- <p class="${P}beat">${["Lanterns in the square, the whole city watching. The festival board is a flat flake; you play the Folk, and Captain Burr, who has never fought anything bigger than a mite, plays the Shadow.",
+ <p class="${P}beat">${[sorrel ? "Lanterns in the square, the whole city watching. The festival board is a flat flake; you play the Folk. Sorrel of Lowridge, up for the festival with her tappers, asks to play the Shadow, and Captain Burr gives her his seat with a bow. She plays it the way she listens to a wall." : "Lanterns in the square, the whole city watching. The festival board is a flat flake; you play the Folk, and Captain Burr, who has never fought anything bigger than a mite, plays the Shadow.",
    "Summer. The board has four cards on it now, and one of them is new: somebody in Lowridge carved it after listening to a wall. Every fourth round a square falls out of the board and does not come back.",
    "Winter, and no festival. Twig has the board out on the floor. “You always play the Folk. Sit here. You be the Shadow. I'll tell you its rule, I made it up: it can only go toward the last place somebody knocked.”"][stage]}</p>
  <p class="${P}goal"><b>Goal:</b> ${asShadow ? "<b>answer three knocks</b>: bring the Shadow over the square where a Folk last knocked, three times, before three Folk reach the Crown or round 16 ends." : "three Folk on the Crown row before round 16 ends."}</p>
@@ -355,7 +365,7 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
       stat.innerHTML = `${asShadow ? `Knocks answered: <b>${S.taps}</b> / 3 · Twig's Folk on the Crown: ` : "On the Crown: "}<b>${crown}</b> / 3${hid.length ? ` · hidden: ${hid.map((f) => `${f.i + 1} (back in ${f.hidden - 1 || 1})`).join(", ")}` : ""}${S.log ? `<br><i>${S.log}</i>` : ""}`;
       sayEl.textContent = S.line;
       mood.textContent = asShadow ? "has given you his seat; Twig plays the Folk" : S.guard ? "charges, with the crowd chanting" : "charges the nearest";
-      lookBtn.textContent = `read Burr · ${S.looks}`;
+      lookBtn.textContent = `read ${OPPN} · ${S.looks}`;
       lookBtn.disabled = por.disabled = S.looks <= 0 || S.over || S.turn !== "player" || !!S.peek;
       waitBtn.disabled = S.over || S.turn !== "player";
     }
@@ -369,7 +379,7 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
     function look() {
       if (asShadow || S.looks <= 0 || S.over || S.turn !== "player" || S.peek) return;
       S.looks--; S.peek = S.skipNext ? { ...S.shadow } : plan();
-      S.log = S.skipNext ? "Burr glances at the chanters and does not move." : "Burr glances at the board. That is where the Shadow will go, whatever you do now.";
+      S.log = S.skipNext ? `${OPPN} glances at the chanters and does not move.` : `${OPPN} glances at the board. That is where the Shadow will go, whatever you do now.`;
       refresh();
     }
     function wait() {
@@ -384,7 +394,7 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
       if (S.folk.filter((f) => !f.hidden && f.r === ROWS - 1).length >= 3) {
         S.over = true; S.line = "“Well run! Well run.” He means it."; refresh();
         api.store.set("losses", 0);
-        later(() => api.end({ outcome: "win", text: `Three Folk stand on the Crown in round ${S.round}. Burr laughs, bows to the board and polishes his spear. The square cheers; the Battlements +4, morale +5.${S.hiddenTotal ? ` The Shadow hid ${S.hiddenTotal} Folk on the way.` : " Not one Folk was hidden."}` }), 700);
+        later(() => api.end({ outcome: "win", text: `Three Folk stand on the Crown in round ${S.round}. ${sorrel ? "Sorrel nods once, as if a wall had answered her." : "Burr laughs, bows to the board and polishes his spear."} The square cheers; the Battlements +4, morale +5.${S.hiddenTotal ? ` The Shadow hid ${S.hiddenTotal} Folk on the way.` : " Not one Folk was hidden."}` }), 700);
         return true;
       }
       return false;
@@ -404,12 +414,12 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
       if (S.over) return;
       S.fired = null;
       const promised = S.peek; S.peek = null;
-      if (S.skipNext) { S.skipNext = false; S.line = "“…” Burr bows his head for the chant."; S.log = "The Shadow stands still."; S.fired = "eye"; return endRound(); }
+      if (S.skipNext) { S.skipNext = false; S.line = `“…” ${OPPN} bows ${sorrel ? "her" : "his"} head for the chant.`; S.log = "The Shadow stands still."; S.fired = "eye"; return endRound(); }
       S.shadow = promised || plan();
       const caught = S.folk.filter((f) => !f.hidden && under(f) && !isKnot(f.c, f.r));
       for (const f of caught) f.hidden = stage === 0 ? 2 : 3;   // the teach game hides a Folk for one round, not two
       S.hiddenTotal += caught.length;
-      S.line = caught.length ? "“Got you! Back to the Root with you.”" : (S.guard ? BURR_GUARD : BURR_LINES)[Math.floor(rnd() * (S.guard ? BURR_GUARD : BURR_LINES).length)];
+      S.line = caught.length ? "“Got you! Back to the Root with you.”" : (S.guard ? GUARD : LINES)[Math.floor(rnd() * (S.guard ? GUARD : LINES).length)];
       S.log = caught.length ? `${caught.length} Folk hidden by the Shadow. They will come back at the Root.` : (S.log || "");
       endRound();
     }
@@ -427,7 +437,7 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
         S.over = true; refresh();
         const crown = S.folk.filter((f) => !f.hidden && f.r === ROWS - 1).length;
         api.store.set("losses", losses + 1);
-        later(() => api.end(asShadow ? { outcome: "lose", text: `Round 16 ends with ${S.taps} of 3 knocks answered. Twig yawns and tips the board. “It didn't get to finish asking.” Nobody won.` } : { outcome: "lose", text: `Round 16 ends with ${crown} Folk on the Crown. Burr wins the festival game and looks almost sorry about it; a loss takes nothing. The Folk will try again at summer's festival.${losses + 1 >= 2 ? " Next time, Burr says, he will go easier, and let you read him more." : ""}` }), 600);
+        later(() => api.end(asShadow ? { outcome: "lose", text: `Round 16 ends with ${S.taps} of 3 knocks answered. Twig yawns and tips the board. “It didn't get to finish asking.” Nobody won.` } : { outcome: "lose", text: `Round 16 ends with ${crown} Folk on the Crown. ${sorrel ? "Sorrel wins the festival game and says nothing about it" : "Burr wins the festival game and looks almost sorry about it"}; a loss takes nothing. The Folk will try again at summer's festival.${losses + 1 >= 2 ? " Next time, Burr says, he will go easier, and let you read him more." : ""}` }), 600);
         return;
       }
       if (asShadow) {
@@ -455,7 +465,7 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
       if (S.round === GUARD_AT && !S.guard) {
         S.guard = true;
         if (S.chantUsed && !S.skipNext) S.chantUsed = false;
-        S.line = "“Louder, then! Let's hear it!” Burr waves the crowd on, grinning.";
+        S.line = sorrel ? "“Louder, then. It won't help.” Sorrel waits the crowd out." : "“Louder, then! Let's hear it!” Burr waves the crowd on, grinning.";
         S.log = (S.log ? S.log + " " : "") + "The lanterns are lit and the whole square takes up the chant: the Eye card can be used once more.";
       }
       const tp = stage === 1 ? TREMOR_PATTERN[S.round] : null;
@@ -519,6 +529,7 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
           if (S.taps >= 3) {
             S.over = true; S.line = "Twig lifts the Shadow piece off the board, and everything under it. “The Hand takes the Shadow too. That's the last card.” The square falls silent."; refresh();
             api.store.set("losses", 0); shared.set("shadow_played", true);
+            book.gather(root, api, "shadow");   // phase 3: Twig's note for the Pulse map
             later(() => api.end({ outcome: "win", text: `Three knocks, three answers. Playing the Shadow you never chose a Folk to chase: you went where the last knock was, and stopped. Then the Hand lifted the Shadow too, and the square fell silent. Twig: “So it isn't hunting. It's listening for where we are.” ${S.hiddenTotal ? `${S.hiddenTotal} Folk were hidden on the way, by accident.` : "Not one Folk was hidden."}` }), 900);
             return;
           }
@@ -570,7 +581,7 @@ ${art.has("tns-piece-shadow") && hasBoard ? `<g transform="translate(${Z - 4} ${
     on(startBtn, "click", () => {
       wrap.querySelector("." + P + "intro").remove();
       S.log = gentle ? "Burr, cheerfully: “I'll go easy. Watch my eyes, if you like.” (W: read Burr, 4 looks)" : "New: tap Burr's portrait (W) to read where the Shadow will go next. Two looks a game.";
-      if (stage === 0) S.log = "Old Rules only. Tap Burr's portrait (W) to read where the Shadow will go next: eight looks, half the game.";
+      if (stage === 0) S.log = `Old Rules only. Tap ${OPPN}'s portrait (W) to read where the Shadow will go next: eight looks, half the game.`;
       if (asShadow) { S.shadow = { c: 2, r: 3 }; S.line = "Twig: “Folk first. Then you. Remember: only toward the knock.”"; S.log = ""; S.turn = "twig"; refresh(); later(twigMove, 500); return; }
       refresh();
     });

@@ -862,6 +862,43 @@ def backyard_card_blank(a):
     finish(a)
 
 
+# ---------------------------------------------------------------------------------------------
+# Phase 3, the second playthrough: the first pull-back, with a stump over the fence.
+# ---------------------------------------------------------------------------------------------
+def by_wind_stump(a):
+    """by_wind, with a sawn stump in the next yard showing over the fence."""
+    horizon = 214
+    a.rect(0, 0, YW, YH, fill=kit.SKY)
+    a.path("M168,176 Q169,160 174,152 L204,152 Q209,160 210,176Z", fill="#8f8a80", stroke="#4a4a44", stroke_width=1.2)
+    a.ellipse(189, 152, 16, 4.5, fill="#d7cbb4", stroke="#4a4a44", stroke_width=1.2)
+    for rr in (11, 6):
+        a.ellipse(189, 152, rr, rr * 0.28, fill="none", stroke="#a8977a", stroke_width=0.9)
+    a.path("M170,160 q-6,-5 -10,1 M208,160 q6,-5 9,2", fill="none", stroke="#5c8a3e", stroke_width=1.4, stroke_linecap="round")
+    for i in range(12):
+        x = 4 + i * 22
+        a.path(f"M{x},{horizon - 44} l8,-8 l8,8 V{horizon + 4} h-16Z", fill=kit.FENCE, stroke="#9aa3a0", stroke_width=1)
+    a.rect(0, horizon - 30, YW, 5, fill=kit.FENCE, stroke="#9aa3a0", stroke_width=0.8)
+    a.rect(0, horizon, YW, YH - horizon, fill=kit.GRASS)
+    a.path("".join(f"M{8 + i * 13},{horizon + 14 + (i * 37) % 60} l2,-7 l2,7" for i in range(19)), fill="none", stroke="#5c8a3e",
+           stroke_width=1.2)
+    a.line(20, 60, 20, 232, stroke="#8a8f8c", stroke_width=5)
+    a.line(232, 70, 232, 232, stroke="#8a8f8c", stroke_width=5)
+    a.path("M20,66 Q126,96 232,76", fill="none", stroke="#6f7471", stroke_width=1.5)
+    for x, y, col, w in ((60, 80, "#e8e4d8", 34), (112, 88, "#d98a6a", 28), (166, 86, "#8fb4cf", 38)):
+        a.path(f"M{x},{y} l{w},2 q10,30 30,44 q-26,10 -52,-4 q8,-22 -8,-42Z", fill=col, stroke="#7d7f7c", stroke_width=1.2)
+    for y in (140, 176):
+        a.path(f"M30,{y} q40,-12 80,0 t80,0", fill="none", stroke="#ffffff", stroke_width=2.5, opacity=0.8, stroke_linecap="round")
+    for x, y in ((80, 244), (150, 226), (200, 262)):
+        leaf(a, x, y, 0.22, x, col="#5c8a3e", vein=False)
+
+
+@asset(G, "backyard-wind-stump", group="cards", title="Backyard card: a summer gust, and a stump over the fence", w=CW, h=CH, row=ROW)
+def backyard_wind_stump(a: Art):
+    """The first Backyard card as a second playthrough shows it: washing blown sideways on the line, as before, and over
+    the fence in the next yard a low sawn stump, weathered grey, with grass grown up round it. In its corner, Wind."""
+    backyard_card(a, "wind", by_wind_stump)
+
+
 @asset(G, "omen-back", group="cards", title="Omen card: the back", w=CW, h=CH, row=ROW)
 def omen_back(a: Art):
     """The back of Pell's deck: bark-brown stock printed with a knot's growth rings in gold and an eye at the

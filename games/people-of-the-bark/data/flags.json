@@ -494,6 +494,12 @@
       "type": "bool",
       "default": false,
       "description": "The Sounding was played in c6_touch: each of the three taps answered by a plate."
+    },
+    {
+      "name": "playthroughs",
+      "type": "counter",
+      "default": 0,
+      "description": "Finished runs (written at the end of c7_backyard). From the second playthrough: the notches are readable from the first deal, the faceless row is on the scroll from chapter 1, the stump shows over the fence in the first pull-back, Sorrel can be a festival opponent, and Resin's thirteenth page shows its word from spring."
     }
   ]
 }

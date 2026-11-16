@@ -1176,6 +1176,179 @@
         "facing_deg": 0
       },
       "interactions": []
+    },
+    "c6_ring": {
+      "note": "The Ring (an added ending). The hand goes, and the dark comes back once: the hand returns out of frame. When the light returns from the east, a broad band of colour lies level across the whole bark at z 0.06 (a ribbon, seen from inside; the engine lays it as a flat lit strip, no hand or ribbon edge is modelled here). The people come out of the knots and lift their arms to it. No hand is placed here.",
+      "world": {
+        "color": [
+          0.55,
+          0.6,
+          0.7
+        ],
+        "strength": 0.45
+      },
+      "lights": [
+        {
+          "name": "returning-light",
+          "type": "SUN",
+          "location": [
+            0.3,
+            -0.3,
+            0.3
+          ],
+          "energy": 2.6,
+          "color": [
+            0.9,
+            0.92,
+            1.0
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.06
+          ]
+        },
+        {
+          "name": "ribbon-band",
+          "type": "AREA",
+          "location": [
+            0,
+            -0.04,
+            0.06
+          ],
+          "energy": 0.4,
+          "color": [
+            0.95,
+            0.3,
+            0.18
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.06
+          ],
+          "size": 0.12
+        },
+        {
+          "name": "glow-1",
+          "type": "POINT",
+          "location": [
+            -0.034,
+            0.026,
+            0.071
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-2",
+          "type": "POINT",
+          "location": [
+            0.012,
+            0.026,
+            0.076
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-3",
+          "type": "POINT",
+          "location": [
+            -0.01,
+            0.026,
+            0.021
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-4",
+          "type": "POINT",
+          "location": [
+            0.033,
+            0.026,
+            0.077
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-5",
+          "type": "POINT",
+          "location": [
+            -0.058,
+            0.026,
+            0.063
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        },
+        {
+          "name": "glow-6",
+          "type": "POINT",
+          "location": [
+            0.02,
+            0.026,
+            0.101
+          ],
+          "energy": 0.03,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.002
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.05,
+          0.06
+        ],
+        "look_at": [
+          0,
+          0.03,
+          0.06
+        ],
+        "lens_mm": 24,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.026,
+          0.06
+        ],
+        "facing_deg": 0
+      },
+      "interactions": []
     }
   }
 }
