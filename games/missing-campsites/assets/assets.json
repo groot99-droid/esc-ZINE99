@@ -8,14 +8,15 @@
       "scenes": [
         "booth_day1",
         "payphone_night1",
-        "booth_day2"
+        "booth_day2",
+        "supper_for_two"
       ],
       "dimensions_m": [
         60,
         40,
         8
       ],
-      "lighting": "Day 1: 15:10 high summer sun, dust in shafts. Night 1: booth window dark, torch only, one bulb over the payphone with moths. Day 2: overcast grey.",
+      "lighting": "Day 1: 15:10 high summer sun, dust in shafts. Night 1: booth window dark, torch only, one bulb over the payphone with moths. Day 2: overcast grey. Day 2, 17:30 (supper_for_two): the grey going blue, the light over the counter on by itself, a car's headlights from the lot.",
       "objects": [
         "heron-sign",
         "payphone",
@@ -70,6 +71,7 @@
       "name": "The five sites, 20 to 24",
       "scenes": [
         "fixed_sites_day1",
+        "channel_two",
         "fixed_sites_day2",
         "dusk_choice"
       ],
@@ -78,7 +80,7 @@
         60,
         25
       ],
-      "lighting": "Day 1: golden hour. Day 2: overcast, flat. Dusk choice: blue hour at the edge of site 20 by the van.",
+      "lighting": "Day 1: golden hour. Day 2: overcast, flat. Dusk choice: blue hour at the edge of site 20 by the van. Night 1, after the Pack List round (channel_two): torch only at the split boulder, a walkie dial's green glow inside the crack, the fire at 22 a long way off.",
       "objects": [
         "split-boulder",
         "tent",

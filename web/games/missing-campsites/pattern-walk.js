@@ -29,13 +29,25 @@
 // outline on Ask, chapter 7's card on the how-to, and the title lettering over the lit window behind
 // the result. The field's glyphs stay drawn from each junction's spec: the kit is their legend.
 
-import { pic, chapterCard, resultCard, LIST, listId } from "./kit.js";
+//
+// Phase 2 (2026-11-16): the ladder. The eight junctions of pattern_walk_1 in three stages:
+//   1 Teach  19, 18, 17: one written detail, two candidate glyphs.
+//   2 Test   16, 15, 14: four candidates with overlapping details; reciting, and the book's counts.
+//   3 Twist  13, 12: the place built from the notebook. Row 12 is written wrong ("three slept here"),
+//            and the set-piece stands at its junction: a glyph that matches the line exactly and was
+//            never there. The book's count, the List and Marisol still tell the truth; the page does not.
+// Links read here (api.shared): "sure", the rows stamped Sure in Reconcile's twist (stamps to trees:
+// a right row loses a decoy, a wrong row stands built as written), and "pattern_key", the counts
+// matched to trees in The Ranger's Book's twist (one more Count, from the first junction).
+
+import { pic, chapterCard, resultCard, LIST, listId, ladder, stageTabs, linkNote, sharedList } from "./kit.js";
 
 const NS = "http://www.w3.org/2000/svg";
 const INK = "#111", PEARL = "#ecebe6", GREEN = "#2e6a5c", DEEP = "#0f3a33";
 const P = "missing-campsites-pattern-walk-";
 
-const ROWS = [
+const NAMES = ["Two glyphs", "Four glyphs", "Built as written"];
+const ALL_ROWS = [
   { n: 19, text: "two of them, a hammock slung between two trees", want: { persons: 2, hammock: true } },
   { n: 18, text: "table down by the creek side, three people", want: { persons: 3, table: -1 } },
   { n: 17, text: "bike, onions, a tent pitched crooked", want: { wheel: true, crooked: true } },
@@ -43,23 +55,32 @@ const ROWS = [
   { n: 15, text: "", want: {}, book: 2 },
   { n: 14, text: "fire ring built double, one person", want: { double: true, persons: 1 } },
   { n: 13, text: "", want: {}, book: 4 },
-  { n: 12, text: "the creek bend; four slept here", want: { persons: 4 } },
+  { n: 12, text: "the creek bend; three slept here", want: { persons: 4 }, book: 4, written: { persons: 3 }, right: "the creek bend; four slept here" },
 ];
-const COUNTS = [3, 2, 3, 3, 3, 4, 3, 4];
-const HELD = [19, 17, 15, 12];        // the List items Tam carries into this walk
+const STAGE = {
+  1: { rows: [19, 18, 17], counts: [2, 2, 2], held: [], asks: 1, cnt: 0, from: "20–24", lose: 3 },
+  2: { rows: [16, 15, 14], counts: [4, 4, 4], held: [15, 14], asks: 2, cnt: 1, from: "17", lose: 3 },
+  3: { rows: [13, 12], counts: [3, 4], held: [12], asks: 2, cnt: 1, from: "14", lose: 3 },
+};
 
 const TEXT = {
-  when: "The other side · the path out · glyphs 19 to 12",
-  goal: "Walk back down the loop, glyph by glyph, to 12, before the car reaches the booth.",
-  rule: "Every lost site stands rebuilt in trees. Your Sites page says what was there; the true glyph carries it.",
-  gentle: "A gentler walk: the car waits for six forgotten steps, not four.",
+  when: ["The other side · the path out · glyphs 19 to 17", "The other side · glyphs 16 to 14", "The other side · glyphs 13 and 12"],
+  goal: ["Walk back down the loop, glyph by glyph, to 17. Fewer than three forgotten steps.", "On to 14. Four glyphs at every junction now, and they share their details.", "On to 12, before the car reaches the booth."],
+  rule: ["Every lost site stands rebuilt in trees. Your Sites page says what was there; the true glyph carries it.", "Read every detail of the row, not the first one. Where the row is blank, say the List or read the book's counts.", "This place has read your notebook. A row you wrote wrong stands here in trees, exactly as written. Check the page against the book and the List before you trust it."],
+  gentle: "A gentler walk: the car waits for two more forgotten steps.",
+  twist: "Thirteen is blank. Twelve is in your hand, and you were tired when you wrote it.",
+  setPiece: "One of these is the site. One of them is your handwriting, grown.",
+  asWritten: "It is exactly what you wrote. Every tree of it. It was built from your page, and it was never there. White.",
+  sureTrap: "Stamped Sure, and wrong. It stands as you stamped it, and it was never there. White.",
+  end1: (d) => `Glyph 17: a wheel of saplings where a bike stood. ${d ? `${d} step${d > 1 ? "s" : ""} forgotten.` : "Not one step forgotten."}`,
+  end2: (d) => `Glyph 14, the double ring. ${d ? `${d} step${d > 1 ? "s" : ""} forgotten.` : "Not one step forgotten."} The rows ahead are the ones you were surest of.`,
   open: "Pearl light, no shadows. The trees stand in exact rows, and the rows are sites.",
-  ask: "Marisol walks beside you. \"I checked every one of these in. Ask me.\" (A: ask her, three times.)",
-  recite: "June's backwards lap, for real. You hold four things off the List: say one where it belongs and the trees answer. (R, or tap a tile.)",
+  ask: "Marisol walks beside you. \"I checked every one of these in. Ask me.\" (A: ask her.)",
+  recite: "June's backwards lap, for real. You hold two things off the List: say one where it belongs and the trees answer. (R, or tap a tile.)",
   hum: (name) => `"…and ${name}." The trees of one glyph hum.`,
   dud: (name) => `"…${name}." Nothing answers. That was not what comes next, and it is said now.`,
   gave: (n, name) => `${n}: ${name}. It goes on the List.`,
-  count: "Fifteen is blank in your notebook. You never walked it. But the ranger's book kept its counts. (C: read them, twice.)",
+  count: "This row is blank in your notebook. You never walked it. But the ranger's book kept its counts. (C: read them.)",
   r17: "A ring of saplings, like a wheel lying down. Somebody's bike stood here.",
   r16: "One tree here is taller than the rest, and darker.",
   r13: "Thirteen: blank again. The rows of trees hum when you look straight at them.",
@@ -146,11 +167,26 @@ const CSS = `
 @media (max-width:640px){.${P}wrap{flex-direction:column}.${P}side{width:auto;border-left:0;border-top:3px solid ${INK};order:2;padding:8px 10px;gap:6px;max-height:40%}.${P}acts button{padding:6px 8px;min-height:36px}.${P}side h3{display:none}.${P}row:not(.now){display:none}.${P}key ul{grid-template-columns:1fr 1fr}.${P}lh small{display:none}.${P}list{grid-template-columns:repeat(8,minmax(0,1fr));gap:3px}.${P}key li img{width:56px;height:56px}.${P}voice{font-size:19px}}
 `;
 
-export default {
-  mount(root, api) {
+export default { mount(root, api) { return ladder(root, api, mountStage, NAMES); } };
+
+function mountStage(root, api, stage) {
+  {
+    const CFG = STAGE[stage];
     const rng = api.rng();
     const losses = api.store.get("losses", 0);
-    const DRIFT_LOSE = losses >= 2 ? 6 : 4;
+    const DRIFT_LOSE = CFG.lose + (losses >= 2 ? 2 : 0);
+    // the links: rows stamped Sure in Reconcile, and the book's counts matched to trees in The Ranger's Book
+    const sure = (api.shared && api.shared.get("sure", {})) || {};
+    const keyed = !!(api.shared && api.shared.get("pattern_key", false));
+    const shList = sharedList(api);
+    const ROWS = CFG.rows.map((n) => {
+      const r = { ...ALL_ROWS.find((x) => x.n === n) }, s = sure[n];
+      if (s && s.right) { r.sure = "right"; if (r.written) { r.text = r.right; delete r.written; } }
+      else if (s) { r.sure = "wrong"; r.text = s.line || r.text; r.written = s.spec || { empty: true }; r.stamped = true; if (!r.book) r.book = 0; }
+      return r;
+    });
+    const COUNTS = CFG.counts.map((c, i) => Math.max(2, c - (ROWS[i].sure === "right" ? 1 : 0)));
+    const HELD = CFG.held;
     const wrap = document.createElement("div");
     wrap.className = P + "wrap";
     wrap.innerHTML = `<style>${CSS}</style>
@@ -169,8 +205,16 @@ export default {
         <button type="button">Step off the five sites</button></div></div>`;
     root.appendChild(wrap);
     const $ = (s) => wrap.querySelector(s);
-    $(".when").textContent = TEXT.when; $(".goal").textContent = TEXT.goal; $(".rule").textContent = TEXT.rule;
+    $(".when").textContent = TEXT.when[stage - 1]; $(".goal").textContent = TEXT.goal[stage - 1]; $(".rule").textContent = TEXT.rule[stage - 1];
     if (losses >= 2) { $(".gentle").hidden = false; $(".gentle").textContent = TEXT.gentle; }
+    stageTabs(api, $(`.${P}card>button`));
+    if (stage === 1) { $(`.${P}lh small`).textContent = "what the glyphs give up"; wrap.querySelectorAll(`.${P}card dl dt`)[2].remove(); wrap.querySelectorAll(`.${P}card dl dd`)[2].remove(); }
+    {
+      const mine = ROWS.filter((r) => r.sure);
+      if (mine.length) linkNote($(`.${P}side`), `Because you stamped ${mine.map((r) => "row " + r.n).join(" and ")} Sure in Reconcile: ${mine.map((r) => (r.sure === "right" ? `${r.n} was right, and one false glyph cannot stand beside it` : `${r.n} was wrong, and it stands here built as written`)).join("; ")}.`);
+      if (keyed) linkNote($(`.${P}side`), "Because you matched the book's counts to the trees in The Ranger's Book, you can read them here from the first junction, once more than before.");
+      const side = $(`.${P}side`); side.querySelectorAll('[role="status"]').forEach((n) => side.querySelector(".rows").after(n));
+    }
     const svg = wrap.querySelector("svg");
     const flash = $(`.${P}flash`), rowsEl = $(".rows"), driftEl = $(`.${P}drift`), voice = $(`.${P}voice`);
     const askBtn = $(".ask"), cntBtn = $(".cnt");
@@ -201,6 +245,7 @@ export default {
     function recite(n) {
       if (busy || over || !held.has(n) || spent.has(n) || $(`.${P}intro`)) return;
       spent.add(n);
+      if (api.shared && n === ROWS[j].n) api.shared.set("recited", (api.shared.get("recited", 0) || 0) + 1);
       if (n === ROWS[j].n) {
         const c = cands.find((x) => x.ok);
         c.g.classList.add("hum"); if (!api.reducedMotion) c.g.classList.add("live");
@@ -212,7 +257,7 @@ export default {
     if (window.matchMedia && matchMedia("(max-width:640px)").matches) $(`.${P}key`).open = false;
     const timers = [];
     let raf = 0, j = 0, drift = 0, busy = true, over = false, cands = [], focusIdx = 0;
-    let asks = 3, counts = 2, counting = false, asked = false, curTrue = null;
+    let asks = CFG.asks, counts = CFG.cnt + (keyed ? 1 : 0), counting = false, asked = false, curTrue = null;
     const said = new Set();
 
     const el = (tag, a = {}, parent = svg) => { const n = document.createElementNS(NS, tag); for (const k in a) n.setAttribute(k, a[k]); parent.appendChild(n); return n; };
@@ -232,6 +277,7 @@ export default {
       const d = document.createElement("div");
       d.className = P + "row";
       d.innerHTML = `<b>${r.n}</b>`;
+      if (r.sure) { const stp = pic(art, "stamp-sure", "", "stamped Sure"); if (stp) { stp.style.cssText = "float:right;width:44px;height:44px;margin:-4px -2px -4px 4px"; d.appendChild(stp); } else { const sb = document.createElement("b"); sb.textContent = "SURE"; sb.style.cssText = "float:right;color:#9c3b30"; d.appendChild(sb); } }
       if (r.text) d.appendChild(document.createTextNode(r.text));
       else { const i = document.createElement("i"); i.textContent = "(unwritten)"; d.appendChild(i); }
       rowsEl.appendChild(d);
@@ -303,6 +349,7 @@ export default {
       return s;
     }
     function describe(spec) {
+      if (spec.empty) return "bare ground inside a ring, nothing standing in it";
       const parts = [`table ${spec.table < 0 ? "on the creek side" : "on the far side"}`, `${spec.crooked ? "crooked" : "square"} pad`, `${spec.persons} sleeper${spec.persons > 1 ? "s" : ""}`];
       if (spec.double) parts.push("double fire ring");
       if (spec.hammock) parts.push("a hammock");
@@ -316,6 +363,10 @@ export default {
       el("circle", { class: "ring", cx: 0, cy: 0, r: 118, fill: "#f4f3ef", stroke: "#c9c8c2", "stroke-width": 2 }, g);
       [16, 11, 6].forEach((r, i) => el("circle", { cx: -62, cy: -18, r, fill: "none", stroke: i === 1 ? INK : GREEN, "stroke-width": 3.4 }, g));
       el("circle", { cx: -62, cy: -18, r: 2.5, fill: INK }, g);
+      if (spec.empty) {
+        if (label != null) { el("rect", { x: -20, y: 92, width: 40, height: 30, fill: INK }, g); const t0 = el("text", { x: 0, y: 115, "text-anchor": "middle", "font-size": 24, "font-weight": 700, "font-family": "IBM Plex Mono, monospace", fill: PEARL }, g); t0.textContent = label; }
+        return g;
+      }
       const tx = spec.table < 0 ? -40 : 18;
       [[0, 0], [34, 0], [0, 20], [34, 20]].forEach(([a, b]) => tree(g, tx + a, -78 + b, 6));
       for (let k = 0; k < 11; k++) { const a = k / 11 * Math.PI * 2; tree(g, 48 + Math.cos(a) * 26, 22 + Math.sin(a) * 26, 5); }
@@ -359,7 +410,9 @@ export default {
       curTrue = t;
       const specs = [t];
       const used = new Set([t.persons]);
-      for (let k = 0; k < n - 1; k++) specs.push(decoyFrom(t, row, k, used));
+      let trap = null;                               // the row as written, standing in trees
+      if (row.written) { trap = row.written.empty ? { ...t, empty: true, persons: 0 } : { ...t, ...row.written }; trap.asWritten = true; used.add(trap.persons); specs.push(trap); }
+      for (let k = specs.length - 1; k < n - 1; k++) specs.push(decoyFrom(t, row, k, used));
       for (let k = specs.length - 1; k > 0; k--) { const r = Math.floor(rng() * (k + 1)); [specs[k], specs[r]] = [specs[r], specs[k]]; }
       const fr = svg.getBoundingClientRect();
       const portrait = fr.width > 0 && fr.width < fr.height * 0.95;
@@ -379,7 +432,7 @@ export default {
       if (hereSpec) glyph(layer, HERE.x, HERE.y + 10, 0.55, hereSpec, hereLabel);
       else {
         el("rect", { x: HERE.x - 72, y: HERE.y - 40, width: 144, height: 90, fill: "#fff", stroke: INK, "stroke-width": 4 }, layer);
-        const tt = el("text", { x: HERE.x, y: HERE.y + 32, "text-anchor": "middle", "font-size": 22, "font-weight": 700, fill: INK }, layer); tt.textContent = "20–24";
+        const tt = el("text", { x: HERE.x, y: HERE.y + 32, "text-anchor": "middle", "font-size": 22, "font-weight": 700, fill: INK }, layer); tt.textContent = CFG.from;
       }
       pts.forEach(([x, y], i) => {
         const g = glyph(layer, x, y, sc, specs[i], String(i + 1));
@@ -397,8 +450,11 @@ export default {
       focusIdx = 0;
       busy = false;
       // beats and unlocks by junction
-      if (row.n === 18) beat("recite", TEXT.recite);
-      else if (!row.text && cntBtn.hidden) { cntBtn.hidden = false; if (!api.reducedMotion) cntBtn.classList.add("fresh"); beat("count", TEXT.count); }
+      if ((keyed || !row.text || row.written) && cntBtn.hidden && counts > 0) { cntBtn.hidden = false; if (!api.reducedMotion) cntBtn.classList.add("fresh"); }
+      if (stage === 2 && j === 0) beat("recite", TEXT.recite);
+      else if (stage === 3 && j === 0) beat("twist", TEXT.twist);
+      else if (row.written && !row.stamped) beat("setpiece", TEXT.setPiece);
+      else if (!row.text) beat("count", TEXT.count);
       else if (row.n === 17) beat("17", TEXT.r17);
       else if (row.n === 16) beat("16", TEXT.r16);
       else if (row.n === 13) { beat("13", TEXT.r13); if (!api.reducedMotion) breath.setAttribute("opacity", "0.55"); }
@@ -409,7 +465,7 @@ export default {
     function unlockAsk() {
       if (over || !askBtn.hidden) return;
       askBtn.hidden = false; if (!api.reducedMotion) askBtn.classList.add("fresh");
-      beat("ask", TEXT.ask); paintActs();
+      if (!voice.textContent || voice.textContent === TEXT.open) beat("ask", TEXT.ask); paintActs();
     }
     function ask() {
       if (busy || over || !asks || asked) return;
@@ -467,6 +523,7 @@ export default {
           hereSpec = c.spec; hereLabel = String(ROWS[j].n);
           const n = ROWS[j].n;                         // the glyph gives its item up to the List
           if (!held.has(n)) { tiles[n].dataset.walked = "1"; fillTile(n); if (!humming) speak(TEXT.gave(n, LIST[n])); }
+          shList.add(n);
           j++;
           if (j >= ROWS.length) return finish();
           timers.push(setTimeout(layout, api.reducedMotion ? 0 : 520));
@@ -474,7 +531,8 @@ export default {
           drift++;
           paintDrift();
           if (!api.reducedMotion) { driftEl.classList.remove("bump"); void driftEl.offsetWidth; driftEl.classList.add("bump"); }
-          if (c.g.classList.contains("hint")) speak(TEXT.wrongAsk);
+          if (c.spec.asWritten) speak(ROWS[j].stamped ? TEXT.sureTrap : TEXT.asWritten);
+          else if (c.g.classList.contains("hint")) speak(TEXT.wrongAsk);
           else if (drift >= 3) { if (said.has("drift3")) speak(TEXT.drift1); else beat("drift3", TEXT.drift3); }
           else speak(TEXT.drift1);
           flash.style.opacity = "1";
@@ -496,8 +554,11 @@ export default {
       const lose = drift >= DRIFT_LOSE;
       api.store.set("losses", lose ? losses + 1 : 0);
       paintList();
-      resultCard(wrap, art, { cards: ["thread-own"], lost: lose ? 5 : Math.min(4, drift), reducedMotion: api.reducedMotion });
+      if (api.shared) api.shared.set("drift", drift);
+      resultCard(wrap, art, { cards: [stage === 3 ? "thread-own" : stage === 2 ? "glyph-whole" : "sapling-wheel"], lost: lose ? 5 : Math.min(4, drift), reducedMotion: api.reducedMotion });
       if (lose) api.end({ outcome: "lose", text: TEXT.end.lose(drift, ROWS[Math.min(j, ROWS.length - 1)].n) });
+      else if (stage === 1) api.end({ outcome: "win", text: TEXT.end1(drift), next: "Four glyphs at a junction, and the List to say." });
+      else if (stage === 2) api.end({ outcome: "win", text: TEXT.end2(drift), next: "The place has read your notebook." });
       else api.end({ outcome: "win", text: drift <= 1 ? TEXT.end.clean(drift) : TEXT.end.win(drift) });
     }
 
@@ -518,7 +579,7 @@ export default {
     window.addEventListener("keydown", kd);
     askBtn.addEventListener("click", ask);
     cntBtn.addEventListener("click", count);
-    const go = $(`.${P}intro button`);
+    const go = $(`.${P}card>button`);
     go.addEventListener("click", () => { $(`.${P}intro`).remove(); layout(); speak(TEXT.open); timers.push(setTimeout(unlockAsk, api.reducedMotion ? 1500 : 3500)); });
     go.focus();
     paintDrift();
@@ -532,5 +593,5 @@ export default {
         window.removeEventListener("keydown", kd);
       },
     };
-  },
-};
+  }
+}

@@ -31,7 +31,22 @@
 // List tiles and notebook tabs on the List page, chapter 2's card on the how-to, and the title
 // lettering with the night card behind the result. Every element falls back to the crayon drawing.
 
-import { pic, chapterCard, resultCard, listPage, LIST } from "./kit.js";
+//
+// Phase 2 (2026-11-16): the ladder. Three rounds:
+//   1 Teach  night 1, one lap: the chain, and one phantom (Rafe's blue enamel kettle).
+//   2 Test   the backwards lap, with two phantoms (Dell's heron sign, Inés's "Puddle the bicycle": the
+//            List's 17). June's arm, once a round (J): the chain in biro. Channel two says June's
+//            words a half-second before she does.
+//   3 Twist  night 2, seven seats: Abel sits in and adds a guest's item (Nell's telephone number), and
+//            the seat nobody filled is dealt a turn. The set-piece: its words rise in the band before
+//            any mouth moves; it says the whole chain without a slip and adds something Tam wrote and
+//            never said (the tall cedar, then the owl box). It plays to win. The move the first two
+//            rounds taught, "Nobody said that", is now the wrong one: it was said, and challenging it
+//            puts Tam out. Say it back, twice, and Dell goes out, not cheerfully.
+
+import { pic, chapterCard, resultCard, listPage, LIST, listId, ladder, stageTabs, sharedList } from "./kit.js";
+
+const NAMES = ["The chain", "Backwards", "The empty seat"];
 
 const P = "missing-campsites-pack-list-";
 const SEATS = [
@@ -41,6 +56,18 @@ const SEATS = [
 // Every item here has a tile in the art (pieces/item-*); the names are the tiles' own.
 const ADDS = { June: ["a tarp", "tent pegs"], Dell: ["marshmallows", "foil"], Rafe: ["rope", "playing cards"], "Inés": ["a tin cup", "a sun hat"] };
 const TAM_PACK = [["the torch", "dry socks", "a toothbrush"], ["a thermos", "a compass", "a book"]];
+const KETTLE = { name: "a blue enamel kettle", after: 1, list: 5, heard: "Something in Rafe's list sounds like it belongs to someone else's trip.",
+  caughtLine: "Rafe looks at the fire. \"Did I? … I did, didn't I.\"", note: "The List, 5: \"a blue enamel kettle\". Nobody packed it. Site 5's table, 16:10, day 1." };
+const HERON = { name: "a heron sign", after: 2, list: 0, heard: "Dell said something in the middle there that nobody put in.",
+  caughtLine: "Dell frowns. \"The sign? We drove past a sign. …Did we pack a sign?\"", note: "\"A heron sign\": nobody packed it. Dell, backwards lap. It stands at the entrance. For now." };
+const PUDDLE = { name: "Puddle the bicycle", after: 4, list: 17, heard: "Inés said a name in her list. Bags do not have names in them.",
+  caughtLine: "Inés: \"Puddle. That's… a kid's bike has a name like that. Why do I know that?\"", note: "The List, 17: \"Puddle\". Nobody packed it. Lottie Ashby's bicycle, site 17." };
+const FIVE = [{ name: "June", color: "#3f7d3a" }, { name: "Dell", color: "#9c3b30" }, { name: "Rafe", color: "#6b3f8a" }, { name: "Inés", color: "#b07a10" }, { name: "Tam", color: "#2b5d8a" }];
+const STAGE = {
+  1: { seats: FIVE, chain: [], phantoms: [KETTLE], peek: null },
+  2: { seats: FIVE, chain: ["a tarp", "marshmallows", "rope", "a tin cup", "the torch"], phantoms: [HERON, PUDDLE], peek: "arm" },
+  3: { seats: [FIVE[0], FIVE[1], FIVE[2], FIVE[3], { name: "Abel", color: "#5a6a70" }, { name: "—", color: "#8a857b", empty: true }, FIVE[4]], chain: ["a tarp", "marshmallows", "rope", "a tin cup"], phantoms: [], peek: "nb" },
+};
 const PHANTOM = "a blue enamel kettle";
 const PHANTOM_AFTER = 3;          // Rafe slips it in after the third item, on lap 2
 const DISTRACT = ["a lantern", "a water bottle", "boots", "the map", "a blanket", "a camera", "a frying pan", "a rucksack", "matches",
@@ -49,34 +76,51 @@ const BACK_LAP = 2;               // June's house rule: this lap is said backwar
 const WORD_MS = 850;
 
 const TEXT = {
-  when: "Night 1 · the first fire",
-  goal: "Say the whole list back in order on your turn, and last the round.",
-  rule: "Each friend says every item so far, then adds one. The words fade.",
+  when: ["Night 1 · the first fire", "Night 1 · the second lap", "Night 2 · the second fire · seven seats"],
+  goal: ["Say the whole list back in order on your turn, and last the round.", "Say it back last thing first, and catch what nobody added.", "Say the whole list back, twice. One of the seats is empty, and it is playing."],
+  rule: ["Each friend says every item so far, then adds one. The words fade.", "June's house rule: this lap goes backwards. Two things in it nobody packed.", "The empty seat is dealt a turn, and it plays to win. What it says was said, in turn: you cannot challenge it away. Say it back."],
+  how: [["<b>Repeat:</b> tap the tiles in the chain's order", "<b>Add:</b> then tap one thing of your own", "<b>Slip:</b> one wrong tile and you're out", "<b>Nobody said that (N):</b> if someone repeats a thing nobody added"],
+    ["<b>Backwards:</b> last thing in, first thing out", "<b>Nobody said that (N):</b> twice, if you heard two", "<b>June's arm (J):</b> once: the chain in biro, first to last", "<b>Slip:</b> one wrong tile and you're out"],
+    ["<b>Repeat:</b> all of it, in order, the seat's things too", "<b>Notebook (B):</b> once: the chain in pencil", "<b>Nobody said that:</b> it was said. Don't", "<b>Slip:</b> one wrong tile and you're out"]],
+  voice: "June's walkie is on channel two in her lap. Each word hissed out of it a half-second before she said it. She does not look down.",
+  armUnlock: "June holds her forearm to the fire: the chain, in biro, first to last. \"Once. No more.\" (J: read it.)",
+  armShow: "June's arm, in biro, first to last. The lap wants it last to first.",
+  abelAdds: "Abel adds Nell's telephone number. He says it the way you say a thing you are afraid to stop saying.",
+  seatTurn: "Nobody is in the sixth seat. It is its turn.",
+  seatAdds: "The words were in the air before any mouth moved. Then one more: the tall cedar. You wrote that yesterday, row 16. You never said it aloud.",
+  seatAdds2: "All of it, quicker, without a slip. Then: the owl box. Row 7, in your hand. Nobody looks at the seat.",
+  seatYourTurn: "Your turn. Everyone is waiting for you to say it. All of it.",
+  seatYourTurn2: "Your turn again. It will not slip. You can.",
+  seatChallenge: "\"Nobody said that.\" Dell does not laugh. \"We all heard it, Tam. It was said. You're out.\"",
+  notebookSeat: "Your notebook, in pencil. Two of these lines you wrote yesterday, on the Sites page. They are here now too.",
+  dellOut: "Dell stops in the middle. \"No. I'm out. I'm not playing against a chair.\" Nobody laughs.",
   gentle: "\"Hold the chain\" is on: the words stay in the air this time.",
-  open: "The fire is going. Five of you, five seats. June starts, because June always starts.",
+  open: ["The fire is going. Five of you, five seats. June starts, because June always starts.", "Same fire, second lap. Five things in the bag so far, and June has a rule.", "The second fire. Abel has pulled up a stump. Somebody set out a seventh seat, and nobody is in it."],
   lap1: "June: \"House rule. Second lap goes backwards. Last thing in, first thing out.\"",
   backTurn: "Your turn, and it is the backwards lap. Last thing first.",
   backDone: "June, grinning: \"See? You can walk it either way.\"",
   listUnlock: "A new page in your notebook, after Tally: the List. (L: open it.)",
   listNote: "Things nobody packed, in the order they were said.",
   notebookUnlock: "Your notebook is open on your knee. You've been writing down what each of them added, without meaning to. (B: check it, once.)",
-  phantomHeard: "Something in Rafe's list sounds like it belongs to someone else's trip.",
+
   challengeUnlock: "If you heard something nobody added, say so: Nobody said that (N), then tap it.",
   challengeOn: "Nobody said that? Then tap the thing nobody said.",
-  caught: "Rafe looks at the fire. \"Did I? … I did, didn't I.\"",
-  caughtNote: `The List, 5: "${PHANTOM}". Nobody packed it. Site 5's table, 16:10, day 1.`,
+
   falseCh: "\"I did say that.\" A small silence. (Warmth −1)",
-  accepted: "You say the kettle as if someone packed it. Nobody blinks.",
+  accepted: (w) => `You say ${w} as if someone packed it. Nobody blinks.`,
   notebookShow: "Your notebook, in pencil: what each of them added, in order.",
   notebookBack: "Your notebook, in pencil, first to last. June wants it last to first.",
   juneOut: "June: \"…and…a…\" She laughs into her sleeve. \"I'm out. I'm out!\"",
   yourTurn: "Your turn. Say it in order.",
   addNow: "Now add something of yours.",
   end: {
+    t2: (got, w) => `June is out, laughing, and the backwards lap is yours. ${got === 2 ? "You caught both: the sign is a line in your notebook, and Puddle is on the List." : got === 1 ? "You caught one of the two things nobody packed. The other is packed now." : "Two things went round that nobody packed, and now they are packed."} Warmth ${w}.`,
+    t3: (w) => `Dell is out, and not laughing. The seat nobody filled said every item and never slipped, and so did you. The tall cedar and the owl box were on your Sites page; they are on the List now too, and you did not put them there. Warmth ${w}.`,
+    seatLose: (w) => `You said nobody said "${w}". Everybody heard it said. The seat nobody filled is still in the round, and you are not.`,
     win: (w) => `June is out, laughing, and the round is yours. You caught the kettle; the line is in your notebook, in your hand. Warmth ${w}.`,
     accepted: (w) => `June is out, laughing, and the round is yours. You repeated the kettle as if someone had packed it, and now it is packed. Warmth ${w}.`,
     missed: (w) => `June is out, laughing, and the round is yours. Nobody mentions the kettle again, and nobody remembers who said it. Warmth ${w}.`,
-    lose: (w, wanted, caught) => `You said ${w} where ${wanted} went. Everyone laughs; nothing else is lost.${caught ? " The kettle line stays in your notebook." : ""}`,
+    lose: (w, wanted, caught) => `You said ${w} where ${wanted} went. Everyone laughs; nothing else is lost.${caught ? " What you caught stays in your notebook." : ""}`,
   },
 };
 
@@ -92,6 +136,8 @@ const CSS = `
 .${P}words span.fade{opacity:0}
 .${P}words span.ring{outline:3px solid #c8321f;outline-offset:2px;border-radius:40%}
 .${P}words.nb span{color:#4a4a4c!important;font-weight:500}
+.${P}words.arm span{color:#1f3fa0!important;font-weight:500}
+.${P}words span.v2{color:#8a857b;font:600 .62em 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;align-self:center}
 .${P}main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:start}
 .${P}fire{width:100%;max-height:60vh;height:auto;display:block}
 .${P}side{display:flex;flex-direction:column;gap:10px}
@@ -144,8 +190,11 @@ const CSS = `
 @media (max-width:700px){.${P}main{grid-template-columns:1fr}.${P}fire{max-height:30vh}.${P}tile{min-height:50px;font-size:16px;padding:8px 3px}.${P}tile.art{padding:2px 2px 4px}.${P}say{font-size:21px}}
 `;
 
-export default {
-  mount(root, api) {
+export default { mount(root, api) { return ladder(root, api, mountStage, NAMES); } };
+
+function mountStage(root, api, stage) {
+  {
+    const CFG = STAGE[stage], SEATS = CFG.seats, TAM = SEATS.length - 1;
     const rng = api.rng();
     const losses = api.store.get("losses", 0);
     const gentle = losses >= 2;
@@ -165,28 +214,33 @@ export default {
           <div class="${P}note" hidden></div></div></div>
       <div class="${P}intro"><div class="${P}card"><h2>Pack List</h2><div class="when"></div>
         <p class="goal"></p><p class="rule"></p>
-        <ul><li><b>Repeat:</b> tap the tiles in the chain's order</li><li><b>Add:</b> then tap one thing of your own</li><li><b>Slip:</b> one wrong tile and you're out</li><li><b>Lap two:</b> June's rule, the list goes backwards</li></ul>
+        <ul>${TEXT.how[stage - 1].map((h) => `<li>${h}</li>`).join("")}</ul>
         <p class="gentle" hidden></p>
         <button type="button">Sit down</button></div></div>`;
     root.appendChild(wrap);
     const $ = (s) => wrap.querySelector(s);
-    $(".when").textContent = TEXT.when; $(".goal").textContent = TEXT.goal; $(".rule").textContent = TEXT.rule;
+    $(".when").textContent = TEXT.when[stage - 1]; $(".goal").textContent = TEXT.goal[stage - 1]; $(".rule").textContent = TEXT.rule[stage - 1];
+    stageTabs(api, $(`.${P}card>button`));
     if (gentle) { $(".gentle").hidden = false; $(".gentle").textContent = TEXT.gentle; }
     const words = $(`.${P}words`), tray = $(`.${P}tray`), sayEl = $(`.${P}say`), noBtn = $(`.${P}no`), nbBtn = $(`.${P}nbk`), noteEl = $(`.${P}note`), progEl = $(`.${P}prog`);
     const holdBox = $(`.${P}hold input`);
     const art = api.art, listBtn = $(`.${P}listb`);
-    chapterCard(art, "chapter-2", $(`.${P}card`));
+    chapterCard(art, stage === 3 ? "chapter-5" : "chapter-2", $(`.${P}card`));
+    if (stage === 2) { nbBtn.textContent = "Read June's arm (J)"; }
     const TILE = {};                                    // item name -> art id, from the tiles' own titles
     if (art && art.list) for (const id of art.list("pieces")) { const t = art.info(id).title; if (t.startsWith("Pack List tile: ")) TILE[t.slice(16)] = id; }
-    const FACE = { June: "outline-june", Dell: "outline-dell", Rafe: "outline-rafe", "Inés": "outline-ines", Tam: "item-notebook" };
-    const found = new Set();
+    if (art && art.has) { if (art.has("list-16")) TILE["the tall cedar"] = "list-16"; if (art.has("list-07")) TILE["the owl box"] = "list-07"; }
+    const FACE = { June: "outline-june", Dell: "outline-dell", Rafe: "outline-rafe", "Inés": "outline-ines", Abel: "outline-abel", Tam: "item-notebook" };
+    const shList = sharedList(api);
+    const found = shList.read();
     const list = listPage(wrap, art, { note: TEXT.listNote });
     list.set(found);
     listBtn.addEventListener("click", () => list.toggle());
+    if (found.size) listBtn.hidden = false;
     holdBox.checked = gentle;
     const timers = [];
     const later = (fn, ms) => { const t = setTimeout(fn, api.reducedMotion ? Math.min(ms, 400) : ms); timers.push(t); return t; };
-    let over = false, chain = [], phantomSaid = false, phantomUsed = false, caught = false, warmth = 4, mistakes = 0, nbLeft = 1, nbShowing = false;
+    let over = false, chain = CFG.chain.slice(), warmth = 4, mistakes = 0, nbLeft = 1, nbShowing = false;
     let turn = null;
 
     // ---- the fire and the seats, in crayon ----
@@ -207,7 +261,8 @@ export default {
       const x = 200 + Math.cos(a) * 150, y = 190 + Math.sin(a) * 146;
       const g = mk("g", {});
       const face = art && art.has(FACE[s.name]) ? FACE[s.name] : null;
-      const r = mk("rect", { x: x - 44, y: y - (face ? 42 : 30), width: 88, height: face ? 84 : 60, fill: "#f4ead2", stroke: s.color, "stroke-width": 4, ...wax }, g);
+      const r = mk("rect", { x: x - 44, y: y - (face ? 42 : 30), width: 88, height: face ? 84 : 60, fill: "#f4ead2", stroke: s.color, "stroke-width": 4, ...(s.empty ? { "stroke-dasharray": "9 7", "fill-opacity": 0.35 } : {}), ...wax }, g);
+      if (s.empty) { const t0 = mk("text", { x, y: y + 8, "text-anchor": "middle", "font-size": 20, fill: s.color, "font-family": "Caveat, cursive", "font-weight": 700 }, g); t0.textContent = "nobody"; return { g, r, x, y }; }
       if (face) {                                       // the People page's outline (Tam's own seat shows the notebook: Tam's face is never drawn)
         const im = mk("image", { x: x - 30, y: y - 38, width: 60, height: 54, preserveAspectRatio: s.name === "Tam" ? "xMidYMid meet" : "xMidYMin slice" }, g);
         im.setAttribute("href", art.url(face));
@@ -218,7 +273,7 @@ export default {
     });
     const light = (i) => {
       seatEls.forEach((s, k) => { s.r.setAttribute("stroke-width", k === i ? 9 : 4); s.r.setAttribute("fill", k === i ? "#fff6dd" : "#f4ead2"); });
-      $(".who").textContent = i == null ? "" : `${SEATS[i].name} speaks`;
+      $(".who").textContent = i == null ? "" : SEATS[i].empty ? "nobody speaks" : `${SEATS[i].name} speaks`;
       $(".who").style.color = i == null ? "" : SEATS[i].color;
     };
     const say = (t) => { sayEl.textContent = t; };
@@ -226,6 +281,7 @@ export default {
 
     // ---- the spoken band ----
     function speak(word, who, stay = 4000) {
+      const early = [...words.querySelectorAll("span.v2")].find((g) => g.textContent === word); if (early) early.remove();
       const s = document.createElement("span");
       s.textContent = word;
       s.style.color = who.color;
@@ -236,31 +292,42 @@ export default {
     }
     holdBox.addEventListener("change", () => { if (holdBox.checked) words.querySelectorAll(".fade").forEach((s) => s.classList.remove("fade")); });
 
-    // A friend recites the chain, then adds one. Rafe on lap 2 slips the kettle in.
-    function friendTurn(i, lap, done) {
+    // ---- phantoms: things said that nobody added; and what the empty seat adds (stage 3) ----
+    const phantoms = CFG.phantoms.map((x) => ({ ...x, said: false, caught: false, used: false }));
+    const ph = (w) => phantoms.find((x) => x.name === w && x.said);
+    const seatItems = new Set();
+    const openPh = () => phantoms.some((x) => x.said && !x.caught);
+    const seat = (name) => SEATS.findIndex((x) => x.name === name);
+
+    function ghost(w) {                                  // channel two: the word, a half-second early
+      const g = document.createElement("span"); g.textContent = w; g.className = "v2"; words.appendChild(g);
+    }
+    // A seat recites the chain, then adds one. o: { back, slip, add, addLine, then, stopAt, outLine, voice, fast, nobody }
+    function recite(i, o, done) {
       const who = SEATS[i];
       light(i);
-      say(`${who.name}: "I packed my bag, and in it I put…"`);
-      words.classList.remove("nb");
+      say(o.nobody ? TEXT.seatTurn : `${who.name}: "I packed my bag, and in it I put…"`);
+      words.classList.remove("nb", "arm");
       words.innerHTML = "";
-      const back = lap === BACK_LAP;
-      $(`.${P}back`).hidden = !back;
+      $(`.${P}back`).hidden = !o.back;
       const said = chain.slice();
-      const phantomNow = who.name === "Rafe" && lap === 2;
-      if (phantomNow) { said.splice(PHANTOM_AFTER, 0, PHANTOM); phantomSaid = true; }
-      if (back) said.reverse();                         // the kettle keeps its place between the third thing and the fourth
-      if (who.name === "June" && lap === 3) {
-        const stopAt = 6;
-        said.slice(0, stopAt).forEach((w, k) => later(() => speak(w, who), WORD_MS * (k + 1)));
-        later(() => { say(TEXT.juneOut); done(); }, WORD_MS * (stopAt + 2));
+      if (o.slip) { said.splice(o.slip.after, 0, o.slip.name); o.slip.said = true; }
+      if (o.back) said.reverse();                         // a phantom keeps its place between the same two things
+      const ms = o.fast ? 560 : WORD_MS;
+      if (o.stopAt) {
+        said.slice(0, o.stopAt).forEach((w, k) => later(() => speak(w, who), ms * (k + 1)));
+        later(() => { say(o.outLine); done(); }, ms * (o.stopAt + 2));
         return;
       }
       const n = said.length;
-      said.forEach((w, k) => later(() => speak(w, who, 4000 + (k >= n - 3 ? 2000 : 0)), WORD_MS * (k + 1)));
-      const add = ADDS[who.name][lap - 1];
-      later(() => { speak(add, who, 6000); chain.push(add); say(`${who.name} adds ${add}.`); }, WORD_MS * (n + 1) + 300);
-      if (phantomNow) later(() => say(TEXT.phantomHeard), WORD_MS * (n + 2) + 200);
-      later(done, WORD_MS * (n + 2) + (phantomNow ? 2200 : 600));
+      said.forEach((w, k) => {
+        if (o.voice) later(() => ghost(w), ms * (k + 1) - 430);
+        later(() => speak(w, who, 4000 + (k >= n - 3 ? 2000 : 0)), ms * (k + 1));
+      });
+      later(() => { speak(o.add, who, 6000); chain.push(o.add); if (o.nobody) seatItems.add(o.add); say(o.addLine || `${who.name} adds ${o.add}.`); }, ms * (n + 1) + 300);
+      if (o.slip) later(() => say(o.slip.heard), ms * (n + 2) + 200);
+      if (o.then) later(() => say(o.then), ms * (n + 2) + 900);
+      later(done, ms * (n + 2) + (o.slip ? 2200 : o.then ? 3600 : o.nobody ? 2000 : 600));
     }
 
     function paintProg() {
@@ -268,24 +335,23 @@ export default {
       progEl.textContent = turn.adding ? "Now one of yours." : `Said ${turn.idx} of ${chain.length}${turn.back ? " · backwards" : ""}`;
     }
 
-    function tamTurn(lap, done) {
-      light(4);
-      const back = lap === BACK_LAP;
-      $(`.${P}back`).hidden = !back;
-      say(back ? TEXT.backTurn : TEXT.yourTurn);
+    function tamTurn(o, done) {
+      light(TAM);
+      $(`.${P}back`).hidden = !o.back;
+      say(o.back ? TEXT.backTurn : o.line || TEXT.yourTurn);
       const pool = new Set(chain);
-      if (phantomSaid) pool.add(PHANTOM);
-      const extra = DISTRACT.slice().sort(() => rng() - 0.5);
+      phantoms.forEach((x) => { if (x.said) pool.add(x.name); });
+      const extra = DISTRACT.filter((w) => !pool.has(w)).sort(() => rng() - 0.5);
       while (pool.size < 16 && extra.length) pool.add(extra.pop());
       const items = [...pool].sort(() => rng() - 0.5);
-      const seq = back ? chain.slice().reverse() : chain.slice();
-      // where the kettle goes if Tam repeats it: after the third thing, or before it on the backwards lap
-      turn = { lap, idx: 0, challenge: false, done, adding: false, back, seq, phantomAt: back ? seq.length - PHANTOM_AFTER : PHANTOM_AFTER };
+      const seq = o.back ? chain.slice().reverse() : chain.slice();
+      turn = { idx: 0, challenge: false, done, adding: false, back: !!o.back, seq, pack: o.pack };
       tray.innerHTML = "";
       items.forEach((w) => tray.appendChild(tile(w, (b) => tapTile(w, b))));
-      if (phantomSaid && !caught) unlock(noBtn, TEXT.challengeUnlock);
-      noBtn.disabled = !phantomSaid || caught;
-      if (lap === 2) later(() => { if (turn && !over) { unlock(nbBtn, TEXT.notebookUnlock); nbBtn.disabled = nbLeft <= 0 || turn.adding; } }, 3500);
+      if (stage === 3) noBtn.hidden = false;
+      else if (openPh()) unlock(noBtn, TEXT.challengeUnlock);
+      noBtn.disabled = !(openPh() || stage === 3);
+      if (CFG.peek && nbLeft > 0) later(() => { if (turn && !over) { unlock(nbBtn, CFG.peek === "arm" ? TEXT.armUnlock : TEXT.notebookUnlock); nbBtn.disabled = nbLeft <= 0 || turn.adding; } }, 3200);
       nbBtn.disabled = nbLeft <= 0;
       paintProg();
       tray.querySelector("button")?.focus();
@@ -293,31 +359,45 @@ export default {
     function tile(w, on) {
       const b = document.createElement("button");
       b.type = "button"; b.className = P + "tile";
-      const im = pic(art, w === PHANTOM && !caught && art && art.has("item-kettle-said") ? "item-kettle-said" : TILE[w]);
+      const x = ph(w);
+      const im = pic(art, w === "a blue enamel kettle" && x && !x.caught && art && art.has("item-kettle-said") ? "item-kettle-said" : TILE[w]);
       if (im) { b.classList.add("art"); b.appendChild(im); } else b.innerHTML = `<span class="${P}edge"></span>`;
       b.appendChild(document.createTextNode(w));
       b.addEventListener("click", () => on(b));
       return b;
     }
 
-    function tamWord(w) { speak(w, SEATS[4], 8000); }
+    function tamWord(w) { speak(w, SEATS[TAM], 8000); }
+    function out(text, endText) {
+      mistakes++;
+      say(text);
+      turn = null;
+      over = true;
+      api.store.set("losses", losses + 1);
+      later(() => { showResult("lose"); api.end({ outcome: "lose", text: endText }); }, 1600);
+    }
 
     function tapTile(w, b) {
       if (!turn || over || turn.adding) return;
       if (turn.challenge) {
         turn.challenge = false; noBtn.classList.remove("on"); tray.classList.remove("ch");
-        if (w === PHANTOM) {
-          caught = true; b.classList.add("caught"); b.disabled = true; noBtn.disabled = true;
-          { const im = b.querySelector("img"); if (im && TILE[PHANTOM]) im.src = art.url(TILE[PHANTOM]); }   // now it is circled
-          words.querySelectorAll("span").forEach((s) => { if (s.textContent === PHANTOM) s.classList.add("ring"); });
-          say(TEXT.caught);
+        const x = ph(w);
+        if (x && !x.caught) {
+          x.caught = true; b.classList.add("caught"); b.disabled = true; noBtn.disabled = !(openPh() || stage === 3);
+          { const im = b.querySelector("img"); if (im && TILE[w]) im.src = art.url(TILE[w]); }   // now it is circled
+          words.querySelectorAll("span").forEach((sp) => { if (sp.textContent === w) sp.classList.add("ring"); });
+          say(x.caughtLine);
           noteEl.hidden = false;
           noteEl.textContent = "";
-          const lt = pic(art, "list-05", "", "The List, 5");
-          if (lt) noteEl.appendChild(lt);
-          const sp = document.createElement("span"); sp.textContent = TEXT.caughtNote; noteEl.appendChild(sp);
-          found.add(5); list.set(found, 5);            // the long puzzle's first step
-          if (listBtn.hidden) { listBtn.hidden = false; if (!api.reducedMotion) listBtn.classList.add(P + "fresh"); later(() => { if (!over && turn) say(TEXT.listUnlock); }, 2600); }
+          if (x.list) { const lt = pic(art, listId(x.list), "", `The List, ${x.list}`); if (lt) noteEl.appendChild(lt); }
+          const sp = document.createElement("span"); sp.textContent = x.note; noteEl.appendChild(sp);
+          if (x.list) {                                  // a step of the game's long puzzle
+            found.add(x.list); shList.add(x.list); list.set(found, x.list);
+            if (listBtn.hidden) { listBtn.hidden = false; if (!api.reducedMotion) listBtn.classList.add(P + "fresh"); later(() => { if (!over && turn) say(TEXT.listUnlock); }, 2600); }
+          }
+        } else if (seatItems.has(w)) {                   // the twist: it was said, in turn, and everyone heard it
+          b.classList.add("bad");
+          out(TEXT.seatChallenge, TEXT.end.seatLose(w));
         } else {
           warmth -= 1;
           b.classList.add("bad"); later(() => b.classList.remove("bad"), 500);
@@ -330,18 +410,14 @@ export default {
         if (turn.idx >= chain.length) startAdding();
         return;
       }
-      if (w === PHANTOM && !phantomUsed && !caught && turn.idx === turn.phantomAt) {
-        phantomUsed = true; b.classList.add("used"); b.disabled = true; tamWord(w); say(TEXT.accepted);
+      const x = ph(w);
+      if (x && !x.used && !x.caught && turn.idx === (turn.back ? turn.seq.length - x.after : x.after)) {
+        x.used = true; b.classList.add("used"); b.disabled = true; tamWord(w); say(TEXT.accepted(w));
         return;
       }
-      mistakes++;                                        // a wrong order loses the round
-      b.classList.add("bad");
-      say(`"${w}"? Everyone laughs. Dell: "Out! Tam's out."`);
+      b.classList.add("bad");                            // a wrong order loses the round
       const wanted = turn.seq[turn.idx];
-      turn = null;
-      over = true;
-      api.store.set("losses", losses + 1);
-      later(() => { showResult("lose"); api.end({ outcome: "lose", text: TEXT.end.lose(w, wanted, caught) }); }, 1600);
+      out(`"${w}"? Everyone laughs. Dell: "Out! Tam's out."`, TEXT.end.lose(w, wanted, phantoms.some((q) => q.caught)));
     }
 
     function startAdding() {
@@ -349,9 +425,10 @@ export default {
       noBtn.disabled = true; nbBtn.disabled = true;
       say(TEXT.addNow);
       tray.innerHTML = "";
-      TAM_PACK[turn.lap - 1].forEach((w) => tray.appendChild(tile(w, () => {
+      turn.pack.forEach((w) => tray.appendChild(tile(w, () => {
         tamWord(w); chain.push(w);
         say(turn.back ? TEXT.backDone : `You add ${w}.`);
+        if (turn.back && !mistakes && api.shared) api.shared.set("backwards_lap_clean", true);
         tray.innerHTML = "";
         const d = turn.done; turn = null; paintProg();
         later(d, 900);
@@ -361,20 +438,21 @@ export default {
     }
 
     function challenge() {
-      if (!turn || turn.adding || caught || noBtn.hidden || noBtn.disabled) return;
+      if (!turn || turn.adding || noBtn.hidden || noBtn.disabled) return;
       turn.challenge = !turn.challenge;
       noBtn.classList.toggle("on", turn.challenge);
       tray.classList.toggle("ch", turn.challenge);
       say(turn.challenge ? TEXT.challengeOn : TEXT.yourTurn);
     }
+    // June's arm (stage 2) or the notebook (stage 3): the true chain, once, for five seconds.
     function notebook() {
       if (!turn || turn.adding || nbLeft <= 0 || nbBtn.hidden || nbShowing) return;
       nbLeft--; nbBtn.disabled = true; nbShowing = true;
       const keep = [...words.childNodes];
-      words.innerHTML = ""; words.classList.add("nb");
-      chain.forEach((w, k) => { const s = document.createElement("span"); s.textContent = `${k + 1}. ${w}`; words.appendChild(s); });
-      say(turn.back ? TEXT.notebookBack : TEXT.notebookShow);
-      later(() => { words.classList.remove("nb"); words.innerHTML = ""; keep.forEach((n) => words.appendChild(n)); nbShowing = false; }, 4000);
+      words.innerHTML = ""; words.classList.add(CFG.peek === "arm" ? "arm" : "nb");
+      chain.forEach((w, k) => { const sp = document.createElement("span"); sp.textContent = `${k + 1}. ${w}${seatItems.has(w) ? " (your hand, yesterday)" : ""}`; words.appendChild(sp); });
+      say(CFG.peek === "arm" ? TEXT.armShow : seatItems.size ? TEXT.notebookSeat : TEXT.notebookShow);
+      later(() => { words.classList.remove("nb", "arm"); words.innerHTML = ""; keep.forEach((n) => words.appendChild(n)); nbShowing = false; }, 5000);
     }
     noBtn.addEventListener("click", challenge);
     nbBtn.addEventListener("click", notebook);
@@ -385,47 +463,68 @@ export default {
       if (k === "l" && !listBtn.hidden) { list.toggle(); return; }
       if (list.isOpen) return;
       if (k === "n") challenge();
-      else if (k === "b") notebook();
+      else if (k === "b" || k === "j") notebook();
     };
     window.addEventListener("keydown", kd);
 
-    // The order: June, Dell, Rafe, Inés, Tam, for two laps; June fails on lap 3.
-    function run(lap, seat) {
-      if (over) return;
-      if (lap === 2 && seat === 0) say(TEXT.lap1);
-      if (lap === 3) {
-        friendTurn(0, 3, () => {
-          over = true;
-          if (!mistakes) warmth += 1;
-          const w = `${warmth}`;
-          api.store.set("losses", 0);
-          const outcome = caught ? "win" : "done";
-          const text = caught ? TEXT.end.win(w) : phantomUsed ? TEXT.end.accepted(w) : TEXT.end.missed(w);
-          later(() => { showResult(caught ? "win" : phantomUsed ? "accepted" : "missed"); api.end({ outcome, text }); }, 1800);
-        });
-        return;
+    // ---- the three rounds ----
+    function roundOver() {
+      over = true;
+      if (!mistakes) warmth += 1;
+      api.store.set("losses", 0);
+      const w = `${warmth}`, got = phantoms.filter((x) => x.caught).length, E = TEXT.end;
+      let outcome = "win", text, how = "win";
+      if (stage === 1) {
+        const k = phantoms[0];
+        outcome = k.caught ? "win" : "done"; how = k.caught ? "win" : k.used ? "accepted" : "missed";
+        text = k.caught ? E.win(w) : k.used ? E.accepted(w) : E.missed(w);
+      } else if (stage === 2) {
+        outcome = got === 2 ? "win" : "done"; how = got === 2 ? "win" : got ? "missed" : "accepted";
+        text = E.t2(got, w);
+      } else {
+        for (const n of [16, 7]) { found.add(n); shList.add(n); }
+        list.set(found, 16);
+        text = E.t3(w);
       }
-      const next = () => (seat === 4 ? run(lap + 1, 0) : run(lap, seat + 1));
-      const go = () => (seat === 4 ? tamTurn(lap, next) : friendTurn(seat, lap, next));
-      if (lap === 2 && seat === 0) later(go, 1600); else go();
+      later(() => { showResult(how); api.end({ outcome, text, advance: true, next: stage === 1 ? "June's house rule: the second lap goes backwards." : "Night 2. Seven seats, and one of them is empty." }); }, 1800);
+    }
+    const J = seat("June"), D = seat("Dell"), R = seat("Rafe"), I = seat("Inés"), A = seat("Abel"), S = seat("—");
+    const SCRIPT = {
+      1: [(n) => recite(J, { add: "a tarp" }, n), (n) => recite(D, { add: "marshmallows" }, n), (n) => recite(R, { slip: phantoms[0], add: "rope" }, n),
+        (n) => recite(I, { add: "a tin cup" }, n), (n) => tamTurn({ pack: TAM_PACK[0] }, n), (n) => recite(J, { stopAt: 3, outLine: TEXT.juneOut }, n)],
+      2: [(n) => { say(TEXT.lap1); later(n, 2200); }, (n) => recite(J, { back: true, voice: true, add: "tent pegs", then: TEXT.voice }, n),
+        (n) => recite(D, { back: true, slip: phantoms[0], add: "foil" }, n), (n) => recite(I, { back: true, slip: phantoms[1], add: "a sun hat" }, n),
+        (n) => tamTurn({ back: true, pack: TAM_PACK[1] }, n), (n) => recite(J, { stopAt: 5, outLine: TEXT.juneOut }, n)],
+      3: [(n) => recite(J, { add: "tent pegs" }, n), (n) => recite(A, { add: "Nell's telephone number", addLine: TEXT.abelAdds }, n),
+        (n) => recite(S, { nobody: true, add: "the tall cedar", addLine: TEXT.seatAdds }, n), (n) => tamTurn({ pack: TAM_PACK[0], line: TEXT.seatYourTurn }, n),
+        (n) => recite(S, { nobody: true, fast: true, add: "the owl box", addLine: TEXT.seatAdds2 }, n), (n) => tamTurn({ pack: TAM_PACK[1], line: TEXT.seatYourTurn2 }, n),
+        (n) => recite(D, { stopAt: 4, outLine: TEXT.dellOut }, n)],
+    }[stage];
+    function run(k) {
+      if (over) return;
+      if (k >= SCRIPT.length) { roundOver(); return; }
+      SCRIPT[k](() => run(k + 1));
     }
 
-    // The card behind the result: what the List holds now (or the kettle, packed), over night 1.
+    // The card behind the result: what the List holds now (or the kettle, packed), over the night's card.
     function showResult(how) {
       list.close();
+      const night = stage === 3 ? "night-2" : "night-1";
+      const got = phantoms.find((x) => x.caught && x.list);
+      const first = stage === 3 && how !== "lose" ? "list-16" : got ? listId(got.list) : how === "lose" ? night : stage === 1 ? "item-kettle" : "item-puddle";
       resultCard(wrap, art, {
-        cards: [how === "win" || (how === "lose" && caught) ? "list-05" : how === "lose" ? "night-1" : "item-kettle", "night-1"].filter((v, i, a) => a.indexOf(v) === i),
+        cards: [first, night].filter((v, i, a) => a.indexOf(v) === i),
         lost: { win: 0, missed: 1, accepted: 2, lose: 3 }[how],
-        caption: caught ? `The List, 5: ${LIST[5]}.` : "", reducedMotion: api.reducedMotion,
+        caption: stage === 3 && how !== "lose" ? `The List, 16 and 7: ${LIST[16]}, ${LIST[7]}.` : got ? `The List, ${got.list}: ${LIST[got.list]}.` : "", reducedMotion: api.reducedMotion,
       });
     }
 
-    const go = $(`.${P}card button`);
-    go.addEventListener("click", () => { $(`.${P}intro`).remove(); light(null); say(TEXT.open); later(() => run(1, 0), 1800); });
+    const go = $(`.${P}card>button`);
+    go.addEventListener("click", () => { $(`.${P}intro`).remove(); light(null); say(TEXT.open[stage - 1]); later(() => run(0), 1800); });
     go.focus();
 
     return {
       unmount() { over = true; timers.forEach(clearTimeout); window.removeEventListener("keydown", kd); },
     };
-  },
-};
+  }
+}

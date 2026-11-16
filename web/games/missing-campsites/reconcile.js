@@ -28,19 +28,59 @@
 // compass rose and chapter 3's card on the how-to; and behind the result the two sheets still to come
 // (12 to 24 by noon, 16 to 24 by dark) under the title lettering. The old drawn map is the fallback.
 
-import { pic, chapterCard, resultCard } from "./kit.js";
+//
+// Phase 2 (2026-11-16): the ladder. Three sheets, each an appearance of DESIGN.md section 11:
+//   1 Teach  reconcile_1: rows 1 to 3. Map, legend and the booth's master map agree with each other
+//            and not with the ground. One forecast, written as a line.
+//   2 Test   reconcile_2, rows 7 to 19 (the rest written on the walks): three sources wrong in three
+//            ways, and the scale bar (M): it shortens one step behind the loop, so measuring the road
+//            with it gives the size of the steps.
+//   3 Twist  reconcile_3 with a fifth source, the first page of Marisol's book: a line for every row,
+//            the same numbers, a different campground. The safe move of the first two sheets (fill the
+//            row from what a source says) is now the wrong one: rows 13 to 15 were never walked, and
+//            the right note for them is Unknown. Three Sure stamps (S): a stamped row cannot be
+//            corrected, and a stamped row that is wrong is built as written on the pattern walk
+//            (api.shared "sure"). It ends in the set-piece: two notebooks side by side by headlamp,
+//            row 21 one sentence in two hands.
+// Link read here: "first_page_read" (The Ranger's Book's twist) marks the rows of hers that Tam ringed.
+
+import { pic, chapterCard, resultCard, ladder, stageTabs, linkNote } from "./kit.js";
+
+const NAMES = ["Three rows", "Three ways wrong", "Her page"];
+// Marisol's first page, rows 12 to 21: her campground, eleven summers ago. `spec` is how a row of hers
+// stands in trees if Tam copies it and stamps it Sure (the pattern walk's glyph details).
+const HERS = {
+  12: ["a footbridge; three slept here", { persons: 3 }], 13: ["two slept here, a hammock", { persons: 2, hammock: true }],
+  14: ["three slept here", { persons: 3 }], 15: ["four slept here; a tall cedar", { persons: 4, cedar: true }],
+  16: ["a flagpole; one slept here", { cedar: false, persons: 1 }], 17: ["a pump; a tent pitched square", { wheel: false, crooked: false }],
+  18: ["table on the far side", { table: 1 }], 19: ["three of them, a stone oven", { hammock: false, persons: 3 }],
+  20: ["our car, the long tent", null], 21: ["the split boulder, slept in the crack", null],
+};
+const ROW21 = "the split boulder, slept in the crack";
 
 const GREEN = "#2f6b3a", GRAPH = "#4a4a4c", CREAM = "#f1ead6", BROWN = "#9b6a3c", RED = "#9c3b30";
 
-const GROUND = (n) => (n <= 11 ? "not here" : n === 12 ? "here" : n <= 15 ? "not walked" : "here");
-const MAP = (n) => n >= 7;
-const LEGEND = (n) => n >= 7;
+const GROUND2 = (n) => (n <= 11 ? "not here" : n === 12 ? "here" : n <= 15 ? "not walked" : "here");
 const PHOTOS = { 4: "IMG_0004 · a clearing", 7: "IMG_0007 · a clearing, needles undisturbed", 12: "IMG_0011 · table, fire ring, the creek bend", 16: "IMG_0014 · the tall cedar", 17: "IMG_0015 · a bike against the table", 21: "IMG_0019 · the split boulder" };
-const TRUTH = (n) => (n <= 11 ? "Gone" : n <= 15 && n >= 13 ? "Unknown" : "Here");
+const TRUTH2 = (n) => (n <= 11 ? "Gone" : n <= 15 && n >= 13 ? "Unknown" : "Here");
+const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
+const STAGE = {
+  1: { sheet: "map-all", legend: "legend-24", pc: "postcard-whole", active: [1, 2, 3], from: 1, fc: ["morning"], gone: [],
+    ground: (n) => (n <= 3 ? "not here" : "not walked"), map: () => true, leg: () => true, truth: () => "Gone", pre: () => null },
+  2: { sheet: "map-from-7", legend: "legend-18", pc: "postcard-after-night-1", active: range(7, 19), from: 7, fc: ["noon", "dark"], gone: ["7", "9"],
+    ground: GROUND2, map: (n) => n >= 7, leg: (n) => n >= 7, truth: TRUTH2,
+    pre: (n) => (n <= 6 ? ["Gone", "needles undisturbed"] : n >= 20 ? ["Here", DETAILS(n)[0]] : null) },
+  3: { sheet: "map-the-five", legend: "legend-5", pc: "postcard-after-dusk", active: range(12, 20), from: 12, fc: [], gone: ["7", "9", "12", "16"],
+    ground: (n) => (n >= 20 ? "here" : n >= 13 && n <= 15 ? "not walked" : "not here"), map: (n) => n >= 20, leg: (n) => n >= 20,
+    truth: (n) => (n >= 20 ? "Here" : n >= 13 && n <= 15 ? "Unknown" : "Gone"),
+    pre: (n) => (n <= 11 ? ["Gone", "needles undisturbed"] : n === 21 ? ["Here", ROW21] : n >= 22 ? ["Here", DETAILS(n)[0]] : null) },
+};
+const MINE = { 12: "the creek bend", 16: "the tall cedar", 17: "a bike, onions", 18: "table by the creek", 19: "a hammock", 20: "the van", 21: ROW21 };
 const LEG_WHAT = ["tent pad", "table", "fire ring"];
 const DETAILS = (n) => {
   if (n <= 11) return ["needles undisturbed", "no fire ring", "no post, no ruts"];
   if (n >= 13 && n <= 15) return [];
+  if (n > 24) return [];
   return {
     12: ["the creek bend", "trail register by the post"], 16: ["the tall cedar", "a cooler left open"],
     17: ["a bike, onions", "a tent pitched crooked"], 18: ["table by the creek", "three chairs"],
@@ -50,7 +90,7 @@ const DETAILS = (n) => {
 };
 // Agnes's postcard lines (DESIGN.md section 12). After step 2, 7 and 9 are gone: grooves only.
 const POSTCARD = [
-  { k: "7", text: null }, { k: "9", text: null },
+  { k: "7", text: "Site 7. The owl box. Count to a hundred and it calls." }, { k: "9", text: "Site 9. The shallow pool. You learned to float there." },
   { k: "12", text: "Site 12. The creek bend. Cold enough to keep the milk." },
   { k: "16", text: "Site 16. The tall cedar. You fell out of it once, and laughed." },
   { k: "heron", text: "The heron sign. Wave at it on the way in. We always did." },
@@ -58,20 +98,39 @@ const POSTCARD = [
 ];
 
 const TEXT = {
-  sheet: "Sheet 2 · Day 2 · morning",
-  goal: "Set every site's row against what the paper claims, then forecast where the loss will reach.",
-  rule: "What you write holds, even when it is wrong. What the paper prints does not.",
-  open: "Morning at the camp table. The map is still warm from the sun. Start at row 4: rows 1 to 3 you wrote yesterday.",
+  sheet: ["Sheet 1 · Day 1 · the table at 21", "Sheet 2 · Day 2 · morning", "Sheet 3 · Night 2 · by headlamp"],
+  goal: ["Set rows 1 to 3 against what the paper claims, then say where it will be by morning.", "Set rows 7 to 19 against what the paper claims, then forecast where the loss will reach.", "Nothing is left on the ground to check. Go through your own rows 12 to 20, and fill only what you saw."],
+  rule: ["What you write holds, even when it is wrong. What the paper prints does not.", "Three sources, wrong in three ways. The scale bar is paper too: it is one step behind the road.", "Marisol's book lies open at its first page: a line for every row, the same numbers. Before you copy one, look at the rows you both have."],
+  open: ["Golden hour at the table at 21. The map prints twenty-four squares. You drove past the first three and there was nothing there.", "Morning at the camp table. The map is still warm from the sun. Rows 1 to 6 you wrote on the walks; start at 7.", "Night at the table, headlamp on. Your page has gaps at 13, 14 and 15: you never walked them. Her page has no gaps at all."],
+  measure: "By the map's scale bar the loop is 630 m: eighteen sites of road. Yesterday at the table the same bar gave 840. Your feet this morning: thirteen sites. The bar is one step behind the ground, and the steps so far are three sites, three, then five. It does not take one at a time.",
+  measureBtn: "Measure with the scale bar (M)",
+  hers: "Her line, in your hand now. It reads well. It has the right number on it.",
+  hersBlank: "You never walked this one. Now the row says you did.",
+  stamped: "Stamped Sure. It cannot be corrected now, whatever it says.",
+  stampedNo: "That row is stamped Sure. It cannot be corrected.",
+  noStamps: "Three stamps a sheet, and they are used.",
+  ringed: "≠ ringed by you: not ours",
+  lay: "Every row from 12 to 20 is set. One row is left that both pages have. Lay the two notebooks side by side.",
+  sp: {
+    cap: "Row 21, hers and yours. One sentence, in two hands, eleven years apart.",
+    agnes: "And the postcard, in a third: \"Site 21. The split boulder. You slept in the crack of it.\"",
+    close: "Close both books",
+  },
   tilt: "Your torch is still in your jacket. Hold F to tilt the page under it: lost lines leave grooves.",
   grooves: "Six grooves in the legend's blank band, pressed by type that is not there now.",
   photos: "Inés sits down with the camera. \"I took the whole loop yesterday. Look.\" The file numbers skip.",
   accept: "You rub the line out. The paper looks surer than you feel.",
+  forecast1: "Three rows set. Now the pencil line: where will it be by morning? Tap a site on the map.",
   forecast: "Every row is set. Now the pencil line: where will it reach by noon, and by dark? Tap the map.",
   dell: "Dell, over your shoulder: \"Noon's an hour off. Where does that put it?\"",
   groovesLine: "the legend had six lines more",
   copy: "copied into the notebook. In your hand, it holds.",
   end: {
-    rows: (right) => `${right} of 21 rows agree with what happened.`,
+    t1: (right) => `${right} of 3 rows agree with the ground. Your forecast is a line in the notebook now; by morning you will know how good it was.`,
+    t3: (right, hers) => `${right} of 9 rows hold what you saw.${hers ? ` ${hers} ${hers > 1 ? "are" : "is"} in your hand and from her campground.` : " Not one line of hers is in your book."}`,
+    t3sure: (ok, bad) => `${ok + bad ? `Stamped Sure: ${ok} right${bad ? `, ${bad} wrong. A wrong row stamped Sure is not a mistake any more. It is a place.` : "."}` : "No row stamped."}`,
+    t3lead: "Row 21 is one sentence in two hands, and you have stopped being sure whose memory the boulder is.",
+    rows: (right) => `${right} of 13 rows agree with what happened.`,
     accepted: (n) => `You corrected ${n} note${n > 1 ? "s" : ""} to match the paper, and the paper will not thank you.`,
     fcRight: "The forecast is right: 12 to 15 by noon, 16 to 19 by dark. It moves the way you drew it.",
     fcWrong: "The forecast is off: it reached 15 by noon and 19 by dark, faster than your pencil.",
@@ -139,6 +198,29 @@ const CSS = `
 .${P}fc button.on{outline:3px solid ${RED}}
 .${P}fc button:disabled{opacity:.4;cursor:default}
 .${P}say{font-family:Caveat,'Segoe Print',cursive;font-size:21px;line-height:1.15;color:#2a2a2c;border-left:4px solid ${RED};padding:2px 10px;min-height:24px}
+.${P}book tr.off td{opacity:.5}
+.${P}book tr.off{cursor:default}
+.${P}book td.h img{width:24px;height:24px;vertical-align:middle;margin-left:4px}
+.${P}book td.h.hers{font-style:italic;color:#5a4a6a}
+.${P}acts .hers{font-family:Georgia,serif;font-style:italic;border-color:#5a4a6a;color:#5a4a6a;flex-basis:100%;text-align:left}
+.${P}acts .sure{border-color:${RED};color:${RED}}
+.${P}acts .sure img{width:26px;height:26px;vertical-align:middle;margin:-4px 4px -4px -2px}
+.${P}acts button:disabled{opacity:.4;cursor:default}
+.${P}chip .ring{display:block;font:600 12px 'IBM Plex Mono',monospace;color:${RED}}
+.${P}sp{position:absolute;inset:0;z-index:6;background:#0a0d12;display:grid;place-items:center;padding:14px;box-sizing:border-box;overflow:auto}
+.${P}sp .in{width:min(760px,100%);display:grid;gap:12px}
+.${P}sp .pages{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative}
+.${P}sp .pg{background:#f1ead6;padding:10px 12px;min-width:0;background-image:repeating-linear-gradient(180deg,transparent 0 37px,#a9c3cf 37px 38px);position:relative}
+.${P}sp .pg b{display:block;font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.12em;color:${GREEN};height:38px;line-height:38px}
+.${P}sp .pg div{height:38px;line-height:38px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:clamp(15px,2.6vw,22px);opacity:.3}
+.${P}sp .pg div.r21{opacity:1;background:radial-gradient(closest-side,rgba(255,240,200,.95),rgba(255,240,200,0));white-space:normal;height:76px;line-height:38px}
+.${P}sp .hers div{font-family:Georgia,serif;font-style:italic;color:#4a4a5c}
+.${P}sp .mine div{font-family:Caveat,'Segoe Print',cursive;color:#3a3a3c;font-size:clamp(18px,3vw,26px)}
+.${P}sp p{margin:0;font-family:Caveat,'Segoe Print',cursive;font-size:23px;line-height:1.2;color:#f1e9d6;text-align:center}
+.${P}sp p.ag{font-size:20px;color:#d9c9a8}
+.${P}sp button{justify-self:center;font:600 15px 'IBM Plex Mono',monospace;background:#f1ead6;color:#222;border:0;padding:11px 22px;cursor:pointer;min-height:44px}
+.${P}sp button:focus-visible{outline:3px solid #c9a862;outline-offset:3px}
+@media (max-width:520px){.${P}sp .pages{grid-template-columns:1fr}}
 .${P}legend.art{display:block;padding:0;border-width:1.5px}
 .${P}legend.art>img{display:block;width:100%;height:auto}
 .${P}legend.art h4{position:absolute;right:6px;top:4px;margin:0}
@@ -168,8 +250,13 @@ const CSS = `
 @media (max-width:760px){.${P}wrap{grid-template-columns:1fr;padding:10px}.${P}right{order:-1}.${P}legend{grid-template-columns:repeat(2,minmax(0,1fr))}.${P}book{min-height:280px;max-height:52vh}.${P}chips{grid-template-columns:1fr 1fr}.${P}chip{font-size:13px}}
 `;
 
-export default {
-  mount(root, api) {
+export default { mount(root, api) { return ladder(root, api, mountStage, NAMES); } };
+
+function mountStage(root, api, stage) {
+  {
+    const CFG = STAGE[stage], GROUND = CFG.ground, MAP = CFG.map, LEGEND = CFG.leg, TRUTH = CFG.truth;
+    const ACTIVE = new Set(CFG.active);
+    const ringed = stage === 3 && !!(api.shared && api.shared.get("first_page_read", false));
     const wrap = document.createElement("div");
     wrap.className = P + "wrap";
     wrap.innerHTML = `<style>${CSS}</style>
@@ -187,12 +274,16 @@ export default {
         <p class="goal"></p><p class="rule"></p>
         <table><tr><td>Pick a row</td><td>click it, or <kbd>↑</kbd> <kbd>↓</kbd></td></tr>
           <tr><td>Set it</td><td>Here <kbd>H</kbd> · Gone <kbd>G</kbd> · Unknown <kbd>U</kbd> (not walked)</td></tr>
-          <tr><td>Write it</td><td>tap a detail you saw, or <kbd>1</kbd>–<kbd>3</kbd></td></tr></table>
+          <tr><td>Write it</td><td>tap a detail you saw, or <kbd>1</kbd>–<kbd>3</kbd></td></tr>
+          ${stage === 2 ? "<tr><td>Measure</td><td><kbd>M</kbd>: lay the scale bar along the loop</td></tr>" : ""}
+          ${stage === 3 ? "<tr><td>Stamp</td><td><kbd>S</kbd>: Sure, three a sheet. A stamped row cannot be corrected</td></tr>" : ""}</table>
         <div class="scale"><i></i><i></i><i></i><i></i></div>
         <button type="button">Open the map</button></div></div>`;
     root.appendChild(wrap);
     const $ = (s) => wrap.querySelector(s);
-    $(".sheet").textContent = TEXT.sheet; $(`.${P}plate .goal`).textContent = TEXT.goal; $(`.${P}plate .rule`).textContent = TEXT.rule;
+    $(".sheet").textContent = TEXT.sheet[stage - 1]; $(`.${P}plate .goal`).textContent = TEXT.goal[stage - 1]; $(`.${P}plate .rule`).textContent = TEXT.rule[stage - 1];
+    stageTabs(api, $(`.${P}plate>button`));
+    if (ringed) linkNote($(`.${P}right`), "Because you read the first page in The Ranger's Book, the rows of hers you ringed there are marked here: not this campground.");
     const NS = "http://www.w3.org/2000/svg";
     const svg = $(`.${P}map`);
     const mk = (tag, a, parent = svg) => { const n = document.createElementNS(NS, tag); for (const k in a) n.setAttribute(k, a[k]); parent.appendChild(n); return n; };
@@ -201,8 +292,8 @@ export default {
     const said = new Set();
     const beat = (k, t) => { if (said.has(k)) return false; said.add(k); say(t); return true; };
     const art = api.art;
-    const sheet = art && art.has("map-from-7");
-    chapterCard(art, "chapter-3", $(`.${P}plate`));
+    const sheet = art && art.has(CFG.sheet);
+    chapterCard(art, ["chapter-1", "chapter-3", "chapter-5"][stage - 1], $(`.${P}plate`));
     { const rose = pic(art, "compass-rose", "rose", ""); if (rose) $(`.${P}plate h2`).before(rose); }
 
     // ---- the survey print: the art's sheet, or (without it) the drawn one ----
@@ -211,7 +302,7 @@ export default {
     if (sheet) {
       // the sheet is 1100 x 800; its sites stand where art/src/40_maps.py puts them
       svg.setAttribute("viewBox", "0 0 1100 800");
-      mk("image", { x: 0, y: 0, width: 1100, height: 800 }).setAttribute("href", art.url("map-from-7"));
+      mk("image", { x: 0, y: 0, width: 1100, height: 800 }).setAttribute("href", art.url(CFG.sheet));
       CX = 560; CY = 440; RX = 300; RY = 250; U = 1.5;
       const theta = (n) => (n <= 12 ? 106 + (n - 1) * 156 / 11 : 74 - (n - 13) * 156 / 11) * Math.PI / 180;
       sitePos = (n) => ({ x: CX + RX * 1.12 * Math.cos(theta(n)), y: CY + RY * 1.12 * Math.sin(theta(n)) });
@@ -265,53 +356,61 @@ export default {
 
     // ---- legend: entries 7–24, the box keeps its height; six grooves in the blank band ----
     const lg = $(`.${P}legend`);
-    const strip = pic(art, "legend-18", "", "The legend strip: entries 7 to 24, and a blank band where six lines were");
+    const strip = pic(art, CFG.legend, "", "The legend strip, as it prints on this sheet");
     let gvBox = lg;
     if (strip) { lg.classList.add("art"); lg.appendChild(strip); gvBox = document.createElement("div"); gvBox.className = "gvs"; lg.appendChild(gvBox); }
-    else for (let n = 7; n <= 24; n++) { const s = document.createElement("span"); s.innerHTML = `<i></i><b>${n}</b> ${LEG_WHAT[n % 3]}`; lg.appendChild(s); }
-    for (let k = 0; k < 6; k++) { const s = document.createElement("span"); s.className = "gv"; s.textContent = "▪ ~~ ~~~~~~"; gvBox.appendChild(s); }
+    else for (let n = 1; n <= 24; n++) { if (!LEGEND(n)) continue; const s = document.createElement("span"); s.innerHTML = `<i></i><b>${n}</b> ${LEG_WHAT[n % 3]}`; lg.appendChild(s); }
+    for (let k = 0; k < (stage === 1 ? 0 : 6); k++) { const s = document.createElement("span"); s.className = "gv"; s.textContent = "▪ ~~ ~~~~~~"; gvBox.appendChild(s); }
 
     // ---- notebook ----
     const rows = {};
-    for (let n = 1; n <= 24; n++) rows[n] = { status: n <= 3 ? "Gone" : null, note: n <= 3 ? "needles undisturbed" : "", accepted: false };
+    for (let n = 1; n <= 24; n++) { const pre = ACTIVE.has(n) ? null : CFG.pre(n); rows[n] = { status: pre ? pre[0] : null, note: pre ? pre[1] : "", accepted: false }; }
+    let stamps = 3;
     const tbody = $("tbody");
     const trs = {};
     for (let n = 1; n <= 24; n++) {
       const tr = document.createElement("tr");
       tr.innerHTML = `<td>${n}</td><td class="h"></td><td>${MAP(n) ? "■" : "–"}</td><td style="color:${GREEN}">${LEGEND(n) ? "■" : "–"}</td><td class="h"></td>`;
       tr.addEventListener("click", () => select(n));
+      if (!ACTIVE.has(n) && !rows[n].status) tr.classList.add("off");
       tbody.appendChild(tr);
       trs[n] = tr;
     }
-    let sel = 4, accepted = 0, copied = new Set(), phase = "rows", fcMode = "noon", fc = { noon: null, dark: null }, idle = 0, over = false;
+    let sel = CFG.from, accepted = 0, measured = false, copied = new Set(), phase = "rows", fcMode = CFG.fc[0] || "noon", fc = {}, idle = 0, over = false;
     let photos = false, tiltOk = false, grooveLine = false;
 
     function paintRow(n, fresh) {
       const r = rows[n], td = trs[n].children;
       td[1].textContent = r.status || "";
-      td[4].textContent = r.note;
+      td[4].textContent = r.note; td[4].classList.toggle("hers", !!r.hers);
+      if (r.sure) { const st = pic(art, "stamp-sure", "", "Sure"); if (st) td[4].appendChild(st); else td[4].appendChild(document.createTextNode(" [SURE]")); }
       if (fresh && !api.reducedMotion) { trs[n].classList.remove("ink"); void trs[n].offsetWidth; trs[n].classList.add("ink"); }
     }
-    const setCount = () => Object.values(rows).filter((r) => r.status).length;
+    const setCount = () => CFG.active.filter((n) => rows[n].status).length;
     function select(n) {
       sel = n; idle = 0;
       Object.values(trs).forEach((t) => t.classList.remove("sel", "arrow"));
       trs[n].classList.add("sel");
       trs[n].scrollIntoView?.({ block: "nearest" });
       selRing.setAttribute("cx", squares[n].x); selRing.setAttribute("cy", squares[n].y); selRing.setAttribute("visibility", "visible");
-      $(".st").textContent = `Site ${n}${n <= 3 ? " · written on day 1" : ""}`;
-      $(".prog").textContent = `rows set ${setCount()}/24`;
+      const mine = ACTIVE.has(n);
+      $(".st").textContent = `Site ${n}${mine ? "" : rows[n].status ? " · already written" : " · not walked yet"}`;
+      $(".prog").textContent = `rows set ${setCount()}/${CFG.active.length}`;
       const chips = $(`.${P}chips`);
       chips.innerHTML = "";
-      const src = [["GROUND", GROUND(n)], ["MAP", MAP(n) ? "printed square" : "nothing printed"], ["LEGEND", LEGEND(n) ? `■ ${n} ${LEG_WHAT[n % 3]}` : "no entry"], ["PHOTOS", photos ? (PHOTOS[n] || "none") : "not yet"]];
+      const src = [["GROUND", GROUND(n)], ["MAP", MAP(n) ? "printed square" : "nothing printed"], ["LEGEND", LEGEND(n) ? `■ ${n} ${LEG_WHAT[n % 3]}` : "no entry"],
+        stage === 1 ? ["BOOTH MAP", "printed square"] : stage === 3 ? ["HER PAGE", HERS[n] ? `${n}. ${HERS[n][0]}` : "an older page"] : ["PHOTOS", photos ? (PHOTOS[n] || "none") : "not yet"]];
+      if (stage === 3) src[0] = ["YOUR PAGE", MINE[n] ? `${n}. ${MINE[n]}` : n >= 13 && n <= 15 ? "blank: never walked" : rows[n].note || "written"];
       src.forEach(([h, v], i) => {
-        const c = document.createElement("div"); c.className = P + "chip" + (i === 3 && !photos ? " off" : "");
-        if (i === 0) { const st = pic(art, { "here": "stamp-here", "not here": "stamp-gone", "not walked": "stamp-not-walked" }[v], "", ""); if (st) c.appendChild(st); }
+        const c = document.createElement("div"); c.className = P + "chip" + (i === 3 && stage === 2 && !photos ? " off" : "");
+        if (i === 3 && ringed && HERS[n] && MINE[n] && n !== 21) { const rg = document.createElement("span"); rg.className = "ring"; rg.textContent = TEXT.ringed; c.appendChild(rg); }
+        if (i === 0 && stage !== 3) { const st = pic(art, { "here": "stamp-here", "not here": "stamp-gone", "not walked": "stamp-not-walked" }[v], "", ""); if (st) c.appendChild(st); }
         const hb = document.createElement("b"); hb.textContent = h; c.appendChild(hb);
         c.appendChild(document.createTextNode(v)); chips.appendChild(c);
       });
       const acts = $(`.${P}acts`);
       acts.innerHTML = "";
+      if (!mine) return;
       [["Here", "H"], ["Gone", "G"], ["Unknown", "U"]].forEach(([s, k]) => {
         const b = document.createElement("button"); b.type = "button"; b.textContent = `${s} (${k})`;
         if (rows[n].status === s) b.classList.add("on");
@@ -329,30 +428,66 @@ export default {
         b.addEventListener("click", () => { rows[n].status = "Here"; rows[n].note = ""; rows[n].accepted = true; accepted++; paintRow(n, true); say(TEXT.accept); select(n); check(); });
         acts.appendChild(b);
       }
+      if (stage === 3 && HERS[n]) {
+        const b = document.createElement("button"); b.type = "button"; b.className = "hers"; b.textContent = `Copy her row: “${HERS[n][0]}”`;
+        b.disabled = !!rows[n].sure;
+        b.addEventListener("click", () => copyHers(n));
+        acts.appendChild(b);
+      }
+      if (stage === 3 && rows[n].status) {
+        const b = document.createElement("button"); b.type = "button"; b.className = "sure";
+        const im = pic(art, "stamp-sure", "", ""); if (im) b.appendChild(im);
+        b.appendChild(document.createTextNode(rows[n].sure ? "Stamped Sure" : `Stamp it Sure (S) · ${stamps} left`));
+        b.disabled = !!rows[n].sure || stamps <= 0;
+        b.addEventListener("click", () => stamp(n));
+        acts.appendChild(b);
+      }
+    }
+    function copyHers(n) {
+      if (phase !== "rows" || !ACTIVE.has(n) || !HERS[n]) return;
+      if (rows[n].sure) { say(TEXT.stampedNo); return; }
+      rows[n].status = n >= 20 ? "Here" : "Gone"; rows[n].note = HERS[n][0]; rows[n].hers = true;
+      paintRow(n, true); say(MINE[n] ? TEXT.hers : TEXT.hersBlank); select(n); check();
+    }
+    function stamp(n) {
+      if (stage !== 3 || phase !== "rows" && phase !== "lay") return;
+      if (!ACTIVE.has(n) || !rows[n].status || rows[n].sure) return;
+      if (stamps <= 0) { say(TEXT.noStamps); return; }
+      rows[n].sure = true; stamps--; paintRow(n, true); say(TEXT.stamped); select(n);
     }
     function writeDetail(n, i) {
       const d = DETAILS(n)[i];
-      if (!d || !rows[n].status || rows[n].status === "Unknown") return;
-      rows[n].note = d; paintRow(n, true);
+      if (!d || !ACTIVE.has(n) || !rows[n].status || rows[n].status === "Unknown") return;
+      if (rows[n].sure) { say(TEXT.stampedNo); return; }
+      rows[n].note = d; rows[n].hers = false; paintRow(n, true);
       select(nextUnset(n) || n);
     }
-    function nextUnset(from) { for (let k = 1; k <= 24; k++) { const m = ((from + k - 1) % 24) + 1; if (!rows[m].status) return m; } return null; }
+    function nextUnset(from) { for (let k = 1; k <= 24; k++) { const m = ((from + k - 1) % 24) + 1; if (ACTIVE.has(m) && !rows[m].status) return m; } return null; }
     function setStatus(n, s) {
-      if (phase === "done") return;
-      rows[n].status = s;
+      if (phase === "done" || !ACTIVE.has(n)) return;
+      if (rows[n].sure) { say(TEXT.stampedNo); return; }
+      rows[n].status = s; rows[n].hers = false;
+      if (stage === 3 && rows[n].note && !DETAILS(n).includes(rows[n].note)) rows[n].note = "";
       if (s === "Unknown") rows[n].note = "not walked";
       else if (rows[n].note === "not walked") rows[n].note = "";
       paintRow(n, true);
-      if (s === "Gone" && !tiltOk) { tiltOk = true; $(`.${P}tb`).hidden = false; beat("tilt", TEXT.tilt); }
-      if (!photos && setCount() >= 11) { photos = true; beat("photos", TEXT.photos); }
+      if (s === "Gone" && !tiltOk && stage === 2) { tiltOk = true; $(`.${P}tb`).hidden = false; beat("tilt", TEXT.tilt); }
+      if (stage === 2 && !photos && setCount() >= 6) { photos = true; beat("photos", TEXT.photos); }
       select(s === "Unknown" ? (nextUnset(n) || n) : n);
       check();
     }
     function check() {
-      const left = Object.keys(rows).filter((n) => !rows[n].status);
+      const left = CFG.active.filter((n) => !rows[n].status);
+      if (!left.length && phase === "rows" && stage === 3) {
+        phase = "lay"; say(TEXT.lay);
+        const f = $(`.${P}fc`); f.innerHTML = "<b>ROW 21</b>";
+        const b = document.createElement("button"); b.type = "button"; b.className = "lay"; b.textContent = "Lay the two notebooks side by side";
+        b.addEventListener("click", setPiece); f.appendChild(b); b.focus();
+        return;
+      }
       if (!left.length && phase === "rows") {
         phase = "forecast";
-        say(TEXT.forecast);
+        say(stage === 1 ? TEXT.forecast1 : TEXT.forecast);
         drawForecastUI();
         svg.scrollIntoView?.({ block: "nearest", behavior: api.reducedMotion ? "auto" : "smooth" });
       }
@@ -364,14 +499,18 @@ export default {
       f.innerHTML = "<b>FORECAST</b>";
       const msg = document.createElement("span"); msg.textContent = `Tap the map: by ${fcMode}`;
       f.appendChild(msg);
-      for (const m of ["noon", "dark"]) {
+      if (stage === 2) {
+        const mb = document.createElement("button"); mb.type = "button"; mb.className = "meas"; mb.textContent = TEXT.measureBtn;
+        mb.disabled = measured; mb.addEventListener("click", measure); f.appendChild(mb);
+      }
+      for (const m of CFG.fc) {
         const b = document.createElement("button"); b.type = "button"; b.textContent = `by ${m}${fc[m] ? ": " + fc[m] : ""}`;
         if (fcMode === m) b.classList.add("on");
         b.addEventListener("click", () => { fcMode = m; drawForecastUI(); });
         f.appendChild(b);
       }
       const w = document.createElement("button"); w.type = "button"; w.textContent = "Write it in the notebook";
-      w.disabled = !(fc.noon && fc.dark);
+      w.disabled = !CFG.fc.every((m) => fc[m]);
       w.addEventListener("click", finish);
       f.appendChild(w);
     }
@@ -379,7 +518,7 @@ export default {
       if (phase !== "forecast") { if (phase === "rows") select(n); return; }
       fc[fcMode] = n;
       fcLayer.innerHTML = "";
-      for (const m of ["noon", "dark"]) {
+      for (const m of CFG.fc) {
         if (!fc[m]) continue;
         const s = squares[fc[m]];
         mk("path", { d: `M${CX} ${CY} L${s.x} ${s.y}`, stroke: GRAPH, "stroke-width": 3.5 * U, "stroke-linecap": "round", fill: "none" }, fcLayer);
@@ -387,14 +526,39 @@ export default {
         const t = mk("text", { x: (CX + s.x) / 2 + 6, y: (CY + s.y) / 2 - 6, "font-size": 24 * U, fill: GRAPH, stroke: "#f4edd9", "stroke-width": 5 * U, "paint-order": "stroke", "font-family": "Caveat,cursive", "font-weight": 700 }, fcLayer);
         t.textContent = `by ${m}`;
       }
-      if (fcMode === "noon" && !fc.dark) { fcMode = "dark"; beat("dell", TEXT.dell); }
+      if (stage === 2 && fcMode === "noon" && !fc.dark) { fcMode = "dark"; beat("dell", TEXT.dell); }
       drawForecastUI();
+    }
+
+    // ---- the scale bar (stage 2): paper too, and one step behind the road ----
+    const measLayer = mk("g", { "pointer-events": "none" });
+    function measure() {
+      if (stage !== 2 || measured || over || $(`.${P}intro`)) return;
+      measured = true; say(TEXT.measure);
+      [[3, "3"], [6, "3"], [11, "5"]].forEach(([n, lab]) => {
+        const s = squares[n], t = mk("text", { x: s.x, y: s.y - 20 * U, "text-anchor": "middle", "font-size": 22 * U, fill: GRAPH, stroke: "#f4edd9", "stroke-width": 4 * U, "paint-order": "stroke", "font-family": "Caveat,cursive", "font-weight": 700 }, measLayer);
+        t.textContent = `⌒ ${lab} sites`;
+      });
+      if (phase === "forecast") drawForecastUI();
+    }
+    // ---- the set-piece (stage 3): two notebooks side by side by headlamp ----
+    function setPiece() {
+      if (over || wrap.querySelector(`.${P}sp`)) return;
+      const sp = document.createElement("div"); sp.className = P + "sp"; sp.setAttribute("role", "dialog"); sp.setAttribute("aria-label", "Two notebooks, side by side");
+      const row = (n, t, c) => `<div class="${c}">${n}. ${t}</div>`;
+      sp.innerHTML = `<div class="in"><div class="pages">
+        <div class="pg hers"><b>HER FIRST PAGE · PENCIL</b>${row(20, HERS[20][0], "")}${row(21, ROW21, "r21")}<div>22. the shared ring</div></div>
+        <div class="pg mine"><b>YOUR SITES PAGE · PENCIL</b>${row(20, rows[20].note || "the van", "")}${row(21, ROW21, "r21")}<div>22. ${rows[22].note}</div></div></div>
+        <p></p><p class="ag"></p><button type="button"></button></div>`;
+      sp.querySelector("p").textContent = TEXT.sp.cap; sp.querySelector(".ag").textContent = TEXT.sp.agnes;
+      const b = sp.querySelector("button"); b.textContent = TEXT.sp.close; b.addEventListener("click", () => { finish(); });
+      wrap.scrollTop = 0; wrap.style.overflow = "hidden"; wrap.appendChild(sp); b.focus();
     }
 
     // ---- postcard in the margin ----
     const card = $(`.${P}card`);
     card.innerHTML = `<b>AGNES'S POSTCARD</b>`;
-    const pcIds = { front: "postcard-after-night-1", torch: "postcard-under-torch", back: "postcard-picture-side" };
+    const pcIds = { front: CFG.pc, torch: "postcard-under-torch", back: "postcard-picture-side" };
     const pc = pic(art, pcIds.front, "pc", "The postcard's written side: four lines left, and two blank where lines were");
     let pcSide = "front";
     const paintPc = () => {
@@ -416,7 +580,7 @@ export default {
     }
     for (const line of POSTCARD) {
       const d = document.createElement("div");
-      if (!line.text) { d.innerHTML = `<span class="groove">— — — — — — — — —</span>`; card.appendChild(d); continue; }
+      if (CFG.gone.includes(line.k)) { d.innerHTML = `<span class="groove">— — — — — — — — —</span>`; card.appendChild(d); continue; }
       const s = document.createElement("span"); s.textContent = line.text; d.appendChild(s);
       const b = document.createElement("button"); b.type = "button"; b.textContent = "Copy";
       b.addEventListener("click", () => { copied.add(line.k); b.textContent = "Copied"; b.disabled = true; say(`${line.text.split(".")[0]}: ${TEXT.copy}`); });
@@ -436,9 +600,35 @@ export default {
       if (over) return;
       over = true; phase = "done";
       let right = 0;
-      for (let n = 4; n <= 24; n++) if (rows[n].status === TRUTH(n)) right++;
+      for (const n of CFG.active) if (rows[n].status === TRUTH(n) && !rows[n].hers) right++;
+      const E0 = TEXT.end;
+      if (api.shared) api.shared.set("mother_lines_kept", Math.max(copied.size, api.shared.get("mother_lines_kept", 0) || 0));
+      if (stage === 1) {
+        const ok = right === 3 && !accepted;
+        tiltOff();
+        resultCard(wrap, art, { cards: ["map-from-7"], lost: ok ? 0 : 1 + accepted, caption: "The sheet to come: by morning.", reducedMotion: api.reducedMotion });
+        api.end({ outcome: ok ? "win" : "done", text: [ok ? E0.winLead : E0.doneLead, E0.t1(right), accepted ? E0.accepted(accepted) : "", copied.size ? E0.copied(copied.size) : E0.noCopy].filter(Boolean).join(" "), next: "Day 2: thirteen rows, and the sources disagree three ways." });
+        return;
+      }
+      if (stage === 3) {
+        const hers = CFG.active.filter((n) => rows[n].hers).length;
+        const sure = {}; let sOk = 0, sBad = 0;
+        for (const n of CFG.active) {
+          if (!rows[n].sure) continue;
+          const ok = rows[n].status === TRUTH(n) && !rows[n].hers;
+          if (ok) sOk++; else sBad++;
+          if (n <= 19) sure[n] = ok ? { right: true } : { right: false, line: rows[n].hers ? rows[n].note : `${rows[n].status}${rows[n].note ? ": " + rows[n].note : ""}`, spec: rows[n].hers && HERS[n][1] ? HERS[n][1] : { empty: true } };
+        }
+        if (api.shared) api.shared.set("sure", sure);                 // stamps to trees: the pattern walk builds these
+        const good3 = right >= 7 && !sBad;
+        api.store.set("last", { right, hers, sure_right: sOk, sure_wrong: sBad });
+        const spEl = wrap.querySelector(`.${P}sp`); if (spEl) spEl.remove(); wrap.style.overflow = "";
+        resultCard(wrap, art, { cards: ["logbook-first-page"], lost: good3 ? 0 : Math.min(5, 1 + hers + sBad), reducedMotion: api.reducedMotion });
+        api.end({ outcome: good3 ? "win" : "done", text: [E0.t3lead, E0.t3(right, hers), E0.t3sure(sOk, sBad), copied.size ? E0.copied(copied.size) : ""].filter(Boolean).join(" ") });
+        return;
+      }
       const fr = Math.abs(fc.noon - 15) <= 1 && Math.abs(fc.dark - 19) <= 1;
-      const good = right >= 17 && fr;
+      const good = right >= 11 && fr;
       api.store.set("last", { right, accepted, forecast_right: fr, mother_lines_kept: copied.size, grooves: grooveLine });
       const E = TEXT.end;
       tiltOff();
@@ -447,6 +637,7 @@ export default {
         outcome: good ? "win" : "done",
         text: [good ? E.winLead : E.doneLead, E.rows(right), accepted ? E.accepted(accepted) : "", fr ? E.fcRight : E.fcWrong,
           copied.size ? E.copied(copied.size) : E.noCopy, grooveLine ? E.grooves : ""].filter(Boolean).join(" "),
+        next: "Night 2: nothing left to check on the ground, and another book on the table.",
       });
     }
 
@@ -454,7 +645,10 @@ export default {
     const kd = (e) => {
       if (over || $(`.${P}intro`)) return;
       const k = e.key.toLowerCase();
-      if (k === "arrowdown") { e.preventDefault(); select(Math.min(24, sel + 1)); }
+      if (wrap.querySelector(`.${P}sp`)) return;
+      if (k === "m") measure();
+      else if (k === "s") stamp(sel);
+      else if (k === "arrowdown") { e.preventDefault(); select(Math.min(24, sel + 1)); }
       else if (k === "arrowup") { e.preventDefault(); select(Math.max(1, sel - 1)); }
       else if (k === "h") setStatus(sel, "Here");
       else if (k === "g") setStatus(sel, "Gone");
@@ -480,9 +674,9 @@ export default {
     }, 1000);
 
     for (let n = 1; n <= 24; n++) paintRow(n);
-    select(4);
-    const go = $(`.${P}plate button`);
-    go.addEventListener("click", () => { $(`.${P}intro`).remove(); select(4); say(TEXT.open); });
+    select(CFG.from);
+    const go = $(`.${P}plate>button`);
+    go.addEventListener("click", () => { $(`.${P}intro`).remove(); select(CFG.from); say(TEXT.open[stage - 1]); });
     go.focus();
 
     return {
@@ -492,5 +686,5 @@ export default {
         window.removeEventListener("keydown", kd); window.removeEventListener("keyup", ku);
       },
     };
-  },
-};
+  }
+}

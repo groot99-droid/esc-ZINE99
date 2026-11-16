@@ -569,7 +569,7 @@
   ],
   "scenes": {
     "creek_trail": {
-      "note": "Day 2 errand. Water light dappled through the canopy, the creek, Abel humming. The trail runs to his gravel bar; showing him the line Tam copied from the register.",
+      "note": "Day 2 errand. Water light dappled through the canopy, the creek, Abel humming. The trail runs to his gravel bar; showing him the line Tam copied from the register. Phase 2: if Tam copied the five names from Ruth's tin, showing Abel the list comes first: \"That's my name. In her hand. I've never met her.\"",
       "world": {
         "color": [
           0.55,
@@ -667,6 +667,10 @@
       },
       "hide": [],
       "interactions": [
+        {
+          "prop": "notebook",
+          "verb": "Show Abel the five names"
+        },
         {
           "prop": "notebook",
           "verb": "Show Abel his copied line",

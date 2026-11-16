@@ -117,7 +117,8 @@
       "writes": [
         "warmth",
         "recipe_copied",
-        "bicycle_borrowed"
+        "bicycle_borrowed",
+        "supper_own"
       ],
       "enter": "push-in",
       "exit": "flatten",
@@ -184,6 +185,26 @@
       ],
       "enter": "push-in",
       "exit": "pull-out",
+      "next": [
+        "channel_two"
+      ]
+    },
+    {
+      "id": "channel_two",
+      "layer": "3d",
+      "name": "Channel Two: inside the split boulder",
+      "chapter": "ch2_torchlight",
+      "reads": [
+        "phantoms_caught",
+        "list_items",
+        "backwards_lap_clean"
+      ],
+      "writes": [
+        "channel_two_heard",
+        "notebook_lines"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
       "next": [
         "campfire_night1"
       ]
@@ -329,7 +350,8 @@
       "next": [
         "rangers_book_2",
         "creek_trail",
-        "dusk_choice"
+        "dusk_choice",
+        "supper_for_two"
       ]
     },
     {
@@ -348,10 +370,37 @@
         "time_units",
         "anchors",
         "hold",
-        "first_page_read"
+        "first_page_read",
+        "ghost_plates"
       ],
       "enter": "push-in",
       "exit": "pull-out",
+      "next": [
+        "supper_for_two",
+        "loop_day2pm"
+      ]
+    },
+    {
+      "id": "supper_for_two",
+      "layer": "3d",
+      "name": "Supper for Two: Ruth at the booth, 17:30",
+      "chapter": "ch4_carrying",
+      "reads": [
+        "ghost_plates",
+        "ranger_doubts",
+        "first_page_read",
+        "firewood_bought"
+      ],
+      "writes": [
+        "ruth_met",
+        "tin_list_copied",
+        "notebook_lines",
+        "firewood_bought",
+        "anchors",
+        "hold"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
       "next": [
         "loop_day2pm"
       ]
@@ -363,11 +412,14 @@
       "chapter": "ch4_carrying",
       "reads": [
         "abel_line_copied",
-        "time_units"
+        "time_units",
+        "tin_list_copied"
       ],
       "writes": [
         "abel_believes",
-        "time_units"
+        "time_units",
+        "abel_named",
+        "notebook_lines"
       ],
       "enter": "cut",
       "exit": "cut",
@@ -384,7 +436,9 @@
         "ranger_doubts",
         "abel_believes",
         "warmth",
-        "theory_night1"
+        "theory_night1",
+        "ruth_met",
+        "abel_named"
       ],
       "writes": [
         "person_brought",
@@ -408,7 +462,8 @@
       "mode": "torchlight_loop",
       "reads": [
         "posts_pulled",
-        "torch_battery"
+        "torch_battery",
+        "supper_own"
       ],
       "writes": [
         "posts_pulled",
@@ -454,7 +509,8 @@
         "torch_battery"
       ],
       "writes": [
-        "torch_battery"
+        "torch_battery",
+        "window_seen"
       ],
       "enter": "flatten",
       "exit": "push-in",
@@ -514,13 +570,16 @@
       "game": "reconcile",
       "reads": [
         "sites_written",
-        "accepted"
+        "accepted",
+        "first_page_read"
       ],
       "writes": [
         "sites_written",
         "notebook_lines",
         "accepted",
-        "erasure_step"
+        "erasure_step",
+        "sure_stamps",
+        "sure_wrong"
       ],
       "enter": "push-in",
       "exit": "fade",
@@ -670,7 +729,9 @@
         "pattern_key",
         "person_brought",
         "posts_pulled",
-        "list_items"
+        "list_items",
+        "sure_stamps",
+        "sure_wrong"
       ],
       "writes": [
         "drift",
@@ -708,7 +769,9 @@
         "pattern_key",
         "person_brought",
         "drift",
-        "list_items"
+        "list_items",
+        "sure_stamps",
+        "sure_wrong"
       ],
       "writes": [
         "drift",
@@ -729,7 +792,9 @@
       "reads": [
         "person_brought",
         "drift",
-        "warmth"
+        "warmth",
+        "sure_wrong",
+        "window_seen"
       ],
       "enter": "pull-out",
       "exit": "fade"

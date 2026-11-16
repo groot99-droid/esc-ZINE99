@@ -131,6 +131,15 @@
         0.5
       ],
       "roughness": 0.95
+    },
+    "car-grey": {
+      "color": [
+        0.42,
+        0.44,
+        0.45
+      ],
+      "roughness": 0.45,
+      "metallic": 0.3
     }
   },
   "blockout": [
@@ -697,6 +706,38 @@
       ],
       "material": "conifer",
       "collide": false
+    },
+    {
+      "id": "lot-car-body",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.8,
+        4.4,
+        0.75
+      ],
+      "location": [
+        8.2,
+        -9,
+        0.65
+      ],
+      "material": "car-grey"
+    },
+    {
+      "id": "lot-car-cab",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        2.2,
+        0.6
+      ],
+      "location": [
+        8.2,
+        -9.3,
+        1.32
+      ],
+      "material": "glass"
     }
   ],
   "props": [
@@ -1124,6 +1165,144 @@
         {
           "prop": "master-map",
           "verb": "Raise the map lens to the master map"
+        }
+      ]
+    },
+    "supper_for_two": {
+      "note": "Day 2, 17:30. The light over the counter has come on by itself. Ruth Teague, 58, is at the window with a covered dish: supper for two, because Marisol said six and it is never six. In her recipe tin, a list in Marisol's younger hand: five names, hers, Abel Strand's, and three that belong to nobody anyone can find. Tam may copy it. In the pull-in stands a grey car that belongs to no site (blockout lot-car, there in every booth scene): if a ghost row's plate is in the notebook it matches, the door is unlocked, and a firewood bundle with the booth's tag is on the back seat. Ruth, the dish, the tin and Ruth's own car are not built yet: her car is its headlights from the lot's mouth.",
+      "world": {
+        "color": [
+          0.42,
+          0.46,
+          0.56
+        ],
+        "strength": 0.55
+      },
+      "lights": [
+        {
+          "name": "overcast-late",
+          "type": "SUN",
+          "location": [
+            0,
+            -5,
+            30
+          ],
+          "energy": 0.9,
+          "size": 8,
+          "color": [
+            0.72,
+            0.78,
+            0.9
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "sky-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            12
+          ],
+          "energy": 350,
+          "size": 30,
+          "color": [
+            0.72,
+            0.78,
+            0.9
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "counter-lamp",
+          "type": "POINT",
+          "location": [
+            -6.4,
+            2,
+            2.3
+          ],
+          "energy": 45,
+          "size": 0.2,
+          "color": [
+            1.0,
+            0.82,
+            0.58
+          ]
+        },
+        {
+          "name": "ruth-headlights",
+          "type": "SPOT",
+          "location": [
+            5.5,
+            -13,
+            0.7
+          ],
+          "energy": 220,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.9,
+            0.72
+          ],
+          "look_at": [
+            -4,
+            1,
+            0.8
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -3.6,
+          1.6,
+          1.65
+        ],
+        "look_at": [
+          -5.6,
+          2,
+          1.3
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -3.6,
+          1.6,
+          0
+        ],
+        "facing_deg": 78.7
+      },
+      "hide": [
+        "van",
+        "paper-map",
+        "post-4"
+      ],
+      "interactions": [
+        {
+          "prop": "booth-radio",
+          "verb": "Ask Ruth what Marisol is counting"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Copy the five names from the list in the tin"
+        },
+        {
+          "prop": "firewood-2",
+          "verb": "Try the door of the car nobody came in"
+        },
+        {
+          "prop": "heron-sign",
+          "verb": "Walk back up the spur",
+          "leads_to": "loop_day2pm"
         }
       ]
     }

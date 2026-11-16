@@ -291,6 +291,60 @@
       "type": "counter",
       "default": 0,
       "description": "List items said at their own glyph on the pattern walk, where the true glyph hums."
+    },
+    {
+      "name": "channel_two_heard",
+      "type": "bool",
+      "default": false,
+      "description": "Tam crouched in the split boulder with June after the first Pack List round and heard channel two say the chain back, kettle included (scene channel_two). Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "supper_own",
+      "type": "counter",
+      "default": 0,
+      "description": "Friends who ate the card's own packet (score 3) at Foil Supper 1, 0-4. Each stands on the road with a lantern in the carrying run and holds one post (link: supper to the run)."
+    },
+    {
+      "name": "ghost_plates",
+      "type": "counter",
+      "default": 0,
+      "description": "Licence plates Tam wrote down from the envelope stubs of ghost rows in The Ranger's Book 2, 0-2. One matches a car in the booth lot that belongs to no site (link: stubs to cars)."
+    },
+    {
+      "name": "ruth_met",
+      "type": "bool",
+      "default": false,
+      "description": "Tam met Ruth Teague at the booth at 17:30 on day 2 (scene supper_for_two). Her car is in the lot with its engine running at the dusk choice."
+    },
+    {
+      "name": "tin_list_copied",
+      "type": "bool",
+      "default": false,
+      "description": "Tam copied the five names from the list in Ruth's recipe tin: Marisol's, Abel Strand's, and three that belong to nobody anyone can find."
+    },
+    {
+      "name": "abel_named",
+      "type": "bool",
+      "default": false,
+      "description": "Abel read his own name on the copied list, in Marisol's younger hand, at the gravel bar (scene creek_trail)."
+    },
+    {
+      "name": "sure_stamps",
+      "type": "counter",
+      "default": 0,
+      "description": "Rows Tam stamped Sure in Reconcile 3, 0-3. A stamped row cannot be corrected."
+    },
+    {
+      "name": "sure_wrong",
+      "type": "counter",
+      "default": 0,
+      "description": "Rows stamped Sure that were wrong, 0-3. Each is built as written: a glyph on the pattern walk, and a printed error on the maps in the rack at the other booth (link: stamps to trees)."
+    },
+    {
+      "name": "window_seen",
+      "type": "bool",
+      "default": false,
+      "description": "On Torchlight loop 3, past post 24, Tam switched the torch off and saw one lit window where there is no ground."
     }
   ]
 }

@@ -388,6 +388,7 @@ fixes the chain, Lottie offers the bike at the end of supper), `portrait.*`, `ac
 | 2 | `torch_loop_1` | 2D | Walk from site 20 down the east leg and round to the booth, ticking posts 19 to 4. Payphone. Walk back the same way. Posts 4, 5, 6 are not there: dark ground between the booth and post 7. |
 | 3 | `payphone_night1` | 3D | The booth after closing; the payphone. Agnes: "Find the split boulder. You slept in the crack of it." Marisol's window is dark; the radio on its shelf murmurs. |
 | 4 | `pack_list_1` | 1D | "I packed my bag." A blue enamel kettle that nobody added; Tam saw it on site 5's table at 16:10. |
+| 4a | `channel_two` | 3D | Accepted 2026-11-15, built 2026-11-16. After the round June is not at the ring. She is in the crack of the split boulder at 21 with her walkie on channel two. A voice says the list half a second before she does, kettle included; the chain is on her forearm in biro. `channel_two_heard`. |
 | 5 | `campfire_night1` | 3D | The first theory (section 12). |
 
 **Encounters.** The friends disbelieve the missing posts in different ways: Inés wants a photo, Rafe
@@ -447,7 +448,8 @@ to the booth and back for one fetch.
 | --- | --- | --- | --- |
 | 1 | `loop_day2pm` | 3D | The hub, as above. Carried things are placed in the slots at the five sites (two per site, ten in all). |
 | 2 | `rangers_book_2` | 1D | Optional errand: two days of totals, a cash count; Marisol watches the sums fail. |
-| 3 | `creek_trail` | 3D | Optional errand: Abel's gravel bar. |
+| 2a | `supper_for_two` | 3D | Accepted 2026-11-15, built 2026-11-16. 17:30, no units: Ruth Teague at the booth window with a covered dish. Her recipe tin holds a list in Marisol's younger hand, five names; Tam may copy it (`tin_list_copied`). The grey car in the pull-in belongs to no site: with a plate from the stubs (`ghost_plates`) its door opens, and a firewood bundle with the booth's tag is on the back seat. `ruth_met`. |
+| 3 | `creek_trail` | 3D | Optional errand: Abel's gravel bar. With the five names copied, Abel reads his own (`abel_named`): "That's my name. In her hand. I've never met her." |
 | 4 | `dusk_choice` | 3D | 19:30, at the van. Rafe gives Tam the keys. Who sleeps inside tonight? (section 12). Or drive out alone. |
 | 5 | `torch_loop_2` | 2D | The carrying run: posts 16 to 19 go one by one at their times unless in Tam's light. |
 | 6 | `foil_supper_2` | 1D | Supper at full dark, with the guest if there is one. |
@@ -457,7 +459,10 @@ the player confirms, the person says the one tie that will forget them: Marisol,
 me at six. She'll keep a plate." Abel, "Call Nell for me, when there's a phone." Then: **Ask them to
 stay** or **Let them go home**. Only one person fits the space left in the tents. The Ashbys are
 not asked: at 19:30 their lantern is lit at site 17, and Lottie waves at the van. If the player takes the keys and
-drives out alone, the run branches to The One Who Left at once.
+drives out alone, the run branches to The One Who Left at once. With `ruth_met` (accepted
+2026-11-15, built 2026-11-16), Ruth's engine can be heard running in the booth lot the whole time
+the choice stands open, and two lights show far down the road; with `abel_named`, Abel adds: "I was
+one of five once. I'd like to be one of six."
 
 **Flags set.** `hold`, `anchors`, `person_brought`, `left_alone`, `logbook_carried`, `posts_pulled`,
 `ranger_doubts`, `abel_believes`, `time_units`, `warmth`, `supper_shared`.
@@ -525,11 +530,13 @@ over. No jump, no crouch, no sprint beyond the jog. Interaction range 2 m.
 | `loop_day1` | Loop road, west leg to 12, east leg to 20 | 900 m loop, 240 × 180 m | First person | Posts 1–20, owl box (7), creek bend (12), register (copy Abel's line), Lottie's bike (17), blue kettle (5, look only) | Late afternoon, long shadows | Creek on the west leg, children far off, the van idling behind | Map lens at posts 1–3 fires the first notebook prompt | cut / cut |
 | `fixed_sites_day1` | Sites 20–24 and the shared ring at 22 | 180 × 60 m | First person | Tents (pitch with Dell), split boulder (21), each friend, slots (ten, two per site), chalkboard | Golden hour | Tent poles, laughter, a bottle opened | Talking to all four opens Reconcile | cut / push-in |
 | `payphone_night1` | The booth after closing | 20 × 15 m | First person, torch on | Payphone (call Agnes), booth radio (listen), master map behind glass (lens it) | Torch only; booth window dark | Moths at the payphone bulb; dial tone; Agnes's voice | Hanging up returns to the 2D walk | flatten / flatten |
+| `channel_two` | The split boulder at 21, after the Pack List round | 8 × 6 m of a 180 × 60 m set | First person, crouched, torch on | The crack (crouch in beside June), June's forearm (read the chain), the walkie (listen), the notebook (write what it said) | Torch only; a green dial glow in the crack; the fire at 22 far off | A hiss, then a voice half a second ahead of June's; no crickets inside the rock | Writing the line, or walking back to the fire | pull-out / cut |
 | `campfire_night1` | The ring at 22 | 12 m circle | First person, seated, free look | Each friend (one line), the fire (theory choice) | Firelight, 2200 K | Fire, crickets | Theory chosen ends the day | pull-out / fade |
 | `fixed_sites_day2` | Sites 20–24, morning | 180 × 60 m | First person | Inés's camera, postcard, bicycle, Lottie (walks up), notebook to Inés | Overcast, flat | Fewer birds than yesterday (one in three calls cut) | Leaving site 20 southward opens Reconcile 2 first | fade / push-in |
 | `loop_day2am` | The loop down to the booth | As loop, west leg ends at 12 | First person | Posts 12–19, the register (gap), the creek | Grey noon light | Creek; no children | Reaching the booth | cut / cut |
 | `booth_day2` | Booth | 60 × 40 m | First person | Marisol, logbook (asks to see) | Grey | Radio | Asking opens The Ranger's Book 1 | cut / push-in |
 | `loop_day2pm` | Loop 13–24, booth, slots | Loop with west leg gone | First person | Errand targets (section 8), ten slots, chalkboard | Afternoon, dimming | Wind in the canopy, sparse birds | Each errand costs units on completion; at 0 units, Dell calls everyone back | cut / cut |
+| `supper_for_two` | The booth at 17:30, the pull-in | 60 × 40 m | First person | Ruth at the window (the dish, the tin and its list), the logbook, the grey car in the pull-in (its plate, its door, the bundle on the back seat) | Grey going blue; the counter light on by itself; headlights from the lot | Ruth's engine ticking as it cools, the radio off for once | Copying the list, or walking back up the spur | pull-out / cut |
 | `creek_trail` | Creek trail to the gravel bar | 300 m path | First person | Abel, his pack, his trail log | Water light | Creek, Abel humming | Showing the copied line | cut / cut |
 | `dusk_choice` | Edge of site 20, the van | 30 × 20 m | First person | Keys (Rafe), each persuaded person, the van door | Blue hour | Car door, the hush before dark | Confirming a choice | cut / flatten |
 | `campfire_night2` | The ring at 22 | 12 m circle | First person, seated | Friends, guest, the fire | Firelight; beyond it, no horizon | Fire; no crickets | Theory chosen | cut / push-in |
@@ -906,7 +913,7 @@ ends.
 | The heron sign | 2 | 1 | 2 units, or 1 with `warmth` ≥ 6 |
 | Posts 16, 17, 18, 19 | 1 each | 1 each | By day, 1 unit each; or in the carrying run, free |
 | The quiet-hours board | 1 | 1 | 1 unit |
-| The firewood bundle | 1 | 1 | Bought on day 1 |
+| The firewood bundle | 1 | 1 | Bought on day 1; or, if it was not, found in the unlocked car in the booth lot (`supper_for_two`, with `ghost_plates`; built 2026-11-16). It is the same anchor either way: one bundle, one slot |
 | Lottie's bicycle | 1 | 1 | Borrowed on day 1 |
 | Marisol | 5 | 2 | `ranger_doubts`, asked at dusk; brings the logbook with her if Tam has not got it (it shares her site) |
 | Abel | 5 | 2 | `abel_believes`, asked at dusk |
@@ -1310,11 +1317,13 @@ nothing about the cause.
 | Who | Want | Secret | Scene | Phase |
 | --- | --- | --- | --- | --- |
 | Marisol Teague (deepened) | A book that adds up. | The one above, kept from herself. | The First Page | 1 (built) |
-| June Okafor (deepened) | To be believed. | A voice on channel two has played the game with her since night 1, saying the list half a second before she does; she keeps the chain on her forearm in biro. | Channel Two | The backwards lap: 1 (built). The voice and the arm: 2 |
-| Abel Strand (deepened) | Somebody to know where he has been. | He was one of Marisol's five. | The Gravel Bar | 2 |
-| Ruth Teague (new on stage) | Marisol retired and home. | A recipe tin holding a list in Marisol's younger hand: five names, hers, Abel's, and three that belong to nobody anyone can find. | Supper for Two | 2 |
+| June Okafor (deepened) | To be believed. | A voice on channel two has played the game with her since night 1, saying the list half a second before she does; she keeps the chain on her forearm in biro. | Channel Two | The backwards lap: 1 (built). The voice and the arm: 2 (built 2026-11-16: `channel_two`, and Pack List's second round) |
+| Abel Strand (deepened) | Somebody to know where he has been. | He was one of Marisol's five. | The Gravel Bar | 2 (built 2026-11-16: `creek_trail`, `abel_named`; he sits in at Pack List's third round) |
+| Ruth Teague (new on stage) | Marisol retired and home. | A recipe tin holding a list in Marisol's younger hand: five names, hers, Abel's, and three that belong to nobody anyone can find. | Supper for Two | 2 (built 2026-11-16: `supper_for_two`) |
 
-Ruth is 58 and drives a school bus. Until phase 2 she remains a name in section 6.
+Ruth is 58 and drives a school bus. She is on stage from phase 2: once, at the booth at 17:30 on
+day 2, and as an engine running in the lot at the dusk choice. **Voice** (the deep dive's line):
+"Eleven years of envelopes at my kitchen table. I've stopped asking what she's counting."
 
 **Act structure.** Source: the author's beat. Existing: already in this design. New: accepted here.
 
@@ -1323,12 +1332,12 @@ Ruth is 58 and drives a school bus. Until phase 2 she remains a name in section 
 | 1 | Twenty Through Twenty-Four | Source | The map over empty ground. "They just don’t exist." | Existing |
 | 2 | Puddle | Existing | The owl box, the chain fixed, Abel signing in. | Existing |
 | 3 | The Kettle | Existing, deepened | Pack List 1, with the backwards lap; the kettle goes on the List. | Phase 1 |
-| 4 | Channel Two | New | The voice says the list back, kettle included. | Phase 2; scene to add |
+| 4 | Channel Two | New | The voice says the list back, kettle included. | Phase 2, built 2026-11-16: `channel_two` |
 | 5 | Always Started at Twelve | Source | "No one even remembers they were there." | Existing |
 | 6 | The First Page | New, **midpoint reversal** | The logbook was a notebook. "What is taking this place" becomes "what did keeping a record make of her". | Phase 1, inside `rangers_book_2` |
-| 7 | Supper for Two | New | Ruth, the dish, the tin. | Phase 2; scene to add |
-| 8 | The Gravel Bar | Existing, deepened | Abel reads his name. | Phase 2 |
-| 9 | Who Sleeps Inside | Existing, deepened | The dusk choice, with Ruth's engine running in the lot. | Phase 2 |
+| 7 | Supper for Two | New | Ruth, the dish, the tin. | Phase 2, built 2026-11-16: `supper_for_two` |
+| 8 | The Gravel Bar | Existing, deepened | Abel reads his name. | Phase 2, built 2026-11-16: `creek_trail` reads `tin_list_copied`, writes `abel_named` |
+| 9 | Who Sleeps Inside | Existing, deepened | The dusk choice, with Ruth's engine running in the lot. | Phase 2, built 2026-11-16: `dusk_choice` reads `ruth_met`, `abel_named` |
 | 10 | The Seat Nobody Filled | Existing, deepened, **darkest moment** | Pack List 2. The empty seat says all nineteen without a slip and adds a twentieth: "a notebook". Tam may put the notebook on the fire. | Phase 3 |
 | 11 | The Wrong Sky | Source | "Their phones show no signal, no time, no date." | Existing |
 | 12 | Nineteen Things, then The Window | Existing, deepened | The walk, recited backwards. The booth. The car. | Reciting: phase 1. The window: phase 3 |
@@ -1365,19 +1374,56 @@ Art items 5 and 6 (the key art and Slipped Through's ending card) are generated 
 and are not made in this pass; the web modules put the title lettering and a fitting code-drawn
 card behind each result instead.
 
-**Scenes to add** (not in `data/scenes.json` yet; the storyboards and build files follow with them
-in phase 2): `channel_two` (3D, the split boulder after the first fire, chapter 2) and
-`supper_for_two` (3D, the booth at 17:30 on day 2, chapter 4). The First Page needs no new scene:
-it is the close of `rangers_book_2`.
+**Scenes added in phase 2** (2026-11-16; in `data/scenes.json`, in their locations in
+`assets/assets.json`, in the build files, and as two rows in `storyboard_additions.md`):
+`channel_two` (3D, the split boulder after the Pack List round, chapter 2; location `five-sites`)
+and `supper_for_two` (3D, the booth at 17:30 on day 2, chapter 4; location `entrance-booth`). The
+First Page needs no new scene: it is the close of `rangers_book_2`. No new location was needed, so
+no new location image was made.
 
-**Waits for phase 2.** Channel Two, Supper for Two, the deepened Gravel Bar, Ruth's car at the dusk
-choice; the three links between layers (stubs to cars, supper to the run, stamps to trees); June's
-arm and a guest's item in Pack List; portraits.
+**Built in phase 2 (2026-11-16).** The author wrote "start phase 2"; every decision above was yes.
 
-**Waits for phase 3.** The notebook on the fire and Unlisted; the seat's twentieth item; Sure
-stamps and rows built as written; borrowed light, the flash, the short road and the torch-off
-window; coal zones, "read it to me" and the spare sheet; envelope stubs and carbons; the scale bar
-and creases; the remaining ending costs; second-run details.
+*The ladders.* Each web mode is now three short stages, teach, test and twist, with a result after
+each and progress remembered. The steps are the deep dive's (section 3); each stage plays one of
+this design's appearances of the mode.
+
+| Mode | Teach | Test | Twist | Set-piece |
+| --- | --- | --- | --- | --- |
+| Torchlight loop | `torch_loop_1`, its last stretch: tick posts 7 to 4 on the way to the payphone | `torch_loop_2`, the carrying run, with **borrowed light**: the Ashbys' lantern holds 17 until it goes out | `torch_loop_3`: the batteries are nearly flat and nothing is left to keep lit. The new control is the off switch (F); the walk is made dark, by the pencil strip | Past post 24, torch off: where there is no ground, one small square of light, a window. Ticked in the Tally (`window_seen`) |
+| The pattern walk | 19, 18, 17: one written detail, two glyphs | 16, 15, 14: four glyphs with overlapping details; reciting; the book's counts | 13, 12: the place built from the notebook. Row 12 was written wrong ("three slept here"; the book and the List say four) | The site Tam got wrong: a glyph that matches the line exactly and was never there |
+| Reconcile | `reconcile_1`: rows 1 to 3; map, legend and the booth's master map agree with each other and not with the ground | `reconcile_2`, rows 7 to 19: three sources wrong in three ways, and the **scale bar** (M), which is one step behind the road and gives the size of the steps | `reconcile_3` with a fifth source, Marisol's first page: a line for every row, the same numbers, a different campground. Rows 13 to 15 were never walked and the right note is Unknown; copying hers is the mistake. Three **Sure** stamps | By headlamp, two notebooks side by side: row 21 is one sentence in two hands |
+| Pack List | Night 1, one lap: the chain and one phantom (the kettle) | The backwards lap with two phantoms (a heron sign; "Puddle the bicycle", the List's 17). **June's arm**, once a round. Channel two says June's words a half-second early | Night 2, seven seats: Abel adds **a guest's item** (Nell's telephone number), and the seat nobody filled is dealt a turn and plays to win. "Nobody said that" is now the wrong move: it was said | The seat's turn: the words rise in the band before any mouth moves. It adds what Tam wrote and never said: the tall cedar (row 16), then the owl box (row 7) |
+| Foil Supper | `foil_supper_1`: the card's own packet, and copying the card | `foil_supper_2`: substitution, with **coal zones** (hot end, middle, cool end) | `foil_supper_3`, breakfast: grey apples and a salt with no taste cook backwards, so a packet with one in it goes off the coals. One sheet too many: fill it or leave it | A packet opens on Bea's supper, made from the card's lost lines: exactly right, and it tastes of nothing |
+| The Ranger's Book | `rangers_book_1`: persons and permit order | `rangers_book_2`: two days and a refund, with **envelope stubs** (permit, nights, licence plate) | The first page, and then `rangers_book_3` read from the other side: only counts are left, and each is matched to the glyph that slept that many (`pattern_key`) | On the oldest page, the first ink row: permit 0001, party Teague |
+
+*The three links between layers.*
+
+| Link | From | To | State | Built |
+| --- | --- | --- | --- | --- |
+| Stubs to cars | The Ranger's Book 2: a locked ghost row's envelope stub gives a licence plate, written in the notebook | `supper_for_two` (3D): the grey car in the booth's pull-in belongs to no site; with a plate written down, its door is unlocked and a firewood bundle (weight 1) is on the back seat | `ghost_plates` | The 1D end plays in the web build; the 3D end is in `data/scenes.json` and the booth's build file |
+| Supper to the run | Foil Supper 1: each friend who eats the card's own packet (score 3) | Torchlight loop 2: that friend stands on the road with a lantern and holds one post (two at most, the nearest two) | `supper_own` | Playable now, both ends |
+| Stamps to trees | Reconcile 3: rows stamped Sure | The pattern walk: a right row stamped Sure loses one false glyph at its junction; a wrong one stands built as written, a glyph that is a trap. `other_entrance` (3D): the maps in the rack print Tam's stamped errors | `sure_stamps`, `sure_wrong` | Playable now between the two web modes; the rack is in `data/scenes.json` |
+
+Two smaller carries were built with them because the rules already asked for them: the first page,
+once read (`first_page_read`), marks in Reconcile 3 the rows of Marisol's that Tam ringed; and
+`pattern_key` from the Ranger's Book's last pages gives the pattern walk one more reading of the
+counts. The List's items are shared by the modes that gather them.
+
+*Where the web ladders ran ahead of the roadmap.* The deep dive's roadmap put some of the ladder's
+own elements in phase 3 (borrowed light and the torch-off window; Sure stamps and rows built as
+written; coal zones and the spare sheet; envelope stubs; the scale bar). The phase 2 brief asked for
+every ladder to be built whole, so those are built now, in the web modes only. The 3D game's own
+rules for them, and section 14's "Never changes" for the notebook, stand as written until phase 3.
+
+*The collection thread.* An envelope stamped HOLD (Project: Man Eater's object) lies on the last
+pages of the logbook in The Ranger's Book's twist. It is not announced and changes nothing.
+
+**Waits for phase 3.** The notebook on the fire and Unlisted; the seat's twentieth item, "a
+notebook" (in phase 2 the seat adds only rows Tam wrote: the tall cedar, the owl box); the flash and
+the short road; counted in; "read it to me" and `seat_fed`'s effect on the seat's next item (the
+web build records whether the spare sheet was filled, nothing reads it yet); carbons; creases; the
+sharpened ending costs and the window at `other_entrance`; second-run details; the generated
+portraits, Ruth's dish, the tin and the two cars as props.
 
 ## 21. Added for the game
 
@@ -1411,3 +1457,14 @@ Everything below is not in the author's text and is offered for approval or stri
 | Accepted 2026-11-15, for phase 3: the seat's twentieth item, "a notebook", and the choice to burn the notebook; the ending Unlisted, its condition and its cost; the added beats in the five existing endings | Section 20a |
 | Accepted 2026-11-15, for phases 2 and 3: the other mode rules of the deep dive (borrowed light, the flash, the short road, the torch-off window; counted in, wrong rows built as written; the scale bar, Sure stamps, creases, the first page as a fifth source; June's arm, a guest's item, the seat playing to win; coal zones, "read it to me", the spare sheet and `seat_fed`, cold-cooking unknowns, Bea's supper from uncopied lines; envelope stubs and plates, carbons, the keeper's own row) and the second-run details | Section 20a; `DEEP_DIVE.md` sections 3 and 6 |
 | Accepted 2026-11-15: the dramatic question, Tam's want and need, the style bible and the asset list | Section 20a; `DEEP_DIVE.md` sections 2 and 4 |
+| Accepted 2026-11-15, built 2026-11-16: the scene `channel_two` (June in the split boulder after the Pack List round; the voice on channel two; the chain on her forearm) and the flag `channel_two_heard` | Sections 8, 9, 20a; `data/scenes.json` |
+| Accepted 2026-11-15, built 2026-11-16: the scene `supper_for_two` (Ruth at the booth at 17:30 with a covered dish; the recipe tin and its list of five names) and the flags `ruth_met`, `tin_list_copied` | Sections 8, 9, 20a; `data/scenes.json` |
+| Accepted 2026-11-15, built 2026-11-16: the deepened Gravel Bar (Abel reads his name; `abel_named`) and the dusk choice with Ruth's engine running in the lot | Section 8; `data/scenes.json` |
+| Accepted 2026-11-15, built 2026-11-16: the three links between layers and their flags `ghost_plates`, `supper_own`, `sure_stamps`, `sure_wrong` | Section 20a; `data/flags.json` |
+| Accepted 2026-11-15, built 2026-11-16 in the web modes: the ladders (teach, test, twist) and their set-pieces: borrowed light, the off switch and the lit window (`window_seen`); the pattern walk's row built as written; the scale bar, Sure stamps, Marisol's first page as a fifth source, row 21 in two hands; June's arm, the voice on channel two, a guest's item, the seat playing to win; coal zones, cold-cooking unknowns, the spare sheet, Bea's supper from the lost lines; envelope stubs and plates, book 3 read as trees | Section 20a; `web/games/missing-campsites/` |
+| **Added 2026-11-16, not in the deep dive, for approval or striking:** the firewood bundle as the "one thing with weight 1" in the car (so the anchors still fill ten slots and weigh 14); the grey car standing in the pull-in from day 1; Supper for Two costing no time units and coming at 17:30 whatever Tam is doing | Sections 8, 12 |
+| Added 2026-11-16, for approval: Channel Two placed between the Pack List round and the first theory, so the night's erasure step still falls on `campfire_night1` | Section 8 |
+| Added 2026-11-16, for approval: the second ledger page of The Ranger's Book (parties Wren, Brandt, Osei, Ashby, Quill, Varo; permits 0420 to 0427; Quill's refund; the eight plates, of which 7KD 204 and 2HN 880 are the ghost rows'); the five counts of the last pages | `web/games/missing-campsites/rangers-book.js` |
+| Added 2026-11-16, for approval: the ten rows of Marisol's first page used in Reconcile 3 (a footbridge, a flagpole, a pump, a stone oven and the rest), and row 12 of Tam's page written wrong as "three slept here" | `reconcile.js`, `pattern-walk.js` |
+| Added 2026-11-16, for approval: Pack List's second and third rounds (Dell's "a heron sign" and Inés's "Puddle the bicycle" as the backwards lap's phantoms; the seat adding the tall cedar and the owl box; Dell's "I'm not playing against a chair."); the coal-zone rule (sausage hot or middle, lentil cake cool or middle, the middle takes two); every new line of dialogue and notebook text in the six modules. None of it is the author's | `web/games/missing-campsites/` |
+| Added 2026-11-16, for approval: Abel's line at the dusk choice, "I was one of five once. I'd like to be one of six." | Section 8 |

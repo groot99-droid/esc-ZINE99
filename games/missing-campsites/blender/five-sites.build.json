@@ -976,6 +976,115 @@
         }
       ]
     },
+    "channel_two": {
+      "note": "Night 1, after the Pack List round and before the first theory. June has left the ring at 22 and is crouched in the crack of the split boulder at 21 with her walkie on channel two. Tam crouches in beside her: the voice says the chain half a second before she does, kettle included, and the chain is on her forearm in biro. Never shown: the speaker. June is a character, not a prop; the walkie is in her hand.",
+      "world": {
+        "color": [
+          0.02,
+          0.03,
+          0.06
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "torch",
+          "type": "SPOT",
+          "location": [
+            -38.4,
+            -7.2,
+            1.1
+          ],
+          "energy": 90,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.71,
+            0.42
+          ],
+          "look_at": [
+            -41,
+            -6,
+            0.6
+          ]
+        },
+        {
+          "name": "walkie-dial",
+          "type": "POINT",
+          "location": [
+            -41.1,
+            -5.9,
+            0.55
+          ],
+          "energy": 3,
+          "size": 0.05,
+          "color": [
+            0.55,
+            0.95,
+            0.6
+          ]
+        },
+        {
+          "name": "fire-at-22-far",
+          "type": "POINT",
+          "location": [
+            -2,
+            2,
+            0.6
+          ],
+          "energy": 300,
+          "size": 0.6,
+          "color": [
+            1.0,
+            0.55,
+            0.2
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -38.4,
+          -7.2,
+          1.15
+        ],
+        "look_at": [
+          -41,
+          -6,
+          0.7
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -38.4,
+          -7.2,
+          0
+        ],
+        "facing_deg": 65.2
+      },
+      "hide": [
+        "bicycle",
+        "van-keys",
+        "camera",
+        "cooler"
+      ],
+      "interactions": [
+        {
+          "prop": "split-boulder",
+          "verb": "Crouch into the crack beside June"
+        },
+        {
+          "prop": "notebook",
+          "verb": "Write down what channel two said"
+        },
+        {
+          "prop": "post-22",
+          "verb": "Go back to the fire",
+          "leads_to": "campfire_night1"
+        }
+      ]
+    },
     "fixed_sites_day2": {
       "note": "Day 2 morning, overcast and flat; fewer birds. Ines's site 7 photo shows a clearing; the postcard has two blank lines; Lottie walks up for the bicycle at the boulder. Leaving site 20 southward.",
       "world": {
@@ -1080,7 +1189,7 @@
       ]
     },
     "dusk_choice": {
-      "note": "19:30, blue hour, at the edge of site 20 by the van. Rafe gives Tam the keys. Each persuaded person says the tie that will forget them: ask them to stay, or let them go home. Or drive out alone.",
+      "note": "19:30, blue hour, at the edge of site 20 by the van. Rafe gives Tam the keys. Each persuaded person says the tie that will forget them: ask them to stay, or let them go home. Or drive out alone. Phase 2: if Tam met Ruth, her car stands in the booth lot with its engine running, heard from here and seen as a pair of lights far down the road; the covered dish is on its passenger seat.",
       "world": {
         "color": [
           0.18,
@@ -1146,6 +1255,22 @@
             1.0,
             0.8,
             0.55
+          ]
+        },
+        {
+          "name": "ruth-car-far",
+          "type": "POINT",
+          "location": [
+            -89,
+            -29,
+            0.8
+          ],
+          "energy": 10,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.9,
+            0.72
           ]
         }
       ],

@@ -22,28 +22,52 @@
 // open the run, and the result stands over the figure that fits how it ended. The charcoal ground is
 // still drawn here; the flat shapes are the fallback for any sprite that is missing.
 
-import { pic, chapterCard, resultCard, raster } from "./kit.js";
+// Phase 2 (2026-11-16): the ladder. Three stages, each a sequence of DESIGN.md section 10:
+//   1 Teach  torch_loop_1's last stretch: tick posts 7 to 4 on the way to the payphone bulb. No carrying.
+//   2 Test   torch_loop_2, the carrying run, with borrowed light: the Ashbys' lantern holds 17 until it
+//            goes out, so the route is planned round it. Link (supper to the run): each friend whose
+//            packet was the card's own at supper 1 (Foil Supper, stage 1) stands on the road with a
+//            lantern and holds one post.
+//   3 Twist  torch_loop_3. Nothing is left to save and the batteries are nearly flat. The new control
+//            is the off switch (F): walk dark by the pencil strip, and past post 24, where there is no
+//            ground, wait in the dark for the set-piece: one small square of light, a window. Tick it.
+
+import { pic, chapterCard, resultCard, raster, ladder, stageTabs, linkNote } from "./kit.js";
 
 const PPM = 24;                       // pixels per metre in the pre-drawn ground
 const WX0 = -9, WX1 = 11, WY0 = -7, WY1 = 62;
 const TORCH_R = 1.75;                 // the circle is 3.5 m across
 const RAISE_K = 1.85;                 // raised, the circle reaches further
 const SPEED = 1.4;
-const RUN_S = 205;                    // Dell calls at the van
-const POSTS = [
-  { n: 19, y: 14, due: 170 }, { n: 18, y: 26, due: 140 },
-  { n: 17, y: 38, due: 70 }, { n: 16, y: 50, due: 40 },
-];
+const NAMES = ["Ticking", "The carrying run", "The off switch"];
+const STAGE = {
+  1: { run: 85, base: 12, battery: 100, posts: [{ n: 7, y: 10, due: 1e9 }, { n: 6, y: 19, due: 62 }, { n: 5, y: 28, due: 50 }, { n: 4, y: 37, due: 38 }] },
+  2: { run: 150, base: 5, battery: 100, posts: [{ n: 19, y: 11, due: 135 }, { n: 18, y: 20, due: 110 }, { n: 17, y: 29, due: 100, lantern: true }, { n: 16, y: 38, due: 36 }] },
+  3: { run: 110, base: 0, battery: 10, posts: [{ n: 20, y: 4, due: 1e9 }, { n: 21, y: 12, due: 1e9 }, { n: 22, y: 20, due: 1e9 }, { n: 23, y: 28, due: 1e9 }, { n: 24, y: 36, due: 1e9 }] },
+};
+const EDGE_Y = 41;                    // stage 3: past post 24 there is no ground
+const PHONE_Y = 44;                   // stage 1: the payphone bulb
 const DX0 = -24, DX1 = 26, DY0 = -16, DY1 = 72;   // the charcoal reaches past any screen
 const roadX = (y) => 2.1 * Math.sin(y / 8.5);
 const PFX = "missing-campsites-torchlight-loop-";
 
 const TEXT = {
-  when: "Day 2 · dusk · the carrying run",
-  goal: "Carry three of posts 16 to 19 into the five sites before Dell calls the van.",
-  warn: "A post goes the first moment no light is on it. Sixteen is furthest. It will go first.",
-  gentle: "A gentler run: the posts hold on twenty-five seconds longer.",
-  open: "Dusk. The five sites behind you, the road ahead. Sixteen is furthest.",
+  when: ["Night 1 · the walk down to the payphone", "Day 2 · dusk · the carrying run", "Night 2 · the circle of five"],
+  goal: ["Tick three of posts 7 to 4 in your Tally before you reach the payphone.", "Carry three of posts 16 to 19 into the five sites before Dell calls the van.", "Find what is past post 24 before the torch dies."],
+  warn: ["A post goes the first moment no light is on it. What is ticked in pencil stays ticked.", "A post goes the first moment no light is on it. Sixteen is furthest. It will go first. The Ashbys' lantern is still lit at 17.", "The batteries are nearly flat, and there is nothing left out here to keep lit. The torch has an off switch."],
+  gentle: ["A gentler walk: the posts hold on twenty-five seconds longer.", "A gentler run: the posts hold on twenty-five seconds longer.", "A gentler night: the torch has a little more in it."],
+  open: ["Dark. The bulb over the payphone is the one light ahead. Seven, six, five, four.", "Dusk. The five sites behind you, the road ahead. Sixteen is furthest.", "The road you carried from is forest floor now. Twenty to twenty-four stand in their slots. The torch is browning already."],
+  phone: "The payphone. One bulb, and moths. Behind you the road is shorter than it was.",
+  lantern: "The Ashbys' lantern is lit on the table at 17. While it burns, 17 holds without you.",
+  lanternOut: "At 17 the Ashbys' lantern goes out. Nobody is seen putting it out.",
+  friend: (who, n) => `${who} stands at ${n} with a lantern. That one holds.`,
+  off: "Off. The posts stay where they are. They are yours now; they do not need the light.",
+  offHint: "The torch will not last to 24. F switches it off; your pencil strip still knows where you are.",
+  darkNothing: "Dark. Your eyes open up, and there is nothing here to open them for.",
+  edge: "Past 24 the torch shows no ground at all. Not dark ground. None.",
+  window: "Where there is no ground: one small square of light. A window, lit. Waiting. (T: put it in the Tally.)",
+  glare: "With the torch on there is only the edge. The square is gone.",
+  noWindow: "Nothing to tick here.",
   firstPull: "Heavy. The post comes up with a clod of the road still on it.",
   raise: "Rafe, on the walkie: \"Point it up the road. Further. There.\" Hold Space to raise the torch.",
   tick: "Your pencil is in your pocket. T ticks a post in the Tally, and the Tally does not forget.",
@@ -57,6 +81,11 @@ const TEXT = {
   swapping: "You stop and thumb the batteries out in the dark.",
   swapped: "Fresh batteries. The circle whitens and opens.",
   end: {
+    t1win: (n) => `${n} ticks in your Tally by the time you reach the payphone. On the walk back the gravel narrows three times, and the counter on the map says thirteen. Your pencil says what it said.`,
+    t1lose: (n) => `${n ? `Only ${n} tick${n === 1 ? "" : "s"}` : "No ticks"} in your Tally. On the walk back the gravel narrows three times, and you could not say what stood there.`,
+    t3win: "A window, lit, where there is no ground. You tick it in the Tally under 24, and walk back to the five by the pencil strip, in the dark, without needing to see.",
+    t3time: "Dell calls you back to the fire. Whatever is past 24, you did not see it.",
+    t3june: "The torch dies at the edge with its light on. June's walkie crackles, and she comes with a lantern and walks you back. By lantern there is only the edge.",
     june: "The torch dies. June's walkie crackles, and she comes down the road with a lantern and walks you home.",
     van: "Dell calls everyone to the van.",
     win: (held) => `${held} posts stand in the slots at the five sites, and the road behind them is forest floor. Whatever crosses tonight, they cross with it.`,
@@ -121,7 +150,7 @@ const CSS = (p) => `
 @media (max-width:520px){.${PFX}hud{font-size:15px;padding:6px 9px}.${PFX}tally{width:70px;font-size:19px}.${PFX}btns{bottom:76px}.${PFX}btns button{min-width:104px;padding:11px 9px;font-size:13px}.${PFX}msg{top:26%}}
 `;
 
-function drawGround(rng) {
+function drawGround(rng, stage) {
   const c = document.createElement("canvas");
   c.width = (WX1 - WX0) * PPM; c.height = (WY1 - WY0) * PPM;
   const g = c.getContext("2d");
@@ -141,8 +170,15 @@ function drawGround(rng) {
     g.fillStyle = rng() < 0.5 ? "rgba(216,204,176,.8)" : "rgba(120,108,88,.7)";
     g.beginPath(); g.arc(X(x), Y(y), 0.6 + rng() * 1.6, 0, 7); g.fill();
   }
-  g.fillStyle = "rgba(179,165,133,.7)";            // the five sites: a trodden clearing at the north end
-  g.beginPath(); g.ellipse(X(1), Y(-2.5), 7.5 * PPM, 3.6 * PPM, 0, 0, 7); g.fill();
+  if (stage === 2) {
+    g.fillStyle = "rgba(179,165,133,.7)";          // the five sites: a trodden clearing at the north end
+    g.beginPath(); g.ellipse(X(1), Y(-2.5), 7.5 * PPM, 3.6 * PPM, 0, 0, 7); g.fill();
+  }
+  if (stage === 3) {                               // the edge of nothing: flat, even, no gravel, no needles, no grain
+    g.fillStyle = "#0b0c0e"; g.fillRect(0, Y(EDGE_Y), c.width, c.height - Y(EDGE_Y));
+    for (let x = 0; x < c.width; x += 5) { g.fillStyle = "#5b4a33"; g.fillRect(x, Y(EDGE_Y) - 2 - rng() * 5, 5, 8); }
+    g.fillStyle = "#0b0c0e"; g.fillRect(0, Y(EDGE_Y) + 3, c.width, 6);
+  }
   return c;
 }
 
@@ -162,8 +198,11 @@ function drawDark(rng) {                           // the charcoal field outside
   return c;
 }
 
-export default {
-  mount(root, api) {
+export default { mount(root, api) { return ladder(root, api, mountStage, NAMES); } };
+
+function mountStage(root, api, stage) {
+  {
+    const CFG = STAGE[stage], RUN_S = CFG.run, POSTS = CFG.posts;
     const p = api.palette || {};
     const rng = api.rng("hollin-torch");
     const losses = api.store.get("losses", 0);
@@ -180,24 +219,31 @@ export default {
         <button type="button" class="raise" hidden>Raise (Space)</button>
         <button type="button" class="swap" hidden>Batteries (B)</button>
         <button type="button" class="tick" hidden>Tick (T)</button>
+        <button type="button" class="off" hidden>Torch off (F)</button>
         <button type="button" class="pull">Pull (hold E)</button></div>
       <div class="${PFX}msg" aria-live="polite"></div>
       <div class="${PFX}intro"><div class="${PFX}card"><h2>Torchlight loop</h2><div class="when"></div>
         <p class="goal"></p><p class="warn"></p>
         <dl><dt>Walk</dt><dd><kbd>WASD</kbd> or arrows, or hold a finger where you want to go</dd>
-          <dt>Pull</dt><dd>at a post, hold <kbd>E</kbd> or Pull for two seconds; carry two at most</dd>
-          <dt>Set</dt><dd>walk back into the five sites; carried posts go into the slots</dd></dl>
+          ${stage === 1 ? `<dt>Tick</dt><dd>at a post, press <kbd>T</kbd> or Tick: it goes in the Tally, in pencil</dd>
+          <dt>Light</dt><dd>hold <kbd>Space</kbd> to raise the torch and reach a post from further off</dd>`
+    : stage === 2 ? `<dt>Pull</dt><dd>at a post, hold <kbd>E</kbd> or Pull for two seconds; carry two at most</dd>
+          <dt>Set</dt><dd>walk back into the five sites; carried posts go into the slots</dd>`
+    : `<dt>Torch</dt><dd><kbd>F</kbd> or the button switches it off and on; off, it does not drain</dd>
+          <dt>Strip</dt><dd>the pencil strip at the bottom shows where you are, light or no light</dd>
+          <dt>Tick</dt><dd><kbd>T</kbd> puts what you find in the Tally</dd>`}</dl>
         <p class="gentle" hidden></p>
         <button type="button" class="go">Start the run</button></div></div>`;
     root.appendChild(wrap);
     const canvas = wrap.querySelector("canvas");
     const ctx = canvas.getContext("2d");
     const $ = (s) => wrap.querySelector(s);
-    $(".when").textContent = TEXT.when; $(".goal").textContent = TEXT.goal; $(".warn").textContent = TEXT.warn;
-    if (gentle) { $(".gentle").hidden = false; $(".gentle").textContent = TEXT.gentle; }
+    $(".when").textContent = TEXT.when[stage - 1]; $(".goal").textContent = TEXT.goal[stage - 1]; $(".warn").textContent = TEXT.warn[stage - 1];
+    if (gentle) { $(".gentle").hidden = false; $(".gentle").textContent = TEXT.gentle[stage - 1]; }
+    stageTabs(api, $(".go"));
     const msgEl = $(`.${PFX}msg`);
     const art = api.art;
-    chapterCard(art, "chapter-4", $(`.${PFX}card`));
+    chapterCard(art, ["chapter-2", "chapter-4", "chapter-5"][stage - 1], $(`.${PFX}card`));
     { const fig = pic(art, "topdown-tam-walk", "fig", ""); if (fig) $(`.${PFX}card .goal`).before(fig);
       const tk = pic(art, "tick", "tk", ""); if (tk) $(`.${PFX}tally b`).after(tk); }
     const dial = pic(art, "walkie-dial", "dial", "");
@@ -219,15 +265,25 @@ export default {
       else c.drawImage(im, x - d / 2, y - d / 2, d, d);
       return true;
     }
-    const ground = drawGround(rng), dark = drawDark(rng);
-    const btn = { pull: $(".pull"), tick: $(".tick"), raise: $(".raise"), swap: $(".swap") };
+    const ground = drawGround(rng, stage), dark = drawDark(rng);
+    const btn = { pull: $(".pull"), tick: $(".tick"), raise: $(".raise"), swap: $(".swap"), off: $(".off") };
+    if (stage !== 2) btn.pull.hidden = true;
+    if (stage === 3) btn.off.hidden = false;
+    if (stage !== 2) wrap.querySelector(`.${PFX}carry`).hidden = true;
 
     const st = {
       x: roadX(1), y: 1, t: 0, battery: 100, carried: [], slotted: [], running: false, over: false,
+      off: false, offT: 0, windowSeen: false, windowTicked: false, winT: -1,
       heading: Math.PI / 2, pullT: 0, pulling: false, raising: false, keys: new Set(), ptr: null, msgT: 0, ticked: new Set(), juneT: -1, flick: 0,
-      swapT: -1, swapsLeft: 1, unlocked: { tick: false, raise: false, swap: false }, beats: new Set(), fx: [],
+      swapT: -1, swapsLeft: stage === 2 ? 1 : 0, unlocked: { tick: stage !== 2, raise: false, swap: false }, beats: new Set(), fx: [],
     };
+    st.battery = CFG.battery + (gentle && stage === 3 ? 5 : 0);
+    if (stage !== 2) btn.tick.hidden = false;
     const posts = POSTS.map((o) => ({ ...o, due: o.due + (gentle ? 25 : 0), x: roadX(o.y) + 2.5, gone: false, pulled: false, gapSeen: false }));
+    // Link, supper to the run: friends fed the card's own packet at supper 1 hold a post each by lantern.
+    const friends = stage === 2 ? ((api.shared && api.shared.get("supper1_threes", [])) || []).filter((n) => typeof n === "string").slice(0, 2) : [];
+    friends.forEach((who, i) => { const o = posts[i]; o.friend = who; o.due = 1e9; });
+    if (friends.length) linkNote(wrap, `Because ${friends.join(" and ")} ate the card's own packet at supper 1 in Foil Supper, ${friends.length > 1 ? "they stand" : friends[0] + " stands"} on the road with a lantern: ${friends.map((_, i) => "post " + posts[i].n).join(" and ")} hold${friends.length > 1 ? "" : "s"} without you.`, { float: true });
     let W = 0, H = 0, S = 40, dpr = 1, raf = 0, last = 0;
 
     function say(text, secs = 3, bad = false) {
@@ -261,9 +317,16 @@ export default {
     const NS = "http://www.w3.org/2000/svg";
     const sv = (tag, a) => { const n = document.createElementNS(NS, tag); for (const k in a) n.setAttribute(k, a[k]); sk.appendChild(n); return n; };
     sv("path", { d: "M24 22 Q150 15 280 22 T536 22", fill: "none", stroke: "#4a4a4c", "stroke-width": 1.8 });
-    const skX = (y) => 30 + (y + 3) / 56 * 500;
-    sv("rect", { x: skX(-2) - 16, y: 14, width: 32, height: 16, fill: "none", stroke: "#2f6b3a", "stroke-width": 1.6 });
-    const t5 = sv("text", { x: skX(-2), y: 50, "text-anchor": "middle", "font-size": 15, fill: "#2b2a27", "font-family": "Caveat, cursive", "font-weight": 700 }); t5.textContent = "20–24";
+    const skX = (y) => 30 + (y + 3) / 50 * 500;
+    if (stage !== 3) {
+      sv("rect", { x: skX(-2) - 16, y: 14, width: 32, height: 16, fill: "none", stroke: "#2f6b3a", "stroke-width": 1.6 });
+      const t5 = sv("text", { x: skX(-2), y: 50, "text-anchor": "middle", "font-size": 15, fill: "#2b2a27", "font-family": "Caveat, cursive", "font-weight": 700 }); t5.textContent = stage === 1 ? "8" : "20–24";
+    } else {
+      sv("path", { d: `M${skX(EDGE_Y)} 8 V36`, stroke: "#4a4a4c", "stroke-width": 1.5, "stroke-dasharray": "3 3" });
+      const te = sv("text", { x: skX(EDGE_Y) + 26, y: 50, "text-anchor": "middle", "font-size": 15, fill: "#2b2a27", "font-family": "Caveat, cursive", "font-weight": 700 }); te.textContent = "edge";
+    }
+    if (stage === 1) { const tp = sv("text", { x: skX(PHONE_Y), y: 50, "text-anchor": "middle", "font-size": 15, fill: "#2b2a27", "font-family": "Caveat, cursive", "font-weight": 700 }); tp.textContent = "phone"; sv("circle", { cx: skX(PHONE_Y), cy: 22, r: 4, fill: "none", stroke: "#4a4a4c", "stroke-width": 1.5 }); }
+    const skWin = sv("rect", { x: skX(EDGE_Y) + 20, y: 17, width: 9, height: 9, fill: "#c9a862", stroke: "#3a2a10", "stroke-width": 1.5, visibility: "hidden" });
     const skMarks = {};
     POSTS.forEach((o) => {
       const m = sv("rect", { x: skX(o.y) - 5, y: 17, width: 10, height: 10, fill: "none", stroke: "#4a4a4c", "stroke-width": 1.5 });
@@ -274,24 +337,26 @@ export default {
     const skDot = sv("circle", { r: 6, cy: 22, fill: p.accent || "#ffb35c", stroke: "#3a2a10", "stroke-width": 1.8 });
 
     const near = () => posts.find((q) => !q.gone && !q.pulled && Math.hypot(q.x - st.x, q.y - st.y) < 1.7);
-    function existing() { return 5 + posts.filter((q) => !q.gone).length; }
+    function existing() { return CFG.base + posts.filter((q) => !q.gone).length; }
     function hud() {
       $(".c").textContent = `POSTS: ${existing()}`;
       const mins = 5 + Math.floor(st.t / RUN_S * 25);      // the run compresses dusk to 19:05–19:30
-      $(".k").textContent = `19:${String(Math.min(30, mins)).padStart(2, "0")} · van at 19:30`;
+      $(".k").textContent = stage === 1 ? `night 1 · ${Math.max(0, Math.ceil(RUN_S - st.t))} s to the payphone` : stage === 3 ? `night 2 · Dell calls in ${Math.max(0, Math.ceil(RUN_S - st.t))} s` : `19:${String(Math.min(30, mins)).padStart(2, "0")} · van at 19:30`;
+      btn.off.textContent = st.off ? "Torch on (F)" : "Torch off (F)"; btn.off.classList.toggle("on", st.off);
+      skWin.setAttribute("visibility", st.windowTicked ? "visible" : "hidden");
       const b = Math.max(0, st.battery);
       $(`.${PFX}bat i`).style.width = b + "%";
       $(".pct").textContent = String(Math.round(b));
       $(`.${PFX}bat`).classList.toggle("low", b < 25);
       $(`.${PFX}bat`).classList.toggle("raised", st.raising && b > 0);
       wrap.querySelectorAll(`.${PFX}carry em`).forEach((e, i) => e.classList.toggle("on", i < st.carried.length));
-      skDot.setAttribute("cx", skX(Math.max(-3, Math.min(53, st.y))));
+      skDot.setAttribute("cx", skX(Math.max(-3, Math.min(47, st.y))));
       for (const o of posts) {
         skMarks[o.n].setAttribute("fill", st.slotted.includes(o.n) ? "#2f6b3a" : o.pulled ? "#8a5a3b" : st.ticked.has(o.n) ? "#a9a291" : "none");
       }
       const q = near();
       btn.pull.classList.toggle("ready", !!q && st.carried.length < 2);
-      btn.tick.classList.toggle("ready", !!q && !st.ticked.has(q.n));
+      btn.tick.classList.toggle("ready", stage === 3 ? st.windowSeen && !st.windowTicked : !!q && !st.ticked.has(q.n));
       btn.pull.classList.toggle("on", st.pulling);
       btn.raise.classList.toggle("on", st.raising);
       btn.swap.disabled = st.swapsLeft <= 0 || st.swapT >= 0;
@@ -300,11 +365,18 @@ export default {
     function paintTally(fresh) {
       const tl = [...st.ticked].sort((a, b) => b - a).map((n) => `<div class="${n === fresh ? "new" : ""}">${n} |</div>`).join("");
       $(".t").innerHTML = tl || "&nbsp;";
-      $(".slot").textContent = `slots ${st.slotted.length}/10`;
+      if (st.windowTicked) $(".t").innerHTML = `<div class="new">a window, lit</div>`;
+      $(".slot").textContent = stage === 1 ? `ticks ${st.ticked.size}/4` : stage === 3 ? "past 24:" + (st.windowTicked ? " ✓" : " ?") : `slots ${st.slotted.length}/10`;
     }
 
     function tick() {
       if (!st.unlocked.tick) return;
+      if (stage === 3) {
+        if (!st.windowSeen || !st.off) { say(TEXT.noWindow, 1.4, true); return; }
+        if (st.windowTicked) return;
+        st.windowTicked = true; st.winT = 2.6; paintTally(); hud(); say("A window, lit: ticked in pencil.", 2.4);
+        return;
+      }
       const q = near();
       if (!q) { say("No post in the light to tick.", 1.4, true); return; }
       if (st.ticked.has(q.n)) { say(`Post ${q.n} is already in the Tally.`, 1.4); return; }
@@ -318,15 +390,31 @@ export default {
     function finish(reason) {
       if (st.over) return;
       st.over = true; st.running = false;
-      const held = st.slotted.length + (reason === "june" ? st.carried.length : 0);
       const ticks = st.ticked.size;
+      if (stage === 1) {
+        const ok = ticks >= 3;
+        resultCard(wrap, art, { cards: ["topdown-tam-walk"], lost: ok ? 4 - ticks : 3, reducedMotion: api.reducedMotion });
+        api.store.set("losses", ok ? 0 : losses + 1);
+        api.end({ outcome: ok ? "win" : "lose", text: (reason === "june" ? TEXT.end.june + " " : "") + (ok ? TEXT.end.t1win(ticks) : TEXT.end.t1lose(ticks)), next: "The carrying run: now the posts can be pulled." });
+        return;
+      }
+      if (stage === 3) {
+        const ok = reason === "window";
+        resultCard(wrap, art, { cards: [ok ? "thread-own" : reason === "june" ? "topdown-june-lantern" : "night-2"], lost: ok ? 0 : 5, reducedMotion: api.reducedMotion });
+        api.store.set("losses", ok ? 0 : losses + 1);
+        if (ok && api.shared) api.shared.set("window_seen", true);
+        api.end({ outcome: ok ? "win" : "lose", text: ok ? TEXT.end.t3win : reason === "june" ? TEXT.end.t3june : TEXT.end.t3time });
+        return;
+      }
+      const lit = posts.filter((o) => o.friend && !o.pulled).length;      // posts a friend's lantern held to the end
+      const held = st.slotted.length + lit + (reason === "june" ? st.carried.length : 0);
       const lead = TEXT.end[reason] + " ";
       const outcome = held >= 3 ? "win" : ticks >= 3 ? "done" : "lose";
       resultCard(wrap, art, {
         cards: [reason === "june" ? "topdown-june-lantern" : outcome === "win" ? "topdown-tam-carry-two" : outcome === "done" ? "topdown-tam-carry-one" : "topdown-van"],
         lost: Math.max(0, 4 - held) + (outcome === "lose" ? 1 : 0), reducedMotion: api.reducedMotion,
       });
-      if (outcome === "win") api.end({ outcome, text: lead + TEXT.end.win(held) });
+      if (outcome === "win") api.end({ outcome, text: lead + TEXT.end.win(held) + (lit ? ` ${lit === 1 ? "One of them was" : `${lit} of them were`} held by a friend's lantern and carried in at the call.` : ""), next: "Night 2: nothing left to carry, and a torch with an off switch." });
       else if (outcome === "done") api.end({ outcome, text: lead + TEXT.end.done(held, ticks) });
       else api.end({ outcome, text: lead + TEXT.end.lose(held) });
       api.store.set("losses", outcome === "lose" ? losses + 1 : 0);
@@ -352,17 +440,35 @@ export default {
         st.x += mx / d * SPEED * mult * dt; st.y += my / d * SPEED * mult * dt;
         st.heading = Math.atan2(my, mx);
         st.x = Math.max(roadX(st.y) - 6, Math.min(roadX(st.y) + 6, st.x));
-        st.y = Math.max(-5, Math.min(57, st.y));
-        if (st.y > 56.5) say("Past 16 the road is only forest floor now.", 2);
+        const maxY = stage === 3 ? EDGE_Y + 1.2 : stage === 1 ? PHONE_Y : 45;
+        st.y = Math.max(-5, Math.min(maxY, st.y));
+        if (stage === 2 && st.y > 44.5) say("Past 16 the road is only forest floor now.", 2);
+        if (stage === 3 && st.y > EDGE_Y - 0.5 && !st.off) beat("edge", TEXT.edge, 4);
       }
-      const raised = st.raising && st.unlocked.raise && st.battery > 0;
-      st.battery -= ((moving ? 25 : 10) / 60) * (raised ? 3 : 1) * dt;
+      const raised = st.raising && st.unlocked.raise && st.battery > 0 && !st.off;
+      if (!st.off) st.battery -= ((moving ? 25 : 10) / 60) * (raised ? 3 : 1) * dt;
+      if (stage === 3) {                                  // the off switch, and what the dark holds past 24
+        if (st.off) {
+          st.offT += dt;
+          const there = st.y >= EDGE_Y - 1.5;
+          if (st.offT >= 2.5 && there && !st.windowSeen) { st.windowSeen = true; say(TEXT.window, 7); }
+          if (st.offT >= 3.2 && !there && !moving) beat("darkNothing", TEXT.darkNothing, 3.5);
+        } else { st.offT = 0; if (st.windowSeen && !st.windowTicked) { st.windowSeen = false; say(TEXT.glare, 3); } }
+        if (st.battery < 6 && !st.off) beat("offHint", TEXT.offHint, 5);
+        if (st.winT >= 0) { st.winT -= dt; if (st.winT < 0) { finish("window"); return; } }
+      }
+      if (stage === 1 && st.y >= PHONE_Y - 0.6) { say(TEXT.phone, 3); finish("phone"); return; }
+      for (const o of posts) {                             // borrowed light
+        if (o.lantern && !o.lanternOut && st.t >= o.due) { o.lanternOut = true; if (!o.pulled) say(TEXT.lanternOut, 3.5); }
+        if (o.lantern && !o.lanternOut && Math.abs(o.y - st.y) < 4) beat("lantern", TEXT.lantern, 4.5);
+        if (o.friend && !o.pulled && Math.abs(o.y - st.y) < 3) beat("friend" + o.n, TEXT.friend(o.friend, o.n), 3.5);
+      }
       if (st.swapT >= 0) {                               // swapping: three seconds standing still
         st.swapT -= dt;
         if (st.swapT < 0) { st.battery = Math.min(100, Math.max(0, st.battery) + 50); say(TEXT.swapped, 2); fx(st.x, st.y, "#fff0c8"); }
       }
       const q = near();
-      if (st.pulling && q && st.carried.length < 2) {
+      if (stage === 2 && st.pulling && q && st.carried.length < 2) {
         st.pullT += dt;
         if (st.pullT >= 2) {
           q.pulled = true; st.carried.push(q.n); st.pullT = 0; st.pulling = false;
@@ -370,31 +476,31 @@ export default {
           if (!beat("pull", TEXT.firstPull, 3)) say(`Post ${q.n} comes out of the ground.`, 2);
         }
       } else {
-        if (st.pulling && st.carried.length >= 2 && st.msgT <= 0) say(TEXT.full, 1.5, true);
+        if (stage === 2 && st.pulling && st.carried.length >= 2 && st.msgT <= 0) say(TEXT.full, 1.5, true);
         st.pullT = 0;
       }
-      if (st.y < 2.5 && st.carried.length) {             // set posts into the slots at the five sites
+      if (stage === 2 && st.y < 2.5 && st.carried.length) {             // set posts into the slots at the five sites
         st.slotted.push(...st.carried);
         fx(st.x, -3.2, "#9fd18a");
         if (!beat("slot", TEXT.slotted, 3.5)) say(`Post${st.carried.length > 1 ? "s" : ""} ${st.carried.join(" and ")} set in a slot.`, 2.4);
         st.carried = [];
         paintTally();
       }
-      const R = TORCH_R * (raised ? RAISE_K : 1);        // erasure: only outside the light, never seen
+      const R = st.off ? 0 : TORCH_R * (raised ? RAISE_K : 1);        // erasure: only outside the light, never seen
       for (const o of posts) {
         if (!o.gone && !o.pulled && st.t >= o.due && Math.hypot(o.x - st.x, o.y - st.y) > R) o.gone = true;
         if (o.gone && !o.gapSeen && Math.abs(o.y - st.y) < 1.2) { o.gapSeen = true; beat("gap", TEXT.gap, 3.5); }
       }
       if (st.t > 9) unlock("raise", TEXT.raise);         // unlocks and beats as the run goes
       if (q && !st.unlocked.tick) unlock("tick", TEXT.tick);
-      if (st.battery < 55) unlock("swap", TEXT.swap);
-      if (st.t > RUN_S - 35) beat("dell", TEXT.dell, 4);
+      if (stage === 2 && st.battery < 55) unlock("swap", TEXT.swap);
+      if (stage === 2 && st.t > RUN_S - 35) beat("dell", TEXT.dell, 4);
       if (st.battery < 20 && st.battery > 0) beat("low", TEXT.lowBat, 2.5);
       if (st.msgT > 0) { st.msgT -= dt; if (st.msgT <= 0) msgEl.textContent = ""; }
-      if (st.battery <= 0 && st.juneT < 0 && st.swapT < 0) { st.battery = 0; st.juneT = 2.5; say(TEXT.dark, 3, true); }
+      if (st.battery <= 0 && st.juneT < 0 && st.swapT < 0 && !st.off && st.winT < 0) { st.battery = 0; st.juneT = 2.5; say(TEXT.dark, 3, true); }
       if (st.juneT >= 0) { st.juneT -= dt; if (st.juneT <= 0) finish("june"); }
       const left = posts.filter((o) => !o.gone && !o.pulled).length;
-      if (st.t >= RUN_S || (left === 0 && st.carried.length === 0)) finish("van");
+      if (st.t >= RUN_S || (stage === 2 && left === 0 && st.carried.length === 0)) finish("van");
       st.fx = st.fx.filter((f) => (f.t += dt) < 0.9);
     }
 
@@ -408,10 +514,43 @@ export default {
       const raised = st.raising && st.unlocked.raise && st.battery > 0;
       const R = (st.battery <= 0 ? 0.5 : TORCH_R * (raised ? RAISE_K : 1)) * S * (1 + st.flick);
       const cx = W / 2, cy = H / 2;
+      const glow = (x, y, r, a = 0.5) => {                 // a light that is not Tam's: a lantern, a bulb
+        const g2 = c.createRadialGradient(x, y, 0, x, y, r);
+        g2.addColorStop(0, `rgba(255,214,150,${a})`); g2.addColorStop(0.4, `rgba(242,165,65,${a * 0.45})`); g2.addColorStop(1, "rgba(242,165,65,0)");
+        c.fillStyle = g2; c.beginPath(); c.arc(x, y, r, 0, 7); c.fill();
+      };
+      for (const o of posts) {
+        if (o.pulled || o.gone) continue;
+        if ((o.lantern && !o.lanternOut) || o.friend) {    // borrowed light shows from far off, and shows its post
+          c.save(); c.beginPath(); c.arc(wx(o.x + 0.9), wy(o.y + 0.2), 1.5 * S, 0, 7); c.clip();
+          c.drawImage(ground, wx(WX0), wy(WY0), (WX1 - WX0) * S, (WY1 - WY0) * S);
+          if (!blit(c, "sprite-post", wx(o.x), wy(o.y))) { c.fillStyle = "#8a5a3b"; c.fillRect(wx(o.x) - 0.3 * S, wy(o.y) - 0.3 * S, 0.6 * S, 0.6 * S); }
+          if (o.friend) { if (!blit(c, "sprite-june-lantern", wx(o.x + 1.2), wy(o.y + 0.3), Math.PI)) { c.fillStyle = "#2a3346"; c.beginPath(); c.arc(wx(o.x + 1.2), wy(o.y + 0.3), 0.3 * S, 0, 7); c.fill(); } }
+          else { c.fillStyle = "#3a2c1c"; c.fillRect(wx(o.x + 1.0), wy(o.y - 0.1), 0.8 * S, 0.5 * S); c.fillStyle = "#ffd696"; c.beginPath(); c.arc(wx(o.x + 1.4), wy(o.y + 0.15), 0.14 * S, 0, 7); c.fill(); }
+          c.fillStyle = "#f6e7c8"; c.font = `bold ${Math.round(0.55 * S)}px 'IBM Plex Mono', monospace`; c.fillText(String(o.n), wx(o.x) - 0.45 * S, wy(o.y) - 0.45 * S);
+          c.restore();
+          glow(wx(o.x + 0.9), wy(o.y + 0.2), 1.9 * S, 0.42);
+        }
+      }
+      if (stage === 1) { glow(wx(roadX(PHONE_Y) - 2.2), wy(PHONE_Y + 0.6), 1.1 * S, 0.7); c.fillStyle = "#fff0c8"; c.beginPath(); c.arc(wx(roadX(PHONE_Y) - 2.2), wy(PHONE_Y + 0.6), 0.09 * S, 0, 7); c.fill(); }
+      if (st.off) {                                        // the torch is off: Tam, the dark, and past 24 the window
+        c.fillStyle = "rgba(233,226,210,.16)"; c.beginPath(); c.arc(cx, cy, 0.2 * S, 0, 7); c.fill();
+        if (st.windowSeen) {
+          const k = api.reducedMotion ? 1 : Math.min(1, (st.offT - 2.5) / 1.6);
+          const wxp = cx + Math.min(W * 0.2, 2.2 * S), wyp = cy + Math.min(H * 0.3, 4.2 * S), ws = Math.max(9, 0.26 * S);
+          c.globalAlpha = k; glow(wxp, wyp, ws * 2.6, 0.35);
+          c.fillStyle = "#f2a541"; c.fillRect(wxp - ws / 2, wyp - ws / 2, ws, ws);
+          c.fillStyle = "#ffe2a0"; c.fillRect(wxp - ws / 2 + 1.5, wyp - ws / 2 + 1.5, ws - 3, ws * 0.45);
+          c.strokeStyle = "#2a1608"; c.lineWidth = 1.2; c.beginPath(); c.moveTo(wxp, wyp - ws / 2); c.lineTo(wxp, wyp + ws / 2); c.stroke();
+          c.globalAlpha = 1;
+        }
+        return;
+      }
       c.save();
       c.beginPath(); c.arc(cx, cy, R, 0, Math.PI * 2); c.clip();
       c.drawImage(ground, wx(WX0), wy(WY0), (WX1 - WX0) * S, (WY1 - WY0) * S);
       for (const o of posts) {
+        if (o.friend && !o.pulled) continue;             // drawn above, in the lantern's own light
         if (o.gone) {                                    // the road narrows a hand's width here
           c.fillStyle = "#5b4a33"; c.fillRect(wx(roadX(o.y) + 1.25), wy(o.y - 1.6), 0.3 * S, 3.2 * S);
           continue;
@@ -434,8 +573,8 @@ export default {
           c.fillStyle = "#2b2420"; c.beginPath(); c.arc(wx(o.x), wy(o.y), 0.2 * S, 0, 7); c.fill();
         }
       }
-      blit(c, "sprite-van", wx(6.2), wy(-4.6), -0.38);     // the van, parked at site 20
-      for (let i = 0; i < 10; i++) {                     // the slots at the five sites
+      if (stage === 2) blit(c, "sprite-van", wx(6.2), wy(-4.6), -0.38);     // the van, parked at site 20
+      for (let i = 0; i < (stage === 2 ? 10 : 0); i++) { // the slots at the five sites
         const sx = -3.4 + i * 0.95, sy = -3.2;
         const filled = st.slotted[i];
         if (filled ? !blit(c, "sprite-post", wx(sx), wy(sy)) : !blit(c, "slot-chalk", wx(sx), wy(sy))) {
@@ -468,9 +607,9 @@ export default {
         st.carried.forEach((n, i) => { c.fillStyle = "#8a5a3b"; c.fillRect(cx - 0.55 * S + i * 0.75 * S, cy + 0.35 * S, 0.35 * S, 0.35 * S); });
       }
       const q = near();
-      if (q && st.running && st.pullT <= 0 && st.carried.length < 2) {   // a prompt, in the light
+      if (q && st.running && st.pullT <= 0 && st.carried.length < 2 && stage !== 3 && !(stage === 1 && st.ticked.has(q.n))) {   // a prompt, in the light
         c.font = `600 ${Math.max(13, Math.round(0.36 * S))}px 'IBM Plex Mono', monospace`;
-        const txt = `hold E · post ${q.n}`, tw = c.measureText(txt).width;
+        const txt = stage === 1 ? `T · tick post ${q.n}` : `hold E · post ${q.n}`, tw = c.measureText(txt).width;
         c.fillStyle = "rgba(11,12,15,.78)"; c.fillRect(cx - tw / 2 - 6, cy - 1.15 * S - 17, tw + 12, 23);
         c.fillStyle = "#f6e7c8"; c.textAlign = "center"; c.fillText(txt, cx, cy - 1.15 * S); c.textAlign = "start";
       }
@@ -508,6 +647,7 @@ export default {
       if (k === "e") st.pulling = true;
       if (k === " ") { e.preventDefault(); st.raising = true; }
       if (k === "t" && !e.repeat) tick();
+      if (k === "f" && !e.repeat) toggleOff();
       if (k === "b" && !e.repeat) swap();
     };
     const ku = (e) => { const k = e.key.toLowerCase(); st.keys.delete(k); if (k === "e") st.pulling = false; if (k === " ") st.raising = false; };
@@ -523,13 +663,20 @@ export default {
     hold(btn.raise, () => { st.raising = true; }, () => { st.raising = false; });
     btn.tick.addEventListener("click", () => st.running && tick());
     btn.swap.addEventListener("click", swap);
+    function toggleOff() {
+      if (!st.running || stage !== 3 || st.battery <= 0 || st.winT >= 0) return;
+      st.off = !st.off; st.offT = 0;
+      if (st.off) beat("off", TEXT.off, 4);
+      hud();
+    }
+    btn.off.addEventListener("click", toggleOff);
     window.addEventListener("keydown", kd); window.addEventListener("keyup", ku); window.addEventListener("blur", blur);
     canvas.addEventListener("pointerdown", pd); canvas.addEventListener("pointermove", pm);
     canvas.addEventListener("pointerup", pu); canvas.addEventListener("pointercancel", pu);
     $(".go").addEventListener("click", () => {
       $(`.${PFX}intro`).remove();
       st.running = true; last = 0;
-      say(TEXT.open, 4);
+      say(TEXT.open[stage - 1], 4);
       canvas.focus?.();
     });
     $(".go").focus();
@@ -543,5 +690,5 @@ export default {
         window.removeEventListener("keydown", kd); window.removeEventListener("keyup", ku); window.removeEventListener("blur", blur);
       },
     };
-  },
-};
+  }
+}
