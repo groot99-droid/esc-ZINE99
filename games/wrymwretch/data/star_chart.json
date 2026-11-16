@@ -1598,6 +1598,37 @@
       "eclipse": "below",
       "first_light": "above"
     },
-    "phase_2": "A black-gilded figure (the lying strip) lights a false band."
+    "phase_2": "Built 2026-11-16: a black-gilded figure (named to the lying strip) lights a false band until it is unpicked (flag stars_black)."
+  },
+  "phase_2": {
+    "accepted": "2026-11-15",
+    "built": "2026-11-16",
+    "lying_strip": {
+      "rule": "One fragment a plate is in a Remnant hand (upright, on cold paper). A figure named to it gilds black, lights a false band in s_flight_descent, and must be unpicked; it is not a wrong naming.",
+      "s_chart_moot": {
+        "constellation": "delvers_lamp",
+        "text": "Its lowest corner holds two lines, and nothing hangs beneath; six in all"
+      },
+      "s_chart_expanse": {
+        "constellation": "the_scholar",
+        "text": "The Head to the Left Hand; the Head to the Right Hand; the Left Hand to the Right Hand"
+      }
+    },
+    "second_reader": {
+      "scene": "s_chart_moot",
+      "constellation": "scholars_lamp",
+      "star": "sl9",
+      "line": [
+        "sl8",
+        "sl9"
+      ],
+      "rule": "Before any fragment places the lost star, the line draws itself, in Seraphyne's hand, once four true lines of the Lamp are laid. Kael sees it.",
+      "flag": "second_reader_seen"
+    },
+    "plate_iii": {
+      "scene": "s_chart_expanse",
+      "rule": "The Sigil is already drawn and is lifted line by line; each line lifted returns part of what the voice says. The Scholar beneath is one star short (sc12, the Book): it is the star Seraphyne placed.",
+      "reads": "second_reader_seen"
+    }
   }
 }

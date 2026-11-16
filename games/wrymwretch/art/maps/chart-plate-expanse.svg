@@ -40,8 +40,10 @@
 <text x="600" y="1166" font-size="18" font-family="serif" fill="#e3b74a" text-anchor="middle" letter-spacing="8">PLATE III</text>
 <polygon points="150,82 152.8,95.2 166,98 152.8,100.8 150,114 147.2,100.8 134,98 147.2,95.2" fill="url(#chart-plate-expanse-lg1)"/>
 <polygon points="1050,82 1052.8,95.2 1066,98 1052.8,100.8 1050,114 1047.2,100.8 1034,98 1047.2,95.2" fill="url(#chart-plate-expanse-lg1)"/>
+<g class="answer">
 <g opacity="0.5" fill="none" stroke="#f3d27a" stroke-width="1.4" stroke-linecap="round">
 <path d="M535.6,371.2 C533.3,356.8 511.1,308.8 521.8,284.8 C532.5,260.8 573.9,227.2 600,227.2 C626.1,227.2 667.5,260.8 678.2,284.8 C688.9,308.8 666.7,356.8 664.4,371.2 M508,428.8 C497.3,460.8 451.3,553.6 443.6,620.8 C435.9,688 452.8,771.2 462,832 C471.2,892.8 492.7,960 498.8,985.6 M692,428.8 C701.2,460.8 741.1,553.6 747.2,620.8 C753.3,688 736.5,771.2 728.8,832 C721.1,892.8 705.8,960 701.2,985.6 M498.8,985.6 C515.7,990.4 566.3,1014.4 600,1014.4 C633.7,1014.4 684.3,990.4 701.2,985.6 M811.6,640 C816.2,644.8 830,668.8 839.2,668.8 C848.4,668.8 866.8,652.8 866.8,640 C866.8,627.2 848.4,592 839.2,592 C830,592 816.2,632 811.6,640 M839.2,572.8 C839.2,564.8 839.2,532.8 839.2,524.8 M885.2,592 C891.3,587.2 915.9,568 922,563.2 M793.2,592 C787.1,587.2 762.5,568 756.4,563.2"/>
+</g>
 </g>
 <polygon points="499.7,279.6 501.5,286.9 508.7,288.6 501.5,290.4 499.7,297.6 497.9,290.4 490.7,288.6 497.9,286.9" fill="url(#chart-plate-expanse-lg1)" opacity="0.6"/>
 <polygon points="503.5,284.8 501.5,288.6 503.5,292.5 499.7,290.4 495.9,292.5 497.9,288.6 495.9,284.8 499.7,286.8" fill="url(#chart-plate-expanse-lg1)" opacity="0.5"/>
@@ -97,6 +99,7 @@
 <polygon points="784,297.9 785.8,305.1 793,306.9 785.8,308.7 784,315.9 782.2,308.7 775,306.9 782.2,305.1" fill="url(#chart-plate-expanse-lg1)" opacity="0.8"/>
 <polygon points="787.8,303.1 785.8,306.9 787.8,310.7 784,308.7 780.2,310.7 782.2,306.9 780.2,303.1 784,305.1" fill="url(#chart-plate-expanse-lg1)" opacity="0.7"/>
 <circle cx="784" cy="306.9" r="2" fill="#fff6cf" opacity="0.8"/>
+<g class="answer">
 <line x1="600" y1="304" x2="600" y2="400" stroke="#f3d27a" stroke-width="1.2" stroke-dasharray="3 7" opacity="0.6"/>
 <line x1="600" y1="400" x2="508" y2="428.8" stroke="#f3d27a" stroke-width="1.2" stroke-dasharray="3 7" opacity="0.6"/>
 <line x1="600" y1="400" x2="692" y2="428.8" stroke="#f3d27a" stroke-width="1.2" stroke-dasharray="3 7" opacity="0.6"/>
@@ -165,4 +168,5 @@
 <circle cx="839.2" cy="620.8" r="3.7" fill="#fff6cf" opacity="1"/>
 <circle cx="839.2" cy="620.8" r="27" fill="none" stroke="#dfe6f2" stroke-width="1.4" stroke-dasharray="4 5"/>
 <text x="600" y="1128" font-size="20" font-family="serif" fill="url(#chart-plate-expanse-lg1)" text-anchor="middle" letter-spacing="6">THE SIGIL, UNDONE</text>
+</g>
 </svg>

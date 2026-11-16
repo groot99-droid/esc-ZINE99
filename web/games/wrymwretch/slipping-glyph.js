@@ -27,7 +27,24 @@
 //   "the meaning slid away like a dream upon waking" (WW 71, as section 11 quotes it)
 //   "Someone was erasing memories. Someone was killing witnesses." (WW 81)
 
-import { png, opening, openingSet, recordPage } from "./_art.js";
+import { png, opening, openingSet } from "./_art.js";
+import { staged } from "./_stages.js";
+
+// Phase 2 (accepted 2026-11-15, built 2026-11-16): the ladder. The two pages are stages, and the seal follows.
+//   I   Teach, the monolith: find what stays.      II  Test, the kill-list, on the camp's clock.
+//   III Twist, the seal (s_glyph_seal): six rows. The rule turns over on the fifth: until now the circle
+//       held a glyph still so it could be read. Shy glyphs (new) are stable only when unwatched: inside
+//       the circle every part of one slips, so it is read from the rim. And the stable part moves: every
+//       nine seconds an unread row changes which part of each glyph holds.
+//       Rows I to III are the monolith's, and stand already read if they were read there. Row IV has no
+//       still part on any page: its six parts are held in the world, one a realm (the long puzzle).
+//       Set-piece: the sixth row is the name, and it is the first glyph in the game that does not slip.
+const LADDER = [
+  { name: "The monolith", sub: "Find what stays." },
+  { name: "The kill-list", sub: "Five rows on the camp's clock." },
+  { name: "The seal", sub: "The stable part moves; some glyphs hold only unwatched." },
+];
+const HELD = ["the crack in the split tree", "a rune on Aetherius's scales", "a vein in the Heartstone", "a kelp line on the seabed", "a candle shadow in the forbidden chamber", "a star in the Priory dome"];
 
 const PARCH = "#efe6d1", INK = "#3b2a14", GILT = "#d4a72c", GILTHI = "#f3d27a", RED = "#a42a1c", VINE = "#4f6b2e", BONE = "#f3eee2";
 const TILE_BG = ["#1f4f7b", "#5b3a7a", "#8b2a20", "#3f5f2a"];
@@ -54,7 +71,16 @@ const PAGES = {
       { answer: 12, stable: ["foot", "mark", "stem", "crown"], who: "Ilvarra", where: "the bone bridge", signed: true },
     ] },
 };
-const WRONG_TO_DEVOUR = 3, ROMAN = ["I", "II", "III", "IV", "V"];
+PAGES.seal = { key: "seal", label: "III · The seal", what: "six rows", chapter: "chapter-10", slip: [1.0, 1.4], need: 5, move: 9,
+  rows: [
+    { answer: 4, stable: ["stem", "crown", "mark", "foot"], mono: true },
+    { answer: 9, stable: ["stem", "mark", "crown", "foot"], mono: true },
+    { answer: 2, stable: ["stem", "mark", "crown", "foot"], mono: true },
+    { answer: null, stable: [null, null, null, null], world: true },
+    { answer: 6, stable: ["stem", "crown", "mark", "foot"], shy: [1, 3], moving: true },
+    { answer: 8, stable: ["mark", "crown", "stem", "foot"], name: true },
+  ] };
+const WRONG_TO_DEVOUR = 3, ROMAN = ["I", "II", "III", "IV", "V", "VI"];
 
 // part drawings in a 100 x 100 box (the fallback hand, six variants a part)
 const PART = {
@@ -80,6 +106,11 @@ const CSS = `
 .wrymwretch-slipping-glyph-tile i,.wrymwretch-slipping-glyph-book .sk i{position:absolute;inset:0;background-size:100% 100%;background-repeat:no-repeat}
 .wrymwretch-slipping-glyph-book div.sk{position:relative}
 .wrymwretch-slipping-glyph-surface.r5{width:min(100%,520px,calc((100vh - 300px) * .8))}
+.wrymwretch-slipping-glyph-surface.r6{width:min(100%,520px,calc((100vh - 300px) * .667))}
+.wrymwretch-slipping-glyph-tile.shy{border-style:dashed;border-color:#A9C7E8}
+.wrymwretch-slipping-glyph-tile.shy::after{content:"";position:absolute;right:3px;top:3px;width:14px;height:7px;border-bottom:2.5px solid #A9C7E8;border-radius:0 0 14px 14px;z-index:2}
+.wrymwretch-slipping-glyph-tile.still{border-color:#fff;box-shadow:inset 0 0 0 2px rgba(0,0,0,.35),0 0 10px rgba(255,255,255,.55);opacity:1;filter:none}
+.wrymwretch-slipping-glyph-slot.world{font-size:13px;letter-spacing:1px;cursor:pointer;opacity:.8;border-style:dotted}
 .wrymwretch-slipping-glyph-slot.struck{border:2px solid ${INK};background:repeating-linear-gradient(135deg,#f8f1df 0 6px,#d9cba8 6px 8px);cursor:default;color:${INK};font-size:20px}
 .wrymwretch-slipping-glyph-clock{font:700 15px 'Cinzel',Georgia,serif;letter-spacing:.08em;color:${RED};white-space:nowrap}
 .wrymwretch-slipping-glyph-clock.low{animation:wrymwretch-slipping-glyph-low 1s steps(2) infinite}
@@ -148,8 +179,9 @@ const CSS = `
 @media (max-width:640px){.wrymwretch-slipping-glyph-page{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"beat beat" "surface slots" "key key" "foot foot";padding:16px 12px}.wrymwretch-slipping-glyph-book{width:auto}.wrymwretch-slipping-glyph-book div.sk{width:40px;height:40px}.wrymwretch-slipping-glyph-slotrow b{display:none}.wrymwretch-slipping-glyph-list{display:none}.wrymwretch-slipping-glyph-keys{grid-template-columns:repeat(6,44px)}.wrymwretch-slipping-glyph-slot{width:46px;height:46px}}
 `;
 
-export default {
-  mount(root, api) {
+function play(root, api, ctx) {
+    const ST = ctx.stage, PK = ["monolith", "killlist", "seal"][ST];
+    let monoRead = 0; try { monoRead = +(api.shared && api.shared.get("monolith_rows", 0)) || 0; } catch { monoRead = 0; }
     const R = api.rng();
     const losses = api.store.get("losses", 0) || 0;
     const gentle = losses >= 2;
@@ -178,14 +210,29 @@ export default {
       <div class="wrymwretch-slipping-glyph-intro"><div class="wrymwretch-slipping-glyph-card">
         <div class="cap" aria-hidden="true">T</div>
         <h2>The Slipping Glyph</h2>
-        <p class="goal">Read a carved surface by what stays.</p>
+        <div data-tabs></div>
+        ${[`<p class="goal">Read a carved surface by what stays.</p>
         <dl>
           <dt>Look</dt><dd>move the gilt circle (pointer or arrows). A glyph outside it slips, all but one part</dd>
           <dt>Read</dt><dd>a row's four still parts make one rune: tap its slot, then the rune in the key</dd>
           <dt>Beware</dt><dd>three wrong runes and the surface devours the page</dd>
         </dl>
-        <p class="more">${gentle ? "The glyphs slip slower this time, and Aquatica can purify twice. " : ""}A notebook and Aquatica's help are in the margin. Choose a page:</p>
-        <div class="row">${Object.values(PAGES).map((p) => `<button type="button" class="wrymwretch-slipping-glyph-btn" data-start data-page="${p.key}">${p.label}<small>${p.what}</small></button>`).join("")}</div></div></div>`;
+        <p class="more">${gentle ? "The glyphs slip slower this time, and Aquatica can purify twice. " : ""}A notebook and Aquatica's help are in the margin.</p>`,
+        `<p class="goal">Read the Remnants' list before they come back for it.</p>
+        <dl>
+          <dt>Five rows</dt><dd>each one read names a witness and a place, and warns them</dd>
+          <dt>The clock</dt><dd>three minutes, by the smoke behind the tents; the glyphs slip faster</dd>
+          <dt>Beware</dt><dd>three wrong runes and the slate smears itself blank</dd>
+        </dl>
+        <p class="more">${gentle ? "The glyphs slip slower this time, and there is a minute more. " : ""}Four rows settled wins the page. First, something that was asked at the fire.</p>`,
+        `<p class="goal">Read the seal on the choir's door: six rows, and the last is a name.</p>
+        <dl>
+          <dt>Shy glyphs</dt><dd>new: a glyph with a closed eye holds its part only when unwatched. In the circle all of it slips: read it from the rim</dd>
+          <dt>It moves</dt><dd>turned over: every nine seconds an unread row changes which part of each glyph holds</dd>
+          <dt>Row IV</dt><dd>nothing on this page holds it. Its parts are kept in the world</dd>
+        </dl>
+        <p class="more">${gentle ? "The glyphs slip slower this time. " : ""}${monoRead ? `The monolith's ${monoRead === 3 ? "three rows stand" : monoRead + " row" + (monoRead > 1 ? "s stand" : " stands")} here already read.` : "The first three rows are the monolith's; here they must be read."}</p>`][ST]}
+        <div class="row"><button type="button" class="wrymwretch-slipping-glyph-btn" data-start data-page="${PK}">${["Dive", "The night before", "Stand at the door"][ST]}</button></div></div></div>`;
     root.appendChild(wrap);
     const grid = wrap.querySelector(".wrymwretch-slipping-glyph-grid"), surface = wrap.querySelector(".wrymwretch-slipping-glyph-surface");
     const dark = wrap.querySelector(".wrymwretch-slipping-glyph-dark"), ring = wrap.querySelector(".wrymwretch-slipping-glyph-ring");
@@ -237,8 +284,8 @@ export default {
     function build(pageKey) {
       P = PAGES[pageKey] || PAGES.monolith; ROWS = P.rows; NR = ROWS.length; SLIP = P.slip[gentle ? 1 : 0];
       st.read = ROWS.map(() => false); st.fy = 1.5 / NR;
-      surface.classList.toggle("r5", NR === 5);
-      surface.setAttribute("aria-label", (P.key === "killlist" ? "The dropped slate." : "The monolith.") + " Arrow keys move the focus circle.");
+      surface.classList.toggle("r5", NR === 5); surface.classList.toggle("r6", NR === 6);
+      surface.setAttribute("aria-label", (P.key === "killlist" ? "The dropped slate." : P.key === "seal" ? "The seal." : "The monolith.") + " Arrow keys move the focus circle.");
       ROWS.forEach((row, ri) => {
         for (let ci = 0; ci < 4; ci++) {
           const stable = row.stable[ci];
@@ -248,7 +295,9 @@ export default {
           const el = document.createElement("div");
           el.className = "wrymwretch-slipping-glyph-tile";
           grid.appendChild(el);
-          const gl = { ri, ci, stable, parts, away: 0, el };
+          const gl = { ri, ci, stable, parts, away: 0, el, shy: !!(row.shy && row.shy.includes(ci)) };
+          if (gl.shy) { el.classList.add("shy"); el.title = "A shy glyph: it holds only when unwatched"; }
+          if (row.name) { TYPES.forEach((t) => (parts[t] = RUNES[row.answer - 1].parts[t])); el.classList.add("still"); }
           glyphs.push(gl); paint(gl);
         }
       });
@@ -257,6 +306,12 @@ export default {
         const line = document.createElement("div"); line.className = "wrymwretch-slipping-glyph-slotrow";
         line.innerHTML = `<b>${ROMAN[ri]}</b>`; line.appendChild(b);
         const struck = row.ysolde && st.mercy === true;
+        const pre = row.mono && ri < monoRead;
+        if (row.world) {
+          b.type = "button"; b.className = "wrymwretch-slipping-glyph-slot world"; b.textContent = "······"; b.setAttribute("aria-label", "row 4: its six still parts are held in the world, not on this page");
+          b.addEventListener("click", () => { note.textContent = `Nothing on the door holds row IV. Its parts are kept elsewhere, one a realm: ${HELD.join("; ")}.`; });
+          slotsEl.appendChild(line); return b;
+        }
         b.type = "button"; b.className = "wrymwretch-slipping-glyph-slot" + (struck ? " struck" : row.answer ? "" : " void");
         b.textContent = struck ? "—" : row.answer ? "?" : "✕";
         if (!row.answer) b.title = "This row will not hold";
@@ -269,8 +324,11 @@ export default {
           note.textContent = `Row ${ROMAN[ri]}: now choose its rune from the key.`;
         });
         slotsEl.appendChild(line);
+        if (pre) { st.read[ri] = true; b.classList.add("done"); b.innerHTML = runeHtml(row.answer); if (useArt && runeUrl[row.answer]) b.classList.add("art"); b.title = "Read at the monolith";
+          glyphs.filter((g) => g.ri === ri).forEach((g) => { TYPES.forEach((t) => (g.parts[t] = RUNES[row.answer - 1].parts[t])); g.el.classList.add("read"); paint(g); }); }
         return b;
       });
+      st.moveT = P.move || 0;
       if (P.key === "killlist") {
         listEl = document.createElement("ul"); listEl.className = "wrymwretch-slipping-glyph-list"; listEl.setAttribute("aria-label", "Witnesses");
         slotsEl.appendChild(listEl); drawList();
@@ -325,23 +383,31 @@ export default {
       const kinder = !win && losses + 1 >= 2 ? " The glyphs will slip slower next time." : "";
       later(() => {
         if (dead) return;
+        if (P.key === "seal") {
+          const mine = ROWS.filter((r, i) => r.answer && st.read[i]).length;
+          return ctx.done(wrap, { win, text: text + kinder, record: { realm: "wrymreach", title: "The Slipping Glyph III: the seal", sub: "The Bone Choir's door · chapter 10", divider: 3, lines: [
+            win ? `Rows read: ${mine} of 5${monoRead ? ` (${Math.min(3, monoRead)} of them at the monolith, long before)` : ""}.` : { t: `Rows read: ${mine} of 5. The seal devoured the rest.`, kind: "lost" },
+            st.read[5] ? { t: "The sixth row is THE NAME. It did not slip. Someone has been holding it still.", kind: "link" } : { t: "The sixth row: unread.", kind: "lost" },
+            { t: "The fourth row: six parts, none of them on the door.", kind: "lost", note: `Held in the world, one a realm: ${HELD.join("; ")}.` },
+            monoRead ? { t: `Because the monolith was read (The Slipping Glyph I), ${monoRead === 3 ? "its three rows" : "its rows"} stood here already.`, kind: "link" } : null ] } });
+        }
         if (P.key === "monolith") {
           const n = settled();
-          recordPage(wrap, api, { realm: "east", title: "The Slipping Glyph I: the monolith", sub: "Tidecaller page · chapter 4, The Monolith", divider: 3, lines: [
+          try { api.shared.set("monolith_rows", Math.max(monoRead, n)); } catch { /* no storage */ }
+          return ctx.done(wrap, { win, text: text + kinder, record: { realm: "east", title: "The Slipping Glyph I: the monolith", sub: "Tidecaller page · chapter 4, The Monolith", divider: 3, lines: [
             win ? `Rows read: ${n} of 3. They will already be filled in on the seal.` : { t: `Rows read: ${n} of 3. The surface devoured the page.`, kind: "lost" },
             win ? "What Izladar was: one fragment more." : { t: "Tidecaller memory −3.", kind: "lost" },
-            { t: "The fourth row: nothing on the stone holds it still.", kind: "lost", note: "Its still parts are not on this page." }] });
+            { t: "The fourth row: nothing on the stone holds it still.", kind: "lost", note: "Its still parts are not on this page." }] } });
         } else {
           const warned = ROWS.filter((r, i) => st.read[i] && !(r.ysolde && st.mercy)).map((r) => r.who);
           const unread = ROWS.filter((r, i) => !st.read[i]).map((r) => r.who);
-          recordPage(wrap, api, { realm: "wrymreach", title: "The Slipping Glyph II: the kill-list", sub: "The Rim Moot at dawn · chapter 9, The Last Witness", divider: 3, pic: st.signed ? "thread-own" : null, lines: [
+          return ctx.done(wrap, { win, text: text + kinder, record: { realm: "wrymreach", title: "The Slipping Glyph II: the kill-list", sub: "The Rim Moot at dawn · chapter 9, The Last Witness", divider: 3, pic: st.signed ? "thread-own" : null, lines: [
             warned.length ? `Warned: ${warned.join("; ")}.` : null,
             unread.length ? { t: `Unread, and still in the camp: ${unread.join("; ")}.`, kind: "lost" } : null,
             st.mercy ? { t: "Ysolde: let off. Her entry was Burned at the fire, at her asking, and her row is struck.", kind: "link", note: "Duskbane memory −4. Burn, used as a mercy." }
               : st.read[1] ? { t: "Ysolde: warned, and kept in the Record, though she asked not to be.", note: "She still carries what the dying sage told her." } : { t: "Ysolde: kept in the Record, unwarned.", kind: "lost" },
-            st.signed ? { t: "The slate is signed with a given-up name: Dorrin Vael.", kind: "link", note: "The Unwriter can now be reminded of it." } : { t: "The fifth row and its signature: unread.", kind: "lost" }] });
+            st.signed ? { t: "The slate is signed with a given-up name: Dorrin Vael.", kind: "link", note: "The Unwriter can now be reminded of it." } : { t: "The fifth row and its signature: unread.", kind: "lost" }] } });
         }
-        api.end({ outcome: win ? "win" : "lose", text: text + kinder });
       }, (win ? 900 : 1300) + (st.hold > 0 ? 5200 : 0));
     }
     function closeList(reason) {
@@ -382,6 +448,13 @@ export default {
           return;
         }
         note.textContent = `Row ${ROMAN[ri]} read.`;
+        if (P.key === "seal") {
+          if (row.name) beat(`The sixth row gives its rune at a glance. It is the name, and it is the first glyph anywhere that does not slip. Someone has been holding it still for millennia. <cite>THE NAME · held</cite>`, 10000);
+          else if (row.moving) beat(`The fifth row holds, though it would not be looked at. <cite>Read from the rim of the circle</cite>`, 6000);
+          if (ROWS.every((r, i) => !r.answer || st.read[i])) { st.over = true; note.textContent = "Five rows read. The fourth is not on the door.";
+            finish(true, `The seal is read: five rows of six${st.wrong ? `, ${st.wrong} wrong` : ""}. The sixth is the name, and it never slipped: somebody has held it still since the Imprisonment. The fourth row has no still part on the door at all. Lunessa says its parts are somewhere she has already been, and does not know why she thinks so.`); }
+          return;
+        }
         if (n === 1) beat(`The first row holds in gold. Lunessa's chest is tight: the water clings to her skin like oil, and the fish have gone. <cite>Two rows to go</cite>`, 7000);
         if (n === 2) { SLIP = Math.min(SLIP, gentle ? 1.5 : 1.1); beat(`Something in the stone stirs at being read. The glyphs slip faster now. <cite>Slips quicken · one row left</cite>`, 7000); }
         if (n === 3) {
@@ -398,6 +471,7 @@ export default {
         note.textContent = "The surface devours.";
         grid.style.transition = "filter 1.2s, opacity 1.2s"; grid.style.filter = "blur(6px)"; grid.style.opacity = ".2";
         if (P.key === "killlist") return closeList("wrong");
+        if (P.key === "seal") return finish(false, `Three wrong runes. The seal takes back what was read, the name with it, and the choir's door stays shut a while longer.`);
         const n = settled();
         return finish(false, `Three wrong runes${n ? `, ${n} row${n > 1 ? "s" : ""} read` : ""}. The monolith devours what was read, and “the meaning slid away like a dream upon waking” (WW 71). Lunessa kicks for the light with nothing she can keep. Tidecaller memory −3.`);
       }
@@ -449,7 +523,19 @@ export default {
         if (st.hold > 0) st.hold = Math.max(0, st.hold - dt);
         else {
           st.stillT = Math.max(0, st.stillT - dt); if (st.stillT === 0) st.still = -1;
+          if (st.moveT > 0 && (st.moveT -= dt) <= 0) {   // III: the stable part moves
+            st.moveT = P.move; let moved = false;
+            ROWS.forEach((row, ri) => { if (!row.answer || row.name || st.read[ri] || ri === st.still) return; moved = true;
+              const perm = TYPES.slice().sort(() => R() - 0.5);
+              glyphs.filter((g) => g.ri === ri).forEach((g, k) => { g.stable = perm[k]; g.parts[g.stable] = RUNES[row.answer - 1].parts[g.stable]; g.el.classList.add("slip"); g.slipT = 0.5; paint(g); }); });
+            if (moved) { note.textContent = "The stable part moves: each unread row holds a different part now."; if (!st.saidMove) { st.saidMove = true; beat(`A shiver goes through the door. In every unread row, the part that held lets go and another takes its place. <cite>The stable part moves · every nine seconds</cite>`, 7000); } }
+          }
           glyphs.forEach((g, i) => {
+            if (ROWS[g.ri].name) return;
+            if (g.shy && !st.read[g.ri] && g.ri !== st.still) {   // watched, all of it slips; unwatched, its part holds
+              if (i === st.focus) { g.watch = (g.watch || 0) + dt; if (g.watch > 0.4) { g.watch = 0; TYPES.forEach((t) => (g.parts[t] = reroll(g.parts[t]))); g.dirty = true; paint(g); if (!st.saidShy) { st.saidShy = true; beat(`The glyph with the closed eye will not be looked at: inside the circle every part of it runs. <cite>A shy glyph · move the circle off it and watch from the rim</cite>`, 8000); } } return; }
+              if (g.dirty) { g.dirty = false; g.parts[g.stable] = RUNES[ROWS[g.ri].answer - 1].parts[g.stable]; paint(g); }
+            }
             if (st.read[g.ri] || i === st.focus || g.ri === st.still) { g.away = 0; return; }
             g.away += dt;
             if (g.away > SLIP) { g.away = 0; TYPES.forEach((t) => { if (t !== g.stable) g.parts[t] = reroll(g.parts[t]); }); paint(g); g.el.classList.add("slip"); g.slipT = 0.25; }
@@ -470,10 +556,13 @@ export default {
 
     // ---- the opening: a page, and on page II the archivist's ask --------------------------------
     const intro = wrap.querySelector(".wrymwretch-slipping-glyph-intro"), card = intro.querySelector(".wrymwretch-slipping-glyph-card");
-    opening(art, intro, PAGES.monolith.chapter);
+    opening(art, intro, PAGES[PK].chapter);
+    ctx.picker(intro.querySelector("[data-tabs]"));
     function start(pageKey) {
       intro.remove(); build(pageKey); st.running = true; surface.focus(); placeRing();
-      if (P.key === "monolith") beat(`Lunessa Tidecaller dives through a sea that clings like oil, down to <q>a monolith carved with symbols her mind refused to hold</q>. <cite>WW 71 · watch what stays</cite>`, 8000);
+      if (P.key === "seal") { beat(`The door of the Bone Choir is sealed with six rows. The three from the monolith are cut here too${monoRead ? ", and Lunessa knows them" : ""}. The fourth runs like water. The fifth looks away. The sixth is waiting. <cite>Read V and VI${monoRead >= 3 ? "" : ", and what was not read of I to III"}</cite>`, 10000);
+        if (monoRead) ctx.link(wrap, `Because you read ${monoRead === 3 ? "three rows" : monoRead + " row" + (monoRead > 1 ? "s" : "")} of the monolith in <b>The Slipping Glyph I</b>, ${monoRead > 1 ? "they stand" : "it stands"} on the seal already read.`, 9000, "low"); }
+      else if (P.key === "monolith") beat(`Lunessa Tidecaller dives through a sea that clings like oil, down to <q>a monolith carved with symbols her mind refused to hold</q>. <cite>WW 71 · watch what stays</cite>`, 8000);
       else beat(st.mercy
         ? `Dawn at the Rim Moot. A Remnant dropped this slate: their list. Ysolde's row is already blank; the entry Kael burned at the fire took her off it. <cite>Each row read warns a witness · three minutes</cite>`
         : `Dawn at the Rim Moot. A Remnant dropped this slate: their list of who remembers, and where each will be. Ysolde is on it still. <cite>Each row read warns a witness · three minutes</cite>`, 9000);
@@ -490,13 +579,12 @@ export default {
       card.querySelector("[data-mercy]").focus();
     }
     intro.querySelectorAll("[data-page]").forEach((b) => {
-      const show = () => openingSet(art, intro, PAGES[b.dataset.page].chapter);
-      b.addEventListener("pointerenter", show); b.addEventListener("focus", show);
-      b.addEventListener("click", () => (b.dataset.page === "killlist" ? askYsolde() : start("monolith")));
+      b.addEventListener("click", () => (b.dataset.page === "killlist" ? askYsolde() : start(b.dataset.page)));
     });
     intro.querySelector("[data-page]").focus();
     raf = requestAnimationFrame(frame);
 
     return { unmount() { st.over = true; dead = true; cancelAnimationFrame(raf); timers.forEach(clearTimeout); ro && ro.disconnect(); wrap.remove(); } };
-  },
-};
+}
+
+export default staged({ stages: LADDER }, play);

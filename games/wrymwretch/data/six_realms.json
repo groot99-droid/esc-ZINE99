@@ -426,5 +426,32 @@
       },
       "watch_cost": 1
     }
-  ]
+  ],
+  "phase_2": {
+    "accepted": "2026-11-15",
+    "built": "2026-11-16",
+    "blank_tessera": {
+      "rule": "A neutral Remnant piece rises from the first hex the tide forgets and moves one hex toward the nearest Threshold each round. It cannot be taken or pushed. A piece beside it loses its power: it moves one hex, and nothing protects it.",
+      "matches": [
+        "s_realms_seasons",
+        "s_realms_galechanters",
+        "s_realms_stonekeepers",
+        "s_realms_tidecallers"
+      ]
+    },
+    "centre_falls": {
+      "scene": "s_realms_tidecallers",
+      "rule": "The first thing the tide takes is the centre. Wrymreach is void: nobody can end a turn there and Thresholds counted at the round limit decide nothing (the elder keeps the game). The player, beginning a turn holding two Thresholds, may Recall Wrymreach instead of moving, and wins. The elder cannot Recall it."
+    },
+    "centre_opens": {
+      "round": 4,
+      "matches": [
+        "s_realms_syndicate",
+        "s_realms_seasons",
+        "s_realms_galechanters",
+        "s_realms_stonekeepers"
+      ],
+      "rule": "Retuned 2026-11-16: nobody may step onto Wrymreach before round 4, the round after the first tide. Before this the elder had a forced win in two rounds (a piece to a Threshold, then Water onto the centre), which no play could stop."
+    }
+  }
 }

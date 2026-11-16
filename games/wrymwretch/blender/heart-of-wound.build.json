@@ -299,6 +299,132 @@
     }
   ],
   "scenes": {
+    "s_last_witness": {
+      "note": "The Last Witness Is the Prisoner (accepted 2026-11-15, built 2026-11-16): the approach to the heart of the wound, before the statues. The voice says 'I... remember...' and stops. The party Retells his name to him, as it did for forgetful elders; then the walk in to the statues.",
+      "world": {
+        "color": [
+          0.031,
+          0.031,
+          0.047
+        ],
+        "strength": 0.05
+      },
+      "lights": [
+        {
+          "name": "sun-gold",
+          "type": "SPOT",
+          "location": [
+            -20,
+            -10,
+            22
+          ],
+          "energy": 3500,
+          "size": 1,
+          "color": [
+            0.973,
+            0.784,
+            0.314
+          ],
+          "look_at": [
+            -12,
+            0,
+            6
+          ]
+        },
+        {
+          "name": "moon-silver",
+          "type": "SPOT",
+          "location": [
+            20,
+            -10,
+            22
+          ],
+          "energy": 3500,
+          "size": 1,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "look_at": [
+            12,
+            0,
+            6
+          ]
+        },
+        {
+          "name": "veil-glow",
+          "type": "AREA",
+          "location": [
+            3,
+            8,
+            20
+          ],
+          "energy": 5200,
+          "size": 10,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "crystal-glow",
+          "type": "POINT",
+          "location": [
+            0,
+            -18,
+            1.8
+          ],
+          "energy": 150,
+          "size": 0.4,
+          "color": [
+            0.973,
+            0.784,
+            0.314
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -24.5,
+          2.2
+        ],
+        "look_at": [
+          1.5,
+          4.0,
+          12.0
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -22,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "crystal-wound",
+          "verb": "Open the Record at the name"
+        },
+        {
+          "prop": "queen-statue",
+          "verb": "Retell his name to the voice",
+          "leads_to": "s_heart_of_wound"
+        }
+      ]
+    },
     "s_heart_of_wound": {
       "note": "Where the sun's anger and the moon's tear collided: gold and silver mixed light, the bone statues of the King of Dragons and the Queen of Elves; the voice: 'I... remember... me...'",
       "world": {

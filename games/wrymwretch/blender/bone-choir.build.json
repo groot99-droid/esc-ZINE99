@@ -349,6 +349,27 @@
       ],
       "material": "silver-crack",
       "collide": false
+    },
+    {
+      "id": "empty-saddle",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.1,
+        0.7,
+        0.6
+      ],
+      "location": [
+        9.5,
+        6.0,
+        0.3
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        20
+      ],
+      "material": "bone"
     }
   ],
   "props": [
@@ -727,6 +748,136 @@
           "prop": "wyrm-skull",
           "verb": "Stand before the skull and tune the choir",
           "leads_to": "s_heart_choir"
+        }
+      ]
+    },
+    "s_empty_saddle": {
+      "note": "The Empty Saddle (accepted 2026-11-15, built 2026-11-16): the choir is tuned and its door stands open. One rib is paler and cut later than the rest, and beside it lies a dragon-rider's saddle with nothing in it. If the rib was tuned (tarns_rib_tuned) the hall holds a seventh note; Ilvarra names Tarn, and Dorrin Vael.",
+      "world": {
+        "color": [
+          0.024,
+          0.024,
+          0.04
+        ],
+        "strength": 0.05
+      },
+      "lights": [
+        {
+          "name": "bone-hum-north",
+          "type": "AREA",
+          "location": [
+            0,
+            10,
+            14
+          ],
+          "energy": 1400,
+          "size": 16,
+          "color": [
+            0.925,
+            0.902,
+            0.839
+          ],
+          "look_at": [
+            0,
+            10,
+            0
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SPOT",
+          "location": [
+            0,
+            -28,
+            10
+          ],
+          "energy": 1500,
+          "size": 0.5,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "look_at": [
+            0,
+            25,
+            3
+          ]
+        },
+        {
+          "name": "saddle-ember",
+          "type": "POINT",
+          "location": [
+            9.5,
+            6.0,
+            1.4
+          ],
+          "energy": 260,
+          "size": 0.4,
+          "color": [
+            0.878,
+            0.463,
+            0.18
+          ]
+        },
+        {
+          "name": "door-silver",
+          "type": "AREA",
+          "location": [
+            0,
+            26,
+            6
+          ],
+          "energy": 1800,
+          "size": 6,
+          "color": [
+            0.8,
+            0.847,
+            0.918
+          ],
+          "look_at": [
+            0,
+            14,
+            2
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          4.0,
+          -3.5,
+          3.2
+        ],
+        "look_at": [
+          9.0,
+          6.0,
+          1.4
+        ],
+        "lens_mm": 35,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          4,
+          0,
+          0.0
+        ],
+        "facing_deg": 25
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "crystal-choir",
+          "verb": "Record"
+        },
+        {
+          "prop": "bone-e4",
+          "verb": "Listen to the rib that is not ancient, and kneel at the saddle beside it"
+        },
+        {
+          "prop": "wyrm-skull",
+          "verb": "Go through the choir's door to the seal",
+          "leads_to": "s_glyph_seal"
         }
       ]
     }

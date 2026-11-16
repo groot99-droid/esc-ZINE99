@@ -192,10 +192,13 @@ def plate2(a: Art):
     ink and a careful hand."""
     g = plate(a, 2, "THE SKY OVER THE MOOT")
     page = PAGES[1]
+    a.open("g", class_="answer")   # as on plate I: play strips what the player has to redraw
     for c in page["constellations"]:
         figure(a, c["id"], M_plate)
+    a.close()
     other_stars(a, page, M_plate, g)
     miss = ("sl7",)
+    a.open("g", class_="answer")
     for c in page["constellations"]:
         lines(a, c["lines"], M_plate, g, missing=miss)
         cons_stars(a, c, M_plate, g, missing=miss)
@@ -209,6 +212,7 @@ def plate2(a: Art):
     c = CONS["scholars_lamp"]
     x, y = M_plate(64, 90)
     a.text(x, y - 46, c["name"].upper(), size=24, family="serif", fill=g, text_anchor="middle", letter_spacing=4)
+    a.close()
 
 
 @asset(G, "chart-plate-expanse", group="maps", title="Star Chart plate III: the Expanse", w=1200, h=1200, row=ROW)
@@ -218,9 +222,12 @@ def plate3(a: Art):
     g = plate(a, 3, "THE EXPANSE")
     page = PAGES[2]
     M = lambda x, y: (140 + x * 9.2, 1120 - y * 9.6)
+    a.open("g", class_="answer")   # play strips the figure, the Sigil and the twelve stars, and lays its own
     figure(a, "the_scholar", M, op=0.5)
+    a.close()
     other_stars(a, page, M, g)
     c = CONS["the_scholar"]
+    a.open("g", class_="answer")
     # the man beneath, where his lines will go: hairline only
     for s1, s2 in c["lines"]:
         (x1, y1), (x2, y2) = M(STARS[s1]["x"], STARS[s1]["y"]), M(STARS[s2]["x"], STARS[s2]["y"])
@@ -243,6 +250,7 @@ def plate3(a: Art):
         else:
             star(a, x, y, 22 if s["mag"] == 1 else 14, g)
     a.text(600, 1128, "THE SIGIL, UNDONE", size=20, family="serif", fill=g, text_anchor="middle", letter_spacing=6)
+    a.close()
 
 
 OVERLAYS = [("first_light", 5, "light split in two; its brightest star touches all the others"),

@@ -267,7 +267,8 @@
       "id": "bone-choir",
       "name": "The Bone Choir",
       "scenes": [
-        "s_bone_choir"
+        "s_bone_choir",
+        "s_empty_saddle"
       ],
       "dimensions_m": [
         60,
@@ -311,6 +312,7 @@
       "id": "heart-of-wound",
       "name": "The heart of the wound",
       "scenes": [
+        "s_last_witness",
         "s_heart_of_wound",
         "s_battle_echo",
         "s_choice",

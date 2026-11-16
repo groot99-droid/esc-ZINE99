@@ -22,10 +22,31 @@
 // carries Cedarheart's memory in the HUD; chapter card 1 behind the how-to; the Record behind the
 // result. Without the art the mode draws its own firs and gate, as before.
 
-import { raster, opening, recordPage } from "./_art.js";
+import { raster, opening } from "./_art.js";
+import { staged } from "./_stages.js";
+
+// Phase 2 (accepted 2026-11-15, built 2026-11-16): the ladder.
+//   I   Teach, to the outpost gates (s_run_outpost): Recall an outline. As above, on a shorter path.
+//   II  Test, the surface light (s_run_surface): Lunessa climbs for the surface as the blank comes on.
+//       False outlines (new): a real outline throws a shadow under its line; a false one throws none.
+//       Recalling a false one burns 8 Focus and holds nothing, so the gap under it has to be jumped.
+//   III Twist, the bone bridge (s_run_bone_bridge): someone else has to cross what you remember. Ilvarra
+//       follows and stands only on ground that is solid when she reaches it, so the old safe move
+//       (Recall just enough for yourself and run) now leaves her behind for the edge. Recall reaches
+//       8 m behind as well as 6 m ahead. Set-piece: halfway over she stops, drawn in outline. The curse
+//       has taken why she is running. Stand by her and hold Recall: you Recall a person.
+//       Names become ground (layer link 1): each name kept in Concentration's ward is a lit lantern on
+//       the bridge with that name on it; a name lost leaves its stretch dark (no lantern, and the
+//       outline there is not drawn until it is Recalled).
+const LADDER = [
+  { key: "outpost", name: "To the outpost gates", sub: "Recall an outline.", len: 240, cps: [80, 160], touch: [60, 130, 205], edge: 4.0, seal: "west", realm: "CEDARHEART", art: "run-outpost", chapter: "chapter-01", hero: "Thalen", goal: "GATES" },
+  { key: "surface", name: "The surface light", sub: "Climb as the blank rises; not every outline is true.", len: 240, cps: [80, 160], touch: [55, 125, 200], edge: 3.6, seal: "east", realm: "TIDECALLER", art: "run-surface", chapter: "chapter-04", hero: "Lunessa", goal: "SURFACE" },
+  { key: "bridge", name: "The bone bridge", sub: "Someone else has to cross what you remember.", len: 250, cps: [85, 170], touch: [60, 150, 215], edge: 3.3, seal: "wrymreach", realm: "THE BRIDGE", art: "run-bone-bridge", chapter: "chapter-09", hero: "Thalen", goal: "FAR SIDE" },
+];
+const WARD = ["Maerith", "Illeth", "Corvane", "Dovra", "Hesk", "Ansel"];
 
 const PAPER = "#f1e8d6", BLANK = "#f8f3e8", GRAPHITE = "#45464a", LEAD = "#2c2d30", FAINT = "#8f8a7e", LAMP = "#f6d27a", MOSS = "#8c8f86";
-const LEN = 400, VIEW_H = 14, RUN = 6, DASH = 10.5, GRAV = 30, JUMP = 11.2, EDGE0 = 4.0;
+const VIEW_H = 14, RUN = 6, DASH = 10.5, GRAV = 30, JUMP = 11.2, EDGE0 = 4.0;
 
 const CSS = `
 .wrymwretch-forgetting-run-root{position:absolute;inset:0;background:${PAPER};overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none;font-family:Georgia,serif}
@@ -54,8 +75,9 @@ const CSS = `
 @media (max-width:520px){.wrymwretch-forgetting-run-note{top:112px;right:10px;width:calc(100% - 20px);font-size:16px}}
 `;
 
-export default {
-  mount(root, api) {
+function play(root, api, ctx) {
+    const ST = ctx.stage, CFG = LADDER[ST], LEN = CFG.len, CLIMB = ST === 1, ESCORT = ST === 2;
+    const ward = ESCORT ? (api.shared && api.shared.get("ward", null)) : null;   // { kept: [names], lost: [names] } from Concentration I
     const losses = api.store.get("losses", 0) || 0;
     const gentle = losses >= 2;
     const wrap = document.createElement("div");
@@ -68,13 +90,28 @@ export default {
       <div class="wrymwretch-forgetting-run-note" aria-live="polite"></div>
       <div class="wrymwretch-forgetting-run-intro"><div class="wrymwretch-forgetting-run-page">
         <h2>Forgetting run</h2>
-        <p class="goal">Get Thalen to the outpost gates before the blank page catches him.</p>
+        <div data-tabs></div>
+        ${[`<p class="goal">Get Thalen to the outpost gates before the blank page catches him.</p>
         <div class="wrymwretch-forgetting-run-keys">
           <span><kbd>A</kbd> <kbd>D</kbd> ◀ ▶</span><span>run</span>
           <span><kbd>W</kbd> <kbd>Space</kbd></span><span>jump the gaps</span>
-          <span><kbd>Shift</kbd> RECALL</span><span>faint outline turns solid for 3 s; costs Focus</span>
+          <span><kbd>Shift</kbd> RECALL</span><span>faint outline turns solid for 3 s; costs Focus. A tap is enough</span>
         </div>
-        <p class="more">Lanterns and remembered ground give Focus back. One more trick unlocks on the way.</p>
+        <p class="more">Lanterns and remembered ground give Focus back. One more trick unlocks on the way.</p>`,
+        `<p class="goal">Bring Lunessa up from the monolith to the surface light.</p>
+        <div class="wrymwretch-forgetting-run-keys">
+          <span>a true outline</span><span>throws a shadow under its line: Recall it and it holds</span>
+          <span>a false outline</span><span>new: no shadow. Recall burns 8 Focus on it and holds nothing. Jump what it covers</span>
+          <span><kbd>X</kbd> DASH</span><span>a burst for 15 Focus, from the start</span>
+        </div>
+        <p class="more">The way goes up. Air bubbles give Focus back, as lanterns did.</p>`,
+        `<p class="goal">Cross the bone bridge with Ilvarra, last of the Wyrmguard.</p>
+        <div class="wrymwretch-forgetting-run-keys">
+          <span>Ilvarra</span><span>turned over: she follows, and stands only on ground that is solid when she reaches it</span>
+          <span><kbd>Shift</kbd> RECALL</span><span>now holds 8 m behind you as well. Do not outrun her: the edge takes whoever is last</span>
+          <span>the far side</span><span>opens only when both of you are there</span>
+        </div>
+        <p class="more">The lanterns on the bridge are the names somebody kept.</p>`][ST]}
         ${gentle ? `<p class="gentle">The edge is slower this time (by a third).</p>` : ""}
         <button type="button" data-start>Run</button></div></div>`;
     root.appendChild(wrap);
@@ -87,43 +124,51 @@ export default {
     const timers = new Set();
     const A = { far: null, gate: null, seal: null };
     let dead = false;
-    raster(api.art, "run-outpost", { w: 1280, strip: [".plate", ".fore", ".gate"] }).then((c) => { if (!dead) A.far = c; });
-    raster(api.art, "run-outpost", { w: 1600, strip: [".plate", ".far", ".fore"] }).then((c) => { if (!dead) A.gate = c; });
-    raster(api.art, "ui-seal-west", { w: 96, strip: [".plate"] }).then((c) => { if (!dead) A.seal = c; });
+    raster(api.art, CFG.art, { w: 1280, strip: [".plate", ".fore", ".gate", ".label"] }).then((c) => { if (!dead) A.far = c; });
+    if (ST === 0) raster(api.art, "run-outpost", { w: 1600, strip: [".plate", ".far", ".fore"] }).then((c) => { if (!dead) A.gate = c; });
+    raster(api.art, "ui-seal-" + CFG.seal, { w: 96, strip: [".plate"] }).then((c) => { if (!dead) A.seal = c; });
 
     // ---- the level --------------------------------------------------------------------------
-    const R = api.rng("wrymwretch/forgetting-run/outpost");
+    const R = api.rng("wrymwretch/forgetting-run/" + CFG.key);
     const segs = [{ x0: -20, x1: 14, y: 10, kind: "solid", t: 0 }];
-    const CPS = [100, 200, 300];
+    const CPS = CFG.cps;
     let x = 14, y = 10;
     while (x < LEN + 10) {
-      const gap = x < 30 ? 1.2 : 0.8 + R() * 1.9;
+      let gap = x < 30 ? 1.2 : 0.8 + R() * 1.1;
+      // II: a false outline lies over a wider gap; it has to be jumped
+      if (CLIMB && x > 40 && x < LEN - 24 && R() < 0.24 && !CPS.some((c) => Math.abs(c - x) < 14)) { gap = 2.1; segs.push({ x0: x + 0.05, x1: x + gap - 0.05, y, kind: "false", t: 0, crumble: -1, gone: false, burned: 0 }); }
       x += gap;
-      y = Math.max(7.5, Math.min(11.5, y + (R() - 0.5) * 2.4));
-      const len = 4 + R() * 6;
+      y = CLIMB ? y - (x < 30 ? 0 : -0.3 + R() * 1.3) : Math.max(7.5, Math.min(11.5, y + (R() - 0.5) * 2.4));
+      let len = 6 + R() * 5;
       const cp = CPS.find((c) => c >= x - 2 && c < x + len + 2);
       const roll = R();
-      let kind = x > LEN - 4 ? "solid" : cp ? "solid" : x < 26 ? "solid" : roll < 0.62 ? "outline" : "solid";
-      if (kind === "solid" && x > CPS[0] + 6 && x < LEN - 6 && !cp && roll > 0.8) kind = "grey";
-      if (kind === "outline" && x > CPS[0] + 6 && x < CPS[1] && roll < 0.2) kind = "grey";
+      let kind = x > LEN - 4 ? "solid" : cp ? "solid" : x < 26 ? "solid" : roll < (ESCORT ? 0.5 : 0.62) ? "outline" : "solid";
+      if (!ST && kind === "solid" && x > CPS[0] + 6 && x < LEN - 6 && !cp && roll > 0.8) kind = "grey";
+      if (!ST && kind === "outline" && x > CPS[0] + 6 && x < CPS[1] && roll < 0.2) kind = "grey";
+      if (ESCORT && x < 133 && x + len > 124) { kind = "solid"; len = Math.max(len, 12); }   // where she stops: remembered ground
       segs.push({ x0: x, x1: x + len, y, kind, t: 0, crumble: -1, gone: false });
       x += len;
     }
     const last = segs[segs.length - 1]; last.x1 = Math.max(last.x1, LEN + 12);
     const checkpoints = [{ x: 2, y: 10 }].concat(CPS.map((c) => { const sg = segs.find((q) => q.x1 > c && q.kind === "solid" && q.x0 >= c - 6) || segs[1]; return { x: sg.x0 + 1, y: sg.y }; }));
-    const touch = [80, 170, 270].map((c) => { const sg = segs.find((q) => q.kind === "solid" && q.x0 > c); return { x: (sg.x0 + sg.x1) / 2, y: sg.y, lit: true, glow: 0 }; });
+    // III with the ward played: six lantern posts, one per name; a kept name is lit, a lost one leaves its stretch dark
+    const posts = ward ? WARD.map((name, i) => ({ c: 28 + i * 36, name, kept: (ward.kept || []).includes(name) })) : CFG.touch.map((c) => ({ c, name: "", kept: true }));
+    const touch = posts.filter((p) => p.kept).map((p) => { const sg = segs.find((q) => q.kind === "solid" && q.x0 > p.c) || last; return { x: (sg.x0 + sg.x1) / 2, y: sg.y, lit: true, glow: 0, name: p.name }; });
+    const darkPosts = posts.filter((p) => !p.kept);
+    for (const p of darkPosts) for (const sg of segs) if (sg.kind === "outline" && (sg.x0 + sg.x1) / 2 > p.c - 6 && (sg.x0 + sg.x1) / 2 < p.c + 30) sg.dark = true;
     const trees = []; for (let k = 0; k < 90; k++) trees.push({ x: k * 6 + R() * 5, h: 1.4 + R() * 1.6, y: 6 + R() * 1.5 });
     const firstOutline = segs.find((q) => q.kind === "outline");
 
     // ---- state ------------------------------------------------------------------------------
-    const s = { x: 2, y: 10, vx: 0, vy: 0, ground: null, focus: 100, edge: -8, edgeV: EDGE0 * EDGE_K, cp: 0, setbacks: 0, firstCatch: false,
+    const il = ESCORT ? { x: -1.5, y: 10, lost: false, found: false, hold: 0, hop: null, wait: 0, t: 0 } : null;   // Ilvarra
+    const s = { camY: 0, falses: 0, x: 2, y: 10, vx: 0, vy: 0, ground: null, focus: 100, edge: ESCORT ? -18 : -8, edgeV: CFG.edge * EDGE_K, dashOn0: ST > 0, cp: 0, setbacks: 0, firstCatch: false,
       recalling: false, wasRecalling: false, t: 0, running: false, over: false, face: 1, dash: 0, dashCd: 0, dashOn: false,
       smudge: 0, tick: 0, recalls: 0, dashes: 0, lamps: 0, beats: new Set(), stag: null };
     const keys = { left: false, right: false, recall: false, jump: false, dash: false };
     let W = 1, H = 1, scale = 1, dpr = 1, oy = 0;
     const resize = () => { dpr = Math.min(2, devicePixelRatio || 1); W = Math.max(1, wrap.clientWidth); H = Math.max(1, wrap.clientHeight); cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); scale = Math.min(H / VIEW_H, W / 22); oy = (H - VIEW_H * scale) * 0.55; draw(); };
     const camX = () => s.x - (W * 0.36) / scale;
-    const sx = (wx) => (wx - camX()) * scale, sy = (wy) => wy * scale + oy;
+    const sx = (wx) => (wx - camX()) * scale, sy = (wy) => (wy - s.camY) * scale + oy;
     const solid = (sg) => !sg.gone && (sg.kind === "solid" || sg.kind === "grey" || sg.t > 0);
 
     let noteT = null;
@@ -134,13 +179,16 @@ export default {
     }
     const once = (id, html, ms) => { if (s.beats.has(id)) return; s.beats.add(id); note(html, ms); };
 
-    function setback(caught) {
+    function setback(caught, quiet) {
       s.setbacks++; s.smudge = 1;
       if (s.setbacks >= 4) return finish(false);
-      if (caught && !s.firstCatch) { s.firstCatch = true; note(`The white closes over his heels. Cedarheart memory −3. <small>back to the last post · ${4 - s.setbacks} left</small>`, 3600); }
+      if (quiet) { /* the caller has said why */ }
+      else if (caught && !s.firstCatch) { s.firstCatch = true; note(`The white closes over his heels. Cedarheart memory −3. <small>back to the last post · ${4 - s.setbacks} left</small>`, 3600); }
       else note(caught ? `Caught. Back to the last post. <small>${4 - s.setbacks} setback${4 - s.setbacks === 1 ? "" : "s"} left</small>` : `He falls through ground that was never remembered. <small>back to the last post · ${4 - s.setbacks} left</small>`, 3200);
       const c = checkpoints[s.cp];
-      s.x = c.x; s.y = c.y; s.vx = 0; s.vy = 0; s.ground = null; s.edge = c.x - 12; s.dash = 0;
+      s.x = c.x; s.y = c.y; s.vx = 0; s.vy = 0; s.ground = null; s.edge = c.x - (ESCORT ? 17 : 12); s.dash = 0;
+      if (CLIMB) s.camY = s.y - 9.5;
+      if (il) { il.x = c.x - 0.7; il.y = c.y; il.hop = null; il.hold = 0; }
       s.focus = Math.max(s.focus, 50);
       segs.forEach((sg) => { sg.t = 0; sg.crumble = -1; sg.gone = false; });
     }
@@ -148,14 +196,56 @@ export default {
       if (s.over) return;
       s.over = true; s.running = false;
       api.store.set("losses", win ? 0 : losses + 1);
-      recordPage(wrap, api, { realm: "west", title: "Forgetting run: to the outpost gates", sub: "Cedarheart page · chapter 1, The Forest Is Forgetting", divider: 2, lines: [
+      const pct = Math.round(Math.min(1, s.x / LEN) * 100), again = losses + 1 >= 2 ? " Next time the edge will come slower." : "";
+      if (CLIMB) return ctx.done(wrap, { win, record: { realm: "east", title: "Forgetting run II: the surface light", sub: "Tidecaller page · chapter 4, The Monolith", divider: 2, lines: [
+        win ? "The surface, reached. What she read on the monolith came up with her." : { t: `The surface light: lost, ${pct}% of the way up.`, kind: "lost" },
+        `False outlines trusted: ${s.falses}. Air found: ${s.lamps} of ${touch.length}. Setbacks: ${s.setbacks} of 4.`,
+        s.firstCatch ? { t: "Tidecaller memory −3: the blank caught her once.", kind: "lost" } : "Tidecaller memory untouched by the blank." ] },
+        text: win ? `Lunessa breaks the surface into grey light, ${s.setbacks ? `after ${s.setbacks} setback${s.setbacks > 1 ? "s" : ""}` : "untouched by the blank"}${s.falses ? `, having spent Focus on ${s.falses} outline${s.falses > 1 ? "s" : ""} that held nothing` : ", and not one false outline trusted"}. Behind her the water has no depth any more, only white.`
+          : `The blank closes over the climb a fourth time, ${pct}% of the way to the light. What Lunessa read at the monolith stays under it.${again}` });
+      if (ESCORT) { const names = touch.filter((t) => t.name).map((t) => t.name), dark = darkPosts.map((p) => p.name);
+        return ctx.done(wrap, { win, record: { realm: "wrymreach", title: "Forgetting run III: the bone bridge", sub: "The Rim · chapter 9, The Last Witness", divider: 2, lines: [
+        win ? "The far side of the bone bridge, reached by two." : { t: `The far side: not reached. ${pct}% of the bridge was crossed.`, kind: "lost" },
+        il.found ? "Halfway over, Ilvarra forgot why she was running. She was Recalled, as a ledge is." : { t: "Ilvarra, in outline on the bridge: not Recalled.", kind: "lost" },
+        ...names.map((n) => ({ t: `${n}'s lantern stood on the bridge.`, kind: "link" })),
+        ...dark.map((n) => ({ t: `${n}: no lantern. That stretch was dark.`, kind: "lost" })),
+        ward ? { t: `Lanterns: ${names.length} of 6.`, note: "Names become ground: each name kept in the ward (Concentration I) is a lit lantern here." } : { t: "The ward was never visited: the bridge had only its three plain lanterns.", note: "Names become ground: keep the ward's names in Concentration and their lanterns stand here." },
+        `Setbacks: ${s.setbacks} of 4.` ] },
+        text: win ? `Thalen and Ilvarra step off the last rib together${s.setbacks ? `, after ${s.setbacks} setback${s.setbacks > 1 ? "s" : ""}` : ""}. Halfway over she had stopped, not knowing why she ran, and he held her in mind until she did.${names.length ? ` ${names.length} lantern${names.length > 1 ? "s" : ""} with a kept name lit the way${dark.length ? `; ${dark.join(" and ")} left ${dark.length > 1 ? "their stretches" : "a stretch"} dark` : ""}.` : ""} She does not thank him. She says the name of her dragon, to see whether it is still there.`
+          : `The blank takes the bridge a fourth time, ${pct}% of the way over${il.lost ? ", with Ilvarra still standing in outline where she stopped" : ""}. The Remnants will not need their list for her.${again}` }); }
+      ctx.done(wrap, { win, record: { realm: "west", title: "Forgetting run I: to the outpost gates", sub: "Cedarheart page · chapter 1, The Forest Is Forgetting", divider: 2, lines: [
         win ? "The outpost gates, reached and inked in. The rangers will hear what Thalen saw." : { t: `The outpost gates: forgotten, ${Math.round(Math.min(1, s.x / LEN) * 100)}% of the way there.`, kind: "lost" },
         `Touchstones lit: ${s.lamps} of 3. Setbacks: ${s.setbacks} of 4.`,
         s.firstCatch ? { t: "Cedarheart memory −3: the edge caught him once.", kind: "lost" } : "Cedarheart's memory untouched by the edge.",
-      ] });
-      api.end(win
+      ] }, text: (win
         ? { outcome: "win", text: `The outpost gates ink in and Thalen is through, ${s.setbacks ? `after ${s.setbacks} setback${s.setbacks > 1 ? "s" : ""}` : "untouched by the edge"}, with ${Math.round(s.focus)} Focus left. The rangers look up. “The forest is… forgetting,” he managed. “Something is making it forget.” (WW 39)` }
-        : { outcome: "lose", text: `The blank page closes over the path a fourth time, ${Math.round(Math.min(1, s.x / LEN) * 100)}% of the way to the gates. The outpost never hears what Thalen saw at the split tree.${losses + 1 >= 2 ? " Next time the edge will come slower." : ""}` });
+        : { outcome: "lose", text: `The blank page closes over the path a fourth time, ${Math.round(Math.min(1, s.x / LEN) * 100)}% of the way to the gates. The outpost never hears what Thalen saw at the split tree.${losses + 1 >= 2 ? " Next time the edge will come slower." : ""}` }).text });
+    }
+
+    // III: Ilvarra. She walks behind, hops a gap when the far ledge is solid, and waits when it is not.
+    function escort(dt) {
+      il.t += dt;
+      if (il.hop) { il.hop.u += dt / il.hop.d; const u = Math.min(1, il.hop.u); il.x = il.hop.x0 + (il.hop.x1 - il.hop.x0) * u; il.y = il.hop.y0 + (il.hop.y1 - il.hop.y0) * u - Math.sin(u * Math.PI) * 0.9; if (u >= 1) il.hop = null; return; }
+      const on = segs.find((q) => il.x >= q.x0 - 0.3 && il.x <= q.x1 + 0.3 && q.kind !== "false");
+      if (on && !solid(on)) { note(`The ledge under Ilvarra was only ever held in your mind, and you let it go. <small>back to the last post · ${Math.max(0, 3 - s.setbacks)} left</small>`, 3600); return setback(false, true); }
+      if (on) il.y = on.y;
+      if (!il.found && !il.lost && il.x > 126) {
+        il.lost = true;
+        note(`Halfway over, Ilvarra stops. The curse has taken why she is running. She stands in outline, like a ledge the bridge has half forgotten. <small>go back to her and hold Shift / RECALL</small>`, 9000);
+      }
+      if (il.lost) {
+        if (s.recalling && Math.abs(s.x - il.x) < 3.2) { il.hold += dt; if (il.hold >= 1.3) { il.lost = false; il.found = true; note(`You Recall a person. Line by line she inks back in: the grey braid, the wyrm crest, the reason. <q>The list,</q> she says. <q>They are behind us.</q> <small>she follows again</small>`, 7000); } }
+        else il.hold = Math.max(0, il.hold - dt * 0.5);
+        return;
+      }
+      const want = s.x - 2.4;
+      if (want <= il.x + 0.05) return;
+      const nx = Math.min(want, il.x + 5.8 * dt);
+      if (on && nx > on.x1) {
+        const nxt = segs.find((q) => q.x0 > on.x1 - 0.01 && q.kind !== "false");
+        if (nxt && solid(nxt) && (nxt.kind === "solid" || nxt.t > 0.5) && s.x > nxt.x0 + 0.6) il.hop = { x0: il.x, x1: nxt.x0 + 0.5, y0: il.y, y1: nxt.y, u: 0, d: 0.34 };
+        else { il.x = on.x1; il.wait += dt; if (nxt && !solid(nxt) && s.x > nxt.x1) once("wait", `Ilvarra stops at the end of the remembered ground. The ledge ahead of her is outline again. <small>Recall reaches 8 m behind you: hold it for her</small>`, 5200); }
+      } else il.x = nx;
     }
 
     function step(dt) {
@@ -164,18 +254,25 @@ export default {
       touch.forEach((t) => (t.glow = Math.max(0, t.glow - dt)));
       const dir = (keys.right ? 1 : 0) - (keys.left ? 1 : 0);
       if (dir) s.face = dir;
+      if (s.dashOn0 && !s.dashOn) { s.dashOn = true; dashBtn.hidden = false; }
+      if (CLIMB) s.camY += (s.y - 9.5 - s.camY) * Math.min(1, 4 * dt);
+      for (const sg of segs) if (sg.burned > 0) sg.burned = Math.max(0, sg.burned - dt);
       if (keys.dash && s.dashOn && s.dashCd <= 0 && s.focus >= 15) { s.focus -= 15; s.dash = 1.1; s.dashCd = 2.5; s.dashes++; }
       keys.dash = false;
       const speed = s.dash > 0 ? DASH : RUN;
       const want = s.dash > 0 ? s.face * speed : dir * speed;
       s.vx += (want - s.vx) * Math.min(1, (s.ground ? 12 : 5) * dt);
-      if (keys.jump && s.ground) { s.vy = -JUMP; s.ground = null; }
+      // a jump pressed a moment early, or a moment after the ledge ends, still counts
+      if (keys.jump) s.jumpBuf = 0.14; else s.jumpBuf = Math.max(0, (s.jumpBuf || 0) - dt);
+      s.coyote = s.ground ? 0.14 : Math.max(0, (s.coyote || 0) - dt);
+      if (s.jumpBuf > 0 && (s.ground || s.coyote > 0) && s.vy >= 0) { s.vy = -JUMP; s.ground = null; s.coyote = 0; s.jumpBuf = 0; }
       keys.jump = false;
       s.recalling = keys.recall && s.focus > 0;
       if (s.recalling) {
         if (!s.wasRecalling) { s.focus = Math.max(0, s.focus - 3); s.recalls++; }
         s.focus = Math.max(0, s.focus - 10 * dt);
-        for (const sg of segs) if ((sg.kind === "outline" || sg.kind === "grey") && sg.x1 > s.x - 0.5 && sg.x0 < s.x + 6) { sg.t = 3; if (sg.kind === "grey") { sg.crumble = -1; sg.gone = false; } }
+        for (const sg of segs) if ((sg.kind === "outline" || sg.kind === "grey") && sg.x1 > s.x - (ESCORT ? 8 : 0.5) && sg.x0 < s.x + 6) { sg.t = 3; if (sg.kind === "grey") { sg.crumble = -1; sg.gone = false; } }
+        for (const sg of segs) if (sg.kind === "false" && !s.wasRecalling && sg.x1 > s.x - 0.5 && sg.x0 < s.x + 6 && sg.burned <= 0) { sg.burned = 2.2; s.focus = Math.max(0, s.focus - 8); s.falses++; once("false", `That outline throws no shadow. Lunessa reaches for it and there is nothing to remember: the stone was never there. <small>Focus −8 · jump what a false outline covers</small>`, 5600); }
       }
       s.wasRecalling = s.recalling;
       // remembered ground steadies him: Focus comes back slowly while he stands on it
@@ -192,21 +289,23 @@ export default {
       }
       for (const ts of touch) if (ts.lit && Math.abs(s.x - ts.x) < 0.9 && Math.abs(s.y - ts.y) < 1.5) {
         ts.lit = false; ts.glow = 1.2; s.lamps++; s.focus = Math.min(100, s.focus + 30);
-        note(["A ranger's lantern, still lit. He remembers lighting it. <small>Focus +30</small>", "The lantern at the old ford. <small>Focus +30</small>", "The last lantern before the gates. <small>Focus +30</small>"][s.lamps - 1] || "Focus +30", 2600);
+        note(ts.name ? `${ts.name}'s lantern, with the name tied to it on a slip. Somebody kept it. <small>Focus +30</small>` : CLIMB ? "A pocket of air under a ledge, silver as a coin. <small>Focus +30</small>" : ESCORT ? "A lantern on a rib of the bridge. <small>Focus +30</small>" : ["A ranger's lantern, still lit. He remembers lighting it. <small>Focus +30</small>", "The lantern at the old ford. <small>Focus +30</small>", "The last lantern before the gates. <small>Focus +30</small>"][s.lamps - 1] || "Focus +30", 2600);
       }
       for (let i = checkpoints.length - 1; i > s.cp; i--) if (s.x >= checkpoints[i].x) {
         s.cp = i; s.edgeV *= 1.1; s.tick = 1.2;
+        if (ST) { if (i === 1) note(CLIMB ? `The water is the colour of the page now. Above, the light has a shape. <small>the blank comes faster</small>` : `The first third of the bridge. Wind comes up through the ribs. <small>the edge comes faster</small>`, 4200); break; }
         if (i === 1) note(`Past the split tree the moss is grey, crumbling <q>into dust that didn’t even remember how to be soil</q>. <small>WW 33 · grey ground gives way after a moment; Recall holds it</small>`, 6500);
         if (i === 2) { s.dashOn = true; dashBtn.hidden = false; s.stag = { x: s.x + 10 }; note(`A stag with silver antlers breaks from the pines ahead and runs where the ground still holds. The edge quickens. <small>new: X or DASH, a burst for 15 Focus</small>`, 6500); }
         if (i === 3) note(`Smoke from the outpost chimneys, drawn in two strokes. <small>the edge is fastest now</small>`, 3500);
         break;
       }
-      if (firstOutline && s.x > firstOutline.x0 - 9) once("outline", `The path ahead is only outline: the forest has half forgotten it. <small>hold or tap Shift / RECALL just before a faint ledge</small>`, 5200);
+      if (!ST && firstOutline && s.x > firstOutline.x0 - 9) once("outline", `The path ahead is only outline: the forest has half forgotten it. <small>hold or tap Shift / RECALL just before a faint ledge</small>`, 5200);
       if (s.stag) { const tgt = segs.find((q) => q.x0 > s.x + 8 && solid(q)); s.stag.x += Math.max(0, (tgt ? tgt.x0 + 1 : s.x + 10) - s.stag.x) * Math.min(1, 3 * dt); s.stag.y = (segs.find((q) => s.stag.x >= q.x0 && s.stag.x <= q.x1) || { y: 9 }).y; }
-      s.edge += s.edgeV * dt;
+      s.edge += s.edgeV * dt * (il && il.lost ? 0.3 : 1);
+      if (il) { escort(dt); if (s.over) return; if (s.edge > il.x - 0.3) { note(`The white closes over Ilvarra. <small>back to the last post · ${Math.max(0, 3 - s.setbacks)} left</small>`, 3400); return setback(true, true); } }
       if (s.edge > s.x - 0.3) return setback(true);
-      if (s.y > VIEW_H + 2) return setback(false);
-      if (s.x >= LEN) finish(true);
+      if (s.y > s.camY + VIEW_H + 2) return setback(false);
+      if (s.x >= LEN) { if (il && il.x < LEN - 9) { s.x = LEN - 0.05; s.vx = 0; once("gate", `The far side will not ink in for one. <small>Ilvarra is still on the bridge: go back, and hold the path for her</small>`, 5000); } else finish(true); }
     }
 
     // ---- drawing ----------------------------------------------------------------------------
@@ -236,9 +335,9 @@ export default {
       g.strokeStyle = "rgba(69,70,74,.32)"; g.lineWidth = 1.2;
       const cam = camX();
       if (A.far) {   // the sketch set's hill and firs, scrolling at half speed (mirrored tile by tile)
-        const bh = Math.max(H * 0.9, 14 * scale), bw = bh * 16 / 9, top = sy(10) - bh * 0.72;
+        const bh = Math.max(H * 0.9, 14 * scale), bw = bh * 16 / 9, top = 10 * scale + oy - bh * 0.72;
         const off = (((cam * scale * 0.5) % (bw * 2)) + bw * 2) % (bw * 2);
-        g.globalAlpha = 0.85;
+        g.globalAlpha = ST ? 0.3 : 0.85;
         for (let k = 0; k * bw - off < W; k++) {
           const x = Math.round(k * bw - off), wk = Math.round((k + 1) * bw - off) - x; if (x + wk < 0) continue;
           const iw = A.far.width, ih = A.far.height, m = 4;
@@ -286,7 +385,13 @@ export default {
           hatch(x0 + shake, top, x1 - x0, depth, held ? 0.45 : 0.28, 4, "140,143,134");
           g.strokeStyle = held ? LEAD : MOSS; g.lineWidth = 2; g.setLineDash(held ? [] : [9, 3]); g.beginPath(); g.moveTo(x0 + shake, top); g.lineTo(x1 + shake, top); g.stroke(); g.setLineDash([]);
           if (sg.crumble > 0) { g.fillStyle = MOSS; for (let k = 0; k < 10; k++) g.fillRect(x0 + ((k * 37) % (x1 - x0 || 1)), top + 6 + sg.crumble * 30 * ((k % 3) + 1), 2, 2); }
+        } else if (sg.kind === "false") {   // no shadow under it; and when reached for, nothing
+          g.strokeStyle = FAINT; g.lineWidth = 1.2; g.setLineDash([5, 6]);
+          g.strokeRect(x0, top, x1 - x0, Math.min(depth, 1.6 * scale)); g.setLineDash([]);
+          if (sg.burned > 0) { g.globalAlpha = Math.min(1, sg.burned); g.strokeStyle = "#8b2a20"; g.lineWidth = 2; g.beginPath(); g.moveTo(x0, top); g.lineTo(x1, top + 1.2 * scale); g.moveTo(x1, top); g.lineTo(x0, top + 1.2 * scale); g.stroke(); g.font = "italic 15px Georgia, serif"; g.fillStyle = "#8b2a20"; g.fillText("nothing there", x0, top - 8); g.globalAlpha = 1; }
         } else {
+          if (sg.dark && sg.t <= 0) continue;   // a dark stretch: no name was kept to light it
+          hatch(x0 + 3, top + 1.6 * scale + 2, x1 - x0 - 6, 0.45 * scale, 0.5, 3);   // a true outline throws a shadow
           if (sg.t > 0) {
             const a = Math.min(1, sg.t / 0.8);
             g.fillStyle = `rgba(217,210,194,${0.7 * a})`; g.fillRect(x0, top, x1 - x0, depth);
@@ -304,6 +409,19 @@ export default {
         g.strokeStyle = GRAPHITE; g.lineWidth = 1.5; g.beginPath(); g.moveTo(px, py + 0.5 * scale); g.lineTo(px, sy(ts.y)); g.stroke();
         g.fillStyle = ts.lit ? LAMP : BLANK; g.strokeRect(px - 0.25 * scale, py - 0.5 * scale, 0.5 * scale, 0.9 * scale); g.fillRect(px - 0.24 * scale, py - 0.49 * scale, 0.48 * scale, 0.88 * scale);
         if (ts.lit) { g.fillStyle = "#c98a2a"; g.beginPath(); g.ellipse(px, py, 0.08 * scale, 0.22 * scale, 0, 0, 7); g.fill(); }
+        if (ts.name) { g.font = "italic 700 15px Georgia, serif"; g.textAlign = "center"; g.fillStyle = ts.lit ? LEAD : FAINT; g.fillText(ts.name, px, py - 0.85 * scale); g.textAlign = "left"; }
+      }
+      for (const p of darkPosts) { const px = sx(p.c + 12); if (px < -80 || px > W + 80) continue; g.font = "italic 14px Georgia, serif"; g.textAlign = "center"; g.fillStyle = "rgba(143,138,126,.85)"; g.fillText(`${p.name}: no lantern`, px, oy + 3.2 * scale); g.textAlign = "left"; }
+      if (il) {   // Ilvarra: inked, or in outline when the curse has taken why she runs
+        const px = sx(il.x), py = sy(il.y), u = scale, moving = !il.lost && (il.hop || s.x - 2.4 > il.x + 0.1), ph = moving && !rm ? Math.sin(il.t * 13) : 0;
+        g.lineCap = "round"; g.lineWidth = il.lost ? 1.4 : 2.2; g.strokeStyle = il.lost ? FAINT : LEAD; g.setLineDash(il.lost ? [4, 5] : []);
+        g.beginPath(); g.moveTo(px, py - 0.95 * u); g.lineTo(px + 0.36 * u * ph, py); g.moveTo(px, py - 0.95 * u); g.lineTo(px - 0.36 * u * ph, py);
+        g.moveTo(px, py - 0.95 * u); g.lineTo(px + 0.08 * u, py - 1.7 * u);
+        g.moveTo(px + 0.08 * u, py - 1.5 * u); g.lineTo(px + 0.45 * u, py - 1.15 * u + 0.15 * u * ph); g.stroke();
+        g.beginPath(); g.arc(px + 0.12 * u, py - 1.95 * u, 0.22 * u, 0, 7); g.stroke();
+        g.beginPath(); g.moveTo(px - 0.05 * u, py - 1.75 * u); g.quadraticCurveTo(px - 0.55 * u, py - 1.2 * u, px - 0.42 * u, py - 0.25 * u); g.lineTo(px + 0.1 * u, py - 0.6 * u); g.stroke();   // her cloak
+        g.setLineDash([]);
+        if (il.lost) { g.strokeStyle = GRAPHITE; g.lineWidth = 3; g.beginPath(); g.arc(px, py - 1 * u, 1.5 * u, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * Math.min(1, il.hold / 1.3)); g.stroke(); g.font = "italic 15px Georgia, serif"; g.fillStyle = LEAD; g.textAlign = "center"; g.fillText("Ilvarra, in outline", px, py - 2.75 * u); g.textAlign = "left"; }
       }
       checkpoints.slice(1).forEach((c, i) => { const px = sx(c.x - 1); if (px < -20 || px > W + 20) return; g.strokeStyle = i < s.cp ? LEAD : FAINT; g.lineWidth = 1.8; g.beginPath(); g.moveTo(px, sy(c.y)); g.lineTo(px, sy(c.y) - 2 * scale); g.lineTo(px + 0.8 * scale, sy(c.y) - 1.7 * scale); g.lineTo(px, sy(c.y) - 1.4 * scale); g.stroke(); if (i < s.cp) { g.beginPath(); g.moveTo(px - 6, sy(c.y) - 2.3 * scale); g.lineTo(px - 1, sy(c.y) - 2.1 * scale + 5); g.lineTo(px + 9, sy(c.y) - 2.6 * scale - 4); g.stroke(); } });
       // the stag, in a few silvery strokes
@@ -360,15 +478,15 @@ export default {
       g.strokeStyle = GRAPHITE; g.strokeRect(84, 43, 140, 13);
       g.fillStyle = close ? "rgba(139,42,32,.75)" : "rgba(69,70,74,.55)"; g.fillRect(84, 43, 140 * Math.max(0, 1 - gapM / 16), 13);
       g.fillStyle = close ? "#8b2a20" : LEAD; g.fillText(`${gapM.toFixed(0)} m`, 232, 54);
-      g.fillStyle = LEAD; g.fillText(`GATES ${Math.round(prog * 100)}%`, 20, 76);
+      g.fillStyle = LEAD; g.fillText(`${CFG.goal} ${Math.round(prog * 100)}%`, 20, 76);
       g.fillText("SETBACKS", 140, 76);
       for (let i = 0; i < 4; i++) { g.strokeRect(220 + i * 12, 67, 9, 9); if (i < s.setbacks) { g.beginPath(); g.moveTo(220 + i * 12, 67); g.lineTo(229 + i * 12, 76); g.moveTo(229 + i * 12, 67); g.lineTo(220 + i * 12, 76); g.stroke(); } }
       g.fillStyle = "rgba(44,45,48,.8)"; g.font = "600 12px ui-monospace, Menlo, monospace";
-      g.fillText(s.recalling ? "RECALLING: the next 6 m hold" : s.dashOn ? (s.dashCd > 0 ? "dash recovering" : "X / DASH: a burst, 15 Focus") : "SHIFT / RECALL: hold the path", 20, 94);
+      g.fillText(s.recalling ? (ESCORT ? "RECALLING: 8 m behind, 6 m ahead" : "RECALLING: the next 6 m hold") : il && il.lost ? "SHE HAS STOPPED: Recall her" : s.dashOn ? (s.dashCd > 0 ? "dash recovering" : "X / DASH: a burst, 15 Focus") : "SHIFT / RECALL: hold the path", 20, 94);
       if (A.seal && W > 430) {   // Cedarheart's seal: whole until the edge first catches him
         g.globalAlpha = s.firstCatch ? 0.45 : 1; g.drawImage(A.seal, 280, 12, 50, 50); g.globalAlpha = 1;
         g.font = "700 12px ui-monospace, Menlo, monospace"; g.fillStyle = s.firstCatch ? "#8b2a20" : LEAD;
-        g.fillText(s.firstCatch ? "CEDARHEART −3" : "CEDARHEART", 280, 76);
+        g.fillText(s.firstCatch && !ESCORT ? CFG.realm + " −3" : CFG.realm, 280, 76);
       }
       if (s.tick > 0) { g.globalAlpha = Math.min(1, s.tick); g.font = "italic 22px Georgia, serif"; g.fillStyle = LEAD; g.fillText("✓ post", sx(s.x) - 20, sy(s.y) - 2.8 * scale); g.globalAlpha = 1; }
     }
@@ -395,10 +513,18 @@ export default {
     const startBtn = wrap.querySelector("[data-start]");
     startBtn.addEventListener("click", () => {
       intro.remove(); s.running = true; lastT = performance.now();
-      note(`Thalen Cedarheart has seen the moss grey at the split tree. Behind him the western groves are going blank, and the outpost has to hear it from him. <small>run right · the white edge follows</small>`, 6000);
+      if (CLIMB) note(`Lunessa Tidecaller kicks up from the monolith with three rows held in her head. Below her the sea is going blank, and it is rising. <small>run and jump upward · look under each outline for its shadow</small>`, 6500);
+      else if (ESCORT) {
+        note(`Dawn, and the Remnants have their list back. Ilvarra's name is on it, and the only way off the Rim is the bridge of wyrm ribs. <small>she follows · hold the path for two</small>`, 6500);
+        if (ward) { const k = (ward.kept || []).filter((n) => WARD.includes(n)), l = WARD.filter((n) => !k.includes(n));
+          ctx.link(wrap, k.length ? `Because you kept <b>${k.join(", ")}</b> in Concentration, ${k.length > 1 ? "their lanterns stand" : "that lantern stands"} on the bridge.${l.length ? ` ${l.join(" and ")} ${l.length > 1 ? "were" : "was"} lost: ${l.length > 1 ? "those stretches are" : "that stretch is"} dark.` : ""}` : `Because no name was kept in Concentration's ward, the bridge has no lantern at all.`); }
+      }
+      else note(`Thalen Cedarheart has seen the moss grey at the split tree. Behind him the western groves are going blank, and the outpost has to hear it from him. <small>run right · the white edge follows</small>`, 6000);
     });
+    ctx.picker(wrap.querySelector("[data-tabs]"));
     startBtn.focus();
-    opening(api.art, intro, "chapter-01");
+    opening(api.art, intro, CFG.chapter);
+
     const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(resize) : null;
     ro ? ro.observe(wrap) : addEventListener("resize", resize);
     resize();
@@ -414,5 +540,6 @@ export default {
         wrap.remove();
       },
     };
-  },
-};
+}
+
+export default staged({ stages: LADDER }, play);

@@ -68,7 +68,8 @@
       "writes": [
         "record",
         "echoes",
-        "memory.west"
+        "memory.west",
+        "fourth_row_parts"
       ]
     },
     {
@@ -231,7 +232,8 @@
       "writes": [
         "record",
         "echoes",
-        "memory.north"
+        "memory.north",
+        "fourth_row_parts"
       ]
     },
     {
@@ -246,7 +248,9 @@
       ],
       "reads": [],
       "writes": [
-        "echoes"
+        "echoes",
+        "fourth_row_parts",
+        "record"
       ]
     },
     {
@@ -355,7 +359,9 @@
       ],
       "reads": [],
       "writes": [
-        "echoes"
+        "echoes",
+        "fourth_row_parts",
+        "record"
       ]
     },
     {
@@ -484,7 +490,8 @@
         "echoes",
         "name_in_record",
         "name_recorded",
-        "requests"
+        "requests",
+        "fourth_row_parts"
       ]
     },
     {
@@ -538,7 +545,9 @@
       ],
       "reads": [],
       "writes": [
-        "echoes"
+        "echoes",
+        "fourth_row_parts",
+        "record"
       ]
     },
     {
@@ -745,7 +754,8 @@
         "trust.dark",
         "trust.celestial",
         "because_of_us_recorded",
-        "kael_choice"
+        "kael_choice",
+        "second_reader_seen"
       ],
       "writes": [
         "ilvarra_met",
@@ -919,7 +929,9 @@
         "memory.below",
         "memory.above",
         "record",
-        "moot_watches_left"
+        "moot_watches_left",
+        "second_reader_seen",
+        "stars_black"
       ],
       "game": "star_chart"
     },
@@ -1000,7 +1012,8 @@
         "ilvarra_alive",
         "witnesses",
         "witnesses_lost",
-        "memory.below"
+        "memory.below",
+        "ilvarra_recalled"
       ],
       "mode": "forgetting_run"
     },
@@ -1015,7 +1028,8 @@
         "s_flight_descent"
       ],
       "reads": [
-        "ilvarra_alive"
+        "ilvarra_alive",
+        "ilvarra_recalled"
       ],
       "writes": [
         "ilvarra_memory_kept",
@@ -1043,7 +1057,8 @@
         "memory.east",
         "memory.below",
         "memory.above",
-        "record"
+        "record",
+        "stars_black"
       ],
       "writes": [
         "memory.west",
@@ -1096,16 +1111,39 @@
       "enter": "push-in",
       "exit": "pull-out",
       "next": [
-        "s_glyph_seal"
+        "s_empty_saddle"
       ],
       "reads": [
         "heartstone_kept"
       ],
       "writes": [
         "choir_opened",
-        "memory.south"
+        "memory.south",
+        "tarns_rib_tuned"
       ],
       "game": "heartstone"
+    },
+    {
+      "id": "s_empty_saddle",
+      "layer": "3d",
+      "name": "The Empty Saddle: the rib that is not ancient",
+      "chapter": "a3_bones",
+      "enter": "pull-out",
+      "exit": "push-in",
+      "next": [
+        "s_glyph_seal"
+      ],
+      "reads": [
+        "tarns_rib_tuned",
+        "unwriter_name_known",
+        "heartstone_kept",
+        "choir_opened"
+      ],
+      "writes": [
+        "tarn_named",
+        "record",
+        "echoes"
+      ]
     },
     {
       "id": "s_glyph_seal",
@@ -1118,7 +1156,8 @@
         "s_expanse"
       ],
       "reads": [
-        "monolith_rows"
+        "monolith_rows",
+        "fourth_row_parts"
       ],
       "writes": [
         "seal_text_read",
@@ -1169,13 +1208,15 @@
         "s_battle_unwriter"
       ],
       "reads": [
-        "izladar_fragments"
+        "izladar_fragments",
+        "second_reader_seen"
       ],
       "writes": [
         "izladar_constellation_drawn",
         "izladar_fragments",
         "stars_redrawn",
-        "memory.above"
+        "memory.above",
+        "stars_black"
       ],
       "game": "star_chart"
     },
@@ -1220,7 +1261,7 @@
       "enter": "flatten",
       "exit": "flatten",
       "next": [
-        "s_heart_of_wound"
+        "s_last_witness"
       ],
       "reads": [
         "record",
@@ -1242,6 +1283,29 @@
         "world_memory"
       ],
       "mode": "forgetting_run"
+    },
+    {
+      "id": "s_last_witness",
+      "layer": "3d",
+      "name": "The Last Witness Is the Prisoner",
+      "chapter": "a3_choice",
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s_heart_of_wound"
+      ],
+      "reads": [
+        "record",
+        "name_recorded",
+        "izladar_fragments",
+        "price_told",
+        "world_memory"
+      ],
+      "writes": [
+        "name_retold_to_voice",
+        "record",
+        "echoes"
+      ]
     },
     {
       "id": "s_heart_of_wound",

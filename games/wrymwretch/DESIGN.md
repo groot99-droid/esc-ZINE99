@@ -586,8 +586,10 @@ forgotten thing in 3D is drawn the same way: colour drains to pencil line, then 
 | `s_moot_camp` | The Rim Moot | 80 × 80 m | Six delegation tents, four elder tables, healers' tent, sky-watch, great crystal, Ilvarra's fire | Six banner colours; firelight | Six motifs from six tents | Four watches spent → the fire → dawn | fade / fade |
 | `s_moot_dawn` | The Moot at dawn | Same | Three witness tents, banners | Grey dawn, banners un-inking | Silence where names were | Battle won → kill-list | cut / push-in |
 | `s_bone_choir` | Hall of wyrm bones | 60 × 30 m | Bones (12), crystal | Bone-white, hum-lit | The bones' drone | Battle won → tuning | flatten / push-in |
+| `s_empty_saddle` | The Bone Choir, after the tuning (accepted 2026-11-15, built 2026-11-16) | Same hall | The rib that is not ancient, the empty saddle beside it, crystal, the opened door | The hum-light dimmed; one ember-orange glow on the saddle only | The choir's chord; a seventh note if the rib was tuned | Both names said, or the door taken → the seal | pull-out / push-in |
 | `s_expanse` | The Astral Expanse | 200 m route | Memory platforms, crystal | Blank paper sky with ink stars | Voices of the Record read back | Reach the Sigil → Star Chart | fade / push-in |
 | `s_battle_unwriter` | A blank plain in the Expanse | Stage | Battle | White, high contrast | His creed, whispered | Won → run | pull-out / flatten |
+| `s_last_witness` | The approach to the heart of the wound (accepted 2026-11-15, built 2026-11-16) | Same place, from its edge | The Record open at THE NAME, the voice, crystal | The veil brighter than the statues; gold and silver low | The voice: "I… remember…", and it stops | The name Retold to him → the statues | flatten / fade |
 | `s_heart_of_wound` | Where sun and moon collided | 50 m round | Statues of the King and Queen, the voice | Gold and silver mixed | The voice | Anchor offered → Heartstone | flatten / push-in |
 | `s_battle_echo` | Same, the veil torn | Stage | Battle | The veil bulging | Six motifs fighting a seventh | Won → choice | pull-out / cut |
 | `s_choice` | The heart of the wound | 20 m | Three answers set in the statues | Still | A held note | Answer given → ending | cut / fade |
@@ -661,6 +663,8 @@ the player nears it: outline at 0%, colour at 100%.
 | `s_run_expanse` | The voice | 210 s | 5.0 m/s | Platforms exist only for recorded places; realms below 20 give no platforms; the route bends. The ward's lanterns stand here too, by the same rule |
 
 Accessibility: an option slows the edge by 30%, and another lets Recall be toggled, not held.
+
+**The ladders (phase 2, built 2026-11-16).** Each 2D mode is played as three stages, teach, test and twist; section 21, "What phase 2 built", lists them with their new elements and set-pieces.
 
 ## 11. 1D games
 
@@ -894,6 +898,8 @@ and again when the crystal is set. It cannot be changed afterwards, and a lost p
 
 **Writes.** `heartstone_kept` (vision: `izladar_fragments` +1); a won rekindle also anchors
 `memory.south` (it skips the next two drains). `choir_opened`. `anchor_forged`.
+
+**The ladders (phase 2, built 2026-11-16).** Each 1D game is played as three stages, teach, test and twist; section 21, "What phase 2 built", lists them with their new elements and set-pieces.
 
 ### What changed from ADAPTATIONS.md here
 
@@ -1449,10 +1455,10 @@ they are freeing him. They are erasing him. This adds no biography and gives him
 
 | Character | Want | Secret | Scene that carries it | Built |
 | --- | --- | --- | --- | --- |
-| **Seraphyne** (deepened) | To hold the name | She has read the page Izladar read: the stars formed "a sigil she had hoped never to see again" (WW 85). She stopped one page short of him | The Second Reader, in Star Chart II: a line draws itself in her hand, and Kael sees | Phase 2 |
-| **Dorrin Vael, the Unwriter** (deepened) | That no one carries a half-soul again | He still dreams Tarn's dreams. He cannot forget, which is why he teaches forgetting | The Empty Saddle, in the Bone Choir: one rib is not ancient | His name: phase 1 (the kill-list's fifth row). The rib: phase 2 |
+| **Seraphyne** (deepened) | To hold the name | She has read the page Izladar read: the stars formed "a sigil she had hoped never to see again" (WW 85). She stopped one page short of him | The Second Reader, in Star Chart II: a line draws itself in her hand, and Kael sees | Phase 2, built 2026-11-16 |
+| **Dorrin Vael, the Unwriter** (deepened) | That no one carries a half-soul again | He still dreams Tarn's dreams. He cannot forget, which is why he teaches forgetting | The Empty Saddle, in the Bone Choir: one rib is not ancient | His name: phase 1 (the kill-list's fifth row). The rib: phase 2, built 2026-11-16 |
 | **Ysolde, the archivist** (deepened from the unnamed witness) | To put down what the dying sage told her | She wrote the Remnants' kill-list; they took her daughter's face from her memory and offered it back, row by row | The Witness Who Asks to Forget, at the Moot fire | Her name and her request: phase 1. The list as her hand: phase 2 |
-| **Tarn** | — | Dorrin's dragon, dead in the long sleep | Named with Dorrin | Phase 1 (name), phase 2 (rib) |
+| **Tarn** | — | Dorrin's dragon, dead in the long sleep | Named with Dorrin | Phase 1 (name), phase 2 (rib, built 2026-11-16) |
 
 ### Three acts, twelve scenes
 
@@ -1463,17 +1469,17 @@ design; "new" is accepted here.
 | # | Scene | Plays in | Status | What turns | Built |
 | --- | --- | --- | --- | --- | --- |
 | 1 | The Split Tree | `s_cedar_grove` | Source (WW 31–39) | The world un-writes itself under your feet | Existing |
-| 2 | The Fourth Row | `s_glyph_monolith` | Existing; deepened | Lunessa keeps one part of the unreadable row without knowing | Phase 2 |
+| 2 | The Fourth Row | `s_glyph_monolith` | Existing; deepened | Lunessa keeps one part of the unreadable row without knowing | **Phase 2, built 2026-11-16**: the kelp line on the seabed is one of six world-held parts (`fourth_row_parts`) |
 | 3 | Because of Us | `s_flight_aetherius` | Source (WW 141–153); new emphasis | Aetherius's line can be Recorded: the first step to the secret | **Phase 1** |
 | 4 | The Witness in the Tunnels | `s_underworld_tunnels` | Existing | Save Ysolde, or follow the Eraser | Existing; her name phase 1 |
-| 5 | The Sigil She Had Seen Before | `s_chart_priory` | Source (WW 85–95); new beat | Seraphyne names the sigil a second before it finishes forming | Phase 2 |
-| 6 | Six Roads | `s_flight_six_roads`, `s_rim` | Existing; friction new | Six strangers; Kael will not fly behind a scholar | Phase 2 |
-| 7 | The Second Reader | `s_chart_moot` | New | Kael now watches Seraphyne, not the Remnants | Phase 2 |
+| 5 | The Sigil She Had Seen Before | `s_chart_priory` | Source (WW 85–95); new beat | Seraphyne names the sigil a second before it finishes forming | **Phase 2, built 2026-11-16** (Star Chart I's last beat) |
+| 6 | Six Roads | `s_flight_six_roads`, `s_rim` | Existing; friction new | Six strangers; Kael will not fly behind a scholar | **Phase 2, built 2026-11-16** as a rule of `s_flight_six_roads`: Umbra refuses the gate where Astraia leads her, until another pair flies between them |
+| 7 | The Second Reader | `s_chart_moot` | New | Kael now watches Seraphyne, not the Remnants | **Phase 2, built 2026-11-16** (Star Chart II; `second_reader_seen`) |
 | 8 | **Midpoint: The Price** | `s_moot_camp` (the fire) | Existing scene; new content | The dormancy was the coin. Your dragon is yours again because the seal is failing | **Phase 1** |
 | 9 | The List Has Two Hands | `s_glyph_killlist` | Existing scene; new content | The kill-list is Ysolde's. The witness you saved named the others | Phase 1: Ysolde's row and the signature, Dorrin Vael. Later: her hand |
-| 10 | The Empty Saddle | `s_bone_choir`, `s_heart_choir` | New | The enemy has a name, and a dragon's name | Phase 2 |
+| 10 | The Empty Saddle | `s_bone_choir`, `s_heart_choir`, `s_empty_saddle` | New | The enemy has a name, and a dragon's name | **Phase 2, built 2026-11-16** (Tarn's rib in Heartstone III; the scene `s_empty_saddle`; `tarns_rib_tuned`, `tarn_named`) |
 | 11 | **Darkest moment: Guests of Honour** | `s_expanse` | Existing scene; new framing | "Reality thins, time folds, and memory bleeds." (Codex 59). The third seal cracks because the six best witnesses in the world walked in | Later |
-| 12 | The Last Witness Is the Prisoner | **scene to add** (after `s_run_expanse`, before `s_heart_of_wound`) | New | The party Retells his name to him, as it did for forgetful elders. Then the choice | Later |
+| 12 | The Last Witness Is the Prisoner | `s_last_witness` (after `s_run_expanse`, before `s_heart_of_wound`) | New | The party Retells his name to him, as it did for forgetful elders. Then the choice | **Scene added 2026-11-16** (`name_retold_to_voice`); what it changes in the endings is phase 3 |
 
 ### The endings
 
@@ -1506,9 +1512,9 @@ scene.
 | Title lettering | Section 15 | — | On the Record page that closes every mode |
 | Pair portraits | Section 14 (the HUD's joined portraits) | — | **Deferred**: they are generated images under `assets/`, which this pass does not change |
 
-**Waits for phase 2:** the fourth row and its six world-held parts; The Second Reader inside Star
-Chart II; Tarn's rib inside Heartstone II; the Ghost-fire descent; the bone-bridge outline beat; The
-one new element per mode, starting with false outlines and false faces.
+**Built in phase 2 (2026-11-16):** the fourth row's six world-held parts; The Second Reader inside Star
+Chart II; Tarn's rib after the Bone Choir's door; the Ghost-fire descent; the bone-bridge outline beat; one
+new element in every mode. See "What phase 2 built" below.
 
 **Waits for phase 3:** The Empty Saddle ending and its card; the five unbuilt flight models;
 selectable prologue order; the remaining new mode elements; chapter cards and ornaments inside the
@@ -1518,9 +1524,60 @@ selectable prologue order; the remaining new mode elements; chapter cards and or
 list as Ysolde's hand), the framing of Guests of Honour, and scene 12. They are marked "Later"
 above; The Empty Saddle's fourth answer depends on them.
 
-**Scenes to add later (none added in this pass):** scene 12, The Last Witness Is the Prisoner; the
-ending scene of The Empty Saddle. `data/scenes.json` keeps its scenes; only `reads` and `writes`
+**Scenes to add later:** the ending scene of The Empty Saddle (phase 3). Phase 1 added none; `data/scenes.json` keeps its scenes; only `reads` and `writes`
 changed.
+
+### What phase 2 built (2026-11-16)
+
+The author wrote "start phase 2" and every held-back decision of the roadmap stands as yes. Phase 2 is
+new play: each mode becomes a ladder of three stages (teach, test, twist) with one set-piece, the
+three layer links become things a player can see, and the phase-2 scenes are added. Everything here
+was accepted 2026-11-15 with `DEEP_DIVE.md` and built 2026-11-16; section 22 lists what had to be
+written or retuned beyond the deep dive's wording.
+
+**The ladders.** A stage won offers the next or a stop with the result; progress is kept, so a
+returning player starts at the stage reached.
+
+| Mode | Teach | Test | Twist: the rule turned over | New element built | Set-piece |
+| --- | --- | --- | --- | --- | --- |
+| Twin flight | The sail tears; catch Aeris (`s_flight_aetherius`) | Umbra blinks shadow to shadow through bars of torchlight (`s_flight_umbra`; only the blink, not Umbra's whole flight model) | Formation in the dark (`s_flight_descent`): ink was what you kept clear of, and now the lead's ink is the road | **Wake**: Umbra's ink trail lasts 2 s; a pair inside it ignores gusts | **The Ghost-fire descent**: the wall is shown 2 s in every 6, when the voice pulses, and flown from memory |
+| Forgetting run | Recall an outline, to the outpost gates (`s_run_outpost`) | The climb to the surface as the blank rises (`s_run_surface`) | Someone else has to cross what you remember (`s_run_bone_bridge`): Ilvarra stands only on ground that is solid when she reaches it; Recall reaches 8 m behind | **False outlines**: no shadow under the line; Recall burns 8 Focus on one and holds nothing | **Ilvarra in outline**: halfway over she stops; stand by her and hold Recall |
+| Star Chart | Plate I: fragments as constraints | Plate II: false stars; The Second Reader | Plate III: the Sigil is already drawn and is lifted, line by line, to find the Scholar beneath | **The lying strip**: one fragment a plate is in a Remnant hand; a figure named to it gilds black and must be unpicked | **Plate III**: each line lifted returns part of what the voice says; the man beneath is one star short, the star Seraphyne placed |
+| The Slipping Glyph | The monolith: find what stays | The kill-list, on the camp's clock | The seal: the stable part moves every nine seconds, and the circle no longer holds every glyph still | **Shy glyphs**: stable only when unwatched; read from the rim of the circle. **World-held parts**: row IV's six still parts are in six 3D scenes | **The seal**: the sixth row is the name, and it does not slip |
+| Concentration | The ward: faces blank | The bestiary: choose the blank from memory | Ilvarra's memories: the game starts lying; a match on first sight is no longer safe | **False faces**: a Remnant card shows a different memory each time it is turned; a pair made with one is a lie, kept until unpicked | **Cendre's pane**: clear glass before the first flip; picked from eight blank panes by its lead line, one horn shorter than the other |
+| Six Realms | The Syndicate (Wrymreach shut until round 4, in every sitting) | Three house rules at one table (groves last 3 turns, two Stones at the start, a wind) | Against the Tidecallers the board loses its goal | **The blank tessera**: rises where the tide first forgets, walks to the nearest Threshold; a piece beside it has no power | **The centre falls**: Wrymreach goes void, and the match is won by Recall alone (begin a turn holding two Thresholds) |
+| Heartstone | The Heartstone: still is right | The Bone Choir: Fuse two shards for the pitch nobody has | The door: the right chord needs something missing | **The rest**: one slot must stay empty; a shard in it reads hollow | **Tarn's rib**: the door opens and one rib still rings dull; tuned anyway, the hall plays a seventh note |
+
+**The three links, as built.**
+
+| Link | Written by | Read by | In play |
+| --- | --- | --- | --- |
+| Names become ground | Concentration I (`ward_names_kept`, and which names) | Forgetting run III and IV | **Playable**: each kept name is a lit lantern on the bone bridge with the name on it; a lost name leaves its stretch dark (no lantern; the outline there is not drawn until Recalled). Run IV (`s_run_expanse`) reads the same flag in the full game |
+| Stars become the route | Star Chart I, II, III (`stars_redrawn`, `stars_black`) | Twin flight VIII, the descent | **Playable**: a gilded figure lights its realm's band of the chasm wall for good; a black-gilded one shows a wall that is not there |
+| The Heartstone's memory changes rooms | Heartstone I (`heartstone_kept`) | Six Realms; Heartstone II; `s_bone_choir`; `s_battle_echo` | **Playable** for the founding (Stonekeeper homes cannot be tide-taken, without being asked) and the song (the Bone Choir starts with one rib tuned). The vision (the Echo's intents) and the rib heard in the 3D hall are 3D: `s_battle_echo` and `s_bone_choir` read `heartstone_kept` |
+
+A fourth, inside one game: rows of the monolith read in The Slipping Glyph I stand already read on
+the seal (`monolith_rows`, as section 11 always said; now shown).
+
+**The long puzzle, as far as phase 2 goes.** `fourth_row_parts` counts the six still parts of the
+monolith's fourth row, each noticed and recorded in a 3D scene: the crack in the split tree
+(`s_cedar_grove`), a rune on Aetherius's scales (`s_cloud_platform`), a vein in the Heartstone
+(`s_heartstone_hall`), a kelp line on the seabed (`s_seabed`), a candle shadow in the forbidden chamber
+(`s_forbidden_chamber`), a star in the Priory dome (`s_priory_halls`). `s_glyph_seal` reads the count
+and fills that many parts of row IV. What the row says with all six, and the fourth answer it
+opens, stay for phase 3.
+
+**Scenes added.** `s_empty_saddle` (3D, the Bone Choir, between `s_heart_choir` and `s_glyph_seal`)
+and `s_last_witness` (3D, the approach to the heart of the wound, between `s_run_expanse` and
+`s_heart_of_wound`). Both stand in places that already had a location image and a build file.
+
+**Flags added.** `fourth_row_parts`, `second_reader_seen`, `stars_black`, `tarns_rib_tuned`,
+`tarn_named`, `ilvarra_recalled`, `name_retold_to_voice`.
+
+**Still waiting (phase 3).** The Empty Saddle ending, its scene and card; what row IV says; what
+`name_retold_to_voice` changes in the endings; the five whole flight models; selectable prologue
+order; the mode elements not built here (unpainted silk, borrowed gift, carried lantern, turn and
+face, shared stars, paired glyphs, triples, the worn seventh colour, sympathy, written shards).
 
 ## 22. Added for the game
 
@@ -1600,6 +1657,53 @@ any of them.
   / "Her name was Cendre. His was Tarn. Say them both, or do not say hers." / "*We did not sleep,*
   Gaia said. *We were spent.*" / "You read it," Kael said. Seraphyne looked at her hand. "Most of
   it." / "He is the only one still doing our work," Ilvarra said, and looked down into the wound.
+
+**Built in phase 2 (each item accepted 2026-11-15, built 2026-11-16; each can still be struck).**
+
+- *Mode rules (accepted 2026-11-15, built 2026-11-16).* Wake; false outlines; the lying strip; shy
+  glyphs and world-held parts; false faces; the blank tessera; the rest.
+- *Set-pieces (accepted 2026-11-15, built 2026-11-16).* The Ghost-fire descent; Ilvarra in outline;
+  plate III and its returning voice; the unslipping sixth row; Cendre's blank pane; the centre
+  falling; Tarn's rib.
+- *Links (accepted 2026-11-15, built 2026-11-16).* Names as lanterns on the bone bridge; gilded and
+  black-gilded bands in the descent; the founding and the song carried out of the Heartstone.
+- *Scenes (accepted 2026-11-15, built 2026-11-16).* `s_empty_saddle`; `s_last_witness`. The Second
+  Reader inside Star Chart II; Seraphyne naming the sigil early; Kael's refusal at Six Roads.
+- *Long puzzle (accepted 2026-11-15, built 2026-11-16).* The six world-held parts and where each is
+  held; the count the seal reads.
+
+**Written while building phase 2 (in the accepted scope, but not in the deep dive's words; each can be struck).**
+
+- *The ladder itself.* Three stages a mode, a stop offered after each, progress kept.
+- *Twin flight.* That the test stage builds only Umbra's blink (8 m, to the shadow past the next bar
+  of torchlight); that in the descent Umbra leads and the player flies Aetherius second; the pulse
+  every six seconds; the six bands in the order west, north, south, east, below, above; a false band
+  drawn as phantom rock.
+- *Forgetting run.* The shadow under a true outline as the tell; a false outline laid over a wider
+  gap; Recall reaching 8 m behind on the bridge; the far side opening only for two; the edge slowing
+  while Ilvarra stands in outline; 1.3 s of Recall to bring her back; `ilvarra_recalled`.
+- *Star Chart.* The lying strips' wording (the Delver's Lamp: "Its lowest corner holds two lines, and
+  nothing hangs beneath; six in all"; the Scholar: the Sigil's own three strokes as joints); that a
+  black gilding is not a wrong naming; the Second Reader firing at four true lines; `stars_black`;
+  the joint names on plate III; that the Book is the missing star.
+- *The Slipping Glyph.* The nine-second move; shy glyphs marked with a closed eye; two of them in row V.
+- *Concentration.* That a false face is caught by its changing; unpicking for two flips; the four
+  memories on the table (the Rim, the bone bridge, the Wood and Dark banners); three tries at the
+  eight panes; no candle on that page.
+- *Six Realms.* That the test's elder plays a lent Sky in place of Earth (three slow tribes could not
+  contest the centre in play); the wind's order round the compass; where the blank tessera rises;
+  Recalling Wrymreach from two Thresholds, which only the player may do (the elder wins that sitting
+  by the round limit or by taking all three). **Retuned in every sitting:** nobody may step onto
+  Wrymreach before round 4, the round after the first tide. Before this the elder had a forced win in
+  two rounds (a piece to a Threshold, then Water onto the centre) that no play could stop, which is
+  why phase 1 could not show this game won by plain input (`six_realms.json`, `phase_2.centre_opens`).
+- *Heartstone.* Fuse as the pitch between two shards two steps apart; the door's chord (the song's
+  three notes and a rest); Tarn's pitch, 6, in no chord; three tries at the rib; "Leave it dull".
+- *Lines written for the web build.* Ilvarra, when Cendre's face returns: "Her name was Cendre."
+  Ilvarra, recalled on the bridge: "The list. They are behind us." Ilvarra at the rib: "Tarn." The
+  Tidecaller elder: "We have played this game without a centre for a year. I had forgotten it had
+  one." Ilvarra, of the thing on the table: "It was on the table when I sat down. I left it where it
+  was." The beats that introduce each new element and each link.
 
 **Written while building phase 1 (accepted 2026-11-15 in scope; each can be struck).**
 

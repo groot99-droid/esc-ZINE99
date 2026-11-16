@@ -303,6 +303,48 @@
       "description": "Accepted 2026-11-15. Ysolde, the archivist Kael saved in the tunnels, asks at the Moot fire to have her Record entry Burned. none: she is not at the fire (kael_choice is not saved_witness). kept: the party keeps her entry; she stays on the kill-list as a witness. let_off: her entry was Burned as a mercy (burned ledger, memory.below -4); her row on the kill-list is struck and she is no longer a witness."
     },
     {
+      "name": "fourth_row_parts",
+      "type": "counter",
+      "default": 0,
+      "description": "Still parts of the monolith's fourth row noticed and recorded in the world (0-6), one a realm: the crack in the split tree (s_cedar_grove), a rune on Aetherius's scales (s_cloud_platform), a vein in the Heartstone (s_heartstone_hall), a kelp line on the seabed (s_seabed), a candle shadow (s_forbidden_chamber), a star in the Priory dome (s_priory_halls). Read by s_glyph_seal, where each fills one part of row IV. Accepted 2026-11-15, built 2026-11-16 (phase 2); what the row says with all six is phase 3."
+    },
+    {
+      "name": "second_reader_seen",
+      "type": "bool",
+      "default": false,
+      "description": "The Second Reader: in Star Chart II a line drew itself to the Scholar's Lamp's lost star, in Seraphyne's hand, and Kael saw it. Read at the Moot (Kael's lines) and in Star Chart III, where the Scholar's missing star is the one she placed. Accepted 2026-11-15, built 2026-11-16 (phase 2)."
+    },
+    {
+      "name": "stars_black",
+      "type": "counter",
+      "default": 0,
+      "description": "Figures named to a lying strip and left gilded black (Star Chart II and III). Each lights a false band in s_flight_descent until it is unpicked. Accepted 2026-11-15, built 2026-11-16 (phase 2)."
+    },
+    {
+      "name": "tarns_rib_tuned",
+      "type": "bool",
+      "default": false,
+      "description": "After the Bone Choir's door opened, the one rib that is not ancient was tuned anyway, and the hall played a seventh note. One of the conditions of The Empty Saddle (phase 3). Accepted 2026-11-15, built 2026-11-16 (phase 2)."
+    },
+    {
+      "name": "tarn_named",
+      "type": "bool",
+      "default": false,
+      "description": "In s_empty_saddle the party learned whose rib it is: Tarn, Dorrin Vael's dragon, dead in the long sleep. Accepted 2026-11-15, built 2026-11-16 (phase 2)."
+    },
+    {
+      "name": "ilvarra_recalled",
+      "type": "bool",
+      "default": false,
+      "description": "On the bone bridge Ilvarra stopped, drawn in outline, and was Recalled as a ledge is. Accepted 2026-11-15, built 2026-11-16 (phase 2)."
+    },
+    {
+      "name": "name_retold_to_voice",
+      "type": "bool",
+      "default": false,
+      "description": "In s_last_witness the party Retold the prisoner's name to him, as it did for forgetful elders. Accepted 2026-11-15, built 2026-11-16 (phase 2); what it changes in the endings is phase 3."
+    },
+    {
       "name": "final_choice",
       "type": "enum",
       "default": "none",

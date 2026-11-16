@@ -26,12 +26,32 @@
 // dragon, the North seal as the checkpoint stamp, chapter card 2 behind the how-to, the Record behind
 // the result. Each falls back to the hand drawing below when the art is missing.
 
-import { raster, opening, recordPage } from "./_art.js";
+import { raster, opening } from "./_art.js";
+import { staged } from "./_stages.js";
+
+// Phase 2 (accepted 2026-11-15, built 2026-11-16): the ladder. Three stages on the same scroll rules.
+//   I   Teach, the sail tears (s_flight_aetherius): as above, to the second seal.
+//   II  Test, shadow to shadow (s_flight_umbra): Kael on Umbra, out of the tunnels. Torchlight stands in
+//       bars from roof to floor; Blink (E) carries the pair 8 m, from the shadow before a bar to the
+//       shadow after it. Only the blink is built here: Umbra's whole flight model waits for phase 3.
+//   III Twist, the Ghost-fire descent (s_flight_descent): formation, in the dark. The rule turns over:
+//       ink was what you kept clear of, and now the lead's ink is the road. Wake (new): Umbra's ink
+//       trail lasts 2 s, and a pair flying inside it ignores the gusts. The chasm wall is shown only
+//       when the voice pulses (2 s in every 6), and then flown from memory.
+//       Stars become the route (layer link 2): a realm whose constellation was gilded in Star Chart has
+//       its band of the wall lit for good; a black-gilded figure lights a false band.
+// Every course is laid around one flyable line (the lead flies it in III), so each can be flown clean.
+const LADDER = [
+  { name: "The sail tears", sub: "Catch Aeris, and fly on.", course: 700, checks: [0, 250, 480], tear: 300, dragon: "aetherius", scroll: "scroll-north", seal: "north", chapter: "chapter-02", margin: 4 },
+  { name: "Shadow to shadow", sub: "Kael and Umbra, through bars of torchlight.", course: 760, checks: [0, 250, 500], tear: -1, dragon: "umbra", scroll: "scroll-below", seal: "below", chapter: "chapter-05", margin: 3.8 },
+  { name: "The Ghost-fire descent", sub: "Formation in the dark: the lead's ink is the road.", course: 900, checks: [0, 300, 600], tear: -1, dragon: "aetherius", scroll: "scroll-chasm", seal: "wrymreach", chapter: "chapter-10", margin: 3.6 },
+];
+const BANDS = ["west", "north", "south", "east", "below", "above"];
+const BAND_NAME = { west: "Cedarheart's", north: "Galewing's", south: "Mosswhisper's", east: "the Tidecallers'", below: "Duskbane's", above: "the High Realm's" };
+const FIGURE = { west: "the Stag", north: "the Gale Harp", south: "the Delver's Lamp", east: "the Moon's Tear", below: "the Eclipse", above: "the First Light" };
+const VOID = "#0B0D1A", GHOST = "#b9c7ff";
 
 const INK = "#1c1b1a", PAPER = "#efe6d1", WASH = "#3a3936", SEAL = "#a42a1c", CURRENT = "#4a7fb0", SILVER = "#9aa3ad";
-const COURSE = 1500;          // metres to the far peak
-const CHECKS = [0, 375, 750, 1125];
-const TEAR = 340;             // where the sail tears
 const VIEW_H = 30;            // metres of sky on screen
 
 const CSS = `
@@ -67,8 +87,10 @@ const CSS = `
 .wrymwretch-twin-flight-sheet button:hover{background:#7f1f14}
 `;
 
-export default {
-  mount(root, api) {
+function play(root, api, ctx) {
+    const ST = ctx.stage, CFG = LADDER[ST], COURSE = CFG.course, CHECKS = CFG.checks, TEAR = CFG.tear, DARK = ST === 2;
+    const NSEAL = CHECKS.length - 1;
+    const stars = ST === 2 ? (api.shared && api.shared.get("stars", null)) || {} : {};
     const losses = api.store.get("losses", 0) || 0;
     const gentle = losses >= 2;
     const wrap = document.createElement("div");
@@ -76,21 +98,36 @@ export default {
     wrap.innerHTML = `<style>${CSS}</style><canvas></canvas>
       <div class="wrymwretch-twin-flight-pad">
         <div><button type="button" data-k="up" aria-label="Pitch up">▲</button><button type="button" data-k="down" aria-label="Pitch down">▼</button></div>
-        <div><button type="button" data-k="record" hidden>Record<small>R</small></button><button type="button" data-k="song">Song<small>Q</small></button><button type="button" data-k="gift" hidden>Wind<small>E</small></button><button type="button" data-k="wing" hidden>Wing<small>␣</small></button></div>
+        <div><button type="button" data-k="record" hidden>Record<small>R</small></button><button type="button" data-k="song"${ST === 1 ? " hidden" : ""}>Song<small>Q</small></button><button type="button" data-k="gift"${ST ? "" : " hidden"}>${ST === 1 ? "Blink" : "Wind"}<small>E</small></button><button type="button" data-k="wing"${ST ? "" : " hidden"}>Wing<small>␣</small></button></div>
       </div>
       <div class="wrymwretch-twin-flight-beat" aria-live="polite"></div>
       <div class="wrymwretch-twin-flight-intro"><div class="wrymwretch-twin-flight-scroll">
         <div class="wrymwretch-twin-flight-rod"></div>
         <div class="wrymwretch-twin-flight-sheet">
-          <div class="seal" aria-hidden="true">AG</div>
+          <div class="seal" aria-hidden="true">${["AG", "KU", "VI"][ST]}</div>
           <h2>Twin flight</h2>
-          <p class="goal">Bring Aeris down from the sky-cities to the far peak.</p>
+          <div data-tabs></div>
+          ${[`<p class="goal">Bring Aeris down from the sky-cities, through the tear in her sail.</p>
           <div class="wrymwretch-twin-flight-keys">
             <span><kbd>W</kbd> <kbd>S</kbd> or ▲ ▼</span><span>tilt the sail up or down</span>
             <span><kbd>Q</kbd> or Song</span><span>Aeris sings: the gusts calm for 3 s</span>
             <span>ink peaks, rigging</span><span>avoid them: four hits between seals sends you back</span>
           </div>
-          <p class="more">The sky has more in store; new controls appear on the scroll when they are yours.</p>
+          <p class="more">The sky has more in store; new controls appear on the scroll when they are yours.</p>`,
+          `<p class="goal">Bring Kael out of the tunnels on Umbra, who cannot bear the light.</p>
+          <div class="wrymwretch-twin-flight-keys">
+            <span><kbd>W</kbd> <kbd>S</kbd> or ▲ ▼</span><span>pitch; <kbd>Space</kbd> beats the wings</span>
+            <span><kbd>E</kbd> or Blink</span><span>new: Umbra blinks 8 m ahead, shadow to shadow</span>
+            <span>bars of torchlight</span><span>they reach from roof to floor: blink just before one</span>
+          </div>
+          <p class="more">Rock and hanging stone are as before. A bar of light flown through is a scale hit.</p>`,
+          `<p class="goal">Take the pair down the chasm in the dark, behind Umbra.</p>
+          <div class="wrymwretch-twin-flight-keys">
+            <span>the lead's ink</span><span>turned over: fly <b>inside</b> it. For 2 s it is the safe line, and no gust reaches you there</span>
+            <span>the voice</span><span>each pulse shows the wall for 2 s; then fly it from memory</span>
+            <span><kbd>W</kbd> <kbd>S</kbd> <kbd>Q</kbd> <kbd>E</kbd></span><span>pitch, song and wind, as before</span>
+          </div>
+          <p class="more">A band of the wall is lit for good where its constellation is in the Record.</p>`][ST]}
           ${gentle ? `<p class="gentle">The wind is gentler this time: five hits between seals, softer gusts.</p>` : ""}
           <button type="button" data-start>Unroll</button>
         </div>
@@ -108,40 +145,52 @@ export default {
     const later = (fn, ms) => { const t = setTimeout(() => { timers.delete(t); fn(); }, ms); timers.add(t); };
 
     // ---- the course -------------------------------------------------------------------------
-    const R = api.rng("wrymwretch/twin-flight/galewing");
-    const peaks = [], rigs = [], gusts = [], thermals = [];
-    for (let x = 70; x < COURSE - 60; x += 34 + R() * 22) {
-      if (Math.abs(x - TEAR) < 50) continue;          // a clear sky for the fall
-      const t = R();
-      if (t < 0.45) peaks.push({ x, w: 10 + R() * 8, h: 8 + R() * 9 + x / COURSE * 3 });
-      else if (t < 0.8) rigs.push({ x, len: 7 + R() * 7 + x / COURSE * 2 });
-      else { const h = 7 + R() * 6; peaks.push({ x, w: 10 + R() * 6, h }); rigs.push({ x: x + 4, len: Math.min(9, 20 - h) }); }
+    const R = api.rng("wrymwretch/twin-flight/" + ["galewing", "duskbane", "chasm"][ST]);
+    const peaks = [], rigs = [], gusts = [], thermals = [], lights = [], phantoms = [];
+    // the flyable line: every hazard keeps CFG.margin metres off it, above and below
+    const pa = [R() * 6, R() * 6, R() * 6];
+    const path = (x) => 13 + Math.sin(x * 0.021 + pa[0]) * 4.2 + Math.sin(x * 0.047 + pa[1]) * 2.2 + Math.sin(x * 0.009 + pa[2]) * 1.5;
+    for (let x = 70; x < COURSE - 60; x += (ST === 2 ? 28 : 34) + R() * 22) {
+      if (TEAR > 0 && Math.abs(x - TEAR) < 50) continue;          // a clear sky for the fall
+      const t = R(), w = 10 + R() * 8;
+      let hi = -99, lo = 99;
+      for (let d = -w / 2; d <= w / 2; d += 2) { const p = path(x + d); hi = Math.max(hi, p); lo = Math.min(lo, p); }
+      const hMax = VIEW_H - hi - CFG.margin, lMax = lo - CFG.margin;
+      const wantPeak = t < 0.45 || t >= 0.8, wantRig = t >= 0.45;
+      if (wantPeak && hMax > 4) peaks.push({ x, w, h: Math.min(hMax, 8 + R() * 12) });
+      if (wantRig && lMax > 3) rigs.push({ x: x + (wantPeak ? 4 : 0), len: Math.min(lMax, 7 + R() * 9) });
     }
-    for (let x = 160; x < COURSE - 80; x += (x > CHECKS[3] ? 90 : 130) + R() * 70) gusts.push({ x, w: 26 + R() * 10, phase: R() * 6, dir: R() < 0.5 ? 1 : -1 });
-    for (let x = 110; x < COURSE - 60; x += 100 + R() * 60) thermals.push({ x, w: 9 + R() * 4 });
+    if (ST !== 1) for (let x = 160; x < COURSE - 80; x += (ST === 2 ? 95 : x > CHECKS[2] ? 90 : 130) + R() * 70) gusts.push({ x, w: 26 + R() * 10, phase: R() * 6, dir: R() < 0.5 ? 1 : -1 });
+    if (ST === 0) for (let x = 110; x < COURSE - 60; x += 100 + R() * 60) thermals.push({ x, w: 9 + R() * 4 });
+    if (ST === 1) for (let x = 130; x < COURSE - 50; x += 62 + R() * 34) { if (CHECKS.some((c) => Math.abs(c - x) < 16)) continue; lights.push({ x, w: 2.6 }); }
+    // III: six bands of the wall, one per realm; a black-gilded figure lights a band that is not there
+    const bandOf = (x) => BANDS[Math.max(0, Math.min(5, Math.floor((x / COURSE) * 6)))];
+    const litBand = (x) => stars[bandOf(x)] === "gold";
+    if (DARK) for (const b of BANDS) if (stars[b] === "black") { const x0 = (BANDS.indexOf(b) / 6) * COURSE; for (let k = 0; k < 4; k++) phantoms.push({ x: x0 + 20 + k * 34 + R() * 10, w: 11, h: 9 + R() * 8, up: k % 2 === 1 }); }
     const ridge = (k) => { const a = [R() * 6, R() * 6, R() * 6]; return (x) => Math.sin(x * 0.011 * k + a[0]) * 0.5 + Math.sin(x * 0.027 * k + a[1]) * 0.3 + Math.sin(x * 0.061 * k + a[2]) * 0.2; };
     const ridges = [ridge(1), ridge(1.4), ridge(2)];
 
     // ---- state ------------------------------------------------------------------------------
     const s = {
-      phase: "sail", x: 0, y: 9, vy: 0, speed: 9, stamina: 100, lastBeat: -9, hits: 0, resets: 0, cp: 0, totalHits: 0,
+      phase: ST ? "dragon" : "sail", x: 0, y: path(0), vy: 0, speed: ST ? 13 : 9, blinks: 0, blinkFx: 0, pulseT: 0, pulseAt: 2.5, pulses: 0, wakeT: 0, inWake: false, lead: null, wake: [], stamina: 100, lastBeat: -9, hits: 0, resets: 0, cp: 0, totalHits: 0,
       inv: 0, calm: 0, songCd: 0, giftCd: 0, flap: 0, t: 0, trail: [], silver: [], currents: [], drawing: null, running: false, over: false,
       rider: null, fallT: 0, caught: "", flash: 0, stamp: 0, songs: 0, currentsUsed: 0, beats: new Set(), rec: 0, recorded: false,
     };
     // ---- art ----------------------------------------------------------------------------------
     const A = { back: null, seal: null, sp: {}, w: 0 };
     let dead = false, artTok = 0;
-    raster(api.art, "scroll-north", { w: 1280, strip: [".label"] }).then((c) => { if (!dead) A.back = c; });
-    raster(api.art, "ui-seal-north", { w: 110, strip: [".plate"] }).then((c) => { if (!dead) A.seal = c; });
+    raster(api.art, CFG.scroll, { w: 1280, strip: [".label"] }).then((c) => { if (!dead) A.back = c; });
+    raster(api.art, "ui-seal-" + CFG.seal, { w: 110, strip: [".plate"] }).then((c) => { if (!dead) A.seal = c; });
     function loadSprites() {
       const w = Math.max(70, Math.round(9.5 * scale));
       if (A.w === w) return;
       A.w = w; const tok = ++artTok;
       for (const pose of ["glide", "rise", "beat", "gift"]) for (const bare of [0, 1]) {
         if (bare && pose === "gift") continue;
-        raster(api.art, "flight-aetherius-" + pose, { w, strip: bare ? [".plate", ".fx", ".rider"] : [".plate", ".fx"] })
+        raster(api.art, "flight-" + CFG.dragon + "-" + pose, { w, strip: bare ? [".plate", ".fx", ".rider"] : [".plate", ".fx"] })
           .then((c) => { if (c && tok === artTok && !dead) A.sp[pose + bare] = c; });
       }
+      if (DARK) raster(api.art, "flight-umbra-glide", { w, strip: [".plate", ".fx"] }).then((c) => { if (c && tok === artTok && !dead) A.lead = c; });
     }
     const keys = { up: false, down: false };
     let W = 1, H = 1, scale = 1, dpr = 1, oy = 0;
@@ -178,6 +227,11 @@ export default {
     }
     function gift() {
       if (!s.running || s.phase !== "dragon" && s.phase !== "trails" || s.giftCd > 0) return;
+      if (ST === 1) {   // Umbra's blink: 8 m, from one shadow to the next
+        const bar = lights.find((L) => L.x + L.w / 2 > s.x && L.x + L.w / 2 - s.x <= 7.2);   // to the shadow past the next bar, if it is in reach
+        s.blinkFx = 0.45; s.blinkFrom = s.x; s.x = bar ? bar.x + bar.w / 2 + 0.8 : s.x + 8; s.giftCd = 1.3; s.blinks++; s.trail = [];
+        return;
+      }
       const ang = -0.45;
       s.currents.push({ pts: [[s.x + 1, s.y], [s.x + 1 + Math.cos(ang) * 22, s.y + Math.sin(ang) * 22]], ttl: 4 });
       s.giftCd = 5; s.currentsUsed++;
@@ -194,7 +248,7 @@ export default {
       if (s.hits > HITS) {
         s.resets++;
         if (s.resets >= 3) return finish(false);
-        s.x = CHECKS[s.cp] + 2; s.y = 10; s.vy = 0; s.hits = 0; s.stamina = 100; s.inv = 2; s.trail = []; s.currents = [];
+        s.x = CHECKS[s.cp] + 2; s.y = path(s.x); s.vy = 0; s.hits = 0; s.stamina = 100; s.inv = 2; s.trail = []; s.currents = []; s.wake = [];
         beat(`The scroll rolls back to the last seal. <cite>Turned back ${s.resets} of 3</cite>`, 3200);
       }
     }
@@ -221,14 +275,27 @@ export default {
       if (s.over) return;
       s.over = true; s.running = false;
       api.store.set("losses", win ? 0 : losses + 1);
-      later(() => { recordPage(wrap, api, { realm: "north", title: "Twin flight: the sky-sail and Aetherius", sub: "Galewing page · chapter 2, Remember Me", divider: 1, crystal: s.recorded, lines: [
-        win ? `The road down from the sky-cities, flown to the far peak (${s.cp} of 3 seals, turned back ${s.resets} of 3).` : { t: `The road down from the sky-cities: lost in cloud ${s.cp ? `after ${s.cp} seal${s.cp > 1 ? "s" : ""}` : "before the first seal"}.`, kind: "lost" },
+      const lit = BANDS.filter((b) => stars[b] === "gold"), falseB = BANDS.filter((b) => stars[b] === "black");
+      if (ST === 1) return later(() => ctx.done(wrap, { win, record: { realm: "below", title: "Twin flight II: shadow to shadow", sub: "Duskbane page · chapter 5, The Hunt", divider: 1, lines: [
+        win ? `Out of the tunnels on Umbra: ${s.blinks} blink${s.blinks === 1 ? "" : "s"}, ${s.totalHits} scale hit${s.totalHits === 1 ? "" : "s"}, turned back ${s.resets} of 3.` : { t: `The tunnels kept the pair: turned back a third time, ${s.cp} of ${NSEAL} seals in.`, kind: "lost" },
+        "Umbra blinks from shadow to shadow, and Kael learns to count the dark between two torches." ] },
+        text: win ? `Umbra comes out of the last shadow into open night with Kael flat along her neck: ${s.blinks} blink${s.blinks === 1 ? "" : "s"}, ${s.totalHits} scale hit${s.totalHits === 1 ? "" : "s"}${s.resets ? `, turned back ${s.resets} time${s.resets > 1 ? "s" : ""}` : ""}. Behind them the torches go on burning for nobody.`
+          : `Sent back a third time, Umbra will not fly at the light again tonight. Kael walks her out through the guarded gallery.${losses + 1 >= 2 ? " Next time the pair can take five hits between seals." : ""}` }), 450);
+      if (ST === 2) return later(() => ctx.done(wrap, { win, record: { realm: "wrymreach", title: "Twin flight III: the Ghost-fire descent", sub: "The chasm wall · chapter 10, The Bone Choir", divider: 1, lines: [
+        win ? `Down the chasm wall behind Umbra, to the hall of bones (${s.pulses} pulse${s.pulses === 1 ? "" : "s"} of the voice, ${Math.round(s.wakeT)} s flown in the lead's ink, turned back ${s.resets} of 3).` : { t: `The descent: lost in the dark, ${s.cp} of ${NSEAL} seals down.`, kind: "lost" },
+        ...lit.map((b) => ({ t: `${BAND_NAME[b][0].toUpperCase() + BAND_NAME[b].slice(1)} band: lit, because ${FIGURE[b]} is gilded in the Record.`, kind: "link" })),
+        ...falseB.map((b) => ({ t: `${BAND_NAME[b][0].toUpperCase() + BAND_NAME[b].slice(1)} band: a false light. ${FIGURE[b][0].toUpperCase() + FIGURE[b].slice(1)} is gilded black.`, kind: "lost" })),
+        lit.length + falseB.length ? null : { t: "No band was lit: no constellation is in the Record. All of it was flown from memory.", kind: "lost", note: "Stars become the route: gild a figure in Star Chart and its band stays lit." } ] },
+        text: win ? `The six pairs come down the wall in one line, each in the ink of the one before. ${lit.length ? `${lit.length} band${lit.length > 1 ? "s" : ""} of the wall stood lit by the stars in the Record; the rest` : "Every band"} was flown from what the voice showed. ${s.totalHits} scale hit${s.totalHits === 1 ? "" : "s"}${s.resets ? `, turned back ${s.resets} time${s.resets > 1 ? "s" : ""}` : ""}. Below, the bones are humming.`
+          : `Sent back a third time, the formation breaks in the dark and climbs for the rim. The Bone Choir will have to be reached on foot, and later.${losses + 1 >= 2 ? " Next time the pair can take five hits between seals." : ""}` }), 450);
+      later(() => { ctx.done(wrap, { win, record: { realm: "north", title: "Twin flight I: the sky-sail and Aetherius", sub: "Galewing page · chapter 2, Remember Me", divider: 1, crystal: s.recorded, lines: [
+        win ? `The road down from the sky-cities, flown past the tear (${s.cp} of ${NSEAL} seals, turned back ${s.resets} of 3).` : { t: `The road down from the sky-cities: lost in cloud ${s.cp ? `after ${s.cp} seal${s.cp > 1 ? "s" : ""}` : "before the first seal"}.`, kind: "lost" },
         s.caught ? `The catch: ${s.caught === "late" ? "late, at the last of the six seconds" : "clean"}. Elf and dragon are one life from here.` : null,
         s.recorded ? { t: "“Because of us.” Aetherius's answer to Aeris, kept as a Record entry.", note: "It can be retold at Ilvarra's fire, where it will mean something else." }
           : s.caught ? { t: "Aetherius's answer was not written down. Only Aeris heard it.", kind: "lost", note: "The Record has no line to retell at the fire." } : null,
-      ] }); api.end(win
+      ] }, text: (win
         ? { outcome: "win", text: `Aetherius rides the last thermal over the far peak with Aeris on his neck${s.caught === "late" ? ", her shoulder still bruised from the late catch" : ""}. ${s.resets ? `Turned back ${s.resets} time${s.resets > 1 ? "s" : ""}, ` : "Never turned back, "}${s.totalHits} scale hit${s.totalHits === 1 ? "" : "s"} on the way down${s.songs ? `; she sang ${s.songs} time${s.songs > 1 ? "s" : ""}` : ""}. ${s.recorded ? "In the Record: “Because of us.” " : ""}The help her people sent her for is below.` }
-        : { outcome: "lose", text: `Sent back a third time, ${dragon() ? "the pair loses" : "Aeris loses"} the road between the sky-cities in the cloud, ${s.cp ? `${s.cp} seal${s.cp > 1 ? "s" : ""} short` : "before the first seal"} of the far peak. The scroll rolls shut.${losses + 1 >= 2 ? " Next time the wind will be gentler." : ""}` }); }, 450);
+        : { outcome: "lose", text: `Sent back a third time, ${dragon() ? "the pair loses" : "Aeris loses"} the road between the sky-cities in the cloud, ${s.cp ? `${s.cp} seal${s.cp > 1 ? "s" : ""} short` : "before the first seal"} of the far peak. The scroll rolls shut.${losses + 1 >= 2 ? " Next time the wind will be gentler." : ""}` }).text }); }, 450);
     }
 
     // ---- simulation -------------------------------------------------------------------------
@@ -244,8 +311,21 @@ export default {
       const target = sail ? (keys.up ? -2.5 : keys.down ? 7 : 2.2) : keys.up ? -6 : keys.down ? 9 : 2.4;
       s.vy += (target - s.vy) * Math.min(1, 3.2 * dt);
       for (const th of thermals) if (Math.abs(s.x - th.x) < th.w / 2) s.vy -= (sail ? 9 : 11) * dt;
-      const gustF = (s.phase === "trails" ? 19 : 14) * GUST * (sail ? 1.1 : 1);
-      for (const gu of gusts) if (Math.abs(s.x - gu.x) < gu.w / 2 && s.calm <= 0) s.vy += gustDir(gu) * gustF * dt;
+      const gustF = (DARK ? 23 : s.phase === "trails" ? 19 : 14) * GUST * (sail ? 1.1 : 1);
+      s.blinkFx = Math.max(0, s.blinkFx - dt);
+      if (DARK) {   // the lead flies the line 20 m ahead; her ink lasts 2 s; the voice pulses 2 s in every 6
+        const lx = s.x + 20; s.lead = { x: lx, y: path(lx) };
+        s.wake.push([lx, s.lead.y, s.t]); while (s.wake.length && s.t - s.wake[0][2] > 2) s.wake.shift();
+        let near = null; for (const w of s.wake) if (!near || Math.abs(w[0] - s.x) < Math.abs(near[0] - s.x)) near = w;
+        s.inWake = !!near && Math.abs(near[0] - s.x) < 2 && Math.abs(near[1] - s.y) < 2.4;
+        if (s.inWake) s.wakeT += dt;
+        s.pulseT = Math.max(0, s.pulseT - dt); s.pulseAt -= dt;
+        if (s.pulseAt <= 0) { s.pulseAt = 6; s.pulseT = 2; s.pulses++;
+          if (s.pulses === 1) once("pulse", `The voice in the chasm stirs. <q>A ripple of light tore across the chasm, illuminating the cliffs in ghostly fire.</q> <cite>WW 99 · two seconds of wall, then memory</cite>`, 6000); }
+        if (s.inWake) once("wake", `Inside Umbra's ink the wind goes quiet. <cite>The wake: no gust reaches a pair flying in the lead's trail</cite>`, 4500);
+      }
+      for (const gu of gusts) if (Math.abs(s.x - gu.x) < gu.w / 2 && s.calm <= 0 && !s.inWake) s.vy += gustDir(gu) * gustF * dt;
+      for (const L of lights) { if (Math.abs(s.x - L.x) < L.w / 2) hit(); if (L.x - s.x > 0 && L.x - s.x < 34) once("light", `Torchlight, in a bar from roof to floor. Umbra shies. <cite>Blink (<b>E</b>) just before it: 8 m, shadow to shadow</cite>`, 5000); }
       // currents carry the pair along their line
       let carried = 0;
       for (const c of s.currents) {
@@ -263,7 +343,7 @@ export default {
         }
       }
       s.currents = s.currents.filter((c) => c.ttl > 0);
-      const base = sail ? 9 : 14;
+      const base = sail ? 9 : ST === 1 ? 12 : 14;
       const tgtSpeed = base + Math.max(0, s.vy) * (sail ? 0.3 : 0.7) - Math.max(0, -s.vy) * 0.3 + carried;
       s.speed += (tgtSpeed - s.speed) * Math.min(1, 1.5 * dt);
       s.x += s.speed * dt;
@@ -287,11 +367,12 @@ export default {
       if (s.over) return;
       for (let i = CHECKS.length - 1; i > s.cp; i--) if (s.x >= CHECKS[i]) {
         s.cp = i; s.hits = 0; s.stamp = 1;
-        if (i === 2) once("cp2", `The second seal. Below the cloud the Galewing Peaks stand in ink, and the air smells of rain. <cite>Halfway down</cite>`, 4200);
-        if (i === 3) { s.phase = "trails"; once("trails", `The cloud breaks. Thermals rise off the peaks, and behind the pair the wind leaves <q>silver trails across the sky</q>. <cite>WW 155 · the gusts are stronger now: sing through them</cite>`, 6500); }
+        if (i === 1 && ST === 2) once("cp1d", `The first seal on the wall. Somewhere below, the bones have begun to hum. <cite>${BAND_NAME[bandOf(s.x)]} band next</cite>`, 4200);
+        if (i === 2 && ST === 1) once("cp2u", `The second seal. The torches stand closer together here: somebody guards this gallery. <cite>Count the dark between them</cite>`, 4200);
+        if (i === 2 && ST === 0) { s.phase = "trails"; once("trails", `The cloud breaks. Thermals rise off the peaks, and behind the pair the wind leaves <q>silver trails across the sky</q>. <cite>WW 155 · the gusts are stronger now: sing through them</cite>`, 6500); }
         break;
       }
-      if (s.phase === "sail" && s.x >= TEAR) tear();
+      if (s.phase === "sail" && TEAR > 0 && s.x >= TEAR) tear();
       if (s.phase === "sail" && s.x > 120) once("gust", `The winds are confused: the brush strokes push one way, then the other. <cite>Sing (<b>Q</b>) as you enter one</cite>`, 4500);
       s.trail.unshift([s.x, s.y]);
       if (s.trail.length > 40) s.trail.length = 40;
@@ -337,7 +418,11 @@ export default {
       const bare = s.phase === "fall" ? 1 : 0;
       const pose = s.giftCd > 4.3 && !bare ? "gift" : s.flap > 0.45 ? "beat" : s.vy < -2.5 ? "rise" : "glide";
       const im = A.sp[pose + bare] || A.sp["glide" + bare];
-      if (im) {   // Aetherius in ink: the art's pose for what he is doing
+      if (DARK) { const hx = sx(s.x), hy = sy(s.y), rg = g.createRadialGradient(hx, hy, 4, hx, hy, 6.5 * scale); rg.addColorStop(0, s.inWake ? "rgba(233,226,208,.95)" : "rgba(233,226,208,.8)"); rg.addColorStop(0.6, "rgba(169,199,232,.28)"); rg.addColorStop(1, "rgba(169,199,232,0)"); g.fillStyle = rg; g.fillRect(hx - 7 * scale, hy - 7 * scale, 14 * scale, 14 * scale);
+        if (s.lead) { const lx = sx(s.lead.x), ly = sy(s.lead.y), lg = g.createRadialGradient(lx, ly, 3, lx, ly, 4.5 * scale); lg.addColorStop(0, "rgba(142,151,163,.8)"); lg.addColorStop(1, "rgba(107,63,160,0)"); g.fillStyle = lg; g.fillRect(lx - 5 * scale, ly - 5 * scale, 10 * scale, 10 * scale);
+          if (A.lead) { const w = 9.5 * scale, h = w * 0.75; g.drawImage(A.lead, lx - w * 0.62, ly - h * 0.52, w, h); } else { g.fillStyle = "#17151a"; g.beginPath(); g.ellipse(lx, ly, 2.4 * scale, 0.8 * scale, 0, 0, 7); g.fill(); } } }
+      if (s.blinkFx > 0 && !rm) { g.strokeStyle = `rgba(91,58,122,${s.blinkFx * 1.6})`; g.lineWidth = 3; g.setLineDash([2, 7]); g.beginPath(); g.moveTo(sx(s.blinkFrom), sy(s.y)); g.lineTo(sx(s.x), sy(s.y)); g.stroke(); g.setLineDash([]); }
+      if (im) {   // the dragon in ink: the art's pose for what it is doing
         const w = 9.5 * scale, h = w * 0.75;
         g.save(); g.translate(sx(s.x), sy(s.y) + (rm ? 0 : Math.sin(s.t * 5) * 1.5));
         g.rotate(Math.max(-0.35, Math.min(0.4, s.vy * 0.035)));
@@ -367,11 +452,14 @@ export default {
       g.setTransform(dpr, 0, 0, dpr, 0, 0);
       const sky = g.createLinearGradient(0, 0, 0, H);
       sky.addColorStop(0, s.phase === "sail" ? "#dcd8cf" : "#e7e1d3"); sky.addColorStop(0.6, PAPER); sky.addColorStop(1, "#e3dccb");
-      g.fillStyle = sky; g.fillRect(0, 0, W, H);
+      g.fillStyle = DARK ? VOID : sky; g.fillRect(0, 0, W, H);
+      const pulse = DARK ? Math.min(1, s.pulseT / 0.5) : 0;
+      const shown = (x) => !DARK || pulse > 0 || litBand(x);
+      const HAZ = DARK ? GHOST : INK;
       const cam = camX();
       if (A.back) {   // the Galewing scroll, unrolling slowly behind the flight, washed back so the hard ink stays the hazards
         const bh = Math.max(H * 0.6, VIEW_H * scale), by = H - bh, bw = bh * 16 / 9, off = (((cam * scale * 0.1) % (bw * 2)) + bw * 2) % (bw * 2);
-        g.globalAlpha = 0.5;
+        g.globalAlpha = DARK ? 0.1 + 0.22 * pulse : 0.5;
         for (let k = 0; k * bw - off < W; k++) {   // tiles meet edge to edge on whole pixels: an overlap would show as a seam at half alpha
           const x = Math.round(k * bw - off), wk = Math.round((k + 1) * bw - off) - x; if (x + wk < 0) continue;
           const iw = A.back.width, ih = A.back.height, m = 4;
@@ -386,7 +474,7 @@ export default {
       for (let i = 0; i < 70; i++) { const fx = ((i * 197 + 31) % 1000) / 1000 * W, fy = ((i * 389 + 77) % 1000) / 1000 * H, L = 20 + (i * 53) % 70; g.beginPath(); g.moveTo(fx, fy); g.quadraticCurveTo(fx + L / 2, fy + ((i % 5) - 2), fx + L, fy + ((i % 3) - 1) * 2); g.stroke(); }
       }
       [[0.12, 0.62, 0.16], [0.3, 0.72, 0.24], [0.55, 0.83, 0.34]].forEach(([par, base, a], li) => {
-        if (A.back && li < 2) return;
+        if (DARK || A.back && li < 2) return;
         const fn = ridges[li];
         const grad = g.createLinearGradient(0, H * (base - 0.25), 0, H);
         grad.addColorStop(0, `rgba(42,41,40,${a})`); grad.addColorStop(0.55, `rgba(42,41,40,${a * 0.35})`); grad.addColorStop(1, "rgba(239,230,209,0)");
@@ -427,18 +515,40 @@ export default {
           g.beginPath(); g.moveTo(cx - 10, cy - d * 6); g.lineTo(cx, cy + d * 4); g.lineTo(cx + 10, cy - d * 6); g.stroke();
         }
       }
-      for (const p of peaks) if (vis(p.x, p.w)) {
+      if (DARK) {   // the bands of the wall: a lit one glows for good; the lead's ink; the pulse
+        BANDS.forEach((b, i) => { const x0 = sx((i / 6) * COURSE), x1 = sx(((i + 1) / 6) * COURSE); if (x1 < 0 || x0 > W) return;
+          if (stars[b]) { g.fillStyle = stars[b] === "gold" ? "rgba(231,197,102,.10)" : "rgba(140,120,160,.10)"; g.fillRect(x0, oy, x1 - x0, H - oy); }
+          g.strokeStyle = stars[b] === "gold" ? "rgba(231,197,102,.7)" : "rgba(185,199,255,.25)"; g.lineWidth = 1; g.setLineDash([3, 6]); g.beginPath(); g.moveTo(x0, oy); g.lineTo(x0, H); g.stroke(); g.setLineDash([]);
+          g.font = "700 12px Cinzel, Georgia, serif"; g.fillStyle = stars[b] === "gold" ? "#E7C566" : "rgba(185,199,255,.55)";
+          g.fillText(`${b.toUpperCase()} BAND${stars[b] === "gold" ? " · LIT" : stars[b] === "black" ? " · LIT?" : ""}`, Math.max(x0 + 8, 12), H - 78); });
+        if (pulse > 0) { const pg = g.createLinearGradient(0, 0, 0, H); pg.addColorStop(0, `rgba(185,199,255,${0.16 * pulse})`); pg.addColorStop(1, `rgba(120,90,200,${0.05 * pulse})`); g.fillStyle = pg; g.fillRect(0, 0, W, H); }
+        for (const p of phantoms) if (vis(p.x, p.w)) { const bx = sx(p.x), hw = (p.w / 2) * scale; g.strokeStyle = "rgba(231,197,102,.55)"; g.lineWidth = 1.5; g.beginPath();
+          if (p.up) { g.moveTo(bx - hw, oy); g.lineTo(bx, sy(p.h)); g.lineTo(bx + hw, oy); } else { g.moveTo(bx - hw, H); g.lineTo(bx, sy(VIEW_H - p.h)); g.lineTo(bx + hw, H); } g.stroke(); }
+        if (s.wake.length > 1) { const pts = s.wake.map(([x, y]) => [sx(x), sy(y)]); brush(pts, 3, 2.4 * scale * 0.5, "#8E97A3", 0.5); brush(pts, 1, 5, "#E9E2D0", 0.8); }
+      }
+      for (const L of lights) if (vis(L.x, L.w)) {
+        const x0 = sx(L.x - L.w / 2), x1 = sx(L.x + L.w / 2), lg = g.createLinearGradient(x0 - 14, 0, x1 + 14, 0);
+        lg.addColorStop(0, "rgba(255,214,120,0)"); lg.addColorStop(0.25, "rgba(255,226,150,.75)"); lg.addColorStop(0.75, "rgba(255,226,150,.75)"); lg.addColorStop(1, "rgba(255,214,120,0)");
+        g.fillStyle = lg; g.fillRect(x0 - 14, oy, x1 - x0 + 28, H - oy);
+        g.fillStyle = INK; g.fillRect((x0 + x1) / 2 - 3, oy, 6, 16); g.fillStyle = "#e8571c"; g.beginPath(); g.ellipse((x0 + x1) / 2, oy + 22, 5, 9, 0, 0, 7); g.fill();
+        g.strokeStyle = "rgba(28,27,26,.5)"; g.lineWidth = 1.5; g.setLineDash([4, 5]); g.beginPath(); g.moveTo(x0 - 4.6 * scale, oy); g.lineTo(x0 - 4.6 * scale, H); g.stroke(); g.setLineDash([]);
+        g.font = "700 12px Cinzel, Georgia, serif"; g.fillStyle = "rgba(28,27,26,.6)"; g.fillText("BLINK", x0 - 4.6 * scale + 5, H - 78);
+      }
+      for (const p of peaks) if (vis(p.x, p.w) && shown(p.x)) {
         const bx = sx(p.x), hw = (p.w / 2) * scale, top = sy(VIEW_H - p.h);
-        g.fillStyle = INK; g.beginPath(); g.moveTo(bx - hw, H);
+        if (DARK) g.globalAlpha = litBand(p.x) ? 0.9 : 0.25 + 0.65 * pulse;
+        g.fillStyle = DARK ? (litBand(p.x) ? "#c9a85a" : GHOST) : INK; g.beginPath(); g.moveTo(bx - hw, H);
         g.lineTo(bx - hw * 0.45, top + (H - top) * 0.35); g.lineTo(bx - hw * 0.1, top + 4); g.lineTo(bx, top);
         g.lineTo(bx + hw * 0.2, top + 8); g.lineTo(bx + hw * 0.55, top + (H - top) * 0.45); g.lineTo(bx + hw, H); g.closePath(); g.fill();
         g.fillStyle = "rgba(239,230,209,.25)";
         g.beginPath(); g.moveTo(bx, top + 6); g.lineTo(bx + hw * 0.18, top + (H - top) * 0.5); g.lineTo(bx + hw * 0.05, top + (H - top) * 0.5); g.closePath(); g.fill();
-        brush([[bx, top], [bx + 3, top - 14], [bx + 9, top - 22]], 4, 1, INK);
-        brush([[bx - 8, top - 14], [bx + 14, top - 17]], 3, 1, INK);
+        if (!DARK) { brush([[bx, top], [bx + 3, top - 14], [bx + 9, top - 22]], 4, 1, INK);
+        brush([[bx - 8, top - 14], [bx + 14, top - 17]], 3, 1, INK); }
+        g.globalAlpha = 1;
       }
-      for (const r of rigs) if (vis(r.x, 2)) {
+      for (const r of rigs) if (vis(r.x, 2) && shown(r.x)) {
         const x = sx(r.x), y1 = sy(r.len);
+        if (DARK) { g.globalAlpha = litBand(r.x) ? 0.9 : 0.25 + 0.65 * pulse; g.strokeStyle = litBand(r.x) ? "#c9a85a" : GHOST; g.lineWidth = 5; g.lineCap = "round"; g.beginPath(); g.moveTo(x, oy); g.lineTo(x, y1); g.stroke(); g.lineWidth = 2; g.beginPath(); g.moveTo(x - 9, y1 - 14); g.lineTo(x, y1); g.lineTo(x + 9, y1 - 14); g.stroke(); g.globalAlpha = 1; continue; }
         g.strokeStyle = INK; g.lineWidth = 2.2; g.beginPath(); g.moveTo(x, oy); g.lineTo(x + Math.sin(s.t * 1.5 + r.x) * (rm ? 0 : 3), y1); g.stroke();
         g.fillStyle = "rgba(28,27,26,.78)";
         const fy = (f) => oy + (y1 - oy) * f;
@@ -497,16 +607,17 @@ export default {
       const pos = rx0 + (rx1 - rx0) * Math.min(1, s.x / COURSE);
       g.strokeStyle = INK; g.lineWidth = 5; g.lineCap = "round"; g.beginPath(); g.moveTo(rx0, ry); g.lineTo(pos, ry); g.stroke();
       g.fillStyle = INK; g.beginPath(); g.moveTo(rx1, ry + 6); g.lineTo(rx1 + 14, ry - 10); g.lineTo(rx1 + 22, ry - 3); g.lineTo(rx1 + 30, ry - 14); g.lineTo(rx1 + 44, ry + 6); g.closePath(); g.fill();
-      const tx = rx0 + (rx1 - rx0) * TEAR / COURSE; g.strokeStyle = "rgba(74,127,176,.8)"; g.lineWidth = 2; g.beginPath(); g.moveTo(tx, ry - 7); g.lineTo(tx, ry + 7); g.stroke();
+      const tx = rx0 + (rx1 - rx0) * TEAR / COURSE; if (TEAR > 0) g.strokeStyle = "rgba(74,127,176,.8)"; g.lineWidth = 2; g.beginPath(); g.moveTo(tx, ry - 7); g.lineTo(tx, ry + 7); g.stroke();
       CHECKS.slice(1).forEach((c, i) => { const x = rx0 + (rx1 - rx0) * c / COURSE; g.fillStyle = i < s.cp ? SEAL : "rgba(164,42,28,.38)"; g.fillRect(x - 5, ry - 5, 10, 10); });
       const hy = 44, low = s.stamina < 30;
-      plate(8, hy, 214, (dragon() ? 92 : 70) + (s.recorded ? 20 : 0));
+      plate(8, hy, 214, (dragon() ? 92 : 70) + (s.recorded || DARK ? 20 : 0));
+      if (DARK) { g.font = "700 12.5px Cinzel, Georgia, serif"; g.fillStyle = s.inWake ? CURRENT : SEAL; g.fillText(s.inWake ? "IN THE LEAD'S INK · SHELTERED" : "OUT OF THE INK", 18, hy + 103); }
       if (s.recorded) { g.font = "700 12.5px Cinzel, Georgia, serif"; g.fillStyle = CURRENT; g.fillText("RECORDED · BECAUSE OF US", 18, hy + 103); }
       g.font = "700 12.5px Cinzel, Georgia, serif"; g.fillStyle = INK;
       g.fillText("SCALE HITS", 18, hy + 18);
       for (let i = 0; i < HITS; i++) { g.beginPath(); g.arc(122 + i * 17, hy + 13, 6.5, 0, 7); g.lineWidth = 2; g.strokeStyle = INK; g.stroke(); if (i < s.hits) { g.fillStyle = SEAL; g.fill(); } }
       g.fillStyle = INK; g.fillText(`TURNED BACK ${s.resets} / 3`, 18, hy + 40);
-      g.fillText(s.phase === "sail" ? "ON THE SAIL" : s.phase === "fall" ? "SHE FALLS" : "AETHERIUS", 18, hy + 61);
+      g.fillText(s.phase === "sail" ? "ON THE SAIL" : s.phase === "fall" ? "SHE FALLS" : ST === 1 ? "UMBRA" : ST === 2 ? "BEHIND UMBRA" : "AETHERIUS", 18, hy + 61);
       if (s.calm > 0) { g.fillStyle = CURRENT; g.fillText("· singing", 112, hy + 61); }
       if (dragon()) {
         g.fillStyle = low ? SEAL : INK; g.fillText("STAMINA", 18, hy + 82);
@@ -574,10 +685,17 @@ export default {
     const startBtn = wrap.querySelector("[data-start]");
     startBtn.addEventListener("click", () => {
       intro.remove(); s.running = true; last = performance.now();
-      beat(`Aeris Galewing steps off the edge of the sky-city on a sky-sail. Her people sent her down to seek aid; the road below is cloud and confused wind. <cite>Tilt with <b>W</b>/<b>S</b> · keep clear of ink</cite>`, 6000);
+      if (ST === 1) beat(`Kael Duskbane has what he came for, and the Eraser's people are behind him. Umbra takes the long gallery, where the Syndicate keeps its torches lit. <cite>Keep clear of rock · <b>E</b> blinks through the light</cite>`, 6500);
+      else if (ST === 2) { beat(`Six pairs go over the rim, one behind another, and the dark closes over them. Umbra leads: she is the only one who sees down here. <cite>Fly in her ink · the voice will show the wall</cite>`, 6500);
+        const lit = BANDS.filter((b) => stars[b] === "gold"), bl = BANDS.filter((b) => stars[b] === "black");
+        if (lit.length) ctx.link(wrap, `Because you gilded <b>${lit.map((b) => FIGURE[b]).join(", ")}</b> in Star Chart, ${lit.map((b) => BAND_NAME[b]).join(" and ")} band${lit.length > 1 ? "s are" : " is"} lit for good.${bl.length ? ` <b>${bl.map((b) => FIGURE[b]).join(", ")}</b> is gilded black: its band shows a wall that is not there.` : ""}`);
+        else if (bl.length) ctx.link(wrap, `Because <b>${bl.map((b) => FIGURE[b]).join(", ")}</b> is gilded black in Star Chart, ${bl.map((b) => BAND_NAME[b]).join(" and ")} band shows a wall that is not there.`); }
+      else beat(`Aeris Galewing steps off the edge of the sky-city on a sky-sail. Her people sent her down to seek aid; the road below is cloud and confused wind. <cite>Tilt with <b>W</b>/<b>S</b> · keep clear of ink</cite>`, 6000);
     });
+    ctx.picker(wrap.querySelector("[data-tabs]"));
     startBtn.focus();
-    opening(api.art, intro, "chapter-02");
+    opening(api.art, intro, CFG.chapter);
+
     const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(resize) : null;
     ro ? ro.observe(wrap) : addEventListener("resize", resize);
     resize();
@@ -594,5 +712,6 @@ export default {
         wrap.remove();
       },
     };
-  },
-};
+}
+
+export default staged({ stages: LADDER }, play);

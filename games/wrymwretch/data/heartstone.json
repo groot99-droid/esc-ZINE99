@@ -361,5 +361,26 @@
         "flag": "anchor_forged"
       }
     }
-  ]
+  ],
+  "phase_2": {
+    "accepted": "2026-11-15",
+    "built": "2026-11-16",
+    "the_rest": {
+      "scene": "s_heart_choir",
+      "rule": "The choir's door has four sockets and wants three notes: one slot must stay empty. A shard set in the rest reads hollow, whatever its pitch.",
+      "web_chord": [
+        2,
+        5,
+        null,
+        9
+      ]
+    },
+    "tarns_rib": {
+      "scene": "s_heart_choir",
+      "pitch": 6,
+      "rule": "After the door opens one rib still rings dull. It is not ancient. Tuning it changes nothing in the hall but a seventh note; it sets tarns_rib_tuned.",
+      "flag": "tarns_rib_tuned",
+      "heard_in": "s_empty_saddle"
+    }
+  }
 }

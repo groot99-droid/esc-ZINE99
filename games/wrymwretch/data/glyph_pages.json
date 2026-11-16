@@ -398,7 +398,46 @@
             "mark",
             "crown",
             "stem"
-          ]
+          ],
+          "held_in_world": {
+            "accepted": "2026-11-15",
+            "built": "2026-11-16",
+            "reads": "fourth_row_parts",
+            "rule": "Row IV has no still part on the monolith or on the door. Its six still parts are held in the world, one a realm, each in plain sight in a 3D scene; noticed and recorded, each fills one part of the row at the seal.",
+            "parts": [
+              {
+                "realm": "west",
+                "scene": "s_cedar_grove",
+                "where": "the crack in the split tree"
+              },
+              {
+                "realm": "north",
+                "scene": "s_cloud_platform",
+                "where": "a rune on Aetherius's scales"
+              },
+              {
+                "realm": "south",
+                "scene": "s_heartstone_hall",
+                "where": "a vein in the Heartstone"
+              },
+              {
+                "realm": "east",
+                "scene": "s_seabed",
+                "where": "a kelp line on the seabed"
+              },
+              {
+                "realm": "below",
+                "scene": "s_forbidden_chamber",
+                "where": "a candle shadow in the forbidden chamber"
+              },
+              {
+                "realm": "above",
+                "scene": "s_priory_halls",
+                "where": "a star in the Priory dome"
+              }
+            ],
+            "phase_3": "With all six, the row reads as the terms of the bargain, and opens the fourth answer at the statues."
+          }
         },
         {
           "row": 5,
@@ -408,7 +447,12 @@
             "crown",
             "mark",
             "foot"
-          ]
+          ],
+          "shy": [
+            2,
+            4
+          ],
+          "shy_rule": "Shy glyphs (accepted 2026-11-15, built 2026-11-16): stable only when unwatched; inside the focus circle every part slips."
         },
         {
           "row": 6,

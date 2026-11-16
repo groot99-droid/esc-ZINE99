@@ -21,7 +21,41 @@
 // The name cards, the clear-glass blank and the old picture faces are drawn here (the last only when
 // a pane is missing).
 
-import { png, opening, openingSet, recordPage } from "./_art.js";
+import { png, opening } from "./_art.js";
+import { staged } from "./_stages.js";
+
+// Phase 2 (accepted 2026-11-15, built 2026-11-16): the ladder. The two pages are now stages, and a third follows.
+//   I   Teach, the ward: faces blank.            II  Test, the bestiary: choose the blank from memory.
+//   III Twist, Ilvarra's memories (s_conc_ilvarra): the game starts lying. False faces (new): two cards
+//       on the table are the Remnants'. A false face shows a different memory each time it is turned,
+//       and a pair made with one is kept like any other: a lie, locked into the Record until it is
+//       unpicked (tap a kept pair: two flips). So a match on first sight, the safe move until now, is
+//       the wrong one: a card is trusted when it has shown the same face twice. No candle on this page.
+//       Set-piece: Cendre's face is clear glass before the first flip. Turn her name with the blank pane
+//       and eight blank panes are laid out; she is picked from them by her lead line alone.
+// Names become ground (layer link 1): the ward's result is written to api.shared ("ward"), and the bone
+// bridge (Forgetting run III) reads it.
+const LADDER = [
+  { name: "The ward", sub: "Six names, before the faces go." },
+  { name: "The bestiary", sub: "Ten creatures: choose the blank from memory." },
+  { name: "Ilvarra's memories", sub: "The game starts lying." },
+];
+const MEMS = [
+  { id: "rim", name: "The Rim", realm: "below", a: "glass-memory-rim", b: "glass-memory-rim-sound", bName: "Wind over the wound", line: "Two cliffs and the wound between them, and the sound the wind makes going over." },
+  { id: "bridge", name: "The bone bridge", realm: "above", a: "glass-memory-bridge", b: "glass-memory-bridge-sound", bName: "The bones hum", line: "Vertebrae and ribs across the chasm. She crossed it the first time on Cendre's back, laughing." },
+  { id: "banner_wood", name: "Wood banner", realm: "west", a: "glass-memory-banner-west", b: null, line: "The Wood tribe's banner at the Imprisonment. It was the first to be raised." },
+  { id: "banner_dark", name: "Dark banner", realm: "below", a: "glass-memory-banner-below", b: null, line: "The Dark tribe's banner. It was raised last, and held longest." },
+];
+const maskFace = `<svg viewBox="0 0 100 133"><rect width="100" height="133" fill="#1d1c26"/><path d="M50,22 C74,22 80,48 76,74 C72,100 58,114 50,114 C42,114 28,100 24,74 C20,48 26,22 50,22Z" fill="#e9e2d0" stroke="${"#15130f"}" stroke-width="3"/><path d="M34,62 q8,-5 14,0 M52,62 q6,-5 14,0" stroke="#15130f" stroke-width="3.5" fill="none"/><text x="50" y="128" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9" fill="#b9c0cb">a Remnant card</text><rect x="2" y="2" width="96" height="129" fill="none" stroke="#15130f" stroke-width="5" rx="3"/></svg>`;
+// eight blank panes: only the lead lines are left. One has a horn shorter than the other.
+const PANES = [[30, 30, 0], [20, 20, 1], [31, 31, 2], [25, 25, 0], [31, 16, 0], [22, 22, 2], [35, 35, 1], [27, 27, 1]];
+function pane([L, Rr, v]) {
+  const horn = (x, dir, len) => `<path d="M${x},50 q${dir * 3},${-len * 0.5} ${dir * 9},${-len} q${-dir * 1},${len * 0.55} ${-dir * 3},${len * 0.9}" />`;
+  return `<svg viewBox="0 0 100 133"><rect width="100" height="133" fill="#dfe8ea"/><path d="M8,120 L70,4 M30,128 L92,14" stroke="#fff" stroke-width="7" opacity=".7"/>
+    <g fill="none" stroke="#3d434b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">${horn(38, -1, L)}${horn(62, 1, Rr)}
+    <path d="M34,52 Q50,${v === 2 ? 40 : 44} 66,52 L${v === 1 ? 72 : 69},74 L58,${v === 0 ? 100 : 104} Q50,108 42,${v === 0 ? 100 : 104} L${v === 1 ? 28 : 31},74 Z"/><path d="M40,66 l7,3 M60,66 l-7,3 M46,96 l1,3 M54,96 l-1,3"/>${v === 2 ? '<path d="M31,74 l-8,6 M69,74 l8,6"/>' : ""}
+    <path d="M0,40 L34,52 M100,40 L66,52 M50,108 V133 M0,92 L31,74 M100,92 L69,74"/></g><rect x="2" y="2" width="96" height="129" fill="none" stroke="#15130f" stroke-width="5" rx="3"/></svg>`;
+}
 
 const LEAD = "#15130f", GLASS = "#f3eee2", CLEAR = "#dfe8ea", NIGHT = "#1d1c26", GOLD = "#e2b33c";
 const REALM = { west: ["#4f6b2e", "#d79a2b"], north: ["#7fa6cf", "#c7ccd3"], south: ["#c88a2e", "#e8571c"], east: ["#1f5f8b", "#8fb7c9"], below: ["#5b3a7a", "#2e2440"], above: ["#d4a72c", "#fbf6e4"] };
@@ -62,6 +96,8 @@ const PAGES = {
     artId: (c) => "glass-patient-" + c.n, noun: "name", goal: "Keep the fevered elves' names before their faces go." },
   bestiary: { key: "bestiary", label: "II · The bestiary", what: "ten creatures", chapter: "chapter-08", realm: "wrymreach", items: CREATURES, cols: 5, budget: [44, 50], interval: [6, 7], win: 8, leads: 2,
     artId: (c) => "glass-" + c.id.replace(/_/g, "-"), noun: "creature", goal: "Keep eight of the ten creatures before their faces go." },
+  ilvarra: { key: "ilvarra", label: "III · Ilvarra's memories", what: "four memories, and Cendre", chapter: "chapter-09", realm: "wrymreach", items: MEMS, cols: 4, budget: [38, 46], interval: [999, 999], win: 3, leads: 0,
+    artId: (c) => c.a, noun: "memory", goal: "Keep Ilvarra's memories, and do not keep a lie." },
 };
 
 // a jewel-glass ground: wedges in the realm's pair of colours, leaded
@@ -142,6 +178,16 @@ const CSS = `
 .wrymwretch-concentration-btn{font:700 13px 'Cinzel',Georgia,serif;letter-spacing:.1em;color:${NIGHT};background:${GOLD};border:0;padding:9px 12px;cursor:pointer;min-height:40px}
 .wrymwretch-concentration-btn.ghost{background:transparent;color:${GOLD};border:1.5px solid ${GOLD}}
 .wrymwretch-concentration-btn:disabled{opacity:.35;cursor:default}
+.wrymwretch-concentration-card.lie-open{box-shadow:0 0 0 3px #a42a1c}
+.wrymwretch-concentration-panes{position:absolute;inset:0;z-index:4;display:grid;place-items:center;padding:14px;box-sizing:border-box;overflow:auto;background:rgba(13,12,18,.9)}
+.wrymwretch-concentration-panes>div{width:min(560px,100%);background:#16151d;border:1.5px solid #6b5a3a;padding:14px 16px 16px;box-sizing:border-box}
+.wrymwretch-concentration-panes h3{font:700 19px 'Cinzel',Georgia,serif;margin:0 0 4px;color:#e2b33c;letter-spacing:.06em}
+.wrymwretch-concentration-panes p{font-size:17px;line-height:1.35;margin:0 0 10px;color:#f3eee2}
+.wrymwretch-concentration-panes .g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.wrymwretch-concentration-panes .g button{all:unset;box-sizing:border-box;aspect-ratio:3/4;cursor:pointer;border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,.6)}
+.wrymwretch-concentration-panes .g button svg{width:100%;height:100%;display:block}
+.wrymwretch-concentration-panes .g button:hover:not(:disabled),.wrymwretch-concentration-panes .g button:focus-visible{box-shadow:0 0 0 3px #e2b33c}
+.wrymwretch-concentration-panes .g button:disabled{opacity:.25;cursor:default}
 .wrymwretch-concentration-intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(13,12,18,.8);padding:16px;z-index:3;overflow:auto}
 .wrymwretch-concentration-cardx{width:min(400px,100%);box-sizing:border-box;background:${LEAD};padding:6px;clip-path:polygon(0 18%,12% 7%,30% 1.5%,50% 0,70% 1.5%,88% 7%,100% 18%,100% 100%,0 100%)}
 .wrymwretch-concentration-cardx .pane{background:linear-gradient(160deg,#f3eee2,#dfe8ea);color:${LEAD};padding:64px 22px 20px;font-size:16px;line-height:1.4;clip-path:polygon(0 17%,12% 6.5%,30% 1.2%,50% 0,70% 1.2%,88% 6.5%,100% 17%,100% 100%,0 100%);position:relative}
@@ -158,8 +204,8 @@ const CSS = `
 @media (max-width:560px){.wrymwretch-concentration-page{flex-direction:column-reverse;flex-wrap:nowrap;align-items:stretch;padding:10px;gap:10px}.wrymwretch-concentration-grid,.wrymwretch-concentration-grid.c4{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:6px;flex:none;max-width:none}.wrymwretch-concentration-lamps{grid-template-columns:repeat(6,1fr)}.wrymwretch-concentration-lamp{font-size:10px}.wrymwretch-concentration-side{flex:none;min-width:0;padding:10px 12px;gap:6px}.wrymwretch-concentration-stats{flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 14px}.wrymwretch-concentration-big{font-size:24px}.wrymwretch-concentration-candle{height:auto;align-items:center}.wrymwretch-concentration-wax{max-height:30px;margin-top:16px}.wrymwretch-concentration-kept{min-height:0}.wrymwretch-concentration-kept span{width:26px;height:26px}.wrymwretch-concentration-line{min-height:2.6em;font-size:15px}}
 `;
 
-export default {
-  mount(root, api) {
+function play(root, api, ctx) {
+    const ST = ctx.stage, PK = ["ward", "bestiary", "ilvarra"][ST];
     const R = api.rng();
     const losses = api.store.get("losses", 0) || 0;
     const gentle = losses >= 2;
@@ -185,16 +231,29 @@ export default {
       <div class="wrymwretch-concentration-beat" aria-live="polite"><div></div></div>
       <div class="wrymwretch-concentration-intro"><div class="wrymwretch-concentration-cardx"><div class="pane">
         <h2>Concentration</h2>
-        <p class="goal">Keep the faces before they go to clear glass.</p>
+        <div data-tabs></div>
+        ${[`<p class="goal">Keep the fevered elves' names before their faces go to clear glass.</p>
         <dl>
-          <dt>Turn two</dt><dd>match a face or a picture to its name; a match is kept</dd>
+          <dt>Turn two</dt><dd>match a face to its name; a match is kept</dd>
           <dt>The candle</dt><dd>every few flips one face fades to clear glass for good</dd>
-          <dt>Flips</dt><dd>each page has its count; when they run out, the page closes</dd>
+          <dt>Flips</dt><dd>thirty on this page; when they run out, the page closes</dd>
         </dl>
-        <p class="more">${gentle ? "Kinder pages this time: more flips, a slower candle. " : ""}A blank can still be kept. You will see how when the first face goes. Choose a page:</p>
-        <div class="wrymwretch-concentration-pages">
-          ${Object.values(PAGES).map((p) => `<button type="button" class="wrymwretch-concentration-btn" data-start data-page="${p.key}">${p.label}<small>${p.what}</small></button>`).join("")}
-        </div></div></div></div>`;
+        <p class="more">${gentle ? "Kinder pages this time: more flips, a slower candle. " : ""}A blank can still be kept. You will see how when the first face goes.</p>`,
+        `<p class="goal">Keep eight of the ten creatures before their faces go.</p>
+        <dl>
+          <dt>Twenty cards</dt><dd>a creature's picture and its name; the candle is quicker here</dd>
+          <dt>A blank</dt><dd>turn its partner, then the blank, and say <b>This is the one</b>: from memory</dd>
+          <dt>Lead a face</dt><dd>twice: spend a flip to lead a card you have seen, and it will not blank</dd>
+        </dl>
+        <p class="more">${gentle ? "Kinder pages this time: more flips, a slower candle. " : ""}A wrong claim blanks one more card at once.</p>`,
+        `<p class="goal">Keep Ilvarra's memories of the Imprisonment, and do not keep a lie.</p>
+        <dl>
+          <dt>False faces</dt><dd>new: two cards are the Remnants'. A false face shows a different memory each time it is turned</dd>
+          <dt>A lie</dt><dd>a pair made with a false face is kept like any other. Tap a kept pair to unpick it (two flips)</dd>
+          <dt>Cendre</dt><dd>her face was clear glass before the first flip. Turn her name with the blank pane</dd>
+        </dl>
+        <p class="more">${gentle ? "More flips this time. " : ""}No candle here. Trust a card when it has shown you the same face twice.</p>`][ST]}
+        <div class="wrymwretch-concentration-pages"><button type="button" class="wrymwretch-concentration-btn" data-start data-page="${PK}">Turn the cards</button></div></div></div></div>`;
     root.appendChild(wrap);
     const gridEl = wrap.querySelector(".wrymwretch-concentration-grid"), keptEl = wrap.querySelector(".wrymwretch-concentration-kept"), lampsEl = wrap.querySelector(".wrymwretch-concentration-lamps");
     const lineEl = wrap.querySelector(".wrymwretch-concentration-line"), flipsEl = wrap.querySelector("[data-flips]"), headEl = wrap.querySelector("[data-head]");
@@ -207,7 +266,7 @@ export default {
 
     let P = PAGES.ward, ITEMS = P.items, WIN = P.win, BUDGET = 30, INTERVAL = 8, LEADS = 2;
     let cards = [];
-    const st = { up: [], flips: 0, since: 0, kept: 0, busy: false, over: false, hint: true, peek: -1, started: false, leads: 0, leading: false, claims: 0, quick: false, beats: new Set(), blanks: 0 };
+    const st = { lies: 0, caught: 0, cendre: "", up: [], flips: 0, since: 0, kept: 0, busy: false, over: false, hint: true, peek: -1, started: false, leads: 0, leading: false, claims: 0, quick: false, beats: new Set(), blanks: 0 };
     const pics = {};   // art id -> data URL, as each pane is drawn
     let backUrl = "";
     let beatTimer = null;
@@ -219,7 +278,9 @@ export default {
     const once = (id, html, ms) => { if (st.beats.has(id)) return; st.beats.add(id); beat(html, ms); };
     const fx = (el, cls) => { if (api.reducedMotion) return; el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); };
     const BACK = back();
-    const picOf = (c) => (c.kind === "pic" && pics[c.artId] ? `<img alt="" draggable="false" src="${pics[c.artId]}">` : c.faceSvg);
+    const picOf = (c) => (c.caught ? maskFace : (c.kind === "pic" || c.art) && pics[c.artId] ? `<img alt="" draggable="false" src="${pics[c.artId]}">` : c.faceSvg || blankFace);
+    const IL = PK === "ilvarra";
+    const showing = (c) => (c.kind === "false" ? MEMS[c.show].name + " picture" : c.kind === "cname" ? "Cendre's name" : c.kind === "cface" ? "Cendre's face" : c.kind === "cblank" ? "a blank pane, clear glass" : c.kind === "half" ? ITEMS[c.p].bName || ITEMS[c.p].name + " name" : ITEMS[c.p].name + " picture");
 
     function begin(pageKey) {
       P = PAGES[pageKey] || PAGES.ward; ITEMS = P.items; WIN = P.win; LEADS = P.leads;
@@ -228,12 +289,18 @@ export default {
       gridEl.classList.toggle("c4", P.cols === 4);
       wrap.querySelector("[data-of]").textContent = "/ " + BUDGET;
       cards = [];
+      if (IL) {
+        ITEMS.forEach((c, p) => { cards.push({ p, kind: "pic", art: true, aid: c.a }, { p, kind: "half", art: !!c.b, aid: c.b || c.a }); });
+        cards.push({ p: -1, kind: "cname", art: true, aid: "glass-memory-cendre-name" }, { p: -1, kind: "cblank", art: true, aid: "glass-cendre-blank" });
+        const off = Math.floor(R() * 4); cards.push({ p: -2, kind: "false", art: true, show: off, aid: MEMS[off].a }, { p: -2, kind: "false", art: true, show: (off + 2) % 4, aid: MEMS[(off + 2) % 4].a });
+        wrap.querySelector(".wrymwretch-concentration-candle").parentNode.hidden = true; hintBtn.hidden = true;
+      } else
       ITEMS.forEach((c, p) => { cards.push({ p, kind: "pic" }, { p, kind: "name" }); });
       for (let i = cards.length - 1; i > 0; i--) { const j = Math.floor(R() * (i + 1)); [cards[i], cards[j]] = [cards[j], cards[i]]; }
       cards.forEach((c, i) => {
         c.blank = false; c.locked = false; c.i = i; c.seen = false; c.leaded = false;
-        c.artId = P.artId(ITEMS[c.p]);
-        c.faceSvg = face(ITEMS[c.p], c.kind, i * 0.37);
+        c.artId = c.aid || P.artId(ITEMS[c.p]);
+        c.faceSvg = c.p >= 0 ? face(ITEMS[c.p], c.kind === "half" ? "name" : c.kind, i * 0.37) : "";
         c.el = document.createElement("button");
         c.el.type = "button"; c.el.className = "wrymwretch-concentration-card";
         c.el.addEventListener("click", () => pick(c));
@@ -241,28 +308,29 @@ export default {
       });
       // the glass panes, drawn once each at card size
       png(api.art, "glass-back", { w: 180 }).then((u) => { if (u && !dead) { backUrl = u; paint(true); } });
-      ITEMS.forEach((it) => { const id = P.artId(it); png(api.art, id, { w: 180 }).then((u) => { if (u && !dead) { pics[id] = u; paint(true); } }); });
+      [...new Set(cards.map((c) => c.artId).concat(IL ? MEMS.map((m) => m.a).concat("glass-memory-cendre-face") : []))].forEach((id) => { png(api.art, id, { w: 180 }).then((u) => { if (u && !dead) { pics[id] = u; paint(true); } }); });
       if (P.key === "ward") {
         lampsEl.hidden = false; keptEl.hidden = true;
         lampsEl.innerHTML = ITEMS.map((it) => `<span class="wrymwretch-concentration-lamp" data-lamp="${it.id}"><i></i>${it.name}</span>`).join("");
         lineEl.textContent = "Twelve sleepers in blankets, wings drooping. Their names are going.";
-      } else lineEl.textContent = "The healers' creature cards. Their faces are going.";
+      } else lineEl.textContent = IL ? "Ilvarra's memories of the Imprisonment, laid face down at her fire. Two of these cards are not hers." : "The healers' creature cards. Their faces are going.";
       paint(true);
     }
     function paint(force) {
       cards.forEach((c, i) => {
         const shown = c.locked || st.up.includes(c) || st.peek === i;
-        const state = (shown ? (c.blank && st.peek !== i ? "blank" : "face") : "back") + (c.leaded && !c.locked ? "+lead" : "");
+        const state = (c.caught ? "caught" : shown ? (c.blank && st.peek !== i ? "blank" : "face" + (c.artId || "")) : "back") + (c.leaded && !c.locked ? "+lead" : "");
         if (force || c.el._state !== state) {
           c.el._state = state;
-          c.el.innerHTML = (shown ? (c.blank && st.peek !== i ? blankFace : picOf(c)) : backUrl ? `<img alt="" draggable="false" src="${backUrl}">` : BACK) + (c.leaded && !c.locked ? `<i class="lead" aria-hidden="true"></i>` : "");
+          c.el.innerHTML = (c.caught ? maskFace : shown ? (c.blank && st.peek !== i ? blankFace : picOf(c)) : backUrl ? `<img alt="" draggable="false" src="${backUrl}">` : BACK) + (c.leaded && !c.locked ? `<i class="lead" aria-hidden="true"></i>` : "");
         }
         c.el.classList.toggle("up", st.up.includes(c));
         c.el.classList.toggle("locked", c.locked);
-        c.el.setAttribute("aria-label", c.locked ? `${ITEMS[c.p].name}, kept` : shown ? (c.blank ? "blank card, face up" : `${ITEMS[c.p].name} ${c.kind === "pic" ? (P.key === "ward" ? "face" : "picture") : "name"}`) : "face-down card");
+        if (IL) c.el.setAttribute("aria-label", c.caught ? "a Remnant card, unmasked" : c.locked ? `${showing(c)}, kept` : shown ? showing(c) : "face-down card");
+        else c.el.setAttribute("aria-label", c.locked ? `${ITEMS[c.p].name}, kept` : shown ? (c.blank ? "blank card, face up" : `${ITEMS[c.p].name} ${c.kind === "pic" ? (P.key === "ward" ? "face" : "picture") : "name"}`) : "face-down card");
       });
       flipsEl.textContent = st.flips;
-      headEl.textContent = P.key === "ward" ? `NAMES KEPT ${st.kept} / ${ITEMS.length} · LANTERNS` : `PAIRS KEPT ${st.kept} / ${ITEMS.length} · song at ${WIN}`;
+      headEl.textContent = IL ? `MEMORIES KEPT ${st.kept + st.lies} / ${ITEMS.length} · CENDRE ${st.cendre === "kept" ? "KEPT" : st.cendre === "lost" ? "LOST" : "CLEAR GLASS"}` : P.key === "ward" ? `NAMES KEPT ${st.kept} / ${ITEMS.length} · LANTERNS` : `PAIRS KEPT ${st.kept} / ${ITEMS.length} · song at ${WIN}`;
       wax.style.height = 10 + 60 * (1 - st.since / INTERVAL) + "px";
       nextEl.textContent = `in ${INTERVAL - st.since} flip${INTERVAL - st.since === 1 ? "" : "s"}`;
       hintBtn.disabled = !st.hint || !cards.some((c) => c.blank && !c.locked) || st.over;
@@ -282,7 +350,7 @@ export default {
     function countFlip() {
       st.flips--; st.since++;
       if (st.since >= INTERVAL) { st.since = 0; blankOne(st.up); lineEl.textContent = "A face has gone to clear glass."; }
-      if (!st.quick && st.flips <= BUDGET / 2) { st.quick = true; INTERVAL = Math.max(4, INTERVAL - 1); st.since = Math.min(st.since, INTERVAL - 1); beat(`In the next room a sleeper cries out and forgets the healer's name. The plague quickens. <cite>A face now blanks every ${INTERVAL} flips</cite>`, 6500); }
+      if (!IL && !st.quick && st.flips <= BUDGET / 2) { st.quick = true; INTERVAL = Math.max(4, INTERVAL - 1); st.since = Math.min(st.since, INTERVAL - 1); beat(`In the next room a sleeper cries out and forgets the healer's name. The plague quickens. <cite>A face now blanks every ${INTERVAL} flips</cite>`, 6500); }
     }
     function keep(a, b) {
       a.locked = b.locked = true; a.blank = b.blank = false; st.kept++;
@@ -297,20 +365,74 @@ export default {
         if (st.kept === WIN) once("kw", `Four lanterns named. Whatever is lost now, the road at the end will not be all dark. <cite>Lose three names and three stretches go dark</cite>`);
         return;
       }
+      if (IL) return;
       if (st.kept === 4) once("k4", `A Tidecaller healer reads the kept pages aloud, one by one, so the room will not forget them twice. <cite>4 kept · the song needs ${WIN}</cite>`);
       if (st.kept === WIN) once("k8", `Eight creatures held. The healers begin to hum the healing song the Galechanters asked for. <cite>The song is safe · keep going if you can</cite>`);
     }
+    // III: a pair made with a false face is kept like any other, and is a lie until it is unpicked
+    function keepLie(a, b) {
+      const f = a.kind === "false" ? a : b, h = f === a ? b : a;
+      a.locked = b.locked = true; a.lie = b.lie = true; a.mate = b; b.mate = a; st.lies++; f.artId = MEMS[f.show].a;
+      const m = document.createElement("span"); m.innerHTML = picOf(f); m.title = MEMS[h.p].name; m.dataset.lie = h.p; keptEl.appendChild(m);
+      lineEl.textContent = `${MEMS[h.p].name}. ${MEMS[h.p].line}`;
+      fx(a.el, "won"); fx(b.el, "won");
+    }
+    function unpick(c) {
+      const m = c.mate; if (!m || st.busy || st.up.length) return;
+      st.flips = Math.max(0, st.flips - 2); c.locked = m.locked = false; c.mate = m.mate = null;
+      if (c.lie) {
+        const f = c.kind === "false" ? c : m, h = f === c ? m : c; c.lie = m.lie = false; st.lies--; st.caught++; f.caught = true; f.locked = true;
+        const medal = keptEl.querySelector(`[data-lie="${h.p}"]`); medal && medal.remove();
+        lineEl.textContent = `Unpicked. The pane that passed for ${MEMS[h.p].name} was a Remnant's, and it is out of the game.`;
+        once("caught", `Under the kept pair, one pane has no memory in it at all: a mask, and somebody else's hand. Ilvarra turns it face down on the ground. <cite>A lie unpicked · the true half is back on the table</cite>`, 8000);
+      } else { st.kept--; const k = [...keptEl.children].find((x) => x.title === ITEMS[c.p].name && !x.dataset.lie); k && k.remove(); lineEl.textContent = `Unpicked: ${ITEMS[c.p].name} was true. Both halves are back on the table.`; }
+      paint(); if (st.flips <= 0) later(settle, 400);
+    }
+    function cendre(a, b) {   // the set-piece: eight blank panes, and only the lead line to know her by
+      st.busy = true;
+      const order = PANES.map((p, i) => i); for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(R() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
+      const ov = document.createElement("div"); ov.className = "wrymwretch-concentration-panes"; ov.setAttribute("role", "dialog"); ov.setAttribute("aria-label", "Eight blank panes");
+      ov.innerHTML = `<div><h3>Cendre</h3><p>Her face went to clear glass before the first flip. Eight blank panes came out of the same window, and nothing is left in any of them but the lead. All Ilvarra said of her at the fire: one horn shorter than the other. <b data-left>Three tries.</b></p>
+        <div class="g">${order.map((i) => `<button type="button" data-pane="${i}" aria-label="blank pane: ${PANES[i][0] === PANES[i][1] ? "both horns the same length" : "one horn shorter than the other"}">${pane(PANES[i])}</button>`).join("")}</div></div>`;
+      wrap.appendChild(ov);
+      let tries = 3;
+      ov.querySelectorAll("[data-pane]").forEach((bt) => bt.addEventListener("click", () => {
+        const i = +bt.dataset.pane;
+        if (PANES[i][0] !== PANES[i][1]) {
+          st.cendre = "kept"; ov.remove(); a.locked = b.locked = true; const bl = a.kind === "cblank" ? a : b; bl.artId = "glass-memory-cendre-face"; bl.kind = "cface";
+          lineEl.textContent = "Cendre. Ember-coloured, one horn shorter than the other. The face comes back into the glass.";
+          beat(`The lead lines fill: orange, then the dark of the eye. Ilvarra does not touch the pane. <q>Her name was Cendre,</q> she says, as if she had been asked. <cite>Kept from clear glass, by its lead alone</cite>`, 9000);
+          fx(a.el, "won"); fx(b.el, "won"); return settle();
+        }
+        tries--; bt.disabled = true; ov.querySelector("[data-left]").textContent = tries === 1 ? "One try left." : `${tries} tries left.`;
+        if (tries <= 0) { st.cendre = "lost"; ov.remove(); a.locked = b.locked = true; lineEl.textContent = "Three wrong panes. Whichever was hers, nobody can say now."; settle(); }
+      }));
+      ov.querySelector("[data-pane]").focus();
+    }
     function settle() {
       st.up = []; st.busy = false; askEl.innerHTML = ""; paint();
+      if (IL) { if (st.cendre === "lost" || (st.kept === ITEMS.length && st.cendre) || st.flips <= 0) return finish(); return; }
       if (st.kept === ITEMS.length) return finish();
       if (st.flips <= 0) return finish();
     }
     function finish() {
       st.over = true; paint();
-      const win = st.kept >= WIN;
+      const win = IL ? st.cendre === "kept" && st.kept >= WIN && st.lies === 0 : st.kept >= WIN;
       api.store.set("losses", win ? 0 : losses + 1);
-      const keptNames = ITEMS.filter((c, p) => cards.some((x) => x.p === p && x.locked)).map((c) => c.name);
-      const lost = ITEMS.filter((c, p) => !cards.some((x) => x.p === p && x.locked)).map((c) => c.name);
+      const keptNames = ITEMS.filter((c, p) => cards.some((x) => x.p === p && x.locked && !x.lie)).map((c) => c.name);
+      const lost = ITEMS.filter((c, p) => !cards.some((x) => x.p === p && x.locked && !x.lie)).map((c) => c.name);
+      if (P.key === "ward") { try { api.shared.set("ward", { kept: keptNames, lost }); } catch { /* no storage */ } }
+      if (IL) {
+        const lies = ITEMS.filter((c, p) => cards.some((x) => x.p === p && x.lie)).map((c) => c.name);
+        return later(() => { if (dead) return; ctx.done(wrap, { win, record: { realm: "wrymreach", title: "Concentration III: Ilvarra's memories", sub: "At her fire · chapter 9, The Last Witness", divider: 2, pic: st.cendre === "kept" ? "glass-memory-cendre-face" : "glass-cendre-blank", lines: [
+          st.cendre === "kept" ? "Cendre's face: kept from clear glass, by one horn shorter than the other." : { t: st.cendre === "lost" ? "Cendre's face: lost among eight blank panes." : "Cendre's face: still clear glass. Her name was never turned with it.", kind: "lost" },
+          keptNames.length ? `Kept, and true: ${keptNames.join(", ")}.` : null,
+          ...lies.map((n) => ({ t: `${n}: a lie, locked into the Record. The pane that matched it was a Remnant's.`, kind: "lost" })),
+          lost.filter((n) => !lies.includes(n)).length ? { t: `Not kept: ${lost.filter((n) => !lies.includes(n)).join(", ")}.`, kind: "lost" } : null,
+          st.caught ? `Remnant cards unmasked: ${st.caught} of 2.` : null ] },
+          text: win ? `${st.kept} of Ilvarra's four memories kept, every one of them true${st.caught ? `, and ${st.caught} Remnant card${st.caught > 1 ? "s" : ""} unmasked` : ""}. Cendre's face came back out of clear glass by nothing but its lead: one horn shorter than the other. Ilvarra holds the pane to the fire and looks through it at the bridge.`
+            : `${st.cendre !== "kept" ? "Cendre's face stays clear glass. " : ""}${lies.length ? `${lies.join(" and ")} ${lies.length > 1 ? "are" : "is"} kept as a lie: the Record now remembers what a Remnant showed it. ` : ""}${st.kept} of four memories kept true. Ilvarra gathers the panes without counting them.${kinder0()}` }); }, 500);
+      }
       if (P.key === "ward") lampsEl.querySelectorAll(".wrymwretch-concentration-lamp:not(.lit)").forEach((l) => l.classList.add("dark"));
       const kinder = losses + 1 >= 2 ? " The next page will be kinder." : "";
       const result = P.key === "ward"
@@ -320,7 +442,7 @@ export default {
           : { outcome: "lose", text: `${st.kept} of 10 creatures kept, short of the ${WIN} the healing song needs. The healers stop humming; ${lost.slice(0, 3).join(", ")}${lost.length > 3 ? " and the rest" : ""} stay clear glass.${kinder}` });
       later(() => {
         if (dead) return;
-        recordPage(wrap, api, P.key === "ward"
+        ctx.done(wrap, { win: result.outcome === "win", text: result.text, record: P.key === "ward"
           ? { realm: "north", title: "Concentration I: the fevered's names", sub: "Galewing page · chapter 2, Remember Me", divider: 2, lines: [
             ...keptNames.map((n) => ({ t: `${n}: kept. A lantern carries the name.`, kind: "link" })),
             ...lost.map((n) => ({ t: `${n}: gone to clear glass. That stretch is dark.`, kind: "lost" })),
@@ -328,12 +450,14 @@ export default {
           : { realm: "wrymreach", title: "Concentration II: the bestiary", sub: "The Rim Moot · chapter 8", divider: 2, lines: [
             `Pages restored: ${keptNames.join(", ") || "none"}.`,
             lost.length ? { t: `Still clear glass: ${lost.join(", ")}.`, kind: "lost" } : null,
-            win ? "The healing song, for the Priest of the Gale." : { t: "The healing song: not learned.", kind: "lost" }] });
-        api.end(result);
+            win ? "The healing song, for the Priest of the Gale." : { t: "The healing song: not learned.", kind: "lost" }] } });
       }, 500);
     }
+    const kinder0 = () => (losses + 1 >= 2 ? " The next page will be kinder." : "");
     function pick(c) {
+      if (IL && c.locked && !c.caught && c.mate && st.started && !st.busy && !st.over && !st.up.length) return unpick(c);
       if (!st.started || st.busy || st.over || c.locked || st.up.includes(c)) return;
+      if (c.kind === "false") { c.show = (c.show + 1) % MEMS.length; let n = 0; while (n++ < 4 && cards.some((x) => x.p === c.show && x.kind === "pic" && x.locked && !x.lie)) c.show = (c.show + 1) % MEMS.length; c.artId = MEMS[c.show].a; }
       if (st.leading) {
         if (!c.seen || c.blank || c.leaded) { lineEl.textContent = c.blank ? "A blank face cannot be led." : c.leaded ? "That card is already led." : "Lead only a card you have already seen face-up."; return; }
         st.leading = false; st.leads--; c.leaded = true; countFlip();
@@ -343,6 +467,17 @@ export default {
       st.up.push(c); c.seen = true; countFlip(); paint();
       if (st.up.length < 2) { if (st.flips <= 0) later(settle, 700); return; }
       const [a, b] = st.up;
+      if (IL) {
+        const kinds = [a.kind, b.kind].sort().join("+");
+        if (kinds === "cblank+cname") return cendre(a, b);
+        if (a.p === b.p && a.p >= 0 && a.kind !== b.kind) { a.mate = b; b.mate = a; keep(a, b); return settle(); }
+        const f = a.kind === "false" ? a : b.kind === "false" ? b : null, h = f === a ? b : a;
+        if (f && h.kind === "half" && h.p === f.show) { keepLie(a, b); return settle(); }
+        if (f && h.kind === "pic" && h.p === f.show) once("twin", `Two panes with the same picture. Ilvarra frowns. She has only one memory of it. <cite>One of the two is not hers: see which keeps its face</cite>`, 8000);
+        if ((a.kind === "cblank" || b.kind === "cblank") && !st.beats.has("cb")) once("cb", `A pane of clear glass, on the table before anyone turned a card. Somebody's face was in it. <cite>Turn it with her name</cite>`, 7000);
+        st.busy = true; fx(a.el, "miss"); fx(b.el, "miss");
+        return later(settle, 950);
+      }
       if (a.blank || b.blank) {
         st.busy = true;
         askEl.innerHTML = `<div class="wrymwretch-concentration-ask"><span>One of these faces is gone. Is this its pair?</span>
@@ -371,17 +506,18 @@ export default {
       later(() => { st.peek = -1; paint(); }, 2000);
     });
     const intro = wrap.querySelector(".wrymwretch-concentration-intro");
-    opening(api.art, intro, PAGES.ward.chapter);
+    opening(api.art, intro, PAGES[PK].chapter);
+    ctx.picker(intro.querySelector("[data-tabs]"));
     intro.querySelectorAll("[data-page]").forEach((b) => {
-      const show = () => openingSet(api.art, intro, PAGES[b.dataset.page].chapter);
-      b.addEventListener("pointerenter", show); b.addEventListener("focus", show);
       b.addEventListener("click", () => {
         intro.remove(); begin(b.dataset.page); st.started = true; cards[0].el.focus();
-        if (P.key === "ward") beat(`The healers' ward, in the sky-city. <q>They speak of voices in the wind. They say the stars are calling them by name.</q> Match each sleeper's face to their name before the face goes. <cite>WW 47 · turn two cards</cite>`, 8000);
+        if (IL) beat(`The night before the bridge, at Ilvarra's fire. She lays out what she has left of the Imprisonment, in glass, and asks you to help her hold it. Some of these panes were put among hers. <cite>Turn two cards · a face that changes is not hers</cite>`, 9000);
+        else if (P.key === "ward") beat(`The healers' ward, in the sky-city. <q>They speak of voices in the wind. They say the stars are calling them by name.</q> Match each sleeper's face to their name before the face goes. <cite>WW 47 · turn two cards</cite>`, 8000);
         else beat(`With the Tidecaller healers. The bestiary's creature pages are going blank with the plague, and the healers need eight of them whole to sing the healing song. <cite>Turn two cards</cite>`, 7000);
       });
     });
     intro.querySelector("[data-page]").focus();
     return { unmount() { st.over = true; dead = true; timers.forEach(clearTimeout); wrap.remove(); } };
-  },
-};
+}
+
+export default staged({ stages: LADDER }, play);
