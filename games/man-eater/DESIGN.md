@@ -660,13 +660,15 @@ One branch plays. See section 13 for each.
 | `n2_door` and every `n*_door` | Bunk room, 21:58 to 22:00 | as `c1_bunk` | The door, the clock, bread, the kit, the list | Moonlight | The clock, then the call | The choice (section 12) | cut / cut |
 | `d3_duty_shovel` | Yard, north wall | 60 m strip | Shovel, fence posts (countable), the parked truck under snow | Bright snow glare | Wind, shovel scrape, the searchlight motor | 120 paces counted at the end | cut / cut |
 | `d3_mail_room` | Mail room | 4 x 3 m | Sacks stamped HOLD, Duarte's letter | One bulb | Paper | Opening the lower sack sets `mail_held` | cut / cut |
+| `n3_glovebox` (accepted 2026-11-15, built 2026-11-16) | The cab of the truck parked under snow by the north wall | Cab 1.9 x 1.5 m; 8 x 10 m of yard round it | The cab door, frozen half open; the glovebox; Duarte's letter | One sodium lamp through frosted glass; snow light | Wind, the door's hinge, paper | Only if `letter_taken`. Opening the glovebox shows it full of letters in bundles; laying Duarte's on top sets `glovebox_seen` | pull-out / fade |
 | `d4_duty_boiler` | Boiler room | 12 x 8 m | Gauges, floor drains, a hand over the drain | Orange boiler glow, blue frost at the drains | Boilers roaring; under it, the drains breathing | Hand over a drain sets `cold_from_below` | cut / cut |
 | `n4_office` | Sam's office, staff mess | 6 x 5 m and 5 x 4 m | Filing cabinet (roster, source file), staff food shelf | Desk lamp left on | The office clock, a guard passing | Reading both files sets `files_read` | pull-out / fade |
 | `d5_duty_laundry` | Laundry | 8 x 6 m | Uniforms, name tapes, the taken-in seams | Steam | Machines | Finding Fisk's own uniform ends duty | cut / cut |
-| `d5_jax_plan` | Bunk room, evening | as `c1_bunk` | Jax, three answers | Lamp low | Jax tapping the bed frame | The choice | cut / cut |
+| `d5_jax_plan` | Bunk room, evening | as `c1_bunk` | Jax, three answers, and a fourth if `schedule_read`: show him the page | Lamp low | Jax tapping the bed frame | The choice. The fourth answer plays "Jax Unties the Knots" and sets `knots_untied` | cut / cut |
 | `d5_sam_office` | Sam's office by day | as `n4_office` | Sam | Daylight | Pen on paper | Reporting sets `jax_fate` at 10:00 | cut / cut |
-| `d6_sam_offer` | Bunk room | as `c1_bunk` | Sam, a key on a ring | Morning | Keys | Offer, or the tape measure | cut / cut |
-| `n6_pens` | Below the cold store | 40 x 6 m, ceiling 6 m | Frosted glass panes (12 pens), the scratched list | Blue work lights, frost | Slow breathing, a pump | Reading the list sets `pens_seen` | pull-out / fade |
+| `d6_sam_offer` | Bunk room | as `c1_bunk` | Sam, a key on a ring | Morning | Keys | Offer, or the tape measure. After "Coming along.", if `schedule_read`, Sam's added line ("Results Required") sets `results_required_heard` | cut / cut |
+| `d6_next_week` (accepted 2026-11-15, built 2026-11-16) | Cafeteria, at the hatch | as `d1_cafeteria` | The hatch, the served tray, Hollis's empty place on the bench | The hatch lit from inside; strips dimmer than day 1 | Cutlery, the fan; nobody says his name | Hollis is behind the hatch in staff greys (`hollis_staff`) unless Fisk took the key, in which case the orderly is there and Hollis was taken. Taking the tray pushes in to the Tray | cut / push-in |
+| `n6_pens` | Below the cold store | 40 x 6 m, ceiling 6 m | Frosted glass panes (12 pens, nine of them occupied), the scratched list and its last line at full reach (`wall_sentence_read`), a roster of thirty-one, the day-1 crates with roster line numbers | Blue work lights, frost | Slow breathing, a pump | Reading the list sets `pens_seen` | pull-out / fade |
 | `d7_duty_walk` | The whole ground floor | About 400 m of hall | Door log clipboard, every door | Day strips, empty halls | Only Fisk's steps | Logging 12 doors ends duty | cut / cut |
 | `d7_bunk_evening` | Bunk room | as `c1_bunk` | Jax, the knots, bread | Lamp | The clock | Ends at 21:58 | cut / cut |
 | `n7_windigo` | A hall corner near the stair | 10 m of hall and a corner | None; look only | Frost, moonlight from the high windows, the figure backlit | The flute, close; "heaved breaths" | The line; the gust; then the steps | pull-out / fade |
@@ -728,6 +730,20 @@ guards' footsteps as small marks on the floor line for 2 seconds).
 | The call's pull, when not following | At `change` 40 or more, walking away from the call is 30% slower |
 | Checks | At 22:30 and 23:30 a guard walks every hall once |
 
+**Accepted 2026-11-15, built 2026-11-16 (the ladder: teach on night 2, test on night 4, twist on night 6):**
+
+| Rule | Number |
+| --- | --- |
+| Shadow cover | Anyone standing inside Fisk's shadow is not seen by a cone. The shadow covers a companion only while Fisk stands: crouched, in an alcove or on the pipes, the companion is in the open |
+| The stoop | Behind a hung laundry sheet, a silhouette held at 1.9 m or less reads as an orderly, and a cone passes over it. An eater must fold down to pass for a man |
+| "He Ran" (night 6, once) | At `change` 68 the shadow reaches the ceiling. The first guard who sees only that shadow, and no body within his 10 m, drops his flashlight and backs away for 20 seconds. He sees a shadow that tall from 14 m |
+| The pipe route | Shown on the progress strip only when `height_marks` is set (Floor Plan, section 11.4, rule 9) |
+
+On night 6 Jax walks with Fisk (unless `jax_fate` has taken him), a step into the side the shadow
+falls on. The turn is that the safe moves of nights 2 and 4 (crouch, the alcove, the pipes) leave
+Jax standing in the hall, and that the shadow, the thing to hide until now, is the thing to send
+ahead.
+
 **What the shadow does for the design:** the more Fisk has eaten, the longer his shadow and the
 earlier he is seen, but the more he can climb out of the light. An eater and a refuser play the
 same hall differently. That is the mode's whole point, and it is why it belongs to this game.
@@ -775,6 +791,20 @@ dark dot with a breath plume. **His footprints stay.** Patrols follow fresh prin
 | Warmth drain in the yard | 8 minus `change`/12.5 per minute. The yard is warmer than the halls, as in the source |
 | Warmth drain beyond the wire | 40 minus `change`/2 per minute (20 per minute at `change` 40, 10 at 60, 0 at 80) |
 | The body's limit beyond the wire | Below `change` 60 Fisk's legs stop at the halfway mark, whatever the warmth. This is the source's rule that only the changed survive the cold, stated as a hard gate |
+
+**Accepted 2026-11-15, built 2026-11-16 (the ladder: teach on night 3, test on night 5, twist on night 7):**
+
+| Rule | Number |
+| --- | --- |
+| Toe-ward | A patrol follows a trail the way the toes of the print it found are pointing. Walking backward (hold; 40% slower) leaves prints that point the way Fisk came, and the patrol walks them to where he started |
+| The size rule | At 38 cm and over (`change` 64) patrols step over Fisk's prints. The tower photographs them (`route_photographed`), and the route is on the orderly's clipboard next morning |
+| The bare prints (night 5) | 2 m apart, never filled, never followed. Stepping in them leaves no print only for a stride of 1.03 m or more (`change` 40); a shorter stride leaves one print of its own between each pair |
+| The carry (night 7) | 0.8 m/s with Jax on Fisk's shoulders; deep prints that do not fill; no lying flat. It needs `strength` 88 |
+| Treading back (night 7) | Alone, 1.9 m/s (1.14 m/s treading). A print trodden on the way back turns its toes for home. The call pulls Fisk toward the wire in a straight line whenever he stands still |
+| "Frame 112" (night 7) | The frame is read when Fisk is back inside the wire. At least 85% of the out-prints trodden and no more than 6 prints beside the line: one line, caption "No crossing." Otherwise: "Crossing. One carried." Only a gap marked on Floor Plan (`fence_gap_marked`) is in the frame |
+
+The web prototype plays the carry and Frame 112 as night 7's set piece. The ending they lead to
+(One Set of Prints) is phase 3 and is not in `data/endings.json` yet.
 
 **Hazards:** patrols, the searchlight, deep drifts (half speed, deep prints that last twice as
 long), the open strip beyond the wire with nothing to hide in.
@@ -840,6 +870,18 @@ evening game is the refuser's lifeline and the place the player meets the people
    the next card played sets the suit. It is the one clean way to duck a trick. Its holder has nine
    cards for eight tricks, and the card he never plays is burned at the end of the hand. With E empty
    chairs the deck is 8N + E cards (`chairs_empty` counts E).
+
+9. **The staff loaf (accepted 2026-11-15, built 2026-11-16).** From day 4 one loaf in the basket is
+   wrapped in a white napkin. Nobody at the table takes it: an exact bidder who finds only that loaf
+   left goes without. After the last hand it is still there, and Fisk may take it
+   (`staff_loaf_taken`): it buys a quiet night at the door (section 12), and the next day's gaze at
+   the Tray rests on him 1 second longer.
+10. **Open hands, and Jax tapping (accepted 2026-11-15, built 2026-11-16).** On day 6 Fisk deals, so
+   his bid may not make the two bids add up to 8: at most one of the two can be exact, and with
+   every card face up (the sixteen, and the four withdrawn 8s, two to each hand) the player can see
+   the line of play that gives the loaf to Jax. Jax plays his own rule honestly: he takes a trick
+   when he still needs one and can, and ducks when he does not. He taps before every card anyway.
+   A loaf given to Hollis on any earlier evening sets `hollis_fed`.
 
 **Two-handed play (day 6):** with two seats the deck is 16 cards and both hands are dealt in full,
 so each player knows the other's cards exactly. The basket holds one loaf. It is the only hand of the
@@ -916,6 +958,19 @@ how much of your mind to trade for strength.
    second) and must be pushed back. At 90 or more, the first piece moves to the mouth on its own
    unless the player holds "push away" for 3 seconds. Refusal is always possible; it is never free.
 8. **The staff tray** (days 6 and 7, if Fisk accepted Sam's offer) holds ordinary food and no pill.
+
+9. **Someone eats it (accepted 2026-11-15, built 2026-11-16).** Any man on the bench will trade his
+   bread heel for two pieces, passed unseen. He eats them: his `pull` +2.
+10. **The napkin has an end (accepted 2026-11-15, built 2026-11-16).** Pocketed pieces
+   (`napkin_pieces`) are flushed on a night out, eaten at the door for strength (+1 a piece, with the
+   piece's change), or left in the pocket, where the laundry finds them on day 5 (suspicion +10
+   each).
+11. **Day 7, turned over (accepted 2026-11-15, built 2026-11-16).** The gaze is Hollis's on days 6
+   and 7 (`hollis_staff`): 1 second shorter if `hollis_fed`, 1 second longer after the staff loaf.
+   On day 7 the player eats on purpose: the carry needs `strength` 88 and the ten pieces are worth
+   +10. While he is watched Fisk may eat one piece, no bigger than a standard one, in each look;
+   a second piece, a big piece, or a piece that creeps into his mouth is seen. A mouthful takes a
+   second a standard piece to get down.
 
 **Effects per item:**
 
@@ -1007,6 +1062,23 @@ is pending the cultural consultant** (section 20: M0, M6, M9), who sees it befor
 on it. Until then the box is drawn empty, as the art has it, and no page, line or caption says
 anything about it.
 
+8. **Your word is a row (accepted 2026-11-15, built 2026-11-16).** From day 3 the orderly asks
+   Fisk's hunger, one to ten, and writes what he says: that number is the hunger row. A report 2 or
+   more away from what grip and pulse show is a mismatch (`hunger_mismatches`); three raise
+   suspicion by 10. An under-report cuts the next day's slab by one standard piece. A question that
+   rests on the hunger row can be ruled only on what Fisk said.
+9. **The cut column (accepted 2026-11-15, built 2026-11-16).** On day 5 the ward sheet shows the
+   table by seat, and a taken man's column is scissored off it. A pencil rub on the sheet beneath
+   raises his last line. The three last lines share one number, and one man still on the sheet has
+   it today.
+10. **The project's cards (accepted 2026-11-15, built 2026-11-16).** On day 6 the cards are the
+   project's hypotheses about Fisk, as the day-6 strip types them: "Subject will report companion",
+   "Subject will follow". The numbers on the page are theirs and cannot break them. The evidence is
+   the list, and only entries the Schedule did not issue count. Two such entries break "Subject will
+   report companion"; "Subject will follow" cannot be broken on day 6. When one is stamped Broken
+   the orderly, who never looks at Fisk's face, looks up. Asking the orderly on day 6 gets
+   "On schedule." and a pencil held over Supported.
+
 **The measurements** (the true values the page shows at tier 1):
 
 | Row | Formula | Day 1 | At change 100 |
@@ -1085,6 +1157,20 @@ whole base, place the void).
    wall on the east side, behind the infirmary's cold store. On day 6 the player places a void stamp.
    Correct within 2 squares sets `void_located`. Knowing the cold comes from the drains
    (`cold_from_below`) and reading the files (`files_read`) each add one hint line.
+
+7. **Ghost lines (accepted 2026-11-15, built 2026-11-16).** Three pencil rubs a session raise the
+   older plan under a drawn room. Under the bunk hall: the bunk rooms' bolts were once on the
+   outside. Under the cold store: a stair symbol, scraped off.
+8. **Knots to posts (accepted 2026-11-15, built 2026-11-16).** Jax's count of the fence is a knotted
+   bootlace, a knot a post and a double knot where the wire is loose. Posts stand 4 of Fisk's day-3
+   paces apart (he shovelled along them), so the gap is (knot - 1) x 4 x 90 cm from the gate: 36 m.
+   Marking it sets `fence_gap_marked`. The lace is on the rec-room table from day 4.
+9. **The elevation (accepted 2026-11-15, built 2026-11-16).** On day 6 the sheet is turned and the
+   hall drawn in elevation. Each height was noted against Fisk's own head on the day he noted it, so
+   it is that day's height plus the note, not the sheet's day-1 scale: lever 2.4 m, pipes 2.7 m,
+   windows 3.5 m, claw marks 3.6 m (taped on day 2, `claw_marks_measured`). Three wrong lines end
+   the page. All four set `height_marks`, and the page draws the clearance of the occupant that
+   fits: 338 cm, the last number on the printed target curve ("The First Chart").
 
 **Page layout:** graph paper fills the page. Stamps in a tray at the left. Remembered paces in the
 right margin, in pencil. A compass rose and a scale bar. The outside-wall measure along the top
@@ -1242,6 +1328,21 @@ ending text (section 13) and how much Sam says in the cave.
 Bread comes from Short Rations, from the cafeteria on day 1, and from Jax. It is the only food that
 quiets hunger without change. A loaf eaten at the evening makes "Stay" possible at any `change`.
 Bread is how a refuser survives and how an eater resists one night.
+
+### Where the layers touch (accepted 2026-11-15, built 2026-11-16)
+
+Three links, each read from flags, so a layer works when the other has not been played.
+
+| Link | Written by | Read by | What changes |
+| --- | --- | --- | --- |
+| Tray to Snow line | `change` (what was eaten) | `n3_snow`, `n5_snow`, `n7_snow` | Print size and stride. Under 38 cm a print is followed toe-ward; at 38 cm and over it is stepped over and photographed (`route_photographed`, read by the next morning's Chart) |
+| Short Rations to the Tray to the door | `staff_loaf_taken`, `hollis_fed` | `d5_tray` to `d7_tray`; every `n*_door` from night 4 | The staff loaf: the call is quiet at that night's door, and the gaze is 1 second longer next day. A loaf to Hollis: his gaze on days 6 and 7 is 1 second shorter |
+| Floor Plan to both 2D modes and to 3D | `height_marks`, `fence_gap_marked`, `void_located` | `n6_halls`, `n7_halls`; `n7_snow`; `n6_pens` by way of the stair door | The pipe route on the halls strip; the gap on the wire and on night 7's frame; the stair door marked and open |
+
+The first two and the pipe route are playable between the web modes now (`api.shared`). The door
+and the stair are 3D and are carried by the flags above. Two smaller ties were built with them: a
+loaf given away is an entry the Chart's day-6 ruling can use, and an under-reported hunger cuts the
+next Tray's slab.
 
 ## 13. Endings
 
@@ -1451,7 +1552,7 @@ Total spoken lines are counted in section 17.
 
 | Kind | Item | Count |
 | --- | --- | --- |
-| 3D models, environment | Gate and yard; hall kit (straight, corner, T, stair door, window, drain, two-handle door); bunk room; cafeteria; rec room; infirmary and cold store; mail room; boiler room; laundry; Sam's office and staff mess; the pens; the cave; the perimeter strip and tree line; the truck | 15 sets, about 90 pieces |
+| 3D models, environment | Gate and yard; hall kit (straight, corner, T, stair door, window, drain, two-handle door); bunk room; cafeteria; rec room; infirmary and cold store; mail room; boiler room; laundry; Sam's office and staff mess; the pens; the cave; the perimeter strip and tree line; the truck and its cab | 16 sets, about 95 pieces |
 | 3D models, props | Tray set, deck, bread loaf, kit bag, rules card, clock, sleeping bags, ladder, crates, shovel, sacks, files, clipboard, scale and height rod, tube stand, sheet-covered table | 39 |
 | 3D models, characters | Sam; Jax; Pell; Duarte; Kimura; Hollis; the first bunkmate; orderly; cook; guard (x2 variants); new recruit; the figure (silhouette-only rig) | 12 |
 | First-person hands | Five change states, left and right | 10 |
@@ -1493,6 +1594,12 @@ Beyond the shared schemas, two fixed tables (content, not state), each with a sc
   11.3, rules 6 and 7): its seven typed lines, the night each strip is found, the list entry each
   strip is laid against, entry L15, the three typed outcomes of day 7, and the note that the 22:00
   box is pending the consultant. `tools/check_data.py` does not read it yet.
+
+Phase 2 (2026-11-16) added thirteen flags to `flags.json` for the layer links and the new scenes
+(`staff_loaf_taken`, `hollis_fed`, `hollis_staff`, `letter_taken`, `glovebox_seen`, `napkin_pieces`,
+`hunger_mismatches`, `route_photographed`, `height_marks`, `fence_gap_marked`, `knots_untied`,
+`results_required_heard`, `wall_sentence_read`), the value `shown_page` to `jax_plan_answer`, and
+the scenes `n3_glovebox` and `d6_next_week` to `scenes.json`.
 
 `tools/check_data.py` checks the first two against their schemas, against each other and against the four
 shared files: every scene, flag, chapter and crew name exists; every scene that adds or breaks an
@@ -1694,12 +1801,12 @@ In this pass the box is drawn empty and no text refers to it.
 | 2 | Didn't Even Try (night 1) | source | `n1_bunk_call` | built |
 | 3 | "Around 10:00" (day 2: Sam's lie, Jax takes the chair) | source | `d2_sam_bunk`, `d2_rations` | built |
 | 4 | Boots and HOLD (day 3) | existing | `d3_mail_room`, `n3_snow` | built |
-| 5 | The Glovebox (night 3): Duarte asks Fisk to put his letter in the truck, not the sack. The glovebox is already full of letters | new | **scene to add** (`n3_glovebox`, 3D, the truck cab) | 2 |
+| 5 | The Glovebox (night 3): Duarte asks Fisk to put his letter in the truck, not the sack. The glovebox is already full of letters | new | `n3_glovebox` (3D, the truck cab) | built 2026-11-16 |
 | 6 | **Midpoint: Carbon** (night 4, Sam's office). Fisk's own folder. Tonight's line is typed: "Officers' wing left unwatched." The door he crept through was held open | new, inside an existing scene | `n4_office` | **1 (this pass)** |
-| 7 | Jax's Plan, with a fourth answer: show him the page | existing, extended | `d5_jax_plan` | 2 |
-| 8 | Next Week (day 6) | new | **scene to add** (`d6_next_week`, 3D, the cafeteria hatch) | 2 |
-| 9 | Open Hands (day 6, the two-seat game) | existing | `d6_rations` | built; Jax tapping anyway is phase 2 |
-| 10 | **Darkest: Below** (night 6). The pens hold nine; the roster lists thirty-one. The first bunkmate's wall list ends, at full reach, with a sentence in quotes: "we won't make the same mistakes". The crates Fisk carried on day 1 carry roster line numbers | existing, extended | `n6_pens` | 2 |
+| 7 | Jax's Plan, with a fourth answer: show him the page | existing, extended | `d5_jax_plan` (`jax_plan_answer`: `shown_page`; `knots_untied`) | built 2026-11-16 |
+| 8 | Next Week (day 6) | new | `d6_next_week` (3D, the cafeteria hatch) | built 2026-11-16 |
+| 9 | Open Hands (day 6, the two-seat game) | existing | `d6_rations` | built; Jax tapping anyway built 2026-11-16 |
+| 10 | **Darkest: Below** (night 6). The pens hold nine; the roster lists thirty-one. The first bunkmate's wall list ends, at full reach, with a sentence in quotes: "we won't make the same mistakes". The crates Fisk carried on day 1 carry roster line numbers | existing, extended | `n6_pens` (`wall_sentence_read`) | built 2026-11-16 |
 | 11 | The Last Door (night 7): stay, follow, fence | existing | `n7_door` | built; the carry is phase 3 |
 | 12 | The corner; the cave; waking | source | `n7_windigo`, `e_cave`, `e_zoo_wake` | built |
 
@@ -1741,14 +1848,32 @@ where the carry is the line that was not typed (section 11.3, rule 7).
 - The title lettering, the six stamps, the chapter cards and the card faces, and the rest of the
   code-drawn art, wired into all six web modes.
 
-**Phase 2: the layers talk.** Shadow cover, the stoop and "He Ran" in the halls. Toe-ward prints and
-the size rule in the snow. Self-reported hunger and the cut column on the Chart, and the day-6 twist
-(the project's hypothesis cards). The staff loaf and Jax tapping at open hands. Heel-for-pieces
-trades and what happens to pocketed pieces. Portraits, Hollis at the hatch, the Glovebox, "Results
-Required", "Jax Unties the Knots", the extensions to Below, and the ending details above.
+**Built 2026-11-16 (phase 2: the layers talk).** The author wrote "start phase 2" and every item
+below was accepted on 2026-11-15.
 
-**Phase 3: the new way out.** The carry and One Set of Prints. The elevation strip, ghost lines and
-knots-to-posts on Floor Plan. The two-height Blender renders. The figure's replacement still.
+- **The ladders.** Each web mode is three stages, teach, test and twist, each stage ending in a
+  result the player may stop on, with the stage reached remembered: Silhouette halls on nights 2, 4
+  and 6; Snow line on nights 3, 5 and 7; Short Rations on days 2, 4 and 6; the Tray on days 2, 5
+  and 7; the Chart on day 2, days 3 to 5, and day 6; Floor Plan on days 2, 4 and 6.
+- **The new rules** (sections 10 and 11): shadow cover, the stoop and "He Ran"; toe-ward prints,
+  the size rule, the bare prints' stride; the staff loaf and Jax tapping at open hands;
+  heel-for-pieces trades, the napkin's end and day 7 turned over; self-reported hunger, the cut
+  column and the project's cards.
+- **The three links between layers** (section 12, "Where the layers touch").
+- **Scenes:** `n3_glovebox` and `d6_next_week` added; "Results Required" inside `d6_sam_offer`,
+  "Jax Unties the Knots" inside `d5_jax_plan`, the extensions to Below inside `n6_pens`. One location
+  added, the truck cab, with its image and build file.
+- **Brought forward from phase 3, because each mode's twist needs its set piece:** Floor Plan's
+  elevation, ghost lines and knots to posts (section 11.4, rules 7 to 9), and in Snow line the carry
+  and Frame 112 as night 7's playable set piece (section 10). They are built in the web modes only.
+- **The ending details** ("see previous", the photographed prints, "retained", Duarte's letter in the
+  glovebox) are carried by the flags and by `e_transfer_truck` reading `glovebox_seen`; their final
+  images wait with the ending cards.
+
+**Phase 3: the new way out.** One Set of Prints as an ending in `data/endings.json`, with its scenes
+(the carry in 3D, the bunk, the cloth, and the author's waking, unchanged). What a second
+playthrough changes. The Schedule's last payoff. Portraits, the two-height Blender renders, and the
+figure's replacement still.
 
 **The consultant sees first:** the Schedule's empty 22:00 slot, and the new figure still. No new
 figure imagery is made until then; `reference/09-the-flute.jpg` stays flagged for replacement.
@@ -1848,33 +1973,72 @@ Built in phase 1:
   is this pass's addition to the accepted rule, to keep a coarse cut from pocketing the whole slab.
   Accepted 2026-11-15.
 - In the web prototype's Carbon scene, two things that can be looked at: the envelope stamped HOLD
-  (this game's thread object) and a blue and white tea caddy on the staff shelf (a guest thread
-  object from another game of the collection). Accepted 2026-11-15 with the art plan.
+  (this game's thread object) and the staff shelf. Accepted 2026-11-15 with the art plan. (Changed
+  2026-11-16: the guest thread object, a blue and white tea caddy from another game of the
+  collection, is no longer named on that shelf. It sits, unremarked, on the shelf behind the hatch
+  in the Tray's day-7 stage, where it can be found.)
 - The art plan as drawn by code (`art/`): the red stamp colour and six stamps, title lettering,
   chapter and clock cards, card faces and the WITHDRAWN overprint, hands at the table, halls
   cut-outs, yard plates and prints, Isotype icons, Form 7-F, the target sheet, the Schedule and its
   strips, room stamps, UI ornaments. Accepted 2026-11-15. One asset was added in this pass:
   `yard-ground-night-3`, the night-3 yard at the scale the Snow line mode plays on.
 
-Accepted 2026-11-15 and waiting for phases 2 and 3 (stated in "Accepted development"):
+Built in phase 2 (each accepted 2026-11-15, built 2026-11-16):
 
-- Fisk's want (to be "lucky" again) and need (to try to stop someone).
+- Sam's review form and the scene "Results Required", with his added line (inside `d6_sam_offer`).
+  Accepted 2026-11-15, built 2026-11-16.
+- Jax's secret and his file note, "companion (uninformed)"; the fourth answer on day 5
+  (`shown_page`) and the scene "Jax Unties the Knots", with his two lines. Accepted 2026-11-15,
+  built 2026-11-16.
+- Hollis's secret, the scene "Next Week" (`d6_next_week`), and his gaze at the Tray on days 6 and 7.
+  Accepted 2026-11-15, built 2026-11-16.
+- The scene "The Glovebox" (`n3_glovebox`), and Duarte's letter in front of Fisk in Transferred.
+  Accepted 2026-11-15, built 2026-11-16.
+- Nine pens against thirty-one on the roster; Sam's sentence on the first bunkmate's wall; roster
+  numbers on the day-1 crates (inside `n6_pens`). Accepted 2026-11-15, built 2026-11-16.
+- Halls: shadow cover, the stoop, the guard who runs. Accepted 2026-11-15, built 2026-11-16.
+- Snow: toe-ward trails, big prints photographed not followed, Frame 112 and the carry as night 7's
+  set piece. Accepted 2026-11-15, built 2026-11-16.
+- Short Rations: the staff loaf, Jax tapping at open hands. Accepted 2026-11-15, built 2026-11-16.
+- Tray: heel-for-pieces trades, what happens to pocketed pieces, and day 7 eaten on purpose for the
+  strength of 88. Accepted 2026-11-15, built 2026-11-16.
+- Chart: self-reported hunger, the cut column and pencil rub, the project's hypothesis cards.
+  Accepted 2026-11-15, built 2026-11-16.
+- Floor Plan: ghost lines, knots to posts, the elevation strip and the 338 cm occupant. Accepted
+  2026-11-15, built 2026-11-16.
+- The three links between layers. Accepted 2026-11-15, built 2026-11-16.
+
+Invented in the phase-2 pass, to make the accepted rules playable. Each is for the author to approve
+or strike:
+
+- Halls: Jax stands a step into the side Fisk's shadow falls on; the sentry sees a ceiling-high
+  shadow from 14 m and a body from 10 m, and needs 0.6 s of it; the lines "He has been told what
+  throws a shadow like that" and the 40 cm frozen print as night 2's find are worded here.
+- Snow: the stride of 1.03 m (`change` 40) for the bare prints; the searchlight on night 7 as one
+  line across the strip; the call's pull as a slow straight drift home; the 85% and 6-print limits
+  of Frame 112; the losing caption "Crossing. One carried."
+- Short Rations: the day-2 table as four seats ("Pell and Duarte are on boiler duty"); that nobody
+  at the table takes the staff loaf; the fixed deal of the open hand (Fisk: Hands 1 and 8, Keys 1,
+  2, 3, 4, 7, 8; Jax: Hands 2 to 7, Keys 5 and 6; Jax bids 3) and the sentence "He taps anyway."
+- Tray: "the man on your left" as the bench trader; the three ends of the napkin as a choice at the
+  collection; one piece a look and a second a mouthful on day 7; strength 78 at day 7's noon.
+- Chart: the ward sheet's three last lines (Pell, Duarte, Kimura, each hunger 9) and Hollis at 9 on
+  day 5; the two unissued entries (A1, A2) and the rule that issued entries cannot break a card;
+  the orderly's "Coming along." to the page.
+- Floor Plan: the west hall's 88 paces on day 2; the lace's 17 knots, the double at the eleventh,
+  36 m; the four pencilled notes and the heights by day (178, 192, 213, 237, 261, 285 cm); the two
+  ghost lines' wording.
+- Fisk's line at the thread object: "A blue and white tin behind him, with a mark I don't know. It
+  is not on any shelf I have counted."
+- The truck cab as a location, its image, and the staging of `n3_glovebox` and `d6_next_week`.
+
+Accepted 2026-11-15 and waiting for phase 3 (stated in "Accepted development"):
+
+- Fisk's want (to be "lucky" again) and need (to try to stop someone), as scenes of their own.
 - The project's aim read as a changed man who still obeys; "the mistakes" read as minds gone blank;
   enrichment as protocol; rule two as the real test; The Zoo as Sam's failure.
-- Sam's review form and the scene "Results Required", with his added line.
-- Jax's secret and his file note, "companion (uninformed)"; the fourth answer on day 5 and the
-  scene "Jax Unties the Knots", with his two lines.
-- Hollis's secret, the scene "Next Week", and his gaze at the Tray on days 6 and 7.
-- The scene "The Glovebox".
-- Nine pens against thirty-one on the roster; Sam's sentence on the first bunkmate's wall; roster
-  numbers on the day-1 crates.
-- The ending One Set of Prints, the carry, and its strength threshold of 88; the ending details
-  "see previous", the photographed prints, "retained", Duarte's letter.
-- Halls: shadow cover, the stoop, the guard who runs. Snow: toe-ward trails, big prints
-  photographed not followed, Frame 112. Short Rations: the staff loaf, Jax tapping at open hands.
-  Tray: heel-for-pieces trades, what happens to pocketed pieces. Chart: self-reported hunger, the
-  cut column and pencil rub, the project's hypothesis cards. Floor Plan: ghost lines, knots to
-  posts, the elevation strip and the 338 cm occupant.
+- The ending One Set of Prints in `data/endings.json`, its 3D scenes, and its strength threshold of
+  88; the final images of the ending details "see previous", the photographed prints and "retained".
 - Portraits, generated key art and ending cards, the Blender renders, and (after the consultant)
   the figure's replacement still.
 

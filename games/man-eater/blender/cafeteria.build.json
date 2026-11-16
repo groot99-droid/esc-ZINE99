@@ -767,6 +767,114 @@
           "leads_to": "d1_tray"
         }
       ]
+    },
+    "d6_next_week": {
+      "note": "Day 6, breakfast ('Next Week'). Hollis's chair is empty; he is behind the hatch in staff greys, a clipboard on the sill, and the gaze at the Tray is his. Taking the tray pushes in to The Tray. If Fisk took Sam's key, the hatch is the orderly's and Hollis is not here.",
+      "world": {
+        "color": [
+          0.46,
+          0.5,
+          0.5
+        ],
+        "strength": 0.24
+      },
+      "lights": [
+        {
+          "name": "strips-north",
+          "type": "AREA",
+          "location": [
+            0,
+            3,
+            4.3
+          ],
+          "energy": 300,
+          "size": 3,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "name": "strips-south",
+          "type": "AREA",
+          "location": [
+            0,
+            -3,
+            4.3
+          ],
+          "energy": 160,
+          "size": 3,
+          "color": [
+            0.92,
+            1.0,
+            0.9
+          ],
+          "look_at": [
+            0,
+            -3,
+            0
+          ]
+        },
+        {
+          "name": "hatch-inside",
+          "type": "AREA",
+          "location": [
+            -8.6,
+            -0.5,
+            2.0
+          ],
+          "energy": 260,
+          "size": 2,
+          "color": [
+            1.0,
+            0.93,
+            0.8
+          ],
+          "look_at": [
+            -6.8,
+            -0.5,
+            1.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -4.2,
+          -0.5,
+          2.14
+        ],
+        "look_at": [
+          -7.05,
+          -0.5,
+          1.6
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -4.2,
+          -0.5,
+          0.0
+        ],
+        "facing_deg": 90
+      },
+      "hide": [
+        "tray-table"
+      ],
+      "interactions": [
+        {
+          "prop": "tray-served",
+          "verb": "Take the tray from Hollis",
+          "leads_to": "d6_tray"
+        }
+      ]
     }
   }
 }

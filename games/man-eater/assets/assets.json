@@ -30,6 +30,26 @@
       "image": "assets/locations/gate-yard.jpg"
     },
     {
+      "id": "truck-cab",
+      "name": "The truck cab",
+      "scenes": [
+        "n3_glovebox"
+      ],
+      "dimensions_m": [
+        8,
+        10,
+        4
+      ],
+      "lighting": "Night 3. One sodium yard lamp through frosted glass, snow light, the cab dark; the glovebox open.",
+      "objects": [
+        "army-truck"
+      ],
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, matte surfaces, nothing glossy. The inside of the cab of an old olive drab 1950s military cargo truck parked half buried under snow at night, seen from the open driver's door: a worn canvas bench seat, a large thin steering wheel, a plain painted steel dashboard with its glovebox hanging open and crammed full of bundled paper envelopes tied with string, a few more envelopes fallen on the seat, frost flowers on the inside of the windscreen, snow packed against the glass outside, one amber sodium yard lamp glowing through the frosted passenger window, bare steel floor, a tall wire fence dimly visible beyond. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "a0bf429f-638e-4953-adc8-fdd2463d47e7",
+      "image": "assets/locations/truck-cab.jpg"
+    },
+    {
       "id": "tall-halls",
       "name": "The tall halls",
       "scenes": [
@@ -99,14 +119,15 @@
       "id": "cafeteria",
       "name": "The cafeteria",
       "scenes": [
-        "d1_cafeteria"
+        "d1_cafeteria",
+        "d6_next_week"
       ],
       "dimensions_m": [
         20,
         12,
         4.57
       ],
-      "lighting": "Steam from the hatch and flat fluorescent strips, noon.",
+      "lighting": "Steam from the hatch and flat fluorescent strips, noon; on day 6 the hatch lit from inside, a man in staff greys behind it.",
       "objects": [
         "meal-tray"
       ],
@@ -495,7 +516,8 @@
       "name": "Meal tray",
       "role": "interact",
       "scenes": [
-        "d1_cafeteria"
+        "d1_cafeteria",
+        "d6_next_week"
       ],
       "size_m": [
         0.45,
@@ -769,7 +791,8 @@
       "scenes": [
         "c1_truck_gate",
         "d3_duty_shovel",
-        "e_transfer_truck"
+        "e_transfer_truck",
+        "n3_glovebox"
       ],
       "size_m": [
         2.5,

@@ -252,10 +252,11 @@
         "none",
         "agreed",
         "reported",
-        "silent"
+        "silent",
+        "shown_page"
       ],
       "default": "none",
-      "description": "Fisk's answer to Jax's plan on day 5."
+      "description": "Fisk's answer to Jax's plan on day 5. shown_page (accepted 2026-11-15): he shows Jax the Schedule page with the plan typed on it a day early; needs schedule_read."
     },
     {
       "name": "sam_offer_made",
@@ -386,6 +387,84 @@
       "type": "bool",
       "default": false,
       "description": "Fisk was taken to the cave (followed the call, with Jax or alone; caught at the fence; or gassed in the bunk)."
+    },
+    {
+      "name": "staff_loaf_taken",
+      "type": "bool",
+      "default": false,
+      "description": "Fisk took the loaf wrapped in a white napkin at Short Rations (from day 4). It buys a quiet night at the door, and the next day's gaze at the Tray rests on him 1 second longer."
+    },
+    {
+      "name": "hollis_fed",
+      "type": "bool",
+      "default": false,
+      "description": "Fisk gave Hollis at least one loaf. On days 6 and 7, when the gaze at the Tray is Hollis's, it is 1 second shorter."
+    },
+    {
+      "name": "hollis_staff",
+      "type": "bool",
+      "default": false,
+      "description": "Day 6, 'Next Week': Hollis's chair is empty at breakfast and he is behind the cafeteria hatch in staff greys. False if Fisk took Sam's key, in which case Hollis is taken as the call has it."
+    },
+    {
+      "name": "letter_taken",
+      "type": "bool",
+      "default": false,
+      "description": "Day 3: Duarte asked Fisk to put his letter in the truck, not the sack, and Fisk took it."
+    },
+    {
+      "name": "glovebox_seen",
+      "type": "bool",
+      "default": false,
+      "description": "Night 3, 'The Glovebox': the truck's glovebox was already full of letters. Duarte's is on top of them."
+    },
+    {
+      "name": "napkin_pieces",
+      "type": "counter",
+      "default": 0,
+      "description": "Ration pieces in Fisk's napkin. Flushed on a night out, eaten at the door for strength, or found by the laundry on day 5 (suspicion +10 each)."
+    },
+    {
+      "name": "hunger_mismatches",
+      "type": "counter",
+      "default": 0,
+      "description": "Mornings on which the hunger Fisk reported at the Chart was 2 or more away from what his grip and pulse showed. At 3, suspicion +10. An under-report cuts the next day's slab by one piece."
+    },
+    {
+      "name": "route_photographed",
+      "type": "bool",
+      "default": false,
+      "description": "Fisk's prints were 38 cm or over (change 64) on a night in the yard: patrols stepped over them and the tower photographed them. The route is on the orderly's clipboard next morning."
+    },
+    {
+      "name": "height_marks",
+      "type": "bool",
+      "default": false,
+      "description": "Floor Plan, day 6: the lever (2.4 m), pipes (2.7 m), windows (3.5 m) and claw marks (3.6 m) are on the elevation strip. The pipe route shows on the Silhouette halls strip."
+    },
+    {
+      "name": "fence_gap_marked",
+      "type": "bool",
+      "default": false,
+      "description": "Floor Plan: Jax's knotted bootlace converted to metres and the loose wire marked on the plan. Only a marked gap is on night 7's frame."
+    },
+    {
+      "name": "knots_untied",
+      "type": "bool",
+      "default": false,
+      "description": "Day 5, 'Jax Unties the Knots': shown the page with his plan typed on it, Jax undid the knots on Fisk's bed frame."
+    },
+    {
+      "name": "results_required_heard",
+      "type": "bool",
+      "default": false,
+      "description": "Day 6, 'Results Required': Sam's added line to a Fisk who has read his file."
+    },
+    {
+      "name": "wall_sentence_read",
+      "type": "bool",
+      "default": false,
+      "description": "Night 6, Below: the last line of the first bunkmate's wall list, at full reach, in quotes; nine pens against thirty-one on the roster; roster line numbers on the day-1 crates."
     }
   ]
 }

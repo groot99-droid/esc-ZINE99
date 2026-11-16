@@ -12,26 +12,46 @@
 // Art (api.art): the cut-outs (Fisk at his height, the stoop for a crouch, the guard) slide and rock
 // on their rods as shadow puppets do; each is rasterised once per size with its baked shadow removed,
 // and a blurred copy is the cast shadow. The night-4 backdrop is the officers' wing end of the hall.
-import { artKit, bareCutout } from "./kit.js";
+//
+// Phase 2 (the ladder; DEEP_DIVE.md section 3, DESIGN.md section 10, Mode A). Three stages:
+//   teach, night 2 (n2_halls): bunk to the latrine, one guard; light, shadow, crouch. Three retries.
+//   test, night 4 (n4_halls): the sequence above, and the stoop: behind a hung laundry sheet a
+//     silhouette held at 1.9 m or less reads as an orderly.
+//   twist, night 6 (n6_halls): Jax walks with you. Shadow cover: anyone standing inside Fisk's shadow
+//     is not seen by a cone, so crouching, the alcove and the pipes (the safe moves) leave Jax in the
+//     light. It ends in the set piece, "He Ran": at change 68 the sentry at the stair sees only a
+//     ceiling-high shadow, drops his flashlight and backs away for 20 seconds.
+// Layer links (api.shared): the pipes inked on Floor Plan's elevation put the pipe route on the strip;
+// the void stamped there marks the stair.
+import { artKit, bareCutout, ladder } from "./kit.js";
+
+const NAMES = { 1: "Night 2 · light, shadow, crouch", 2: "Night 4 · the pipes, the sheet", 3: "Night 6 · Jax, in your shadow" };
+const HALLS = {
+  1: { night: 2, clock: 22 * 60 + 5, len: 62, door: 57, label: ["LATRINE"], to: "the latrine", windows: [4, 16, 28, 40, 52], pipes: [], pools: [[36, 2.2]], drains: [24], alcoves: [9, 19, 27, 34, 45], sideDoors: [27], junctions: [2, 30],
+    guards: [{ a: 20, b: 44, x: 36, dir: -1 }], checkAt: 0, sheets: [], change: 14, alarm: 2.0, retries: 3, doors: 1, card: "clock-night-2", bg: "halls-night-2", bgPx: 1300 },
+  2: { night: 4, clock: 22 * 60 + 10, len: 112, door: 107, label: ["OFFICERS", "WING"], to: "the officers' wing", windows: [4, 16, 28, 40, 52, 64, 76, 88, 100], pipes: [[18, 37], [56, 80], [86, 101]], pools: [[30, 2.4], [67, 2.4], [95, 2.2]], drains: [13, 47, 73, 90],
+    alcoves: [9, 23, 34, 45, 52, 61, 70, 83, 98], sideDoors: [23, 52, 83], junctions: [2, 42, 78], guards: [{ a: 25, b: 44, x: 40, dir: -1 }, { a: 58, b: 88, x: 62, dir: 1 }], checkAt: 40, sheets: [[47.8, 3]], alarm: 1.5, retries: 2, doors: 2, card: "clock-night-4", bg: "halls-night-4", bgPx: 1132 },
+  3: { night: 6, clock: 22 * 60 + 40, len: 100, door: 95, label: ["STAIR"], to: "the stair", windows: [4, 16, 28, 40, 52, 64, 76, 88], pipes: [[26, 52]], pools: [], drains: [12, 60, 70], alcoves: [9, 20, 34.5, 45, 57, 66], sideDoors: [20], junctions: [2, 56, 72],
+    guards: [{ a: 26, b: 54, x: 30, dir: 1 }], sentry: 90, checkAt: 0, sheets: [[30, 3.2], [39.5, 3.2], [49, 3.2]], change: 68, alarm: 1.5, retries: 2, doors: 1, card: "clock-night-6", bg: "", bgPx: 0 },
+};
 
 const P = { ink: "#1B1D1F", cream: "#D9D2BF", snow: "#EEF1F2", print: "#7C8C99" };
-const CEIL = 4.57, PIPE_Y = 2.7, LEN = 112, DOOR_X = 107;
-const WINDOWS = [4, 16, 28, 40, 52, 64, 76, 88, 100];
-const PIPES = [[18, 37], [56, 80], [86, 101]];
-const POOLS = [[30, 2.4], [67, 2.4], [95, 2.2]];
-const DRAINS = [13, 47, 73, 90];
-const ALCOVES = [[9, 1.3], [23, 1.3], [34, 1.3], [45, 1.3], [52, 1.3], [61, 1.3], [70, 1.3], [83, 1.3], [98, 1.3]];
-const SIDE_DOORS = [23, 52, 83]; // alcoves whose door is unlocked tonight
-const JUNCTIONS = [2, 42, 78];
-const GUARDS = [
-  { a: 25, b: 44, x: 40, dir: -1 },
-  { a: 58, b: 88, x: 62, dir: 1 },
-];
-const CHECK_AT = 40; // passing here starts the 22:30 check from the east end
+const CEIL = 4.57, PIPE_Y = 2.7;
 const CALL_LINE = "“Low melodic groaning, almost flute-like”";
 
 export default {
   mount(root, api) {
+    const lad = ladder(api, NAMES);
+    let cur = null;
+    const go = (n) => { if (cur) cur.unmount(); cur = run(n); };
+    go(lad.reached());
+    return { unmount() { if (cur) cur.unmount(); cur = null; lad.dispose(); } };
+
+    function run(stage) {
+    const HC = HALLS[stage], twist = stage === 3, shared = api.shared;
+    const LEN = HC.len, DOOR_X = HC.door, WINDOWS = HC.windows, PIPES = HC.pipes, POOLS = HC.pools, DRAINS = HC.drains, ALCOVES = HC.alcoves.map((a) => [a, 1.3]);
+    const SIDE_DOORS = HC.sideDoors, JUNCTIONS = HC.junctions, GUARDS = HC.guards, CHECK_AT = HC.checkAt, SHEETS = HC.sheets;
+    const pipeRoute = !!shared.get("fp_heights", false) && PIPES.length > 0, stairDrawn = !!shared.get("fp_void", false);
     const K = "man-eater-silhouette-halls-";
     const reduce = api.reducedMotion;
     const rng = api.rng();
@@ -75,6 +95,7 @@ export default {
       .${K}pad button[hidden]{display:none}
       .${K}pad button.new{animation:${K}new 1s ease-in-out 3}
       @keyframes ${K}new{50%{background:${P.cream};color:${P.ink}}}
+      .${K}bill .new{border-left:4px solid ${P.ink};padding-left:8px;margin:0 0 10px;font-size:14px;line-height:1.4;position:relative;z-index:1}
       @media (pointer:fine) and (min-width:900px){.${K}pad{opacity:.7}}
       @media (max-width:520px){.${K}pad{padding:8px;gap:6px}.${K}pad div{gap:4px}.${K}pad button{min-width:46px;padding:6px 7px;font-size:13px}.${K}puppets{display:none}}
     </style>
@@ -85,19 +106,25 @@ export default {
     </div>
     <div class="${K}intro"><div class="${K}bill">
       <svg class="${K}puppets" viewBox="0 0 84 100" aria-hidden="true">${puppet(54, 150, 0.35)}${puppet(30, 90, 1)}</svg>
-      <p class="${K}kick">Shadow theatre · Night 4 · 22:10</p>
+      <p class="${K}kick">Shadow theatre · Night ${HC.night} · ${String(Math.floor(HC.clock / 60)).padStart(2, "0")}:${String(HC.clock % 60).padStart(2, "0")}</p>
       <h2>Silhouette halls</h2>
-      <p class="${K}goal">Reach the officers' wing door at the east end of the hall.</p>
+      ${stage === 1 ? `<p class="${K}goal">Reach the latrine door at the east end of the hall.</p>
+      <p class="${K}beat">Night 2. The first bunkmate walked out at ten last night and Sam says he was transferred. You broke rule two to see where a man goes. One guard walks this hall.</p>`
+      : stage === 2 ? `<p class="${K}goal">Reach the officers' wing door at the east end of the hall.</p>
       <p class="${K}beat">Jax counted the chairs at supper. The transfer roster is kept in the officers' wing, and nobody has said where Pell and Duarte went.</p>
+      <p class="new"><b>New tonight.</b> Laundry is hung across the hall. Behind a sheet, a silhouette held at 1.9 m or less reads as an orderly.</p>`
+      : `<p class="${K}goal">Bring Jax to the stair by the cold store, at the east end of the hall.</p>
+      <p class="${K}beat">Night 6. You are 2.87 m, and your shadow reaches the ceiling. Jax is 1.80 m and has no shadow to speak of. He walks where yours falls.</p>
+      <p class="new"><b>Turned over.</b> Anyone standing inside your shadow is not seen by a light. Crouch, slip into an alcove or climb to the pipes, and your shadow leaves him: Jax stands in the hall alone. Stay tall. Stoop only behind a sheet.</p>`}
       <dl class="${K}key">
         <dt><span>◀ ▶</span> or A D</dt><dd>walk the hall</dd>
         <dt><span>S</span> Crouch</dt><dd>shorten your shadow; crouch in a door alcove to leave the light</dd>
       </dl>
       <div class="${K}heights" aria-hidden="true"></div>
-      <p class="${K}rule">A flashlight that holds your body <b>or your shadow</b> for 1.5 s raises the alarm. More actions come as you go.</p>
-      <div class="${K}row">
-        <button data-c="8">Start as a refuser<small>change 8 · 1.91 m · no climbing</small></button>
-        <button data-c="52">Start as an eater<small>change 52 · 2.61 m · climbs, longer shadow</small></button>
+      <p class="${K}rule">A flashlight that holds your body <b>or your shadow</b>${twist ? ", <b>or Jax outside it</b>," : ""} for ${HC.alarm} s raises the alarm. More actions come as you go.</p>
+      <div class="${K}row" data-row>
+        ${stage === 2 ? `<button data-c="8">Start as a refuser<small>change 8 · 1.91 m · no climbing</small></button>
+        <button data-c="52">Start as an eater<small>change 52 · 2.61 m · climbs, longer shadow</small></button>` : `<button data-c="${HC.change}">${twist ? "Go out, with Jax" : "Go out"}<small>change ${HC.change} · ${(1.78 + 0.016 * HC.change).toFixed(2)} m${twist ? " · shadow to the ceiling" : " · no climbing"}</small></button>`}
         ${losses >= 2 ? `<label><input type="checkbox" data-easy checked> Slower alarm (2.4 s) and a third retry, after two walks back</label>` : ""}
       </div>
     </div></div>`;
@@ -109,15 +136,16 @@ export default {
 
     // ---- art
     const kit = artKit(api);
-    const FISK_H = [178, 218, 258, 298, 338], ASSET_PPM = 208, BG_PPM = 700 / 4.57, BG_X = DOOR_X - 0.6 - 1132 / (700 / 4.57);
+    const FISK_H = [178, 218, 258, 298, 338], ASSET_PPM = 208, BG_PPM = 700 / 4.57, BG_X = HC.bg ? DOOR_X - 0.6 - HC.bgPx / (700 / 4.57) : 1e9;
     const STOOP_TOP = 1.23; // metres, the stooped cut-out's height as drawn
     let A = null, artScale = 0, artFor = "";
     {
       const hs = intro.querySelector("." + K + "heights");
-      for (const h of FISK_H) { if (!kit.has("cutout-fisk-" + h)) continue; const im = kit.img("cutout-fisk-" + h, 60, "", h === 178 || h === 258 ? "pick" : ""); im.style.height = (h / 338) * 100 + "%"; hs.appendChild(im); }
+      for (const h of FISK_H) { if (!kit.has("cutout-fisk-" + h)) continue; const im = kit.img("cutout-fisk-" + h, 60, "", (stage === 2 ? h === 178 || h === 258 : h === (twist ? 298 : 178)) ? "pick" : ""); im.style.height = (h / 338) * 100 + "%"; hs.appendChild(im); }
       if (kit.has("cutout-flashlight")) hs.appendChild(kit.img("cutout-flashlight", 170, "", "tl"));
       if (hs.children.length) wrap.querySelector("." + K + "puppets")?.remove(); else hs.remove();
-      kit.dressIntro(intro, intro.querySelector("." + K + "bill"), "clock-night-4");
+      kit.dressIntro(intro, intro.querySelector("." + K + "bill"), HC.card);
+      lad.picker(intro.querySelector("." + K + "bill"), intro.querySelector("[data-row]"), stage, go, P.ink, P.cream);
     }
     const nearH = () => FISK_H.reduce((b, h) => (Math.abs(h - heightM * 100) < Math.abs(b - heightM * 100) ? h : b), FISK_H[0]);
     async function prepArt(scale) {
@@ -126,15 +154,19 @@ export default {
       artFor = key;
       const ha = nearH(), kf = (scale / ASSET_PPM) * ((heightM * 100) / ha), kg = scale / ASSET_PPM, ks = (scale / ASSET_PPM) * ((0.6 * heightM) / STOOP_TOP);
       const o = { edit: bareCutout, key: "bare" };
+      const [jax, ran, sheet, torch] = await Promise.all([
+        twist ? kit.canvas("cutout-jax", 520 * kg, o) : null, twist ? kit.canvas("cutout-guard-ran", 520 * kg, o) : null,
+        SHEETS.length ? kit.canvas("cutout-sheet", Math.max(40, SHEETS[0][1] * scale)) : null, twist ? kit.canvas("cutout-flashlight", 2.2 * scale) : null,
+      ]);
       const [fisk, fiskS, stoop, stoopS, guard, guardS, bg, breath, ...frost] = await Promise.all([
         kit.canvas("cutout-fisk-" + ha, 520 * kf, o), kit.canvas("cutout-fisk-" + ha, 520 * kf, { ...o, blur: 3 }),
         kit.canvas("cutout-fisk-stoop", 520 * ks, o), kit.canvas("cutout-fisk-stoop", 520 * ks, { ...o, blur: 3 }),
         kit.canvas("cutout-guard", 520 * kg, o), kit.canvas("cutout-guard", 520 * kg, { ...o, blur: 3 }),
-        kit.canvas("halls-night-4", (1600 / BG_PPM) * scale), kit.canvas("breath-line", 156),
+        HC.bg ? kit.canvas(HC.bg, (1600 / BG_PPM) * scale) : null, kit.canvas("breath-line", 156),
         ...[1, 2, 3, 4].map((n) => kit.canvas("frost-corner-" + n, Math.max(120, scale * 1.6))),
       ]);
       if (key !== artFor) return;
-      A = { fisk, fiskS, stoop, stoopS, guard, guardS, bg, breath, frost, kf, kg, ks };
+      A = { fisk, fiskS, stoop, stoopS, guard, guardS, bg, breath, frost, kf, kg, ks, jax, ran, sheet, torch };
       artScale = scale;
       if (!running) draw();
     }
@@ -177,17 +209,19 @@ export default {
       change = c;
       heightM = 1.78 + 0.016 * change;
       strength = 50 + 0.5 * change;
-      alarmT = easy ? 2.4 : 1.5;
+      alarmT = easy ? 2.4 : HC.alarm;
       s = {
-        x: 2, onPipe: false, facing: 1, step: 0, warmth: 100, retries: easy ? 3 : 2, checkpoint: 2,
-        guards: GUARDS.map(freshGuard), check: null, checkDone: false,
-        listen: 0, drainOn: -1, msg: "", msgT: 0, flash: 0, shake: 0, t: 0, clock: 22 * 60 + 10,
-        doors: 2, inRoom: null, roomT: 0, beats: {}, seenMax: 0, cleared: 0, banner: "", bannerT: 0, climbed: false, drainT: {},
+        x: 2, onPipe: false, facing: 1, step: 0, warmth: 100, retries: easy ? HC.retries + 1 : HC.retries, checkpoint: 2,
+        guards: GUARDS.map(freshGuard), check: null, checkDone: !CHECK_AT, sentry: HC.sentry ? freshSentry() : null, jx: 1.2, jaxOut: false, heRan: false,
+        listen: 0, drainOn: -1, msg: "", msgT: 0, flash: 0, shake: 0, t: 0, clock: HC.clock,
+        doors: HC.doors, inRoom: null, roomT: 0, beats: {}, seenMax: 0, cleared: 0, banner: "", bannerT: 0, climbed: false, drainT: {},
       };
     }
     const freshGuard = (g) => ({ ...g, seen: 0, pause: 0, paused: false, pausePt: g.a + rng() * (g.b - g.a), step: 0 });
+    const freshSentry = () => ({ x: HC.sentry, dir: -1, seen: 0, pause: 1, step: 0, sentry: true, ran: 0, shadowT: 0 });
     function resetToCheckpoint() {
-      s.x = s.checkpoint; s.onPipe = false; s.drainOn = -1; s.inRoom = null;
+      s.x = s.checkpoint; s.onPipe = false; s.drainOn = -1; s.inRoom = null; s.jx = s.x - 0.8;
+      if (s.sentry && !(s.sentry.ran > 0)) s.sentry = freshSentry();
       s.warmth = Math.max(s.warmth, 50); // a walk back to the junction, and a minute against the radiator
       s.guards = GUARDS.map(freshGuard);
       if (s.check) s.check = { x: Math.min(LEN - 2, s.x + 26), dir: -1, seen: 0, step: 0, a: 0, b: LEN, pause: 0 };
@@ -209,6 +243,11 @@ export default {
     const sideDoorAt = (x) => { const al = alcoveAt(x); return al && SIDE_DOORS.includes(al[0]) ? al[0] : null; };
     const poolAt = (x) => POOLS.some(([a, w]) => x >= a && x <= a + w);
     const nearestWindow = (x) => WINDOWS.reduce((b, w) => (Math.abs(w - x) < Math.abs(b - x) ? w : b), WINDOWS[0]);
+    const sheetAt = (x) => SHEETS.some(([a, w]) => x >= a && x <= a + w);
+    // the stoop: behind a hung sheet, a silhouette held at 1.9 m or less reads as an orderly
+    const stooped = () => !s.onPipe && s.inRoom == null && sheetAt(s.x) && bodyH() <= 1.92;
+    // shadow cover: Jax is inside Fisk's shadow only while Fisk stands
+    const covers = () => !crouched() && !s.onPipe && s.inRoom == null;
     function bodyBase() { return s.onPipe ? PIPE_Y + 0.08 : 0; }
     function bodyH() { return s.onPipe ? heightM * 0.45 : crouched() ? heightM * 0.6 : heightM; }
     function shadowGeom() {
@@ -227,7 +266,12 @@ export default {
       const ang = Math.atan2(vy, Math.abs(vx));
       return Math.abs(ang - -0.14) < 0.28;
     }
-    const allGuards = () => (s.check ? [...s.guards, s.check] : s.guards);
+    const allGuards = () => [...s.guards, ...(s.check ? [s.check] : []), ...(s.sentry ? [s.sentry] : [])];
+    function heRan(g) {
+      g.ran = 20; g.shadowT = 0; g.seen = 0; g.dropX = g.x - 0.35; s.heRan = true;
+      banner("HE RAN", 3);
+      beat("ran", "A shadow the height of the hall comes round onto the sheet, and no man under it yet. His flashlight hits the floor. He backs away from it with his hands up. He has been told what throws a shadow like that. Twenty seconds.", 8);
+    }
 
     // ---- update
     function update(dt) {
@@ -236,6 +280,8 @@ export default {
       if (s.bannerT > 0) s.bannerT -= dt;
       if (s.flash > 0) s.flash -= dt;
       if (s.shake > 0) s.shake -= dt;
+      if (twist && !s.beats.jax && s.t > 3) beat("jax", "Jax keeps to where your shadow falls. While you stand, no light sees him. Crouch, and he is a man in a lit hall.", 6);
+      if (SHEETS.length && sheetAt(s.x) && !s.beats.sheet) beat("sheet", `NEW · A sheet hung across the hall. Behind it a silhouette of 1.9 m or less reads as an orderly. You are ${heightM.toFixed(2)} m: ${heightM <= 1.92 ? "walk through as you are" : "stoop (crouch) and the light passes over you"}.`, 7);
       if (s.t > 7 && !unlocked.listen) unlock("listen", "NEW · Listen (hold Space): stand still, and the guards' footfalls show on the floor line, even beyond the sheet.");
       // inside a side room: hidden, cold, and the room's sleeper stirs
       if (s.inRoom != null) {
@@ -257,8 +303,8 @@ export default {
         s.step += Math.abs(v) * dt * 2.2;
       }
       // unlocks by place
-      if (!unlocked.act && sideDoorAt(s.x) != null) unlock("act", "NEW · Door (E): this side door is unlocked. Slip into the dark room until the light passes. Two doors tonight.");
-      if (!unlocked.up && change >= 33 && pipeAt(s.x)) unlock("up", "NEW · Climb (W): the pipes run at 2.7 m. You are tall enough now. Up there the light passes under you.");
+      if (!unlocked.act && sideDoorAt(s.x) != null) unlock("act", `NEW · Door (E): this side door is unlocked. Slip into the dark room until the light passes${twist ? ", both of you" : ""}. ${HC.doors === 1 ? "One door" : "Two doors"} tonight.`);
+      if (!unlocked.up && change >= 33 && pipeAt(s.x)) unlock("up", twist ? "Climb (W): the pipes are in reach. Your shadow goes up with you." : "NEW · Climb (W): the pipes run at 2.7 m. You are tall enough now. Up there the light passes under you.");
       // checkpoints
       for (const j of JUNCTIONS) if (s.x >= j && j > s.checkpoint) { s.checkpoint = j; s.cleared++; banner(`JUNCTION ${s.cleared} · RETRIES RESUME HERE`); }
       // drains
@@ -279,17 +325,36 @@ export default {
         say("22:30. Keys at the east end: the check. One guard walks the whole hall, once, toward you. Get off the floor or out of the light.", 6);
         banner("22:30 · THE CHECK");
       }
-      if (s.x >= 78 && !s.beats.call) beat("call", `Under the floor, the sound again: ${CALL_LINE} (line 30). It is behind you now, west and down.`, 6);
+      if (stage === 2 && s.x >= 78 && !s.beats.call) beat("call", `Under the floor, the sound again: ${CALL_LINE} (line 30). It is behind you now, west and down.`, 6);
       // guards
       const sh = shadowGeom();
       const al = alcoveAt(s.x);
-      const hidden = s.inRoom != null || (al && crouched());
+      const hidden = s.inRoom != null || (al && crouched()) || stooped();
+      // Jax: a step into the shadow's side, kept up with Fisk
+      let jaxPts = [];
+      if (twist) {
+        const side = Math.sign(sh.top - s.x) || 1, tx = s.inRoom != null ? s.x : s.x + side * 0.85;
+        s.jx += Math.max(-3.2 * dt, Math.min(3.2 * dt, tx - s.jx));
+        s.jaxOut = s.inRoom == null && !covers() && !sheetAt(s.jx);
+        if (s.jaxOut) jaxPts = [[s.jx, 1.6], [s.jx, 0.9], [s.jx, 0.3]];
+      }
       const base = bodyBase(), bh = bodyH();
       const bodyPts = hidden ? [] : [[s.x, base + bh * 0.92], [s.x, base + bh * 0.55], [s.x, base + bh * 0.15]];
       const shPts = hidden ? [] : [0.25, 0.5, 0.75, 1].map((f) => [sh.foot + (sh.top - sh.foot) * f, sh.base + sh.len * f]);
       let worst = 0;
       for (const g of allGuards()) {
-        if (g.check) {
+        if (g.sentry) {
+          if (g.ran > 0) {
+            g.ran -= dt; g.step += dt * 3;
+            if (g.ran > 15) g.x = Math.min(LEN - 0.6, g.x + 1.5 * dt); else if (g.ran < 4) g.x = Math.max(HC.sentry, g.x - 1.6 * dt);
+            if (g.ran <= 0) { g.x = HC.sentry; say("He has come back for his flashlight."); }
+            continue;
+          }
+          // the set piece: he sees the shadow before any man. Bodies he sees at 10 m; a shadow that tall, further
+          const lamp = g.x - 0.35;
+          if (covers() && !hidden && sh.top > s.x && sh.len >= CEIL - 0.05 && lamp - sh.top <= 14 && lamp - s.x > 10) { g.shadowT += dt; if (g.shadowT >= 0.6) { heRan(g); continue; } }
+          else g.shadowT = Math.max(0, g.shadowT - dt);
+        } else if (g.check) {
           g.x += g.dir * 1.25 * dt; g.step += 1.25 * dt * 2.2;
           if (g.x < 1) { s.check = null; s.checkDone = true; banner("THE CHECK HAS PASSED"); say("The check's footsteps go round the corner at the bunk end. The hall is yours again."); continue; }
         } else if (g.pause > 0) { g.pause -= dt; }
@@ -303,13 +368,14 @@ export default {
         if (bodyPts.some(([px, py]) => inCone(g, px, py))) { hit = true; by = "body"; }
         else if (shPts.some(([px, py]) => inCone(g, px, py))) { hit = true; by = "shadow"; }
         else if (!hidden && !s.onPipe && poolAt(s.x) && (s.x - g.x) * g.dir > 0 && Math.abs(s.x - g.x) < 14) { hit = true; by = "pool"; }
+        else if (jaxPts.some(([px, py]) => inCone(g, px, py))) { hit = true; by = "jax"; }
         if (hit) { g.seen += dt; g.by = by; } else g.seen = Math.max(0, g.seen - dt * 0.6);
         worst = Math.max(worst, g.seen / alarmT);
-        if (g.seen >= alarmT) return caught(g.by === "shadow" ? (g.check ? "The check's flashlight found your shadow on the wall before it found you." : "He saw your shadow first.") : g.by === "pool" ? "You stood in the light from a door pane." : "The flashlight held you.");
+        if (g.seen >= alarmT) return caught(g.by === "shadow" ? (g.check ? "The check's flashlight found your shadow on the wall before it found you." : "He saw your shadow first.") : g.by === "pool" ? "You stood in the light from a door pane." : g.by === "jax" ? "The light found Jax, standing in the hall outside your shadow." : "The flashlight held you.");
       }
       s.alarm = worst; s.seenMax = Math.max(s.seenMax, worst);
       if (s.warmth <= 0) return caught("The cold took your legs.");
-      if (s.x >= DOOR_X - 2 && !s.onPipe && !s.beats.door) beat("door", "The officers' wing door. Two handles: the high steel lever, and the brass knob below it. Press E (Door).", 4);
+      if (s.x >= DOOR_X - 2 && !s.onPipe && !s.beats.door) beat("door", twist ? (stairDrawn ? "The stair door, where your plan said it had to be. Press E (Door)." : "A panel in the wall beside the cold store, colder than the wall. Press E (Door).") : stage === 1 ? "The latrine door. Press E (Door)." : "The officers' wing door. Two handles: the high steel lever, and the brass knob below it. Press E (Door).", 4);
     }
     function caught(why) {
       s.shake = reduce ? 0 : 0.5; s.flash = 0.7;
@@ -321,14 +387,14 @@ export default {
         return;
       }
       api.store.set("losses", losses + 1);
-      finish(false, `${why} Two orderlies walk Fisk back to the bunk and do not say a word on the way. Suspicion +20; the curfew break is logged as seen, and the roster stays in a room you have not been in.`);
+      finish(false, `${why} Two orderlies walk Fisk back to the bunk and do not say a word on the way. Suspicion +20; the curfew break is logged as seen${twist ? ", and Jax is walked the other way" : stage === 1 ? ", and where a man goes at ten stays a thing Sam told you" : ", and the roster stays in a room you have not been in"}.`);
     }
     function finish(win, text) {
       if (over) return;
       over = true; running = false;
       cancelAnimationFrame(raf);
       draw();
-      kit.endCard(wrap, win ? { card: "halls-night-4", caption: "NIGHT 4 · THE OFFICERS' WING" } : { card: "rules-card", stamp: "stamp-hold", caption: "NIGHT 4 · WALKED BACK TO THE BUNK" }, { outcome: win ? "win" : "lose", text });
+      lad.conclude(wrap, kit, stage, win ? { card: "halls-night-" + HC.night, caption: `NIGHT ${HC.night} · ${HC.to.toUpperCase()}` } : { card: "rules-card", stamp: "stamp-hold", caption: `NIGHT ${HC.night} · WALKED BACK TO THE BUNK` }, { outcome: win ? "win" : "lose", text }, go);
     }
     function enterRoom(d) {
       if (s.doors <= 0) { say("This door is locked. The other side doors are spent for tonight."); return; }
@@ -342,6 +408,11 @@ export default {
       if (s.x >= DOOR_X - 2 && !s.onPipe) {
         api.store.set("losses", 0);
         const how = s.climbed ? "You came most of the way above the light, along the pipes, with the shadow ahead of you on the ceiling." : "You came the whole way on the floor, short and slow, and the shadow never reached the light.";
+        if (stage === 1) return finish(true, `The latrine, tiled and unlit. By the floor drain there is a wet print 40 cm long, and it freezes white while you look at it. Nobody on this base has a foot that size. You came the whole way on the floor, and the shadow never reached the light. Warmth ${Math.round(s.warmth)}.`);
+        if (twist) {
+          if (Math.abs(s.jx - s.x) > 3) { say("Jax is not with you yet."); return; }
+          return finish(true, `${stairDrawn ? "The stair door is where your plan said it had to be" : "The panel gives; there is a stair behind it that is on no sheet"}, and the cold comes up it. Jax goes down first, inside your shadow the whole way. ${s.heRan ? "Behind you a flashlight lies on the floor, still lit. The guard saw a shadow as high as the hall and ran from it: they have been told what is kept here, and what it looks like coming." : "The sentry never saw the shadow come."} Warmth ${Math.round(s.warmth)}.`);
+        }
         return finish(true, `The brass knob turns. On the duty desk the transfer roster lies open: the empty chairs by seat number, each with a date and the same word typed beside it, “transferred”. ${how} Warmth ${Math.round(s.warmth)}.`);
       }
       const d = sideDoorAt(s.x);
@@ -355,6 +426,7 @@ export default {
       if (!pipeAt(s.x)) { say("No pipe overhead here."); return; }
       if (heightM < 2.3) { say("The pipes are at 2.7 m. You cannot reach them. You are not tall enough yet."); return; }
       s.onPipe = true; s.climbed = true;
+      if (twist) { say("Up on the pipes. Your shadow went up with you. Jax is standing in the hall below, alone."); return; }
       if (!beat("pipe", "You pull yourself up onto the pipes. From here your shadow lies along the ceiling, longer than you are.")) say("Up on the pipes.");
     }
 
@@ -455,7 +527,18 @@ export default {
       // the target door
       if (!(art && art.bg)) { const x0 = sx(DOOR_X - 0.6); ctx.fillStyle = "rgba(27,29,31,.8)"; ctx.fillRect(x0, sy(3.6), 1.3 * scale, 3.6 * scale);
         ctx.fillStyle = P.cream; ctx.font = `700 ${Math.max(12, scale * 0.17)}px 'Stardos Stencil','Courier Prime',monospace`; ctx.textAlign = "center";
-        ctx.fillText("OFFICERS", x0 + 0.65 * scale, sy(2.9)); ctx.fillText("WING", x0 + 0.65 * scale, sy(2.6)); ctx.textAlign = "start"; }
+        HC.label.forEach((t, i) => ctx.fillText(t, x0 + 0.65 * scale, sy(2.9 - i * 0.3))); ctx.textAlign = "start"; }
+      // laundry sheets hung across the hall
+      for (const [a, w] of SHEETS) {
+        const x0 = sx(a); if (x0 > W || x0 + w * scale < 0) continue;
+        ctx.strokeStyle = P.ink; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x0 - 0.4 * scale, sy(2.62)); ctx.quadraticCurveTo(x0 + (w * scale) / 2, sy(2.48), x0 + (w + 0.4) * scale, sy(2.62)); ctx.stroke();
+        ctx.fillStyle = "rgba(238,241,242,.78)"; ctx.fillRect(x0, sy(2.55), w * scale, 2.25 * scale);
+        ctx.strokeStyle = "rgba(27,29,31,.35)"; ctx.lineWidth = 1; ctx.strokeRect(x0, sy(2.55), w * scale, 2.25 * scale);
+        ctx.fillStyle = "rgba(143,135,111,.28)"; for (let fx = 0.3; fx < w; fx += 0.55) ctx.fillRect(x0 + fx * scale, sy(2.55), 0.1 * scale, 2.25 * scale);
+        // the 1.9 m line an orderly's head keeps under
+        ctx.setLineDash([5, 5]); ctx.strokeStyle = "rgba(27,29,31,.55)"; ctx.beginPath(); ctx.moveTo(x0, sy(1.9)); ctx.lineTo(x0 + w * scale, sy(1.9)); ctx.stroke(); ctx.setLineDash([]);
+        ctx.fillStyle = "rgba(27,29,31,.7)"; ctx.font = "12px 'Courier Prime',monospace"; ctx.fillText("1.9 m", x0 + 4, sy(1.9) - 4);
+      }
       // pipes
       for (const [a, b] of PIPES) {
         ctx.fillStyle = P.ink; ctx.fillRect(sx(a), sy(PIPE_Y + 0.07), (b - a) * scale, Math.max(4, scale * 0.12));
@@ -474,6 +557,13 @@ export default {
       // guards' cones
       ctx.save(); ctx.beginPath(); ctx.rect(0, top, W, floorY - top + 3); ctx.clip();
       for (const g of allGuards()) {
+        if (g.sentry && g.ran > 0) { // the dropped flashlight, shining along the floor
+          const fx = sx(g.dropX);
+          const gr = ctx.createLinearGradient(fx, 0, fx - 4 * scale, 0); gr.addColorStop(0, "rgba(238,241,242,.75)"); gr.addColorStop(1, "rgba(238,241,242,0)");
+          ctx.fillStyle = gr; ctx.beginPath(); ctx.moveTo(fx, floorY - 4); ctx.lineTo(fx - 4 * scale, floorY - 0.5 * scale); ctx.lineTo(fx - 4 * scale, floorY); ctx.closePath(); ctx.fill();
+          ctx.fillStyle = P.ink; ctx.fillRect(fx - 2, floorY - 6, 0.3 * scale, 5);
+          continue;
+        }
         const lx = sx(g.x + g.dir * 0.35), ly = sy(1.3), len = 10 * scale;
         const a0 = 0.14 - 0.28, a1 = 0.14 + 0.28;
         const gr = ctx.createLinearGradient(lx, ly, lx + g.dir * len, ly);
@@ -508,6 +598,8 @@ export default {
       // the cut-outs, on their rods
       for (const g of allGuards()) {
         const rock = reduce || g.pause > 0 ? 0 : Math.sin(g.step) * 0.035;
+        if (g.sentry && g.ran > 0 && art && art.ran) { ctx.fillStyle = P.ink; ctx.fillRect(sx(g.x) - 1, floorY - scale * 0.9, 1.5, scale * 0.9 + 30); puppetAt(art.ran, sx(g.x), floorY, -1, 190 / 520, rock); ctx.fillStyle = P.ink; ctx.font = "700 13px 'Courier Prime',monospace"; ctx.textAlign = "center"; ctx.fillText(`${Math.ceil(g.ran)} s`, sx(g.x), sy(2.3)); ctx.textAlign = "start"; continue; }
+        if (g.sentry && g.shadowT > 0.05) { ctx.fillStyle = P.ink; ctx.font = "700 18px 'Courier Prime',monospace"; ctx.textAlign = "center"; ctx.fillText("…", sx(g.x), sy(2.3) + 6); ctx.textAlign = "start"; }
         if (art && art.guard) { ctx.fillStyle = P.ink; ctx.fillRect(sx(g.x) - 1, floorY - scale * 0.9, 1.5, scale * 0.9 + 30); puppetAt(art.guard, sx(g.x), floorY, g.dir, 150 / 520, rock * g.dir); }
         else fig(sx(g.x), floorY, 1.8 * scale, g.pause > 0 ? 0 : Math.sin(g.step) * 0.5, P.ink, { face: g.dir, cap: true, arm: true, rod: true });
         if (g.seen > 0.05) {
@@ -516,6 +608,16 @@ export default {
           ctx.fillStyle = P.ink; ctx.font = "700 18px 'Courier Prime',monospace"; ctx.textAlign = "center"; ctx.fillText(f > 0.66 ? "!" : "?", sx(g.x), sy(2.3) + 6); ctx.textAlign = "start";
         }
       }
+      if (twist && s.inRoom == null) { // Jax, a head shorter than the pipes, in the shadow or out of it
+        const jx = sx(s.jx);
+        if (art && art.jax) { ctx.fillStyle = P.ink; ctx.fillRect(jx - 1, floorY - scale * 0.8, 1.5, scale * 0.8 + 30); puppetAt(art.jax, jx, floorY, s.facing, 150 / 520, reduce ? 0 : Math.sin(s.step * 1.3) * 0.03); }
+        else fig(jx, floorY, 1.8 * scale, Math.sin(s.step * 1.3) * 0.5, P.ink, { face: s.facing, rod: true });
+        ctx.font = "700 12px 'Courier Prime',monospace"; ctx.textAlign = "center";
+        const lbl = s.jaxOut ? "JAX · OUT OF YOUR SHADOW" : "JAX", tw = ctx.measureText(lbl).width + 8;
+        ctx.fillStyle = s.jaxOut ? P.snow : "rgba(27,29,31,.75)"; ctx.fillRect(jx - tw / 2, sy(2.05) - 13, tw, 17);
+        ctx.fillStyle = s.jaxOut ? P.ink : P.cream; ctx.fillText(lbl, jx, sy(2.05)); ctx.textAlign = "start";
+        if (s.jaxOut) { ctx.strokeStyle = P.snow; ctx.lineWidth = 2; ctx.setLineDash([3, 3]); ctx.strokeRect(jx - 0.4 * scale, sy(1.9), 0.8 * scale, 1.9 * scale); ctx.setLineDash([]); }
+      }
       if (s.inRoom == null) {
         const rock = reduce ? 0 : Math.sin(s.step) * 0.04 * s.facing;
         if (s.onPipe && art && art.stoop) puppetAt(art.stoop, sx(s.x), sy(PIPE_Y + 0.08), s.facing, 120 / 520, rock, 0.75);
@@ -523,6 +625,7 @@ export default {
         else if (art && (crouched() ? art.stoop : art.fisk)) { ctx.fillStyle = P.ink; ctx.fillRect(sx(s.x) - 1, floorY - scale * 0.8, 1.5, scale * 0.8 + 30); puppetAt(crouched() ? art.stoop : art.fisk, sx(s.x), floorY, s.facing, crouched() ? 120 / 520 : 170 / 520, rock); }
         else fig(sx(s.x), floorY, heightM * scale, Math.sin(s.step) * 0.5, P.ink, { crouch: crouched(), face: s.facing, rod: true });
         // a hidden marker: the alcove swallows him
+        if (stooped()) { ctx.fillStyle = "rgba(27,29,31,.8)"; ctx.font = "700 12px 'Courier Prime',monospace"; ctx.textAlign = "center"; ctx.fillText("READS AS AN ORDERLY", sx(s.x), sy(2.75)); ctx.textAlign = "start"; }
         if (alcoveAt(s.x) && crouched()) { ctx.strokeStyle = P.ink; ctx.setLineDash([4, 4]); ctx.lineWidth = 2; ctx.strokeRect(sx(alcoveAt(s.x)[0]) + 1, sy(3.2), 1.3 * scale - 2, 3.2 * scale); ctx.setLineDash([]); }
       }
       // listening: footfalls on the floor line, even off the sheet
@@ -571,11 +674,15 @@ export default {
       const sx0 = 14, sw = W - 28;
       ctx.strokeStyle = "rgba(217,210,191,.6)"; ctx.lineWidth = 1; ctx.strokeRect(sx0, 10, sw, 12);
       for (const j of JUNCTIONS) { ctx.fillStyle = j <= s.checkpoint ? P.cream : "rgba(217,210,191,.5)"; ctx.fillRect(sx0 + (j / LEN) * sw - 1, 7, 2, 18); }
-      ctx.fillStyle = "#D9A441"; ctx.fillRect(sx0 + (DOOR_X / LEN) * sw - 3, 7, 6, 18);
+      if (!twist || stairDrawn) { ctx.fillStyle = "#D9A441"; ctx.fillRect(sx0 + (DOOR_X / LEN) * sw - 3, 7, 6, 18); }
+      // the pipe route, pencilled on the strip once Floor Plan's elevation has the pipes at 2.7 m
+      if (pipeRoute) { ctx.fillStyle = "#f0dfa6"; for (const [a, b] of PIPES) { ctx.fillRect(sx0 + (a / LEN) * sw, 4, ((b - a) / LEN) * sw, 3); ctx.fillRect(sx0 + (a / LEN) * sw, 4, 2, 7); ctx.fillRect(sx0 + (b / LEN) * sw - 2, 4, 2, 7); } }
+      for (const [a, w] of SHEETS) { ctx.fillStyle = "rgba(238,241,242,.8)"; ctx.fillRect(sx0 + (a / LEN) * sw, 11, Math.max(3, (w / LEN) * sw), 10); }
+      if (s.sentry && !(s.sentry.ran > 0)) { ctx.fillStyle = P.snow; ctx.fillRect(sx0 + (s.sentry.x / LEN) * sw - 2, 9, 4, 14); }
       ctx.fillStyle = P.cream; ctx.fillRect(sx0 + 1, 13, Math.max(0, (s.x / LEN) * sw - 2), 6);
       if (s.check) { ctx.fillStyle = P.snow; ctx.beginPath(); ctx.arc(sx0 + (s.check.x / LEN) * sw, 16, 5, 0, 7); ctx.fill(); }
       ctx.font = "12px 'Courier Prime',monospace"; ctx.fillStyle = "rgba(217,210,191,.85)";
-      ctx.fillText("BUNK", sx0, 38); ctx.textAlign = "right"; ctx.fillText("OFFICERS' WING", sx0 + sw, 38); ctx.textAlign = "start";
+      ctx.fillText("BUNK" + (pipeRoute ? " · pipes at 2.7 m, from your elevation" : ""), sx0, 38); ctx.textAlign = "right"; ctx.fillText(twist ? (stairDrawn ? "COLD STORE · THE STAIR, FROM YOUR PLAN" : "COLD STORE") : HC.to.toUpperCase(), sx0 + sw, 38); ctx.textAlign = "start";
       // meters: warmth (a line of breath), light (the alarm), the clock, doors, retries
       const mY = 60, colW = Math.min(170, (W - 28) / (narrow ? 3 : 5));
       const meter = (i, label, v, val) => {
@@ -603,7 +710,7 @@ export default {
       // caption under the sheet
       const cy = floorY + Math.max(14, scale * 0.3) + 24;
       ctx.fillStyle = P.cream; ctx.font = `${narrow ? 14 : 15}px 'Courier Prime',monospace`;
-      const cap = s.msgT > 0 ? s.msg : `Night 4 · bunk to the officers' wing · change ${change}, ${heightM.toFixed(2)} m, shadow ${(Math.min(CEIL, heightM * 1.6 * (crouched() ? 0.6 : 1))).toFixed(1)} m${crouched() ? " (crouched)" : ""}`;
+      const cap = s.msgT > 0 ? s.msg : `Night ${HC.night} · bunk to ${HC.to} · change ${change}, ${heightM.toFixed(2)} m, shadow ${(Math.min(CEIL, heightM * 1.6 * (crouched() ? 0.6 : 1))).toFixed(1)} m${crouched() ? " (crouched)" : ""}`;
       const lines = wrapText(cap, W - 32).slice(0, 3);
       lines.forEach((l, i) => ctx.fillText(l, 16, cy + i * 19));
       if (narrow) { ctx.fillStyle = "rgba(217,210,191,.8)"; ctx.font = "12px 'Courier Prime',monospace"; ctx.fillText(`doors ${s.doors} · retries ${s.retries}${change >= 40 ? " · east is 30% slower" : ""}`, 16, cy + lines.length * 19 + 2); }
@@ -622,7 +729,9 @@ export default {
       newRun(c, easy);
       intro.remove();
       running = true; over = false; last = performance.now();
-      say(c >= 33 ? "Your shadow already reaches high up the sheet. Keep it out of the flashlights." : "Short and slow. The alcoves are your cover: crouch in one when a light comes.", 4);
+      say(twist ? "Jax is a step behind you, in your shadow. Keep him there." : c >= 33 ? "Your shadow already reaches high up the sheet. Keep it out of the flashlights." : "Short and slow. The alcoves are your cover: crouch in one when a light comes.", 4);
+      if (pipeRoute) { lad.note(wrap, "because you inked the pipes at 2.7 m on Floor Plan's elevation, the pipe route is pencilled on your strip and you know where to climb."); if (change >= 33) { unlocked.up = true; padOf("up").hidden = false; } }
+      if (twist && stairDrawn) lad.note(wrap, "because you stamped the void on Floor Plan, the stair is marked at the east end of your strip.");
       raf = requestAnimationFrame(frame);
     }
 
@@ -671,5 +780,6 @@ export default {
         wrap.remove();
       },
     };
+    }
   },
 };

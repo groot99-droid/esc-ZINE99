@@ -112,7 +112,8 @@
         "suspicion",
         "jax_trust",
         "rules_broken",
-        "contraband_left"
+        "contraband_left",
+        "napkin_pieces"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -261,7 +262,13 @@
         "suspicion",
         "jax_trust",
         "rules_broken",
-        "contraband_left"
+        "contraband_left",
+        "napkin_pieces",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -403,11 +410,15 @@
         "change",
         "clarity",
         "the_list",
-        "day"
+        "day",
+        "hunger",
+        "route_photographed"
       ],
       "writes": [
         "knows",
-        "the_list"
+        "the_list",
+        "hunger_mismatches",
+        "suspicion"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -458,7 +469,13 @@
         "suspicion",
         "jax_trust",
         "rules_broken",
-        "contraband_left"
+        "contraband_left",
+        "napkin_pieces",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -502,7 +519,9 @@
         "pull.hollis",
         "pull.jax",
         "hunger",
-        "the_list"
+        "the_list",
+        "letter_taken",
+        "hollis_fed"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -564,9 +583,32 @@
         "rules_broken",
         "warmth",
         "the_list",
-        "schedule_strips"
+        "schedule_strips",
+        "route_photographed"
       ],
       "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "n3_glovebox",
+        "d4_chart"
+      ]
+    },
+    {
+      "id": "n3_glovebox",
+      "layer": "3d",
+      "name": "Night 3: the glovebox",
+      "chapter": "ch4_day3",
+      "reads": [
+        "letter_taken",
+        "warmth",
+        "clarity"
+      ],
+      "writes": [
+        "glovebox_seen",
+        "warmth",
+        "suspicion"
+      ],
+      "enter": "pull-out",
       "exit": "fade",
       "next": [
         "d4_chart"
@@ -582,11 +624,15 @@
         "change",
         "clarity",
         "the_list",
-        "day"
+        "day",
+        "hunger",
+        "route_photographed"
       ],
       "writes": [
         "knows",
-        "the_list"
+        "the_list",
+        "hunger_mismatches",
+        "suspicion"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -638,7 +684,13 @@
         "suspicion",
         "jax_trust",
         "rules_broken",
-        "contraband_left"
+        "contraband_left",
+        "napkin_pieces",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -659,7 +711,8 @@
       ],
       "writes": [
         "knows",
-        "the_list"
+        "the_list",
+        "fence_gap_marked"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -687,7 +740,9 @@
         "pull.kimura",
         "pull.hollis",
         "pull.jax",
-        "hunger"
+        "hunger",
+        "staff_loaf_taken",
+        "hollis_fed"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -709,7 +764,9 @@
         "pull.duarte",
         "pull.kimura",
         "pull.hollis",
-        "pull.jax"
+        "pull.jax",
+        "staff_loaf_taken",
+        "napkin_pieces"
       ],
       "writes": [
         "nights_out",
@@ -723,7 +780,9 @@
         "pull.duarte",
         "pull.kimura",
         "pull.hollis",
-        "pull.jax"
+        "pull.jax",
+        "napkin_pieces",
+        "strength"
       ],
       "enter": "cut",
       "exit": "cut",
@@ -791,12 +850,16 @@
         "clarity",
         "the_list",
         "day",
-        "schedule_read"
+        "schedule_read",
+        "hunger",
+        "route_photographed"
       ],
       "writes": [
         "knows",
         "the_list",
-        "schedule_strips"
+        "schedule_strips",
+        "hunger_mismatches",
+        "suspicion"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -810,11 +873,14 @@
       "name": "Duty: the laundry",
       "chapter": "ch6_day5",
       "reads": [
-        "strength"
+        "strength",
+        "napkin_pieces"
       ],
       "writes": [
         "the_list",
-        "duties_failed"
+        "duties_failed",
+        "napkin_pieces",
+        "suspicion"
       ],
       "enter": "cut",
       "exit": "cut",
@@ -835,7 +901,9 @@
         "change",
         "suspicion",
         "day",
-        "contraband_left"
+        "contraband_left",
+        "staff_loaf_taken",
+        "hunger_mismatches"
       ],
       "writes": [
         "meals",
@@ -847,7 +915,13 @@
         "suspicion",
         "jax_trust",
         "rules_broken",
-        "contraband_left"
+        "contraband_left",
+        "napkin_pieces",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -863,11 +937,13 @@
       "reads": [
         "jax_trust",
         "knows",
-        "jax_fate"
+        "jax_fate",
+        "schedule_read"
       ],
       "writes": [
         "jax_plan_answer",
-        "jax_trust"
+        "jax_trust",
+        "knots_untied"
       ],
       "enter": "cut",
       "exit": "cut",
@@ -914,7 +990,9 @@
         "pull.kimura",
         "pull.hollis",
         "pull.jax",
-        "hunger"
+        "hunger",
+        "staff_loaf_taken",
+        "hollis_fed"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -937,7 +1015,9 @@
         "pull.kimura",
         "pull.hollis",
         "pull.jax",
-        "jax_plan_answer"
+        "jax_plan_answer",
+        "staff_loaf_taken",
+        "napkin_pieces"
       ],
       "writes": [
         "nights_out",
@@ -952,7 +1032,9 @@
         "pull.kimura",
         "pull.hollis",
         "pull.jax",
-        "jax_fate"
+        "jax_fate",
+        "napkin_pieces",
+        "strength"
       ],
       "enter": "cut",
       "exit": "cut",
@@ -979,7 +1061,8 @@
         "rules_broken",
         "warmth",
         "the_list",
-        "jax_trust"
+        "jax_trust",
+        "route_photographed"
       ],
       "enter": "flatten",
       "exit": "fade",
@@ -998,12 +1081,16 @@
         "clarity",
         "the_list",
         "day",
-        "schedule_read"
+        "schedule_read",
+        "hunger",
+        "route_photographed"
       ],
       "writes": [
         "knows",
         "the_list",
-        "schedule_strips"
+        "schedule_strips",
+        "hunger_mismatches",
+        "suspicion"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -1018,14 +1105,38 @@
       "chapter": "ch7_day6",
       "reads": [
         "jax_plan_answer",
-        "suspicion"
+        "suspicion",
+        "schedule_read"
       ],
       "writes": [
         "sam_offer_made",
-        "sam_offer_accepted"
+        "sam_offer_accepted",
+        "results_required_heard"
       ],
       "enter": "cut",
       "exit": "cut",
+      "next": [
+        "d6_next_week"
+      ]
+    },
+    {
+      "id": "d6_next_week",
+      "layer": "3d",
+      "name": "Next Week: Hollis behind the hatch",
+      "chapter": "ch7_day6",
+      "reads": [
+        "sam_offer_accepted",
+        "hollis_fed",
+        "pull.hollis",
+        "hunger"
+      ],
+      "writes": [
+        "hollis_staff",
+        "taken",
+        "chairs_empty"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
       "next": [
         "d6_tray"
       ]
@@ -1044,7 +1155,11 @@
         "suspicion",
         "day",
         "contraband_left",
-        "sam_offer_accepted"
+        "sam_offer_accepted",
+        "staff_loaf_taken",
+        "hunger_mismatches",
+        "hollis_staff",
+        "hollis_fed"
       ],
       "writes": [
         "meals",
@@ -1056,7 +1171,13 @@
         "suspicion",
         "jax_trust",
         "rules_broken",
-        "contraband_left"
+        "contraband_left",
+        "napkin_pieces",
+        "pull.pell",
+        "pull.duarte",
+        "pull.kimura",
+        "pull.hollis",
+        "pull.jax"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -1075,12 +1196,15 @@
         "change",
         "nights_out",
         "files_read",
-        "cold_from_below"
+        "cold_from_below",
+        "claw_marks_measured"
       ],
       "writes": [
         "void_located",
         "knows",
-        "the_list"
+        "the_list",
+        "fence_gap_marked",
+        "height_marks"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -1110,7 +1234,9 @@
         "pull.kimura",
         "pull.hollis",
         "pull.jax",
-        "hunger"
+        "hunger",
+        "staff_loaf_taken",
+        "hollis_fed"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -1133,7 +1259,9 @@
         "pull.kimura",
         "pull.hollis",
         "pull.jax",
-        "void_located"
+        "void_located",
+        "staff_loaf_taken",
+        "napkin_pieces"
       ],
       "writes": [
         "nights_out",
@@ -1147,7 +1275,9 @@
         "pull.duarte",
         "pull.kimura",
         "pull.hollis",
-        "pull.jax"
+        "pull.jax",
+        "napkin_pieces",
+        "strength"
       ],
       "enter": "cut",
       "exit": "cut",
@@ -1166,7 +1296,9 @@
         "change",
         "warmth",
         "clarity",
-        "void_located"
+        "void_located",
+        "height_marks",
+        "jax_fate"
       ],
       "writes": [
         "suspicion",
@@ -1191,7 +1323,8 @@
       "writes": [
         "pens_seen",
         "the_list",
-        "knows"
+        "knows",
+        "wall_sentence_read"
       ],
       "enter": "pull-out",
       "exit": "fade",
@@ -1254,7 +1387,11 @@
         "suspicion",
         "day",
         "contraband_left",
-        "sam_offer_accepted"
+        "sam_offer_accepted",
+        "staff_loaf_taken",
+        "hunger_mismatches",
+        "hollis_staff",
+        "hollis_fed"
       ],
       "writes": [
         "meals",
@@ -1266,7 +1403,8 @@
         "suspicion",
         "jax_trust",
         "rules_broken",
-        "contraband_left"
+        "contraband_left",
+        "napkin_pieces"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -1310,7 +1448,9 @@
         "pull.hollis",
         "pull.jax",
         "jax_fate",
-        "sam_offer_accepted"
+        "sam_offer_accepted",
+        "staff_loaf_taken",
+        "napkin_pieces"
       ],
       "writes": [
         "nights_out",
@@ -1326,7 +1466,9 @@
         "pull.hollis",
         "pull.jax",
         "night7_choice",
-        "followed_with"
+        "followed_with",
+        "napkin_pieces",
+        "strength"
       ],
       "enter": "cut",
       "exit": "cut",
@@ -1346,7 +1488,8 @@
         "change",
         "warmth",
         "clarity",
-        "followed_with"
+        "followed_with",
+        "height_marks"
       ],
       "writes": [
         "warmth"
@@ -1386,14 +1529,17 @@
       "reads": [
         "change",
         "warmth",
-        "jax_fate"
+        "jax_fate",
+        "fence_gap_marked",
+        "strength"
       ],
       "writes": [
         "fence_crossed",
         "jax_fell",
         "rules_broken",
         "warmth",
-        "cave_reached"
+        "cave_reached",
+        "route_photographed"
       ],
       "enter": "flatten",
       "exit": "pull-out",
@@ -1484,7 +1630,9 @@
       "chapter": "ch9_end",
       "reads": [
         "jax_fate",
-        "knows"
+        "knows",
+        "glovebox_seen",
+        "letter_taken"
       ],
       "enter": "fade",
       "exit": "fade",

@@ -18,7 +18,30 @@
 // (its treatment waits for the cultural consultant, DESIGN.md section 20).
 // Art (api.art): the clip, punch holes, frost corners, the stamps, Form 7-F, the target sheet, the
 // Schedule and its strips, the chapter cards as day breaks, the night-4 clock card.
-import { artKit } from "./kit.js";
+//
+// Phase 2 (the ladder; DEEP_DIVE.md section 3, DESIGN.md 11.3 rules 8 to 10). Three stages:
+//   teach, day 2: two cells and a card, two retries.
+//   test, days 3 to 5: correlations and the second sheet, with Carbon and the strips as before; and
+//     your word is a row (the player reports his own hunger, and the number he gives is the one on
+//     the sheet), and the cut column (a taken man's column is scissored off the ward sheet; a pencil
+//     rub on the sheet beneath raises his last numbers).
+//   twist, day 6: the hypotheses are the project's, about Fisk. Turned over: the numbers are theirs
+//     and prove nothing against them; the evidence is on the list side, and only an entry the
+//     Schedule did not issue can break a card. Stamp one Broken and the orderly looks up. Day 7's
+//     last line (phase 1) follows it when the carbon was taken.
+// The 22:00 box stays as the art draws it, empty, and no text here refers to it.
+import { artKit, ladder } from "./kit.js";
+
+const NAMES = { 1: "Day 2 · two cells and a card", 2: "Days 3 to 5 · the second sheet", 3: "Day 6 · their hypotheses" };
+const CUT = [ // the ward sheet on day 5: three columns scissored off; each man's last line, raised by a pencil rub
+  { name: "Pell", last: "D2", h: "183.0", hunger: 9 }, { name: "Duarte", last: "D3", h: "186.2", hunger: 9 }, { name: "Kimura", last: "D4", h: "189.4", hunger: 9 },
+];
+const WARD = [{ name: "Hollis", h: "184.6", hunger: 9 }, { name: "Jax", h: "181.2", hunger: 6 }];
+const OWN = [ // entries no strip issued (the twist's evidence)
+  { id: "A1", text: "Day 5. Jax told me his plan. I did not go to Sam's office." },
+  { id: "A2", text: "Showed Jax the page with his plan typed on it. He undid the knots." },
+];
+const THEIRS = ["Subject will report companion", "Subject will follow"];
 
 const P = { ink: "#1B1D1F", paper: "#f3efe3", grid: "#9fbfa6", red: "#9b2f22", steel: "#8A8F93", desk: "#3a2c22", sodium: "#D9A441", bruise: "#5A4F5E" };
 const PIECES_BY_DAY = [3, 5, 6, 6];
@@ -83,6 +106,17 @@ const WAYS = [
 
 export default {
   mount(root, api) {
+    const lad = ladder(api, NAMES);
+    let cur = null;
+    const go = (n) => { if (cur) cur.unmount(); cur = run(n); };
+    go(lad.reached());
+    return { unmount() { if (cur) cur.unmount(); cur = null; lad.dispose(); } };
+
+    function run(stage) {
+    const sh = api.shared, twist = stage === 3;
+    const FIRST = stage === 1 ? 0 : 1, LAST = stage === 1 ? 0 : DAYS.length - 1, TRIES = stage === 1 ? 3 : 2;
+    const reported = {}; // day index -> the hunger Fisk said aloud (test)
+    const hungerOf = (d) => (reported[d] != null ? reported[d] : HUNGER[d]);
     const K = "man-eater-chart-";
     const reduce = api.reducedMotion;
     const losses = api.store.get("losses", 0);
@@ -207,12 +241,32 @@ export default {
       .${K}ways button[aria-pressed=true]{opacity:1;background:${P.ink};color:${P.paper}}
       .${K}lastimg{display:block;width:min(100%,560px);height:auto;aspect-ratio:800/260}
       .${K}board [hidden]{display:none!important}
+      .${K}ward{margin:10px 0 0;border:1.5px solid ${P.ink};background:#f6f0dc;padding:8px 10px;font-size:13px}
+      .${K}ward h4{margin:0 0 6px;letter-spacing:.14em;font-size:12px}
+      .${K}wcols{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0}
+      .${K}wcols>div,.${K}wcols>button{border:1px solid ${P.grid};padding:4px 2px;text-align:center;min-height:74px;font:inherit;font-size:12px;line-height:1.5;background:#f6f3ea;color:inherit;min-width:0;overflow:hidden}
+      .${K}wcols>button{cursor:pointer;background:${P.desk};color:#cbbfa8;border:0;border-left:2px dashed ${P.paper};clip-path:polygon(0 0,100% 0,96% 12%,100% 25%,95% 38%,100% 52%,96% 66%,100% 80%,95% 92%,100% 100%,0 100%,4% 88%,0 74%,5% 60%,0 46%,4% 32%,0 18%,5% 8%)}
+      .${K}wcols>button:hover,.${K}wcols>button:focus-visible{background:#4a3a2e;outline:none}
+      .${K}wcols>button.rub{background:#ddd6c2;color:#6b6558;cursor:default;font-family:'Special Elite','Courier Prime',monospace}
+      .${K}wcols b{display:block;font-size:12px;letter-spacing:.04em}
+      .${K}tw h4{margin:0 0 6px;letter-spacing:.14em;font-size:13px}
+      .${K}tw p{margin:8px 0;font-size:15px;line-height:1.4}
+      .${K}tw .iss{display:grid;gap:4px}
+      .${K}tw .iss img{display:block;width:100%;height:auto;aspect-ratio:800/260}
+      .${K}tw .iss span{display:block;font-size:12px;line-height:1.3;padding:0 6px 4px;color:${P.bruise}}
+      .${K}ent[aria-pressed=true]{border-style:solid;border-color:${P.red};background:rgba(155,47,34,.1);box-shadow:inset 4px 0 0 ${P.red}}
+      .${K}twout{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:8px 0}
+      .${K}twout img.strip{display:block;width:min(100%,520px);height:auto;aspect-ratio:800/260}
+      .${K}twout img.eye{width:84px;height:84px}
+      .${K}photo{display:block;width:min(100%,220px);height:auto;margin:6px 0;transform:rotate(-2deg);box-shadow:0 3px 8px rgba(0,0,0,.35)}
+      .${K}form .new{border-left:4px solid ${P.red};padding-left:8px;margin:0 0 10px;font-size:14px;line-height:1.4}
       @media (max-width:760px){.${K}main,.${K}schgrid{grid-template-columns:minmax(0,1fr)}.${K}board{padding:30px 10px 14px;width:calc(100% - 12px);margin:14px auto}.${K}holes{display:none}.${K}ord{display:none}}
     </style>
     <div class="${K}board"><div class="${K}under"></div><div class="${K}clip"></div><img class="${K}clipart" alt="" hidden><img class="${K}holes" alt="" hidden><img class="${K}frost" alt="" hidden>
       <div class="${K}head"><span>CASE 7-F · FISK · INFIRMARY</span><span class="${K}day">DAY 2</span><span>WARD B</span></div>
       <div class="${K}main">
-        <div><svg class="${K}plot" viewBox="0 0 600 150" aria-label="Height plotted by day"></svg><div class="${K}scroll"><table class="${K}grid"></table></div><p class="${K}read" aria-live="polite"></p></div>
+        <div><svg class="${K}plot" viewBox="0 0 600 150" aria-label="Height plotted by day"></svg><div class="${K}scroll"><table class="${K}grid"></table></div><p class="${K}read" aria-live="polite"></p>
+          <div class="${K}ward" hidden><h4>WARD SHEET B · THE TABLE, BY SEAT · THREE COLUMNS CUT OFF</h4><div class="${K}wcols"></div><p class="${K}wsay" style="margin:6px 0 0;line-height:1.4">A taken man's column is scissored off. The sheet beneath kept the dent of the pencil: rub a cut column.</p></div></div>
         <div class="${K}list"><h4>THE LIST · IN FISK'S HAND</h4><ul></ul><div class="note"></div></div>
       </div>
       <div class="${K}q" aria-live="polite"></div>
@@ -221,6 +275,13 @@ export default {
       <div class="${K}sch" hidden><h4>THE SCHEDULE · A SECOND SHEET · STRIPS FOUND ON NIGHTS OUT</h4><img class="dv" alt="" hidden>
         <p style="margin:0 0 10px;font-size:15px;line-height:1.4">Pick a strip, then the list entry it issued. One retry a strip.</p>
         <div class="${K}schgrid"><div class="${K}strips" role="group" aria-label="Strips of the Schedule"></div><div class="${K}ents" role="group" aria-label="The list, in Fisk's hand"></div></div></div>
+      <div class="${K}tw" hidden><h4>DAY 6 · THE HYPOTHESES ARE THE PROJECT'S · SUBJECT: FISK</h4>
+        <div class="${K}typed">09:00  Subject will report companion.
+       Subject will follow.</div>
+        <div class="${K}twout"></div>
+        <p>Their cards, about you, on their sheet. Every number on the page is theirs as well. Pick at least two things on this page that are <b>yours</b>, then a card, then rule on it.</p>
+        <div class="${K}schgrid"><div class="iss" aria-label="The strips, as issued"></div><div class="${K}ents ${K}twents" role="group" aria-label="The list, in Fisk's hand"></div></div>
+        <div class="${K}cards ${K}twcards" role="group" aria-label="The project's hypothesis cards"></div></div>
       <div class="${K}last" hidden><h4>DAY 7 · THE LAST LINE · TYPED ONE DAY AHEAD</h4><img class="dv" alt="" hidden>
         <div class="${K}typed"></div>
         <p style="margin:10px 0 0;font-size:15px;line-height:1.4">Three ways out of tonight, each with its outcome typed beside it. Rule on the line: which is yours?</p>
@@ -231,14 +292,20 @@ export default {
       <div class="hd"><span>FORM 7-F · DAILY MEASURES</span><span>INFIRMARY</span></div>
       <div class="bd">
       <h2>The Chart</h2>
-      <p class="${K}goal">Break the explanations you gave yourself, using your own numbers.</p>
-      <p class="${K}beat">Four mornings. The orderly reads the tape aloud and writes; he never looks at your face. You are the evidence.</p>
+      ${stage === 1 ? `<p class="${K}goal">Break the explanation you gave yourself, using your own numbers.</p>
+      <p class="${K}beat">One morning. The orderly reads the tape aloud and writes; he never looks at your face. You are the evidence.</p>`
+      : stage === 2 ? `<p class="${K}goal">Break the explanations you gave yourself, using your own numbers.</p>
+      <p class="${K}beat">Three mornings, and the night between the second and the third. The orderly reads the tape aloud and writes; he never looks at your face.</p>
+      <p class="new"><b>New.</b> Your word is a row: each morning he asks your hunger, one to ten, and writes what you say. And on day 5 the ward sheet has columns cut off it.</p>`
+      : `<p class="${K}goal">The cards on the clipboard are theirs now, and they are about you. Break one.</p>
+      <p class="${K}beat">Day 6. The strip for this morning was typed yesterday: two hypotheses, and a blank after the word “Response”.</p>
+      <p class="new"><b>Turned over.</b> For five mornings your numbers broke your own explanations. Their numbers will not break their cards. The evidence is on the other side of the page, in your hand, and only what they did not issue counts.</p>`}
       <dl class="${K}fields">
-        <dt>① SELECT</dt><dd>click at least two cells that show the trend</dd>
-        <dt>② CARD</dt><dd>pick the hypothesis the question tests</dd>
-        <dt>③ RULE</dt><dd>Supported or Broken (S or B). One retry a morning</dd>
+        <dt>① SELECT</dt><dd>${twist ? "pick at least two entries of your own" : "click at least two cells that show the trend"}</dd>
+        <dt>② CARD</dt><dd>pick the hypothesis ${twist ? "you are ruling on" : "the question tests"}</dd>
+        <dt>③ RULE</dt><dd>Supported or Broken (S or B). ${TRIES === 3 ? "Two retries" : "One retry"}${twist ? "" : " a morning"}</dd>
       </dl>
-      <button type="button" data-start>Morning, day 2</button>
+      <button type="button" data-start>Morning, day ${stage === 1 ? 2 : stage === 2 ? 3 : 6}</button>
       </div>
     </div></div>`;
     root.appendChild(wrap);
@@ -248,10 +315,12 @@ export default {
     const intro = $("intro");
     const board = $("board"), schEl = $("sch"), lastEl = $("last"), stripsEl = $("strips"), entsEl = $("ents"), waysEl = $("ways"), lastOut = $("lastout");
     const chartParts = [$("main"), qEl, $("steps"), cardsEl, ...rBtns, askBtn];
+    const twEl = $("tw"), twEnts = $("twents"), twCards = $("twcards"), twOut = $("twout"), wardEl = $("ward"), wcols = $("wcols"), wsay = $("wsay");
 
     // ---- art
     const kit = artKit(api);
-    kit.dressIntro(intro, intro.querySelector(".bd"), "chapter-3", "rgba(58,44,34,.6)");
+    kit.dressIntro(intro, intro.querySelector(".bd"), stage === 1 ? "chapter-3" : stage === 2 ? "chapter-4" : "chapter-7", "rgba(58,44,34,.6)");
+    lad.picker(intro.querySelector(".bd"), intro.querySelector("[data-start]"), stage, go, P.ink, P.paper);
     kit.fill(wrap, "." + K + "clipart", "clip", 176).then((ok) => { if (ok) $("clip").style.visibility = "hidden"; });
     kit.fill(wrap, "." + K + "holes", "punch-holes", 30);
     kit.fill(wrap, "." + K + "ord", "cutout-orderly", 40);
@@ -262,9 +331,12 @@ export default {
     // swap the CSS stamp for the rubber-stamp art once it is rasterised
     const inkStamps = (root, id) => { if (id) kit.png(id, 120).then((u) => { if (!u) return; root.querySelectorAll(`[data-stamp="${id}"]`).forEach((im) => { im.src = u; im.hidden = false; }); root.querySelectorAll(`[data-stampfb="${id}"]`).forEach((x) => x.remove()); }); };
     let phase = "chart";
-    const sched = { offered: false, read: false, found: {}, laid: {}, missed: {}, tries: {}, pick: null, way: null };
+    const sched = { offered: false, read: twist && !!api.store.get("sched_read", false), found: {}, laid: {}, missed: {}, tries: {}, pick: null, way: null };
 
-    let di = 0, shown = 0, sel = new Set(), card = null, tries = 0, idle = 0, hintAt = null, solved = [], broken = {}, filling = false, asks = ASKS, margins = [], justStruck = null;
+    let di = FIRST, shown = 0, sel = new Set(), card = null, tries = 0, idle = 0, hintAt = null, solved = [], broken = {}, filling = false, asks = ASKS, margins = [], justStruck = null;
+    if (stage >= 2) broken.L2 = "Is it the climate: no. height D1, height D2";
+    let mismatches = 0, under = false, rubbed = 0, twSel = new Set(), twCard = null, twWon = false;
+    ROWS.find((r) => r.id === "hunger").v = (d) => String(hungerOf(d));
     const day = () => DAYS[di];
 
     function renderGrid() {
@@ -339,8 +411,52 @@ export default {
       cardsEl.innerHTML = day().cards.map((c) => `<button type="button" aria-pressed="${card === c}">${c}</button>`).join("");
       cardsEl.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { if (filling || !nextBtn.hidden) return; card = b.textContent; idle = 0; renderCards(); renderSteps(); cardsEl.querySelector('[aria-pressed="true"]').focus(); }));
     }
-    function startDay() {
+    // your word is a row (test): he asks, and writes what you say
+    function askHunger(then) {
       const D = day();
+      filling = true; sel = new Set(); card = null; shown = 0; hintAt = null;
+      $("day").textContent = `DAY ${D.d + 1}`;
+      nextBtn.hidden = true; rBtns.forEach((b) => (b.disabled = true)); askBtn.disabled = true;
+      renderList(); renderGrid(); renderPlot(); renderRead();
+      qEl.textContent = "Orderly, pencil up: “Hunger. One to ten.”";
+      sayEl.textContent = "Your word is a row. He will write what you say.";
+      cardsEl.innerHTML = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => `<button type="button" data-h="${n}" aria-label="Say ${n}">${n}</button>`).join("");
+      cardsEl.querySelectorAll("[data-h]").forEach((b) => b.addEventListener("click", () => {
+        const n = +b.dataset.h, off = n - HUNGER[D.d];
+        reported[D.d] = n;
+        if (Math.abs(off) >= 2) mismatches++;
+        if (off <= -2) under = true;
+        then(off);
+      }));
+      cardsEl.querySelector("[data-h]").focus();
+    }
+    function renderWard() {
+      const on = stage === 2 && day().d === 4 && phase === "chart";
+      wardEl.hidden = !on;
+      if (!on) return;
+      wcols.innerHTML = "";
+      for (const c of CUT) {
+        const b = document.createElement("button");
+        b.type = "button"; b.setAttribute("aria-label", `A column cut off the sheet. Rub it with the pencil`);
+        b.innerHTML = c.rubbed ? `<b>${c.name}</b>last ${c.last}<br>${c.h} cm<br>hunger ${c.hunger}` : "✂<br>cut";
+        if (c.rubbed) { b.classList.add("rub"); b.disabled = true; }
+        else b.addEventListener("click", () => {
+          c.rubbed = true; rubbed++;
+          wsay.textContent = rubbed < 3 ? `Graphite over the dent: ${c.name}, last line ${c.last}. Height ${c.h}. Hunger, self: ${c.hunger}. Then the scissors.` : "Three columns, three last lines, and the same hunger on each: nine. Read the columns that are still on the sheet.";
+          if (rubbed === 3) { margins.push("Every cut column ends on hunger 9. Hollis said 9 this morning."); renderList(); }
+          renderWard();
+        });
+        wcols.appendChild(b);
+      }
+      for (const c of [...WARD, { name: "Fisk", h: f1(178 + 1.6 * CH[4]), hunger: hungerOf(4) }]) {
+        const d = document.createElement("div");
+        d.innerHTML = `<b>${c.name}</b>D5<br>${c.h} cm<br>hunger ${c.hunger}`;
+        wcols.appendChild(d);
+      }
+    }
+    function startDay(off) {
+      const D = day();
+      if (stage === 2 && reported[D.d] == null) return askHunger(startDay);
       sel = new Set(); card = null; tries = 0; idle = 0; hintAt = null; shown = 0; filling = true;
       $("day").textContent = `DAY ${D.d + 1}`;
       qEl.textContent = "";
@@ -356,7 +472,14 @@ export default {
         if (shown < ROWS.length) return later(fill, 170);
         filling = false;
         margins.push(D.d === 4 && sched.read ? "L15. My file has tomorrow in it. Typed." : D.margin); renderList();
-        sayEl.textContent = `Orderly: “${D.say}”`;
+        sayEl.textContent = `Orderly: “${D.say}”` + (off == null ? "" : off <= -2 ? ` You said ${reported[D.d]}. He looks at the grip and the pulse he has just written, and pencils a second number beside yours. Tomorrow's slab will be cut smaller.` : off >= 2 ? ` You said ${reported[D.d]}. He writes it, and a second number beside it.` : ` You said ${reported[D.d]}. He writes it.`) + (mismatches === 3 && off != null && Math.abs(off) >= 2 ? " Three mornings your word has not matched your grip: suspicion +10." : "");
+        renderWard();
+        if (stage === 2 && D.d === 4 && sh.get("route_photo", false) && !startDay.photo) {
+          startDay.photo = true;
+          lad.note(wrap, "because your prints in Snow line were big enough to photograph, the route is clipped to the orderly's board this morning.");
+          kit.png("print-photographed", 220).then((u) => { if (!u) return; const im = document.createElement("img"); im.className = K + "photo"; im.alt = "A photograph of the east yard: a line of large prints"; im.src = u; noteEl.after(im); });
+          margins.push("A photograph on his board: the east yard, my prints, 38 cm. Nobody followed them. They took a picture."); renderList();
+        }
         qEl.textContent = `Question, day ${D.d + 1}: ${D.q}`;
         rBtns.forEach((b) => (b.disabled = false)); askBtn.disabled = asks <= 0;
         grid.querySelector("td.cur button")?.focus();
@@ -370,7 +493,10 @@ export default {
       if (!card) { sayEl.textContent = "Pick the hypothesis card you are ruling on."; return; }
       const cells = [...sel].map((k) => { const [row, c] = k.split(":"); return { row, c: +c }; });
       const cellsOk = cells.every((x) => D.rows.includes(x.row) && D.cols.includes(x.c)) && D.need.every((n) => cells.some((x) => x.row === n)) && new Set(cells.map((x) => x.c)).size >= D.days;
-      const ok = cellsOk && card === D.card && r === "brk";
+      // your word is a row: the hunger cells are what he said, and they have to show what he claims
+      const hc = cells.filter((x) => x.row === "hunger").sort((a, b) => a.c - b.c).map((x) => hungerOf(x.c));
+      const wordOk = !(stage === 2 && D.need.includes("hunger")) || (hc.length >= 2 && hc[hc.length - 1] > hc[0]);
+      const ok = cellsOk && wordOk && card === D.card && r === "brk";
       if (ok) {
         broken[D.list] = (broken[D.list] ? broken[D.list] + "; " : "") + `${D.q.replace("?", "")}: no. ${cells.map((x) => `${x.row} D${x.c + 1}`).join(", ")}`;
         solved.push(D.d); justStruck = D.list;
@@ -380,8 +506,8 @@ export default {
         return;
       }
       tries++;
-      const why = card !== D.card ? "That card is not what this morning's question tests." : r !== "brk" ? "The cells say otherwise. Look at which way they move." : "Those cells do not show it.";
-      if (tries < 2) { sayEl.textContent = `${why} One retry.`; if (!reduce) sayEl.animate?.([{ transform: "translateX(-6px)" }, { transform: "translateX(6px)" }, { transform: "none" }], { duration: 300 }); return; }
+      const why = card !== D.card ? "That card is not what this morning's question tests." : r !== "brk" ? "The cells say otherwise. Look at which way they move." : cellsOk && !wordOk ? "The hunger row is your own word, and what you said does not rise with what you ate. You wrote it." : "Those cells do not show it.";
+      if (tries < TRIES) { sayEl.textContent = `${why} ${TRIES - tries === 1 ? "One retry" : "Two retries"}.`; if (!reduce) sayEl.animate?.([{ transform: "translateX(-6px)" }, { transform: "translateX(6px)" }, { transform: "none" }], { duration: 300 }); return; }
       sayEl.innerHTML = `${stampHtml("stamp-supported", "SHELVED")} ${why} Fisk shelves it: “${LIST.find((l) => l.id === D.list).why}” stands.`;
       inkStamps(sayEl, "stamp-supported");
       done();
@@ -389,6 +515,7 @@ export default {
     function ask() {
       if (filling || !nextBtn.hidden || asks <= 0) return;
       asks--; askBtn.textContent = `Ask the orderly · ${asks}`; askBtn.disabled = asks <= 0;
+      if (phase === "twist") { sayEl.textContent = "You ask what the cards mean. The orderly, to the clipboard: “On schedule.” His pencil is already over the box marked Supported. He has never been asked to hold it anywhere else."; return; }
       const D = day();
       hintAt = `${D.need[D.need.length - 1]}:${D.d}`; renderGrid();
       sayEl.textContent = `You ask what the numbers mean. The orderly: “${D.say}” He writes a line about the question. Fisk's pencil goes to one cell. (${D.hint})`;
@@ -396,7 +523,7 @@ export default {
     function done() {
       rBtns.forEach((b) => (b.disabled = true)); askBtn.disabled = true;
       sayEl.insertAdjacentText("beforeend", " Orderly: “Next.”");
-      nextBtn.hidden = false; nextBtn.textContent = di === 2 && !sched.offered ? "Night 4" : di < DAYS.length - 1 ? `Morning, day ${DAYS[di + 1].d + 1}` : sched.read ? "The second sheet" : "Close the chart";
+      nextBtn.hidden = false; nextBtn.textContent = stage === 1 ? "Close the chart" : di === 2 && !sched.offered ? "Night 4" : di < LAST ? `Morning, day ${DAYS[di + 1].d + 1}` : sched.read ? "The second sheet" : "Close the chart";
       renderSteps();
       nextBtn.focus();
     }
@@ -442,7 +569,7 @@ export default {
         <div class="${K}things">
           <button type="button" data-t="folder"><img alt="" data-a="form-7f" hidden><span>Folder 7-F · FISK<small>open it</small></span></button>
           <button type="button" data-t="env"><img alt="" data-a="thread-own" hidden><span>An envelope<small>look</small></span></button>
-          <button type="button" data-t="shelf"><img alt="" data-a="thread-guest" hidden><span>The staff shelf<small>look</small></span></button>
+          <button type="button" data-t="shelf"><img alt="" data-a="room-staff-mess" hidden><span>The staff shelf<small>look</small></span></button>
         </div>
         <div class="${K}folder" hidden><div class="${K}tabs" role="group" aria-label="Pages in the folder">${PAGES.map((pg, i) => `<button type="button" data-pg="${i}" aria-pressed="false">${pg.tab}</button>`).join("")}</div>
           <div class="${K}pg"><img alt=""><div class="${K}hits"></div></div></div>
@@ -489,7 +616,7 @@ export default {
       }
       const LOOK = {
         env: "An envelope stamped HOLD, a house drawn in one corner in a child's manner. It never left the building. It is not addressed to you.",
-        shelf: "The staff shelf: enamel mugs, a tin marked 7-F, and a blue and white tea caddy that does not belong to this base.",
+        shelf: "The staff shelf: enamel mugs and a tin marked 7-F. Staff food, kept apart from yours.",
       };
       el.querySelectorAll("[data-t]").forEach((b) => b.addEventListener("click", () => {
         if (b.dataset.t === "folder") { folder.hidden = false; showPage(0); folder.querySelector("[data-pg]").focus(); shutBtn.textContent = "Shut the cabinet and go back"; return; }
@@ -498,11 +625,11 @@ export default {
       folder.querySelectorAll("[data-pg]").forEach((b) => b.addEventListener("click", () => showPage(+b.dataset.pg)));
       const close = () => {
         el.remove(); lock(false); nightEl = null; nightKey = null; phase = "chart";
-        di++; dayBreak(DAYS[di].d + 1, `Morning, day ${DAYS[di].d + 1}`, startDay);
+        di++; dayBreak(DAYS[di].d + 1, `Morning, day ${DAYS[di].d + 1}`, () => startDay());
       };
       takeBtn.addEventListener("click", () => {
         if (sched.read) return close();
-        sched.read = true;
+        sched.read = true; api.store.set("sched_read", true);
         sayN("L15. My file has tomorrow in it. Typed. — You fold the blue carbon into your sock. New Mexico killed the ones who complained about the heat. You didn't complain. Lucky.");
         takeBtn.textContent = "Go back to the bunk"; shutBtn.hidden = true; takeBtn.focus();
       });
@@ -568,14 +695,67 @@ export default {
       renderSched();
       if (STRIP_ORDER.every((x) => sched.laid[x] || sched.missed[x])) {
         const n = Object.keys(sched.laid).length;
-        sayEl.insertAdjacentText("beforeend", ` ${n} of 4 laid.${n ? " Every discovery on those lines was issued." : ""} There is one more strip, and it is not for today.`);
-        nextBtn.hidden = false; nextBtn.textContent = "Day 7"; nextBtn.focus();
+        sayEl.insertAdjacentText("beforeend", ` ${n} of 4 laid.${n ? " Every discovery on those lines was issued." : ""} There are two more strips, and they are not for today.`);
+        nextBtn.hidden = false; nextBtn.textContent = "Close the chart"; nextBtn.focus();
       } else (stripsEl.querySelector("button:not(.laid)") || entsEl.querySelector("button"))?.focus();
+    }
+    // ---- the twist: day 6. The cards are the project's; the evidence is the list, and only what was not issued.
+    function openTwist() {
+      phase = "twist";
+      chartParts.forEach((x) => (x.hidden = true));
+      rBtns.forEach((b) => { b.hidden = false; b.disabled = false; }); askBtn.hidden = false; askBtn.disabled = asks <= 0;
+      twEl.hidden = false; nextBtn.hidden = true; tries = 0;
+      $("day").textContent = "DAY 6"; frost(4);
+      const iss = twEl.querySelector(".iss");
+      for (const e of ISSUED.filter((x) => sched.read || x.id !== "L15")) { const d = document.createElement("div"); d.appendChild(kit.img("schedule-strip-" + e.strip, 440, "")); const s = document.createElement("span"); s.textContent = schedText(e.strip); d.appendChild(s); iss.appendChild(d); }
+      const given = sh.get("bread_given", "");
+      if (given) lad.note(wrap, `because you gave bread to ${given} in Short Rations, there is one more line on the list that nobody issued.`);
+      const ents = [...ISSUED.filter((e) => sched.read || e.id !== "L15").map((e) => ({ ...e, issued: true })), ...OWN, ...(given ? [{ id: "A3", text: `Gave my loaf to ${given}. It is not on any strip.` }] : [])];
+      const order = ["L8", "A1", "L10", "L15", "A2", "L9", "A3"].map((id) => ents.find((e) => e.id === id)).filter(Boolean);
+      twEnts.innerHTML = "";
+      for (const e of order) {
+        const b = document.createElement("button");
+        b.type = "button"; b.className = K + "ent"; b.dataset.e = e.id; b.setAttribute("aria-pressed", "false");
+        b.innerHTML = `<b>${e.id}</b> ${e.text}${e.issued ? `<em>ISSUED · ${schedText(e.strip)}</em>` : ""}`;
+        b.addEventListener("click", () => { if (twWon || !nextBtn.hidden) return; twSel.has(e.id) ? twSel.delete(e.id) : twSel.add(e.id); b.setAttribute("aria-pressed", String(twSel.has(e.id))); });
+        twEnts.appendChild(b);
+      }
+      twCards.innerHTML = THEIRS.map((c) => `<button type="button" aria-pressed="false">${c}</button>`).join("");
+      twCards.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { if (!nextBtn.hidden) return; twCard = b.textContent; twCards.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); }));
+      sayEl.textContent = "The orderly lays this morning's strip on the clipboard. “Coming along,” he says, to the page. It is what Sam says.";
+      twEnts.querySelector("button").focus();
+    }
+    function ruleTwist(r) {
+      if (!nextBtn.hidden) return;
+      if (twSel.size < 2) { sayEl.textContent = "Pick at least two entries from the list. Yours, not theirs."; return; }
+      if (!twCard) { sayEl.textContent = "Pick the card you are ruling on."; return; }
+      const picked = [...twSel], theirs = picked.filter((id) => ISSUED.some((e) => e.id === id));
+      const ok = r === "brk" && twCard === THEIRS[0] && !theirs.length;
+      if (ok) {
+        twWon = true; api.store.set("losses", 0);
+        sayEl.innerHTML = `${stampHtml("stamp-broken", "BROKEN")} “${THEIRS[0]}.” Broken, on their sheet, with ${picked.join(" and ")} beside it. Nothing they typed made you do those. The orderly, who has not once looked at your face, looks up.`;
+        inkStamps(sayEl, "stamp-broken");
+        twOut.appendChild(kit.img("schedule-strip-6", 520, "Day 6's strip, stamped Broken", "strip"));
+        twOut.appendChild(kit.img("icon-gaze", 84, "He is looking at you", "eye"));
+        rBtns.forEach((b) => (b.disabled = true)); askBtn.disabled = true;
+        nextBtn.hidden = false; nextBtn.textContent = sched.read ? "Day 7" : "Close the chart"; nextBtn.focus();
+        return;
+      }
+      tries++;
+      const why = r !== "brk" ? "The orderly ticks the box without looking up. “On schedule.” That is the ruling they printed the card for."
+        : twCard !== THEIRS[0] ? "Nothing you have written answers that card. It is about tonight and tomorrow night, and those are not on your side of the page yet."
+        : `${theirs.join(" and ")} will not do. ${theirs.length > 1 ? "They were" : "It was"} issued: typed the day before you found ${theirs.length > 1 ? "them" : "it"}. A thing they gave you cannot be held against them.`;
+      if (tries < TRIES + (losses >= 2 ? 1 : 0)) { sayEl.textContent = `${why} ${tries === 1 ? "Try again." : "Once more."}`; if (!reduce) sayEl.animate?.([{ transform: "translateX(-6px)" }, { transform: "translateX(6px)" }, { transform: "none" }], { duration: 300 }); return; }
+      sayEl.innerHTML = `${stampHtml("stamp-supported", "SUPPORTED")} ${why} The strip goes back under the clip as it was typed.`;
+      inkStamps(sayEl, "stamp-supported");
+      rBtns.forEach((b) => (b.disabled = true)); askBtn.disabled = true;
+      nextBtn.hidden = false; nextBtn.textContent = "Close the chart"; nextBtn.focus();
     }
     // ---- the last step: day 7's line, typed before the choice
     function openLast() {
       phase = "last";
-      schEl.hidden = true; lastEl.hidden = false; nextBtn.hidden = true;
+      schEl.hidden = true; twEl.hidden = true; lastEl.hidden = false; nextBtn.hidden = true;
+      rBtns.forEach((b) => (b.hidden = true)); askBtn.hidden = true;
       $("day").textContent = "DAY 7"; frost(4);
       $("typed").textContent = `22:00  ${SCHED[7].lines[0]}\n       ${SCHED[7].lines[1]}\n       ${SCHED[7].lines[2]}`;
       waysEl.innerHTML = WAYS.map((w) => `<button type="button" data-w="${w.id}" aria-pressed="false">${w.label}</button>`).join("") + `<button type="button" class="pencil" data-w="pencil" aria-pressed="false">Write a line they have not typed ✎</button>`;
@@ -599,47 +779,65 @@ export default {
       nextBtn.hidden = false; nextBtn.textContent = "Close the chart"; nextBtn.focus();
     }
     function finishAll() {
+      if (stage === 1) {
+        const ok = solved.length === 1;
+        api.store.set("losses", ok ? 0 : losses + 1);
+        return lad.conclude(wrap, kit, stage, { card: "form-7f", stamp: ok ? "stamp-broken" : "stamp-supported", caption: ok ? "CASE 7-F · DAY 2 · BROKEN" : "CASE 7-F · DAY 2 · SHELVED" },
+          ok ? { outcome: "win", text: "Day 2. A climate can make a man thin; it does not make him taller overnight. “Seen worse” is struck through on the list, with two of your own numbers beside it. The orderly: “Next.”" }
+            : { outcome: "lose", text: "Day 2. Fisk shelves it: the climate, a bad posting, he has seen worse. The numbers stay on the sheet, unread." }, go);
+      }
+      if (twist) {
+        if (!twWon) api.store.set("losses", losses + 1);
+        const coda = !sched.way ? "" : sched.way === "pencil" ? " Day 7: the last line on your sheet is in the orderly's handwriting, not his typewriter's." : " Day 7 went the way it was typed.";
+        return lad.conclude(wrap, kit, stage, twWon ? { card: "schedule", caption: "SCHEDULE · DAY 6 · RESPONSE: BROKEN" } : { card: "schedule", stamp: "stamp-supported", caption: "SCHEDULE · DAY 6 · ON SCHEDULE" },
+          twWon ? { outcome: "win", text: `Day 6. Their card said you would report him, and their own sheet could not show it: everything they could point to, they had issued. What broke it was in your hand, and it was not on any strip. The orderly looked up. He will have to write that down, and there is no box for it.${coda}` }
+            : { outcome: "lose", text: `Day 6. The card stands as typed. Their numbers could not break their own hypothesis, and the things they issued could not either. The orderly did not look up.${coda}` }, go);
+      }
+      sh.set("hunger_under", under);
       const n = solved.length;
-      const knows = n >= 3 ? "pattern" : "anomaly";
-      api.store.set("losses", n >= 3 ? 0 : losses + 1);
+      const knows = n >= 2 ? "pattern" : "anomaly";
+      api.store.set("losses", n >= 2 ? 0 : losses + 1);
       const laid = Object.keys(sched.laid).length;
       const sheet = !sched.offered ? "" : !sched.read ? " The cabinet stayed shut; whatever is in that folder, you chose not to know it."
-        : ` The Schedule: ${laid} of 4 strips laid against the list. ${sched.way === "pencil" ? "The last line on your sheet is in the orderly's handwriting, not his typewriter's." : "Day 7 went the way it was typed."}`;
+        : ` The Schedule: ${laid} of 4 strips laid against the list.`;
+      const word = (under ? " You told him you were less hungry than you were; tomorrow's slab is cut smaller for it." : "") + (mismatches >= 3 ? " Three mornings your word did not match your grip: suspicion +10." : "") + (rubbed === 3 ? " Three cut columns, each ending on hunger 9; Hollis said 9 this morning." : "");
       let result;
-      if (n === 4) result = { outcome: "win", text: `All four broken. The climate, the food, the hunger and the routine: none of it holds against your own numbers, and they keep to a printed curve, “on schedule”. Fisk knows it is a pattern (knows: ${knows}).${sheet}` };
-      else if (n >= 3) result = { outcome: "win", text: `${n} of 4 explanations broken. Your own numbers keep to a printed curve: “on schedule”. Fisk knows it is a pattern (knows: ${knows}), even with one entry left standing on the list.${sheet}` };
-      else result = { outcome: "lose", text: `${n} of 4 broken. Fisk shelved the rest; the explanations stand, and the chart keeps to its curve whether he reads it or not (knows: ${knows}).${sheet}` };
-      const win = n >= 3;
-      kit.endCard(wrap, { card: win ? (sched.way === "pencil" ? "schedule" : "target-sheet") : "form-7f", stamp: win ? (sched.way === "pencil" ? "" : "stamp-broken") : "stamp-supported", caption: win ? "CASE 7-F · KNOWS: PATTERN" : "CASE 7-F · SHELVED" }, result);
+      if (n === 3) result = { outcome: "win", text: `All three broken, with the climate before them. The food, the hunger and the routine: none of it holds against your own numbers, and they keep to a printed curve, “on schedule”. Fisk knows it is a pattern (knows: ${knows}).${sheet}${word}` };
+      else if (n >= 2) result = { outcome: "win", text: `${n} of 3 explanations broken. Your own numbers keep to a printed curve: “on schedule”. Fisk knows it is a pattern (knows: ${knows}), even with one entry left standing on the list.${sheet}${word}` };
+      else result = { outcome: "lose", text: `${n} of 3 broken. Fisk shelved the rest; the explanations stand, and the chart keeps to its curve whether he reads it or not (knows: ${knows}).${sheet}${word}` };
+      const win = n >= 2;
+      lad.conclude(wrap, kit, stage, { card: win ? "target-sheet" : "form-7f", stamp: win ? "stamp-broken" : "stamp-supported", caption: win ? "CASE 7-F · KNOWS: PATTERN" : "CASE 7-F · SHELVED" }, result, go);
     }
     const onNext = () => {
-      if (phase === "schedule") return dayBreak(7, "Morning, day 7", openLast);
-      if (phase === "last") return finishAll();
+      if (phase === "schedule" || phase === "last") return finishAll();
+      if (phase === "twist") return twWon && sched.read ? dayBreak(7, "Morning, day 7", openLast) : finishAll();
       if (phase !== "chart") return;
+      if (stage === 1) return finishAll();
       if (di === 2 && !sched.offered) { sched.offered = true; nextBtn.hidden = true; return openCarbon(); }
-      if (di < DAYS.length - 1) { di++; return dayBreak(DAYS[di].d + 1, `Morning, day ${DAYS[di].d + 1}`, startDay); }
+      if (di < LAST) { di++; return dayBreak(DAYS[di].d + 1, `Morning, day ${DAYS[di].d + 1}`, () => startDay()); }
       if (sched.read) return openSchedule();
       finishAll();
     };
     nextBtn.addEventListener("click", onNext);
-    rBtns.forEach((b) => b.addEventListener("click", () => rule(b.dataset.r)));
+    rBtns.forEach((b) => b.addEventListener("click", () => (phase === "twist" ? ruleTwist(b.dataset.r) : rule(b.dataset.r))));
     askBtn.addEventListener("click", ask);
     const onKey = (e) => {
       if (nightKey && phase === "carbon") return nightKey(e);
-      if (phase !== "chart" || brkEl) return;
+      if ((phase !== "chart" && phase !== "twist") || brkEl) return;
       if (intro.isConnected || filling || !nextBtn.hidden) return;
-      if (e.key === "s" || e.key === "S") { rule("sup"); e.preventDefault(); }
-      if (e.key === "b" || e.key === "B") { rule("brk"); e.preventDefault(); }
+      const R = phase === "twist" ? ruleTwist : rule;
+      if (e.key === "s" || e.key === "S") { R("sup"); e.preventDefault(); }
+      if (e.key === "b" || e.key === "B") { R("brk"); e.preventDefault(); }
     };
     window.addEventListener("keydown", onKey);
     // at clarity tier 1 Fisk's pencil hovers over a telling cell after a while, for free (sooner after two lost charts)
     const hintTimer = setInterval(() => {
       if (filling || !nextBtn.hidden || intro.isConnected || phase !== "chart" || brkEl) return;
       idle++;
-      if (idle === (losses >= 2 ? 12 : 30) && !hintAt) { const D = day(); hintAt = `${D.need[0]}:${D.d}`; renderGrid(); sayEl.textContent = D.hint; }
+      if (phase === "chart" && idle === (losses >= 2 || stage === 1 ? 12 : 30) && !hintAt) { const D = day(); hintAt = `${D.need[0]}:${D.d}`; renderGrid(); sayEl.textContent = D.hint; }
     }, 1000);
     const startBtn = intro.querySelector("[data-start]");
-    const start = () => { intro.remove(); startDay(); };
+    const start = () => { intro.remove(); if (twist) dayBreak(6, "Morning, day 6", openTwist); else startDay(); };
     startBtn.addEventListener("click", start);
     renderGrid(); renderPlot(); renderList(); renderCards(); renderRead();
     rBtns.forEach((b) => (b.disabled = true)); askBtn.disabled = true;
@@ -653,5 +851,6 @@ export default {
         wrap.remove();
       },
     };
+    }
   },
 };
