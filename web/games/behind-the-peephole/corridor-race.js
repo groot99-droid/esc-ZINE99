@@ -13,14 +13,19 @@
 // sprites, keyed out of their paper; the bell board strip rings with each bell; chapter card two
 // opens the sheet. The pipe run and the loose boards follow the drawing: 16 to 38 m, 38 to 42 m.
 
+// Phase 2 (2026-11-16): the ladder. TEACH: one bell, the long run and the loose boards, nothing else
+// awake. TEST: the stretch above, with the BELL WIRES (T at an occupied door: one tug a room, the guest
+// goes to the main door and off the bathroom window; they feel it, +10) and Dora's PARKED TROLLEY left
+// in the passage after her round (walk into it to push it at 0.6 m/s; behind it the light well cannot
+// see you; it will not pass the cabinet at 33 m). TWIST: night five, the blackout (`n5_blackout`,
+// `n5_linen_count`): the hazards change places. The windows are dark and harmless, the pipe run rings,
+// and Dora stands counting at the open cabinet: move only while she counts aloud. Then the seventh coin.
+// Layer link (api.shared "lostProperty", set by Lockwork): Dora stops at the cabinet on her round and
+// leaves the trolley there, so the floor is shut at 33 m and the pipe run is the way past.
+import { staged } from "./_stages.js";
+
 const LEN = 64;
 const DOORS = { r401: 8, r402: 16, r403: 28, r404: 36, r405: 46, r406: 56 };
-// Threshold and glimpse lines are the clue texts of night two in beats.json.
-const RETURNS = [
-  { room: "r401", bell: "01:15", door: "01:27", line: "A suit, not his kit." },
-  { room: "r405", bell: "01:45", door: "01:57", line: "Grease under her nails again." },
-  { room: "r406", bell: "02:00", door: "02:12", line: "A coil of blue rope." },
-];
 const GLIMPSE = {
   r402: "Presses the orchid in the hotel directory.",
   r404: "A miniature into the sink; \"401\" on the notepad.",
@@ -28,12 +33,23 @@ const GLIMPSE = {
   r405: "Chess by phone: \"Nf3.\"",
   r406: "Boat three on the sill.",
 };
-const IN_AT_START = ["r404", "r402"];
-const WINDOWS = [18, 26], BOARDS = [38, 42], LEDGE = [16, 38], LEDGE_H = 0.6;
+const WINDOWS = [18, 26], BOARDS = [38, 42], LEDGE = [16, 38], LEDGE_H = 0.6, CABINET = 33;
 const ALCOVES = [12, 50];
 const MIN = (t) => { const [h, m] = t.split(":").map(Number); return (h < 12 ? h + 24 : h) * 60 + m; };
-const START = MIN("01:00"), END = MIN("02:15");
-const SPM = 1.5; // real seconds per game minute (40x)
+// Threshold and glimpse lines are the clue texts of night two in beats.json.
+const RUNS = [
+  { night: 2, start: "01:40", end: "02:00", spm: 1.5, inAt: ["r404", "r402", "r401", "r406"], returns: [{ room: "r405", bell: "01:45", door: "01:57", line: "Grease under her nails again." }],
+    goal: "One bell. Be at 405 when its door opens. Run the long stretch; walk the loose boards.", sheet: "SHEET 3 / 7", go: "START · 01:40",
+    open: "Night two, 01:40. Dora has gone down in the lift and one guest is still out. Forty-six metres to her door, and four loose boards on the way." },
+  { night: 2, start: "01:00", end: "02:15", spm: 1.5, inAt: ["r404", "r402"], dora: true, windows: true,
+    returns: [{ room: "r401", bell: "01:15", door: "01:27", line: "A suit, not his kit." }, { room: "r405", bell: "01:45", door: "01:57", line: "Grease under her nails again." }, { room: "r406", bell: "02:00", door: "02:12", line: "A coil of blue rope." }],
+    goal: "Be at each door as it opens: 401, 405, 406. Dora must not see you twice.", sheet: "SHEET 4 / 7", go: "START · 01:00",
+    open: "Night two, 01:00. Dora's trolley is at the stair end and three guests are still out. The bell will tell you who, and when." },
+  { night: 5, start: "01:50", end: "02:22", spm: 2.4, inAt: ["r401", "r402", "r403", "r404", "r405", "r406"], dark: true,
+    returns: [{ room: "r406", bell: "01:51", door: "02:14", line: "A knock at her main door: two quick, one slow. You were at the rose." }],
+    goal: "Lights out. Be at 406 for the knock at 2:14. Pass Dora only while she counts aloud.", sheet: "SHEET 6 / 7", go: "START · 01:50",
+    open: "Night five, 01:50. The passage circuit trips. Six coins of light ahead, one at each rose, and a candle at the open cabinet where Dora is counting what the guests left. Tonight the knock is at 406." },
+];
 const NOTES = {
   open: "Night two, 01:00. Dora's trolley is at the stair end and three guests are still out. The bell will tell you who, and when.",
   dora: "Wheels at the stair end: Dora, with the linen. She doesn't speak to you. She tells Lew.",
@@ -42,10 +58,14 @@ const NOTES = {
   two: "Two bells inside a quarter hour, ten metres apart. Choose your floor.",
 };
 
-export default {
-  mount(root, api) {
-    const P = "behind-the-peephole-corridor-race-";
-    const C = { paper: "#efe6cf", ink: "#1c1a17", faint: "#7a705a", ev: "#a3302a", amber: "#e0a24a", amberL: "#f6cf86", brass: "#b8913f", river: "#6f7c80", bottle: "#1f3d2c", blue: "#2a3a8c" };
+const P = "behind-the-peephole-corridor-race-";
+export default staged(P, ["the boards", "two bells, Dora, the wires", "the blackout"], function play(root, api, stage) {
+    const RUN = RUNS[stage.stage], RETURNS = RUN.returns, IN_AT_START = RUN.inAt, START = MIN(RUN.start), END = MIN(RUN.end), SPM = RUN.spm, DARK = !!RUN.dark;
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const LOSTP = stage.stage === 1 && !!shared.get("lostProperty", false);
+    const C = DARK ? { paper: "#0b0a09", ink: "#d9cfb4", faint: "#6b6350", ev: "#e8825a", amber: "#e0a24a", amberL: "#f6cf86", brass: "#b8913f", river: "#6f7c80", bottle: "#1f3d2c", blue: "#9db0e8" }
+      : { paper: "#efe6cf", ink: "#1c1a17", faint: "#7a705a", ev: "#a3302a", amber: "#e0a24a", amberL: "#f6cf86", brass: "#b8913f", river: "#6f7c80", bottle: "#1f3d2c", blue: "#2a3a8c" };
+    const PANEL = DARK ? "#171512" : "#fbf6e8";
     const RM = api.reducedMotion;
     const streak = api.store.get("lossStreak", 0);
     let gentle = api.store.get("gentle", false);
@@ -54,13 +74,13 @@ export default {
     .${P}wrap{position:absolute;inset:0;background:${C.paper};overflow:hidden;touch-action:none;user-select:none;font-family:'IBM Plex Mono',ui-monospace,monospace;color:${C.ink}}
     .${P}wrap canvas{position:absolute;inset:0;width:100%;height:100%}
     .${P}pad{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;flex-wrap:wrap;gap:6px;padding:0 10px}
-    .${P}b{font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.06em;background:#fbf6e8;color:${C.ink};border:1.4px solid ${C.ink};min-width:50px;min-height:44px;padding:4px 10px;cursor:pointer;touch-action:none;transition:background .12s}
-    .${P}b:hover,.${P}b:focus-visible{background:#f3e3b8;outline:none}
+    .${P}b{font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.06em;background:${PANEL};color:${C.ink};border:1.4px solid ${C.ink};min-width:50px;min-height:44px;padding:4px 10px;cursor:pointer;touch-action:none;transition:background .12s}
+    .${P}b:hover,.${P}b:focus-visible{background:${DARK ? "#2a251d" : "#f3e3b8"};outline:none}
     .${P}b.on{background:${C.ink};color:${C.paper}}
     .${P}b[hidden]{display:none}
     .${P}b.new{animation:${P}n 1s ease-in-out 3}
     @keyframes ${P}n{50%{box-shadow:0 0 0 3px ${C.ev}}}
-    .${P}block{position:absolute;left:14px;right:14px;display:grid;grid-template-columns:minmax(0,1fr) auto;border:1.4px solid ${C.ink};background:rgba(251,246,232,.92);font-size:13px;line-height:1.35}
+    .${P}block{position:absolute;left:14px;right:14px;display:grid;grid-template-columns:minmax(0,1fr) auto;border:1.4px solid ${C.ink};background:${DARK ? "rgba(23,21,18,.92)" : "rgba(251,246,232,.92)"};font-size:13px;line-height:1.35}
     .${P}block .n{padding:6px 10px;border-right:1.4px solid ${C.ink};min-height:5.4em}
     .${P}block .n p{margin:0}
     .${P}block .n p:first-child{color:${C.ev};font-weight:600}
@@ -68,8 +88,8 @@ export default {
     .${P}block .t{padding:6px 10px;white-space:nowrap}
     .${P}block .t b{display:block;font-size:14px;letter-spacing:.08em}
     @media (max-width:640px){.${P}block{grid-template-columns:1fr}.${P}block .n{min-height:8.2em}.${P}block .n{border-right:0;border-top:1.4px solid ${C.ink};order:2}.${P}block .t{white-space:normal}}
-    .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(239,230,207,.94);z-index:3;padding:12px;overflow:auto}
-    .${P}sheet{max-width:560px;width:100%;border:1.6px solid ${C.ink};background:#fbf6e8 repeating-linear-gradient(0deg,transparent 0 23px,rgba(42,58,140,.07) 23px 24px),#fbf6e8;font-size:14px;line-height:1.45;box-shadow:6px 6px 0 rgba(28,26,23,.12)}
+    .${P}intro{position:absolute;inset:0;display:grid;place-items:center;color:${C.ink};background:${DARK ? "rgba(11,10,9,.94)" : "rgba(239,230,207,.94)"};z-index:3;padding:12px;overflow:auto}
+    .${P}sheet{max-width:560px;width:100%;border:1.6px solid ${C.ink};background:${PANEL} repeating-linear-gradient(0deg,transparent 0 23px,rgba(42,58,140,.07) 23px 24px);font-size:14px;line-height:1.45;box-shadow:6px 6px 0 rgba(28,26,23,.12)}
     .${P}sheet .hd{display:flex;justify-content:space-between;gap:8px;border-bottom:1.4px solid ${C.ink};padding:8px 12px;font-weight:600;letter-spacing:.12em;font-size:13px}
     .${P}sheet h2{margin:0;padding:12px 12px 4px;font-size:22px;letter-spacing:.18em}
     .${P}sheet .goal{margin:0;padding:0 12px 8px;font-weight:600}
@@ -77,7 +97,7 @@ export default {
     .${P}sheet table{width:calc(100% - 24px);margin:0 12px 10px;border-collapse:collapse}
     .${P}sheet td{border:1px solid ${C.ink};padding:5px 8px;vertical-align:top}
     .${P}sheet td:first-child{font-weight:600;white-space:nowrap;width:1%}
-    .${P}sheet kbd{font:inherit;border:1px solid ${C.faint};padding:0 4px;background:#fff}
+    .${P}sheet kbd{font:inherit;border:1px solid ${C.faint};padding:0 4px;background:#fff;color:#1c1a17}
     .${P}sheet .ft{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1.4px solid ${C.ink};padding:8px 12px}
     .${P}sheet label{font-size:13px}
     `;
@@ -89,7 +109,7 @@ export default {
     block.innerHTML = `<div class="n"></div><div class="t"></div>`; wrap.appendChild(block);
     const blockN = block.querySelector(".n"), blockT = block.querySelector(".t");
     const pad = document.createElement("div"); pad.className = P + "pad";
-    pad.innerHTML = ["◀:left", "▶:right", "RUN:run", "CRAWL:crawl", "▲ PIPE:up:1", "▼ DOWN:down:1", "HOP:hop:1", "ROSE · E:rose:1"].map((s) => { const [l, a, h] = s.split(":"); return `<button type="button" class="${P}b" data-a="${a}"${h ? " hidden" : ""}>${l}</button>`; }).join("");
+    pad.innerHTML = ["◀:left", "▶:right", "RUN:run", "CRAWL:crawl", "▲ PIPE:up:1", "▼ DOWN:down:1", "HOP:hop:1", "ROSE · E:rose:1", "WIRE · T:wire:1"].map((s) => { const [l, a, h] = s.split(":"); return `<button type="button" class="${P}b" data-a="${a}"${h ? " hidden" : ""}>${l}</button>`; }).join("");
     wrap.appendChild(pad);
     const btn = (a) => pad.querySelector(`[data-a="${a}"]`);
 
@@ -106,14 +126,15 @@ export default {
         g.drawImage(im, 0, 0, w, h);
         if (key) { // paper to nothing, ink stays: alpha from darkness
           const d = g.getImageData(0, 0, w, h), q = d.data;
-          for (let i = 0; i < q.length; i += 4) { const l = (q[i] * 0.3 + q[i + 1] * 0.59 + q[i + 2] * 0.11); const a = Math.max(0, Math.min(1, (222 - l) / 120)); q[i + 3] = Math.round(a * 255); }
+          for (let i = 0; i < q.length; i += 4) { const l = (q[i] * 0.3 + q[i + 1] * 0.59 + q[i + 2] * 0.11); const a = Math.max(0, Math.min(1, (222 - l) / 120)); q[i + 3] = Math.round(a * 255); if (DARK) { q[i] = 217; q[i + 1] = 207; q[i + 2] = 180; } }
           g.putImageData(d, 0, 0);
         }
       } catch { return null; }
       return (A[id] = c);
     }
     (async () => {
-      await raster("passage-lit", 3200 * BGK, 520 * BGK);
+      const bgc = await raster(DARK ? "passage-blackout" : "passage-lit", 3200 * BGK, 520 * BGK); if (bgc) A["passage-lit"] = bgc;
+      if (DARK) await raster("sprite-seventh-coin", 480, 360);
       await Promise.all([raster("sprite-watcher", 840, 360, true), raster("sprite-dora-trolley", 640, 360, true), raster("ui-bell-strip", 480, 150)]);
       if (!disposed) resize();
     })();
@@ -126,6 +147,9 @@ export default {
     const caught = new Set(), missed = new Set(), glimpsed = new Set();
     let seenByStaff = 0, maidSeeing = false, rungBells = new Set(), bellFlash = null;
     const seenAt = new Set(); let lastBoard = -1;
+    // phase 2: the wires, the parked trolley, the blackout
+    const wired = {}, wireUntil = {}; let trolley = null, heardThis = false, coin = null, coinAsk = 0, saidDora = false, creaks = 0;
+    const CYC = () => 3.6 + (gentle ? 1.4 : 2.0), listening = () => DARK && started && (game * SPM) % CYC() >= 3.6;
     const notes = [];
     const fx = []; // flourishes: {kind, x, t}
     let left = false, right = false, runHeld = false, runToggle = false, crawlToggle = false, downHeld = false, roseHeld = false, roseT = 0;
@@ -139,8 +163,15 @@ export default {
 
     const T = () => START + game;
     const occupied = (r, t) => IN_AT_START.includes(r) || RETURNS.some((x) => x.room === r && t >= MIN(x.door));
-    const atWindow = (r, t) => occupied(r, t) && ((Math.floor(t) + { r401: 1, r402: 3, r403: 5, r404: 7, r405: 9, r406: 4 }[r]) % 10) === 0;
-    const maidPos = (t) => (t >= MIN("01:00") && t < MIN("01:30") ? 64 - 0.9 * (t - MIN("01:00")) * SPM : null);
+    const atWindow = (r, t) => RUN.windows && occupied(r, t) && !((wireUntil[r] || 0) > t) && ((Math.floor(t) + { r401: 1, r402: 3, r403: 5, r404: 7, r405: 9, r406: 4 }[r]) % 10) === 0;
+    // Dora's round, 01:00 to 01:30; with lost property opened she stops two minutes at the cabinet
+    const maidPos = (t) => {
+      if (DARK) return CABINET + 0.9;
+      if (!RUN.dora || t < START || t >= START + 30) return null;
+      const d = 0.9 * SPM, m = t - START, tc = (64 - (CABINET + 1)) / d;
+      if (!LOSTP || m < tc) return 64 - d * m;
+      return CABINET + 1;
+    };
     const inAlcove = () => me.level === 0 && ALCOVES.some((a) => Math.abs(me.x - a) < 0.7);
     const doorHere = () => { for (const r in DOORS) if (Math.abs(me.x - DOORS[r]) < 0.8 && me.level === 0) return r; return null; };
     const sight = () => (gentle ? 4 : 6);
@@ -150,15 +181,20 @@ export default {
       game += dt / SPM;
       const t = T();
       if (t >= END) { finish(); return; }
-      if (!unlocked.has("dora") && t >= MIN("01:01")) { unlocked.add("dora"); tell(NOTES.dora); }
-      if (!unlocked.has("doraGone") && t >= MIN("01:30")) { unlocked.add("doraGone"); tell(NOTES.doraGone); }
-      if (!unlocked.has("two") && t >= MIN("02:00")) { unlocked.add("two"); tell(NOTES.two); }
-      if (me.x > 11) unlock("up", "The pipe run, +0.60 under the light-well windows: nobody sees you up there. ▲ / W.");
-      if (me.x > 32) unlock("hop", "Loose boards ahead, the four from 38 m. Walk them, or hop one: Space.");
-      if (t >= MIN("01:04")) unlock("rose", "Between bells, an occupied rose is a glimpse for the log: hold E at its door. They feel it.");
+      if (stage.stage === 1) {
+        if (!unlocked.has("dora") && t >= START + 1) { unlocked.add("dora"); tell(LOSTP ? "Because you opened lost property in Lockwork, Dora's round ends at the cabinet tonight, and her trolley stays against it." : NOTES.dora); }
+        if (!unlocked.has("doraGone") && t >= START + 30) { unlocked.add("doraGone"); trolley = { x: LOSTP ? CABINET - 0.9 : maidPos(START + 29.99) - 0.4 }; tell(LOSTP ? "Dora goes down in the lift. Her trolley stays against the cabinet: the floor is shut at 33 m. The pipe run goes over." : "Dora goes down in the lift and leaves the trolley in the passage. Walk into it to push it: behind it, the light well cannot see you."); }
+        if (!unlocked.has("two") && t >= MIN("02:00")) { unlocked.add("two"); tell(NOTES.two); }
+        if (t >= START + 4) unlock("rose", "Between bells, an occupied rose is a glimpse for the log: hold E at its door. They feel it.");
+        if (t >= START + 8) unlock("wire", "The 1926 bell wires run over the pipes. At an occupied door, T tugs its wire: the guest goes to the main door, off the bathroom window. One tug a room; they feel it.");
+      }
+      if (!DARK && me.x > 11 && stage.stage > 0) unlock("up", "The pipe run, +0.60 under the light-well windows: nobody sees you up there. ▲ / W.");
+      if (DARK && me.x > 11) unlock("up", "");
+      if (me.x > 32 || stage.stage === 0 && me.x > 20) unlock("hop", DARK ? "" : "Loose boards ahead, the four from 38 m. Walk them, or hop one: Space.");
+      if (DARK) stepDark(dt, t);
       // bells
       for (const r of RETURNS) {
-        if (!rungBells.has(r.room) && t >= MIN(r.bell)) { rungBells.add(r.room); bellFlash = { room: r.room, t: performance.now() }; note(`BELL ${r.room.slice(1)} · ${"●".repeat(+r.room.slice(3))} · door opens ${r.door}`); }
+        if (!rungBells.has(r.room) && t >= MIN(r.bell)) { rungBells.add(r.room); bellFlash = { room: r.room, t: performance.now() }; note(DARK ? `THE KNOCK IS DUE AT ${r.room.slice(1)} · ${r.door}` : `BELL ${r.room.slice(1)} · ${"●".repeat(+r.room.slice(3))} · door opens ${r.door}`); }
         if (!caught.has(r.room) && !missed.has(r.room) && t >= MIN(r.door)) {
           if (Math.abs(me.x - DOORS[r.room]) < 1.2 && me.level === 0 && !blind.has(r.room)) {
             caught.add(r.room); note(`${r.room.slice(1)} · THRESHOLD CAUGHT: ${r.line}`);
@@ -177,9 +213,14 @@ export default {
       else if (left && !right) { vx = -sp; me.dir = -1; } else if (right && !left) { vx = sp; me.dir = 1; }
       let nx = me.x + vx * dt;
       const mp = maidPos(t);
-      if (mp != null && me.level === 0 && me.hop === 0) {
+      if (mp != null && !DARK && me.level === 0 && me.hop === 0) {
         if (me.x <= mp - 1 && nx > mp - 1) nx = mp - 1;
         if (me.x >= mp + 0.8 && nx < mp + 0.8) nx = mp + 0.8;
+      }
+      if (trolley && me.level === 0 && me.hop === 0) { // push it: 0.6 m/s, and never past the cabinet
+        const push = (to) => { const lim = trolley.x < CABINET ? [0.9, CABINET - 0.8] : [CABINET + 0.8, LEN - 0.9]; return Math.max(lim[0], Math.min(lim[1], to)); };
+        if (me.x <= trolley.x - 0.7 && nx > trolley.x - 0.7) { const tx = push(trolley.x + Math.min(nx - (trolley.x - 0.7), 0.6 * dt)); nx = tx - 0.7; trolley.x = tx; trolley.pushed = true; }
+        else if (me.x >= trolley.x + 0.7 && nx < trolley.x + 0.7) { const tx = push(trolley.x - Math.min(trolley.x + 0.7 - nx, 0.6 * dt)); nx = tx + 0.7; trolley.x = tx; trolley.pushed = true; }
       }
       nx = Math.max(0.4, Math.min(LEN - 0.4, nx));
       me.moving = Math.abs(nx - me.x) / Math.max(dt, 1e-3);
@@ -189,7 +230,9 @@ export default {
       // the boards
       const bi = me.x >= BOARDS[0] && me.x < BOARDS[1] ? Math.floor(me.x - BOARDS[0]) : -1;
       if (bi !== lastBoard) {
-        if (bi >= 0 && me.level === 0 && me.hop === 0 && me.run && me.moving > 2) {
+        if (bi >= 0 && me.level === 0 && me.hop === 0 && me.run && me.moving > 2 && !(trolley && Math.abs(trolley.x - me.x) < 1.2)) {
+          creaks++;
+          if (DARK) heard("A BOARD CREAKS IN THE DARK");
           note("CREAK · +25 TO EVERY OCCUPIED ROOM WITHIN 12 m");
           fx.push({ kind: "creak", x: me.x, t: performance.now() });
           for (const r in DOORS) if (occupied(r, t) && Math.abs(DOORS[r] - me.x) <= 12) bump(r, 25);
@@ -197,11 +240,11 @@ export default {
         lastBoard = bi;
       }
       // the light-well windows
-      if (me.level === 0 && !me.crawl && me.x >= WINDOWS[0] && me.x <= WINDOWS[1]) {
+      if (me.level === 0 && !me.crawl && me.x >= WINDOWS[0] && me.x <= WINDOWS[1] && !(trolley && Math.abs(trolley.x - me.x) < 1.3)) {
         for (const r in DOORS) if (atWindow(r, t) && !seenAt.has(r + Math.floor(t))) { seenAt.add(r + Math.floor(t)); bump(r, 30); note(`SEEN ACROSS THE LIGHT WELL BY ${r.slice(1)} · +30`); fx.push({ kind: "seen", x: me.x, t: performance.now() }); }
       }
       // the maid
-      const sees = mp != null && me.level === 0 && !inAlcove() && me.x < mp && mp - me.x <= sight();
+      const sees = mp != null && !DARK && me.level === 0 && !inAlcove() && me.x < mp && mp - me.x <= sight();
       if (sees && !maidSeeing) { seenByStaff++; note(`DORA SEES YOU · SEEN BY STAFF ${seenByStaff} OF 2`); fx.push({ kind: "seen", x: me.x, t: performance.now() }); }
       maidSeeing = sees;
       // the rose: a glimpse for the log
@@ -214,6 +257,32 @@ export default {
       for (const r in susp) if (!(roseHeld && d === r)) susp[r] = Math.max(0, susp[r] - dt);
       paintBlock();
     }
+    function heard(why) {
+      if (heardThis || over) return; heardThis = true; seenByStaff++;
+      note(`${why} · DORA STOPS COUNTING · HEARD ${seenByStaff} OF 2`); fx.push({ kind: "seen", x: me.x, t: performance.now() });
+      if (seenByStaff >= 2) finish();
+    }
+    // the blackout: move only while she counts aloud; the pipes ring; then the seventh coin
+    function stepDark(dt, t) {
+      const near = Math.abs(me.x - CABINET) <= 10;
+      if (!listening()) heardThis = false;
+      else if (near && (me.moving > 0.15 || me.hop > 0)) heard("A STEP WHILE SHE LISTENS");
+      if (me.level === 1) { me.level = 0; heardThis = false; heard("THE PIPES RING UNDER YOUR WEIGHT"); tell("In the light the pipe run was the quiet road. In the dark it rings."); }
+      if (!saidDora && Math.abs(me.x - CABINET) < 7) { saidDora = true; tell("Dora, to the open cabinet, not to you: \"Somebody has to count what they leave.\""); }
+      if (caught.size && !coin) {
+        if (!coinAsk) { coinAsk = performance.now(); tell("The knock, the feet going away. Behind you the passage is six coins of light, all the way back. Turn round."); }
+        if ((left && !right) || me.dir === -1) { coin = performance.now(); over = true; timers.push(setTimeout(() => { over = false; finish(); }, RM ? 3200 : 4600)); }
+        else if (performance.now() - coinAsk > 14000) finish();
+      }
+    }
+    function tug() {
+      if (!started || over || !unlocked.has("wire")) return;
+      const d = doorHere(), t = T();
+      if (!d || !occupied(d, t)) { note("NO OCCUPIED DOOR HERE TO TUG"); return; }
+      if (wired[d]) { note(`${d.slice(1)} · THAT WIRE HAS BEEN TUGGED TONIGHT`); return; }
+      wired[d] = true; wireUntil[d] = t + 6; bump(d, 10);
+      note(`${d.slice(1)} · WIRE TUGGED · A BELL INSIDE · AT THE MAIN DOOR, OFF THE WINDOW · +10`); fx.push({ kind: "ok", x: DOORS[d], t: performance.now() });
+    }
     function bump(r, v) {
       susp[r] = Math.min(100, susp[r] + v);
       if (susp[r] >= 70 && !blind.has(r)) { blind.add(r); note(`${r.slice(1)} COVERS THE ROSE FOR THE NIGHT`); }
@@ -221,16 +290,28 @@ export default {
     function finish() {
       if (over) return;
       over = true;
-      const n = caught.size, g = glimpsed.size;
-      const lose = seenByStaff >= 2 || n <= 1;
-      const outcome = lose ? "lose" : n === 3 && blind.size === 0 ? "win" : "done";
-      api.store.set("lossStreak", outcome === "lose" ? streak + 1 : 0);
+      const n = caught.size, g = glimpsed.size, need = RETURNS.length;
       const marks = RETURNS.map((r) => r.room.slice(1) + (caught.has(r.room) ? " ●" : " ○")).join(", ");
-      let text;
-      if (seenByStaff >= 2) text = `Dora saw you twice and told Lew, and Lew told Wren. His next call keeps you on the line: tomorrow's shift starts at 23:15. Thresholds: ${marks}.`;
-      else if (n <= 1) text = `The bells rang and the doors opened without you. Thresholds: ${marks}. Run the long stretches, walk the boards, and stand at the rose before it opens.`;
-      else if (outcome === "win") text = `Every door, on time, and nobody felt the passage. Thresholds: ${marks}; ${g} glimpse${g === 1 ? "" : "s"} besides.`;
-      else text = `Thresholds: ${marks}; ${g} glimpse${g === 1 ? "" : "s"}.${blind.size ? ` But ${[...blind].map((r) => r.slice(1)).join(" and ")} covered the rose: someone behind that door now knows the dark has an eye in it.` : " One door opened on an empty passage."}`;
+      let outcome, text;
+      if (stage.stage === 0) {
+        outcome = n === 1 ? "win" : "lose";
+        text = n === 1 ? `405's door opened and you were at the rose: “${RETURNS[0].line}” ${creaks ? `The boards spoke ${creaks === 1 ? "once" : creaks + " times"} on the way; walk them next time.` : "The boards never spoke."} Next: two bells ten metres apart, and Dora between you and them.`
+          : "The bell rang and 405's door opened on an empty passage. Run the long stretch, walk the four boards from 38 m, and stand at the rose before the ring runs out.";
+      } else if (DARK) {
+        outcome = seenByStaff >= 2 || !n ? "lose" : coin ? "win" : "done";
+        text = seenByStaff >= 2 ? "Dora stopped counting twice. The second time she lifted the candle and looked down the passage, and you were in it. Move while she counts aloud; when she stops to listen, be still. And keep off the pipes."
+          : !n ? "2:14, and the knock came at 406 with nobody at its rose. Run the far stretches, and take the ten metres either side of Dora a count at a time."
+            : coin ? `You passed Dora at arm's length, on her own counting, and were at 406 for the knock${seenByStaff ? " (heard once)" : ""}. Then you turned round. Six coins of light back down the passage, and a seventh at the far end: the lens in your own door, lit from inside. Something crossed it.`
+              : "You were at 406 for the knock, and stood facing the stair until Lew reset the circuit. Whatever was behind you in the dark, you did not turn to count it.";
+      } else {
+        const lose = seenByStaff >= 2 || n <= 1;
+        outcome = lose ? "lose" : n === need && blind.size === 0 ? "win" : "done";
+        if (seenByStaff >= 2) text = `Dora saw you twice and told Lew, and Lew told Wren. His next call keeps you on the line: tomorrow's shift starts at 23:15. Thresholds: ${marks}.`;
+        else if (n <= 1) text = `The bells rang and the doors opened without you. Thresholds: ${marks}. Run the long stretches, walk the boards, and stand at the rose before it opens.`;
+        else if (outcome === "win") text = `Every door, on time, and nobody felt the passage. Thresholds: ${marks}; ${g} glimpse${g === 1 ? "" : "s"} besides.${Object.keys(wired).length ? ` ${Object.keys(wired).length} wire${Object.keys(wired).length === 1 ? "" : "s"} tugged.` : ""}${trolley && trolley.pushed ? " Dora will find her trolley moved." : ""}`;
+        else text = `Thresholds: ${marks}; ${g} glimpse${g === 1 ? "" : "s"}.${blind.size ? ` But ${[...blind].map((r) => r.slice(1)).join(" and ")} covered the rose: someone behind that door now knows the dark has an eye in it.` : " One door opened on an empty passage."}`;
+      }
+      api.store.set("lossStreak", outcome === "lose" ? streak + 1 : 0);
       api.store.set("best", Math.max(api.store.get("best", 0), n));
       timers.push(setTimeout(() => api.end({ outcome, text }), 500));
     }
@@ -261,14 +342,14 @@ export default {
       const clock = `${String(hh).padStart(2, "0")}:${String(mm).padStart(2, "0")}`;
       const tgt = RETURNS.find((r) => rungBells.has(r.room) && !caught.has(r.room) && !missed.has(r.room));
       const due = tgt ? `${tgt.room.slice(1)} OPENS ${tgt.door} · IN ${Math.max(0, Math.ceil(MIN(tgt.door) - t))} MIN` : "NO BELL YET";
-      const lines = notes.length ? notes : ["BE AT EACH DOOR WHEN IT OPENS. WALK THE BOARDS."];
-      const key = lines.join("|") + story + clock + due + caught.size + seenByStaff;
+      const lines = notes.length ? notes : [DARK ? "MOVE WHILE SHE COUNTS. BE STILL WHEN SHE LISTENS." : "BE AT EACH DOOR WHEN IT OPENS. WALK THE BOARDS."];
+      const key = lines.join("|") + story + clock + due + caught.size + seenByStaff + (DARK ? listening() : "");
       if (key === lastBlock) return;
       lastBlock = key;
       blockN.innerHTML = "";
       lines.forEach((s, i) => { const p = document.createElement("p"); p.textContent = s; if (i || !notes.length) p.style.color = C.ink, p.style.fontWeight = 400; blockN.appendChild(p); });
       if (story) { const p = document.createElement("p"); p.className = "story"; p.textContent = story; blockN.appendChild(p); }
-      blockT.innerHTML = `<b>SECTION B-B · ${clock}</b>${due}<br>CAUGHT ${caught.size}/3 · STAFF ${seenByStaff}/2`;
+      blockT.innerHTML = `<b>SECTION B-B · ${clock}</b>${due}<br>CAUGHT ${caught.size}/${RETURNS.length}${DARK ? ` · HEARD ${seenByStaff}/2` : stage.stage ? ` · STAFF ${seenByStaff}/2` : ""}`;
     }
     const L = (x1, y1, x2, y2, w = 1, c = C.ink, dash) => { ctx.beginPath(); ctx.setLineDash(dash || []); ctx.lineWidth = w; ctx.strokeStyle = c; ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]); };
     function hatch(x, y, w, h, gap = 6, c = C.faint) {
@@ -331,7 +412,7 @@ export default {
       camX += (Math.max(-0.5, Math.min(LEN + 0.5 - view, target)) - camX) * k;
       ctx.fillStyle = C.paper; ctx.fillRect(0, 0, W, H);
       // paper: faint drafting grid and a little tooth
-      ctx.strokeStyle = "rgba(42,58,140,.06)"; ctx.lineWidth = 1;
+      ctx.strokeStyle = DARK ? "rgba(157,176,232,.05)" : "rgba(42,58,140,.06)"; ctx.lineWidth = 1;
       for (let x = (-camX * S) % 20; x < W; x += 20) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
       for (let y = 0; y < H; y += 20) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
       ctx.strokeStyle = C.ink; ctx.lineWidth = 1.2; ctx.strokeRect(6, 6, W - 12, H - 12);
@@ -380,7 +461,7 @@ export default {
       ctx.strokeStyle = C.ink; ctx.lineWidth = 1.2; ctx.strokeRect(sx(WINDOWS[0]), sy(2.6), (WINDOWS[1] - WINDOWS[0]) * S, 1.0 * S);
       for (let m = WINDOWS[0]; m <= WINDOWS[1]; m += 2) L(sx(m), sy(2.6), sx(m), sy(1.6), 0.8);
       txt("LIGHT WELL 18–26 m · CRAWL OR PIPE RUN", sx((WINDOWS[0] + WINDOWS[1]) / 2), sy(2.6) - 6, 11, "center");
-      } else txt("CRAWL OR PIPE RUN", sx((WINDOWS[0] + WINDOWS[1]) / 2), sy(1.12), 11, "center", C.ev);
+      } else if (stage.stage) txt(DARK ? "DARK: NOBODY SEES ACROSS THE WELL · THE PIPES RING" : "CRAWL OR PIPE RUN", sx((WINDOWS[0] + WINDOWS[1]) / 2), sy(1.12), 11, "center", C.ev);
       const lit = Object.keys(DOORS).filter((r) => atWindow(r, t));
       lit.forEach((r, i) => { const x = sx(WINDOWS[0] + 1 + i * 2.6); ctx.fillStyle = C.amber; ctx.fillRect(x, sy(2.45), 0.7 * S, 0.5 * S); ctx.strokeRect(x, sy(2.45), 0.7 * S, 0.5 * S); txt(r.slice(1), x + 0.35 * S, sy(1.75), 12, "center", C.ev, true); });
       // the danger zone below the windows when a window is lit
@@ -428,10 +509,11 @@ export default {
         }
         if (glimpsed.has(r)) txt("◉", sx(DOORS[r]) + 0.62 * S, sy(1.6) + 4, 12, "left", C.blue, true);
       }
+      if (DARK) for (const r in DOORS) { const x = sx(DOORS[r]); const gl = ctx.createRadialGradient(x, sy(roseH), 1, x, sy(roseH), 0.9 * S); gl.addColorStop(0, "rgba(246,207,134,.75)"); gl.addColorStop(1, "rgba(224,162,74,0)"); ctx.fillStyle = gl; ctx.fillRect(x - S, sy(roseH) - S, 2 * S, 2 * S); ctx.fillStyle = "rgba(224,162,74,.25)"; ctx.beginPath(); ctx.ellipse(x, gy - 2, 0.5 * S, 4, 0, 0, 7); ctx.fill(); }
       // the countdown over the target door
       if (tgt) {
         const x = sx(DOORS[tgt.room]), left_ = Math.max(0, MIN(tgt.door) - t);
-        ctx.beginPath(); ctx.arc(x, sy(2.75), 15, 0, 7); ctx.fillStyle = "#fbf6e8"; ctx.fill(); ctx.strokeStyle = C.ev; ctx.lineWidth = 1.4; ctx.stroke();
+        ctx.beginPath(); ctx.arc(x, sy(2.75), 15, 0, 7); ctx.fillStyle = PANEL; ctx.fill(); ctx.strokeStyle = C.ev; ctx.lineWidth = 1.4; ctx.stroke();
         ctx.beginPath(); ctx.moveTo(x, sy(2.75)); ctx.arc(x, sy(2.75), 15, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * (1 - left_ / 12)); ctx.closePath(); ctx.fillStyle = "rgba(163,48,42,.25)"; ctx.fill();
         txt(String(Math.ceil(left_)), x, sy(2.75) + 5, 13, "center", C.ev, true);
         // off-screen: an arrow at the edge
@@ -443,17 +525,34 @@ export default {
       for (let i = 0; i < marks.length - 1; i++) dim(sx(marks[i]), sx(marks[i + 1]), dy, `${(marks[i + 1] - marks[i]) * 1000}`);
       dim(sx(BOARDS[0]), sx(BOARDS[1]), dy + 26, "LOOSE BOARDS 38–41");
       // Dora's trolley and her view
+      if (trolley) { // the parked trolley: a box on wheels, in section
+        const x = sx(trolley.x);
+        ctx.fillStyle = PANEL; ctx.strokeStyle = C.ink; ctx.lineWidth = 1.4; ctx.fillRect(x - 0.45 * S, sy(1.05), 0.9 * S, 0.93 * S); ctx.strokeRect(x - 0.45 * S, sy(1.05), 0.9 * S, 0.93 * S);
+        hatch(x - 0.45 * S, sy(1.05), 0.9 * S, 0.25 * S, 4, C.ink); L(x - 0.45 * S, sy(0.55), x + 0.45 * S, sy(0.55), 0.8);
+        ctx.beginPath(); ctx.arc(x - 0.3 * S, sy(0.07), 0.07 * S, 0, 7); ctx.arc(x + 0.3 * S, sy(0.07), 0.07 * S, 0, 7); ctx.stroke();
+        txt("TROLLEY · PUSH 0.6 m/s", x, sy(1.05) - 6, 11, "center", C.ev, true);
+      }
+      if (stage.stage) { if (LOSTP || DARK) { txt("OPEN", sx(CABINET), sy(2.45), 12, "center", C.ev, true); ctx.strokeStyle = C.ev; ctx.lineWidth = 1.4; ctx.strokeRect(sx(CABINET - 0.5), sy(2.3), S, 2.3 * S); L(sx(CABINET - 0.5), sy(2.3), sx(CABINET - 0.95), sy(2.15), 1.4, C.ev); L(sx(CABINET - 0.95), sy(2.15), sx(CABINET - 0.95), sy(0.1), 1.4, C.ev); L(sx(CABINET - 0.95), sy(0.1), sx(CABINET - 0.5), sy(0), 1.4, C.ev); } }
       if (mp != null) {
         const x = sx(mp), reach = sight();
+        if (DARK) {
+          const lis = listening(), ph = (game * SPM) % CYC();
+          const gl = ctx.createRadialGradient(x - 0.4 * S, sy(1.3), 2, x - 0.4 * S, sy(1.3), 2.6 * S); gl.addColorStop(0, "rgba(246,207,134,.5)"); gl.addColorStop(1, "rgba(246,207,134,0)"); ctx.fillStyle = gl; ctx.fillRect(x - 3 * S, sy(3), 6 * S, 3.2 * S);
+          ctx.strokeStyle = lis ? C.ev : C.faint; ctx.lineWidth = lis ? 2.5 : 1; ctx.setLineDash([6, 5]); ctx.beginPath(); ctx.moveTo(sx(CABINET - 10), sy(-0.12)); ctx.lineTo(sx(CABINET + 10), sy(-0.12)); ctx.stroke(); ctx.setLineDash([]);
+          for (const e of [CABINET - 10, CABINET + 10]) L(sx(e), sy(0.5), sx(e), sy(-0.2), lis ? 2.5 : 1, lis ? C.ev : C.faint);
+          txt(lis ? "SHE LISTENS · BE STILL" : "SHE COUNTS · MOVE", sx(CABINET), sy(-0.12) + 16, 12, "center", lis ? C.ev : C.ink, true);
+          txt(lis ? "…" : ["one", "one, two", "one, two, three", "one, two, three, four"][Math.min(3, Math.floor(ph / 0.9))], x, sy(2.75), 15, "center", lis ? C.ev : C.amberL, true);
+        } else {
         ctx.fillStyle = "rgba(163,48,42,.12)"; ctx.beginPath(); ctx.moveTo(x - 0.4 * S, sy(1.6)); ctx.lineTo(x - reach * S, sy(2.4)); ctx.lineTo(x - reach * S, sy(0)); ctx.lineTo(x - 0.4 * S, sy(0)); ctx.fill();
         L(x - reach * S, sy(2.4), x - reach * S, sy(0), 1, C.ev, [4, 3]);
         txt(`DORA'S VIEW ${reach} m`, x - reach * S / 2, sy(2.4) - 6, 11, "center", C.ev);
+        }
         const ds = A["sprite-dora-trolley"];
         if (ds) {
           // the sheet's trolley and figure, ground line at y = 296, Dora 1.65 m tall; the trolley's centre is hers to push
           const k = 1.65 * S / 214;
           ctx.drawImage(ds, 28, 50, 470, 252, x - (205 - 28) * k, gy - (296 - 50) * k, 470 * k, 252 * k);
-          txt("DORA →W", x + 0.3 * S, gy - 252 * k + 2, 12, "center", C.ev, true);
+          if (!DARK) txt("DORA →W", x + 0.3 * S, gy - 252 * k + 2, 12, "center", C.ev, true);
         } else {
         ctx.strokeStyle = C.ev; ctx.lineWidth = 1.4; ctx.strokeRect(x - 0.4 * S, sy(1.0), 1.1 * S, 0.9 * S);
         ctx.beginPath(); ctx.arc(x - 0.25 * S, sy(0.06), 0.06 * S + 2, 0, 7); ctx.arc(x + 0.55 * S, sy(0.06), 0.06 * S + 2, 0, 7); ctx.stroke();
@@ -477,17 +576,26 @@ export default {
         else if (f.kind === "miss") { txt("✕", X, sy(2.4), 22, "center", C.ink, true); }
         ctx.restore();
       }
+      if (coin) { // the set-piece: the seventh coin, in your own door
+        const k2 = Math.min(1, (now - coin) / (RM ? 1 : 1200)), cw = Math.min(W - 32, 520), chh = cw * 0.75, x0 = (W - cw) / 2, y0 = Math.max(70, gy - 3.3 * S - 10);
+        ctx.save(); ctx.globalAlpha = k2; ctx.fillStyle = "#050505"; ctx.fillRect(0, 56, W, H);
+        for (let i = 0; i < 7; i++) { const cxx = x0 + cw * (0.96 - i * 0.135), rr2 = 5 + i * 1.6; if (i < 6) { ctx.fillStyle = C.amberL; ctx.globalAlpha = k2 * (0.9 - i * 0.08); ctx.beginPath(); ctx.arc(cxx, y0 - 16, rr2, 0, 7); ctx.fill(); } }
+        ctx.globalAlpha = k2;
+        if (A["sprite-seventh-coin"]) ctx.drawImage(A["sprite-seventh-coin"], x0, y0, cw, chh); else { ctx.fillStyle = C.amberL; ctx.beginPath(); ctx.arc(W / 2, y0 + chh * 0.4, 16, 0, 7); ctx.fill(); }
+        txt("SEVEN.", W / 2, y0 + chh + 26, 20, "center", C.amberL, true); txt("The last coin is in your own door.", W / 2, y0 + chh + 48, 14, "center", C.ink);
+        ctx.restore();
+      }
       if (bellFlash && now - bellFlash.t < 2600) {
         const n = +bellFlash.room.slice(3);
         const bs = A["ui-bell-strip"];
-        if (bs && !narrow) {
+        if (bs && !narrow && !DARK) {
           // the office bell board: six pulls and a bare seventh; the ringing pull swings
           const bw = 300, bh = bw * 150 / 480, bx = W / 2 - bw / 2, byy = ky + 96, kk = (now - bellFlash.t) / 2600;
           ctx.save(); ctx.globalAlpha = kk > 0.8 ? (1 - kk) * 5 : 1; ctx.drawImage(bs, bx, byy, bw, bh);
           const px = bx + bw * (0.115 + (n - 1) * 0.128);
           ctx.strokeStyle = C.amberL; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(px, byy + bh * 0.42, 13 + (RM ? 0 : 4 * Math.abs(Math.sin(now / 90))), 0, 7); ctx.stroke(); ctx.restore();
         }
-        txt(`BELL · ${bellFlash.room.slice(1)}`, W / 2, ky + 74, 18, "center", C.ev, true);
+        txt(DARK ? "THE KNOCK IS DUE AT 406 · 2:14" : `BELL · ${bellFlash.room.slice(1)}`, W / 2, ky + 74, 18, "center", C.ev, true);
         for (let i = 0; i < n; i++) { ctx.beginPath(); ctx.arc(W / 2 - (n - 1) * 10 + i * 20, ky + 88, 6, 0, 7); ctx.fillStyle = (now - bellFlash.t) / 300 > i ? C.ev : "transparent"; ctx.fill(); ctx.strokeStyle = C.ev; ctx.lineWidth = 1.2; ctx.stroke(); }
       }
     }
@@ -509,6 +617,7 @@ export default {
       else if (k === "ArrowDown" || k === "s" || k === "S" || k === "c" || k === "C") { e.preventDefault(); if (!e.repeat && !down()) downHeld = true; }
       else if (k === " ") { e.preventDefault(); hop(); }
       else if ((k === "e" || k === "E") && unlocked.has("rose")) roseHeld = true;
+      else if ((k === "t" || k === "T") && !e.repeat) tug();
     });
     on(window, "keyup", (e) => {
       const k = e.key;
@@ -530,6 +639,7 @@ export default {
         if (a === "up") up();
         if (a === "down") down();
         if (a === "hop") hop();
+        if (a === "wire") tug();
         btn("run").classList.toggle("on", runToggle);
         btn("crawl").classList.toggle("on", crawlToggle);
       });
@@ -547,22 +657,23 @@ export default {
     const intro = document.createElement("div");
     intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}sheet">
-      ${art.has("chapter-n2") ? `<img alt="Night Two: The Bell Board" src="${art.url("chapter-n2")}" style="display:block;width:100%;height:92px;object-fit:cover;object-position:0 0;border-bottom:1.4px solid ${C.ink}">` : ""}
-      <div class="hd"><span>SECTION B-B · SERVICE PASSAGE 4F</span><span>SHEET 4 / 7</span></div>
+      ${art.has("chapter-n" + RUN.night) ? `<img alt="Night ${RUN.night}" src="${art.url("chapter-n" + RUN.night)}" style="display:block;width:100%;height:92px;object-fit:cover;object-position:0 0;border-bottom:1.4px solid ${C.ink}">` : ""}
+      <div class="hd"><span>SECTION B-B · SERVICE PASSAGE 4F</span><span>${RUN.sheet}</span></div>
       <h2>CORRIDOR RACE</h2>
-      <p class="goal">Be at each door as it opens: 401, 405, 406. Dora must not see you twice.</p>
+      <p class="goal">${RUN.goal}</p>
       <p class="open"></p>
       <table>
         <tr><td>MOVE</td><td><kbd>←</kbd><kbd>→</kbd> or ◀ ▶ · walk 1.6 m/s</td></tr>
         <tr><td>RUN</td><td>hold <kbd>Shift</kbd> or RUN · 4.0 m/s, but the boards creak</td></tr>
-        <tr><td>CRAWL</td><td>hold <kbd>↓</kbd> or CRAWL · under the light-well windows</td></tr>
+        ${DARK ? "<tr><td>DORA</td><td>counts aloud, then listens. Within 10 m of her, move only on the count.</td></tr>" : stage.stage ? "<tr><td>CRAWL</td><td>hold <kbd>↓</kbd> or CRAWL · under the light-well windows</td></tr>" : "<tr><td>HOP</td><td><kbd>Space</kbd> clears one board at a run</td></tr>"}
       </table>
-      <div class="ft">${streak >= 2 ? `<label><input type="checkbox" ${gentle ? "checked" : ""}> Dora half-blind (4 m)</label>` : `<span>More tools are drawn in as you reach them.</span>`}<button type="button" class="${P}b">START · 01:00</button></div></div>`;
-    intro.querySelector(".open").textContent = NOTES.open;
+      <div class="ft">${streak >= 2 ? `<label><input type="checkbox" ${gentle ? "checked" : ""}> Dora half-blind (4 m)</label>` : `<span>More tools are drawn in as you reach them.</span>`}<button type="button" class="${P}b">${RUN.go}</button></div></div>`;
+    intro.querySelector(".open").textContent = RUN.open;
+    intro.querySelector("table").after(stage.row(P + "b"));
     wrap.appendChild(intro);
     const gbox = intro.querySelector("input");
     if (gbox) on(gbox, "change", () => { gentle = gbox.checked; api.store.set("gentle", gentle); });
-    const sb = intro.querySelector("button");
+    const sb = [...intro.querySelectorAll("button")].pop();
     on(sb, "click", () => { intro.remove(); started = true; last = performance.now(); resize(); });
     raf = requestAnimationFrame(loop);
     sb.focus();
@@ -577,5 +688,4 @@ export default {
         root.innerHTML = "";
       },
     };
-  },
-};
+});

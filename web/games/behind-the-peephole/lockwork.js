@@ -11,11 +11,27 @@
 // the result; the other four plates are the tool roll on the opening card. The live lock is still
 // drawn by this code, because every part of it moves; sheet and figure numbers follow the plates.
 
-const N = 5;
-const ORDER = [2, 4, 0, 3, 1];            // binding order (pin indices), fixed for this lock
-const SPOOL = new Set([4, 1]);            // pins 5 and 2 are spool pins
-const SHEAR = [0.46, 0.62, 0.38, 0.7, 0.54]; // lift (0..1) at which each key pin meets the shear line
-const BAND = [35, 55], DROP = 20, JAM = 70, SPOOL_EASE = [30, 35];
+// Phase 2 (2026-11-16): the ladder. TEACH is the drawer (FIG. 1: three plain pins, a wide band, and no
+// way to lose: an overset only costs the reset). TEST is the stair door as before, now with the clock
+// running to Lew's tea at 01:00 and the bell board upstairs: while a bell rings, three seconds, the
+// click and the feel are masked. TWIST is lost property (FIG. 3, DESIGN.md section 11, `n4_lost_property`):
+// a wafer lock, not picked but matched. Lifting is no use; the lock only says how many wafers a key
+// fits, never which. Its set-piece is Dora's round: when her lamp is on the keyhole, do nothing.
+// (DEEP_DIVE's own twist, the lever lock on your door, is phase 3 and waits for docs/COLLECTION.md.)
+// Opening lost property is written to api.shared ("lostProperty"): the Mosaic gains the green rhyme
+// spool and Dora stops at the cabinet in the corridor race.
+import { staged } from "./_stages.js";
+
+const LOCKS = [
+  { n: 3, order: [1, 0, 2], spool: [], shear: [0.5, 0.36, 0.62], band: [25, 70], jam: 80, fig: "FIG. 1  ·  the desk drawer", sheet: "Sheet 1 of 5", plate: "lock-drawer", clock: 23 * 60 + 5,
+    goal: "Set all three pins on the shear line S. Nothing breaks tonight.",
+    open: "Night one, 23:05. The desk drawer in the office holds your log and a worn deck of cards. Nobody gave you its key. Three pins, and all the time you want." },
+  { n: 5, order: [2, 4, 0, 3, 1], spool: [4, 1], shear: [0.46, 0.62, 0.38, 0.7, 0.54], band: [35, 55], jam: 70, fig: "FIG. 2  ·  the stair door", sheet: "Sheet 2 of 5", plate: "lock-stair", clock: 35, limit: 150,
+    goal: "Set all five pins before Lew's tea at 01:00, and before your picks run out.",
+    open: "Night three, 00:35. The stair door at the far end of the passage, locked from your side. Lew said only: \"Stair door's locked from your side. Someone's idea.\" He brings the tea at one. The bell board rings through the wall." },
+];
+let N = 5, ORDER = [], SPOOL = new Set(), SHEAR = [], BAND = [35, 55], JAM = 70;
+const DROP = 20, SPOOL_EASE = [30, 35];
 const LIFT_SPEED = 0.26;
 const NOTES = {
   open: "Night three, 00:50. The stair door at the far end of the passage, locked from your side. Lew said only: \"Stair door's locked from your side. Someone's idea.\"",
@@ -26,9 +42,11 @@ const NOTES = {
   last: "One pin left. Your hand is steadier than it was on night one.",
 };
 
-export default {
-  mount(root, api) {
-    const P = "behind-the-peephole-lockwork-";
+const P = "behind-the-peephole-lockwork-";
+export default staged(P, ["the drawer", "the stair door, bells", "lost property"], function play(root, api, stage) {
+    if (stage.stage === 2) return wafer(root, api, stage);
+    const LK = LOCKS[stage.stage], teach = stage.stage === 0;
+    N = LK.n; ORDER = LK.order; SPOOL = new Set(LK.spool); SHEAR = LK.shear; BAND = LK.band; JAM = LK.jam;
     const C = { paper: "#efe6cf", ink: "#1c1a17", faint: "#6f6650", brass: "#b8913f", brassL: "#e3c47a", steel: "#6f7c80", ev: "#a3302a", amber: "#e0a24a", blue: "#2a3a8c" };
     const RM = api.reducedMotion;
     const streak = api.store.get("lossStreak", 0);
@@ -75,7 +93,7 @@ export default {
     root.appendChild(st);
     const art = api.art || { has: () => false, url: () => "", img: () => Promise.resolve(null) };
     let plateCv = null, disposed = false;
-    art.img("lock-stair").then((im) => { if (!im || disposed) return; const c = document.createElement("canvas"); c.width = 480; c.height = 320; try { c.getContext("2d").drawImage(im, 0, 0, 480, 320); plateCv = c; } catch { /* keep the list */ } });
+    art.img(LK.plate).then((im) => { if (!im || disposed) return; const c = document.createElement("canvas"); c.width = 480; c.height = 320; try { c.getContext("2d").drawImage(im, 0, 0, 480, 320); plateCv = c; } catch { /* keep the list */ } });
     const wrap = document.createElement("div");
     wrap.className = P + "wrap";
     root.appendChild(wrap);
@@ -96,10 +114,11 @@ export default {
 
     // ---- state
     const WINW = () => (gentle ? 0.12 : 0.09);
-    let tension = 0, cur = 0, picks = gentle ? 4 : 3, oversets = 0, over = false, started = false, rakes = 2;
+    let tension = 0, cur = 0, picks = teach ? 9 : gentle ? 4 : 3, oversets = 0, over = false, started = false, rakes = 2;
     const pins = Array.from({ length: N }, () => ({ h: 0, set: false, over: false, spool: false, fx: 0, bad: 0 }));
     let plugTurn = 0, lifting = false, tUp = false, tDown = false, lastProgress = performance.now(), msgT = 0, turning = 0, feltAny = false;
     const t0 = performance.now();
+    let tStart = t0, bell = 0, bellNo = 0, nextBell = 7;
     const listeners = [], timers = [], told = new Set();
     const on = (el, ev, fn, o) => { el.addEventListener(ev, fn, o); listeners.push([el, ev, fn, o]); };
     const say = (m) => { capMsg.textContent = m; msgT = performance.now(); };
@@ -112,6 +131,7 @@ export default {
     function progressBeats() {
       const n = setCount();
       if (n >= 1 && !told.has("first")) { told.add("first"); tell(NOTES.first); }
+      if (teach) { if (n === 2 && !told.has("last")) { told.add("last"); tell("One pin left. Lew is still on the stair, going down."); } return; }
       if (n >= 2) unlock("rake", NOTES.rakeUnlock);
       if (n >= 3 && !told.has("chute")) { told.add("chute"); tell(NOTES.chute); }
       if (n === 4 && !told.has("last")) { told.add("last"); tell(NOTES.last); }
@@ -152,6 +172,7 @@ export default {
     function overset(i) {
       const p = pins[i];
       p.over = true; p.bad = performance.now(); oversets++;
+      if (teach) { say(`Pin ${i + 1} pushed past the shear line: overset. Let the tension go (under 20) to reset. Nothing breaks on this one.`); return; }
       if (oversets > 2) {
         picks--;
         say(picks > 0 ? `Overset, and the hook snaps. ${picks} spare pick${picks === 1 ? "" : "s"} left. Let the tension go to reset.` : "Overset. The last pick snaps in the keyway.");
@@ -162,6 +183,7 @@ export default {
       if (!started || over) return;
       feltAny = true;
       const p = pins[cur], b = binding();
+      if (bell) { say("The bell is ringing. Under it, every pin feels the same."); return; }
       if (tension < DROP) { say("No tension on the plug: every pin feels the same."); return; }
       if (p.set) say(`Pin ${cur + 1}: set. It sits on the shear line.`);
       else if (p.over) say(`Pin ${cur + 1}: dead. Overset; let the tension go.`);
@@ -198,18 +220,24 @@ export default {
       if (over) return;
       over = true; turning = performance.now();
       api.store.set("opened", true); api.store.set("lossStreak", 0);
-      say("All five set. The plug turns.");
-      if (art.has("lock-stair")) { // the plate, as filed: behind the result
+      say(teach ? "All three set. The plug turns." : "All five set. The plug turns.");
+      if (art.has(LK.plate)) { // the plate, as filed: behind the result
         const pl = document.createElement("div"); pl.className = P + "plate";
-        pl.innerHTML = `<img alt="Lock plate, FIG. 2: the stair door, five pins, two spools" src="${art.url("lock-stair")}">`;
+        pl.innerHTML = `<img alt="Lock plate, ${LK.fig}" src="${art.url(LK.plate)}">`;
         wrap.appendChild(pl); timers.push(setTimeout(() => pl.classList.add("in"), RM ? 0 : 500));
       }
       const neat = oversets === 0 ? "Not one overset: a locksmith's opening." : `${oversets} overset${oversets === 1 ? "" : "s"} on the way.`;
-      timers.push(setTimeout(() => api.end({ outcome: "win", text: `The plug turns and the stair door opens on the back stair, and the chute's steel box below it. Whoever empties it comes up this way. ${picks} spare pick${picks === 1 ? "" : "s"} left. ${neat}` }), 1600));
+      timers.push(setTimeout(() => api.end({ outcome: "win", text: teach ? `The drawer slides open on the logbook and a worn deck of cards, the hotel's rose on their backs. ${neat} The next lock has spools in it, a clock on it, and a bell board ringing through the wall.` : `The plug turns and the stair door opens on the back stair, and the chute's steel box below it. Whoever empties it comes up this way. ${picks} spare pick${picks === 1 ? "" : "s"} left. ${neat}` }), 1600));
     }
 
     function step(dt) {
       if (!started || over) return;
+      if (LK.limit) {
+        const el = (performance.now() - tStart) / 1000;
+        if (el >= (gentle ? LK.limit + 50 : LK.limit)) { over = true; api.store.set("lossStreak", streak + 1); say("One o'clock. Lew's tray is on the stair."); timers.push(setTimeout(() => api.end({ outcome: "lose", text: `One o'clock, and Lew is on the stair with the tea. You are back at the desk before he knocks, with ${setCount()} of 5 pins set and the stair door still locked. Feel for the binding pin, and work between the bells.` }), 900)); return; }
+        if (!bell && el >= nextBell) { bell = performance.now(); bellNo = 1 + Math.floor(rnd() * 6); nextBell = el + 11 + rnd() * 4; if (!told.has("bell")) { told.add("bell"); tell("A bell on the board upstairs, through the wall. While it rings you cannot hear the pin click or feel it bind."); } }
+        if (bell && performance.now() - bell > 3000) bell = 0;
+      }
       if (tUp) tension = Math.min(100, tension + 30 * dt);
       if (tDown) tension = Math.max(0, tension - 30 * dt);
       if (tension < DROP) { if (pins.some((p) => p.set || p.over || p.spool)) dropAll(); }
@@ -258,7 +286,7 @@ export default {
       const stackTop = top + 40, stackH = T * 3.05 + rp * 2.4;
       const cy = stackTop + Math.max(0, (bottom - stackTop - stackH) / 2) + T * 3.05 + rp;
       G = { gx, L, R, cy, rp, shear: cy - rp, T, gTop: top + 10, gBot: bottom, narrow };
-      G.xs = Array.from({ length: N }, (_, i) => L + (R - L) * (0.16 + i * 0.16));
+      G.xs = Array.from({ length: N }, (_, i) => L + (R - L) * (0.5 + (i - (N - 1) / 2) * 0.16));
       G.pw = Math.min(26, (R - L) * 0.07);
       wrap.dataset.gauge = `${gx},${G.gTop},${G.gBot}`;
       // paper grain, drawn once
@@ -305,24 +333,26 @@ export default {
       ctx.strokeStyle = C.ink; ctx.lineWidth = 1.2; ctx.strokeRect(8, 8, W - 16, H - 16);
       ctx.lineWidth = 0.6; ctx.strokeRect(12, 12, W - 24, H - 24);
       ctx.fillStyle = C.ink; ctx.textAlign = "center";
-      ctx.font = `13px Georgia,serif`; ctx.fillText("Sheet 2 of 5", W / 2, 30);
-      ctx.font = `italic ${G.narrow ? 20 : 26}px Georgia,serif`; ctx.fillText("FIG. 2  ·  the stair door", W / 2, G.narrow ? 76 : 70);
+      ctx.font = `13px Georgia,serif`; ctx.fillText(LK.sheet, W / 2, 30);
+      ctx.font = `italic ${G.narrow ? 20 : 26}px Georgia,serif`; ctx.fillText(LK.fig, W / 2, G.narrow ? 76 : 70);
+      if (bell) { ctx.font = "600 15px 'IBM Plex Mono',monospace"; ctx.fillStyle = C.ev; const sw = RM ? 0 : Math.sin(now / 70) * 4; ctx.fillText(`BELL · 40${bellNo} · ${"●".repeat(bellNo)}`, W / 2 + sw, G.narrow ? 116 : 112); ctx.fillStyle = C.ink; }
       ctx.font = "italic 13px Georgia,serif"; ctx.fillText("Inventor: the night clerk", W / 2, G.narrow ? 96 : 92);
       ctx.textAlign = "left";
       const gm = Math.floor(((now - t0) / 1000) * 10 / 60);
-      const hh = Math.floor((50 + gm) / 60) % 24, mm = (50 + gm) % 60;
+      const gm0 = LK.clock + (started ? Math.floor(((now - tStart) / 1000) * 10 / 60) : 0);
+      const hh = Math.floor(gm0 / 60) % 24, mm = gm0 % 60;
       ctx.font = "13px 'IBM Plex Mono',monospace";
       ctx.fillText(`◷ ${String(hh).padStart(2, "0")}:${String(mm).padStart(2, "0")}`, 22, 32);
       ctx.textAlign = "right";
-      ctx.fillText(`PICKS ${picks}`, W - 22, 32);
-      for (let k = 0; k < Math.max(3, picks); k++) {
+      ctx.fillText(teach ? "PICKS · no limit" : `PICKS ${picks}`, W - 22, 32);
+      for (let k = 0; k < (teach ? 0 : Math.max(3, picks)); k++) {
         const x = W - 30 - k * 16;
         ctx.globalAlpha = k < picks ? 1 : 0.18;
         line(x, 42, x, 66, 1.3); ctx.beginPath(); ctx.arc(x - 4, 42, 4, 0, Math.PI, true); ctx.stroke();
         ctx.globalAlpha = 1;
       }
       ctx.textAlign = G.narrow ? "left" : "right";
-      ctx.fillText(`OVERSETS ${oversets} (2 free)`, G.narrow ? 22 : W - 22, G.narrow ? 52 : 84);
+      ctx.fillText(teach ? `OVERSETS ${oversets}` : `OVERSETS ${oversets} (2 free)`, G.narrow ? 22 : W - 22, G.narrow ? 52 : 84);
       ctx.textAlign = "left";
 
       // tension gauge (26), with the band hatched
@@ -334,7 +364,7 @@ export default {
       hatch(gx - 9, gy(BAND[1]), 18, gy(BAND[0]) - gy(BAND[1]), 4, C.ink);
       if (spoolEase) { ctx.fillStyle = "rgba(42,58,140,.25)"; ctx.fillRect(gx - 9, gy(SPOOL_EASE[1]), 18, gy(SPOOL_EASE[0]) - gy(SPOOL_EASE[1])); }
       ctx.font = "12px 'IBM Plex Mono',monospace"; ctx.fillStyle = C.ink;
-      for (const v of [0, 20, 35, 55, 70, 100]) { line(gx + 9, gy(v), gx + 15, gy(v), 0.8); ctx.fillText(String(v), gx + 17, gy(v) + 4); }
+      for (const v of [0, 20, BAND[0], BAND[1], JAM, 100]) { line(gx + 9, gy(v), gx + 15, gy(v), 0.8); ctx.fillText(String(v), gx + 17, gy(v) + 4); }
       ctx.fillStyle = tension > JAM ? C.ev : inBand ? C.amber : tension < DROP ? C.faint : C.brass;
       ctx.fillRect(gx - 7, gy(tension), 14, gBot - gy(tension));
       ctx.fillStyle = C.ink;
@@ -384,7 +414,7 @@ export default {
         else if (i === hoverPin) { ctx.fillStyle = "rgba(42,58,140,.05)"; ctx.fillRect(x - pw * 0.9, capY - 30, pw * 1.8, cy + rp - capY + 30); }
         if (i === b && hintOn) { ctx.fillStyle = "rgba(224,162,74,.32)"; ctx.fillRect(x - pw, shear - T * 1.6, pw * 2, T * 2.2 + keyLen * 0.4); }
         // the moment of the click: a binding pin at its window under the right tension
-        const ready = i === b && lifting && i === cur && p.h >= SHEAR[i] && p.h <= SHEAR[i] + WINW() && ((p.spool && tension >= SPOOL_EASE[0] && tension <= SPOOL_EASE[1]) || (!p.spool && inBand));
+        const ready = !bell && i === b && lifting && i === cur && p.h >= SHEAR[i] && p.h <= SHEAR[i] + WINW() && ((p.spool && tension >= SPOOL_EASE[0] && tension <= SPOOL_EASE[1]) || (!p.spool && inBand));
         if (ready) { ctx.strokeStyle = C.amber; ctx.lineWidth = 4; ctx.strokeRect(x - pw * 0.8, shear - 6, pw * 1.6, 12); }
         const setK = p.fx ? Math.max(0, 1 - (now - p.fx) / 700) : 0;
         const badK = p.bad ? Math.max(0, 1 - (now - p.bad) / 600) : 0;
@@ -402,7 +432,7 @@ export default {
         ctx.textAlign = "left";
       });
       label(12, xs[0], shellTop + T * 0.4, xs[0] - pw * 2.2, shellTop + T * 0.2);
-      label(told.has("spool") ? 16 : 14, xs[1], shear - T * 0.9, xs[1] + pw * 1.6, shear - T * 1.3);
+      label(told.has("spool") ? 16 : 14, xs[Math.min(1, N - 1)], shear - T * 0.9, xs[1] + pw * 1.6, shear - T * 1.3);
       label(18, xs[N - 1], shear + rp * 0.2, xs[N - 1] + pw * 1.8, shear + rp * 0.9);
 
       // hook pick (22)
@@ -447,7 +477,7 @@ export default {
       else if (k === "s" || k === "S" || k === "ArrowDown") { e.preventDefault(); tDown = true; }
       else if ((k === "f" || k === "F") && unlocked.has("feel") && !e.repeat) feel();
       else if ((k === "r" || k === "R") && !e.repeat) rake();
-      else if (/^[1-5]$/.test(k)) { release(); cur = +k - 1; }
+      else if (/^[1-5]$/.test(k) && +k <= N) { release(); cur = +k - 1; }
     });
     on(window, "keyup", (e) => {
       const k = e.key;
@@ -497,24 +527,25 @@ export default {
     const intro = document.createElement("div");
     intro.className = P + "intro";
     intro.innerHTML = `<div class="${P}patent">
-      <div class="no"><span>PAT. No. 4·0·3</span><span>SHEET 2 OF 5</span></div>
-      <h2>Lockwork · the stair door</h2>
-      ${art.has("lock-stair") ? `<img class="fig" alt="FIG. 2: the stair door lock, exploded: five pins, two of them spools" src="${art.url("lock-stair")}">` : ""}
-      <p class="goal">Set all five pins on the shear line <i>S</i> before your picks run out.</p>
+      <div class="no"><span>PAT. No. 4·0·3</span><span>${LK.sheet.toUpperCase()}</span></div>
+      <h2>Lockwork · ${LK.fig.split("·")[1].trim()}</h2>
+      ${art.has(LK.plate) ? `<img class="fig" alt="${LK.fig}" src="${art.url(LK.plate)}">` : ""}
+      <p class="goal">${LK.goal}</p>
       <p class="open"></p>
       <ol>
-        <li><span>24</span><b>TENSION</b><span><kbd>W</kbd>/<kbd>S</kbd>, the wheel, or drag the gauge: hold it in the hatched band, 35–55.</span></li>
+        <li><span>24</span><b>TENSION</b><span><kbd>W</kbd>/<kbd>S</kbd>, the wheel, or drag the gauge: hold it in the hatched band, ${BAND[0]}–${BAND[1]}.</span></li>
         <li><span>22</span><b>HOOK</b><span><kbd>←</kbd><kbd>→</kbd> or tap a pin.</span></li>
         <li><span>18</span><b>LIFT</b><span>hold <kbd>↑</kbd> or drag up; let go as the pin meets <i>S</i> and the line glows.</span></li>
       </ol>
-      ${["lock-drawer", "lock-stair", "lock-wafer", "lock-safe", "lock-lever"].every((id) => art.has(id)) ? `<div class="${P}roll">${[["lock-drawer", "FIG. 1", "night 1 ✓", ""], ["lock-stair", "FIG. 2", "tonight", "now"], ["lock-wafer", "FIG. 3", "night 4", "later"], ["lock-safe", "FIG. 4", "night 6", "later"], ["lock-lever", "FIG. 5", "night 7", "later"]].map(([id, f, n, c]) => `<figure class="${c}"><img alt="" src="${art.url(id)}">${f}<br>${n}</figure>`).join("")}</div>` : ""}
+      ${["lock-drawer", "lock-stair", "lock-wafer", "lock-safe", "lock-lever"].every((id) => art.has(id)) ? `<div class="${P}roll">${[["lock-drawer", "FIG. 1", teach ? "tonight" : "night 1 ✓", teach ? "now" : ""], ["lock-stair", "FIG. 2", teach ? "night 3" : "tonight", teach ? "later" : "now"], ["lock-wafer", "FIG. 3", "night 4", "later"], ["lock-safe", "FIG. 4", "night 6", "later"], ["lock-lever", "FIG. 5", "night 7", "later"]].map(([id, f, n, c]) => `<figure class="${c}"><img alt="" src="${art.url(id)}">${f}<br>${n}</figure>`).join("")}</div>` : ""}
       <div class="ft">${streak >= 2 ? `<label><input type="checkbox" ${gentle ? "checked" : ""}> a fourth pick, a wider line, the binding pin shown</label>` : `<span>Only the binding pin will set. Lift past <i>S</i> and it oversets.</span>`}<button type="button" class="${P}b">START</button></div></div>`;
-    intro.querySelector(".open").textContent = NOTES.open;
+    intro.querySelector(".open").textContent = LK.open;
+    intro.querySelector("ol").after(stage.row(P + "b"));
     wrap.appendChild(intro);
     const gbox = intro.querySelector("input");
-    if (gbox) on(gbox, "change", () => { gentle = gbox.checked; api.store.set("gentle", gentle); picks = gentle ? 4 : 3; });
-    const sb = intro.querySelector("button");
-    on(sb, "click", () => { intro.remove(); started = true; lastProgress = performance.now(); say("Bring the tension up into the hatched band first."); });
+    if (gbox) on(gbox, "change", () => { gentle = gbox.checked; api.store.set("gentle", gentle); picks = teach ? 9 : gentle ? 4 : 3; });
+    const sb = [...intro.querySelectorAll("button")].pop();
+    on(sb, "click", () => { intro.remove(); started = true; tStart = lastProgress = performance.now(); say("Bring the tension up into the hatched band first."); });
     raf = requestAnimationFrame(loop);
     sb.focus();
 
@@ -528,5 +559,180 @@ export default {
         root.innerHTML = "";
       },
     };
-  },
-};
+});
+
+// ---- TWIST: lost property. A wafer lock: matched, not picked (DESIGN.md section 11).
+const W_CODE = [2, 4, 1, 3, 2];
+const W_KEYS = [[1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [3, 3, 3, 3, 3], [4, 1, 4, 1, 1], [3, 1, 3, 1, 1], [3, 2, 2, 3, 2], [1, 4, 1, 1, 1], [1, 3, 3, 1, 1]];
+const LEFT_THINGS = ["a rook", "a child's mitten", "a dry orchid", "a chess clock", "a press card", "a paper boat gone brown"];
+function wafer(root, api, stage) {
+  const C = { paper: "#efe6cf", ink: "#1c1a17", faint: "#6f6650", brass: "#b8913f", brassL: "#e3c47a", ev: "#a3302a", amber: "#e0a24a", blue: "#2a3a8c" };
+  const RM = api.reducedMotion, art = api.art || { has: () => false, url: () => "" };
+  const shared = api.shared || { get: (k, d) => d, set() {} };
+  const streak = api.store.get("lossStreak", 0);
+  let gentle = api.store.get("gentle", false);
+  const st = document.createElement("style");
+  st.textContent = `
+  .${P}w{position:absolute;inset:0;overflow:auto;background:${C.paper};color:${C.ink};font:15px/1.4 Georgia,serif;box-shadow:inset 0 0 0 8px ${C.paper},inset 0 0 0 9px ${C.ink}}
+  .${P}w .in{max-width:980px;margin:0 auto;padding:22px 18px 30px}
+  .${P}w .hd{display:flex;justify-content:space-between;gap:8px;font:13px 'IBM Plex Mono',monospace;letter-spacing:.08em}
+  .${P}w h2{margin:6px 0 2px;font:italic 400 26px Georgia,serif;text-align:center}
+  .${P}w .cap{text-align:center;min-height:2.8em;margin:4px auto 8px;max-width:640px}
+  .${P}w .cap .story{display:block;color:${C.blue};font-size:14px}
+  .${P}w .g{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px}
+  @media (max-width:720px){.${P}w .g{grid-template-columns:minmax(0,1fr)}.${P}w h2{font-size:21px}}
+  .${P}w h3{margin:0 0 6px;font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.12em}
+  .${P}ring{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+  .${P}key{font:600 13px 'IBM Plex Mono',monospace;background:#fbf6e8;color:${C.ink};border:1.5px solid ${C.ink};min-height:58px;padding:4px 2px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
+  .${P}key:hover,.${P}key:focus-visible{background:#f3e3b8;outline:none}
+  .${P}key.on{background:${C.brassL};box-shadow:0 0 0 2px ${C.ink}}
+  .${P}key.used{opacity:.5}
+  .${P}key.warm{box-shadow:0 0 0 3px ${C.amber}}
+  .${P}key svg{display:block}
+  .${P}blank{display:flex;gap:6px;align-items:flex-end;margin:10px 0 8px;flex-wrap:wrap}
+  .${P}blank .wf{display:flex;flex-direction:column;align-items:center;gap:2px;font:600 13px 'IBM Plex Mono',monospace}
+  .${P}blank button{min-width:44px;min-height:34px;font:600 14px 'IBM Plex Mono',monospace;background:#fbf6e8;border:1.5px solid ${C.ink};cursor:pointer;color:${C.ink}}
+  .${P}blank .d{min-height:44px;font-size:18px;background:#fff}
+  .${P}blank .wf.cur .d{box-shadow:0 0 0 2px ${C.blue}}
+  .${P}w table{border-collapse:collapse;font:13px 'IBM Plex Mono',monospace;width:100%}
+  .${P}w td,.${P}w th{border:1px solid ${C.faint};padding:3px 6px;text-align:center}
+  .${P}w td.c{font-weight:700;color:${C.ev}}
+  .${P}pg td{cursor:pointer;min-width:34px;height:30px;user-select:none}
+  .${P}lamp{position:sticky;top:0;z-index:3;text-align:center;font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.1em;padding:6px;min-height:1.4em;border:1.5px solid transparent}
+  .${P}lamp.warn{color:${C.ev};border-color:${C.ev};background:#fbf6e8}
+  .${P}lamp.on{background:${C.amber};color:#1c1a17;border-color:${C.ink}}
+  .${P}w.lit .g{filter:brightness(1.12) sepia(.5)}
+  .${P}w .fig{display:block;width:100%;max-height:150px;object-fit:contain;border:1px solid ${C.ink};background:#e4dccb;margin:0 0 8px}
+  .${P}cab{border:1.5px solid ${C.ink};background:#fbf6e8;padding:12px 14px;margin-top:12px}
+  .${P}cab ul{margin:6px 0;padding-left:1.2em;columns:2}
+  .${P}intro2{position:absolute;inset:0;display:grid;place-items:center;background:rgba(239,230,207,.95);padding:12px;z-index:5;overflow:auto}
+  .${P}intro2 .c{max-width:540px;width:100%;box-sizing:border-box;border:1.5px solid ${C.ink};padding:18px 20px 16px;background:#fbf6e8;box-shadow:inset 0 0 0 5px #fbf6e8,inset 0 0 0 6px ${C.ink}}
+  .${P}intro2 .b,.${P}w .b{font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.05em;background:#fbf6e8;color:${C.ink};border:1.5px solid ${C.ink};min-height:44px;padding:6px 10px;cursor:pointer}
+  .${P}intro2 .b:disabled{opacity:.4}
+  .${P}w .b.go{background:${C.brassL}}`;
+  root.appendChild(st);
+  const w = document.createElement("div"); w.className = P + "w"; root.appendChild(w);
+  const depths = (k) => `<svg width="50" height="20" viewBox="0 0 50 20" aria-hidden="true">${k.map((d, i) => `<rect x="${2 + i * 10}" y="${2}" width="7" height="${3 + d * 3.5}" fill="${C.brass}" stroke="${C.ink}" stroke-width=".8"/>`).join("")}</svg>`;
+  w.innerHTML = `<div class="in"><div class="hd"><span data-clock>◷ 00:40</span><span>Sheet 3 of 5</span><span data-left></span></div>
+    <h2>FIG. 3 · lost property</h2>
+    <div class="${P}lamp" data-lamp aria-live="assertive"></div>
+    <p class="cap" aria-live="polite"><i data-msg></i><span class="story" data-story></span></p>
+    <div class="g"><div>
+      ${art.has("lock-wafer") ? `<img class="fig" alt="FIG. 3: a five-wafer cabinet lock, exploded" src="${art.url("lock-wafer")}">` : ""}
+      <h3>THE RING · EIGHT JIGGLERS</h3><div class="${P}ring" role="group" aria-label="Jiggler keys"></div>
+      <h3 style="margin-top:12px">THE BLANK AND THE FILE · ONE DEPTH PER WAFER</h3>
+      <div class="${P}blank"></div>
+      <button type="button" class="b go" data-insert>INSERT AND ROCK · ENTER</button>
+    </div><div>
+      <h3>THE RECORD · HOW MANY WAFERS EACH KEY FITS</h3>
+      <table data-log><tr><th>key</th><th>cuts</th><th>clicks</th></tr></table>
+      <h3 style="margin-top:12px">PENCIL · STRIKE OUT A DEPTH (tap)</h3>
+      <table class="${P}pg" data-pg></table>
+      <div data-cab></div>
+    </div></div></div>`;
+  const $ = (q) => w.querySelector(q);
+  const ring = $("." + P + "ring"), blankEl = $("." + P + "blank"), logEl = $("[data-log]"), msg = $("[data-msg]"), story = $("[data-story]"), lampEl = $("[data-lamp]"), pg = $("[data-pg]");
+  const listeners = [], timers = [];
+  const on = (el, ev, fn, o) => { el.addEventListener(ev, fn, o); listeners.push([el, ev, fn, o]); };
+  let sel = 0, blank = [1, 1, 1, 1, 1], bcur = 0, left = gentle ? 12 : 10, over = false, started = false, strikes = 0, lastIns = performance.now();
+  const used = new Set(), tries = [];
+  let lamp = "off", lampAt = 0, nextLamp = 0, raf = 0, t0 = performance.now();
+  const say = (m) => { msg.textContent = m; }, tell = (m) => { story.textContent = m; };
+  W_KEYS.forEach((k, i) => { const b = document.createElement("button"); b.type = "button"; b.className = P + "key"; b.dataset.k = i; b.innerHTML = `${depths(k)}<span>${i + 1} · ${k.join("")}</span>`; b.setAttribute("aria-label", `Jiggler ${i + 1}, cuts ${k.join(" ")}`); ring.appendChild(b); });
+  const pgMarks = Array.from({ length: 4 }, () => [0, 0, 0, 0, 0]);
+  function paint() {
+    ring.querySelectorAll("button").forEach((b, i) => { b.classList.toggle("on", sel === i); b.classList.toggle("used", used.has(i)); b.classList.toggle("warm", !over && started && sel !== i && !used.has(i) && i === W_KEYS.findIndex((_, j) => !used.has(j)) && (gentle || performance.now() - lastIns > 20000)); });
+    blankEl.innerHTML = blank.map((d, i) => `<span class="wf${sel === "b" && bcur === i ? " cur" : ""}"><button type="button" data-up="${i}" aria-label="Wafer ${i + 1} deeper">▲</button><button type="button" class="d" data-w="${i}" aria-label="Wafer ${i + 1}, depth ${d}">${d}</button><button type="button" data-dn="${i}" aria-label="Wafer ${i + 1} shallower">▼</button></span>`).join("") + `<button type="button" class="${P}key${sel === "b" ? " on" : ""}" data-k="b" style="min-width:86px">${depths(blank)}<span>B · blank</span></button>`;
+    $("[data-left]").textContent = `INSERTIONS ${left}`;
+    pg.innerHTML = `<tr><th></th>${[1, 2, 3, 4, 5].map((n) => `<th>w${n}</th>`).join("")}</tr>` + pgMarks.map((r, d) => `<tr><th>${d + 1}</th>${r.map((v, i) => `<td data-d="${d}" data-i="${i}" aria-label="wafer ${i + 1} depth ${d + 1}: ${v === 1 ? "struck out" : v === 2 ? "ringed" : "open"}">${v === 1 ? "✕" : v === 2 ? "○" : ""}</td>`).join("")}</tr>`).join("");
+  }
+  function noise() {
+    if (lamp !== "on" || over) return false;
+    strikes++; say(strikes >= 2 ? "The wheels stop. The lamp comes back to the keyhole and stays on it." : "Metal on metal, under her lamp. The wheels stop a moment, then go on. Once more and she will come and look.");
+    if (strikes >= 2) { over = true; api.store.set("lossStreak", streak + 1); timers.push(setTimeout(() => api.end({ outcome: "lose", text: "Dora's lamp found the keyhole with your hand at it. She says nothing, and tells Lew. The cabinet stays shut tonight. When her lamp is on the lock, keep your hands still until it passes." }), 1200)); }
+    return true;
+  }
+  function insert() {
+    if (over || !started) return;
+    if (noise()) return;
+    if (sel !== "b" && used.has(sel)) { say(`Jiggler ${sel + 1} is already in the record.`); return; }
+    const key = sel === "b" ? blank.slice() : W_KEYS[sel];
+    if (left <= 0) return;
+    left--; lastIns = performance.now();
+    const n = key.filter((d, i) => d === W_CODE[i]).length;
+    if (sel !== "b") used.add(sel);
+    tries.push({ key, n });
+    const tr = document.createElement("tr"); tr.innerHTML = `<td>${sel === "b" ? "blank" : sel + 1}</td><td data-cuts>${key.join(" ")}</td><td class="c" data-clicks>${n}</td>`; logEl.appendChild(tr);
+    say(n === 5 ? "Five clicks. The key turns." : `${n === 0 ? "No click at all" : n === 1 ? "One click" : n + " clicks"}: ${n === 0 ? "not one wafer sits at these depths. That is worth as much as a click." : `${n} of five wafers sit${n === 1 ? "s" : ""} right, and the lock does not say which.`}`);
+    if (tries.length === 1) tell("In a pin lock you felt for the one pin that bound. This lock gives a number and nothing else.");
+    if (n === 5) { win(); return; }
+    paint();
+    if (left <= 0) { over = true; api.store.set("lossStreak", streak + 1); timers.push(setTimeout(() => api.end({ outcome: "lose", text: `Ten insertions, and the cabinet has not turned. It is nearly one, and Dora's round takes the passage until half past. The record you kept is still true: ${tries.length} keys and their clicks. Strike out depths in pencil, and cut the blank from what is left.` }), 900)); }
+  }
+  function win() {
+    over = true; api.store.set("opened", true); api.store.set("lossStreak", 0);
+    shared.set("lostProperty", true);
+    lampEl.className = P + "lamp"; lampEl.textContent = "";
+    $("[data-cab]").innerHTML = `<div class="${P}cab"><h3>THE CABINET, OPEN</h3>Bottom drawer: a night log in another hand. Beside it, six left things, each with a paper tag:<ul>${LEFT_THINGS.map((t) => `<li>${t}</li>`).join("")}</ul>
+      <svg viewBox="0 0 300 70" width="100%" role="img" aria-label="Chalk ticks inside the door, in seven columns: six headed with room numbers, the seventh bare"><rect width="300" height="70" fill="#3a2716"/>${[0, 1, 2, 3, 4, 5, 6].map((c) => `<text x="${22 + c * 40}" y="16" font-family="monospace" font-size="10" fill="#e9e2cf" text-anchor="middle" opacity=".8">${c < 6 ? 401 + c : ""}</text>` + Array.from({ length: [5, 6, 4, 6, 5, 3, 5][c] }, (_, k) => `<path d="M${14 + c * 40 + k * 4} 26 l1.5 30" stroke="#e9e2cf" stroke-width="2" opacity=".85"/>`).join("")).join("")}</svg>
+      <i>Chalk, inside the door, where only whoever opens it reads it: ticks in seven columns. Six are headed with a room. The seventh has no number.</i></div>`;
+    paint();
+    const cab = $("[data-cab]"); if (cab.scrollIntoView) cab.scrollIntoView({ block: "end", behavior: RM ? "auto" : "smooth" });
+    timers.push(setTimeout(() => api.end({ outcome: "win", text: `Five clicks, and lost property opens with ${left} insertion${left === 1 ? "" : "s"} to spare${strikes ? ", one of them heard" : ""}. In the bottom drawer, last season's log, in a careful hand. Six left things with paper tags. And inside the door, Dora's chalk: seven columns of ticks, and the seventh has no room number. A green spool of thread has rolled to the back of the shelf.` }), RM ? 1800 : 3600));
+  }
+  on(w, "click", (e) => {
+    if (over || !started) return;
+    const t = e.target.closest("button,td"); if (!t) return;
+    if (t.dataset.d != null) { const d = +t.dataset.d, i = +t.dataset.i; pgMarks[d][i] = (pgMarks[d][i] + 1) % 3; paint(); return; }
+    if (t.dataset.insert != null) { insert(); return; }
+    if (noise()) return;
+    if (t.dataset.k != null) { sel = t.dataset.k === "b" ? "b" : +t.dataset.k; paint(); }
+    else if (t.dataset.up != null || t.dataset.w != null) { const i = +(t.dataset.up ?? t.dataset.w); blank[i] = blank[i] % 4 + 1; sel = "b"; bcur = i; paint(); }
+    else if (t.dataset.dn != null) { const i = +t.dataset.dn; blank[i] = (blank[i] + 2) % 4 + 1; sel = "b"; bcur = i; paint(); }
+  });
+  on(window, "keydown", (e) => {
+    if (over || !started) return;
+    const k = e.key;
+    if (!/^[1-8]$|^b$|^B$|^Arrow|^Enter$|^ $/.test(k)) return;
+    e.preventDefault();
+    if (k === "Enter" || k === " ") { insert(); return; }
+    if (noise()) return;
+    if (/^[1-8]$/.test(k)) sel = +k - 1;
+    else if (k === "b" || k === "B") sel = "b";
+    else if (sel === "b") { if (k === "ArrowLeft") bcur = (bcur + 4) % 5; if (k === "ArrowRight") bcur = (bcur + 1) % 5; if (k === "ArrowUp") blank[bcur] = blank[bcur] % 4 + 1; if (k === "ArrowDown") blank[bcur] = (blank[bcur] + 2) % 4 + 1; }
+    paint();
+  });
+  const rnd = api.rng(33);
+  const tick = (now) => {
+    if (started && !over) {
+      const el = (now - t0) / 1000, gm = 40 + Math.floor(el * 10 / 60);
+      $("[data-clock]").textContent = `◷ 00:${String(Math.min(59, gm)).padStart(2, "0")}`;
+      if (lamp === "off" && el >= nextLamp) { lamp = "warn"; lampAt = now; lampEl.className = P + "lamp warn"; lampEl.textContent = "WHEELS ON THE BOARDS · her lamp is coming · hands still"; }
+      else if (lamp === "warn" && now - lampAt > (gentle ? 2000 : 1300)) { lamp = "on"; lampAt = now; lampEl.className = P + "lamp on"; lampEl.textContent = "DORA'S LAMP IS ON THE KEYHOLE · DO NOTHING"; w.classList.add("lit"); if (!w.dataset.told) { w.dataset.told = 1; tell("Everything the other locks taught you says keep working. Tonight the right move is no move."); } }
+      else if (lamp === "on" && now - lampAt > 2600) { lamp = "off"; nextLamp = el + 9 + rnd() * 4; lampEl.className = P + "lamp"; lampEl.textContent = ""; w.classList.remove("lit"); }
+      if (!gentle && now - lastIns > 20000) paint(), lastIns = now - 19000;
+    }
+    raf = requestAnimationFrame(tick);
+  };
+  paint();
+  const intro = document.createElement("div"); intro.className = P + "intro2";
+  intro.innerHTML = `<div class="c"><div class="hd" style="display:flex;justify-content:space-between;font:12px 'IBM Plex Mono',monospace;letter-spacing:.14em"><span>PAT. No. 4·0·3</span><span>SHEET 3 OF 5</span></div>
+    <h2 style="margin:8px 0 2px;font:italic 400 26px Georgia,serif;text-align:center">Lockwork · lost property</h2>
+    <p style="text-align:center;margin:0 0 8px">Find the key that fits all five wafers, in ten insertions.</p>
+    <p style="font-size:14px;color:${C.blue};margin:0 0 10px">Night four, 00:40. A tall cabinet in the passage, between 403 and 404, where Dora leaves what guests forget. This lock is not picked: nothing in it lifts. A key either fits a wafer or does not, and the lock only tells you how many.</p>
+    <ol style="margin:0 0 10px;padding-left:1.3em;display:grid;gap:4px">
+      <li><b>INSERT</b> a jiggler (keys 1–8, then Enter): the clicks say how many of its five cuts are right.</li>
+      <li><b>CUT</b> the blank (B, arrows, or ▲▼) and insert it. Five clicks open the cabinet.</li>
+      <li><b>THE LAMP</b>: when Dora's lamp is on the keyhole, touch nothing until it passes.</li>
+    </ol><div data-row></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;border-top:1px solid ${C.ink};padding-top:10px;margin-top:8px">${streak >= 2 ? `<label><input type="checkbox" ${gentle ? "checked" : ""}> twelve insertions, a slower lamp, the next key warmed</label>` : "<span>The lock never says which wafer.</span>"}<button type="button" class="b" data-start>START</button></div></div>`;
+  intro.querySelector("[data-row]").appendChild(stage.row("b"));
+  w.appendChild(intro);
+  const gb = intro.querySelector("input");
+  if (gb) on(gb, "change", () => { gentle = gb.checked; api.store.set("gentle", gentle); left = gentle ? 12 : 10; paint(); });
+  const sb = intro.querySelector("[data-start]");
+  on(sb, "click", () => { intro.remove(); started = true; t0 = lastIns = performance.now(); nextLamp = 12; say("Choose a key from the ring and insert it."); paint(); });
+  raf = requestAnimationFrame(tick);
+  sb.focus();
+  return { unmount() { cancelAnimationFrame(raf); timers.forEach(clearTimeout); for (const [el, ev, fn, o] of listeners) el.removeEventListener(ev, fn, o); root.innerHTML = ""; } };
+}

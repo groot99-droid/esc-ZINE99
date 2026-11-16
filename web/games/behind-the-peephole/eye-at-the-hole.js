@@ -23,6 +23,16 @@
 // catch ring, the number plates, the watch face, the clue-kind icons, the chapter cards and the title;
 // the towel over a covered rose; gap-403 under her valet door (the case on its edge, her boots: nothing to catch, and never felt).
 
+// Phase 2 (2026-11-16): the ladder. TEACH is 402's evening on night one (to 00:21: five beats, catch
+// three; she never covers the rose here). TEST is room 401 on night three, the knock and after
+// (data/beats.json, n3.r401): the stranger at his main door is out of the lens's reach and is caught
+// only as a REFLECTION in the dead television, its line read backwards first; then the photograph,
+// face up for a few minutes while he stands facing the valet door. TWIST is The Sitting above.
+// Layer link (api.shared "quiet", set by Night Patience): a room whose patience column was cleared
+// before the bell gives a first window half as long again. The collection thread sits on Mara's desk.
+// Cuts: 401 is the code-painted room (no plate yet); the photograph is up three minutes, not two.
+import { staged } from "./_stages.js";
+
 const RW = 1280, RH = 960, D = 400;          // room plane, and the lens's view width in plane px
 const MIN = (t) => { const [h, m] = t.split(":").map(Number); return (h < 12 ? h + 24 : h) * 60 + m; };
 const START = MIN("23:34"), END = MIN("02:33");
@@ -103,11 +113,40 @@ const M_PAGE = [
   { x: 640, head: "SUM", rows: ["4 000", "4 000", "4 000", "4 000", "16 000", "4 000"], line: "The middle third: sums. The same sum each time, and once four times the size." },
   { x: 990, head: "INIT.", rows: ["D.", "D.", "D.", "D.", "D.", "D."], line: "The right third: initials. One hand signs every line, and it is not hers." },
 ];
+// ---- room 401, night three: the knock, the reflection, the photograph
+const T_START = MIN("02:08"), T_END = MIN("02:22");
+const T_BEATS = [
+  { id: "kit", start: "02:08", end: "02:13", kind: "ritual", text: "Kit in order.", pt: () => ({ x: 720, y: 650 }) },
+  { id: "stranger", start: "02:14", end: "02:17", kind: "visitors", text: "Opens to the stranger; a cream envelope.", pt: () => ({ x: 950, y: 455 }), reflected: true },
+  { id: "photo", start: "02:17", end: "02:20", kind: "luggage", text: "A photograph on the desk, face up, then face down: 403's guest at her own door.", pt: () => ({ x: 1010, y: 548 }) },
+];
+const T_POSES = [
+  { from: "02:08", pose: "sit", x: 640, y: 720, face: 0 },
+  { from: "02:14", pose: "stand", x: -200, y: 850, face: 0 },   // at his main door, out of the lens's reach
+  { from: "02:17", pose: "stand", x: 820, y: 860, face: 2 },    // back at the desk, facing the valet door
+  { from: "02:20", pose: "sit", x: 640, y: 720, face: 0 },
+];
+const T_SUBS = [
+  { from: "02:08", to: "02:13", text: "[a zip. Things set down on a bedspread, one at a time]" },
+  { from: "02:14", to: "02:15", text: "[a knock at his main door: two quick, one slow]" },
+  { from: "02:15", to: "02:17", text: "[the main door opens. It is round the corner from the rose]" },
+  { from: "02:17", to: "02:20", text: "[paper set down on wood. He does not sit]" },
+];
+const T_NOTES = {
+  open: "Night three, 02:08. Tomas Vell, 401, is laying out his kit on the bed. In six minutes somebody knocks at his main door, and the lens cannot see that door.",
+  knock: "The knock. He goes to the main door, round the corner. The television is off, and its glass faces that way.",
+  photo: "He comes back with something flat and stands at the desk, facing your door. Face up, for now.",
+};
+const fmt = (m) => `${String(Math.floor(m / 60) % 24).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
 const KIND_ICON = { hands: "clue-hands", ritual: "clue-rituals", clothing: "clue-clothing", tv: "clue-television", calls: "clue-calls", visitors: "clue-visitors", luggage: "clue-luggage" };
 
-export default {
-  mount(root, api) {
-    const P = "behind-the-peephole-eye-at-the-hole-";
+const P = "behind-the-peephole-eye-at-the-hole-";
+export default staged(P, ["hold still on her hands", "a reflection, a photograph", "The Sitting"], function play(root, api, stage) {
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const DOOR = ["402", "401", "403"][stage.stage], teach = stage.stage === 0;
+    const quietCol = !!(shared.get("quiet", {}) || {})["r" + DOOR];
+    const thread = api.thread || { found() {}, isFound: () => false };
+    const GLOVE = { x: 1150, y: 566 };
     const art = api.art || { has: () => false, url: () => "", img: () => Promise.resolve(null) };
     const COL = { bottle: "#1f3d2c", bottleD: "#13271c", bottleL: "#2f5a40", amber: "#e0a24a", amberL: "#f6cf86", brass: "#b8913f", brassL: "#e3c47a", river: "#6f7c80", cream: "#efe6cf", ev: "#a3302a" };
     const RM = api.reducedMotion;
@@ -220,6 +259,8 @@ export default {
       dabs(g, 0, 0, RW, RH, ["rgba(224,162,74,.5)", "rgba(20,14,8,.5)"], 260, 22);
     }
     paintRoom();
+    const room401 = document.createElement("canvas"); room401.width = RW; room401.height = RH;
+    { const g = room401.getContext("2d"); g.drawImage(room, 0, 0); g.fillStyle = "rgba(20,26,40,.28)"; g.fillRect(0, 0, RW, RH); g.fillStyle = "#3a3f36"; g.fillRect(560, 640, 340, 50); }
 
     // ---- the art, rasterised once at the size it is drawn
     const A = {};
@@ -239,10 +280,14 @@ export default {
       await Promise.all([
         raster("overlay-403-pictures-2", 360, 270), raster("overlay-403-sitting", 640, 480), raster("gap-402", 1600, 144), raster("gap-403", 1600, 144), raster("overlay-406-towel", 640, 480),
         raster("ui-rose-lit", 300, 300), raster("ui-rose-dark", 96, 96), raster("ui-catch-ring-closed", 480, 480),
-        raster("ui-number-plates", 720, 240), raster("ui-watch-face", 72, 72),
+        raster("ui-number-plates", 720, 240), raster("ui-watch-face", 72, 72), raster("thread-guest", 120, 120),
         ...Object.values(KIND_ICON).map((id) => raster(id, 64, 64)),
       ]);
       if (disposed) return;
+      if (A["thread-guest"]) { // feather the glove's own ground into the desk it lies on
+        const g = A["thread-guest"].getContext("2d"), m = g.createRadialGradient(60, 60, 30, 60, 60, 60);
+        m.addColorStop(0, "#000"); m.addColorStop(1, "rgba(0,0,0,0)"); g.globalCompositeOperation = "destination-in"; g.fillStyle = m; g.fillRect(0, 0, 120, 120);
+      }
       artReady = true; resize();
     })();
 
@@ -274,8 +319,8 @@ export default {
       if (!guest) return;
       const { x, y, pose } = guest;
       g.save();
-      const mara = shift === "403";
-      const coat = mara ? "#39464b" : "#2a2a33", coatL = mara ? "#55656b" : "#3c3c50", skin = mara ? "#b08a6a" : "#8a6448", hair = mara ? "#5a4a3e" : "#2a1e16";
+      const mara = shift === "403", tom = shift === "401";
+      const coat = mara ? "#39464b" : tom ? "#1e2226" : "#2a2a33", coatL = mara ? "#55656b" : tom ? "#30363c" : "#3c3c50", skin = mara ? "#b08a6a" : tom ? "#a07a5c" : "#8a6448", hair = mara ? "#5a4a3e" : tom ? "#6a6a66" : "#2a1e16";
       if (pose === "sleep") {
         g.fillStyle = coat; g.beginPath(); g.ellipse(x + 60, y - 50, 120, 26, 0, 0, 7); g.fill();
         g.fillStyle = hair; g.beginPath(); g.ellipse(x - 70, y - 70, 26, 22, 0, 0, 7); g.fill();
@@ -296,14 +341,14 @@ export default {
       const hy = y - h * 0.88 - 34;
       g.fillStyle = skin; g.beginPath(); g.ellipse(x, hy, 26, 32, 0, 0, 7); g.fill();
       g.fillStyle = hair;
-      if (guest.face) { g.beginPath(); g.ellipse(x, hy - 16, 28, 20, 0, Math.PI, 0); g.fill(); g.fillStyle = "#1c1a17"; g.fillRect(x - 13, hy - 2, 7, 4); g.fillRect(x + 6, hy - 2, 7, 4); if (!mara) { g.strokeStyle = "#c9bfa6"; g.lineWidth = 1.5; g.strokeRect(x - 16, hy - 5, 12, 9); g.strokeRect(x + 4, hy - 5, 12, 9); } }
+      if (guest.face) { g.beginPath(); g.ellipse(x, hy - 16, 28, 20, 0, Math.PI, 0); g.fill(); g.fillStyle = "#1c1a17"; g.fillRect(x - 13, hy - 2, 7, 4); g.fillRect(x + 6, hy - 2, 7, 4); if (!mara && !tom) { g.strokeStyle = "#c9bfa6"; g.lineWidth = 1.5; g.strokeRect(x - 16, hy - 5, 12, 9); g.strokeRect(x + 4, hy - 5, 12, 9); } }
       else { g.beginPath(); g.ellipse(x, hy - 4, 29, 32, 0, 0, 7); g.fill(); }
       if (pose === "phone") { g.fillStyle = "#1c1a17"; g.fillRect(x + 18, hy - 6, 10, 24); }
       if (mara) { // white cotton gloves, and the brush or the pencil
         g.fillStyle = "#f1ede2"; g.beginPath(); g.ellipse(x - 50, y - h * 0.5, 12, 15, 0, 0, 7); g.fill(); g.beginPath(); g.ellipse(x + 50, y - h * 0.5, 12, 15, 0, 0, 7); g.fill();
         g.strokeStyle = "#c9a23a"; g.lineWidth = 4; g.beginPath(); g.moveTo(x - 50, y - h * 0.5); g.lineTo(x - 64, y - h * 0.5 - 34); g.stroke();
       }
-      if (!mara && t >= MIN("23:44") && t < MIN("23:52")) { g.fillStyle = "#e9c84a"; for (let i = 0; i < 14; i++) { g.globalAlpha = 0.8; g.fillRect(x + 14 + ((i * 7) % 26), y - h * 0.7 + ((i * 11) % 40), 3, 3); } g.globalAlpha = 1; }
+      if (!mara && !tom && t >= MIN("23:44") && t < MIN("23:52")) { g.fillStyle = "#e9c84a"; for (let i = 0; i < 14; i++) { g.globalAlpha = 0.8; g.fillRect(x + 14 + ((i * 7) % 26), y - h * 0.7 + ((i * 11) % 40), 3, 3); } g.globalAlpha = 1; }
       g.restore();
     }
     function buildPage() {
@@ -331,6 +376,9 @@ export default {
       sc.drawImage(rooms[403] || room, 0, 0);
       if (A["overlay-403-pictures-2"]) sc.drawImage(A["overlay-403-pictures-2"], 360, 232);
       else for (let i = 0; i < 2; i++) { sc.fillStyle = "#f4efe2"; sc.fillRect(410 + i * 150, 300, 120, 96); sc.fillStyle = COL.river; sc.fillRect(418 + i * 150, 308, 104, 60); sc.fillStyle = i ? COL.brass : "#f4efe2"; sc.strokeStyle = COL.brass; sc.lineWidth = 2; sc.beginPath(); sc.arc(518 + i * 150, 384, 5, 0, 7); sc.fill(); sc.stroke(); }
+      // a white cotton glove left on the desk, cuff turned back
+      if (A["thread-guest"]) sc.drawImage(A["thread-guest"], GLOVE.x - 42, GLOVE.y - 42, 84, 84);
+      else { sc.fillStyle = "#f1ede2"; sc.beginPath(); sc.ellipse(GLOVE.x, GLOVE.y + 8, 30, 12, -0.3, 0, 7); sc.fill(); sc.fillStyle = "#cfc7b2"; sc.fillRect(GLOVE.x + 14, GLOVE.y - 6, 16, 14); }
       if (mp === "paint") { // tonight's sheet on the desk: a small dark door
         sc.fillStyle = "#f4efe2"; sc.fillRect(944, 560, 96, 34); sc.fillStyle = "#35503f"; sc.fillRect(952, 564, 80, 24); sc.fillStyle = "#5a3e26"; sc.fillRect(980, 566, 24, 22);
       }
@@ -353,6 +401,29 @@ export default {
     }
     function paintScene(t) {
       if (shift === "403") { if (mp === "page") sc.drawImage(pageCv, 0, 0); else paintMara(t); return; }
+      if (shift === "401") {
+        sc.drawImage(room401, 0, 0);
+        // the kit on the bed, in a row
+        if (t < MIN("02:14")) { sc.fillStyle = "#15171a"; for (let i = 0; i < 5; i++) sc.fillRect(650 + i * 34, 640 + (i % 2) * 6, 22, 30 - (i % 3) * 6); }
+        // the dead television: at the knock its glass holds the main door, which the lens cannot reach
+        sc.fillStyle = "#0c0e10"; sc.fillRect(888, 408, 124, 94);
+        if (t >= MIN("02:14") && t < MIN("02:17")) {
+          sc.save(); sc.beginPath(); sc.rect(888, 408, 124, 94); sc.clip(); sc.globalAlpha = 0.6;
+          sc.fillStyle = "#3a2c1c"; sc.fillRect(930, 414, 44, 88); sc.fillStyle = "#b9a06a"; sc.fillRect(934, 418, 14, 84);
+          sc.fillStyle = "#1a1c20"; sc.beginPath(); sc.ellipse(962, 450, 9, 11, 0, 0, 7); sc.fill(); sc.fillRect(952, 460, 20, 42);
+          sc.fillStyle = "#0a0a0a"; sc.beginPath(); sc.ellipse(938, 446, 8, 10, 0, 0, 7); sc.fill(); sc.fillRect(929, 455, 18, 47);
+          sc.fillStyle = "#efe6cf"; sc.fillRect(944, 468, 12, 8);
+          sc.globalAlpha = 0.18; sc.fillStyle = "#fff"; sc.beginPath(); sc.moveTo(888, 408); sc.lineTo(930, 408); sc.lineTo(900, 502); sc.lineTo(888, 502); sc.fill(); sc.restore();
+        }
+        if (t >= MIN("02:17")) { // the photograph on the desk: face up, then face down
+          const up = t < MIN("02:20");
+          sc.save(); sc.translate(1010, 548); sc.rotate(-0.12); sc.fillStyle = up ? "#efe6cf" : "#d8cfb8"; sc.fillRect(-27, -19, 54, 38);
+          if (up) { sc.fillStyle = "#3b4a4e"; sc.fillRect(-23, -15, 46, 30); sc.fillStyle = "#5a3e26"; sc.fillRect(-4, -13, 18, 28); sc.fillStyle = "#e9e2cf"; sc.beginPath(); sc.ellipse(-10, -4, 5, 6, 0, 0, 7); sc.fill(); sc.fillStyle = "#39464b"; sc.fillRect(-16, 2, 12, 13); }
+          sc.restore();
+        }
+        drawGuest(sc, poseAt(t), t);
+        return;
+      }
       sc.drawImage(room, 0, 0);
       const tvOn = t >= MIN("23:45") && t < MIN("00:05");
       if (tvOn) {
@@ -501,7 +572,7 @@ export default {
       ctx.fillText(shift + " · TONIGHT", cx, cy - r * 0.24);
       // the strip: 23:30 to 02:40, a dot per beat
       const x0 = cx - r * 0.78, x1 = cx + r * 0.78, y = cy;
-      const w0 = shift === "403" ? MIN("03:20") : MIN("23:30"), w1 = shift === "403" ? MIN("03:55") : MIN("02:40");
+      const w0 = shift === "403" ? MIN("03:20") : shift === "401" ? MIN("02:06") : MIN("23:30"), w1 = shift === "403" ? MIN("03:55") : shift === "401" ? MIN("02:23") : teach ? MIN("00:25") : MIN("02:40");
       const tx = (m) => x0 + (x1 - x0) * (Math.max(w0, Math.min(w1, m)) - w0) / (w1 - w0);
       ctx.strokeStyle = "#2a1a0c"; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x1, y); ctx.stroke();
       ctx.fillStyle = "#c0392b"; ctx.fillRect(tx(t) - 1, y - 16, 2, 32);
@@ -569,7 +640,7 @@ export default {
         }
         prog[b.id] = ok ? (prog[b.id] || 0) + dt_ : Math.max(0, (prog[b.id] || 0) - dt_ * 2);
         if (prog[b.id] >= HOLD()) {
-          caught.add(b.id); caughtKinds.push(b.kind); showCard(b.text);
+          caught.add(b.id); caughtKinds.push(b.kind); showCard(b.text, b.reflected);
           flash = { t: performance.now(), good: true, catch: true };
           if (caught.size === 1 && shift === "402") timers.push(setTimeout(() => { if (!over) say(NOTES.first); }, 900));
         }
@@ -665,22 +736,28 @@ export default {
       const t = T();
       const active = B.some((b) => !caught.has(b.id) && t >= MIN(b.start) - 3 && t <= MIN(b.end));
       const next = B.filter((b) => MIN(b.start) > t).map((b) => MIN(b.start))[0];
-      const quiet = !active && next && next - t > 4 && t > MIN("00:20");
+      const quiet = shift === "402" && !teach && !active && next && next - t > 4 && t > MIN("00:20");
       ffLabel = quiet;
       game += dt * (quiet ? 18 : 1 / SPM);
       if (T() >= endMin) { finish(); return; }
       const nt = T();
+      if (shift === "401") {
+        if (!said.has("watch")) { said.add("watch"); unlock(watchBtn, ""); unlock(crouchBtn, ""); }
+        if (!said.has("knock") && nt >= MIN("02:14")) { said.add("knock"); say(T_NOTES.knock); }
+        if (!said.has("photo") && nt >= MIN("02:17")) { said.add("photo"); say(T_NOTES.photo); }
+      } else {
       if (!said.has("near") && nt >= MIN("00:05")) { said.add("near"); say(NOTES.near); }
       if (!said.has("quiet") && nt >= MIN("00:24")) { said.add("quiet"); say(NOTES.quiet); }
       if (!said.has("knock") && nt >= MIN("02:14")) { said.add("knock"); say(NOTES.knock); unlock(crouchBtn, "The envelope lies on the carpet. The gap sees the floor."); }
       if (!said.has("watch") && nt >= MIN("23:53")) { said.add("watch"); unlock(watchBtn, "Your pocket watch: the night so far, and what is still to come. Raise it with Tab."); }
       if (!said.has("crouch") && nt >= MIN("23:48")) { said.add("crouch"); unlock(crouchBtn, "Crouch (C) to the gap under the valet door. She never feels it, but it sees only the floor."); }
+      }
       const still = moveEye(dt);
-      const guest = nt >= MIN("23:37") ? poseAt(nt) : null;
+      const guest = shift === "401" || nt >= MIN("23:37") ? poseAt(nt) : null;
       const watching = mode === "eye" && !blind;
       if (watching && guest && guest.pose !== "sleep") susp += dt * (guest.face === 2 ? 9 : guest.face === 1 ? 4 : 1);
       else susp -= dt * (mode === "watch" || mode === "back" ? 1.5 : 1);
-      susp = Math.max(0, susp);
+      susp = Math.max(0, teach ? Math.min(64, susp) : susp);
       glanceCD -= dt;
       if (look) resolveLook();
       else if (watching && susp >= 40 && glanceCD <= 0 && guest && guest.pose !== "sleep") {
@@ -688,14 +765,18 @@ export default {
       }
       if (!blind && susp >= 70) {
         blind = true; look = null;
-        toastMsg("She hangs a towel over the brass rose. Only the gap is left tonight.", true);
+        toastMsg(shift === "401" ? "He hangs his jacket over the brass rose. Only the gap is left tonight." : "She hangs a towel over the brass rose. Only the gap is left tonight.", true);
         unlock(crouchBtn, "");
       }
       dt_ = dt;
       return catchBeats(nt, still, guest);
     }
     let ringP = 0;
-    function showCard(text) { toast.className = P + "toast"; toast.textContent = "✎ " + text; toast.style.opacity = 1; toastT = performance.now(); }
+    // a reflected beat is read in the glass: its line comes up backwards, then rights itself
+    function showCard(text, reflected) {
+      toast.className = P + "toast"; toast.textContent = "✎ " + (reflected && RM ? "(in the glass) " : "") + text; toast.style.opacity = 1; toastT = performance.now();
+      if (reflected && !RM) { toast.style.transform = "rotate(2deg) scaleX(-1)"; toastT += 1400; timers.push(setTimeout(() => { toast.style.transform = ""; }, 1500)); }
+    }
     function toastMsg(text, alarm) { toast.className = P + "toast" + (alarm ? " alarm" : ""); toast.textContent = text; toast.style.opacity = 1; toastT = performance.now(); }
     function unlock(btn, text) {
       if (!btn.hidden) return;
@@ -752,6 +833,7 @@ export default {
       const gw = narrow ? 150 : 210, gx = 16, gyy = hy + 40;
       ctx.font = "600 12px 'IBM Plex Mono',monospace"; ctx.fillStyle = COL.cream;
       const mood = blind ? "COVERED THE ROSE" : sittingHeld ? "SHE KNOWS YOU ARE HERE" : shift === "403" && mp !== "paint" ? "WAITING" : susp >= 40 ? "UNEASY" : susp >= 20 ? "RESTLESS" : shift === "403" ? "PAINTING" : "UNAWARE";
+      const HE = shift === "401";
       ctx.fillText(`${shift} · ${mood}`, gx, gyy - 6);
       ctx.fillStyle = "rgba(11,9,7,.85)"; ctx.fillRect(gx, gyy, gw, 12);
       ctx.strokeStyle = COL.brass; ctx.lineWidth = 1; ctx.strokeRect(gx + 0.5, gyy + 0.5, gw - 1, 11);
@@ -763,7 +845,7 @@ export default {
       ctx.fillText("40", gx + gw * 0.4 - 8, gyy + 28); ctx.fillText("70", gx + gw * 0.7 - 8, gyy + 28);
       const n = caught.size, by = H - (narrow ? 84 : 26);
       ctx.fillStyle = COL.amber; ctx.font = "600 13px 'IBM Plex Mono',monospace";
-      ctx.fillText(`CAUGHT ${n} OF ${shift === "403" ? 5 : 6}`, 16, by - 60);
+      ctx.fillText(`CAUGHT ${n} OF ${shift === "403" ? 5 : B.length}`, 16, by - 60);
       for (let i = 0; i < n; i++) {
         ctx.save(); ctx.translate(30 + i * 16, by); ctx.rotate((-24 + i * 9) * Math.PI / 180);
         ctx.fillStyle = COL.cream; ctx.strokeStyle = "#6b5a3a"; ctx.fillRect(-16, -42, 32, 42); ctx.strokeRect(-16, -42, 32, 42);
@@ -775,7 +857,7 @@ export default {
       const s = SU.find((x) => t >= MIN(x.from) && t < MIN(x.to));
       const warn = !!look && !look.sitting && mode === "eye";
       sub.classList.toggle("warn", warn);
-      let line = warn ? "[she turns toward the brass rose: step back!]" : s ? s.text : "";
+      let line = warn ? `[${HE ? "he" : "she"} turns toward the brass rose: step back!]` : s ? s.text : "";
       if (shift === "403") {
         if (mp === "look") line = "[she is looking straight into the rose. She does not move]";
         else if (mp === "taps") line = "[two taps of a pencil on the desk]";
@@ -810,13 +892,24 @@ export default {
       if (over) return;
       if (shift === "403") { finishMara(); return; }
       over = true;
-      const strip = BEATS.map((b) => (caught.has(b.id) ? "●" : "○")).join(" ");
+      const strip = B.map((b) => (caught.has(b.id) ? "●" : "○")).join(" ");
       const n = caught.size;
+      if (shift === "401") {
+        const ph = caught.has("photo"), rf = caught.has("stranger");
+        const out = blind ? "lose" : ph && n >= 2 ? "win" : n >= 1 ? "done" : "lose";
+        api.store.set("lossStreak", out === "lose" ? streak + 1 : 0);
+        const t401 = blind ? `He hung his jacket over the rose and stood a long time on the other side of it. ${n} of 3 in the log. When he faces the door, take what you came for and step back.`
+          : out === "win" ? `${n} of 3 in the log, and he never felt the rose. ${rf ? "The stranger at his main door, read off the dead television, backwards first. " : ""}And the photograph, in the three minutes it lay face up while he stood facing you: 403's guest, at her own door. Somebody is paying him to look at the woman two rooms along. The night strip: ${strip}.`
+            : out === "done" ? `${n} of 3 in the log. ${ph ? "You have the photograph and little else." : "The photograph lay face up for three minutes while he faced the door, and went face down unread."} The night strip: ${strip}.`
+              : `The knock came and went and the log has nothing. What the lens cannot reach, glass may show: look into the dead television when he goes to the door. The night strip: ${strip}.`;
+        timers.push(setTimeout(() => api.end({ outcome: out, text: t401 }), 400)); return;
+      }
       api.store.set("best", Math.max(api.store.get("best", 0), n));
-      const outcome = blind ? "lose" : n >= 5 ? "win" : n >= 3 ? "done" : "lose";
+      const outcome = blind ? "lose" : teach ? (n >= 3 ? "win" : "lose") : n >= 5 ? "win" : n >= 3 ? "done" : "lose";
       api.store.set("lossStreak", outcome === "lose" ? streak + 1 : 0);
       let text;
       if (blind) text = `She hung a towel over the rose; the rest of 402's night is terry cloth, and she will remember the dark behind the door. ${n} of 6 in the log. The night strip: ${strip}.`;
+      else if (teach) text = outcome === "win" ? `${n} of 5 lines in the log before she slept, and she never knew the rose was looking. The night strip: ${strip}. Next door but one, a man is expecting a knock, and his main door is round a corner from the lens.` : `She was awake three quarters of an hour and the log has ${n} line${n === 1 ? "" : "s"}. The night strip: ${strip}. Hold the eye still where her hands are until the ring closes.`;
       else if (outcome === "win") text = `${n} of 6 lines in the log, and she never knew the rose was looking. The night strip: ${strip}. It never says what a hollow dot was.`;
       else if (outcome === "done") text = `${n} of 6 in the log: enough for Wren, not enough for you. The night strip: ${strip}. It never says what a hollow dot was.`;
       else text = `She was home three hours and the log has ${n} line${n === 1 ? "" : "s"}. The night strip: ${strip}. Hold the eye still where her hands are, and use the gap when she stares.`;
@@ -859,7 +952,15 @@ export default {
         touchLast = { x: px, y: py };
       }
     });
-    on(cv, "pointerdown", (e) => { const r = cv.getBoundingClientRect(); touchLast = { x: e.clientX - r.left, y: e.clientY - r.top }; if (e.pointerType !== "mouse") cv.setPointerCapture(e.pointerId); if (mode === "watch" || mode === "back") setMode("eye"); });
+    let gloveSaid = 0;
+    function touchGlove() {
+      if (shift !== "403" || mode !== "eye" || mp === "page" || !started || blind) return false;
+      if (Math.hypot(eye.x - GLOVE.x, eye.y - GLOVE.y) > 120) return false;
+      thread.found(); gloveSaid = performance.now();
+      toastMsg("A white cotton glove on the desk, the cuff turned back. Small ink capitals inside it, where only the hand that wears it would look.", false);
+      return true;
+    }
+    on(cv, "pointerdown", (e) => { touchGlove(); const r = cv.getBoundingClientRect(); touchLast = { x: e.clientX - r.left, y: e.clientY - r.top }; if (e.pointerType !== "mouse") cv.setPointerCapture(e.pointerId); if (mode === "watch" || mode === "back") setMode("eye"); });
     const endTouch = () => { touchLast = null; };
     on(cv, "pointerup", endTouch); on(cv, "pointercancel", endTouch);
     on(cv, "pointerleave", () => { pointerIn = false; });
@@ -871,6 +972,7 @@ export default {
       else if ((k === "c" || k === "C") && !crouchBtn.hidden) setMode("gap");
       else if ((k === "Tab" || k === "w" || k === "W") && !watchBtn.hidden) { e.preventDefault(); setMode("watch"); }
       else if (k.startsWith("Arrow")) { e.preventDefault(); keys.add(k); }
+      else if (k === "Enter") touchGlove();
     });
     on(window, "keyup", (e) => keys.delete(e.key));
     const keyTick = setInterval(() => {
@@ -898,15 +1000,18 @@ export default {
         <b>STEP BACK</b><span>Esc, when she turns to the rose</span>
       </div>
       ${streak >= 2 ? `<label><input type="checkbox" ${gentle ? "checked" : ""}> a steadier hand (quicker catches, a hint on the watch)</label>` : ""}
-      <div class="${P}doors">
-        <button type="button" class="${P}b" data-door="402">${plate(1)}NIGHT ONE<small>catch five of six</small></button>
-        <button type="button" class="${P}b" data-door="403">${plate(2)}NIGHT FOUR<small>The Sitting</small></button>
-      </div></div>`;
-    if (art.has("chapter-n1")) { intro.classList.add("ch"); intro.style.backgroundImage = `radial-gradient(circle at 50% 50%,rgba(40,26,12,.55),rgba(5,4,3,.9) 75%),url(${art.url("chapter-n1")})`; }
+      <p class="open" style="margin:2px 0"></p>
+      <div data-row></div>
+      <div class="${P}doors"><button type="button" class="${P}b" data-door="${DOOR}">${plate(+DOOR - 401)}${["NIGHT ONE", "NIGHT THREE", "NIGHT FOUR"][stage.stage]}<small>${["catch three of five", "the reflection, the photograph", "The Sitting"][stage.stage]}</small></button></div></div>`;
+    intro.querySelector(".open").textContent = quietCol ? `Because you cleared the column under ${DOOR} in Night Patience, this room's first window runs half as long again.` : "";
+    intro.querySelector("[data-row]").appendChild(stage.row(P + "b"));
+    intro.querySelector(".goal").textContent = ["Catch what 402 does tonight without being felt: three beats of five.", "Catch what the lens cannot reach, and the photograph, without being felt.", "She has something to show you. Catch it, and do not be the one who looks away."][stage.stage];
+    const CH = "chapter-n" + [1, 3, 4][stage.stage];
+    if (art.has(CH)) { intro.classList.add("ch"); intro.style.backgroundImage = `radial-gradient(circle at 50% 50%,rgba(40,26,12,.55),rgba(5,4,3,.9) 75%),url(${art.url(CH)})`; }
     wrap.appendChild(intro);
     const gbox = intro.querySelector("input");
     if (gbox) on(gbox, "change", () => { gentle = gbox.checked; api.store.set("gentle", gentle); });
-    const sb = intro.querySelector('[data-door="402"]');
+    const sb = intro.querySelector("[data-door]");
     function begin(door) {
       intro.remove(); shift = door; started = true; last = performance.now();
       if (door === "403") {
@@ -914,11 +1019,16 @@ export default {
         eye.x = tgt.x = 760; eye.y = tgt.y = 520; buildPage(); resize();
         note.textContent = M_NOTES.open; note.style.opacity = 1; noteT = performance.now();
         after(5200, () => { if (mp === "paint") say(M_NOTES.go); });
-      } else { say(NOTES.open); after(5200, () => { if (caught.size === 0) say("The keycard is at her lock. Find her hands."); }); }
+      } else if (door === "401") {
+        B = T_BEATS; PO = T_POSES; SU = T_SUBS; startMin = T_START; endMin = T_END;
+        eye.x = tgt.x = 640; eye.y = tgt.y = 560; resize(); say(T_NOTES.open);
+      } else { B = BEATS.filter((b) => b.id !== "envelope"); endMin = MIN("00:21"); say(NOTES.open); after(5200, () => { if (caught.size === 0) say("The keycard is at her lock. Find her hands."); }); }
+      if (quietCol) { // the layer link: a quiet column lengthens the room's first window by half
+        const b0 = B[0], len = MIN(b0.end) - MIN(b0.start); B = B.slice(); B[0] = { ...b0, end: fmt(MIN(b0.end) + Math.round(len / 2)) };
+        after(1800, () => toastMsg(`Because you cleared the column under ${door} in Night Patience: the first thing tonight lasts until ${B[0].end}, not ${b0.end}.`, false));
+      }
     }
-    on(sb, "click", () => begin("402"));
-    on(intro.querySelector('[data-door="403"]'), "click", () => begin("403"));
-    on(intro, "pointermove", (e) => { const b = e.target.closest("[data-door]"); if (!b || !art.has("chapter-n4")) return; const id = b.dataset.door === "403" ? "chapter-n4" : "chapter-n1"; if (intro.dataset.ch !== id) { intro.dataset.ch = id; intro.style.backgroundImage = `radial-gradient(circle at 50% 50%,rgba(40,26,12,.55),rgba(5,4,3,.9) 75%),url(${art.url(id)})`; } });
+    on(sb, "click", () => begin(DOOR));
     raf = requestAnimationFrame(loop);
     sb.focus();
 
@@ -933,5 +1043,4 @@ export default {
         root.innerHTML = "";
       },
     };
-  },
-};
+});

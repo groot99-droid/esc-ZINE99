@@ -752,6 +752,117 @@
         }
       ]
     },
+    "n2_seventh_bell": {
+      "note": "Night 2, leaving for the shift. The bell board has seven pulls: six numbered, one bare. The bare one rings once as you reach the door.",
+      "world": {
+        "color": [
+          0.05,
+          0.04,
+          0.03
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 35,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "lightwell-slot",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 25,
+          "size": 1.2,
+          "color": [
+            0.62,
+            0.72,
+            0.85
+          ],
+          "look_at": [
+            0.2,
+            -0.6,
+            0.4
+          ]
+        },
+        {
+          "name": "bell-board-glint",
+          "type": "SPOT",
+          "location": [
+            0.9,
+            0.6,
+            2.2
+          ],
+          "look_at": [
+            0.6,
+            1.44,
+            1.75
+          ],
+          "energy": 18,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.8,
+            0.5
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          1.5,
+          -0.5,
+          1.62
+        ],
+        "look_at": [
+          0.6,
+          1.44,
+          1.75
+        ],
+        "lens_mm": 35,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          1.5,
+          -0.5,
+          0
+        ],
+        "facing_deg": 335
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "bell-board",
+          "verb": "Look at the seventh pull"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Take the log"
+        },
+        {
+          "prop": "coat-stand",
+          "verb": "Go out to the passage",
+          "leads_to": "n2_shift_eye"
+        }
+      ]
+    },
     "n3_office": {
       "note": "Night 3. Lew at the hand-over: 'Stair door's locked from your side. Someone's idea.' 403 is lit before the shift.",
       "world": {
@@ -855,6 +966,100 @@
           "prop": "card-table",
           "verb": "Deal a hand",
           "leads_to": "n3_patience"
+        }
+      ]
+    },
+    "n3_tea": {
+      "note": "Night 3, 01:00. Lew brings tea and talks. While he does, trolley wheels stop outside the office door for a minute, and go on.",
+      "world": {
+        "color": [
+          0.05,
+          0.04,
+          0.03
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            1.05,
+            1.25,
+            1.12
+          ],
+          "energy": 35,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        },
+        {
+          "name": "lightwell-slot",
+          "type": "AREA",
+          "location": [
+            0.5,
+            1.4,
+            2.25
+          ],
+          "energy": 25,
+          "size": 1.2,
+          "color": [
+            0.62,
+            0.72,
+            0.85
+          ],
+          "look_at": [
+            0.2,
+            -0.6,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.6,
+          0.5,
+          1.2
+        ],
+        "look_at": [
+          2.0,
+          -0.6,
+          1.3
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.6,
+          0.5,
+          0
+        ],
+        "facing_deg": 128
+      },
+      "hide": [
+        "office-rose"
+      ],
+      "interactions": [
+        {
+          "prop": "office-chair",
+          "verb": "Sit and drink the tea"
+        },
+        {
+          "prop": "kettle",
+          "verb": "Ask Lew about the floor"
+        },
+        {
+          "prop": "coat-stand",
+          "verb": "Stand by the door and listen"
+        },
+        {
+          "prop": "logbook",
+          "verb": "Go back to the shift",
+          "leads_to": "n3_shift_eye"
         }
       ]
     },

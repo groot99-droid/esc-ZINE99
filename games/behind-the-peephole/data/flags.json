@@ -528,6 +528,132 @@
         "room",
         "correct"
       ]
+    },
+    {
+      "name": "quiet.r401",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Layer link 1 (quiet columns). Tonight's Night Patience column under the number 401 was cleared before the first bell: room 401's first beat window is half as long again. Reset each night."
+    },
+    {
+      "name": "quiet.r402",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Layer link 1 (quiet columns). Tonight's Night Patience column under the number 402 was cleared before the first bell: room 402's first beat window is half as long again. Reset each night."
+    },
+    {
+      "name": "quiet.r403",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Layer link 1 (quiet columns). Tonight's Night Patience column under the number 403 was cleared before the first bell: room 403's first beat window is half as long again. Reset each night."
+    },
+    {
+      "name": "quiet.r404",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Layer link 1 (quiet columns). Tonight's Night Patience column under the number 404 was cleared before the first bell: room 404's first beat window is half as long again. Reset each night."
+    },
+    {
+      "name": "quiet.r405",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Layer link 1 (quiet columns). Tonight's Night Patience column under the number 405 was cleared before the first bell: room 405's first beat window is half as long again. Reset each night."
+    },
+    {
+      "name": "quiet.r406",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Layer link 1 (quiet columns). Tonight's Night Patience column under the number 406 was cleared before the first bell: room 406's first beat window is half as long again. Reset each night."
+    },
+    {
+      "name": "reply_cards",
+      "type": "counter",
+      "default": 0,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Reply cards left on the spike for Fenn, 0 to 3 (one a night from night four)."
+    },
+    {
+      "name": "reply_last",
+      "type": "enum",
+      "default": "none",
+      "values": [
+        "none",
+        "who_paid",
+        "who_watches",
+        "who_was_here"
+      ],
+      "description": "Accepted 2026-11-15, built 2026-11-16. The last question left on the spike. It picks which of slipped cards ten to twelve answers under column six."
+    },
+    {
+      "name": "bell_wires",
+      "type": "counter",
+      "default": 0,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Bell wires tugged this night in the corridor race, 0 to 6 (one a room; each costs that room 10 suspicion)."
+    },
+    {
+      "name": "trolley_moved",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16. The player pushed Dora's parked trolley tonight (from night five). She notices in the morning."
+    },
+    {
+      "name": "dora_at_cabinet",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Layer link 2. Set when lost property is opened: on every later night Dora stops two minutes at the cabinet (33 m) on her round and leaves the trolley against it."
+    },
+    {
+      "name": "left_things_seen",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16. The six left things in lost property have been seen: a rook, a child's mitten, a dry orchid, a chess clock, a press card, a paper boat gone brown."
+    },
+    {
+      "name": "rhyme_spool",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Layer link 2. The green rhyme spool from lost property is on the Mosaic's tray (its fifth spool)."
+    },
+    {
+      "name": "rhyme_links",
+      "type": "counter",
+      "default": 0,
+      "description": "Accepted 2026-11-15, built 2026-11-16. True rhymes tied on the Mosaic between a guest and one of the six left things, 0 to 6."
+    },
+    {
+      "name": "typed_rows_struck",
+      "type": "counter",
+      "default": 0,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Rows typed by H. Wren that the player struck on a Statement (from night five). Each costs a second look and rings the desk phone once."
+    },
+    {
+      "name": "frayed_links",
+      "type": "counter",
+      "default": 0,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Mosaic links that rested only on a typed row and frayed overnight."
+    },
+    {
+      "name": "seventh_bell_heard",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Night two: the bare seventh pull on the bell board rang once as the player left the office."
+    },
+    {
+      "name": "tea_wheels_heard",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Night three, 01:00: trolley wheels stopped outside the office door for a minute while the player drank Lew's tea."
+    },
+    {
+      "name": "seventh_coin_seen",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Night five, the blackout: the player turned back and saw a seventh coin of light, the lens in the office door."
+    },
+    {
+      "name": "watcher_marks",
+      "type": "counter",
+      "default": 0,
+      "description": "Accepted 2026-11-15, built 2026-11-16. Marks of the seventh row found, 0 to 5: Mara's dots, Dora's chalk ticks inside the lost-property door, the bare seventh bell pull, the \"aud.\" column in Fenn's log, the seventh line of the booking ledger. Phase 3 reads it for the Account's tenth line."
     }
   ]
 }

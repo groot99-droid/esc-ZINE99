@@ -133,7 +133,13 @@
         "exposed.r404",
         "exposed.r405",
         "exposed.r406",
-        "watch_log"
+        "watch_log",
+        "quiet.r401",
+        "quiet.r402",
+        "quiet.r403",
+        "quiet.r404",
+        "quiet.r405",
+        "quiet.r406"
       ],
       "writes": [
         "beats",
@@ -178,7 +184,8 @@
       "reads": [
         "night",
         "shift_clock",
-        "seen_by_staff"
+        "seen_by_staff",
+        "dora_at_cabinet"
       ],
       "writes": [
         "shift_clock",
@@ -188,7 +195,8 @@
         "suspicion.r403",
         "suspicion.r404",
         "suspicion.r405",
-        "suspicion.r406"
+        "suspicion.r406",
+        "bell_wires"
       ],
       "next": [
         "n1_shift_eye",
@@ -228,7 +236,33 @@
       "writes": [
         "patience_cards_read",
         "patience_wins",
-        "shift_clock"
+        "shift_clock",
+        "quiet.r401",
+        "quiet.r402",
+        "quiet.r403",
+        "quiet.r404",
+        "quiet.r405",
+        "quiet.r406"
+      ],
+      "next": [
+        "n2_shift_eye",
+        "n2_shift_race",
+        "n2_seventh_bell"
+      ]
+    },
+    {
+      "id": "n2_seventh_bell",
+      "layer": "3d",
+      "name": "The seventh bell",
+      "chapter": "n2",
+      "enter": "pull-out",
+      "exit": "push-in",
+      "reads": [
+        "night"
+      ],
+      "writes": [
+        "seventh_bell_heard",
+        "watcher_marks"
       ],
       "next": [
         "n2_shift_eye",
@@ -263,7 +297,13 @@
         "exposed.r403",
         "exposed.r404",
         "exposed.r405",
-        "exposed.r406"
+        "exposed.r406",
+        "quiet.r401",
+        "quiet.r402",
+        "quiet.r403",
+        "quiet.r404",
+        "quiet.r405",
+        "quiet.r406"
       ],
       "writes": [
         "beats",
@@ -306,7 +346,8 @@
       "reads": [
         "night",
         "shift_clock",
-        "seen_by_staff"
+        "seen_by_staff",
+        "dora_at_cabinet"
       ],
       "writes": [
         "shift_clock",
@@ -316,7 +357,8 @@
         "suspicion.r403",
         "suspicion.r404",
         "suspicion.r405",
-        "suspicion.r406"
+        "suspicion.r406",
+        "bell_wires"
       ],
       "next": [
         "n2_shift_eye",
@@ -356,7 +398,13 @@
       "writes": [
         "patience_cards_read",
         "patience_wins",
-        "shift_clock"
+        "shift_clock",
+        "quiet.r401",
+        "quiet.r402",
+        "quiet.r403",
+        "quiet.r404",
+        "quiet.r405",
+        "quiet.r406"
       ],
       "next": [
         "n3_shift_eye",
@@ -391,7 +439,13 @@
         "exposed.r403",
         "exposed.r404",
         "exposed.r405",
-        "exposed.r406"
+        "exposed.r406",
+        "quiet.r401",
+        "quiet.r402",
+        "quiet.r403",
+        "quiet.r404",
+        "quiet.r405",
+        "quiet.r406"
       ],
       "writes": [
         "beats",
@@ -422,7 +476,8 @@
         "dots_read"
       ],
       "next": [
-        "n3_shift_race"
+        "n3_shift_race",
+        "n3_tea"
       ]
     },
     {
@@ -436,7 +491,8 @@
       "reads": [
         "night",
         "shift_clock",
-        "seen_by_staff"
+        "seen_by_staff",
+        "dora_at_cabinet"
       ],
       "writes": [
         "shift_clock",
@@ -446,12 +502,34 @@
         "suspicion.r403",
         "suspicion.r404",
         "suspicion.r405",
-        "suspicion.r406"
+        "suspicion.r406",
+        "bell_wires"
       ],
       "next": [
         "n3_shift_eye",
         "n3_stair_lock",
-        "n3_statement"
+        "n3_statement",
+        "n3_tea"
+      ]
+    },
+    {
+      "id": "n3_tea",
+      "layer": "3d",
+      "name": "Tea at one",
+      "chapter": "n3",
+      "enter": "pull-out",
+      "exit": "push-in",
+      "reads": [
+        "shift_clock",
+        "seen_by_staff"
+      ],
+      "writes": [
+        "tea_wheels_heard",
+        "shift_clock"
+      ],
+      "next": [
+        "n3_shift_eye",
+        "n3_shift_race"
       ]
     },
     {
@@ -482,13 +560,23 @@
       "enter": "push-in",
       "exit": "pull-out",
       "reads": [
-        "patience_cards_read"
+        "patience_cards_read",
+        "reply_cards",
+        "reply_last"
       ],
       "writes": [
         "patience_cards_read",
         "patience_wins",
         "shift_clock",
-        "card.wren_name"
+        "card.wren_name",
+        "quiet.r401",
+        "quiet.r402",
+        "quiet.r403",
+        "quiet.r404",
+        "quiet.r405",
+        "quiet.r406",
+        "reply_cards",
+        "reply_last"
       ],
       "next": [
         "n4_shift_eye",
@@ -524,7 +612,13 @@
         "exposed.r404",
         "exposed.r405",
         "exposed.r406",
-        "watch_log"
+        "watch_log",
+        "quiet.r401",
+        "quiet.r402",
+        "quiet.r403",
+        "quiet.r404",
+        "quiet.r405",
+        "quiet.r406"
       ],
       "writes": [
         "beats",
@@ -556,9 +650,41 @@
         "mara_count",
         "sitting_held",
         "answers",
+        "mara_answers",
+        "watcher_marks"
+      ],
+      "next": [
+        "n4_shift_race",
+        "n4_sitting"
+      ]
+    },
+    {
+      "id": "n4_sitting",
+      "layer": "2d",
+      "name": "The Sitting",
+      "chapter": "n4",
+      "mode": "eye",
+      "enter": "cut",
+      "exit": "pull-out",
+      "reads": [
+        "shift_clock",
+        "blind.r403",
+        "suspicion.r403",
+        "mara_dots",
+        "quiet.r403"
+      ],
+      "writes": [
+        "beats",
+        "beats_seen",
+        "watch_log",
+        "shift_clock",
+        "mara_count",
+        "sitting_held",
+        "answers",
         "mara_answers"
       ],
       "next": [
+        "n4_shift_eye",
         "n4_shift_race"
       ]
     },
@@ -573,7 +699,8 @@
       "reads": [
         "night",
         "shift_clock",
-        "seen_by_staff"
+        "seen_by_staff",
+        "dora_at_cabinet"
       ],
       "writes": [
         "shift_clock",
@@ -583,7 +710,8 @@
         "suspicion.r403",
         "suspicion.r404",
         "suspicion.r405",
-        "suspicion.r406"
+        "suspicion.r406",
+        "bell_wires"
       ],
       "next": [
         "n4_shift_eye",
@@ -620,12 +748,22 @@
       "enter": "push-in",
       "exit": "pull-out",
       "reads": [
-        "patience_cards_read"
+        "patience_cards_read",
+        "reply_cards",
+        "reply_last"
       ],
       "writes": [
         "patience_cards_read",
         "patience_wins",
-        "shift_clock"
+        "shift_clock",
+        "quiet.r401",
+        "quiet.r402",
+        "quiet.r403",
+        "quiet.r404",
+        "quiet.r405",
+        "quiet.r406",
+        "reply_cards",
+        "reply_last"
       ],
       "next": [
         "n5_shift_eye",
@@ -661,7 +799,13 @@
         "exposed.r404",
         "exposed.r405",
         "exposed.r406",
-        "sitting_held"
+        "sitting_held",
+        "quiet.r401",
+        "quiet.r402",
+        "quiet.r403",
+        "quiet.r404",
+        "quiet.r405",
+        "quiet.r406"
       ],
       "writes": [
         "beats",
@@ -709,7 +853,8 @@
       "reads": [
         "night",
         "shift_clock",
-        "seen_by_staff"
+        "seen_by_staff",
+        "dora_at_cabinet"
       ],
       "writes": [
         "shift_clock",
@@ -719,7 +864,9 @@
         "suspicion.r403",
         "suspicion.r404",
         "suspicion.r405",
-        "suspicion.r406"
+        "suspicion.r406",
+        "bell_wires",
+        "trolley_moved"
       ],
       "next": [
         "n5_shift_eye",
@@ -755,13 +902,23 @@
       "enter": "push-in",
       "exit": "pull-out",
       "reads": [
-        "patience_cards_read"
+        "patience_cards_read",
+        "reply_cards",
+        "reply_last"
       ],
       "writes": [
         "patience_cards_read",
         "patience_wins",
         "shift_clock",
-        "card.safe_combo"
+        "card.safe_combo",
+        "quiet.r401",
+        "quiet.r402",
+        "quiet.r403",
+        "quiet.r404",
+        "quiet.r405",
+        "quiet.r406",
+        "reply_cards",
+        "reply_last"
       ],
       "next": [
         "n6_shift_eye",
@@ -797,7 +954,13 @@
         "exposed.r404",
         "exposed.r405",
         "exposed.r406",
-        "sitting_held"
+        "sitting_held",
+        "quiet.r401",
+        "quiet.r402",
+        "quiet.r403",
+        "quiet.r404",
+        "quiet.r405",
+        "quiet.r406"
       ],
       "writes": [
         "beats",
@@ -844,7 +1007,8 @@
       "reads": [
         "night",
         "shift_clock",
-        "seen_by_staff"
+        "seen_by_staff",
+        "dora_at_cabinet"
       ],
       "writes": [
         "shift_clock",
@@ -854,7 +1018,9 @@
         "suspicion.r403",
         "suspicion.r404",
         "suspicion.r405",
-        "suspicion.r406"
+        "suspicion.r406",
+        "bell_wires",
+        "trolley_moved"
       ],
       "next": [
         "n6_shift_eye",
@@ -894,13 +1060,23 @@
       "enter": "push-in",
       "exit": "pull-out",
       "reads": [
-        "patience_cards_read"
+        "patience_cards_read",
+        "reply_cards",
+        "reply_last"
       ],
       "writes": [
         "patience_cards_read",
         "patience_wins",
         "shift_clock",
-        "card.own_door"
+        "card.own_door",
+        "quiet.r401",
+        "quiet.r402",
+        "quiet.r403",
+        "quiet.r404",
+        "quiet.r405",
+        "quiet.r406",
+        "reply_cards",
+        "reply_last"
       ],
       "next": [
         "n7_shift_eye",
@@ -935,7 +1111,13 @@
         "exposed.r403",
         "exposed.r404",
         "exposed.r405",
-        "exposed.r406"
+        "exposed.r406",
+        "quiet.r401",
+        "quiet.r402",
+        "quiet.r403",
+        "quiet.r404",
+        "quiet.r405",
+        "quiet.r406"
       ],
       "writes": [
         "beats",
@@ -980,7 +1162,8 @@
       "reads": [
         "night",
         "shift_clock",
-        "seen_by_staff"
+        "seen_by_staff",
+        "dora_at_cabinet"
       ],
       "writes": [
         "shift_clock",
@@ -990,7 +1173,9 @@
         "suspicion.r403",
         "suspicion.r404",
         "suspicion.r405",
-        "suspicion.r406"
+        "suspicion.r406",
+        "bell_wires",
+        "trolley_moved"
       ],
       "next": [
         "n7_shift_eye",
@@ -1078,7 +1263,11 @@
         "lost_property_open",
         "fenn_log_found",
         "shift_clock",
-        "seen_by_staff"
+        "seen_by_staff",
+        "left_things_seen",
+        "rhyme_spool",
+        "dora_at_cabinet",
+        "watcher_marks"
       ],
       "next": [
         "n4_shift_race"
@@ -1103,6 +1292,31 @@
         "suspicion.r404",
         "suspicion.r405",
         "suspicion.r406"
+      ],
+      "next": [
+        "n5_shift_race",
+        "n5_shift_eye",
+        "n5_linen_count"
+      ]
+    },
+    {
+      "id": "n5_linen_count",
+      "layer": "2d",
+      "name": "The Linen Count",
+      "chapter": "n5",
+      "mode": "race",
+      "enter": "cut",
+      "exit": "cut",
+      "reads": [
+        "shift_clock",
+        "seen_by_staff",
+        "lost_property_open"
+      ],
+      "writes": [
+        "shift_clock",
+        "seen_by_staff",
+        "seventh_coin_seen",
+        "watcher_marks"
       ],
       "next": [
         "n5_shift_race",
@@ -1411,14 +1625,18 @@
         "links",
         "ledger_read",
         "patience_cards_read",
-        "fenn_log_found"
+        "fenn_log_found",
+        "rhyme_spool",
+        "typed_rows_struck"
       ],
       "writes": [
         "mosaic_links",
         "links",
         "questions_open",
         "link.case_ledger",
-        "link.stranger_fenn"
+        "link.stranger_fenn",
+        "rhyme_links",
+        "frayed_links"
       ],
       "next": [
         "n4_morning"
@@ -1460,7 +1678,8 @@
         "rows_correct",
         "statements",
         "carbon_rows_correct",
-        "carbon_amends"
+        "carbon_amends",
+        "typed_rows_struck"
       ],
       "next": [
         "n5_mosaic"
@@ -1481,12 +1700,16 @@
         "links",
         "ledger_read",
         "patience_cards_read",
-        "fenn_log_found"
+        "fenn_log_found",
+        "rhyme_spool",
+        "typed_rows_struck"
       ],
       "writes": [
         "mosaic_links",
         "links",
-        "questions_open"
+        "questions_open",
+        "rhyme_links",
+        "frayed_links"
       ],
       "next": [
         "n5_morning"
@@ -1530,7 +1753,8 @@
         "rows_correct",
         "statements",
         "carbon_rows_correct",
-        "carbon_amends"
+        "carbon_amends",
+        "typed_rows_struck"
       ],
       "next": [
         "n6_mosaic"
@@ -1551,14 +1775,18 @@
         "links",
         "ledger_read",
         "patience_cards_read",
-        "fenn_log_found"
+        "fenn_log_found",
+        "rhyme_spool",
+        "typed_rows_struck"
       ],
       "writes": [
         "mosaic_links",
         "links",
         "questions_open",
         "link.one_hand",
-        "link.wren_you"
+        "link.wren_you",
+        "rhyme_links",
+        "frayed_links"
       ],
       "next": [
         "n6_morning"
@@ -1641,7 +1869,14 @@
         "exposed.r404",
         "exposed.r405",
         "exposed.r406",
-        "shift_clock"
+        "shift_clock",
+        "carbon_rows_correct",
+        "stmt.n1",
+        "stmt.n2",
+        "stmt.n3",
+        "stmt.n4",
+        "stmt.n5",
+        "stmt.n6"
       ],
       "writes": [
         "pages_delivered",
@@ -1663,7 +1898,14 @@
         "final_choice",
         "account_scapegoat",
         "rows_correct",
-        "account_correct"
+        "account_correct",
+        "exposed.r401",
+        "exposed.r402",
+        "exposed.r403",
+        "exposed.r404",
+        "exposed.r405",
+        "exposed.r406",
+        "exposed_count"
       ],
       "next": [
         "end_next_watcher",

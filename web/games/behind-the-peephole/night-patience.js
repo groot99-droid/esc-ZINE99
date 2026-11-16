@@ -10,13 +10,39 @@
 // slipped cards and their nicked rose back (Fenn's deck); cards 1 and 2 already on the spike from
 // night two; the brass number plates over the columns; the deco divider and chapter card three.
 
-const DEAL = {
-  columns: [["8S"], ["3C", "AS"], ["JD", "7H", "QC"], ["KH", "JS", "TD", "4D"], ["7S", "AH", "6D", "KS", "QS"], ["JH", "TH", "4H", "KC", "5C", "3D"]],
-  stock: ["8H", "9D", "9C", "4C", "6C", "QH", "5S", "9H", "7C", "6H", "2S", "JC", "3S", "TC", "3H", "4S", "7D", "2D", "6S", "AC", "QD", "2C", "8C", "5D", "5H", "9S", "TS", "2H", "AD", "KD", "8D"],
-  passes: 3,
-  slipA: { no: 3, text: "Past 404 the boards talk. Walk them.", at: 8 },
-  slipB: { no: 4, text: "The chute doesn't go to a manager." },
-};
+// Phase 2 (2026-11-16): the ladder. Three short deals from a cut deck, each proven winnable by the
+// scratch solver: TEACH (night three, Ace to 8, unlimited passes), TEST (night four, Ace to 10, two
+// passes, the second card under column six; REPLY CARDS: leave one of three questions on the spike and
+// the card under column six answers it) and TWIST (night seven, Ace to 8, one pass: two cards slipped
+// into the drawer give opposite advice, and only one has Fenn's nicked back; under column six, the
+// card with the brass dot). QUIET COLUMNS: a column cleared under a room number is written to
+// api.shared ("quiet"), and the eye at the hole gives that room a longer first window.
+// Cuts: one reply exchange, not three; the cut decks.
+import { staged } from "./_stages.js";
+
+const STAGES = [
+  { night: 3, top: 8, passes: Infinity, columns: [["7D"], ["2H", "6S"], ["6D", "8S", "5C"], ["3S", "4C", "4H", "3H"], ["AH", "6C", "AS", "AD", "8H"], ["7C", "4D", "7H", "5H", "2C", "7S"]], stock: ["3C", "5S", "2S", "4S", "2D", "8C", "AC", "8D", "6H", "5D", "3D"],
+    slipA: { no: 3, text: "Past 404 the boards talk. Walk them.", at: 4 }, slipB: { no: 4, text: "The chute doesn't go to a manager." },
+    goal: "Bring all thirty-two home, Ace to 8 by suit. Turn the stock as often as you like.",
+    open: "Night three, 23:00: the quiet before the first bell. The worn deck from your drawer, cut down to the low cards, dealt under six brass numbers. Someone has been in the drawer again." },
+  { night: 4, top: 10, passes: 2, columns: [["AC"], ["6S", "4S"], ["3S", "3D", "6D"], ["2S", "5H", "7D", "9S"], ["TS", "5D", "2C", "8S", "AH"], ["7H", "TD", "9C", "9H", "7C", "8D"]], stock: ["5S", "AD", "5C", "6H", "4D", "TH", "3H", "8H", "4H", "7S", "3C", "TC", "8C", "9D", "4C", "AS", "2H", "6C", "2D"],
+    slipA: { no: 5, text: "The man who books is called Wren. Like the bird.", at: 5 }, slipB: { no: 6, text: "Lost property. Bottom drawer. My old book." },
+    goal: "Bring all forty home, Ace to 10 by suit. Two passes through the stock.",
+    open: "Night four, 23:00. Two passes tonight, and the second stranger's card lies under the whole of column six. The hotel's own cards are in the drawer too, blank on one side." },
+  { night: 7, top: 8, passes: 1, columns: [["2C"], ["7C", "5C"], ["6C", "7S", "AD"], ["7H", "AC", "4S", "5S"], ["4D", "3C", "5D", "6S", "5H"], ["2D", "3D", "3H", "8D", "8S", "4C"]], stock: ["2S", "AH", "3S", "6D", "8H", "6H", "AS", "4H", "7D", "2H", "8C"],
+    slipA: null, slipB: { no: 0, dotted: true, text: "A hotel card, blank but for a brass dot in watercolour in one corner. Filled in." },
+    goal: "Bring all thirty-two home. One pass. Two cards were in the drawer, and they do not agree.",
+    open: "Night seven, 23:00. One pass. Two cards from another deck were in the drawer with yours, and they give opposite advice. Fenn's deck has one petal of the rose nicked. Somebody else's does not." },
+];
+const ADVICE = [
+  { no: "?", text: "The ace onto the two of clubs, before anything. The four can wait.", back: "back-fenn", fenn: true },
+  { no: "?", text: "The four of clubs onto the five of hearts. First thing.", back: "back-second-hand", fenn: false },
+];
+const REPLIES = [
+  { id: "who-paid", ask: "Who paid?", card: { no: 10, text: "Wren's account ends in the time I knock." } },
+  { id: "who-watches", ask: "Who watches?", card: { no: 11, text: "Look at your own door." } },
+  { id: "who-was-here", ask: "Who was here?", card: { no: 12, text: "I stopped writing it down. They didn't stop me." } },
+];
 const RANKS = "A23456789TJQK";
 const SUITS = { S: "♠", H: "♥", D: "♦", C: "♣" };
 const rank = (c) => RANKS.indexOf(c[0]) + 1;
@@ -28,6 +54,9 @@ const NOTES = {
   pass: "The stock turns over. The same cards, in the same order, and fewer chances.",
   half: "Half the deck home. Six rooms still dark behind the wall.",
   slipB: "Under the last face-down card of the sixth column, another stranger's card. It was put there for whoever got this far.",
+  answer: "Under column six, the same careful hand, and it is an answer. He read what you left on the spike.",
+  dotted: "Not Fenn's hand, and not the other one's. A hotel card with a brass dot painted in its corner, and the dot is filled.",
+  quiet: (n) => `Column ${n} is clear before the bell. Whoever sleeps behind ${n} will give you a longer first look tonight.`,
 };
 
 const FAN = (col) => `url("data:image/svg+xml,${encodeURIComponent(
@@ -44,9 +73,10 @@ const CORNER = `url("data:image/svg+xml,${encodeURIComponent(
   Array.from({ length: 9 }, (_, i) => { const a = Math.PI / 2 * (i / 8); return `<line x1='4' y1='4' x2='${(4 + 110 * Math.cos(a)).toFixed(1)}' y2='${(4 + 110 * Math.sin(a)).toFixed(1)}'/>`; }).join("") +
   `<path d='M4 64 A60 60 0 0 0 64 4'/><path d='M4 88 A84 84 0 0 0 88 4'/><path d='M4 40 h16 v-8 h8 v-8 h8 v-20'/></g></svg>`)}")`;
 
-export default {
-  mount(root, api) {
-    const P = "behind-the-peephole-night-patience-";
+const P = "behind-the-peephole-night-patience-";
+export default staged(P, ["unlimited passes", "two passes, a reply", "one pass, two hands"], function play(root, api, stage) {
+    const DEAL = STAGES[stage.stage], TOTAL = DEAL.top * 4;
+    const shared = api.shared || { get: (k, d) => d, set() {} };
     const RM = api.reducedMotion;
     const streak = api.store.get("lossStreak", 0);
     let gentle = api.store.get("gentle", false);
@@ -116,7 +146,7 @@ export default {
     const art = api.art || { has: () => false, url: () => "" };
     const SUITN = { S: "spades", H: "hearts", D: "diamonds", C: "clubs" }, RANKN = { A: "ace", T: "10", J: "jack", Q: "queen", K: "king" };
     const deckId = (c) => `deck-${SUITN[c[1]]}-${RANKN[c[0]] || c[0]}`;
-    const slipId = (s) => "slip-" + String(s.no).padStart(2, "0");
+    const slipId = (s) => (s.dotted ? "card-dotted" : s.reply ? "reply-" + s.reply : "slip-" + String(s.no).padStart(2, "0"));
     const felt = document.createElement("div");
     felt.className = P + "felt";
     root.appendChild(felt);
@@ -128,7 +158,10 @@ export default {
     let cols = DEAL.columns.map((c) => c.map((card, i) => ({ c: card, up: i === c.length - 1 })));
     let stock = DEAL.stock.slice(), waste = [], found = { S: [], H: [], D: [], C: [] };
     // the spike already holds night two's cards (DESIGN.md section 11, slipped cards 1 and 2)
-    let spike = [{ no: 1, text: "Don't watch one door too long. They see the dark." }, { no: 2, text: "The bell gives you less time than you think. Run." }];
+    const OLD = [{ no: 1, text: "Don't watch one door too long. They see the dark." }, { no: 2, text: "The bell gives you less time than you think. Run." }, { no: 3, text: "Past 404 the boards talk. Walk them." }, { no: 4, text: "The chute doesn't go to a manager." }];
+    let spike = stage.stage === 0 ? OLD.slice(0, 2) : stage.stage === 1 ? OLD.slice() : ADVICE.map((a) => ({ ...a }));
+    let replied = null;
+    const quiet = shared.get("quiet", {}) || {};
     let pass = 1, turnsThisPass = 0, peeked = false, peekShow = false, hints = gentle ? 5 : 3, undos = 3, sel = null, over = false;
     let slipAShown = false, slipBShown = false, modal = null, pulse = null, lastAct = performance.now();
     let moves = 0, history = [], fxHome = null, fxBad = null;
@@ -144,13 +177,13 @@ export default {
     function remember() { history.push(snapshot()); if (history.length > 40) history.shift(); }
 
     // ---- rules
-    const fits = (card, dst) => dst.length === 0 ? rank(card) === 13 : (() => { const t = dst[dst.length - 1]; return t.up && rank(t.c) === rank(card) + 1 && red(t.c) !== red(card); })();
+    const fits = (card, dst) => dst.length === 0 ? rank(card) === DEAL.top : (() => { const t = dst[dst.length - 1]; return t.up && rank(t.c) === rank(card) + 1 && red(t.c) !== red(card); })();
     const toFound = (card) => found[card[1]].length === rank(card) - 1;
     function flipTops() {
       cols.forEach((col, i) => {
         if (col.length && !col[col.length - 1].up) {
           col[col.length - 1].up = true;
-          if (i === 5 && col.length === 1 && !slipBShown) { slipBShown = true; showSlip(DEAL.slipB, NOTES.slipB); }
+          if (i === 5 && col.length === 1 && !slipBShown) { slipBShown = true; const r = REPLIES.find((x) => x.id === replied); if (DEAL.slipB.dotted) showSlip(DEAL.slipB, NOTES.dotted); else if (r) showSlip(r.card, NOTES.answer); else showSlip(DEAL.slipB, NOTES.slipB); }
         }
       });
     }
@@ -181,14 +214,14 @@ export default {
     function draw() {
       if (over || modal) return;
       if (stock.length === 0) {
-        if (waste.length && pass < DEAL.passes) { remember(); stock = waste.map((x) => x.c); waste = []; pass++; turnsThisPass = 0; peeked = false; peekShow = false; tell(NOTES.pass + ` Pass ${pass} of ${DEAL.passes}.`); }
+        if (waste.length && pass < DEAL.passes) { remember(); stock = waste.map((x) => x.c); waste = []; pass++; turnsThisPass = 0; peeked = false; peekShow = false; tell(NOTES.pass + (isFinite(DEAL.passes) ? ` Pass ${pass} of ${DEAL.passes}.` : "")); }
         act(); return;
       }
       remember();
       turnsThisPass++;
       peekShow = false;
       waste.push({ c: stock.shift(), up: true });
-      if (pass === 1 && turnsThisPass === DEAL.slipA.at && !slipAShown) { slipAShown = true; showSlip(DEAL.slipA, NOTES.slipA); }
+      if (DEAL.slipA && pass === 1 && turnsThisPass === DEAL.slipA.at && !slipAShown) { slipAShown = true; showSlip(DEAL.slipA, NOTES.slipA); if (stage.stage === 1) unlock("reply", ""); }
       unlock("peek", "PEEK (P): once a pass, see the next stock card without turning it.");
       act();
     }
@@ -218,7 +251,9 @@ export default {
         let any = true;
         while (any) { any = false; cols.forEach((c, i) => { if (c.length && toFound(c[c.length - 1].c)) { found[c[c.length - 1].c[1]].push(c.pop().c); any = true; } }); }
       }
-      if (homeCount() >= 26 && !told.has("half")) { told.add("half"); tell(NOTES.half); }
+      // quiet columns: a column cleared under a room number, before the bell (read by the eye at the hole)
+      cols.forEach((c, i) => { const r = "r40" + (i + 1); if (!c.length && !told.has("q" + i) && !over) { told.add("q" + i); if (!quiet[r]) { quiet[r] = true; shared.set("quiet", quiet); } if (!modal) tell(NOTES.quiet(r.slice(1))); } });
+      if (homeCount() >= TOTAL / 2 && !told.has("half")) { told.add("half"); tell(NOTES.half); }
       layout();
       checkEnd();
     }
@@ -226,14 +261,16 @@ export default {
     function checkEnd() {
       if (over || modal) return;
       const n = homeCount();
-      if (n === 52) {
+      if (n === TOTAL) {
         over = true;
         api.store.set("wins", api.store.get("wins", 0) + 1); api.store.set("lossStreak", 0);
-        later(() => api.end({ outcome: "win", text: `All fifty-two home in ${moves} moves, before the first bell. On the spike, ${spike.length} card${spike.length === 1 ? "" : "s"} from another deck, in a hand you don't know, and ${spike.length ? "the hand is trying to tell you something" : "a space where the next one will go"}.` }), 700);
+        const q = Object.keys(quiet).filter((r) => told.has("q" + (+r.slice(3) - 1))).map((r) => r.slice(1));
+        const tail = stage.stage === 2 ? "Fenn's card had the nick in its rose; the other hand's did not. And under column six, a brass dot that nobody in this deck painted." : `On the spike, ${spike.length} cards from another deck${replied ? ", and one of the hotel's own, in your hand, answered" : ""}.`;
+        later(() => api.end({ outcome: "win", text: `All ${TOTAL} home in ${moves} moves, before the first bell. ${tail}${q.length ? ` Quiet columns: ${q.join(", ")}.` : ""}` }), 700);
       } else if (!canDraw() && !legalMoves().length) {
         over = true;
         api.store.set("lossStreak", streak + 1);
-        later(() => api.end({ outcome: "lose", text: `The passes are spent and nothing moves: ${n} of 52 home. On the spike, ${spike.length} slipped card${spike.length === 1 ? "" : "s"}${slipBShown ? "" : "; whatever lay under the sixth column stays there"}. The first bell will ring soon.` }), 700);
+        later(() => api.end({ outcome: "lose", text: `The passes are spent and nothing moves: ${n} of ${TOTAL} home. On the spike, ${spike.length} slipped card${spike.length === 1 ? "" : "s"}${slipBShown ? "" : "; whatever lay under the sixth column stays there"}. The first bell will ring soon.` }), 700);
       }
     }
     function showSlip(s, line) {
@@ -242,8 +279,8 @@ export default {
       modal.className = P + "big" + (RM ? "" : " in");
       if (art.has(slipId(s))) {
         // the back first (the rose with one petal nicked), then its face
-        const back = art.has("back-fenn") && !RM;
-        modal.innerHTML = `<div class="art"><img alt="" src="${art.url(back ? "back-fenn" : slipId(s))}"><small>CARD ${s.no} · FROM ANOTHER DECK · TO THE SPIKE</small></div>`;
+        const bk = s.dotted ? "back-hotel" : "back-fenn", back = art.has(bk) && !RM;
+        modal.innerHTML = `<div class="art"><img alt="" src="${art.url(back ? bk : slipId(s))}"><small>${s.dotted ? "A HOTEL CARD · UNDER COLUMN SIX" : `CARD ${s.no} · FROM ANOTHER DECK · TO THE SPIKE`}</small></div>`;
         const im = modal.querySelector("img"); im.alt = s.text;
         if (back) later(() => { im.src = art.url(slipId(s)); }, 700);
       } else {
@@ -362,7 +399,7 @@ export default {
         pl.style.left = x(i) + cw * 0.2 + "px"; pl.style.width = cw * 0.6 + "px"; pl.style.top = yCols - 22 + "px";
         if (art.has("ui-number-plates") && cw >= 60) { pl.classList.add("art"); pl.style.backgroundImage = `url(${art.url("ui-number-plates")})`; pl.style.backgroundPosition = `${(i % 3) * 50}% ${Math.floor(i / 3) * 100}%`; pl.style.height = cw * 0.6 * 0.4 + "px"; pl.style.top = yCols - cw * 0.6 * 0.4 - 4 + "px"; }
         felt.appendChild(pl);
-        if (!col.length) { mk(`${P}slot`, x(i), yCols, { w: "col", i, idx: "" }).textContent = "K"; return; }
+        if (!col.length) { mk(`${P}slot`, x(i), yCols, { w: "col", i, idx: "" }).textContent = RANKS[DEAL.top - 1] === "T" ? "10" : RANKS[DEAL.top - 1]; return; }
         let dDown = ch * 0.16, dUp = ch * 0.27;
         const need = col.reduce((a, c, k) => a + (k === col.length - 1 ? 0 : c.up ? dUp : dDown), 0);
         if (need > avail - ch && need > 0) { const f = Math.max(0.3, (avail - ch) / need); dDown *= f; dUp *= f; }
@@ -376,22 +413,34 @@ export default {
       });
       if (narrow) { hud.style.left = "12px"; hud.style.right = "12px"; hud.style.top = "auto"; hud.style.bottom = "12px"; hud.style.width = "auto"; story.style.bottom = "118px"; }
       else { hud.style.left = x(6) + "px"; hud.style.top = yCols + "px"; hud.style.width = cw + 20 + "px"; hud.style.right = "auto"; hud.style.bottom = "auto"; story.style.bottom = "14px"; }
-      passEl.textContent = `PASS ${pass}/${DEAL.passes} · STOCK ${stock.length}`;
+      passEl.textContent = `PASS ${pass}${isFinite(DEAL.passes) ? "/" + DEAL.passes : ""} · STOCK ${stock.length}`;
       hintBtn.textContent = `HINT ${hints}`; hintBtn.disabled = hints <= 0;
       undoBtn.textContent = `UNDO ${undos}`; undoBtn.disabled = undos <= 0 || !history.length;
       peekBtn.disabled = peeked || !stock.length;
-      homeEl.textContent = `HOME ${homeCount()}/52`;
+      homeEl.textContent = `HOME ${homeCount()}/${TOTAL}`;
     }
 
     const hud = document.createElement("div");
     hud.className = P + "hud";
-    hud.innerHTML = `<span class="pass"></span><span class="home"></span><button type="button" class="${P}btn" data-b="peek" hidden>PEEK · P</button><button type="button" class="${P}btn" data-b="hint">HINT</button><button type="button" class="${P}btn" data-b="undo" hidden>UNDO</button><button type="button" class="${P}btn" data-b="fold">FOLD</button>`;
+    hud.innerHTML = `<span class="pass"></span><span class="home"></span><button type="button" class="${P}btn" data-b="peek" hidden>PEEK · P</button><button type="button" class="${P}btn" data-b="hint">HINT</button><button type="button" class="${P}btn" data-b="undo" hidden>UNDO</button><button type="button" class="${P}btn" data-b="reply" hidden>REPLY · R</button><button type="button" class="${P}btn" data-b="fold">FOLD</button>`;
     felt.appendChild(hud);
     const passEl = hud.querySelector(".pass"), homeEl = hud.querySelector(".home"), peekBtn = hud.querySelector('[data-b="peek"]'), hintBtn = hud.querySelector('[data-b="hint"]'), undoBtn = hud.querySelector('[data-b="undo"]');
     const clock = document.createElement("div");
     clock.className = P + "fl";
     felt.appendChild(clock);
 
+    // reply cards: one of three questions, in your hand, on one of the hotel's own cards, left on the spike
+    function doReply() {
+      if (over || modal || replied || stage.stage !== 1 || !unlocked.has("reply")) return;
+      const m = document.createElement("div"); m.className = P + "big"; modal = m;
+      m.innerHTML = `<div class="art many">${REPLIES.map((r) => `<button type="button" data-r="${r.id}" style="border:0;padding:0;background:none;cursor:pointer">${art.has("reply-" + r.id) ? `<img alt="${r.ask}" src="${art.url("reply-" + r.id)}">` : `<span style="display:block;background:#fbfbf7;color:#2a1a10;padding:26px 14px;border-radius:8px;font:italic 20px Georgia,serif">${r.ask}</span>`}</button>`).join("")}<small>WRITE ONE ON A HOTEL CARD AND LEAVE IT ON THE SPIKE · ESC TO KEEP THE PEN CAPPED</small></div>`;
+      const close = () => { m.remove(); modal = null; layout(); };
+      m.querySelectorAll("button").forEach((b) => on(b, "click", () => { const r = REPLIES.find((x) => x.id === b.dataset.r); replied = r.id; shared.set("reply", r.id); spike.push({ no: "yours", text: r.ask, reply: r.id }); hud.querySelector('[data-b="reply"]').hidden = true; close(); tell(`“${r.ask}” In your own hand, on the spike, where the other hand will find it.`); }));
+      on(m, "pointerdown", (e) => { if (e.target === m) close(); });
+      m.dataset.reply = "1";
+      felt.appendChild(m); m.querySelector("button").focus();
+    }
+    on(hud.querySelector('[data-b="reply"]'), "click", doReply);
     on(peekBtn, "click", doPeek);
     on(hintBtn, "click", doHint);
     on(undoBtn, "click", doUndo);
@@ -399,14 +448,14 @@ export default {
       if (over) return;
       over = true;
       const n = homeCount();
-      api.end({ outcome: "done", text: `You fold at ${n} of 52 and leave the deal as it lies; it will keep until 05:00. The spike holds ${spike.length} slipped card${spike.length === 1 ? "" : "s"}.` });
+      api.end({ outcome: "done", text: `You fold at ${n} of ${TOTAL} and leave the deal as it lies; it will keep until 05:00. The spike holds ${spike.length} slipped card${spike.length === 1 ? "" : "s"}.` });
     });
     on(felt, "pointerdown", (e) => {
       const d = e.target.closest(`.${P}card,.${P}slot`);
       if (!d || !felt.contains(d) || d.closest(`.${P}hud`)) return;
       const w = d.dataset.w;
       if (w === "spike") {
-        if (spike.length) { const m = document.createElement("div"); m.className = P + "big"; if (spike.every((x) => art.has(slipId(x)))) { m.innerHTML = `<div class="art${spike.length > 1 ? " many" : ""}">${spike.map((x) => `<img alt="" src="${art.url(slipId(x))}">`).join("")}<small>THE SPIKE · TAP TO CLOSE</small></div>`; m.querySelectorAll("img").forEach((im, k) => { im.alt = spike[k].text; }); } else { m.innerHTML = `<div><span></span><small>THE SPIKE · TAP TO CLOSE</small></div>`; m.querySelector("span").textContent = spike.map((x) => x.text).join(" / "); } on(m, "pointerdown", () => m.remove()); felt.appendChild(m); }
+        if (spike.length) { const m = document.createElement("div"); m.className = P + "big"; if (spike.every((x) => art.has(slipId(x)))) { m.innerHTML = `<div class="art${spike.length > 1 ? " many" : ""}">${spike.map((x) => `<img alt="" src="${art.url(slipId(x))}">`).join("")}<small>THE SPIKE · TAP TO CLOSE</small></div>`; m.querySelectorAll("img").forEach((im, k) => { im.alt = spike[k].text; }); } else { m.innerHTML = `<div><span></span><small>THE SPIKE · TAP TO CLOSE</small></div>`; m.querySelector("span").textContent = spike.map((x) => x.text).join(" / "); } if (stage.stage === 2) { m.innerHTML = `<div class="art many">${spike.map((x, k) => `<button type="button" data-k="${k}" style="border:0;padding:0;background:none;cursor:pointer;width:min(158px,42vw)">${x.dotted ? `<img alt="" src="${art.url("card-dotted")}">` : `<span data-f style="display:grid;place-items:center;aspect-ratio:5/7;background:#fbfbf7;color:#2a1a10;border-radius:8px;padding:10px;box-sizing:border-box;font:16px/1.25 'Bradley Hand','Segoe Print',cursive;box-shadow:0 6px 20px #000">${x.text}</span>`}</button>`).join("")}<small>THE SPIKE · TAP A CARD TO TURN IT OVER · TAP OUTSIDE TO CLOSE</small></div>`; m.querySelectorAll("button").forEach((b) => on(b, "click", () => { const x = spike[+b.dataset.k], sp = b.querySelector("[data-f]"); if (!sp || !x.back) return; if (sp.dataset.back) { delete sp.dataset.back; sp.style.backgroundImage = ""; sp.textContent = x.text; } else { sp.dataset.back = x.fenn ? "nicked" : "whole"; sp.textContent = art.has(x.back) ? "" : x.fenn ? "(the rose, one petal nicked)" : "(the rose, whole)"; if (art.has(x.back)) { sp.style.backgroundImage = `url(${art.url(x.back)})`; sp.style.backgroundSize = "100% 100%"; } sp.setAttribute("aria-label", x.fenn ? "The back: the rose, one petal nicked" : "The back: the rose, whole"); if (!told.has("backs")) { told.add("backs"); tell(x.fenn ? "One petal nicked: Fenn's deck." : "A whole rose. This card was never in Fenn's deck."); } } })); on(m, "pointerdown", (e) => { if (e.target === m) m.remove(); }); } else on(m, "pointerdown", () => m.remove()); felt.appendChild(m); }
         return;
       }
       clickCard(w, d.dataset.i != null ? +d.dataset.i : null, d.dataset.idx !== "" && d.dataset.idx != null ? +d.dataset.idx : null);
@@ -414,7 +463,7 @@ export default {
     // keys: a column digit picks its top card; the same digit again reaches one card further up the
     // run; another digit moves the selection there; F sends it home; W picks the waste.
     on(window, "keydown", (e) => {
-      if (felt.querySelector(`.${P}intro`) || over) return;
+      if (felt.querySelector(`.${P}intro`) || over || (modal && !(e.key === "Escape"))) return;
       const k = e.key.toLowerCase();
       if (k === " " || k === "d") { e.preventDefault(); draw(); }
       else if (k === "w") clickCard("waste");
@@ -422,7 +471,8 @@ export default {
       else if (k === "p") doPeek();
       else if (k === "h") doHint();
       else if (k === "u") doUndo();
-      else if (k === "escape") { sel = null; layout(); }
+      else if (k === "r") doReply();
+      else if (k === "escape") { if (modal && modal.dataset.reply) { modal.remove(); modal = null; } sel = null; layout(); }
       else if (/^[1-6]$/.test(k)) {
         const i = +k - 1, col = cols[i];
         if (sel && sel.from === i) {
@@ -451,22 +501,24 @@ export default {
 
     const intro = document.createElement("div");
     intro.className = P + "intro";
-    intro.innerHTML = `<div class="${P}deco">${art.has("chapter-n3") ? `<img class="ch" alt="Night Three: The Suitcase" src="${art.url("chapter-n3")}">` : ""}${art.has("ui-deco-divider") ? `<img class="dv" alt="" src="${art.url("ui-deco-divider")}">` : `<div class="fan"></div>`}<h2>Night Patience</h2>
-      <p class="goal">Bring all fifty-two home, Ace to King by suit.</p>
+    intro.innerHTML = `<div class="${P}deco">${art.has("chapter-n" + DEAL.night) ? `<img class="ch" alt="Night ${DEAL.night}" src="${art.url("chapter-n" + DEAL.night)}">` : ""}${art.has("ui-deco-divider") ? `<img class="dv" alt="" src="${art.url("ui-deco-divider")}">` : `<div class="fan"></div>`}<h2>Night Patience</h2>
+      <p class="goal"></p>
       <p class="open"></p>
       <dl>
         <dt>MOVE</dt><dd>tap a card, then where it goes; down in alternate colours. Keys 1–6, W, F.</dd>
-        <dt>DRAW</dt><dd>tap the stock or Space. Three passes.</dd>
+        <dt>DRAW</dt><dd>tap the stock or Space. ${isFinite(DEAL.passes) ? (DEAL.passes === 1 ? "One pass." : "Two passes.") : "Any number of passes."}</dd>
+        ${stage.stage === 1 ? "<dt>REPLY</dt><dd>after the first stranger's card: R, and choose what to ask.</dd>" : stage.stage === 2 ? "<dt>SPIKE</dt><dd>tap it, then tap a card to see its back.</dd>" : ""}
         <dt>HOME</dt><dd>tap a top card twice, or F.</dd>
       </dl>
       ${streak >= 2 ? `<label><input type="checkbox" ${gentle ? "checked" : ""}> five hints tonight</label>` : ""}
       <button type="button" class="${P}btn">DEAL</button></div>`;
-    intro.querySelector(".open").textContent = NOTES.open;
+    intro.querySelector(".open").textContent = DEAL.open; intro.querySelector(".goal").textContent = DEAL.goal;
+    intro.querySelector("dl").after(stage.row(P + "btn"));
     felt.appendChild(intro);
     const gbox = intro.querySelector("input");
     if (gbox) on(gbox, "change", () => { gentle = gbox.checked; api.store.set("gentle", gentle); hints = gentle ? 5 : 3; layout(); });
-    const startBtn = intro.querySelector("button");
-    on(startBtn, "click", () => { intro.remove(); lastAct = performance.now(); layout(); tell("Someone keeps slipping cards into this deck."); });
+    const startBtn = [...intro.querySelectorAll("button")].pop();
+    on(startBtn, "click", () => { intro.remove(); lastAct = performance.now(); layout(); tell(stage.stage === 2 ? "Two cards on the spike, and they cannot both be right. Look at their backs." : "Someone keeps slipping cards into this deck."); });
     layout();
     startBtn.focus();
 
@@ -479,5 +531,4 @@ export default {
         root.innerHTML = "";
       },
     };
-  },
-};
+});

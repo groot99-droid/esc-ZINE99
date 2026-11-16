@@ -14,9 +14,18 @@
 // clipping, the rubber stamps (ENTERED, CARBON COPY, AMENDED), the typed row slips where the art's
 // row is the row on the carbon, form S-1, Wren's envelope, and the chapter cards.
 
-const ROOMS = ["r401", "r402", "r403", "r404", "r405", "r406"];
-const RETURN = { r402: "23:25", r406: "00:05", r404: "00:45", r401: "01:30", r405: "02:05", r403: "02:45" };
-const PLACES = [
+// Phase 2 (2026-11-16): the ladder. TEACH: night one, as above, with its carbon. TEST: night four,
+// Host room x Visitor (data/truth.json, `n4_statement`, the visitor column only): a guest is both a
+// row and a column, and two rows have no card, only what is left over. TWIST: night five, Room x Name:
+// three rows arrive TYPED by H. Wren, and two of them swap the sisters. A typed row cannot be marked;
+// STRIKE it (it costs a second look, and the desk phone rings once) and the row is yours again.
+// The seventh row: under 406 every form has one more ruled line, with nothing printed in it.
+// Carbons are written to api.shared ("carbons": rows right per night) for the slide run and the lobby.
+import { staged } from "./_stages.js";
+
+const ROOMS0 = ["r401", "r402", "r403", "r404", "r405", "r406"];
+const RETURN0 = { r402: "23:25", r406: "00:05", r404: "00:45", r401: "01:30", r405: "02:05", r403: "02:45" };
+const PLACES0 = [
   { id: "glasshouse", name: "The Glasshouse" },
   { id: "printworks", name: "The Printworks" },
   { id: "assembly", name: "The Assembly Rooms" },
@@ -24,11 +33,11 @@ const PLACES = [
   { id: "depot", name: "The tram depot" },
   { id: "fishmarket", name: "The fish market" },
 ];
-const TRUTH = { r402: "glasshouse", r406: "printworks", r404: "assembly", r401: "bonded", r405: "depot", r403: "fishmarket" };
-const ENDS = { glasshouse: "23:00", printworks: "23:30", assembly: "00:30", fishmarket: "02:15" };
+const TRUTH0 = { r402: "glasshouse", r406: "printworks", r404: "assembly", r401: "bonded", r405: "depot", r403: "fishmarket" };
+const ENDS0 = { glasshouse: "23:00", printworks: "23:30", assembly: "00:30", fishmarket: "02:15" };
 // Clue cards held this morning. `fix` ties a room to a place; `end` is a paper's closing time.
 // `late` cards arrive during play.
-const CLUES = [
+const CLUES0 = [
   { id: "o.n1.guest_cards", src: "office", text: "Six guest cards, one line each: 401 a soldier for hire, 402 a whistleblower, 403 an art thief, 404 an undercover journalist, 405 a hacker, 406 an activist." },
   { id: "o.city", src: "office", text: "The city's traces: red clay on the Bonded House embankment; ink at the Printworks; grease at the tram depot; pollen and warm damp at the Glasshouse; salt rime at the fish market; gold leaf at the Assembly Rooms." },
   { id: "o.n1.paper_glasshouse", src: "paper", text: "Evening paper: the Glasshouse late opening ends 23:00.", end: "glasshouse" },
@@ -44,7 +53,7 @@ const CLUES = [
   { id: "c.n1.r405.ritual", src: "405", kind: "rituals", text: "Dry cereal from the box." },
   { id: "o.n1.lew", src: "told", text: "Lew: \"Nowhere in this town's more than half an hour from here.\"", late: true },
 ];
-const NOTES = {
+const NOTES0 = {
   open: "The morning after night one. The office, the green-shaded lamp, the logbook open at a blank form. Wren wants it on paper before you go home: where each guest went tonight.",
   first: "The first row in your hand. On the carbon it already reads like a fact. You may ask the cards twice whether a row agrees with them.",
   lew: "Lew puts his head round the door on his way off shift and leaves you a line, as if it were nothing.",
@@ -62,7 +71,46 @@ const CARBON = {
   kept: "You close the drawer on it as signed.",
 };
 const mins = (t) => { const [h, m] = t.split(":").map(Number); return (h < 12 ? h + 24 : h) * 60 + m; };
-function disagreeing(room, place) {
+const FORMS = [
+  { night: 1, form: "S-1", grid: "ROOM × PLACE", rooms: ROOMS0, cols: PLACES0, truth: TRUTH0, sub: Object.fromEntries(Object.entries(RETURN0).map(([r, t]) => [r, "bell " + t])), ends: ENDS0, clues: CLUES0, notes: NOTES0, carbon: true,
+    goal: "Place all six guests: one place to each room. Then sign, once.",
+    line: (r, p) => `Room ${r.slice(1)} went to ${p.name.replace(/^The/, "the")} and came back at ${RETURN0[r]}.`, blank: "Room ___ went to ______ and came back at __:__." },
+  { night: 4, form: "S-4", grid: "HOST ROOM × VISITOR", rooms: ["r401", "r402", "r403", "r404", "r405", "r406"],
+    cols: [{ id: "lew", name: "Lew the porter" }, { id: "r401", name: "Room 401" }, { id: "r404", name: "Room 404" }, { id: "stranger", name: "The stranger" }, { id: "r405", name: "Room 405" }, { id: "room_service", name: "Room service" }],
+    truth: { r401: "lew", r405: "r401", r402: "r404", r404: "stranger", r406: "r405", r403: "room_service" },
+    sub: { r401: "door 23:45", r405: "door 23:50", r402: "door 00:30", r406: "door 01:10", r403: "door 01:30", r404: "door 02:14" },
+    clues: [
+      { id: "o.n4.rule", src: "office", text: "Form S-4, the rule: one visitor to each host. A guest may be a host on one line and a visitor on another." },
+      { id: "c.n4.r401.lew", src: "401", kind: "visitors", text: "Lew the porter at the door, with an iron.", fix: ["r401", "lew"] },
+      { id: "c.n4.r405.security", src: "405", kind: "visitors", text: "A man at the door says \"hotel security\". It is 401.", fix: ["r405", "r401"] },
+      { id: "c.n4.r402.visitor", src: "402", kind: "visitors", text: "404 at her door.", fix: ["r402", "r404"] },
+      { id: "c.n4.r403.tea", src: "403", kind: "visitors", text: "Room service: a pot of tea.", fix: ["r403", "room_service"] },
+      { id: "c.n4.r406.feet", src: "406", kind: "visitors", text: "Two pairs of feet, bare and in slippers; two people sit down on the floor." },
+    ],
+    notes: { open: "The morning after night four. Tonight the form asks who came to whose door, and half the visitors were guests. 401 is on it twice: once as a line, once as an answer.", first: "The first row. A guest who knocked on one door may have opened his own to somebody else.", full: "Six hosts, six visitors. Two of them you never saw at a door; they are what was left over." },
+    goal: "Give each host room its visitor: one to each. Two rows have no card.",
+    line: (r, p) => `Room ${r.slice(1)} opened its door to ${p.name.replace(/^The/, "the").replace(/^Room /, "")}.`, blank: "Room ___ opened its door to ______." },
+  { night: 5, form: "S-5", grid: "ROOM × NAME", rooms: ["r401", "r402", "r403", "r404", "r405", "r406"],
+    cols: [{ id: "ferrer", name: "Jonah Ferrer" }, { id: "maro", name: "Ines Maro" }, { id: "vell", name: "Tomas Vell" }, { id: "ruth", name: "Ruth Saelens" }, { id: "kit", name: "Kit Saelens" }, { id: "linde", name: "Mara Linde" }],
+    truth: { r404: "ferrer", r402: "maro", r401: "vell", r406: "ruth", r405: "kit", r403: "linde" }, sub: {},
+    typed: { r404: "ferrer", r405: "ruth", r406: "kit" },
+    clues: [
+      { id: "c.n5.r404.press", src: "404", kind: "luggage", text: "A press card on the bed: \"J. FERRER\".", fix: ["r404", "ferrer"] },
+      { id: "c.n5.r402.name", src: "402", kind: "rituals", text: "To the mirror: \"My name is Ines Maro.\"", fix: ["r402", "maro"] },
+      { id: "c.n5.r403.label_name", src: "403", kind: "luggage", text: "A luggage label: \"M. LINDE\".", fix: ["r403", "linde"] },
+      { id: "c.n5.r406.letter", src: "406", kind: "luggage", text: "A letter from her group: \"Dear Ruth\".", fix: ["r406", "ruth"] },
+      { id: "c.n5.r405.name", src: "405", kind: "calls", text: "\"It's Kit. Kit Saelens. Your sister. Remember her?\"", fix: ["r405", "kit"] },
+    ],
+    notes: { open: "The morning after night five. The form was in the typewriter when you came in: three rows already typed, initialled H.W. You are asked only to finish it.", first: "A row in your own hand, under three that are not. A second look at a typed row costs the same as at one of yours.", full: "Six rooms, six names. The pen is on the desk." },
+    goal: "Give each room its name. Three rows are typed already. Strike what the cards deny.",
+    line: (r, p) => `Room ${r.slice(1)} is ${p.name}.`, blank: "Room ___ is ______ ______." },
+];
+const P = "behind-the-peephole-statement-";
+export default staged(P, ["one grid, and its carbon", "row and column at once", "rows you did not write"], function play(root, api, stage) {
+    const F = FORMS[stage.stage], ROOMS = F.rooms, PLACES = F.cols, TRUTH = F.truth, RETURN = F.sub, ENDS = F.ends || {}, CLUES = F.clues, NOTES = F.notes;
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const typedRows = new Set(Object.keys(F.typed || {}));
+    function disagreeing(room, place) {
   const out = [];
   for (const c of CLUES) {
     if (c.fix) {
@@ -70,16 +118,13 @@ function disagreeing(room, place) {
       if ((r === room && p !== place) || (r !== room && p === place)) out.push(c);
     }
     if (c.end && c.end === place) {
-      const d = mins(RETURN[room]) - mins(ENDS[place]);
+      const d = mins(RETURN0[room]) - mins(ENDS[place]);
       if (d < 0 || d > 45) out.push(c);
     }
   }
   return out;
 }
 
-export default {
-  mount(root, api) {
-    const P = "behind-the-peephole-statement-";
     const C = { paper: "#efe6cf", carbon: "#2a3a8c", ink: "#1c1a17", brass: "#b8913f", ev: "#a3302a", bottle: "#1f3d2c" };
     const RM = api.reducedMotion;
     const streak = api.store.get("lossStreak", 0);
@@ -112,6 +157,9 @@ export default {
     .${P}grid td.clash{background:rgba(163,48,42,.18);color:${C.ev}}
     .${P}grid td.pop{animation:${P}pop .28s ease-out}
     @keyframes ${P}pop{0%{transform:scale(1.35)}100%{transform:scale(1)}}
+    .${P}grid tr.typed td{font-family:"Courier New",monospace;color:${C.ink};background:rgba(28,26,23,.05);cursor:not-allowed}
+    .${P}grid tr.typed th small{color:${C.ink};font-weight:700}
+    .${P}grid tr.seventh td{height:34px;border-style:solid}
     .${P}grid tr.struck td,.${P}grid tr.struck th small{text-decoration:line-through;opacity:.55}
     .${P}grid tr.inked td.t{background:${C.carbon};color:${C.paper}}
     .${P}rowmark{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;white-space:nowrap;min-height:1px}
@@ -200,6 +248,7 @@ export default {
 
     const state = {};
     for (const r of ROOMS) { state[r] = {}; for (const p of PLACES) state[r][p.id] = 0; }
+    for (const r of typedRows) { state[r][F.typed[r]] = 2; for (const q of PLACES) if (q.id !== F.typed[r]) state[r][q.id] = 1; for (const o of ROOMS) if (o !== r && state[o][F.typed[r]] !== 2) state[o][F.typed[r]] = 1; }
     let autoCross = true, looks = gentle ? 3 : 2, signed = false, cur = [0, 0], hl = new Set(), hlCols = new Set(), activeClue = null, lookMode = false;
     const held = new Set(CLUES.filter((c) => !c.late).map((c) => c.id));
     const told = new Set();
@@ -209,11 +258,11 @@ export default {
 
     page.innerHTML = `
       <div class="${P}sheet">
-        <div class="${P}head"><b>THE CROSSING · NIGHT LOG · STATEMENT</b><span>FORM S-1 · NIGHT 1 · ROOM × PLACE · COPY 2 OF 2</span></div>
+        <div class="${P}head"><b>THE CROSSING · NIGHT LOG · STATEMENT</b><span>FORM ${F.form} · NIGHT ${F.night} · ${F.grid} · COPY 2 OF 2</span></div>
         <p class="${P}story" aria-live="polite"></p>
         <div class="${P}cols">
           <div>
-            <div class="${P}gwrap"><table class="${P}grid" role="grid" aria-label="Room by place grid"></table></div>
+            <div class="${P}gwrap"><table class="${P}grid" role="grid" aria-label="${F.grid}"></table></div>
             <div class="${P}btns">
               <label class="${P}opt"><input type="checkbox" checked> a tick crosses its row and column</label>
             </div>
@@ -224,6 +273,7 @@ export default {
             <div class="${P}clues"></div>
             <div class="${P}btns">
               <button type="button" class="${P}btn" data-a="look" hidden>SECOND LOOK (2) · L</button>
+              <button type="button" class="${P}btn sign" data-a="strike" hidden>STRIKE THE TYPED ROW · X</button>
               <button type="button" class="${P}btn sign" data-a="sign">SIGN ✒</button>
             </div>
             <div class="${P}msg" aria-live="polite"></div>
@@ -232,21 +282,34 @@ export default {
         <div class="${P}foot">COPY · NOT VALID WITHOUT THE SEAL OF THE MANAGEMENT · RETURN TIMES ARE THE VALET BELL</div>
       </div>
       <div class="${P}intro"><div class="${P}form">
-        ${art.has("chapter-n1") ? `<img alt="Night One: Returns" src="${art.url("chapter-n1")}" style="display:block;width:calc(100% + 40px);max-width:none;margin:-18px -20px 12px;height:96px;object-fit:cover;object-position:0 0">` : ""}
-        <div class="hd"><span>FORM S-1</span><span>INSTRUCTIONS TO THE NIGHT AUDITOR</span></div>
+        ${art.has("chapter-n" + F.night) ? `<img alt="Night ${F.night}" src="${art.url("chapter-n" + F.night)}" style="display:block;width:calc(100% + 40px);max-width:none;margin:-18px -20px 12px;height:96px;object-fit:cover;object-position:0 0">` : ""}
+        <div class="hd"><span>FORM ${F.form}</span><span>INSTRUCTIONS TO THE NIGHT AUDITOR</span></div>
         <h2>THE STATEMENT</h2>
-        <p class="goal">Place all six guests: one place to each room. Then sign, once.</p>
+        <p class="goal">${F.goal}</p>
         <p class="open"></p>
         <ol>
           <li><b>MARK</b> · tap a cell: blank, ✕, ✓. Arrow keys and Space work too.</li>
           <li><b>CONSULT</b> · tap a clue card to light the cells it bears on.</li>
           <li><b>SIGN</b> · right rows are inked and stamped; wrong ones are struck through.</li>
-        </ol>
+          ${F.typed ? "<li><b>STRIKE</b> · tap a typed row, then STRIKE (X): it costs a second look, and it is heard.</li>" : ""}
+        </ol><div data-row></div>
         <div class="ft">${streak >= 2 ? `<label class="${P}opt"><input type="checkbox" data-g ${gentle ? "checked" : ""}> a third second look</label>` : `<span>THE PAGE NEVER SAYS WHAT THE RIGHT ANSWER WAS</span>`}<button type="button" class="${P}btn" data-a="start">BEGIN THE FORM</button></div>
       </div></div>`;
     const $ = (s) => page.querySelector(s);
     const table = $("." + P + "grid"), words = $("." + P + "words"), msg = $("." + P + "msg"), story = $("." + P + "story");
-    const lookBtn = page.querySelector('[data-a="look"]'), signBtn = page.querySelector('[data-a="sign"]');
+    const lookBtn = page.querySelector('[data-a="look"]'), signBtn = page.querySelector('[data-a="sign"]'), strikeBtn = page.querySelector('[data-a="strike"]');
+    let strikeRow = null;
+    function strike() {
+      const r = strikeRow; if (!r || signed || !typedRows.has(r)) return;
+      if (looks <= 0) { msg.textContent = "No second look left to spend on a strike. The typed row stands."; return; }
+      looks--; typedRows.delete(r); strikeRow = null;
+      const p = F.typed[r]; for (const q of PLACES) state[r][q.id] = 0; for (const o of ROOMS) if (state[o][p] === 1 && !typedRows.has(o)) state[o][p] = 0;
+      msg.textContent = `Row ${r.slice(1)} struck through, in your ink over his type. On the desk the phone rings once, and stops.`;
+      story.textContent = strikes++ ? "The phone again: once. He is counting your strikes, the way you count their returns." : "One ring. Nobody was meant to answer it. He knows which row.";
+      lookBtn.hidden = false; draw();
+    }
+    let strikes = 0;
+    on(strikeBtn, "click", strike);
     page.querySelector(`.${P}form .open`).textContent = NOTES.open;
     story.textContent = NOTES.open;
 
@@ -259,7 +322,7 @@ export default {
       tr.dataset.room = r;
       const th = document.createElement("th");
       th.className = "r"; th.scope = "row";
-      th.innerHTML = `${r.slice(1)}<small>bell ${RETURN[r]}</small>`;
+      th.innerHTML = `${r.slice(1)}<small>${typedRows.has(r) ? "TYPED · H.W." : RETURN[r] || ""}</small>`;
       tr.appendChild(th);
       PLACES.forEach((p, pi) => {
         const td = document.createElement("td");
@@ -274,6 +337,11 @@ export default {
       th.appendChild(mark);
       table.appendChild(tr);
     });
+    { // the seventh row: ruled, and empty
+      const tr = document.createElement("tr"); tr.className = "seventh";
+      tr.innerHTML = `<th class="r" scope="row" aria-label="An empty ruled line">&nbsp;</th>` + PLACES.map(() => `<td style="cursor:default" aria-hidden="true"></td>`).join("");
+      table.appendChild(tr);
+    }
 
     const clueBox = $("." + P + "clues");
     function addCard(c, fresh) {
@@ -286,7 +354,7 @@ export default {
       if (ICON(c.kind)) { b.classList.add("ic"); b.style.backgroundImage = `url(${ICON(c.kind)})`; }
       if (fresh) clueBox.prepend(b); else clueBox.appendChild(b);
     }
-    if (art.has("clipping-listings")) {
+    if (stage.stage === 0 && art.has("clipping-listings")) {
       const b = document.createElement("button");
       b.type = "button"; b.className = P + "clip"; b.dataset.id = "paper.all"; b.title = "The evening paper: tonight in town";
       b.innerHTML = `<img alt="The Evening Courant, Tonight in town: the four closing times" src="${art.url("clipping-listings")}">`;
@@ -298,7 +366,7 @@ export default {
       const s = new Set(), cols = new Set();
       if (c.fix) { for (const p of PLACES) s.add(c.fix[0] + p.id); for (const r of ROOMS) s.add(r + c.fix[1]); cols.add(c.fix[1]); }
       if (c.end) { for (const r of ROOMS) s.add(r + c.end); cols.add(c.end); }
-      if (c.id === "o.city" || c.id === "o.n1.lew") for (const r of ROOMS) for (const p of PLACES) s.add(r + p.id);
+      if (c.id === "o.city" || c.id === "o.n1.lew" || c.id === "o.n4.rule" || c.id === "c.n4.r406.feet") for (const r of ROOMS) for (const p of PLACES) s.add(r + p.id);
       return [s, cols];
     }
     const rowTicks = (r) => PLACES.filter((p) => state[r][p.id] === 2);
@@ -315,10 +383,12 @@ export default {
       table.querySelectorAll("th.c").forEach((th) => th.classList.toggle("hl", hlCols.has(th.dataset.p)));
       const lines = ROOMS.filter((r) => rowTick(r)).map((r) => {
         const ts = rowTicks(r), p = ts[0];
-        if (ts.length > 1) return `<p class="clash">Room ${r.slice(1)}: two places ticked. One room, one place.</p>`;
-        return `<p>Room ${r.slice(1)} went to ${p.name.replace(/^The/, "the")} and came back at ${RETURN[r]}.</p>`;
+        if (ts.length > 1) return `<p class="clash">Room ${r.slice(1)}: two ticks. One line, one answer.</p>`;
+        return `<p>${typedRows.has(r) ? "<b>[typed]</b> " : ""}${F.line(r, p)}</p>`;
       });
-      words.innerHTML = lines.length ? lines.join("") : `<p class="empty">Room ___ went to ______ and came back at __:__.</p>`;
+      words.innerHTML = lines.length ? lines.join("") : `<p class="empty">${F.blank}</p>`;
+      table.querySelectorAll("tr[data-room]").forEach((tr) => { const ty = typedRows.has(tr.dataset.room); tr.classList.toggle("typed", ty); if (!ty) { const sm = tr.querySelector("th small"); if (sm && sm.textContent === "TYPED · H.W.") sm.innerHTML = "<s>TYPED</s> · STRUCK"; } });
+      strikeBtn.hidden = !strikeRow || signed; if (strikeRow) strikeBtn.textContent = `STRIKE TYPED ROW ${strikeRow.slice(1)} · X`;
       lookBtn.textContent = lookMode ? "PICK A ROW…" : `SECOND LOOK (${looks}) · L`;
       lookBtn.classList.toggle("armed", lookMode);
       lookBtn.disabled = signed || looks <= 0;
@@ -327,7 +397,7 @@ export default {
     function beats() {
       const ticked = ROOMS.filter((r) => rowTick(r)).length;
       if (ticked >= 1 && !told.has("first")) { told.add("first"); story.textContent = NOTES.first; lookBtn.hidden = false; }
-      if (ticked >= 3 && !told.has("lew")) {
+      if (ticked >= 3 && !told.has("lew") && CLUES.some((x) => x.late)) {
         told.add("lew"); story.textContent = NOTES.lew;
         const c = CLUES.find((x) => x.late); held.add(c.id); addCard(c, true); clueBox.scrollTop = 0;
       }
@@ -337,6 +407,9 @@ export default {
     function cycle(ri, pi) {
       if (signed) return;
       const r = ROOMS[ri], p = PLACES[pi].id;
+      if (typedRows.has(r)) { cur = [ri, pi]; strikeRow = r; msg.textContent = `Row ${r.slice(1)} was typed before you sat down. You cannot mark it. STRIKE it (X) to write your own: it costs a second look.`; draw(); return; }
+      if (typedRows.size && [...typedRows].some((o) => F.typed[o] === p) && state[r][p] === 1) { state[r][p] = 0; }
+      strikeRow = null;
       const v = (state[r][p] + 1) % 3;
       state[r][p] = v;
       if (v === 2 && autoCross) {
@@ -412,14 +485,20 @@ export default {
       later(() => {
         const stamp = document.createElement("div");
         stamp.className = P + "stamp" + (RM ? "" : " go");
-        stamp.textContent = `NIGHT 1 · ${correct}/6`;
+        stamp.textContent = `NIGHT ${F.night} · ${correct}/6`;
         page.querySelector("." + P + "sheet").appendChild(stamp);
         msg.textContent = "The page does not say what the right answers were.";
       }, RM ? 0 : 1900);
       api.store.set("best", Math.max(api.store.get("best", 0), correct));
       const outcome = correct === 6 ? "win" : correct >= 4 ? "done" : "lose";
       api.store.set("lossStreak", outcome === "lose" ? streak + 1 : 0);
-      later(() => carbonPhase(results, correct, outcome), RM ? 900 : 3400);
+      const cb = shared.get("carbons", {}) || {}; cb["n" + F.night] = Math.max(cb["n" + F.night] || 0, correct); shared.set("carbons", cb);
+      if (F.carbon) { later(() => carbonPhase(results, correct, outcome), RM ? 900 : 3400); return; }
+      const left = [...typedRows].filter((r) => F.typed[r] !== TRUTH[r]).length;
+      let text;
+      if (stage.stage === 1) text = correct === 6 ? "Six rows inked and stamped. 401 is on the form twice, as a man who was called on and as a man who called, and the form does not find that strange. Under 406, the seventh ruled line is still empty. Tomorrow the form will not come to you blank." : `Wren's copy: ${correct} of 6. The rows with no card are what is left when the others are placed: one visitor to each host. Check who is both a line and an answer.`;
+      else text = correct === 6 ? `Six rows inked and stamped, ${strikes} of them over his typing. The phone rang ${strikes === 1 ? "once" : strikes + " times"} and nobody spoke. Somebody wanted the sisters the other way round on paper: the hacker named Ruth. Under 406 there is a seventh ruled line, as there has been on every form, and nothing printed beside it.` : `Wren's copy: ${correct} of 6${left ? `, with ${left} of his typed rows still standing against your own cards` : ""}. A typed row is not a seen one. Read "Dear Ruth" and "It's Kit" against rooms 405 and 406, and strike what they deny.`;
+      later(() => api.end({ outcome, text }), RM ? 900 : 3200);
     }
 
     // ---- the carbon: the next morning, one amendment, on your copy only
@@ -474,16 +553,16 @@ export default {
           let d;
           if (artFits) {
             d = document.createElement("div"); d.className = `${P}slip art`;
-            d.innerHTML = `<img alt="Room ${no} went to ${nameOf(TRUTH[r])} and came back at ${RETURN[r]}. ${isAm ? "Amended" : "Entered"}." src="${art.url(artId)}">`;
+            d.innerHTML = `<img alt="Room ${no} went to ${nameOf(TRUTH[r])} and came back at ${RETURN0[r]}. ${isAm ? "Amended" : "Entered"}." src="${art.url(artId)}">`;
           } else if (ok) {
             d = document.createElement("div"); d.className = P + "slip";
-            d.innerHTML = `Room ${no} went to ${nameOf(row[r])} and came back at ${RETURN[r]}.${stampEl("stamp-entered", "ENTERED", C.carbon)}`;
+            d.innerHTML = `Room ${no} went to ${nameOf(row[r])} and came back at ${RETURN0[r]}.${stampEl("stamp-entered", "ENTERED", C.carbon)}`;
           } else {
             d = document.createElement(amended ? "div" : "button"); d.className = P + "slip" + (sel === r ? " sel" : "");
             if (!amended) { d.type = "button"; d.dataset.room = r; }
             const was = row[r] ? `<s>${nameOf(row[r])}</s>` : `<s>______</s>`;
-            d.innerHTML = isAm ? `Room ${no} went to ${was} ${nameOf(amended.place)} and came back at ${RETURN[r]}.${stampEl("stamp-amended", "AMENDED", "#2f6b45")}`
-              : `<span style="opacity:.75">Room ${no} went to ${was} and came back at ${RETURN[r]}.</span><span class="tx" style="color:${C.ev}">STRUCK</span>`;
+            d.innerHTML = isAm ? `Room ${no} went to ${was} ${nameOf(amended.place)} and came back at ${RETURN0[r]}.${stampEl("stamp-amended", "AMENDED", "#2f6b45")}`
+              : `<span style="opacity:.75">Room ${no} went to ${was} and came back at ${RETURN0[r]}.</span><span class="tx" style="color:${C.ev}">STRUCK</span>`;
           }
           slips.appendChild(d);
         }
@@ -502,7 +581,7 @@ export default {
       on(slips, "click", (e) => {
         const b = e.target.closest("button[data-room]"); if (!b || amended) return;
         sel = b.dataset.room; pick = null; paintSlips(); paintPlaces();
-        cmsg.textContent = `Room ${sel.slice(1)}, bell ${RETURN[sel]}. Where did they go? Choose, then amend. You get one.`;
+        cmsg.textContent = `Room ${sel.slice(1)}, bell ${RETURN0[sel]}. Where did they go? Choose, then amend. You get one.`;
         const f = slips.querySelector(".sel"); if (f) f.focus();
       });
       on(pl, "click", (e) => { const b = e.target.closest("button[data-place]"); if (!b) return; pick = b.dataset.place; paintPlaces(); });
@@ -548,11 +627,13 @@ export default {
         if (lookMode) secondLook(ROOMS[cur[0]]); else cycle(cur[0], cur[1]);
       } else if ((k === "l" || k === "L") && !lookBtn.hidden) {
         if (looks > 0) secondLook(ROOMS[cur[0]]);
-      }
+      } else if ((k === "x" || k === "X") && typedRows.has(ROOMS[cur[0]])) { strikeRow = ROOMS[cur[0]]; strike(); }
     });
 
     const gbox = page.querySelector("[data-g]");
     if (gbox) on(gbox, "change", () => { gentle = gbox.checked; api.store.set("gentle", gentle); looks = gentle ? 3 : 2; });
+    page.querySelector("[data-row]").appendChild(stage.row(P + "btn"));
+    if (F.typed) lookBtn.hidden = false;
     on(page.querySelector('[data-a="start"]'), "click", () => { page.querySelector("." + P + "intro").remove(); draw(); });
     draw();
     page.querySelector('[data-a="start"]').focus();
@@ -564,5 +645,4 @@ export default {
         root.innerHTML = "";
       },
     };
-  },
-};
+});
