@@ -1,87 +1,86 @@
 {
-  "game": "people-of-the-bark",
-  "style": "Two looks, as in the game's stills. At bark scale: photographic macro miniature diorama, tilt-shift, shallow depth of field, dust in every lit frame, one low warm light; deep umber and grey-brown bark, deep dark cracks, sage and lime lichen, sap amber with a soft glow, lantern orange, cream bark-paper; the people are tiny carved hand-made figures with large heads and long thin limbs, not human proportions. At yard scale: a plain deep-focus daylight photograph of an ordinary backyard, grass green, sky blue, white fence, never a face and never any writing.",
-  "images": [
-    {
-      "id": "key-art-wide",
-      "kind": "key-art",
-      "title": "Lanterns under five dark fingers",
-      "aspect_ratio": "16:9",
-      "model": "soul_cinematic",
-      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field, fine dust in the lit air. A vertical wall of deep umber tree bark seen straight on, filling the whole frame edge to edge like a cliff. Across the lower half clings a tiny city of round carved dwellings with bark-chip shutters, dozens of orange glow-lichen lanterns lit, amber sap beading in the grooves, patches of sage and lime lichen. The upper half of the bark lies in a flat soft blue-black cast shadow whose lower edge is shaped into five long tapering lobes pointing down, a shadow only, painted by light on the bark surface, its lowest tip just reaching the highest lantern. In a strip of gold light, right of centre, a small kite made of one sage-green leaf hangs on a silk thread. The upper third is calm shadowed bark with nothing on it, left empty for a title. One low warm light from below left. Nothing in front of the bark: no hand, no fingers, no skin, no people, no text, no lettering, no watermark, no logo",
-      "job_id": "8e0d4f9a-21d6-4f45-bbd8-ae773b08b0a1",
-      "needs_review": "Retry kept (first showed real fingers). The shadow edge is many spikes, not five finger lobes; the leaf kite is small.",
-      "image": "keyart/key-art-wide.jpg"
-    },
-    {
-      "id": "key-art-tall",
-      "kind": "key-art",
-      "title": "Lanterns under five dark fingers",
-      "aspect_ratio": "2:3",
-      "model": "gpt_image_2_6",
-      "prompt": "Edit this image. Remove all lettering and text from this image: the line of white letters on the bark at the left, at mid-height. Fill that area with the surrounding dark tree bark. Change nothing else; keep the exact composition, colours, grain, depth of field and lighting. No text, no lettering, no watermark anywhere.",
-      "job_id": "12b21596-5286-4de6-adc1-960b7e07e072",
-      "needs_review": "Lettering removed by an image edit of the earlier generation (source_job_id; its original prompt is in git history); now 1360x2040. Remaining from that generation: a tiny figure with a lantern at lower left, the city is a mound, the shadow lobes are few.",
-      "image": "keyart/key-art-tall.jpg",
-      "source_job_id": "32c46109-d422-4da8-a483-e917886f8acb"
-    },
-    {
-      "id": "ending-shadow-passes",
-      "kind": "ending",
-      "ending": "shadow_passes",
-      "title": "The Shadow Passes",
-      "aspect_ratio": "16:9",
-      "model": "soul_cinematic",
-      "prompt": "Plain photograph of an ordinary suburban backyard in deep focus, flat calm daylight, like a plate in a children's nature encyclopaedia. Wide view from across the lawn. A large old deciduous tree with grey-brown bark stands on a mown green lawn, its whole trunk in the left third of the frame, a white picket fence behind it, blue sky. Entering from the right edge of the frame at shoulder height, a single adult forearm in a plain rolled shirt sleeve reaches toward the trunk, the open relaxed hand hovering a short way off the bark, palm facing the tree, just drawn back from it, lit plainly and gently; the person stands out of frame to the right, no face and no body shown, nobody behind the tree. Sunlight lies on the bark where the hand had rested. Nothing on the bark can be made out at this distance: it is just a tree. Grass green, sky blue, white fence, bark umber. The lower quarter is plain even lawn, left calm for a caption, no text, no lettering, no watermark, no logo",
-      "job_id": "34a5bbc6-582f-498d-9bd3-27800377750e",
-      "image": "keyart/ending-shadow-passes.jpg"
-    },
-    {
-      "id": "ending-war-on-the-god",
-      "kind": "ending",
-      "ending": "war_on_the_god",
-      "title": "The War on the God",
-      "aspect_ratio": "16:9",
-      "model": "soul_cinematic",
-      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field, fine dust in the lit air. Night on a vertical wall of deep umber tree bark. Far off and out of focus, a small victory fire burns on every ridge, a scatter of orange points climbing into the dark, with a tiny fortified splinter and its battlement walk among them. In the middle distance at the left, sharp and alone on a ledge, sits Captain Burr: a tiny carved hand-made figure with a large head and long thin limbs, not human proportions, a broad earnest middle-aged commander in bark-plate armour and a crested helmet, his back half turned to the fires, head bowed, polishing a long splinter spear with a cloth. One small lantern beside him lights his hands from below. Nobody else near him. Lantern orange and sap amber against blue-black bark. The lower quarter is dark unlit bark, left calm for a caption, no text, no lettering, no watermark, no logo",
-      "job_id": "9a9c3cdd-9d12-4f5e-aa08-bd6bdd6e0ab8",
-      "image": "keyart/ending-war-on-the-god.jpg"
-    },
-    {
-      "id": "ending-edge-of-the-world",
-      "kind": "ending",
-      "ending": "edge_of_the_world",
-      "title": "The Edge of the World",
-      "aspect_ratio": "16:9",
-      "model": "soul_cinematic",
-      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field. Dawn over a tiny city carved into a wall of umber tree bark, seen as a deep wide landscape from high behind. In the middle distance, very small in the frame, stands Mossa the messenger with her back fully to the camera: a tiny carved hand-made figure with a large head and long thin limbs, a very long scarf blowing sideways, an open bark-paper map spread in both hands. Beyond her the bark ridge runs far away and curves off, ending against open pale sky. A faint line of small twig stakes with fibre flags runs along the ridge toward that edge. Below and around her, many tiny dark dwellings are carved into the bark, two or three lanterns lit. Cold pale gold light from the east, umber bark, lichen lime, cream paper. The lower quarter is soft out-of-focus bark, left calm for a caption, no text, no lettering, no watermark, no logo",
-      "job_id": "369b7714-072a-4c0b-8f99-098422230e8f",
-      "needs_review": "Mossa is now small, distant and seen from behind with the map open. Remaining: the view is shallow, against a bark wall, rather than a deep wide vista; the ridge does not visibly curve off at the edge; the map carries faint scribble marks.",
-      "image": "keyart/ending-edge-of-the-world.jpg"
-    },
-    {
-      "id": "ending-the-flake",
-      "kind": "ending",
-      "ending": "the_flake",
-      "title": "The Flake",
-      "aspect_ratio": "16:9",
-      "model": "soul_cinematic",
-      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field, fine dust in the lit air. A vertical wall of rough umber tree bark seen straight on. On the left half a tiny city of round carved dwellings with round doors and bark-chip shutters clings to the bark ridges, its lanterns unlit. At the middle of the frame the city and the bark stop at a clean new edge, and the right half is a broad bare scar of pale smooth fresh inner wood, empty and quiet, where a plate of bark has come away. Nothing is falling, no debris. On a narrow bark ledge at that edge, very small in the frame and seen from behind, a few survivors stand close together: tiny carved hand-made stick-thin figures with large round heads and long thin twig limbs, not human proportions. Among them an elderly woman cook in an apron holding a long ladle bends over a small cooking pot with one small orange flame under it, its glow on their backs. Beside her one figure kneels at the bark wall, carving the first ring of a round door. Grey early light, umber, pale tan wood, one warm flame. The lower quarter is shadowed bark, left calm for a caption, no text, no lettering, no watermark, no logo",
-      "job_id": "cd47de53-6b84-422a-86b7-74dad7e09355",
-      "needs_review": "Retry kept (first had stout figures and no city). Figures stand on top of the block and are seen from the side, Old Resin's face shows, nobody carves a door, and the lower quarter is not dark.",
-      "image": "keyart/ending-the-flake.jpg"
-    },
-    {
-      "id": "ending-the-ring",
-      "kind": "ending",
-      "ending": "the_ring",
-      "title": "The Ring",
-      "aspect_ratio": "16:9",
-      "model": "soul_cinematic",
-      "prompt": "Plain photograph in deep focus, flat calm daylight, taken in an ordinary suburban backyard looking over a low white picket fence into the neighbour's yard. In our yard, in the left third of the frame, stands a large old deciduous tree with grey-brown bark on mown green lawn. Wrapped once round its trunk at chest height is a flat band of bright orange ribbon, pulled tight with a small plain knot, no bow, no loops, two short ends hanging down. The fence crosses the whole frame in the middle distance, waist high. Our lawn in front of the fence is completely empty. On the far side of the fence, in the neighbour's lawn, at the right, a low sawn grey tree stump with long grass round it, its lower half hidden behind the white pickets, the fence clearly in front of it. Nobody in either yard. Grass green, sky blue, white fence, bark umber, one orange band. The lower quarter is plain even lawn, left calm for a caption, no text, no lettering, no watermark, no logo",
-      "job_id": "fd1aa0ed-ce9e-469c-b7cb-e821fff0a6e6",
-      "needs_review": "Retry kept (the first still put the stump in front of the fence). Stump now stands beyond the fence in the next yard and the ribbon is a knot, not a bow. Remaining: the tree is smaller and more cropped than 'large old', and the stump is not hidden by the pickets.",
-      "image": "keyart/ending-the-ring.jpg"
-    }
-  ]
+ "game": "people-of-the-bark",
+ "style": "Two looks, as in the game's stills. At bark scale: photographic macro miniature diorama, tilt-shift, shallow depth of field, dust in every lit frame, one low warm light; deep umber and grey-brown bark, deep dark cracks, sage and lime lichen, sap amber with a soft glow, lantern orange, cream bark-paper; the people are tiny carved hand-made figures with large heads and long thin limbs, not human proportions. At yard scale: a plain deep-focus daylight photograph of an ordinary backyard, grass green, sky blue, white fence, never a face and never any writing.",
+ "images": [
+  {
+   "id": "key-art-wide",
+   "kind": "key-art",
+   "title": "Lanterns under five dark fingers",
+   "aspect_ratio": "16:9",
+   "model": "soul_cinematic",
+   "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field, fine dust in the lit air; deep umber grey-brown bark, sage and lime lichen, amber sap, lantern orange. A vertical wall of umber tree bark seen straight on, filling the frame edge to edge. Across the lower half clings a tiny city of round carved dwellings with bark-chip shutters, dozens of orange lanterns lit. The upper half of the bark lies in a flat blue-black cast shadow whose lower edge forms exactly five long, wide, rounded tapering lobes pointing down, evenly spaced like five fingers of a hand, only five, a shadow only on the bark surface, the lowest tips just reaching the highest lanterns. In a strip of gold light right of centre hangs a large kite made of one sage-green leaf on a silk thread. The upper third is calm shadowed bark, empty for a title. One low warm light from below left. Nothing in front of the bark: no hand, no skin, no people, no text, no lettering, no watermark, no logo",
+   "job_id": "b175334f-6ef3-41d5-90f1-3ceb4333b25e",
+   "needs_review": "Five lobes and a large leaf kite now. Remaining: the lobes read as five lit bark pillars rising from the city with the shadow between them (inverted), the city is sparse (lanterns, few dwellings) and the kite is soft.",
+   "image": "keyart/key-art-wide.jpg"
+  },
+  {
+   "id": "key-art-tall",
+   "kind": "key-art",
+   "title": "Lanterns under five dark fingers",
+   "aspect_ratio": "2:3",
+   "model": "gpt_image_2_6",
+   "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field; umber bark, sage and lime lichen, lantern orange. A vertical wall of umber tree bark seen straight on. Across the lower half, spread over the flat wall (not a mound), clings a tiny city of round carved dwellings on terraces, dozens of lanterns lit. The upper half lies in a flat blue-black cast shadow whose lower edge forms exactly five long rounded lobes pointing down like five fingers, a shadow only. A small sage-green leaf kite hangs on a silk thread in a strip of gold light at right. Upper third calm dark bark, empty for a title. No people, no hand, no text, no lettering, no watermark, no logo",
+   "job_id": "c0451372-2e40-4fd8-bff1-f328a549f35e",
+   "image": "keyart/key-art-tall.jpg",
+   "note": "Regenerated from a fresh prompt; output is 688x1024."
+  },
+  {
+   "id": "ending-shadow-passes",
+   "kind": "ending",
+   "ending": "shadow_passes",
+   "title": "The Shadow Passes",
+   "aspect_ratio": "16:9",
+   "model": "soul_cinematic",
+   "prompt": "Plain photograph of an ordinary suburban backyard in deep focus, flat calm daylight, like a plate in a children's nature encyclopaedia. Wide view from across the lawn. A large old deciduous tree with grey-brown bark stands on a mown green lawn, its whole trunk in the left third of the frame, a white picket fence behind it, blue sky. Entering from the right edge of the frame at shoulder height, a single adult forearm in a plain rolled shirt sleeve reaches toward the trunk, the open relaxed hand hovering a short way off the bark, palm facing the tree, just drawn back from it, lit plainly and gently; the person stands out of frame to the right, no face and no body shown, nobody behind the tree. Sunlight lies on the bark where the hand had rested. Nothing on the bark can be made out at this distance: it is just a tree. Grass green, sky blue, white fence, bark umber. The lower quarter is plain even lawn, left calm for a caption, no text, no lettering, no watermark, no logo",
+   "job_id": "34a5bbc6-582f-498d-9bd3-27800377750e",
+   "image": "keyart/ending-shadow-passes.jpg"
+  },
+  {
+   "id": "ending-war-on-the-god",
+   "kind": "ending",
+   "ending": "war_on_the_god",
+   "title": "The War on the God",
+   "aspect_ratio": "16:9",
+   "model": "soul_cinematic",
+   "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field, fine dust in the lit air. Night on a vertical wall of deep umber tree bark. Far off and out of focus, a small victory fire burns on every ridge, a scatter of orange points climbing into the dark, with a tiny fortified splinter and its battlement walk among them. In the middle distance at the left, sharp and alone on a ledge, sits Captain Burr: a tiny carved hand-made figure with a large head and long thin limbs, not human proportions, a broad earnest middle-aged commander in bark-plate armour and a crested helmet, his back half turned to the fires, head bowed, polishing a long splinter spear with a cloth. One small lantern beside him lights his hands from below. Nobody else near him. Lantern orange and sap amber against blue-black bark. The lower quarter is dark unlit bark, left calm for a caption, no text, no lettering, no watermark, no logo",
+   "job_id": "9a9c3cdd-9d12-4f5e-aa08-bd6bdd6e0ab8",
+   "image": "keyart/ending-war-on-the-god.jpg"
+  },
+  {
+   "id": "ending-edge-of-the-world",
+   "kind": "ending",
+   "ending": "edge_of_the_world",
+   "title": "The Edge of the World",
+   "aspect_ratio": "16:9",
+   "model": "soul_cinematic",
+   "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field. Dawn over a tiny city carved into a wall of umber tree bark, seen as a deep wide landscape from high behind. In the middle distance, very small in the frame, stands Mossa the messenger with her back fully to the camera: a tiny carved hand-made figure with a large head and long thin limbs, a very long scarf blowing sideways, an open bark-paper map spread in both hands. Beyond her the bark ridge runs far away and curves off, ending against open pale sky. A faint line of small twig stakes with fibre flags runs along the ridge toward that edge. Below and around her, many tiny dark dwellings are carved into the bark, two or three lanterns lit. Cold pale gold light from the east, umber bark, lichen lime, cream paper. The lower quarter is soft out-of-focus bark, left calm for a caption, no text, no lettering, no watermark, no logo",
+   "job_id": "369b7714-072a-4c0b-8f99-098422230e8f",
+   "needs_review": "Mossa is now small, distant and seen from behind with the map open. Remaining: the view is shallow, against a bark wall, rather than a deep wide vista; the ridge does not visibly curve off at the edge; the map carries faint scribble marks.",
+   "image": "keyart/ending-edge-of-the-world.jpg"
+  },
+  {
+   "id": "ending-the-flake",
+   "kind": "ending",
+   "ending": "the_flake",
+   "title": "The Flake",
+   "aspect_ratio": "16:9",
+   "model": "soul_cinematic",
+   "prompt": "Photographic macro miniature diorama, tilt-shift, dim grey early light. Rough umber bark wall with a tiny city of round dwellings, lanterns unlit, ending at a clean edge beside a bare scar of pale fresh inner wood. On a narrow ledge at the edge, tiny carved twig-limbed survivors seen from behind facing the scar; an elderly cook with a ladle over a small pot with one small orange flame; one figure kneeling at the bark wall scratching the first ring of a round door. Lower third dark bark, empty for a caption. no text, no lettering, no watermark, no logo",
+   "job_id": "b5786b72-65e6-487e-a51c-25dd4551e332",
+   "needs_review": "Survivors are seen from behind, no faces, the kneeling figure is at the wall, the lower part is dark. Remaining: they stand on top of the bark block rather than on a ledge in the wall, and the cook is small and hard to read.",
+   "image": "keyart/ending-the-flake.jpg"
+  },
+  {
+   "id": "ending-the-ring",
+   "kind": "ending",
+   "ending": "the_ring",
+   "title": "The Ring",
+   "aspect_ratio": "16:9",
+   "model": "soul_cinematic",
+   "prompt": "Plain photograph in deep focus, flat calm daylight, taken in an ordinary suburban backyard looking over a low white picket fence into the neighbour's yard. In our yard, in the left third of the frame, stands a large old deciduous tree with grey-brown bark on mown green lawn. Wrapped once round its trunk at chest height is a flat band of bright orange ribbon, pulled tight with a small plain knot, no bow, no loops, two short ends hanging down. The fence crosses the whole frame in the middle distance, waist high. Our lawn in front of the fence is completely empty. On the far side of the fence, in the neighbour's lawn, at the right, a low sawn grey tree stump with long grass round it, its lower half hidden behind the white pickets, the fence clearly in front of it. Nobody in either yard. Grass green, sky blue, white fence, bark umber, one orange band. The lower quarter is plain even lawn, left calm for a caption, no text, no lettering, no watermark, no logo",
+   "job_id": "fd1aa0ed-ce9e-469c-b7cb-e821fff0a6e6",
+   "needs_review": "Retry kept (the first still put the stump in front of the fence). Stump now stands beyond the fence in the next yard and the ribbon is a knot, not a bow. Remaining: the tree is smaller and more cropped than 'large old', and the stump is not hidden by the pickets.",
+   "image": "keyart/ending-the-ring.jpg"
+  }
+ ]
 }

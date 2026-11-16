@@ -8,11 +8,9 @@
       "title": "The gate faces in",
       "aspect_ratio": "16:9",
       "model": "gpt_image_2_6",
-      "prompt": "Edit this photograph. Remove all lettering, text and signage from this image: the white words in the top-left corner of the black canvas hood, and the small sign on the wall of the grey barracks at the left. Fill those areas with the surrounding surface (plain black canvas; plain grey timber wall). Change nothing else; keep the exact composition, colours, grain and lighting. No text, no lettering, no watermark anywhere.",
-      "job_id": "ce51766b-3321-4bd5-9fba-929d790e156d",
-      "image": "keyart/key-art-wide.jpg",
-      "needs_review": "Lettering and sign removed by an image edit of the first generation (source_job_id; its original prompt is in git history); the edit came back at 2688x1520 and was scaled and trimmed 3 px top and bottom to 2048x1152. Remaining from the first generation: the gate leaves stand well apart rather than almost closed, with slatted panels instead of riveted plates. No figures.",
-      "source_job_id": "9874d5c4-902b-4ddb-9468-9fe5f42460b6"
+      "prompt": "Muted cinematic photographic realism of a remote 1950s Arctic military research base, a cold desaturated film still with fine photo grain: matte concrete, steel, canvas, nothing glossy; snow white, steel grey, frost blue-grey, ink-black silhouettes, one amber sodium lamp as the only warm point. View from inside the dark bed of a canvas-backed army truck, over the steel tailgate along the bottom edge, at a tall timber gate swinging shut. The two leaves are almost closed, meeting at a last narrow slit of white road and dark spruce forest between them. Dark riveted steel armour plates are bolted across the inside face of the gate toward the viewer, rows of rivets, heavy chains hanging slack. Tyre tracks in fresh snow lead from the gate to the tailgate. One amber lamp on a post at the right, a low grey concrete barracks at the left edge, blank wall. The truck's canvas hood is a thin plain near-black frame at the very top edge. The upper third above the gate is plain, empty, overcast white sky. No people, no figures, no signs, no text, no lettering, no watermark, no logo",
+      "job_id": "19e22a07-0757-4bbf-88ef-ce553d653fe0",
+      "image": "keyart/key-art-wide.jpg"
     },
     {
       "id": "key-art-tall",
@@ -31,10 +29,10 @@
       "title": "The Zoo",
       "aspect_ratio": "16:9",
       "model": "soul_cinematic",
-      "prompt": "Muted realistic photograph, 1950s Arctic military research base, cold and desaturated, fine photo grain, matte surfaces, nothing glossy. A heavy grey steel door seen from inside a small, bare, white-tiled room, the camera very low, near the floor, looking up at the door, which stands upright in the upper centre of the frame. In its small wired-glass window, frosted at the edges, there is only a dim, soft, featureless dark blur: one tall, thin upright shadow on the frosted glass, completely out of focus, no outline detail. The room is spotless: clean dry white tile walls, clean dry pale tile floor, completely empty, freshly scrubbed. Flat cold fluorescent light from above, shadows falling long and down. The whole picture is only white, pale grey, steel grey and frost blue-grey, a monochrome cold palette. The lower quarter is plain, empty, pale tiled floor and nothing else. Clinical and still. A pure photograph with no graphics of any kind: no face, no body detail, no objects on the floor, no tube, no table, no instruments, no stains, no streaks, no marks on the walls, no warm colours, no people, no text, no lettering, no subtitle, no caption, no watermark, no logo",
-      "job_id": "6607f482-d5a6-4085-95da-da3ee8ae6e93",
+      "prompt": "Muted cinematic photographic realism of a remote 1950s Arctic military research base, a cold desaturated film still with fine photo grain: matte surfaces, nothing glossy. A heavy grey steel door seen from inside a bare white-tiled room, camera low, door upright in the upper centre of the frame. Set in the door is a small square wired-glass window, frosted, no larger than a hand-width pane, lit softly from the corridor behind it. Against that glow stands one backlit upright human-shaped silhouette, a tall narrow dark shape with a head and shoulders, completely out of focus, no face, no detail, no outline of features. The room is spotless and empty: clearly visible square white tiles with fine dark grout lines on the walls and the pale floor, freshly scrubbed. Flat cold fluorescent light from above. Palette only white, pale grey, steel grey, frost blue-grey. The lower quarter is plain empty tiled floor. Clinical and still. No objects on the floor, no stains, no warm colours, no text, no lettering, no watermark, no logo",
+      "job_id": "55899e1b-7cb0-48a2-9480-7a1bcce8b25f",
       "image": "keyart/ending-the-zoo.jpg",
-      "needs_review": "Regenerated: no red, no stains, nothing on the floor. The shadow in the glass is a featureless tapering blur that hardly reads as a figure, the window is a tall slot rather than a small pane, and the tiles are faint."
+      "needs_review": "Regenerated again. Remaining: the backlit silhouette in the pane is a crisp dark shape rather than a soft blur, and the door has a lever handle and double-leaf seam; palette is slightly blue-violet."
     },
     {
       "id": "ending-rule-three",
