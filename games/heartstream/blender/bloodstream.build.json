@@ -610,6 +610,116 @@
           "leads_to": "s1_chart_1"
         }
       ]
+    },
+    "s3_bank_years_on": {
+      "note": "The last image of The One Who Stayed, after the lamps: old, he comes out of the shaft alone onto the same bank. One raft waits at the landing with his mark healed into a pale patch on its flank, and four small figures come out of the bone behind him.",
+      "world": {
+        "color": [
+          0.28,
+          0.07,
+          0.07
+        ],
+        "strength": 0.45
+      },
+      "lights": [
+        {
+          "name": "canyon-sky",
+          "type": "SUN",
+          "location": [
+            -500,
+            0,
+            55
+          ],
+          "energy": 2,
+          "size": 1,
+          "rotation_deg": [
+            35,
+            0,
+            60
+          ],
+          "color": [
+            1.0,
+            0.6,
+            0.5
+          ]
+        },
+        {
+          "name": "water-glow",
+          "type": "AREA",
+          "location": [
+            -500,
+            0,
+            -0.4
+          ],
+          "energy": 40000,
+          "size": 120,
+          "look_at": [
+            -500,
+            0,
+            30
+          ],
+          "color": [
+            1.0,
+            0.35,
+            0.25
+          ]
+        },
+        {
+          "name": "flank-patch",
+          "type": "SPOT",
+          "location": [
+            -512,
+            -40,
+            6
+          ],
+          "look_at": [
+            -508,
+            -34,
+            0.9
+          ],
+          "energy": 1500,
+          "size": 2,
+          "color": [
+            0.91,
+            0.86,
+            0.77
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -528,
+          -52,
+          2.2
+        ],
+        "look_at": [
+          -506,
+          -32,
+          1.0
+        ],
+        "lens_mm": 35,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          -520,
+          -46,
+          1.0
+        ],
+        "facing_deg": 312
+      },
+      "hide": [
+        "oar-bow-left",
+        "oar-bow-right",
+        "oar-stern-left",
+        "oar-stern-right"
+      ],
+      "interactions": [
+        {
+          "prop": "raft",
+          "verb": "Lay your hand on the mark"
+        }
+      ]
     }
   }
 }

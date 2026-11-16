@@ -109,7 +109,8 @@
         "strokes_used",
         "quality",
         "marked",
-        "underside"
+        "underside",
+        "fit"
       ]
     },
     {
@@ -411,6 +412,134 @@
         "beat",
         "rejoined"
       ]
+    },
+    {
+      "name": "self.colour",
+      "type": "enum",
+      "default": "blue",
+      "values": [
+        "blue",
+        "turning",
+        "red"
+      ],
+      "description": "Per player: colour as a state. Red climbs with self.in_time (under 60 blue, 60 to 84 turning, 85 and over red); a Warden's eye finds the bluest brother first (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "run.blue_seat",
+      "type": "enum",
+      "default": "none",
+      "values": [
+        "none",
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "description": "The seat of the bluest brother at the Blue Arm: the eye stays open until he is hidden (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "self.hid_blue_arm",
+      "type": "counter",
+      "default": 0,
+      "description": "Per player: times he trimmed to the blue arm's side to hide him from the open eye (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "self.inspected",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: held his arm out, still, for four beats at the Inspection (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "run.song_rests",
+      "type": "counter",
+      "default": 0,
+      "description": "Rest beads set in the song (at most four in a verse). The Wardens' eyes open on these beats, where nobody rows (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "run.song_child",
+      "type": "bool",
+      "default": false,
+      "description": "The small one's wrong-note phrase stands in the heart verse; it breaks one join and is the only phrase he will remember (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "run.song_hollow",
+      "type": "counter",
+      "default": 0,
+      "description": "Brothers whose phrases are hollow beads in the heart verse (they stayed or were taken): the slot is kept and sounds as silence (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "run.song_ends_on_gap",
+      "type": "bool",
+      "default": false,
+      "description": "The group chose to end the heart verse on a hollow bead (accepted 2026-11-15, built 2026-11-16). Phase 3 reads it; nothing in phase 2 depends on it."
+    },
+    {
+      "name": "self.gift_fit",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: the gift he holds was cut for his hand (the side he rows and a wide or narrow grip). He switches sides in one beat and his squeeze window at the heart is wider; a tool cut for the wrong hand is never better than rough (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "run.board_left",
+      "type": "ledger",
+      "default": [],
+      "fields": [
+        "hollow",
+        "count"
+      ],
+      "description": "The board as the first sitting left it, the small one's counter included; the second sitting starts from it (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "self.board_row",
+      "type": "ledger",
+      "default": [],
+      "fields": [
+        "hollow",
+        "count"
+      ],
+      "description": "Per player: the row he left at the cut. Read as five heights (an empty hollow is a silent beat) it is the phrase he is offered for the heart verse, and the raft hums it at boarding (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "self.lent_counters",
+      "type": "counter",
+      "default": 0,
+      "description": "Per player: counters lent from his keep for his opponent to sow once from his own row (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "self.old_counter",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: he made the one move on the oldest board, and an elder closed his fingers round its last counter (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "run.dissent",
+      "type": "counter",
+      "default": 0,
+      "description": "Pieces that stood against the winning branch at the last junction: each is one eddy in the next stretch (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "run.saw_chart_back",
+      "type": "bool",
+      "default": false,
+      "description": "The awl pricked through and the chart was held to the light: no vessel leaves the heart beside another (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "run.stencil_gap",
+      "type": "bool",
+      "default": false,
+      "description": "The group's row on the Stencil Wall has three hands and a gap: someone stayed (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "self.stencil_pressed",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: pressed the bare row on the beat with the others; the press sets run.sync (accepted 2026-11-15, built 2026-11-16)."
+    },
+    {
+      "name": "self.felt_warm_seat",
+      "type": "bool",
+      "default": false,
+      "description": "Per player: touched the empty seat on the elders' bench and found it warm; its elder left the night before (accepted 2026-11-15, built 2026-11-16)."
     }
   ]
 }

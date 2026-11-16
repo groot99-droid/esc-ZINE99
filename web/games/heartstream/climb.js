@@ -21,20 +21,43 @@
 //   "A narrow shaft opens in the bone — a vertical tunnel lined with soft, living tissue. The Blue‑Born climb, feeling the temperature rise, feeling the pulse grow louder."
 // "Look up." is the one who dreams's line from DESIGN.md section 6.
 
-import { howTo, Legend, Beats, Streak, flourish, disposeKit, artImg, raster, plate, endCard } from "./_kit.js";
+import { howTo, Legend, Beats, Streak, flourish, disposeKit, artImg, raster, plate, endCard, ladder, stagePicker } from "./_kit.js";
+//
+// Phase 2 (DEEP_DIVE.md section 3, built 2026-11-16): a ladder of three pitches.
+//   Teach  the foot of the shaft: grab on the beat. The count is long; nobody loses height for good.
+//   Test   brace and pull at two ledges; the breathing wall (every fourth beat the shaft narrows: level with
+//          your brother you chimney through, alone you are squeezed down a hold); old stencils (an earlier
+//          group's hand in the rock is always firm, and using it leaves yours beside it); the heat.
+//   Twist  the last ledge leaves the last brother with nobody under him: pulling does not reach, and the
+//          first one up climbs back down to be the step. It ends in the set-piece, The Stencil Wall: a
+//          gallery of hands in rows of four, some rows with three; all four press a bare row on one beat.
+// Lines written for the game: the stage cards, the beats of the last ledge and the wall.
 
 const C = { char: "#1d1612", ochre: "#a4532a", red: "#b3202e", deep: "#7A1020", gold: "#F2B544", bone: "#E8DCC4",
   rock: "#d8c3a2", blue: "#2F5D8C" };
 const QUOTE = "A narrow shaft opens in the bone — a vertical tunnel lined with soft, living tissue. The Blue‑Born climb, feeling the temperature rise, feeling the pulse grow louder.";
 
-export default {
-  mount(root, api) {
+const STAGE = [
+  { top: 24, ledges: [], heat: 1e9, budget: 110, reachAt: 1e9, bpm: [66, 66], breathe: false, stencils: [] },
+  { top: 38, ledges: [{ y: 9, kind: "pull" }, { y: 20, kind: "brace" }, { y: 31, kind: "pull" }], heat: 30, budget: 190, reachAt: 4, bpm: [68, 72], breathe: true, stencils: [6, 15, 18, 26, 36] },
+  { top: 27, ledges: [{ y: 6, kind: "brace" }, { y: 18, kind: "last" }], heat: 0, budget: 170, reachAt: 0, bpm: [72, 76], breathe: true, stencils: [4, 12, 24], wall: true },
+];
+
+export default ladder(run, {
+  theme: { bg: "#e6d2b0", fg: "#1d1612", accent: "#b3202e", ink: "#E8DCC4" },
+  next: [null, "Next: two ledges too high for one, a wall that breathes in on every fourth beat, and old hands in the rock that always hold.",
+    "Next: the hot upper shaft, a last ledge taller than the others, and the gallery above it."],
+});
+
+function run(root, api, ctl) {
+  {
+    const SG = ctl.stage, CF = STAGE[SG];
     const P = "heartstream-climb-";
     const rng = api.rng();
     const RM = api.reducedMotion;
     const streak = new Streak(api);
-    const TOP = 56, LEDGES = [{ y: 10, kind: "pull" }, { y: 21, kind: "brace" }, { y: 33, kind: "pull" }, { y: 45, kind: "brace" }];
-    const HEAT = 30, BUDGET = 220, REACH_AT = 12;
+    const TOP = CF.top, LEDGES = CF.ledges;
+    const HEAT = CF.heat, BUDGET = CF.budget, REACH_AT = CF.reachAt, STENCILS = CF.stencils;
     let GENTLE = false;
     const listeners = [];
     const on = (t, ev, fn, o) => { t.addEventListener(ev, fn, o); listeners.push([t, ev, fn, o]); };
@@ -104,15 +127,33 @@ export default {
     const hud = document.createElement("div"); hud.className = P + "hud";
     hud.innerHTML = `<b>HEARTBEATS LEFT</b> <span data-h="beats"></span><div class="${P}bar"><i></i></div><span data-h="m"></span><br><span data-h="lifts"></span><div class="${P}heat" data-h="heat" hidden>HEAT · holds slicker</div>`;
     const offer = streak.losses >= 2;
-    const intro = howTo(P, {
+    const gentleBox = offer ? `<label><input type="checkbox" class="${P}gentle"> Gentle Current: the beat window widens to ±200 ms</label>` : "";
+    const intro = howTo(P, [{
       kicker: "Chapter five · the shaft",
       title: "The climb",
       quote: `“${QUOTE}”`,
       scene: "You climb beside the one who dreams. The one who argues and the one who fears are already above you, small against the rock.",
-      goal: "Reach the light at the top of the shaft, with your brother, before the heartbeats run out.",
+      goal: "Climb the first pitch on the heart's beat. The count is long here: learn the hold.",
       keys: [["Grab", "Space · ↑ · Grab · tap the rock", "on the beat the hold is firm; off it, you slide down one"]],
-      extra: `<p style="margin:0 0 8px">More moves come as the shaft asks for them.</p>${offer ? `<label><input type="checkbox" class="${P}gentle"> Gentle Current: the beat window widens to ±200 ms</label>` : ""}`,
-    });
+      extra: `<p style="margin:0 0 8px">More moves come in the pitches above.</p>${gentleBox}`,
+    }, {
+      kicker: "Chapter five · the ledges",
+      title: "Brace and pull",
+      scene: "Two ledges are too high for one. Between them the shaft breathes: on every fourth beat it draws in.",
+      goal: "Reach the top of the pitch with your brother before the heartbeats run out.",
+      keys: [["Pull", "Grab, on the beat", "on his shoulders, then three pulls lift him"], ["Brace", "hold B · ↓ · Brace", "be his step; in the heat, cling when the holds glisten"],
+        ["Reach", "R · Shift · Reach", "two holds, dead on the beat; a miss slides you two"], ["Breathing", "stay level with him", "when the wall draws in, two chimney through; one alone is squeezed down"],
+        ["Old hands", "any Grab", "a hand stencilled in the rock is always firm, and yours stays beside it"]],
+      extra: gentleBox,
+    }, {
+      kicker: "Chapter five · the last ledge",
+      title: "The last ledge",
+      scene: "The two ahead are over the top. The last ledge is taller than the others, and after it there is a gallery.",
+      goal: "Get both of you over the last ledge, and put your hands on the wall with the others.",
+      keys: [["The step", "hold Brace", "if pulling does not reach him, the one who is up climbs back down"], ["The wall", "Grab on the count of four", "all four press a bare row on one beat"]],
+      extra: gentleBox,
+    }][SG]);
+    stagePicker(P, intro, ctl);
     plate(api, intro, P, { card: "chapter-5", numeral: "numeral-5", css: "border-radius:18px 12px 20px 10px;border:3px solid #1d1612", at: "50% 30%" });
     { // the four in the shaft: you, the one beside you, the two ahead
       const crew = document.createElement("div"); crew.className = P + "crew";
@@ -157,10 +198,13 @@ export default {
     const stencils = Array.from({ length: 14 }, (_, i) => ({ y: 3 + i * 3.8 + rng() * 2, side: i % 2 ? 1 : -1, rot: (rng() - 0.5) * 0.8, red: rng() < 0.65, s: 0.7 + rng() * 0.4 }));
 
     const st = { started: false, over: false, me: 0, mate: 0, ahead: 4, phase: "climb", ledge: -1, sub: 0, lifts: 0, slips: 0, reaches: 0, clings: 0,
-      firm: 0, beatsLeft: BUDGET, brace: false, msg: "", msgT: 0, flash: 0, cam: 0, lastPress: -1, slickNext: false, slickNow: false, bad: 0, good: 0 };
+      firm: 0, beatsLeft: BUDGET, brace: false, msg: "", msgT: 0, flash: 0, cam: 0, lastPress: -1, slickNext: false, slickNow: false, bad: 0, good: 0,
+      n: 0, narrow: 0, chimneys: 0, squeezes: 0, prints: [], shortTries: 0, row: 1, wallLit: 0, wallMiss: 0, stepped: false };
+    const narrowsOn = (n) => CF.breathe && n > 4 && n % 4 === 0;      // the breathing wall: every fourth beat
+    const wall = { img: null };
     let nextBeat = 0, raf = 0, audio = null, lastNow = performance.now();
     const presses = [], fx = [];
-    const bpmAt = (y) => (y < 25 ? 68 : 72 + 4 * Math.min(1, (y - 25) / 20));
+    const bpmAt = (y) => CF.bpm[0] + (CF.bpm[1] - CF.bpm[0]) * Math.min(1, y / TOP);
     let beatTimes = [];
     const say = (m) => { st.msg = m; st.msgT = 2000; };
     const windowMs = () => (GENTLE ? 200 : st.me >= HEAT ? 90 : 120);
@@ -181,7 +225,9 @@ export default {
     const floorOf = (y) => Math.max(0, ...LEDGES.filter((l) => l.y + 2.4 <= y).map((l) => l.y + 2.4));
 
     // ---- unlocks --------------------------------------------------------------------------------
-    function unlock(k) {
+    const timers = [];
+    function unlock(k, quiet) {
+      if (quiet) { if (k === "brace" && legend.add("brace", "Brace", "hold B · ↓ · Brace", true)) bBrace.hidden = false; return; }
       if (k === "pull" && legend.add("pull", "Pull", "Space · Grab, on the beat", true))
         beats.show("Too high for one. He braces at the foot; climb his shoulders on the beat, then reach down and pull him up on three beats.", 5600, "pull", "The first ledge · New · Pull");
       if (k === "reach" && legend.add("reach", "Reach", "R · Shift · Reach", true)) {
@@ -210,10 +256,15 @@ export default {
       const ok = best <= windowMs(), perfect = best <= perfectMs();
       const slickBeat = k === nextBeat - 1 ? st.slickNow : k === nextBeat ? st.slickNext : false;
       presses.push({ t: now, on: ok });
+      if (st.phase === "wall") return pressWall(k, ok);
+      if (st.phase === "lit") return;
       if (ok) st.good++; else st.bad++;
       if (st.phase === "climb") {
         if (kind === "reach" && !legend.has("reach")) kind = "grab";
-        if (ok && !slickBeat) {
+        const old = kind === "grab" && STENCILS.includes(Math.floor(st.me) + 1);   // an old hand in the rock: always firm
+        if (old && !(ok && !slickBeat)) say("An old hand in the rock: firm, on the beat or off it.");
+        if (old && !st.prints.includes(Math.floor(st.me) + 1)) { st.prints.push(Math.floor(st.me) + 1); beats.show("An earlier group's hand, blown in red on the rock. The hold under it is always firm. Your own hand is beside it now.", 4600, "stencil", "Old stencils"); }
+        if (old || (ok && !slickBeat)) {
           const gain = kind === "reach" ? (perfect ? 2 : 1) : 1;
           let target = Math.min(TOP, st.me + gain);
           const L = LEDGES.find((l) => st.me < l.y && target >= l.y);
@@ -222,8 +273,9 @@ export default {
           fx.push({ kind: gain === 2 ? "reach" : "firm", t: now });
           if (kind === "reach") { st.reaches++; say(gain === 2 ? "A long reach. Two holds." : "Short of the far hold: one."); }
           if (L) {
-            st.phase = L.kind === "pull" ? "shoulders" : "brace"; st.ledge = LEDGES.indexOf(L); st.sub = 0;
+            st.phase = L.kind === "brace" ? "brace" : "shoulders"; st.ledge = LEDGES.indexOf(L); st.sub = 0;
             if (L.kind === "pull") { unlock("pull"); say("Too high for one. Grab on the beat to climb his shoulders."); }
+            else if (L.kind === "last") { legend.add("pull", "Pull", "Space · Grab, on the beat"); say("The last ledge. Grab on the beat to climb his shoulders."); beats.show("The last ledge, and the tallest. He braces at its foot without being asked.", 3600, "last0", "The last ledge"); }
             else { unlock("brace"); say("Too high for one. Hold Brace and be his step."); }
           }
         } else {
@@ -234,21 +286,51 @@ export default {
         }
       } else if (st.phase === "shoulders") {
         if (st.mate < ledgeAt(st.ledge).y) say("Wait for him to reach the foot of the ledge.");
-        else if (ok) { st.sub++; fx.push({ kind: "firm", t: now }); if (st.sub === 1) say("On his shoulders. Again, on the beat."); else { st.me = ledgeAt(st.ledge).y + 2.4; st.phase = "pull"; st.sub = 0; say("Over the edge. Reach down: pull on three beats."); } }
+        else if (ok) { st.sub++; fx.push({ kind: "firm", t: now }); if (st.sub === 1) say("On his shoulders. Again, on the beat."); else { st.me = ledgeAt(st.ledge).y + 2.4; st.phase = ledgeAt(st.ledge).kind === "last" ? "short" : "pull"; st.sub = 0; say("Over the edge. Reach down: pull on three beats."); } }
         else { fx.push({ kind: "slip", t: now }); say("Slick. Wait for the beat."); }
       } else if (st.phase === "pull") {
         if (ok) { st.sub++; fx.push({ kind: "firm", t: now }); if (st.sub >= 3) { st.mate = ledgeAt(st.ledge).y + 2.4; st.lifts++; st.phase = "climb"; say("Lifted. Climb on."); fx.push({ kind: "lift", t: now }); } else say(`Pull ${st.sub} of 3.`); }
         else { st.sub = Math.max(0, st.sub - 1); fx.push({ kind: "slip", t: now }); say("His hand slips. Pull on the beat."); }
+      } else if (st.phase === "short") {
+        // the twist: the safe move (pull) is wrong here. His hand does not reach, and nobody is under him.
+        st.shortTries++; fx.push({ kind: "slip", t: now });
+        say("Your hand does not reach his. Nobody is under him.");
+        unlock("brace", true);
+        beats.show("He was your step, and there is nobody to be his. The two above cannot reach either. The one who is up has to climb back down: hold Brace.", 6200, "short", "Pulling does not reach");
       } else if (st.phase === "take") {
         if (ok) { st.phase = "pulled"; st.sub = 0; fx.push({ kind: "firm", t: now }); say("He has your hand. Hold on."); }
         else say("Take his hand on the beat.");
       } else if (st.phase === "brace") say("Hold Brace: he climbs you.");
     }
+    function pressWall(k, ok) {
+      if (st.row === 0) { say("That gap is somebody's. He stayed. Take the bare row."); return; }
+      const count = ((k - st.wallK) % 4 + 4) % 4;
+      if (ok && count === 3) {
+        st.phase = "lit"; st.wallLit = performance.now(); st.good++;
+        say("Four hands, one beat.");
+        beats.show("Four hands on the bare row, on one beat, and the whole wall lights: every group that ever climbed, in rows of four. Some rows have three.", 5600, "lit", "The Stencil Wall");
+        timers.push(setTimeout(() => finish(true), RM ? 1400 : 4200));
+      } else { st.wallMiss++; st.bad++; say(count === 3 ? "Three hands, and yours a moment after. The wall stays dark." : "Not yet. They press on the fourth beat: count with them."); flourish(wrap, P + "shake", RM, 300); }
+    }
+    function enterWall() {
+      st.phase = "wall"; st.wallK = nextBeat + 1; st.row = 1; setBrace(false);
+      bReach.hidden = true; bBrace.hidden = true; bGrab.innerHTML = "Press<small>Space · on four</small>";
+      legend.add("press", "Press", "Space · tap the bare row, on the fourth beat", true);
+      beats.show("Above the last ledge the shaft opens into a gallery. Hundreds of hands, in rows of four. One row is bare. The others are already standing at it: press your hand with theirs, on the fourth beat.", 7000, "wall", "The Stencil Wall");
+      raster(api, "climb-stencil-wall", 1600, 900, "fill").then((c) => { wall.img = c; });
+    }
     function onBeat() {
-      thump(st.slickNext); st.flash = 1; st.beatsLeft--;
+      thump(st.slickNext); st.flash = 1; st.beatsLeft--; st.n++;
+      if (st.phase === "wall" || st.phase === "lit") { if (st.beatsLeft <= 0 && st.phase === "wall") return finish(false); return; }
       st.slickNow = st.slickNext;
+      // the breathing wall: on every fourth beat the shaft draws in
+      if (narrowsOn(st.n) && st.phase === "climb" && st.me >= 2) {
+        if (Math.abs(st.me - st.mate) <= 1.25) { st.chimneys++; fx.push({ kind: "cling", t: performance.now() }); say("Back to back with him: you chimney through."); }
+        else { st.me = Math.max(floorOf(st.me), st.me - 1); st.squeezes++; st.slips++; fx.push({ kind: "slip", t: performance.now() }); flourish(wrap, P + "shake", RM, 300); say(st.me > st.mate ? "Alone in the narrowing: squeezed down a hold. Wait for him." : "Alone in the narrowing: squeezed down a hold. Keep up with him."); }
+      }
+      if (CF.breathe && narrowsOn(st.n + 1) && st.phase === "climb") beats.show("The shaft breathes. On every fourth beat the walls draw in: two on opposite walls chimney through; one alone is squeezed down a hold. Stay level with him.", 5800, "breathe", "The breathing wall");
       // in the heat, some beats are slick; they glisten one beat ahead
-      st.slickNext = st.me >= HEAT && st.phase === "climb" && !st.slickNow && rng() < 0.3;
+      st.slickNext = st.me >= HEAT && st.phase === "climb" && !st.slickNow && !narrowsOn(st.n + 1) && rng() < 0.3;
       if (st.slickNow && st.phase === "climb") {
         if (st.brace) { st.clings++; fx.push({ kind: "cling", t: performance.now() }); say("You cling through the slick beat."); }
         else { st.me = Math.max(floorOf(st.me), st.me - 1); st.slips++; fx.push({ kind: "slip", t: performance.now() }); flourish(wrap, P + "shake", RM, 300); say("The hold went slick under you. Brace when they glisten."); }
@@ -260,6 +342,7 @@ export default {
         if (cap && st.mate > cap.y && st.mate < cap.y + 2.4 && st.me < cap.y + 2.4) st.mate = cap.y;
       } else if (L) {
         if (st.mate < L.y) st.mate = Math.min(L.y, st.mate + 1);
+        if (st.phase === "short" && st.brace) { st.me = L.y; st.phase = "brace"; st.sub = 0; st.stepped = true; say("You climb back down and set your shoulders under him."); beats.show("You come back down the ledge you had just won, and set your back against the rock. He looks at you, and climbs.", 4600, "stepdown", "The step"); }
         if (st.phase === "brace" && st.mate >= L.y) {
           if (st.brace) { if (rng() < 0.9) { st.sub++; if (st.sub === 1) say("He is on your shoulders. Keep bracing."); if (st.sub >= 2) { st.mate = L.y + 2.4; st.phase = "take"; st.sub = 0; say("He reaches down. Grab his hand on the beat."); } } }
           else if (st.sub > 0) { st.sub = 0; say("You stood up too soon. He slides back. Hold Brace."); }
@@ -268,23 +351,26 @@ export default {
         }
       }
       st.ahead += ((Math.min(TOP, Math.max(st.me, st.mate) + 5) - st.ahead) * 0.25);
-      if (st.me >= REACH_AT) unlock("reach");
-      if (st.me >= HEAT) unlock("heat");
+      if (st.me >= REACH_AT && SG === 1) unlock("reach");
+      if (st.me >= HEAT && SG === 1) unlock("heat");
       if (st.me >= TOP - 6) beats.show("Light above, red and gold. The pulse is loud enough to feel in your teeth.", 4200, "light");
       if (st.beatsLeft === 30) beats.show("Thirty heartbeats left. The light is still above you.", 3600, "low");
-      if (st.me >= TOP && st.mate >= TOP - 1) return finish(true);
+      if (st.me >= TOP && st.mate >= TOP - 1) return CF.wall ? enterWall() : finish(true);
       if (st.me >= TOP) st.mate = Math.min(TOP, st.mate + 1);
       if (st.beatsLeft <= 0) return finish(false);
     }
     function finish(win) {
       if (st.over) return; st.over = true;
       streak.record(win ? "win" : "lose");
-      const sync = Math.min(70, 50 + 3 * st.lifts);
+      const sync = Math.min(70, 50 + 3 * st.lifts + (SG === 2 && win ? Math.max(0, 8 - 4 * st.wallMiss) : 0));
       const acc = st.good + st.bad ? Math.round((100 * st.good) / (st.good + st.bad)) : 0;
-      endCard(wrap, api, win ? "chapter-6" : "chapter-5", { numeral: win ? "numeral-6" : "numeral-5" });
-      api.end(win
-        ? { outcome: "win", text: `Into the light at the top of the shaft, the one who dreams beside you. ${st.lifts} lift${st.lifts === 1 ? "" : "s"} made together, ${acc}% of your grabs firm${st.clings ? `, ${st.clings} slick beat${st.clings === 1 ? "" : "s"} clung through` : ""}; the raft's sync will start at ${sync}.` }
-        : { outcome: "lose", text: `The count ran out ${Math.max(1, Math.round(TOP - st.me))} m below the light. Nobody falls in the shaft; ${st.slips} slip${st.slips === 1 ? "" : "s"} cost you the height. The heart keeps its own time: wait for it.${streak.losses >= 2 ? " (Gentle Current is offered on the next start.)" : ""}` });
+      const winText = SG === 0 ? `The first pitch is under you, and the one who dreams is beside you. ${acc}% of your grabs were firm, ${st.slips} slip${st.slips === 1 ? "" : "s"}. The heart keeps its own time: you have begun to wait for it.`
+        : SG === 1 ? `Over both ledges, the one who dreams beside you. ${st.lifts} lift${st.lifts === 1 ? "" : "s"} made together, ${acc}% of your grabs firm${st.chimneys ? `, ${st.chimneys} narrowing${st.chimneys === 1 ? "" : "s"} chimneyed through back to back` : ""}${st.squeezes ? `, squeezed down ${st.squeezes} time${st.squeezes === 1 ? "" : "s"}` : ""}${st.prints.length ? `; your hand is beside ${st.prints.length} old one${st.prints.length === 1 ? "" : "s"} in the rock` : ""}.`
+        : `The wall lights under four hands. Rows of four, as far as the light reaches, and here and there a row of three. ${st.stepped ? "You climbed back down to be his step; nobody had to ask twice." : ""} ${st.wallMiss ? `The press took ${st.wallMiss + 1} tries;` : "You pressed with them the first time;"} the raft's sync will start at ${sync}.`;
+      ctl.end(win
+        ? { outcome: "win", text: winText }
+        : { outcome: "lose", text: st.phase === "wall" ? `The count ran out with three hands on the wall and yours not among them. The heart keeps its own time: wait for the fourth beat.` : `The count ran out ${Math.max(1, Math.round(TOP - st.me))} m below the ${SG === 2 ? "gallery" : "light"}. Nobody falls in the shaft; ${st.slips} slip${st.slips === 1 ? "" : "s"} cost you the height. The heart keeps its own time: wait for it.${streak.losses >= 2 ? " (Gentle Current is offered on the next start.)" : ""}` },
+        () => endCard(wrap, api, win ? (SG === 2 ? "climb-stencil-wall" : "chapter-6") : "chapter-5", win && SG === 2 ? {} : { numeral: win ? "numeral-6" : "numeral-5" }));
     }
 
     const setBrace = (v) => { st.brace = v; bBrace.setAttribute("aria-pressed", String(v)); };
@@ -292,10 +378,15 @@ export default {
     on(bReach, "pointerdown", (e) => { e.preventDefault(); press("reach"); });
     on(bBrace, "pointerdown", (e) => { e.preventDefault(); setBrace(true); });
     on(bBrace, "pointerup", () => setBrace(false)); on(bBrace, "pointercancel", () => setBrace(false)); on(bBrace, "pointerleave", () => setBrace(false));
-    on(cv, "pointerdown", (e) => { e.preventDefault(); press("grab"); });
+    on(cv, "pointerdown", (e) => {
+      e.preventDefault();
+      if (st.phase === "wall") { const r = cv.getBoundingClientRect(), y = (e.clientY - r.top) / r.height; st.row = y < 0.36 ? 0 : 1; if (st.row === 0) { say("That gap is somebody's. He stayed. Take the bare row."); return; } }
+      press("grab");
+    });
     on(window, "keydown", (e) => {
-      if (!st.started) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); start(); } return; }
+      if (!st.started) { if (e.target && e.target.dataset && e.target.dataset.stage) return; if (e.key === "Enter" || e.key === " ") { e.preventDefault(); start(); } return; }
       const k = e.key.toLowerCase();
+      if (st.phase === "wall" && (k === "arrowup" || k === "arrowdown")) { e.preventDefault(); st.row = k === "arrowup" ? 0 : 1; say(st.row === 0 ? "The row of three, and its gap." : "The bare row."); return; }
       if (k === " " || k === "arrowup" || k === "w") { e.preventDefault(); if (!e.repeat) press("grab"); }
       else if (k === "r" || k === "shift") { e.preventDefault(); if (!e.repeat) press("reach"); }
       else if (k === "b" || k === "arrowdown" || k === "s") { e.preventDefault(); setBrace(true); }
@@ -310,7 +401,8 @@ export default {
       try { audio = new (window.AudioContext || window.webkitAudioContext)(); } catch { audio = null; }
       st.started = true; beatTimes = [performance.now() + 700];
       legend.add("grab", "Grab", "Space · ↑ · tap");
-      beats.show("The holds tighten on the heartbeat. Grab as the dab reaches the line.", 4000, "open", "The lower shaft");
+      if (SG === 0) beats.show("The holds tighten on the heartbeat. Grab as the dab reaches the line.", 4000, "open", "The lower shaft");
+      if (SG === 2) { legend.add("reach", "Reach", "R · Shift · Reach"); bReach.hidden = false; legend.add("brace", "Brace", "hold B · ↓ · Brace"); bBrace.hidden = false; H$("heat").hidden = false; legend.add("cling", "Cling", "hold Brace when the holds glisten"); beats.show("The rock is hot here. Everything the shaft has taught you still holds. Almost everything.", 4200, "open", "The upper shaft"); }
       bGrab.focus();
     }
 
@@ -355,8 +447,38 @@ export default {
       });
       g.restore();
     }
+    function drawWall(now) {
+      // The Stencil Wall: the gallery plate, a row of three with its gap, and the bare row the four press
+      g.fillStyle = "#cdb795"; g.fillRect(0, 0, W, H);
+      if (wall.img) { const k = Math.max(W / 1600, H / 900), w = 1600 * k, h = 900 * k; g.drawImage(wall.img, (W - w) / 2, (H - h) / 2, w, h); g.fillStyle = "rgba(29,22,18,.38)"; g.fillRect(0, 0, W, H); }
+      const lit = st.phase === "lit", a = lit ? Math.min(1, (now - st.wallLit) / 900) : 0;
+      if (lit) { g.fillStyle = `rgba(255,236,190,${0.34 * a})`; g.fillRect(0, 0, W, H); }
+      const rowW = Math.min(W - 24, 520), x0 = (W - rowW) / 2, hs = Math.max(0.62, Math.min(1, rowW / 520));
+      const rows = [H * 0.24, H * 0.5];
+      rows.forEach((y, r) => {
+        g.fillStyle = "rgba(230,210,176,.9)"; g.strokeStyle = st.row === r ? C.red : C.char; g.lineWidth = st.row === r ? 4 : 2;
+        g.beginPath(); g.roundRect ? g.roundRect(x0, y - 52 * hs, rowW, 104 * hs, 18) : g.rect(x0, y - 52 * hs, rowW, 104 * hs); g.fill(); g.stroke();
+        for (let i = 0; i < 4; i++) {
+          const x = x0 + rowW * (i + 0.5) / 4;
+          if (r === 0) { if (i === 2) { g.setLineDash([5, 6]); g.strokeStyle = "rgba(29,22,18,.5)"; g.lineWidth = 2; g.beginPath(); g.arc(x, y, 30 * hs, 0, 7); g.stroke(); g.setLineDash([]); } else stencil(x, y + 8 * hs, hs * 0.95, (i - 1.5) * 0.12, i !== 1); }
+          else if (lit) { g.globalAlpha = a; stencil(x, y + 8 * hs, hs * 0.95, (i - 1.5) * 0.1, true); g.globalAlpha = 1; }
+          else { g.setLineDash([3, 5]); g.strokeStyle = "rgba(164,83,42,.7)"; g.lineWidth = 2; g.beginPath(); g.arc(x, y, 30 * hs, 0, 7); g.stroke(); g.setLineDash([]); }
+        }
+        g.font = "700 13px sans-serif"; g.textAlign = "left"; g.fillStyle = C.char;
+        g.fillText(r === 0 ? "a row of three" : lit ? "your row" : "the bare row", x0 + 10, y - 58 * hs);
+      });
+      // the four at the wall
+      const fy = rows[1] + 52 * hs + Math.min(150, H * 0.2);
+      for (let i = 0; i < 4; i++) figure(x0 + rowW * (i + 0.5) / 4, fy, "reach", i === 3 ? C.red : i === 2 ? C.ochre : C.char, 0.9, i === 3);
+      if (!lit) {
+        const k = nextBeat - 1, count = ((k - st.wallK) % 4 + 4) % 4, words = ["ONE", "TWO", "THREE", "PRESS"];
+        g.font = `700 ${W < 500 ? 20 : 26}px sans-serif`; g.textAlign = "center";
+        words.forEach((w, i) => { g.fillStyle = i === count ? (i === 3 ? C.red : C.char) : "rgba(29,22,18,.35)"; g.fillText(w, W / 2 + (i - 1.5) * (W < 500 ? 78 : 104), rows[1] - 70 * hs - 14); });
+      }
+    }
     function draw(now) {
       g.setTransform(dpr, 0, 0, dpr, 0, 0);
+      if (st.phase === "wall" || st.phase === "lit") { drawWall(now); return drawLane(now); }
       const PX = Math.max(34, H / 12);
       const low = Math.min(st.me, st.mate);
       const camT = low * PX - H * 0.32;
@@ -411,6 +533,20 @@ export default {
           g.beginPath(); g.arc(x - 5, y, r, 0, 7); g.arc(x + 5, y + 1, r, 0, 7); g.fill();
           if (next && dx < 0) { g.strokeStyle = glisten ? "#fff" : C.gold; g.lineWidth = 2.5; g.beginPath(); g.arc(x, y, 14 + 4 * pulse, 0, 7); g.stroke(); }
         }
+        if (STENCILS.includes(m)) { // an old hand beside the hold; yours beside it once you have used it
+          stencil(W / 2 - 96, y - 4, 0.55, -0.3, true);
+          if (st.prints.includes(m)) stencil(W / 2 + 96, y - 4, 0.55, 0.3, false);
+        }
+      }
+      // the breathing wall: the shaft draws in on every fourth beat (it shows one beat ahead)
+      { const soon = CF.breathe && st.phase === "climb" && narrowsOn(st.n + 1), nowIn = CF.breathe && narrowsOn(st.n) && st.flash > 0.05;
+        st.narrow += ((soon ? 1 : nowIn ? 0.6 : 0) - st.narrow) * (RM ? 1 : 0.14);
+        if (st.narrow > 0.02) {
+          const d = 34 * st.narrow;
+          g.fillStyle = "rgba(47,36,31,.82)"; g.fillRect(sxL - 6, 0, d + 6, H); g.fillRect(sxR - d, 0, d + 6, H);
+          if (soon) { g.font = "700 13px sans-serif"; g.textAlign = "center"; const t = Math.abs(st.me - st.mate) <= 1.25 ? "THE WALL DRAWS IN · LEVEL WITH HIM" : "THE WALL DRAWS IN · NOT LEVEL"; const tw = g.measureText(t).width + 14;
+            g.fillStyle = Math.abs(st.me - st.mate) <= 1.25 ? "rgba(230,210,176,.95)" : C.gold; g.fillRect(W / 2 - tw / 2, 96, tw, 22); g.fillStyle = C.char; g.fillText(t, W / 2, 112); }
+        }
       }
       for (const [i, l] of LEDGES.entries()) {
         const y = sy(l.y + 2.4); if (y < -40 || y > H + 60) continue;
@@ -423,6 +559,7 @@ export default {
       const xMe = W / 2 - 40, xMate = W / 2 + 40;
       let meX = xMe, meY = sy(st.me), matePose = Math.floor(st.mate) % 2 ? "climb" : "climb2", mePose = st.brace && st.phase === "climb" ? "cling" : Math.floor(st.me) % 2 ? "climb" : "climb2", mateX = xMate, mateY = sy(st.mate);
       if (L && st.phase === "shoulders") { matePose = "brace"; mateX = W / 2; mateY = sy(L.y); meX = W / 2; meY = sy(L.y + 0.75 * (st.sub + 1)); }
+      if (L && st.phase === "short") { matePose = "climb"; mateX = W / 2 + 16; mateY = sy(L.y); mePose = "reach"; meX = W / 2 - 6; meY = sy(L.y + 2.4); }
       if (L && st.phase === "pull") { matePose = "climb"; mateX = W / 2 + 16; mateY = sy(L.y + (st.sub / 3) * 2.2); mePose = "reach"; meX = W / 2 - 6; meY = sy(L.y + 2.4); }
       if (L && st.phase === "brace") { mePose = "brace"; meX = W / 2; meY = sy(L.y); matePose = "climb"; mateX = W / 2 + (st.sub ? 0 : 40); mateY = sy(st.sub ? L.y + 1.2 : st.mate); }
       if (L && (st.phase === "take" || st.phase === "pulled")) { matePose = "reach"; mateX = W / 2 - 6; mateY = sy(L.y + 2.4); mePose = "climb"; meX = W / 2 + 16; meY = sy(L.y + (st.phase === "pulled" ? (st.sub / 3) * 2.2 : 0)); }
@@ -441,6 +578,10 @@ export default {
         g.strokeStyle = "rgba(224,96,58,.35)"; g.lineWidth = 2;
         for (let i = 0; i < 4; i++) { g.beginPath(); for (let x = 0; x <= W; x += 12) { const y = 10 + i * 9 + Math.sin(x * 0.05 + (RM ? 0 : now / 160) + i) * 3; x ? g.lineTo(x, y) : g.moveTo(x, y); } g.stroke(); }
       }
+      drawLane(now);
+    }
+    function drawLane(now) {
+      const wallOn = st.phase === "wall" || st.phase === "lit";
       // beat lane: dabs slide into the line; glistening ones are slick
       const lw = Math.min(380, W - 32), lx = (W - lw) / 2, ly = H - 100, hitX = lx + 50, span = 3000, ppm = (lw - 64) / span;
       g.fillStyle = "rgba(29,22,18,.6)"; g.beginPath(); g.roundRect ? g.roundRect(lx, ly - 17, lw, 34, 16) : g.rect(lx, ly - 17, lw, 34); g.fill();
@@ -449,7 +590,8 @@ export default {
       for (let k = Math.max(0, nextBeat - 1); k < beatTimes.length; k++) {
         const t = beatTimes[k], x = hitX + (t - now) * ppm; if (x < lx + 6 || x > lx + lw - 6) continue;
         const slick = (k === nextBeat && st.slickNext) || (k === nextBeat - 1 && st.slickNow);
-        g.fillStyle = slick ? "#fff3dc" : C.red; g.beginPath(); g.arc(x - 4, ly, 6, 0, 7); g.arc(x + 4, ly + 1, 6, 0, 7); g.fill();
+        const four = wallOn && ((k - st.wallK) % 4 + 4) % 4 === 3, big = four ? 9 : 6;
+        g.fillStyle = four ? C.gold : slick ? "#fff3dc" : wallOn ? "rgba(179,32,46,.55)" : C.red; g.beginPath(); g.arc(x - 4, ly, big, 0, 7); g.arc(x + 4, ly + 1, big, 0, 7); g.fill();
       }
       for (const p of presses) { const x = hitX + (p.t - now) * ppm; if (x < lx) continue; g.fillStyle = p.on ? C.gold : "#9a8a7a"; g.fillRect(x - 3, ly - 15, 6, 11); }
       while (presses.length && presses[0].t < now - 2000) presses.shift();
@@ -486,10 +628,11 @@ export default {
       unmount() {
         cancelAnimationFrame(raf); ro.disconnect(); artJob++; clearTimeout(artTimer);
         listeners.forEach(([t, ev, fn, o]) => t.removeEventListener(ev, fn, o));
+        timers.forEach(clearTimeout);
         beats.dispose(); disposeKit();
         if (audio) audio.close().catch(() => {});
         wrap.remove();
       },
     };
-  },
-};
+  }
+}

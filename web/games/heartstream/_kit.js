@@ -50,7 +50,7 @@ export class Legend {
 export class Beats {
   constructor(P, parent, reduced) {
     this.P = P; this.reduced = reduced; this.el = document.createElement("div"); this.el.className = P + "beat";
-    this.el.setAttribute("aria-live", "polite"); this.el.hidden = true; parent.appendChild(this.el); this.t = 0; this.seen = new Set();
+    this.el.setAttribute("aria-live", "polite"); this.el.style.pointerEvents = "none"; this.el.hidden = true; parent.appendChild(this.el); this.t = 0; this.seen = new Set();
   }
   // show a line once per id (or always when id is null); ms is how long it stays
   show(text, ms = 4200, id = null, who = "") {
@@ -157,4 +157,80 @@ export function endCard(wrap, api, id, opts = {}) {
   try { wrap.scrollTop = 0; wrap.style.overflow = "hidden"; } catch { /* a wrap that scrolls would carry the card out of view */ }
   wrap.appendChild(el);
   return el;
+}
+
+// ---- phase 2: the ladders and the links between layers ---------------------------------------------
+//   ladder(run, opts)     wraps a mode as three stages (teach, test, twist). `run(root, api, ctl)` mounts one
+//                         stage and returns { unmount() }; it reads ctl.stage (0..2) and ctl.reached, calls
+//                         ctl.end(result, card) where it used to call api.end, and ctl.go(n) to start at a
+//                         stage the player has reached. A stage that is not lost offers the next one, or
+//                         Stop here (the result, as before). Progress is kept in api.store ("stage").
+//   stagePicker(P, intro, ctl)   adds "Start at ..." buttons to the how-to card for the stages reached
+//   shared(api)           per-game storage for the links: get(k, d), set(k, v); never throws
+export const STAGES = ["Teach", "Test", "Twist"];
+export function shared(api) {
+  return {
+    get(k, d) { try { const v = api.shared.get(k, d); return v == null ? d : v; } catch { return d; } },
+    set(k, v) { try { api.shared.set(k, v); } catch { /* storage off */ } },
+  };
+}
+export function ladder(run, opts = {}) {
+  const th = Object.assign({ bg: "#17110f", fg: "#E8DCC4", accent: "#F2B544", ink: "#17110f" }, opts.theme || {});
+  return {
+    mount(root, api) {
+      let inner = null, card = null, onKey = null;
+      const reached = () => { try { return Math.max(0, Math.min(2, api.store.get("stage", 0) | 0)); } catch { return 0; } };
+      const drop = () => { if (card) { card.remove(); card = null; } if (onKey) { window.removeEventListener("keydown", onKey, true); onKey = null; } };
+      const ctl = {
+        stage: 0, reached: reached(), names: opts.names || STAGES,
+        go(n) { drop(); if (inner) { try { inner.unmount(); } catch (e) { console.error(e); } } ctl.stage = n; ctl.reached = reached(); inner = run(root, api, ctl); },
+        end(result, draw) {
+          const pass = result.outcome !== "lose";
+          if (pass) { try { api.store.set("stage", Math.max(reached(), Math.min(2, ctl.stage + 1))); if (ctl.stage === 2 && result.outcome === "win") api.store.set("twistWon", true); } catch { /* storage off */ } }
+          if (!pass || ctl.stage >= 2) { if (draw) draw(); api.end(result); return; }
+          const next = ctl.stage + 1;
+          card = document.createElement("div");
+          card.setAttribute("role", "dialog"); card.setAttribute("aria-label", `${ctl.names[ctl.stage]} done`);
+          card.style.cssText = `position:absolute;inset:0;z-index:30;display:grid;place-items:center;padding:16px;box-sizing:border-box;background:rgba(10,7,6,.72);overflow:auto;font-family:var(--g-body,sans-serif)`;
+          const box = document.createElement("div");
+          box.style.cssText = `max-width:540px;width:100%;box-sizing:border-box;background:${th.bg};color:${th.fg};border:3px solid ${th.accent};padding:18px 20px;box-shadow:0 12px 40px rgba(0,0,0,.5)`;
+          const k = document.createElement("div"); k.style.cssText = `font:700 12px var(--g-body,sans-serif);letter-spacing:.22em;text-transform:uppercase;color:${th.accent};margin-bottom:6px`;
+          k.textContent = `Stage ${ctl.stage + 1} of 3 · ${ctl.names[ctl.stage]} · ${result.outcome === "win" ? "done well" : "done"}`;
+          const p = document.createElement("p"); p.style.cssText = "margin:0 0 12px;font:17px/1.4 var(--g-display,Georgia,serif)"; p.textContent = result.text || "";
+          const nx = document.createElement("p"); nx.style.cssText = "margin:0 0 14px;font-size:14px;line-height:1.4;opacity:.9"; nx.textContent = (opts.next && opts.next[next]) || "";
+          const row = document.createElement("div"); row.style.cssText = "display:flex;gap:10px;flex-wrap:wrap";
+          const b1 = document.createElement("button"); b1.type = "button"; b1.dataset.ladder = "next"; b1.textContent = `Go on: ${ctl.names[next]}`;
+          b1.style.cssText = `font:700 16px var(--g-body,sans-serif);background:${th.accent};color:${th.ink};border:0;padding:11px 20px;min-height:46px;cursor:pointer`;
+          const b2 = document.createElement("button"); b2.type = "button"; b2.dataset.ladder = "stop"; b2.textContent = "Stop here";
+          b2.style.cssText = `font:700 16px var(--g-body,sans-serif);background:transparent;color:${th.fg};border:2px solid ${th.fg};padding:9px 18px;min-height:46px;cursor:pointer`;
+          b1.addEventListener("click", () => ctl.go(next));
+          b2.addEventListener("click", () => { drop(); if (draw) draw(); api.end(result); });
+          row.append(b1, b2); box.append(k, p, nx, row); card.appendChild(box); root.appendChild(card);
+          // the finished stage's own keys must not reach it while the card is up
+          onKey = (e) => { if (e.key === "Enter" || e.key === " ") { e.stopPropagation(); if (!card.contains(document.activeElement)) { e.preventDefault(); b1.focus(); } } else if (e.key !== "Tab") e.stopPropagation(); };
+          window.addEventListener("keydown", onKey, true);
+          b1.focus();
+        },
+      };
+      inner = run(root, api, ctl);
+      return { unmount() { drop(); if (inner) inner.unmount(); inner = null; } };
+    },
+  };
+}
+// the how-to card of stage 0 offers the stages already reached
+export function stagePicker(P, intro, ctl) {
+  const start = intro.querySelector("." + P + "start");
+  if (!start) return;
+  const tag = document.createElement("div");
+  tag.style.cssText = "font:700 12px var(--g-body,sans-serif);letter-spacing:.2em;text-transform:uppercase;opacity:.8;margin:0 0 8px;position:relative;z-index:1";
+  tag.textContent = `Stage ${ctl.stage + 1} of 3 · ${ctl.names[ctl.stage]}`;
+  start.parentNode.insertBefore(tag, start);
+  if (ctl.stage !== 0 || ctl.reached < 1) return;
+  for (let n = 1; n <= ctl.reached; n++) {
+    const b = document.createElement("button"); b.type = "button"; b.className = start.className; b.dataset.stage = String(n);
+    b.textContent = `Start at the ${ctl.names[n].toLowerCase()}`;
+    b.style.cssText = "margin:8px 0 0 8px;opacity:.92;font-size:14px;letter-spacing:.04em;padding:8px 14px;position:relative;z-index:1";
+    b.addEventListener("click", (e) => { e.stopPropagation(); ctl.go(n); });
+    start.parentNode.appendChild(b);
+  }
 }

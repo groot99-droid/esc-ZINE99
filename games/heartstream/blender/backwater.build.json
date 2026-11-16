@@ -1,0 +1,424 @@
+{
+  "game": "heartstream",
+  "location": "backwater",
+  "name": "The backwater",
+  "reference": "assets/locations/backwater.jpg",
+  "bounds_m": [
+    80,
+    60,
+    18
+  ],
+  "origin": "pool centre at the water line; +x toward the pool's mouth and the living river beyond it; the moored raft against the -y wall",
+  "materials": {
+    "crimson-deep": {
+      "color": [
+        0.478,
+        0.063,
+        0.125
+      ],
+      "roughness": 0.45
+    },
+    "backwater-grey-rose": {
+      "color": [
+        0.549,
+        0.478,
+        0.471
+      ],
+      "roughness": 0.25
+    },
+    "red-glow": {
+      "color": [
+        0.878,
+        0.376,
+        0.227
+      ],
+      "roughness": 0.4,
+      "emission": 1.5
+    }
+  },
+  "blockout": [
+    {
+      "id": "bed",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        80,
+        60,
+        0.5
+      ],
+      "location": [
+        0,
+        0,
+        -0.45
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "pool",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        76,
+        56,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "backwater-grey-rose",
+      "collide": false
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        80,
+        1,
+        18
+      ],
+      "location": [
+        0,
+        -30.5,
+        9
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        80,
+        1,
+        18
+      ],
+      "location": [
+        0,
+        30.5,
+        9
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        60,
+        18
+      ],
+      "location": [
+        -40.5,
+        0,
+        9
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "wall-east-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        24,
+        18
+      ],
+      "location": [
+        40.5,
+        18,
+        9
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "wall-east-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        24,
+        18
+      ],
+      "location": [
+        40.5,
+        -18,
+        9
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "wall-east-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        12,
+        10
+      ],
+      "location": [
+        40.5,
+        0,
+        13
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        80,
+        60,
+        1
+      ],
+      "location": [
+        0,
+        0,
+        18.5
+      ],
+      "material": "crimson-deep"
+    },
+    {
+      "id": "river-glow",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        0.5,
+        12,
+        8
+      ],
+      "location": [
+        44,
+        0,
+        4
+      ],
+      "material": "red-glow",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "old-raft",
+      "object": "raft",
+      "location": [
+        -12,
+        -24,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "finished-board",
+      "object": "counter-board",
+      "location": [
+        -12,
+        -24,
+        0.6
+      ]
+    },
+    {
+      "id": "keep-left",
+      "object": "counter-piece",
+      "location": [
+        -12.42,
+        -24,
+        0.72
+      ],
+      "height_m": 0.06
+    },
+    {
+      "id": "keep-right",
+      "object": "counter-piece",
+      "location": [
+        -11.58,
+        -24,
+        0.72
+      ],
+      "height_m": 0.06
+    },
+    {
+      "id": "left-hook",
+      "object": "gift-hook",
+      "location": [
+        -12.45,
+        -24.5,
+        0.6
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "left-awl",
+      "object": "gift-awl",
+      "location": [
+        -12.15,
+        -24.5,
+        0.6
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "left-comb",
+      "object": "gift-comb",
+      "location": [
+        -11.85,
+        -24.5,
+        0.6
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "left-flute",
+      "object": "gift-flute",
+      "location": [
+        -11.55,
+        -24.5,
+        0.6
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_backwater": {
+      "note": "Chapter 7, the Fourth Branch: a backwater with no current. An old raft is moored here, grey; on it a board with every hollow empty and both keeps counted, and four gifts in a row. No brothers, and none are ever shown. Look at the keeps and the gifts; then the raft rows back out to the fork.",
+      "world": {
+        "color": [
+          0.4,
+          0.36,
+          0.36
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "flat-grey",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            17
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "energy": 12000,
+          "size": 50,
+          "color": [
+            0.86,
+            0.8,
+            0.79
+          ]
+        },
+        {
+          "name": "river-through-the-mouth",
+          "type": "AREA",
+          "location": [
+            39,
+            0,
+            3
+          ],
+          "look_at": [
+            0,
+            0,
+            1
+          ],
+          "energy": 6000,
+          "size": 10,
+          "color": [
+            1.0,
+            0.35,
+            0.25
+          ]
+        },
+        {
+          "name": "on-the-board",
+          "type": "SPOT",
+          "location": [
+            -12,
+            -22,
+            5
+          ],
+          "look_at": [
+            -12,
+            -24,
+            0.6
+          ],
+          "energy": 600,
+          "size": 1.5,
+          "color": [
+            0.91,
+            0.88,
+            0.82
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -4,
+          -12,
+          5
+        ],
+        "look_at": [
+          -12,
+          -24,
+          0.8
+        ],
+        "lens_mm": 32,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -6,
+          -16,
+          0.6
+        ],
+        "facing_deg": 217
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "keep-left",
+          "verb": "Look at the keep"
+        },
+        {
+          "prop": "keep-right",
+          "verb": "Look at the other keep"
+        },
+        {
+          "prop": "left-hook",
+          "verb": "Look at the four gifts"
+        },
+        {
+          "prop": "old-raft",
+          "verb": "Row back to the fork",
+          "leads_to": "s1_chart_2"
+        }
+      ]
+    }
+  }
+}

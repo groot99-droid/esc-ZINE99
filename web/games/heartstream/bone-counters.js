@@ -21,14 +21,35 @@
 // portraits, the beat rim, the small one, chapter cards 1 and 4, the two interstitials, the hall wall
 // and the thread. Every one falls back to the mode's own drawing when the id is missing.
 
-import { howTo, Beats, flourish, disposeKit, artUrl, artImg, pngUrl, plate, flashPlate, endCard } from "./_kit.js";
+import { howTo, Beats, flourish, disposeKit, artUrl, artImg, pngUrl, plate, flashPlate, endCard, ladder, stagePicker, shared } from "./_kit.js";
+//
+// Phase 2 (DEEP_DIVE.md section 3, built 2026-11-16): a ladder of three sittings.
+//   Teach  the first sitting: sow on the beat. Eight turns, the glows on, and the small one at the rim.
+//   Test   captures and rung hollows: twelve turns, the glows still on. New: the lent counter (give him one
+//          counter from your keep to sow once from his row).
+//   Twist  the second sitting starts from the position the small one left: a board you did not set, no
+//          glows, a faster beat, and the cut. It ends in the set-piece, One Move on the Oldest Board: one
+//          ancient board in the hall is a single sowing from finished, and as your last counter falls an
+//          elder's hand covers the hollow, catches it, and closes your fingers round it.
+// Links (api.shared): the row you leave when the elders call, read as five heights, is offered in
+// Marrow-Song as a phrase and hummed by the raft in the river section; the hand he sows with is the hand
+// The Carving's grip has to fit.
+// Lines written for the game: the stage cards, the lent counter's beat and the oldest board's lines.
 
 const C = { ink: "#15100c", cream: "#efe4cc", red: "#B3202E", gold: "#F2B544", dim: "#8a7a66" };
 const GOOD = 120;
 const MARKS = ["ring", "notch", "spiral", "fork", "star", "wave"];
 
-export default {
-  mount(root, api) {
+const DEFAULT_LEFT = [4, 0, 5, 1, 3, 3, 2, 4, 1, 3, 0, 4];   // a position the small one left, when none was played
+export default ladder(run, {
+  theme: { bg: "#efe4cc", fg: "#15100c", accent: "#B3202E", ink: "#efe4cc" },
+  next: [null, "Next: the same board, played to take. Captures, hollows that ring, and a counter you may lend him.",
+    "Next, days later: the second sitting. The board is as the small one left it, and nobody shows you where a counter lands."],
+});
+
+function run(root, api, ctl) {
+  {
+    const SG = ctl.stage, sh = shared(api);
     const P = "heartstream-bone-counters-";
     const rng = api.rng();
     const RM = api.reducedMotion;
@@ -37,8 +58,19 @@ export default {
     const later = (fn, ms) => { const id = setTimeout(fn, ms); timers.push(id); return id; };
 
     const board = Array(12).fill(3); board[5] = 0; board[11] = 0;
+    let leftBy = null;
+    if (SG === 2) {
+      let left = null; try { left = api.store.get("left", null); } catch { /* storage off */ }
+      const ok = left && Array.isArray(left.board) && left.board.length === 12 && left.board.every((n) => Number.isInteger(n) && n >= 0) && left.board.reduce((a, n) => a + n, 0) === 30
+        && left.board.slice(0, 5).some((n) => n > 0) && left.board.slice(6, 11).some((n) => n > 0);
+      (ok ? left.board : DEFAULT_LEFT).forEach((n, i) => { board[i] = n; });
+      leftBy = ok ? left.small || null : { from: 2, to: 1, choice: "left" };
+    }
+    let hand = sh.get("hand", null);
+    if (!hand || !/^(left|right)$/.test(hand.side)) { hand = { side: rng() < 0.5 ? "left" : "right", wide: rng() < 0.5 }; sh.set("hand", hand); }
+    const TURNS = [8, 12, 12][SG];
     const st = { started: false, over: false, turn: 0, who: 0, phase: "pick", hover: -1, sel: 2, rung: {}, sow: null,
-      drops: [], rounds: [0, 0], r1: null, myDrops: 0, myOn: 0, msg: "", lastBeat: -1, sitting: 1, bpm: 60, sit2At: 0, cutDue: false, caps: 0, hisCaps: 0, rings: 0, flashes: [] };
+      drops: [], rounds: [0, 0], r1: null, myDrops: 0, myOn: 0, msg: "", lastBeat: -1, sitting: SG === 2 ? 2 : 1, bpm: [60, 62, 64][SG], sit2At: 0, cutDue: false, caps: 0, hisCaps: 0, rings: 0, flashes: [], lent: 0 };
     let t0 = 0, raf = 0, audio = null;
     const PERIOD = () => 60000 / st.bpm;
     const SIT1_TURNS = 8, SIT2_MS = 100000;
@@ -97,6 +129,19 @@ export default {
 .${P}marks button{padding:0;border:3px solid ${C.ink};background:${C.cream};cursor:pointer;width:46px;height:46px;font:700 11px var(--g-body)}
 .${P}marks button img{display:block;width:100%;height:100%}
 .${P}marks button[aria-pressed=true]{border-color:${C.red};box-shadow:3px 3px 0 ${C.red}}
+.${P}lend{font:700 15px var(--g-display);letter-spacing:.08em;background:${C.cream};color:${C.ink};border:4px solid ${C.ink};padding:10px 14px;cursor:pointer;min-height:54px;box-shadow:4px 4px 0 ${C.ink}}
+.${P}lend:disabled{opacity:.35;box-shadow:none;cursor:default}
+.${P}lend[hidden]{display:none}
+.${P}old{position:absolute;inset:0;z-index:9;background:rgba(21,16,12,.94);color:${C.cream};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:12px;box-sizing:border-box;overflow:auto;text-align:center}
+.${P}old .${P}op{position:relative;width:min(100%,760px)}
+.${P}old .${P}op>img{display:block;width:100%;height:auto;max-height:34vh;object-fit:cover;border:4px solid ${C.cream}}
+.${P}old svg{display:block;width:min(100%,640px);height:auto;touch-action:manipulation}
+.${P}old .${P}hand{position:absolute;right:4%;bottom:-18%;width:clamp(90px,24%,170px);border:4px solid ${C.cream};box-shadow:6px 6px 0 ${C.red}}
+.${P}old p{margin:0;max-width:640px;font-size:19px;line-height:1.35;min-height:4em}
+.${P}old b{display:block;font:700 12px var(--g-body);letter-spacing:.2em;text-transform:uppercase;color:${C.gold}}
+.${P}old button{font:700 17px var(--g-display);letter-spacing:.14em;background:${C.cream};color:${C.ink};border:0;padding:12px 26px;min-height:50px;cursor:pointer;box-shadow:5px 5px 0 ${C.red}}
+.${P}old g[role=button]{cursor:pointer;outline:none}
+.${P}old g[role=button]:focus ellipse{stroke:${C.gold};stroke-width:6}
 .${P}small:focus{outline:none}
 .${P}small{position:absolute;left:50%;top:58px;transform:translateX(-50%);width:min(560px,calc(100% - 24px));box-sizing:border-box;background:${C.cream};border:5px solid ${C.ink};box-shadow:8px 8px 0 ${C.ink};z-index:7;display:grid;grid-template-columns:auto 1fr;gap:0 12px;padding:10px}
 .${P}small img{width:clamp(84px,24vw,150px);height:auto;grid-row:1 / span 3;align-self:center}
@@ -110,7 +155,7 @@ export default {
 `;
     wrap.appendChild(css);
     const head = document.createElement("div"); head.className = P + "head";
-    head.innerHTML = `<h2>BONE COUNTERS</h2><span class="${P}sit">the first sitting · 60 beats a minute</span><b class="${P}score"></b>`;
+    head.innerHTML = `<h2>BONE COUNTERS</h2><span class="${P}sit">${["the first sitting · 60 beats a minute", "the first sitting, played to take · 62 beats a minute", "the second sitting · 64 beats a minute · no glows"][SG]}</span><b class="${P}score"></b>`;
     // the two at the board: seat portraits (blue: this is before the Recognition)
     const who = document.createElement("div"); who.className = P + "who";
     { const a = artImg(api, "seat-laughs-blue", "", "you, the one who laughs"), b = artImg(api, "seat-argues-blue", "", "the one who argues");
@@ -124,25 +169,45 @@ export default {
     const dropBtn = document.createElement("button"); dropBtn.type = "button"; dropBtn.className = P + "drop"; dropBtn.textContent = "DROP"; dropBtn.disabled = true;
     const choice = document.createElement("div"); choice.className = P + "choice"; choice.hidden = true;
     choice.innerHTML = `<button type="button" data-c="pocket">POCKET YOUR PIECE <small>(P)</small></button><button type="button" data-c="leave">LEAVE IT ON THE BOARD <small>(L)</small></button>`;
-    bar.append(dropBtn, choice);
+    const lendBtn = document.createElement("button"); lendBtn.type = "button"; lendBtn.className = P + "lend"; lendBtn.innerHTML = "LEND HIM A COUNTER <small>(G)</small>"; lendBtn.hidden = true; lendBtn.disabled = true;
+    bar.append(dropBtn, lendBtn, choice);
     const legendEl = document.createElement("ul"); legendEl.className = P + "legend";
     wrap.append(head, msg, svg, bar, legendEl);
     const beats = new Beats(P, wrap, RM);
-    const intro = howTo(P, {
+    const SPEC = [{
       kicker: "Chapter one · the hall of boards",
       title: "Bone Counters",
       scene: "Around you hang the boards of every group before yours, none of them finished. An elder sets a new one between you and the one who argues. Your counter piece sits in your keep.",
-      goal: "Have more in your keep than he has in his when the elders call you away.",
+      goal: "Sow on the beat: drop at least half your counters as the heart falls. Nobody is counting keeps yet.",
       keys: [["Pick", "tap a hollow in your row · ←/→ and Enter", "its counters are sown anticlockwise, one per heartbeat"],
         ["Drop", "Space · tap the board · DROP", "as each counter falls; on the beat it rings"],
         ["Read", "hover or focus a hollow", "the elder shows where the last counter lands"]],
+    }, {
+      kicker: "Chapter one · played to take",
+      title: "Captures and rung hollows",
+      scene: "The same board, and the one who argues has stopped being kind. The elder still shows where a counter will land.",
+      goal: "Be ahead in the keeps after twelve turns, with at least one capture or one rung hollow of your own.",
+      keys: [["Capture", "last counter into an empty hollow of yours", "you take it and everything opposite"],
+        ["Ring", "on the beat, into a hollow that then holds three", "nobody sows from it next turn"],
+        ["Lend", "G · LEND HIM A COUNTER", "one counter from your keep into his row; he sows it at once, and your turn is spent"]],
+    }, {
+      kicker: "Chapter three · the second sitting",
+      title: "The board he left",
+      scene: `Days have passed. The board is where you left it, and as the small one left it: the counter he moved is ${leftBy && leftBy.choice === "back" ? "back where you set it, and the rest is as the two of you stopped" : "still where he put it"}. The elders have stopped showing where counters land.`,
+      goal: "Be ahead when the elders come for you. Then decide what to do with your piece.",
+      keys: [["No glows", "count the hollows yourself", "the opening the glow taught you is not on this board"],
+        ["The cut", "P pocket · L leave", "the match will not be finished"]],
+    }][SG];
+    const intro = howTo(P, {
+      ...SPEC,
       extra: `<div class="${P}marks" role="group" aria-label="Choose your sign"><b>“Choose your sign.” It is cut into your counter piece.</b>${MARKS.map((m) => `<button type="button" data-m="${m}" aria-pressed="false" aria-label="${m}">${artUrl(api, "mark-" + m) ? `<img alt="" src="${artUrl(api, "mark-" + m)}">` : m}</button>`).join("")}</div>` + "Last counter in your keep: go again. In an empty hollow of yours: take it and the hollow opposite. On the beat into a hollow that then holds three: it rings, and no one sows from it next turn.",
     });
     { // the rules line is the kit's .extra; the marks sit above it as their own row
       const ex = intro.querySelector("." + P + "extra"), mk = ex && ex.querySelector("." + P + "marks");
       if (mk) ex.parentNode.insertBefore(mk, ex);
     }
-    plate(api, intro, P, { card: "chapter-1", numeral: "numeral-1", at: "30% 60%" });
+    plate(api, intro, P, { card: SG === 2 ? "chapter-3" : "chapter-1", numeral: SG === 2 ? "numeral-3" : "numeral-1", at: "30% 60%" });
+    stagePicker(P, intro, ctl);
     let myMark = (api.store && api.store.get("mark", "ring")) || "ring"; if (!MARKS.includes(myMark)) myMark = "ring";
     let pieceUrl = "", plainUrl = "";
     const setMark = (m) => {
@@ -218,7 +283,9 @@ export default {
       st.sow = { who, from: i, left: n, at: i, nextBeat: k, taps: [] };
       st.phase = "sow";
       dropBtn.disabled = who !== 0; dropBtn.classList.toggle(P + "live", who === 0 && !RM);
-      say(who === 0 ? `${n} counter${n === 1 ? "" : "s"} to sow. Tap Drop as each one falls.` : "He sows. Watch the beat.");
+      say(who === 0 ? `${n} counter${n === 1 ? "" : "s"} to sow. Tap Drop as each one falls.` : `He sows, with his ${hand.side} hand${hand.wide ? ": a wide hand, the counters vanish in it" : ": a narrow hand, he holds them in his fingertips"}. Watch the beat.`);
+      if (who === 1) sh.set("sawHand", true);
+      lendBtn.disabled = true;
       render();
     }
     function dropOne() {
@@ -254,32 +321,48 @@ export default {
       if (onBeat && j !== 5 && j !== 11 && board[j] === 3) { st.rung[j] = st.turn + 2; note += " The hollow rings: no one sows from it next turn."; if (who === 0) { st.rings++; beats.show("It rings. A clear note, the first one this board has made.", 3200, "ring"); } }
       const rowA = [0, 1, 2, 3, 4].reduce((a, i) => a + board[i], 0), rowB = [6, 7, 8, 9, 10].reduce((a, i) => a + board[i], 0);
       if (!rowA || !rowB) {
-        if (st.rounds[0] + st.rounds[1] > 0) { render(); return cut(true); }
+        // a row has run empty: the round is counted (the match never is)
+        st.rowLeft = [0, 1, 2, 3, 4].map((i) => board[i]);
         for (let i = 0; i < 5; i++) { board[5] += board[i]; board[i] = 0; board[11] += board[6 + i]; board[6 + i] = 0; }
         const a = board[5], b = board[11], w = a > b ? 0 : b > a ? 1 : -1;
         if (w >= 0) st.rounds[w]++;
         st.r1 = { a, b };
         render();
-        beats.show(w === 0 ? `The first round is yours, ${a} to ${b}. The elder cuts a notch in your side of the rim and sets the counters out again.` : w === 1 ? `The first round is his, ${b} to ${a}. He cuts the notch in the rim himself, slowly, so you see it.` : `The first round ends even, ${a} each. Nobody cuts a notch.`, 5200, "round1", "Round one");
+        beats.show(w === 0 ? `A row runs empty, and the round is yours, ${a} to ${b}. The elder cuts a notch in your side of the rim.` : w === 1 ? `A row runs empty, and the round is his, ${b} to ${a}. He cuts the notch in the rim himself, slowly, so you see it.` : `A row runs empty and the round ends even, ${a} each. Nobody cuts a notch.`, 5200, "round1", "A round is counted");
+        if (SG === 2) return cut(true);
         st.phase = "wait";
-        return later(() => {
-          for (let i = 0; i < 12; i++) board[i] = isKeep(i) ? 0 : 3;
-          st.rung = {}; st.who = 0; st.phase = "pick";
-          if (st.sitting === 1 && st.turn >= SIT1_TURNS) return interlude();
-          if (st.cutDue) return cut();
-          say("Round two. Your turn: pick a hollow."); render();
-        }, RM ? 1500 : 5400);
+        return later(() => finish("round"), RM ? 1200 : 3600);
       }
       st.turn++;
-      if (st.sitting === 1 && st.turn >= SIT1_TURNS && !again) return interlude();
-      if (st.cutDue) return cut();
+      if (SG < 2 && st.turn >= TURNS && !again) return finish("called");
+      if (st.cutDue || (SG === 2 && st.turn >= TURNS && !again)) return cut();
       if (!again) st.who = 1 - who;
       if (!legal(st.who).length) st.who = 1 - st.who;
       st.phase = "pick";
       say((note ? note + " " : "") + (st.who === 0 ? "Your turn: pick a hollow." : ""));
       render();
-      if (st.who === 0 && !st.small && st.sitting === 1 && st.turn >= 3 && smallOne()) return;
+      offerLend();
+      if (st.who === 0 && !st.small && SG === 0 && st.turn >= 3 && smallOne()) return;
       if (st.who === 1) companionTurn();
+    }
+    // ---- phase 2: the lent counter ------------------------------------------------------------------
+    // One counter from your keep goes into his emptiest hollow, he sows from that hollow at once, and your
+    // turn is spent. It keeps a row from running empty; it is also simply a thing you can give him.
+    function offerLend() {
+      if (SG === 0) return;
+      const can = !st.over && st.phase === "pick" && st.who === 0 && board[5] >= 1;
+      lendBtn.hidden = false; lendBtn.disabled = !can;
+      if (can && legend.add("lend", "Lend", "G · one counter from your keep, into his row", true)) beats.show("You have counters in your keep now. You may lend him one: it goes into his row, he sows it at once, and your turn is spent.", 5600, "lend0", "New · The lent counter");
+      const his = [6, 7, 8, 9, 10].reduce((a, i) => a + board[i], 0);
+      if (can && his <= 2) beats.show("His row is almost bare. When a row runs empty the round is counted, and the game you are playing is over. A lent counter keeps it going.", 5600, "lend1", "His row");
+    }
+    function lend() {
+      if (SG === 0 || st.over || st.phase !== "pick" || st.who !== 0 || board[5] < 1) return;
+      const to = [10, 9, 8, 7, 6].reduce((a, i) => (board[i] < board[a] ? i : a), 10);
+      board[5]--; board[to]++; st.lent++; st.turn++;
+      beats.show("You take one counter out of your keep and set it in his row. He looks at it, and then at you, and sows it.", 4600, "lent", "The lent counter");
+      st.who = 1; render();
+      startSow(to, 1);
     }
     function interlude() {
       st.phase = "wait"; st.who = 1; render();
@@ -308,7 +391,36 @@ export default {
     }
     function choose(c) {
       if (st.phase !== "cut" || st.over) return;
-      st.kept = c === "pocket"; finish("cut");
+      st.kept = c === "pocket";
+      if (SG === 2) return oldest();
+      finish("cut");
+    }
+    // ---- the set-piece: One Move on the Oldest Board ------------------------------------------------
+    let oldEl = null;
+    function oldest() {
+      st.phase = "old"; choice.hidden = true;
+      oldEl = document.createElement("div"); oldEl.className = P + "old"; oldEl.setAttribute("role", "dialog"); oldEl.setAttribute("aria-label", "The oldest board in the hall");
+      const wall = artUrl(api, "counters-hall-wall"), handUrl = artUrl(api, "thread-own");
+      const cell = (i, n, live) => { const x = 110 + (i % 5) * 96, y = i < 5 ? 150 : 60; let d = `<ellipse cx="${x}" cy="${y}" rx="38" ry="32" fill="#d8ccb4" stroke="${live ? C.gold : C.dim}" stroke-width="${live ? 5 : 2}"/>`;
+        for (let k = 0; k < n; k++) d += `<ellipse cx="${x - 12 + k * 12}" cy="${y + (k % 2) * 6 - 3}" rx="10" ry="7" fill="${C.ink}"/>`; return d; };
+      const draw = (row, keep, step) => `<svg viewBox="0 0 640 210" role="img" aria-label="An old board, grey with handling: one hollow still holds counters"><rect x="6" y="14" width="628" height="182" rx="70" fill="#4a4038"/>
+<ellipse cx="46" cy="105" rx="30" ry="72" fill="#d8ccb4" stroke="${C.dim}" stroke-width="2"/><ellipse cx="594" cy="105" rx="30" ry="72" fill="#d8ccb4" stroke="${step === 2 ? C.gold : C.dim}" stroke-width="${step === 2 ? 5 : 2}"/>
+${[0, 1, 2, 3, 4].map((i) => cell(5 + i, 0, false)).join("")}${row.map((n, i) => (step === 0 && n ? `<g role="button" tabindex="0" data-old="${i}" aria-label="The last hollow with counters in it: ${n}">${cell(i, n, true)}</g>` : cell(i, n, false))).join("")}
+${Array.from({ length: 14 }, (_, k) => `<ellipse cx="${36 + (k % 2) * 20}" cy="${50 + Math.floor(k / 2) * 15}" rx="9" ry="6" fill="${C.ink}"/>`).join("")}${Array.from({ length: keep }, (_, k) => `<ellipse cx="${584 + (k % 2) * 20}" cy="${46 + Math.floor(k / 2) * 15}" rx="9" ry="6" fill="${C.ink}"/>`).join("")}</svg>`;
+      const row = [0, 0, 0, 0, 1]; let keep = 15, step = 0;
+      const paint = (text, btn) => {
+        oldEl.innerHTML = `<div class="${P}op">${wall ? `<img alt="The hall wall: the boards of every group, none of them finished." src="${wall}">` : ""}${step === 2 && handUrl ? `<img class="${P}hand" alt="A closed hand above a board." src="${handUrl}">` : ""}</div>${draw(row, keep, step === 1 ? 2 : step)}<p aria-live="polite"><b>One move on the oldest board</b>${text}</p>${btn ? `<button type="button">${btn}</button>` : ""}`;
+        const f = oldEl.querySelector("button, g[role=button]"); if (f) f.focus();
+      };
+      const act = () => {
+        if (step === 0) { step = 1; row[4] = 0; paint("You lift it. One counter, and the keep in front of it. When it lands this row is empty, and the oldest game in the world is over. The heart beats, and you let go on the beat, as you were taught.", "DROP <small>(Space)</small>"); }
+        else if (step === 1) { step = 2; st.oldDone = true; paint("As it falls an old hand covers the keep. The counter drops into the palm instead. The hand turns over, and closes your fingers round it. Nobody says anything.", "GO TO THE ELDERS <small>(Enter)</small>"); }
+        else { oldEl.remove(); oldEl = null; finish("cut"); }
+      };
+      wrap.appendChild(oldEl);
+      on(oldEl, "click", (e) => { if (e.target.closest("button, g[role=button]")) act(); });
+      st.oldAct = act;
+      paint("On the way out, the elder stops you at the lowest board on the wall. It is grey with handling. Every hollow is empty but the last in the near row, and that one holds a single counter: one sowing would finish it. He waits.", "");
     }
     let compTimer = 0;
     function companionTurn() {
@@ -322,11 +434,26 @@ export default {
       }, 900);
     }
     function finish(how) {
-      st.over = true; render();
+      if (st.over) return;
+      if (smallEl) smallChoice("auto");
+      st.over = true; dropBtn.disabled = true; lendBtn.disabled = true; render();
       const a = board[5], b = board[11], share = st.myDrops ? Math.round((100 * st.myOn) / st.myDrops) : 0;
       const time = ` You dropped ${share}% of your counters on the beat${share >= 70 ? ": your hands have the heart's time (+15 ms on the river)." : share <= 40 ? ": on the river your window will narrow (−10 ms)." : "."}`;
+      // links: the row you leave is a phrase in Marrow-Song and the raft's hum; the teach's board is where the twist begins
+      const row = st.rowLeft || [0, 1, 2, 3, 4].map((i) => board[i]);
+      sh.set("boardRow", row);
+      if (SG === 0) { try { api.store.set("left", { board: board.slice(), small: st.small ? { from: st.small.from, to: st.small.to, choice: st.small.choice } : null }); } catch { /* storage off */ } }
+      const rowNote = ` The row you leave: ${row.join(" · ")}.`;
       let text, outcome;
-      if (how === "round") {
+      if (SG === 0) {
+        outcome = share >= 50 ? "win" : "done";
+        text = `The elders call you to eat, and the board stays where it is between you, ${how === "round" ? "one round counted" : "mid-game"} (keeps: you ${a}, him ${b}).${rowNote}`;
+      } else if (SG === 1) {
+        const took = st.caps + st.rings;
+        outcome = a < b ? "lose" : a === b ? "done" : took ? "win" : "done";
+        text = (a > b ? `Twelve turns, and you are ahead: ${a} to ${b}, with ${st.caps} capture${st.caps === 1 ? "" : "s"} and ${st.rings} rung hollow${st.rings === 1 ? "" : "s"}${took ? "." : ". You were ahead without ever taking anything."}` : a < b ? `Twelve turns, and he is ahead, ${b} to ${a}. He will say so for as long as you are together.` : `Twelve turns, and it stands even at ${a}.`)
+          + (st.lent ? ` You lent him ${st.lent} counter${st.lent === 1 ? "" : "s"}; he did not thank you, and he sowed ${st.lent === 1 ? "it" : "them"}.` : "") + rowNote;
+      } else if (how === "round") {
         outcome = a > b ? "win" : a < b ? "lose" : "done";
         text = a > b ? `A row runs empty and the round is yours, ${a} to ${b}. The match goes on another day; no group finishes it.` : a < b ? `A row runs empty and he takes the round, ${b} to ${a}. He will not let you forget it, for as long as you are together.` : `A row runs empty: ${a} each.`;
       } else {
@@ -340,8 +467,8 @@ export default {
         text = lead + piece;
       }
       const small = st.small && st.small.choice ? (st.small.choice === "left" ? " The counter the small one moved stayed where he put it." : " You put the small one's counter back.") : "";
-      endCard(wrap, api, "chapter-4", { numeral: "numeral-4", inset: st.kept ? "thread-own" : "counters-hall-wall" });
-      api.end({ outcome, text: text + small + time });
+      const old = st.oldDone ? " On the way out you lifted the last counter of the oldest board in the hall, and it is closed in your hand. That game is still one move from finished." : "";
+      ctl.end({ outcome, text: text + small + old + time }, () => endCard(wrap, api, "chapter-4", { numeral: "numeral-4", inset: st.kept || st.oldDone ? "thread-own" : "counters-hall-wall" }));
     }
 
     // ---- sound ----------------------------------------------------------------------------------
@@ -469,10 +596,13 @@ export default {
     on(svg, "focusin", (e) => { const h = e.target.closest("." + P + "hol"); if (h) { st.hover = +h.dataset.i; st.sel = st.hover; render(); } });
     on(dropBtn, "pointerdown", (e) => { e.preventDefault(); tap(); });
     on(choice, "click", (e) => { const b = e.target.closest("button"); if (b) choose(b.dataset.c); });
+    on(lendBtn, "click", lend);
     on(window, "keydown", (e) => {
-      if (!st.started) { if ((e.key === "Enter" || e.key === " ") && !(e.target.closest && e.target.closest("." + P + "marks"))) { e.preventDefault(); begin(); } return; }
+      if (!st.started) { if (e.target && e.target.dataset && e.target.dataset.stage) return; if ((e.key === "Enter" || e.key === " ") && !(e.target.closest && e.target.closest("." + P + "marks"))) { e.preventDefault(); begin(); } return; }
       const k = e.key.toLowerCase();
+      if (st.phase === "old") { if (k === " " || k === "enter") { e.preventDefault(); if (!e.repeat && st.oldAct) st.oldAct(); } return; }
       if (st.phase === "cut") { if (k === "p") choose("pocket"); if (k === "l") choose("leave"); return; }
+      if (k === "g") { lend(); return; }
       if (st.phase === "small") { if (k === "b") smallChoice("back"); if (k === "v") smallChoice("left"); return; }
       if (k === " " || k === "j") { e.preventDefault(); if (e.repeat) return; if (st.sow) tap(); else pick(st.sel); return; }
       if (st.phase !== "pick" || st.who !== 0) return;
@@ -487,10 +617,15 @@ export default {
       intro.remove(); st.started = true;
       try { audio = new (window.AudioContext || window.webkitAudioContext)(); } catch { audio = null; }
       t0 = performance.now(); dropBtn.style.setProperty("--beat", `${PERIOD()}ms`);
-      legend.add("pick", "Pick", "tap · ←/→ Enter"); legend.add("drop", "Drop", "Space · tap · DROP"); legend.add("read", "Read", "hover · focus (first sitting)");
-      beats.show("“Sow with the heart.”", 2600, "elder", "The elder");
+      legend.add("pick", "Pick", "tap · ←/→ Enter"); legend.add("drop", "Drop", "Space · tap · DROP"); if (SG < 2) legend.add("read", "Read", "hover · focus (first sitting)");
+      if (SG === 0) beats.show("“Sow with the heart.”", 2600, "elder", "The elder");
+      if (SG === 2) {
+        beats.show("The board is not the one you set. The elders have stopped showing where counters land.", 5200, "sit2", "The second sitting");
+        later(() => { st.cutDue = true; if (st.phase === "pick" && st.who === 0 && !st.over) cut(); }, SIT2_MS);
+      }
       legend.add("sign", "Your sign", myMark);
-      say("Your turn: pick a hollow in your row. Hover one to see where its last counter lands.");
+      say(SG === 2 ? "Your turn: pick a hollow. No glows now." : "Your turn: pick a hollow in your row. Hover one to see where its last counter lands.");
+      offerLend();
       render();
     }
     on(intro.querySelector("." + P + "start"), "click", begin);
@@ -498,7 +633,7 @@ export default {
     setMark(myMark);
 
     function frame(now) {
-      if (st.started && !st.over && st.phase !== "cut" && st.phase !== "wait" && st.phase !== "small") {
+      if (st.started && !st.over && st.phase !== "cut" && st.phase !== "wait" && st.phase !== "small" && st.phase !== "old") {
         const k = Math.floor((now - t0) / PERIOD());
         if (k !== st.lastBeat) { st.lastBeat = k; thump(); if (rim && !RM) { rim.style.transition = "none"; rim.style.opacity = "1"; void rim.offsetWidth; rim.style.transition = "opacity .6s"; rim.style.opacity = ".2"; } }
         const sw = st.sow;
@@ -525,5 +660,5 @@ export default {
         wrap.remove();
       },
     };
-  },
-};
+  }
+}

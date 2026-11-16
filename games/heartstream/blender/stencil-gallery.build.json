@@ -1,0 +1,418 @@
+{
+  "game": "heartstream",
+  "location": "stencil-gallery",
+  "name": "The stencil gallery",
+  "reference": "assets/locations/stencil-gallery.jpg",
+  "bounds_m": [
+    24,
+    10,
+    7
+  ],
+  "origin": "floor centre; the stencil wall along +y, 24 m long; the shaft's mouth in the floor at the -x end; the opening to the bank and the red light at the +x end",
+  "materials": {
+    "ivory-chalk": {
+      "color": [
+        0.93,
+        0.9,
+        0.84
+      ],
+      "roughness": 0.95
+    },
+    "stencil-wall": {
+      "color": [
+        0.85,
+        0.76,
+        0.64
+      ],
+      "roughness": 0.9
+    },
+    "ochre-red": {
+      "color": [
+        0.702,
+        0.125,
+        0.18
+      ],
+      "roughness": 0.8
+    },
+    "tissue-pink": {
+      "color": [
+        0.85,
+        0.42,
+        0.42
+      ],
+      "roughness": 0.45
+    },
+    "shaft-dark": {
+      "color": [
+        0.03,
+        0.04,
+        0.07
+      ],
+      "roughness": 0.9
+    },
+    "red-glow": {
+      "color": [
+        0.878,
+        0.376,
+        0.227
+      ],
+      "roughness": 0.4,
+      "emission": 1.5
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        24,
+        10,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "ivory-chalk"
+    },
+    {
+      "id": "shaft-mouth",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        3,
+        3,
+        0.1
+      ],
+      "location": [
+        -9.5,
+        -1,
+        0.02
+      ],
+      "material": "shaft-dark",
+      "collide": false
+    },
+    {
+      "id": "wall-stencils",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        24,
+        0.6,
+        7
+      ],
+      "location": [
+        0,
+        5.3,
+        3.5
+      ],
+      "material": "stencil-wall"
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        24,
+        0.6,
+        7
+      ],
+      "location": [
+        0,
+        -5.3,
+        3.5
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        10,
+        7
+      ],
+      "location": [
+        -12.3,
+        0,
+        3.5
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "wall-east-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        3.2,
+        7
+      ],
+      "location": [
+        12.3,
+        3.4,
+        3.5
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "wall-east-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        3.2,
+        7
+      ],
+      "location": [
+        12.3,
+        -3.4,
+        3.5
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "wall-east-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        3.6,
+        3
+      ],
+      "location": [
+        12.3,
+        0,
+        5.5
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        24,
+        10,
+        0.4
+      ],
+      "location": [
+        0,
+        0,
+        7.2
+      ],
+      "material": "tissue-pink"
+    },
+    {
+      "id": "light-east",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        0.2,
+        3.6,
+        4
+      ],
+      "location": [
+        13.2,
+        0,
+        2
+      ],
+      "material": "red-glow",
+      "collide": false
+    },
+    {
+      "id": "row-of-four",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        3.2,
+        0.05,
+        0.5
+      ],
+      "location": [
+        -4,
+        4.98,
+        2.2
+      ],
+      "material": "ochre-red",
+      "collide": false
+    },
+    {
+      "id": "row-of-three",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2.4,
+        0.05,
+        0.5
+      ],
+      "location": [
+        1.6,
+        4.98,
+        2.2
+      ],
+      "material": "ochre-red",
+      "collide": false
+    },
+    {
+      "id": "row-gap",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.7,
+        0.05,
+        0.5
+      ],
+      "location": [
+        3.25,
+        4.98,
+        2.2
+      ],
+      "material": "stencil-wall",
+      "collide": false
+    },
+    {
+      "id": "row-bare",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        3.2,
+        0.05,
+        0.5
+      ],
+      "location": [
+        0,
+        4.98,
+        1.5
+      ],
+      "material": "ivory-chalk",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "pillar-north",
+      "object": "membrane-pillar",
+      "location": [
+        11.2,
+        2.2,
+        0
+      ]
+    },
+    {
+      "id": "pillar-south",
+      "object": "membrane-pillar",
+      "location": [
+        11.2,
+        -2.2,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_stencil_gallery": {
+      "note": "Chapter 5, the top of the shaft: a gallery of hundreds of hand stencils in rows of four, some rows with three. The climbers walk the wall, find the bare row, and stand at it; the press itself is the 2D set-piece.",
+      "world": {
+        "color": [
+          0.3,
+          0.12,
+          0.08
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "from-the-bank",
+          "type": "AREA",
+          "location": [
+            11.5,
+            0,
+            2.5
+          ],
+          "look_at": [
+            0,
+            2,
+            2
+          ],
+          "energy": 1800,
+          "size": 3,
+          "color": [
+            1.0,
+            0.55,
+            0.3
+          ]
+        },
+        {
+          "name": "wall-wash",
+          "type": "AREA",
+          "location": [
+            0,
+            -3,
+            5
+          ],
+          "look_at": [
+            0,
+            5,
+            2.5
+          ],
+          "energy": 500,
+          "size": 8,
+          "color": [
+            0.95,
+            0.85,
+            0.7
+          ]
+        },
+        {
+          "name": "shaft-heat",
+          "type": "POINT",
+          "location": [
+            -9.5,
+            -1,
+            0.6
+          ],
+          "energy": 200,
+          "size": 1.5,
+          "color": [
+            1.0,
+            0.35,
+            0.25
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -6,
+          -3.8,
+          2.4
+        ],
+        "look_at": [
+          0,
+          5,
+          2.2
+        ],
+        "lens_mm": 24,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -8,
+          -1.5,
+          0
+        ],
+        "facing_deg": 60
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "pillar-north",
+          "verb": "Stand at the bare row",
+          "leads_to": "s2_stencil_wall"
+        }
+      ]
+    }
+  }
+}

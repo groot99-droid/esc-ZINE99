@@ -127,14 +127,15 @@
       "id": "bloodstream",
       "name": "The Bloodstream",
       "scenes": [
-        "s3_river"
+        "s3_river",
+        "s3_bank_years_on"
       ],
       "dimensions_m": [
         1200,
         120,
         60
       ],
-      "lighting": "Crimson water lit from within, humid red haze, warm highlights on the canyon rims; the light swells with each beat at 72 bpm. One calm pool in a quiet bend.",
+      "lighting": "Crimson water lit from within, humid red haze, warm highlights on the canyon rims; the light swells with each beat at 72 bpm. One calm pool in a quiet bend. Years on (the one who stayed): the same bank, the canyon light lower and steadier, one raft waiting at the landing with a pale patch on its flank.",
       "objects": [
         "raft",
         "oar",
@@ -281,6 +282,52 @@
       "model": "soul_cinematic",
       "job_id": "a702f88d-c9c4-4af5-b400-7cb85ff27d54",
       "image": "assets/locations/pulse-wall-chamber.jpg"
+    },
+    {
+      "id": "stencil-gallery",
+      "name": "The stencil gallery",
+      "scenes": [
+        "s3_stencil_gallery"
+      ],
+      "dimensions_m": [
+        24,
+        10,
+        7
+      ],
+      "lighting": "Warm red-gold light and heat haze from the opening at the far end; the wall dark until four hands press one bare row on one beat, then every stencil glows from within, row by row.",
+      "objects": [
+        "membrane-pillar"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A long gallery cave at the top of a vertical shaft, one tall gently curved wall of warm pale chalky bone-rock covered with hundreds of small hand stencils blown in red ochre and dark charcoal pigment, arranged in neat horizontal rows of four hands side by side, a few rows with only three hands and an empty gap, one bare patch of clean wall at reaching height, soft living pink-red tissue framing the ceiling and floor edges, a smooth worn floor, the dark round mouth of the shaft in the floor at the near end, warm red-gold light and heat haze spilling from an opening at the far end. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "43d9787f-ebcd-4f4b-b4b0-0fea21e1844b",
+      "image": "assets/locations/stencil-gallery.jpg"
+    },
+    {
+      "id": "backwater",
+      "name": "The backwater",
+      "scenes": [
+        "s3_backwater"
+      ],
+      "dimensions_m": [
+        80,
+        60,
+        18
+      ],
+      "lighting": "Steady flat grey-rose light with no pulse, the only steady light on the river; the red glow of the living river through the pool's mouth. Dead grey-rose #8C7A78 for the water, used nowhere else.",
+      "objects": [
+        "raft",
+        "counter-board",
+        "counter-piece",
+        "gift-hook",
+        "gift-awl",
+        "gift-comb",
+        "gift-flute"
+      ],
+      "prompt": "Stylised cinematic 3D animated film still, fantasy world inside a living body, no gore. A quiet backwater: a wide still pool of flat dull grey-rose water with no current, enclosed by smooth curved canyon walls of dark crimson tissue under a low arched ceiling. In the middle distance a long shallow boat-shaped raft of dried pale grey tissue with ivory bone ribs floats moored against the left wall, old and faded, empty; on its flat deck lies a small ivory game board and a short row of four small carved bone tools. Steady flat grey light with no glow from the pool, and far at the back a narrow opening through which the bright red glow of a living river shows. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "72d2752b-0b3a-4386-b468-411b5b508286",
+      "image": "assets/locations/backwater.jpg"
     }
   ],
   "objects": [
@@ -291,7 +338,9 @@
       "scenes": [
         "s3_river",
         "s3_delta",
-        "s3_heart"
+        "s3_heart",
+        "s3_backwater",
+        "s3_bank_years_on"
       ],
       "size_m": [
         3.2,
@@ -310,7 +359,8 @@
       "role": "interact",
       "scenes": [
         "s3_river",
-        "s3_delta"
+        "s3_delta",
+        "s3_bank_years_on"
       ],
       "size_m": [
         0.2,
@@ -330,7 +380,8 @@
       "scenes": [
         "s3_marrow",
         "s3_marrow_after",
-        "s3_lamps"
+        "s3_lamps",
+        "s3_backwater"
       ],
       "size_m": [
         0.9,
@@ -350,7 +401,8 @@
       "scenes": [
         "s3_marrow",
         "s3_marrow_after",
-        "s3_lamps"
+        "s3_lamps",
+        "s3_backwater"
       ],
       "size_m": [
         0.04,
@@ -468,7 +520,8 @@
       "role": "fill",
       "scenes": [
         "s3_marrow",
-        "s3_shaft"
+        "s3_shaft",
+        "s3_stencil_gallery"
       ],
       "size_m": [
         0.8,
@@ -670,7 +723,8 @@
         "s3_gallery",
         "s3_heart",
         "s3_vessel",
-        "s3_vessel_two"
+        "s3_vessel_two",
+        "s3_backwater"
       ],
       "size_m": [
         0.06,
@@ -691,7 +745,8 @@
         "s3_gallery",
         "s3_heart",
         "s3_vessel",
-        "s3_vessel_two"
+        "s3_vessel_two",
+        "s3_backwater"
       ],
       "size_m": [
         0.03,
@@ -712,7 +767,8 @@
         "s3_gallery",
         "s3_heart",
         "s3_vessel",
-        "s3_vessel_two"
+        "s3_vessel_two",
+        "s3_backwater"
       ],
       "size_m": [
         0.12,
@@ -755,7 +811,8 @@
         "s3_gallery",
         "s3_heart",
         "s3_vessel",
-        "s3_vessel_two"
+        "s3_vessel_two",
+        "s3_backwater"
       ],
       "size_m": [
         0.03,

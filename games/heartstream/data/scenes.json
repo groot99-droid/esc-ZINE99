@@ -82,7 +82,8 @@
       "writes": [
         "run.counters_moves",
         "self.sow_on_beat",
-        "self.small_one_counter"
+        "self.small_one_counter",
+        "run.board_left"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -123,7 +124,8 @@
       "writes": [
         "run.gifts",
         "self.gift_given",
-        "self.underside_cut"
+        "self.underside_cut",
+        "self.gift_fit"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -154,7 +156,8 @@
       "writes": [
         "run.song",
         "run.song_harmony",
-        "run.song_complete"
+        "run.song_complete",
+        "run.song_rests"
       ],
       "enter": "push-in",
       "exit": "cut",
@@ -169,12 +172,16 @@
       "chapter": "c3_song",
       "game": "g1_counters",
       "reads": [
-        "run.song_complete"
+        "run.song_complete",
+        "run.board_left"
       ],
       "writes": [
         "run.counters_moves",
         "self.sow_on_beat",
-        "self.kept_counter"
+        "self.kept_counter",
+        "self.board_row",
+        "self.lent_counters",
+        "self.old_counter"
       ],
       "enter": "cut",
       "exit": "fade",
@@ -189,7 +196,8 @@
       "chapter": "c4_recognition",
       "writes": [
         "self.refused",
-        "run.stayers"
+        "run.stayers",
+        "self.felt_warm_seat"
       ],
       "enter": "fade",
       "exit": "push-in",
@@ -246,6 +254,45 @@
       "enter": "cut",
       "exit": "flatten",
       "next": [
+        "s3_stencil_gallery"
+      ]
+    },
+    {
+      "id": "s3_stencil_gallery",
+      "layer": "3d",
+      "name": "The stencil gallery at the top of the shaft",
+      "chapter": "c5_ascent",
+      "reads": [
+        "run.stayers",
+        "run.climb_lifts"
+      ],
+      "writes": [
+        "run.stencil_gap"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s2_stencil_wall"
+      ]
+    },
+    {
+      "id": "s2_stencil_wall",
+      "layer": "2d",
+      "name": "The Stencil Wall: four hands on one beat",
+      "chapter": "c5_ascent",
+      "mode": "m2_climb",
+      "reads": [
+        "run.stayers",
+        "run.climb_lifts",
+        "run.stencil_gap"
+      ],
+      "writes": [
+        "run.sync",
+        "self.stencil_pressed"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
         "s3_river"
       ]
     },
@@ -280,13 +327,17 @@
         "run.song_harmony",
         "run.stayer_beat",
         "self.gift_received",
-        "self.gift_quality"
+        "self.gift_quality",
+        "self.board_row",
+        "self.gift_fit",
+        "run.song_rests"
       ],
       "writes": [
         "self.in_time",
         "run.sync",
         "run.calm_count",
-        "self.saw_raft_mark"
+        "self.saw_raft_mark",
+        "self.colour"
       ],
       "enter": "flatten",
       "exit": "flatten",
@@ -303,12 +354,14 @@
       "reads": [
         "run.sync",
         "self.gift_received",
-        "self.gift_quality"
+        "self.gift_quality",
+        "run.song_rests"
       ],
       "writes": [
         "self.in_time",
         "run.sync",
-        "run.notice"
+        "run.notice",
+        "self.colour"
       ],
       "enter": "flatten",
       "exit": "push-in",
@@ -332,7 +385,8 @@
       ],
       "writes": [
         "run.route",
-        "run.calm_count"
+        "run.calm_count",
+        "run.dissent"
       ],
       "enter": "push-in",
       "exit": "flatten",
@@ -348,7 +402,9 @@
       "mode": "m2_river",
       "reads": [
         "run.route",
-        "run.sync"
+        "run.sync",
+        "run.song_rests",
+        "run.dissent"
       ],
       "writes": [
         "self.in_time",
@@ -357,9 +413,37 @@
         "self.exposure",
         "run.taken_count",
         "run.taken_seat",
-        "self.taken"
+        "self.taken",
+        "self.colour"
       ],
       "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s2_inspection",
+        "s3_hold"
+      ]
+    },
+    {
+      "id": "s2_inspection",
+      "layer": "2d",
+      "name": "The Inspection",
+      "chapter": "c6_river",
+      "mode": "m2_river",
+      "reads": [
+        "self.colour",
+        "self.in_time",
+        "run.notice",
+        "run.sync"
+      ],
+      "writes": [
+        "self.inspected",
+        "run.notice",
+        "self.exposure",
+        "run.taken_count",
+        "run.taken_seat",
+        "self.taken"
+      ],
+      "enter": "cut",
       "exit": "flatten",
       "next": [
         "s3_delta",
@@ -410,7 +494,10 @@
       "chapter": "c7_delta",
       "reads": [
         "run.route",
-        "run.sync"
+        "run.sync",
+        "run.dissent",
+        "self.gift_fit",
+        "run.song_rests"
       ],
       "writes": [
         "self.in_time",
@@ -419,7 +506,8 @@
         "self.exposure",
         "run.taken_count",
         "run.taken_seat",
-        "self.taken"
+        "self.taken",
+        "self.colour"
       ],
       "enter": "flatten",
       "exit": "push-in",
@@ -445,12 +533,32 @@
       "writes": [
         "run.route",
         "run.calm_count",
-        "run.saw_finished_board"
+        "run.saw_finished_board",
+        "run.dissent",
+        "run.saw_chart_back"
       ],
       "enter": "push-in",
       "exit": "pull-out",
       "next": [
-        "s1_song_2"
+        "s1_song_2",
+        "s3_backwater"
+      ]
+    },
+    {
+      "id": "s3_backwater",
+      "layer": "3d",
+      "name": "The backwater and the Finished Board",
+      "chapter": "c7_delta",
+      "reads": [
+        "run.route"
+      ],
+      "writes": [
+        "run.saw_finished_board"
+      ],
+      "enter": "pull-out",
+      "exit": "push-in",
+      "next": [
+        "s1_chart_2"
       ]
     },
     {
@@ -462,12 +570,19 @@
       "world_runs": true,
       "reads": [
         "run.song",
-        "run.calm_count"
+        "run.calm_count",
+        "self.board_row",
+        "run.stayers",
+        "run.taken_count"
       ],
       "writes": [
         "run.song",
         "run.song_harmony",
-        "run.song_last_beat"
+        "run.song_last_beat",
+        "run.song_rests",
+        "run.song_child",
+        "run.song_hollow",
+        "run.song_ends_on_gap"
       ],
       "enter": "push-in",
       "exit": "flatten",
@@ -483,7 +598,10 @@
       "mode": "m2_river",
       "reads": [
         "run.route",
-        "run.sync"
+        "run.sync",
+        "run.dissent",
+        "run.song_rests",
+        "self.colour"
       ],
       "writes": [
         "self.in_time",
@@ -492,7 +610,10 @@
         "self.exposure",
         "run.taken_count",
         "run.taken_seat",
-        "self.taken"
+        "self.taken",
+        "self.colour",
+        "run.blue_seat",
+        "self.hid_blue_arm"
       ],
       "enter": "flatten",
       "exit": "fade",
@@ -530,7 +651,9 @@
         "run.song_last_beat",
         "self.gift_marked",
         "self.gift_received",
-        "self.gift_quality"
+        "self.gift_quality",
+        "self.gift_fit",
+        "self.colour"
       ],
       "writes": [
         "self.grip",
@@ -609,7 +732,23 @@
       "reads": [
         "self.next_counter_carved",
         "self.taught_pulse",
-        "self.kept_counter"
+        "self.kept_counter",
+        "run.song_child"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "s3_bank_years_on"
+      ]
+    },
+    {
+      "id": "s3_bank_years_on",
+      "layer": "3d",
+      "name": "The bank, years on (the one who stayed)",
+      "chapter": "c9_alone",
+      "reads": [
+        "self.refused",
+        "self.mark"
       ],
       "enter": "fade",
       "exit": "fade"

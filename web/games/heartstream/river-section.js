@@ -26,19 +26,47 @@
 //
 // The companions' "Down." and "Hush." are the one who fears's lines from DESIGN.md section 6.
 
-import { howTo, Legend, Beats, Streak, flourish, disposeKit, artUrl, artImg, raster, plate, endCard } from "./_kit.js";
+import { howTo, Legend, Beats, Streak, flourish, disposeKit, artUrl, artImg, raster, plate, endCard, ladder, stagePicker, shared } from "./_kit.js";
+//
+// Phase 2 (DEEP_DIVE.md section 3, built 2026-11-16): the mode is a ladder of three reaches.
+//   Teach  open water: four oars on one beat; trim under a fold and over a swell. Nothing hunts here.
+//   Test   the patrol: tendrils, the eye, a tendril that rises during a hush (lift, without a stroke), and
+//          the confluence, where a second beat sounds half a beat late for eight beats and the stern
+//          rows the echo.
+//   Twist  the Blue Arm: the eye stays open until the bluest brother is hidden, so the raft trims to the
+//          stern, which lifts the bow toward a fold. It ends in the set-piece, The Inspection: the eye
+//          rises through the surface line and each brother holds his arm out, still, for four beats.
+// Colour is a state: each portrait's red climbs with that brother's time on the beat.
+// Links (api.shared): a rest bead set in Marrow-Song makes the eye open on the song's rest, where nobody
+// rows; the row left on the board in Bone Counters is hummed by the raft at boarding.
+// Lines written for the game: "It is not hungry. It is counting." (DEEP_DIVE.md section 2) and the
+// stage cards' and beats' wording.
 
 const C = { key: "#2a0a10", deep: "#7A1020", river: "#B3202E", hi: "#E0603A", gold: "#F2B544", bone: "#E8DCC4",
   marrow: "#1E3557", marrow2: "#2F5D8C", glow: "#7FB2E0", peach: "#f0b08a" };
 
-export default {
-  mount(root, api) {
+const STAGE = [
+  { len: 92, bpm: 72, folds: [22, 50, 78], swells: [36, 62], tendrils: [], preds: [], eyes: [], patrol: null, conf: null, blue: [] },
+  { len: 118, bpm: 76, folds: [12, 100], swells: [24, 110], tendrils: [{ x: 18 }, { x: 32 }, { x: 67.4, inEye: true }, { x: 106 }], preds: [28, 80], eyes: [46, 64], patrol: [40, 78], conf: 84, blue: [] },
+  { len: 96, bpm: 78, folds: [10, 31.5, 60.5], swells: [42, 74], tendrils: [{ x: 16 }, { x: 68 }], preds: [38], eyes: [22, 51], patrol: [0, 96], conf: null, blue: [22, 51], insp: 86 },
+];
+
+export default ladder(run, {
+  theme: { bg: "#2a0a10", fg: "#E8DCC4", accent: "#F2B544", ink: "#2a0a10" },
+  next: [null, "Next, the patrol: tendrils, the eye that opens under the raft, and a second beat where another vessel joins.",
+    "Next, the Blue Arm: something below is looking for whoever on the raft is still blue. Then it comes up to look."],
+});
+
+function run(root, api, ctl) {
+  {
+    const SG = ctl.stage, CF = STAGE[SG], sh = shared(api);
     const P = "heartstream-river-section-";
     const rng = api.rng();
     const RM = api.reducedMotion;
     const streak = new Streak(api);
-    const LEN = 250, CURRENT = 1.0;
-    const PATROL = [86, 182], NARROWS = 186;
+    const LEN = CF.len, CURRENT = 1.0;
+    const PATROL = CF.patrol || [1e9, 1e9], NARROWS = 1e9;
+    const song = sh.get("song", null), restLink = !!(song && song.rests > 0), boardRow = sh.get("boardRow", null);
     let GOOD = 120;
     const listeners = [];
     const on = (t, ev, fn, o) => { t.addEventListener(ev, fn, o); listeners.push([t, ev, fn, o]); };
@@ -96,6 +124,8 @@ export default {
 .${P}crew{display:flex;gap:6px}
 .${P}crew img{height:clamp(54px,11vh,84px);width:auto;border:2px solid ${C.key}}
 .${P}board .${P}start small{font-weight:400;opacity:.8;margin-left:6px}
+.${P}link{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;align-items:center;max-width:640px;padding:8px 12px;border:2px dashed ${C.gold};background:rgba(42,10,16,.6);font-size:14px;line-height:1.35;text-align:left}
+.${P}link b{grid-column:1 / -1;font:700 11px var(--g-body);letter-spacing:.14em;text-transform:uppercase;color:${C.gold}}
 .${P}shake{animation:${P}shk .35s}
 @keyframes ${P}shk{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 @media (max-width:560px){.${P}board p{font-size:17px}.${P}legend{display:none}.${P}beat{font-size:17px;top:28px}.${P}pad button{min-width:58px;padding:8px 8px}.${P}pad button.${P}row{min-width:92px}.${P}card{padding-top:44px}.${P}keys li{grid-template-columns:78px 1fr}}
@@ -109,18 +139,39 @@ export default {
     const bStern = mk("Stern ▶", "D / →", "", "Trim toward the stern (Right / D)");
     const bLift = mk("Lift", "hold W / ↑", "", "Hold to raise your oar (Up / W)");
     const bHush = mk("Hush", "hold S / ↓", "", "Hold to crouch and ship your oar (Down / S)");
-    [bBow, bStern, bLift, bHush].forEach((b) => { b.hidden = true; });
+    const bArm = mk("Arm out", "hold E", "", "Hold your arm out, still (E)");
+    [bBow, bStern, bLift, bHush, bArm].forEach((b) => { b.hidden = true; });
     const gentleOffer = streak.losses >= 2;
-    const intro = howTo(P, {
+    const gentleBox = gentleOffer ? `<label><input type="checkbox" class="${P}gentle"> Gentle Current: the beat window widens to ±200 ms</label>` : "";
+    const intro = howTo(P, [{
       kicker: "Chapter six",
       title: "The river section",
       quote: "It is not a tube.\nIt is a river.",
       scene: "The shaft is behind you. You sit at the stern of the living raft, your three brothers ahead of you, and the heart is somewhere downstream.",
-      goal: "Row the raft to the heart without being noticed by what swims below.",
-      keys: [["Row", "Space · tap the river · Row", "on the beat, with your brothers"]],
-      extra: `<p style="margin:0 0 8px">Other strokes come as the river brings them.</p>${gentleOffer ? `<label><input type="checkbox" class="${P}gentle"> Gentle Current: the beat window widens to ±200 ms</label>` : ""}`,
-    });
-    plate(api, intro, P, { card: "chapter-6", numeral: "numeral-6", css: "margin-right:44px;border:3px solid #2a0a10" });
+      goal: "Row the first reach on the heart's beat, under the folds and over the swells. Nothing hunts in open water.",
+      keys: [["Row", "Space · tap the river · Row", "on the beat, with your brothers"], ["Trim", "A/D · ←/→ · Bow/Stern", "bow down under a fold, stern down over a swell"]],
+      extra: `<p style="margin:0 0 8px">Your portrait reddens as you keep the time. Other strokes come in the reaches after this one.</p>${gentleBox}`,
+    }, {
+      kicker: "Chapter six · the patrol",
+      title: "The patrol",
+      quote: "immune creatures watch from the shadows",
+      scene: "The water darkens. Something long keeps pace under the raft, and where a side vessel joins, a second pulse comes down it half a beat late.",
+      goal: "Bring the raft through the patrol without the eye's notice filling.",
+      keys: [["Lift", "hold W · ↑ · Lift", "raise your oar over a tendril"], ["Hush", "hold S · ↓ · Hush", "when the drone sounds, until the eye closes"],
+        ["Still", "Hush or Lift, and no stroke", "a tendril under the open eye: lift, without a stroke"], ["Echo", "row the gold beads", "at the confluence the stern rows the late beat"]],
+      extra: gentleBox,
+    }, {
+      kicker: "Chapter seven · the blue arm",
+      title: "The Blue Arm",
+      quote: "The river grows narrower.\nThe current grows faster.\nThe heart draws near.",
+      scene: "One of you is still blue at the wrist: the one whose oar has kept the worst time. What swims below is looking for exactly that.",
+      goal: "Hide the blue arm from the open eye, keep the bow out of the folds, and at the end, be looked at.",
+      keys: [["Hide him", "Hush, then trim to the stern", "three backs between him and the eye; hushing alone no longer closes it"], ["Then", "trim back to the bow", "hiding him lifts the bow toward the next fold"],
+        ["Arm out", "hold E · Arm out", "at the last, hold your arm out, still, for four beats"]],
+      extra: gentleBox,
+    }][SG]);
+    plate(api, intro, P, { card: SG === 2 ? "chapter-7" : "chapter-6", numeral: SG === 2 ? "numeral-7" : "numeral-6", css: "margin-right:44px;border:3px solid #2a0a10" });
+    stagePicker(P, intro, ctl);
     wrap.append(css, cv, pad);
     const legend = new Legend(P, wrap);
     const beats = new Beats(P, wrap, RM);
@@ -167,32 +218,49 @@ export default {
     const kick = () => { clearTimeout(artTimer); artTimer = setTimeout(loadPlanes, 180); };
     const ro2 = new ResizeObserver(kick); ro2.observe(wrap); loadPlanes();
 
-    const folds = [22, 70, 128, 172, 196, 222, 240].map((x) => ({ x, hit: false, done: false }));
-    const swells = [50, 104, 160, 208, 231].map((x) => ({ x, hit: false, done: false }));
-    const tendrils = [40, 62, 92, 118, 150, 190, 214, 236].map((x) => ({ x, done: false }));
-    const preds = [34, 80, 140, 166, 202, 228].map((x) => ({ x, d: 4 + rng() * 7, home: 4 + rng() * 7, hunt: false, gone: false, ph: rng() * 6 }));
-    const eyes = [108, 136, 164].map((x) => ({ x, state: "wait", t: 0 }));
+    const folds = CF.folds.map((x) => ({ x, hit: false, done: false }));
+    const swells = CF.swells.map((x) => ({ x, hit: false, done: false }));
+    const tendrils = CF.tendrils.map((t) => ({ x: t.x, inEye: !!t.inEye, done: false }));
+    const preds = CF.preds.map((x) => ({ x, d: 4 + rng() * 7, home: 4 + rng() * 7, hunt: false, gone: false, ph: rng() * 6 }));
+    // an eye is the Blue Arm's when the stage says so; with a rest set in Marrow-Song it opens on the song's rest
+    const eyes = CF.eyes.map((x) => ({ x, state: "wait", t: 0, blue: CF.blue.includes(x), rest: restLink && !CF.blue.includes(x), hid: 0, openBeats: 0 }));
+    const conf = { at: CF.conf, k0: -1, k1: -1 };   // the confluence: beats k0..k1 carry an echo half a beat late
+    const insp = { at: CF.insp || 1e9, phase: "", held: 0, wait: 0 };
+    const restBeats = new Set();
     const st = { started: false, over: false, x: 0, speed: CURRENT, trim: 0, pitch: 0, lift: false, hush: false,
       stun: 0, stop: 0, surge: 0, sync: 56, notice: 0, maxNotice: 0, rowBeats: 0, onBeats: 0, flash: 0, jolt: 0, eye: 0, msg: "", msgT: 0,
-      hits: 0, stings: 0, bumps: 0, surges: 0, lastPhase: "", boarding: false, sawMark: false };
+      hits: 0, stings: 0, bumps: 0, surges: 0, lastPhase: "", boarding: false, sawMark: false, arm: false, hidden: 0 };
     const beatLog = new Map(); // beat index -> { player: "on"|"off"|null, comp: [bool x3], active }
     let beatTimes = [], nextBeat = 0, nextEval = 0, lastNow = 0, raf = 0, audio = null;
     const strokes = []; // recent stroke marks: { t, on }
     const fx = [];      // flourishes on the canvas: { kind, x, y, t }
 
-    const bpm = () => (st.x < NARROWS ? 76 : 76 + 10 * Math.min(1, (st.x - NARROWS) / 44));
+    const bpm = () => CF.bpm;
+    const inConf = (k) => conf.k0 >= 0 && k >= conf.k0 && k <= conf.k1;
+    // the moment the stern should row beat k: on it, or (at the confluence) half a beat after it
+    const target = (k) => beatTimes[k] + (inConf(k) ? 30000 / bpm() : 0);
+    const inTime = () => (st.rowBeats ? (100 * st.onBeats) / st.rowBeats : 100);
+    // colour is a state: red climbs with time kept (DEEP_DIVE.md section 2). In the twist the one who argues
+    // has kept the worst time, unless yours is worse.
+    const colourOf = (i) => {
+      if (i === 3) { const t = inTime(); return st.rowBeats < 6 ? "turning" : t >= 85 ? "red" : t >= 60 ? "turning" : "blue"; }
+      if (SG < 2) return i === 0 && SG === 1 ? "red" : "turning";
+      return i === 2 ? (colourOf(3) === "blue" ? "turning" : "blue") : "red";
+    };
+    const blueSeat = () => (SG === 2 ? (colourOf(3) === "blue" ? 3 : 2) : -1);
     const say = (m) => { st.msg = m; st.msgT = 2200; };
     const inPatrol = () => st.x >= PATROL[0] && st.x <= PATROL[1];
     const eyeOpen = () => eyes.some((e) => e.state === "open");
     const eyeTell = () => eyes.some((e) => e.state === "tell");
-    const playerActive = () => st.stun <= 0 && !st.hush && !st.lift;
-    const nearestBeat = (now) => { let k = Math.max(0, nextBeat - 2), best = Infinity, bi = k; for (let i = k; i < beatTimes.length; i++) { const d = Math.abs(now - beatTimes[i]); if (d < best) { best = d; bi = i; } } return [bi, now - beatTimes[bi]]; };
+    const playerActive = () => st.stun <= 0 && !st.hush && !st.lift && !st.arm;
+    const still = () => st.hush || st.lift;
+    const nearestBeat = (now) => { let k = Math.max(0, nextBeat - 2), best = Infinity, bi = k; for (let i = k; i < beatTimes.length; i++) { const d = Math.abs(now - target(i)); if (d < best) { best = d; bi = i; } } return [bi, now - target(bi)]; };
 
     // ---- sound: a soft lub-dub on the beat, a low drone on the eye's tell ------------------------
-    function thump(strong) {
+    function thump(strong, echo) {
       if (!audio) return;
       const t = audio.currentTime;
-      [[0, 58], [0.16, 46]].forEach(([dt, f]) => {
+      (echo ? [[0, 88]] : [[0, 58], [0.16, 46]]).forEach(([dt, f]) => {
         const o = audio.createOscillator(), v = audio.createGain();
         o.frequency.setValueAtTime(f * 1.6, t + dt); o.frequency.exponentialRampToValueAtTime(f, t + dt + 0.12);
         v.gain.setValueAtTime(0.0001, t + dt); v.gain.exponentialRampToValueAtTime(strong ? 0.5 : 0.3, t + dt + 0.01); v.gain.exponentialRampToValueAtTime(0.0001, t + dt + 0.2);
@@ -214,7 +282,12 @@ export default {
     }
 
     // ---- unlocking actions as the river brings them ---------------------------------------------
-    function unlock(key) {
+    function unlock(key, quiet) {
+      if (quiet) {
+        if (key === "lift" && legend.add("lift", "Lift", "hold W · ↑ · Lift")) bLift.hidden = false;
+        if (key === "hush" && legend.add("hush", "Hush", "hold S · ↓ · Hush")) bHush.hidden = false;
+        return;
+      }
       if (key === "trim" && legend.add("trim", "Trim", "A/D · ←/→ · Bow/Stern", true)) {
         bBow.hidden = false; bStern.hidden = false;
         beats.show("A valve fold hangs low ahead. Trim to the bow to pass under it; trim to the stern to ride a swell.", 5200, "trim", "New stroke · Trim");
@@ -233,7 +306,8 @@ export default {
     function row() {
       if (!st.started || st.over) return;
       if (st.stun > 0) { say("Stunned: you cannot row."); flourish(bRow, P + "shake", RM, 360); return; }
-      if (st.hush || st.lift) return;
+      if (st.hush || st.lift || st.arm) return;
+      if (insp.phase === "look") { st.notice += 10; insp.held = 0; say("A stroke, under the eye. It begins again."); return; }
       const now = performance.now();
       const [k, off] = nearestBeat(now);
       const ok = Math.abs(off) <= GOOD;
@@ -258,16 +332,17 @@ export default {
       const up = () => { st[key] = false; btn.setAttribute("aria-pressed", "false"); };
       on(btn, "pointerdown", down); on(btn, "pointerup", up); on(btn, "pointercancel", up); on(btn, "pointerleave", up);
     };
-    hold(bLift, "lift"); hold(bHush, "hush");
+    hold(bLift, "lift"); hold(bHush, "hush"); hold(bArm, "arm");
     on(bRow, "pointerdown", (e) => { e.preventDefault(); row(); });
     on(bBow, "click", () => setTrim(-1));
     on(bStern, "click", () => setTrim(1));
     on(cv, "pointerdown", (e) => { e.preventDefault(); row(); });
     on(window, "keydown", (e) => {
       if (st.boarding) { const k = e.key.toLowerCase(); if (k === "t") { e.preventDefault(); touchMark(); } else if (k === "enter") { e.preventDefault(); board(); } return; }
-      if (!st.started) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); start(); } return; }
+      if (!st.started) { if (e.target && e.target.dataset && e.target.dataset.stage) return; if (e.key === "Enter" || e.key === " ") { e.preventDefault(); start(); } return; }
       const k = e.key.toLowerCase();
-      if (k === " " || k === "j") { e.preventDefault(); if (!e.repeat) row(); }
+      if (k === "e" || k === "x") { e.preventDefault(); if (!bArm.hidden) { st.arm = true; bArm.setAttribute("aria-pressed", "true"); } }
+      else if (k === " " || k === "j") { e.preventDefault(); if (!e.repeat) row(); }
       else if (k === "arrowleft" || k === "a") { e.preventDefault(); if (!e.repeat) setTrim(-1); }
       else if (k === "arrowright" || k === "d") { e.preventDefault(); if (!e.repeat) setTrim(1); }
       else if (k === "arrowup" || k === "w") { e.preventDefault(); st.lift = true; bLift.setAttribute("aria-pressed", "true"); }
@@ -277,6 +352,7 @@ export default {
       const k = e.key.toLowerCase();
       if (k === "arrowup" || k === "w") { st.lift = false; bLift.setAttribute("aria-pressed", "false"); }
       if (k === "arrowdown" || k === "s") { st.hush = false; bHush.setAttribute("aria-pressed", "false"); }
+      if (k === "e" || k === "x") { st.arm = false; bArm.setAttribute("aria-pressed", "false"); }
     });
     on(intro.querySelector("." + P + "start"), "click", () => start());
 
@@ -288,18 +364,36 @@ export default {
       if (gc && gc.checked) GOOD = 200;
       intro.remove();
       try { audio = new (window.AudioContext || window.webkitAudioContext)(); } catch { audio = null; }
+      if (SG > 0) { st.boarding = true; board(); return; }
       st.boarding = true;
       boardEl = document.createElement("div"); boardEl.className = P + "board"; boardEl.setAttribute("role", "dialog"); boardEl.setAttribute("aria-label", "Boarding the raft");
       const url = artUrl(api, "raft-flank-mark");
       boardEl.innerHTML = `<div class="${P}flank">${url ? `<img alt="The raft at the bank: a long pale hull, and on its flank one paler patch." src="${url}">` : `<div style="aspect-ratio:16/9;width:min(92vw,820px);background:${C.bone}"></div>`}${artUrl(api, "ui-frame-page") ? `<img alt="" class="${P}frm" src="${artUrl(api, "ui-frame-page")}">` : ""}<button type="button" aria-label="Lay your hand on the pale patch (T)"></button></div>
 <p aria-live="polite">They board together, still a brotherhood.\nThey do not know how long that will last.\nThe raft lies against the bank. On its flank there is a patch paler than the rest.</p>
-<div class="${P}crew"></div><button type="button" class="${P}start">Board the raft<small>Enter</small></button>`;
+${rowSvg()}<div class="${P}crew"></div><button type="button" class="${P}start">Board the raft<small>Enter</small></button>`;
+      if (Array.isArray(boardRow)) { later(hum, 900); }
       const crew = boardEl.querySelector("." + P + "crew");
       TEMPERS.forEach((t) => { const im = artImg(api, `seat-${t}-blue`, "", "the one who " + t); if (im) crew.appendChild(im); });
       wrap.appendChild(boardEl);
       on(boardEl.querySelector("." + P + "flank button"), "click", touchMark);
       on(boardEl.querySelector("." + P + "start"), "click", board);
       boardEl.querySelector("." + P + "flank button").focus();
+    }
+    // link, board to river: the raft hums the row you left on the board at the cut (five heights; an empty hollow is a rest)
+    const rowHeights = () => (Array.isArray(boardRow) ? boardRow.slice(0, 5).map((n) => Math.max(0, Math.min(5, n | 0))) : null);
+    function rowSvg() {
+      const hs = rowHeights(); if (!hs) return "";
+      const dots = hs.map((h, i) => (h ? `<circle cx="${20 + i * 34}" cy="${52 - h * 8}" r="8" fill="${C.gold}" stroke="${C.key}" stroke-width="2"/>` : `<circle cx="${20 + i * 34}" cy="44" r="7" fill="none" stroke="${C.bone}" stroke-width="2" stroke-dasharray="3 3"/>`)).join("");
+      return `<div class="${P}link" role="note"><b>Because of the row you left on the board in Bone Counters</b><svg viewBox="0 0 176 60" width="176" height="60" aria-hidden="true"><line x1="4" x2="172" y1="52" y2="52" stroke="${C.bone}" stroke-opacity=".4"/>${dots}</svg><span>The raft hums five notes as you sit. You know them: they are the row you left when the elders called.</span></div>`;
+    }
+    const timers = [];
+    const later = (fn, ms) => { timers.push(setTimeout(fn, ms)); };
+    function hum() {
+      const hs = rowHeights(); if (!audio || !hs) return;
+      const F = [0, 196, 220, 262, 294, 330], t = audio.currentTime;
+      hs.forEach((h, i) => { if (!h) return; const o = audio.createOscillator(), v = audio.createGain(); o.type = "sine"; o.frequency.value = F[h] / 2;
+        v.gain.setValueAtTime(0.0001, t + i * 0.42); v.gain.exponentialRampToValueAtTime(0.16, t + i * 0.42 + 0.05); v.gain.exponentialRampToValueAtTime(0.0001, t + i * 0.42 + 0.4);
+        o.connect(v).connect(audio.destination); o.start(t + i * 0.42); o.stop(t + i * 0.42 + 0.45); });
     }
     function touchMark() {
       if (!boardEl || st.sawMark) return;
@@ -314,7 +408,10 @@ export default {
       st.started = true;
       beatTimes = [performance.now() + 700]; nextBeat = 0; nextEval = 0; lastNow = performance.now();
       legend.add("row", "Row", "Space · tap · Row");
-      beats.show("The raft answers when all four oars fall on the heartbeat. Row when the bead reaches the line.", 4600, "open", "Open water");
+      if (SG === 0) beats.show("The raft answers when all four oars fall on the heartbeat. Row when the bead reaches the line.", 4600, "open", "Open water");
+      else { legend.add("trim", "Trim", "A/D · ←/→ · Bow/Stern"); bBow.hidden = false; bStern.hidden = false; }
+      if (SG === 1) beats.show("The same beat, in darker water. Row, and trim as you learned.", 3600, "open", "The patrol");
+      if (SG === 2) { ["lift", "hush"].forEach((k2) => unlock(k2, true)); beats.show("Look at the four portraits. One wrist is still blue. Row on the beat; the eye will come for him.", 5200, "open", "The Blue Arm"); }
       bRow.focus();
     }
 
@@ -326,24 +423,48 @@ export default {
       if (st.stop > 0) st.stop--;
       const b = beatLog.get(k) || { player: null };
       // companions: on the beat at about 90%; they lift for tendrils and hush on the eye's tell
-      const hushing = eyeTell() || eyeOpen();
+      const hushing = eyeTell() || eyeOpen() || !!insp.phase;
       b.comp = [0, 1, 2].map(() => (hushing ? null : rng() < 0.9));
       b.active = playerActive() && !hushing;
       beatLog.set(k, b);
+      if (inConf(k)) later(() => thump(false, true), 30000 / bpm());
+      if (conf.k0 >= 0 && k === conf.k1 + 1) { say("The two pulses close up. One beat again."); beats.show("The side vessel's pulse falls in with the heart's. Row the bone beads again.", 3600, "confout"); }
       for (const e of eyes) {
         if (e.state === "tell" || e.state === "open") {
           e.t--;
+          if (e.state === "open") {
+            e.openBeats++;
+            if (e.blue) {
+              // the Blue Arm: hushing does not close it. Three backs between him and the eye do.
+              if (st.trim === 1 && still()) { e.hid++; if (e.hid >= 2) { e.state = "done"; st.hidden++; say("He is hidden. The eye closes. Bow down, now."); beats.show("Three backs between the blue arm and the eye. It closes. The bow is high: a fold is coming.", 3800, "hid" + e.x, "Hidden"); } else say("Hold there: the stern is low, the backs close over him."); }
+              else { e.hid = 0; if (e.openBeats === 3) beats.show("It is still open, and it is not looking at you all. It is looking at the blue arm. Trim to the stern: put three backs between him and the eye.", 5600, "bluehelp", "Hushing does not close it"); }
+              continue;
+            }
+          }
           if (e.t <= 0) {
-            if (e.state === "tell") { e.state = "open"; e.t = 4; say("The eye is open."); }
+            if (e.state === "tell") {
+              e.state = "open"; e.t = e.rest ? 2 : 4; say(e.blue ? "The eye is open. It wants the blue arm." : e.rest ? "The eye opens on the song's rest." : "The eye is open.");
+              if (e.rest) { restBeats.add(k + 1); restBeats.add(k + 2); beats.show("The eye opens on the song's rest, where nobody rows. Keep your oar out of the water for two beats; nobody needs to crouch.", 6000, "link-rest", "Because you set a rest bead in Marrow-Song"); }
+              if (tendrils.some((t) => t.inEye && !t.done && t.x - st.x < 8)) beats.show("A tendril is rising under the open eye. Lift, and make no stroke.", 4200, "ineye", "Lift, without a stroke");
+            }
             else { e.state = "done"; say("The eye closes. Row on."); }
           }
         }
+      }
+      // the set-piece: The Inspection
+      if (insp.phase === "rise") { insp.wait--; if (insp.wait <= 0) { insp.phase = "look"; say("It looks. Arm out, and still."); } }
+      else if (insp.phase === "look") {
+        const stroked = b.player != null;
+        if (st.arm && !st.hush && !st.lift && !stroked) { insp.held++; say(["", "It looks at the one who fears.", "It looks at the one who dreams.", "It looks at the one who argues.", "It looks at you."][insp.held] || ""); thump(true);
+          if (insp.held >= 4) { insp.phase = "done"; beats.show("It is not hungry. It is counting.", 4200, "counted", "The Inspection"); later(() => finish(true), RM ? 1200 : 3200); } }
+        else { if (insp.held > 0) say("Your arm came back. It begins again with the bow."); else if (st.hush) say("Crouching hides nothing now. Hold your arm out."); insp.held = 0; st.notice += st.hush ? 9 : 5; }
       }
     }
     function evalBeat(k) {
       const b = beatLog.get(k);
       if (!b || !b.comp) return;
       const comp = b.comp.filter((c) => c !== null);
+      if (restBeats.has(k)) { restBeats.delete(k); }
       const compOn = comp.filter(Boolean).length;
       const pOn = b.player === "on" ? 1 : 0;
       const rowers = comp.length + (b.active ? 1 : 0);
@@ -364,21 +485,32 @@ export default {
     function step(dt, now) {
       while (beatTimes.length - nextBeat < 8) beatTimes.push(beatTimes[beatTimes.length - 1] + 60000 / bpm());
       while (now >= beatTimes[nextBeat]) { onBeat(nextBeat); nextBeat++; }
-      while (nextEval < nextBeat && now >= beatTimes[nextEval] + GOOD + 10) { evalBeat(nextEval); nextEval++; }
+      while (nextEval < nextBeat && now >= target(nextEval) + GOOD + 10) { evalBeat(nextEval); nextEval++; }
       const s = dt / 1000;
       st.flash = Math.max(0, st.flash - s * 4);
       st.surge = Math.max(0, st.surge - dt);
       st.msgT = Math.max(0, st.msgT - dt);
       st.jolt = Math.max(0, st.jolt - s * 3);
       st.pitch += (st.trim * 0.6 - st.pitch) * Math.min(1, s * 5);
-      const v = st.stop > 0 ? 0 : st.speed + (st.surge > 0 ? 0.4 : 0);
+      const v = st.stop > 0 || insp.phase ? 0 : st.speed + (st.surge > 0 ? 0.4 : 0);
       st.x += v * s;
       // what the river brings next
-      if (st.x >= 10) unlock("trim");
-      if (st.x >= 30) unlock("lift");
-      if (st.x >= PATROL[0] - 4) unlock("hush");
-      if (st.x >= NARROWS - 2 && beats.show("The river grows narrower.\nThe current grows faster.\nThe heart draws near.", 6000, "narrows", "The narrows")) st.lastPhase = "narrows";
-      if (st.x >= PATROL[1] + 1 && st.x < NARROWS - 2) beats.show("The beast sinks out of sight behind you. The water warms.", 3600, "pastpatrol");
+      if (SG === 0 && st.x >= 10) unlock("trim");
+      if (SG === 1) {
+        if (st.x >= 8) unlock("lift");
+        if (st.x >= PATROL[0] - 4) unlock("hush");
+        if (st.x >= PATROL[1] + 1) beats.show("The beast sinks out of sight behind you. The water warms.", 3200, "pastpatrol");
+        if (conf.k0 < 0 && st.x >= conf.at) {
+          conf.k0 = nextBeat + 2; conf.k1 = conf.k0 + 7;
+          legend.add("echo", "Echo", "row the gold beads", true);
+          beats.show("A side vessel joins, and its pulse comes half a beat late. The bow keeps the heart. You are the stern: row the echo, the gold beads, for eight beats.", 6200, "conf", "The confluence · New · Echo");
+        }
+      }
+      if (SG === 2 && !insp.phase && st.x >= insp.at) {
+        insp.phase = "rise"; insp.wait = 4; st.trim = 0; bArm.hidden = false; legend.add("arm", "Arm out", "hold E · Arm out", true);
+        beats.show("The raft hushed perfectly, and it is not passed over. The eye rises through the surface line. Do not crouch and do not row: hold your arm out, still, for four beats.", 7000, "insp", "The Inspection · New · Arm out");
+        drone();
+      }
       // folds and swells, met at the bow (raft spans x-3..x+3)
       for (const f of folds) if (!f.done && st.x + 2.5 >= f.x) {
         f.done = true;
@@ -392,8 +524,8 @@ export default {
       }
       for (const t of tendrils) if (!t.done && st.x >= t.x) {
         t.done = true;
-        if (!st.lift && !st.hush) { st.stun = 2; st.stings++; say("Stung: two beats without your oar."); fx.push({ kind: "sting", t: now }); }
-        else { say("It rises past your lifted oar."); fx.push({ kind: "pass", t: now }); }
+        if (t.inEye ? !st.lift : !st.lift && !st.hush) { st.stun = 2; st.stings++; say(t.inEye && st.hush ? "Stung: crouching does not lift an oar." : "Stung: two beats without your oar."); fx.push({ kind: "sting", t: now }); }
+        else { say(t.inEye ? "It rises past your lifted oar, and the eye sees nothing move." : "It rises past your lifted oar."); fx.push({ kind: "pass", t: now }); }
       }
       for (const p of preds) {
         if (p.gone) continue;
@@ -411,10 +543,13 @@ export default {
         } else p.d = p.home + Math.sin(p.ph) * 0.6;
         if (p.x < st.x - 25) p.gone = true;
       }
-      for (const e of eyes) if (e.state === "wait" && st.x >= e.x) { e.state = "tell"; e.t = 2; drone(); say("A low drone: the eye is about to open. Hush."); }
-      if (eyeOpen() && !st.hush) st.notice += 15 * s;
-      if (st.hush && !eyeTell() && !eyeOpen() && !inPatrol()) st.notice -= 6 * s;
-      else if (st.hush) st.notice -= (st.x > 150 ? 4 : 6) * s;
+      for (const e of eyes) if (e.state === "wait" && st.x >= e.x) { e.state = "tell"; e.t = 2; drone(); say(e.rest ? "A low drone: the song's rest is coming." : "A low drone: the eye is about to open. Hush."); }
+      const open = eyes.find((e) => e.state === "open");
+      if (open && open.rest) { /* nobody rows on the rest; only a stroke is seen (row() adds it) */ }
+      else if (open && open.blue) st.notice += (still() ? 4.5 : 15) * s;
+      else if (open && !still()) st.notice += 15 * s;
+      if (insp.phase || (open && open.blue)) { /* hushing buys nothing from an eye that is looking for someone */ }
+      else if (st.hush) st.notice -= 6 * s;
       st.notice = Math.max(0, st.notice);
       st.maxNotice = Math.max(st.maxNotice, st.notice);
       if (st.notice >= 60) beats.show("The eye turns toward the stern. Toward you.", 3200, "n60");
@@ -424,11 +559,18 @@ export default {
     }
 
     function finish(win) {
+      if (st.over) return;
       st.over = true;
       streak.record(win ? "win" : "lose");
       const inTime = st.rowBeats ? Math.round((100 * st.onBeats) / st.rowBeats) : 0;
       let text;
-      if (win) {
+      if (win && SG === 0) {
+        text = `The first reach is behind you, still four. ${inTime >= 85 ? `You kept the heart's time on ${inTime}% of your strokes, and the red has climbed your wrist.` : inTime >= 60 ? `You kept time on ${inTime}% of your strokes; the red is at your wrist and no higher.` : `Your oar found the beat on only ${inTime}% of strokes. Your wrist is still blue.`}${st.hits ? ` The folds and swells stopped you ${st.hits} time${st.hits > 1 ? "s" : ""}.` : " Nothing touched the bow."}${st.sawMark ? " The raft knew the way. It is grown from everyone who never went." : ""}`;
+      } else if (win && SG === 1) {
+        text = `Past the patrol and the confluence, still four. You kept time on ${inTime}% of your strokes.${st.maxNotice >= 60 ? " The eye had turned your way once, and turned back." : " The eye never settled on you."}${st.stings ? ` Stung ${st.stings} time${st.stings > 1 ? "s" : ""}.` : " No tendril found your oar."}${restLink ? " The eye opened on the song's rest, where nobody was rowing." : ""}`;
+      } else if (win && SG === 2) {
+        text = `It looked at each arm in turn, the blue one last and longest, and sank. It is not hungry. It is counting. You hid your brother ${st.hidden} time${st.hidden === 1 ? "" : "s"}${st.hits ? `, and the folds caught the raised bow ${st.hits} time${st.hits > 1 ? "s" : ""}` : ", and the bow came down before every fold"}. Your own time on the beat: ${inTime}%.`;
+      } else if (win) {
         const how = inTime >= 85 ? "You kept the heart's time on " + inTime + "% of your strokes, and the raft ran warm under all four of you."
           : inTime >= 60 ? "You kept time on " + inTime + "% of your strokes; the raft forgave the rest."
           : "Your oar found the beat on only " + inTime + "% of strokes; your brothers carried the time for you.";
@@ -438,8 +580,9 @@ export default {
       } else {
         text = "The eye found the stern. You are lifted into the beast in one movement, without a struggle, and your seat stays empty. Your brothers row on with three. Taken by the river.";
       }
-      endCard(wrap, api, win ? "chapter-8" : "ending-taken-by-the-river", win ? { numeral: "numeral-8" } : {});
-      api.end({ outcome: win ? "win" : "lose", text: text + (!win && streak.losses >= 2 ? " (Gentle Current is offered on the next start.)" : "") });
+      if (!win && insp.phase) text = "It looked along the raft and stopped at the stern. You are lifted into the beast in one movement, without a struggle, and your seat stays empty. Taken by the river.";
+      ctl.end({ outcome: win ? "win" : "lose", text: text + (!win && streak.losses >= 2 ? " (Gentle Current is offered on the next start.)" : "") },
+        () => endCard(wrap, api, win ? (SG === 2 ? "river-inspection" : "chapter-8") : "ending-taken-by-the-river", win && SG !== 2 ? { numeral: "numeral-8" } : {}));
     }
 
     // ---- drawing (woodblock) --------------------------------------------------------------------
@@ -471,8 +614,7 @@ export default {
       const jy = st.jolt * Math.sin(now / 30) * 4;
       const narrows = Math.max(0, Math.min(1, (st.x - NARROWS + 10) / 30));
       // the reach: 0 open water, 1 the patrol, 2 the narrows; `mix` fades the next plane in
-      const reach = st.x < PATROL[0] - 8 ? 0 : st.x < NARROWS - 6 ? 1 : 2;
-      const edge = reach === 0 ? PATROL[0] - 8 : NARROWS - 6, mix = reach < 2 ? Math.max(0, Math.min(1, (st.x - edge + 8) / 8)) : 0;
+      const reach = SG, mix = 0;
       const useArt = A.far[reach] && Math.abs(A.h - H) < 2;
       const tiles = (c, off, sy0, sh, dy, dh) => { // mirrored tiling across the width, so the seams meet
         const tw = A.tw, o = ((off % (2 * tw)) + 2 * tw) % (2 * tw), ky = c.height / A.h;
@@ -552,7 +694,11 @@ export default {
         g.beginPath(); g.ellipse(bx, ey, 46, 4 + 20 * open, 0, 0, Math.PI * 2);
         g.fillStyle = open > 0.6 ? C.gold : "#9a6a2a"; g.fill(); g.lineWidth = 3; g.strokeStyle = C.key; g.stroke();
         g.beginPath(); g.ellipse(bx, ey, 6, 3 + 16 * open, 0, 0, Math.PI * 2); g.fillStyle = C.key; g.fill();
-        if (eyeOpen() || eyeTell()) label(eyeOpen() ? (st.hush ? "THE EYE IS OPEN · STILL" : "THE EYE IS OPEN · HUSH!") : "A DRONE · HUSH NOW", bx, ey - 40, eyeOpen() && !st.hush ? C.gold : C.bone, C.key);
+        const oe = eyes.find((e) => e.state === "open");
+        if (insp.phase) { /* the eye is drawn above the surface, below */ }
+        else if (oe && oe.blue) label(st.trim === 1 && still() ? "HIDING HIM · HOLD" : still() ? "STILL OPEN · STERN ▶ TO HIDE HIM" : "THE EYE IS OPEN · HUSH, THEN STERN ▶", bx, ey - 40, st.trim === 1 && still() ? C.bone : C.gold, C.key);
+        else if (oe && oe.rest) label("THE SONG'S REST · NO STROKE", bx, ey - 40, C.bone, C.key);
+        else if (eyeOpen() || eyeTell()) label(eyeOpen() ? (still() ? "THE EYE IS OPEN · STILL" : "THE EYE IS OPEN · HUSH!") : "A DRONE · HUSH NOW", bx, ey - 40, eyeOpen() && !still() ? C.gold : C.bone, C.key);
       }
       // tendrils rising on their tell
       for (const t of tendrils) {
@@ -564,7 +710,7 @@ export default {
         g.bezierCurveTo(x - 20, H - (H - tipY) * 0.4, x + 22, tipY + (H - tipY) * 0.3, x, tipY); g.stroke();
         const glow = ahead < 6 ? 0.5 + 0.5 * Math.sin(now / 90) : 0.2;
         g.beginPath(); g.arc(x, tipY, 5 + 5 * glow, 0, Math.PI * 2); g.fillStyle = `rgba(255,236,200,${0.5 + glow * 0.5})`; g.fill();
-        if (!t.done && ahead < 7 && ahead > 0 && legend.has("lift")) label(st.lift ? "OAR UP" : "LIFT ▲", x, tipY - 18, st.lift ? C.gold : C.bone, C.key);
+        if (!t.done && ahead < 7 && ahead > 0 && legend.has("lift")) label(st.lift ? "OAR UP" : t.inEye ? "LIFT ▲ · NO STROKE" : "LIFT ▲", x, tipY - 18, st.lift ? C.gold : C.bone, C.key);
       }
       // cell predators: glassy lanterns with chevrons
       for (const p of preds) {
@@ -588,7 +734,9 @@ export default {
       const lastB = beatLog.get(nextBeat - 1);
       seats.forEach((bx, i) => {
         const me = i === 3;
-        const crouch = me ? st.hush : eyeTell() || eyeOpen();
+        const looked = insp.phase === "look" || insp.phase === "done";
+        const crouch = looked ? false : me ? st.hush : eyeTell() || eyeOpen();
+        const armOut = looked && (me ? st.arm : true);
         const stunned = me && st.stun > 0;
         const hgt = crouch ? 26 : 46;
         g.fillStyle = me ? "#6a5a8a" : C.marrow2; g.strokeStyle = me ? C.gold : C.key; g.lineWidth = me ? 3 : 2;
@@ -597,11 +745,13 @@ export default {
         g.strokeStyle = me && stunned ? "#999" : C.bone; g.lineWidth = 4; g.beginPath();
         const lifted = me ? st.lift : false;
         const stroke = lastB && (me ? lastB.player === "on" : lastB.comp && lastB.comp[i]) ? st.flash * 14 : 0;
-        if (crouch) { g.moveTo(bx - 30, -26); g.lineTo(bx + 30, -30); }
+        if (armOut) { g.moveTo(bx, -22 - hgt + 10); g.lineTo(bx + 4, 6); g.stroke(); g.beginPath(); g.strokeStyle = colourOf(i) === "blue" ? C.glow : colourOf(i) === "red" ? C.hi : "#b98aa0"; g.lineWidth = 5; g.moveTo(bx - 2, -22 - hgt + 14); g.lineTo(bx - 30, -22 - hgt + 22); }
+        else if (crouch) { g.moveTo(bx - 30, -26); g.lineTo(bx + 30, -30); }
         else if (lifted) { g.moveTo(bx, -40); g.lineTo(bx + 40, -110); }
         else { g.moveTo(bx + 4, -40); g.lineTo(bx - 34 - stroke, 46); }
         g.stroke();
         if (me) { g.fillStyle = stunned ? C.bone : C.gold; g.font = "700 13px sans-serif"; g.textAlign = "center"; g.fillText(stunned ? "STUNG" : "YOU", bx, -52 - hgt); }
+        if (i === blueSeat()) { g.fillStyle = C.glow; g.fillRect(bx - 9, -24 - hgt * 0.45, 18, 5); if (!me) { g.font = "700 11px sans-serif"; g.textAlign = "center"; g.fillText("BLUE", bx, -52 - hgt); } }
       });
       // flourishes at your oar: a gold ring on the beat, a splash off it
       for (let i = fx.length - 1; i >= 0; i--) {
@@ -614,6 +764,17 @@ export default {
       }
       // trim gauge under the raft
       g.restore();
+      if (insp.phase) {
+        // The Inspection: the only thing in the print that ever crosses the surface line
+        const up = insp.phase === "rise" ? 1 - Math.max(0, insp.wait) / 4 : 1, ex = Math.min(W - 90, rx + Math.max(190, W * 0.3)), top = SURF - 96 * up;
+        g.beginPath(); g.moveTo(ex - 120, H); g.bezierCurveTo(ex - 120, SURF, ex - 80, top, ex, top); g.bezierCurveTo(ex + 80, top, ex + 120, SURF, ex + 120, H); g.closePath();
+        g.fillStyle = "#3d0610"; g.fill(); g.lineWidth = 4; g.strokeStyle = C.key; g.stroke();
+        g.beginPath(); g.ellipse(ex, top + 44, 44, 22, 0, 0, 7); g.fillStyle = C.gold; g.fill(); g.lineWidth = 3; g.stroke();
+        const seatX = rx + [80, 30, -20, -70][Math.min(3, insp.held)], dx = Math.max(-1, Math.min(1, (seatX - ex) / 300));
+        g.beginPath(); g.ellipse(ex + dx * 16 - 8, top + 44, 6, 18, 0, 0, 7); g.fillStyle = C.key; g.fill();
+        if (insp.phase === "look") { g.setLineDash([5, 7]); g.strokeStyle = "rgba(242,181,68,.7)"; g.lineWidth = 2; g.beginPath(); g.moveTo(ex - 40, top + 40); g.lineTo(seatX, ry - 60); g.stroke(); g.setLineDash([]);
+          label(st.arm && !st.hush ? `STILL · ${insp.held} OF 4` : "ARM OUT · HOLD E", ex, top - 12, st.arm && !st.hush ? C.bone : C.gold, C.key); }
+      }
       if (legend.has("trim")) {
         const gx = rx, gy = ry + 34;
         g.fillStyle = "rgba(42,10,16,.75)"; g.fillRect(gx - 70, gy - 2, 140, 22);
@@ -636,18 +797,19 @@ export default {
       g.fillStyle = "rgba(42,10,16,.6)"; g.fillRect(0, 0, W, 30);
       if (A.line) { const k = W / 1600, sh = Math.min(120, 30 / k); g.drawImage(A.line, 0, (120 - sh) / 2, 1600, sh, 0, 15 - (sh * k) / 2, W, sh * k); }
       else { g.strokeStyle = C.bone; g.lineWidth = 2; g.beginPath(); g.moveTo(vx0, vy); g.lineTo(vx1, vy); g.stroke(); }
-      g.fillStyle = "rgba(0,0,0,.45)"; g.fillRect(vx0 + (vx1 - vx0) * PATROL[0] / LEN, vy - 3, (vx1 - vx0) * (PATROL[1] - PATROL[0]) / LEN, 6);
-      g.fillStyle = C.hi; g.fillRect(vx0 + (vx1 - vx0) * NARROWS / LEN, vy - 1, (vx1 - vx0) * (LEN - NARROWS) / LEN, 3);
+      if (CF.patrol) { g.fillStyle = "rgba(0,0,0,.45)"; g.fillRect(vx0 + (vx1 - vx0) * PATROL[0] / LEN, vy - 3, (vx1 - vx0) * (PATROL[1] - PATROL[0]) / LEN, 6); }
+      if (CF.conf) { g.fillStyle = C.gold; g.fillRect(vx0 + (vx1 - vx0) * CF.conf / LEN, vy - 4, 3, 8); }
       const gx = vx0 + (vx1 - vx0) * Math.min(1, st.x / LEN);
       g.fillStyle = C.bone; g.beginPath(); g.moveTo(gx - 9, vy - 5); g.lineTo(gx + 9, vy - 5); g.lineTo(gx + 6, vy + 5); g.lineTo(gx - 6, vy + 5); g.fill();
       if (!A.line) { const hs = 1 + st.flash * 0.25; g.save(); g.translate(vx1 + 18, vy + 1); g.scale(hs, hs);
       g.fillStyle = C.gold; g.beginPath(); g.moveTo(0, 8); g.bezierCurveTo(-14, -2, -8, -12, 0, -5); g.bezierCurveTo(8, -12, 14, -2, 0, 8); g.fill(); g.restore(); }
       // the four seats, bow to stern: turning on the river, red in the narrows
-      { const col = st.x >= NARROWS ? "red" : "turning", small = W < 560, pw = small ? 34 : 46, ph = pw * 1.25;
+      { const small = W < 560, pw = small ? 34 : 46, ph = pw * 1.25;
         const px0 = small ? 10 : 14, py0 = small ? 36 : H - 150 - ph + 40;
         TEMPERS.forEach((t, i) => {
-          const c = A.seat[`${t}-${col}`]; if (!c) return;
+          const c = A.seat[`${t}-${colourOf(i)}`]; if (!c) return;
           const x = px0 + i * (pw + 4), me = i === 3;
+          if (i === blueSeat()) { g.fillStyle = C.glow; g.fillRect(x - 2, py0 + ph + 2, pw + 4, 5); }
           if (me && st.stun > 0) g.globalAlpha = 0.45;
           g.drawImage(c, x, py0, pw, ph); g.globalAlpha = 1;
           g.lineWidth = me ? 3 : 1.5; g.strokeStyle = me ? C.gold : C.key; g.strokeRect(x, py0, pw, ph);
@@ -671,8 +833,11 @@ export default {
       g.strokeStyle = C.gold; g.lineWidth = 3; g.beginPath(); g.moveTo(hitX, ly - 17); g.lineTo(hitX, ly + 17); g.stroke();
       if (st.started) {
         for (let k = Math.max(0, nextBeat - 1); k < beatTimes.length; k++) {
-          const x = hitX + (beatTimes[k] - now) * pxPerMs; if (x < lx + 4 || x > lx + lw - 4) continue;
-          g.fillStyle = C.bone; g.beginPath(); g.arc(x, ly, 7, 0, Math.PI * 2); g.fill();
+          const x = hitX + (beatTimes[k] - now) * pxPerMs, echo = inConf(k), rest = restBeats.has(k);
+          if (echo) { const x2 = hitX + (target(k) - now) * pxPerMs; if (x2 > lx + 4 && x2 < lx + lw - 4) { g.fillStyle = C.gold; g.beginPath(); g.arc(x2, ly, 8, 0, Math.PI * 2); g.fill(); g.strokeStyle = C.key; g.lineWidth = 2; g.stroke(); } }
+          if (x < lx + 4 || x > lx + lw - 4) continue;
+          if (rest) { g.strokeStyle = C.glow; g.lineWidth = 2.5; g.setLineDash([3, 3]); g.beginPath(); g.arc(x, ly, 8, 0, Math.PI * 2); g.stroke(); g.setLineDash([]); continue; }
+          g.fillStyle = echo ? "rgba(232,220,196,.35)" : C.bone; g.beginPath(); g.arc(x, ly, echo ? 5 : 7, 0, Math.PI * 2); g.fill();
         }
         for (const s of strokes) {
           const x = hitX + (s.t - now) * pxPerMs; if (x < lx) continue;
@@ -680,6 +845,7 @@ export default {
         }
         while (strokes.length && strokes[0].t < now - 2400) strokes.shift();
         const last = strokes[strokes.length - 1];
+        if (inConf(nextBeat) || inConf(nextBeat - 1)) { g.font = "700 12px sans-serif"; g.textAlign = "right"; g.fillStyle = C.gold; g.fillText("STERN ROWS THE GOLD", lx + lw - 6, ly - 22); }
         if (last && now - last.t < 500) { g.font = "700 13px sans-serif"; g.textAlign = "left"; g.fillStyle = last.on ? C.gold : C.bone; g.textAlign = "center"; g.fillText(last.on ? "ON THE BEAT" : "SPLASH", hitX, ly - 24); }
       }
       if (st.msgT > 0) {
@@ -705,10 +871,11 @@ export default {
         cancelAnimationFrame(raf); artJob++; clearTimeout(artTimer);
         ro.disconnect(); ro2.disconnect();
         listeners.forEach(([t, ev, fn, o]) => t.removeEventListener(ev, fn, o));
+        timers.forEach(clearTimeout);
         beats.dispose(); disposeKit();
         if (audio) audio.close().catch(() => {});
         wrap.remove();
       },
     };
-  },
-};
+  }
+}

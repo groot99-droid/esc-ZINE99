@@ -28,7 +28,20 @@
 //   "The river grows narrower. / The current grows faster. / The heart draws near."
 //   "The body simply moves them on."
 
-import { howTo, Beats, Streak, flourish, disposeKit, artUrl, artImg, pngUrl, plate, endCard } from "./_kit.js";
+import { howTo, Beats, Streak, flourish, disposeKit, artUrl, artImg, pngUrl, plate, endCard, ladder, stagePicker, shared } from "./_kit.js";
+//
+// Phase 2 (DEEP_DIVE.md section 3, built 2026-11-16): a ladder of three plates.
+//   Teach  vote: two forks, thirty seconds each. The one who fears marks the only beast, and nobody stands on it.
+//   Test   listen for a pulse off the beat, and the awl: three forks of the delta, some with a second beast
+//          nobody feels. New: dissent. Each piece that stood against the winning branch is an eddy in the
+//          next stretch, and each eddy takes three seconds from the next fork.
+//   Twist  the Back of the Chart. The one who fears has stopped saying what he feels, and the delta's walls
+//          throw every pulse back: listening is right as often as not. The awl pricks through, and held to
+//          the light the vellum shows every vessel leaving the heart apart, and this fork from behind,
+//          turned over: its first branch is the last one there. Show them, and they set their pieces by
+//          yours. The last fork holds the set-piece, The Fourth Branch, to the backwater and the Finished Board.
+// The dissent's eddies are kept (api.shared) for the 3D stretch that reads `run.dissent`.
+// Lines written for the game: the stage cards, the dissent's and the back of the chart's lines.
 
 const GREY = "#8C7A78"; // the backwater's ink, used nowhere else
 const PIECES = ["ring", "notch", "spiral", "wave"], TEMPERS = ["laughs", "argues", "dreams", "fears"];
@@ -39,10 +52,21 @@ const SEATS = [
   { name: "Dreams", col: "#6a5a8a" },
   { name: "Fears", col: "#1E3557" },
 ];
-const JUNCTIONS = [{ chart: 1, n: 3, time: 30 }, { chart: 1, n: 3, time: 30 }, { chart: 2, n: 3, time: 20 }, { chart: 2, n: 3, time: 20 }, { chart: 2, n: 4, time: 20, back: true }];
+const STAGE = [
+  [{ chart: 1, n: 3, time: 30 }, { chart: 1, n: 3, time: 30 }],
+  [{ chart: 2, n: 3, time: 24 }, { chart: 2, n: 3, time: 24 }, { chart: 2, n: 3, time: 24 }],
+  [{ chart: 2, n: 3, time: 26 }, { chart: 2, n: 3, time: 26 }, { chart: 2, n: 4, time: 26, back: true }],
+];
 
-export default {
-  mount(root, api) {
+export default ladder(run, {
+  theme: { bg: "#f1e4c6", fg: "#3a2a20", accent: "#9e1b24", ink: "#f1e4c6" },
+  next: [null, "Next, the delta: forks where a second beast hides that nobody feels. You can listen, you have an awl, and a split vote costs the next fork its time.",
+    "Next, the last plate. He has stopped saying what he feels, and the walls answer every pulse. The chart has another side."],
+});
+
+function run(root, api, ctl) {
+  {
+    const SG = ctl.stage, sh = shared(api), JUNCTIONS = STAGE[SG];
     const P = "heartstream-branch-chart-";
     const rng = api.rng();
     const RM = api.reducedMotion;
@@ -57,13 +81,13 @@ export default {
       for (;;) {
         const bs = Array.from({ length: def.back ? def.n - 1 : def.n }, (_, i) => ({ id: "abcd"[i], current: 1 + Math.floor(rng() * 3), tendrils: Math.floor(rng() * 4),
           width: ["wide", "normal", "narrow"][Math.floor(rng() * 3)], calm: rng() < 0.3, patrol: false, heard: null, felt: false }));
-        const np = def.chart === 1 ? 1 : 1 + (rng() < 0.6 ? 1 : 0);
+        const np = def.chart === 1 ? 1 : SG === 2 ? 2 : 1 + (rng() < 0.6 ? 1 : 0);
         const order = bs.map((_, i) => i).sort(() => rng() - 0.5);
         order.slice(0, np).forEach((i) => { bs[i].patrol = true; });
         // the strongest current should not always be safe, or the tie-break would decide for you
         const strong = Math.max(...bs.map((b) => b.current));
         if (bs.some((b) => !b.patrol) && (idx < 1 || bs.some((b) => b.patrol && b.current === strong))) {
-          bs[order[0]].felt = true; // the one who fears feels one patrol
+          if (SG < 2) bs[order[0]].felt = true; // the one who fears feels one patrol (in the twist he has stopped saying)
           // the Fourth Branch: another hand's ink, no current, nothing in it
           if (def.back) bs.push({ id: "d", current: 0, tendrils: 0, width: "normal", calm: false, patrol: false, heard: null, felt: false, back: true });
           return { ...def, idx, branches: bs };
@@ -71,10 +95,10 @@ export default {
       }
     }
     const route = JUNCTIONS.map(makeJunction);
-    if (!route.slice(2).some((j) => j.branches.some((b) => b.calm))) { const j = route[2 + Math.floor(rng() * 3)]; j.branches.find((b) => !b.patrol).calm = true; }
+    if (!route.some((j) => j.branches.some((b) => b.calm))) { const j = route[Math.floor(rng() * route.length)]; j.branches.find((b) => !b.patrol).calm = true; }
 
     const st = { started: false, over: false, j: 0, time: 0, votes: [null, null, null, null], awl: { 1: false, 2: false }, revealed: false,
-      holding: null, phase: "vote", taken: [], sweep: null, listened: 0, awlUsed: 0, backHeard: false, sawBoard: false, looked: {} };
+      holding: null, phase: "vote", taken: [], sweep: null, listened: 0, awlUsed: 0, backHeard: false, sawBoard: false, looked: {}, eddies: 0, dissent: 0, pricked: false, shownAt: -1, sawBack: false };
     // the art, rasterised once (the SVG below is rebuilt many times a second)
     const png = {};
     const want = [["chart-plate-vi", 480, 330], ["chart-plate-vii", 480, 330], ...PIECES.map((m) => ["counter-" + m, 96, 96]),
@@ -124,6 +148,12 @@ export default {
 .${P}back p{margin:0;max-width:640px;text-align:center;font-size:18px;line-height:1.4;font-style:italic;min-height:2.8em}
 .${P}back .${P}go{font:600 16px var(--g-display);color:#2c2526;background:#e9e0d8;border:0;padding:10px 22px;cursor:pointer;min-height:44px}
 .${P}back .${P}go:disabled{opacity:.4;cursor:default}
+.${P}light{position:absolute;inset:0;z-index:7;background:#1c130c;color:#f3e6c8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:12px;box-sizing:border-box;overflow:auto}
+.${P}light .${P}lp{position:relative;max-width:min(100%,860px);flex:0 1 auto}
+.${P}light .${P}lp>img{display:block;width:100%;height:auto;max-height:62vh;object-fit:cover}
+.${P}light .${P}lp svg{position:absolute;left:3%;bottom:4%;width:44%;height:auto;min-width:210px;background:rgba(28,19,12,.5);border:1.5px solid #f2b544;border-radius:50% 46% 52% 48%}
+.${P}light p{margin:0;max-width:680px;text-align:center;font-size:17px;line-height:1.4;font-style:italic}
+.${P}light .${P}go{font:600 16px var(--g-display);color:#1c130c;background:#f3e6c8;border:0;padding:10px 22px;cursor:pointer;min-height:44px}
 .${P}intro{position:absolute;inset:0;display:grid;place-items:center;padding:16px;background:rgba(241,228,198,.88);z-index:8;overflow:auto}
 .${P}card{position:relative;max-width:580px;width:100%;box-sizing:border-box;background:${C.vellum};border:1.5px solid ${C.red};outline:1px solid ${C.red};outline-offset:5px;padding:22px 24px 20px}
 .${P}card::after{content:"";position:absolute;right:16px;top:18px;width:90px;height:70px;opacity:.5;background:
@@ -154,17 +184,39 @@ export default {
     const capsEl = document.createElement("ul"); capsEl.className = P + "caps"; capsEl.hidden = true;
     wrap.append(top, say, svg, capsEl, legendEl);
     const beats = new Beats(P, wrap, RM);
-    const intro = howTo(P, {
+    const intro = howTo(P, [{
       kicker: "Chapter six · plate V",
       title: "The Branch Chart",
       quote: "“branching vessels split like river deltas”",
-      scene: "The raft drifts toward the first fork. The four of you spread the chart on the tissue and each takes out his counter piece. Something patrols some of these vessels; the chart does not say which.",
-      goal: "Choose a way through five junctions to the heart that keeps the raft away from the beasts.",
-      keys: [["Vote", "tap a branch · 1–4 · Enter on a focused branch", "most pieces win; a tie goes to the strongest current"],
-        ["Read", "arrows, ticks, width, rings", "current, tendrils, narrowness, a calm pool"]],
-      extra: `Other ways of knowing come as you need them.${gentle ? " After two hard routes, your listening is sure this time." : ""}`,
-    });
-    plate(api, intro, P, { card: "chapter-6", numeral: "numeral-6", at: "50% 70%" });
+      scene: "The raft drifts toward the first fork. The four of you spread the chart on the tissue and each takes out his counter piece. Something patrols some of these vessels; the one who fears can feel it.",
+      goal: "Choose a way through two forks that keeps the raft away from the beast.",
+      keys: [["Vote", "tap a branch · 1–3 · Enter on a focused branch", "most pieces win; a tie goes to the strongest current"],
+        ["Read", "arrows, ticks, width, rings", "current, tendrils, narrowness, a calm pool"],
+        ["His mark", "a dashed eye on a branch", "the one who fears feels a beast there; nobody stands on it"]],
+      extra: "Other ways of knowing come on the next plate.",
+    }, {
+      kicker: "Chapter seven · plate VI, the delta",
+      title: "Listen",
+      quote: "“branching vessels split like river deltas”",
+      scene: "Three forks, closer together. He still feels one beast at each. Some forks hide a second that nobody feels.",
+      goal: "Find a way through three forks with no beast in it.",
+      keys: [["Listen", "hold L on a focused branch · Listen, then hold a branch", "three seconds: a pulse off the heart's beat is a beast, right seven times in ten"],
+        ["The awl", "A · once", "every beast at this fork"],
+        ["Dissent", "every piece against the winning branch", "is an eddy in the next stretch: three seconds gone from the next fork"]],
+      extra: gentle ? "After two hard routes, your listening is sure this time." : "",
+    }, {
+      kicker: "Chapter seven · the last plate",
+      title: "The Back of the Chart",
+      quote: "The river grows narrower.\nThe current grows faster.\nThe heart draws near.",
+      scene: "The one who fears has stopped saying what he feels. The walls are close enough here to throw every pulse back, and two of every three branches hold something.",
+      goal: "Find the way through the last three forks with no beast in it.",
+      keys: [["Listen", "as before", "right only as often as not, now"],
+        ["The awl", "A · it pricks through", "then hold the vellum to the light: this fork from behind, turned over"],
+        ["Show them", "vote after you have looked", "the others set their pieces by yours"]],
+      extra: "The last fork has a fourth way, in another hand's ink.",
+    }][SG]);
+    plate(api, intro, P, { card: SG === 0 ? "chapter-6" : "chapter-7", numeral: SG === 0 ? "numeral-6" : "numeral-7", at: "50% 70%" });
+    stagePicker(P, intro, ctl);
     { // the four at the chart, half turned: the red has reached their wrists
       const who = document.createElement("div"); who.className = P + "who";
       TEMPERS.forEach((t) => { const im = artImg(api, `seat-${t}-turning`, "", "the one who " + t); if (im) who.appendChild(im); });
@@ -199,13 +251,16 @@ export default {
     function draw() {
       if (!route[st.j]) return;
       const J = route[st.j], n = J.branches.length;
-      h2.textContent = `PLATE ${J.chart === 1 ? "V" : "VI"} · junction ${st.j + 1} of ${route.length}`;
+      h2.textContent = `PLATE ${SG === 0 ? "V" : SG === 1 ? "VI" : "VII"} · junction ${st.j + 1} of ${route.length}`;
       svg.setAttribute("viewBox", `0 0 ${VW} ${VH}`);
       let s = `<rect x="14" y="14" width="${VW - 28}" height="${VH - 28}" fill="none" stroke="${C.red}" stroke-width="2"/><rect x="24" y="24" width="${VW - 48}" height="${VH - 48}" fill="none" stroke="${C.red}" stroke-width=".8"/>`;
       const [rx, ry] = T(RX, RY), [jx, jy] = T(JX, JY);
       s += `<defs><radialGradient id="${P}g"><stop offset="0" stop-color="${C.glow}" stop-opacity=".85"/><stop offset="1" stop-color="${C.glow}" stop-opacity="0"/></radialGradient></defs>`;
       const glowR = 60 + (RM ? 0 : 8 * Math.sin(performance.now() / 160));
       s += `<circle cx="${rx}" cy="${ry}" r="${glowR}" fill="url(#${P}g)"/><path d="M${rx},${ry} L${jx},${jy}" stroke="${C.red}" stroke-width="26" stroke-linecap="round"/><path d="M${rx},${ry} L${jx},${jy}" stroke="${C.vellum}" stroke-width="20" stroke-linecap="round"/>`;
+      // dissent: each piece that stood against the last winning branch is an eddy in this stretch
+      for (let k = 0; k < (J.eddied || 0); k++) { const [ex2, ey2] = T(RX + 80 + k * 62, RY); s += `<path d="M${ex2 - 14},${ey2} a14,14 0 1 1 14,14 a9,9 0 1 1 -9,-9 a5,5 0 1 1 5,5" fill="none" stroke="${C.ink}" stroke-width="2.4" stroke-linecap="round"/>`; }
+      if (J.eddied) { const [tx2, ty2] = T(RX + 60, RY - 30); s += txt(narrow ? tx2 + 30 : tx2, narrow ? ty2 + 40 : ty2, `${J.eddied} edd${J.eddied === 1 ? "y" : "ies"}: the last vote was split`, 14, `font-style="italic" fill="${C.ink}"`); }
       s += `<circle cx="${rx}" cy="${ry}" r="9" fill="#fff6dc" stroke="${C.red}" stroke-width="2"/>` + txt(rx + 16, ry + (narrow ? 8 : 36), "the raft", 15, `font-style="italic" fill="${C.red}"`);
       J.branches.forEach((b, i) => {
         const d = branchD(i, n), w = Wd[b.width], [ex, ey] = pt(i, n, 1), chosen = st.sweep && st.sweep.win === i, dim = st.sweep && !chosen;
@@ -257,7 +312,7 @@ export default {
       const keep = fb && svg.contains(fb) ? fb.dataset.b : null;
       svg.innerHTML = s;
       if (keep != null) { const g = svg.querySelector(`[data-b="${keep}"]`); g && g.focus({ preventScroll: true }); }
-      bAwl.disabled = st.awl[J.chart] || st.phase !== "vote";
+      bAwl.disabled = (SG < 2 && st.awl[J.chart]) || st.phase !== "vote";
       bListen.disabled = st.phase !== "vote";
       bGo.disabled = st.phase !== "vote" || st.votes[0] == null;
     }
@@ -283,23 +338,32 @@ export default {
       // a patrol against any one vote.
       const open = (b) => !b.felt && !b.back, first = bs.findIndex(open);
       const strongest = () => bs.reduce((a, b, i) => (open(b) && b.current > bs[a].current ? i : a), first);
-      const fear = () => { const free = bs.map((b, i) => (b.patrol || b.back ? -1 : i)).filter((i) => i >= 0); return free[Math.floor(rng() * free.length)]; };
+      // in the twist he sets his piece down without saying anything, and it tells you nothing
+      const fear = () => { const back = bs.findIndex((b) => b.back); if (st.backHeard && !st.sawBoard && back >= 0) return back; const free = bs.map((b, i) => ((SG < 2 && b.patrol) || b.back ? -1 : i)).filter((i) => i >= 0); return free[Math.floor(rng() * free.length)]; };
+      const follow = (seat, v) => { if (st.shownAt === J.idx && st.votes[0] != null) return st.votes[0]; return v; };
       const dream = () => { if (st.backHeard && !st.sawBoard) { const k = bs.findIndex((b) => b.back); if (k >= 0) return k; } const calm = bs.findIndex((b) => b.calm && open(b)); return calm >= 0 ? calm : bs.reduce((a, b, i) => (open(b) && Wd[b.width] > Wd[bs[a].width] ? i : a), first); };
       const T0 = J.time * 1000;
-      later(() => { if (st.phase === "vote" && st.j === J.idx) { st.votes[3] = fear(); say.textContent = "The one who fears sets his piece first, away from the vessel he feels."; draw();
-        if (legend.add("listen", "Listen", "hold L on a focused branch · hold a branch after pressing Listen", true)) { bListen.hidden = false; beats.show("He only feels one. Hold your ear to a branch for three seconds: a beast's pulse is off the heart's beat. You will be right seven times in ten.", 5600, "listen", "New · Listen"); } } }, Math.min(2500, T0 * 0.1));
-      later(() => { if (st.phase === "vote" && st.j === J.idx) { st.votes[2] = dream(); draw(); } }, T0 * 0.25);
-      later(() => { if (st.phase === "vote" && st.j === J.idx) { st.votes[1] = strongest(); draw(); } }, T0 * 0.4);
+      later(() => { if (st.phase === "vote" && st.j === J.idx) { st.votes[3] = follow(3, fear()); say.textContent = SG === 2 ? "The one who fears sets his piece down without a word." : "The one who fears sets his piece first, away from the vessel he feels."; draw();
+        if (SG === 1 && legend.add("listen", "Listen", "hold L on a focused branch · hold a branch after pressing Listen", true)) { bListen.hidden = false; beats.show("He only feels one. Hold your ear to a branch for three seconds: a beast's pulse is off the heart's beat. You will be right seven times in ten.", 5600, "listen", "New · Listen"); } } }, Math.min(2500, T0 * 0.1));
+      later(() => { if (st.phase === "vote" && st.j === J.idx) { st.votes[2] = follow(2, dream()); draw(); } }, T0 * 0.25);
+      later(() => { if (st.phase === "vote" && st.j === J.idx) { st.votes[1] = follow(1, strongest()); draw(); } }, T0 * 0.4);
     }
 
     // ---- a junction -----------------------------------------------------------------------------
     function openJunction() {
       const J = route[st.j];
+      // dissent: the eddies of the last vote take three seconds each from this fork
+      if (st.eddies && !J.eddied) { J.eddied = st.eddies; J.time = Math.max(10, J.time - 3 * st.eddies); st.eddies = 0;
+        if (legend.add("dissent", "Dissent", "pieces against the winner are eddies: 3 s each", true)) beats.show("The vote was split, and the raft goes into this stretch askew: each piece that stood against the winning branch is an eddy in the water now, and the fork comes sooner for it.", 6000, "dissent", "New · Dissent"); }
       st.votes = [null, null, null, null]; st.revealed = false; st.sweep = null; st.phase = "vote"; st.time = J.time; st.listenMode = false; bListen.setAttribute("aria-pressed", "false");
-      if (st.j === 1 && legend.add("awl", "The awl", "A · once a chart", true)) { bAwl.hidden = false; beats.show("The awl you were given has a point that finds what hides. Once on each chart it shows every patrol at a junction.", 5200, "awl", "New · The awl"); }
-      if (st.j === 2) beats.show("The river grows narrower.\nThe current grows faster.\nThe heart draws near.", 6200, "delta", "Plate VI · the delta");
-      if (st.j === 4 && !st.sawBoard) beats.show("Four ways at the last fork, and only twenty heartbeats to choose. The fourth is drawn in another ink, by another hand. It has no arrows.", 5200, "four");
-      say.textContent = st.j === 2 ? "The delta: twenty seconds a junction, and some forks hide two beasts." : `Junction ${st.j + 1}. The raft keeps moving while the page is open.`;
+      if (SG === 1 && st.j === 0 && legend.add("awl", "The awl", "A · once", true)) { bAwl.hidden = false; later(() => beats.show("The awl you were given has a point that finds what hides. Once on this chart it shows every beast at a fork.", 5200, "awl", "New · The awl"), 6000); }
+      if (SG === 2 && st.j === 0) {
+        legend.add("listen", "Listen", "hold L · or Listen, then hold a branch"); bListen.hidden = false;
+        legend.add("awl", "The awl", "A · prick through, then hold it to the light"); bAwl.hidden = false; bAwl.innerHTML = "The awl <small>A · prick through</small>";
+        beats.show("He has stopped saying what he feels, and the walls throw every pulse back at you. Nothing you learned on the last plate can be trusted here. You still have the awl.", 6400, "twist", "The last plate");
+      }
+      if (J.back && !st.sawBoard) beats.show("Four ways at the last fork. The fourth is drawn in another ink, by another hand. It has no arrows.", 5200, "four");
+      say.textContent = `Junction ${st.j + 1}. The raft keeps moving while the page is open.`;
       companions(); draw();
     }
     function decide() {
@@ -312,6 +376,8 @@ export default {
       if (tie) { const mx = Math.max(...tied.map((i) => bs[i].current)); const strong = tied.filter((i) => bs[i].current === mx); win = strong[Math.floor(rng() * strong.length)]; }
       st.sweep = { win, tied: tie ? tied : null };
       const b = bs[win];
+      if (lightEl) closeLight(true);
+      if (SG > 0 && !b.back) { const against = st.votes.filter((v) => v != null && v !== win).length; st.eddies = against; st.dissent += against; }
       if (b.back) {
         say.textContent = "Branch d. The water slows, and then it does not move at all.";
         draw(); animate();
@@ -364,6 +430,39 @@ export default {
       openJunction();
       const g = svg.querySelector("." + P + "br"); g && g.focus();
     }
+    // ---- the twist: the Back of the Chart -----------------------------------------------------------
+    // The awl pricks through. Held to the light, the vellum shows every vessel leaving the heart apart
+    // (the art), and this fork from behind, turned over end for end: its first branch is the last one here.
+    let lightEl = null;
+    function holdToLight() {
+      if (lightEl || st.phase !== "vote") return;
+      const J = route[st.j], n = J.branches.length, url = artUrl(api, "chart-back");
+      st.sawBack = true; st.shownAt = J.idx; st.holding = null;
+      let g = `<path d="M40,150 L150,150" stroke="#f2b544" stroke-width="7" stroke-linecap="round"/><circle cx="40" cy="150" r="7" fill="#fff6dc"/>`;
+      J.branches.forEach((b, i) => {
+        const k = n - 1 - i, y = n === 4 ? 36 + k * 76 : 50 + k * 100;   // turned over: the first branch lies last
+        g += `<path d="M150,150 C230,150 250,${y} 400,${y}" fill="none" stroke="${b.back ? GREY : "#f2b544"}" stroke-width="${b.back ? 4 : 6}" stroke-linecap="round" ${b.back ? 'stroke-dasharray="12 6 3 6"' : ""}/>`;
+        if (b.back) g += `<circle cx="424" cy="${y}" r="16" fill="none" stroke="${GREY}" stroke-width="3" stroke-dasharray="12 6 3 6"/>`;
+        else if (b.patrol) g += `<path d="M300,${y - 13 + (150 - y) * 0.12} q14,-12 28,0 q10,12 -2,22 q-16,10 -28,-2 q-8,-10 2,-20z" fill="#1c130c" stroke="#7fb2e0" stroke-width="2"/>`;
+      });
+      lightEl = document.createElement("div"); lightEl.className = P + "light"; lightEl.setAttribute("role", "dialog"); lightEl.setAttribute("aria-label", "The back of the chart, held to the light");
+      lightEl.innerHTML = `<div class="${P}lp">${url ? `<img alt="The back of the chart held to the light: a heart, and every vessel leaving it alone, none beside another." src="${url}">` : `<div style="aspect-ratio:16/11;width:min(92vw,860px);background:#6b4a1e"></div>`}<svg viewBox="0 0 460 300" role="img" aria-label="This fork seen from behind, turned over. Dark knots sit in ${J.branches.filter((b) => b.patrol).length} of its branches."><g>${g}</g></svg></div>
+<p aria-live="polite">Held to the light, the vellum shows what the front never drew: every vessel leaving the heart, apart. No two of them run side by side.
+Where the awl went through, this fork shows from behind, turned over: its first branch is the last one here. A dark knot sits in each vessel that something swims in.</p>
+<button type="button" class="${P}go">Turn it face up, and show them <small>Enter</small></button>`;
+      wrap.appendChild(lightEl);
+      on(lightEl.querySelector("button"), "click", () => closeLight(false));
+      lightEl.querySelector("button").focus();
+    }
+    function closeLight(silent) {
+      if (!lightEl) return;
+      lightEl.remove(); lightEl = null;
+      if (silent) return;
+      beats.show("You turn it face up and lay it down. Nobody argues with the back of a chart. They wait for your piece.", 4200, "shown", "No vessel leaves the heart beside another");
+      say.textContent = "They have seen it. Set your piece, and theirs will follow.";
+      if (st.votes[0] != null) { st.votes[1] = st.votes[2] = st.votes[3] = st.votes[0]; }
+      draw(); const g = svg.querySelector("." + P + "br"); g && g.focus();
+    }
     let araf = 0;
     function animate() { cancelAnimationFrame(araf); if (RM) return; const tick = () => { if (st.phase !== "sweep") return; draw(); araf = requestAnimationFrame(tick); }; araf = requestAnimationFrame(tick); }
     function finish() {
@@ -372,18 +471,22 @@ export default {
       const tend = t.reduce((a, x) => a + [0, 2, 4, 6][x.tendrils], 0), secs = t.reduce((a, x) => a + [0, 20, 0, -20][x.current], 0), folds = t.filter((x) => x.narrow).length * 2;
       const outcome = patrols === 0 ? "win" : patrols >= 2 ? "lose" : "done";
       streak.record(outcome);
+      sh.set("dissent", { eddies: st.eddies, total: st.dissent });
       const sum = `Route ${t.map((x) => x.id).join("–")}: ${calms} calm pool${calms === 1 ? "" : "s"}, ${tend} tendrils, ${folds} extra folds, ${secs > 0 ? "+" : ""}${secs} s on the river.`;
       const yours = t.filter((x) => x.mine).length;
-      const lead = outcome === "win" ? `A way to the heart with no beast in it. Your piece stood on ${yours} of the five branches taken.`
+      const lead = outcome === "win" ? `A way ${SG === 0 ? "through the first plate" : "to the heart"} with no beast in it. Your piece stood on ${yours} of the ${t.length} branches taken.`
         : outcome === "lose" ? `The route runs through ${patrols} patrols. On the river the eyes will open over the raft again and again, and somebody will be noticed.`
         : "One beast on the way. The raft will have to hush, and hold still, and hope.";
       const board = st.sawBoard ? " You have seen the only finished game in the world, and you know why no one finishes: an unfinished game is a group still playing, somewhere." : "";
-      endCard(wrap, api, outcome === "win" ? "chapter-8" : "chart-plate-vii", outcome === "win" ? { numeral: "numeral-8" } : { numeral: "numeral-7" });
-      api.end({ outcome, text: `${lead} ${sum}${board}` });
+      const dis = SG === 0 ? "" : st.dissent ? ` ${st.dissent} piece${st.dissent === 1 ? "" : "s"} stood against the way taken${st.eddies ? `; ${st.eddies} edd${st.eddies === 1 ? "y goes" : "ies go"} with the raft into the next stretch` : ""}.` : " Nobody's piece stood against the way taken.";
+      const back = st.sawBack ? " You have seen the back of the chart: no vessel leaves the heart beside another." : "";
+      ctl.end({ outcome, text: `${lead} ${sum}${dis}${back}${board}` },
+        () => endCard(wrap, api, outcome === "win" ? (st.sawBack ? "chart-back" : "chapter-8") : "chart-plate-vii", outcome === "win" ? (st.sawBack ? {} : { numeral: "numeral-8" }) : { numeral: "numeral-7" }));
     }
 
     // ---- input ----------------------------------------------------------------------------------
-    function vote(i) { if (st.phase !== "vote" || !st.started) return; st.votes[0] = i; say.textContent = `Your piece stands on branch ${route[st.j].branches[i].id}.`;
+    function vote(i) { if (st.phase !== "vote" || !st.started || lightEl) return; st.votes[0] = i; say.textContent = `Your piece stands on branch ${route[st.j].branches[i].id}.`;
+      if (st.shownAt === st.j) { st.votes[1] = st.votes[2] = st.votes[3] = i; say.textContent = `Your piece stands on branch ${route[st.j].branches[i].id}, and theirs beside it.`; }
       if (legend.add("go", "Let the current decide", "Enter · close the vote now", true)) { bGo.hidden = false; } draw(); }
     function startListen(i) {
       if (st.phase !== "vote") return;
@@ -410,9 +513,11 @@ export default {
       if (b.dataset.a === "awl") useAwl();
       if (b.dataset.a === "go") decide();
     });
-    function useAwl() { const J = route[st.j]; if (st.awl[J.chart] || st.phase !== "vote" || bAwl.hidden) return; st.awl[J.chart] = true; st.revealed = true; st.awlUsed++; say.textContent = "The awl's point finds every patrol at this junction."; draw(); }
+    function useAwl() { const J = route[st.j]; if (SG === 2) { if (st.phase !== "vote" || bAwl.hidden) return; if (!st.pricked) { st.pricked = true; st.awlUsed++; bAwl.innerHTML = "Hold it to the light <small>A</small>"; } return holdToLight(); }
+      if (st.awl[J.chart] || st.phase !== "vote" || bAwl.hidden) return; st.awl[J.chart] = true; st.revealed = true; st.awlUsed++; say.textContent = "The awl's point finds every patrol at this junction."; draw(); }
     on(window, "keydown", (e) => {
       if (!st.started || st.over) return;
+      if (lightEl) { if (e.key === "Enter" || e.key === "Escape") { e.preventDefault(); closeLight(false); } return; }
       if (st.phase === "back") { const k = e.key.toLowerCase(); if (k === "enter" && backEl && !backEl.querySelector("." + P + "go").disabled) { e.preventDefault(); leaveBack(); } else if (/^[1-3]$/.test(k)) lookAt(Object.keys(LOOKS)[+k - 1]); return; }
       const n = route[st.j] ? route[st.j].branches.length : 0;
       const d = parseInt(e.key, 10);
@@ -441,7 +546,7 @@ export default {
       st.time -= dt;
       if (st.holding && now - st.holding.t >= 3000) {
         const b = route[st.j].branches[st.holding.b];
-        const truth = b.patrol ? "off" : "on", heard = b.back ? "none" : gentle || rng() < 0.7 ? truth : truth === "off" ? "on" : "off";
+        const truth = b.patrol ? "off" : "on", heard = b.back ? "none" : gentle || rng() < (SG === 2 ? 0.5 : 0.7) ? truth : truth === "off" ? "on" : "off";
         b.heard = heard; st.holding = null; st.listened++;
         say.textContent = heard === "none" ? "In d, nothing. No pulse at all, not even the heart's." : heard === "off" ? `In ${b.id}, a pulse off the heart's beat.` : `In ${b.id}, only the heart.`;
         if (b.back) { st.backHeard = true; st.votes[2] = route[st.j].branches.indexOf(b); beats.show("You tell them: nothing beats in it. The one who dreams lifts his piece and sets it on the grey line, beside where yours would stand.", 4600, "backheard", "The fourth branch"); }
@@ -465,5 +570,5 @@ export default {
         wrap.remove();
       },
     };
-  },
-};
+  }
+}

@@ -25,7 +25,20 @@
 //   "They have grown up side by side, carved tools together, sung marrow‑songs together, dreamed of the world above the bone."
 // "Carve for him." is the elders' line from DESIGN.md section 6; "Not that one." is the one who argues's.
 
-import { howTo, Legend, Beats, flourish, disposeKit, artUrl, plate, endCard } from "./_kit.js";
+import { howTo, Legend, Beats, flourish, disposeKit, artUrl, plate, endCard, ladder, stagePicker, shared } from "./_kit.js";
+//
+// Phase 2 (DEEP_DIVE.md section 3, built 2026-11-16): a ladder of three carvings.
+//   Teach  eight strokes, with the grain, on a blank the elder has roughed out.
+//   Test   twenty-four strokes and hidden knots, and the hand-fit: he rows left or right and has a wide
+//          or a narrow hand, seen only by watching him at the board. A tool cut for the wrong hand is never
+//          better than rough.
+//   Twist  at stroke twelve a crack shows across the blank. A cut that crosses it splits wide; left alone,
+//          the tool breaks there. Carve the crack into the grip (three strokes), or change to a shorter
+//          form and snap the bone off along it. It ends in the set-piece: the Underside read alone in the
+//          vessel, an hour after it was cut.
+// Links (api.shared): his hand is the hand he sows with in Bone Counters; the finished gift (form, fit,
+// underside) is kept for the 3D scenes that read `self.gift_fit` (DESIGN.md section 12).
+// The collection thread: in the twist the slab's corner is in the picture, with the ring a cup left on it.
 
 const C = { ink: "#1a1410", ivory: "#f3e9d2", paper: "#efe3c8", slab: "#cdbb98", red: "#7A1020", gold: "#F2B544" };
 const BW = 36, BH = 108;          // the blank, in mm (grain runs along its length)
@@ -53,15 +66,27 @@ function formIcon(k) {
   return `<svg viewBox="0 0 ${BW} ${BH}" width="13" height="38" aria-hidden="true"><g fill="currentColor">${s}</g></svg>`;
 }
 
-export default {
-  mount(root, api) {
+const CRACK_Y = 86;
+export default ladder(run, {
+  theme: { bg: "#f3e9d2", fg: "#1a1410", accent: "#7A1020", ink: "#f3e9d2" },
+  next: [null, "Next: a whole blank, twenty-four strokes, knots under the surface, and a grip that has to fit his hand.",
+    "Next: the same work on a blank that is not sound. Something shows in it at the twelfth stroke."],
+});
+
+function run(root, api, ctl) {
+  {
+    const SG = ctl.stage, sh = shared(api);
     const P = "heartstream-carving-";
     const rng = api.rng();
     const RM = api.reducedMotion;
     const listeners = [];
     const on = (t, ev, fn, o) => { t.addEventListener(ev, fn, o); listeners.push([t, ev, fn, o]); };
     const timers = [];
-    const STROKES = 24, TIME = 240, LOOKS = 3;
+    const STROKES = SG === 0 ? 8 : 24, TIME = SG === 0 ? 150 : 240, LOOKS = 3, NKNOTS = [0, 3, 2][SG];
+    // his hand: the one he sows with at the board (Bone Counters shows the same hand)
+    let hand = sh.get("hand", null);
+    if (!hand || !/^(left|right)$/.test(hand.side)) { hand = { side: rng() < 0.5 ? "left" : "right", wide: rng() < 0.5 }; sh.set("hand", hand); }
+    const sawHand = !!sh.get("sawHand", false);
 
     const wrap = document.createElement("div");
     wrap.className = P + "wrap";
@@ -123,6 +148,21 @@ export default {
 .${P}mark img{height:58px;width:auto;border:1px solid ${C.ink}}
 .${P}blank{display:flex;gap:12px;align-items:center;margin:0 0 12px;font-size:15px;font-style:italic}
 .${P}blank img{height:84px;width:auto;border:1px solid ${C.ink};flex:none}
+.${P}fit{display:grid;grid-template-columns:auto 1fr 1fr;gap:4px 6px;align-items:center;font:13px var(--g-body)}
+.${P}fit button{font:600 14px var(--g-display);color:${C.ink};background:${C.ivory};border:1.5px solid ${C.ink};padding:5px 4px;min-height:38px;cursor:pointer}
+.${P}fit button[aria-pressed=true]{background:${C.ink};color:${C.ivory}}
+.${P}slab{position:absolute;left:8px;bottom:8px;width:clamp(64px,13%,104px);padding:0;border:0;background:none;cursor:default;z-index:1;line-height:0}
+.${P}slab img{width:100%;height:auto;display:block}
+.${P}slab span{display:block;aspect-ratio:1;border-radius:50%;border:5px solid rgba(160,120,80,.45);margin:18%}
+.${P}slab:focus-visible{outline:2px solid ${C.ink};outline-offset:2px}
+.${P}vessel{position:absolute;inset:0;z-index:13;background:rgba(20,8,8,.93);color:${C.ivory};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:14px;box-sizing:border-box;overflow:auto;text-align:center}
+.${P}vessel .${P}vp{position:relative;max-width:min(100%,720px)}
+.${P}vessel .${P}vp>img{display:block;width:100%;height:auto;max-height:52vh;object-fit:cover}
+.${P}vessel .${P}vs{position:absolute;right:5%;bottom:8%;width:clamp(90px,26%,190px);border:3px solid ${C.ivory};background:${C.ivory};box-shadow:0 6px 22px rgba(0,0,0,.7)}
+.${P}vessel .${P}vs img{display:block;width:100%;height:auto}
+.${P}vessel .${P}vs i{display:block;aspect-ratio:1;background:${C.ivory} repeating-linear-gradient(88deg,rgba(26,20,16,.1) 0 1px,transparent 1px 11px)}
+.${P}vessel p{margin:0;max-width:600px;font-size:19px;line-height:1.4;font-style:italic;min-height:2.8em}
+.${P}vessel button{font:600 17px var(--g-display);letter-spacing:.12em;background:${C.ivory};color:${C.ink};border:0;padding:11px 24px;min-height:46px;cursor:pointer}
 .${P}under{position:absolute;inset:0;z-index:4;background:rgba(239,227,200,.94);display:grid;place-items:center;padding:12px;overflow:auto}
 .${P}under>div{max-width:440px;width:100%;background:${C.ivory};border:2px solid ${C.ink};outline:1px solid ${C.ink};outline-offset:4px;padding:14px}
 .${P}under h3{margin:0 0 4px;font-size:22px;font-weight:500}
@@ -131,13 +171,14 @@ export default {
 .${P}signs button{padding:4px;background:${C.ivory};border:1.5px solid ${C.ink};cursor:pointer;font:italic 13px/1.2 var(--g-display);color:${C.ink};display:flex;flex-direction:column;align-items:center;gap:3px;min-height:64px}
 .${P}signs button:hover,.${P}signs button:focus-visible{background:#fff9ea;box-shadow:inset 0 0 0 2px ${C.red}}
 .${P}signs img{width:100%;max-width:92px;height:auto;display:block}
+@media (min-width:761px){.${P}side{gap:7px}.${P}side .${P}btn{min-height:36px;padding:3px 8px}.${P}lamp{height:56px}}
 @media (max-width:760px){.${P}forms button img{height:30px}.${P}wrap{grid-template-columns:1fr;grid-auto-rows:auto;padding:10px;gap:8px}.${P}stage{min-height:min(56vh,520px)}
   .${P}left{order:-2;padding:10px;gap:6px}.${P}stage{order:-1}.${P}mark,.${P}eff{display:none}.${P}lamp{height:56px}.${P}forms{grid-template-columns:repeat(5,1fr)}.${P}forms button{padding:4px 2px;font-size:14px;flex-direction:column;gap:0}.${P}forms button svg{height:22px}}
 `;
     wrap.appendChild(css);
     const left = document.createElement("div"); left.className = P + "side " + P + "left";
     left.innerHTML = `<p class="${P}h">For</p><div class="${P}mark">${artUrl(api, "seat-argues-blue") ? `<img alt="" src="${artUrl(api, "seat-argues-blue")}">` : ""}${artUrl(api, "mark-notch") ? `<img alt="His mark: the notch" src="${artUrl(api, "mark-notch")}">` : `<svg width="54" height="54" viewBox="-30 -30 60 60" aria-hidden="true"><circle r="22" fill="none" stroke="${C.ink}" stroke-width="2"/><path d="M-11,-12 L0,13 L11,-12" fill="none" stroke="${C.red}" stroke-width="3"/></svg>`}<span>the one who argues<br>his mark, the notch</span></div>
-<p class="${P}h">Form</p><div class="${P}forms"></div><div class="${P}eff">Pick a form for his tool.</div><p class="${P}h">Strokes <span class="${P}left-n"></span></p><div class="${P}notches" aria-hidden="true"></div>`;
+${SG > 0 ? `<p class="${P}h">Grip</p><div class="${P}fit" role="group" aria-label="The grip: cut it for his hand"><span>rows</span><button type="button" data-f="side" data-v="left" aria-pressed="false">left</button><button type="button" data-f="side" data-v="right" aria-pressed="false">right</button><span>hand</span><button type="button" data-f="wide" data-v="1" aria-pressed="false">wide</button><button type="button" data-f="wide" data-v="0" aria-pressed="false">narrow</button></div>` : ""}<p class="${P}h">Form</p><div class="${P}forms"></div><div class="${P}eff">Pick a form for his tool.</div><p class="${P}h">Strokes <span class="${P}left-n"></span></p><div class="${P}notches" aria-hidden="true"></div>`;
     const stage = document.createElement("div"); stage.className = P + "stage";
     const cv = document.createElement("canvas"); cv.setAttribute("aria-label", "The bone blank. Drag to carve a stroke; with the keyboard, arrows move the chisel and Space sets each end."); cv.tabIndex = 0;
     stage.appendChild(cv);
@@ -148,19 +189,39 @@ export default {
 <button type="button" class="${P}btn" data-a="elder" hidden>The elder's old tool <small>3 looks · E</small></button>
 <button type="button" class="${P}btn" data-a="mark" hidden>Cut his mark <small>3 strokes · M</small></button>
 <button type="button" class="${P}btn" data-a="under" hidden>The underside <small>2 strokes · U</small></button>
+<button type="button" class="${P}btn" data-a="watch" hidden>Watch him at the board <small>W</small></button>
+<button type="button" class="${P}btn" data-a="crack" hidden>Carve the crack into the grip <small>3 strokes · K</small></button>
+<button type="button" class="${P}btn" data-a="short" hidden>Change to a shorter form <small>C</small></button>
 <div class="${P}lamp"><svg viewBox="0 0 60 90" height="100%" aria-hidden="true"><path class="${P}flame" d="M30,10 C22,28 24,40 30,46 C36,40 38,28 30,10Z" fill="${C.gold}" stroke="${C.ink}" stroke-width="1.5"/><rect class="${P}oil" x="14" y="56" width="32" height="20" fill="${C.red}" opacity=".5"/><path d="M8,52 h44 l-6,28 h-32z" fill="none" stroke="${C.ink}" stroke-width="2"/></svg><span class="${P}lampt">the lamp</span></div>
 <button type="button" class="${P}btn ${P}done" data-a="done">DONE</button>`;
     wrap.append(left, stage, right);
     const beats = new Beats(P, stage, RM);
-    const intro = howTo(P, {
-      kicker: "Chapter two · the shedding gallery",
+    const intro = howTo(P, [{
+      kicker: "Chapter one · the carving slab",
       title: "The Carving",
       quote: `“${QUOTE}”`,
-      scene: "An elder sets a bone blank on the slab in front of you. “Carve for him.” The tool is for the one who argues; it will ride with him to the end.",
-      goal: "Make his tool from the blank in 24 strokes, as close to its form as you can.",
-      keys: [["Form", "click a form", "its faint outline lies over the blank"], ["Cut", "drag a straight line · arrows + Space", "with the grain costs 1, across it 2"]],
+      scene: "An elder sets a blank on the slab in front of you. He has roughed it out already: a flute, too thick along both sides.",
+      goal: "Bring it true (80% likeness) in eight strokes, all of them with the grain.",
+      keys: [["Cut", "drag a straight line · arrows + Space", "up to a third of the blank's length; the bone under the line comes away"], ["Grain", "runs the length of the blank", "with it a cut costs 1 stroke, across it 2"]],
+      extra: `<div class="${P}blank">${artUrl(api, "blank-long") ? `<img alt="A long blank of bone" src="${artUrl(api, "blank-long")}">` : ""}<span>The dashed outline is the form. Cut away what lies outside it.</span></div>`,
+    }, {
+      kicker: "Chapter two · the shedding gallery",
+      title: "A tool for a brother",
+      scene: "A whole blank this time. “Carve for him.” The tool is for the one who argues; it will ride with him to the end, and it has to fit the hand that holds it.",
+      goal: "Make his tool true in 24 strokes, with the grip cut for his hand.",
+      keys: [["Form", "click a form", "its faint outline lies over the blank"], ["Cut", "drag a straight line · arrows + Space", "with the grain 1, across it 2; a hidden knot splits wide"],
+        ["Grip", "left or right · wide or narrow", "he never says which. Watch him at the board"]],
       extra: `<div class="${P}blank">${artUrl(api, "blank-wedge") ? `<img alt="The blank: a wedge of bone, its grain and knots" src="${artUrl(api, "blank-wedge")}">` : ""}<span>Other tools lie on the slab; you will find them as you work.</span></div>`,
-    });
+    }, {
+      kicker: "Chapter two · the last blank",
+      title: "The crack",
+      scene: "The good blanks are taken. This one looks sound. Everything you know about the grain is true of it, until the twelfth stroke.",
+      goal: "Make his tool true in 24 strokes, for his hand, from a blank that is not whole.",
+      keys: [["The crack", "shows at stroke twelve", "a cut across it splits wide; left alone, the tool breaks there"], ["Carve it in", "K · 3 strokes, trace it", "the crack becomes a line of the grip"],
+        ["Or shorten", "C, then one cut along the crack", "a shorter tool, and no place for his mark"], ["Underside", "U · 2 strokes", "one sign where he will not look until he is alone"]],
+      extra: `<div class="${P}blank">${artUrl(api, "blank-cracked") ? `<img alt="A blank with a crack across it" src="${artUrl(api, "blank-cracked")}">` : ""}<span>All the slab's tools are to hand from the start.</span></div>`,
+    }][SG]);
+    stagePicker(P, intro, ctl);
     plate(api, intro, P, { card: "chapter-2", numeral: "numeral-2" });
     wrap.appendChild(intro);
     root.appendChild(wrap);
@@ -175,21 +236,28 @@ export default {
     const RES = 2; // cells per mm
     const GW = BW * RES, GH = BH * RES;
     const mat = new Uint8Array(GW * GH);
-    for (let j = 0; j < GH; j++) for (let i = 0; i < GW; i++) mat[j * GW + i] = inBlank((i + 0.5) / RES, (j + 0.5) / RES) ? 1 : 0;
+    for (let j = 0; j < GH; j++) for (let i = 0; i < GW; i++) {
+      const x = (i + 0.5) / RES, y = (j + 0.5) / RES;
+      mat[j * GW + i] = inBlank(x, y) && (SG > 0 || (y >= 6 && y <= 102 && Math.abs(x - 18) <= 11)) ? 1 : 0;   // the teach blank is roughed out
+    }
     const knots = [];
-    while (knots.length < 3) {
+    while (knots.length < NKNOTS) {
       const k = { x: 4 + rng() * (BW - 8), y: 14 + rng() * (BH - 40), r: 2.2, seen: false };
       if (knots.every((o) => Math.hypot(o.x - k.x, o.y - k.y) > 18)) knots.push(k);
     }
     const grain = Array.from({ length: 16 }, (_, i) => ({ x: (i + 0.5) * BW / 16 + (rng() - 0.5), ph: rng() * 6, k: 0.05 + rng() * 0.06 }));
     const st = { started: false, over: false, form: null, formMask: null, left: STROKES, cuts: [], marked: false, tracing: null, inked: false, looks: LOOKS,
-      drag: null, cursor: { x: BW / 2, y: BH / 2 }, kbStart: null, elderT: 0, hintT: 0, idle: 0, time: TIME, splits: 0, across: 0, best: 0 };
+      drag: null, cursor: { x: BW / 2, y: BH / 2 }, kbStart: null, elderT: 0, hintT: 0, idle: 0, time: TIME, splits: 0, across: 0, best: 0,
+      fit: { side: null, wide: null }, watched: false, crack: null, short: false };
+    const fitOk = () => SG === 0 || (st.fit.side === hand.side && st.fit.wide === hand.wide);
+    const crackOpen = () => !!st.crack && !st.crack.treated && !st.crack.snapped;
 
-    function setForm(key) {
-      if (st.cuts.length || !st.started) return;
+    const mat0 = mat.slice();   // the blank as it was set down: a form is measured against this
+    function setForm(key, again) {
+      if ((st.cuts.length && !again) || !st.started) return;
       st.form = key;
       st.formMask = new Uint8Array(GW * GH);
-      for (let j = 0; j < GH; j++) for (let i = 0; i < GW; i++) st.formMask[j * GW + i] = mat[j * GW + i] && FORMS[key].in((i + 0.5) / RES, (j + 0.5) / RES) ? 1 : 0;
+      for (let j = 0; j < GH; j++) for (let i = 0; i < GW; i++) st.formMask[j * GW + i] = mat0[j * GW + i] && FORMS[key].in((i + 0.5) / RES, (j + 0.5) / RES) && (!st.short || (j + 0.5) / RES < CRACK_Y - 2) ? 1 : 0;
       formsEl.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.k === key)));
       eff.textContent = `${FORMS[key].name}: ${FORMS[key].effect}`;
       say.textContent = `${/^[AEIOU]/.test(FORMS[key].name) ? "An" : "A"} ${FORMS[key].name.toLowerCase()}. Its outline lies over the blank: cut away the bone outside it.`;
@@ -215,6 +283,7 @@ export default {
       }
       notches.innerHTML = s;
       left.querySelector("." + P + "left-n").textContent = `· ${Math.max(0, st.left)} left`;
+      if (st.started && !st.over) showCrack();
     }
 
     // ---- geometry -------------------------------------------------------------------------------
@@ -234,7 +303,37 @@ export default {
     const costOf = (a, b) => { const ang = Math.abs(Math.atan2(b.x - a.x, b.y - a.y) * 180 / Math.PI); const off = Math.min(ang, 180 - ang); return off <= 20 ? 1 : 2; };
     const knotsHit = (a, b) => knots.filter((k) => segDist(k.x, k.y, a, b) <= k.r);
 
+    // the twist: at the twelfth stroke the crack shows
+    function showCrack() {
+      if (SG !== 2 || st.crack || STROKES - st.left < 12) return;
+      st.crack = { treated: false, snapped: false };
+      btn("crack").hidden = false; btn("short").hidden = false;
+      legend.add("crack", "The crack", "K carve it in (3) · C shorten, then cut along it", true);
+      beats.show("A crack. It runs clean across the blank near the grip, and it was in the bone all along. A cut across it will split; left alone, the tool breaks there. Carve it into the grip, or change the form.", 8000, "crack", "The twelfth stroke");
+      say.textContent = "A crack shows across the blank. Cuts that cross it will split wide.";
+      flourish(stage, P + "flash", RM, 450); draw();
+    }
+    function startCrack() {
+      if (!crackOpen() || st.short) return;
+      if (st.left < 3) { say.textContent = "Not enough strokes left to carve the crack in."; return; }
+      st.tracing = "crack"; say.textContent = "Trace the crack once, edge to edge, through its three points."; draw();
+    }
+    function shorten() {
+      if (!crackOpen() || st.short || !st.form) return;
+      st.short = true; setForm(st.form, true);
+      formsEl.querySelectorAll("button").forEach((x) => { x.disabled = x.dataset.k !== st.form; });
+      btn("short").disabled = true; btn("crack").disabled = true;
+      say.textContent = "A shorter form, ending above the crack. Lay one cut along the crack and the far piece will snap off.";
+      draw();
+    }
     function unlockTools() {
+      if (SG === 0) return;
+      if (SG === 2 && !legend.has("ink")) {
+        ["ink", "elder", "mark", "under"].forEach((k) => { btn(k).hidden = false; });
+        legend.add("ink", "Rub the ink", "I · 1 stroke, once"); legend.add("elder", "Elder's tool", "E · three looks"); legend.add("mark", "His mark", "M · 3 strokes, trace"); legend.add("under", "The underside", "U · 2 strokes, one sign");
+        return;
+      }
+      if (SG === 2) return;
       if (st.cuts.length === 2 && !st.inked) {
         btn("ink").hidden = false; legend.add("ink", "Rub the ink", "I · 1 stroke, once", true);
         beats.show("The bone is not all one grain: knots hide under the surface, and a cut through one splits wide. Rub soot into the bone and they show.", 5600, "ink", "Rub the ink");
@@ -259,7 +358,17 @@ export default {
       if (!st.form) { say.textContent = "Pick a form first."; flourish(formsEl, P + "flash", RM, 450); return; }
       const cost = costOf(a, b);
       if (cost > st.left) { say.textContent = "Not enough strokes for a cut across the grain."; return; }
-      const hit = knotsHit(a, b), split = hit.length > 0, half = split ? 6 : 2;
+      // the twist: with a shorter form chosen, one cut laid along the crack snaps the far piece off whole
+      if (crackOpen() && st.short && Math.abs(a.y - CRACK_Y) < 5 && Math.abs(b.y - CRACK_Y) < 5 && Math.abs(b.x - a.x) > 8) {
+        for (let j = 0; j < GH; j++) if ((j + 0.5) / RES >= CRACK_Y - 2) for (let i = 0; i < GW; i++) mat[j * GW + i] = 0;
+        st.crack.snapped = true; st.left -= 1; st.cuts.push({ a, b, half: 0.6, split: true, t: performance.now() }); st.idle = 0;
+        btn("crack").disabled = true; btn("mark").disabled = true; if (st.marked) st.marked = false;
+        say.textContent = `It snaps clean along the crack. The grip end is gone, and his mark's place with it. Likeness ${Math.round(quality() * 100)}%.`;
+        beats.show("The far piece comes away whole. What is left is shorter than you meant, and sound.", 4200, "snap");
+        renderNotches(1); draw(); if (st.left <= 0) finish(); return;
+      }
+      const crosses = crackOpen() && (a.y - CRACK_Y) * (b.y - CRACK_Y) < 0;
+      const hit = knotsHit(a, b), split = hit.length > 0 || crosses, half = split ? 6 : 2;
       const q0 = quality();
       for (let j = 0; j < GH; j++) for (let i = 0; i < GW; i++) {
         const n = j * GW + i; if (!mat[n]) continue;
@@ -271,19 +380,28 @@ export default {
       formsEl.querySelectorAll("button").forEach((x) => { x.disabled = x.dataset.k !== st.form; });
       const q = Math.round(quality() * 100), dq = q - Math.round(q0 * 100);
       st.best = Math.max(st.best, q);
-      say.textContent = split ? `A hidden knot split: the sliver came away three times as wide. Likeness ${q}%.`
+      say.textContent = crosses ? `The cut ran into the crack and the bone split wide. Likeness ${q}%.` : split ? `A hidden knot split: the sliver came away three times as wide. Likeness ${q}%.`
         : `${cost === 2 ? "Across the grain: two strokes." : "With the grain."} Likeness ${q}% (${dq >= 0 ? "+" : ""}${dq}).`;
       if (split) flourish(stage, P + "flash", RM, 450);
-      renderNotches(cost); unlockTools();
+      renderNotches(cost); unlockTools(); showCrack();
       if (q >= 60) beats.show(`It is beginning to look like ${/^[AEIOU]/.test(FORMS[st.form].name) ? "an" : "a"} ${FORMS[st.form].name.toLowerCase()}.`, 3200, "q60");
       if (q >= 80) beats.show("True. You could stop here, and he would have the whole of it.", 3800, "q80");
       draw();
       if (st.left <= 0) finish();
     }
+    const crackPts = () => [{ x: 6, y: CRACK_Y + 1 }, { x: BW / 2, y: CRACK_Y - 1 }, { x: BW - 6, y: CRACK_Y + 1 }];
     function traceMark(path) {
-      const pts = markPts();
+      const isCrack = st.tracing === "crack";
+      const pts = isCrack ? crackPts() : markPts();
       const ok = pts.every((p) => path.some((q) => Math.hypot(q.x - p.x, q.y - p.y) < 3.5));
       st.tracing = null;
+      if (isCrack) {
+        if (!ok) { say.textContent = "Trace the crack through all three points, edge to edge."; draw(); return; }
+        st.crack.treated = true; st.left -= 3; renderNotches(3); btn("crack").disabled = true; btn("short").disabled = true;
+        say.textContent = "The crack is a line of the grip now. Cuts may cross it.";
+        beats.show("You follow it with the chisel until it looks meant. His fingers will find it and take it for yours.", 4600, "cracked");
+        draw(); if (st.left <= 0) finish(); return;
+      }
       if (!ok) { say.textContent = "Trace his sign through all three points at the grip end."; draw(); return; }
       st.marked = true; st.left -= 3; renderNotches(3);
       btn("mark").disabled = true;
@@ -331,7 +449,21 @@ export default {
       draw();
       if (st.left <= 0) finish();
     }
+    // hand-fit: seen only by watching him at the board
+    function watch() {
+      if (SG === 0 || st.over) return;
+      st.watched = true;
+      say.textContent = `He rows ${hand.side}, and his hand is ${hand.wide ? "wide" : "narrow"}.`;
+      beats.show(`Across the gallery he is at the board with the one who fears. He sows with his ${hand.side} hand, and ${hand.wide ? "the counters vanish in it: a wide hand" : "he holds the counters in his fingertips: a narrow hand"}.`, 6000, null, "Watching him at the board");
+    }
+    function setFit(f, v) {
+      if (st.over) return;
+      if (f === "side") st.fit.side = v; else st.fit.wide = v === "1";
+      left.querySelectorAll("." + P + "fit button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.f === "side" ? st.fit.side === b.dataset.v : st.fit.wide === (b.dataset.v === "1") && st.fit.wide !== null)));
+      if (st.fit.side && st.fit.wide !== null) say.textContent = `The grip is laid out for a ${st.fit.wide ? "wide" : "narrow"} ${st.fit.side} hand.${st.watched || sawHand ? "" : " You have not watched him."}`;
+    }
     function startMark() {
+      if (st.short) { say.textContent = "The grip end is gone: there is no place for his mark."; return; }
       if (st.left < 3) { say.textContent = "Not enough strokes left for his mark."; return; }
       if (st.marked) return;
       st.tracing = true; say.textContent = "Trace his sign once, through the three points at the grip end."; draw();
@@ -363,7 +495,7 @@ export default {
       else if (e.key === "ArrowUp") c.y -= step; else if (e.key === "ArrowDown") c.y += step;
       else if (e.key === " " || e.key === "Enter") {
         if (!st.kbStart) st.kbStart = { ...c };
-        else { const a = st.kbStart; st.kbStart = null; if (st.tracing) traceMark([a, { x: (a.x + c.x) / 2, y: (a.y + c.y) / 2 }, { ...c }, ...markPts()]); else cut(a, { ...c }); }
+        else { const a = st.kbStart; st.kbStart = null; if (st.tracing) traceMark([a, { x: (a.x + c.x) / 2, y: (a.y + c.y) / 2 }, { ...c }, ...(st.tracing === "crack" ? crackPts() : markPts())]); else cut(a, { ...c }); }
       } else if (e.key === "Escape") st.kbStart = null;
       else return;
       e.preventDefault();
@@ -374,11 +506,15 @@ export default {
       if (!st.started || st.over || e.ctrlKey || e.metaKey) return;
       const k = e.key.toLowerCase();
       if (underEl) { if (k === "escape") cutUnder(""); else if (/^[1-6]$/.test(k)) cutUnder(SIGNS[+k - 1][0]); return; }
+      if (vesselEl) return;
       if (k === "u" && !btn("under").hidden && !st.under) { openUnder(); return; }
+      if (k === "w" && !btn("watch").hidden) { watch(); return; }
+      if (k === "k" && !btn("crack").hidden && !btn("crack").disabled) { startCrack(); return; }
+      if (k === "c" && !btn("short").hidden && !btn("short").disabled) { shorten(); return; }
       if (k === "i" && !btn("ink").hidden) useInk();
       else if (k === "e" && !btn("elder").hidden) useElder();
       else if (k === "m" && !btn("mark").hidden && !st.marked) startMark();
-      else if (/^[1-5]$/.test(k)) setForm(Object.keys(FORMS)[+k - 1]);
+      else if (/^[1-5]$/.test(k) && SG > 0) setForm(Object.keys(FORMS)[+k - 1]);
     });
     on(right, "click", (e) => {
       const a = e.target.closest("button"); if (!a || !st.started || st.over) return;
@@ -386,14 +522,31 @@ export default {
       if (a.dataset.a === "elder") useElder();
       if (a.dataset.a === "mark") startMark();
       if (a.dataset.a === "under") openUnder();
+      if (a.dataset.a === "watch") watch();
+      if (a.dataset.a === "crack") startCrack();
+      if (a.dataset.a === "short") shorten();
       if (a.dataset.a === "done") finish();
     });
     on(intro.querySelector("." + P + "start"), "click", () => {
       intro.remove(); st.started = true; last = performance.now();
       legend.add("cut", "Cut", "drag · arrows + Space");
-      beats.show("“Carve for him.”", 2600, "elder0", "The elder");
-      formsEl.querySelector("button").focus();
+      if (SG === 0) { setForm("flute"); formsEl.querySelectorAll("button").forEach((x) => { x.disabled = x.dataset.k !== "flute"; }); say.textContent = "A flute, roughed out. Cut the extra bone from both long sides, with the grain."; cv.focus(); }
+      else {
+        beats.show("“Carve for him.”", 2600, "elder0", "The elder");
+        btn("watch").hidden = false; legend.add("fit", "Grip", "left/right · wide/narrow · W to watch him");
+        if (sawHand) { st.watched = true; timers.push(setTimeout(() => beats.show(`You have sat across the board from him. He sows with his ${hand.side} hand, ${hand.wide ? "a wide one" : "a narrow one"}.`, 6000, "link-hand", "Because you played him at Bone Counters"), 2800)); }
+        unlockTools();
+        formsEl.querySelector("button").focus();
+      }
     });
+    on(left, "click", (e) => { const b = e.target.closest("." + P + "fit button"); if (b && st.started) setFit(b.dataset.f, b.dataset.v); });
+    // the collection thread: the slab's corner, in the twist only. Unremarked; it changes nothing.
+    if (SG === 2) {
+      const slab = document.createElement("button"); slab.type = "button"; slab.className = P + "slab"; slab.setAttribute("aria-label", "The corner of the slab");
+      slab.innerHTML = artUrl(api, "thread-guest") ? `<img alt="" src="${artUrl(api, "thread-guest")}">` : "<span></span>";
+      stage.appendChild(slab);
+      on(slab, "click", () => { try { api.thread.found(); } catch { /* no thread on this host */ } say.textContent = "A pale ring on the slab, where something stood once and was taken up again."; });
+    }
 
     // ---- the lamp (soft timer) and the idle hint ------------------------------------------------
     let last = performance.now();
@@ -413,24 +566,54 @@ export default {
       if (st.time <= 0) { say.textContent = "The lamp is out."; finish(); }
     }, 200));
 
+    // the set-piece: the Underside, read alone in the vessel, an hour after it was cut
+    let vesselEl = null;
+    function vessel(then) {
+      vesselEl = document.createElement("div"); vesselEl.className = P + "vessel"; vesselEl.setAttribute("role", "dialog"); vesselEl.setAttribute("aria-label", "The narrow vessel");
+      const pic = artUrl(api, "chapter-9");
+      vesselEl.innerHTML = `<div class="${P}vp">${pic ? `<img alt="A narrow vessel, one red glow ahead." src="${pic}">` : `<div style="aspect-ratio:16/9;width:min(92vw,720px);background:#3d0610"></div>`}<div class="${P}vs" hidden></div></div>
+<p aria-live="polite">An hour after the heart. A narrow vessel, one red glow, and nobody else in it. He has the tool you made and nothing more. For this once you are in his hands.</p><button type="button">Turn it over <small>Enter</small></button>`;
+      try { wrap.scrollTop = 0; wrap.style.overflow = "hidden"; } catch { /* the card must cover the stage */ }
+      wrap.appendChild(vesselEl);
+      const b = vesselEl.querySelector("button"); let turned = false;
+      const go = () => {
+        if (!turned) {
+          turned = true;
+          const vs = vesselEl.querySelector("." + P + "vs"); vs.hidden = false;
+          vs.innerHTML = st.under && artUrl(api, "underside-" + st.under) ? `<img alt="" src="${artUrl(api, "underside-" + st.under)}">` : "<i></i>";
+          vesselEl.querySelector("p").textContent = st.under ? `On the inside face, where his palm has lain all this way: ${SIGNS.find((x) => x[0] === st.under)[1]}. He cut this where you would not look until now.` : "The inside face is bare. Nothing was hidden from him. He turns it over again, and again, as if there might be.";
+          b.innerHTML = "Let the vessel carry him <small>Enter</small>";
+        } else { vesselEl.remove(); vesselEl = null; then(); }
+      };
+      on(b, "click", go); on(vesselEl, "keydown", (e) => { if (e.key === "Enter" && e.target !== b) { e.preventDefault(); go(); } });
+      b.focus();
+    }
     function finish() {
       if (st.over) return;
       if (!st.form) { say.textContent = "Pick a form first."; flourish(formsEl, P + "flash", RM, 450); if (st.time > 0) return; setForm("flute"); }
       st.over = true; if (underEl) { underEl.remove(); underEl = null; } draw();
+      if (SG === 2) return vessel(result);
+      result();
+    }
+    function result() {
       const q = Math.round(quality() * 100), F = FORMS[st.form];
-      const word = q >= 80 ? "true" : q >= 60 ? "rough" : "keepsake";
+      const broke = crackOpen(), fit = fitOk();
+      const word = q >= 80 ? (broke || !fit ? "rough" : "true") : q >= 60 ? "rough" : "keepsake";
       const used = STROKES - st.left;
       const how = st.splits ? ` ${st.splits === 1 ? "A knot split" : st.splits + " knots split"} under the chisel.` : st.inked ? " The ink kept you clear of the knots." : "";
-      const what = word === "true" ? `He will feel it in his hand. ${F.effect}`
+      const fitNote = SG === 0 ? "" : fit ? ` The grip is cut for his ${hand.wide ? "wide" : "narrow"} ${hand.side} hand: on the river he can change sides in one beat, and at the heart his hand closes on it sooner.`
+        : st.fit.side && st.fit.wide !== null ? " The grip is cut for the wrong hand. A tool cut for the wrong hand is never better than rough." : " You never laid the grip out for his hand, and a tool cut for no hand is never better than rough.";
+      const crackNote = !st.crack ? "" : st.crack.treated ? " The crack is a line of the grip now, and reads as yours." : st.crack.snapped ? " It is shorter than you meant, and sound." : " The crack is still in it. It will break there, the first time he leans on it.";
+      const what = (word === "true" ? `He will feel it in his hand. ${F.effect}`
         : word === "rough" ? `Rough, but it will serve: ${F.rough.charAt(0).toLowerCase() + F.rough.slice(1)}.`
-        : "It will do nothing on the river. It rides with him to the last frame all the same.";
+        : "It will do nothing on the river. It rides with him to the last frame all the same.") + fitNote + crackNote;
+      sh.set("gift", { form: st.form, word, fit: SG > 0 && fit, under: st.under || null, marked: !!st.marked });
       const sign = st.under ? SIGNS.find((x) => x[0] === st.under)[1] : "";
       const under = st.under ? ` On the inside face: ${sign}. He will find it when the heart has taken him from you, alone in a narrow vessel, turning the tool over in a red hand.` : "";
       // the last picture: with an Underside, the vessel where he reads it (Carried Away gains this and loses nothing)
-      if (st.under) endCard(wrap, api, "chapter-9", { numeral: "numeral-9", inset: "underside-" + st.under, caption: "He cut this where you would not look until now." });
-      else endCard(wrap, api, "chapter-2", { numeral: "numeral-2", inset: "form-" + st.form });
-      api.end({ outcome: word === "true" ? "win" : "done",
-        text: `${/^[AEIOU]/.test(F.name) ? "An" : "A"} ${F.name.toLowerCase()} for the one who argues, ${word} (${q}% likeness), in ${used} stroke${used === 1 ? "" : "s"}${st.marked ? ", his mark cut in the grip" : ""}.${how} ${what}${under}` });
+      ctl.end({ outcome: word === "true" ? "win" : word === "keepsake" && SG > 0 ? "lose" : "done",
+        text: `${/^[AEIOU]/.test(F.name) ? "An" : "A"} ${F.name.toLowerCase()} for the one who argues, ${word} (${q}% likeness), in ${used} stroke${used === 1 ? "" : "s"}${st.marked ? ", his mark cut in the grip" : ""}.${how} ${what}${under}` },
+        () => { if (st.under) endCard(wrap, api, "chapter-9", { numeral: "numeral-9", inset: "underside-" + st.under, caption: "He cut this where you would not look until now." }); else endCard(wrap, api, "chapter-2", { numeral: "numeral-2", inset: "form-" + st.form }); });
     }
 
     // ---- drawing (scrimshaw) --------------------------------------------------------------------
@@ -484,11 +667,18 @@ export default {
         }
         g.stroke(); g.setLineDash([]); g.globalAlpha = 1;
       }
+      if (st.crack && !st.crack.snapped) {
+        const cp = crackPts();
+        g.strokeStyle = st.crack.treated ? C.ink : C.red; g.lineWidth = st.crack.treated ? 0.45 : 0.5; g.beginPath();
+        for (let x = 1; x <= BW - 1; x += 1.5) { const y = CRACK_Y + Math.sin(x * 1.7) * 0.9 + (x % 3 ? 0.4 : -0.4); x === 1 ? g.moveTo(x, y) : g.lineTo(x, y); } g.stroke();
+        if (st.crack.treated) { g.lineWidth = 0.25; g.beginPath(); g.moveTo(3, CRACK_Y - 2.2); g.lineTo(BW - 3, CRACK_Y - 2.2); g.moveTo(3, CRACK_Y + 2.4); g.lineTo(BW - 3, CRACK_Y + 2.4); g.stroke(); }
+        if (st.tracing === "crack") for (const p of cp) { g.beginPath(); g.arc(p.x, p.y, 1.2, 0, 7); g.fillStyle = C.red; g.fill(); }
+      }
       const mp = markPts();
-      if (st.tracing || st.marked) {
+      if ((st.tracing && st.tracing !== "crack") || st.marked) {
         g.strokeStyle = st.marked ? C.red : C.ink; g.lineWidth = st.marked ? 0.7 : 0.35; g.setLineDash(st.marked ? [] : [0.8, 0.8]);
         g.beginPath(); g.moveTo(mp[0].x, mp[0].y); g.lineTo(mp[1].x, mp[1].y); g.lineTo(mp[2].x, mp[2].y); g.stroke(); g.setLineDash([]);
-        if (st.tracing) for (const p of mp) { g.beginPath(); g.arc(p.x, p.y, 1.2, 0, 7); g.fillStyle = C.red; g.fill(); }
+        if (st.tracing && st.tracing !== "crack") for (const p of mp) { g.beginPath(); g.arc(p.x, p.y, 1.2, 0, 7); g.fillStyle = C.red; g.fill(); }
       }
       const a = st.drag ? st.drag.a : st.kbStart, b0 = st.drag ? st.drag.b : st.kbStart ? st.cursor : null;
       let tag = null;
@@ -520,11 +710,11 @@ export default {
 
     return {
       unmount() {
-        timers.forEach(clearInterval); ro.disconnect();
+        timers.forEach((id) => { clearInterval(id); clearTimeout(id); }); ro.disconnect();
         listeners.forEach(([t, ev, fn, o]) => t.removeEventListener(ev, fn, o));
         beats.dispose(); disposeKit();
         wrap.remove();
       },
     };
-  },
-};
+  }
+}
