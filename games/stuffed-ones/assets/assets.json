@@ -104,16 +104,19 @@
       "id": "upstairs-hall",
       "name": "The upstairs hall",
       "scenes": [
+        "a2_gerald",
         "a2_night_hall",
         "a4_night_sounds",
-        "b8_the_door"
+        "a4_sixty_knots",
+        "b8_the_door",
+        "c11_cupboard_shut"
       ],
       "dimensions_m": [
         12,
         1.2,
         2.4
       ],
-      "lighting": "Night only: moonless grey from one end window, 0.05 lux look, blue-grey without black; night two darker.",
+      "lighting": "Night only: moonless grey from one end window, 0.05 lux look, blue-grey without black; night two darker. Night one, earlier (a2_gerald): the same grey, one bedroom door ajar. Day (a4_sixty_knots): flat grey from the end window. Evening (c11_cupboard_shut): the hall light on, seen from the closet's dark.",
       "objects": [
         "rag-rug",
         "guest-lamp"

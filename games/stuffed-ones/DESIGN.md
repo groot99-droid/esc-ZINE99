@@ -7,7 +7,7 @@ You spend three days in a cheap cabin with four old friends and learn why you lo
 | Item | Value |
 | --- | --- |
 | Source | *The Stuffed Ones*, a novel in three movements, 33 chapters. Vault path `02_Novels/01_The_Stuffed_Ones.md` (companion note `_Annotations/02_Novels/01_The_Stuffed_Ones.md`) |
-| Target length | 120–150 minutes; this plan runs 143 minutes on the as-written path |
+| Target length | 120–150 minutes; this plan runs 149 minutes on the as-written path |
 | Players | 1 |
 | Core verb | **Hold still** (`docs/COLLECTION.md`) |
 | Structure | Act 1 prey (62 min), Act 2 the hunger (26 min), Act 3 predator (55 min). A finished run's group becomes the shelf for the next run |
@@ -256,28 +256,28 @@ Group C speaks the same source lines as Group B, assigned to different mouths. T
 | # | Chapter id | Title | Min | Layers | New mechanic, place, revelation or choice | Tension 1–5 |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | `c01_arrival` | The Cabin That Felt Too Quiet | 13 | 3D, 1D | The cabin, the shelves, the guestbook; Shelve or Keep (first incident); Stitchwork | 1 |
-| 2 | `c02_first_night` | The First Night | 9 | 3D | 2:30 a.m. silence; the first explanation broken | 2 |
+| 2 | `c02_first_night` | The First Night | 11 | 3D | Gerald on the landing; 2:30 a.m. silence; the first explanation broken | 2 |
 | 3 | `c03_smell_warmth` | The Smell, the Warmth, the Dog | 13 | 3D, 1D | Three incidents; the creek; the first death; the Hand-Sewn Book | 3 |
-| 4 | `c04_fuller` | Fuller | 12 | 3D, 1D | The silent forest; toys "where we hadn't left them"; explanations run out | 3 |
+| 4 | `c04_fuller` | Fuller | 13 | 3D, 1D | The silent forest; toys "where we hadn't left them"; Sixty Knots; explanations run out | 3 |
 | 5 | `c05_cabin_turns` | The Cabin Turns | 15 | 3D, 1D | The bear turns its head; flight; the labyrinth; the ritual room; the altar choice | 5 |
 | 6 | `c06_waking_warm` | Waking Warm | 9 | 3D, 1D | The low camera; Stitchwork on your own seams; Stuffing; the Still control | 2 |
 | 7 | `c07_new_guests` | The New Guests Arrive | 10 | 3D | Holding still near guests; the release; Jamie falls | 3 |
 | 8 | `c08_giving_in` | Giving In | 7 | 3D, 2D | The dollhouse cutaway (involuntary climb); the bedroom door choice | 4 |
 | 9 | `c09_dont_move` | We Don't Move at First | 7 | 3D | Group B or C arrives; learning them from the shelf | 2 |
 | 10 | `c10_sound` | The First Game: Sound | 8 | 2D, 3D, 1D | Joining or refusing; the dollhouse as hunter; Sound | 3 |
-| 11 | `c11_movement` | The Second Game: Movement | 9 | 3D, 1D | The toy-floor camera; Parlour; blame | 3 |
+| 11 | `c11_movement` | The Second Game: Movement | 10 | 3D, 1D | The toy-floor camera; Parlour; blame; the cupboard door shut from outside | 3 |
 | 12 | `c12_scent_proximity` | Scent, then Proximity | 10 | 2D, 3D, 1D | Scent and Proximity; mending a friend; the flee line | 4 |
-| 13 | `c13_third_morning` | The Third Morning | 6 | 3D, 1D | The seal (or the flight); Parlour under pressure | 4 |
+| 13 | `c13_third_morning` | The Third Morning | 8 | 3D, 1D | The seal (or the flight); Jamie's Seam; Parlour under pressure, the board photographed | 4 |
 | 14 | `c14_chase` | The Final Game: The Chase | 11 | 1D, 3D, 2D | Herding; the labyrinth from above | 5 |
 | 15 | `c15_cycle` | The Cycle Continues | 4 | 3D | The ending; the shelf is written for the next run | 2 |
-| | | **Total** | **143** | | | |
+| | | **Total** | **149** | | | |
 
-The Keeper path leaves after chapter 5 and plays its own 5-minute ending, about 67 minutes in all. The Warning path skips chapter 14 and the rest of 13 (about 125 minutes). Replays do not count toward length.
+The Keeper path leaves after chapter 5 and plays its own 5-minute ending, about 70 minutes in all. The Warning path skips chapter 14 and the rest of 13 (about 125 minutes). Replays do not count toward length.
 
 ### Beat chart
 
 ```
-min   0    10    20    30    40    50    60    70    80    90   100   110   120   130   143
+min   0    10    20    30    40    50    60    70    80    90   100   110   120   130   149
       |-----c01----|--c02--|----c03----|---c04---|-----c05-----|-c06-|--c07--|c08-|c09-|-c10-|--c11--|--c12---|c13-|---c14---|c15
 T5                                              ##                                                                   ###
 T4                                             #  #                            ##                         ## ##     #
@@ -303,10 +303,11 @@ Every chapter below lists its scenes in order. Flags named are declared in `data
 - **Flags:** `player.name_written`, `memory.earned`, `memory_log`, `book.pages_found`, `incident_log`, `explanation.current`, `act1.unease`, `strap.quality`.
 - **Ends:** lights out. Fade on the pegs left mid-game.
 
-### Chapter 2: The First Night (9 min)
+### Chapter 2: The First Night (11 min)
 
 - **Goal:** find what woke you; get through breakfast.
-- **Order:** `a2_night_hall` (6 min) → `a2_breakfast` (3 min).
+- **Order:** `a2_gerald` (2 min) → `a2_night_hall` (6 min) → `a2_breakfast` (3 min).
+- **Gerald (accepted 2026-11-15, built 2026-11-16).** Before the silence. From your bedroom doorway you see Dani on the landing in her socks, carrying the bear she named Gerald at the shelves. She is putting him on Marcus's pillow, for a joke; she wants to be the kind of friend who can. She sees you: "Don't tell." Promise (`gerald.promised`) or say nothing; either way she does it and goes back to bed pleased. When the real moving starts, "We tried to blame each other. / But no one confessed." (ch 7), and Dani believes she began it. Her secret comes down the pulse in Act 2 as the borrowed patch whether you promised or not.
 - **Play:** You wake at 2:30 a.m. "to the absence of noise": the ambience bed cuts out completely. You may lie still (the sounds come to you) or walk the dark upstairs hall with no torch, only the window's grey. Thump, drag, squeak, each from a direction the audio places precisely. Then nothing. Incident I2: Shelve or Keep. Keeping reveals lead page L1 (the squeak came from the hall closet; a rabbit with a split seam has a page folded inside). At breakfast the variant of I2's breaker plays (section 12, incident table), and Jamie asks his question: "Did anyone else hear… like… footsteps last night?" Everyone had; nobody says so. "Jamie's question" is always earned here. If you Shelved I2, Lila walks out with you after breakfast and tells you why she locks her door ("Why Lila locks her door").
 - **Ends:** you step outside into daylight.
 
@@ -314,12 +315,13 @@ Every chapter below lists its scenes in order. Flags named are declared in `data
 
 - **Goal:** a normal day that will not stay normal.
 - **Order:** `a3_smell` (2 min) → `a3_trail_creek` (4 min) → `a3_warmth` (2 min) → `a3_dog` (3 min) → `a3_book_1` (2 min).
-- **Play:** Jamie lifts the rabbit off a chair: "Dude," he said, "this thing smells weird." You lean in (hold the interact button to smell; the screen's edges warm). Incident I3. The creek trail with Lila and Dani: a swimming hole, Lila photographs mushrooms ("Lila's mushroom photo", always). If you Shelved I3, the mood loosens: Lila hums her three notes ("Lila's hum") and Dani says she is glad she came ("Dani is glad she came"). Back at the cabin, Lila screams: the bear on her bed is "alive warm". Incident I4. Anyone who handles the bear feels its seam; an exploration page is inside it (the player must pick it up and feel along the seam, 3 seconds, while it pulses in the hands). That evening the terrier barks, yelps, stops. The porch and forest edge: you find the dog as a still shape among leaves, at 12 m; the camera does not let you closer than 6 m. Mabel: "They get hungry." Incident I5. If you Shelve I5 the friends sit together on the porch afterwards and tell old trip stories ("The trips before"). The shed beside the porch holds an exploration page. In your room, the first sitting of the Hand-Sewn Book.
+- **Play:** Jamie lifts the rabbit off a chair: "Dude," he said, "this thing smells weird." You lean in (hold the interact button to smell; the screen's edges warm). Incident I3. The creek trail with Lila and Dani: a swimming hole, Lila photographs mushrooms ("Lila's mushroom photo", always). If you Shelved I3, the mood loosens: Lila hums her three notes ("Lila's hum") and Dani says she is glad she came ("Dani is glad she came"). Back at the cabin, Lila screams: the bear on her bed is "alive warm". Incident I4. Anyone who handles the bear feels its seam; an exploration page is inside it (the player must pick it up and feel along the seam, 3 seconds, while it pulses in the hands). That evening the terrier barks, yelps, stops. The porch and forest edge: you find the dog as a still shape among leaves, at 12 m; the camera does not let you closer than 6 m. Mabel: "They get hungry." Incident I5. Behind her Ruth kneels, unbuckles the terrier's collar, and puts it in her sewing tin with the buttons (`collar.seen`; accepted 2026-11-15, built 2026-11-16). If you Shelve I5 the friends sit together on the porch afterwards and tell old trip stories ("The trips before"). The shed beside the porch holds an exploration page. In your room, the first sitting of the Hand-Sewn Book.
 - **Ends:** you close the book and the room is very quiet.
 
-### Chapter 4: Fuller (12 min)
+### Chapter 4: Fuller (13 min)
 
-- **Order:** `a4_night_sounds` (3 min) → `a4_silent_forest` (4 min) → `a4_wrong_places` (3 min) → `a4_book_2` (2 min).
+- **Order:** `a4_night_sounds` (3 min) → `a4_silent_forest` (4 min) → `a4_wrong_places` (3 min) → `a4_sixty_knots` (1 min) → `a4_book_2` (2 min).
+- **Sixty Knots (accepted 2026-11-15, built 2026-11-16).** The cat plush sits outside Lila's locked door. Crouch to pick it up and the door-frame is at eye height: small knots of coloured thread pinned in a rising column, as a family marks a child's height. They climb to a seven-year-old's height. Then sixty more are tied at that same height, faded to fresh (`knots.seen`). Nobody explains it. Lila's room was a child's room.
 - **Play:** Night two: "Three taps near the door. / A dragging sound across the ceiling. / A soft giggle from the hallway, pitched wrong". Incident I6. Morning: no birds. Wildlife emptied by the porch ("a squirrel, a rabbit, a raccoon"), shown under a tarp Marcus lays over them. The shelves look fuller. Incident I7. Jamie and you walk the ridge path because he cannot stand the cabin; his nature-film voice falters and stops when the birds do not answer ("Jamie's narration", if you answer him when he stops). If you Shelved I6 or I7, Marcus on the porch: "There's always a way out" ("There's always a way out"). Then the toys: rabbit at the top of the stairs, bear at the dinner table, cat outside Lila's locked door, dog on the couch facing the hallway, and the counting-game pegs moved overnight. The friends blame each other (a 40-second argument you can interrupt with one of three lines, none of which settles it). Incident I8. Mabel's sampler hides an exploration page behind its frame. Second sitting of the book.
 - **By now** a player who Shelved every incident has run out of explanations (four exist; I5–I8 leave only Keep). The journal's shelving lines get shorter each time, as the vault's horror rule asks.
 
@@ -358,9 +360,10 @@ Every chapter below lists its scenes in order. Flags named are declared in `data
 - **Order:** `c10_dollhouse_sound` or `c10_hold_shelf` (6 min) → `c10_stuffing_2` (2 min).
 - **Play:** The join-or-refuse choice opens each hunt game: **Join** or **Hold** (refuse). Joining plays the dollhouse at night, 23:00–05:00 in 6 real minutes. Sound tools only (section 10). Refusing plays the night from the shelf in 3D, holding Still while the others play; hunger rises unfed. Either way the hunt log records the game. Dawn Stuffing.
 
-### Chapter 11: The Second Game: Movement (9 min)
+### Chapter 11: The Second Game: Movement (10 min)
 
-- **Order:** `c11_toy_floor` (5 min) → `c11_parlour_1` (2 min) → (or `c11_hold_shelf`).
+- **Order:** `c11_toy_floor` (5 min) → `c11_parlour_1` (2 min) → (or `c11_hold_shelf`) → `c11_cupboard_shut` (1 min).
+- **I swear I locked that door (accepted 2026-11-15, built 2026-11-16).** That evening the guests act. The one you made It in Parlour (Noor or Sol if nobody was) is the one who found a toy where it had not been left that morning, and now gathers every toy off the shelf, sets the five of you on the linen-cupboard floor, and shuts the door from outside. A chair's legs scrape; the line of hall light under the door is cut by them. You hold still through all of it. In the dark, on the shelf above, lie tissue patterns pencilled RUTH: cut for a small body, then larger, then larger, in the hand that drew the pattern of you (`ruth.patterns_seen`). Scent, that night, seeps from under the door; Proximity begins with the heap.
 - **Play:** "The next morning, we changed positions." The toy-floor camera in 3D, in daylight, with guests awake. Choose a new spot from six and reach it unseen. Mid-morning the group goes on a hike (11:00–12:30), leaving one person on the porch. The counting-game board sits on the living-room table mid-game: Parlour, first appearance. If group dread reaches 70 here, `c13_flight` plays at once.
 
 ### Chapter 12: Scent, then Proximity (10 min)
@@ -368,9 +371,10 @@ Every chapter below lists its scenes in order. Flags named are declared in `data
 - **Order:** `c12_dollhouse_scent` (3 min) → `c12_dollhouse_proximity` (3 min) → `c12_stitch_mend` (2 min) → `c12_stuffing_3` (2 min). Each game may be refused (`c12_hold_shelf`).
 - **Play:** "By the second night, the warmth inside us was unbearable." Scent in the dollhouse, then, at 03:00 the same night, Proximity: place yourself and the pack by a sink, a bed, a door. A friend's seam has torn in the night (whoever had the highest hunger); mend it, or mend your own (+1 slot). Spread 5 shows the flee line on the guest cards.
 
-### Chapter 13: The Third Morning (6 min)
+### Chapter 13: The Third Morning (8 min)
 
-- **Order:** `c13_seal` (3 min) → `c13_parlour_2` (3 min); or `c13_flight` (Warning) if the group fled earlier.
+- **Order:** `c13_seal` (3 min) → `c13_jamies_seam` (2 min) → `c13_parlour_2` (3 min); or `c13_flight` (Warning) if the group fled earlier.
+- **Jamie's Seam (accepted 2026-11-15, built 2026-11-16).** Jamie's falls are not slips: falling is the only warning a toy can give. He throws himself off the couch to be seen, and the pulse, you included, holds him still: "Jamie didn't move. / Not yet. / We were still playing." (ch 30). His side has split. You are given the needle (Stitchwork, appearance 5, section 11). Mend him and he stays in the pack, hungry; leave him open and his glow leaves the pulse by evening (`jamie.seam`). The game does not say which is kinder.
 - **Play:** At 06:00 the guests try to leave. "The door wouldn't open. / The windows wouldn't budge." All dread +15. Jamie falls off the couch (+10 all). Blame resets: nobody thinks it is a prank now. Late afternoon, trapped, the guests try to finish the counting game for something to do; one checks the windows every few minutes. Parlour, second appearance, under pressure.
 
 ### Chapter 14: The Final Game: The Chase (11 min)
@@ -404,6 +408,7 @@ Cameras: **guest camera**, first person at 1.65 m, walk 1.4 m/s, run 3.2 m/s (Ac
 | `a1_cabin_arrival` | Cabin, porch to bedrooms | Guest | Guestbook, shelves (look, never move: Ruth's line plays if you try), game box, bags, rooms | Warm, dusty, cedar | Padded mix (−6 dB above 4 kHz indoors) | Laugh prompt; I1 at 3:30 | cut / fade |
 | `a1_trail_overlook` | Overlook loop | Guest | Marcus's map, the overlook rail | Late sun | Birds, wind, Marcus | Overlook reached | fade / fade |
 | `a1_dinner` | Kitchen and living room | Guest | Bowls, the friends, the game board (watch only) | Lamps, fire | Cutlery, laughter, counting words | Dinner done → push-in to the strap | fade / push-in |
+| `a2_gerald` | Upstairs hall, night one, from your doorway | Guest; look, and two replies | Dani, the bear, Marcus's door | Moonless grey; one door ajar, warm | Socks on pine; a held breath | Dani sees you | fade / fade |
 | `a2_night_hall` | Upstairs hall, dark | Guest, no torch | Bedroom doors, hall closet, window | Moonless grey, 0.05 lux look | Ambience bed removed; thump, drag, squeak placed in 3D | 2:30; sounds stop at 4 min | fade / fade |
 | `a2_breakfast` | Kitchen | Guest | Coffee, friends | Flat morning | Quiet talk | Jamie's question | fade / cut |
 | `a3_smell` | Living room | Guest | The rabbit (hold to smell) | Midday | Faint pulse under silence when held | I3 | cut / fade |
@@ -412,7 +417,8 @@ Cameras: **guest camera**, first person at 1.65 m, walk 1.4 m/s, run 3.2 m/s (Ac
 | `a3_dog` | Porch, forest edge, shed | Guest; 6 m exclusion from the tree | Shed door, the tarp, Mabel | Dusk, long shadows | Barking, yelp, silence; Mabel's whisper | I5 | cut / push-in |
 | `a4_night_sounds` | Upstairs, dark | Guest | Door, ceiling, hall | Darker than night 1 | Three taps, drag overhead, giggle "like a toy with dying batteries" | I6 | fade / fade |
 | `a4_silent_forest` | Porch, ridge path | Guest | Tarp over animals, Jamie | Overcast, no shadows | No birds; only footsteps and Jamie | I7 | fade / cut |
-| `a4_wrong_places` | Whole ground floor and stairs | Guest | Four toys, the pegs, the sampler | Grey | Argument | I8 | cut / push-in |
+| `a4_wrong_places` | Whole ground floor and stairs | Guest | Four toys, the pegs, the sampler | Grey | Argument | I8 | cut / cut |
+| `a4_sixty_knots` | Upstairs hall, outside Lila's door | Guest, crouched | The cat plush, the door-frame | Flat grey from the end window | The house, holding its breath | Door-frame looked at | cut / push-in |
 | `a5_kitchen_bear` | Kitchen | Guest, input locked after 20 s | None | One bulb; warm | Silence, then the head turning (a fabric creak) | Head turns | fade / cut |
 | `a5_cabin_turns` | Whole cabin | Guest, running | Doors (blocked), cellar door | Lights flicker at 2 Hz | Patter of soft feet, friends shouting | Reach trapdoor | cut / fade |
 | `a5_labyrinth` | Labyrinth | Guest | Doors (two loop back), Marcus's map | Warmer and redder inward | Carpet kills footsteps; echoes wrong | Centre reached | fade / fade |
@@ -427,6 +433,7 @@ Cameras: **guest camera**, first person at 1.65 m, walk 1.4 m/s, run 3.2 m/s (Ac
 | `c9_new_guests` | Shelf | Shelf | Being poked, being moved (Lila) | Day | Group voices | Bedtime | fade / push-in |
 | `c10_hold_shelf`, `c11_hold_shelf`, `c12_hold_shelf`, `c14_hold_shelf` | Shelf | Shelf; Still only | — | Night or day as the chapter | The others' sounds, distant | Game's time runs out | fade / push-in or fade |
 | `c11_toy_floor` | Ground floor in daylight | Toy-floor | Six marked spots, furniture | Day | Guests' footsteps; a head turning creaks | Spot reached or 13:00 | pull-out / push-in |
+| `c11_cupboard_shut` | The linen cupboard on the landing, from inside | Toy height, fixed; Still only | The door, the shelf above | Hall light, then a line under the door | A chair dragged; breathing through wood | Door shut and wedged | cut / fade |
 | `c13_flight` | Shelf facing window | Shelf | — | Morning | Bags, car doors, engine leaving | Car gone | cut / fade |
 | `c13_seal` | Shelf facing door | Shelf | — | Morning, too warm | Rattling handle, a chair dragged | Jamie falls | pull-out / push-in |
 | `c14_chase_cabin` | Ground floor, night | Toy-floor plus gestures | Twitch, Tilt, Step | "Alive warm": amber haze | Screams, running | All guests through the basement door | pull-out / flatten |
@@ -446,6 +453,10 @@ Cameras: **guest camera**, first person at 1.65 m, walk 1.4 m/s, run 3.2 m/s (Ac
 - **Progress:** the night clock along the top, 23:00 to 05:00; guest cards on the right with dread shading (spread 5 only).
 - **Failure and retry:** there is no failing a night. Slips cost and are recorded. An accessibility option slows the night clock and cone sweep to 50 percent.
 - **Sequences:** `b8_dollhouse_climb` (tutorial, no actions), `c10_dollhouse_sound`, `c12_dollhouse_scent`, `c12_dollhouse_proximity`.
+- **The climb, as built (accepted 2026-11-15, built 2026-11-16).** In `b8_dollhouse_climb` the hunger walks the cat from the kitchen up the stairs to a bedroom door at 0.6 m/s, and the player's only input is Still. It teaches the one rule: still in an open eye is safe, moving in one is a slip.
+- **Mirrors (accepted 2026-11-15, built 2026-11-16).** A mirror bounces a sight cone once. While a sleeper's open eye falls on a mirror, that sleeper also sees one more place, drawn as a pale beam from the glass: the hall mirror throws Ana's sight onto the stair, and the mirror by the banister throws Wes's onto the landing behind it (4.2 m to 6.1 m, where the shelf is). Moving or acting there while the mirror is lit is a slip like any other.
+- **Lila walks (accepted 2026-11-15, built 2026-11-16).** Once a night Lila climbs down on her own, whatever the cones are doing ("She didn't want to.", ch 21). She walks at 0.34 m/s toward a guest's bedside and settles there. Bring your cat within 0.9 m of her and hold Still to hold her too; while you hold for two, hunger rises at double the rate. Seen walking, she is a slip. **Layer link 2:** if "Lila's hum" came through the last Stuffing in a slot (`lila.hum_kept`), she does not walk that night.
+- **Who shuts the door (layer link 3).** The guest made It in Parlour (`parlour.it`) is the one who finds the toy in the morning, wedges the chair in `c11_cupboard_shut`, and comes out under the hall light in the heap.
 - **The cupboard start (accepted 2026-11-15, phase 1).** Proximity no longer begins on the shelf. After Movement a guest (the one made It in Parlour, Noor or Sol if nobody was) shuts every toy in the linen cupboard on the landing and wedges a chair under the knob. `c12_dollhouse_proximity` opens on the cupboard plate, the pack in a heap in the dark, touching for the first time since the change. **The heap:** the shared pulse beats every 1.6 s; press Push inside 0.3 s of a beat, three times, and the chair goes over (a push off the beat only rattles the door: hunger +3, and every third miss is a lurch, one memory). Every eye opens. The guest comes out under the hall light, and you hold all five still for 9 seconds while they say the source's lines, "Okay, seriously, who keeps moving these?" "This isn't funny." "I swear I locked that door." (ch 29). One tremor comes while they look (Steady, or the heap shivers: dread +5). Letting go of Still while they look is a slip (dread +15, one memory) and adds two seconds. Sets `cupboard.opened`. Then the night runs from 03:00 with the hall light still on for 6 seconds, the pack on the landing, and Settle as before.
 
 | Tool | Effect | Hunger change |
@@ -465,6 +476,9 @@ Cameras: **guest camera**, first person at 1.65 m, walk 1.4 m/s, run 3.2 m/s (Ac
 - **Progress:** a ring counter (outer, inner, centre) and a warmth bar along the bottom.
 - **Failure and retry:** if a guest loops back twice, or stands frozen for 20 seconds in total, the ring restarts from its entrance (checkpoint). No ending depends on failure; the Chase always ends at the centre.
 - **Sequences:** `c14_labyrinth_outer` (one loop door, three junctions, 2.5 min), `c14_labyrinth_inner` (two loop doors, rooms of broken toys that block sight, 3 min).
+- **Posted toys (accepted 2026-11-15, built 2026-11-16).** From the inner ring on, a toy that has held still for 0.8 s is posted: a wall in its own square. A guest who comes up against it turns and does not freeze. The herd enters the inner ring split, one guest on each side of you, and each toy can only drive what is in front of it; there are more junctions than toys.
+- **The one who picks you up (accepted 2026-11-15, built 2026-11-16).** A guest under 40 dread (Ana, or Kit) stops running, walks back along the corridor and lifts the cat. Hold perfectly still for five seconds and you are put down; while you do not, she carries you toward the ring's entrance, and if you move in her hands she feels it (one memory).
+- **The old thread (accepted 2026-11-15, built 2026-11-16).** In the last stretch of `c14_labyrinth_inner` the route your own group ran in Act 1 is woven into the tapestry in faded thread, every wrong turn of it, and the guests are running it: through two doors that lead back and one side way out, in that order. They are not running from you, so chasing does nothing. Only a toy standing in the corridor turns them, and a guest never goes back for a door it has turned from. Each door taken leads a guest back to where the ring began (hunger +8). Three wrong turns, two toys; then the statue. **Layer link 1:** with a Strong strap (`strap.quality`) Marcus kept his paper map on him in `a5_labyrinth` and pencilled each door on it (`map.kept`); his marks show as chalk on the tapestry, a cross on each door that leads back and an arrow at the true one. Without it there is only the faded thread, whose frayed ends are the doors.
 - **The statue at the threshold (accepted 2026-11-15, phase 1).** `c14_labyrinth_inner` does not end when the last guest is inside. You walk your cat to the centre doorway and hold Still for 20 seconds as the wall that keeps them in, while one guest (Ana or Kit) comes back, kneels and talks to you: five short lines, the last of them "…Okay." Hunger rises 1.2 per second while you hold. Letting go, stepping out, or a lurch once she has started is seen: one memory, and the count begins again; a second time and she is past you, and the ring restarts from its entrance (checkpoint, as any ring). Sets `threshold.held`. The centre itself is shut to the pack in this pass: walking in after the guests is The Page (section 21, phase 3).
 
 ## 11. 1D games
@@ -484,6 +498,11 @@ Cameras: **guest camera**, first person at 1.65 m, walk 1.4 m/s, run 3.2 m/s (Ac
 | 2 | `b6_stitch_seams` | Ladder stitch on your own six seams | 6 per seam, 36 in all | The needle drifts 4 px with each pulse (every 1.2 s) | `seams.slots_total`: Strong 3, Fair 2, Poor 1 slot per seam (6–18; 19 with appearance 3's own-seam mend) |
 | 3 | `c12_stitch_mend` | Whip stitch on a torn seam (a friend's, or yours) | 10 | Dawn light grows; 60 s before Mabel arrives, then the scene ends | `friend.seam_mended` (that friend's hunger rises 30 percent slower) or +1 slot on yours |
 | 4 | `a5_altar_stitch` (Keeper only) | Backstitch around the circle of skins | 12 in a ring | World runs; the room's pulse speeds up; 90 s | `altar.choice = stitch` on completion at any quality; abandoning it returns to `stitched` |
+| 5 | `c13_jamies_seam` | Whip stitch on Jamie's split side | 10 | The eye strip: a guest's eye runs along the top of the chart, and the needle may travel only while it is shut. 150 s before the others come in | `jamie.seam`: mended, or open if the needle is put down |
+
+- **Your own thread (accepted 2026-11-15, built 2026-11-16).** Mending a friend (appearance 3) draws thread from one of your own seams: you choose which, and that seam loses a slot.
+- **The ripper (accepted 2026-11-15, built 2026-11-16).** Stitches come out in reverse order: last sewn, first cut. A cut out of order tears the cloth, and the slot is gone for good. Used on a seam Ruth tightened (her five red stitches), it wins the slot back.
+- **The eye strip (accepted 2026-11-15, built 2026-11-16).** In Jamie's Seam stitching *is* moving. Anything the needle does while the eye is open (a press, a drag of more than a few pixels, a pull let go) is seen, once per glance; an open eye freezes the tension, so a held pull can wait it out. Three sightings and the guest crosses the room and picks Jamie up. The player may also put the needle down: "Leave him open" is an outcome, not a failure.
 
 The Keeper stitch is shown only as needle, thread and torn fabric at the altar's edge. The friends are inside the circle and never on screen.
 
@@ -496,6 +515,8 @@ The Keeper stitch is shown only as needle, thread and torn fabric at the altar's
 - **Difficulty:** S1–S2 four strips, one rule; S3–S4 six strips, two rules; S5–S6 eight strips, three rules and one decoy strip that fits no slot.
 - **Hints:** Mabel's sampler shows one solved line (found in c04). After 90 seconds idle, one strip's role glows.
 - **Failure:** none, except time in `a5_book_3`: 180 seconds with the toys closing in (a ring of glows tightening at the page's edge). Unfinished spreads stay unread.
+- **Missing strips (accepted 2026-11-15, built 2026-11-16).** One strip of each late spread is gone. The player sews it from two glossary radicals: what does the act, over what it is done to (needle and mouth make *feed*, spread 3). A wrong pair costs 4 s where the world runs.
+- **Backs (accepted 2026-11-15, built 2026-11-16).** Every strip has a back. On the front, Mabel's ritual in neat black counted stitches; on the back, big crooked ones in red wool, in a child's hand. The first strip ever turned shows the glyph for *seven*. Each spread has two legal lines, Mabel's and Ruth's. A back fits any slot; Ruth numbered her strips with her own strokes along the top edge, and her line is read from the other side of the page, so her order runs right to left. A back whose mark the player has met elsewhere (`glossary.ruth`: the hem of the counting-game cloth, Mabel's pencil on the toy's own pattern, the wallpaper by the labyrinth's centre door) names itself; the rest are read low on the ritual-room walls at the usual 8 s. Under the 180-second clock, time on a back is time not spent on spread 6 (`book.backs_read`). Ruth's lines for spreads 1 and 3 are written and playable ("I am seven still. I play."; "When the hunger plays, company stays, and I am warm."); the other four are drafts in `data/book.json`, and the whole selvage sentence is settled with The Page (phase 3).
 - **Carry-over:** spreads read in any earlier run start already ordered (`book.carried`, a ledger of spread numbers, since spreads can be read out of order).
 
 | Spread | Teaches (source where it exists) | Effect in Acts 2–3 |
@@ -534,6 +555,8 @@ The Keeper stitch is shown only as needle, thread and torn fabric at the altar's
 - **Ruth's peg (accepted 2026-11-15, phase 1).** One peg on the board belongs to no guest: an old bone button tied with red wool, absent from the scoresheet. It cannot be lifted. It moves one space on whenever nobody is looking: each time you have held still through a look at the window, and between the two visits (`parlour.ruth_peg`; it starts on space 20, the Tree). Ruth does what you do.
 - **The sentence (accepted 2026-11-15, phase 1).** All three pegs on the Door is the only thing a toy can say: *leave*. It takes the visit's three tampers. Then, instead of Leave, you may lie down beside the board on purpose and hold Still while they come in and find you (6 seconds; moving while they look is the visit's failure). Before the seal, with `dread.group` at 50 or more, it lowers the flee line by 15 (`parlour.sentence`, `flee_line` 70 to 55); under 50 they take it for one another's joke.
 
+- **The photographed board (accepted 2026-11-15, built 2026-11-16).** After the cupboard (`cupboard.opened`) the guests photograph the board before they leave the room. In `c13_parlour_2` any tamper is therefore proof: double dread, no blame, and climbing back to the shelf no longer hides you (they hold the photograph to the board, then turn to the shelf and put every toy in a different room). The one move left is the Door sentence and lying down beside it.
+- **The hem (accepted 2026-11-15, built 2026-11-16).** Three of Ruth's marks are stitched into the cloth's hem in red wool: play, company, stay (`glossary.ruth`).
 - **The board (as drawn, `art/maps/parlour-board.svg`):** the thirty spaces in order are the Door, Leaf, Cup, Key, Bird, Boot, Knot, Star, Chair, Two, Fish, Bell, Window, Acorn, Thimble, Lamp, Feather, Spool, Stair, Tree, Hat, Button, Moon, Scissors, Bed, Mushroom, Candle, Book, Needle and the Hearth. There is one Knot, space 7.
 - **Rules:** at most three tampers per visit. While blame is 50 or more, half of the dread from non-personal tampers becomes blame instead ("The guests blamed each other"). Before the seal, the memory governor applies (section 12). Each tamper lowers hunger by 5.
 - **Finish:** press Leave and be back at your spot before a guest enters (the climb back takes 4 seconds). **Failure:** a guest enters while you are on the table: a slip (dread +15 to them, one memory), blame −10, and the visit ends.
@@ -552,6 +575,9 @@ The Keeper stitch is shown only as needle, thread and torn fabric at the altar's
 - **Costs between packings:** joining a game takes one memory from that game's seam; a slip takes one from the seam used; a lurch takes two from the warmest seam; an Act 2 release takes one from the seam of the limb you moved. If a paying seam has no memory, the cost moves on to the next seam in the order Head, Chest, Arms, Legs. The bound slot never pays.
 - **Borrowed patches (accepted 2026-11-15, phase 1).** From the first packing on, friends' memories come down the pulse into your tray in their own thread colour, one from each friend, on square patches with frayed edges. Dani's is always "Dani moved Gerald."; the others bring one of two (`data/memories.json`, `borrowed`). Pack one and that friend's hunger rises 20 percent slower until the next packing, and they keep one line of voice later (`borrowed.kept`). It costs you the slot. A borrowed patch is not yours: it is never counted in `memory.kept` and never pays a cost; left in the tray it goes back up the pulse.
 - **Wadding (accepted 2026-11-15, phase 1).** Plain fill, always in the tray. A wadded slot is cold: it is not warm, keeps nothing and plays no game (`seams.wadded`). Wadding can be pulled out again until you close. Every open slot of all six seams wadded is the Empty Toy, chosen by hand (`seams.all_wadded`, section 13).
+- **Lila's hum (accepted 2026-11-15, built 2026-11-16; layer link 2).** While the token "Lila's hum" comes through a packing in a slot, Lila does not walk in the next Dollhouse night (`lila.hum_kept`).
+- **The fourth packing (accepted 2026-11-15, built 2026-11-16).** `c14_stuffing_4` is the set-piece. Three nights have decided most of the body: seams Ruth pulled shut, hollows wadded cold, a few memories still in place. One hollow is left open. In the tray: "My name"; Jamie's bad postcard with nothing on it (a blank: packed, it closes the hollow and keeps nothing); and patches in other people's thread. The Chase needs warm hollows in three seams, so the rule of every earlier packing turns over: to hunt, the player must leave the hollow empty, pull wadding out, or take a memory out and lose it. Whatever is in the tray at the close unravels, the name included.
+- **Mabel's pencil (accepted 2026-11-15, built 2026-11-16).** Beside the seams of the toy's own pattern, copied from an older pattern, are three of Ruth's marks: warm, cold, hunger (`glossary.ruth`).
 - **Finish:** Close (confirm). No failure.
 
 | Borrowed patch | Friend | Comes |
@@ -806,9 +832,9 @@ collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg
 
 | File | Holds |
 | --- | --- |
-| `data/game.json` | Title, source, 120–150 target, 15 chapters (143 minutes), layers per chapter |
-| `data/scenes.json` | 2 modes (`dollhouse`, `labyrinth_above`), 4 1D games, 56 scenes (37 3D, 6 2D, 13 1D), with reads, writes, transitions and next |
-| `data/flags.json` | 61 names: flags, meters, counters and 6 ledgers (`incident_log`, `memory_log`, `hunt_log`, `shelf.generations`, `book.carried`, `borrowed.kept`). Nine were added for phase 1 on 2026-11-15: `borrowed.kept`, `seams.wadded`, `seams.all_wadded`, `parlour.ruth_peg`, `parlour.it`, `parlour.sentence`, `flee_line`, `cupboard.opened`, `threshold.held` |
+| `data/game.json` | Title, source, 120–150 target, 15 chapters (149 minutes), layers per chapter |
+| `data/scenes.json` | 2 modes (`dollhouse`, `labyrinth_above`), 4 1D games, 60 scenes (40 3D, 6 2D, 14 1D), with reads, writes, transitions and next. Four were added for phase 2 on 2026-11-16: `a2_gerald`, `a4_sixty_knots`, `c11_cupboard_shut`, `c13_jamies_seam` |
+| `data/flags.json` | 70 names: flags, meters, counters and 7 ledgers (`incident_log`, `memory_log`, `hunt_log`, `shelf.generations`, `book.carried`, `borrowed.kept`, `glossary.ruth`). Nine were added for phase 2 on 2026-11-16: `gerald.promised`, `knots.seen`, `collar.seen`, `ruth.patterns_seen`, `map.kept`, `book.backs_read`, `glossary.ruth`, `jamie.seam`, `lila.hum_kept`. Nine were added for phase 1 on 2026-11-15: `borrowed.kept`, `seams.wadded`, `seams.all_wadded`, `parlour.ruth_peg`, `parlour.it`, `parlour.sentence`, `flee_line`, `cupboard.opened`, `threshold.held` |
 | `data/endings.json` | The four endings above |
 
 Beyond the shared schemas, six extra files, each with a schema in `data/schemas/<name>.schema.json` and all checked by `tools/check_data.py` (which `tools/validate.py` runs):
@@ -817,10 +843,10 @@ Beyond the shared schemas, six extra files, each with a schema in `data/schemas/
 | --- | --- |
 | `data/profile.json` | The profile store beside the save slots (IndexedDB store `profile`, one record): its four keys `run.number`, `shelf.generations`, `shelf.previous_ending` and `book.carried`, each with the flag it mirrors, type, default and write rule; the derived, unstored `run.hunt_group` (odd runs B, even runs C); when it is written (once, as an ending resolves, before the credits, by the four ending scenes); what each ending writes to the shelf; "Empty the shelf" |
 | `data/guests.json` | The pack's five stuffed forms, and Groups A, B and C (three each): lives, habits, Parlour symbols, Group C's mechanical differences, which source line each speaks, stuffed forms by slot, and which slot does which carried Act 1 incident in later runs |
-| `data/memories.json` | The 17 memory tokens: person, chapter, scene and condition (6 guaranteed, 16 in Act 1); the eight borrowed patches and the wadding rule (phase 1) |
+| `data/memories.json` | The 17 memory tokens: person, chapter, scene and condition (6 guaranteed, 16 in Act 1); the eight borrowed patches and the wadding rule (phase 1); the fourth packing and the Lila's-hum link (phase 2) |
 | `data/incidents.json` | The four explanations, Shelve and Keep, and incidents I1–I9 with every breaking variant |
-| `data/book.json` | The 12 pages (6 explored, 6 leads), the 6 spreads with their pages, strips, rules, decoys, teaching and effect; the three thread colours, the three order rules, the three sittings |
-| `data/stitchwork.json` | The six seams, scoring and quality thresholds, slots per quality, Ruth's line threshold, and the four stitch patterns |
+| `data/book.json` | The 12 pages (6 explored, 6 leads), the 6 spreads with their pages, strips, rules, decoys, teaching and effect; the three thread colours, the three order rules, the three sittings; the backs (Ruth's fourteen marks, her six lines, where each mark is taught) and the missing strips (phase 2) |
+| `data/stitchwork.json` | The six seams, scoring and quality thresholds, slots per quality, Ruth's line threshold, the five stitch patterns (Jamie's Seam is the fifth), your own thread and the ripper (phase 2) |
 
 The check confirms that every flag whose description starts with "PROFILE" is a profile key and every profile key is such a flag; that the profile is written by exactly the ending scenes; that token, incident, page and pattern scenes exist and write what they claim; that each spread is readable at the first sitting where its pages can all be found; and that the vault quotes are verbatim (when the vault checkout sits beside this repo). `run.hunt_group` is derived from `run.number` at each new game and not stored, so its description does not start with "PROFILE". Per-room scent levels, cone angles and guest positions are scene-local runtime values and are not saved past the scene.
 
@@ -872,28 +898,28 @@ The author accepted the deep dive (`DEEP_DIVE.md`) whole on 2026-11-15, includin
 | Who | Want | Secret | Where the player meets it | Phase |
 | --- | --- | --- | --- | --- |
 | Ruth | Playmates who do not go cold | She is the first one bound: the child, re-cut by Mabel every few years to seem to grow up and grow old beside her | The peg that is nobody's (Parlour) | 1 |
-| | | | Sixty Knots, the backs of the strips, her tissue patterns | 2 |
+| | | | Sixty Knots, the backs of the strips, her tissue patterns | **2** |
 | Mabel | Someone to take the needle, because she is failing and Ruth must not be left alone | The loose pages are left out on purpose; every group is an audition | The Keeper's porch, where she sits down for the first time | 3 |
 | Dani | To belong to a group that had years without her | On night one she moved Gerald onto Marcus's pillow as a joke, and believes she began it | The borrowed patch "Dani moved Gerald." (Stuffing) | 1 |
-| | | | Gerald: she is caught on the landing and asks for a promise | 2 |
-| Jamie | Never to be the one who ruins the trip | His falls are warnings, the only one a toy can give | Jamie's Seam | 2 |
+| | | | Gerald: she is caught on the landing and asks for a promise | **2** |
+| Jamie | Never to be the one who ruins the trip | His falls are warnings, the only one a toy can give | Jamie's Seam | **2** |
 
-**The secret, and the lines that seed it.** "An altar built from children's toys." (ch 11). "Mabel and Ruth came into the room that first morning, smiling like proud parents." (ch 17). "They moved slowly, like they were afraid of breaking." (ch 1). All three are in `02_Novels/01_The_Stuffed_Ones.md`. The player uncovers Ruth in three places (phase 2): a height chart in knotted thread on the door-frame of Lila's locked room, climbing to a seven-year-old's height and then tied sixty more times at that height; the back of every strip in the Hand-Sewn Book, stitched in a child's large uneven hand; and tissue patterns pencilled RUTH in the linen cupboard, cut small, then larger, then larger.
+**The secret, and the lines that seed it.** "An altar built from children's toys." (ch 11). "Mabel and Ruth came into the room that first morning, smiling like proud parents." (ch 17). "They moved slowly, like they were afraid of breaking." (ch 1). All three are in `02_Novels/01_The_Stuffed_Ones.md`. The player uncovers Ruth in three places (built in phase 2): a height chart in knotted thread on the door-frame of Lila's locked room, climbing to a seven-year-old's height and then tied sixty more times at that height; the back of every strip in the Hand-Sewn Book, stitched in a child's large uneven hand; and tissue patterns pencilled RUTH in the linen cupboard, cut small, then larger, then larger.
 
 **Act structure.** "Existing" means already in sections 7 and 8.
 
 | # | Scene | Status | In data as | Built |
 | --- | --- | --- | --- | --- |
 | 1 | We Shouldn't Have: arrival, the shelves, Laugh | Source ch 1; existing | `a1_cabin_arrival` | Before |
-| 2 | Gerald: night one, Dani moves a toy and you may promise silence | New | Scene to add (3D, between `a1_stitch_strap` and `a2_night_hall`) | Phase 2 |
-| 3 | Sixty Knots: the height chart, found when the cat plush sits outside Lila's door | New (the door: source ch 7) | Scene to add, or a beat of `a4_wrong_places` | Phase 2 |
-| 4 | They Get Hungry: the dog; Ruth unbuckles the collar and puts it in the sewing tin | Source ch 5; the collar new | `a3_dog` | Phase 2 |
-| 5 | The Next Filling: labyrinth, ritual room, the book; the backs can be read, at a cost in seconds | Source ch 10–12; backs new | `a5_labyrinth`, `a5_ritual_room`, `a5_book_3` | Phase 2 |
+| 2 | Gerald: night one, Dani moves a toy and you may promise silence | New | `a2_gerald` | **Phase 2** |
+| 3 | Sixty Knots: the height chart, found when the cat plush sits outside Lila's door | New (the door: source ch 7) | `a4_sixty_knots` | **Phase 2** |
+| 4 | They Get Hungry: the dog; Ruth unbuckles the collar and puts it in the sewing tin | Source ch 5; the collar new | `a3_dog` (`collar.seen`) | **Phase 2** |
+| 5 | The Next Filling: labyrinth, ritual room, the book; the backs can be read, at a cost in seconds | Source ch 10–12; backs new | `a5_labyrinth`, `a5_ritual_room`, `a5_book_3` (`book.backs_read`) | **Phase 2** |
 | 6 | Waking Warm (midpoint reversal: prey becomes predator) | Source ch 13–17; existing | `b6_waking` | Before |
 | 7 | Borrowed: the first Stuffing; a patch in your tray is not yours | New | `b6_stuffing_1` and every later Stuffing | **Phase 1** |
 | 8 | Ruth's Peg: Parlour, and the peg that is nobody's | New | `c11_parlour_1`, `c13_parlour_2` | **Phase 1** |
-| 9 | I Swear I Locked That Door (Act 3 reversal: the guests act) | New, built on the source's line (ch 29) and the chair a guest grabs (ch 30) | The heap opens `c12_dollhouse_proximity`. Scene to add: a short 3D beat after `c11_parlour_1` in which the door is shut on the pack from outside | **Phase 1** (the heap); the 3D beat later |
-| 10 | Jamie's Seam (darkest moment): "Jamie didn't move. / Not yet. / We were still playing." (ch 30) | Source ch 30; the seam new | Scene to add (1D Stitchwork, after `c13_seal`) | Phase 2 |
+| 9 | I Swear I Locked That Door (Act 3 reversal: the guests act) | New, built on the source's line (ch 29) and the chair a guest grabs (ch 30) | The heap opens `c12_dollhouse_proximity`. The door is shut on the pack from outside in `c11_cupboard_shut` | **Phase 1** (the heap); **Phase 2** (the 3D beat, Ruth's patterns) |
+| 10 | Jamie's Seam (darkest moment): "Jamie didn't move. / Not yet. / We were still playing." (ch 30) | Source ch 30; the seam new | `c13_jamies_seam` (Stitchwork, appearance 5) | **Phase 2** |
 | 11 | The Statue at the Threshold | Source ch 31–32; staging new | The end of `c14_labyrinth_inner` | **Phase 1** |
 | 12 | The Cycle Continues | Source ch 33, as written | `e_cycle_shelf` | Before |
 
@@ -902,7 +928,7 @@ The author accepted the deep dive (`DEEP_DIVE.md`) whole on 2026-11-15, includin
 | Ending | What the accepted story adds to its cost | Phase |
 | --- | --- | --- |
 | The Cycle (as written; text and conditions unchanged) | The new stuffed ones carry what you used against them: the guest you made It faces the door | 3 (the flag `parlour.it` is written now) |
-| The Warning | If you mended Jamie he is still on the shelf, hungry, watching. The Door sentence can lower its line to 55 | The sentence: **1**. Jamie: 2 |
+| The Warning | If you mended Jamie he is still on the shelf, hungry, watching (`e_warning_unpick` reads `jamie.seam`). The Door sentence can lower its line to 55 | The sentence: **1**. Jamie: **2** |
 | The Empty Toy | It is played: you pack yourself with nothing (wadding) | **1** |
 | The Keeper | Your first task is to re-cut Ruth's pattern; you replace Mabel at the table | 3 |
 | The Page (new, fifth) | Read all six backs, and at the threshold walk into the centre after the guests instead of holding the doorway. You lie down in the "circle of torn fabric skins" (ch 11) and sew a page of your own into the book; it is where the novel's first line is spoken from: "I don't know how long I've been down here." (ch 1). Cost: the guests went down, your friends hunt without you, and you are awake in the dark with no pulse for company. It buys your page in the next run's book | 3. Not in `data/endings.json` yet; the Cycle stays the only `as_written` ending |
@@ -918,9 +944,46 @@ The author accepted the deep dive (`DEEP_DIVE.md`) whole on 2026-11-15, includin
 | The cupboard start for Proximity | Section 10, Mode A | `cupboard.opened` | `dollhouse-cutaway.js`, "Night two" |
 | The statue at the threshold | Section 10, Mode B | `threshold.held` | `labyrinth.js`, after the last guest is in |
 
-**Waiting.** Phase 2, the secret: the backs of the strips and the selvage; Sixty Knots; Ruth's patterns; the glossary crossing into Parlour, the labyrinth and Stuffing; Jamie's Seam with the eye strip; mirrors, Lila walking and posted toys. Phase 3, the loop: The Page, the player-composed line carried in the profile, the second-run changes (Ruth's peg one space on, one more knot), guest patches. The game's art for several of these is already drawn (`art/`: the backs, Ruth's patterns, the guest patches, Jamie's chart) and is not yet used in play.
+**Built in phase 2 (2026-11-16): the secret.** The author wrote "start phase 2" and every held-back decision stands. Each item is in the section it belongs to, in `data/`, and playable in the web build unless marked 3D.
 
-**Scenes to add** (not added in this pass; `data/scenes.json`, the storyboards and the Blender build files are unchanged): Gerald; Sixty Knots; the cupboard door shut from outside; Jamie's Seam; The Page's ending scene.
+| Item | Where in this design | Flags | Playable in |
+| --- | --- | --- | --- |
+| Gerald | Chapter 2; section 9 | `gerald.promised` | 3D (`a2_gerald`, upstairs hall build file) |
+| Sixty Knots | Chapter 4; section 9 | `knots.seen` | 3D (`a4_sixty_knots`) |
+| The collar | Chapter 3 | `collar.seen` | 3D (`a3_dog`) |
+| The cupboard door shut from outside; Ruth's patterns | Chapter 11; section 9 | `ruth.patterns_seen`, reads `parlour.it` | 3D (`c11_cupboard_shut`) |
+| The backs of the strips, the glyph for seven, the selvage begun | Section 11, the Hand-Sewn Book | `book.backs_read` | `hand-sewn-book.js`, third stage |
+| Missing strips | Section 11, the Hand-Sewn Book | | the same, second stage |
+| The glossary crossing | Section 11 (Book, Parlour, Stuffing); section 10, Mode B | `glossary.ruth` | `parlour.js`, `stuffing.js`, `labyrinth.js` teach marks; the book reads them |
+| Jamie's Seam and the eye strip | Chapter 13; section 11, Stitchwork | `jamie.seam` | `stitchwork.js`, third stage |
+| Your own thread; the ripper | Section 11, Stitchwork | `seams.slots_total` | `stitchwork.js`, second stage |
+| Mirrors; Lila walks, and holding for two | Section 10, Mode A | `lila.hum_kept` | `dollhouse-cutaway.js`, second and third stages |
+| Posted toys; the one who picks you up; the old thread | Section 10, Mode B | `map.kept` | `labyrinth.js`, second and third stages |
+| The photographed board | Section 11, Parlour | reads `cupboard.opened` | `parlour.js`, third stage |
+| The fourth packing and the blank postcard | Section 11, Stuffing | `lila.hum_kept` | `stuffing.js`, third stage |
+
+**The ladders.** In the web build every 2D mode and 1D game is now a run of three stages: teach (the rule alone), test (the rule under the mode's pressure, with the new elements), twist (the rule turned over, ending in the set-piece). A stage won offers the next or a stop with a result; the stage reached is remembered.
+
+| Mode | Teach | Test | Twist, and its set-piece |
+| --- | --- | --- | --- |
+| Dollhouse cutaway | The involuntary climb (`b8_dollhouse_climb`): only Still | Sound, with the hall light, the stair and two mirrors | The cupboard: here you must move, on the beat. The heap; then Proximity while Lila walks |
+| Labyrinth from above | The outer ring, one loop door | The inner ring: a split herd, posted toys, the one who picks you up | The old thread: they are not running from you. The statue at the threshold |
+| Stitchwork | Marcus's strap, no clock | Lila's seam on the pulse, your own thread, the ripper | Stitching is moving: the eye strip. Jamie's Seam |
+| The Hand-Sewn Book | Spread 1: colour is role | Order rules, a decoy, a missing strip, under the clock | Every strip has a back, read from the other side. The first flip: seven |
+| Parlour | Nudge and Swap | The Personal tamper and It, with the window | The photographed board: a tamper is proof. Three pegs on the Door, and lying down |
+| Stuffing | More memories than hollows | Warm hollows against tonight's games; Ruth, borrowed patches, wadding | Not everything in the tray is yours, and to hunt you must unpack. The fourth packing |
+
+**The three layer links.** Each is written to state the web modes share (and to the flags the 3D scenes read); each shows a short note when it fires; each mode plays the same when the other has never been played.
+
+| # | Done in | Changes | Flag | In the web build |
+| --- | --- | --- | --- | --- |
+| 1 | Stitchwork, Marcus's strap (1D): a Strong strap, so Marcus keeps his map and pencils each door in `a5_labyrinth` (3D) | Chalk marks on the Act 3 tapestry (2D): a cross on each door that leads back, an arrow at the true one | `strap.quality`, `map.kept` | Playable: Stitchwork stage 1 to Labyrinth stage 3 |
+| 2 | Stuffing (1D): "Lila's hum" kept through a packing | Lila does not walk in the next Dollhouse night (2D) | `lila.hum_kept` | Playable: any Stuffing stage to Dollhouse stage 3 |
+| 3 | Parlour (1D): the guest made It | Who finds the toy in the morning and wedges the chair (3D, `c11_cupboard_shut`), and who comes out under the hall light in the heap (2D) | `parlour.it` | Playable for the heap: Parlour stages 2 or 3 to Dollhouse stage 3. The 3D end is in `data/` and the upstairs-hall build file |
+
+**Waiting.** Phase 3, the loop: The Page, the player-composed line carried in the profile, the second-run changes (Ruth's peg one space on, one more knot, backs readable from the first sitting), guest patches, the Cycle carrying your tampers, the Keeper re-cutting Ruth, Mabel sitting down, and the selvage's last four lines and its payoff at the threshold.
+
+**Scenes to add** (phase 3): The Page's ending scene.
 
 ## 22. Added for the game
 
@@ -936,6 +999,10 @@ Everything below is a proposal, not the author's text, except where it is marked
 
 **Accepted 2026-11-15, built in phase 1:** borrowed patches, their eight names and the friend's one kept line of voice; wadding, and the Empty Toy chosen by hand; Ruth's peg, It, the Door as a space pegs may share, the Door sentence and lying down beside the board; `flee_line` falling from 70 to 55; the thirty named spaces of the counting-game board as its art draws them; the linen cupboard, the wedged chair and the heap pressing the door on three beats of the pulse; reading "I swear I locked that door." (ch 29) as a guest having locked the toys in; the statue at the threshold and the guest who kneels and talks, with her five lines; every number in those rules; the nine flags in section 18.
 
-**Accepted 2026-11-15, not yet built (phases 2 and 3):** the hunger as something that answered Mabel's request for a warm toy; Ruth as the bound child, re-cut to seem to age; Mabel's want for an heir to the needle and the scattered pages as an audition; Mabel sitting down on the Keeper's porch; the height chart of sixty knots on Lila's door-frame and Lila's room as the child's room; Dani and Gerald on night one and her promise; Jamie's falls as deliberate, his glow running cool, the pulse holding him still, his split seam and the choice to mend it; the dog's collar going into the sewing tin; Ruth's tissue patterns in the cupboard; the backs of the strips, the second hand, missing strips and the glyph for seven; the selvage sentence; mirrors, Lila walking and holding for two; posted toys, the guest who picks you up, your own route woven into the tapestry and Marcus's pencil marks as chalk; your own thread, the ripper and the eye strip; the photographed board; guest patches and the blank postcard; the Cycle carrying your tampers and the Keeper re-cutting Ruth; The Page as a fifth ending, the novel's first line placed in the circle of skins, and the player-composed line carried to the next run; the scene titles of section 21.
+**Accepted 2026-11-15, built 2026-11-16 (phase 2):** the height chart of sixty knots on Lila's door-frame and Lila's room as the child's room (`a4_sixty_knots`); Dani and Gerald on night one and her promise (`a2_gerald`); Jamie's falls as deliberate, the pulse holding him still, his split seam and the choice to mend it (`c13_jamies_seam`); the dog's collar going into the sewing tin; the cupboard door shut from outside and Ruth's tissue patterns in the cupboard (`c11_cupboard_shut`); the backs of the strips, the second hand, missing strips and the glyph for seven; the selvage sentence, begun; the glossary crossing into Parlour, the labyrinth and Stuffing; mirrors, Lila walking and holding for two; posted toys, the guest who picks you up, your own route woven into the tapestry and Marcus's pencil marks as chalk; your own thread, the ripper and the eye strip; the photographed board; the fourth packing and the blank postcard; the scene titles of section 21; the nine phase-2 flags in section 18.
+
+**Added while building phase 2, beyond the deep dive, for the author to approve or strike:** Ruth's six lines on the backs (`data/book.json`, `backs.lines`; those of spreads 1 and 3 are in play, the other four are drafts) and the rule that she numbered her strips with her own strokes and that a back is read right to left; which three marks each place teaches (play, company, stay on the cloth's hem; warm, cold, hunger in Mabel's pencil; still, go, home on the wallpaper); what the two mirrors show (Ana the stair, Wes the landing); Lila's speed, her goal (a guest's bedside) and the 0.9 m within which the cat holds her; the test-stage herd split with one guest on each side of the cat; the old thread's three wrong turns, their order, the rule that a guest never goes back for a door it has turned from, and hunger +8 for a door taken; Ana's line when she lifts the cat ("How did you get down here?"); Ruth's five tightening stitches as what the ripper undoes; the eye strip's numbers (three sightings, 150 s) and Wes as the one watching; the lines the guests speak at the table in Marcus's strap; what Dani says on the landing ("Don't tell."); the guests putting every toy in a different room when the photograph proves a tamper; the fourth packing's starting layout and its numbers; every other number in the phase-2 rules.
+
+**Accepted 2026-11-15, not yet built (phase 3):** the hunger as something that answered Mabel's request for a warm toy (stated in section 21; shown only through Ruth so far); Ruth as the bound child, re-cut to seem to age (seeded by the knots, the patterns and the backs; said outright only by the full selvage); Mabel's want for an heir to the needle and the scattered pages as an audition; Mabel sitting down on the Keeper's porch; Jamie's glow running cool; guest patches; the Cycle carrying your tampers and the Keeper re-cutting Ruth; The Page as a fifth ending, the novel's first line placed in the circle of skins, and the player-composed line carried to the next run; the second-run changes.
 
 **Not added on purpose:** what happens behind the bedroom door in Act 2; any close view of an emptied body; Ruth below the collar; the child.

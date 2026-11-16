@@ -21,6 +21,8 @@
   ],
   "ruth_line_min_strong_seams": 4,
   "mend_own_extra_slots": 1,
+  "own_thread": {"note": "Accepted 2026-11-15, built 2026-11-16. Mending a friend (pattern 3) draws thread from one of the toy's own seams, chosen by the player: that seam loses one slot.", "slots_lost": 1},
+  "ripper": {"note": "Accepted 2026-11-15, built 2026-11-16. Stitches come out in reverse order; a cut out of order tears the cloth and the slot is gone for good. Used on a seam Ruth tightened (five stitches), it wins the slot back.", "stitches": 5, "order": "last sewn first", "slots_won": 1},
   "patterns": [
     {"n": 1, "scene": "a1_stitch_strap", "stitch": "running", "on": "Marcus's pack strap (webbing)", "seams": 1, "stitches_per_seam": 8,
      "pressure": "None; the friends' game and voices play", "drift_px": 0, "drift_every_s": null, "time_limit_s": null, "world_runs": false,
@@ -33,6 +35,9 @@
      "writes": ["friend.seam_mended", "seams.slots_total"], "tokens": [], "friend_hunger_rate": 0.7},
     {"n": 4, "scene": "a5_altar_stitch", "stitch": "backstitch", "on": "Around the circle of skins (Keeper only)", "seams": 1, "stitches_per_seam": 12,
      "pressure": "World runs; the room's pulse speeds up", "drift_px": 0, "drift_every_s": null, "time_limit_s": 90, "world_runs": true,
-     "writes": ["altar.choice"], "tokens": [], "on_complete": "stitch", "on_abandon": "stitched"}
+     "writes": ["altar.choice"], "tokens": [], "on_complete": "stitch", "on_abandon": "stitched"},
+    {"n": 5, "scene": "c13_jamies_seam", "stitch": "whip", "on": "Jamie's split side (Jamie's Seam; accepted 2026-11-15, built 2026-11-16)", "seams": 1, "stitches_per_seam": 10,
+     "pressure": "A guest's eye strip runs along the top of the chart; the needle may travel only while it is shut. Three sightings and the guest picks him up", "drift_px": 0, "drift_every_s": null, "time_limit_s": 150, "world_runs": true,
+     "writes": ["jamie.seam"], "tokens": []}
   ]
 }

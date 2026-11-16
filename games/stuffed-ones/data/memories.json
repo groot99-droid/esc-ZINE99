@@ -34,5 +34,11 @@
       {"id": "marcus_held", "friend": "marcus", "name": "Your stitches held", "always": false}
     ]
   },
-  "wadding": {"note": "Accepted 2026-11-15 (phase 1). Plain fill, always in the tray. A wadded slot is cold: not warm, no memory, no game. Every open slot of all six seams wadded sets seams.all_wadded.", "hunger_rate_percent": 0, "plays_a_game": false}
+  "wadding": {"note": "Accepted 2026-11-15 (phase 1). Plain fill, always in the tray. A wadded slot is cold: not warm, no memory, no game. Every open slot of all six seams wadded sets seams.all_wadded.", "hunger_rate_percent": 0, "plays_a_game": false},
+  "fourth_packing": {
+    "note": "Accepted 2026-11-15, built 2026-11-16 (phase 2). The set-piece of c14_stuffing_4: one hollow is left open. In the tray are \"My name\" and Jamie's bad postcard with nothing on it (a blank: packed, it closes the hollow and keeps nothing), with two borrowed patches. The Chase needs warm hollows in three seams, so the player must leave the hollow empty or take something out; whatever is in the tray at the close unravels.",
+    "scene": "c14_stuffing_4", "open_hollows": 1, "tray": ["My name", "A postcard with nothing on it", "Don't make it weird.", "Since we were nine"],
+    "chase_needs_warm_seams": 3
+  },
+  "lila_hum": {"note": "Accepted 2026-11-15, built 2026-11-16 (phase 2). Layer link 2: while the token \"Lila's hum\" comes through a Stuffing in a slot, Lila does not walk in the next Dollhouse night.", "flag": "lila.hum_kept"}
 }

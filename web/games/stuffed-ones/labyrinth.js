@@ -25,29 +25,59 @@
 // them instead is The Page, a later phase: the centre is shut to the pack here.) The pack are the
 // game's felt medallions, the walls its wallpaper repeats, the centre its tapestry (api.art); the
 // woven squares and block sprites stay as the fallback.
+//
+// Phase 2 (DESIGN.md section 21, built 2026-11-16): three stages. Teach: the outer ring and its one
+// loop door. Test: the inner ring with the herd split, posted toys (a toy that has held still is a
+// wall: a guest turns from it and does not freeze) and the one who picks you up (Ana stops running,
+// walks back and lifts the cat: five seconds of perfect stillness and she puts you down). Twist: the
+// route your own group ran in Act 1 is woven into the tapestry in faded thread and the guests are
+// running it, through every door that leads back. Chasing does nothing now; standing in the way is
+// the whole game, there are three wrong turns and two toys, and it ends in the statue at the
+// threshold. A Strong strap in Stitchwork kept Marcus's map: his marks show as chalk (api.shared
+// "strap"). Three of Ruth's marks on the wallpaper by the doorway cross into the book's glossary.
 import { artKit, FACE } from "./art-kit.js";
+import { runStages, stagePicker, linkNote } from "./stages.js";
 const PRE = "stuffed-ones-labyrinth-";
 const C = { moss: "#7d8a5a", mossD: "#56623d", rust: "#a5553a", cedar: "#6b4a32", cedarD: "#4a3222", dust: "#e6dcc6", cream: "#efe5cf",
   bone: "#f6f1e4", amber: "#e39a2d", red: "#b8322a", sky: "#8fa9bf", night: "#56627a", nightL: "#7f8ca3", ink: "#2a211b", bear: "#c2925f" };
 const N = 15;
 // Map legend: '#' wall, '.' carpet, 'L' loop door, 'x' broken toys (blocks sight), 'E' entrance
 const depth = (x, y) => Math.min(x, y, N - 1 - x, N - 1 - y);
-const MAP = Array.from({ length: N }, (_, y) => Array.from({ length: N }, (_, x) => (depth(x, y) % 2 === 0 && depth(x, y) < 5 ? "#" : ".")));
-MAP[0][7] = "E";           // the way in from the basement
-MAP[7][2] = ".";           // the outer ring's side opening into the inner ring
-MAP[7][10] = ".";          // the inner ring's opening to the centre
-MAP[8][1] = "L";           // outer ring: one loop door, just past the opening
-MAP[11][7] = "#";          // the inner ring is a horseshoe: its lower arm is a dead end
-MAP[8][11] = "L"; MAP[11][5] = "L"; // inner ring: two loop doors, past the opening and down the dead arm
-MAP[3][6] = "x"; MAP[11][9] = "x";  // rooms of broken toys that block sight
-const ringOf = (x, y) => { const d = depth(x, y); return d >= 5 || (x === 10 && y === 7) ? 2 : d >= 3 || (x === 2 && y === 7) ? 1 : 0; };
-const START = [
-  { guests: [[4, 1], [2, 1], [1, 3]], toys: [[7, 1], [1, 10]] },
-  { guests: [[3, 4], [3, 5], [3, 6]], toys: [[2, 7], [11, 9]] },
-];
-const TOY_SPEED = 2.6, GUEST_SPEED = TOY_SPEED * 1.2, SEE = 5, STEP_SEE = 7, LIMIT = 300;
+function maze(stage) {
+  const MAP = Array.from({ length: N }, (_, y) => Array.from({ length: N }, (_, x) => (depth(x, y) % 2 === 0 && depth(x, y) < 5 ? "#" : ".")));
+  MAP[0][7] = "E";           // the way in from the basement
+  let o1, o2, TRAPS = [], ROUTE = [], COLUMN = [];
+  if (stage < 2) {
+    MAP[7][2] = ".";           // the outer ring's side opening into the inner ring
+    MAP[7][10] = ".";          // the inner ring's opening to the centre
+    MAP[8][1] = "L";           // outer ring: one loop door, just past the opening
+    MAP[11][7] = "#";          // the inner ring is a horseshoe: its lower arm is a dead end
+    MAP[8][11] = "L"; MAP[11][5] = "L"; // inner ring: two loop doors, past the opening and down the dead arm
+    MAP[3][6] = "x"; MAP[11][9] = "x";  // rooms of broken toys that block sight
+    o1 = [2, 7]; o2 = [10, 7];
+  } else {
+    // the older weave: in from below, the centre's door at the top, and a side way that leads out again
+    MAP[12][7] = "."; MAP[4][7] = "."; MAP[7][12] = ".";
+    MAP[5][3] = "L"; MAP[3][4] = "L"; MAP[9][3] = "x";
+    o1 = [7, 12]; o2 = [7, 4];
+    TRAPS = [[3, 5], [12, 7], [4, 3]];   // in the order your own group found them
+    ROUTE = [[[7, 13], [7, 11], [3, 11], [3, 5]], [[7, 11], [11, 11], [11, 7], [12, 7]], [[11, 7], [11, 3], [7, 3], [4, 3]]];
+    COLUMN = [[7, 11], [7, 12], [7, 13]];
+  }
+  const ringOf = (x, y) => { const d = depth(x, y); return d >= 5 || (x === o2[0] && y === o2[1]) ? 2 : d >= 3 || (x === o1[0] && y === o1[1]) ? 1 : 0; };
+  const START = [
+    { guests: [[4, 1], [2, 1], [1, 3]], toys: [[7, 1], [1, 10]] },
+    { guests: [[3, 9], [3, 4], [11, 5]], toys: [[2, 7], [3, 11]] },
+  ];
+  // which way is inward from the centre's doorway
+  const IN = [Math.sign(7 - o2[0]), Math.sign(7 - o2[1])];
+  return { MAP, ringOf, START, DOORWAY: o2, ENTRY: stage < 2 ? [3, 7] : [7, 11], TRAPS, ROUTE, COLUMN, IN, o1 };
+}
+const BLURBS = ["The outer ring, and one door that leads back.", "The inner ring: a split herd, posted toys, and the one who picks you up.", "They are running the route your own group ran. Stand in the way."];
+const LIMITS = [150, 210, 170], ROUTE_SPEED = 1.3, LIFT_HOLD = 5, LED_BACK = 8;
+const TOY_SPEED = 2.6, GUEST_SPEED = TOY_SPEED * 1.2, SEE = 5, STEP_SEE = 7;
 const HUNGER_RATE = 1 / 3, STEP_COST = 12, TWITCH_COST = 2;
-const DOORWAY = [10, 7], STATUE = 20;
+const STATUE = 20;
 const FACES = { cat: "medallion-narrator", rabbit: "medallion-lila", bear: "medallion-jamie" };
 const SHELF = { Noor: "medallion-noor", Wes: "medallion-wes", Ana: "medallion-ana" };
 const WALLP = [["wallpaper-1-sprig", "wallpaper-2-trellis"], ["wallpaper-3-birds", "wallpaper-4-stripe"], ["wallpaper-5-acorns", "wallpaper-6-selvage"]];
@@ -69,8 +99,14 @@ function kit() {
   };
 }
 
-export default {
-  mount(root, api) {
+export default { mount(root, api) { return runStages(root, api, run, BLURBS); } };
+
+function run(root, api, flow) {
+  {
+    const stage = flow.stage, LIMIT = LIMITS[stage];
+    const { MAP, ringOf, START, DOORWAY, ENTRY, TRAPS, ROUTE, COLUMN, IN, o1 } = maze(stage);
+    const chalk = stage === 2 && flow.S.get("strap", "") === "strong";
+    const fresh = stage === 2 ? flow.S.learn(["still", "go", "home"]) : [];
     const K = kit();
     const rng = api.rng();
     const A = artKit(api);
@@ -151,8 +187,11 @@ export default {
     let hunger = 40, holding = false, stepT = 0, lurches = 0, steps = 0, twitches = 0, loopSaid = false, innerSaid = false, centreSaid = false, unlocked = 1;
     const pops = [];
     let statue = null;   // the last set-piece: { on, t, breaks, line, said }
+    let lift = null, liftDone = false, postSaid = false, ledSaid = false, linkT = null;
+    // a toy that has held still for a moment is furniture: posted
+    const posted = (ty) => stage >= 1 && ty.active && !ty.path.length && (holding || ty.still >= 0.8) && !(lift && lift.phase === "hold" && ty === toys[0]);
     let L = null, tex = null, hoverCell = null, beatTimer = 0;
-    const live = () => toys.filter((ty) => ty.active);
+    const live = () => toys.filter((ty) => ty.active && !(lift && lift.phase === "hold" && ty === toys[0]));
 
     function beat(title, text, quote, ms = 5000, pic) {
       beatEl.innerHTML = "";
@@ -169,7 +208,12 @@ export default {
       guests.forEach((gu, i) => { place(gu, ...s.guests[i]); gu.ring = r; });
       toys.slice(0, 2).forEach((ty, i) => { place(ty, ...s.toys[i]); ty.path = []; });
     }
-    setRing(0);
+    if (stage === 0) setRing(0);
+    else if (stage === 1) { setRing(1); toys[2].active = true; place(toys[2], 11, 8); hunger = 35; }
+    else {
+      guests.forEach((gu, i) => { place(gu, ...COLUMN[i]); gu.ring = i ? 0 : 1; gu.hesitate = 6 + i * 0.5; });
+      place(toys[0], 11, 5); place(toys[1], 5, 3); hunger = 30;
+    }
 
     function layout() {
       const W = wrap.clientWidth, H = wrap.clientHeight;
@@ -214,7 +258,7 @@ export default {
             x.fillStyle = C.sky; x.fillRect(cx + s * 0.45, cy + s * 0.45, s * 0.35, s * 0.3);
             x.fillStyle = C.cedar; x.fillRect(cx + s * 0.25, cy + s * 0.55, s * 0.2, s * 0.25);
           }
-          if (m === "L") {
+          if (m === "L" && stage < 2) {
             x.strokeStyle = C.bone; x.lineWidth = Math.max(1.5, s / 12);
             x.beginPath(); x.arc(cx + s / 2, cy + s / 2, s * 0.3, 0.3, Math.PI * 1.7); x.stroke();
             x.fillStyle = C.bone; x.beginPath(); x.moveTo(cx + s * 0.78, cy + s * 0.3); x.lineTo(cx + s * 0.9, cy + s * 0.55); x.lineTo(cx + s * 0.62, cy + s * 0.5); x.fill();
@@ -224,6 +268,33 @@ export default {
       // the centre is the tapestry's own: the red room and its circle of skins
       const mid = A.sprite("tapestry-centre", 5 * s, 5 * s, { src: [190, 195, 820, 820], key: "centre", ready: () => (tex = null) });
       if (mid) { x.globalAlpha = 0.9; x.drawImage(mid, 5 * s, 5 * s, 5 * s, 5 * s); x.globalAlpha = 1; }
+      if (stage === 2) {
+        // the route your own group ran, in faded thread: three tries, each ending in a frayed end
+        const cc = (q) => [q[0] * s + s / 2, q[1] * s + s / 2];
+        ROUTE.forEach((line, n) => {
+          const off = (n - 1) * s * 0.1;
+          x.strokeStyle = "rgba(246,241,228,.5)"; x.lineWidth = Math.max(2, s * 0.09); x.setLineDash([s * 0.22, s * 0.16]); x.lineCap = "butt";
+          x.beginPath(); line.forEach((q, k) => { const [cx, cy] = cc(q); k ? x.lineTo(cx + off, cy + off) : x.moveTo(cx + off, cy + off); }); x.stroke(); x.setLineDash([]);
+          const [ex, ey] = cc(line[line.length - 1]);
+          x.lineWidth = Math.max(1.5, s * 0.05); for (let k = 0; k < 5; k++) { const a = k * 1.26 + n; x.beginPath(); x.moveTo(ex + off, ey + off); x.lineTo(ex + off + Math.cos(a) * s * 0.26, ey + off + Math.sin(a) * s * 0.26); x.stroke(); }
+        });
+        if (chalk) {
+          // Marcus's pencil marks, as chalk: a cross on each door that leads back, an arrow at the true one
+          x.strokeStyle = "rgba(255,255,255,.95)"; x.lineCap = "round";
+          TRAPS.forEach(([tx, ty]) => { const cx = tx * s + s / 2, cy = ty * s + s / 2, r = s * 0.3;
+            for (let k = 0; k < 2; k++) { x.lineWidth = Math.max(2, s * 0.08) - k; x.beginPath(); x.moveTo(cx - r + k, cy - r); x.lineTo(cx + r, cy + r - k); x.moveTo(cx + r - k, cy - r); x.lineTo(cx - r, cy + r - k); x.stroke(); } });
+          const cx = DOORWAY[0] * s + s / 2, cy = DOORWAY[1] * s + s / 2, r = s * 0.3;
+          x.lineWidth = Math.max(2, s * 0.08); x.beginPath(); x.moveTo(cx - IN[0] * r, cy - IN[1] * r); x.lineTo(cx + IN[0] * r, cy + IN[1] * r);
+          x.moveTo(cx + IN[0] * r - (IN[1] ? r * 0.6 : r * 0.5 * IN[0]), cy + IN[1] * r - (IN[0] ? r * 0.6 : r * 0.5 * IN[1])); x.lineTo(cx + IN[0] * r, cy + IN[1] * r); x.lineTo(cx + IN[0] * r + (IN[1] ? r * 0.6 : -r * 0.5 * IN[0]), cy + IN[1] * r - (IN[0] ? -r * 0.6 : r * 0.5 * IN[1])); x.stroke();
+          x.lineCap = "butt";
+        }
+        // three of Ruth's marks, low on the wallpaper beside the centre's doorway
+        [["glyph-back-07-still", -1], ["glyph-back-08-go", 1], ["glyph-back-14-home", 2]].forEach(([id, dx]) => {
+          const w = s * 0.6, h2 = s * 0.86, gx = (DOORWAY[0] + dx) * s + (s - w) / 2, gy = DOORWAY[1] * s + (s - h2) / 2;
+          const im = A.sprite(id, w, h2, { key: "mark", ready: () => (tex = null) });
+          if (im) x.drawImage(im, gx, gy, w, h2);
+        });
+      }
       return c;
     }
     function toyFace(ty, x, y, s) {
@@ -262,7 +333,7 @@ export default {
         const dx = ox + DOORWAY[0] * s, dy = oy + DOORWAY[1] * s, pl = api.reducedMotion ? 0.6 : 0.5 + 0.5 * Math.sin(now / 260);
         g.strokeStyle = `rgba(227,154,45,${0.5 + 0.5 * pl})`; g.lineWidth = 3; g.strokeRect(dx + 1.5, dy + 1.5, s - 3, s - 3);
         if (!statue.on) { g.font = "700 12px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "bottom"; const tw = g.measureText("STAND HERE").width + 8; g.fillStyle = C.amber; g.fillRect(dx + s / 2 - tw / 2, dy - 17, tw, 16); g.fillStyle = C.ink; g.fillText("STAND HERE", dx + s / 2, dy - 2); }
-        if (statue.on && statue.t < 17.6) { sprite(dx - s / 2, dy + s * 0.56, s * 0.92, GUEST.slice(0, 4), { h: C.cedar, f: C.dust, b: C.rust, l: C.night }); g.font = `700 ${Math.max(12, s * 0.3)}px Karla,Arial,sans-serif`; g.textAlign = "center"; g.textBaseline = "bottom"; g.fillStyle = C.bone; g.fillText("Ana", dx - s / 2, dy + s * 0.12); }
+        if (statue.on && statue.t < 17.6) { const ax = dx + s / 2 + IN[0] * s, ay = dy + s / 2 + IN[1] * s; sprite(ax, ay + s * 0.06, s * 0.92, GUEST.slice(0, 4), { h: C.cedar, f: C.dust, b: C.rust, l: C.night }); g.font = `700 ${Math.max(12, s * 0.3)}px Karla,Arial,sans-serif`; g.textAlign = "center"; g.textBaseline = "top"; g.fillStyle = C.bone; g.fillText("Ana", ax, ay + s * 0.3); }
       }
       const at = (e) => [ox + e.px * s + s / 2, oy + e.py * s + s / 2];
       // the hover cell and the planned path
@@ -293,7 +364,10 @@ export default {
       // toys
       toys.forEach((ty, i) => {
         if (!ty.active) return;
-        const [x, y] = at(ty);
+        let [x, y] = at(ty);
+        const up = i === 0 && lift && lift.phase === "hold";
+        if (up) y -= s * 0.55;
+        if (posted(ty) && !(i === 0 && statue && statue.on)) { g.strokeStyle = C.bone; g.lineWidth = 2; g.setLineDash([3, 3]); g.strokeRect(x - s * 0.46, y - s * 0.46, s * 0.92, s * 0.92); g.setLineDash([]); }
         if (i === sel) {
           g.strokeStyle = holding ? C.bone : "rgba(227,154,45,.95)"; g.lineWidth = 2.5; g.setLineDash(holding ? [] : [4, 4]);
           g.beginPath(); g.arc(x, y, s * 0.72, 0, 7); g.stroke(); g.setLineDash([]);
@@ -301,6 +375,11 @@ export default {
           if (stepT > 0) { g.strokeStyle = C.red; g.lineWidth = 2; g.globalAlpha = stepT; g.beginPath(); g.arc(x, y, s * (0.8 + (1 - stepT) * 2.5), 0, 7); g.stroke(); g.globalAlpha = 1; }
         }
         if (!toyFace(ty, x, y, s)) sprite(x, y, s * 0.8, ty.kind === "cat" ? CAT : ty.kind === "bear" ? BEAR : RAB, { c: C.amber, r: C.cream, b: C.bear, e: C.ink });
+        if (up) {
+          g.strokeStyle = holding ? C.bone : C.red; g.lineWidth = 4; g.beginPath(); g.arc(x, y, s * 0.66, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * Math.min(1, lift.t / LIFT_HOLD)); g.stroke();
+          g.font = "700 13px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "bottom"; const txt = holding ? `${Math.ceil(LIFT_HOLD - lift.t)} s` : "HOLD STILL", tw = g.measureText(txt).width + 8;
+          g.fillStyle = holding ? "rgba(42,33,27,.85)" : C.red; g.fillRect(x - tw / 2, y - s * 0.72 - 17, tw, 17); g.fillStyle = C.bone; g.fillText(txt, x, y - s * 0.72 - 2);
+        }
         if (i === 0 && statue && statue.on) {
           // the count, sewn round the cat stitch by stitch
           const d = s * 1.9;
@@ -333,7 +412,7 @@ export default {
       g.textBaseline = "middle"; g.textAlign = "left"; g.font = "700 13px Karla,Arial,sans-serif";
       const herdRing = Math.min(...guests.map((gu) => (gu.done ? 2 : gu.ring)));
       const inCentre = guests.filter((gu) => gu.done).length;
-      ["OUTER", "INNER", `CENTRE ${inCentre}/3`].forEach((r, i) => { g.fillStyle = i === herdRing ? C.amber : "rgba(246,241,228,.55)"; g.fillText(r, 14 + i * 66, hy); });
+      (stage === 0 ? ["OUTER", `THROUGH ${inCentre}/3`] : ["OUTER", "INNER", `CENTRE ${inCentre}/3`]).forEach((r, i) => { g.fillStyle = i === (stage === 0 ? 0 : herdRing) ? C.amber : "rgba(246,241,228,.55)"; g.fillText(r, 14 + i * 66, hy); });
       // who has gone down, as what they will be on the shelf
       if (!narrow) guests.forEach((gu, i) => { if (gu.done) A.draw(g, SHELF[gu.name], 250 + 66 + Math.max(0, Math.min(160, W - 560)) + 16 + i * 30, hy - 13, 26, 26, FACE); });
       // hunger: a woven bar that reddens
@@ -433,6 +512,8 @@ export default {
       });
       guests.forEach((gu) => {
         if (gu.done) { gu.fade = Math.min(1, (gu.fade || 0) + dt); return; }
+        if (stage === 2) { routeGuest(gu, dt); return; }
+        if (gu.mode === "lift") { liftGuest(gu, dt); return; }
         const arrived = stepEntity(gu, dt, GUEST_SPEED / speed);
         if (gu.immune > 0) gu.immune -= dt;
         if (gu.freeze > 0) {
@@ -440,7 +521,9 @@ export default {
           if (gu.frozenTotal >= 20) restart(gu, "stood frozen too long");
           return;
         }
-        if (gu.immune <= 0 && live().some((ty) => Math.abs(ty.x - gu.x) + Math.abs(ty.y - gu.y) <= 1)) { freezeGuest(gu); return; }
+        const close = live().filter((ty) => Math.abs(ty.x - gu.x) + Math.abs(ty.y - gu.y) <= 1);
+        if (gu.immune <= 0 && close.some((ty) => !posted(ty))) { freezeGuest(gu); return; }
+        if (close.length && stage === 1 && !postSaid) { postSaid = true; say(`${gu.name} comes up against a toy that has not moved, and turns.`, C.amber); }
         const scarer = live().find((ty) => moving(ty) && sees(gu.x, gu.y, ty.x, ty.y, ty === toys[sel] && stepT > 0 ? STEP_SEE : SEE));
         if (gu.hesitate > 0) { gu.hesitate -= dt; return; }
         if (scarer) gu.scared = 0.6; else gu.scared = Math.max(0, gu.scared - dt);
@@ -452,7 +535,8 @@ export default {
         for (const [dx, dy] of NB) {
           const nx = gu.x + dx, ny = gu.y + dy;
           if (!open(nx, ny) || occupied(nx, ny, gu)) continue;
-          if (live().some((ty) => Math.abs(ty.x - nx) + Math.abs(ty.y - ny) <= 1)) continue;
+          // a posted toy is a wall in its own square only; one that is not posted keeps them a step off
+          if (live().some((ty) => !posted(ty) && Math.abs(ty.x - nx) + Math.abs(ty.y - ny) <= 1)) continue;
           if (dist[ny][nx] <= here) continue;
           const openness = NB.filter(([ax, ay]) => open(nx + ax, ny + ay)).length;
           // where corridors tie, the warmer, deeper one draws them
@@ -463,14 +547,12 @@ export default {
         gu.x = best[0]; gu.y = best[1];
         const cellK = MAP[gu.y][gu.x];
         const r = ringOf(gu.x, gu.y);
-        if (r > gu.ring) { gu.ring = r; gu.loops = 0; gu.frozenTotal = 0; if (r === 1) { pop("inner ring", gu, C.amber); enterInner(gu); } }
-        if (r === 2 && depth(gu.x, gu.y) >= 5) {
-          gu.done = true; gu.fade = 0; hunger = Math.max(0, hunger - 15); pop("−15 hunger", gu, C.amber);
-          say(`${gu.name} reaches the centre.`, C.amber);
-          if (!centreSaid) { centreSaid = true; beat("The centre", `${gu.name} stops in the warm room and does not turn round.`, "The deeper we went, the warmer the air became.", 5000); }
-          if (guests.every((x) => x.done)) startStatue();
-          return;
+        if (r > gu.ring) {
+          gu.ring = r; gu.loops = 0; gu.frozenTotal = 0;
+          if (r === 1 && stage === 0) { gu.done = true; gu.fade = 0; hunger = Math.max(0, hunger - 10); pop("through", gu, C.amber); say(`${gu.name} is through to the inner ring.`, C.amber); if (guests.every((q) => q.done)) allIn(); return; }
+          if (r === 1) { pop("inner ring", gu, C.amber); enterInner(gu); }
         }
+        if (r === 2 && depth(gu.x, gu.y) >= 5) { centre(gu); return; }
         if (NB.filter(([ax, ay]) => open(gu.x + ax, gu.y + ay)).length >= 3) { gu.scared = 0; gu.hesitate = 0.9 * speed; }
         if (cellK === "L") {
           gu.loops++;
@@ -479,6 +561,97 @@ export default {
           else { say(`A door that leads back: ${gu.name} is where the ring began.`, C.amber); setRing(gu.ring, gu); }
         }
       });
+    }
+    function centre(gu) {
+      gu.done = true; gu.fade = 0; hunger = Math.max(0, hunger - 15); pop("−15 hunger", gu, C.amber);
+      say(`${gu.name} reaches the centre.`, C.amber);
+      if (!centreSaid) { centreSaid = true; beat("The centre", `${gu.name} stops in the warm room and does not turn round.`, "The deeper we went, the warmer the air became.", 5000); }
+      if (guests.every((q) => q.done)) allIn();
+    }
+    // every guest is where this stage wanted them
+    function allIn() {
+      if (stage === 2) { startStatue(); return; }
+      if (over) return;
+      over = true; holding = false; api.store.set("losses", 0);
+      const tail = `${memories} memor${memories === 1 ? "y" : "ies"} left${lurches ? "" : ", and no lurch"}.`;
+      K.after(700, () => flow.done({ outcome: "win", text: stage === 0
+        ? `All three are through the side opening and into the inner ring, and none of them was touched. “We didn't rush. We didn't pounce. / We herded them.” ${freezes ? `${freezes} froze on the way. ` : ""}${tail}`
+        : `All three went down to the warm centre. ${liftDone ? "Ana held you up to the light from nowhere, and you were a toy, and she put you down. " : ""}${freezes ? `${freezes} froze on the way. ` : ""}${tail}` }));
+    }
+    // the one who picks you up: Ana walks back for the cat, lifts it, and carries it toward the way in
+    function liftGuest(gu, dt) {
+      const cat = toys[0];
+      const toward = (fx, fy) => { const dist = bfs(fx, fy); let best = null; for (const [dx, dy] of NB) { const nx = gu.x + dx, ny = gu.y + dy; if (open(nx, ny) && dist[ny][nx] < dist[gu.y][gu.x] && (!best || dist[ny][nx] < dist[best[1]][best[0]])) best = [nx, ny]; } return best; };
+      if (lift.phase === "come") {
+        if (lift.wait > 0) {
+          lift.wait -= dt / speed;
+          if (lift.wait <= 0) beat("Ana does not run", "She is not frightened enough. She turns round and walks back along the corridor, toward the white cat. If she picks you up, hold perfectly still (hold Space) for five seconds, and you are put down.", null, 8000);
+          return;
+        }
+        if (!stepEntity(gu, dt, GUEST_SPEED * 0.45 / speed)) return;
+        if (Math.abs(cat.x - gu.x) + Math.abs(cat.y - gu.y) <= 1 && Math.hypot(cat.x - cat.px, cat.y - cat.py) < 0.3) {
+          lift.phase = "hold"; lift.t = 0; cat.path = []; sel = 0; unlock(2); btn("hold").classList.add(PRE + "new");
+          beat("Picked up", "Ana lifts the white cat off the carpet and turns it over in her hands. Hold perfectly still: hold Space, five seconds. Move, and she feels it.", "How did you get down here?", 6000);
+          return;
+        }
+        const nx = toward(cat.x, cat.y); if (nx && !(nx[0] === cat.x && nx[1] === cat.y)) { gu.x = nx[0]; gu.y = nx[1]; }
+        return;
+      }
+      const arrived = stepEntity(gu, dt, GUEST_SPEED * 0.3 / speed);
+      cat.x = gu.x; cat.y = gu.y; cat.px = gu.px; cat.py = gu.py; cat.path = []; cat.still = 9;
+      if (holding) {
+        lift.t += dt / speed;
+        if (lift.t >= LIFT_HOLD) {
+          gu.mode = null; gu.immune = 5; liftDone = true; lift = null; cat.px = cat.x; cat.py = cat.y;
+          // she steps away from where she set you down, the deeper way if there is one
+          let step = null, sc = -1; for (const [dx, dy] of NB) { const nx = gu.x + dx, ny = gu.y + dy; if (!open(nx, ny) || MAP[ny][nx] === "L" || occupied(nx, ny, cat)) continue; const v = depth(nx, ny) * 3 + (nx - gu.x) + rng(); if (v > sc) { sc = v; step = [nx, ny]; } }
+          if (step) { gu.x = step[0]; gu.y = step[1]; }
+          gu.scared = 0.6;
+          beat("Put down", "She sets you on the carpet facing the wall, and wipes her hand on her jeans. Then she goes after the others, and not slowly.", null, 5000);
+        }
+      } else {
+        lift.t = 0;
+        if (arrived) { const nx = toward(ENTRY[0], ENTRY[1]); if (nx) { gu.x = nx[0]; gu.y = nx[1]; } }
+      }
+    }
+    let lastSq = -1e9;
+    function squirm() {
+      if (!(lift && lift.phase === "hold")) return false;
+      if (performance.now() - lastSq < 1500) return true;
+      lastSq = performance.now(); lift.t = 0; pop("she felt that", toys[0], C.red);
+      loseMemory("The cat moved in her hands, and she felt it. One memory gone.");
+      return true;
+    }
+    // the twist: the guests are not running from you. They are running the route your own group ran,
+    // one door that leads back after another, and only a toy standing in the way turns them.
+    function routeGuest(gu, dt) {
+      const arrived = stepEntity(gu, dt, ROUTE_SPEED / speed);
+      if (gu.hesitate > 0) { gu.hesitate -= dt / speed; return; }
+      if (!arrived) return;
+      if (TRAPS.some((q) => q[0] === gu.x && q[1] === gu.y)) { ledBack(gu); return; }
+      if (depth(gu.x, gu.y) >= 5) { centre(gu); return; }
+      const toyAt = (x, y) => toys.some((ty) => ty.active && ty.x === x && ty.y === y);
+      const pick = (dist) => { let best = null; for (const [dx, dy] of NB) { const nx = gu.x + dx, ny = gu.y + dy; if (open(nx, ny) && !toyAt(nx, ny) && dist[ny][nx] < dist[gu.y][gu.x] && (!best || dist[ny][nx] < dist[best[1]][best[0]])) best = [nx, ny]; } return best; };
+      let next = null;
+      if (ringOf(gu.x, gu.y) === 0) next = pick(bfs(ENTRY[0], ENTRY[1]));
+      else for (let k = gu.goal || 0; k <= TRAPS.length; k++) {
+        // a guest never goes back for a door it has already turned from: the thread only runs on
+        const goal = k < TRAPS.length ? TRAPS[k] : [7, 5], last = k === TRAPS.length;
+        if (toyAt(goal[0], goal[1])) continue;   // a toy is standing on that door
+        const dist = bfs(goal[0], goal[1], (x, y) => toyAt(x, y) || depth(x, y) <= 1 || (x === 12 && y === 7 && goal !== TRAPS[1]) || (depth(x, y) === 4 && !last) || TRAPS.some((q) => q !== goal && q[0] === x && q[1] === y));
+        if (dist[gu.y][gu.x] < Infinity) { gu.goal = k; next = pick(dist); break; }
+      }
+      if (!next) { gu.hesitate = 0.3; return; }   // every way on is posted: they wait
+      const junction = NB.filter(([ax, ay]) => open(gu.x + ax, gu.y + ay)).length >= 3;
+      gu.x = next[0]; gu.y = next[1]; gu.ring = ringOf(gu.x, gu.y);
+      if (junction) gu.hesitate = 0.7;
+    }
+    function ledBack(gu) {
+      gu.loops++; hunger += LED_BACK; pop(`led back · +${LED_BACK} hunger`, gu, C.red);
+      const spot = COLUMN.slice().reverse().find(([x, y]) => !guests.some((q) => q !== gu && !q.done && q.x === x && q.y === y)) || COLUMN[2];
+      place(gu, ...spot); gu.ring = ringOf(gu.x, gu.y); gu.hesitate = 1.2;
+      if (!ledSaid) { ledSaid = true; beat("A door that leads back", `${gu.name} follows the old thread through a door and is where the ring began. Running after them does nothing. Stand a toy in the corridor before the wrong turn, and they take the other way.`, "Doors that led back to where we started.", 7500); }
+      else say(`${gu.name} follows the old thread through a door that leads back.`, C.amber);
     }
     function enterInner(gu) {
       if (innerSaid) return;
@@ -493,31 +666,34 @@ export default {
       if (n >= 2) { btn("twitch").hidden = false; btn("hold").hidden = false; }
       if (n >= 3) { const b = btn("step"); b.hidden = false; b.classList.add(PRE + "new"); }
     }
-    function end(kind, text) { if (over) return; over = true; holding = false; api.store.set("losses", kind === "lose" ? losses + 1 : 0); api.end({ outcome: kind, text }); }
+    function end(kind, text) { if (over) return; over = true; holding = false; api.store.set("losses", kind === "lose" ? losses + 1 : 0); flow.done({ outcome: kind, text }); }
     function win() {
       if (over) return;
       const best = api.store.get("best", null); if (best === null || t < best) api.store.set("best", Math.round(t));
       over = true; holding = false; api.store.set("losses", 0);
-      const text = `All three went down to the centre, and for twenty seconds you were a toy in a doorway while one of them asked you to be anything else. ${memories} memor${memories === 1 ? "y" : "ies"} left${lurches ? "" : ", and no lurch"}${statue && statue.breaks ? "; she saw you move once" : ""}. The warmth rises through the floor. We were the hunters.`;
-      A.finale(wrap, "chapter-15").then(() => api.end({ outcome: "win", text }));
+      const back = guests.reduce((a, gu) => a + gu.loops, 0);
+      const text = `They ran the way your own group ran, ${back ? `through ${back} door${back === 1 ? "" : "s"} that led back, ` : "and not one door led them back, "}and all three went down to the centre. For twenty seconds you were a toy in a doorway while one of them asked you to be anything else. ${memories} memor${memories === 1 ? "y" : "ies"} left${lurches ? "" : ", and no lurch"}${statue && statue.breaks ? "; she saw you move once" : ""}. The warmth rises through the floor. We were the hunters.`;
+      A.finale(wrap, "chapter-15").then(() => flow.done({ outcome: "win", text }));
     }
     function lose(text) { end("lose", text); }
 
     // ---- input -------------------------------------------------------------------------------
     function goTo(x, y) {
       const ty = toys[sel];
-      if (statue && depth(x, y) >= 5) { say("Not in after them. Not this time.", C.amber); return; }
+      if (sel === 0 && squirm()) return;
+      if ((statue || stage === 2) && depth(x, y) >= 5) { say("Not in after them. Not this time.", C.amber); return; }
       const dist = bfs(x, y, (cx, cy) => occupied(cx, cy, ty) && !(cx === ty.x && cy === ty.y));
       if (dist[ty.y][ty.x] === Infinity) { say("No way through from here."); return; }
       const path = []; let cx = ty.x, cy = ty.y;
       while (!(cx === x && cy === y)) { let nx = cx, ny = cy; for (const [dx, dy] of NB) { const ax = cx + dx, ay = cy + dy; if (open(ax, ay) && dist[ay][ax] < dist[ny][nx]) { nx = ax; ny = ay; } } if (nx === cx && ny === cy) break; path.push([nx, ny]); cx = nx; cy = ny; }
       ty.path = path;
     }
-    function nudge(dx, dy) { const ty = toys[sel]; const nx = ty.x + dx, ny = ty.y + dy; if (statue && depth(nx, ny) >= 5) { say("Not in after them. Not this time.", C.amber); return; } if (open(nx, ny) && !occupied(nx, ny, ty)) ty.path = [[nx, ny]]; }
+    function nudge(dx, dy) { const ty = toys[sel]; const nx = ty.x + dx, ny = ty.y + dy; if (sel === 0 && lift && lift.phase === "hold") { squirm(); return; } if ((statue || stage === 2) && depth(nx, ny) >= 5) { say("Not in after them. Not this time.", C.amber); return; } if (open(nx, ny) && !occupied(nx, ny, ty)) ty.path = [[nx, ny]]; }
     function swap() { const n = toys.length; for (let k = 1; k <= n; k++) { const j = (sel + k) % n; if (toys[j].active) { sel = j; break; } } pop(toys[sel].name, toys[sel], C.amber); }
-    function twitch() { if (holding) return; toys[sel].still = 0; twitches++; hunger += TWITCH_COST; pop("twitch", toys[sel], C.bone); }
+    function twitch() { if (holding) return; if (sel === 0 && squirm()) return; toys[sel].still = 0; twitches++; hunger += TWITCH_COST; pop("twitch", toys[sel], C.bone); }
     function step() {
       if (holding || unlocked < 3) return;
+      if (sel === 0 && squirm()) return;
       toys[sel].still = 0; stepT = 1; steps++; hunger += STEP_COST; pop(`step · +${STEP_COST} hunger`, toys[sel], C.red);
     }
     function setHold(v) { holding = v && started && !over; btn("hold").setAttribute("aria-pressed", String(holding)); }
@@ -528,7 +704,7 @@ export default {
       const [cx, cy] = cellOf(...pt(e));
       if (cx < 0 || cy < 0 || cx >= N || cy >= N) return;
       const ti = toys.findIndex((ty) => ty.active && ty.x === cx && ty.y === cy);
-      if (ti >= 0) { sel = ti; pop(toys[sel].name, toys[sel], C.amber); return; }
+      if (ti >= 0 && !(lift && lift.phase === "hold" && ti === 0)) { sel = ti; pop(toys[sel].name, toys[sel], C.amber); return; }
       if (open(cx, cy)) goTo(cx, cy); else say("A woven wall.");
     });
     K.on(cv, "pointermove", (e) => { const c = cellOf(...pt(e)); hoverCell = c[0] >= 0 && c[1] >= 0 && c[0] < N && c[1] < N ? c : null; });
@@ -561,26 +737,33 @@ export default {
       if (started && !over) {
         if (held && !holding && !toys[sel].path.length && Math.hypot(toys[sel].x - toys[sel].px, toys[sel].y - toys[sel].py) < 0.05) nudge(...held);
         update(dt);
-        if (unlocked < 2 && t > 12 * speed) { unlock(2); beat("Twitch, and hold", "A twitch is seen without a step: it turns a guest without closing on them (T). And when you need nothing to move at all, the whole pack holds still (hold Space)."); }
+        if (stage === 0 && unlocked < 2 && t > 12 * speed) { unlock(2); beat("Twitch, and hold", "A twitch is seen without a step: it turns a guest without closing on them (T). And when you need nothing to move at all, the whole pack holds still (hold Space)."); }
       }
       tickRaf = requestAnimationFrame(tick);
     }
     tickRaf = requestAnimationFrame(tick);
 
+    const GOAL = [
+      "The third night, the Chase. You are the cat; Lila is with you. Herd Noor, Wes and Ana round the outer ring and through the side opening into the inner one. Mind the door just past it.",
+      "The inner ring. The herd has split: two on the near side, Ana alone on the far one, and Jamie is down the dead arm. Bring all three to the warm centre before dawn.",
+      "An older part of the weave. Faded in the tapestry is the way your own group ran in Act 1, every wrong turn of it, and the guests are running it now. Chasing does nothing here.",
+    ][stage];
+    const LEG = [
+      [[C.amber, "", "Move: tap a cell; guests run from a toy they see moving", "arrows"], [C.cream, "", "Switch toy: stand Lila past a loop door to turn them", "Tab"], [C.bone, `border:2px dashed ${C.ink};box-sizing:border-box`, "Never closer than a step: they freeze, and three freezes cost a memory", ""]],
+      [[C.amber, "", "Move, Twitch (T), Step (S): be seen, never closer than a step", "arrows"], [C.bone, `border:2px dashed ${C.ink};box-sizing:border-box`, "Posted: a toy that has held still is a wall. They turn from it and do not freeze", "Tab"], [C.red, "", "If Ana picks you up: hold perfectly still, five seconds", "hold Space"]],
+      [[C.cream, "", "The faded thread is where they will go; a frayed end is a door that leads back", ""], [C.bone, `border:2px dashed ${C.ink};box-sizing:border-box`, "Stand a toy in the corridor before a wrong turn and they take the other way", "Tab · arrows"], [C.amber, "", "Three wrong turns, two toys. Then the doorway, and hold Still", "hold Space"]],
+    ][stage];
     const intro = document.createElement("div");
     intro.className = PRE + "intro";
     intro.innerHTML = `<div class="${PRE}card" role="dialog" aria-label="How to play Labyrinth from above">
       <h2>Labyrinth from above</h2>
       <p class="${PRE}q">“The trapdoor opened on its own.”</p>
-      <p class="${PRE}goal">The third night, the Chase. You are the cat; Lila is with you. Herd Noor, Wes and Ana through two rings to the warm centre before dawn.</p>
-      <div class="${PRE}legend">
-        <div><i style="background:${C.amber}"></i><span>Move: tap a cell; guests run from a toy they see moving</span><kbd>arrows</kbd></div>
-        <div><i style="background:${C.cream}"></i><span>Switch toy: stand Lila past a loop door to turn them</span><kbd>Tab</kbd></div>
-        <div><i style="background:${C.bone};border:2px dashed ${C.ink};box-sizing:border-box"></i><span>Never closer than a step: they freeze, and three freezes cost a memory</span><span></span></div>
-      </div>
+      <p class="${PRE}goal">${GOAL}</p>
+      <div class="${PRE}legend">${LEG.map(([c, st, t2, k2]) => `<div><i style="background:${c};${st}"></i><span>${t2}</span>${k2 ? `<kbd>${k2}</kbd>` : "<span></span>"}</div>`).join("")}</div>
       <p class="${PRE}kind" ${losses >= 2 ? "" : "hidden"}>The herd scattered twice. A slower night is ticked for you.</p>
       <label><input type="checkbox" ${losses >= 2 ? "checked" : ""}> Slower night (half speed)</label>
-      <button type="button">Go down</button>
+      <div class="${PRE}pickhost"></div>
+      <button type="button" data-start>Go down</button>
     </div>`;
     wrap.appendChild(intro);
     {
@@ -590,11 +773,21 @@ export default {
       if (plate) { plate.className = PRE + "plate"; cardEl.insertBefore(plate, h2); }
       const ttl = A.word("Labyrinth from above", 30);
       if (ttl) { h2.textContent = ""; h2.appendChild(ttl); }
+      stagePicker(intro.querySelector("." + PRE + "pickhost"), api, stage, BLURBS, (n) => flow.pick(n));
     }
-    const sb = intro.querySelector("button");
+    const sb = intro.querySelector("button[data-start]");
     K.on(sb, "click", () => {
       speed = intro.querySelector("input").checked ? 2 : 1; intro.remove(); started = true; wrap.focus();
-      beat("The outer ring", "Come at them from behind, never too close. The door with the turning thread, down the left side, leads back.", "We didn't rush. We didn't pounce. / We herded them.", 6000, "tapestry-outer");
+      if (stage === 0) beat("The outer ring", "Come at them from behind, never too close. The door with the turning thread, down the left side, leads back.", "We didn't rush. We didn't pounce. / We herded them.", 6000, "tapestry-outer");
+else if (stage === 1) {
+        unlock(3); lift = { gu: guests[2], phase: "come", t: 0, wait: 10 }; guests[2].mode = "lift";
+        beat("The inner ring", "The herd has split. Wes is up the corridor from you; Noor is down it, between you and Lila. A toy that has held still is posted (the dashed square): a wall they turn from, with no freeze. Lila is posted before the near loop door, Jamie on the far one. Each of you can only drive what is in front of you.", null, 9500, "tapestry-inner");
+      }
+      else {
+        unlock(2);
+        beat("The old thread", `They come in from below and follow the faded thread: left, to a frayed end. A frayed end is a door that leads back. You have a few seconds to put a toy in their way.${fresh.length ? " Low on the wallpaper by the centre's door, three marks in red wool: still, go, home." : ""}`, null, 9000, "tapestry-centre");
+        if (chalk) K.after(2500, () => { if (!over) linkT = linkNote(wrap, api, "Because your stitches held Marcus's strap in Stitchwork, he kept his map on him: his pencil marks show as chalk on the tapestry, a cross on each door that leads back.", 9000); });
+      }
     });
     sb.focus();
 
@@ -602,6 +795,6 @@ export default {
     ro.observe(wrap);
     // a read-only probe for automated play tests
     layout(); K.frame(draw);
-    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); A.dispose(); ro.disconnect(); wrap.remove(); } };
-  },
-};
+    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); A.dispose(); ro.disconnect(); if (linkT) linkT.remove(); wrap.remove(); } };
+  }
+}

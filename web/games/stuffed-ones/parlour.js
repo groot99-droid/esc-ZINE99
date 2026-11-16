@@ -23,7 +23,16 @@
 // still while they come in and find you. With group dread at 50 or more it lowers the flee line by
 // 15. The board, its thirty symbols, the pegs and the scoresheet are the game's art (api.art); the
 // spaces sit where the board art puts them, and the old felt drawing stays as the fallback.
+//
+// Phase 2 (DESIGN.md section 21, built 2026-11-16): three stages. Teach: Nudge and Swap, sixty
+// seconds, nobody at the window. Test: the visit above, where the tamper that counts is the one your
+// Notes make possible (Personal, or It). Twist (`c13_parlour_2`): after the cupboard the guests
+// photographed the board, so any tamper is proof: double dread, no blame, and climbing back to the
+// shelf no longer hides you. The one move left is the Door sentence, and lying down beside it. The
+// guest made It is remembered for the Dollhouse (api.shared "it"); three of Ruth's marks are stitched
+// into the cloth's hem and cross into the book's glossary.
 import { artKit, PEG } from "./art-kit.js";
+import { runStages, stagePicker } from "./stages.js";
 const PRE = "stuffed-ones-parlour-";
 const C = { moss: "#6f7d4f", mossD: "#55623a", cream: "#efe5cf", bone: "#f6f1e4", rust: "#a5553a", sky: "#8fa9bf", night: "#3f4b63",
   amber: "#e39a2d", red: "#b8322a", cedar: "#6b4a32", ink: "#2a211b", rose: "#c07a8e", ochre: "#c9a24a", plum: "#8a6a86" };
@@ -50,7 +59,7 @@ const SPOTS = (() => {
   pts.push([0, 0]);
   return pts;
 })();
-const BASE_DREAD = 42, FLEE = 70, FOUND = 6, RUTH_START = 19;
+const FLEE = 70, FOUND = 6, RUTH_START = 19;
 // What you watched from the shelf (c09). It never interprets. Ana's quoted words are verbatim from
 // creative-writing/vault/02_Novels/01_The_Stuffed_Ones.md (ch 25; DESIGN.md section 6, Group B).
 const NOTES = [
@@ -58,7 +67,9 @@ const NOTES = [
   "Wes keeps a lamp on in his room all night. He switched it off when Ana knocked.",
   "Ana lifted Lila to sit beside a bear “so she isn’t alone”.",
 ];
-const TIME = 90, CLIMB = 4, LIMIT = 3, WARN = 2, WATCH = 4;
+const CLIMB = 4, LIMIT = 3, WARN = 2, WATCH = 4;
+const TIMES = [60, 90, 45], BASES = [38, 42, 50];
+const BLURBS = ["Nudge and Swap, while they are out.", "The tamper that is theirs alone, and the window.", "The board has been photographed: every tamper is proof."];
 
 function kit() {
   const offs = [], timers = new Set(); let raf = 0;
@@ -70,8 +81,12 @@ function kit() {
   };
 }
 
-export default {
-  mount(root, api) {
+export default { mount(root, api) { return runStages(root, api, run, BLURBS); } };
+
+function run(root, api, flow) {
+  {
+    const stage = flow.stage, TIME = TIMES[stage], BASE_DREAD = BASES[stage], PROOF = stage === 2;
+    const fresh = stage > 0 ? flow.S.learn(["play", "company", "stay"]) : [];
     const K = kit();
     const rng = api.rng();
     const A = artKit(api);
@@ -120,13 +135,13 @@ export default {
 
     const pegs = GUESTS.map((gu) => ({ gu, at: gu.sheet }));
     const dread = { noor: 0, wes: 0, ana: 0 };
-    let blame = 34, hunger = 70, tampers = [], noise = 0, personal = 0, seenCount = 0;
+    let blame = PROOF ? 0 : 34, hunger = 70, tampers = [], noise = 0, personal = 0, seenCount = 0;
     let started = false, over = false, speed = 1, t = 0, climbing = -1, early = null, lastMsg = "", msgT = 0, msgCol = C.bone;
     let drag = null, kbPeg = -1, kbSpace = -1, kbUsed = false, kbSel = 0, hoverPeg = null, still = false;
     let watchSeen = false, watches = [], watchI = 0, watchState = "none", watchT = 0, stepSaid = 0, personalSaid = false, firstSaid = false;
     const pops = [];
     // phase 1: the peg that is nobody's, It, and the Door sentence
-    const ruth = { at: RUTH_START, moves: 0 };
+    const ruth = { at: RUTH_START + stage, moves: 0 };
     let it = null, sentenceSaid = false, lying = false, foundAt = -1, ruthSaid = false;
     const groupDread = () => BASE_DREAD + (dread.noor + dread.wes + dread.ana) / 3;
     const onDoor = () => pegs.every((p) => p.at === 0);
@@ -310,14 +325,14 @@ export default {
         g.font = "italic 20px 'IM Fell English',Georgia,serif"; g.fillText("Scores", sheet.x + 14, sheet.y + 30);
         let y = sheet.y + 54;
         const tw = Math.min(sheet.w - 28, 150), th = Math.round(tw * 1100 / 800);
-        const pic = sheet.h > 560 && A.draw(g, "parlour-scoresheet", sheet.x + (sheet.w - tw) / 2, sheet.y + 40, tw, th);
+        const pic = sheet.h > 560 && !PROOF && A.draw(g, "parlour-scoresheet", sheet.x + (sheet.w - tw) / 2, sheet.y + 40, tw, th);
         if (pic) y += th + 6;
         GUESTS.forEach((gu, i) => {
           g.fillStyle = gu.col; g.fillRect(sheet.x + 14, y - 11, 12, 12); g.fillStyle = C.ink; g.font = "700 14px Karla,Arial,sans-serif"; g.fillText(gu.name, sheet.x + 32, y);
           const moved = pegs[i].at !== gu.sheet;
           g.textAlign = "right"; g.font = "600 13px Karla,Arial,sans-serif"; g.fillStyle = moved ? C.red : C.ink; g.fillText(moved ? `now ${pegs[i].at + 1}` : "", sheet.x + sheet.w - 14, y); g.textAlign = "left";
           y += 18; g.font = "13px Karla,Arial,sans-serif";
-          (pic ? gu.trail.slice(-3) : gu.trail).forEach(([w, n, pos]) => { g.fillStyle = "rgba(42,33,27,.85)"; g.fillText(w, sheet.x + 18, y); g.textAlign = "right"; g.fillText(String(pos + 1), sheet.x + sheet.w - 14, y); g.textAlign = "left"; y += 16; });
+          (PROOF ? gu.trail.slice(-1) : pic ? gu.trail.slice(-3) : gu.trail).forEach(([w, n, pos]) => { g.fillStyle = "rgba(42,33,27,.85)"; g.fillText(w, sheet.x + 18, y); g.textAlign = "right"; g.fillText(String(pos + 1), sheet.x + sheet.w - 14, y); g.textAlign = "left"; y += 16; });
           g.strokeStyle = "rgba(165,85,58,.5)"; g.beginPath(); g.moveTo(sheet.x + 14, y - 8); g.lineTo(sheet.x + sheet.w - 14, y - 8); g.stroke(); y += 8;
         });
       } else {
@@ -362,6 +377,29 @@ export default {
       let ny = notes.y + 41;
       const maxW = notes.w - 28;
       NOTES.forEach((n) => { ny = wrapText(n, notes.x + 14, ny, wide ? maxW : maxW, 17); });
+      // the hem of the cloth: three of Ruth's marks, in a child's red wool
+      if (stage > 0 && wide && notes.w > 560) {
+        const cw = 30, chh = 44, hx = notes.x + notes.w - 3 * (cw + 26) - 8, hy = notes.y + 22;
+        g.fillStyle = C.ink; g.font = "italic 13px 'IM Fell English',Georgia,serif"; g.textAlign = "left"; g.textBaseline = "alphabetic"; g.fillText("in the cloth's hem:", hx, notes.y + 16);
+        [["glyph-back-02-play", "play"], ["glyph-back-06-company", "company"], ["glyph-back-03-stay", "stay"]].forEach(([id, w], k) => {
+          const x = hx + k * (cw + 26);
+          if (!A.draw(g, id, x, hy, cw, chh)) { g.strokeStyle = C.rust; g.strokeRect(x, hy, cw, chh); }
+          g.fillStyle = C.ink; g.font = "italic 13px 'IM Fell English',Georgia,serif"; g.textAlign = "center"; g.fillText(w, x + cw / 2, hy + chh + 13);
+        });
+      }
+      // the photograph: where every peg stood when the picture was taken
+      if (PROOF) {
+        const low = !wide && notes.h > 170, pw = wide ? Math.min(sheet.w - 28, 132) : 74, ph = pw * 1.16, px = wide ? sheet.x + (sheet.w - pw) / 2 : low ? notes.x + 12 : board.cx + board.R - pw - 4, py = wide ? sheet.y + sheet.h - ph - 58 : low ? notes.y + notes.h - ph - 10 : board.cy + board.R - ph - 4;
+        g.save(); g.translate(px + pw / 2, py + ph / 2); g.rotate(-0.05); g.translate(-px - pw / 2, -py - ph / 2);
+        g.fillStyle = "rgba(0,0,0,.3)"; g.fillRect(px + 3, py + 4, pw, ph);
+        g.fillStyle = "#f4f0e6"; g.fillRect(px, py, pw, ph);
+        const m = pw * 0.07, iw = pw - 2 * m; g.fillStyle = "#5d6652"; g.fillRect(px + m, py + m, iw, iw);
+        g.fillStyle = "#d8cdb2"; g.beginPath(); g.arc(px + pw / 2, py + m + iw / 2, iw * 0.46, 0, 7); g.fill();
+        g.strokeStyle = "rgba(42,33,27,.35)"; g.lineWidth = 1; g.beginPath(); SPOTS.forEach(([sx, sy], i) => { const x = px + pw / 2 + sx * iw * 0.42, y = py + m + iw / 2 + sy * iw * 0.42; i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.stroke();
+        pegs.forEach((q) => { const [sx, sy] = SPOTS[q.gu.sheet]; g.fillStyle = q.gu.col; g.strokeStyle = C.ink; g.beginPath(); g.arc(px + pw / 2 + sx * iw * 0.42, py + m + iw / 2 + sy * iw * 0.42, Math.max(3, pw * 0.045), 0, 7); g.fill(); g.stroke(); });
+        g.fillStyle = C.ink; g.font = `italic ${wide ? 13 : 11}px 'IM Fell English',Georgia,serif`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(wide ? "Wes's photograph" : "the photo", px + pw / 2, py + m + iw + (ph - iw - m) / 2);
+        g.restore();
+      }
       // tampers left: three felt buttons
       const tx = wide ? sheet.x + 14 : notes.x + notes.w - 96, ty = wide ? sheet.y + sheet.h - 24 : notes.y + 18;
       g.fillStyle = C.ink; g.font = "italic 15px 'IM Fell English',Georgia,serif"; g.textAlign = "left"; g.textBaseline = "alphabetic"; if (wide) g.fillText("tampers", tx, ty - 16);
@@ -405,13 +443,15 @@ export default {
       if (!personalOne && blame >= 50) { const half = v / 2; dread[id] += half; blame += half; } else dread[id] += v;
     }
     function apply(kind, owner, other) {
-      if (kind === "nudge") { addDread(owner, 6); blame += 2; }
-      if (kind === "swap") { addDread(owner, 4); addDread(other, 4); blame += 8; }
-      if (kind === "knot") addDread(owner, 8);
-      if (kind === "hearth") { GUESTS.forEach((gu) => addDread(gu.id, 10)); blame += 12; }
-      if (kind === "personal") { dread[owner] += 15; personal++; }
-      if (kind === "door") { addDread(owner, 6); blame += 2; }
-      if (kind === "it") { dread[owner] += 10; it = pegs.find((q) => q.gu.id === owner); }
+      // photographed, a tamper is proof: twice the dread, and nobody blames anybody
+      const m = PROOF ? 2 : 1, bl = (v) => { if (!PROOF) blame += v; };
+      if (kind === "nudge") { addDread(owner, 6 * m); bl(2); }
+      if (kind === "swap") { addDread(owner, 4 * m); addDread(other, 4 * m); bl(8); }
+      if (kind === "knot") addDread(owner, 8 * m);
+      if (kind === "hearth") { GUESTS.forEach((gu) => addDread(gu.id, 10 * m)); bl(12); }
+      if (kind === "personal") { dread[owner] += 15 * m; personal++; }
+      if (kind === "door") { addDread(owner, 6 * m); bl(2); }
+      if (kind === "it") { dread[owner] += 10 * m; it = pegs.find((q) => q.gu.id === owner); }
       hunger = Math.max(0, hunger - 5);
       noise += kind === "swap" || kind === "hearth" ? 2 : 1;
     }
@@ -428,14 +468,14 @@ export default {
       undoBtn.disabled = false;
       const [x, y] = spot(to);
       const dv = { nudge: 6, swap: 4, knot: 8, hearth: 10, personal: 15, door: 6, it: 10 }[kind];
-      pop(`${KIND_LABEL[kind]} · +${dv} dread`, x, y - L.sr * 1.6, kind === "personal" ? C.amber : C.bone);
+      pop(PROOF ? `${KIND_LABEL[kind]} · proof · +${dv * 2} dread` : `${KIND_LABEL[kind]} · +${dv} dread`, x, y - L.sr * 1.6, kind === "personal" ? C.amber : C.bone);
       say({ nudge: `${peg.gu.name}'s peg nudged off the scoresheet.`, swap: `${peg.gu.name} and ${occ ? occ.gu.name : ""} swapped.`, knot: `${peg.gu.name}'s peg on a Knot it never landed on.`, hearth: `${peg.gu.name}'s peg on the Hearth.`, personal: `${peg.gu.name}'s peg on ${SPACE_NAME(to)}.`, door: `${peg.gu.name}'s peg back on the Door.`, it: `${peg.gu.name}'s peg beside the one that is nobody's. ${peg.gu.name} is It.` }[kind]);
       if (kind === "it") beat("It", `Whoever shares a space with that peg is It. Tonight the pack goes to ${peg.gu.name}'s door first. You did not decide that; you only put the peg there.`, 5200);
       if (onDoor() && !sentenceSaid) {
         sentenceSaid = true; lieBtn.hidden = false;
         beat("The only thing a toy can say", "Three pegs on the Door. It is a sentence, and it has one word: leave. You can climb back now, or lie down by the board (D) and let them find who said it.", 7000);
       } else if (!onDoor()) lieBtn.hidden = true;
-      if (!firstSaid && kind !== "it" && !onDoor()) { firstSaid = true; beat("The first peg", "It is still warm from their hands. Somewhere on the trail they are laughing about something else."); }
+      if (!firstSaid && kind !== "it" && !onDoor()) { firstSaid = true; if (PROOF) beat("Proof", "The photograph is on the table beside the cloth. This peg is not where the picture has it, and no one of them can have done it. Climbing back will not hide you now.", 6000); else beat("The first peg", "It is still warm from their hands. Somewhere on the trail they are laughing about something else."); }
       if (kind === "personal" && !personalSaid) { personalSaid = true; beat("You know where this one belongs", "Nobody wrote it down. You watched, and you remembered. That is the worst of it."); }
       if (watchState === "watch") seen();
     }
@@ -480,11 +520,15 @@ export default {
     function sentenceEnd(moved) {
       const gd = Math.round(groupDread());
       if (moved) { dread.noor += 15; finishWith("lose", `They are in the doorway when you move. Noor sees the cat's head turn and screams, and the three pegs go over with the table. A slip: one memory goes, and nobody remembers what the board said. ${it ? it.gu.name + " is still It." : ""}`); return; }
-      if (gd >= 50) finishWith("win", `They come in and find three pegs on the Door, and a felt cat lying beside the board with one paw on the cloth. Nobody laughs. Noor reads it out loud, once: leave. Group dread ${gd}: the flee line falls from ${FLEE} to ${FLEE - 15}. Wes puts you back on the shelf with two fingers, and goes to look at where the car keys are.`);
+      if (gd >= 50) finishWith("win", `They come in and find three pegs on the Door, and a felt cat lying beside the board with one paw on the cloth. ${PROOF ? "Wes holds the photograph beside it, then puts it down. " : ""}Nobody laughs. Noor reads it out loud, once: leave. Group dread ${gd}: the flee line falls from ${FLEE} to ${FLEE - 15}. Wes puts you back on the shelf with two fingers, and goes to look at where the car keys are.`);
       else finishWith("done", `They come in and find three pegs on the Door and a cat beside the board. Group dread ${gd}, under 50: Wes says “Seriously, stop messing around.” and they take it for one another's joke. The sentence was said. It was not heard.`);
     }
     function leave() { if (over || climbing >= 0 || lying) return; setStill(false); climbing = 0; undoBtn.disabled = true; leaveBtn.disabled = true; stillBtn.disabled = true; drag = null; }
-    function finishWith(kind, text) { over = true; api.store.set("losses", kind === "lose" ? losses + 1 : 0); api.end({ outcome: kind, text }); }
+    function finishWith(kind, text) {
+      over = true; api.store.set("losses", kind === "lose" ? losses + 1 : 0);
+      if (it) flow.S.set("it", it.gu.id);
+      flow.done({ outcome: kind, text });
+    }
     function caught(who) {
       dread[who.id] += 15; blame = Math.max(0, blame - 10);
       finishWith("lose", `${who.name} comes in while you are still on the table. A slip: one memory goes. For a moment ${who.name} stares at the cat by the board; then a laugh, too loud, and you are carried back to the shelf by hand. ${tampers.length ? `${tampers.length} tamper${tampers.length === 1 ? "" : "s"} left behind.` : ""}`);
@@ -495,12 +539,19 @@ export default {
       const parts = GUESTS.map((gu) => `${gu.name} +${Math.round(dread[gu.id])}`).join(", ");
       const mine = GUESTS.filter((gu, i) => SYM[pegs[i].at] === gu.personal && pegs[i].at !== gu.sheet).map((gu) => gu.name);
       if (!tampers.length) { finishWith("done", "Back on the shelf having touched nothing. The pegs are where the guests left them, and the hunger has not been fed."); return; }
-      const won = sum >= 15 || personal > 0 || !!it;
+      if (PROOF) { finishWith("done", `Back on the shelf before the door opens. Wes holds the photograph against the board: ${tampers.length} peg${tampers.length === 1 ? "" : "s"} moved, and nobody in the room could have done it. Then all three of them turn round and look at the shelf. They take every toy down and put each of you in a different room. Dread: ${parts}. Proof was all you gave them; it told them nothing to do.${itTail}`); return; }
+      const kinds = tampers.map((x) => x.kind);
+      if (stage === 0) {
+        const both = kinds.includes("nudge") && kinds.includes("swap");
+        finishWith(both ? "win" : "done", both ? `Back on the shelf before the door opens. A peg a space or two off its line, and two pegs in each other's places. Dread: ${parts}; blame ${Math.round(blame)}. Tonight they will argue about who moved them, and nobody will think of the shelf.${itTail}` : `Back on the shelf before the door opens, with ${tampers.length} tamper${tampers.length === 1 ? "" : "s"} left behind. This visit wanted one Nudge (a peg a space or two off) and one Swap (two pegs exchanged). Dread: ${parts}.`);
+        return;
+      }
+      const won = personal > 0 || !!it;
       let tail;
       if (mine.length) tail = ` When they sit down tonight, ${mine.join(" and ")} will find their own symbol under their peg, and say nothing about it to the others.`;
       else if (blame >= 50) tail = " Tonight they will argue about who moved the pegs. Nobody will think of the shelf.";
       else tail = " Someone will say the board got knocked. Nobody will quite believe it.";
-      finishWith(won ? "win" : "done", `Back on the shelf before the door opens. Dread: ${parts}; blame ${Math.round(blame)}.${tail}${itTail}${onDoor() ? " Three pegs on the Door: they will find the sentence and not the one who said it." : ""}${seenCount ? " Wes keeps glancing at the window." : ""}`);
+      finishWith(won ? "win" : "done", `Back on the shelf before the door opens. Dread: ${parts}; blame ${Math.round(blame)}.${tail}${itTail}${won ? "" : " Nothing you moved was theirs alone: read your notes, or use the peg that is nobody's."}${onDoor() ? " Three pegs on the Door: they will find the sentence and not the one who said it." : ""}${seenCount ? " Wes keeps glancing at the window." : ""}`);
     }
 
     // ---- input -------------------------------------------------------------------------------
@@ -572,7 +623,7 @@ export default {
           else if (watchState === "watch") { watchT -= dt; if (watchT <= 0) { watchState = "none"; watchI++; stillBtn.classList.remove(PRE + "urgent"); if (!over) say("He looks away.", C.bone); ruthMoves(); } }
         }
         // the porch guest after 60 s, if you have been loud
-        if (early === null && t >= 60 * speed && noise >= 3) early = t + (12 + rng() * 10) * speed;
+        if (early === null && stage === 1 && t >= 60 * speed && noise >= 3) early = t + (12 + rng() * 10) * speed;
         const st = footStep();
         if (st >= 1 && stepSaid < 1) { stepSaid = 1; beat("Voices on the trail", "The hike is coming back early, or right on time. Leave now and the climb takes four seconds.", 3800); }
         if (climbing >= 0) { climbing += dt / speed; if (climbing >= CLIMB) { safe(); } }
@@ -587,36 +638,47 @@ export default {
     tickRaf = requestAnimationFrame(tick);
 
     // ---- how to play: a felt banner ------------------------------------------------------------
+    const GOAL = [
+      "Day two, late morning. The guests are out on the hike; their counting game lies mid-play on the table. Leave one Nudge (a peg a space or two off its line) and one Swap (two pegs exchanged), and be back on the shelf before anyone walks in.",
+      "The same table, an hour on. This time the tamper that counts is the one that is theirs alone: read your notes along the bottom and put a peg on its owner's own symbol, or beside the peg that is nobody's. Wes is on the porch; he looks in at the window.",
+      "The third morning, after the cupboard. Before they went out, Wes photographed the board. Any tamper is proof now: twice the dread, no blame, and they will know where to look. A toy can say one thing. Say it, and stay beside it.",
+    ][stage];
     const intro = document.createElement("div");
     intro.className = PRE + "intro";
     intro.innerHTML = `<div class="${PRE}card" role="dialog" aria-label="How to play Parlour">
       <h2>Parlour</h2>
-      <p class="${PRE}goal">Day two, late morning. The guests are out on the hike; their counting game lies mid-play on the table. Move their pegs so the wrongness finds each of them, and be back on the shelf before anyone walks in.</p>
+      <p class="${PRE}goal">${GOAL}</p>
       <div class="${PRE}legend">
         <div><i style="background:${btnFelt(C.rust)}"></i><span>Drag a peg to any space</span><kbd>1–3 · Enter · arrows</kbd></div>
         <div><i style="background:${btnFelt(C.cream)}"></i><span>Undo the last tamper</span><kbd>U</kbd></div>
         <div><i style="background:${btnFelt(C.red)}"></i><span>Leave: the climb takes four seconds</span><kbd>L</kbd></div>
-        <div><i style="background:${btnFelt(C.bone)}"></i><span>One bone peg is nobody's. It moves when you are not looking</span><span></span></div>
+        ${stage === 0 ? "" : `<div><i style="background:${btnFelt(C.night)}"></i><span>Hold still while the window is watched</span><kbd>hold Space</kbd></div>`}
+        ${stage === 1 ? `<div><i style="background:${btnFelt(C.bone)}"></i><span>One bone peg is nobody's. It moves when you are not looking</span><span></span></div>` : ""}
+        ${stage === 2 ? `<div><i style="background:${btnFelt(C.amber)}"></i><span>All three pegs on the Door, then lie down by the board</span><kbd>D</kbd></div>` : ""}
       </div>
       <p class="${PRE}kind" ${losses >= 2 ? "" : "hidden"}>Caught twice. A slower hike is ticked for you.</p>
       <label><input type="checkbox" ${losses >= 2 ? "checked" : ""}> Slower hike (twice the time)</label>
-      <button type="button">Climb down</button>
+      <div class="${PRE}pickhost"></div>
+      <button type="button" data-start>Climb down</button>
     </div>`;
     wrap.appendChild(intro);
     { // the chapter card and the title in the cross-stitch alphabet, when the art is there
       const cardEl = intro.querySelector("." + PRE + "card"), h2 = intro.querySelector("h2");
       const cw = Math.min(436, wrap.clientWidth - 76);
-      const plate = A.picture("chapter-11", cw, { alt: "Chapter 11: The Second Game: Movement" });
+      const plate = A.picture(stage === 2 ? "chapter-13" : "chapter-11", cw, { alt: "" });
       if (plate) { plate.className = PRE + "plate"; cardEl.insertBefore(plate, h2); }
       const ttl = A.word("Parlour", 40);
       if (ttl) { h2.textContent = ""; h2.appendChild(ttl); }
+      stagePicker(intro.querySelector("." + PRE + "pickhost"), api, stage, BLURBS, (n) => flow.pick(n));
     }
-    const sb = intro.querySelector("button");
+    const sb = intro.querySelector("button[data-start]");
     K.on(sb, "click", () => {
       speed = intro.querySelector("input").checked ? 2 : 1;
-      watches = [(18 + rng() * 8) * speed, (48 + rng() * 8) * speed];
+      watches = stage === 0 ? [] : stage === 1 ? [(18 + rng() * 8) * speed, (48 + rng() * 8) * speed] : [(11 + rng() * 3) * speed, (27 + rng() * 3) * speed];
       intro.remove(); started = true; leaveBtn.disabled = false; wrap.focus();
-      beat("Three tampers", "Read your notes along the bottom. The pegs are big felt buttons; the spaces are stitched symbols. Pick what each of them will find.", 5000);
+      if (stage === 0) beat("Two tampers", "The pegs are big felt buttons; the spaces are stitched symbols. A dashed ring shows where the scoresheet says a peg should be. Move one a space or two; put two in each other's places.", 6500);
+      else if (stage === 1) beat("Three tampers", "Read your notes along the bottom. Pick what each of them will find." + (fresh.length ? ` In the cloth's hem, in red wool, three marks you can read now: ${fresh.join(", ")}.` : ""), 6500);
+      else beat("The photograph", "It lies on the table beside the cloth: every peg where it stood an hour ago. Whatever you move now, they can prove. All three of them are in the next room, and one keeps coming to the window.", 7500);
     });
     sb.focus();
 
@@ -625,5 +687,5 @@ export default {
     // a read-only probe for automated play tests
     layout(); K.frame(draw);
     return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); A.dispose(); ro.disconnect(); wrap.remove(); } };
-  },
-};
+  }
+}

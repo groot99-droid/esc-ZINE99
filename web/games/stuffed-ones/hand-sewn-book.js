@@ -25,7 +25,17 @@
 // an act in red, as the cards are sewn. A card whose glyph you cannot read yet has a scrap tacked
 // over its word. Reading the walls shows the whole stitched wall, all thirty glyphs. The segment
 // glyphs stay as the fallback.
+//
+// Phase 2 (DESIGN.md section 21, built 2026-11-16): three stages. Teach: spread I alone, colour is
+// role, no clock. Test: spreads III and V under the clock: order rules, the decoy, and a missing
+// strip (spread III's act is gone; sew it from two glyphs you know: needle and mouth make feed).
+// Twist: every strip has a back. Spreads I and III lie solved; turn each strip over and Ruth's line
+// is there in a child's red wool, each back numbered with her own strokes, and read from the other
+// side: her order runs right to left. A back whose mark you have met elsewhere (the Parlour cloth,
+// your own pattern in Stuffing, the tapestry in the Labyrinth: api.shared "glossary") names itself;
+// the walls name the rest, at the usual cost. Ruth's two lines are written for the game.
 import { artKit } from "./art-kit.js";
+import { runStages, stagePicker, linkNote } from "./stages.js";
 const PRE = "stuffed-ones-hand-sewn-book-";
 const C = { linen: "#e3d6bb", linenD: "#cdbd9c", silk: "#1d1712", red: "#b8322a", white: "#f6f1e4", black: "#1d1712",
   cedar: "#6b4a32", cedarD: "#3d2a1d", amber: "#e39a2d", ink: "#2a211b", moss: "#4f6b2c" };
@@ -61,7 +71,17 @@ const SPREADS = [
     strips: [["we", "white"], ["we", "white", true], ["begin", "red"], ["needle", "black"], ["thread", "black"], ["it", "white"], ["filling", "black"], ["knot", "black"], ["knot", "black", true]],
     text: ["We were the next filling.", "The ritual had already begun the moment we stepped inside."] },
 ];
-const WALL_COST = 8, SAMPLER = 2;
+const WALL_COST = 8, SAMPLER = 2, MAKE_COST = 4;
+const STAGE_SPREADS = [[0], [1, 2], [0, 1]], CLOCK = [0, 150, 120];
+const BLURBS = ["Spread I: colour is role.", "Order rules, a decoy and a missing strip, under the clock.", "Every strip has a back."];
+// the missing strip of spread III and the two glyphs it is sewn from; the radicals offered
+const MISSING = { 1: "feed" }, MAKES = { feed: ["needle", "mouth"] }, RADICALS = ["thread", "needle", "they", "mouth", "knot"];
+// Ruth's lines on the backs, in her order (her strokes count it); the art of each back
+const BACKS = { 0: ["i", "seven", "still", "play"], 1: ["hunger", "play", "company", "stay", "i", "warm"] };
+const RUTH = { 0: "{i} am {seven} {still}. {i} {play}.", 1: "When the {hunger} {play}s, {company} {stay}s, and {i} am {warm}." };
+const PAGE_B = [3, 6, 1, 5, 2, 4];
+const BACK_ART = { seven: "glyph-back-01-seven", play: "glyph-back-02-play", stay: "glyph-back-03-stay", warm: "glyph-back-04-warm", cold: "glyph-back-05-cold", company: "glyph-back-06-company",
+  still: "glyph-back-07-still", go: "glyph-back-08-go", unpick: "glyph-back-09-unpick", cut: "glyph-back-10-cut", i: "glyph-back-11-i", mother: "glyph-back-12-mother", hunger: "glyph-back-13-hunger", home: "glyph-back-14-home" };
 
 function kit() {
   const offs = [], timers = new Set(); let raf = 0;
@@ -89,12 +109,17 @@ function violations(row, nRules) {
   return { bad, at };
 }
 
-export default {
-  mount(root, api) {
+export default { mount(root, api) { return runStages(root, api, run, BLURBS); } };
+
+function run(root, api, flow) {
+  {
+    const stage = flow.stage, seq = STAGE_SPREADS[stage], backMode = stage === 2;
+    const SP = (k = si) => SPREADS[seq[k]];
     const K = kit();
     const rng = api.rng("stuffed-ones/book");
     const A = artKit(api), ART = A.has("glyph-09-needle");
-    const WALL_IDS = A.art.list("pieces").filter((id) => /^glyph-\d/.test(id)).sort().slice(0, ALL_GLYPHS);
+    const WALL_FRONT = A.art.list("pieces").filter((id) => /^glyph-\d/.test(id)).sort().slice(0, ALL_GLYPHS);
+    const WALL_IDS = backMode ? Object.values(BACK_ART).filter((id) => A.has(id)) : WALL_FRONT;
     const losses = api.store.get("losses", 0);
     const wrap = document.createElement("div");
     wrap.className = PRE + "wrap";
@@ -110,6 +135,13 @@ export default {
 .${PRE}acts button:hover:not(:disabled){outline-style:solid}
 .${PRE}acts button:disabled{opacity:.45;cursor:not-allowed}
 .${PRE}acts button[hidden]{display:none}
+.${PRE}make{position:absolute;left:50%;transform:translateX(-50%);bottom:74px;width:min(420px,calc(100% - 24px));box-sizing:border-box;${linenCss};color:${C.ink};border:2px solid ${C.silk};outline:1px dashed ${C.red};outline-offset:-6px;padding:12px 14px;z-index:3;box-shadow:0 6px 18px rgba(0,0,0,.45);font:14px/1.4 Karla,Arial,sans-serif}
+.${PRE}make[hidden]{display:none}
+.${PRE}make b{display:block;font:italic 400 18px 'IM Fell English',Georgia,serif}
+.${PRE}make div{display:flex;gap:6px;margin-top:8px;justify-content:space-between}
+.${PRE}make button{flex:1;min-width:0;min-height:64px;padding:4px 2px;background:#ece2cb;border:1.5px solid ${C.silk};cursor:pointer;font:600 12px Karla,Arial,sans-serif;color:${C.ink};display:flex;flex-direction:column;align-items:center;gap:2px}
+.${PRE}make button[aria-pressed=true]{outline:3px solid ${C.red};outline-offset:-3px;background:#fff}
+.${PRE}make canvas{position:static!important;width:auto;height:auto}
 .${PRE}beat{position:absolute;left:50%;transform:translateX(-50%);bottom:76px;width:min(500px,calc(100% - 32px));box-sizing:border-box;${linenCss};color:${C.ink};border:2px solid ${C.silk};padding:16px 18px 12px;font:15px/1.45 Karla,Arial,sans-serif;z-index:3;transition:opacity .5s;pointer-events:none;box-shadow:0 6px 18px rgba(0,0,0,.45)}
 .${PRE}beat::before{content:"";position:absolute;left:8px;right:8px;top:4px;height:8px;background:${zig} repeat-x}
 .${PRE}beat b{font:italic 400 18px 'IM Fell English',Georgia,serif;display:block}
@@ -132,14 +164,22 @@ export default {
 .${PRE}card label{font:14px Karla,Arial,sans-serif;display:flex;gap:8px;align-items:center;margin-top:10px}
 .${PRE}card .${PRE}kind{margin:10px 0 0;font:italic 15px 'IM Fell English',Georgia,serif;color:${C.red}}
 </style><canvas aria-label="An open hand-sewn book: loose glyph strips on the left page, coloured slots on the right"></canvas>
-<div class="${PRE}acts"><button type="button" data-a="walls" hidden>Read the walls <small>R · −${WALL_COST} s</small></button><button type="button" data-a="sampler" hidden>Mabel's sampler <small>H · ×${SAMPLER}</small></button></div>
+<div class="${PRE}acts"><button type="button" data-a="walls" hidden>Read the walls <small>R · −${WALL_COST} s</small></button><button type="button" data-a="sampler" hidden>Mabel's sampler <small>H · ×${SAMPLER}</small></button><button type="button" data-a="make" hidden>Make a strip <small>M</small></button></div>
+<div class="${PRE}make" hidden role="group" aria-label="Make the missing strip"><b>The act is missing from this page.</b><span>Sew it from two glyphs you know: what does the feeding, over what is fed. A wrong pair costs ${MAKE_COST} s.</span><div></div></div>
 <div class="${PRE}beat" aria-live="polite" style="opacity:0"></div>`;
     root.appendChild(wrap);
     const cv = wrap.querySelector("canvas"), g = cv.getContext("2d");
     const acts = wrap.querySelector("." + PRE + "acts"), beatEl = wrap.querySelector("." + PRE + "beat");
-    const wallsBtn = acts.querySelector('[data-a="walls"]'), sampBtn = acts.querySelector('[data-a="sampler"]');
+    const wallsBtn = acts.querySelector('[data-a="walls"]'), sampBtn = acts.querySelector('[data-a="sampler"]'), makeBtn = acts.querySelector('[data-a="make"]');
+    const makeEl = wrap.querySelector("." + PRE + "make");
+    let picked = [];
+    function syncMake() { makeEl.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(picked.includes(b.dataset.g)))); }
 
-    let started = false, over = false, speed = 1, total = 180, left = 180, idle = 0;
+    let started = false, over = false, speed = 1, total = CLOCK[stage] || 180, left = total, idle = 0;
+    let missing = null, flips = 0, page = { said: false }, linkT = null;
+    const namedBack = new Set();
+    const knowsBack = (w) => namedBack.has(w) || flow.S.knows(w);
+    const ruthLine = (k = si) => RUTH[seq[k]].replace(/\{(\w+)\}/g, (_, w) => (knowsBack(w) ? (w === "i" ? "I" : w) : "▒▒"));
     let tautStart = 0, si = 0, strips = [], row = [], taut = 0, read = [];
     const named = new Set(["they", "needle", "thread", "summon"]);
     let wallT = 0, wallNew = [];
@@ -160,11 +200,18 @@ export default {
     function pop(text, x, y, col) { pops.push({ text, x, y, col, t0: performance.now() }); }
 
     function loadSpread(k) {
-      const sp = SPREADS[k];
+      const sp = SP(k);
       row = sp.slots.map(() => null);
-      strips = sp.strips.map(([glyph, colour, doubled], i) => ({ i, glyph, colour, doubled: !!doubled, slot: null, rx: rng(), ry: rng(), rot: (rng() - 0.5) * 0.3 }));
+      missing = stage === 1 ? MISSING[seq[k]] || null : null;
+      strips = sp.strips.filter(([glyph]) => glyph !== missing).map(([glyph, colour, doubled], i) => ({ i, glyph, colour, doubled: !!doubled, slot: null, rx: rng(), ry: rng(), rot: (rng() - 0.5) * 0.3 }));
       for (let i = strips.length - 1; i > 0; i--) { const j = Math.floor(rng() * (i + 1)); [strips[i].rx, strips[j].rx] = [strips[j].rx, strips[i].rx]; }
       taut = 0; tautStart = 0; held = null; cursor = 0; idle = 0; hintPair = null;
+      if (backMode) {
+        // the front lies solved, as you left it; the backs are still face down
+        solution().forEach((s, q) => { s.slot = q; row[q] = s; });
+        page = { said: false };
+        if (seq[k] === 1) PAGE_B.forEach((tl, q) => { row[q].tally = tl; row[q].back = BACKS[1][tl - 1]; });
+      }
       layout(); syncButtons();
     }
 
@@ -175,7 +222,7 @@ export default {
       let lp, rp;
       if (wide) { const half = book.w / 2; lp = { x: book.x, y: book.y, w: half, h: book.h }; rp = { x: book.x + half, y: book.y, w: half, h: book.h }; }
       else { const hh = Math.min(book.h * 0.56, 440); rp = { x: book.x, y: book.y, w: book.w, h: hh }; lp = { x: book.x, y: book.y + hh, w: book.w, h: book.h - hh }; }
-      const sp = SPREADS[si];
+      const sp = SP();
       const n = sp.slots.length;
       const ASP = ART ? 320 / 220 : 1;
       const perRow = !wide && n > 4 ? Math.ceil(n / 2) : n;
@@ -216,7 +263,30 @@ export default {
       if (colour === "white") { g.strokeStyle = "rgba(29,23,18,.55)"; g.lineWidth = lw + 2; g.setLineDash(dashed ? [5, 3] : []); g.strokeRect(x, y, w, h); }
       g.strokeStyle = col; g.lineWidth = lw; g.setLineDash(dashed ? [5, 3] : []); g.strokeRect(x, y, w, h); g.setLineDash([]);
     }
+    function drawBack(s, x, y, sz, lift) {
+      const sh = L.sh;
+      g.fillStyle = lift ? "rgba(0,0,0,.3)" : "rgba(0,0,0,.2)"; g.fillRect(x + (lift ? 7 : 3), y + (lift ? 9 : 4), sz, sh);
+      const known = knowsBack(s.back);
+      if (!A.draw(g, BACK_ART[s.back], x, y, sz, sh)) {
+        g.fillStyle = "#d9c7a8"; g.fillRect(x, y, sz, sh); g.strokeStyle = C.red; g.lineWidth = 2; g.setLineDash([6, 4]); g.strokeRect(x + 4, y + 4, sz - 8, sh - 8); g.setLineDash([]);
+        g.fillStyle = C.red; g.font = `italic ${Math.max(12, Math.round(sz * 0.2))}px 'IM Fell English',Georgia,serif`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(known ? s.back : "", x + sz / 2, y + sh * 0.5);
+      }
+      // her strokes along the top edge: the order she sewed them in
+      g.fillStyle = "#e6d8bb"; g.fillRect(x + sz * 0.1, y + sh * 0.028, sz * 0.8, sh * 0.105);
+      g.strokeStyle = C.red; g.lineWidth = Math.max(2, sz * 0.05); g.lineCap = "round";
+      for (let n = 0; n < s.tally; n++) {
+        const x0 = x + sz / 2 + (n - (s.tally - 1) / 2) * sz * 0.12, j = ((n * 7 + s.tally * 3) % 5 - 2) * sz * 0.012;
+        g.beginPath(); g.moveTo(x0 + j + sz * 0.015, y + sh * 0.045); g.lineTo(x0 - j - sz * 0.015, y + sh * 0.118); g.stroke();
+      }
+      g.lineCap = "butt";
+      if (!known) {
+        g.fillStyle = "#cdbd9c"; g.fillRect(x + sz * 0.16, y + sh * 0.868, sz * 0.68, sh * 0.105);
+        g.strokeStyle = C.silk; g.lineWidth = 1; g.setLineDash([2, 2]); g.strokeRect(x + sz * 0.16, y + sh * 0.868, sz * 0.68, sh * 0.105); g.setLineDash([]);
+        g.fillStyle = C.silk; g.font = `700 ${Math.max(10, Math.round(sh * 0.085))}px Karla,Arial,sans-serif`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText("?", x + sz / 2, y + sh * 0.922);
+      }
+    }
     function drawStrip(s, x, y, sz, lift) {
+      if (s.flipped) { drawBack(s, x, y, sz, lift); return; }
       const sh = L.sh, id = GLYPHS[s.glyph].art;
       if (ART && A.sprite(id, sz, sh)) {
         g.save();
@@ -283,20 +353,21 @@ export default {
       gr.addColorStop(0, "rgba(60,40,25,0)"); gr.addColorStop(0.5, "rgba(60,40,25,.35)"); gr.addColorStop(1, "rgba(60,40,25,0)");
       g.fillStyle = gr; if (wide) g.fillRect(rp.x - 24, book.y, 48, book.h); else g.fillRect(book.x, lp.y - 18, book.w, 36);
       [lp, rp].forEach((p) => { edgeBand(p.x, p.y + 18, p.w); edgeBand(p.x, p.y + p.h - 12, p.w); });
-      const sp = SPREADS[si];
+      const sp = SP();
       // right page: header with the spread and the time
       g.fillStyle = C.ink; g.textAlign = "left"; g.textBaseline = "alphabetic";
       g.font = `italic ${Math.round(Math.min(28, rp.w / 16))}px 'IM Fell English',Georgia,serif`;
-      g.fillText(`Spread ${sp.no} · ${sp.title}`, rp.x + 22, rp.y + 52);
+      g.fillText(backMode ? `Spread ${sp.no} · the back` : `Spread ${sp.no} · ${sp.title}`, rp.x + 22, rp.y + 52);
       // the glows' distance, as a stitched bar: the pressure, always shown
       const frac = Math.max(0, left / total);
-      const gloss = wide && rp.w > 560;
+      const gloss = wide && rp.w > 560 && !backMode;
       const tbx = rp.x + 22, tby = rp.y + 66, tbw = Math.min(rp.w - 44, gloss ? 200 : 360);
       g.strokeStyle = C.silk; g.lineWidth = 1.2; g.strokeRect(tbx, tby, tbw, 12);
       const cells = Math.floor((tbw - 4) / 8);
       for (let k = 0; k < cells; k++) { if (k / cells > frac) break; g.fillStyle = frac < 0.2 ? C.red : C.silk; g.fillRect(tbx + 2 + k * 8, tby + 2, 6, 8); }
       g.font = `700 ${left < 30 * speed ? 15 : 14}px Karla,Arial,sans-serif`; g.fillStyle = left < 30 * speed ? C.red : C.ink; g.textAlign = "left";
-      g.fillText(rp.w > 520 ? `${Math.ceil(left)} s before the glows reach the page · spread ${si + 1} of ${SPREADS.length}` : `${Math.ceil(left)} s to the glows · spread ${si + 1} of ${SPREADS.length}`, tbx, tby + 30);
+      const pg = backMode ? `back ${si + 1} of ${seq.length}` : `spread ${si + 1} of ${seq.length}`;
+      g.fillText(!stage ? "The glows are still at the door. Take your time." : rp.w > 520 ? `${Math.ceil(left)} s before the glows reach the page · ${pg}` : `${Math.ceil(left)} s to the glows · ${pg}`, tbx, tby + 30);
       // glossary, top right on wide pages
       if (gloss) {
         const gl = Object.keys(GLYPHS).filter((k) => strips.some((s) => s.glyph === k));
@@ -305,13 +376,13 @@ export default {
         g.textAlign = "left"; g.fillText("glossary", gx0 - 62, rp.y + 46); g.textAlign = "center";
         gl.forEach((k, i) => { const x = gx0 + i * 52 + 10; if (!(ART && named.has(k) && A.draw(g, GLYPHS[k].art, x - 4, rp.y + 22, 26, 38))) glyph(k, x, rp.y + 32, gs, C.silk, 1.4); g.fillText(named.has(k) ? k : "?", x + gs / 2, rp.y + 74); });
       }
-      const { bad, at } = violations(row, sp.rules);
+      const { bad, at } = backMode ? { bad: new Set(), at: new Set() } : violations(row, sp.rules);
       // slots
       const shake = shakeT > 0 && !api.reducedMotion ? Math.sin(now / 25) * 5 * shakeT : 0;
       const target = drag ? slotAt(drag.x, drag.y, 20) : -1;
       slotPos.forEach((p, k) => {
         const sx = p.x + (k === shakeSlot ? shake : 0);
-        const fits = drag && sp.slots[k] === drag.s.colour;
+        const fits = drag && (backMode || sp.slots[k] === drag.s.colour);
         g.fillStyle = drag && k === target ? (fits ? "rgba(79,107,44,.25)" : "rgba(184,50,42,.2)") : "rgba(255,255,255,.18)"; g.fillRect(sx, p.y, sz, sh);
         border(sx, p.y, sz, sh, sp.slots[k], !taut, at.has(k) ? 4 : 2.6);
         if (at.has(k)) { g.fillStyle = C.red; g.font = "700 18px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "alphabetic"; g.fillText("×", sx + sz / 2, p.y - 6); }
@@ -321,27 +392,28 @@ export default {
       // rules
       let y = L.slotBottom + (wide ? 44 : 26);
       g.textAlign = "left"; g.textBaseline = "alphabetic"; g.font = `italic 16px 'IM Fell English',Georgia,serif`;
-      RULES.slice(0, sp.rules).forEach((r) => {
+      (backMode ? [{ id: "a", text: "tap a strip to turn it over" }, { id: "b", text: "her strokes count her order: one, two, three" }, { id: "c", text: "a back is read from the other side" }] : RULES.slice(0, sp.rules)).forEach((r) => {
         const broken = bad.has(r.id);
         g.fillStyle = broken ? C.red : C.ink;
         g.fillText(`${broken ? "×" : "·"}  ${r.text}`, rp.x + 26, y); y += 22;
       });
       g.font = "14px Karla,Arial,sans-serif"; g.fillStyle = C.ink;
       g.fillStyle = C.red; g.fillText("red", rp.x + 26, y + 4); let xx = rp.x + 26 + g.measureText("red").width;
-      g.fillStyle = C.ink; const rest = ": an act · black: a thing · white: who"; g.fillText(rest, xx, y + 4);
+      g.fillStyle = C.ink; const rest = backMode ? " wool, every back: it fits any slot" : missing ? ": an act (missing: Make it) · black: a thing · white: who" : ": an act · black: a thing · white: who"; g.fillText(rest, xx, y + 4);
       y += 12;
       // translation in the journal hand
       if (taut > 0) {
         g.globalAlpha = Math.min(1, taut);
         g.fillStyle = C.ink; g.font = `italic ${Math.round(Math.min(26, rp.w / 18))}px 'IM Fell English',Georgia,serif`;
         let ty = Math.max(y + 36, Math.min(rp.y + rp.h - 30 - sp.text.length * 32, y + 80));
-        sp.text.forEach((t, i) => { g.fillStyle = i ? "rgba(42,33,27,.78)" : C.ink; ty = wrapText(t, rp.x + 30, ty, rp.w - 60, 28) + 32; });
+        (backMode ? [ruthLine()] : sp.text).forEach((t, i) => { g.fillStyle = backMode ? C.red : i ? "rgba(42,33,27,.78)" : C.ink; ty = wrapText(t, rp.x + 30, ty, rp.w - 60, 28) + 32; });
         g.globalAlpha = 1;
       }
       if (msg && now - msgT < 2600) { g.fillStyle = msgCol; g.textAlign = "center"; g.font = "600 15px Karla,Arial,sans-serif"; g.fillText(msg, rp.x + rp.w / 2, slotPos[0].y - 26); }
       // left page
       g.fillStyle = "rgba(42,33,27,.85)"; g.font = "italic 15px 'IM Fell English',Georgia,serif"; g.textAlign = "left"; g.textBaseline = "alphabetic";
-      g.fillText("loose strips", lp.x + 22, lp.y + lp.h - 22);
+      g.fillText(backMode ? "the front, as Mabel sewed it:" : "loose strips", lp.x + 22, backMode ? lp.y + 54 : lp.y + lp.h - 22);
+      if (backMode) { g.font = `italic ${Math.round(Math.min(24, lp.w / 16))}px 'IM Fell English',Georgia,serif`; g.fillStyle = C.ink; let ty = lp.y + 92; sp.text.forEach((t) => { ty = wrapText(t, lp.x + 26, ty, lp.w - 52, 28) + 30; }); g.font = "14px Karla,Arial,sans-serif"; g.fillStyle = "rgba(42,33,27,.8)"; wrapText(`Turned: ${strips.filter((q) => q.flipped).length} of ${strips.length}. Drag a strip onto another to change their places.`, lp.x + 26, Math.min(lp.y + lp.h - 44, ty + 8), lp.w - 52, 18); }
       strips.forEach((s) => {
         if (drag && drag.s === s) return;
         drawStrip(s, s.x, s.y, sz);
@@ -352,7 +424,7 @@ export default {
       if (drag) drawStrip(drag.s, drag.x - sz / 2, drag.y - sh / 2, sz, true);
       if (wallT > 0) drawWall(now);
       // the toys closing in: a ring of warm glows tightening at the page edge
-      const t = Math.min(1, 1 - left / total + creep);
+      const t = stage ? Math.min(1, 1 - left / total + creep) : 0.04;
       const inset = 4 + t * Math.min(W, H) * 0.26;
       const n = 22;
       for (let k = 0; k < n; k++) {
@@ -396,7 +468,12 @@ export default {
 
     // ---- placing ---------------------------------------------------------------------------
     function put(s, k) {
-      const sp = SPREADS[si];
+      const sp = SP();
+      if (backMode) {
+        if (k === null || k === s.slot || !row[k]) { layout(); return; }
+        const occ = row[k]; row[s.slot] = occ; occ.slot = s.slot; row[k] = s; s.slot = k; idle = 0;
+        layout(); checkBack(); return;
+      }
       if (k === null) { if (s.slot !== null) row[s.slot] = null; s.slot = null; layout(); return; }
       if (sp.slots[k] !== s.colour) {
         say(`That slot is sewn in ${sp.slots[k]}: it takes only ${sp.slots[k]} thread.`); shakeSlot = k; shakeT = 1;
@@ -412,8 +489,50 @@ export default {
       else pop("set", L.slotPos[k].x + L.sz / 2, L.slotPos[k].y - 10, C.moss);
       check();
     }
+    // turning a strip over; on spread I the first one turned is the glyph for seven
+    function flip(s) {
+      if (!backMode || taut || over || !started) return;
+      if (seq[si] === 0 && !strips.some((q) => q.back)) {
+        const others = strips.filter((q) => q !== s).sort((a, b) => a.slot - b.slot);
+        const seen = (rest) => { const t = []; others.forEach((q, n) => (t[q.slot] = rest[n])); t[s.slot] = 2; return t.join(""); };
+        const rest = [[4, 1, 3], [1, 4, 3], [3, 4, 1]].find((r) => !["4321", "1234"].includes(seen(r)));
+        s.tally = 2; s.back = "seven"; namedBack.add("seven");
+        others.forEach((q, n) => { q.tally = rest[n]; q.back = BACKS[0][rest[n] - 1]; });
+        beat("The back", "Neat black counted stitches on the front. On the back, big crooked ones in red wool, pulled too tight: seven strokes in a row, and a mark under them. A child sewed this. Turn the others.", null, 7000);
+      }
+      s.flipped = !s.flipped; flips++; idle = 0;
+      if (!page.said && strips.every((q) => q.flipped)) {
+        page.said = true;
+        if (seq[si] === 0) beat("Her strokes", "Along the top edge of each back, small strokes: one, two, three, four. She numbered her line. But you are holding her page the way Mabel reads it.", null, 7000);
+      }
+      syncButtons(); checkBack();
+    }
+    function checkBack() {
+      if (taut || !strips.every((q) => q.flipped)) return;
+      const t = row.map((q) => q.tally);
+      if (t.every((v, i) => !i || t[i - 1] < v)) { say("It counts up, but back to front: this is how Mabel would read it."); return; }
+      if (!t.every((v, i) => !i || t[i - 1] > v)) return;
+      taut = 0.01; read.push(SP().no); tautStart = performance.now();
+      say("Her line pulls taut.", C.moss);
+      K.after(api.reducedMotion ? 2600 : 4400, () => {
+        if (over) return;
+        if (si + 1 < seq.length) { si++; loadSpread(si); spreadBeat(); }
+        else win();
+      });
+    }
+    // the missing strip: two glyphs you know, sewn together
+    function make(a, b) {
+      if (!missing || over || taut) return;
+      const need = MAKES[missing];
+      if ([a, b].sort().join() === need.slice().sort().join()) {
+        const sp = SP(), def = sp.strips.find(([gl]) => gl === missing);
+        strips.push({ i: strips.length, glyph: missing, colour: def[1], doubled: false, slot: null, rx: 0.5, ry: 0.5, rot: 0.08 });
+        named.add(missing); say(`A ${a} over a ${b === "mouth" && !named.has("mouth") ? "round" : b}: ${missing}.`, C.moss);
+        missing = null; makeEl.hidden = true; layout(); syncButtons(); wrap.focus();
+      } else { left -= MAKE_COST; pop(`−${MAKE_COST} s`, L.lp.x + L.lp.w / 2, L.lp.y + L.lp.h / 2, C.red); say("Those two make nothing this line needs."); }
+    }
     function check() {
-      const sp = SPREADS[si];
+      const sp = SP();
       if (row.some((x) => !x)) return;
       if (violations(row, sp.rules).bad.size) return;
       taut = 0.01; read.push(sp.no);
@@ -421,16 +540,17 @@ export default {
       say("The spread pulls taut.", C.moss);
       K.after(api.reducedMotion ? 2200 : 3600, () => {
         if (over) return;
-        if (si + 1 < SPREADS.length) { si++; loadSpread(si); spreadBeat(); }
+        if (si + 1 < seq.length) { si++; loadSpread(si); spreadBeat(); }
         else win();
       });
     }
     function spreadBeat() {
-      if (si === 1) beat("New glyphs", "It, feed, a mouth, a knot: you don't know these yet. The walls are covered in them. Read the walls (R) to learn their names, but the glows come on while your back is turned.", null, 6500);
-      if (si === 2) beat("In your pocket", "Mabel's sampler from the parlour wall: one line already solved in her small, even stitches. Use it (H) to set a strip, twice. One strip on this page fits no line at all.", null, 6500);
+      if (backMode) { if (si === 1) beat("Spread III, the back", "Six this time, and the glows have not stopped. Turn them, and set her strokes in her order.", null, 5500); return; }
+      if (seq[si] === 1) beat("New glyphs, and a gap", "It, a mouth, a knot: you don't know these yet; the walls do (R), but the glows come on while your back is turned. And the red strip is gone from this page. Make it (M): two glyphs sewn together, what does the feeding over what is fed.", null, 9000);
+      if (seq[si] === 2) beat("In your pocket", "Mabel's sampler from the parlour wall: one line already solved in her small, even stitches. Use it (H) to set a strip, twice. One strip on this page fits no line at all.", null, 6500);
     }
     function solution() {
-      const sp = SPREADS[si];
+      const sp = SP();
       const out = [];
       const used = new Set();
       const tryAt = (k) => {
@@ -447,7 +567,18 @@ export default {
       return out;
     }
     function readWalls() {
-      if (!started || over || taut || si < 1) return;
+      if (!started || over || taut || stage === 0) return;
+      if (backMode) {
+        const marks = [...new Set(strips.filter((q) => q.back).map((q) => q.back))];
+        if (!marks.length) { say("Turn a strip over first.", C.ink); return; }
+        const unknownB = marks.filter((w) => !knowsBack(w));
+        if (!unknownB.length) { say("You know every mark on this page.", C.ink); return; }
+        unknownB.forEach((w) => namedBack.add(w));
+        wallNew = unknownB; wallT = api.reducedMotion ? 1.6 : 2.4; left -= WALL_COST; creep = Math.min(0.25, creep + 0.05); wallsUsed++;
+        say(`Low on the walls, in red: ${unknownB.join(", ")}.`, C.moss);
+        pop(`−${WALL_COST} s`, L.rp.x + L.rp.w / 2, L.rp.y + 110, C.red);
+        syncButtons(); return;
+      }
       const unknown = [...new Set(strips.map((s) => s.glyph))].filter((k) => !named.has(k));
       if (!unknown.length) { say("You already know every glyph on this page.", C.ink); return; }
       unknown.forEach((k) => named.add(k));
@@ -458,7 +589,7 @@ export default {
       syncButtons();
     }
     function useSampler() {
-      if (!started || over || taut || si < 2 || samplers <= 0) return;
+      if (!started || over || taut || backMode || seq[si] < 2 || samplers <= 0) return;
       const sol = solution();
       const k = sol.findIndex((s, k2) => s && row[k2] !== s);
       if (k < 0) return;
@@ -471,23 +602,36 @@ export default {
       syncButtons();
     }
     function syncButtons() {
-      wallsBtn.hidden = si < 1; sampBtn.hidden = si < 2;
-      const unknown = strips.some((s) => !named.has(s.glyph));
+      wallsBtn.hidden = stage === 0; sampBtn.hidden = backMode || seq[si] < 2; makeBtn.hidden = !missing;
+      if (!missing) makeEl.hidden = true;
+      const unknown = backMode ? strips.some((q) => q.back && !knowsBack(q.back)) : strips.some((s) => !named.has(s.glyph));
       wallsBtn.disabled = !unknown || !!taut;
       sampBtn.disabled = samplers <= 0 || !!taut;
       sampBtn.querySelector("small").textContent = `H · ×${samplers}`;
     }
     function outcome(kind, text) {
-      over = true;
+      if (over) return;
+      over = true; if (linkT) linkT.remove();
       api.store.set("losses", kind === "lose" ? losses + 1 : 0);
-      api.end({ outcome: kind, text });
+      flow.done({ outcome: kind, text });
     }
     function win() {
       const best = api.store.get("best", 0); if (left > best) api.store.set("best", Math.round(left));
-      outcome("win", `All three spreads read, with ${Math.ceil(left)} s to spare${wallsUsed ? "" : ", and never once turning your back on the glows"}. You know how to bind, how to feed it, and what the filling is: “The ritual had already begun the moment we stepped inside.”`);
+      if (stage === 0) outcome("win", "Spread I pulls taut: “They weren't made. / They were summoned.” White thread is who, red is what they do, black is what it is done with, and a needle leads its thread.");
+      else if (stage === 1) outcome("win", `Both spreads read, with ${Math.ceil(left)} s to spare${wallsUsed ? "" : ", and never once turning your back on the glows"}. You know how to feed it, and what the filling is: “The ritual had already begun the moment we stepped inside.”`);
+      else {
+        const words = [...new Set(BACKS[0].concat(BACKS[1]))].filter(knowsBack);
+        flow.S.learn(words); flow.S.set("backs_read", 2);
+        outcome("win", `Two backs read, with ${Math.ceil(left)} s to spare. In red wool, right to left: ${ruthLine(0)} And under the page that says how to feed it: ${ruthLine(1)} The front is a ritual. The back is somebody small, counting her own stitches. There are four more spreads, and her sentence is not finished.${(ruthLine(0) + ruthLine(1)).includes("▒") ? " (The marks you could not name are on the walls, and here and there about the cabin.)" : ""}`);
+      }
     }
     function lose() {
-      const unread = SPREADS.filter((s) => !read.includes(s.no)).map((s) => s.no).join(" and ");
+      if (backMode) {
+        if (read.length) { flow.S.set("backs_read", 1); outcome("done", `The glows close over the margins. You read one back: ${ruthLine(0)} The other stays face down, and something soft leans against your ankle and waits.`); }
+        else outcome("lose", "The glows close over the margins with her strips still out of order. The book stays shut to you, and something soft leans against your ankle and waits.");
+        return;
+      }
+      const unread = seq.map((k) => SPREADS[k]).filter((s) => !read.includes(s.no)).map((s) => s.no).join(" and ");
       if (read.length) outcome("done", `The glows close over the margins and the page goes warm under your hands. You read spread ${read.join(" and ")}; spread ${unread} stays unread. What it says, you will learn the other way.`);
       else outcome("lose", "The glows close over the margins before a single line pulls taut. The book stays shut to you, and something soft leans against your ankle and waits.");
     }
@@ -513,6 +657,7 @@ export default {
       if (!drag) return;
       const [x, y] = pt(e), d = drag; drag = null;
       if (!d.moved) {
+        if (backMode) { flip(d.s); return; }
         if (d.s.slot !== null && held === null) { put(d.s, null); return; }
         held = held === d.s.i ? null : d.s.i; return;
       }
@@ -520,6 +665,7 @@ export default {
       put(d.s, k >= 0 ? k : null); held = null;
     });
     function kbList() {
+      if (backMode) return row.map((_, k) => (held === null ? "t" + (row[k] ? row[k].i : -1) : "s" + k));
       return held === null ? [...strips].sort((a, b) => (a.slot === null ? 0 : 1) - (b.slot === null ? 0 : 1) || a.hx - b.hx).map((s) => "t" + s.i) : L.slotPos.map((_, k) => "s" + k);
     }
     K.on(wrap, "keydown", (e) => {
@@ -527,7 +673,18 @@ export default {
       const k = e.key.toLowerCase();
       if (k === "r") { readWalls(); return; }
       if (k === "h") { useSampler(); return; }
+      if (k === "m" && missing) { makeEl.hidden = !makeEl.hidden; picked = []; syncMake(); if (!makeEl.hidden) { beatEl.style.opacity = 0; makeEl.querySelector("button").focus(); } return; }
       if (taut) return;
+      if (backMode) {
+        if (e.target.tagName === "BUTTON" && (e.key === "Enter" || e.key === " ")) return;
+        kbUsed = true; const n = row.length;
+        if (["ArrowRight", "ArrowDown"].includes(e.key)) { cursor = (cursor + 1) % n; e.preventDefault(); }
+        else if (["ArrowLeft", "ArrowUp"].includes(e.key)) { cursor = (cursor - 1 + n) % n; e.preventDefault(); }
+        else if (k === "f") { if (row[cursor]) flip(row[cursor]); }
+        else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); if (held === null) held = row[cursor].i; else { const s = strips[held]; held = null; put(s, cursor); } }
+        else if (e.key === "Escape") held = null;
+        return;
+      }
       if (e.target.tagName === "BUTTON" && (e.key === "Enter" || e.key === " ")) return;
       kbUsed = true;
       const list = kbList();
@@ -543,43 +700,67 @@ export default {
     });
     K.on(wallsBtn, "click", () => { readWalls(); wrap.focus(); });
     K.on(sampBtn, "click", () => { useSampler(); wrap.focus(); });
+    K.on(makeBtn, "click", () => { makeEl.hidden = !makeEl.hidden; picked = []; syncMake(); if (!makeEl.hidden) beatEl.style.opacity = 0; });
+    RADICALS.forEach((gl) => {
+      const b = document.createElement("button"); b.type = "button"; b.dataset.g = gl; b.setAttribute("aria-pressed", "false");
+      const pic = A.picture(GLYPHS[gl].art, 34, { h: 34, cover: true, src: [30, 50, 160, 160], key: "rad", alt: gl });
+      if (pic) b.appendChild(pic);
+      const nm = document.createElement("span"); nm.textContent = gl; b.appendChild(nm);
+      K.on(b, "click", () => {
+        if (picked.includes(gl)) picked = picked.filter((x) => x !== gl); else picked.push(gl);
+        syncMake();
+        if (picked.length === 2) { const [a, c] = picked; picked = []; K.after(250, () => { syncMake(); make(a, c); }); }
+      });
+      makeEl.querySelector("div").appendChild(b);
+    });
 
     let prev = performance.now(), tickRaf = 0;
     function tick(now) {
       const dt = Math.min(0.05, (now - prev) / 1000); prev = now;
       if (started && !over) {
-        if (!taut) { left -= dt; idle += dt; }
+        if (!taut) { if (stage) left -= dt; idle += dt; }
         if (tautStart) taut = Math.max(0.01, Math.min(1, (now - tautStart) / (api.reducedMotion ? 1 : 900)));
         if (shakeT > 0) shakeT = Math.max(0, shakeT - dt * 2.5);
         if (wallT > 0) wallT = Math.max(0, wallT - dt);
-        if (idle > 30 && !hintPair) {
+        if (idle > 30 && !hintPair && !backMode) {
           const sol = solution();
           const k = sol.findIndex((s, k2) => s && row[k2] !== s);
           if (k >= 0) hintPair = [sol[k].i, k];
         }
-        if (!marcusSaid && left < total * 0.5) { marcusSaid = true; beat("Marcus, from the doorway", "He has his back to you, watching the glows.", "There's always a way out. You just haven't drawn it yet.", 5000); }
+        if (stage && !marcusSaid && left < total * 0.5) { marcusSaid = true; beat("Marcus, from the doorway", "He has his back to you, watching the glows.", "There's always a way out. You just haven't drawn it yet.", 5000); }
         if (!edgeSaid && left < 30 * speed) { edgeSaid = true; beat("The edge of the page", "The glows are at the margins now. Something soft leans against your ankle, and waits.", null, 4500); }
-        if (left <= 0) lose();
+        if (stage && left <= 0) lose();
       }
       tickRaf = requestAnimationFrame(tick);
     }
     tickRaf = requestAnimationFrame(tick);
 
     // ---- how to play: a linen sampler -------------------------------------------------------
+    const GOAL = [
+      "Under the cabin, the third night. Your friends hold the doorway. The first spread of the book lies open: four loose strips, four sewn slots. Nothing is hurrying you yet.",
+      "The glows have found the room. Read two more spreads before they reach the page. One of them has lost a strip, and one has a strip too many.",
+      "You have read these fronts. Every strip has a back. Turn them over, and read what is sewn there before the glows reach the page.",
+    ][stage];
+    const LEG = backMode ? [
+      [C.red, "Tap a strip to turn it over", "F"],
+      [C.silk, "Drag one strip onto another to change their places", "arrows · Enter"],
+      [C.white, "Her strokes count her order; a back is read from the other side", ""],
+    ] : [
+      [C.red, "Drag a strip into a slot sewn in its colour", "arrows · Enter"],
+      [C.silk, "Keep the rules under the slots", "× = broken"],
+      [C.white, "Tap a set strip to take it back", "Delete"],
+    ];
     const intro = document.createElement("div");
     intro.className = PRE + "intro";
     intro.innerHTML = `<div class="${PRE}card" role="dialog" aria-label="How to play The Hand-Sewn Book">
       <h2>The Hand-Sewn Book</h2>
       <p class="${PRE}q">“Symbols stitched into the walls. / A circle of torn fabric skins. / A book made of hand-sewn pages.”</p>
-      <p class="${PRE}goal">Under the cabin, the third night. Your friends hold the doorway. Read three spreads before the glows reach the page.</p>
-      <div class="${PRE}legend">
-        <div><i style="background:${C.red}"></i><span>Drag a strip into a slot sewn in its colour</span><kbd>arrows · Enter</kbd></div>
-        <div><i style="background:${C.silk}"></i><span>Keep the rules under the slots</span><kbd>× = broken</kbd></div>
-        <div><i style="background:${C.white};box-shadow:0 0 0 1px ${C.silk}"></i><span>Tap a set strip to take it back</span><kbd>Delete</kbd></div>
-      </div>
+      <p class="${PRE}goal">${GOAL}</p>
+      <div class="${PRE}legend">${LEG.map(([c, t, k2]) => `<div><i style="background:${c}${c === C.white ? `;box-shadow:0 0 0 1px ${C.silk}` : ""}"></i><span>${t}</span>${k2 ? `<kbd>${k2}</kbd>` : "<span></span>"}</div>`).join("")}</div>
       <p class="${PRE}kind" ${losses >= 2 ? "" : "hidden"}>The glows took you twice. Slow glows are ticked for you.</p>
-      <label><input type="checkbox" ${losses >= 2 ? "checked" : ""}> Slow glows (twice the time)</label>
-      <button type="button">Open the book</button>
+      <label ${stage ? "" : "hidden"}><input type="checkbox" ${losses >= 2 ? "checked" : ""}> Slow glows (twice the time)</label>
+      <div class="${PRE}pickhost"></div>
+      <button type="button" data-start>${backMode ? "Turn the page over" : "Open the book"}</button>
     </div>`;
     wrap.appendChild(intro);
     {
@@ -587,17 +768,22 @@ export default {
       const cw = Math.min(426, wrap.clientWidth - 86);
       const plate = A.picture("chapter-05", cw, { alt: "Chapter 5: The Cabin Turns" });
       if (plate) { plate.className = PRE + "plate"; cardEl.insertBefore(plate, h2); }
-      const mark = A.picture("wordmark", Math.min(240, cw), { alt: "The Stuffed Ones" });
-      if (mark) { mark.style.margin = "0 0 8px"; cardEl.insertBefore(mark, cardEl.firstChild); }
       const ttl = A.word("The hand sewn book", 30);
       if (ttl) { h2.textContent = ""; h2.appendChild(ttl); }
       const rule = A.picture("ui-rule-knots", Math.min(300, cw), { alt: "" });
       if (rule) { rule.style.margin = "10px 0 0"; cardEl.insertBefore(rule, cardEl.querySelector("." + PRE + "legend")); }
+      stagePicker(intro.querySelector("." + PRE + "pickhost"), api, stage, BLURBS, (n) => flow.pick(n));
     }
-    const sb = intro.querySelector("button");
+    const sb = intro.querySelector("button[data-start]");
     K.on(sb, "click", () => {
-      speed = intro.querySelector("input").checked ? 2 : 1; total = left = 180 * speed; intro.remove(); started = true; wrap.focus();
-      beat("Spread I", "Four strips. Red thread is an act, black a thing, white who. The glossary names what Mabel's sampler taught you.", null, 4500);
+      speed = intro.querySelector("input").checked ? 2 : 1; total = left = (CLOCK[stage] || 180) * speed; intro.remove(); started = true; wrap.focus();
+      if (stage === 0) beat("Spread I", "Four strips. Red thread is an act, black a thing, white who. The glossary names what Mabel's sampler taught you.", null, 4500);
+      else if (stage === 1) spreadBeat();
+      else {
+        beat("The backs", "Spread I lies solved, as you left it. Tap a strip and turn it over.", null, 5000);
+        const met = [...new Set(BACKS[0].concat(BACKS[1]))].filter((w) => flow.S.knows(w));
+        if (met.length) K.after(5600, () => { if (!over) linkT = linkNote(wrap, api, `Because you met Ruth's marks elsewhere in the cabin, these backs name themselves: ${met.join(", ")}.`, 8000); });
+      }
     });
     sb.focus();
 
@@ -605,6 +791,6 @@ export default {
     ro.observe(wrap);
     // a read-only probe for automated play tests
     loadSpread(0); K.frame(draw);
-    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); A.dispose(); ro.disconnect(); wrap.remove(); } };
-  },
-};
+    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); A.dispose(); ro.disconnect(); if (linkT) linkT.remove(); wrap.remove(); } };
+  }
+}

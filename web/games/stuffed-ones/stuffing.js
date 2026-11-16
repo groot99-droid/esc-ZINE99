@@ -22,7 +22,17 @@
 // the tray it goes back up the pulse. Wadding: plain fill for a hollow; a wadded slot is cold, keeps
 // nothing and plays no game, and a body packed with nothing but wadding is the Empty Toy, chosen by
 // hand. The patches are the game's art (api.art); the lettered discs stay as the fallback.
+//
+// Phase 2 (DESIGN.md section 21, built 2026-11-16): three stages. Teach: the first packing
+// (`b6_stuffing_1`), more memories than hollows and one game, Sound. Test: the packing above, warm
+// hollows against tonight's two games. Twist: the fourth packing (`c14_stuffing_4`). One hollow is
+// left; in the tray are "My name", Jamie's bad postcard with nothing on it, and two patches that are
+// not yours. The Chase needs three warm seams, so the rule turns over: to hunt you must leave the
+// hollow empty or take something out. "Lila's hum", kept through any packing, is what stops her
+// walking in the Dollhouse (api.shared "lila_hum"). Mabel's pencil marks on the pattern are three
+// of Ruth's glyphs, and cross into the book's glossary.
 import { artKit, PATCH, FACE } from "./art-kit.js";
+import { runStages, stagePicker } from "./stages.js";
 const PRE = "stuffed-ones-stuffing-";
 const C = { cedar: "#6b4a32", cedarD: "#4a3222", dust: "#e6dcc6", moss: "#7d8a5a", rust: "#a5553a", sky: "#8fa9bf",
   cream: "#efe5cf", bone: "#f6f1e4", amber: "#e39a2d", red: "#b8322a", ink: "#2a211b", gold: "#c9a227", rose: "#c07a8e", green: "#4f6b2c" };
@@ -70,10 +80,17 @@ const SEAMS = [
   { id: "lleg", name: "LEFT LEG", seam: 5, pts: [[478, 58], [562, 58], [566, 180], [578, 302], [468, 302], [474, 180]], slots: [[520, 140], [520, 232]], grain: [[492, 75], [492, 290]] },
   { id: "rleg", name: "RIGHT LEG", seam: 6, pts: [[590, 58], [672, 58], [674, 180], [680, 302], [584, 302], [586, 180]], slots: [[630, 182]], grain: [[606, 75], [606, 290]] },
 ];
-const GAMES = [
-  { id: "scent", name: "Scent", needs: ["chest"], needName: "the CHEST" },
-  { id: "proximity", name: "Proximity", needs: ["larm", "rarm"], needName: "an ARM" },
+const ALL_SEAMS = ["head", "chest", "larm", "rarm", "lleg", "rleg"];
+const GAMES_BY = [
+  [{ id: "sound", name: "Sound", needs: ["head"], needName: "the HEAD" }],
+  [{ id: "scent", name: "Scent", needs: ["chest"], needName: "the CHEST" }, { id: "proximity", name: "Proximity", needs: ["larm", "rarm"], needName: "an ARM" }],
+  [{ id: "chase", name: "The Chase", needs: ALL_SEAMS, three: true, needName: "three seams" }],
 ];
+const TONIGHT = ["Tonight: Sound", "Tonight: Scent, then Proximity", "Tonight: the Chase"];
+const BLURBS = ["The first packing: more memories than hollows.", "Warm hollows against tonight's two games; Ruth, borrowed patches, wadding.", "The fourth packing: one hollow left, and not everything in the tray is yours."];
+const BLANK = "A postcard with nothing on it";
+// the fourth packing: what three nights have left. slot index -> token name, "wad" or "closed"
+const FOURTH = { 0: "My hands", 2: "Lila's hum", 3: "Marcus's strap", 4: "closed", 5: "wad", 6: "The chili", 7: "closed", 8: "Jamie's question", 9: "wad", 10: "closed", 11: "The door" };
 const RUTH_AFTER = 4; // tokens packed before Ruth's round
 
 function kit() {
@@ -86,8 +103,11 @@ function kit() {
   };
 }
 
-export default {
-  mount(root, api) {
+export default { mount(root, api) { return runStages(root, api, run, BLURBS); } };
+
+function run(root, api, flow) {
+  {
+    const stage = flow.stage, GAMES = GAMES_BY[stage];
     const K = kit();
     const A = artKit(api), rng = api.rng();
     const wrap = document.createElement("div");
@@ -144,10 +164,24 @@ export default {
     const slots = [];
     SEAMS.forEach((s, si) => s.slots.forEach((p, k) => slots.push({ seam: si, k, x: p[0], y: p[1], bound: false, closed: false, token: null, wad: false })));
     const wad = { tx: 0, ty: 0, r: 20 };
-    let borrowedCame = false, wadSaid = false;
-    const join = { scent: true, proximity: true };
+    const join = {}; GAMES.forEach((gm) => (join[gm.id] = true));
+    if (stage === 2) {
+      // the fourth packing: most of the body is already decided
+      Object.entries(FOURTH).forEach(([k, v]) => {
+        const sl = slots[+k];
+        if (v === "closed") sl.closed = true; else if (v === "wad") sl.wad = true;
+        else { const t = tokens.find((q) => q.name === v); t.slot = +k; sl.token = t.i; }
+      });
+      tokens.forEach((t) => { if (t.slot === null && t.name !== "My name" && t.name !== "Jamie's bad postcard") { t.lost = true; t.fade = 1; } });
+      const pc = tokens.find((t) => t.name === "Jamie's bad postcard");
+      pc.kind = "blank"; pc.name = BLANK; pc.art = null; pc.line = "Jamie's bad postcard, every trip since you were nine. The picture has gone off it, and the joke. It is still his.";
+      [["dani", "Don't make it weird.", "“I'm glad I came.” She said it at the stove, not looking up. This is hers, not yours.", "patch-borrowed-dani-weird"], ["jamie", BORROWED.jamie[1][0], BORROWED.jamie[1][1], BORROWED.jamie[1][2]]].forEach(([who, name, line, art]) =>
+        tokens.push({ i: tokens.length, name, who, line, art, kind: "borrowed", slot: null, lost: false, fade: 0 }));
+    }
+    const fresh = stage > 0 ? flow.S.learn(["warm", "cold", "hunger"]) : [];
     let kbUsed = false, started = false, closing = false, dragging = null, hover = null, cursor = 0, held = null, binding = false, bindUsed = false;
-    let ruthDone = false, packedEver = 0;
+    let ruthDone = stage !== 1, packedEver = 0;
+    let borrowedCame = stage !== 1, wadSaid = false;
     const pops = [], seenLine = new Set();
     let L = null, beatTimer = 0;
 
@@ -165,14 +199,14 @@ export default {
       let pat, tray, pan;
       if (wide) {
         const pw = Math.min(330, Math.max(260, W * 0.28));
-        const nTray = tokens.filter((t) => t.slot === null && !t.lost).length + 1;
+        const nTray = tokens.filter((t) => t.slot === null && !t.lost).length + (stage ? 1 : 0);
         const th = 52 + Math.ceil(nTray / Math.max(3, Math.floor((W - 44) / 96))) * 88;
         pan = { x: W - pw - 14, y: 14, w: pw, h: H - th - 34 };
         tray = { x: 14, y: H - th - 12, w: W - 28, h: th };
         pat = { x: 14, y: 14, w: W - pw - 42, h: H - th - 40 };
       } else {
         const per = Math.max(4, Math.floor((W - 28) / 64));
-        const th = 34 + Math.ceil((tokens.filter((t) => t.slot === null && !t.lost).length + 1) / per) * 74;
+        const th = 34 + Math.ceil((tokens.filter((t) => t.slot === null && !t.lost).length + (stage ? 1 : 0)) / per) * 74;
         const patH = Math.min((W - 8) * 410 / 690 + 16, H * 0.4);
         tray = { x: 10, y: H - th - 8, w: W - 20, h: th };
         pat = { x: 4, y: 4, w: W - 8, h: patH };
@@ -194,7 +228,7 @@ export default {
         n++;
       };
       tokens.forEach((t) => { if (t.slot === null && !t.lost) seat(t); });
-      seat(wad);
+      if (stage) seat(wad); else { wad.tx = -999; wad.ty = -999; }
       slots.forEach((sl) => { sl.sx = L.ox + sl.x * s; sl.sy = L.oy + sl.y * s; sl.r = Math.max(15, 19 * s); });
       tokens.forEach((t) => { if (t.slot !== null) { const sl = slots[t.slot]; t.tx = sl.sx; t.ty = sl.sy; t.r = sl.r - 2; } });
     }
@@ -202,13 +236,15 @@ export default {
     // ---- the night, worked out from the packing --------------------------------------------
     const open = (sl) => !sl.closed && sl.token === null && !sl.wad;
     function warmIn(si) { return slots.filter((s) => s.seam === si && open(s)).length; }
-    function canPlay(game) { return game.needs.some((id) => warmIn(SEAMS.findIndex((s) => s.id === id)) > 0); }
+    const warmSeams = () => SEAMS.filter((_, si) => warmIn(si) > 0).length;
+    function canPlay(game) { return game.three ? warmSeams() >= 3 : game.needs.some((id) => warmIn(SEAMS.findIndex((s) => s.id === id)) > 0); }
     function simulate() {
       const fill = slots.map((s) => s.token);
       const events = [];
       tokens.filter((t) => t.slot === null && !t.lost).forEach((t) => events.push(t.kind === "borrowed"
         ? { kind: "back", token: t.i, text: `${t.name} goes back up the pulse to ${WHO[t.who][2]}. It was never yours to keep.` }
-        : { kind: "tray", token: t.i, text: `${t.name} is left in the tray. It unravels.` }));
+        : t.kind === "blank" ? { kind: "back", token: t.i, text: "The blank postcard is left in the tray. There was nothing on it to lose." }
+          : { kind: "tray", token: t.i, text: `${t.name} is left in the tray. It unravels.` }));
       const live = slots.filter((s) => !s.closed);
       const emptyToy = live.length > 0 && live.every((s) => s.wad);
       const lent = fill.filter((x) => x !== null && tokens[x].kind === "borrowed").map((x) => tokens[x]);
@@ -234,7 +270,7 @@ export default {
           take(best, `${gm.name}, joined`);
         } else events.push({ kind: "hold", text: `${gm.name}: you hold. The hunger is not fed.` });
       });
-      const hunger = 64 + 40 * (1 + 0.15 * w) - 18 * joined - BORROW_EASE * lent.length;
+      const hunger = stage === 2 ? 66 + 14 * w - 20 * joined - 10 * lent.length : 64 + 40 * (1 + 0.15 * w) - 18 * joined - BORROW_EASE * lent.length;
       const lurches = !emptyToy && hunger >= 100 ? 1 + Math.floor((hunger - 100) / 40) : 0;
       let warmest = 0, ww = -1;
       SEAMS.forEach((s, si) => { if (warmIn(si) > ww) { ww = warmIn(si); warmest = si; } });
@@ -242,8 +278,9 @@ export default {
       const keptIdx = fill.filter((x) => x !== null && tokens[x].kind === "mine");
       const friends = FRIENDS.map((f) => [f, keptIdx.some((i) => tokens[i].who === f)]);
       const kept = keptIdx.length;
-      const ok = kept >= 5 && friends.every((x) => x[1]) && lurches === 0;
-      return { w, joined, hunger: Math.round(hunger), lurches, warmest, events, kept, fill, friends, ok, lent, emptyToy };
+      const ok = stage === 2 ? joined > 0 && kept >= 3 && lurches === 0 : kept >= 5 && friends.every((x) => x[1]) && lurches === 0;
+      const hum = fill.some((x) => x !== null && tokens[x].name === "Lila's hum");
+      return { w, joined, hunger: Math.round(hunger), lurches, warmest, events, kept, fill, friends, ok, lent, emptyToy, hum };
     }
 
     function renderPanel() {
@@ -253,21 +290,26 @@ export default {
         return `<div class="${PRE}row"><b style="min-width:80px">${gm.name}</b>
           <button type="button" data-g="${gm.id}" data-v="1" aria-pressed="${!!join[gm.id] && ok}" ${ok ? "" : "disabled"}>Join</button>
           <button type="button" data-g="${gm.id}" data-v="0" aria-pressed="${!join[gm.id] || !ok}">Hold</button>
-          <small>${ok ? `warm slot in ${gm.needName}` : `needs a warm slot in ${gm.needName}`}</small></div>`;
+          <small>${gm.three ? `warm seams ${warmSeams()} of 3${ok ? "" : ": empty a hollow, or pull wadding out"}` : ok ? `warm slot in ${gm.needName}` : `needs a warm slot in ${gm.needName}`}</small></div>`;
       }).join("");
       const mark = (b) => `<b style="color:${b ? C.green : C.red}">${b ? "✓" : "✗"}</b>`;
       const sel = held !== null ? `<div class="${PRE}row"><small>Holding <b>${held === "wad" ? "wadding" : tokens[held].name}</b>: tap a hollow.</small></div>` : binding ? `<div class="${PRE}row"><small><b style="color:#6b5410">Tap a slot to bind it in gold.</b></small></div>` : "";
-      scroll.innerHTML = `<h3>Tonight: Scent, then Proximity</h3>${gameRows}
+      const ease = stage === 2 ? 10 : BORROW_EASE, have = tokens.filter((t) => t.kind === "mine" && !t.lost).length;
+      const keptLine = stage === 2
+        ? `<li>${mark(r.joined > 0)}<span>The Chase: warm hollows in <b>${warmSeams()}</b> of 3 seams</span></li><li>${mark(r.kept >= 3)}<span>Kept by morning: <b>${r.kept}</b> of ${have} (three, to know who you are herding with)</span></li>`
+        : `<li>${mark(r.kept >= 5)}<span>Kept by morning: <b>${r.kept}</b> of ${TOKENS.length} (the Warning needs 5)</span></li>`;
+      scroll.innerHTML = `<h3>${TONIGHT[stage]}</h3>${gameRows}
         <div class="${PRE}row" style="justify-content:space-between;align-items:flex-end"><div><h3 style="margin:6px 0 0">Hunger rate</h3><span class="${PRE}rate">+${r.w * 15}%</span> <small>${r.w} warm</small></div>
         <div style="text-align:right"><small>by dawn</small><br><b style="font-size:20px;color:${r.hunger >= 100 ? C.red : C.ink}">${r.hunger}</b> <small>/ 100</small></div></div>
+        ${r.hum ? `<div class="${PRE}row"><small><b>Lila's hum</b> is packed: three notes, kept for her.</small></div>` : ""}
         <ul class="${PRE}checks">
-          <li>${mark(r.kept >= 5)}<span>Kept by morning: <b>${r.kept}</b> of ${TOKENS.length} (the Warning needs 5)</span></li>
-          ${borrowedCame ? `<li><b style="color:${C.cedar}">+</b><span>Borrowed, packed: <b>${r.lent.length}</b>${r.lent.length ? ` (${r.lent.map((t) => WHO[t.who][2]).join(", ")}: hunger −${BORROW_EASE * r.lent.length}, a line of voice each)` : ". Each costs a hollow and slows the pack's hunger."}</span></li>` : ""}
+          ${keptLine}
+          ${borrowedCame && stage ? `<li><b style="color:${C.cedar}">+</b><span>Borrowed, packed: <b>${r.lent.length}</b>${r.lent.length ? ` (${r.lent.map((t) => WHO[t.who][2]).join(", ")}: hunger −${ease * r.lent.length}, a line of voice each)` : ". Each costs a hollow and slows the pack's hunger."}</span></li>` : ""}
           ${r.emptyToy ? `<li><b style="color:${C.red}">○</b><span><b>Nothing but wadding.</b> Close now and you have packed yourself with nothing.</span></li>` : ""}
-          <li>${mark(r.friends.every((x) => x[1]))}<span>A memory of each friend: ${r.friends.map(([f, k]) => `<span style="color:${k ? C.ink : C.red};${k ? "" : "text-decoration:line-through"}">${WHO[f][2]}</span>`).join(" · ")}</span></li>
+          ${stage === 2 ? "" : `<li>${mark(r.friends.every((x) => x[1]))}<span>A memory of each friend: ${r.friends.map(([f, k]) => `<span style="color:${k ? C.ink : C.red};${k ? "" : "text-decoration:line-through"}">${WHO[f][2]}</span>`).join(" · ")}</span></li>`}
           <li>${mark(!r.lurches)}<span>${r.lurches ? `${r.lurches} lurch${r.lurches > 1 ? "es" : ""}: two memories each from the ${SEAMS[r.warmest].name.toLowerCase()}` : "No lurch tonight"}</span></li>
         </ul>
-        <div class="${PRE}row" style="margin-top:8px"><button type="button" class="${PRE}bind" aria-pressed="${binding}" ${bindUsed ? "disabled" : ""}>${bindUsed ? "Gold thread used" : "Bind a slot (B)"}</button><small>${bindUsed ? "the bound slot never pays" : "once: that slot never pays"}</small></div>${sel}`;
+        <div class="${PRE}row" style="margin-top:8px" ${stage ? "" : "hidden"}><button type="button" class="${PRE}bind" aria-pressed="${binding}" ${bindUsed ? "disabled" : ""}>${bindUsed ? "Gold thread used" : "Bind a slot (B)"}</button><small>${bindUsed ? "the bound slot never pays" : "once: that slot never pays"}</small></div>${sel}`;
       if (joinPic) scroll.prepend(joinPic);
       scroll.querySelectorAll("button[data-g]").forEach((b) => b.addEventListener("click", () => { join[b.dataset.g] = b.dataset.v === "1"; renderPanel(); }));
       scroll.querySelector("." + PRE + "bind").addEventListener("click", () => { if (!bindUsed && started && !closing) { binding = !binding; held = null; renderPanel(); } });
@@ -301,6 +343,13 @@ export default {
           g.beginPath(); g.arc(x, y, r + 1, 0, 7); g.stroke(); g.setLineDash([]);
           g.restore(); return;
         }
+      }
+      if (t.kind === "blank") { // Jamie's postcard, gone blank: a card with a stamp corner and nothing else
+        g.fillStyle = "rgba(0,0,0,.25)"; g.fillRect(x - r * 0.95 + 2, y - r * 0.68 + 3, r * 1.9, r * 1.36);
+        g.fillStyle = "#f3efe6"; g.fillRect(x - r * 0.95, y - r * 0.68, r * 1.9, r * 1.36);
+        g.strokeStyle = C.sky; g.lineWidth = 1.5; g.setLineDash([3, 2.5]); g.strokeRect(x - r * 0.95 + 3, y - r * 0.68 + 3, r * 1.9 - 6, r * 1.36 - 6); g.setLineDash([]);
+        g.strokeStyle = "rgba(42,33,27,.45)"; g.lineWidth = 1; g.strokeRect(x + r * 0.45, y - r * 0.5, r * 0.34, r * 0.4);
+        g.restore(); return;
       }
       g.fillStyle = "rgba(0,0,0,.25)"; g.beginPath(); g.arc(x + 1.5, y + 2, r, 0, 7); g.fill();
       g.fillStyle = col; g.beginPath(); g.arc(x, y, r, 0, 7); g.fill();
@@ -374,6 +423,18 @@ export default {
         if (pays.has(si)) tags.push([wide ? "PAYS TONIGHT" : "PAYS", C.cedar]);
         tags.forEach(([txt, col], k) => { g.font = "700 12px Karla,Arial,sans-serif"; const w = g.measureText(txt).width + 10; const yy = oy + bot * s - 14 - k * 19; g.fillStyle = col; g.fillRect(lx - w / 2, yy - 13, w, 17); g.fillStyle = C.bone; g.fillText(txt, lx, yy); });
       });
+      // Mabel's pencil on the pattern: three of Ruth's marks beside the head, with what they mean
+      if (stage > 0) {
+        const cw = Math.max(20, 30 * s), chh = cw * 320 / 220, x0 = ox + 14 * s, y0 = oy + 34 * s;
+        g.font = `italic ${Math.max(12, Math.round(13 * s))}px 'IM Fell English',Georgia,serif`; g.textAlign = "center"; g.textBaseline = "top";
+        [["glyph-back-04-warm", "warm"], ["glyph-back-05-cold", "cold"], ["glyph-back-13-hunger", "hunger"]].forEach(([id, w], k) => {
+          const x = x0 + k * (cw + Math.max(10, 14 * s));
+          g.save(); g.translate(x + cw / 2, y0 + chh / 2); g.rotate((k - 1) * 0.07); g.translate(-x - cw / 2, -y0 - chh / 2);
+          if (!A.draw(g, id, x, y0, cw, chh)) { g.strokeStyle = "rgba(42,33,27,.6)"; g.setLineDash([2, 2]); g.strokeRect(x, y0, cw, chh); g.setLineDash([]); }
+          g.fillStyle = "rgba(239,229,207,.95)"; g.fillText(w, x + cw / 2, y0 + chh + 3);
+          g.restore();
+        });
+      }
       // slot hollows
       slots.forEach((sl, k) => {
         if (sl.wad && !sl.closed) drawWad(sl.sx, sl.sy, sl.r - 2, true);
@@ -417,7 +478,7 @@ export default {
       {
         const lift = hover === "w" && !dragging ? 2 : 0;
         if (!(dragging && dragging.wad && dragging.moved)) drawWad(wad.tx, wad.ty - lift, wad.r, false);
-        g.fillStyle = C.bone; label("Wadding", wad.tx, wad.ty + wad.r + 3, 80, wide ? 13 : 12);
+        g.fillStyle = C.bone; if (stage) label("Wadding", wad.tx, wad.ty + wad.r + 3, 80, wide ? 13 : 12);
         const kb = kbUsed && kbTargets()[cursor] === "w";
         if (held === "wad" || kb || lift) { g.strokeStyle = held === "wad" ? C.amber : C.bone; g.lineWidth = 3; g.beginPath(); g.arc(wad.tx, wad.ty - lift, wad.r + 5, 0, 7); g.stroke(); }
       }
@@ -451,7 +512,7 @@ export default {
     // ---- input ----------------------------------------------------------------------------
     function hit(x, y) {
       for (const t of tokens) if (!t.lost && Math.hypot(t.tx - x, t.ty - y) <= t.r + 6) return "t" + t.i;
-      if (Math.hypot(wad.tx - x, wad.ty - y) <= wad.r + 6) return "w";
+      if (stage && Math.hypot(wad.tx - x, wad.ty - y) <= wad.r + 6) return "w";
       for (let k = 0; k < slots.length; k++) if (!slots[k].closed && Math.hypot(slots[k].sx - x, slots[k].sy - y) <= slots[k].r + 10) return "s" + k;
       return null;
     }
@@ -481,7 +542,7 @@ export default {
       if (!wadSaid) { wadSaid = true; beat("Wadding", "Plain fill. The hollow goes cold: no hunger lives in it, no memory, and it plays no game. Tap a wadded hollow to pull it out again.", 5600); }
       layout(); renderPanel();
     }
-    function unwad(k) { slots[k].wad = false; pop("pulled out", slots[k].sx, slots[k].sy - slots[k].r - 12, C.amber); renderPanel(); }
+    function unwad(k) { slots[k].wad = false; pop(stage === 2 ? "pulled out · warm again" : "pulled out", slots[k].sx, slots[k].sy - slots[k].r - 12, C.amber); renderPanel(); }
     const drop = (k) => { if (held === "wad") wadSlot(k); else place(held, k); };
     // borrowed patches: four memories that are not yours come down the pulse into the tray
     function borrowed() {
@@ -544,7 +605,7 @@ export default {
       place(d.t.i, best); held = null; renderPanel();
     });
     function kbTargets() {
-      return held === null && !binding ? tokens.filter((t) => !t.lost).sort((a, b) => (a.slot === null ? 0 : 1) - (b.slot === null ? 0 : 1)).map((t) => "t" + t.i).concat(["w"]) : slots.map((_, k) => "s" + k).filter((id) => !slots[+id.slice(1)].closed);
+      return held === null && !binding ? tokens.filter((t) => !t.lost).sort((a, b) => (a.slot === null ? 0 : 1) - (b.slot === null ? 0 : 1)).map((t) => "t" + t.i).concat(stage ? ["w"] : []).concat(stage === 2 ? slots.map((sl, k) => (sl.wad && !sl.closed ? "s" + k : null)).filter(Boolean) : []) : slots.map((_, k) => "s" + k).filter((id) => !slots[+id.slice(1)].closed);
     }
     K.on(wrap, "keydown", (e) => {
       if (!started || closing) return;
@@ -558,13 +619,14 @@ export default {
         const id = list[cursor];
         if (binding && id) { bindSlot(+id.slice(1)); cursor = 0; }
         else if (held === null && id === "w") { held = "wad"; cursor = 0; }
+        else if (held === null && id && id[0] === "s") { unwad(+id.slice(1)); cursor = 0; }
         else if (held === null && id && id[0] === "t") { select(+id.slice(1)); cursor = 0; }
         else if (held !== null && id) { drop(+id.slice(1)); held = null; cursor = 0; }
         renderPanel();
       } else if ((e.key === "Backspace" || e.key === "Delete") && held !== null) { if (held !== "wad") place(held, null); held = null; cursor = 0; renderPanel(); }
-      else if (e.key === "w" || e.key === "W") { held = held === "wad" ? null : "wad"; binding = false; cursor = 0; renderPanel(); }
+      else if ((e.key === "w" || e.key === "W") && stage) { held = held === "wad" ? null : "wad"; binding = false; cursor = 0; renderPanel(); }
       else if (e.key === "Escape") { held = null; binding = false; renderPanel(); }
-      else if ((e.key === "b" || e.key === "B") && !bindUsed) { binding = !binding; held = null; cursor = 0; renderPanel(); }
+      else if ((e.key === "b" || e.key === "B") && !bindUsed && stage) { binding = !binding; held = null; cursor = 0; renderPanel(); }
     });
     wrap.tabIndex = 0;
 
@@ -592,8 +654,10 @@ export default {
       K.after(step * (r.events.length + 2), () => {
         const kept = tokens.filter((t) => !t.lost && t.kind === "mine").map((t) => t.name);
         const voices = r.lent.map((t) => `${WHO[t.who][2]}, later, once: ${VOICE[t.who]}`);
+        flow.S.set("lila_hum", !!r.hum);
+        const humTail = r.hum ? " Lila's hum is in you still: three notes, kept for her." : "";
         if (r.emptyToy) {
-          A.finale(wrap, "movement-2").then(() => api.end({ outcome: "done", text: `Six seams of wadding. You pack yourself with nothing: no memory to lose, no hunger to feed, no game you can be made to play. The others climb down without you. In the morning Mabel dusts around a toy that does not move. “And the worst part? / We were awake.” This is the Empty Toy, chosen by hand.` }));
+          A.finale(wrap, "movement-2").then(() => flow.done({ outcome: "done", text: `Six seams of wadding. You pack yourself with nothing: no memory to lose, no hunger to feed, no game you can be made to play. The others climb down without you. In the morning Mabel dusts around a toy that does not move. “And the worst part? / We were awake.” This is the Empty Toy, chosen by hand.` }));
           return;
         }
         const best = api.store.get("best", 0);
@@ -604,38 +668,59 @@ export default {
         else if (r.lurches) why = "The hunger lurched in the night and took what it wanted from the warmest seam.";
         else if (gone.length) why = `Nothing is left of ${gone.join(" or ")}. You know there was someone; you cannot think who.`;
         else why = "Too little is left of you for the Warning.";
-        api.end({ outcome: r.ok ? "win" : r.lurches ? "lose" : "done", text: `Kept ${r.kept} of ${TOKENS.length}: ${kept.join(", ") || "nothing"}. ${why} ${r.joined ? `You joined ${r.joined === 2 ? "both games" : "one game"}.` : "You held through both games."}${voices.length ? " Borrowed and kept: " + voices.join(" ") : ""}` });
+        if (stage === 2) {
+          const named = kept.includes("My name"), blank = r.fill.some((x) => x !== null && tokens[x].kind === "blank");
+          const last = named ? "Your name is in the last hollow, and something else was taken out to make room for the hunt." : blank ? "In the last hollow, a postcard with nothing on it. It was Jamie's; you know that much, and not what it said." : "The last hollow is empty and warm. Your name was in the tray when the seams closed. It unravelled with the rest.";
+          const how = r.ok ? `Three seams run warm: you can hunt. ${last}` : r.lurches ? `The hunger lurched in the night and took what it wanted. ${last}` : !r.joined ? `Fewer than three seams are warm, and the Chase goes down without you. You hold. ${last}` : `Too little of you is left to know who you are herding with. ${last}`;
+          flow.done({ outcome: r.ok ? "win" : r.lurches ? "lose" : "done", text: `The fourth packing. Kept ${r.kept}: ${kept.join(", ") || "nothing"}. ${how}${voices.length ? " Borrowed and kept: " + voices.join(" ") : ""}${humTail}` });
+          return;
+        }
+        const games = GAMES.length === 1 ? (r.joined ? "You joined the Sound game." : "You held through the Sound game.") : r.joined ? `You joined ${r.joined === 2 ? "both games" : "one game"}.` : "You held through both games.";
+        flow.done({ outcome: r.ok ? "win" : r.lurches ? "lose" : "done", text: `Kept ${r.kept} of ${TOKENS.length}: ${kept.join(", ") || "nothing"}. ${why} ${games}${voices.length ? " Borrowed and kept: " + voices.join(" ") : ""}${humTail}` });
       });
     }
     K.on(closeBtn, "click", closeSeams);
 
     // ---- how to play: a pattern instruction sheet --------------------------------------------
+    const GOAL = [
+      "The first morning on the shelf. Your body lies open like a sewing pattern, and there are more memories than hollows. What you pack is what you keep: keep five, keep something of each friend, and leave the hunger just enough room for tonight's game.",
+      "The second night, before Scent and Proximity. What you pack is what you keep: keep five, keep something of each friend, and don't let the hunger lurch.",
+      "The fourth packing, before the Chase. Three nights have decided most of you: seams pulled shut, hollows wadded cold, six memories left in place. One hollow is open. The Chase needs warm hollows in three seams.",
+    ][stage];
+    const rows = [
+      `<div><i style="background:${C.sky}"></i><span>Drag a memory into a hollow, or tap it then a hollow</span><kbd>arrows · Enter</kbd></div>`,
+      `<div><i style="background:radial-gradient(${C.amber},${C.red})"></i><span>An empty hollow is warm: hunger lives there, and games need it</span><span></span></div>`,
+      `<div><i style="background:${C.bone}"></i><span>Join or Hold tonight's ${stage === 1 ? "games" : "game"}, then Close</span><kbd>panel</kbd></div>`,
+      stage === 2 ? `<div><i style="background:#f3efe6"></i><span>Tap a wadded hollow to pull the wadding out; drag a packed memory back to the tray to take it out</span><span></span></div>`
+        : stage === 1 ? `<div><i style="background:#f3efe6"></i><span>Wadding fills a hollow with nothing: cold, and it plays no game</span><kbd>W</kbd></div>` : "",
+    ].join("");
     const intro = document.createElement("div");
     intro.className = PRE + "intro";
     intro.innerHTML = `<div class="${PRE}card" role="dialog" aria-label="How to play Stuffing">
       <h2>Stuffing</h2>
-      <p class="${PRE}goal">The second night, before Scent and Proximity. Your body lies open like a sewing pattern. What you pack is what you keep: keep five, keep something of each friend, and don't let the hunger lurch.</p>
-      <div class="${PRE}legend">
-        <div><i style="background:${C.sky}"></i><span>Drag a memory into a hollow, or tap it then a hollow</span><kbd>arrows · Enter</kbd></div>
-        <div><i style="background:radial-gradient(${C.amber},${C.red})"></i><span>An empty hollow is warm: hunger lives there, and games need it</span><span></span></div>
-        <div><i style="background:${C.bone}"></i><span>Join or Hold tonight's games, then Close</span><kbd>panel</kbd></div>
-        <div><i style="background:#f3efe6"></i><span>Wadding fills a hollow with nothing: cold, and it plays no game</span><kbd>W</kbd></div>
-      </div>
-      <button type="button">Lay out the pattern</button>
+      <p class="${PRE}goal">${GOAL}</p>
+      <div class="${PRE}legend">${rows}</div>
+      <div class="${PRE}pickhost" style="position:relative;z-index:1"></div>
+      <button type="button" data-start>Lay out the pattern</button>
     </div>`;
     wrap.appendChild(intro);
     {
       const cardEl = intro.querySelector("." + PRE + "card"), h2 = intro.querySelector("h2");
       const cw = Math.min(418, wrap.clientWidth - 84);
-      const plate = A.picture("chapter-12", cw, { alt: "Chapter 12: Scent, then Proximity" });
+      const plate = A.picture(["chapter-06", "chapter-12", "chapter-14"][stage], cw, { alt: "" });
       if (plate) { plate.className = PRE + "plate"; cardEl.insertBefore(plate, h2); }
       const ttl = A.word("Stuffing", 40);
       if (ttl) { h2.textContent = ""; h2.appendChild(ttl); }
-      const meter = A.picture("ui-warmth-meter", Math.min(300, cw), { alt: "The hunger meter" });
-      if (meter) { meter.style.margin = "8px 0 0"; cardEl.insertBefore(meter, cardEl.querySelector("button")); }
+      stagePicker(intro.querySelector("." + PRE + "pickhost"), api, stage, BLURBS, (n) => flow.pick(n));
     }
-    const startBtn = intro.querySelector("button");
-    K.on(startBtn, "click", () => { intro.remove(); started = true; wrap.focus(); renderPanel(); beat("Gold thread", "Spread 2 taught you to bind one slot. Choose it with Bind (B): whatever sits there, the night cannot take.", 5000); });
+    const startBtn = intro.querySelector("button[data-start]");
+    K.on(startBtn, "click", () => {
+      intro.remove(); started = true; wrap.focus(); renderPanel();
+      if (stage === 0) beat("Thirteen and twelve", "Thirteen memories, twelve hollows, and the Sound game tonight needs one hollow of the head left warm. Tap a patch to remember what it is.", 6000);
+      else if (stage === 1) beat("Gold thread", "Spread 2 taught you to bind one slot. Choose it with Bind (B): whatever sits there, the night cannot take.", 5000);
+      else beat("One hollow left", "In the tray: your name, and Jamie's bad postcard with nothing on it. Two more patches are in other people's thread. Whatever is in the tray when you close is gone.", 8000);
+      if (fresh.length) K.after(stage === 2 ? 8400 : 5400, () => beat("Mabel's pencil", `Small marks beside your seams, copied from an older pattern in a child's hand: ${fresh.join(", ")}. You will know them if you see them again.`, 6000));
+    });
     startBtn.focus();
 
     const ro = new ResizeObserver(() => { A.flush(); layout(); });
@@ -643,5 +728,5 @@ export default {
     // a read-only probe for automated play tests
     layout(); renderPanel(); K.frame(draw);
     return { unmount() { K.dispose(); A.dispose(); ro.disconnect(); wrap.remove(); } };
-  },
-};
+  }
+}

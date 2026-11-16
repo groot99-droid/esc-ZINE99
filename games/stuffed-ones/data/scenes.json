@@ -103,7 +103,8 @@
    "writes": [
     "memory.earned",
     "memory_log",
-    "book.pages_found"
+    "book.pages_found",
+    "glossary.ruth"
    ],
    "enter": "fade",
    "exit": "push-in",
@@ -124,6 +125,20 @@
    ],
    "enter": "push-in",
    "exit": "pull-out",
+   "next": [
+    "a2_gerald"
+   ]
+  },
+  {
+   "id": "a2_gerald",
+   "layer": "3d",
+   "name": "Gerald: the landing, night one",
+   "chapter": "c02_first_night",
+   "writes": [
+    "gerald.promised"
+   ],
+   "enter": "fade",
+   "exit": "fade",
    "next": [
     "a2_night_hall"
    ]
@@ -264,7 +279,8 @@
     "act1.unease",
     "memory.earned",
     "memory_log",
-    "book.pages_found"
+    "book.pages_found",
+    "collar.seen"
    ],
    "enter": "cut",
    "exit": "push-in",
@@ -364,7 +380,22 @@
     "act1.unease",
     "memory.earned",
     "memory_log",
-    "book.pages_found"
+    "book.pages_found",
+    "glossary.ruth"
+   ],
+   "enter": "cut",
+   "exit": "cut",
+   "next": [
+    "a4_sixty_knots"
+   ]
+  },
+  {
+   "id": "a4_sixty_knots",
+   "layer": "3d",
+   "name": "Sixty Knots: Lila's door-frame",
+   "chapter": "c04_fuller",
+   "writes": [
+    "knots.seen"
    ],
    "enter": "cut",
    "exit": "push-in",
@@ -428,6 +459,10 @@
     "strap.quality",
     "memory_log"
    ],
+   "writes": [
+    "map.kept",
+    "glossary.ruth"
+   ],
    "enter": "fade",
    "exit": "fade",
    "next": [
@@ -460,13 +495,15 @@
    "world_runs": true,
    "reads": [
     "book.pages_found",
-    "book.spreads_read"
+    "book.spreads_read",
+    "glossary.ruth"
    ],
    "writes": [
     "book.spreads_read",
     "book.spread_4",
     "book.spread_5",
-    "book.spread_6"
+    "book.spread_6",
+    "book.backs_read"
    ],
    "enter": "push-in",
    "exit": "pull-out",
@@ -576,7 +613,8 @@
     "memory.earned",
     "memory_log",
     "seams.slots_total",
-    "book.spread_2"
+    "book.spread_2",
+    "gerald.promised"
    ],
    "writes": [
     "memory.kept",
@@ -585,7 +623,9 @@
     "seams.bound_used",
     "borrowed.kept",
     "seams.wadded",
-    "seams.all_wadded"
+    "seams.all_wadded",
+    "lila.hum_kept",
+    "glossary.ruth"
    ],
    "enter": "push-in",
    "exit": "pull-out",
@@ -751,7 +791,8 @@
     "book.spread_1",
     "book.spread_5",
     "seal.done",
-    "elders.present"
+    "elders.present",
+    "lila.hum_kept"
    ],
    "writes": [
     "hunger",
@@ -822,7 +863,8 @@
     "seams.bound_used",
     "borrowed.kept",
     "seams.wadded",
-    "seams.all_wadded"
+    "seams.all_wadded",
+    "lila.hum_kept"
    ],
    "enter": "push-in",
    "exit": "pull-out",
@@ -899,13 +941,13 @@
     "parlour.ruth_peg",
     "parlour.it",
     "parlour.sentence",
-    "flee_line"
+    "flee_line",
+    "glossary.ruth"
    ],
    "enter": "push-in",
    "exit": "pull-out",
    "next": [
-    "c12_dollhouse_scent",
-    "c12_hold_shelf",
+    "c11_cupboard_shut",
     "c13_flight"
    ]
   },
@@ -931,6 +973,24 @@
    "enter": "pull-out",
    "exit": "fade",
    "next": [
+    "c11_cupboard_shut"
+   ]
+  },
+  {
+   "id": "c11_cupboard_shut",
+   "layer": "3d",
+   "name": "I swear I locked that door: the linen cupboard",
+   "chapter": "c11_movement",
+   "reads": [
+    "parlour.it",
+    "run.hunt_group"
+   ],
+   "writes": [
+    "ruth.patterns_seen"
+   ],
+   "enter": "cut",
+   "exit": "fade",
+   "next": [
     "c12_dollhouse_scent",
     "c12_hold_shelf"
    ]
@@ -944,7 +1004,8 @@
    "reads": [
     "memory.kept",
     "seams.warm_slots",
-    "book.spread_5"
+    "book.spread_5",
+    "lila.hum_kept"
    ],
    "writes": [
     "hunger",
@@ -984,7 +1045,8 @@
     "memory.kept",
     "seams.warm_slots",
     "book.spread_5",
-    "parlour.it"
+    "parlour.it",
+    "lila.hum_kept"
    ],
    "writes": [
     "hunger",
@@ -1081,7 +1143,8 @@
     "seams.bound_used",
     "borrowed.kept",
     "seams.wadded",
-    "seams.all_wadded"
+    "seams.all_wadded",
+    "lila.hum_kept"
    ],
    "enter": "cut",
    "exit": "pull-out",
@@ -1127,6 +1190,29 @@
    "enter": "pull-out",
    "exit": "push-in",
    "next": [
+    "c13_jamies_seam"
+   ]
+  },
+  {
+   "id": "c13_jamies_seam",
+   "layer": "1d",
+   "name": "Stitchwork: Jamie's Seam",
+   "chapter": "c13_third_morning",
+   "game": "stitchwork",
+   "world_runs": true,
+   "reads": [
+    "pack.hunger.jamie",
+    "dread.group"
+   ],
+   "writes": [
+    "jamie.seam",
+    "pack.hunger.jamie",
+    "slips",
+    "dread.group"
+   ],
+   "enter": "push-in",
+   "exit": "cut",
+   "next": [
     "c13_parlour_2"
    ]
   },
@@ -1140,7 +1226,8 @@
    "reads": [
     "run.hunt_group",
     "seal.done",
-    "parlour.ruth_peg"
+    "parlour.ruth_peg",
+    "cupboard.opened"
    ],
    "writes": [
     "dread.guest_1",
@@ -1178,7 +1265,8 @@
     "seams.bound_used",
     "borrowed.kept",
     "seams.wadded",
-    "seams.all_wadded"
+    "seams.all_wadded",
+    "lila.hum_kept"
    ],
    "enter": "push-in",
    "exit": "pull-out",
@@ -1256,7 +1344,8 @@
     "dread.guest_1",
     "dread.guest_2",
     "dread.guest_3",
-    "dread.group"
+    "dread.group",
+    "map.kept"
    ],
    "writes": [
     "dread.guest_1",
@@ -1282,7 +1371,8 @@
     "dread.guest_1",
     "dread.guest_2",
     "dread.guest_3",
-    "dread.group"
+    "dread.group",
+    "map.kept"
    ],
    "writes": [
     "guests.herded",
@@ -1290,7 +1380,8 @@
     "hunt_log",
     "memory.kept",
     "memory_log",
-    "threshold.held"
+    "threshold.held",
+    "glossary.ruth"
    ],
    "enter": "cut",
    "exit": "fade",
@@ -1341,7 +1432,8 @@
    "name": "The Warning: unpicked",
    "chapter": "c15_cycle",
    "reads": [
-    "memory_log"
+    "memory_log",
+    "jamie.seam"
    ],
    "writes": [
     "shelf.previous_ending",

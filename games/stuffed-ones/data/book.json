@@ -52,5 +52,30 @@
     {"n": 2, "scene": "a4_book_2", "world_runs": false, "time_limit_s": null},
     {"n": 3, "scene": "a5_book_3", "world_runs": true, "time_limit_s": 180}
   ],
-  "hints": {"idle_role_glow_s": 90, "sampler_solved_lines": 1}
+  "hints": {"idle_role_glow_s": 90, "sampler_solved_lines": 1},
+  "backs": {
+    "note": "Accepted 2026-11-15, built 2026-11-16 (phase 2). Every strip has a back, stitched in a child's large uneven hand in red wool. Each spread has two legal lines: Mabel's ritual on the front and Ruth's on the back. A back fits any slot; Ruth numbered her strips with her own strokes, and her line is read from the other side of the page, so her order runs right to left. Time on a back is time not spent on spread 6. The fourteen marks are the art's glyph-back-01 to glyph-back-14. The lines of spreads 1 and 3 are written for the game and playable in the web build; spreads 2, 4, 5 and 6 are drafts for the author, and the whole selvage sentence is settled with The Page (phase 3).",
+    "marks": ["seven", "play", "stay", "warm", "cold", "company", "still", "go", "unpick", "cut", "i", "mother", "hunger", "home"],
+    "first_flip": "seven",
+    "flag": "book.backs_read",
+    "lines": [
+      {"spread": 1, "marks": ["i", "seven", "still", "play"], "reads": "I am seven still. I play.", "status": "built"},
+      {"spread": 2, "marks": ["mother", "cut", "i", "warm"], "reads": "Mother cut me warm.", "status": "draft"},
+      {"spread": 3, "marks": ["hunger", "play", "company", "stay", "i", "warm"], "reads": "When the hunger plays, company stays, and I am warm.", "status": "built"},
+      {"spread": 4, "marks": ["company", "go", "i", "cold", "mother", "cut"], "reads": "When company goes I am cold, and Mother cuts again.", "status": "draft"},
+      {"spread": 5, "marks": ["unpick", "seven", "cut", "mother", "still", "i", "go", "home"], "reads": "Unpick the seven; cut while Mother is still; I go home.", "status": "draft"},
+      {"spread": 6, "marks": ["i", "go", "cold", "play", "stay", "still", "company", "home"], "reads": "I go cold. The play stays still. Company goes home.", "status": "draft"}
+    ],
+    "glossary": {"flag": "glossary.ruth", "taught": [
+      {"where": "The hem of the counting-game cloth (a1_dinner, c11_parlour_1)", "marks": ["play", "company", "stay"]},
+      {"where": "Mabel's pencil on the toy's own pattern (b6_stuffing_1)", "marks": ["warm", "cold", "hunger"]},
+      {"where": "The wallpaper by the labyrinth's centre door (a5_labyrinth, c14_labyrinth_inner)", "marks": ["still", "go", "home"]},
+      {"where": "The ritual-room walls, low down (a5_book_3, 8 s a reading)", "marks": ["seven", "i", "mother", "unpick", "cut"]}
+    ]}
+  },
+  "missing_strips": {
+    "note": "Accepted 2026-11-15, built 2026-11-16 (phase 2). One strip of each late spread is gone; the player sews it from two glossary radicals. A wrong pair costs 4 s where the world runs.",
+    "wrong_pair_cost_s": 4,
+    "strips": [{"spread": 3, "glyph": "feed", "from": ["needle", "mouth"], "status": "built"}]
+  }
 }
