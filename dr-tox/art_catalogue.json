@@ -1,0 +1,622 @@
+{
+  "project": "Dr. Tox",
+  "source": "Higgsfield generation history, catalogued from studio/library/catalog.json (last synced 2026-10-23)",
+  "note": "Prompt, model and job id only; no links are kept. Full-size originals stay on Higgsfield.",
+  "images": [
+    {
+      "job_id": "f9398896-02b1-48ac-a8ba-fe404d873e30",
+      "group": "world",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T18:54:09Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/f9398896.webp",
+      "prompt": "Vintage grainy 35mm film still, flat overhead fluorescent tubes, cold gray-teal concrete. A long queue of plague-marked people in a bare concrete relief hall: visibly altered skin, mottled lesions and subtly wrong proportions, salvaged mismatched clothing, blankets over shoulders, dented water buckets, a hand-painted wooden number board on the wall. Exhausted, patient, enduring rather than dying. 35mm, static locked-off, heavy grain, no text, no logos, no gore."
+    },
+    {
+      "job_id": "ee8b72ec-3264-459e-b2c5-5e54091e1a3b",
+      "group": "world",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T18:54:09Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/ee8b72ec.webp",
+      "prompt": "Vintage grainy 35mm film still, dusk, cold desaturated gray-teal with a thin amber horizon. Foreground: a salvage settlement built into cracked concrete freeway ruins — hand-built tools, water drums, laundry lines, a chugging generator wired to strings of fluorescent tubes, stacked CRT monitors, people in worn scavenged gear. Background across a dust plain: the distant sealed glass arcology towers glowing warm and untouchable behind their perimeter lights. Extreme wide 24mm, deep focus, heavy grain, dust haze, no text, no logos."
+    },
+    {
+      "job_id": "c8c8d1f7-2191-43d2-b743-818aa45213cb",
+      "group": "world",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T18:54:09Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/c8c8d1f7.webp",
+      "prompt": "Vintage 1970s documentary film still, heavy 35mm grain, halation, desaturated cold gray-teal palette. Wide establishing shot of a single mirrored corporate glass tower under construction rising above a dying farm valley: cracked soil, dead irrigation pipes, a rusted grain silo in the foreground, bare shelterbelt trees. Overcast dust haze, weak low sun. 24mm deep focus, static locked-off camera. Bleak, unglamorous, no text, no logos, no stylization."
+    },
+    {
+      "job_id": "7b7a67f7-77d9-4d3f-852f-3e103ff7d4ba",
+      "group": "world",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T18:54:09Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/7b7a67f7.webp",
+      "prompt": "Vintage grainy 35mm film still, night, desaturated gray-teal with a single red flare. A wide industrial outflow pipe pours pale viscous sludge into a slow rural river; dead fish scattered along the mudbank; the small lights of a rural American farm town on the far bank; an unmarked tanker truck idling on the levee with headlights cutting through mist. Wide 28mm, low angle from the waterline, heavy grain, practical haze, no text, no logos."
+    },
+    {
+      "job_id": "6f93c88c-4c3d-478c-a92e-3f36dc1bf94f",
+      "group": "world",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T18:54:09Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/6f93c88c.webp",
+      "prompt": "Vintage grainy 35mm film still, pale dawn, desaturated sickly gray-green cast. A crowded low-rise city district at first light seen from a rooftop: a fine pale aerosol haze drifting down from industrial ventilation stacks, settling over the streets; commuters and market stalls below, unaware; a sealed unmarked service truck parked by the vent housing; birds scattered dead on the roof gravel. Wide 28mm, high angle, heavy grain, practical haze, no text, no logos."
+    },
+    {
+      "job_id": "47cf480e-4ef6-457c-8add-60aeac1da06b",
+      "group": "world",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T18:54:09Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/47cf480e.webp",
+      "prompt": "Vintage grainy 35mm film still, warm amber interior against a cold gray world beyond the glass. A private clinical suite high inside a corporate tower: wealthy patients in pale gowns reclined in amber-lit treatment chairs, clear IV lines, a gloved technician preparing a syringe from a rack of amber vials, polished concrete floor, floor-to-ceiling glass showing dust haze and a dying city far below. 50mm, slow deliberate composition, heavy grain, no text, no logos."
+    },
+    {
+      "job_id": "20d976bc-34a9-4671-9016-35dc51086efe",
+      "group": "world",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T18:54:09Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/20d976bc.webp",
+      "prompt": "Vintage grainy 35mm film still, clinical white and cold gray-teal, flat overhead fluorescent light. Interior of a vast sterile corporate biological research floor seen through thick scratched observation glass: rows of sealed incubators, glass culture vessels, CRT-era terminals, cable trunking, technicians in white pressure suits moving between racks. Amber warning lamps on the far wall. 35mm, symmetrical composition, heavy grain, haze, no text, no logos, documentary realism."
+    },
+    {
+      "job_id": "0d6ffb66-c722-427b-932b-e2d6046c5b10",
+      "group": "world",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T18:54:09Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/0d6ffb66.webp",
+      "prompt": "Vintage grainy 35mm film still, cold desaturated gray-teal, dust haze. Enormous brutalist glass-and-steel arcology monoliths rising from a husked-out dust plain on massive concrete plinths, sealed skybridges between them, construction cranes, a fenced and floodlit perimeter, and a sprawl of tiny improvised shanty shelters clustered at the base far below. Extreme wide shot, 24mm, low horizon, heavy grain, no lens flare, no text, no logos."
+    },
+    {
+      "job_id": "45e6b51e-b547-44cd-8f2a-77af2d6ca7a9",
+      "group": "world",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T18:54:10Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/45e6b51e.webp",
+      "prompt": "Vintage grainy 35mm film still, bleached desaturated daylight, dust in the air. Abandoned rural American main street: empty storefronts, plastic quarantine sheeting stapled over doorways, faded hazard notices, two children's bicycles lying on their sides in the road, a collapsed field hospital tent at the intersection, no people at all. Wide 24mm, static locked-off, heavy grain, overcast flat light, no text, no logos, quiet and dead."
+    },
+    {
+      "job_id": "49a3a381-9d83-4fa3-9cd0-eb2838d4bdfb",
+      "group": "world",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T21:12:52Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "1k",
+        "width": 1376,
+        "height": 768
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/49a3a381.webp",
+      "prompt": "Vintage grainy 35mm film still, pale dawn, desaturated sickly gray-green cast. A crowded low-rise city district at first light seen from a rooftop: a fine pale aerosol haze drifting down from industrial ventilation stacks, settling over the streets; commuters and market stalls below, unaware; birds scattered dead on the roof gravel. Wide 28mm, high angle, heavy grain, practical haze, no text, no logos."
+    },
+    {
+      "job_id": "f7ab2c41-e2ea-475b-88f0-973f8d121185",
+      "group": "story",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T19:04:57Z",
+      "settings": {
+        "aspect_ratio": "2:3",
+        "resolution": "2k",
+        "width": 1696,
+        "height": 2528
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/f7ab2c41.webp",
+      "prompt": "Same man as the reference images — identical face, wearing the matte black tactical bodysuit with segmented shoulder and forearm plating, two leaf-bladed throwing knives crossed in an X across the sternum, four syringe barrels on the left forearm gauntlet, clear feed line at the right wrist, black gloves and boots. Walking directly toward camera down a long narrow raw concrete corridor lit by failing fluorescent tubes. Narrow vertical contained silhouette, too thin to look dangerous. Wide 28mm, low camera, cold desaturated gray-teal, heavy film grain, haze, cinematic, no text."
+    },
+    {
+      "job_id": "c378345b-366c-4c4e-a49d-025ef63512f5",
+      "group": "story",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T19:04:57Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/c378345b.webp",
+      "prompt": "Same man as the reference images — identical face and build. Close three-quarter shot of him seating a matte black forearm gauntlet over the shunt port, clear surgical tubing running from his wrist into a manifold feeding four exposed syringe barrels. Machined titanium, medical stainless fittings, no chrome, no gloss. Workbench behind him with two leaf-bladed hollow-channel throwing knives laid out on cloth. Amber work lamp key light, deep black surroundings. 50mm shallow focus, heavy film grain, desaturated, cinematic, no text."
+    },
+    {
+      "job_id": "bb8659b8-6952-4751-867b-e17754be783e",
+      "group": "story",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T19:04:57Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/bb8659b8.webp",
+      "prompt": "Same man as the reference images — identical face, gaunt hollow cheeks, pale gray-blue eyes, dark buzzcut, lean sinewy build, heavy scarring on the right forearm. Seated alone on a metal stool in a bare concrete bunker room, white ribbed tank top, dark work trousers, worn boots, cigarette burning down between his fingers, staring at nothing. Clinical white walls, single caged fluorescent tube overhead, flat unflattering light. 85mm, static locked-off, symmetrical, desaturated cold gray, heavy 35mm film grain, cinematic, no stylization, no text."
+    },
+    {
+      "job_id": "7f4ff140-4410-4230-bce8-8e990d3837d6",
+      "group": "story",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T19:04:57Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/7f4ff140.webp",
+      "prompt": "Same man as the reference images — identical face, in full matte black tactical field kit with crossed throwing knives and forearm syringe gauntlet. Standing small and still on a ridge of cracked dust plain at dusk, back three-quarters to camera, looking down at a floodlit corporate compound perimeter far below. Salvage-era wasteland, dead scrub, wind-blown dust. Extreme wide 24mm, subject small in frame, cold desaturated gray-teal with a thin dying amber horizon, heavy film grain, no lens flare, cinematic, no text."
+    },
+    {
+      "job_id": "66e9da0a-0c1b-4eaf-9f99-c84cf3f2f101",
+      "group": "story",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T19:04:57Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/66e9da0a.webp",
+      "prompt": "Same man as the reference images, but losing himself — containment failure, not a power-up. The matte black tactical suit is splitting apart: seams tearing, shoulder plating lifting away, straps snapped. Skin stretched taut and bloodless, thick blackened veins bulging and pulsing across neck and arms, eyes fully consumed by sickly luminous green with no iris and no pupil, jaw distended past the limit of the skull. Anatomically wrong proportions — shoulders sitting too high, one arm too long, an extra joint, improvised and asymmetrical, never a heroic bodybuilder shape. Sickly green self-illumination spilling onto the concrete walls and floor. Low angle, unstable wide 20mm, heavy film grain, cinematic, horrifying, not triumphant, no text."
+    },
+    {
+      "job_id": "27630ced-4a6a-4b62-8115-33885ca4853f",
+      "group": "story",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T19:04:57Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/27630ced.webp",
+      "prompt": "Extreme macro on a deep open wound across a pale scarred human forearm that is not bleeding at all. The surrounding tissue has been visibly pulled inward toward the wound, puckered like drying acrylic skin, and the opening is sealed beneath a thick glossy lacquered black plate — obsidian-like, cracked at the flex points, a faint sickly green sheen where raking light catches it. Spent brass and a dropped scalpel on the concrete beneath. 100mm macro, hard raking practical light, cold gray-teal surroundings, heavy film grain, cinematic, no text."
+    },
+    {
+      "job_id": "f392a762-07ab-4873-9bfe-f8a5811a28b2",
+      "group": "story",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T19:07:15Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/f392a762.webp",
+      "prompt": "Same man as the reference images, human again and hollowed out — skeletal, emaciated, skin loose where his own reserves were stripped away, cheeks sunken to the skull. Kneeling alone on the concrete floor of a wrecked corridor amid the torn shreds of his black tactical suit, staring down at his own open hands like they belong to someone else. Bent metal, scattered debris, thin smoke. Dim red emergency light, wide empty frame, subject small and isolated in the composition. Static locked-off 24mm, desaturated, heavy 35mm film grain, cinematic, quiet and defeated, no text."
+    },
+    {
+      "job_id": "554be284-eca4-4221-bd37-c9a27880c3f3",
+      "group": "story",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T19:07:15Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/554be284.webp",
+      "prompt": "Same man as the reference images — identical face, cold and evaluating, entirely without expression. Standing perfectly still in a dim concrete service corridor in full matte black tactical field kit, a hollow-channel leaf blade held low at his side, already finished. Two corporate security guards slumped unconscious against the wall behind him, rifles fallen, no visible injuries. Smoke and dust hanging in the air. Hard practical light from a broken wall fixture. 35mm, static, cold desaturated gray-teal, heavy film grain, cinematic, restrained, no text, no blood."
+    },
+    {
+      "job_id": "29e53fb4-d224-49a0-b85c-25a46cdb5a4e",
+      "group": "story",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T19:07:15Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "width": 2752,
+        "height": 1536
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/29e53fb4.webp",
+      "prompt": "Same man as the reference images — identical face and lean build. Shirtless in a cramped bunker medical bay, jaw clenched, eyes shut, enduring something absolutely routine. A heavy lead-shielded medical applicator filled with glowing amber fluid is locked into the surgical port set in his heavily scarred right forearm, clear tubing running from it. Racks of amber vials, medical stainless trays, borosilicate glass fittings. Lit by a single amber work lamp with hard falloff into black. 50mm, slow deliberate framing, warm amber dominates the frame, heavy 35mm film grain, cinematic, no text."
+    },
+    {
+      "job_id": "ce8c5a1a-a6c5-48ab-8143-909d1edca35c",
+      "group": "story",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T19:12:00Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "1k",
+        "width": 1376,
+        "height": 768
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/ce8c5a1a.webp",
+      "prompt": "Same man as the reference images — identical face and build. Shirtless in a cramped bunker medical bay, jaw clenched, eyes shut in absolute routine pain, driving a heavy lead-shielded syringe filled with glowing amber fluid into a surgical shunt port set in his heavily scarred right forearm. Racks of amber vials, medical stainless, borosilicate glass, clear surgical tubing. Lit by a single amber work lamp with hard falloff into black. 50mm, slow deliberate framing, warm amber dominates the frame, heavy film grain, cinematic, no text."
+    },
+    {
+      "job_id": "a9a2b0c1-1a98-435a-8f14-d983c4435c1c",
+      "group": "story",
+      "model": "nano_banana_2",
+      "created": "2026-08-19T19:12:13Z",
+      "settings": {
+        "aspect_ratio": "16:9",
+        "resolution": "1k",
+        "width": 1376,
+        "height": 768
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/a9a2b0c1.webp",
+      "prompt": "Same man as the reference images, human again and wrecked — skeletal, emaciated, skin hanging loose where his own reserves were stripped away, cheeks sunken to the skull, kneeling on the concrete floor of a wrecked corridor amid the shredded remains of his black suit. Hands and forearms coated in blood he does not remember spilling. Bodies out of focus behind him. He is looking at his own hands like evidence of a crime he did not witness. Dim red emergency light, wide empty frame, subject small and alone, static locked-off camera, 24mm, heavy film grain, desaturated, cinematic, no text, no gore detail."
+    },
+    {
+      "job_id": "fa361193-edcb-4155-9c01-58dd334c7821",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:49Z",
+      "settings": {
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "width": 1792,
+        "height": 2400
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/fa361193.webp",
+      "prompt": "Studio headshot, subject facing directly away from camera, back of head and neck visible, tight head-and-shoulders crop. White male, early 30s, very pale near-bloodless skin, short dark buzzcut, slight widow's peak visible from behind, faint blue subdermal veining at nape of neck, lean sinewy neck and shoulders. Neutral gray-teal seamless background, flat even studio lighting, soft frontal key, no shadow falloff. 85mm, shallow depth of field, hyper-realistic skin and hair detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "45f326cd-7621-46ed-8970-3cbc19c8859c",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:49Z",
+      "settings": {
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "width": 1792,
+        "height": 2400
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/45f326cd.webp",
+      "prompt": "Studio headshot, strict left profile, 90 degrees from camera, tight head-and-shoulders crop. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, deep-set pale gray-blue eyes with pronounced positive canthal tilt, cold evaluating expression, slightly thicker prominent dark eyebrows, thin unsmiling mouth, highly angular sharply defined lower jaw and prominent masseter hypertrophy clearly readable in silhouette, wide flared jawline tapering to a thin pointed chin, short dark buzzcut with slight widow's peak, faint blue subdermal veining at temple and throat. Neutral gray-teal seamless background, flat even studio lighting, no shadow falloff. 85mm, shallow depth of field, tack-sharp, hyper-realistic skin detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "3e0abdae-9c38-41b8-9ee7-a85bd04fc356",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:49Z",
+      "settings": {
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "width": 1792,
+        "height": 2400
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/3e0abdae.webp",
+      "prompt": "Studio headshot, three-quarter turn toward right, camera favoring the right side of the face, tight head-and-shoulders crop. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, deep-set pale gray-blue eyes with pronounced positive canthal tilt, cold evaluating gaze under slightly thicker prominent dark eyebrows, thin unsmiling mouth, highly angular sharply defined lower jaw with deep shadowing, wide hyper-defined flared jawline with prominent masseter hypertrophy tapering to a thin pointed chin, short dark buzzcut with slight widow's peak, faint blue subdermal veining at temples and throat. Neutral gray-teal seamless background, flat even studio lighting, no shadow falloff. 85mm, shallow depth of field, tack-sharp eyes, hyper-realistic skin detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "3197b7fa-aeb6-4d24-add3-9d825624bd61",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:49Z",
+      "settings": {
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "width": 1792,
+        "height": 2400
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/3197b7fa.webp",
+      "prompt": "Studio headshot, three-quarter turn toward left, camera favoring the left side of the face, tight head-and-shoulders crop. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, deep-set pale gray-blue eyes with pronounced positive canthal tilt, cold evaluating gaze under slightly thicker prominent dark eyebrows, thin unsmiling mouth, highly angular sharply defined lower jaw with deep shadowing, wide hyper-defined flared jawline with prominent masseter hypertrophy tapering to a thin pointed chin, short dark buzzcut with slight widow's peak, faint blue subdermal veining at temples and throat. Neutral gray-teal seamless background, flat even studio lighting, no shadow falloff. 85mm, shallow depth of field, tack-sharp eyes, hyper-realistic skin detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "272f4fe3-1dd3-4a52-b599-5a7d1740b52f",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:49Z",
+      "settings": {
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "width": 1792,
+        "height": 2400
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/272f4fe3.webp",
+      "prompt": "Studio headshot, strict right profile, 90 degrees from camera, tight head-and-shoulders crop. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, deep-set pale gray-blue eyes with pronounced positive canthal tilt, cold evaluating expression, slightly thicker prominent dark eyebrows, thin unsmiling mouth, highly angular sharply defined lower jaw and prominent masseter hypertrophy clearly readable in silhouette, wide flared jawline tapering to a thin pointed chin, short dark buzzcut with slight widow's peak, faint blue subdermal veining at temple and throat. Neutral gray-teal seamless background, flat even studio lighting, no shadow falloff. 85mm, shallow depth of field, tack-sharp, hyper-realistic skin detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "15439340-7c21-402d-9930-29a16d8d79e9",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:49Z",
+      "settings": {
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "width": 1792,
+        "height": 2400
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/15439340.webp",
+      "prompt": "Studio headshot, front-facing, dead-on camera angle, tight head-and-shoulders crop. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, deep-set pale gray-blue eyes with pronounced positive canthal tilt, cold evaluating gaze direct to camera under slightly thicker prominent dark eyebrows, thin unsmiling mouth, highly angular sharply defined lower jaw with deep shadowing, wide hyper-defined flared jawline with prominent masseter hypertrophy tapering to a thin pointed chin, short dark buzzcut with slight widow's peak, faint blue subdermal veining at temples and throat. Neutral gray-teal seamless background, flat even studio lighting, soft frontal key, no shadow falloff, no colored gel. 85mm, shallow depth of field, tack-sharp eyes, hyper-realistic skin detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "d96aa8ab-244a-47d4-a8ed-581d7daba25d",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:50Z",
+      "settings": {
+        "aspect_ratio": "2:3",
+        "resolution": "2k",
+        "width": 1696,
+        "height": 2528
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/d96aa8ab.webp",
+      "prompt": "Full body studio shot, front-facing, standing neutral pose, arms relaxed at sides, weight even, full body in frame head to boots. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, deep-set pale gray-blue eyes with positive canthal tilt, cold evaluating gaze, prominent dark eyebrows, thin unsmiling mouth, wide hyper-defined flared jawline with masseter hypertrophy, thin pointed chin, short dark buzzcut, tall lean sinewy endurance build with visible tendons and veins. Wearing white ribbed tank top, dark moss green waxed canvas work trousers with oil and mechanical grease stains, worn brown leather and canvas military lace-up boots, high-tech medical monitor wristwatch. Bare arms show a cluster of bullet scars at the shoulder and densely sclerotic veins with track marks and a metal-and-synthetic shunt port on the right inner forearm. Neutral gray-teal seamless background, flat even studio lighting. 50mm, hyper-realistic detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "a9651101-92a9-4208-a50f-8507cf3a7407",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:50Z",
+      "settings": {
+        "aspect_ratio": "2:3",
+        "resolution": "2k",
+        "width": 1696,
+        "height": 2528
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/a9651101.webp",
+      "prompt": "Full body studio shot, strict left profile, standing neutral pose, arms relaxed at sides, full body in frame head to boots. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, deep-set pale gray-blue eyes, cold evaluating expression, prominent dark eyebrows, thin unsmiling mouth, sharply angular jawline with masseter hypertrophy readable in silhouette, thin pointed chin, short dark buzzcut, tall lean sinewy endurance build with visible tendons and veins. Wearing white ribbed tank top, dark moss green waxed canvas work trousers with oil and grease stains, worn brown leather and canvas military lace-up boots, medical monitor wristwatch, scarred bare arms visible. Neutral gray-teal seamless background, flat even studio lighting. 50mm, hyper-realistic detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "5929c12b-e57e-4623-9088-56fab8ca0aa5",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:50Z",
+      "settings": {
+        "aspect_ratio": "2:3",
+        "resolution": "2k",
+        "width": 1696,
+        "height": 2528
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/5929c12b.webp",
+      "prompt": "Full body studio shot, subject facing directly away from camera, standing neutral pose, arms relaxed at sides, full body in frame head to boots. White male, early 30s, very pale skin, short dark buzzcut visible from behind, tall lean sinewy endurance build, back of white ribbed tank top visible, dark moss green waxed canvas work trousers with oil and grease stains, worn brown leather and canvas military lace-up boots, high-tech medical monitor wristwatch. Neutral gray-teal seamless background, flat even studio lighting. 50mm, hyper-realistic detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "255c2b57-3e6d-4465-86b2-c7c30b48cf43",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:50Z",
+      "settings": {
+        "aspect_ratio": "2:3",
+        "resolution": "2k",
+        "width": 1696,
+        "height": 2528
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/255c2b57.webp",
+      "prompt": "Full body studio shot, strict right profile, standing neutral pose, arms relaxed at sides, full body in frame head to boots. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, deep-set pale gray-blue eyes, cold evaluating expression, prominent dark eyebrows, thin unsmiling mouth, sharply angular jawline with masseter hypertrophy readable in silhouette, thin pointed chin, short dark buzzcut, tall lean sinewy endurance build with visible tendons and veins. Wearing white ribbed tank top, dark moss green waxed canvas work trousers with oil and grease stains, worn brown leather and canvas military lace-up boots, medical monitor wristwatch, scarred bare arms visible with track marks and shunt port on right inner forearm. Neutral gray-teal seamless background, flat even studio lighting. 50mm, hyper-realistic detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "e4d2daff-f410-4a9d-bb1a-9b8dd956d2ea",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:52Z",
+      "settings": {
+        "aspect_ratio": "2:3",
+        "resolution": "2k",
+        "width": 1696,
+        "height": 2528
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/e4d2daff.webp",
+      "prompt": "Full body studio shot, strict left profile, standing neutral pose, full body in frame head to boots. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, cold evaluating expression, sharply angular jawline with masseter hypertrophy in silhouette, thin pointed chin, short dark buzzcut, tall lean sinewy endurance build. Wearing a heavy weather-beaten graphite-grey pressurized hazard undersuit beneath a distressed matte-black powered hydraulic exoskeleton harness across shoulders, spine and external limb struts with visible cabling, green liquid-filled tubing and scuffed metal joints; tactical chest rigging with charcoal MOLLE IFAK trauma pouch; left forearm armored rail with three bioluminescent green chemical glass ampoules and brass micro-pressure gauges; dark reinforced tactical gloves; heavy-duty modular utility belt; Kydex drop-leg holster with matte-black sidearm on left thigh; articulated knee pad on left leg; oil-stained heavy-weave hazard trousers tucked into steel-toed combat boots linked to external ankle braces. Neutral gray-teal seamless background, flat even studio lighting. 50mm, hyper-realistic detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "82a9e1a7-2988-417d-addd-ef7f40d5fb4a",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:52Z",
+      "settings": {
+        "aspect_ratio": "2:3",
+        "resolution": "2k",
+        "width": 1696,
+        "height": 2528
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/82a9e1a7.webp",
+      "prompt": "Full body studio shot, strict right profile, standing neutral pose, full body in frame head to boots. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, cold evaluating expression, sharply angular jawline with masseter hypertrophy in silhouette, thin pointed chin, short dark buzzcut, tall lean sinewy endurance build. Wearing a heavy weather-beaten graphite-grey pressurized hazard undersuit beneath a distressed matte-black powered hydraulic exoskeleton harness across shoulders, spine and external limb struts with visible cabling, green liquid-filled tubing and scuffed metal joints; rigid low-profile sheath tight against the right ribcage holding a single inverted matte-black tanto combat knife grip-down; right forearm reinforced bracer connected to the hydraulic elbow actuator; dark reinforced tactical gloves; heavy-duty modular utility belt; oil-stained heavy-weave hazard trousers tucked into steel-toed combat boots linked to external ankle braces. Neutral gray-teal seamless background, flat even studio lighting. 50mm, hyper-realistic detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "76c9011f-b02d-46e6-ace5-705e45d4edfa",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:52Z",
+      "settings": {
+        "aspect_ratio": "2:3",
+        "resolution": "2k",
+        "width": 1696,
+        "height": 2528
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/76c9011f.webp",
+      "prompt": "Full body studio shot, subject facing directly away from camera, standing neutral pose, full body in frame head to boots. White male, early 30s, very pale skin, short dark buzzcut visible from behind, tall lean sinewy build. Rear view of a distressed matte-black powered hydraulic exoskeleton: spine struts running down the back, visible cabling and green liquid-filled tubing, scuffed metal joints, harness backplate over a heavy weather-beaten graphite-grey pressurized hazard undersuit, heavy-duty modular utility belt, oil-stained heavy-weave hazard trousers tucked into steel-toed combat boots linked to external ankle braces. Neutral gray-teal seamless background, flat even studio lighting. 50mm, hyper-realistic detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "34411488-7f1a-4279-b3a7-66e7b76be04c",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:52Z",
+      "settings": {
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "width": 1792,
+        "height": 2400
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/34411488.webp",
+      "prompt": "Extreme close-up macro, face only, camera slightly off-axis. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, deep-set pale gray-blue eyes with pronounced positive canthal tilt, cold evaluating gaze under slightly thicker prominent dark eyebrows, thin unsmiling mouth, highly angular sharply defined lower jaw with deep shadowing, wide hyper-defined flared jawline with prominent masseter hypertrophy tapering to a thin pointed chin, short dark buzzcut with slight widow's peak. Studio lighting, single soft key light, shallow shadow defining cheekbone and jaw structure. Hyper-realistic skin texture, visible pores, faint blue subdermal veining at temple, desaturated color grade. 100mm macro, razor-sharp focus on eyes. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "27ecb1cf-c600-4eea-be3b-4701b2ac4d5e",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:52Z",
+      "settings": {
+        "aspect_ratio": "2:3",
+        "resolution": "2k",
+        "width": 1696,
+        "height": 2528
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/27ecb1cf.webp",
+      "prompt": "Full body studio shot, front-facing, standing neutral pose, arms relaxed at sides, full body in frame head to boots, all gear clearly visible and unobstructed. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, deep-set pale gray-blue eyes with positive canthal tilt, cold evaluating gaze, prominent dark eyebrows, thin unsmiling mouth, wide hyper-defined flared jawline with masseter hypertrophy, thin pointed chin, short dark buzzcut, tall lean sinewy endurance build. Wearing a heavy weather-beaten graphite-grey pressurized hazard undersuit layered beneath a distressed matte-black powered hydraulic exoskeleton harness across shoulders, spine and external limb struts with visible cabling, green liquid-filled tubing and scuffed metal joints; asymmetrical tactical load-bearing harness integrated into the exoskeleton chest plate; compact charcoal MOLLE IFAK trauma pouch with subdued cross marking on mid-left chest; rigid low-profile sheath tight against the right ribcage holding a single inverted matte-black tanto combat knife grip facing downward; dark reinforced tactical gloves; left forearm armored rail housing three bioluminescent green chemical glass ampoules with brass micro-pressure gauges; right forearm reinforced bracer connected to the hydraulic elbow actuator; heavy-duty modular utility belt; rigid molded Kydex drop-leg holster with matte-black tactical sidearm on left thigh; articulated knee pad and low-profile nylon strap harness on left leg; oil-stained heavy-weave hazard trousers tucked into steel-toed combat boots linked to external ankle braces. Neutral gray-teal seamless background, flat even studio lighting. 50mm, hyper-realistic detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "1f0d8e35-5918-45e3-a4f5-ee0669d49cc2",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:52Z",
+      "settings": {
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "width": 1792,
+        "height": 2400
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/1f0d8e35.webp",
+      "prompt": "Extreme close-up macro photograph of a right inner forearm of a very pale white male, densely sclerotic veins with associated track marks, a metal and synthetic shunt port set into the distal inner forearm with the subcutaneous feed line visible running proximally under the skin. Neutral background, soft directional studio lighting emphasizing texture and scar depth. 100mm macro, razor-sharp focus, hyper-realistic medical skin detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "42ae94d4-9763-4bcf-806f-812c20827cef",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:53Z",
+      "settings": {
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "width": 1792,
+        "height": 2400
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/42ae94d4.webp",
+      "prompt": "Extreme close-up macro photograph of the sternum and thoracic region of a very pale lean male torso, skin only: a single prominent raised keloid scar ten inches long running vertically from deep surgical access, surrounding skin very pale with faint scarring. Neutral background, soft directional studio lighting emphasizing scar texture and raised tissue. 100mm macro, razor-sharp focus, hyper-realistic skin detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "146998b1-bf46-48e3-b249-f44460b66d69",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:53Z",
+      "settings": {
+        "aspect_ratio": "2:3",
+        "resolution": "2k",
+        "width": 1696,
+        "height": 2528
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/146998b1.webp",
+      "prompt": "Full body studio shot, subject in a low coiled combat-ready stance, weight centered, knees slightly bent, hands loose near the chest rig, completely static pose, not mid-motion. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, deep-set pale gray-blue eyes, cold evaluating gaze, prominent dark eyebrows, thin unsmiling mouth, wide flared jawline with masseter hypertrophy, thin pointed chin, short dark buzzcut, tall lean sinewy endurance build. Wearing graphite-grey pressurized hazard undersuit beneath distressed matte-black powered hydraulic exoskeleton with visible cabling and green liquid-filled tubing, tactical chest rigging with charcoal MOLLE IFAK pouch, inverted tanto knife sheath on right ribcage, left forearm armored rail with three bioluminescent green ampoules, dark tactical gloves, modular utility belt, Kydex drop-leg holster on left thigh, oil-stained hazard trousers tucked into steel-toed combat boots with exoskeleton ankle braces. Neutral gray-teal seamless background, flat even studio lighting, full body in frame. 50mm, hyper-realistic detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "a8a547f0-bf2a-4401-a3ca-b695a4cdb838",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:54Z",
+      "settings": {
+        "aspect_ratio": "2:3",
+        "resolution": "2k",
+        "width": 1696,
+        "height": 2528
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/a8a547f0.webp",
+      "prompt": "Full body studio shot, subject standing relaxed, weight on one leg, a cigarette held near his hip, cold distant gaze off-camera, static pose. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, deep-set pale gray-blue eyes, prominent dark eyebrows, thin unsmiling mouth, wide flared jawline with masseter hypertrophy, thin pointed chin, short dark buzzcut, tall lean sinewy endurance build with visible tendons and veins. Wearing white ribbed tank top, dark moss green waxed canvas work trousers with oil and grease stains, worn brown leather and canvas military lace-up boots, high-tech medical monitor wristwatch; bare arms show bullet scars at the shoulder and sclerotic veins with track marks and a shunt port on the right inner forearm. Neutral gray-teal seamless background, flat even studio lighting, full body in frame. 50mm, hyper-realistic detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    },
+    {
+      "job_id": "9c68b76d-a16b-4b32-b4d2-a331719ad227",
+      "group": "sheet",
+      "model": "nano_banana_2",
+      "created": "2026-08-22T15:28:54Z",
+      "settings": {
+        "aspect_ratio": "2:3",
+        "resolution": "2k",
+        "width": 1696,
+        "height": 2528
+      },
+      "used_reference_images": false,
+      "thumb": "art/thumbs/9c68b76d.webp",
+      "prompt": "Full body studio shot, subject standing neutral, one arm raised holding a single leaf-bladed throwing knife at chest height in a static grip, not a throwing motion, completely still. Pamirid phenotype white male, early 30s, very pale near-bloodless skin, deep-set pale gray-blue eyes, cold evaluating gaze, prominent dark eyebrows, thin unsmiling mouth, wide flared jawline with masseter hypertrophy, thin pointed chin, short dark buzzcut, tall lean sinewy build. Wearing graphite-grey pressurized hazard undersuit beneath distressed matte-black powered hydraulic exoskeleton with visible cabling and green liquid-filled tubing, tactical chest rigging with charcoal MOLLE IFAK pouch, inverted tanto knife sheath on right ribcage, left forearm armored rail with three bioluminescent green ampoules, dark tactical gloves, modular utility belt, Kydex drop-leg holster on left thigh, oil-stained hazard trousers tucked into steel-toed combat boots with exoskeleton ankle braces. Neutral gray-teal seamless background, flat even studio lighting, full body in frame. 50mm, hyper-realistic detail, desaturated color grade. Do not include: glowing green eyes, symmetrical bodybuilder physique, chrome, gloss, neon accents, cyberpunk styling, motion blur, dynamic action pose, cape, stylized power-up lighting, cartoon, illustration, painting."
+    }
+  ]
+}
