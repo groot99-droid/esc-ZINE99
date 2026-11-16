@@ -54,7 +54,7 @@ is verbatim from `04_Book_Concepts/01_Behind_the_Peephole.md`.
 | The final turn | "They’re not here by accident. / They’re not alone. / And someone is watching them all." | Night six (one hand booked every room), the 2:14 stranger, and night seven (the lens in your own door). |
 | The method | "a slow-burn, atmospheric mystery built from negative space" | No mission, meeting or crime is ever shown. |
 
-**The author's ending.** The pitch has none. All four endings are proposals and none carries
+**The author's ending.** The pitch has none. All five endings (the fifth, The Sitter, added in phase 3) are proposals and none carries
 `as_written`. The craft rules of the vault's horror-prose mode still apply: every ending keeps a
 cost, and none is a tidy rescue. Each ending is one of the allowed shapes: handoff, no-return,
 irreversible knowledge, complicit. Of the four, The Next Watcher best fulfils the pitch's last
@@ -1148,19 +1148,71 @@ kept in the notebook as carbon copies (grey) and can be used in Statements. The 
 carbon beats as half-filled. Endings, choices and the Account start fresh. Replays do not count
 toward the first playthrough's length.
 
+**What a second shift changes** (phase 3, accepted 2026-11-15, built 2026-11-16; `shift_number`,
+`last_ending`). Nothing tells the player; they are things a returning watcher notices:
+
+- **Lost property** holds six new tags in Dora's hand, one for each of this season's guests (a kit bag
+  strap, a pressed orchid, one white glove, a press lanyard, a chess knight, a paper boat), where last
+  season's six things were. The ending decides which of them is missing on the shelf: in The Open
+  Door, the most-watched guest's.
+- **The Statement's seventh line** is printed this time, "400", with the word stamped on the first
+  shift showing through in carbon. Somebody kept your copy.
+- **Night Patience**: your own reply card from the first shift is on the spike on night three, in your
+  hand, before you have written anything this season.
+- **The Sitting**: Mara's pencil under the picture reads "You came back. I count too." in place of the
+  count.
+- The pinholes on the back of the Mosaic board are your first shift's own (not in the web build).
+
 ## 13. Endings
 
-The author wrote no ending. All four are proposals; none is `as_written`. The ending is decided by
-the accuracy of the player's statements plus one choice on the last night, as `docs/COLLECTION.md`
-assigns. The names and outlines are the four in `docs/ADAPTATIONS.md`, unchanged. The resolver
+The author wrote no ending. All five are proposals; none is `as_written`, and none can be, because
+the source has no ending. The ending is decided by the accuracy of the player's statements plus one
+choice on the last night, as `docs/COLLECTION.md` assigns. Four names and outlines are the four in
+`docs/ADAPTATIONS.md`; the fifth, The Sitter, was accepted on 2026-11-15 and built on 2026-11-16
+(phase 3, section 21). Phase 3 also gave each of the four the cost section 21 names. The resolver
 checks them in priority order.
 
 | Priority | Id | Name | Shape (vault rule) |
 | --- | --- | --- | --- |
-| 1 | `under_the_door` | Under the Door | Irreversible knowledge |
-| 2 | `wrong_picture` | The Wrong Picture | Complicit |
-| 3 | `open_door` | The Open Door | No-return |
-| 4 | `next_watcher` | The Next Watcher | Handoff (cyclical) |
+| 1 | `the_sitter` | The Sitter | Irreversible knowledge (a witness, at a price) |
+| 2 | `under_the_door` | Under the Door | Irreversible knowledge |
+| 3 | `wrong_picture` | The Wrong Picture | Complicit |
+| 4 | `open_door` | The Open Door | No-return |
+| 5 | `next_watcher` | The Next Watcher | Handoff (cyclical) |
+
+**Why no two fire together.** Each of the first four needs its own value of `final_choice` (The
+Sitter `hold_still`, Under the Door `slide_pages`, The Open Door `answer_door`), except The Wrong
+Picture, which takes `keep_logging`, `slide_pages` or `hold_still` but only with a wrong log, where
+Under the Door and The Sitter need a right one (`account_correct` 6 or more against 5 or fewer). The
+Next Watcher is the fall-through.
+
+### The Sitter (new, phase 3)
+
+**Conditions.** At the knock the player put an eye to the rose in the office door and held still
+(`hold_still`, offered only once the tenth line is stamped); before it, slid their carbons under 403;
+stamped the seventh row right (`witness`); answered Mara's two taps on nights four, five and six; and
+left none of Wren's bent answers standing in the Account.
+
+```json
+{"all": [
+  {"is": "final_choice", "eq": "hold_still"},
+  {"is": "carbons_to_403", "eq": true},
+  {"is": "seventh_row", "eq": "witness"},
+  {"is": "mara_answers", "gte": 3},
+  {"is": "account_correct", "gte": 6}
+]}
+```
+
+**Final scenes.** `n7_own_lens`, `end_sitter`. At 2:14 the knock comes at your own door. Through your
+own lens, fitted backwards, an eye on the other side; the player holds under it until the catch ring
+closes, through the knocks and the key. Five guests leave by the revolving door at dawn. Mara Linde
+crosses the lobby to the desk with the case, her watercolours and the player's carbons, and hands two
+officers a second file before Wren's can be read.
+
+**Cost.** She is arrested by her own choice, and holds out her wrists. The seventh row of her file is
+filled in, in her pencil: the witness is you, and you will be called.
+
+**Last image.** Her painting of your door at the end of the passage, the rose a lit dot.
 
 ### Under the Door
 
@@ -1183,22 +1235,27 @@ sees pages taken up from the floor. At 05:00 the passage is silent; every rose i
 behind them is empty, beds made, a row of seven paper boats on 406's sill. Behind the player,
 three knocks at the office door.
 
-**Cost.** The guests leave together before dawn. The file is broken. The mercenary takes the case
-and goes the other way alone, his last chapter unread. And the player is the only person on the
-floor when Wren's courier comes back for someone to put in it.
+**Cost.** The guests leave together before dawn. The file is broken. The guests get the player's
+**carbons**, not Wren's copy, and believe only the rows that are right on them
+(`carbon_rows_correct`): a door whose row is wrong takes nothing. The mercenary takes the case and
+goes the other way alone, his daughter's last chapter unread. And the player is alone, the only
+person on the floor, when the knock comes and Wren's courier comes back for someone to put in it.
 
 **Last image.** The rose in the office door, lit from outside.
 
 ### The Wrong Picture
 
-**Conditions.** The player kept logging or slid the pages, and the log is wrong: 19 or fewer of 36
-rows correct, or 5 or fewer of 9 Account answers.
+**Conditions.** The player kept logging, slid the pages or held still at their own rose, and the
+log is wrong: 19 or fewer of 36 rows correct, or 5 or fewer of 9 Account answers. From phase 3 the
+Account arrives typed, three answers bent toward Ruth (`account_typed_struck`); a bent answer left
+standing is a wrong answer.
 
 ```json
 {"all": [
   {"any": [
     {"is": "final_choice", "eq": "keep_logging"},
-    {"is": "final_choice", "eq": "slide_pages"}
+    {"is": "final_choice", "eq": "slide_pages"},
+    {"is": "final_choice", "eq": "hold_still"}
   ]},
   {"any": [
     {"is": "rows_correct", "lte": 19},
@@ -1214,7 +1271,9 @@ acted on them: they argue in the corridor at 04:00 (heard) and scatter.
 **Cost.** Someone who did not do what the file says pays for it, because the player said so.
 
 **Last line.** The desk phone in the lobby rings and the night clerk holds it out toward the
-mezzanine. Wren: "Thank you. That will be all."
+mezzanine. Wren: "Thank you. That will be all. I did that once." (The last sentence is phase 3: Wren
+was the first night auditor, in 1971, and his incomplete log sent the wrong guest out through the
+lobby; section 21.)
 
 ### The Open Door
 
@@ -1227,9 +1286,11 @@ mezzanine. Wren: "Thank you. That will be all."
 **Final scenes.** `n7_your_door`, `end_open_door`. The player walks with Fenn down the service
 stair, through the alley, to the river wall. No one logs the rest of night seven.
 
-**Cost.** One guest does not come back: the one the player watched most (`most_watched_guest`).
-The more the player looked at someone, the more of them Wren's file already held. From the river
-wall the player can count the fourth-floor windows. One is dark.
+**Cost.** Walking out does not break the file. From the alley the player sees the office lamp still
+on: Dora is finishing the log in the player's hand, as she finished Fenn's (card 12, "They didn't stop
+me"). And one guest does not come back: the one the player watched most (`most_watched_guest`). The
+more the player looked at someone, the more of them Wren's file already held. From the river wall the
+player can count the fourth-floor windows. One is dark.
 
 **Last line.** Fenn: "You'll want to stop looking up."
 
@@ -1248,7 +1309,9 @@ leaves alone with her coat buttoned to the neck; 403 goes out through the servic
 case. The last scene is 2D: the player's eye at a lens, tilting across a lit office, a figure at
 the desk writing the log. The figure is the player, on next season's first night.
 
-**Cost.** Every guest the player came to care about is sold, accurately.
+**Cost.** Every guest the player came to care about is sold, accurately. And the ladder: next
+season's contract comes in Wren's envelope with Fenn's old key, one rung up (watcher, courier, the one
+who books), and the lost-property cabinet holds six new things the player can name.
 
 **Last image.** The figure at the desk lifts its head toward the rose. The lamp's shade keeps the
 face in shadow, and the scene cuts before it comes into the light.
@@ -1263,10 +1326,11 @@ a new victim. It stays a proposal, with `as_written` false like the other three.
 
 | Ending | What to do |
 | --- | --- |
+| The Sitter | Hold under Mara's look at The Sitting and answer her two taps on nights four to six; gather the five marks of the seventh row; strike Wren's bent lines in the typed Account; reconcile her dots against your strip and stamp 400 as witness; slide your carbons under 403 before the knock; at 2:14 put your eye to your own rose and hold still. |
 | Under the Door | Watch well and widely; open the safe on night six or collect four booker names; make the Wren – all six link; write a careful Account; avoid exposing three guests; slide the pages on night seven and run. |
-| The Wrong Picture | Guess at the Statements, or get the Account wrong, and keep logging or slide the pages. |
+| The Wrong Picture | Guess at the Statements, or get the Account wrong (or let Wren's typed answers stand), and keep logging, slide the pages or hold still at your own rose. |
 | The Open Door | Open the office door when the knock comes, or follow the stranger's steps. Watch one guest above all others to choose who does not come back. |
-| The Next Watcher | Watch well, write a correct Account, and stay at the desk when the knock comes. A first run with no special plan most often ends here. |
+| The Next Watcher | Watch well, write a correct Account, and stay at the desk when the knock comes; or hold still at your own rose without the rest of The Sitter's conditions (the carbons kept, a wrong word on the tenth line, Mara left unanswered). A first run with no special plan most often ends here. |
 
 A debug panel and a player-facing page after the ending ("The file") both show the conditions with
 the run's values, so a designer or a player can see why the run ended as it did.
@@ -1366,8 +1430,8 @@ a visual equivalent.
 | --- | --- |
 | `data/game.json` | Slug, title, source path, target 120–150, one player, the core verb, the eight chapters with minutes (143 in all) and layers. |
 | `data/scenes.json` | The two 2D modes (`eye`, `race`), the four 1D games (`lockwork`, `statement`, `patience`, `mosaic`), and every scene in sections 8–10 with chapter, mode or game, transitions, what it reads and writes, and what can follow. |
-| `data/flags.json` | Every meter, counter, flag, enumeration and ledger in sections 8–13, and the nine added for phase 1 on 2026-11-15 (`mara_dots`, `dots_read`, `mara_count`, `sitting_held`, `answers`, `mara_answers`, `held_pages_read`, `carbon_rows_correct`, `carbon_amends`), and the twenty added for phase 2 on 2026-11-16 (`quiet.r401` to `quiet.r406`, `reply_cards`, `reply_last`, `bell_wires`, `trolley_moved`, `dora_at_cabinet`, `left_things_seen`, `rhyme_spool`, `rhyme_links`, `typed_rows_struck`, `frayed_links`, `seventh_bell_heard`, `tea_wheels_heard`, `seventh_coin_seen`, `watcher_marks`). |
-| `data/endings.json` | The four endings with the conditions in section 13 and their final scenes. |
+| `data/flags.json` | Every meter, counter, flag, enumeration and ledger in sections 8–13, and the nine added for phase 1 on 2026-11-15 (`mara_dots`, `dots_read`, `mara_count`, `sitting_held`, `answers`, `mara_answers`, `held_pages_read`, `carbon_rows_correct`, `carbon_amends`), the seven added for phase 3 on 2026-11-16 (`wren_1971_read`, `account_typed_struck`, `dots_reconciled`, `seventh_row`, `carbons_to_403`, `shift_number`, `last_ending`, and the value `hold_still` of `final_choice`), and the twenty added for phase 2 on 2026-11-16 (`quiet.r401` to `quiet.r406`, `reply_cards`, `reply_last`, `bell_wires`, `trolley_moved`, `dora_at_cabinet`, `left_things_seen`, `rhyme_spool`, `rhyme_links`, `typed_rows_struck`, `frayed_links`, `seventh_bell_heard`, `tea_wheels_heard`, `seventh_coin_seen`, `watcher_marks`). |
+| `data/endings.json` | The five endings with the conditions in section 13 and their final scenes (The Sitter added, and every summary given its sharpened cost, in phase 3 on 2026-11-16). |
 | `data/beats.json` | The per-night room scripts of section 8: each night's returns (bell and door), the 2:14 knock, and every beat (146, seven of them accepted 2026-11-15: Mara's dots, The Sitting and the held page) with its id, room, night, scene, time window, kind, region of the room plate, whether it is floor-visible, and the clue card it writes; the office clues; and the false-sign substitutions of section 12 (what an exposed guest stages instead of one true beat, nights two to six). |
 | `data/truth.json` | The true answers: the six Statement grids (36 rows, one true answer per row and category, each with the clue cards it rests on), the Account (six missions and three single questions, and the scapegoat rule), and the Mosaic's pins, thread lengths and 16 true links. |
 | `data/deals.json` | The Night Patience deals for nights two to seven: the six columns, the stock, the two slipped cards and where they sit, and a winning line for each deal within its passes. |
@@ -1448,10 +1512,12 @@ consistent and cited, not that the grids are unique.
 
 The author accepted the development proposed in `DEEP_DIVE.md` on 2026-11-15, all of it, including
 the decisions its roadmap marked as needing the author first. This section states the accepted
-story. It is built in three phases. **Phases 1 and 2 are in this design and in `data/` now** (phase 2
-built 2026-11-16, listed at the end of this section); phase 3 is accepted and not built, and is marked below. Nothing here changes
-the source, and the four endings of section 13 stand; none is `as_written`, because the author
-wrote no ending.
+story. It is built in three phases. **All three phases are in this design and in `data/` now**
+(phase 1 built 2026-11-15, phases 2 and 3 built 2026-11-16, each listed at the end of this section),
+except the lever lock, which waits for `docs/COLLECTION.md` to name it (`collection_request.md`).
+The 3D scenes, old and new, are designs until they are built in Blender. Nothing here changes the
+source; the four endings of section 13 stand with their costs sharpened, a fifth (The Sitter) is
+added, and none is `as_written`, because the author wrote no ending.
 
 **Dramatic question.** When one of the people behind the glass looks back and asks you to keep
 watching, do you stay a lens or become a witness?
@@ -1500,21 +1566,24 @@ The *watcher* clue kind and the Account's tenth line are phase 3.
 | 6 | 4 | II | Lost Property: Fenn's log, and beside it six left things from last season | Log existing; the six things new | 2, built 2026-11-16 |
 | 7 | 5 | III | Two Sets: Ines at the mirror; Mara holds each ledger page to the rose as she copies it | Ines existing; the held page new | **1, built** (the held page) |
 | 8 | 5 | III | The Linen Count: in the blackout Dora stands at the open cabinet; behind you, a seventh coin of light, your own door | New | 2, built 2026-11-16 (`n5_linen_count`) |
-| 9 | 6 | IV | The 1971 Page: behind the booking ledger, a statement form signed "H. Wren, night auditor", one row struck through in another hand | Safe existing; page new | 3 |
-| 10 | 6 | IV | The Hollow Dot (darkest moment): Tomas is in 403 at 01:30 and Mara has asked you to be there; the safe is open at the same minute | The clash existing; her asking and the dot new | 3 (the dot beat is in `data/beats.json` now) |
-| 11 | 7 | IV | Tonight You Only Confirm: the Account arrives already typed | Account existing; pre-typed new | 3 |
+| 9 | 6 | IV | The 1971 Page: behind the booking ledger, a statement form signed "H. Wren, night auditor", one row struck through in another hand | Safe existing; page new | 3, built 2026-11-16 (`n6_safe` writes `wren_1971_read`; art `doc-1971-page`) |
+| 10 | 6 | IV | The Hollow Dot (darkest moment): Tomas is in 403 at 01:30 and Mara has asked you to be there; the safe is open at the same minute | The clash existing; her asking and the dot new | 3, built (the dot beat is in `data/beats.json`; it plays inside `n6_shift_eye` and needs no scene of its own) |
+| 11 | 7 | IV | Tonight You Only Confirm: the Account arrives already typed, three answers bent toward Ruth; and its tenth line | Account existing; pre-typed new | 3, built 2026-11-16 (`n7_account` writes `account_typed_struck`, `dots_reconciled`, `seventh_row`) |
 | 12 | 7 | IV | The Lens in Your Door (`n7_your_door`) | Existing | – |
+| 13 | 7 | IV | Your own rose (`n7_own_lens`): the eye at your own lens at 2:14, hold still, step back or open | New | 3, built 2026-11-16 |
+| 14 | dawn | – | The second file (`end_sitter`): the lobby, Mara at the desk | New | 3, built 2026-11-16 |
 
-**Endings.** The four of section 13 stand, each with its cost sharpened, and a fifth is accepted.
-All are phase 3; phase 1 changes no ending and no condition in `data/endings.json`.
+**Endings.** The four of section 13 stand, each with its cost sharpened, and a fifth is added. All
+are phase 3, accepted 2026-11-15 and built 2026-11-16: in `data/endings.json` (summaries, The Sitter's
+condition, `hold_still` in The Wrong Picture) and in section 13.
 
 | Ending | Accepted change | Phase |
 | --- | --- | --- |
-| The Next Watcher | Adds the ladder: the contract comes with Fenn's old key, and the cabinet holds six new things you can name. | 3 |
-| The Open Door | Walking out does not break the file. From the alley you see the office lamp still on: Dora is finishing your log. The most-watched guest still does not come back. | 3 |
-| Under the Door | The guests get your carbons, not Wren's copy; only rows right on the carbon are believed (`carbon_rows_correct`, kept from phase 1). Tomas's last chapter stays unread, and you are alone when the knock comes. | 3 |
-| The Wrong Picture | Wren's last line gains one sentence: "I did that once." | 3 |
-| **The Sitter (new)** | Conditions: you answered Mara on nights four to six (`mara_answers`), slid your carbons under 403, got the seventh row right, and at the knock put your eye to your own rose and held still. Five leave. Mara walks into the lobby at dawn with the case, her paintings and your carbons, and hands the police a second file. Cost: she is arrested by her own choice, and the witness in her file is you. You will be called. Last image: her painting of your door, the rose lit. | 3 |
+| The Next Watcher | Adds the ladder: the contract comes with Fenn's old key, and the cabinet holds six new things you can name. | | 3, built 2026-11-16 |
+| The Open Door | Walking out does not break the file. From the alley you see the office lamp still on: Dora is finishing your log. The most-watched guest still does not come back. | | 3, built 2026-11-16 |
+| Under the Door | The guests get your carbons, not Wren's copy; only rows right on the carbon are believed (`carbon_rows_correct`, kept from phase 1). Tomas's last chapter stays unread, and you are alone when the knock comes. | | 3, built 2026-11-16 |
+| The Wrong Picture | Wren's last line gains one sentence: "I did that once." | | 3, built 2026-11-16 |
+| **The Sitter (new)** | Conditions: you answered Mara on nights four to six (`mara_answers`), slid your carbons under 403, got the seventh row right, and at the knock put your eye to your own rose and held still. Five leave. Mara walks into the lobby at dawn with the case, her paintings and your carbons, and hands the police a second file. Cost: she is arrested by her own choice, and the witness in her file is you. You will be called. Last image: her painting of your door, the rose lit. | | 3, built 2026-11-16 |
 
 **Built in this pass (phase 1: make the middle turn).**
 
@@ -1540,8 +1609,9 @@ Key art is a generated image (`DEEP_DIVE.md` section 4) and is not made in this 
 | `n3_tea` | 3D, the office | Tea at One: Lew talks; wheels stop outside the office door for a minute. | 2, built 2026-11-16 |
 | `n5_linen_count` | 2D race | Dora counting at the open cabinet in the blackout; the seventh coin. | 2, built 2026-11-16 |
 
-Still to add, phase 3: `n7_lever_lock` (1D Lockwork; `docs/COLLECTION.md` must name the lever lock
-first) and `end_sitter` (3D).
+Added in phase 3 (2026-11-16): `n7_own_lens` (2D eye) and `end_sitter` (3D, `blender/lobby.build.json`).
+Not added: `n7_lever_lock` (1D Lockwork), because `docs/COLLECTION.md` must name the lever lock first;
+`collection_request.md` asks for that line.
 
 **Phase 2, built 2026-11-16 (tie the layers).** Every item is accepted 2026-11-15, built 2026-11-16.
 
@@ -1570,9 +1640,23 @@ first) and `end_sitter` (3D).
 | 2. Lost property | Lockwork (1D), `n4_lost_property` | The Mosaic (1D): the green spool and the left things. The race (2D): Dora stops two minutes at the cabinet every night after and leaves her trolley against it, so the floor is shut at 33 m and the pipe run is the way past | `rhyme_spool`, `dora_at_cabinet`. Playable in the web build. |
 | 3. The carbons | The Statement (1D) | The slide run (2D, `n7_slide_run`): the pages are the player's carbons, and a valet door takes only a row that is right (`carbon_rows_correct`, `stmt.n1` to `stmt.n6`). The dawn lobby (3D, `dawn_lobby`): every guest whose `exposed.rXXX` is set looks up at the mezzanine | Written into `data/scenes.json` as what the two scenes read. Night seven and the lobby are not in the web build. |
 
-**Waiting for phase 3 (endings and replay).** Wren's 1971 page; the typed Account and its tenth
-line; the lever lock; The Sitter; the changes to the four endings; the second-shift cabinet; the
-remaining art.
+**Phase 3, built 2026-11-16 (endings and replay).** Every item is accepted 2026-11-15, built 2026-11-16.
+
+| Item | Rule | Data |
+| --- | --- | --- |
+| The 1971 page | Behind the booking ledger in the safe (night six): a statement form of 14 November 1971, signed "H. Wren, night auditor"; the row that sent the wrong guest out through the lobby (405, "left by the lobby 05:10") struck through in another hand, "not her"; its seventh line filled, 400, WITNESS. | `wren_1971_read`; art `doc-1971-page` |
+| The typed Account | "Tonight you only confirm." Three answers arrive bent toward Ruth; striking one rings the desk phone once; one left standing is a wrong answer. | `account_typed_struck`, `account_correct` |
+| The seventh row solved | With the five marks (`watcher_marks` 5), each a clue card of the new kind *watcher*: reconcile Mara's dots against your night strip (night four, one dot more than your visits: a second eye uses the roses at 01:00, Dora), then stamp the Account's tenth line, "400: ___" (witness, product, guest, nobody). Witness is true. | `dots_reconciled`, `seventh_row`; art `clue-watcher`, `watcher-dots` to `watcher-ledger`, `stamp-witness` |
+| The carbons under 403 | Once the row is stamped, before the knock: slide the carbons under 403's valet door. | `carbons_to_403` |
+| Your own rose | `n7_own_lens`: at the knock, the eye at your own lens; hold still until the catch ring closes (`hold_still`), or step back (`keep_logging`), or open (`answer_door`). About two minutes, inside night seven's 17 (it replaces the wait at the desk), so the total stays 143. | `final_choice`; art `lens-own-door`, `eye-at-own-rose` |
+| The Sitter | Section 13. | `end_sitter`; `keyart/ending-the-sitter.jpg` |
+| The four endings' costs | Section 13. | `data/endings.json` summaries |
+| The second shift | Section 12. | `shift_number`, `last_ending`; art `doc-second-tags` |
+| Ending-card lettering | The ending's name in the title's deco brass, laid over its generated card. | art `ending-title-*` (5) |
+
+**Still not built.** The lever lock (`collection_request.md`). Every 3D scene, `end_sitter` with
+them, is a design until Blender builds it. The generated art the plan lists (guest figures, room
+plates, Mara's watercolours, hero sketches) is not made in this pass beyond the five ending cards.
 
 **In the web prototypes.** Every mode is three stages (teach, test, twist), remembered per mode.
 The eye: 402 on night one, 401 on night three (the reflection, the photograph), The Sitting.
@@ -1583,6 +1667,25 @@ Statement: night one and its carbon; night four's visitors; night five with thre
 Night Patience: three cut-deck deals (unlimited passes; two passes and a reply card; one pass and
 two contradicting cards, one of them not Fenn's). The Mosaic: three links; the night-three board;
 the typed rows, the scissors and the back of the board. Each file's header says what it cuts.
+
+**Phase 3 in the web build.** The long puzzle runs across the modes through `api.shared`
+(`web/games/behind-the-peephole/_seventh.js`). Its five marks are gathered by play: Mara's dots by
+catching the brass dot in The Sitting (the eye); Dora's chalk by opening lost property (Lockwork);
+the bare seventh pull by finishing night two on the floor (the race); the "aud." column by tying a
+true green rhyme (the Mosaic); the ledger's seventh line under Fenn's answer card, after leaving a
+question on the spike (Night Patience). A brass VII badge in every mode opens the notebook of the
+marks gathered so far. With all five, the Statement offers NIGHT SEVEN: the typed Account, the
+reconciliation, the 1971 page and the tenth line, and where the carbons go (403, all six doors, or
+Wren's envelope). Stamping the row solves the puzzle; the eye then offers your own rose. The game's
+menu shows the finale from then on: the earned ending's name, card and paid-off text. Holding at
+your own rose with the carbons under 403, the row stamped witness, Mara held and answered and no
+bent line standing gives The Sitter; opening gives The Open Door; a bent line standing gives The
+Wrong Picture; the carbons under six doors stand for the slide run and give Under the Door; anything
+else gives The Next Watcher. The choice at your own rose ends the shift; the next is a second shift
+(section 12), with four of its changes in the web build: the tags in lost property, the printed
+seventh line, your own reply card, and Mara's pencil. Fixes: the Statement grid fits 390 px without a
+sideways scroll; the race shows six metres of passage on a phone, not eight, and draws the bell board
+there too.
 
 ## 22. Added for the game
 
@@ -1605,7 +1708,8 @@ six kinds of guest, the seven details, the four roles of the peephole, and the l
 | Accepted 2026-11-15, phase 1 | The watcher's want (see all, never be seen) and need (be seen once, and hold). Wren's creed that a complete file is mercy, and his line. That Mara has known about the rose since night one; the brass dot on her watercolours and her log of the watcher (`mara_dots`); her count and pencil line, "Eleven times. I count too. Don't stop."; "gone". The Sitting. Holding under a knowing guest's look; Answering (two taps, the rose darkened twice); the held page and its three columns. The carbon, the one amendment a morning, the AMENDED stamp, `carbon_rows_correct`. Seven beats in `data/beats.json` (the five dots, The Sitting, her look, the held page) and their clue lines. The chapter cards and the code-drawn plates of 402 and 403. |
 | Phase 2: accepted 2026-11-15, built 2026-11-16 | Dora at your rose (by sound in Tea at One, by sight as the seventh coin), her line and her chalk ticks; the seventh row's marks on the forms, the cabinet door and the bell board; the scenes The Seventh Bell (`n2_seventh_bell`), Tea at One (`n3_tea`), The Linen Count (`n5_linen_count`) and The Sitting as its own scene (`n4_sitting`); the six left things; quiet columns, reply cards, nicked backs and the second hand, the dotted card; bell wires, the parked trolley, the seventh coin; reflections; the rhyme spool, fraying and scissors, the back of the board; typed rows and the strike; the three layer links; twenty flags in `data/flags.json`. |
 | New on 2026-11-16, made while building phase 2, for the author to approve or strike | That Dora counts aloud in the blackout and the player moves on her count. That the knock is at 406 on night five as the race's goal there. The reflection used for the stranger at 401's main door, and that the main door is out of the lens's reach. Dora's lamp on the keyhole during the lost-property lock. The three rhymes (405 and the rook, 402 and the orchid, 406 and the paper boat) and the three lines of Fenn's log they pin. The two typed Statement rows that swap the sisters, and the two typed Mosaic rows that put 406 with 403 and at the Bonded House. Which question earns which of cards ten to twelve. The two contradicting advice cards of night seven's deal. In the web build only: Lockwork's third stage is the lost-property wafer lock, because the lever lock waits for phase 3. |
-| Accepted 2026-11-15, phase 3 (stated in section 21, not yet built) | Fenn's ladder and the new reading of card 12; filling the seventh row, the Account's tenth line and the typed Account; Wren as the first night auditor of 1971 and The 1971 Page; The Hollow Dot; the lever lock; the fifth ending, The Sitter, and the changes to the other four; the second shift's changes; the 2:14 thread across the collection. |
+| Phase 3: accepted 2026-11-15, built 2026-11-16 | Fenn's ladder and the new reading of card 12; filling the seventh row, the *watcher* clue kind, the Account's tenth line and the typed Account; Wren as the first night auditor of 1971 and The 1971 Page; The Hollow Dot; the fifth ending, The Sitter, and the changes to the other four; the second shift's changes; the 2:14 thread across the collection. The lever lock is accepted and not built (`collection_request.md`). |
+| New on 2026-11-16, made while building phase 3, for the author to approve or strike | The 1971 page's contents: its date (14 November 1971), the wrong row (405, "left by the lobby 05:10") and the hand that struck it ("not her"). The four typed Account lines (405 and 406 swapped, the leak named as 406) and the carbon line beside each. The reconciliation's numbers (Mara's dots 1, 1, 2, 1, 1 on nights one, three, four, five, six against one visit each) and Dora as the only answer at 01:00. The four words' readings on the tenth line. The choice of where the carbons go (403, six doors, Wren's envelope) as one moment before the knock. Your own rose as a 2D eye scene (`n7_own_lens`): the eye on the other side, the knocks and the key, the three choices. The Sitter's added condition that no bent Account answer stands (`account_correct` 6 or more), and `hold_still` in The Wrong Picture. The finale texts and every ending's lettering subtitle (A witness, The carbons, I did that once, Stop looking up, The ladder). The second shift's six tags and their things, the printed 400, "You came back. I count too.". In the web build only: Fenn's answer card copies the ledger's seventh line (the safe is not in the web build), the bell pull is credited at the end of night two, and the bare pull rings as you leave the office. |
 
 ### Changes from `docs/ADAPTATIONS.md`
 

@@ -5,6 +5,8 @@
 // Quoted line: "You never see their missions. / You only see their return."
 // Source: creative-writing/vault/04_Book_Concepts/01_Behind_the_Peephole.md (DESIGN.md section 3).
 
+import { ENDINGS, endingOf, runOf, shiftOf } from "./_seventh.js";
+
 export const meta = {
   cover: "assets/stills/behind-the-peephole/02-eye-at-the-hole.jpg",
   palette: { bg: "#13271c", fg: "#efe6cf", accent: "#e0a24a" },
@@ -112,4 +114,18 @@ export function render(root, ctx) {
     progress(v) { p = Math.max(0, Math.min(1, v)); },
     close() { alive = false; cancelAnimationFrame(raf); clearInterval(tipTimer); },
   };
+}
+
+// The finale (phase 3, 2026-11-16): the long puzzle is the seventh row (./_seventh.js). Null until the
+// tenth line is stamped in the Statement; then the ending this shift has earned, or, once a shift is
+// over, the ending it closed on. The text pays the secret off: the seventh row of every file is the
+// watcher, sold with the six as the witness who vouches for them.
+export function finale({ shared, keyart }) {
+  if (!shared) return null;
+  const r = runOf(shared);
+  const id = endingOf(r, shared.get("sitting", {}) || {}) || shiftOf(shared).last;
+  const e = ENDINGS[id];
+  if (!e) return null;
+  const pending = r.solved && !r.lens ? " Your own rose is still to come, in The eye at the hole; what you do there can change this." : "";
+  return { title: e.title, text: e.text + pending, image: keyart ? keyart(e.card) : "" };
 }

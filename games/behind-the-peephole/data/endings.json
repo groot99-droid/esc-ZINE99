@@ -1,10 +1,45 @@
 {
   "endings": [
     {
+      "id": "the_sitter",
+      "name": "The Sitter",
+      "as_written": false,
+      "priority": 1,
+      "when": {
+        "all": [
+          {
+            "is": "final_choice",
+            "eq": "hold_still"
+          },
+          {
+            "is": "carbons_to_403",
+            "eq": true
+          },
+          {
+            "is": "seventh_row",
+            "eq": "witness"
+          },
+          {
+            "is": "mara_answers",
+            "gte": 3
+          },
+          {
+            "is": "account_correct",
+            "gte": 6
+          }
+        ]
+      },
+      "summary": "You answered Mara on nights four to six, slid your carbons under 403, stamped the seventh row right, and at the knock held still at your own rose. Five leave. At dawn Mara walks into the lobby with the case, her paintings and your carbons and hands the police a second file. She is arrested by her own choice, and the witness in her file is you: you will be called. Last image: her painting of your door, the rose lit.",
+      "final_scenes": [
+        "n7_own_lens",
+        "end_sitter"
+      ]
+    },
+    {
       "id": "under_the_door",
       "name": "Under the Door",
       "as_written": false,
-      "priority": 1,
+      "priority": 2,
       "when": {
         "all": [
           {
@@ -29,7 +64,7 @@
           }
         ]
       },
-      "summary": "You slide the truth under six doors. The guests learn they were gathered on purpose and leave together before dawn; the mercenary goes the other way alone. You are left in the passage when the knock comes.",
+      "summary": "You slide your carbons, not Wren's copy, under six doors. Only the rows that are right on them are believed. The guests learn they were gathered on purpose and leave together before dawn; the mercenary goes the other way alone, his daughter's last chapter unread. You are alone in the passage when the knock comes.",
       "final_scenes": [
         "n7_slide_run",
         "end_under_door"
@@ -39,7 +74,7 @@
       "id": "wrong_picture",
       "name": "The Wrong Picture",
       "as_written": false,
-      "priority": 2,
+      "priority": 3,
       "when": {
         "all": [
           {
@@ -51,6 +86,10 @@
               {
                 "is": "final_choice",
                 "eq": "slide_pages"
+              },
+              {
+                "is": "final_choice",
+                "eq": "hold_still"
               }
             ]
           },
@@ -68,7 +107,7 @@
           }
         ]
       },
-      "summary": "Your deductions are mostly wrong and the file is believed. At dawn a guest who did not do what you wrote is led out through the lobby.",
+      "summary": "Your deductions are mostly wrong, or Wren's typed answers stand, and the file is believed. At dawn a guest who did not do what you wrote is led out through the lobby. Wren on the lobby phone: \"Thank you. That will be all. I did that once.\"",
       "final_scenes": [
         "dawn_lobby",
         "end_wrong_picture"
@@ -78,12 +117,12 @@
       "id": "open_door",
       "name": "The Open Door",
       "as_written": false,
-      "priority": 3,
+      "priority": 4,
       "when": {
         "is": "final_choice",
         "eq": "answer_door"
       },
-      "summary": "You answer the 2:14 knock and walk out with the stranger. Nobody logs the last night, and the guest you watched most does not come back.",
+      "summary": "You answer the 2:14 knock and walk out with the stranger. Walking out does not break the file: from the alley the office lamp is still on, and Dora is finishing your log. The guest you watched most does not come back.",
       "final_scenes": [
         "n7_your_door",
         "end_open_door"
@@ -93,9 +132,9 @@
       "id": "next_watcher",
       "name": "The Next Watcher",
       "as_written": false,
-      "priority": 4,
+      "priority": 5,
       "when": true,
-      "summary": "You keep logging with an accurate hand. The file is complete, every guest is sold as predicted, and next season a new watcher's lens looks in on you.",
+      "summary": "You keep logging with an accurate hand. The file is complete and every guest is sold as predicted. The contract for next season comes with Fenn's old key, one rung up the ladder, and the cabinet holds six new things you can name; next season a new watcher's lens looks in on you.",
       "final_scenes": [
         "dawn_lobby",
         "end_next_watcher"

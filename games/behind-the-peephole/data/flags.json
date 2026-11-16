@@ -446,12 +446,13 @@
       "name": "final_choice",
       "type": "enum",
       "default": "none",
-      "description": "The one choice on night seven. Defaults to keep_logging if the player does not act by 02:44.",
+      "description": "The one choice on night seven. Defaults to keep_logging if the player does not act by 02:44. hold_still (phase 3, accepted 2026-11-15, built 2026-11-16): at the knock the player puts an eye to the rose in the office door and holds under the look from outside until the catch ring closes; offered only once seventh_row is stamped (not none).",
       "values": [
         "none",
         "keep_logging",
         "answer_door",
-        "slide_pages"
+        "slide_pages",
+        "hold_still"
       ]
     },
     {
@@ -653,7 +654,64 @@
       "name": "watcher_marks",
       "type": "counter",
       "default": 0,
-      "description": "Accepted 2026-11-15, built 2026-11-16. Marks of the seventh row found, 0 to 5: Mara's dots, Dora's chalk ticks inside the lost-property door, the bare seventh bell pull, the \"aud.\" column in Fenn's log, the seventh line of the booking ledger. Phase 3 reads it for the Account's tenth line."
+      "description": "Accepted 2026-11-15, built 2026-11-16. Marks of the seventh row found, 0 to 5: Mara's dots, Dora's chalk ticks inside the lost-property door, the bare seventh bell pull, the \"aud.\" column in Fenn's log, the seventh line of the booking ledger. With all five the Account on night seven gains its tenth line (phase 3, built 2026-11-16)."
+    },
+    {
+      "name": "wren_1971_read",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16 (phase 3). Night six: behind the booking ledger in the safe, the player read the 1971 page, a statement form signed \"H. Wren, night auditor\", one row struck through in another hand and its seventh line filled: 400, witness."
+    },
+    {
+      "name": "account_typed_struck",
+      "type": "counter",
+      "default": 0,
+      "description": "Accepted 2026-11-15, built 2026-11-16 (phase 3). The Account arrives already typed (\"Tonight you only confirm\"); three of its answers are bent toward Ruth. Typed answers the player struck, 0 to 3; each strike rings the desk phone once. An answer left standing counts against account_correct."
+    },
+    {
+      "name": "dots_reconciled",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16 (phase 3). On the Account page the player set Mara's dots against their own night strip and named night four, where she has one dot more than they have visits, and Dora as the second eye at 01:00."
+    },
+    {
+      "name": "seventh_row",
+      "type": "enum",
+      "default": "none",
+      "values": [
+        "none",
+        "witness",
+        "product",
+        "guest",
+        "nobody"
+      ],
+      "description": "Accepted 2026-11-15, built 2026-11-16 (phase 3). The Account's tenth line, \"400: ___\", stamped by the player; needs watcher_marks 5 and dots_reconciled. The true answer is witness: Wren sells six lives and the signed witness who vouches for them. Any stamped value offers final_choice hold_still; only witness counts toward The Sitter."
+    },
+    {
+      "name": "carbons_to_403",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15, built 2026-11-16 (phase 3). Night seven, before the knock: the player slid their carbons under 403's valet door (once seventh_row is stamped). Mara's second file is built from them."
+    },
+    {
+      "name": "shift_number",
+      "type": "counter",
+      "default": 1,
+      "description": "Accepted 2026-11-15, built 2026-11-16 (phase 3). Which shift this run is: 1, or 2 and more for a second shift after any ending (section 12, Second shift)."
+    },
+    {
+      "name": "last_ending",
+      "type": "enum",
+      "default": "none",
+      "values": [
+        "none",
+        "the_sitter",
+        "under_the_door",
+        "wrong_picture",
+        "open_door",
+        "next_watcher"
+      ],
+      "description": "Accepted 2026-11-15, built 2026-11-16 (phase 3). The ending the previous shift closed on; a second shift reads it (the cabinet's six tags, the printed tenth line, your own reply card in the deck)."
     }
   ]
 }

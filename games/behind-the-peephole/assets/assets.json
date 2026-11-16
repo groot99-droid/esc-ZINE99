@@ -147,7 +147,8 @@
       "name": "The lobby",
       "scenes": [
         "dawn_lobby",
-        "end_wrong_picture"
+        "end_wrong_picture",
+        "end_sitter"
       ],
       "dimensions_m": [
         20,
@@ -682,7 +683,8 @@
       "role": "hero",
       "scenes": [
         "dawn_lobby",
-        "end_wrong_picture"
+        "end_wrong_picture",
+        "end_sitter"
       ],
       "size_m": [
         2.2,
@@ -701,7 +703,8 @@
       "role": "hero",
       "scenes": [
         "dawn_lobby",
-        "end_wrong_picture"
+        "end_wrong_picture",
+        "end_sitter"
       ],
       "size_m": [
         4.5,
@@ -878,7 +881,8 @@
       "role": "fill",
       "scenes": [
         "dawn_lobby",
-        "end_wrong_picture"
+        "end_wrong_picture",
+        "end_sitter"
       ],
       "size_m": [
         0.85,
@@ -897,7 +901,8 @@
       "role": "fill",
       "scenes": [
         "dawn_lobby",
-        "end_wrong_picture"
+        "end_wrong_picture",
+        "end_sitter"
       ],
       "size_m": [
         1.1,

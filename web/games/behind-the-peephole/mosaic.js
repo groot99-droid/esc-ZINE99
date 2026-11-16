@@ -19,6 +19,9 @@
 // Set-piece: unpin the board and turn it over. Layer link (api.shared "lostProperty", set by
 // Lockwork): the green RHYME spool and three of the six left things, each a rhyme with one guest.
 import { staged } from "./_stages.js";
+import { mark } from "./_seventh.js";
+// Phase 3 (2026-11-16): a true green rhyme pins a line of Fenn's log, and the log page shows its fourth
+// column, "aud.", initialled on every row: the fourth mark of the seventh row (api.shared "seventh").
 
 const TYPES = [
   { id: "met", name: "met", col: "#b8322a", dash: "", key: "1" },
@@ -427,7 +430,7 @@ export default staged(P, ["three plain links", "more links than lengths", "a tau
         if (rhymeLen <= 0) { say("The green spool is empty.", true); return; }
         const th = THINGS.find((x) => (x.id === a && x.with === b) || (x.id === b && x.with === a));
         rhymeLen--; threads.push({ a, b, type: "rhyme", taut: !!th, rhyme: true, rests: th ? "a rhyme: last season's thing, this season's habit" : "" });
-        if (th) { say(`A rhyme. ${th.slip}`); tell("The green thread is from lost property. It does not join two people. It joins a season to the one before."); questions.push("LAST SEASON · " + th.name); paintQs(); }
+        if (th) { const first = mark(shared, "aud"); say(`A rhyme. ${th.slip}${first ? " Beside it on the log page a fourth column, headed “aud.”, initialled on every row: the auditor signed for each of them." : ""}`); tell("The green thread is from lost property. It does not join two people. It joins a season to the one before."); questions.push("LAST SEASON · " + th.name); paintQs(); }
         else say("The green thread hangs slack. A left thing rhymes with one guest's habit, or with nobody's.", true);
         render(); return;
       }
@@ -584,4 +587,4 @@ export default staged(P, ["three plain links", "more links than lengths", "a tau
         root.innerHTML = "";
       },
     };
-});
+}, { vii: "right:8px;top:8px" });

@@ -292,11 +292,22 @@ _pictures(5, "five", "five rivers, some dots filled")
 def sitting(a):
     """Gouache overlay for The Sitting on night four: Mara's picture pinned facing the lens, a painting of the
     valet door with the rose a black dot, and her pencil line under it."""
+    _sitting(a, "Eleven times. I count too.")
+
+
+@overlay("sitting-again", 403, "the picture that faces the rose, a second shift")
+def sitting_again(a):
+    """Gouache overlay for The Sitting on a second shift: the same picture of the valet door pinned facing the
+    lens, and her pencil line changed: You came back. I count too."""
+    _sitting(a, "You came back. I count too.")
+
+
+def _sitting(a, line):
     s = Paint(a, 403, surface="#5a3a1e", horizon=480)
     s.light(0.6, r=0.7)
     _watercolour(s, 150, 40, 340, 330, -2, "door", True)
     a.open("g", transform="rotate(-2 320 205)")
-    kit.hand(a, 320, 335, ["Eleven times. I count too."], size=21, color="#4a4a4a", tilt=1.2)
+    kit.hand(a, 320, 335, [line], size=21, color="#4a4a4a", tilt=1.2)
     kit.hand(a, 320, 361, ["Don't stop."], size=21, color="#4a4a4a", tilt=1.2)
     a.close()
     # her gloved hand at the lower edge, still holding the pencil

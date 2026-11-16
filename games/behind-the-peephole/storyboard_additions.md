@@ -10,3 +10,13 @@ section's numbered panels end at 13; these continue it. By story order they belo
 | 15 | 3D | `n3_tea` | The office at 01:00 on night three, from the chair, facing the door to the passage; Lew's tray on the desk | Lew talks; trolley wheels stop outside the door for a minute, then go on | Push-in on a rose |  |
 | 16 | 2D | `n4_sitting` | The eye at 403, 03:40: tonight's picture pinned facing the rose, the valet door with the rose a black dot, pencil underneath | Mara looks straight in. Step back and she writes "gone"; hold, and the catch ring closes on her eye. Two taps: darken the rose twice for yes | Pull-out |  |
 | 17 | 2D | `n5_linen_count` | The passage side-on in the blackout: six coins of light, a candle at the open lost-property cabinet, Dora counting | "Somebody has to count what they leave." Move on her count, be still when she listens; at 406 for the knock, turn round: a seventh coin, in your own door, and a figure crosses it | Cut |  |
+
+## Phase 3 (2026-11-16)
+
+Two more rows for section 2 of `docs/STORYBOARDS.md`: 18 belongs after panel 11 (`n7_your_door`), and
+the new end panel after the other three. No new stills; the ending card is `keyart/ending-the-sitter.jpg`.
+
+| # | Layer | Scene | Shot | Beat | Into next | Still |
+| --- | --- | --- | --- | --- | --- | --- |
+| 18 | 2D | `n7_own_lens` | Your own rose from inside the office at 2:14: the passage bowed in the lens, six roses down its length, an eye pressed close on the far side | Offered once the seventh row is stamped. Hold still under the look until the catch ring closes; or step back; or open the door | Fade |  |
+| E | 3D | `end_sitter` | The lobby floor by the reception desk at 06:00 | The Sitter: Mara sets the case, her watercolours and your carbons in front of two officers and holds out her wrists; five leave by the revolving door. Last image: her painting of your door, the rose lit | Fade (end) |  |

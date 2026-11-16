@@ -789,6 +789,122 @@
       },
       "hide": [],
       "interactions": []
+    },
+    "end_sitter": {
+      "note": "The Sitter. 06:00, the lobby floor by the reception desk, look only: Mara Linde crosses from the service door to the desk with the case, a folder of watercolours and a bundle of blue carbons, sets them down in front of two officers, and holds out her wrists. Five guests leave by the revolving door behind her. The last image is a close view of the top watercolour on the desk: a door at the end of a passage, its rose a lit dot. No face of the watcher anywhere; Mara never looks up at the mezzanine.",
+      "world": {
+        "color": [
+          0.24,
+          0.27,
+          0.28
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "revolving-door-dawn",
+          "type": "AREA",
+          "location": [
+            -9.5,
+            -1.0,
+            2.0
+          ],
+          "energy": 400,
+          "size": 3.0,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            0,
+            -1.0,
+            0.5
+          ]
+        },
+        {
+          "name": "window-dawn-1",
+          "type": "AREA",
+          "location": [
+            -5.0,
+            -6.6,
+            3.5
+          ],
+          "energy": 300,
+          "size": 2.0,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            -5.0,
+            2.0,
+            0
+          ]
+        },
+        {
+          "name": "window-dawn-2",
+          "type": "AREA",
+          "location": [
+            0.0,
+            -6.6,
+            3.5
+          ],
+          "energy": 300,
+          "size": 2.0,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            0.0,
+            2.0,
+            0
+          ]
+        },
+        {
+          "name": "chandelier",
+          "type": "POINT",
+          "location": [
+            -3.0,
+            -1.0,
+            6.6
+          ],
+          "energy": 600,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.72,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          3.4,
+          1.2,
+          1.62
+        ],
+        "look_at": [
+          2.0,
+          4.3,
+          1.0
+        ],
+        "lens_mm": 35,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          3.4,
+          1.2,
+          0
+        ],
+        "facing_deg": 90
+      },
+      "hide": [],
+      "interactions": []
     }
   }
 }

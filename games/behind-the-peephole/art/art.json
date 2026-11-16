@@ -1,7 +1,47 @@
 {
  "game": "behind-the-peephole",
- "count": 177,
+ "count": 194,
  "assets": [
+  {
+   "id": "ending-title-next-watcher",
+   "group": "title",
+   "title": "Ending-card lettering: The Next Watcher",
+   "w": 1600,
+   "h": 260,
+   "row": "Title lettering; the \"o\" a lit rose"
+  },
+  {
+   "id": "ending-title-open-door",
+   "group": "title",
+   "title": "Ending-card lettering: The Open Door",
+   "w": 1600,
+   "h": 260,
+   "row": "Title lettering; the \"o\" a lit rose"
+  },
+  {
+   "id": "ending-title-the-sitter",
+   "group": "title",
+   "title": "Ending-card lettering: The Sitter",
+   "w": 1600,
+   "h": 260,
+   "row": "Title lettering; the \"o\" a lit rose"
+  },
+  {
+   "id": "ending-title-under-the-door",
+   "group": "title",
+   "title": "Ending-card lettering: Under The Door",
+   "w": 1600,
+   "h": 260,
+   "row": "Title lettering; the \"o\" a lit rose"
+  },
+  {
+   "id": "ending-title-wrong-picture",
+   "group": "title",
+   "title": "Ending-card lettering: The Wrong Picture",
+   "w": 1600,
+   "h": 260,
+   "row": "Title lettering; the \"o\" a lit rose"
+  },
   {
    "id": "title-lettering",
    "group": "title",
@@ -9,6 +49,14 @@
    "w": 1600,
    "h": 500,
    "row": "Title lettering; the \"o\" a lit rose"
+  },
+  {
+   "id": "eye-at-own-rose",
+   "group": "figures",
+   "title": "An eye at your own rose, from the passage side",
+   "w": 480,
+   "h": 320,
+   "row": "Lew, Dora, Fenn, 3 poses each (Fenn from behind)"
   },
   {
    "id": "sprite-dora-trolley",
@@ -83,6 +131,14 @@
    "row": "Gap strips"
   },
   {
+   "id": "lens-own-door",
+   "group": "backdrops",
+   "title": "Your own rose, from inside: the passage at 2:14",
+   "w": 960,
+   "h": 960,
+   "row": "Room plates, gouache paint-over"
+  },
+  {
    "id": "overlay-401-photograph",
    "group": "backdrops",
    "title": "Plate overlay, 401: the photograph, face up",
@@ -134,6 +190,14 @@
    "id": "overlay-403-sitting",
    "group": "backdrops",
    "title": "Plate overlay, 403: the picture that faces the rose",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-403-sitting-again",
+   "group": "backdrops",
+   "title": "Plate overlay, 403: the picture that faces the rose, a second shift",
    "w": 640,
    "h": 480,
    "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
@@ -875,6 +939,14 @@
    "row": "Clue-kind icons, the seven details"
   },
   {
+   "id": "clue-watcher",
+   "group": "pieces",
+   "title": "Clue kind: Watcher",
+   "w": 160,
+   "h": 160,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
    "id": "pin-bonded-house",
    "group": "pieces",
    "title": "Mosaic pin card: Bonded House",
@@ -1075,6 +1147,46 @@
    "row": "Race sprites (watcher, Dora and trolley, Fenn, wire, seventh coin)"
   },
   {
+   "id": "watcher-aud",
+   "group": "pieces",
+   "title": "The seventh row, mark 4 of 5: Fenn's aud. column",
+   "w": 320,
+   "h": 220,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "watcher-bell",
+   "group": "pieces",
+   "title": "The seventh row, mark 3 of 5: The bare pull",
+   "w": 320,
+   "h": 220,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "watcher-chalk",
+   "group": "pieces",
+   "title": "The seventh row, mark 2 of 5: Dora's ticks",
+   "w": 320,
+   "h": 220,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "watcher-dots",
+   "group": "pieces",
+   "title": "The seventh row, mark 1 of 5: Mara's dots",
+   "w": 320,
+   "h": 220,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "watcher-ledger",
+   "group": "pieces",
+   "title": "The seventh row, mark 5 of 5: The ledger",
+   "w": 320,
+   "h": 220,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
    "id": "chapter-dawn",
    "group": "chapters",
    "title": "Chapter card: Dawn: The last lens",
@@ -1227,6 +1339,14 @@
    "row": "Ornaments (catch ring, watch face, bell strip, wren blind stamp, strip dots)"
   },
   {
+   "id": "ui-seventh-row",
+   "group": "ui",
+   "title": "The seventh row: the notebook badge",
+   "w": 160,
+   "h": 160,
+   "row": "Ornaments (catch ring, watch face, bell strip, wren blind stamp, strip dots)"
+  },
+  {
    "id": "ui-strip-dots",
    "group": "ui",
    "title": "The night strip: caught, missed, and the knock",
@@ -1273,6 +1393,22 @@
    "w": 440,
    "h": 320,
    "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "doc-1971-page",
+   "group": "documents",
+   "title": "The 1971 page: a statement form signed by H. Wren, night auditor",
+   "w": 800,
+   "h": 1100,
+   "row": "Forms S-1 to S-7 and four stamps"
+  },
+  {
+   "id": "doc-second-tags",
+   "group": "documents",
+   "title": "Second shift: lost property, six new tags",
+   "w": 800,
+   "h": 480,
+   "row": "The six left things"
   },
   {
    "id": "form-s1",

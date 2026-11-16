@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="ui-seventh-row-t ui-seventh-row-d">
+<title id="ui-seventh-row-t">The seventh row: the notebook badge</title>
+<desc id="ui-seventh-row-d">A round brass badge for the notebook of the seventh row: a small rose and the numeral VII in deco line.</desc>
+<defs><radialGradient id="ui-seventh-row-rg1" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient><radialGradient id="ui-seventh-row-rg2" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient><radialGradient id="ui-seventh-row-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#fff8e0" stop-opacity="1"/><stop offset="60%" stop-color="#f1c77c" stop-opacity="1"/><stop offset="100%" stop-color="#f1c77c" stop-opacity="0.7"/></radialGradient></defs>
+<circle cx="80" cy="80" r="78" fill="url(#ui-seventh-row-rg1)" stroke="#5d4518" stroke-width="3"/>
+<circle cx="80" cy="80" r="64" fill="#12241b" stroke="#5d4518" stroke-width="1.5"/>
+<path d="M72.8,45.6a7.2,7.2 0 1,0 14.4,0a7.2,7.2 0 1,0 -14.4,0M81.6,49.2a7.2,7.2 0 1,0 14.4,0a7.2,7.2 0 1,0 -14.4,0M85.2,58a7.2,7.2 0 1,0 14.4,0a7.2,7.2 0 1,0 -14.4,0M81.6,66.8a7.2,7.2 0 1,0 14.4,0a7.2,7.2 0 1,0 -14.4,0M72.8,70.4a7.2,7.2 0 1,0 14.4,0a7.2,7.2 0 1,0 -14.4,0M64,66.8a7.2,7.2 0 1,0 14.4,0a7.2,7.2 0 1,0 -14.4,0M60.4,58a7.2,7.2 0 1,0 14.4,0a7.2,7.2 0 1,0 -14.4,0M64,49.2a7.2,7.2 0 1,0 14.4,0a7.2,7.2 0 1,0 -14.4,0" fill="url(#ui-seventh-row-rg2)" stroke="#5d4518" stroke-width="0.6"/>
+<circle cx="80" cy="58" r="12.4" fill="url(#ui-seventh-row-rg2)" stroke="#5d4518" stroke-width="0.6"/>
+<circle cx="80" cy="58" r="8.8" fill="none" stroke="#5d4518" stroke-width="0.5" opacity="0.7"/>
+<path d="M70,56 A10.4,10.4 0 0,1 82,47.6" fill="none" stroke="#fff3c8" stroke-width="1" opacity="0.6" stroke-linecap="round"/>
+<circle cx="80" cy="58" r="5.2" fill="#0a0806"/>
+<circle cx="80" cy="58" r="4" fill="url(#ui-seventh-row-rg3)"/>
+<g fill="none" stroke="#e3c47a" stroke-width="0.140" stroke-linecap="round" stroke-linejoin="round">
+<path d="M0,0 L.34,1 L.68,0" transform="translate(58.6 90) scale(34)"/>
+<path d="M.02,0 V1 h.004" transform="translate(90.2 90) scale(34)"/>
+<path d="M.02,0 V1 h.004" transform="translate(100.1 90) scale(34)"/>
+</g>
+</svg>

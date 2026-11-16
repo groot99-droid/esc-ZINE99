@@ -3,9 +3,13 @@
 // (api.store: "reached", "at"), hands the mode a stage index, and turns a win on stages one and two
 // into a choice: go on to the next stage, or stop here with that result. A loss or a "done" passes
 // straight through to api.end, and Play again starts the same stage.
+// Phase 3 (2026-11-16): opts.vii places the notebook of the seventh row (./_seventh.js) on the mode,
+// and opts.extra is a fourth button, NIGHT SEVEN, offered only when extra.ready(api) says the long
+// puzzle has reached this mode (the tenth line in the Statement, your own rose in the eye).
+import { notebook } from "./_seventh.js";
 export const STAGE_NAMES = ["TEACH", "TEST", "TWIST"];
 
-export function staged(P, titles, play) {
+export function staged(P, titles, play, opts = {}) {
   return {
     mount(root, api) {
       let reached = Math.max(0, Math.min(2, api.store.get("reached", 0) | 0));
@@ -14,13 +18,15 @@ export function staged(P, titles, play) {
       const host = document.createElement("div");
       host.style.cssText = "position:absolute;inset:0";
       root.appendChild(host);
+      const nb = notebook(root, api, opts.vii);
+      const extra = opts.extra && opts.extra.ready(api) ? opts.extra : null;
       const pal = api.palette || {};
       function start(i) {
         if (dead) return;
         if (inner) inner.unmount();
         if (card) { card.remove(); card = null; }
         host.innerHTML = "";
-        at = i; api.store.set("at", at);
+        if (i < 3) { at = i; api.store.set("at", at); }
         const ctx = {
           stage: i, reached, name: STAGE_NAMES[i], title: titles[i],
           // a row of three stage buttons for the mode's own opening card
@@ -40,12 +46,26 @@ export function staged(P, titles, play) {
               b.addEventListener("click", () => { if (k !== i && k <= reached) start(k); });
               d.appendChild(b);
             });
+            if (extra) {
+              const b = document.createElement("button");
+              b.type = "button"; b.className = btnClass; b.dataset.stage = 3;
+              b.style.cssText = "flex:1 1 100%;font-size:12px;line-height:1.25;padding:6px 6px;border-style:double;border-width:3px" + (i === 3 ? ";outline:2px solid currentColor;outline-offset:1px" : "");
+              b.innerHTML = `<b>VII · NIGHT SEVEN</b><br><span style="font-weight:400;letter-spacing:0">${extra.title}</span>`;
+              b.addEventListener("click", () => { if (i !== 3) start(3); });
+              d.appendChild(b);
+            }
             return d;
           },
         };
+        if (i === 3) {
+          const xapi = Object.assign({}, api, { end(result = {}) { if (!dead) { nb.refresh(); api.end(result); } } });
+          inner = extra.play(host, xapi, Object.assign(ctx, { name: "NIGHT SEVEN", title: extra.title })) || null;
+          return;
+        }
         const sapi = Object.assign({}, api, {
           end(result = {}) {
             if (dead) return;
+            nb.refresh();
             if (result.outcome !== "win") { api.end(result); return; }
             if (i >= 2) { api.store.set("cleared", true); api.end(result); return; }
             reached = Math.max(reached, i + 1); api.store.set("reached", reached); api.store.set("at", i + 1);
@@ -69,7 +89,7 @@ export function staged(P, titles, play) {
         inner = play(host, sapi, ctx) || null;
       }
       start(at);
-      return { unmount() { dead = true; if (inner) inner.unmount(); inner = null; root.innerHTML = ""; } };
+      return { unmount() { dead = true; if (inner) inner.unmount(); inner = null; nb.remove(); root.innerHTML = ""; } };
     },
   };
 }

@@ -22,6 +22,11 @@
 // The seventh row: under 406 every form has one more ruled line, with nothing printed in it.
 // Carbons are written to api.shared ("carbons": rows right per night) for the slide run and the lobby.
 import { staged } from "./_stages.js";
+import { isSecond, shiftOf } from "./_seventh.js";
+import { tenthExtra } from "./_tenth.js";
+// Phase 3 (2026-11-16): with the five marks of the seventh row in, NIGHT SEVEN offers the tenth line
+// (./_tenth.js), where the long puzzle is solved. Second shift: the seventh ruled line is printed
+// "400", with the word stamped on the first shift showing through in carbon.
 
 const ROOMS0 = ["r401", "r402", "r403", "r404", "r405", "r406"];
 const RETURN0 = { r402: "23:25", r406: "00:05", r404: "00:45", r401: "01:30", r405: "02:05", r403: "02:45" };
@@ -145,7 +150,7 @@ export default staged(P, ["one grid, and its carbon", "row and column at once", 
     .${P}grid th.c{height:124px;vertical-align:bottom;width:46px;min-width:46px;max-width:46px;position:relative;padding:0}
     .${P}grid th.c span{position:absolute;left:24px;bottom:6px;transform:rotate(-55deg);transform-origin:left bottom;white-space:nowrap;font-size:13px}
     .${P}grid th.c.hl span{background:rgba(224,162,74,.4)}
-    @media (max-width:520px){.${P}gwrap{padding-right:30px}.${P}sheet{padding-left:26px;padding-right:12px}.${P}sheet::before{left:7px}.${P}grid td,.${P}grid th.c{width:39px;min-width:39px;max-width:39px}.${P}grid th.c span{left:20px;font-size:12px}}
+    @media (max-width:520px){.${P}gwrap{padding-right:40px}.${P}sheet{padding-left:22px;padding-right:8px;width:calc(100% - 12px);margin-top:8px}.${P}sheet::before{left:5px}.${P}grid td,.${P}grid th.c{width:34px;min-width:34px;max-width:34px}.${P}grid td{height:38px;font-size:19px}.${P}grid th.c{height:104px}.${P}grid th.c span{left:17px;font-size:11px}.${P}grid th.r{font-size:14px;padding-right:4px}.${P}grid th.r small{font-size:10px}}
     .${P}grid th.r{text-align:left;white-space:nowrap;padding-right:8px;font-size:15px}
     .${P}grid th.r small{display:block;font-weight:400;font-size:12px;opacity:.85}
     .${P}grid td{width:46px;height:42px;border:1.3px solid ${C.carbon};text-align:center;font-size:22px;cursor:pointer;user-select:none;position:relative;transition:background .12s}
@@ -339,7 +344,8 @@ export default staged(P, ["one grid, and its carbon", "row and column at once", 
     });
     { // the seventh row: ruled, and empty
       const tr = document.createElement("tr"); tr.className = "seventh";
-      tr.innerHTML = `<th class="r" scope="row" aria-label="An empty ruled line">&nbsp;</th>` + PLACES.map(() => `<td style="cursor:default" aria-hidden="true"></td>`).join("");
+      if (isSecond(shared)) { const wd = String(shiftOf(shared).word || "").toUpperCase(); tr.innerHTML = `<th class="r" scope="row" aria-label="The seventh line, printed this time: 400${wd ? ", and " + wd + " in carbon" : ""}">400<small>PRINTED</small></th><td colspan="${PLACES.length}" style="cursor:default;text-align:left;font-size:15px;letter-spacing:.2em;color:rgba(42,58,140,.5);padding-left:10px">${wd || "________"}</td>`; }
+      else tr.innerHTML = `<th class="r" scope="row" aria-label="An empty ruled line">&nbsp;</th>` + PLACES.map(() => `<td style="cursor:default" aria-hidden="true"></td>`).join("");
       table.appendChild(tr);
     }
 
@@ -645,4 +651,4 @@ export default staged(P, ["one grid, and its carbon", "row and column at once", 
         root.innerHTML = "";
       },
     };
-});
+}, { vii: "right:8px;top:8px", extra: tenthExtra });

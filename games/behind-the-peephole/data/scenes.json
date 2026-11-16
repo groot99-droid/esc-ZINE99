@@ -1041,7 +1041,9 @@
         "seen_by_staff",
         "seen_by_stranger",
         "stmt.n1",
-        "rows_correct"
+        "rows_correct",
+        "shift_number",
+        "last_ending"
       ],
       "writes": [
         "night"
@@ -1163,7 +1165,8 @@
         "night",
         "shift_clock",
         "seen_by_staff",
-        "dora_at_cabinet"
+        "dora_at_cabinet",
+        "seventh_row"
       ],
       "writes": [
         "shift_clock",
@@ -1175,7 +1178,8 @@
         "suspicion.r405",
         "suspicion.r406",
         "bell_wires",
-        "trolley_moved"
+        "trolley_moved",
+        "carbons_to_403"
       ],
       "next": [
         "n7_shift_eye",
@@ -1257,7 +1261,9 @@
       "exit": "pull-out",
       "reads": [
         "shift_clock",
-        "seen_by_staff"
+        "seen_by_staff",
+        "shift_number",
+        "last_ending"
       ],
       "writes": [
         "lost_property_open",
@@ -1402,7 +1408,8 @@
       "writes": [
         "safe_open",
         "ledger_read",
-        "shift_clock"
+        "shift_clock",
+        "wren_1971_read"
       ],
       "next": [
         "n6_back_office"
@@ -1821,12 +1828,19 @@
       "reads": [
         "beats",
         "statements",
-        "links"
+        "links",
+        "watcher_marks",
+        "wren_1971_read",
+        "mara_dots",
+        "carbon_rows_correct"
       ],
       "writes": [
         "account_correct",
         "account_scapegoat",
-        "statements"
+        "statements",
+        "account_typed_struck",
+        "dots_reconciled",
+        "seventh_row"
       ],
       "next": [
         "n7_patience"
@@ -1842,7 +1856,8 @@
       "reads": [
         "link.one_hand",
         "seen_by_stranger",
-        "card.own_door"
+        "card.own_door",
+        "seventh_row"
       ],
       "writes": [
         "own_lens_seen",
@@ -1851,7 +1866,8 @@
       "next": [
         "n7_slide_run",
         "end_open_door",
-        "dawn_lobby"
+        "dawn_lobby",
+        "n7_own_lens"
       ]
     },
     {
@@ -1884,6 +1900,29 @@
       ],
       "next": [
         "end_under_door",
+        "dawn_lobby"
+      ]
+    },
+    {
+      "id": "n7_own_lens",
+      "layer": "2d",
+      "name": "Your own rose",
+      "chapter": "n7",
+      "mode": "eye",
+      "enter": "push-in",
+      "exit": "fade",
+      "reads": [
+        "seventh_row",
+        "carbons_to_403",
+        "card.own_door",
+        "mara_answers"
+      ],
+      "writes": [
+        "final_choice",
+        "own_lens_seen"
+      ],
+      "next": [
+        "end_sitter",
         "dawn_lobby"
       ]
     },
@@ -1952,6 +1991,19 @@
       "exit": "fade",
       "reads": [
         "account_scapegoat"
+      ]
+    },
+    {
+      "id": "end_sitter",
+      "layer": "3d",
+      "name": "The second file",
+      "chapter": "dawn",
+      "enter": "fade",
+      "exit": "fade",
+      "reads": [
+        "carbons_to_403",
+        "seventh_row",
+        "mara_answers"
       ]
     }
   ]

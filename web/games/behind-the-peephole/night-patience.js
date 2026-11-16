@@ -19,6 +19,11 @@
 // api.shared ("quiet"), and the eye at the hole gives that room a longer first window.
 // Cuts: one reply exchange, not three; the cut decks.
 import { staged } from "./_stages.js";
+import { mark, isSecond, shiftOf } from "./_seventh.js";
+// Phase 3 (2026-11-16): Fenn's answer under column six (TEST, after a reply card) carries, copied small
+// beneath it, the booking ledger's seventh line: the fifth mark of the seventh row (api.shared
+// "seventh"). Second shift: your own reply card from the first shift is already on the spike on night
+// three, in your hand, before you have written anything.
 
 const STAGES = [
   { night: 3, top: 8, passes: Infinity, columns: [["7D"], ["2H", "6S"], ["6D", "8S", "5C"], ["3S", "4C", "4H", "3H"], ["AH", "6C", "AS", "AD", "8H"], ["7C", "4D", "7H", "5H", "2C", "7S"]], stock: ["3C", "5S", "2S", "4S", "2D", "8C", "AC", "8D", "6H", "5D", "3D"],
@@ -161,6 +166,8 @@ export default staged(P, ["unlimited passes", "two passes, a reply", "one pass, 
     const OLD = [{ no: 1, text: "Don't watch one door too long. They see the dark." }, { no: 2, text: "The bell gives you less time than you think. Run." }, { no: 3, text: "Past 404 the boards talk. Walk them." }, { no: 4, text: "The chute doesn't go to a manager." }];
     let spike = stage.stage === 0 ? OLD.slice(0, 2) : stage.stage === 1 ? OLD.slice() : ADVICE.map((a) => ({ ...a }));
     let replied = null;
+    const SECOND = isSecond(shared), OWN = REPLIES.find((x) => x.id === (shiftOf(shared).reply || shared.get("reply", "")));
+    if (SECOND && OWN && stage.stage === 0) spike.push({ no: "yours", text: OWN.ask, reply: OWN.id });
     const quiet = shared.get("quiet", {}) || {};
     let pass = 1, turnsThisPass = 0, peeked = false, peekShow = false, hints = gentle ? 5 : 3, undos = 3, sel = null, over = false;
     let slipAShown = false, slipBShown = false, modal = null, pulse = null, lastAct = performance.now();
@@ -183,7 +190,7 @@ export default staged(P, ["unlimited passes", "two passes, a reply", "one pass, 
       cols.forEach((col, i) => {
         if (col.length && !col[col.length - 1].up) {
           col[col.length - 1].up = true;
-          if (i === 5 && col.length === 1 && !slipBShown) { slipBShown = true; const r = REPLIES.find((x) => x.id === replied); if (DEAL.slipB.dotted) showSlip(DEAL.slipB, NOTES.dotted); else if (r) showSlip(r.card, NOTES.answer); else showSlip(DEAL.slipB, NOTES.slipB); }
+          if (i === 5 && col.length === 1 && !slipBShown) { slipBShown = true; const r = REPLIES.find((x) => x.id === replied); if (DEAL.slipB.dotted) showSlip(DEAL.slipB, NOTES.dotted); else if (r) { mark(shared, "ledger"); showSlip(r.card, NOTES.answer + " Under it, copied small in the same hand: “400 · linen room · night auditor. Booked W.” A seventh line, out of the booking ledger."); } else showSlip(DEAL.slipB, NOTES.slipB); }
         }
       });
     }
@@ -518,7 +525,7 @@ export default staged(P, ["unlimited passes", "two passes, a reply", "one pass, 
     const gbox = intro.querySelector("input");
     if (gbox) on(gbox, "change", () => { gentle = gbox.checked; api.store.set("gentle", gentle); hints = gentle ? 5 : 3; layout(); });
     const startBtn = [...intro.querySelectorAll("button")].pop();
-    on(startBtn, "click", () => { intro.remove(); lastAct = performance.now(); layout(); tell(stage.stage === 2 ? "Two cards on the spike, and they cannot both be right. Look at their backs." : "Someone keeps slipping cards into this deck."); });
+    on(startBtn, "click", () => { intro.remove(); lastAct = performance.now(); layout(); tell(stage.stage === 2 ? "Two cards on the spike, and they cannot both be right. Look at their backs." : SECOND && OWN && stage.stage === 0 ? `On the spike, with his two, one of the hotel's own cards in your hand: “${OWN.ask}” You have not written it yet this season.` : "Someone keeps slipping cards into this deck."); });
     layout();
     startBtn.focus();
 
@@ -531,4 +538,4 @@ export default staged(P, ["unlimited passes", "two passes, a reply", "one pass, 
         root.innerHTML = "";
       },
     };
-});
+}, { vii: "right:8px;top:8px" });

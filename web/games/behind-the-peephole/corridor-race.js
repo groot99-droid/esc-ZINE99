@@ -23,6 +23,11 @@
 // Layer link (api.shared "lostProperty", set by Lockwork): Dora stops at the cabinet on her round and
 // leaves the trolley there, so the floor is shut at 33 m and the pipe run is the way past.
 import { staged } from "./_stages.js";
+import { mark } from "./_seventh.js";
+// Phase 3 (2026-11-16): night two (TEST) starts as you leave the office, and the bare seventh pull on
+// the bell board rings once with no bulb lit; staying on the floor to the last bell gives the third mark
+// of the seventh row (api.shared "seventh"). The bell board is drawn on a phone too, and a phone shows
+// six metres of passage, not eight, so the figures are larger.
 
 const LEN = 64;
 const DOORS = { r401: 8, r402: 16, r403: 28, r404: 36, r405: 46, r406: 56 };
@@ -87,7 +92,7 @@ export default staged(P, ["the boards", "two bells, Dora, the wires", "the black
     .${P}block .n p.story{color:${C.blue};font-style:italic;font-weight:400}
     .${P}block .t{padding:6px 10px;white-space:nowrap}
     .${P}block .t b{display:block;font-size:14px;letter-spacing:.08em}
-    @media (max-width:640px){.${P}block{grid-template-columns:1fr}.${P}block .n{min-height:8.2em}.${P}block .n{border-right:0;border-top:1.4px solid ${C.ink};order:2}.${P}block .t{white-space:normal}}
+    @media (max-width:640px){.${P}block{grid-template-columns:1fr}.${P}block .n{min-height:5.6em}.${P}block .n{border-right:0;border-top:1.4px solid ${C.ink};order:2}.${P}block .t{white-space:normal}}
     .${P}intro{position:absolute;inset:0;display:grid;place-items:center;color:${C.ink};background:${DARK ? "rgba(11,10,9,.94)" : "rgba(239,230,207,.94)"};z-index:3;padding:12px;overflow:auto}
     .${P}sheet{max-width:560px;width:100%;border:1.6px solid ${C.ink};background:${PANEL} repeating-linear-gradient(0deg,transparent 0 23px,rgba(42,58,140,.07) 23px 24px);font-size:14px;line-height:1.45;box-shadow:6px 6px 0 rgba(28,26,23,.12)}
     .${P}sheet .hd{display:flex;justify-content:space-between;gap:8px;border-bottom:1.4px solid ${C.ink};padding:8px 12px;font-weight:600;letter-spacing:.12em;font-size:13px}
@@ -310,6 +315,7 @@ export default staged(P, ["the boards", "two bells, Dora, the wires", "the black
         else if (n <= 1) text = `The bells rang and the doors opened without you. Thresholds: ${marks}. Run the long stretches, walk the boards, and stand at the rose before it opens.`;
         else if (outcome === "win") text = `Every door, on time, and nobody felt the passage. Thresholds: ${marks}; ${g} glimpse${g === 1 ? "" : "s"} besides.${Object.keys(wired).length ? ` ${Object.keys(wired).length} wire${Object.keys(wired).length === 1 ? "" : "s"} tugged.` : ""}${trolley && trolley.pushed ? " Dora will find her trolley moved." : ""}`;
         else text = `Thresholds: ${marks}; ${g} glimpse${g === 1 ? "" : "s"}.${blind.size ? ` But ${[...blind].map((r) => r.slice(1)).join(" and ")} covered the rose: someone behind that door now knows the dark has an eye in it.` : " One door opened on an empty passage."}`;
+        if (stage.stage === 1 && outcome !== "lose") { mark(shared, "bell"); text += " And one more thing, from the start of the night: as you left the office the bare seventh pull on the bell board rang once, and no bulb lit. Nobody was due. The board rings for the office too."; }
       }
       api.store.set("lossStreak", outcome === "lose" ? streak + 1 : 0);
       api.store.set("best", Math.max(api.store.get("best", 0), n));
@@ -328,7 +334,7 @@ export default staged(P, ["the boards", "two bells, Dora, the wires", "the black
       const blockH = block.getBoundingClientRect().height || 60;
       block.style.bottom = padH + 16 + "px";
       const blockTop = H - padH - 16 - blockH;
-      S = Math.min(narrow ? W / 8 : W / 14, (blockTop - 90 - 80) / 3.6);
+      S = Math.min(narrow ? W / 6 : W / 14, (blockTop - 90 - 80) / 3.6);
       S = Math.max(14, S);
       view = W / S;
       const secH = 3.3 * S + 70;
@@ -588,9 +594,9 @@ export default staged(P, ["the boards", "two bells, Dora, the wires", "the black
       if (bellFlash && now - bellFlash.t < 2600) {
         const n = +bellFlash.room.slice(3);
         const bs = A["ui-bell-strip"];
-        if (bs && !narrow && !DARK) {
+        if (bs && !DARK) {
           // the office bell board: six pulls and a bare seventh; the ringing pull swings
-          const bw = 300, bh = bw * 150 / 480, bx = W / 2 - bw / 2, byy = ky + 96, kk = (now - bellFlash.t) / 2600;
+          const bw = Math.min(300, W - 24), bh = bw * 150 / 480, bx = W / 2 - bw / 2, byy = ky + 96, kk = (now - bellFlash.t) / 2600;
           ctx.save(); ctx.globalAlpha = kk > 0.8 ? (1 - kk) * 5 : 1; ctx.drawImage(bs, bx, byy, bw, bh);
           const px = bx + bw * (0.115 + (n - 1) * 0.128);
           ctx.strokeStyle = C.amberL; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(px, byy + bh * 0.42, 13 + (RM ? 0 : 4 * Math.abs(Math.sin(now / 90))), 0, 7); ctx.stroke(); ctx.restore();
@@ -688,4 +694,4 @@ export default staged(P, ["the boards", "two bells, Dora, the wires", "the black
         root.innerHTML = "";
       },
     };
-});
+}, { vii: "right:12px;bottom:10px" });

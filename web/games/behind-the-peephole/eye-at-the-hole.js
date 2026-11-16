@@ -32,6 +32,12 @@
 // before the bell gives a first window half as long again. The collection thread sits on Mara's desk.
 // Cuts: 401 is the code-painted room (no plate yet); the photograph is up three minutes, not two.
 import { staged } from "./_stages.js";
+import { mark, isSecond } from "./_seventh.js";
+import { ownLensExtra } from "./_ownlens.js";
+// Phase 3 (2026-11-16): catching the brass dot in The Sitting is the first mark of the seventh row
+// (api.shared "seventh"); The Sitting writes "sitting" (held, answered) for The Sitter. Once the tenth
+// line is stamped, NIGHT SEVEN offers your own rose (./_ownlens.js). Second shift: her pencil under the
+// picture reads "You came back. I count too."
 
 const RW = 1280, RH = 960, D = 400;          // room plane, and the lens's view width in plane px
 const MIN = (t) => { const [h, m] = t.split(":").map(Number); return (h < 12 ? h + 24 : h) * 60 + m; };
@@ -145,6 +151,7 @@ export default staged(P, ["hold still on her hands", "a reflection, a photograph
     const shared = api.shared || { get: (k, d) => d, set() {} };
     const DOOR = ["402", "401", "403"][stage.stage], teach = stage.stage === 0;
     const quietCol = !!(shared.get("quiet", {}) || {})["r" + DOOR];
+    const SECOND = isSecond(api.shared);
     const thread = api.thread || { found() {}, isFound: () => false };
     const GLOVE = { x: 1150, y: 566 };
     const art = api.art || { has: () => false, url: () => "", img: () => Promise.resolve(null) };
@@ -278,7 +285,7 @@ export default staged(P, ["hold still on her hands", "a reflection, a photograph
       const p403 = await raster("plate-403", RW, RH);
       rooms[403] = p403 || room;
       await Promise.all([
-        raster("overlay-403-pictures-2", 360, 270), raster("overlay-403-sitting", 640, 480), raster("gap-402", 1600, 144), raster("gap-403", 1600, 144), raster("overlay-406-towel", 640, 480),
+        raster("overlay-403-pictures-2", 360, 270), raster("overlay-403-sitting", 640, 480), raster("overlay-403-sitting-again", 640, 480), raster("gap-402", 1600, 144), raster("gap-403", 1600, 144), raster("overlay-406-towel", 640, 480),
         raster("ui-rose-lit", 300, 300), raster("ui-rose-dark", 96, 96), raster("ui-catch-ring-closed", 480, 480),
         raster("ui-number-plates", 720, 240), raster("ui-watch-face", 72, 72), raster("thread-guest", 120, 120),
         ...Object.values(KIND_ICON).map((id) => raster(id, 64, 64)),
@@ -390,12 +397,12 @@ export default staged(P, ["hold still on her hands", "a reflection, a photograph
           sc.fillStyle = "#4a4a4a"; sc.font = "italic 44px 'Bradley Hand','Segoe Print',cursive"; sc.textAlign = "center"; sc.fillText("gone", 0, 20); sc.textAlign = "left";
           sc.restore();
         } else if (A["overlay-403-sitting"]) {
-          sc.drawImage(A["overlay-403-sitting"], 360, 240, 560, 420);
+          sc.drawImage(SECOND && A["overlay-403-sitting-again"] ? A["overlay-403-sitting-again"] : A["overlay-403-sitting"], 360, 240, 560, 420);
           if (mp === "taps" || answered) { sc.save(); sc.translate(640, 590); sc.rotate(-0.035); sc.fillStyle = "#4a4a4a"; sc.font = "italic 21px 'Bradley Hand','Segoe Print',cursive"; sc.textAlign = "center"; sc.fillText("Tomorrow?", 0, 0); sc.textAlign = "left"; sc.restore(); }
         } else {
           sc.fillStyle = "#f4efe2"; sc.fillRect(420, 250, 440, 400); sc.fillStyle = "#35503f"; sc.fillRect(450, 280, 380, 250); sc.fillStyle = "#5a3e26"; sc.fillRect(570, 300, 140, 230);
           sc.fillStyle = "#0a0806"; sc.beginPath(); sc.arc(640, 420, 9, 0, 7); sc.fill(); sc.fillStyle = COL.brass; sc.beginPath(); sc.arc(820, 620, 9, 0, 7); sc.fill();
-          sc.fillStyle = "#4a4a4a"; sc.font = "italic 26px 'Bradley Hand','Segoe Print',cursive"; sc.textAlign = "center"; sc.fillText("Eleven times. I count too.", 640, 580); sc.fillText(mp === "taps" || answered ? "Don't stop. Tomorrow?" : "Don't stop.", 640, 614); sc.textAlign = "left";
+          sc.fillStyle = "#4a4a4a"; sc.font = "italic 26px 'Bradley Hand','Segoe Print',cursive"; sc.textAlign = "center"; sc.fillText(SECOND ? "You came back. I count too." : "Eleven times. I count too.", 640, 580); sc.fillText(mp === "taps" || answered ? "Don't stop. Tomorrow?" : "Don't stop.", 640, 614); sc.textAlign = "left";
         }
       }
     }
@@ -716,12 +723,14 @@ export default staged(P, ["hold still on her hands", "a reflection, a photograph
     function finishMara() {
       if (over) return;
       over = true;
+      if (caught.has("dot")) mark(shared, "dots");
+      { const sv = shared.get("sitting", {}) || {}; shared.set("sitting", { held: !!(sv.held || sittingHeld), answered: !!(sv.answered || answered === "yes") }); }
       const n = caught.size, dot = darkWhilePainting ? "filled in: the rose was dark while she painted" : "a hollow ring: the rose stayed lit while she painted";
       let outcome, text;
       if (blind) { outcome = "lose"; text = `She hung a towel over the rose before the paint was dry. Whatever tonight's picture was, it was not shown to you. ${n} of 5 in the log. Step back when she turns, and let the meter fall.`; }
       else if (gone === "stepped") { outcome = "lose"; text = `You stepped back, as the job taught you. Under the count she wrote “gone”, and turned the picture to the wall. Tonight's dot is ${dot}. Her pencil said “Don't stop.” Next time someone behind the glass asks you to stay, stay.`; }
       else if (gone) { outcome = "lose"; text = `She stood by the picture until ten to four and the rose stayed lit. She wrote “gone” under the count. Tonight's dot is ${dot}. Put your eye to the rose when she pins the picture up, and keep it there.`; }
-      else if (answered === "yes" && pageRead.size === 3) { outcome = "win"; text = `She has known since night one: brass does not go dark by itself. Eleven visits, a dot for every night she painted, and tonight's is ${dot}. You were seen and did not step back; you answered; and she held Drost's page to the rose until you had all of it. ${n} of 5 in the log. For the first time something has come through the glass the other way.`; }
+      else if (answered === "yes" && pageRead.size === 3) { outcome = "win"; text = `She has known since night one: brass does not go dark by itself. ${SECOND ? "“You came back,” the pencil says, and she has kept counting:" : "Eleven visits,"} a dot for every night she painted, and tonight's is ${dot}. You were seen and did not step back; you answered; and she held Drost's page to the rose until you had all of it. ${n} of 5 in the log. For the first time something has come through the glass the other way.`; }
       else {
         outcome = "done";
         text = `You held under her look, and tonight's dot is ${dot}. ` + (answered === "no" ? "The pencil tapped twice and the rose did not answer. She did not ask again; the page she was copying stays on her desk." : `She held the page to the rose and you took in ${pageRead.size} of its three columns before her arm tired.`) + ` ${n} of 5 in the log.`;
@@ -1043,4 +1052,4 @@ export default staged(P, ["hold still on her hands", "a reflection, a photograph
         root.innerHTML = "";
       },
     };
-});
+}, { vii: "right:8px;top:8px", extra: ownLensExtra });

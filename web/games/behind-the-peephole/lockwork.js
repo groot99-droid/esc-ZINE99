@@ -21,6 +21,10 @@
 // Opening lost property is written to api.shared ("lostProperty"): the Mosaic gains the green rhyme
 // spool and Dora stops at the cabinet in the corridor race.
 import { staged } from "./_stages.js";
+import { mark, isSecond } from "./_seventh.js";
+// Phase 3 (2026-11-16): opening lost property gives the second mark of the seventh row (Dora's chalk,
+// api.shared "seventh"). Second shift: the bottom drawer holds six new tags, one for each of this
+// season's guests, where last season's six things were (art: doc-second-tags).
 
 const LOCKS = [
   { n: 3, order: [1, 0, 2], spool: [], shear: [0.5, 0.36, 0.62], band: [25, 70], jam: 80, fig: "FIG. 1  ·  the desk drawer", sheet: "Sheet 1 of 5", plate: "lock-drawer", clock: 23 * 60 + 5,
@@ -559,11 +563,12 @@ export default staged(P, ["the drawer", "the stair door, bells", "lost property"
         root.innerHTML = "";
       },
     };
-});
+}, { vii: "left:8px;top:40px" });
 
 // ---- TWIST: lost property. A wafer lock: matched, not picked (DESIGN.md section 11).
 const W_CODE = [2, 4, 1, 3, 2];
 const W_KEYS = [[1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [3, 3, 3, 3, 3], [4, 1, 4, 1, 1], [3, 1, 3, 1, 1], [3, 2, 2, 3, 2], [1, 4, 1, 1, 1], [1, 3, 3, 1, 1]];
+const THIS_THINGS = ["401: a kit bag strap", "402: a pressed orchid", "403: one white glove", "404: a press lanyard", "405: a chess knight", "406: a paper boat"];
 const LEFT_THINGS = ["a rook", "a child's mitten", "a dry orchid", "a chess clock", "a press card", "a paper boat gone brown"];
 function wafer(root, api, stage) {
   const C = { paper: "#efe6cf", ink: "#1c1a17", faint: "#6f6650", brass: "#b8913f", brassL: "#e3c47a", ev: "#a3302a", amber: "#e0a24a", blue: "#2a3a8c" };
@@ -672,13 +677,15 @@ function wafer(root, api, stage) {
   function win() {
     over = true; api.store.set("opened", true); api.store.set("lossStreak", 0);
     shared.set("lostProperty", true);
+    mark(shared, "chalk");
+    const SECOND = isSecond(shared);
     lampEl.className = P + "lamp"; lampEl.textContent = "";
-    $("[data-cab]").innerHTML = `<div class="${P}cab"><h3>THE CABINET, OPEN</h3>Bottom drawer: a night log in another hand. Beside it, six left things, each with a paper tag:<ul>${LEFT_THINGS.map((t) => `<li>${t}</li>`).join("")}</ul>
+    $("[data-cab]").innerHTML = `<div class="${P}cab"><h3>THE CABINET, OPEN</h3>${SECOND ? `Bottom drawer: last season's log, and beside it not last season's things. Six new tags in Dora's hand, one for each of your guests:${art.has("doc-second-tags") ? `<img alt="Six tags: a kit bag strap, a pressed orchid, one white glove, a press lanyard, a chess knight, a paper boat; each signed kept, D." src="${art.url("doc-second-tags")}" style="display:block;width:100%;height:auto;margin:6px 0">` : `<ul>${THIS_THINGS.map((t) => `<li>${t}</li>`).join("")}</ul>`}` : `Bottom drawer: a night log in another hand. Beside it, six left things, each with a paper tag:<ul>${LEFT_THINGS.map((t) => `<li>${t}</li>`).join("")}</ul>`}
       <svg viewBox="0 0 300 70" width="100%" role="img" aria-label="Chalk ticks inside the door, in seven columns: six headed with room numbers, the seventh bare"><rect width="300" height="70" fill="#3a2716"/>${[0, 1, 2, 3, 4, 5, 6].map((c) => `<text x="${22 + c * 40}" y="16" font-family="monospace" font-size="10" fill="#e9e2cf" text-anchor="middle" opacity=".8">${c < 6 ? 401 + c : ""}</text>` + Array.from({ length: [5, 6, 4, 6, 5, 3, 5][c] }, (_, k) => `<path d="M${14 + c * 40 + k * 4} 26 l1.5 30" stroke="#e9e2cf" stroke-width="2" opacity=".85"/>`).join("")).join("")}</svg>
       <i>Chalk, inside the door, where only whoever opens it reads it: ticks in seven columns. Six are headed with a room. The seventh has no number.</i></div>`;
     paint();
     const cab = $("[data-cab]"); if (cab.scrollIntoView) cab.scrollIntoView({ block: "end", behavior: RM ? "auto" : "smooth" });
-    timers.push(setTimeout(() => api.end({ outcome: "win", text: `Five clicks, and lost property opens with ${left} insertion${left === 1 ? "" : "s"} to spare${strikes ? ", one of them heard" : ""}. In the bottom drawer, last season's log, in a careful hand. Six left things with paper tags. And inside the door, Dora's chalk: seven columns of ticks, and the seventh has no room number. A green spool of thread has rolled to the back of the shelf.` }), RM ? 1800 : 3600));
+    timers.push(setTimeout(() => api.end({ outcome: "win", text: `Five clicks, and lost property opens with ${left} insertion${left === 1 ? "" : "s"} to spare${strikes ? ", one of them heard" : ""}. ${SECOND ? "In the bottom drawer, last season's log, and six new tags in Dora's hand: a kit bag strap, a pressed orchid, one white glove, a press lanyard, a chess knight, a paper boat. Your guests' things. She has started counting this season already." : "In the bottom drawer, last season's log, in a careful hand. Six left things with paper tags."} And inside the door, Dora's chalk: seven columns of ticks, and the seventh has no room number. A green spool of thread has rolled to the back of the shelf.` }), RM ? 1800 : 3600));
   }
   on(w, "click", (e) => {
     if (over || !started) return;
