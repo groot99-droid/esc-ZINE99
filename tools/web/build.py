@@ -63,6 +63,10 @@ RING = ["behind-the-peephole", "endless-temple", "heartstream", "lira-calyx", "l
         "missing-campsites", "people-of-the-bark", "stuffed-ones", "wrymwretch"]   # each hides the one before it
 
 
+# Reference stills kept in the repo but not shown in the hub, pending the cultural consultant (author, 2026-11-16).
+WITHDRAWN = {"man-eater/09-the-flute.jpg"}
+
+
 def keyart(slug):
     """Copy the generated key art and ending cards into web/assets/keyart/<slug>/. Returns {id: path}."""
     man = ROOT / "games" / slug / "keyart" / "keyart.json"
@@ -114,6 +118,9 @@ def main():
         out = WEB / "assets" / "stills" / slug
         out.mkdir(parents=True, exist_ok=True)
         for f in sorted((ROOT / "games" / slug / "reference").glob("*.jpg")):
+            if f"{slug}/{f.name}" in WITHDRAWN:
+                (out / f.name).unlink(missing_ok=True)
+                continue
             im = Image.open(f).convert("RGB")
             im.thumbnail((1280, 720))
             im.save(out / f.name, quality=82, optimize=True)

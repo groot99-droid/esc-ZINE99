@@ -91,7 +91,7 @@ institution took a people's tradition and turned it into a resource and a schedu
 5. Does the cut to Sam's speech stand? Should more of it go, or should any of it be restored?
 6. Is the call's sound brief acceptable? Is any "flute-like" sound a problem?
 7. What, if anything, should the empty 22:00 box hold?
-8. Should `09-the-flute.jpg` be withdrawn from the hub now?
+8. `09-the-flute.jpg` has been withdrawn from the hub (author, 2026-11-16) and stays in the repo for the consultant to see; should it be replaced or kept?
 9. Are there words, sounds or images, beyond those listed, that the game should avoid?
 10. What should the credits say about the tradition, and about your role?
 
