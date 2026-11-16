@@ -17,8 +17,23 @@
 //   brings a cup nobody asked for, and the player may Look away (hold) or read One more page.
 // Art (api.art): the Xandri sprite, the six cup vignettes, the two hands, corner folds, fleurons,
 // jar labels, glyphs and the chapter heading. Each is rasterised once into an offscreen canvas.
+// Phase 2 (DEEP_DIVE.md section 3, Living illustration): three plates, a ladder.
+//   Teach (s2_li_c4a, 240 m): pump and jump on torrent waves. No heat, no webs, a full cup.
+//   Test (s2_li_c4b, 340 m): heat, webs and a thinning cup together: noon, then dusk on the vine sea.
+//   Twist (s2_li_c6, 340 m): the page is an object. The gutter: each spread has a centre fold, and the
+//     page dips into it; cross it at 8 m/s or more, in the air, or on the line, or drop into the binding
+//     and lose a page beat of tea. Margin riding: a crest jump at 6.5 m/s or more carries above the plate's
+//     top edge onto blank paper: no waves and no grip for 3 seconds. The written line (hold F): the
+//     faint ink path is safe and fast; riding it lowers `own`, and what is ridden off it raises it.
+//     Look away (hold L, ten seconds a ride): the plate holds still and Xandri acts alone. The set-piece:
+//     near the end something dune-long surfaces under the plate, the illustration tilts twenty degrees,
+//     the caption slides down the page, and the player rides the slope of the paper. Then The Other Hand.
+// Layer links (api.shared): the taste of the last cup poured in Tea Blending is the cup here; each
+// linger (One more page here, the old keeper's ribbon in the stacks) lowers the pace cap by 1 m/s and
+// starts the boy on tired feet (`walked`). Winning the twist sets `passed_mark` for The Naming.
 
-const LEN = 600, CHECK = 150;
+let LEN = 200;
+const CHECK = 150;
 // Source line for the swallow, verbatim (DESIGN.md section 3 beat 20):
 // creative-writing/vault/02_Novels/05_The_Endless_Temple_-_Elaris_Sel_Marden.md
 // The opening caption is DESIGN.md section 3 beat 24, verbatim, from the same file.
@@ -53,14 +68,37 @@ const LINES = {
   otherNote: "You did not press Sip.",
   lookedAway: "Elaris lifts his eyes from the page. The plate holds still, and whoever walks on it walks unwatched.",
   onePage: "One more page. The ringed hand has been here before him, and the walker on the plate goes on past his cairn.",
+  // phase 2
+  gutterNear: "The page dips toward its fold. Eight metres a second carries over it; anything less drops into the binding.",
+  gutterOver: "{I} cross{es} the fold.",
+  gutterDrop: "Into the gutter, where the pages meet. A page beat of tea goes with it.",
+  lineHow: "A faint ink line runs ahead: the written line, the herd's own track. Hold Line (F) to ride it. It is safe and fast, and it is not his.",
+  lineOn: "On the written line. The page does the riding.",
+  margin: "{I} come{s} off the top of the plate, onto blank paper. No waves here, and no grip.",
+  marginEnd: "The blank paper lets go.",
+  awayHow: "Look away (hold L) and the plate holds still: what he does then, he does unwatched.",
+  away: "Elaris has lifted his eyes. The plate holds still.",
+  awayBack: "When he looks again the boy is {m} m further on, and nobody wrote it.",
+  tilt: "Something dune-long is coming up under the plate. The page tips, and the words slide down it.",
+  // DEEP_DIVE.md sample line, written for the game:
+  oneMoreDune: "He woke two hundred paces from where he had lain down, and his feet knew the way he had come.",
+  walkedLink: "Because you lingered ({why}), his pace is capped at {v} m/s on this plate.",
+  cupLink: "Because you poured {cup} at the pantry table, that is the cup beside this page.",
+  winTwist: "The herd's track across two spreads, down the slope of a tipped page: {own} m of it were his own, {line} m were the written line's{away}. The tea held at {tea}.",
+  stop: " He closes the plate there, with the next one still unturned.",
 };
+const STG = [
+  { name: "Teach: pump and jump", scene: "s2_li_c4a", plate: "Plate IV. The torrent waves, mid-morning.", len: 240, tea: 92, drain: 8, heat: false, webs: [], gutters: [], phases: [{ at: 0, name: "mid-morning", look: 0 }] },
+  { name: "Test: heat, webs and a thinning cup", scene: "s2_li_c4b", plate: "Plate V. Noon, then the vine sea at dusk.", len: 340, tea: 56, drain: 6, heat: true, webs: [170, 200, 235, 270, 310], gutters: [], phases: [{ at: 0, name: "noon", look: 1 }, { at: 150, name: "dusk on the vine sea", look: 2 }] },
+  { name: "Twist: the page is an object", scene: "s2_li_c6", plate: "Plate VII. The herd's track, across two spreads.", len: 340, tea: 72, drain: 8, heat: false, webs: [40, 120, 190], gutters: [75, 225], tiltAt: 275, line: true, phases: [{ at: 0, name: "the herd's track", look: 2 }] },
+];
 const CUPS = [
   { id: "mint", name: "Plain mint", art: "label-mint", note: "Nothing added. The page as it is drawn." },
   { id: "storm", name: "Stormcress", art: "label-stormcress", note: "One squall a ride (Q): the waves lie flat for 5 s." },
   { id: "lampash", name: "Lamp-ash", art: "label-lamp-ash", note: "The thin, pencil phase stays readable." },
   { id: "ember", name: "Ember root", art: "label-ember-root", note: "Half the heat; the written line pulls 20% harder." },
 ];
-const PHASES = [{ at: 0, name: "mid-morning" }, { at: 200, name: "noon" }, { at: 400, name: "dusk on the vine sea" }];
+let PHASES = STG[0].phases;
 
 export default {
   mount(root, api) {
@@ -89,6 +127,11 @@ export default {
     for (const id of ["corner-fold-rest", "corner-fold-lifted", "corner-fold-turned"]) prep(id, 128, 128);
     for (const id of ["fleuron-wave", "fleuron-sand", "fleuron-moon"]) prep(id, 480, 96);
     let taste = "mint";
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const reached = Math.max(0, Math.min(2, api.store.get("stage", 0) | 0));
+    let stage = 0;
+    const stg = () => STG[stage];
+    prep("hand-ringed", 480, 240);
     const css = document.createElement("style");
     css.textContent = `
     .${P}root{position:absolute;inset:0;overflow:hidden;background:${C.table};touch-action:none;user-select:none;-webkit-user-select:none}
@@ -97,7 +140,9 @@ export default {
     .${P}pad button{pointer-events:auto;font:600 15px 'EB Garamond',Georgia,serif;color:${C.ink};background:rgba(241,230,204,.86);border:2px solid ${C.ink};border-radius:40px;min-width:64px;min-height:56px;padding:0 14px;touch-action:none}
     .${P}pad button.${P}on{background:${C.honey}}
     .${P}pad .${P}big{min-width:110px;min-height:72px;font-size:17px}
-    .${P}grp{display:flex;gap:8px}
+    .${P}grp{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .${P}pad{flex-wrap:wrap}
+    @media (max-width:520px){.${P}pad button{min-width:54px;min-height:52px;padding:0 8px;font-size:14px}.${P}pad .${P}big{min-width:84px;min-height:60px;font-size:15px}.${P}pad{gap:6px;padding:6px 8px 10px}.${P}grp{gap:6px}}
     @media (hover:hover) and (pointer:fine){.${P}pad{opacity:.75}}
     .${P}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(43,29,18,.6);z-index:5;padding:16px;overflow:auto}
     .${P}plate{max-width:440px;background:${C.page};color:${C.ink};padding:16px 18px 20px;border:1.5px solid ${C.ink};box-shadow:6px 8px 0 rgba(0,0,0,.35);font-family:'EB Garamond',Georgia,serif;transform:rotate(-.6deg);
@@ -119,6 +164,13 @@ export default {
     .${P}cupnote{font-size:15px;font-style:italic;margin:0 0 12px;min-height:2.4em;text-align:center}
     .${P}pad button img{width:26px;height:26px;vertical-align:middle;margin:-4px 4px -2px -6px}
     .${P}pad button[hidden]{display:none}
+    .${P}start{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:0 0 10px}
+    .${P}plate .${P}start button{display:inline-block;margin:0;font-size:14px;padding:5px 10px;background:transparent;border-width:1.5px;min-height:38px}
+    .${P}plate .${P}start button[aria-pressed=true]{background:${C.ink};color:${C.page}}
+    .${P}plate .${P}row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+    .${P}plate .${P}row button{margin:0}
+    .${P}plate .${P}row button.${P}alt{background:transparent}
+    .${P}brewed{font-size:14px;font-style:italic;text-align:center;margin:0 0 6px}
     .${P}coda{position:absolute;inset:0;z-index:6;display:grid;place-items:center;background:rgba(43,29,18,.72);padding:12px 12px 20px;overflow:auto;box-sizing:border-box}
     .${P}codap{position:relative;width:min(560px,100%);background:${C.page};color:${C.ink};border:1.5px solid ${C.ink};box-shadow:6px 8px 0 rgba(0,0,0,.35);padding:12px 14px 14px;font-family:'EB Garamond',Georgia,serif;box-sizing:border-box}
     .${P}codap small{display:block;font-style:italic;text-align:center;font-size:14px;margin:4px 0}
@@ -142,7 +194,7 @@ export default {
     el.innerHTML = `<canvas aria-label="A storybook page: Xandri rides the sand waves left to right."></canvas>
       <div class="${P}pad">
         <div class="${P}grp"><button type="button" data-k="back">◀ Lean back</button><button type="button" data-k="fwd">Lean ▶</button></div>
-        <div class="${P}grp"><button type="button" data-k="squall" hidden>Squall</button><button type="button" data-k="sip">${pic("glyph-sip")}Sip</button><button type="button" class="${P}big" data-k="pump">Pump / Dig</button></div>
+        <div class="${P}grp"><button type="button" data-k="away" hidden>Look away</button><button type="button" data-k="line" hidden>Line</button><button type="button" data-k="squall" hidden>Squall</button><button type="button" data-k="sip">${pic("glyph-sip")}Sip</button><button type="button" class="${P}big" data-k="pump">Pump / Dig</button></div>
       </div>`;
     root.append(css, el);
     const cv = el.querySelector("canvas");
@@ -161,11 +213,18 @@ export default {
     const wob = (x, k = 1) => Math.sin(x * 0.9 + k) * 0.06 + Math.sin(x * 2.3 + k * 3) * 0.035;
 
     // ---- world ---------------------------------------------------------------------------------
-    const prickles = [], webs = [], shades = [];
-    for (let x = 40; x < LEN - 20; x += 32 + rng() * 34) prickles.push({ x, hit: false });
-    for (const x of [430, 470, 515, 560]) webs.push({ x, hit: false });
-    for (let x = 70; x < 400; x += 55 + rng() * 25) shades.push([x, x + 9 + rng() * 5]);
-    const base = (x) => 1.6 + 1.1 * Math.sin(x / 23) + 0.6 * Math.sin(x / 9.7 + 1);
+    let prickles = [], webs = [], shades = [], gutters = [];
+    function buildWorld() {
+      const G = stg();
+      LEN = G.len; PHASES = G.phases; gutters = G.gutters.slice();
+      prickles = []; webs = []; shades = [];
+      for (let x = 40; x < LEN - 20; x += 32 + rng() * 34) if (!gutters.some((gx) => Math.abs(x - gx) < 14)) prickles.push({ x, hit: false });
+      for (const x of G.webs) webs.push({ x, hit: false });
+      if (G.heat) for (let x = 30; x < 150; x += 40 + rng() * 20) shades.push([x, x + 9 + rng() * 5]);
+    }
+    // the page dips into each gutter: 2.4 m down over 22 m on either side of the fold
+    const dip = (x) => { let d = 0; for (const gx of gutters) { const u = Math.abs(x - gx); if (u < 22) d -= 2.4 * (1 - u / 22); } return d; };
+    const base = (x) => 1.6 + 1.1 * Math.sin(x / 23) + 0.6 * Math.sin(x / 9.7 + 1) + dip(x);
     let waves = [];
     const WF = 6, WB = 14, CW = 7.2; // front width, back width, wave speed m/s
     let squallK = 1;   // a stormcress squall lays the waves flat
@@ -185,9 +244,10 @@ export default {
     const S = {
       x: 4, v: 4, y: 0, vy: 0, air: false, tea: gentle ? 85 : 70, sips: gentle ? 3 : 2, phase: 0, fx: [], sipToldNew: false, cooled: 0, heat: 0, hot: 0, swallows: 0, check: 0,
       swallowed: null, snag: 0, beat: 50, t: 0, nextWave: 0.2, sipHold: 0, caption: "", capT: 0, done: false, started: false,
-      maxX: 0, inputQ: [], squall: 0, squallLeft: 0, phaseT: 0,
+      maxX: 0, inputQ: [], squall: 0, squallLeft: 0, phaseT: 0, capQ: [],
+      cap: 12, margin: 0, onLine: false, lineM: 0, ownM: 0, awayM: 0, away: false, awayLeft: 10, awayFrom: 0, tilt: 0, tiltOn: false, gutI: 0, gutDrops: 0, gutTold: false, lineTold: false,
     };
-    const keys = { back: false, fwd: false, pump: false, sip: false, squall: false };
+    const keys = { back: false, fwd: false, pump: false, sip: false, squall: false, line: false, away: false };
     let digPresses = 0;
     function say(t, secs = 3) { S.caption = t; S.capT = secs; }
     // voice: first person while the tea holds, third as it fades
@@ -198,7 +258,7 @@ export default {
     function fx(kind) { if (!api.reducedMotion) S.fx.push({ kind, x: S.x, y: S.air ? S.y : hAt(S.x), t: 0 }); }
 
     // ---- input ---------------------------------------------------------------------------------
-    const KEYMAP = { a: "back", arrowleft: "back", d: "fwd", arrowright: "fwd", " ": "pump", w: "pump", arrowup: "pump", s: "sip", arrowdown: "sip", e: "dig", q: "squall" };
+    const KEYMAP = { a: "back", arrowleft: "back", d: "fwd", arrowright: "fwd", " ": "pump", w: "pump", arrowup: "pump", s: "sip", arrowdown: "sip", e: "dig", q: "squall", f: "line", l: "away" };
     const onDown = (e) => {
       if (coda) { if (codaKey) codaKey(e, true); return; }
       const k = KEYMAP[e.key.toLowerCase()];
@@ -211,6 +271,7 @@ export default {
     addEventListener("keydown", onDown); addEventListener("keyup", onUp);
     const btns = [...el.querySelectorAll("[data-k]")];
     const squallBtn = el.querySelector('[data-k="squall"]');
+    const lineBtn = el.querySelector('[data-k="line"]'), awayBtn = el.querySelector('[data-k="away"]');
     const ptr = [];
     for (const b of btns) {
       const k = b.dataset.k;
@@ -225,6 +286,7 @@ export default {
     function update(dt) {
       S.t += dt;
       if (S.capT > 0) S.capT -= dt;
+      else if (S.capQ && S.capQ.length) { const [t, d] = S.capQ.shift(); say(t, d); }
       // waves spawn behind the rider every 4 to 7 s and roll right
       S.nextWave -= dt;
       if (S.nextWave <= 0) { waves.push({ x: S.x - 22 - rng() * 6, age: 0 }); S.nextWave = 4 + rng() * 3; }
@@ -238,7 +300,21 @@ export default {
       waves = waves.filter((w) => waveH(w) > 0.05 * squallK && w.x < S.x + 80);
 
       // tea: idle drain, sip
-      S.tea -= dt / 8;
+      S.tea -= dt / stg().drain;
+      // Look away (the twist): the plate holds still, and Xandri acts alone
+      const wantAway = !!stg().line && keys.away && S.awayLeft > 0 && !S.swallowed;
+      if (wantAway && !S.away) { S.away = true; S.awayFrom = S.x; S.awayDrawn = false; }
+      else if (!wantAway && S.away) { S.away = false; say(LINES.awayBack.replace("{m}", Math.round(S.x - S.awayFrom)), 3.5); }
+      if (S.away) {
+        S.awayLeft -= dt; S.air = false; S.margin = 0; S.onLine = false;
+        S.v += (7 - S.v) * Math.min(1, dt * 2);
+        const d = S.v * dt; S.x += d; S.awayM += d; S.y = hAt(S.x);
+        while (S.gutI < gutters.length && S.x >= gutters[S.gutI]) S.gutI++;
+        if (S.x >= S.beat) S.beat += 50;   // nobody is reading: no page beat is paid
+        S.maxX = Math.max(S.maxX, S.x);
+        if (S.x >= LEN) finish(true); else if (S.tea <= 0) { S.tea = 0; finish(false); }
+        return;
+      }
       if (keys.sip && S.sips > 0 && S.tea < 100) {
         S.sipHold += dt;
         if (S.sipHold >= 1.5) { S.sips--; S.tea = Math.min(100, S.tea + 25); S.sipHold = 0; keys.sip = false; fx("sip"); say(S.sips ? LINES.sip : LINES.empty); }
@@ -269,20 +345,35 @@ export default {
       const auto = { pump: slope < -0.05, back: false, fwd: false };
       const use = (k) => (rng() < auth ? inp[k] : auto[k]);
       const pump = use("pump"), back = use("back"), fwd = use("fwd");
+      const G = stg(), x0 = S.x;
+      // the tilt (the twist's set-piece): the plate tips, and the slope of the paper does the pulling
+      if (G.tiltAt && S.x >= G.tiltAt && !S.tiltOn) { S.tiltOn = true; S.squall = Math.max(S.squall, 0); say(LINES.tilt, 9); S.tiltT = 0; }
+      if (S.tiltOn) { S.tiltT += dt; S.tilt = api.reducedMotion ? 1 : Math.min(1, S.tilt + dt / 2.5); squallK += (0.15 - squallK) * Math.min(1, dt * 3); }
+      S.onLine = !!G.line && keys.line && !S.air && S.margin <= 0;
+      if (S.onLine && !S.lineSaid) { S.lineSaid = true; say(LINES.lineOn, 2.4); }
 
       const hHere = hAt(S.x);
-      if (!S.air) {
+      if (S.margin > 0) {
+        // on the blank top margin: no waves and no grip, for three seconds
+        S.margin -= dt; S.y += (marginY - S.y) * Math.min(1, dt * 6); S.vy = 0;
+        if (S.margin <= 0) { S.air = true; say(LINES.marginEnd, 1.6); }
+      } else if (S.onLine) {
+        S.v += (Math.min(9, S.cap) - S.v) * Math.min(1, dt * 2.5); S.y = hHere; S.snag = 0;
+      } else if (!S.air) {
         let a = -0.15 * S.v;
         if (slope < -0.05) a += 1.2 + (pump ? 2.5 : 0);
         if (slope > 0.05) a -= 2;
         if (back) a -= 3;
         if (fwd) a += 0.6;
-        S.v = Math.max(1.5, Math.min(12, S.v + a * dt));
+        a += 5 * S.tilt;
+        S.v = Math.max(1.5, Math.min(S.cap + 2 * S.tilt, S.v + a * dt));
         if (S.hot > 0) S.v = Math.min(6, S.v);
         if (S.snag > 0) { S.snag -= dt; S.v = 0.3; }
         // jump: release the pump at a crest
-        if (S.wasPump && !pump && Math.abs(slope) < 0.18 && hHere - base(S.x) > 1.5 && S.v > 4.5) {
-          S.air = true; S.y = hHere; S.vy = 3 + S.v * 0.35; fx("jump"); say(V(LINES.jumpOK).replace("He let ", "He lets "), 1.6);
+        if (S.wasPump && !pump && Math.abs(slope) < 0.18 && (hHere - base(S.x) > 1.5 || (G.line && S.v >= 6.5 && !S.tiltOn)) && S.v > 4.5) {
+          S.air = true; S.y = hHere; S.vy = 3 + S.v * 0.35; fx("jump");
+          if (G.line && S.v >= 6.5 && !S.tiltOn) { S.margin = 3; say(V(LINES.margin).replace("{es}", band() === 0 ? "" : "s"), 2.6); }
+          else say(V(LINES.jumpOK).replace("He let ", "He lets "), 1.6);
         }
         S.y = hHere;
       } else {
@@ -291,20 +382,33 @@ export default {
       }
       S.wasPump = pump;
       S.x += S.v * dt;
+      if (G.line) { if (S.onLine) S.lineM += S.x - x0; else S.ownM += S.x - x0; }
+      // the gutter: the fold in the middle of each spread
+      if (S.gutI < gutters.length) {
+        const gx = gutters[S.gutI];
+        if (!S.gutTold && S.x > gx - 34) { S.gutTold = true; say(LINES.gutterNear + (S.lineTold ? "" : " " + LINES.lineHow), 6); S.lineTold = true; }
+        if (S.x >= gx) {
+          S.gutI++; S.gutTold = false;
+          if (S.air || S.margin > 0 || S.onLine || S.v >= 8) say(V(LINES.gutterOver).replace("{es}", band() === 0 ? "" : "es"), 1.8);
+          else { S.gutDrops++; S.tea -= 5; S.v = 1.5; S.snag = 0.8; fx("hit"); say(LINES.gutterDrop, 3); }
+        }
+      }
 
       // hazards
-      for (const p of prickles) if (!p.hit && !S.air && Math.abs(S.x - p.x) < 0.8) { p.hit = true; S.v = Math.max(1.5, S.v - 3); fx("hit"); say(V(LINES.prickle), 1.6); }
-      for (const w of webs) if (!w.hit && !S.air && Math.abs(S.x - w.x) < 0.8) { w.hit = true; S.snag = 1; fx("hit"); say(LINES.web, 1.4); }
+      const safe = S.onLine || S.margin > 0;
+      for (const p of prickles) if (!p.hit && !S.air && !safe && Math.abs(S.x - p.x) < 0.8) { p.hit = true; S.v = Math.max(1.5, S.v - 3); fx("hit"); say(V(LINES.prickle), 1.6); }
+      for (const w of webs) if (!w.hit && !S.air && !safe && Math.abs(S.x - w.x) < 0.8) { w.hit = true; S.snag = 1; fx("hit"); say(LINES.web, 1.4); }
       if (S.x > CHECK * (Math.floor(S.check / CHECK) + 1) && S.x < LEN) { S.check = Math.floor(S.x / CHECK) * CHECK; S.pageFlash = 0.6; if (!S.capT || S.capT < 1) say(LINES.page.replace("{m}", S.check), 1.6); for (const p of prickles) if (p.x > S.check) p.hit = false; }
       // phases
-      const ph = S.x >= PHASES[2].at ? 2 : S.x >= PHASES[1].at ? 1 : 0;
+      const pi = PHASES.filter((q) => S.x >= q.at).length - 1, ph = PHASES[pi].look;
+      S.phaseName = PHASES[pi].name;
       if (ph !== S.phase) { S.phase = ph; S.phaseT = 5; say(ph === 1 ? LINES.noon : MOON_LINE, 5); if (ph === 2) { S.heat = 0; S.hot = 0; } }
       if (b >= 1 && !S.sipToldNew && S.sips > 0 && S.capT < 0.5) { S.sipToldNew = true; say(LINES.sipNew, 3.5); }
 
       // swallowed by a breaking lip
       for (const w of waves) {
         const u = S.x - w.x;
-        if (waveH(w) > 5 && !S.air && u > -1 && u < 2.5 && S.v < 3.6) {
+        if (waveH(w) > 5 && !S.air && !safe && u > -1 && u < 2.5 && S.v < 3.6) {
           S.swallowed = { t: 0, p: 0 }; digPresses = 0; S.totalSwallows = (S.totalSwallows || 0) + 1; fx("hit");
           say(SWALLOW_LINE, 3.6);
           return;
@@ -313,7 +417,7 @@ export default {
 
       // heat: sun by day, dune shade cools
       const shade = shades.some(([a, c]) => S.x > a && S.x < c);
-      const sun = (S.phase === 0 ? 3 : S.phase === 1 ? 6 : -10) * (taste === "ember" && S.phase < 2 ? 0.5 : 1);
+      const sun = !G.heat ? -10 : (S.phase === 0 ? 3 : S.phase === 1 ? 6 : -10) * (taste === "ember" && S.phase < 2 ? 0.5 : 1);
       S.heat = Math.max(0, Math.min(100, S.heat + (shade ? -12 : sun) * dt));
       if (shade && S.heat > 0 && S.v < 3) S.cooled += dt;
       if (S.hot > 0) { S.hot -= dt; if (S.hot <= 0) S.heat = 60; }
@@ -334,15 +438,64 @@ export default {
       if (S.done) return;
       S.done = true;
       api.store.set("lossStreak", win ? 0 : losses + 1);
+      const G = stg();
       const tea = Math.max(0, Math.round(S.tea));
       const sw = S.totalSwallows ? ` The sand had him ${S.totalSwallows} time${S.totalSwallows > 1 ? "s" : ""}.` : " The sand never had him.";
       if (!win) {
-        timers.push(setTimeout(() => api.end({ outcome: "lose", text: LINES.lose.replace("{x}", Math.round(S.x)).replace("{phase}", PHASES[S.phase].name) + (S.sips ? ` ${S.sips === 1 ? "One sip was" : S.sips + " sips were"} still in the cup.` : "") }), api.reducedMotion ? 100 : 700));
+        timers.push(setTimeout(() => api.end({ outcome: "lose", text: LINES.lose.replace("{x}", Math.round(S.x)).replace("{phase}", S.phaseName || PHASES[0].name) + (S.sips ? ` ${S.sips === 1 ? "One sip was" : S.sips + " sips were"} still in the cup.` : "") }), api.reducedMotion ? 100 : 700));
         return;
       }
-      const winText = (tea >= 60 ? LINES.winI : LINES.winHe).replace("{tea}", tea) + sw;
-      timers.push(setTimeout(() => otherHand(winText), api.reducedMotion ? 100 : 900));
+      let winText;
+      if (G.line) {
+        const own = Math.round(S.ownM), line = Math.round(S.lineM);
+        winText = LINES.winTwist.replace("{own}", own).replace("{line}", line).replace("{away}", S.awayM > 1 ? `, and ${Math.round(S.awayM)} m nobody watched` : "").replace("{tea}", tea) + (S.gutDrops ? ` The gutter had him ${S.gutDrops} time${S.gutDrops > 1 ? "s" : ""}.` : "") + sw;
+        // `own`: what the boy did himself. Riding the line lowers it; leaving it, and looking away, raise it.
+        const dOwn = Math.round((S.ownM + S.awayM - S.lineM) / 100);
+        shared.set("own", Math.max(0, (shared.get("own", 0) | 0) + dOwn));
+        shared.set("passed_mark", true);
+      } else {
+        const what = stage === 0 ? `${G.len} metres of torrent waves` : `${G.len} metres of noon and vine sea`;
+        winText = (tea >= 60 ? LINES.winI : LINES.winHe).replace("Six hundred metres of torrent waves", what).replace("Six hundred metres,", what + ",").replace("{tea}", tea) + sw;
+      }
+      if (stage >= STG.length - 1) { timers.push(setTimeout(() => otherHand(winText), api.reducedMotion ? 100 : 900)); return; }
+      timers.push(setTimeout(() => {
+        const c = document.createElement("div");
+        c.className = P + "intro";
+        c.innerHTML = `<div class="${P}plate" role="dialog" aria-label="The page turns"><small></small><h2>The page turns</h2><p class="${P}goal"></p><p class="${P}cupnote"></p>
+          <div class="${P}row"><button type="button" data-a="go">Turn the page</button><button type="button" class="${P}alt" data-a="stop">Stop here</button></div></div>`;
+        c.querySelector("small").textContent = STG[stage + 1].plate;
+        c.querySelector("." + P + "goal").textContent = winText;
+        c.querySelector("." + P + "cupnote").textContent = `Next, ${STG[stage + 1].name.toLowerCase()}.`;
+        el.appendChild(c);
+        c.querySelector('[data-a="go"]').addEventListener("click", () => { c.remove(); startStage(stage + 1); });
+        c.querySelector('[data-a="stop"]').addEventListener("click", () => { c.remove(); api.end({ outcome: "win", text: winText + LINES.stop }); });
+        c.querySelector('[data-a="go"]').focus();
+      }, api.reducedMotion ? 100 : 900));
     }
+    // a plate begins: one rung of the ladder
+    function startStage(i) {
+      stage = i;
+      const G = stg();
+      api.store.set("stage", Math.max(reached, api.store.get("stage", 0) | 0, i));
+      buildWorld(); waves = []; squallK = 1; digPresses = 0;
+      for (const k of Object.keys(keys)) keys[k] = false;
+      const walked = Math.max(0, shared.get("walked", 0) | 0);
+      Object.assign(S, {
+        x: 4, v: 4, y: 0, vy: 0, air: false, tea: G.tea + (gentle ? 15 : 0), sips: gentle ? 3 : 2, phase: G.phases[0].look, phaseName: G.phases[0].name, fx: [], sipToldNew: false, cooled: 0, heat: 0, hot: 0, swallows: 0, check: 0,
+        swallowed: null, snag: 0, beat: 50, t: 0, nextWave: 0.2, sipHold: 0, caption: "", capT: 0, done: false, started: true, maxX: 0, inputQ: [], squall: 0, squallLeft: taste === "storm" ? 1 : 0, phaseT: 0, totalSwallows: 0, pageFlash: 0, wasPump: false,
+        cap: 12 - Math.min(3, walked), margin: 0, onLine: false, lineM: 0, ownM: 0, awayM: 0, away: false, awayLeft: 10, tilt: 0, tiltOn: false, tiltT: 0, gutI: 0, gutDrops: 0, gutTold: false, lineTold: false, lineSaid: false,
+      });
+      squallBtn.hidden = S.squallLeft <= 0; lineBtn.hidden = !G.line; awayBtn.hidden = !G.line;
+      el.querySelector("." + P + "pad").hidden = false;
+      last = last2 = performance.now();
+      S.capQ = [];
+      const first = [i === 0 ? START_LINE : i === 1 ? LINES.noon : LINES.awayHow, 5];
+      if (walked > 0) { say(LINES.oneMoreDune + " " + LINES.walkedLink.replace("{why}", walked === 1 ? "once" : walked + " times").replace("{v}", S.cap), 6.5); S.capQ.push(first); }
+      else say(first[0], first[1]);
+      if (brewedNote) S.capQ.push([brewedNote, 4.5]);
+      if (taste === "storm") S.capQ.push([LINES.squallHint, 4.5]);
+    }
+    let brewedNote = "", marginY = 14;
     // ---- The Other Hand: the reversal's first appearance (a later plate of the same book) --------
     let coda = null, holdRaf = 0;
     function otherHand(winText) {
@@ -383,6 +536,9 @@ export default {
         if (which === "away") scene.classList.add(P + "still");
         away.disabled = page.disabled = true;
         ps[0].textContent = which === "away" ? LINES.lookedAway : LINES.onePage; ps[1].textContent = "";
+        // a linger walks the boy further; looking away is his own
+        if (which === "page") shared.set("walked", (shared.get("walked", 0) | 0) + 1); else shared.set("own", (shared.get("own", 0) | 0) + 1);
+        shared.set("other_hand_seen", true);
         api.end({ outcome: "win", text: `${winText} ${which === "away" ? LINES.lookedAway : LINES.onePage}` });
       };
       const tickHold = (now) => {
@@ -414,14 +570,35 @@ export default {
       g.strokeStyle = col; g.lineWidth = w; g.lineCap = "round"; g.lineJoin = "round";
       g.beginPath(); pts.forEach(([x, y], i) => (i ? g.lineTo(x, y + wob(x * 0.05, k) * 6) : g.moveTo(x, y))); g.stroke();
     }
+    function drawAway() {
+      g.setTransform(dpr, 0, 0, dpr, 0, 0);
+      if (!S.awayDrawn) { S.awayDrawn = true; g.fillStyle = "rgba(128,124,116,.5)"; g.fillRect(0, 0, W, H); }
+      const bw = Math.min(W - 24, 470), bx = W / 2 - bw / 2, by = H * 0.4 - 34;
+      g.fillStyle = C.page; g.fillRect(bx, by, bw, 68); g.strokeStyle = C.ink; g.lineWidth = 1.5; g.strokeRect(bx, by, bw, 68);
+      g.fillStyle = C.ink; g.textAlign = "center"; g.font = "italic 17px 'EB Garamond',Georgia,serif";
+      g.fillText(W < 480 ? "The plate holds still." : LINES.away, W / 2, by + 27);
+      g.font = "600 15px 'EB Garamond',Georgia,serif"; g.fillText(`${Math.max(0, Math.ceil(S.awayLeft))} s of looking away left`, W / 2, by + 52);
+      g.textAlign = "left";
+    }
     function draw() {
+      if (S.away && !S.done) { drawAway(); return; }
       g.setTransform(dpr, 0, 0, dpr, 0, 0);
       g.fillStyle = C.table; g.fillRect(0, 0, W, H);
+      const G = stg();
+      if (S.tilt > 0) {
+        // the set-piece: only a back, dune-long, coming up under the plate; and the plate tips twenty degrees
+        const k = S.tilt;
+        g.fillStyle = "#3d2f45"; g.beginPath(); g.ellipse(W * 0.16, H * 1.04, W * 0.8, H * 0.46 * k, 0, Math.PI, 0); g.fill();
+        g.strokeStyle = "rgba(201,204,211,.5)"; g.lineWidth = 1.5;
+        for (let i = 0; i < 9; i++) { g.beginPath(); g.ellipse(W * 0.16, H * 1.04, W * (0.8 - i * 0.07), H * 0.46 * k * (1 - i * 0.08), 0, Math.PI * 1.08, Math.PI * 1.92); g.stroke(); }
+        g.translate(W / 2, H / 2); g.rotate((k * 20 * Math.PI) / 180); g.scale(1 - 0.2 * k, 1 - 0.2 * k); g.translate(-W / 2, -H / 2);
+      }
       const b = band();
       // the page: margins widen as the tea fades
       const zoom = b === 0 ? 1 : b === 1 ? 0.9 : 0.8;
       const mx = W * (1 - zoom) / 2 + 10, my = H * (1 - zoom) / 2 + 8;
-      const pw = W - mx * 2, ph = H - my * 2 - Math.min(90, H * 0.12);
+      const padEl = el.querySelector("." + P + "pad"), padH = padEl && !padEl.hidden ? padEl.offsetHeight : 0;
+      const pw = W - mx * 2, ph = H - my * 2 - Math.max(Math.min(90, H * 0.12), W < 520 ? padH - 6 : 0);
       // page edges stacked at the right, and the shadow
       g.fillStyle = "rgba(0,0,0,.35)"; g.fillRect(mx + 8, my + 8, pw, ph);
       for (let i = 4; i > 0; i--) { g.fillStyle = i % 2 ? "#e2d4b0" : "#cfbf98"; g.fillRect(mx + i * 2.5, my + i * 1.5, pw, ph); }
@@ -490,6 +667,28 @@ export default {
         g.fillStyle = inkC; g.font = "italic 14px 'EB Garamond',Georgia,serif"; g.fillText("dune shade", X(a), Y(hAt(a)) - 8);
       }
       inkLine(pts, inkW, inkC, 1);
+      // the gutter: the fold in the middle of the spread, where the two pages meet
+      for (const gx of gutters) {
+        const x = X(gx); if (x < mx - 40 || x > mx + pw + 40) continue;
+        const gr = g.createLinearGradient(x - 34, 0, x + 34, 0);
+        gr.addColorStop(0, "rgba(43,29,18,0)"); gr.addColorStop(0.5, "rgba(43,29,18,.42)"); gr.addColorStop(1, "rgba(43,29,18,0)");
+        g.fillStyle = gr; g.fillRect(x - 34, my, 68, ph);
+        g.strokeStyle = C.ink; g.lineWidth = 1.2; g.beginPath(); g.moveTo(x, my); g.lineTo(x, my + ph); g.stroke();
+        g.strokeStyle = "rgba(241,230,204,.8)"; g.lineWidth = 2; g.setLineDash([8, 12]); g.beginPath(); g.moveTo(x + 2, my + 60); g.lineTo(x + 2, my + ph); g.stroke(); g.setLineDash([]);
+        g.fillStyle = "rgba(241,230,204,.92)"; g.fillRect(x - 62, Y(hAt(gx)) - 74, 124, 22);
+        g.fillStyle = C.ink; g.font = "italic 14px 'EB Garamond',Georgia,serif"; g.textAlign = "center"; g.fillText("the gutter: 8 m/s", x, Y(hAt(gx)) - 58); g.textAlign = "left";
+      }
+      // the written line: a faint ink path above the sand; it darkens while it is ridden
+      if (G.line) {
+        g.strokeStyle = S.onLine ? C.honey : thin ? "rgba(90,90,90,.5)" : "rgba(43,29,18,.45)"; g.lineWidth = S.onLine ? 3 : 1.1; g.setLineDash(S.onLine ? [] : [10, 7]);
+        g.beginPath(); pts.forEach(([x, y], i) => (i ? g.lineTo(x, y - 0.9 * s) : g.moveTo(x, y - 0.9 * s))); g.stroke(); g.setLineDash([]);
+        // the plate's top edge: above it the paper is blank, and a fast crest jump lands a rider there
+        const bandB = my + (pw < 520 ? 72 : 54), edgeY = bandB + Math.max(118, Math.min(150, s * 5.4));
+        marginY = (groundY - edgeY) / s;
+        g.fillStyle = "rgba(241,230,204,.9)"; g.fillRect(mx, bandB, pw, edgeY - bandB);
+        g.strokeStyle = "rgba(43,29,18,.45)"; g.lineWidth = 1; g.setLineDash([2, 6]); g.beginPath(); g.moveTo(mx, edgeY); g.lineTo(mx + pw, edgeY); g.stroke(); g.setLineDash([]);
+        g.fillStyle = "rgba(43,29,18,.6)"; g.font = "italic 14px 'EB Garamond',Georgia,serif"; g.fillText("the plate's top edge; blank paper above", mx + 16, edgeY + 16);
+      }
       // breaking lips: an ink curl with spray
       for (const w of waves) {
         const Hh = waveH(w);
@@ -521,7 +720,7 @@ export default {
         for (const r of [8, 15, 21]) { g.beginPath(); g.arc(x, y, r, Math.PI, 0); g.stroke(); }
       }
       // the rider
-      const rx = X(S.x), ry = Y(S.air ? S.y : hAt(S.x));
+      const rx = X(S.x), ry = Y(S.air ? S.y : hAt(S.x) + (S.onLine ? 0.9 : 0));
       const slope = S.air ? 0 : slopeAt(S.x);
       const lean = (keys.back ? -0.35 : keys.fwd ? 0.25 : 0) + Math.atan(-slope) * 0.4;
       const xs = spr["sprite-xandri"];
@@ -597,18 +796,21 @@ export default {
       g.fillStyle = C.ochre; g.beginPath(); g.moveTo(mlx + mlw, my0 - 10); g.lineTo(mlx + mlw + 12, my0 - 6); g.lineTo(mlx + mlw, my0 - 2); g.fill();
       g.fillStyle = C.ink; g.font = "italic 14px 'EB Garamond',Georgia,serif"; g.fillText("the mark", mlx + mlw + 16, my0 + 2);
       g.font = "600 14px 'EB Garamond',Georgia,serif";
-      g.fillText(`${Math.floor(S.x)} m · ${PHASES[S.phase].name}`, mlx, my0 + 30);
-      const tw0 = g.measureText(`${Math.floor(S.x)} m · ${PHASES[S.phase].name}`).width;
+      const hud0 = `${Math.floor(S.x)} m · ${S.phaseName || PHASES[0].name}`;
+      g.fillText(hud0, mlx, my0 + 30);
+      const tw0 = g.measureText(hud0).width;
       let hx = mlx + tw0 + 22, hy = my0 + 30;
       if (hx + 190 > mx + pw) { hx = mlx; hy = my0 + 50; }   // narrow page: heat on its own line
-      if (S.phase < 2) {
+      if (G.line) g.fillText(`his own ${Math.round(S.ownM)} m · the line's ${Math.round(S.lineM)} m`, hx, hy);
+      else if (S.cap < 12) g.fillText(`tired feet: ${S.cap} m/s at most`, hx, hy);
+      if (G.heat && S.phase < 2) {
         g.fillText("heat", hx, hy);
         g.strokeRect(hx + 34, hy - 10, 80, 11); g.fillStyle = S.hot > 0 || S.heat > 80 ? "#a8432c" : C.honey; g.fillRect(hx + 34, hy - 10, 0.8 * S.heat, 11);
         if (S.hot > 0) { g.fillStyle = "#a8432c"; g.fillText("too hot", hx + 120, hy); }
       }
       g.fillStyle = C.ink;
       const swText = `under ${S.swallows}/3`, swW = g.measureText(swText).width;
-      const swx = mx + pw - swW - 16 - (foldOn ? foldS : 0), swy = (hy === my0 + 30 && swx < hx + 190 && S.phase < 2) || swx < mlx + tw0 + 16 ? my0 + 50 : my0 + 30;
+      const swx = mx + pw - swW - 16 - (foldOn ? foldS : 0), swy = (hy === my0 + 30 && swx < hx + 190 && (S.phase < 2 || G.line || S.cap < 12)) || swx < mlx + tw0 + 16 ? my0 + 50 : my0 + 30;
       g.fillText(swText, swx, swy);
       // page number
       g.fillText(`~ ${47 + Math.floor(S.x / CHECK)} ~`, mx + pw / 2 - 14, my + ph - 10);
@@ -652,7 +854,7 @@ export default {
         const words = S.caption.split(" "), lines = []; let line = "";
         for (const w of words) { const t = line ? line + " " + w : w; if (g.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t; }
         lines.push(line);
-        const cyc = my + (pw < 520 ? 96 : 78);
+        const cyc = my + (pw < 520 ? 96 : 78) + (S.tilt > 0 ? Math.min(1, (S.tiltT || 0) / 5) * ph * 0.42 : 0) + (G.line && S.tilt <= 0 ? Math.max(118, Math.min(150, s * 5.4)) + 22 : 0);
         g.fillStyle = "rgba(241,230,204,.93)"; g.fillRect(mx + pw / 2 - maxW / 2 - 10, cyc - 18, maxW + 20, lines.length * 21 + 10);
         g.strokeStyle = "rgba(43,29,18,.4)"; g.lineWidth = 1; g.strokeRect(mx + pw / 2 - maxW / 2 - 10, cyc - 18, maxW + 20, lines.length * 21 + 10);
         g.fillStyle = C.ink; lines.forEach((l, i) => g.fillText(l, mx + pw / 2, cyc + i * 21));
@@ -682,9 +884,9 @@ export default {
         <path d="M0 70 C60 66 90 30 130 34 C160 37 170 60 200 62 C250 66 280 28 330 36 C360 40 380 58 400 60" fill="none" stroke="${C.ink}" stroke-width="1.6"/>
         <path d="M118 36 l4 -14 l3 -12 M120 22 l-10 6 M121 20 l10 -4" stroke="${C.ink}" stroke-width="1.6" fill="none"/><circle cx="125" cy="6" r="4" fill="${C.page}" stroke="${C.ink}"/>
         <circle cx="350" cy="18" r="10" fill="${C.honey}" opacity=".6" stroke="${C.ink}"/></svg>
-      <small>Plate IV. The torrent waves, mid-morning.</small>
+      <small class="${P}platename">Plate IV. The torrent waves, mid-morning.</small>
       <h2>Living illustration</h2>
-      <p class="${P}goal"><b>Goal:</b> ride Xandri 600 m across the sand sea before the tea runs out.</p>
+      <p class="${P}goal"><b>Goal:</b> ride Xandri across each plate before the tea runs out. Three plates: teach, test, twist. You can stop after any of them.</p>
       <ul>
         <li><kbd>Pump · Space</kbd><span>Hold down a wave's face to gain speed. Let go at a crest to jump.</span></li>
         <li><kbd>Jump</kbd><span>Clears prickle bushes and, later, vine webs.</span></li>
@@ -692,15 +894,30 @@ export default {
       <p style="font-size:15px;margin:0 0 12px;font-style:italic">Slow under a breaking lip, and the sand swallows you. More controls arrive as the day turns.${gentle ? " " + LINES.gentle : ""}</p>
       <div class="${P}cups" role="group" aria-label="The cup you brewed">${CUPS.map((c) => `<button type="button" data-cup="${c.id}" aria-pressed="${c.id === "mint"}">${pic(c.art)}<span>${c.name}</span></button>`).join("")}</div>
       <p class="${P}cupnote"></p>
+      ${reached > 0 ? `<div class="${P}start" role="group" aria-label="Start at">${STG.slice(0, reached + 1).map((n, k) => `<button type="button" data-s="${k}" aria-pressed="${k === 0}">${k + 1}. ${n.name.split(":")[0]}</button>`).join("")}</div>` : ""}
       <button type="button" class="${P}go">Begin the page</button></div>`;
     el.appendChild(intro);
     const cupNote = intro.querySelector("." + P + "cupnote");
     const setCup = (id) => { if (!CUPS.some((c) => c.id === id)) id = "mint"; taste = id; intro.querySelectorAll("[data-cup]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.cup === id))); cupNote.textContent = "The cup colours the page. " + CUPS.find((c) => c.id === id).note; };
     intro.querySelectorAll("[data-cup]").forEach((b) => b.addEventListener("click", () => setCup(b.dataset.cup)));
-    setCup(api.store.get("cup", "mint"));
+    // layer link: the cup poured at the pantry table is the cup beside this page
+    const brewed = shared.get("tea_played", false) ? shared.get("cup_taste", "mint") : null;
+    setCup(brewed || api.store.get("cup", "mint"));
+    if (brewed) {
+      const bn = CUPS.find((c) => c.id === brewed) || CUPS[0];
+      brewedNote = LINES.cupLink.replace("{cup}", bn.name.toLowerCase());
+      const n = document.createElement("p"); n.className = P + "brewed"; n.textContent = brewedNote;
+      intro.querySelector("." + P + "cups").before(n);
+    }
+    let startAt = 0;
+    intro.querySelectorAll("[data-s]").forEach((b) => b.addEventListener("click", () => {
+      startAt = +b.dataset.s; intro.querySelectorAll("[data-s]").forEach((o) => o.setAttribute("aria-pressed", String(o === b)));
+      intro.querySelector("." + P + "platename").textContent = STG[startAt].plate;
+    }));
     intro.querySelector("." + P + "go").addEventListener("click", () => {
-      intro.remove(); S.started = true; last = last2 = performance.now(); api.store.set("cup", taste);
-      if (taste === "storm") { S.squallLeft = 1; squallBtn.hidden = false; say(START_LINE + " " + LINES.squallHint, 5); } else say(START_LINE, 3.5);
+      intro.remove(); api.store.set("cup", taste);
+      if (brewed && taste !== brewed) brewedNote = "";
+      startStage(startAt);
     });
     intro.querySelector("." + P + "go").focus();
 

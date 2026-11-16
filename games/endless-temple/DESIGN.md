@@ -478,6 +478,7 @@ so the player feels tall, not the world small). Book scenes use the narration ca
 | `s3_pantry_c1` | The pantry | 6 × 4 m | First person | Jars (goblin's eyes, "Ogers' tongue"), tea tins, kettle | Dim, amber through jars | Jar liquid knock, kettle | Tin chosen | pull-out / push-in |
 | `s3_circle` | The storyteller's room | 10 m round hut | Narration camera | Raise hand | Firelight, smoke hole | Storyteller, children's breathing | Question asked | push-in / cut |
 | `s3_seclusion` | A walled yard | 8 × 8 m | Narration | Look up (zone out) | Dusk, orange walls | Shaman's voice, muffled ear | Speech ends | cut / push-in |
+| `s3_well_post` | The well-post and the shrine-store (added 2026-11-16) | 18 × 14 m, open sky | Fixed, from the well-post | None but watching: the roof-gap, then the moon | Full moon just clear of the well-post, one lamp in a niche | Night insects, a cane on packed sand | The cord restrung, or 40 s | pull-out / cut |
 | `s3_hut_night` | Xandri's hut | 4 × 4 m | Narration | Mirror, pitcher, pack, six items | Moonlight through holes in the roof | Night insects | Pack closed | pull-out / cut |
 | `s3_moonlit_dunes` | Desert edge by moonlight | 400 m corridor | Narration | None but walking | Silver sand, purple vines, high moon | Wind, then rumble | Wave at 300 m | cut / pull-out |
 | `s3_halls_c3` | The halls | as c1 | First person | Broom, clock key, two stray books | Overcast; sand on floor | Sand hiss | Duties done or skipped | pull-out / flatten |
@@ -496,6 +497,7 @@ so the player feels tall, not the world small). Book scenes use the narration ca
 | `s3_father_camp` | The father's camp | 30 m ring | Narration | Marker pole, journal, his cord | Sunset | Wind on cloth | Journal opened | flatten / push-in |
 | `s3_father_walk` | Beyond the camp, years ago | 200 m | First person, the father's | Walk only | Older palette, sepia | His breathing | Journal stops | push-in / pull-out |
 | `s3_camp_mark_c6` | The camp at night | 30 m | Narration | Fire | Moon | The clock | Mark choice | pull-out / pull-out |
+| `s3_ledger_turned` | The pantry (added 2026-11-16) | as c1 | First person | The ledger (turn it over), the cup (Look away), the cold kettle | Late light through the jars | A page turned; no kettle | Ledger closed | pull-out / cut |
 | `s3_halls_c7` | The halls | as c1 | First person | Ink on shelf, duster, clock key | Dusk light | Ink drip | Duties | pull-out / flatten |
 | `s3_procession_road` | Grey-grass plain | 500 m road | Narration (Oda) | Pilgrims (masked, one line each) | Lantern sky at dusk | Feet, bells on staffs | Wagon | push-in / cut |
 | `s3_scribe_wagon` | The Scribe's wagon | 6 × 3 m | Narration | Scroll, pen, lanterns (lamp-ash) | Lantern light | Pen on paper | Vows read | cut / push-in |
@@ -504,11 +506,35 @@ so the player feels tall, not the world small). Book scenes use the narration ca
 | `s3_unlit_gallery` | High gallery | 20 × 4 m | First person | Black book | Dark; Elaris carries a candle (2 m light) | Silence | Book lifted | flatten / push-in |
 | `s3_abyss_return` | The abyss, awake | as dream | First person | Edge, call a name, candle | As dream | As dream | Name called, back | push-in / pull-out |
 | `s3_pantry_c8` | The pantry | as c1 | First person | Kettle, last tin | Candle | Kettle | Tin | pull-out / push-in |
+| `s3_ring_of_stones` | The father's ring of stones (added 2026-11-16) | 30 m ring | Narration, low and still | One prompt: One more page; and Look away | The hour before dawn, a low moon | His breathing; the clock, faint | He rises | push-in / cut |
 | `s3_herd_final` | The father's marker | 1 km | Narration | Flank, track, way back | Dawn | Hum | Choice | push-in / cut |
 | `s3_xandrix_back` | A Xandrix's back | 30 m long, moving | Narration, rising high | Hold on (hold interact) | White horizon | Hum, wind | Horizon | cut / pull-out |
 | `s3_village_return` | The way home and the circle | 400 m then the hut | Narration | Walk only | Dusk | Children | Circle | cut / pull-out |
 | `s3_last_cup` | The reading chair | 3 m | First person, seated | Cup, set down or drink | Depends on steep | Clock (if not stopped) | Choice | pull-out / fade |
 | `e_stayed`, `e_rider`, `e_named`, `e_returned` | See section 13 | | Fixed cameras, 40 to 90 s | None | | | | fade / end |
+
+**The three scenes added in phase 2 (accepted 2026-11-15, built 2026-11-16).**
+
+- **`s3_well_post`, The Well-Post** (c2, only when the shrine-store tablet was solved clean and
+  the player lingers). Wordless. From the well-post, where the shaman with the cane has been
+  standing, the camera sees an arm go in at the roof-gap, and tilts up to the moon instead.
+  Afterwards a second leaf-cord hangs restrung at the store door. Writes `well_post_seen`, and a
+  linger (`lingers`, `walked`). No line is spoken: Xadra's source lines stay his only speech.
+- **`s3_ledger_turned`, The Ledger Turned Over** (c6, the pantry, after the third mark). Elaris
+  turns the pantry ledger over. The back pages are a count of days in the hand that wrote the
+  recipes, with "Day thirty-one…" and a count that stops at forty. Writes `ledger_turned` and
+  `look_away`: from here **Look away** is a standing verb inside books.
+- **`s3_ring_of_stones`, Xandri Does Not Get Up** (c9, before the herd). At his father's ring of
+  stones the boy lies down. How long he lies there is what `walked` left him. One prompt appears on
+  the page: "One more page." It works: he rises without input and walks (`walked` +1, `lingers`
+  +1). Look away is also there; held, he gets up in his own time (`own` +1).
+
+Beats added to scenes that exist: `s3_circle` records `hand_was` (raised by the player, or by
+"instinct" when the prompt runs out); every mark writes `walked` (One More Dune: after a linger he
+wakes 200 m from where he lay down, feet raw, and the next 3D session starts there);
+`s3_father_walk` writes `own` when Look away is held; `s3_abyss_return` carries Wenna Counts
+(`wenna_asked`): a voice gives the next star name back and asks "Will you say the end?", and
+nothing lights.
 
 ## 10. 2D modes
 
@@ -528,12 +554,17 @@ across the illustration side-on, left to right, with momentum. The world rolls f
 | Tea | ≥ 60: full colour, tight framing. 30–59: the camera pulls back to show the page's margins; lean lag 150 ms. 1–29: lines thin to pencil; 35% of steering pulls toward the written line (a faint ink path); lag 350 ms. 0: the page closes and the sequence resumes at its checkpoint after the next brew. |
 | Progress | The top margin is a map that draws itself: Xandri's line in ink, the father's mark as a small pole. Pell and Oda have their own margin drawings. |
 | The cup's taste (accepted 2026-11-15) | The cup colours the page. Stormcress in the cup: one squall per ride, on the player's call, lays the waves flat for 5 s. Lamp-ash: the 1–29 phase keeps its full line and colour. Ember root: heat builds at half the rate, and the written line pulls 20% harder. One taste a ride (`cup_taste`): stormcress over lamp-ash over ember root. |
+| The gutter (accepted 2026-11-15, built 2026-11-16) | Each spread has a centre fold, and the page dips into it (2.4 m over 22 m either side). Cross it at 8 m/s or more, in the air, or on the written line; anything less drops into the binding: a page beat of tea is lost and the rider restarts at 1.5 m/s. |
+| Margin riding (built 2026-11-16) | A crest jump at 6.5 m/s or more carries above the plate's top edge onto blank paper: no waves and no grip (speed frozen, no steering, no hazards) for 3 seconds. |
+| The written line (built 2026-11-16) | The faint ink path, which in Book One is the Xandrixes' smooth track. Hold to ride it: 9 m/s, safe from lips, prickles, webs and the gutter. Each 100 m ridden on it lowers `own` by 1; each 100 m ridden off it raises `own` by 1. |
+| Look away (built 2026-11-16) | Hold, once `look_away` is set: the plate holds as a still image for up to ten seconds a ride, Xandri rides on alone at 7 m/s, no page beat is paid, and the distance counts toward `own`. |
+| Lingering moves the boy (built 2026-11-16) | Each point of `walked` lowers the pace cap of the next ride by 1 m/s (12 down to 9 at most), and the ride opens on One More Dune. |
 
 | Sequence | Chapter | Narrator | Length | Surface and twist |
 | --- | --- | --- | --- | --- |
 | `s2_li_c4a` | c4 | Xandri | 600 m | Torrent waves at mid-morning; heat introduced |
 | `s2_li_c4b` | c4 | Xandri | 800 m | The vine sea at dusk; webs; no heat |
-| `s2_li_c6` | c6 | Xandri | 900 m | The herd's smooth track runs through breaking waves: stay in it to stay safe |
+| `s2_li_c6` | c6 | Xandri | 900 m | The herd's smooth track runs through breaking waves: stay in it to stay safe. Set-piece (built 2026-11-16): near the end a Xandrix surfaces under the plate (only its back is seen), the illustration tilts twenty degrees, the caption slides down the page, and the player rides the slope of the paper |
 | `s2_li_c9` | c9 | Xandri | 1,000 m | The wake past the mark: at 600 m the drawing runs off the right margin and the next page draws itself as he goes |
 | `s2_li_c5` | c5 | Pell | 500 m | Rooftops; gusts drawn as hatching lift the umbrella; the momentum is air, not sand |
 | `s2_li_c7` | c7 | Oda | 600 m | Surf the wet ink stroke as the Scribe writes it; outrun the pen and the page ahead is blank and you drop back 20 m |
@@ -556,13 +587,17 @@ Side-on through shelves that do not end, toward a book that is calling.
 | Hazards | Falling books (a shadow shows 1 s before), sand drifts slow walking by 30% if `sand_leak` ≥ 60, a ladder that rolls on its own if `steep` ≥ 40. |
 | Steep | At `steep` ≥ 40 the stacks add two junctions. The keeper's mind wanders and the shelves go on. |
 | Progress | A bookmark ribbon across the top lengthens with each correct junction. |
-| Failure | None fatal. A fall from a ladder returns you to the last landing. |
+| Failure | None fatal. A fall from a ladder returns you to the last landing. In the twist a visit can be lost (three wrong turns from unpinned aisles): Elaris is put back at the door of the stacks. |
+| Reading lamps (accepted 2026-11-15, built 2026-11-16) | Three wicks per visit. A lit lamp pins its aisle: it is never rebuilt, its call does not move, and a wrong turn taken from it costs no ribbon. |
+| Shelves that turn over (built 2026-11-16) | In `s2_stacks_c7` an aisle nobody has pinned rebuilds every 9 seconds: the call moves to another way. A wrong turn from such an aisle costs a length of ribbon. |
+| Maudric's ribbons (built 2026-11-16) | An old green bookmark hangs at one way of some junctions. It is not the call's way; it is quicker (two junctions pass at once), past the books he read, at `steep` +2. It counts as a linger: `lingers` +1, `walked` +1. |
+| The reading chair (built 2026-11-16) | At `steep` 40 or more the last aisle runs past the reading chair, side-on. Elaris is sitting in it with the cup. The player walks past behind him. |
 
 | Sequence | Chapter | Junctions | Twist |
 | --- | --- | --- | --- |
 | `s2_stacks_c3` | c3 | 4 | Tutorial; sand motes |
 | `s2_stacks_c5` | c5 | 5 | Rolling ladders; raindrops |
-| `s2_stacks_c7` | c7 | 5 | Ink flecks that cling to the wrong shelves as false trails |
+| `s2_stacks_c7` | c7 | 5 | Ink flecks that cling to the wrong shelves as false trails; the shelves turn over; lamps, ribbons and the chair (built 2026-11-16) |
 | `s2_stacks_c8` | c8 | 6 | Reversed: no book calls. Follow the absence: where motes do not go, and frost forms on shelf edges. Candle radius 2 m. |
 
 ## 11. 1D games
@@ -602,6 +637,15 @@ ledger (hints). A result card appears on Pour.
    Its front pages are the jars and the recipes; its last recipe is unfinished: "For leaving a
    book that is still going: sprig, and what the book gives back". From c6 it can be turned over
    (`ledger_turned`): the back pages are a count of days that stops at forty.
+9. **Second pour (accepted 2026-11-15, built 2026-11-16).** The leaves of the cup just poured can
+   be poured over once more, for no kettle water: depth halved (rounded down), length kept,
+   binding 0, and `steep` does not move. It opens the book on the card if the thinner cup meets
+   it, so a cup that failed only on binding can be saved (sprig, sprig, sprig is D10 B3; poured
+   again it is D5 B0, which opens `g_tea_c5`).
+10. **The cup that is already full (built 2026-11-16).** At `steep` 80 the cup is found refilled
+   (section 12). At the last pot that means three spoons are in it that the player did not add:
+   ember root, ember root, clove-bark (binding 5). A spoon can be taken out as well as put in.
+   The last pot is brewed for letting go: a cup of binding 0 or less. Poured as found, it binds.
 
 | Herb | Depth | Length | Binding | Found |
 | --- | --- | --- | --- | --- |
@@ -659,6 +703,16 @@ the page runs with sand (or rain, or ink) for the book being named.
 4. When the rules hold, Inscribe: the ink sets, the gutter stops running, and the name is written
    to `names_given`.
 5. There is no failure; the page waits. A name can be changed until Inscribe is pressed.
+6. **Blind tooling (accepted 2026-11-15, built 2026-11-16).** A tile for something only heard
+   about, never witnessed on a page, presses blind, without gold. A title carries one blind tile
+   at most. Heard-only tiles: City and Answer in the road book; Zorlop, End and Eternity in the
+   sand book.
+7. **True ink (built 2026-11-16).** On the sand book the ink takes only what a page has shown.
+   "End" takes in no title, because no ending shows it. "Proof" takes only if Xandri passed the
+   mark (`passed_father_mark`).
+8. **The scraped title (built 2026-11-16 as a thing to find; its payoff is phase 3).** Under raking
+   light (tilt the lamp) the sand book's cartouche shows a title scraped away in Maudric's hand:
+   "The Desert That Ends". He could not make it take. It is a model the true ink refuses.
 
 | Scene | Tiles | Templates | Twist |
 | --- | --- | --- | --- |
@@ -708,6 +762,20 @@ at most): a lever's pivot, a strap's buckle, a peg, a tab. A blocked part does n
 brushed out, and brushing is a move (`clasp_brushes`); par rises by the number blocked. Sand
 swept in the hub never reaches the clasp. Reset does not put brushed sand back.
 
+**Warm brass (accepted 2026-11-15, built 2026-11-16).** On the gear train (`g_clasp_c7`) the bolt
+slides only while the cup sits on the cover. Setting the cup there is a move, and the tea cools by
+one with every move it sits (six moves of warmth); a cold cup has to be fetched fresh, at three
+moves. A train that turns the latch the right way under a cold cover does not open.
+
+**The candle trade, and closing a clasp (built 2026-11-16).** On the black book (`g_clasp_c8`)
+the candle that melts frost off a strap is also the only light: each melt shortens it (five
+lengths), the board darkens as it shortens, and a melted strap freezes again in three moves. The
+last gear sits under the straps and is set by its click: every position clicks, and home clicks
+duller. The book is opened this way in c8; on the way out it is **closed** the same way, run
+backwards: the straps go back down lowest first, then the gear, then the hasp. This is the one
+clasp with a loss: if the candle goes out while frost still holds a strap, the book stays open
+(the web build plays the closing).
+
 **Writes.** `clasps_opened`, `past_fragments`, `past_known`; c8 also `black_book_open`; from
 2026-11-15 also `clasp_brushes` (and each clasp reads `sand_leak`).
 
@@ -736,6 +804,18 @@ Right: the Test stone and the Break stone.
 4. A plan that achieves the Want and breaks no rule wins: the loophole flag is set.
 5. Break: at any time the player may choose a plan that breaks a rule on purpose. The broken rule
    is written to `rules_broken`, and the book goes on.
+6. **Fresh clay (accepted 2026-11-15, built 2026-11-16).** Rules have ages and authors. Touching a
+   rule's wedge marks tells its clay: worn, or sharp and dark. A newer rule can be set aside by
+   **citing** an older rule it contradicts. On the gods' tablet the watcher's rule 9 ("No one
+   follows where a god has gone.") is contradicted by rule 8 ("No one sleeps where the gods have
+   not slept."): the old rule sends the clan to sleep where the gods have slept, and nobody can
+   lie down there without following where a god has gone. A citation that does not hold counts as
+   a failed Test. Rule 1, "We do not ride on the backs of the gods", is sharp where every other
+   rule is worn (it is Xadra's carving, section 20A), but no older rule contradicts it: rule 3
+   says the same with a hand, so it stands.
+7. **Answer the watcher (built 2026-11-16).** If The Well-Post was seen (`well_post_seen`), the
+   watcher's shadow withdraws once on the gods' tablet: the first failed Test or citation adds no
+   scrutiny.
 
 **Appearances.**
 
@@ -854,6 +934,20 @@ inside the book. This is a mark. Two prompts appear on the page:
 | One more page | `lingers` +1, `steep` +8. A 1.5 to 3 minute lingering scene plays in thin third person: Xandri's thoughts at night, Pell's town after the choice, the pilgrims settling. It grants 2 or 3 extra motif tiles and one line of lore, then the page closes because the pot is empty. |
 
 Lingering is attractive: it gives tiles and lore. That is the temptation the ending tests.
+
+### Walked, own and Look away (accepted 2026-11-15, built 2026-11-16)
+
+A reader's wanting leans on the one he reads (section 20A). Three state entries carry it.
+
+| State | Raised by | Read by |
+| --- | --- | --- |
+| `walked` | Each linger at a mark; One more page at The Other Hand and at the ring of stones; each of Maudric's ribbons taken in the stacks | The next Book One 3D session starts 200 m on (One More Dune); Xandri's pace cap in the next ride is 1 m/s lower per point, 3 at most; how long he lies at the ring of stones |
+| `own` | Look away, held; each 100 m ridden off the written line (and −1 per 100 m ridden on it) | The endings, in phase 3 |
+| `hand_was` | The storyteller's circle: `raised` if the player pressed, `instinct` if the page did it | Phase 3 |
+
+**Look away** (hold; inside books, once `look_away` is set by The Ledger Turned Over; offered once
+before that, at The Other Hand): Elaris lifts his eyes, the image holds as a still plate for up to
+ten seconds, and Xandri acts alone.
 
 ### Steep (the hidden habit meter)
 
@@ -1063,8 +1157,8 @@ or two lines each.
 | File | Holds |
 | --- | --- |
 | `data/game.json` | Nine chapters, 153 minutes, target 120–160, core verb Read |
-| `data/scenes.json` | Two 2D modes (`living`, `stacks`), four 1D games (`tea`, `naming`, `clasps`, `tablet`), 69 scenes: 40 3D, 10 2D, 19 1D |
-| `data/flags.json` | 43 state entries: meters, counters, enums, flags and four ledgers (six added 2026-11-15: `gutter_sand`, `cup_taste`, `clasp_brushes`, `ledger_turned`, `parting_cup`, `other_hand_seen`) |
+| `data/scenes.json` | Two 2D modes (`living`, `stacks`), four 1D games (`tea`, `naming`, `clasps`, `tablet`), 72 scenes: 43 3D, 10 2D, 19 1D (three 3D scenes added 2026-11-16: `s3_well_post`, `s3_ledger_turned`, `s3_ring_of_stones`) |
+| `data/flags.json` | 49 state entries: meters, counters, enums, flags and four ledgers (six added 2026-11-15: `gutter_sand`, `cup_taste`, `clasp_brushes`, `ledger_turned`, `parting_cup`, `other_hand_seen`; six added 2026-11-16: `hand_was`, `walked`, `own`, `look_away`, `well_post_seen`, `wenna_asked`) |
 | `data/endings.json` | Four endings, none as written |
 
 Beyond the shared schemas, three content files hold what the build reads but never writes. They
@@ -1184,6 +1278,19 @@ More Dune, the Ledger Turned Over as its own scene, Look away as a standing verb
 `walked`, `own`, Wenna Counts, Xandri Does Not Get Up). Phase 3: The Unread Page, the added costs
 on the four endings, the Keeper's Binding tablet, the scraped title, the second playthrough.
 
+**What is built in phase 2 (the author: "start phase 2"; accepted 2026-11-15, built 2026-11-16).**
+Every 2D mode and 1D game in the web build is now a ladder of three stages (teach, test, twist),
+each with the obstacles DEEP_DIVE section 3 names and its set-piece; the stage reached is
+remembered. The reversal is played: `hand_was`, `walked`, `own` and Look away are state entries
+(section 12); The Well-Post, The Ledger Turned Over and Xandri Does Not Get Up are scenes in
+`data/scenes.json` (section 9); One More Dune and Wenna Counts are beats in scenes that exist. The
+three layer links are built: the cup colours the page and lingering moves the boy are playable
+between web modes, and sweep, brew, open is played between the pantry table, the ninth jar and the
+Clasps, with its 3D end (the hub's sweep) in the data. In the web build two more things are
+compressed: Look away is offered in the twist ride without the ledger having been turned over
+first, and The Well-Post's effect is earned on the web's own shrine-store tablet (solved clean,
+`well_post_seen`) and spent on the gods' tablet. Phase 3 is unchanged.
+
 ### The dramatic question
 
 **Can Elaris read a boy to the end of his desert without walking him to death to get there?**
@@ -1285,11 +1392,12 @@ kind thing he had done to a story."
 
 ### Scenes to add (not yet in `data/scenes.json`)
 
-The storyboards, asset lists and Blender build files follow in a later pass, so no scene was added,
-removed or renamed in this one. To add then: **The Well-Post** (c2); **The Ledger Turned Over**
-(c6, pantry); **Xandri Does Not Get Up** (c9, the ring of stones); the ending scene for **The
-Unread Page**; and the Rule Tablet `g_tablet_c8`, the Keeper's Binding. One More Dune, The Other
-Hand and Wenna Counts are beats in scenes that exist.
+Added in phase 2 (accepted 2026-11-15, built 2026-11-16), with their assets, build files and
+storyboard rows (`storyboard_additions.md`): **The Well-Post** (`s3_well_post`, c2, a new location,
+`village-well`); **The Ledger Turned Over** (`s3_ledger_turned`, c6, the pantry); **Xandri Does Not
+Get Up** (`s3_ring_of_stones`, c9, the father's camp). Still to add, in phase 3: the ending scene
+for **The Unread Page**, and the Rule Tablet `g_tablet_c8`, the Keeper's Binding. One More Dune,
+The Other Hand and Wenna Counts are beats in scenes that exist.
 
 ## 21. Added for the game
 
@@ -1324,22 +1432,24 @@ Everything below is not in the author's text. The author can approve or strike e
 | 25 | A reader's wanting leans on the narrated: lingers and sips walk Xandri further; "zoning out" read as the reader's attention lifting (accepted 2026-11-15) | Section 20A |
 | 26 | Maudric as the elder Xandri's reader; his wish to see the desert's end; the petition as a confession; the pantry ledger as his, binding-biased, with a day count on its back pages and the entry for day thirty-one (accepted 2026-11-15) | Sections 5, 6, 11, 20A |
 | 27 | The ringed hand and the scene The Other Hand; in the web build, its showing as a later plate after the c4 ride with the choice Look away or One more page (accepted 2026-11-15) | Sections 10, 20A |
-| 28 | Xadra's past with the elder Xandri; the gods' rule as his carving; Xadra as the well-post watcher; the scene The Well-Post and the second leaf-cord (accepted 2026-11-15) | Section 20A (phase 2) |
-| 29 | Wenna knowing a reader is there; her question; the scene Wenna Counts (accepted 2026-11-15) | Section 20A (phase 2) |
-| 30 | The scenes One More Dune, The Ledger Turned Over and Xandri Does Not Get Up; the verb Look away; the flags `hand_was`, `walked` and `own` (accepted 2026-11-15) | Section 20A (phase 2) |
+| 28 | Xadra's past with the elder Xandri; the gods' rule as his carving; Xadra as the well-post watcher; the scene The Well-Post and the second leaf-cord (accepted 2026-11-15, built 2026-11-16) | Sections 9, 20A (phase 2) |
+| 29 | Wenna knowing a reader is there; her question; the scene Wenna Counts, a beat in `s3_abyss_return` (`wenna_asked`) (accepted 2026-11-15, built 2026-11-16) | Sections 9, 20A (phase 2) |
+| 30 | The scenes One More Dune, The Ledger Turned Over and Xandri Does Not Get Up; the verb Look away; the flags `hand_was`, `walked` and `own`, and `look_away`, `well_post_seen`, `wenna_asked` (accepted 2026-11-15, built 2026-11-16) | Sections 9, 12, 20A (phase 2) |
 | 31 | The Xandrixes' track as the story's written line; riding as taking the pen; the added costs and beats on all four endings (accepted 2026-11-15) | Section 20A (phase 3) |
 | 32 | The ending The Unread Page and the leaf (accepted 2026-11-15) | Sections 13, 20A (phase 3) |
 | 33 | Tea: gutter sand and the ninth jar (two spoons at most), sweeping filling it, the ledger that opens and turns over, the unfinished recipe, the Parting Cup and its test; the taste a cup carries (accepted 2026-11-15) | Sections 11, 12, 20A (phase 1, built) |
-| 34 | Tea, not yet built: second pour; the pre-filled cup at steep 80 (accepted 2026-11-15) | DEEP_DIVE section 3 (later phases) |
+| 34 | Tea: second pour; the pre-filled cup at steep 80 (ember root, ember root, clove-bark), and the last pot brewed for letting go (binding 0 or less) (accepted 2026-11-15, built 2026-11-16) | Section 11 (phase 2) |
 | 35 | The Clasps: sand in the works, brushing as a move, sweeping between clasps in the web build (accepted 2026-11-15) | Sections 11, 12 (phase 1, built) |
-| 36 | The Clasps, not yet built: warm brass, the candle trade on the black book, closing a clasp (accepted 2026-11-15) | DEEP_DIVE section 3 (later phases) |
+| 36 | The Clasps: warm brass (six moves of warmth, three to fetch a fresh cup), the candle trade on the black book (five lengths, frost back in three moves), the last gear set by its duller click, closing a clasp, and the one clasp loss (accepted 2026-11-15, built 2026-11-16) | Section 11 (phase 2) |
 | 37 | Living illustration: the cup colours the page (the squall called by the player, the readable thin phase, half heat and the stronger written line) (accepted 2026-11-15) | Section 10 (phase 1, built) |
-| 38 | Living illustration, not yet built: the gutter, margin riding, the written line's effect on `own`, the tilting plate (accepted 2026-11-15) | DEEP_DIVE section 3 (later phases) |
-| 39 | The stacks, not yet built: reading lamps, Maudric's ribbons, passing the reading chair (the chair and the ribbon are drawn into the last aisle of the web build as set dressing only) (accepted 2026-11-15) | DEEP_DIVE section 3 (later phases) |
-| 40 | The Naming, not yet built: blind tooling, true ink, the scraped title "The Desert That Ends" (it shows faintly on the sand book's cartouche art) (accepted 2026-11-15) | DEEP_DIVE section 3 (phase 3) |
-| 41 | The Rule Tablet, not yet built: fresh clay, answering the watcher, the tablet `g_tablet_c8` and its meaning of *leave* (accepted 2026-11-15) | DEEP_DIVE section 3 (phase 3) |
-| 42 | The three layer links (sweep, brew, open; the cup colours the page; lingering moves the boy) and the second-playthrough changes, including the unassisted "I" (accepted 2026-11-15) | Section 20A; the first two links built in phase 1 |
+| 38 | Living illustration: the gutter (8 m/s), margin riding (6.5 m/s, 3 s), the written line's effect on `own` (per 100 m), the tilting plate, Look away in the ride (ten seconds) (accepted 2026-11-15, built 2026-11-16) | Section 10 (phase 2) |
+| 39 | The stacks: reading lamps (three wicks), shelves that turn over every 9 seconds, Maudric's ribbons (two junctions at once, steep +2, a linger), passing the reading chair, and a visit lost to three wrong turns (accepted 2026-11-15, built 2026-11-16) | Section 10 (phase 2) |
+| 40 | The Naming: blind tooling, the heard-only tiles, true ink, the scraped title "The Desert That Ends" under raking light as a thing to find (accepted 2026-11-15, built 2026-11-16); its payoff stays phase 3 | Section 11 (phase 2) |
+| 41 | The Rule Tablet: fresh clay (rule 8 cited against rule 9), answering the watcher (accepted 2026-11-15, built 2026-11-16); the tablet `g_tablet_c8` and its meaning of *leave* (accepted 2026-11-15, phase 3, not built) | Section 11 |
+| 42 | The three layer links (sweep, brew, open; the cup colours the page; lingering moves the boy) and the second-playthrough changes, including the unassisted "I" (accepted 2026-11-15) | Section 20A; the first two links built in phase 1, the third (lingering moves the boy, through `walked`) built 2026-11-16; the second playthrough is phase 3 |
 | 43 | The five sample lines; the narration added to the web modes for sweeping, the ledger, the squall, sand in the works and The Other Hand (accepted 2026-11-15) | Section 20A; `web/games/endless-temple/` |
 | 44 | The style bible's palette values and never-shown list; the code-drawn art, including in this pass 26 more tooling stamps (one for every Naming tile), the two play sprites and the two hands (accepted 2026-11-15) | `art/` |
 | 45 | Six state entries: `gutter_sand`, `cup_taste`, `clasp_brushes`, `ledger_turned`, `parting_cup`, `other_hand_seen` (accepted 2026-11-15) | `data/flags.json` |
 | 46 | The thread: one faint tea ring on some surface in every game, where someone sat reading (accepted 2026-11-15) | DEEP_DIVE section 6; shown on the last-cup card |
+| 47 | The collection thread's guest here: a stopped clock at 2:14 (from Behind the Peephole) on the wall behind the table in the Clasps' twist, and its one line, "A clock on the wall behind the table says fourteen past two. It does not say of which day." (accepted 2026-11-15, built 2026-11-16) | `web/games/endless-temple/clasps.js` |
+| 48 | The web ladders' stage names, the narration lines for each new obstacle and the "because you…" notes when a layer link fires; the new location `village-well` and its image (accepted 2026-11-15, built 2026-11-16) | `web/games/endless-temple/`; `assets/assets.json`; `blender/village-well.build.json` |

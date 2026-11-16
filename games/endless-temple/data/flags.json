@@ -350,6 +350,47 @@
       "type": "bool",
       "default": false,
       "description": "The player has seen the ringed hand bring a cup into the father's last walk (accepted 2026-11-15; the midpoint reversal's first appearance)."
+    },
+    {
+      "name": "hand_was",
+      "type": "enum",
+      "default": "undecided",
+      "description": "The Hand That Shot Up (accepted 2026-11-15, built 2026-11-16): in the storyteller's circle, whether the player raised Xandri's hand or let the page do it by \"instinct\" when the prompt ran out. Read back in phase 3.",
+      "values": [
+        "undecided",
+        "raised",
+        "instinct"
+      ]
+    },
+    {
+      "name": "walked",
+      "type": "counter",
+      "default": 0,
+      "description": "How far past his own stopping place the reader's wanting has walked Xandri (accepted 2026-11-15, built 2026-11-16). +1 per linger at a mark, per One more page, and per old keeper's ribbon taken in the stacks. Each point starts the next Book One 3D session 200 m on, lowers his pace cap in the next ride by 1 m/s (3 at most), and is the strength he has left at the ring of stones."
+    },
+    {
+      "name": "own",
+      "type": "counter",
+      "default": 0,
+      "description": "What Xandri did unwatched or unsteered (accepted 2026-11-15, built 2026-11-16). +1 per Look away held, and per 100 m ridden off the written line; -1 per 100 m ridden on it, never below 0. The endings read it in phase 3."
+    },
+    {
+      "name": "look_away",
+      "type": "bool",
+      "default": false,
+      "description": "Look away is a standing verb inside books (accepted 2026-11-15, built 2026-11-16): set when Elaris turns the ledger over in the pantry after the father's walk. Hold: the image holds as a still plate for up to ten seconds and Xandri acts alone."
+    },
+    {
+      "name": "well_post_seen",
+      "type": "bool",
+      "default": false,
+      "description": "The Well-Post was seen (accepted 2026-11-15, built 2026-11-16): the shrine-store left clean, and the linger taken. On the gods' tablet the watcher's shadow then withdraws once: the first failed test adds no scrutiny."
+    },
+    {
+      "name": "wenna_asked",
+      "type": "bool",
+      "default": false,
+      "description": "Wenna Counts (accepted 2026-11-15, built 2026-11-16): at the edge of the abyss, awake, a voice gave the next star name back and asked \"Will you say the end?\" Nothing lights."
     }
   ]
 }

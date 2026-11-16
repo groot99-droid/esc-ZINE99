@@ -12,24 +12,56 @@
 // Art (api.art): the twelve shelf bays as the backdrop (each rasterised once), the Elaris sprite,
 // the bookmark ribbon, the mote sprites as the call's badge, a climb glyph, the chapter heading.
 // The old line drawing stays as the fallback while the art loads, or if it is missing.
+// Phase 2 (DEEP_DIVE.md section 3, The stacks): three visits, a ladder.
+//   Teach (s2_stacks_c3): follow the motes: sand, three junctions, few falling books.
+//   Test (s2_stacks_c5): false trails and rolling ladders: rain, four junctions; some drops cling to
+//     a wrong way until Elaris stands and Listens.
+//   Twist (s2_stacks_c7): keep the shelves from changing. Unwatched shelves turn over every few
+//     seconds and the call moves; a wrong turn from an unpinned aisle costs a length of ribbon, and
+//     the third ends the visit. Reading lamps: three wicks; a lit lamp (F) pins its aisle, which is
+//     never rebuilt. Maudric's ribbons: an old bookmark at some junctions marks a quicker way, past
+//     the books he read; it counts as a linger (api.shared `walked`: the boy in the sand book walks
+//     further). The set-piece: the last aisle runs past the reading chair; Elaris is sitting in it
+//     with the cup, and the player walks past behind him.
+// The design's "no failure is fatal" holds: a lost visit puts Elaris back at the door of the stacks.
 
-const BASE_JUNCTIONS = 5;
+const BASE_JUNCTIONS = 3;
 const EXITS = ["up", "down", "on"];
 // Narration written for the game (not quotations).
 const LINES = {
   open: "Rain is falling somewhere in the stacks, where no rain should be. The weather book of Hollin is calling, and Elaris goes to find it.",
-  first: "Follow the drops. Where they thicken, the way is right.",
+  first: "Follow the grains. Where they thicken, the way is right.",
   listen: "The drops are harder to read here. Stand and Listen (hold L), and they gather into one stream.",
   ladders: "Rolling ladders on the rails. Grab one (E) and push: it outruns the falling books.",
   wander: "The keeper's mind wanders, and the shelves go on: two more junctions have grown ahead.",
-  right: "The drops thicken. Junction {n} of {N} behind you.",
-  wrong: "The drops thin out here.",
+  right: "The call thickens. Junction {n} of {N} behind you.",
+  wrong: "The call thins out here.",
   bend: "The aisle bends back. The same junction again; the shelves go on.",
-  near: "The drops gather ahead. The calling book is close.",
+  near: "The motes gather ahead. The calling book is close.",
   hit: "A book falls on you. You stagger.",
-  winClean: "The weather book of Hollin, found by its own rain: {N} junctions in {t}, with no wrong turn. Its pages are damp under Elaris's long green hand.",
-  win: "The weather book of Hollin, found: {N} junctions in {t}, with {w} wrong turn{ws} and {h} falling book{hs}. The shelves behind him have already rearranged themselves.",
+  winClean: "{book}, found by its own {call}: {N} junctions in {t}, with no wrong turn. {tail}",
+  win: "{book}, found: {N} junctions in {t}, with {w} wrong turn{ws} and {h} falling book{hs}. The shelves behind him have already rearranged themselves.",
+  // phase 2
+  open0: "Sand is drifting through the stacks, a grain at a time, toward a shelf that is kept clasped. Elaris goes after it.",
+  open2: "Ink is running along the shelf edges, and the stacks will not keep still tonight. Elaris takes three wicks for the reading lamps and goes in.",
+  decoy: "Some of the drops cling to the wrong shelves here. Stand and Listen (hold L): only the true stream gathers.",
+  lampHow: "The shelves here turn over when nobody is looking, and the call moves with them. Light a reading lamp (F): a lit aisle is never rebuilt.",
+  lamp: "A reading lamp, lit. This aisle will stay as it is. Wicks left: {n}.",
+  noWick: "No wick left for a lamp.",
+  turnOver: "The shelves turn over. The call comes from another way now.",
+  wrongPinned: "The flecks thin out here. But the lamp is lit: the aisle will be as he left it.",
+  wrongLoose: "The flecks thin out, and behind him the shelves rebuild: a length of the ribbon is gone. ({n} of 3.)",
+  ribbon: "An old green bookmark hangs at this way: the last keeper's. It is quicker, past the books he read, and two junctions go by at once. Something in the cup is the heavier for it.",
+  ribbonLink: "Because you took the old keeper's ribbon, the boy in the sand book will have walked further: the living illustration starts on tired feet.",
+  chair: "The aisle runs past the reading chair. A keeper sits in it with a cup, his back to the shelves. It is himself. He does not look up, and Elaris walks by behind him.",
+  lost: "The shelves have turned over once too often, and the ink has dried on their edges. Elaris finds himself at the door of the stacks again, with {w} wick{ws} in his pocket and the road book still somewhere inside.",
+  stop: "{text} He leaves the stacks by the way he came, and the deeper shelves keep their books for another night.",
 };
+const STG = [
+  { name: "Teach: follow the motes", scene: "s2_stacks_c3", J: 3, mote: "sand", book: "The clasped shelf", call: "sand", tail: "Sand lies along the clasp like a drawn line.", open: "open0", ladders: false, bookGap: 16, decoy: 0, rebuild: 0, wicks: 0 },
+  { name: "Test: false trails and rolling ladders", scene: "s2_stacks_c5", J: 4, mote: "rain", book: "The weather book of Hollin", call: "rain", tail: "Its pages are damp under Elaris's long green hand.", open: "open", ladders: true, bookGap: 8, decoy: 0.38, rebuild: 0, wicks: 0 },
+  { name: "Twist: keep the shelves from changing", scene: "s2_stacks_c7", J: 4, mote: "ink", book: "The road book", call: "ink", tail: "The lamps he lit are still burning behind him.", open: "open2", ladders: true, bookGap: 9, decoy: 0, rebuild: 9, wicks: 3 },
+];
 
 export default {
   mount(root, api) {
@@ -53,7 +85,11 @@ export default {
     for (const t of TILE_IDS) prep("stacks-" + t, 512, 512);
     prep("sprite-elaris", 288, 360);
     for (const r of ["ribbon-empty", "ribbon-grown", "ribbon-end"]) prep(r, 300, 60);
-    for (const m of ["mote-rain", "mote-frost"]) prep(m, 96, 96);
+    for (const m of ["mote-rain", "mote-frost", "mote-sand", "mote-ink"]) prep(m, 96, 96);
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const reached = Math.max(0, Math.min(2, api.store.get("stage", 0) | 0));
+    let stage = 0;
+    const stg = () => STG[stage];
     prep("glyph-climb", 88, 88);
     const TILE_K = 400 / 336;          // a tile's shelves run from y=4 to the floor line at y=340 of 400
     const BAY = 4.6 * TILE_K;          // so one bay is this many metres wide
@@ -62,7 +98,9 @@ export default {
     .${P}root{position:absolute;inset:0;overflow:hidden;background:${C.paper};touch-action:none;user-select:none;-webkit-user-select:none}
     .${P}root canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
     .${P}pad{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:flex-end;padding:10px 12px 12px;pointer-events:none;gap:8px}
-    .${P}pad div{display:flex;gap:8px}
+    .${P}pad{flex-wrap:wrap}
+    .${P}pad div{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    @media (max-width:520px){.${P}pad button{min-width:50px;min-height:52px;font-size:14px}.${P}pad{gap:6px;padding:6px 8px 10px}.${P}pad div{gap:6px}}
     .${P}pad button{pointer-events:auto;font:600 15px 'EB Garamond',Georgia,serif;color:${C.ink};background:rgba(239,232,214,.9);border:1px solid ${C.ink};min-width:56px;min-height:56px;border-radius:4px;touch-action:none}
     .${P}pad button.${P}on{background:${C.goldHi}}
     @media (hover:hover) and (pointer:fine){.${P}pad{opacity:.7}}
@@ -82,6 +120,12 @@ export default {
     .${P}legend{display:flex;gap:8px;align-items:center;justify-content:center;margin:0 0 12px;font-size:14px;font-style:italic;flex-wrap:wrap}
     .${P}legend img{width:34px;height:34px;border:1px solid ${C.ink};border-radius:50%}
     .${P}legend span{display:inline-flex;align-items:center;gap:4px}
+    .${P}start{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:0 0 12px}
+    .${P}card .${P}start button{display:inline-block;margin:0;font-size:14px;padding:5px 10px;background:transparent;min-height:38px}
+    .${P}card .${P}start button[aria-pressed=true]{background:${C.ink};color:${C.paper}}
+    .${P}card .${P}row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+    .${P}card .${P}row button{margin:0}
+    .${P}card .${P}row button.${P}alt{background:transparent}
     .${P}endc{position:absolute;inset:0;z-index:6;display:grid;place-items:center;background:rgba(239,232,214,.88);padding:16px 16px 150px;box-sizing:border-box;overflow:auto}
     .${P}endc figure{margin:0;max-width:360px;text-align:center;color:${C.ink};font-family:'IM Fell English',Georgia,serif;font-size:22px}
     .${P}endc img{width:min(320px,70vw);height:auto;border:1px solid ${C.ink};outline:1px solid ${C.ink};outline-offset:4px;margin-bottom:10px}
@@ -90,47 +134,91 @@ export default {
     el.className = P + "root";
     el.innerHTML = `<canvas aria-label="Side-on shelves that do not end; a stream of gold motes drifts toward the calling book."></canvas>
       <div class="${P}pad"><div><button type="button" data-k="left">◀</button><button type="button" data-k="right">▶</button></div>
-      <div><button type="button" data-k="listen" hidden>Listen</button><button type="button" data-k="grab">Grab</button><button type="button" data-k="down">▼</button><button type="button" data-k="up">▲</button></div></div>`;
+      <div><button type="button" data-k="lamp" hidden>Lamp</button><button type="button" data-k="listen" hidden>Listen</button><button type="button" data-k="grab">Grab</button><button type="button" data-k="down">▼</button><button type="button" data-k="up">▲</button></div></div>`;
     root.append(css, el);
     const cv = el.querySelector("canvas");
     const listenBtn = el.querySelector('[data-k="listen"]');
+    const lampBtn = el.querySelector('[data-k="lamp"]');
     const g = cv.getContext("2d");
 
     // ---- segments ------------------------------------------------------------------------------
     // a segment is an aisle; it ends in a junction (three exits), a bend back (after a wrong turn),
     // or the calling book (after the last junction)
-    const answers = Array.from({ length: BASE_JUNCTIONS + 2 }, () => EXITS[Math.floor(rng() * 3)]);
+    let answers = Array.from({ length: 8 }, () => EXITS[Math.floor(rng() * 3)]);
     function makeSeg(kind) {
-      const L = 52 + Math.floor(rng() * 28);
-      const seg = { kind, L, seed: Math.floor(rng() * 1e6), books: [], ladders: [] };
-      const late = S0.ribbon >= 2;
-      if (kind !== "book") for (let x = 8; x < L - 12; x += (late ? 7 : 10) + rng() * 8) seg.books.push({ x, t: -1, state: "wait", trig: x - 4 - rng() * 3 });
-      if (S0.ribbon >= 1 && rng() < 0.9) seg.ladders.push({ x: 4 + rng() * 6, v: 0, rail: [2, L - 14] });
+      const G = stg();
+      const L = (G.rebuild ? 40 : 52) + Math.floor(rng() * (G.rebuild ? 14 : 28));
+      const seg = { kind, L, seed: Math.floor(rng() * 1e6), books: [], ladders: [], pinned: false, lampX: 0, decoy: null, ribbonExit: null };
+      if (kind !== "book") for (let x = 8; x < L - 12; x += G.bookGap + rng() * 8) seg.books.push({ x, t: -1, state: "wait", trig: x - 4 - rng() * 3 });
+      if (G.ladders && kind !== "book" && rng() < 0.9) seg.ladders.push({ x: 4 + rng() * 6, v: 0, rail: [2, L - 14] });
+      if (kind === "junction") {
+        const wrongs = EXITS.filter((e) => e !== answers[S0.ribbon]);
+        if (G.decoy) seg.decoy = wrongs[Math.floor(rng() * 2)];
+        // Maudric's ribbons: at the second and third junctions of the twist, an old bookmark at a way that is not the call's
+        if (G.rebuild && (S0.ribbon === 1 || S0.ribbon === 2)) seg.ribbonExit = wrongs[Math.floor(rng() * 2)];
+      }
       return seg;
     }
     const S0 = { ribbon: 0 };
     const S = {
       ribbon: 0, wrong: 0, hits: 0, t: 0, started: false, done: false, J: BASE_JUNCTIONS, wandered: false, still: 0, listening: false, flash: 0, flashKind: "", listenOn: false,
+      wicks: 0, loose: 0, rebuildT: 0, keepPin: false, ribbons: 0, chairSaid: false, turns: 0,
       seg: makeSeg("junction"), x: 1.5, v: 0, facing: 1, climb: null, stagger: 0, riding: null, runT: 0,
       motes: [], msg: "", msgT: 0, fade: 0,
     };
-    const keys = { left: false, right: false, up: false, down: false, listen: false };
+    const keys = { left: false, right: false, up: false, down: false, listen: false, lamp: false };
     function say(t, s = 2.4) { S.msg = t; S.msgT = s; }
     const exitX = (seg) => ({ up: seg.L - 2 * BAY, down: seg.L - BAY, on: seg.L });
 
-    function enter(kind) { S0.ribbon = S.ribbon; S.seg = makeSeg(kind); S.x = 1.5; S.v = 0; S.riding = null; S.motes = []; S.fade = 1; }
+    function enter(kind) { S0.ribbon = S.ribbon; S.seg = makeSeg(kind); S.x = 1.5; S.v = 0; S.riding = null; S.motes = []; S.fade = 1; S.rebuildT = stg().rebuild; }
+    // a visit begins: one rung of the ladder
+    function startStage(i) {
+      stage = i;
+      const G = stg();
+      api.store.set("stage", Math.max(reached, api.store.get("stage", 0) | 0, i));
+      answers = Array.from({ length: 8 }, () => EXITS[Math.floor(rng() * 3)]);
+      Object.assign(S, { ribbon: 0, wrong: 0, hits: 0, t: 0, done: false, J: G.J, wandered: false, listening: false, flash: 0, listenOn: i >= 1, wicks: G.wicks, loose: 0, keepPin: false, ribbons: 0, chairSaid: false, turns: 0, climb: null, stagger: 0, facing: 1, runT: 0 });
+      for (const k of Object.keys(keys)) keys[k] = false;
+      listenBtn.hidden = !S.listenOn; lampBtn.hidden = !G.rebuild;
+      enter("junction");
+      S.started = true; last = performance.now();
+      say(LINES[G.open] + " " + (i === 0 ? LINES.first : i === 1 ? LINES.decoy : LINES.lampHow), 6.5);
+    }
+    function lamp() {
+      const seg = S.seg;
+      if (!stg().rebuild || seg.kind !== "junction" || seg.pinned || S.climb || S.done) return;
+      if (S.wicks <= 0) { say(LINES.noWick, 1.6); return; }
+      S.wicks--; seg.pinned = true; seg.lampX = S.x;
+      say(LINES.lamp.replace("{n}", S.wicks), 3);
+    }
+    function lose() {
+      if (S.done) return;
+      S.done = true;
+      timers.push(setTimeout(() => api.end({ outcome: "lose", text: LINES.lost.replace("{w}", S.wicks).replace("{ws}", S.wicks === 1 ? "" : "s") }), api.reducedMotion ? 100 : 700));
+    }
     function flash(kind) { S.flash = api.reducedMotion ? 0 : 0.9; S.flashKind = kind; }
     function takeExit(ex) {
       const seg = S.seg;
       if (seg.kind === "junction") {
-        if (ex === answers[S.ribbon]) {
-          S.ribbon++; flash("right");
+        const byRibbon = seg.ribbonExit === ex && ex !== answers[S.ribbon];
+        if (ex === answers[S.ribbon] || byRibbon) {
+          S.ribbon = Math.min(S.J, S.ribbon + (byRibbon ? 2 : 1)); flash("right");
+          if (byRibbon) { S.ribbons++; shared.set("walked", (shared.get("walked", 0) | 0) + 1); }
           if (S.ribbon >= S.J) { enter("book"); say(LINES.near, 3); }
           else {
             enter("junction");
-            if (S.ribbon === 1) say(LINES.ladders, 4.5);
+            if (S.ribbon === 1 && stage === 1) say(LINES.ladders, 4.5);
             else if (S.ribbon === 2 && !S.listenOn) { S.listenOn = true; listenBtn.hidden = false; say(LINES.listen, 5); }
             else say(LINES.right.replace("{n}", S.ribbon).replace("{N}", S.J));
+          }
+          if (byRibbon) say(LINES.ribbon + " " + LINES.ribbonLink, 8);
+        } else if (stg().rebuild) {
+          S.wrong++; flash("wrong");
+          if (seg.pinned) { S.keepPin = true; enter("bend"); say(LINES.wrongPinned, 3.5); }
+          else {
+            S.loose++; S.ribbon = Math.max(0, S.ribbon - 1);
+            if (S.loose >= 3) { lose(); return; }
+            enter("bend"); say(LINES.wrongLoose.replace("{n}", S.loose), 4);
           }
         } else {
           S.wrong++; flash("wrong"); enter("bend");
@@ -138,25 +226,29 @@ export default {
           else say(LINES.wrong);
           if (!S.listenOn) { S.listenOn = true; listenBtn.hidden = false; timers.push(setTimeout(() => say(LINES.listen, 5), 2600)); }
         }
-      } else if (seg.kind === "bend") { enter("junction"); say(LINES.bend); }
+      } else if (seg.kind === "bend") {
+        enter("junction");
+        if (S.keepPin) { S.keepPin = false; S.seg.pinned = true; S.seg.lampX = 3; }
+        say(LINES.bend);
+      }
     }
 
     // ---- input ---------------------------------------------------------------------------------
-    const KM = { arrowleft: "left", a: "left", arrowright: "right", d: "right", arrowup: "up", w: "up", arrowdown: "down", s: "down", e: "grab", " ": "grab", l: "listen", q: "listen" };
+    const KM = { arrowleft: "left", a: "left", arrowright: "right", d: "right", arrowup: "up", w: "up", arrowdown: "down", s: "down", e: "grab", " ": "grab", l: "listen", q: "listen", f: "lamp" };
     function grab() {
       if (S.climb || S.stagger > 0) return;
       if (S.riding) { S.v = S.riding.v; S.riding = null; say("Off the ladder.", 1); return; }
       const l = S.seg.ladders.find((l) => Math.abs(l.x - S.x) < 1.2);
       if (l) { S.riding = l; l.v = Math.max(1.5, Math.abs(S.v)); say("Riding the rolling ladder. Push with ▶.", 1.6); }
     }
-    const onDown = (e) => { const k = KM[e.key.toLowerCase()]; if (!k || !S.started || (k === "listen" && !S.listenOn)) return; e.preventDefault(); if (k === "grab") { if (!e.repeat) grab(); } else keys[k] = true; };
+    const onDown = (e) => { const k = KM[e.key.toLowerCase()]; if (!k || !S.started || S.done || (k === "listen" && !S.listenOn)) return; e.preventDefault(); if (k === "grab") { if (!e.repeat) grab(); } else if (k === "lamp") { if (!e.repeat) lamp(); } else keys[k] = true; };
     const onUp = (e) => { const k = KM[e.key.toLowerCase()]; if (k && k !== "grab") keys[k] = false; };
     addEventListener("keydown", onDown); addEventListener("keyup", onUp);
     const ptr = [];
     for (const b of el.querySelectorAll("[data-k]")) {
       if (!b.dataset.k) continue;
       const k = b.dataset.k;
-      const d = (e) => { e.preventDefault(); if (!S.started) return; b.classList.add(P + "on"); if (k === "grab") grab(); else keys[k] = true; };
+      const d = (e) => { e.preventDefault(); if (!S.started || S.done) return; b.classList.add(P + "on"); if (k === "grab") grab(); else if (k === "lamp") lamp(); else keys[k] = true; };
       const u = (e) => { e.preventDefault(); b.classList.remove(P + "on"); if (k !== "grab") keys[k] = false; };
       b.addEventListener("pointerdown", d); b.addEventListener("pointerup", u); b.addEventListener("pointercancel", u); b.addEventListener("pointerleave", u);
       ptr.push([b, d, u]);
@@ -201,6 +293,18 @@ export default {
       S.listening = keys.listen && S.listenOn && !S.climb && !S.riding;
       if (S.listening) { S.v *= 0.8; }
       if (S.flash > 0) S.flash -= dt;
+      // the twist: shelves nobody is watching turn over, and the call moves with them
+      if (stg().rebuild && seg.kind === "junction" && !seg.pinned && !S.climb) {
+        S.rebuildT -= dt;
+        if (S.rebuildT <= 0) {
+          S.rebuildT = stg().rebuild;
+          const others = EXITS.filter((e) => e !== answers[S.ribbon]);
+          answers[S.ribbon] = others[Math.floor(rng() * 2)];
+          seg.seed = Math.floor(rng() * 1e6); S.motes = []; S.turns++;
+          flash("turn"); say(LINES.turnOver, 2.4);
+        }
+      }
+      if (seg.kind === "book" && stg().rebuild && !S.chairSaid && S.x > seg.L * 0.4 - 4) { S.chairSaid = true; say(LINES.chair, 7); }
       // rolling ladders drift on their own a little
       for (const l of seg.ladders) if (l !== S.riding) { l.x = Math.min(l.rail[1], Math.max(l.rail[0], l.x + Math.sin(S.t * 0.7 + l.rail[0]) * 0.1 * dt)); }
 
@@ -236,6 +340,7 @@ export default {
     }
     function spawnMote(right) {
       const seg = S.seg, ex = exitX(seg);
+      if (seg.decoy && right && !S.listening && rng() < stg().decoy) right = seg.decoy;
       const tight = S.listening && right;
       const x = tight ? S.x + rng() * 1.5 : S.x - 8 + rng() * 14;
       const y = tight ? 1.2 + rng() * 0.8 : 0.4 + rng() * 2.6;
@@ -248,17 +353,31 @@ export default {
     function finish() {
       if (S.done) return;
       S.done = true;
+      const G = stg();
       const secs = Math.round(S.t);
       const t = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`;
-      const text = (S.wrong ? LINES.win : LINES.winClean).replace("{N}", S.J).replace("{t}", t).replace("{w}", S.wrong).replace("{ws}", S.wrong === 1 ? "" : "s").replace("{h}", S.hits).replace("{hs}", S.hits === 1 ? "" : "s");
+      let text = (S.wrong ? LINES.win : LINES.winClean).replace("{book}", G.book).replace("{call}", G.call).replace("{tail}", G.tail).replace("{N}", S.J).replace("{t}", t).replace("{w}", S.wrong).replace("{ws}", S.wrong === 1 ? "" : "s").replace("{h}", S.hits).replace("{hs}", S.hits === 1 ? "" : "s");
+      if (G.rebuild) text += ` ${3 - S.wicks} lamp${3 - S.wicks === 1 ? "" : "s"} lit; the shelves turned over ${S.turns} time${S.turns === 1 ? "" : "s"}.` + (S.ribbons ? " He took the old keeper's ribbon, and passed himself in the reading chair without a word." : " He passed himself in the reading chair without a word.");
+      const endCard = () => {
+        if (!art.has("stacks-calling")) return;
+        const c = document.createElement("div");
+        c.className = P + "endc";
+        c.innerHTML = `<figure>${pic(G.rebuild ? "stacks-chair" : "stacks-calling", "The calling book, glowing in its alcove.")}<div></div></figure>`;
+        c.querySelector("div").textContent = G.rebuild ? "The reading chair, passed" : "The calling book";
+        el.appendChild(c);
+      };
       timers.push(setTimeout(() => {
-        if (art.has("stacks-calling")) {
-          const c = document.createElement("div");
-          c.className = P + "endc";
-          c.innerHTML = `<figure>${pic("stacks-calling", "The calling book, glowing in its alcove.")}<div>The calling book</div></figure>`;
-          el.appendChild(c);
-        }
-        api.end({ outcome: "win", text });
+        if (stage >= STG.length - 1) { endCard(); api.end({ outcome: "win", text }); return; }
+        const c = document.createElement("div");
+        c.className = P + "intro";
+        c.innerHTML = `<div class="${P}card" role="dialog" aria-label="The book is found"><h2>${G.book}</h2><p class="${P}goal"></p><p style="margin:0 0 14px;text-align:center;font-style:italic"></p>
+          <div class="${P}row"><button type="button" data-a="go">Go deeper</button><button type="button" class="${P}alt" data-a="stop">Stop here</button></div></div>`;
+        c.querySelector("." + P + "goal").textContent = text;
+        c.querySelectorAll("p")[1].textContent = `Next, ${STG[stage + 1].name.toLowerCase()}.`;
+        el.appendChild(c);
+        c.querySelector('[data-a="go"]').addEventListener("click", () => { c.remove(); startStage(stage + 1); });
+        c.querySelector('[data-a="stop"]').addEventListener("click", () => { c.remove(); endCard(); api.end({ outcome: "win", text: LINES.stop.replace("{text}", text) }); });
+        c.querySelector('[data-a="go"]').focus();
       }, api.reducedMotion ? 100 : 600));
     }
 
@@ -297,12 +416,11 @@ export default {
         for (const lv of [1, -1, 0]) for (let i = i0; i <= i1; i++) tile(kindOf(i, lv), X(i * BAY), top - lv * T, lv ? 0.3 : 1);
         g.globalAlpha = 1;
         if (seg.kind === "junction") {
+          if (seg.pinned) tile("lamp", X(Math.floor(seg.lampX / BAY) * BAY), top, 1);
           tile("ladder-up", X(ex.up) - 0.5125 * T, top, 1);
           tile("ladder-down", X(ex.down) - 0.525 * T, top, 1);
           tile("arch", X(ex.on + 0.9) - 0.5125 * T, top, 1);
         } else if (seg.kind === "book") {
-          tile("chair", X(seg.L * 0.4), top, 1);
-          tile("ribbon", X(seg.L * 0.4 + BAY), top, 1);
           tile("calling", X(seg.L - 1) - 0.5 * T, top, 1);
         }
         g.globalAlpha = 1;
@@ -362,7 +480,7 @@ export default {
       if (useArt) {
         if (seg.kind === "junction") { lab("up", X(ex.up) - 8, ceilY + 18); lab("down", X(ex.down) - 16, floorY - 8); lab("on", X(ex.on + 0.9) - 8, ceilY + 1.0 * s); }
         else if (seg.kind === "bend") { const ox = X(seg.L); g.strokeStyle = C.ink; g.lineWidth = 2; g.beginPath(); g.moveTo(ox, floorY); g.bezierCurveTo(ox + 2 * s, floorY - 1 * s, ox + 2 * s, ceilY + s, ox - 0.5 * s, ceilY + 0.5 * s); g.stroke(); lab("the aisle bends back", ox - 2.2 * s, ceilY + 0.3 * s); }
-        else if (seg.kind === "book") lab("the calling book", X(seg.L - 1) - 0.9 * s, ceilY + 2.2 * s);
+        else if (seg.kind === "book") lab(stg().book.toLowerCase(), X(seg.L - 1) - 0.9 * s, ceilY + 2.2 * s);
       } else if (seg.kind === "junction") {
         // ladder up through the ceiling
         const ux = X(ex.up);
@@ -391,6 +509,15 @@ export default {
         g.fillStyle = C.goldHi; g.fill(); g.stroke();
         g.font = "italic 16px 'EB Garamond',Georgia,serif"; g.fillStyle = C.ink; g.fillText("the calling book", bx - 0.9 * s, floorY - 1.6 * s);
       }
+      // Maudric's ribbon: an old green bookmark hanging at one way of the junction
+      if (seg.kind === "junction" && seg.ribbonExit) {
+        const rx0 = X(seg.ribbonExit === "on" ? ex.on + 0.9 : ex[seg.ribbonExit]) + 0.55 * s, ry0 = ceilY + 0.5 * s;
+        g.fillStyle = "#6f8f68"; g.strokeStyle = C.ink; g.lineWidth = 1.4;
+        g.beginPath(); g.moveTo(rx0 - 7, ry0); g.lineTo(rx0 + 7, ry0); g.lineTo(rx0 + 7, ry0 + 1.5 * s); g.lineTo(rx0, ry0 + 1.5 * s - 9); g.lineTo(rx0 - 7, ry0 + 1.5 * s); g.closePath(); g.fill(); g.stroke();
+        g.beginPath(); g.arc(rx0, ry0 - 3, 4, 0, 7); g.stroke();
+        lab("an old bookmark", rx0 + 12, ry0 + 0.8 * s);
+      }
+      if (seg.pinned && !useArt) { const lx0 = X(seg.lampX); g.fillStyle = "rgba(240,196,90,.35)"; g.beginPath(); g.arc(lx0, floorY - 1.6 * s, 0.9 * s, 0, 7); g.fill(); g.strokeStyle = C.ink; g.strokeRect(lx0 - 6, floorY - 1.7 * s, 12, 14); }
       g.lineWidth = 1;
       // rolling ladders on their rail
       for (const l of seg.ladders) {
@@ -436,12 +563,23 @@ export default {
       line(ex2 - 0.1 * s + sway, ey - hgt * 0.66, ex2 + S.facing * 0.32 * s + step, ey - hgt * 0.42);
       }
       g.lineWidth = 1;
-      // motes: the only colour (drops, for the weather book)
+      // the set-piece: the reading chair in the last aisle of the twist, drawn over Elaris, who walks past behind it
+      if (seg.kind === "book" && stg().rebuild) {
+        const cxm = seg.L * 0.4;
+        if (useArt && spr["stacks-chair"]) { const T2 = (floorY - ceilY) * TILE_K; g.drawImage(spr["stacks-chair"], Math.round(X(cxm)), Math.round(ceilY - (4 / 400) * T2), Math.ceil(T2) + 1, Math.ceil(T2) + 1); }
+        else { const bx = X(cxm + 2); g.fillStyle = C.paper; g.fillRect(bx - 0.8 * s, floorY - 2.2 * s, 1.6 * s, 2.2 * s); g.strokeStyle = C.ink; g.strokeRect(bx - 0.8 * s, floorY - 2.2 * s, 1.6 * s, 2.2 * s); g.beginPath(); g.arc(bx, floorY - 1.7 * s, 0.25 * s, 0, 7); g.stroke(); }
+      }
+      // motes: the only colour (grains for the sand book, drops for the weather book, flecks for the road book)
+      const moteKind = stg().mote;
       for (const m of S.motes) {
         const mx = X(m.x), my = Y(m.y);
         if (mx < -10 || mx > W + 10) continue;
         g.fillStyle = m.life < 1 ? `rgba(196,140,30,${m.life.toFixed(2)})` : "#c48c1e";
-        g.beginPath(); g.moveTo(mx, my - 8); g.quadraticCurveTo(mx + 5.5, my + 1.5, mx, my + 4.5); g.quadraticCurveTo(mx - 5.5, my + 1.5, mx, my - 8); g.fill();
+        g.beginPath();
+        if (moteKind === "sand") g.arc(mx, my, 3.4, 0, 7);
+        else if (moteKind === "ink") { g.moveTo(mx - 6, my); g.lineTo(mx, my - 3.5); g.lineTo(mx + 6, my); g.lineTo(mx, my + 3.5); g.closePath(); }
+        else { g.moveTo(mx, my - 8); g.quadraticCurveTo(mx + 5.5, my + 1.5, mx, my + 4.5); g.quadraticCurveTo(mx - 5.5, my + 1.5, mx, my - 8); }
+        g.fill();
       }
       // listening: a dotted gold thread from Elaris to the way the drops go
       if (S.listening) {
@@ -455,7 +593,7 @@ export default {
       // flourishes: gold wash on a right turn, grey on a wrong one, a smudge on a hit
       if (S.flash > 0) {
         const a = Math.min(1, S.flash) * 0.35;
-        g.fillStyle = S.flashKind === "right" ? `rgba(240,196,90,${a})` : S.flashKind === "wrong" ? `rgba(90,90,90,${a})` : `rgba(160,60,40,${a})`;
+        g.fillStyle = S.flashKind === "right" ? `rgba(240,196,90,${a})` : S.flashKind === "wrong" ? `rgba(90,90,90,${a})` : S.flashKind === "turn" ? `rgba(60,70,90,${a * 1.3})` : `rgba(160,60,40,${a})`;
         g.fillRect(0, 0, W, H);
       }
       // the rebuild fade
@@ -479,10 +617,19 @@ export default {
       }
       }
       // the call's badge: rain while the weather book calls, frost where nothing does
-      const badge = spr[seg.kind === "bend" ? "mote-frost" : "mote-rain"];
-      if (badge && W >= 700) { g.drawImage(badge, rx + rw + 16, ry - 6, 50, 50); g.strokeStyle = C.ink; g.strokeRect(rx + rw + 16, ry - 6, 50, 50); g.fillStyle = "rgba(239,232,214,.96)"; g.fillRect(rx + rw + 70, ry + 8, 150, 22); g.fillStyle = C.ink; g.font = "italic 15px 'EB Garamond',Georgia,serif"; g.fillText(seg.kind === "bend" ? "nothing calls here" : "the call: rain", rx + rw + 76, ry + 24); }
+      const badge = spr[seg.kind === "bend" ? "mote-frost" : "mote-" + stg().mote];
+      if (badge && W >= 700) { g.drawImage(badge, rx + rw + 16, ry - 6, 50, 50); g.strokeStyle = C.ink; g.strokeRect(rx + rw + 16, ry - 6, 50, 50); g.fillStyle = "rgba(239,232,214,.96)"; g.fillRect(rx + rw + 70, ry + 8, 150, 22); g.fillStyle = C.ink; g.font = "italic 15px 'EB Garamond',Georgia,serif"; g.fillText(seg.kind === "bend" ? "nothing calls here" : "the call: " + stg().call, rx + rw + 76, ry + 24); }
       g.fillStyle = C.ink; g.font = "600 15px 'EB Garamond',Georgia,serif";
       g.fillText(`junction ${Math.min(S.ribbon + 1, S.J)} of ${S.J}   ·   wrong turns ${S.wrong}   ·   ${Math.floor(S.t / 60)}:${String(Math.floor(S.t % 60)).padStart(2, "0")}`, rx, ry + 34);
+      // the twist's two meters: the wicks, and how long the unwatched shelves will hold
+      if (stg().rebuild) {
+        const hold = seg.kind !== "junction" ? "" : seg.pinned ? "pinned by lamplight" : `the shelves hold ${Math.max(0, Math.ceil(S.rebuildT))} s`;
+        const tx = `wicks ${"|".repeat(S.wicks) || "none"}${hold ? "   ·   " + hold : ""}   ·   ribbon lost ${S.loose} of 3`;
+        g.font = "600 15px 'EB Garamond',Georgia,serif"; const tw = g.measureText(tx).width;
+        g.fillStyle = "rgba(239,232,214,.96)"; g.fillRect(rx - 8, ry + 46, tw + 16, 24); g.strokeStyle = C.ink; g.strokeRect(rx - 8, ry + 46, tw + 16, 24);
+        g.fillStyle = C.ink; g.fillText(tx, rx, ry + 63);
+        if (seg.kind === "junction" && !seg.pinned) { g.fillStyle = S.rebuildT < 3 ? "#a3271a" : C.gold; g.fillRect(rx - 8, ry + 70, (tw + 16) * Math.max(0, S.rebuildT / stg().rebuild), 4); }
+      }
       // prompt near an exit or ladder
       let prompt = "";
       if (!S.climb && seg.kind === "junction") {
@@ -523,17 +670,20 @@ export default {
         <path d="M372 10 V60 M388 10 V60 M372 20 H388 M372 30 H388 M372 40 H388 M372 50 H388"/></g>
         <g fill="${C.gold}">${[60, 100, 140, 180, 220, 260, 300, 330, 350, 365].map((x, i) => `<circle cx="${x}" cy="${46 - i * 3.6}" r="${1.5 + i * 0.2}"/>`).join("")}</g></svg>
       <h2>The stacks</h2>
-      <p class="${P}goal"><b>Goal:</b> follow the falling drops to the calling book, through five junctions.</p>
+      <p class="${P}goal"><b>Goal:</b> follow the motes to the calling book. Three visits: teach, test, twist. You can stop after any of them.</p>
       <dl>
         <dt>◀ ▶ · A D</dt><dd>Walk. Keep going to run.</dd>
         <dt>▲ ▼ · W S</dt><dd>At a junction: the ladder up, the hatch down, or walk on.</dd>
         <dt>shadow</dt><dd>A book's shadow means it falls in a second.</dd>
       </dl>
       ${art.has("mote-rain") ? `<p class="${P}legend"><span>${pic("mote-rain")}this book calls in rain</span><span>${pic("mote-sand")}${pic("mote-ink")}others in sand or ink</span><span>${pic("mote-frost")}frost: nothing calls</span></p>` : ""}
-      <button type="button">Into the stacks</button></div>`;
+      ${reached > 0 ? `<div class="${P}start" role="group" aria-label="Start at">${STG.slice(0, reached + 1).map((n, k) => `<button type="button" data-s="${k}" aria-pressed="${k === 0}">${k + 1}. ${n.name.split(":")[0]}</button>`).join("")}</div>` : ""}
+      <button type="button" class="${P}go">Into the stacks</button></div>`;
     el.appendChild(intro);
-    intro.querySelector("button").addEventListener("click", () => { intro.remove(); S.started = true; last = performance.now(); say(LINES.open + " " + LINES.first, 5.5); });
-    intro.querySelector("button").focus();
+    let startAt = 0;
+    intro.querySelectorAll("[data-s]").forEach((b) => b.addEventListener("click", () => { startAt = +b.dataset.s; intro.querySelectorAll("[data-s]").forEach((o) => o.setAttribute("aria-pressed", String(o === b))); }));
+    intro.querySelector("." + P + "go").addEventListener("click", () => { intro.remove(); startStage(startAt); });
+    intro.querySelector("." + P + "go").focus();
 
     return {
       unmount() {

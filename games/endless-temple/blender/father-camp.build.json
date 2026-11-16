@@ -546,6 +546,98 @@
         }
       ]
     },
+    "s3_ring_of_stones": {
+      "note": "c9, the hour before dawn at the father's ring of stones: Xandri lies down inside the ring and does not get up. The narration camera sits low and still. One prompt, on the cold fire: One more page; it works, and he rises without input and walks. Look away, on the marker pole, leaves him to get up in his own time. His strength is what `walked` left him.",
+      "world": {
+        "color": [
+          0.2,
+          0.22,
+          0.35
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "low-moon",
+          "type": "SUN",
+          "location": [
+            -50.0,
+            -30.0,
+            6.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 0.6,
+          "size": 1,
+          "color": [
+            0.7,
+            0.78,
+            1.0
+          ]
+        },
+        {
+          "name": "first-light",
+          "type": "AREA",
+          "location": [
+            20.0,
+            10.0,
+            6.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 300,
+          "size": 12,
+          "color": [
+            1.0,
+            0.7,
+            0.6
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.6,
+          -5.2,
+          0.7
+        ],
+        "look_at": [
+          0.0,
+          0.0,
+          0.25
+        ],
+        "lens_mm": 35,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0.4,
+          -0.3,
+          0.0
+        ],
+        "facing_deg": 300.0
+      },
+      "hide": [
+        "journal"
+      ],
+      "interactions": [
+        {
+          "prop": "camp-fire",
+          "verb": "One more page",
+          "leads_to": "s3_herd_final"
+        },
+        {
+          "prop": "marker-pole",
+          "verb": "Look away",
+          "leads_to": "s3_herd_final"
+        }
+      ]
+    },
     "s3_herd_final": {
       "note": "c9: dawn at the father's marker; the herd returns and passes close. Three prompts in the world. The Xandrix is never a prop, so its flank prompt sits on the marker pole it passes; the track prompt (only if loophole_wake) on the camp cairn toward the track; the way back on the homeward cairn.",
       "world": {

@@ -86,6 +86,7 @@
       "scenes": [
         "s3_pantry_c1",
         "s3_pantry_c3",
+        "s3_ledger_turned",
         "s3_pantry_c8"
       ],
       "dimensions_m": [
@@ -98,7 +99,8 @@
         "specimen-jar",
         "tea-tin",
         "kettle",
-        "teacup"
+        "teacup",
+        "day-book"
       ],
       "prompt": "A small stone pantry six by four metres in an old temple, floor-to-ceiling wooden shelves crowded with glass jars of amber liquid holding floating dried herbs and strange preserved things, rows of tea tins, a small iron stove with a copper kettle, a scrubbed wooden worktable, one small window, dim amber light glowing through the jars, cobwebs, walnut and brass. Hand-painted gouache and ink illustration style, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
       "model": "soul_cinematic",
@@ -164,6 +166,26 @@
       "model": "soul_cinematic",
       "job_id": "c1c3e05a-baeb-4098-80f6-04958015399b",
       "image": "assets/locations/walled-yard.jpg"
+    },
+    {
+      "id": "village-well",
+      "name": "The well-post and the shrine-store",
+      "scenes": [
+        "s3_well_post"
+      ],
+      "dimensions_m": [
+        18,
+        14,
+        6
+      ],
+      "lighting": "Full moon just clearing the well-post; silver light, deep blue shadows, one oil lamp in a wall niche.",
+      "objects": [
+        "waterskin"
+      ],
+      "prompt": "A small open place at the centre of a desert-clan village at night, packed sand underfoot, a stone-ringed well with a tall carved wooden well-post standing beside it, behind it a squat round mud-brick storehouse with a heavy plank door and a woven palm-frond roof with one dark gap in it near the eave, low mud-and-reed huts around the edge, a full moon just clearing the top of the well-post, silver moonlight and deep blue shadows, ochre walls, one clay oil lamp glowing in a wall niche, quiet and watchful. Hand-painted gouache and ink illustration style, full-bleed image with no border or frame, unsigned with no signature, fine dark ink outlines, visible brush texture, painted matte-painting depth. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "e8e2d604-947f-4bd8-818a-3c9c83b0f6ec",
+      "image": "assets/locations/village-well.jpg"
     },
     {
       "id": "xandri-hut",
@@ -242,6 +264,7 @@
         "s3_father_camp",
         "s3_father_walk",
         "s3_camp_mark_c6",
+        "s3_ring_of_stones",
         "s3_herd_final"
       ],
       "dimensions_m": [
@@ -483,7 +506,8 @@
         "s3_pantry_c1",
         "s3_last_cup",
         "e_stayed",
-        "e_named"
+        "e_named",
+        "s3_ledger_turned"
       ],
       "size_m": [
         0.12,
@@ -503,7 +527,8 @@
       "scenes": [
         "s3_pantry_c1",
         "s3_pantry_c3",
-        "s3_pantry_c8"
+        "s3_pantry_c8",
+        "s3_ledger_turned"
       ],
       "size_m": [
         0.1,
@@ -523,7 +548,8 @@
       "scenes": [
         "s3_pantry_c1",
         "s3_pantry_c3",
-        "s3_pantry_c8"
+        "s3_pantry_c8",
+        "s3_ledger_turned"
       ],
       "size_m": [
         0.28,
@@ -543,7 +569,8 @@
       "scenes": [
         "s3_pantry_c1",
         "s3_pantry_c3",
-        "s3_pantry_c8"
+        "s3_pantry_c8",
+        "s3_ledger_turned"
       ],
       "size_m": [
         0.15,
@@ -600,7 +627,8 @@
       "name": "The father's waterskin",
       "role": "interact",
       "scenes": [
-        "s3_hut_night"
+        "s3_hut_night",
+        "s3_well_post"
       ],
       "size_m": [
         0.25,
@@ -693,7 +721,8 @@
       "role": "interact",
       "scenes": [
         "s3_clerk_office",
-        "s3_hollin_choice"
+        "s3_hollin_choice",
+        "s3_ledger_turned"
       ],
       "size_m": [
         0.6,
@@ -807,7 +836,8 @@
       "role": "hero",
       "scenes": [
         "s3_cairns",
-        "s3_father_camp"
+        "s3_father_camp",
+        "s3_ring_of_stones"
       ],
       "size_m": [
         0.8,
@@ -827,7 +857,8 @@
       "scenes": [
         "s3_father_camp",
         "s3_camp_mark_c6",
-        "s3_herd_final"
+        "s3_herd_final",
+        "s3_ring_of_stones"
       ],
       "size_m": [
         0.4,
@@ -847,7 +878,8 @@
       "scenes": [
         "s3_evening_camp",
         "s3_father_camp",
-        "s3_camp_mark_c6"
+        "s3_camp_mark_c6",
+        "s3_ring_of_stones"
       ],
       "size_m": [
         1.2,

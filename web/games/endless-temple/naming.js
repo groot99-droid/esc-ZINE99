@@ -15,6 +15,14 @@
 // Art (api.art): every motif tile is its tooling stamp (pieces/stamp-*), each book shows its own
 // cartouche plate, a figure from the book stands by the page, and the last card is the ninth
 // frontispiece. The lettered tiles stay as the fallback.
+// Phase 2 (DEEP_DIVE.md section 3, The Naming): the three pages are a ladder. Teach: three threads.
+// Test: false friends, and blind tooling (a tile for something only heard about, never witnessed,
+// presses without gold; one blind tile a title). Twist: the name must be true. True ink: "End" takes
+// in no title, because no page shows it; "Proof" takes only if Xandri passed the mark (the living
+// illustration ridden to its end). The set-piece: tilt the lamp (K) and the sand book's cartouche
+// shows a title scraped away in the old keeper's hand, "The Desert That Ends". He could not make it take.
+// A page can be the last: after each inscription the player may stop with a result. api.store keeps
+// the stage reached; api.shared is read for passed_mark.
 
 const SOURCE_TASK = "Well, I guess since this one doesn't have a name, I'll just have to read this one and find out what to call it,";
 const AUTHOR = ["Never-Ending", "Dunes", "Wondering", "Xandrixes"];
@@ -30,21 +38,33 @@ const LINES = {
   fate: "This book was changed by what happened past the mark. Its name must carry the fate: Wake, or Past the Mark.",
   end: "Three books named, and three gutters dry: {names}. The books rest.",
   inspectNew: "New: Inspect a tile (I) to see which book it came from. Three glances a page.",
+  blindNew: "And a tile for a thing only heard about, never seen on a page, presses blind, without gold. A title carries one blind tile at most.",
+  blindTwo: "Two of these were only ever heard about. A title carries one blind tile at most.",
+  trueNew: "Here the ink is true ink: it takes only what a page has shown. Tilt the lamp (K) to look at the cartouche.",
+  trueEnd: "<b>End</b> will not take. No page he has read shows the end of the desert, and true ink does not write what was never there to read.",
+  trueProof: "<b>Proof</b> will not take. In the pages read so far Xandri has not passed the mark.",
+  proofLink: "Because you rode the living illustration past the mark, Proof takes the ink here.",
+  raking: "Under the raking light the cartouche shows a title scraped away, in the old keeper's hand: \u201cThe Desert That Ends\u201d. He could not make it take.",
+  endShort: "The sand book is named: {names}. Its gutter is dry, and the book rests.",
+  stop1: "One book named: {names}. It rests, and its gutter is dry. The road book and the sand book still wait on the table.",
+  stop2: "Two books named: {names}. They rest. The sand book still runs in its gutter.",
 };
+const STAGE_NAMES = ["Teach: three threads", "Test: false friends", "Twist: the name must be true"];
 
 const CONNECTORS = ["The", "of", "and", "Who", "-less", "Never-"];
 const T1 = ["The", null, null, "of", null], T2 = [null, "and the", null, null], T3 = ["The", null, "Who", null, "the", null], T4 = ["The", null, null, "and The", null, null];
 const PAGES = [
   { scene: "g_name_c5", book: "the weather book", fluid: "rain", open: LINES.p1, templates: [T1, T2],
-    threads: { Place: ["Hollin", "Hill", "Sky", "Bell-loft"], Person: ["Pell", "Clerk", "Bakers", "Bell-ringer"], Want: ["Tomorrow", "Windows", "Fair Weather"] }, foreign: {} },
+    threads: { Place: ["Hollin", "Hill", "Sky", "Bell-loft"], Person: ["Pell", "Clerk", "Bakers", "Bell-ringer"], Want: ["Tomorrow", "Windows", "Fair Weather"] }, foreign: {}, heard: [] },
   { scene: "g_name_c7", book: "the road book", fluid: "ink", open: LINES.p2, templates: [T1, T2, T3],
     threads: { Place: ["Road", "Plain", "Grey Grass", "Dusk", "Dunes", "Waves"], Person: ["Oda", "Scribe", "Pilgrims", "Masks", "Xandri"], Want: ["City", "Answer", "Edge", "Ending"] },
-    foreign: { Dunes: "the sand book", Xandri: "the sand book", Waves: "the sand book" } },
+    foreign: { Dunes: "the sand book", Xandri: "the sand book", Waves: "the sand book" }, heard: ["City", "Answer"] },
   { scene: "g_name_c9", book: "the sand book", fluid: "sand", open: LINES.p3, templates: [T1, T2, T3, T4], fate: ["Wake", "Past the Mark"], quote: SOURCE_TASK,
     threads: { Place: ["Desert", "Eternity", "Sand Sea", "Dunes", "Never-Ending", "Silver", "Moon", "Vines", "Waves", "Hill", "Road"],
       Person: ["Xandri", "Explorer", "Father", "Son", "Xadra", "Shaman", "Storyteller", "Xandrixes", "Wondering", "Lizard", "Zorlop", "Clerk", "Pilgrims"],
       Want: ["End", "Proof", "Further", "Leaf", "Wake", "Past the Mark", "Windows", "City"] },
-    foreign: { Hill: "the weather book", Road: "the road book", Clerk: "the weather book", Pilgrims: "the road book", Windows: "the weather book", City: "the road book" } },
+    foreign: { Hill: "the weather book", Road: "the road book", Clerk: "the weather book", Pilgrims: "the road book", Windows: "the weather book", City: "the road book" },
+    heard: ["Zorlop", "End", "Eternity"], trueInk: true },
 ];
 
 const PAGE_ART = [
@@ -140,6 +160,24 @@ export default {
     .${P}endc img.${P}fr{width:min(230px,56vw);box-shadow:0 10px 30px rgba(0,0,0,.6)}
     .${P}endc img.${P}hd{width:min(340px,86vw);margin-top:10px}
     .${P}tile.${P}used{opacity:.55}
+    .${P}slot.${P}blind{color:#8a5a3c;text-shadow:0 1px 0 rgba(255,210,150,.18),0 -1px 0 rgba(0,0,0,.8);background:${C.blind}}
+    .${P}platewrap{position:relative;width:min(520px,100%);margin:10px auto 0}
+    .${P}platewrap .${P}plate{margin:0;width:100%}
+    .${P}scrape{position:absolute;left:8%;right:8%;top:50%;transform:translateY(-50%) rotate(-2deg);text-align:center;font-family:'IM Fell English',Georgia,serif;font-style:italic;font-size:clamp(17px,3.4vw,26px);letter-spacing:.06em;color:rgba(40,20,10,.0);text-shadow:0 1px 0 rgba(255,236,190,.0);pointer-events:none;transition:color .8s,text-shadow .8s}
+    .${P}platewrap.${P}rake .${P}plate{filter:contrast(1.35) brightness(1.12) sepia(.25)}
+    .${P}platewrap.${P}rake::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:4px;background:linear-gradient(100deg,rgba(255,230,160,.5),rgba(255,230,160,0) 55%)}
+    .${P}platewrap.${P}rake .${P}scrape{color:rgba(40,20,10,.62);text-shadow:0 1px 0 rgba(255,236,190,.55)}
+    .${P}lamp{font:inherit;font-size:15px;color:${C.gold2};background:transparent;border:1.5px solid ${C.gold};border-radius:20px;padding:6px 14px;cursor:pointer;min-height:38px}
+    .${P}lamp[aria-pressed=true]{background:${C.gold2};color:${C.blind}}
+    .${P}lamp[hidden]{display:none}
+    .${P}platewrap.${P}rake .${P}plate{filter:contrast(1.5) brightness(1.2) sepia(.3)}
+    .${P}start{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:0 0 12px}
+    .${P}start button{font:inherit;font-size:14px;color:${C.gold2};background:transparent;border:1.5px solid ${C.gold};border-radius:18px;padding:5px 10px;cursor:pointer;min-height:38px}
+    .${P}start button[aria-pressed=true]{background:${C.gold};color:${C.blind}}
+    .${P}link{font-size:15px;color:${C.gold2};border:1px dashed ${C.gold};border-radius:4px;padding:4px 10px;margin:6px auto 0;max-width:62ch}
+    .${P}link[hidden]{display:none}
+    .${P}spine .${P}row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+    .${P}spine .${P}btn.${P}alt{background:transparent;color:${C.gold2}}
     .${P}tile.${P}known{border-style:dashed;color:${C.bad}}
     .${P}tile.${P}fate{box-shadow:0 0 0 2px ${C.gold2},0 2px 3px rgba(0,0,0,.5)}
     .${P}tools{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;align-items:center}
@@ -175,7 +213,9 @@ export default {
         <div class="${P}gutter" aria-hidden="true"><canvas></canvas></div>
         <div class="${P}head"><small class="${P}pagename"></small><span class="${P}pages" aria-hidden="true"></span>
           <div class="${P}who"><img class="${P}fig" alt="" hidden><p class="${P}beat" aria-live="polite"></p></div><p class="${P}quote" hidden></p>
-          <img class="${P}plate" alt="" hidden></div>
+          <div class="${P}platewrap"><img class="${P}plate" alt="" hidden></div>
+          <div style="margin-top:8px"><button type="button" class="${P}lamp" aria-pressed="false" hidden>Tilt the lamp (K)</button></div>
+          <p class="${P}link" hidden></p></div>
         <div class="${P}tpls" role="group" aria-label="Title templates"></div>
         <div class="${P}cart" aria-label="The title"></div>
         <div class="${P}status" aria-live="polite"></div>
@@ -191,6 +231,11 @@ export default {
     let glances = 3, inspecting = false, known = new Set(), triedForeign = false, authorTitle = false;
     const names = [];
     let trays = {};
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const reached = Math.max(0, Math.min(2, api.store.get("stage", 0) | 0));
+    let raked = false;
+    const passedMark = !!shared.get("passed_mark", false);
+    const isBlind = (w) => !!w && (PG.heard || []).includes(w);
     const threadOf = (w) => Object.keys(PG.threads).find((t) => PG.threads[t].includes(w)) || null;
     const slotCount = () => PG.templates[tpl].filter((x) => x === null).length;
     const resetFill = () => { fill = new Array(slotCount()).fill(null); active = 0; };
@@ -199,12 +244,15 @@ export default {
       pi = i; PG = PAGES[i]; tpl = 0; resetFill(); busy = false; glances = 3; inspecting = false; known = new Set(); triedForeign = false;
       const PA = PAGE_ART[i];
       q("pagename").innerHTML = pic(PA.mote, "m");
-      q("pagename").append(`Title page ${i + 1} of ${PAGES.length}: ${PG.book}`);
+      q("pagename").append(`${STAGE_NAMES[i]} · page ${i + 1} of ${PAGES.length}: ${PG.book}`);
       const fig = q("fig"); if (art.has(PA.figure)) { fig.src = art.url(PA.figure); fig.hidden = false; } else fig.hidden = true;
       const plate = q("plate"); plate.classList.remove(P + "set");
       if (art.has(PA.plate)) { plate.src = art.url(PA.plate); plate.alt = `The cartouche on the cover of ${PG.book}, still blank.`; plate.hidden = false; } else plate.hidden = true;
       q("pages").innerHTML = PAGES.map((_, k) => `<i class="${k < i ? P + "done" : ""}"></i>`).join("");
-      q("beat").textContent = PG.open + (PG.fate ? " " + LINES.fate : "") + (i === 1 ? " " + LINES.inspectNew : "");
+      q("beat").textContent = PG.open + (PG.fate ? " " + LINES.fate : "") + (i === 1 ? " " + LINES.inspectNew + " " + LINES.blindNew : "") + (PG.trueInk ? " " + LINES.trueNew : "");
+      raked = false; q("platewrap").classList.remove(P + "rake"); q("lamp").hidden = !PG.trueInk; q("lamp").setAttribute("aria-pressed", "false");
+      const lk = q("link"); lk.hidden = !(PG.trueInk && passedMark); if (!lk.hidden) lk.textContent = LINES.proofLink;
+      api.store.set("stage", Math.max(reached, api.store.get("stage", 0) | 0, i));
       const qe = q("quote"); qe.hidden = !PG.quote; if (PG.quote) qe.textContent = `“${PG.quote}” (Elaris, on the first day)`;
       q("inspect").hidden = !Object.keys(PG.foreign).length;
       q("cart").classList.remove(P + "set");
@@ -277,7 +325,10 @@ export default {
       const author = !!PG.fate && PG.templates[tpl] === T4 && AUTHOR.every((w, i) => fill[i] === w);
       const fate = !PG.fate || fill.some((w) => PG.fate.includes(w));
       const shape = !empty && (author || (motifs.length >= 3 && threads.size === 3 && fate));
-      return { motifs, threads, foreign, empty, fate, author, shape, ok: shape && !foreign.length };
+      const blind = fill.filter(isBlind);
+      // true ink (the twist): what no page has shown will not take
+      const untrue = PG.trueInk ? fill.filter((w) => w === "End" || (w === "Proof" && !passedMark)) : [];
+      return { motifs, threads, foreign, empty, fate, author, shape, blind, untrue, ok: shape && !foreign.length && blind.length <= 1 && !untrue.length };
     }
     function words() {
       const out = []; let k = 0;
@@ -297,7 +348,7 @@ export default {
         const i = k++;
         const b = document.createElement("button");
         b.type = "button";
-        b.className = P + "slot" + (i === active && !busy ? " " + P + "act" : "") + (busy ? " " + P + "set" : "");
+        b.className = P + "slot" + (i === active && !busy ? " " + P + "act" : "") + (busy ? " " + P + "set" : "") + (isBlind(fill[i]) ? " " + P + "blind" : "");
         b.textContent = fill[i] || " ";
         b.setAttribute("aria-label", fill[i] ? `Slot ${i + 1}: ${fill[i]}. Press again to clear.` : `Empty slot ${i + 1}`);
         b.addEventListener("click", () => { if (over || busy) return; if (fill[i] && active === i) fill[i] = null; active = i; touched(); draw(); });
@@ -313,6 +364,7 @@ export default {
       const mk = (ok, t) => `<span class="${ok ? P + "v" : P + "x"}">${t} ${ok ? "✓" : "✗"}</span>`;
       let s = `${mk(c.motifs.length >= 3, `Motif tiles ${c.motifs.length} of 3`)} · ${mk(c.threads.has("Place"), "Place")} · ${mk(c.threads.has("Person"), "Person")} · ${mk(c.threads.has("Want"), "Want")}`;
       if (PG.fate) s += ` · ${mk(c.fate, "Fate")}`;
+      if ((PG.heard || []).length) s += ` · ${mk(c.blind.length <= 1, `Blind tiles ${c.blind.length} of 1`)}`;
       if (c.empty) s += ` · ${c.empty} slot${c.empty > 1 ? "s" : ""} open`;
       if (sayT && performance.now() < sayT.until) s += `<br>${sayT.html}`;
       else if (c.author) s += `<br>The ink is ready, though no Want is named: <b>${compose(words())}</b>`;
@@ -325,6 +377,13 @@ export default {
       ib.disabled = glances <= 0 || busy;
     }
     q("inspect").addEventListener("click", () => { if (glances > 0 && !busy) { inspecting = !inspecting; draw(); } });
+    function rake() {
+      if (!PG.trueInk || busy || over) return;
+      raked = !raked;
+      q("platewrap").classList.toggle(P + "rake", raked); q("lamp").setAttribute("aria-pressed", String(raked));
+      if (raked) { say(LINES.raking); q("platewrap").scrollIntoView({ block: "center", behavior: rm ? "auto" : "smooth" }); } else draw();
+    }
+    q("lamp").addEventListener("click", rake);
 
     q("inscribe").addEventListener("click", inscribe);
     function inscribe() {
@@ -338,6 +397,13 @@ export default {
         surge = 2;
         return;
       }
+      if (c.blind.length > 1 || c.untrue.length) {
+        say(c.untrue.includes("End") ? LINES.trueEnd : c.untrue.length ? LINES.trueProof : LINES.blindTwo);
+        const cart = q("cart");
+        if (!rm) { cart.classList.remove(P + "shake"); void cart.offsetWidth; cart.classList.add(P + "shake"); }
+        surge = 2; refused++;
+        return;
+      }
       busy = true; leaking = false;
       const name = compose(words());
       names.push(name);
@@ -346,9 +412,11 @@ export default {
       say(`${LINES.inked} <b>“${name}”</b>.`);
       draw();
       timers.push(setTimeout(() => {
-        if (pi + 1 < PAGES.length) { setPage(pi + 1); touched(); return; }
+        if (pi + 1 < PAGES.length) { between(); return; }
         over = true;
-        let text = LINES.end.replace("{names}", names.map((n) => `“${n}”`).join(", "));
+        let text = (names.length === 3 ? LINES.end : LINES.endShort).replace("{names}", names.map((n) => `“${n}”`).join(", "));
+        if (refused) text += ` The true ink refused ${refused} title${refused === 1 ? "" : "s"} first.`;
+        if (raked || q("platewrap").classList.contains(P + "rake")) text += " The scraped title stays scraped.";
         if (authorTitle) text += " " + ADDED_AUTHOR_LINE;
         if (art.has("frontis-c9")) {
           const c = document.createElement("div");
@@ -358,6 +426,28 @@ export default {
         }
         api.end({ outcome: "win", text });
       }, rm ? 400 : 2000));
+    }
+
+    // between two pages: go on, or stop here with a result
+    let refused = 0;
+    function between() {
+      const c = document.createElement("div");
+      c.className = P + "intro";
+      const next = PAGES[pi + 1];
+      c.innerHTML = `<div class="${P}spine" role="dialog" aria-label="The book is named">
+        <h2>${pi === 0 ? "Named" : "Named again"}</h2>
+        <p class="${P}goal"></p>
+        <p style="margin:0 0 14px;font-size:16px"></p>
+        <div class="${P}row"><button type="button" class="${P}btn" data-a="go">Open ${next.book}</button><button type="button" class="${P}btn ${P}alt" data-a="stop">Stop here</button></div></div>`;
+      c.querySelector("." + P + "goal").textContent = `\u201c${names[names.length - 1]}\u201d. ${LINES.inked}`;
+      c.querySelectorAll("p")[1].textContent = `Next, ${STAGE_NAMES[pi + 1].toLowerCase()}.`;
+      el.appendChild(c);
+      c.querySelector('[data-a="go"]').addEventListener("click", () => { c.remove(); setPage(pi + 1); touched(); q("cover").focus(); });
+      c.querySelector('[data-a="stop"]').addEventListener("click", () => {
+        c.remove(); over = true;
+        api.end({ outcome: "win", text: (pi === 0 ? LINES.stop1 : LINES.stop2).replace("{names}", names.map((n) => `\u201c${n}\u201d`).join(", ")) });
+      });
+      c.querySelector('[data-a="go"]').focus();
     }
 
     // the gutter: rain, ink or sand runs until the book is named; after 30 s idle, sand gathers at a missing thread
@@ -387,12 +477,13 @@ export default {
     }
 
     const onKey = (e) => {
-      if (over || busy || intro.isConnected) return;
+      if (over || busy || el.querySelector("." + P + "intro")) return;
       if (e.target && e.target.tagName === "BUTTON" && !e.target.disabled && (e.key === "Enter" || e.key === " ")) return;
       if (e.key === "Backspace" || e.key === "Delete") { fill[active] = null; touched(); draw(); }
       else if (e.key === "ArrowRight") { active = Math.min(fill.length - 1, active + 1); draw(); }
       else if (e.key === "ArrowLeft") { active = Math.max(0, active - 1); draw(); }
       else if ((e.key === "i" || e.key === "I") && !q("inspect").hidden) { if (glances > 0) { inspecting = !inspecting; draw(); } }
+      else if ((e.key === "k" || e.key === "K") && PG.trueInk) rake();
       else if (e.key === "Enter") inscribe();
       else if (e.key >= "1" && e.key <= "4" && tplBtns[+e.key - 1]) { tpl = +e.key - 1; resetFill(); touched(); draw(); }
       else return;
@@ -411,11 +502,18 @@ export default {
         <li><span>Tile</span><span>Tap tiles to fill the open slots. Tap a slot twice to clear it.</span></li>
         <li><span>Rule</span><span>At least three motif tiles, one each of Place, Person, Want.</span></li>
         <li><span>Inscribe</span><span>When the rules hold (Enter).</span></li>
+        <li><span>Three pages</span><span>Teach, test, twist. You can stop after any of them.</span></li>
       </ul>
-      <button type="button" class="${P}btn">Open the first book</button></div>`;
+      ${reached > 0 ? `<div class="${P}start" role="group" aria-label="Start at">${STAGE_NAMES.slice(0, reached + 1).map((n, k) => `<button type="button" data-s="${k}" aria-pressed="${k === 0}">${k + 1}. ${n.split(":")[0]}</button>`).join("")}</div>` : ""}
+      <button type="button" class="${P}btn ${P}open">Open the first book</button></div>`;
     el.appendChild(intro);
-    intro.querySelector("button").addEventListener("click", () => { intro.remove(); touched(); q("cover").focus(); });
-    intro.querySelector("button").focus();
+    let startAt = 0;
+    intro.querySelectorAll("[data-s]").forEach((b) => b.addEventListener("click", () => {
+      startAt = +b.dataset.s; intro.querySelectorAll("[data-s]").forEach((o) => o.setAttribute("aria-pressed", String(o === b)));
+      intro.querySelector("." + P + "open").textContent = startAt ? `Open ${PAGES[startAt].book}` : "Open the first book";
+    }));
+    intro.querySelector("." + P + "open").addEventListener("click", () => { intro.remove(); if (startAt) setPage(startAt); touched(); q("cover").focus(); });
+    intro.querySelector("." + P + "open").focus();
 
     setPage(0);
     raf = requestAnimationFrame(loop);

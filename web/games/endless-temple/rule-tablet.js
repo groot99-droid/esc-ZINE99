@@ -14,6 +14,13 @@
 // Art (api.art): each tablet's drawn face on its opening card and on the result, the chapter
 // headings, and the watcher's shadow (figures/watcher-c2, -c6) falling across the tablet's edge as
 // scrutiny rises. The CSS shadow stays as the fallback.
+// Phase 2 (DEEP_DIVE.md section 3, The Rule Tablet): a ladder of three tablets. Teach: meanings (the
+// shrine-store). Test: a price, "or" (the gods' rules). Twist: rules have ages and authors: the gods'
+// tablet again, the watcher's rule already on it in fresh clay, so the plan that held before is caught.
+// Fresh clay: Cite (C) an older rule against a newer one it contradicts, and the newer is set aside.
+// The set-piece: the wedges of "We do not ride on the backs of the gods" are sharp where every other
+// rule is worn. Answer the watcher: if The Well-Post was seen (the shrine-store left clean), the
+// watcher's shadow withdraws once. The Keeper's Binding (g_tablet_c8) is phase 3 and is not here.
 
 const SOURCE_RULES_LINE = "They had rules for everything, and it was stifling.";
 
@@ -32,7 +39,28 @@ const LINES = {
   endWinMixed: "Xandri follows the gods' track cleanly, in the Zorlop leaves, named lost by his own choice. Only the shrine-store remembers a rule he broke.",
   endLose: "Xandri goes after the herd, but not cleanly. The broken rule is written down, and the loophole stays unfound.",
   gentle: "The clay is softer this time: the tablet shows its hints sooner.",
+  // phase 2
+  wellPost: "At the well-post the old shaman with the cane sees an arm go in at the roof-gap, and looks at the moon instead. Then he goes inside and restrings a second leaf-cord.",
+  wellPostNote: "The Well-Post. Nobody speaks.",
+  twistBridge: "The tablet again, by daylight. Someone has been at it: a ninth rule stands at its foot, and the clay there is still dark.",
+  twistOpen: "The plan that held last night is caught now. But clay has an age: run a thumb over the wedge marks. An older rule can be cited against a newer one it contradicts.",
+  feelWorn: "Rule {n}: the wedges are worn round. This clay is as old as the tablet.",
+  feelFresh9: "Rule 9: the wedges are sharp and the clay is dark. Carved this season, by whoever watches.",
+  feelFresh1: "Rule 1: every other rule on the tablet is worn, and these wedges are sharp. It was carved after the rest, by a careful hand.",
+  citePick: "Cite: tap the older rule first, then the newer one it contradicts.",
+  citeOk: "<b>Rule 9 is set aside.</b> The old clay sends the clan to sleep where the gods have slept, and nobody can lie down there without following where a god has gone. The older rule stands.",
+  citeNotOlder: "That clay is no older than the rule it is cited against. Only an older rule can be cited.",
+  citeNotFresh: "That rule is as old as the tablet. Nothing on it is old enough to set it aside.",
+  citeRule1: "No older rule quarrels with rule 1: rule 3 says the same thing with a hand. It stands, late as it is.",
+  citeMiss: "Rule {a} says nothing about where a god has gone. The citation fails, and the watcher has heard it.",
+  answered: "The shadow at the tablet's edge draws back. He has let this boy go once before.",
+  answeredLink: "Because the shrine-store was left clean and the well-post seen, the watcher's shadow withdraws once.",
+  taken: "The shadow covers the tablet. The watcher has heard enough testing, and carries it indoors.",
+  twistWin: "Rule 8 against rule 9; the leaves against rule 5; “or is named lost” against rule 7. Xandri walks behind the gods in their own track, and the fresh clay at the foot of the tablet means nothing.",
+  stop1Clean: "The shrine-store, left clean: his father's leaf-cord and waterskin, and no rule broken. The gods' tablet waits at the edge of the sand sea.",
+  stop1Broken: "His father's things are in his pack, and a rule is written down against him. The gods' tablet waits at the edge of the sand sea.",
 };
+const STAGE_NAMES = ["Teach: meanings", "Test: a price", "Twist: ages and authors"];
 
 const TABLETS = [
   {
@@ -98,6 +126,12 @@ const TABLETS = [
     },
   },
 ];
+// The twist: the same clay, read by age. Rule 1 and the watcher's rule 9 are fresh; rule 9 is on the tablet from the start.
+TABLETS.push({
+  ...TABLETS[1], id: "c6b", name: "The gods' rules, by age", twist: true,
+  open: LINES.twistBridge + " " + LINES.twistOpen, win: LINES.twistWin,
+  fresh: [1, 9], cite: [8, 9],
+});
 
 // n wedge marks (a vertical wedge = a triangle head and a tail)
 function wedges(n, x0, y0, s) {
@@ -119,7 +153,9 @@ export default {
     const timers = [];
     const art = api.art || { has: () => false, url: () => "", info: () => null };
     const pic = (id, cls, alt = "") => (art.has(id) ? `<img class="${P}${cls}" src="${art.url(id)}" alt="${alt}" draggable="false">` : "");
-    const FACE = { c2: "tablet-c2-shrine-store", c6: "tablet-c6-gods-rules" }, HEAD = { c2: "heading-c2", c6: "heading-c6" }, WATCH = { c2: "watcher-c2", c6: "watcher-c6" };
+    const FACE = { c2: "tablet-c2-shrine-store", c6: "tablet-c6-gods-rules", c6b: "tablet-c6-gods-rules" }, HEAD = { c2: "heading-c2", c6: "heading-c6", c6b: "heading-c6" }, WATCH = { c2: "watcher-c2", c6: "watcher-c6", c6b: "watcher-c6" };
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const reached = Math.max(0, Math.min(2, api.store.get("stage", 0) | 0));
     const rm = api.reducedMotion;
     const losses = api.store.get("lossStreak", 0);
     const gentle = losses >= 2;
@@ -155,6 +191,23 @@ export default {
     .${P}reg.${P}new{animation:${P}carve 1.2s ease-out}
     @keyframes ${P}carve{from{background:rgba(29,20,13,.5);clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
     .${P}reg.${P}new .${P}txt{font-style:italic}
+    .${P}reg svg{cursor:pointer;border-radius:6px}
+    .${P}reg svg:hover,.${P}reg svg:focus-visible{background:rgba(255,240,200,.5);outline:none}
+    .${P}aged .${P}reg svg{opacity:.38;filter:blur(.5px)}
+    .${P}aged .${P}reg.${P}fresh svg{opacity:1;filter:none}
+    .${P}aged .${P}reg.${P}fresh{background:rgba(70,40,20,.16);border-radius:6px}
+    .${P}reg.${P}aside .${P}txt{text-decoration:line-through;opacity:.55}
+    .${P}citing .${P}reg{cursor:pointer}
+    .${P}citing .${P}reg:hover{background:rgba(255,214,140,.35)}
+    .${P}reg.${P}cited{outline:3px solid ${clay.red};outline-offset:-2px;border-radius:6px}
+    .${P}stone.${P}cite{background:radial-gradient(circle at 35% 30%,#f3e2b8,#c9a25e 70%,#8a6a34)}
+    .${P}start{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
+    .${P}start button{font:inherit;font-size:14px;color:${clay.ink};background:transparent;border:1.5px solid ${clay.ink};border-radius:18px;padding:5px 10px;cursor:pointer;min-height:38px}
+    .${P}start button[aria-pressed=true]{background:${clay.ink};color:${clay.cream}}
+    .${P}go.${P}alt{background:transparent;color:${clay.ink}}
+    .${P}link{font-size:15px;font-style:italic;border:1px dashed ${clay.gold};border-radius:6px;padding:4px 8px;color:${clay.gold};flex-basis:100%;max-width:70ch;margin:0}
+    .${P}link[hidden]{display:none}
+    .${P}card2 img.${P}wp{float:right;width:96px;height:auto;margin:0 0 8px 12px;border-radius:6px;mix-blend-mode:multiply}
     .${P}src{font-size:13px;font-style:italic;opacity:.8;margin-left:6px}
     .${P}kw{font:inherit;color:inherit;background:none;border:0;padding:0 1px;cursor:pointer;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;border-radius:3px}
     .${P}kw:hover,.${P}kw:focus-visible{background:rgba(255,240,200,.6);outline:none}
@@ -207,11 +260,11 @@ export default {
     el.className = P + "root";
     el.innerHTML = `
       <div class="${P}wrap">
-        <header class="${P}head"><h2 class="${P}title"></h2><span class="${P}count"></span><p class="${P}beat" aria-live="polite"></p></header>
+        <header class="${P}head"><h2 class="${P}title"></h2><span class="${P}count"></span><p class="${P}beat" aria-live="polite"></p><p class="${P}link" hidden></p></header>
         <section class="${P}tab" aria-label="The tablet"><div class="${P}regs"></div><div class="${P}gloss" aria-live="polite">Tap an underlined word to read what it means.</div><div class="${P}shadow"></div><img class="${P}watch" alt="" hidden></section>
         <aside class="${P}side">
           <div class="${P}card ${P}want"><small>The Want</small><span class="${P}wanttext"></span></div>
-          <div class="${P}stones"><button type="button" class="${P}stone ${P}test">Test<small>T</small></button><button type="button" class="${P}stone ${P}brk" hidden>Break<small>B</small></button></div>
+          <div class="${P}stones"><button type="button" class="${P}stone ${P}test">Test<small>T</small></button><button type="button" class="${P}stone ${P}cite" hidden>Cite<small>C</small></button><button type="button" class="${P}stone ${P}brk" hidden>Break<small>B</small></button></div>
           <div class="${P}eye"><span class="${P}eyelabel">The watcher's eye</span><div class="${P}pips"><i></i><i></i><i></i><i></i><i></i></div></div>
         </aside>
         <section class="${P}lower" aria-label="Your plan">
@@ -229,30 +282,44 @@ export default {
     let plan = [], scrutiny = 0, fails = 0, watcher = false, over = false, busy = false, lit = null, carved = false, tested = false;
     const read = new Set();
     const results = [];        // per tablet: "loophole" | "broken"
+    let aside = false, citing = false, citeOld = null, answerLeft = 0, felt = new Set();
     const regs = q("regs"), gloss = q("gloss"), msg = q("msg");
     const hintAt = gentle ? [1, 2] : [2, 4];
 
     function setTablet(i) {
       ti = i; T = TABLETS[i];
-      plan = []; scrutiny = 0; fails = 0; watcher = false; lit = null; carved = false; busy = false; read.clear();
+      plan = []; scrutiny = 0; fails = 0; watcher = !!T.twist; lit = null; carved = false; busy = false; read.clear();
+      aside = false; citing = false; citeOld = null; felt = new Set(); tested = !!T.twist || tested;
+      answerLeft = T.twist && shared.get("well_post_seen", false) ? 1 : 0;
+      q("cite").hidden = !T.twist; q("tab").classList.toggle(P + "aged", !!T.twist); q("link").hidden = true;
+      api.store.set("stage", Math.max(reached, api.store.get("stage", 0) | 0, i));
       q("title").textContent = T.name;
-      q("count").textContent = `Tablet ${i + 1} of ${TABLETS.length} · watched by ${T.who}`;
+      q("count").textContent = `${STAGE_NAMES[i]} · tablet ${i + 1} of ${TABLETS.length} · watched by ${T.who}`;
       q("beat").textContent = T.open;
       q("wanttext").textContent = T.want;
       gloss.textContent = "Tap an underlined word to read what it means.";
-      msg.innerHTML = i === 0 ? "Tap a Way to put it in the plan row, then <b>Test</b> it on the tablet." : "The same hands, a harder tablet. Read the words before you test.";
+      msg.innerHTML = i === 0 ? "Tap a Way to put it in the plan row, then <b>Test</b> it on the tablet." : i === 1 ? "The same hands, a harder tablet. Read the words before you test." : "Tap a rule's wedge marks to feel its clay. <b>Cite</b> (C) an older rule against a newer one.";
       refresh();
     }
 
     function drawRules() {
       regs.innerHTML = "";
-      const list = watcher ? [...T.rules, T.watcher] : T.rules;
+      const list = watcher || aside ? [...T.rules, T.watcher] : T.rules;
+      q("tab").classList.toggle(P + "citing", citing);
       for (const r of list) {
         const row = document.createElement("div");
-        row.className = P + "reg" + (r.watcher && carved ? " " + P + "new" : "");
+        const isFresh = T.twist && T.fresh.includes(r.n);
+        row.className = P + "reg" + (r.watcher && carved ? " " + P + "new" : "") + (isFresh ? " " + P + "fresh" : "") + (r.watcher && aside ? " " + P + "aside" : "") + (citing && citeOld === r.n ? " " + P + "cited" : "");
+        row.dataset.n = r.n;
+        if (T.twist) row.addEventListener("click", (e) => { if (citing && !e.target.closest("button")) citeTap(r.n); });
         const hit = lit && lit.find((b) => b.n === r.n);
         if (hit) row.classList.add(P + "lit");
-        row.innerHTML = `<svg viewBox="0 0 44 28" role="img" aria-label="Rule ${r.n}">${wedges(r.n, 6, 2, 9)}</svg><div class="${P}txt"></div>`;
+        row.innerHTML = `<svg viewBox="0 0 44 28" role="button" tabindex="0" aria-label="Rule ${r.n}: feel the clay">${wedges(r.n, 6, 2, 9)}</svg><div class="${P}txt"></div>`;
+        const wsvg = row.querySelector("svg");
+        const feel = (e) => { if (citing) return; e.stopPropagation(); feelClay(r.n); };
+        wsvg.addEventListener("click", feel);
+        wsvg.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); feel(e); } });
+        if (T.twist && fails >= hintAt[0] && r.n === T.cite[0] && !aside && !over) wsvg.classList.add(P + "pulse");
         const t = row.querySelector("." + P + "txt");
         for (const part of r.parts) {
           if (typeof part === "string") { t.append(part); continue; }
@@ -271,7 +338,7 @@ export default {
           t.append(node);
         }
         if (r.source) { const s = document.createElement("span"); s.className = P + "src"; s.textContent = "(the source's own words)"; t.append(s); }
-        if (r.watcher) t.append(" (carved by the watcher)");
+        if (r.watcher) t.append(aside ? " (set aside by rule 8)" : " (carved by the watcher)");
         regs.appendChild(row);
       }
       carved = false;
@@ -306,6 +373,58 @@ export default {
       q("test").disabled = over || busy || !plan.length;
       q("brk").disabled = over || busy || !plan.length;
       q("brk").hidden = !tested;
+      q("cite").disabled = over || busy || aside;
+      q("cite").setAttribute("aria-pressed", String(citing));
+    }
+    // ---- phase 2: the age of the clay, and citing -------------------------------------------------
+    function feelClay(n) {
+      if (over || busy) return;
+      felt.add(n);
+      if (!T.twist) { gloss.textContent = `Rule ${n}: pressed in clay like the rest.`; return; }
+      gloss.textContent = n === 9 ? LINES.feelFresh9 : n === 1 ? LINES.feelFresh1 : LINES.feelWorn.replace("{n}", n);
+    }
+    function citeToggle() {
+      if (!T.twist || over || busy || aside) return;
+      citing = !citing; citeOld = null;
+      msg.innerHTML = citing ? LINES.citePick : "The citation is put away.";
+      refresh();
+    }
+    function citeTap(n) {
+      if (!citing || over || busy) return;
+      if (citeOld == null) { citeOld = n; msg.innerHTML = `Rule ${n}, cited. Now tap the newer rule it contradicts.`; refresh(); return; }
+      const a = citeOld, b = n;
+      citing = false; citeOld = null;
+      if (a === b) { msg.innerHTML = "The citation is put away."; refresh(); return; }
+      if (a === T.cite[0] && b === T.cite[1]) {
+        aside = true; watcher = false; lit = null;
+        msg.innerHTML = LINES.citeOk; q("beat").textContent = "Rule 9 is set aside. The track is open to a careful foot again.";
+        refresh(); flourish(P + "glow"); return;
+      }
+      let why;
+      if (T.fresh.includes(a)) why = LINES.citeNotOlder;
+      else if (!T.fresh.includes(b)) why = LINES.citeNotFresh;
+      else if (b === 1) why = LINES.citeRule1;
+      else why = LINES.citeMiss.replace("{a}", a);
+      failed(why);
+    }
+    // a failed test or citation: the watcher's eye, unless he chooses not to see (The Well-Post)
+    function failed(text) {
+      fails++;
+      if (answerLeft > 0) {
+        answerLeft--;
+        text += `<br><b>${LINES.answered}</b>`;
+        const lk = q("link"); lk.textContent = LINES.answeredLink; lk.hidden = false;
+      } else scrutiny = Math.min(100, scrutiny + 20);
+      if (T.twist && scrutiny >= 100) {
+        over = true; busy = true; results[ti] = "taken";
+        msg.innerHTML = text + `<br><b>${LINES.taken}</b>`; q("beat").textContent = LINES.taken;
+        refresh(); flourish(P + "shake"); next("The tablet is");
+        return true;
+      }
+      if (T.twist && fails === hintAt[0]) text += "<br>One rule's wedge marks catch the light: an old one.";
+      msg.innerHTML = text;
+      refresh(); flourish(P + "shake");
+      return false;
     }
     function toggleWay(id) {
       if (over || busy) return;
@@ -327,6 +446,15 @@ export default {
       lit = r.broken;
       const firstTest = !tested; tested = true;
       if (!r.broken.length && r.want) { solved(); return; }
+      if (T.twist) {
+        let tx = "";
+        if (r.broken.length) tx += r.broken.map((b) => `<b>Rule ${b.n}</b> catches on “${b.word}”. ${b.why}`).join("<br>");
+        if (!r.want) tx += (tx ? "<br>" : "") + `<b>The Want greys:</b> ${r.wantWhy}`;
+        if (r.broken.some((b) => b.n === 9)) tx += "<br>Rule 9 is new clay. Is there an older rule it contradicts?";
+        failed(tx);
+        if (!r.want) q("want").classList.add(P + "grey");
+        return;
+      }
       fails++;
       scrutiny = Math.min(100, scrutiny + 20);
       let text = "";
@@ -357,47 +485,66 @@ export default {
       const nums = r.broken.map((b) => b.n);
       const ns = nums.length === 1 ? `Rule ${nums[0]} is` : `Rules ${nums.slice(0, -1).join(", ")} and ${nums[nums.length - 1]} are`;
       msg.innerHTML = `<b>Broken on purpose.</b> ${ns} written down against him. ${ti === 0 ? LINES.c2break : ""}`;
+      if (ti === 0) shared.set("well_post_seen", false);
       next(ns);
+    }
+    function endCard(win, face, cap) {
+      if (!art.has(face)) return;
+      const c = document.createElement("div");
+      c.className = P + "endc" + (win ? "" : " " + P + "lost");
+      c.innerHTML = `<figure>${pic(face, "x", "The tablet.")}<div></div></figure>`;
+      c.querySelector("div").textContent = cap;
+      root.appendChild(c);
+    }
+    function finish(ns) {
+      const last = results.length - 1;
+      const win = results[last] === "loophole";
+      api.store.set("lossStreak", win ? 0 : losses + 1);
+      let text;
+      if (last === 0) text = win ? LINES.stop1Clean : LINES.stop1Broken;
+      else if (results[last] === "taken") text = LINES.taken + " The loophole stays unfound, and nothing is written against him but his own persistence.";
+      else if (win && last === 2) text = LINES.twistWin + (results[0] === "broken" ? " Only the shrine-store remembers a rule he broke." : "");
+      else if (win) text = results[0] === "loophole" || results[0] == null ? LINES.endWinBoth : LINES.endWinMixed;
+      else text = `${LINES.endLose} ${ns} remembered.${results[0] === "loophole" ? " The shrine-store, at least, he left clean." : ""}`;
+      endCard(win || last === 0, FACE[T.id], win ? "The tablet holds" : last === 0 ? "His father's things" : results[last] === "taken" ? "The tablet is taken indoors" : "A rule is written down against him");
+      api.end({ outcome: win ? "win" : last === 0 ? "done" : "lose", text });
     }
     function next(ns) {
       timers.push(setTimeout(() => {
-        if (ti + 1 < TABLETS.length) {
-          const go = () => { over = false; el.scrollTop = 0; setTablet(ti + 1); q("beat").textContent = LINES.bridge + " " + LINES.c6open; };
-          const NT = TABLETS[ti + 1];
-          if (!art.has(FACE[NT.id])) { go(); return; }
-          // the chapter card between the two tablets
-          const c = document.createElement("div");
-          c.className = P + "intro";
-          c.innerHTML = `<div class="${P}card2" role="dialog" aria-label="The next tablet">${pic(HEAD[NT.id], "hd")}${pic(FACE[NT.id], "bigface", "The gods' rules, pressed in clay.")}
-            <p class="${P}goal" style="border:0;text-align:center"></p><button type="button" class="${P}go" style="display:block;margin:0 auto">Read the tablet</button></div>`;
-          c.querySelector("p").textContent = LINES.bridge;
-          root.appendChild(c);
-          const b = c.querySelector("button");
-          b.addEventListener("click", () => { c.remove(); go(); q("tray").querySelector("button")?.focus(); });
-          b.focus();
-          return;
-        }
-        const win = results[1] === "loophole";
-        api.store.set("lossStreak", win ? 0 : losses + 1);
-        let text;
-        if (win) text = results[0] === "loophole" ? LINES.endWinBoth : LINES.endWinMixed;
-        else text = `${LINES.endLose} ${ns} remembered.${results[0] === "loophole" ? " The shrine-store, at least, he left clean." : ""}`;
-        if (art.has(FACE.c6)) {
-          const c = document.createElement("div");
-          c.className = P + "endc" + (win ? "" : " " + P + "lost");
-          c.innerHTML = `<figure>${pic(FACE.c6, "x", "The gods' rules.")}<div>${win ? "The tablet holds" : "A rule is written down against him"}</div></figure>`;
-          root.appendChild(c);
-        }
-        api.end({ outcome: win ? "win" : "lose", text });
+        const lostHere = ti > 0 && results[ti] !== "loophole";
+        if (ti + 1 >= TABLETS.length || lostHere) { finish(ns); return; }
+        const NT = TABLETS[ti + 1];
+        const go = () => { over = false; el.scrollTop = 0; setTablet(ti + 1); q("beat").textContent = ti === 1 ? LINES.bridge + " " + LINES.c6open : T.open; };
+        // the card between two tablets: go on, or stop here with a result
+        const c = document.createElement("div");
+        c.className = P + "intro";
+        const well = ti === 0 && results[0] === "loophole";
+        if (well) shared.set("well_post_seen", true);
+        c.innerHTML = `<div class="${P}card2" role="dialog" aria-label="The next tablet">${pic(well ? HEAD.c2 : HEAD[NT.id], "hd")}
+          ${well ? pic(WATCH.c2, "wp", "A shaman's shadow by the well-post.") : pic(FACE[NT.id], "bigface", "The gods' rules, pressed in clay.")}
+          ${well ? `<p style="margin:0 0 4px;font-variant:small-caps;letter-spacing:.1em;font-size:14px"></p><p style="margin:0 0 10px;font-style:italic"></p>` : ""}
+          <p class="${P}goal" style="border:0"></p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><button type="button" class="${P}go" data-a="go">Read the tablet</button><button type="button" class="${P}go ${P}alt" data-a="stop">Stop here</button></div></div>`;
+        if (well) { const ps = c.querySelectorAll("p"); ps[0].textContent = LINES.wellPostNote; ps[1].textContent = LINES.wellPost; }
+        c.querySelector("." + P + "goal").textContent = (ti === 0 ? LINES.bridge : LINES.twistBridge) + ` Next, ${STAGE_NAMES[ti + 1].toLowerCase()}.`;
+        root.appendChild(c);
+        const b = c.querySelector('[data-a="go"]');
+        b.addEventListener("click", () => { c.remove(); go(); q("tray").querySelector("button")?.focus(); });
+        c.querySelector('[data-a="stop"]').addEventListener("click", () => { c.remove(); finish(ns); });
+        b.focus();
       }, rm ? 400 : 2400));
     }
     q("test").addEventListener("click", test);
     q("brk").addEventListener("click", brk);
+    q("cite").addEventListener("click", citeToggle);
     const onKey = (e) => {
-      if (intro.isConnected || over || busy) return;
+      if (root.querySelector("." + P + "intro") || over || busy) return;
       if (e.target && e.target.tagName === "BUTTON" && (e.key === "Enter" || e.key === " ")) return;
       const k = e.key.toLowerCase();
-      if (k === "t") test();
+      if (citing && /^[1-9]$/.test(k)) citeTap(+k);
+      else if (k === "c" && T.twist) citeToggle();
+      else if (k === "escape" && citing) citeToggle();
+      else if (k === "t") test();
       else if (k === "b" && tested) brk();
       else if (/^[1-9]$/.test(k) && T.ways[+k - 1]) toggleWay(T.ways[+k - 1][0]);
       else if (k === "backspace" && plan.length) { plan.pop(); lit = null; refresh(); }
@@ -417,12 +564,16 @@ export default {
         <li>${WEDGE}<span><b>Tap a Way</b> (or 1 to 9) to put it in the plan row.</span></li>
         <li>${WEDGE}<span><b>Tap an underlined word</b> to read what it really means.</span></li>
         <li>${WEDGE}<span><b>Test</b> (T). Each failed test draws the watcher's eye.</span></li>
+        <li>${WEDGE}<span><b>Three tablets:</b> teach, test, twist. You can stop after any of them.</span></li>
       </ul>
+      ${reached > 0 ? `<div class="${P}start" role="group" aria-label="Start at">${STAGE_NAMES.slice(0, reached + 1).map((n, k) => `<button type="button" data-s="${k}" aria-pressed="${k === 0}">${k + 1}. ${n.split(":")[0]}</button>`).join("")}</div>` : ""}
       ${gentle ? `<p style="font-style:italic;margin:0 0 12px">${LINES.gentle}</p>` : ""}
       <button type="button" class="${P}go">Begin</button></div>`;
     el.appendChild(intro);
-    intro.querySelector("button").addEventListener("click", () => { intro.remove(); q("tray").querySelector("button")?.focus(); });
-    intro.querySelector("button").focus();
+    let startAt = 0;
+    intro.querySelectorAll("[data-s]").forEach((b) => b.addEventListener("click", () => { startAt = +b.dataset.s; intro.querySelectorAll("[data-s]").forEach((o) => o.setAttribute("aria-pressed", String(o === b))); }));
+    intro.querySelector("." + P + "go").addEventListener("click", () => { intro.remove(); if (startAt) setTablet(startAt); q("tray").querySelector("button")?.focus(); });
+    intro.querySelector("." + P + "go").focus();
 
     setTablet(0);
     return { unmount() { timers.forEach(clearTimeout); removeEventListener("keydown", onKey); } };

@@ -15,6 +15,16 @@
 //     brewed as the last pot. No cup without gutter sand reaches depth 7 at binding -4.
 // Art (api.art): the nine jar labels, the five cup rings, the six ledger pages, chapter headings,
 // a frontispiece, glyphs, fleurons and the thread ring. Every element falls back to the old drawing.
+// Phase 2 (DEEP_DIVE.md section 3, Tea Blending): the sitting is a ladder of three stages.
+//   Teach: meet a depth (the sand book's card, a small kettle).
+//   Test: three constraints (Hollin, then the Procession) from one kettle, with the second pour:
+//     pour again over the leaves just used, for no kettle water: depth halved, binding 0.
+//   Twist: brew for letting go. The set-piece: the steep is at 80, and the cup on the table already
+//     holds three spoons the player did not add. This brew is made by taking things out; a cup that
+//     binds loses the sitting.
+// Layer links (api.shared): the drifts left on this table jam The Clasps, and a table swept between
+// clasps has already put gutter sand in the ninth jar here; the last cup's taste carries into the
+// living illustration. api.store keeps the stage reached.
 // The source line in the how-to-play is DESIGN.md section 3 beat 10, verbatim, from
 // creative-writing/vault/02_Novels/05_The_Endless_Temple_-_Elaris_Sel_Marden.md.
 
@@ -58,7 +68,19 @@ const LINES = {
   day31: "Day thirty-one. I meant to turn at the cairn. I did not turn. I cannot say why.",
   endParting: "The Parting Cup: seer's sprig and what the book gave back, depth {d} and binding {b}. It is the lightest deep cup the pantry can make, the only one that lets a reader close a book that is still going. Elaris sets it by the sand book and, for now, only looks at it.",
   endSandLeft: " {n} drift{s} of sand still lie{v} on the table.",
+  // phase 2
+  second: "The margin again: leaves can be poured over twice. A second pour (X) costs no kettle water: half the depth, and none of the binding.",
+  secondThin: "The second pour is too thin for this card.",
+  dryLeaves: "The kettle is dry, but the leaves are still in the pot: one second pour (X) is left.",
+  twistOpen: "The last pot. The ring under the cup is dark, and three spoons are in it that he did not add. This brew is made by taking things out.",
+  twistAsk: "A cup for letting go: binding 0 or less.",
+  endBound: " It is not a cup for letting go: the three spoons he did not add are still doing their work.",
+  linkJar: "Because you swept the table between clasps, the ninth jar already holds {n} of gutter sand.",
+  stop1: "The sand book is open on the reading table, and the kettle is still warm. Two more books wait by the chair.",
+  stop2: "Three books open from one kettle. The last pot is still to brew, and the ring under the cup has begun to set.",
 };
+const STAGE_NAMES = ["Teach: meet a depth", "Test: three constraints", "Twist: brew for letting go"];
+const PRELOAD = ["ember", "ember", "clove"];   // the three spoons the player did not add
 // The ledger's pages (art/documents). The captions repeat what the page says, for small screens.
 const LEDGER_FRONT = [
   { art: "ledger-front-1-jars", cap: "Jars kept in the pantry: each herb with its depth, length and binding." },
@@ -82,7 +104,7 @@ const BOOKS = [
     note: "A long road, walked by masked pilgrims.",
     ledger: ["A long road: dune-vine, and let the kettle sit a while…", "Dune-vine twice, and the sprig for depth…", "Sprig, dune-vine, dune-vine. Mark 4."] },
 ];
-const LAST = { scene: "g_tea_c8", book: "The last pot", req: {}, jars: Object.keys(HERBS).filter((k) => k !== "mint" && k !== "sand"), note: LINES.lastPot,
+const LAST = { scene: "g_tea_c8", book: "The last pot", req: { bmax: 0 }, jars: Object.keys(HERBS).filter((k) => k !== "mint" && k !== "sand"), note: LINES.lastPot,
   ledger: ["No recipe. The binding is yours to choose. (The ledger has more pages: open it.)"],
   ledgerBack: ["“…sprig, and what the book gives back.” What does a sand book give back to the table?", "Sprig, and the swept sand, twice over. Leave the dial where it rests.", "Sprig, gutter sand, gutter sand. Mark 3."] };
 // The Parting Cup: deep and unbinding at once. Only gutter sand reaches it.
@@ -127,7 +149,11 @@ export default {
     const rm = api.reducedMotion;
     const losses = api.store.get("lossStreak", 0);
     const gentle = losses >= 2;
-    const POURS = gentle ? 8 : 6;
+    const STAGE_POURS = gentle ? [4, 6, 1] : [3, 4, 1];
+    let POURS = STAGE_POURS[0];
+    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const reached = Math.max(0, Math.min(2, api.store.get("stage", 0) | 0));
+    let stage = 0, leaves = null, secondOn = false, linkNote = "";
     const timers = [];
     const art = api.art || { has: () => false, url: () => "", info: () => null };
     const css = document.createElement("style");
@@ -136,7 +162,7 @@ export default {
       background-image:radial-gradient(rgba(90,61,39,.08) 1px,transparent 1.3px),radial-gradient(rgba(255,255,255,.35) 1px,transparent 1.3px);background-size:6px 6px,9px 9px}
     .${P}frame{position:relative;min-height:100%;box-sizing:border-box;padding:12px 16px 120px;max-width:1180px;margin:0 auto}
     .${P}vine{position:absolute;inset:6px;pointer-events:none;width:calc(100% - 12px);height:calc(100% - 12px)}
-    .${P}head{position:sticky;top:0;z-index:3;text-align:center;background:linear-gradient(#e7dcc0 80%,rgba(231,220,192,0));padding:4px 0 8px}
+    .${P}head{position:sticky;top:0;z-index:3;text-align:center;background:linear-gradient(#e7dcc0 93%,rgba(231,220,192,0));padding:4px 0 12px}
     .${P}head h2{font-family:'IM Fell English',Georgia,serif;font-weight:400;font-size:clamp(22px,3vw,32px);margin:0;letter-spacing:.04em}
     .${P}strip{display:inline-flex;flex-wrap:wrap;gap:4px 12px;justify-content:center;align-items:center;margin-top:4px;padding:5px 16px;border:1.5px solid ${pal.walnut};border-radius:20px;background:${pal.cream};font-size:16px}
     .${P}strip i{font-style:italic}
@@ -232,6 +258,12 @@ export default {
     .${P}label td{padding:3px 6px;vertical-align:top}
     .${P}label td:first-child{font-variant:small-caps;letter-spacing:.08em;font-weight:600;white-space:nowrap;text-align:right;color:${pal.walnut}}
     .${P}steam{position:absolute;pointer-events:none}
+    .${P}slot.${P}pre{border-color:${pal.red};background:#f3d6c6;font-style:italic}
+    .${P}link{font-size:15px;font-style:italic;border:1px dashed ${pal.walnut};border-radius:6px;padding:3px 10px;margin:6px auto 0;max-width:62ch;background:${pal.cream}}
+    .${P}link[hidden]{display:none}
+    .${P}start{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:0 0 12px}
+    .${P}start button{font:inherit;font-size:14px;color:${pal.sepia};background:transparent;border:1.5px solid ${pal.walnut};border-radius:18px;padding:5px 10px;cursor:pointer;min-height:38px}
+    .${P}start button[aria-pressed=true]{background:${pal.walnut};color:${pal.cream}}
     @media (prefers-reduced-motion:reduce){.${P}card.${P}shake{animation:none}}
     `;
     const el = document.createElement("div");
@@ -245,8 +277,8 @@ export default {
             fill="none" stroke="${pal.honey}" stroke-width=".25" vector-effect="non-scaling-stroke"/>
         </svg>
         <div class="${P}head"><h2>The Pantry Table</h2>${art.has("fleuron-cup") ? `<img class="${P}fleur" src="${art.url("fleuron-cup")}" alt="">` : ""}
-          <div class="${P}strip"><span class="${P}books" aria-label="Books opened"></span><i class="${P}bookname"></i><span>Asks: <b class="${P}req"></b></span></div>
-          <p class="${P}beat" aria-live="polite"></p></div>
+          <div class="${P}strip"><span class="${P}books" aria-label="Books opened"></span><i class="${P}bookname"></i><span>Asks: <b class="${P}req"></b></span></div></div>
+        <div style="text-align:center;padding:0 0 8px"><p class="${P}beat" aria-live="polite"></p><p class="${P}link" hidden></p></div>
         <div class="${P}grid">
           <section class="${P}panel" aria-label="Jars"><h3>The Jars</h3><div class="${P}jars"></div>
             <p class="${P}key">${art.has("label-mint") ? `<img src="${art.url("label-mint")}" alt="">` : ""}<span>Each label: <b>D</b>epth, <b>L</b>ength, <b>B</b>inding. A bar adds one; a ring takes one away. Mint (D1 L1 B0) is already in the cup.</span></p></section>
@@ -256,7 +288,7 @@ export default {
             <div class="${P}slots"></div>
             <div class="${P}dial" role="group" aria-label="Steep dial"><span>Steep</span></div>
             <div class="${P}dialnote"></div>
-            <div class="${P}acts"><button type="button" class="${P}btn ${P}alt ${P}tastebtn" hidden>Taste (A)</button><button type="button" class="${P}btn ${P}pour">Pour</button></div>
+            <div class="${P}acts"><button type="button" class="${P}btn ${P}alt ${P}tastebtn" hidden>Taste (A)</button><button type="button" class="${P}btn ${P}alt ${P}secondbtn" hidden>Second pour (X)</button><button type="button" class="${P}btn ${P}pour">Pour</button></div>
           </section>
           <section class="${P}panel" aria-label="Cards">
             <h3>The Book's Card</h3>
@@ -278,7 +310,9 @@ export default {
     let bookI = 0, spoons = [], mark = 3, poursLeft = POURS, failsHere = 0, steep = 0, over = false, busy = false;
     let backLooks = 0;
     let tastes = 3, tasteOn = false, tasted = null, lastPot = false, pourFlash = null;
-    let piles = 1, jarSand = 0, ledgerTurned = false, ledgerSeen = false;
+    let piles = 1, jarSand = Math.max(0, Math.min(SAND_MAX, shared.get("jar_sand", 0) | 0)), ledgerTurned = false, ledgerSeen = false;
+    if (jarSand > 0) linkNote = LINES.linkJar.replace("{n}", jarSand === 1 ? "one spoon" : "two spoons");
+    let preload = 0;   // how many of the spoons in the cup the player did not add
     const sandInCup = () => spoons.filter((x) => x === "sand").length;
     const jarsNow = () => (jarSand + sandInCup() > 0 ? [...curBook().jars, "sand"] : curBook().jars);
     const opened = [];
@@ -361,7 +395,7 @@ export default {
     function takeSpoon(i) {
       if (over || busy || i < 0 || i >= spoons.length) return;
       if (spoons[i] === "sand") jarSand++;
-      spoons.splice(i, 1); tasted = null; update();
+      spoons.splice(i, 1); tasted = null; if (i < preload) preload--; update();
     }
     function sweep() {
       if (over || busy) return;
@@ -378,8 +412,8 @@ export default {
       for (let i = 0; i < 3; i++) {
         const s = spoons[i];
         const b = document.createElement("button");
-        b.type = "button"; b.className = P + "slot" + (s ? " " + P + "full" : "");
-        b.textContent = s ? HERBS[s].name : `spoon ${i + 1}`;
+        b.type = "button"; b.className = P + "slot" + (s ? " " + P + "full" : "") + (s && i < preload ? " " + P + "pre" : "");
+        b.textContent = s ? HERBS[s].name + (i < preload ? " (not yours)" : "") : `spoon ${i + 1}`;
         b.setAttribute("aria-label", s ? `Return ${HERBS[s].name} to its jar` : `Empty spoon ${i + 1}`);
         b.addEventListener("click", () => { if (s) takeSpoon(i); });
         slotsBox.appendChild(b);
@@ -405,7 +439,10 @@ export default {
     }
     function update() {
       const B = curBook();
-      q("bookname").textContent = lastPot ? B.book : `${B.book} (book ${bookI + 1} of ${BOOKS.length})`;
+      q("bookname").textContent = (lastPot ? B.book : `${B.book} (book ${bookI + 1} of ${BOOKS.length})`) + " · " + STAGE_NAMES[stage].split(":")[0].toLowerCase();
+      shared.set("jar_sand", Math.min(SAND_MAX, jarSand + sandInCup())); shared.set("tea_table", { drifts: piles });
+      const sb = q("secondbtn"); sb.hidden = !secondOn || lastPot; sb.disabled = !leaves || over || busy;
+      const lk = q("link"); lk.hidden = !linkNote; lk.textContent = linkNote;
       q("req").textContent = reqText(B.req);
       q("req2").textContent = reqText(B.req);
       q("note").textContent = B.note;
@@ -418,18 +455,19 @@ export default {
       if (art.has(chId)) { if (ch.dataset.id !== chId) { ch.src = art.url(chId); ch.dataset.id = chId; } ch.hidden = false; } else ch.hidden = true;
       const sl = q("sandleft"); if (sl) sl.textContent = `${jarSand} spoon${jarSand === 1 ? "" : "s"} left`;
       q("books").innerHTML = BOOKS.map((_, i) => `<span class="${P}bk ${opened[i] ? P + "open" : ""} ${i === bookI && !lastPot ? P + "now" : ""}"></span>`).join("");
-      q("kettle").innerHTML = Array.from({ length: POURS }, (_, i) => `<span class="${P}drop ${i >= poursLeft ? P + "used" : poursLeft <= 2 ? P + "low" : ""}"></span>`).join("") + `<span style="margin-left:6px">${lastPot ? "the last pot is its own" : `${poursLeft} pour${poursLeft === 1 ? "" : "s"} left`}</span>`;
+      q("kettle").innerHTML = Array.from({ length: POURS }, (_, i) => `<span class="${P}drop ${i >= poursLeft ? P + "used" : poursLeft <= 2 ? P + "low" : ""}"></span>`).join("") + `<span style="margin-left:6px">${lastPot ? "the last pot: one pour" : `${poursLeft} pour${poursLeft === 1 ? "" : "s"} left`}</span>`;
       q("taste").innerHTML = [0, 1, 2].map((i) => `<i class="${i >= tastes ? P + "used" : ""}"></i>`).join("") + `<span style="margin-left:6px">${tastes} left</span>`;
       mkBtns.forEach((b, i) => b.setAttribute("aria-pressed", String(i + 1 === mark)));
       q("dialnote").textContent = `Mark ${mark}: ${DIAL_NOTE[mark]}`;
       drawSlots();
-      pourBtn.disabled = spoons.length !== 3 || over || busy;
+      pourBtn.disabled = spoons.length !== 3 || over || busy || (!lastPot && poursLeft <= 0);
       tasteBtn.disabled = spoons.length !== 3 || over || busy || tastes <= 0 || !!tasted;
       for (const j of jarsBox.children) j.disabled = spoons.length >= 3 || over || busy || (j.dataset.herb === "sand" && jarSand <= 0);
       drawCup(spoons.length / 3, spoons.length ? HERBS[spoons[spoons.length - 1]].col : HERBS.mint.col);
       if (!busy && !over) {
         if (tasted) resEl.innerHTML = `Tasted: ${tally(tasted, B.req)}`;
         else if (spoons.length === 3) resEl.textContent = tasteOn && tastes ? "Three spoons in. Taste it, or pour." : "Three spoons in. Pour when the dial is set.";
+        else if (leaves && !spoons.length && !lastPot) resEl.textContent = "The leaves of the last cup are still in the pot: a second pour (X) costs no water. Or add three spoons.";
         else resEl.textContent = `${3 - spoons.length} spoon${spoons.length === 2 ? "" : "s"} to add.`;
       }
     }
@@ -448,7 +486,7 @@ export default {
     function shake(c) { if (rm) return; c.classList.remove(P + "shake"); void c.offsetWidth; c.classList.add(P + "shake"); }
 
     function pour() {
-      if (spoons.length !== 3 || over || busy) return;
+      if (spoons.length !== 3 || over || busy || (!lastPot && poursLeft <= 0)) return;
       const B = curBook();
       const r = brew(spoons, mark);
       const before = steep;
@@ -471,41 +509,108 @@ export default {
       if (before < 20 && steep >= 20) beat(LINES.ring20); else if (before < 40 && steep >= 40) beat(LINES.ring40);
       update();
       const tick = setInterval(() => drawCup(1, HERBS[spoons[2] || "mint"].col), 120);
+      const used = { r, spoons: spoons.slice() };
       timers.push(setTimeout(() => {
         clearInterval(tick);
-        busy = false; spoons = []; tasted = null; pourFlash = null;
+        busy = false; spoons = []; tasted = null; pourFlash = null; preload = 0;
         piles = Math.min(4, piles + 1);   // a failed pour runs sand from the cover; a long reading leaks while he reads
-        if (ok) {
-          bookI++; failsHere = 0; mark = 3;
-          if (bookI === 1) unlockTaste();
-          if (bookI >= BOOKS.length) { lastPot = true; beat(LINES.lastPot + " " + LINES.sandMore); }
-          else beat(`${BOOKS[bookI].book}: ${BOOKS[bookI].note} ${LINES.sandMore}`);
-          buildJars();
-        } else if (poursLeft <= 0) {
-          over = true; update();
-          api.store.set("lossStreak", losses + 1);
-          api.end({ outcome: "lose", text: LINES.lose.replace("{book}", BOOKS[bookI].book).replace("{n}", bookI) + " Each cup fell short of what its card asked." });
-          return;
+        leaves = secondOn ? used : null;
+        if (ok) { setTaste(used.spoons); advance(); return; }
+        if (poursLeft <= 0) {
+          if (leaves) { beat(LINES.dryLeaves); update(); return; }
+          lose(); return;
         }
         update();
       }, rm ? 300 : 1400));
       timers.push(() => clearInterval(tick));
     }
+    function lose() {
+      over = true; update();
+      api.store.set("lossStreak", losses + 1);
+      api.end({ outcome: "lose", text: LINES.lose.replace("{book}", BOOKS[bookI].book).replace("{n}", bookI) + " Each cup fell short of what its card asked." });
+    }
+    // the taste the last cup carries into the next ride: stormcress over lamp-ash over ember root
+    function setTaste(sp) { shared.set("cup_taste", sp.includes("storm") ? "storm" : sp.includes("lampash") ? "lampash" : sp.includes("ember") ? "ember" : "mint"); shared.set("tea_played", true); }
+    // a book has opened: the next book, or the end of the stage
+    function advance() {
+      failsHere = 0; mark = 3;
+      if (bookI === 0 || bookI === BOOKS.length - 1) { update(); between(); return; }
+      bookI++;
+      beat(`${BOOKS[bookI].book}: ${BOOKS[bookI].note} ${LINES.sandMore}`);
+      buildJars(); update();
+    }
+    // the second pour: the leaves just used, poured over again for no kettle water
+    function secondPour() {
+      if (!leaves || !secondOn || over || busy || lastPot) return;
+      const B = curBook();
+      const r = { d: Math.floor(leaves.r.d / 2), l: leaves.r.l, b: 0 };
+      const sp = leaves.spoons; leaves = null;
+      const ok = meets(r, B.req);
+      busy = true; pourFlash = { ok, until: performance.now() + (rm ? 0 : 1000) };
+      if (ok) { opened[bookI] = true; resEl.innerHTML = `Second pour: ${tally(r, B.req)}<br>${LINES.opened.replace("{hold}", Math.min(100, 40 + 10 * r.d))} <span class="${P}stamp">opened</span>`; }
+      else { resEl.innerHTML = `Second pour: ${tally(r, B.req)}<br>${LINES.secondThin}`; shake(q("reqcard")); }
+      update();
+      timers.push(setTimeout(() => {
+        busy = false; pourFlash = null;
+        if (ok) { setTaste(sp); advance(); }
+        else if (poursLeft <= 0) lose();
+        else update();
+      }, rm ? 300 : 1100));
+    }
+    // ---- the stages ------------------------------------------------------------------------------
+    function setStage(i) {
+      stage = i; over = false; busy = false; spoons = []; tasted = null; leaves = null; failsHere = 0; mark = 3; preload = 0;
+      POURS = STAGE_POURS[i]; poursLeft = POURS;
+      api.store.set("stage", Math.max(reached, api.store.get("stage", 0) | 0, i));
+      lastPot = i === 2; bookI = i === 0 ? 0 : i === 1 ? 1 : BOOKS.length;
+      for (let k = 0; k < BOOKS.length; k++) opened[k] = k < bookI;
+      if (i >= 1) { unlockTaste(); secondOn = true; }
+      if (i === 0) beat(LINES.open + " " + LINES.sandStart + " First, " + BOOKS[0].book.toLowerCase() + ": " + BOOKS[0].note);
+      else if (i === 1) beat(`${BOOKS[1].book}: ${BOOKS[1].note} ${LINES.second}`);
+      else {
+        steep = Math.max(steep, 80); spoons = PRELOAD.slice(); preload = 3; piles = Math.max(piles, 2);
+        beat(LINES.twistOpen + " " + LINES.twistAsk);
+      }
+      prevJars = []; buildJars(); update();
+    }
+    function between() {
+      const c = document.createElement("div");
+      c.className = P + "intro";
+      c.innerHTML = `<div class="${P}label" role="dialog" aria-label="The stage is done">
+        <h2>${stage === 0 ? "The page opens" : "Three books open"}</h2>
+        <p class="${P}goal"></p>
+        <div class="${P}acts"><button type="button" class="${P}btn" data-a="go">${stage === 0 ? "Two more books" : "The last pot"}</button><button type="button" class="${P}btn ${P}alt" data-a="stop">Stop here</button></div></div>`;
+      c.querySelector("p").textContent = `Next, ${STAGE_NAMES[stage + 1].toLowerCase()}. ${stage === 0 ? "One kettle for two books, and the leaves can be poured twice." : "No book asks for it. The cup is already on the table."}`;
+      el.appendChild(c);
+      c.querySelector('[data-a="go"]').addEventListener("click", () => { c.remove(); setStage(stage + 1); q("frame").focus(); });
+      c.querySelector('[data-a="stop"]').addEventListener("click", () => {
+        c.remove(); over = true; update(); api.store.set("lossStreak", 0);
+        let text = stage === 0 ? LINES.stop1 : LINES.stop2;
+        if (piles) text += LINES.endSandLeft.replace("{n}", piles).replace("{s}", piles === 1 ? "" : "s").replace("{v}", piles === 1 ? "s" : "");
+        api.end({ outcome: "win", text });
+      });
+      c.querySelector('[data-a="go"]').focus();
+    }
     function finishLastPot(r) {
       const parting = isParting(spoons, r);
-      over = true; busy = true;
+      const light = parting || r.b <= 0;
+      over = true; busy = true; setTaste(spoons);
       pourFlash = { ok: true, until: performance.now() + (rm ? 0 : 1300) };
-      resEl.innerHTML = `${tally(r, {})}<br>${parting ? "<b>The Parting Cup.</b>" : "The last pot is poured."}`;
+      resEl.innerHTML = `${tally(r, LAST.req)}<br>${parting ? "<b>The Parting Cup.</b>" : "The last pot is poured."}`;
       update();
-      api.store.set("lossStreak", 0);
+      api.store.set("lossStreak", light ? 0 : losses + 1);
       api.store.set("partingCup", parting || api.store.get("partingCup", false));
+      shared.set("jar_sand", jarSand);   // what went into the cup is gone from the ninth jar
+      if (parting) shared.set("parting_cup", true);
+      if (ledgerTurned) shared.set("ledger_turned", true);
       let text = parting ? LINES.endParting.replace("{d}", r.d).replace("{b}", "\u2212" + -r.b) : r.b <= 0 ? LINES.endLight : r.b >= 4 ? LINES.endHeavy : LINES.endEven;
-      if (!parting) text += ` (${poursLeft} pour${poursLeft === 1 ? " was" : "s were"} left in the kettle; the last cup bound ${r.b}.)`;
+      if (!parting) text += ` (The last cup bound ${r.b}${preload ? `, with ${preload} of the spoons he did not add still in it` : ""}.)`;
+      if (!light) text += LINES.endBound;
       if (piles) text += LINES.endSandLeft.replace("{n}", piles).replace("{s}", piles === 1 ? "" : "s").replace("{v}", piles === 1 ? "s" : "");
       if (!parting && !ledgerTurned) text += " The ledger was never turned over.";
       timers.push(setTimeout(() => {
-        endCard(parting ? "The Parting Cup" : "The last cup");
-        api.end({ outcome: "win", text });
+        endCard(parting ? "The Parting Cup" : light ? "The last cup" : "One more page");
+        api.end({ outcome: light ? "win" : "lose", text });
       }, rm ? 300 : 1500));
     }
     // the ending card: the ring a cup leaves on a table (the collection's thread), behind the result
@@ -564,9 +669,10 @@ export default {
     q("sweep").addEventListener("click", sweep);
     pourBtn.addEventListener("click", pour);
     tasteBtn.addEventListener("click", taste);
+    q("secondbtn").addEventListener("click", secondPour);
 
     const onKey = (e) => {
-      if (over || intro.isConnected) return;
+      if (over || el.querySelector("." + P + "intro")) return;
       if (e.target && e.target.tagName === "BUTTON" && !e.target.disabled && (e.key === "Enter" || e.key === " ")) return;
       const k = e.key.toLowerCase();
       if (ledgerEl) {
@@ -586,6 +692,7 @@ export default {
       else if (k === "l") openLedger();
       else if (k === "enter" || k === "p") pour();
       else if (k === "a") taste();
+      else if (k === "x") secondPour();
       else return;
       e.preventDefault();
     };
@@ -598,7 +705,7 @@ export default {
       ${art.has("frontis-c3") ? `<img class="${P}front" src="${art.url("frontis-c3")}" alt="">` : ""}
       <h2>Tea Blending</h2>
       <q>“${SOURCE_TEA}”</q>
-      <p class="${P}goal"><b>Goal:</b> brew a cup that meets each book's card. Three books, one kettle of ${POURS} pours.</p>
+      <p class="${P}goal"><b>Goal:</b> brew a cup that meets each book's card. Three stages: teach, test, twist. You can stop after any of them.</p>
       <table>
         <tr><td>Spoon</td><td>Tap a jar (Q W E R…) to add. Exactly three.</td></tr>
         <tr><td>Steep</td><td>Dial 1 to 5. Low thins depth; high adds length and binding.</td></tr>
@@ -607,10 +714,13 @@ export default {
         <tr><td>Ledger</td><td>L. The old keeper's recipes. Read all of it.</td></tr>
       </table>
       ${gentle ? `<p style="font-style:italic;margin:0 0 12px">${LINES.gentle}</p>` : ""}
-      <button type="button" class="${P}btn">Light the kettle</button></div>`;
+      ${reached > 0 ? `<div class="${P}start" role="group" aria-label="Start at">${STAGE_NAMES.slice(0, reached + 1).map((n, k) => `<button type="button" data-s="${k}" aria-pressed="${k === 0}">${k + 1}. ${n.split(":")[0]}</button>`).join("")}</div>` : ""}
+      <button type="button" class="${P}btn ${P}light">Light the kettle</button></div>`;
     el.appendChild(intro);
-    intro.querySelector("button").addEventListener("click", () => { intro.remove(); beat(LINES.open + " " + LINES.sandStart + " First, " + BOOKS[0].book.toLowerCase() + ": " + BOOKS[0].note); q("frame").focus(); });
-    intro.querySelector("button").focus();
+    let startAt = 0;
+    intro.querySelectorAll("[data-s]").forEach((b) => b.addEventListener("click", () => { startAt = +b.dataset.s; intro.querySelectorAll("[data-s]").forEach((o) => o.setAttribute("aria-pressed", String(o === b))); }));
+    intro.querySelector("." + P + "light").addEventListener("click", () => { intro.remove(); setStage(startAt); q("frame").focus(); });
+    intro.querySelector("." + P + "light").focus();
 
     buildJars();
     update();

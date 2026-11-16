@@ -541,6 +541,21 @@
         -1.4,
         0.85
       ]
+    },
+    {
+      "id": "ledger",
+      "object": "day-book",
+      "location": [
+        2.5,
+        -1.38,
+        0.85
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        18
+      ],
+      "height_m": 0.05
     }
   ],
   "scenes": {
@@ -732,6 +747,101 @@
           "prop": "tin-sprig",
           "verb": "Choose a tin",
           "leads_to": "g_tea_c3"
+        }
+      ]
+    },
+    "s3_ledger_turned": {
+      "note": "c6, after the father's walk: late afternoon, the kettle cold. The pantry ledger lies on the table (the day-book model stands in for it until it has its own). Turning it over shows the back pages: a count of days that stops at forty. From here Look away is a standing verb inside books.",
+      "world": {
+        "color": [
+          0.5,
+          0.35,
+          0.2
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "window-late",
+          "type": "AREA",
+          "location": [
+            -2.9,
+            1.0,
+            3.0
+          ],
+          "look_at": [
+            2.2,
+            -1.2,
+            0.9
+          ],
+          "energy": 60,
+          "size": 0.8,
+          "color": [
+            1.0,
+            0.7,
+            0.4
+          ]
+        },
+        {
+          "name": "jar-glow",
+          "type": "AREA",
+          "location": [
+            0.0,
+            1.6,
+            2.0
+          ],
+          "look_at": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "energy": 20,
+          "size": 3.0,
+          "color": [
+            1.0,
+            0.75,
+            0.35
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          1.4,
+          -0.6,
+          2.3
+        ],
+        "look_at": [
+          2.5,
+          -1.38,
+          0.9
+        ],
+        "lens_mm": 28,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          1.4,
+          -0.6,
+          0.0
+        ],
+        "facing_deg": 125.0
+      },
+      "hide": [
+        "candle"
+      ],
+      "interactions": [
+        {
+          "prop": "ledger",
+          "verb": "Turn the ledger over"
+        },
+        {
+          "prop": "teacup",
+          "verb": "Look away"
+        },
+        {
+          "prop": "kettle",
+          "verb": "Leave the kettle cold",
+          "leads_to": "s3_halls_c7"
         }
       ]
     },
