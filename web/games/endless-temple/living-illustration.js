@@ -31,6 +31,16 @@
 // Layer links (api.shared): the taste of the last cup poured in Tea Blending is the cup here; each
 // linger (One more page here, the old keeper's ribbon in the stacks) lowers the pace cap by 1 m/s and
 // starts the boy on tired feet (`walked`). Winning the twist sets `passed_mark` for The Naming.
+// Phase 3 (DEEP_DIVE.md sections 2 and 3; the shared rules are in _ledger.js):
+//   Look away is a standing verb only once the ledger has been turned over (Tea Blending writes
+//   ledger_turned). Before that it is offered once, at The Other Hand, as the design has it.
+//   The Other Hand's choice is kept (other_hand_choice): it decides which ending the long puzzle earns.
+//   The twist ends on that ending's card: One more page is The Reader Who Stayed; looking away, once the
+//   Parting Cup is brewed, is The Unread Page.
+//   Second run: Look away is offered from the first plate, and a hands-off ride (no sip) keeps the
+//   captions in "I" as the tea fades: the boy is narrating himself.
+
+import { mountNotebook, sharedOf, secondRun, solved, endingFor, endingCard, ENDINGS } from "./_ledger.js";
 
 let LEN = 200;
 const CHECK = 150;
@@ -84,6 +94,10 @@ const LINES = {
   oneMoreDune: "He woke two hundred paces from where he had lain down, and his feet knew the way he had come.",
   walkedLink: "Because you lingered ({why}), his pace is capped at {v} m/s on this plate.",
   cupLink: "Because you poured {cup} at the pantry table, that is the cup beside this page.",
+  // phase 3
+  awayLocked: "Look away is not his to use yet: the ledger has not been turned over.",
+  handsOff: "The tea is thin, and the captions still say \u201cI\u201d. Nobody is narrating him now. He is.",
+  awayFirst: "A second reading: Look away (hold L) is already his, from the first plate.",
   winTwist: "The herd's track across two spreads, down the slope of a tipped page: {own} m of it were his own, {line} m were the written line's{away}. The tea held at {tea}.",
   stop: " He closes the plate there, with the next one still unturned.",
 };
@@ -127,7 +141,9 @@ export default {
     for (const id of ["corner-fold-rest", "corner-fold-lifted", "corner-fold-turned"]) prep(id, 128, 128);
     for (const id of ["fleuron-wave", "fleuron-sand", "fleuron-moon"]) prep(id, 480, 96);
     let taste = "mint";
-    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const shared = sharedOf(api);
+    const second = secondRun(shared);
+    const canAway = second || !!shared.get("ledger_turned", false);
     const reached = Math.max(0, Math.min(2, api.store.get("stage", 0) | 0));
     let stage = 0;
     const stg = () => STG[stage];
@@ -252,7 +268,7 @@ export default {
     function say(t, secs = 3) { S.caption = t; S.capT = secs; }
     // voice: first person while the tea holds, third as it fades
     function V(t) {
-      const I = band() === 0;
+      const I = band() === 0 || handsOff();
       return t.replace(/\{I\}/g, I ? "I" : "He").replace(/\{s\}/g, I ? "" : "s").replace(/\{my\}/g, I ? "my" : "his");
     }
     function fx(kind) { if (!api.reducedMotion) S.fx.push({ kind, x: S.x, y: S.air ? S.y : hAt(S.x), t: 0 }); }
@@ -283,6 +299,8 @@ export default {
 
     // ---- update --------------------------------------------------------------------------------
     function band() { return S.tea >= 60 ? 0 : S.tea >= 30 ? 1 : S.tea > 0 ? 2 : 3; }
+    // second run: a hands-off ride (no sip yet) keeps "I" as the tea fades
+    const handsOff = () => second && !S.sipsTaken && S.tea > 0;
     function update(dt) {
       S.t += dt;
       if (S.capT > 0) S.capT -= dt;
@@ -302,7 +320,7 @@ export default {
       // tea: idle drain, sip
       S.tea -= dt / stg().drain;
       // Look away (the twist): the plate holds still, and Xandri acts alone
-      const wantAway = !!stg().line && keys.away && S.awayLeft > 0 && !S.swallowed;
+      const wantAway = S.canAway && keys.away && S.awayLeft > 0 && !S.swallowed;
       if (wantAway && !S.away) { S.away = true; S.awayFrom = S.x; S.awayDrawn = false; }
       else if (!wantAway && S.away) { S.away = false; say(LINES.awayBack.replace("{m}", Math.round(S.x - S.awayFrom)), 3.5); }
       if (S.away) {
@@ -317,7 +335,7 @@ export default {
       }
       if (keys.sip && S.sips > 0 && S.tea < 100) {
         S.sipHold += dt;
-        if (S.sipHold >= 1.5) { S.sips--; S.tea = Math.min(100, S.tea + 25); S.sipHold = 0; keys.sip = false; fx("sip"); say(S.sips ? LINES.sip : LINES.empty); }
+        if (S.sipHold >= 1.5) { S.sips--; S.sipsTaken = (S.sipsTaken || 0) + 1; S.tea = Math.min(100, S.tea + 25); S.sipHold = 0; keys.sip = false; fx("sip"); say(S.sips ? LINES.sip : LINES.empty); }
       } else S.sipHold = 0;
 
       if (S.swallowed) {
@@ -403,7 +421,7 @@ export default {
       const pi = PHASES.filter((q) => S.x >= q.at).length - 1, ph = PHASES[pi].look;
       S.phaseName = PHASES[pi].name;
       if (ph !== S.phase) { S.phase = ph; S.phaseT = 5; say(ph === 1 ? LINES.noon : MOON_LINE, 5); if (ph === 2) { S.heat = 0; S.hot = 0; } }
-      if (b >= 1 && !S.sipToldNew && S.sips > 0 && S.capT < 0.5) { S.sipToldNew = true; say(LINES.sipNew, 3.5); }
+      if (b >= 1 && !S.sipToldNew && S.sips > 0 && S.capT < 0.5) { S.sipToldNew = true; say(handsOff() ? LINES.handsOff : LINES.sipNew, 4); }
 
       // swallowed by a breaking lip
       for (const w of waves) {
@@ -483,17 +501,18 @@ export default {
       Object.assign(S, {
         x: 4, v: 4, y: 0, vy: 0, air: false, tea: G.tea + (gentle ? 15 : 0), sips: gentle ? 3 : 2, phase: G.phases[0].look, phaseName: G.phases[0].name, fx: [], sipToldNew: false, cooled: 0, heat: 0, hot: 0, swallows: 0, check: 0,
         swallowed: null, snag: 0, beat: 50, t: 0, nextWave: 0.2, sipHold: 0, caption: "", capT: 0, done: false, started: true, maxX: 0, inputQ: [], squall: 0, squallLeft: taste === "storm" ? 1 : 0, phaseT: 0, totalSwallows: 0, pageFlash: 0, wasPump: false,
-        cap: 12 - Math.min(3, walked), margin: 0, onLine: false, lineM: 0, ownM: 0, awayM: 0, away: false, awayLeft: 10, tilt: 0, tiltOn: false, tiltT: 0, gutI: 0, gutDrops: 0, gutTold: false, lineTold: false, lineSaid: false,
+        sipsTaken: 0, canAway: canAway, cap: 12 - Math.min(3, walked), margin: 0, onLine: false, lineM: 0, ownM: 0, awayM: 0, away: false, awayLeft: 10, tilt: 0, tiltOn: false, tiltT: 0, gutI: 0, gutDrops: 0, gutTold: false, lineTold: false, lineSaid: false,
       });
-      squallBtn.hidden = S.squallLeft <= 0; lineBtn.hidden = !G.line; awayBtn.hidden = !G.line;
+      squallBtn.hidden = S.squallLeft <= 0; lineBtn.hidden = !G.line; awayBtn.hidden = !S.canAway;
       el.querySelector("." + P + "pad").hidden = false;
       last = last2 = performance.now();
       S.capQ = [];
-      const first = [i === 0 ? START_LINE : i === 1 ? LINES.noon : LINES.awayHow, 5];
+      const first = [i === 0 ? START_LINE : i === 1 ? LINES.noon : canAway ? LINES.awayHow : LINES.lineHow, 5];
       if (walked > 0) { say(LINES.oneMoreDune + " " + LINES.walkedLink.replace("{why}", walked === 1 ? "once" : walked + " times").replace("{v}", S.cap), 6.5); S.capQ.push(first); }
       else say(first[0], first[1]);
       if (brewedNote) S.capQ.push([brewedNote, 4.5]);
       if (taste === "storm") S.capQ.push([LINES.squallHint, 4.5]);
+      if (second && i < 2) S.capQ.push([LINES.awayFirst, 4.5]);
     }
     let brewedNote = "", marginY = 14;
     // ---- The Other Hand: the reversal's first appearance (a later plate of the same book) --------
@@ -538,7 +557,11 @@ export default {
         ps[0].textContent = which === "away" ? LINES.lookedAway : LINES.onePage; ps[1].textContent = "";
         // a linger walks the boy further; looking away is his own
         if (which === "page") shared.set("walked", (shared.get("walked", 0) | 0) + 1); else shared.set("own", (shared.get("own", 0) | 0) + 1);
-        shared.set("other_hand_seen", true);
+        shared.set("other_hand_seen", true); shared.set("other_hand_choice", which);
+        notebook.refresh();
+        // the twist ends on an ending's image: one more page is the ringed hand's way; looking away pays off once the cup is brewed
+        const e = which === "page" ? ENDINGS.stayed : solved(shared) ? endingFor(shared) : null;
+        if (e) endingCard(root, api, e, which === "page" ? LINES.onePage : LINES.lookedAway);
         api.end({ outcome: "win", text: `${winText} ${which === "away" ? LINES.lookedAway : LINES.onePage}` });
       };
       const tickHold = (now) => {
@@ -844,7 +867,7 @@ export default {
       if (S.sipHold > 0) { g.strokeStyle = C.honey; g.lineWidth = 4; g.beginPath(); g.arc(cx, cy, 34, -1.57, -1.57 + (S.sipHold / 1.5) * 6.283); g.stroke(); }
       g.fillStyle = "rgba(241,230,204,.9)"; g.fillRect(cx - 34, cy + 30, 150, 20);
       g.fillStyle = b >= 1 ? "#7a2f1e" : C.ink; g.font = "600 14px 'EB Garamond',Georgia,serif";
-      g.fillText(`tea ${Math.round(S.tea)} · “${["I", "he", "he", "—"][b]}”${b === 2 ? " (thin)" : ""}`, cx - 30, cy + 45);
+      g.fillText(`tea ${Math.round(S.tea)} · “${handsOff() ? "I" : ["I", "he", "he", "—"][b]}”${b === 2 ? (handsOff() ? " (his own)" : " (thin)") : ""}`, cx - 30, cy + 45);
       if (taste !== "mint" && pw >= 520) { const tn = CUPS.find((c) => c.id === taste).name.toLowerCase() + " in the cup"; g.font = "italic 14px 'EB Garamond',Georgia,serif"; const tw = g.measureText(tn).width; g.fillStyle = "rgba(241,230,204,.9)"; g.fillRect(cx + 122, cy + 30, tw + 12, 20); g.fillStyle = C.ink; g.fillText(tn, cx + 128, cy + 45); g.font = "600 14px 'EB Garamond',Georgia,serif"; }
       if (b >= 1 && S.sips > 0 && !S.done) { g.fillStyle = "rgba(241,230,204,.9)"; g.fillRect(cx + 40, cy - 26, 196, 22); g.fillStyle = C.ink; g.fillText(`hold Sip (S): ${S.sips} sip${S.sips > 1 ? "s" : ""} left`, cx + 44, cy - 10); }
       // caption, bottom centre
@@ -920,10 +943,11 @@ export default {
       startStage(startAt);
     });
     intro.querySelector("." + P + "go").focus();
+    const notebook = mountNotebook(root, api, { into: el.querySelector("." + P + "pad ." + P + "grp"), short: true });
 
     return {
       unmount() {
-        alive = false; cancelAnimationFrame(holdRaf);
+        alive = false; cancelAnimationFrame(holdRaf); notebook.unmount();
         cancelAnimationFrame(raf); timers.forEach(clearTimeout); ro.disconnect();
         removeEventListener("keydown", onDown); removeEventListener("keyup", onUp);
         for (const [b, d, u] of ptr) { b.removeEventListener("pointerdown", d); b.removeEventListener("pointerup", u); b.removeEventListener("pointercancel", u); b.removeEventListener("pointerleave", u); }

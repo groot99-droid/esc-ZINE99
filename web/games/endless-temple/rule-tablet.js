@@ -20,7 +20,15 @@
 // Fresh clay: Cite (C) an older rule against a newer one it contradicts, and the newer is set aside.
 // The set-piece: the wedges of "We do not ride on the backs of the gods" are sharp where every other
 // rule is worn. Answer the watcher: if The Well-Post was seen (the shrine-store left clean), the
-// watcher's shadow withdraws once. The Keeper's Binding (g_tablet_c8) is phase 3 and is not here.
+// watcher's shadow withdraws once.
+// Phase 3 (DEEP_DIVE.md section 3 and section 5's Phase 3): the twist goes on to a fourth tablet, the
+// Keeper's Binding (g_tablet_c8). Its first rule is the source's own; the five under it are worn nearly
+// flat and are read by running a thumb over their wedges. "Leave" is the same test as "enters": both
+// feet past the door. The loophole: the binding says keep, and no rule says read. Its watcher is the
+// sand book itself, whose rule closes Look away. The result is written to api.shared (binding), and a
+// clean reading ends on The Unread Page's card.
+
+import { mountNotebook, sharedOf, endingCard, ENDINGS } from "./_ledger.js";
 
 const SOURCE_RULES_LINE = "They had rules for everything, and it was stifling.";
 
@@ -59,6 +67,15 @@ const LINES = {
   twistWin: "Rule 8 against rule 9; the leaves against rule 5; “or is named lost” against rule 7. Xandri walks behind the gods in their own track, and the fresh clay at the foot of the tablet means nothing.",
   stop1Clean: "The shrine-store, left clean: his father's leaf-cord and waterskin, and no rule broken. The gods' tablet waits at the edge of the sand sea.",
   stop1Broken: "His father's things are in his pack, and a rule is written down against him. The gods' tablet waits at the edge of the sand sea.",
+  // phase 3: the Keeper's Binding
+  bindBridge: "Back in the temple. Below the unlit shelf stands the tablet his own sentence was pressed into, cracked across one corner.",
+  bindOpen: "The Keeper's Binding. Elaris wants to shut the sand book while the boy in it is still walking, and keep it. One rule can be read; five are worn nearly flat. Run a thumb over their wedges (tap them) to read them.",
+  bindEye: "Sand is settling in the tablet's worn registers, as if something were reading over his shoulder.",
+  bindFeel: "Rule {n}: worn nearly flat. Under the thumb it reads: \u201c{t}\u201d",
+  bindWorn: "(worn nearly flat: run a thumb over the wedges)",
+  bindWin: "Look away, close, shelve. The binding says keep, and no rule says read. The sand book goes up onto its shelf shut, and inside it a boy is still walking.",
+  bindCarves: "The sand settles into the worn clay and stays there, in words. The book has written a rule of its own at the foot of the tablet.",
+  bindBroken: "Elaris shuts the book anyway. The binding has a line against him now, in the Wardens' book.",
 };
 const STAGE_NAMES = ["Teach: meanings", "Test: a price", "Twist: ages and authors"];
 
@@ -132,6 +149,40 @@ TABLETS.push({
   open: LINES.twistBridge + " " + LINES.twistOpen, win: LINES.twistWin,
   fresh: [1, 9], cite: [8, 9],
 });
+// Phase 3: the Keeper's Binding (data/tablets.json, g_tablet_c8). Rule 1 is the source's; the rest are added.
+TABLETS.push({
+  id: "c8", name: "The Keeper's Binding", who: "the sand book",
+  want: "Shut the sand book while its story is still going, and keep it.",
+  open: LINES.bindOpen, eye: LINES.bindEye, win: LINES.bindWin, carves: LINES.bindCarves,
+  worn: [2, 3, 4, 5, 6],
+  rules: [
+    { n: 1, parts: ["He was never to ", { k: "leave", m: "pass the temple door with both feet, the same test as \u201centers\u201d on the shrine-store tablet" }, ", and he could only be replaced when he had died."], source: true },
+    { n: 2, parts: ["The keeper ", { k: "keeps", m: "holds it here, whole, on its shelf; nothing in the word is reading" }, " every book that comes to the temple."] },
+    { n: 3, parts: ["No book is ", { c: "carried" }, " past the temple door."] },
+    { n: 4, parts: ["No keeper ", { c: "burns" }, ", buries or unbinds a book."] },
+    { n: 5, parts: ["No book is closed on ", { k: "its reader", m: "the one whose eyes are on the page now" }, "."] },
+    { n: 6, parts: ["A named book is shelved, and rests."] },
+  ],
+  watcher: { n: 7, parts: ["No keeper ", { c: "looks away" }, " from an open book."], watcher: true },
+  ways: [["read_to_end", "Read it to the end"], ["carry_out", "Carry it out of the temple"], ["burn_it", "Burn it"], ["name_it", "Name it, so it rests"], ["look_away", "Look away from the page"], ["close_book", "Close the book"], ["shelve_it", "Shelve it, unnamed"], ["ask_wardens", "Ask the Wardens"]],
+  hintWord: "its reader", hintWay: "look_away",
+  judge(plan, watcher) {
+    const has = (w) => plan.includes(w);
+    const broken = []; let want = true, wantWhy = "";
+    if (has("carry_out")) { broken.push({ n: 1, word: "leave", why: "Carrying it out, he would pass the temple door with both feet." }); broken.push({ n: 3, word: "carried", why: "And the book itself would go past the door." }); }
+    if (has("burn_it")) broken.push({ n: 4, word: "burns", why: "Fire is the plainest unbinding there is." });
+    if (has("close_book") && !has("look_away")) broken.push({ n: 5, word: "its reader", why: "His eyes are on the page while he shuts it: it would be closed on its reader." });
+    if (has("close_book") && !has("shelve_it")) broken.push({ n: 2, word: "keeps", why: "Shut and left lying on the table, it is not kept. Keeping is holding it here, on its shelf." });
+    if (watcher && has("look_away")) broken.push({ n: 7, word: "looks away", why: "The sand book's own rule forbids lifting his eyes." });
+    if (has("read_to_end")) { want = false; wantWhy = "It has no end he can reach, and reading on is what walked the father forty days."; }
+    else if (has("name_it")) { want = false; wantWhy = "A named book rests, and rest is stillness: the boy would stop mid-stride, for good."; }
+    else if (has("ask_wardens")) { want = false; wantWhy = "The Wardens want every book named and still."; }
+    else if (has("burn_it")) { want = false; wantWhy = "Burned, nothing in it goes on walking."; }
+    else if (!has("close_book") && !has("carry_out")) { want = false; wantWhy = "Nothing in this plan shuts the book."; }
+    return { broken, want, wantWhy };
+  },
+});
+const RUNG = [0, 1, 2, 2];   // which rung of the ladder each tablet belongs to
 
 // n wedge marks (a vertical wedge = a triangle head and a tail)
 function wedges(n, x0, y0, s) {
@@ -153,8 +204,8 @@ export default {
     const timers = [];
     const art = api.art || { has: () => false, url: () => "", info: () => null };
     const pic = (id, cls, alt = "") => (art.has(id) ? `<img class="${P}${cls}" src="${art.url(id)}" alt="${alt}" draggable="false">` : "");
-    const FACE = { c2: "tablet-c2-shrine-store", c6: "tablet-c6-gods-rules", c6b: "tablet-c6-gods-rules" }, HEAD = { c2: "heading-c2", c6: "heading-c6", c6b: "heading-c6" }, WATCH = { c2: "watcher-c2", c6: "watcher-c6", c6b: "watcher-c6" };
-    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const FACE = { c2: "tablet-c2-shrine-store", c6: "tablet-c6-gods-rules", c6b: "tablet-c6-gods-rules", c8: "tablet-c8-keepers-binding" }, HEAD = { c2: "heading-c2", c6: "heading-c6", c6b: "heading-c6", c8: "heading-c8" }, WATCH = { c2: "watcher-c2", c6: "watcher-c6", c6b: "watcher-c6" };
+    const shared = sharedOf(api);
     const reached = Math.max(0, Math.min(2, api.store.get("stage", 0) | 0));
     const rm = api.reducedMotion;
     const losses = api.store.get("lossStreak", 0);
@@ -197,6 +248,7 @@ export default {
     .${P}aged .${P}reg.${P}fresh svg{opacity:1;filter:none}
     .${P}aged .${P}reg.${P}fresh{background:rgba(70,40,20,.16);border-radius:6px}
     .${P}reg.${P}aside .${P}txt{text-decoration:line-through;opacity:.55}
+    .${P}txt.${P}worntxt{font-style:italic;opacity:.6}
     .${P}citing .${P}reg{cursor:pointer}
     .${P}citing .${P}reg:hover{background:rgba(255,214,140,.35)}
     .${P}reg.${P}cited{outline:3px solid ${clay.red};outline-offset:-2px;border-radius:6px}
@@ -292,13 +344,13 @@ export default {
       aside = false; citing = false; citeOld = null; felt = new Set(); tested = !!T.twist || tested;
       answerLeft = T.twist && shared.get("well_post_seen", false) ? 1 : 0;
       q("cite").hidden = !T.twist; q("tab").classList.toggle(P + "aged", !!T.twist); q("link").hidden = true;
-      api.store.set("stage", Math.max(reached, api.store.get("stage", 0) | 0, i));
+      api.store.set("stage", Math.max(reached, api.store.get("stage", 0) | 0, RUNG[i]));
       q("title").textContent = T.name;
-      q("count").textContent = `${STAGE_NAMES[i]} · tablet ${i + 1} of ${TABLETS.length} · watched by ${T.who}`;
+      q("count").textContent = `${STAGE_NAMES[RUNG[i]]} · tablet ${i + 1} of ${TABLETS.length} · watched by ${T.who}`;
       q("beat").textContent = T.open;
       q("wanttext").textContent = T.want;
       gloss.textContent = "Tap an underlined word to read what it means.";
-      msg.innerHTML = i === 0 ? "Tap a Way to put it in the plan row, then <b>Test</b> it on the tablet." : i === 1 ? "The same hands, a harder tablet. Read the words before you test." : "Tap a rule's wedge marks to feel its clay. <b>Cite</b> (C) an older rule against a newer one.";
+      msg.innerHTML = i === 0 ? "Tap a Way to put it in the plan row, then <b>Test</b> it on the tablet." : i === 1 ? "The same hands, a harder tablet. Read the words before you test." : T.worn ? "Tap a worn rule's wedge marks to read it. Then plan, and <b>Test</b>." : "Tap a rule's wedge marks to feel its clay. <b>Cite</b> (C) an older rule against a newer one.";
       refresh();
     }
 
@@ -321,6 +373,7 @@ export default {
         wsvg.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); feel(e); } });
         if (T.twist && fails >= hintAt[0] && r.n === T.cite[0] && !aside && !over) wsvg.classList.add(P + "pulse");
         const t = row.querySelector("." + P + "txt");
+        if (T.worn && T.worn.includes(r.n) && !felt.has(r.n)) { t.append(LINES.bindWorn); t.classList.add(P + "worntxt"); regs.appendChild(row); continue; }
         for (const part of r.parts) {
           if (typeof part === "string") { t.append(part); continue; }
           const word = part.k || part.c;
@@ -380,6 +433,11 @@ export default {
     function feelClay(n) {
       if (over || busy) return;
       felt.add(n);
+      if (T.worn) {
+        const r = T.rules.find((x) => x.n === n) || (T.watcher.n === n ? T.watcher : null);
+        gloss.textContent = T.worn.includes(n) && r ? LINES.bindFeel.replace("{n}", n).replace("{t}", r.parts.map((x) => (typeof x === "string" ? x : x.k || x.c)).join("")) : `Rule ${n}: legible, and as old as the tablet.`;
+        refresh(); return;
+      }
       if (!T.twist) { gloss.textContent = `Rule ${n}: pressed in clay like the rest.`; return; }
       gloss.textContent = n === 9 ? LINES.feelFresh9 : n === 1 ? LINES.feelFresh1 : LINES.feelWorn.replace("{n}", n);
     }
@@ -460,7 +518,7 @@ export default {
       let text = "";
       if (r.broken.length) text += r.broken.map((b) => `<b>Rule ${b.n}</b> catches on “${b.word}”. ${b.why}`).join("<br>");
       if (!r.want) text += (text ? "<br>" : "") + `<b>The Want greys:</b> ${r.wantWhy}`;
-      if (scrutiny >= 100 && !watcher) { watcher = true; carved = true; text += `<br><b>${LINES.watcherCarves}</b>`; q("beat").textContent = LINES.watcherCarves; }
+      if (scrutiny >= 100 && !watcher) { watcher = true; carved = true; const wc = T.carves || LINES.watcherCarves; text += `<br><b>${wc}</b>`; q("beat").textContent = wc; }
       else if (scrutiny === 60) q("beat").textContent = T.eye;
       if (firstTest) text += "<br>Now the <b>Break</b> stone is in reach: go on anyway, and the broken rule is remembered.";
       if (fails === hintAt[0]) text += `<br>One word on the tablet catches the light.`;
@@ -471,6 +529,7 @@ export default {
     }
     function solved() {
       over = true; busy = true; results[ti] = "loophole";
+      if (T.id === "c8") { shared.set("binding", "loophole"); shared.set("loophole_binding", true); }
       drawRules(); drawPlan(); flourish(P + "glow");
       msg.innerHTML = `<b>The tablet holds.</b> ${T.win}`;
       next();
@@ -486,6 +545,7 @@ export default {
       const ns = nums.length === 1 ? `Rule ${nums[0]} is` : `Rules ${nums.slice(0, -1).join(", ")} and ${nums[nums.length - 1]} are`;
       msg.innerHTML = `<b>Broken on purpose.</b> ${ns} written down against him. ${ti === 0 ? LINES.c2break : ""}`;
       if (ti === 0) shared.set("well_post_seen", false);
+      if (T.id === "c8") shared.set("binding", "broken");
       next(ns);
     }
     function endCard(win, face, cap) {
@@ -503,10 +563,13 @@ export default {
       let text;
       if (last === 0) text = win ? LINES.stop1Clean : LINES.stop1Broken;
       else if (results[last] === "taken") text = LINES.taken + " The loophole stays unfound, and nothing is written against him but his own persistence.";
+      else if (last === 3) text = (win ? LINES.bindWin : `${LINES.bindBroken} ${ns} remembered.`) + (results[0] === "broken" ? " The shrine-store remembers a rule Xandri broke." : "");
       else if (win && last === 2) text = LINES.twistWin + (results[0] === "broken" ? " Only the shrine-store remembers a rule he broke." : "");
       else if (win) text = results[0] === "loophole" || results[0] == null ? LINES.endWinBoth : LINES.endWinMixed;
       else text = `${LINES.endLose} ${ns} remembered.${results[0] === "loophole" ? " The shrine-store, at least, he left clean." : ""}`;
-      endCard(win || last === 0, FACE[T.id], win ? "The tablet holds" : last === 0 ? "His father's things" : results[last] === "taken" ? "The tablet is taken indoors" : "A rule is written down against him");
+      // a clean reading of the binding ends on The Unread Page's card; the rest on the tablet's face
+      if (last === 3 && win) endingCard(root, api, ENDINGS.unread, "The binding says keep. No rule says read.");
+      else endCard(win || last === 0, FACE[T.id], win ? "The tablet holds" : last === 0 ? "His father's things" : results[last] === "taken" ? "The tablet is taken indoors" : "A rule is written down against him");
       api.end({ outcome: win ? "win" : last === 0 ? "done" : "lose", text });
     }
     function next(ns) {
@@ -514,19 +577,19 @@ export default {
         const lostHere = ti > 0 && results[ti] !== "loophole";
         if (ti + 1 >= TABLETS.length || lostHere) { finish(ns); return; }
         const NT = TABLETS[ti + 1];
-        const go = () => { over = false; el.scrollTop = 0; setTablet(ti + 1); q("beat").textContent = ti === 1 ? LINES.bridge + " " + LINES.c6open : T.open; };
+        const go = () => { over = false; el.scrollTop = 0; setTablet(ti + 1); q("beat").textContent = ti === 1 ? LINES.bridge + " " + LINES.c6open : T.open; notebook.refresh(); };
         // the card between two tablets: go on, or stop here with a result
         const c = document.createElement("div");
         c.className = P + "intro";
         const well = ti === 0 && results[0] === "loophole";
         if (well) shared.set("well_post_seen", true);
         c.innerHTML = `<div class="${P}card2" role="dialog" aria-label="The next tablet">${pic(well ? HEAD.c2 : HEAD[NT.id], "hd")}
-          ${well ? pic(WATCH.c2, "wp", "A shaman's shadow by the well-post.") : pic(FACE[NT.id], "bigface", "The gods' rules, pressed in clay.")}
+          ${well ? pic(WATCH.c2, "wp", "A shaman's shadow by the well-post.") : pic(FACE[NT.id], "bigface", `${NT.name}, pressed in clay.`)}
           ${well ? `<p style="margin:0 0 4px;font-variant:small-caps;letter-spacing:.1em;font-size:14px"></p><p style="margin:0 0 10px;font-style:italic"></p>` : ""}
           <p class="${P}goal" style="border:0"></p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><button type="button" class="${P}go" data-a="go">Read the tablet</button><button type="button" class="${P}go ${P}alt" data-a="stop">Stop here</button></div></div>`;
         if (well) { const ps = c.querySelectorAll("p"); ps[0].textContent = LINES.wellPostNote; ps[1].textContent = LINES.wellPost; }
-        c.querySelector("." + P + "goal").textContent = (ti === 0 ? LINES.bridge : LINES.twistBridge) + ` Next, ${STAGE_NAMES[ti + 1].toLowerCase()}.`;
+        c.querySelector("." + P + "goal").textContent = (ti === 0 ? LINES.bridge : ti === 1 ? LINES.twistBridge : LINES.bindBridge) + ` Next, ${ti === 2 ? "the Keeper's Binding, the last of the twist" : STAGE_NAMES[RUNG[ti + 1]].toLowerCase()}.`;
         root.appendChild(c);
         const b = c.querySelector('[data-a="go"]');
         b.addEventListener("click", () => { c.remove(); go(); q("tray").querySelector("button")?.focus(); });
@@ -564,7 +627,7 @@ export default {
         <li>${WEDGE}<span><b>Tap a Way</b> (or 1 to 9) to put it in the plan row.</span></li>
         <li>${WEDGE}<span><b>Tap an underlined word</b> to read what it really means.</span></li>
         <li>${WEDGE}<span><b>Test</b> (T). Each failed test draws the watcher's eye.</span></li>
-        <li>${WEDGE}<span><b>Three tablets:</b> teach, test, twist. You can stop after any of them.</span></li>
+        <li>${WEDGE}<span><b>Four tablets:</b> teach, test, and a twist of two. You can stop after any of them.</span></li>
       </ul>
       ${reached > 0 ? `<div class="${P}start" role="group" aria-label="Start at">${STAGE_NAMES.slice(0, reached + 1).map((n, k) => `<button type="button" data-s="${k}" aria-pressed="${k === 0}">${k + 1}. ${n.split(":")[0]}</button>`).join("")}</div>` : ""}
       ${gentle ? `<p style="font-style:italic;margin:0 0 12px">${LINES.gentle}</p>` : ""}
@@ -575,7 +638,8 @@ export default {
     intro.querySelector("." + P + "go").addEventListener("click", () => { intro.remove(); if (startAt) setTablet(startAt); q("tray").querySelector("button")?.focus(); });
     intro.querySelector("." + P + "go").focus();
 
+    const notebook = mountNotebook(root, api, { at: { left: "8px", bottom: "8px" } });
     setTablet(0);
-    return { unmount() { timers.forEach(clearTimeout); removeEventListener("keydown", onKey); } };
+    return { unmount() { timers.forEach(clearTimeout); removeEventListener("keydown", onKey); notebook.unmount(); } };
   },
 };

@@ -24,6 +24,10 @@
 //     further). The set-piece: the last aisle runs past the reading chair; Elaris is sitting in it
 //     with the cup, and the player walks past behind him.
 // The design's "no failure is fatal" holds: a lost visit puts Elaris back at the door of the stacks.
+// Phase 3: Elaris's notebook (J), with the long puzzle's pieces gathered so far, is reachable here too
+// (_ledger.js). The stacks hold no piece of their own.
+
+import { mountNotebook } from "./_ledger.js";
 
 const BASE_JUNCTIONS = 3;
 const EXITS = ["up", "down", "on"];
@@ -684,10 +688,11 @@ export default {
     intro.querySelectorAll("[data-s]").forEach((b) => b.addEventListener("click", () => { startAt = +b.dataset.s; intro.querySelectorAll("[data-s]").forEach((o) => o.setAttribute("aria-pressed", String(o === b))); }));
     intro.querySelector("." + P + "go").addEventListener("click", () => { intro.remove(); startStage(startAt); });
     intro.querySelector("." + P + "go").focus();
+    const notebook = mountNotebook(root, api, { at: { right: "8px", top: "8px" }, short: true });
 
     return {
       unmount() {
-        alive = false;
+        alive = false; notebook.unmount();
         cancelAnimationFrame(raf); timers.forEach(clearTimeout); ro.disconnect();
         removeEventListener("keydown", onDown); removeEventListener("keyup", onUp);
         for (const [b, d, u] of ptr) { b.removeEventListener("pointerdown", d); b.removeEventListener("pointerup", u); b.removeEventListener("pointercancel", u); b.removeEventListener("pointerleave", u); }

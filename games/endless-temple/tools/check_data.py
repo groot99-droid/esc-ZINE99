@@ -31,7 +31,9 @@ TYPES = {
 PAST_VARIANT_THRESHOLD = 6
 # DESIGN.md section 7: which book each reading chapter opens.
 BOOK_OF_CHAPTER = {"c2_circle": "sand_book", "c4_dunes": "sand_book", "c6_father": "sand_book",
-                   "c9_end": "sand_book", "c5_hollin": "weather_book", "c7_procession": "road_book"}
+                   "c9_end": "sand_book", "c5_hollin": "weather_book", "c7_procession": "road_book",
+                   # the Keeper's Binding (g_tablet_c8) is the temple's own, not a book's
+                   "c8_unlit": "temple"}
 
 problems = []
 
@@ -303,7 +305,7 @@ def check_tablets(doc, ctx):
     if gods and not any(r.get("price") for r in gods[0]["rules"]):
         problem("tablets.json 'g_tablet_c6': the gods' rules need their price rule")
     # Endings and choices that need a loophole must find it set by a tablet.
-    for name in ("loophole_shrine", "loophole_hollin", "loophole_wake", "loophole_procession"):
+    for name in ("loophole_shrine", "loophole_hollin", "loophole_wake", "loophole_procession", "loophole_binding"):
         if name in flags and name not in loophole_flags:
             problem(f"tablets.json: no tablet sets '{name}'")
 

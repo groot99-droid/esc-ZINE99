@@ -13,7 +13,7 @@ sent here, and whether you will keep coming back out of the tea.
 | Vault path | `creative-writing/vault/02_Novels/05_The_Endless_Temple_-_Elaris_Sel_Marden.md` |
 | Companion note | `creative-writing/vault/_Annotations/02_Novels/05_The_Endless_Temple_-_Elaris_Sel_Marden.md` |
 | Register | Epic fantasy, liminal (`_Craft/liminality.md` names this work's tea as an "unmarked frame slip") |
-| Target length | 120 to 160 minutes; this design runs 153 minutes on a first playthrough |
+| Target length | 120 to 160 minutes; this design runs 157 minutes on a first playthrough |
 | Players | 1 |
 | Core verb | **Read** |
 | Structure | A temple hub; three books, each a world; a mystery about Elaris runs through the hub |
@@ -249,9 +249,9 @@ why").
 | 5 | `c5_hollin` | The Weather-Clerk of Hollin | 22 | 3D, 2D, 1D | A second book; F4; a mirror of Elaris's binding; first book choice | 3 |
 | 6 | `c6_father` | The Father's Mark | 20 | 3D, 2D, 1D | The Xandrixes; the father's journal (a book in a book); the gods' rules | 4 |
 | 7 | `c7_procession` | The Long Procession | 19 | 3D, 2D, 1D | A third book; F5; a reader writing in someone else's story | 3 |
-| 8 | `c8_unlit` | The Unlit Shelf | 14 | 3D, 2D, 1D | The stacks reversed; the black book; F6, F7; the last brew | 4 |
+| 8 | `c8_unlit` | The Unlit Shelf | 18 | 3D, 2D, 1D | The stacks reversed; the black book; F6, F7; the Keeper's Binding; the last brew | 4 |
 | 9 | `c9_end` | The End of the Sand | 16 | 3D, 2D, 1D | The choice at the herd; the last cup; the ending | 5 |
-| | | **Total** | **153** | | | |
+| | | **Total** | **157** | | | |
 
 Book One (the sand sea) totals about 70 minutes of play (c2, c4, c6 less its 2.5-minute brew, c9
 less its last-cup scene), and is the longest part. Book Two is about 14 minutes, Book Three about 12. The hub
@@ -437,19 +437,21 @@ Times below are for a first playthrough at normal pace. Each level lists scene i
 - **Flags.** `loophole_procession`, `procession_choice`, `book3_named` (city or end), `steep`
   (city +10, end −6, pen returned +4), `herbs` (lamp-ash).
 
-### c8 The Unlit Shelf (14 min)
+### c8 The Unlit Shelf (18 min)
 
 - **Goal.** Find the book that does not call; open it; face it; brew the last pot.
 - **Scenes.** `s3_halls_c8` (1.5) → `s2_stacks_c8` (3) → `s3_unlit_gallery` (2) → `g_clasp_c8`
-  (4) → `s3_abyss_return` (2) → `s3_pantry_c8` (0.5) → `g_tea_c8` (1).
+  (4) → `s3_abyss_return` (2) → `g_tablet_c8` (4, added 2026-11-16) → `s3_pantry_c8` (0.5) →
+  `g_tea_c8` (1).
 - **Encounters.** The cuckoo clock has stopped. Sand is ankle-deep if `sand_leak` ≥ 60. Any
   unnamed book from c5 or c7 now leaks too. The stacks, reversed: follow the cold, not the call.
   The gallery: one book with frost on its clasps. The compound clasp (F6). Opening it pushes into
   the abyss again, awake this time: the same mist, the same edge. The player can call one star name
   into the dark (F7). Nothing lights. Before leaving, Elaris can set a candle by the closed book
-  (`candle_left`, steep −10). The pantry: the last pot.
+  (`candle_left`, steep −10). Below the unlit shelf, the tablet his own sentence was pressed into:
+  the Keeper's Binding (section 11). The pantry: the last pot.
 - **Learns.** All of the past, if the clasps were opened.
-- **Flags.** `black_book_open`, `past_fragments`, `past_known`, `candle_left`, brew values.
+- **Flags.** `black_book_open`, `past_fragments`, `past_known`, `candle_left`, `loophole_binding`, brew values.
 
 ### c9 The End of the Sand (16 min)
 
@@ -459,7 +461,9 @@ Times below are for a first playthrough at normal pace. Each level lists scene i
 - **Encounters.** At the father's marker the herd returns and passes close. Three prompts, placed
   in the world: the nearest Xandrix's flank (climb), the smooth track behind it (follow, shown only
   if `loophole_wake`), and the way back over the dunes (turn back). If `sand_leak` ≥ 80 the waves
-  break 30% more often in the last ride.
+  break 30% more often in the last ride. A fourth (added 2026-11-16, phase 3): with the Parting Cup
+  brewed and The Other Hand seen, and Look away a standing verb, Elaris can look away and not look
+  back (`xandri_fate` `unseen`); the page holds still and he closes the book. That is The Unread Page.
 - **The last cup.** Whatever Xandri chose, the tea thins. Elaris's hand finds the pot. Two
   prompts: set the cup down, or drink. This writes `last_cup`. The endings resolver runs.
 
@@ -511,7 +515,7 @@ so the player feels tall, not the world small). Book scenes use the narration ca
 | `s3_xandrix_back` | A Xandrix's back | 30 m long, moving | Narration, rising high | Hold on (hold interact) | White horizon | Hum, wind | Horizon | cut / pull-out |
 | `s3_village_return` | The way home and the circle | 400 m then the hut | Narration | Walk only | Dusk | Children | Circle | cut / pull-out |
 | `s3_last_cup` | The reading chair | 3 m | First person, seated | Cup, set down or drink | Depends on steep | Clock (if not stopped) | Choice | pull-out / fade |
-| `e_stayed`, `e_rider`, `e_named`, `e_returned` | See section 13 | | Fixed cameras, 40 to 90 s | None | | | | fade / end |
+| `e_stayed`, `e_rider`, `e_named`, `e_returned`, `e_unread` | See section 13 (`e_unread` added 2026-11-16, in `temple-halls`) | | Fixed cameras, 40 to 90 s | None | | | | fade / end |
 
 **The three scenes added in phase 2 (accepted 2026-11-15, built 2026-11-16).**
 
@@ -680,7 +684,7 @@ and binding −5. No cup from the eight jars reaches depth 7 at binding −4; wi
 ledger names, only this one does (`data/herbs.json`, `parting_cup`). It needs the sand swept and
 kept, so a keeper who never swept cannot brew it. It sets `parting_cup`. Built in phase 1: the
 recipe, the cup, and the ledger's two sides. What the cup lets Elaris do, close a book that is
-still going, is The Unread Page (phase 3; section 20A).
+still going, is The Unread Page (built 2026-11-16; section 13).
 
 **Writes.** `brew.depth`, `brew.length`, `brew.binding`, `tea_hold`, `steep`; from 2026-11-15
 also `gutter_sand`, `cup_taste`, and at the last pot `ledger_turned` and `parting_cup`.
@@ -710,7 +714,8 @@ the page runs with sand (or rain, or ink) for the book being named.
 7. **True ink (built 2026-11-16).** On the sand book the ink takes only what a page has shown.
    "End" takes in no title, because no ending shows it. "Proof" takes only if Xandri passed the
    mark (`passed_father_mark`).
-8. **The scraped title (built 2026-11-16 as a thing to find; its payoff is phase 3).** Under raking
+8. **The scraped title (built 2026-11-16 as a thing to find; its payoff built 2026-11-16 in phase 3: it
+   is one of the three pieces of the long puzzle, section 20A).** Under raking
    light (tilt the lamp) the sand book's cartouche shows a title scraped away in Maudric's hand:
    "The Desert That Ends". He could not make it take. It is a model the true ink refuses.
 
@@ -893,10 +898,34 @@ stop; Take the pen; Turn the road back; Hand back the pen; Write a gate. Solutio
 Scribe's hand + Write the road to the edge and stop. Where the road ends is the City, by rule 6.
 Watcher (a pilgrim): "No other hand touches the Scribe's." It closes Steady the Scribe's hand.
 
+`g_tablet_c8`, the Keeper's Binding (accepted 2026-11-15, built 2026-11-16). Below the unlit
+shelf, the tablet Elaris's own sentence was pressed into, cracked across one corner. It is the
+temple's, not a book's. Want: shut the sand book while its story is still going, and keep it. Only
+rule 1 can be read at first; rules 2 to 6 are worn nearly flat and are read by running a thumb over
+their wedges.
+
+| # | Rule | Key word meaning |
+| --- | --- | --- |
+| 1 | "He was never to leave, and he could only be replaced when he had died." (the source's own words) | *leave*: pass the temple door with both feet, the same test as *enters* on the shrine-store tablet |
+| 2 | The keeper keeps every book that comes to the temple. | *keeps*: holds it here, whole, on its shelf; nothing in the word is reading |
+| 3 | No book is carried past the temple door. | |
+| 4 | No keeper burns, buries or unbinds a book. | |
+| 5 | No book is closed on its reader. | *its reader*: the one whose eyes are on the page now |
+| 6 | A named book is shelved, and rests. | |
+
+Ways (8): Read it to the end (the Want greys: it has no end he can reach); Carry it out of the
+temple; Burn it; Name it, so it rests (the Want greys: a named book is still); Look away from the
+page; Close the book; Shelve it, unnamed; Ask the Wardens (the Want greys). Solution: Look away +
+Close the book + Shelve it, unnamed. Closed with his eyes off the page, it is not closed on its
+reader (rule 5); shelved, it is kept (rule 2), and keeping is all the binding asks. No rule says
+read. Watcher (the sand book itself: its sand settles into the worn registers as words): "No
+keeper looks away from an open book." It closes Look away. Broken instead, the closing is written
+down against him (`rules_broken`), and The Unread Page keeps that line.
+
 **Hints.** After two failed tests, one key word in a rule pulses. After four, a Way tile pulses.
 
-**Writes.** The loophole flag for that book, `tablet_scrutiny`, `rules_broken`; c2 also
-`fathers_things` (set by both the loophole and the break).
+**Writes.** The loophole flag for that book (`loophole_binding` for the Keeper's Binding),
+`tablet_scrutiny`, `rules_broken`; c2 also `fathers_things` (set by both the loophole and the break).
 
 ## 12. Core systems
 
@@ -942,7 +971,7 @@ A reader's wanting leans on the one he reads (section 20A). Three state entries 
 | State | Raised by | Read by |
 | --- | --- | --- |
 | `walked` | Each linger at a mark; One more page at The Other Hand and at the ring of stones; each of Maudric's ribbons taken in the stacks | The next Book One 3D session starts 200 m on (One More Dune); Xandri's pace cap in the next ride is 1 m/s lower per point, 3 at most; how long he lies at the ring of stones |
-| `own` | Look away, held; each 100 m ridden off the written line (and −1 per 100 m ridden on it) | The endings, in phase 3 |
+| `own` | Look away, held; each 100 m ridden off the written line (and −1 per 100 m ridden on it) | The Son Returns' changed word (`own` ≥ 3), and The Rider's last line (built 2026-11-16) |
 | `hand_was` | The storyteller's circle: `raised` if the player pressed, `instinct` if the page did it | Phase 3 |
 
 **Look away** (hold; inside books, once `look_away` is set by The Ledger Turned Over; offered once
@@ -1000,9 +1029,12 @@ last line, not which ending fires.
 ## 13. Endings
 
 The resolver checks in priority order. None is marked as written; the source has no ending.
+Every ending keeps a cost (accepted 2026-11-15, built 2026-11-16; DEEP_DIVE section 2); the
+`cost` field in `data/endings.json` holds it, and the menu shows it beside the card.
 
 | Priority | Id | Name | As written | Condition in words | `data/endings.json` |
 | --- | --- | --- | --- | --- | --- |
+| 5 | `unread_page` | The Unread Page (added 2026-11-16) | No | At the herd Elaris looked away and did not look back, with the Parting Cup brewed and The Other Hand seen | `{"all":[{"is":"xandri_fate","eq":"unseen"},{"is":"parting_cup","eq":true},{"is":"other_hand_seen","eq":true}]}` |
 | 10 | `reader_who_stayed` | The Reader Who Stayed | No | Elaris drank the last cup, and his steep is 60 or more | `{"all":[{"is":"last_cup","eq":"drunk"},{"is":"steep","gte":60}]}` |
 | 20 | `the_rider` | The Rider | No | Xandri climbed onto a Xandrix | `{"is":"xandri_fate","eq":"rider"}` |
 | 30 | `named_book` | The Named Book | No | Xandri walked the track past the mark, and Elaris named the book | `{"all":[{"is":"xandri_fate","eq":"walked_on"},{"is":"book1_named","eq":true}]}` |
@@ -1010,45 +1042,67 @@ The resolver checks in priority order. None is marked as written; the source has
 
 Drinking the last cup with steep below 60 does not keep him: the tea will not hold, the cup is
 empty, and the book's ending plays. The Naming cannot be failed on the walked-on path, so
-`walked_on` without a name does not happen in play; the catch-all covers it.
+`walked_on` without a name does not happen in play; the catch-all covers it. The fourth prompt at
+the herd (look away and do not look back) is offered only when `parting_cup`, `other_hand_seen` and
+`look_away` are all set, so `unseen` without the Parting Cup does not happen in play either; the
+catch-all covers it. The Unread Page sits above The Reader Who Stayed because the Parting Cup,
+binding −5, is the one cup that cannot keep him: it lets him go.
+
+**No two always fire together.** The four lower endings split on `xandri_fate` (rider, walked_on,
+returned) and on `last_cup` with `steep`; The Unread Page needs the fourth fate, `unseen`, which
+none of the others reads, and wins over The Reader Who Stayed when both hold.
+
+**The Unread Page (added 2026-11-16).** Final scenes: `s3_herd_final`, `s3_last_cup`, `e_unread`.
+At the herd Elaris lifts his eyes from the page and does not look back. The plate holds still.
+With the Parting Cup set on the cover he closes the book while the story is still running, and
+shelves it unnamed (the Keeper's Binding allows it: it says keep, and no rule says read). Last
+image: the closed book on the reading table, the chair pushed back, the empty cup with a dry ring,
+and, months later, one woody leaf slipped half out from between its pages. **Cost:** neither he
+nor the player ever learns what Xandri chose, or whether the desert ends. The book can never be
+named. If the binding was broken rather than read (`loophole_binding` false), one more line: the
+binding has a line against him in the Wardens' book. Last line (added): "Elaris closed the book on
+a boy who was still walking. It was the first kind thing he had done to a story."
 
 **The Reader Who Stayed.** Final scenes: `s3_last_cup`, `e_stayed`. Elaris drinks. The view stays
-in the book, thin and high, and Xandri walks on without him steering. Then the camera is in the
-temple, at the chair, from across the room: Elaris sits with the book open and the cup full. No
-one is watching. A second book begins to leak: the weather book (rain) if it was left unnamed,
-else the road book (ink), else the black book (a thread of mist under its cover). Last image: the
-sunbeam that woke him in c1 draws back across the floor. Last line (added): "The clock struck the
-hour, and nobody wound it."
+in the book, thin and high, and Xandri walks on without him steering. Added beat (built
+2026-11-16): Xandri looks up out of the page at the hand with the cup, and walks on. Then the camera
+is in the temple, at the chair, from across the room: Elaris sits with the book open and the cup
+full. No one is watching. A second book begins to leak: the weather book (rain) if it was left
+unnamed, else the road book (ink), else the black book (a thread of mist under its cover). Last
+image: the sunbeam that woke him in c1 draws back across the floor. **Cost:** Elaris is Maudric
+now: the reader whose wanting walks a boy past his turning, with a cup in his hand. Last line
+(added): "The clock struck the hour, and nobody wound it."
 
 **The Rider.** Final scenes: `s3_xandrix_back`, `s3_last_cup`, `e_rider`. Xandri climbs the flank
-and holds on. The god does not throw him. The camera rises as it carries him past the father's
+and holds on. The god does not throw him. Riding a god is taking the pen: the gods' smooth track is
+the story's written line (added 2026-11-16). The camera rises as it carries him past the father's
 mark, past the edge of the drawn page, into white. The game does not show the end of the desert or
 whether the clan is turned back into lizards; Xandri learns it, and does not come home to tell
-them. No ending shows the clan as lizards, and none shows the desert's end (section 20, Answered 2). In the temple the title page writes itself, in a hand that is not Elaris's. Last line
-(added): "The book named itself. Elaris let it."
+them. No ending shows the clan as lizards, and none shows the desert's end (section 20, Answered 2).
+In the temple the title page writes itself, in a hand that is not Elaris's. **Cost:** Xandri is
+written out of his clan. In the village the tale now names two explorers who died, and Xadra adds a
+rule in fresh clay. Last line (added): "The book named itself. Elaris let it."
 
 **The Named Book.** Final scenes: `s2_li_c9`, `g_name_c9`, `s3_last_cup`, `e_named`. Xandri rides
 the gods' track on the Zorlop leaves past his father's marker and off the drawn page. At camp that
 night he plants the father's strip of cloth on a new pole, further on. Elaris names the book (the
 player's own title is shown, in ink, on the spine). The sand stops. He shelves it beside
-yesterday's book. Last line (added): "He put the cup away, and the book stayed where he left it."
+yesterday's book. A named book rests, and rest is stillness: the last plate fixes Xandri past the
+mark, mid-stride, for good. **Cost:** Elaris finishes what Maudric could not, and the wind in that
+desert stops. Last line (added): "He put the cup away, and the book stayed where he left it."
 
 **The Son Returns.** Final scenes: `s3_village_return`, `s3_last_cup`, `e_returned`. Xandri walks
 home over the dunes. Years pass in three drawn panels. In the storyteller's hut a grown Xandri,
 scaled and weathered, sits where the storyteller sat and begins with the source's words: "The
 desert seems to extend on into eternity. Once, a great explorer named Xandri traveled further than
-any man had ever traveled…" It is now ambiguous which Xandri he means. A child's hand shoots up.
-In the temple, the book stays nameless and sand keeps sifting from its pages. Last image: Elaris
-sweeping it back into the gutter.
+any man had ever traveled…" It is now ambiguous which Xandri he means. If `own` is 3 or more, he
+changes one word of the tale: "and no one knows how he died." A child's hand shoots up. **Cost:**
+in the temple the book stays nameless and sand keeps sifting from its pages, and Elaris sweeps
+every morning of an eternity. Last image: Elaris sweeping it back into the gutter.
 
 **Last-line variants.** If `past_known` ≥ 6 and `candle_left` is true, each ending except The
 Reader Who Stayed adds one beat: Elaris climbs to the unlit shelf and replaces the candle. If the
 player rebuilt the source's chapter title in the Naming, The Named Book's spine shows it.
-
-**Accepted 2026-11-15, not yet in `data/endings.json`.** A fifth ending, The Unread Page, and an
-added cost on each of the four above are accepted (section 20A). They are phase 3. Phase 1 builds
-only the fifth ending's key: the Parting Cup at the last pot (`parting_cup`). Until phase 3 the
-resolver is unchanged, and a Parting Cup, binding −5, simply makes the last cup a light one.
 
 ### How a player reaches each one on purpose
 
@@ -1058,9 +1112,10 @@ resolver is unchanged, and a Parting Cup, binding −5, simply makes the last cu
 | The Rider | At the herd, climb the flank. Set the last cup down (or drink it with steep under 60). |
 | The Named Book | Solve the gods' rules tablet in c6 (`loophole_wake`). At the herd, follow the track. Name the book. Set the cup down. |
 | The Son Returns | At the herd, take the way back. Set the cup down. |
+| The Unread Page | Sweep, and keep the sand. Turn the ledger over after the father's walk; at The Other Hand, look away. Rake the sand book's cartouche until the scraped title shows. Read the Keeper's Binding (look away, close, shelve). Brew the Parting Cup as the last pot. At the herd, look away and do not look back. |
 
-A designer can explain any run from four values: `last_cup`, `steep`, `xandri_fate`,
-`book1_named`. The debug panel shows them with the ledger of steep changes.
+A designer can explain any run from six values: `last_cup`, `steep`, `xandri_fate`,
+`book1_named`, `parting_cup`, `other_hand_seen`. The debug panel shows them with the ledger of steep changes.
 
 ## 14. UI and HUD
 
@@ -1145,7 +1200,7 @@ or two lines each.
 | 3D props | Books (40 variants), jars (20), tea tins (8), cup, kettle, clock, broom, ladders, pack and six items, leaf shoes, marker pole, journal, Day-Book, chair, bell, scroll, pen, lanterns, black book, candle | about 130 |
 | 2D sequences | Living illustration: 6 sequences with layered ink plates (sand, roofs, ink road); stacks: 4 sequences on one tile set with 3 mote types | 10 |
 | 2D sprites | Xandri riding (12 animations), Pell gliding (8), Oda surfing (8), Elaris walking and climbing (10) | 38 animations |
-| 1D layouts | Tea table, Naming page (4 trays and templates), Clasps (5 mechanisms), Rule Tablet (4 tablets) | 4 layouts, 13 configurations |
+| 1D layouts | Tea table, Naming page (4 trays and templates), Clasps (5 mechanisms), Rule Tablet (5 tablets) | 4 layouts, 14 configurations |
 | Music cues | Chapter themes 9, ending cues 4, riding stems 3, tea and naming stingers 6 | 22 |
 | Ambience beds | 14 | 14 |
 | Sound effects | About 160 | 160 |
@@ -1156,10 +1211,10 @@ or two lines each.
 
 | File | Holds |
 | --- | --- |
-| `data/game.json` | Nine chapters, 153 minutes, target 120–160, core verb Read |
-| `data/scenes.json` | Two 2D modes (`living`, `stacks`), four 1D games (`tea`, `naming`, `clasps`, `tablet`), 72 scenes: 43 3D, 10 2D, 19 1D (three 3D scenes added 2026-11-16: `s3_well_post`, `s3_ledger_turned`, `s3_ring_of_stones`) |
-| `data/flags.json` | 49 state entries: meters, counters, enums, flags and four ledgers (six added 2026-11-15: `gutter_sand`, `cup_taste`, `clasp_brushes`, `ledger_turned`, `parting_cup`, `other_hand_seen`; six added 2026-11-16: `hand_was`, `walked`, `own`, `look_away`, `well_post_seen`, `wenna_asked`) |
-| `data/endings.json` | Four endings, none as written |
+| `data/game.json` | Nine chapters, 157 minutes (c8 18 from 2026-11-16), target 120–160, core verb Read |
+| `data/scenes.json` | Two 2D modes (`living`, `stacks`), four 1D games (`tea`, `naming`, `clasps`, `tablet`), 74 scenes: 44 3D, 10 2D, 20 1D (three 3D scenes added 2026-11-16 in phase 2: `s3_well_post`, `s3_ledger_turned`, `s3_ring_of_stones`; two in phase 3: `g_tablet_c8` and `e_unread`) |
+| `data/flags.json` | 50 state entries: meters, counters, enums, flags and four ledgers (six added 2026-11-15: `gutter_sand`, `cup_taste`, `clasp_brushes`, `ledger_turned`, `parting_cup`, `other_hand_seen`; six added 2026-11-16: `hand_was`, `walked`, `own`, `look_away`, `well_post_seen`, `wenna_asked`; one added in phase 3: `loophole_binding`, and the value `unseen` for `xandri_fate`) |
+| `data/endings.json` | Five endings, none as written, each with its `cost` (The Unread Page added 2026-11-16) |
 
 Beyond the shared schemas, three content files hold what the build reads but never writes. They
 are content, not state: no flag lives in them.
@@ -1168,7 +1223,7 @@ are content, not state: no flag lives in them.
 | --- | --- | --- |
 | `data/past_pack.json` | The seven past slots F1 to F7 (section 5): carrier, scene, title, text, motif. F1 is the source's opening paragraph, verbatim with its vault line; F2 to F7 are the design's proposal, each marked `proposal`, for the author to replace | `data/schemas/past_pack.schema.json` |
 | `data/herbs.json` | The eight herbs (section 11) with the scene that finds each; the steep dial; the tea_hold and steep formulas; the six brews with requirement, jars and one solution; from 2026-11-15 the conditional ninth jar (`conditional_herbs`), the three tastes a cup carries (`taste_carry`) and the Parting Cup (`parting_cup`) | `data/schemas/herbs.schema.json` |
-| `data/tablets.json` | The four Rule Tablets: want, rules (key words and meanings, the source rule, the price rule), ways, solution, loophole flag, watcher and the watcher's rule; the scrutiny and hint numbers | `data/schemas/tablets.schema.json` |
+| `data/tablets.json` | The five Rule Tablets (the Keeper's Binding added 2026-11-16; its `book` is `temple`): want, rules (key words and meanings, the source rule, the price rule), ways, solution, loophole flag, watcher and the watcher's rule; the scrutiny and hint numbers | `data/schemas/tablets.schema.json` |
 
 `tools/check_data.py` (stdlib) checks each file against its schema and against the shared files:
 every scene, chapter and flag named exists and the scene writes what the file says it delivers;
@@ -1291,6 +1346,47 @@ compressed: Look away is offered in the twist ride without the ledger having bee
 first, and The Well-Post's effect is earned on the web's own shrine-store tablet (solved clean,
 `well_post_seen`) and spent on the gods' tablet. Phase 3 is unchanged.
 
+**What is built in phase 3 (the author: "start phase 3"; accepted 2026-11-15, built 2026-11-16).**
+All three phases of the accepted development are now built. In the data: the fifth ending, The
+Unread Page (`unread_page`, section 13), with its condition (`xandri_fate` `unseen`, `parting_cup`,
+`other_hand_seen`), its scene `e_unread` in the temple halls, its build-file entry and storyboard
+row; the added cost on every ending (`cost` in `data/endings.json` and section 13); the Keeper's
+Binding, `g_tablet_c8` (section 11, `data/tablets.json`, `loophole_binding`), which lengthens c8 to
+18 minutes and the game to 157. In the web build: the long puzzle's last steps and its payoff
+(below), the second playthrough, the endings' cards behind the twists that end on them, and the
+remaining code-drawn art (five ending-name strips, Elaris's page at the back of the ledger, the
+notebook page). **What is still not built:** every 3D scene, the new ending's included, is a
+design until it is built in Blender from its build file; the resolver, the debug panel and the
+hub duties exist only as data and design.
+
+**The long puzzle in the web build.** Its three pieces are gathered across the modes and written
+to the game's shared storage: the ledger's back pages (Tea Blending, turned over at the last pot),
+the scraped title (The Naming, the sand book's cartouche raked from all three sides; true ink will
+not take over it until it has been read), and swept sand (a sweep in Tea Blending or between
+clasps). A small notebook (J) in every mode shows the pieces as slips pasted into Elaris's
+notebook. With all three in, the Parting Cup brewed as the last pot solves it (`parting_cup`), and
+the game's menu shows the ending the solve earned, with its card. The web build reads Xandri's
+fate from the one choice it plays, The Other Hand: looked away, The Unread Page; one more page, The
+Reader Who Stayed; not seen, The Named Book if the twist ride passed the mark, else The Son
+Returns. The Clasps' twist closes the sand book itself on its own clasp after the black book; with
+the Parting Cup on its cover the sand stops pushing and the story goes on behind the clasp.
+
+**The second playthrough in the web build.** Showing a solve's ending in the menu records a
+finished run. After that, in a later sitting: the ledger falls open at the back, at a page in
+Elaris's own hand (the Parting Cup written out, and a warning that the front pages bind), and can
+be turned from the first book; the old keeper's hints are marked as his, and as binding; Look away
+is offered from the first plate of the living illustration; a ride with no sip keeps the captions
+in "I" as the tea fades ("Nobody is narrating him now. He is."); and the scraped title shows
+through the sand book's cartouche without the lamp. A first run is unchanged.
+
+**Loose ends put right.** Look away is a standing verb in the ride only once the ledger has been
+turned over (before that it is offered once, at The Other Hand, as section 12 says). Four modes
+were quick when scripted; each is longer by the design's own elements: Tea Blending's twist keeps
+refilling the cup while the steep is 80 or more (section 12's threshold) and each letting-go cup
+must still hold depth 4; The Naming's twist needs the scraped title read from three sides first;
+The Clasps' twist closes a second book; the Rule Tablet's twist goes on to the Keeper's Binding,
+whose worn rules are read by touch.
+
 ### The dramatic question
 
 **Can Elaris read a boy to the end of his desert without walking him to death to get there?**
@@ -1350,7 +1446,7 @@ reads does.
 | 8 | The Scribe's Shake | Existing | `s3_scribe_wagon`, `s2_li_c7` | Played knowing what a second hand on a pen does | Existing |
 | 9 | Wenna Counts | New | A beat in the existing `s3_abyss_return` | The past stops being a file and becomes a person asking | 2 |
 | 10 | **Xandri Does Not Get Up** (darkest moment) | New | Scene to add (c9, at the father's ring of stones) | The boy lies down. His strength is what the player's lingers and sips left him (`walked`). One prompt appears on the page: "One more page." It works. He rises without input and walks | 2 |
-| 11 | The Herd at the Mark | Existing, plus one new choice | `s3_herd_final` | Climb, follow, turn back, or Look away | 3 |
+| 11 | The Herd at the Mark | Existing, plus one new choice | `s3_herd_final` | Climb, follow, turn back, or Look away and do not look back (`unseen`) | 3 (built 2026-11-16) |
 | 12 | The Last Cup | Existing | `s3_last_cup` | Set it down or drink | Existing; the Parting Cup in 1 |
 
 **Look away** (hold; in books, after scene 7): Elaris lifts his eyes, the image holds as a still
@@ -1361,11 +1457,11 @@ unwatched. Phase 1 offers it once, at The Other Hand.
 
 | Ending | Added beat or cost | Phase |
 | --- | --- | --- |
-| The Reader Who Stayed | Xandri looks up out of the page at the hand with the cup, and walks on. Cost: Elaris is Maudric now | 3 |
-| The Rider | Riding a god is taking the pen: the gods' smooth track is the story's written line. Cost: Xandri is written out of his clan. In the village the tale now names two explorers who died, and Xadra adds a rule in fresh clay | 3 |
-| The Named Book | A named book rests, and rest is stillness. The last plate fixes Xandri past the mark, mid-stride, for good. Cost: Elaris finishes what Maudric could not, and the wind in that desert stops | 3 |
-| The Son Returns | If `own` is high, the grown Xandri changes one word of the tale: "and no one knows how he died." Cost: the book stays nameless, and Elaris sweeps every morning of an eternity | 3 |
-| **The Unread Page** (new) | Needs the Parting Cup and The Other Hand seen. At the herd Elaris looks away and does not look back. He closes the book while the story is still running. Cost: neither he nor the player ever learns what Xandri chose, or whether the desert ends. The book cannot be named. Months later one woody leaf slips from its pages | 3. Its key, the Parting Cup, is built in 1 |
+| The Reader Who Stayed | Xandri looks up out of the page at the hand with the cup, and walks on. Cost: Elaris is Maudric now | 3 (built 2026-11-16) |
+| The Rider | Riding a god is taking the pen: the gods' smooth track is the story's written line. Cost: Xandri is written out of his clan. In the village the tale now names two explorers who died, and Xadra adds a rule in fresh clay | 3 (built 2026-11-16) |
+| The Named Book | A named book rests, and rest is stillness. The last plate fixes Xandri past the mark, mid-stride, for good. Cost: Elaris finishes what Maudric could not, and the wind in that desert stops | 3 (built 2026-11-16) |
+| The Son Returns | If `own` is high, the grown Xandri changes one word of the tale: "and no one knows how he died." Cost: the book stays nameless, and Elaris sweeps every morning of an eternity | 3 (built 2026-11-16) |
+| **The Unread Page** (new) | Needs the Parting Cup and The Other Hand seen. At the herd Elaris looks away and does not look back. He closes the book while the story is still running. Cost: neither he nor the player ever learns what Xandri chose, or whether the desert ends. The book cannot be named. Months later one woody leaf slips from its pages | 3 (built 2026-11-16; `unread_page`, `e_unread`). Its key, the Parting Cup, is built in 1 |
 
 ### Built in phase 1, by layer
 
@@ -1390,14 +1486,15 @@ feet knew the way he had come." / "You are there again," said the voice in the d
 when you turn a page." / "Elaris closed the book on a boy who was still walking. It was the first
 kind thing he had done to a story."
 
-### Scenes to add (not yet in `data/scenes.json`)
+### Scenes added for the development
 
 Added in phase 2 (accepted 2026-11-15, built 2026-11-16), with their assets, build files and
 storyboard rows (`storyboard_additions.md`): **The Well-Post** (`s3_well_post`, c2, a new location,
 `village-well`); **The Ledger Turned Over** (`s3_ledger_turned`, c6, the pantry); **Xandri Does Not
-Get Up** (`s3_ring_of_stones`, c9, the father's camp). Still to add, in phase 3: the ending scene
-for **The Unread Page**, and the Rule Tablet `g_tablet_c8`, the Keeper's Binding. One More Dune,
-The Other Hand and Wenna Counts are beats in scenes that exist.
+Get Up** (`s3_ring_of_stones`, c9, the father's camp). Added in phase 3 (accepted 2026-11-15, built
+2026-11-16): the ending scene for **The Unread Page** (`e_unread`, c9, the temple halls), and the
+Rule Tablet **The Keeper's Binding** (`g_tablet_c8`, c8, after `s3_abyss_return`). One More Dune,
+The Other Hand and Wenna Counts are beats in scenes that exist. No scene remains to add.
 
 ## 21. Added for the game
 
@@ -1435,8 +1532,8 @@ Everything below is not in the author's text. The author can approve or strike e
 | 28 | Xadra's past with the elder Xandri; the gods' rule as his carving; Xadra as the well-post watcher; the scene The Well-Post and the second leaf-cord (accepted 2026-11-15, built 2026-11-16) | Sections 9, 20A (phase 2) |
 | 29 | Wenna knowing a reader is there; her question; the scene Wenna Counts, a beat in `s3_abyss_return` (`wenna_asked`) (accepted 2026-11-15, built 2026-11-16) | Sections 9, 20A (phase 2) |
 | 30 | The scenes One More Dune, The Ledger Turned Over and Xandri Does Not Get Up; the verb Look away; the flags `hand_was`, `walked` and `own`, and `look_away`, `well_post_seen`, `wenna_asked` (accepted 2026-11-15, built 2026-11-16) | Sections 9, 12, 20A (phase 2) |
-| 31 | The Xandrixes' track as the story's written line; riding as taking the pen; the added costs and beats on all four endings (accepted 2026-11-15) | Section 20A (phase 3) |
-| 32 | The ending The Unread Page and the leaf (accepted 2026-11-15) | Sections 13, 20A (phase 3) |
+| 31 | The Xandrixes' track as the story's written line; riding as taking the pen; the added costs and beats on all four endings (accepted 2026-11-15, built 2026-11-16) | Sections 13, 20A (phase 3); `data/endings.json` `cost` |
+| 32 | The ending The Unread Page and the leaf (accepted 2026-11-15, built 2026-11-16); its scene `e_unread`, its condition, the fourth herd prompt and the value `unseen` | Sections 9, 13, 20A (phase 3) |
 | 33 | Tea: gutter sand and the ninth jar (two spoons at most), sweeping filling it, the ledger that opens and turns over, the unfinished recipe, the Parting Cup and its test; the taste a cup carries (accepted 2026-11-15) | Sections 11, 12, 20A (phase 1, built) |
 | 34 | Tea: second pour; the pre-filled cup at steep 80 (ember root, ember root, clove-bark), and the last pot brewed for letting go (binding 0 or less) (accepted 2026-11-15, built 2026-11-16) | Section 11 (phase 2) |
 | 35 | The Clasps: sand in the works, brushing as a move, sweeping between clasps in the web build (accepted 2026-11-15) | Sections 11, 12 (phase 1, built) |
@@ -1444,12 +1541,16 @@ Everything below is not in the author's text. The author can approve or strike e
 | 37 | Living illustration: the cup colours the page (the squall called by the player, the readable thin phase, half heat and the stronger written line) (accepted 2026-11-15) | Section 10 (phase 1, built) |
 | 38 | Living illustration: the gutter (8 m/s), margin riding (6.5 m/s, 3 s), the written line's effect on `own` (per 100 m), the tilting plate, Look away in the ride (ten seconds) (accepted 2026-11-15, built 2026-11-16) | Section 10 (phase 2) |
 | 39 | The stacks: reading lamps (three wicks), shelves that turn over every 9 seconds, Maudric's ribbons (two junctions at once, steep +2, a linger), passing the reading chair, and a visit lost to three wrong turns (accepted 2026-11-15, built 2026-11-16) | Section 10 (phase 2) |
-| 40 | The Naming: blind tooling, the heard-only tiles, true ink, the scraped title "The Desert That Ends" under raking light as a thing to find (accepted 2026-11-15, built 2026-11-16); its payoff stays phase 3 | Section 11 (phase 2) |
-| 41 | The Rule Tablet: fresh clay (rule 8 cited against rule 9), answering the watcher (accepted 2026-11-15, built 2026-11-16); the tablet `g_tablet_c8` and its meaning of *leave* (accepted 2026-11-15, phase 3, not built) | Section 11 |
-| 42 | The three layer links (sweep, brew, open; the cup colours the page; lingering moves the boy) and the second-playthrough changes, including the unassisted "I" (accepted 2026-11-15) | Section 20A; the first two links built in phase 1, the third (lingering moves the boy, through `walked`) built 2026-11-16; the second playthrough is phase 3 |
+| 40 | The Naming: blind tooling, the heard-only tiles, true ink, the scraped title "The Desert That Ends" under raking light as a thing to find (accepted 2026-11-15, built 2026-11-16); its payoff, as a piece of the long puzzle raked from three sides, accepted 2026-11-15, built 2026-11-16 | Section 11 (phases 2 and 3) |
+| 41 | The Rule Tablet: fresh clay (rule 8 cited against rule 9), answering the watcher (accepted 2026-11-15, built 2026-11-16); the tablet `g_tablet_c8` and its meaning of *leave* (accepted 2026-11-15, built 2026-11-16) | Section 11 |
+| 42 | The three layer links (sweep, brew, open; the cup colours the page; lingering moves the boy) and the second-playthrough changes, including the unassisted "I" (accepted 2026-11-15) | Section 20A; the first two links built in phase 1, the third (lingering moves the boy, through `walked`) built 2026-11-16; the second playthrough accepted 2026-11-15, built 2026-11-16 (section 20A) |
 | 43 | The five sample lines; the narration added to the web modes for sweeping, the ledger, the squall, sand in the works and The Other Hand (accepted 2026-11-15) | Section 20A; `web/games/endless-temple/` |
 | 44 | The style bible's palette values and never-shown list; the code-drawn art, including in this pass 26 more tooling stamps (one for every Naming tile), the two play sprites and the two hands (accepted 2026-11-15) | `art/` |
 | 45 | Six state entries: `gutter_sand`, `cup_taste`, `clasp_brushes`, `ledger_turned`, `parting_cup`, `other_hand_seen` (accepted 2026-11-15) | `data/flags.json` |
 | 46 | The thread: one faint tea ring on some surface in every game, where someone sat reading (accepted 2026-11-15) | DEEP_DIVE section 6; shown on the last-cup card |
 | 47 | The collection thread's guest here: a stopped clock at 2:14 (from Behind the Peephole) on the wall behind the table in the Clasps' twist, and its one line, "A clock on the wall behind the table says fourteen past two. It does not say of which day." (accepted 2026-11-15, built 2026-11-16) | `web/games/endless-temple/clasps.js` |
 | 48 | The web ladders' stage names, the narration lines for each new obstacle and the "because you…" notes when a layer link fires; the new location `village-well` and its image (accepted 2026-11-15, built 2026-11-16) | `web/games/endless-temple/`; `assets/assets.json`; `blender/village-well.build.json` |
+| 49 | Invented in phase 3 for the Keeper's Binding: rules 2 to 6, the meanings of *keeps* and *its reader*, the eight Ways, the sand book as its watcher and its rule "No keeper looks away from an open book.", reading worn rules by touch, the `temple` book in `data/tablets.json`, and four minutes for c8 (accepted 2026-11-15, built 2026-11-16) | Section 11; `data/tablets.json` |
+| 50 | Invented in phase 3 for the web build: the notebook (J) and its slips; the three-sided raking of the cartouche; true ink refusing to take over an unread title; Tea Blending's twist refilling the cup while the steep is 80 or more, with a depth-4 floor; the sand book's own clasp in the Clasps' twist; the ending earned from the choice at The Other Hand; the finale texts and the second-run lines (accepted 2026-11-15, built 2026-11-16) | Section 20A; `web/games/endless-temple/` |
+| 51 | Invented in phase 3 for the art: five gold-tooled ending-name strips, Elaris's own page at the back of the ledger (in his upright sage-dark hand), and the notebook page with four mounts (accepted 2026-11-15, built 2026-11-16) | `art/src/97_phase3.py` |
+| 52 | The added lines on the endings: The Unread Page's "Elaris closed the book on a boy who was still walking…" (a DEEP_DIVE sample line) and its binding line; the costs as written in section 13 (accepted 2026-11-15, built 2026-11-16) | Section 13 |

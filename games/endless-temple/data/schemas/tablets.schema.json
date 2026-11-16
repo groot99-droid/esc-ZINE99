@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "tablets.json",
-  "description": "The Endless Temple: the four Rule Tablets, with rules, key-word meanings, ways and solutions (DESIGN.md section 11).",
+  "description": "The Endless Temple: the five Rule Tablets, with rules, key-word meanings, ways and solutions (DESIGN.md section 11).",
   "type": "object",
   "required": ["plan_slots", "scrutiny", "hints", "tablets"],
   "properties": {
@@ -16,7 +16,7 @@
       "required": ["scene", "book", "title", "want", "loophole_flag", "also_sets", "watcher", "watcher_rule", "rules", "ways", "solution"],
       "properties": {
         "scene": {"type": "string", "description": "a scene whose game is tablet"},
-        "book": {"enum": ["sand_book", "weather_book", "road_book"]},
+        "book": {"enum": ["sand_book", "weather_book", "road_book", "temple"]},
         "title": {"type": "string"},
         "tutorial": {"type": "boolean"},
         "want": {"type": "string"},

@@ -27,6 +27,16 @@
 // Layer links (api.shared): drifts left on the pantry table in Tea Blending are the sand in these
 // works; a table swept between clasps puts a spoon of gutter sand in the pantry's ninth jar.
 // The collection thread: a stopped clock sits in the twist's picture, unremarked.
+// Phase 3 (DEEP_DIVE.md section 3; the shared rules are in _ledger.js): the twist closes two books.
+//   After the black book, the sand book's own clasp (art: clasp-closing-clasp): the story in it is
+//   still going, and its sand pushes the hasp open a notch after every move. Press the hasp down,
+//   brush the fore-edge (two still moves), set the cup on the cover (the sand pushes every other move),
+//   and seat the pin when the hasp lies flat. With the Parting Cup brewed (parting_cup), the cup on the
+//   cover is that cup: the sand stops pushing, and the book shuts on a story that goes on, which is
+//   The Unread Page (its card stands behind the result when the long puzzle earned it).
+//   Sweeping the table between clasps writes the long puzzle's piece (sand_swept).
+
+import { mountNotebook, sharedOf, solved, endingFor, endingCard } from "./_ledger.js";
 // Narration written for the game (not quotations). Fragment texts below are DESIGN.md's (section 5).
 const LINES = {
   open: "The temple keeps some books shut. Elaris carries three of them to the reading table, each clasped a different way.",
@@ -72,12 +82,23 @@ const LINES = {
   thread: "A clock on the wall behind the table says fourteen past two. It does not say of which day.",
   stopTeach: "One clasp open, one page of the past: the letter. Two more books lie clasped on the table, and a fourth waits on the unlit shelf.",
   stopTest: "Three clasps, three pages of the past: the letter, the ruling and the petition, laid side by side. The black book is still open on the unlit shelf.",
+  // phase 3: the sand book's own clasp
+  close: "Last, the sand book itself, open on the reading table, its own clasp standing clear of the pin. The story in it is still going: after every move its sand pushes the hasp open a notch.",
+  closeHelp: "Press the hasp down (tap it, or P). Brush the fore-edge (tap it, or B): two moves without a push. Set the cup on the cover (C): the sand pushes every other move. Seat the pin (tap it, or H) when the hasp lies flat.",
+  closeParting: "The cup on the cover is the Parting Cup. The sand goes on sifting from the pages, and it no longer pushes.",
+  pushed: " The sand pushes the hasp up a notch.",
+  stilled: " The fore-edge is brushed: the hasp holds.",
+  pinNo: "The pin will not reach: the hasp is {n} notch{es} off the plate.",
+  closeFound: "The clasp seats over the fore-edge.",
+  closeStill: "The sand behind the clasp stops. Whatever was moving in the book is still now: a book shut on its reader.",
+  closeGoing: "Behind the clasp the sand goes on sifting, slower, the way a story goes on when nobody is reading it. Somewhere in there a boy is still walking.",
+  endClose: "A letter, a ruling and a petition read; the black book shut with what was left of a candle; and the sand book shut on its own clasp.",
 };
 const LADDER = ["Teach: one mechanism", "Test: compound mechanisms", "Twist: close one"];
 // which parts the sand reaches first, in order (DESIGN.md: one per 20 points of sand_leak)
 const JAM_LEVERS = [2, 0, 4], JAM_STRAPS = ["E", "B", "D"], JAM_PEGS = ["2,1", "3,2", "1,1"];
-const PLATE = { lever: "clasp-c3b-lever-bank", strap: "clasp-c5-strap-fold", gear: "clasp-c7-gear-train", black: "clasp-c8-black-book" };
-const HEADING = { lever: "heading-c3", strap: "heading-c5", gear: "heading-c7", black: "heading-c8" };
+const PLATE = { lever: "clasp-c3b-lever-bank", strap: "clasp-c5-strap-fold", gear: "clasp-c7-gear-train", black: "clasp-c8-black-book", close: "clasp-closing-clasp" };
+const HEADING = { lever: "heading-c3", strap: "heading-c5", gear: "heading-c7", black: "heading-c8", close: "heading-c9" };
 const FRAG = {
   F3: "He read the Lantern Country as its narrator for a season, and would not set the cup down. While he stayed, its story could not end, and its lamps burned down one by one. “They are all in the dark now.”",
   F4: "The sentence: to be shelved inside the dark book, reading forever into a world with no light.",
@@ -122,8 +143,10 @@ const STAGES = [
   { key: "gear", name: "The gear train", scene: "g_clasp_c7", par: 5, intro: LINES.gear, frag: "F5", found: LINES.frag5,
     help: "Pick a tray gear (1, 2, 3), then a peg (arrows, Enter). Set the cup on the cover (C): the bolt slides only on warm brass. Turn the knob (T) to test. Side by side, gears turn opposite ways; two large gears also mesh corner to corner." },
   { key: "black", name: "The black book", scene: "g_clasp_c8", par: 13, intro: LINES.black, frag: null, found: LINES.blackFound, help: LINES.blackHelp },
+  { key: "close", name: "The sand book's own clasp", scene: "g_clasp_c8", par: 5, intro: LINES.close, frag: null, found: LINES.closeFound, help: LINES.closeHelp },
 ];
-const RUNG = [0, 1, 1, 2];            // which rung of the ladder each clasp belongs to
+const RUNG = [0, 1, 1, 2, 2];         // which rung of the ladder each clasp belongs to
+const HZ0 = 4;                        // the sand book's hasp starts four notches open
 const FIRST_OF = [0, 1, 3];           // the first clasp of each rung
 
 function gearPath(r, rot = 0) {
@@ -169,7 +192,8 @@ export default {
     const art = api.art || { has: () => false, url: () => "", info: () => null };
     const pic = (id, cls, alt = "") => (art.has(id) ? `<img class="${P}${cls}" src="${art.url(id)}" alt="${alt}" draggable="false">` : "");
     let raf = 0;
-    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const shared = sharedOf(api);
+    const parting = solved(shared);   // the Parting Cup is brewed: it is the cup on the sand book's cover
     const thread = api.thread || { found() {}, isFound: () => false };
     const reached = Math.max(0, Math.min(2, api.store.get("stage", 0) | 0));
     const css = document.createElement("style");
@@ -265,6 +289,8 @@ export default {
     let cupOn = false, warmth = 0;
     // the black book
     let bDown = new Set(), bFrost = new Set(FROST0), bMelt = {}, candle = CANDLE0, bGear = 1, bHeard = "", lost = false;
+    // the sand book's own clasp
+    let hz = HZ0, still = 0, cCup = false, cTick = 0, cPin = false;
     const linkEl = el.querySelector("." + P + "link");
     const cupBtn = el.querySelector("." + P + "cup");
     const par = () => stage.par + jam0;
@@ -283,16 +309,17 @@ export default {
       levers = LEVERS0.slice(); changed = []; lifted = new Set(); hasp = false; blockedBy = null; gears = []; tray = TRAY.slice(); sel = null;
       cupOn = false; warmth = 0; cupBtn.hidden = stage.key !== "gear"; cupBtn.textContent = "Cup on the cover";
       bDown = new Set(); bFrost = new Set(FROST0); bMelt = {}; candle = CANDLE0; bGear = 1; bHeard = ""; strapCur = 0;
+      hz = HZ0; still = 0; cCup = false; cTick = 0; cPin = false;
       api.store.set("stage", Math.max(reached, api.store.get("stage", 0) | 0, RUNG[i]));
       linkEl.hidden = !linkNote || i > 0 && !linkShown; linkEl.textContent = linkNote; linkShown = false;
-      jam0 = stage.key === "black" ? 0 : Math.max(0, Math.min(3, Math.floor(leak / 20)));
+      jam0 = stage.key === "black" || stage.key === "close" ? 0 : Math.max(0, Math.min(3, Math.floor(leak / 20)));
       jam = new Set((stage.key === "lever" ? JAM_LEVERS.map((k) => "l" + k) : stage.key === "strap" ? JAM_STRAPS.map((k) => "s" + k) : JAM_PEGS.map((k) => "p" + k)).slice(0, jam0));
       el.querySelector("." + P + "stage b").textContent = stage.name;
       el.querySelector("." + P + "stage span").textContent = `${LADDER[RUNG[i]]} · clasp ${i + 1} of ${STAGES.length}`;
       const th = el.querySelector("." + P + "thumb");
       if (art.has(PLATE[stage.key])) { th.src = art.url(PLATE[stage.key]); th.hidden = false; } else th.hidden = true;
       turnBtn.hidden = stage.key !== "gear";
-      beat.textContent = stage.key === "black" ? stage.intro : stage.intro + " " + (jam0 === 0 ? LINES.sandNone : jam0 === 1 ? LINES.sand1 : LINES.sandN.replace("{n}", ["", "one", "two", "three"][jam0]));
+      beat.textContent = stage.key === "black" || stage.key === "close" ? stage.intro : stage.intro + " " + (jam0 === 0 ? LINES.sandNone : jam0 === 1 ? LINES.sand1 : LINES.sandN.replace("{n}", ["", "one", "two", "three"][jam0]));
       say(stage.help);
       draw();
     }
@@ -404,6 +431,51 @@ export default {
       return s;
     }
 
+    // ---- the sand book's own clasp: close it while its story is still going ---------------------
+    function cAfter() {
+      // after every move the sand pushes, unless the fore-edge was brushed, or the cup slows it
+      if (still > 0) { still--; return LINES.stilled; }
+      if (cCup && parting) return "";
+      if (cCup && (cTick++ % 2 === 0)) return "";
+      if (hz < HZ0) { hz++; return LINES.pushed; }
+      return "";
+    }
+    function cPress() { if (over || busy) return; bump(); hz = Math.max(0, hz - 2); const x = cAfter(); say(`He presses the hasp down: ${hz === 0 ? "flat on the plate" : hz + " notch" + (hz === 1 ? "" : "es") + " open"}.` + x); draw(); }
+    function cBrush() { if (over || busy) return; bump(); still = 2; const x = cAfter(); say("He brushes the sand off the fore-edge." + x); draw(); }
+    function cCupT() {
+      if (over || busy) return; bump(); cCup = !cCup; cTick = 0;
+      const x = cAfter();
+      say((cCup ? (parting ? LINES.closeParting : "The cup goes on the cover, and the sand slows under its warmth.") : "He lifts the cup off the cover.") + x); draw();
+    }
+    function cPinT() {
+      if (over || busy) return; bump();
+      if (hz > 0) { const n = hz; const x = cAfter(); say(LINES.pinNo.replace("{n}", n).replace("{es}", n === 1 ? "" : "es") + x, true); draw(); return; }
+      cPin = true; say(`<b>The pin seats.</b> ${parting && cCup ? LINES.closeGoing : LINES.closeStill}`); solve(); draw();
+    }
+    function drawClose() {
+      const h = hintLevel > 0 && !over ? hint() : null;
+      const ang = -hz * 16;
+      let s = `<rect x="0" y="10" width="600" height="420" rx="8" fill="#5c4026" stroke="#2a160c" stroke-width="3"/><rect x="0" y="10" width="600" height="420" rx="8" fill="url(#${P}hide)"/>
+        <g data-cedge="1" style="cursor:pointer" role="button" aria-label="The fore-edge: brush the sand off it"><rect x="270" y="14" width="64" height="412" fill="#e2d4b2"/>
+        ${Array.from({ length: 10 }, (_, k) => `<line x1="${276 + k * 6}" y1="16" x2="${276 + k * 6}" y2="424" stroke="#cdbb93" stroke-width="1.2"/>`).join("")}
+        ${still > 0 ? "" : Array.from({ length: 26 }, (_, k) => `<circle cx="${280 + ((k * 37) % 46)}" cy="${30 + ((k * 53) % 380)}" r="${2 + (k % 3)}" fill="#c9b98c" stroke="#6b5a34" stroke-width=".6"/>`).join("")}
+        <text x="302" y="448" text-anchor="middle" font-size="17" fill="${M.cream}">fore-edge${still > 0 ? `: brushed (${still})` : ""}</text></g>
+        <g data-cpin="1" style="cursor:pointer" role="button" aria-label="The pin"><circle cx="440" cy="230" r="20" fill="${M.brassD}" stroke="${M.brass}" stroke-width="3"/><circle cx="440" cy="230" r="7" fill="#1d120b"/><text x="440" y="282" text-anchor="middle" font-size="17" fill="${M.cream}">pin</text></g>
+        <g data-chasp="1" style="cursor:pointer" role="button" aria-label="The hasp, ${hz} notches open" transform="translate(170 230) rotate(${ang})">
+          <rect x="-10" y="-30" width="290" height="60" fill="transparent"/>
+          <rect x="0" y="-14" width="270" height="28" rx="8" fill="${cPin ? M.verd : M.brass}" stroke="${M.brassD}" stroke-width="3"/>
+          <circle cx="270" cy="0" r="14" fill="none" stroke="${M.brassD}" stroke-width="5"/><circle cx="0" cy="0" r="12" fill="${M.steel}" stroke="${M.steelD}" stroke-width="2"/></g>
+        <text x="170" y="300" text-anchor="middle" font-size="17" fill="${M.cream}">hasp: ${hz === 0 ? "flat" : hz + " open"}</text>
+        ${!over && still <= 0 && !(cCup && parting) && hz < HZ0 ? `<path d="M302 200 v-46" stroke="#e6dcc0" stroke-width="4" marker-end="url(#${P}ah)"/><text x="350" y="150" font-size="16" fill="#e6dcc0">the sand pushes</text>` : ""}
+        <g data-ccup="1" style="cursor:pointer" role="button" aria-label="The cup, ${cCup ? "on the cover" : "off the cover"}" transform="translate(510 110)"><circle r="40" fill="transparent"/>
+          ${cCup ? `<circle r="30" fill="#efe6cf" stroke="${M.brassD}" stroke-width="3"/><circle r="21" fill="${parting ? "#7f9a5c" : "#9a6a2c"}"/>` : `<circle r="30" fill="none" stroke="${M.cream}" stroke-width="2" stroke-dasharray="5 6" opacity=".7"/>`}
+          <text y="58" text-anchor="middle" font-size="16" fill="${M.cream}">${cCup ? (parting ? "the Parting Cup" : "cup on") : "cup here"}</text></g>`;
+      if (h && h.pin) s += `<circle cx="440" cy="230" r="32" fill="none" stroke="#ffe08a" stroke-width="4" stroke-dasharray="8 6"/>`;
+      if (h && h.brush) s += `<rect x="262" y="14" width="80" height="412" fill="none" stroke="#ffe08a" stroke-width="4" stroke-dasharray="10 6"/>`;
+      if (h && h.press) s += `<circle cx="300" cy="${230 + Math.sin((ang * Math.PI) / 180) * 130}" r="30" fill="none" stroke="#ffe08a" stroke-width="4" stroke-dasharray="8 6"/>`;
+      return s;
+    }
+
     // ---- hint for the current clasp ----
     function hint() {
       if (stage.key === "lever") {
@@ -421,6 +493,7 @@ export default {
         const s = STRAPS.find((s) => !lifted.has(s.id) && canLift(s));
         return s ? { strap: s.id } : { hasp: true };
       }
+      if (stage.key === "close") return hz === 0 ? { pin: true } : still <= 0 && hz <= 2 ? { brush: true } : { press: true };
       if (stage.key === "black") {
         const s = BSTR.slice().sort((a, b) => a.z - b.z).find((s) => !bDown.has(s.id));
         return s ? { strap: s.id } : bGear !== GEAR_HOME ? { gear: true } : { hasp: true };
@@ -575,7 +648,7 @@ export default {
     }
     function draw() {
       let s = frame();
-      s += stage.key === "lever" ? drawLevers() : stage.key === "strap" ? drawStraps() : stage.key === "black" ? drawBlack() : drawGears();
+      s += stage.key === "lever" ? drawLevers() : stage.key === "strap" ? drawStraps() : stage.key === "black" ? drawBlack() : stage.key === "close" ? drawClose() : drawGears();
       s += sigil();
       // on a narrow screen the board shrinks; grow its lettering so it stays legible
       const F = Math.max(1, Math.min(1.7, 600 / Math.max(300, svg.getBoundingClientRect().width || 600)));
@@ -663,6 +736,7 @@ export default {
       if (over || busy || turning) return;
       levers = LEVERS0.slice(); lifted = new Set(); hasp = false; gears = []; tray = TRAY.slice(); sel = null; moves = 0;
       if (stage.key === "black") { bDown = new Set(); bGear = 1; bHeard = ""; say("Reset. The straps stand open again. The frost and the candle are as they are."); draw(); return; }
+      if (stage.key === "close") { hz = HZ0; still = 0; cCup = false; cTick = 0; say("Reset. The hasp stands open again, and the sand runs."); draw(); return; }
       say("Reset. The clasp is as it was."); draw();
     }
     function useHint() {
@@ -681,10 +755,10 @@ export default {
         const rungEnds = more && RUNG[si + 1] !== RUNG[si];
         const nextBlack = more && STAGES[si + 1].key === "black";
         leak += 20;   // the sand book has gone on leaking while he worked
-        f.innerHTML = `<div role="dialog" aria-label="Found">${pic(HEADING[stage.key], "chap")}<small>${stage.name} · ${stage.key === "black" ? "closed" : "open"} in ${moves} move${moves === 1 ? "" : "s"} (par ${par()}), ${secs} s</small><p><i></i></p><p></p>
+        f.innerHTML = `<div role="dialog" aria-label="Found">${pic(HEADING[stage.key], "chap")}<small>${stage.name} · ${stage.key === "black" || stage.key === "close" ? "closed" : "open"} in ${moves} move${moves === 1 ? "" : "s"} (par ${par()}), ${secs} s</small><p><i></i></p><p></p>
           ${more ? `${nextBlack ? "" : `<p class="${P}sandp" style="font-size:15px">More sand has run from the sand book onto the table.</p><button type="button" class="${P}btn" data-a="sweep">${pic("glyph-sweep", "g")}Sweep the table, then the next clasp</button>`}<button type="button" class="${P}btn" data-a="next">${nextBlack ? "Fetch the black book" : "Next clasp"}</button>${rungEnds ? `<button type="button" class="${P}btn" data-a="stop">Stop here</button>` : ""}` : `<button type="button" class="${P}btn" data-a="next">Close the books</button>`}</div>`;
         f.querySelector("i").textContent = stage.found;
-        f.querySelectorAll("p")[1].textContent = stage.frag ? FRAG[stage.frag] : LINES.blackText;
+        f.querySelectorAll("p")[1].textContent = stage.frag ? FRAG[stage.frag] : stage.key === "close" ? (parting && cCup ? LINES.closeGoing : LINES.closeStill) : LINES.blackText;
         if (rungEnds) { const n = document.createElement("p"); n.style.fontSize = "15px"; n.textContent = `Next, ${LADDER[RUNG[si + 1]].toLowerCase()}.`; f.querySelector("div").insertBefore(n, f.querySelector("button")); }
         root.appendChild(f);
         const bs = [...f.querySelectorAll("button")];
@@ -696,15 +770,18 @@ export default {
           f.remove();
           if (b.dataset.a === "sweep") {
             leak = Math.max(0, leak - 40);
-            shared.set("jar_sand", Math.min(2, (shared.get("jar_sand", 0) | 0) + 1));
+            shared.set("jar_sand", Math.min(2, (shared.get("jar_sand", 0) | 0) + 1)); shared.set("sand_swept", true); notebook.refresh();
             linkNote = LINES.linkJar; linkShown = true;
           }
           if (b.dataset.a === "stop") { api.end({ outcome: "win", text: endText(RUNG[si] === 0 ? LINES.stopTeach : LINES.stopTest) }); return; }
           if (more) { setStage(si + 1); if (b.dataset.a === "sweep") say(LINES.swept + " " + stage.help); }
           else {
             const p = parAll();
-            const lead = stage.key === "black" ? LINES.endTwist : totalMoves <= p + 4 ? LINES.endPar : LINES.endOver;
-            if (art.has("clasp-closing-clasp")) {
+            const lead = stage.key === "close" ? LINES.endClose + " " + (parting && cCup ? LINES.closeGoing : LINES.closeStill) : stage.key === "black" ? LINES.endTwist : totalMoves <= p + 4 ? LINES.endPar : LINES.endOver;
+            // the twist ends on an ending's image when the long puzzle earned The Unread Page
+            const e = stage.key === "close" && parting && cCup ? endingFor(shared) : null;
+            if (e && e.id === "unread_page") endingCard(root, api, e, LINES.closeGoing);
+            else if (art.has("clasp-closing-clasp")) {
               const c = document.createElement("div");
               c.className = P + "endc";
               c.innerHTML = `<figure>${pic("clasp-closing-clasp", "x", "A clasp being closed over a book that is still open.")}<figcaption>The books are closed again, one clasp at a time.</figcaption></figure>`;
@@ -718,8 +795,12 @@ export default {
 
     svg.addEventListener("click", (e) => {
       if (intro.isConnected) return;
-      const t = e.target.closest("[data-peg],[data-gear],[data-tray],[data-hint],[data-lever],[data-strap],[data-hasp],[data-cup],[data-bgear],[data-bhasp],[data-thread]");
+      const t = e.target.closest("[data-peg],[data-gear],[data-tray],[data-hint],[data-lever],[data-strap],[data-hasp],[data-cup],[data-bgear],[data-bhasp],[data-thread],[data-chasp],[data-cedge],[data-ccup],[data-cpin]");
       if (!t) return;
+      if (t.dataset.chasp) { cPress(); return; }
+      if (t.dataset.cedge) { cBrush(); return; }
+      if (t.dataset.ccup) { cCupT(); return; }
+      if (t.dataset.cpin) { cPinT(); return; }
       if (t.dataset.thread) { thread.found(); say(LINES.thread); return; }
       if (t.dataset.hint) { useHint(); return; }
       if (t.dataset.cup) { toggleCup(); return; }
@@ -749,7 +830,16 @@ export default {
       const k = e.key;
       const kl = k.toLowerCase();
       if (kl === "r") { reset(); e.preventDefault(); return; }
-      if (kl === "?" || kl === "h" && stage.key !== "strap" && stage.key !== "black") { useHint(); e.preventDefault(); return; }
+      if (kl === "?" || kl === "h" && stage.key !== "strap" && stage.key !== "black" && stage.key !== "close") { useHint(); e.preventDefault(); return; }
+      if (stage.key === "close") {
+        if (kl === "p") cPress();
+        else if (kl === "b") cBrush();
+        else if (kl === "c") cCupT();
+        else if (kl === "h") cPinT();
+        else if (k === "Enter" || k === " ") (hz === 0 ? cPinT() : cPress());
+        else return;
+        e.preventDefault(); return;
+      }
       if (stage.key === "black") {
         const idx = "abcde".indexOf(kl);
         if (idx >= 0 && kl.length === 1) bStrap(BSTR[idx].id);
@@ -813,7 +903,7 @@ export default {
         <dt>R</dt><dd>The reset lever puts a clasp back. It is free.</dd>
         <dt>sand</dt><dd>A sanded part must be brushed first: tap it once (a move), then work it. Sweep between clasps.</dd>
         <dt>✦</dt><dd>The hint sigil warms after 90 s and marks one move.</dd>
-        <dt>ladder</dt><dd>Teach, test, twist: one clasp, two compound ones, and one to close. You can stop between them.</dd>
+        <dt>ladder</dt><dd>Teach, test, twist: one clasp, two compound ones, and two to close. You can stop between them.</dd>
       </dl>
       ${reached > 0 ? `<div class="${P}start" role="group" aria-label="Start at">${LADDER.slice(0, reached + 1).map((n, k) => `<button type="button" data-s="${k}" aria-pressed="${k === 0}">${k + 1}. ${n.split(":")[0]}</button>`).join("")}</div>` : ""}
       <button type="button" class="${P}btn ${P}go">Open the first book</button></div>`;
@@ -822,8 +912,9 @@ export default {
     intro.querySelector("." + P + "go").addEventListener("click", () => { intro.remove(); linkShown = true; setStage(startBoard); });
     intro.querySelector("." + P + "go").focus();
 
+    const notebook = mountNotebook(root, api, { at: { left: "8px", bottom: "8px" } });
     setStage(0);
     raf = requestAnimationFrame(loop);
-    return { unmount() { cancelAnimationFrame(raf); timers.forEach(clearTimeout); removeEventListener("keydown", onKey); } };
+    return { unmount() { cancelAnimationFrame(raf); timers.forEach(clearTimeout); removeEventListener("keydown", onKey); notebook.unmount(); } };
   },
 };

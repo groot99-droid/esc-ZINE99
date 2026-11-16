@@ -403,6 +403,107 @@
         "write_to_edge"
       ],
       "why": "Where the road ends is the City, by rule 6."
+    },
+    {
+      "scene": "g_tablet_c8",
+      "book": "temple",
+      "title": "The Keeper's Binding",
+      "tutorial": false,
+      "want": "Shut the sand book while its story is still going, and keep it.",
+      "loophole_flag": "loophole_binding",
+      "also_sets": [],
+      "watcher": "the sand book",
+      "watcher_rule": {
+        "text": "No keeper looks away from an open book.",
+        "closes_way": "look_away"
+      },
+      "rules": [
+        {
+          "n": 1,
+          "text": "He was never to leave, and he could only be replaced when he had died.",
+          "origin": "source",
+          "key_word": "leave",
+          "meaning": "pass the temple door with both feet, the same test as enters on the shrine-store tablet"
+        },
+        {
+          "n": 2,
+          "text": "The keeper keeps every book that comes to the temple.",
+          "origin": "added",
+          "key_word": "keeps",
+          "meaning": "holds it here, whole, on its shelf; nothing in the word is reading"
+        },
+        {
+          "n": 3,
+          "text": "No book is carried past the temple door.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 4,
+          "text": "No keeper burns, buries or unbinds a book.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        },
+        {
+          "n": 5,
+          "text": "No book is closed on its reader.",
+          "origin": "added",
+          "key_word": "its reader",
+          "meaning": "the one whose eyes are on the page now"
+        },
+        {
+          "n": 6,
+          "text": "A named book is shelved, and rests.",
+          "origin": "added",
+          "key_word": null,
+          "meaning": null
+        }
+      ],
+      "ways": [
+        {
+          "id": "read_to_end",
+          "text": "Read it to the end",
+          "note": "The Want greys: it has no end he can reach, and reading on is what walked the father forty days."
+        },
+        {
+          "id": "carry_out",
+          "text": "Carry it out of the temple"
+        },
+        {
+          "id": "burn_it",
+          "text": "Burn it"
+        },
+        {
+          "id": "name_it",
+          "text": "Name it, so it rests",
+          "note": "The Want greys: a named book is still, and the boy would stop mid-stride."
+        },
+        {
+          "id": "look_away",
+          "text": "Look away from the page"
+        },
+        {
+          "id": "close_book",
+          "text": "Close the book"
+        },
+        {
+          "id": "shelve_it",
+          "text": "Shelve it, unnamed"
+        },
+        {
+          "id": "ask_wardens",
+          "text": "Ask the Wardens",
+          "note": "The Want greys: the Wardens want every book named and still."
+        }
+      ],
+      "solution": [
+        "look_away",
+        "close_book",
+        "shelve_it"
+      ],
+      "why": "Closed with his eyes off the page, the book is not closed on its reader (rule 5); shelved, it is kept (rule 2), and keeping is all the binding asks. No rule says read."
     }
   ]
 }

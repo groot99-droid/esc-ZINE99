@@ -197,12 +197,13 @@
       "name": "xandri_fate",
       "type": "enum",
       "default": "undecided",
-      "description": "Book One's central choice at the herd.",
+      "description": "Book One's central choice at the herd. 'unseen' (accepted 2026-11-15, built 2026-11-16): Elaris looked away at the herd and did not look back, so nobody learns what Xandri chose; offered only when the Parting Cup was brewed and The Other Hand was seen, and Look away is a standing verb.",
       "values": [
         "undecided",
         "rider",
         "walked_on",
-        "returned"
+        "returned",
+        "unseen"
       ]
     },
     {
@@ -343,7 +344,7 @@
       "name": "parting_cup",
       "type": "bool",
       "default": false,
-      "description": "The last pot was the Parting Cup: seer's sprig and two spoons of gutter sand at mark 3, depth 8 and binding -5 (accepted 2026-11-15). What it lets Elaris do is phase 3 (The Unread Page)."
+      "description": "The last pot was the Parting Cup: seer's sprig and two spoons of gutter sand at mark 3, depth 8 and binding -5 (accepted 2026-11-15). With The Other Hand seen it offers 'Look away and do not look back' at the herd, and so The Unread Page (built 2026-11-16)."
     },
     {
       "name": "other_hand_seen",
@@ -372,7 +373,7 @@
       "name": "own",
       "type": "counter",
       "default": 0,
-      "description": "What Xandri did unwatched or unsteered (accepted 2026-11-15, built 2026-11-16). +1 per Look away held, and per 100 m ridden off the written line; -1 per 100 m ridden on it, never below 0. The endings read it in phase 3."
+      "description": "What Xandri did unwatched or unsteered (accepted 2026-11-15, built 2026-11-16). +1 per Look away held, and per 100 m ridden off the written line; -1 per 100 m ridden on it, never below 0. The endings read it in phase 3. Read by The Son Returns (built 2026-11-16): at 3 or more the grown Xandri changes one word of the tale."
     },
     {
       "name": "look_away",
@@ -385,6 +386,12 @@
       "type": "bool",
       "default": false,
       "description": "The Well-Post was seen (accepted 2026-11-15, built 2026-11-16): the shrine-store left clean, and the linger taken. On the gods' tablet the watcher's shadow then withdraws once: the first failed test adds no scrutiny."
+    },
+    {
+      "name": "loophole_binding",
+      "type": "bool",
+      "default": false,
+      "description": "The Keeper's Binding (g_tablet_c8, accepted 2026-11-15, built 2026-11-16) read without breaking it: the binding says keep, and no rule says read, so a keeper may close a book while its story is still going. Broken instead, the closing is written down against him (rules_broken) and The Unread Page keeps that line."
     },
     {
       "name": "wenna_asked",

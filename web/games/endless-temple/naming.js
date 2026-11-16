@@ -23,6 +23,13 @@
 // shows a title scraped away in the old keeper's hand, "The Desert That Ends". He could not make it take.
 // A page can be the last: after each inscription the player may stop with a result. api.store keeps
 // the stage reached; api.shared is read for passed_mark.
+// Phase 3 (DEEP_DIVE.md section 3; shared rules in _ledger.js): the scraped title is a piece of the
+// long puzzle. The lamp rakes from three sides (K turns it: from the left, from the right, from above),
+// and each side raises a different part of the old keeper's title; read whole, it is written to
+// api.shared (scraped_title). True ink will not take over another hand's title until it has been read.
+// The twist ends on The Named Book's card. Second run: the scraped title shows through without the lamp.
+
+import { mountNotebook, sharedOf, secondRun, endingCard, ENDINGS } from "./_ledger.js";
 
 const SOURCE_TASK = "Well, I guess since this one doesn't have a name, I'll just have to read this one and find out what to call it,";
 const AUTHOR = ["Never-Ending", "Dunes", "Wondering", "Xandrixes"];
@@ -45,6 +52,11 @@ const LINES = {
   trueProof: "<b>Proof</b> will not take. In the pages read so far Xandri has not passed the mark.",
   proofLink: "Because you rode the living illustration past the mark, Proof takes the ink here.",
   raking: "Under the raking light the cartouche shows a title scraped away, in the old keeper's hand: \u201cThe Desert That Ends\u201d. He could not make it take.",
+  // phase 3
+  rakeSides: ["From the left, the lamp raises two scraped words: \u201cThe Desert\u201d.", "From the right, one word between them: \u201cThat\u201d.", "From above, the last word, pressed hardest: \u201cEnds\u201d."],
+  rakeMore: " Turn the lamp again (K): {n} more side{s}.",
+  overTitle: "The ink will not take over another hand's title. Something was scraped out of this cartouche: rake the lamp across it (K) and read what is under it first.",
+  secondShow: "A second reading: the scraped title shows through the cartouche now without the lamp, in the old keeper's slanted hand.",
   endShort: "The sand book is named: {names}. Its gutter is dry, and the book rests.",
   stop1: "One book named: {names}. It rests, and its gutter is dry. The road book and the sand book still wait on the table.",
   stop2: "Two books named: {names}. They rest. The sand book still runs in its gutter.",
@@ -167,6 +179,9 @@ export default {
     .${P}platewrap.${P}rake .${P}plate{filter:contrast(1.35) brightness(1.12) sepia(.25)}
     .${P}platewrap.${P}rake::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:4px;background:linear-gradient(100deg,rgba(255,230,160,.5),rgba(255,230,160,0) 55%)}
     .${P}platewrap.${P}rake .${P}scrape{color:rgba(40,20,10,.62);text-shadow:0 1px 0 rgba(255,236,190,.55)}
+    .${P}platewrap[data-side="2"]::after{background:linear-gradient(260deg,rgba(255,230,160,.5),rgba(255,230,160,0) 55%)}
+    .${P}platewrap[data-side="3"]::after{background:linear-gradient(180deg,rgba(255,230,160,.55),rgba(255,230,160,0) 60%)}
+    .${P}platewrap.${P}ghost .${P}plate{filter:contrast(1.3) brightness(1.1) sepia(.2)}
     .${P}lamp{font:inherit;font-size:15px;color:${C.gold2};background:transparent;border:1.5px solid ${C.gold};border-radius:20px;padding:6px 14px;cursor:pointer;min-height:38px}
     .${P}lamp[aria-pressed=true]{background:${C.gold2};color:${C.blind}}
     .${P}lamp[hidden]{display:none}
@@ -231,9 +246,11 @@ export default {
     let glances = 3, inspecting = false, known = new Set(), triedForeign = false, authorTitle = false;
     const names = [];
     let trays = {};
-    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const shared = sharedOf(api);
     const reached = Math.max(0, Math.min(2, api.store.get("stage", 0) | 0));
-    let raked = false;
+    let raked = false, rakeSide = 0, rakeSeen = new Set();
+    const second = secondRun(shared);
+    let titleRead = second || !!shared.get("scraped_title", false);
     const passedMark = !!shared.get("passed_mark", false);
     const isBlind = (w) => !!w && (PG.heard || []).includes(w);
     const threadOf = (w) => Object.keys(PG.threads).find((t) => PG.threads[t].includes(w)) || null;
@@ -250,7 +267,9 @@ export default {
       if (art.has(PA.plate)) { plate.src = art.url(PA.plate); plate.alt = `The cartouche on the cover of ${PG.book}, still blank.`; plate.hidden = false; } else plate.hidden = true;
       q("pages").innerHTML = PAGES.map((_, k) => `<i class="${k < i ? P + "done" : ""}"></i>`).join("");
       q("beat").textContent = PG.open + (PG.fate ? " " + LINES.fate : "") + (i === 1 ? " " + LINES.inspectNew + " " + LINES.blindNew : "") + (PG.trueInk ? " " + LINES.trueNew : "");
-      raked = false; q("platewrap").classList.remove(P + "rake"); q("lamp").hidden = !PG.trueInk; q("lamp").setAttribute("aria-pressed", "false");
+      raked = false; rakeSide = 0; q("platewrap").classList.remove(P + "rake"); q("lamp").hidden = !PG.trueInk; q("lamp").setAttribute("aria-pressed", "false");
+      drawScrape();
+      if (PG.trueInk && second) q("beat").textContent += " " + LINES.secondShow;
       const lk = q("link"); lk.hidden = !(PG.trueInk && passedMark); if (!lk.hidden) lk.textContent = LINES.proofLink;
       api.store.set("stage", Math.max(reached, api.store.get("stage", 0) | 0, i));
       const qe = q("quote"); qe.hidden = !PG.quote; if (PG.quote) qe.textContent = `“${PG.quote}” (Elaris, on the first day)`;
@@ -377,11 +396,33 @@ export default {
       ib.disabled = glances <= 0 || busy;
     }
     q("inspect").addEventListener("click", () => { if (glances > 0 && !busy) { inspecting = !inspecting; draw(); } });
+    // the scraped title, raked from three sides: each side raises a different part of it
+    const SCRAPED = ["The Desert", "That", "Ends"];
+    function drawScrape() {
+      // the cartouche art carries the scraped title itself; the lamp's light (and, on a second reading, the
+      // eye that knows where to look) brings it up
+      q("platewrap").classList.toggle(P + "ghost", !!PG.trueInk && second && !raked);
+      const pl = q("plate");
+      if (PG.trueInk) pl.alt = raked || second ? `The sand book's cartouche, with a title scraped away under it: ${SCRAPED.map((w, i) => (rakeSeen.has(i) || second || titleRead ? w : "…")).join(" ")}.` : "The cartouche on the cover of the sand book, still blank.";
+      const lamp = q("lamp");
+      lamp.textContent = !raked ? "Tilt the lamp (K)" : ["Lamp: from the left (K)", "Lamp: from the right (K)", "Lamp: from above (K)"][rakeSide - 1];
+    }
     function rake() {
       if (!PG.trueInk || busy || over) return;
-      raked = !raked;
+      rakeSide = (rakeSide + 1) % 4; raked = rakeSide > 0;
       q("platewrap").classList.toggle(P + "rake", raked); q("lamp").setAttribute("aria-pressed", String(raked));
-      if (raked) { say(LINES.raking); q("platewrap").scrollIntoView({ block: "center", behavior: rm ? "auto" : "smooth" }); } else draw();
+      q("platewrap").dataset.side = String(rakeSide);
+      if (raked) {
+        rakeSeen.add(rakeSide - 1);
+        const left = 3 - rakeSeen.size;
+        let t = LINES.rakeSides[rakeSide - 1];
+        if (left === 0 && !titleRead) { titleRead = true; shared.set("scraped_title", true); notebook.refresh(); t += " " + LINES.raking; }
+        else if (left > 0 && !titleRead) t += LINES.rakeMore.replace("{n}", left).replace("{s}", left === 1 ? "" : "s");
+        else if (left === 0) t = LINES.raking;
+        say(t);
+        q("platewrap").scrollIntoView({ block: "center", behavior: rm ? "auto" : "smooth" });
+      } else draw();
+      drawScrape();
     }
     q("lamp").addEventListener("click", rake);
 
@@ -395,6 +436,13 @@ export default {
         const cart = q("cart");
         if (!rm) { cart.classList.remove(P + "shake"); void cart.offsetWidth; cart.classList.add(P + "shake"); }
         surge = 2;
+        return;
+      }
+      if (PG.trueInk && !titleRead) {
+        say(LINES.overTitle);
+        const cart = q("cart");
+        if (!rm) { cart.classList.remove(P + "shake"); void cart.offsetWidth; cart.classList.add(P + "shake"); }
+        surge = 2; refused++;
         return;
       }
       if (c.blind.length > 1 || c.untrue.length) {
@@ -418,7 +466,9 @@ export default {
         if (refused) text += ` The true ink refused ${refused} title${refused === 1 ? "" : "s"} first.`;
         if (raked || q("platewrap").classList.contains(P + "rake")) text += " The scraped title stays scraped.";
         if (authorTitle) text += " " + ADDED_AUTHOR_LINE;
-        if (art.has("frontis-c9")) {
+        // the twist ends on an ending's image: the named book on its shelf
+        if (endingCard(root, api, names.length ? { ...ENDINGS.named } : null, `\u201c${name}\u201d`)) { /* the card stands behind the result */ }
+        else if (art.has("frontis-c9")) {
           const c = document.createElement("div");
           c.className = P + "endc";
           c.innerHTML = `<figure>${pic("frontis-c9", "fr", "The ninth chapter's frontispiece: The End of the Sand.")}${pic("heading-c9", "hd")}</figure>`;
@@ -515,8 +565,9 @@ export default {
     intro.querySelector("." + P + "open").addEventListener("click", () => { intro.remove(); if (startAt) setPage(startAt); touched(); q("cover").focus(); });
     intro.querySelector("." + P + "open").focus();
 
+    const notebook = mountNotebook(root, api, { at: { left: "8px", bottom: "8px" } });
     setPage(0);
     raf = requestAnimationFrame(loop);
-    return { unmount() { cancelAnimationFrame(raf); timers.forEach(clearTimeout); removeEventListener("keydown", onKey); } };
+    return { unmount() { cancelAnimationFrame(raf); timers.forEach(clearTimeout); removeEventListener("keydown", onKey); notebook.unmount(); } };
   },
 };

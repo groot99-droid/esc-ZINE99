@@ -70,7 +70,7 @@
     {
       "id": "ending-the-unread-page",
       "kind": "ending",
-      "ending": "The Unread Page",
+      "ending": "unread_page",
       "title": "The Unread Page",
       "aspect_ratio": "16:9",
       "model": "soul_cinematic",

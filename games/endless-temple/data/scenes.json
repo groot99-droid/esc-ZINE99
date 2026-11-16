@@ -1379,6 +1379,30 @@
       "enter": "push-in",
       "exit": "pull-out",
       "next": [
+        "g_tablet_c8"
+      ]
+    },
+    {
+      "id": "g_tablet_c8",
+      "layer": "1d",
+      "name": "The Rule Tablet: the Keeper's Binding",
+      "chapter": "c8_unlit",
+      "game": "tablet",
+      "world_runs": false,
+      "reads": [
+        "tablet_scrutiny",
+        "other_hand_seen",
+        "ledger_turned",
+        "look_away"
+      ],
+      "writes": [
+        "loophole_binding",
+        "tablet_scrutiny",
+        "rules_broken"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
         "s3_pantry_c8"
       ]
     },
@@ -1468,7 +1492,10 @@
         "sand_leak",
         "walked",
         "own",
-        "look_away"
+        "look_away",
+        "parting_cup",
+        "other_hand_seen",
+        "loophole_binding"
       ],
       "writes": [
         "tea_hold",
@@ -1485,7 +1512,8 @@
       "next": [
         "s3_xandrix_back",
         "s2_li_c9",
-        "s3_village_return"
+        "s3_village_return",
+        "s3_last_cup"
       ]
     },
     {
@@ -1595,7 +1623,8 @@
         "steep",
         "tea_hold",
         "xandri_fate",
-        "book1_named"
+        "book1_named",
+        "parting_cup"
       ],
       "writes": [
         "last_cup"
@@ -1606,7 +1635,8 @@
         "e_stayed",
         "e_rider",
         "e_named",
-        "e_returned"
+        "e_returned",
+        "e_unread"
       ]
     },
     {
@@ -1630,7 +1660,8 @@
       "chapter": "c9_end",
       "reads": [
         "past_known",
-        "candle_left"
+        "candle_left",
+        "own"
       ],
       "enter": "fade",
       "next": []
@@ -1655,7 +1686,21 @@
       "chapter": "c9_end",
       "reads": [
         "past_known",
-        "candle_left"
+        "candle_left",
+        "own"
+      ],
+      "enter": "fade",
+      "next": []
+    },
+    {
+      "id": "e_unread",
+      "layer": "3d",
+      "name": "Ending: the unread page",
+      "chapter": "c9_end",
+      "reads": [
+        "past_known",
+        "candle_left",
+        "loophole_binding"
       ],
       "enter": "fade",
       "next": []

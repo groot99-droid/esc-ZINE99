@@ -1,7 +1,47 @@
 {
  "game": "endless-temple",
- "count": 164,
+ "count": 171,
  "assets": [
+  {
+   "id": "ending-title-named-book",
+   "group": "title",
+   "title": "Ending lettering: The Named Book",
+   "w": 1600,
+   "h": 300,
+   "row": "Ending-card lettering, gold-tooled (5)"
+  },
+  {
+   "id": "ending-title-reader-who-stayed",
+   "group": "title",
+   "title": "Ending lettering: The Reader Who Stayed",
+   "w": 1600,
+   "h": 300,
+   "row": "Ending-card lettering, gold-tooled (5)"
+  },
+  {
+   "id": "ending-title-son-returns",
+   "group": "title",
+   "title": "Ending lettering: The Son Returns",
+   "w": 1600,
+   "h": 300,
+   "row": "Ending-card lettering, gold-tooled (5)"
+  },
+  {
+   "id": "ending-title-the-rider",
+   "group": "title",
+   "title": "Ending lettering: The Rider",
+   "w": 1600,
+   "h": 300,
+   "row": "Ending-card lettering, gold-tooled (5)"
+  },
+  {
+   "id": "ending-title-unread-page",
+   "group": "title",
+   "title": "Ending lettering: The Unread Page",
+   "w": 1600,
+   "h": 300,
+   "row": "Ending-card lettering, gold-tooled (5)"
+  },
   {
    "id": "heading-c1",
    "group": "title",
@@ -1131,6 +1171,14 @@
    "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
   },
   {
+   "id": "notebook-pieces",
+   "group": "ui",
+   "title": "Elaris's notebook: the mounts for the pieces",
+   "w": 900,
+   "h": 560,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
    "id": "ribbon-empty",
    "group": "ui",
    "title": "Bookmark ribbon: an empty length",
@@ -1182,6 +1230,14 @@
    "id": "ledger-back-3-forty",
    "group": "documents",
    "title": "Ledger, back: forty, against the journal",
+   "w": 800,
+   "h": 1100,
+   "row": "Ledger pages, front and back, with Maudric's hand"
+  },
+  {
+   "id": "ledger-back-4-elaris",
+   "group": "documents",
+   "title": "Ledger, back: the page in Elaris's hand",
    "w": 800,
    "h": 1100,
    "row": "Ledger pages, front and back, with Maudric's hand"

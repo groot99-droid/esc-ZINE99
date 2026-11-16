@@ -11,3 +11,13 @@ from 14 here so that no existing panel is renumbered.
 | 14 | 3D | `s3_well_post` | Night in the village's open place, fixed from beside the carved well-post: the round shrine-store, its roof-gap dark, a full moon just clear of the post | Wordless. The watcher sees an arm go in at the roof-gap, and tilts up to the moon instead; afterwards a second leaf-cord hangs restrung at the store door | Cut |  |
 | 15 | 3D | `s3_ledger_turned` | The pantry in late light through the jars, first person over the table, the kettle cold | Elaris turns the pantry ledger over: a count of days, "Day thirty-one…", stopping at forty. From here Look away is a standing verb inside books | Cut |  |
 | 16 | 3D | `s3_ring_of_stones` | The father's ring of stones in the hour before dawn, the narration camera low and still beside the cold fire | Xandri lies down and does not get up. One prompt on the page: "One more page." It works: he rises without input and walks | Cut |  |
+
+## Phase 3 (accepted 2026-11-15, built 2026-11-16)
+
+Two scenes added to `data/scenes.json`. `g_tablet_c8` falls in c8 between `s3_abyss_return` and the last pot
+(`s3_pantry_c8`); `e_unread` is the fifth ending's last panel, after the last cup.
+
+| # | Layer | Scene | Shot | Beat | Into next | Still |
+| --- | --- | --- | --- | --- | --- | --- |
+| 17 | 1D | `g_tablet_c8` | Straight on, close: a pale tablet cracked across one corner, one legible register and five worn nearly flat, the abyss's frost at its edges | The Keeper's Binding. "He was never to leave…": the binding says keep, and no rule says read. Look away, close, shelve | Pull-out |  |
+| 18 | 3D | `e_unread` | Fixed, a few steps back from the reading table, the chair pushed back, nobody there; one sunbeam across the closed cover | The Unread Page: the sand book shut on a boy who is still walking, the empty Parting Cup beside it, and one woody leaf half out from between its pages | End |  |

@@ -3,6 +3,9 @@
 // vellum in honey and walnut); the right page carries the title, the line Elaris says over the
 // nameless book, and a rotating tip. Sand sifts out of the bottom of the pages and heaps in the
 // gutter below: the heap is the progress bar, as the sand book leaks until it is read.
+// finale(): the long puzzle's payoff for the menu (phase 3; the rules are in _ledger.js).
+
+import { endingFor, sharedOf } from "./_ledger.js";
 
 export const meta = {
   cover: "assets/stills/endless-temple/01-elaris-wakes.jpg",
@@ -166,4 +169,19 @@ export function render(root, ctx) {
       wrap.classList.add(P + "out");
     },
   };
+}
+
+// The menu's finale: null until the Parting Cup is brewed with every piece in (Tea Blending), then the
+// ending the solve earned, with its generated card. Showing it records a finished run (runs_done), and
+// the modes read that for the second reading.
+export function finale({ shared, keyart } = {}) {
+  const s = shared || sharedOf(null);
+  const e = endingFor(s);
+  if (!e) return null;
+  const solves = Math.max(1, s.get("solves", 1) | 0);
+  if ((s.get("runs_done", 0) | 0) < solves) s.set("runs_done", solves);
+  s.set("last_ending", e.id);
+  let text = e.text;
+  if (e.id === "unread_page" && s.get("binding", null) === "broken") text += " The Keeper's Binding has one more line against him in the Wardens' book.";
+  return { title: e.title, text, image: keyart ? keyart(e.card) : "" };
 }

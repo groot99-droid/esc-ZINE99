@@ -27,6 +27,18 @@
 // living illustration. api.store keeps the stage reached.
 // The source line in the how-to-play is DESIGN.md section 3 beat 10, verbatim, from
 // creative-writing/vault/02_Novels/05_The_Endless_Temple_-_Elaris_Sel_Marden.md.
+// Phase 3 (DEEP_DIVE.md section 3, the long puzzle and the second playthrough; rules in _ledger.js):
+//   The twist is longer, by the design's own steep-80 rule ("in the temple the cup is found refilled
+//   after each brew"): the last pot keeps coming back with three spoons he did not add until a cup
+//   brings the steep under 80, and each cup must still hold a reader (depth 4) while letting go.
+//   The long puzzle is solved here: with the three pieces in (the ledger's back pages, the scraped
+//   title from The Naming, swept sand), the Parting Cup brewed at the last pot sets parting_cup.
+//   Turning the ledger over and sweeping write their pieces (ledger_turned, sand_swept).
+//   Second run: the ledger falls open at the back, at a page in Elaris's own hand, and can be turned
+//   from the first book; the old keeper's hints are marked as his, and as binding.
+//   The last pot's result shows the ending its cup leads to: the Parting Cup's, or the heavy cup's.
+
+import { mountNotebook, sharedOf, piecesIn, PIECES, has, secondRun, endingFor, endingCard, ENDINGS } from "./_ledger.js";
 
 const SOURCE_TEA = "It was mint herbal tea with a unique herb in it that made scholars more vividly imagine, if not envision, the book they were reading so clearly it was as if they were the narrator of the book.";
 
@@ -73,7 +85,17 @@ const LINES = {
   secondThin: "The second pour is too thin for this card.",
   dryLeaves: "The kettle is dry, but the leaves are still in the pot: one second pour (X) is left.",
   twistOpen: "The last pot. The ring under the cup is dark, and three spoons are in it that he did not add. This brew is made by taking things out.",
-  twistAsk: "A cup for letting go: binding 0 or less.",
+  twistAsk: "A cup for letting go: binding 0 or less, and deep enough to hold him at the page (depth 4). While the ring under it stays stained, the cup comes back filled.",
+  // phase 3
+  refilled: "He looks down and the cup is full again, three spoons in it he did not add. The ring under it is still stained.",
+  refillLight: "A cup that lets go. The ring is a little lighter, and not light enough.",
+  refillBound: "That cup bound him tighter. The ring darkens.",
+  ringClear: "The ring under the cup lightens, and this time the cup stays empty.",
+  dryHeavy: "The kettle is dry, and the cup is full again anyway.",
+  partingSolved: " The three pieces are in: the day count at the back of the ledger, the title he scraped away, and the sand he swept. Elaris knows what this cup is for.",
+  partingMissing: " He does not yet know what it is for: {missing} not in the notebook.",
+  secondOpen: "The ledger falls open at the back this morning, at a page in his own hand. The front pages are the old keeper's, and every recipe in them binds.",
+  secondHint: "The old keeper's hint (his recipes bind): ",
   endBound: " It is not a cup for letting go: the three spoons he did not add are still doing their work.",
   linkJar: "Because you swept the table between clasps, the ninth jar already holds {n} of gutter sand.",
   stop1: "The sand book is open on the reading table, and the kettle is still warm. Two more books wait by the chair.",
@@ -81,6 +103,8 @@ const LINES = {
 };
 const STAGE_NAMES = ["Teach: meet a depth", "Test: three constraints", "Twist: brew for letting go"];
 const PRELOAD = ["ember", "ember", "clove"];   // the three spoons the player did not add
+const REFILLS = [["ember", "clove", "sprig"], ["clove", "clove", "ember"], ["ember", "ember", "dunevine"]];   // and each time the cup comes back
+const REFILL_AT = 80;   // DESIGN.md section 12: at steep 80 the cup is found refilled after each brew
 // The ledger's pages (art/documents). The captions repeat what the page says, for small screens.
 const LEDGER_FRONT = [
   { art: "ledger-front-1-jars", cap: "Jars kept in the pantry: each herb with its depth, length and binding." },
@@ -92,6 +116,8 @@ const LEDGER_BACK = [
   { art: "ledger-back-2-thirty-one", cap: "“Day thirty-one. I meant to turn at the cairn. I did not turn. I cannot say why.”" },
   { art: "ledger-back-3-forty", cap: "The count stops at forty. Pinned over it, a slip from a journal: “Day forty. The leaves hold. The track goes on.” Under it, in the ledger's hand: “I did not turn.”" },
 ];
+// the second run's document: a last leaf in Elaris's own hand (art/documents/ledger-back-4-elaris)
+const LEDGER_ELARIS = { art: "ledger-back-4-elaris", cap: "A last leaf, in an upright hand that is his own: “Kept at the back, for the next one. What it gives back is the sand I swept. Sprig, gutter sand, gutter sand. Mark 3. The front pages bind. Every recipe in them keeps a reader in. Read them as his. I looked away, and did not look back.”" };
 const CHAPTER_OF = { g_tea_c3: "heading-c3", g_tea_c5: "heading-c5", g_tea_c7: "heading-c7", g_tea_c8: "heading-c8" };
 const BOOKS = [
   { scene: "g_tea_c3", book: "The sand book, again", req: { dmin: 5, lmin: 4 }, jars: ["sprig", "honeymoss", "clove"],
@@ -104,7 +130,7 @@ const BOOKS = [
     note: "A long road, walked by masked pilgrims.",
     ledger: ["A long road: dune-vine, and let the kettle sit a while…", "Dune-vine twice, and the sprig for depth…", "Sprig, dune-vine, dune-vine. Mark 4."] },
 ];
-const LAST = { scene: "g_tea_c8", book: "The last pot", req: { bmax: 0 }, jars: Object.keys(HERBS).filter((k) => k !== "mint" && k !== "sand"), note: LINES.lastPot,
+const LAST = { scene: "g_tea_c8", book: "The last pot", req: { dmin: 4, bmax: 0 }, jars: Object.keys(HERBS).filter((k) => k !== "mint" && k !== "sand"), note: LINES.lastPot,
   ledger: ["No recipe. The binding is yours to choose. (The ledger has more pages: open it.)"],
   ledgerBack: ["“…sprig, and what the book gives back.” What does a sand book give back to the table?", "Sprig, and the swept sand, twice over. Leave the dial where it rests.", "Sprig, gutter sand, gutter sand. Mark 3."] };
 // The Parting Cup: deep and unbinding at once. Only gutter sand reaches it.
@@ -149,9 +175,11 @@ export default {
     const rm = api.reducedMotion;
     const losses = api.store.get("lossStreak", 0);
     const gentle = losses >= 2;
-    const STAGE_POURS = gentle ? [4, 6, 1] : [3, 4, 1];
+    const STAGE_POURS = gentle ? [4, 6, 5] : [3, 4, 4];
     let POURS = STAGE_POURS[0];
-    const shared = api.shared || { get: (k, d) => d, set() {} };
+    const shared = sharedOf(api);
+    const second = secondRun(shared);   // read once: a run finished before this sitting began
+    const ledgerBack = second ? [...LEDGER_BACK, LEDGER_ELARIS] : LEDGER_BACK;
     const reached = Math.max(0, Math.min(2, api.store.get("stage", 0) | 0));
     let stage = 0, leaves = null, secondOn = false, linkNote = "";
     const timers = [];
@@ -402,7 +430,8 @@ export default {
       if (piles <= 0) { beat(LINES.noSand); return; }
       piles--;
       const had = jarSand + sandInCup() > 0;
-      if (jarSand + sandInCup() < SAND_MAX) { jarSand++; beat(LINES.swept); } else beat(LINES.sweptFull);
+      if (jarSand + sandInCup() < SAND_MAX) { jarSand++; beat(LINES.swept); shared.set("sand_swept", true); } else beat(LINES.sweptFull);
+      notebook.refresh();
       if (!had) buildJars();
       update();
     }
@@ -448,14 +477,14 @@ export default {
       q("note").textContent = B.note;
       const lead = gentle ? 2 : 0;
       const led = lastPot && ledgerTurned ? B.ledgerBack : B.ledger;
-      q("led").textContent = lastPot && ledgerTurned ? led[Math.max(0, Math.min(led.length - 1, gentle ? backLooks : Math.min(1, backLooks - 1)))] : led[Math.min(led.length - 1, failsHere + lead >= 4 ? 2 : failsHere + lead >= 2 ? 1 : 0)];
+      q("led").textContent = (second && !(lastPot && ledgerTurned) ? LINES.secondHint : "") + (lastPot && ledgerTurned ? led[Math.max(0, Math.min(led.length - 1, gentle ? backLooks : Math.min(1, backLooks - 1)))] : led[Math.min(led.length - 1, failsHere + lead >= 4 ? 2 : failsHere + lead >= 2 ? 1 : 0)]);
       q("piles").innerHTML = piles ? Array.from({ length: piles }, () => `<span class="${P}pile"></span>`).join("") + `<span>${piles} drift${piles === 1 ? "" : "s"}</span>` : "<span>The table is clean.</span>";
       q("sweep").disabled = over || busy || piles <= 0;
       const ch = q("chap"), chId = CHAPTER_OF[B.scene];
       if (art.has(chId)) { if (ch.dataset.id !== chId) { ch.src = art.url(chId); ch.dataset.id = chId; } ch.hidden = false; } else ch.hidden = true;
       const sl = q("sandleft"); if (sl) sl.textContent = `${jarSand} spoon${jarSand === 1 ? "" : "s"} left`;
       q("books").innerHTML = BOOKS.map((_, i) => `<span class="${P}bk ${opened[i] ? P + "open" : ""} ${i === bookI && !lastPot ? P + "now" : ""}"></span>`).join("");
-      q("kettle").innerHTML = Array.from({ length: POURS }, (_, i) => `<span class="${P}drop ${i >= poursLeft ? P + "used" : poursLeft <= 2 ? P + "low" : ""}"></span>`).join("") + `<span style="margin-left:6px">${lastPot ? "the last pot: one pour" : `${poursLeft} pour${poursLeft === 1 ? "" : "s"} left`}</span>`;
+      q("kettle").innerHTML = Array.from({ length: POURS }, (_, i) => `<span class="${P}drop ${i >= poursLeft ? P + "used" : poursLeft <= 2 ? P + "low" : ""}"></span>`).join("") + `<span style="margin-left:6px">${`${poursLeft} pour${poursLeft === 1 ? "" : "s"} left`}</span>`;
       q("taste").innerHTML = [0, 1, 2].map((i) => `<i class="${i >= tastes ? P + "used" : ""}"></i>`).join("") + `<span style="margin-left:6px">${tastes} left</span>`;
       mkBtns.forEach((b, i) => b.setAttribute("aria-pressed", String(i + 1 === mark)));
       q("dialnote").textContent = `Mark ${mark}: ${DIAL_NOTE[mark]}`;
@@ -491,7 +520,7 @@ export default {
       const r = brew(spoons, mark);
       const before = steep;
       steep = Math.max(0, steep + 3 * r.b);
-      if (lastPot) { finishLastPot(r); return; }
+      if (lastPot) { twistPour(r); return; }
       poursLeft--;
       const ok = meets(r, B.req);
       const hold = Math.min(100, 40 + 10 * r.d);
@@ -523,6 +552,25 @@ export default {
         update();
       }, rm ? 300 : 1400));
       timers.push(() => clearInterval(tick));
+    }
+    // the twist: each pour of the last pot lowers or raises the steep; while it stays at 80 or more the
+    // cup comes back filled with three spoons he did not add (DESIGN.md section 12, threshold 80)
+    let refillN = 0;
+    function twistPour(r) {
+      poursLeft--;
+      const ok = meets(r, LAST.req);
+      if (steep < REFILL_AT || poursLeft <= 0) { finishLastPot(r); return; }
+      busy = true;
+      pourFlash = { ok, until: performance.now() + (rm ? 0 : 1300) };
+      resEl.innerHTML = `${tally(r, LAST.req)}<br>${ok ? LINES.refillLight : LINES.refillBound}`;
+      if (!ok) shake(q("reqcard"));
+      update();
+      timers.push(setTimeout(() => {
+        busy = false; pourFlash = null; tasted = null;
+        spoons = REFILLS[refillN++ % REFILLS.length].slice(); preload = 3;
+        beat(LINES.refilled + " " + LINES.twistAsk);
+        update();
+      }, rm ? 300 : 1400));
     }
     function lose() {
       over = true; update();
@@ -565,10 +613,10 @@ export default {
       lastPot = i === 2; bookI = i === 0 ? 0 : i === 1 ? 1 : BOOKS.length;
       for (let k = 0; k < BOOKS.length; k++) opened[k] = k < bookI;
       if (i >= 1) { unlockTaste(); secondOn = true; }
-      if (i === 0) beat(LINES.open + " " + LINES.sandStart + " First, " + BOOKS[0].book.toLowerCase() + ": " + BOOKS[0].note);
+      if (i === 0) beat((second ? LINES.secondOpen + " " : "") + LINES.open + " " + LINES.sandStart + " First, " + BOOKS[0].book.toLowerCase() + ": " + BOOKS[0].note);
       else if (i === 1) beat(`${BOOKS[1].book}: ${BOOKS[1].note} ${LINES.second}`);
       else {
-        steep = Math.max(steep, 80); spoons = PRELOAD.slice(); preload = 3; piles = Math.max(piles, 2);
+        steep = Math.max(steep, 92); spoons = PRELOAD.slice(); preload = 3; piles = Math.max(piles, 2); refillN = 0;
         beat(LINES.twistOpen + " " + LINES.twistAsk);
       }
       prevJars = []; buildJars(); update();
@@ -593,7 +641,8 @@ export default {
     }
     function finishLastPot(r) {
       const parting = isParting(spoons, r);
-      const light = parting || r.b <= 0;
+      const refilling = steep >= REFILL_AT;   // the kettle ran dry while the cup still came back full
+      const light = !refilling;
       over = true; busy = true; setTaste(spoons);
       pourFlash = { ok: true, until: performance.now() + (rm ? 0 : 1300) };
       resEl.innerHTML = `${tally(r, LAST.req)}<br>${parting ? "<b>The Parting Cup.</b>" : "The last pot is poured."}`;
@@ -601,15 +650,24 @@ export default {
       api.store.set("lossStreak", light ? 0 : losses + 1);
       api.store.set("partingCup", parting || api.store.get("partingCup", false));
       shared.set("jar_sand", jarSand);   // what went into the cup is gone from the ninth jar
-      if (parting) shared.set("parting_cup", true);
       if (ledgerTurned) shared.set("ledger_turned", true);
-      let text = parting ? LINES.endParting.replace("{d}", r.d).replace("{b}", "\u2212" + -r.b) : r.b <= 0 ? LINES.endLight : r.b >= 4 ? LINES.endHeavy : LINES.endEven;
+      // the long puzzle: the Parting Cup, brewed with every piece in, is the answer
+      const solvedNow = parting && light && piecesIn(shared);
+      if (solvedNow) { shared.set("parting_cup", true); shared.set("solves", (shared.get("solves", 0) | 0) + 1); }
+      let text = refilling ? LINES.dryHeavy + " " + LINES.endHeavy
+        : parting ? LINES.endParting.replace("{d}", r.d).replace("{b}", "\u2212" + -r.b) : r.b <= 0 ? LINES.endLight : LINES.endEven;
+      if (parting && light) text += solvedNow ? LINES.partingSolved : LINES.partingMissing.replace("{missing}", PIECES.filter((p) => !has(shared, p.key)).map((p) => p.name.toLowerCase()).join(" and ") + (PIECES.filter((p) => !has(shared, p.key)).length === 1 ? " is" : " are"));
+      else if (light) text = LINES.ringClear + " " + text;
       if (!parting) text += ` (The last cup bound ${r.b}${preload ? `, with ${preload} of the spoons he did not add still in it` : ""}.)`;
       if (!light) text += LINES.endBound;
       if (piles) text += LINES.endSandLeft.replace("{n}", piles).replace("{s}", piles === 1 ? "" : "s").replace("{v}", piles === 1 ? "s" : "");
       if (!parting && !ledgerTurned) text += " The ledger was never turned over.";
+      notebook.refresh();
       timers.push(setTimeout(() => {
-        endCard(parting ? "The Parting Cup" : light ? "The last cup" : "One more page");
+        // the twist ends on an ending's image: the heavy cup's, or the one the Parting Cup leads to
+        const e = !light ? ENDINGS.stayed : solvedNow ? endingFor(shared) : null;
+        if (e) endingCard(root, api, e, !light ? "One more page." : "The Parting Cup.");
+        else endCard(parting ? "The Parting Cup" : "The last cup");
         api.end({ outcome: light ? "win" : "lose", text });
       }, rm ? 300 : 1500));
     }
@@ -626,7 +684,9 @@ export default {
     let ledgerEl = null, ledSide = "front", ledPage = 0;
     function openLedger() {
       if (over || busy || ledgerEl) return;
-      ledgerSeen = true; ledSide = ledgerTurned ? "back" : "front"; ledPage = ledgerTurned ? 0 : (lastPot ? 2 : 0);
+      ledgerSeen = true;
+      if (second) { ledSide = "back"; ledPage = ledgerBack.length - 1; }
+      else { ledSide = ledgerTurned ? "back" : "front"; ledPage = ledgerTurned ? 0 : (lastPot ? 2 : 0); }
       ledgerEl = document.createElement("div");
       ledgerEl.className = P + "book";
       ledgerEl.setAttribute("role", "dialog"); ledgerEl.setAttribute("aria-label", "The pantry ledger");
@@ -635,9 +695,9 @@ export default {
     }
     function closeLedger() { if (ledgerEl) { ledgerEl.remove(); ledgerEl = null; update(); q("frame").focus(); } }
     function drawLedger() {
-      const pages = ledSide === "front" ? LEDGER_FRONT : LEDGER_BACK;
+      const pages = ledSide === "front" ? LEDGER_FRONT : ledgerBack;
       const pg = pages[ledPage];
-      const canTurn = lastPot;   // the keeper only thinks to turn it over once no book is asking
+      const canTurn = lastPot || second;   // the keeper only thinks to turn it over once no book is asking; a second reader knows
       ledgerEl.innerHTML = `<small>${ledSide === "front" ? "The pantry ledger" : "The ledger, turned over"} · page ${ledPage + 1} of ${pages.length}</small>
         ${art.has(pg.art) ? `<img class="${P}pg" src="${art.url(pg.art)}" alt="">` : `<div class="${P}pgfall"></div>`}
         <p></p>
@@ -655,12 +715,12 @@ export default {
     }
     function ledgerAct(a) {
       if (!ledgerEl) return;
-      const pages = ledSide === "front" ? LEDGER_FRONT : LEDGER_BACK;
+      const pages = ledSide === "front" ? LEDGER_FRONT : ledgerBack;
       if (a === "prev" && ledPage > 0) ledPage--;
       else if (a === "next" && ledPage < pages.length - 1) ledPage++;
-      else if (a === "turn" && lastPot) {
+      else if (a === "turn" && (lastPot || second)) {
         ledSide = ledSide === "front" ? "back" : "front"; ledPage = 0;
-        if (!ledgerTurned) { ledgerTurned = true; beat(LINES.turnOver + " " + LINES.lastPotBack); }
+        if (!ledgerTurned) { ledgerTurned = true; shared.set("ledger_turned", true); notebook.refresh(); beat(LINES.turnOver + " " + LINES.lastPotBack); }
       }
       else if (a === "close") { closeLedger(); return; }
       drawLedger();
@@ -722,10 +782,11 @@ export default {
     intro.querySelector("." + P + "light").addEventListener("click", () => { intro.remove(); setStage(startAt); q("frame").focus(); });
     intro.querySelector("." + P + "light").focus();
 
+    const notebook = mountNotebook(root, api, { at: { left: "8px", bottom: "8px" } });
     buildJars();
     update();
     return {
-      unmount() { timers.forEach((t) => (typeof t === "function" ? t() : clearTimeout(t))); removeEventListener("keydown", onKey); },
+      unmount() { timers.forEach((t) => (typeof t === "function" ? t() : clearTimeout(t))); removeEventListener("keydown", onKey); notebook.unmount(); },
     };
   },
 };

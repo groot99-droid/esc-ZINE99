@@ -1851,6 +1851,102 @@
         "sand-book"
       ],
       "interactions": []
+    },
+    "e_unread": {
+      "note": "The Unread Page. Fixed, a few steps back from the reading table: the sand book closed with its clasp shut, a blank spine, one woody leaf half out from between its pages, the empty Parting Cup with a dry ring beside it, the chair pushed back, no one there. One sunbeam lies across the closed cover. The sand around it settled long ago.",
+      "world": {
+        "color": [
+          0.78,
+          0.7,
+          0.54
+        ],
+        "strength": 0.42
+      },
+      "lights": [
+        {
+          "name": "sun",
+          "type": "SUN",
+          "location": [
+            20.0,
+            0.0,
+            11.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.0
+          ],
+          "energy": 4.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.92,
+            0.75
+          ]
+        },
+        {
+          "name": "sunbeam",
+          "type": "SPOT",
+          "location": [
+            19.6,
+            0.0,
+            9.0
+          ],
+          "look_at": [
+            6.0,
+            -4.0,
+            0.6
+          ],
+          "energy": 4500,
+          "size": 0.6,
+          "color": [
+            1.0,
+            0.88,
+            0.62
+          ]
+        },
+        {
+          "name": "hall-fill",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            11.6
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 1000,
+          "size": 12,
+          "color": [
+            1.0,
+            0.9,
+            0.7
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          3.6,
+          -6.4,
+          2.1
+        ],
+        "look_at": [
+          6.0,
+          -4.0,
+          0.9
+        ],
+        "lens_mm": 35,
+        "mode": "fixed"
+      },
+      "hide": [
+        "yesterdays-book",
+        "lizard-plate",
+        "sand-book-shelved"
+      ],
+      "interactions": []
     }
   }
 }
