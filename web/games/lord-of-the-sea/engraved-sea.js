@@ -17,7 +17,7 @@
 // Art pass: the boat, the cutter, the coast strip with its moored skiffs, the sky and the rose ring are the game's
 // art, each rasterised once at the size it is drawn (api.art); the sea itself stays the module's own burin lines.
 import { pic, raster, endCard, chapterStrip } from "./_art.js";
-import { ladder, note, flag } from "./_ladder.js";
+import { ladder, note, flag, gainChit } from "./_ladder.js";
 
 const INK = "#1F2E4A", PAPER = "#F4F1E8", RED = "#8C2B2B", GOLD = "#E7A93B", GREEN = "#2F6B5E", BROWN = "#6B4A2B";
 let LENGTH = 2200;              // metres to the port (about 1.2 nm); set by the stage
@@ -531,7 +531,7 @@ const game = {
       if (teach) {
         if (won) { endCard(root, art, "convoy", "THE COMPANY LANE · IN THE CONVOY'S LEE"); api.end({ outcome: "win", text: `Into the anchorage in ${time}, one small sail among the Company's, and the cutter still hunting the empty lane astern. He raised nothing bigger than a ripple, because nothing bigger would come. Notice ${Math.round(s.notice)}.` }); }
         else { endCard(root, art, "cutter", "HEAVE TO"); api.end({ outcome: "lose", text: "The grapnel bites and holds. In ordered water there is no crest to put under her bow: the only place the cutter cannot see is under a convoy ship's stern. Caught, notice +10." }); }
-      } else if (won) { setGlass(); endCard(root, art, "sea-plate", "THE GLASS · NOT A HULL STIRRED"); api.end({ outcome: "win", text: `Through the blockade in ${time}, on water he ironed flat with his own hands: ${stilled} ripple${stilled === 1 ? "" : "s"} put down, the fleet's wake at ${Math.round(s.wake)} of 100. The king's payment reaches the sea-gate, and the oarsmen finish the hymn out loud on the far side.` }); }
+      } else if (won) { setGlass(); const fresh = gainChit(api, 7); endCard(root, art, art.has("chit-7-mirror-gallery") ? "chit-7-mirror-gallery" : "sea-plate", "THE GALLERY OF GLASS · CHIT No. 7"); api.end({ outcome: "win", text: `Through the blockade in ${time}, on water he ironed flat with his own hands: ${stilled} ripple${stilled === 1 ? "" : "s"} put down, the fleet's wake at ${Math.round(s.wake)} of 100. The king's payment reaches the sea-gate, and the oarsmen finish the hymn out loud on the far side. Up through the gallery of mirrors he cannot stop, and he hits her again, as on the beach: a second paper falls out of her sleeve between them. The writ, Alexi principal debtor, her father's house surety. Beside it on the glass lies chit No. 7, “a shipmate's word”, readable only in the mirror. She picks up the writ and goes.${fresh ? " The seventh of eight." : ""}` }); }
       else { endCard(root, art, "cutter", "THE WATCH IS UP"); api.end({ outcome: "lose", text: `A lantern is unhooded on the nearest hull, then another, down the whole line. The fleet is awake ${((LENGTH - s.x) / NM).toFixed(2)} nm short of the sea-gate, and the payment is delayed. Still every ripple the oarsmen raise, raise none of your own, and spill wind past each hull.` }); }
     }
     function setGlass() { try { api.shared.set("glass.run", true); } catch { /* no storage */ } }

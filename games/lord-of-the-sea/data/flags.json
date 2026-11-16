@@ -228,11 +228,12 @@
       "name": "final_choice",
       "type": "enum",
       "default": "none",
-      "description": "After a final win, at the tideline: keep the sea or give it up.",
+      "description": "After a final win, at the tideline: keep the sea or give it up. 'pay' (phase 3) is offered only when pay_open is true: eight counter-clockwise stirs at the tideline, one for each chit.",
       "values": [
         "none",
         "keep",
-        "relinquish"
+        "relinquish",
+        "pay"
       ]
     },
     {
@@ -506,6 +507,61 @@
         "ship",
         "chapter"
       ]
+    },
+    {
+      "name": "writ.handed",
+      "type": "bool",
+      "default": false,
+      "description": "The princess has handed over the writ naming Alexi principal debtor and her father's house surety: at once, in chapter 1, if a second run shows her the bottle on the cabin wall (the open-book start); otherwise it is not handed but falls, at the Second Collision."
+    },
+    {
+      "name": "writ.fallen",
+      "type": "bool",
+      "default": false,
+      "description": "The Second Collision (s-second-collision): in the mirror gallery he cannot stop, hits her again, and the writ falls out between them. She leaves with it."
+    },
+    {
+      "name": "cabin.tagged",
+      "type": "bool",
+      "default": false,
+      "description": "The Inventory (s-the-inventory): the clerks have tagged the cabin walls as the surety's security. The fourteen objects keep their tags to the end of the run."
+    },
+    {
+      "name": "has_photograph",
+      "type": "bool",
+      "default": false,
+      "description": "The Oars (s-the-oars): the king gives back the one untagged thing, the dinghy's oars, and the photograph of a young man at an oar beside Alexi."
+    },
+    {
+      "name": "cup_choice",
+      "type": "enum",
+      "default": "none",
+      "values": [
+        "none",
+        "board",
+        "salary"
+      ],
+      "description": "The Cup (s-the-cup): the Lord of Tea pours the blend from the jar in Alexi's own cabinet and offers a salary, Harbourmaster-General, tides to a timetable. 'salary' takes it and skips the final match (The Lord's Peace); 'board' sits down to play."
+    },
+    {
+      "name": "meta.runs",
+      "type": "counter",
+      "default": 0,
+      "description": "Finished runs, kept across new games (the only flag that is). From 1 the second playthrough's changes apply: the bottle may be shown to her in chapter 1, and the future scholars footnote the pages."
+    },
+    {
+      "name": "meta.last_ending",
+      "type": "enum",
+      "default": "none",
+      "values": [
+        "none",
+        "the-charter",
+        "paid-in-kind",
+        "no-lord",
+        "the-wild-sea",
+        "the-lords-peace"
+      ],
+      "description": "The ending of the last finished run, kept across new games: the future scholars' footnotes disagree about it."
     }
   ]
 }

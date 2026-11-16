@@ -674,7 +674,7 @@
       ]
     },
     "s-tideline-final": {
-      "note": "Dawn, as in chapter 0. After a win Alexi stands in the water and chooses: keep the sea (only with five or more wild regions, else 'The sea will not answer that') or give it up.",
+      "note": "Dawn, as in chapter 0. After a win Alexi stands in the water and chooses: keep the sea (only with five or more wild regions, else 'The sea will not answer that') or give it up. With all eight chits pinned (pay_open), a third choice: Pay, eight counter-clockwise stirs at the stone, one for each chit.",
       "world": {
         "color": [
           0.8,
@@ -762,6 +762,11 @@
           "prop": "tideline-stone",
           "verb": "Give it up",
           "leads_to": "s-end-no-lord"
+        },
+        {
+          "prop": "tideline-stone",
+          "verb": "Pay: unsign the eight chits",
+          "leads_to": "s-end-paid-in-kind"
         }
       ]
     },
@@ -1057,6 +1062,92 @@
         {
           "prop": "tideline-stone",
           "verb": "Stir"
+        }
+      ]
+    },
+    "s-end-paid-in-kind": {
+      "note": "Paid in Kind. Dawn at the stone: Alexi crouches and turns one finger in the shallows; a single ring of ripples spreads and nothing more. The eight chits float in the foam, their ink running out to blank paper. The lights and buoys still stand; beyond them the open water heaves out of his reach.",
+      "world": {
+        "color": [
+          0.8,
+          0.66,
+          0.42
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "sun-dawn",
+          "type": "SUN",
+          "location": [
+            140,
+            200,
+            10
+          ],
+          "energy": 4.0,
+          "size": 0.03,
+          "color": [
+            0.906,
+            0.663,
+            0.231
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "haze",
+          "type": "AREA",
+          "location": [
+            0,
+            30,
+            25
+          ],
+          "energy": 4000,
+          "size": 60,
+          "color": [
+            1.0,
+            0.85,
+            0.55
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          9.5,
+          2.8,
+          0.7
+        ],
+        "look_at": [
+          8,
+          9,
+          0.2
+        ],
+        "lens_mm": 35,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          8,
+          7,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "rum-bottle"
+      ],
+      "interactions": [
+        {
+          "prop": "tideline-stone",
+          "verb": "Stir: a ripple"
         }
       ]
     }

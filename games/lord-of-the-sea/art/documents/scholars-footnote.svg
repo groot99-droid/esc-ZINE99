@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 160" width="900" height="160" role="img" aria-labelledby="scholars-footnote-t scholars-footnote-d">
+<title id="scholars-footnote-t">A footnote by the future scholars</title>
+<desc id="scholars-footnote-d">The foot of a printed page from a later edition: a short rule, a dagger, and two lines of small type in a different, modern hand-set face, on whiter paper than the deed it annotates; a pencilled query beside it.</desc>
+<defs><filter id="scholars-footnote-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="899"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="900" height="160" fill="#F6F3EA"/>
+<rect x="0" y="0" width="900" height="160" filter="url(#scholars-footnote-grain1)"/>
+<line x1="40" y1="34" x2="300" y2="34" stroke="#1F2E4A" stroke-width="1.2"/>
+<text x="42" y="74" font-size="30" font-family="serif" fill="#8C2B2B">†</text>
+<rect x="72" y="61" width="760" height="2.2" fill="#1F2E4A" opacity="0.6"/>
+<rect x="98" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="132" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="166" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="200" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="234" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="268" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="302" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="336" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="370" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="404" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="438" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="472" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="506" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="540" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="574" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="608" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="642" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="676" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="710" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="744" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="778" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="812" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="846" y="59" width="5" height="6" fill="#F6F3EA"/>
+<rect x="72" y="87" width="690" height="2.2" fill="#1F2E4A" opacity="0.6"/>
+<rect x="98" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="132" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="166" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="200" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="234" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="268" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="302" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="336" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="370" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="404" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="438" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="472" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="506" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="540" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="574" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="608" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="642" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="676" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="710" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="744" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="778" y="85" width="5" height="6" fill="#F6F3EA"/>
+<rect x="72" y="113" width="520" height="2.2" fill="#1F2E4A" opacity="0.6"/>
+<rect x="98" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="132" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="166" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="200" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="234" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="268" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="302" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="336" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="370" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="404" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="438" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="472" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="506" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="540" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="574" y="111" width="5" height="6" fill="#F6F3EA"/>
+<rect x="608" y="111" width="5" height="6" fill="#F6F3EA"/>
+<path d="M620.8,139.2 L627.5,139.2 L637.2,137.3 L642.8,137.4 L651.7,137.8 L660.1,134.9 L667.3,134.4 L676.2,135.1 L685,133.3 L692.6,133.7 L699.2,132 L709,133.3 L715.6,132.6 L724.3,132.7 L733.9,134.3 L741.4,135.5 L749.5,135.7 L756.9,134.7 L764.9,137.3 L774.7,136.1 L782.3,138.4 L789.7,139.3" fill="none" stroke="#55524c" stroke-width="1.6"/>
+<text x="800" y="142" font-size="26" font-family="cursive" fill="#55524c">?</text>
+</svg>

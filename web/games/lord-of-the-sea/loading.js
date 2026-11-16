@@ -16,6 +16,20 @@ export const meta = {
     "Stir: clockwise rouses the water, counter-clockwise stills it. Two engraved seas to cross and four tables to play.",
 };
 
+import { ENDINGS } from "./_ladder.js";
+
+// Phase 3: the long puzzle's payoff on the game's menu. The tab is gathered across the modes (eight chits), read
+// whole in the Charter, and settled at the tideline; until then there is no finale. Paid in Kind is what the tab
+// pays for after a won final match; the choices at the tideline (keep, give up) or a match signed at a tie earn
+// The Wild Sea, No Lord or The Charter instead, and the menu shows the one the player earned.
+export function finale({ shared, keyart }) {
+  let id = "";
+  try { id = shared.get("tab.ending", ""); } catch { return null; }
+  const e = ENDINGS[id];
+  if (!e) return null;
+  return { title: e.name, text: e.text, image: (keyart && keyart("ending-" + id)) || "" };
+}
+
 // Verbatim, 02_Novels/02_WrymWretch.md line 286 (DESIGN.md section 3, beat 4).
 const QUOTE = "Something in him stirred. A pull. A promise he couldn’t name.";
 

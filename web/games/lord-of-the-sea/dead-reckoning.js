@@ -14,7 +14,7 @@
 // needle, the rule and the clock on it. The tray's instruments are the game's own. Without the art the old
 // sheet is drawn as before.
 import { pic, chapterStrip, endCard } from "./_art.js";
-import { ladder, note, flag, setFlag } from "./_ladder.js";
+import { ladder, note, flag, setFlag, gainChit } from "./_ladder.js";
 
 const PAPER = "#F4F1E8", GRID = "#9fb0c4", INK = "#1F2E4A", RED = "#8C2B2B", PENCIL = "#4a4a4a", GOLD = "#E7A93B", GREEN = "#2F6B5E";
 let NM = 30;                           // px per nautical mile
@@ -396,6 +396,7 @@ const game = {
       api.store.set("losses", off <= TARGET.r ? 0 : losses + 1);
       if (strait) {
         endCard(root, art, off <= TARGET.r ? "chit-4-lease-schedule" : "reckon-strait", off <= TARGET.r ? "CHIT No. 4 · A FOG" : "THE LAMPLIT STRAIT", "#1F2E4A");
+        if (off <= TARGET.r) gainChit(api, 4);
         if (off <= TARGET.r) api.end({ outcome: "win", text: `Under Corran's light, ${off.toFixed(1)} nm off the mark${S.sounded ? ", on a stream the lead found and the table did not" : ", by luck: the lead was never dropped"}. In the lamp room the lease schedule hangs on a nail, and pinned to it, in a hand he knows, chit No. 4: “a fog. Pays next tide.” The fourth of eight. There has not been a thick night here in twenty years, and now he knows whose it was.` });
         else api.end({ outcome: "lose", text: `The pencil said the circle. The stream said otherwise: ${off.toFixed(1)} nm wide of Corran's light, in among the old wrecks, and clear of them only by a stir the Strait barely answered. Notice +5. ${S.sounded ? "The lead told the truth; the plot was not redrawn to it." : "The table lies about the turned stream. Drop the lead once the third hour is laid, then erase and re-aim."}` });
         return;

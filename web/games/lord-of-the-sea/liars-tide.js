@@ -14,7 +14,7 @@
 // of the dice". See her off the bench and the chit lies by the tide die for the last one sitting; while it
 // lies there a stir draws 10 suspicion, not 25. The table, cups, dice and stake are the game's art (api.art).
 import { pic, bg, dieCrop, cupCrop, endCard, chapterStrip } from "./_art.js";
-import { ladder, setFlag } from "./_ladder.js";
+import { ladder, setFlag, gainChit, scholarsNote, footnote } from "./_ladder.js";
 
 const RED = "#8C2B2B", GREEN = "#2F6B5E", GOLD = "#E7A93B", INK = "#17140f", SKIN = "#F1E3C6", PAPER = "#E9DBBB", BLUE = "#1F2E4A";
 const FACES = ["", "Gull", "Shell", "Rope", "Bottle", "Lantern", "Wave"];
@@ -228,6 +228,7 @@ const game = {
           <p class="v">He asked for a bottle and was shown a slate. It was longer than the shop, and all of it was us.</p>
           <p style="margin-top:6px">“Forty years my family has written ‘pays next tide’. Which tide, love?”</p>
           <p style="margin-top:6px">The chits she sold on, years since. One she kept. She shuts the shop, follows him to the taproom, takes the short dockhand's stool and lays it on the table: her stake.</p>
+          ${footnote(api, scholarsNote(api, "slate"))}
         </div>
         <button type="button" data-sl="ask">Ask for a bottle</button>
       </div>
@@ -463,7 +464,7 @@ const game = {
         else api.end({ outcome: "lose", text: `Out of dice, and the last of them went to the water. On this table a quiet bid is the dangerous one: whoever bids lowest feeds the tide. The licence stays in the tallyman's coat.` });
         return;
       }
-      if (won) setFlag(api, "chit2", true);
+      if (won) { gainChit(api, 2); setFlag(api, "chit2", true); }
       endCard(root, art, won ? "chit-2-dice-stake" : "the-slate", won ? "CHIT No. 2 · THE LUCK OF THE DICE" : "MOTHER HALSE'S SLATE · PAYS NEXT TIDE", "#2b1d10");
       if (caught) api.end({ outcome: "lose", text: `Caught stirring the cup, ${S.stirs === 1 ? "once too often" : `the ${["", "first", "second", "third", "fourth", "fifth"][S.stirs] || "last"} time`}. Wenna puts her hand flat over his; the stake is forfeit, the news goes to someone else's table, and Mother Halse puts her chit back in her apron. “Next tide, then.”` });
       else if (won) api.end({ outcome: "win", text: `Last with dice${S.stirs ? `, and ${S.stirs === 1 ? "one stir" : NUMW[S.stirs] + " stirs"} the table never quite caught` : ", and an honest cup"}. Two pieces of news: where the Gullwife crew fish past the chart's edge, and where the Kettle crew still sing. Devotion +3. And chit No. 2, “the luck of the dice”, in his own hand: the second of eight.` });

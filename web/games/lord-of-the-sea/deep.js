@@ -14,7 +14,7 @@
 // Art pass: the light bands are the game's four plates, cross-faded by depth behind the play; the swimmer, the
 // strongbox and the twelve glowing specimens are the game's art, each rasterised once (api.art).
 import { pic, raster, endCard, chapterStrip, circleGesture } from "./_art.js";
-import { ladder, note, flag, setFlag } from "./_ladder.js";
+import { ladder, note, flag, setFlag, gainChit } from "./_ladder.js";
 
 const PLATE = "#0B1424", INKBLUE = "#1F2E4A", FOAM = "#E8F2EE", PAPER = "#F4F1E8", GOLD = "#E7A93B", GREEN = "#2F6B5E", VIOLET = "#4B3F63", RED = "#8C2B2B";
 let WORLD_W = 150, FLOOR = 92, WRECK_X = 112, WRECK_Y = 85;   // FLOOR is set by the stage
@@ -423,7 +423,7 @@ const game = {
       const left = Math.max(0, Math.round(d.pull));
       api.store.set("losses", won ? 0 : losses + 1);
       if (trench) {
-        if (won) { endCard(root, art, "chit-5-trench", "CHIT No. 5 · A SLACK WATER", "#05090f"); api.end({ outcome: "win", text: `Chit No. 5 comes up into the light with ${left} s of the pull to spare: “a slack water. Pays next tide.” Signed with a clockwise spiral, stamped with the Company's leaf. He lit the trench ${lit} time${lit === 1 ? "" : "s"} to find it${notice ? `, and the survey boat's lead found him: notice +${notice}` : ""}. The fifth of eight.` }); }
+        if (won) { gainChit(api, 5); endCard(root, art, "chit-5-trench", "CHIT No. 5 · A SLACK WATER", "#05090f"); api.end({ outcome: "win", text: `Chit No. 5 comes up into the light with ${left} s of the pull to spare: “a slack water. Pays next tide.” Signed with a clockwise spiral, stamped with the Company's leaf. He lit the trench ${lit} time${lit === 1 ? "" : "s"} to find it${notice ? `, and the survey boat's lead found him: notice +${notice}` : ""}. The fifth of eight.` }); }
         else { endCard(root, art, "deep-band-4", "BELOW 150 METRES · ONLY WHAT GLOWS", "#05090f"); api.end({ outcome: "lose", text: d.carry ? "The chit was in his hand, but the trench kept him below the light. The dive will have to be made again." : "The edges close in the dark of the trench. A stir shows the chit from twenty-five metres off; the chains only reach where the light has been." }); }
         return;
       }
@@ -457,7 +457,7 @@ const game = {
         if (ungest) { ungest(); ungest = null; }
         const go = () => stage(true);
         if (!raised) { ungest = circleGesture(box.querySelector("[data-chit]"), go); box.querySelector("[data-b=stir]").addEventListener("click", go); }
-        else box.querySelector("[data-b=shut]").addEventListener("click", () => { closeBox(); api.end({ outcome: "win", text: winText + " And chit No. 3, “an anchor's hold”: the third of eight." }); });
+        else box.querySelector("[data-b=shut]").addEventListener("click", () => { closeBox(); gainChit(api, 3); api.end({ outcome: "win", text: winText + " And chit No. 3, “an anchor's hold”: the third of eight." }); });
         box.querySelector("button").focus();
         boxRaised = raised;
       };

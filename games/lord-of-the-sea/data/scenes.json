@@ -88,12 +88,17 @@
       "chapter": "ch1-princess",
       "writes": [
         "princess_aboard",
-        "princess.trust"
+        "princess.trust",
+        "writ.handed",
+        "tab.known"
       ],
       "enter": "pull-out",
       "exit": "fade",
       "next": [
         "s-company-lane"
+      ],
+      "reads": [
+        "meta.runs"
       ]
     },
     {
@@ -111,7 +116,11 @@
       "next": [
         "s-cabin-princess"
       ],
-      "world_runs": false
+      "world_runs": false,
+      "reads": [
+        "meta.runs",
+        "meta.last_ending"
+      ]
     },
     {
       "id": "s-company-lane",
@@ -198,7 +207,9 @@
       "reads": [
         "wild.lanes",
         "princess.trust",
-        "met.halse"
+        "met.halse",
+        "meta.runs",
+        "meta.last_ending"
       ],
       "writes": [
         "news",
@@ -481,7 +492,9 @@
       "reads": [
         "has_harbour_book",
         "princess.trust",
-        "chits"
+        "chits",
+        "meta.runs",
+        "meta.last_ending"
       ],
       "writes": [
         "port.lanes",
@@ -929,6 +942,27 @@
       "enter": "flatten",
       "exit": "push-in",
       "next": [
+        "s-second-collision"
+      ]
+    },
+    {
+      "id": "s-second-collision",
+      "layer": "3d",
+      "name": "The Second Collision",
+      "chapter": "ch5-kings-halls",
+      "reads": [
+        "princess.trust",
+        "writ.handed"
+      ],
+      "writes": [
+        "writ.fallen",
+        "princess.trust",
+        "princess_aboard",
+        "chits"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
         "g-charter-halls"
       ]
     },
@@ -967,11 +1001,49 @@
       "enter": "push-in",
       "exit": "fade",
       "next": [
+        "s-the-inventory"
+      ],
+      "world_runs": false
+    },
+    {
+      "id": "s-the-inventory",
+      "layer": "3d",
+      "name": "The Inventory",
+      "chapter": "ch5-kings-halls",
+      "reads": [
+        "writ.fallen",
+        "port.halls"
+      ],
+      "writes": [
+        "cabin.tagged"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
+        "s-the-oars"
+      ]
+    },
+    {
+      "id": "s-the-oars",
+      "layer": "3d",
+      "name": "The Oars",
+      "chapter": "ch5-kings-halls",
+      "reads": [
+        "cabin.tagged",
+        "payment_delivered"
+      ],
+      "writes": [
+        "has_photograph",
+        "princess_aboard",
+        "princess.trust"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": [
         "s-cabin-tally",
         "g-reckon-backplot",
         "d-rescue"
-      ],
-      "world_runs": false
+      ]
     },
     {
       "id": "s-cabin-tally",
@@ -1027,7 +1099,9 @@
       "reads": [
         "chits",
         "tab.known",
-        "princess.trust"
+        "princess.trust",
+        "meta.runs",
+        "meta.last_ending"
       ],
       "writes": [
         "tab.matched",
@@ -1087,7 +1161,28 @@
       "enter": "fade",
       "exit": "push-in",
       "next": [
-        "g-tea-final"
+        "s-the-cup"
+      ]
+    },
+    {
+      "id": "s-the-cup",
+      "layer": "3d",
+      "name": "The Cup",
+      "chapter": "ch6-lord-of-tea",
+      "reads": [
+        "chits",
+        "has_photograph",
+        "devotion"
+      ],
+      "writes": [
+        "cup_choice",
+        "chits"
+      ],
+      "enter": "push-in",
+      "exit": "push-in",
+      "next": [
+        "g-tea-final",
+        "s-tideline-final"
       ]
     },
     {
@@ -1118,12 +1213,17 @@
         "notice",
         "princess.trust",
         "chart.balanced_regions",
-        "bells"
+        "bells",
+        "cup_choice",
+        "chits",
+        "meta.runs",
+        "meta.last_ending"
       ],
       "writes": [
         "tea.final_result",
         "debts.answered",
-        "tea.cracked"
+        "tea.cracked",
+        "chits"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -1140,15 +1240,21 @@
       "reads": [
         "tea.final_result",
         "chart.wild_regions",
-        "tea.cracked"
+        "tea.cracked",
+        "pay_open",
+        "tab.matched",
+        "cup_choice"
       ],
       "writes": [
-        "final_choice"
+        "final_choice",
+        "meta.runs",
+        "meta.last_ending"
       ],
       "enter": "fade",
       "exit": "fade",
       "next": [
         "s-end-charter",
+        "s-end-paid-in-kind",
         "s-end-no-lord",
         "s-end-wild-sea",
         "s-end-lords-peace"
@@ -1161,6 +1267,27 @@
       "chapter": "ch7-tideline",
       "reads": [
         "toll"
+      ],
+      "enter": "fade",
+      "exit": "fade",
+      "next": []
+    },
+    {
+      "id": "s-end-paid-in-kind",
+      "layer": "3d",
+      "name": "Ending: Paid in Kind",
+      "chapter": "ch7-tideline",
+      "reads": [
+        "toll",
+        "chits",
+        "wild.home",
+        "wild.lanes",
+        "wild.unwritten",
+        "wild.salt",
+        "wild.strait",
+        "wild.pearl",
+        "wild.spice",
+        "wild.halls"
       ],
       "enter": "fade",
       "exit": "fade",

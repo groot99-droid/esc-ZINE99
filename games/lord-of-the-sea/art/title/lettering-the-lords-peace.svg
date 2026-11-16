@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-labelledby="lettering-the-lords-peace-t lettering-the-lords-peace-d">
+<title id="lettering-the-lords-peace-t">Ending card lettering: The Lord's Peace</title>
+<desc id="lettering-the-lords-peace-d">The lettering laid over the The Lord's Peace ending card: the name cut in an upright engraved italic on lamp-white Company stock, over ruled hatching, with 'examined and entered' set in small capitals and a green tick where the Voice’s spiral would be.</desc>
+<defs><filter id="lettering-the-lords-peace-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="35"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter></defs>
+<rect x="0" y="0" width="1200" height="300" fill="#F4F1E8"/>
+<rect x="0" y="0" width="1200" height="300" filter="url(#lettering-the-lords-peace-grain1)"/>
+<rect x="18" y="18" width="1164" height="264" fill="none" stroke="#1F2E4A" stroke-width="2.2"/>
+<rect x="25" y="25" width="1150" height="250" fill="none" stroke="#1F2E4A" stroke-width="0.8"/>
+<line x1="120" y1="196" x2="1080" y2="196" stroke="#1F2E4A" stroke-width="1.1"/>
+<line x1="120" y1="202" x2="1080" y2="202" stroke="#1F2E4A" stroke-width="1.1"/>
+<line x1="120" y1="208" x2="1080" y2="208" stroke="#1F2E4A" stroke-width="1.1"/>
+<line x1="120" y1="214" x2="1080" y2="214" stroke="#1F2E4A" stroke-width="1.1"/>
+<text x="603" y="159" font-size="92" font-family="serif" fill="#1F2E4A" opacity="0.2" text-anchor="middle">The Lord's Peace</text>
+<text x="600" y="156" font-size="92" font-family="serif" fill="#1F2E4A" text-anchor="middle" font-style="italic">The Lord's Peace</text>
+<text x="600" y="260" font-size="19" font-family="serif" fill="#8C2B2B" text-anchor="middle" letter-spacing="4.2" font-weight="normal">EXAMINED AND ENTERED</text>
+<path d="M1090,110 l11,15.4 l24.2,-37.4" fill="none" stroke="#2E7A46" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1134,92.4 h19.8 m-9.9,0 v28.6" fill="none" stroke="#2E7A46" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

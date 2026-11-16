@@ -12,8 +12,8 @@
 // Art pass (2026-11-15): the board is the game's porcelain plate (tea-board-parlour), laid under the play at its
 // own 1600 x 900; the ports and slots below sit where the plate draws them. Hymns and Chests are the piece
 // tiles, the tide clock is the dial with the game's own hand. Without the art the old drawing still runs.
-import { pic, pieceCrop, chapterStrip, endCard } from "./_art.js";
-import { ladder, note, flag, setFlag } from "./_ladder.js";
+import { pic, pieceCrop, chapterStrip, endCard, keyCard } from "./_art.js";
+import { ladder, note, flag, setFlag, gainChit, chitsHeld, scholarsNote, footnote } from "./_ladder.js";
 
 const COB = "#24448f", DEEP = "#1F2E4A", WHITE = "#F4F1E8", GLAZE = "#fbfbf8", GOLD = "#E7A93B", RED = "#8C2B2B";
 const PORTS = {
@@ -320,19 +320,26 @@ const game = {
       api.store.set("losses", won ? 0 : losses + 1);
       const cracks = Object.keys(S.cracked);
       if (cracks.length) setFlag(api, "tea.cracked", cracks);
-      if (stage === "test") { if (won) setFlag(api, "tea.comptroller", true);
+      if (stage === "test") { if (won) { setFlag(api, "tea.comptroller", true); gainChit(api, 6); }
         later(() => { endCard(root, art, won ? "chit-6-under-the-board-raised" : "piece-debt", won ? "CHIT No. 6 · A FAIR WIND, TO ORDER" : "DEBT IS FACT", "#14203a"); api.end({ outcome: won ? "win" : "lose", text: won
           ? `Alexi ${a} ${a === 1 ? "port" : "ports"} to ${c}, with ${S.clauses} Clause ${S.clauses === 1 ? "token" : "tokens"} unspent. The Comptroller lifts his board to fold it, and a slip of paper is stuck to the foot-ring underneath: chit No. 6, struck out and smudged, “a fair wind, to order”. The Spice Mouth goes broken, one clause token more, and the sixth of eight is in his hand.`
           : a === c ? `${a} to ${c}. “A tie, in my books, is mine.” The Spice Mouth stays bound, and notice +15. A port with two Debts is his whatever the lanes say: keep a Clause for the second disc.`
           : `${a} ${a === 1 ? "port" : "ports"} to ${c}. The Comptroller enters it. The Spice Mouth stays bound, and notice +15. A port with two Debts is his whatever the lanes say: keep a Clause for the second disc.` }); }, 900);
         return; }
       if (final) {
-        later(() => { endCard(root, art, won ? "wreck-book-open-year" : "wreck-book-lost-list", won ? "THE WRECK BOOK · THE BOARD IS HIS NO LONGER" : "THE WRECK BOOK · THE LOST LIST", "#14203a"); api.end({ outcome: won ? "win" : "lose", text: (won
-          ? `Alexi ${a} ${a === 1 ? "port" : "ports"} to ${c}. The Lord of Tea looks at the board for a long time, and then at the book.`
-          : a === c ? `${a} to ${c}. “A tie, in my books, is mine.” He does not smile. He looks seasick.` : `${a} ${a === 1 ? "port" : "ports"} to ${c}. “You call it wild. In my books it is called unpaid.”`)
+        // Phase 3: the result goes to the tideline (tea.final). A win takes chit No. 8 out of his hand; a tie on a whole
+        // board is signed instead of taken, and she has the terms ready (The Charter); a tie on a cracked board is his.
+        const signed = !won && a === c && !cracks.length;
+        setFlag(api, "tea.final", won ? "win" : signed ? "draw" : "loss");
+        const eighth = (won || signed) && gainChit(api, 8);
+        const tabN = chitsHeld(api).size;
+        later(() => { endCard(root, art, won ? "wreck-book-open-year" : signed ? "chit-8-lords-hand-raised" : "wreck-book-lost-list", won ? "THE WRECK BOOK · THE BOARD IS HIS NO LONGER" : signed ? "SIGNED AT A TIE · CHIT No. 8" : "THE WRECK BOOK · THE LOST LIST", "#14203a"); api.end({ outcome: won ? "win" : signed ? "done" : "lose", text: (won
+          ? `Alexi ${a} ${a === 1 ? "port" : "ports"} to ${c}. The Lord of Tea looks at the board for a long time, and then at the book. He lifts his hand off the eighth chit, “whatever is left”, and does not pick it up again.`
+          : signed ? `${a} to ${c}, on a board without a crack in it. “A tie, in my books, is mine,” he begins, and she lays the terms on the board between them before he can finish. He reads them twice, seasick, and signs; chit No. 8 goes under the terms as their last schedule.`
+          : a === c ? `${a} to ${c}. “A tie, in my books, is mine.” He does not smile. He looks seasick. The cracked lane is why: there is nothing whole to sign on.` : `${a} ${a === 1 ? "port" : "ports"} to ${c}. “You call it wild. In my books it is called unpaid.” The eighth chit stays under his hand.`)
           + ` He read ${S.read} ${S.read === 1 ? "name" : "names"} out of the Wreck Book${answered ? `; ${answered} ${answered === 1 ? "was" : "were"} already answered for` : ""}.`
           + (cracks.length ? ` ${cracks.join(" and ")} ${cracks.length === 1 ? "is" : "are"} cracked across: no one will ever score ${cracks.length === 1 ? "it" : "them"}, and no safe lane can be laid there.` : " The porcelain is whole.")
-          + (won ? " What is done with the win waits for the tideline." : "") }); }, 900);
+          + (won || signed ? ` What is done with it waits for the tideline${eighth ? `: the eighth of eight` : ""}${tabN === 8 ? ". All eight chits are in hand: the tab can be read whole, in the Charter." : `. The tab: ${tabN} of 8 in hand.`}` : "") }); }, 900);
         return; }
       later(() => api.end({ outcome: won ? "win" : "lose", text: won
         ? `Alexi ${a} ${a === 1 ? "port" : "ports"} to ${c}${S.stirUsed ? ", the last of it with the water's help" : ""}. The factor folds the board with a small bow and writes something in his book. The parlour is won: one more Hymn in the final match.`
@@ -549,13 +556,35 @@ const game = {
     render();
     const b = how.querySelector("button");
     let unnote = null;
+    // Phase 3, The Cup (s-the-cup): before the final board he pours Alexi a cup, and it is the blend from the jar in
+    // Alexi's own cabinet. Under his hand is chit No. 8. He offers a salary; taking it is The Lord's Peace.
+    let cup = null;
+    if (final) {
+      cup = document.createElement("div");
+      cup.className = P + "how"; cup.setAttribute("role", "dialog"); cup.setAttribute("aria-label", "The Cup");
+      cup.innerHTML = `<div class="${P}plate"><div class="rim"></div>
+        ${pic(art, "the-cup", "Two cups on the board: tea, and hot water; a chit under a clerk's ruler", `style="display:block;width:100%;max-height:30vh;object-fit:cover;border:1px solid ${COB};margin:0 0 8px"`)}
+        <h2>The Cup</h2>
+        <p class="open">Before the board, he pours. Alexi knows the blend before it reaches his mouth: it is from the jar in his own cabinet, the one he kept like a talisman. For himself the Lord of Tea pours hot water. “Tea is for selling.”</p>
+        <p class="open">Under his other hand lies a chit on Company stock, struck out and ticked: No. 8, “whatever is left”. “Harbourmaster-General. Tides to a timetable, a salary, a house ashore. Sign under that one and nothing need be played for.”</p>
+        ${footnote(api, scholarsNote(api, "cup"))}
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px"><button type="button" data-cup="board">Sit at the board</button><button type="button" data-cup="salary" style="background:${WHITE};color:${DEEP}">Take the salary</button></div></div>`;
+      w.appendChild(cup);
+      cup.querySelector("[data-cup=board]").addEventListener("click", () => { cup.remove(); cup = null; b.focus(); });
+      cup.querySelector("[data-cup=salary]").addEventListener("click", () => {
+        cup.remove(); cup = null; how.remove(); S.over = true;
+        setFlag(api, "tea.final", "salary");
+        keyCard(root, art, api.keyart ? api.keyart("ending-the-lords-peace") : "", "lettering-the-lords-peace");
+        api.end({ outcome: "lose", text: "He signs under the eighth chit. Harbourmaster-General: the tides to a timetable, a salary paid on the quarter day, a house ashore with a clock in every room. The last bottle is Company issue. The Wreck Book closes, and so does every hymn. The sea is safe, and it does not answer him. (The Lord's Peace.)" });
+      });
+    }
     b.addEventListener("click", () => {
       how.remove(); S.started = true; S.msg = teach ? "The factor moves first, as a courtesy to the house." : `The ${WHO} moves first.`;
       beat(final ? "Low tide. His Chests by Tidewater count double. The Wreck Book lies open at his elbow, face down on its own spine." : teach ? "Low tide. His Chests on lanes by Tidewater count double while it lasts. The princess watches the board, not the factor." : "Low tide. His Chests by Tidewater count double, and a red disc already sits on the Salt Steps: one Debt. A second would make it his.", false);
       render(); later(factor, 900);
       if (final && answered) unnote = note(w, `Because you rang ${answered === 1 ? "the bell" : "the bells"} of ${bells.slice(0, answered).join(", ")} in The Deep, ${answered} ${answered === 1 ? "name" : "names"} in his Wreck Book ${answered === 1 ? "is" : "are"} answered for: ${TOLL.slice(0, answered).map((x) => x[0]).join(", ")}. He has ${TOLL.length - answered} left to read.`, 11000, true);
     });
-    b.focus();
-    return { unmount() { timers.forEach(clearTimeout); timers.clear(); removeEventListener("keydown", onKey); S.over = true; if (unnote) unnote(); } };
+    (cup ? cup.querySelector("[data-cup=board]") : b).focus();
+    return { unmount() { timers.forEach(clearTimeout); timers.clear(); removeEventListener("keydown", onKey); S.over = true; if (unnote) unnote(); if (cup) cup.remove(); } };
   },
 };

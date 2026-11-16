@@ -801,6 +801,192 @@
           "leads_to": "g-charter-halls"
         }
       ]
+    },
+    "s-second-collision": {
+      "note": "The mirror gallery at a run, as he cannot stop: he hits her again, as on the beach, and a second paper falls out of her sleeve between them: the writ, Alexi principal debtor, her father's house surety. Chit No. 7 lies on the glass beside it, 'a shipmate's word', legible only in the mirror. She picks up the writ and goes.",
+      "world": {
+        "color": [
+          0.5,
+          0.44,
+          0.34
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "sun-outside",
+          "type": "SUN",
+          "location": [
+            0,
+            200,
+            120
+          ],
+          "energy": 5.0,
+          "size": 0.02,
+          "color": [
+            0.957,
+            0.945,
+            0.91
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "gallery-glow",
+          "type": "AREA",
+          "location": [
+            0,
+            -10,
+            8.5
+          ],
+          "energy": 800,
+          "size": 15,
+          "color": [
+            1.0,
+            0.82,
+            0.55
+          ],
+          "look_at": [
+            0,
+            -10,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -38,
+          1.6
+        ],
+        "look_at": [
+          0,
+          -6,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -36,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "coin-chest"
+      ],
+      "interactions": [
+        {
+          "prop": "mirror-west-4",
+          "verb": "Read the chit in the glass"
+        },
+        {
+          "prop": "ledger-gallery",
+          "verb": "Pick up the writ"
+        },
+        {
+          "prop": "ledger-throne",
+          "verb": "Take up the halls' deed",
+          "leads_to": "g-charter-halls"
+        }
+      ]
+    },
+    "s-the-oars": {
+      "note": "Evening at the throne: the king, alone, gives back the one thing the clerks did not tag, the dinghy's oars, and with them a photograph curling at the edges: a young man at an oar beside Alexi. He does not say who it is. She is not there; she finds it later, on the cabin wall.",
+      "world": {
+        "color": [
+          0.45,
+          0.36,
+          0.26
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "sea-light",
+          "type": "AREA",
+          "location": [
+            0,
+            24,
+            4
+          ],
+          "energy": 3000,
+          "size": 7,
+          "color": [
+            1.0,
+            0.97,
+            0.9
+          ],
+          "look_at": [
+            0,
+            -20,
+            1
+          ]
+        },
+        {
+          "name": "throne-glow",
+          "type": "AREA",
+          "location": [
+            25,
+            5,
+            8.5
+          ],
+          "energy": 900,
+          "size": 15,
+          "color": [
+            1.0,
+            0.8,
+            0.5
+          ],
+          "look_at": [
+            25,
+            5,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          30,
+          4,
+          1.6
+        ],
+        "look_at": [
+          30,
+          17,
+          1.2
+        ],
+        "lens_mm": 32,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          30,
+          8,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "coin-chest"
+      ],
+      "interactions": [
+        {
+          "prop": "throne",
+          "verb": "Take the oars"
+        },
+        {
+          "prop": "ledger-throne",
+          "verb": "Look at the photograph",
+          "leads_to": "s-cabin-tally"
+        }
+      ]
     }
   }
 }

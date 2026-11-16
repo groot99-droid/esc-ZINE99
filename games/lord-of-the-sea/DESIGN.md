@@ -1178,8 +1178,8 @@ design reads it as the god inside the man, the thing that "stirred" at 351, and 
 None is marked as written: the author has written two chapters and no ending.
 
 A fifth ending, **Paid in Kind**, and changed costs for the four below were accepted on 2026-11-15
-(section 21). They enter this section and `data/endings.json` in phase 3. Phase 1 builds what Paid
-in Kind will read: the eight chits, `tab.matched` and `pay_open`.
+(section 21) and built on 2026-11-16 (phase 3): all five are in `data/endings.json`, and every one
+keeps a cost. Paid in Kind reads what phase 1 built: the eight chits, `tab.matched` and `pay_open`.
 
 **The default ending is No Lord.** It is a proposal, not the author's ending, and `as_written`
 stays false. It is named the default because it is the one the chapters point toward: the
@@ -1189,19 +1189,44 @@ owning it (The Lord's Peace) is the warning itself. Its last image, Alexi rowing
 dawn, returns to the chapters' own "He took up the oars ... and began to row" (288). A player who
 frees ports, wins the final match and lets go at the tideline is on the story's path.
 
-The ending is decided at `s-tideline-final` by the final match result, the map at the tally, and,
-after a win, one choice. The resolver checks in priority order.
+The ending is decided at `s-tideline-final` by the final match result, the map at the tally, the
+tab, and, after a win, one choice. The resolver checks in priority order.
 
 | Priority | Id | Name | Conditions (plain words) | Condition in `data/endings.json` | Final scenes |
 | --- | --- | --- | --- | --- | --- |
 | 1 | `the-charter` | The Charter | The final match was signed as a draw, with at least 3 balanced regions, devotion 50 or more and trust 60 or more | `all: tea.final_result eq draw; chart.balanced_regions gte 3; devotion gte 50; princess.trust gte 60` | `s-tideline-final`, `s-end-charter` |
-| 2 | `no-lord` | No Lord | Alexi won the final match and gave up the sea | `all: tea.final_result eq win; final_choice eq relinquish` | `s-tideline-final`, `s-end-no-lord` |
-| 3 | `the-wild-sea` | The Wild Sea | Alexi won the final match, kept the sea, and at least 5 regions were Wild at the tally | `all: tea.final_result eq win; final_choice eq keep; chart.wild_regions gte 5` | `s-tideline-final`, `s-end-wild-sea` |
-| 4 | `the-lords-peace` | The Lord's Peace | Anything else: a lost match, or a tie the Lord took | `true` | `s-tideline-final`, `s-end-lords-peace` |
+| 2 | `paid-in-kind` | Paid in Kind | Alexi won the final match, all eight chits were pinned to what they bought, and at the tideline he chose Pay | `all: tea.final_result eq win; final_choice eq pay; pay_open eq true; tab.matched gte 8` | `s-tideline-final`, `s-end-paid-in-kind` |
+| 3 | `no-lord` | No Lord | Alexi won the final match and gave up the sea | `all: tea.final_result eq win; final_choice eq relinquish` | `s-tideline-final`, `s-end-no-lord` |
+| 4 | `the-wild-sea` | The Wild Sea | Alexi won the final match, kept the sea, and at least 5 regions were Wild at the tally | `all: tea.final_result eq win; final_choice eq keep; chart.wild_regions gte 5` | `s-tideline-final`, `s-end-wild-sea` |
+| 5 | `the-lords-peace` | The Lord's Peace | Anything else: he took the salary at The Cup, lost the match, or the Lord took a tie | `true` | `s-tideline-final`, `s-end-lords-peace` |
 
-No two can be true together: `draw` and `win` exclude each other, and `keep` and `relinquish`
-exclude each other. The Charter's extra conditions are the Sign button's conditions, so a draw
-without them cannot occur; they are repeated in the data so the debug panel can show them.
+No two can be true together: `draw` and `win` exclude each other, and `pay`, `keep` and
+`relinquish` are three values of one choice. Pay is offered at the tideline only when `pay_open`
+is true, and `pay_open` is set only when `tab.matched` reaches 8, so the last two terms of Paid in
+Kind's condition never disagree with the first two; they are kept so the debug panel shows them.
+The Charter's extra conditions are the Sign button's conditions, so a draw without them cannot
+occur; they are repeated in the data for the same reason. Taking the salary at `s-the-cup` writes
+`cup_choice: salary` and goes straight to the tideline with `tea.final_result` still `none`, so only
+The Lord's Peace can follow. None is `as_written`, and No Lord stays the default (above).
+
+**How each is reached.** The Charter: sign the final match at a tie. Paid in Kind: win the final
+match with the whole tab read, then Pay. No Lord: win, then give it up. The Wild Sea: win with five
+or more Wild regions, then keep it. The Lord's Peace: take the salary, lose, or let the Lord take a
+tie. Each of the first four needs a different result or a different choice from the others; the
+last is what is left.
+
+### Paid in Kind (accepted 2026-11-15, built 2026-11-16)
+
+After a win, with all eight chits pinned to the regions whose order they bought (`pay_open`), Alexi
+stands at the stone and unsigns them: eight counter-clockwise stirs, one for each chit, and each
+takes a power tier off the rose ring for good. The Company's claim on the sea is gone; what it built
+and pays for stays: the lights, the lanes, the school. He is a god who owes nothing and can raise a
+ripple. Final image (`s-end-paid-in-kind`): dawn at the stone, one finger turning in the shallows, a
+single ring spreading and nothing more, eight blank slips in the foam, and beyond the lit buoys the
+open water heaving out of his reach. The narrator's last line is the deep dive's: *He stirred, and
+the sea gave him a ripple, and for once it was all he had asked for.* **Cost kept:** he can never
+dive for anyone again (no stir above Ripple, so no rescue dive is possible), the wild regions stay
+as wild as the player left them, and the `toll` ledger is entered as "outstanding, for ever".
 
 ### The Charter
 
@@ -1209,8 +1234,9 @@ With the princess, Alexi writes terms between a god and the people who sail: the
 his own hand, the wild water left wild, and the halls' clause that reached the sea struck out. The
 Lord of Tea signs at 4–4. Final image: dawn on the bay, the ferry crossing a glassy lane while
 beyond it the water rises and falls on its own, and a crew sings the hymn to the tide (section 16),
-in tune for once. The narrator's last-line slot. Cost kept: every wreck and drowning in the `toll` ledger is
-read out on the terms' last page as the reason for the lanes.
+in tune for once. The narrator's last-line slot. Cost kept: the tab becomes a schedule of the
+terms, every pledge a clause he keeps for good by his own hand; and every wreck and drowning in the
+`toll` ledger is read out on the terms' last page as the reason for the lanes.
 
 ### No Lord
 
@@ -1219,16 +1245,18 @@ He beats the Lord of Tea and then, at the tideline, lets go: the sea "was not me
 charters fall; so do its lights, and no one keeps them. Final image: Alexi rowing the dinghy in at
 dawn with blistered hands, an ordinary man on an ordinary sea. The Gullwife crew sings the hymn from the
 anchorage, and he does not look round. The narrator's last line is its last: the god leaves the
-story it said would swallow them. Cost kept: the epilogue lists the regions where wrecks will now
-come back with no god to answer to, one line each.
+story it said would swallow them. Cost kept: the debtor ceases to exist, so the debt dies, and so
+does anyone who could answer for the drowned; the epilogue lists the regions where wrecks will now
+come back with no one to answer to, one line each.
 
 ### The Wild Sea
 
 He beats the Lord of Tea and keeps the sea. Alexi is the god again. The hymns come back, every crew
 on the chart singing, and so do the wrecks. Final image: Alexi on the bowsprit in a storm he made,
-the coast strip of the Engraved Sea at the bottom of the frame with its moorings lifting. Cost kept:
-the princess leaves the boat at the halls; the `toll` ledger is sung to the hymn's tune, by name,
-with no other words.
+the coast strip of the Engraved Sea at the bottom of the frame with its moorings lifting. He
+repudiates the tab. Cost kept: the surety is called, and the princess leaves the boat at the halls
+to go ashore and face it for her father's house; the `toll` ledger is sung to the hymn's tune, by
+name, with no other words.
 
 ### The Lord's Peace
 
@@ -1236,7 +1264,9 @@ The Lord of Tea owns every ship that sails. The sea is safe. Alexi is "a man on 
 cannot make the tide answer; the game does not say he forgot, only that the sea stopped answering.
 Final image: noon on the beach, buoy bells at even intervals, Alexi turning a bottle in his hand and
 stirring the water at his ankles, which does nothing. The princess is a Company ward with a pension.
-Wenna counts the children across, on time. The narrator says nothing.
+Wenna counts the children across, on time. The narrator says nothing. Cost kept: he took the
+salary (Harbourmaster-General, tides to a timetable) or lost the board; the last bottle is Company
+issue; the Wreck Book closes, and so does every hymn.
 
 ### How a player reaches each one on purpose
 
@@ -1245,7 +1275,8 @@ Wenna counts the children across, on time. The narrator says nothing.
 | The Charter | Rewrite charters rather than strike them (needs trust 50, so read with her and lay lanes early); keep five or six regions between 45 and 70 with lanes; gather crews to reach devotion 50; at the final match aim for 4–4 and press Sign. |
 | No Lord (default) | Free ports and push regions wild enough to win the final match (5+ wild regions or most ports freed); then choose to give up the sea. |
 | The Wild Sea | As No Lord, with at least 5 regions at Wild 60+ at the tally, and choose to keep it. Expect most of the `toll` ledger to fill. |
-| The Lord's Peace | Still the stones, leave charters bound, or lose the final match. |
+| Paid in Kind | Find all eight chits (one in each mode's play, section 12, "The tab"), pin every one at the tally, win the final match, and at the tideline choose Pay. |
+| The Lord's Peace | Take the salary at The Cup; or still the stones, leave charters bound, or lose the final match. |
 
 ## 14. UI and HUD
 
@@ -1418,7 +1449,10 @@ The author accepted the whole of `DEEP_DIVE.md` on 2026-11-15 ("i accept"), and 
 decisions its roadmap had left open: Alexi signed the sea away himself; the king stood surety and
 the princess withheld the writ; the Lord of Tea's history and his seasickness; a fifth ending beside
 the default; and the "future scholars" annotating a second run. This section states the accepted
-story. It is built in three phases. Phase 1 was built on 2026-11-15 and phase 2 on 2026-11-16; phase 3 waits.
+story. It is built in three phases. Phase 1 was built on 2026-11-15, and phases 2 and 3 on 2026-11-16.
+All three are now built. What is still not built: every 3D scene is a design and a Blender build file
+until it is made in Blender, including the five phase 3 scenes; the portraits (generated images) are
+not made; and the full game's match sizes are cut in the web prototype (below).
 
 ### The question
 
@@ -1464,17 +1498,17 @@ Nothing here is remembered. The chits are paper, found and read, so COLLECTION's
 | # | Scene | Status | Scene id | What turns | Phase |
 | --- | --- | --- | --- | --- | --- |
 | 1 | The Xylophone | Source | `s-cabin-dawn` | One bottle has a paper tied at its neck. Ashore the letters swim | 1 (the bottle is on the wall) |
-| 2 | The Princess on the Shore | Source | `s-beach-princess` | The warning, verbatim. A second paper stays in her sleeve | 3 |
+| 2 | The Princess on the Shore | Source | `s-beach-princess` | The warning, verbatim. A second paper stays in her sleeve | 3 (built: the open-book start shows it) |
 | 3 | The Ripple | Existing | `s-company-lane` | He is weak in ordered water | built |
 | 4 | The Slate | New | `s-chandlery` | He is refused; the chits exist; Halse plays Liar's Tide in a dockhand's seat | 1 |
 | 5 | The First Squall | Existing | `e-first-squall` | Devotion is power | built |
 | 6 | The Account Rendered | Existing, changed | `s-home-tideline` | The first Tide Reckoning comes back countersigned: the Lord of Tea is keeping the player's score | 1 |
 | 7 | **Schedule C** (midpoint) | New, inside an existing scene | `g-charter-tidewater` | The clause binding Tidewater routes off the page to the bottle on the cabin wall. The Company's title is his own signature | 1 |
 | 8 | The Open Chart | Existing, changed | `s-chart-table` and the four regions | Each region holds a chit | 1 (the chits); 2 (Nos. 4, 5 and 6 found in play, built 2026-11-16) |
-| 9 | The Second Collision, then The Inventory (darkest) | New; the clerks are existing | `s-kings-halls`, and scenes to add | She leaves with the writ. The clerks tag the cabin walls as the surety's security. He is ashore, dry and alone | 3 |
-| 10 | The Oars | New | scene to add | The king gives back the one untagged thing, and the photograph | 3 |
-| 11 | The Cup and the final match | New, then existing | `s-counting-house`, `g-tea-final` | The Lord offers a salary: Harbourmaster-General, tides to a timetable. Then the board | 3 |
-| 12 | The Tideline | Existing, changed | `s-tideline-final` | Keep, give up, or pay | 3 (the tab that opens Pay: 1) |
+| 9 | The Second Collision, then The Inventory (darkest) | New; the clerks are existing | `s-second-collision`, `s-the-inventory` | She leaves with the writ. The clerks tag the cabin walls as the surety's security. He is ashore, dry and alone | 3, built |
+| 10 | The Oars | New | `s-the-oars` | The king gives back the one untagged thing, and the photograph | 3, built |
+| 11 | The Cup and the final match | New, then existing | `s-the-cup`, `g-tea-final` | The Lord offers a salary: Harbourmaster-General, tides to a timetable. Then the board | 3, built |
+| 12 | The Tideline | Existing, changed | `s-tideline-final`, `s-end-paid-in-kind` | Keep, give up, or pay | 3, built (the tab that opens Pay: 1) |
 
 Scene 7 turns the game from "win it back" to "it was lost fairly". Scene 9 removes the two things
 the design teaches the player to love: the walls and her.
@@ -1485,11 +1519,11 @@ All five are proposals; none is `as_written`, and No Lord stays the default.
 
 | Ending | In the accepted story | In the data |
 | --- | --- | --- |
-| The Wild Sea | He repudiates the tab. The surety is called, and she goes ashore to face it. The toll is sung by name | As section 13; the changed cost waits for phase 3 |
-| The Lord's Peace | He takes the salary. The last bottle is Company issue. The Wreck Book closes, and so does every hymn | As section 13; phase 3 |
-| No Lord (default) | The debtor ceases to exist, so the debt dies. So does anyone who could answer for the drowned | As section 13; phase 3 |
-| The Charter | The tab becomes a schedule of the terms. The toll is read as the reason for the lanes | As section 13; phase 3 |
-| **Paid in Kind** (new) | After a win, with all eight chits matched, he unsigns them: eight counter-clockwise stirs at the tideline, each taking a power tier off the rose ring for good. The Company's claim on the sea is gone; what it built and pays for stays. He is a god who owes nothing and can raise a ripple. Cost: he can never dive for anyone again, the wild regions stay as wild as the player left them, and the toll is entered as "outstanding, for ever" | Not yet in `data/endings.json`: phase 3. Phase 1 writes what it will read, `tab.matched` and `pay_open` |
+| The Wild Sea | He repudiates the tab. The surety is called, and she goes ashore to face it. The toll is sung by name | Built 2026-11-16: section 13 and its summary carry the cost |
+| The Lord's Peace | He takes the salary. The last bottle is Company issue. The Wreck Book closes, and so does every hymn | Built: section 13; the salary is offered at `s-the-cup` (`cup_choice`) |
+| No Lord (default) | The debtor ceases to exist, so the debt dies. So does anyone who could answer for the drowned | Built: section 13 |
+| The Charter | The tab becomes a schedule of the terms. The toll is read as the reason for the lanes | Built: section 13 |
+| **Paid in Kind** (new) | After a win, with all eight chits matched, he unsigns them: eight counter-clockwise stirs at the tideline, each taking a power tier off the rose ring for good. The Company's claim on the sea is gone; what it built and pays for stays. He is a god who owes nothing and can raise a ripple. Cost: he can never dive for anyone again, the wild regions stay as wild as the player left them, and the toll is entered as "outstanding, for ever" | Built: `data/endings.json` priority 2, `final_choice: pay`, `s-end-paid-in-kind`; section 13 |
 
 ### Phase 1, built in this pass: the tab, on paper
 
@@ -1547,13 +1581,63 @@ game's shared storage; the full game keeps them in `data/flags.json`.
 The remaining chits are found in play: No. 4 at the end of The Strait, No. 5 in The Trench, No. 6
 under the Comptroller's board. Nos. 7 and 8 wait for phase 3 with their scenes.
 
-### Phase 3, accepted and waiting
+### Phase 3, built 2026-11-16: the people and the end
 
-- **The people and the end:** The Second Collision, The Inventory, The Oars, The Cup; Paid in Kind
-  in `data/endings.json` and section 13, with the changed costs of the other four; the open-book
-  second run and the scholars' footnotes; portraits and ending cards; the long puzzle's payoff at the
-  tideline. Phase 2 does not build or contradict them: the final match's result still "waits for the
-  tideline", and no ending was added.
+**Scenes added** (in `data/scenes.json`, `assets/assets.json`, the location's `blender/` build file
+and `storyboard_additions.md`; no new location, so no new location image). Chapter lengths do not
+change: each new scene takes its minutes from the scene before it.
+
+| Id | Chapter | Where | What turns | Writes | Minutes, taken from |
+| --- | --- | --- | --- | --- | --- |
+| `s-second-collision` | `ch5-kings-halls`, after `s-kings-halls` | The halls' gallery of mirrors (`kings-halls`) | He cannot stop and hits her again; the writ falls out between them, and chit No. 7 lies on the glass, readable only in the mirror. She leaves with the writ | `writ.fallen`, `princess.trust`, `princess_aboard` (false), `chits` | 3, from `s-kings-halls`' |
+| `s-the-inventory` | `ch5-kings-halls`, after `g-charter-halls` | The cabin (`boat-cabin`), grey light | The clerks have tagged every object on the walls as the surety's security. He is ashore in his own cabin, dry and alone. The darkest beat | `cabin.tagged` | 3, from `g-charter-halls`' |
+| `s-the-oars` | `ch5-kings-halls`, after the Inventory | The throne room (`kings-halls`), evening | The king gives back the one thing the clerks did not tag, the dinghy's oars, and the photograph of a young man at an oar beside Alexi. He does not say who it is; she finds it later on the cabin wall, and comes back aboard | `has_photograph`, `princess_aboard`, `princess.trust` | 2, from `e-blockade-run`'s |
+| `s-the-cup` | `ch6-lord-of-tea`, after `s-counting-house` | The counting-house board (`counting-house`) | He pours the blend from the jar in Alexi's own cabinet, drinks hot water himself ("tea is for selling"), and offers the salary with chit No. 8 under his hand. Take it (The Lord's Peace), or sit down to play | `cup_choice`, `chits` | 3, from `s-counting-house`'s |
+| `s-end-paid-in-kind` | `ch7-tideline` | The beach (`home-reach-beach`) | Paid in Kind's final image | (reads `toll`, `chits`, every `wild.*`) | 2, from `s-tideline-final`'s |
+
+`s-tideline-final` gains a third interaction, Pay (only with `pay_open`), and `final_choice` gains the
+value `pay`. Chit No. 8 is taken out of the Lord's hand by winning the final match, or goes under
+the terms as their last schedule when it is signed at a tie. New flags: `writ.handed`, `writ.fallen`,
+`cabin.tagged`, `has_photograph`, `cup_choice`, and two kept across new games, `meta.runs` and
+`meta.last_ending`.
+
+**The long puzzle, paid off (web).** Each mode that holds a chit writes it to the shared `chits`
+list when it is found: No. 1 at the end of Schedule C (the Charter's twist), No. 2 when Mother Halse
+is seen off the bench (Liar's Tide, teach), No. 3 in the strongbox (The Deep, teach), No. 4 in
+Corran's lamp room (Dead Reckoning, test), No. 5 on the trench floor (The Deep, test), No. 6 under
+the Comptroller's board (The Tea Board, test), No. 7 in the gallery of mirrors after The Glass (The
+Engraved Sea, twist, which now ends on the Second Collision), and No. 8 from the Lord of Tea's hand
+(The Tea Board, twist, after The Cup). Every mode's ladder card has the ledger, "Alexi, his account",
+with the chits in hand and, for each one missing, where it lies. With all eight in hand the
+Charter's tab opens (until then its button opens the ledger); pinning all eight takes the player to
+the tideline, where the final match's result decides what is offered: after a win, Pay (eight
+counter-clockwise circles on the water, each chit's ink running out and a tier going off the rose
+ring), Keep (only with five Wild regions on the tab's chart) or Give up; after a match signed at a
+tie, Sign the terms; otherwise the board was his. The choice is shown on the ending's generated
+card with its code-drawn lettering, recorded, and returned by `loading.js`'s `finale()` on the
+game's menu. In the web build a tie in the final match counts as signed when no lane is cracked
+(the web board has no Sign button).
+
+**The second playthrough (web).** A finished run is recorded (`runs`, and the ending in
+`last.ending`), and its chits go back to the drawer. From then:
+
+1. In The Deed (the Charter's teach) a second paper is said to stay in her sleeve, and the bottle on
+   the cabin wall can be shown to her: she hands over the writ at once, with chit No. 1 (the
+   open-book start, `writ.handed`).
+2. The future scholars footnote the pages, disagreeing about the ending the player got last time:
+   at the foot of the deed, of page II of the harbour book, of Mother Halse's slate (Liar's Tide),
+   of The Cup (the Tea Board's twist) and of the tab.
+
+A first run shows none of these.
+
+**Art drawn for phase 3** (`art/src/97_phase3.py`): the lettering for the five ending cards; the tab
+ledger page; the scholars' footnote; a chit unsigned; The Cup; the king's photograph (two young men
+from behind, at the oars; no faces). The ending cards themselves are the generated images in
+`keyart/`.
+
+**Not built in phase 3:** the portraits (18 generated images); the photograph and the Inventory in
+play (they are 3D scenes); the Second Collision as its own scene in the web build (it is the close of
+The Glass); the Sign button on the web board; any 3D scene in Blender.
 
 ## 22. Added for the game
 
@@ -1619,14 +1703,14 @@ below is invented, none is the author's text, and each is marked "accepted 2026-
   becalmed, the divers' hour, the underwritten lighters, "not yet called"); that the Salt Steps'
   chit is the one under the Comptroller's board.
 - *People* (accepted 2026-11-15): Mother Halse, the Tidewater chandlery, the slate, the harbour
-  school paid for by the chits; her dice manner (no tell, bids in chalk). Waiting for phase 3: the
+  school paid for by the chits; her dice manner (no tell, bids in chalk). Built in phase 3 (below): the
   surety and the king's photograph; the writ in the princess's sleeve; the Lord of Tea's past, the
   Wreck Book, his seasickness, hot water, the salary.
 - *Scenes* (accepted 2026-11-15): The Slate; Schedule C; the countersigned Tide Reckoning; a chit in
-  every region; the matching step at the tally. Waiting for phase 3: The Second Collision, The
+  every region; the matching step at the tally. Built in phase 3 (below): The Second Collision, The
   Inventory, The Oars, The Cup.
-- *Ending* (accepted 2026-11-15; phase 3): Paid in Kind, its Pay choice and conditions; the changed
-  costs of the other four. Phase 1 adds only `tab.matched` and `pay_open`.
+- *Ending* (accepted 2026-11-15, built 2026-11-16): Paid in Kind, its Pay choice and conditions; the
+  changed costs of the other four. Phase 1 added `tab.matched` and `pay_open`; phase 3 the rest.
 - *Rules* (accepted 2026-11-15): Trace, the step between Break and Decide in the harbour book; the
   thread that leaves the page; the drawer's mark made with one stir (clockwise matches); the tab as
   the last Charter, with Wet (a drop of seawater raises a pledge and blurs one unpinned line; a
@@ -1693,5 +1777,42 @@ the author's text, and each is marked "accepted 2026-11-15, built 2026-11-16".
   "She came here on 075: the way back is its reciprocal."
 - *The collection thread* (docs/DEEP_DIVE.md section 4): another game's object sits in the margin of
   Schedule C in the twist of The Charter, unremarked.
+
+**Built 2026-11-16 (phase 3; inside the acceptance of 2026-11-15).** Each item is invented, none is
+the author's text, and each is marked "accepted 2026-11-15, built 2026-11-16".
+
+- *Scenes* (accepted 2026-11-15, built 2026-11-16): `s-second-collision`, `s-the-inventory`,
+  `s-the-oars`, `s-the-cup`, `s-end-paid-in-kind`, each in an existing location and build file, and
+  Pay at `s-tideline-final`.
+- *Paid in Kind* (accepted 2026-11-15, built 2026-11-16) in `data/endings.json` at priority 2, and the
+  changed costs of the other four in their summaries and in section 13.
+- *Worded or decided in building, for the author to keep or strike* (accepted 2026-11-15, built
+  2026-11-16): that Paid in Kind's cost "never dive for anyone again" means no stir above Ripple; that
+  chit No. 7 lies on the gallery glass and reads only in the mirror; that taking the salary skips the
+  final match; that chit No. 8 is under the Lord's hand at The Cup, is let go on a win and becomes the
+  terms' last schedule on a signed tie; that in the web board a tie with no cracked lane counts as
+  signed; that Keep is offered at the tab's tideline only with five Wild regions on its chart; that the
+  princess finds the photograph on the cabin wall and comes back aboard after The Oars; the clerks'
+  tags as "inventory lines" on the fourteen captions; the photograph's pencilled "the spring regatta";
+  the new flags (`writ.handed`, `writ.fallen`, `cabin.tagged`, `has_photograph`, `cup_choice`,
+  `meta.runs`, `meta.last_ending`).
+- *The long puzzle's payoff* (accepted 2026-11-15, built 2026-11-16): the ledger page in every mode,
+  "Alexi, his account"; the tab opening only with all eight chits; the tideline after the tab, and Pay
+  as eight counter-clockwise circles; the finale on the menu. A finished run clears the chits for the
+  next.
+- *The second run* (accepted 2026-11-15, built 2026-11-16): the open-book start (the bottle shown to her
+  in The Deed, the writ handed over at once, chit No. 1 with it); the future scholars' footnotes on the
+  deed, the harbour book, the slate, The Cup and the tab, twenty-five of them, five for each ending
+  the last run may have reached (written for the game; none is the author's).
+- *Lines* (accepted 2026-11-15, built 2026-11-16): the deep dive's "A warning is what you give a man
+  before the writ. I gave you the warning." (the open-book start) and "He stirred, and the sea gave
+  him a ripple, and for once it was all he had asked for." (Paid in Kind). Written in the same voice:
+  the finale texts of all five endings, among them the Voice's "We had owed the sea a great deal; now
+  it was written down where anyone could read it." (The Charter); The Cup's offer ("Harbourmaster-General.
+  Tides to a timetable, a salary, a house ashore. Sign under that one and nothing need be played
+  for."); the close of The Glass (the Second Collision); the tideline's options; the result lines of
+  a signed tie and of the salary.
+- *Art* (accepted 2026-11-15, built 2026-11-16): the lettering for the five ending cards, the tab
+  ledger, the scholars' footnote, the unsigned chit, The Cup, the king's photograph.
 
 **Not added, deliberately:** the name Poseidon; a name for the princess or her father's kingdom; any line in which the narrator names or explains itself; a reveal of the narrator in any ending; more than one set of hymn words.

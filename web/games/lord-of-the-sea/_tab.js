@@ -6,7 +6,8 @@
 // the ink stands up again, but each wetting runs one line of the chart to a blur for good.
 // All eight pinned opens Pay at the tideline. Every pledge, every "kept here" line and every line of talk
 // is written for the game (DESIGN.md section 22).
-import { pic, endCard, chapterStrip, circleGesture } from "./_art.js";
+import { pic, endCard, keyCard, chapterStrip, circleGesture } from "./_art.js";
+import { flag, setFlag, ENDINGS, scholarsNote, footnote } from "./_ladder.js";
 
 const INK = "#2a2118", RED = "#8C2B2B", PAPER = "#F4F1E8", VELLUM = "#efe3c4", WOOD = "#6B4A2B", BLUE = "#1F2E4A", GREEN = "#2F6B5E", GOLD = "#E7A93B", SEAINK = "#3C7A6A";
 
@@ -129,6 +130,13 @@ export function mountTab(root, api) {
     .${P}deed kbd { font-family:inherit; border:1px solid ${INK}; padding:0 4px; font-size:14px; }
     .${P}deed .gentle { text-align:center; font-style:italic; color:${GREEN}; font-size:15px; margin:0 0 8px; }
     .${P}deed button { display:block; margin:0 auto; font-size:18px; padding:8px 22px; background:${RED}; color:${PAPER}; }
+    .${P}tlo { margin:0; padding:10px 0 0; border-top:1px solid rgba(42,33,24,.35); display:grid; gap:9px; }
+    .${P}tlo li { display:grid; grid-template-columns:minmax(0,170px) minmax(0,1fr); gap:10px; align-items:center; font-size:15px; }
+    .${P}tlo li::before { content:none; }
+    .${P}deed .${P}tlo button, .${P}deed [data-p] { margin:0; width:100%; font-size:17px; padding:8px 10px; background:${RED}; color:${PAPER}; border:1px solid ${INK}; cursor:pointer; }
+    .${P}deed .${P}tlo button:disabled { opacity:.45; cursor:default; }
+    .${P}deed [data-p] { width:auto; background:${SEAINK}; }
+    @media (max-width:520px) { .${P}tlo li { grid-template-columns:minmax(0,1fr); gap:4px; } }
     @media (prefers-reduced-motion: reduce) { .${P}reg.shake, .${P}reg.flash { animation:none; } }
     @media (max-width:980px) { .${P}chart { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media (max-width:760px) { .${P}lay { grid-template-columns:minmax(0,1fr); padding-bottom:230px; } .${P}reg { min-height:0; } .${P}reg .kp { font-size:13px; }
@@ -143,6 +151,7 @@ export function mountTab(root, api) {
       <p class="goal">Pin each of the eight chits to the region whose order it bought.</p>
       <p class="open">Chapter VI, the cabin, the night of the tally. Forty years of drinking on credit lie on the chart table: eight chits, each signed with a clockwise spiral, each pledging something small. The Company bought them all, and built its peace on them.</p>
       ${losses >= 2 ? `<p class="gentle">She has sat through this twice: she will answer three questions, not one.</p>` : ""}
+      ${footnote(api, scholarsNote(api, "tab"))}
       <ol>
         <li><span><b>Pin</b>: pick a chit, then the region whose line says what the pledge paid for. Three ink; a wrong pin spills one.</span></li>
         <li><span><b>Wet</b>: four pledges cannot be read. Circle on the chit (or <kbd>W</kbd>) to stir a drop of seawater onto it. The ink stands up again, and one line of the chart runs to a blur for good.</span></li>
@@ -252,15 +261,84 @@ export function mountTab(root, api) {
     S.over = true; render();
     api.store.set("tablosses", won ? 0 : losses + 1);
     later(() => {
-      if (won) {
-        endCard(root, art, "wreck-book-open-year", "THE WRECK BOOK · OUTSTANDING, FOR EVER", "#12203a", "title-lettering");
-        api.end({ outcome: "win", text: `All eight chits pinned to what they bought, ${S.ink === 3 ? "and not a drop of ink spilled" : `with ${S.ink} ink to spare`}${S.wets ? `; ${S.wets} wetted` : ""}. The tab is read whole for the first time in forty years, and Pay opens at the tideline: eight counter-clockwise stirs, one for each chit, each taking a tier off the rose ring for good.${tollCount ? ` The ${tollCount} in this run's toll will be entered as “outstanding, for ever”.` : ""}` });
-      } else {
+      if (won) tideline();
+      else {
         endCard(root, art, "wreck-book-lost-list", "THE WRECK BOOK · THE LOST LIST");
         api.end({ outcome: "lose", text: `The ink is gone with ${pinned()} of eight pinned. The tab stays a drawer of paper he cannot read, Pay stays shut at the tideline, and the Lord of Tea goes on keeping the account alone.` });
       }
     }, won ? 1600 : 900);
   }
+  // ---- phase 3: the tideline. The tab read whole opens Pay after a won final match (Paid in Kind); a match signed
+  // at a tie makes the tab the schedule of the terms (The Charter); after a win he may also keep the sea (The Wild
+  // Sea, five wild regions or more) or give it up (No Lord). Choosing ends the run: it is recorded for the second
+  // playthrough, and the chits go back to the drawer for the next.
+  let tl = null, unpad = null, paid = 0;
+  const RING = 8;
+  function tideline() {
+    setFlag(api, "tab.matched", 8); setFlag(api, "pay_open", true);
+    const res = flag(api, "tea.final", "");
+    const wildN = Object.values(run).filter((r) => r.wild >= 60).length;
+    tl = document.createElement("div");
+    tl.className = P + "how"; tl.setAttribute("role", "dialog"); tl.setAttribute("aria-label", "The tideline");
+    const opts = res === "win"
+      ? `<li><button type="button" data-t="pay">Pay</button><span>Eight counter-clockwise stirs at the stone, one for each chit. Each takes a tier off the rose ring, for good.</span></li>
+         <li><button type="button" data-t="the-wild-sea" ${wildN >= 5 ? "" : "disabled"}>Keep the sea</button><span>${wildN >= 5 ? `Repudiate the tab and keep it: ${wildN} regions are wild enough to answer.` : `Only ${wildN} of eight regions on this chart are wild enough. The sea will not answer that.`}</span></li>
+         <li><button type="button" data-t="no-lord">Give it up</button><span>Let go of the sea, the tab and the god. The debtor stops existing, and so does the debt.</span></li>`
+      : res === "draw" ? `<li><button type="button" data-t="the-charter">Sign the terms</button><span>The match was signed at a tie: the tab becomes the schedule of the terms, every pledge a clause he keeps.</span></li>`
+      : `<li><button type="button" data-t="the-lords-peace">Go down to the water</button><span>The board was not his. Whatever is left is the Lord of Tea's to call.</span></li>`;
+    tl.innerHTML = `<div class="${P}deed">${chapterStrip(art, 8, "Chapter VIII: The Tideline")}
+      <h2>The Tideline</h2>
+      <p class="goal">The tab is read whole, for the first time in forty years.</p>
+      <p class="open">Dawn, as at the start. The stone stands in the shallows and the eight chits are in his shirt, pinned to what they bought. ${res === "win" ? "He beat the Lord of Tea at his own board, so what is done with the sea is his to say." : res === "draw" ? "The match was a tie, and she had the terms ready." : "He did not win the board."}</p>
+      <ol style="list-style:none;padding-left:0" class="${P}tlo">${opts}</ol></div>`;
+    w.appendChild(tl);
+    tl.querySelectorAll("[data-t]").forEach((b) => b.addEventListener("click", () => (b.dataset.t === "pay" ? pay() : conclude(b.dataset.t))));
+    (tl.querySelector("[data-t]:not(:disabled)") || tl.querySelector("button")).focus();
+  }
+  function pay() {
+    const box = tl.querySelector("." + P + "deed");
+    const ringSvg = () => `<svg viewBox="-60 -60 120 120" width="120" height="120" aria-hidden="true">${art.has("rose-ring") ? `<image href="${art.url("rose-ring")}" x="-60" y="-60" width="120" height="120" opacity=".55"/>` : ""}${Array.from({ length: RING }, (_, i) => { const a = -Math.PI / 2 + (i / RING) * Math.PI * 2; return `<circle cx="${(Math.cos(a) * 46).toFixed(1)}" cy="${(Math.sin(a) * 46).toFixed(1)}" r="5" fill="${i < RING - paid ? SEAINK : "none"}" stroke="${SEAINK}" stroke-width="1.5"/>`; }).join("")}<text y="5" text-anchor="middle" font-size="13" fill="${INK}" font-family="Georgia">${RING - paid}</text></svg>`;
+    const draw = (msg) => {
+      box.innerHTML = `<h2>Pay</h2><p class="goal">Unsign them: one counter-clockwise turn for each chit.</p>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center">
+          <div class="${P}pad" data-pad="1" role="button" tabindex="0" aria-label="The water at the stone: draw a counter-clockwise circle, or press Q" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;padding:8px;background:radial-gradient(ellipse at 50% 40%,#e7efe9,#bcd2c8);border:1px solid ${SEAINK};cursor:grab;touch-action:none">
+            ${CHITS.map((c, i) => pic(art, i < paid ? "chit-unsigned" : c.raised || c.id, i < paid ? `Chit ${c.n}, unsigned` : `Chit ${c.n}`, `style="width:100%;height:auto;display:block;pointer-events:none${i < paid ? ";opacity:.8" : ""}"`) || `<span style="display:grid;place-items:center;aspect-ratio:46/30;background:${i < paid ? "#dfe9e4" : VELLUM};font-size:12px">${i < paid ? "blank" : "No. " + c.n}</span>`).join("")}
+          </div>
+          <div style="display:grid;justify-items:center;gap:2px">${ringSvg()}<span style="font-size:12px;font-family:'IM Fell English SC',Georgia,serif;letter-spacing:.12em">THE ROSE RING</span></div>
+        </div>
+        <p class="open" aria-live="polite" style="min-height:2.8em;margin-top:10px">${msg}</p>
+        <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><button type="button" data-p="ccw">Unsign one (Q)</button></div>`;
+      if (unpad) unpad();
+      unpad = circleGesture(box.querySelector("[data-pad]"), turn);
+      box.querySelector("[data-p=ccw]").addEventListener("click", () => turn(-1));
+    };
+    function turn(dir) {
+      if (paid >= 8 || S.over2) return;
+      if (dir > 0) { draw("Clockwise is how he signed them. Every spiral ran clockwise; so does everything he does when he is not thinking."); return; }
+      paid++;
+      const c = CHITS[paid - 1];
+      draw(paid < 8 ? `No. ${c.n}, “${c.pledge}”, runs out into the foam, and a tier goes off the rose ring for good. ${8 - paid} to go.` : "The last of the ink goes out of the paper. He stirs once more, and the sea gives him a ripple.");
+      if (paid === 8) { S.over2 = true; later(() => conclude("paid-in-kind"), api.reducedMotion ? 300 : 1400); }
+    }
+    payKey = (e) => { if (e.key === "q" || e.key === "Q") turn(-1); if (e.key === "e" || e.key === "E") turn(1); };
+    addEventListener("keydown", payKey);
+    draw("Forty years of chits, each signed with a clockwise spiral. Turn the other way.");
+    box.querySelector("[data-p=ccw]").focus();
+  }
+  let payKey = null;
+  function conclude(id) {
+    if (payKey) { removeEventListener("keydown", payKey); payKey = null; }
+    if (unpad) { unpad(); unpad = null; }
+    const e = ENDINGS[id];
+    const runs = Math.max(0, +flag(api, "runs", 0) || 0) + 1;
+    setFlag(api, "tab.ending", id); setFlag(api, "last.ending", id); setFlag(api, "runs", runs);
+    // the run is over: the chits go back to the drawer, the board is to be played again
+    setFlag(api, "chits", []); setFlag(api, "chit2", false); setFlag(api, "tea.final", "");
+    if (tl) { tl.remove(); tl = null; }
+    keyCard(root, art, api.keyart ? api.keyart("ending-" + id) : "", "lettering-" + id, id === "paid-in-kind" && tollCount ? `THE TOLL · ${tollCount} OUTSTANDING, FOR EVER` : "");
+    api.end({ outcome: id === "the-lords-peace" ? "done" : "win", text: `${e.name}. ${e.text}${id === "paid-in-kind" && tollCount ? ` This run's toll: ${tollCount}, every one entered “outstanding, for ever”.` : ""} The run is recorded; the next one starts with an empty drawer.` });
+  }
+
   const onKey = (e) => {
     if (how.isConnected || S.over) return;
     if (/^[1-8]$/.test(e.key)) { pick(+e.key); const b = lay.querySelector(`[data-chit="${e.key}"]`); b && b.focus(); }
@@ -273,5 +351,5 @@ export function mountTab(root, api) {
   const b = how.querySelector("button");
   b.addEventListener("click", () => { how.remove(); S.started = true; say("Start with the four that can be read. A pin protects a region's line: nothing pinned can blur."); render(); });
   b.focus();
-  return { unmount() { timers.forEach(clearTimeout); timers.clear(); removeEventListener("keydown", onKey); if (ungest) ungest(); S.over = true; } };
+  return { unmount() { timers.forEach(clearTimeout); timers.clear(); removeEventListener("keydown", onKey); if (ungest) ungest(); if (unpad) unpad(); if (payKey) removeEventListener("keydown", payKey); S.over = true; } };
 }

@@ -69,6 +69,22 @@ export function endCard(root, art, id, caption = "", tone = "#12203a", titleId =
   root.appendChild(d);
 }
 
+// A generated ending card (api.keyart(id), a path) behind the result, with the code-drawn lettering over it. Falls
+// back to the lettering alone, and to nothing, when either is missing.
+export function keyCard(root, art, src, letteringId = "", caption = "", tone = "#0d1626") {
+  const lettering = letteringId && art && art.has(letteringId) ? art.url(letteringId) : "";
+  if (!src && !lettering) return;
+  const d = document.createElement("div");
+  d.setAttribute("aria-hidden", "true");
+  d.dataset.lotsCard = "1";
+  d.style.cssText = `position:absolute;inset:0;z-index:15;display:grid;place-items:center;align-content:center;gap:8px;padding:12px 12px clamp(170px,32vh,260px);box-sizing:border-box;background:${tone}f0;animation:lots-card .8s both;`;
+  d.innerHTML = `<style>@keyframes lots-card{from{opacity:0}to{opacity:1}}@media (prefers-reduced-motion: reduce){[data-lots-card]{animation:none!important}}</style>
+    ${src ? `<img src="${src}" alt="" style="max-width:min(820px,100%);max-height:100%;min-height:0;object-fit:contain;box-shadow:0 14px 40px rgba(0,0,0,.6);border:1px solid rgba(244,241,232,.5)" onerror="this.remove()">` : ""}
+    ${lettering ? `<img src="${lettering}" alt="" style="width:min(460px,86%);height:auto;margin-top:${src ? "-9%" : "0"};box-shadow:0 6px 18px rgba(0,0,0,.5)">` : ""}
+    ${caption ? `<div style="font-family:'IM Fell English SC',Georgia,serif;letter-spacing:.16em;font-size:13px;color:#F4F1E8;text-align:center">${caption}</div>` : ""}`;
+  root.appendChild(d);
+}
+
 // The strip of a chapter plate that opens a how-to card.
 export function chapterStrip(art, n, alt) {
   const id = "chapter-0" + n;

@@ -17,7 +17,7 @@
 // the evidence, the cabin wall and the result cards are drawn with the game's art (api.art).
 import { pic, endCard, chapterStrip, circleGesture } from "./_art.js";
 import { mountTab } from "./_tab.js";
-import { ladder, setFlag } from "./_ladder.js";
+import { ladder, setFlag, gainChit, chitsHeld, secondRun, scholarsNote, footnote } from "./_ladder.js";
 
 const INK = "#2a2118", RED = "#8C2B2B", PAPER = "#F4F1E8", VELLUM = "#efe3c4", WOOD = "#6B4A2B", BLUE = "#1F2E4A", GREEN = "#2F6B5E", GOLD = "#E7A93B";
 const TRUST = 52;
@@ -58,7 +58,9 @@ const LADDER = {
     test: { name: "The Harbour Book", where: "Chapter IV: three pages, a decoy, a green tick, and a page the sea has had.", line: "Three pages, a decoy, a slip, and pages the sea has had." },
     twist: { name: "Schedule C", where: "Chapter IV, the midpoint: the answer is not in the document.", line: "The title under the dues. The answer is not in the document." },
   },
-  extra: { label: "The tab: pin eight chits", hint: "Or the last Charter of the game, at the tally in chapter VI:" },
+  // Phase 3: the tab opens only with all eight chits in hand; until then its button opens the ledger.
+  extra: (api) => { const n = chitsHeld(api).size; return n === 8 ? { label: "The tab: pin eight chits", hint: "All eight chits are in hand. The last Charter of the game, at the tally:", ready: true }
+    : { label: `The tab: ${n} of 8`, hint: "The last Charter of the game, at the tally, wants all eight chits:", ready: false }; },
 };
 const PAGES_ALL = ["I", "II", "III", "C"];
 const SUMMARY = [
@@ -94,6 +96,10 @@ const game = {
     const S = { wet: new Set(), blurred: new Set(), drops: 0, guest: false, chit: false, bottleSeen: false, schedSeen: false, page: 0, ink: 3, phase: "find", pinned: null, wrongPins: new Set(), threads: [], held: null, read: false, pencil: "", flash: null, loupe: -1, loupes: new Set(), slip: false, shake: null, splash: false, tries: 0 };
     if (twist) { S.phase = "trace"; S.pinned = 5; S.page = 3; S.schedSeen = true; S.slip = true; }
     const losses = +api.store.get("losses", 0) || 0;
+    // Phase 3, the second playthrough: the bottle can be shown to her in chapter I (the open-book start), and the
+    // future scholars footnote the deed and the harbour book.
+    const again = secondRun(api) && !twist;
+    const note = again ? scholarsNote(api, teach ? "deed" : "book") : "";
     const clauses = () => DOC.concat(S.slip && !teach ? [SLIP] : [], !teach && S.wet.has(1) ? [STRUCK] : []);
     const timers = new Set();
     const later = (fn, ms) => { const id = setTimeout(() => { timers.delete(id); fn(); }, ms); timers.add(id); };
@@ -232,6 +238,7 @@ const game = {
           : twist ? "Chapter IV, the cabin, the same evening. The dues are dead: forty years from 1703, and it is 1745. But clause 5 held the water itself “by the title recited in Schedule C”, and the clerk has brought the Schedule."
           : "Chapter IV, the cabin. The princess has fetched the Tidewater harbour book from the Company's office on her father's name. The clerk wants it back by the evening tide."}</p>
         ${losses >= 2 && !teach && !twist ? `<p class="gentle">She has already circled one page tab in pencil.</p>` : ""}
+        ${again && teach ? `<p class="gentle">A second paper stays in her sleeve. Among the fourteen things on the wall there is a bottle with a paper at its neck: show it to her, and see what she does.</p>` : ""}
         <ol>
           ${teach ? `<li><span><b>Follow</b> a red reference (click it, or Tab and Enter): a red thread joins the clauses in the index.</span></li>
           <li><span><b>Pin</b> the clause the others route through: the one with the most threads running into it.</span></li>
@@ -317,6 +324,7 @@ const game = {
             ${S.page === 3 ? `<svg class="${P}mark" viewBox="0 0 60 60" role="img" aria-label="The drawer's mark: a clockwise spiral"><path d="M30 30 C32 26 37 28 36 33 C35 39 26 40 23 34 C19 26 27 17 36 19 C47 22 49 37 41 44 C31 52 14 46 13 32 C12 20 22 10 34 10" fill="none" stroke="#3C7A6A" stroke-width="2.6" stroke-linecap="round"/></svg>` : ""}
             ${lens}
             <p class="${P}pencil" aria-live="polite">${S.pencil}</p>
+            ${note && S.page === (teach ? 0 : 1) ? footnote(api, note) : ""}
             ${hasSeal ? seal() + `<button type="button" class="${P}loupe" data-a="loupe" aria-label="Lift the seal to the loupe (L)">${S.loupe === S.page ? "lower the seal" : "loupe ⌕"}</button>` : ""}
           </article>
         </section>
@@ -466,13 +474,32 @@ const game = {
           if (k === "ccw") sign(-1);
           if (k === "keep") {
             closeWall(); S.chit = true; S.phase = "done"; setPencil("So: the dues are two years dead, and the title under them is your own note of hand. Schedule C will stand, whatever was done to the dues, until the tab is answered."); render();
-            api.store.set("losses", 0); setFlag(api, "tab.known", true);
+            api.store.set("losses", 0); setFlag(api, "tab.known", true); gainChit(api, 1);
             later(() => { endCard(root, art, "chit-1-bottle-neck", "CHIT No. 1 · ONE PAIR LAND LEGS, HARDLY USED"); api.end({ outcome: "win", text: `The thread left the page. The Company's title to the water of Tidewater is a note of hand, No. 1, “one pair land legs, hardly used”, drawn by Alexi, in a clockwise spiral, for a bottle. The water was not taken. It was bought, lawfully, and from him.${S.ink === 3 ? " Not a pin wasted on paper that only recites." : ""}${S.blurred.size > 1 ? " The Schedule is the worse for seawater." : ""} Chit No. 1 goes in the drawer, the first of eight.` }); }, 900);
           }
         });
       });
       S.sceneStep = step;
       (scene.querySelector("button.go") || scene.querySelector("[data-w=cw]")).focus();
+    }
+    // The open-book start (second run): shown the bottle among the cabin's things, she hands over the writ at once.
+    function showWrit() {
+      S.writ = true; S.chit = true;
+      const fresh = gainChit(api, 1); setFlag(api, "tab.known", true); setFlag(api, "writ.handed", true);
+      const card = document.createElement("div");
+      card.className = P + "how"; card.setAttribute("role", "dialog"); card.setAttribute("aria-label", "The writ");
+      card.innerHTML = `<div class="${P}deed" style="max-width:620px">
+        <div style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:12px;align-items:start">
+          <div>${pic(art, "charter-writ", "The writ: Alexi principal debtor, the king's house surety", `style="width:100%;height:auto;display:block;box-shadow:0 4px 10px rgba(0,0,0,.35)"`)}${pic(art, "chit-1-bottle-neck", "Chit No. 1", `style="width:100%;height:auto;display:block;margin-top:8px"`)}</div>
+          <div><h2 style="font-size:clamp(30px,6vw,40px)">The writ</h2>
+          <p class="open" style="text-align:left">He unhooks the bottle and holds it out to her, the paper at its neck turned to the lamp. She reads the spiral on it for a long moment. Then she takes the second paper out of her sleeve and lays it on the chart table: a writ, the Company's, naming him principal debtor and her father's house surety.</p>
+          <p class="open" style="text-align:left">“A warning is what you give a man before the writ. I gave you the warning.”</p>
+          <p class="open" style="text-align:left;font-style:normal">Chit No. 1, “one pair land legs, hardly used”, goes in the drawer${fresh ? ", the first of eight" : ""}. Every clause of the deed now has a debtor's name behind it.</p></div></div>
+        <button type="button">Back to the deed</button></div>`;
+      w.appendChild(card);
+      const b2 = card.querySelector("button");
+      b2.addEventListener("click", () => { card.remove(); setPencil("With the writ on the table the deed reads plainer: the debt in clause 1 is his, and so is whatever it routes through."); render(); });
+      b2.focus();
     }
     function loupe() {
       if (!(S.page === 0 || S.page === 2)) return;
@@ -497,6 +524,7 @@ const game = {
       desk.querySelectorAll("[data-a]").forEach((b) => b.addEventListener("click", () => {
         const a = b.dataset.a;
         if (a === "read") { S.read = true; setPencil("She reads it out plainly — " + (teach ? "the debt, the house, the jetty, the taking, the witnesses. Count how many of the five lean on one." : SUMMARY[S.page])); render(); }
+        else if (a === "bottle" && again && teach && !S.writ) showWrit();
         else if (a === "bottle") { if (S.phase === "trace" && S.thread) openWall(); else if (S.chit) { setPencil("An empty bottle on a cord. The paper that was at its neck is in the drawer now."); render(); } else { S.bottleSeen = true; setPencil("A bottle on a cord, with a bit of paper tied at its neck. There are a great many bottles on this boat."); render(); } }
         else if (a === "loupe") loupe();
         else if (a === "wet") wet();

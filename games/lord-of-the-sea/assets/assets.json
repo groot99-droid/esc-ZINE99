@@ -9,7 +9,8 @@
         "s-cabin-dawn",
         "s-cabin-princess",
         "s-chart-table",
-        "s-cabin-tally"
+        "s-cabin-tally",
+        "s-the-inventory"
       ],
       "dimensions_m": [
         6,
@@ -68,7 +69,8 @@
         "s-end-charter",
         "s-end-no-lord",
         "s-end-wild-sea",
-        "s-end-lords-peace"
+        "s-end-lords-peace",
+        "s-end-paid-in-kind"
       ],
       "dimensions_m": [
         220,
@@ -271,7 +273,9 @@
       "id": "kings-halls",
       "name": "The King's Halls",
       "scenes": [
-        "s-kings-halls"
+        "s-kings-halls",
+        "s-second-collision",
+        "s-the-oars"
       ],
       "dimensions_m": [
         120,
@@ -294,7 +298,8 @@
       "id": "counting-house",
       "name": "The counting-house",
       "scenes": [
-        "s-counting-house"
+        "s-counting-house",
+        "s-the-cup"
       ],
       "dimensions_m": [
         40,

@@ -1,7 +1,47 @@
 {
  "game": "lord-of-the-sea",
- "count": 151,
+ "count": 161,
  "assets": [
+  {
+   "id": "lettering-no-lord",
+   "group": "title",
+   "title": "Ending card lettering: No Lord",
+   "w": 1200,
+   "h": 300,
+   "row": "Ending cards, one per ending (the lettering laid over each)"
+  },
+  {
+   "id": "lettering-paid-in-kind",
+   "group": "title",
+   "title": "Ending card lettering: Paid in Kind",
+   "w": 1200,
+   "h": 300,
+   "row": "Ending cards, one per ending (the lettering laid over each)"
+  },
+  {
+   "id": "lettering-the-charter",
+   "group": "title",
+   "title": "Ending card lettering: The Charter",
+   "w": 1200,
+   "h": 300,
+   "row": "Ending cards, one per ending (the lettering laid over each)"
+  },
+  {
+   "id": "lettering-the-lords-peace",
+   "group": "title",
+   "title": "Ending card lettering: The Lord's Peace",
+   "w": 1200,
+   "h": 300,
+   "row": "Ending cards, one per ending (the lettering laid over each)"
+  },
+  {
+   "id": "lettering-the-wild-sea",
+   "group": "title",
+   "title": "Ending card lettering: The Wild Sea",
+   "w": 1200,
+   "h": 300,
+   "row": "Ending cards, one per ending (the lettering laid over each)"
+  },
   {
    "id": "title-lettering",
    "group": "title",
@@ -571,6 +611,14 @@
    "row": "The Tea Board: 3 boards, 5 piece types, crack, tide dial"
   },
   {
+   "id": "the-cup",
+   "group": "pieces",
+   "title": "The Cup: tea and hot water on the board",
+   "w": 600,
+   "h": 400,
+   "row": "Wreck Book spreads"
+  },
+  {
    "id": "tide-dial",
    "group": "pieces",
    "title": "Tea Board: the tide dial",
@@ -1003,6 +1051,30 @@
    "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
   },
   {
+   "id": "chit-unsigned",
+   "group": "documents",
+   "title": "A chit, unsigned",
+   "w": 460,
+   "h": 300,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "king-photograph",
+   "group": "documents",
+   "title": "The photograph: two young men at the oars",
+   "w": 500,
+   "h": 380,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "scholars-footnote",
+   "group": "documents",
+   "title": "A footnote by the future scholars",
+   "w": 900,
+   "h": 160,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
    "id": "seal-company",
    "group": "documents",
    "title": "The Company's seal",
@@ -1064,6 +1136,14 @@
    "title": "The tender's strongbox",
    "w": 200,
    "h": 150,
+   "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
+  },
+  {
+   "id": "tab-ledger",
+   "group": "documents",
+   "title": "The tab: a page of the chandler's ledger",
+   "w": 900,
+   "h": 1200,
    "row": "The Charter: 5 documents, Schedule C, the writ, 8 chits, 6 seals"
   },
   {
