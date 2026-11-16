@@ -1150,7 +1150,8 @@
       ],
       "next": [
         "n7_shift_race",
-        "n7_your_door"
+        "n7_your_door",
+        "n7_lever_lock"
       ]
     },
     {
@@ -1183,6 +1184,32 @@
       ],
       "next": [
         "n7_shift_eye",
+        "n7_your_door",
+        "n7_lever_lock"
+      ]
+    },
+    {
+      "id": "n7_lever_lock",
+      "layer": "1d",
+      "name": "Lockwork: your own door",
+      "chapter": "n7",
+      "game": "lockwork",
+      "world_runs": true,
+      "enter": "push-in",
+      "exit": "pull-out",
+      "reads": [
+        "shift_clock",
+        "picks_left",
+        "seen_by_stranger"
+      ],
+      "writes": [
+        "lever_lock_open",
+        "picks_left",
+        "shift_clock"
+      ],
+      "next": [
+        "n7_shift_eye",
+        "n7_shift_race",
         "n7_your_door"
       ]
     },
@@ -1857,7 +1884,8 @@
         "link.one_hand",
         "seen_by_stranger",
         "card.own_door",
-        "seventh_row"
+        "seventh_row",
+        "lever_lock_open"
       ],
       "writes": [
         "own_lens_seen",

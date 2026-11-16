@@ -1816,3 +1816,5 @@ the author's text, and each is marked "accepted 2026-11-15, built 2026-11-16".
   ledger, the scholars' footnote, the unsigned chit, The Cup, the king's photograph.
 
 **Not added, deliberately:** the name Poseidon; a name for the princess or her father's kingdom; any line in which the narrator names or explains itself; a reveal of the narrator in any ending; more than one set of hymn words.
+
+**Author review, 2026-11-16.** The author reviewed this list and accepted every addition in it, phases 1 to 3, except where a row above says it is struck. Three were decided one by one: the Stuffing win rule (kept, Stuffed Ones), the six ward names (kept, WrymWretch) and the thirteen placeholder List items (kept, Missing Campsites).

@@ -322,7 +322,7 @@ Seven nights and a dawn. The pitch's four roles of the peephole are the four act
 | `n4` | Night Four: Lost Property | 20 | 3D, 2D, 1D | The gap under the door; a covered lens; Lockwork (wafer lock); Fenn's log: you are not the first | 3 |
 | `n5` | Night Five: The Confession Booth | 19 | 3D, 2D, 1D | Confessions and names; a ritual broken; the passage blackout | 4 |
 | `n6` | Night Six: One Hand | 20 | 3D, 2D, 1D | The safe dial against the 2:14 walk; one payer for every room; the mercenary inside 403 | 4 |
-| `n7` | Night Seven: The Lens in Your Door | 17 | 3D, 2D, 1D | The Account; the stranger in the passage; the knock at your door; the one choice | 5 |
+| `n7` | Night Seven: The Lens in Your Door | 17 | 3D, 2D, 1D | The Account; the stranger in the passage; Lockwork (lever lock) at your own door; the knock at your door; the one choice | 5 |
 | `dawn` | Dawn | 7 | 3D, 2D | The ending; the last lens | 3 |
 | | **Total** | **143** | | | |
 
@@ -384,7 +384,7 @@ No stretch is longer than 8 minutes without a new mechanic, place, revelation or
 
 - **The clock.** The shift runs from 23:00 to 05:00 (360 game minutes). In 3D and 2D the clock
   runs at 40× (1 real second is 40 game seconds), so a shift is 9 real minutes. A 1D page that
-  keeps the world running (Night Patience, and Lockwork on nights three, four and six) runs the
+  keeps the world running (Night Patience, and Lockwork on nights three, four, six and seven) runs the
   clock at 10×. The Statement, the Mosaic and the morning stop it.
 - **Returns.** When a guest's key calls the lift, the bell board rings that room's number (four
   rings for 404). The bell is heard everywhere in the passage. The guest's main door opens 12 game
@@ -629,7 +629,8 @@ Wren's call says "You went downstairs," and the knock at your door comes at 01:1
 **Order.** `n7_office` (3D, 1 min; Wren: "The file closes tonight. Write the account before the
 shift. Tonight you only confirm.") → `n7_account` (1D Statement, 5 min) → `n7_patience` (1D, 1.5
 min; one pass; cards 11 and 12, "Look at your own door.") → `n7_shift_eye` and `n7_shift_race`
-(2D, to 02:14) → `n7_your_door` (3D) → `n7_slide_run` (2D race, only on that choice) → dawn.
+(2D, to 02:14; at 02:00 `n7_lever_lock`, 1D Lockwork, world running, 1.5 min, inside the shift's
+time) → `n7_your_door` (3D) → `n7_slide_run` (2D race, only on that choice) → dawn.
 
 **Returns and beats.**
 
@@ -641,13 +642,26 @@ min; one pass; cards 11 and 12, "Look at your own door.") → `n7_shift_eye` and
 | 401 | 01:20 | Irons a shirt; reads chapter six; packs his kit; leaves at 01:50 |
 | 403 | in | Paints all night |
 
-**The stranger in the passage.** At 02:00 he lets himself in at the east end and walks west, one
-door every 2 game minutes, stopping at each lens. He does not look in. In the corridor race he is a
-figure the player must pass or wait for. He does not stop the player; if he meets them he nods.
+**The stranger in the passage.** At 01:58 he lets himself in at the east end and walks straight to
+the office. At 02:00 he turns a key in your door (below). Then he walks back to the east end and
+comes west again, one door every 2 game minutes, stopping at each lens, to reach your door at 02:14.
+He does not look in. In the corridor race he is a figure the player must pass or wait for. He does
+not stop the player; if he meets them he nods.
+
+**Your own door (`n7_lever_lock`, 02:00; built 2026-11-16).** Fenn turns last season's key in the
+office door from the passage, on Wren's errand: the bolt goes across to keep the watcher at the desk
+until he knocks. If the player is in the passage, he stands at the door with the key in it, steps
+aside to let them in, nods, and turns it when the door is shut. Inside, the player has the lock case
+open and works it from the wrong side: Lockwork's lever lock (section 11). Kept in their gates, the
+two levers cannot drop behind the bolt; the bolt is then only a bolt, and the player pushes it back
+when his key is drawn out (`lever_lock_open`) and has the passage until 02:14. Lost, the door is
+deadlocked from the passage until the knock, the lenses go on without the player, and Fenn turns
+the key back himself before he knocks. Not offered if `seen_by_stranger` (the knock has come at
+01:14).
 
 **The knock at your door.** At 02:14 (01:14 if `seen_by_stranger`) three knocks on the office
-door. Turning to it, the player sees for the first time a brass rose on the office door, at eye
-height, lit from the passage side. The player can put an eye to it and see an eye. Sets
+door. Turning to it, the player sees a brass rose on the office door, at eye height, lit from the
+passage side (the player first saw it from below at 02:00, over the keyhole, `n7_lever_lock`). The player can put an eye to it and see an eye. Sets
 `own_lens_seen`.
 
 **The one choice.** If the player opens the door within 10 real seconds, Fenn says "Walk with
@@ -833,7 +847,7 @@ doors and their roses, the light-well windows above a run of pipes, the ceiling.
 | Hazard: the windows | Upright on the floor between 18 and 26 m, the player is seen across the light well by any guest at their bathroom window (each occupied room spends 1 game minute in 10 there, shown as a lit square across the well). Seen: +30 suspicion to that guest. Crawling below the sill or using the pipe run is unseen. |
 | Hazard: the maid | Nights two to six, 01:00–01:30: Dora pushes a trolley west at 0.9 m/s. If she has the player in view (6 m, same level, not in an alcove), `seen_by_staff` goes up by one. The trolley blocks the floor; the pipe run passes it. |
 | Hazard: the blackout | Night five, 01:50–02:20 (`n5_blackout`): the sconces go out. Only the six roses glow. The boards are unseen; the windows are dark (no risk from them). |
-| Hazard: the stranger | Night seven from 02:00: Fenn walks west one door every 2 game minutes, stopping at each rose. Passing him costs nothing but 3 real seconds of him standing aside. |
+| Hazard: the stranger | Night seven from 02:02 (after your door, section 8): Fenn walks west one door every 2 game minutes, stopping at each rose. Passing him costs nothing but 3 real seconds of him standing aside. |
 | Progress | The brass numbers on the doors, the bell's count, and the brightening rose of the target door. No map. |
 | Failure and retry | No restart. Arriving after a door opens only misses the threshold beat. |
 
@@ -857,7 +871,8 @@ Every 1D game is a full page. Text size, colour patterns and a pause apply to al
 
 **Purpose in the story.** Every locked thing on the floor is a step closer to the people who hired
 you: the drawer that holds your log, the stair door that hides where the log goes, the cabinet that
-holds the last watcher's log, and the safe that holds who booked everyone. This is the only lock
+holds the last watcher's log, the safe that holds who booked everyone, and last your own door,
+worked from the inside while someone locks it from the passage. This is the only lock
 game in the collection.
 
 **Page layout.** A cutaway of the lock fills the centre: the plug and pins in brass and steel on
@@ -872,17 +887,20 @@ lock). Top left: the clock, if the world is running.
 | `n3_stair_lock` | Pin tumbler, 5 pins, 2 spool pins | Yes, 10× | Tension band 35–55. A spool pin gives a false set: the plug turns 5° and the pin pushes back. Ease tension to 30–35 while lifting it, then restore. Each overset after the second breaks a pick. | All five set. | Out of picks: the door stays locked tonight; the page offers it again on night six (`n6_stair_lock`, same rules, one pick restored). |
 | `n4_lost_property` | Wafer lock, 5 wafers | Yes, 10× | Not picked but matched. A ring of 8 jiggler keys, each with five cut depths (1–4). Insert one and rock it: the lock tells you, by clicks, how many wafers sit at the right depth (0–5), not which. A blank and a file let you cut your own key, one depth per wafer. The cabinet's code is five depths. Ten insertions before Dora's 01:00 round (from 01:00 to 01:30 the page closes if she comes within 6 m). | A key that turns: five clicks. | Ten insertions used: try again after 01:30; the night's clock keeps running. |
 | `n6_safe` | Safe dial, 3 numbers, 0–99 | Yes, 10× | Two ways. With patience card 9, dial 19–26–14 (left four turns, right three, left two) and turn the handle. Without it, manipulation: park the dial at a test number, then sweep to feel the two contact points; the page plots the gap between them on graph paper. Test at 0, 10, 20 … 90. The three narrowest gaps, refined in steps of 2, give the three numbers; try their six orders. | The handle turns. | No failure; the stranger's walk at 02:08 is the limit (section 8). |
+| `n7_lever_lock` | Lever lock, 2 levers | Yes, 10× | Worked from the wrong side. Fenn's key throws the bolt from the passage while the rose above the keyhole is lit. Inside, with the case cover off, lift each lever with the hook until the bolt's stump sits in its gate, a notch 11 % of the lever's travel high; each lever sinks out of it on its spring in about four seconds, so top them up in turn. Once the stump reaches the levers (a third of the throw), a lever out of its gate stops the bolt and strains; 1.8 s out and it drops behind the stump. Lifting a lever past its gate oversets it against the stump: it falls and breaks a pick. The keyhole is 20 cm under the rose: while the rose is dark (2 to 3 s, every 4 to 6 s, with a second's warning as a shadow crosses the boards under the door) he is looking in and the key stops; any move then is seen. | The bolt goes across with both levers in their gates (`lever_lock_open`). | A lever drops behind the stump, the last pick breaks, or the player is seen twice: deadlocked from the passage until the knock. |
 
 **Difficulty curve.** 3 pins, wide band, no clock → 5 pins with spools, a narrow band, the clock
 running → a different idea (deduction from counts) with a visitor coming → a dial with no pins at
-all and a person coming.
+all and a person coming → two levers held from the wrong side, with the person already at the
+keyhole.
 
 **Hints.** After 20 s without progress, the binding pin glows faintly (pin locks) or the next useful
-jiggler is warmed in the ring (wafer). On the safe, the first test position is marked. Patience
-cards 3 and 9 are hints from Fenn.
+jiggler is warmed in the ring (wafer). On the safe, the first test position is marked. On the lever
+lock, a bar under each lever shows how near it is to dropping. Patience cards 3 and 9 are hints
+from Fenn.
 
 **Writes.** `drawer_open`, `porter_helped`, `stair_door_open`, `lost_property_open`,
-`fenn_log_found`, `safe_open`, `ledger_read`, `picks_left`.
+`fenn_log_found`, `safe_open`, `ledger_read`, `lever_lock_open`, `picks_left`.
 
 ### The Statement (logic grid)
 
@@ -1417,7 +1435,7 @@ a visual equivalent.
 | 2D gap strips | Six rooms at floor level | 6 |
 | 2D passage | One 64 m side-on strip with lit, dark and blackout states; maid, trolley, stranger and player sprites | 1 strip, 4 sprite sheets |
 | 2D end scene | The office seen through a lens | 1 |
-| 1D page layouts | Lockwork (4 locks), Statement (7 grids), Night Patience (1 table, 12 slipped cards, 1 deck), Mosaic (1 board, 16 true links, about 30 pins), notebook, spike, night strip, the file | 4 + 7 + 3 + 1 + 4 = 19 |
+| 1D page layouts | Lockwork (5 locks), Statement (7 grids), Night Patience (1 table, 12 slipped cards, 1 deck), Mosaic (1 board, 16 true links, about 30 pins), notebook, spike, night strip, the file | 5 + 7 + 3 + 1 + 4 = 20 |
 | Clue card sketches | One per beat (about 175) plus office clues (about 25) | 200 |
 | Music cues | The piano figure and its variations per chapter; four ending resolutions | 12 |
 | Ambience loops | Rain, passage, six room beds, back of house, lobby, river | 11 |
@@ -1514,7 +1532,7 @@ The author accepted the development proposed in `DEEP_DIVE.md` on 2026-11-15, al
 the decisions its roadmap marked as needing the author first. This section states the accepted
 story. It is built in three phases. **All three phases are in this design and in `data/` now**
 (phase 1 built 2026-11-15, phases 2 and 3 built 2026-11-16, each listed at the end of this section),
-except the lever lock, which waits for `docs/COLLECTION.md` to name it (`collection_request.md`).
+and the lever lock, built 2026-11-16 once `docs/COLLECTION.md` named it.
 The 3D scenes, old and new, are designs until they are built in Blender. Nothing here changes the
 source; the four endings of section 13 stand with their costs sharpened, a fifth (The Sitter) is
 added, and none is `as_written`, because the author wrote no ending.
@@ -1610,8 +1628,9 @@ Key art is a generated image (`DEEP_DIVE.md` section 4) and is not made in this 
 | `n5_linen_count` | 2D race | Dora counting at the open cabinet in the blackout; the seventh coin. | 2, built 2026-11-16 |
 
 Added in phase 3 (2026-11-16): `n7_own_lens` (2D eye) and `end_sitter` (3D, `blender/lobby.build.json`).
-Not added: `n7_lever_lock` (1D Lockwork), because `docs/COLLECTION.md` must name the lever lock first;
-`collection_request.md` asks for that line.
+Added on 2026-11-16, after the author approved the line in `docs/COLLECTION.md` that names the lever
+lock: `n7_lever_lock` (1D Lockwork, night seven, 02:00; sections 8 and 11; `lever_lock_open`). A 1D
+page, so it has no build file; it is played in the office, whose build file already covers night seven.
 
 **Phase 2, built 2026-11-16 (tie the layers).** Every item is accepted 2026-11-15, built 2026-11-16.
 
@@ -1653,8 +1672,9 @@ Not added: `n7_lever_lock` (1D Lockwork), because `docs/COLLECTION.md` must name
 | The four endings' costs | Section 13. | `data/endings.json` summaries |
 | The second shift | Section 12. | `shift_number`, `last_ending`; art `doc-second-tags` |
 | Ending-card lettering | The ending's name in the title's deco brass, laid over its generated card. | art `ending-title-*` (5) |
+| The lever lock (built 2026-11-16, after `docs/COLLECTION.md` named it) | `n7_lever_lock`: at 02:00 on night seven Fenn turns last season's key in your door from the passage; the player holds the two levers in their gates from inside, freezing while the rose is dark, so the bolt is not deadlocked (sections 8 and 11). | `lever_lock_open`; art `lock-lever` (FIG. 5) |
 
-**Still not built.** The lever lock (`collection_request.md`). Every 3D scene, `end_sitter` with
+**Still not built.** Every 3D scene, `end_sitter` with
 them, is a design until Blender builds it. The generated art the plan lists (guest figures, room
 plates, Mara's watercolours, hero sketches) is not made in this pass beyond the five ending cards.
 
@@ -1676,7 +1696,9 @@ true green rhyme (the Mosaic); the ledger's seventh line under Fenn's answer car
 question on the spike (Night Patience). A brass VII badge in every mode opens the notebook of the
 marks gathered so far. With all five, the Statement offers NIGHT SEVEN: the typed Account, the
 reconciliation, the 1971 page and the tenth line, and where the carbons go (403, all six doors, or
-Wren's envelope). Stamping the row solves the puzzle; the eye then offers your own rose. The game's
+Wren's envelope). Stamping the row solves the puzzle; Lockwork then offers your own door at 02:00 (the
+lever lock, `n7_lever_lock`, a fourth button beside its three stages, which change nothing before then;
+its result is kept in the shared run as `lever` and changes no ending), and the eye your own rose. The game's
 menu shows the finale from then on: the earned ending's name, card and paid-off text. Holding at
 your own rose with the carbons under 403, the row stamped witness, Mara held and answered and no
 bent line standing gives The Sitter; opening gives The Open Door; a bent line standing gives The
@@ -1708,8 +1730,9 @@ six kinds of guest, the seven details, the four roles of the peephole, and the l
 | Accepted 2026-11-15, phase 1 | The watcher's want (see all, never be seen) and need (be seen once, and hold). Wren's creed that a complete file is mercy, and his line. That Mara has known about the rose since night one; the brass dot on her watercolours and her log of the watcher (`mara_dots`); her count and pencil line, "Eleven times. I count too. Don't stop."; "gone". The Sitting. Holding under a knowing guest's look; Answering (two taps, the rose darkened twice); the held page and its three columns. The carbon, the one amendment a morning, the AMENDED stamp, `carbon_rows_correct`. Seven beats in `data/beats.json` (the five dots, The Sitting, her look, the held page) and their clue lines. The chapter cards and the code-drawn plates of 402 and 403. |
 | Phase 2: accepted 2026-11-15, built 2026-11-16 | Dora at your rose (by sound in Tea at One, by sight as the seventh coin), her line and her chalk ticks; the seventh row's marks on the forms, the cabinet door and the bell board; the scenes The Seventh Bell (`n2_seventh_bell`), Tea at One (`n3_tea`), The Linen Count (`n5_linen_count`) and The Sitting as its own scene (`n4_sitting`); the six left things; quiet columns, reply cards, nicked backs and the second hand, the dotted card; bell wires, the parked trolley, the seventh coin; reflections; the rhyme spool, fraying and scissors, the back of the board; typed rows and the strike; the three layer links; twenty flags in `data/flags.json`. |
 | New on 2026-11-16, made while building phase 2, for the author to approve or strike | That Dora counts aloud in the blackout and the player moves on her count. That the knock is at 406 on night five as the race's goal there. The reflection used for the stranger at 401's main door, and that the main door is out of the lens's reach. Dora's lamp on the keyhole during the lost-property lock. The three rhymes (405 and the rook, 402 and the orchid, 406 and the paper boat) and the three lines of Fenn's log they pin. The two typed Statement rows that swap the sisters, and the two typed Mosaic rows that put 406 with 403 and at the Bonded House. Which question earns which of cards ten to twelve. The two contradicting advice cards of night seven's deal. In the web build only: Lockwork's third stage is the lost-property wafer lock, because the lever lock waits for phase 3. |
-| Phase 3: accepted 2026-11-15, built 2026-11-16 | Fenn's ladder and the new reading of card 12; filling the seventh row, the *watcher* clue kind, the Account's tenth line and the typed Account; Wren as the first night auditor of 1971 and The 1971 Page; The Hollow Dot; the fifth ending, The Sitter, and the changes to the other four; the second shift's changes; the 2:14 thread across the collection. The lever lock is accepted and not built (`collection_request.md`). |
+| Phase 3: accepted 2026-11-15, built 2026-11-16 | Fenn's ladder and the new reading of card 12; filling the seventh row, the *watcher* clue kind, the Account's tenth line and the typed Account; Wren as the first night auditor of 1971 and The 1971 Page; The Hollow Dot; the fifth ending, The Sitter, and the changes to the other four; the second shift's changes; the 2:14 thread across the collection; the lever lock on your own door (built 2026-11-16, once the author approved naming it in `docs/COLLECTION.md`). |
 | New on 2026-11-16, made while building phase 3, for the author to approve or strike | The 1971 page's contents: its date (14 November 1971), the wrong row (405, "left by the lobby 05:10") and the hand that struck it ("not her"). The four typed Account lines (405 and 406 swapped, the leak named as 406) and the carbon line beside each. The reconciliation's numbers (Mara's dots 1, 1, 2, 1, 1 on nights one, three, four, five, six against one visit each) and Dora as the only answer at 01:00. The four words' readings on the tenth line. The choice of where the carbons go (403, six doors, Wren's envelope) as one moment before the knock. Your own rose as a 2D eye scene (`n7_own_lens`): the eye on the other side, the knocks and the key, the three choices. The Sitter's added condition that no bent Account answer stands (`account_correct` 6 or more), and `hold_still` in The Wrong Picture. The finale texts and every ending's lettering subtitle (A witness, The carbons, I did that once, Stop looking up, The ladder). The second shift's six tags and their things, the printed 400, "You came back. I count too.". In the web build only: Fenn's answer card copies the ledger's seventh line (the safe is not in the web build), the bell pull is credited at the end of night two, and the bare pull rings as you leave the office. |
+| New on 2026-11-16, made while building the lever lock, for the author to approve or strike | That Fenn turns the key to lock you in, on Wren's errand, so you are at the desk when he knocks, and that holding the levers in their gates keeps the bolt from deadlocking, so you can push it back. That he walks straight to the office at 01:58, steps aside to let you in if you are in the passage, and starts his door-by-door walk west from the east end at 02:02. That the rose goes dark because he bends to look in, and that his key stops while he looks. The cost of a loss: the door deadlocked and the passage shut until 2:14, and he turns the key back before he knocks. The rule numbers (gate 11 % of travel, about four seconds to sink out, 1.8 s of strain, the stump reaching the levers a third of the way, two sightings). In the web build only: the lock is Lockwork's NIGHT SEVEN button, offered once the tenth line is stamped and until your own rose is chosen; the levers start part-lifted, and the result is kept as `lever` in the shared run and changes no ending. |
 
 ### Changes from `docs/ADAPTATIONS.md`
 
@@ -1717,6 +1740,8 @@ six kinds of guest, the seven details, the four roles of the peephole, and the l
 | --- | --- | --- |
 | Three to four hours over seven nights | 143 minutes | `docs/COLLECTION.md` sets 120–150 minutes, and it wins. |
 | A third 2D mode, "the light under the door" | Kept as the gap, a crouched view inside the eye mode (tilt along X only) | COLLECTION gives this game two 2D modes; the gap is the same eye on the same still room, so it stays inside mode A. |
-| The drawer lock, opened on night six, holds the booking ledger | Lockwork has four locks: the drawer (night one: the log and the deck), the stair door, lost property, and the safe (night six: the booking ledger) | The lock game must matter more than once, and COLLECTION names pin tumblers, wafer locks and a safe dial. |
+| The drawer lock, opened on night six, holds the booking ledger | Lockwork has five locks: the drawer (night one: the log and the deck), the stair door, lost property, the safe (night six: the booking ledger), and the lever lock on your own door (night seven) | The lock game must matter more than once, and COLLECTION names pin tumblers, wafer locks, a safe dial and a lever lock. |
 | "You can keep logging or walk out" | A third choice, sliding the pages, which leads to Under the Door | ADAPTATIONS lists Under the Door as an ending; this makes it reachable on purpose. |
 | The stranger is unexplained | The stranger is Abel Fenn, last season's watcher | Gives the 2:14 knock a true answer, as the brief asks. |
+
+**Author review, 2026-11-16.** The author reviewed this list and accepted every addition in it, phases 1 to 3, except where a row above says it is struck. Three were decided one by one: the Stuffing win rule (kept, Stuffed Ones), the six ward names (kept, WrymWretch) and the thirteen placeholder List items (kept, Missing Campsites).

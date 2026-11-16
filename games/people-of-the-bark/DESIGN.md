@@ -1917,3 +1917,5 @@ Everything below is not in the author's text and is proposed for the author to a
 | The faceless row's strengths: 3 on sun days, 1 on rain days, silent in frost; its cells taking a strength and no face; two faceless cells on `c4_scroll` that do not count toward the 18 | Section 11.5 |
 | The map's size (four plates across, thirteen down) and "whole" meaning every faceless mark right | Section 11.5 |
 | Web build only: the heir chosen by the year's three policies; the choice of a plate after the autumn seal as a stand-in for the Sounding; Fenn's and Pell's connecting lines in `omen-spread.js` and `tremor-scroll.js` that are not listed above | Sections 11.1, 11.5 |
+
+**Author review, 2026-11-16.** The author reviewed this list and accepted every addition in it, phases 1 to 3, except where a row above says it is struck. Three were decided one by one: the Stuffing win rule (kept, Stuffed Ones), the six ward names (kept, WrymWretch) and the thirteen placeholder List items (kept, Missing Campsites).

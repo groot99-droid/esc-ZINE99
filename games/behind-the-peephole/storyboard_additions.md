@@ -20,3 +20,13 @@ the new end panel after the other three. No new stills; the ending card is `keya
 | --- | --- | --- | --- | --- | --- | --- |
 | 18 | 2D | `n7_own_lens` | Your own rose from inside the office at 2:14: the passage bowed in the lens, six roses down its length, an eye pressed close on the far side | Offered once the seventh row is stamped. Hold still under the look until the catch ring closes; or step back; or open the door | Fade |  |
 | E | 3D | `end_sitter` | The lobby floor by the reception desk at 06:00 | The Sitter: Mara sets the case, her watercolours and your carbons in front of two officers and holds out her wrists; five leave by the revolving door. Last image: her painting of your door, the rose lit | Fade (end) |  |
+
+## The lever lock (2026-11-16)
+
+One more row for section 2 of `docs/STORYBOARDS.md`, built once `docs/COLLECTION.md` named the lever
+lock: 19 belongs after panel 10 (`n7_account`), before the knock. No new still; the plate is
+`art/maps/lock-lever.svg`.
+
+| # | Layer | Scene | Shot | Beat | Into next | Still |
+| --- | --- | --- | --- | --- | --- | --- |
+| 19 | 1D | `n7_lever_lock` | Lockwork, FIG. 5: the office door's lever lock from inside at 02:00, case cover off, the rose lit 20 cm above the keyhole | A key turns from the passage side: Fenn's, last season's. Hold both levers in their gates while the bolt goes across; when the rose goes dark he is looking in, so freeze | Pull-out |  |

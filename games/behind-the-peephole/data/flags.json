@@ -272,6 +272,12 @@
       "description": "The back-office safe is open."
     },
     {
+      "name": "lever_lock_open",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15 (the lever lock, docs/COLLECTION.md since 2026-11-16), built 2026-11-16. At 02:00 on night seven the player lifted the two levers of the office door to the gate from inside while Fenn's old key threw the bolt from the passage (n7_lever_lock); the door is unbolted when he knocks at 2:14. False: the bolt stays shot and the player turns it back by hand at the knock."
+    },
+    {
       "name": "ledger_read",
       "type": "bool",
       "default": false,

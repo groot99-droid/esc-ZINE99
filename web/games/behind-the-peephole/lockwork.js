@@ -17,11 +17,11 @@
 // click and the feel are masked. TWIST is lost property (FIG. 3, DESIGN.md section 11, `n4_lost_property`):
 // a wafer lock, not picked but matched. Lifting is no use; the lock only says how many wafers a key
 // fits, never which. Its set-piece is Dora's round: when her lamp is on the keyhole, do nothing.
-// (DEEP_DIVE's own twist, the lever lock on your door, is phase 3 and waits for docs/COLLECTION.md.)
+// DEEP_DIVE's own twist, the lever lock on your door, is the NIGHT SEVEN stage at the end of this file (phase 3).
 // Opening lost property is written to api.shared ("lostProperty"): the Mosaic gains the green rhyme
 // spool and Dora stops at the cabinet in the corridor race.
 import { staged } from "./_stages.js";
-import { mark, isSecond } from "./_seventh.js";
+import { mark, isSecond, runOf, setRun } from "./_seventh.js";
 // Phase 3 (2026-11-16): opening lost property gives the second mark of the seventh row (Dora's chalk,
 // api.shared "seventh"). Second shift: the bottom drawer holds six new tags, one for each of this
 // season's guests, where last season's six things were (art: doc-second-tags).
@@ -563,7 +563,7 @@ export default staged(P, ["the drawer", "the stair door, bells", "lost property"
         root.innerHTML = "";
       },
     };
-}, { vii: "left:8px;top:40px" });
+}, { vii: "left:8px;top:40px", extra: { title: "your own door, 02:00", ready: (api) => { const r = runOf(api.shared); return !!r.solved && !r.lens; }, play: lever } });
 
 // ---- TWIST: lost property. A wafer lock: matched, not picked (DESIGN.md section 11).
 const W_CODE = [2, 4, 1, 3, 2];
@@ -742,4 +742,340 @@ function wafer(root, api, stage) {
   raf = requestAnimationFrame(tick);
   sb.focus();
   return { unmount() { cancelAnimationFrame(raf); timers.forEach(clearTimeout); for (const [el, ev, fn, o] of listeners) el.removeEventListener(ev, fn, o); root.innerHTML = ""; } };
+}
+
+// ---- NIGHT SEVEN: your own door, the lever lock (phase 3, accepted 2026-11-15; docs/COLLECTION.md names it
+// since 2026-11-16). Scene `n7_lever_lock` (DESIGN.md section 11, plate FIG. 5, art `lock-lever`). Offered only
+// once the tenth line is stamped and before your own rose at 2:14 (the same gate as the eye's night seven), so a
+// first run before then is unchanged. 02:00: Fenn turns last season's key in the office door from the passage and
+// throws the bolt. Inside, with the case cover off, you work the lock from the wrong side: hold both levers in
+// their gates while the bolt goes across, so neither drops behind the stump and deadlocks it; afterwards you can
+// push the bolt back with a finger. Each lever sinks on its spring; lift past the gate and the stump takes the
+// pick. The keyhole is 20 cm under the rose: while the rose is dark he is looking in, the key stops, and any move
+// you make is seen. Cuts: one door, no hook-and-tension (a lever lock has no plug); the world clock is shown only.
+function lever(root, api, stage) {
+  const C = { paper: "#efe6cf", ink: "#1c1a17", faint: "#6f6650", brass: "#b8913f", brassL: "#e3c47a", ev: "#a3302a", amber: "#e0a24a", blue: "#2a3a8c", dark: "#14110d" };
+  const RM = api.reducedMotion, art = api.art || { has: () => false, url: () => "" };
+  const shared = api.shared || { get: (k, d) => d, set() {} };
+  const streak = api.store.get("leverLossStreak", 0);
+  let gentle = api.store.get("leverGentle", false);
+  const rnd = api.rng(77);
+  const Q = P + "lv-";
+  const st = document.createElement("style");
+  st.textContent = `
+  .${Q}w{position:absolute;inset:0;background:${C.paper};color:${C.ink};overflow:hidden;font-family:Georgia,serif;touch-action:none;user-select:none}
+  .${Q}w canvas{position:absolute;inset:0;width:100%;height:100%}
+  .${Q}cap{position:absolute;left:50%;transform:translateX(-50%);width:min(640px,calc(100% - 24px));text-align:center;font-size:15px;line-height:1.35;pointer-events:none}
+  .${Q}cap i{display:block}
+  .${Q}cap .story{color:${C.blue};font-size:14px;margin-top:3px}
+  .${Q}w.dark .${Q}cap .story{color:${C.ink}}
+  .${Q}w.dark .${Q}cap i{color:${C.ev};font-weight:600}
+  .${Q}pad{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;flex-wrap:wrap;gap:6px;padding:0 10px}
+  .${Q}b{font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.05em;background:#fbf6e8;color:${C.ink};border:1.5px solid ${C.ink};min-width:48px;min-height:46px;padding:6px 12px;cursor:pointer;touch-action:none}
+  .${Q}b:hover,.${Q}b:focus-visible{background:#f3e3b8;outline:none;box-shadow:0 0 0 2px ${C.blue}}
+  .${Q}b.on{background:${C.brassL}}
+  .${Q}b.sel{outline:2px solid ${C.ink};outline-offset:2px}
+  .${Q}intro{position:absolute;inset:0;z-index:3;display:grid;place-items:center;padding:12px;overflow:auto;background:rgba(239,230,207,.95)}
+  .${Q}card{max-width:560px;width:100%;box-sizing:border-box;border:1.5px solid ${C.ink};padding:16px 18px 14px;background:#fbf6e8;font-size:15px;line-height:1.45;box-shadow:inset 0 0 0 5px #fbf6e8,inset 0 0 0 6px ${C.ink}}
+  .${Q}card .no{font:12px 'IBM Plex Mono',monospace;letter-spacing:.14em;display:flex;justify-content:space-between}
+  .${Q}card h2{margin:8px 0 2px;font:italic 400 26px Georgia,serif;text-align:center}
+  .${Q}card .goal{text-align:center;margin:0 0 8px}
+  .${Q}card .open{font-size:14px;color:${C.blue};margin:0 0 10px}
+  .${Q}card .fig{display:block;width:100%;height:auto;max-height:220px;object-fit:contain;border:1px solid ${C.ink};margin:6px 0 8px;background:#e4dccb}
+  @media (max-height:700px),(max-width:560px){.${Q}card .fig{max-height:120px}.${Q}card h2{font-size:21px}}
+  .${Q}card ol{margin:0 0 10px;padding-left:1.3em;display:grid;gap:4px}
+  .${Q}card kbd{font:12px 'IBM Plex Mono',monospace;border:1px solid ${C.faint};padding:0 4px;background:#fff}
+  .${Q}card .ft{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;border-top:1px solid ${C.ink};padding-top:10px;margin-top:8px}
+  .${Q}plate{position:absolute;inset:0;z-index:2;display:grid;place-items:center;background:rgba(239,230,207,.82);padding:14px 14px 150px;pointer-events:none;opacity:0;transition:opacity .7s}
+  .${Q}plate.in{opacity:1}
+  .${Q}plate img{max-width:min(760px,100%);max-height:100%;border:1.5px solid ${C.ink}}
+  @media (prefers-reduced-motion:reduce){.${Q}plate{transition:none}}
+  `;
+  const w = document.createElement("div"); w.className = Q + "w";
+  const cv = document.createElement("canvas"); const ctx = cv.getContext("2d");
+  const cap = document.createElement("div"); cap.className = Q + "cap"; cap.setAttribute("aria-live", "polite");
+  cap.innerHTML = `<i></i><div class="story"></div>`;
+  const capMsg = cap.querySelector("i"), capStory = cap.querySelector(".story");
+  const pad = document.createElement("div"); pad.className = Q + "pad";
+  pad.setAttribute("role", "group"); pad.setAttribute("aria-label", "The lever lock");
+  pad.innerHTML = [["l0", "LEVER 1 · 1"], ["l1", "LEVER 2 · 2"], ["lift", "LIFT ↑"], ["ease", "EASE ↓"]].map(([a, l]) => `<button type="button" class="${Q}b" data-a="${a}">${l}</button>`).join("");
+  w.append(cv, cap, pad); root.append(st, w);
+  const btn = (a) => pad.querySelector(`[data-a="${a}"]`);
+
+  // ---- rules (DESIGN.md section 11, `n7_lever_lock`)
+  const GATE = [0.52, 0.72];              // where each lever's gate meets the stump
+  const WIN = () => (gentle ? 0.15 : 0.11); // the height of a gate
+  const SINK = () => (gentle ? 0.022 : 0.03), LIFT = 0.32, EASE = 0.4;
+  const THROW = gentle ? 16 : 13;          // seconds of lit turning to take the bolt across
+  const STRAIN = gentle ? 2.6 : 1.8;       // seconds a lever may sit out of its gate while the stump presses
+  const WARN = () => (gentle ? 2.0 : 1.2);
+  const ENGAGE = 0.3;                      // the stump reaches the levers here
+  let picks = gentle ? 4 : 3, seen = 0, sel = 0, lifting = false, easing = false;
+  const lv = [{ h: 0.2, strain: 0, fx: 0 }, { h: 0.3, strain: 0, fx: 0 }];
+  let p = 0, rose = "lit", roseAt = 0, nextDark = 0, darkFor = 2400, over = false, started = false, t0 = 0, last = 0, raf = 0, disposed = false;
+  const listeners = [], timers = [];
+  const on = (el, ev, fn, o) => { el.addEventListener(ev, fn, o); listeners.push([el, ev, fn, o]); };
+  const say = (m) => { capMsg.textContent = m; };
+  const tell = (m) => { capStory.textContent = m; };
+  const inGate = (i) => Math.abs(lv[i].h - GATE[i]) <= WIN() / 2;
+  const above = (i) => lv[i].h > GATE[i] + WIN() / 2;
+  const told = new Set();
+
+  function selBtn() { ["l0", "l1"].forEach((a, i) => btn(a).classList.toggle("sel", i === sel)); }
+  selBtn();
+  // a move while the rose is dark: he is looking in, a hand's width above the keyhole
+  function moved() {
+    if (rose !== "dark") return false;
+    seen++;
+    if (seen >= 2) { lose("seen"); return true; }
+    say("He saw something move. Be still while the rose is dark.");
+    tell("The rose stays dark a breath longer than before. One more, and he will know whose hand is at the lock.");
+    return true;
+  }
+  function choose(i) { if (!started || over) return; if (moved()) return; sel = i; lifting = easing = false; selBtn(); say(`Lever ${i + 1}. Its gate is the notch; the stump must sit in it.`); }
+  function startLift() { if (!started || over) return; if (moved()) return; lifting = true; easing = false; }
+  function startEase() { if (!started || over) return; if (moved()) return; easing = true; lifting = false; }
+  function stopHands() { lifting = false; easing = false; }
+
+  function overset(i) {
+    lv[i].h = 0.02; lv[i].fx = performance.now(); lifting = false;
+    picks--;
+    if (picks <= 0) { lose("picks"); return; }
+    say(`Lever ${i + 1} went over its gate and the stump took the pick. ${picks} spare pick${picks === 1 ? "" : "s"} left; the lever is down again.`);
+  }
+  function step(dt, now) {
+    if (!started || over) return;
+    const el = (now - t0) / 1000;
+    // the rose: lit while he turns the key, dark while he bends to look in
+    if (rose === "lit" && el >= nextDark) { rose = "warn"; roseAt = now; say("A shadow on the boards under the door. He is going to look."); }
+    else if (rose === "warn" && now - roseAt > WARN() * 1000) { rose = "dark"; roseAt = now; darkFor = 2200 + rnd() * 900; stopHands(); w.classList.add("dark"); if (!told.has("dark")) { told.add("dark"); tell("The rose is dark: an eye is at it, a hand's width above your hands. The key has stopped. Do nothing."); } say("THE ROSE IS DARK · FREEZE"); }
+    else if (rose === "dark" && now - roseAt > darkFor) { rose = "lit"; roseAt = now; w.classList.remove("dark"); nextDark = el + 3.6 + rnd() * 2.2; say("Lit again. The key turns."); }
+    const turning = rose !== "dark";
+    // hands
+    const L = lv[sel];
+    if (lifting) { L.h = Math.min(1, L.h + LIFT * dt); if (above(sel)) overset(sel); }
+    if (easing) L.h = Math.max(0, L.h - EASE * dt);
+    lv.forEach((l, i) => { if (!(lifting && i === sel)) l.h = Math.max(0, l.h - SINK() * dt); });
+    if (over) return;
+    // the key
+    if (turning) {
+      const pressing = p >= ENGAGE;
+      const out = [0, 1].filter((i) => !inGate(i));
+      if (pressing && out.length) {
+        out.forEach((i) => { lv[i].strain += dt; });
+        if (!told.has("press")) { told.add("press"); tell("The stump is against a lever that is not in its gate. Lift it into the notch, or it drops behind the stump and the door deadlocks."); }
+        if (out.some((i) => lv[i].strain >= STRAIN)) { lose("deadlock"); return; }
+      } else {
+        p = Math.min(1, p + dt / THROW);
+        lv.forEach((l) => { l.strain = Math.max(0, l.strain - dt * 2); });
+        if (p >= ENGAGE && !told.has("engage")) { told.add("engage"); tell("The bolt is moving under his key. Keep both levers in their gates until it is across."); }
+        if (p > 0.55 && !told.has("half")) { told.add("half"); tell("Half across. Through the wood, his breath, and the key's small grind."); }
+      }
+      [0, 1].filter((i) => inGate(i)).forEach((i) => { lv[i].strain = Math.max(0, lv[i].strain - dt * 2); });
+    }
+    if (p >= 1) win();
+  }
+  function lose(why) {
+    if (over) return; over = true; stopHands();
+    api.store.set("leverLossStreak", streak + 1);
+    setRun(shared, { lever: "deadlocked" });
+    showPlate();
+    const text = why === "seen"
+      ? "The rose stays dark a long time. Then the key turns hard, all the way, and both levers drop behind the stump: deadlocked from the passage. He saw your hand. Until he knocks at 2:14 the passage is shut to you, and he will turn the key back himself before he does."
+      : why === "picks"
+        ? "The last pick snaps in the case. His key goes round and the levers fall behind the stump: deadlocked. Your own door is locked from the passage until he knocks at 2:14, and the lenses go on without you."
+        : "A lever slipped below its gate with the stump against it and dropped behind: deadlocked. The bolt is thrown and only his key will draw it. Until 2:14 the passage is shut to you; he will turn it back himself before he knocks.";
+    timers.push(setTimeout(() => api.end({ outcome: "lose", text }), RM ? 400 : 1300));
+  }
+  function win() {
+    if (over) return; over = true; stopHands();
+    api.store.set("leverLossStreak", 0); api.store.set("leverOpened", true);
+    setRun(shared, { lever: "open" });
+    showPlate();
+    const spare = `${picks} spare pick${picks === 1 ? "" : "s"} left${seen ? ", and he may have seen one move" : ""}.`;
+    timers.push(setTimeout(() => api.end({ outcome: "win", text: `The bolt goes across under his key and neither lever drops behind it. His key is drawn out; his steps go east, to start his walk from the stair door. You push the bolt back with one finger. The door is locked to him and open to you, and the passage is still yours until 2:14. ${spare} Your own rose is next: The eye at the hole, night seven.` }), RM ? 400 : 1600));
+  }
+  function showPlate() {
+    if (!art.has("lock-lever")) return;
+    const pl = document.createElement("div"); pl.className = Q + "plate";
+    pl.innerHTML = `<img alt="Lock plate, FIG. 5 · your own door" src="${art.url("lock-lever")}">`;
+    w.appendChild(pl); timers.push(setTimeout(() => pl.classList.add("in"), RM ? 0 : 500));
+  }
+
+  // ---- drawing
+  let W = 0, H = 0, G = {};
+  function resize() {
+    const r = w.getBoundingClientRect(), dpr = Math.min(2, window.devicePixelRatio || 1);
+    W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const padH = pad.getBoundingClientRect().height || 50;
+    cap.style.bottom = padH + 18 + "px";
+    const narrow = W < 560;
+    const top = narrow ? 112 : 104, bottom = H - padH - (narrow ? 118 : 96);
+    const doorW = narrow ? 64 : Math.min(150, W * 0.16);
+    const caseL = 24 + doorW + (narrow ? 14 : 40), caseR = W - (narrow ? 20 : Math.max(40, W * 0.08));
+    G = { narrow, top, bottom, doorW, caseL, caseR, caseT: top + 10, caseB: Math.max(top + 160, bottom) };
+  }
+  const line = (x1, y1, x2, y2, lw = 1, c = C.ink, dash) => { ctx.beginPath(); ctx.setLineDash(dash || []); ctx.lineWidth = lw; ctx.strokeStyle = c; ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]); };
+  function hatch(x, y, ww, hh, gap = 6, c = C.faint) { ctx.save(); ctx.beginPath(); ctx.rect(x, y, ww, hh); ctx.clip(); for (let k = -hh; k < ww; k += gap) line(x + k, y + hh, x + k + hh, y, 0.6, c); ctx.restore(); }
+  function leverGeo(i) {
+    const { caseL, caseR, caseT, caseB } = G;
+    const span = caseR - caseL, colW = Math.min(150, span * 0.3);
+    const cx = caseL + span * (i === 0 ? 0.42 : 0.74);
+    const travel = (caseB - caseT) * 0.42;
+    const stumpY = caseT + (caseB - caseT) * 0.5;
+    const plateH = (caseB - caseT) * 0.62;
+    // the plate rises with h; its gate sits where h == GATE[i] puts it on the stump line
+    const gateY = stumpY + (lv[i].h - GATE[i]) * travel * -1;
+    const gateH = WIN() * travel;
+    return { cx, colW, travel, stumpY, plateTop: gateY - plateH * 0.45, plateH, gateY, gateH };
+  }
+  function render(now) {
+    const { narrow, caseL, caseR, caseT, caseB, doorW } = G;
+    const dark = rose === "dark";
+    ctx.fillStyle = dark ? "#cfc5ad" : C.paper; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = C.ink; ctx.lineWidth = 1.2; ctx.strokeRect(8, 8, W - 16, H - 16); ctx.lineWidth = 0.6; ctx.strokeRect(12, 12, W - 24, H - 24);
+    ctx.fillStyle = C.ink; ctx.textAlign = "center";
+    ctx.font = "13px Georgia,serif"; ctx.fillText("Sheet 5 of 5", W / 2, 30);
+    ctx.font = `italic ${narrow ? 19 : 26}px Georgia,serif`; ctx.fillText("FIG. 5  ·  your own door", W / 2, narrow ? 72 : 68);
+    ctx.font = "italic 13px Georgia,serif"; ctx.fillText("worked from the wrong side", W / 2, narrow ? 92 : 88);
+    // clock and picks
+    const gm = 120 + (started ? Math.min(14, Math.floor(((now - t0) / 1000) * 10 / 60)) : 0);
+    ctx.font = "13px 'IBM Plex Mono',monospace"; ctx.textAlign = "left";
+    ctx.fillText(`◷ ${String(Math.floor(gm / 60)).padStart(2, "0")}:${String(gm % 60).padStart(2, "0")}`, 22, 32);
+    ctx.textAlign = "right"; ctx.fillText(`PICKS ${picks}`, W - 22, 32);
+    for (let k = 0; k < Math.max(3, picks); k++) { const x = W - 30 - k * 16; ctx.globalAlpha = k < picks ? 1 : 0.18; line(x, 42, x, 62, 1.3); ctx.globalAlpha = 1; }
+    if (seen) { ctx.fillStyle = C.ev; ctx.fillText(`SEEN ${seen} of 2`, W - 22, 80); ctx.fillStyle = C.ink; }
+    ctx.textAlign = "left";
+    // the door edge: the rose, and 20 cm under it the keyhole
+    const dx = 24, dy = caseT, dh = caseB - caseT;
+    ctx.fillStyle = "#e6dcc2"; ctx.fillRect(dx, dy, doorW, dh); ctx.strokeRect(dx, dy, doorW, dh); hatch(dx, dy, doorW, dh, 9);
+    const rx = dx + doorW / 2, ry = dy + dh * 0.22, rr = Math.min(doorW * 0.36, 30);
+    const warn = rose === "warn" && !RM ? 0.5 + 0.5 * Math.sin(now / 90) : rose === "warn" ? 0.6 : 1;
+    ctx.beginPath(); ctx.arc(rx, ry, rr, 0, Math.PI * 2);
+    ctx.fillStyle = dark ? C.dark : `rgba(240,190,90,${0.55 + 0.45 * warn})`; ctx.fill(); ctx.lineWidth = 1.5; ctx.strokeStyle = C.ink; ctx.stroke();
+    for (let k = 0; k < 8; k++) { const t = 2 * Math.PI * k / 8; ctx.beginPath(); ctx.arc(rx + rr * 0.6 * Math.cos(t), ry + rr * 0.6 * Math.sin(t), rr * 0.36, 0, Math.PI * 2); ctx.lineWidth = 0.8; ctx.stroke(); }
+    if (dark) { ctx.beginPath(); ctx.ellipse(rx, ry, rr * 0.55, rr * 0.3, 0, 0, Math.PI * 2); ctx.fillStyle = "#3a3026"; ctx.fill(); ctx.beginPath(); ctx.arc(rx, ry, rr * 0.16, 0, Math.PI * 2); ctx.fillStyle = "#000"; ctx.fill(); }
+    ctx.font = `600 ${narrow ? 10 : 12}px 'IBM Plex Mono',monospace`; ctx.textAlign = "center"; ctx.fillStyle = dark ? C.ev : C.ink;
+    ctx.fillText(dark ? "DARK" : rose === "warn" ? "SHADOW" : "LIT", rx, ry + rr + 16);
+    const ky = dy + dh * 0.62;
+    ctx.fillStyle = C.ink; ctx.beginPath(); ctx.arc(rx, ky, 7, 0, Math.PI * 2); ctx.fill(); ctx.beginPath(); ctx.moveTo(rx - 4, ky + 4); ctx.lineTo(rx - 7, ky + 22); ctx.lineTo(rx + 7, ky + 22); ctx.lineTo(rx + 4, ky + 4); ctx.fill();
+    line(rx, ry + rr + 22, rx, ky - 10, 0.7, C.ink, [3, 3]);
+    ctx.font = `italic ${narrow ? 11 : 13}px Georgia,serif`; ctx.fillStyle = C.ink; ctx.fillText("200", rx + (narrow ? 0 : 0), (ry + ky) / 2 + 18);
+    // the case, opened
+    ctx.textAlign = "left";
+    ctx.fillStyle = "#f7f0dc"; ctx.fillRect(caseL, caseT, caseR - caseL, caseB - caseT); ctx.lineWidth = 1.6; ctx.strokeStyle = C.ink; ctx.strokeRect(caseL, caseT, caseR - caseL, caseB - caseT);
+    ctx.lineWidth = 0.6; ctx.strokeRect(caseL + 6, caseT + 6, caseR - caseL - 12, caseB - caseT - 12);
+    // the bolt: from right (home) to left (thrown), with its stump riding the stump line
+    const g0 = leverGeo(0), g1 = leverGeo(1);
+    const boltY = caseT + (caseB - caseT) * 0.16, boltH = Math.max(18, (caseB - caseT) * 0.12);
+    const span = caseR - caseL;
+    const boltX = caseL + span * 0.08 - p * span * 0.06 - (narrow ? 0 : 0);
+    const boltLen = span * 0.62;
+    ctx.fillStyle = "#fbf6e8"; ctx.fillRect(boltX - span * 0.08 * p, boltY, boltLen, boltH); ctx.lineWidth = 1.4; ctx.strokeRect(boltX - span * 0.08 * p, boltY, boltLen, boltH);
+    hatch(boltX - span * 0.08 * p, boltY, Math.min(40, boltLen * 0.2), boltH, 5);
+    // stump: travels from the right of lever 2 to the left of lever 1 as p goes 0 -> 1
+    const sx0 = g1.cx + g1.colW * 0.62, sx1 = g0.cx - g0.colW * 0.62;
+    const sx = sx0 + (sx1 - sx0) * p;
+    const sy = g0.stumpY;
+    line(caseL + 8, sy, caseR - 8, sy, 0.8, C.ink, [10, 4, 2, 4]);
+    line(sx, boltY + boltH, sx, sy - 6, 2, C.ink);
+    ctx.fillStyle = C.ink; ctx.fillRect(sx - 7, sy - 8, 14, 16);
+    ctx.font = "italic 13px Georgia,serif"; ctx.fillText("stump", Math.min(caseR - 50, sx + 10), sy + 24);
+    // the levers
+    [g0, g1].forEach((g, i) => {
+      const L = lv[i], ok = inGate(i), sel_ = i === sel;
+      if (sel_) { ctx.fillStyle = "rgba(42,58,140,.08)"; ctx.fillRect(g.cx - g.colW / 2 - 8, caseT + 8, g.colW + 16, caseB - caseT - 16); }
+      ctx.save(); ctx.beginPath(); ctx.rect(caseL + 7, caseT + 7, caseR - caseL - 14, caseB - caseT - 14); ctx.clip();
+      const x0 = g.cx - g.colW / 2;
+      ctx.fillStyle = ok ? "#f3e3b8" : "#fbf6e8"; ctx.fillRect(x0, g.plateTop, g.colW, g.plateH); ctx.lineWidth = 1.3; ctx.strokeStyle = C.ink; ctx.strokeRect(x0, g.plateTop, g.colW, g.plateH);
+      for (let k = 1; k <= 4; k++) line(x0 + 4, g.plateTop + g.plateH * k / 5, x0 + g.colW - 4, g.plateTop + g.plateH * k / 5, 0.4, C.faint);
+      // the gate: a notch cut across the plate
+      ctx.fillStyle = ok ? C.amber : C.paper; ctx.fillRect(x0 + g.colW * 0.12, g.gateY - g.gateH / 2, g.colW * 0.76, g.gateH);
+      ctx.lineWidth = ok ? 2.4 : 1; ctx.strokeRect(x0 + g.colW * 0.12, g.gateY - g.gateH / 2, g.colW * 0.76, g.gateH);
+      // pivot and spring
+      ctx.beginPath(); ctx.arc(x0 + g.colW - 10, g.plateTop + 12, 5, 0, Math.PI * 2); ctx.fillStyle = "#fff"; ctx.fill(); ctx.lineWidth = 1; ctx.stroke();
+      ctx.restore();
+      const spr = caseT + 10; ctx.beginPath(); ctx.lineWidth = 0.9; ctx.moveTo(g.cx, spr); for (let k = 1; k <= 8; k++) ctx.lineTo(g.cx + (k % 2 ? 6 : -6), spr + (Math.max(spr + 4, g.plateTop) - spr) * k / 8); ctx.stroke();
+      // strain under the lever
+      ctx.font = `600 ${narrow ? 11 : 12}px 'IBM Plex Mono',monospace`; ctx.textAlign = "center";
+      const flash = now - L.fx < 600;
+      ctx.fillStyle = flash ? C.ev : ok ? C.ink : L.strain > 0.05 ? C.ev : C.faint;
+      ctx.fillText(`${i + 1} · ${ok ? "IN GATE" : above(i) ? "HIGH" : "LOW"}`, g.cx, caseB + 18);
+      if (L.strain > 0.02) { const sw = g.colW * 0.8; ctx.strokeStyle = C.ev; ctx.lineWidth = 1; ctx.strokeRect(g.cx - sw / 2, caseB + 24, sw, 6); ctx.fillStyle = C.ev; ctx.fillRect(g.cx - sw / 2, caseB + 24, sw * Math.min(1, L.strain / STRAIN), 6); }
+      ctx.textAlign = "left";
+    });
+    // progress of the throw
+    ctx.font = "12px 'IBM Plex Mono',monospace"; ctx.fillStyle = C.ink;
+    const bw = Math.min(260, caseR - caseL - 20), bx = caseR - bw - 4, by = caseT - 16;
+    ctx.strokeStyle = C.ink; ctx.lineWidth = 1; ctx.strokeRect(bx, by, bw, 8); ctx.fillStyle = C.brass; ctx.fillRect(bx, by, bw * p, 8);
+    ctx.fillStyle = C.ink; ctx.textAlign = "right"; ctx.fillText(`BOLT ${Math.round(p * 100)}%`, bx - 6, by + 8); ctx.textAlign = "left";
+    if (dark) { ctx.fillStyle = "rgba(20,17,13,.18)"; ctx.fillRect(0, 0, W, H); }
+  }
+  function loop(now) {
+    const dt = Math.min(0.05, (now - (last || now)) / 1000); last = now;
+    step(dt, now); render(now);
+    raf = requestAnimationFrame(loop);
+  }
+
+  // ---- input: mouse and touch (the pad, or press on a lever), keyboard (1/2 or ←→, ↑/W hold, ↓/S hold)
+  pad.querySelectorAll("button").forEach((b) => {
+    const a = b.dataset.a;
+    on(b, "pointerdown", (e) => { e.preventDefault(); if (!started || over) return; b.classList.add("on"); if (a === "l0") choose(0); if (a === "l1") choose(1); if (a === "lift") startLift(); if (a === "ease") startEase(); });
+    const up = () => { b.classList.remove("on"); if (a === "lift" || a === "ease") stopHands(); };
+    on(b, "pointerup", up); on(b, "pointerleave", up); on(b, "pointercancel", up);
+    on(b, "keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); if (e.repeat) return; if (a === "l0") choose(0); if (a === "l1") choose(1); if (a === "lift") startLift(); if (a === "ease") startEase(); } });
+    on(b, "keyup", (e) => { if (e.key === "Enter" || e.key === " ") { e.stopPropagation(); stopHands(); } });
+  });
+  on(cv, "pointerdown", (e) => {
+    if (!started || over) return;
+    const r = cv.getBoundingClientRect(), x = e.clientX - r.left;
+    const g0 = leverGeo(0), g1 = leverGeo(1);
+    const i = Math.abs(x - g0.cx) <= Math.abs(x - g1.cx) ? 0 : 1;
+    if (x < G.caseL) return;
+    if (moved()) return;
+    try { cv.setPointerCapture(e.pointerId); } catch { /* fine */ }
+    if (i !== sel) { sel = i; selBtn(); }
+    startLift();
+  });
+  const cup = () => stopHands();
+  on(cv, "pointerup", cup); on(cv, "pointercancel", cup);
+  on(window, "keydown", (e) => {
+    if (!started || over) return;
+    const k = e.key;
+    if (e.target && e.target.closest && e.target.closest("." + Q + "pad")) return;
+    if (k === "1" || k === "ArrowLeft") { e.preventDefault(); if (!e.repeat) choose(0); }
+    else if (k === "2" || k === "ArrowRight") { e.preventDefault(); if (!e.repeat) choose(1); }
+    else if (k === "ArrowUp" || k === "w" || k === "W") { e.preventDefault(); if (!e.repeat) startLift(); }
+    else if (k === "ArrowDown" || k === "s" || k === "S") { e.preventDefault(); if (!e.repeat) startEase(); }
+  });
+  on(window, "keyup", (e) => { if (["ArrowUp", "ArrowDown", "w", "W", "s", "S"].includes(e.key)) stopHands(); });
+
+  const ro = new ResizeObserver(() => resize()); ro.observe(w); resize();
+
+  const second = isSecond(shared);
+  const intro = document.createElement("div"); intro.className = Q + "intro";
+  intro.innerHTML = `<div class="${Q}card">
+    <div class="no"><span>PAT. No. 4·0·0</span><span>SHEET 5 OF 5</span></div>
+    <h2>Lockwork · your own door</h2>
+    ${art.has("lock-lever") ? `<img class="fig" alt="FIG. 5, the lever lock in the office door" src="${art.url("lock-lever")}">` : ""}
+    <p class="goal">Hold both levers in their gates while his key throws the bolt, so neither drops behind it.</p>
+    <p class="open"></p>
+    <ol>
+      <li><b>CHOOSE</b> a lever: <kbd>1</kbd> <kbd>2</kbd>, <kbd>←</kbd> <kbd>→</kbd>, or tap it.</li>
+      <li><b>LIFT</b>: hold <kbd>↑</kbd>, the button, or press on the lever, and let go with the stump in its notch. Over the notch, the stump takes the pick. Each lever sinks on its spring: top them up in turn. <b>EASE</b> (<kbd>↓</kbd>) lets one down.</li>
+      <li><b>THE ROSE</b>: when it goes dark he is looking in, a hand's width above the keyhole. Touch nothing until it is lit.</li>
+    </ol><div data-row></div>
+    <div class="ft">${streak >= 2 ? `<label><input type="checkbox" ${gentle ? "checked" : ""}> wider gates, slower springs, a longer shadow, a fourth pick</label>` : "<span>The key turns only while the rose is lit.</span>"}<button type="button" class="${Q}b" data-start>START</button></div></div>`;
+  intro.querySelector(".open").textContent = second
+    ? "Night seven, again, 02:00. A key in your own door from the passage side, and the same grind as last season. You know the case now: the cover is already off."
+    : "Night seven, 02:00. A key turns in your own door from the passage side: Fenn's, last season's, throwing the bolt to keep you at the desk until he knocks. You have the case cover off. From in here you can keep its two levers from falling behind the bolt, and then the bolt is only a bolt.";
+  intro.querySelector("[data-row]").appendChild(stage.row(Q + "b"));
+  w.appendChild(intro);
+  const gb = intro.querySelector("input");
+  if (gb) on(gb, "change", () => { gentle = gb.checked; api.store.set("leverGentle", gentle); picks = gentle ? 4 : 3; });
+  const sb = intro.querySelector("[data-start]");
+  on(sb, "click", () => { intro.remove(); started = true; t0 = performance.now(); nextDark = 7; say("Lift both levers into their gates before the stump reaches them."); });
+  raf = requestAnimationFrame(loop);
+  sb.focus();
+  return { unmount() { disposed = true; cancelAnimationFrame(raf); timers.forEach(clearTimeout); ro.disconnect(); for (const [el, ev, fn, o] of listeners) el.removeEventListener(ev, fn, o); root.innerHTML = ""; } };
 }

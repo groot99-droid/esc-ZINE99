@@ -79,6 +79,7 @@ Every night runs the same loop: the office, the shift at the six lenses and in t
 | 17 | 2D | `n5_linen_count` | The passage side-on in the blackout: six coins of light, a candle at the open lost-property cabinet, Dora counting | "Somebody has to count what they leave." Move on her count, be still when she listens; at 406 for the knock, turn round: a seventh coin, in your own door, and a figure crosses it | Cut |  |
 | 18 | 2D | `n7_own_lens` | Your own rose from inside the office at 2:14: the passage bowed in the lens, six roses down its length, an eye pressed close on the far side | Offered once the seventh row is stamped. Hold still under the look until the catch ring closes; or step back; or open the door | Fade |  |
 | E | 3D | `end_sitter` | The lobby floor by the reception desk at 06:00 | The Sitter: Mara sets the case, her watercolours and your carbons in front of two officers and holds out her wrists; five leave by the revolving door. Last image: her painting of your door, the rose lit | Fade (end) |  |
+| 19 | 1D | `n7_lever_lock` | Lockwork, FIG. 5: the office door's lever lock from inside at 02:00, case cover off, the rose lit 20 cm above the keyhole | A key turns from the passage side: Fenn's, last season's. Hold both levers in their gates while the bolt goes across; when the rose goes dark he is looking in, so freeze | Pull-out |  |
 
 ![Panel 2](../games/behind-the-peephole/reference/01-service-corridor.jpg)
 

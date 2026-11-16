@@ -1911,3 +1911,5 @@ any of them.
 - *Lines written for the web build.* The healer: "A name somebody kept is a light somebody can
   walk by." The Syndicate Elder, of the founding: "The stone remembers who laid it." The beats that
   introduce the Record action, the lanterns, the struck row and the signature.
+
+**Author review, 2026-11-16.** The author reviewed this list and accepted every addition in it, phases 1 to 3, except where a row above says it is struck. Three were decided one by one: the Stuffing win rule (kept, Stuffed Ones), the six ward names (kept, WrymWretch) and the thirteen placeholder List items (kept, Missing Campsites).

@@ -2171,3 +2171,5 @@ Accepted 2026-11-15 and still waiting:
 
 **Not added on purpose:** the Windigo's origin in any form the player sees or hears; who the figure
 was; any link to the Grounds 99 material.
+
+**Author review, 2026-11-16.** The author reviewed this list and accepted every addition in it, phases 1 to 3, except where a row above says it is struck. Three were decided one by one: the Stuffing win rule (kept, Stuffed Ones), the six ward names (kept, WrymWretch) and the thirteen placeholder List items (kept, Missing Campsites).
