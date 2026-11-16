@@ -54,9 +54,9 @@
       "title": "The Edge of the World",
       "aspect_ratio": "16:9",
       "model": "soul_cinematic",
-      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field, fine dust in the lit air. Dawn at the highest ridge of a tiny city carved into a wall of umber tree bark. Seen from behind and at a distance, small in the frame at the left, stands Mossa the messenger: a tiny carved hand-made figure with a large head and long thin limbs, not human proportions, a slight teenage runner with a very long scarf blowing sideways, a rolled bark-paper map held at her side. She looks away to the right, where the bark visibly curves off and ends against open pale sky, a faint line of small twig stakes with fibre flags running along the ridge toward that edge. Below her the dwellings are still dark, two or three lanterns lit. Cold pale gold light from the east, umber bark, lichen lime, cream paper. The lower quarter is soft out-of-focus bark, left calm for a caption, no text, no lettering, no watermark, no logo",
-      "job_id": "ddff0142-a742-49e1-bd47-afbd30c1ef4b",
-      "needs_review": "Mossa is seen in profile, not from behind, and close; the map reads as a flat parcel; no dwellings below her.",
+      "prompt": "Photographic macro miniature diorama, tilt-shift, shallow depth of field. Dawn over a tiny city carved into a wall of umber tree bark, seen as a deep wide landscape from high behind. In the middle distance, very small in the frame, stands Mossa the messenger with her back fully to the camera: a tiny carved hand-made figure with a large head and long thin limbs, a very long scarf blowing sideways, an open bark-paper map spread in both hands. Beyond her the bark ridge runs far away and curves off, ending against open pale sky. A faint line of small twig stakes with fibre flags runs along the ridge toward that edge. Below and around her, many tiny dark dwellings are carved into the bark, two or three lanterns lit. Cold pale gold light from the east, umber bark, lichen lime, cream paper. The lower quarter is soft out-of-focus bark, left calm for a caption, no text, no lettering, no watermark, no logo",
+      "job_id": "369b7714-072a-4c0b-8f99-098422230e8f",
+      "needs_review": "Mossa is now small, distant and seen from behind with the map open. Remaining: the view is shallow, against a bark wall, rather than a deep wide vista; the ridge does not visibly curve off at the edge; the map carries faint scribble marks.",
       "image": "keyart/ending-edge-of-the-world.jpg"
     },
     {
@@ -78,9 +78,9 @@
       "title": "The Ring",
       "aspect_ratio": "16:9",
       "model": "soul_cinematic",
-      "prompt": "Plain photograph of an ordinary suburban backyard in deep focus, flat calm daylight, like a plate in a children's nature encyclopaedia. A large old deciduous tree with grey-brown bark stands in the middle of a mown green lawn, its trunk in the left third of the frame. Tied once round the trunk at chest height is a single band of bright orange ribbon, knotted, its two short ends hanging still. Behind the tree runs a white picket fence, and over the fence in the next yard, small but clear at the right, is a low sawn tree stump, weathered grey, with grass grown up around it. Nobody in the yard; the back door of a house at the far right edge is shut. Blue sky, even light, no drama. Grass green, sky blue, white fence, bark umber, one orange band. The lower quarter is plain even lawn, left calm for a caption, no text, no lettering, no watermark, no logo",
-      "job_id": "f498a807-0183-4f86-911b-8986c3f60cc2",
-      "needs_review": "The stump stands in the same yard, in front of the fence, not over it in the next yard; the ribbon is tied in a bow.",
+      "prompt": "Plain photograph in deep focus, flat calm daylight, taken in an ordinary suburban backyard looking over a low white picket fence into the neighbour's yard. In our yard, in the left third of the frame, stands a large old deciduous tree with grey-brown bark on mown green lawn. Wrapped once round its trunk at chest height is a flat band of bright orange ribbon, pulled tight with a small plain knot, no bow, no loops, two short ends hanging down. The fence crosses the whole frame in the middle distance, waist high. Our lawn in front of the fence is completely empty. On the far side of the fence, in the neighbour's lawn, at the right, a low sawn grey tree stump with long grass round it, its lower half hidden behind the white pickets, the fence clearly in front of it. Nobody in either yard. Grass green, sky blue, white fence, bark umber, one orange band. The lower quarter is plain even lawn, left calm for a caption, no text, no lettering, no watermark, no logo",
+      "job_id": "fd1aa0ed-ce9e-469c-b7cb-e821fff0a6e6",
+      "needs_review": "Retry kept (the first still put the stump in front of the fence). Stump now stands beyond the fence in the next yard and the ribbon is a knot, not a bow. Remaining: the tree is smaller and more cropped than 'large old', and the stump is not hidden by the pickets.",
       "image": "keyart/ending-the-ring.jpg"
     }
   ]
