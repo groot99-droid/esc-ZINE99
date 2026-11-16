@@ -152,7 +152,8 @@
         "met.wenna",
         "devotion",
         "wild.lanes",
-        "met.halse"
+        "met.halse",
+        "crew.wenna"
       ],
       "writes": [
         "met.wenna",
@@ -160,14 +161,32 @@
         "stirs",
         "devotion",
         "notice",
-        "crews",
-        "met.halse"
+        "crews"
       ],
       "enter": "flatten",
       "exit": "push-in",
       "next": [
+        "s-chandlery",
         "g-liars-tidewater",
         "g-charter-tidewater"
+      ]
+    },
+    {
+      "id": "s-chandlery",
+      "layer": "3d",
+      "name": "The chandlery: the slate",
+      "chapter": "ch2-ordered-sea",
+      "reads": [
+        "met.wenna",
+        "devotion"
+      ],
+      "writes": [
+        "met.halse"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "g-liars-tidewater"
       ]
     },
     {
@@ -185,7 +204,8 @@
         "news",
         "devotion",
         "liars.caught",
-        "chits"
+        "chits",
+        "crew.wenna"
       ],
       "enter": "push-in",
       "exit": "cut",
@@ -236,7 +256,8 @@
       "chapter": "ch3-old-sea",
       "reads": [
         "wild.unwritten",
-        "devotion"
+        "devotion",
+        "crew.gullwife"
       ],
       "enter": "fade",
       "exit": "push-in",
@@ -257,7 +278,8 @@
       "writes": [
         "crews",
         "devotion",
-        "liars.caught"
+        "liars.caught",
+        "crew.gullwife"
       ],
       "enter": "push-in",
       "exit": "flatten",
@@ -275,7 +297,8 @@
       "reads": [
         "devotion",
         "wild.unwritten",
-        "crews"
+        "crews",
+        "crew.gullwife"
       ],
       "writes": [
         "crews",
@@ -347,6 +370,7 @@
       "exit": "fade",
       "next": [
         "s-chart-table",
+        "g-reckon-backplot",
         "d-rescue"
       ]
     },
@@ -486,7 +510,8 @@
       "reads": [
         "wild.salt",
         "devotion",
-        "met.salt"
+        "met.salt",
+        "crew.kettle"
       ],
       "writes": [
         "met.salt",
@@ -519,7 +544,8 @@
         "crews",
         "devotion",
         "liars.caught",
-        "news"
+        "news",
+        "crew.kettle"
       ],
       "enter": "push-in",
       "exit": "flatten",
@@ -536,7 +562,9 @@
       "mode": "engraved",
       "reads": [
         "wild.salt",
-        "devotion"
+        "devotion",
+        "crew.kettle",
+        "port.salt"
       ],
       "writes": [
         "notice"
@@ -608,11 +636,13 @@
       "game": "reckoning",
       "reads": [
         "strait.lights_dark",
-        "wild.strait"
+        "wild.strait",
+        "crew.gullwife"
       ],
       "writes": [
         "wild.strait",
-        "notice"
+        "notice",
+        "chits"
       ],
       "enter": "cut",
       "exit": "pull-out",
@@ -653,12 +683,14 @@
       "mode": "deep",
       "reads": [
         "wild.pearl",
-        "devotion"
+        "devotion",
+        "port.pearl"
       ],
       "writes": [
         "has_compact_rubbing",
         "crews",
-        "chits"
+        "chits",
+        "bells"
       ],
       "enter": "flatten",
       "exit": "push-in",
@@ -767,7 +799,10 @@
       "reads": [
         "notice",
         "wild.spice",
-        "devotion"
+        "devotion",
+        "crew.kettle",
+        "crew.wenna",
+        "port.spice"
       ],
       "writes": [
         "notice"
@@ -779,6 +814,25 @@
       ]
     },
     {
+      "id": "g-reckon-backplot",
+      "layer": "1d",
+      "name": "Dead Reckoning: the back-plot",
+      "chapter": "ch4-open-chart",
+      "game": "reckoning",
+      "reads": [
+        "toll"
+      ],
+      "writes": [
+        "backplot.good"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "d-rescue"
+      ],
+      "world_runs": false
+    },
+    {
       "id": "d-rescue",
       "layer": "2d",
       "name": "The Deep: rescue dive",
@@ -786,7 +840,13 @@
       "mode": "deep",
       "reads": [
         "toll",
-        "devotion"
+        "devotion",
+        "backplot.good",
+        "port.lanes",
+        "port.salt",
+        "port.strait",
+        "port.pearl",
+        "port.spice"
       ],
       "writes": [
         "toll",
@@ -832,7 +892,8 @@
         "blockade_plotted",
         "notice",
         "wild.halls",
-        "devotion"
+        "devotion",
+        "port.halls"
       ],
       "writes": [
         "blockade_run",
@@ -907,6 +968,7 @@
       "exit": "fade",
       "next": [
         "s-cabin-tally",
+        "g-reckon-backplot",
         "d-rescue"
       ],
       "world_runs": false
@@ -945,17 +1007,41 @@
         "chart.order_regions",
         "chart.balanced_regions",
         "wild.home",
-        "stirs",
-        "tab.matched",
-        "pay_open"
+        "stirs"
       ],
       "enter": "fade",
       "exit": "flatten",
       "next": [
+        "g-charter-tab",
         "g-reckon-lane",
         "e-storm-approach",
         "d-under-pilings"
       ]
+    },
+    {
+      "id": "g-charter-tab",
+      "layer": "1d",
+      "name": "The Charter: the tab",
+      "chapter": "ch6-lord-of-tea",
+      "game": "charter",
+      "reads": [
+        "chits",
+        "tab.known",
+        "princess.trust"
+      ],
+      "writes": [
+        "tab.matched",
+        "pay_open",
+        "princess.trust"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "g-reckon-lane",
+        "e-storm-approach",
+        "d-under-pilings"
+      ],
+      "world_runs": false
     },
     {
       "id": "e-storm-approach",
@@ -965,7 +1051,9 @@
       "mode": "engraved",
       "reads": [
         "chart.wild_regions",
-        "notice"
+        "notice",
+        "port.lanes",
+        "crew.wenna"
       ],
       "enter": "flatten",
       "exit": "fade",
@@ -1029,10 +1117,13 @@
         "devotion",
         "notice",
         "princess.trust",
-        "chart.balanced_regions"
+        "chart.balanced_regions",
+        "bells"
       ],
       "writes": [
-        "tea.final_result"
+        "tea.final_result",
+        "debts.answered",
+        "tea.cracked"
       ],
       "enter": "push-in",
       "exit": "pull-out",
@@ -1048,7 +1139,8 @@
       "chapter": "ch7-tideline",
       "reads": [
         "tea.final_result",
-        "chart.wild_regions"
+        "chart.wild_regions",
+        "tea.cracked"
       ],
       "writes": [
         "final_choice"

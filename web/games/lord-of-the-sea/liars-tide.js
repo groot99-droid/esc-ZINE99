@@ -14,6 +14,7 @@
 // of the dice". See her off the bench and the chit lies by the tide die for the last one sitting; while it
 // lies there a stir draws 10 suspicion, not 25. The table, cups, dice and stake are the game's art (api.art).
 import { pic, bg, dieCrop, cupCrop, endCard, chapterStrip } from "./_art.js";
+import { ladder, setFlag } from "./_ladder.js";
 
 const RED = "#8C2B2B", GREEN = "#2F6B5E", GOLD = "#E7A93B", INK = "#17140f", SKIN = "#F1E3C6", PAPER = "#E9DBBB", BLUE = "#1F2E4A";
 const FACES = ["", "Gull", "Shell", "Rope", "Bottle", "Lantern", "Wave"];
@@ -34,29 +35,63 @@ function icon(face, s = 40, col = INK) {
   return `<svg viewBox="0 0 40 40" width="${s}" height="${s}" aria-hidden="true">${body}</svg>`;
 }
 
-export default {
+// Phase 2 (accepted 2026-11-15, built 2026-11-16): the ladder. Teach is the Tidewater table above, cut to two dice
+// a sailor. Test is the Gullwife's deck (`g-liars-gullwife`): two bluffers, and one of them holds a Company die
+// weighted to Lantern; the chalk shows what every cup held, and calling the die out wins it. Twist is the Flooding
+// Table (`g-liars-salt`): each round the tide takes a die from whoever bid lowest, and a stir, in full view, holds it
+// back. Double or drown: once a game a loser may keep the die and owe two.
+const LADDER = {
+  title: "Liar's Tide", kicker: "1D · TATTOO FLASH · THREE TABLES",
+  stages: {
+    teach: { name: "Wenna's Tell", where: "Chapter II, the Tidewater taproom: the slate, the stake, and a pilot who counts aloud.", line: "A pilot who counts under her breath." },
+    test: { name: "The Loaded Die", where: "Chapter III, the Gullwife's deck: two bluffers, and one die that is not honest.", line: "Two bluffers on the Gullwife's deck, and one die that is not honest." },
+    twist: { name: "The Flooding Table", where: "Chapter IV, the Salt Steps reef at the turn of the tide: the table itself is in play.", line: "On the reef at the turn of the tide, the lowest bidder feeds the water." },
+  },
+};
+export default { mount(root, api) { return ladder(root, api, LADDER, (r, a) => game.mount(r, a)); } };
+
+const game = {
   mount(root, api) {
     const P = "lord-of-the-sea-liars-tide-";
+    const stage = api.stage || "teach", teach = stage === "teach", deck = stage === "test", flood = stage === "twist";
     const rng = api.rng();
     const timers = new Set();
     const later = (fn, ms) => { const id = setTimeout(() => { timers.delete(id); fn(); }, api.reducedMotion ? Math.min(ms, 350) : ms); timers.add(id); };
     const roll = () => 1 + Math.floor(rng() * 6);
 
-    const players = [
-      { name: "Alexi", you: true, dice: [], count: DICE + 1 + ((+api.store.get("losses", 0) || 0) >= 2 ? 1 : 0) }, // the house spots the newcomer a fourth die (a fifth after two losses)
-      { name: "Wenna", dice: [], count: DICE, bluff: 0.1, thresh: 0.65, eye: GREEN, tell: true },
-      { name: "Dockhand", dice: [], count: DICE, bluff: 0.2, thresh: 0.5, eye: RED },
-      { name: "Mother Halse", dice: [], count: DICE, bluff: 0.15, thresh: 0.55, eye: BLUE, halse: true },
+    const spot4 = DICE + 1 + ((+api.store.get("losses", 0) || 0) >= 2 ? 1 : 0); // the house spots the newcomer a fourth die (a fifth after two losses)
+    const players = teach ? [
+      { name: "Alexi", you: true, dice: [], count: spot4 },
+      { name: "Wenna", dice: [], count: 2, bluff: 0.1, thresh: 0.65, eye: GREEN, tell: true },
+      { name: "Tall dockhand", dice: [], count: 2, bluff: 0.2, thresh: 0.5, eye: RED },
+      { name: "Mother Halse", dice: [], count: 2, bluff: 0.15, thresh: 0.55, eye: BLUE, halse: true },
+    ] : deck ? [
+      { name: "Alexi", you: true, dice: [], count: spot4 },
+      { name: "The mate", dice: [], count: 3, bluff: 0.45, thresh: 0.5, eye: RED, loaded: true },
+      { name: "The cook", dice: [], count: 3, bluff: 0.4, thresh: 0.5, eye: GREEN },
+    ] : [
+      { name: "Alexi", you: true, dice: [], count: spot4 },
+      { name: "The tallyman", dice: [], count: 3, bluff: 0.2, thresh: 0.5, eye: BLUE, licence: true },
+      { name: "Old Marrow", dice: [], count: 3, bluff: 0.3, thresh: 0.55, eye: GREEN },
     ];
-    players[2].name = "Tall dockhand";
+    const N = players.length;
+    const others = players.map((p, i) => i).slice(1);
+    const TABLE = teach ? "table-tidewater" : deck ? "table-gullwife" : "table-flooding";
     const art = api.art;
     const S = {
       phase: "how", turn: 0, starter: 0, bid: null, bidder: -1, gullBid: false, tide: 1, ledger: [], round: 0,
       suspicion: 0, stirredThisRound: false, stirring: false, pick: new Set(), selQ: 1, selF: 2, speech: {}, hintUsed: false,
       reveal: null, log: "", stirOpen: false, chitFree: false, beat: "", beatVoice: false, outs: 0, stirs: 0, popBid: false, shake: -1,
+      owe: 1, dblUsed: false, pending: false, accuse: false, accused: false, won: false, high: {}, held: false, water: 0, taken: 0,
     };
     const losses = +api.store.get("losses", 0) || 0;
-    const NEWS = {
+    const NEWS = deck ? {
+      1: "The mate spits over the side and shows an empty cup. “Kettle crew dice on their reef at the turn of the tide. Bring dry feet, and something to stake.”",
+      2: "The cook laughs and tips her cup to the gulls. “We'll sing for you, then. Not well. You have heard us.”",
+    } : flood ? {
+      1: "The tallyman folds the fishing licence small and pushes it across the wet stone. “The Steps may fish their own reef. I shall write that the tide took it.”",
+      2: "Old Marrow turns his cup over on his knee and wrings out his cuff. “My grandchildren count better than I do. Beat the Company's man, and the Kettle crew sing.”",
+    } : {
       1: "Wenna pushes back her stool. “The Gullwife crew fish past the chart's edge, where the Company's buoys stop. Go and find them.”",
       2: "The tall dockhand drains his cup. “Kettle crew still sing at the Salt Steps. Under their breath, mind.”",
       3: "Mother Halse turns her chit face up and leaves it by the tide die. “The luck of the dice. You pawned it to my mother for a bottle of the green. Last one sitting takes it.” While it lies there a stir draws 10, not 25.",
@@ -163,6 +198,9 @@ export default {
       @media (prefers-reduced-motion: reduce) { .${P}slate .sl img, .${P}spot.shake { animation:none; } .${P}stake.free { transition:none; } }
       @media (max-width:720px) { .${P}chalk { display:none; } .${P}tbl { width:100%; } }
       @media (min-width:721px) { .${P}ledger.under { display:none; } }
+      .${P}water { left:0 !important; right:0; bottom:0; top:auto !important; transform:none !important; width:100%; background:linear-gradient(rgba(47,107,94,.55), rgba(31,46,74,.8)); border-top:3px solid ${SKIN}; transition:height .9s; display:grid; align-items:start; justify-items:center; pointer-events:none; border-radius:0 0 7px 7px; }
+      .${P}water span { margin-top:3px; font-size:clamp(10px,1.7cqw,14px); font-style:italic; color:${SKIN}; text-shadow:0 1px 0 ${INK}; }
+      @media (prefers-reduced-motion: reduce) { .${P}water { transition:none; } }
       .${P}beat { text-align:center; font-size:16px; line-height:1.35; min-height:1.35em; padding:6px 12px; border:3px dashed ${INK}; border-radius:12px; background:#fff8e6; }
       .${P}beat.voice { font-style:italic; color:${GREEN}; border-color:${GREEN}; }
       .${P}beat:empty { display:none; }
@@ -194,10 +232,16 @@ export default {
         <button type="button" data-sl="ask">Ask for a bottle</button>
       </div>
       <div class="${P}flash" hidden>
-        <div class="ttl">${swallow(false)}<span class="${P}ribbon ${P}rye">LIAR'S TIDE</span>${swallow(true)}</div>
+        <div class="ttl">${swallow(false)}<span class="${P}ribbon ${P}rye">${deck ? "THE LOADED DIE" : flood ? "THE FLOODING TABLE" : "LIAR'S TIDE"}</span>${swallow(true)}</div>
         <p class="goal ${P}rye">Be the last at the table with dice.</p>
-        <p class="open" style="font-style:normal;margin-bottom:6px">Each sailor hides three tide dice under a horn cup; the house spots the newcomer a fourth.</p>
-        <p class="open">Chapter II, the Tidewater taproom. Wenna, who pilots the ferry; a dockhand; and Mother Halse, with chit No. 2 on the table. Alexi cannot ask a straight question to save his life, so he plays for the news instead.</p>
+        <p class="open" style="font-style:normal;margin-bottom:6px">${teach ? "Each sailor hides two tide dice under a horn cup; the house spots the newcomer four." : "Each sailor hides three tide dice under a horn cup; the house spots the newcomer a fourth."}</p>
+        <p class="open">${deck ? "Chapter III, the Gullwife's deck, past the chart's edge. The mate and the cook bid high and lie often. One of the two has a die that came off a Company cutter: it is weighted to Lantern."
+          : flood ? "Chapter IV, the Salt Steps, on the reef at the turn of the tide. The tallyman has staked the fishing licence, and Old Marrow of the Kettle crew has taken the third cup. The table is a flat rock, and the sea is coming up it."
+          : "Chapter II, the Tidewater taproom. Wenna, who pilots the ferry; a dockhand; and Mother Halse, with chit No. 2 on the table. Alexi cannot ask a straight question to save his life, so he plays for the news instead."}</p>
+        ${deck ? `<div class="${P}legend"><div><span class="ic art" style="background:#f6ecd2 ${art.has("loaded-die") ? `url('${art.url("loaded-die")}') 50% 34%/150% auto no-repeat` : ""}"></span><span><b>Call a die out</b> (<kbd>X</kbd>): when the cups lift, the chalk keeps what each cup held. A cup that shows a Lantern every single round is not luck. Name its owner and the die is yours; name the wrong one and the whole deck looks at your hands.</span></div>
+          <div><span class="ic">${icon(4, 30)}</span><span><b>Double or drown</b> (<kbd>D</kbd>): once a game, when you lose a call, stake chit No. 2 and keep the die. The next call you lose costs two.</span></div></div>` : ""}
+        ${flood ? `<div class="${P}legend"><div><span class="ic">${icon(6, 30)}</span><span><b>The water climbs.</b> When the cups lift, the tide also takes one die from whoever bid <b>lowest</b> that round, the loser of the call aside (he has paid). A sailor who never bid at all is lowest of all. Sitting quiet drowns you.</span></div>
+          <div><span class="ic${dieCrop(art, 6) ? " art" : ""}" style="${dieCrop(art, 6)}">${dieCrop(art, 6) ? "" : icon(6, 30)}</span><span><b>Hold the water</b> (<kbd>S</kbd>): a stir, in full view of everyone, keeps the tide off the table for one round. Suspicion +25. The tallyman may <b>double or drown</b> once with the licence, and so may you (<kbd>D</kbd>).</span></div></div>` : ""}
         ${losses >= 2 ? `<p class="gentle">The princess has pulled up a stool: her whisper is free every turn this game, and the house spots you a fifth die.</p>` : ""}
         <div class="${P}legend">
           <div><span class="ic${dieCrop(art, 5) ? " art" : ""}" style="${dieCrop(art, 5)}">${dieCrop(art, 5) ? "" : icon(5, 30)}</span><span><b>Bid</b> how many of one face sit under all the cups plus the tide die. Raise the count, or keep it and raise the face. <kbd>↑</kbd><kbd>↓</kbd> count, <kbd>←</kbd><kbd>→</kbd> face, <kbd>B</kbd> bid.</span></div>
@@ -212,7 +256,7 @@ export default {
     const how = w.querySelector("." + P + "how");
 
     const active = () => players.map((p, i) => i).filter((i) => players[i].count > 0);
-    const nextActive = (i) => { for (let k = 1; k <= 4; k++) { const j = (i + k) % 4; if (players[j].count > 0) return j; } return i; };
+    const nextActive = (i) => { for (let k = 1; k <= N; k++) { const j = (i + k) % N; if (players[j].count > 0) return j; } return i; };
     const totalDice = () => players.reduce((a, p) => a + p.count, 0) + 1;
     const wild = (face) => face !== 1 && !S.gullBid;
     const bidName = (b) => `${NUMW[b.q] || b.q} ${b.q === 1 ? FACES[b.f] : PLURAL[b.f]}`;
@@ -242,7 +286,8 @@ export default {
 
     function newRound(starter) {
       S.round++;
-      for (const p of players) p.dice = Array.from({ length: p.count }, roll);
+      for (const p of players) { p.dice = Array.from({ length: p.count }, roll); if ((p.loaded || p.lantern) && p.count) p.dice[0] = 5; }
+      S.high = {}; S.held = false; S.pending = false; S.accuse = false;
       S.tide = roll(); S.bid = null; S.bidder = -1; S.gullBid = false; S.reveal = null; S.speech = {};
       if (!S.stirredThisRound && S.round > 1) S.suspicion = Math.max(0, S.suspicion - 10);
       S.stirredThisRound = false; S.stirring = false; S.pick.clear(); S.hintUsed = false;
@@ -251,26 +296,30 @@ export default {
       S.ledger.push({ round: S.round });
       S.selQ = 1; S.selF = 2;
       S.log = S.turn === 0 ? "You open the bidding." : `${players[S.turn].name} opens.`;
-      if (S.round === 2 && !S.stirOpen) { S.stirOpen = true; beat("The water jug at his elbow turns when he looks at it. Stir the cup: pick up to two of your dice and circle over them (or S) to roll them again. Every stir draws the sailors' eyes.", false); }
-      else if (S.round === 3) beat("The princess slides onto the bench beside him. Whisper (W): once a round she tells you the odds that the standing bid holds.", false);
+      if (flood && S.round === 1) beat("The tallyman squares the licence on the dry end of the rock. “Lowest bid feeds the tide, sailor. House rule. The house is the sea.”", false);
+      else if (flood && S.round === 2) beat("The water is over the first joint of the rock. Hold the water (S): a stir keeps it off the table this round, and every eye on the reef will see you do it.", false);
+      else if (deck && S.round === 2) beat("Read the chalk. It keeps what every cup held when it was lifted. One cup is luckier in Lanterns than a cup has any right to be.", false);
+      else if (deck && S.round === 3 && !S.stirOpen) { S.stirOpen = true; beat("The sea out here is his. Stir the cup: pick up to two of your dice and circle over them (or S) to roll them again.", false); }
+      else if (teach && S.round === 2 && !S.stirOpen) { S.stirOpen = true; beat("The water jug at his elbow turns when he looks at it. Stir the cup: pick up to two of your dice and circle over them (or S) to roll them again. Every stir draws the sailors' eyes.", false); }
+      else if (teach && S.round === 3) beat("The princess slides onto the bench beside him. Whisper (W): once a round she tells you the odds that the standing bid holds.", false);
       render();
       if (S.turn !== 0) later(aiTurn, 1100);
     }
 
     function beat(text, voice) { S.beat = text; S.beatVoice = !!voice; }
     function placeBid(pi, q, f) {
-      S.bid = { q, f }; S.bidder = pi; S.popBid = true;
+      S.bid = { q, f }; S.bidder = pi; S.popBid = true; S.high[pi] = q * 10 + f;
       if (f === 1) S.gullBid = true;
       S.ledger.push({ who: players[pi].name, text: bidName(S.bid) });
       if (pi !== 0) S.speech[pi] = players[pi].halse ? `(chalks it on the table: ${bidName(S.bid)})` : `“${cap(bidName(S.bid))}.”`;
       S.turn = nextActive(pi);
       S.log = pi === 0 ? `You bid ${bidName(S.bid)}.` : `${players[pi].name} bids ${bidName(S.bid)}.`;
-      if (S.turn !== 0) { const p = players[S.turn]; if (p.tell && hasThree(p)) S.speech[S.turn] = "(counting under her breath: one, two, three…)"; }
+      if (S.turn !== 0) { const p = players[S.turn]; if (p.tell && hasThree(p)) S.speech[S.turn] = p.count >= 3 ? "(counting under her breath: one, two, three…)" : "(counting under her breath: one, two…)"; }
       render();
       if (S.turn !== 0) later(aiTurn, 1200);
       else { S.selQ = S.bid.q; S.selF = S.bid.f; bumpSel(); render(); }
     }
-    const hasThree = (p) => [1, 2, 3, 4, 5, 6].some((f) => p.dice.filter((v) => v === f).length >= 3);
+    const hasThree = (p) => [1, 2, 3, 4, 5, 6].some((f) => p.dice.filter((v) => v === f).length >= Math.min(3, Math.max(2, p.count)));
     const cap = (s) => s[0].toUpperCase() + s.slice(1);
 
     function aiTurn() {
@@ -306,31 +355,115 @@ export default {
       const n = trueCount(S.bid.q, S.bid.f);
       const holds = n >= S.bid.q;
       const loser = holds ? pi : S.bidder;
-      players[loser].count--;
       S.shake = loser;
-      S.reveal = { caller: pi, n, holds, loser, face: S.bid.f, wild: wild(S.bid.f) };
-      if (loser !== 0 && players[loser].count === 0) {
-        S.outs++; if (loser === 3) S.chitFree = true;
-        beat(NEWS[loser], false);
-        if (active().length === 2 && players[0].count > 0) {
-          const last = active().find((i) => i !== 0);
-          if (loser !== 3) later(() => { if (S.phase === "reveal") { beat(last === 1 ? "Just Wenna now. She counts under her breath when she holds three of a face. Listen for it." : `Just the ${players[last].name.toLowerCase()} now, and the whole taproom watching.`, false); render(); } }, 2600);
-        }
-      } else if (loser === 0 && players[0].count === 1) beat("One die left under his cup. The sea's luck does not come to a man who stops looking at it.", true);
+      S.reveal = { caller: pi, n, holds, loser, face: S.bid.f, wild: wild(S.bid.f), cups: players.map((p) => p.dice.slice()) };
       S.ledger.push({ who: players[pi].name, text: "calls the tide", strong: true });
+      if (!teach) for (let i = 1; i < N; i++) if (players[i].dice.length) S.ledger.push({ who: players[i].name, text: "showed " + players[i].dice.map((v) => FACES[v]).join(", "), show: true });
       S.speech[pi] = pi === 0 ? "" : "“Lift the cups.”";
-      S.log = `${pi === 0 ? "You call" : players[pi].name + " calls"} the tide. ${cap(NUMW[n] || String(n))} on the table: the bid ${holds ? "holds" : "fails"}. ${loser === 0 ? "You lose" : players[loser].name + " loses"} a die.`;
+      S.log = `${pi === 0 ? "You call" : players[pi].name + " calls"} the tide. ${cap(NUMW[n] || String(n))} on the table: the bid ${holds ? "holds" : "fails"}. `;
       S.phase = "reveal";
       S.nextStarter = loser;
+      if (!teach && loser === 0 && !S.dblUsed) { S.pending = true; S.log += "You lose the call: pay the die, or double or drown."; render(); return; }
+      const p = players[loser];
+      if (loser !== 0 && p.licence && !p.dblUsed && p.count === 1) {
+        p.dblUsed = true; p.owe = 2; S.speech[loser] = "(lays the licence flat) “Double.”"; S.log += "The tallyman doubles on the licence and keeps his die. His next loss costs him two.";
+        beat("Double or drown. The tallyman keeps his last die on the Company's paper. He will not be able to do it twice.", false);
+        settle(loser, false); return;
+      }
+      settle(loser, true);
+    }
+    // a call is settled: the loser pays (or has doubled), then, on the Flooding Table, the water takes its own
+    function settle(loser, pay) {
+      S.pending = false;
+      const out = (i) => {
+        if (i !== 0 && players[i].count === 0) {
+          S.outs++; if (players[i].halse) S.chitFree = true;
+          beat(NEWS[i], false);
+          if (teach && active().length === 2 && players[0].count > 0 && !players[i].halse) {
+            const last = active().find((k) => k !== 0);
+            later(() => { if (S.phase === "reveal") { beat(last === 1 ? "Just Wenna now. She counts under her breath when she holds two of a face. Listen for it." : `Just ${players[last].halse ? "Mother Halse" : "the " + players[last].name.toLowerCase()} now, and the whole taproom watching.`, false); render(); } }, 2600);
+          }
+        } else if (i === 0 && players[0].count === 1) beat("One die left under his cup. The sea's luck does not come to a man who stops looking at it.", true);
+      };
+      if (pay) {
+        const p = players[loser], n = Math.min(p.count, loser === 0 ? S.owe : p.owe || 1);
+        p.count -= n; if (loser === 0) S.owe = 1; else p.owe = 1;
+        S.log += `${loser === 0 ? "You lose" : p.name + " loses"} ${n === 2 ? "two dice" : "a die"}.`;
+        out(loser);
+      }
+      if (flood && players[0].count > 0 && active().length > 1) { // the water climbs
+        S.water++;
+        if (S.held) { S.log += " You held the water: it takes nothing this round."; S.reveal.water = -1; }
+        else {
+          let v = -1, low = 1e9;
+          for (let k = 0; k < N; k++) { const i = (S.starter + k) % N; if (!players[i].count || (i === loser && active().length > 2)) continue; const h = S.high[i] || 0; if (h < low) { low = h; v = i; } }
+          players[v].count--; S.taken++; S.reveal.water = v;
+          S.log += ` The water climbs and takes a die from ${v === 0 ? "your cup" : players[v].name + "'s cup"}: ${S.high[v] ? "the lowest bid of the round" : "no bid at all this round"}.`;
+          out(v);
+        }
+      }
       render();
       if (players[0].count === 0) later(() => end(false), 1800);
       else if (active().length === 1) later(() => end(true), 1800);
+    }
+    function double() {
+      if (!S.pending) return;
+      S.dblUsed = true; S.owe = 2;
+      S.log = "Double or drown. Chit No. 2 goes on the table and the die stays under the cup. The next call you lose costs two.";
+      S.ledger.push({ who: "Alexi", text: "doubles on chit No. 2", strong: true });
+      settle(0, false);
+    }
+    // the loaded die (test): name its owner
+    function accuse(i) {
+      S.accuse = false; S.accused = true;
+      const p = players[i];
+      if (p.loaded) {
+        p.loaded = false; p.count--; players[0].count++; players[0].lantern = true; S.won = true;
+        S.ledger.push({ who: "Alexi", text: "calls out the mate's die", strong: true });
+        beat("He turns the mate's cup over and rolls the one die across the deck. Lantern. Again: Lantern. The mate shrugs and lets it lie. “Came off a cutter. Yours now.” It will sit first in his cup for the rest of the game, and it will always show Lantern.", false);
+        S.log = "The Company's die is yours: one more die in your cup, and you know its face.";
+        if (p.count === 0) { S.outs++; }
+      } else {
+        S.suspicion = Math.min(100, S.suspicion + 30);
+        S.ledger.push({ who: "Alexi", text: "calls out the cook's die, wrongly", strong: true });
+        beat("The cook rolls every die she owns across the planks, slowly, twice. Honest. The deck goes quiet and looks at his hands instead. Suspicion +30.", false);
+        S.log = "Wrong cup. Nobody will let you call a die out again tonight.";
+      }
+      render();
+      if (S.suspicion >= 100) later(() => end(false, true), 900);
+      else if (active().length === 1) later(() => end(true), 1800);
+    }
+    function holdWater() {
+      if (!flood || S.phase !== "play" || S.held) return;
+      S.held = true; S.stirs++;
+      S.suspicion = Math.min(100, S.suspicion + (losses >= 2 ? 20 : 25));
+      S.ledger.push({ who: "Alexi", text: "(holds the water)", faint: true });
+      S.log = "He turns one hand over the rock and the tide stops a finger short of the dice. Everyone on the reef watches him do it.";
+      if (S.suspicion >= 75 && S.suspicion < 100) beat("The tallyman has his pencil out. One more and he writes down what he saw.", false);
+      render();
+      if (S.suspicion >= 100) later(() => end(false, true), 900);
     }
 
     function end(won, caught) {
       if (S.phase === "over") return;
       S.phase = "over"; render();
       api.store.set("losses", won ? 0 : losses + 1);
+      if (won) setFlag(api, teach ? "crew.wenna" : deck ? "crew.gullwife" : "crew.kettle", true);
+      if (deck) {
+        endCard(root, art, S.won ? "loaded-die" : "table-gullwife", S.won ? "THE COMPANY'S DIE · WEIGHTED TO LANTERN" : "THE GULLWIFE'S DECK", "#2b1d10");
+        if (caught) api.end({ outcome: "lose", text: "The deck has seen enough of his hands. The mate takes the cup away from him, not unkindly, and the Gullwife crew go back to their nets without a song." });
+        else if (won) api.end({ outcome: "win", text: `Last with dice on the Gullwife's deck${S.won ? ", with the Company's own die in his cup" : S.accused ? ", though he called out the wrong cup" : ", and the loaded die never called out"}${S.dblUsed ? ", and chit No. 2 staked once on double or drown" : ""}. The Gullwife crew sing for him: off-key, loud, and the first in years. Devotion +10. The crews count one more.` });
+        else api.end({ outcome: "lose", text: `Out of dice on the Gullwife's deck${S.won ? ", Company die and all" : ""}. They give him a drink anyway and no song. The chalk keeps what every cup held: read it for the cup that is too lucky in Lanterns.` });
+        return;
+      }
+      if (flood) {
+        endCard(root, art, "table-flooding", won ? "THE FLOODING TABLE · THE LICENCE" : "THE FLOODING TABLE · THE TIDE'S SHARE", "#12203a");
+        if (caught) api.end({ outcome: "lose", text: "The tallyman writes it down: a man on the reef who turned the tide with his hand, three times, in front of witnesses. The licence goes back in his coat and notice goes up by ten." });
+        else if (won) api.end({ outcome: "win", text: `Last with dice on a table the sea was eating: the water took ${S.taken} ${S.taken === 1 ? "die" : "dice"}, and he held it back ${S.stirs} ${S.stirs === 1 ? "time" : "times"} in full view. The fishing licence is the Steps' own again, and the Kettle crew sing, badly and all together. The crews count one more.` });
+        else api.end({ outcome: "lose", text: `Out of dice, and the last of them went to the water. On this table a quiet bid is the dangerous one: whoever bids lowest feeds the tide. The licence stays in the tallyman's coat.` });
+        return;
+      }
+      if (won) setFlag(api, "chit2", true);
       endCard(root, art, won ? "chit-2-dice-stake" : "the-slate", won ? "CHIT No. 2 · THE LUCK OF THE DICE" : "MOTHER HALSE'S SLATE · PAYS NEXT TIDE", "#2b1d10");
       if (caught) api.end({ outcome: "lose", text: `Caught stirring the cup, ${S.stirs === 1 ? "once too often" : `the ${["", "first", "second", "third", "fourth", "fifth"][S.stirs] || "last"} time`}. Wenna puts her hand flat over his; the stake is forfeit, the news goes to someone else's table, and Mother Halse puts her chit back in her apron. “Next tide, then.”` });
       else if (won) api.end({ outcome: "win", text: `Last with dice${S.stirs ? `, and ${S.stirs === 1 ? "one stir" : NUMW[S.stirs] + " stirs"} the table never quite caught` : ", and an honest cup"}. Two pieces of news: where the Gullwife crew fish past the chart's edge, and where the Kettle crew still sing. Devotion +3. And chit No. 2, “the luck of the dice”, in his own hand: the second of eight.` });
@@ -362,31 +495,33 @@ export default {
       const you = players[0];
       const eyesToward = S.suspicion / 100;
       const matchesReveal = (v) => S.reveal && (v === S.reveal.face || (S.reveal.wild && v === 1));
-      const POS = { 1: [50, 24.4], 2: [18.75, 52.2], 3: [73.75, 52.2] };
+      const POS = N === 4 ? { 1: [50, 24.4], 2: [18.75, 52.2], 3: [73.75, 52.2] } : { 1: [18.75, 52.2], 2: [73.75, 52.2] };
+
       const cup = cupCrop(art);
       const spot = (i) => {
         const p = players[i];
         const py = eyesToward * 5;
         const eye = (cx) => `<g transform="translate(${cx},20)"><path d="M-17 0 Q0 -14 17 0 Q0 14 -17 0Z" fill="#fff" stroke="${INK}" stroke-width="3"/><circle cx="0" cy="${py.toFixed(1)}" r="${6 + eyesToward * 2}" fill="${p.eye}" stroke="${INK}" stroke-width="2"/><circle cx="0" cy="${py.toFixed(1)}" r="2.5" fill="${INK}"/>${S.suspicion >= 50 ? `<path d="M-14 -13 L14 ${-13 + eyesToward * 8}" stroke="${INK}" stroke-width="3"/>` : ""}</g>`;
         const showDice = S.phase !== "play" && S.reveal;
-        const under = showDice && p.count + (S.reveal.loser === i ? 1 : 0) > 0
-          ? `<span class="shown">${p.dice.map((v) => dieEl(v, matchesReveal(v) ? "hit" : "", `aria-label="${FACES[v]}"`, 18)).join("")}</span>`
+        const under = showDice && S.reveal.cups[i].length
+          ? `<span class="shown">${S.reveal.cups[i].map((v) => dieEl(v, matchesReveal(v) ? "hit" : "", `aria-label="${FACES[v]}"`, 18)).join("")}</span>`
           : `<span class="cupi${cup ? "" : " plain"}" style="${cup}" aria-label="${p.count} dice under the cup"><b>×${p.count}</b></span>`;
         return `<div class="${P}spot${S.turn === i && S.phase === "play" ? " turn" : ""}${p.count ? "" : " out"}${S.shake === i ? " shake" : ""}" style="left:${POS[i][0]}%;top:${POS[i][1]}%">
           <span class="who ${P}rye"><svg viewBox="-40 0 80 40" aria-hidden="true">${eye(-19)}${eye(19)}</svg>${p.name}${p.count ? "" : " · out"}</span>${under}</div>`;
       };
       const myTurn = S.phase === "play" && S.turn === 0;
       const canStir = S.phase === "play" && S.stirOpen && !S.stirredThisRound && you.count > 0;
-      const rows = S.ledger.slice(-18).map((l) => (l.round ? `<div style="opacity:.6">─ round ${l.round} ─</div>` : `<div${l.faint ? ' style="opacity:.5"' : ""}>${l.strong ? "<u>" : ""}${l.who}: ${l.text}${l.strong ? "</u>" : ""}</div>`));
-      const talk = [1, 2, 3].filter((i) => S.speech[i]).map((i) => `${players[i].name}: ${esc(S.speech[i])}`).join(" · ");
+      const rows = S.ledger.slice(-18).map((l) => (l.round ? `<div style="opacity:.6">─ round ${l.round} ─</div>` : `<div${l.faint ? ' style="opacity:.5"' : l.show ? ` style="color:${GOLD}"` : ""}>${l.strong ? "<u>" : ""}${l.who}: ${l.text}${l.strong ? "</u>" : ""}</div>`));
+      const talk = others.filter((i) => S.speech[i]).map((i) => `${players[i].name}: ${esc(S.speech[i])}`).join(" · ");
       frame.innerHTML = `
         <div class="${P}sus"><span class="${P}rye" style="font-size:13px;letter-spacing:.15em">SUSPICION</span><span class="${P}bar" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${S.suspicion}" aria-label="Suspicion"><i class="${S.suspicion >= 75 ? "hot" : S.suspicion >= 50 ? "warm" : ""}" style="width:${S.suspicion}%"></i></span><span style="font-size:16px">${S.suspicion} / 100${S.chitFree ? " · a stir draws 10" : ""}</span></div>
         <div class="${P}beat${S.beatVoice ? " voice" : ""}" aria-live="polite">${esc(S.beat)}</div>
-        <div class="${P}cols"><div class="${P}tbl" style="background-image:${bg(art, "table-tidewater")}" role="group" aria-label="The table">
-          ${[1, 2, 3].map(spot).join("")}
+        <div class="${P}cols"><div class="${P}tbl" style="background-image:${bg(art, TABLE)}" role="group" aria-label="The table">
+          ${flood ? `<div class="${P}water" style="height:${Math.min(46, 8 + S.water * 7)}%" aria-label="The water has climbed ${S.water} ${S.water === 1 ? "round" : "rounds"}"><span>${S.held ? "held back this round" : S.water ? `the water has taken ${S.taken} ${S.taken === 1 ? "die" : "dice"}` : "the tide is turning"}</span></div>` : ""}
+          ${others.map(spot).join("")}
           ${dieEl(S.tide, "tide" + (matchesReveal(S.tide) ? " hit" : ""), `aria-label="Tide die: ${FACES[S.tide]}" title="The tide die counts for everyone"`, 48)}
           <div class="${P}spot" style="left:50%;top:91%"><span class="who ${P}rye" style="position:static;transform:none">Alexi ×${you.count} · tide die: ${FACES[S.tide]}</span></div>
-          ${art.has("chit-2-dice-stake") ? `<div class="${P}stake${S.chitFree ? " free" : ""}" title="Mother Halse's stake: chit No. 2">${pic(art, "chit-2-dice-stake", "Mother Halse's stake: chit No. 2, the luck of the dice")}</div>` : ""}
+          ${!teach ? "" : art.has("chit-2-dice-stake") ? `<div class="${P}stake${S.chitFree ? " free" : ""}" title="Mother Halse's stake: chit No. 2">${pic(art, "chit-2-dice-stake", "Mother Halse's stake: chit No. 2, the luck of the dice")}</div>` : ""}
           <div class="${P}chalk" aria-hidden="true"><b>THE CHALK</b>${rows.slice(-9).join("")}</div>
         </div>
         <div class="${P}rhs"><div class="${P}banner">
@@ -403,7 +538,9 @@ export default {
       wire();
     }
     function controls(myTurn, canStir) {
-      if (S.phase === "reveal") return players[0].count === 0 || active().length === 1 ? "<i>The cups are lifted.</i>" : `<button type="button" class="main" data-a="next">Next round</button>`;
+      if (S.phase === "reveal" && S.pending) return `<button type="button" class="stir" data-a="double">Double or drown (D)</button><button type="button" class="main" data-a="pay">Pay the die</button><span class="${P}why">Double: chit No. 2 on the table, the die stays, and your next lost call costs two. Once a game.</span>`;
+      if (S.phase === "reveal" && S.accuse) return `<span>Whose die is the Company's?</span>${others.filter((i) => players[i].count).map((i) => `<button type="button" class="main" data-a="acc${i}">${players[i].name}'s</button>`).join("")}<button type="button" data-a="noacc">Say nothing</button>`;
+      if (S.phase === "reveal") return players[0].count === 0 || active().length === 1 ? "<i>The cups are lifted.</i>" : `<button type="button" class="main" data-a="next">Next round</button>${deck && !S.accused ? `<button type="button" class="stir" data-a="accuse">Call a die out (X)</button>` : ""}`;
       if (S.phase !== "play") return "";
       if (S.stirring) return `<span>Pick up to two dice, then circle over the cup (or press Stir).</span><button type="button" class="stir" data-a="dostir" ${S.pick.size ? "" : "disabled"}>Stir ${S.pick.size || ""}</button><button type="button" data-a="cancelstir">Leave it</button>`;
       const hint = S.round >= 3 && (!S.hintUsed || losses >= 2) && S.bid ? `<button type="button" data-a="hint" title="Trust 40+: the princess whispers the odds once a round">Whisper</button>` : "";
@@ -412,7 +549,7 @@ export default {
         <button type="button" data-a="f-" aria-label="Previous face">◀</button>${dieCrop(art, S.selF) ? `<span class="${P}die art" style="width:38px;height:38px;border-width:2.5px;box-shadow:2px 2px 0 ${INK};border-radius:9px;${dieCrop(art, S.selF)}" title="${FACES[S.selF]}"></span>` : icon(S.selF, 34)}<button type="button" data-a="f+" aria-label="Next face">▶</button></span>
         <button type="button" class="main" data-a="bid" ${myTurn && legal(S.selQ, S.selF) ? "" : "disabled"}>Bid ${S.selQ} ${S.selQ === 1 ? FACES[S.selF] : PLURAL[S.selF]}</button>
         <button type="button" data-a="call" ${myTurn && S.bid ? "" : "disabled"}>Call the tide</button>
-        ${S.stirOpen ? `<button type="button" class="stir" data-a="stir" ${canStir ? "" : "disabled"}>Stir the cup</button>` : ""}${hint}${why}`;
+        ${S.stirOpen ? `<button type="button" class="stir" data-a="stir" ${canStir ? "" : "disabled"}>Stir the cup</button>` : ""}${flood ? `<button type="button" class="stir" data-a="hold" ${S.held ? "disabled" : ""}>${S.held ? "The water is held" : "Hold the water (S)"}</button>` : ""}${hint}${why}`;
     }
     function act(a) {
       if (a === "q+") S.selQ = Math.min(totalDice(), S.selQ + 1);
@@ -424,8 +561,14 @@ export default {
       if (a === "stir") { if (!(S.phase === "play" && S.stirOpen && !S.stirredThisRound)) return; S.stirring = true; S.pick.clear(); }
       if (a === "cancelstir") { S.stirring = false; S.pick.clear(); }
       if (a === "dostir") { doStir(); return; }
+      if (a === "double") { double(); return; }
+      if (a === "pay" && S.pending) { S.log = S.log.replace("You lose the call: pay the die, or double or drown.", ""); settle(0, true); return; }
+      if (a === "accuse" && deck && S.phase === "reveal" && !S.accused && !S.pending) S.accuse = true;
+      if (a === "noacc") S.accuse = false;
+      if (/^acc\d$/.test(a) && S.accuse) { accuse(+a.slice(3)); return; }
+      if (a === "hold") { holdWater(); return; }
       if (a === "hint" && S.bid && S.round >= 3 && (!S.hintUsed || losses >= 2)) { S.hintUsed = true; const p = probHolds(0, S.bid.q, S.bid.f, S.gullBid); S.log = `The princess, low: “About ${Math.round(p * 100)} in a hundred that it holds.”`; }
-      if (a === "next" && S.phase === "reveal" && players[0].count > 0 && active().length > 1) { newRound(S.nextStarter); return; }
+      if (a === "next" && S.phase === "reveal" && !S.pending && players[0].count > 0 && active().length > 1) { newRound(S.nextStarter); return; }
       render();
     }
     // the circle gesture over the cup
@@ -455,8 +598,8 @@ export default {
     const onKey = (e) => {
       if (S.phase !== "play" && S.phase !== "reveal") return;
       const k = e.key;
-      const map = { ArrowUp: "q+", ArrowDown: "q-", ArrowRight: "f+", ArrowLeft: "f-", b: "bid", c: "call", s: S.stirring ? "dostir" : "stir", n: "next", w: "hint" };
-      if (k === "Enter" && S.phase === "reveal") { act("next"); e.preventDefault(); return; }
+      const map = { ArrowUp: "q+", ArrowDown: "q-", ArrowRight: "f+", ArrowLeft: "f-", b: "bid", c: "call", s: flood ? "hold" : S.stirring ? "dostir" : "stir", n: "next", w: "hint", d: S.pending ? "double" : "", x: "accuse" };
+      if (k === "Enter" && S.phase === "reveal" && !(e.target instanceof HTMLButtonElement)) { act("next"); e.preventDefault(); return; }
       if (map[k] && !(e.target instanceof HTMLButtonElement && k === "Enter")) { if (k.startsWith("Arrow")) e.preventDefault(); act(map[k]); }
       if (S.stirring && /^[1-4]$/.test(k)) { const i = +k - 1; if (i < players[0].dice.length) { S.pick.has(i) ? S.pick.delete(i) : S.pick.size < 2 && S.pick.add(i); render(); } }
     };
@@ -474,8 +617,8 @@ export default {
       } else { slateEl.hidden = true; rulesEl.hidden = false; startBtn.focus(); }
     });
     const startBtn = rulesEl.querySelector(":scope > button");
-    startBtn.addEventListener("click", () => { how.remove(); beat("Wenna rattles her cup. “Stakes are news, sailor.” Mother Halse says nothing, and squares her chit against the table's edge.", false); newRound(0); });
-    slBtn.focus();
+    startBtn.addEventListener("click", () => { how.remove(); beat(deck ? "The mate bangs her cup on the hatch. “Stakes are a song, old man. Ours against your silence.”" : flood ? "" : "Wenna rattles her cup. “Stakes are news, sailor.” Mother Halse says nothing, and squares her chit against the table's edge.", false); newRound(0); });
+    if (teach) slBtn.focus(); else { slateEl.hidden = true; rulesEl.hidden = false; startBtn.focus(); }
     // the table under the panel
     for (const p of players) p.dice = Array.from({ length: p.count }, roll);
     S.phase = "idle"; render();

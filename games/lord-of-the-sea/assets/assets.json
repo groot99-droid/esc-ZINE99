@@ -133,6 +133,31 @@
       "image": "assets/locations/tidewater.jpg"
     },
     {
+      "id": "chandlery",
+      "name": "Mother Halse's chandlery, Tidewater quay",
+      "scenes": [
+        "s-chandlery"
+      ],
+      "dimensions_m": [
+        7,
+        5,
+        2.8
+      ],
+      "lighting": "Shutters half down: a band of clean white harbour light across tea-brown shadow, two lit lanterns.",
+      "objects": [
+        "rum-bottle",
+        "rope-coil",
+        "ship-lantern",
+        "lobster-pot",
+        "tea-caddy",
+        "ledger"
+      ],
+      "prompt": "Painterly cinematic realism, age-of-sail world. Interior of a small old ship-chandler's shop on a harbour quay, 7 by 5 metres, a long scarred wooden counter with a large wooden-framed writing slate lying face down on it, shelves to the low beamed ceiling crowded with dark green glass bottles, coils of tarred rope, brass ship lanterns and wicker lobster pots hanging from hooks, one blue-and-white porcelain tea caddy on a shelf, a half-lowered ink-blue shutter over the window letting in a band of clean white harbour light, a plank door standing open to a bright stone quay, worn flagstone floor, chalk dust in the light. Tea-brown shadows and lamp-white light. Wide establishing view of the empty set, eye level, the whole space and its layout readable from floor to ceiling, clear structure, no people, no characters, no text.",
+      "model": "soul_cinematic",
+      "job_id": "de304b96-f44f-4771-8e11-66848f441d64",
+      "image": "assets/locations/chandlery.jpg"
+    },
+    {
       "id": "the-unwritten",
       "name": "The Unwritten",
       "scenes": [
@@ -296,7 +321,8 @@
       "role": "interact",
       "scenes": [
         "s-cabin-dawn",
-        "s-end-lords-peace"
+        "s-end-lords-peace",
+        "s-chandlery"
       ],
       "size_m": [
         0.09,
@@ -470,7 +496,8 @@
       "role": "interact",
       "scenes": [
         "s-cabin-dawn",
-        "s-cabin-princess"
+        "s-cabin-princess",
+        "s-chandlery"
       ],
       "size_m": [
         0.14,
@@ -744,7 +771,8 @@
       "role": "fill",
       "scenes": [
         "s-kings-halls",
-        "s-counting-house"
+        "s-counting-house",
+        "s-chandlery"
       ],
       "size_m": [
         0.3,
@@ -764,7 +792,8 @@
       "scenes": [
         "s-salt-steps",
         "s-pearl-banks",
-        "s-beach-tideline"
+        "s-beach-tideline",
+        "s-chandlery"
       ],
       "size_m": [
         0.6,
@@ -786,7 +815,8 @@
         "s-cabin-dawn",
         "s-tidewater",
         "s-salt-steps",
-        "s-spice-mouth"
+        "s-spice-mouth",
+        "s-chandlery"
       ],
       "size_m": [
         0.6,
@@ -808,7 +838,8 @@
         "s-chart-table",
         "s-deck-dinghy",
         "s-lamplit-strait",
-        "s-counting-house"
+        "s-counting-house",
+        "s-chandlery"
       ],
       "size_m": [
         0.2,

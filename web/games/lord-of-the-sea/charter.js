@@ -17,6 +17,7 @@
 // the evidence, the cabin wall and the result cards are drawn with the game's art (api.art).
 import { pic, endCard, chapterStrip, circleGesture } from "./_art.js";
 import { mountTab } from "./_tab.js";
+import { ladder, setFlag } from "./_ladder.js";
 
 const INK = "#2a2118", RED = "#8C2B2B", PAPER = "#F4F1E8", VELLUM = "#efe3c4", WOOD = "#6B4A2B", BLUE = "#1F2E4A", GREEN = "#2F6B5E", GOLD = "#E7A93B";
 const TRUST = 52;
@@ -35,7 +36,31 @@ const CLAUSES = [
   { n: 12, page: 3, sched: "C2", tick: true, text: `The quay lamp: by the Company's own building, as recited in <a data-ref="1">clause 1</a>.` },
   { n: 13, page: 3, sched: "C3", text: `The water of the harbour, its footing and its steadiness: by assignment of a note of hand, No. 1, drawn “pays next tide”, the drawer's mark as below; <a data-thread="1">the instrument not lodged with this book</a>.` },
 ];
-const PAGES = ["I", "II", "III", "C"];
+// Phase 2 (accepted 2026-11-15, built 2026-11-16): the ladder. Teach is the deed of sale of the halls (`g-charter-deed`):
+// one page, follow the red thread, pin what binds. Test is the harbour book's three pages: the decoy and the unsigned
+// slip, the Lord of Tea's green tick on every clause he has balanced (the binding clause is always one he could not
+// tick), and sea-swollen pages (a drop of seawater raises struck-out ink and blurs one live clause for good); it ends
+// on Strike, Rewrite or Leave. Twist is Schedule C: the answer is not in the document.
+const DEED = [
+  { n: 1, page: 0, text: `Whereas the King's house stands indebted to the Great British Tea Company in the sum set out in <a data-ref="4">clause 4</a>, the halls are sold as hereinafter set out.` },
+  { n: 2, page: 0, text: `The gallery of glass, the throne hall and the sea-gate pass to the Company upon the day named, their keeping and their keys, subject to <a data-ref="4">clause 4</a>.` },
+  { n: 3, page: 0, text: `The jetty, its moorings and the king's barge pass likewise, the oarsmen to be kept on at the Company's wage, as <a data-ref="2">clause 2</a> provides for the house.` },
+  { n: 4, page: 0, bind: true, text: `The sum being unpaid upon the day, the Company takes the halls, <b>and all waters adjoining</b>; and every other clause of this deed stands or falls with this one.` },
+  { n: 5, page: 0, text: `Witnessed for the King's house by his daughter, who has read <a data-ref="2">clause 2</a> and <a data-ref="3">clause 3</a> aloud to the King, and for the Company by its factor.` },
+];
+const STRUCK = { n: 14, page: 1, struck: true, text: `Renewal. The dues of <a data-ref="5">clause 5</a> renewed for a further forty years <span data-pt="struck">from the first day of March, 1743</span>. <i>(Struck through. Never sealed.)</i>` };
+const TICKS = new Set([2, 3, 4, 6, 7, 8]);              // what the Lord of Tea has balanced, and initialled
+const BLUR = { 0: 1, 1: 6, 2: 8 };                      // the live clause each wetting costs, by page
+const LADDER = {
+  title: "The Charter", kicker: "1D · ENGROSSED DEED · THREE DOCUMENTS",
+  stages: {
+    teach: { name: "The Deed", where: "Chapter I, the cabin: one page, one red thread, one clause that binds.", line: "One page. Follow the red thread." },
+    test: { name: "The Harbour Book", where: "Chapter IV: three pages, a decoy, a green tick, and a page the sea has had.", line: "Three pages, a decoy, a slip, and pages the sea has had." },
+    twist: { name: "Schedule C", where: "Chapter IV, the midpoint: the answer is not in the document.", line: "The title under the dues. The answer is not in the document." },
+  },
+  extra: { label: "The tab: pin eight chits", hint: "Or the last Charter of the game, at the tally in chapter VI:" },
+};
+const PAGES_ALL = ["I", "II", "III", "C"];
 const SUMMARY = [
   "p. I: when the lamp was lit, the ferry, the mooring penny. All of it 'subject to' something on p. II.",
   "p. II: a loud threat, the dues themselves, the fish scales. Read what the threat actually rests on.",
@@ -44,7 +69,7 @@ const SUMMARY = [
 ];
 const SLIP = { n: 10, page: 1, slip: true, amend: true, text: `Amendment. The dues of <a data-ref="5">clause 5</a> to be continued <span data-pt="custom">by the custom of the harbour</span>, the Comptroller's hand to follow. <i>(Unsigned.)</i>` };
 const LOUPE = [
-  "Under the loupe: the Company's seal, and pressed into the wax beside it a quay lamp with a date in small capitals, MDCCIII. Seventeen hundred and three.",
+  "Under the loupe: the Company's seal, and pressed into the wax beside it a quay lamp with a date in small capitals, <span data-pt=\"lamp\">MDCCIII. Seventeen hundred and three.</span>",
   "",
   "Under the loupe: the Comptroller's office seal, the wax still soft enough to take a thumbnail. This book is a fair copy, made this year.",
 ];
@@ -55,13 +80,21 @@ const EVIDENCE = [
   { id: "dues", name: "A mooring-penny receipt", note: "Paid, and dated this week. It shows the dues still taken, not that they are owed." },
 ];
 
-export default {
+export default { mount(root, api) { return ladder(root, api, LADDER, (r, a) => game.mount(r, a), (r, a) => mountTab(r, a)); } };
+
+const game = {
   mount(root, api) {
     const P = "lord-of-the-sea-charter-";
     const art = api.art;
-    const S = { chit: false, bottleSeen: false, schedSeen: false, page: 0, ink: 3, phase: "find", pinned: null, wrongPins: new Set(), threads: [], held: null, read: false, pencil: "", flash: null, loupe: -1, loupes: new Set(), slip: false, shake: null, splash: false, tries: 0 };
+    const stage = api.stage || "test", teach = stage === "teach", twist = stage === "twist";
+    const DOC = teach ? DEED : twist ? CLAUSES : CLAUSES.filter((c) => !c.sched);
+    const PAGES = teach ? ["I"] : twist ? PAGES_ALL : PAGES_ALL.slice(0, 3);
+    const IDX = DOC.filter((c) => c.n <= 9);
+    const ticked = (c) => !teach && (c.tick || TICKS.has(c.n));
+    const S = { wet: new Set(), blurred: new Set(), drops: 0, guest: false, chit: false, bottleSeen: false, schedSeen: false, page: 0, ink: 3, phase: "find", pinned: null, wrongPins: new Set(), threads: [], held: null, read: false, pencil: "", flash: null, loupe: -1, loupes: new Set(), slip: false, shake: null, splash: false, tries: 0 };
+    if (twist) { S.phase = "trace"; S.pinned = 5; S.page = 3; S.schedSeen = true; S.slip = true; }
     const losses = +api.store.get("losses", 0) || 0;
-    const clauses = () => (S.slip ? CLAUSES.concat([SLIP]) : CLAUSES);
+    const clauses = () => DOC.concat(S.slip && !teach ? [SLIP] : [], !teach && S.wet.has(1) ? [STRUCK] : []);
     const timers = new Set();
     const later = (fn, ms) => { const id = setTimeout(() => { timers.delete(id); fn(); }, ms); timers.add(id); };
 
@@ -162,6 +195,11 @@ export default {
       .${P}scene .since { width:150px; height:auto; float:right; margin:0 0 6px 10px; border:1px solid rgba(42,33,24,.5); }
       @media (prefers-reduced-motion: reduce) { .${P}wallstrip button.pull img { animation:none; } }
       @media (max-width:700px) { .${P}scene .card { grid-template-columns:minmax(0,1fr); padding:12px; } .${P}scene p { font-size:16px; } .${P}scene .since { width:110px; } }
+      .${P}cl.blur .tx { filter:blur(2.6px); opacity:.6; pointer-events:none; user-select:none; }
+      .${P}cl.struck .tx { text-decoration:line-through rgba(140,43,43,.55) 1.5px; }
+      .${P}w.breaking .${P}lens span[data-pt] { border-bottom:1px dashed ${RED}; cursor:crosshair; background:rgba(140,43,43,.06); }
+      .${P}salt { color:#8d8468; letter-spacing:.04em; }
+      .${P}guest { position:absolute; right:clamp(8px,3vw,34px); top:14px; width:64px; height:54px; padding:0; border:0; cursor:pointer; background-color:transparent; background-repeat:no-repeat; background-size:346px 346px; background-position:-17px -157px; mix-blend-mode:multiply; filter:brightness(1.38) contrast(1.9); }
       .${P}steps { display:flex; flex-wrap:wrap; gap:3px; justify-content:center; font-family:'IM Fell English SC',Georgia,serif; font-size:11.5px; letter-spacing:.06em; }
       .${P}steps span { padding:2px 5px; border:1px solid rgba(244,241,232,.4); opacity:.55; }
       .${P}steps span.on { opacity:1; background:${PAPER}; color:${INK}; }
@@ -187,18 +225,25 @@ export default {
     </style>
     <div class="${P}w"><div class="${P}desk"></div>
       <div class="${P}how" role="dialog" aria-label="How to play"><div class="${P}deed">
-        ${chapterStrip(art, 5, "Chapter V: The Open Chart")}
-        <h2>The Charter</h2>
-        <p class="goal">Find the one clause that binds Tidewater, and break it.</p>
-        <p class="open">Chapter IV, the cabin. The princess has fetched the Tidewater harbour book from the Company's office on her father's name. The clerk wants it back by the evening tide.</p>
-        ${losses >= 2 ? `<p class="gentle">She has already circled one page tab in pencil.</p>` : ""}
+        ${chapterStrip(art, teach ? 2 : 5, teach ? "Chapter II: The Princess on the Shore" : "Chapter V: The Open Chart")}
+        <h2>${teach ? "The Deed" : twist ? "Schedule C" : "The Harbour Book"}</h2>
+        <p class="goal">${teach ? "Find the one clause of the deed that every other clause stands or falls with." : twist ? "Find what the Company's title to the water of Tidewater rests on." : "Find the one clause that binds Tidewater, break it, and decide what to do with it."}</p>
+        <p class="open">${teach ? "Chapter I, the cabin. She has pinned the deed of sale to the wall above the chart table. Ashore the letters swam; here they sit still, and he can follow one at a time."
+          : twist ? "Chapter IV, the cabin, the same evening. The dues are dead: forty years from 1703, and it is 1745. But clause 5 held the water itself “by the title recited in Schedule C”, and the clerk has brought the Schedule."
+          : "Chapter IV, the cabin. The princess has fetched the Tidewater harbour book from the Company's office on her father's name. The clerk wants it back by the evening tide."}</p>
+        ${losses >= 2 && !teach && !twist ? `<p class="gentle">She has already circled one page tab in pencil.</p>` : ""}
         <ol>
-          <li><span><b>Follow</b> a red reference (click it, or Tab and Enter): a red thread joins the clauses in the index.</span></li>
-          <li><span><b>Pin</b> the clause every other obligation routes through. Three ink; a wrong pin spills one.</span></li>
-          <li><span><b>Loupe</b>: lift a seal to read what is pressed into the wax. <kbd>←</kbd><kbd>→</kbd> turn the pages.</span></li>
+          ${teach ? `<li><span><b>Follow</b> a red reference (click it, or Tab and Enter): a red thread joins the clauses in the index.</span></li>
+          <li><span><b>Pin</b> the clause the others route through: the one with the most threads running into it.</span></li>
+          <li><span>Three ink. A wrong pin spills one; she tells you why it was wrong.</span></li>`
+          : twist ? `<li><span><b>Wet</b> (<kbd>W</kbd>): the sea has had the foot of this page. One drop of seawater raises ink it took, and <b>blurs one live clause for good</b>.</span></li>
+          <li><span><b>The green tick</b>: the Lord of Tea initials what he has balanced. What matters is always something he could not tick.</span></li>
+          <li><span><b>Pin</b> costs ink here as everywhere. Three ink. Read before you pin anything on a Schedule.</span></li>`
+          : `<li><span><b>Follow</b> the red references and <b>pin</b> what binds. Three ink. A green <b>✓ T.</b> marks a clause the Lord of Tea has balanced: the binding clause is always one he could not tick.</span></li>
+          <li><span><b>Break</b> it: point at the fact that undoes it, or lift a seal to the <b>loupe</b>. <kbd>←</kbd><kbd>→</kbd> turn the pages.</span></li>
+          <li><span><b>Wet</b> (<kbd>W</kbd>): a drop of seawater on a page raises struck-out ink, and blurs one live clause on it for good. Choose the page.</span></li>`}
         </ol>
-        <div class="foot">${pic(art, "charter-harbour-book", "", `class="${P}thumb"`) || `<svg viewBox="0 0 100 120" aria-hidden="true"><path d="M38 60 L22 116 L36 106 L44 118 L50 64Z M62 60 L78 116 L64 106 L56 118 L50 64Z" fill="${BLUE}"/><path d="M50 8 C68 6 82 18 86 34 C92 52 80 70 62 74 C44 80 20 72 14 52 C8 32 28 10 50 8Z" fill="${RED}"/><circle cx="50" cy="41" r="21" fill="none" stroke="#5e1b1b" stroke-width="2"/></svg>`}<button type="button" data-go="book">Open the book</button></div>
-        <div class="alt"><span>Or the last Charter of the game, at the tally in chapter VI:</span><button type="button" data-go="tab">The tab: pin eight chits</button></div>
+        <div class="foot">${pic(art, "charter-harbour-book", "", `class="${P}thumb"`) || `<svg viewBox="0 0 100 120" aria-hidden="true"><path d="M38 60 L22 116 L36 106 L44 118 L50 64Z M62 60 L78 116 L64 106 L56 118 L50 64Z" fill="${BLUE}"/><path d="M50 8 C68 6 82 18 86 34 C92 52 80 70 62 74 C44 80 20 72 14 52 C8 32 28 10 50 8Z" fill="${RED}"/><circle cx="50" cy="41" r="21" fill="none" stroke="#5e1b1b" stroke-width="2"/></svg>`}<button type="button" data-go="book">${teach ? "Read the deed" : twist ? "Turn to the Schedule" : "Open the book"}</button></div>
       </div></div>
     </div>`;
     const w = root.querySelector("." + P + "w");
@@ -206,7 +251,7 @@ export default {
     const how = w.querySelector("." + P + "how");
 
     function seal() {
-      const sid = S.page === 0 ? "seal-tidewater" : "seal-company";
+      const sid = teach ? "seal-kings-house" : S.page === 0 ? "seal-tidewater" : "seal-company";
       if (art.has(sid)) return pic(art, sid, "", `class="${P}seal"`);
       return `<svg class="${P}seal" viewBox="0 0 100 120" aria-hidden="true">
         <path d="M38 60 L22 116 L36 106 L44 118 L50 64Z M62 60 L78 116 L64 106 L56 118 L50 64Z" fill="${BLUE}" stroke="#14203a"/>
@@ -222,18 +267,18 @@ export default {
         const x = (n) => 18 + (n - 1) * 38;
         let arcs = "";
         for (const [a, b] of S.threads.filter(([x0, y0]) => x0 <= 9 && y0 <= 9)) { const xa = x(a), xb = x(b), r = Math.abs(xb - xa) / 2; arcs += `<path d="M${xa} 40 C ${xa} ${40 - Math.min(34, 8 + r * 0.5)}, ${xb} ${40 - Math.min(34, 8 + r * 0.5)}, ${xb} 40" fill="none" stroke="${RED}" stroke-width="1.4"/>`; }
-        const nums = CLAUSES.map((c) => `<g data-goto="${c.n}"><circle cx="${x(c.n)}" cy="40" r="2" fill="${INK}"/><text x="${x(c.n) - 6}" y="62" font-size="19" fill="${S.pinned === c.n ? RED : INK}" ${S.wrongPins.has(c.n) ? 'text-decoration="line-through"' : ""}>${c.n}.</text>
+        const nums = IDX.map((c) => `<g data-goto="${c.n}"><circle cx="${x(c.n)}" cy="40" r="2" fill="${INK}"/><text x="${x(c.n) - 6}" y="62" font-size="19" fill="${S.pinned === c.n ? RED : INK}" ${S.wrongPins.has(c.n) ? 'text-decoration="line-through"' : ""}>${c.n}.</text>
           ${Array.from({ length: into(c.n) }, (_, i) => `<circle cx="${x(c.n) - 6 + i * 6}" cy="72" r="2.4" fill="${RED}"/>`).join("")}</g>`).join("");
-        return `<svg viewBox="0 0 ${36 + 8 * 38} 80" aria-label="Clause index; red threads show the references you have followed">${arcs}${nums}</svg>`;
+        return `<svg viewBox="0 0 ${36 + (IDX.length - 1) * 38} 80" aria-label="Clause index; red threads show the references you have followed">${arcs}${nums}</svg>`;
       }
-      const h = 9 * 34 + 10;
+      const h = IDX.length * 34 + 10;
       const y = (n) => 20 + (n - 1) * 34;
       let arcs = "";
       for (const [a, b] of S.threads.filter(([x0, y0]) => x0 <= 9 && y0 <= 9)) {
         const ya = y(a), yb = y(b), r = Math.abs(yb - ya) / 2;
         arcs += `<path d="M30 ${ya} C ${30 - Math.min(26, 8 + r * 0.4)} ${ya}, ${30 - Math.min(26, 8 + r * 0.4)} ${yb}, 30 ${yb}" fill="none" stroke="${RED}" stroke-width="1.4"/>`;
       }
-      const nums = CLAUSES.map((c) => `<g data-goto="${c.n}"><text x="${40}" y="${y(c.n) + 6}" font-size="19" fill="${S.pinned === c.n ? RED : INK}" ${S.wrongPins.has(c.n) ? 'text-decoration="line-through"' : ""}>${c.n}.</text>
+      const nums = IDX.map((c) => `<g data-goto="${c.n}"><text x="${40}" y="${y(c.n) + 6}" font-size="19" fill="${S.pinned === c.n ? RED : INK}" ${S.wrongPins.has(c.n) ? 'text-decoration="line-through"' : ""}>${c.n}.</text>
         ${Array.from({ length: into(c.n) }, (_, i) => `<circle cx="${68 + i * 6}" cy="${y(c.n)}" r="2.4" fill="${RED}"/>`).join("")}<circle cx="30" cy="${y(c.n)}" r="2" fill="${INK}"/></g>`).join("");
       return `<svg viewBox="0 0 110 ${h}" aria-label="Clause index; red threads show the references you have followed">${arcs}${nums}</svg>`;
     }
@@ -242,16 +287,19 @@ export default {
       const breaking = S.phase === "break";
       w.classList.toggle("breaking", breaking);
       const phaseText = {
-        find: `<b>Find.</b> Click a red reference to follow it. Pin the clause that binds.`,
+        find: teach ? `<b>Find.</b> Click a red reference to follow it. Pin the clause the others stand or fall with.` : `<b>Find.</b> Click a red reference to follow it. Pin the clause that binds. He could not tick it.`,
         break: `<b>Break.</b> Clause ${S.pinned} is pinned. Point at the fact in the book that undoes it, or lay a thing from the drawer on it.`,
-        trace: `<b>Trace.</b> The dues are dead. But clause 5 holds the water itself by Schedule C: follow that reference to the end of its thread.`,
+        trace: `<b>Trace.</b> The dues are dead. But clause 5 holds the water itself by Schedule C: find what that title rests on, and follow it to the end of its thread.`,
         decide: `<b>Decide.</b> The clause is lit. What will you do with it?`,
         done: "",
       }[S.phase];
       const drops = Array.from({ length: 3 }, (_, i) => `<svg viewBox="0 0 20 26" width="18" height="24" aria-hidden="true"${S.splash && i === S.ink ? ` class="spill"` : ""}><path d="M10 2 C14 10 18 14 18 18 A8 8 0 0 1 2 18 C2 14 6 10 10 2Z" fill="${i < S.ink ? BLUE : "none"}" stroke="${i < S.ink ? PAPER : RED}" stroke-width="1.4"/></svg>`).join("");
-      const order = ["find", "break", "trace", "decide"];
+      const order = teach ? ["find"] : twist ? ["trace"] : ["find", "break", "decide"];
+      const canPin = S.phase === "find" || (twist && S.phase === "trace");
+      const body = (c) => (twist && c.n === 13 && !S.wet.has(3) ? c.text.replace(/<a data-thread="1">.*<\/a>/, `<span class="${P}salt" title="The sea has had this line">▒▒▒ ▒▒▒▒▒▒▒▒▒▒ ▒▒▒ ▒▒▒▒▒▒ ▒▒▒▒ ▒▒▒▒ ▒▒▒▒</span>`) : c.text);
       const steps = `<div class="${P}steps" aria-label="Phase">${order.map((k, i) => `<span class="${S.phase === k ? "on" : order.indexOf(S.phase) > i || S.phase === "done" ? "done" : ""}">${k.toUpperCase()}</span>`).join("")}</div>`;
-      const hasSeal = S.page === 0 || S.page === 2;
+      const hasSeal = !teach && (S.page === 0 || S.page === 2);
+      const guest = twist && S.page === 3 && art.has("thread-guest");
       const lensArt = S.page === 0 ? "seal-tidewater" : "seal-company";
       const lens = S.loupe === S.page && LOUPE[S.page] && art.has(lensArt) ? `<div class="${P}lens art">${pic(art, lensArt, "")}<span>${LOUPE[S.page]}</span></div>`
         : S.loupe === S.page && LOUPE[S.page] ? `<div class="${P}lens"><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="40" fill="${RED}"/><circle cx="40" cy="40" r="30" fill="none" stroke="#5e1b1b" stroke-width="2"/>${S.page === 0 ? `<path d="M34 54 h12 M36 54 V36 h8 V54 M33 36 h14 l-3 -6 h-8z" stroke="#f3d7c8" stroke-width="2" fill="none"/><text x="40" y="68" font-size="9" text-anchor="middle" fill="#f3d7c8" font-family="Georgia">MDCCIII</text>` : `<path d="M28 48 Q40 24 52 48 Z M40 30 V52" stroke="#f3d7c8" stroke-width="2.4" fill="none"/>`}</svg><span>${LOUPE[S.page]}</span></div>` : "";
@@ -262,9 +310,10 @@ export default {
         <section>
           <div class="${P}tabs" role="tablist">${PAGES.map((p, i) => `<button type="button" role="tab" aria-selected="${i === S.page}" class="${i === S.page ? "on" : ""}${i === circled ? " circled" : ""}" data-page="${i}">${p}</button>`).join("")}</div>
           <article class="${P}paper">
-            ${S.page === 0 ? `<div class="${P}title">The Harbour Book of Tidewater</div><div class="${P}flour">~ ❦ ~</div>` : S.page === 3 ? `<div class="${P}schedttl">SCHEDULE C</div><div class="${P}schedsub">Of the Company's title at Tidewater</div>` : `<div class="${P}flour" style="margin-top:6px">${PAGES[S.page]}</div>`}
-            ${cls.map((c) => `<div class="${P}cl${c.slip ? " slip" : ""}${c.decoy ? " decoy" : ""}${S.pinned === c.n ? " pinned" : ""}${S.wrongPins.has(c.n) ? " wrong" : ""}${S.phase === "decide" && S.pinned === c.n ? " lit" : ""}${S.flash === c.n ? " flash" : ""}${S.shake === c.n ? " shake" : ""}${c.amend ? " amend" : ""}" data-cl="${c.n}">
-              <span class="no"${c.sched ? ' style="font-size:1.15em"' : ""}>${c.slip ? "†" : c.sched || c.n}</span><span class="tx">${c.text}${c.tick ? `<span class="tk" title="Balanced, and initialled by the Lord of Tea">✓ T.</span>` : ""}${S.phase === "find" && !S.wrongPins.has(c.n) ? `<button type="button" class="${P}pinbtn" data-pin="${c.n}" aria-label="Pin clause ${c.sched || c.n}">pin</button>` : ""}</span></div>`).join("")}
+            ${guest ? `<button type="button" class="${P}guest" data-a="guest" aria-label="A correction in the margin" style="background-image:url('${art.url("thread-guest")}')"></button>` : ""}
+            ${S.page === 0 ? `<div class="${P}title">${teach ? "The Deed of Sale of the Halls" : "The Harbour Book of Tidewater"}</div><div class="${P}flour">~ ❦ ~</div>` : S.page === 3 ? `<div class="${P}schedttl">SCHEDULE C</div><div class="${P}schedsub">Of the Company's title at Tidewater</div>` : `<div class="${P}flour" style="margin-top:6px">${PAGES[S.page]}</div>`}
+            ${cls.map((c) => `<div class="${P}cl${c.slip ? " slip" : ""}${c.struck ? " slip struck" : ""}${S.blurred.has(c.n) ? " blur" : ""}${c.decoy ? " decoy" : ""}${S.pinned === c.n ? " pinned" : ""}${S.wrongPins.has(c.n) ? " wrong" : ""}${S.phase === "decide" && S.pinned === c.n ? " lit" : ""}${S.flash === c.n ? " flash" : ""}${S.shake === c.n ? " shake" : ""}${c.amend ? " amend" : ""}" data-cl="${c.n}">
+              <span class="no"${c.sched ? ' style="font-size:1.15em"' : ""}>${c.slip ? "†" : c.struck ? "‡" : c.sched || c.n}</span><span class="tx">${body(c)}${ticked(c) ? `<span class="tk" title="Balanced, and initialled by the Lord of Tea">✓ T.</span>` : ""}${canPin && !c.struck && !S.blurred.has(c.n) && !S.wrongPins.has(c.n) ? `<button type="button" class="${P}pinbtn" data-pin="${c.n}" aria-label="Pin clause ${c.sched || c.n}">pin</button>` : ""}</span></div>`).join("")}
             ${S.page === 3 ? `<svg class="${P}mark" viewBox="0 0 60 60" role="img" aria-label="The drawer's mark: a clockwise spiral"><path d="M30 30 C32 26 37 28 36 33 C35 39 26 40 23 34 C19 26 27 17 36 19 C47 22 49 37 41 44 C31 52 14 46 13 32 C12 20 22 10 34 10" fill="none" stroke="#3C7A6A" stroke-width="2.6" stroke-linecap="round"/></svg>` : ""}
             ${lens}
             <p class="${P}pencil" aria-live="polite">${S.pencil}</p>
@@ -277,13 +326,14 @@ export default {
           <h3>INK</h3><div class="${P}ink" aria-label="${S.ink} ink left">${drops}</div>
           <div class="${P}phase">${phaseText}</div>
           ${S.phase === "find" && !S.read ? `<div class="${P}acts"><button type="button" data-a="read" title="Trust 40+: she reads one page aloud">Ask her to read this page (once)</button></div>` : ""}
+          ${!teach && S.phase !== "done" && S.phase !== "decide" ? `<div class="${P}acts"><button type="button" data-a="wet" ${S.wet.has(S.page) ? "disabled" : ""} title="One drop of seawater: raises struck-out ink on this page, and blurs one live clause on it for good">${S.wet.has(S.page) ? "This page has been wetted" : "Stir a drop onto this page (W)"}</button></div>` : ""}
           ${S.phase === "break" ? `<div class="why">Point at words in the book (they are underlined now), or pick up a thing below and lay it on clause ${S.pinned}.</div>` : ""}
           ${S.phase === "decide" ? `<div class="${P}acts">
               <button type="button" class="strike" data-a="strike">Strike</button>
               <button type="button" data-a="rewrite" ${TRUST >= 50 ? "" : "disabled"} title="She redrafts it (trust ${TRUST}, needs 50)">Rewrite</button>
               <button type="button" data-a="leave">Leave</button></div>` : ""}
           <h3 style="margin-top:6px">EVIDENCE</h3>
-          ${EVIDENCE.map((e) => `<button type="button" class="${P}item${S.held === e.id ? " held" : ""}" data-ev="${e.id}">${e.id === "deed" ? pic(art, "charter-deed", "") : ""}<span>${e.name}</span></button>`).join("")}
+          ${(teach || twist ? [] : EVIDENCE).map((e) => `<button type="button" class="${P}item${S.held === e.id ? " held" : ""}" data-ev="${e.id}">${e.id === "deed" ? pic(art, "charter-deed", "") : ""}<span>${e.name}</span></button>`).join("")}
           ${S.chit ? `<div class="${P}item got">${pic(art, "chit-1-bottle-neck", "")}<span>Chit No. 1, from the bottle: “one pair land legs, hardly used”</span></div>` : ""}
         </aside>`;
       S.splash = false; S.shake = null;
@@ -294,20 +344,49 @@ export default {
     function follow(from, to) {
       if (!S.threads.some(([a, b]) => a === from && b === to)) S.threads.push([from, to]);
       const c = clauses().find((x) => x.n === to);
+      if (!c) { setPencil("Schedule C is not bound into this copy. The clerk kept it back. One thing at a time: find what binds the port, and break it."); render(); return; }
       S.page = c.page; S.flash = to; seeSched();
       render();
       later(() => { S.flash = null; }, 1200);
     }
+    const lose = (text) => { S.phase = "done"; render(); api.store.set("losses", losses + 1); later(() => { endCard(root, art, teach ? "charter-deed" : "port-seal-bound", teach ? "THE DEED OF SALE" : "THE PORT OF TIDEWATER"); api.end({ outcome: "lose", text }); }, 700); };
+    function wet() {
+      if (teach || S.wet.has(S.page) || S.phase === "done" || S.phase === "decide") return;
+      S.wet.add(S.page); S.drops++;
+      if (twist && S.page === 3) {
+        S.blurred.add(11);
+        setPencil("One drop, turned once. The salt lets go of the last line of C3: “the instrument not lodged with this book.” And C1, above it, runs to a grey blur for good. Not lodged with this book. Then where?");
+      } else {
+        const n = BLUR[S.page]; S.blurred.add(n);
+        setPencil(S.page === 1 ? `The drop raises a line somebody struck out: a renewal of the dues, from 1743, never sealed. So nothing renewed them. It cost clause ${n}, which is a grey blur now and will stay one.`
+          : S.page === 0 ? `Nothing was struck out on this page. The drop only cost clause ${n}: the lamp's date is a grey blur now. If it is wanted again, it is still pressed into the seal.`
+          : `Nothing was struck out on this page, and clause ${n} is a grey blur for good. The sea gives ink back; it does not give it back free.`);
+      }
+      render();
+    }
     function pin(n) {
+      if (twist && S.phase === "trace") {
+        S.ink--; S.wrongPins.add(n); S.splash = true; S.shake = n;
+        const c = clauses().find((x) => x.n === n);
+        setPencil(c.sched ? (c.n === 13 ? "C3 only recites a note of hand, “not lodged with this book”. Pinning the recital pins nothing. Where is the note?" : "He has ticked that one. What he could balance is never what binds.") : "That is the book, and the book's dues are dead. The title is in the Schedule, or behind it.");
+        if (S.ink <= 0) { lose("The ink is gone, and every pin went into paper that only recites. The clerk takes the Schedule back with the book. What the Company's title rests on was never in the document: it was hanging on the cabin wall."); return; }
+        render(); return;
+      }
       if (S.phase !== "find") return;
       const c = clauses().find((x) => x.n === n);
+      if (c.bind && teach) {
+        S.pinned = n; S.phase = "done"; setPencil("Yes. “And all waters adjoining.” Three words, and the sea outside her father's windows went with the furniture."); render();
+        api.store.set("losses", 0);
+        later(() => { endCard(root, art, "charter-deed", "THE DEED OF SALE · CLAUSE 4"); api.end({ outcome: "win", text: `Clause 4, pinned${S.ink === 3 ? " without a drop of ink spilled" : ""}: the Company takes the halls, “and all waters adjoining”. Every other clause of the deed stands or falls with that one. She has known it for a week. Now he has read it himself, and the letters stayed still.` }); }, 900);
+        return;
+      }
       if (c.bind) {
         S.pinned = n; S.phase = "break"; S.slip = true;
         setPencil("Yes. Everything else is 'subject to' that one. Now: what in this book says it no longer holds? (And the clerk has just pinned a new slip to page II. Look at it.)");
       } else {
         S.ink--; S.wrongPins.add(n); S.splash = true; S.shake = n;
         setPencil(c.decoy ? "Loud, isn't it? But it only enforces something else. Follow what it rests on." : c.sched ? "A schedule recites what the Company says it holds. It binds nobody by itself." : c.slip ? "A clerk's note. It binds nobody." : `Clause ${n} hangs on another clause. Follow its reference.`);
-        if (S.ink <= 0) { S.phase = "done"; render(); api.store.set("losses", losses + 1); later(() => { endCard(root, art, "port-seal-bound", "THE PORT OF TIDEWATER"); api.end({ outcome: "lose", text: `The ink is gone, three clauses blotted, none of them the one. The clerk takes the harbour book back at the evening tide: notice +10, and Tidewater stays bound until it can be asked for again.` }); }, 700); return; }
+        if (S.ink <= 0) { lose(teach ? "The ink is gone, three clauses blotted, none of them the one. She unpins the deed and says nothing. It can be read again when his hands are steadier: follow where the red threads run to." : `The ink is gone, three clauses blotted, none of them the one. The clerk takes the harbour book back at the evening tide: notice +10, and Tidewater stays bound until it can be asked for again.`); return; }
       }
       render();
     }
@@ -315,10 +394,11 @@ export default {
       if (S.phase !== "break") return;
       S.tries++;
       if (pt === "lamp") {
-        S.phase = "trace"; S.flash = S.pinned;
+        S.phase = "decide"; S.flash = S.pinned; S.page = 1;
         later(() => { S.flash = null; }, 1300);
-        setPencil("Lit in seventeen hundred and three; dues for forty years; and the clerk dates his copy 1745. The dues ran out two years ago. — But read the end of clause 5 again. The dues were only the rent. The water itself they hold “by the title recited in Schedule C”.");
-      } else if (pt === "custom") setPencil("Unsigned, so it adds nothing. But nor does it undo clause 5: custom is not a date. When did the forty years start?");
+        setPencil("Lit in seventeen hundred and three; dues for forty years; and the clerk dates his copy 1745. The dues ran out two years ago. Strike them, rewrite them, or leave them. — And read the end of clause 5 again: the water itself they hold “by the title recited in Schedule C”, which is not bound into this copy.");
+      } else if (pt === "struck") setPencil("Struck through, and never sealed: so nothing renewed the dues. Good. Then when did the first forty years start?");
+      else if (pt === "custom") setPencil("Unsigned, so it adds nothing. But nor does it undo clause 5: custom is not a date. When did the forty years start?");
       else if (pt === "today") setPencil("That is today's date. Forty years from when, though?");
       else if (pt === "forty") setPencil("Forty years, yes. From the lighting of the lamp. When was that?");
       else setPencil("That is true, and it breaks nothing.");
@@ -337,14 +417,15 @@ export default {
         strike: "Struck. The port of Tidewater goes broken, and the Company's order goes with it: Wild in the Lanes 10 → 25. One clause token for the Tea Board; her trust +5.",
         rewrite: "Rewritten in her hand: the dues end, the ferry and the lamp stay, and a safe lane is kept there for nothing. Wild unchanged. One clause token; her trust +5.",
         leave: "Left bound. The ferry keeps its six minutes and the penny keeps being taken. She watched you find it: trust −5.",
-      }[a] + " Schedule C stands whatever is done to the dues: the water was not taken, it was bought, with a chit in his own hand. Chit No. 1 goes on the cabin wall, the first of eight." + (S.ink === 3 ? " Not a drop of ink spilled." : "");
+      }[a] + " Clause 5 still holds the water itself “by the title recited in Schedule C”, and the Schedule is not in this copy." + (S.ink === 3 ? " Not a drop of ink spilled." : "") + (S.drops ? ` ${S.drops === 1 ? "One clause" : S.drops + " clauses"} of the book will never be read again: the sea had ${S.drops === 1 ? "it" : "them"}.` : "");
       api.store.set("losses", 0);
+      setFlag(api, "charter.tidewater", a);
       endCard(root, art, { strike: "port-seal-broken", rewrite: "port-seal-rewritten", leave: "port-seal-bound" }[a], "THE PORT OF TIDEWATER");
       api.end({ outcome: a === "leave" ? "done" : "win", text });
     }
     // ---- Schedule C: the thread that leaves the page ----
     function thread() {
-      if (S.phase !== "trace") { setPencil(S.phase === "decide" ? "The instrument is in the drawer now." : "“Not lodged with this book.” One thing at a time: find what binds the port, and break it, first."); render(); return; }
+      if (S.phase !== "trace") { setPencil("The instrument is in the drawer now."); render(); return; }
       S.thread = true;
       openWall();
     }
@@ -383,7 +464,11 @@ export default {
           if (k === "take") openWall(1);
           if (k === "cw") sign(1);
           if (k === "ccw") sign(-1);
-          if (k === "keep") { closeWall(); S.chit = true; S.phase = "decide"; S.page = 1; S.flash = S.pinned; later(() => { S.flash = null; }, 1300); setPencil("So: the dues are two years dead, and the title under them is your own note of hand. Strike the dues, rewrite them, or leave them. Schedule C will stand either way, until the tab is answered."); render(); }
+          if (k === "keep") {
+            closeWall(); S.chit = true; S.phase = "done"; setPencil("So: the dues are two years dead, and the title under them is your own note of hand. Schedule C will stand, whatever was done to the dues, until the tab is answered."); render();
+            api.store.set("losses", 0); setFlag(api, "tab.known", true);
+            later(() => { endCard(root, art, "chit-1-bottle-neck", "CHIT No. 1 · ONE PAIR LAND LEGS, HARDLY USED"); api.end({ outcome: "win", text: `The thread left the page. The Company's title to the water of Tidewater is a note of hand, No. 1, “one pair land legs, hardly used”, drawn by Alexi, in a clockwise spiral, for a bottle. The water was not taken. It was bought, lawfully, and from him.${S.ink === 3 ? " Not a pin wasted on paper that only recites." : ""}${S.blurred.size > 1 ? " The Schedule is the worse for seawater." : ""} Chit No. 1 goes in the drawer, the first of eight.` }); }, 900);
+          }
         });
       });
       S.sceneStep = step;
@@ -411,9 +496,11 @@ export default {
       }));
       desk.querySelectorAll("[data-a]").forEach((b) => b.addEventListener("click", () => {
         const a = b.dataset.a;
-        if (a === "read") { S.read = true; setPencil("She reads it out plainly — " + SUMMARY[S.page]); render(); }
+        if (a === "read") { S.read = true; setPencil("She reads it out plainly — " + (teach ? "the debt, the house, the jetty, the taking, the witnesses. Count how many of the five lean on one." : SUMMARY[S.page])); render(); }
         else if (a === "bottle") { if (S.phase === "trace" && S.thread) openWall(); else if (S.chit) { setPencil("An empty bottle on a cord. The paper that was at its neck is in the drawer now."); render(); } else { S.bottleSeen = true; setPencil("A bottle on a cord, with a bit of paper tied at its neck. There are a great many bottles on this boat."); render(); } }
         else if (a === "loupe") loupe();
+        else if (a === "wet") wet();
+        else if (a === "guest") { if (!S.guest) { S.guest = true; api.thread.found(); } setPencil("A correction in the margin, in blue-black, slanting left. It is not the clerk's hand, and it is not the Lord's green. Somebody else has been checking these books."); render(); }
         else decide(a);
       }));
     }
@@ -421,9 +508,10 @@ export default {
       if (how.isConnected) return;
       if (scene) { if (S.sceneStep === 1 && (e.key === "e" || e.key === "E")) scene.querySelector("[data-w=cw]").click(); if (S.sceneStep === 1 && (e.key === "q" || e.key === "Q")) scene.querySelector("[data-w=ccw]").click(); return; }
       if (e.target.closest && e.target.closest("button,a")) return;
-      if (e.key === "ArrowRight") { S.page = Math.min(3, S.page + 1); seeSched(); render(); }
+      if (e.key === "ArrowRight") { S.page = Math.min(PAGES.length - 1, S.page + 1); seeSched(); render(); }
+      if (e.key === "w" || e.key === "W") wet();
       if (e.key === "ArrowLeft") { S.page = Math.max(0, S.page - 1); render(); }
-      if (/^[1234]$/.test(e.key)) { S.page = +e.key - 1; seeSched(); render(); }
+      if (/^[1234]$/.test(e.key) && +e.key <= PAGES.length) { S.page = +e.key - 1; seeSched(); render(); }
       if (e.key === "l" || e.key === "L") loupe();
     };
     addEventListener("keydown", onKey);
@@ -435,11 +523,11 @@ export default {
     obs.observe(desk, { childList: true });
     render();
     const b = how.querySelector("[data-go=book]");
-    b.addEventListener("click", () => { how.remove(); setPencil("The letters sit still at the chart table. Start where the obligations start, and follow what they are 'subject to'."); render(); });
+    b.addEventListener("click", () => { how.remove(); setPencil(teach ? "Start at clause 1 and follow what each clause is “subject to”. The one they all run into is the one to pin." : twist ? "Schedule C: what the Company says it owns at Tidewater, and how it came by each. Two of the three he has ticked. The third has had the sea on its last line." : "The letters sit still at the chart table. Start where the obligations start, and follow what they are 'subject to'."); render(); });
     b.focus();
     let tab = null;
     const stopBook = () => { timers.forEach(clearTimeout); timers.clear(); removeEventListener("keydown", onKey); obs.disconnect(); closeWall(); };
-    how.querySelector("[data-go=tab]").addEventListener("click", () => { stopBook(); tab = mountTab(root, api); });
+
     return {
       unmount() { stopBook(); if (tab) tab.unmount(); },
     };

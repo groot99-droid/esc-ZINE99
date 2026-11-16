@@ -429,11 +429,20 @@
         -38,
         0.8
       ]
+    },
+    {
+      "id": "rope-chandlery",
+      "object": "rope-coil",
+      "location": [
+        100,
+        -44,
+        1.8
+      ]
     }
   ],
   "scenes": {
     "s-tidewater": {
-      "note": "Clean whites and Company blue under a high sun; the ferry bell every six minutes. Ride one crossing and hear Wenna count the children (met.wenna), then the tavern.",
+      "note": "Clean whites and Company blue under a high sun; the ferry bell every six minutes. Ride one crossing and hear Wenna count the children (met.wenna), then the tavern. The chandlery door on the east quay opens on The Slate (s-chandlery) before the taproom.",
       "world": {
         "color": [
           0.75,
@@ -512,6 +521,11 @@
         {
           "prop": "notice-board",
           "verb": "Read the notices"
+        },
+        {
+          "prop": "rope-chandlery",
+          "verb": "Go in by the chandlery's half-shut door",
+          "leads_to": "s-chandlery"
         },
         {
           "prop": "tea-chest-tavern",

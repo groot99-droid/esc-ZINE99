@@ -420,7 +420,7 @@ Each level lists its scenes in order with minutes. Scene ids match `data/scenes.
   and the sequence ends anyway.
 - **Tidewater:** a clean, ordered port. Wenna's ferry crosses the harbour every six minutes of game
   time; the player rides one crossing and hears her count the children. Then the tavern.
-- **The Slate (accepted 2026-11-15; scene to add, section 21):** on the way to the tavern Alexi asks
+- **The Slate (accepted 2026-11-15; `s-chandlery`, built 2026-11-16):** on the way to the tavern Alexi asks
   for a bottle at the chandlery. Mother Halse turns the slate round. It is the first drink he is
   refused, and the first the player hears of the chits. She shuts the shop and follows him in.
 - **Liar's Tide with Wenna, a dockhand and Mother Halse:** stake is news, and Halse's chit No. 2. Winning gives the location of the
@@ -518,7 +518,7 @@ Each level lists its scenes in order with minutes. Scene ids match `data/scenes.
 - **The tally:** the last chance to lay lanes. Then the chart table writes `chart.wild_regions`,
   `chart.order_regions` and `chart.balanced_regions` (section 12), shows them, and seeds the final
   board from them. The narrator's slot speaks here (section 12). Then the tab (accepted 2026-11-15;
-  scene to add, section 21): the chits held are laid on the chart and pinned, each to the region
+  `g-charter-tab`, built 2026-11-16): the chits held are laid on the chart and pinned, each to the region
   whose order it bought. It writes `tab.matched` and, at eight, `pay_open`.
 - **The approach:** if `chart.wild_regions` is 4 or more, the counting-house's floating wharf is
   ringed by Company ships in a sea Alexi can move: the player goes under, through the deep, and up
@@ -541,7 +541,7 @@ Each level lists its scenes in order with minutes. Scene ids match `data/scenes.
 
 ## 9. 3D scenes
 
-Twenty-two 3D scenes on nine sets. Camera is third person throughout: a close follow camera ashore
+Twenty-three 3D scenes on ten sets. Camera is third person throughout: a close follow camera ashore
 (3.5 m behind, shoulder height), a wide sea camera aboard (12 m behind and 6 m up, swinging with
 the swell), and a low tideline camera (2 m, near water level) whenever Alexi stands in the
 tideline. Controls are the shared ones in section 12: ashore (heavy), tideline (precise), aboard
@@ -555,6 +555,7 @@ tideline. Controls are the shared ones in section 12: ashore (heavy), tideline (
 | The beach of Home Reach: 220 m crescent, tideline band 4–8 m wide moving with the tide | Medium | `s-beach-tideline`, `s-beach-princess`, `s-home-tideline`, `s-tideline-final`, all four ending scenes |
 | Sea tile, Company lane: 2 × 2 km of open water with buoys every 200 m | Large, mostly empty | `s-company-lane` |
 | Tidewater: harbour 300 × 200 m, quay, ferry, school steps, tavern interior | Medium | `s-tidewater` |
+| Mother Halse's chandlery on the Tidewater quay: 7 × 5 m, counter, shelves, the slate (accepted 2026-11-15, built 2026-11-16) | Small | `s-chandlery` |
 | The Unwritten: 2 × 2 km of rough water, rocks, fog banks | Large | `s-unwritten` |
 | Region sets: Salt Steps (terraces and reef), Lamplit Strait (two headlands, five lights), Pearl Banks (shallows, stilt village, trench edge), Spice Mouth (warehouses, quays) | Medium, 300–500 m each | the four region scenes |
 | The King's Halls: palace (gallery, throne hall, sea-gate), jetty | Medium | `s-kings-halls` |
@@ -571,6 +572,7 @@ tideline. Controls are the shared ones in section 12: ashore (heavy), tideline (
 | `s-cabin-princess` | Cabin | The 14 objects; the wall pin for the deed | Midday, cleaner light | Her footsteps, his apology clatter | Pinning the deed; showing her the chart | pull-out / fade |
 | `s-company-lane` | Sea, Company lane | Buoys, convoy ships, signal flags | Flat sun, glassy water | Bells on buoys at even intervals; no gulls | First stir yields the ripple; cutter sighted | fade / flatten |
 | `s-tidewater` | Tidewater | Ferry, children's steps, tavern door, notice board | Clean whites and Company blue | Ferry bell every six minutes; Wenna counting | Ride one crossing (sets `met.wenna`); tavern | flatten / push-in |
+| `s-chandlery` | The chandlery | The bottle he asks for; the slate on the counter; the account book; a tea caddy on the shelf | Shutters half down: a band of white harbour light across tea-brown shadow | Chalk on slate, a shop bell, the ferry bell outside | Asking for a bottle turns the slate round (sets `met.halse`); following her to the taproom | cut / push-in |
 | `s-unwritten` | The Unwritten | Fog banks, rocks, the Gullwife boat | Green-grey, moving light | Wind, a distant drunken song | Stir yields a real swell; boarding the Gullwife boat | fade / push-in |
 | `s-home-tideline` | Beach | The first tideline stone | Late afternoon; storm on the horizon from the squall | Surf, the crew singing from the boat | Stone choice; then Tide Reckoning page | cut / fade |
 | `s-chart-table` | Cabin | Chart table, wall, dividers | Lamp-lit | Pen scratch, the swell | Choose region; lay lanes; read harbour book | fade / push-in |
@@ -673,7 +675,7 @@ reckoning, the player chooses whom to dive for. The other is lost.
 
 ## 11. 1D games
 
-Four games, fourteen appearances. Each is a full page that pauses the world (`world_runs: false`)
+Four games, sixteen appearances (the tab and the back-plot are their own scenes since 2026-11-16). Each is a full page that pauses the world (`world_runs: false`)
 unless stated. Every page has text size settings and a "slow" option for any timer, per TECH.md.
 
 ### Liar's Tide (`liars-tide`, dice, bluffing)
@@ -788,7 +790,7 @@ Seals can be lifted to a loupe view.
 | `g-charter-strait` (ch4) | Lighthouse lease | 4 / 12 / 3 | 1 | Corran's logbook (evidence, given if met): the Company never paid the keepers' clause | Strike darkens the lights (Wild +15, and lit/dark changes `g-reckon-strait`) |
 | `g-charter-pearl` (ch4) | Diving-rights deed | 4 / 12 / 3 | 2 | The compact stone rubbing from `d-pearl-dive`: the elders could not sell what the stone gave to every diver | No rubbing: cannot break; Leave only |
 | `g-charter-halls` (ch5) | The halls' deed and its debt schedule | 6 / 20 / 5 | 2 | The payment receipt from the blockade, plus the ch1 deed's "all waters adjoining" (the sea was never the king's to sell) | Without the receipt: Rewrite only (if trust ≥ 50), else Leave |
-| The tab (ch6; scene to add, section 21) | The chart and the chits held | 8 regions / up to 8 chits / 4 pledges to raise | 0 | Nothing to break: every chit is pinned to what it bought | All eight pinned sets `pay_open`. Ink out: the tab stays unmatched and Pay stays shut (accepted 2026-11-15) |
+| `g-charter-tab` (ch6; the tab) | The chart and the chits held | 8 regions / up to 8 chits / 4 pledges to raise | 0 | Nothing to break: every chit is pinned to what it bought | All eight pinned sets `pay_open`. Ink out: the tab stays unmatched and Pay stays shut (accepted 2026-11-15) |
 
 **Hints.** Trust 40+: the princess reads one page aloud as a plain summary. Trust 60+: she circles
 the page the binding clause is on. Ashore the text wobbles slightly ("the letters swim"); at the
@@ -927,6 +929,7 @@ rows; set time with a dial; commit.
 | `g-reckon-strait` (ch4) | 2 | Reverses after hour 2 | 1 nm | Old wrecks; lights help if lit (bearing lines from each lit light) | Lit: a near miss, no cost. Dark: a wreck of Alexi's own boat is avoided only by a stir; Wild Strait +5 and `notice` +5 |
 | `g-reckon-blockade` (ch5) | 3 | Slack water window of 1 hour | 0.5 nm, and arrival inside the slack window | Patrol sweep lines with times | One extra patrol sweep in `e-blockade-run` |
 | `g-reckon-lane` (ch4, ch6) | 1 | Region's own | 1 nm | None | None; lanes always succeed, the page teaches by doing |
+| `g-reckon-backplot` (at a Tide Reckoning, before `d-rescue`; accepted 2026-11-15, built 2026-11-16) | 1, plotted backwards | The table, each arrow turned round | 1 nm, and no circle shown | None | `backplot.good` false: the rescue dive starts a long swim from the person |
 
 **Laying a lane.** At the chart table, for a peopled region with Wild 45 or more and no lane: plot
 one leg from its port to open water. Committing sets `lane.<region>` true and lowers that region's
@@ -1365,8 +1368,8 @@ words:
 | File | Holds |
 | --- | --- |
 | `game.json` | Slug, title, source path, target 160–180, one player, verb "stir", eight chapters adding to 174 |
-| `scenes.json` | Two 2D modes (`engraved`, `deep`), four 1D games (`liars-tide`, `charter`, `tea-board`, `reckoning`), and 47 scenes with reads, writes, transitions and next scenes |
-| `flags.json` | 8 Wild meters, devotion, trust, notice; port enums; lane bools; counters for crews, clauses, ports freed, the tally; ledgers `toll`, `stirs`, `news`; `tea.final_result`, `final_choice`. Phase 1 adds the ledger `chits`, the counter `tab.matched` and the bools `met.halse`, `tab.known`, `reckoning.countersigned`, `pay_open` |
+| `scenes.json` | Two 2D modes (`engraved`, `deep`), four 1D games (`liars-tide`, `charter`, `tea-board`, `reckoning`), and 50 scenes with reads, writes, transitions and next scenes |
+| `flags.json` | 8 Wild meters, devotion, trust, notice; port enums; lane bools; counters for crews, clauses, ports freed, the tally; ledgers `toll`, `stirs`, `news`; `tea.final_result`, `final_choice`. Phase 2 (2026-11-16) adds the bools `crew.wenna`, `crew.gullwife`, `crew.kettle` and `backplot.good`, the ledger `bells`, and the counters `debts.answered` and `tea.cracked`. Phase 1 adds the ledger `chits`, the counter `tab.matched` and the bools `met.halse`, `tab.known`, `reckoning.countersigned`, `pay_open` |
 | `endings.json` | The four endings in section 13 |
 
 Two conventions beyond the schemas: region names in flags use the region ids of section 5
@@ -1415,7 +1418,7 @@ The author accepted the whole of `DEEP_DIVE.md` on 2026-11-15 ("i accept"), and 
 decisions its roadmap had left open: Alexi signed the sea away himself; the king stood surety and
 the princess withheld the writ; the Lord of Tea's history and his seasickness; a fifth ending beside
 the default; and the "future scholars" annotating a second run. This section states the accepted
-story. It is built in three phases. Phase 1 is in this pass; phases 2 and 3 wait.
+story. It is built in three phases. Phase 1 was built on 2026-11-15 and phase 2 on 2026-11-16; phase 3 waits.
 
 ### The question
 
@@ -1463,11 +1466,11 @@ Nothing here is remembered. The chits are paper, found and read, so COLLECTION's
 | 1 | The Xylophone | Source | `s-cabin-dawn` | One bottle has a paper tied at its neck. Ashore the letters swim | 1 (the bottle is on the wall) |
 | 2 | The Princess on the Shore | Source | `s-beach-princess` | The warning, verbatim. A second paper stays in her sleeve | 3 |
 | 3 | The Ripple | Existing | `s-company-lane` | He is weak in ordered water | built |
-| 4 | The Slate | New | scene to add | He is refused; the chits exist; Halse plays Liar's Tide in a dockhand's seat | 1 |
+| 4 | The Slate | New | `s-chandlery` | He is refused; the chits exist; Halse plays Liar's Tide in a dockhand's seat | 1 |
 | 5 | The First Squall | Existing | `e-first-squall` | Devotion is power | built |
 | 6 | The Account Rendered | Existing, changed | `s-home-tideline` | The first Tide Reckoning comes back countersigned: the Lord of Tea is keeping the player's score | 1 |
 | 7 | **Schedule C** (midpoint) | New, inside an existing scene | `g-charter-tidewater` | The clause binding Tidewater routes off the page to the bottle on the cabin wall. The Company's title is his own signature | 1 |
-| 8 | The Open Chart | Existing, changed | `s-chart-table` and the four regions | Each region holds a chit | 1 (the chits; how each is found in its own mode: 2) |
+| 8 | The Open Chart | Existing, changed | `s-chart-table` and the four regions | Each region holds a chit | 1 (the chits); 2 (Nos. 4, 5 and 6 found in play, built 2026-11-16) |
 | 9 | The Second Collision, then The Inventory (darkest) | New; the clerks are existing | `s-kings-halls`, and scenes to add | She leaves with the writ. The clerks tag the cabin walls as the surety's security. He is ashore, dry and alone | 3 |
 | 10 | The Oars | New | scene to add | The king gives back the one untagged thing, and the photograph | 3 |
 | 11 | The Cup and the final match | New, then existing | `s-counting-house`, `g-tea-final` | The Lord offers a salary: Harbourmaster-General, tides to a timetable. Then the board | 3 |
@@ -1499,27 +1502,58 @@ All five are proposals; none is `as_written`, and No Lord stays the default.
 | Chit No. 3 in the strongbox | Sections 8 (chapter 3), 10 | `d-first-dive` writes `chits` | `deep.js`: the box opened on deck; one stir raises the pledge |
 | The matching step at the tally | Section 11 ("The tab"); section 12 | `tab.matched`, `pay_open`, written by `s-cabin-tally` | `charter.js` opens it as the last Charter (`_tab.js`): pin eight chits, wet four |
 
-**Scenes to add** (not in `data/scenes.json` yet; the storyboards and build files follow them):
+**Scenes added 2026-11-16** (in `data/scenes.json`, `assets/assets.json`, `blender/` and `storyboard_additions.md`):
 
-| Proposed id | Layer | Chapter | Where | Minutes, taken from |
+| Id | Layer | Chapter | Where | Minutes, taken from |
 | --- | --- | --- | --- | --- |
-| `s-chandlery` | 3D | `ch2-ordered-sea`, between `s-tidewater` and `g-liars-tidewater` | Mother Halse's shop on the Tidewater quay: The Slate | 2, from `s-tidewater`'s 6 |
+| `s-chandlery` | 3D | `ch2-ordered-sea`, between `s-tidewater` and `g-liars-tidewater` | Mother Halse's shop on the Tidewater quay: The Slate. Its own location, `chandlery`, and build file | 2, from `s-tidewater`'s 6 |
 | `g-charter-tab` | 1D, The Charter | `ch6-lord-of-tea`, after `s-cabin-tally` | The chart table: the tab | 3, from the tally's 5 |
+| `g-reckon-backplot` | 1D, Dead Reckoning | `ch4-open-chart`, before `d-rescue` at a Tide Reckoning | The chart table: the back-plot | 1, from `d-rescue`'s 2 |
 
-Until they exist, `s-tidewater` carries `met.halse` and `s-cabin-tally` carries `tab.matched` and
-`pay_open`. Chapter lengths do not change.
+`met.halse` is now written by `s-chandlery`, and `tab.matched` and `pay_open` by `g-charter-tab`.
+Chapter lengths do not change.
 
-### Phases 2 and 3, accepted and waiting
+### Phase 2, built 2026-11-16: the ladders
 
-- **Phase 2, the modes get their ladders:** returning swell, oil, bell time and The Glass; glow debt,
-  wreck bells, the sounding lead and The Standing Fleet; the loaded die, double or drown and the
-  Flooding Table; sea-swollen pages and the green tick as rules in every Charter; cracked lanes,
-  Insure and Named Debt; lying tables, soundings and the back-plot. Then the three links: a crew is
-  a verb, names answer debts, a charter's fate redraws its plate. The remaining chits get their finds
-  in play (Nos. 4, 5 and 6).
-- **Phase 3, the people and the end:** The Second Collision, The Inventory, The Oars, The Cup; Paid
-  in Kind in `data/endings.json` and section 13, with the changed costs of the other four; the open-book
-  second run and the scholars' footnotes; portraits and ending cards.
+Every 2D mode and 1D game is now three stages, teach, test and twist, each a scene the design
+already had. The web modules play all three (`web/games/lord-of-the-sea/`, wrapped by `_ladder.js`);
+a player may stop after any stage with its result, and the furthest stage reached is kept.
+
+| Mode | Teach | Test, and what is new in it | Twist, and its set-piece |
+| --- | --- | --- | --- |
+| The Engraved Sea | **The Lee** (`e-cutter-heave-to`): only a Ripple answers; ride its face; a convoy ship's lee tows the boat and blinds the cutter; one ship hauls out of line | **The Sea Answers Back** (`e-spice-chase`): the *returning swell* (every crest of Swell or more comes back off the coast twenty seconds on, from ahead, at half height); *oil* (the cutter pours lamp oil: that patch cannot be stirred for ten seconds); *bell time* (a crest under a buoy rings it off the beat and stalls every cutter astern of it, once per buoy) | **The Glass** (`e-blockade-run`): the stir turned over. A sleeping fleet lies at anchor; the oarsmen's hum raises a ripple every bar, and each must be stilled counter-clockwise; any crest raised adds 35 to the fleet's wake; full sail within 20 m of a hull is a wash. At 100 the watch is up |
+| The Deep | **Down to the Tender** (`d-first-dive`), as built | **The Trench** (`d-pearl-dive`, first half): *glow debt* (below 60 m he sees an arm's length; a stir lights eight metres for three seconds and the dredge hooks come for the light); *the sounding lead* (every six seconds, where he was a second ago; touch it: notice +5 and a net follows it down). **Chit No. 5** lies in the floor's deepest fold and shines back at a glow within 25 m | **The Standing Fleet** (`d-pearl-dive`, second half, played as a rescue): at 140 m the pull stops. Eight hulls stand in a row; a current pushed through a *wreck bell* shows the hull's ribs for three seconds and gives its name for good. Ide is in the flagship's ribs with the compact rubbing. Once she is in his arms the only meter is *her air* (36 s), up her crew's line, through an abandoned net |
+| Liar's Tide | **Wenna's Tell** (`g-liars-tidewater`), cut to two dice a sailor | **The Loaded Die** (`g-liars-gullwife`): the mate holds a Company die weighted to Lantern; the chalk keeps what every cup held; *call it out* once: right, and the die is Alexi's for the game; wrong, and suspicion +30. *Double or drown*: once a game the loser of a call keeps the die on chit No. 2 and owes two | **The Flooding Table** (`g-liars-salt`): each round the water climbs and takes a die from the lowest bidder (the call's loser aside; a sailor who never bid is lowest). A stir, in full view, *holds the water* for a round at suspicion +25. The tallyman doubles once on the licence |
+| The Charter | **The Deed** (`g-charter-deed`): one page, five clauses, pin the one the others stand or fall with | **The Harbour Book** (`g-charter-tidewater`, pages I to III): the decoy, the slip, *the green tick* on every clause the Lord of Tea has balanced (the binding clause is one he could not tick), and *sea-swollen pages* (one drop per page raises struck-out ink and blurs one live clause on it for good: page II gives up a struck renewal, page I loses the lamp's date, which is then only in the seal). Ends on Strike, Rewrite or Leave | **Schedule C** (`g-charter-tidewater`, the midpoint): the answer is not in the document. Pinning anything costs ink; the last line of C3 has had the sea on it and is raised by a drop (C1 is the price); the thread leaves the page for the bottle on the wall; the drawer's mark |
+| The Tea Board | **The Parlour** (`g-tea-parlour`), as built | **The Comptroller's Board** (`g-tea-comptroller`, on the parlour's four ports): eight rounds; *Debt* (Lend, two hold a port) and *Clause* (strike one off, two tokens). **Chit No. 6** is stuck under the board when he folds it | **The Wreck Book** (`g-tea-final`, on the same four ports): *cracked lanes* (a second Stir in one High tide cracks the lane it pushes from: no one scores it, ever); *Insure* (he fixes one Chest against the stir for a reserve piece); *Named Debt* (in the last four rounds he reads a name from the toll before each move, and plays it as a Debt) |
+| Dead Reckoning | **Off the Chart's Edge** (`g-reckon-unwritten`), as built | **The Strait** (`g-reckon-strait`): the tide reverses after hour 2; *lying tables* (each arrow of the turned stream carries a cone of error of 25 degrees; the true set is inside it); *soundings* (once a leg the lead gives a position line and the cone closes). No stir: the Strait's Wild is 20. **Chit No. 4** is pinned to the lease schedule in Corran's lamp room | **The Back-plot** (`g-reckon-backplot`): from where a skiff was found and the three hours since, plot back to where she went over. The course is the wind's reciprocal and every tide arrow is turned round; laying the tide as printed is now the mistake. No circle is shown |
+
+Cut to fit the web prototype, and to be restored in the full game: the Comptroller's and the Lord of
+Tea's matches use the parlour's four ports and eight rounds, not six and eight ports and twelve
+rounds; The Glass runs 600 m, not five minutes; the Spice Mouth run is 1150 m; the Standing Fleet is entered at 104 m.
+
+### Phase 2, built 2026-11-16: the layer links
+
+Something done in one layer changes what another contains. The web modules keep these in the
+game's shared storage; the full game keeps them in `data/flags.json`.
+
+| Link | Done in | Changes | Flags | Playable in the web build |
+| --- | --- | --- | --- | --- |
+| **A crew is a verb** | Liar's Tide: Wenna's crew (teach), the Gullwife crew (test), the Kettle crew (twist) | The Engraved Sea off the Spice Mouth gains a *Kettle* call (the tide stands over both reefs) and shows the ferry's crossings on the coast strip, with a line on the reckoning sheet for crests raised while she was mid-harbour. In Dead Reckoning a crew singing in sight halves the table's cone of error. In 3D the crew stand where they were won (`s-tidewater`, `s-unwritten`, `s-salt-steps` read the flags) | `crew.wenna`, `crew.gullwife`, `crew.kettle` | Yes |
+| **Names answer debts** | The Deep: each wreck bell rung in the Standing Fleet | One Named Debt is struck from the Lord of Tea's Wreck Book before the final match for each ship named, up to four | `bells`, `debts.answered` | Yes |
+| **A charter's fate redraws its plate** | The Charter: Strike, Rewrite or Leave on the harbour book | Struck: Tidewater's Engraved Sea is cut in lamp-black (the lane buoys dark, the plate white on black) and its Deep is hung with abandoned nets. Rewritten: the lane buoys burn, and a beam marks the crew's line in the rescue dive | `port.lanes` (and each region's `port.*` for its own plate) | Yes |
+| A good back-plot (added in building, inside "the back-plot" of the deep dive) | Dead Reckoning: the back-plot | The rescue dive starts above the person | `backplot.good` | Yes |
+
+The remaining chits are found in play: No. 4 at the end of The Strait, No. 5 in The Trench, No. 6
+under the Comptroller's board. Nos. 7 and 8 wait for phase 3 with their scenes.
+
+### Phase 3, accepted and waiting
+
+- **The people and the end:** The Second Collision, The Inventory, The Oars, The Cup; Paid in Kind
+  in `data/endings.json` and section 13, with the changed costs of the other four; the open-book
+  second run and the scholars' footnotes; portraits and ending cards; the long puzzle's payoff at the
+  tideline. Phase 2 does not build or contradict them: the final match's result still "waits for the
+  tideline", and no ending was added.
 
 ## 22. Added for the game
 
@@ -1614,5 +1648,50 @@ below is invented, none is the author's text, and each is marked "accepted 2026-
   paper; the strongbox; four chits with their pledges raised; cut-outs of the boat, cutter, ferry,
   skiff and swimmer for play. The plotting sheet for the Unwritten was redrawn to the module's own
   grid, and the tide dial lost its fixed hand.
+
+**Built 2026-11-16 (phase 2; inside the acceptance of 2026-11-15).** Each item is invented, none is
+the author's text, and each is marked "accepted 2026-11-15, built 2026-11-16".
+
+- *The ladders* (accepted 2026-11-15, built 2026-11-16): the three stages of each mode as section 21
+  tables them, with every rule there: the returning swell, oil, bell time and The Glass; glow debt,
+  the sounding lead, wreck bells and The Standing Fleet; the loaded die, double or drown and the
+  Flooding Table; the green tick and sea-swollen pages as rules; Debt and Clause on the web board,
+  cracked lanes, Insure and Named Debt; lying tables, soundings and the back-plot.
+- *Worded or decided in building, for the author to keep or strike* (accepted 2026-11-15, built
+  2026-11-16): the numbers (a returning swell after 20 s at half height, oil for 10 s, +35 wake for a
+  crest in The Glass, the lead's six-second beat, 36 s of air, suspicion +30 for a wrong accusation,
+  a 25 degree cone); that in The Lee a convoy ship tows the boat in her lee and one ship hauls out of
+  line; that the water spares the call's loser; that the Lord of Tea reads a name and then also
+  moves; that a third Clause token comes from the Comptroller's match; that the Strait cannot be
+  stirred; that the back-plot's wind sets a skiff 075 degrees at 4 knots.
+- *The Standing Fleet as a rescue* (accepted 2026-11-15, built 2026-11-16): that the person with the
+  air meter is Ide, who went down for the compact rubbing ahead of him; her crew's line above the
+  flagship; the flagship's name, Halcyon, and the seven other ships' names (Mary Dunnock, Tern,
+  Patience, Three Sisters, Lantern Maid, Kettle's Pride, The Asking). No body is shown, and the
+  losing result leaves her to the Tide Reckoning.
+- *The Wreck Book's readings* (accepted 2026-11-15, built 2026-11-16): "Corran. Lamp-keeper. A light
+  went out." is the deep dive's; written beside it: "Wenna. Ferry pilot. A crest came in on the
+  sixth minute.", "Old Marrow. Reef-fisher. The tide stood where it never stood.", "Ide. Diver. The
+  bank was not slack that day."
+- *The deed's five clauses* (accepted 2026-11-15, built 2026-11-16), built round the existing "and
+  all waters adjoining"; the struck-out renewal of 1743 in the harbour book; that the lamp's date is
+  also pressed into the seal.
+- *Scenes and places* (accepted 2026-11-15, built 2026-11-16): `s-chandlery` and its set (the
+  location image is generated; prompt, model and job id are in `assets/assets.json`), `g-charter-tab`,
+  `g-reckon-backplot`.
+- *Links* (accepted 2026-11-15, built 2026-11-16): the three of the deep dive as section 21 tables
+  them; and one more, small: a good back-plot starts the rescue dive above the person. The divers'
+  call (20 seconds more air) and the lamp-boys' fog wait for their crews' tables.
+- *Lines* (accepted 2026-11-15, built 2026-11-16): the deep dive's "You call it wild. In my books it
+  is called unpaid." and "tea is for selling" are used at the final board. Written in the same voice:
+  every caption, table line and result of the eighteen stages, among them "It used to come when he
+  called. Now it came the way a cat does: a little, and when it pleased.", "He had spent a lifetime
+  making it move. Nobody had ever asked him to make it lie still.", "We had paid for drink with a
+  slack water once. It was down here somewhere, still slack.", "Here the pull stopped. Every ship the
+  old sea took stood upright on the floor, in rows: the sea's side of the ledger.", "Lowest bid feeds
+  the tide, sailor. House rule. The house is the sea.", "Lanes are opinion, sir. Debt is fact.", and
+  "She came here on 075: the way back is its reciprocal."
+- *The collection thread* (docs/DEEP_DIVE.md section 4): another game's object sits in the margin of
+  Schedule C in the twist of The Charter, unremarked.
 
 **Not added, deliberately:** the name Poseidon; a name for the princess or her father's kingdom; any line in which the narrator names or explains itself; a reveal of the narrator in any ending; more than one set of hymn words.

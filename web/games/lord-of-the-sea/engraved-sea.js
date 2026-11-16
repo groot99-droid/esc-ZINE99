@@ -17,9 +17,10 @@
 // Art pass: the boat, the cutter, the coast strip with its moored skiffs, the sky and the rose ring are the game's
 // art, each rasterised once at the size it is drawn (api.art); the sea itself stays the module's own burin lines.
 import { pic, raster, endCard, chapterStrip } from "./_art.js";
+import { ladder, note, flag } from "./_ladder.js";
 
 const INK = "#1F2E4A", PAPER = "#F4F1E8", RED = "#8C2B2B", GOLD = "#E7A93B", GREEN = "#2F6B5E", BROWN = "#6B4A2B";
-const LENGTH = 2200;            // metres to the port (about 1.2 nm)
+let LENGTH = 2200;              // metres to the port (about 1.2 nm); set by the stage
 const NM = 1852;
 const V = 1.6;                  // drawn vertical exaggeration; steepness is read from the drawing
 const STEEP = Math.tan((35 * Math.PI) / 180);
@@ -30,25 +31,66 @@ const TIERS = [
   { name: "Fog", fog: true },
   { name: "Squall", h: 4, sigma: 4.5 },
 ];
-const MAX_TIER = TIERS.length - 1;
-const ROCKS = [700, 1520];     // the reef: needs 0.6 m of water over it to pass
-const BUOYS = [0, 450, 900, 1350, 1800];
-const LIGHT_X = 1150;
+let MAX_TIER = TIERS.length - 1;
+let ROCKS = [700, 1520];       // the reef: needs 0.6 m of water over it to pass
+let BUOYS = [0, 450, 900, 1350, 1800];
+let LIGHT_X = 1150;
 const SONG_S = 12;
 
 // Beats: where on the run, the line, and whether the Voice Beside speaks it (sea-ink green italic).
-const BEATS = [
-  { at: 260, text: "The reef runs a hand under the water a cable ahead. Stir on it, clockwise, and the tide stands over it." },
-  { at: 420, text: "The Gullwife crew are aboard. Once this run, call them to sing (Sing, or C): for twelve seconds every stir runs one tier higher.", unlock: "sing" },
-  { at: 760, voice: true, text: "The water rose where he asked it. Along the shore the moorings lifted, and no one on the quay knew why." },
-  { at: 960, text: "The Strait light swings ahead. Its beam is the Company's eye: lay fog with four circles, or keep out of it.", unlock: "fog" },
-  { at: 1420, text: "The second reef, and past it the Spice Mouth, where the dock-singers sing for no one yet." },
-  { at: 1950, voice: true, text: "Behind us the sea kept every crest he had raised, and carried them toward the land." },
+const BEATS_TEST = [
+  { at: 140, text: "The reef runs a hand under the water a cable ahead. Stir on it, clockwise, and the tide stands over it." },
+  { at: 220, text: "The Gullwife crew are aboard. Once this run, call them to sing (Sing, or C): for twelve seconds every stir runs one tier higher.", unlock: "sing" },
+  { at: 400, voice: true, text: "The water rose where he asked it. Along the shore the moorings lifted, and no one on the quay knew why." },
+  { at: 500, text: "The Strait light swings ahead. Its beam is the Company's eye: lay fog with four circles, or keep out of it.", unlock: "fog" },
+  { at: 745, text: "The second reef, and past it the Spice Mouth, where the dock-singers sing for no one yet." },
+  { at: 1020, voice: true, text: "Behind us the sea kept every crest he had raised, and carried them toward the land." },
 ];
 
-export default {
+// Phase 2 (accepted 2026-11-15, built 2026-11-16): the ladder. Teach is `e-cutter-heave-to`: a ripple and a
+// convoy's lee. Test is the Spice Mouth run above, where the sea now answers back (every crest returns off the
+// coast, the cutter pours oil, a crest under a buoy rings it and turns the cutter). Twist is The Glass, in
+// `e-blockade-run`: a sleeping fleet, the king's oarsmen humming, and the stir turned over (raise nothing).
+const BEATS_TEACH = [
+  { at: 40, text: "The Company lane, flat as a plate. Draw one circle just astern: a Ripple is all the water gives here, and it is enough to ride." },
+  { at: 120, text: "Tuck in under the convoy ship's stern. In her lee the cutter cannot pick one small sail out of the line." },
+  { at: 300, text: "The ship ahead hauls her wind and turns out of line. The next is a hundred metres on: ripple after ripple, and get under her." },
+  { at: 470, voice: true, text: "It used to come when he called. Now it came the way a cat does: a little, and when it pleased." },
+];
+const BEATS_TWIST = [
+  { at: 30, text: "The blockade lies asleep at anchor. Still the water, counter-clockwise: every ripple you put down is a hull that does not stir." },
+  { at: 160, text: "Forward, the king's oarsmen hum the hymn under their breath. Every bar raises a ripple off the bow. Put each one down." },
+  { at: 300, voice: true, text: "He had spent a lifetime making it move. Nobody had ever asked him to make it lie still." },
+  { at: 450, text: "The last hulls, and the sea-gate beyond them. Spill wind as you pass: a wash wakes a watch as surely as a wave." },
+];
+const STAGES = {
+  teach: { length: 640, rocks: [], buoys: [0, 320], light: -9999, maxTier: 0, beats: BEATS_TEACH, port: "THE ANCHORAGE", swell: 0.45 },
+  test: { length: 1150, rocks: [380, 800], buoys: [0, 230, 460, 690, 920], light: 600, maxTier: TIERS.length - 1, beats: BEATS_TEST, port: "SPICE MOUTH", swell: 1 },
+  twist: { length: 600, rocks: [], buoys: [0, 200, 400], light: -9999, maxTier: 1, beats: BEATS_TWIST, port: "THE SEA-GATE", swell: 0.4 },
+};
+const FLEET = [120, 240, 360, 470, 550];   // The Glass: where the sleeping hulls lie
+const LADDER = {
+  title: "The Engraved Sea", kicker: "2D · COPPERPLATE · THREE PLATES",
+  stages: {
+    teach: { name: "The Lee", where: "Chapter II, the Company lane: only a ripple, and a convoy to hide behind.", line: "A cutter you cannot fight, and a convoy to hide in." },
+    test: { name: "The Sea Answers Back", where: "Chapter IV, off the Spice Mouth: every crest you raise comes back.", line: "The chase off the Spice Mouth, where the sea answers back." },
+    twist: { name: "The Glass", where: "Chapter V, the blockade: iron the sea flat and ghost through a sleeping fleet.", line: "The blockade, asleep at anchor. Raise nothing." },
+  },
+};
+
+export default { mount(root, api) { return ladder(root, api, LADDER, (r, a) => game.mount(r, a)); } };
+
+const game = {
   mount(root, api) {
     const P = "lord-of-the-sea-engraved-sea-";
+    const stage = api.stage || "test", C = STAGES[stage];
+    const teach = stage === "teach", glass = stage === "twist";
+    LENGTH = C.length; ROCKS = C.rocks; BUOYS = C.buoys; LIGHT_X = C.light; MAX_TIER = C.maxTier;
+    const BEATS = C.beats;
+    // layer links (api.shared): a crew won at dice is a call here; a charter's fate redraws the plate
+    const fate = flag(api, "charter.tidewater", "");
+    const lampBlack = teach && fate === "strike", litLane = teach && fate === "rewrite";
+    const kettle = stage === "test" && !!flag(api, "crew.kettle"), wenna = stage === "test" && !!flag(api, "crew.wenna");
     const reduce = api.reducedMotion;
     const losses = +api.store.get("losses", 0) || 0;
     const gentle = losses >= 2;
@@ -125,22 +167,33 @@ export default {
         <button type="button" data-k="climb" aria-label="Helm: climb the face (W)">Climb</button>
         <button type="button" data-k="run" aria-label="Helm: run the trough (S)">Run</button>
         <button type="button" class="sing" data-sing="1" hidden aria-label="Call the crew to sing (C)">Sing</button>
+        <button type="button" class="sing" data-kettle="1" hidden aria-label="Call the Kettle crew: the reef stands covered (K)">Kettle</button>
       </div>
       <div class="${P}how" role="dialog" aria-label="How to play">
         <div class="${P}plate">
-          ${chapterStrip(api.art, 5, "Chapter V: The Open Chart")}
-          <div class="${P}kick">PLATE I · CHAPTER IV · OFF THE SPICE MOUTH</div>
-          <h2>The Engraved Sea</h2>
-          <p class="${P}goal">Reach the Spice Mouth, 1.2 miles on, before a revenue cutter's grapnel holds you four seconds.</p>
-          <p class="${P}open">The Company has had word of a boat that makes its own weather. Alexi has the tiller, a following sea, and a cutter two cables astern.</p>
-          ${gentle ? `<p class="${P}gentle">A gentler sea: the cutter starts further back this time.</p>` : ""}
+          ${chapterStrip(api.art, teach ? 3 : glass ? 6 : 5, teach ? "Chapter III: The Ordered Sea" : glass ? "Chapter VI: Debts and Halls" : "Chapter V: The Open Chart")}
+          <div class="${P}kick">${teach ? "PLATE I · CHAPTER II · THE COMPANY LANE" : glass ? "PLATE III · CHAPTER V · THE BLOCKADE" : "PLATE II · CHAPTER IV · OFF THE SPICE MOUTH"}</div>
+          <h2>${teach ? "The Lee" : glass ? "The Glass" : "The Sea Answers Back"}</h2>
+          <p class="${P}goal">${teach ? "Reach the anchorage, a third of a mile on. You cannot fight the cutter here: hide in the convoy's lee."
+            : glass ? "Ghost through the sleeping fleet to the sea-gate. If the fleet's wake reaches 100, the watch is up and the run is over."
+            : "Reach the Spice Mouth, six cables on, before a revenue cutter's grapnel holds you four seconds."}</p>
+          <p class="${P}open">${teach ? "Ordered water answers him with a ripple and nothing more. A revenue cutter has put out astern, faster than he can ever sail; ahead, a Company convoy keeps its stations."
+            : glass ? "The king's payment is aboard, and a blockade lies at anchor across the halls. Here every crest is a shout. The oarsmen hum the hymn under their breath, and even that raises the water."
+            : "The Company has had word of a boat that makes its own weather. Alexi has the tiller, a following sea, and a cutter two cables astern. Out here the sea answers back."}</p>
+          ${gentle ? `<p class="${P}gentle">${glass ? "A gentler watch: the oarsmen hum slower this time." : "A gentler sea: the cutter starts further back this time."}</p>` : ""}
           ${api.art.has("boat-surf") ? `<div class="${P}figs">${pic(api.art, "boat-surf", "The boat, surfing a face")}${pic(api.art, "cutter", "A revenue cutter")}${pic(api.art, "boat-capsized", "The boat, capsized")}</div>` : ""}
           <table class="${P}key">
-            <tr><td>${pic(api.art, "stir-spiral-clockwise", "")}Raise</td><td>Draw a clockwise circle on the sea, or hold <kbd>E</kbd>. More circles, a bigger crest.</td></tr>
-            <tr><td>${pic(api.art, "stir-spiral-counter", "")}Still</td><td>A counter-clockwise circle, or hold <kbd>Q</kbd>, flattens the sea there.</td></tr>
-            <tr><td>Helm</td><td><b>Climb</b> a rising face, <b>Run</b> a falling one (<kbd>W</kbd>/<kbd>S</kbd>), or go over. <kbd>A</kbd>/<kbd>D</kbd> trim; <kbd>&larr;</kbd><kbd>&rarr;</kbd> move the reticle.</td></tr>
+            ${glass ? `<tr><td>${pic(api.art, "stir-spiral-counter", "")}Still</td><td>Draw a <b>counter-clockwise</b> circle on a ripple, or hold <kbd>Q</kbd> with the reticle on it (<kbd>&larr;</kbd><kbd>&rarr;</kbd>). This is the whole of the run.</td></tr>
+            <tr><td>${pic(api.art, "stir-spiral-clockwise", "")}Raise</td><td>Don't. A crest raised among sleeping hulls wakes them: +35.</td></tr>
+            <tr><td>Sail</td><td><b>Spill</b> wind (<kbd>A</kbd>) to creep past a hull: full sail within 20 m of one throws a wash. <b>Full</b> (<kbd>D</kbd>) between them.</td></tr>`
+            : teach ? `<tr><td>${pic(api.art, "stir-spiral-clockwise", "")}Ripple</td><td>Draw a clockwise circle just astern, or hold <kbd>E</kbd>. One Ripple; ride its face for a third more speed.</td></tr>
+            <tr><td>The lee</td><td>Close under a convoy ship's stern (the dotted bracket). She tows you at her pace and the cutter loses you.</td></tr>
+            <tr><td>Sail</td><td><kbd>A</kbd>/<kbd>D</kbd> or <b>Spill</b>/<b>Full</b> trim the sail; <kbd>&larr;</kbd><kbd>&rarr;</kbd> move the reticle. Spill to drop out of a lee.</td></tr>`
+            : `<tr><td>${pic(api.art, "stir-spiral-clockwise", "")}Raise</td><td>Draw a clockwise circle on the sea, or hold <kbd>E</kbd>. More circles, a bigger crest. Each crest comes back off the coast twenty seconds on, from ahead, at half height.</td></tr>
+            <tr><td>${pic(api.art, "stir-spiral-counter", "")}Still</td><td>A counter-clockwise circle, or hold <kbd>Q</kbd>, flattens the sea there. Oiled water will not be stirred at all.</td></tr>
+            <tr><td>Helm</td><td><b>Climb</b> a rising face, <b>Run</b> a falling one (<kbd>W</kbd>/<kbd>S</kbd>), or go over. <kbd>A</kbd>/<kbd>D</kbd> trim; <kbd>&larr;</kbd><kbd>&rarr;</kbd> move the reticle. A crest under a buoy rings its bell: the cutter turns for it.</td></tr>`}
           </table>
-          <button type="button">Make sail</button>
+          <button type="button">${glass ? "Cast off, quietly" : "Make sail"}</button>
         </div>
       </div>
     </div>`;
@@ -156,11 +209,18 @@ export default {
 
     // ---- world state ----
     const base = [
-      { a: 0.38, L: 47, c: 6.5, p: rng() * 6 },
-      { a: 0.24, L: 23, c: 4.5, p: rng() * 6 },
-      { a: 0.14, L: 12, c: 3.2, p: rng() * 6 },
-      { a: 0.1, L: 71, c: 9, p: rng() * 6 },
+      { a: 0.38 * C.swell, L: 47, c: 6.5, p: rng() * 6 },
+      { a: 0.24 * C.swell, L: 23, c: 4.5, p: rng() * 6 },
+      { a: 0.14 * C.swell, L: 12, c: 3.2, p: rng() * 6 },
+      { a: 0.1 * C.swell, L: 71, c: 9, p: rng() * 6 },
     ];
+    // teach: the convoy. test: what the sea sends back. twist: the sleeping fleet and the hum.
+    const convoy = teach ? [{ x: 55, v: 6.2 }, { x: 155, v: 6.2 }, { x: 255, v: 6.2 }, { x: 355, v: 6.2 }] : [];
+    let returns = [], oils = [], rung = new Set(), oilCool = 12, ferryHits = 0, bellsRung = 0, returned = 0;
+    const HUM_S = gentle ? 8.5 : 6.5;
+    let humT = 3, hums = 0, stilled = 0;
+    const ferryAt = (tt) => (tt % 34) > 22;          // Wenna's ferry is mid-harbour for twelve seconds in every thirty-four
+    const kettleBtn = wrap.querySelector("[data-kettle]");
     let t = 0, running = false, over = false;
     const s = {
       x: 0, v: 7, trim: 0.8, helm: 0, broad: 0, capsized: 0, checkpoint: 0,
@@ -168,8 +228,9 @@ export default {
       flash: 0, flashCol: RED, shake: 0, unlocked: { sing: false, fog: false }, beat: 0,
     };
     let crests = [], fogs = [], calms = [], cutters = [], sprays = [], rings = [];
-    const startGap = gentle ? 220 : 130;
-    function resetCutters() { cutters = [{ x: s.x - startGap, v: 8, stall: 0, grap: 0 }]; if (s.second) cutters.push({ x: s.x - startGap - 70, v: 8, stall: 0, grap: 0 }); }
+    const startGap = teach ? (gentle ? 150 : 82) : gentle ? 220 : 130;
+    function resetCutters() { cutters = glass ? [] : [{ x: s.x - startGap, v: 8, stall: 0, grap: 0 }]; if (s.second) cutters.push({ x: s.x - startGap - 70, v: 8, stall: 0, grap: 0 }); }
+    s.wake = 0; s.lee = false; s.kettle = false;
     resetCutters();
 
     function baseH(x) {
@@ -198,25 +259,35 @@ export default {
 
     // ---- stirring ----
     const stir = { on: false, angle: 0, pts: [], cx: 0, cy: 0, last: null, worldX: 0, key: 0 };
-    let reticleOff = -14; // keyboard reticle, metres from the boat
+    let reticleOff = teach ? -7 : glass ? 24 : -14; // keyboard reticle, metres from the boat
     const tierFor = (circles) => Math.min(MAX_TIER, circles - 1 + (s.song > 0 ? 1 : 0));
     function applyStir(worldX, angle) {
-      const circles = Math.floor(Math.abs(angle) / (Math.PI * 2));
+      const circles = Math.floor(Math.abs(angle) / (Math.PI * 2) + 0.14);   // a circle drawn a little short still counts
       if (circles < 1) { if (Math.abs(angle) > 1) say("Not a full circle: the water does not answer.", 1.6); return; }
       worldX = Math.max(s.x - 40, Math.min(s.x + 40, worldX));
+      const oil = oils.find((o) => Math.abs(worldX - o.x) < o.w / 2);
+      if (oil) { say(`Oil on the water: it will not answer for ${Math.ceil(oil.life)} s.`, 2); flash(BROWN, 0.4); return; }
+      if (angle > 0 && glass) {
+        s.wake = Math.min(100, s.wake + 35); crests.push({ x: worldX, h: 0.9, h0: 0.9, sigma: 6, age: 0, life: 6, v: 0 });
+        rings.push({ x: worldX, age: 0, col: RED }); flash(RED, 0.7);
+        say("A crest, here? The nearest hull turns over in its sleep.", 2.6); return;
+      }
       if (angle > 0) {
         const tier = tierFor(circles), T = TIERS[tier];
         if (T.fog) { fogs.push({ x: worldX, w: 80, life: 16, age: 0 }); say("Fog. The cutter loses you in it."); if (!s.unlocked.fog) { s.unlocked.fog = true; } }
         else {
           const reef = ROCKS.find((r) => Math.abs(r - worldX) < 14);
           if (reef != null) { crests.push({ x: reef, h: T.h, h0: T.h, sigma: T.sigma + 2, age: 0, life: 12, v: 0 }); say(T.name + " over the reef: the tide stands on it a while"); }
-          else { crests.push({ x: worldX, h: T.h, h0: T.h, sigma: T.sigma, age: 0, life: 15, v: 9 }); say(T.name + " raised" + (tier === MAX_TIER ? ": mind your own sea" : "")); }
-          if (tier >= 1) s.sent++;
+          else { crests.push({ x: worldX, h: T.h, h0: T.h, sigma: T.sigma, age: 0, life: 15, v: 9 }); say(T.name + " raised" + (tier === MAX_TIER && !teach ? ": mind your own sea" : teach ? ": ride its face" : "")); }
+          if (tier >= 1) { s.sent++; if (wenna && ferryAt(t)) { ferryHits++; say("Raised with the ferry mid-harbour: she ships it green.", 2.6); }
+            if (stage === "test" && reef == null) returns.push({ at: t + 20, h: T.h / 2, sigma: T.sigma }); }
         }
         for (let i = 0; i < 14; i++) sprays.push({ x: worldX + (rng() - 0.5) * 10, y: 0, vx: (rng() - 0.5) * 4, vy: 3 + rng() * 4, life: 1 });
         rings.push({ x: worldX, age: 0, col: T.fog ? INK : GREEN });
       } else {
+        const before = crests.length;
         crests = crests.filter((c) => Math.abs(c.x - worldX) > 18);
+        if (glass && before > crests.length) { stilled += before - crests.length; }
         calms.push({ x: worldX, r: 22, life: 7 });
         rings.push({ x: worldX, age: 0, col: INK });
         say("Stilled");
@@ -239,6 +310,7 @@ export default {
       if ((k === "e" || k === "q") && down && !keys[k]) { stir.on = true; stir.key = k === "e" ? 1 : -1; stir.angle = 0; stir.pts = []; }
       if ((k === "e" || k === "q") && !down && stir.key) { applyStir(s.x + reticleOff, stir.angle); stir.on = false; stir.key = 0; }
       if (k === "c" && down) sing();
+      if (k === "k" && down) callKettle();
       keys[k] = down;
     };
     const kd = (e) => onKey(e, true), ku = (e) => onKey(e, false);
@@ -281,6 +353,12 @@ export default {
     const bup = (e) => { const k = e.currentTarget.dataset.k; held[k] = false; e.currentTarget.classList.remove("on"); };
     for (const b of btns) { b.addEventListener("pointerdown", bdn); b.addEventListener("pointerup", bup); b.addEventListener("pointerleave", bup); b.addEventListener("pointercancel", bup); }
     singBtn.addEventListener("click", sing);
+    function callKettle() {
+      if (!running || !kettle || s.kettle) return;
+      s.kettle = true; kettleBtn.disabled = true; kettleBtn.classList.add("on");
+      caption("The Kettle crew strike up from the reef, badly and all together. The tide stands over both reefs and stays there.", false, 6); flash(GREEN, 0.6);
+    }
+    kettleBtn.addEventListener("click", callKettle);
 
     function resize() {
       dpr = Math.min(2, devicePixelRatio || 1);
@@ -308,7 +386,7 @@ export default {
         spill: await raster(art, "sprite-boat-spill", 92 * k * dpr, 95 * k * dpr),
         cutter: await raster(art, "sprite-cutter", 138 * k * dpr, 109 * k * dpr),
         rose: await raster(art, "rose-ring", 84 * dpr, 84 * dpr, { round: true }),
-        coast: await raster(art, "coast-spice", bandH * (1556 / 168) * dpr, bandH * dpr, { src: [22, 16, 1556, 168] }),
+        coast: await raster(art, teach ? "coast-lanes" : glass ? "coast-halls" : "coast-spice", bandH * (1556 / 168) * dpr, bandH * dpr, { src: [22, 16, 1556, 168] }),
         sky: await raster(art, "sea-plate", (W - 20) * dpr, skyH * dpr, { src: skySrc((W - 20) / skyH) }),
         skiff: await raster(art, "sprite-skiff", bandH * 0.62 * (150 / 140) * dpr, bandH * 0.62 * dpr),
         ferry: await raster(art, "sprite-ferry", bandH * 0.5 * (260 / 110) * dpr, bandH * 0.5 * dpr),
@@ -353,17 +431,55 @@ export default {
 
       if (s.capsized > 0) {
         s.capsized -= dt;
-        if (s.capsized <= 0) { s.x = s.pendingCp; s.v = 5; crests = []; fogs = []; resetCutters(); }
+        if (s.capsized <= 0) { s.x = s.pendingCp; s.v = 5; crests = []; fogs = []; returns = []; resetCutters(); }
         return;
       }
       beats();
+      // ---- the ladder's own weather ----
+      if (teach) {
+        for (const c of convoy) { c.x += c.v * dt; if (c.gone) c.v = Math.max(2.5, c.v - dt * 1.5); }
+        if (s.x >= 300 && !s.hauled) { s.hauled = true; const c = convoy.find((q) => !q.gone && s.x > q.x - 60 && s.x < q.x + 10) || convoy[0]; c.gone = true; }
+      }
+      if (stage === "test") {
+        for (const r of returns) if (!r.warned && t > r.at - 3) { r.warned = true; say("A swell is coming back off the coast, from ahead.", 2.6); }
+        for (const r of returns.filter((q) => t >= q.at)) { crests.push({ x: s.x + 75, h: r.h, h0: r.h, sigma: r.sigma + 1, age: 0, life: 15, v: -8, back: true }); returned++; }
+        returns = returns.filter((q) => t < q.at);
+        if (returned === 1 && !s.saidReturn) { s.saidReturn = true; caption("The first crest he raised has been to the coast and back. It comes in over the bow at half its height: climb it, or still it.", false, 6); }
+        oilCool -= dt;
+        for (const c of cutters) if (oilCool <= 0 && s.x - c.x < 75 && s.x - c.x > 20 && c.stall <= 0 && s.x > 270) {
+          oilCool = 26; oils.push({ x: (c.x + s.x) / 2 + 6, w: 64, life: 10 });
+          caption("The cutter pours lamp oil over her bow. For ten seconds that patch of sea will not be stirred, up or down.", false, 5); flash(BROWN, 0.5);
+        }
+        oils.forEach((o) => (o.life -= dt)); oils = oils.filter((o) => o.life > 0);
+        for (const b of BUOYS.slice(1)) if (!rung.has(b) && crests.some((c) => !c.back && c.h >= 1 && Math.abs(c.x - b) < 5)) {
+          rung.add(b); bellsRung++;
+          for (const c of cutters) if (c.x < b + 30) { c.stall = Math.max(c.stall, 4); c.belled = true; }
+          rings.push({ x: b, age: 0, col: GOLD });
+          caption("A crest under the buoy rings its bell off the beat. Every cutter turns for the bell. Once per buoy.", false, 5); flash(GOLD, 0.5);
+        }
+      }
+      if (glass) {
+        humT -= dt;
+        if (humT <= 0 && s.x < LENGTH - 60) { humT = HUM_S; hums++; crests.push({ x: s.x + 24, h: 0.7, h0: 0.7, sigma: 5, age: 0, life: 40, v: 0, hum: true }); if (!reduce) rings.push({ x: s.x + 24, age: 0, col: GREEN }); }
+        const live = crests.filter((c) => c.hum && c.h > 0.15).length;
+        const near = FLEET.find((f) => Math.abs(f - s.x) < 20);
+        const wash = near != null && s.v > 6.2;
+        if (live) s.wake = Math.min(100, s.wake + live * 8 * dt);
+        else if (!wash) s.wake = Math.max(0, s.wake - 2.2 * dt);
+        if (wash) { s.wake = Math.min(100, s.wake + 11 * dt); if (!s.washMsg || t - s.washMsg > 4) { s.washMsg = t; say("Full sail past a hull: her cable creaks. Spill wind.", 2); } }
+        if (s.wake >= 100) { finish(false); return; }
+      }
       // sail
       if (keys["d"] || held.trimUp) s.trim = Math.min(1, s.trim + 0.6 * dt);
       if (keys["a"] || held.trimDown) s.trim = Math.max(0.3, s.trim - 0.6 * dt);
       s.helm = (keys["w"] || keys["arrowup"] || held.climb) ? 1 : (keys["s"] || keys["arrowdown"] || held.run) ? -1 : 0;
       const sl = slope(s.x);
       let target = 8.2 * s.trim;
-      if (sl < 0) target *= 1 + Math.min(0.6, -sl * (s.helm === -1 ? 1.6 : 1.1));          // surf
+      if (sl < 0) target *= 1 + Math.min(0.6, -sl * (s.helm === -1 ? 1.6 : 1.1) * (teach ? 3.2 : 1));          // surf
+      const lee = teach ? convoy.find((c) => !c.gone && s.x > c.x - 30 && s.x < c.x + 6) : null;
+      s.lee = !!lee && s.trim >= 0.5;
+      if (s.lee) target = lee.v + (lee.x - 13 - s.x) * 0.35;                                // towed in her lee
+      if (s.lee && !s.leeSaid) { s.leeSaid = true; say("In her lee. The cutter has lost you.", 2.6); flash(GREEN, 0.4); }
       else target *= 1 - Math.min(0.55, sl * (s.helm === 1 ? 0.45 : 0.9));                 // climb
       s.v += (target - s.v) * Math.min(1, dt * 1.8);
       s.x += s.v * dt;
@@ -374,7 +490,7 @@ export default {
       else s.broad = Math.max(0, s.broad - dt * 2);
       // reef
       for (const r of ROCKS) {
-        if (s.x > r - 2 && s.x < r + 2 && H(r) < 0.6 && !s.rockHit) { s.rockHit = r; capsize("Struck the reef: not enough water over it."); return; }
+        if (s.x > r - 2 && s.x < r + 2 && H(r) < 0.6 && !s.rockHit && !s.kettle) { s.rockHit = r; capsize("Struck the reef: not enough water over it."); return; }
       }
       if (s.rockHit && Math.abs(s.x - s.rockHit) > 10) s.rockHit = 0;
       // lighthouse beam
@@ -392,8 +508,8 @@ export default {
         const csl = slope(c.x);
         if (c.stall > 0) c.stall -= dt;
         else if (Math.abs(csl) > STEEP) { c.stall = 2.5; s.broaches++; say("The cutter broaches on your crest."); rings.push({ x: c.x, age: 0, col: GREEN }); }
-        const blind = inFog(c.x) || inFog(s.x);
-        let cv2 = 9.3;
+        const blind = inFog(c.x) || inFog(s.x) || s.lee;
+        let cv2 = teach ? 11.6 : 9.3;
         if (csl > 0) cv2 *= 1 - Math.min(0.6, csl * 1.2);
         if (blind) cv2 *= 0.55;
         if (c.stall > 0) cv2 = 1.5;
@@ -409,11 +525,22 @@ export default {
       if (grapMax >= 4) { finish(false); return; }
       if (s.x >= LENGTH) finish(true);
     }
+    const mmss = (secs) => `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`;
+    function finishStage(won) { // teach and twist end without a reckoning sheet
+      const time = mmss(Math.round(t));
+      if (teach) {
+        if (won) { endCard(root, art, "convoy", "THE COMPANY LANE · IN THE CONVOY'S LEE"); api.end({ outcome: "win", text: `Into the anchorage in ${time}, one small sail among the Company's, and the cutter still hunting the empty lane astern. He raised nothing bigger than a ripple, because nothing bigger would come. Notice ${Math.round(s.notice)}.` }); }
+        else { endCard(root, art, "cutter", "HEAVE TO"); api.end({ outcome: "lose", text: "The grapnel bites and holds. In ordered water there is no crest to put under her bow: the only place the cutter cannot see is under a convoy ship's stern. Caught, notice +10." }); }
+      } else if (won) { setGlass(); endCard(root, art, "sea-plate", "THE GLASS · NOT A HULL STIRRED"); api.end({ outcome: "win", text: `Through the blockade in ${time}, on water he ironed flat with his own hands: ${stilled} ripple${stilled === 1 ? "" : "s"} put down, the fleet's wake at ${Math.round(s.wake)} of 100. The king's payment reaches the sea-gate, and the oarsmen finish the hymn out loud on the far side.` }); }
+      else { endCard(root, art, "cutter", "THE WATCH IS UP"); api.end({ outcome: "lose", text: `A lantern is unhooded on the nearest hull, then another, down the whole line. The fleet is awake ${((LENGTH - s.x) / NM).toFixed(2)} nm short of the sea-gate, and the payment is delayed. Still every ripple the oarsmen raise, raise none of your own, and spill wind past each hull.` }); }
+    }
+    function setGlass() { try { api.shared.set("glass.run", true); } catch { /* no storage */ } }
 
     function finish(won) {
       if (over) return;
       over = true; running = false;
       api.store.set("losses", won ? 0 : losses + 1);
+      if (stage !== "test") { later(() => finishStage(won), reduce ? 100 : 700); return; }
       const secs = Math.round(t);
       const time = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`;
       const sent = s.sent ? ` ${s.sent} crest${s.sent === 1 ? "" : "s"} rolled on to the moorings along the coast; the Tide Reckoning will count ${s.sent === 1 ? "it" : "them"}.` : " He raised almost nothing on the way, and the coast barely felt him pass.";
@@ -433,6 +560,9 @@ export default {
         ["Moorings lifted at the Spice Mouth", s.sent ? `${s.sent * 3} boats` : "none"],
         ["Revenue cutters broached on a crest", String(s.broaches)],
         ["The boat capsized, and righted", String(s.capsizes)],
+        ["Crests that came back off the coast", String(returned)],
+        ["Buoy bells rung off the beat", String(bellsRung)],
+        ...(wenna ? [["Raised with the ferry mid-harbour", ferryHits ? `${ferryHits}: she shipped water` : "none: timed round her"]] : []),
         [won ? "Made the Spice Mouth" : "Taken by the cutter: a fine entered", won ? "arrived" : "notice +10"],
         ["Notice", `${notice} of 100`],
       ];
@@ -558,7 +688,8 @@ export default {
       g.strokeStyle = INK; g.beginPath(); g.arc(cx1 + 10, cy, 6, 0, 7); g.stroke(); g.beginPath(); g.arc(cx1 + 10, cy, 1.5, 0, 7); g.fillStyle = INK; g.fill();
       g.font = `italic ${Math.max(12, Math.min(14, W / 70))}px 'IM Fell English',Georgia,serif`; g.fillStyle = INK;
       g.textAlign = "left"; g.fillText(`${(Math.min(s.x, LENGTH) / NM).toFixed(2)} nm of ${(LENGTH / NM).toFixed(1)}`, 18, 8 + (top - 6) * 0.95);
-      g.textAlign = "right"; g.fillText("SPICE MOUTH", cx1 - 6, 8 + (top - 6) * 0.95);
+      g.textAlign = "right"; g.fillText(C.port, cx1 - 6, 8 + (top - 6) * 0.95);
+      if (glass) for (const f of FLEET) { const fx = cx0 + (cx1 - cx0) * (f / LENGTH); g.fillStyle = INK; g.fillRect(fx - 3, cy - 3, 6, 3); g.fillRect(fx - 0.5, cy - 9, 1, 6); }
       // coast strip: moorings lift as crests roll on
       g.save(); g.beginPath(); g.rect(10, coastTop, W - 20, coastBot - coastTop); g.clip();
       g.strokeStyle = INK; g.beginPath(); g.moveTo(10, coastBot - 2); g.lineTo(W - 10, coastBot - 2); g.stroke();
@@ -573,6 +704,13 @@ export default {
           if (im) g.drawImage(im, x, coastBot - 3 - im.height / dpr * 0.82 + bob, im.width / dpr, im.height / dpr);
         }
         if (swell > 1.5) { g.fillStyle = GREEN; g.globalAlpha = 0.12; g.fillRect(10, coastBot - 9, W - 20, 8); g.globalAlpha = 1; }
+        if (wenna) { // Wenna's crew: the ferry's crossing is called along the coast strip
+          const on = ferryAt(t), left = on ? 34 - (t % 34) : 22 - (t % 34);
+          const lbl = on ? `FERRY MID-HARBOUR · ${Math.ceil(left)} s` : `ferry at the quay · crosses in ${Math.ceil(left)} s`;
+          g.font = "13px 'IM Fell English SC',Georgia,serif"; g.textAlign = "right"; const tw = g.measureText(lbl).width + 12;
+          g.fillStyle = on ? RED : PAPER; g.fillRect(W - 14 - tw, coastTop + 2, tw, 17); g.strokeStyle = on ? RED : GREEN; g.strokeRect(W - 13.5 - tw, coastTop + 2.5, tw - 1, 16);
+          g.fillStyle = on ? PAPER : GREEN; g.fillText(lbl, W - 20, coastTop + 15);
+        }
       } else for (let i = 0; i < Math.ceil(W / 46) + 1; i++) {
         const x = ((i * 46 - (s.x * 0.6) % 46) + 46) % (W + 46) - 10;
         const bob = Math.sin(t * 1.4 + i) * (1 + swell * 1.2);
@@ -643,10 +781,11 @@ export default {
         if (Math.abs(r - s.x) < 90 && r > s.x - 10) {
           const over = H(r), ok = over >= 0.6;
           g.font = "italic 15px 'IM Fell English',Georgia,serif"; g.textAlign = "center";
-          const lbl = ok ? `${over.toFixed(1)} m over the reef: clear` : `${over.toFixed(1)} m over the reef: stir on it`;
+          const lbl = s.kettle ? "the Kettle crew hold the tide over it" : ok ? `${over.toFixed(1)} m over the reef: clear` : `${over.toFixed(1)} m over the reef: stir on it`;
+          if (s.kettle) { g.fillStyle = GREEN; g.globalAlpha = 0.25; g.fillRect(rx - 5 * ppm, seaY - 6, 10 * ppm, 30); g.globalAlpha = 1; }
           const tw = g.measureText(lbl).width + 12;
-          g.fillStyle = PAPER; g.fillRect(rx - tw / 2, ry - 34, tw, 22); g.strokeStyle = ok ? GREEN : RED; g.strokeRect(rx - tw / 2 + 0.5, ry - 33.5, tw - 1, 21);
-          g.fillStyle = ok ? GREEN : RED; g.fillText(lbl, rx, ry - 18);
+          g.fillStyle = PAPER; g.fillRect(rx - tw / 2, ry - 34, tw, 22); g.strokeStyle = ok || s.kettle ? GREEN : RED; g.strokeRect(rx - tw / 2 + 0.5, ry - 33.5, tw - 1, 21);
+          g.fillStyle = ok || s.kettle ? GREEN : RED; g.fillText(lbl, rx, ry - 18);
         }
       }
       // buoys
@@ -654,10 +793,63 @@ export default {
         const bx = wx(b); if (bx < -20 || bx > W + 20) continue;
         const by = wy(H(b));
         g.fillStyle = RED; g.strokeStyle = INK; g.beginPath(); g.moveTo(bx - 5, by); g.lineTo(bx, by - 16); g.lineTo(bx + 5, by); g.closePath(); g.fill(); g.stroke();
+        if (stage === "test") { g.strokeStyle = rung.has(b) ? "rgba(31,46,74,.35)" : INK; g.lineWidth = 1; g.beginPath(); g.arc(bx, by - 20, 4, Math.PI, 0); g.lineTo(bx + 5, by - 17); g.lineTo(bx - 5, by - 17); g.closePath(); g.stroke(); }
+      }
+      // teach: the lane's small buoys (dark if the dues were struck, burning if they were rewritten)
+      if (teach && !lampBlack) for (let b = 80; b < LENGTH; b += 80) {
+        const bx = wx(b); if (bx < -20 || bx > W + 20) continue; const by = wy(H(b));
+        g.strokeStyle = INK; g.lineWidth = 1; g.beginPath(); g.moveTo(bx - 3, by); g.lineTo(bx, by - 9); g.lineTo(bx + 3, by); g.closePath(); g.stroke();
+        if (litLane) { g.fillStyle = GOLD; g.beginPath(); g.arc(bx, by - 12, 3, 0, 7); g.fill(); g.globalAlpha = 0.25; g.beginPath(); g.arc(bx, by - 12, 9, 0, 7); g.fill(); g.globalAlpha = 1; }
+      }
+      // teach: the convoy, and the lee under each stern
+      for (const c of convoy) {
+        const sx = wx(c.x); if (sx < -200 || sx > W + 200) continue;
+        const k = ppm / 8, sy = wy(H(c.x));
+        g.save(); g.translate(sx, sy); g.scale(k, k); g.globalAlpha = c.gone ? 0.45 : 1;
+        g.fillStyle = INK; g.strokeStyle = INK; g.lineWidth = 1.4;
+        g.beginPath(); g.moveTo(-64, -14); g.lineTo(-58, 10); g.quadraticCurveTo(0, 16, 56, 10); g.lineTo(72, -16); g.closePath(); g.fill();
+        g.strokeStyle = PAPER; g.lineWidth = 0.7; for (let i = -50; i < 56; i += 9) g.strokeRect(i, -7, 4, 4);
+        g.strokeStyle = INK; g.fillStyle = PAPER;
+        for (const m of [-34, 2, 36]) { g.lineWidth = 1.8; g.beginPath(); g.moveTo(m, -14); g.lineTo(m, -118); g.stroke(); g.lineWidth = 1;
+          for (let j = 0; j < 3; j++) { const y = -112 + j * 30; g.beginPath(); g.moveTo(m - 17 + j, y); g.lineTo(m + 17 - j, y); g.lineTo(m + 20 - j, y + 25); g.lineTo(m - 20 + j, y + 25); g.closePath(); g.fill(); g.stroke(); } }
+        g.fillStyle = BROWN; g.beginPath(); g.moveTo(2, -118); g.lineTo(22, -113); g.lineTo(2, -108); g.fill();
+        if (lampBlack || litLane) { g.fillStyle = GOLD; g.beginPath(); g.arc(-62, -22, 3.2, 0, 7); g.fill(); }
+        g.restore();
+        if (!c.gone) { // the lee: a dotted bracket astern
+          const x0 = wx(c.x - 30), x1 = wx(c.x + 6), y = sy + 16;
+          g.strokeStyle = s.lee ? GREEN : INK; g.lineWidth = s.lee ? 2 : 1; g.setLineDash([3, 4]); g.beginPath(); g.moveTo(x0, y - 8); g.lineTo(x0, y); g.lineTo(x1, y); g.lineTo(x1, y - 8); g.stroke(); g.setLineDash([]);
+          g.font = "italic 14px 'IM Fell English',Georgia,serif"; g.textAlign = "center"; g.fillStyle = s.lee ? GREEN : INK; g.fillText(s.lee ? "in her lee" : "her lee", (x0 + x1) / 2, y + 15);
+        } else if (sx > 0 && sx < W) { g.font = "italic 14px 'IM Fell English',Georgia,serif"; g.textAlign = "center"; g.fillStyle = INK; g.fillText("hauling out of line", sx, sy + 30); }
+      }
+      // test: oil on the water, and what is coming back
+      for (const o of oils) {
+        const x0 = wx(o.x - o.w / 2), x1 = wx(o.x + o.w / 2);
+        g.save(); g.globalAlpha = Math.min(0.5, o.life / 3); g.fillStyle = BROWN;
+        g.beginPath(); for (let px = x0; px <= x1; px += 6) { const y = wy(H(s.x + (px - boatSX) / ppm)); px === x0 ? g.moveTo(px, y) : g.lineTo(px, y); }
+        for (let px = x1; px >= x0; px -= 6) g.lineTo(px, wy(H(s.x + (px - boatSX) / ppm)) + 9); g.closePath(); g.fill(); g.restore();
+        g.font = "italic 14px 'IM Fell English',Georgia,serif"; g.textAlign = "center"; g.fillStyle = BROWN; g.fillText(`oil · ${Math.ceil(o.life)} s`, (x0 + x1) / 2, wy(H(o.x)) + 26);
+      }
+      for (const c of crests) if (c.back && c.h > 0.2 && c.x > s.x + 4) { const x = wx(c.x), y = wy(H(c.x)) - 12; if (x > W + 30) continue; g.fillStyle = INK; g.beginPath(); g.moveTo(x - 9, y - 10); g.lineTo(x + 3, y - 15); g.lineTo(x + 3, y - 5); g.fill(); g.font = "italic 13px 'IM Fell English',Georgia,serif"; g.textAlign = "left"; g.fillText("coming back", x + 7, y - 6); }
+      // twist: the sleeping fleet, and the hum's ripples
+      if (glass) {
+        for (const f of FLEET) {
+          const fx = wx(f); if (fx < -160 || fx > W + 160) continue;
+          const awake = s.wake / 100;
+          drawBoat(f, true, 0.85);
+          const ly = wy(H(f)) - 96 * ppm / 8;
+          g.fillStyle = awake > 0.6 ? GOLD : INK; g.globalAlpha = 0.35 + awake * 0.65; g.beginPath(); g.arc(fx + 2, ly, 3 + awake * 3, 0, 7); g.fill(); g.globalAlpha = 1;
+          if (Math.abs(f - s.x) < 20) { g.font = "italic 14px 'IM Fell English',Georgia,serif"; g.textAlign = "center"; g.fillStyle = s.v > 6.2 ? RED : INK; g.fillText(s.v > 6.2 ? "spill wind: your wash is on her cable" : "creeping past", fx, wy(H(f)) + 34); }
+        }
+        for (const c of crests) if (c.hum && c.h > 0.15) {
+          const x = wx(c.x), y = wy(H(c.x));
+          g.strokeStyle = GREEN; g.fillStyle = GREEN; g.lineWidth = 1.4;
+          g.beginPath(); g.ellipse(x, y - 22, 4, 3, -0.4, 0, 7); g.fill(); g.beginPath(); g.moveTo(x + 3.6, y - 22); g.lineTo(x + 3.6, y - 38); g.lineTo(x + 10, y - 35); g.stroke();
+          g.setLineDash([2, 3]); g.beginPath(); g.arc(x, y, 16, 0, 7); g.stroke(); g.setLineDash([]);
+        }
       }
       // port
       const px = wx(LENGTH);
-      if (px < W + 80) { g.strokeStyle = INK; g.lineWidth = 1.2; for (let k = 0; k < 6; k++) { g.strokeRect(px + k * 26, seaY - 40 - (k % 3) * 14, 22, 40 + (k % 3) * 14); } g.font = "italic 16px 'IM Fell English',Georgia,serif"; g.fillStyle = INK; g.textAlign = "left"; g.fillText("Spice Mouth", px, seaY - 80); }
+      if (px < W + 80) { g.strokeStyle = INK; g.lineWidth = 1.2; for (let k = 0; k < 6; k++) { g.strokeRect(px + k * 26, seaY - 40 - (k % 3) * 14, 22, 40 + (k % 3) * 14); } g.font = "italic 16px 'IM Fell English',Georgia,serif"; g.fillStyle = INK; g.textAlign = "left"; g.fillText(teach ? "The anchorage" : glass ? "The sea-gate" : "Spice Mouth", px, seaY - 80); }
       // cutters and boat
       for (const c of cutters) if (wx(c.x) > -120) drawBoat(c.x, true, inFog(c.x) ? 0.35 : 1);
       if (s.capsized > 0) {
@@ -704,8 +896,11 @@ export default {
       const danger = cut < 45 || s.grap > 0;
       const gx = stack ? [20, 20, 20] : [20, 20 + col, 20 + 2 * col];
       const gy = stack ? [iy, iy + 30, iy + 60] : [iy, iy, iy];
-      gauge(gx[0], gy[0], gw, "CUTTER ASTERN", 1 - Math.min(1, Math.max(0, cut) / 150), s.grap > 0 ? `grapnel ${s.grap.toFixed(1)} / 4 s` : `${Math.max(0, cut).toFixed(0)} m`, danger ? RED : INK);
-      gauge(gx[1], gy[1], gw, "NOTICE", s.notice / 100, `${Math.round(s.notice)}${s.notice < 50 ? " · 50 brings a 2nd cutter" : " · two cutters"}`, s.notice >= 50 ? RED : BROWN);
+      if (glass) gauge(gx[0], gy[0], gw, "THE FLEET'S WAKE", s.wake / 100, `${Math.round(s.wake)} of 100`, s.wake >= 60 ? RED : INK);
+      else gauge(gx[0], gy[0], gw, "CUTTER ASTERN", 1 - Math.min(1, Math.max(0, cut) / 150), s.grap > 0 ? `grapnel ${s.grap.toFixed(1)} / 4 s` : s.lee ? `${Math.max(0, cut).toFixed(0)} m · she has lost you` : `${Math.max(0, cut).toFixed(0)} m`, danger ? RED : s.lee ? GREEN : INK);
+      if (glass) gauge(gx[1], gy[1], gw, "THE HYMN", 1 - Math.max(0, humT) / HUM_S, `next bar ${Math.max(0, humT).toFixed(0)} s · ${stilled} put down`, GREEN);
+      else if (teach) gauge(gx[1], gy[1], gw, "THE LEE", s.lee ? 1 : 0, s.lee ? "hidden under her stern" : "in plain sight", s.lee ? GREEN : RED);
+      else gauge(gx[1], gy[1], gw, "NOTICE", s.notice / 100, `${Math.round(s.notice)}${s.notice < 50 ? " · 50 brings a 2nd cutter" : " · two cutters"}`, s.notice >= 50 ? RED : BROWN);
       if (s.song > 0) gauge(gx[2], gy[2], gw, "THE SONG", s.song / SONG_S, `${s.song.toFixed(0)} s`, GREEN);
       else gauge(gx[2], gy[2], gw, "SAIL", s.trim, `${Math.round(s.trim * 100)}% · ${s.v.toFixed(1)} m/s · ${s.helm === 1 ? "climb" : s.helm === -1 ? "run" : "steady"}`, INK);
       g.font = "15px 'IM Fell English',Georgia,serif";
@@ -723,6 +918,8 @@ export default {
       else if (s.flash > 0) { g.strokeStyle = s.flashCol; g.lineWidth = 6; g.strokeRect(3, 3, W - 6, Hh - 6); }
       // plate border
       g.strokeStyle = INK; g.lineWidth = 1; g.strokeRect(4.5, 4.5, W - 9, Hh - 9);
+      // link: the dues were struck, so this plate is cut in lamp-black (the whole plate, drawn once, turned over)
+      if (lampBlack) { g.globalCompositeOperation = "difference"; g.fillStyle = "#e9e4d6"; g.fillRect(0, 0, W, Hh); g.globalCompositeOperation = "source-over"; }
     }
 
     let raf = 0, last = performance.now();
@@ -735,16 +932,24 @@ export default {
     }
     raf = requestAnimationFrame(frame);
     const startBtn = how.querySelector("button");
+    let unnote = null;
     const start = () => {
       how.remove(); running = true; last = performance.now();
-      caption("Stir behind the boat and surf the face you raise. Keep the cutter off your quarter.", false, 5);
+      caption(teach ? "Full sail for the convoy ship ahead, and a ripple astern to ride." : glass ? "Quietly. Counter-clockwise on every ripple; raise nothing." : "Stir behind the boat and surf the face you raise. Keep the cutter off your quarter.", false, 5);
+      if (kettle) { kettleBtn.hidden = false; }
+      const why = lampBlack ? "Because you struck the harbour dues in The Charter, Tidewater's plate is cut in lamp-black: the lane buoys are dark, and the only light is the foam you raise."
+        : litLane ? "Because you had the harbour dues rewritten in The Charter, Tidewater's lights stay: the lane buoys burn, and each convoy ship's lee is marked."
+        : kettle && wenna ? "Because you won Wenna's crew and the Kettle crew at Liar's Tide: the ferry's crossings show on the coast strip, and Kettle (K) stands the tide over both reefs."
+        : kettle ? "Because you won the Kettle crew at the Flooding Table in Liar's Tide: call Kettle (K) and the tide stands over both reefs."
+        : wenna ? "Because you won Wenna's crew at Liar's Tide: the ferry's crossings show on the coast strip, so a crest can be timed round her." : "";
+      if (why) unnote = note(wrap, why);
     };
     startBtn.addEventListener("click", start);
     startBtn.focus();
 
     return {
       unmount() {
-        cancelAnimationFrame(raf); dead = true; clearTimeout(prepTimer); if (acct) acct.remove();
+        cancelAnimationFrame(raf); dead = true; clearTimeout(prepTimer); if (acct) acct.remove(); if (unnote) unnote();
         removeEventListener("keydown", kd); removeEventListener("keyup", ku);
         cv.removeEventListener("pointerdown", pd); cv.removeEventListener("pointermove", pm);
         cv.removeEventListener("pointerup", pu); cv.removeEventListener("pointercancel", pu); cv.removeEventListener("contextmenu", noMenu);

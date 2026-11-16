@@ -14,24 +14,58 @@
 // Art pass: the light bands are the game's four plates, cross-faded by depth behind the play; the swimmer, the
 // strongbox and the twelve glowing specimens are the game's art, each rasterised once (api.art).
 import { pic, raster, endCard, chapterStrip, circleGesture } from "./_art.js";
+import { ladder, note, flag, setFlag } from "./_ladder.js";
 
 const PLATE = "#0B1424", INKBLUE = "#1F2E4A", FOAM = "#E8F2EE", PAPER = "#F4F1E8", GOLD = "#E7A93B", GREEN = "#2F6B5E", VIOLET = "#4B3F63", RED = "#8C2B2B";
-const WORLD_W = 150, FLOOR = 92, WRECK_X = 112, WRECK_Y = 85;
+let WORLD_W = 150, FLOOR = 92, WRECK_X = 112, WRECK_Y = 85;   // FLOOR is set by the stage
 const PULL_BASE = 120;               // seconds: the later dives' 120 (DESIGN.md section 10), so a browser dive can be finished
 const FREE_S = 3;               // seconds of grip to work the strongbox free
-const BEATS = [
+const BEATS_TEACH = [
   { id: "light", y: 20, voice: true, text: "The light thinned to blue. He did not reach for air; there was none he needed." },
   { id: "dark", y: 60, text: "Below sixty metres only what glows gives light, and what he stirs." },
   { id: "voice", y: 75, voice: true, text: "The deep knew him. It wanted to keep us, gently, the way it keeps everything." },
 ];
 const STIR_SPEED = 3;           // Current tier: 3 m/s, carries a person
 
-export default {
+// Phase 2 (accepted 2026-11-15, built 2026-11-16): the ladder. Teach is the dive above. Test is the trench off the
+// Pearl Banks, where light is a cost: below 60 m he sees three metres, a stir lights eight for three seconds, the
+// dredge chains swing toward light, and a Company sounding lead drops on a six-second beat with a net behind it.
+// Chit No. 5 lies in the floor's dark. Twist is The Standing Fleet at 140 m: the pull stops, the bells are rung by
+// pushing a current through them, and the one with an air meter is the diver in his arms.
+const BEATS_TEST = [
+  { id: "bank", y: 22, text: "Past Ide's bank the floor falls away. The Company's survey boat is sounding the trench above him, on the beat." },
+  { id: "dark", y: 60, text: "Sixty metres. From here he sees an arm's length. A stir lights eight metres for three seconds, and the dredge chains swing toward any light." },
+  { id: "voice", y: 100, voice: true, text: "We had paid for drink with a slack water once. It was down here somewhere, still slack." },
+];
+const BEATS_TWIST = [
+  { id: "fleet", y: 104, voice: true, text: "Here the pull stopped. Every ship the old sea took stood upright on the floor, in rows: the sea's side of the ledger." },
+];
+const SHIPS = ["Mary Dunnock", "Tern", "Patience", "Three Sisters", "Halcyon", "Lantern Maid", "Kettle's Pride", "The Asking"];
+const LADDER = {
+  title: "The Deep", kicker: "2D · NATURALIST LITHOGRAPH · THREE DIVES",
+  stages: {
+    teach: { name: "Down to the Tender", where: "Chapter III, off Home Reach: swim, kick, carry.", line: "Swim, kick, carry." },
+    test: { name: "The Trench", where: "Chapter IV, off the Pearl Banks: light is a cost, and a chit lies in the dark.", line: "The trench off the Pearl Banks, where light is a cost." },
+    twist: { name: "The Standing Fleet", where: "Chapter IV, 140 metres: the pull stops, and the air is hers.", line: "At 140 metres the pull stops. The air that runs out is not his." },
+  },
+};
+
+export default { mount(root, api) { return ladder(root, api, LADDER, (r, a) => game.mount(r, a)); } };
+
+const game = {
   mount(root, api) {
     const P = "lord-of-the-sea-deep-";
     const reduce = api.reducedMotion;
     const gentle = (+api.store.get("losses", 0) || 0) >= 2;
-    const PULL = gentle ? 150 : PULL_BASE;
+    const stage = api.stage || "teach", trench = stage === "test", fleet = stage === "twist";
+    FLOOR = trench ? 134 : fleet ? 150 : 92;
+    const TOP = fleet ? 100 : 0.5, GMAX = fleet || trench ? 160 : 100;
+    const BEATS = trench ? BEATS_TEST : fleet ? BEATS_TWIST : BEATS_TEACH;
+    const PULL = trench ? (gentle ? 175 : 140) : gentle ? 150 : PULL_BASE;
+    const AIR = gentle ? 55 : 36;
+    // layer links (api.shared)
+    const fate = flag(api, "charter.tidewater", "");
+    const backplot = fleet && !!flag(api, "backplot.good");
     root.innerHTML = `
     <style>
       .${P}wrap { position:absolute; inset:0; background:${PLATE}; color:${FOAM}; font-family:'IM Fell English',Georgia,serif; overflow:hidden; touch-action:none; user-select:none; }
@@ -83,17 +117,27 @@ export default {
       <div class="${P}pad"><button type="button" data-k="kick" aria-label="Kick (Space)">Kick<span class="cd"></span></button><button type="button" data-k="grip" hidden aria-label="Grip (hold Shift)">Grip</button></div>
       <div class="${P}how" role="dialog" aria-label="How to play">
         <div class="${P}label">
-          ${chapterStrip(api.art, 4, "Chapter IV: What Is Left of the Old Sea")}
-          <div class="cap2"><span>PLATE IV</span><span>CHAPTER III</span><span>THE DEEP</span></div>
+          ${chapterStrip(api.art, trench || fleet ? 5 : 4, trench || fleet ? "Chapter V: The Open Chart" : "Chapter IV: What Is Left of the Old Sea")}
+          <div class="cap2"><span>PLATE ${trench ? "V" : fleet ? "VI" : "IV"}</span><span>CHAPTER ${trench || fleet ? "IV" : "III"}</span><span>THE DEEP</span></div>
           ${pic(api.art, "swimmer", "Alexi swimming, drawn in white line on blue-black", `style="float:right;width:min(38%,170px);height:auto;margin:6px 0 6px 12px;border:1px solid #1b2230"`)}
-          <h2>Down to the tender</h2>
-          <p class="goal">Swim down 80 m to the sunken tender, work its strongbox free, and carry it up before the pull closes the edges.</p>
-          <p class="open">The Company's tender went down off Home Reach with Tidewater's harbour book locked in its strongbox. Whatever binds that harbour is written there. Alexi goes over the side with no breath to hold.</p>
-          ${gentle ? `<p class="gentle">The deep is slower to close this time: the pull runs 150 seconds.</p>` : ""}
+          <h2>${trench ? "The trench" : fleet ? "The Standing Fleet" : "Down to the tender"}</h2>
+          <p class="goal">${trench ? "Find the chit on the trench floor, 130 m down, and bring it back up to sixty metres before the pull closes the edges."
+            : fleet ? "Find the flagship, the Halcyon, among the standing hulls. Ide is in her ribs. Carry her up her crew's line before her air is gone."
+            : "Swim down 80 m to the sunken tender, work its strongbox free, and carry it up before the pull closes the edges."}</p>
+          <p class="open">${trench ? "Off the Pearl Banks the floor drops out of the light. One of his own chits went down here, years since. Below sixty metres he sees an arm's length; the paper answers a stir's glow from twenty-five metres off, and so does the Company's dredge."
+            : fleet ? "A hundred and forty metres. The divers' compact was cut into the Halcyon's ballast stone, and Ide went down for the rubbing before he could stop her. Here the pull stops: he could stay for ever. She cannot."
+            : "The Company's tender went down off Home Reach with Tidewater's harbour book locked in its strongbox. Whatever binds that harbour is written there. Alexi goes over the side with no breath to hold."}</p>
+          ${gentle ? `<p class="gentle">${fleet ? "Her crew sent her down on a deeper breath this time: fifty-five seconds of air." : trench ? "The deep is slower to close this time: the pull runs 175 seconds." : "The deep is slower to close this time: the pull runs 150 seconds."}</p>` : ""}
           <ul class="${P}figs">
-            <li><b>Fig. 1</b><span><b>Swim</b>: <kbd>WASD</kbd> or arrows, or press and drag toward where you want to go.</span></li>
+            ${trench ? `<li><b>Fig. 1</b><span><b>Stir</b> (draw a circle, or hold <kbd>E</kbd> with a direction): below 60 m it lights eight metres for three seconds. The chit shines back. The <b>chains swing toward the light</b>.</span></li>
+            <li><b>Fig. 2</b><span><b>The lead</b> drops every six seconds where you were a second ago. Keep moving: touch it and a net follows it down.</span></li>
+            <li><b>Fig. 3</b><span><b>Grip</b> (<kbd>Shift</kbd>) a second and a half to lift the chit; <kbd>WASD</kbd> swim, <kbd>Space</kbd> kick.</span></li>`
+            : fleet ? `<li><b>Fig. 1</b><span><b>Ring a bell</b>: stir a current <i>through</i> it (draw a circle beside it, or hold <kbd>E</kbd> with a direction). The hull shows its ribs for three seconds, and its name for good.</span></li>
+            <li><b>Fig. 2</b><span><b>Grip</b> (<kbd>Shift</kbd>) two seconds to take Ide in his arms. From then <b>her air</b> runs: ${AIR} seconds.</span></li>
+            <li><b>Fig. 3</b><span><b>Carry</b> her up the line above the flagship. Carrying halves his speed; a current stirred upward does not tire.</span></li>`
+            : `<li><b>Fig. 1</b><span><b>Swim</b>: <kbd>WASD</kbd> or arrows, or press and drag toward where you want to go.</span></li>
             <li><b>Fig. 2</b><span><b>Kick</b>: <kbd>Space</kbd> or the Kick button. A burst of speed, then two seconds to recover.</span></li>
-            <li><b>Fig. 3</b><span><b>Stir</b>: draw a circle (or hold <kbd>E</kbd> with a direction). A current runs the way the circle last turned, and carries him.</span></li>
+            <li><b>Fig. 3</b><span><b>Stir</b>: draw a circle (or hold <kbd>E</kbd> with a direction). A current runs the way the circle last turned, and carries him.</span></li>`}
           </ul>
           <button type="button">Dive</button>
         </div>
@@ -108,7 +152,7 @@ export default {
     const losses = +api.store.get("losses", 0) || 0;
     const art = api.art;
     // art, rasterised once at the size it is drawn; rebuilt when the plate is resized
-    const A = { bands: [], spec: [], swim: null, kick: null, box: null, key: "" };
+    const A = { bands: [], spec: [], swim: null, kick: null, box: null, key: "", hulls: [], carry: null, chit: null };
     let prepTimer = 0, dead = false;
     async function prep() {
       if (dead || !W || !Hh) return;
@@ -127,24 +171,47 @@ export default {
       A.swim = await raster(art, "sprite-swimmer", sw, sw / 2);
       A.kick = await raster(art, "sprite-swimmer-kick", sw, sw / 2);
       A.box = await raster(art, "sprite-strongbox", Math.round(ppm * 3 * dpr), Math.round(ppm * 2.25 * dpr));
+      if (fleet) {
+        A.carry = await raster(art, "sprite-swimmer-carry", sw, sw / 2);
+        const hw = Math.round(ppm * 12.2 * dpr);
+        const hs = await Promise.all([1, 2, 3, 4, 5, 6, 7, 8].map((i) => raster(art, "fleet-hull-" + i, hw, Math.round(hw * 680 / 520), { key: true })));
+        if (dead || A.key !== key) return;
+        A.hulls = hs;
+      }
+      if (trench) A.chit = await raster(art, "chit-5-trench", Math.round(ppm * 3.4 * dpr), Math.round(ppm * 2.2 * dpr));
     }
     let capT = 0;
     function caption(text, voice, sec = 6) { capEl.textContent = text; capEl.classList.toggle("voice", !!voice); capEl.classList.add("show"); capT = sec; }
     const fired = new Set();
     let flashT = 0, flashCol = RED, rings = [];
 
-    const d = { x: 12, y: 1, vx: 0, vy: 0, face: 1, kick: 0, cool: 0, grip: false, carry: false, free: 0, pull: PULL, net: 0, cut: 0, msg: "", msgT: 0, hit: 0 };
+    const d = { x: 12, y: fleet ? 104 : 1, vx: 0, vy: 0, face: 1, kick: 0, cool: 0, grip: false, carry: false, free: 0, pull: PULL, net: 0, cut: 0, msg: "", msgT: 0, hit: 0 };
     let t = 0, running = false, over = false, chainT = 0;
     let currents = [];
-    const nets = [{ x0: 46, x1: 66, y0: 24, y1: 33, cut: false }];
+    const nets = fleet ? [] : [{ x0: 46, x1: 66, y0: 24, y1: 33, cut: false }];
     let sweep = 0.35;
-    const chain = { ax: 80, len: 64 };
-    const cold = { y0: 40, y1: 55, v: -2.2 };
+    const chains = trench ? [{ ax: 50, hook: true, hx: 50, hy: 106, chase: 0, ph: 0 }, { ax: 104, hook: true, hx: 104, hy: 106, chase: 0, ph: 2.2 }] : fleet ? [] : [{ ax: 80, len: 64, a: 0, ph: 0 }];
+    const cold = fleet ? { y0: -9, y1: -8, v: 0 } : { y0: 40, y1: 55, v: -2.2 };
+    // link: a charter's fate redraws this plate. Struck: the Company's gear is abandoned where it hung.
+    if (stage === "teach" && fate === "strike") nets.push({ x0: 18, x1: 38, y0: 50, y1: 57, cut: false, old: true }, { x0: 88, x1: 108, y0: 64, y1: 71, cut: false, old: true });
+    // the trench (test)
+    let glow = 0, notice = 0, leadT = 4, lead = null, lit = 0;
+    // the standing fleet (twist)
+    const rng2 = api.rng();                                       // a different fleet each dive
+    const flagI = 3 + Math.floor(rng2() * 5);                    // which hull is the flagship: found by her bell
+    const order = SHIPS.filter((n) => n !== "Halcyon"); for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(rng2() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
+    const hulls = fleet ? Array.from({ length: 8 }, (_, i) => ({ i, x: 16 + i * 17, name: i === flagI ? "Halcyon" : order.pop(), rung: false, show: 0 })) : [];
+    const lineX = fleet ? hulls[flagI].x : 0;
+    if (fleet) { nets.push({ x0: lineX - 10, x1: lineX + 8, y0: 121, y1: 127, cut: false, old: true }, { x0: 40, x1: 56, y0: 112, y1: 119, cut: false, old: true }); if (backplot) d.x = Math.max(4, lineX - 14); }
+    let air = AIR, named = [];
     const specimens = [];
     const COLS = [GOLD, FOAM, "#9C8FC0", "#5FB39E"];
     for (let i = 0; i < 26; i++) specimens.push({ x: rng() * WORLD_W, y: 8 + rng() * (FLOOR - 12), r: 0.6 + rng() * 1.3, c: COLS[i % 4], ph: rng() * 6, spines: 8 + Math.floor(rng() * 10), fig: i + 1 });
     const motes = []; for (let i = 0; i < 220; i++) motes.push({ x: rng() * WORLD_W, y: rng() * FLOOR, s: rng() });
-    const floorAt = (x) => FLOOR - 3 * Math.sin(x * 0.11) - 2 * Math.sin(x * 0.037 + 1) - (Math.abs(x - WRECK_X) < 14 ? 0 : 0);
+    const floorAt = (x) => (fleet ? FLOOR - 0.6 * Math.sin(x * 0.2) : FLOOR - 3 * Math.sin(x * 0.11) - 2 * Math.sin(x * 0.037 + 1));
+    const bellAt = (h) => [h.x - 3.4, floorAt(h.x) - 13.2];
+    let chitX = 20; if (trench) { let best = -1; for (let x = 20; x <= 132; x += 1) { if (Math.abs(x - 50) < 12 || Math.abs(x - 104) < 12) continue; const f = floorAt(x); if (f > best) { best = f; chitX = x; } } }
+    const chitY = () => floorAt(chitX) - 1.3;
     function say(m, s = 2.4) { d.msg = m; d.msgT = s; }
 
     // ---- input ----
@@ -154,8 +221,11 @@ export default {
     let swimTo = null;
     function spawnCurrent(x, y, dx, dy) {
       const m = Math.hypot(dx, dy) || 1;
-      currents.push({ x, y, dx: dx / m, dy: dy / m, len: 10, age: 0, life: 7 });
+      const cur = { x, y, dx: dx / m, dy: dy / m, len: 10, age: 0, life: 7 };
+      currents.push(cur);
       rings.push({ x, y, age: 0 });
+      if (trench && d.y > 60) { glow = 3; lit++; for (const c of chains) c.chase = 4.6; if (!fired.has("glow")) { fired.add("glow"); caption("Light, for three seconds. Somewhere the chains have felt it and are already swinging this way.", false, 5); } }
+      for (const h of hulls) { const [bx, by] = bellAt(h), rx = bx - cur.x, ry = by - cur.y, along = rx * cur.dx + ry * cur.dy, perp = Math.abs(rx * -cur.dy + ry * cur.dx); if (along > -1.5 && along < cur.len + 1 && perp < 3) ring(h); }
       say("A current, " + ["up", "down", "left", "right"][Math.abs(dy) > Math.abs(dx) ? (dy < 0 ? 0 : 1) : (dx < 0 ? 2 : 3)]);
     }
     const kd = (e) => {
@@ -230,20 +300,49 @@ export default {
     const ro = new ResizeObserver(resize); ro.observe(wrap); resize();
 
     // ---- simulation ----
-    function chainPos(k) { // k in 0..1 along the chain
-      const a = Math.sin(chainT) * 0.55;
-      return [chain.ax + Math.sin(a) * chain.len * k, -2 + Math.cos(a) * chain.len * k];
+    // k in 0..1 along the chain. The first dive's chain swings from its anchor; the trench's two are hooks on a long scope.
+    const chainPos = (c, k) => (c.hook ? [c.ax + (c.hx - c.ax) * k + Math.sin(k * Math.PI) * (c.hx - c.ax) * 0.12, -2 + (c.hy + 2) * k] : [c.ax + Math.sin(c.a) * c.len * k, -2 + Math.cos(c.a) * c.len * k]);
+    function ring(h) {
+      h.show = 3; flashT = 0.5; flashCol = GOLD; rings.push({ x: bellAt(h)[0], y: bellAt(h)[1], age: 0 });
+      if (!h.rung) {
+        h.rung = true; named.push(h.name);
+        const all = flag(api, "bells", []); if (Array.isArray(all) && !all.includes(h.name)) setFlag(api, "bells", all.concat([h.name]));
+      }
+      caption(h.i === flagI ? "The bell says HALCYON. The flagship. In her ribs, low down, a diver's lamp is still burning." : `The bell says ${h.name.toUpperCase()}. Her ribs stand open for a moment, and there is no one in them.`, false, 5);
     }
     function step(dt) {
       t += dt; chainT += dt * sweep;
+      if (glow > 0) glow -= dt;
+      for (const c of chains) {
+        if (!c.hook) { c.a = Math.sin(chainT) * 0.55; continue; }
+        if (c.chase > 0) c.chase -= dt;
+        const tx = c.chase > 0 ? d.x : c.ax + Math.sin(chainT * 0.8 + c.ph) * 20, ty = c.chase > 0 ? d.y : 106;   // toward the light, while it remembers it
+        const mx = tx - c.hx, my = ty - c.hy, mm = Math.hypot(mx, my), sp = (c.chase > 0 ? 5.2 : 3) * dt;
+        if (mm > sp) { c.hx += (mx / mm) * sp; c.hy += (my / mm) * sp; } else { c.hx = tx; c.hy = ty; }
+      }
+      for (const h of hulls) if (h.show > 0) h.show -= dt;
+      if (trench) { // the sounding lead, on the beat
+        leadT -= dt;
+        if (leadT <= 0 && !lead && d.y > 24) { lead = { x: d.x + d.vx * 0.3, y: 0, wait: 1.1, hit: false }; leadT = 6; }
+        if (lead) {
+          if (lead.wait > 0) lead.wait -= dt; else lead.y += 30 * dt;
+          if (!lead.hit && lead.wait <= 0 && Math.abs(d.x - lead.x) < 1.5 && Math.abs(d.y - lead.y) < 2.4) {
+            lead.hit = true; notice += 5; flashT = 0.8; flashCol = RED;
+            nets.push({ x0: Math.max(2, d.x - 9), x1: Math.min(WORLD_W - 2, d.x + 9), y0: d.y - 4, y1: d.y + 5, cut: false });
+            caption("The lead touches him. Up above a clerk writes a depth that cannot be right, and a net follows the line down. Notice +5.", false, 6);
+          }
+          if (lead.y > floorAt(lead.x)) lead = null;
+        }
+      }
       if (d.msgT > 0) d.msgT -= dt;
       if (capT > 0) { capT -= dt; if (capT <= 0) capEl.classList.remove("show"); }
       if (flashT > 0) flashT = Math.max(0, flashT - dt * 1.5);
       rings.forEach((r) => (r.age += dt)); rings = rings.filter((r) => r.age < 1);
       for (const b of BEATS) if (!fired.has(b.id) && !d.carry && d.y >= b.y) { fired.add(b.id); caption(b.text, b.voice); }
       if (!d.carry && d.pull < PULL * 0.35 && !fired.has("late")) { fired.add("late"); caption("The edges are closing. Kick, and ride a current if you stir one.", false, 4); }
-      d.pull -= dt;
+      if (!fleet) d.pull -= dt;
       if (d.pull <= 0) { finish(false); return; }
+      if (fleet && d.carry) { air -= dt; if (air <= 0) { finish(false); return; } if (air < AIR * 0.4 && !fired.has("air")) { fired.add("air"); caption("Her hand has stopped holding his sleeve. Up: stir the water upward and ride it.", false, 4); } }
       if (d.cool > 0) d.cool -= dt;
       if (d.kick > 0) d.kick -= dt;
       if (stir.key) stir.keyT += dt;
@@ -273,14 +372,31 @@ export default {
       if (im === 0) ey += 0.25;
       d.x += (d.vx + ex) * dt; d.y += (d.vy + ey) * dt;
       d.x = Math.max(1, Math.min(WORLD_W - 1, d.x));
-      d.y = Math.max(0.5, Math.min(floorAt(d.x) - 1, d.y));
+      d.y = Math.max(TOP, Math.min(floorAt(d.x) - 1, d.y));
       // chain
       if (d.hit > 0) d.hit -= dt;
-      for (let i = 1; i <= 14; i++) {
-        const [cx, cy] = chainPos(i / 14);
+      for (const ch of chains) for (let i = ch.hook ? 21 : 1; i <= 26; i++) {
+        const [cx, cy] = chainPos(ch, i / 26);
         if (Math.hypot(d.x - cx, d.y - cy) < 1.6 && d.hit <= 0) {
           const dir = Math.sign(d.x - cx) || 1; d.x += dir * 5; d.vx = dir * 3; d.hit = 1.2; say("The dredge chain sweeps him back."); flashT = 0.8; flashCol = RED; break;
         }
+      }
+      if (trench) { // chit No. 5, in the floor's dark
+        const nearC = Math.hypot(d.x - chitX, d.y - chitY()) < 3.6;
+        if (!d.carry && nearC && !fired.has("chit")) { fired.add("chit"); gripBtn.hidden = false; caption("A chandler's slip, flat on the silt under its own salt bloom. Hold Grip to lift it.", false, 5); }
+        if (!d.carry && nearC && d.grip) { d.free += dt; if (d.free >= 1.5) { d.carry = true; flashT = 0.8; flashCol = GOLD; rings.push({ x: d.x, y: d.y, age: 0 }); caption("He has it. Up to sixty metres, where the light begins; the paper weighs nothing.", false, 5); } }
+        else if (!d.carry) d.free = Math.max(0, d.free - dt);
+        if (d.carry && d.y < 60) finish(true);
+        return;
+      }
+      if (fleet) { // Ide, in the flagship's ribs
+        const ix = hulls[flagI].x + 1.5, iy = floorAt(ix) - 3;
+        const nearI = Math.hypot(d.x - ix, d.y - iy) < 4.2;
+        if (!d.carry && nearI && !fired.has("ide")) { fired.add("ide"); gripBtn.hidden = false; caption("Ide, wedged in the Halcyon's ribs with the rubbing folded in her teeth and her lamp guttering. Hold Grip to take her.", false, 6); }
+        if (!d.carry && nearI && d.grip) { d.free += dt; if (d.free >= 2) { d.carry = true; air = AIR; flashT = 0.8; flashCol = GOLD; rings.push({ x: d.x, y: d.y, age: 0 }); caption(`She is in his arms, and the only clock down here has started: her air, ${AIR} seconds. Up the line above the flagship. An old net hangs across it.`, false, 7); } }
+        else if (!d.carry) d.free = Math.max(0, d.free - dt);
+        if (d.carry && d.y < 103 && Math.abs(d.x - lineX) < 9) finish(true);
+        return;
       }
       currents.forEach((c) => (c.age += dt)); currents = currents.filter((c) => c.age < c.life);
       // the strongbox
@@ -306,6 +422,16 @@ export default {
       if (over) return; over = true; running = false;
       const left = Math.max(0, Math.round(d.pull));
       api.store.set("losses", won ? 0 : losses + 1);
+      if (trench) {
+        if (won) { endCard(root, art, "chit-5-trench", "CHIT No. 5 · A SLACK WATER", "#05090f"); api.end({ outcome: "win", text: `Chit No. 5 comes up into the light with ${left} s of the pull to spare: “a slack water. Pays next tide.” Signed with a clockwise spiral, stamped with the Company's leaf. He lit the trench ${lit} time${lit === 1 ? "" : "s"} to find it${notice ? `, and the survey boat's lead found him: notice +${notice}` : ""}. The fifth of eight.` }); }
+        else { endCard(root, art, "deep-band-4", "BELOW 150 METRES · ONLY WHAT GLOWS", "#05090f"); api.end({ outcome: "lose", text: d.carry ? "The chit was in his hand, but the trench kept him below the light. The dive will have to be made again." : "The edges close in the dark of the trench. A stir shows the chit from twenty-five metres off; the chains only reach where the light has been." }); }
+        return;
+      }
+      if (fleet) {
+        if (won) { endCard(root, art, "carried-person", "THE STANDING FLEET · UP THE LINE", "#05090f"); api.end({ outcome: "win", text: `Ide goes up her crew's line with ${Math.max(0, Math.round(air))} s of air left, the rubbing of the compact stone still folded in her teeth. Below, the fleet stands as it stood. ${named.length ? `He rang ${named.length} bell${named.length === 1 ? "" : "s"} and read ${named.length === 1 ? "a name" : "their names"}: ${named.join(", ")}. A name that has been read can be answered for.` : "He rang no bell but hers was not needed: he found her by her lamp."}` }); }
+        else { endCard(root, art, "deep-band-4", "140 METRES · THE SEA'S SIDE OF THE LEDGER", "#05090f"); api.end({ outcome: "lose", text: "Her air is gone before the line. The divers' chorus take her from his arms at the top and work on her in silence; the Tide Reckoning will say whether it was enough. He could have stayed down for ever, and that was never the question." }); }
+        return;
+      }
       if (won) openBox(`The strongbox breaks the surface with ${left} s of the pull to spare${netsCut() ? `, and ${netsCut()} Company net${netsCut() === 1 ? "" : "s"} torn on the way` : ""}. Swollen, not locked: the harbour book of Tidewater is inside, and the princess is already reaching for it.`);
       else endCard(root, art, "deep-band-4", "BELOW 150 METRES · ONLY WHAT GLOWS", "#05090f"), api.end({ outcome: "lose", text: d.carry ? "The strongbox was free, but the deep kept him. He settles gently to the floor beside it, and the dive will have to be made again from the last mark." : "The edges close before he reaches the tender. The deep keeps him a while, gently, and the dive will have to be made again." });
     }
@@ -363,11 +489,12 @@ export default {
       const ang = Math.atan2(d.vy, Math.abs(d.vx) + 0.001) * 0.8;
       if (A.swim) { // the game's swimmer, glide and kick
         const moving = Math.hypot(d.vx, d.vy) > 0.6;
-        const im = (d.kick > 0 || (moving && (t * (d.carry ? 1.6 : 2.4)) % 1 < 0.45)) && A.kick ? A.kick : A.swim;
+        const im = fleet && d.carry && A.carry ? A.carry : (d.kick > 0 || (moving && (t * (d.carry ? 1.6 : 2.4)) % 1 < 0.45)) && A.kick ? A.kick : A.swim;
         const wpx = ppm * 7.2, hpx = wpx / 2;
         g.save(); g.translate(x, y); g.scale(d.face, 1); g.rotate(ang);
         g.drawImage(im, -wpx * (140 / 300), -hpx * (70 / 150), wpx, hpx);
-        if (d.carry) { if (A.box) g.drawImage(A.box, ppm * 0.4, ppm * 0.3, ppm * 2.4, ppm * 1.8); else { g.fillStyle = GOLD; g.fillRect(ppm * 0.6, ppm * 0.3, ppm * 1.4, ppm); } }
+        if (d.carry && stage === "teach") { if (A.box) g.drawImage(A.box, ppm * 0.4, ppm * 0.3, ppm * 2.4, ppm * 1.8); else { g.fillStyle = GOLD; g.fillRect(ppm * 0.6, ppm * 0.3, ppm * 1.4, ppm); } }
+        if (d.carry && trench) { g.fillStyle = PAPER; g.fillRect(ppm * 1.6, -ppm * 0.2, ppm * 1.1, ppm * 0.7); }
         g.restore();
         return;
       }
@@ -430,24 +557,72 @@ export default {
       if (cy1 > 0 && cy0 < Hh) { g.font = "italic 13px 'IM Fell English',Georgia,serif"; g.fillStyle = "#9fb8d6"; g.textAlign = "left"; g.fillText("← cold current", 14 + 34, cy0 + 16); }
       // pilings and the dredge
       g.strokeStyle = FOAM; g.globalAlpha = 0.5; g.lineWidth = 1;
-      for (const px of [70, 74, 88, 92]) { const x = sx(px); g.strokeRect(x - 0.8 * ppm, sy(-4), 1.6 * ppm, (34) * ppm); for (let y = 0; y < 34; y += 1.3) { g.beginPath(); g.moveTo(x - 0.6 * ppm, sy(y)); g.lineTo(x + 0.6 * ppm, sy(y + 0.6)); g.stroke(); } }
+      for (const px of stage === "teach" ? [70, 74, 88, 92] : []) { const x = sx(px); g.strokeRect(x - 0.8 * ppm, sy(-4), 1.6 * ppm, (34) * ppm); for (let y = 0; y < 34; y += 1.3) { g.beginPath(); g.moveTo(x - 0.6 * ppm, sy(y)); g.lineTo(x + 0.6 * ppm, sy(y + 0.6)); g.stroke(); } }
       g.globalAlpha = 1;
       g.strokeStyle = FOAM; g.lineWidth = 1.6;
-      for (let i = 0; i < 14; i++) { const [ax, ay] = chainPos(i / 14), [bx, by] = chainPos((i + 1) / 14); g.beginPath(); g.ellipse(sx((ax + bx) / 2), sy((ay + by) / 2), 0.9 * ppm, 0.45 * ppm, Math.atan2(by - ay, bx - ax), 0, 7); g.stroke(); }
-      const [hx, hy] = chainPos(1); g.beginPath(); g.moveTo(sx(hx), sy(hy)); g.lineTo(sx(hx) - ppm * 1.2, sy(hy) + ppm * 1.4); g.moveTo(sx(hx), sy(hy)); g.lineTo(sx(hx) + ppm * 1.2, sy(hy) + ppm * 1.4); g.stroke();
+      for (const ch of chains) {
+        const n = ch.hook ? Math.round(Math.hypot(ch.hx - ch.ax, ch.hy + 2) / 4.6) : Math.round(ch.len / 4.6);
+        for (let i = 0; i < n; i++) { const [ax, ay] = chainPos(ch, i / n), [bx, by] = chainPos(ch, (i + 1) / n); if (sy(by) < -20 || sy(ay) > Hh + 20) continue; g.beginPath(); g.ellipse(sx((ax + bx) / 2), sy((ay + by) / 2), 0.9 * ppm, 0.45 * ppm, Math.atan2(by - ay, bx - ax), 0, 7); g.stroke(); }
+        const [hx, hy] = chainPos(ch, 1); g.beginPath(); g.moveTo(sx(hx), sy(hy)); g.lineTo(sx(hx) - ppm * 1.2, sy(hy) + ppm * 1.4); g.moveTo(sx(hx), sy(hy)); g.lineTo(sx(hx) + ppm * 1.2, sy(hy) + ppm * 1.4); g.stroke();
+      }
+      if (lead) { // the Company's sounding lead and its line
+        const lx = sx(lead.x);
+        g.strokeStyle = PAPER; g.globalAlpha = 0.75; g.lineWidth = 1; g.setLineDash(lead.wait > 0 ? [3, 6] : []); g.beginPath(); g.moveTo(lx, sy(Math.max(0, camY - Hh / ppm))); g.lineTo(lx, lead.wait > 0 ? Hh : sy(lead.y)); g.stroke(); g.setLineDash([]);
+        if (lead.wait <= 0) { g.fillStyle = PAPER; g.beginPath(); g.moveTo(lx - 0.5 * ppm, sy(lead.y) - 1.6 * ppm); g.lineTo(lx + 0.5 * ppm, sy(lead.y) - 1.6 * ppm); g.lineTo(lx + 0.75 * ppm, sy(lead.y)); g.lineTo(lx - 0.75 * ppm, sy(lead.y)); g.fill(); }
+        g.globalAlpha = 1;
+      }
       // the net
       for (const n of nets) if (!n.cut) {
         g.strokeStyle = PAPER; g.globalAlpha = 0.5; g.lineWidth = 0.8;
         g.beginPath();
         for (let x = n.x0; x <= n.x1; x += 1.4) { g.moveTo(sx(x), sy(n.y0)); g.lineTo(sx(x + 2), sy(n.y1)); g.moveTo(sx(x + 2), sy(n.y0)); g.lineTo(sx(x), sy(n.y1)); }
-        g.stroke(); g.globalAlpha = 0.8; g.strokeRect(sx(n.x0), sy(n.y0), (n.x1 - n.x0) * ppm, (n.y1 - n.y0) * ppm); g.globalAlpha = 1;
+        g.stroke(); g.globalAlpha = 0.8; if (n.old) g.setLineDash([7, 5]); g.strokeRect(sx(n.x0), sy(n.y0), (n.x1 - n.x0) * ppm, (n.y1 - n.y0) * ppm); g.setLineDash([]); g.globalAlpha = 1;
+        if (n.old) { g.font = "italic 12px 'IM Fell English',Georgia,serif"; g.fillStyle = PAPER; g.globalAlpha = 0.7; g.textAlign = "left"; g.fillText("an abandoned net", sx(n.x0) + 4, sy(n.y0) - 5); g.globalAlpha = 1; }
       }
       // floor
       g.fillStyle = "#05090f"; g.strokeStyle = FOAM; g.lineWidth = 1; g.beginPath(); g.moveTo(0, Hh);
       for (let px = 0; px <= W + 6; px += 6) g.lineTo(px, sy(floorAt(wxp(px))));
       g.lineTo(W, Hh); g.closePath(); g.fill(); g.globalAlpha = 0.4; g.stroke(); g.globalAlpha = 1;
+      // the standing fleet (twist): eight hulls upright on the floor, a bell at each bow, a line above the flagship
+      for (const h of hulls) {
+        const hx = sx(h.x), fy = sy(floorAt(h.x)), wpx = 12.2 * ppm, hpx = wpx * 680 / 520;
+        if (hx < -wpx || hx > W + wpx) continue;
+        const im = A.hulls[h.i];
+        if (im) { g.globalAlpha = h.show > 0 ? 1 : 0.78; g.drawImage(im, hx - wpx / 2, fy - hpx + 0.4 * ppm, wpx, hpx); g.globalAlpha = 1; }
+        else { g.strokeStyle = FOAM; g.globalAlpha = 0.7; g.lineWidth = 1.2; g.beginPath(); g.moveTo(hx - 3.6 * ppm, fy - 9 * ppm); g.quadraticCurveTo(hx - 3 * ppm, fy - 1 * ppm, hx, fy); g.quadraticCurveTo(hx + 3 * ppm, fy - 1 * ppm, hx + 3.6 * ppm, fy - 9 * ppm); g.closePath(); g.stroke(); g.beginPath(); g.moveTo(hx, fy - 9 * ppm); g.lineTo(hx, fy - 15.5 * ppm); g.stroke(); g.globalAlpha = 1; }
+        if (h.show > 0) { // the ring draws her ribs
+          g.strokeStyle = GOLD; g.globalAlpha = Math.min(1, h.show) * 0.8; g.lineWidth = 1;
+          for (let k = 0; k < 7; k++) { const yy = fy - (1.2 + k * 1.15) * ppm, ww = (1.4 + k * 0.32) * ppm; g.beginPath(); g.moveTo(hx - ww, yy); g.quadraticCurveTo(hx, yy + 0.7 * ppm, hx + ww, yy); g.stroke(); }
+          g.globalAlpha = 1;
+        }
+        const [bx, by] = bellAt(h), bsx = sx(bx), bsy = sy(by), sw = h.show > 0 ? Math.sin(t * 16) * 0.3 : 0;
+        g.save(); g.translate(bsx, bsy - 0.9 * ppm); g.rotate(sw); g.strokeStyle = h.rung ? GOLD : PAPER; g.fillStyle = "#0b1424"; g.lineWidth = 1.4;
+        g.beginPath(); g.moveTo(-0.7 * ppm, 1.3 * ppm); g.quadraticCurveTo(-0.6 * ppm, 0, 0, 0); g.quadraticCurveTo(0.6 * ppm, 0, 0.7 * ppm, 1.3 * ppm); g.closePath(); g.fill(); g.stroke(); g.beginPath(); g.arc(0, 1.5 * ppm, 0.16 * ppm, 0, 7); g.stroke(); g.restore();
+        g.textAlign = "center";
+        if (h.rung) { g.font = `${Math.max(12, ppm * 1.05)}px 'IM Fell English SC',Georgia,serif`; g.fillStyle = h.i === flagI ? GOLD : PAPER; g.fillText(h.name.toUpperCase(), hx, fy + 1.7 * ppm); }
+        else { g.font = "italic 12px 'IM Fell English',Georgia,serif"; g.fillStyle = PAPER; g.globalAlpha = 0.6; g.fillText("bell", bsx, bsy - 1.4 * ppm); g.globalAlpha = 1; }
+        if (h.i === flagI && !d.carry && (h.show > 0 || Math.hypot(d.x - h.x, d.y - (floorAt(h.x) - 3)) < 9)) { // Ide's lamp, low in the ribs
+          const ix = sx(h.x + 1.5), iy = sy(floorAt(h.x + 1.5) - 3);
+          const gr = g.createRadialGradient(ix, iy, 0, ix, iy, 2.6 * ppm); gr.addColorStop(0, "rgba(231,169,59,.9)"); gr.addColorStop(1, "rgba(231,169,59,0)"); g.fillStyle = gr; g.beginPath(); g.arc(ix, iy, 2.6 * ppm, 0, 7); g.fill();
+          g.strokeStyle = PAPER; g.globalAlpha = 0.5 + 0.3 * Math.sin(t * 2); g.lineWidth = 1.2; g.beginPath(); g.arc(ix, iy, 3.2 * ppm, 0, 7); g.stroke(); g.globalAlpha = 1;
+          if (d.free > 0) { g.strokeStyle = GOLD; g.lineWidth = 3; g.beginPath(); g.arc(ix, iy, 4 * ppm, -Math.PI / 2, -Math.PI / 2 + (d.free / 2) * Math.PI * 2); g.stroke(); }
+        }
+      }
+      if (fleet) { // her crew's line
+        const lx = sx(lineX), rewritten = fate === "rewrite";
+        if (rewritten) { const gr = g.createLinearGradient(lx - 3 * ppm, 0, lx + 3 * ppm, 0); gr.addColorStop(0, "rgba(231,169,59,0)"); gr.addColorStop(0.5, "rgba(231,169,59,.22)"); gr.addColorStop(1, "rgba(231,169,59,0)"); g.fillStyle = gr; g.fillRect(lx - 3 * ppm, 0, 6 * ppm, sy(FLOOR - 16)); }
+        if (d.carry || rewritten) { g.strokeStyle = d.carry ? GOLD : PAPER; g.globalAlpha = 0.8; g.lineWidth = 1.4; g.setLineDash([2, 5]); g.beginPath(); g.moveTo(lx, 0); g.lineTo(lx, sy(FLOOR - 16)); g.stroke(); g.setLineDash([]); g.globalAlpha = 1;
+          g.font = "italic 13px 'IM Fell English',Georgia,serif"; g.fillStyle = GOLD; g.textAlign = "left"; g.fillText("her crew's line", lx + 8, Math.max(100, sy(104))); }
+      }
+      // the chit in the trench (test): it answers a stir's glow
+      if (trench && !d.carry) {
+        const cx2 = sx(chitX), cy2 = sy(chitY());
+        if (A.chit) g.drawImage(A.chit, cx2 - 1.7 * ppm, cy2 - 1.1 * ppm, 3.4 * ppm, 2.2 * ppm); else { g.fillStyle = PAPER; g.fillRect(cx2 - ppm, cy2 - 0.6 * ppm, 2 * ppm, 1.2 * ppm); }
+        if (d.free > 0) { g.strokeStyle = GOLD; g.lineWidth = 3; g.beginPath(); g.arc(cx2, cy2, 3 * ppm, -Math.PI / 2, -Math.PI / 2 + (d.free / 1.5) * Math.PI * 2); g.stroke(); }
+      }
       // the sunken tender
       const tx = sx(WRECK_X), ty = sy(WRECK_Y);
+      if (stage !== "teach") { /* no tender here */ } else {
       g.save(); g.translate(tx, ty); g.rotate(-0.18); g.strokeStyle = FOAM; g.lineWidth = 1.2; g.globalAlpha = 0.85;
       g.beginPath(); g.moveTo(-10 * ppm, -1 * ppm); g.quadraticCurveTo(-8 * ppm, 5 * ppm, 0, 5.5 * ppm); g.quadraticCurveTo(9 * ppm, 5 * ppm, 11 * ppm, -2 * ppm); g.stroke();
       for (let i = -9; i < 10; i += 1.2) { g.beginPath(); g.moveTo(i * ppm, -0.5 * ppm); g.lineTo(i * ppm + 0.4 * ppm, 4.6 * ppm - Math.abs(i) * 0.25 * ppm); g.lineWidth = 0.5; g.stroke(); }
@@ -461,6 +636,7 @@ export default {
         if (d.free > 0) { g.strokeStyle = GOLD; g.lineWidth = 3; g.beginPath(); g.arc(bx, by, 4 * ppm, -Math.PI / 2, -Math.PI / 2 + (d.free / FREE_S) * Math.PI * 2); g.stroke(); }
       } else if (d.y > 4) {
         g.strokeStyle = PAPER; g.globalAlpha = 0.5 + 0.3 * Math.sin(t * 2); g.lineWidth = 1.2; g.beginPath(); g.ellipse(sx(d.x), sy(0.5), 6 * ppm, 1.4 * ppm, 0, 0, 7); g.stroke(); g.globalAlpha = 1;
+      }
       }
       // specimens: the light the deep has
       for (const sp of specimens) {
@@ -487,6 +663,17 @@ export default {
       const gr = g.createRadialGradient(sx(d.x), sy(d.y), vis * (0.5 - pullK * 0.35), sx(d.x), sy(d.y), vis * (1.3 - pullK * 0.75) + 20);
       gr.addColorStop(0, "rgba(3,6,12,0)"); gr.addColorStop(1, `rgba(3,6,12,${(0.4 + pullK * 0.6).toFixed(2)})`);
       g.fillStyle = gr; g.fillRect(0, 0, W, Hh);
+      if (trench && d.y > 52) { // the dark of the trench: an arm's length, or a stir's eight metres
+        const k = Math.min(1, (d.y - 52) / 10), rad = (glow > 0 ? 8 + Math.min(1, glow) * 1 : 3.4) * ppm;
+        const dk = g.createRadialGradient(sx(d.x), sy(d.y), rad * 0.72, sx(d.x), sy(d.y), rad * 1.25);
+        dk.addColorStop(0, "rgba(2,4,9,0)"); dk.addColorStop(1, `rgba(2,4,9,${(0.97 * k).toFixed(2)})`);
+        g.fillStyle = dk; g.fillRect(0, 0, W, Hh);
+        if (glow > 0 && !d.carry) { // the chit's salt bloom shines back from up to 25 m
+          const dist = Math.hypot(chitX - d.x, chitY() - d.y);
+          if (dist < 25) { const cx2 = sx(chitX), cy2 = sy(chitY()); g.strokeStyle = PAPER; g.globalAlpha = Math.min(1, glow) * 0.9; g.lineWidth = 1.6; g.beginPath(); g.arc(cx2, cy2, 3.2 * ppm, 0, 7); g.stroke(); g.fillStyle = PAPER; g.beginPath(); g.arc(cx2, cy2, 0.35 * ppm, 0, 7); g.fill(); g.globalAlpha = 1; }
+          else { g.font = "italic 14px 'IM Fell English',Georgia,serif"; g.textAlign = "center"; g.fillStyle = PAPER; g.globalAlpha = Math.min(1, glow) * 0.8; g.fillText("nothing shines back within twenty-five metres", sx(d.x), sy(d.y) + rad + 18); g.globalAlpha = 1; }
+        }
+      }
       // stir spiral
       if (stir.on && stir.pts.length > 2 && Math.abs(stir.angle) > 0.8) {
         g.strokeStyle = "#7FE0C2"; g.globalAlpha = 0.7; g.lineWidth = 1.4; g.beginPath(); stir.pts.forEach((p, i) => (i ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1]))); g.stroke(); g.globalAlpha = 1;
@@ -496,17 +683,23 @@ export default {
       const gx = 22, g0 = 40, g1 = Hh - 50;
       g.strokeStyle = FOAM; g.globalAlpha = 0.8; g.lineWidth = 1; g.beginPath(); g.moveTo(gx, g0); g.lineTo(gx, g1); g.stroke();
       g.font = "12px 'IM Fell English',Georgia,serif"; g.fillStyle = FOAM; g.textAlign = "left";
-      for (let m = 0; m <= 100; m += 20) { const y = g0 + ((g1 - g0) * m) / 100; g.beginPath(); g.moveTo(gx - 4, y); g.lineTo(gx + 4, y); g.stroke(); g.fillText(m + " m", gx + 7, y + 3); }
-      const yy = g0 + ((g1 - g0) * Math.min(100, d.y)) / 100; g.fillStyle = GOLD; g.beginPath(); g.moveTo(gx - 2, yy); g.lineTo(gx - 12, yy - 6); g.lineTo(gx - 12, yy + 6); g.fill();
-      const yw = g0 + ((g1 - g0) * WRECK_Y) / 100; g.strokeStyle = PAPER; g.beginPath(); g.arc(gx, yw, 4, 0, 7); g.stroke();
+      for (let m = 0; m <= GMAX; m += GMAX / 5) { const y = g0 + ((g1 - g0) * m) / GMAX; g.beginPath(); g.moveTo(gx - 4, y); g.lineTo(gx + 4, y); g.stroke(); g.fillText(m + " m", gx + 7, y + 3); }
+      const yy = g0 + ((g1 - g0) * Math.min(GMAX, d.y)) / GMAX; g.fillStyle = GOLD; g.beginPath(); g.moveTo(gx - 2, yy); g.lineTo(gx - 12, yy - 6); g.lineTo(gx - 12, yy + 6); g.fill();
+      const yw = g0 + ((g1 - g0) * (trench ? (d.carry ? 60 : chitY()) : fleet ? (d.carry ? 102 : FLOOR - 3) : WRECK_Y)) / GMAX; g.strokeStyle = PAPER; g.beginPath(); g.arc(gx, yw, 4, 0, 7); g.stroke();
       g.globalAlpha = 1;
       { const bw = Math.min(W - 70, 290); g.fillStyle = "rgba(11,20,36,.84)"; g.fillRect(W - 16 - bw - 8, 8, bw + 16, 76); g.strokeStyle = FOAM; g.globalAlpha = 0.35; g.strokeRect(W - 16 - bw - 7.5, 8.5, bw + 15, 75); g.globalAlpha = 1; }
       g.font = "14px 'IM Fell English SC',Georgia,serif"; g.fillStyle = FOAM; g.textAlign = "right";
-      g.fillText(`PLATE IV. THE DEEP · ${Math.round(d.y)} m`, W - 16, 26);
+      g.fillText(`PLATE ${trench ? "V" : fleet ? "VI" : "IV"}. THE DEEP · ${Math.round(d.y)} m`, W - 16, 26);
       g.font = "italic 15px 'IM Fell English',Georgia,serif";
-      g.fillText(d.carry ? "Carry it up to the light" : d.free > 0 ? `Working it free… ${Math.min(FREE_S, d.free).toFixed(1)} / ${FREE_S} s` : d.net ? "Grip and swim to tear the net" : "Down to the pale ring", W - 16, 45);
+      g.fillText(d.net ? "Grip and swim to tear the net" : trench ? (d.carry ? "Up to sixty metres, where the light begins" : glow > 0 ? `Lit: ${glow.toFixed(1)} s · the chains are coming` : "Stir for light; the chit shines back") : fleet ? (d.carry ? "Up her crew's line, above the flagship" : `Bells read: ${named.length} of 8 · find the Halcyon`)
+        : d.carry ? "Carry it up to the light" : d.free > 0 ? `Working it free… ${Math.min(FREE_S, d.free).toFixed(1)} / ${FREE_S} s` : "Down to the pale ring", W - 16, 45);
       // the pull: a ruled gauge under the caption, and the closing line along the top
       g.fillStyle = pullK > 0.75 ? RED : FOAM; g.globalAlpha = 0.8; g.fillRect(0, 0, W * (d.pull / PULL), 4); g.globalAlpha = 1;
+      if (fleet) { const pw = Math.min(260, W - 90), px0 = W - 16 - pw, py0 = 66, ak = air / AIR, low = d.carry && ak < 0.4;
+        g.font = "13px 'IM Fell English SC',Georgia,serif"; g.textAlign = "left"; g.fillStyle = low ? "#e7a0a0" : FOAM; g.fillText(d.carry ? "HER AIR" : "THE PULL HAS STOPPED", px0, py0 - 4);
+        if (d.carry) { g.textAlign = "right"; g.fillText(`${Math.ceil(air)} s`, W - 16, py0 - 4); g.strokeStyle = FOAM; g.globalAlpha = 0.8; g.strokeRect(px0 + 0.5, py0 + 0.5, pw, 9); g.globalAlpha = 1; g.fillStyle = low ? RED : GOLD; g.fillRect(px0 + 2, py0 + 2, (pw - 3) * Math.max(0, ak), 6); }
+        else { g.font = "italic 13px 'IM Fell English',Georgia,serif"; g.fillStyle = FOAM; g.globalAlpha = 0.75; g.fillText("no clock runs until she is in his arms", px0, py0 + 10); g.globalAlpha = 1; }
+      } else
       { const pw = Math.min(260, W - 90), px0 = W - 16 - pw, py0 = 66;
         g.font = "13px 'IM Fell English SC',Georgia,serif"; g.textAlign = "left"; g.fillStyle = pullK > 0.65 ? "#e7a0a0" : FOAM; g.fillText("THE PULL", px0, py0 - 4);
         g.textAlign = "right"; g.fillText(`${Math.ceil(d.pull)} s`, W - 16, py0 - 4);
@@ -529,11 +722,19 @@ export default {
     }
     raf = requestAnimationFrame(frame);
     const b = how.querySelector("button");
-    b.addEventListener("click", () => { how.remove(); running = true; last = performance.now(); caption("Down. The pale ring far below marks the tender.", false, 4); });
+    let unnote = null;
+    b.addEventListener("click", () => {
+      how.remove(); running = true; last = performance.now();
+      caption(trench ? "Down, past the bank. Keep moving: the lead drops where you were." : fleet ? "The hulls stand in a row to the right. Stir a current through a bell to read her name." : "Down. The pale ring far below marks the tender.", false, 5);
+      const why = stage === "teach" && fate === "strike" ? "Because you struck the harbour dues in The Charter, the Company's gear hangs abandoned here: two old nets across the way down."
+        : fleet && backplot ? "Because your back-plot in Dead Reckoning was good, the dive starts above her: the flagship is the hull below you."
+        : fleet && fate === "rewrite" ? "Because you had the harbour dues rewritten in The Charter, the lights stay: a beam marks her crew's line from the start." : "";
+      if (why) unnote = note(wrap, why);
+    });
     b.focus();
     return {
       unmount() {
-        cancelAnimationFrame(raf); ro.disconnect(); dead = true; clearTimeout(prepTimer); closeBox();
+        cancelAnimationFrame(raf); ro.disconnect(); dead = true; clearTimeout(prepTimer); closeBox(); if (unnote) unnote();
         removeEventListener("keydown", kd); removeEventListener("keyup", ku);
         running = false;
       },

@@ -296,6 +296,24 @@
       "description": "Mother Halse has turned the slate round at the Tidewater chandlery (The Slate, accepted 2026-11-15)."
     },
     {
+      "name": "crew.wenna",
+      "type": "bool",
+      "default": false,
+      "description": "Wenna's crew were won at Liar's Tide (accepted 2026-11-15, built 2026-11-16). Their call in the Engraved Sea: the ferry's crossings are shown on the coast strip, so a crest can be timed round her."
+    },
+    {
+      "name": "crew.gullwife",
+      "type": "bool",
+      "default": false,
+      "description": "The Gullwife crew were won at Liar's Tide. Their call: every stir one tier higher while they sing; and a crew singing in sight halves the tide table's cone of error in Dead Reckoning."
+    },
+    {
+      "name": "crew.kettle",
+      "type": "bool",
+      "default": false,
+      "description": "The Kettle crew were won at the Flooding Table. Their call in the Engraved Sea: the reef stands covered."
+    },
+    {
       "name": "has_harbour_book",
       "type": "bool",
       "default": false,
@@ -330,6 +348,12 @@
       "type": "bool",
       "default": false,
       "description": "The blockade was run without being caught."
+    },
+    {
+      "name": "backplot.good",
+      "type": "bool",
+      "default": false,
+      "description": "The back-plot at a Tide Reckoning fell within a mile of where the boat went over: the rescue dive starts above the person."
     },
     {
       "name": "payment_delivered",
@@ -398,6 +422,18 @@
       "description": "Chits pinned to the region whose order they bought, at the tally (0-8)."
     },
     {
+      "name": "debts.answered",
+      "type": "counter",
+      "default": 0,
+      "description": "Named Debts struck from the Wreck Book before the final match: one for each ship named by its bell in the Deep (0-4)."
+    },
+    {
+      "name": "tea.cracked",
+      "type": "counter",
+      "default": 0,
+      "description": "Lanes of the Tea Board cracked by a second Stir in one High tide in the final match (0-2). A cracked lane scores for no one and cannot be laid as a safe lane on the chart."
+    },
+    {
       "name": "chart.wild_regions",
       "type": "counter",
       "default": 0,
@@ -458,6 +494,16 @@
         "number",
         "pledge",
         "found",
+        "chapter"
+      ]
+    },
+    {
+      "name": "bells",
+      "type": "ledger",
+      "default": [],
+      "description": "Ships of the Standing Fleet named by ringing their bells in the Deep. Each answers one Named Debt in the final match.",
+      "fields": [
+        "ship",
         "chapter"
       ]
     }

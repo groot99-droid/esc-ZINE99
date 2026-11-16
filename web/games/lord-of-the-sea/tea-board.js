@@ -12,7 +12,8 @@
 // Art pass (2026-11-15): the board is the game's porcelain plate (tea-board-parlour), laid under the play at its
 // own 1600 x 900; the ports and slots below sit where the plate draws them. Hymns and Chests are the piece
 // tiles, the tide clock is the dial with the game's own hand. Without the art the old drawing still runs.
-import { pic, pieceCrop, chapterStrip } from "./_art.js";
+import { pic, pieceCrop, chapterStrip, endCard } from "./_art.js";
+import { ladder, note, flag, setFlag } from "./_ladder.js";
 
 const COB = "#24448f", DEEP = "#1F2E4A", WHITE = "#F4F1E8", GLAZE = "#fbfbf8", GOLD = "#E7A93B", RED = "#8C2B2B";
 const PORTS = {
@@ -31,12 +32,40 @@ const LANES = [
 const ART_XY = { home: [420, 439.4], tide: [847.5, 250], unw: [752.5, 640], salt: [1180, 495.1] };
 const ART_BOW = { L1: -26, L2: 26, L3: -26, L5: -26 };
 const SEA = "#2F6B5E";
-const PHASES = ["Low", "Low", "Rising", "Rising", "High", "High"];
-const ROUNDS = 6;
+let PHASES = ["Low", "Low", "Rising", "Rising", "High", "High"];
+let ROUNDS = 6;
+// Phase 2 (accepted 2026-11-15, built 2026-11-16): the ladder, all three on the parlour's four ports. Teach is the
+// factor's match above. Test is the Comptroller's (`g-tea-comptroller`), eight rounds, with Debt: he may Lend a Debt to
+// a port (two Debts hold it for the Company whatever the lanes say), and a Clause token removes one. Twist is the Lord
+// of Tea's (`g-tea-final`, cut to these four ports): a second Stir in one High tide cracks the porcelain, so that lane
+// scores for no one, ever; he may Insure one Chest against the stir at the price of a reserve piece; and in the last
+// four rounds each Debt he plays is a name read out of the Wreck Book.
+const TOLL = [
+  ["Corran", "Lamp-keeper. A light went out."],
+  ["Wenna", "Ferry pilot. A crest came in on the sixth minute."],
+  ["Old Marrow", "Reef-fisher. The tide stood where it never stood."],
+  ["Ide", "Diver. The bank was not slack that day."],
+];
+const LADDER = {
+  title: "The Tea Board", kicker: "1D · EXPORT PORCELAIN · THREE MATCHES",
+  stages: {
+    teach: { name: "The Parlour", where: "Chapter II, against the factor: majority, and the tide clock.", line: "Majority, and the tide clock." },
+    test: { name: "The Comptroller's Board", where: "Chapter IV, the Spice Mouth: Debt takes a port without a lane.", line: "Eight rounds against the Comptroller, who lends." },
+    twist: { name: "The Wreck Book", where: "Chapter VI, against the Lord of Tea: the board can be damaged, and every Debt has a name.", line: "The Lord of Tea. The porcelain can crack, and every Debt has a name." },
+  },
+};
+export default { mount(root, api) { return ladder(root, api, LADDER, (r, a) => game.mount(r, a)); } };
 
-export default {
+const game = {
   mount(root, api) {
     const P = "lord-of-the-sea-tea-board-";
+    const stage = api.stage || "teach", teach = stage === "teach", debtOn = !teach, final = stage === "twist";
+    ROUNDS = teach ? 6 : 8;
+    PHASES = teach ? ["Low", "Low", "Rising", "Rising", "High", "High"] : ["Low", "Low", "Rising", "Rising", "High", "High", "Falling", "Falling"];
+    const WHO = teach ? "factor" : final ? "Lord of Tea" : "Comptroller", Who = teach ? "Factor" : WHO;
+    // link: each ship named by its bell in the Deep answers one name in the Wreck Book
+    const bells = final ? (Array.isArray(flag(api, "bells", [])) ? flag(api, "bells", []) : []) : [];
+    const answered = Math.min(TOLL.length, bells.length);
     const rng = api.rng();
     const timers = new Set();
     const later = (fn, ms) => { const id = setTimeout(() => { timers.delete(id); fn(); }, api.reducedMotion ? Math.min(ms, 300) : ms); timers.add(id); };
@@ -53,11 +82,16 @@ export default {
       round: 1, turn: "C", acted: { C: false, A: false },
       sel: null, stirMode: false, stirUsed: false, hints: 3, hint: null,
       ledger: [], msg: "", over: false, started: false, last: null, flips: [], beat: "", voice: false, flipCount: 0,
+      debt: { home: 0, tide: 0, unw: 0, salt: 0 }, names: { home: [], tide: [], unw: [], salt: [] }, clauses: debtOn ? 2 + (final && flag(api, "tea.comptroller") ? 1 : 0) : 0, clauseMode: false, lends: 0, named: "",
+      cracked: {}, insured: null, stirs: 0, book: final ? TOLL.slice(answered) : [], read: 0,
     };
+    if (stage === "test") S.debt.salt = 1;
     const losses = +api.store.get("losses", 0) || 0;
     if (losses >= 2) S.hints = 5;
     const TIDE_BEATS = {
-      Rising: { text: "The tide turns to Rising. The factor straightens his cuffs: “Nothing counts double now, sir. Only skill.” She is at your shoulder: Ask her, and she will point at one good move.", voice: false },
+      Falling: { text: final ? "The tide falls. He is reading from the book now and not looking at the board at all." : "The tide falls. Nothing counts double. The Comptroller counts what is owed instead of what is held.", voice: false },
+      Rising: teach ? null : { text: final ? "Rising. Nothing counts double. He takes a cup of hot water, not tea, and holds the table's edge as the floor moves." : "The tide turns to Rising. “Lanes are opinion, sir. Debt is fact.” A port with two Debts is his whatever the lanes say. A Clause removes one: Clause, then the port.", voice: false },
+      RisingTeach: { text: "The tide turns to Rising. The factor straightens his cuffs: “Nothing counts double now, sir. Only skill.” She is at your shoulder: Ask her, and she will point at one good move.", voice: false },
       High: { text: "High water. Under the painted lanes something moved the way he looked at it. Stir: once this tide, push a Chest off a lane by the Unwritten.", voice: true },
     };
 
@@ -122,10 +156,14 @@ export default {
     </div>
     <div class="${P}how" role="dialog" aria-label="How to play"><div class="${P}plate">
       <div class="rim"></div>
-      ${chapterStrip(art, 3, "Chapter III: The Ordered Sea")}
-      <h2>The Tea Board</h2>
-      <p class="goal">After six rounds, hold more ports than the factor. A tie, in his books, is his.</p>
-      <p class="open">Chapter II, the Company's parlour at Tidewater. The factor sets out his board as a courtesy to the princess's guest: the same four ports Alexi can see from the window, painted in cobalt.</p>
+      ${chapterStrip(art, teach ? 3 : final ? 7 : 5, teach ? "Chapter III: The Ordered Sea" : final ? "Chapter VII: The Lord of Tea" : "Chapter V: The Open Chart")}
+      <h2>${teach ? "The Tea Board" : final ? "The Wreck Book" : "The Comptroller's Board"}</h2>
+      <p class="goal">After ${teach ? "six" : "eight"} rounds, hold more ports than the ${WHO}. A tie, in his books, is his.</p>
+      <p class="open">${teach ? "Chapter II, the Company's parlour at Tidewater. The factor sets out his board as a courtesy to the princess's guest: the same four ports Alexi can see from the window, painted in cobalt."
+        : final ? "Chapter VI, the counting-house. The Lord of Tea plays on the parlour's own four ports, to be fair. Beside the board lies the Wreck Book, open. He has never been to sea; the floor moves under him and he plays on."
+        : "Chapter IV, the Spice Mouth. The Comptroller plays the same board with one more kind of piece. One Debt already lies on the Salt Steps."}</p>
+      ${debtOn ? `<p class="open" style="font-style:normal;text-align:left">${pieceIcon("piece-debt", "").replace("display:inline-block;", "display:inline-block;vertical-align:middle;margin-right:6px;")}<b>Debt.</b> He may <b>Lend</b> a Debt to a port. Two Debts hold it for him whatever the lanes say. ${pieceIcon("piece-clause", "").replace("display:inline-block;", "display:inline-block;vertical-align:middle;margin:0 6px;")}<b>Clause</b> (<kbd>C</kbd>, then the port): spend a token and your turn to strike one Debt off. You have two.</p>` : ""}
+      ${final ? `<p class="open" style="font-style:normal;text-align:left"><b>The porcelain cracks.</b> You may Stir <b>twice</b> at High tide. The second Stir cracks the lane it pushes from: that lane scores for no one, ever, and no safe lane can be laid along it. He may <b>Insure</b> one Chest against the stir. In the last four rounds he reads a name out of the Wreck Book before each move: a Debt, and then his move as well.${flag(api, "tea.comptroller") ? " The Comptroller's match was won: a third Clause token." : ""}</p>` : ""}
       ${losses >= 2 ? `<p class="gentle">She has watched you lose twice: she will point five times this match, not three.</p>` : ""}
       <dl>
         <dt>${pieceIcon("piece-hymn", `<svg width="28" height="28" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="${GLAZE}" stroke="${COB}" stroke-width="3"/><path d="M10 22 q5 -7 10 0 t10 0" fill="none" stroke="${COB}" stroke-width="2.4"/></svg>`)}Place</dt><dd>Press <b>Hymns</b> (or <kbd>H</kbd>), then a lit slot on a lane by a port you hold or no one holds.</dd>
@@ -150,6 +188,7 @@ export default {
     const touches = (lane, test) => test(PORTS[lane.a]) || test(PORTS[lane.b]);
     function weight(st, lane, side) {
       const ph = phase(st);
+      if (st.cracked[lane.id]) return 0;
       if (side === "C" && ph === "Low" && touches(lane, (p) => p.wild <= 40)) return 2;
       if (side === "A" && ph === "High" && touches(lane, (p) => p.wild >= 60)) return 2;
       return 1;
@@ -165,6 +204,7 @@ export default {
         let a = 0, c = 0;
         for (const l of lanesOf(k)) { const h = laneHolder(st, l); if (h === "A") a++; if (h === "C") c++; }
         if (a > c) st.holder[k] = "A"; else if (c > a) st.holder[k] = "C";
+        if (st.debt[k] >= 2) st.holder[k] = "C";            // two Debts hold a port whatever the lanes say
       }
     }
     const portCount = (st, side) => Object.values(st.holder).filter((h) => h === side).length;
@@ -184,13 +224,15 @@ export default {
     }
     function stirTargets(st) { // Chests on lanes touching a Wild port
       const out = [];
-      for (const l of LANES) if (touches(l, (p) => p.wild >= 60)) st.slots[l.id].forEach((v, i) => { if (v === "C") out.push({ lane: l.id, i }); });
+      for (const l of LANES) if (touches(l, (p) => p.wild >= 60) && !st.cracked[l.id]) st.slots[l.id].forEach((v, i) => { if (v === "C" && st.insured !== `${l.id}:${i}`) out.push({ lane: l.id, i }); });
       return out;
     }
     function apply(st, side, m) {
       if (m.kind === "place") { st.slots[m.lane][m.i] = side; st.reserve[side]--; }
       if (m.kind === "shift") { st.slots[m.from][m.fi] = null; st.slots[m.lane][m.i] = side; }
-      if (m.kind === "stir") { st.slots[m.from][m.fi] = null; if (m.lane) st.slots[m.lane][m.i] = "C"; }
+      if (m.kind === "stir") { st.slots[m.from][m.fi] = null; if (m.lane) st.slots[m.lane][m.i] = "C"; if (m.crack) st.cracked = { ...st.cracked, [m.from]: true }; }
+      if (m.kind === "lend") { st.debt = { ...st.debt, [m.port]: st.debt[m.port] + 1 }; }
+      if (m.kind === "clause") { st.debt = { ...st.debt, [m.port]: Math.max(0, st.debt[m.port] - 1) }; }
       const before = { ...st.holder };
       updatePorts(st);
       if (st === S) for (const k of Object.keys(PORTS)) if (before[k] !== st.holder[k]) { S.flips.push(k); S.flipCount++; }
@@ -207,7 +249,11 @@ export default {
       return best && best.m;
     }
     const describe = (side, m) => {
-      const who = side === "A" ? "Alexi" : "Factor";
+      const who = side === "A" ? "Alexi" : Who;
+      if (m.kind === "lend") return `${who}: lends a Debt to ${PORTS[m.port].name}${m.name ? " (" + m.name + ")" : ""}`;
+      if (m.kind === "clause") return `Alexi: a Clause strikes a Debt off ${PORTS[m.port].name}`;
+      if (m.kind === "insure") return `${who}: insures the Chest on ${m.lane}`;
+      if (m.kind === "stir" && m.crack) return `Alexi stirs again: ${m.from} cracks`;
       if (m.kind === "place") return `${who}: places on ${m.lane}`;
       if (m.kind === "shift") return `${who}: shifts ${m.from} → ${m.lane}`;
       if (m.kind === "stir") return `Alexi stirs a Chest off ${m.from}${m.lane ? " onto " + m.lane : ", off the board"}`;
@@ -216,37 +262,78 @@ export default {
 
     // ---- turn flow ----
     function afterAction(side, m) {
-      S.ledger.push(m ? describe(side, m) : `${side === "A" ? "Alexi" : "Factor"}: passes`);
-      S.acted[side] = true; S.sel = null; S.stirMode = false; S.hint = null;
+      S.ledger.push(m ? describe(side, m) : `${side === "A" ? "Alexi" : Who}: passes`);
+      S.acted[side] = true; S.sel = null; S.stirMode = false; S.hint = null; S.clauseMode = false;
       if (S.acted.A && S.acted.C) {
         S.round++; S.acted = { A: false, C: false };
         if (S.round > ROUNDS) { S.round = ROUNDS; finish(); render(); return; }
-        if (PHASES[S.round - 1] !== PHASES[S.round - 2]) { S.ledger.push(`─ the tide: ${PHASES[S.round - 1]} ─`); const before = { ...S.holder }; updatePorts(S); for (const k of Object.keys(PORTS)) if (before[k] !== S.holder[k]) S.flips.push(k); const tb = TIDE_BEATS[PHASES[S.round - 1]]; if (tb) beat(tb.text, tb.voice); }
-        if (S.round === ROUNDS) beat("Last round. The factor folds his hands and waits, as if the result were already written in a ledger somewhere.", false);
-        if (PHASES[S.round - 1] === "High" && PHASES[S.round - 2] !== "High") S.stirUsed = false;
+        if (PHASES[S.round - 1] !== PHASES[S.round - 2]) { S.ledger.push(`─ the tide: ${PHASES[S.round - 1]} ─`); const before = { ...S.holder }; updatePorts(S); for (const k of Object.keys(PORTS)) if (before[k] !== S.holder[k]) S.flips.push(k); const tb = TIDE_BEATS[teach && PHASES[S.round - 1] === "Rising" ? "RisingTeach" : PHASES[S.round - 1]]; if (tb) beat(tb.text, tb.voice); }
+        if (S.round === ROUNDS) beat(final ? "Last round. He closes the Wreck Book on one finger, to keep the place." : `Last round. The ${WHO} folds his hands and waits, as if the result were already written in a ledger somewhere.`, false);
+        if (PHASES[S.round - 1] === "High" && PHASES[S.round - 2] !== "High") { S.stirUsed = false; S.stirs = 0; if (final) beat("High water. Stir, twice this tide if you will. The first is the sea's. The second is too much for porcelain: the lane you push from cracks, and scores for no one, ever.", true); }
       }
       S.turn = side === "A" ? "C" : "A";
       render();
       if (S.turn === "C") later(factor, 1000);
-      else if (!moves(S, "A").length && !(phase(S) === "High" && !S.stirUsed && stirTargets(S).length)) { S.msg = "No move for you: you pass."; later(() => afterAction("A", null), 900); }
+      else if (!moves(S, "A").length && !(phase(S) === "High" && !S.stirUsed && stirTargets(S).length) && !(S.clauses > 0 && Object.values(S.debt).some((v) => v > 0))) { S.msg = "No move for you: you pass."; later(() => afterAction("A", null), 900); }
     }
     function factor() {
       if (S.over) return;
       const ms = moves(S, "C");
-      if (!ms.length) { afterAction("C", null); return; }
-      const m = rng() < 0.3 ? ms[Math.floor(rng() * ms.length)] : bestMove(S, "C");
+      if (debtOn) { // Lend, Insure, and the Wreck Book
+        const notHis = Object.keys(PORTS).filter((k) => S.holder[k] !== "C" && S.debt[k] < 2);
+        const pick = notHis.slice().sort((a, b) => S.debt[b] - S.debt[a])[0];
+        if (final && S.round > ROUNDS - 4 && S.book.length && pick) {
+          const [nm, what] = S.book.shift(); S.read++;
+          const m = { kind: "lend", port: pick, name: nm };
+          apply(S, "C", m); S.names[pick].push(nm); S.last = { port: pick };
+          beat(`He reads from the Wreck Book. “${nm}. ${what}” Click. A Debt on ${PORTS[pick].name}.`, false);
+          S.ledger.push(describe("C", m));
+          S.named = `A Named Debt on ${PORTS[pick].name}: ${S.debt[pick]} of 2.${S.debt[pick] >= 2 ? " It is his, whatever the lanes say." : ""} `;   // read, and then he moves as well
+        } else S.named = "";
+        if (final && !S.insured && S.round === 4 && S.reserve.C > 0) {
+          const tgt = LANES.filter((l) => touches(l, (p) => p.wild >= 60)).flatMap((l) => S.slots[l.id].map((v, i) => (v === "C" ? { lane: l.id, i } : null))).filter(Boolean)[0];
+          if (tgt) { S.insured = `${tgt.lane}:${tgt.i}`; S.reserve.C--; S.last = tgt; S.msg = `“Insured.” He sets a reserve Chest aside and initials the one on ${tgt.lane}: it cannot be stirred off.`; afterAction("C", { kind: "insure", lane: tgt.lane }); return; }
+        }
+        const finish2 = notHis.find((k) => S.debt[k] === 1);
+        if (!final && S.lends < 3 && (finish2 ? rng() < 0.75 : S.round >= 3 && pick && rng() < 0.3)) {
+          const port = finish2 || pick, m = { kind: "lend", port };
+          S.lends++; apply(S, "C", m); S.last = { port };
+          S.msg = `“On account.” A Debt on ${PORTS[port].name}: ${S.debt[port]} of 2.${S.debt[port] >= 2 ? " It is his, whatever the lanes say." : ""}`;
+          if (S.lends === 1) beat("He does not move a Chest. He writes a line in a book and sets a red disc on the port. Two of those and the port is his. Clause (C), then the port, strikes one off.", false);
+          afterAction("C", m); return;
+        }
+      }
+      if (!ms.length) { S.msg = S.named; afterAction("C", null); return; }
+      const m = rng() < (teach ? 0.3 : final ? 0.08 : 0.18) ? ms[Math.floor(rng() * ms.length)] : bestMove(S, "C");
       apply(S, "C", m);
-      S.last = { lane: m.lane, i: m.i };
-      S.msg = ["The factor taps the board.", "“A courtesy, sir.”", "The factor moves without looking up.", "“Your move. Do take your time.”"][Math.floor(rng() * 4)] + ` (${m.kind === "place" ? "a Chest on " + m.lane : "a Chest shifted to " + m.lane}, ringed)`;
+      S.last = S.named && S.last && S.last.port ? { lane: m.lane, i: m.i, port: S.last.port } : { lane: m.lane, i: m.i };
+      S.msg = (teach ? ["The factor taps the board.", "“A courtesy, sir.”", "The factor moves without looking up.", "“Your move. Do take your time.”"] : final ? ["He moves, and grips the table's edge.", "“In my books it is called unpaid.”", "He moves without hurry.", "He sips hot water. “Tea is for selling.”"] : ["The Comptroller moves and makes a note.", "“Entered.”", "He moves without looking up.", "“Your move, sir. It is all one to the ledger.”"])[Math.floor(rng() * 4)] + ` (${m.kind === "place" ? "a Chest on " + m.lane : "a Chest shifted to " + m.lane}, ringed)`
+      if (S.named) { S.msg = S.named + S.msg; S.named = ""; }
       afterAction("C", m);
     }
     function finish() {
       S.over = true;
       const a = portCount(S, "A"), c = portCount(S, "C");
       const won = a > c;
-      S.msg = `Ports: Alexi ${a}, the factor ${c}.`;
+      S.msg = `Ports: Alexi ${a}, the ${WHO} ${c}.`;
       render();
       api.store.set("losses", won ? 0 : losses + 1);
+      const cracks = Object.keys(S.cracked);
+      if (cracks.length) setFlag(api, "tea.cracked", cracks);
+      if (stage === "test") { if (won) setFlag(api, "tea.comptroller", true);
+        later(() => { endCard(root, art, won ? "chit-6-under-the-board-raised" : "piece-debt", won ? "CHIT No. 6 · A FAIR WIND, TO ORDER" : "DEBT IS FACT", "#14203a"); api.end({ outcome: won ? "win" : "lose", text: won
+          ? `Alexi ${a} ${a === 1 ? "port" : "ports"} to ${c}, with ${S.clauses} Clause ${S.clauses === 1 ? "token" : "tokens"} unspent. The Comptroller lifts his board to fold it, and a slip of paper is stuck to the foot-ring underneath: chit No. 6, struck out and smudged, “a fair wind, to order”. The Spice Mouth goes broken, one clause token more, and the sixth of eight is in his hand.`
+          : a === c ? `${a} to ${c}. “A tie, in my books, is mine.” The Spice Mouth stays bound, and notice +15. A port with two Debts is his whatever the lanes say: keep a Clause for the second disc.`
+          : `${a} ${a === 1 ? "port" : "ports"} to ${c}. The Comptroller enters it. The Spice Mouth stays bound, and notice +15. A port with two Debts is his whatever the lanes say: keep a Clause for the second disc.` }); }, 900);
+        return; }
+      if (final) {
+        later(() => { endCard(root, art, won ? "wreck-book-open-year" : "wreck-book-lost-list", won ? "THE WRECK BOOK · THE BOARD IS HIS NO LONGER" : "THE WRECK BOOK · THE LOST LIST", "#14203a"); api.end({ outcome: won ? "win" : "lose", text: (won
+          ? `Alexi ${a} ${a === 1 ? "port" : "ports"} to ${c}. The Lord of Tea looks at the board for a long time, and then at the book.`
+          : a === c ? `${a} to ${c}. “A tie, in my books, is mine.” He does not smile. He looks seasick.` : `${a} ${a === 1 ? "port" : "ports"} to ${c}. “You call it wild. In my books it is called unpaid.”`)
+          + ` He read ${S.read} ${S.read === 1 ? "name" : "names"} out of the Wreck Book${answered ? `; ${answered} ${answered === 1 ? "was" : "were"} already answered for` : ""}.`
+          + (cracks.length ? ` ${cracks.join(" and ")} ${cracks.length === 1 ? "is" : "are"} cracked across: no one will ever score ${cracks.length === 1 ? "it" : "them"}, and no safe lane can be laid there.` : " The porcelain is whole.")
+          + (won ? " What is done with the win waits for the tideline." : "") }); }, 900);
+        return; }
       later(() => api.end({ outcome: won ? "win" : "lose", text: won
         ? `Alexi ${a} ${a === 1 ? "port" : "ports"} to ${c}${S.stirUsed ? ", the last of it with the water's help" : ""}. The factor folds the board with a small bow and writes something in his book. The parlour is won: one more Hymn in the final match.`
         : a === c ? `${a} ${a === 1 ? "port" : "ports"} to ${c}. “A tie, in my books, is mine.” The factor folds the board and enters the result before the princess can object.`
@@ -261,12 +348,12 @@ export default {
         if (S.sel && S.sel.stir && !v) {
           const m = { kind: "stir", from: S.sel.lane, fi: S.sel.i, lane, i };
           if (!neighbours(laneById(S.sel.lane)).some((n) => n.id === lane)) return;
-          S.stirUsed = true; apply(S, "A", m); S.msg = "The water turns, and the Chest goes with it."; afterAction("A", m); return;
+          stirCount(m); apply(S, "A", m); S.msg = "The water turns, and the Chest goes with it."; afterAction("A", m); return;
         }
         if (v === "C" && stirTargets(S).some((t) => t.lane === lane && t.i === i)) {
           S.sel = { stir: true, lane, i };
           const dests = neighbours(laneById(lane)).flatMap((n) => S.slots[n.id].map((u, j) => (!u ? 1 : 0))).reduce((x, y) => x + y, 0);
-          if (!dests) { const m = { kind: "stir", from: lane, fi: i }; S.stirUsed = true; apply(S, "A", m); S.msg = "No room beside it: the Chest goes off the board."; afterAction("A", m); return; }
+          if (!dests) { const m = { kind: "stir", from: lane, fi: i }; stirCount(m); apply(S, "A", m); S.msg = "No room beside it: the Chest goes off the board."; afterAction("A", m); return; }
           S.msg = "Now the empty slot on a neighbouring lane to push it into.";
           render();
         }
@@ -280,6 +367,15 @@ export default {
         if (m) { apply(S, "A", m); S.msg = S.flips.length ? `${S.flips.map((k) => PORTS[k].name).join(" and ")} change${S.flips.length === 1 ? "s" : ""} hands.` : ""; afterAction("A", m); }
         else { S.msg = S.sel.reserve ? "Place only on a lane touching a port you hold, or one no one holds." : "Shift only to a lane that shares a port with this one."; render(); }
       }
+    }
+    function stirCount(m) { S.stirs++; if (S.stirs >= (final ? 2 : 1)) S.stirUsed = true; if (final && S.stirs === 2) { m.crack = true; beat(`The second stir is too much. A crack runs the length of ${m.from}, through the glaze and the lane under it. It scores for no one now, and it never will.`, true); } }
+    function clickPort(k) {
+      if (S.turn !== "A" || S.over || !S.started || !S.clauseMode) return;
+      if (!S.debt[k]) { S.msg = "No Debt on that port."; render(); return; }
+      const m = { kind: "clause", port: k };
+      S.clauses--; const nm = S.names[k].pop(); apply(S, "A", m);
+      S.msg = nm ? `The Clause strikes ${nm}'s line through. The Debt comes off ${PORTS[k].name}.` : `The Clause strikes a Debt off ${PORTS[k].name}.`;
+      afterAction("A", m);
     }
     function legalTargets() {
       if (S.turn !== "A" || !S.sel) return [];
@@ -376,8 +472,24 @@ export default {
             ${S.last && S.last.lane === l.id && S.last.i === i ? `<circle cx="${x}" cy="${y}" r="${A ? 35 : 29}" fill="none" stroke="${GOLD}" stroke-width="${A ? 5 : 3}"/>` : ""}</g>`;
         });
       }
+      for (const l of LANES) if (S.cracked[l.id]) { // the porcelain, cracked along a lane
+        const [mx, my] = bez(l, 0.5), PA = PORTS[l.a], PB = PORTS[l.b], ang = (Math.atan2(PB.y - PA.y, PB.x - PA.x) * 180) / Math.PI, len = Math.hypot(PB.x - PA.x, PB.y - PA.y) * 0.8;
+        out += art.has("tea-board-crack") ? `<image href="${art.url("tea-board-crack")}" x="${mx - len / 2}" y="${my - len * 0.1875}" width="${len}" height="${len * 0.375}" transform="rotate(${ang} ${mx} ${my})" style="pointer-events:none;mix-blend-mode:multiply" opacity=".9"/>` : `<path d="M${PA.x} ${PA.y} L${mx - 14} ${my + 10} L${mx + 12} ${my - 12} L${PB.x} ${PB.y}" fill="none" stroke="${DEEP}" stroke-width="3" style="pointer-events:none"/>`;
+        out += `<text x="${mx}" y="${my - 44}" text-anchor="middle" font-size="${17 * Z}" fill="${RED}" font-style="italic" font-family="IM Fell English, Georgia, serif" stroke="${GLAZE}" stroke-width="6" paint-order="stroke">cracked: no one's, ever</text>`;
+      }
+      if (S.insured) { const [il, ii] = S.insured.split(":"); if (S.slots[il][+ii] === "C") { const [x, y] = bez(laneById(il), T0 + +ii * DT); out += `<circle cx="${x}" cy="${y}" r="${A ? 37 : 30}" fill="none" stroke="${GOLD}" stroke-width="5" style="pointer-events:none"/><text x="${x}" y="${y - (A ? 44 : 36)}" text-anchor="middle" font-size="${15 * Z}" fill="${DEEP}" font-style="italic" font-family="IM Fell English, Georgia, serif" stroke="${GLAZE}" stroke-width="5" paint-order="stroke">insured</text>`; } }
       for (const [k, p] of Object.entries(PORTS)) {
         const hold = S.holder[k];
+        if (debtOn) { // Debt markers beside the port, and the port as a target for a Clause
+          const r = A ? 27 : 20, dx = A ? 92 : 62;
+          for (let i = 0; i < S.debt[k]; i++) {
+            const x = p.x + dx + i * (r * 2 + 6), y = p.y - (A ? 62 : 44), nm = S.names[k][i - (S.debt[k] - S.names[k].length)];
+            out += A && art.has("piece-debt") ? tile("piece-debt", x, y, r) : `<circle cx="${x}" cy="${y}" r="${r}" fill="${RED}" stroke="${DEEP}" stroke-width="2"/><text x="${x}" y="${y + 6}" text-anchor="middle" font-size="18" fill="${GLAZE}" font-style="italic" font-family="Georgia,serif">Dr.</text>`;
+            if (nm) out += `<text x="${x}" y="${y - r - 6}" text-anchor="middle" font-size="${15 * Z}" fill="${RED}" font-style="italic" font-family="IM Fell English, Georgia, serif" stroke="${GLAZE}" stroke-width="6" paint-order="stroke">${nm}</text>`;
+          }
+          if (S.last && S.last.port === k && S.debt[k]) { const x = p.x + dx + (S.debt[k] - 1) * (r * 2 + 6), y = p.y - (A ? 62 : 44); out += `<circle cx="${x}" cy="${y}" r="${r + 5}" fill="none" stroke="${GOLD}" stroke-width="4"/>`; }
+          out += `<g data-port="${k}" ${S.clauseMode && S.debt[k] ? `tabindex="0" role="button"` : ""} aria-label="${p.name}: ${hold === "A" ? "yours" : hold === "C" ? "the Company's" : "no one's"}, ${S.debt[k]} Debt${S.debt[k] === 1 ? "" : "s"}"><circle cx="${p.x}" cy="${p.y}" r="${A ? 70 : 52}" fill="transparent" stroke="${S.clauseMode && S.debt[k] ? GOLD : "transparent"}" stroke-width="6" stroke-dasharray="6 5" style="${S.clauseMode && S.debt[k] ? "cursor:pointer" : "pointer-events:none"}"/></g>`;
+        }
         if (!A) out += teahouse(p.x, p.y, hold);
         else if (hold) out += `<circle cx="${p.x}" cy="${p.y}" r="56" fill="${hold === "C" ? COB : SEA}" fill-opacity=".2" stroke="${hold === "C" ? COB : SEA}" stroke-width="9"/>${hold === "A" ? `<circle cx="${p.x}" cy="${p.y}" r="66" fill="none" stroke="${SEA}" stroke-width="3" stroke-dasharray="3 7"/>` : ""}`;
         if (S.flips.includes(k)) out += `<circle class="${P}pulse" cx="${p.x}" cy="${p.y}" r="${A ? 66 : 50}" fill="none" stroke="${GOLD}" stroke-width="6"/>`;
@@ -391,6 +503,10 @@ export default {
         out += `<text x="${lx}" y="${ly + 18 * ks}" text-anchor="middle" font-size="${13 * (narrow ? 1.9 : 1)}" fill="${COB}" font-style="italic" font-family="IM Fell English, Georgia, serif" stroke="${GLAZE}" stroke-width="${narrow ? 6 : 0}" paint-order="stroke">${narrow ? "" : (p.wild <= 40 ? "Ordered" : p.wild >= 60 ? "Wild" : "Contested") + " · "}${S.holder[k] === "A" ? "yours" : S.holder[k] === "C" ? (narrow ? "his" : "the Company's") : "no one's"}</text>`;
       }
       svg.innerHTML = out;
+      svg.querySelectorAll("[data-port]").forEach((g) => {
+        g.addEventListener("click", () => clickPort(g.dataset.port));
+        g.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); clickPort(g.dataset.port); } });
+      });
       svg.querySelectorAll("[data-slot]").forEach((g) => {
         const [lane, i] = g.dataset.slot.split(":");
         g.addEventListener("click", () => clickSlot(lane, +i));
@@ -398,20 +514,23 @@ export default {
       });
       const myTurn = S.turn === "A" && !S.over && S.started;
       const canStir = myTurn && phase(S) === "High" && !S.stirUsed && stirTargets(S).length > 0;
+      svg.setAttribute("aria-label", myTurn ? "The Tea Board: your move" : "The Tea Board");
       resEl.innerHTML = `<button type="button" data-r="hymn" class="${S.sel && S.sel.reserve ? "on" : ""}" ${myTurn && S.reserve.A > 0 ? "" : "disabled"}>${pieceIcon("piece-hymn", `<svg width="26" height="26" viewBox="0 0 40 40">${hymn(20, 20)}</svg>`)}Hymns × ${S.reserve.A}</button>
         <span style="display:flex;align-items:center;gap:6px">${pieceIcon("piece-chest", `<svg width="26" height="26" viewBox="0 0 40 40">${chest(20, 20)}</svg>`)}Chests × ${S.reserve.C}</span>
-        ${phase(S) === "High" || S.stirUsed ? `<button type="button" data-r="stir" class="${S.stirMode ? "on" : ""}" ${canStir || S.stirMode ? "" : "disabled"} title="High tide only, once: push a Chest off a lane by the Unwritten (S)">Stir${S.stirUsed ? " (used)" : ""}</button>` : ""}
+        ${phase(S) === "High" || S.stirUsed ? `<button type="button" data-r="stir" class="${S.stirMode ? "on" : ""}" ${canStir || S.stirMode ? "" : "disabled"} title="High tide only: push a Chest off a lane by the Unwritten (S)">${final && S.stirs === 1 && !S.stirUsed ? "Stir again: it will crack" : "Stir"}${S.stirUsed ? " (used)" : ""}</button>` : ""}
+        ${debtOn ? `<button type="button" data-r="clause" class="${S.clauseMode ? "on" : ""}" ${myTurn && S.clauses > 0 && Object.values(S.debt).some((v) => v > 0) ? "" : "disabled"} title="Spend a Clause token and your turn to strike one Debt off a port (C)">${pieceIcon("piece-clause", "")}Clause × ${S.clauses}</button>` : ""}
         ${S.round >= 3 ? `<button type="button" data-r="hint" ${myTurn && S.hints > 0 ? "" : "disabled"} title="Trust 40+: she shows one good move (A)">Ask her (${S.hints})</button>` : ""}
-        <span class="${P}score"><b>PORTS</b> you ${portCount(S, "A")} · factor ${portCount(S, "C")}</span>`;
+        <span class="${P}score"><b>PORTS</b> you ${portCount(S, "A")} · ${teach ? "factor" : "he"} ${portCount(S, "C")}${final ? ` · <b>WRECK BOOK</b> ${S.book.length} ${S.book.length === 1 ? "name" : "names"} unread` : ""}</span>`;
       resEl.querySelectorAll("[data-r]").forEach((b) => b.addEventListener("click", () => {
         const r = b.dataset.r;
         if (r === "hymn") { S.stirMode = false; S.sel = S.sel && S.sel.reserve ? null : { reserve: true }; S.msg = S.sel ? "Choose a lit slot." : "";
           if (S.sel && !moves(S, "A").some((m) => m.kind === "place")) { S.sel = null; S.msg = "No free slot on a lane you can reach. Shift one of your Hymns instead: click it, then a lit slot."; } }
-        if (r === "stir") { S.stirMode = !S.stirMode; S.sel = null; S.msg = S.stirMode ? "Pick a Chest on a lane by the Unwritten." : ""; }
+        if (r === "clause") { S.clauseMode = !S.clauseMode; S.stirMode = false; S.sel = null; S.msg = S.clauseMode ? "Choose the port (ringed) to strike a Debt off." : ""; }
+        if (r === "stir") { S.clauseMode = false; S.stirMode = !S.stirMode; S.sel = null; S.msg = S.stirMode ? "Pick a Chest on a lane by the Unwritten." : ""; }
         if (r === "hint" && S.hints > 0) { S.hints--; const m = bestMove(S, "A"); if (m) { S.hint = { lane: m.lane, i: m.i }; S.msg = `She points: ${m.kind === "place" ? "a Hymn there" : `the Hymn on ${m.from}, moved there`}.`; } }
         render();
       }));
-      if (!S.over) msgEl.textContent = S.msg || (S.started ? (myTurn ? `Your move. The tide is ${phase(S)}.` : "The factor considers.") : "");
+      if (!S.over) msgEl.textContent = S.msg || (S.started ? (myTurn ? `Your move. The tide is ${phase(S)}.` : `The ${WHO} considers.`) : "");
       else msgEl.textContent = S.msg;
       rowsEl.innerHTML = S.ledger.slice().reverse().map((r) => `<div>${r}</div>`).join("");
       beatEl.textContent = S.beat; beatEl.classList.toggle("voice", S.voice);
@@ -419,7 +538,8 @@ export default {
     }
     const onKey = (e) => {
       if (!S.started) return;
-      if (e.key === "Escape") { S.sel = null; S.stirMode = false; S.msg = ""; render(); }
+      if (e.key === "Escape") { S.sel = null; S.stirMode = false; S.clauseMode = false; S.msg = ""; render(); }
+      if (e.key === "c" || e.key === "C") resEl.querySelector('[data-r="clause"]:not(:disabled)')?.click();
       if (e.key === "h" || e.key === "H") resEl.querySelector('[data-r="hymn"]')?.click();
       if (e.key === "s" || e.key === "S") resEl.querySelector('[data-r="stir"]:not(:disabled)')?.click();
       if (e.key === "a" || e.key === "A") resEl.querySelector('[data-r="hint"]:not(:disabled)')?.click();
@@ -428,8 +548,14 @@ export default {
     S.ledger.push("─ the tide: Low ─");
     render();
     const b = how.querySelector("button");
-    b.addEventListener("click", () => { how.remove(); S.started = true; S.msg = "The factor moves first, as a courtesy to the house."; beat("Low tide. His Chests on lanes by Tidewater count double while it lasts. The princess watches the board, not the factor.", false); render(); later(factor, 900); });
+    let unnote = null;
+    b.addEventListener("click", () => {
+      how.remove(); S.started = true; S.msg = teach ? "The factor moves first, as a courtesy to the house." : `The ${WHO} moves first.`;
+      beat(final ? "Low tide. His Chests by Tidewater count double. The Wreck Book lies open at his elbow, face down on its own spine." : teach ? "Low tide. His Chests on lanes by Tidewater count double while it lasts. The princess watches the board, not the factor." : "Low tide. His Chests by Tidewater count double, and a red disc already sits on the Salt Steps: one Debt. A second would make it his.", false);
+      render(); later(factor, 900);
+      if (final && answered) unnote = note(w, `Because you rang ${answered === 1 ? "the bell" : "the bells"} of ${bells.slice(0, answered).join(", ")} in The Deep, ${answered} ${answered === 1 ? "name" : "names"} in his Wreck Book ${answered === 1 ? "is" : "are"} answered for: ${TOLL.slice(0, answered).map((x) => x[0]).join(", ")}. He has ${TOLL.length - answered} left to read.`, 11000, true);
+    });
     b.focus();
-    return { unmount() { timers.forEach(clearTimeout); timers.clear(); removeEventListener("keydown", onKey); S.over = true; } };
+    return { unmount() { timers.forEach(clearTimeout); timers.clear(); removeEventListener("keydown", onKey); S.over = true; if (unnote) unnote(); } };
   },
 };
