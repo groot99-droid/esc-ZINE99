@@ -38,6 +38,27 @@ def art_bundle(slug):
     return f"assets/art/{slug}.json"
 
 
+def endings(slug, art):
+    """The game's endings for its menu: name, whether it is the author's, what it costs, and its card."""
+    f = ROOT / "games" / slug / "data" / "endings.json"
+    if not f.is_file():
+        return []
+    d = json.loads(f.read_text(encoding="utf-8"))
+    by = {}
+    man = ROOT / "games" / slug / "keyart" / "keyart.json"
+    if man.is_file():
+        for a in json.loads(man.read_text(encoding="utf-8"))["images"]:
+            if a.get("kind") == "ending":
+                by[str(a.get("ending", "")).lower()] = a["id"]
+                by[a["id"]] = a["id"]
+    out = []
+    for e in (d["endings"] if isinstance(d, dict) else d):
+        kid = by.get(e["id"].lower()) or by.get(e.get("name", "").lower()) or by.get("ending-" + e["id"].replace("_", "-"))
+        out.append({"id": e["id"], "name": e.get("name", e["id"]), "as_written": bool(e.get("as_written")),
+                    "summary": e.get("summary", ""), "cost": e.get("cost", ""), "image": art.get(kid, "") if kid else ""})
+    return out
+
+
 RING = ["behind-the-peephole", "endless-temple", "heartstream", "lira-calyx", "lord-of-the-sea", "man-eater",
         "missing-campsites", "people-of-the-bark", "stuffed-ones", "wrymwretch"]   # each hides the one before it
 
@@ -107,7 +128,8 @@ def main():
                           "look": s["look"], "pictograph": f"assets/pictographs/{slug}/{s['key']}.svg",
                           "module": f"games/{slug}/{s['key']}.js"})
         art_path = art_bundle(slug)
-        games.append({"slug": slug, "art": art_path, "keyart": keyart(slug), "title": g["title"], "minutes": g.get("target_minutes"),
+        ka = keyart(slug)
+        games.append({"slug": slug, "art": art_path, "keyart": ka, "endings": endings(slug, ka), "title": g["title"], "minutes": g.get("target_minutes"),
                       "players": g.get("players"), "verb": g.get("core_verb"), "stills": stills,
                       "loading": f"games/{slug}/loading.js", "modes": modes})
     threads()

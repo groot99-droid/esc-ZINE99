@@ -31,6 +31,11 @@ export function render(root, ctx) {   // ctx: { title, label, still, stills, red
 }
 ```
 
+A loading module may also export `finale({ shared, done, keyart })`. The menu calls it; return `null`, or
+`{ title, text, image }` once the game's long puzzle has been paid off across its modes (read the flags the
+modes wrote with `api.shared`). The menu also lists the game's endings from `data/endings.json` with their
+generated cards, folded away as spoilers.
+
 A loading screen is the game's own: its palette, type, still, and one animated element that belongs
 to its world (a seam being stitched, a lens iris, a torch circle), plus the title, one line from the
 source quoted verbatim, and a rotating gameplay tip. It shows for at least 2.2 seconds.

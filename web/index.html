@@ -66,6 +66,18 @@ a { color: inherit; }
 .err { padding: 24px; font-family: var(--mono); }
 @media (prefers-reduced-motion: reduce) { .cover img { transition: none; } }
 .cover .stamp { position: absolute; right: 8px; bottom: 8px; border: 2px solid var(--riso); color: var(--riso); background: var(--paper); font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; padding: 2px 6px; transform: rotate(-4deg); }
+.finale { border: 2px solid var(--g-accent, var(--riso)); margin: 0 0 22px; padding: 0 0 14px; max-width: 760px; }
+.finale img { width: 100%; display: block; }
+.finale h2 { font-size: 26px; margin: 14px 16px 6px; }
+.finale p { margin: 0 16px; max-width: 62ch; }
+.endings { margin-top: 30px; border-top: 1px solid currentColor; padding-top: 12px; }
+.endings summary { cursor: pointer; font-family: var(--mono); font-size: 12.5px; text-transform: uppercase; letter-spacing: .06em; }
+.ends { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; margin-top: 14px; }
+.ends figure { margin: 0; min-width: 0; }
+.ends img { width: 100%; display: block; }
+.ends figcaption { padding-top: 8px; }
+.ends .tag { font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; border: 1px solid currentColor; padding: 1px 5px; margin-left: 8px; }
+.ends p { margin: 6px 0 0; font-size: 13.5px; opacity: .85; }
 .threads { margin-top: 44px; border-top: 3px solid var(--ink); padding-top: 14px; }
 .threads h2 { font-family: var(--display); font-weight: 800; font-size: 30px; line-height: 1; margin: 0 0 4px; text-transform: uppercase; }
 .threads p { margin: 0 0 14px; max-width: 60ch; color: var(--ink-dim); }

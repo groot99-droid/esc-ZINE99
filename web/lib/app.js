@@ -124,6 +124,48 @@ function menu(game, meta) {
     b.addEventListener("click", () => { location.hash = game.slug + "--" + mode.key; });
     wrap.appendChild(b);
   }
+  // The finale: a loading module may export finale({shared, done, keyart}) and return null, or
+  // { title, text, image } once the game's long puzzle is paid off across its modes.
+  const lm = loadingCache[game.slug];
+  if (lm && typeof lm.finale === "function") {
+    let f = null;
+    try {
+      f = lm.finale({ done: best, keyart: (id) => (game.keyart && game.keyart[id]) || "",
+        shared: { get: (k, d) => store.get(`${game.slug}/_shared/${k}`, d), set: (k, v) => store.set(`${game.slug}/_shared/${k}`, v) } });
+    } catch (e) { console.warn("finale failed", e); }
+    if (f && f.title) {
+      const box = document.createElement("section");
+      box.className = "finale";
+      if (f.image) { const im = document.createElement("img"); im.alt = ""; im.src = f.image; box.appendChild(im); }
+      const h = document.createElement("h2"); h.textContent = f.title;
+      const p = document.createElement("p"); p.textContent = f.text || "";
+      box.append(h, p);
+      m.insertBefore(box, wrap);
+    }
+  }
+  if (game.endings && game.endings.length) {
+    const d = document.createElement("details");
+    d.className = "endings";
+    const s = document.createElement("summary");
+    s.textContent = `How it can end (${game.endings.length} endings, spoilers)`;
+    d.appendChild(s);
+    const grid = document.createElement("div");
+    grid.className = "ends";
+    for (const e of game.endings) {
+      const c = document.createElement("figure");
+      if (e.image) { const im = document.createElement("img"); im.alt = ""; im.loading = "lazy"; im.src = e.image; c.appendChild(im); }
+      const cap = document.createElement("figcaption");
+      const b = document.createElement("b"); b.textContent = e.name;
+      cap.appendChild(b);
+      if (e.as_written) { const t = document.createElement("span"); t.className = "tag"; t.textContent = "as written"; cap.appendChild(t); }
+      const p = document.createElement("p"); p.textContent = e.cost ? `${e.summary} Cost: ${e.cost}` : e.summary;
+      cap.appendChild(p);
+      c.appendChild(cap);
+      grid.appendChild(c);
+    }
+    d.appendChild(grid);
+    m.appendChild(d);
+  }
   return m;
 }
 
