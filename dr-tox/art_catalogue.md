@@ -2,7 +2,7 @@
 
 The author's existing art for Dr. Tox, found in the Higgsfield generation history (catalogued 2026-11-16 from `studio/library/catalog.json`, last synced 2026-10-23). Prompt, model and job id are kept in `art_catalogue.json`; **no links are stored**. Thumbnails are in `art/thumbs/`; full-size originals stay on Higgsfield.
 
-Source bible: `Dr_Tox_Compiled_Bible_Obsidian.md`, the author's file, which is not in this repository or in `Pipelines-Plugin` (Part VI section 11 is the locked look, section 13 the prompt scaffold). The bible's own wording is not copied here.
+Source bible: `Dr_Tox_Compiled_Bible_Obsidian.md`, the author's file, kept unedited at `dr-tox/source/Dr_Tox_Compiled_Bible_Obsidian.md` (Part VI section 11 is the locked look, section 13 the prompt scaffold). The bible's own wording is not copied here.
 
 Not yet searched: anything after 2026-10-23, and the Aegis, Catalyst, Chitin and Altrulan material, which may exist under other prompts.
 
