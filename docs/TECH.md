@@ -3,6 +3,11 @@
 One shared engine runs all ten games. Each game is data plus a thin layer of game-specific code.
 This file is the proposal; the decisions marked **Decision** are for the author to confirm.
 
+The engine is not started: there is no `engine/` and no `games/<slug>/src/` yet. The playable
+prototypes of the 2D modes and 1D games in `web/` are separate from it: plain JavaScript modules with
+no build step and no libraries (`docs/WEB.md`). The 3D scenes exist as Blender build files
+(`docs/BLENDER.md`).
+
 ## Stack
 
 | Part | Choice | Why |
@@ -27,9 +32,19 @@ formats below still hold; only `engine/` changes.
 esc-zine99/
   README.md
   CLAUDE.md
-  docs/                 PILLARS.md, COLLECTION.md, TECH.md, DESIGN_TEMPLATE.md, ADAPTATIONS.md
-  schemas/              JSON Schemas for every data file a game ships
-  tools/validate.py     checks every game's data against the schemas and against itself
+  docs/                 PILLARS.md, COLLECTION.md, TECH.md, DESIGN_TEMPLATE.md, STORYBOARDS.md,
+                        PICTOGRAPHS.md (generated), graphic_styles.json, BLENDER.md, WEB.md, and the
+                        historical ADAPTATIONS.md, REFINE_ADDITIONS.md and DEEP_DIVE.md
+  schemas/              JSON Schemas for the four shared data files
+  tools/
+    validate.py         checks every game's data against the schemas and against itself
+    check_storyboards.py, check_assets.py, check_blender.py
+    pictographs/        build.py: draws every pictograph, regenerates docs/PICTOGRAPHS.md and
+                        docs/COLLECTION.md section 7
+    art/                build.py: draws a game's code-drawn art (artkit.py, sheet.mjs)
+    blender/            compile.py, blockout.py, build_lib.py (docs/BLENDER.md)
+    web/                build.py and smoke.mjs (docs/WEB.md)
+  web/                  the hub and the playable 2D and 1D prototypes (docs/WEB.md)
   engine/               the shared engine (not yet written)
     core/               state store, flags, meters, ending resolver, save system, clock
     layers/             Layer3D, Layer2D, Layer1D and the transitions between them
@@ -38,6 +53,8 @@ esc-zine99/
     input/              keyboard, mouse, gamepad, touch; remappable
   games/<slug>/
     DESIGN.md           the game's full design
+    DEEP_DIVE.md        the development plan of 2026-11-14 (historical; built into DESIGN.md)
+    storyboard_additions.md  phase 2 and 3 storyboard rows (historical; merged into docs/STORYBOARDS.md)
     data/
       game.json         title, length, chapters, layers used
       scenes.json       every 3D scene, 2D sequence and 1D game, with ids
@@ -45,8 +62,13 @@ esc-zine99/
       endings.json      every ending and its exact conditions
       schemas/          optional: schemas for any extra data files this game needs
     tools/check_data.py optional: checks those extra files; validate.py runs it
-    src/                game-specific code (not yet written)
-    assets/             models, textures, audio (not yet made)
+    reference/          four mood stills
+    pictographs/        make.py and one SVG per 2D mode and 1D game
+    art/                art drawn by code: src/, one SVG per asset, art.json, README.md
+    keyart/             generated key art and ending cards, keyart.json
+    assets/             assets.json, locations/ and objects/: the Blender and Meshy reference images
+    blender/            one <location>.build.json per 3D location
+    src/                game-specific engine code (not yet written)
 ```
 
 ## The engine

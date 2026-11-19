@@ -67,5 +67,9 @@ imports only bpy, math and json, so it runs headless or through the Blender MCP 
 assembly's own steps. It also adds a `markers` collection with the player start and one empty per
 interaction, carrying its verb and target scene as custom properties for the engine export.
 
-The worked example is `games/man-eater/blender/bunk-room.build.json`: one room, thirteen scenes
-(day, evening and night lighting, the door at 10:00 on six nights).
+The worked example is `games/man-eater/blender/bunk-room.build.json`: one room, fourteen scenes
+(day, evening and night lighting, the door at 10:00 on six nights, and since 2026-11-16 the bunk in
+the One Set of Prints ending, `e_prints_bunk`).
+
+Every game has one build file per location in its `assets/assets.json`, 126 in all, covering its
+304 3D scenes. No scene has been run in Blender yet.
