@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 520" width="240" height="520" role="img" aria-labelledby="triage-tray-t triage-tray-d">
+<title id="triage-tray-t">The tincture tray</title>
+<desc id="triage-tray-d">The tincture tray at the left of the table: a white card tray with TINCTURE marker-lettered on it, twelve shallow round wells for marks, and boxes below for water and cots.</desc>
+<defs><clipPath id="triage-tray-clip1"><rect x="4" y="4" width="226" height="506" rx="9"/></clipPath></defs>
+<rect x="6" y="8" width="230" height="510" rx="10" fill="#000" opacity="0.1"/>
+<rect x="2" y="2" width="230" height="510" rx="10" fill="#fdfdfb" stroke="#9a9a94" stroke-width="1.5"/>
+<g clip-path="url(#triage-tray-clip1)">
+<rect x="8.6" y="18" width="222" height="11" fill="#C98F3B" opacity="0.2" rx="6"/>
+<rect x="17.8" y="32" width="222" height="11" fill="#C98F3B" opacity="0.2" rx="6"/>
+<rect x="14.7" y="46" width="222" height="11" fill="#C98F3B" opacity="0.2" rx="6"/>
+<rect x="11" y="60" width="222" height="11" fill="#C98F3B" opacity="0.2" rx="6"/>
+<rect x="16" y="74" width="222" height="11" fill="#C98F3B" opacity="0.2" rx="6"/>
+<rect x="13.9" y="17" width="222" height="11" fill="#C98F3B" opacity="0.2" rx="6"/>
+<rect x="14.1" y="31" width="222" height="11" fill="#C98F3B" opacity="0.2" rx="6"/>
+<rect x="17.9" y="45" width="222" height="11" fill="#C98F3B" opacity="0.2" rx="6"/>
+<rect x="4.5" y="59" width="222" height="11" fill="#C98F3B" opacity="0.2" rx="6"/>
+<rect x="8.5" y="73" width="222" height="11" fill="#C98F3B" opacity="0.2" rx="6"/>
+</g>
+<text x="115" y="60" font-size="26" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold" letter-spacing="2" textLength="180" lengthAdjust="spacingAndGlyphs">TINCTURE</text>
+<circle cx="52" cy="120" r="22" fill="none" stroke="#9a9a94" stroke-width="2"/>
+<circle cx="116" cy="120" r="22" fill="none" stroke="#9a9a94" stroke-width="2"/>
+<circle cx="180" cy="120" r="22" fill="none" stroke="#9a9a94" stroke-width="2"/>
+<circle cx="52" cy="184" r="22" fill="none" stroke="#9a9a94" stroke-width="2"/>
+<circle cx="116" cy="184" r="22" fill="none" stroke="#9a9a94" stroke-width="2"/>
+<circle cx="180" cy="184" r="22" fill="none" stroke="#9a9a94" stroke-width="2"/>
+<circle cx="52" cy="248" r="22" fill="none" stroke="#9a9a94" stroke-width="2"/>
+<circle cx="116" cy="248" r="22" fill="none" stroke="#9a9a94" stroke-width="2"/>
+<circle cx="180" cy="248" r="22" fill="none" stroke="#9a9a94" stroke-width="2"/>
+<circle cx="52" cy="312" r="22" fill="none" stroke="#9a9a94" stroke-width="2"/>
+<circle cx="116" cy="312" r="22" fill="none" stroke="#9a9a94" stroke-width="2"/>
+<circle cx="180" cy="312" r="22" fill="none" stroke="#9a9a94" stroke-width="2"/>
+<rect x="18" y="380" width="210" height="50" rx="6" fill="none" stroke="#141414" stroke-width="2"/>
+<text x="30" y="412" font-size="18" font-family="sans-serif" fill="#141414" text-anchor="start" font-weight="bold" letter-spacing="2">WATER</text>
+<rect x="18" y="444" width="210" height="50" rx="6" fill="none" stroke="#141414" stroke-width="2"/>
+<text x="30" y="476" font-size="18" font-family="sans-serif" fill="#141414" text-anchor="start" font-weight="bold" letter-spacing="2">COTS</text>
+</svg>

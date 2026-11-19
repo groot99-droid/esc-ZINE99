@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-labelledby="triage-water-t triage-water-d">
+<title id="triage-water-t">Water (a tin cup)</title>
+<desc id="triage-water-d">Water as the page has it: a dented tin cup in quick ink with sky-blue marker inside it.</desc>
+<defs><clipPath id="triage-water-clip1"><path d="M24,30 L72,30 L66,84 L30,84Z"/></clipPath></defs>
+<g clip-path="url(#triage-water-clip1)">
+<rect x="13.3" y="30" width="64" height="7" fill="#7FA9D6" opacity="0.4" rx="6"/>
+<rect x="9.2" y="40" width="64" height="7" fill="#7FA9D6" opacity="0.4" rx="6"/>
+<rect x="9.4" y="50" width="64" height="7" fill="#7FA9D6" opacity="0.4" rx="6"/>
+<rect x="17.5" y="60" width="64" height="7" fill="#7FA9D6" opacity="0.4" rx="6"/>
+<rect x="21.4" y="70" width="64" height="7" fill="#7FA9D6" opacity="0.4" rx="6"/>
+<rect x="13.6" y="29" width="64" height="7" fill="#7FA9D6" opacity="0.4" rx="6"/>
+<rect x="17.4" y="39" width="64" height="7" fill="#7FA9D6" opacity="0.4" rx="6"/>
+<rect x="14.6" y="49" width="64" height="7" fill="#7FA9D6" opacity="0.4" rx="6"/>
+<rect x="12.6" y="59" width="64" height="7" fill="#7FA9D6" opacity="0.4" rx="6"/>
+<rect x="14.9" y="69" width="64" height="7" fill="#7FA9D6" opacity="0.4" rx="6"/>
+<rect x="18.7" y="79" width="64" height="7" fill="#7FA9D6" opacity="0.4" rx="6"/>
+</g>
+<path d="M24,30 L72,30 L66,84 L30,84Z" fill="none" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<path d="M72,40 C88,42 88,66 70,68" fill="none" stroke="#141414" stroke-width="3"/>
+<path d="M30,48 L36,52" stroke="#141414" stroke-width="2"/>
+</svg>

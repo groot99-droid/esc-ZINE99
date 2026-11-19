@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 260" width="1000" height="260" role="img" aria-labelledby="manifold-gauntlet-t manifold-gauntlet-d">
+<title id="manifold-gauntlet-t">The gauntlet: spine, line and numbered callouts</title>
+<desc id="manifold-gauntlet-d">The gauntlet laid out like a product shot: a matte black forearm piece, the clear line in from the wrist shunt at the left carrying a dark red core, the manifold pipe along the spine with six empty valve sockets, and above each a gold callout circle numbered 1 to 6 with a leader line; a stub at the right end for the fifth outlet.</desc>
+<rect x="100" y="90" width="790" height="130" rx="40" fill="#2a2a2a" stroke="#141414" stroke-width="5"/>
+<line x1="180" y1="96" x2="170" y2="214" stroke="#3a3a3a" stroke-width="3"/>
+<line x1="330" y1="96" x2="320" y2="214" stroke="#3a3a3a" stroke-width="3"/>
+<line x1="480" y1="96" x2="470" y2="214" stroke="#3a3a3a" stroke-width="3"/>
+<line x1="630" y1="96" x2="620" y2="214" stroke="#3a3a3a" stroke-width="3"/>
+<line x1="780" y1="96" x2="770" y2="214" stroke="#3a3a3a" stroke-width="3"/>
+<path d="M0,150 C40,150 70,150 110,150" fill="none" stroke="#dfe7e8" stroke-width="18"/>
+<path d="M0,150 C40,150 70,150 110,150" fill="none" stroke="#4A0F14" stroke-width="7"/>
+<circle cx="18" cy="150" r="16" fill="#3a3a3a" stroke="#141414" stroke-width="3"/>
+<line x1="110" y1="150" x2="900" y2="150" stroke="#dfe7e8" stroke-width="20"/>
+<line x1="110" y1="150" x2="900" y2="150" stroke="#4A0F14" stroke-width="6" opacity="0.7"/>
+<rect x="896" y="132" width="30" height="36" fill="#3a3a3a" stroke="#141414" stroke-width="3"/>
+<circle cx="220" cy="150" r="30" fill="#3a3a3a" stroke="#141414" stroke-width="4"/>
+<line x1="220" y1="180" x2="220" y2="222" stroke="#dfe7e8" stroke-width="10"/>
+<line x1="220" y1="74" x2="220" y2="118" stroke="#141414" stroke-width="2"/>
+<circle cx="220" cy="50" r="24" fill="#F2C14E" stroke="#141414" stroke-width="3"/>
+<text x="220" y="60" font-size="28" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold">1</text>
+<circle cx="330" cy="150" r="30" fill="#3a3a3a" stroke="#141414" stroke-width="4"/>
+<line x1="330" y1="180" x2="330" y2="222" stroke="#dfe7e8" stroke-width="10"/>
+<line x1="330" y1="74" x2="330" y2="118" stroke="#141414" stroke-width="2"/>
+<circle cx="330" cy="50" r="24" fill="#F2C14E" stroke="#141414" stroke-width="3"/>
+<text x="330" y="60" font-size="28" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold">2</text>
+<circle cx="440" cy="150" r="30" fill="#3a3a3a" stroke="#141414" stroke-width="4"/>
+<line x1="440" y1="180" x2="440" y2="222" stroke="#dfe7e8" stroke-width="10"/>
+<line x1="440" y1="74" x2="440" y2="118" stroke="#141414" stroke-width="2"/>
+<circle cx="440" cy="50" r="24" fill="#F2C14E" stroke="#141414" stroke-width="3"/>
+<text x="440" y="60" font-size="28" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold">3</text>
+<circle cx="550" cy="150" r="30" fill="#3a3a3a" stroke="#141414" stroke-width="4"/>
+<line x1="550" y1="180" x2="550" y2="222" stroke="#dfe7e8" stroke-width="10"/>
+<line x1="550" y1="74" x2="550" y2="118" stroke="#141414" stroke-width="2"/>
+<circle cx="550" cy="50" r="24" fill="#F2C14E" stroke="#141414" stroke-width="3"/>
+<text x="550" y="60" font-size="28" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold">4</text>
+<circle cx="660" cy="150" r="30" fill="#3a3a3a" stroke="#141414" stroke-width="4"/>
+<line x1="660" y1="180" x2="660" y2="222" stroke="#dfe7e8" stroke-width="10"/>
+<line x1="660" y1="74" x2="660" y2="118" stroke="#141414" stroke-width="2"/>
+<circle cx="660" cy="50" r="24" fill="#F2C14E" stroke="#141414" stroke-width="3"/>
+<text x="660" y="60" font-size="28" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold">5</text>
+<circle cx="770" cy="150" r="30" fill="#3a3a3a" stroke="#141414" stroke-width="4"/>
+<line x1="770" y1="180" x2="770" y2="222" stroke="#dfe7e8" stroke-width="10"/>
+<line x1="770" y1="74" x2="770" y2="118" stroke="#141414" stroke-width="2"/>
+<circle cx="770" cy="50" r="24" fill="#F2C14E" stroke="#141414" stroke-width="3"/>
+<text x="770" y="60" font-size="28" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold">6</text>
+</svg>

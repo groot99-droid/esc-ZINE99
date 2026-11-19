@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-labelledby="bloom-cordon-t bloom-cordon-d">
+<title id="bloom-cordon-t">Cordon: a crew's sheeting on a cell</title>
+<desc id="bloom-cordon-d">A cordon laid over a cell (transparent): a heavy black bar of wet sheeting across the block, a salvaged filter as a dotted square, and a crew member in magenta at its end.</desc>
+<defs><pattern id="bloom-cordon-ben1" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(15)"><circle cx="3" cy="3" r="1.6" fill="#2fa8d8"/></pattern><pattern id="bloom-cordon-ben2" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3" cy="3" r="1.8" fill="#141414"/></pattern></defs>
+<rect x="10" y="50" width="100" height="20" fill="#141414"/>
+<rect x="14" y="54" width="92" height="12" fill="url(#bloom-cordon-ben1)" opacity="0.8"/>
+<rect x="20" y="18" width="26" height="26" fill="url(#bloom-cordon-ben2)" stroke="#141414" stroke-width="2"/>
+<path d="M91.1,69.6 L96.9,69.6 L97.5,76 L95.9,78.6 L101.7,82.4 L101,95.2 L98.5,108 L95,108 L94,96.5 L93,108 L89.5,108 L87,95.2 L86.3,82.4 L92.1,78.6 L90.5,76Z" fill="#d8336a" stroke="#141414" stroke-width="1.5"/>
+<rect x="2" y="2" width="116" height="116" fill="none" stroke="#141414" stroke-width="4" stroke-dasharray="14 8"/>
+</svg>

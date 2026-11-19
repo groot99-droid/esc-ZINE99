@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-labelledby="title-fall-t title-fall-d">
+<title id="title-fall-t">Title lettering: Dr. Tox: Fall</title>
+<desc id="title-fall-d">The title, DR. TOX in tall pale capitals over FALL in amber, on graded concrete with film grain; an amber monitor line under it steps down a level halfway across, as if the floor had dropped, and a small line names the series and the episode.</desc>
+<defs><filter id="title-fall-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="174"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><radialGradient id="title-fall-vig2" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.5"/></radialGradient></defs>
+<rect x="0" y="0" width="1200" height="420" fill="#0d1112"/>
+<rect x="0" y="0" width="1200" height="420" filter="url(#title-fall-grain1)"/>
+<rect x="0" y="0" width="1200" height="420" fill="url(#title-fall-vig2)"/>
+<rect x="0" y="0" width="1200" height="420" fill="#5E7375" opacity="0.1"/>
+<rect x="0" y="0" width="1200" height="420" fill="#5F6F5A" opacity="0.1"/>
+<text x="600" y="200" font-size="168" font-family="sans-serif" fill="#000" text-anchor="middle" font-weight="bold" letter-spacing="10" opacity="0.6" transform="translate(6,8)">DR. TOX</text>
+<text x="600" y="200" font-size="168" font-family="sans-serif" fill="#E9ECEA" text-anchor="middle" font-weight="bold" letter-spacing="10">DR. TOX</text>
+<path d="M140,250 L206,250 L213.3,220 L222.1,262 L230.9,250 L286.7,250 L352.7,250 L360,220 L368.8,262 L377.6,250 L433.3,250 L499.3,250 L506.7,220 L515.5,262 L524.3,250 L580,250" fill="none" stroke="#D99A2B" stroke-width="4" stroke-linejoin="round"/>
+<path d="M580,250 L620,250 L630,280 L660,280" fill="none" stroke="#D99A2B" stroke-width="4" stroke-linejoin="round"/>
+<path d="M660,280 L720,280 L726.7,258 L734.7,288.8 L742.7,280 L793.3,280 L853.3,280 L860,258 L868,288.8 L876,280 L926.7,280 L986.7,280 L993.3,258 L1001.3,288.8 L1009.3,280 L1060,280" fill="none" stroke="#D99A2B" stroke-width="4" stroke-linejoin="round" opacity="0.8"/>
+<text x="600" y="362" font-size="80" font-family="serif" fill="#D99A2B" text-anchor="middle" letter-spacing="18">F A L L</text>
+<text x="600" y="404" font-size="20" font-family="sans-serif" fill="#C4CDCB" text-anchor="middle" letter-spacing="5">EPISODE 2 OF 4  ·  AGE OF GLASS &amp; GREED</text>
+</svg>

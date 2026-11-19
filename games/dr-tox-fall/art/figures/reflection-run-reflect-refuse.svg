@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320" width="200" height="320" role="img" aria-labelledby="reflection-run-reflect-refuse-t reflection-run-reflect-refuse-d">
+<title id="reflection-run-reflect-refuse-t">The reflection refusing (back turned, inverted)</title>
+<desc id="reflection-run-reflect-refuse-d">The repeat that does not match: the reflection upside down, stopped and turned away, its colour block printed in coral and badly out of register, one hand flat against the glass.</desc>
+<g transform="translate(0,320) scale(1,-1)">
+<path d="M83.2,28.8 L100,19.2 L119.2,31.2 L126.4,72 L131.2,98.4 L114.4,91.2 L131.2,117.6 L126.4,204 L140.8,252 L112,256.8 L114.4,312 L104.8,312 L100,228 L95.2,312 L85.6,312 L88,256.8 L59.2,252 L73.6,204 L68.8,117.6 L85.6,91.2 L68.8,98.4 L73.6,72Z" fill="#F0907A" transform="translate(-14,10)"/>
+<path d="M83.2,28.8 L100,19.2 L119.2,31.2 L126.4,72 L131.2,98.4 L114.4,91.2 L131.2,117.6 L126.4,204 L140.8,252 L112,256.8 L114.4,312 L104.8,312 L100,228 L95.2,312 L85.6,312 L88,256.8 L59.2,252 L73.6,204 L68.8,117.6 L85.6,91.2 L68.8,98.4 L73.6,72Z" fill="#3B1E5A" opacity="0.8"/>
+<path d="M128,150 L150,140 L156,166 L132,170Z" fill="#3B1E5A" opacity="0.8"/>
+<path d="M83.2,84 L119.2,84 L116.8,98.4 L85.6,98.4Z M107.2,96 L116.8,96 L124,148.8 L112,148.8Z" fill="#7FA9D6" opacity="0.6"/>
+<rect x="73.6" y="177.6" width="52.8" height="7.2" fill="#7FA9D6" opacity="0.5"/>
+<path d="M92.8,28.8 C104.8,24 114.4,33.6 116.8,50.4" fill="none" stroke="#ffffff" stroke-width="3.6" opacity="0.3"/>
+</g>
+</svg>

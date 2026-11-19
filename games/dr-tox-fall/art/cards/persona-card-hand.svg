@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 340" width="240" height="340" role="img" aria-labelledby="persona-card-hand-t persona-card-hand-d">
+<title id="persona-card-hand-t">Card: Take his hand</title>
+<desc id="persona-card-hand-d">A romance-comic card Cally builds, “Take his hand”: a hand drawing in plum line on a flat pastel card, the words in swooning italic serif, and a blank tag strip at the foot for the facets it carries.</desc>
+<rect x="10" y="12" width="222" height="320" rx="14" fill="#3B2A4A" opacity="0.2"/>
+<rect x="4" y="4" width="222" height="320" rx="14" fill="#F6C9D3" stroke="#3B2A4A" stroke-width="4"/>
+<rect x="16" y="16" width="198" height="296" rx="10" fill="none" stroke="#3B2A4A" stroke-width="1.5" opacity="0.6"/>
+<path d="M115,64.4 C92.6,48.4 103.8,32.4 115,43.6 C126.2,32.4 137.4,48.4 115,64.4Z" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<path d="M65,152 C95,112 135,112 165,152" fill="none" stroke="#3B2A4A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M115,136.4 C92.6,120.4 103.8,104.4 115,115.6 C126.2,104.4 137.4,120.4 115,136.4Z" fill="#E07A9A" stroke="#3B2A4A" stroke-width="2"/>
+<text x="115" y="228" font-size="26" font-family="serif" fill="#3B2A4A" text-anchor="middle" font-style="italic">Take his hand</text>
+<rect x="30" y="284" width="170" height="22" rx="11" fill="#ffffff" opacity="0.7" stroke="#3B2A4A" stroke-width="1.5"/>
+</svg>

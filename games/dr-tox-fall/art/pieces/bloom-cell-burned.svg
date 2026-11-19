@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-labelledby="bloom-cell-burned-t bloom-cell-burned-d">
+<title id="bloom-cell-burned-t">District cell: burned clear (the Cauldron)</title>
+<desc id="bloom-cell-burned-d">A block the Cauldron has burned clear once and emptied himself doing it: black dots scorched across the cyan, a hard yellow centre, no spores left.</desc>
+<defs><pattern id="bloom-cell-burned-ben1" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(15)"><circle cx="4.5" cy="4.5" r="1.6" fill="#2fa8d8"/></pattern><pattern id="bloom-cell-burned-ben2" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(0)"><circle cx="4" cy="4" r="1.2" fill="#e9c62e"/></pattern><pattern id="bloom-cell-burned-ben3" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="1.3" fill="#141414"/></pattern><pattern id="bloom-cell-burned-ben4" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="1.3" fill="#141414"/></pattern><pattern id="bloom-cell-burned-ben5" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="1.3" fill="#141414"/></pattern><pattern id="bloom-cell-burned-ben6" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="1.3" fill="#141414"/></pattern><pattern id="bloom-cell-burned-ben7" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="4.5" cy="4.5" r="3.2" fill="#141414"/></pattern><pattern id="bloom-cell-burned-ben8" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(0)"><circle cx="3.5" cy="3.5" r="3.4" fill="#e9c62e"/></pattern></defs>
+<rect x="0" y="0" width="120" height="120" fill="#efe2b8"/>
+<rect x="4" y="4" width="112" height="112" fill="url(#bloom-cell-burned-ben1)" opacity="0.7"/>
+<rect x="4" y="4" width="112" height="112" fill="url(#bloom-cell-burned-ben2)" opacity="0.5"/>
+<rect x="14" y="16" width="40" height="34" fill="url(#bloom-cell-burned-ben3)" opacity="0.6"/>
+<rect x="64" y="20" width="42" height="28" fill="url(#bloom-cell-burned-ben4)" opacity="0.6"/>
+<rect x="18" y="64" width="30" height="40" fill="url(#bloom-cell-burned-ben5)" opacity="0.6"/>
+<rect x="60" y="60" width="46" height="44" fill="url(#bloom-cell-burned-ben6)" opacity="0.6"/>
+<rect x="4" y="4" width="112" height="112" fill="url(#bloom-cell-burned-ben7)" opacity="0.8"/>
+<circle cx="60" cy="60" r="26" fill="url(#bloom-cell-burned-ben8)"/>
+<circle cx="60" cy="60" r="26" fill="none" stroke="#141414" stroke-width="2"/>
+<rect x="2" y="2" width="116" height="116" fill="none" stroke="#141414" stroke-width="4"/>
+</svg>

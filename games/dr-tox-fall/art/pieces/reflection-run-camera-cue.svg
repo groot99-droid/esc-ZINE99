@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="reflection-run-camera-cue-t reflection-run-camera-cue-d">
+<title id="reflection-run-camera-cue-t">The handler's cue: a printed camera</title>
+<desc id="reflection-run-camera-cue-d">The handler's cue: a small printed camera on a bracket inside a marked square frame, gold block under black ink, a lens circle left as bare paper; be in its view when the frame lights.</desc>
+<rect x="10" y="10" width="140" height="140" fill="#F2C14E"/>
+<rect x="4" y="4" width="140" height="140" fill="none" stroke="#1E1E1E" stroke-width="5"/>
+<path d="M30,60 L104,60 L104,108 L30,108Z M104,72 L132,60 L132,108 L104,96Z" fill="#F0907A" transform="translate(4,4)" opacity="1"/>
+<path d="M30,60 L104,60 L104,108 L30,108Z M104,72 L132,60 L132,108 L104,96Z" fill="#1E1E1E" opacity="0.9"/>
+<circle cx="58" cy="84" r="14" fill="#f1ede4"/>
+<line x1="66" y1="40" x2="66" y2="60" stroke="#1E1E1E" stroke-width="6"/>
+</svg>

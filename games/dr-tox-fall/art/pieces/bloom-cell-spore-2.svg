@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-labelledby="bloom-cell-spore-2-t bloom-cell-spore-2-d">
+<title id="bloom-cell-spore-2-t">District cell: spores, level 2</title>
+<desc id="bloom-cell-spore-2-d">A block with the spread on it, level 2 of 3: rust and ochre dots printed over the cyan screen, heavier, as the wind carries the spores block to block.</desc>
+<defs><pattern id="bloom-cell-spore-2-ben1" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(15)"><circle cx="4.5" cy="4.5" r="1.6" fill="#2fa8d8"/></pattern><pattern id="bloom-cell-spore-2-ben2" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(0)"><circle cx="4" cy="4" r="1.2" fill="#e9c62e"/></pattern><pattern id="bloom-cell-spore-2-ben3" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="1.3" fill="#141414"/></pattern><pattern id="bloom-cell-spore-2-ben4" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="1.3" fill="#141414"/></pattern><pattern id="bloom-cell-spore-2-ben5" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="1.3" fill="#141414"/></pattern><pattern id="bloom-cell-spore-2-ben6" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="1.3" fill="#141414"/></pattern><pattern id="bloom-cell-spore-2-ben7" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="5" cy="5" r="3" fill="#9C4A2A"/></pattern><pattern id="bloom-cell-spore-2-ben8" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(75)"><circle cx="4.5" cy="4.5" r="2.2" fill="#C98F3B"/></pattern></defs>
+<rect x="0" y="0" width="120" height="120" fill="#efe2b8"/>
+<rect x="4" y="4" width="112" height="112" fill="url(#bloom-cell-spore-2-ben1)" opacity="0.7"/>
+<rect x="4" y="4" width="112" height="112" fill="url(#bloom-cell-spore-2-ben2)" opacity="0.5"/>
+<rect x="14" y="16" width="40" height="34" fill="url(#bloom-cell-spore-2-ben3)" opacity="0.6"/>
+<rect x="64" y="20" width="42" height="28" fill="url(#bloom-cell-spore-2-ben4)" opacity="0.6"/>
+<rect x="18" y="64" width="30" height="40" fill="url(#bloom-cell-spore-2-ben5)" opacity="0.6"/>
+<rect x="60" y="60" width="46" height="44" fill="url(#bloom-cell-spore-2-ben6)" opacity="0.6"/>
+<rect x="4" y="4" width="112" height="112" fill="url(#bloom-cell-spore-2-ben7)" opacity="0.9"/>
+<rect x="4" y="4" width="112" height="112" fill="url(#bloom-cell-spore-2-ben8)" opacity="0.8"/>
+<path d="M41.3,68 L46.7,68 L47.3,74 L45.8,76.4 L51.2,80 L50.6,92 L48.2,104 L44.9,104 L44,93.2 L43.1,104 L39.8,104 L37.4,92 L36.8,80 L42.2,76.4 L40.7,74Z" fill="#d8336a" stroke="#141414" stroke-width="1.5"/>
+<rect x="2" y="2" width="116" height="116" fill="none" stroke="#141414" stroke-width="4"/>
+</svg>

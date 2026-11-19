@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 140" width="100" height="140" role="img" aria-labelledby="reflection-run-switch-t reflection-run-switch-d">
+<title id="reflection-run-switch-t">A switch in the glass world</title>
+<desc id="reflection-run-switch-d">A wall switch only the reflection can reach, printed upside down below the floor line: a mint plate, an ink toggle, a small arrow pointing to the door it opens.</desc>
+<g transform="translate(0,140) scale(1,-1)">
+<rect x="22" y="30" width="60" height="90" rx="6" fill="#9ED8C6" transform="translate(4,4)"/>
+<rect x="22" y="30" width="60" height="90" rx="6" fill="none" stroke="#2B2B6B" stroke-width="5"/>
+<rect x="42" y="50" width="20" height="40" rx="4" fill="#2B2B6B"/>
+<path d="M52,8 L64,22 L40,22Z" fill="#2B2B6B"/>
+</g>
+</svg>

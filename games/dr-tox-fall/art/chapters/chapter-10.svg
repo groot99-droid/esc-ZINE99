@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="chapter-10-t chapter-10-d">
+<title id="chapter-10-t">Chapter X: The Gala</title>
+<desc id="chapter-10-d">Chapter card 10, The Gala: a typed caption box (2236. Cally.) over clinical white with a trace of painted-sky blue, a Cally chapter, with no HUD, the chapter's name in capitals and one object drawn large.</desc>
+<defs><radialGradient id="chapter-10-rg1" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2C14E" stop-opacity="0.2"/><stop offset="100%" stop-color="#F2C14E" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="1280" height="720" fill="#f3f4f2"/>
+<rect x="0" y="0" width="1280" height="720" fill="#7FA9D6" opacity="0.1"/>
+<rect x="650" y="170" width="500" height="320" fill="#e8ece9" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<line x1="650" y1="170" x2="650" y2="490" stroke="#b9c3c1" stroke-width="3"/>
+<line x1="750" y1="170" x2="750" y2="490" stroke="#b9c3c1" stroke-width="3"/>
+<line x1="850" y1="170" x2="850" y2="490" stroke="#b9c3c1" stroke-width="3"/>
+<line x1="950" y1="170" x2="950" y2="490" stroke="#b9c3c1" stroke-width="3"/>
+<line x1="1050" y1="170" x2="1050" y2="490" stroke="#b9c3c1" stroke-width="3"/>
+<rect x="850" y="170" width="100" height="320" fill="#f7faf9" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<rect x="864" y="190" width="72" height="220" fill="#7FA9D6" opacity="0.2"/>
+<rect x="854" y="426" width="92" height="40" rx="3.2" fill="#c3cbca" stroke="#141414" stroke-width="2"/>
+<rect x="858.8" y="430.8" width="82.4" height="30.4" rx="2" fill="none" stroke="#141414" stroke-width="1"/>
+<circle cx="856.4" cy="428.4" r="1.4" fill="#141414"/>
+<circle cx="943.6" cy="428.4" r="1.4" fill="#141414"/>
+<circle cx="856.4" cy="463.6" r="1.4" fill="#141414"/>
+<circle cx="943.6" cy="463.6" r="1.4" fill="#141414"/>
+<text x="900" y="453.2" font-size="20" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold" letter-spacing="2.4">RCC</text>
+<circle cx="900" cy="230" r="160" fill="url(#chapter-10-rg1)"/>
+<rect x="75" y="75" width="460" height="56" fill="#000" opacity="0.5"/>
+<rect x="70" y="70" width="460" height="56" fill="#f3eedf" stroke="#141414" stroke-width="3"/>
+<text x="86" y="106.6" font-size="24" font-family="sans-serif" fill="#141414" text-anchor="start" font-weight="bold" letter-spacing="1.4">2236. CALLY.</text>
+<text x="72" y="560" font-size="26" font-family="sans-serif" fill="#6a5530" text-anchor="start" letter-spacing="6">CHAPTER X</text>
+<text x="70" y="630" font-size="58" font-family="sans-serif" fill="#141414" text-anchor="start" font-weight="bold" letter-spacing="2">THE GALA</text>
+</svg>

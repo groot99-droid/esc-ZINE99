@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 32" width="1200" height="32" role="img" aria-labelledby="hud-margin-calm-t hud-margin-calm-d">
+<title id="hud-margin-calm-t">Pulse margin line: calm (amber)</title>
+<desc id="hud-margin-calm-d">The thin margin line every Dr. Tox page keeps: amber, well under the Self line.</desc>
+<rect x="0" y="0" width="1200" height="32" fill="#050606"/>
+<path d="M8,20 L52.4,20 L57.3,9 L63.3,24.4 L69.2,20 L106.7,20 L151.1,20 L156,9 L161.9,24.4 L167.8,20 L205.3,20 L249.7,20 L254.7,9 L260.6,24.4 L266.5,20 L304,20 L348.4,20 L353.3,9 L359.3,24.4 L365.2,20 L402.7,20 L447.1,20 L452,9 L457.9,24.4 L463.8,20 L501.3,20 L545.7,20 L550.7,9 L556.6,24.4 L562.5,20 L600,20 L644.4,20 L649.3,9 L655.3,24.4 L661.2,20 L698.7,20 L743.1,20 L748,9 L753.9,24.4 L759.8,20 L797.3,20 L841.7,20 L846.7,9 L852.6,24.4 L858.5,20 L896,20 L940.4,20 L945.3,9 L951.3,24.4 L957.2,20 L994.7,20 L1039.1,20 L1044,9 L1049.9,24.4 L1055.8,20 L1093.3,20 L1137.7,20 L1142.7,9 L1148.6,24.4 L1154.5,20 L1192,20" fill="none" stroke="#D99A2B" stroke-width="2.5" stroke-linejoin="round"/>
+<line x1="300" y1="28" x2="300" y2="31" stroke="#D99A2B" stroke-width="1" opacity="0.5"/>
+<line x1="600" y1="28" x2="600" y2="31" stroke="#D99A2B" stroke-width="1" opacity="0.5"/>
+<line x1="900" y1="28" x2="900" y2="31" stroke="#D99A2B" stroke-width="1" opacity="0.5"/>
+</svg>

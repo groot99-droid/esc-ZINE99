@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="1200" height="140" role="img" aria-labelledby="loading-monitor-trigger-t loading-monitor-trigger-d">
+<title id="loading-monitor-trigger-t">Loading monitor line, amber under the Self line</title>
+<desc id="loading-monitor-trigger-d">The same strip with a pale dashed line across it marked SELF, the trigger line, and the amber trace climbing toward it: in Fall the State fires when Pulse reaches Self.</desc>
+<rect x="0" y="0" width="1200" height="140" fill="#060807"/>
+<path d="M0,0V140M28,0V140M56,0V140M84,0V140M112,0V140M140,0V140M168,0V140M196,0V140M224,0V140M252,0V140M280,0V140M308,0V140M336,0V140M364,0V140M392,0V140M420,0V140M448,0V140M476,0V140M504,0V140M532,0V140M560,0V140M588,0V140M616,0V140M644,0V140M672,0V140M700,0V140M728,0V140M756,0V140M784,0V140M812,0V140M840,0V140M868,0V140M896,0V140M924,0V140M952,0V140M980,0V140M1008,0V140M1036,0V140M1064,0V140M1092,0V140M1120,0V140M1148,0V140M1176,0V140M0,0H1200M0,28H1200M0,56H1200M0,84H1200M0,112H1200M0,140H1200" fill="none" stroke="#201a10" stroke-width="1"/>
+<line x1="0" y1="34" x2="1200" y2="34" stroke="#E9ECEA" stroke-width="2" stroke-dasharray="10 8" opacity="0.8"/>
+<text x="1180" y="26" font-size="14" font-family="monospace" fill="#E9ECEA" text-anchor="end" letter-spacing="3" opacity="0.8">SELF</text>
+<path d="M20,96 L85.2,96 L92.5,42 L101.2,117.6 L109.9,96 L165,96 L230.2,96 L237.5,42 L246.2,117.6 L254.9,96 L310,96 L375.2,96 L382.5,42 L391.2,117.6 L399.9,96 L455,96 L520.2,96 L527.5,42 L536.2,117.6 L544.9,96 L600,96 L665.2,96 L672.5,42 L681.2,117.6 L689.9,96 L745,96 L810.2,96 L817.5,42 L826.2,117.6 L834.9,96 L890,96 L955.2,96 L962.5,42 L971.2,117.6 L979.9,96 L1035,96 L1100.2,96 L1107.5,42 L1116.2,117.6 L1124.9,96 L1180,96" fill="none" stroke="#D99A2B" stroke-width="4" stroke-linejoin="round"/>
+<text x="20" y="28" font-size="16" font-family="monospace" fill="#D99A2B" text-anchor="start" letter-spacing="3">PULSE</text>
+<text x="1180" y="130" font-size="13" font-family="monospace" fill="#D99A2B" text-anchor="end" opacity="0.6">II</text>
+<text x="1070" y="130" font-size="13" font-family="monospace" fill="#D99A2B" text-anchor="end" opacity="0.6">HR</text>
+<text x="960" y="130" font-size="13" font-family="monospace" fill="#D99A2B" text-anchor="end" opacity="0.6">mm/s 25</text>
+</svg>

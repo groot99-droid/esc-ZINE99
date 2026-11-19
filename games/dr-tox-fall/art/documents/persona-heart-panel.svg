@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" width="720" height="480" role="img" aria-labelledby="persona-heart-panel-t persona-heart-panel-d">
+<title id="persona-heart-panel-t">The heart panel: his profile</title>
+<desc id="persona-heart-panel-d">A big heart-shaped panel with a plum keyline, flat pink inside, and in it a young man's profile in flat warm tone with dark hair and no features drawn: the attachment profile Cally is built to fit.</desc>
+<defs><clipPath id="persona-heart-panel-clip1"><path d="M360,457 C38,227 199,-3 360,158 C521,-3 682,227 360,457Z"/></clipPath></defs>
+<path d="M360,457 C38,227 199,-3 360,158 C521,-3 682,227 360,457Z" fill="#F6C9D3" stroke="#3B2A4A" stroke-width="8"/>
+<g clip-path="url(#persona-heart-panel-clip1)">
+<rect x="0" y="300" width="720" height="200" fill="#C9DDF2"/>
+<path d="M380,100 L430,110 L462.5,150 L467.5,200 L460,237.5 L467.5,275 L455,325 L445,375 L517.5,412.5 L555,462.5 L205,462.5 L230,412.5 L305,375 L302.5,325 L282.5,300 L287.5,282.5 L267.5,267.5 L280,257.5 L275,242.5 L285,230 L282.5,200 L297.5,150 L330,110Z" fill="#F2D3B8" stroke="#3B2A4A" stroke-width="4"/>
+<path d="M290,190 C280,90 440,60 470,150 C420,120 350,130 320,210Z" fill="#6b4b3a"/>
+</g>
+<path d="M360,457 C38,227 199,-3 360,158 C521,-3 682,227 360,457Z" fill="none" stroke="#3B2A4A" stroke-width="8"/>
+</svg>

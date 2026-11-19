@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 80" width="140" height="80" role="img" aria-labelledby="manifold-outlet-capped-t manifold-outlet-capped-d">
+<title id="manifold-outlet-capped-t">The fifth outlet, capped</title>
+<desc id="manifold-outlet-capped-d">The fifth outlet at the end of the spine with a heavy gray cap screwed on and CAPPED stencilled under it.</desc>
+<line x1="0" y1="34" x2="70" y2="34" stroke="#dfe7e8" stroke-width="18"/>
+<rect x="64" y="12" width="50" height="44" rx="4" fill="#777" stroke="#141414" stroke-width="4"/>
+<line x1="72" y1="14" x2="72" y2="54" stroke="#141414" stroke-width="1.5"/>
+<line x1="82" y1="14" x2="82" y2="54" stroke="#141414" stroke-width="1.5"/>
+<line x1="92" y1="14" x2="92" y2="54" stroke="#141414" stroke-width="1.5"/>
+<line x1="102" y1="14" x2="102" y2="54" stroke="#141414" stroke-width="1.5"/>
+<text x="70" y="76" font-size="16" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold" letter-spacing="2">CAPPED</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 540" width="1920" height="540" role="img" aria-labelledby="reflection-run-glass-near-t reflection-run-glass-near-d">
+<title id="reflection-run-glass-near-t">Reflection run: the glass hall (near layer)</title>
+<desc id="reflection-run-glass-near-d">Transparent near layer: the edges of glass panes close to the camera, printed as long pale diagonal highlights and thin ink frames, with a potted plant above the floor and its print below.</desc>
+<path d="M60,0 L100,0 L-20,540 L-60,540Z" fill="#ffffff" opacity="0.3"/>
+<rect x="260" y="0" width="8" height="540" fill="#1E1E1E" opacity="0.8"/>
+<path d="M540,0 L580,0 L460,540 L420,540Z" fill="#ffffff" opacity="0.3"/>
+<rect x="740" y="0" width="8" height="540" fill="#1E1E1E" opacity="0.8"/>
+<path d="M1020,0 L1060,0 L940,540 L900,540Z" fill="#ffffff" opacity="0.3"/>
+<rect x="1220" y="0" width="8" height="540" fill="#1E1E1E" opacity="0.8"/>
+<path d="M1500,0 L1540,0 L1420,540 L1380,540Z" fill="#ffffff" opacity="0.3"/>
+<rect x="1700" y="0" width="8" height="540" fill="#1E1E1E" opacity="0.8"/>
+<path d="M300,270 L308,210 L352,210 L360,270Z" fill="#F0907A" opacity="1"/>
+<ellipse cx="290" cy="180" rx="16" ry="30" fill="#9ED8C6" opacity="1"/>
+<ellipse cx="310" cy="160" rx="16" ry="30" fill="#9ED8C6" opacity="1"/>
+<ellipse cx="330" cy="180" rx="16" ry="30" fill="#9ED8C6" opacity="1"/>
+<ellipse cx="350" cy="160" rx="16" ry="30" fill="#9ED8C6" opacity="1"/>
+<ellipse cx="370" cy="180" rx="16" ry="30" fill="#9ED8C6" opacity="1"/>
+<path d="M300,270 L308,210 L352,210 L360,270Z" fill="#1E1E1E" opacity="0.5" transform="translate(4,-3)"/>
+<path d="M300,270 L308,330 L352,330 L360,270Z" fill="#F0907A" opacity="0.4"/>
+<ellipse cx="290" cy="360" rx="16" ry="30" fill="#9ED8C6" opacity="0.4"/>
+<ellipse cx="310" cy="380" rx="16" ry="30" fill="#9ED8C6" opacity="0.4"/>
+<ellipse cx="330" cy="360" rx="16" ry="30" fill="#9ED8C6" opacity="0.4"/>
+<ellipse cx="350" cy="380" rx="16" ry="30" fill="#9ED8C6" opacity="0.4"/>
+<ellipse cx="370" cy="360" rx="16" ry="30" fill="#9ED8C6" opacity="0.4"/>
+<path d="M300,270 L308,330 L352,330 L360,270Z" fill="#1E1E1E" opacity="0.2" transform="translate(4,-3)"/>
+<path d="M1260,270 L1268,210 L1312,210 L1320,270Z" fill="#F0907A" opacity="1"/>
+<ellipse cx="1250" cy="180" rx="16" ry="30" fill="#9ED8C6" opacity="1"/>
+<ellipse cx="1270" cy="160" rx="16" ry="30" fill="#9ED8C6" opacity="1"/>
+<ellipse cx="1290" cy="180" rx="16" ry="30" fill="#9ED8C6" opacity="1"/>
+<ellipse cx="1310" cy="160" rx="16" ry="30" fill="#9ED8C6" opacity="1"/>
+<ellipse cx="1330" cy="180" rx="16" ry="30" fill="#9ED8C6" opacity="1"/>
+<path d="M1260,270 L1268,210 L1312,210 L1320,270Z" fill="#1E1E1E" opacity="0.5" transform="translate(4,-3)"/>
+<path d="M1260,270 L1268,330 L1312,330 L1320,270Z" fill="#F0907A" opacity="0.4"/>
+<ellipse cx="1250" cy="360" rx="16" ry="30" fill="#9ED8C6" opacity="0.4"/>
+<ellipse cx="1270" cy="380" rx="16" ry="30" fill="#9ED8C6" opacity="0.4"/>
+<ellipse cx="1290" cy="360" rx="16" ry="30" fill="#9ED8C6" opacity="0.4"/>
+<ellipse cx="1310" cy="380" rx="16" ry="30" fill="#9ED8C6" opacity="0.4"/>
+<ellipse cx="1330" cy="360" rx="16" ry="30" fill="#9ED8C6" opacity="0.4"/>
+<path d="M1260,270 L1268,330 L1312,330 L1320,270Z" fill="#1E1E1E" opacity="0.2" transform="translate(4,-3)"/>
+</svg>

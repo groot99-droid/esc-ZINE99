@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="chapter-7-t chapter-7-d">
+<title id="chapter-7-t">Chapter VII: The Hero Comes Down</title>
+<desc id="chapter-7-d">Chapter card 7, The Hero Comes Down: a typed caption box (2233. Reese.) over the warm amber of HOPE's light, a Reese chapter, with no margin line, the chapter's name in capitals and one object drawn large.</desc>
+<defs><filter id="chapter-7-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="769"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="chapter-7-vig2" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.5"/></radialGradient><radialGradient id="chapter-7-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2C14E" stop-opacity="0.3"/><stop offset="100%" stop-color="#F2C14E" stop-opacity="0"/></radialGradient><radialGradient id="chapter-7-rg4" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2C14E" stop-opacity="0.7"/><stop offset="100%" stop-color="#D99A2B" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="1280" height="720" fill="#3a2a16"/>
+<rect x="0" y="0" width="1280" height="720" filter="url(#chapter-7-grain1)"/>
+<rect x="0" y="0" width="1280" height="720" fill="url(#chapter-7-vig2)"/>
+<circle cx="640" cy="120" r="640" fill="url(#chapter-7-rg3)"/>
+<rect x="680" y="170" width="440" height="320" fill="#2a2620" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<rect x="830" y="210" width="140" height="280" fill="#0e0c09" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="900" cy="300" r="120" fill="url(#chapter-7-rg4)"/>
+<rect x="750" y="190" width="300" height="300" fill="#f6e2a8" opacity="0.6" stroke="#141414" stroke-width="4"/>
+<rect x="750" y="190" width="300" height="300" fill="none" stroke="#fff6dc" stroke-width="10" opacity="0.8"/>
+<rect x="75" y="75" width="460" height="56" fill="#000" opacity="0.5"/>
+<rect x="70" y="70" width="460" height="56" fill="#f3eedf" stroke="#141414" stroke-width="3"/>
+<text x="86" y="106.6" font-size="24" font-family="sans-serif" fill="#141414" text-anchor="start" font-weight="bold" letter-spacing="1.4">2233. REESE.</text>
+<text x="72" y="560" font-size="26" font-family="sans-serif" fill="#F2C14E" text-anchor="start" letter-spacing="6">CHAPTER VII</text>
+<text x="70" y="630" font-size="46" font-family="sans-serif" fill="#E9ECEA" text-anchor="start" font-weight="bold" letter-spacing="2">THE HERO COMES DOWN</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 96" width="240" height="96" role="img" aria-labelledby="hud-word-rcc-t hud-word-rcc-d">
+<title id="hud-word-rcc-t">Terminology Rule: RCC (the plate)</title>
+<desc id="hud-word-rcc-d">The word RCC as the State's own signage has it: stamped capitals on a riveted gray-teal plate, as on every dispenser, rig and clean-air column in Fall.</desc>
+<rect x="6" y="10" width="228" height="76" rx="6.1" fill="#8A9A99" stroke="#141414" stroke-width="3"/>
+<rect x="15.1" y="19.1" width="209.8" height="57.8" rx="3.8" fill="none" stroke="#141414" stroke-width="1.5"/>
+<circle cx="10.6" cy="14.6" r="2.7" fill="#141414"/>
+<circle cx="229.4" cy="14.6" r="2.7" fill="#141414"/>
+<circle cx="10.6" cy="81.4" r="2.7" fill="#141414"/>
+<circle cx="229.4" cy="81.4" r="2.7" fill="#141414"/>
+<text x="120" y="63.1" font-size="42" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold" letter-spacing="5">RCC</text>
+</svg>

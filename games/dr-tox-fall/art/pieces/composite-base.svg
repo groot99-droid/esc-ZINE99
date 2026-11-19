@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-labelledby="composite-base-t composite-base-d">
+<title id="composite-base-t">The base form, with the constants printed</title>
+<desc id="composite-base-d">The pale base form on its own acetate: a too-thin standing shape, skin drawn stretched taut over hollows where mass was pulled inward, thick black veins branching at the neck and arms, the jaw longer than the skull allows, and two small green eyes, the only colour; typed tabs name each constant.</desc>
+<path d="M300,40 C330,40 346,64 344,96 C342,120 336,140 332,160 L318,196 L380,214 C410,224 420,250 422,290 L430,470 L408,474 L394,300 L378,300 L376,520 L360,780 L330,780 L310,540 L290,540 L270,780 L240,780 L224,520 L222,300 L206,300 L192,474 L170,470 L178,290 C180,250 190,224 220,214 L282,196 L268,160 C264,140 258,120 256,96 C254,64 270,40 300,40Z" fill="#E9ECEA" stroke="#9aa5a4" stroke-width="2.5"/>
+<path d="M268,150 C276,190 290,206 300,212 C310,206 324,190 332,150" fill="none" stroke="#2a3340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M244,300 C270,310 330,310 356,300" fill="none" stroke="#9aa5a4" stroke-width="1.8"/>
+<path d="M244,334 C270,344 330,344 356,334" fill="none" stroke="#9aa5a4" stroke-width="1.8"/>
+<path d="M244,368 C270,378 330,378 356,368" fill="none" stroke="#9aa5a4" stroke-width="1.8"/>
+<path d="M244,402 C270,412 330,412 356,402" fill="none" stroke="#9aa5a4" stroke-width="1.8"/>
+<path d="M262,450 C280,470 320,470 338,450" fill="none" stroke="#9aa5a4" stroke-width="1.8"/>
+<path d="M296,170 C292,190 286,200 270,210 M300,176 C306,194 316,202 330,210" fill="none" stroke="#1A0B0C" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M212,300 C204,340 198,380 196,430 M206,350 C196,360 190,372 188,384" fill="none" stroke="#1A0B0C" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M388,300 C396,340 402,380 404,430 M394,350 C404,360 410,372 412,384" fill="none" stroke="#1A0B0C" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M282,214 C270,232 262,250 258,276 M318,214 C330,232 338,250 342,276" fill="none" stroke="#1A0B0C" stroke-width="3.5" stroke-linecap="round"/>
+<circle cx="287" cy="92" r="5" fill="#7FD957"/>
+<circle cx="313" cy="92" r="5" fill="#7FD957"/>
+<line x1="420" y1="140" x2="436" y2="140" stroke="#7d9aa6" stroke-width="1"/>
+<rect x="440" y="126" width="152" height="22" fill="#ffffff" opacity="0.8" stroke="#7d9aa6" stroke-width="1"/>
+<text x="446" y="142" font-size="11" font-family="monospace" fill="#2a3340" text-anchor="start">JAW PAST THE SKULL</text>
+<line x1="318" y1="92" x2="436" y2="92" stroke="#7d9aa6" stroke-width="1"/>
+<rect x="440" y="78" width="152" height="22" fill="#ffffff" opacity="0.8" stroke="#7d9aa6" stroke-width="1"/>
+<text x="446" y="94" font-size="11" font-family="monospace" fill="#2a3340" text-anchor="start">EYES GREEN</text>
+<line x1="330" y1="230" x2="436" y2="230" stroke="#7d9aa6" stroke-width="1"/>
+<rect x="440" y="216" width="152" height="22" fill="#ffffff" opacity="0.8" stroke="#7d9aa6" stroke-width="1"/>
+<text x="446" y="232" font-size="11" font-family="monospace" fill="#2a3340" text-anchor="start">VEINS BLACKENED</text>
+<line x1="356" y1="330" x2="436" y2="330" stroke="#7d9aa6" stroke-width="1"/>
+<rect x="440" y="316" width="152" height="22" fill="#ffffff" opacity="0.8" stroke="#7d9aa6" stroke-width="1"/>
+<text x="446" y="332" font-size="11" font-family="monospace" fill="#2a3340" text-anchor="start">SKIN TAUT</text>
+<line x1="338" y1="456" x2="436" y2="456" stroke="#7d9aa6" stroke-width="1"/>
+<rect x="440" y="442" width="152" height="22" fill="#ffffff" opacity="0.8" stroke="#7d9aa6" stroke-width="1"/>
+<text x="446" y="458" font-size="11" font-family="monospace" fill="#2a3340" text-anchor="start">MASS PULLED IN</text>
+</svg>

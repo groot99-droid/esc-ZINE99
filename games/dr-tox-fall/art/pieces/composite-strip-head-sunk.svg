@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-labelledby="composite-strip-head-sunk-t composite-strip-head-sunk-d">
+<title id="composite-strip-head-sunk-t">Strip, head: sunk between the shoulders</title>
+<desc id="composite-strip-head-sunk-d">An acetate strip for the head: line drawing of the head set too low, the neck gone, the shoulders rising past the ears; typed HEAD tab and a blank grease tab for witness numbers.</desc>
+<rect x="12" y="10" width="576" height="190" rx="6" fill="#ffffff" opacity="0.2" stroke="#7d9aa6" stroke-width="2.5"/>
+<circle cx="30" cy="26" r="7" fill="#d9dcd6" opacity="0.8" stroke="#7d9aa6" stroke-width="1.5"/>
+<circle cx="570" cy="26" r="7" fill="#d9dcd6" opacity="0.8" stroke="#7d9aa6" stroke-width="1.5"/>
+<rect x="44" y="16" width="120" height="22" fill="#ffffff" opacity="0.8" stroke="#7d9aa6" stroke-width="1"/>
+<text x="52" y="32" font-size="13" font-family="monospace" fill="#2a3340" text-anchor="start" letter-spacing="2">HEAD</text>
+<rect x="470" y="16" width="86" height="22" fill="none" stroke="#b03030" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6"/>
+<path d="M300,120 C326,120 342,138 340,164 C338,184 330,196 322,206 L278,206 C270,196 262,184 260,164 C258,138 274,120 300,120Z" fill="none" stroke="#2a3340" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M240,190 C262,170 280,150 284,128 M360,190 C338,170 320,150 316,128" fill="none" stroke="#2a3340" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M276,196 C282,232 292,246 300,250 C308,246 318,232 324,196" fill="none" stroke="#2a3340" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

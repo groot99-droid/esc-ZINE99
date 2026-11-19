@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 540" width="240" height="540" role="img" aria-labelledby="reflection-run-frame-t reflection-run-frame-d">
+<title id="reflection-run-frame-t">Repeat frame, unprinted</title>
+<desc id="reflection-run-frame-d">One repeat frame before it is printed: a thin ink outline, a floor line across the middle and registration marks at the corners, the paper showing through; a refused frame stays like this.</desc>
+<rect x="14" y="14" width="212" height="512" fill="#f1ede4" opacity="0.5" stroke="#1E1E1E" stroke-width="2" stroke-dasharray="8 6"/>
+<line x1="14" y1="270" x2="226" y2="270" stroke="#1E1E1E" stroke-width="2" stroke-dasharray="8 6"/>
+<circle cx="8" cy="8" r="5" fill="none" stroke="#1E1E1E" stroke-width="1.2"/>
+<line x1="0" y1="8" x2="16" y2="8" stroke="#1E1E1E" stroke-width="1.2"/>
+<line x1="8" y1="0" x2="8" y2="16" stroke="#1E1E1E" stroke-width="1.2"/>
+<circle cx="232" cy="8" r="5" fill="none" stroke="#1E1E1E" stroke-width="1.2"/>
+<line x1="224" y1="8" x2="240" y2="8" stroke="#1E1E1E" stroke-width="1.2"/>
+<line x1="232" y1="0" x2="232" y2="16" stroke="#1E1E1E" stroke-width="1.2"/>
+<circle cx="8" cy="532" r="5" fill="none" stroke="#1E1E1E" stroke-width="1.2"/>
+<line x1="0" y1="532" x2="16" y2="532" stroke="#1E1E1E" stroke-width="1.2"/>
+<line x1="8" y1="524" x2="8" y2="540" stroke="#1E1E1E" stroke-width="1.2"/>
+<circle cx="232" cy="532" r="5" fill="none" stroke="#1E1E1E" stroke-width="1.2"/>
+<line x1="224" y1="532" x2="240" y2="532" stroke="#1E1E1E" stroke-width="1.2"/>
+<line x1="232" y1="524" x2="232" y2="540" stroke="#1E1E1E" stroke-width="1.2"/>
+</svg>

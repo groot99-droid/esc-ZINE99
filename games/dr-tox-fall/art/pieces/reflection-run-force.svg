@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="reflection-run-force-t reflection-run-force-d">
+<title id="reflection-run-force-t">Force (hold): the reflection dragged on</title>
+<desc id="reflection-run-force-d">The Force prompt: a printed arrow pulling right out of a coral block, FORCE in heavy capitals, the ink pass off register.</desc>
+<rect x="14" y="18" width="132" height="124" fill="#F0907A"/>
+<path d="M30,70 L100,70 L100,50 L136,84 L100,118 L100,98 L30,98Z" fill="#ffffff" transform="translate(-5,4)" opacity="1"/>
+<path d="M30,70 L100,70 L100,50 L136,84 L100,118 L100,98 L30,98Z" fill="#1E1E1E" opacity="0.9"/>
+<path d="M22,30 l8,8 l-8,8" fill="none" stroke="#1E1E1E" stroke-width="3"/>
+<path d="M36,30 l8,8 l-8,8" fill="none" stroke="#1E1E1E" stroke-width="3"/>
+<text x="80" y="150" font-size="22" font-family="sans-serif" fill="#1E1E1E" text-anchor="middle" font-weight="bold" letter-spacing="3">FORCE</text>
+</svg>

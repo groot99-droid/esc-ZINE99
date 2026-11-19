@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 340" width="240" height="340" role="img" aria-labelledby="persona-card-laugh-t persona-card-laugh-d">
+<title id="persona-card-laugh-t">Card: Laugh at his joke</title>
+<desc id="persona-card-laugh-d">A romance-comic card Cally builds, “Laugh at his joke”: a laugh drawing in plum line on a flat pastel card, the words in swooning italic serif, and a blank tag strip at the foot for the facets it carries.</desc>
+<rect x="10" y="12" width="222" height="320" rx="14" fill="#3B2A4A" opacity="0.2"/>
+<rect x="4" y="4" width="222" height="320" rx="14" fill="#BFE3E0" stroke="#3B2A4A" stroke-width="4"/>
+<rect x="16" y="16" width="198" height="296" rx="10" fill="none" stroke="#3B2A4A" stroke-width="1.5" opacity="0.6"/>
+<path d="M115,64.4 C92.6,48.4 103.8,32.4 115,43.6 C126.2,32.4 137.4,48.4 115,64.4Z" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<path d="M75,122 q10,-16 20,0" fill="none" stroke="#3B2A4A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M105,122 q10,-16 20,0" fill="none" stroke="#3B2A4A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M135,122 q10,-16 20,0" fill="none" stroke="#3B2A4A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="115" y="162" font-size="30" font-family="serif" fill="#3B2A4A" text-anchor="middle" font-style="italic">ha!</text>
+<text x="115" y="218" font-size="26" font-family="serif" fill="#3B2A4A" text-anchor="middle" font-style="italic">Laugh at his</text>
+<text x="115" y="248" font-size="26" font-family="serif" fill="#3B2A4A" text-anchor="middle" font-style="italic">joke</text>
+<rect x="30" y="284" width="170" height="22" rx="11" fill="#ffffff" opacity="0.7" stroke="#3B2A4A" stroke-width="1.5"/>
+</svg>

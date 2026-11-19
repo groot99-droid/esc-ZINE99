@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" width="240" height="320" role="img" aria-labelledby="reflection-run-aegis-t reflection-run-aegis-d">
+<title id="reflection-run-aegis-t">Aegis across the glass</title>
+<desc id="reflection-run-aegis-d">Aegis across two panes of glass, seen only as a broad flat silhouette in warm gold under an ink pass, head turning; he has no design system yet, so he is a shape and a colour.</desc>
+<path d="M98.4,24 L141.6,24 L146.4,72 L134.4,91.2 L194.9,120 L188.6,216 L153.6,312 L127.2,312 L120,225.6 L112.8,312 L86.4,312 L51.4,216 L45.1,120 L105.6,91.2 L93.6,72Z" fill="#F2C14E" transform="translate(6,5)" opacity="1"/>
+<path d="M98.4,24 L141.6,24 L146.4,72 L134.4,91.2 L194.9,120 L188.6,216 L153.6,312 L127.2,312 L120,225.6 L112.8,312 L86.4,312 L51.4,216 L45.1,120 L105.6,91.2 L93.6,72Z" fill="#1E1E1E" opacity="0.9"/>
+<path d="M78,96 L162,96 L170,120 L70,120Z" fill="#F2C14E" opacity="0.9"/>
+<path d="M104,100 L136,100 L130,112 L110,112Z" fill="#1E1E1E"/>
+<rect x="16" y="20" width="12" height="290" fill="#ffffff" opacity="0.6"/>
+<rect x="210" y="20" width="12" height="290" fill="#ffffff" opacity="0.6"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 40" width="600" height="40" role="img" aria-labelledby="bloom-twins-line-t bloom-twins-line-d">
+<title id="bloom-twins-line-t">The Twins' line (a row of blocked edges)</title>
+<desc id="bloom-twins-line-d">The line the Twins collapse once: a long jagged black-keyed fault printed across five cell edges in magenta and black dots, cracked down its length; its cost is shown beside it, not here.</desc>
+<defs><pattern id="bloom-twins-line-ben1" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(75)"><circle cx="3" cy="3" r="2.2" fill="#d8336a"/></pattern></defs>
+<path d="M0,10 L30,18 L60,2 L90,18 L120,2 L150,18 L180,2 L210,18 L240,2 L270,18 L300,2 L330,18 L360,2 L390,18 L420,2 L450,18 L480,2 L510,18 L540,2 L570,18 L600,10 L600,30 L570,38 L540,22 L510,38 L480,22 L450,38 L420,22 L390,38 L360,22 L330,38 L300,22 L270,38 L240,22 L210,38 L180,22 L150,38 L120,22 L90,38 L60,22 L30,38 L0,30Z" fill="url(#bloom-twins-line-ben1)"/>
+<path d="M0,10 L30,18 L60,2 L90,18 L120,2 L150,18 L180,2 L210,18 L240,2 L270,18 L300,2 L330,18 L360,2 L390,18 L420,2 L450,18 L480,2 L510,18 L540,2 L570,18 L600,10 L600,30 L570,38 L540,22 L510,38 L480,22 L450,38 L420,22 L390,38 L360,22 L330,38 L300,22 L270,38 L240,22 L210,38 L180,22 L150,38 L120,22 L90,38 L60,22 L30,38 L0,30Z" fill="none" stroke="#141414" stroke-width="3"/>
+<path d="M0,20 L30,28 L60,12 L90,28 L120,12 L150,28 L180,12 L210,28 L240,12 L270,28 L300,12 L330,28 L360,12 L390,28 L420,12 L450,28 L480,12 L510,28 L540,12 L570,28 L600,20" fill="none" stroke="#141414" stroke-width="2"/>
+</svg>

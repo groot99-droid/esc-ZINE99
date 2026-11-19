@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-labelledby="composite-strip-gait-long-t composite-strip-gait-long-d">
+<title id="composite-strip-gait-long-t">Strip, gait: low and long</title>
+<desc id="composite-strip-gait-long-d">An acetate strip for the gait: the legs drawn bent the wrong way at the knee, the stance low and long, the feet too far apart.</desc>
+<rect x="12" y="500" width="576" height="290" rx="6" fill="#ffffff" opacity="0.2" stroke="#7d9aa6" stroke-width="2.5"/>
+<circle cx="30" cy="516" r="7" fill="#d9dcd6" opacity="0.8" stroke="#7d9aa6" stroke-width="1.5"/>
+<circle cx="570" cy="516" r="7" fill="#d9dcd6" opacity="0.8" stroke="#7d9aa6" stroke-width="1.5"/>
+<rect x="44" y="506" width="120" height="22" fill="#ffffff" opacity="0.8" stroke="#7d9aa6" stroke-width="1"/>
+<text x="52" y="522" font-size="13" font-family="monospace" fill="#2a3340" text-anchor="start" letter-spacing="2">GAIT</text>
+<rect x="470" y="506" width="86" height="22" fill="none" stroke="#b03030" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6"/>
+<path d="M280,520 L230,640 L260,700 L210,780" fill="none" stroke="#2a3340" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M210,780 L180,784" fill="none" stroke="#2a3340" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="230" cy="640" r="6" fill="none" stroke="#2a3340" stroke-width="3.8"/>
+<path d="M320,520 L370,640 L340,700 L390,780" fill="none" stroke="#2a3340" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M390,780 L420,784" fill="none" stroke="#2a3340" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="370" cy="640" r="6" fill="none" stroke="#2a3340" stroke-width="3.8"/>
+</svg>

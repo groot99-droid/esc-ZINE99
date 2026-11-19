@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 24" width="120" height="24" role="img" aria-labelledby="bloom-pane-t bloom-pane-d">
+<title id="bloom-pane-t">Pane: hard light on a cell edge</title>
+<desc id="bloom-pane-d">A pane of hard light raised on a cell edge, printed as a yellow-dot bar with a black keyline and a bright bare stripe down its middle; it blocks spread across that edge.</desc>
+<defs><pattern id="bloom-pane-ben1" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(0)"><circle cx="3" cy="3" r="2.6" fill="#e9c62e"/></pattern></defs>
+<rect x="2" y="2" width="116" height="20" fill="url(#bloom-pane-ben1)"/>
+<rect x="2" y="9" width="116" height="6" fill="#fff6dc"/>
+<rect x="2" y="2" width="116" height="20" fill="none" stroke="#141414" stroke-width="3"/>
+<line x1="20" y1="2" x2="20" y2="22" stroke="#141414" stroke-width="1"/>
+<line x1="60" y1="2" x2="60" y2="22" stroke="#141414" stroke-width="1"/>
+<line x1="100" y1="2" x2="100" y2="22" stroke="#141414" stroke-width="1"/>
+</svg>

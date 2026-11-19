@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 340" width="240" height="340" role="img" aria-labelledby="persona-card-back-t persona-card-back-d">
+<title id="persona-card-back-t">Card back</title>
+<desc id="persona-card-back-d">The back of every Persona card: flat rose with a plum keyline, a row of small hearts, and one large white heart in the middle.</desc>
+<rect x="10" y="12" width="222" height="320" rx="14" fill="#3B2A4A" opacity="0.2"/>
+<rect x="4" y="4" width="222" height="320" rx="14" fill="#F6C9D3" stroke="#3B2A4A" stroke-width="4"/>
+<rect x="16" y="16" width="198" height="296" rx="10" fill="none" stroke="#3B2A4A" stroke-width="1.5" opacity="0.6"/>
+<path d="M115,218.4 C36.6,162.4 75.8,106.4 115,145.6 C154.2,106.4 193.4,162.4 115,218.4Z" fill="#ffffff" stroke="#3B2A4A" stroke-width="4"/>
+<path d="M43,47.2 C31.8,39.2 37.4,31.2 43,36.8 C48.6,31.2 54.2,39.2 43,47.2Z" fill="#E07A9A"/>
+<path d="M43,303.2 C31.8,295.2 37.4,287.2 43,292.8 C48.6,287.2 54.2,295.2 43,303.2Z" fill="#E07A9A"/>
+<path d="M79,47.2 C67.8,39.2 73.4,31.2 79,36.8 C84.6,31.2 90.2,39.2 79,47.2Z" fill="#E07A9A"/>
+<path d="M79,303.2 C67.8,295.2 73.4,287.2 79,292.8 C84.6,287.2 90.2,295.2 79,303.2Z" fill="#E07A9A"/>
+<path d="M115,47.2 C103.8,39.2 109.4,31.2 115,36.8 C120.6,31.2 126.2,39.2 115,47.2Z" fill="#E07A9A"/>
+<path d="M115,303.2 C103.8,295.2 109.4,287.2 115,292.8 C120.6,287.2 126.2,295.2 115,303.2Z" fill="#E07A9A"/>
+<path d="M151,47.2 C139.8,39.2 145.4,31.2 151,36.8 C156.6,31.2 162.2,39.2 151,47.2Z" fill="#E07A9A"/>
+<path d="M151,303.2 C139.8,295.2 145.4,287.2 151,292.8 C156.6,287.2 162.2,295.2 151,303.2Z" fill="#E07A9A"/>
+<path d="M187,47.2 C175.8,39.2 181.4,31.2 187,36.8 C192.6,31.2 198.2,39.2 187,47.2Z" fill="#E07A9A"/>
+<path d="M187,303.2 C175.8,295.2 181.4,287.2 187,292.8 C192.6,287.2 198.2,295.2 187,303.2Z" fill="#E07A9A"/>
+</svg>

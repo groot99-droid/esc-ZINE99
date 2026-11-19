@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 340" width="240" height="340" role="img" aria-labelledby="persona-card-paint-t persona-card-paint-d">
+<title id="persona-card-paint-t">Dealt card: Paint over the sky</title>
+<desc id="persona-card-paint-d">A card the deck dealt itself, “Paint over the sky”: gray where the others are pastel, a thin line across it, lettered in the same plum italic; it fits no facet. Burn it or keep it.</desc>
+<rect x="10" y="12" width="222" height="320" rx="14" fill="#3B2A4A" opacity="0.2"/>
+<rect x="4" y="4" width="222" height="320" rx="14" fill="#d9d4d6" stroke="#3B2A4A" stroke-width="4"/>
+<rect x="16" y="16" width="198" height="296" rx="10" fill="none" stroke="#3B2A4A" stroke-width="1.5" opacity="0.6"/>
+<path d="M115,64.4 C92.6,48.4 103.8,32.4 115,43.6 C126.2,32.4 137.4,48.4 115,64.4Z" fill="#ecebec" stroke="#3B2A4A" stroke-width="2"/>
+<rect x="65" y="102" width="100" height="60" fill="#7FA9D6" opacity="0.5" stroke="#3B2A4A" stroke-width="3"/>
+<path d="M65,102 L125,102 L65,152Z" fill="#b9b4b6"/>
+<line x1="105" y1="82" x2="155" y2="172" stroke="#3B2A4A" stroke-width="6" stroke-linecap="round"/>
+<text x="115" y="218" font-size="26" font-family="serif" fill="#3B2A4A" text-anchor="middle" font-style="italic">Paint over the</text>
+<text x="115" y="248" font-size="26" font-family="serif" fill="#3B2A4A" text-anchor="middle" font-style="italic">sky</text>
+<line x1="28" y1="30" x2="202" y2="300" stroke="#3B2A4A" stroke-width="2" opacity="0.5"/>
+<text x="115" y="300" font-size="16" font-family="serif" fill="#3B2A4A" text-anchor="middle" font-style="italic">dealt itself</text>
+</svg>

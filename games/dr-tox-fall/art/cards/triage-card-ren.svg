@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="triage-card-ren-t triage-card-ren-d">
+<title id="triage-card-ren-t">Patient card: Ren Sato</title>
+<desc id="triage-card-ren-d">Patient card: Ren Sato, who wants to get home to his shift rota. A quick ink head and shoulders over streaky marker on white card stock, no features drawn in, holding what they want; the name and want in the corner and two empty amber mark slots.</desc>
+<defs><clipPath id="triage-card-ren-clip1"><rect x="4" y="4" width="286" height="406" rx="9"/></clipPath><clipPath id="triage-card-ren-clip2"><path d="M158,58 C188,58 198,86 194,112 C192,128 184,138 178,144 L226,170 C250,182 258,210 258,248 L42,248 C42,210 50,182 74,170 L138,144 C132,138 124,128 122,112 C118,86 128,58 158,58Z"/></clipPath><filter id="triage-card-ren-rough3"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="202" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.2"/></filter></defs>
+<rect x="6" y="8" width="290" height="410" rx="10" fill="#000" opacity="0.1"/>
+<rect x="2" y="2" width="290" height="410" rx="10" fill="#fdfdfb" stroke="#9a9a94" stroke-width="1.5"/>
+<g clip-path="url(#triage-card-ren-clip1)">
+<rect x="18.5" y="22" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="11.9" y="42" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="22.2" y="62" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="22.8" y="82" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="8.3" y="102" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="13.9" y="122" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="10.6" y="142" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="15.2" y="162" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="14.9" y="182" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="18.7" y="202" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="18.9" y="222" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="24" y="242" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="19.6" y="21" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="20.6" y="41" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="10.6" y="61" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="12.9" y="81" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="9.4" y="101" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="11.6" y="121" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="16.3" y="141" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="20.7" y="161" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="13.8" y="181" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="11.3" y="201" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="19" y="221" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+<rect x="22.5" y="241" width="268" height="17" fill="#9ED8C6" opacity="0.2" rx="6"/>
+</g>
+<g clip-path="url(#triage-card-ren-clip2)">
+<rect x="32" y="50" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="37.2" y="64" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="40.4" y="78" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="30.3" y="92" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="30.6" y="106" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="32" y="120" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="30.7" y="134" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="33.5" y="148" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="26.7" y="162" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="28.3" y="176" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="39.8" y="190" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="27.2" y="204" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="29" y="218" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="30.2" y="232" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="37.7" y="246" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="34" y="49" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="33" y="63" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="35.6" y="77" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="28.2" y="91" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="32.4" y="105" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="38.2" y="119" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="33.5" y="133" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="37.6" y="147" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="28.7" y="161" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="40.4" y="175" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="32.7" y="189" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="35.3" y="203" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="41.1" y="217" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="37.5" y="231" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="28.3" y="245" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="30.4" y="48" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="32.3" y="62" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="27.7" y="76" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="30.2" y="90" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="28.7" y="104" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="39.6" y="118" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="37.7" y="132" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="37.1" y="146" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="36" y="160" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="34.7" y="174" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="29.2" y="188" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="29.2" y="202" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="40.6" y="216" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="38.8" y="230" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+<rect x="38.7" y="244" width="232" height="11" fill="#9ED8C6" opacity="0.4" rx="6"/>
+</g>
+<path d="M158,58 C188,58 198,86 194,112 C192,128 184,138 178,144 L226,170 C250,182 258,210 258,248 L42,248 C42,210 50,182 74,170 L138,144 C132,138 124,128 122,112 C118,86 128,58 158,58Z" fill="none" stroke="#141414" stroke-width="2.6" stroke-linejoin="round" filter="url(#triage-card-ren-rough3)"/>
+<rect x="124" y="176" width="52" height="68" fill="#ffffff" stroke="#141414" stroke-width="3"/>
+<line x1="132" y1="188" x2="168" y2="188" stroke="#141414" stroke-width="2"/>
+<line x1="144" y1="184" x2="144" y2="192" stroke="#141414" stroke-width="1.5"/>
+<line x1="132" y1="200" x2="168" y2="200" stroke="#141414" stroke-width="2"/>
+<line x1="144" y1="196" x2="144" y2="204" stroke="#141414" stroke-width="1.5"/>
+<line x1="132" y1="212" x2="168" y2="212" stroke="#141414" stroke-width="2"/>
+<line x1="144" y1="208" x2="144" y2="216" stroke="#141414" stroke-width="1.5"/>
+<line x1="132" y1="224" x2="168" y2="224" stroke="#141414" stroke-width="2"/>
+<line x1="144" y1="220" x2="144" y2="228" stroke="#141414" stroke-width="1.5"/>
+<line x1="132" y1="236" x2="168" y2="236" stroke="#141414" stroke-width="2"/>
+<line x1="144" y1="232" x2="144" y2="240" stroke="#141414" stroke-width="1.5"/>
+<path d="M120,250 C140,246 160,246 180,250" fill="none" stroke="#ffffff" stroke-width="8"/>
+<path d="M120,250 C140,246 160,246 180,250" fill="none" stroke="#141414" stroke-width="1.5"/>
+<line x1="22" y1="262" x2="278" y2="262" stroke="#141414" stroke-width="1.5"/>
+<text x="24" y="292" font-size="24" font-family="sans-serif" fill="#141414" text-anchor="start" font-weight="bold">Ren Sato</text>
+<text x="24" y="316" font-size="14" font-family="sans-serif" fill="#666" text-anchor="start" font-style="italic">wants</text>
+<text x="24" y="340" font-size="18" font-family="serif" fill="#141414" text-anchor="start">to get home to his shift</text>
+<text x="24" y="361" font-size="18" font-family="serif" fill="#141414" text-anchor="start">rota</text>
+<text x="24" y="398" font-size="13" font-family="sans-serif" fill="#666" text-anchor="start" font-style="italic">asks</text>
+<circle cx="84" cy="393" r="12" fill="none" stroke="#D99A2B" stroke-width="2.5" stroke-dasharray="4 3"/>
+<circle cx="118" cy="393" r="12" fill="none" stroke="#D99A2B" stroke-width="2.5" stroke-dasharray="4 3"/>
+<text x="270" y="398" font-size="12" font-family="sans-serif" fill="#888" text-anchor="end">ch. 5</text>
+</svg>

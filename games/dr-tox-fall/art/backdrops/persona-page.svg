@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="persona-page-t persona-page-d">
+<title id="persona-page-t">Persona: the romance page (backdrop)</title>
+<desc id="persona-page-d">The page: cream newsprint-free paper in a 1950s romance-comic layout, plum gutters, a tall space at the top for the heart panel, a strip at the foot for the hand and the match meter, and a lettered title box: SEVENTY-TWO HOURS TO LOVE HIM!</desc>
+<rect x="0" y="0" width="1280" height="720" fill="#fbf1e6"/>
+<rect x="16" y="16" width="1248" height="400" rx="6" fill="#C9DDF2" opacity="0.3" stroke="#3B2A4A" stroke-width="4"/>
+<rect x="16" y="432" width="1248" height="272" rx="6" fill="#F6C9D3" opacity="0.3" stroke="#3B2A4A" stroke-width="4"/>
+<rect x="40" y="34" width="420" height="70" fill="#F6E1A8" stroke="#3B2A4A" stroke-width="3"/>
+<text x="56" y="80" font-size="26" font-family="serif" fill="#3B2A4A" text-anchor="start" font-style="italic" font-weight="bold" textLength="390" lengthAdjust="spacingAndGlyphs">SEVENTY-TWO HOURS TO LOVE HIM!</text>
+<path d="M1120,70.8 C1103.2,58.8 1111.6,46.8 1120,55.2 C1128.4,46.8 1136.8,58.8 1120,70.8Z" fill="#E07A9A" stroke="#3B2A4A" stroke-width="2"/>
+<path d="M1170,70.8 C1153.2,58.8 1161.6,46.8 1170,55.2 C1178.4,46.8 1186.8,58.8 1170,70.8Z" fill="#E07A9A" stroke="#3B2A4A" stroke-width="2"/>
+<path d="M1220,70.8 C1203.2,58.8 1211.6,46.8 1220,55.2 C1228.4,46.8 1236.8,58.8 1220,70.8Z" fill="#E07A9A" stroke="#3B2A4A" stroke-width="2"/>
+</svg>

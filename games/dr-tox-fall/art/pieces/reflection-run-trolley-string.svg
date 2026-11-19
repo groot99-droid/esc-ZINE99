@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" width="240" height="200" role="img" aria-labelledby="reflection-run-trolley-string-t reflection-run-trolley-string-d">
+<title id="reflection-run-trolley-string-t">Refusal: a loop of string on a cleaner's trolley</title>
+<desc id="reflection-run-trolley-string-d">A cleaner's trolley printed in flat coral and ink, a mop handle, a bucket and, hanging from the rail, a loop of white string: the third refusal.</desc>
+<rect x="30" y="70" width="170" height="80" fill="#F0907A" transform="translate(5,4)"/>
+<rect x="30" y="70" width="170" height="80" fill="none" stroke="#1E1E1E" stroke-width="5"/>
+<line x1="30" y1="70" x2="14" y2="30" stroke="#1E1E1E" stroke-width="6"/>
+<line x1="150" y1="70" x2="190" y2="4" stroke="#1E1E1E" stroke-width="5"/>
+<rect x="60" y="90" width="50" height="50" fill="#9ED8C6"/>
+<circle cx="50" cy="166" r="14" fill="#1E1E1E"/>
+<circle cx="180" cy="166" r="14" fill="#1E1E1E"/>
+<path d="M120,70 C110,100 112,120 130,124 C150,128 158,100 140,70" fill="none" stroke="#ffffff" stroke-width="5"/>
+<path d="M120,70 C110,100 112,120 130,124 C150,128 158,100 140,70" fill="none" stroke="#2B2B6B" stroke-width="1.5" transform="translate(3,2)"/>
+</svg>

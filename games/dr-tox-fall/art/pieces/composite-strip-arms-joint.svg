@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-labelledby="composite-strip-arms-joint-t composite-strip-arms-joint-d">
+<title id="composite-strip-arms-joint-t">Strip, arms: a joint too many</title>
+<desc id="composite-strip-arms-joint-d">An acetate strip for the arms: each arm in line with one joint more than an arm has, the extra joints circled (joints in the wrong count).</desc>
+<rect x="12" y="230" width="576" height="350" rx="6" fill="#ffffff" opacity="0.2" stroke="#7d9aa6" stroke-width="2.5"/>
+<circle cx="30" cy="246" r="7" fill="#d9dcd6" opacity="0.8" stroke="#7d9aa6" stroke-width="1.5"/>
+<circle cx="570" cy="246" r="7" fill="#d9dcd6" opacity="0.8" stroke="#7d9aa6" stroke-width="1.5"/>
+<rect x="44" y="236" width="120" height="22" fill="#ffffff" opacity="0.8" stroke="#7d9aa6" stroke-width="1"/>
+<text x="52" y="252" font-size="13" font-family="monospace" fill="#2a3340" text-anchor="start" letter-spacing="2">ARMS</text>
+<rect x="470" y="236" width="86" height="22" fill="none" stroke="#b03030" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6"/>
+<path d="M180,260 L166,340 L178,380 L160,450 L174,500 L162,556" fill="none" stroke="#2a3340" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="166" cy="340" r="6" fill="none" stroke="#2a3340" stroke-width="3.8"/>
+<circle cx="178" cy="380" r="6" fill="none" stroke="#2a3340" stroke-width="3.8"/>
+<circle cx="160" cy="450" r="6" fill="none" stroke="#2a3340" stroke-width="3.8"/>
+<circle cx="174" cy="500" r="6" fill="none" stroke="#2a3340" stroke-width="3.8"/>
+<path d="M420,260 L434,340 L422,380 L440,450 L426,500 L438,556" fill="none" stroke="#2a3340" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="434" cy="340" r="6" fill="none" stroke="#2a3340" stroke-width="3.8"/>
+<circle cx="422" cy="380" r="6" fill="none" stroke="#2a3340" stroke-width="3.8"/>
+<circle cx="440" cy="450" r="6" fill="none" stroke="#2a3340" stroke-width="3.8"/>
+<circle cx="426" cy="500" r="6" fill="none" stroke="#2a3340" stroke-width="3.8"/>
+</svg>

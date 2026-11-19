@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-labelledby="bloom-cell-absorbed-t bloom-cell-absorbed-d">
+<title id="bloom-cell-absorbed-t">District cell: absorbed (Aegis)</title>
+<desc id="bloom-cell-absorbed-d">A block Aegis has absorbed clean: the cyan screen paled almost to bare newsprint, a ring of yellow dots where the cloud was drawn in, the residents still there.</desc>
+<defs><pattern id="bloom-cell-absorbed-ben1" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(15)"><circle cx="4.5" cy="4.5" r="0.9" fill="#2fa8d8"/></pattern><pattern id="bloom-cell-absorbed-ben2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(0)"><circle cx="3.5" cy="3.5" r="2.4" fill="#e9c62e"/></pattern></defs>
+<rect x="0" y="0" width="120" height="120" fill="#efe2b8"/>
+<rect x="4" y="4" width="112" height="112" fill="url(#bloom-cell-absorbed-ben1)" opacity="0.6"/>
+<circle cx="60" cy="60" r="40" fill="none" stroke="url(#bloom-cell-absorbed-ben2)" stroke-width="14"/>
+<circle cx="60" cy="60" r="40" fill="none" stroke="#141414" stroke-width="1.5" stroke-dasharray="4 4"/>
+<path d="M41.3,68 L46.7,68 L47.3,74 L45.8,76.4 L51.2,80 L50.6,92 L48.2,104 L44.9,104 L44,93.2 L43.1,104 L39.8,104 L37.4,92 L36.8,80 L42.2,76.4 L40.7,74Z" fill="#d8336a" stroke="#141414" stroke-width="1.5"/>
+<rect x="2" y="2" width="116" height="116" fill="none" stroke="#141414" stroke-width="4"/>
+</svg>

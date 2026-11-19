@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-labelledby="composite-strip-arms-wings-t composite-strip-arms-wings-d">
+<title id="composite-strip-arms-wings-t">Strip, arms: wings (awed)</title>
+<desc id="composite-strip-arms-wings-d">The awed arms strip, askew: a pair of gold wings drawn out from the shoulders, offered by a witness who saw a god. It does not fit.</desc>
+<g transform="rotate(-3 300 405.0)">
+<rect x="12" y="230" width="576" height="350" rx="6" fill="#ffffff" opacity="0.2" stroke="#7d9aa6" stroke-width="2.5"/>
+<circle cx="30" cy="246" r="7" fill="#d9dcd6" opacity="0.8" stroke="#7d9aa6" stroke-width="1.5"/>
+<circle cx="570" cy="246" r="7" fill="#d9dcd6" opacity="0.8" stroke="#7d9aa6" stroke-width="1.5"/>
+<rect x="44" y="236" width="120" height="22" fill="#ffffff" opacity="0.8" stroke="#7d9aa6" stroke-width="1"/>
+<text x="52" y="252" font-size="13" font-family="monospace" fill="#2a3340" text-anchor="start" letter-spacing="2">ARMS</text>
+<rect x="470" y="236" width="86" height="22" fill="none" stroke="#b03030" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6"/>
+<path d="M200,260 C100,200 30,250 20,420 C60,380 100,400 130,460 C140,400 170,360 200,340" fill="none" stroke="#F2C14E" stroke-width="6"/>
+<path d="M150,280 L140,360" fill="none" stroke="#F2C14E" stroke-width="3"/>
+<path d="M120,290 L110,376" fill="none" stroke="#F2C14E" stroke-width="3"/>
+<path d="M90,300 L80,392" fill="none" stroke="#F2C14E" stroke-width="3"/>
+<path d="M60,310 L50,408" fill="none" stroke="#F2C14E" stroke-width="3"/>
+<path d="M400,260 C500,200 570,250 580,420 C540,380 500,400 470,460 C460,400 430,360 400,340" fill="none" stroke="#F2C14E" stroke-width="6"/>
+<path d="M450,280 L460,360" fill="none" stroke="#F2C14E" stroke-width="3"/>
+<path d="M480,290 L490,376" fill="none" stroke="#F2C14E" stroke-width="3"/>
+<path d="M510,300 L520,392" fill="none" stroke="#F2C14E" stroke-width="3"/>
+<path d="M540,310 L550,408" fill="none" stroke="#F2C14E" stroke-width="3"/>
+<text x="556" y="252" font-size="18" font-family="sans-serif" fill="#b03030" text-anchor="end" font-weight="bold">?</text>
+</g>
+</svg>

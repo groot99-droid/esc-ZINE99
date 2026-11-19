@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120" role="img" aria-labelledby="bloom-wind-t bloom-wind-d">
+<title id="bloom-wind-t">The wind arrow</title>
+<desc id="bloom-wind-d">The wind arrow for the margin: a fat black-keyed arrow filled with cyan dots and WIND lettered in newspaper capitals beneath; rotate it to the wind.</desc>
+<defs><pattern id="bloom-wind-ben1" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(15)"><circle cx="3.5" cy="3.5" r="2.4" fill="#2fa8d8"/></pattern></defs>
+<path d="M10,40 L130,40 L130,16 L190,56 L130,96 L130,72 L10,72Z" fill="url(#bloom-wind-ben1)"/>
+<path d="M10,40 L130,40 L130,16 L190,56 L130,96 L130,72 L10,72Z" fill="none" stroke="#141414" stroke-width="4"/>
+<text x="70" y="114" font-size="20" font-family="serif" fill="#141414" text-anchor="middle" font-weight="bold" letter-spacing="4">WIND</text>
+</svg>

@@ -1,0 +1,1470 @@
+{
+ "game": "dr-tox-fall",
+ "count": 183,
+ "assets": [
+  {
+   "id": "title-episodes",
+   "group": "title",
+   "title": "Episode strip: Rise done, Fall open, Finale and Altrulan shut",
+   "w": 1200,
+   "h": 180,
+   "row": "loading | Episode menu strip"
+  },
+  {
+   "id": "title-fall",
+   "group": "title",
+   "title": "Title lettering: Dr. Tox: Fall",
+   "w": 1200,
+   "h": 420,
+   "row": "loading | Title lettering"
+  },
+  {
+   "id": "bloom-crew",
+   "group": "figures",
+   "title": "A crew member",
+   "w": 48,
+   "h": 96,
+   "row": "bloom | Residents and crews (small printed figures)"
+  },
+  {
+   "id": "bloom-resident",
+   "group": "figures",
+   "title": "A resident",
+   "w": 48,
+   "h": 96,
+   "row": "bloom | Residents and crews (small printed figures)"
+  },
+  {
+   "id": "crowd-thread-guest",
+   "group": "figures",
+   "title": "Gala guest with a glass",
+   "w": 200,
+   "h": 320,
+   "row": "crowd-thread | The queue and the gala (lumpy figures, each a name to come)"
+  },
+  {
+   "id": "crowd-thread-kitchen-staff",
+   "group": "figures",
+   "title": "Ama Owusu and Lev Brandt at the service door",
+   "w": 320,
+   "h": 320,
+   "row": "crowd-thread | Ama and Lev, who open the service door"
+  },
+  {
+   "id": "crowd-thread-queue-1",
+   "group": "figures",
+   "title": "Queue: a woman with a bucket",
+   "w": 200,
+   "h": 320,
+   "row": "crowd-thread | The queue and the gala (lumpy figures, each a name to come)"
+  },
+  {
+   "id": "crowd-thread-queue-2",
+   "group": "figures",
+   "title": "Queue: a man on a stick",
+   "w": 200,
+   "h": 320,
+   "row": "crowd-thread | The queue and the gala (lumpy figures, each a name to come)"
+  },
+  {
+   "id": "crowd-thread-queue-3",
+   "group": "figures",
+   "title": "Queue: an elder wrapped in a blanket",
+   "w": 200,
+   "h": 320,
+   "row": "crowd-thread | The queue and the gala (lumpy figures, each a name to come)"
+  },
+  {
+   "id": "crowd-thread-queue-4",
+   "group": "figures",
+   "title": "Queue: two people leaning together",
+   "w": 320,
+   "h": 320,
+   "row": "crowd-thread | The queue and the gala (lumpy figures, each a name to come)"
+  },
+  {
+   "id": "crowd-thread-security",
+   "group": "figures",
+   "title": "Spire security with an earpiece",
+   "w": 200,
+   "h": 320,
+   "row": "crowd-thread | Relief staff and Spire security (sight cones)"
+  },
+  {
+   "id": "crowd-thread-staff",
+   "group": "figures",
+   "title": "Relief staff with a baton",
+   "w": 200,
+   "h": 320,
+   "row": "crowd-thread | Relief staff and Spire security (sight cones)"
+  },
+  {
+   "id": "crowd-thread-tox-closed",
+   "group": "figures",
+   "title": "Dr. Tox with the shroud drawn closed",
+   "w": 200,
+   "h": 320,
+   "row": "crowd-thread | Dr. Tox (the shroud open and closed, turning, a dart)"
+  },
+  {
+   "id": "crowd-thread-tox-dart",
+   "group": "figures",
+   "title": "Dr. Tox throwing a dart (chapter 11)",
+   "w": 240,
+   "h": 320,
+   "row": "crowd-thread | Dr. Tox (the shroud open and closed, turning, a dart)"
+  },
+  {
+   "id": "crowd-thread-tox-turn",
+   "group": "figures",
+   "title": "Dr. Tox turned sideways (narrowing the ring)",
+   "w": 200,
+   "h": 320,
+   "row": "crowd-thread | Dr. Tox (the shroud open and closed, turning, a dart)"
+  },
+  {
+   "id": "crowd-thread-tox-walk",
+   "group": "figures",
+   "title": "Dr. Tox walking, shroud open",
+   "w": 200,
+   "h": 320,
+   "row": "crowd-thread | Dr. Tox (the shroud open and closed, turning, a dart)"
+  },
+  {
+   "id": "reflection-run-aegis",
+   "group": "figures",
+   "title": "Aegis across the glass",
+   "w": 240,
+   "h": 320,
+   "row": "reflection-run | Aegis across the glass"
+  },
+  {
+   "id": "reflection-run-cally-wait",
+   "group": "figures",
+   "title": "Cally waiting in a camera's view",
+   "w": 200,
+   "h": 320,
+   "row": "reflection-run | Cally and her reflection"
+  },
+  {
+   "id": "reflection-run-cally-walk",
+   "group": "figures",
+   "title": "Cally walking (two prints off register)",
+   "w": 200,
+   "h": 320,
+   "row": "reflection-run | Cally and her reflection"
+  },
+  {
+   "id": "reflection-run-reflect-refuse",
+   "group": "figures",
+   "title": "The reflection refusing (back turned, inverted)",
+   "w": 200,
+   "h": 320,
+   "row": "reflection-run | Cally and her reflection"
+  },
+  {
+   "id": "reflection-run-reflect-walk",
+   "group": "figures",
+   "title": "The reflection walking (inverted)",
+   "w": 200,
+   "h": 320,
+   "row": "reflection-run | Cally and her reflection"
+  },
+  {
+   "id": "bloom-page",
+   "group": "backdrops",
+   "title": "Bloom: the newsprint page (backdrop)",
+   "w": 1280,
+   "h": 720,
+   "row": "bloom | The page: masthead, frame and portrait"
+  },
+  {
+   "id": "composite-lightbox",
+   "group": "backdrops",
+   "title": "Composite: the light box (backdrop)",
+   "w": 1280,
+   "h": 720,
+   "row": "composite | The base form and the light box"
+  },
+  {
+   "id": "crowd-thread-gala-far",
+   "group": "backdrops",
+   "title": "Crowd thread: the gala floor (far layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "crowd-thread | Backdrops: the service corridor and the gala floor (parallax)"
+  },
+  {
+   "id": "crowd-thread-gala-mid",
+   "group": "backdrops",
+   "title": "Crowd thread: the gala floor (mid layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "crowd-thread | Backdrops: the service corridor and the gala floor (parallax)"
+  },
+  {
+   "id": "crowd-thread-gala-near",
+   "group": "backdrops",
+   "title": "Crowd thread: the gala floor (near layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "crowd-thread | Backdrops: the service corridor and the gala floor (parallax)"
+  },
+  {
+   "id": "crowd-thread-hall-far",
+   "group": "backdrops",
+   "title": "Crowd thread: relief hall (far layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "crowd-thread | Backdrops: the relief hall (parallax)"
+  },
+  {
+   "id": "crowd-thread-hall-mid",
+   "group": "backdrops",
+   "title": "Crowd thread: relief hall (mid layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "crowd-thread | Backdrops: the relief hall (parallax)"
+  },
+  {
+   "id": "crowd-thread-hall-near",
+   "group": "backdrops",
+   "title": "Crowd thread: relief hall (near layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "crowd-thread | Backdrops: the relief hall (parallax)"
+  },
+  {
+   "id": "loading-hall",
+   "group": "backdrops",
+   "title": "Loading backdrop: the relief hall at noon, 2229",
+   "w": 1600,
+   "h": 900,
+   "row": "loading | Loading screen backdrop"
+  },
+  {
+   "id": "persona-page",
+   "group": "backdrops",
+   "title": "Persona: the romance page (backdrop)",
+   "w": 1280,
+   "h": 720,
+   "row": "persona | The page and the heart panel"
+  },
+  {
+   "id": "reflection-run-glass-far",
+   "group": "backdrops",
+   "title": "Reflection run: the glass hall (far layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "reflection-run | Backdrops: the Spire's glass halls (parallax)"
+  },
+  {
+   "id": "reflection-run-glass-mid",
+   "group": "backdrops",
+   "title": "Reflection run: the glass hall (mid layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "reflection-run | Backdrops: the Spire's glass halls (parallax)"
+  },
+  {
+   "id": "reflection-run-glass-near",
+   "group": "backdrops",
+   "title": "Reflection run: the glass hall (near layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "reflection-run | Backdrops: the Spire's glass halls (parallax)"
+  },
+  {
+   "id": "triage-table",
+   "group": "backdrops",
+   "title": "The triage table: NOW, WAIT, CANNOT",
+   "w": 1280,
+   "h": 720,
+   "row": "triage | The table: the tray and three columns"
+  },
+  {
+   "id": "composite-witness-ama",
+   "group": "cards",
+   "title": "Witness 1: Ama Owusu",
+   "w": 256,
+   "h": 160,
+   "row": "composite | Witness cards (Composite 2)"
+  },
+  {
+   "id": "composite-witness-bashir",
+   "group": "cards",
+   "title": "Witness 3: Bashir Kade",
+   "w": 256,
+   "h": 160,
+   "row": "composite | Witness cards (Composite 1)"
+  },
+  {
+   "id": "composite-witness-corinne",
+   "group": "cards",
+   "title": "Witness 3: Corinne Vale",
+   "w": 256,
+   "h": 160,
+   "row": "composite | Witness cards (Composite 2)"
+  },
+  {
+   "id": "composite-witness-desmond",
+   "group": "cards",
+   "title": "Witness 4: Desmond Achebe",
+   "w": 256,
+   "h": 160,
+   "row": "composite | Witness cards (Composite 2)"
+  },
+  {
+   "id": "composite-witness-dov",
+   "group": "cards",
+   "title": "Witness 4: Dov Ashkenazi",
+   "w": 256,
+   "h": 160,
+   "row": "composite | Witness cards (Composite 1)"
+  },
+  {
+   "id": "composite-witness-lev",
+   "group": "cards",
+   "title": "Witness 2: Lev Brandt",
+   "w": 256,
+   "h": 160,
+   "row": "composite | Witness cards (Composite 2)"
+  },
+  {
+   "id": "composite-witness-mercy",
+   "group": "cards",
+   "title": "Witness 1: Mercy Abiodun",
+   "w": 256,
+   "h": 160,
+   "row": "composite | Witness cards (Composite 1)"
+  },
+  {
+   "id": "composite-witness-sato",
+   "group": "cards",
+   "title": "Witness 5: Ren Sato",
+   "w": 256,
+   "h": 160,
+   "row": "composite | Witness cards (Composite 1)"
+  },
+  {
+   "id": "composite-witness-wren",
+   "group": "cards",
+   "title": "Witness 2: Wren Halloran",
+   "w": 256,
+   "h": 160,
+   "row": "composite | Witness cards (Composite 1)"
+  },
+  {
+   "id": "composite-witness-yusuf",
+   "group": "cards",
+   "title": "Witness 6: Yusuf Demir",
+   "w": 256,
+   "h": 160,
+   "row": "composite | Witness cards (Composite 1)"
+  },
+  {
+   "id": "persona-card-back",
+   "group": "cards",
+   "title": "Card back",
+   "w": 240,
+   "h": 340,
+   "row": "persona | Cards Cally builds (gestures and lines)"
+  },
+  {
+   "id": "persona-card-blade",
+   "group": "cards",
+   "title": "Dealt card: Drop the blade",
+   "w": 240,
+   "h": 340,
+   "row": "persona | Cards the deck deals itself (the crack)"
+  },
+  {
+   "id": "persona-card-fell",
+   "group": "cards",
+   "title": "Dealt card: Leave the string where it fell",
+   "w": 240,
+   "h": 340,
+   "row": "persona | Cards the deck deals itself (the crack)"
+  },
+  {
+   "id": "persona-card-hand",
+   "group": "cards",
+   "title": "Card: Take his hand",
+   "w": 240,
+   "h": 340,
+   "row": "persona | Cards Cally builds (gestures and lines)"
+  },
+  {
+   "id": "persona-card-hum",
+   "group": "cards",
+   "title": "Card: Hum four notes",
+   "w": 240,
+   "h": 340,
+   "row": "persona | Cards Cally builds (gestures and lines)"
+  },
+  {
+   "id": "persona-card-laugh",
+   "group": "cards",
+   "title": "Card: Laugh at his joke",
+   "w": 240,
+   "h": 340,
+   "row": "persona | Cards Cally builds (gestures and lines)"
+  },
+  {
+   "id": "persona-card-light",
+   "group": "cards",
+   "title": "Card: Stand in the warm light",
+   "w": 240,
+   "h": 340,
+   "row": "persona | Cards Cally builds (gestures and lines)"
+  },
+  {
+   "id": "persona-card-paint",
+   "group": "cards",
+   "title": "Dealt card: Paint over the sky",
+   "w": 240,
+   "h": 340,
+   "row": "persona | Cards the deck deals itself (the crack)"
+  },
+  {
+   "id": "persona-card-scarf",
+   "group": "cards",
+   "title": "Card: Sky-blue scarf",
+   "w": 240,
+   "h": 340,
+   "row": "persona | Cards Cally builds (gestures and lines)"
+  },
+  {
+   "id": "persona-card-string",
+   "group": "cards",
+   "title": "Card: Loop of string",
+   "w": 240,
+   "h": 340,
+   "row": "persona | Cards Cally builds (gestures and lines)"
+  },
+  {
+   "id": "triage-card-arturo",
+   "group": "cards",
+   "title": "Patient card: Arturo Sol",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-back",
+   "group": "cards",
+   "title": "Patient card, back",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-bashir",
+   "group": "cards",
+   "title": "Patient card: Bashir Kade",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-dov",
+   "group": "cards",
+   "title": "Patient card: Dov Ashkenazi",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-ines",
+   "group": "cards",
+   "title": "Patient card: Ines Varga",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-kofi",
+   "group": "cards",
+   "title": "Patient card: Kofi Mensah",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-lupe",
+   "group": "cards",
+   "title": "Patient card: Lupe Andrade",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-marisol",
+   "group": "cards",
+   "title": "Patient card: Marisol Quiroga",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-mercy",
+   "group": "cards",
+   "title": "Patient card: Mercy Abiodun",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-nell",
+   "group": "cards",
+   "title": "Patient card: Nell Okafor",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-odile",
+   "group": "cards",
+   "title": "Patient card: Odile Marchetti",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-petra",
+   "group": "cards",
+   "title": "Patient card: Petra Lind",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-ren",
+   "group": "cards",
+   "title": "Patient card: Ren Sato",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-teo",
+   "group": "cards",
+   "title": "Patient card: Teo Halloran",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-wren",
+   "group": "cards",
+   "title": "Patient card: Wren Halloran",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "triage-card-yusuf",
+   "group": "cards",
+   "title": "Patient card: Yusuf Demir",
+   "w": 300,
+   "h": 420,
+   "row": "triage | Patient cards (a name and a want each)"
+  },
+  {
+   "id": "bloom-cell",
+   "group": "pieces",
+   "title": "District cell: clean",
+   "w": 120,
+   "h": 120,
+   "row": "bloom | Grid cells (clean, spread, marked, absorbed, cordoned, burned)"
+  },
+  {
+   "id": "bloom-cell-absorbed",
+   "group": "pieces",
+   "title": "District cell: absorbed (Aegis)",
+   "w": 120,
+   "h": 120,
+   "row": "bloom | Grid cells (clean, spread, marked, absorbed, cordoned, burned)"
+  },
+  {
+   "id": "bloom-cell-burned",
+   "group": "pieces",
+   "title": "District cell: burned clear (the Cauldron)",
+   "w": 120,
+   "h": 120,
+   "row": "bloom | Grid cells (clean, spread, marked, absorbed, cordoned, burned)"
+  },
+  {
+   "id": "bloom-cell-marked",
+   "group": "pieces",
+   "title": "District cell: marked (the residents changed)",
+   "w": 120,
+   "h": 120,
+   "row": "bloom | Grid cells (clean, spread, marked, absorbed, cordoned, burned)"
+  },
+  {
+   "id": "bloom-cell-spore-1",
+   "group": "pieces",
+   "title": "District cell: spores, level 1",
+   "w": 120,
+   "h": 120,
+   "row": "bloom | Grid cells (clean, spread, marked, absorbed, cordoned, burned)"
+  },
+  {
+   "id": "bloom-cell-spore-2",
+   "group": "pieces",
+   "title": "District cell: spores, level 2",
+   "w": 120,
+   "h": 120,
+   "row": "bloom | Grid cells (clean, spread, marked, absorbed, cordoned, burned)"
+  },
+  {
+   "id": "bloom-cell-spore-3",
+   "group": "pieces",
+   "title": "District cell: spores, level 3",
+   "w": 120,
+   "h": 120,
+   "row": "bloom | Grid cells (clean, spread, marked, absorbed, cordoned, burned)"
+  },
+  {
+   "id": "bloom-cordon",
+   "group": "pieces",
+   "title": "Cordon: a crew's sheeting on a cell",
+   "w": 120,
+   "h": 120,
+   "row": "bloom | Grid cells (clean, spread, marked, absorbed, cordoned, burned)"
+  },
+  {
+   "id": "bloom-pane",
+   "group": "pieces",
+   "title": "Pane: hard light on a cell edge",
+   "w": 120,
+   "h": 24,
+   "row": "bloom | Edges: panes and the Twins' line"
+  },
+  {
+   "id": "bloom-source",
+   "group": "pieces",
+   "title": "The source rooftop (the rig)",
+   "w": 120,
+   "h": 120,
+   "row": "bloom | The source, the wind and the tick"
+  },
+  {
+   "id": "bloom-tick",
+   "group": "pieces",
+   "title": "The tick counter box",
+   "w": 200,
+   "h": 120,
+   "row": "bloom | The source, the wind and the tick"
+  },
+  {
+   "id": "bloom-twins-line",
+   "group": "pieces",
+   "title": "The Twins' line (a row of blocked edges)",
+   "w": 600,
+   "h": 40,
+   "row": "bloom | Edges: panes and the Twins' line"
+  },
+  {
+   "id": "bloom-wind",
+   "group": "pieces",
+   "title": "The wind arrow",
+   "w": 200,
+   "h": 120,
+   "row": "bloom | The source, the wind and the tick"
+  },
+  {
+   "id": "composite-base",
+   "group": "pieces",
+   "title": "The base form, with the constants printed",
+   "w": 600,
+   "h": 800,
+   "row": "composite | The base form and the light box"
+  },
+  {
+   "id": "composite-pin",
+   "group": "pieces",
+   "title": "Pin the composite",
+   "w": 120,
+   "h": 120,
+   "row": "composite | Pin"
+  },
+  {
+   "id": "composite-strip-arms-joint",
+   "group": "pieces",
+   "title": "Strip, arms: a joint too many",
+   "w": 600,
+   "h": 800,
+   "row": "composite | Feature strips: arms"
+  },
+  {
+   "id": "composite-strip-arms-reach",
+   "group": "pieces",
+   "title": "Strip, arms: reach (the gala)",
+   "w": 600,
+   "h": 800,
+   "row": "composite | Feature strips: arms"
+  },
+  {
+   "id": "composite-strip-arms-wings",
+   "group": "pieces",
+   "title": "Strip, arms: wings (awed)",
+   "w": 600,
+   "h": 800,
+   "row": "composite | Feature strips: arms"
+  },
+  {
+   "id": "composite-strip-back-light",
+   "group": "pieces",
+   "title": "Strip, back: a light coming out of him (awed)",
+   "w": 600,
+   "h": 800,
+   "row": "composite | Feature strips: back"
+  },
+  {
+   "id": "composite-strip-back-ridge",
+   "group": "pieces",
+   "title": "Strip, back: the spine pulled into a ridge",
+   "w": 600,
+   "h": 800,
+   "row": "composite | Feature strips: back"
+  },
+  {
+   "id": "composite-strip-gait-long",
+   "group": "pieces",
+   "title": "Strip, gait: low and long",
+   "w": 600,
+   "h": 800,
+   "row": "composite | Feature strips: gait"
+  },
+  {
+   "id": "composite-strip-gait-tail",
+   "group": "pieces",
+   "title": "Strip, gait: a tail (terrified)",
+   "w": 600,
+   "h": 800,
+   "row": "composite | Feature strips: gait"
+  },
+  {
+   "id": "composite-strip-head-halo",
+   "group": "pieces",
+   "title": "Strip, head: a halo (awed)",
+   "w": 600,
+   "h": 800,
+   "row": "composite | Feature strips: head"
+  },
+  {
+   "id": "composite-strip-head-horns",
+   "group": "pieces",
+   "title": "Strip, head: horns (terrified)",
+   "w": 600,
+   "h": 800,
+   "row": "composite | Feature strips: head"
+  },
+  {
+   "id": "composite-strip-head-sunk",
+   "group": "pieces",
+   "title": "Strip, head: sunk between the shoulders",
+   "w": 600,
+   "h": 800,
+   "row": "composite | Feature strips: head"
+  },
+  {
+   "id": "composite-strip-shoulders-high",
+   "group": "pieces",
+   "title": "Strip, shoulders: too high",
+   "w": 600,
+   "h": 800,
+   "row": "composite | Feature strips: shoulders"
+  },
+  {
+   "id": "composite-strip-shoulders-plate",
+   "group": "pieces",
+   "title": "Strip, shoulders: scab plating (the raid)",
+   "w": 600,
+   "h": 800,
+   "row": "composite | Feature strips: shoulders"
+  },
+  {
+   "id": "crowd-thread-poster",
+   "group": "pieces",
+   "title": "State poster: REPORT THIS MAN",
+   "w": 200,
+   "h": 280,
+   "row": "crowd-thread | Posters of his face (security_knows_face)"
+  },
+  {
+   "id": "crowd-thread-ring",
+   "group": "pieces",
+   "title": "The breath radius: a ring of bare paper",
+   "w": 480,
+   "h": 220,
+   "row": "crowd-thread | The breath radius (a ring of bare white)"
+  },
+  {
+   "id": "crowd-thread-service-door",
+   "group": "pieces",
+   "title": "The Spire's service door",
+   "w": 220,
+   "h": 340,
+   "row": "crowd-thread | Ama and Lev, who open the service door"
+  },
+  {
+   "id": "crowd-thread-shutter",
+   "group": "pieces",
+   "title": "The relief hall's shutter, down",
+   "w": 480,
+   "h": 420,
+   "row": "crowd-thread | The shutter and its sign"
+  },
+  {
+   "id": "crowd-thread-sight-cone",
+   "group": "pieces",
+   "title": "A staff member's sight cone",
+   "w": 480,
+   "h": 220,
+   "row": "crowd-thread | Relief staff and Spire security (sight cones)"
+  },
+  {
+   "id": "crowd-thread-sign-suspended",
+   "group": "pieces",
+   "title": "Hand-lettered sign: RELIEF SUSPENDED",
+   "w": 520,
+   "h": 120,
+   "row": "crowd-thread | The shutter and its sign"
+  },
+  {
+   "id": "manifold-backpressure",
+   "group": "pieces",
+   "title": "Starburst: BACK-PRESSURE!",
+   "w": 260,
+   "h": 180,
+   "row": "manifold | Starbursts"
+  },
+  {
+   "id": "manifold-barrel",
+   "group": "pieces",
+   "title": "A barrel (empty glass, fill marks)",
+   "w": 80,
+   "h": 240,
+   "row": "manifold | The gauntlet, valves, barrels and the fifth outlet"
+  },
+  {
+   "id": "manifold-bead",
+   "group": "pieces",
+   "title": "A bead of flow",
+   "w": 32,
+   "h": 32,
+   "row": "manifold | The gauntlet, valves, barrels and the fifth outlet"
+  },
+  {
+   "id": "manifold-burst",
+   "group": "pieces",
+   "title": "Starburst (blank, for a number or a cry)",
+   "w": 200,
+   "h": 200,
+   "row": "manifold | Starbursts"
+  },
+  {
+   "id": "manifold-gauntlet",
+   "group": "pieces",
+   "title": "The gauntlet: spine, line and numbered callouts",
+   "w": 1000,
+   "h": 260,
+   "row": "manifold | The gauntlet, valves, barrels and the fifth outlet"
+  },
+  {
+   "id": "manifold-outlet-capped",
+   "group": "pieces",
+   "title": "The fifth outlet, capped",
+   "w": 140,
+   "h": 80,
+   "row": "manifold | The gauntlet, valves, barrels and the fifth outlet"
+  },
+  {
+   "id": "manifold-outlet-open",
+   "group": "pieces",
+   "title": "The fifth outlet, routed (the resin line)",
+   "w": 140,
+   "h": 80,
+   "row": "manifold | The gauntlet, valves, barrels and the fifth outlet"
+  },
+  {
+   "id": "manifold-valve-half",
+   "group": "pieces",
+   "title": "Valve: half",
+   "w": 80,
+   "h": 80,
+   "row": "manifold | The gauntlet, valves, barrels and the fifth outlet"
+  },
+  {
+   "id": "manifold-valve-open",
+   "group": "pieces",
+   "title": "Valve: open",
+   "w": 80,
+   "h": 80,
+   "row": "manifold | The gauntlet, valves, barrels and the fifth outlet"
+  },
+  {
+   "id": "manifold-valve-shut",
+   "group": "pieces",
+   "title": "Valve: shut",
+   "w": 80,
+   "h": 80,
+   "row": "manifold | The gauntlet, valves, barrels and the fifth outlet"
+  },
+  {
+   "id": "persona-balloon-amber",
+   "group": "pieces",
+   "title": "Thought balloon: warm amber light",
+   "w": 360,
+   "h": 210,
+   "row": "persona | Thought balloons (the six facets)"
+  },
+  {
+   "id": "persona-balloon-cally",
+   "group": "pieces",
+   "title": "Thought balloon: Cally",
+   "w": 360,
+   "h": 210,
+   "row": "persona | Thought balloons (the six facets)"
+  },
+  {
+   "id": "persona-balloon-carmy",
+   "group": "pieces",
+   "title": "Thought balloon: Carmy",
+   "w": 360,
+   "h": 210,
+   "row": "persona | Thought balloons (the six facets)"
+  },
+  {
+   "id": "persona-balloon-rolan",
+   "group": "pieces",
+   "title": "Thought balloon: Rolan",
+   "w": 360,
+   "h": 210,
+   "row": "persona | Thought balloons (the six facets)"
+  },
+  {
+   "id": "persona-balloon-sky",
+   "group": "pieces",
+   "title": "Thought balloon: a painted sky",
+   "w": 360,
+   "h": 210,
+   "row": "persona | Thought balloons (the six facets)"
+  },
+  {
+   "id": "persona-balloon-string",
+   "group": "pieces",
+   "title": "Thought balloon: a loop of string",
+   "w": 360,
+   "h": 210,
+   "row": "persona | Thought balloons (the six facets)"
+  },
+  {
+   "id": "persona-meter",
+   "group": "pieces",
+   "title": "The match meter, marked at 94.6",
+   "w": 1000,
+   "h": 90,
+   "row": "persona | The match meter"
+  },
+  {
+   "id": "persona-tear",
+   "group": "pieces",
+   "title": "A tear on a lash",
+   "w": 140,
+   "h": 140,
+   "row": "persona | Ornament"
+  },
+  {
+   "id": "reflection-run-camera-cue",
+   "group": "pieces",
+   "title": "The handler's cue: a printed camera",
+   "w": 160,
+   "h": 160,
+   "row": "reflection-run | The handler's cue (cameras are objectives)"
+  },
+  {
+   "id": "reflection-run-column-rcc",
+   "group": "pieces",
+   "title": "Refusal: the clean-air column's plate",
+   "w": 160,
+   "h": 440,
+   "row": "reflection-run | Doors, switches and the three refusals"
+  },
+  {
+   "id": "reflection-run-door",
+   "group": "pieces",
+   "title": "A glass door",
+   "w": 160,
+   "h": 300,
+   "row": "reflection-run | Doors, switches and the three refusals"
+  },
+  {
+   "id": "reflection-run-door-rcc",
+   "group": "pieces",
+   "title": "Refusal 1: a door plate stamped RCC",
+   "w": 200,
+   "h": 100,
+   "row": "reflection-run | Doors, switches and the three refusals"
+  },
+  {
+   "id": "reflection-run-force",
+   "group": "pieces",
+   "title": "Force (hold): the reflection dragged on",
+   "w": 160,
+   "h": 160,
+   "row": "reflection-run | Force or stop with it"
+  },
+  {
+   "id": "reflection-run-frame",
+   "group": "pieces",
+   "title": "Repeat frame, unprinted",
+   "w": 240,
+   "h": 540,
+   "row": "reflection-run | Repeat frames (filling with colour as she passes)"
+  },
+  {
+   "id": "reflection-run-frame-printed",
+   "group": "pieces",
+   "title": "Repeat frame, printed",
+   "w": 240,
+   "h": 540,
+   "row": "reflection-run | Repeat frames (filling with colour as she passes)"
+  },
+  {
+   "id": "reflection-run-mural-sky",
+   "group": "pieces",
+   "title": "Refusal: a lobby mural of a painted sky",
+   "w": 480,
+   "h": 300,
+   "row": "reflection-run | Doors, switches and the three refusals"
+  },
+  {
+   "id": "reflection-run-stop",
+   "group": "pieces",
+   "title": "Stop with it: the reflection walks on alone",
+   "w": 160,
+   "h": 160,
+   "row": "reflection-run | Force or stop with it"
+  },
+  {
+   "id": "reflection-run-switch",
+   "group": "pieces",
+   "title": "A switch in the glass world",
+   "w": 100,
+   "h": 140,
+   "row": "reflection-run | Doors, switches and the three refusals"
+  },
+  {
+   "id": "reflection-run-trolley-string",
+   "group": "pieces",
+   "title": "Refusal: a loop of string on a cleaner's trolley",
+   "w": 240,
+   "h": 200,
+   "row": "reflection-run | Doors, switches and the three refusals"
+  },
+  {
+   "id": "triage-cot",
+   "group": "pieces",
+   "title": "A cot",
+   "w": 160,
+   "h": 96,
+   "row": "triage | Resources: marks, water, cots, his time"
+  },
+  {
+   "id": "triage-mark",
+   "group": "pieces",
+   "title": "A mark of tincture (within need)",
+   "w": 64,
+   "h": 64,
+   "row": "triage | Resources: marks, water, cots, his time"
+  },
+  {
+   "id": "triage-mark-past",
+   "group": "pieces",
+   "title": "A mark past the need",
+   "w": 64,
+   "h": 64,
+   "row": "triage | A mark past the need (the stamp in later pages)"
+  },
+  {
+   "id": "triage-stamp-early",
+   "group": "pieces",
+   "title": "Corner stamp: CAME BACK EARLY",
+   "w": 300,
+   "h": 120,
+   "row": "triage | A mark past the need (the stamp in later pages)"
+  },
+  {
+   "id": "triage-time",
+   "group": "pieces",
+   "title": "His time (a wristwatch)",
+   "w": 96,
+   "h": 96,
+   "row": "triage | Resources: marks, water, cots, his time"
+  },
+  {
+   "id": "triage-tray",
+   "group": "pieces",
+   "title": "The tincture tray",
+   "w": 240,
+   "h": 520,
+   "row": "triage | The table: the tray and three columns"
+  },
+  {
+   "id": "triage-water",
+   "group": "pieces",
+   "title": "Water (a tin cup)",
+   "w": 96,
+   "h": 96,
+   "row": "triage | Resources: marks, water, cots, his time"
+  },
+  {
+   "id": "ending-bond-held",
+   "group": "endings",
+   "title": "Ending: Bond Held",
+   "w": 1200,
+   "h": 675,
+   "row": "loading | Ending lettering plates (menu spoilers)"
+  },
+  {
+   "id": "ending-first-word",
+   "group": "endings",
+   "title": "Ending: First Word",
+   "w": 1200,
+   "h": 675,
+   "row": "loading | Ending lettering plates (menu spoilers)"
+  },
+  {
+   "id": "ending-the-clinic",
+   "group": "endings",
+   "title": "Ending: The Clinic",
+   "w": 1200,
+   "h": 675,
+   "row": "loading | Ending lettering plates (menu spoilers)"
+  },
+  {
+   "id": "ending-the-following",
+   "group": "endings",
+   "title": "Ending: The Following",
+   "w": 1200,
+   "h": 675,
+   "row": "loading | Ending lettering plates (menu spoilers)"
+  },
+  {
+   "id": "chapter-1",
+   "group": "chapters",
+   "title": "Chapter I: The Knock",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c1_knock)"
+  },
+  {
+   "id": "chapter-10",
+   "group": "chapters",
+   "title": "Chapter X: The Gala",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c10_gala)"
+  },
+  {
+   "id": "chapter-11",
+   "group": "chapters",
+   "title": "Chapter XI: Clean Air",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c11_clean_air)"
+  },
+  {
+   "id": "chapter-2",
+   "group": "chapters",
+   "title": "Chapter II: Relief",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c2_relief)"
+  },
+  {
+   "id": "chapter-3",
+   "group": "chapters",
+   "title": "Chapter III: Containment",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c3_containment)"
+  },
+  {
+   "id": "chapter-4",
+   "group": "chapters",
+   "title": "Chapter IV: The Gauntlet",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c4_gauntlet)"
+  },
+  {
+   "id": "chapter-5",
+   "group": "chapters",
+   "title": "Chapter V: Under the Freeway",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c5_freeway)"
+  },
+  {
+   "id": "chapter-6",
+   "group": "chapters",
+   "title": "Chapter VI: Seventy-Two Hours",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c6_calibration)"
+  },
+  {
+   "id": "chapter-7",
+   "group": "chapters",
+   "title": "Chapter VII: The Hero Comes Down",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c7_hero)"
+  },
+  {
+   "id": "chapter-8",
+   "group": "chapters",
+   "title": "Chapter VIII: Bloom",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c8_bloom)"
+  },
+  {
+   "id": "chapter-9",
+   "group": "chapters",
+   "title": "Chapter IX: Resin",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c9_resin)"
+  },
+  {
+   "id": "hud-amber",
+   "group": "ui",
+   "title": "HUD icon: Amber (a dose on hand)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Amber"
+  },
+  {
+   "id": "hud-amber-empty",
+   "group": "ui",
+   "title": "HUD icon: Amber (an empty slot)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Amber"
+  },
+  {
+   "id": "hud-breath",
+   "group": "ui",
+   "title": "HUD icon: the breath radius (a ring on the floor)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: the breath radius"
+  },
+  {
+   "id": "hud-caption",
+   "group": "ui",
+   "title": "Caption box (blank, for dated captions)",
+   "w": 600,
+   "h": 96,
+   "row": "shared | Typed caption box"
+  },
+  {
+   "id": "hud-load",
+   "group": "ui",
+   "title": "Load gauge (Aegis, pale gold)",
+   "w": 480,
+   "h": 48,
+   "row": "shared | HUD: Load"
+  },
+  {
+   "id": "hud-margin-calm",
+   "group": "ui",
+   "title": "Pulse margin line: calm (amber)",
+   "w": 1200,
+   "h": 32,
+   "row": "shared | HUD: Pulse margin strip"
+  },
+  {
+   "id": "hud-margin-edge",
+   "group": "ui",
+   "title": "Pulse margin line: near the Self line (green spikes)",
+   "w": 1200,
+   "h": 32,
+   "row": "shared | HUD: Pulse margin strip"
+  },
+  {
+   "id": "hud-margin-green",
+   "group": "ui",
+   "title": "Pulse margin line: at the line (green from the corners)",
+   "w": 1200,
+   "h": 32,
+   "row": "shared | HUD: Pulse margin strip"
+  },
+  {
+   "id": "hud-pulse",
+   "group": "ui",
+   "title": "HUD icon: Pulse (calm)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Pulse"
+  },
+  {
+   "id": "hud-pulse-edge",
+   "group": "ui",
+   "title": "HUD icon: Pulse near the line (green spike)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Pulse"
+  },
+  {
+   "id": "hud-self",
+   "group": "ui",
+   "title": "HUD icon: Self (a struck word)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Self"
+  },
+  {
+   "id": "hud-shroud-closed",
+   "group": "ui",
+   "title": "HUD icon: shroud closed",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: the shroud"
+  },
+  {
+   "id": "hud-shroud-open",
+   "group": "ui",
+   "title": "HUD icon: shroud open",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: the shroud"
+  },
+  {
+   "id": "hud-word-hope",
+   "group": "ui",
+   "title": "Terminology Rule: HOPE (the insignia)",
+   "w": 240,
+   "h": 96,
+   "row": "shared | HUD: the Word (Terminology Rule)"
+  },
+  {
+   "id": "hud-word-rcc",
+   "group": "ui",
+   "title": "Terminology Rule: RCC (the plate)",
+   "w": 240,
+   "h": 96,
+   "row": "shared | HUD: the Word (Terminology Rule)"
+  },
+  {
+   "id": "hud-word-silence",
+   "group": "ui",
+   "title": "Terminology Rule: nothing (the held breath)",
+   "w": 240,
+   "h": 96,
+   "row": "shared | HUD: the Word (Terminology Rule)"
+  },
+  {
+   "id": "loading-monitor-amber",
+   "group": "ui",
+   "title": "Loading monitor line, amber (held)",
+   "w": 1200,
+   "h": 140,
+   "row": "loading | Animated element: the monitor line, first state"
+  },
+  {
+   "id": "loading-monitor-green",
+   "group": "ui",
+   "title": "Loading monitor line, at the line (green in the corners)",
+   "w": 1200,
+   "h": 140,
+   "row": "loading | Animated element: the monitor line, last state"
+  },
+  {
+   "id": "loading-monitor-trigger",
+   "group": "ui",
+   "title": "Loading monitor line, amber under the Self line",
+   "w": 1200,
+   "h": 140,
+   "row": "loading | Animated element: the monitor line, second state"
+  },
+  {
+   "id": "bloom-masthead",
+   "group": "documents",
+   "title": "Masthead: THE MORNING BULLETIN",
+   "w": 1280,
+   "h": 160,
+   "row": "bloom | The page: masthead, frame and portrait"
+  },
+  {
+   "id": "bloom-portrait-catalyst",
+   "group": "documents",
+   "title": "Newsprint portrait: Rostova, captioned CATALYST",
+   "w": 300,
+   "h": 400,
+   "row": "bloom | The page: masthead, frame and portrait"
+  },
+  {
+   "id": "manifold-advert",
+   "group": "documents",
+   "title": "The advert page (backdrop)",
+   "w": 1280,
+   "h": 720,
+   "row": "manifold | The advert page, headlines and coupon"
+  },
+  {
+   "id": "manifold-coupon",
+   "group": "documents",
+   "title": "The coupon corner: PULSE PER DART",
+   "w": 360,
+   "h": 200,
+   "row": "manifold | The advert page, headlines and coupon"
+  },
+  {
+   "id": "manifold-headline-1",
+   "group": "documents",
+   "title": "Headline: AMAZING! FOUR BARRELS FROM ONE LINE!",
+   "w": 1000,
+   "h": 120,
+   "row": "manifold | The advert page, headlines and coupon"
+  },
+  {
+   "id": "manifold-headline-2",
+   "group": "documents",
+   "title": "Headline: NEW! NOW WITH A FIFTH OUTLET!",
+   "w": 1000,
+   "h": 120,
+   "row": "manifold | The advert page, headlines and coupon"
+  },
+  {
+   "id": "persona-heart-panel",
+   "group": "documents",
+   "title": "The heart panel: his profile",
+   "w": 720,
+   "h": 480,
+   "row": "persona | The page and the heart panel"
+  },
+  {
+   "id": "composite-map-freeway",
+   "group": "maps",
+   "title": "Inset map: under the freeway",
+   "w": 360,
+   "h": 240,
+   "row": "composite | Inset maps (who had line of sight)"
+  },
+  {
+   "id": "composite-map-gala",
+   "group": "maps",
+   "title": "Inset map: the gala floor and the balcony",
+   "w": 360,
+   "h": 240,
+   "row": "composite | Inset maps (who had line of sight)"
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 220" width="480" height="220" role="img" aria-labelledby="crowd-thread-sight-cone-t crowd-thread-sight-cone-d">
+<title id="crowd-thread-sight-cone-t">A staff member's sight cone</title>
+<desc id="crowd-thread-sight-cone-d">A sight cone drawn as a wedge of loose diagonal hatching opening to the right from a point on the left edge, its rim a broken pen line; the module stretches it to the watcher's facing.</desc>
+<defs><clipPath id="crowd-thread-sight-cone-clip1"><path d="M4,110 L476,8 L476,212Z"/></clipPath></defs>
+<path d="M4,110 L476,8 L476,212Z" fill="#141414" opacity="0.1"/>
+<g clip-path="url(#crowd-thread-sight-cone-clip1)">
+<path d="M-112.5,-54.4 L404.4,-242.5 M-108.7,-44 L408.1,-232.1 M-105,-33.7 L411.9,-221.8 M-101.2,-23.4 L415.7,-211.5 M-97.4,-13 L419.4,-201.1 M-93.7,-2.7 L423.2,-190.8 M-89.9,7.7 L426.9,-180.5 M-86.1,18 L430.7,-170.1 M-82.4,28.3 L434.5,-159.8 M-78.6,38.7 L438.2,-149.5 M-74.9,49 L442,-139.1 M-71.1,59.3 L445.7,-128.8 M-67.3,69.7 L449.5,-118.4 M-63.6,80 L453.3,-108.1 M-59.8,90.3 L457,-97.8 M-56,100.7 L460.8,-87.4 M-52.3,111 L464.6,-77.1 M-48.5,121.4 L468.3,-66.8 M-44.8,131.7 L472.1,-56.4 M-41,142 L475.8,-46.1 M-37.2,152.4 L479.6,-35.7 M-33.5,162.7 L483.4,-25.4 M-29.7,173 L487.1,-15.1 M-25.9,183.4 L490.9,-4.7 M-22.2,193.7 L494.7,5.6 M-18.4,204.1 L498.4,15.9 M-14.7,214.4 L502.2,26.3 M-10.9,224.7 L505.9,36.6 M-7.1,235.1 L509.7,46.9 M-3.4,245.4 L513.5,57.3 M0.4,255.7 L517.2,67.6 M4.1,266.1 L521,78 M7.9,276.4 L524.8,88.3 M11.7,286.7 L528.5,98.6 M15.4,297.1 L532.3,109 M19.2,307.4 L536,119.3 M23,317.8 L539.8,129.6 M26.7,328.1 L543.6,140 M30.5,338.4 L547.3,150.3 M34.2,348.8 L551.1,160.6 M38,359.1 L554.9,171 M41.8,369.4 L558.6,181.3 M45.5,379.8 L562.4,191.7 M49.3,390.1 L566.1,202 M53.1,400.4 L569.9,212.3 M56.8,410.8 L573.7,222.7 M60.6,421.1 L577.4,233 M64.3,431.5 L581.2,243.3 M68.1,441.8 L585,253.7 M71.9,452.1 L588.7,264 M75.6,462.5 L592.5,274.4" fill="none" stroke="#141414" stroke-width="1.2" opacity="0.6"/>
+</g>
+<path d="M4,110 L476,8 M4,110 L476,212" fill="none" stroke="#141414" stroke-width="2.5" stroke-dasharray="10 6"/>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 220" width="480" height="220" role="img" aria-labelledby="crowd-thread-ring-t crowd-thread-ring-d">
+<title id="crowd-thread-ring-t">The breath radius: a ring of bare paper</title>
+<desc id="crowd-thread-ring-d">The breath radius seen on the floor: an ellipse of bare white paper wiped clean of all hatching, edged with a dashed pen line and short ticks pointing out, centred on him. Stretch it with Pulse; halve it with the shroud closed.</desc>
+<ellipse cx="240" cy="110" rx="232" ry="102" fill="#f6f1e4" opacity="1"/>
+<ellipse cx="240" cy="110" rx="232" ry="102" fill="none" stroke="#141414" stroke-width="3" stroke-dasharray="14 9"/>
+<line x1="472" y1="110" x2="456" y2="110" stroke="#141414" stroke-width="2"/>
+<line x1="454.3" y1="149" x2="439.6" y2="146.4" stroke="#141414" stroke-width="2"/>
+<line x1="404" y1="182.1" x2="392.7" y2="177.2" stroke="#141414" stroke-width="2"/>
+<line x1="328.8" y1="204.2" x2="322.7" y2="197.8" stroke="#141414" stroke-width="2"/>
+<line x1="240" y1="212" x2="240" y2="205" stroke="#141414" stroke-width="2"/>
+<line x1="151.2" y1="204.2" x2="157.3" y2="197.8" stroke="#141414" stroke-width="2"/>
+<line x1="76" y1="182.1" x2="87.3" y2="177.2" stroke="#141414" stroke-width="2"/>
+<line x1="25.7" y1="149" x2="40.4" y2="146.4" stroke="#141414" stroke-width="2"/>
+<line x1="8" y1="110" x2="24" y2="110" stroke="#141414" stroke-width="2"/>
+<line x1="25.7" y1="71" x2="40.4" y2="73.6" stroke="#141414" stroke-width="2"/>
+<line x1="76" y1="37.9" x2="87.3" y2="42.8" stroke="#141414" stroke-width="2"/>
+<line x1="151.2" y1="15.8" x2="157.3" y2="22.2" stroke="#141414" stroke-width="2"/>
+<line x1="240" y1="8" x2="240" y2="15" stroke="#141414" stroke-width="2"/>
+<line x1="328.8" y1="15.8" x2="322.7" y2="22.2" stroke="#141414" stroke-width="2"/>
+<line x1="404" y1="37.9" x2="392.7" y2="42.8" stroke="#141414" stroke-width="2"/>
+<line x1="454.3" y1="71" x2="439.6" y2="73.6" stroke="#141414" stroke-width="2"/>
+</svg>

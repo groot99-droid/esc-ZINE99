@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 300" width="160" height="300" role="img" aria-labelledby="reflection-run-door-t reflection-run-door-d">
+<title id="reflection-run-door-t">A glass door</title>
+<desc id="reflection-run-door-d">A Spire glass door printed flat: a sky-blue pane with a white diagonal highlight, a dark ink frame printed off register and a long bar handle.</desc>
+<rect x="16" y="14" width="132" height="280" fill="#7FA9D6"/>
+<path d="M40,20 L80,20 L40,120 L24,120Z" fill="#ffffff" opacity="0.6"/>
+<rect x="10" y="8" width="132" height="280" fill="none" stroke="#2B2B6B" stroke-width="8"/>
+<rect x="110" y="120" width="10" height="70" fill="#2B2B6B"/>
+<rect x="6" y="40" width="12" height="26" fill="#F2C14E"/>
+<rect x="6" y="250" width="12" height="26" fill="#F2C14E"/>
+</svg>

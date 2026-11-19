@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 210" width="360" height="210" role="img" aria-labelledby="persona-balloon-string-t persona-balloon-string-d">
+<title id="persona-balloon-string-t">Thought balloon: a loop of string</title>
+<desc id="persona-balloon-string-d">A thought balloon from his profile, “a loop of string”, white with a string tint inside, plum italic lettering and three trailing bubbles; its size on the page is the facet's hidden weight.</desc>
+<ellipse cx="180" cy="84" rx="164" ry="66" fill="#ffffff" stroke="#3B2A4A" stroke-width="4"/>
+<ellipse cx="180" cy="84" rx="150" ry="56" fill="#F6E1A8" opacity="0.6"/>
+<circle cx="80" cy="152" r="14" fill="#ffffff" stroke="#3B2A4A" stroke-width="3"/>
+<circle cx="50" cy="180" r="8" fill="#ffffff" stroke="#3B2A4A" stroke-width="3"/>
+<circle cx="32" cy="196" r="5" fill="#ffffff" stroke="#3B2A4A" stroke-width="3"/>
+<text x="180" y="96" font-size="34" font-family="serif" fill="#3B2A4A" text-anchor="middle" font-style="italic" textLength="270" lengthAdjust="spacingAndGlyphs">a loop of string</text>
+</svg>

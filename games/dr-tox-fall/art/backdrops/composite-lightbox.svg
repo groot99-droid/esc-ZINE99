@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="composite-lightbox-t composite-lightbox-d">
+<title id="composite-lightbox-t">Composite: the light box (backdrop)</title>
+<desc id="composite-lightbox-d">The witness room: a gray table, the light box glowing pale in the middle where the stack lies, slotted racks for strips at the left and right, a rail along the bottom for witness cards and a framed space at the top right for the inset map.</desc>
+<defs><radialGradient id="composite-lightbox-rg1" cx="0.5" cy="0.5" r="0.6"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></radialGradient><radialGradient id="composite-lightbox-rg2" cx="0.5" cy="0.5" r="0.7"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/><stop offset="100%" stop-color="#e8ece6" stop-opacity="0.6"/></radialGradient></defs>
+<rect x="0" y="0" width="1280" height="720" fill="#d9dcd6"/>
+<rect x="0" y="0" width="1280" height="720" fill="url(#composite-lightbox-rg1)"/>
+<rect x="420" y="24" width="440" height="520" rx="12" fill="#7f8786" stroke="#5f6766" stroke-width="4"/>
+<rect x="436" y="40" width="408" height="488" rx="6" fill="#f5f7f2"/>
+<rect x="436" y="40" width="408" height="488" rx="6" fill="url(#composite-lightbox-rg2)"/>
+<rect x="30" y="24" width="370" height="520" rx="8" fill="#c9cdc7" stroke="#9aa09a" stroke-width="2"/>
+<rect x="44" y="40" width="342" height="70" rx="4" fill="#e3e6e1" stroke="#9aa09a" stroke-width="1.5"/>
+<rect x="44" y="124" width="342" height="70" rx="4" fill="#e3e6e1" stroke="#9aa09a" stroke-width="1.5"/>
+<rect x="44" y="208" width="342" height="70" rx="4" fill="#e3e6e1" stroke="#9aa09a" stroke-width="1.5"/>
+<rect x="44" y="292" width="342" height="70" rx="4" fill="#e3e6e1" stroke="#9aa09a" stroke-width="1.5"/>
+<rect x="44" y="376" width="342" height="70" rx="4" fill="#e3e6e1" stroke="#9aa09a" stroke-width="1.5"/>
+<rect x="44" y="460" width="342" height="70" rx="4" fill="#e3e6e1" stroke="#9aa09a" stroke-width="1.5"/>
+<rect x="880" y="212" width="370" height="332" rx="8" fill="#c9cdc7" stroke="#9aa09a" stroke-width="2"/>
+<rect x="894" y="228" width="342" height="70" rx="4" fill="#e3e6e1" stroke="#9aa09a" stroke-width="1.5"/>
+<rect x="894" y="312" width="342" height="70" rx="4" fill="#e3e6e1" stroke="#9aa09a" stroke-width="1.5"/>
+<rect x="894" y="396" width="342" height="70" rx="4" fill="#e3e6e1" stroke="#9aa09a" stroke-width="1.5"/>
+<rect x="894" y="480" width="342" height="70" rx="4" fill="#e3e6e1" stroke="#9aa09a" stroke-width="1.5"/>
+<rect x="20" y="566" width="1240" height="140" rx="8" fill="#c3c7c1" stroke="#9aa09a" stroke-width="2"/>
+<line x1="30" y1="690" x2="1250" y2="690" stroke="#8f958f" stroke-width="3"/>
+<rect x="880" y="24" width="370" height="170" fill="none" stroke="#7d9aa6" stroke-width="2" stroke-dasharray="8 6"/>
+</svg>

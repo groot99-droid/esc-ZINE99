@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-labelledby="composite-strip-arms-reach-t composite-strip-arms-reach-d">
+<title id="composite-strip-arms-reach-t">Strip, arms: reach (the gala)</title>
+<desc id="composite-strip-arms-reach-d">The gala's arms strip: both arms drawn far too long, reaching past the knees to long fingers: reach, everything longer than it should be.</desc>
+<rect x="12" y="230" width="576" height="350" rx="6" fill="#ffffff" opacity="0.2" stroke="#7d9aa6" stroke-width="2.5"/>
+<circle cx="30" cy="246" r="7" fill="#d9dcd6" opacity="0.8" stroke="#7d9aa6" stroke-width="1.5"/>
+<circle cx="570" cy="246" r="7" fill="#d9dcd6" opacity="0.8" stroke="#7d9aa6" stroke-width="1.5"/>
+<rect x="44" y="236" width="120" height="22" fill="#ffffff" opacity="0.8" stroke="#7d9aa6" stroke-width="1"/>
+<text x="52" y="252" font-size="13" font-family="monospace" fill="#2a3340" text-anchor="start" letter-spacing="2">ARMS</text>
+<rect x="470" y="236" width="86" height="22" fill="none" stroke="#b03030" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6"/>
+<path d="M180,260 C150,340 120,440 100,572" fill="none" stroke="#2a3340" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="102" y1="572" x2="110" y2="578" stroke="#2a3340" stroke-width="3.8"/>
+<line x1="98" y1="572" x2="100" y2="578" stroke="#2a3340" stroke-width="3.8"/>
+<line x1="94" y1="572" x2="90" y2="578" stroke="#2a3340" stroke-width="3.8"/>
+<line x1="90" y1="572" x2="80" y2="578" stroke="#2a3340" stroke-width="3.8"/>
+<path d="M110,572 l-4,6 M102,572 l-6,6 M94,570 l-8,6" fill="none" stroke="#2a3340" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M420,260 C450,340 480,440 500,572" fill="none" stroke="#2a3340" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="498" y1="572" x2="490" y2="578" stroke="#2a3340" stroke-width="3.8"/>
+<line x1="502" y1="572" x2="500" y2="578" stroke="#2a3340" stroke-width="3.8"/>
+<line x1="506" y1="572" x2="510" y2="578" stroke="#2a3340" stroke-width="3.8"/>
+<line x1="510" y1="572" x2="520" y2="578" stroke="#2a3340" stroke-width="3.8"/>
+<path d="M490,572 l4,6 M498,572 l6,6 M506,570 l8,6" fill="none" stroke="#2a3340" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 540" width="1920" height="540" role="img" aria-labelledby="crowd-thread-gala-far-t crowd-thread-gala-far-d">
+<title id="crowd-thread-gala-far-t">Crowd thread: the gala floor (far layer)</title>
+<desc id="crowd-thread-gala-far-d">The Spire gala's far wall drawn in the same cheap crosshatch: tall windows onto a night city in dense black hatching with lit windows left bare, hanging lamps like inverted bells, and a polished floor drawn as long parallel strokes.</desc>
+<defs><filter id="crowd-thread-gala-far-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="273"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0"/></filter><clipPath id="crowd-thread-gala-far-clip2"><rect x="20" y="30" width="200" height="380"/></clipPath><clipPath id="crowd-thread-gala-far-clip3"><rect x="260" y="30" width="200" height="380"/></clipPath><clipPath id="crowd-thread-gala-far-clip4"><rect x="500" y="30" width="200" height="380"/></clipPath><clipPath id="crowd-thread-gala-far-clip5"><rect x="740" y="30" width="200" height="380"/></clipPath><clipPath id="crowd-thread-gala-far-clip6"><rect x="980" y="30" width="200" height="380"/></clipPath><clipPath id="crowd-thread-gala-far-clip7"><rect x="1220" y="30" width="200" height="380"/></clipPath><clipPath id="crowd-thread-gala-far-clip8"><rect x="1460" y="30" width="200" height="380"/></clipPath><clipPath id="crowd-thread-gala-far-clip9"><rect x="1700" y="30" width="200" height="380"/></clipPath><clipPath id="crowd-thread-gala-far-clip10"><path d="M70,110 C80,60 160,60 170,110Z"/></clipPath><clipPath id="crowd-thread-gala-far-clip11"><path d="M550,110 C560,60 640,60 650,110Z"/></clipPath><clipPath id="crowd-thread-gala-far-clip12"><path d="M1030,110 C1040,60 1120,60 1130,110Z"/></clipPath><clipPath id="crowd-thread-gala-far-clip13"><path d="M1510,110 C1520,60 1600,60 1610,110Z"/></clipPath></defs>
+<rect x="0" y="0" width="1920" height="540" fill="#ece4d0"/>
+<rect x="0" y="0" width="1920" height="540" filter="url(#crowd-thread-gala-far-grain1)"/>
+<rect x="20" y="30" width="200" height="380" fill="#2a2a27" stroke="#141414" stroke-width="4"/>
+<rect x="26" y="330" width="26" height="80" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="34" y="340" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="58" y="277" width="26" height="133" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="66" y="343" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="90" y="224" width="26" height="186" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="98" y="262" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="98" y="346" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="122" y="171" width="26" height="239" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="130" y="181" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="130" y="265" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="130" y="349" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="154" y="318" width="26" height="92" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="162" y="384" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="186" y="265" width="26" height="145" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="194" y="303" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="194" y="387" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip2)"/>
+<rect x="260" y="30" width="200" height="380" fill="#2a2a27" stroke="#141414" stroke-width="4"/>
+<rect x="266" y="290" width="26" height="120" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="274" y="300" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="274" y="384" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="298" y="237" width="26" height="173" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="306" y="303" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="306" y="387" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="330" y="184" width="26" height="226" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="338" y="222" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="338" y="306" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="338" y="390" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="362" y="131" width="26" height="279" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="370" y="141" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="370" y="225" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="370" y="309" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="370" y="393" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="394" y="278" width="26" height="132" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="402" y="344" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="426" y="225" width="26" height="185" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="434" y="263" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="434" y="347" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip3)"/>
+<rect x="500" y="30" width="200" height="380" fill="#2a2a27" stroke="#141414" stroke-width="4"/>
+<rect x="506" y="250" width="26" height="160" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="514" y="260" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="514" y="344" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="538" y="197" width="26" height="213" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="546" y="263" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="546" y="347" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="570" y="144" width="26" height="266" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="578" y="182" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="578" y="266" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="578" y="350" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="602" y="291" width="26" height="119" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="610" y="301" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="610" y="385" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="634" y="238" width="26" height="172" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="642" y="304" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="642" y="388" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="666" y="185" width="26" height="225" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="674" y="223" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="674" y="307" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="674" y="391" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip4)"/>
+<rect x="740" y="30" width="200" height="380" fill="#2a2a27" stroke="#141414" stroke-width="4"/>
+<rect x="746" y="210" width="26" height="200" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="754" y="220" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="754" y="304" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="754" y="388" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="778" y="157" width="26" height="253" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="786" y="223" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="786" y="307" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="786" y="391" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="810" y="304" width="26" height="106" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="818" y="342" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="842" y="251" width="26" height="159" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="850" y="261" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="850" y="345" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="874" y="198" width="26" height="212" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="882" y="264" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="882" y="348" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="906" y="145" width="26" height="265" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="914" y="183" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="914" y="267" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="914" y="351" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip5)"/>
+<rect x="980" y="30" width="200" height="380" fill="#2a2a27" stroke="#141414" stroke-width="4"/>
+<rect x="986" y="170" width="26" height="240" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="994" y="180" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="994" y="264" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="994" y="348" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1018" y="317" width="26" height="93" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1026" y="383" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1050" y="264" width="26" height="146" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1058" y="302" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1058" y="386" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1082" y="211" width="26" height="199" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1090" y="221" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1090" y="305" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1090" y="389" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1114" y="158" width="26" height="252" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1122" y="224" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1122" y="308" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1122" y="392" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1146" y="305" width="26" height="105" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1154" y="343" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip6)"/>
+<rect x="1220" y="30" width="200" height="380" fill="#2a2a27" stroke="#141414" stroke-width="4"/>
+<rect x="1226" y="330" width="26" height="80" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1234" y="340" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1258" y="277" width="26" height="133" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1266" y="343" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1290" y="224" width="26" height="186" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1298" y="262" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1298" y="346" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1322" y="171" width="26" height="239" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1330" y="181" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1330" y="265" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1330" y="349" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1354" y="318" width="26" height="92" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1362" y="384" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1386" y="265" width="26" height="145" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1394" y="303" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1394" y="387" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip7)"/>
+<rect x="1460" y="30" width="200" height="380" fill="#2a2a27" stroke="#141414" stroke-width="4"/>
+<rect x="1466" y="290" width="26" height="120" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1474" y="300" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1474" y="384" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1498" y="237" width="26" height="173" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1506" y="303" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1506" y="387" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1530" y="184" width="26" height="226" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1538" y="222" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1538" y="306" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1538" y="390" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1562" y="131" width="26" height="279" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1570" y="141" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1570" y="225" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1570" y="309" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1570" y="393" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1594" y="278" width="26" height="132" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1602" y="344" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1626" y="225" width="26" height="185" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1634" y="263" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1634" y="347" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip8)"/>
+<rect x="1700" y="30" width="200" height="380" fill="#2a2a27" stroke="#141414" stroke-width="4"/>
+<rect x="1706" y="250" width="26" height="160" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1714" y="260" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1714" y="344" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1738" y="197" width="26" height="213" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1746" y="263" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1746" y="347" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1770" y="144" width="26" height="266" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1778" y="182" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1778" y="266" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1778" y="350" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1802" y="291" width="26" height="119" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1810" y="301" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1810" y="385" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1834" y="238" width="26" height="172" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1842" y="304" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1842" y="388" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1866" y="185" width="26" height="225" fill="#141412" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1874" y="223" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1874" y="307" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<rect x="1874" y="391" width="8" height="8" fill="#f6f1e4" clip-path="url(#crowd-thread-gala-far-clip9)"/>
+<line x1="120" y1="0" x2="120" y2="60" stroke="#141414" stroke-width="2"/>
+<path d="M70,110 C80,60 160,60 170,110Z" fill="#f6f1e4" stroke="#141414" stroke-width="3"/>
+<g clip-path="url(#crowd-thread-gala-far-clip10)">
+<path d="M34.2,77.5 L127.5,-0.8 M37.4,81.3 L130.7,3 M40.6,85.2 L133.9,6.9 M43.8,89 L137.1,10.7 M47.1,92.8 L140.4,14.5 M50.3,96.6 L143.6,18.4 M53.5,100.5 L146.8,22.2 M56.7,104.3 L150,26 M59.9,108.1 L153.2,29.8 M63.1,112 L156.4,33.7 M66.3,115.8 L159.6,37.5 M69.6,119.6 L162.9,41.3 M72.8,123.5 L166.1,45.2 M76,127.3 L169.3,49 M79.2,131.1 L172.5,52.8 M82.4,134.9 L175.7,56.7 M85.6,138.8 L178.9,60.5 M88.8,142.6 L182.1,64.3 M92.1,146.4 L185.4,68.1 M95.3,150.3 L188.6,72 M98.5,154.1 L191.8,75.8 M101.7,157.9 L195,79.6 M104.9,161.8 L198.2,83.5 M108.1,165.6 L201.4,87.3 M111.3,169.4 L204.6,91.1" fill="none" stroke="#141414" stroke-width="1"/>
+</g>
+<line x1="600" y1="0" x2="600" y2="60" stroke="#141414" stroke-width="2"/>
+<path d="M550,110 C560,60 640,60 650,110Z" fill="#f6f1e4" stroke="#141414" stroke-width="3"/>
+<g clip-path="url(#crowd-thread-gala-far-clip11)">
+<path d="M514.2,77.5 L607.5,-0.8 M517.4,81.3 L610.7,3 M520.6,85.2 L613.9,6.9 M523.8,89 L617.1,10.7 M527.1,92.8 L620.4,14.5 M530.3,96.6 L623.6,18.4 M533.5,100.5 L626.8,22.2 M536.7,104.3 L630,26 M539.9,108.1 L633.2,29.8 M543.1,112 L636.4,33.7 M546.3,115.8 L639.6,37.5 M549.6,119.6 L642.9,41.3 M552.8,123.5 L646.1,45.2 M556,127.3 L649.3,49 M559.2,131.1 L652.5,52.8 M562.4,134.9 L655.7,56.7 M565.6,138.8 L658.9,60.5 M568.8,142.6 L662.1,64.3 M572.1,146.4 L665.4,68.1 M575.3,150.3 L668.6,72 M578.5,154.1 L671.8,75.8 M581.7,157.9 L675,79.6 M584.9,161.8 L678.2,83.5 M588.1,165.6 L681.4,87.3 M591.3,169.4 L684.6,91.1" fill="none" stroke="#141414" stroke-width="1"/>
+</g>
+<line x1="1080" y1="0" x2="1080" y2="60" stroke="#141414" stroke-width="2"/>
+<path d="M1030,110 C1040,60 1120,60 1130,110Z" fill="#f6f1e4" stroke="#141414" stroke-width="3"/>
+<g clip-path="url(#crowd-thread-gala-far-clip12)">
+<path d="M994.2,77.5 L1087.5,-0.8 M997.4,81.3 L1090.7,3 M1000.6,85.2 L1093.9,6.9 M1003.8,89 L1097.1,10.7 M1007.1,92.8 L1100.4,14.5 M1010.3,96.6 L1103.6,18.4 M1013.5,100.5 L1106.8,22.2 M1016.7,104.3 L1110,26 M1019.9,108.1 L1113.2,29.8 M1023.1,112 L1116.4,33.7 M1026.3,115.8 L1119.6,37.5 M1029.6,119.6 L1122.9,41.3 M1032.8,123.5 L1126.1,45.2 M1036,127.3 L1129.3,49 M1039.2,131.1 L1132.5,52.8 M1042.4,134.9 L1135.7,56.7 M1045.6,138.8 L1138.9,60.5 M1048.8,142.6 L1142.1,64.3 M1052.1,146.4 L1145.4,68.1 M1055.3,150.3 L1148.6,72 M1058.5,154.1 L1151.8,75.8 M1061.7,157.9 L1155,79.6 M1064.9,161.8 L1158.2,83.5 M1068.1,165.6 L1161.4,87.3 M1071.3,169.4 L1164.6,91.1" fill="none" stroke="#141414" stroke-width="1"/>
+</g>
+<line x1="1560" y1="0" x2="1560" y2="60" stroke="#141414" stroke-width="2"/>
+<path d="M1510,110 C1520,60 1600,60 1610,110Z" fill="#f6f1e4" stroke="#141414" stroke-width="3"/>
+<g clip-path="url(#crowd-thread-gala-far-clip13)">
+<path d="M1474.2,77.5 L1567.5,-0.8 M1477.4,81.3 L1570.7,3 M1480.6,85.2 L1573.9,6.9 M1483.8,89 L1577.1,10.7 M1487.1,92.8 L1580.4,14.5 M1490.3,96.6 L1583.6,18.4 M1493.5,100.5 L1586.8,22.2 M1496.7,104.3 L1590,26 M1499.9,108.1 L1593.2,29.8 M1503.1,112 L1596.4,33.7 M1506.3,115.8 L1599.6,37.5 M1509.6,119.6 L1602.9,41.3 M1512.8,123.5 L1606.1,45.2 M1516,127.3 L1609.3,49 M1519.2,131.1 L1612.5,52.8 M1522.4,134.9 L1615.7,56.7 M1525.6,138.8 L1618.9,60.5 M1528.8,142.6 L1622.1,64.3 M1532.1,146.4 L1625.4,68.1 M1535.3,150.3 L1628.6,72 M1538.5,154.1 L1631.8,75.8 M1541.7,157.9 L1635,79.6 M1544.9,161.8 L1638.2,83.5 M1548.1,165.6 L1641.4,87.3 M1551.3,169.4 L1644.6,91.1" fill="none" stroke="#141414" stroke-width="1"/>
+</g>
+<rect x="0" y="410" width="1920" height="130" fill="#d9cfb8"/>
+<line x1="0" y1="410" x2="1920" y2="410" stroke="#141414" stroke-width="4"/>
+<line x1="0" y1="424" x2="1920" y2="424" stroke="#141414" stroke-width="1" opacity="0.4"/>
+<line x1="0" y1="438" x2="1920" y2="438" stroke="#141414" stroke-width="1" opacity="0.4"/>
+<line x1="0" y1="452" x2="1920" y2="452" stroke="#141414" stroke-width="1" opacity="0.4"/>
+<line x1="0" y1="466" x2="1920" y2="466" stroke="#141414" stroke-width="1" opacity="0.4"/>
+<line x1="0" y1="480" x2="1920" y2="480" stroke="#141414" stroke-width="1" opacity="0.4"/>
+<line x1="0" y1="494" x2="1920" y2="494" stroke="#141414" stroke-width="1" opacity="0.4"/>
+<line x1="0" y1="508" x2="1920" y2="508" stroke="#141414" stroke-width="1" opacity="0.4"/>
+<line x1="0" y1="522" x2="1920" y2="522" stroke="#141414" stroke-width="1" opacity="0.4"/>
+<line x1="0" y1="536" x2="1920" y2="536" stroke="#141414" stroke-width="1" opacity="0.4"/>
+</svg>

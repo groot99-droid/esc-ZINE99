@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="reflection-run-stop-t reflection-run-stop-d">
+<title id="reflection-run-stop-t">Stop with it: the reflection walks on alone</title>
+<desc id="reflection-run-stop-d">The stop prompt: two short printed bars in a mint block, a pause, STAY in heavy capitals, the ink pass off register.</desc>
+<rect x="14" y="18" width="132" height="124" fill="#9ED8C6"/>
+<path d="M50,40 L72,40 L72,118 L50,118Z M88,40 L110,40 L110,118 L88,118Z" fill="#ffffff" transform="translate(-5,4)" opacity="1"/>
+<path d="M50,40 L72,40 L72,118 L50,118Z M88,40 L110,40 L110,118 L88,118Z" fill="#2B2B6B" opacity="0.9"/>
+<path d="M30,30 l-8,8 l8,8" fill="none" stroke="#2B2B6B" stroke-width="3"/>
+<path d="M44,30 l-8,8 l8,8" fill="none" stroke="#2B2B6B" stroke-width="3"/>
+<text x="80" y="150" font-size="22" font-family="sans-serif" fill="#2B2B6B" text-anchor="middle" font-weight="bold" letter-spacing="3">STAY</text>
+</svg>

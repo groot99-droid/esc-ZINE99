@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-labelledby="composite-strip-gait-tail-t composite-strip-gait-tail-d">
+<title id="composite-strip-gait-tail-t">Strip, gait: a tail (terrified)</title>
+<desc id="composite-strip-gait-tail-d">The terrified gait strip, askew: a long tail drawn heavy from the base of the spine to the floor, seen by someone too frightened to look twice.</desc>
+<g transform="rotate(-3 300 645.0)">
+<rect x="12" y="500" width="576" height="290" rx="6" fill="#ffffff" opacity="0.2" stroke="#7d9aa6" stroke-width="2.5"/>
+<circle cx="30" cy="516" r="7" fill="#d9dcd6" opacity="0.8" stroke="#7d9aa6" stroke-width="1.5"/>
+<circle cx="570" cy="516" r="7" fill="#d9dcd6" opacity="0.8" stroke="#7d9aa6" stroke-width="1.5"/>
+<rect x="44" y="506" width="120" height="22" fill="#ffffff" opacity="0.8" stroke="#7d9aa6" stroke-width="1"/>
+<text x="52" y="522" font-size="13" font-family="monospace" fill="#2a3340" text-anchor="start" letter-spacing="2">GAIT</text>
+<rect x="470" y="506" width="86" height="22" fill="none" stroke="#b03030" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6"/>
+<path d="M300,520 C340,600 420,640 470,700 C500,740 520,760 560,770" fill="none" stroke="#2a3340" stroke-width="9" stroke-linecap="round"/>
+<path d="M552,760 L572,774 L548,784Z" fill="#2a3340"/>
+<text x="556" y="522" font-size="18" font-family="sans-serif" fill="#b03030" text-anchor="end" font-weight="bold">?</text>
+</g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 340" width="240" height="340" role="img" aria-labelledby="persona-card-blade-t persona-card-blade-d">
+<title id="persona-card-blade-t">Dealt card: Drop the blade</title>
+<desc id="persona-card-blade-d">A card the deck dealt itself, “Drop the blade”: gray where the others are pastel, a thin line across it, lettered in the same plum italic; it fits no facet. Burn it or keep it.</desc>
+<rect x="10" y="12" width="222" height="320" rx="14" fill="#3B2A4A" opacity="0.2"/>
+<rect x="4" y="4" width="222" height="320" rx="14" fill="#d9d4d6" stroke="#3B2A4A" stroke-width="4"/>
+<rect x="16" y="16" width="198" height="296" rx="10" fill="none" stroke="#3B2A4A" stroke-width="1.5" opacity="0.6"/>
+<path d="M115,64.4 C92.6,48.4 103.8,32.4 115,43.6 C126.2,32.4 137.4,48.4 115,64.4Z" fill="#ecebec" stroke="#3B2A4A" stroke-width="2"/>
+<path d="M65,162 L145,102 L155,112 L75,172Z" fill="#b9b4b6" stroke="#3B2A4A" stroke-width="3"/>
+<line x1="65" y1="182" x2="165" y2="182" fill="none" stroke="#3B2A4A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="115" y="228" font-size="26" font-family="serif" fill="#3B2A4A" text-anchor="middle" font-style="italic">Drop the blade</text>
+<line x1="28" y1="30" x2="202" y2="300" stroke="#3B2A4A" stroke-width="2" opacity="0.5"/>
+<text x="115" y="300" font-size="16" font-family="serif" fill="#3B2A4A" text-anchor="middle" font-style="italic">dealt itself</text>
+</svg>

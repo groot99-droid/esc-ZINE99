@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320" width="200" height="320" role="img" aria-labelledby="reflection-run-reflect-walk-t reflection-run-reflect-walk-d">
+<title id="reflection-run-reflect-walk-t">The reflection walking (inverted)</title>
+<desc id="reflection-run-reflect-walk-d">Her reflection, printed upside down for the glass below the floor line: the same silhouette in a paler mint block and a faded ink pass, feet on the top edge, a stride behind.</desc>
+<g transform="translate(0,320) scale(1,-1)">
+<path d="M83.2,28.8 L100,19.2 L119.2,31.2 L126.4,72 L131.2,98.4 L114.4,91.2 L131.2,117.6 L126.4,204 L140.8,252 L118,256.8 L120.4,312 L110.8,312 L100,228 L89.2,312 L79.6,312 L82,256.8 L59.2,252 L73.6,204 L68.8,117.6 L85.6,91.2 L68.8,98.4 L73.6,72Z" fill="#9ED8C6" transform="translate(5,-4)" opacity="0.6"/>
+<path d="M83.2,28.8 L100,19.2 L119.2,31.2 L126.4,72 L131.2,98.4 L114.4,91.2 L131.2,117.6 L126.4,204 L140.8,252 L118,256.8 L120.4,312 L110.8,312 L100,228 L89.2,312 L79.6,312 L82,256.8 L59.2,252 L73.6,204 L68.8,117.6 L85.6,91.2 L68.8,98.4 L73.6,72Z" fill="#2B2B6B" opacity="0.5"/>
+<path d="M83.2,84 L119.2,84 L116.8,98.4 L85.6,98.4Z M107.2,96 L116.8,96 L124,148.8 L112,148.8Z" fill="#7FA9D6" opacity="0.6"/>
+<rect x="73.6" y="177.6" width="52.8" height="7.2" fill="#7FA9D6" opacity="0.5"/>
+<path d="M92.8,28.8 C104.8,24 114.4,33.6 116.8,50.4" fill="none" stroke="#ffffff" stroke-width="3.6" opacity="0.3"/>
+</g>
+</svg>

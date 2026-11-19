@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-labelledby="composite-pin-t composite-pin-d">
+<title id="composite-pin-t">Pin the composite</title>
+<desc id="composite-pin-d">The pin: a red push pin through the corner of a clear sheet, a grease-pencil tick beside it.</desc>
+<defs><filter id="composite-pin-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="953" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.2"/></filter></defs>
+<rect x="20" y="30" width="80" height="80" fill="#ffffff" opacity="0.3" stroke="#7d9aa6" stroke-width="2"/>
+<circle cx="36" cy="46" r="14" fill="#b03030" stroke="#2a3340" stroke-width="2"/>
+<circle cx="32" cy="42" r="4" fill="#ffffff" opacity="0.6"/>
+<line x1="36" y1="60" x2="44" y2="74" stroke="#2a3340" stroke-width="3"/>
+<path d="M60,80 L74,96 L104,56" fill="none" stroke="#b03030" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#composite-pin-rough1)"/>
+</svg>
