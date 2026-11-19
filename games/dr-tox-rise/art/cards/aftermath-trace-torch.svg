@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420" role="img" aria-labelledby="aftermath-trace-torch-t aftermath-trace-torch-d">
+<title id="aftermath-trace-torch-t">Trace: Dropped torch</title>
+<desc id="aftermath-trace-torch-d">Trace card for a false trace: a guard's torch dropped on the floor, its beam lying along the ground. It must be set aside; the card does not say so.</desc>
+<defs><clipPath id="aftermath-trace-torch-clip1"><rect x="20" y="20" width="280" height="240"/></clipPath><pattern id="aftermath-trace-torch-tone2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="2" fill="#111111"/></pattern></defs>
+<rect x="0" y="0" width="320" height="420" fill="#ffffff"/>
+<rect x="8" y="8" width="304" height="404" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<rect x="20" y="20" width="280" height="240" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<g clip-path="url(#aftermath-trace-torch-clip1)">
+<path d="M20,20 L300,20 L300,260 L20,260Z" fill="url(#aftermath-trace-torch-tone2)"/>
+<path d="M80,170 l120,-30 l8,28 l-120,30Z" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M208,140 l60,-30 l12,70Z" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<rect x="100" y="170" width="30" height="10" fill="#111111" transform="rotate(-14 115 175)"/>
+</g>
+<text x="22" y="294" font-size="20" font-family="sans-serif" fill="#111111" text-anchor="start" font-weight="bold" letter-spacing="1">DROPPED TORCH</text>
+<line x1="22" y1="306" x2="298" y2="306" stroke="#111111" stroke-width="1.5"/>
+<text x="22" y="334" font-size="17" font-family="serif" fill="#111111" text-anchor="start">Guard issue. The switch is</text>
+<text x="22" y="358" font-size="17" font-family="serif" fill="#111111" text-anchor="start">still on.</text>
+</svg>

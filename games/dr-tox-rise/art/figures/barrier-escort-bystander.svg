@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320" width="200" height="320" role="img" aria-labelledby="barrier-escort-bystander-t barrier-escort-bystander-d">
+<title id="barrier-escort-bystander-t">Bystander with a bundle</title>
+<desc id="barrier-escort-bystander-d">A bystander in a rust-red coat holding a small wrapped bundle against the chest, caught in the corridor when the transport came.</desc>
+<line x1="50" y1="310" x2="150" y2="310" stroke="#1b1b1b" stroke-width="3" stroke-linecap="round"/>
+<path d="M100,32.5 a20.4,22.2 0 1,0 0.1,0Z M88.9,69.5 L111.1,69.5 L113,91.7 L87,91.7Z M59.3,88 L140.7,88 L137,202.7 L122.2,310 L105.5,310 L100,199 L94.5,310 L77.8,310 L63,202.7Z" fill="#a46a4a" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<rect x="60" y="160" width="40" height="34" fill="#e9efee" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<line x1="60" y1="177" x2="100" y2="177" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="80" y1="160" x2="80" y2="194" stroke="#1b1b1b" stroke-width="1.5"/>
+</svg>

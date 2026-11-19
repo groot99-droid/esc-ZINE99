@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 72" width="960" height="72" role="img" aria-labelledby="window-caption-t window-caption-d">
+<title id="window-caption-t">Typed caption strip (blank)</title>
+<desc id="window-caption-d">The typed caption strip that runs below the photos, pasted on: off-white paper with a hairline border and a slightly crooked set, for the typed line the page writes at run time.</desc>
+<rect x="6" y="10" width="948" height="54" fill="#000" opacity="0.2" transform="rotate(-0.4 480 36)"/>
+<rect x="4" y="6" width="948" height="54" fill="#f2f0ea" stroke="#1d1d1b" stroke-width="1.5" transform="rotate(-0.4 480 36)"/>
+<rect x="12" y="2" width="18" height="8" fill="#d8d2bf" opacity="0.9"/>
+<rect x="940" y="2" width="18" height="8" fill="#d8d2bf" opacity="0.9"/>
+<line x1="20" y1="48" x2="60" y2="48" stroke="#1d1d1b" stroke-width="1" opacity="0.3"/>
+<line x1="900" y1="48" x2="940" y2="48" stroke="#1d1d1b" stroke-width="1" opacity="0.3"/>
+</svg>

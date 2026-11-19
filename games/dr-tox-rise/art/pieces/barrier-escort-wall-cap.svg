@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60" role="img" aria-labelledby="barrier-escort-wall-cap-t barrier-escort-wall-cap-d">
+<title id="barrier-escort-wall-cap-t">Hard-light wall end cap</title>
+<desc id="barrier-escort-wall-cap-d">The rounded end of a hard-light bar, where a drawn wall begins or ends.</desc>
+<circle cx="30" cy="30" r="24" fill="#f6e2a8" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="30" cy="30" r="10" fill="#fff6dc" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<line x1="30" y1="6" x2="30" y2="14" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="30" y1="46" x2="30" y2="54" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="6" y1="30" x2="14" y2="30" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="46" y1="30" x2="54" y2="30" stroke="#1b1b1b" stroke-width="1.5"/>
+</svg>

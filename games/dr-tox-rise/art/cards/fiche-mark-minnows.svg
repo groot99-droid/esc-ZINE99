@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="fiche-mark-minnows-t fiche-mark-minnows-d">
+<title id="fiche-mark-minnows-t">Mark: a jar of minnows on a windowsill (Hollis)</title>
+<desc id="fiche-mark-minnows-d">A jar of river water on a windowsill with three small minnows in it, cut in white lines: Hollis's jar.</desc>
+<rect x="0" y="0" width="240" height="240" fill="#0a0a0a"/>
+<rect x="8" y="8" width="224" height="224" fill="none" stroke="#efeee8" stroke-width="1.5"/>
+<rect x="8" y="190" width="224" height="16" fill="none" stroke="#efeee8" stroke-width="2"/>
+<path d="M80,70 L160,70 L164,90 C176,100 176,180 166,188 L74,188 C64,180 64,100 76,90Z" fill="none" stroke="#efeee8" stroke-width="2.5"/>
+<rect x="76" y="56" width="88" height="16" fill="none" stroke="#efeee8" stroke-width="2"/>
+<line x1="78" y1="110" x2="162" y2="110" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="78" y1="118" x2="162" y2="118" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="78" y1="126" x2="162" y2="126" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="78" y1="134" x2="162" y2="134" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="78" y1="142" x2="162" y2="142" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="78" y1="150" x2="162" y2="150" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="78" y1="158" x2="162" y2="158" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="78" y1="166" x2="162" y2="166" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="78" y1="174" x2="162" y2="174" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="78" y1="182" x2="162" y2="182" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<path d="M100,130 q10,-6 20,0 q-10,6 -20,0 M100,130 l-6,-5 l0,10Z" fill="#0a0a0a" stroke="#efeee8" stroke-width="1.6"/>
+<path d="M136,150 q-10,-6 -20,0 q10,6 20,0 M136,150 l6,-5 l0,10Z" fill="#0a0a0a" stroke="#efeee8" stroke-width="1.6"/>
+<path d="M110,166 q10,-6 20,0 q-10,6 -20,0 M110,166 l-6,-5 l0,10Z" fill="#0a0a0a" stroke="#efeee8" stroke-width="1.6"/>
+</svg>

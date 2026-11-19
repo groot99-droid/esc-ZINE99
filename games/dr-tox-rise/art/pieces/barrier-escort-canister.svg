@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 160" width="100" height="160" role="img" aria-labelledby="barrier-escort-canister-t barrier-escort-canister-d">
+<title id="barrier-escort-canister-t">Toxin canister</title>
+<desc id="barrier-escort-canister-d">A canister lobbed into the corridor: a squat grey cylinder with a hazard band and a valve cap.</desc>
+<rect x="14" y="30" width="72" height="120" rx="12" fill="#8a9a99" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<rect x="14" y="70" width="72" height="26" fill="#e3c75a" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<line x1="26" y1="70" x2="36" y2="96" stroke="#1b1b1b" stroke-width="2"/>
+<line x1="46" y1="70" x2="56" y2="96" stroke="#1b1b1b" stroke-width="2"/>
+<line x1="66" y1="70" x2="76" y2="96" stroke="#1b1b1b" stroke-width="2"/>
+<rect x="38" y="10" width="24" height="20" fill="#5e6b6c" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+</svg>

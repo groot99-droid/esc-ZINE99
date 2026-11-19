@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="chapter-1-t chapter-1-d">
+<title id="chapter-1-t">Chapter I: The First Dose</title>
+<desc id="chapter-1-d">Chapter card 1, The First Dose: a dated caption box (2217) over concrete with an amber Pulse margin line, the mark of an Alexander chapter, the chapter's name in capitals and one object drawn large.</desc>
+<defs><filter id="chapter-1-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="239"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><radialGradient id="chapter-1-vig2" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.6"/></radialGradient></defs>
+<rect x="0" y="0" width="1280" height="720" fill="#2b3536"/>
+<rect x="0" y="0" width="1280" height="720" filter="url(#chapter-1-grain1)"/>
+<rect x="0" y="0" width="1280" height="720" fill="url(#chapter-1-vig2)"/>
+<g transform="translate(690,330) rotate(-18)">
+<rect x="0" y="-37.8" width="260.4" height="75.6" rx="12.6" fill="#3a4243" stroke="#111111" stroke-width="5"/>
+<rect x="58.8" y="-14.7" width="126" height="29.4" fill="#D99A2B" stroke="#111111" stroke-width="3"/>
+<rect x="-84" y="-10.5" width="84" height="21" fill="#3a4243" stroke="#111111" stroke-width="5"/>
+<rect x="-100.8" y="-29.4" width="21" height="58.8" fill="#3a4243" stroke="#111111" stroke-width="5"/>
+<rect x="260.4" y="-18.9" width="33.6" height="37.8" fill="#3a4243" stroke="#111111" stroke-width="5"/>
+<line x1="294" y1="0" x2="420" y2="0" stroke="#111111" stroke-width="4" stroke-linecap="round"/>
+</g>
+<rect x="75" y="75" width="420" height="56" fill="#000" opacity="0.5"/>
+<rect x="70" y="70" width="420" height="56" fill="#f3eedf" stroke="#111111" stroke-width="3"/>
+<text x="86" y="106.6" font-size="24" font-family="sans-serif" fill="#111111" text-anchor="start" font-weight="bold" letter-spacing="1.4">2217</text>
+<text x="72" y="560" font-size="26" font-family="sans-serif" fill="#F2C14E" text-anchor="start" letter-spacing="6">CHAPTER I</text>
+<text x="70" y="630" font-size="58" font-family="sans-serif" fill="#E9ECEA" text-anchor="start" font-weight="bold" letter-spacing="2">THE FIRST DOSE</text>
+<rect x="0" y="676" width="1280" height="44" fill="#050606"/>
+<path d="M20,704 L75.8,704 L82,688 L89.4,710.4 L96.9,704 L144,704 L199.8,704 L206,688 L213.4,710.4 L220.9,704 L268,704 L323.8,704 L330,688 L337.4,710.4 L344.9,704 L392,704 L447.8,704 L454,688 L461.4,710.4 L468.9,704 L516,704 L571.8,704 L578,688 L585.4,710.4 L592.9,704 L640,704 L695.8,704 L702,688 L709.4,710.4 L716.9,704 L764,704 L819.8,704 L826,688 L833.4,710.4 L840.9,704 L888,704 L943.8,704 L950,688 L957.4,710.4 L964.9,704 L1012,704 L1067.8,704 L1074,688 L1081.4,710.4 L1088.9,704 L1136,704 L1191.8,704 L1198,688 L1205.4,710.4 L1212.9,704 L1260,704" fill="none" stroke="#D99A2B" stroke-width="3"/>
+</svg>

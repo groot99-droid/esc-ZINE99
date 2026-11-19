@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 520" width="240" height="520" role="img" aria-labelledby="cage-dropper-t cage-dropper-d">
+<title id="cage-dropper-t">Dropper on its stand</title>
+<desc id="cage-dropper-d">The dropper on a steel ring stand: a burette-like tube of flat amber A9 with a black stopcock and a fine tip, clamped to an upright rod on a heavy base.</desc>
+<rect x="20" y="470" width="200" height="36" rx="6" fill="#8a9a99" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<rect x="40" y="30" width="16" height="450" fill="#b8c1c0" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<rect x="40" y="120" width="110" height="16" fill="#8a9a99" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<rect x="120" y="40" width="44" height="300" rx="10" fill="#dce8e6" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<rect x="126" y="70" width="32" height="262" rx="6" fill="#D99A2B"/>
+<line x1="126" y1="90" x2="140" y2="90" stroke="#141414" stroke-width="2"/>
+<line x1="126" y1="120" x2="140" y2="120" stroke="#141414" stroke-width="2"/>
+<line x1="126" y1="150" x2="140" y2="150" stroke="#141414" stroke-width="2"/>
+<line x1="126" y1="180" x2="140" y2="180" stroke="#141414" stroke-width="2"/>
+<line x1="126" y1="210" x2="140" y2="210" stroke="#141414" stroke-width="2"/>
+<line x1="126" y1="240" x2="140" y2="240" stroke="#141414" stroke-width="2"/>
+<line x1="126" y1="270" x2="140" y2="270" stroke="#141414" stroke-width="2"/>
+<line x1="126" y1="300" x2="140" y2="300" stroke="#141414" stroke-width="2"/>
+<rect x="116" y="340" width="52" height="24" rx="4" fill="#141414"/>
+<rect x="164" y="344" width="34" height="14" rx="3" fill="#141414"/>
+<path d="M134,364 L150,364 L144,420 L140,420Z" fill="#dce8e6" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<text x="142" y="30" font-size="26" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold">A9</text>
+</svg>

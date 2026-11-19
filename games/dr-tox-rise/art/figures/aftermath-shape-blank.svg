@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 320" width="280" height="320" role="img" aria-labelledby="aftermath-shape-blank-t aftermath-shape-blank-d">
+<title id="aftermath-shape-blank-t">Silhouette panel, unrevealed</title>
+<desc id="aftermath-shape-blank-d">An unrevealed silhouette panel: a light dot screen in a frame with nothing on it, and a small question in the corner. In an unreconstructed record it stays like this.</desc>
+<defs><pattern id="aftermath-shape-blank-tone1" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="1.1" fill="#111111"/></pattern></defs>
+<rect x="0" y="0" width="280" height="320" fill="#ffffff"/>
+<path d="M10,10 L270,10 L270,310 L10,310Z" fill="url(#aftermath-shape-blank-tone1)"/>
+<rect x="10" y="10" width="260" height="300" fill="none" stroke="#111111" stroke-width="4"/>
+<rect x="30" y="30" width="30" height="30" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<text x="45" y="54" font-size="24" font-family="sans-serif" fill="#111111" text-anchor="middle" font-weight="bold">?</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" width="240" height="360" role="img" aria-labelledby="panel-run-locker-t panel-run-locker-d">
+<title id="panel-run-locker-t">Arlo Benn's locker</title>
+<desc id="panel-run-locker-d">The depot guard's locker standing open: black steel in brush, and taped inside the door a child's drawing, a house and a sun in a few loose strokes, the one soft thing in the depot.</desc>
+<rect x="20" y="20" width="120" height="330" fill="#111111"/>
+<polygon points="140,20 226,40 226,330 140,350" fill="#f4f1ea" stroke="#111111" stroke-width="6"/>
+<rect x="156" y="90" width="56" height="70" fill="#fbf8f0" stroke="#111111" stroke-width="2" transform="rotate(4 184 125)"/>
+<path d="M166,148 l0,-20 l14,-12 l14,12 l0,20Z" fill="none" stroke="#111111" stroke-width="2"/>
+<circle cx="202" cy="102" r="7" fill="none" stroke="#111111" stroke-width="2"/>
+<rect x="36" y="50" width="88" height="6" fill="#f4f1ea" opacity="0.3"/>
+<rect x="36" y="120" width="88" height="6" fill="#f4f1ea" opacity="0.3"/>
+<rect x="36" y="190" width="88" height="6" fill="#f4f1ea" opacity="0.3"/>
+<rect x="36" y="260" width="88" height="6" fill="#f4f1ea" opacity="0.3"/>
+</svg>

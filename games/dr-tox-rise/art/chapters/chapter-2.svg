@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="chapter-2-t chapter-2-d">
+<title id="chapter-2-t">Chapter II: Sky Room</title>
+<desc id="chapter-2-d">Chapter card 2, Sky Room: a dated caption box (Trial 53. Age Four.) over the program world of a Reese chapter, which has no margin line, the chapter's name in capitals and one object drawn large.</desc>
+<rect x="0" y="0" width="1280" height="720" fill="#E9ECEA"/>
+<rect x="0" y="0" width="1280" height="720" fill="#7FA9D6" opacity="0.2"/>
+<rect x="680" y="180" width="440" height="300" fill="#7FA9D6" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
+<rect x="680" y="390" width="440" height="90" fill="#7FA65C" stroke="none"/>
+<rect x="680" y="180" width="440" height="300" fill="none" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
+<ellipse cx="780" cy="260" rx="50" ry="18" fill="#f4f7fb"/>
+<ellipse cx="960" cy="230" rx="50" ry="18" fill="#f4f7fb"/>
+<path d="M780,350 L900,280 L1020,350 L900,420Z M780,350 L1020,350" fill="none" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+<rect x="75" y="75" width="420" height="56" fill="#000" opacity="0.5"/>
+<rect x="70" y="70" width="420" height="56" fill="#f3eedf" stroke="#111111" stroke-width="3"/>
+<text x="86" y="106.6" font-size="24" font-family="sans-serif" fill="#111111" text-anchor="start" font-weight="bold" letter-spacing="1.4">TRIAL 53. AGE FOUR.</text>
+<text x="72" y="560" font-size="26" font-family="sans-serif" fill="#4a3a20" text-anchor="start" letter-spacing="6">CHAPTER II</text>
+<text x="70" y="630" font-size="58" font-family="sans-serif" fill="#111111" text-anchor="start" font-weight="bold" letter-spacing="2">SKY ROOM</text>
+</svg>

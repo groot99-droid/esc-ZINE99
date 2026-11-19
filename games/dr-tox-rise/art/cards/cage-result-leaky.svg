@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="400" height="560" role="img" aria-labelledby="cage-result-leaky-t cage-result-leaky-d">
+<title id="cage-result-leaky-t">Batch result: Leaky (4 doses)</title>
+<desc id="cage-result-leaky-d">The result card for a batch capped short of the endpoint: the vial lower, a thin gray-teal line floating on the amber, LEAKY and 4 DOSES. Pulse's floor rises next chapter.</desc>
+<defs><clipPath id="cage-result-leaky-clip1"><rect x="0" y="257" width="400" height="560"/></clipPath></defs>
+<rect x="0" y="0" width="400" height="560" fill="#f3eedf"/>
+<rect x="10" y="10" width="380" height="540" rx="14" fill="#f3eedf" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<path d="M140,154 L167,130 L167,100 L233,100 L233,130 L260,154 L260,364 Q260,400 200,400 Q140,400 140,364Z" fill="#dce8e6" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<path d="M140,154 L167,130 L167,100 L233,100 L233,130 L260,154 L260,364 Q260,400 200,400 Q140,400 140,364Z" fill="#D99A2B" clip-path="url(#cage-result-leaky-clip1)"/>
+<rect x="150" y="251" width="100" height="10" fill="#8A9A99"/>
+<path d="M140,154 L167,130 L167,100 L233,100 L233,130 L260,154 L260,364 Q260,400 200,400 Q140,400 140,364Z" fill="none" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<rect x="30" y="432" width="340" height="3" fill="#141414"/>
+<text x="200" y="476" font-size="44" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold" letter-spacing="4">LEAKY</text>
+<text x="200" y="520" font-size="24" font-family="sans-serif" fill="#5E7375" text-anchor="middle" font-weight="bold" letter-spacing="3">4 DOSES</text>
+</svg>

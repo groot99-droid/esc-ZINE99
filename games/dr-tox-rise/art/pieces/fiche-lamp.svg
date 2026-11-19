@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" width="120" height="160" role="img" aria-labelledby="fiche-lamp-t fiche-lamp-d">
+<title id="fiche-lamp-t">Reader lamp (failing)</title>
+<desc id="fiche-lamp-d">The reader's lamp bulb cut in white lines on black, its filament drawn broken: six minutes and it fails, and the hum calls him on.</desc>
+<defs><clipPath id="fiche-lamp-clip1"><path d="M60,14 C92,14 104,44 96,70 C90,88 78,96 78,112 L42,112 C42,96 30,88 24,70 C16,44 28,14 60,14Z"/></clipPath></defs>
+<rect x="0" y="0" width="120" height="160" fill="#0a0a0a"/>
+<g clip-path="url(#fiche-lamp-clip1)">
+<path d="M123.4,-55.9 L195.9,143.4 M117.7,-53.8 L190.2,145.4 M112.1,-51.8 L184.6,147.5 M106.4,-49.7 L178.9,149.5 M100.8,-47.7 L173.3,151.6 M95.2,-45.6 L167.7,153.6 M89.5,-43.5 L162,155.7 M83.9,-41.5 L156.4,157.7 M78.2,-39.4 L150.8,159.8 M72.6,-37.4 L145.1,161.8 M67,-35.3 L139.5,163.9 M61.3,-33.3 L133.8,165.9 M55.7,-31.2 L128.2,168 M50.1,-29.2 L122.6,170 M44.4,-27.1 L116.9,172.1 M38.8,-25.1 L111.3,174.1 M33.1,-23 L105.7,176.2 M27.5,-21 L100,178.2 M21.9,-18.9 L94.4,180.3 M16.2,-16.9 L88.7,182.3 M10.6,-14.8 L83.1,184.4 M5,-12.8 L77.5,186.4 M-0.7,-10.7 L71.8,188.5 M-6.3,-8.7 L66.2,190.6 M-12,-6.6 L60.5,192.6 M-17.6,-4.6 L54.9,194.7 M-23.2,-2.5 L49.3,196.7 M-28.9,-0.5 L43.6,198.8 M-34.5,1.6 L38,200.8 M-40.2,3.6 L32.4,202.9 M-45.8,5.7 L26.7,204.9 M-51.4,7.8 L21.1,207 M-57.1,9.8 L15.4,209 M-62.7,11.9 L9.8,211.1 M-68.3,13.9 L4.2,213.1 M-74,16 L-1.5,215.2" fill="none" stroke="#efeee8" stroke-width="1.2"/>
+</g>
+<path d="M60,14 C92,14 104,44 96,70 C90,88 78,96 78,112 L42,112 C42,96 30,88 24,70 C16,44 28,14 60,14Z" fill="none" stroke="#efeee8" stroke-width="1.9"/>
+<path d="M46,104 L50,64 L58,80 M66,72 L70,64 L74,104" fill="none" stroke="#efeee8" stroke-width="2"/>
+<rect x="42" y="116" width="36" height="6" fill="#0a0a0a" stroke="#efeee8" stroke-width="1.2"/>
+<rect x="42" y="126" width="36" height="6" fill="#0a0a0a" stroke="#efeee8" stroke-width="1.2"/>
+<rect x="42" y="136" width="36" height="6" fill="#0a0a0a" stroke="#efeee8" stroke-width="1.2"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-labelledby="title-rise-t title-rise-d">
+<title id="title-rise-t">Title lettering: Dr. Tox: Rise</title>
+<desc id="title-rise-d">The title, DR. TOX in tall pale capitals over RISE in amber, on graded concrete with film grain; a thin amber monitor line runs under it, and a small line names the series and the episode.</desc>
+<defs><filter id="title-rise-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="779"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><radialGradient id="title-rise-vig2" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.5"/></radialGradient></defs>
+<rect x="0" y="0" width="1200" height="420" fill="#0d1112"/>
+<rect x="0" y="0" width="1200" height="420" filter="url(#title-rise-grain1)"/>
+<rect x="0" y="0" width="1200" height="420" fill="url(#title-rise-vig2)"/>
+<rect x="0" y="0" width="1200" height="420" fill="#5E7375" opacity="0.1"/>
+<text x="600" y="200" font-size="168" font-family="sans-serif" fill="#000" text-anchor="middle" font-weight="bold" letter-spacing="10" opacity="0.6" transform="translate(6,8)">DR. TOX</text>
+<text x="600" y="200" font-size="168" font-family="sans-serif" fill="#E9ECEA" text-anchor="middle" font-weight="bold" letter-spacing="10">DR. TOX</text>
+<path d="M140,262 L199.1,262 L205.7,228 L213.6,275.6 L221.5,262 L271.4,262 L330.6,262 L337.1,228 L345,275.6 L352.9,262 L402.9,262 L462,262 L468.6,228 L476.5,275.6 L484.3,262 L534.3,262 L593.4,262 L600,228 L607.9,275.6 L615.8,262 L665.7,262 L724.9,262 L731.4,228 L739.3,275.6 L747.2,262 L797.1,262 L856.3,262 L862.9,228 L870.7,275.6 L878.6,262 L928.6,262 L987.7,262 L994.3,228 L1002.2,275.6 L1010.1,262 L1060,262" fill="none" stroke="#D99A2B" stroke-width="4" stroke-linejoin="round"/>
+<text x="600" y="352" font-size="78" font-family="serif" fill="#D99A2B" text-anchor="middle" letter-spacing="18">R I S E</text>
+<text x="600" y="396" font-size="20" font-family="sans-serif" fill="#C4CDCB" text-anchor="middle" letter-spacing="5">EPISODE 1 OF 4  ·  AGE OF GLASS &amp; GREED</text>
+</svg>

@@ -1,0 +1,1358 @@
+{
+ "game": "dr-tox-rise",
+ "count": 169,
+ "assets": [
+  {
+   "id": "title-episodes",
+   "group": "title",
+   "title": "Episode strip: Rise open, Fall, Finale and Altrulan shut",
+   "w": 1200,
+   "h": 180,
+   "row": "loading | Episode menu strip"
+  },
+  {
+   "id": "title-rise",
+   "group": "title",
+   "title": "Title lettering: Dr. Tox: Rise",
+   "w": 1200,
+   "h": 420,
+   "row": "loading | Title lettering"
+  },
+  {
+   "id": "aftermath-shape-blank",
+   "group": "figures",
+   "title": "Silhouette panel, unrevealed",
+   "w": 280,
+   "h": 320,
+   "row": "aftermath | Silhouette panels (shapes only)"
+  },
+  {
+   "id": "aftermath-shape-one",
+   "group": "figures",
+   "title": "Shape I: shoulders too high",
+   "w": 280,
+   "h": 320,
+   "row": "aftermath | Silhouette panels (shapes only)"
+  },
+  {
+   "id": "aftermath-shape-three",
+   "group": "figures",
+   "title": "Shape III: low and long",
+   "w": 280,
+   "h": 320,
+   "row": "aftermath | Silhouette panels (shapes only)"
+  },
+  {
+   "id": "aftermath-shape-two",
+   "group": "figures",
+   "title": "Shape II: a joint too many",
+   "w": 280,
+   "h": 320,
+   "row": "aftermath | Silhouette panels (shapes only)"
+  },
+  {
+   "id": "barrier-escort-aegis",
+   "group": "figures",
+   "title": "Aegis running",
+   "w": 200,
+   "h": 320,
+   "row": "barrier-escort | Aegis and the other hero"
+  },
+  {
+   "id": "barrier-escort-aegis-absorb",
+   "group": "figures",
+   "title": "Aegis absorbing a canister cloud",
+   "w": 200,
+   "h": 320,
+   "row": "barrier-escort | Aegis and the other hero"
+  },
+  {
+   "id": "barrier-escort-bystander",
+   "group": "figures",
+   "title": "Bystander with a bundle",
+   "w": 200,
+   "h": 320,
+   "row": "barrier-escort | People in the corridor"
+  },
+  {
+   "id": "barrier-escort-child",
+   "group": "figures",
+   "title": "A child, seen from behind",
+   "w": 200,
+   "h": 320,
+   "row": "barrier-escort | People in the corridor"
+  },
+  {
+   "id": "barrier-escort-crew",
+   "group": "figures",
+   "title": "Barricade crew",
+   "w": 320,
+   "h": 320,
+   "row": "barrier-escort | People in the corridor"
+  },
+  {
+   "id": "barrier-escort-insurgent",
+   "group": "figures",
+   "title": "Insurgent with a water drum",
+   "w": 200,
+   "h": 320,
+   "row": "barrier-escort | People in the corridor"
+  },
+  {
+   "id": "barrier-escort-other-hero",
+   "group": "figures",
+   "title": "The other hero (a line of motion)",
+   "w": 200,
+   "h": 320,
+   "row": "barrier-escort | Aegis and the other hero"
+  },
+  {
+   "id": "panel-run-alex-climb",
+   "group": "figures",
+   "title": "Alexander: climb a marked edge",
+   "w": 200,
+   "h": 320,
+   "row": "panel-run | Alexander's poses"
+  },
+  {
+   "id": "panel-run-alex-cover",
+   "group": "figures",
+   "title": "Alexander: in cover against a wall",
+   "w": 200,
+   "h": 320,
+   "row": "panel-run | Alexander's poses"
+  },
+  {
+   "id": "panel-run-alex-crouch",
+   "group": "figures",
+   "title": "Alexander: crouch",
+   "w": 200,
+   "h": 320,
+   "row": "panel-run | Alexander's poses"
+  },
+  {
+   "id": "panel-run-alex-dart",
+   "group": "figures",
+   "title": "Alexander: drawing a dart from the shunt",
+   "w": 200,
+   "h": 320,
+   "row": "panel-run | Alexander's poses"
+  },
+  {
+   "id": "panel-run-alex-walk",
+   "group": "figures",
+   "title": "Alexander: walk",
+   "w": 200,
+   "h": 320,
+   "row": "panel-run | Alexander's poses"
+  },
+  {
+   "id": "panel-run-cauldron",
+   "group": "figures",
+   "title": "The Cauldron (clears a doorway)",
+   "w": 200,
+   "h": 320,
+   "row": "panel-run | The Observers in the gutters"
+  },
+  {
+   "id": "panel-run-dog",
+   "group": "figures",
+   "title": "The depot dog",
+   "w": 320,
+   "h": 200,
+   "row": "panel-run | Guards and the dog"
+  },
+  {
+   "id": "panel-run-ghost",
+   "group": "figures",
+   "title": "The Ghost (walks ahead unseen)",
+   "w": 200,
+   "h": 320,
+   "row": "panel-run | The Observers in the gutters"
+  },
+  {
+   "id": "panel-run-guard",
+   "group": "figures",
+   "title": "Guard with a torch",
+   "w": 200,
+   "h": 320,
+   "row": "panel-run | Guards and the dog"
+  },
+  {
+   "id": "panel-run-split",
+   "group": "figures",
+   "title": "The Split (carries him over a gap)",
+   "w": 200,
+   "h": 320,
+   "row": "panel-run | The Observers in the gutters"
+  },
+  {
+   "id": "panel-run-twins",
+   "group": "figures",
+   "title": "The Resonance Twins (open the last wall)",
+   "w": 320,
+   "h": 320,
+   "row": "panel-run | The Observers in the gutters"
+  },
+  {
+   "id": "aftermath-archive",
+   "group": "backdrops",
+   "title": "Aftermath room: the archive (Green ending)",
+   "w": 1280,
+   "h": 640,
+   "row": "aftermath | The room after (one per Aftermath)"
+  },
+  {
+   "id": "aftermath-depot-post",
+   "group": "backdrops",
+   "title": "Aftermath room: the depot guard post",
+   "w": 1280,
+   "h": 640,
+   "row": "aftermath | The room after (one per Aftermath)"
+  },
+  {
+   "id": "barrier-escort-far",
+   "group": "backdrops",
+   "title": "Barrier escort: lower ring (far layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "barrier-escort | Parallax backdrops: the lower-ring corridor, three layers"
+  },
+  {
+   "id": "barrier-escort-mid",
+   "group": "backdrops",
+   "title": "Barrier escort: lower ring (mid layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "barrier-escort | Parallax backdrops: the lower-ring corridor, three layers"
+  },
+  {
+   "id": "barrier-escort-near",
+   "group": "backdrops",
+   "title": "Barrier escort: lower ring (near layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "barrier-escort | Parallax backdrops: the lower-ring corridor, three layers"
+  },
+  {
+   "id": "cage-bench-2217",
+   "group": "backdrops",
+   "title": "The Cage backdrop: the bench in the hospital room (2217)",
+   "w": 1280,
+   "h": 720,
+   "row": "cage | Backdrops, one per place"
+  },
+  {
+   "id": "cage-lab",
+   "group": "backdrops",
+   "title": "The Cage backdrop: his own lab in Snakehead",
+   "w": 1280,
+   "h": 720,
+   "row": "cage | Backdrops, one per place"
+  },
+  {
+   "id": "cats-cradle-play-mat",
+   "group": "backdrops",
+   "title": "Cat's Cradle: the play mat (the centre of the page)",
+   "w": 900,
+   "h": 600,
+   "row": "cats-cradle | Backdrop"
+  },
+  {
+   "id": "cats-cradle-sky-wall",
+   "group": "backdrops",
+   "title": "Cat's Cradle backdrop: Sky Room's painted wall",
+   "w": 1280,
+   "h": 720,
+   "row": "cats-cradle | Backdrop"
+  },
+  {
+   "id": "loading-room",
+   "group": "backdrops",
+   "title": "Loading backdrop: the hospital room, 2217",
+   "w": 1600,
+   "h": 900,
+   "row": "loading | Loading screen backdrop"
+  },
+  {
+   "id": "panel-run-depot-far",
+   "group": "backdrops",
+   "title": "Panel run: depot (far layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "panel-run | Parallax backdrops, three sites by three layers"
+  },
+  {
+   "id": "panel-run-depot-mid",
+   "group": "backdrops",
+   "title": "Panel run: depot (mid layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "panel-run | Parallax backdrops, three sites by three layers"
+  },
+  {
+   "id": "panel-run-depot-near",
+   "group": "backdrops",
+   "title": "Panel run: depot (near layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "panel-run | Parallax backdrops, three sites by three layers"
+  },
+  {
+   "id": "panel-run-research-far",
+   "group": "backdrops",
+   "title": "Panel run: research (far layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "panel-run | Parallax backdrops, three sites by three layers"
+  },
+  {
+   "id": "panel-run-research-mid",
+   "group": "backdrops",
+   "title": "Panel run: research (mid layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "panel-run | Parallax backdrops, three sites by three layers"
+  },
+  {
+   "id": "panel-run-research-near",
+   "group": "backdrops",
+   "title": "Panel run: research (near layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "panel-run | Parallax backdrops, three sites by three layers"
+  },
+  {
+   "id": "panel-run-snakehead-far",
+   "group": "backdrops",
+   "title": "Panel run: snakehead (far layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "panel-run | Parallax backdrops, three sites by three layers"
+  },
+  {
+   "id": "panel-run-snakehead-mid",
+   "group": "backdrops",
+   "title": "Panel run: snakehead (mid layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "panel-run | Parallax backdrops, three sites by three layers"
+  },
+  {
+   "id": "panel-run-snakehead-near",
+   "group": "backdrops",
+   "title": "Panel run: snakehead (near layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "panel-run | Parallax backdrops, three sites by three layers"
+  },
+  {
+   "id": "aftermath-trace-clock",
+   "group": "cards",
+   "title": "Trace: Wall clock, stopped",
+   "w": 320,
+   "h": 420,
+   "row": "aftermath | Trace cards (what it is, a clue to when)"
+  },
+  {
+   "id": "aftermath-trace-dent",
+   "group": "cards",
+   "title": "Trace: Locker, dented",
+   "w": 320,
+   "h": 420,
+   "row": "aftermath | Trace cards (what it is, a clue to when)"
+  },
+  {
+   "id": "aftermath-trace-etch",
+   "group": "cards",
+   "title": "Trace: Etched doorway",
+   "w": 320,
+   "h": 420,
+   "row": "aftermath | Trace cards (what it is, a clue to when)"
+  },
+  {
+   "id": "aftermath-trace-light",
+   "group": "cards",
+   "title": "Trace: Strip light, failed",
+   "w": 320,
+   "h": 420,
+   "row": "aftermath | Trace cards (what it is, a clue to when)"
+  },
+  {
+   "id": "aftermath-trace-plate",
+   "group": "cards",
+   "title": "Trace: Lacquered flakes",
+   "w": 320,
+   "h": 420,
+   "row": "aftermath | Trace cards (what it is, a clue to when)"
+  },
+  {
+   "id": "aftermath-trace-scrape",
+   "group": "cards",
+   "title": "Trace: Long scrape to the door",
+   "w": 320,
+   "h": 420,
+   "row": "aftermath | Trace cards (what it is, a clue to when)"
+  },
+  {
+   "id": "aftermath-trace-strap",
+   "group": "cards",
+   "title": "Trace: Torn strap",
+   "w": 320,
+   "h": 420,
+   "row": "aftermath | Trace cards (what it is, a clue to when)"
+  },
+  {
+   "id": "aftermath-trace-torch",
+   "group": "cards",
+   "title": "Trace: Dropped torch",
+   "w": 320,
+   "h": 420,
+   "row": "aftermath | Trace cards (what it is, a clue to when)"
+  },
+  {
+   "id": "cage-result-hot",
+   "group": "cards",
+   "title": "Batch result: Hot (3 doses)",
+   "w": 400,
+   "h": 560,
+   "row": "cage | Result cards"
+  },
+  {
+   "id": "cage-result-leaky",
+   "group": "cards",
+   "title": "Batch result: Leaky (4 doses)",
+   "w": 400,
+   "h": 560,
+   "row": "cage | Result cards"
+  },
+  {
+   "id": "cage-result-steady",
+   "group": "cards",
+   "title": "Batch result: Steady (4 doses)",
+   "w": 400,
+   "h": 560,
+   "row": "cage | Result cards"
+  },
+  {
+   "id": "cats-cradle-figure-candles",
+   "group": "cards",
+   "title": "Target figure: Candles",
+   "w": 360,
+   "h": 260,
+   "row": "cats-cradle | Target figures"
+  },
+  {
+   "id": "cats-cradle-figure-cradle",
+   "group": "cards",
+   "title": "Target figure: The Cradle",
+   "w": 360,
+   "h": 260,
+   "row": "cats-cradle | Target figures"
+  },
+  {
+   "id": "cats-cradle-figure-diamonds",
+   "group": "cards",
+   "title": "Target figure: Diamonds",
+   "w": 360,
+   "h": 260,
+   "row": "cats-cradle | Target figures"
+  },
+  {
+   "id": "cats-cradle-figure-soldiers-bed",
+   "group": "cards",
+   "title": "Target figure: Soldier's Bed",
+   "w": 360,
+   "h": 260,
+   "row": "cats-cradle | Target figures"
+  },
+  {
+   "id": "fiche-mark-chalk",
+   "group": "cards",
+   "title": "Mark: chalk numbers on the kerb (June)",
+   "w": 240,
+   "h": 240,
+   "row": "fiche | Distinguishing marks (the river children)"
+  },
+  {
+   "id": "fiche-mark-minnows",
+   "group": "cards",
+   "title": "Mark: a jar of minnows on a windowsill (Hollis)",
+   "w": 240,
+   "h": 240,
+   "row": "fiche | Distinguishing marks (the river children)"
+  },
+  {
+   "id": "fiche-mark-scabs",
+   "group": "cards",
+   "title": "Mark: matching scabs (Mira and Pell Ostrowski)",
+   "w": 240,
+   "h": 240,
+   "row": "fiche | Distinguishing marks (the river children)"
+  },
+  {
+   "id": "fiche-mark-wheel",
+   "group": "cards",
+   "title": "Mark: a training wheel left on (Dale)",
+   "w": 240,
+   "h": 240,
+   "row": "fiche | Distinguishing marks (the river children)"
+  },
+  {
+   "id": "aftermath-set-aside",
+   "group": "pieces",
+   "title": "Set-aside tray (not his)",
+   "w": 320,
+   "h": 160,
+   "row": "aftermath | The ordering strip"
+  },
+  {
+   "id": "aftermath-slot",
+   "group": "pieces",
+   "title": "Ordering strip slot",
+   "w": 160,
+   "h": 150,
+   "row": "aftermath | The ordering strip"
+  },
+  {
+   "id": "aftermath-tent-1",
+   "group": "pieces",
+   "title": "Evidence tent 1",
+   "w": 140,
+   "h": 120,
+   "row": "aftermath | Evidence tents 1 to 9"
+  },
+  {
+   "id": "aftermath-tent-2",
+   "group": "pieces",
+   "title": "Evidence tent 2",
+   "w": 140,
+   "h": 120,
+   "row": "aftermath | Evidence tents 1 to 9"
+  },
+  {
+   "id": "aftermath-tent-3",
+   "group": "pieces",
+   "title": "Evidence tent 3",
+   "w": 140,
+   "h": 120,
+   "row": "aftermath | Evidence tents 1 to 9"
+  },
+  {
+   "id": "aftermath-tent-4",
+   "group": "pieces",
+   "title": "Evidence tent 4",
+   "w": 140,
+   "h": 120,
+   "row": "aftermath | Evidence tents 1 to 9"
+  },
+  {
+   "id": "aftermath-tent-5",
+   "group": "pieces",
+   "title": "Evidence tent 5",
+   "w": 140,
+   "h": 120,
+   "row": "aftermath | Evidence tents 1 to 9"
+  },
+  {
+   "id": "aftermath-tent-6",
+   "group": "pieces",
+   "title": "Evidence tent 6",
+   "w": 140,
+   "h": 120,
+   "row": "aftermath | Evidence tents 1 to 9"
+  },
+  {
+   "id": "aftermath-tent-7",
+   "group": "pieces",
+   "title": "Evidence tent 7",
+   "w": 140,
+   "h": 120,
+   "row": "aftermath | Evidence tents 1 to 9"
+  },
+  {
+   "id": "aftermath-tent-8",
+   "group": "pieces",
+   "title": "Evidence tent 8",
+   "w": 140,
+   "h": 120,
+   "row": "aftermath | Evidence tents 1 to 9"
+  },
+  {
+   "id": "aftermath-tent-9",
+   "group": "pieces",
+   "title": "Evidence tent 9",
+   "w": 140,
+   "h": 120,
+   "row": "aftermath | Evidence tents 1 to 9"
+  },
+  {
+   "id": "barrier-escort-barricade",
+   "group": "pieces",
+   "title": "Barricade",
+   "w": 360,
+   "h": 220,
+   "row": "barrier-escort | The escort"
+  },
+  {
+   "id": "barrier-escort-canister",
+   "group": "pieces",
+   "title": "Toxin canister",
+   "w": 100,
+   "h": 160,
+   "row": "barrier-escort | Load"
+  },
+  {
+   "id": "barrier-escort-cloud",
+   "group": "pieces",
+   "title": "Canister cloud (absorb for Load)",
+   "w": 300,
+   "h": 200,
+   "row": "barrier-escort | Load"
+  },
+  {
+   "id": "barrier-escort-debris",
+   "group": "pieces",
+   "title": "Thrown debris",
+   "w": 120,
+   "h": 100,
+   "row": "barrier-escort | The escort"
+  },
+  {
+   "id": "barrier-escort-distance-bar",
+   "group": "pieces",
+   "title": "Transport distance bar (frame)",
+   "w": 640,
+   "h": 60,
+   "row": "barrier-escort | HUD"
+  },
+  {
+   "id": "barrier-escort-emitter",
+   "group": "pieces",
+   "title": "Barrier emitter stamped RCC",
+   "w": 200,
+   "h": 240,
+   "row": "barrier-escort | Aegis's walls"
+  },
+  {
+   "id": "barrier-escort-load-gauge",
+   "group": "pieces",
+   "title": "Load gauge (frame)",
+   "w": 320,
+   "h": 60,
+   "row": "barrier-escort | HUD"
+  },
+  {
+   "id": "barrier-escort-name-tag",
+   "group": "pieces",
+   "title": "Name tag (blank, for a penned person)",
+   "w": 180,
+   "h": 60,
+   "row": "barrier-escort | The penned"
+  },
+  {
+   "id": "barrier-escort-transport",
+   "group": "pieces",
+   "title": "The transport",
+   "w": 640,
+   "h": 300,
+   "row": "barrier-escort | The escort"
+  },
+  {
+   "id": "barrier-escort-wall",
+   "group": "pieces",
+   "title": "Hard-light wall (one bar)",
+   "w": 60,
+   "h": 420,
+   "row": "barrier-escort | Aegis's walls"
+  },
+  {
+   "id": "barrier-escort-wall-cap",
+   "group": "pieces",
+   "title": "Hard-light wall end cap",
+   "w": 60,
+   "h": 60,
+   "row": "barrier-escort | Aegis's walls"
+  },
+  {
+   "id": "cage-cap",
+   "group": "pieces",
+   "title": "Flask cap (cap the batch)",
+   "w": 120,
+   "h": 90,
+   "row": "cage | Apparatus"
+  },
+  {
+   "id": "cage-counter",
+   "group": "pieces",
+   "title": "Drop counter (frame)",
+   "w": 280,
+   "h": 110,
+   "row": "cage | Instrument"
+  },
+  {
+   "id": "cage-drop",
+   "group": "pieces",
+   "title": "A drop of A9",
+   "w": 40,
+   "h": 56,
+   "row": "cage | Apparatus"
+  },
+  {
+   "id": "cage-dropper",
+   "group": "pieces",
+   "title": "Dropper on its stand",
+   "w": 240,
+   "h": 520,
+   "row": "cage | Apparatus"
+  },
+  {
+   "id": "cage-flask",
+   "group": "pieces",
+   "title": "Flask (standard)",
+   "w": 320,
+   "h": 400,
+   "row": "cage | Apparatus"
+  },
+  {
+   "id": "cage-flask-large",
+   "group": "pieces",
+   "title": "Flask (large, for a batch to take outside)",
+   "w": 420,
+   "h": 460,
+   "row": "cage | Apparatus"
+  },
+  {
+   "id": "cage-shield-plate",
+   "group": "pieces",
+   "title": "Lead shield plate",
+   "w": 140,
+   "h": 320,
+   "row": "cage | Apparatus"
+  },
+  {
+   "id": "cage-side-bar",
+   "group": "pieces",
+   "title": "Side bar: LEAKY, ENDPOINT, HOT",
+   "w": 180,
+   "h": 560,
+   "row": "cage | Instrument"
+  },
+  {
+   "id": "cage-syringe",
+   "group": "pieces",
+   "title": "The lead-shielded syringe",
+   "w": 520,
+   "h": 120,
+   "row": "cage | The dose"
+  },
+  {
+   "id": "cats-cradle-hand-cally",
+   "group": "pieces",
+   "title": "Hand: Cally",
+   "w": 240,
+   "h": 240,
+   "row": "cats-cradle | Hands, one per child"
+  },
+  {
+   "id": "cats-cradle-hand-carmy",
+   "group": "pieces",
+   "title": "Hand: Carmy",
+   "w": 240,
+   "h": 240,
+   "row": "cats-cradle | Hands, one per child"
+  },
+  {
+   "id": "cats-cradle-hand-ghost",
+   "group": "pieces",
+   "title": "Hand: blank chalk ghost (the leash)",
+   "w": 240,
+   "h": 240,
+   "row": "cats-cradle | Hands, one per child"
+  },
+  {
+   "id": "cats-cradle-hand-reese",
+   "group": "pieces",
+   "title": "Hand: Reese",
+   "w": 240,
+   "h": 240,
+   "row": "cats-cradle | Hands, one per child"
+  },
+  {
+   "id": "cats-cradle-hand-rolan",
+   "group": "pieces",
+   "title": "Hand: Rolan",
+   "w": 240,
+   "h": 240,
+   "row": "cats-cradle | Hands, one per child"
+  },
+  {
+   "id": "cats-cradle-speaker",
+   "group": "pieces",
+   "title": "The program's speaker on the painted wall",
+   "w": 200,
+   "h": 200,
+   "row": "cats-cradle | The leash"
+  },
+  {
+   "id": "fiche-hood",
+   "group": "pieces",
+   "title": "Reader hood (the screen)",
+   "w": 640,
+   "h": 500,
+   "row": "fiche | The sheet and the reader"
+  },
+  {
+   "id": "fiche-knob",
+   "group": "pieces",
+   "title": "Focus knob",
+   "w": 160,
+   "h": 160,
+   "row": "fiche | Controls"
+  },
+  {
+   "id": "fiche-lamp",
+   "group": "pieces",
+   "title": "Reader lamp (failing)",
+   "w": 120,
+   "h": 160,
+   "row": "fiche | Controls"
+  },
+  {
+   "id": "fiche-see",
+   "group": "pieces",
+   "title": "Cross-reference mark: SEE",
+   "w": 200,
+   "h": 80,
+   "row": "fiche | Frames and cards"
+  },
+  {
+   "id": "fiche-tray",
+   "group": "pieces",
+   "title": "Carrier tray (sheet, row, column)",
+   "w": 640,
+   "h": 180,
+   "row": "fiche | Controls"
+  },
+  {
+   "id": "panel-run-camera",
+   "group": "pieces",
+   "title": "Security camera with its sweep",
+   "w": 320,
+   "h": 240,
+   "row": "panel-run | Hazards and cover"
+  },
+  {
+   "id": "panel-run-crate",
+   "group": "pieces",
+   "title": "Crate (cover)",
+   "w": 220,
+   "h": 180,
+   "row": "panel-run | Hazards and cover"
+  },
+  {
+   "id": "panel-run-dart",
+   "group": "pieces",
+   "title": "A dart from the shunt",
+   "w": 160,
+   "h": 48,
+   "row": "panel-run | Hazards and cover"
+  },
+  {
+   "id": "panel-run-exit",
+   "group": "pieces",
+   "title": "Panel exit door",
+   "w": 200,
+   "h": 320,
+   "row": "panel-run | Hazards and cover"
+  },
+  {
+   "id": "panel-run-frame",
+   "group": "pieces",
+   "title": "Panel frame (transparent centre)",
+   "w": 960,
+   "h": 540,
+   "row": "panel-run | Page furniture"
+  },
+  {
+   "id": "panel-run-gutter-arrow",
+   "group": "pieces",
+   "title": "Gutter arrow (choose the next panel)",
+   "w": 200,
+   "h": 120,
+   "row": "panel-run | Page furniture"
+  },
+  {
+   "id": "panel-run-ledge",
+   "group": "pieces",
+   "title": "Climbable edge marker",
+   "w": 200,
+   "h": 80,
+   "row": "panel-run | Hazards and cover"
+  },
+  {
+   "id": "panel-run-locker",
+   "group": "pieces",
+   "title": "Arlo Benn's locker",
+   "w": 240,
+   "h": 360,
+   "row": "panel-run | Found things"
+  },
+  {
+   "id": "panel-run-torch-cone",
+   "group": "pieces",
+   "title": "Torch cone (a guard's light)",
+   "w": 480,
+   "h": 220,
+   "row": "panel-run | Hazards and cover"
+  },
+  {
+   "id": "window-clue-ring",
+   "group": "pieces",
+   "title": "Clue ring (tapped in a photo)",
+   "w": 160,
+   "h": 120,
+   "row": "window | Marks"
+  },
+  {
+   "id": "window-guard-bar",
+   "group": "pieces",
+   "title": "Rota bar (a guard's round)",
+   "w": 200,
+   "h": 48,
+   "row": "window | The rota"
+  },
+  {
+   "id": "window-segment",
+   "group": "pieces",
+   "title": "Route segment (his)",
+   "w": 200,
+   "h": 48,
+   "row": "window | The rota"
+  },
+  {
+   "id": "window-segment-overlap",
+   "group": "pieces",
+   "title": "Route segment (overlapping a round)",
+   "w": 200,
+   "h": 48,
+   "row": "window | The rota"
+  },
+  {
+   "id": "window-stamp-clear",
+   "group": "pieces",
+   "title": "Stamp: CLEAR",
+   "w": 320,
+   "h": 120,
+   "row": "window | Marks"
+  },
+  {
+   "id": "window-stamp-tight",
+   "group": "pieces",
+   "title": "Stamp: TIGHT",
+   "w": 320,
+   "h": 120,
+   "row": "window | Marks"
+  },
+  {
+   "id": "ending-fully-dr-tox",
+   "group": "endings",
+   "title": "Ending: Fully Dr. Tox",
+   "w": 1200,
+   "h": 675,
+   "row": "loading | Ending lettering plates (menu spoilers)"
+  },
+  {
+   "id": "ending-green-in-the-archive",
+   "group": "endings",
+   "title": "Ending: Green in the Archive",
+   "w": 1200,
+   "h": 675,
+   "row": "loading | Ending lettering plates (menu spoilers)"
+  },
+  {
+   "id": "ending-the-cage-alone",
+   "group": "endings",
+   "title": "Ending: The Cage Alone",
+   "w": 1200,
+   "h": 675,
+   "row": "loading | Ending lettering plates (menu spoilers)"
+  },
+  {
+   "id": "ending-the-spec-sheet",
+   "group": "endings",
+   "title": "Ending: The Spec Sheet",
+   "w": 1200,
+   "h": 675,
+   "row": "loading | Ending lettering plates (menu spoilers)"
+  },
+  {
+   "id": "chapter-1",
+   "group": "chapters",
+   "title": "Chapter I: The First Dose",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c1_first_dose)"
+  },
+  {
+   "id": "chapter-10",
+   "group": "chapters",
+   "title": "Chapter X: The Observers",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c10_observers)"
+  },
+  {
+   "id": "chapter-11",
+   "group": "chapters",
+   "title": "Chapter XI: Snakehead",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c11_claim)"
+  },
+  {
+   "id": "chapter-2",
+   "group": "chapters",
+   "title": "Chapter II: Sky Room",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c2_sky_room)"
+  },
+  {
+   "id": "chapter-3",
+   "group": "chapters",
+   "title": "Chapter III: Subject CMXCIX",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c3_river)"
+  },
+  {
+   "id": "chapter-4",
+   "group": "chapters",
+   "title": "Chapter IV: Trial 53",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c4_trial53)"
+  },
+  {
+   "id": "chapter-5",
+   "group": "chapters",
+   "title": "Chapter V: The Forging",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c5_forging)"
+  },
+  {
+   "id": "chapter-6",
+   "group": "chapters",
+   "title": "Chapter VI: Aegis, Mantled",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c6_mantled)"
+  },
+  {
+   "id": "chapter-7",
+   "group": "chapters",
+   "title": "Chapter VII: The Hunt",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c7_hunt)"
+  },
+  {
+   "id": "chapter-8",
+   "group": "chapters",
+   "title": "Chapter VIII: Containment Action",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c8_containment)"
+  },
+  {
+   "id": "chapter-9",
+   "group": "chapters",
+   "title": "Chapter IX: Two Years and One Week",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c9_snakehead)"
+  },
+  {
+   "id": "hud-amber",
+   "group": "ui",
+   "title": "HUD icon: Amber (a dose on hand)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Amber"
+  },
+  {
+   "id": "hud-amber-empty",
+   "group": "ui",
+   "title": "HUD icon: Amber (an empty slot)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Amber"
+  },
+  {
+   "id": "hud-caption",
+   "group": "ui",
+   "title": "Caption box (blank, for dated captions)",
+   "w": 600,
+   "h": 96,
+   "row": "shared | Typed caption box"
+  },
+  {
+   "id": "hud-margin-calm",
+   "group": "ui",
+   "title": "Pulse margin line: calm (amber)",
+   "w": 1200,
+   "h": 32,
+   "row": "shared | HUD: Pulse margin strip"
+  },
+  {
+   "id": "hud-margin-edge",
+   "group": "ui",
+   "title": "Pulse margin line: at the edge (amber, green spikes)",
+   "w": 1200,
+   "h": 32,
+   "row": "shared | HUD: Pulse margin strip"
+  },
+  {
+   "id": "hud-margin-green",
+   "group": "ui",
+   "title": "Pulse margin line: 100 (green from the corners)",
+   "w": 1200,
+   "h": 32,
+   "row": "shared | HUD: Pulse margin strip"
+  },
+  {
+   "id": "hud-pulse",
+   "group": "ui",
+   "title": "HUD icon: Pulse (calm)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Pulse"
+  },
+  {
+   "id": "hud-pulse-edge",
+   "group": "ui",
+   "title": "HUD icon: Pulse at the edge (green spikes)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Pulse"
+  },
+  {
+   "id": "hud-self",
+   "group": "ui",
+   "title": "HUD icon: Self (a struck word)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Self"
+  },
+  {
+   "id": "hud-word-hope",
+   "group": "ui",
+   "title": "Terminology Rule: HOPE (the insignia)",
+   "w": 240,
+   "h": 96,
+   "row": "shared | HUD: the Word (Terminology Rule)"
+  },
+  {
+   "id": "hud-word-rcc",
+   "group": "ui",
+   "title": "Terminology Rule: RCC (the plate)",
+   "w": 240,
+   "h": 96,
+   "row": "shared | HUD: the Word (Terminology Rule)"
+  },
+  {
+   "id": "loading-monitor-amber",
+   "group": "ui",
+   "title": "Loading monitor line, amber (the dose in)",
+   "w": 1200,
+   "h": 140,
+   "row": "loading | Animated element: the monitor line, second state"
+  },
+  {
+   "id": "loading-monitor-green",
+   "group": "ui",
+   "title": "Loading monitor line, green (before the dose)",
+   "w": 1200,
+   "h": 140,
+   "row": "loading | Animated element: the monitor line, first state"
+  },
+  {
+   "id": "cats-cradle-gratitude",
+   "group": "documents",
+   "title": "Chalk caption: Gratitude.",
+   "w": 480,
+   "h": 140,
+   "row": "cats-cradle | The leash"
+  },
+  {
+   "id": "cats-cradle-name-cally",
+   "group": "documents",
+   "title": "Chalk name: Cally",
+   "w": 240,
+   "h": 90,
+   "row": "cats-cradle | Chalk names along the bottom"
+  },
+  {
+   "id": "cats-cradle-name-carmy",
+   "group": "documents",
+   "title": "Chalk name: Carmy",
+   "w": 240,
+   "h": 90,
+   "row": "cats-cradle | Chalk names along the bottom"
+  },
+  {
+   "id": "cats-cradle-name-reese",
+   "group": "documents",
+   "title": "Chalk name: Reese",
+   "w": 240,
+   "h": 90,
+   "row": "cats-cradle | Chalk names along the bottom"
+  },
+  {
+   "id": "cats-cradle-name-rolan",
+   "group": "documents",
+   "title": "Chalk name: Rolan",
+   "w": 240,
+   "h": 90,
+   "row": "cats-cradle | Chalk names along the bottom"
+  },
+  {
+   "id": "fiche-frame-biosynth",
+   "group": "documents",
+   "title": "Cross-reference frame: BIOSYNTH, SEE CORRIDOR C",
+   "w": 480,
+   "h": 320,
+   "row": "fiche | Frames and cards"
+  },
+  {
+   "id": "fiche-frame-blank",
+   "group": "documents",
+   "title": "Subject frame (blank)",
+   "w": 480,
+   "h": 320,
+   "row": "fiche | Frames and cards"
+  },
+  {
+   "id": "fiche-frame-cmxcix",
+   "group": "documents",
+   "title": "Subject frame: CMXCIX (his own file)",
+   "w": 480,
+   "h": 320,
+   "row": "fiche | Frames and cards"
+  },
+  {
+   "id": "fiche-index-card",
+   "group": "documents",
+   "title": "Index card (a frame of its own)",
+   "w": 480,
+   "h": 320,
+   "row": "fiche | Frames and cards"
+  },
+  {
+   "id": "fiche-sheet",
+   "group": "documents",
+   "title": "A sheet of fiche (rows A to N, columns 1 to 12)",
+   "w": 960,
+   "h": 680,
+   "row": "fiche | The sheet and the reader"
+  },
+  {
+   "id": "panel-run-caption",
+   "group": "documents",
+   "title": "Panel caption box (blank)",
+   "w": 480,
+   "h": 90,
+   "row": "panel-run | Captions"
+  },
+  {
+   "id": "panel-run-caption-later",
+   "group": "documents",
+   "title": "Gutter caption: THREE MINUTES LATER.",
+   "w": 480,
+   "h": 90,
+   "row": "panel-run | Captions"
+  },
+  {
+   "id": "panel-run-rcc-plate",
+   "group": "documents",
+   "title": "The first RCC plate",
+   "w": 420,
+   "h": 180,
+   "row": "panel-run | Found things"
+  },
+  {
+   "id": "panel-run-toxin-panel",
+   "group": "documents",
+   "title": "The Toxin State panel (the suit failing)",
+   "w": 960,
+   "h": 540,
+   "row": "panel-run | Pulse at 100"
+  },
+  {
+   "id": "window-caption",
+   "group": "documents",
+   "title": "Typed caption strip (blank)",
+   "w": 960,
+   "h": 72,
+   "row": "window | Captions"
+  },
+  {
+   "id": "window-photo-depot-1",
+   "group": "documents",
+   "title": "Photo panel: depot 1 (01:48)",
+   "w": 480,
+   "h": 360,
+   "row": "window | Photo panels (Window 1: research floor; Window 2: depot)"
+  },
+  {
+   "id": "window-photo-depot-2",
+   "group": "documents",
+   "title": "Photo panel: depot 2 (02:05)",
+   "w": 480,
+   "h": 360,
+   "row": "window | Photo panels (Window 1: research floor; Window 2: depot)"
+  },
+  {
+   "id": "window-photo-depot-3",
+   "group": "documents",
+   "title": "Photo panel: depot 3 (02:22)",
+   "w": 480,
+   "h": 360,
+   "row": "window | Photo panels (Window 1: research floor; Window 2: depot)"
+  },
+  {
+   "id": "window-photo-research-1",
+   "group": "documents",
+   "title": "Photo panel: research 1 (02:10)",
+   "w": 480,
+   "h": 360,
+   "row": "window | Photo panels (Window 1: research floor; Window 2: depot)"
+  },
+  {
+   "id": "window-photo-research-2",
+   "group": "documents",
+   "title": "Photo panel: research 2 (02:31)",
+   "w": 480,
+   "h": 360,
+   "row": "window | Photo panels (Window 1: research floor; Window 2: depot)"
+  },
+  {
+   "id": "window-photo-research-3",
+   "group": "documents",
+   "title": "Photo panel: research 3 (02:44)",
+   "w": 480,
+   "h": 360,
+   "row": "window | Photo panels (Window 1: research floor; Window 2: depot)"
+  },
+  {
+   "id": "window-rota",
+   "group": "documents",
+   "title": "Guard rota sheet (blank strip)",
+   "w": 640,
+   "h": 440,
+   "row": "window | The rota"
+  }
+ ]
+}

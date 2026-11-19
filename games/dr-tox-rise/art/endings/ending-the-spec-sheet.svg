@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="ending-the-spec-sheet-t ending-the-spec-sheet-d">
+<title id="ending-the-spec-sheet-t">Ending: The Spec Sheet</title>
+<desc id="ending-the-spec-sheet-d">Ending lettering plate for The Spec Sheet: the ending's last image small and still on the left, its name in pale capitals on the right, and the cost in a line below.</desc>
+<defs><filter id="ending-the-spec-sheet-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="354"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter></defs>
+<rect x="0" y="0" width="1200" height="675" fill="#0b0d0d"/>
+<rect x="0" y="0" width="1200" height="675" fill="#0b0d0d"/>
+<rect x="0" y="0" width="1200" height="675" filter="url(#ending-the-spec-sheet-grain1)"/>
+<rect x="40" y="40" width="520" height="595" fill="#7a6a52"/>
+<rect x="100" y="120" width="400" height="300" fill="#efeee8" stroke="#111111" stroke-width="3" transform="rotate(-3 300 270)"/>
+<g transform="rotate(-3 300 270)">
+<rect x="126" y="160" width="220" height="8" fill="#8a8a85"/>
+<rect x="126" y="190" width="257" height="8" fill="#8a8a85"/>
+<rect x="126" y="220" width="294" height="8" fill="#8a8a85"/>
+<rect x="126" y="250" width="331" height="8" fill="#8a8a85"/>
+<rect x="126" y="280" width="248" height="8" fill="#8a8a85"/>
+<rect x="126" y="310" width="285" height="8" fill="#8a8a85"/>
+<rect x="126" y="340" width="322" height="8" fill="#8a8a85"/>
+<text x="126" y="380" font-size="30" font-family="monospace" fill="#111111" text-anchor="start" font-weight="bold">(“AEGIS”)</text>
+<ellipse cx="206" cy="370" rx="100" ry="32" fill="none" stroke="#9b1c1c" stroke-width="5"/>
+</g>
+<circle cx="300" cy="118" r="9" fill="#9b1c1c" stroke="#111111" stroke-width="2"/>
+<rect x="140" y="460" width="140" height="120" fill="#0b0e0e" stroke="#3a4243" stroke-width="6"/>
+<path d="M210,471 a7.7,8.4 0 1,0 0.1,0Z M205.8,485 L214.2,485 L214.9,493.4 L205.1,493.4Z M194.6,492 L225.4,492 L224,535.4 L218.4,576 L212.1,576 L210,534 L207.9,576 L201.6,576 L196,535.4Z" fill="#2b3536"/>
+<rect x="40" y="40" width="520" height="595" fill="none" stroke="#2f3a3b" stroke-width="3"/>
+<text x="610" y="120" font-size="22" font-family="sans-serif" fill="#C4CDCB" text-anchor="start" letter-spacing="8">ENDING</text>
+<text x="606" y="210" font-size="66" font-family="sans-serif" fill="#E9ECEA" text-anchor="start" font-weight="bold" letter-spacing="2" textLength="550" lengthAdjust="spacingAndGlyphs">THE SPEC SHEET</text>
+<line x1="608" y1="560" x2="1150" y2="560" stroke="#2f3a3b" stroke-width="2"/>
+<text x="608" y="592" font-size="16" font-family="sans-serif" fill="#8A9A99" text-anchor="start" letter-spacing="5">THE COST</text>
+<text x="608" y="626" font-size="18" font-family="serif" fill="#C4CDCB" text-anchor="start">He knows “Aegis”; security knows his face.</text>
+</svg>

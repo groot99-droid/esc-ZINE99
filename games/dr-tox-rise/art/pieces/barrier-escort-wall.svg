@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 420" width="60" height="420" role="img" aria-labelledby="barrier-escort-wall-t barrier-escort-wall-d">
+<title id="barrier-escort-wall-t">Hard-light wall (one bar)</title>
+<desc id="barrier-escort-wall-d">One hard-light wall as a clean upright bar: pale gold with a bright inner core and an even outline, no glow, no shading. Stretched along the line the player drags.</desc>
+<rect x="6" y="4" width="48" height="412" rx="6" fill="#f6e2a8" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<rect x="22" y="16" width="16" height="388" rx="4" fill="#fff6dc"/>
+<line x1="14" y1="60" x2="46" y2="60" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="14" y1="210" x2="46" y2="210" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="14" y1="360" x2="46" y2="360" stroke="#1b1b1b" stroke-width="1.5"/>
+</svg>

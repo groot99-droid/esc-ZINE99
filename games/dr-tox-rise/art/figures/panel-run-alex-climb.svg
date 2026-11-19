@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320" width="200" height="320" role="img" aria-labelledby="panel-run-alex-climb-t panel-run-alex-climb-d">
+<title id="panel-run-alex-climb-t">Alexander: climb a marked edge</title>
+<desc id="panel-run-alex-climb-d">Alexander hanging from a ledge by both hands, body long below it, feet against the wall: a black ledge with a white chalk tick marking it as climbable.</desc>
+<rect x="0" y="40" width="200" height="26" fill="#111111"/>
+<path d="M30,34 l10,-14 l10,14" fill="none" stroke="#f4f1ea" stroke-width="4"/>
+<path d="M84,66 L92,40 L100,40 L100,70 L110,70 L112,40 L120,40 L124,74 L126,110 L124,190 L128,280 L118,284 L106,200 L100,280 L90,280 L92,190 L86,110Z" fill="#E9ECEA" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
+<path d="M96,76 a12,14 0 1,0 20,0Z" fill="#E9ECEA" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
+<path d="M176.1,40 C179.8,41 195.2,40.2 199.1,40 C202.9,39.9 202.9,40.2 199.2,39.2 C195.4,38.2 180.6,33.9 176.7,34 C172.9,34.2 172.3,39 176.1,40Z" fill="#111111"/>
+<path d="M57.4,45 C62,44.9 80.3,41 84.8,40.1 C89.4,39.2 89.4,39.4 84.8,39.6 C80.1,39.7 61.5,40.2 56.9,41.1 C52.4,42 52.7,45.2 57.4,45Z" fill="#111111"/>
+<path d="M200.3,40.1 C205.1,38.7 223,29.7 227.5,27.5 C232,25.3 232.1,25.5 227.3,26.9 C222.5,28.3 203.2,33.9 198.7,36.1 C194.2,38.3 195.5,41.5 200.3,40.1Z" fill="#111111"/>
+<path d="M163.8,43.1 C169.2,41.1 189.1,29.7 194.1,26.8 C199,24 199.1,24.1 193.7,26.1 C188.3,28.1 166.8,35.9 161.8,38.7 C156.8,41.6 158.5,45.1 163.8,43.1Z" fill="#111111"/>
+<path d="M16.6,42.4 C19.1,42.6 28.6,39.4 30.9,38.6 C33.3,37.8 33.3,37.9 30.8,37.7 C28.3,37.4 18.4,36.1 16.1,36.9 C13.7,37.7 14.1,42.1 16.6,42.4Z" fill="#111111"/>
+<path d="M1.8,39.4 C6.4,40.1 25,39.1 29.6,39 C34.2,38.8 34.2,39 29.6,38.4 C25,37.7 6.7,35 2,35.1 C-2.6,35.3 -2.8,38.8 1.8,39.4Z" fill="#111111"/>
+</svg>

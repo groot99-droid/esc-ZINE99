@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 540" width="1920" height="540" role="img" aria-labelledby="panel-run-depot-near-t panel-run-depot-near-d">
+<title id="panel-run-depot-near-t">Panel run: depot (near layer)</title>
+<desc id="panel-run-depot-near-d">Panel run backdrop, the cold-storage depot (Panel run 2), near layer (transparent, for parallax over the far layer): noir brush ink, spotted blacks and paper whites, no grey.</desc>
+<defs><filter id="panel-run-depot-near-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="982" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.5"/></filter></defs>
+<g filter="url(#panel-run-depot-near-rough1)">
+<rect x="420" y="0" width="12" height="360" fill="#111111" opacity="0.9"/>
+<rect x="440" y="0" width="12" height="390" fill="#111111" opacity="0.9"/>
+<rect x="460" y="0" width="12" height="420" fill="#111111" opacity="0.9"/>
+<rect x="480" y="0" width="12" height="360" fill="#111111" opacity="0.9"/>
+<rect x="500" y="0" width="12" height="390" fill="#111111" opacity="0.9"/>
+<rect x="520" y="0" width="12" height="420" fill="#111111" opacity="0.9"/>
+<rect x="540" y="0" width="12" height="360" fill="#111111" opacity="0.9"/>
+<path d="M384.2,520 C385.3,537.4 390.2,562.6 358.6,573 C327.1,583.5 245,582.2 194.8,582.8 C144.6,583.4 104,582.3 57.4,576.6 C10.7,570.8 -63.7,562.3 -85,548.4 C-106.3,534.5 -90.6,509.5 -70.7,493.3 C-50.7,477.1 -9.1,456.2 34.7,451 C78.6,445.7 139.5,458.7 192.3,461.7 C245.1,464.6 319.7,459.1 351.6,468.8 C383.6,478.6 383,502.6 384.2,520Z" fill="#111111"/>
+<rect x="1060" y="0" width="12" height="360" fill="#111111" opacity="0.9"/>
+<rect x="1080" y="0" width="12" height="390" fill="#111111" opacity="0.9"/>
+<rect x="1100" y="0" width="12" height="420" fill="#111111" opacity="0.9"/>
+<rect x="1120" y="0" width="12" height="360" fill="#111111" opacity="0.9"/>
+<rect x="1140" y="0" width="12" height="390" fill="#111111" opacity="0.9"/>
+<rect x="1160" y="0" width="12" height="420" fill="#111111" opacity="0.9"/>
+<rect x="1180" y="0" width="12" height="360" fill="#111111" opacity="0.9"/>
+<path d="M985.2,520 C986.2,533.4 979.6,551.8 953.9,561.1 C928.1,570.4 875.3,572.3 830.9,575.8 C786.6,579.3 723.1,587.7 687.8,581.9 C652.5,576 640,555.8 619.1,540.9 C598.3,526.1 551.9,506.6 562.9,492.5 C574,478.5 638.6,465.6 685.5,456.9 C732.4,448.1 800.6,436.1 844.3,440 C888.1,443.9 924.5,467.2 947.9,480.5 C971.4,493.8 984.2,506.6 985.2,520Z" fill="#111111"/>
+<rect x="1700" y="0" width="12" height="360" fill="#111111" opacity="0.9"/>
+<rect x="1720" y="0" width="12" height="390" fill="#111111" opacity="0.9"/>
+<rect x="1740" y="0" width="12" height="420" fill="#111111" opacity="0.9"/>
+<rect x="1760" y="0" width="12" height="360" fill="#111111" opacity="0.9"/>
+<rect x="1780" y="0" width="12" height="390" fill="#111111" opacity="0.9"/>
+<rect x="1800" y="0" width="12" height="420" fill="#111111" opacity="0.9"/>
+<rect x="1820" y="0" width="12" height="360" fill="#111111" opacity="0.9"/>
+<path d="M1667.9,520 C1670.4,532.7 1621.2,547 1590.6,560.2 C1559.9,573.4 1525.7,596.9 1484,599.4 C1442.2,601.8 1372.9,585.4 1340,575.1 C1307.1,564.8 1302.3,550.7 1286.5,537.8 C1270.7,524.8 1234.2,508.4 1245.4,497.5 C1256.5,486.5 1313.7,481.6 1353.4,472.3 C1393.1,462.9 1446.6,439.2 1483.7,441.2 C1520.7,443.1 1544.9,470.7 1575.6,483.8 C1606.3,496.9 1665.4,507.3 1667.9,520Z" fill="#111111"/>
+</g>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="ending-fully-dr-tox-t ending-fully-dr-tox-d">
+<title id="ending-fully-dr-tox-t">Ending: Fully Dr. Tox</title>
+<desc id="ending-fully-dr-tox-d">Ending lettering plate for Fully Dr. Tox (as written): the ending's last image small and still on the left, its name in pale capitals on the right, an amber AS WRITTEN stamp and the bible line, and the cost in a line below.</desc>
+<defs><filter id="ending-fully-dr-tox-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="533"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="ending-fully-dr-tox-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2C14E" stop-opacity="0.8"/><stop offset="45%" stop-color="#D99A2B" stop-opacity="0.3"/><stop offset="100%" stop-color="#D99A2B" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="1200" height="675" fill="#0b0d0d"/>
+<rect x="0" y="0" width="1200" height="675" fill="#0b0d0d"/>
+<rect x="0" y="0" width="1200" height="675" filter="url(#ending-fully-dr-tox-grain1)"/>
+<rect x="40" y="40" width="520" height="595" fill="#060505"/>
+<circle cx="300" cy="250" r="300" fill="url(#ending-fully-dr-tox-rg2)"/>
+<path d="M240,170 L360,170 L336,120 L264,120Z" fill="#262626" stroke="#111111" stroke-width="4"/>
+<line x1="300" y1="120" x2="300" y2="40" stroke="#262626" stroke-width="6"/>
+<rect x="90" y="470" width="420" height="22" fill="#2b2418"/>
+<g transform="translate(150,452) rotate(-4)">
+<rect x="0" y="-27" width="186" height="54" rx="9" fill="#2e3233" stroke="#111111" stroke-width="3"/>
+<rect x="42" y="-10.5" width="90" height="21" fill="#D99A2B" stroke="#111111" stroke-width="1.8"/>
+<rect x="-60" y="-7.5" width="60" height="15" fill="#2e3233" stroke="#111111" stroke-width="3"/>
+<rect x="-72" y="-21" width="15" height="42" fill="#2e3233" stroke="#111111" stroke-width="3"/>
+<rect x="186" y="-13.5" width="24" height="27" fill="#2e3233" stroke="#111111" stroke-width="3"/>
+<line x1="210" y1="0" x2="300" y2="0" stroke="#111111" stroke-width="2.4" stroke-linecap="round"/>
+</g>
+<path d="M120,470 C140,420 200,400 260,410" fill="none" stroke="#d9dedd" stroke-width="2.5" opacity="0.7"/>
+<rect x="40" y="40" width="520" height="595" fill="none" stroke="#2f3a3b" stroke-width="3"/>
+<text x="610" y="120" font-size="22" font-family="sans-serif" fill="#C4CDCB" text-anchor="start" letter-spacing="8">ENDING</text>
+<text x="606" y="210" font-size="66" font-family="sans-serif" fill="#E9ECEA" text-anchor="start" font-weight="bold" letter-spacing="2">FULLY DR. TOX</text>
+<rect x="608" y="276" width="210" height="46" fill="none" stroke="#D99A2B" stroke-width="3" transform="rotate(-3 713 296)"/>
+<text x="713" y="308" font-size="24" font-family="sans-serif" fill="#D99A2B" text-anchor="middle" font-weight="bold" letter-spacing="4" transform="rotate(-3 713 296)">AS WRITTEN</text>
+<text x="608" y="386" font-size="26" font-family="serif" fill="#F2C14E" text-anchor="start" font-style="italic">“armored, armed, based in Snakehead.”</text>
+<line x1="608" y1="560" x2="1150" y2="560" stroke="#2f3a3b" stroke-width="2"/>
+<text x="608" y="592" font-size="16" font-family="sans-serif" fill="#8A9A99" text-anchor="start" letter-spacing="5">THE COST</text>
+<text x="608" y="626" font-size="24" font-family="serif" fill="#C4CDCB" text-anchor="start">The 999 are only names.</text>
+</svg>

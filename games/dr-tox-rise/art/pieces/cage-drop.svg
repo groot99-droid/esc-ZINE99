@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 56" width="40" height="56" role="img" aria-labelledby="cage-drop-t cage-drop-d">
+<title id="cage-drop-t">A drop of A9</title>
+<desc id="cage-drop-d">One falling drop of A9: a flat amber teardrop in a heavy line, with one white highlight stroke.</desc>
+<path d="M20,4 C24,18 36,28 36,38 C36,48 28,54 20,54 C12,54 4,48 4,38 C4,28 16,18 20,4Z" fill="#D99A2B" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<path d="M12,36 C12,30 14,28 16,26" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+<line x1="20" y1="0" x2="20" y2="2" stroke="#141414" stroke-width="1"/>
+<circle cx="26" cy="44" r="2" fill="#F2C14E"/>
+<circle cx="14" cy="46" r="1.5" fill="#F2C14E"/>
+</svg>

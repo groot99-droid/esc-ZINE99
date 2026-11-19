@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 120" width="140" height="120" role="img" aria-labelledby="aftermath-tent-1-t aftermath-tent-1-d">
+<title id="aftermath-tent-1-t">Evidence tent 1</title>
+<desc id="aftermath-tent-1-d">Evidence tent number 1: a white folded A-frame card in clean line, its number in white on a black panel.</desc>
+<defs><pattern id="aftermath-tent-1-tone1" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="2" cy="2" r="1.5" fill="#111111"/></pattern></defs>
+<path d="M10,110 L22,104 L118,104 L130,110Z" fill="#111111" opacity="0.2"/>
+<path d="M12.2,106 L29.2,17.6 L110.8,17.6 L127.8,106Z" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M29,106 L46,18 L94,18 L111,106" fill="none" stroke="#111111" stroke-width="1.5"/>
+<path d="M94,18 L111,106 L119,106 L102,18Z" fill="url(#aftermath-tent-1-tone1)"/>
+<rect x="44" y="40" width="52" height="46" fill="#111111"/>
+<text x="70" y="78" font-size="40" font-family="sans-serif" fill="#ffffff" text-anchor="middle" font-weight="bold">1</text>
+</svg>

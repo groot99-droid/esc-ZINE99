@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320" width="200" height="320" role="img" aria-labelledby="panel-run-ghost-t panel-run-ghost-d">
+<title id="panel-run-ghost-t">The Ghost (walks ahead unseen)</title>
+<desc id="panel-run-ghost-d">The Ghost: no body at all, only a sparse dotted outline and the chalk chevron he leaves on the floor to mark a safe panel.</desc>
+<path d="M100,28.5 a20.4,22.2 0 1,0 0.1,0Z M88.9,65.5 L111.1,65.5 L113,87.7 L87,87.7Z M59.3,84 L140.7,84 L137,198.7 L122.2,306 L105.5,306 L100,195 L94.5,306 L77.8,306 L63,198.7Z" fill="none" stroke="#111111" stroke-width="3" stroke-dasharray="3 9"/>
+<path d="M70,300 l30,-30 l30,30" fill="none" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+<path d="M40,314.9 C60,315.6 140,313.6 160,312.9 C180,312.3 180,311.7 160,311.1 C140,310.4 60,308.4 40,309.1 C20,309.7 20,314.3 40,314.9Z" fill="#111111"/>
+<path d="M61.1,297.1 C62.3,296.3 65.4,291.4 66.2,290.2 C67,289 67,289 65.8,289.8 C64.6,290.6 59.7,293.7 58.9,294.9 C58.1,296.1 59.9,297.9 61.1,297.1Z" fill="#111111"/>
+<path d="M91.1,297.1 C92.3,296.3 95.4,291.4 96.2,290.2 C97,289 97,289 95.8,289.8 C94.6,290.6 89.7,293.7 88.9,294.9 C88.1,296.1 89.9,297.9 91.1,297.1Z" fill="#111111"/>
+<path d="M121.2,297.2 C122.4,296.4 125.4,291.4 126.2,290.2 C126.9,288.9 127.1,289.1 125.8,289.8 C124.6,290.6 119.6,293.6 118.8,294.8 C118.1,296.1 119.9,297.9 121.2,297.2Z" fill="#111111"/>
+</svg>

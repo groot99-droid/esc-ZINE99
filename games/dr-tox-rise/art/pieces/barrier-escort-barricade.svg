@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" width="360" height="220" role="img" aria-labelledby="barrier-escort-barricade-t barrier-escort-barricade-d">
+<title id="barrier-escort-barricade-t">Barricade</title>
+<desc id="barrier-escort-barricade-d">A barricade across the corridor: an overturned cart, two crates and a sheet of corrugated scrap, each a flat colour inside the same even line. The transport stops at a standing one.</desc>
+<path d="M20,210 L40,120 L180,100 L200,210Z" fill="#8a7a5e" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<line x1="50" y1="210" x2="60" y2="114" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="80" y1="210" x2="86" y2="114" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="110" y1="210" x2="112" y2="114" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="140" y1="210" x2="138" y2="114" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="170" y1="210" x2="164" y2="114" stroke="#1b1b1b" stroke-width="1.5"/>
+<rect x="190" y="130" width="80" height="80" fill="#b0a48a" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<rect x="260" y="90" width="80" height="120" fill="#a46a4a" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<line x1="260" y1="150" x2="340" y2="150" stroke="#1b1b1b" stroke-width="1.5"/>
+<circle cx="70" cy="206" r="14" fill="#2b3536" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+</svg>

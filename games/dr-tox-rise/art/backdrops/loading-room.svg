@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="loading-room-t loading-room-d">
+<title id="loading-room-t">Loading backdrop: the hospital room, 2217</title>
+<desc id="loading-room-d">The hospital room locked off and symmetrical under flat fluorescent tubes: a clear plastic breath tent over a bed, a thin upright figure behind the plastic, and against the wall the bench a child built from IV poles, steel trays and clamps, one amber vial on it the only warm thing.</desc>
+<defs><radialGradient id="loading-room-rg1" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2C14E" stop-opacity="0.3"/><stop offset="100%" stop-color="#F2C14E" stop-opacity="0"/></radialGradient><radialGradient id="loading-room-rg2" cx="0.5" cy="0.5" r="0.75"><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="1600" height="900" fill="#cfd6d4"/>
+<rect x="0" y="640" width="1600" height="260" fill="#a9b4b2"/>
+<line x1="0" y1="640" x2="1600" y2="640" stroke="#7f8c8b" stroke-width="3"/>
+<rect x="140" y="40" width="320" height="18" rx="9" fill="#f6f8f7" stroke="#9aa5a4" stroke-width="2"/>
+<rect x="80" y="58" width="440" height="300" fill="#ffffff" opacity="0.1"/>
+<rect x="640" y="40" width="320" height="18" rx="9" fill="#f6f8f7" stroke="#9aa5a4" stroke-width="2"/>
+<rect x="580" y="58" width="440" height="300" fill="#ffffff" opacity="0.1"/>
+<rect x="1140" y="40" width="320" height="18" rx="9" fill="#f6f8f7" stroke="#9aa5a4" stroke-width="2"/>
+<rect x="1080" y="58" width="440" height="300" fill="#ffffff" opacity="0.1"/>
+<rect x="0" y="0" width="1600" height="30" fill="#9aa5a4"/>
+<line x1="1080" y1="220" x2="1080" y2="640" stroke="#6e7a79" stroke-width="8"/>
+<line x1="1040" y1="220" x2="1120" y2="220" stroke="#6e7a79" stroke-width="6"/>
+<path d="M1040,220 q-6,20 -20,20 M1120,220 q6,20 20,20" fill="none" stroke="#6e7a79" stroke-width="4"/>
+<line x1="1400" y1="220" x2="1400" y2="640" stroke="#6e7a79" stroke-width="8"/>
+<line x1="1360" y1="220" x2="1440" y2="220" stroke="#6e7a79" stroke-width="6"/>
+<path d="M1360,220 q-6,20 -20,20 M1440,220 q6,20 20,20" fill="none" stroke="#6e7a79" stroke-width="4"/>
+<rect x="1060" y="420" width="360" height="16" fill="#b8c1c0" stroke="#6e7a79" stroke-width="3"/>
+<rect x="1090" y="406" width="30" height="14" fill="#8a9a99"/>
+<rect x="1170" y="406" width="30" height="14" fill="#8a9a99"/>
+<rect x="1250" y="406" width="30" height="14" fill="#8a9a99"/>
+<rect x="1330" y="406" width="30" height="14" fill="#8a9a99"/>
+<rect x="1060" y="520" width="360" height="16" fill="#b8c1c0" stroke="#6e7a79" stroke-width="3"/>
+<rect x="1090" y="506" width="30" height="14" fill="#8a9a99"/>
+<rect x="1170" y="506" width="30" height="14" fill="#8a9a99"/>
+<rect x="1250" y="506" width="30" height="14" fill="#8a9a99"/>
+<rect x="1330" y="506" width="30" height="14" fill="#8a9a99"/>
+<path d="M1237,461.5 L1242.8,456.4 L1242.8,450 L1257.2,450 L1257.2,456.4 L1263,461.5 L1263,506.2 Q1263,514 1250,514 Q1237,514 1237,506.2Z" fill="#D99A2B" stroke="#6e5a2a" stroke-width="3"/>
+<circle cx="1250" cy="470" r="70" fill="url(#loading-room-rg1)"/>
+<rect x="220" y="520" width="620" height="60" fill="#e9ecea" stroke="#7f8c8b" stroke-width="3"/>
+<line x1="240" y1="580" x2="240" y2="680" stroke="#6e7a79" stroke-width="8"/>
+<line x1="820" y1="580" x2="820" y2="680" stroke="#6e7a79" stroke-width="8"/>
+<path d="M522.2,287.5 L537.8,287.5 L539.3,315.4 L534.6,327.8 L554.8,340.2 L551.7,430.1 L544,427 L544,520 L533.1,520 L530,423.9 L526.9,520 L516,520 L516,427 L508.3,430.1 L505.2,340.2 L525.4,327.8 L520.7,315.4Z" fill="#6e7a79" opacity="0.6"/>
+<path d="M160,600 C180,260 300,170 530,170 C760,170 880,260 900,600Z" fill="#eef4f3" opacity="0.6" stroke="#ffffff" stroke-width="4"/>
+<path d="M220,590 C230,380 250,250 280,200" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+<path d="M330,590 C340,380 360,250 390,200" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+<path d="M440,590 C450,380 470,250 500,200" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+<path d="M550,590 C560,380 580,250 610,200" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+<path d="M660,590 C670,380 690,250 720,200" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+<path d="M770,590 C780,380 800,250 830,200" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+<ellipse cx="560" cy="300" rx="60" ry="36" fill="#ffffff" opacity="0.6"/>
+<path d="M640,560 C700,700 860,720 960,640 C1000,610 1040,600 1080,600" fill="none" stroke="#f6f8f7" stroke-width="5" opacity="0.9"/>
+<rect x="0" y="0" width="1600" height="900" fill="url(#loading-room-rg2)"/>
+</svg>

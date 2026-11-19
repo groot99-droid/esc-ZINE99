@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 320" width="280" height="320" role="img" aria-labelledby="aftermath-shape-three-t aftermath-shape-three-d">
+<title id="aftermath-shape-three-t">Shape III: low and long</title>
+<desc id="aftermath-shape-three-d">A silhouette panel revealed by a correct pair of tents, low and long: the form the State took, as a flat black shape on a light screen. A shape only, never the act; never the same shape twice.</desc>
+<defs><pattern id="aftermath-shape-three-tone1" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="1.1" fill="#111111"/></pattern></defs>
+<rect x="0" y="0" width="280" height="320" fill="#ffffff"/>
+<path d="M10,10 L270,10 L270,310 L10,310Z" fill="url(#aftermath-shape-three-tone1)"/>
+<path d="M30,280 L40,230 L80,200 L130,190 L190,170 L240,150 L250,180 L220,210 L230,280Z" fill="#111111" stroke="#111111" stroke-width="4" stroke-linejoin="round"/>
+<rect x="10" y="10" width="260" height="300" fill="none" stroke="#111111" stroke-width="4"/>
+<line x1="240" y1="296" x2="260" y2="276" stroke="#111111" stroke-width="1"/>
+<line x1="230" y1="296" x2="260" y2="266" stroke="#111111" stroke-width="1"/>
+<line x1="220" y1="296" x2="260" y2="256" stroke="#111111" stroke-width="1"/>
+<line x1="210" y1="296" x2="260" y2="246" stroke="#111111" stroke-width="1"/>
+<line x1="200" y1="296" x2="260" y2="236" stroke="#111111" stroke-width="1"/>
+</svg>

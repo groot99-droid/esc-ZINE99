@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 90" width="120" height="90" role="img" aria-labelledby="cage-cap-t cage-cap-d">
+<title id="cage-cap-t">Flask cap (cap the batch)</title>
+<desc id="cage-cap-d">The cap that stops the drip: a squat flat-grey stopper with a lead ring, drawn ready to press home.</desc>
+<path d="M30,40 L90,40 L82,80 L38,80Z" fill="#5e6b6c" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<rect x="16" y="18" width="88" height="24" rx="6" fill="#3a4243" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<line x1="30" y1="30" x2="90" y2="30" stroke="#C4CDCB" stroke-width="3"/>
+<line x1="46" y1="52" x2="74" y2="52" stroke="#141414" stroke-width="2"/>
+<line x1="48" y1="64" x2="72" y2="64" stroke="#141414" stroke-width="2"/>
+</svg>

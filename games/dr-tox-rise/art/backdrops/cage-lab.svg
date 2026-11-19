@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="cage-lab-t cage-lab-d">
+<title id="cage-lab-t">The Cage backdrop: his own lab in Snakehead</title>
+<desc id="cage-lab-d">His own lab under the amber work lamp, in flats: near-black walls, one hard cone of flat amber light from a hanging lamp onto the bench, and the shielded locker standing open at the right.</desc>
+<rect x="0" y="0" width="1280" height="720" fill="#0f0d0b"/>
+<polygon points="560,110 720,110 1020,560 260,560" fill="#3a2a12"/>
+<polygon points="600,110 680,110 860,560 420,560" fill="#5a4218"/>
+<path d="M590,110 L690,110 L670,70 L610,70Z" fill="#2a2a2a" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<line x1="640" y1="0" x2="640" y2="70" stroke="#2a2a2a" stroke-width="8"/>
+<rect x="612" y="104" width="56" height="10" fill="#F2C14E" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<rect x="0" y="560" width="1280" height="160" fill="#1c1813" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<rect x="160" y="540" width="960" height="26" fill="#4a3e2c" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<rect x="1060" y="200" width="180" height="340" fill="#2b3536" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<rect x="1076" y="216" width="148" height="308" fill="#D99A2B" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<rect x="1076" y="300" width="148" height="10" fill="#2b3536"/>
+<rect x="1076" y="400" width="148" height="10" fill="#2b3536"/>
+<path d="M1092,267.2 L1095.6,264 L1095.6,260 L1104.4,260 L1104.4,264 L1108,267.2 L1108,295.2 Q1108,300 1100,300 Q1092,300 1092,295.2Z" fill="#F2C14E" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<path d="M1126,267.2 L1129.6,264 L1129.6,260 L1138.4,260 L1138.4,264 L1142,267.2 L1142,295.2 Q1142,300 1134,300 Q1126,300 1126,295.2Z" fill="#F2C14E" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<path d="M1160,267.2 L1163.6,264 L1163.6,260 L1172.4,260 L1172.4,264 L1176,267.2 L1176,295.2 Q1176,300 1168,300 Q1160,300 1160,295.2Z" fill="#F2C14E" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<path d="M1194,267.2 L1197.6,264 L1197.6,260 L1206.4,260 L1206.4,264 L1210,267.2 L1210,295.2 Q1210,300 1202,300 Q1194,300 1194,295.2Z" fill="#F2C14E" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+</svg>

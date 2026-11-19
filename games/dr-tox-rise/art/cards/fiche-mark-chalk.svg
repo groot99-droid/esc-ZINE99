@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="fiche-mark-chalk-t fiche-mark-chalk-d">
+<title id="fiche-mark-chalk-t">Mark: chalk numbers on the kerb (June)</title>
+<desc id="fiche-mark-chalk-d">Chalk numbers on a kerb counting down, 9, 8, 7, 6, the earlier ones crossed through: June's countdown to her birthday, cut white on black.</desc>
+<defs><clipPath id="fiche-mark-chalk-clip1"><path d="M8,180 L232,180 L232,232 L8,232Z"/></clipPath></defs>
+<rect x="0" y="0" width="240" height="240" fill="#0a0a0a"/>
+<rect x="8" y="8" width="224" height="224" fill="none" stroke="#efeee8" stroke-width="1.5"/>
+<rect x="8" y="150" width="224" height="30" fill="none" stroke="#efeee8" stroke-width="1.5"/>
+<g clip-path="url(#fiche-mark-chalk-clip1)">
+<path d="M-55.7,-55.7 L295.7,-55.7 M-55.7,-49.7 L295.7,-49.7 M-55.7,-43.7 L295.7,-43.7 M-55.7,-37.7 L295.7,-37.7 M-55.7,-31.7 L295.7,-31.7 M-55.7,-25.7 L295.7,-25.7 M-55.7,-19.7 L295.7,-19.7 M-55.7,-13.7 L295.7,-13.7 M-55.7,-7.7 L295.7,-7.7 M-55.7,-1.7 L295.7,-1.7 M-55.7,4.3 L295.7,4.3 M-55.7,10.3 L295.7,10.3 M-55.7,16.3 L295.7,16.3 M-55.7,22.3 L295.7,22.3 M-55.7,28.3 L295.7,28.3 M-55.7,34.3 L295.7,34.3 M-55.7,40.3 L295.7,40.3 M-55.7,46.3 L295.7,46.3 M-55.7,52.3 L295.7,52.3 M-55.7,58.3 L295.7,58.3 M-55.7,64.3 L295.7,64.3 M-55.7,70.3 L295.7,70.3 M-55.7,76.3 L295.7,76.3 M-55.7,82.3 L295.7,82.3 M-55.7,88.3 L295.7,88.3 M-55.7,94.3 L295.7,94.3 M-55.7,100.3 L295.7,100.3 M-55.7,106.3 L295.7,106.3 M-55.7,112.3 L295.7,112.3 M-55.7,118.3 L295.7,118.3 M-55.7,124.3 L295.7,124.3 M-55.7,130.3 L295.7,130.3 M-55.7,136.3 L295.7,136.3 M-55.7,142.3 L295.7,142.3 M-55.7,148.3 L295.7,148.3 M-55.7,154.3 L295.7,154.3 M-55.7,160.3 L295.7,160.3 M-55.7,166.3 L295.7,166.3 M-55.7,172.3 L295.7,172.3 M-55.7,178.3 L295.7,178.3 M-55.7,184.3 L295.7,184.3 M-55.7,190.3 L295.7,190.3 M-55.7,196.3 L295.7,196.3 M-55.7,202.3 L295.7,202.3 M-55.7,208.3 L295.7,208.3 M-55.7,214.3 L295.7,214.3 M-55.7,220.3 L295.7,220.3 M-55.7,226.3 L295.7,226.3 M-55.7,232.3 L295.7,232.3 M-55.7,238.3 L295.7,238.3 M-55.7,244.3 L295.7,244.3 M-55.7,250.3 L295.7,250.3 M-55.7,256.3 L295.7,256.3 M-55.7,262.3 L295.7,262.3 M-55.7,268.3 L295.7,268.3 M-55.7,274.3 L295.7,274.3 M-55.7,280.3 L295.7,280.3 M-55.7,286.3 L295.7,286.3 M-55.7,292.3 L295.7,292.3" fill="none" stroke="#efeee8" stroke-width="0.8"/>
+</g>
+<text x="40" y="132" font-size="56" font-family="monospace" fill="#efeee8" text-anchor="middle" letter-spacing="6.7" opacity="1">9</text>
+<line x1="22" y1="100" x2="58" y2="140" stroke="#efeee8" stroke-width="2"/>
+<text x="92" y="132" font-size="56" font-family="monospace" fill="#efeee8" text-anchor="middle" letter-spacing="6.7" opacity="0.9">8</text>
+<line x1="74" y1="100" x2="110" y2="140" stroke="#efeee8" stroke-width="2"/>
+<text x="144" y="132" font-size="56" font-family="monospace" fill="#efeee8" text-anchor="middle" letter-spacing="6.7" opacity="0.8">7</text>
+<line x1="126" y1="100" x2="162" y2="140" stroke="#efeee8" stroke-width="2"/>
+<text x="196" y="132" font-size="44" font-family="monospace" fill="#efeee8" text-anchor="middle" letter-spacing="5.3" opacity="0.6">6</text>
+</svg>

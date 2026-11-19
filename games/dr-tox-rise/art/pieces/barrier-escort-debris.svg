@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100" role="img" aria-labelledby="barrier-escort-debris-t barrier-escort-debris-d">
+<title id="barrier-escort-debris-t">Thrown debris</title>
+<desc id="barrier-escort-debris-d">A chunk of broken concrete thrown from a barricade, flat grey with two crack lines and a speed line.</desc>
+<path d="M20,60 L40,22 L90,18 L108,56 L80,86 L34,84Z" fill="#b9c6c4" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<path d="M50,30 L60,56 L48,76 M86,30 L72,52" fill="none" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="0" y1="40" x2="16" y2="44" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="0" y1="56" x2="16" y2="60" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="0" y1="70" x2="16" y2="74" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48" role="img" aria-labelledby="window-segment-t window-segment-d">
+<title id="window-segment-t">Route segment (his)</title>
+<desc id="window-segment-d">One segment of his route on the strip: an open outlined bar in black with an arrowhead, drawn the way a man marks his own plan in pen over a typed sheet.</desc>
+<rect x="4" y="12" width="176" height="24" fill="#ffffff" stroke="#1d1d1b" stroke-width="2.5"/>
+<polygon points="180,6 198,24 180,42" fill="#1d1d1b"/>
+<line x1="40" y1="30" x2="40" y2="36" stroke="#1d1d1b" stroke-width="1.5"/>
+<line x1="80" y1="30" x2="80" y2="36" stroke="#1d1d1b" stroke-width="1.5"/>
+<line x1="120" y1="30" x2="120" y2="36" stroke="#1d1d1b" stroke-width="1.5"/>
+<line x1="160" y1="30" x2="160" y2="36" stroke="#1d1d1b" stroke-width="1.5"/>
+</svg>

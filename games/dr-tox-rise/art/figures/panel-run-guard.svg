@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320" width="200" height="320" role="img" aria-labelledby="panel-run-guard-t panel-run-guard-d">
+<title id="panel-run-guard-t">Guard with a torch</title>
+<desc id="panel-run-guard-d">A facility guard as a solid black brushed silhouette, broad and heavy beside Alexander's thin one, a torch held out in the right hand. The cone itself is the separate torch-cone piece.</desc>
+<path d="M10,314.3 C36.7,315.7 143.3,311.3 170,309.9 C196.7,308.5 196.7,307.5 170,306.1 C143.3,304.7 36.7,300.3 10,301.7 C-16.7,303.1 -16.7,312.9 10,314.3Z" fill="#111111"/>
+<path d="M153.2,315.4 C157.6,316 175.7,316.2 180.2,316.2 C184.7,316.3 184.7,316.4 180.2,315.8 C175.7,315.2 157.9,312.6 153.4,312.6 C148.9,312.5 148.7,314.8 153.2,315.4Z" fill="#111111"/>
+<path d="M33,315.4 C35.5,316 45.8,316.2 48.4,316.2 C51,316.3 51,316.4 48.5,315.8 C46,315.2 35.9,312.7 33.4,312.6 C30.8,312.6 30.5,314.8 33,315.4Z" fill="#111111"/>
+<path d="M70.8,315.5 C73.7,316.1 85.7,316.2 88.7,316.2 C91.7,316.3 91.6,316.4 88.7,315.8 C85.8,315.2 74.1,312.5 71.1,312.5 C68.1,312.4 67.8,314.9 70.8,315.5Z" fill="#111111"/>
+<path d="M90,21 a20.9,22.8 0 1,0 0.1,0Z M78.6,59 L101.4,59 L103.3,81.8 L76.7,81.8Z M37.8,78 L142.2,78 L137.5,195.8 L112.8,306 L95.7,306 L90,192 L84.3,306 L67.2,306 L42.5,195.8Z" fill="#111111"/>
+<path d="M116.1,129.8 C123.1,136.3 156.8,148.9 166.4,149.1 C175.9,149.3 180.7,137.4 173.6,130.9 C166.6,124.4 133.5,110.3 123.9,110.2 C114.3,110 109,123.3 116.1,129.8Z" fill="#111111"/>
+<rect x="160" y="128" width="34" height="20" fill="#111111"/>
+<rect x="190" y="132" width="8" height="12" fill="#f4f1ea" stroke="#111111" stroke-width="2"/>
+</svg>

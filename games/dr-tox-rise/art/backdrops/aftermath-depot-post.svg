@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-labelledby="aftermath-depot-post-t aftermath-depot-post-d">
+<title id="aftermath-depot-post-t">Aftermath room: the depot guard post</title>
+<desc id="aftermath-depot-post-d">The depot guard post after, wide and still, in screentone: a desk shoved askew, a chair on its side, a wall clock, a strip light hanging dead from one chain, a dented locker, a torn strap on the floor, and a long scrape running to the door he dragged himself through. No one is in the room.</desc>
+<defs><pattern id="aftermath-depot-post-tone1" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="4" cy="4" r="1.6" fill="#111111"/></pattern><pattern id="aftermath-depot-post-tone2" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="4" cy="4" r="2.7" fill="#111111"/></pattern><pattern id="aftermath-depot-post-tone3" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3" cy="3" r="3.2" fill="#111111"/></pattern><pattern id="aftermath-depot-post-tone4" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="2.5" cy="2.5" r="2.2" fill="#111111"/></pattern></defs>
+<rect x="0" y="0" width="1280" height="640" fill="#ffffff"/>
+<path d="M0,0 L1280,0 L1280,440 L0,440Z" fill="url(#aftermath-depot-post-tone1)"/>
+<path d="M0,440 L1280,440 L1280,640 L0,640Z" fill="url(#aftermath-depot-post-tone2)"/>
+<line x1="0" y1="440" x2="1280" y2="440" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<rect x="1060" y="150" width="140" height="290" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M1080,170 L1180,170 L1180,440 L1080,440Z" fill="url(#aftermath-depot-post-tone3)"/>
+<path d="M1060,440 C900,470 700,500 420,520" fill="none" stroke="#ffffff" stroke-width="10"/>
+<path d="M1060,440 C900,470 700,500 420,520" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="18 10"/>
+<rect x="180" y="120" width="110" height="300" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M210,220 Q236,250 214,280" fill="none" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M200,210 Q246,250 206,290 L196,250Z" fill="url(#aftermath-depot-post-tone4)"/>
+<circle cx="620" cy="110" r="40" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="620" y1="110" x2="620" y2="82" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="620" y1="110" x2="646" y2="120" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M520,30 L520,80 M760,30 L760,60" fill="none" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M520,80 L760,60 L762,76 L522,96Z" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M380,420 L640,400 L660,470 L400,500Z" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M800,520 l60,-50 l40,10 l-20,30 l40,40" fill="none" stroke="#111111" stroke-width="4"/>
+<circle cx="812" cy="560" r="10" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M300,560 C330,548 360,570 400,556" fill="none" stroke="#111111" stroke-width="5"/>
+<path d="M400,556 l8,-6 m-8,6 l9,4" fill="none" stroke="#111111" stroke-width="2"/>
+<path d="M700,560 l10,-4 l6,8 l-12,4Z" fill="#111111"/>
+<path d="M720,572 l10,-4 l6,8 l-12,4Z" fill="#111111"/>
+<path d="M690,584 l10,-4 l6,8 l-12,4Z" fill="#111111"/>
+</svg>

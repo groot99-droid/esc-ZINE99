@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200" role="img" aria-labelledby="barrier-escort-cloud-t barrier-escort-cloud-d">
+<title id="barrier-escort-cloud-t">Canister cloud (absorb for Load)</title>
+<desc id="barrier-escort-cloud-d">The cloud a canister leaves: a flat, lumpy, pale grey-green shape in an even outline with a few rounder puffs inside it. Standing in it gives Aegis Load.</desc>
+<path d="M30,170 C0,120 30,70 80,80 C100,20 190,20 210,70 C270,60 300,130 260,170Z" fill="#cfd8c8" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="90" cy="120" r="22" fill="#e3e9dc" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="160" cy="100" r="28" fill="#e3e9dc" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="220" cy="140" r="18" fill="#e3e9dc" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="130" cy="150" r="16" fill="#e3e9dc" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+</svg>

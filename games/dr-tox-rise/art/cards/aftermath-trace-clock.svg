@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420" role="img" aria-labelledby="aftermath-trace-clock-t aftermath-trace-clock-d">
+<title id="aftermath-trace-clock-t">Trace: Wall clock, stopped</title>
+<desc id="aftermath-trace-clock-d">Trace card: a wall clock stopped, glass cracked, its hands fixed; the clue says it marks the first thing that happened.</desc>
+<defs><clipPath id="aftermath-trace-clock-clip1"><rect x="20" y="20" width="280" height="240"/></clipPath><pattern id="aftermath-trace-clock-tone2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="1.3" fill="#111111"/></pattern></defs>
+<rect x="0" y="0" width="320" height="420" fill="#ffffff"/>
+<rect x="8" y="8" width="304" height="404" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<rect x="20" y="20" width="280" height="240" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<g clip-path="url(#aftermath-trace-clock-clip1)">
+<path d="M20,20 L300,20 L300,260 L20,260Z" fill="url(#aftermath-trace-clock-tone2)"/>
+<circle cx="160" cy="140" r="80" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="228" y1="140" x2="236" y2="140" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="218.9" y1="174" x2="225.8" y2="178" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="194" y1="198.9" x2="198" y2="205.8" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="160" y1="208" x2="160" y2="216" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="126" y1="198.9" x2="122" y2="205.8" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="101.1" y1="174" x2="94.2" y2="178" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="92" y1="140" x2="84" y2="140" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="101.1" y1="106" x2="94.2" y2="102" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="126" y1="81.1" x2="122" y2="74.2" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="160" y1="72" x2="160" y2="64" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="194" y1="81.1" x2="198" y2="74.2" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="218.9" y1="106" x2="225.8" y2="102" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<line x1="160" y1="140" x2="160" y2="84" stroke="#111111" stroke-width="4"/>
+<line x1="160" y1="140" x2="206" y2="156" stroke="#111111" stroke-width="4"/>
+<path d="M120,80 L200,200" fill="none" stroke="#111111" stroke-width="2"/>
+</g>
+<text x="22" y="294" font-size="20" font-family="sans-serif" fill="#111111" text-anchor="start" font-weight="bold" letter-spacing="1">WALL CLOCK, STOPPED</text>
+<line x1="22" y1="306" x2="298" y2="306" stroke="#111111" stroke-width="1.5"/>
+<text x="22" y="334" font-size="17" font-family="serif" fill="#111111" text-anchor="start">Stopped at the moment of a</text>
+<text x="22" y="358" font-size="17" font-family="serif" fill="#111111" text-anchor="start">blow to the wall. The first</text>
+<text x="22" y="382" font-size="17" font-family="serif" fill="#111111" text-anchor="start">thing.</text>
+</svg>

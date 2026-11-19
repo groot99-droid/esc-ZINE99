@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 320" width="140" height="320" role="img" aria-labelledby="cage-shield-plate-t cage-shield-plate-d">
+<title id="cage-shield-plate-t">Lead shield plate</title>
+<desc id="cage-shield-plate-d">A lead shield plate to drag beside the flask: a tall flat slab in dull grey with a handle cut-out and four bolt heads. It slows the front on its side.</desc>
+<rect x="10" y="10" width="120" height="300" rx="8" fill="#6e7a79" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<rect x="44" y="30" width="52" height="20" rx="10" fill="#2b3536" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="26" cy="80" r="6" fill="#b8c1c0" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="114" cy="80" r="6" fill="#b8c1c0" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="26" cy="290" r="6" fill="#b8c1c0" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="114" cy="290" r="6" fill="#b8c1c0" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<text x="70" y="200" font-size="34" font-family="sans-serif" fill="#3a4243" text-anchor="middle" font-weight="bold">Pb</text>
+</svg>

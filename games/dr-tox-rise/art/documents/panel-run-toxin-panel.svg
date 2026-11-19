@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-labelledby="panel-run-toxin-panel-t panel-run-toxin-panel-d">
+<title id="panel-run-toxin-panel-t">The Toxin State panel (the suit failing)</title>
+<desc id="panel-run-toxin-panel-d">Pulse 100: the one panel the Toxin State gets. Green creeps in from the four corners over the ink; in the middle, a black silhouette at the wrong proportion, shoulders too high, a joint too many, with straps snapping and plates lifting away from it in white flecks. The panel cuts before any act.</desc>
+<defs><radialGradient id="panel-run-toxin-panel-rg1" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#7FD957" stop-opacity="0.9"/><stop offset="55%" stop-color="#7FD957" stop-opacity="0.6"/><stop offset="100%" stop-color="#7FD957" stop-opacity="0"/></radialGradient><radialGradient id="panel-run-toxin-panel-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#7FD957" stop-opacity="0.9"/><stop offset="55%" stop-color="#7FD957" stop-opacity="0.6"/><stop offset="100%" stop-color="#7FD957" stop-opacity="0"/></radialGradient><radialGradient id="panel-run-toxin-panel-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#7FD957" stop-opacity="0.9"/><stop offset="55%" stop-color="#7FD957" stop-opacity="0.6"/><stop offset="100%" stop-color="#7FD957" stop-opacity="0"/></radialGradient><radialGradient id="panel-run-toxin-panel-rg4" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#7FD957" stop-opacity="0.9"/><stop offset="55%" stop-color="#7FD957" stop-opacity="0.6"/><stop offset="100%" stop-color="#7FD957" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="960" height="540" fill="#f4f1ea"/>
+<path d="M204.2,0 C204.8,24.1 145.1,50.1 116.5,73.3 C87.9,96.5 71.3,126.7 32.7,139.3 C-5.8,151.9 -77.4,163.5 -114.7,149 C-151.9,134.4 -176.6,86 -190.7,52.1 C-204.8,18.2 -213.8,-23.2 -199.3,-54.4 C-184.8,-85.6 -142.1,-122.7 -103.8,-134.9 C-65.6,-147.1 -6.1,-138.3 30,-127.7 C66.2,-117 84,-92.4 113,-71.1 C142.1,-49.9 203.6,-24.1 204.2,0Z" fill="#111111"/>
+<path d="M1142.2,0 C1144.5,33.9 1153.2,81.2 1128.7,106.1 C1104.1,131 1037.7,148.3 995.1,149.4 C952.5,150.5 910.6,129.1 873.2,112.8 C835.7,96.5 793.3,80.7 770.5,51.7 C747.7,22.7 723.8,-27.6 736.3,-61.1 C748.7,-94.6 802.5,-137.3 845,-149.4 C887.5,-161.5 946.5,-142.5 991.5,-133.8 C1036.5,-125.2 1089.8,-119.8 1114.9,-97.5 C1140.1,-75.2 1139.9,-33.9 1142.2,0Z" fill="#111111"/>
+<path d="M186,540 C192.3,569.5 185.5,618.3 159.7,640.5 C133.9,662.7 77.1,664.7 31.3,672.9 C-14.6,681.1 -76.5,702.8 -115.3,689.8 C-154.1,676.8 -195,627 -201.5,595 C-208.1,563 -168.9,532.2 -154.8,497.8 C-140.6,463.3 -146.8,399.4 -116.7,388.4 C-86.7,377.3 -14.3,418.9 25.5,431.4 C65.3,443.8 95.3,445.1 122,463.2 C148.8,481.3 179.7,510.5 186,540Z" fill="#111111"/>
+<path d="M1182.1,540 C1183.8,573.5 1156.4,621.2 1124.7,643.6 C1092.9,666.1 1038.8,666.3 991.7,674.6 C944.5,683 877.8,707.8 841.6,693.8 C805.5,679.7 781.3,623.3 774.9,590.5 C768.5,557.8 784.4,521.3 803.1,497.2 C821.8,473 854.5,466.5 887.3,445.5 C920,424.6 961.7,372 999.6,371.5 C1037.5,371 1084.4,414.5 1114.8,442.6 C1145.3,470.6 1180.5,506.5 1182.1,540Z" fill="#111111"/>
+<circle cx="0" cy="0" r="280" fill="url(#panel-run-toxin-panel-rg1)"/>
+<circle cx="960" cy="0" r="280" fill="url(#panel-run-toxin-panel-rg2)"/>
+<circle cx="0" cy="540" r="280" fill="url(#panel-run-toxin-panel-rg3)"/>
+<circle cx="960" cy="540" r="280" fill="url(#panel-run-toxin-panel-rg4)"/>
+<rect x="0" y="470" width="960" height="70" fill="#111111"/>
+<path d="M400,480 L420,380 L350,330 L330,250 L360,150 L400,96 L440,120 L462,70 L498,52 L526,80 L560,60 L630,110 L650,200 L600,250 L640,300 L590,360 L600,480 L540,480 L520,400 L470,410 L460,480Z" fill="#111111" stroke="#f4f1ea" stroke-width="4" stroke-linejoin="round"/>
+<line x1="380" y1="200" x2="340" y2="130" stroke="#111111" stroke-width="8"/>
+<line x1="340" y1="130" x2="332" y2="116" stroke="#f4f1ea" stroke-width="3" stroke-dasharray="4 4"/>
+<line x1="610" y1="160" x2="680" y2="120" stroke="#111111" stroke-width="8"/>
+<line x1="680" y1="120" x2="694" y2="112" stroke="#f4f1ea" stroke-width="3" stroke-dasharray="4 4"/>
+<line x1="420" y1="330" x2="360" y2="380" stroke="#111111" stroke-width="8"/>
+<line x1="360" y1="380" x2="348" y2="390" stroke="#f4f1ea" stroke-width="3" stroke-dasharray="4 4"/>
+<rect x="675.2" y="274.5" width="22" height="10.3" fill="#f4f1ea" stroke="#111111" stroke-width="3" transform="rotate(43 675.2 274.5)"/>
+<rect x="498.9" y="176.8" width="30.4" height="9.2" fill="#f4f1ea" stroke="#111111" stroke-width="3" transform="rotate(18 498.9 176.8)"/>
+<rect x="349.4" y="280.5" width="26" height="10.2" fill="#f4f1ea" stroke="#111111" stroke-width="3" transform="rotate(148 349.4 280.5)"/>
+<rect x="498" y="452.8" width="28.7" height="6.4" fill="#f4f1ea" stroke="#111111" stroke-width="3" transform="rotate(134 498 452.8)"/>
+<rect x="541.2" y="409.9" width="32.2" height="11.8" fill="#f4f1ea" stroke="#111111" stroke-width="3" transform="rotate(31 541.2 409.9)"/>
+<rect x="296.1" y="247.3" width="33.9" height="8.4" fill="#f4f1ea" stroke="#111111" stroke-width="3" transform="rotate(46 296.1 247.3)"/>
+<rect x="332.5" y="413.2" width="28.9" height="9.8" fill="#f4f1ea" stroke="#111111" stroke-width="3" transform="rotate(177 332.5 413.2)"/>
+<rect x="342.2" y="303.3" width="27" height="7.4" fill="#f4f1ea" stroke="#111111" stroke-width="3" transform="rotate(124 342.2 303.3)"/>
+<rect x="332.3" y="287.6" width="30.3" height="7.7" fill="#f4f1ea" stroke="#111111" stroke-width="3" transform="rotate(46 332.3 287.6)"/>
+<rect x="325.4" y="420.9" width="17.4" height="13.8" fill="#f4f1ea" stroke="#111111" stroke-width="3" transform="rotate(147 325.4 420.9)"/>
+<rect x="471.8" y="124.7" width="28.5" height="7.1" fill="#f4f1ea" stroke="#111111" stroke-width="3" transform="rotate(130 471.8 124.7)"/>
+<rect x="294.3" y="256.6" width="16.3" height="14" fill="#f4f1ea" stroke="#111111" stroke-width="3" transform="rotate(21 294.3 256.6)"/>
+<circle cx="486" cy="84" r="5" fill="#7FD957"/>
+<circle cx="510" cy="82" r="5" fill="#7FD957"/>
+<path d="M6,15.9 C85,18.1 322,13.9 480,13.3 C638,12.8 875,14.8 954,12.5 C1033,10.2 1033,1.5 954,-0.5 C875,-2.4 638,0.6 480,0.7 C322,0.8 85,-2.4 6,0.1 C-73,2.7 -73,13.7 6,15.9Z" fill="#111111"/>
+<path d="M946.4,6 C944.1,50 947.1,182 947.7,270 C948.2,358 947.3,490 949.8,534 C952.2,578 960.1,578 962.2,534 C964.3,490 962.4,358 962.3,270 C962.2,182 964.3,50 961.6,6 C958.9,-38 948.7,-38 946.4,6Z" fill="#111111"/>
+<path d="M956,525.7 C876.9,522.9 639.4,525.4 481,525.5 C322.7,525.7 85.2,524.7 6,526.7 C-73.2,528.6 -73.2,535 6,537.3 C85.2,539.6 322.7,539.6 481,540.5 C639.3,541.3 876.8,544.8 956,542.3 C1035.2,539.8 1035.2,528.5 956,525.7Z" fill="#111111"/>
+<path d="M13.9,532 C16.5,488.4 13.4,357.4 13.5,270 C13.6,182.7 16.5,51.7 14.5,8 C12.5,-35.7 3.8,-35.7 1.5,8 C-0.9,51.6 1,182.6 0.5,270 C-0.1,357.3 -4.2,488.3 -1.9,532 C0.3,575.6 11.4,575.7 13.9,532Z" fill="#111111"/>
+<path d="M8.7,12.7 C13.5,15.6 34.5,22.7 39.8,24.5 C45,26.3 45,26.4 40.2,23.5 C35.5,20.7 16.5,9.1 11.3,7.3 C6,5.5 4,9.9 8.7,12.7Z" fill="#111111"/>
+<path d="M948.6,7 C943.4,8.8 924.5,20.6 919.8,23.5 C915.1,26.4 914.9,26.2 920.2,24.5 C925.5,22.7 946.6,15.9 951.4,13 C956.1,10.1 953.9,5.3 948.6,7Z" fill="#111111"/>
+<path d="M11.3,532.9 C16.6,531.1 35.4,519.3 40.2,516.4 C44.9,513.5 45.1,513.8 39.8,515.6 C34.6,517.4 13.4,524.3 8.7,527.1 C3.9,530 6.1,534.6 11.3,532.9Z" fill="#111111"/>
+<path d="M951.1,527.6 C946.3,524.8 925.4,517.4 920.2,515.6 C915,513.7 915,513.6 919.8,516.4 C924.6,519.2 943.7,530.5 948.9,532.4 C954.1,534.3 955.9,530.4 951.1,527.6Z" fill="#111111"/>
+</svg>

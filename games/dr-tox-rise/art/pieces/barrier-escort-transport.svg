@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" width="640" height="300" role="img" aria-labelledby="barrier-escort-transport-t barrier-escort-transport-d">
+<title id="barrier-escort-transport-t">The transport</title>
+<desc id="barrier-escort-transport-d">The transport the escort guards, side-on in clear line: a flat-nosed slate-grey truck with a boxed cargo bed, round wheels with plain hubs, and RCC stamped small on the bed's corner plate.</desc>
+<rect x="20" y="60" width="420" height="170" rx="6" fill="#7f9192" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<line x1="60" y1="60" x2="60" y2="230" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="130" y1="60" x2="130" y2="230" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="200" y1="60" x2="200" y2="230" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="270" y1="60" x2="270" y2="230" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="340" y1="60" x2="340" y2="230" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="410" y1="60" x2="410" y2="230" stroke="#1b1b1b" stroke-width="1.5"/>
+<path d="M440,110 L560,110 L610,170 L610,230 L440,230Z" fill="#9fb0ae" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<path d="M460,124 L548,124 L584,168 L460,168Z" fill="#dfe6e4" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<rect x="10" y="226" width="610" height="22" fill="#5e6b6c" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="110" cy="256" r="36" fill="#2b3536" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="110" cy="256" r="12" fill="#9fb0ae" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="330" cy="256" r="36" fill="#2b3536" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="330" cy="256" r="12" fill="#9fb0ae" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="520" cy="256" r="36" fill="#2b3536" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="520" cy="256" r="12" fill="#9fb0ae" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<rect x="30" y="190" width="90" height="30" rx="2.4" fill="#c4cdcb" stroke="#1b1b1b" stroke-width="2"/>
+<rect x="33.6" y="193.6" width="82.8" height="22.8" rx="1.5" fill="none" stroke="#1b1b1b" stroke-width="1"/>
+<circle cx="31.8" cy="191.8" r="1.1" fill="#1b1b1b"/>
+<circle cx="118.2" cy="191.8" r="1.1" fill="#1b1b1b"/>
+<circle cx="31.8" cy="218.2" r="1.1" fill="#1b1b1b"/>
+<circle cx="118.2" cy="218.2" r="1.1" fill="#1b1b1b"/>
+<text x="75" y="209.5" font-size="12.6" font-family="sans-serif" fill="#1b1b1b" text-anchor="middle" font-weight="bold" letter-spacing="1.5">RCC</text>
+</svg>

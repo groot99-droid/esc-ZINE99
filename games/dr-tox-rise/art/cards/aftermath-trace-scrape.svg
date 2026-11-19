@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420" role="img" aria-labelledby="aftermath-trace-scrape-t aftermath-trace-scrape-d">
+<title id="aftermath-trace-scrape-t">Trace: Long scrape to the door</title>
+<desc id="aftermath-trace-scrape-d">Trace card: a long scrape across the floor ending at the door: the last trace, made by the guard who lived.</desc>
+<defs><clipPath id="aftermath-trace-scrape-clip1"><rect x="20" y="20" width="280" height="240"/></clipPath><pattern id="aftermath-trace-scrape-tone2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="2.4" fill="#111111"/></pattern></defs>
+<rect x="0" y="0" width="320" height="420" fill="#ffffff"/>
+<rect x="8" y="8" width="304" height="404" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<rect x="20" y="20" width="280" height="240" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<g clip-path="url(#aftermath-trace-scrape-clip1)">
+<path d="M20,20 L300,20 L300,260 L20,260Z" fill="url(#aftermath-trace-scrape-tone2)"/>
+<path d="M20,200 C120,180 200,150 300,90" fill="none" stroke="#ffffff" stroke-width="14"/>
+<path d="M20,200 C120,180 200,150 300,90" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="14 8"/>
+<rect x="250" y="20" width="50" height="120" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+</g>
+<text x="22" y="294" font-size="20" font-family="sans-serif" fill="#111111" text-anchor="start" font-weight="bold" letter-spacing="1" textLength="276" lengthAdjust="spacingAndGlyphs">LONG SCRAPE TO THE DOOR</text>
+<line x1="22" y1="306" x2="298" y2="306" stroke="#111111" stroke-width="1.5"/>
+<text x="22" y="334" font-size="17" font-family="serif" fill="#111111" text-anchor="start">Last. It ends at the door the</text>
+<text x="22" y="358" font-size="17" font-family="serif" fill="#111111" text-anchor="start">guard went out by.</text>
+</svg>

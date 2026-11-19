@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="chapter-8-t chapter-8-d">
+<title id="chapter-8-t">Chapter VIII: Containment Action</title>
+<desc id="chapter-8-d">Chapter card 8, Containment Action: a dated caption box (2226. THE LOWER RING.) over the program world of a Reese chapter, which has no margin line, the chapter's name in capitals and one object drawn large.</desc>
+<defs><filter id="chapter-8-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="243"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="chapter-8-vig2" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.5"/></radialGradient><radialGradient id="chapter-8-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2C14E" stop-opacity="0.3"/><stop offset="100%" stop-color="#F2C14E" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="1280" height="720" fill="#3a2a16"/>
+<rect x="0" y="0" width="1280" height="720" filter="url(#chapter-8-grain1)"/>
+<rect x="0" y="0" width="1280" height="720" fill="url(#chapter-8-vig2)"/>
+<circle cx="640" cy="120" r="640" fill="url(#chapter-8-rg3)"/>
+<rect x="650" y="210" width="500" height="260" fill="#9fb0ae" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
+<rect x="650" y="420" width="500" height="50" fill="#8c9897" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
+<rect x="870" y="210" width="60" height="260" fill="#f6e2a8" opacity="0.9" stroke="#111111" stroke-width="4"/>
+<rect x="888" y="210" width="24" height="260" fill="#fff6dc"/>
+<rect x="75" y="75" width="420" height="56" fill="#000" opacity="0.5"/>
+<rect x="70" y="70" width="420" height="56" fill="#f3eedf" stroke="#111111" stroke-width="3"/>
+<text x="86" y="106.6" font-size="24" font-family="sans-serif" fill="#111111" text-anchor="start" font-weight="bold" letter-spacing="1.4">2226. THE LOWER RING.</text>
+<text x="72" y="560" font-size="26" font-family="sans-serif" fill="#F2C14E" text-anchor="start" letter-spacing="6">CHAPTER VIII</text>
+<text x="70" y="630" font-size="44" font-family="sans-serif" fill="#E9ECEA" text-anchor="start" font-weight="bold" letter-spacing="2">CONTAINMENT ACTION</text>
+</svg>

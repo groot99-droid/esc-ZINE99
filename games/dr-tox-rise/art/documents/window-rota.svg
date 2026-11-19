@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" width="640" height="440" role="img" aria-labelledby="window-rota-t window-rota-d">
+<title id="window-rota-t">Guard rota sheet (blank strip)</title>
+<desc id="window-rota-d">The guard rota typed on paper for the margin: a heading, four zone rows (FENCE, YARD, DOOR, STAIR) and a time strip from 02:00 to 03:00 ruled every five minutes. The guards' bars and the route are laid on it at run time.</desc>
+<rect x="0" y="0" width="640" height="440" fill="#f2f0ea"/>
+<rect x="0" y="0" width="640" height="440" fill="none" stroke="#c9c6bc" stroke-width="2"/>
+<text x="24" y="40" font-size="22" font-family="monospace" fill="#1d1d1b" text-anchor="start" font-weight="bold">ROTA — NIGHT</text>
+<text x="616" y="40" font-size="16" font-family="monospace" fill="#1d1d1b" text-anchor="end">SHEET 1</text>
+<line x1="24" y1="54" x2="616" y2="54" stroke="#1d1d1b" stroke-width="1.5"/>
+<line x1="120" y1="80" x2="120" y2="400" stroke="#c9c6bc" stroke-width="1.6"/>
+<text x="120" y="76" font-size="13" font-family="monospace" fill="#1d1d1b" text-anchor="middle">02:00</text>
+<line x1="161.3" y1="80" x2="161.3" y2="400" stroke="#c9c6bc" stroke-width="1"/>
+<line x1="202.7" y1="80" x2="202.7" y2="400" stroke="#c9c6bc" stroke-width="1"/>
+<line x1="244" y1="80" x2="244" y2="400" stroke="#c9c6bc" stroke-width="1.6"/>
+<text x="244" y="76" font-size="13" font-family="monospace" fill="#1d1d1b" text-anchor="middle">02:15</text>
+<line x1="285.3" y1="80" x2="285.3" y2="400" stroke="#c9c6bc" stroke-width="1"/>
+<line x1="326.7" y1="80" x2="326.7" y2="400" stroke="#c9c6bc" stroke-width="1"/>
+<line x1="368" y1="80" x2="368" y2="400" stroke="#c9c6bc" stroke-width="1.6"/>
+<text x="368" y="76" font-size="13" font-family="monospace" fill="#1d1d1b" text-anchor="middle">02:30</text>
+<line x1="409.3" y1="80" x2="409.3" y2="400" stroke="#c9c6bc" stroke-width="1"/>
+<line x1="450.7" y1="80" x2="450.7" y2="400" stroke="#c9c6bc" stroke-width="1"/>
+<line x1="492" y1="80" x2="492" y2="400" stroke="#c9c6bc" stroke-width="1.6"/>
+<text x="492" y="76" font-size="13" font-family="monospace" fill="#1d1d1b" text-anchor="middle">02:45</text>
+<line x1="533.3" y1="80" x2="533.3" y2="400" stroke="#c9c6bc" stroke-width="1"/>
+<line x1="574.7" y1="80" x2="574.7" y2="400" stroke="#c9c6bc" stroke-width="1"/>
+<line x1="616" y1="80" x2="616" y2="400" stroke="#c9c6bc" stroke-width="1.6"/>
+<text x="616" y="76" font-size="13" font-family="monospace" fill="#1d1d1b" text-anchor="end">03:00</text>
+<line x1="24" y1="160" x2="616" y2="160" stroke="#1d1d1b" stroke-width="1"/>
+<text x="24" y="134" font-size="18" font-family="monospace" fill="#1d1d1b" text-anchor="start" font-weight="bold">FENCE</text>
+<line x1="24" y1="236" x2="616" y2="236" stroke="#1d1d1b" stroke-width="1"/>
+<text x="24" y="210" font-size="18" font-family="monospace" fill="#1d1d1b" text-anchor="start" font-weight="bold">YARD</text>
+<line x1="24" y1="312" x2="616" y2="312" stroke="#1d1d1b" stroke-width="1"/>
+<text x="24" y="286" font-size="18" font-family="monospace" fill="#1d1d1b" text-anchor="start" font-weight="bold">DOOR</text>
+<line x1="24" y1="388" x2="616" y2="388" stroke="#1d1d1b" stroke-width="1"/>
+<text x="24" y="362" font-size="18" font-family="monospace" fill="#1d1d1b" text-anchor="start" font-weight="bold">STAIR</text>
+<text x="24" y="428" font-size="13" font-family="monospace" fill="#5a5850" text-anchor="start">ROUNDS AS POSTED. NO DEVIATION.</text>
+</svg>

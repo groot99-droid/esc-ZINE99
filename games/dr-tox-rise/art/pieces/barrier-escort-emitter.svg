@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240" role="img" aria-labelledby="barrier-escort-emitter-t barrier-escort-emitter-d">
+<title id="barrier-escort-emitter-t">Barrier emitter stamped RCC</title>
+<desc id="barrier-escort-emitter-d">A barrier emitter bolted to the floor, the plate on it stamped RCC: the Exception in the Terminology Rule, where the State's signage still says what HOPE will not. Nell's hand goes here.</desc>
+<rect x="40" y="120" width="120" height="110" fill="#7f9192" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<path d="M60,120 L80,40 L120,40 L140,120Z" fill="#9fb0ae" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<rect x="84" y="20" width="32" height="24" rx="4" fill="#f6e2a8" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<rect x="56" y="150" width="88" height="50" rx="4" fill="#c4cdcb" stroke="#1b1b1b" stroke-width="2"/>
+<rect x="62" y="156" width="76" height="38" rx="2.5" fill="none" stroke="#1b1b1b" stroke-width="1"/>
+<circle cx="59" cy="153" r="1.8" fill="#1b1b1b"/>
+<circle cx="141" cy="153" r="1.8" fill="#1b1b1b"/>
+<circle cx="59" cy="197" r="1.8" fill="#1b1b1b"/>
+<circle cx="141" cy="197" r="1.8" fill="#1b1b1b"/>
+<text x="100" y="182.6" font-size="21" font-family="sans-serif" fill="#1b1b1b" text-anchor="middle" font-weight="bold" letter-spacing="2.5">RCC</text>
+</svg>

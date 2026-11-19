@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320" width="200" height="320" role="img" aria-labelledby="barrier-escort-child-t barrier-escort-child-d">
+<title id="barrier-escort-child-t">A child, seen from behind</title>
+<desc id="barrier-escort-child-d">A child seen from behind and small in the frame, in a blue coat with the seam of the hood drawn down the back: present in the corridor, never shown from the front.</desc>
+<line x1="50" y1="310" x2="150" y2="310" stroke="#1b1b1b" stroke-width="3" stroke-linecap="round"/>
+<path d="M100,160 a11,12 0 1,0 0.1,0Z M94,180 L106,180 L107,192 L93,192Z M78,190 L122,190 L120,252 L112,310 L103,310 L100,250 L97,310 L88,310 L80,252Z" fill="#5e6f8a" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<line x1="100" y1="194" x2="100" y2="250" stroke="#1b1b1b" stroke-width="1.5"/>
+<rect x="86" y="304" width="12" height="6" rx="2" fill="#2b3536" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<rect x="102" y="304" width="12" height="6" rx="2" fill="#2b3536" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+</svg>

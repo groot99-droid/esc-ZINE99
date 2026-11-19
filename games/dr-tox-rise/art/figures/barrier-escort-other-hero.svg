@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320" width="200" height="320" role="img" aria-labelledby="barrier-escort-other-hero-t barrier-escort-other-hero-d">
+<title id="barrier-escort-other-hero-t">The other hero (a line of motion)</title>
+<desc id="barrier-escort-other-hero-d">The other hero as the page shows her: a dark slate silhouette leaning into an unhurried stride, a long sweep of motion lines behind her that the player cannot steer. She never needs a wall.</desc>
+<path d="M0,100 C40,96 70,94 100,100" fill="none" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/>
+<path d="M0,150 C40,146 70,144 100,150" fill="none" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/>
+<path d="M0,200 C40,196 70,194 100,200" fill="none" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/>
+<path d="M0,250 C40,246 70,244 100,250" fill="none" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/>
+<path d="M142,32.5 a20.4,22.2 0 1,0 0.1,0Z M130.9,69.5 L153.1,69.5 L154.9,91.7 L129.1,91.7Z M103.3,88 L180.7,88 L172.3,202.7 L152.2,310 L135.6,310 L130,199 L124.5,310 L107.8,310 L102,202.7Z" fill="#3c4a52" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<line x1="70" y1="310" x2="190" y2="310" stroke="#1b1b1b" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="cats-cradle-speaker-t cats-cradle-speaker-d">
+<title id="cats-cradle-speaker-t">The program's speaker on the painted wall</title>
+<desc id="cats-cradle-speaker-d">A round speaker grille set into the painted sky, painted over in the same blue so it nearly disappears: the program listening. Concentric chalk rings show when it speaks.</desc>
+<circle cx="100" cy="100" r="60" fill="#6f9bcb"/>
+<circle cx="100" cy="100" r="8" fill="none" stroke="#7FA9D6" stroke-width="3"/>
+<circle cx="100" cy="100" r="16" fill="none" stroke="#7FA9D6" stroke-width="3"/>
+<circle cx="100" cy="100" r="24" fill="none" stroke="#7FA9D6" stroke-width="3"/>
+<circle cx="100" cy="100" r="32" fill="none" stroke="#7FA9D6" stroke-width="3"/>
+<circle cx="100" cy="100" r="40" fill="none" stroke="#7FA9D6" stroke-width="3"/>
+<circle cx="100" cy="100" r="48" fill="none" stroke="#7FA9D6" stroke-width="3"/>
+<circle cx="52" cy="100" r="4" fill="#5a7ea8"/>
+<circle cx="148" cy="100" r="4" fill="#5a7ea8"/>
+<path d="M145.3,45.7 L149.8,49.2 L154.1,52.7 L157.2,56.8 L159.9,60 L163.3,65.1 L164.4,69.2 L166.3,74.4 L168.6,79.9 L171.1,84.3 L170.5,89 L170.9,95 L171.5,100.2 L171.1,105.3 L170.6,109.7 L169.5,115.4 L169.5,120.2 L166.5,126.2 L165.6,131 L162.3,135.4 L160.6,139.2 L157.9,143.7 L154.5,148.5 L149.5,151.8 L145.5,155.1" stroke="#f7f7f2" stroke-width="3" opacity="0.6" fill="none"/>
+<path d="M155.5,34.6 L159,37.7 L163.6,42.2 L168.5,46.7 L171.5,51.9 L175.7,58.1 L177.8,62.9 L180.3,68.8 L181.5,75.3 L183.6,81.9 L184.2,88 L186.2,94.4 L186.6,99.2 L185.1,106.5 L186,112.7 L183.1,118.2 L183,123.9 L180.4,130.1 L178.3,135.5 L174.2,141.5 L171.2,147 L168.3,151.7 L163.7,157.9 L159.9,162.5 L156.2,165.2" stroke="#f7f7f2" stroke-width="3" opacity="0.6" fill="none"/>
+</svg>

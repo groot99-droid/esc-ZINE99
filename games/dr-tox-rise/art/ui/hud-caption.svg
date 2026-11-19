@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 96" width="600" height="96" role="img" aria-labelledby="hud-caption-t hud-caption-d">
+<title id="hud-caption-t">Caption box (blank, for dated captions)</title>
+<desc id="hud-caption-d">A blank typed caption box with a drop shadow, the box every chapter opens on and every Alexander line is set in. Text is laid over it at run time.</desc>
+<rect x="10" y="12" width="576" height="74" fill="#000" opacity="0.5"/>
+<rect x="4" y="6" width="576" height="74" fill="#f3eedf" stroke="#111111" stroke-width="3"/>
+<rect x="10" y="12" width="564" height="62" fill="none" stroke="#111111" stroke-width="0.8" opacity="0.5"/>
+<line x1="16" y1="18" x2="16" y2="68" stroke="#111111" stroke-width="0.6" opacity="0.2"/>
+<line x1="568" y1="18" x2="568" y2="68" stroke="#111111" stroke-width="0.6" opacity="0.2"/>
+</svg>

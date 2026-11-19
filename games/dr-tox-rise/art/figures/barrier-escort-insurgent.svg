@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320" width="200" height="320" role="img" aria-labelledby="barrier-escort-insurgent-t barrier-escort-insurgent-d">
+<title id="barrier-escort-insurgent-t">Insurgent with a water drum</title>
+<desc id="barrier-escort-insurgent-d">An Insurgent in clear line, a person in a muted green coat carrying a blue water drum: someone the plague left behind, holding the corridor with what the towers never took.</desc>
+<line x1="50" y1="310" x2="150" y2="310" stroke="#1b1b1b" stroke-width="3" stroke-linecap="round"/>
+<path d="M100,32.5 a20.4,22.2 0 1,0 0.1,0Z M88.9,69.5 L111.1,69.5 L113,91.7 L87,91.7Z M53.2,88 L146.8,88 L142.6,202.7 L122.2,310 L105.5,310 L100,199 L94.5,310 L77.8,310 L57.5,202.7Z" fill="#7d8f7a" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<rect x="120" y="190" width="54" height="70" rx="8" fill="#5e6f8a" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<line x1="120" y1="210" x2="174" y2="210" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="120" y1="240" x2="174" y2="240" stroke="#1b1b1b" stroke-width="1.5"/>
+</svg>

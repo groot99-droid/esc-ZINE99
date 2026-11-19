@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-labelledby="panel-run-twins-t panel-run-twins-d">
+<title id="panel-run-twins-t">The Resonance Twins (open the last wall)</title>
+<desc id="panel-run-twins-d">The Resonance Twins, two black silhouettes side by side with dashed arcs of sound rising between them: they open the last wall and pay for it.</desc>
+<path d="M40,315.2 C80,316.8 240,311.6 280,310.1 C320,308.5 320,307.5 280,305.9 C240,304.4 80,299.2 40,300.8 C0,302.3 0,313.7 40,315.2Z" fill="#111111"/>
+<path d="M188.9,315.4 C191.5,316 201.8,316.1 204.4,316.2 C207,316.3 207,316.4 204.5,315.8 C202,315.2 191.9,312.7 189.3,312.6 C186.7,312.5 186.4,314.8 188.9,315.4Z" fill="#111111"/>
+<path d="M94.4,315.4 C96.7,316 106.3,316.2 108.7,316.2 C111.1,316.3 111.1,316.4 108.8,315.8 C106.5,315.1 97.2,312.6 94.8,312.6 C92.4,312.5 92.1,314.8 94.4,315.4Z" fill="#111111"/>
+<path d="M78.9,315.4 C83.4,316 101.8,316.1 106.4,316.2 C111.1,316.3 111,316.4 106.5,315.8 C101.9,315.2 83.7,312.7 79.1,312.6 C74.5,312.5 74.3,314.8 78.9,315.4Z" fill="#111111"/>
+<path d="M120,51 a18.7,20.4 0 1,0 0.1,0Z M109.8,85 L130.2,85 L131.9,105.4 L108.1,105.4Z M82.6,102 L157.4,102 L154,207.4 L140.4,306 L125.1,306 L120,204 L114.9,306 L99.6,306 L86,207.4Z" fill="#111111"/>
+<path d="M200,51 a18.7,20.4 0 1,0 0.1,0Z M189.8,85 L210.2,85 L211.9,105.4 L188.1,105.4Z M162.6,102 L237.4,102 L234,207.4 L220.4,306 L205.1,306 L200,204 L194.9,306 L179.6,306 L166,207.4Z" fill="#111111"/>
+<path d="M124,135.6 A36,36 0 0,1 196,135.6" fill="none" stroke="#111111" stroke-width="4" stroke-dasharray="14 8"/>
+<path d="M98,125.2 A62,62 0 0,1 222,125.2" fill="none" stroke="#111111" stroke-width="4" stroke-dasharray="14 8"/>
+<path d="M72,114.8 A88,88 0 0,1 248,114.8" fill="none" stroke="#111111" stroke-width="4" stroke-dasharray="14 8"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" width="180" height="60" role="img" aria-labelledby="barrier-escort-name-tag-t barrier-escort-name-tag-d">
+<title id="barrier-escort-name-tag-t">Name tag (blank, for a penned person)</title>
+<desc id="barrier-escort-name-tag-d">The white tag that appears on a wall bar when it pens a person, blank for the name the page sets in it: a small rounded card hung from the bar by a short line. Never a score.</desc>
+<line x1="90" y1="0" x2="90" y2="12" stroke="#1b1b1b" stroke-width="2"/>
+<rect x="6" y="12" width="168" height="42" rx="8" fill="#ffffff" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="90" cy="12" r="4" fill="#1b1b1b"/>
+<line x1="20" y1="44" x2="160" y2="44" stroke="#c4cdcb" stroke-width="1"/>
+<circle cx="20" cy="24" r="4" fill="none" stroke="#1b1b1b" stroke-width="1.5"/>
+</svg>

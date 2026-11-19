@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420" role="img" aria-labelledby="aftermath-trace-light-t aftermath-trace-light-d">
+<title id="aftermath-trace-light-t">Trace: Strip light, failed</title>
+<desc id="aftermath-trace-light-d">Trace card: a strip light hanging from one chain over broken glass; the clue ties it to the strap below.</desc>
+<defs><clipPath id="aftermath-trace-light-clip1"><rect x="20" y="20" width="280" height="240"/></clipPath><pattern id="aftermath-trace-light-tone2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3.5" cy="3.5" r="2.8" fill="#111111"/></pattern></defs>
+<rect x="0" y="0" width="320" height="420" fill="#ffffff"/>
+<rect x="8" y="8" width="304" height="404" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<rect x="20" y="20" width="280" height="240" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<g clip-path="url(#aftermath-trace-light-clip1)">
+<path d="M20,20 L300,20 L300,260 L20,260Z" fill="url(#aftermath-trace-light-tone2)"/>
+<path d="M60,20 L60,90 M260,20 L260,40" fill="none" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M60,90 L260,40 L262,58 L62,108Z" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M120,180 l10,-6 l8,10 l-14,6Z" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M180,180 l10,-6 l8,10 l-14,6Z" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M230,208 l10,-6 l8,10 l-14,6Z" fill="#ffffff" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+</g>
+<text x="22" y="294" font-size="20" font-family="sans-serif" fill="#111111" text-anchor="start" font-weight="bold" letter-spacing="1">STRIP LIGHT, FAILED</text>
+<line x1="22" y1="306" x2="298" y2="306" stroke="#111111" stroke-width="1.5"/>
+<text x="22" y="334" font-size="17" font-family="serif" fill="#111111" text-anchor="start">Pulled down on one chain.</text>
+<text x="22" y="358" font-size="17" font-family="serif" fill="#111111" text-anchor="start">Glass fell on the strap.</text>
+</svg>

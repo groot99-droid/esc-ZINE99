@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" role="img" aria-labelledby="fiche-index-card-t fiche-index-card-d">
+<title id="fiche-index-card-t">Index card (a frame of its own)</title>
+<desc id="fiche-index-card-d">The index card, itself a frame, as scratchboard: columns for SUBJECT, SHEET, ROW, COL and MARKS cut as headings over ruled lines; entries are written in at run time.</desc>
+<rect x="0" y="0" width="480" height="320" fill="#0a0a0a"/>
+<rect x="8" y="8" width="464" height="304" fill="none" stroke="#efeee8" stroke-width="2"/>
+<line x1="8" y1="52" x2="472" y2="52" stroke="#efeee8" stroke-width="1.5"/>
+<text x="22" y="38" font-size="18" font-family="monospace" fill="#efeee8" text-anchor="start" letter-spacing="2.2" font-weight="bold">INDEX</text>
+<circle cx="450" cy="30" r="2" fill="#efeee8"/>
+<circle cx="438" cy="30" r="2" fill="#efeee8"/>
+<circle cx="426" cy="30" r="2" fill="#efeee8"/>
+<circle cx="414" cy="30" r="2" fill="#efeee8"/>
+<circle cx="402" cy="30" r="2" fill="#efeee8"/>
+<circle cx="390" cy="30" r="2" fill="#efeee8"/>
+<text x="22" y="76" font-size="13" font-family="monospace" fill="#efeee8" text-anchor="start" letter-spacing="1.6">SUBJECT</text>
+<text x="176" y="76" font-size="13" font-family="monospace" fill="#efeee8" text-anchor="start" letter-spacing="1.6">SHEET</text>
+<line x1="166" y1="60" x2="166" y2="300" stroke="#efeee8" stroke-width="0.8"/>
+<text x="250" y="76" font-size="13" font-family="monospace" fill="#efeee8" text-anchor="start" letter-spacing="1.6">ROW</text>
+<line x1="240" y1="60" x2="240" y2="300" stroke="#efeee8" stroke-width="0.8"/>
+<text x="306" y="76" font-size="13" font-family="monospace" fill="#efeee8" text-anchor="start" letter-spacing="1.6">COL</text>
+<line x1="296" y1="60" x2="296" y2="300" stroke="#efeee8" stroke-width="0.8"/>
+<text x="360" y="76" font-size="13" font-family="monospace" fill="#efeee8" text-anchor="start" letter-spacing="1.6">MARKS</text>
+<line x1="350" y1="60" x2="350" y2="300" stroke="#efeee8" stroke-width="0.8"/>
+<line x1="16" y1="92" x2="464" y2="92" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="16" y1="118" x2="464" y2="118" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="16" y1="144" x2="464" y2="144" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="16" y1="170" x2="464" y2="170" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="16" y1="196" x2="464" y2="196" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="16" y1="222" x2="464" y2="222" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="16" y1="248" x2="464" y2="248" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+<line x1="16" y1="274" x2="464" y2="274" stroke="#efeee8" stroke-width="0.6" opacity="0.6"/>
+</svg>

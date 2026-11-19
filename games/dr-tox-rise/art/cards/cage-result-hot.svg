@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="400" height="560" role="img" aria-labelledby="cage-result-hot-t cage-result-hot-d">
+<title id="cage-result-hot-t">Batch result: Hot (3 doses)</title>
+<desc id="cage-result-hot-d">The result card for a batch run past the endpoint: the vial full, a thin band of green riding the top of the amber, never as much green as amber; HOT and 3 DOSES.</desc>
+<defs><clipPath id="cage-result-hot-clip1"><rect x="0" y="166" width="400" height="560"/></clipPath><clipPath id="cage-result-hot-clip2"><path d="M140,154 L167,130 L167,100 L233,100 L233,130 L260,154 L260,364 Q260,400 200,400 Q140,400 140,364Z"/></clipPath></defs>
+<rect x="0" y="0" width="400" height="560" fill="#f3eedf"/>
+<rect x="10" y="10" width="380" height="540" rx="14" fill="#f3eedf" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<path d="M140,154 L167,130 L167,100 L233,100 L233,130 L260,154 L260,364 Q260,400 200,400 Q140,400 140,364Z" fill="#dce8e6" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<path d="M140,154 L167,130 L167,100 L233,100 L233,130 L260,154 L260,364 Q260,400 200,400 Q140,400 140,364Z" fill="#D99A2B" clip-path="url(#cage-result-hot-clip1)"/>
+<rect x="140" y="166" width="120" height="26" fill="#7FD957" clip-path="url(#cage-result-hot-clip2)"/>
+<path d="M140,154 L167,130 L167,100 L233,100 L233,130 L260,154 L260,364 Q260,400 200,400 Q140,400 140,364Z" fill="none" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<rect x="30" y="432" width="340" height="3" fill="#141414"/>
+<text x="200" y="476" font-size="44" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold" letter-spacing="4">HOT</text>
+<text x="200" y="520" font-size="24" font-family="sans-serif" fill="#3f7a28" text-anchor="middle" font-weight="bold" letter-spacing="3">3 DOSES</text>
+</svg>

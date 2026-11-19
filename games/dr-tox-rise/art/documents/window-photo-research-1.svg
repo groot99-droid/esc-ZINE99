@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" width="480" height="360" role="img" aria-labelledby="window-photo-research-1-t window-photo-research-1-d">
+<title id="window-photo-research-1-t">Photo panel: research 1 (02:10)</title>
+<desc id="window-photo-research-1-d">A posed surveillance photo in grey tone with a white border and a typed time caption, 02:10: the perimeter fence and gate under a floodlight, a guard small and soft with distance on the far side of the wire.</desc>
+<defs><clipPath id="window-photo-research-1-clip1"><rect x="14" y="14" width="452" height="332"/></clipPath><linearGradient id="window-photo-research-1-lg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1b1d1d"/><stop offset="60%" stop-color="#3a3e3e"/><stop offset="100%" stop-color="#575c5b"/></linearGradient><radialGradient id="window-photo-research-1-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#e8e8e2" stop-opacity="0.8"/><stop offset="30%" stop-color="#c9cac5" stop-opacity="0.3"/><stop offset="100%" stop-color="#c9cac5" stop-opacity="0"/></radialGradient><filter id="window-photo-research-1-blur4" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.2"/></filter><clipPath id="window-photo-research-1-clip5"><rect x="14" y="150" width="452" height="140"/></clipPath><clipPath id="window-photo-research-1-clip6"><rect x="14" y="150" width="452" height="140"/></clipPath><filter id="window-photo-research-1-grain7" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="751"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer></filter><radialGradient id="window-photo-research-1-rg8" cx="0.5" cy="0.5" r="0.75"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.5"/></radialGradient></defs>
+<rect x="0" y="0" width="480" height="360" fill="#ffffff"/>
+<g clip-path="url(#window-photo-research-1-clip1)">
+<rect x="14" y="14" width="452" height="332" fill="url(#window-photo-research-1-lg2)"/>
+<rect x="14" y="240" width="452" height="106" fill="#2e3131"/>
+<circle cx="380" cy="70" r="120" fill="url(#window-photo-research-1-rg3)"/>
+<circle cx="380" cy="70" r="6" fill="#ffffff"/>
+<path d="M330,161 a5.5,6 0 1,0 0.1,0Z M327,171 L333,171 L333.5,177 L326.5,177Z M316.8,176 L343.2,176 L342,207 L336,236 L331.5,236 L330,206 L328.5,236 L324,236 L318,207Z" fill="#0b0c0c" filter="url(#window-photo-research-1-blur4)"/>
+<rect x="14" y="150" width="452" height="140" fill="#2a2d2d" opacity="0.3"/>
+<g clip-path="url(#window-photo-research-1-clip5)">
+<path d="M240,-134.4 L594.4,220 M230.1,-124.5 L584.5,229.9 M220.2,-114.6 L574.6,239.8 M210.3,-104.7 L564.7,249.7 M200.4,-94.8 L554.8,259.6 M190.5,-84.9 L544.9,269.5 M180.6,-75 L535,279.4 M170.7,-65.1 L525.1,289.3 M160.8,-55.2 L515.2,299.2 M150.9,-45.3 L505.3,309.1 M141,-35.4 L495.4,319 M131.1,-25.5 L485.5,328.9 M121.2,-15.6 L475.6,338.8 M111.3,-5.7 L465.7,348.7 M101.4,4.2 L455.8,358.6 M91.5,14.1 L445.9,368.5 M81.6,24 L436,378.4 M71.7,33.9 L426.1,388.3 M61.8,43.8 L416.2,398.2 M51.9,53.7 L406.3,408.1 M42,63.6 L396.4,418 M32.1,73.5 L386.5,427.9 M22.2,83.4 L376.6,437.8 M12.3,93.3 L366.7,447.7 M2.4,103.2 L356.8,457.6 M-7.5,113.1 L346.9,467.5 M-17.4,123 L337,477.4 M-27.3,132.9 L327.1,487.3 M-37.2,142.8 L317.2,497.2 M-47.1,152.7 L307.3,507.1 M-57,162.6 L297.4,517 M-66.9,172.5 L287.5,526.9 M-76.8,182.4 L277.6,536.8 M-86.7,192.3 L267.7,546.7 M-96.6,202.2 L257.8,556.6 M-106.5,212.1 L247.9,566.5" fill="none" stroke="#8a8f8d" stroke-width="1.2" opacity="0.7"/>
+</g>
+<g clip-path="url(#window-photo-research-1-clip6)">
+<path d="M-114.4,220 L240,-134.4 M-104.5,229.9 L249.9,-124.5 M-94.6,239.8 L259.8,-114.6 M-84.7,249.7 L269.7,-104.7 M-74.8,259.6 L279.6,-94.8 M-64.9,269.5 L289.5,-84.9 M-55,279.4 L299.4,-75 M-45.1,289.3 L309.3,-65.1 M-35.2,299.2 L319.2,-55.2 M-25.3,309.1 L329.1,-45.3 M-15.4,319 L339,-35.4 M-5.5,328.9 L348.9,-25.5 M4.4,338.8 L358.8,-15.6 M14.3,348.7 L368.7,-5.7 M24.2,358.6 L378.6,4.2 M34.1,368.5 L388.5,14.1 M44,378.4 L398.4,24 M53.9,388.3 L408.3,33.9 M63.8,398.2 L418.2,43.8 M73.7,408.1 L428.1,53.7 M83.6,418 L438,63.6 M93.5,427.9 L447.9,73.5 M103.4,437.8 L457.8,83.4 M113.3,447.7 L467.7,93.3 M123.2,457.6 L477.6,103.2 M133.1,467.5 L487.5,113.1 M143,477.4 L497.4,123 M152.9,487.3 L507.3,132.9 M162.8,497.2 L517.2,142.8 M172.7,507.1 L527.1,152.7 M182.6,517 L537,162.6 M192.5,526.9 L546.9,172.5 M202.4,536.8 L556.8,182.4 M212.3,546.7 L566.7,192.3 M222.2,556.6 L576.6,202.2 M232.1,566.5 L586.5,212.1" fill="none" stroke="#8a8f8d" stroke-width="1.2" opacity="0.7"/>
+</g>
+<rect x="30" y="140" width="6" height="150" fill="#6a6f6d"/>
+<rect x="140" y="140" width="6" height="150" fill="#6a6f6d"/>
+<rect x="250" y="140" width="6" height="150" fill="#6a6f6d"/>
+<rect x="360" y="140" width="6" height="150" fill="#6a6f6d"/>
+<rect x="470" y="140" width="6" height="150" fill="#6a6f6d"/>
+<rect x="220" y="150" width="70" height="140" fill="#1b1d1d" opacity="0.6"/>
+<rect x="14" y="14" width="452" height="332" filter="url(#window-photo-research-1-grain7)"/>
+<rect x="14" y="14" width="452" height="332" fill="url(#window-photo-research-1-rg8)"/>
+</g>
+<rect x="14" y="14" width="452" height="332" fill="none" stroke="#d8d6d0" stroke-width="1"/>
+<rect x="24" y="24" width="104" height="34" fill="#f2f0ea" stroke="#1d1d1b" stroke-width="1.5"/>
+<text x="76" y="48" font-size="20" font-family="monospace" fill="#1d1d1b" text-anchor="middle" font-weight="bold">02:10</text>
+</svg>

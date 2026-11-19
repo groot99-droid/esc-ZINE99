@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="1200" height="140" role="img" aria-labelledby="loading-monitor-green-t loading-monitor-green-d">
+<title id="loading-monitor-green-t">Loading monitor line, green (before the dose)</title>
+<desc id="loading-monitor-green-d">A black monitor strip with a sickly green heart trace and a grid: the line before the first dose. The loading screen crossfades it into the amber strip as the bar fills.</desc>
+<rect x="0" y="0" width="1200" height="140" fill="#060807"/>
+<path d="M0,0V140M28,0V140M56,0V140M84,0V140M112,0V140M140,0V140M168,0V140M196,0V140M224,0V140M252,0V140M280,0V140M308,0V140M336,0V140M364,0V140M392,0V140M420,0V140M448,0V140M476,0V140M504,0V140M532,0V140M560,0V140M588,0V140M616,0V140M644,0V140M672,0V140M700,0V140M728,0V140M756,0V140M784,0V140M812,0V140M840,0V140M868,0V140M896,0V140M924,0V140M952,0V140M980,0V140M1008,0V140M1036,0V140M1064,0V140M1092,0V140M1120,0V140M1148,0V140M1176,0V140M0,0H1200M0,28H1200M0,56H1200M0,84H1200M0,112H1200M0,140H1200" fill="none" stroke="#13201a" stroke-width="1"/>
+<path d="M20,84 L78,84 L84.4,29 L92.2,106 L99.9,84 L148.9,84 L206.9,84 L213.3,29 L221.1,106 L228.8,84 L277.8,84 L335.8,84 L342.2,29 L350,106 L357.7,84 L406.7,84 L464.7,84 L471.1,29 L478.8,106 L486.6,84 L535.6,84 L593.6,84 L600,29 L607.7,106 L615.5,84 L664.4,84 L722.4,84 L728.9,29 L736.6,106 L744.4,84 L793.3,84 L851.3,84 L857.8,29 L865.5,106 L873.2,84 L922.2,84 L980.2,84 L986.7,29 L994.4,106 L1002.1,84 L1051.1,84 L1109.1,84 L1115.6,29 L1123.3,106 L1131,84 L1180,84" fill="none" stroke="#7FD957" stroke-width="4" stroke-linejoin="round"/>
+<text x="20" y="28" font-size="16" font-family="monospace" fill="#7FD957" text-anchor="start" letter-spacing="3">PULSE</text>
+<text x="1180" y="28" font-size="13" font-family="monospace" fill="#7FD957" text-anchor="end" opacity="0.6">II</text>
+<text x="1070" y="28" font-size="13" font-family="monospace" fill="#7FD957" text-anchor="end" opacity="0.6">HR</text>
+<text x="960" y="28" font-size="13" font-family="monospace" fill="#7FD957" text-anchor="end" opacity="0.6">mm/s 25</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-labelledby="barrier-escort-crew-t barrier-escort-crew-d">
+<title id="barrier-escort-crew-t">Barricade crew</title>
+<desc id="barrier-escort-crew-d">Two of a barricade crew lifting a sheet of scrap between them, in flat ochre and slate coats: the people who rebuild ahead of the transport unless a wall stops them.</desc>
+<line x1="20" y1="310" x2="300" y2="310" stroke="#1b1b1b" stroke-width="3"/>
+<path d="M96,55 a18.7,20.4 0 1,0 0.1,0Z M85.8,89 L106.2,89 L107.9,109.4 L84.1,109.4Z M54.9,106 L137.1,106 L131,211.4 L110.4,310 L95.1,310 L90,208 L84.9,310 L69.6,310 L56.2,211.4Z" fill="#8a7a5e" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<path d="M224,55 a18.7,20.4 0 1,0 0.1,0Z M213.8,89 L234.2,89 L235.9,109.4 L212.1,109.4Z M182.9,106 L265.1,106 L263.8,211.4 L250.4,310 L235.1,310 L230,208 L224.9,310 L209.6,310 L189,211.4Z" fill="#6a8a8a" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<path d="M70,130 L250,110 L256,150 L76,170Z" fill="#b0a48a" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<line x1="150" y1="120" x2="156" y2="160" stroke="#1b1b1b" stroke-width="1.5"/>
+</svg>

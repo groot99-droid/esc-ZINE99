@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="ending-green-in-the-archive-t ending-green-in-the-archive-d">
+<title id="ending-green-in-the-archive-t">Ending: Green in the Archive</title>
+<desc id="ending-green-in-the-archive-d">Ending lettering plate for Green in the Archive: the ending's last image small and still on the left, its name in pale capitals on the right, and the cost in a line below.</desc>
+<defs><filter id="ending-green-in-the-archive-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="554"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="ending-green-in-the-archive-rg2" cx="0.5" cy="0.1" r="0.9"><stop offset="0%" stop-color="#5a1416" stop-opacity="0.9"/><stop offset="100%" stop-color="#120607" stop-opacity="0"/></radialGradient><radialGradient id="ending-green-in-the-archive-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2C14E" stop-opacity="0.5"/><stop offset="100%" stop-color="#F2C14E" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="1200" height="675" fill="#0b0d0d"/>
+<rect x="0" y="0" width="1200" height="675" fill="#0b0d0d"/>
+<rect x="0" y="0" width="1200" height="675" filter="url(#ending-green-in-the-archive-grain1)"/>
+<rect x="40" y="40" width="520" height="595" fill="#120607"/>
+<rect x="40" y="40" width="520" height="595" fill="url(#ending-green-in-the-archive-rg2)"/>
+<rect x="40" y="470" width="520" height="165" fill="#1d0a0b"/>
+<rect x="380" y="330" width="90" height="160" fill="#241012" stroke="#3a1517" stroke-width="3"/>
+<rect x="398" y="360" width="54" height="40" fill="#D99A2B"/>
+<circle cx="425" cy="380" r="48" fill="url(#ending-green-in-the-archive-rg3)"/>
+<path d="M197.9,423 L202.1,423 L202.5,430.6 L201.3,433.9 L206.7,437.3 L205.9,461.6 L203.8,460.8 L203.8,486 L200.8,486 L200,460 L199.2,486 L196.2,486 L196.2,460.8 L194.1,461.6 L193.3,437.3 L198.7,433.9 L197.5,430.6Z" fill="#050202"/>
+<path d="M93,560 L98,534 L122,534 L127,560Z" fill="#d8c9c9" stroke="#050202" stroke-width="2"/>
+<path d="M163,590 L168,564 L192,564 L197,590Z" fill="#d8c9c9" stroke="#050202" stroke-width="2"/>
+<path d="M233,560 L238,534 L262,534 L267,560Z" fill="#d8c9c9" stroke="#050202" stroke-width="2"/>
+<path d="M303,590 L308,564 L332,564 L337,590Z" fill="#d8c9c9" stroke="#050202" stroke-width="2"/>
+<path d="M373,560 L378,534 L402,534 L407,560Z" fill="#d8c9c9" stroke="#050202" stroke-width="2"/>
+<rect x="40" y="40" width="520" height="595" fill="none" stroke="#2f3a3b" stroke-width="3"/>
+<text x="610" y="120" font-size="22" font-family="sans-serif" fill="#C4CDCB" text-anchor="start" letter-spacing="8">ENDING</text>
+<text x="606" y="210" font-size="66" font-family="sans-serif" fill="#E9ECEA" text-anchor="start" font-weight="bold" letter-spacing="2">GREEN IN</text>
+<text x="606" y="286" font-size="66" font-family="sans-serif" fill="#E9ECEA" text-anchor="start" font-weight="bold" letter-spacing="2">THE ARCHIVE</text>
+<line x1="608" y1="560" x2="1150" y2="560" stroke="#2f3a3b" stroke-width="2"/>
+<text x="608" y="592" font-size="16" font-family="sans-serif" fill="#8A9A99" text-anchor="start" letter-spacing="5">THE COST</text>
+<text x="608" y="626" font-size="18" font-family="serif" fill="#C4CDCB" text-anchor="start" textLength="540" lengthAdjust="spacingAndGlyphs">Self 25 lower before the Fall begins, and the Observers have seen what he is.</text>
+</svg>

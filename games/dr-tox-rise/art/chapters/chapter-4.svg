@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="chapter-4-t chapter-4-d">
+<title id="chapter-4-t">Chapter IV: Trial 53</title>
+<desc id="chapter-4-d">Chapter card 4, Trial 53: a dated caption box (Trial 53. Age Twelve.) over the program world of a Reese chapter, which has no margin line, the chapter's name in capitals and one object drawn large.</desc>
+<defs><filter id="chapter-4-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="804"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><radialGradient id="chapter-4-vig2" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="1280" height="720" fill="#c9cfcd"/>
+<rect x="0" y="0" width="1280" height="720" filter="url(#chapter-4-grain1)"/>
+<rect x="0" y="0" width="1280" height="720" fill="url(#chapter-4-vig2)"/>
+<rect x="650" y="370" width="500" height="110" fill="#9aa5a4" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
+<path d="M890,370 L908,410 L894,440 L910,480" fill="none" stroke="#111111" stroke-width="7"/>
+<g transform="translate(730,410) rotate(-12)">
+<rect x="-50" y="-7" width="70" height="14" rx="3" fill="#d8dddc" stroke="#111111" stroke-width="4"/>
+<rect x="20" y="-11" width="34" height="22" rx="4" fill="#4a5556" stroke="#111111" stroke-width="4"/>
+</g>
+<g transform="translate(820,410) rotate(18)">
+<rect x="-50" y="-7" width="70" height="14" rx="3" fill="#d8dddc" stroke="#111111" stroke-width="4"/>
+<rect x="20" y="-11" width="34" height="22" rx="4" fill="#4a5556" stroke="#111111" stroke-width="4"/>
+</g>
+<g transform="translate(960,410) rotate(-24)">
+<rect x="-50" y="-7" width="70" height="14" rx="3" fill="#d8dddc" stroke="#111111" stroke-width="4"/>
+<rect x="20" y="-11" width="34" height="22" rx="4" fill="#4a5556" stroke="#111111" stroke-width="4"/>
+</g>
+<g transform="translate(1050,410) rotate(8)">
+<rect x="-50" y="-7" width="70" height="14" rx="3" fill="#d8dddc" stroke="#111111" stroke-width="4"/>
+<rect x="20" y="-11" width="34" height="22" rx="4" fill="#4a5556" stroke="#111111" stroke-width="4"/>
+</g>
+<rect x="75" y="75" width="420" height="56" fill="#000" opacity="0.5"/>
+<rect x="70" y="70" width="420" height="56" fill="#f3eedf" stroke="#111111" stroke-width="3"/>
+<text x="86" y="106.6" font-size="24" font-family="sans-serif" fill="#111111" text-anchor="start" font-weight="bold" letter-spacing="1.4">TRIAL 53. AGE TWELVE.</text>
+<text x="72" y="560" font-size="26" font-family="sans-serif" fill="#4a3a20" text-anchor="start" letter-spacing="6">CHAPTER IV</text>
+<text x="70" y="630" font-size="58" font-family="sans-serif" fill="#111111" text-anchor="start" font-weight="bold" letter-spacing="2">TRIAL 53</text>
+</svg>

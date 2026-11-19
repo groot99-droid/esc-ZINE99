@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" width="160" height="48" role="img" aria-labelledby="panel-run-dart-t panel-run-dart-d">
+<title id="panel-run-dart-t">A dart from the shunt</title>
+<desc id="panel-run-dart-d">One dart in flight: a slim black needle with a brushed tail and a near-black red channel down it.</desc>
+<path d="M4,25 C13.3,26.2 50.7,31.5 60,30.3 C69.3,29.1 69.3,18.9 60,17.7 C50.7,16.5 13.3,21.8 4,23 C-5.3,24.2 -5.3,23.8 4,25Z" fill="#111111"/>
+<path d="M60,18 L140,22 L156,24 L140,26 L60,30Z" fill="#111111"/>
+<line x1="70" y1="24" x2="136" y2="24" stroke="#4A0F14" stroke-width="3"/>
+<circle cx="64" cy="24" r="3" fill="#1A0B0C"/>
+<path d="M8,13.1 C13.3,13.3 34.7,12.5 40,12.3 C45.3,12 45.3,12 40,11.7 C34.7,11.5 13.3,10.7 8,10.9 C2.7,11.2 2.7,12.8 8,13.1Z" fill="#111111"/>
+<path d="M14,36.9 C19.3,37.1 40.7,36.4 46,36.2 C51.3,36 51.3,36 46,35.8 C40.7,35.6 19.3,34.9 14,35.1 C8.7,35.3 8.7,36.7 14,36.9Z" fill="#111111"/>
+<path d="M20,25.1 C25.3,25.3 46.7,24.5 52,24.3 C57.3,24 57.3,24 52,23.7 C46.7,23.5 25.3,22.7 20,22.9 C14.7,23.1 14.7,24.9 20,25.1Z" fill="#111111"/>
+</svg>

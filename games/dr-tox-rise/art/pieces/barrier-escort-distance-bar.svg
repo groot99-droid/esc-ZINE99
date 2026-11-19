@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 60" width="640" height="60" role="img" aria-labelledby="barrier-escort-distance-bar-t barrier-escort-distance-bar-d">
+<title id="barrier-escort-distance-bar-t">Transport distance bar (frame)</title>
+<desc id="barrier-escort-distance-bar-d">The transport's distance bar: a long ruled track with a start post and a flag post, and a small transport outline at the left to mark which way the progress fills.</desc>
+<line x1="60" y1="32" x2="610" y2="32" stroke="#1b1b1b" stroke-width="3"/>
+<line x1="60" y1="26" x2="60" y2="38" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="110" y1="26" x2="110" y2="38" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="160" y1="26" x2="160" y2="38" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="210" y1="26" x2="210" y2="38" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="260" y1="26" x2="260" y2="38" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="310" y1="26" x2="310" y2="38" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="360" y1="26" x2="360" y2="38" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="410" y1="26" x2="410" y2="38" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="460" y1="26" x2="460" y2="38" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="510" y1="26" x2="510" y2="38" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="560" y1="26" x2="560" y2="38" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="610" y1="26" x2="610" y2="38" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="610" y1="8" x2="610" y2="52" stroke="#1b1b1b" stroke-width="3"/>
+<polygon points="610,8 634,16 610,24" fill="#F2C14E" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<rect x="6" y="18" width="40" height="22" rx="3" fill="#7f9192" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="16" cy="42" r="5" fill="#2b3536" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="38" cy="42" r="5" fill="#2b3536" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+</svg>

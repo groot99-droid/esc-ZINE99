@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" width="320" height="60" role="img" aria-labelledby="barrier-escort-load-gauge-t barrier-escort-load-gauge-d">
+<title id="barrier-escort-load-gauge-t">Load gauge (frame)</title>
+<desc id="barrier-escort-load-gauge-d">The Load gauge frame in clear line: a long rounded slot with ten even ticks and LOAD lettered at the left; the pale gold fill is drawn into it at run time.</desc>
+<rect x="4" y="14" width="312" height="34" rx="17" fill="#f4f1e6" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<line x1="94" y1="18" x2="94" y2="26" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="118" y1="18" x2="118" y2="26" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="142" y1="18" x2="142" y2="26" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="166" y1="18" x2="166" y2="26" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="190" y1="18" x2="190" y2="26" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="214" y1="18" x2="214" y2="26" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="238" y1="18" x2="238" y2="26" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="262" y1="18" x2="262" y2="26" stroke="#1b1b1b" stroke-width="1.5"/>
+<line x1="286" y1="18" x2="286" y2="26" stroke="#1b1b1b" stroke-width="1.5"/>
+<text x="20" y="38" font-size="16" font-family="sans-serif" fill="#1b1b1b" text-anchor="start" font-weight="bold" letter-spacing="2">LOAD</text>
+</svg>

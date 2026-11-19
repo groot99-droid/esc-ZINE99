@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200" role="img" aria-labelledby="panel-run-dog-t panel-run-dog-d">
+<title id="panel-run-dog-t">The depot dog</title>
+<desc id="panel-run-dog-d">The depot's dog in profile as a black brushed silhouette, nose down and working a scent: it ignores cover. A few white scent strokes trail from the floor to its nose.</desc>
+<path d="M40,120 C49.3,117.3 46.7,90.7 70,84 C93.3,77.3 153.3,82.3 180,80 C206.7,77.7 216.3,67.3 230,70 C243.7,72.7 250.3,87.7 262,96 C273.7,104.3 295,114 300,120 C305,126 300.3,131.3 292,132 C283.7,132.7 260.3,126 250,124 C239.7,122 234.7,110.7 230,120 C225.3,129.3 226,170 222,180 C218,190 209.7,188 206,180 C202.3,172 216,140.3 200,132 C184,123.7 127.3,122 110,130 C92.7,138 101,171.7 96,180 C91,188.3 83,188.3 80,180 C77,171.7 84.7,139 78,130 C71.3,121 50.7,131 40,126 C29.3,121 14,101 14,100 C14,99 30.7,122.7 40,120Z" fill="#111111"/>
+<path d="M240,76 l10,-26 l12,24Z" fill="#111111"/>
+<path d="M310,186 q8,-14 -2,-26" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="4 5"/>
+<path d="M280,180 q8,-14 -2,-26" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="4 5"/>
+<path d="M250,174 q8,-14 -2,-26" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="4 5"/>
+<path d="M220,168 q8,-14 -2,-26" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="4 5"/>
+<path d="M20,195.3 C66.7,196.5 253.3,193.1 300,191.9 C346.7,190.7 346.7,189.3 300,188.1 C253.3,186.9 66.7,183.5 20,184.7 C-26.7,185.9 -26.7,194.1 20,195.3Z" fill="#111111"/>
+</svg>

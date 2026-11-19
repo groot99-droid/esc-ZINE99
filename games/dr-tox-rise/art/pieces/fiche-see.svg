@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80" role="img" aria-labelledby="fiche-see-t fiche-see-d">
+<title id="fiche-see-t">Cross-reference mark: SEE</title>
+<desc id="fiche-see-d">The SEE mark that points one frame to another: the word cut in a box with an arrow, for the margin of a frame that cross-references.</desc>
+<rect x="0" y="0" width="200" height="80" fill="#0a0a0a"/>
+<rect x="8" y="12" width="110" height="56" fill="none" stroke="#efeee8" stroke-width="2"/>
+<text x="63" y="50" font-size="26" font-family="monospace" fill="#efeee8" text-anchor="middle" letter-spacing="3.1" font-weight="bold">SEE</text>
+<path d="M128,40 L186,40 M170,28 L188,40 L170,52" fill="none" stroke="#efeee8" stroke-width="3"/>
+<line x1="14" y1="18" x2="22" y2="18" stroke="#efeee8" stroke-width="1"/>
+<line x1="14" y1="30" x2="22" y2="30" stroke="#efeee8" stroke-width="1"/>
+<line x1="14" y1="42" x2="22" y2="42" stroke="#efeee8" stroke-width="1"/>
+<line x1="14" y1="54" x2="22" y2="54" stroke="#efeee8" stroke-width="1"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 180" width="420" height="180" role="img" aria-labelledby="panel-run-rcc-plate-t panel-run-rcc-plate-d">
+<title id="panel-run-rcc-plate-t">The first RCC plate</title>
+<desc id="panel-run-rcc-plate-d">The first RCC plate found on a break-in: riveted steel in noir ink, black with paper-white stamped letters and a line of small type, half in brushed shadow. It fills a card on the pin board.</desc>
+<rect x="10" y="10" width="400" height="160" rx="8" fill="#111111"/>
+<rect x="24" y="24" width="372" height="132" rx="6" fill="none" stroke="#f4f1ea" stroke-width="3"/>
+<circle cx="22" cy="22" r="5" fill="#f4f1ea"/>
+<circle cx="398" cy="22" r="5" fill="#f4f1ea"/>
+<circle cx="22" cy="158" r="5" fill="#f4f1ea"/>
+<circle cx="398" cy="158" r="5" fill="#f4f1ea"/>
+<text x="210" y="104" font-size="76" font-family="sans-serif" fill="#f4f1ea" text-anchor="middle" font-weight="bold" letter-spacing="12">RCC</text>
+<text x="210" y="138" font-size="16" font-family="sans-serif" fill="#f4f1ea" text-anchor="middle" letter-spacing="2" textLength="330" lengthAdjust="spacingAndGlyphs">ROCKCORE CHEMICAL CORP.</text>
+<path d="M301.2,169.3 C304.8,166.6 317.1,153.5 320.2,150.2 C323.3,147 323.4,147 319.8,149.8 C316.2,152.5 301.9,163.4 298.8,166.7 C295.7,169.9 297.6,172.1 301.2,169.3Z" fill="#111111"/>
+<path d="M319.4,169.6 C323,166.9 335.1,153.5 338.2,150.2 C341.2,146.9 341.4,147.1 337.8,149.8 C334.2,152.5 319.6,163.1 316.6,166.4 C313.5,169.7 315.8,172.3 319.4,169.6Z" fill="#111111"/>
+<path d="M337.4,169.6 C341,166.9 353.2,153.5 356.2,150.2 C359.3,146.9 359.4,147.1 355.8,149.8 C352.2,152.5 337.7,163.1 334.6,166.4 C331.5,169.7 333.8,172.3 337.4,169.6Z" fill="#111111"/>
+<path d="M355.2,169.3 C358.7,166.6 371.1,153.5 374.2,150.2 C377.3,146.9 377.4,147.1 373.8,149.8 C370.3,152.5 355.9,163.4 352.8,166.7 C349.7,169.9 351.6,172.1 355.2,169.3Z" fill="#111111"/>
+<path d="M373.5,169.6 C377.1,166.9 389.1,153.5 392.2,150.2 C395.3,146.9 395.4,147.1 391.8,149.8 C388.2,152.5 373.6,163.1 370.5,166.4 C367.5,169.7 369.8,172.3 373.5,169.6Z" fill="#111111"/>
+</svg>

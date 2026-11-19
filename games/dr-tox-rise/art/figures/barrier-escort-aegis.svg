@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320" width="200" height="320" role="img" aria-labelledby="barrier-escort-aegis-t barrier-escort-aegis-d">
+<title id="barrier-escort-aegis-t">Aegis running</title>
+<desc id="barrier-escort-aegis-d">Aegis mid-stride in clear line: an upright figure in pale cream with an amber chest band and a small gold point of light at each wrist, the bible's “amber-lit” and no more. No face; his design system is not built yet.</desc>
+<line x1="40" y1="310" x2="160" y2="310" stroke="#1b1b1b" stroke-width="3" stroke-linecap="round"/>
+<line x1="14" y1="110" x2="50" y2="110" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="14" y1="150" x2="50" y2="150" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="14" y1="190" x2="50" y2="190" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round"/>
+<path d="M100.8,32.5 L119.2,32.5 L121.1,65.8 L115.5,80.6 L139.6,95.4 L135.9,202.7 L126.7,199 L138.7,310 L125.7,310 L110,195.3 L94.3,310 L81.3,310 L93.3,199 L84.1,202.7 L80.4,95.4 L104.5,80.6 L98.9,65.8Z" fill="#f4ead2" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<path d="M84,82 L136,82 L132,110 L88,110Z" fill="#D99A2B" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="80" cy="170" r="6" fill="#F2C14E" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="140" cy="170" r="6" fill="#F2C14E" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round"/>
+</svg>
