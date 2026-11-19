@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="bloom-t bloom-d">
+<title id="bloom-t">Bloom: Four-colour Ben-Day newsprint</title>
+<desc id="bloom-d">Bloom (1D): a city district as a grid of blocks printed on yellowed newsprint in four-colour Ben-Day dots under a heavy black keyline. The spread is printed in rust and ochre dots, thick near the source rooftop and thinning downwind; cordoned cells are struck through with black bars, and crews stand at the cordons as small keyed figures. A wind arrow and a tick counter sit in the margin, and the east edge of the grid, where the settlement is, is outlined in red.</desc>
+<defs><pattern id="bloom-ben1" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(15)"><circle cx="5.0" cy="5.0" r="2.2" fill="#2fa8d8"/></pattern><pattern id="bloom-ben2" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="5.5" cy="5.5" r="1.6" fill="#9C4A2A"/></pattern><pattern id="bloom-ben3" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="5.5" cy="5.5" r="2.8" fill="#9C4A2A"/></pattern><pattern id="bloom-ben4" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="5.5" cy="5.5" r="4.2" fill="#9C4A2A"/></pattern><pattern id="bloom-ben5" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(75)"><circle cx="4.5" cy="4.5" r="1.2" fill="#e9c62e"/></pattern><pattern id="bloom-ben6" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(75)"><circle cx="4.5" cy="4.5" r="2.2" fill="#e9c62e"/></pattern><pattern id="bloom-ben7" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(75)"><circle cx="4.5" cy="4.5" r="3.2" fill="#e9c62e"/></pattern></defs>
+<rect x="0" y="0" width="1200" height="800" fill="#efe2b8"/>
+<rect x="94" y="74" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="94" y="74" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="94" y="74" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="90" y="70" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="190" y="74" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="190" y="74" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="190" y="74" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="186" y="70" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="286" y="74" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="286" y="74" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="286" y="74" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="282" y="70" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="382" y="74" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="382" y="74" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="382" y="74" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="378" y="70" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="478" y="74" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="474" y="70" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="574" y="74" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="570" y="70" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="670" y="74" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="666" y="70" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="766" y="74" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="762" y="70" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="862" y="74" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="858" y="70" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="958" y="74" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="954" y="70" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="94" y="170" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="94" y="170" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="94" y="170" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="90" y="166" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="190" y="170" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="190" y="170" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="190" y="170" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="186" y="166" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="286" y="170" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="286" y="170" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="286" y="170" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="282" y="166" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="382" y="170" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="382" y="170" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="382" y="170" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="378" y="166" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="478" y="170" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="478" y="170" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="478" y="170" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="474" y="166" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="574" y="170" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="574" y="170" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="574" y="170" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="570" y="166" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="580" y="206" width="76" height="16" fill="#141414"/>
+<path d="M640,200 L648,200 L649,209 L646.7,212.6 L654.8,218 L653.9,236 L650.3,254 L645.4,254 L644,237.8 L642.6,254 L637.7,254 L634.1,236 L633.2,218 L641.3,212.6 L639,209Z" fill="#d8336a" stroke="#141414" stroke-width="2"/>
+<rect x="670" y="170" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="666" y="166" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="766" y="170" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="762" y="166" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="862" y="170" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="858" y="166" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="958" y="170" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="954" y="166" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="94" y="266" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="94" y="266" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="94" y="266" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="90" y="262" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="190" y="266" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="190" y="266" width="88" height="88" fill="url(#bloom-ben4)" opacity="0.9"/>
+<rect x="190" y="266" width="88" height="88" fill="url(#bloom-ben7)" opacity="0.7"/>
+<rect x="186" y="262" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="286" y="266" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="286" y="266" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="286" y="266" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="282" y="262" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="382" y="266" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="382" y="266" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="382" y="266" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="378" y="262" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="478" y="266" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="478" y="266" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="478" y="266" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="474" y="262" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="484" y="302" width="76" height="16" fill="#141414"/>
+<path d="M544,296 L552,296 L553,305 L550.7,308.6 L558.8,314 L557.9,332 L554.3,350 L549.4,350 L548,333.8 L546.6,350 L541.7,350 L538.1,332 L537.2,314 L545.3,308.6 L543,305Z" fill="#d8336a" stroke="#141414" stroke-width="2"/>
+<rect x="574" y="266" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="570" y="262" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="670" y="266" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="666" y="262" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="766" y="266" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="762" y="262" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="862" y="266" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="858" y="262" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="958" y="266" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="954" y="262" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="94" y="362" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="94" y="362" width="88" height="88" fill="url(#bloom-ben4)" opacity="0.9"/>
+<rect x="94" y="362" width="88" height="88" fill="url(#bloom-ben7)" opacity="0.7"/>
+<rect x="90" y="358" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="190" y="362" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="190" y="362" width="88" height="88" fill="url(#bloom-ben4)" opacity="0.9"/>
+<rect x="190" y="362" width="88" height="88" fill="url(#bloom-ben7)" opacity="0.7"/>
+<rect x="186" y="358" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="286" y="362" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="286" y="362" width="88" height="88" fill="url(#bloom-ben4)" opacity="0.9"/>
+<rect x="286" y="362" width="88" height="88" fill="url(#bloom-ben7)" opacity="0.7"/>
+<rect x="282" y="358" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="382" y="362" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="382" y="362" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="382" y="362" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="378" y="358" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="478" y="362" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="478" y="362" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="478" y="362" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="474" y="358" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="484" y="398" width="76" height="16" fill="#141414"/>
+<path d="M544,392 L552,392 L553,401 L550.7,404.6 L558.8,410 L557.9,428 L554.3,446 L549.4,446 L548,429.8 L546.6,446 L541.7,446 L538.1,428 L537.2,410 L545.3,404.6 L543,401Z" fill="#d8336a" stroke="#141414" stroke-width="2"/>
+<rect x="574" y="362" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="570" y="358" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="670" y="362" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="666" y="358" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="766" y="362" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="762" y="358" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="862" y="362" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="858" y="358" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="958" y="362" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="954" y="358" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="94" y="458" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="94" y="458" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="94" y="458" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="90" y="454" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="190" y="458" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="190" y="458" width="88" height="88" fill="url(#bloom-ben4)" opacity="0.9"/>
+<rect x="190" y="458" width="88" height="88" fill="url(#bloom-ben7)" opacity="0.7"/>
+<rect x="186" y="454" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="286" y="458" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="286" y="458" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="286" y="458" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="282" y="454" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="382" y="458" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="382" y="458" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="382" y="458" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="378" y="454" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="478" y="458" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="478" y="458" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="478" y="458" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="474" y="454" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="484" y="494" width="76" height="16" fill="#141414"/>
+<path d="M544,488 L552,488 L553,497 L550.7,500.6 L558.8,506 L557.9,524 L554.3,542 L549.4,542 L548,525.8 L546.6,542 L541.7,542 L538.1,524 L537.2,506 L545.3,500.6 L543,497Z" fill="#d8336a" stroke="#141414" stroke-width="2"/>
+<rect x="574" y="458" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="570" y="454" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="670" y="458" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="666" y="454" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="766" y="458" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="762" y="454" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="862" y="458" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="858" y="454" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="958" y="458" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="954" y="454" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="94" y="554" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="94" y="554" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="94" y="554" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="90" y="550" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="190" y="554" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="190" y="554" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="190" y="554" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="186" y="550" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="286" y="554" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="286" y="554" width="88" height="88" fill="url(#bloom-ben3)" opacity="0.9"/>
+<rect x="286" y="554" width="88" height="88" fill="url(#bloom-ben6)" opacity="0.7"/>
+<rect x="282" y="550" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="382" y="554" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="382" y="554" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="382" y="554" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="378" y="550" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="478" y="554" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="478" y="554" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="478" y="554" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="474" y="550" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="574" y="554" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="574" y="554" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="574" y="554" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="570" y="550" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="580" y="590" width="76" height="16" fill="#141414"/>
+<path d="M640,584 L648,584 L649,593 L646.7,596.6 L654.8,602 L653.9,620 L650.3,638 L645.4,638 L644,621.8 L642.6,638 L637.7,638 L634.1,620 L633.2,602 L641.3,596.6 L639,593Z" fill="#d8336a" stroke="#141414" stroke-width="2"/>
+<rect x="670" y="554" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="666" y="550" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="766" y="554" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="762" y="550" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="862" y="554" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="858" y="550" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="958" y="554" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="954" y="550" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="94" y="650" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="94" y="650" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="94" y="650" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="90" y="646" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="190" y="650" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="190" y="650" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="190" y="650" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="186" y="646" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="286" y="650" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="286" y="650" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="286" y="650" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="282" y="646" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="382" y="650" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="382" y="650" width="88" height="88" fill="url(#bloom-ben2)" opacity="0.9"/>
+<rect x="382" y="650" width="88" height="88" fill="url(#bloom-ben5)" opacity="0.7"/>
+<rect x="378" y="646" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="478" y="650" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="474" y="646" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="574" y="650" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="570" y="646" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="670" y="650" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="666" y="646" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="766" y="650" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="762" y="646" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="862" y="650" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="858" y="646" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<rect x="958" y="650" width="88" height="88" fill="url(#bloom-ben1)" opacity="0.6"/>
+<rect x="954" y="646" width="96" height="96" fill="none" stroke="#141414" stroke-width="4"/>
+<circle cx="234" cy="406" r="22" fill="#C98F3B" stroke="#141414" stroke-width="4"/>
+<rect x="858" y="70" width="192" height="672" fill="none" stroke="#c1272d" stroke-width="8"/>
+<text x="872" y="782" font-size="24" font-family="sans-serif" fill="#c1272d" font-weight="bold">SETTLEMENT</text>
+<path d="M1080,140 L1170,140" stroke="#141414" stroke-width="8"/>
+<polygon points="1160,124 1190,140 1160,156" fill="#141414"/>
+<text x="1080" y="196" font-size="24" font-family="sans-serif" fill="#141414" font-weight="bold">WIND</text>
+<text x="1080" y="300" font-size="28" font-family="sans-serif" fill="#141414" font-weight="bold">TICK 7</text>
+</svg>

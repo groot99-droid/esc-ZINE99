@@ -70,6 +70,13 @@
     {"game": "dr-tox-rise", "kind": "1d", "name": "Cat's Cradle", "key": "cats-cradle", "style": "Chalk and poster paint on the painted sky", "look": "Chalk string figures over a flat painted blue sky, clinical white light"},
     {"game": "dr-tox-rise", "kind": "1d", "name": "The Window", "key": "window", "style": "Fumetti photo-comic", "look": "Posed photo panels with typed captions and a guard rota in the margin"},
     {"game": "dr-tox-rise", "kind": "1d", "name": "Fiche", "key": "fiche", "style": "Scratchboard", "look": "White lines cut from a black ground, frames of an index card grid"},
-    {"game": "dr-tox-rise", "kind": "1d", "name": "Aftermath", "key": "aftermath", "style": "Manga screentone, evidence tents", "look": "Dot-tone grey fields, numbered evidence tents beside each trace"}
+    {"game": "dr-tox-rise", "kind": "1d", "name": "Aftermath", "key": "aftermath", "style": "Manga screentone, evidence tents", "look": "Dot-tone grey fields, numbered evidence tents beside each trace"},
+    {"game": "dr-tox-fall", "kind": "2d", "name": "Crowd thread", "key": "crowd-thread", "style": "Underground comix crosshatch", "look": "Dense pen crosshatching on cheap paper, lumpy figures packed shoulder to shoulder, his breath radius a ring of bare white"},
+    {"game": "dr-tox-fall", "kind": "2d", "name": "Reflection run", "key": "reflection-run", "style": "Silkscreen pop-art repeats", "look": "Flat screen-printed colour blocks, the same figure repeated in off-register frames, one repeat that does not match"},
+    {"game": "dr-tox-fall", "kind": "1d", "name": "Triage", "key": "triage", "style": "Alcohol-marker sketch cards", "look": "Streaky layered marker tones on white card stock, quick ink faces, a name and a want in the corner"},
+    {"game": "dr-tox-fall", "kind": "1d", "name": "The Manifold", "key": "manifold", "style": "Mail-order comic advert", "look": "A back-page coupon advert: numbered callouts, exclamation headlines, a dashed clip-out border around the device"},
+    {"game": "dr-tox-fall", "kind": "1d", "name": "Persona", "key": "persona", "style": "1950s romance comic", "look": "Pastel flats, a tear on a lash, thought balloons and a heart-shaped panel; no dot screen"},
+    {"game": "dr-tox-fall", "kind": "1d", "name": "Bloom", "key": "bloom", "style": "Four-colour Ben-Day newsprint", "look": "Cyan, magenta, yellow and black dot screens on yellowed newsprint with a heavy keyline, the spread printed in rust dots"},
+    {"game": "dr-tox-fall", "kind": "1d", "name": "Composite", "key": "composite", "style": "Identikit acetate overlays", "look": "Line-drawn feature strips on stacked clear acetate, grease-pencil witness numbers, one strip that does not fit"}
   ]
 }

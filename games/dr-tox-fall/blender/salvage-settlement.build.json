@@ -1,0 +1,593 @@
+{
+ "game": "dr-tox-fall",
+ "location": "salvage-settlement",
+ "name": "The settlement under the freeway",
+ "reference": "assets/locations/salvage-settlement.jpg",
+ "bounds_m": [
+  120,
+  80,
+  20
+ ],
+ "origin": "centre of the dust plain under the freeway; +y toward the distant arcology towers; the freeway runs east to west across the middle; the cavern mouth to Snakehead is in the south-west",
+ "materials": {
+  "dust": {
+   "color": [
+    0.5,
+    0.5,
+    0.46
+   ],
+   "roughness": 1.0
+  },
+  "concrete": {
+   "color": [
+    0.42,
+    0.46,
+    0.46
+   ],
+   "roughness": 0.92
+  },
+  "rock": {
+   "color": [
+    0.3,
+    0.29,
+    0.27
+   ],
+   "roughness": 0.97
+  },
+  "sky": {
+   "color": [
+    0.55,
+    0.62,
+    0.64
+   ],
+   "roughness": 1.0,
+   "emission": 0.6
+  }
+ },
+ "blockout": [
+  {
+   "id": "plain",
+   "shape": "box",
+   "role": "terrain",
+   "size_m": [
+    120,
+    80,
+    0.4
+   ],
+   "location": [
+    0,
+    0,
+    -0.2
+   ],
+   "material": "dust"
+  },
+  {
+   "id": "freeway-deck-west",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    40,
+    12,
+    1.2
+   ],
+   "location": [
+    -30,
+    4,
+    8.6
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "freeway-pier-w1",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    2,
+    2,
+    8
+   ],
+   "location": [
+    -44,
+    4,
+    4
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "freeway-pier-w2",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    2,
+    2,
+    8
+   ],
+   "location": [
+    -16,
+    4,
+    4
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "embankment",
+   "shape": "box",
+   "role": "terrain",
+   "size_m": [
+    10,
+    30,
+    3
+   ],
+   "location": [
+    -52,
+    -24,
+    1.5
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "cavern-mouth",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    5,
+    2,
+    3
+   ],
+   "location": [
+    -52,
+    -36,
+    1.5
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "horizon",
+   "shape": "box",
+   "role": "sky",
+   "size_m": [
+    480,
+    1,
+    60
+   ],
+   "location": [
+    0,
+    190.0,
+    30
+   ],
+   "material": "sky"
+  }
+ ],
+ "props": [
+  {
+   "id": "span",
+   "object": "freeway-span",
+   "location": [
+    18,
+    4,
+    0
+   ]
+  },
+  {
+   "id": "drum-1",
+   "object": "water-drum",
+   "location": [
+    -8,
+    -2,
+    0
+   ]
+  },
+  {
+   "id": "drum-2",
+   "object": "water-drum",
+   "location": [
+    -7,
+    -3,
+    0
+   ]
+  },
+  {
+   "id": "drum-3",
+   "object": "water-drum",
+   "location": [
+    -6,
+    -1.5,
+    0
+   ]
+  },
+  {
+   "id": "drum-4",
+   "object": "water-drum",
+   "location": [
+    -22,
+    6,
+    0
+   ]
+  },
+  {
+   "id": "generator",
+   "object": "generator-cart",
+   "location": [
+    -12,
+    2,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    30
+   ]
+  },
+  {
+   "id": "monitors",
+   "object": "crt-stack",
+   "location": [
+    -14,
+    3,
+    0
+   ]
+  },
+  {
+   "id": "laundry",
+   "object": "laundry-line",
+   "location": [
+    -20,
+    -6,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    15
+   ]
+  },
+  {
+   "id": "shelter-1",
+   "object": "settlement-shelter",
+   "location": [
+    -28,
+    2,
+    0
+   ]
+  },
+  {
+   "id": "shelter-2",
+   "object": "settlement-shelter",
+   "location": [
+    -34,
+    6,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "id": "shelter-3",
+   "object": "settlement-shelter",
+   "location": [
+    -24,
+    9,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    -15
+   ]
+  },
+  {
+   "id": "truck",
+   "object": "floodlight-truck",
+   "location": [
+    10,
+    -24,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    160
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_settlement_day": {
+   "note": "Chapter 5: 2231. Under the freeway: the people of the relief hall have followed him; drums, laundry, tube lights; the hour before he comes.",
+   "world": {
+    "color": [
+     0.55,
+     0.6,
+     0.6
+    ],
+    "strength": 0.7
+   },
+   "lights": [
+    {
+     "name": "day",
+     "type": "SUN",
+     "location": [
+      -60,
+      -60,
+      80
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 3.0,
+     "size": 1,
+     "color": [
+      0.86,
+      0.88,
+      0.86
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -48,
+     -26,
+     1.7
+    ],
+    "look_at": [
+     -20,
+     3,
+     2.0
+    ],
+    "lens_mm": 35,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -48,
+     -28,
+     0
+    ],
+    "facing_deg": 50
+   },
+   "hide": [
+    "truck"
+   ],
+   "interactions": [
+    {
+     "prop": "drum-1",
+     "verb": "Drink"
+    },
+    {
+     "prop": "monitors",
+     "verb": "Watch the broadcast"
+    },
+    {
+     "prop": "shelter-1",
+     "verb": "Open the clinic",
+     "leads_to": "s1_triage_3"
+    }
+   ]
+  },
+  "s3_settlement_raid": {
+   "note": "Chapter 5: the raid at dusk. Floodlights from the State truck; sustained fire; Pulse driven to the trigger line; the suit fails; cut before any act.",
+   "world": {
+    "color": [
+     0.2,
+     0.22,
+     0.25
+    ],
+    "strength": 0.3
+   },
+   "lights": [
+    {
+     "name": "dusk-sun",
+     "type": "SUN",
+     "location": [
+      80,
+      60,
+      40
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 2.0,
+     "size": 1,
+     "color": [
+      1.0,
+      0.75,
+      0.5
+     ]
+    },
+    {
+     "name": "floodlight",
+     "type": "SPOT",
+     "location": [
+      10,
+      -24,
+      5
+     ],
+     "look_at": [
+      -20,
+      2,
+      0
+     ],
+     "energy": 60000,
+     "size": 1,
+     "color": [
+      0.91,
+      0.93,
+      0.92
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -24,
+     -4,
+     1.7
+    ],
+    "look_at": [
+     10,
+     -24,
+     4.0
+    ],
+    "lens_mm": 28,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -24,
+     -4,
+     0
+    ],
+    "facing_deg": 140
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "truck",
+     "verb": "Draw a dart"
+    },
+    {
+     "prop": "shelter-1",
+     "verb": "Get them behind the drums",
+     "leads_to": "s1_composite_1"
+    }
+   ]
+  },
+  "s3_settlement_haze": {
+   "note": "Chapter 8: Rostova's second release drifts east over the plain toward the freeway; call the crews.",
+   "world": {
+    "color": [
+     0.62,
+     0.55,
+     0.42
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "hazy-sun",
+     "type": "SUN",
+     "location": [
+      60,
+      60,
+      50
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 1.6,
+     "size": 1,
+     "color": [
+      0.9,
+      0.75,
+      0.55
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -30,
+     -8,
+     1.7
+    ],
+    "look_at": [
+     40,
+     20,
+     6.0
+    ],
+    "lens_mm": 28,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -30,
+     -8,
+     0
+    ],
+    "facing_deg": 70
+   },
+   "hide": [
+    "truck"
+   ],
+   "interactions": [
+    {
+     "prop": "generator",
+     "verb": "Call the crews",
+     "leads_to": "s1_bloom_2"
+    }
+   ]
+  },
+  "s3_settlement_lost": {
+   "note": "Ending, The Clinic: months after; spore rust on every surface, the drums still standing, the shelters empty; the State's trucks took the marked.",
+   "world": {
+    "color": [
+     0.6,
+     0.45,
+     0.32
+    ],
+    "strength": 0.5
+   },
+   "lights": [
+    {
+     "name": "rust-sun",
+     "type": "SUN",
+     "location": [
+      60,
+      -40,
+      40
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 1.4,
+     "size": 1,
+     "color": [
+      0.8,
+      0.5,
+      0.25
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -40,
+     -14,
+     1.7
+    ],
+    "look_at": [
+     -20,
+     3,
+     1.2
+    ],
+    "lens_mm": 35,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -40,
+     -14,
+     0
+    ],
+    "facing_deg": 60
+   },
+   "hide": [
+    "truck"
+   ],
+   "interactions": [
+    {
+     "prop": "drum-1",
+     "verb": "Touch the drum",
+     "leads_to": "s3_fortress_clinic"
+    }
+   ]
+  }
+ }
+}

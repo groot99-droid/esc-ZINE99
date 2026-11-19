@@ -1,0 +1,64 @@
+{
+  "endings": [
+    {
+      "id": "first_word",
+      "name": "First Word",
+      "as_written": false,
+      "priority": 1,
+      "when": {
+        "is": "reese.gala_word",
+        "eq": "rcc"
+      },
+      "summary": "On the balcony, with Dr. Tox on the far side of his wall and the plate on the clean-air column in plain sight, Reese says the word: RCC. Spire security opens fire; Reese turns the wall to cover the man he was sent to stop and the two kitchen staff who opened the service door. HOPE pulls the leash mid-fight. The flashback lands as pressure with the label torn off, he mistakes it for gratitude, and the wall goes out. Dr. Tox goes over the rail. Ama Owusu and Lev Brandt are taken by security. Reese is recalled for recalibration, saying the word again in the transport, quietly, to himself.",
+      "cost": "HOPE pulls the leash mid-fight: Ama Owusu and Lev Brandt are taken, and Reese is recalled.",
+      "final_scenes": [
+        "s3_gala_balcony",
+        "s3_gala_leash"
+      ]
+    },
+    {
+      "id": "bond_held",
+      "name": "Bond Held",
+      "as_written": false,
+      "priority": 2,
+      "when": {
+        "is": "cally.bond_aegis",
+        "gte": 94.6
+      },
+      "summary": "Cally's bond on Aegis holds at or above the number the program printed (bible Part VIII Scene 3: 'BOND INTEGRITY 94.6%'). When Dr. Tox says what the hall is and who runs it, Cally's hand finds Reese's wrist, and the doubt the relief hall put in him closes like a door. He holds the wall on Dr. Tox until the doctor goes over the rail, and then he follows her off the balcony and does not look at the plate. The calibration log closes. She does what she was built to do and never says the other word.",
+      "cost": "Reese breaks back into the program; Cally never says \"RCC\": the crack is filed as noise again.",
+      "final_scenes": [
+        "s3_gala_balcony",
+        "s3_gala_bond"
+      ]
+    },
+    {
+      "id": "the_clinic",
+      "name": "The Clinic",
+      "as_written": false,
+      "priority": 3,
+      "when": {
+        "is": "following",
+        "lt": 50
+      },
+      "summary": "He gave to need and no further, refused what the settlement asked of him, and kept the manifold capped. Without a following there were not crews enough for the east front, and Rostova's second bloom took the freeway settlement. The marked went where the State's trucks took them. Back in Snakehead he keeps a clinic: people come down the cavern, are treated across the radius, and go home. The cots in the cavern hall are made up again every night for whoever comes next.",
+      "cost": "The bloom takes the settlement under the freeway.",
+      "final_scenes": [
+        "s3_settlement_lost",
+        "s3_fortress_clinic"
+      ]
+    },
+    {
+      "id": "the_following",
+      "name": "The Following",
+      "as_written": false,
+      "priority": 4,
+      "when": true,
+      "summary": "The bridge to the Finale (dr-tox/SCOPE.md question 10). He came back from the Spire to a cavern hall full of people who need him: the ones he dosed past their need, the ones who pinned the awed composite to the wall, the ones who went quiet in a rite he did not make. The blades are laid out on the cloth. He doses himself under the amber lamp, then them, one by one. The bible's fixed point, kept: 'His followers become chemically dependent on him' (Part VI, Dr. Tox, Story: The Fall).",
+      "cost": "Dependence: they need him, they have begun to arm themselves, and what he built will soon move without him.",
+      "final_scenes": [
+        "s3_fortress_following"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,380 @@
+{
+  "scope_note": "Dr. Tox's meters are pulse, amber and self, as in Rise; Reese's are load and the reese.* names; Cally's are the cally.* names. The Rise names listed in game.json carry_in are read as scars and default to a typical Rise run. Numbers are design values for the prototype. Every unit on every page is invented (marks of tincture, beads of flow, spore ticks): no page describes a real procedure, dose or route. The substances the bible names (Part VI, Dr. Tox, Story: The Fall) appear only in the design and in State text, never as a quantity.",
+  "state": [
+    {
+      "name": "pulse",
+      "type": "meter",
+      "default": 20,
+      "description": "Dr. Tox's heart rate as pressure, 0 to 100. Floor 20, or 40 when amber is 0 at a chapter start. +2 per second while a person presses the edge of his breath radius, +1 per 2 seconds with the shroud drawn closed, + manifold.dart_cost per dart, +15 on a hit; -2 per second standing still in a gap. The Toxin State takes the controls when pulse reaches self (the trigger line; bible Part VI, Dr. Tox section 3, with the stake of Part IX Q2 adopted).",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "amber",
+      "type": "counter",
+      "default": 3,
+      "description": "Doses of the radioactive cage on hand, 0 to 6. Carried in from Rise (default 3). One is taken at the start of every Dr. Tox chapter; each Toxin State burns 2 (bible Part IX Q1, adopted). Fall has no Cage page (The Cage is Rise's): a batch is made in 3D at the fortress bench, one dose per hour given to it (fortress.batch_hours)."
+    },
+    {
+      "name": "self",
+      "type": "meter",
+      "default": 100,
+      "description": "What is left of the man, 0 to 100. Carried in from Rise. Each Toxin State event takes 15, or 10 if its Composite is reconstructed. Never restored (bible Part IX Q2, adopted). In Fall it is also the trigger line: the Toxin State fires when pulse reaches self.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "toxin_events",
+      "type": "ledger",
+      "default": [],
+      "description": "Every Toxin State event in Fall. trigger is scripted, pulse or hit; form is the shape the body answered the threat with (bible Part VI, Dr. Tox section 3 table), never the same twice; reconstructed is true once its Composite is solved.",
+      "fields": [
+        "chapter",
+        "scene",
+        "trigger",
+        "form",
+        "reconstructed"
+      ]
+    },
+    {
+      "name": "toxin_at_gala",
+      "type": "bool",
+      "default": false,
+      "description": "Pulse reached the trigger line in the Spire's service corridor or on the gala floor (s2_crowd_2). Opens s1_composite_2; it decides no ending."
+    },
+    {
+      "name": "shroud.fitted",
+      "type": "bool",
+      "default": false,
+      "description": "The functional shroud (bible Part IX Q3, adopted as the scope's answer) is fitted. From chapter 1 on; drawn closed it halves the breath radius."
+    },
+    {
+      "name": "crowd.exposures",
+      "type": "counter",
+      "default": 0,
+      "description": "People who stood inside his breath radius during a Crowd thread. Each one becomes a patient card in the next Triage."
+    },
+    {
+      "name": "crowd.exposed_names",
+      "type": "ledger",
+      "default": [],
+      "description": "Who stood inside the radius, by name, with the one want they said in the queue.",
+      "fields": [
+        "name",
+        "want"
+      ]
+    },
+    {
+      "name": "fortress.batch_hours",
+      "type": "counter",
+      "default": 0,
+      "description": "Hours given to the batch at the fortress bench in the last fortress scene, 0 to 4. Each hour makes one dose of amber and takes one cot-hour from the next Triage."
+    },
+    {
+      "name": "triage.treated",
+      "type": "counter",
+      "default": 0,
+      "description": "Patients settled across every Triage page (a card moved to NOW and given what it asked for)."
+    },
+    {
+      "name": "triage.marks_given",
+      "type": "counter",
+      "default": 0,
+      "description": "Marks of the tincture given across every Triage page. The mark is an invented unit; the page never shows what the tincture is made from or how it is given."
+    },
+    {
+      "name": "triage.over_marks",
+      "type": "counter",
+      "default": 0,
+      "description": "Marks given beyond a card's need. Each settles the card at once and raises following by 8; the bible's fixed point is that the followers become chemically dependent on him (Part VI, Dr. Tox, Story: The Fall)."
+    },
+    {
+      "name": "triage.set_aside",
+      "type": "ledger",
+      "default": [],
+      "description": "Patients put in the CANNOT column, by name and want. They come back on later pages, or stay in the hall.",
+      "fields": [
+        "name",
+        "want"
+      ]
+    },
+    {
+      "name": "following",
+      "type": "meter",
+      "default": 0,
+      "description": "How many have come to need him, 0 to 100. +2 per mark within need, +8 per over-mark, +5 per awed strip pinned on a Composite, +10 if the manifold's resin line is routed, +5 if the settlement is held in Bloom 2. 50 or more at the end of the episode is The Following; under 50 is The Clinic.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "manifold.dart_cost",
+      "type": "counter",
+      "default": 12,
+      "description": "Pulse per dart drawn through the gauntlet, 6 to 14, set by The Manifold's routing. Rise's flat +12 is the default."
+    },
+    {
+      "name": "manifold.resin_line",
+      "type": "bool",
+      "default": false,
+      "description": "On The Manifold's second page he routed a fifth outlet for the followers' resin (bible Part VI, Dr. Tox, Story: The Fall: 'arm themselves with his lethal resins'). Carries into the Finale."
+    },
+    {
+      "name": "composite.reconstructed",
+      "type": "counter",
+      "default": 0,
+      "description": "Composite pages solved, 0 to 2."
+    },
+    {
+      "name": "composite.awed",
+      "type": "counter",
+      "default": 0,
+      "description": "Strips pinned to a Composite from accounts that saw a god rather than a body (a halo, wings, a light). Each raises following by 5."
+    },
+    {
+      "name": "cult.icon",
+      "type": "bool",
+      "default": false,
+      "description": "Two or more awed strips were pinned on a Composite: the settlement copies that composite as their picture of him. Carries into the Finale."
+    },
+    {
+      "name": "bloom.cells_lost",
+      "type": "counter",
+      "default": 0,
+      "description": "Grid cells the spores took across both Bloom pages."
+    },
+    {
+      "name": "bloom.marked_names",
+      "type": "ledger",
+      "default": [],
+      "description": "People in the cells the spores took. They are marked by Rostova's mutagen, never killed on screen; each keeps a name and a want.",
+      "fields": [
+        "name",
+        "want"
+      ]
+    },
+    {
+      "name": "bloom.crews",
+      "type": "counter",
+      "default": 0,
+      "description": "Containment crews Dr. Tox can call on in Bloom 2: following divided by 10, rounded down, plus one per Observer present."
+    },
+    {
+      "name": "bloom.settlement_lost",
+      "type": "bool",
+      "default": false,
+      "description": "The east front of Bloom 2 reached the settlement. With fewer than five crews the east front cannot be held; that is The Clinic's cost. Carries into the Finale."
+    },
+    {
+      "name": "rostova.seen",
+      "type": "bool",
+      "default": false,
+      "description": "The player has seen Rostova: on a broadcast in chapter 3 (her portrait beside the State's word CATALYST), and on a rooftop in chapter 8."
+    },
+    {
+      "name": "rostova.plate_read",
+      "type": "bool",
+      "default": false,
+      "description": "Dr. Tox read the plate on her dispersal rig (RCC BIOSYNTH DIVISION) and the word on its screen beside her photograph. Carries into the Finale."
+    },
+    {
+      "name": "load",
+      "type": "meter",
+      "default": 0,
+      "description": "Toxins Aegis has absorbed, 0 to 100. +15 per spore cell absorbed in Bloom 1; -10 per hard-light pane; -2 per metre of wall in 3D. A pane or wall cannot be raised without the Load for it.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "reese.flinches",
+      "type": "counter",
+      "default": 0,
+      "description": "Times the leash fired: HOPE signalled a flashback and Reese felt it as gratitude (bible Part VIII Scene 2 III). Carried in from Rise; the leash pulls harder at the gala the more it has fired."
+    },
+    {
+      "name": "reese.word",
+      "type": "enum",
+      "default": "hope",
+      "description": "Rise's answer at the lower ring, read as a scar. Fall never writes it.",
+      "values": [
+        "hope",
+        "rcc",
+        "silent"
+      ]
+    },
+    {
+      "name": "reese.said_rcc",
+      "type": "bool",
+      "default": false,
+      "description": "The first time Reese says 'RCC' is recorded (bible Part III; Part VI, Aegis, voice note). Carried in from Rise; set in Fall at the relief hall or the gala."
+    },
+    {
+      "name": "reese.relief_word",
+      "type": "enum",
+      "default": "hope",
+      "description": "What Reese answers in the relief hall when Dr. Tox calls the plate on the ration dispenser by its name: 'HOPE runs this hall', 'RCC', or nothing.",
+      "values": [
+        "hope",
+        "rcc",
+        "silent"
+      ]
+    },
+    {
+      "name": "reese.stood_down",
+      "type": "bool",
+      "default": false,
+      "description": "At the relief hall Reese let the clinic stand instead of walling its back door shut. Opens s1_triage_4."
+    },
+    {
+      "name": "reese.met_tox",
+      "type": "bool",
+      "default": false,
+      "description": "Reese and Dr. Tox have stood in one room: the two people in the setting who can (Aegis absorbs toxins, bible Part VI, Aegis, abilities)."
+    },
+    {
+      "name": "reese.gala_word",
+      "type": "enum",
+      "default": "silent",
+      "description": "What Reese says on the gala balcony with Dr. Tox on the other side of his wall. 'rcc' decides First Word.",
+      "values": [
+        "hope",
+        "rcc",
+        "silent"
+      ]
+    },
+    {
+      "name": "reese.bond_cally",
+      "type": "meter",
+      "default": 60,
+      "description": "Reese's bond with Cally, carried in from Rise (default 60, a typical Rise run). Read as the weight of Cally facets in his attachment profile, which Persona is played against.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "reese.bond_carmy",
+      "type": "meter",
+      "default": 50,
+      "description": "Reese's bond with Carmy, carried in from Rise (default 50).",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "reese.bond_rolan",
+      "type": "meter",
+      "default": 50,
+      "description": "Reese's bond with Rolan, carried in from Rise (default 50).",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "cradle.figures_made",
+      "type": "counter",
+      "default": 3,
+      "description": "String figures made in Rise's Cat's Cradle (default 3). In Fall the string is one of the facets in his profile; the count is its weight."
+    },
+    {
+      "name": "barrier.released",
+      "type": "counter",
+      "default": 0,
+      "description": "Pen walls Reese dropped in Rise. If 1 or more, Nell Okafor is in the relief hall queue in chapter 2 and in the hall at night in chapter 7."
+    },
+    {
+      "name": "nell.in_queue",
+      "type": "bool",
+      "default": false,
+      "description": "Nell Okafor is in the relief hall (read from barrier.released)."
+    },
+    {
+      "name": "cally.bond_aegis",
+      "type": "meter",
+      "default": 0,
+      "description": "Bond integrity on Aegis, 0 to 100, as the program measures it (bible Part VIII Scene 3: 'BOND INTEGRITY 94.6%'). Set by Persona 2's match, less 3 for each refusal Cally follows in Reflection run 2. 94.6 or more decides Bond Held.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "cally.crack",
+      "type": "meter",
+      "default": 20,
+      "description": "The residue the engineers logged as 'noise. Acceptable variance.' (bible Part VI, Catalyst Version B), 0 to 100. +10 for each refusal followed, -5 for each refusal forced, +5 for each crack card kept in Persona. It never surfaces in Fall as a word; it carries into the Finale.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "cally.refusals",
+      "type": "counter",
+      "default": 0,
+      "description": "Times the reflection refused across both Reflection runs."
+    },
+    {
+      "name": "cally.forced",
+      "type": "counter",
+      "default": 0,
+      "description": "Times the player forced the reflection on (held Force) instead of stopping with it."
+    },
+    {
+      "name": "cally.said_rcc",
+      "type": "bool",
+      "default": false,
+      "description": "Cally's first 'RCC' (bible Part VI, Catalyst Version B, voice note: 'Watch for the first time she says RCC'). Always false in Fall; it is the Finale's."
+    },
+    {
+      "name": "persona.match",
+      "type": "counter",
+      "default": 0,
+      "description": "How closely the last Persona hand fits Aegis's attachment profile, 0 to 100, in tenths shown on the page."
+    },
+    {
+      "name": "persona.crack_cards",
+      "type": "counter",
+      "default": 0,
+      "description": "Cards the deck dealt itself that Cally kept rather than burned (the crack, as a card)."
+    },
+    {
+      "name": "observers_choice",
+      "type": "enum",
+      "default": "with_them",
+      "description": "Rise's door, read as a scar: with_them, the Observers are in the fortress; left_them, the cells are empty and the knock in chapter 1 is heard by no one else.",
+      "values": [
+        "undecided",
+        "with_them",
+        "left_them"
+      ]
+    },
+    {
+      "name": "took_spec_sheet",
+      "type": "bool",
+      "default": false,
+      "description": "Rise's printout, read as a scar: Dr. Tox knows the name Aegis when they meet in the relief hall."
+    },
+    {
+      "name": "security_knows_face",
+      "type": "bool",
+      "default": false,
+      "description": "Rise's logged face, read as a scar: his face is on the State's posters in the relief hall and the Spire's service corridor, and the Crowd thread starts with a poster in every panel."
+    },
+    {
+      "name": "fiche.names_read",
+      "type": "counter",
+      "default": 40,
+      "description": "Names of the 999 read in Rise (default 40). Each is a card on the names board in the fortress workshop."
+    }
+  ]
+}

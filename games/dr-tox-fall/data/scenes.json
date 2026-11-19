@@ -1,0 +1,834 @@
+{
+  "modes_2d": [
+    {
+      "id": "m2_crowd_thread",
+      "name": "Crowd thread",
+      "movement": "scroll"
+    },
+    {
+      "id": "m2_reflection_run",
+      "name": "Reflection run",
+      "movement": "scroll"
+    }
+  ],
+  "games_1d": [
+    {
+      "id": "g1_triage",
+      "name": "Triage",
+      "family": "Sorting patients under scarcity"
+    },
+    {
+      "id": "g1_manifold",
+      "name": "The Manifold",
+      "family": "Flow routing"
+    },
+    {
+      "id": "g1_persona",
+      "name": "Persona",
+      "family": "Deck-building to an attachment profile"
+    },
+    {
+      "id": "g1_bloom",
+      "name": "Bloom",
+      "family": "Spread containment on a grid"
+    },
+    {
+      "id": "g1_composite",
+      "name": "Composite",
+      "family": "Reconstruction from testimony (identikit)"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s3_fortress_lamp",
+      "layer": "3d",
+      "name": "Snakehead, months after the claim: the lamp, the cells, a knock at the breach",
+      "chapter": "c1_knock",
+      "reads": [
+        "observers_choice",
+        "self",
+        "amber",
+        "took_spec_sheet",
+        "fiche.names_read"
+      ],
+      "writes": [
+        "shroud.fitted",
+        "pulse",
+        "amber"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_triage_1"
+      ]
+    },
+    {
+      "id": "s1_triage_1",
+      "layer": "1d",
+      "name": "Triage at the breach: a woman, and the brother she carried down on a door",
+      "chapter": "c1_knock",
+      "game": "g1_triage",
+      "reads": [
+        "amber"
+      ],
+      "writes": [
+        "triage.treated",
+        "triage.marks_given",
+        "triage.over_marks",
+        "triage.set_aside",
+        "following"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_fortress_bench"
+      ]
+    },
+    {
+      "id": "s3_fortress_bench",
+      "layer": "3d",
+      "name": "The bench under the amber lamp: the batch, and the hours it takes",
+      "chapter": "c1_knock",
+      "reads": [
+        "triage.treated",
+        "amber"
+      ],
+      "writes": [
+        "fortress.batch_hours",
+        "amber"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "s3_relief_queue"
+      ]
+    },
+    {
+      "id": "s3_relief_queue",
+      "layer": "3d",
+      "name": "The relief hall: a queue of the plague-marked under a shutter that comes down at noon",
+      "chapter": "c2_relief",
+      "reads": [
+        "security_knows_face",
+        "barrier.released",
+        "amber",
+        "self"
+      ],
+      "writes": [
+        "nell.in_queue",
+        "pulse",
+        "amber"
+      ],
+      "enter": "cut",
+      "exit": "flatten",
+      "next": [
+        "s2_crowd_1"
+      ]
+    },
+    {
+      "id": "s2_crowd_1",
+      "layer": "2d",
+      "name": "Crowd thread: down the queue to the back of the hall, the breath radius kept off people",
+      "chapter": "c2_relief",
+      "mode": "m2_crowd_thread",
+      "reads": [
+        "pulse",
+        "self",
+        "shroud.fitted",
+        "security_knows_face",
+        "nell.in_queue"
+      ],
+      "writes": [
+        "pulse",
+        "crowd.exposures",
+        "crowd.exposed_names"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "s1_triage_2"
+      ]
+    },
+    {
+      "id": "s1_triage_2",
+      "layer": "1d",
+      "name": "Triage behind the shutter: the night clinic",
+      "chapter": "c2_relief",
+      "game": "g1_triage",
+      "reads": [
+        "crowd.exposed_names",
+        "fortress.batch_hours",
+        "nell.in_queue",
+        "triage.set_aside"
+      ],
+      "writes": [
+        "triage.treated",
+        "triage.marks_given",
+        "triage.over_marks",
+        "triage.set_aside",
+        "following"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s3_bloom_morning"
+      ]
+    },
+    {
+      "id": "s3_bloom_morning",
+      "layer": "3d",
+      "name": "The bloom district at first light: a haze from the stacks, and cameras already on the roofs",
+      "chapter": "c3_containment",
+      "reads": [
+        "reese.word",
+        "reese.said_rcc",
+        "reese.flinches"
+      ],
+      "writes": [
+        "load",
+        "rostova.seen",
+        "reese.flinches"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_bloom_1"
+      ]
+    },
+    {
+      "id": "s1_bloom_1",
+      "layer": "1d",
+      "name": "Bloom: Aegis contains the spread, street by street",
+      "chapter": "c3_containment",
+      "game": "g1_bloom",
+      "reads": [
+        "load"
+      ],
+      "writes": [
+        "load",
+        "bloom.cells_lost",
+        "bloom.marked_names"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_bloom_after"
+      ]
+    },
+    {
+      "id": "s3_bloom_after",
+      "layer": "3d",
+      "name": "After the haze: the marked on the camera side, and the broadcast",
+      "chapter": "c3_containment",
+      "reads": [
+        "bloom.cells_lost",
+        "bloom.marked_names",
+        "load"
+      ],
+      "writes": [
+        "reese.flinches"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "next": [
+        "s3_fortress_workshop"
+      ]
+    },
+    {
+      "id": "s3_fortress_workshop",
+      "layer": "3d",
+      "name": "The fortress workshop: the names board, the vise, the gauntlet",
+      "chapter": "c4_gauntlet",
+      "reads": [
+        "amber",
+        "fiche.names_read",
+        "observers_choice"
+      ],
+      "writes": [
+        "amber",
+        "fortress.batch_hours",
+        "pulse"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_manifold_1"
+      ]
+    },
+    {
+      "id": "s1_manifold_1",
+      "layer": "1d",
+      "name": "The Manifold: routing the shunt's flow to four barrels",
+      "chapter": "c4_gauntlet",
+      "game": "g1_manifold",
+      "reads": [
+        "pulse"
+      ],
+      "writes": [
+        "manifold.dart_cost"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s3_settlement_day"
+      ]
+    },
+    {
+      "id": "s3_settlement_day",
+      "layer": "3d",
+      "name": "Under the freeway: the settlement that grew where the hall's people followed him",
+      "chapter": "c5_freeway",
+      "reads": [
+        "following",
+        "triage.set_aside",
+        "crowd.exposed_names",
+        "amber"
+      ],
+      "writes": [
+        "amber",
+        "pulse"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_triage_3"
+      ]
+    },
+    {
+      "id": "s1_triage_3",
+      "layer": "1d",
+      "name": "Triage under the freeway: more cards than marks, and people asking for more",
+      "chapter": "c5_freeway",
+      "game": "g1_triage",
+      "reads": [
+        "following",
+        "fortress.batch_hours",
+        "triage.set_aside",
+        "crowd.exposed_names"
+      ],
+      "writes": [
+        "triage.treated",
+        "triage.marks_given",
+        "triage.over_marks",
+        "triage.set_aside",
+        "following"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_settlement_raid"
+      ]
+    },
+    {
+      "id": "s3_settlement_raid",
+      "layer": "3d",
+      "name": "The raid at dusk: floodlights, sustained fire, and the suit failing",
+      "chapter": "c5_freeway",
+      "reads": [
+        "pulse",
+        "self",
+        "manifold.dart_cost",
+        "amber",
+        "observers_choice"
+      ],
+      "writes": [
+        "pulse",
+        "toxin_events",
+        "amber",
+        "self"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "s1_composite_1"
+      ]
+    },
+    {
+      "id": "s1_composite_1",
+      "layer": "1d",
+      "name": "Composite: what the settlement saw, strip by strip",
+      "chapter": "c5_freeway",
+      "game": "g1_composite",
+      "reads": [
+        "toxin_events",
+        "following"
+      ],
+      "writes": [
+        "toxin_events",
+        "composite.reconstructed",
+        "composite.awed",
+        "cult.icon",
+        "following",
+        "self"
+      ],
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s3_gala_annex"
+      ]
+    },
+    {
+      "id": "s3_gala_annex",
+      "layer": "3d",
+      "name": "The calibration annex in the Spire: a mirror, a file, seventy-two hours",
+      "chapter": "c6_calibration",
+      "reads": [
+        "reese.bond_cally",
+        "reese.bond_carmy",
+        "reese.bond_rolan",
+        "cradle.figures_made",
+        "reese.said_rcc",
+        "reese.flinches"
+      ],
+      "writes": [
+        "cally.crack"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_persona_1"
+      ]
+    },
+    {
+      "id": "s1_persona_1",
+      "layer": "1d",
+      "name": "Persona: building a person to fit Aegis's attachment signature",
+      "chapter": "c6_calibration",
+      "game": "g1_persona",
+      "reads": [
+        "reese.bond_cally",
+        "reese.bond_carmy",
+        "reese.bond_rolan",
+        "cradle.figures_made",
+        "cally.crack"
+      ],
+      "writes": [
+        "persona.match",
+        "persona.crack_cards",
+        "cally.crack"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "s2_reflect_1"
+      ]
+    },
+    {
+      "id": "s2_reflect_1",
+      "layer": "2d",
+      "name": "Reflection run: the Spire's glass halls to a meeting arranged to look like chance",
+      "chapter": "c6_calibration",
+      "mode": "m2_reflection_run",
+      "reads": [
+        "cally.crack",
+        "persona.match"
+      ],
+      "writes": [
+        "cally.refusals",
+        "cally.forced",
+        "cally.crack"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s3_relief_standoff"
+      ]
+    },
+    {
+      "id": "s3_relief_standoff",
+      "layer": "3d",
+      "name": "The relief hall at night: the hero sent to close an unlicensed clinic",
+      "chapter": "c7_hero",
+      "reads": [
+        "triage.treated",
+        "following",
+        "took_spec_sheet",
+        "reese.flinches",
+        "reese.said_rcc",
+        "nell.in_queue",
+        "load",
+        "security_knows_face"
+      ],
+      "writes": [
+        "reese.met_tox",
+        "reese.relief_word",
+        "reese.said_rcc",
+        "reese.stood_down",
+        "reese.flinches",
+        "load"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_triage_4",
+        "s3_relief_dawn"
+      ]
+    },
+    {
+      "id": "s1_triage_4",
+      "layer": "1d",
+      "name": "Triage, as Aegis: carrying the cards the doctor could not reach",
+      "chapter": "c7_hero",
+      "game": "g1_triage",
+      "reads": [
+        "triage.set_aside",
+        "triage.over_marks"
+      ],
+      "writes": [
+        "triage.treated"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_relief_dawn"
+      ]
+    },
+    {
+      "id": "s3_relief_dawn",
+      "layer": "3d",
+      "name": "Dawn in the relief hall: the shutter, the queue, the report he files",
+      "chapter": "c7_hero",
+      "reads": [
+        "reese.stood_down",
+        "reese.relief_word"
+      ],
+      "writes": [
+        "reese.flinches"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "s3_settlement_haze"
+      ]
+    },
+    {
+      "id": "s3_settlement_haze",
+      "layer": "3d",
+      "name": "The haze reaches the freeway: Rostova's second release, drifting east",
+      "chapter": "c8_bloom",
+      "reads": [
+        "following",
+        "amber",
+        "observers_choice"
+      ],
+      "writes": [
+        "bloom.crews",
+        "amber",
+        "pulse"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_bloom_2"
+      ]
+    },
+    {
+      "id": "s1_bloom_2",
+      "layer": "1d",
+      "name": "Bloom: the settlement's crews against the spread, and the east front",
+      "chapter": "c8_bloom",
+      "game": "g1_bloom",
+      "reads": [
+        "bloom.crews",
+        "observers_choice"
+      ],
+      "writes": [
+        "bloom.cells_lost",
+        "bloom.marked_names",
+        "bloom.settlement_lost",
+        "following"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_bloom_rooftop"
+      ]
+    },
+    {
+      "id": "s3_bloom_rooftop",
+      "layer": "3d",
+      "name": "The rooftop at the source: a dispersal rig, a camera drone, and Rostova",
+      "chapter": "c8_bloom",
+      "reads": [
+        "bloom.settlement_lost",
+        "pulse",
+        "manifold.dart_cost"
+      ],
+      "writes": [
+        "rostova.seen",
+        "rostova.plate_read",
+        "pulse"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "next": [
+        "s3_fortress_rite"
+      ]
+    },
+    {
+      "id": "s3_fortress_rite",
+      "layer": "3d",
+      "name": "The cavern hall: a rite he did not make, and a request for his resin",
+      "chapter": "c9_resin",
+      "reads": [
+        "following",
+        "cult.icon",
+        "bloom.settlement_lost",
+        "amber"
+      ],
+      "writes": [
+        "amber",
+        "fortress.batch_hours"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_manifold_2"
+      ]
+    },
+    {
+      "id": "s1_manifold_2",
+      "layer": "1d",
+      "name": "The Manifold: a fifth outlet, routed or capped",
+      "chapter": "c9_resin",
+      "game": "g1_manifold",
+      "reads": [
+        "manifold.dart_cost",
+        "following"
+      ],
+      "writes": [
+        "manifold.dart_cost",
+        "manifold.resin_line",
+        "following"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s3_gala_floor"
+      ]
+    },
+    {
+      "id": "s3_gala_floor",
+      "layer": "3d",
+      "name": "The Spire gala: clean air, a hero honoured, and Cally in the crowd",
+      "chapter": "c10_gala",
+      "reads": [
+        "cally.crack",
+        "persona.match",
+        "reese.stood_down",
+        "reese.relief_word",
+        "bloom.cells_lost"
+      ],
+      "writes": [
+        "cally.crack"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_persona_2"
+      ]
+    },
+    {
+      "id": "s1_persona_2",
+      "layer": "1d",
+      "name": "Persona: the last hand, played across a gala table",
+      "chapter": "c10_gala",
+      "game": "g1_persona",
+      "reads": [
+        "persona.match",
+        "persona.crack_cards",
+        "cally.crack",
+        "reese.bond_cally",
+        "reese.bond_carmy",
+        "reese.bond_rolan",
+        "cradle.figures_made"
+      ],
+      "writes": [
+        "persona.match",
+        "persona.crack_cards",
+        "cally.bond_aegis",
+        "cally.crack"
+      ],
+      "enter": "push-in",
+      "exit": "flatten",
+      "next": [
+        "s2_reflect_2"
+      ]
+    },
+    {
+      "id": "s2_reflect_2",
+      "layer": "2d",
+      "name": "Reflection run: the glass halls to the balcony, and three doors the reflection will not pass",
+      "chapter": "c10_gala",
+      "mode": "m2_reflection_run",
+      "reads": [
+        "cally.bond_aegis",
+        "cally.crack"
+      ],
+      "writes": [
+        "cally.refusals",
+        "cally.forced",
+        "cally.crack",
+        "cally.bond_aegis"
+      ],
+      "enter": "flatten",
+      "exit": "cut",
+      "next": [
+        "s2_crowd_2"
+      ]
+    },
+    {
+      "id": "s2_crowd_2",
+      "layer": "2d",
+      "name": "Crowd thread: the service corridor and the gala floor, shrouded, among people who paid for their air",
+      "chapter": "c11_clean_air",
+      "mode": "m2_crowd_thread",
+      "reads": [
+        "pulse",
+        "self",
+        "amber",
+        "manifold.dart_cost",
+        "security_knows_face",
+        "rostova.plate_read",
+        "shroud.fitted"
+      ],
+      "writes": [
+        "pulse",
+        "crowd.exposures",
+        "crowd.exposed_names",
+        "toxin_at_gala",
+        "toxin_events",
+        "self",
+        "amber"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "s3_gala_balcony",
+        "s1_composite_2"
+      ]
+    },
+    {
+      "id": "s1_composite_2",
+      "layer": "1d",
+      "name": "Composite: what the gala saw, from people who will not testify",
+      "chapter": "c11_clean_air",
+      "game": "g1_composite",
+      "reads": [
+        "toxin_events",
+        "toxin_at_gala"
+      ],
+      "writes": [
+        "toxin_events",
+        "composite.reconstructed",
+        "composite.awed",
+        "self"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "s3_gala_balcony"
+      ]
+    },
+    {
+      "id": "s3_gala_balcony",
+      "layer": "3d",
+      "name": "The balcony: Dr. Tox, Aegis's wall, Cally at his wrist, and one word",
+      "chapter": "c11_clean_air",
+      "reads": [
+        "reese.relief_word",
+        "reese.said_rcc",
+        "reese.flinches",
+        "cally.bond_aegis",
+        "took_spec_sheet",
+        "toxin_at_gala",
+        "rostova.plate_read",
+        "load"
+      ],
+      "writes": [
+        "reese.gala_word",
+        "reese.said_rcc",
+        "reese.flinches",
+        "load"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "s3_gala_leash",
+        "s3_gala_bond",
+        "s3_settlement_lost",
+        "s3_fortress_following"
+      ]
+    },
+    {
+      "id": "s3_gala_leash",
+      "layer": "3d",
+      "name": "First Word: the leash, mid-fight",
+      "chapter": "c11_clean_air",
+      "reads": [
+        "reese.flinches",
+        "reese.gala_word"
+      ],
+      "writes": [
+        "reese.flinches"
+      ],
+      "enter": "cut",
+      "exit": "fade"
+    },
+    {
+      "id": "s3_gala_bond",
+      "layer": "3d",
+      "name": "Bond Held: he lowers the wall the other way",
+      "chapter": "c11_clean_air",
+      "reads": [
+        "cally.bond_aegis",
+        "cally.crack"
+      ],
+      "enter": "cut",
+      "exit": "fade"
+    },
+    {
+      "id": "s3_settlement_lost",
+      "layer": "3d",
+      "name": "The Clinic: the freeway ruins under spore rust, months after",
+      "chapter": "c11_clean_air",
+      "reads": [
+        "bloom.settlement_lost",
+        "bloom.marked_names"
+      ],
+      "enter": "fade",
+      "exit": "cut",
+      "next": [
+        "s3_fortress_clinic"
+      ]
+    },
+    {
+      "id": "s3_fortress_clinic",
+      "layer": "3d",
+      "name": "The Clinic: cots made up in the cavern hall, and nobody staying",
+      "chapter": "c11_clean_air",
+      "reads": [
+        "following",
+        "self",
+        "amber"
+      ],
+      "enter": "cut",
+      "exit": "fade"
+    },
+    {
+      "id": "s3_fortress_following",
+      "layer": "3d",
+      "name": "The Following: the cavern hall full, the blades on the cloth, the lamp",
+      "chapter": "c11_clean_air",
+      "reads": [
+        "following",
+        "manifold.resin_line",
+        "cult.icon",
+        "self",
+        "amber"
+      ],
+      "enter": "fade",
+      "exit": "fade"
+    }
+  ]
+}

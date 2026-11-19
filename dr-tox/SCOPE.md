@@ -114,6 +114,7 @@ Panel run is not Endless Temple's living illustration: it moves between panels, 
 | 2 | **The Manifold** | Flow routing through the gauntlet's valves | Mail-order comic advert |
 | 2 | **Persona** (Cally) | Deck-building to a target's attachment profile | 1950s romance comic |
 | 2 | **Bloom** (Rostova) | Spread containment on a grid | Four-colour Ben-Day newsprint |
+| 2 | **Composite** | Reconstruction from testimony: the form the body took, built from what witnesses saw (Fall only; added 2026-11-19 under the author's ruling below, proposed in `games/dr-tox-fall/DESIGN.md`) | Identikit acetate overlays |
 | 3 | **The Creed** | Dominoes: his own past lines chain into doctrine | Pocket tract booklet |
 | 3 | **Two Pans** | Balance: the ratio of the final dose | Two-colour pulp, red and black |
 | 3 | **Switchboard** | Patching life-support circuits | Letterer's balloon page |
@@ -124,7 +125,8 @@ Panel run is not Endless Temple's living illustration: it moves between panels, 
 | 4 | **The Peal** | Change ringing on the towers' bells | Repoussé gold |
 
 Cat's Cradle is the one Age page outside the comic idiom: it is memory, the bible's "Clinical white"
-register (Part VI §6). Near styles to watch: Ben-Day (four process colours, black keyline) against
+register (Part VI §6). Composite is proposed as a second: the witnesses' document, not the comic's
+(the author's call, `games/dr-tox-fall/DESIGN.md` section 20). Near styles to watch: Ben-Day (four process colours, black keyline) against
 Missing Campsites' two-colour risograph; scratchboard (white cut from black) against Heartstream's
 scrimshaw.
 
@@ -262,4 +264,6 @@ Made after the author accepted section 8. Nothing under `games/`, `web/` or `too
 - **Conflict resolved (the author's ruling, 2026-11-19)**: Aftermath belongs to Rise only. Fall and
   Finale will each get a different reconstruction-style page later, each its own 1D game type, so
   the PILLARS rule holds (no two episodes share a 1D game type). Each still has four 1D games
-  without it.
+  without it. (Done for Fall 2026-11-19, Phase 2 stage A: its reconstruction page is **Composite**,
+  a form assembled from testimony, styled as identikit acetate overlays; Fall's seven rows are in
+  `graphic_styles.json` and its modes and games in COLLECTION's tables. Finale's is still to come.)

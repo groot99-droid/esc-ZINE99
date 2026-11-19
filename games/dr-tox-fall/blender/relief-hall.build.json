@@ -1,0 +1,644 @@
+{
+ "game": "dr-tox-fall",
+ "location": "relief-hall",
+ "name": "The relief hall",
+ "reference": "assets/locations/relief-hall.jpg",
+ "bounds_m": [
+  60,
+  28,
+  10
+ ],
+ "origin": "centre of the hall floor; +x toward the front shutter and the dispensers; the back door, the clinic table and the cots at -x; the number board on the +y wall",
+ "materials": {
+  "concrete": {
+   "color": [
+    0.42,
+    0.5,
+    0.5
+   ],
+   "roughness": 0.9
+  },
+  "concrete-dark": {
+   "color": [
+    0.24,
+    0.28,
+    0.29
+   ],
+   "roughness": 0.92
+  },
+  "tube": {
+   "color": [
+    0.9,
+    0.93,
+    0.92
+   ],
+   "roughness": 0.4,
+   "emission": 2.0
+  },
+  "steel": {
+   "color": [
+    0.45,
+    0.48,
+    0.49
+   ],
+   "roughness": 0.5,
+   "metallic": 0.6
+  }
+ },
+ "blockout": [
+  {
+   "id": "floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    60,
+    28,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    -0.1
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "wall-north",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    60,
+    0.3,
+    10
+   ],
+   "location": [
+    0,
+    14.15,
+    5.0
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "wall-south",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    60,
+    0.3,
+    10
+   ],
+   "location": [
+    0,
+    -14.15,
+    5.0
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "wall-back",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    28,
+    10
+   ],
+   "location": [
+    -30.15,
+    0,
+    5.0
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "wall-front",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    28,
+    10
+   ],
+   "location": [
+    30.15,
+    0,
+    5.0
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "ceiling",
+   "shape": "box",
+   "role": "ceiling",
+   "size_m": [
+    60,
+    28,
+    0.3
+   ],
+   "location": [
+    0,
+    0,
+    10.15
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "back-door",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    0.2,
+    1.4,
+    2.3
+   ],
+   "location": [
+    -30.0,
+    -8,
+    1.15
+   ],
+   "material": "steel"
+  },
+  {
+   "id": "tubes-1",
+   "shape": "box",
+   "role": "trim",
+   "size_m": [
+    56,
+    0.2,
+    0.1
+   ],
+   "location": [
+    0,
+    -6,
+    9.6
+   ],
+   "material": "tube",
+   "collide": false
+  },
+  {
+   "id": "tubes-2",
+   "shape": "box",
+   "role": "trim",
+   "size_m": [
+    56,
+    0.2,
+    0.1
+   ],
+   "location": [
+    0,
+    6,
+    9.6
+   ],
+   "material": "tube",
+   "collide": false
+  }
+ ],
+ "props": [
+  {
+   "id": "shutter",
+   "object": "relief-shutter",
+   "location": [
+    29.6,
+    0,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "dispenser-1",
+   "object": "ration-dispenser",
+   "location": [
+    26,
+    -8,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "dispenser-2",
+   "object": "ration-dispenser",
+   "location": [
+    26,
+    -4,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "dispenser-3",
+   "object": "ration-dispenser",
+   "location": [
+    26,
+    4,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "dispenser-4",
+   "object": "ration-dispenser",
+   "location": [
+    26,
+    8,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "board",
+   "object": "number-board",
+   "location": [
+    10,
+    13.8,
+    2.2
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ],
+   "ground": false
+  },
+  {
+   "id": "rail-1",
+   "object": "queue-rail",
+   "location": [
+    16,
+    -3,
+    0
+   ]
+  },
+  {
+   "id": "rail-2",
+   "object": "queue-rail",
+   "location": [
+    10,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "rail-3",
+   "object": "queue-rail",
+   "location": [
+    16,
+    3,
+    0
+   ]
+  },
+  {
+   "id": "rail-4",
+   "object": "queue-rail",
+   "location": [
+    10,
+    6,
+    0
+   ]
+  },
+  {
+   "id": "rail-5",
+   "object": "queue-rail",
+   "location": [
+    4,
+    -3,
+    0
+   ]
+  },
+  {
+   "id": "bucket-1",
+   "object": "dented-bucket",
+   "location": [
+    6,
+    1,
+    0
+   ]
+  },
+  {
+   "id": "bucket-2",
+   "object": "dented-bucket",
+   "location": [
+    13,
+    4.5,
+    0
+   ]
+  },
+  {
+   "id": "table",
+   "object": "clinic-table",
+   "location": [
+    -26,
+    -6,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "cot-1",
+   "object": "folding-cot",
+   "location": [
+    -24,
+    2,
+    0
+   ]
+  },
+  {
+   "id": "cot-2",
+   "object": "folding-cot",
+   "location": [
+    -21,
+    2,
+    0
+   ]
+  },
+  {
+   "id": "cot-3",
+   "object": "folding-cot",
+   "location": [
+    -18,
+    2,
+    0
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_relief_queue": {
+   "note": "Chapter 2: 2229. Day: the queue zigzags to empty dispensers stamped RCC; at noon the shutter comes down on 'relief suspended'. Thread the queue to the back.",
+   "world": {
+    "color": [
+     0.4,
+     0.46,
+     0.46
+    ],
+    "strength": 0.5
+   },
+   "lights": [
+    {
+     "name": "tubes",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      9.6
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 2500,
+     "size": 20,
+     "color": [
+      0.86,
+      0.92,
+      0.9
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     28,
+     10,
+     1.7
+    ],
+    "look_at": [
+     0,
+     0,
+     1.4
+    ],
+    "lens_mm": 35,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     28,
+     11,
+     0
+    ],
+    "facing_deg": 225
+   },
+   "hide": [
+    "cot-1",
+    "cot-2",
+    "cot-3"
+   ],
+   "interactions": [
+    {
+     "prop": "dispenser-1",
+     "verb": "Read the plate"
+    },
+    {
+     "prop": "board",
+     "verb": "Take a number"
+    },
+    {
+     "prop": "rail-1",
+     "verb": "Go down the queue",
+     "leads_to": "s2_crowd_1"
+    }
+   ]
+  },
+  "s3_relief_standoff": {
+   "note": "Chapter 7: 2233, night. Aegis comes through the front to close the unlicensed clinic; Dr. Tox at the back table, shrouded; the plate on the dispenser; the Word; wall the back door or stand down.",
+   "world": {
+    "color": [
+     0.08,
+     0.1,
+     0.1
+    ],
+    "strength": 0.2
+   },
+   "lights": [
+    {
+     "name": "half-tubes",
+     "type": "AREA",
+     "location": [
+      12,
+      0,
+      9.6
+     ],
+     "look_at": [
+      12,
+      0,
+      0
+     ],
+     "energy": 900,
+     "size": 12,
+     "color": [
+      0.86,
+      0.92,
+      0.9
+     ]
+    },
+    {
+     "name": "clinic-lamp",
+     "type": "POINT",
+     "location": [
+      -26,
+      -6,
+      1.9
+     ],
+     "look_at": [
+      -26,
+      -6,
+      0.9
+     ],
+     "energy": 80,
+     "size": 0.2,
+     "color": [
+      1.0,
+      0.62,
+      0.22
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     24,
+     0,
+     1.8
+    ],
+    "look_at": [
+     -26,
+     -6,
+     1.2
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     24,
+     0,
+     0
+    ],
+    "facing_deg": 270
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "dispenser-2",
+     "verb": "Read the plate"
+    },
+    {
+     "prop": "table",
+     "verb": "Stand down",
+     "leads_to": "s1_triage_4"
+    },
+    {
+     "prop": "cot-1",
+     "verb": "Wall the back door",
+     "leads_to": "s3_relief_dawn"
+    }
+   ]
+  },
+  "s3_relief_dawn": {
+   "note": "Chapter 7: dawn. The shutter goes up on the same empty dispensers; the queue faces the back door; Reese files a report and the program answers with a sentence.",
+   "world": {
+    "color": [
+     0.45,
+     0.5,
+     0.5
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "tubes",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      9.6
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 2500,
+     "size": 20,
+     "color": [
+      0.86,
+      0.92,
+      0.9
+     ]
+    },
+    {
+     "name": "dawn-door",
+     "type": "AREA",
+     "location": [
+      29,
+      0,
+      3
+     ],
+     "look_at": [
+      0,
+      0,
+      1
+     ],
+     "energy": 800,
+     "size": 6,
+     "color": [
+      0.86,
+      0.88,
+      0.86
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -20,
+     6,
+     1.8
+    ],
+    "look_at": [
+     28,
+     0,
+     2.0
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     -20,
+     6,
+     0
+    ],
+    "facing_deg": 90
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "shutter",
+     "verb": "Watch it go up",
+     "leads_to": "s3_settlement_haze"
+    }
+   ]
+  }
+ }
+}

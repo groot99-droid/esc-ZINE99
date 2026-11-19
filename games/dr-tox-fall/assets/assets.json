@@ -1,0 +1,886 @@
+{
+  "game": "dr-tox-fall",
+  "status": "Nothing generated yet (2026-11-19). Each entry holds the prompt and the planned model; job_id is null until the image is generated and approved, and check_assets.py reports every image as missing until then. Generation is priced in credits first (dr-tox/SCOPE.md section 6).",
+  "style": "Grounded, desaturated cinematic realism, heavy film grain, no stylised colour pop, no lens flare, practical haze. Concrete, fluorescent tubes, CRT-era hardware, salvaged tools (bible Part III, Practical result). Colour carries plot (Part VI, Dr. Tox section 6): cold desaturated gray-teal world (#5E7375, #8A9A99), amber and warm gold for the cage and control (#D99A2B, #F2C14E), sickly luminous green only for the toxin unbound (#7FD957), black and near-black red for his blood (#1A0B0C, #4A0F14), clinical white for memory (#E9ECEA); Rostova's spore rust and ochre (#9C4A2A, #C98F3B, dr-tox/SCOPE.md section 3). Amber and green never share a frame at equal weight. No chrome, no gloss, no neon, no characters, no text other than the stamped letters RCC where named.",
+  "locations": [
+    {
+      "id": "snakehead-fortress",
+      "name": "Snakehead fortress",
+      "scenes": [
+        "s3_fortress_lamp",
+        "s3_fortress_bench",
+        "s3_fortress_workshop",
+        "s3_fortress_rite",
+        "s3_fortress_clinic",
+        "s3_fortress_following"
+      ],
+      "dimensions_m": [
+        44,
+        32,
+        7
+      ],
+      "lighting": "A single amber work lamp with hard falloff into black (bible Part VI, Dr. Tox section 9, The bunker); in the cavern hall, a shaft of grey day from the breach and small amber lanterns the followers bring.",
+      "objects": [
+        "fortress-work-lamp",
+        "shielded-locker",
+        "batch-bench",
+        "shroud-stand",
+        "gauntlet-vise",
+        "names-board",
+        "clean-water-tank",
+        "folding-cot",
+        "blade-cloth"
+      ],
+      "prompt": "Grounded cinematic film still, heavy film grain, desaturated except the signal colours. A reinforced subterranean bunker made into a home: a low concrete archive of grey steel cabinets, a steel workbench and a lead-lined locker under one amber work lamp with hard falloff into black, a row of four heavy observation cells with glass fronts and one clear water tank, and beyond them a rough natural cavern hall under a broken ceiling where a shaft of grey daylight falls through soil and roots onto bare rock and a few folding cots. Cold gray-teal concrete, amber lamp, dust. Wide establishing view of the empty set, eye level, the whole space and its layout readable, no people, no characters, no text, no letters, no logos.",
+      "model": "nano_banana_2",
+      "job_id": null,
+      "image": "assets/locations/snakehead-fortress.jpg"
+    },
+    {
+      "id": "salvage-settlement",
+      "name": "The settlement under the freeway",
+      "scenes": [
+        "s3_settlement_day",
+        "s3_settlement_raid",
+        "s3_settlement_haze",
+        "s3_settlement_lost"
+      ],
+      "dimensions_m": [
+        120,
+        80,
+        20
+      ],
+      "lighting": "Day: dust haze, cold gray-teal, a thin amber horizon at dusk. The raid: hard white floodlights and muzzle flash as key (Precision combat, section 9). The haze: a pale aerosol drifting in, gray-green then spore rust and ochre.",
+      "objects": [
+        "freeway-span",
+        "water-drum",
+        "generator-cart",
+        "crt-stack",
+        "laundry-line",
+        "settlement-shelter",
+        "floodlight-truck"
+      ],
+      "prompt": "Grounded cinematic film still, heavy film grain, desaturated except the signal colours. A salvage settlement built into cracked concrete freeway ruins at dusk: a collapsed freeway deck on square piers, hand-built shelters of scrap panels and tarps beneath it, water drums, laundry lines, a generator cart wired to strings of fluorescent tubes, stacked old monitors, a dust plain beyond with distant sealed glass towers glowing warm behind perimeter lights. Cold desaturated gray-teal with a thin amber horizon, dust haze. Wide establishing view of the empty set, eye level, the whole space and its layout readable, no people, no characters, no text, no letters, no logos.",
+      "model": "nano_banana_2",
+      "job_id": null,
+      "image": "assets/locations/salvage-settlement.jpg"
+    },
+    {
+      "id": "relief-hall",
+      "name": "The relief hall",
+      "scenes": [
+        "s3_relief_queue",
+        "s3_relief_standoff",
+        "s3_relief_dawn"
+      ],
+      "dimensions_m": [
+        60,
+        28,
+        10
+      ],
+      "lighting": "Flat overhead fluorescent tubes, cold gray-teal concrete (Clinical, section 9); at night half the tubes off and one amber lamp on the clinic table at the back.",
+      "objects": [
+        "ration-dispenser",
+        "number-board",
+        "relief-shutter",
+        "queue-rail",
+        "dented-bucket",
+        "clinic-table",
+        "folding-cot"
+      ],
+      "prompt": "Grounded cinematic film still, heavy film grain, desaturated except the signal colours. A bare concrete relief hall: a long room of steel pipe queue barriers zigzagging toward a row of grey steel ration dispenser cabinets, a wide corrugated roller shutter half down at the front, a hand-painted wooden number board on the wall, dented buckets on the floor, a plain back door at the far end with a steel table and folding cots beside it. Flat overhead fluorescent tubes, cold gray-teal concrete, worn. Wide establishing view of the empty set, eye level, the whole space and its layout readable, no people, no characters, no text, no letters, no logos.",
+      "model": "nano_banana_2",
+      "job_id": null,
+      "image": "assets/locations/relief-hall.jpg"
+    },
+    {
+      "id": "bloom-district",
+      "name": "Rostova's bloom district",
+      "scenes": [
+        "s3_bloom_morning",
+        "s3_bloom_after",
+        "s3_bloom_rooftop"
+      ],
+      "dimensions_m": [
+        100,
+        80,
+        30
+      ],
+      "lighting": "Pale dawn with a desaturated sickly gray-green cast; a fine pale aerosol haze settling over the streets, turning spore rust and ochre where it lands (Rostova's colour, dr-tox/SCOPE.md section 3).",
+      "objects": [
+        "vent-stack",
+        "dispersal-rig",
+        "service-truck",
+        "market-stall",
+        "camera-drone"
+      ],
+      "prompt": "Grounded cinematic film still, heavy film grain, desaturated except the signal colours. A crowded low-rise city district at first light seen from a flat gravel rooftop: industrial ventilation stacks on the roofs, a fine pale aerosol haze drifting down and settling over narrow streets of market stalls below, a sealed unmarked service truck parked by a vent housing, rust and ochre residue on the gravel. Pale dawn, desaturated sickly gray-green cast, practical haze, high angle. Wide establishing view of the empty set, eye level, the whole space and its layout readable, no people, no characters, no text, no letters, no logos.",
+      "model": "nano_banana_2",
+      "job_id": null,
+      "image": "assets/locations/bloom-district.jpg"
+    },
+    {
+      "id": "spire-gala",
+      "name": "The Spire gala",
+      "scenes": [
+        "s3_gala_annex",
+        "s3_gala_floor",
+        "s3_gala_balcony",
+        "s3_gala_leash",
+        "s3_gala_bond"
+      ],
+      "dimensions_m": [
+        80,
+        50,
+        24
+      ],
+      "lighting": "Glass daylight going to evening, warm amber wash from screens and the clean-air columns (HOPE's amber, the same colour turned); the annex in calibrated warm white; the balcony open to a cold gray-teal city below.",
+      "objects": [
+        "calibration-chair",
+        "annex-mirror",
+        "gala-table",
+        "clean-air-column",
+        "balcony-rail",
+        "service-door",
+        "gala-lectern"
+      ],
+      "prompt": "Grounded cinematic film still, heavy film grain, desaturated except the signal colours. A vast glass-walled gala hall high in a corporate mega-city tower: polished pale floor, round banquet tables with white cloths, tall glass air-scrubber columns with pale vapour rising inside them, a slim lectern on a low dais, a long glass balcony open to skybridges and towers at dusk, a small white clinical annex room behind frosted glass at one end, a plain steel service door at the other. Warm amber light inside against a cold gray-teal city outside. Wide establishing view of the empty set, eye level, the whole space and its layout readable, no people, no characters, no text, no letters, no logos.",
+      "model": "nano_banana_2",
+      "job_id": null,
+      "image": "assets/locations/spire-gala.jpg"
+    }
+  ],
+  "objects": [
+    {
+      "id": "fortress-work-lamp",
+      "name": "Amber work lamp",
+      "role": "interact",
+      "scenes": [
+        "s3_fortress_lamp",
+        "s3_fortress_bench",
+        "s3_fortress_workshop",
+        "s3_fortress_rite",
+        "s3_fortress_clinic",
+        "s3_fortress_following"
+      ],
+      "size_m": [
+        0.4,
+        0.4,
+        0.6
+      ],
+      "material": "Steel clamp lamp with an amber-filtered lens",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A heavy steel clamp work lamp on a short stand, an amber-tinted glass lens, a cloth-wrapped cable, scuffed grey paint, glowing warm amber. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/fortress-work-lamp.jpg"
+    },
+    {
+      "id": "shielded-locker",
+      "name": "Lead-lined medication locker",
+      "role": "interact",
+      "scenes": [
+        "s3_fortress_lamp",
+        "s3_fortress_bench",
+        "s3_fortress_workshop",
+        "s3_fortress_rite",
+        "s3_fortress_clinic",
+        "s3_fortress_following"
+      ],
+      "size_m": [
+        0.8,
+        0.6,
+        2.0
+      ],
+      "material": "Lead-lined steel locker, amber-lit inside",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A tall lead-lined steel medical locker with a thick door standing half open, inside small amber glass vials in foam racks lit warm amber, a heavy latch, grey paint worn to bare metal at the edges. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/shielded-locker.jpg"
+    },
+    {
+      "id": "batch-bench",
+      "name": "Batch bench",
+      "role": "interact",
+      "scenes": [
+        "s3_fortress_lamp",
+        "s3_fortress_bench",
+        "s3_fortress_workshop",
+        "s3_fortress_rite",
+        "s3_fortress_clinic",
+        "s3_fortress_following"
+      ],
+      "size_m": [
+        1.8,
+        0.7,
+        1.6
+      ],
+      "material": "Steel bench with flasks, a dropper stand and lead bricks",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A long steel laboratory bench in a bunker: unlabelled borosilicate flasks, a dropper burette on a stand, a row of small amber glass vials, a stack of lead bricks as shielding, clamps and tubing, a worn rubber mat. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/batch-bench.jpg"
+    },
+    {
+      "id": "shroud-stand",
+      "name": "The shroud on its stand",
+      "role": "interact",
+      "scenes": [
+        "s3_fortress_lamp",
+        "s3_fortress_bench",
+        "s3_fortress_workshop",
+        "s3_fortress_rite",
+        "s3_fortress_clinic",
+        "s3_fortress_following"
+      ],
+      "size_m": [
+        0.8,
+        0.6,
+        1.9
+      ],
+      "material": "Heavy technical fabric in desaturated green on a steel stand",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A long heavy hooded shroud of thick technical barrier fabric in a desaturated grey-green, matte, never satin, with taped seams and a filter panel at the collar, hung on a plain steel garment stand. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/shroud-stand.jpg"
+    },
+    {
+      "id": "gauntlet-vise",
+      "name": "Gauntlet in the vise",
+      "role": "interact",
+      "scenes": [
+        "s3_fortress_lamp",
+        "s3_fortress_bench",
+        "s3_fortress_workshop",
+        "s3_fortress_rite",
+        "s3_fortress_clinic",
+        "s3_fortress_following"
+      ],
+      "size_m": [
+        0.7,
+        0.5,
+        1.1
+      ],
+      "material": "Matte black forearm gauntlet, clear tubing, four syringe barrels, a bench vise",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A matte black machined forearm gauntlet clamped in a steel bench vise on a small stand, clear surgical tubing running into a manifold along its spine that feeds four exposed glass syringe barrels, medical stainless fittings, small brass valves, no chrome, no gloss. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/gauntlet-vise.jpg"
+    },
+    {
+      "id": "names-board",
+      "name": "The names board",
+      "role": "fill",
+      "scenes": [
+        "s3_fortress_lamp",
+        "s3_fortress_bench",
+        "s3_fortress_workshop",
+        "s3_fortress_rite",
+        "s3_fortress_clinic",
+        "s3_fortress_following"
+      ],
+      "size_m": [
+        3.2,
+        0.1,
+        1.8
+      ],
+      "material": "Plywood board covered in small white index cards",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A large plywood board covered edge to edge in small white index cards pinned in neat rows, each card with a few lines of tiny illegible pencil marks, some cards yellowed, a single bare pin where a card is missing. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/names-board.jpg"
+    },
+    {
+      "id": "clean-water-tank",
+      "name": "Clean-water tank",
+      "role": "interact",
+      "scenes": [
+        "s3_fortress_lamp",
+        "s3_fortress_bench",
+        "s3_fortress_workshop",
+        "s3_fortress_rite",
+        "s3_fortress_clinic",
+        "s3_fortress_following"
+      ],
+      "size_m": [
+        1.6,
+        1.6,
+        2.0
+      ],
+      "material": "Glass and steel tank of perfectly clear water",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A tall square glass tank in a steel frame filled with perfectly clear still water, filter pipes and a small pump at the base, clean and clinical, cold light. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/clean-water-tank.jpg"
+    },
+    {
+      "id": "folding-cot",
+      "name": "Folding cot",
+      "role": "fill",
+      "scenes": [
+        "s3_fortress_lamp",
+        "s3_fortress_bench",
+        "s3_fortress_workshop",
+        "s3_fortress_rite",
+        "s3_fortress_clinic",
+        "s3_fortress_following",
+        "s3_relief_queue",
+        "s3_relief_standoff",
+        "s3_relief_dawn"
+      ],
+      "size_m": [
+        0.8,
+        1.9,
+        0.5
+      ],
+      "material": "Canvas camp cot on a steel frame, a folded grey blanket",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A plain canvas folding camp cot on a worn steel frame, a folded grey wool blanket at one end, patched canvas. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/folding-cot.jpg"
+    },
+    {
+      "id": "blade-cloth",
+      "name": "Blades on the cloth",
+      "role": "interact",
+      "scenes": [
+        "s3_fortress_lamp",
+        "s3_fortress_bench",
+        "s3_fortress_workshop",
+        "s3_fortress_rite",
+        "s3_fortress_clinic",
+        "s3_fortress_following"
+      ],
+      "size_m": [
+        1.2,
+        0.8,
+        0.08
+      ],
+      "material": "Hollow-channel throwing blades laid on a grey cloth",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A folded grey cloth laid flat with six leaf-shaped hollow-channel throwing blades set out on it in a row, each blade with an open centre channel and a small fill port at the base, dark matte steel, no shine. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/blade-cloth.jpg"
+    },
+    {
+      "id": "freeway-span",
+      "name": "Broken freeway span",
+      "role": "hero",
+      "scenes": [
+        "s3_settlement_day",
+        "s3_settlement_raid",
+        "s3_settlement_haze",
+        "s3_settlement_lost"
+      ],
+      "size_m": [
+        30.0,
+        12.0,
+        9.0
+      ],
+      "material": "Cracked concrete freeway deck on two piers",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A section of collapsed concrete freeway: a cracked deck slab on two square piers, one end broken and sagging to the ground, rebar showing at the break, weathered grey concrete with dust. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/freeway-span.jpg"
+    },
+    {
+      "id": "water-drum",
+      "name": "Water drum",
+      "role": "interact",
+      "scenes": [
+        "s3_settlement_day",
+        "s3_settlement_raid",
+        "s3_settlement_haze",
+        "s3_settlement_lost"
+      ],
+      "size_m": [
+        0.6,
+        0.6,
+        0.9
+      ],
+      "material": "Blue-grey plastic drum with a hand pump",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A dented faded blue-grey plastic water drum with a hand-built pump and spout bolted to the lid, rope handles, scratched. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/water-drum.jpg"
+    },
+    {
+      "id": "generator-cart",
+      "name": "Generator cart",
+      "role": "fill",
+      "scenes": [
+        "s3_settlement_day",
+        "s3_settlement_raid",
+        "s3_settlement_haze",
+        "s3_settlement_lost"
+      ],
+      "size_m": [
+        1.4,
+        0.9,
+        1.2
+      ],
+      "material": "Salvaged generator on a hand cart, cables to tube lights",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A small salvaged petrol generator strapped to a two-wheeled hand cart, coils of cable, a string of bare fluorescent tubes wound around the handle, rust and patched panels. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/generator-cart.jpg"
+    },
+    {
+      "id": "crt-stack",
+      "name": "Stacked monitors",
+      "role": "fill",
+      "scenes": [
+        "s3_settlement_day",
+        "s3_settlement_raid",
+        "s3_settlement_haze",
+        "s3_settlement_lost"
+      ],
+      "size_m": [
+        1.0,
+        0.6,
+        1.5
+      ],
+      "material": "Old CRT monitors stacked on a crate",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. Three old beige and grey CRT monitors stacked on a wooden crate, dark screens, tangled cables, dust. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/crt-stack.jpg"
+    },
+    {
+      "id": "laundry-line",
+      "name": "Laundry line",
+      "role": "fill",
+      "scenes": [
+        "s3_settlement_day",
+        "s3_settlement_raid",
+        "s3_settlement_haze",
+        "s3_settlement_lost"
+      ],
+      "size_m": [
+        6.0,
+        0.4,
+        2.2
+      ],
+      "material": "Two poles and a line of worn clothes",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. Two salvaged steel poles with a rope line between them hung with worn faded shirts and blankets, plain colours. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/laundry-line.jpg"
+    },
+    {
+      "id": "settlement-shelter",
+      "name": "Settlement shelter",
+      "role": "fill",
+      "scenes": [
+        "s3_settlement_day",
+        "s3_settlement_raid",
+        "s3_settlement_haze",
+        "s3_settlement_lost"
+      ],
+      "size_m": [
+        3.0,
+        3.0,
+        2.2
+      ],
+      "material": "Tarp and scrap-panel lean-to",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A small hand-built shelter of corrugated scrap panels and a faded tarp roof lashed to poles, a blanket for a door, sandbags at the base. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/settlement-shelter.jpg"
+    },
+    {
+      "id": "floodlight-truck",
+      "name": "State floodlight truck",
+      "role": "hero",
+      "scenes": [
+        "s3_settlement_day",
+        "s3_settlement_raid",
+        "s3_settlement_haze",
+        "s3_settlement_lost"
+      ],
+      "size_m": [
+        2.6,
+        6.5,
+        4.5
+      ],
+      "material": "Grey armoured truck with a floodlight mast",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A grey armoured six-wheeled government truck with a raised floodlight mast on the roof, blank armour plates, no markings, mud on the wheels. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/floodlight-truck.jpg"
+    },
+    {
+      "id": "ration-dispenser",
+      "name": "Ration dispenser",
+      "role": "interact",
+      "scenes": [
+        "s3_relief_queue",
+        "s3_relief_standoff",
+        "s3_relief_dawn"
+      ],
+      "size_m": [
+        1.2,
+        0.7,
+        2.2
+      ],
+      "material": "Steel dispenser cabinet, a plate stamped RCC",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A tall grey steel ration dispenser cabinet with a slot, a coin-style lever and an empty hopper window, a small riveted metal plate stamped with the three letters RCC, scratched and dented. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering except the three stamped letters RCC on the plate, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/ration-dispenser.jpg"
+    },
+    {
+      "id": "number-board",
+      "name": "Number board",
+      "role": "interact",
+      "scenes": [
+        "s3_relief_queue",
+        "s3_relief_standoff",
+        "s3_relief_dawn"
+      ],
+      "size_m": [
+        1.8,
+        0.1,
+        1.2
+      ],
+      "material": "Hand-painted wooden board of hanging number tiles",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A hand-painted wooden number board for a queue, rows of hooks with small hanging wooden tiles painted with plain numerals, chipped paint, mounted on a plank. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/number-board.jpg"
+    },
+    {
+      "id": "relief-shutter",
+      "name": "Relief shutter",
+      "role": "interact",
+      "scenes": [
+        "s3_relief_queue",
+        "s3_relief_standoff",
+        "s3_relief_dawn"
+      ],
+      "size_m": [
+        6.0,
+        0.4,
+        3.5
+      ],
+      "material": "Corrugated steel roller shutter in a concrete frame",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A wide corrugated steel roller shutter half lowered in a concrete frame, a padlocked bottom rail, dents and old paint. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/relief-shutter.jpg"
+    },
+    {
+      "id": "queue-rail",
+      "name": "Queue rail",
+      "role": "fill",
+      "scenes": [
+        "s3_relief_queue",
+        "s3_relief_standoff",
+        "s3_relief_dawn"
+      ],
+      "size_m": [
+        4.0,
+        0.3,
+        1.0
+      ],
+      "material": "Steel pipe barrier on feet",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A section of steel pipe crowd barrier on flat feet, chipped grey paint, worn smooth where hands hold it. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/queue-rail.jpg"
+    },
+    {
+      "id": "dented-bucket",
+      "name": "Dented bucket",
+      "role": "fill",
+      "scenes": [
+        "s3_relief_queue",
+        "s3_relief_standoff",
+        "s3_relief_dawn"
+      ],
+      "size_m": [
+        0.35,
+        0.35,
+        0.35
+      ],
+      "material": "Dented steel water bucket",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A dented galvanised steel water bucket with a wire handle, dull and scratched. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/dented-bucket.jpg"
+    },
+    {
+      "id": "clinic-table",
+      "name": "The clinic table",
+      "role": "interact",
+      "scenes": [
+        "s3_relief_queue",
+        "s3_relief_standoff",
+        "s3_relief_dawn"
+      ],
+      "size_m": [
+        1.8,
+        0.8,
+        0.9
+      ],
+      "material": "Steel table with a cloth, cards and small vials",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A plain steel folding table with a grey cloth, a tin box of blank index cards, a few small unlabelled glass vials in a rack, a jug of water and folded towels. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/clinic-table.jpg"
+    },
+    {
+      "id": "vent-stack",
+      "name": "Ventilation stack",
+      "role": "hero",
+      "scenes": [
+        "s3_bloom_morning",
+        "s3_bloom_after",
+        "s3_bloom_rooftop"
+      ],
+      "size_m": [
+        3.0,
+        3.0,
+        14.0
+      ],
+      "material": "Industrial ventilation stack with a cowl",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A tall industrial ventilation stack of riveted steel with a hooded cowl, ladder rungs up one side, streaks of pale residue around the vent, rust and grime. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/vent-stack.jpg"
+    },
+    {
+      "id": "dispersal-rig",
+      "name": "Dispersal rig",
+      "role": "interact",
+      "scenes": [
+        "s3_bloom_morning",
+        "s3_bloom_after",
+        "s3_bloom_rooftop"
+      ],
+      "size_m": [
+        1.6,
+        1.2,
+        1.8
+      ],
+      "material": "Steel aerosol rig with tanks, nozzle and a small screen, plate stamped RCC",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A compact wheeled steel aerosol dispersal rig: two pressure tanks, a nozzle arm, hoses, a small dark CRT screen in a housing, a riveted plate stamped with the three letters RCC, rust-ochre residue around the nozzle. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering except the three stamped letters RCC on the plate, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/dispersal-rig.jpg"
+    },
+    {
+      "id": "service-truck",
+      "name": "Sealed service truck",
+      "role": "hero",
+      "scenes": [
+        "s3_bloom_morning",
+        "s3_bloom_after",
+        "s3_bloom_rooftop"
+      ],
+      "size_m": [
+        2.4,
+        6.0,
+        3.0
+      ],
+      "material": "Plain sealed box truck",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A plain grey sealed box truck with no windows in the cargo box, unmarked, a roof vent, dust on the panels. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/service-truck.jpg"
+    },
+    {
+      "id": "market-stall",
+      "name": "Market stall",
+      "role": "fill",
+      "scenes": [
+        "s3_bloom_morning",
+        "s3_bloom_after",
+        "s3_bloom_rooftop"
+      ],
+      "size_m": [
+        2.4,
+        1.6,
+        2.4
+      ],
+      "material": "Wooden stall with a tarp roof and crates",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A small street market stall of wooden boards and a faded tarp roof, empty crates and baskets on the counter, worn. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/market-stall.jpg"
+    },
+    {
+      "id": "camera-drone",
+      "name": "Broadcast drone",
+      "role": "interact",
+      "scenes": [
+        "s3_bloom_morning",
+        "s3_bloom_after",
+        "s3_bloom_rooftop"
+      ],
+      "size_m": [
+        0.8,
+        0.8,
+        0.4
+      ],
+      "material": "Matte grey quadrotor with a broadcast camera",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A matte grey four-rotor broadcast camera drone with a large lens on a gimbal underneath, landing legs folded, no markings. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/camera-drone.jpg"
+    },
+    {
+      "id": "calibration-chair",
+      "name": "Calibration chair",
+      "role": "interact",
+      "scenes": [
+        "s3_gala_annex",
+        "s3_gala_floor",
+        "s3_gala_balcony",
+        "s3_gala_leash",
+        "s3_gala_bond"
+      ],
+      "size_m": [
+        0.9,
+        1.3,
+        1.4
+      ],
+      "material": "Reclined white clinical chair with restraint cuffs open",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A reclined clinical chair in white and pale grey with padded armrests, open soft restraint cuffs, a small monitor arm beside it, spotless. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/calibration-chair.jpg"
+    },
+    {
+      "id": "annex-mirror",
+      "name": "Annex mirror",
+      "role": "interact",
+      "scenes": [
+        "s3_gala_annex",
+        "s3_gala_floor",
+        "s3_gala_balcony",
+        "s3_gala_leash",
+        "s3_gala_bond"
+      ],
+      "size_m": [
+        1.2,
+        0.4,
+        2.2
+      ],
+      "material": "Tall mirror in a pale metal frame",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A tall standing mirror in a plain pale satin-metal frame on a base, the glass very clean. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/annex-mirror.jpg"
+    },
+    {
+      "id": "gala-table",
+      "name": "Gala table",
+      "role": "fill",
+      "scenes": [
+        "s3_gala_annex",
+        "s3_gala_floor",
+        "s3_gala_balcony",
+        "s3_gala_leash",
+        "s3_gala_bond"
+      ],
+      "size_m": [
+        1.8,
+        1.8,
+        0.8
+      ],
+      "material": "Round table with white cloth and glassware",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A round banquet table with a white tablecloth, glass tumblers and a low arrangement of pale flowers, elegant and plain. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/gala-table.jpg"
+    },
+    {
+      "id": "clean-air-column",
+      "name": "Clean-air column",
+      "role": "hero",
+      "scenes": [
+        "s3_gala_annex",
+        "s3_gala_floor",
+        "s3_gala_balcony",
+        "s3_gala_leash",
+        "s3_gala_bond"
+      ],
+      "size_m": [
+        1.4,
+        1.4,
+        6.0
+      ],
+      "material": "Glass column scrubber, a plate stamped RCC",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A tall cylindrical glass air-scrubber column on a steel base, slow pale vapour rising inside it, a small riveted plate at the base stamped with the three letters RCC, polished floor reflection. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering except the three stamped letters RCC on the plate, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/clean-air-column.jpg"
+    },
+    {
+      "id": "balcony-rail",
+      "name": "Balcony rail",
+      "role": "fill",
+      "scenes": [
+        "s3_gala_annex",
+        "s3_gala_floor",
+        "s3_gala_balcony",
+        "s3_gala_leash",
+        "s3_gala_bond"
+      ],
+      "size_m": [
+        8.0,
+        0.3,
+        1.1
+      ],
+      "material": "Glass balustrade with a steel top rail",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A long section of glass balustrade with a brushed steel top rail on steel posts, clean glass. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/balcony-rail.jpg"
+    },
+    {
+      "id": "service-door",
+      "name": "Service door",
+      "role": "interact",
+      "scenes": [
+        "s3_gala_annex",
+        "s3_gala_floor",
+        "s3_gala_balcony",
+        "s3_gala_leash",
+        "s3_gala_bond"
+      ],
+      "size_m": [
+        1.2,
+        0.3,
+        2.3
+      ],
+      "material": "Plain steel swing door with a kick plate",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A plain grey steel service swing door in its frame with a round porthole window and a worn kick plate. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/service-door.jpg"
+    },
+    {
+      "id": "gala-lectern",
+      "name": "Gala lectern",
+      "role": "fill",
+      "scenes": [
+        "s3_gala_annex",
+        "s3_gala_floor",
+        "s3_gala_balcony",
+        "s3_gala_leash",
+        "s3_gala_bond"
+      ],
+      "size_m": [
+        0.9,
+        0.6,
+        1.2
+      ],
+      "material": "Pale lectern with a glass front",
+      "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A slim pale lectern with a frosted glass front panel and a single thin microphone stem. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
+      "model": "gpt_image_2_6",
+      "job_id": null,
+      "image": "assets/objects/gala-lectern.jpg"
+    }
+  ]
+}

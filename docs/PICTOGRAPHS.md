@@ -306,3 +306,33 @@ Rebuild with `python tools/pictographs/build.py`; each game's drawing code is in
 ### Aftermath (1D): Manga screentone, evidence tents
 
 ![Aftermath](../games/dr-tox-rise/pictographs/aftermath.svg)
+
+## Dr. Tox: Fall
+
+### Crowd thread (2D): Underground comix crosshatch
+
+![Crowd thread](../games/dr-tox-fall/pictographs/crowd-thread.svg)
+
+### Reflection run (2D): Silkscreen pop-art repeats
+
+![Reflection run](../games/dr-tox-fall/pictographs/reflection-run.svg)
+
+### Triage (1D): Alcohol-marker sketch cards
+
+![Triage](../games/dr-tox-fall/pictographs/triage.svg)
+
+### The Manifold (1D): Mail-order comic advert
+
+![The Manifold](../games/dr-tox-fall/pictographs/manifold.svg)
+
+### Persona (1D): 1950s romance comic
+
+![Persona](../games/dr-tox-fall/pictographs/persona.svg)
+
+### Bloom (1D): Four-colour Ben-Day newsprint
+
+![Bloom](../games/dr-tox-fall/pictographs/bloom.svg)
+
+### Composite (1D): Identikit acetate overlays
+
+![Composite](../games/dr-tox-fall/pictographs/composite.svg)

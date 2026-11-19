@@ -1,0 +1,781 @@
+{
+ "game": "dr-tox-fall",
+ "location": "spire-gala",
+ "name": "The Spire gala",
+ "reference": "assets/locations/spire-gala.jpg",
+ "bounds_m": [
+  80,
+  50,
+  24
+ ],
+ "origin": "centre of the gala floor; +y toward the glass balcony over the city; the calibration annex behind frosted glass at the west end (-x); the service corridor door at the east end (+x)",
+ "materials": {
+  "floor-pale": {
+   "color": [
+    0.82,
+    0.8,
+    0.76
+   ],
+   "roughness": 0.3
+  },
+  "glass": {
+   "color": [
+    0.75,
+    0.82,
+    0.84
+   ],
+   "roughness": 0.05
+  },
+  "frosted": {
+   "color": [
+    0.88,
+    0.9,
+    0.9
+   ],
+   "roughness": 0.6
+  },
+  "steel": {
+   "color": [
+    0.55,
+    0.57,
+    0.58
+   ],
+   "roughness": 0.4,
+   "metallic": 0.7
+  },
+  "white": {
+   "color": [
+    0.92,
+    0.93,
+    0.92
+   ],
+   "roughness": 0.5
+  },
+  "city": {
+   "color": [
+    0.36,
+    0.45,
+    0.47
+   ],
+   "roughness": 1.0,
+   "emission": 0.4
+  }
+ },
+ "blockout": [
+  {
+   "id": "floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    80,
+    50,
+    0.3
+   ],
+   "location": [
+    0,
+    0,
+    -0.15
+   ],
+   "material": "floor-pale"
+  },
+  {
+   "id": "glass-north",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    80,
+    0.2,
+    24
+   ],
+   "location": [
+    0,
+    19.0,
+    12.0
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "balcony",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    40,
+    6,
+    0.3
+   ],
+   "location": [
+    0,
+    22.0,
+    -0.15
+   ],
+   "material": "floor-pale"
+  },
+  {
+   "id": "glass-south",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    80,
+    0.2,
+    24
+   ],
+   "location": [
+    0,
+    -25.0,
+    12.0
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "wall-west",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    50,
+    24
+   ],
+   "location": [
+    -40.0,
+    0,
+    12.0
+   ],
+   "material": "white"
+  },
+  {
+   "id": "wall-east",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    50,
+    24
+   ],
+   "location": [
+    40.0,
+    0,
+    12.0
+   ],
+   "material": "white"
+  },
+  {
+   "id": "ceiling",
+   "shape": "box",
+   "role": "ceiling",
+   "size_m": [
+    80,
+    50,
+    0.3
+   ],
+   "location": [
+    0,
+    0,
+    24
+   ],
+   "material": "white"
+  },
+  {
+   "id": "annex-glass",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.2,
+    14,
+    4
+   ],
+   "location": [
+    -30,
+    -8,
+    2
+   ],
+   "material": "frosted"
+  },
+  {
+   "id": "annex-floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    10,
+    14,
+    0.1
+   ],
+   "location": [
+    -35,
+    -8,
+    0.05
+   ],
+   "material": "white"
+  },
+  {
+   "id": "dais",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    10,
+    5,
+    0.6
+   ],
+   "location": [
+    0,
+    10,
+    0.3
+   ],
+   "material": "white"
+  },
+  {
+   "id": "city-below",
+   "shape": "box",
+   "role": "sky",
+   "size_m": [
+    320,
+    1,
+    80
+   ],
+   "location": [
+    0,
+    225.0,
+    -30
+   ],
+   "material": "city"
+  }
+ ],
+ "props": [
+  {
+   "id": "chair",
+   "object": "calibration-chair",
+   "location": [
+    -36,
+    -10,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "mirror",
+   "object": "annex-mirror",
+   "location": [
+    -38.5,
+    -3,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    -90
+   ]
+  },
+  {
+   "id": "table-1",
+   "object": "gala-table",
+   "location": [
+    -12,
+    -6,
+    0
+   ]
+  },
+  {
+   "id": "table-2",
+   "object": "gala-table",
+   "location": [
+    -4,
+    -10,
+    0
+   ]
+  },
+  {
+   "id": "table-3",
+   "object": "gala-table",
+   "location": [
+    4,
+    -6,
+    0
+   ]
+  },
+  {
+   "id": "table-4",
+   "object": "gala-table",
+   "location": [
+    12,
+    -10,
+    0
+   ]
+  },
+  {
+   "id": "table-5",
+   "object": "gala-table",
+   "location": [
+    -8,
+    2,
+    0
+   ]
+  },
+  {
+   "id": "table-6",
+   "object": "gala-table",
+   "location": [
+    8,
+    2,
+    0
+   ]
+  },
+  {
+   "id": "column-1",
+   "object": "clean-air-column",
+   "location": [
+    -20,
+    8,
+    0
+   ]
+  },
+  {
+   "id": "column-2",
+   "object": "clean-air-column",
+   "location": [
+    20,
+    8,
+    0
+   ]
+  },
+  {
+   "id": "rail",
+   "object": "balcony-rail",
+   "location": [
+    0,
+    24.6,
+    0
+   ]
+  },
+  {
+   "id": "service",
+   "object": "service-door",
+   "location": [
+    39.6,
+    -12,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "lectern",
+   "object": "gala-lectern",
+   "location": [
+    0,
+    10,
+    0.6
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_gala_annex": {
+   "note": "Chapter 6: 2232. The calibration annex: Cally in the chair; the mirror; a handler's voice; Aegis's file on the monitor; seventy-two hours.",
+   "world": {
+    "color": [
+     0.85,
+     0.82,
+     0.76
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "annex-warm",
+     "type": "AREA",
+     "location": [
+      -35,
+      -8,
+      3.9
+     ],
+     "look_at": [
+      -35,
+      -8,
+      0
+     ],
+     "energy": 600,
+     "size": 6,
+     "color": [
+      1.0,
+      0.9,
+      0.78
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -33,
+     -6,
+     1.6
+    ],
+    "look_at": [
+     -38.5,
+     -3,
+     1.4
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -33,
+     -6,
+     0
+    ],
+    "facing_deg": 240
+   },
+   "hide": [
+    "table-1",
+    "table-2",
+    "table-3",
+    "table-4",
+    "table-5",
+    "table-6"
+   ],
+   "interactions": [
+    {
+     "prop": "mirror",
+     "verb": "Look"
+    },
+    {
+     "prop": "chair",
+     "verb": "Open the file",
+     "leads_to": "s1_persona_1"
+    }
+   ]
+  },
+  "s3_gala_floor": {
+   "note": "Chapter 10: 2236. The gala in clean air; Aegis honoured at the lectern for the Bloom containment; Cally in the crowd, her handler's cue.",
+   "world": {
+    "color": [
+     0.5,
+     0.45,
+     0.38
+    ],
+    "strength": 0.7
+   },
+   "lights": [
+    {
+     "name": "amber-wash",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      22
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 20000,
+     "size": 40,
+     "color": [
+      1.0,
+      0.82,
+      0.55
+     ]
+    },
+    {
+     "name": "glass-evening",
+     "type": "SUN",
+     "location": [
+      -60,
+      120,
+      60
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 1.5,
+     "size": 1,
+     "color": [
+      0.6,
+      0.7,
+      0.75
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -14,
+     -14,
+     1.65
+    ],
+    "look_at": [
+     0,
+     10,
+     2.0
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -14,
+     -14,
+     0
+    ],
+    "facing_deg": 35
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "lectern",
+     "verb": "Watch him"
+    },
+    {
+     "prop": "table-3",
+     "verb": "Sit across from him",
+     "leads_to": "s1_persona_2"
+    }
+   ]
+  },
+  "s3_gala_balcony": {
+   "note": "Chapter 11: the balcony. The director at the rail; Aegis's wall between him and Dr. Tox; Cally at Reese's wrist; the plate on the clean-air column; one word.",
+   "world": {
+    "color": [
+     0.3,
+     0.33,
+     0.35
+    ],
+    "strength": 0.5
+   },
+   "lights": [
+    {
+     "name": "amber-wash",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      22
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 20000,
+     "size": 40,
+     "color": [
+      1.0,
+      0.82,
+      0.55
+     ]
+    },
+    {
+     "name": "city-cold",
+     "type": "AREA",
+     "location": [
+      0,
+      40,
+      10
+     ],
+     "look_at": [
+      0,
+      22,
+      1
+     ],
+     "energy": 3000,
+     "size": 20,
+     "color": [
+      0.55,
+      0.68,
+      0.7
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     16,
+     1.9
+    ],
+    "look_at": [
+     0,
+     24,
+     1.6
+    ],
+    "lens_mm": 35,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     16,
+     0
+    ],
+    "facing_deg": 0
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "column-2",
+     "verb": "Read the plate"
+    },
+    {
+     "prop": "rail",
+     "verb": "Hold the wall"
+    },
+    {
+     "prop": "rail",
+     "verb": "Say the word"
+    }
+   ]
+  },
+  "s3_gala_leash": {
+   "note": "Ending, First Word: security opens fire; the wall turns to cover him and the kitchen staff; the leash fires; the wall goes out; Dr. Tox over the rail.",
+   "world": {
+    "color": [
+     0.3,
+     0.33,
+     0.35
+    ],
+    "strength": 0.4
+   },
+   "lights": [
+    {
+     "name": "amber-wash",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      22
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 20000,
+     "size": 40,
+     "color": [
+      1.0,
+      0.82,
+      0.55
+     ]
+    },
+    {
+     "name": "muzzle",
+     "type": "POINT",
+     "location": [
+      14,
+      14,
+      1.5
+     ],
+     "look_at": [
+      0,
+      22,
+      1.5
+     ],
+     "energy": 400,
+     "size": 0.1,
+     "color": [
+      0.91,
+      0.93,
+      0.92
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -4,
+     18,
+     1.9
+    ],
+    "look_at": [
+     0,
+     24,
+     1.6
+    ],
+    "lens_mm": 28,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     -4,
+     18,
+     0
+    ],
+    "facing_deg": 30
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "rail",
+     "verb": "Hold it"
+    }
+   ]
+  },
+  "s3_gala_bond": {
+   "note": "Ending, Bond Held: her hand at his wrist; he holds the wall until the doctor goes over the rail, then follows her in off the balcony past the plate.",
+   "world": {
+    "color": [
+     0.5,
+     0.45,
+     0.38
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "amber-wash",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      22
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 20000,
+     "size": 40,
+     "color": [
+      1.0,
+      0.82,
+      0.55
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     6,
+     20,
+     1.8
+    ],
+    "look_at": [
+     -6,
+     10,
+     1.6
+    ],
+    "lens_mm": 50,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     6,
+     20,
+     0
+    ],
+    "facing_deg": 200
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "column-2",
+     "verb": "Do not look"
+    }
+   ]
+  }
+ }
+}

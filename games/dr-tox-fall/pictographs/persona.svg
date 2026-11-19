@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="persona-t persona-d">
+<title id="persona-t">Persona: 1950s romance comic</title>
+<desc id="persona-d">Persona (1D): a page from a 1950s romance comic in pastel flats with no dot screen. In a heart-shaped panel at the top a profile of a young man's face, his attachment signature written beside it in thought balloons: a painted sky, a string, four children, warm amber light. Below, a hand of romance-comic cards Cally plays to fit it, each a gesture or a line; a match meter fills toward 94.6. One card at the end of the hand was dealt by the deck itself, a dropped blade, and it does not fit.</desc>
+<rect x="0" y="0" width="1200" height="800" fill="#fbf1e6"/>
+<path d="M600,373 C362,203 481,33 600,152 C719,33 838,203 600,373Z" fill="#F6C9D3" stroke="#3B2A4A" stroke-width="6"/>
+<path d="M560,160 C600,120 660,130 680,170 C690,200 680,230 668,250 L676,268 L660,274 C650,300 620,310 590,300 C566,290 552,260 552,230 C540,214 546,186 560,160Z" fill="#F2D3B8" stroke="#3B2A4A" stroke-width="4"/>
+<path d="M556,170 C580,120 650,110 684,160 C660,150 610,150 576,190Z" fill="#6b4b3a"/>
+<path d="M820,300 C826,316 832,324 826,334 C818,340 810,332 814,318Z" fill="#7FA9D6" stroke="#3B2A4A" stroke-width="2"/>
+<ellipse cx="250" cy="120" rx="130" ry="46" fill="#ffffff" stroke="#3B2A4A" stroke-width="3"/>
+<circle cx="320" cy="166" r="10" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<circle cx="350" cy="184" r="6" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<text x="155" y="129" font-size="26" font-family="serif" fill="#3B2A4A" font-style="italic">a painted sky</text>
+<ellipse cx="250" cy="250" rx="130" ry="46" fill="#ffffff" stroke="#3B2A4A" stroke-width="3"/>
+<circle cx="320" cy="296" r="10" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<circle cx="350" cy="314" r="6" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<text x="155" y="259" font-size="26" font-family="serif" fill="#3B2A4A" font-style="italic">a string</text>
+<ellipse cx="900" cy="120" rx="130" ry="46" fill="#ffffff" stroke="#3B2A4A" stroke-width="3"/>
+<circle cx="830" cy="166" r="10" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<circle cx="800" cy="184" r="6" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<text x="805" y="129" font-size="26" font-family="serif" fill="#3B2A4A" font-style="italic">four of them</text>
+<ellipse cx="930" cy="240" rx="130" ry="46" fill="#ffffff" stroke="#3B2A4A" stroke-width="3"/>
+<circle cx="860" cy="286" r="10" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<circle cx="830" cy="304" r="6" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<text x="835" y="249" font-size="26" font-family="serif" fill="#3B2A4A" font-style="italic">amber light</text>
+<g transform="rotate(-7.5 150 600)">
+<rect x="70" y="470" width="160" height="230" fill="#BFE3E0" stroke="#3B2A4A" stroke-width="4" rx="10"/>
+<path d="M150,563.4 C113.6,537.4 131.8,511.4 150,529.6 C168.2,511.4 186.4,537.4 150,563.4Z" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<text x="84" y="610" font-size="22" font-family="serif" fill="#3B2A4A">Laugh at</text>
+<text x="84" y="638" font-size="22" font-family="serif" fill="#3B2A4A">his joke</text>
+</g>
+<g transform="rotate(-4.5 330 600)">
+<rect x="250" y="470" width="160" height="230" fill="#C9DDF2" stroke="#3B2A4A" stroke-width="4" rx="10"/>
+<path d="M330,563.4 C293.6,537.4 311.8,511.4 330,529.6 C348.2,511.4 366.4,537.4 330,563.4Z" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<text x="264" y="610" font-size="22" font-family="serif" fill="#3B2A4A">Sky-blue scarf</text>
+</g>
+<g transform="rotate(-1.5 510 600)">
+<rect x="430" y="470" width="160" height="230" fill="#F6E1A8" stroke="#3B2A4A" stroke-width="4" rx="10"/>
+<path d="M510,563.4 C473.6,537.4 491.8,511.4 510,529.6 C528.2,511.4 546.4,537.4 510,563.4Z" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<text x="444" y="610" font-size="22" font-family="serif" fill="#3B2A4A">Hum four</text>
+<text x="444" y="638" font-size="22" font-family="serif" fill="#3B2A4A">notes</text>
+</g>
+<g transform="rotate(1.5 690 600)">
+<rect x="610" y="470" width="160" height="230" fill="#E9D3F0" stroke="#3B2A4A" stroke-width="4" rx="10"/>
+<path d="M690,563.4 C653.6,537.4 671.8,511.4 690,529.6 C708.2,511.4 726.4,537.4 690,563.4Z" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<text x="624" y="610" font-size="22" font-family="serif" fill="#3B2A4A">Loop of</text>
+<text x="624" y="638" font-size="22" font-family="serif" fill="#3B2A4A">string</text>
+</g>
+<g transform="rotate(4.5 870 600)">
+<rect x="790" y="470" width="160" height="230" fill="#F6C9D3" stroke="#3B2A4A" stroke-width="4" rx="10"/>
+<path d="M870,563.4 C833.6,537.4 851.8,511.4 870,529.6 C888.2,511.4 906.4,537.4 870,563.4Z" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<text x="804" y="610" font-size="22" font-family="serif" fill="#3B2A4A">Take his</text>
+<text x="804" y="638" font-size="22" font-family="serif" fill="#3B2A4A">hand</text>
+</g>
+<g transform="rotate(7.5 1050 600)">
+<rect x="970" y="470" width="160" height="230" fill="#d9d9d9" stroke="#3B2A4A" stroke-width="4" rx="10"/>
+<path d="M1050,563.4 C1013.6,537.4 1031.8,511.4 1050,529.6 C1068.2,511.4 1086.4,537.4 1050,563.4Z" fill="#ffffff" stroke="#3B2A4A" stroke-width="2"/>
+<text x="984" y="610" font-size="22" font-family="serif" fill="#3B2A4A">Drop the</text>
+<text x="984" y="638" font-size="22" font-family="serif" fill="#3B2A4A">blade</text>
+<line x1="990" y1="490" x2="1110" y2="680" stroke="#3B2A4A" stroke-width="3"/>
+<text x="988" y="690" font-size="16" font-family="serif" fill="#3B2A4A" font-style="italic">dealt itself</text>
+</g>
+<rect x="160" y="740" width="880" height="30" fill="#ffffff" stroke="#3B2A4A" stroke-width="3" rx="15"/>
+<rect x="164" y="744" width="767.4" height="22" fill="#E07A9A" rx="11"/>
+<line x1="992.5" y1="730" x2="992.5" y2="780" stroke="#3B2A4A" stroke-width="4"/>
+<text x="962.5" y="724" font-size="22" font-family="serif" fill="#3B2A4A" font-weight="bold">94.6</text>
+</svg>

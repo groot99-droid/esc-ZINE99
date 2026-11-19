@@ -6,8 +6,8 @@ idea, the "Shared ideas" section says how each must handle it.
 
 Slugs are the folder names under `games/`. Dr. Tox is episodic (`docs/PILLARS.md` section 1): each
 of its four episodes has its own slug, and no two episodes share a 2D mode or 1D game type. Its
-scope, accepted by the author on 2026-11-19, is `dr-tox/SCOPE.md`. `games/dr-tox-rise/` exists (Episode 1,
-stage A); the other three folders do not exist yet.
+scope, accepted by the author on 2026-11-19, is `dr-tox/SCOPE.md`. `games/dr-tox-rise/` exists (Episode 1)
+and `games/dr-tox-fall/` exists (Episode 2, stage A); the other two folders do not exist yet.
 
 ## 1. Each game at a glance
 
@@ -60,16 +60,14 @@ maritime peace and order kept by an East India–style company. WrymWretch uses 
 | The Endless Temple | **Living illustration**: ride sand waves across the book's own drawn page with momentum | **The stacks**: side-on through shelves that do not end, toward a book that is calling |
 | The Lord of the Sea | **Engraved sea**: storms and chases side-on, in the style of an engraved chart come alive | **The deep**: side-on dives where Alexi moves as he cannot on land |
 | Dr. Tox: Rise | **Panel run**: Alexander's break-ins across a comic page; gutters skip time, the player picks the next panel | **Barrier escort**: Aegis draws hard-light walls to bring a transport through the lower ring, and sees whom they pen in |
+| Dr. Tox: Fall | **Crowd thread**: through a relief-hall queue and a gala crowd, breath radius kept off people; the shroud shrinks it | **Reflection run**: Cally and her mirrored reflection through the Spire's glass halls; sometimes the reflection refuses |
 
 **Dr. Tox, reserved.** Its eight modes, all side-scrolling, are reserved for it here and no other
 game may take them. Each episode's two rows join the table above in that episode's build phase, when
 its folder and its rows in `docs/graphic_styles.json` exist (`tools/pictographs/build.py` requires a
-style for every row in the table). Rise's two (`dr-tox-rise`) joined it on 2026-11-19; the other
-three episodes' are reserved below.
+style for every row in the table). Rise's two (`dr-tox-rise`) and Fall's two (`dr-tox-fall`) joined
+it on 2026-11-19; the other two episodes' are reserved below.
 
-- *Fall* (`dr-tox-fall`): **Crowd thread**: through a relief-hall queue, breath radius kept off
-  people; the shroud shrinks it. **Reflection run**: Cally and her mirrored reflection through glass
-  halls; sometimes the reflection refuses.
 - *Finale* (`dr-tox-finale`): **The airway**: the arcology's ducts on the airflow; the page inks
   itself as he passes. **Procession**: against the cult's march, to its front.
 - *Altrulan* (`dr-tox-altrulan`): **Root-way**: along vines between towers that swell on the city's
@@ -133,8 +131,13 @@ game), the column on the right says what makes each one different.
 | Dr. Tox: Rise | The Window | Timetable | A break-in window in guard rotations; the slack found is the Pulse he starts with |
 | Dr. Tox: Rise | Fiche | Indexed retrieval on microfiche | The 999, found by number and by the one detail kept of each child |
 | Dr. Tox: Rise | Aftermath | Reconstruction | Order the traces of what the body did; Rise only |
+| Dr. Tox: Fall | Triage | Sorting patients under scarcity | Named patients with wants, more need than cots; marks of tincture past the need settle a card and make a follower |
+| Dr. Tox: Fall | The Manifold | Flow routing | The shunt's flow routed through the gauntlet's valves to four barrels; a fifth outlet for the followers' resin, routed or capped |
+| Dr. Tox: Fall | Persona | Deck-building to an attachment profile | Cally builds a person to fit Aegis's attachment signature; the deck deals itself cards that do not fit |
+| Dr. Tox: Fall | Bloom | Spread containment on a grid | Rostova's spores on the wind across a district; cordons and crews; the settlement's edge |
+| Dr. Tox: Fall | Composite | Reconstruction from testimony (identikit) | The form the Toxin State took, built strip by strip from what witnesses saw; Fall only, not a trace ordering (Rise's Aftermath) |
 
-**Dr. Tox, reserved.** Its seventeen 1D games are reserved for it here, each in a family new to the
+**Dr. Tox, reserved.** Its 1D games are reserved for it here, each in a family new to the
 collection, and join the table above in their episode's build phase, as its 2D modes do. Every page
 is a medical instrument turned. The pin board with red string stays bunker set dressing (it is
 Peephole's Mosaic), and no page reads his own body or rations food (Man Eater's Chart and Tray).
@@ -143,9 +146,11 @@ Peephole's Mosaic), and no page reads his own body or rations food (Man Eater's 
   the table above on 2026-11-19. **Aftermath** (reconstruction) belongs to Rise only (the author's
   ruling, 2026-11-19): Fall and Finale will each get a different reconstruction-style page later, each
   its own 1D game type, so no two episodes share one.
-- *Fall*: **Triage**: sorting patients under scarcity. **The Manifold**: flow routing through the
-  gauntlet's valves. **Persona** (Cally): deck-building to a target's attachment profile. **Bloom**
-  (Rostova): spread containment on a grid.
+- *Fall*: its five, **Triage**, **The Manifold**, **Persona** (Cally), **Bloom** (Rostova) and
+  **Composite**, joined the table above on 2026-11-19. **Composite** is Fall's reconstruction page:
+  not traces ordered in time (Aftermath) but a form assembled from what witnesses say they saw, a
+  type new to the collection (proposed in `games/dr-tox-fall/DESIGN.md`; the author approves or
+  strikes it). Finale's reconstruction page is still to come.
 - *Finale*: **The Creed** (dominoes): his own past lines chain into doctrine. **Two Pans**
   (balance): the ratio of the final dose. **Switchboard**: patching life-support circuits.
   **Panes** (Aegis): tangram tiling of a breach.
@@ -300,3 +305,10 @@ section 15); the style is how that palette is drawn on that one page. Generated 
 | Dr. Tox: Rise | 1D | The Window | **Fumetti photo-comic** | Posed photo panels with typed captions and a guard rota in the margin | [window](../games/dr-tox-rise/pictographs/window.svg) |
 | Dr. Tox: Rise | 1D | Fiche | **Scratchboard** | White lines cut from a black ground, frames of an index card grid | [fiche](../games/dr-tox-rise/pictographs/fiche.svg) |
 | Dr. Tox: Rise | 1D | Aftermath | **Manga screentone, evidence tents** | Dot-tone grey fields, numbered evidence tents beside each trace | [aftermath](../games/dr-tox-rise/pictographs/aftermath.svg) |
+| Dr. Tox: Fall | 2D | Crowd thread | **Underground comix crosshatch** | Dense pen crosshatching on cheap paper, lumpy figures packed shoulder to shoulder, his breath radius a ring of bare white | [crowd-thread](../games/dr-tox-fall/pictographs/crowd-thread.svg) |
+| Dr. Tox: Fall | 2D | Reflection run | **Silkscreen pop-art repeats** | Flat screen-printed colour blocks, the same figure repeated in off-register frames, one repeat that does not match | [reflection-run](../games/dr-tox-fall/pictographs/reflection-run.svg) |
+| Dr. Tox: Fall | 1D | Triage | **Alcohol-marker sketch cards** | Streaky layered marker tones on white card stock, quick ink faces, a name and a want in the corner | [triage](../games/dr-tox-fall/pictographs/triage.svg) |
+| Dr. Tox: Fall | 1D | The Manifold | **Mail-order comic advert** | A back-page coupon advert: numbered callouts, exclamation headlines, a dashed clip-out border around the device | [manifold](../games/dr-tox-fall/pictographs/manifold.svg) |
+| Dr. Tox: Fall | 1D | Persona | **1950s romance comic** | Pastel flats, a tear on a lash, thought balloons and a heart-shaped panel; no dot screen | [persona](../games/dr-tox-fall/pictographs/persona.svg) |
+| Dr. Tox: Fall | 1D | Bloom | **Four-colour Ben-Day newsprint** | Cyan, magenta, yellow and black dot screens on yellowed newsprint with a heavy keyline, the spread printed in rust dots | [bloom](../games/dr-tox-fall/pictographs/bloom.svg) |
+| Dr. Tox: Fall | 1D | Composite | **Identikit acetate overlays** | Line-drawn feature strips on stacked clear acetate, grease-pencil witness numbers, one strip that does not fit | [composite](../games/dr-tox-fall/pictographs/composite.svg) |

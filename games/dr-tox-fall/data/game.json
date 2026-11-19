@@ -1,0 +1,167 @@
+{
+  "slug": "dr-tox-fall",
+  "title": "Dr. Tox: Fall",
+  "series": "Dr. Tox: Age of Glass & Greed, episode 2 of 4 (dr-tox-rise, dr-tox-fall, dr-tox-finale, dr-tox-altrulan)",
+  "sources": [
+    "dr-tox/source/Dr_Tox_Compiled_Bible_Obsidian.md (not in the vault; cited by part and section)"
+  ],
+  "target_minutes": {
+    "min": 150,
+    "max": 180
+  },
+  "players": {
+    "min": 1,
+    "max": 1
+  },
+  "core_verb": "Dose",
+  "structure": "Three leads on one clock, 2228 to 2236, under dated captions: Dr. Tox (seven chapters), Reese as Aegis (two), and Cally at Cycle 41 (two). The threads cross twice, in the relief hall and at the Spire gala. Fall starts from the bible's fixed point (the fortress claimed) whatever Rise's ending; Rise's last flags are read as scars, and Fall's carry into the Finale the same way.",
+  "carry_in": [
+    "self",
+    "amber",
+    "observers_choice",
+    "took_spec_sheet",
+    "security_knows_face",
+    "reese.word",
+    "reese.said_rcc",
+    "reese.flinches",
+    "barrier.released",
+    "fiche.names_read",
+    "reese.bond_cally",
+    "reese.bond_carmy",
+    "reese.bond_rolan",
+    "cradle.figures_made"
+  ],
+  "carry_over": [
+    "self",
+    "amber",
+    "following",
+    "cult.icon",
+    "manifold.resin_line",
+    "bloom.settlement_lost",
+    "toxin_events",
+    "observers_choice",
+    "rostova.plate_read",
+    "reese.said_rcc",
+    "reese.gala_word",
+    "reese.flinches",
+    "cally.bond_aegis",
+    "cally.crack",
+    "cally.said_rcc"
+  ],
+  "chapters": [
+    {
+      "id": "c1_knock",
+      "title": "The Knock",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Dr. Tox, 2228, months after the claim"
+    },
+    {
+      "id": "c2_relief",
+      "title": "Relief",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ],
+      "lead": "Dr. Tox, 2229"
+    },
+    {
+      "id": "c3_containment",
+      "title": "Containment",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Reese (Aegis), 2229"
+    },
+    {
+      "id": "c4_gauntlet",
+      "title": "The Gauntlet",
+      "minutes": 12,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Dr. Tox, 2230"
+    },
+    {
+      "id": "c5_freeway",
+      "title": "Under the Freeway",
+      "minutes": 18,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Dr. Tox, 2231"
+    },
+    {
+      "id": "c6_calibration",
+      "title": "Seventy-Two Hours",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "1d",
+        "2d"
+      ],
+      "lead": "Cally (Cycle 41), 2232"
+    },
+    {
+      "id": "c7_hero",
+      "title": "The Hero Comes Down",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Reese (Aegis), 2233"
+    },
+    {
+      "id": "c8_bloom",
+      "title": "Bloom",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Dr. Tox, 2234"
+    },
+    {
+      "id": "c9_resin",
+      "title": "Resin",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Dr. Tox, 2235"
+    },
+    {
+      "id": "c10_gala",
+      "title": "The Gala",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "1d",
+        "2d"
+      ],
+      "lead": "Cally, 2236"
+    },
+    {
+      "id": "c11_clean_air",
+      "title": "Clean Air",
+      "minutes": 14,
+      "layers": [
+        "2d",
+        "1d",
+        "3d"
+      ],
+      "lead": "Dr. Tox, then Reese, 2236"
+    }
+  ]
+}

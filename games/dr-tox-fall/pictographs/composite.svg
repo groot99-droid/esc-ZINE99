@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="composite-t composite-d">
+<title id="composite-t">Composite: Identikit acetate overlays</title>
+<desc id="composite-d">Composite (1D): a witness-room identikit, line-drawn feature strips on clear acetate sheets stacked over a pale form. Each strip is a region of the body (head and jaw, shoulders, arms, back, gait) and carries the grease-pencil numbers of the witnesses who saw it. The stack shows the constants the bible fixes (black veins, green eyes, a jaw past the skull) and one strip, a pair of wings with a halo, offered by a witness who saw a god, sits askew and does not fit. Witness cards run along the bottom; nothing shows the act, only the shape.</desc>
+<rect x="0" y="0" width="1200" height="800" fill="#d9dcd6"/>
+<rect x="330" y="40" width="540" height="600" fill="#f5f7f2" stroke="#777" stroke-width="3" rx="8"/>
+<path d="M600,120 C640,120 660,150 656,180 L700,200 C780,230 820,260 830,300 L850,420 L820,430 L790,330 L760,330 L760,600 L700,600 L680,440 L620,440 L600,600 L540,600 L540,330 L500,330 L470,430 L440,420 L460,300 C470,260 520,230 600,200 L544,180 C540,150 560,120 600,120Z" fill="#e9ecea" stroke="#9aa" stroke-width="2"/>
+<rect x="350" y="110" width="500" height="140" fill="#ffffff" opacity="0.3" stroke="#6a8" stroke-width="2"/>
+<text x="360" y="134" font-size="18" font-family="sans-serif" fill="#335">head / jaw</text>
+<text x="780" y="134" font-size="22" font-family="sans-serif" fill="#b03030" font-weight="bold">1 2 4</text>
+<rect x="350" y="250" width="500" height="120" fill="#ffffff" opacity="0.3" stroke="#6a8" stroke-width="2"/>
+<text x="360" y="274" font-size="18" font-family="sans-serif" fill="#335">shoulders / plate</text>
+<text x="780" y="274" font-size="22" font-family="sans-serif" fill="#b03030" font-weight="bold">1 2 3 5</text>
+<rect x="350" y="370" width="500" height="130" fill="#ffffff" opacity="0.3" stroke="#6a8" stroke-width="2"/>
+<text x="360" y="394" font-size="18" font-family="sans-serif" fill="#335">arms</text>
+<text x="780" y="394" font-size="22" font-family="sans-serif" fill="#b03030" font-weight="bold">2 5</text>
+<rect x="350" y="500" width="500" height="110" fill="#ffffff" opacity="0.3" stroke="#6a8" stroke-width="2"/>
+<text x="360" y="524" font-size="18" font-family="sans-serif" fill="#335">gait</text>
+<text x="780" y="524" font-size="22" font-family="sans-serif" fill="#b03030" font-weight="bold">3 4 5</text>
+<circle cx="586" cy="160" r="6" fill="#7FD957"/>
+<circle cx="616" cy="160" r="6" fill="#7FD957"/>
+<path d="M570,190 L600,214 L632,190" fill="none" stroke="#141414" stroke-width="4"/>
+<path d="M520,260 C530,300 510,340 524,380" fill="none" stroke="#1A0B0C" stroke-width="3"/>
+<path d="M552,260 C562,300 542,340 556,380" fill="none" stroke="#1A0B0C" stroke-width="3"/>
+<path d="M584,260 C594,300 574,340 588,380" fill="none" stroke="#1A0B0C" stroke-width="3"/>
+<path d="M616,260 C626,300 606,340 620,380" fill="none" stroke="#1A0B0C" stroke-width="3"/>
+<path d="M648,260 C658,300 638,340 652,380" fill="none" stroke="#1A0B0C" stroke-width="3"/>
+<path d="M680,260 C690,300 670,340 684,380" fill="none" stroke="#1A0B0C" stroke-width="3"/>
+<polygon points="480,262 520,256 530,286 488,292" fill="#2a2a2a" stroke="#141414" stroke-width="2" opacity="0.8"/>
+<polygon points="530,262 570,256 580,286 538,292" fill="#2a2a2a" stroke="#141414" stroke-width="2" opacity="0.8"/>
+<polygon points="580,262 620,256 630,286 588,292" fill="#2a2a2a" stroke="#141414" stroke-width="2" opacity="0.8"/>
+<polygon points="630,262 670,256 680,286 638,292" fill="#2a2a2a" stroke="#141414" stroke-width="2" opacity="0.8"/>
+<polygon points="680,262 720,256 730,286 688,292" fill="#2a2a2a" stroke="#141414" stroke-width="2" opacity="0.8"/>
+<polygon points="730,262 770,256 780,286 738,292" fill="#2a2a2a" stroke="#141414" stroke-width="2" opacity="0.8"/>
+<polygon points="780,262 820,256 830,286 788,292" fill="#2a2a2a" stroke="#141414" stroke-width="2" opacity="0.8"/>
+<g transform="rotate(-9 960 260)">
+<rect x="880" y="150" width="280" height="180" fill="#fffbe6" opacity="0.6" stroke="#F2C14E" stroke-width="3"/>
+<ellipse cx="1020" cy="190" rx="60" ry="14" fill="none" stroke="#F2C14E" stroke-width="5"/>
+<path d="M1020,250 C960,200 910,220 900,300 C950,270 990,280 1020,260 C1050,280 1090,270 1140,300 C1130,220 1080,200 1020,250Z" fill="none" stroke="#F2C14E" stroke-width="4"/>
+<text x="900" y="320" font-size="30" font-family="sans-serif" fill="#b03030" font-weight="bold">6</text>
+</g>
+<rect x="40" y="670" width="170" height="100" fill="#fbfbf6" stroke="#777" stroke-width="2" rx="4"/>
+<text x="52" y="704" font-size="24" font-family="sans-serif" fill="#141414" font-weight="bold">1  Mercy</text>
+<text x="52" y="740" font-size="16" font-family="sans-serif" fill="#444">saw from the drums</text>
+<rect x="230" y="670" width="170" height="100" fill="#fbfbf6" stroke="#777" stroke-width="2" rx="4"/>
+<text x="242" y="704" font-size="24" font-family="sans-serif" fill="#141414" font-weight="bold">2  Wren</text>
+<text x="242" y="740" font-size="16" font-family="sans-serif" fill="#444">saw from the drums</text>
+<rect x="420" y="670" width="170" height="100" fill="#fbfbf6" stroke="#777" stroke-width="2" rx="4"/>
+<text x="432" y="704" font-size="24" font-family="sans-serif" fill="#141414" font-weight="bold">3  Bashir</text>
+<text x="432" y="740" font-size="16" font-family="sans-serif" fill="#444">saw from the drums</text>
+<rect x="610" y="670" width="170" height="100" fill="#fbfbf6" stroke="#777" stroke-width="2" rx="4"/>
+<text x="622" y="704" font-size="24" font-family="sans-serif" fill="#141414" font-weight="bold">4  Dov</text>
+<text x="622" y="740" font-size="16" font-family="sans-serif" fill="#444">saw a light</text>
+<rect x="800" y="670" width="170" height="100" fill="#fbfbf6" stroke="#777" stroke-width="2" rx="4"/>
+<text x="812" y="704" font-size="24" font-family="sans-serif" fill="#141414" font-weight="bold">5  Sato</text>
+<text x="812" y="740" font-size="16" font-family="sans-serif" fill="#444">from the truck</text>
+<rect x="990" y="670" width="170" height="100" fill="#fbfbf6" stroke="#777" stroke-width="2" rx="4"/>
+<text x="1002" y="704" font-size="24" font-family="sans-serif" fill="#141414" font-weight="bold">6  Yusuf</text>
+<text x="1002" y="740" font-size="16" font-family="sans-serif" fill="#444">saw a light</text>
+</svg>

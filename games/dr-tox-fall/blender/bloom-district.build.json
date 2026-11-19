@@ -1,0 +1,464 @@
+{
+ "game": "dr-tox-fall",
+ "location": "bloom-district",
+ "name": "Rostova's bloom district",
+ "reference": "assets/locations/bloom-district.jpg",
+ "bounds_m": [
+  100,
+  80,
+  30
+ ],
+ "origin": "centre of the market street at ground level; +y north; the wind blows toward +x; the source rooftop is the block at the west end, roof at 12 m",
+ "materials": {
+  "street": {
+   "color": [
+    0.36,
+    0.38,
+    0.37
+   ],
+   "roughness": 0.95
+  },
+  "brick": {
+   "color": [
+    0.42,
+    0.38,
+    0.34
+   ],
+   "roughness": 0.92
+  },
+  "gravel": {
+   "color": [
+    0.5,
+    0.5,
+    0.47
+   ],
+   "roughness": 1.0
+  },
+  "haze": {
+   "color": [
+    0.75,
+    0.72,
+    0.6
+   ],
+   "roughness": 1.0,
+   "emission": 0.3
+  }
+ },
+ "blockout": [
+  {
+   "id": "street",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    100,
+    12,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    -0.1
+   ],
+   "material": "street"
+  },
+  {
+   "id": "block-north",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    100,
+    30,
+    10
+   ],
+   "location": [
+    0,
+    22,
+    5
+   ],
+   "material": "brick"
+  },
+  {
+   "id": "block-south",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    70,
+    30,
+    10
+   ],
+   "location": [
+    15,
+    -22,
+    5
+   ],
+   "material": "brick"
+  },
+  {
+   "id": "source-block",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    30,
+    30,
+    12
+   ],
+   "location": [
+    -35,
+    -22,
+    6
+   ],
+   "material": "brick"
+  },
+  {
+   "id": "source-roof",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    30,
+    30,
+    0.3
+   ],
+   "location": [
+    -35,
+    -22,
+    12.15
+   ],
+   "material": "gravel"
+  },
+  {
+   "id": "haze-layer",
+   "shape": "box",
+   "role": "trim",
+   "size_m": [
+    100,
+    70,
+    0.5
+   ],
+   "location": [
+    0,
+    0,
+    8
+   ],
+   "material": "haze",
+   "collide": false
+  }
+ ],
+ "props": [
+  {
+   "id": "stack-1",
+   "object": "vent-stack",
+   "location": [
+    -42,
+    -28,
+    12.3
+   ]
+  },
+  {
+   "id": "stack-2",
+   "object": "vent-stack",
+   "location": [
+    20,
+    26,
+    10
+   ]
+  },
+  {
+   "id": "rig",
+   "object": "dispersal-rig",
+   "location": [
+    -36,
+    -18,
+    12.3
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    30
+   ]
+  },
+  {
+   "id": "drone",
+   "object": "camera-drone",
+   "location": [
+    -30,
+    -14,
+    15
+   ],
+   "ground": false
+  },
+  {
+   "id": "truck",
+   "object": "service-truck",
+   "location": [
+    -22,
+    -3,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "stall-1",
+   "object": "market-stall",
+   "location": [
+    -5,
+    3,
+    0
+   ]
+  },
+  {
+   "id": "stall-2",
+   "object": "market-stall",
+   "location": [
+    4,
+    -3,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ]
+  },
+  {
+   "id": "stall-3",
+   "object": "market-stall",
+   "location": [
+    14,
+    3,
+    0
+   ]
+  },
+  {
+   "id": "stall-4",
+   "object": "market-stall",
+   "location": [
+    26,
+    -3,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_bloom_morning": {
+   "note": "Chapter 3: 2229, first light. Aegis sets down in the street; the haze is already settling; cameras on the roofs; on a broadcast, Rostova's portrait beside the State's word CATALYST. Learn Load on the first cloud.",
+   "world": {
+    "color": [
+     0.55,
+     0.58,
+     0.5
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "dawn",
+     "type": "SUN",
+     "location": [
+      80,
+      -60,
+      30
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 1.8,
+     "size": 1,
+     "color": [
+      0.82,
+      0.86,
+      0.74
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -14,
+     0,
+     1.8
+    ],
+    "look_at": [
+     10,
+     0,
+     3.0
+    ],
+    "lens_mm": 28,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     -14,
+     0,
+     0
+    ],
+    "facing_deg": 90
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "truck",
+     "verb": "Absorb the cloud"
+    },
+    {
+     "prop": "drone",
+     "verb": "Look at the camera"
+    },
+    {
+     "prop": "stall-1",
+     "verb": "Hold the street",
+     "leads_to": "s1_bloom_1"
+    }
+   ]
+  },
+  "s3_bloom_after": {
+   "note": "Chapter 3: the haze settles. The marked on the camera side of the street; the broadcast replays his containment; the woman's voice; a flinch.",
+   "world": {
+    "color": [
+     0.62,
+     0.55,
+     0.42
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "late-dawn",
+     "type": "SUN",
+     "location": [
+      60,
+      -40,
+      50
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 2.2,
+     "size": 1,
+     "color": [
+      0.9,
+      0.78,
+      0.6
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     8,
+     0,
+     1.8
+    ],
+    "look_at": [
+     -10,
+     0,
+     2.0
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     8,
+     0,
+     0
+    ],
+    "facing_deg": 270
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "stall-2",
+     "verb": "Kneel"
+    },
+    {
+     "prop": "drone",
+     "verb": "Look at the camera",
+     "leads_to": "s3_fortress_workshop"
+    }
+   ]
+  },
+  "s3_bloom_rooftop": {
+   "note": "Chapter 8: 2234. Dr. Tox climbs the source block: the rig, the drone filming, Rostova at the rail; the plate and her photograph on the rig's screen; she leaves on the State's truck.",
+   "world": {
+    "color": [
+     0.6,
+     0.5,
+     0.38
+    ],
+    "strength": 0.5
+   },
+   "lights": [
+    {
+     "name": "rust-dawn",
+     "type": "SUN",
+     "location": [
+      60,
+      -60,
+      40
+     ],
+     "look_at": [
+      -35,
+      -22,
+      12
+     ],
+     "energy": 2.0,
+     "size": 1,
+     "color": [
+      0.8,
+      0.5,
+      0.25
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -26,
+     -30,
+     13.9
+    ],
+    "look_at": [
+     -36,
+     -18,
+     13.0
+    ],
+    "lens_mm": 35,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -26,
+     -30,
+     12.3
+    ],
+    "facing_deg": 320
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "rig",
+     "verb": "Read the plate"
+    },
+    {
+     "prop": "drone",
+     "verb": "Dart the drone"
+    },
+    {
+     "prop": "stack-1",
+     "verb": "Go down",
+     "leads_to": "s3_fortress_rite"
+    }
+   ]
+  }
+ }
+}

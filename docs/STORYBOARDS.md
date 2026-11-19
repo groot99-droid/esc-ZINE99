@@ -435,3 +435,57 @@ Episode 1 of four (`dr-tox-rise`), from the author's bible `dr-tox/source/Dr_Tox
 ![Panel 22](../games/dr-tox-rise/reference/22-aftermath.jpg)
 
 ![Panel 34](../games/dr-tox-rise/reference/34-the-injection.jpg)
+
+## 12. Dr. Tox: Fall
+
+Episode 2 of four (`dr-tox-fall`), from the author's bible `dr-tox/source/Dr_Tox_Compiled_Bible_Obsidian.md`, not the vault; the bible's Fall is a stub, so most of this board is added (`games/dr-tox-fall/DESIGN.md` section 21). Three leads on one clock, 2228 to 2236, under dated captions: Dr. Tox, Reese as Aegis, and Cally at Cycle 41. Each 3D room hands off to a page by push-in; the relief hall and the gala flatten into the crowd they are drawn as, and the Spire's glass flattens into Cally's reflection. The Toxin State is always a cut, and what follows it is other people telling him what they saw. This board follows the default first run, which ends in The Following; the other three endings are the E rows. The five stills are the author's own catalogued thumbnails (`dr-tox/art_catalogue.md`: `f9398896`, `6f93c88c`, `c378345b`, `ee8b72ec`, `554be284`), converted to JPEG at their 320-pixel size; the full-size originals are on Higgsfield, and new stills for the other panels are not generated yet.
+
+| # | Layer | Scene | Shot | Beat | Into next | Still |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 3D | `s3_fortress_lamp` | One amber lamp, hard falloff into black; caption 2228; four cells, a clear tank | Snakehead, as Rise left it. The Ghost points up; a knock comes down the cavern; take the shroud off its stand and see the ring on the floor | Push-in on the breach |  |
+| 2 | 1D | `s1_triage_1` | Triage: two marker-sketched cards and a tray of amber marks | Wren Halloran and her brother Teo, carried down on a door. Two marks would ease him; a third would make him stop asking | Pull-out |  |
+| 3 | 3D | `s3_fortress_bench` | The bench at 50 mm under the lamp; flasks, lead bricks, vials | Give the batch its hours, or keep them for the cots. "They will tell someone." | Cut |  |
+| 4 | 3D | `s3_relief_queue` | A bare concrete relief hall under flat tubes; a queue of the plague-marked; dispensers stamped RCC | 2229. Empty hoppers; at noon the shutter comes down on RELIEF SUSPENDED; the failure of institutions as a room | Flatten | [04-the-relief-hall](../games/dr-tox-fall/reference/04-the-relief-hall.jpg) |
+| 5 | 2D | `s2_crowd_1` | Crowd thread: the queue in comix crosshatch, his breath radius a ring of bare paper | Down the queue to the back of the hall; whoever steps into the ring coughs once and becomes a card | Push-in on the back table |  |
+| 6 | 1D | `s1_triage_2` | Triage behind the shutter: six cards, two cots, a tray full of marks | The night clinic: more need than cots; a mark past the need settles a card at once | Cut |  |
+| 7 | 3D | `s3_bloom_morning` | A rooftop view at pale dawn; haze from the stacks settling on market streets; a drone already up | Reese as Aegis sets down; the first cloud teaches Load; a stall's screen shows Rostova's portrait beside the word CATALYST | Push-in on the street grid | [07-the-haze](../games/dr-tox-fall/reference/07-the-haze.jpg) |
+| 8 | 1D | `s1_bloom_1` | Bloom: the district in Ben-Day dots, the spread in rust | Absorb cells and raise panes, street by street; the names in the cells the spores take are marked | Pull-out |  |
+| 9 | 3D | `s3_bloom_after` | The haze settled rust and ochre; a closed stall; the drone's lens | The marked were all on the side the cameras were not filming. The woman's voice, the sentence, a flinch | Fade |  |
+| 10 | 3D | `s3_fortress_workshop` | The workshop under the amber lamp; a gauntlet in a vise; a board of index cards | 2230. The names of the 999 he read; the bench; seat the gauntlet over the shunt | Push-in on the vise | [10-the-gauntlet](../games/dr-tox-fall/reference/10-the-gauntlet.jpg) |
+| 11 | 1D | `s1_manifold_1` | The Manifold: the gauntlet as a back-page comic advert, six valves, four barrels | Route the shunt's flow; every bead of back-pressure is Pulse on every dart. At the end, the first cots in the cavern hall | Cut |  |
+| 12 | 3D | `s3_settlement_day` | Freeway ruins at dusk; drums, laundry, tube lights on a generator; warm towers far off | 2231. The hall's people followed him and built a settlement; the hour before he comes; a bulletin on the monitors | Push-in on the clinic shelter | [12-under-the-freeway](../games/dr-tox-fall/reference/12-under-the-freeway.jpg) |
+| 13 | 1D | `s1_triage_3` | Triage under the freeway: eight cards, the set-aside returning, corners stamped "came back early" | People ask for more by name; Wren asks for a third mark for Teo | Pull-out |  |
+| 14 | 3D | `s3_settlement_raid` | Hard white floodlights from a grey truck; muzzle flash; handheld 28 mm | The State answers the clinic with a raid; sustained fire; Pulse reaches the trigger line; the suit fails; cut before any act | Cut |  |
+| 15 | 1D | `s1_composite_1` | Composite: a light box, acetate strips, six witness cards | Build what he was from what they saw: plating across the shoulders. Yusuf saw a light; pin it, and the settlement has its icon | Fade |  |
+| 16 | 3D | `s3_gala_annex` | A white calibration annex; a mirror; a portrait beside SUBJECT DESIGNATION: CALLY (ARCHIVED) | 2232. Cally, seventy-two hours; Aegis's file; a note that his compliance has shown variance | Push-in on the file |  |
+| 17 | 1D | `s1_persona_1` | Persona: a romance-comic heart panel around his profile; thought balloons; a hand of cards | Build a person to fit him from a painted sky, a string and three friends; the deck deals itself a dropped blade | Flatten |  |
+| 18 | 2D | `s2_reflect_1` | Reflection run: silkscreen repeats of a glass hall, Cally above and her reflection below | Steer both through the glass to a meeting arranged as chance; at a plate stamped RCC the reflection turns its back | Fade |  |
+| 19 | 3D | `s3_relief_standoff` | The hall at night, half the tubes off, one amber lamp at the back table; a shrouded figure | 2233. Aegis walks into the breath radius and nothing happens: the two who can share a room. "That plate says who runs this hall." The Word; wall the door or stand down | Push-in on the table |  |
+| 20 | 1D | `s1_triage_4` | Triage from the other side: the CANNOT column, cards stamped in the corner | As Aegis, carry the cards the doctor set aside to cots, and read what a mark past the need looks like | Pull-out |  |
+| 21 | 3D | `s3_relief_dawn` | Dawn through the shutter going up on the same empty dispensers | The queue faces the back door now; he files a report; the channel answers with the sentence | Cut |  |
+| 22 | 3D | `s3_settlement_haze` | A pale haze across the dust plain turning rust as it lands; a horn passed hand to hand | 2234. Rostova's second release drifts east toward the freeway; call the crews | Push-in on the plain |  |
+| 23 | 1D | `s1_bloom_2` | Bloom: the plain and the settlement in Ben-Day dots, crews at the cordons, the east edge in red | At tick 6 the wind turns east; the east front needs five cordons at once; with fewer crews the settlement is taken | Pull-out |  |
+| 24 | 3D | `s3_bloom_rooftop` | The source rooftop at rust dawn: an aerosol rig, a filming drone, a woman at the rail in silhouette | Rostova: "You're the one they didn't plan. I'm the one they did." The rig's plate reads RCC BIOSYNTH DIVISION; its screen shows her photograph and CATALYST | Fade |  |
+| 25 | 3D | `s3_fortress_rite` | The cavern hall in lantern light; rows of people gone still; a shaft of grey day | 2235. A rite he did not make; Mercy asks for what's in the blades | Push-in on the vise |  |
+| 26 | 1D | `s1_manifold_2` | The Manifold again: a fifth outlet at the end of the spine, capped | Route the resin line for them, at a cost on every dart, or keep it capped | Cut |  |
+| 27 | 3D | `s3_gala_floor` | A glass gala hall in clean air; white tables; a lectern; tall columns of pale vapour | 2236. Aegis honoured beside the Biosynth director for the Bloom containment; Cally at his table | Push-in on the table |  |
+| 28 | 1D | `s1_persona_2` | Persona at the gala table: three exchanges, the match meter's mark at 94.6 | The last hand; his flinches show the weights; burn the dealt cards or keep them | Flatten |  |
+| 29 | 2D | `s2_reflect_2` | Reflection run: glass halls to the balcony, guests in both worlds | Three doors the reflection will not pass: a plate stamped RCC, a painted sky, a loop of string. Force it, or stop with it | Cut |  |
+| 30 | 2D | `s2_crowd_2` | Crowd thread: a dim service corridor, two guards slumped, then the gala floor in crosshatch | Ama Owusu and Lev Brandt open the service door; darts in the corridor; the shroud among people who paid for their air | Cut | [30-the-service-corridor](../games/dr-tox-fall/reference/30-the-service-corridor.jpg) |
+| 31 | 3D | `s3_gala_balcony` | The balcony at dusk, amber behind, a cold city below; a hard-light wall; her hand at his wrist | Dr. Tox at the rail with a dart drawn; Aegis's wall closes; "Who built you?" Reese's one word: HOPE, RCC, or nothing | Fade |  |
+| 32 | 3D | `s3_fortress_following` | The cavern hall full, lanterns and the lamp; blades laid on a cloth | The Following: he doses himself under the lamp and turns to them; the cut comes first. "His followers become chemically dependent on him" | Fade |  |
+| E | 1D | `s1_composite_2` | Composite at the gala: five regions, four witnesses who will not testify | Only if the State fired at the gala: reach, everything longer than it should be; leave the horns out | Cut |  |
+| E | 3D | `s3_gala_leash` | Muzzle flash on the balcony; the wall going out | First Word: he said "RCC"; the leash fires mid-fight; Dr. Tox over the rail; Ama and Lev taken; Reese recalled | Fade |  |
+| E | 3D | `s3_gala_bond` | The amber wash; two figures going in off the balcony past the plate | Bond Held: her hand at his wrist; the doubt closes; CALIBRATION COMPLETE | Fade |  |
+| E | 3D | `s3_settlement_lost` | The freeway ruins months later, spore rust on the drums, the shelters empty | The Clinic: without a following there were not crews enough for the east front | Cut |  |
+| E | 3D | `s3_fortress_clinic` | The cavern hall at night, one cot lamp, a cot being made up | The Clinic: patients come down the cavern and go home; nobody stays | Fade |  |
+
+![Panel 4](../games/dr-tox-fall/reference/04-the-relief-hall.jpg)
+
+![Panel 7](../games/dr-tox-fall/reference/07-the-haze.jpg)
+
+![Panel 10](../games/dr-tox-fall/reference/10-the-gauntlet.jpg)
+
+![Panel 12](../games/dr-tox-fall/reference/12-under-the-freeway.jpg)
+
+![Panel 30](../games/dr-tox-fall/reference/30-the-service-corridor.jpg)
