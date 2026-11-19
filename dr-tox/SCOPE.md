@@ -119,6 +119,7 @@ Panel run is not Endless Temple's living illustration: it moves between panels, 
 | 3 | **Two Pans** | Balance: the ratio of the final dose | Two-colour pulp, red and black |
 | 3 | **Switchboard** | Patching life-support circuits | Letterer's balloon page |
 | 3 | **Panes** (Aegis) | Tangram tiling of a breach | Holographic foil trading card |
+| 3 | **Split Field** | Reconstruction by attribution: each mark the State blames on him matched to what made it, by toolmark comparison (Finale only; added 2026-11-19 under the author's ruling below, proposed in `games/dr-tox-finale/DESIGN.md`) | Craftint Doubletone shading board |
 | 4 | **Rubbing** | Reveal a relief by rubbing | Heelball brass rubbing |
 | 4 | **The Measure** | Exact amounts with fixed vessels | Slip-glazed terracotta |
 | 4 | **The Mill** | Board game, alignment (morris family) | Cast bronze with patina |
@@ -126,7 +127,8 @@ Panel run is not Endless Temple's living illustration: it moves between panels, 
 
 Cat's Cradle is the one Age page outside the comic idiom: it is memory, the bible's "Clinical white"
 register (Part VI §6). Composite is proposed as a second: the witnesses' document, not the comic's
-(the author's call, `games/dr-tox-fall/DESIGN.md` section 20). Near styles to watch: Ben-Day (four process colours, black keyline) against
+(the author's call, `games/dr-tox-fall/DESIGN.md` section 20). Split Field stays in the comic idiom:
+Craftint board is a newspaper-strip shading technique. Near styles to watch: Ben-Day (four process colours, black keyline) against
 Missing Campsites' two-colour risograph; scratchboard (white cut from black) against Heartstream's
 scrimshaw.
 
@@ -266,4 +268,7 @@ Made after the author accepted section 8. Nothing under `games/`, `web/` or `too
   the PILLARS rule holds (no two episodes share a 1D game type). Each still has four 1D games
   without it. (Done for Fall 2026-11-19, Phase 2 stage A: its reconstruction page is **Composite**,
   a form assembled from testimony, styled as identikit acetate overlays; Fall's seven rows are in
-  `graphic_styles.json` and its modes and games in COLLECTION's tables. Finale's is still to come.)
+  `graphic_styles.json` and its modes and games in COLLECTION's tables. Done for the Finale 2026-11-19,
+  Phase 3 stage A: its reconstruction page is **Split Field**, reconstruction by attribution (toolmark
+  comparison), styled as Craftint Doubletone shading board; the Finale's seven rows are in
+  `graphic_styles.json` and its modes and games in COLLECTION's tables.)

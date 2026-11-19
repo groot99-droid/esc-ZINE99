@@ -33,7 +33,7 @@ lacks is listed at the end of its `DESIGN.md` section "Accepted development (202
 | People of the Bark | `games/people-of-the-bark/` | City-builder at the scale of tree bark | 150–180 min |
 | The Endless Temple | `games/endless-temple/` | Hub adventure, one world per book | 120–160 min |
 | The Lord of the Sea | `games/lord-of-the-sea/` | Open-sea adventure as a weakened sea god | 160–180 min |
-| Dr. Tox: Age of Glass & Greed | `games/dr-tox-rise/`, `-fall/`, `-finale/`, `-altrulan/` (Rise and Fall built; Finale and Altrulan not yet created) | Four episodes as a poisoned forensic scientist hunting the company that made him | 490–600 min in all |
+| Dr. Tox: Age of Glass & Greed | `games/dr-tox-rise/`, `-fall/`, `-finale/`, `-altrulan/` (Rise and Fall built; Finale at stage A: design, data and build files; Altrulan not yet created) | Four episodes as a poisoned forensic scientist hunting the company that made him | 490–600 min in all |
 
 ## Where to read
 

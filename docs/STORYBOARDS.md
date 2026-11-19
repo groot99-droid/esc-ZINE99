@@ -489,3 +489,59 @@ Episode 2 of four (`dr-tox-fall`), from the author's bible `dr-tox/source/Dr_Tox
 ![Panel 12](../games/dr-tox-fall/reference/12-under-the-freeway.jpg)
 
 ![Panel 30](../games/dr-tox-fall/reference/30-the-service-corridor.jpg)
+
+## 13. Dr. Tox: Finale
+
+Episode 3 of four (`dr-tox-finale`), from the author's bible `dr-tox/source/Dr_Tox_Compiled_Bible_Obsidian.md`, not the vault; the bible's Finale is a stub that gives an opening fixed point and a closing act, so most of this board is added (`games/dr-tox-finale/DESIGN.md` section 21). One clock, 2236 to 2240, under dated captions: Dr. Tox leads, Reese as Aegis at the end, and Cally beside him, never played. Each 3D room hands off to a page by push-in; the march flattens into the collage it is printed as, and the plinth's vents flatten into the blue pencil of the ducts. The Toxin State is always a cut, and what follows it is the record of whose marks were whose. This board follows the default first run, which ends in The Reset, the bible's own ending; the other four endings are the E rows. The five stills are the author's own catalogued thumbnails (`dr-tox/art_catalogue.md`: `f7ab2c41`, `bb8659b8`, `0d6ffb66`, `7f4ff140`, `47cf480e`), converted to JPEG at their 320-pixel width; the full-size originals are on Higgsfield, and new stills for the other panels are not generated yet.
+
+| # | Layer | Scene | Shot | Beat | Into next | Still |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 3D | `s3_overrun_hall` | A raw concrete corridor under failing tubes, his sentences painted on the walls; at its end the cavern hall, full and facing away | 2236. Snakehead taken: a steel-drum lectern, Mercy reading from a stapled tract, the icon or a ring of the 999's names; nobody turns round | Push-in on her table | [01-the-way-down](../games/dr-tox-finale/reference/01-the-way-down.jpg) |
+| 2 | 1D | `s1_creed_1` | The Creed: a tract booklet open across the page, dominoes as panels, his lines split across their ends | The lector lays to BLOOD; "Not my blood. Not all of it." prints as ALL OF IT IS HIS BLOOD; the dealer slips him a painted sky | Pull-out |  |
+| 3 | 3D | `s3_overrun_after` | The hall empty, grey day from the breach, the tract on the lectern | They went up the breach with the blades without a word to him. "They did not wait for him." | Cut |  |
+| 4 | 3D | `s3_station_attack` | Handheld 28 mm at hard noon: a water tower stamped RCC, a kiosk, a queue with jerricans, a shield line | The cult's first attack, without him; he walks between the shields and his followers; the trigger line; the suit fails; cut before any act | Cut |  |
+| 5 | 1D | `s1_split_1` | Split Field: the station in Craftint tones, a split-field circle, three trays of references | Whose marks: his plate, their hollow blades, the State's shields; the record names Hal Brenner, Ivo Petrak, Dara Quill, Tomasz Wey | Pull-out |  |
+| 6 | 3D | `s3_station_after` | Dust settling on the kiosk; its CRT glowing | The State's broadcast: his face beside Rostova's portrait and the word CATALYST, under TWO PLAGUES | Cut |  |
+| 7 | 3D | `s3_snakehead_bench` | One amber lamp at the bench; jars with cloth tied over them; a woman sweeping in the dark | 2237. Batch hours; "You're still not on the manifest." Expose her to the cult, or keep her near | Push-in on the jars | [07-the-bench](../games/dr-tox-finale/reference/07-the-bench.jpg) |
+| 8 | 1D | `s1_pans_1` | Two Pans: a beam balance as a red-and-black pulp cover, brass pip tokens, a window on the dial | Their rite sits far below the window; rest it in the window, or leave their jars as they made them | Cut |  |
+| 9 | 3D | `s3_march_camp` | Arcology monoliths on concrete plinths over the dust plain, shanties at the base; a camp of tarps and handcarts | 2238. Dov's copier running off the tract; on a CRT, THE LAST CITY SEALS, and Rostova's bloom as the reason | Push-in on the table | [09-the-last-city](../games/dr-tox-finale/reference/09-the-last-city.jpg) |
+| 10 | 1D | `s1_creed_2` | The Creed again, the tract printing as they play | Three hands against the lector; lay the station keeper's name on a BLOOD end if Split Field showed whose the channels were | Pull-out |  |
+| 11 | 3D | `s3_march_eve` | Night, lanterns, a crate with its lid off; the city's lights far off | The blades handed out; the Observers sign that they will come | Fade |  |
+| 12 | 3D | `s3_march_road` | Pale dawn; photocopied banners on poles; a column of people walking east | 2239. The march sets out, and he is at its rear | Flatten |  |
+| 13 | 2D | `s2_procession_1` | Procession: the march as photocopied cut-outs, banners in ransom-note letters, him a red tape arrow | To the front against people who want into the ring; a raised hand stops fewer the higher the doctrine | Cut |  |
+| 14 | 3D | `s3_march_front` | Dusk on a ridge of the road, the floodlit perimeter far below | "Go home." Some turn, Petra Lind first; or lead them; or walk on alone at the front | Fade | [14-the-front](../games/dr-tox-finale/reference/14-the-front.jpg) |
+| 15 | 2D | `s2_procession_2` | Procession at the perimeter: a shield line, floodlight masts, the march dense behind | 2240. Reach the front before the volley; step into the floodlights to draw the guns, at a cost in Pulse | Cut |  |
+| 16 | 3D | `s3_perimeter_breach` | Floodlight white on the plinth; the atrium glass above the gate cracking; hard light flaring behind it | The resin volley breaks the glass; he makes for the plinth vents in the confusion | Cut |  |
+| 17 | 3D | `s3_atrium_inside` | Third person in a clean white atrium; dust-brown light through a crack in a wall of glass; faces at the crack | Reese as Aegis: clean air screaming out, the order to seal it full | Push-in on the breach |  |
+| 18 | 1D | `s1_panes_1` | Panes: a holographic foil trading card, the breach in its art window, seven tangram pieces as foil chips | Seal it with every piece, or leave gaps a named person can come through | Pull-out |  |
+| 19 | 3D | `s3_atrium_after` | The let-in sitting on pale stone, or nobody; amber warmth | The woman's voice and the sentence; a flinch | Cut |  |
+| 20 | 3D | `s3_arcology_plinth` | The plinth's concrete face, louvred vents breathing warm haze onto shanties; a clear cistern | The shanties breathe what the city breathes out; the Ghost in the water points to a duct | Flatten |  |
+| 21 | 2D | `s2_airway_1` | The airway: ducts in non-photo-blue pencil, inked in black brush behind him | Up the exhaust stack on the airflow; keep his breath off the grilles; the page inks the route the dose will take | Push-in on the panel |  |
+| 22 | 1D | `s1_switchboard_1` | Switchboard: a letterer's page of districts, balloons lettered AIR 1 to AIR 6, tails as patch cords | The plinth breathes only what the towers exhale; bypass the interlock and give the HUB a tail to it | Cut |  |
+| 23 | 3D | `s3_clinical_suite` | Warm amber chairs against the cold grey world beyond the glass; a rack of amber vials; a calibration booth | The wealthy's treatment; Rostova in the booth nods once | Push-in on the rack | [23-the-clinical-suite](../games/dr-tox-finale/reference/23-the-clinical-suite.jpg) |
+| 24 | 1D | `s1_pans_2` | Two Pans with the rack's vials as tokens | The wealthy's private peace rests in the window, and always did | Pull-out |  |
+| 25 | 3D | `s3_suite_printer` | A matte-black column in soft blue; a plaque at its base; Cally beside it | CYCLE 42. Show her the plaque, or walk past it; "Forty-two." | Flatten |  |
+| 26 | 2D | `s2_airway_2` | The airway again: a narrow supply duct, names under every grille | Over the suite's patients to the hub; Imogen Hart's grille among them | Cut |  |
+| 27 | 3D | `s3_hub_gallery` | A dark steel gallery round a drum of glass; a breach; a figure behind it in white plant light | Reese at the hub: the order to seal it with him outside; the Word: HOPE, RCC, or nothing | Push-in on the breach |  |
+| 28 | 1D | `s1_panes_2` | Panes on the foil card: a narrow breach, six pieces set, a keystone in his hand | The keystone sets only on HOPE; Reese keeps it in his hand and leaves room | Cut |  |
+| 29 | 3D | `s3_hub_door` | Inside the glass: a heavy inner door stamped RCC; Cally with the key | Ask "Who built you?", or force the door; she says "For HOPE." and keeps the key; he waits, then forces it | Push-in on the switchboard |  |
+| 30 | 1D | `s1_switchboard_2` | Switchboard at the core: five districts, both interlocks, an ASSIST balloon | Every circuit through the hub, the plinth too; the suite's patients on their own line | Cut |  |
+| 31 | 1D | `s1_pans_3` | Two Pans at the core: a load of thirty pips, the window, and a second band marked in a red caption | The window, or where his heart would hold; he rests it in the window | Pull-out |  |
+| 32 | 3D | `s3_hub_core` | Static, 50 mm: one amber work lamp, the balance, the plant's white behind | Hold. No meter, no score; letting go at any moment is the other ending | Cut |  |
+| 33 | 3D | `s3_reset_heart` | The lamp, the plant's lights going soft; the frame stays on the lamp | The Reset: "His heart fails. This is his sacrifice" | Fade |  |
+| 34 | 3D | `s3_peace_plain` | Dawn on the plain, floodlights off; people sitting down in the dust; a ring of hard light deep in the arcology | "What makes it land isn't spectacle; it's the peace that follows it". Caption: 2240 | Fade |  |
+| E | 1D | `s1_split_2` | Split Field at the perimeter: shields, a mast, the copier cart, old resin | Only if the State fired in the march: ten marks, three false traces, the march's hurt named | Cut |  |
+| E | 3D | `s3_wall_outside` | The gallery dark, the breach sealed in hard light, a man on the floor outside it | The Light Bringer's Wall: Reese said HOPE and set the keystone; the glass stands | Fade |  |
+| E | 3D | `s3_green_core` | Low and wide: green light spilling across the drum's glass, nothing amber in the frame | Green Wins: the man was at the floor; the dose without the sacrament; the save closes | Fade |  |
+| E | 3D | `s3_snakehead_resin` | Snakehead months later under the amber lamp; a CRT on the locker | The Cage Holds: he lives; the broadcast shows the cult's next attack, made without him | Fade |  |
+| E | 3D | `s3_first_word_core` | Two people in the lamp's light, her hand on the balance | The First Word: Cally said "RCC" and opened the door, and stayed | Fade |  |
+
+![Panel 1](../games/dr-tox-finale/reference/01-the-way-down.jpg)
+
+![Panel 7](../games/dr-tox-finale/reference/07-the-bench.jpg)
+
+![Panel 9](../games/dr-tox-finale/reference/09-the-last-city.jpg)
+
+![Panel 14](../games/dr-tox-finale/reference/14-the-front.jpg)
+
+![Panel 23](../games/dr-tox-finale/reference/23-the-clinical-suite.jpg)

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="panes-t panes-d">
+<title id="panes-t">Panes: Holographic foil trading card</title>
+<desc id="panes-d">Panes (1D): a collectible trading card of Aegis, its face washed with rainbow holographic foil in diagonal bands, a bevelled frame and a stat box (LOAD, PANES). In the card's art window a breach in a wall of glass is being tiled with the seven tangram pieces of hard light, foil facets; six are set, and the seventh, the keystone, waits outside the outline in his hand. A gap the shape of it is left in the wall.</desc>
+<defs><linearGradient id="panes-lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f6b3c8"/><stop offset="20%" stop-color="#f6e7b8"/><stop offset="40%" stop-color="#a8e6cf"/><stop offset="60%" stop-color="#9fc6f2"/><stop offset="80%" stop-color="#d4b0f2"/><stop offset="100%" stop-color="#f6b3c8"/></linearGradient></defs>
+<rect x="0" y="0" width="1200" height="800" fill="#20232a"/>
+<rect x="330" y="30" width="540" height="740" fill="#d9d4c4" rx="26" stroke="#8c8672" stroke-width="6"/>
+<rect x="350" y="50" width="500" height="700" fill="url(#panes-lg1)" rx="18"/>
+<polygon points="130,50 170,50 470,750 430,750" fill="#ffffff" opacity="0.1"/>
+<polygon points="220,50 260,50 560,750 520,750" fill="#ffffff" opacity="0.1"/>
+<polygon points="310,50 350,50 650,750 610,750" fill="#ffffff" opacity="0.1"/>
+<polygon points="400,50 440,50 740,750 700,750" fill="#ffffff" opacity="0.1"/>
+<polygon points="490,50 530,50 830,750 790,750" fill="#ffffff" opacity="0.1"/>
+<polygon points="580,50 620,50 920,750 880,750" fill="#ffffff" opacity="0.1"/>
+<polygon points="670,50 710,50 1010,750 970,750" fill="#ffffff" opacity="0.1"/>
+<polygon points="760,50 800,50 1100,750 1060,750" fill="#ffffff" opacity="0.1"/>
+<polygon points="850,50 890,50 1190,750 1150,750" fill="#ffffff" opacity="0.1"/>
+<polygon points="940,50 980,50 1280,750 1240,750" fill="#ffffff" opacity="0.1"/>
+<rect x="380" y="120" width="440" height="400" fill="#5E7375" stroke="#2a2a2a" stroke-width="5"/>
+<text x="380" y="102" font-size="44" font-family="sans-serif" fill="#2a2a2a" font-weight="bold" letter-spacing="6">AEGIS</text>
+<polygon points="450,180 750,180 600,330" fill="#f6e7b8" stroke="#ffffff" stroke-width="3" opacity="0.9"/>
+<polygon points="450,180 600,330 450,480" fill="#e9f2d8" stroke="#ffffff" stroke-width="3" opacity="0.9"/>
+<polygon points="750,180 750,330 675,255" fill="#d6ecf6" stroke="#ffffff" stroke-width="3" opacity="0.9"/>
+<polygon points="600,330 675,255 750,330 675,405" fill="#f2dff0" stroke="#ffffff" stroke-width="3" opacity="0.9"/>
+<polygon points="750,330 750,480 675,405" fill="#f6eccf" stroke="#ffffff" stroke-width="3" opacity="0.9"/>
+<polygon points="450,480 600,330 675,405 525,480" fill="#e2f0e6" stroke="#ffffff" stroke-width="3" opacity="0.9"/>
+<polygon points="525,480 675,405 750,480" fill="#2b2b2b" stroke="#F6E7B8" stroke-width="3" stroke-dasharray="8 6"/>
+<polygon points="690,480 790,430 840,480" fill="#F6E7B8" stroke="#ffffff" stroke-width="3"/>
+<text x="680" y="514" font-size="22" font-family="sans-serif" fill="#ffffff" font-weight="bold">HOPE?</text>
+<rect x="380" y="550" width="440" height="170" fill="#f4f0e2" stroke="#2a2a2a" stroke-width="4" rx="8"/>
+<text x="400" y="600" font-size="28" font-family="sans-serif" fill="#2a2a2a" font-weight="bold">LOAD</text>
+<rect x="500" y="576" width="280" height="30" fill="#ffffff" stroke="#2a2a2a" stroke-width="2"/>
+<rect x="500" y="576" width="150" height="30" fill="#F2C14E"/>
+<text x="400" y="660" font-size="28" font-family="sans-serif" fill="#2a2a2a" font-weight="bold">PANES</text>
+<text x="520" y="660" font-size="32" font-family="sans-serif" fill="#2a2a2a" font-weight="bold">6 / 7</text>
+<text x="400" y="702" font-size="18" font-family="sans-serif" fill="#6a6450" letter-spacing="3">SERIES 2240</text>
+</svg>

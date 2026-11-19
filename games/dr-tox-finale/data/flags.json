@@ -1,0 +1,428 @@
+{
+  "scope_note": "Dr. Tox's meters are pulse, amber and self, as in Rise and Fall; Reese's are load and the reese.* names; Cally's are the cally.* names, written by what Dr. Tox shows her (she is not played). The Rise and Fall names listed in game.json carry_in are read as scars and default to a typical run. Numbers are design values for the prototype. Every unit on every page is invented (words on dominoes, striations, brass pip tokens in pans labelled only RED and BLACK, patch cords, panes): no page describes a real procedure, dose or route. The substances the bible names (Part VI, Dr. Tox, Story: The Finale and Story: The Fall) appear only in the design and in State text, never as a quantity.",
+  "state": [
+    {
+      "name": "pulse",
+      "type": "meter",
+      "default": 20,
+      "description": "Dr. Tox's heart rate as pressure, 0 to 100. Floor 20; 40 when amber is 0 at a chapter start, and all through chapter 10, when he takes no dose. +3 per second while anyone stands inside his breath radius in Procession, +2 per second holding his breath over a grille in the airway, +1 per 2 seconds with the shroud closed, +12 per dart, +15 on a hit or for drawing the shield line's fire, +20 for forcing the hub's inner door; -2 per second still in a gap. The Toxin State takes the controls when pulse reaches self (the trigger line, kept from Fall).",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "amber",
+      "type": "counter",
+      "default": 3,
+      "description": "Doses of the radioactive cage on hand, 0 to 6. Carried in (default 3). One is taken at the start of chapters 1 to 8; none in chapter 10, when the cage has to be open. Each Toxin State burns 2 (bible Part IX Q1, adopted). Made only at the bench in chapter 3, one dose per batch hour."
+    },
+    {
+      "name": "self",
+      "type": "meter",
+      "default": 80,
+      "description": "What is left of the man, 0 to 100. Carried in (default 80, a typical run through Rise and Fall). Each Toxin State event takes 15, or 10 if its Split Field is reconstructed; a State in the hub sets it to 40, the floor, at once. Never restored (Part IX Q2, adopted). It is the trigger line; at or under 40 in the hub, Green Wins.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "toxin_events",
+      "type": "ledger",
+      "default": [],
+      "description": "Every Toxin State event in the series, carried in and appended. trigger is scripted, pulse or door; form is the shape the body answered the threat with (bible Part VI, Dr. Tox section 3 table), never the same twice; reconstructed is true once its Split Field is solved.",
+      "fields": [
+        "episode",
+        "chapter",
+        "scene",
+        "trigger",
+        "form",
+        "reconstructed"
+      ]
+    },
+    {
+      "name": "toxin_in_procession",
+      "type": "bool",
+      "default": false,
+      "description": "Pulse reached the trigger line in Procession 2 (s2_procession_2). Opens s1_split_2."
+    },
+    {
+      "name": "toxin_in_hub",
+      "type": "bool",
+      "default": false,
+      "description": "Forcing the hub's inner door brought pulse to the trigger line. There is no page after it: self falls to the floor (40) at once."
+    },
+    {
+      "name": "following",
+      "type": "meter",
+      "default": 60,
+      "description": "How many came to need him, 0 to 100, carried in from Fall (default 60: The Following is the default bridge). Sets the size of the hall and the march, and with cult.icon and manifold.resin_line the doctrine's start.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "cult.icon",
+      "type": "bool",
+      "default": false,
+      "description": "Fall: the settlement pinned an awed composite as their picture of him. It hangs over the lectern in the cavern hall; doctrine starts 20 higher."
+    },
+    {
+      "name": "manifold.resin_line",
+      "type": "bool",
+      "default": false,
+      "description": "Fall: he routed the resin line for them. The cult's resin is made from his own line; doctrine starts 15 higher."
+    },
+    {
+      "name": "bloom.settlement_lost",
+      "type": "bool",
+      "default": false,
+      "description": "Fall: the bloom took the settlement (The Clinic). The cult that takes the hall is the bloom's marked from the freeway, smaller and not his own doing."
+    },
+    {
+      "name": "cult.doctrine",
+      "type": "meter",
+      "default": 30,
+      "description": "How far the cult's belief has outgrown him, 0 to 100 (bible Part II: 'his own belief exceeds him'). Starts at following / 2, +20 with cult.icon, +15 with manifold.resin_line. The Creed: +4 per BLOOD joint, +2 per other lector joint, -3 per RING or NEED joint he makes, -10 for naming the harm. -10 if he rebalances their rite in Two Pans 1; +3 per batch hour; +10 if he leads the march. A raised hand in Procession stops a follower with a chance of (100 - doctrine) percent; it also sets how many turn home, the size of the resin volley and the cult's next attack in The Cage Holds.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "creed.blood_joints",
+      "type": "counter",
+      "default": 0,
+      "description": "BLOOD joints printed into the tract across both Creed pages: the doctrine that arms them ('ALL OF IT IS HIS BLOOD')."
+    },
+    {
+      "name": "creed.word_joints",
+      "type": "counter",
+      "default": 0,
+      "description": "RING and NEED joints Dr. Tox made in The Creed: his clinic's words, kept in play."
+    },
+    {
+      "name": "creed.sky_tiles",
+      "type": "counter",
+      "default": 0,
+      "description": "Tiles the dealer slipped him that were not his lines (a painted sky, a loop of string) and that he laid as spinners. Each raises cally.crack by 5."
+    },
+    {
+      "name": "creed.named_harm",
+      "type": "bool",
+      "default": false,
+      "description": "In Creed 2 he laid the naming tile (the station keeper's name) on a BLOOD end. Needs split.cult_marks 3 or more. Doctrine -10."
+    },
+    {
+      "name": "split.reconstructed",
+      "type": "counter",
+      "default": 0,
+      "description": "Split Field pages solved, 0 to 2: every mark attributed and every false trace set aside."
+    },
+    {
+      "name": "split.his_marks",
+      "type": "counter",
+      "default": 0,
+      "description": "Marks attributed to his body (the plate) across both Split Field pages."
+    },
+    {
+      "name": "split.cult_marks",
+      "type": "counter",
+      "default": 0,
+      "description": "Marks attributed to the cult's hollow blades and resin across both Split Field pages. 3 or more earns the naming tile in Creed 2."
+    },
+    {
+      "name": "split.hurt_names",
+      "type": "ledger",
+      "default": [],
+      "description": "The record strip: who was hurt, their one want, and by what (his, theirs, the State's). The page names the hurt and never shows a wound.",
+      "fields": [
+        "name",
+        "want",
+        "by"
+      ]
+    },
+    {
+      "name": "snakehead.batch_hours",
+      "type": "counter",
+      "default": 0,
+      "description": "Hours given to the batch at the bench in chapter 3, 0 to 4. Each makes one dose of amber and raises cult.doctrine by 3."
+    },
+    {
+      "name": "cally.recognised",
+      "type": "bool",
+      "default": false,
+      "description": "Dr. Tox knows the dealer's face from the printer room (Rise, bible Part VIII Scene 3). Set in chapter 3."
+    },
+    {
+      "name": "cally.kept_secret",
+      "type": "bool",
+      "default": false,
+      "description": "In chapter 3 he kept her near instead of telling the cult what she is. cally.crack +10."
+    },
+    {
+      "name": "cally.saw_cycle42",
+      "type": "bool",
+      "default": false,
+      "description": "In the clinical suite he showed her the second printer column's plaque, CYCLE 42 (bible Part VIII Scene 1 IV: 'nobody was willing to risk a Cycle 42'). cally.crack +20."
+    },
+    {
+      "name": "cally.bond_aegis",
+      "type": "meter",
+      "default": 60,
+      "description": "Carried in from Fall (default 60). 94.6 or more (Bond Held) raises the crack she needs at the hub door from 70 to 80.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "cally.crack",
+      "type": "meter",
+      "default": 25,
+      "description": "The residue logged as 'noise. Acceptable variance.' (bible Part VI, Catalyst Version B), 0 to 100, carried in from Fall (default 25). +5 per sky tile kept, +10 for her secret kept, +20 for the CYCLE 42 plaque, +10 if Reese says RCC at the hub. At the hub door, asked, she says RCC at 70 or more (80 after Bond Held).",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "cally.said_rcc",
+      "type": "bool",
+      "default": false,
+      "description": "Cally's first 'RCC' (bible Part VI, Catalyst Version B, voice note: 'Watch for the first time she says RCC'). Always false in Fall; set at the hub door, where she opens it. Decides The First Word if he holds the overload."
+    },
+    {
+      "name": "two_pans.window_learned",
+      "type": "bool",
+      "default": false,
+      "description": "Two Pans 1: he rested the pointer in the window once (the share of BLACK between 70 and 78 percent of the whole, in invented pips)."
+    },
+    {
+      "name": "two_pans.rite_rebalanced",
+      "type": "bool",
+      "default": false,
+      "description": "Two Pans 1: he rebalanced the cult's own rite jars into the window. cult.doctrine -10."
+    },
+    {
+      "name": "two_pans.rcc_ratio_found",
+      "type": "bool",
+      "default": false,
+      "description": "Two Pans 2: the wealthy's private treatment in the clinical suite sits in the window ('it always did — it was just never a cure', bible Part III). Two Pans 3 draws the window's edges exactly."
+    },
+    {
+      "name": "two_pans.final",
+      "type": "enum",
+      "default": "window",
+      "description": "Where the pointer rests in Two Pans 3: the window (the Reset) or the heart band (where his heart would hold; sets hub.held_back). Default window: the bible's act.",
+      "values": [
+        "window",
+        "heart"
+      ]
+    },
+    {
+      "name": "rostova.plate_read",
+      "type": "bool",
+      "default": false,
+      "description": "Carried in from Fall: he read CATALYST on her rig. In the Finale he reads the word on the State's broadcasts as the same, and his caption in the suite is 'Same division.'"
+    },
+    {
+      "name": "rostova.seen_suite",
+      "type": "bool",
+      "default": false,
+      "description": "He saw Rostova in a calibration booth in the clinical suite: the State's public villain, serviced like its hardware."
+    },
+    {
+      "name": "march.front_reached",
+      "type": "bool",
+      "default": false,
+      "description": "Procession 1: he reached the front banner before the march reached the end of the page."
+    },
+    {
+      "name": "march.choice",
+      "type": "enum",
+      "default": "alone",
+      "description": "At the front (s3_march_front): 'Go home.' (home), lead them (lead, doctrine +10), or walk on alone at the front (alone, the default).",
+      "values": [
+        "alone",
+        "home",
+        "lead"
+      ]
+    },
+    {
+      "name": "cult.turned_home",
+      "type": "counter",
+      "default": 0,
+      "description": "Followers who turned home at the front: the march's size times (100 - doctrine) percent if he said 'Go home.', and Petra Lind always."
+    },
+    {
+      "name": "procession.touched",
+      "type": "ledger",
+      "default": [],
+      "description": "Followers who stepped inside his breath radius on purpose in Procession, by name, with their want and the one word they said. Nobody is harmed on the page.",
+      "fields": [
+        "name",
+        "want",
+        "word"
+      ]
+    },
+    {
+      "name": "march.drew_fire",
+      "type": "bool",
+      "default": false,
+      "description": "Procession 2: he stepped into the floodlights at the front and drew the shield line's fire onto himself; fewer of the march are hurt."
+    },
+    {
+      "name": "march.hurt",
+      "type": "ledger",
+      "default": [],
+      "description": "Those of the march hurt at the perimeter, by name and want.",
+      "fields": [
+        "name",
+        "want"
+      ]
+    },
+    {
+      "name": "airway.exposed",
+      "type": "ledger",
+      "default": [],
+      "description": "People under a grille his breath plume passed over in the airway, by name and want. They cough and leave the room; nobody is harmed further on the page.",
+      "fields": [
+        "name",
+        "want"
+      ]
+    },
+    {
+      "name": "switchboard.reach",
+      "type": "counter",
+      "default": 0,
+      "description": "Districts the HUB balloon's tails reach after Switchboard 2, 0 to 5: where the last dose will go."
+    },
+    {
+      "name": "switchboard.plinth",
+      "type": "bool",
+      "default": false,
+      "description": "The HUB balloon reaches THE PLINTH: the interlocks bypassed, the shanties breathe what the towers breathe."
+    },
+    {
+      "name": "switchboard.suite_isolated",
+      "type": "bool",
+      "default": false,
+      "description": "Switchboard 2: the ASSIST balloon (the suite's patients on assisted breathing) is on its own clean line, so the overload's pressure does not reach them first."
+    },
+    {
+      "name": "load",
+      "type": "meter",
+      "default": 40,
+      "description": "Toxins Aegis has absorbed, 0 to 100; 40 at the start of each of Reese's scenes. +6 per gap per turn in Panes, -8 per pane set; the keystone costs nothing. A pane cannot be set without the Load for it.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "panes.atrium_gaps",
+      "type": "counter",
+      "default": 0,
+      "description": "Pieces left unset in Panes 1, 0 to 7: each a gap one named person comes through into the atrium's clean air."
+    },
+    {
+      "name": "panes.let_in",
+      "type": "ledger",
+      "default": [],
+      "description": "The people who came through the gaps in the atrium, by name and want.",
+      "fields": [
+        "name",
+        "want"
+      ]
+    },
+    {
+      "name": "panes.sealed",
+      "type": "bool",
+      "default": false,
+      "description": "Panes 2: the keystone was set and the hub's breach sealed with Dr. Tox outside. The keystone sets only on the word HOPE."
+    },
+    {
+      "name": "reese.word",
+      "type": "enum",
+      "default": "hope",
+      "description": "Rise's answer at the lower ring, read as a scar. The Finale never writes it.",
+      "values": [
+        "hope",
+        "rcc",
+        "silent"
+      ]
+    },
+    {
+      "name": "reese.said_rcc",
+      "type": "bool",
+      "default": false,
+      "description": "The first time Reese says 'RCC' in the series is recorded (bible Part III; Part VI, Aegis, voice note). Carried in; set at the hub if he says it there."
+    },
+    {
+      "name": "reese.gala_word",
+      "type": "enum",
+      "default": "silent",
+      "description": "Fall's word on the balcony, read as a scar: rcc (Fall's First Word) means he was recalled and recalibrated, and his flinches start 2 higher.",
+      "values": [
+        "hope",
+        "rcc",
+        "silent"
+      ]
+    },
+    {
+      "name": "reese.flinches",
+      "type": "counter",
+      "default": 2,
+      "description": "Times the leash fired (bible Part VIII Scene 2 III), carried in (default 2). +1 at the atrium (the sentence) and +1 for each RCC. At the hub, RCC puts out every pane for one second per flinch."
+    },
+    {
+      "name": "reese.hub_word",
+      "type": "enum",
+      "default": "silent",
+      "description": "What Reese says at the hub's glass with Dr. Tox on the other side: 'HOPE', 'RCC', or nothing. Only HOPE sets the keystone.",
+      "values": [
+        "hope",
+        "rcc",
+        "silent"
+      ]
+    },
+    {
+      "name": "hub.reached",
+      "type": "bool",
+      "default": false,
+      "description": "Dr. Tox stepped through the gap Reese left into the hub."
+    },
+    {
+      "name": "hub.forced",
+      "type": "bool",
+      "default": false,
+      "description": "He forced the hub's inner door (pulse +20) instead of asking Cally, or after she kept the key."
+    },
+    {
+      "name": "hub.held_back",
+      "type": "bool",
+      "default": false,
+      "description": "He rested the last pans in the heart band, or let go of Hold in the core before the end. Decides The Cage Holds."
+    },
+    {
+      "name": "observers_choice",
+      "type": "enum",
+      "default": "with_them",
+      "description": "Rise's door, read as a scar: with_them, the Observers burn the cult's padlock, carry him in Procession 1, and show him the duct in the airway; left_them, none of it.",
+      "values": [
+        "undecided",
+        "with_them",
+        "left_them"
+      ]
+    },
+    {
+      "name": "fiche.names_read",
+      "type": "counter",
+      "default": 40,
+      "description": "Names of the 999 read in Rise (default 40). The cult paints them in a ring on the cavern wall."
+    }
+  ]
+}

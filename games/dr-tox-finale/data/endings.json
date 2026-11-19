@@ -1,0 +1,99 @@
+{
+  "endings": [
+    {
+      "id": "light_bringers_wall",
+      "name": "The Light Bringer's Wall",
+      "as_written": false,
+      "priority": 1,
+      "when": {
+        "all": [
+          {
+            "is": "panes.sealed",
+            "eq": true
+          },
+          {
+            "is": "reese.hub_word",
+            "eq": "hope"
+          }
+        ]
+      },
+      "summary": "At the hub's glass Reese said HOPE, and the word set the keystone: the breach sealed with Dr. Tox on the gallery outside. He overloads anyway, against the glass; what he makes goes back down the supply duct and out of the plinth's vents, so the road and the shanties get it and the towers do not. His heart fails on the gallery floor with the hard light between them. Reese does not look away. The wall stands, whole and lit from inside, around a city that will not change.",
+      "cost": "Tox dies outside; the glass stands, and only the plinth and the road get the dose.",
+      "final_scenes": [
+        "s1_panes_2",
+        "s3_wall_outside"
+      ]
+    },
+    {
+      "id": "green_wins",
+      "name": "Green Wins",
+      "as_written": false,
+      "priority": 2,
+      "when": {
+        "all": [
+          {
+            "is": "hub.reached",
+            "eq": true
+          },
+          {
+            "is": "self",
+            "lte": 40
+          }
+        ]
+      },
+      "summary": "He reached the core with the man at the floor. The thing that keeps him alive did what he came to do, without the weighing: green self-illumination across the hub's glass, nothing amber in the frame. The dose goes out without the sacrament and no peace follows. The save closes; no Altrulan follows it (dr-tox/SCOPE.md section 2).",
+      "cost": "The dose without the sacrament; no peace; terminal.",
+      "final_scenes": [
+        "s3_hub_door",
+        "s3_green_core"
+      ]
+    },
+    {
+      "id": "the_cage_holds",
+      "name": "The Cage Holds",
+      "as_written": false,
+      "priority": 3,
+      "when": {
+        "is": "hub.held_back",
+        "eq": true
+      },
+      "summary": "He rested the last pans where his heart holds, or let go of the overload before the end. He walks out of the hub alive the way he came. Months later, under the amber lamp at Snakehead, he doses, and the CRT shows the cult's next resin attack on the plinth's water, made without him, as large as the doctrine had grown.",
+      "cost": "He lives; the cult's own resin attack.",
+      "final_scenes": [
+        "s3_hub_core",
+        "s3_snakehead_resin"
+      ]
+    },
+    {
+      "id": "the_first_word",
+      "name": "The First Word",
+      "as_written": false,
+      "priority": 4,
+      "when": {
+        "is": "cally.said_rcc",
+        "eq": true
+      },
+      "summary": "At the inner door he asked her who built her, and Cally said the word for the first time: RCC (bible Part VI, Catalyst Version B: 'Watch for the first time she says RCC'). She opened the hub and stayed. Her hand was on the balance when he rested it in the window, and he held. The plain at dawn, as in the Reset.",
+      "cost": "The Reset, with her inside it: her printed body did not come through it.",
+      "final_scenes": [
+        "s3_hub_core",
+        "s3_first_word_core",
+        "s3_peace_plain"
+      ]
+    },
+    {
+      "id": "the_reset",
+      "name": "The Reset",
+      "as_written": true,
+      "priority": 5,
+      "when": true,
+      "summary": "The bible's closing act (Part VI, Dr. Tox, Story: The Finale, marked '(stub)', 'Per the Blueprint'): 'Dr. Tox infiltrates the final corporate arcology's central hub and overloads his glands, flooding the city's life support with an aerosolized mix of 5-MeO-DMT and Bufadienolides. His heart fails. This is his sacrifice'. Reese left room in his wall; the man was above the floor; the pans rested in the window; he held. Under one amber lamp the plant's lights go soft, and the frame stays on the lamp. Then the plain at dawn: the floodlights off, the march sitting down in the dust, and around the hub a ring of hard light that Altrulan will remember as halos. 'What makes it land isn't spectacle; it's the peace that follows it'.",
+      "cost": "His heart; the peace after.",
+      "final_scenes": [
+        "s3_hub_core",
+        "s3_reset_heart",
+        "s3_peace_plain"
+      ]
+    }
+  ]
+}

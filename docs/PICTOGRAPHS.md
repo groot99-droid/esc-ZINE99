@@ -336,3 +336,33 @@ Rebuild with `python tools/pictographs/build.py`; each game's drawing code is in
 ### Composite (1D): Identikit acetate overlays
 
 ![Composite](../games/dr-tox-fall/pictographs/composite.svg)
+
+## Dr. Tox: Finale
+
+### The airway (2D): Non-photo-blue pencil roughs
+
+![The airway](../games/dr-tox-finale/pictographs/airway.svg)
+
+### Procession (2D): Photocopied punk-zine collage
+
+![Procession](../games/dr-tox-finale/pictographs/procession.svg)
+
+### The Creed (1D): Pocket tract booklet
+
+![The Creed](../games/dr-tox-finale/pictographs/creed.svg)
+
+### Two Pans (1D): Two-colour pulp, red and black
+
+![Two Pans](../games/dr-tox-finale/pictographs/two-pans.svg)
+
+### Switchboard (1D): Letterer's balloon page
+
+![Switchboard](../games/dr-tox-finale/pictographs/switchboard.svg)
+
+### Panes (1D): Holographic foil trading card
+
+![Panes](../games/dr-tox-finale/pictographs/panes.svg)
+
+### Split Field (1D): Craftint Doubletone shading board
+
+![Split Field](../games/dr-tox-finale/pictographs/split-field.svg)

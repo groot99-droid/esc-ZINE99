@@ -1,0 +1,899 @@
+{
+ "game": "dr-tox-finale",
+ "location": "snakehead-overrun",
+ "name": "Snakehead, overrun",
+ "reference": "assets/locations/snakehead-overrun.jpg",
+ "bounds_m": [
+  48,
+  36,
+  8
+ ],
+ "origin": "centre of the cavern hall floor; +y toward the breach and its stair; the archive corridor enters from -y; the bench bay at -x; the four cells at +x",
+ "materials": {
+  "concrete": {
+   "color": [
+    0.4,
+    0.47,
+    0.47
+   ],
+   "roughness": 0.9
+  },
+  "rock": {
+   "color": [
+    0.3,
+    0.29,
+    0.27
+   ],
+   "roughness": 0.95
+  },
+  "paint": {
+   "color": [
+    0.85,
+    0.83,
+    0.78
+   ],
+   "roughness": 0.8
+  },
+  "tube": {
+   "color": [
+    0.9,
+    0.93,
+    0.92
+   ],
+   "roughness": 0.4,
+   "emission": 1.5
+  },
+  "glass": {
+   "color": [
+    0.7,
+    0.8,
+    0.82
+   ],
+   "roughness": 0.1
+  },
+  "sky": {
+   "color": [
+    0.6,
+    0.64,
+    0.64
+   ],
+   "roughness": 1.0,
+   "emission": 1.0
+  }
+ },
+ "blockout": [
+  {
+   "id": "floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    48,
+    36,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    -0.1
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "corridor-floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    3,
+    10,
+    0.2
+   ],
+   "location": [
+    0,
+    -20,
+    -0.1
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "corridor-wall-w",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    10,
+    3.2
+   ],
+   "location": [
+    -1.65,
+    -20,
+    1.6
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "corridor-wall-e",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    10,
+    3.2
+   ],
+   "location": [
+    1.65,
+    -20,
+    1.6
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "corridor-tube",
+   "shape": "box",
+   "role": "trim",
+   "size_m": [
+    0.2,
+    8,
+    0.1
+   ],
+   "location": [
+    0,
+    -20,
+    3.1
+   ],
+   "material": "tube"
+  },
+  {
+   "id": "painted-lines-w",
+   "shape": "plane",
+   "role": "trim",
+   "size_m": [
+    0.01,
+    8,
+    1.2
+   ],
+   "location": [
+    -1.48,
+    -20,
+    1.8
+   ],
+   "material": "paint",
+   "rotation_deg": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "painted-lines-e",
+   "shape": "plane",
+   "role": "trim",
+   "size_m": [
+    0.01,
+    8,
+    1.2
+   ],
+   "location": [
+    1.48,
+    -20,
+    1.8
+   ],
+   "material": "paint",
+   "rotation_deg": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "cavern-wall-n",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    48,
+    1.0,
+    8
+   ],
+   "location": [
+    0,
+    18.5,
+    4
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "cavern-wall-w",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    1.0,
+    36,
+    8
+   ],
+   "location": [
+    -24.5,
+    0,
+    4
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "cavern-wall-e",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    1.0,
+    36,
+    8
+   ],
+   "location": [
+    24.5,
+    0,
+    4
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "cavern-wall-s",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    48,
+    1.0,
+    8
+   ],
+   "location": [
+    0,
+    -15.5,
+    4
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "ceiling",
+   "shape": "box",
+   "role": "ceiling",
+   "size_m": [
+    48,
+    36,
+    0.6
+   ],
+   "location": [
+    0,
+    0,
+    8.3
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "breach",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    6,
+    4,
+    0.8
+   ],
+   "location": [
+    0,
+    14,
+    8.2
+   ],
+   "material": "sky"
+  },
+  {
+   "id": "breach-stair",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    3,
+    6,
+    4
+   ],
+   "location": [
+    0,
+    15,
+    2
+   ],
+   "material": "rock",
+   "rotation_deg": [
+    20,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "name-ring",
+   "shape": "cylinder",
+   "role": "trim",
+   "size_m": [
+    10,
+    10,
+    0.05
+   ],
+   "location": [
+    0,
+    17.9,
+    4.2
+   ],
+   "material": "paint",
+   "rotation_deg": [
+    90,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "cell-1",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    3,
+    3,
+    3
+   ],
+   "location": [
+    21,
+    -9,
+    1.5
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "cell-2",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    3,
+    3,
+    3
+   ],
+   "location": [
+    21,
+    -4,
+    1.5
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "cell-3",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    3,
+    3,
+    3
+   ],
+   "location": [
+    21,
+    1,
+    1.5
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "cell-tank",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    3,
+    3,
+    3
+   ],
+   "location": [
+    21,
+    6,
+    1.5
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "bay-wall",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    10,
+    3.5
+   ],
+   "location": [
+    -15,
+    -9,
+    1.75
+   ],
+   "material": "concrete"
+  }
+ ],
+ "props": [
+  {
+   "id": "lamp",
+   "object": "work-lamp",
+   "location": [
+    -20,
+    -9,
+    0.9
+   ]
+  },
+  {
+   "id": "locker",
+   "object": "shielded-locker",
+   "location": [
+    -22,
+    -6,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "bench",
+   "object": "batch-bench",
+   "location": [
+    -20,
+    -11,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "jars",
+   "object": "rite-jar-rack",
+   "location": [
+    -22.5,
+    -12,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "lectern",
+   "object": "drum-lectern",
+   "location": [
+    0,
+    12,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ]
+  },
+  {
+   "id": "icon",
+   "object": "icon-lightbox",
+   "location": [
+    0,
+    17.6,
+    4.0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ],
+   "ground": false
+  },
+  {
+   "id": "cot-1",
+   "object": "folding-cot",
+   "location": [
+    -6,
+    4,
+    0
+   ]
+  },
+  {
+   "id": "cot-2",
+   "object": "folding-cot",
+   "location": [
+    -2,
+    4,
+    0
+   ]
+  },
+  {
+   "id": "cot-3",
+   "object": "folding-cot",
+   "location": [
+    2,
+    4,
+    0
+   ]
+  },
+  {
+   "id": "cot-4",
+   "object": "folding-cot",
+   "location": [
+    6,
+    4,
+    0
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_overrun_hall": {
+   "note": "Chapter 1, 2236: down the archive corridor of his painted lines into the cavern hall, full and facing the lectern; the icon or the ring of names; the cult's padlock on the locker.",
+   "world": {
+    "color": [
+     0.2,
+     0.22,
+     0.22
+    ],
+    "strength": 0.3
+   },
+   "lights": [
+    {
+     "name": "corridor-tubes",
+     "type": "AREA",
+     "location": [
+      0,
+      -20,
+      3.0
+     ],
+     "look_at": [
+      0,
+      -20,
+      0
+     ],
+     "energy": 400,
+     "size": 6,
+     "color": [
+      0.86,
+      0.92,
+      0.9
+     ]
+    },
+    {
+     "name": "breach-day",
+     "type": "SPOT",
+     "location": [
+      0,
+      14,
+      7.8
+     ],
+     "look_at": [
+      0,
+      6,
+      0
+     ],
+     "energy": 1500,
+     "size": 6,
+     "color": [
+      0.78,
+      0.84,
+      0.84
+     ]
+    },
+    {
+     "name": "lanterns",
+     "type": "POINT",
+     "location": [
+      0,
+      6,
+      0.6
+     ],
+     "energy": 300,
+     "size": 4,
+     "color": [
+      1.0,
+      0.62,
+      0.22
+     ]
+    },
+    {
+     "name": "icon-glow",
+     "type": "AREA",
+     "location": [
+      0,
+      17,
+      4.0
+     ],
+     "look_at": [
+      0,
+      10,
+      1.5
+     ],
+     "energy": 150,
+     "size": 1.5,
+     "color": [
+      0.92,
+      0.95,
+      0.95
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     -19,
+     1.7
+    ],
+    "look_at": [
+     0,
+     12,
+     1.4
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     -20,
+     0
+    ],
+    "facing_deg": 0
+   },
+   "interactions": [
+    {
+     "prop": "lectern",
+     "verb": "Sit at her table",
+     "leads_to": "s1_creed_1"
+    },
+    {
+     "prop": "locker",
+     "verb": "Open the locker"
+    },
+    {
+     "prop": "icon",
+     "verb": "Look up"
+    }
+   ]
+  },
+  "s3_overrun_after": {
+   "note": "Chapter 1, end: they go up the breach with the blades on their belts, without him; the hall empty, the tract on the lectern.",
+   "world": {
+    "color": [
+     0.2,
+     0.22,
+     0.22
+    ],
+    "strength": 0.3
+   },
+   "lights": [
+    {
+     "name": "breach-day",
+     "type": "SPOT",
+     "location": [
+      0,
+      14,
+      7.8
+     ],
+     "look_at": [
+      0,
+      8,
+      0
+     ],
+     "energy": 1800,
+     "size": 6,
+     "color": [
+      0.78,
+      0.84,
+      0.84
+     ]
+    },
+    {
+     "name": "lamp",
+     "type": "POINT",
+     "location": [
+      -20,
+      -9,
+      1.2
+     ],
+     "energy": 120,
+     "size": 0.3,
+     "color": [
+      1.0,
+      0.62,
+      0.22
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     2,
+     1.7
+    ],
+    "look_at": [
+     0,
+     15,
+     3
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     1,
+     0
+    ],
+    "facing_deg": 0
+   },
+   "interactions": [
+    {
+     "prop": "lectern",
+     "verb": "Read the tract"
+    },
+    {
+     "prop": "cot-2",
+     "verb": "Go up after them",
+     "leads_to": "s3_station_attack"
+    }
+   ]
+  },
+  "s3_snakehead_bench": {
+   "note": "Chapter 3, 2237: the bench retaken under one amber lamp; the cult's rite jars; the dark-haired woman sweeping the hall; expose her or keep her near.",
+   "world": {
+    "color": [
+     0.05,
+     0.05,
+     0.06
+    ],
+    "strength": 0.15
+   },
+   "lights": [
+    {
+     "name": "lamp",
+     "type": "SPOT",
+     "location": [
+      -20,
+      -9,
+      2.4
+     ],
+     "look_at": [
+      -20,
+      -11,
+      0.9
+     ],
+     "energy": 600,
+     "size": 1.2,
+     "color": [
+      1.0,
+      0.62,
+      0.22
+     ]
+    },
+    {
+     "name": "breach-day",
+     "type": "SPOT",
+     "location": [
+      0,
+      14,
+      7.8
+     ],
+     "look_at": [
+      0,
+      6,
+      0
+     ],
+     "energy": 600,
+     "size": 6,
+     "color": [
+      0.78,
+      0.84,
+      0.84
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -17,
+     -9,
+     1.7
+    ],
+    "look_at": [
+     -20,
+     -11,
+     1.0
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -17,
+     -8,
+     0
+    ],
+    "facing_deg": 225
+   },
+   "interactions": [
+    {
+     "prop": "bench",
+     "verb": "Weigh their jars",
+     "leads_to": "s1_pans_1"
+    },
+    {
+     "prop": "jars",
+     "verb": "Give the batch its hours"
+    },
+    {
+     "prop": "cot-1",
+     "verb": "Speak to her"
+    }
+   ]
+  },
+  "s3_snakehead_resin": {
+   "note": "Ending, The Cage Holds: months later, the lamp, the locker, and the cult's next attack on the CRT.",
+   "world": {
+    "color": [
+     0.04,
+     0.04,
+     0.05
+    ],
+    "strength": 0.12
+   },
+   "lights": [
+    {
+     "name": "lamp",
+     "type": "SPOT",
+     "location": [
+      -20,
+      -9,
+      2.4
+     ],
+     "look_at": [
+      -21,
+      -7,
+      1.0
+     ],
+     "energy": 650,
+     "size": 1.2,
+     "color": [
+      1.0,
+      0.62,
+      0.22
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -17.5,
+     -8,
+     1.6
+    ],
+    "look_at": [
+     -22,
+     -6,
+     1.2
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -17.5,
+     -8.5,
+     0
+    ],
+    "facing_deg": 250
+   },
+   "hide": [
+    "cot-1",
+    "cot-2",
+    "cot-3",
+    "cot-4",
+    "icon"
+   ],
+   "interactions": [
+    {
+     "prop": "locker",
+     "verb": "Take the dose"
+    }
+   ]
+  }
+ }
+}

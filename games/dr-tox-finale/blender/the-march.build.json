@@ -1,0 +1,1082 @@
+{
+ "game": "dr-tox-finale",
+ "location": "the-march",
+ "name": "The march: the plain road to the last city",
+ "reference": "assets/locations/the-march.jpg",
+ "bounds_m": [
+  240,
+  120,
+  40
+ ],
+ "origin": "centre of the plain road; +x east toward the arcology plinth (its glass and gate at the east edge); the RCC water station at the west end (-x); the cult's camp mid-west; the perimeter's floodlights near the east edge; +y north",
+ "materials": {
+  "dust": {
+   "color": [
+    0.5,
+    0.48,
+    0.44
+   ],
+   "roughness": 1.0
+  },
+  "road": {
+   "color": [
+    0.36,
+    0.37,
+    0.36
+   ],
+   "roughness": 0.95
+  },
+  "concrete": {
+   "color": [
+    0.44,
+    0.5,
+    0.5
+   ],
+   "roughness": 0.9
+  },
+  "glass": {
+   "color": [
+    0.62,
+    0.72,
+    0.74
+   ],
+   "roughness": 0.08,
+   "metallic": 0.1
+  },
+  "tarp": {
+   "color": [
+    0.42,
+    0.45,
+    0.4
+   ],
+   "roughness": 0.9
+  },
+  "fence": {
+   "color": [
+    0.35,
+    0.36,
+    0.37
+   ],
+   "roughness": 0.6,
+   "metallic": 0.5
+  },
+  "sky": {
+   "color": [
+    0.66,
+    0.68,
+    0.66
+   ],
+   "roughness": 1.0,
+   "emission": 1.0
+  }
+ },
+ "blockout": [
+  {
+   "id": "plain",
+   "shape": "plane",
+   "role": "terrain",
+   "size_m": [
+    240,
+    120,
+    0
+   ],
+   "location": [
+    0,
+    0,
+    0
+   ],
+   "material": "dust"
+  },
+  {
+   "id": "road",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    236,
+    8,
+    0.1
+   ],
+   "location": [
+    0,
+    0,
+    0.05
+   ],
+   "material": "road"
+  },
+  {
+   "id": "plinth",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    8,
+    120,
+    30
+   ],
+   "location": [
+    116,
+    0,
+    15
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "atrium-glass",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    0.6,
+    24,
+    18
+   ],
+   "location": [
+    111.7,
+    0,
+    12
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "gate",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    0.6,
+    8,
+    5
+   ],
+   "location": [
+    111.6,
+    0,
+    2.5
+   ],
+   "material": "fence"
+  },
+  {
+   "id": "fence-n",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    0.2,
+    50,
+    3
+   ],
+   "location": [
+    104,
+    35,
+    1.5
+   ],
+   "material": "fence"
+  },
+  {
+   "id": "fence-s",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    0.2,
+    50,
+    3
+   ],
+   "location": [
+    104,
+    -35,
+    1.5
+   ],
+   "material": "fence"
+  },
+  {
+   "id": "tent-1",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    5,
+    4,
+    2.5
+   ],
+   "location": [
+    -20,
+    14,
+    1.25
+   ],
+   "material": "tarp"
+  },
+  {
+   "id": "tent-2",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    5,
+    4,
+    2.5
+   ],
+   "location": [
+    -4,
+    18,
+    1.25
+   ],
+   "material": "tarp"
+  },
+  {
+   "id": "tent-3",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    5,
+    4,
+    2.5
+   ],
+   "location": [
+    -24,
+    -12,
+    1.25
+   ],
+   "material": "tarp"
+  },
+  {
+   "id": "shanties",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    4,
+    60,
+    3
+   ],
+   "location": [
+    109,
+    0,
+    1.5
+   ],
+   "material": "tarp"
+  },
+  {
+   "id": "sky",
+   "shape": "sphere",
+   "role": "sky",
+   "size_m": [
+    400,
+    400,
+    200
+   ],
+   "location": [
+    0,
+    0,
+    0
+   ],
+   "material": "sky"
+  }
+ ],
+ "props": [
+  {
+   "id": "tower",
+   "object": "water-tower",
+   "location": [
+    -100,
+    10,
+    0
+   ]
+  },
+  {
+   "id": "kiosk",
+   "object": "water-kiosk",
+   "location": [
+    -94,
+    4,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "barricade",
+   "object": "shield-barricade",
+   "location": [
+    -88,
+    -2,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "copier",
+   "object": "copier-cart",
+   "location": [
+    -12,
+    8,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    30
+   ]
+  },
+  {
+   "id": "crate",
+   "object": "blade-crate",
+   "location": [
+    -8,
+    12,
+    0
+   ]
+  },
+  {
+   "id": "banner-1",
+   "object": "banner-pole",
+   "location": [
+    30,
+    0,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "banner-2",
+   "object": "banner-pole",
+   "location": [
+    78,
+    0,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "cart-1",
+   "object": "march-handcart",
+   "location": [
+    -18,
+    4,
+    0
+   ]
+  },
+  {
+   "id": "cart-2",
+   "object": "march-handcart",
+   "location": [
+    34,
+    -4,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "mast-1",
+   "object": "floodlight-mast",
+   "location": [
+    98,
+    -20,
+    0
+   ]
+  },
+  {
+   "id": "mast-2",
+   "object": "floodlight-mast",
+   "location": [
+    98,
+    20,
+    0
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_station_attack": {
+   "note": "Chapter 2, 2236: the RCC water station at the west end; the cult's attack under way; the shield line comes out from behind the tower; he walks between; scripted trigger line; cut on the suit failing.",
+   "world": {
+    "color": [
+     0.6,
+     0.62,
+     0.6
+    ],
+    "strength": 0.8
+   },
+   "lights": [
+    {
+     "name": "noon",
+     "type": "SUN",
+     "location": [
+      -90,
+      0,
+      40
+     ],
+     "look_at": [
+      -95,
+      0,
+      0
+     ],
+     "energy": 4,
+     "color": [
+      1.0,
+      0.97,
+      0.9
+     ]
+    },
+    {
+     "name": "muzzle",
+     "type": "POINT",
+     "location": [
+      -88,
+      -2,
+      1.4
+     ],
+     "energy": 800,
+     "size": 0.2,
+     "color": [
+      1.0,
+      0.85,
+      0.6
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -84,
+     -6,
+     1.6
+    ],
+    "look_at": [
+     -94,
+     2,
+     1.5
+    ],
+    "lens_mm": 28,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -84,
+     -6.5,
+     0
+    ],
+    "facing_deg": 300
+   },
+   "hide": [
+    "banner-1",
+    "banner-2",
+    "cart-2",
+    "mast-1",
+    "mast-2"
+   ],
+   "interactions": [
+    {
+     "prop": "barricade",
+     "verb": "Walk between them"
+    },
+    {
+     "prop": "kiosk",
+     "verb": "Look",
+     "leads_to": "s1_split_1"
+    }
+   ]
+  },
+  "s3_station_after": {
+   "note": "Chapter 2, end: dust settling; the kiosk's CRT plays TWO PLAGUES: his face beside Rostova's portrait and the word CATALYST.",
+   "world": {
+    "color": [
+     0.55,
+     0.57,
+     0.56
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "day",
+     "type": "SUN",
+     "location": [
+      -90,
+      0,
+      40
+     ],
+     "look_at": [
+      -95,
+      0,
+      0
+     ],
+     "energy": 2.5,
+     "color": [
+      0.78,
+      0.84,
+      0.84
+     ]
+    },
+    {
+     "name": "crt",
+     "type": "AREA",
+     "location": [
+      -92.8,
+      4,
+      1.4
+     ],
+     "look_at": [
+      -90,
+      4,
+      1.4
+     ],
+     "energy": 40,
+     "size": 0.4,
+     "color": [
+      0.7,
+      0.85,
+      0.9
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -90,
+     3,
+     1.6
+    ],
+    "look_at": [
+     -94,
+     4,
+     1.4
+    ],
+    "lens_mm": 35,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -90,
+     3,
+     0
+    ],
+    "facing_deg": 270
+   },
+   "hide": [
+    "banner-1",
+    "banner-2",
+    "cart-2",
+    "mast-1",
+    "mast-2"
+   ],
+   "interactions": [
+    {
+     "prop": "kiosk",
+     "verb": "Watch the broadcast",
+     "leads_to": "s3_snakehead_bench"
+    }
+   ]
+  },
+  "s3_march_camp": {
+   "note": "Chapter 4, 2238: the camp below the last city; Dov's copier running off the tract; a CRT: THE LAST CITY SEALS.",
+   "world": {
+    "color": [
+     0.52,
+     0.55,
+     0.55
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "haze",
+     "type": "SUN",
+     "location": [
+      0,
+      0,
+      40
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 2.5,
+     "color": [
+      0.78,
+      0.84,
+      0.84
+     ]
+    },
+    {
+     "name": "generator-lamp",
+     "type": "POINT",
+     "location": [
+      -12,
+      8,
+      2
+     ],
+     "energy": 80,
+     "size": 0.5,
+     "color": [
+      1.0,
+      0.62,
+      0.22
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -16,
+     0,
+     1.6
+    ],
+    "look_at": [
+     -12,
+     8,
+     1.0
+    ],
+    "lens_mm": 35,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -16,
+     -0.5,
+     0
+    ],
+    "facing_deg": 30
+   },
+   "hide": [
+    "banner-2",
+    "cart-2",
+    "mast-1",
+    "mast-2"
+   ],
+   "interactions": [
+    {
+     "prop": "copier",
+     "verb": "Take a tract"
+    },
+    {
+     "prop": "cart-1",
+     "verb": "Sit at their table",
+     "leads_to": "s1_creed_2"
+    }
+   ]
+  },
+  "s3_march_eve": {
+   "note": "Chapter 4, end: night; the blades handed out from a crate; the Observers sign that they will come; the arcology's lights far off.",
+   "world": {
+    "color": [
+     0.03,
+     0.035,
+     0.05
+    ],
+    "strength": 0.15
+   },
+   "lights": [
+    {
+     "name": "lanterns",
+     "type": "POINT",
+     "location": [
+      -8,
+      11,
+      1.0
+     ],
+     "energy": 250,
+     "size": 2,
+     "color": [
+      1.0,
+      0.62,
+      0.22
+     ]
+    },
+    {
+     "name": "arcology-glow",
+     "type": "AREA",
+     "location": [
+      110,
+      0,
+      25
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 3000,
+     "size": 40,
+     "color": [
+      0.95,
+      0.85,
+      0.65
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -6,
+     6,
+     1.6
+    ],
+    "look_at": [
+     -8,
+     12,
+     0.5
+    ],
+    "lens_mm": 35,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -6,
+     5.5,
+     0
+    ],
+    "facing_deg": 330
+   },
+   "hide": [
+    "banner-1",
+    "banner-2",
+    "cart-2",
+    "mast-1",
+    "mast-2"
+   ],
+   "interactions": [
+    {
+     "prop": "crate",
+     "verb": "Watch the crate"
+    },
+    {
+     "prop": "copier",
+     "verb": "Walk out at dawn",
+     "leads_to": "s3_march_road"
+    }
+   ]
+  },
+  "s3_march_road": {
+   "note": "Chapter 5, 2239: dawn; the march sets out under photocopied banners with him at its rear.",
+   "world": {
+    "color": [
+     0.6,
+     0.6,
+     0.58
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "dawn",
+     "type": "SUN",
+     "location": [
+      80,
+      -20,
+      10
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 2.5,
+     "color": [
+      1.0,
+      0.88,
+      0.72
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     16,
+     0,
+     1.6
+    ],
+    "look_at": [
+     40,
+     0,
+     2.0
+    ],
+    "lens_mm": 35,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     16,
+     0,
+     0
+    ],
+    "facing_deg": 270
+   },
+   "hide": [
+    "mast-1",
+    "mast-2",
+    "kiosk",
+    "barricade"
+   ],
+   "interactions": [
+    {
+     "prop": "banner-1",
+     "verb": "Follow the march",
+     "leads_to": "s2_procession_1"
+    }
+   ]
+  },
+  "s3_march_front": {
+   "note": "Chapter 5, end: the front at dusk, the floodlit perimeter below; 'Go home.', lead them, or walk on alone.",
+   "world": {
+    "color": [
+     0.35,
+     0.38,
+     0.4
+    ],
+    "strength": 0.5
+   },
+   "lights": [
+    {
+     "name": "dusk",
+     "type": "SUN",
+     "location": [
+      -60,
+      0,
+      6
+     ],
+     "look_at": [
+      80,
+      0,
+      0
+     ],
+     "energy": 1.2,
+     "color": [
+      0.95,
+      0.65,
+      0.35
+     ]
+    },
+    {
+     "name": "floods",
+     "type": "AREA",
+     "location": [
+      98,
+      0,
+      9
+     ],
+     "look_at": [
+      90,
+      0,
+      0
+     ],
+     "energy": 4000,
+     "size": 30,
+     "color": [
+      0.95,
+      0.97,
+      1.0
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     74,
+     0,
+     1.6
+    ],
+    "look_at": [
+     104,
+     0,
+     4
+    ],
+    "lens_mm": 35,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     74,
+     0,
+     0
+    ],
+    "facing_deg": 270
+   },
+   "hide": [
+    "kiosk",
+    "barricade",
+    "copier",
+    "crate",
+    "cart-1"
+   ],
+   "interactions": [
+    {
+     "prop": "banner-2",
+     "verb": "Speak",
+     "leads_to": "s2_procession_2"
+    }
+   ]
+  },
+  "s3_perimeter_breach": {
+   "note": "Chapter 6: the resin volley cracks the atrium glass above the plinth gate; hard light flares behind it; he makes for the plinth vents.",
+   "world": {
+    "color": [
+     0.1,
+     0.1,
+     0.12
+    ],
+    "strength": 0.3
+   },
+   "lights": [
+    {
+     "name": "floods",
+     "type": "AREA",
+     "location": [
+      98,
+      0,
+      9
+     ],
+     "look_at": [
+      108,
+      0,
+      4
+     ],
+     "energy": 6000,
+     "size": 30,
+     "color": [
+      0.95,
+      0.97,
+      1.0
+     ]
+    },
+    {
+     "name": "hardlight",
+     "type": "AREA",
+     "location": [
+      113,
+      0,
+      10
+     ],
+     "look_at": [
+      100,
+      0,
+      6
+     ],
+     "energy": 2000,
+     "size": 12,
+     "color": [
+      0.97,
+      0.9,
+      0.7
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     100,
+     -6,
+     1.6
+    ],
+    "look_at": [
+     111,
+     0,
+     9
+    ],
+    "lens_mm": 28,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     100,
+     -6,
+     0
+    ],
+    "facing_deg": 290
+   },
+   "hide": [
+    "kiosk",
+    "barricade",
+    "copier",
+    "crate",
+    "cart-1",
+    "banner-1"
+   ],
+   "interactions": [
+    {
+     "prop": "mast-1",
+     "verb": "Go for the vents",
+     "leads_to": "s3_atrium_inside"
+    }
+   ]
+  },
+  "s3_peace_plain": {
+   "note": "Endings, The Reset and The First Word: the plain at dawn; the floodlights off; the march sitting down in the dust; a ring of hard light still standing deep in the arcology.",
+   "world": {
+    "color": [
+     0.62,
+     0.62,
+     0.6
+    ],
+    "strength": 0.7
+   },
+   "lights": [
+    {
+     "name": "dawn",
+     "type": "SUN",
+     "location": [
+      -60,
+      -20,
+      8
+     ],
+     "look_at": [
+      80,
+      0,
+      0
+     ],
+     "energy": 2.5,
+     "color": [
+      1.0,
+      0.86,
+      0.68
+     ]
+    },
+    {
+     "name": "halo",
+     "type": "AREA",
+     "location": [
+      113,
+      0,
+      20
+     ],
+     "look_at": [
+      80,
+      0,
+      10
+     ],
+     "energy": 800,
+     "size": 10,
+     "color": [
+      0.97,
+      0.9,
+      0.7
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     60,
+     -14,
+     3
+    ],
+    "look_at": [
+     100,
+     0,
+     6
+    ],
+    "lens_mm": 24,
+    "mode": "fixed"
+   },
+   "hide": [
+    "kiosk",
+    "barricade",
+    "copier",
+    "crate",
+    "tower"
+   ]
+  }
+ }
+}

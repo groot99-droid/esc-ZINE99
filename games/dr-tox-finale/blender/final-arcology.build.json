@@ -1,0 +1,541 @@
+{
+ "game": "dr-tox-finale",
+ "location": "final-arcology",
+ "name": "The final arcology: atrium and plinth",
+ "reference": "assets/locations/final-arcology.jpg",
+ "bounds_m": [
+  80,
+  60,
+  30
+ ],
+ "origin": "centre of the glass wall at floor level; the clean atrium at +y (inside); the plinth's concrete face, its exhaust vents and the shanties at -y (outside); the gate and the cracked panel near x = 0",
+ "materials": {
+  "stone": {
+   "color": [
+    0.86,
+    0.85,
+    0.82
+   ],
+   "roughness": 0.4
+  },
+  "concrete": {
+   "color": [
+    0.42,
+    0.47,
+    0.47
+   ],
+   "roughness": 0.92
+  },
+  "glass": {
+   "color": [
+    0.66,
+    0.76,
+    0.78
+   ],
+   "roughness": 0.06,
+   "metallic": 0.1
+  },
+  "dust": {
+   "color": [
+    0.48,
+    0.45,
+    0.4
+   ],
+   "roughness": 1.0
+  },
+  "light": {
+   "color": [
+    0.95,
+    0.95,
+    0.93
+   ],
+   "roughness": 0.3,
+   "emission": 2.0
+  }
+ },
+ "blockout": [
+  {
+   "id": "atrium-floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    80,
+    30,
+    0.3
+   ],
+   "location": [
+    0,
+    15,
+    -0.15
+   ],
+   "material": "stone"
+  },
+  {
+   "id": "plinth-ground",
+   "shape": "box",
+   "role": "terrain",
+   "size_m": [
+    80,
+    30,
+    0.3
+   ],
+   "location": [
+    0,
+    -15,
+    -0.15
+   ],
+   "material": "dust"
+  },
+  {
+   "id": "glass-wall",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    80,
+    0.5,
+    24
+   ],
+   "location": [
+    0,
+    0,
+    12
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "atrium-roof",
+   "shape": "box",
+   "role": "ceiling",
+   "size_m": [
+    80,
+    30,
+    0.5
+   ],
+   "location": [
+    0,
+    15,
+    29.5
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "atrium-back",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    80,
+    0.5,
+    30
+   ],
+   "location": [
+    0,
+    30,
+    15
+   ],
+   "material": "stone"
+  },
+  {
+   "id": "plinth-face",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    80,
+    1.0,
+    6
+   ],
+   "location": [
+    0,
+    -0.8,
+    27
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "vent-bank",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    40,
+    2,
+    8
+   ],
+   "location": [
+    -20,
+    -2,
+    12
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "atrium-light",
+   "shape": "box",
+   "role": "trim",
+   "size_m": [
+    60,
+    0.2,
+    0.2
+   ],
+   "location": [
+    0,
+    28,
+    26
+   ],
+   "material": "light"
+  }
+ ],
+ "props": [
+  {
+   "id": "panel",
+   "object": "atrium-glass-panel",
+   "location": [
+    0,
+    0.6,
+    0
+   ]
+  },
+  {
+   "id": "emitter-1",
+   "object": "hardlight-emitter",
+   "location": [
+    -6,
+    4,
+    0
+   ]
+  },
+  {
+   "id": "emitter-2",
+   "object": "hardlight-emitter",
+   "location": [
+    6,
+    4,
+    0
+   ]
+  },
+  {
+   "id": "vent",
+   "object": "exhaust-vent",
+   "location": [
+    -20,
+    -3.5,
+    8
+   ],
+   "ground": false
+  },
+  {
+   "id": "cistern",
+   "object": "cistern-tank",
+   "location": [
+    -12,
+    -14,
+    0
+   ]
+  },
+  {
+   "id": "shanty-1",
+   "object": "shanty-shelter",
+   "location": [
+    -26,
+    -12,
+    0
+   ]
+  },
+  {
+   "id": "shanty-2",
+   "object": "shanty-shelter",
+   "location": [
+    -30,
+    -20,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    30
+   ]
+  },
+  {
+   "id": "shanty-3",
+   "object": "shanty-shelter",
+   "location": [
+    -18,
+    -24,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    -20
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_atrium_inside": {
+   "note": "Chapter 6: Reese inside the atrium; clean air screaming out through the crack; dust coming in; the order to seal it full; faces at the crack.",
+   "world": {
+    "color": [
+     0.8,
+     0.8,
+     0.78
+    ],
+    "strength": 0.8
+   },
+   "lights": [
+    {
+     "name": "atrium",
+     "type": "AREA",
+     "location": [
+      0,
+      18,
+      28
+     ],
+     "look_at": [
+      0,
+      15,
+      0
+     ],
+     "energy": 6000,
+     "size": 40,
+     "color": [
+      0.95,
+      0.95,
+      0.92
+     ]
+    },
+    {
+     "name": "floods-through",
+     "type": "SPOT",
+     "location": [
+      0,
+      -20,
+      8
+     ],
+     "look_at": [
+      0,
+      5,
+      2
+     ],
+     "energy": 3000,
+     "size": 8,
+     "color": [
+      0.85,
+      0.75,
+      0.6
+     ]
+    },
+    {
+     "name": "emitters",
+     "type": "POINT",
+     "location": [
+      0,
+      4,
+      2
+     ],
+     "energy": 200,
+     "size": 2,
+     "color": [
+      0.97,
+      0.9,
+      0.7
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     3,
+     9,
+     2.2
+    ],
+    "look_at": [
+     0,
+     0.5,
+     3
+    ],
+    "lens_mm": 28,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     1.5,
+     7,
+     0
+    ],
+    "facing_deg": 190
+   },
+   "hide": [
+    "shanty-1",
+    "shanty-2",
+    "shanty-3"
+   ],
+   "interactions": [
+    {
+     "prop": "panel",
+     "verb": "Seal the breach",
+     "leads_to": "s1_panes_1"
+    },
+    {
+     "prop": "emitter-1",
+     "verb": "Absorb"
+    }
+   ]
+  },
+  "s3_atrium_after": {
+   "note": "Chapter 6, end: the let-in sitting on clean stone, or nobody; the woman's voice and the sentence; a flinch.",
+   "world": {
+    "color": [
+     0.8,
+     0.8,
+     0.78
+    ],
+    "strength": 0.7
+   },
+   "lights": [
+    {
+     "name": "atrium",
+     "type": "AREA",
+     "location": [
+      0,
+      18,
+      28
+     ],
+     "look_at": [
+      0,
+      15,
+      0
+     ],
+     "energy": 5000,
+     "size": 40,
+     "color": [
+      0.98,
+      0.92,
+      0.82
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     8,
+     12,
+     2.0
+    ],
+    "look_at": [
+     0,
+     4,
+     1
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     6,
+     10,
+     0
+    ],
+    "facing_deg": 210
+   },
+   "hide": [
+    "shanty-1",
+    "shanty-2",
+    "shanty-3"
+   ],
+   "interactions": [
+    {
+     "prop": "emitter-2",
+     "verb": "Answer the channel",
+     "leads_to": "s3_arcology_plinth"
+    }
+   ]
+  },
+  "s3_arcology_plinth": {
+   "note": "Chapter 7: the plinth outside; shanties under the exhaust vents breathing warm stale air; the cistern; the Ghost; a vent grille opening.",
+   "world": {
+    "color": [
+     0.42,
+     0.44,
+     0.44
+    ],
+    "strength": 0.5
+   },
+   "lights": [
+    {
+     "name": "exhaust-haze",
+     "type": "AREA",
+     "location": [
+      -20,
+      -4,
+      14
+     ],
+     "look_at": [
+      -20,
+      -15,
+      0
+     ],
+     "energy": 2500,
+     "size": 20,
+     "color": [
+      0.85,
+      0.8,
+      0.7
+     ]
+    },
+    {
+     "name": "sky",
+     "type": "SUN",
+     "location": [
+      0,
+      -30,
+      30
+     ],
+     "look_at": [
+      0,
+      -15,
+      0
+     ],
+     "energy": 1.5,
+     "color": [
+      0.78,
+      0.84,
+      0.84
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -8,
+     -18,
+     1.6
+    ],
+    "look_at": [
+     -20,
+     -3.5,
+     7
+    ],
+    "lens_mm": 35,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -8,
+     -18.5,
+     0
+    ],
+    "facing_deg": 315
+   },
+   "hide": [
+    "emitter-1",
+    "emitter-2"
+   ],
+   "interactions": [
+    {
+     "prop": "cistern",
+     "verb": "Look into the water"
+    },
+    {
+     "prop": "vent",
+     "verb": "Climb into the vent",
+     "leads_to": "s2_airway_1"
+    }
+   ]
+  }
+ }
+}

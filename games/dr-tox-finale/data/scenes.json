@@ -1,0 +1,814 @@
+{
+  "modes_2d": [
+    {
+      "id": "m2_procession",
+      "name": "Procession",
+      "movement": "scroll"
+    },
+    {
+      "id": "m2_airway",
+      "name": "The airway",
+      "movement": "scroll"
+    }
+  ],
+  "games_1d": [
+    {
+      "id": "g1_creed",
+      "name": "The Creed",
+      "family": "Dominoes"
+    },
+    {
+      "id": "g1_split_field",
+      "name": "Split Field",
+      "family": "Reconstruction by attribution (toolmark comparison)"
+    },
+    {
+      "id": "g1_two_pans",
+      "name": "Two Pans",
+      "family": "Balance"
+    },
+    {
+      "id": "g1_switchboard",
+      "name": "Switchboard",
+      "family": "Circuit patching"
+    },
+    {
+      "id": "g1_panes",
+      "name": "Panes",
+      "family": "Tangram tiling"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s3_overrun_hall",
+      "layer": "3d",
+      "name": "Snakehead, 2236: the corridor of his painted lines, and the cavern hall full and facing away",
+      "chapter": "c1_overrun",
+      "reads": [
+        "following",
+        "cult.icon",
+        "manifold.resin_line",
+        "bloom.settlement_lost",
+        "fiche.names_read",
+        "observers_choice",
+        "amber",
+        "self"
+      ],
+      "writes": [
+        "amber",
+        "pulse",
+        "cult.doctrine"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_creed_1"
+      ]
+    },
+    {
+      "id": "s1_creed_1",
+      "layer": "1d",
+      "name": "The Creed at the lectern's table: his own lines as dominoes, the lector laying faster than he can",
+      "chapter": "c1_overrun",
+      "game": "g1_creed",
+      "reads": [
+        "cult.doctrine",
+        "cally.crack"
+      ],
+      "writes": [
+        "cult.doctrine",
+        "creed.blood_joints",
+        "creed.word_joints",
+        "creed.sky_tiles",
+        "cally.crack"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_overrun_after"
+      ]
+    },
+    {
+      "id": "s3_overrun_after",
+      "layer": "3d",
+      "name": "They go up the breach with the blades on their belts, without him",
+      "chapter": "c1_overrun",
+      "reads": [
+        "cult.doctrine",
+        "observers_choice"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "s3_station_attack"
+      ]
+    },
+    {
+      "id": "s3_station_attack",
+      "layer": "3d",
+      "name": "The RCC water station on the plain road: the cult's first attack, the shield line, and the suit failing",
+      "chapter": "c2_station",
+      "reads": [
+        "following",
+        "manifold.resin_line",
+        "cult.doctrine",
+        "amber",
+        "self",
+        "pulse"
+      ],
+      "writes": [
+        "pulse",
+        "amber",
+        "toxin_events"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "s1_split_1"
+      ]
+    },
+    {
+      "id": "s1_split_1",
+      "layer": "1d",
+      "name": "Split Field at the station: which marks his body made and which his followers made in his name",
+      "chapter": "c2_station",
+      "game": "g1_split_field",
+      "reads": [
+        "toxin_events",
+        "self"
+      ],
+      "writes": [
+        "toxin_events",
+        "split.reconstructed",
+        "split.his_marks",
+        "split.cult_marks",
+        "split.hurt_names",
+        "self"
+      ],
+      "enter": "cut",
+      "exit": "pull-out",
+      "next": [
+        "s3_station_after"
+      ]
+    },
+    {
+      "id": "s3_station_after",
+      "layer": "3d",
+      "name": "The kiosk's CRT: his face beside Rostova's portrait and the word CATALYST, under TWO PLAGUES",
+      "chapter": "c2_station",
+      "reads": [
+        "cult.icon",
+        "rostova.plate_read",
+        "split.cult_marks"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "s3_snakehead_bench"
+      ]
+    },
+    {
+      "id": "s3_snakehead_bench",
+      "layer": "3d",
+      "name": "The bench retaken, 2237: the cult's rite jars, batch hours, and the dark-haired woman who stayed behind",
+      "chapter": "c3_bench",
+      "reads": [
+        "amber",
+        "cult.doctrine",
+        "cally.crack"
+      ],
+      "writes": [
+        "amber",
+        "snakehead.batch_hours",
+        "cult.doctrine",
+        "cally.recognised",
+        "cally.kept_secret",
+        "cally.crack"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_pans_1"
+      ]
+    },
+    {
+      "id": "s1_pans_1",
+      "layer": "1d",
+      "name": "Two Pans at the bench: the cult's own rite weighed, and a window found",
+      "chapter": "c3_bench",
+      "game": "g1_two_pans",
+      "reads": [
+        "cult.doctrine"
+      ],
+      "writes": [
+        "two_pans.window_learned",
+        "two_pans.rite_rebalanced",
+        "cult.doctrine"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s3_march_camp"
+      ]
+    },
+    {
+      "id": "s3_march_camp",
+      "layer": "3d",
+      "name": "The camp below the last city, 2238: the copier running off the tract, and THE LAST CITY SEALS",
+      "chapter": "c4_last_city",
+      "reads": [
+        "following",
+        "cult.doctrine",
+        "rostova.plate_read",
+        "cally.kept_secret"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_creed_2"
+      ]
+    },
+    {
+      "id": "s1_creed_2",
+      "layer": "1d",
+      "name": "The Creed at the camp, the tract printing as they play; the naming tile if he earned it",
+      "chapter": "c4_last_city",
+      "game": "g1_creed",
+      "reads": [
+        "cult.doctrine",
+        "cally.crack",
+        "cally.kept_secret",
+        "split.cult_marks"
+      ],
+      "writes": [
+        "cult.doctrine",
+        "creed.blood_joints",
+        "creed.word_joints",
+        "creed.sky_tiles",
+        "cally.crack",
+        "creed.named_harm"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_march_eve"
+      ]
+    },
+    {
+      "id": "s3_march_eve",
+      "layer": "3d",
+      "name": "Night at the camp: the blades handed out from a crate; the Observers sign that they will come",
+      "chapter": "c4_last_city",
+      "reads": [
+        "observers_choice",
+        "creed.blood_joints"
+      ],
+      "enter": "pull-out",
+      "exit": "fade",
+      "next": [
+        "s3_march_road"
+      ]
+    },
+    {
+      "id": "s3_march_road",
+      "layer": "3d",
+      "name": "Dawn, 2239: the march sets out under photocopied banners, with him at its rear",
+      "chapter": "c5_procession",
+      "reads": [
+        "following",
+        "cult.doctrine",
+        "amber"
+      ],
+      "writes": [
+        "amber",
+        "pulse"
+      ],
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "s2_procession_1"
+      ]
+    },
+    {
+      "id": "s2_procession_1",
+      "layer": "2d",
+      "name": "Procession: through the march to its front, against people who want into the ring",
+      "chapter": "c5_procession",
+      "mode": "m2_procession",
+      "reads": [
+        "pulse",
+        "self",
+        "cult.doctrine",
+        "observers_choice"
+      ],
+      "writes": [
+        "pulse",
+        "procession.touched",
+        "march.front_reached"
+      ],
+      "enter": "flatten",
+      "exit": "cut",
+      "next": [
+        "s3_march_front"
+      ]
+    },
+    {
+      "id": "s3_march_front",
+      "layer": "3d",
+      "name": "The front at dusk, the floodlit perimeter below: 'Go home.', lead them, or walk on alone",
+      "chapter": "c5_procession",
+      "reads": [
+        "march.front_reached",
+        "cult.doctrine"
+      ],
+      "writes": [
+        "march.choice",
+        "cult.turned_home",
+        "cult.doctrine"
+      ],
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s2_procession_2"
+      ]
+    },
+    {
+      "id": "s2_procession_2",
+      "layer": "2d",
+      "name": "Procession at the perimeter: the shield line, the floodlights, the resin volley",
+      "chapter": "c6_perimeter",
+      "mode": "m2_procession",
+      "reads": [
+        "pulse",
+        "self",
+        "amber",
+        "cult.doctrine",
+        "cult.turned_home",
+        "march.choice"
+      ],
+      "writes": [
+        "pulse",
+        "procession.touched",
+        "march.drew_fire",
+        "march.hurt",
+        "toxin_in_procession",
+        "toxin_events",
+        "self",
+        "amber"
+      ],
+      "enter": "fade",
+      "exit": "cut",
+      "next": [
+        "s3_perimeter_breach",
+        "s1_split_2"
+      ]
+    },
+    {
+      "id": "s1_split_2",
+      "layer": "1d",
+      "name": "Split Field at the perimeter, only if the State fired there: shields, a mast, the copier cart, and old resin",
+      "chapter": "c6_perimeter",
+      "game": "g1_split_field",
+      "reads": [
+        "toxin_events",
+        "toxin_in_procession",
+        "self"
+      ],
+      "writes": [
+        "toxin_events",
+        "split.reconstructed",
+        "split.his_marks",
+        "split.cult_marks",
+        "split.hurt_names",
+        "self"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "s3_perimeter_breach"
+      ]
+    },
+    {
+      "id": "s3_perimeter_breach",
+      "layer": "3d",
+      "name": "The atrium glass above the plinth gate cracks under the volley; hard light flares behind it",
+      "chapter": "c6_perimeter",
+      "reads": [
+        "march.drew_fire",
+        "march.hurt"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "s3_atrium_inside"
+      ]
+    },
+    {
+      "id": "s3_atrium_inside",
+      "layer": "3d",
+      "name": "Reese inside the atrium: clean air screaming out through the crack, and the order to seal it full",
+      "chapter": "c6_perimeter",
+      "reads": [
+        "reese.gala_word",
+        "reese.flinches"
+      ],
+      "writes": [
+        "load"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_panes_1"
+      ]
+    },
+    {
+      "id": "s1_panes_1",
+      "layer": "1d",
+      "name": "Panes at the atrium: seven hard-light pieces, and faces at the crack",
+      "chapter": "c6_perimeter",
+      "game": "g1_panes",
+      "reads": [
+        "load"
+      ],
+      "writes": [
+        "load",
+        "panes.atrium_gaps",
+        "panes.let_in"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_atrium_after"
+      ]
+    },
+    {
+      "id": "s3_atrium_after",
+      "layer": "3d",
+      "name": "The let-in sitting on clean stone, or nobody; the woman's voice and the sentence",
+      "chapter": "c6_perimeter",
+      "reads": [
+        "panes.let_in",
+        "reese.flinches"
+      ],
+      "writes": [
+        "reese.flinches"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "s3_arcology_plinth"
+      ]
+    },
+    {
+      "id": "s3_arcology_plinth",
+      "layer": "3d",
+      "name": "The plinth: shanties under the exhaust vents, breathing what the city breathes out",
+      "chapter": "c7_airway",
+      "reads": [
+        "observers_choice",
+        "amber"
+      ],
+      "writes": [
+        "amber",
+        "pulse"
+      ],
+      "enter": "cut",
+      "exit": "flatten",
+      "next": [
+        "s2_airway_1"
+      ]
+    },
+    {
+      "id": "s2_airway_1",
+      "layer": "2d",
+      "name": "The airway: up the exhaust stack on the airflow, the page inking itself behind him",
+      "chapter": "c7_airway",
+      "mode": "m2_airway",
+      "reads": [
+        "pulse",
+        "self",
+        "observers_choice"
+      ],
+      "writes": [
+        "pulse",
+        "airway.exposed"
+      ],
+      "enter": "flatten",
+      "exit": "push-in",
+      "next": [
+        "s1_switchboard_1"
+      ]
+    },
+    {
+      "id": "s1_switchboard_1",
+      "layer": "1d",
+      "name": "Switchboard on the maintenance level: the city's air as a lettered page, and the plinth downstream of the towers",
+      "chapter": "c7_airway",
+      "game": "g1_switchboard",
+      "reads": [
+        "airway.exposed"
+      ],
+      "writes": [
+        "switchboard.reach",
+        "switchboard.plinth"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s3_clinical_suite"
+      ]
+    },
+    {
+      "id": "s3_clinical_suite",
+      "layer": "3d",
+      "name": "The clinical suite: amber chairs, a rack of vials, and Rostova in a calibration booth",
+      "chapter": "c8_suite",
+      "reads": [
+        "rostova.plate_read",
+        "amber"
+      ],
+      "writes": [
+        "rostova.seen_suite",
+        "amber"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_pans_2"
+      ]
+    },
+    {
+      "id": "s1_pans_2",
+      "layer": "1d",
+      "name": "Two Pans with the suite's rack: the wealthy's private peace, weighed",
+      "chapter": "c8_suite",
+      "game": "g1_two_pans",
+      "reads": [
+        "two_pans.window_learned"
+      ],
+      "writes": [
+        "two_pans.rcc_ratio_found"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_suite_printer"
+      ]
+    },
+    {
+      "id": "s3_suite_printer",
+      "layer": "3d",
+      "name": "A second printer column, CYCLE 42 on its plaque, and Cally sent ahead to bring him to the hub",
+      "chapter": "c8_suite",
+      "reads": [
+        "cally.kept_secret",
+        "cally.crack"
+      ],
+      "writes": [
+        "cally.saw_cycle42",
+        "cally.crack"
+      ],
+      "enter": "pull-out",
+      "exit": "flatten",
+      "next": [
+        "s2_airway_2"
+      ]
+    },
+    {
+      "id": "s2_airway_2",
+      "layer": "2d",
+      "name": "The airway: the supply duct over the suite's grilles to the hub",
+      "chapter": "c8_suite",
+      "mode": "m2_airway",
+      "reads": [
+        "pulse",
+        "self"
+      ],
+      "writes": [
+        "pulse",
+        "airway.exposed"
+      ],
+      "enter": "flatten",
+      "exit": "cut",
+      "next": [
+        "s3_hub_gallery"
+      ]
+    },
+    {
+      "id": "s3_hub_gallery",
+      "layer": "3d",
+      "name": "The hub's glass drum: a breach, the doctor behind it, the order to seal, and one word",
+      "chapter": "c9_light",
+      "reads": [
+        "reese.said_rcc",
+        "reese.flinches",
+        "reese.word",
+        "reese.gala_word",
+        "cally.crack"
+      ],
+      "writes": [
+        "reese.hub_word",
+        "reese.said_rcc",
+        "reese.flinches",
+        "cally.crack",
+        "load"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_panes_2"
+      ]
+    },
+    {
+      "id": "s1_panes_2",
+      "layer": "1d",
+      "name": "Panes at the hub: six pieces, and a keystone that sets only on HOPE",
+      "chapter": "c9_light",
+      "game": "g1_panes",
+      "reads": [
+        "load",
+        "reese.hub_word",
+        "reese.flinches"
+      ],
+      "writes": [
+        "load",
+        "panes.sealed",
+        "reese.flinches"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s3_hub_door",
+        "s3_wall_outside"
+      ]
+    },
+    {
+      "id": "s3_wall_outside",
+      "layer": "3d",
+      "name": "The Light Bringer's Wall: the hub sealed, the doctor on the gallery, outside",
+      "chapter": "c9_light",
+      "reads": [
+        "panes.sealed",
+        "switchboard.plinth"
+      ],
+      "enter": "cut",
+      "exit": "fade"
+    },
+    {
+      "id": "s3_hub_door",
+      "layer": "3d",
+      "name": "Inside the glass, the inner door, and Cally with the key: ask, or force it",
+      "chapter": "c10_reset",
+      "reads": [
+        "cally.crack",
+        "cally.bond_aegis",
+        "pulse",
+        "self",
+        "amber"
+      ],
+      "writes": [
+        "hub.reached",
+        "hub.forced",
+        "cally.said_rcc",
+        "pulse",
+        "toxin_in_hub",
+        "toxin_events",
+        "self"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_switchboard_2",
+        "s3_green_core"
+      ]
+    },
+    {
+      "id": "s1_switchboard_2",
+      "layer": "1d",
+      "name": "Switchboard at the core: every circuit through the hub, and the suite's patients on their own line",
+      "chapter": "c10_reset",
+      "game": "g1_switchboard",
+      "reads": [
+        "switchboard.reach",
+        "switchboard.plinth"
+      ],
+      "writes": [
+        "switchboard.reach",
+        "switchboard.plinth",
+        "switchboard.suite_isolated"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s1_pans_3"
+      ]
+    },
+    {
+      "id": "s1_pans_3",
+      "layer": "1d",
+      "name": "Two Pans at the core: the window, or where his heart would hold",
+      "chapter": "c10_reset",
+      "game": "g1_two_pans",
+      "reads": [
+        "two_pans.rcc_ratio_found",
+        "two_pans.window_learned"
+      ],
+      "writes": [
+        "two_pans.final",
+        "hub.held_back"
+      ],
+      "enter": "cut",
+      "exit": "pull-out",
+      "next": [
+        "s3_hub_core"
+      ]
+    },
+    {
+      "id": "s3_hub_core",
+      "layer": "3d",
+      "name": "The core under one amber lamp: hold",
+      "chapter": "c10_reset",
+      "reads": [
+        "two_pans.final",
+        "cally.said_rcc",
+        "self"
+      ],
+      "writes": [
+        "hub.held_back"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "s3_reset_heart",
+        "s3_first_word_core",
+        "s3_snakehead_resin"
+      ]
+    },
+    {
+      "id": "s3_reset_heart",
+      "layer": "3d",
+      "name": "The Reset: the plant's lights go soft; the lamp; his heart fails",
+      "chapter": "c10_reset",
+      "reads": [
+        "switchboard.plinth",
+        "switchboard.suite_isolated"
+      ],
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s3_peace_plain"
+      ]
+    },
+    {
+      "id": "s3_first_word_core",
+      "layer": "3d",
+      "name": "The First Word: two people in the lamp's light, her hand on the balance",
+      "chapter": "c10_reset",
+      "reads": [
+        "cally.said_rcc"
+      ],
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s3_peace_plain"
+      ]
+    },
+    {
+      "id": "s3_peace_plain",
+      "layer": "3d",
+      "name": "The peace after: the plain at dawn, the floodlights off, the march sitting down in the dust",
+      "chapter": "c10_reset",
+      "reads": [
+        "switchboard.plinth",
+        "cult.turned_home",
+        "panes.let_in"
+      ],
+      "enter": "fade",
+      "exit": "fade"
+    },
+    {
+      "id": "s3_green_core",
+      "layer": "3d",
+      "name": "Green Wins: green light on the hub's glass, and nothing amber in the frame",
+      "chapter": "c10_reset",
+      "reads": [
+        "self",
+        "toxin_in_hub"
+      ],
+      "enter": "cut",
+      "exit": "fade"
+    },
+    {
+      "id": "s3_snakehead_resin",
+      "layer": "3d",
+      "name": "The Cage Holds: Snakehead months later, the lamp, and the cult's next attack on the CRT",
+      "chapter": "c10_reset",
+      "reads": [
+        "cult.doctrine",
+        "amber"
+      ],
+      "enter": "cut",
+      "exit": "fade"
+    }
+  ]
+}

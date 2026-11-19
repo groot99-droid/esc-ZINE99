@@ -6,8 +6,9 @@ idea, the "Shared ideas" section says how each must handle it.
 
 Slugs are the folder names under `games/`. Dr. Tox is episodic (`docs/PILLARS.md` section 1): each
 of its four episodes has its own slug, and no two episodes share a 2D mode or 1D game type. Its
-scope, accepted by the author on 2026-11-19, is `dr-tox/SCOPE.md`. `games/dr-tox-rise/` exists (Episode 1)
-and `games/dr-tox-fall/` exists (Episode 2, stage A); the other two folders do not exist yet.
+scope, accepted by the author on 2026-11-19, is `dr-tox/SCOPE.md`. `games/dr-tox-rise/` exists (Episode 1),
+`games/dr-tox-fall/` exists (Episode 2) and `games/dr-tox-finale/` exists (Episode 3, stage A); the fourth folder
+does not exist yet.
 
 ## 1. Each game at a glance
 
@@ -61,15 +62,14 @@ maritime peace and order kept by an East India–style company. WrymWretch uses 
 | The Lord of the Sea | **Engraved sea**: storms and chases side-on, in the style of an engraved chart come alive | **The deep**: side-on dives where Alexi moves as he cannot on land |
 | Dr. Tox: Rise | **Panel run**: Alexander's break-ins across a comic page; gutters skip time, the player picks the next panel | **Barrier escort**: Aegis draws hard-light walls to bring a transport through the lower ring, and sees whom they pen in |
 | Dr. Tox: Fall | **Crowd thread**: through a relief-hall queue and a gala crowd, breath radius kept off people; the shroud shrinks it | **Reflection run**: Cally and her mirrored reflection through the Spire's glass halls; sometimes the reflection refuses |
+| Dr. Tox: Finale | **The airway**: the arcology's ducts on the airflow, his breath carried downstream; the page inks itself as he passes | **Procession**: against the cult's march, to its front, through followers who want into his breath radius |
 
 **Dr. Tox, reserved.** Its eight modes, all side-scrolling, are reserved for it here and no other
 game may take them. Each episode's two rows join the table above in that episode's build phase, when
 its folder and its rows in `docs/graphic_styles.json` exist (`tools/pictographs/build.py` requires a
-style for every row in the table). Rise's two (`dr-tox-rise`) and Fall's two (`dr-tox-fall`) joined
-it on 2026-11-19; the other two episodes' are reserved below.
+style for every row in the table). Rise's two (`dr-tox-rise`), Fall's two (`dr-tox-fall`) and the
+Finale's two (`dr-tox-finale`) joined it on 2026-11-19; Altrulan's are reserved below.
 
-- *Finale* (`dr-tox-finale`): **The airway**: the arcology's ducts on the airflow; the page inks
-  itself as he passes. **Procession**: against the cult's march, to its front.
 - *Altrulan* (`dr-tox-altrulan`): **Root-way**: along vines between towers that swell on the city's
   breath. **Fresco walk**: along a scripture wall; cracks show the Age beneath.
 
@@ -136,6 +136,11 @@ game), the column on the right says what makes each one different.
 | Dr. Tox: Fall | Persona | Deck-building to an attachment profile | Cally builds a person to fit Aegis's attachment signature; the deck deals itself cards that do not fit |
 | Dr. Tox: Fall | Bloom | Spread containment on a grid | Rostova's spores on the wind across a district; cordons and crews; the settlement's edge |
 | Dr. Tox: Fall | Composite | Reconstruction from testimony (identikit) | The form the Toxin State took, built strip by strip from what witnesses saw; Fall only, not a trace ordering (Rise's Aftermath) |
+| Dr. Tox: Finale | The Creed | Dominoes | His own lines on word-ended tiles; the joints print the cult's doctrine, and he can bend the chain but not take it back |
+| Dr. Tox: Finale | Two Pans | Balance | The ratio of the final dose in invented pips, two pans labelled only RED and BLACK; a window, and a band where his heart would hold |
+| Dr. Tox: Finale | Switchboard | Circuit patching | A city's life support as a letterer's page: balloons are air circuits, tails are patch cords; the plinth breathes what the towers exhale |
+| Dr. Tox: Finale | Panes | Tangram tiling | Aegis seals a breach with seven hard-light pieces; the gaps let named people in, and the keystone sets only on the word HOPE |
+| Dr. Tox: Finale | Split Field | Reconstruction by attribution (toolmark comparison) | Each mark the State blames on him matched to what made it, his plate, his followers' blades or the State's shields; Finale only; not a trace ordering (Aftermath), not testimony (Composite), not a memory match (Concentration) |
 
 **Dr. Tox, reserved.** Its 1D games are reserved for it here, each in a family new to the
 collection, and join the table above in their episode's build phase, as its 2D modes do. Every page
@@ -150,10 +155,12 @@ Peephole's Mosaic), and no page reads his own body or rations food (Man Eater's 
   **Composite**, joined the table above on 2026-11-19. **Composite** is Fall's reconstruction page:
   not traces ordered in time (Aftermath) but a form assembled from what witnesses say they saw, a
   type new to the collection (proposed in `games/dr-tox-fall/DESIGN.md`; the author approves or
-  strikes it). Finale's reconstruction page is still to come.
-- *Finale*: **The Creed** (dominoes): his own past lines chain into doctrine. **Two Pans**
-  (balance): the ratio of the final dose. **Switchboard**: patching life-support circuits.
-  **Panes** (Aegis): tangram tiling of a breach.
+  strikes it).
+- *Finale*: its five, **The Creed** (dominoes), **Two Pans** (balance), **Switchboard**, **Panes**
+  (Aegis) and **Split Field**, joined the table above on 2026-11-19. **Split Field** is the Finale's
+  reconstruction page: not traces ordered in time (Aftermath) nor a form from testimony (Composite) but
+  each mark the State blames on him attributed to what made it, by toolmark comparison, a type new to the
+  collection (proposed in `games/dr-tox-finale/DESIGN.md`; the author approves or strikes it).
 - *Altrulan*: **Rubbing**: reveal a relief by rubbing. **The Measure**: exact amounts with fixed
   vessels. **The Mill** (board game, alignment, morris family). **The Peal**: change ringing on the
   towers' bells.
@@ -312,3 +319,10 @@ section 15); the style is how that palette is drawn on that one page. Generated 
 | Dr. Tox: Fall | 1D | Persona | **1950s romance comic** | Pastel flats, a tear on a lash, thought balloons and a heart-shaped panel; no dot screen | [persona](../games/dr-tox-fall/pictographs/persona.svg) |
 | Dr. Tox: Fall | 1D | Bloom | **Four-colour Ben-Day newsprint** | Cyan, magenta, yellow and black dot screens on yellowed newsprint with a heavy keyline, the spread printed in rust dots | [bloom](../games/dr-tox-fall/pictographs/bloom.svg) |
 | Dr. Tox: Fall | 1D | Composite | **Identikit acetate overlays** | Line-drawn feature strips on stacked clear acetate, grease-pencil witness numbers, one strip that does not fit | [composite](../games/dr-tox-fall/pictographs/composite.svg) |
+| Dr. Tox: Finale | 2D | The airway | **Non-photo-blue pencil roughs** | Light blue construction pencil on bristol board, the ducts sketched loose; behind him the path is inked in black brush, and the branch not taken stays blue | [airway](../games/dr-tox-finale/pictographs/airway.svg) |
+| Dr. Tox: Finale | 2D | Procession | **Photocopied punk-zine collage** | Black toner on grey photocopy paper, cut-out marchers pasted in rows, ransom-note banner letters, staples, tape and toner streaks | [procession](../games/dr-tox-finale/pictographs/procession.svg) |
+| Dr. Tox: Finale | 1D | The Creed | **Pocket tract booklet** | A small stapled booklet on thin paper in two inks: plain cartoon panels, a heavy title band, his lines split across domino ends, a verse printed at the foot | [creed](../games/dr-tox-finale/pictographs/creed.svg) |
+| Dr. Tox: Finale | 1D | Two Pans | **Two-colour pulp, red and black** | Red and black inks only on rough pulp stock, heavy black shadows and red flat fills, the balance drawn as a pulp cover's centrepiece | [two-pans](../games/dr-tox-finale/pictographs/two-pans.svg) |
+| Dr. Tox: Finale | 1D | Switchboard | **Letterer's balloon page** | A comic page at the lettering stage: pencilled panel borders, inked balloons with hand-lettered capitals and blue guidelines, balloon tails run as patch cords to the panels | [switchboard](../games/dr-tox-finale/pictographs/switchboard.svg) |
+| Dr. Tox: Finale | 1D | Panes | **Holographic foil trading card** | A collectible card washed with rainbow foil in diagonal bands, a bevelled frame and a stat box, tangram pieces as foil facets | [panes](../games/dr-tox-finale/pictographs/panes.svg) |
+| Dr. Tox: Finale | 1D | Split Field | **Craftint Doubletone shading board** | Black ink line on white board with chemically developed grey line tone and crosshatch tone in brush-edged patches; a split-field circle with striations matched across a hairline | [split-field](../games/dr-tox-finale/pictographs/split-field.svg) |

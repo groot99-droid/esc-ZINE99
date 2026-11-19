@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="airway-t airway-d">
+<title id="airway-t">The airway: Non-photo-blue pencil roughs</title>
+<desc id="airway-d">The airway (2D): the arcology's ducts as a page of non-photo-blue pencil roughs on bristol board: loose blue construction lines, a fan, louvred dampers and branch points sketched ahead. The duct behind Dr. Tox has been inked in black brush as he passed; the branch he did not take stays blue and fading. Airflow arrows carry him; his breath trails downstream as a soft grey wash, and below the duct floor a grille opens onto a room with names lettered under it. The Pulse line in the margin.</desc>
+<defs><filter id="airway-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="571"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter></defs>
+<rect x="0" y="0" width="1200" height="800" fill="#f7f5ef"/>
+<rect x="0" y="0" width="1200" height="800" filter="url(#airway-grain1)"/>
+<path d="M40,300 L1160,300" fill="none" stroke="#8EC5E8" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>
+<path d="M40,440 L1160,440" fill="none" stroke="#8EC5E8" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>
+<path d="M760,300 L1040,110" fill="none" stroke="#8EC5E8" stroke-width="1.4" stroke-linecap="round" opacity="0.9"/>
+<path d="M820,300 L1100,110" fill="none" stroke="#8EC5E8" stroke-width="1.4" stroke-linecap="round" opacity="0.9"/>
+<path d="M40,303 L1160,303" fill="none" stroke="#8EC5E8" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>
+<path d="M40,443 L1160,443" fill="none" stroke="#8EC5E8" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>
+<path d="M760,303 L1040,113" fill="none" stroke="#8EC5E8" stroke-width="1.4" stroke-linecap="round" opacity="0.9"/>
+<path d="M820,303 L1100,113" fill="none" stroke="#8EC5E8" stroke-width="1.4" stroke-linecap="round" opacity="0.9"/>
+<path d="M40,306 L1160,306" fill="none" stroke="#8EC5E8" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>
+<path d="M40,446 L1160,446" fill="none" stroke="#8EC5E8" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>
+<path d="M760,306 L1040,116" fill="none" stroke="#8EC5E8" stroke-width="1.4" stroke-linecap="round" opacity="0.9"/>
+<path d="M820,306 L1100,116" fill="none" stroke="#8EC5E8" stroke-width="1.4" stroke-linecap="round" opacity="0.9"/>
+<path d="M940,110 L1160,110 M960,180 L1160,180" fill="none" stroke="#8EC5E8" stroke-width="1.4" stroke-linecap="round" opacity="0.9"/>
+<path d="M1050,370 l55,0" fill="none" stroke="#8EC5E8" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+<path d="M1050,370 l17,52.3" fill="none" stroke="#8EC5E8" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+<path d="M1050,370 l-44.5,32.3" fill="none" stroke="#8EC5E8" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+<path d="M1050,370 l-44.5,-32.3" fill="none" stroke="#8EC5E8" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+<path d="M1050,370 l17,-52.3" fill="none" stroke="#8EC5E8" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+<circle cx="1050" cy="370" r="60" fill="none" stroke="#8EC5E8" stroke-width="2"/>
+<path d="M900,312 l40,14" fill="none" stroke="#8EC5E8" stroke-width="2.4" stroke-linecap="round" opacity="0.9"/>
+<path d="M900,336 l40,14" fill="none" stroke="#8EC5E8" stroke-width="2.4" stroke-linecap="round" opacity="0.9"/>
+<path d="M900,360 l40,14" fill="none" stroke="#8EC5E8" stroke-width="2.4" stroke-linecap="round" opacity="0.9"/>
+<path d="M900,384 l40,14" fill="none" stroke="#8EC5E8" stroke-width="2.4" stroke-linecap="round" opacity="0.9"/>
+<path d="M900,408 l40,14" fill="none" stroke="#8EC5E8" stroke-width="2.4" stroke-linecap="round" opacity="0.9"/>
+<path d="M40.8,299.9 L59.4,300.4 L79.1,299.9 L100.3,299.6 L120.8,300.3 L140.8,301 L160.1,300.8 L179.3,301 L199.6,300.7 L219.8,299.1 L239.8,300.1 L259,301 L280.2,300.6 L299.2,299.2 L320,300.7 L341.2,301 L359.4,299.1 L379.6,300.6 L400.6,299.8 L419.3,299.2 L439.4,299.3 L460.1,300.5 L480.7,300.2 L500.1,299.7 L520.7,301.2 L539,299.6 L560.2,300.8" fill="none" stroke="#141414" stroke-width="7"/>
+<path d="M39.9,439.1 L59.3,439.3 L81,439.4 L101,440.4 L119.1,440.7 L139.9,439.1 L161.2,439.9 L179,440.4 L200.7,440.5 L219.8,440.9 L239,440 L258.8,438.9 L279.4,439.8 L300.1,440.6 L319.3,440.5 L339.6,439.1 L359.1,439.1 L381.1,440.1 L399.8,439.7 L419.1,438.8 L439.5,441.1 L458.9,440.4 L481,440.5 L498.9,439.7 L519.8,440.9 L540.6,439.6 L559.3,439" fill="none" stroke="#141414" stroke-width="7"/>
+<g >
+<path d="M406.6,-27.9 L697.9,476.6 M387.6,-16.9 L678.8,487.6 M368.5,-5.9 L659.8,498.6 M349.5,5.1 L640.7,509.6 M330.4,16.1 L621.7,520.6 M311.3,27.1 L602.6,531.6 M292.3,38.1 L583.6,542.6 M273.2,49.1 L564.5,553.6 M254.2,60.1 L545.4,564.6 M235.1,71.1 L526.4,575.6 M216.1,82.1 L507.3,586.6 M197,93.1 L488.3,597.6 M178,104.1 L469.2,608.6 M158.9,115.1 L450.2,619.6 M139.9,126.1 L431.1,630.6 M120.8,137.1 L412.1,641.6 M101.8,148.1 L393,652.6 M82.7,159.1 L374,663.6 M63.7,170.1 L354.9,674.6 M44.6,181.1 L335.9,685.6 M25.6,192.1 L316.8,696.6 M6.5,203.1 L297.8,707.6 M-12.5,214.1 L278.7,718.6 M-31.6,225.1 L259.7,729.6 M-50.7,236.1 L240.6,740.6 M-69.7,247.1 L221.6,751.6 M-88.8,258.1 L202.5,762.6" fill="none" stroke="#141414" stroke-width="1.2" opacity="0.2"/>
+</g>
+<path d="M560,300 C580,300 590,296 610,300" fill="none" stroke="#141414" stroke-width="5"/>
+<path d="M140,370 l60,0" fill="none" stroke="#141414" stroke-width="3"/>
+<polygon points="200,362 214,370 200,378" fill="#141414"/>
+<path d="M300,370 l60,0" fill="none" stroke="#141414" stroke-width="3"/>
+<polygon points="360,362 374,370 360,378" fill="#141414"/>
+<path d="M680,370 l60,0" fill="none" stroke="#8EC5E8" stroke-width="3"/>
+<polygon points="740,362 754,370 740,378" fill="#8EC5E8"/>
+<path d="M820,370 l60,0" fill="none" stroke="#8EC5E8" stroke-width="3"/>
+<polygon points="880,362 894,370 880,378" fill="#8EC5E8"/>
+<path d="M552.5,310 L567.5,310 L572,329.5 L575,343 L579.5,422.5 L582.5,430 L537.5,430 L540.5,422.5 L545,343 L548,329.5Z" fill="#5F6F5A" stroke="#141414" stroke-width="4"/>
+<path d="M590,350 C660,340 720,360 800,352 C860,346 900,360 960,356" fill="none" stroke="#9aa3a3" stroke-width="26" opacity="0.3" stroke-linecap="round"/>
+<line x1="700" y1="440" x2="700" y2="452" stroke="#8EC5E8" stroke-width="3"/>
+<line x1="718" y1="440" x2="718" y2="452" stroke="#8EC5E8" stroke-width="3"/>
+<line x1="736" y1="440" x2="736" y2="452" stroke="#8EC5E8" stroke-width="3"/>
+<line x1="754" y1="440" x2="754" y2="452" stroke="#8EC5E8" stroke-width="3"/>
+<line x1="772" y1="440" x2="772" y2="452" stroke="#8EC5E8" stroke-width="3"/>
+<line x1="790" y1="440" x2="790" y2="452" stroke="#8EC5E8" stroke-width="3"/>
+<rect x="640" y="470" width="260" height="150" fill="none" stroke="#8EC5E8" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="660" y="520" font-size="22" font-family="sans-serif" fill="#8EC5E8" font-weight="bold">IMOGEN HART</text>
+<text x="660" y="554" font-size="22" font-family="sans-serif" fill="#8EC5E8" font-weight="bold">ALDOUS VENN</text>
+<text x="660" y="596" font-size="18" font-family="sans-serif" fill="#8EC5E8">below: the suite</text>
+<text x="980" y="96" font-size="20" font-family="sans-serif" fill="#8EC5E8" opacity="0.5">not taken</text>
+<rect x="0" y="712" width="1200" height="88" fill="#eceae3"/>
+<path d="M30,758 L80,758 L88,732 L96,772 L104,758 L160,758 L168,732 L176,772 L184,758 L240,758 L248,732 L256,772 L264,758 L320,758 L328,732 L336,772 L344,758 L400,758 L408,732 L416,772 L424,758 L480,758 L488,714 L496,772 L504,758 L560,758 L568,732 L576,772 L584,758 L640,758 L648,732 L656,772 L664,758 L720,758 L728,732 L736,772 L744,758 L800,758 L808,732 L816,772 L824,758 L880,758 L888,732 L896,772 L904,758 L960,758 L968,732 L976,772 L984,758 L1040,758 L1048,732 L1056,772 L1064,758 L1120,758 L1128,732 L1136,772 L1144,758" fill="none" stroke="#D99A2B" stroke-width="4"/>
+<text x="960" y="768" font-size="24" font-family="sans-serif" fill="#141414" font-weight="bold">HOLD BREATH</text>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="creed-t creed-d">
+<title id="creed-t">The Creed: Pocket tract booklet</title>
+<desc id="creed-d">The Creed (1D): a pocket tract booklet open across the page, thin paper, two inks, plain cartoon line. The domino chain runs across the spread as tract panels; each tile carries one of his own lines split across its two ends, and each end a word (RING, MARK, NEED, AMBER, RCC, BLOOD). The joints print a verse at the foot of the page: ALL OF IT IS HIS BLOOD. His hand of tiles is a strip of panels along the bottom; one tile in it was dealt by someone else, a painted sky.</desc>
+<rect x="0" y="0" width="1200" height="800" fill="#d9d4c8"/>
+<rect x="60" y="40" width="1080" height="560" fill="#f5f1e6" stroke="#9a9384" stroke-width="2"/>
+<line x1="600" y1="40" x2="600" y2="600" stroke="#b9b2a2" stroke-width="3"/>
+<rect x="80" y="60" width="500" height="70" fill="#C8202A"/>
+<text x="100" y="108" font-size="40" font-family="serif" fill="#ffffff" font-weight="bold">WHAT HE SAID</text>
+<text x="620" y="108" font-size="30" font-family="serif" fill="#141414" font-style="italic">and what it means</text>
+<rect x="100" y="170" width="190" height="110" fill="#ffffff" stroke="#141414" stroke-width="3" rx="6"/>
+<line x1="195" y1="176" x2="195" y2="274" stroke="#141414" stroke-width="2"/>
+<text x="108" y="214" font-size="16" font-family="sans-serif" fill="#141414">Stay outside</text>
+<text x="202" y="214" font-size="16" font-family="sans-serif" fill="#141414">the RING</text>
+<text x="112" y="262" font-size="20" font-family="sans-serif" fill="#141414" font-weight="bold">RING</text>
+<text x="206" y="262" font-size="20" font-family="sans-serif" fill="#141414" font-weight="bold">RING</text>
+<circle cx="250" cy="240" r="16" fill="none" stroke="#141414" stroke-width="2"/>
+<rect x="305" y="230" width="190" height="110" fill="#ffffff" stroke="#141414" stroke-width="3" rx="6"/>
+<line x1="400" y1="236" x2="400" y2="334" stroke="#141414" stroke-width="2"/>
+<text x="313" y="274" font-size="16" font-family="sans-serif" fill="#141414">the RING</text>
+<text x="407" y="274" font-size="16" font-family="sans-serif" fill="#141414">is holy</text>
+<text x="317" y="322" font-size="20" font-family="sans-serif" fill="#141414" font-weight="bold">RING</text>
+<text x="411" y="322" font-size="20" font-family="sans-serif" fill="#141414" font-weight="bold">RING</text>
+<circle cx="455" cy="300" r="16" fill="none" stroke="#141414" stroke-width="2"/>
+<rect x="510" y="170" width="190" height="110" fill="#ffffff" stroke="#141414" stroke-width="3" rx="6"/>
+<line x1="605" y1="176" x2="605" y2="274" stroke="#141414" stroke-width="2"/>
+<text x="518" y="214" font-size="16" font-family="sans-serif" fill="#141414">Two marks.</text>
+<text x="612" y="214" font-size="16" font-family="sans-serif" fill="#141414">Not three.</text>
+<text x="522" y="262" font-size="20" font-family="sans-serif" fill="#141414" font-weight="bold">MARK</text>
+<text x="616" y="262" font-size="20" font-family="sans-serif" fill="#141414" font-weight="bold">MARK</text>
+<rect x="715" y="230" width="190" height="110" fill="#ffffff" stroke="#141414" stroke-width="3" rx="6"/>
+<line x1="810" y1="236" x2="810" y2="334" stroke="#141414" stroke-width="2"/>
+<text x="723" y="274" font-size="16" font-family="sans-serif" fill="#141414">Not my BLOOD.</text>
+<text x="817" y="274" font-size="16" font-family="sans-serif" fill="#141414">Not all of it.</text>
+<text x="727" y="322" font-size="20" font-family="sans-serif" fill="#C8202A" font-weight="bold">BLOOD</text>
+<text x="821" y="322" font-size="20" font-family="sans-serif" fill="#C8202A" font-weight="bold">BLOOD</text>
+<path d="M865,282 q12,18 0,30 q-12,-12 0,-30Z" fill="#C8202A"/>
+<rect x="920" y="170" width="190" height="110" fill="#ffffff" stroke="#141414" stroke-width="3" rx="6"/>
+<line x1="1015" y1="176" x2="1015" y2="274" stroke="#141414" stroke-width="2"/>
+<text x="928" y="214" font-size="16" font-family="sans-serif" fill="#141414">ALL of it</text>
+<text x="1022" y="214" font-size="16" font-family="sans-serif" fill="#141414">is his BLOOD</text>
+<text x="932" y="262" font-size="20" font-family="sans-serif" fill="#C8202A" font-weight="bold">BLOOD</text>
+<text x="1026" y="262" font-size="20" font-family="sans-serif" fill="#C8202A" font-weight="bold">BLOOD</text>
+<path d="M1070,222 q12,18 0,30 q-12,-12 0,-30Z" fill="#C8202A"/>
+<rect x="80" y="470" width="1040" height="110" fill="#efe9da"/>
+<text x="110" y="530" font-size="46" font-family="serif" fill="#C8202A" font-weight="bold">ALL OF IT IS HIS BLOOD.</text>
+<text x="110" y="568" font-size="20" font-family="serif" fill="#141414" font-style="italic">verse 3, printed from the joints</text>
+<rect x="0" y="620" width="1200" height="180" fill="#2b2a27"/>
+<rect x="60" y="650" width="240" height="120" fill="#ffffff" stroke="#141414" stroke-width="3" rx="6"/>
+<line x1="180" y1="656" x2="180" y2="764" stroke="#141414" stroke-width="2"/>
+<text x="70" y="700" font-size="16" font-family="sans-serif" fill="#141414">That plate says</text>
+<text x="186" y="700" font-size="14" font-family="sans-serif" fill="#141414">who runs this hall</text>
+<text x="74" y="750" font-size="20" font-family="sans-serif" fill="#141414" font-weight="bold">RCC</text>
+<rect x="340" y="650" width="240" height="120" fill="#ffffff" stroke="#141414" stroke-width="3" rx="6"/>
+<line x1="460" y1="656" x2="460" y2="764" stroke="#141414" stroke-width="2"/>
+<text x="350" y="700" font-size="16" font-family="sans-serif" fill="#141414">Stay outside</text>
+<text x="466" y="700" font-size="14" font-family="sans-serif" fill="#141414">the ring</text>
+<text x="354" y="750" font-size="20" font-family="sans-serif" fill="#141414" font-weight="bold">NEED</text>
+<rect x="620" y="650" width="240" height="120" fill="#ffffff" stroke="#141414" stroke-width="3" rx="6"/>
+<rect x="626" y="656" width="228" height="108" fill="#7FA9D6"/>
+<ellipse cx="690" cy="700" rx="30" ry="12" fill="#ffffff" opacity="0.9"/>
+<ellipse cx="780" cy="720" rx="40" ry="14" fill="#ffffff" opacity="0.9"/>
+<text x="690" y="790" font-size="18" font-family="sans-serif" fill="#cfcac0">dealt to him</text>
+<rect x="900" y="650" width="240" height="120" fill="#ffffff" stroke="#141414" stroke-width="3" rx="6"/>
+<line x1="1020" y1="656" x2="1020" y2="764" stroke="#141414" stroke-width="2"/>
+<text x="910" y="700" font-size="16" font-family="sans-serif" fill="#141414">Two marks.</text>
+<text x="1026" y="700" font-size="14" font-family="sans-serif" fill="#141414">Not three.</text>
+<text x="914" y="750" font-size="20" font-family="sans-serif" fill="#141414" font-weight="bold">MARK</text>
+</svg>

@@ -1,0 +1,456 @@
+{
+ "game": "dr-tox-finale",
+ "location": "clinical-suite",
+ "name": "The clinical suite",
+ "reference": "assets/locations/clinical-suite.jpg",
+ "bounds_m": [
+  30,
+  18,
+  5
+ ],
+ "origin": "centre of the suite floor; the floor-to-ceiling window along +y over the plain; the service door at -x; the calibration booth and the printer column at +x; the duct hatch in the ceiling at +x",
+ "materials": {
+  "polished-concrete": {
+   "color": [
+    0.6,
+    0.6,
+    0.58
+   ],
+   "roughness": 0.3
+  },
+  "wall": {
+   "color": [
+    0.9,
+    0.9,
+    0.88
+   ],
+   "roughness": 0.6
+  },
+  "glass": {
+   "color": [
+    0.7,
+    0.78,
+    0.8
+   ],
+   "roughness": 0.05
+  },
+  "ceiling": {
+   "color": [
+    0.85,
+    0.85,
+    0.83
+   ],
+   "roughness": 0.7
+  }
+ },
+ "blockout": [
+  {
+   "id": "floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    30,
+    18,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    -0.1
+   ],
+   "material": "polished-concrete"
+  },
+  {
+   "id": "window",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    30,
+    0.2,
+    5
+   ],
+   "location": [
+    0,
+    9.1,
+    2.5
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "wall-s",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    30,
+    0.3,
+    5
+   ],
+   "location": [
+    0,
+    -9.15,
+    2.5
+   ],
+   "material": "wall"
+  },
+  {
+   "id": "wall-w",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    18,
+    5
+   ],
+   "location": [
+    -15.15,
+    0,
+    2.5
+   ],
+   "material": "wall"
+  },
+  {
+   "id": "wall-e",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    18,
+    5
+   ],
+   "location": [
+    15.15,
+    0,
+    2.5
+   ],
+   "material": "wall"
+  },
+  {
+   "id": "ceiling",
+   "shape": "box",
+   "role": "ceiling",
+   "size_m": [
+    30,
+    18,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    5.1
+   ],
+   "material": "ceiling"
+  },
+  {
+   "id": "service-door",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    0.2,
+    1.4,
+    2.4
+   ],
+   "location": [
+    -15,
+    -6,
+    1.2
+   ],
+   "material": "wall"
+  },
+  {
+   "id": "duct-opening",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    1.2,
+    1.2,
+    0.2
+   ],
+   "location": [
+    13,
+    -6,
+    5.0
+   ],
+   "material": "ceiling"
+  }
+ ],
+ "props": [
+  {
+   "id": "chair-1",
+   "object": "treatment-chair",
+   "location": [
+    -9,
+    5,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ]
+  },
+  {
+   "id": "chair-2",
+   "object": "treatment-chair",
+   "location": [
+    -5,
+    5,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ]
+  },
+  {
+   "id": "chair-3",
+   "object": "treatment-chair",
+   "location": [
+    -1,
+    5,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ]
+  },
+  {
+   "id": "chair-4",
+   "object": "treatment-chair",
+   "location": [
+    3,
+    5,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ]
+  },
+  {
+   "id": "iv-1",
+   "object": "iv-stand",
+   "location": [
+    -7,
+    6.5,
+    0
+   ]
+  },
+  {
+   "id": "iv-2",
+   "object": "iv-stand",
+   "location": [
+    1,
+    6.5,
+    0
+   ]
+  },
+  {
+   "id": "rack",
+   "object": "vial-rack",
+   "location": [
+    -3,
+    -7.5,
+    0
+   ]
+  },
+  {
+   "id": "booth",
+   "object": "calibration-booth",
+   "location": [
+    10,
+    4,
+    0
+   ]
+  },
+  {
+   "id": "column",
+   "object": "printer-column",
+   "location": [
+    12,
+    -5,
+    0
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_clinical_suite": {
+   "note": "Chapter 8: the suite: wealthy patients in amber chairs, Sela Mor at the rack, the dying plain below the glass; Rostova in the calibration booth, nodding once.",
+   "world": {
+    "color": [
+     0.45,
+     0.47,
+     0.48
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "amber-room",
+     "type": "AREA",
+     "location": [
+      -3,
+      0,
+      4.8
+     ],
+     "look_at": [
+      -3,
+      0,
+      0
+     ],
+     "energy": 900,
+     "size": 10,
+     "color": [
+      1.0,
+      0.62,
+      0.22
+     ]
+    },
+    {
+     "name": "window-day",
+     "type": "AREA",
+     "location": [
+      0,
+      9,
+      2.5
+     ],
+     "look_at": [
+      0,
+      0,
+      1
+     ],
+     "energy": 1500,
+     "size": 20,
+     "color": [
+      0.75,
+      0.8,
+      0.82
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -13,
+     -6,
+     1.6
+    ],
+    "look_at": [
+     -3,
+     3,
+     1.0
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -13.5,
+     -6,
+     0
+    ],
+    "facing_deg": 60
+   },
+   "interactions": [
+    {
+     "prop": "rack",
+     "verb": "Weigh the vials",
+     "leads_to": "s1_pans_2"
+    },
+    {
+     "prop": "booth",
+     "verb": "Look at her"
+    },
+    {
+     "prop": "chair-2",
+     "verb": "Look at the patient"
+    }
+   ]
+  },
+  "s3_suite_printer": {
+   "note": "Chapter 8: the second printer column, CYCLE 42 on its plaque; Cally waiting to take him to the hub; show her the plaque, or walk past it.",
+   "world": {
+    "color": [
+     0.3,
+     0.33,
+     0.38
+    ],
+    "strength": 0.5
+   },
+   "lights": [
+    {
+     "name": "column-blue",
+     "type": "POINT",
+     "location": [
+      11,
+      -4,
+      3
+     ],
+     "energy": 300,
+     "size": 1.5,
+     "color": [
+      0.55,
+      0.7,
+      0.95
+     ]
+    },
+    {
+     "name": "amber-room",
+     "type": "AREA",
+     "location": [
+      -3,
+      0,
+      4.8
+     ],
+     "look_at": [
+      -3,
+      0,
+      0
+     ],
+     "energy": 500,
+     "size": 10,
+     "color": [
+      1.0,
+      0.62,
+      0.22
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     8,
+     -3,
+     1.6
+    ],
+    "look_at": [
+     12,
+     -5,
+     1.5
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     8,
+     -2.5,
+     0
+    ],
+    "facing_deg": 120
+   },
+   "interactions": [
+    {
+     "prop": "column",
+     "verb": "Show her the plaque"
+    },
+    {
+     "prop": "booth",
+     "verb": "Go up into the duct",
+     "leads_to": "s2_airway_2"
+    }
+   ]
+  }
+ }
+}

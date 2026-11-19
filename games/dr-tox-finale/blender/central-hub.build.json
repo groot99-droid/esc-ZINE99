@@ -1,0 +1,772 @@
+{
+ "game": "dr-tox-finale",
+ "location": "central-hub",
+ "name": "The central hub",
+ "reference": "assets/locations/central-hub.jpg",
+ "bounds_m": [
+  50,
+  50,
+  24
+ ],
+ "origin": "centre of the glass drum's floor (the core); the drum has a radius of 14 m; the maintenance gallery rings it outside at 18 m; the supply-duct hatch and the breach at -y; the inner door at -y on the drum; +z up",
+ "materials": {
+  "steel": {
+   "color": [
+    0.36,
+    0.39,
+    0.4
+   ],
+   "roughness": 0.6,
+   "metallic": 0.6
+  },
+  "grate": {
+   "color": [
+    0.25,
+    0.26,
+    0.27
+   ],
+   "roughness": 0.7,
+   "metallic": 0.5
+  },
+  "glass": {
+   "color": [
+    0.68,
+    0.77,
+    0.8
+   ],
+   "roughness": 0.05,
+   "metallic": 0.1
+  },
+  "plant-light": {
+   "color": [
+    0.93,
+    0.95,
+    0.94
+   ],
+   "roughness": 0.4,
+   "emission": 2.0
+  },
+  "concrete": {
+   "color": [
+    0.4,
+    0.45,
+    0.45
+   ],
+   "roughness": 0.9
+  }
+ },
+ "blockout": [
+  {
+   "id": "core-floor",
+   "shape": "cylinder",
+   "role": "floor",
+   "size_m": [
+    28,
+    28,
+    0.3
+   ],
+   "location": [
+    0,
+    0,
+    -0.15
+   ],
+   "material": "steel"
+  },
+  {
+   "id": "gallery-floor",
+   "shape": "cylinder",
+   "role": "floor",
+   "size_m": [
+    44,
+    44,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    -0.3
+   ],
+   "material": "grate"
+  },
+  {
+   "id": "drum",
+   "shape": "cylinder",
+   "role": "wall",
+   "size_m": [
+    28.4,
+    28.4,
+    22
+   ],
+   "location": [
+    0,
+    0,
+    11
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "drum-cap",
+   "shape": "cylinder",
+   "role": "ceiling",
+   "size_m": [
+    30,
+    30,
+    0.6
+   ],
+   "location": [
+    0,
+    0,
+    22.3
+   ],
+   "material": "steel"
+  },
+  {
+   "id": "outer-wall",
+   "shape": "cylinder",
+   "role": "wall",
+   "size_m": [
+    48,
+    48,
+    24
+   ],
+   "location": [
+    0,
+    0,
+    12
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "breach",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    3,
+    0.5,
+    3.2
+   ],
+   "location": [
+    0,
+    -14,
+    1.6
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "plant-strip",
+   "shape": "box",
+   "role": "trim",
+   "size_m": [
+    20,
+    0.3,
+    0.3
+   ],
+   "location": [
+    0,
+    6,
+    18
+   ],
+   "material": "plant-light"
+  },
+  {
+   "id": "duct-mouth",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    1.6,
+    1.0,
+    1.6
+   ],
+   "location": [
+    0,
+    -23.5,
+    2.0
+   ],
+   "material": "steel"
+  }
+ ],
+ "props": [
+  {
+   "id": "handler-1",
+   "object": "air-handler",
+   "location": [
+    -6,
+    6,
+    0
+   ]
+  },
+  {
+   "id": "handler-2",
+   "object": "air-handler",
+   "location": [
+    6,
+    6,
+    0
+   ]
+  },
+  {
+   "id": "switchboard",
+   "object": "switchboard-console",
+   "location": [
+    -6,
+    -3,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "balance",
+   "object": "balance-scale",
+   "location": [
+    2,
+    -2,
+    0.9
+   ],
+   "ground": false
+  },
+  {
+   "id": "lamp",
+   "object": "core-lamp",
+   "location": [
+    3,
+    -2.5,
+    0.9
+   ],
+   "ground": false
+  },
+  {
+   "id": "door",
+   "object": "hub-door",
+   "location": [
+    0,
+    -11,
+    0
+   ]
+  },
+  {
+   "id": "rail-1",
+   "object": "gallery-rail",
+   "location": [
+    0,
+    -20,
+    0
+   ]
+  },
+  {
+   "id": "rail-2",
+   "object": "gallery-rail",
+   "location": [
+    0,
+    20,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ]
+  },
+  {
+   "id": "hatch",
+   "object": "duct-hatch",
+   "location": [
+    0,
+    -22.5,
+    1.4
+   ],
+   "ground": false
+  }
+ ],
+ "scenes": {
+  "s3_hub_gallery": {
+   "note": "Chapter 9: Reese on the dark gallery outside the drum; Dr. Tox behind the breach he cut; the order to seal it with him outside; the Word.",
+   "world": {
+    "color": [
+     0.05,
+     0.06,
+     0.07
+    ],
+    "strength": 0.2
+   },
+   "lights": [
+    {
+     "name": "plant-through",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      18
+     ],
+     "look_at": [
+      0,
+      -14,
+      1.6
+     ],
+     "energy": 5000,
+     "size": 20,
+     "color": [
+      0.93,
+      0.95,
+      0.94
+     ]
+    },
+    {
+     "name": "emitters",
+     "type": "POINT",
+     "location": [
+      0,
+      -16,
+      2
+     ],
+     "energy": 250,
+     "size": 1.5,
+     "color": [
+      0.97,
+      0.9,
+      0.7
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     6,
+     -19,
+     2.4
+    ],
+    "look_at": [
+     0,
+     -14,
+     1.6
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     5,
+     -18.5,
+     0
+    ],
+    "facing_deg": 300
+   },
+   "interactions": [
+    {
+     "prop": "rail-1",
+     "verb": "Say the word"
+    },
+    {
+     "prop": "door",
+     "verb": "Seal the breach",
+     "leads_to": "s1_panes_2"
+    }
+   ]
+  },
+  "s3_hub_door": {
+   "note": "Chapter 10: inside the glass; the inner door; Cally with the key; ask 'Who built you?', or force it.",
+   "world": {
+    "color": [
+     0.6,
+     0.62,
+     0.62
+    ],
+    "strength": 0.5
+   },
+   "lights": [
+    {
+     "name": "plant",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      20
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 6000,
+     "size": 24,
+     "color": [
+      0.93,
+      0.95,
+      0.94
+     ]
+    },
+    {
+     "name": "lamp",
+     "type": "POINT",
+     "location": [
+      3,
+      -2.5,
+      1.4
+     ],
+     "energy": 150,
+     "size": 0.3,
+     "color": [
+      1.0,
+      0.62,
+      0.22
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     -13,
+     1.6
+    ],
+    "look_at": [
+     0,
+     -11,
+     1.5
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     -13.3,
+     0
+    ],
+    "facing_deg": 0
+   },
+   "interactions": [
+    {
+     "prop": "door",
+     "verb": "Ask her",
+     "leads_to": "s1_switchboard_2"
+    },
+    {
+     "prop": "hatch",
+     "verb": "Force the door"
+    }
+   ]
+  },
+  "s3_hub_core": {
+   "note": "Chapter 10: the core under one amber work lamp; the balance; hold.",
+   "world": {
+    "color": [
+     0.05,
+     0.05,
+     0.06
+    ],
+    "strength": 0.15
+   },
+   "lights": [
+    {
+     "name": "lamp",
+     "type": "SPOT",
+     "location": [
+      3,
+      -2.5,
+      2.4
+     ],
+     "look_at": [
+      2,
+      -2,
+      0.9
+     ],
+     "energy": 500,
+     "size": 1.0,
+     "color": [
+      1.0,
+      0.62,
+      0.22
+     ]
+    },
+    {
+     "name": "plant-soft",
+     "type": "AREA",
+     "location": [
+      0,
+      6,
+      18
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 1200,
+     "size": 20,
+     "color": [
+      0.93,
+      0.95,
+      0.94
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     4.5,
+     -5,
+     1.5
+    ],
+    "look_at": [
+     2,
+     -2,
+     1.0
+    ],
+    "lens_mm": 50,
+    "mode": "fixed"
+   },
+   "player_start": {
+    "location": [
+     4.5,
+     -5.3,
+     0
+    ],
+    "facing_deg": 320
+   },
+   "interactions": [
+    {
+     "prop": "balance",
+     "verb": "Hold"
+    },
+    {
+     "prop": "switchboard",
+     "verb": "Patch the circuits",
+     "leads_to": "s1_switchboard_2"
+    }
+   ]
+  },
+  "s3_reset_heart": {
+   "note": "Ending, The Reset: the plant's lights go soft; the frame stays on the lamp; his heart fails.",
+   "world": {
+    "color": [
+     0.03,
+     0.03,
+     0.035
+    ],
+    "strength": 0.1
+   },
+   "lights": [
+    {
+     "name": "lamp",
+     "type": "SPOT",
+     "location": [
+      3,
+      -2.5,
+      2.4
+     ],
+     "look_at": [
+      3,
+      -2.5,
+      0.9
+     ],
+     "energy": 450,
+     "size": 1.0,
+     "color": [
+      1.0,
+      0.62,
+      0.22
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     5,
+     -5.5,
+     1.3
+    ],
+    "look_at": [
+     3,
+     -2.5,
+     1.0
+    ],
+    "lens_mm": 50,
+    "mode": "fixed"
+   }
+  },
+  "s3_first_word_core": {
+   "note": "Ending, The First Word: two people in the lamp's light, her hand on the balance.",
+   "world": {
+    "color": [
+     0.04,
+     0.04,
+     0.045
+    ],
+    "strength": 0.12
+   },
+   "lights": [
+    {
+     "name": "lamp",
+     "type": "SPOT",
+     "location": [
+      3,
+      -2.5,
+      2.4
+     ],
+     "look_at": [
+      2,
+      -2,
+      0.9
+     ],
+     "energy": 500,
+     "size": 1.0,
+     "color": [
+      1.0,
+      0.62,
+      0.22
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     5.5,
+     -4,
+     1.4
+    ],
+    "look_at": [
+     2,
+     -2,
+     1.0
+    ],
+    "lens_mm": 50,
+    "mode": "fixed"
+   }
+  },
+  "s3_green_core": {
+   "note": "Ending, Green Wins: green self-illumination on the drum's glass; nothing amber in the frame.",
+   "world": {
+    "color": [
+     0.02,
+     0.05,
+     0.02
+    ],
+    "strength": 0.2
+   },
+   "lights": [
+    {
+     "name": "green-self",
+     "type": "POINT",
+     "location": [
+      0,
+      -4,
+      1.2
+     ],
+     "energy": 1500,
+     "size": 2,
+     "color": [
+      0.5,
+      0.85,
+      0.35
+     ]
+    },
+    {
+     "name": "green-spill",
+     "type": "AREA",
+     "location": [
+      0,
+      -8,
+      0.3
+     ],
+     "look_at": [
+      0,
+      -14,
+      4
+     ],
+     "energy": 800,
+     "size": 6,
+     "color": [
+      0.5,
+      0.85,
+      0.35
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     3,
+     -1,
+     0.6
+    ],
+    "look_at": [
+     0,
+     -12,
+     4
+    ],
+    "lens_mm": 20,
+    "mode": "fixed"
+   },
+   "hide": [
+    "lamp"
+   ]
+  },
+  "s3_wall_outside": {
+   "note": "Ending, The Light Bringer's Wall: the breach sealed; the doctor on the gallery outside; hard light between them.",
+   "world": {
+    "color": [
+     0.04,
+     0.045,
+     0.05
+    ],
+    "strength": 0.15
+   },
+   "lights": [
+    {
+     "name": "wall-light",
+     "type": "AREA",
+     "location": [
+      0,
+      -14.5,
+      2
+     ],
+     "look_at": [
+      0,
+      -18,
+      0.5
+     ],
+     "energy": 1200,
+     "size": 4,
+     "color": [
+      0.97,
+      0.9,
+      0.7
+     ]
+    },
+    {
+     "name": "plant-through",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      18
+     ],
+     "look_at": [
+      0,
+      -14,
+      1.6
+     ],
+     "energy": 3000,
+     "size": 20,
+     "color": [
+      0.93,
+      0.95,
+      0.94
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -5,
+     -19.5,
+     2.2
+    ],
+    "look_at": [
+     0,
+     -15,
+     1.0
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   }
+  }
+ }
+}

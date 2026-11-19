@@ -1,0 +1,157 @@
+{
+  "slug": "dr-tox-finale",
+  "title": "Dr. Tox: Finale",
+  "series": "Dr. Tox: Age of Glass & Greed, episode 3 of 4 (dr-tox-rise, dr-tox-fall, dr-tox-finale, dr-tox-altrulan)",
+  "sources": [
+    "dr-tox/source/Dr_Tox_Compiled_Bible_Obsidian.md (not in the vault; cited by part and section)"
+  ],
+  "target_minutes": {
+    "min": 120,
+    "max": 150
+  },
+  "players": {
+    "min": 1,
+    "max": 1
+  },
+  "core_verb": "Dose",
+  "structure": "One clock, 2236 to 2240, under dated captions. Dr. Tox leads eight chapters and the last; Reese as Aegis leads the second half of chapter 6 and chapter 9; Cally is not played. The Finale starts from the bible's fixed point, 'Dr. Tox loses control of his cult' (Part II), whatever Fall's ending; Rise's and Fall's last flags are read as scars, and the Finale's carry into Altrulan the same way, except after Green Wins, which closes the save.",
+  "carry_in": [
+    "self",
+    "amber",
+    "following",
+    "cult.icon",
+    "manifold.resin_line",
+    "bloom.settlement_lost",
+    "toxin_events",
+    "observers_choice",
+    "rostova.plate_read",
+    "reese.word",
+    "reese.said_rcc",
+    "reese.gala_word",
+    "reese.flinches",
+    "cally.bond_aegis",
+    "cally.crack",
+    "cally.said_rcc",
+    "fiche.names_read"
+  ],
+  "carry_over": [
+    "self",
+    "hub.held_back",
+    "panes.sealed",
+    "reese.hub_word",
+    "reese.said_rcc",
+    "cally.said_rcc",
+    "switchboard.plinth",
+    "switchboard.reach",
+    "cult.doctrine",
+    "following",
+    "observers_choice",
+    "two_pans.final",
+    "toxin_events"
+  ],
+  "chapters": [
+    {
+      "id": "c1_overrun",
+      "title": "Overrun",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Dr. Tox, 2236"
+    },
+    {
+      "id": "c2_station",
+      "title": "The Station",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Dr. Tox, 2236"
+    },
+    {
+      "id": "c3_bench",
+      "title": "The Bench",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Dr. Tox, 2237"
+    },
+    {
+      "id": "c4_last_city",
+      "title": "The Last City",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Dr. Tox, 2238"
+    },
+    {
+      "id": "c5_procession",
+      "title": "Procession",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "2d"
+      ],
+      "lead": "Dr. Tox, 2239"
+    },
+    {
+      "id": "c6_perimeter",
+      "title": "The Perimeter",
+      "minutes": 16,
+      "layers": [
+        "2d",
+        "1d",
+        "3d"
+      ],
+      "lead": "Dr. Tox, then Reese (Aegis), 2240"
+    },
+    {
+      "id": "c7_airway",
+      "title": "The Airway",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ],
+      "lead": "Dr. Tox, 2240"
+    },
+    {
+      "id": "c8_suite",
+      "title": "The Clinical Suite",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d",
+        "2d"
+      ],
+      "lead": "Dr. Tox, 2240"
+    },
+    {
+      "id": "c9_light",
+      "title": "The Light Bringer",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Reese (Aegis), 2240"
+    },
+    {
+      "id": "c10_reset",
+      "title": "The Reset",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Dr. Tox, 2240"
+    }
+  ]
+}
