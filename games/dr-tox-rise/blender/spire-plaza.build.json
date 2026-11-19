@@ -1,0 +1,449 @@
+{
+ "game": "dr-tox-rise",
+ "location": "spire-plaza",
+ "name": "The Spire plaza",
+ "reference": "assets/locations/spire-plaza.jpg",
+ "bounds_m": [
+  200,
+  160,
+  60
+ ],
+ "origin": "plaza centre; +y toward the platform, with the ready room behind it at +y 72 on the platform's level; the screens face the platform",
+ "materials": {
+  "stone-polished": {
+   "color": [
+    0.62,
+    0.64,
+    0.63
+   ],
+   "roughness": 0.2
+  },
+  "concrete": {
+   "color": [
+    0.37,
+    0.45,
+    0.46
+   ],
+   "roughness": 0.9
+  },
+  "concrete-dark": {
+   "color": [
+    0.2,
+    0.24,
+    0.25
+   ],
+   "roughness": 0.92
+  },
+  "glass": {
+   "color": [
+    0.55,
+    0.62,
+    0.63
+   ],
+   "roughness": 0.05,
+   "metallic": 0.0
+  },
+  "steel": {
+   "color": [
+    0.5,
+    0.52,
+    0.53
+   ],
+   "roughness": 0.45,
+   "metallic": 0.8
+  }
+ },
+ "blockout": [
+  {
+   "id": "plaza-floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    200,
+    160,
+    0.4
+   ],
+   "location": [
+    0,
+    0,
+    -0.2
+   ],
+   "material": "stone-polished"
+  },
+  {
+   "id": "platform",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    30,
+    12,
+    3
+   ],
+   "location": [
+    0,
+    60,
+    1.5
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "ready-room-floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    8,
+    6,
+    0.2
+   ],
+   "location": [
+    0,
+    72,
+    3.1
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "ready-room-back",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    8,
+    0.3,
+    3
+   ],
+   "location": [
+    0,
+    75.2,
+    4.6
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "ready-room-west",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    6,
+    3
+   ],
+   "location": [
+    -4.15,
+    72,
+    4.6
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "ready-room-east",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    6,
+    3
+   ],
+   "location": [
+    4.15,
+    72,
+    4.6
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "tower-west",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    40,
+    40,
+    60
+   ],
+   "location": [
+    -80,
+    60,
+    30
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "tower-east",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    40,
+    40,
+    60
+   ],
+   "location": [
+    80,
+    60,
+    30
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "skybridge",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    120,
+    6,
+    4
+   ],
+   "location": [
+    0,
+    70,
+    50
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "barriers",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    120,
+    0.5,
+    1.1
+   ],
+   "location": [
+    0,
+    40,
+    0.55
+   ],
+   "material": "steel"
+  }
+ ],
+ "props": [
+  {
+   "id": "mirror",
+   "object": "dressing-mirror",
+   "location": [
+    0,
+    74.6,
+    3.2
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ]
+  },
+  {
+   "id": "insignia",
+   "object": "insignia-case",
+   "location": [
+    2.5,
+    74,
+    4.1
+   ],
+   "ground": false
+  },
+  {
+   "id": "lectern",
+   "object": "ceremony-lectern",
+   "location": [
+    0,
+    56,
+    3
+   ]
+  },
+  {
+   "id": "screen-west",
+   "object": "broadcast-screen",
+   "location": [
+    -60,
+    20,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    60
+   ]
+  },
+  {
+   "id": "screen-east",
+   "object": "broadcast-screen",
+   "location": [
+    60,
+    20,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    -60
+   ]
+  },
+  {
+   "id": "screen-south",
+   "object": "broadcast-screen",
+   "location": [
+    0,
+    -70,
+    0
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_spire_mirror": {
+   "note": "Chapter 6: first light in amber and the mirror they hand him; 'You look like you're supposed to.' The flinch at 'terrible'. Push in on the reflection for the leash.",
+   "world": {
+    "color": [
+     0.55,
+     0.4,
+     0.25
+    ],
+    "strength": 0.5
+   },
+   "lights": [
+    {
+     "name": "amber-warm",
+     "type": "AREA",
+     "location": [
+      0,
+      71,
+      6
+     ],
+     "look_at": [
+      0,
+      74,
+      4
+     ],
+     "energy": 600,
+     "size": 3,
+     "color": [
+      1.0,
+      0.68,
+      0.25
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     70,
+     4.7
+    ],
+    "look_at": [
+     0,
+     74.6,
+     4.4
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     70.5,
+     3.2
+    ],
+    "facing_deg": 0
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "mirror",
+     "verb": "Look",
+     "leads_to": "s1_cradle_leash"
+    },
+    {
+     "prop": "insignia",
+     "verb": "Look at the insignia"
+    }
+   ]
+  },
+  "s3_spire_ceremony": {
+   "note": "Chapter 6: the platform above a hundred thousand faces, real and holographic; his face forty metres tall; the insignia goes on before he has decided how it feels.",
+   "world": {
+    "color": [
+     0.5,
+     0.48,
+     0.42
+    ],
+    "strength": 0.8
+   },
+   "lights": [
+    {
+     "name": "glass-day",
+     "type": "SUN",
+     "location": [
+      -60,
+      -80,
+      120
+     ],
+     "look_at": [
+      0,
+      60,
+      0
+     ],
+     "energy": 3.5,
+     "size": 1,
+     "color": [
+      0.86,
+      0.88,
+      0.86
+     ]
+    },
+    {
+     "name": "screen-wash",
+     "type": "AREA",
+     "location": [
+      0,
+      30,
+      20
+     ],
+     "look_at": [
+      0,
+      60,
+      3
+     ],
+     "energy": 40000,
+     "size": 30,
+     "color": [
+      1.0,
+      0.82,
+      0.55
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     58,
+     4.8
+    ],
+    "look_at": [
+     0,
+     0,
+     6
+    ],
+    "lens_mm": 28,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     57,
+     3
+    ],
+    "facing_deg": 180
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "lectern",
+     "verb": "Step to the edge"
+    },
+    {
+     "prop": "screen-south",
+     "verb": "Look at your face",
+     "leads_to": "s1_window_2"
+    }
+   ]
+  }
+ }
+}

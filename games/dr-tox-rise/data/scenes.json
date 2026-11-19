@@ -1,0 +1,744 @@
+{
+  "modes_2d": [
+    {
+      "id": "m2_panel_run",
+      "name": "Panel run",
+      "movement": "scroll"
+    },
+    {
+      "id": "m2_barrier_escort",
+      "name": "Barrier escort",
+      "movement": "scroll"
+    }
+  ],
+  "games_1d": [
+    {
+      "id": "g1_cage",
+      "name": "The Cage",
+      "family": "Titration"
+    },
+    {
+      "id": "g1_cradle",
+      "name": "Cat's Cradle",
+      "family": "String figures"
+    },
+    {
+      "id": "g1_window",
+      "name": "The Window",
+      "family": "Timetable"
+    },
+    {
+      "id": "g1_fiche",
+      "name": "Fiche",
+      "family": "Indexed retrieval on microfiche"
+    },
+    {
+      "id": "g1_aftermath",
+      "name": "Aftermath",
+      "family": "Reconstruction"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s3_hospital_2217",
+      "layer": "3d",
+      "name": "The sealed room, 2217: the bench he built from IV poles",
+      "chapter": "c1_first_dose",
+      "writes": [
+        "pulse"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_cage_1"
+      ]
+    },
+    {
+      "id": "s1_cage_1",
+      "layer": "1d",
+      "name": "The Cage, first batch: titrating the cage by hand at fifteen",
+      "chapter": "c1_first_dose",
+      "game": "g1_cage",
+      "writes": [
+        "amber",
+        "amber_quality"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_injection_first"
+      ]
+    },
+    {
+      "id": "s3_injection_first",
+      "layer": "3d",
+      "name": "The first dose",
+      "chapter": "c1_first_dose",
+      "reads": [
+        "amber",
+        "amber_quality"
+      ],
+      "writes": [
+        "first_dose_taken",
+        "pulse",
+        "amber"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "s3_skyroom_small"
+      ]
+    },
+    {
+      "id": "s3_skyroom_small",
+      "layer": "3d",
+      "name": "Sky Room: twenty children under a painted sky",
+      "chapter": "c2_sky_room",
+      "writes": [
+        "reese.bond_cally",
+        "reese.bond_carmy",
+        "reese.bond_rolan"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_cradle_1"
+      ]
+    },
+    {
+      "id": "s1_cradle_1",
+      "layer": "1d",
+      "name": "Cat's Cradle, two hands: Reese and Cally",
+      "chapter": "c2_sky_room",
+      "game": "g1_cradle",
+      "reads": [
+        "reese.bond_cally"
+      ],
+      "writes": [
+        "cradle.figures_made",
+        "reese.bond_cally"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_skyroom_evening"
+      ]
+    },
+    {
+      "id": "s3_skyroom_evening",
+      "layer": "3d",
+      "name": "Sky Room after training, the four of them back at the painted wall",
+      "chapter": "c2_sky_room",
+      "reads": [
+        "reese.bond_cally",
+        "reese.bond_carmy",
+        "reese.bond_rolan"
+      ],
+      "writes": [
+        "reese.bond_cally",
+        "reese.bond_carmy",
+        "reese.bond_rolan"
+      ],
+      "enter": "pull-out",
+      "exit": "push-in",
+      "next": [
+        "s1_cradle_2"
+      ]
+    },
+    {
+      "id": "s1_cradle_2",
+      "layer": "1d",
+      "name": "Cat's Cradle, four hands",
+      "chapter": "c2_sky_room",
+      "game": "g1_cradle",
+      "reads": [
+        "reese.bond_cally",
+        "reese.bond_carmy",
+        "reese.bond_rolan"
+      ],
+      "writes": [
+        "cradle.figures_made",
+        "reese.bond_cally",
+        "reese.bond_carmy",
+        "reese.bond_rolan"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s3_river_town"
+      ]
+    },
+    {
+      "id": "s3_river_town",
+      "layer": "3d",
+      "name": "The river town, a child's height: main street and the bank",
+      "chapter": "c3_river",
+      "writes": [
+        "river.children_met",
+        "river.details"
+      ],
+      "enter": "fade",
+      "exit": "cut",
+      "next": [
+        "s3_river_night"
+      ]
+    },
+    {
+      "id": "s3_river_night",
+      "layer": "3d",
+      "name": "The river town at night: the outflow pipe, houses going dark",
+      "chapter": "c3_river",
+      "reads": [
+        "river.children_met"
+      ],
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s3_hospital_walkout"
+      ]
+    },
+    {
+      "id": "s3_hospital_walkout",
+      "layer": "3d",
+      "name": "The sealed room, 2226: the last morning",
+      "chapter": "c3_river",
+      "reads": [
+        "amber"
+      ],
+      "writes": [
+        "pulse"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_cage_2"
+      ]
+    },
+    {
+      "id": "s1_cage_2",
+      "layer": "1d",
+      "name": "The Cage, a batch to carry outside",
+      "chapter": "c3_river",
+      "game": "g1_cage",
+      "writes": [
+        "amber",
+        "amber_quality"
+      ],
+      "enter": "push-in",
+      "exit": "cut",
+      "next": [
+        "s1_cradle_3"
+      ]
+    },
+    {
+      "id": "s1_cradle_3",
+      "layer": "1d",
+      "name": "Cat's Cradle, the night Cally tells them the protocol",
+      "chapter": "c4_trial53",
+      "game": "g1_cradle",
+      "reads": [
+        "reese.bond_cally",
+        "reese.bond_carmy",
+        "reese.bond_rolan",
+        "cradle.figures_made"
+      ],
+      "writes": [
+        "cradle.figures_made"
+      ],
+      "enter": "fade",
+      "exit": "cut",
+      "next": [
+        "s3_arena"
+      ]
+    },
+    {
+      "id": "s3_arena",
+      "layer": "3d",
+      "name": "Trial 53: the last four, and the floor that splits",
+      "chapter": "c4_trial53",
+      "reads": [
+        "reese.bond_cally",
+        "reese.bond_carmy",
+        "reese.bond_rolan"
+      ],
+      "writes": [
+        "arena.held_seconds",
+        "arena.weapon_dropped"
+      ],
+      "enter": "cut",
+      "exit": "cut",
+      "next": [
+        "s3_arena_after"
+      ]
+    },
+    {
+      "id": "s3_arena_after",
+      "layer": "3d",
+      "name": "The arena emptied, the speakers still on",
+      "chapter": "c4_trial53",
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s1_window_1"
+      ]
+    },
+    {
+      "id": "s1_window_1",
+      "layer": "1d",
+      "name": "The Window: a rota pinned in a guardhouse photo",
+      "chapter": "c5_forging",
+      "game": "g1_window",
+      "reads": [
+        "amber_quality"
+      ],
+      "writes": [
+        "window.slack",
+        "pulse"
+      ],
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "s2_panel_1"
+      ]
+    },
+    {
+      "id": "s2_panel_1",
+      "layer": "2d",
+      "name": "Panel run: the first break-in, a research floor",
+      "chapter": "c5_forging",
+      "mode": "m2_panel_run",
+      "reads": [
+        "window.slack",
+        "amber"
+      ],
+      "writes": [
+        "pulse",
+        "panel.darts_drawn",
+        "panel.seen",
+        "hunch"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s3_spire_mirror"
+      ]
+    },
+    {
+      "id": "s3_spire_mirror",
+      "layer": "3d",
+      "name": "First light and the mirror they hand him",
+      "chapter": "c6_mantled",
+      "writes": [
+        "reese.mirror_answer",
+        "reese.flinches"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_cradle_leash"
+      ]
+    },
+    {
+      "id": "s1_cradle_leash",
+      "layer": "1d",
+      "name": "Cat's Cradle with three hands missing: the leash",
+      "chapter": "c6_mantled",
+      "game": "g1_cradle",
+      "reads": [
+        "cradle.figures_made",
+        "reese.bond_cally",
+        "reese.bond_carmy",
+        "reese.bond_rolan"
+      ],
+      "writes": [
+        "reese.flinches"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_spire_ceremony"
+      ]
+    },
+    {
+      "id": "s3_spire_ceremony",
+      "layer": "3d",
+      "name": "The Spire plaza: Citizens of the Spire, I give you Aegis",
+      "chapter": "c6_mantled",
+      "writes": [
+        "reese.flinches"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "s1_window_2"
+      ]
+    },
+    {
+      "id": "s1_window_2",
+      "layer": "1d",
+      "name": "The Window: two rotas and a dog handler",
+      "chapter": "c7_hunt",
+      "game": "g1_window",
+      "reads": [
+        "amber_quality"
+      ],
+      "writes": [
+        "window.slack",
+        "pulse"
+      ],
+      "enter": "cut",
+      "exit": "flatten",
+      "next": [
+        "s2_panel_2"
+      ]
+    },
+    {
+      "id": "s2_panel_2",
+      "layer": "2d",
+      "name": "Panel run: a cold-storage depot, and the panel that goes green",
+      "chapter": "c7_hunt",
+      "mode": "m2_panel_run",
+      "reads": [
+        "window.slack",
+        "amber",
+        "pulse"
+      ],
+      "writes": [
+        "pulse",
+        "panel.darts_drawn",
+        "panel.seen",
+        "hunch",
+        "toxin_events",
+        "self",
+        "amber"
+      ],
+      "enter": "flatten",
+      "exit": "cut",
+      "next": [
+        "s1_aftermath_1"
+      ]
+    },
+    {
+      "id": "s1_aftermath_1",
+      "layer": "1d",
+      "name": "Aftermath: the guard post, read like evidence",
+      "chapter": "c7_hunt",
+      "game": "g1_aftermath",
+      "reads": [
+        "toxin_events"
+      ],
+      "writes": [
+        "toxin_events",
+        "aftermath.solved",
+        "self"
+      ],
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s3_lower_ring"
+      ]
+    },
+    {
+      "id": "s3_lower_ring",
+      "layer": "3d",
+      "name": "The lower ring's supply corridor: the ramp, the smoke, the other hero",
+      "chapter": "c8_containment",
+      "writes": [
+        "other_hero.met",
+        "load"
+      ],
+      "enter": "fade",
+      "exit": "flatten",
+      "next": [
+        "s2_barrier_1"
+      ]
+    },
+    {
+      "id": "s2_barrier_1",
+      "layer": "2d",
+      "name": "Barrier escort in: walls to bring the transport through",
+      "chapter": "c8_containment",
+      "mode": "m2_barrier_escort",
+      "reads": [
+        "load"
+      ],
+      "writes": [
+        "load",
+        "barrier.penned",
+        "barrier.penned_names",
+        "barrier.transport_through",
+        "reese.flinches"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s3_lower_ring_after"
+      ]
+    },
+    {
+      "id": "s3_lower_ring_after",
+      "layer": "3d",
+      "name": "Behind his own walls: the penned, and a plate stamped RCC",
+      "chapter": "c8_containment",
+      "reads": [
+        "barrier.penned_names"
+      ],
+      "writes": [
+        "reese.word",
+        "reese.said_rcc"
+      ],
+      "enter": "flatten",
+      "exit": "flatten",
+      "next": [
+        "s2_barrier_2"
+      ]
+    },
+    {
+      "id": "s2_barrier_2",
+      "layer": "2d",
+      "name": "Barrier escort out: which walls to drop",
+      "chapter": "c8_containment",
+      "mode": "m2_barrier_escort",
+      "reads": [
+        "load",
+        "barrier.penned"
+      ],
+      "writes": [
+        "load",
+        "barrier.released"
+      ],
+      "enter": "flatten",
+      "exit": "cut",
+      "next": [
+        "s3_archive_fall"
+      ]
+    },
+    {
+      "id": "s3_archive_fall",
+      "layer": "3d",
+      "name": "Through the ground: the Snakehead archive",
+      "chapter": "c9_snakehead",
+      "reads": [
+        "amber",
+        "self"
+      ],
+      "writes": [
+        "pulse"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_fiche_1"
+      ]
+    },
+    {
+      "id": "s1_fiche_1",
+      "layer": "1d",
+      "name": "Fiche: the thousand children, and Subject CMXCIX",
+      "chapter": "c9_snakehead",
+      "game": "g1_fiche",
+      "reads": [
+        "river.details",
+        "river.children_met"
+      ],
+      "writes": [
+        "fiche.own_file_found",
+        "fiche.names_read",
+        "fiche.children_found"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_printer_room"
+      ]
+    },
+    {
+      "id": "s3_printer_room",
+      "layer": "3d",
+      "name": "The printer room: Cycle 41",
+      "chapter": "c9_snakehead",
+      "writes": [
+        "cycle41.watched",
+        "took_spec_sheet",
+        "knows_aegis",
+        "security_knows_face"
+      ],
+      "enter": "pull-out",
+      "exit": "cut",
+      "next": [
+        "s3_archive_alarm"
+      ]
+    },
+    {
+      "id": "s3_archive_alarm",
+      "layer": "3d",
+      "name": "Cornered in the archive; the cells' inner door opens",
+      "chapter": "c10_observers",
+      "reads": [
+        "took_spec_sheet",
+        "pulse"
+      ],
+      "writes": [
+        "observers_choice",
+        "pulse"
+      ],
+      "enter": "cut",
+      "exit": "flatten",
+      "next": [
+        "s2_panel_3"
+      ]
+    },
+    {
+      "id": "s2_panel_3",
+      "layer": "2d",
+      "name": "Panel run: the escape through the bunker",
+      "chapter": "c10_observers",
+      "mode": "m2_panel_run",
+      "reads": [
+        "observers_choice",
+        "amber",
+        "pulse",
+        "security_knows_face"
+      ],
+      "writes": [
+        "pulse",
+        "toxin_in_escape",
+        "toxin_events",
+        "self",
+        "amber",
+        "panel.darts_drawn",
+        "panel.seen"
+      ],
+      "enter": "flatten",
+      "exit": "fade",
+      "next": [
+        "s3_archive_claimed",
+        "s3_archive_empty",
+        "s1_aftermath_2"
+      ]
+    },
+    {
+      "id": "s1_aftermath_2",
+      "layer": "1d",
+      "name": "Aftermath: the archive, and what the Observers saw",
+      "chapter": "c10_observers",
+      "game": "g1_aftermath",
+      "reads": [
+        "toxin_events",
+        "observers_choice"
+      ],
+      "writes": [
+        "toxin_events",
+        "aftermath.solved",
+        "self"
+      ],
+      "enter": "cut",
+      "exit": "fade",
+      "next": [
+        "s3_archive_green"
+      ]
+    },
+    {
+      "id": "s3_archive_claimed",
+      "layer": "3d",
+      "name": "The return: the amber work lamp lit in Snakehead",
+      "chapter": "c11_claim",
+      "reads": [
+        "observers_choice",
+        "took_spec_sheet"
+      ],
+      "writes": [
+        "claimed_snakehead"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_cage_3",
+        "s3_printer_room_after"
+      ]
+    },
+    {
+      "id": "s3_printer_room_after",
+      "layer": "3d",
+      "name": "The printer room stripped; his own face on the terminal",
+      "chapter": "c11_claim",
+      "reads": [
+        "security_knows_face",
+        "knows_aegis"
+      ],
+      "enter": "cut",
+      "exit": "push-in",
+      "next": [
+        "s1_cage_3"
+      ]
+    },
+    {
+      "id": "s3_archive_empty",
+      "layer": "3d",
+      "name": "The return alone: the cells open and empty",
+      "chapter": "c11_claim",
+      "reads": [
+        "observers_choice"
+      ],
+      "writes": [
+        "claimed_snakehead"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_cage_3"
+      ]
+    },
+    {
+      "id": "s3_archive_green",
+      "layer": "3d",
+      "name": "Waking in the archive among what the State did",
+      "chapter": "c11_claim",
+      "reads": [
+        "self",
+        "toxin_events"
+      ],
+      "writes": [
+        "claimed_snakehead"
+      ],
+      "enter": "fade",
+      "exit": "push-in",
+      "next": [
+        "s1_cage_3"
+      ]
+    },
+    {
+      "id": "s1_cage_3",
+      "layer": "1d",
+      "name": "The Cage, the first batch in his own lab",
+      "chapter": "c11_claim",
+      "game": "g1_cage",
+      "reads": [
+        "amber",
+        "self"
+      ],
+      "writes": [
+        "amber",
+        "amber_quality"
+      ],
+      "enter": "push-in",
+      "exit": "pull-out",
+      "next": [
+        "s3_bunker_injection"
+      ]
+    },
+    {
+      "id": "s3_bunker_injection",
+      "layer": "3d",
+      "name": "The injection, in the bunker medical bay",
+      "chapter": "c11_claim",
+      "reads": [
+        "amber_quality",
+        "self",
+        "observers_choice"
+      ],
+      "enter": "pull-out",
+      "exit": "fade"
+    }
+  ]
+}

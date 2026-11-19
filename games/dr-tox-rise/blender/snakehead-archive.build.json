@@ -1,0 +1,928 @@
+{
+ "game": "dr-tox-rise",
+ "location": "snakehead-archive",
+ "name": "The Snakehead archive",
+ "reference": "assets/locations/snakehead-archive.jpg",
+ "bounds_m": [
+  40,
+  30,
+  6
+ ],
+ "origin": "archive centre; +y toward the four observation cells; the medical bay behind a partition at +x -y; the breach in the ceiling at -x +y",
+ "materials": {
+  "concrete": {
+   "color": [
+    0.37,
+    0.45,
+    0.46
+   ],
+   "roughness": 0.9
+  },
+  "concrete-dark": {
+   "color": [
+    0.2,
+    0.24,
+    0.25
+   ],
+   "roughness": 0.92
+  },
+  "earth": {
+   "color": [
+    0.3,
+    0.26,
+    0.22
+   ],
+   "roughness": 1.0
+  },
+  "glass": {
+   "color": [
+    0.55,
+    0.62,
+    0.63
+   ],
+   "roughness": 0.05,
+   "metallic": 0.0
+  },
+  "blue-emergency": {
+   "color": [
+    0.3,
+    0.45,
+    0.8
+   ],
+   "roughness": 0.5,
+   "emission": 1.5
+  }
+ },
+ "blockout": [
+  {
+   "id": "floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    40,
+    30,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    -0.1
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "wall-north",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    40,
+    0.3,
+    6
+   ],
+   "location": [
+    0,
+    15.15,
+    3.0
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "wall-south",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    40,
+    0.3,
+    6
+   ],
+   "location": [
+    0,
+    -15.15,
+    3.0
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "wall-east",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    30,
+    6
+   ],
+   "location": [
+    20.15,
+    0,
+    3.0
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "wall-west",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    30,
+    6
+   ],
+   "location": [
+    -20.15,
+    0,
+    3.0
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "ceiling",
+   "shape": "box",
+   "role": "ceiling",
+   "size_m": [
+    40,
+    30,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    6.1
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "breach",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    4,
+    4,
+    0.3
+   ],
+   "location": [
+    -15,
+    10,
+    6
+   ],
+   "material": "earth"
+  },
+  {
+   "id": "rubble",
+   "shape": "box",
+   "role": "terrain",
+   "size_m": [
+    5,
+    5,
+    1.2
+   ],
+   "location": [
+    -15,
+    10,
+    0.6
+   ],
+   "material": "earth"
+  },
+  {
+   "id": "bay-partition",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.2,
+    10,
+    3
+   ],
+   "location": [
+    12,
+    -10,
+    1.5
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "cell-glass",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    20,
+    0.2,
+    3
+   ],
+   "location": [
+    0,
+    14.5,
+    1.5
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "emergency-strip",
+   "shape": "box",
+   "role": "trim",
+   "size_m": [
+    36,
+    0.1,
+    0.1
+   ],
+   "location": [
+    0,
+    -14.9,
+    5.6
+   ],
+   "material": "blue-emergency"
+  }
+ ],
+ "props": [
+  {
+   "id": "cab-0-0",
+   "object": "archive-cabinet",
+   "location": [
+    -12.0,
+    -2,
+    0
+   ]
+  },
+  {
+   "id": "cab-0-1",
+   "object": "archive-cabinet",
+   "location": [
+    -10.8,
+    -2,
+    0
+   ]
+  },
+  {
+   "id": "cab-0-2",
+   "object": "archive-cabinet",
+   "location": [
+    -9.6,
+    -2,
+    0
+   ]
+  },
+  {
+   "id": "cab-0-3",
+   "object": "archive-cabinet",
+   "location": [
+    -8.4,
+    -2,
+    0
+   ]
+  },
+  {
+   "id": "cab-0-4",
+   "object": "archive-cabinet",
+   "location": [
+    -7.2,
+    -2,
+    0
+   ]
+  },
+  {
+   "id": "cab-0-5",
+   "object": "archive-cabinet",
+   "location": [
+    -6.0,
+    -2,
+    0
+   ]
+  },
+  {
+   "id": "cab-1-0",
+   "object": "archive-cabinet",
+   "location": [
+    -12.0,
+    2,
+    0
+   ]
+  },
+  {
+   "id": "cab-1-1",
+   "object": "archive-cabinet",
+   "location": [
+    -10.8,
+    2,
+    0
+   ]
+  },
+  {
+   "id": "cab-1-2",
+   "object": "archive-cabinet",
+   "location": [
+    -9.6,
+    2,
+    0
+   ]
+  },
+  {
+   "id": "cab-1-3",
+   "object": "archive-cabinet",
+   "location": [
+    -8.4,
+    2,
+    0
+   ]
+  },
+  {
+   "id": "cab-1-4",
+   "object": "archive-cabinet",
+   "location": [
+    -7.2,
+    2,
+    0
+   ]
+  },
+  {
+   "id": "cab-1-5",
+   "object": "archive-cabinet",
+   "location": [
+    -6.0,
+    2,
+    0
+   ]
+  },
+  {
+   "id": "cab-2-0",
+   "object": "archive-cabinet",
+   "location": [
+    -12.0,
+    6,
+    0
+   ]
+  },
+  {
+   "id": "cab-2-1",
+   "object": "archive-cabinet",
+   "location": [
+    -10.8,
+    6,
+    0
+   ]
+  },
+  {
+   "id": "cab-2-2",
+   "object": "archive-cabinet",
+   "location": [
+    -9.6,
+    6,
+    0
+   ]
+  },
+  {
+   "id": "cab-2-3",
+   "object": "archive-cabinet",
+   "location": [
+    -8.4,
+    6,
+    0
+   ]
+  },
+  {
+   "id": "cab-2-4",
+   "object": "archive-cabinet",
+   "location": [
+    -7.2,
+    6,
+    0
+   ]
+  },
+  {
+   "id": "cab-2-5",
+   "object": "archive-cabinet",
+   "location": [
+    -6.0,
+    6,
+    0
+   ]
+  },
+  {
+   "id": "reader",
+   "object": "fiche-reader",
+   "location": [
+    4,
+    2,
+    0.75
+   ]
+  },
+  {
+   "id": "pins",
+   "object": "pin-board",
+   "location": [
+    -19.8,
+    -6,
+    1.6
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ],
+   "ground": false
+  },
+  {
+   "id": "lamp",
+   "object": "amber-work-lamp",
+   "location": [
+    16,
+    -8,
+    0.9
+   ]
+  },
+  {
+   "id": "locker",
+   "object": "shielded-locker",
+   "location": [
+    18.5,
+    -13.5,
+    0
+   ]
+  },
+  {
+   "id": "chair",
+   "object": "bay-chair",
+   "location": [
+    16,
+    -11,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "tank",
+   "object": "clean-water-tank",
+   "location": [
+    6,
+    13,
+    0
+   ]
+  },
+  {
+   "id": "bay-vial",
+   "object": "amber-vial",
+   "location": [
+    16.4,
+    -8.3,
+    0.9
+   ]
+  },
+  {
+   "id": "bay-syringe",
+   "object": "lead-shielded-syringe",
+   "location": [
+    15.6,
+    -8.2,
+    0.9
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    60
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_archive_fall": {
+   "note": "Chapter 9: through the ground at two years and one week; land in rubble under the breach; blue emergency light; follow the hum to the cabinets and the reader.",
+   "world": {
+    "color": [
+     0.08,
+     0.1,
+     0.15
+    ],
+    "strength": 0.3
+   },
+   "lights": [
+    {
+     "name": "emergency-blue",
+     "type": "AREA",
+     "location": [
+      0,
+      -14,
+      5.6
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 1200,
+     "size": 10,
+     "color": [
+      0.45,
+      0.6,
+      1.0
+     ]
+    },
+    {
+     "name": "breach-day",
+     "type": "SPOT",
+     "location": [
+      -15,
+      10,
+      7
+     ],
+     "look_at": [
+      -15,
+      10,
+      0
+     ],
+     "energy": 800,
+     "size": 2,
+     "color": [
+      0.86,
+      0.88,
+      0.86
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -13,
+     7,
+     1.7
+    ],
+    "look_at": [
+     4,
+     2,
+     1.0
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -14,
+     8,
+     1.2
+    ],
+    "facing_deg": 120
+   },
+   "hide": [
+    "lamp",
+    "bay-vial",
+    "bay-syringe"
+   ],
+   "interactions": [
+    {
+     "prop": "reader",
+     "verb": "Sit at the reader",
+     "leads_to": "s1_fiche_1"
+    },
+    {
+     "prop": "pins",
+     "verb": "Look at the board"
+    }
+   ]
+  },
+  "s3_archive_alarm": {
+   "note": "Chapter 10: lights to red-blue strobe; security at the stair; the cells' inner door opens and the Ghost is suddenly visible in the tank. Go with them, or take the stair alone and seal it.",
+   "world": {
+    "color": [
+     0.1,
+     0.05,
+     0.08
+    ],
+    "strength": 0.35
+   },
+   "lights": [
+    {
+     "name": "emergency-blue",
+     "type": "AREA",
+     "location": [
+      0,
+      -14,
+      5.6
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 1200,
+     "size": 10,
+     "color": [
+      0.45,
+      0.6,
+      1.0
+     ]
+    },
+    {
+     "name": "alarm-red",
+     "type": "POINT",
+     "location": [
+      0,
+      -10,
+      5
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 800,
+     "size": 0.5,
+     "color": [
+      0.9,
+      0.12,
+      0.1
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     2,
+     6,
+     1.7
+    ],
+    "look_at": [
+     6,
+     13,
+     1.2
+    ],
+    "lens_mm": 35,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     2,
+     5,
+     0
+    ],
+    "facing_deg": 20
+   },
+   "hide": [
+    "lamp",
+    "bay-vial",
+    "bay-syringe"
+   ],
+   "interactions": [
+    {
+     "prop": "tank",
+     "verb": "Go through with them",
+     "leads_to": "s2_panel_3"
+    },
+    {
+     "prop": "pins",
+     "verb": "Take the stair alone",
+     "leads_to": "s2_panel_3"
+    }
+   ]
+  },
+  "s3_archive_claimed": {
+   "note": "Chapter 11: the return. Light the amber work lamp; hard falloff into black; the Observers in their open cells.",
+   "world": {
+    "color": [
+     0.03,
+     0.03,
+     0.03
+    ],
+    "strength": 0.1
+   },
+   "lights": [
+    {
+     "name": "work-lamp",
+     "type": "SPOT",
+     "location": [
+      16,
+      -8,
+      1.6
+     ],
+     "look_at": [
+      16,
+      -11,
+      0.6
+     ],
+     "energy": 300,
+     "size": 0.4,
+     "color": [
+      1.0,
+      0.68,
+      0.25
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     12,
+     -4,
+     1.7
+    ],
+    "look_at": [
+     16,
+     -9,
+     1.0
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     11,
+     -3,
+     0
+    ],
+    "facing_deg": 150
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "lamp",
+     "verb": "Light the lamp"
+    },
+    {
+     "prop": "locker",
+     "verb": "Open the locker",
+     "leads_to": "s1_cage_3"
+    },
+    {
+     "prop": "tank",
+     "verb": "Look in on the Ghost"
+    }
+   ]
+  },
+  "s3_archive_empty": {
+   "note": "Ending, The Cage Alone: the return to open cells and a dry tank; the lamp lights an empty room built for a family.",
+   "world": {
+    "color": [
+     0.03,
+     0.03,
+     0.03
+    ],
+    "strength": 0.1
+   },
+   "lights": [
+    {
+     "name": "work-lamp",
+     "type": "SPOT",
+     "location": [
+      16,
+      -8,
+      1.6
+     ],
+     "look_at": [
+      16,
+      -11,
+      0.6
+     ],
+     "energy": 300,
+     "size": 0.4,
+     "color": [
+      1.0,
+      0.68,
+      0.25
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     4,
+     8,
+     1.7
+    ],
+    "look_at": [
+     6,
+     14,
+     1.0
+    ],
+    "lens_mm": 35,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     4,
+     7,
+     0
+    ],
+    "facing_deg": 10
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "tank",
+     "verb": "Look at the dry tank"
+    },
+    {
+     "prop": "locker",
+     "verb": "Open the locker",
+     "leads_to": "s1_cage_3"
+    }
+   ]
+  },
+  "s3_archive_green": {
+   "note": "Ending, Green in the Archive: dim red emergency light, a wide empty frame, the subject small in it (bible Part VI section 9, Aftermath); numbered tents on the floor.",
+   "world": {
+    "color": [
+     0.08,
+     0.02,
+     0.02
+    ],
+    "strength": 0.2
+   },
+   "lights": [
+    {
+     "name": "emergency-red",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      5.8
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 900,
+     "size": 12,
+     "color": [
+      0.9,
+      0.12,
+      0.1
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -16,
+     -12,
+     4.5
+    ],
+    "look_at": [
+     0,
+     2,
+     0
+    ],
+    "lens_mm": 24,
+    "mode": "fixed"
+   },
+   "hide": [
+    "lamp"
+   ],
+   "interactions": [
+    {
+     "prop": "locker",
+     "verb": "Open the locker",
+     "leads_to": "s1_cage_3"
+    }
+   ]
+  },
+  "s3_bunker_injection": {
+   "note": "Ending, Fully Dr. Tox (as written): the first signature image. Shirtless in the bunker medical bay, scarred arm, lead-shielded syringe, jaw clenched, eyes shut. 50 mm, slow.",
+   "world": {
+    "color": [
+     0.02,
+     0.02,
+     0.02
+    ],
+    "strength": 0.08
+   },
+   "lights": [
+    {
+     "name": "work-lamp",
+     "type": "SPOT",
+     "location": [
+      16,
+      -8,
+      1.6
+     ],
+     "look_at": [
+      16,
+      -11,
+      0.6
+     ],
+     "energy": 300,
+     "size": 0.4,
+     "color": [
+      1.0,
+      0.68,
+      0.25
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     14,
+     -9.5,
+     1.3
+    ],
+    "look_at": [
+     16,
+     -11,
+     0.9
+    ],
+    "lens_mm": 50,
+    "mode": "fixed"
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "bay-syringe",
+     "verb": "Dose"
+    }
+   ]
+  }
+ }
+}

@@ -109,7 +109,7 @@ Panel run is not Endless Temple's living illustration: it moves between panels, 
 | 1 | **Cat's Cradle** (the four children) | String figures | Chalk and poster paint on the painted sky |
 | 1 | **The Window** | Timetable: a break-in window in guard rotations | Fumetti photo-comic |
 | 1 | **Fiche** (the 999) | Indexed retrieval on microfiche | Scratchboard |
-| 1–3 | **Aftermath** | Reconstruction: order the traces of what the body did | Manga screentone, evidence tents |
+| 1 | **Aftermath** | Reconstruction: order the traces of what the body did (Rise only) | Manga screentone, evidence tents |
 | 2 | **Triage** | Sorting patients under scarcity | Alcohol-marker sketch cards |
 | 2 | **The Manifold** | Flow routing through the gauntlet's valves | Mail-order comic advert |
 | 2 | **Persona** (Cally) | Deck-building to a target's attachment profile | 1950s romance comic |
@@ -250,14 +250,16 @@ Made after the author accepted section 8. Nothing under `games/`, `web/` or `too
 - **`docs/graphic_styles.json`**: unchanged. The seven Rise rows (two 2D modes, five 1D games,
   Aftermath once) are in `dr-tox/styles_pending.json` in its exact schema, because adding them now
   fails `tools/pictographs/build.py --check` (no `make.py`) and stops `tools/web/build.py` (no
-  `game.json`). Phase 1 moves them across. Their "look" lines are proposals.
+  `game.json`). Phase 1 moves them across. Their "look" lines are proposals. (Done 2026-11-19, Phase
+  1 stage A: the rows are in `graphic_styles.json`, Rise's rows are in COLLECTION's tables, and the
+  pending file is deleted.)
 - **`README.md`, `CLAUDE.md`**: "ten" to "eleven", Dr. Tox's bible named as its source, the four
   slugs listed as not yet created.
 - **Added wording for the author to approve or strike**: the tone row ("Grounded, cynical comic-book
   science fiction, body horror; Altrulan as sculptural myth" / "Fury at the company, then fear of his
   own body; in Altrulan, reverence"), the gloss of "Amber, Self and the Word", and the seven "look"
   lines.
-- **Open conflict for the author**: Aftermath spans Episodes 1 to 3 (section 4), but the new
-  PILLARS rule says no two episodes of one game share a 1D game type. Either Aftermath becomes a
-  named exception, or Fall and Finale each take their own variant. Each still has four 1D games
+- **Conflict resolved (the author's ruling, 2026-11-19)**: Aftermath belongs to Rise only. Fall and
+  Finale will each get a different reconstruction-style page later, each its own 1D game type, so
+  the PILLARS rule holds (no two episodes share a 1D game type). Each still has four 1D games
   without it.

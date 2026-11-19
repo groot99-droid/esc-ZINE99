@@ -1,0 +1,421 @@
+{
+ "game": "dr-tox-rise",
+ "location": "lower-ring-corridor",
+ "name": "The lower-ring supply corridor",
+ "reference": "assets/locations/lower-ring-corridor.jpg",
+ "bounds_m": [
+  80,
+  16,
+  12
+ ],
+ "origin": "corridor centre; +x toward the far gate and the supply crates; the transport's ramp at -x; shopfronts along -y",
+ "materials": {
+  "asphalt": {
+   "color": [
+    0.3,
+    0.32,
+    0.33
+   ],
+   "roughness": 0.95
+  },
+  "concrete": {
+   "color": [
+    0.37,
+    0.45,
+    0.46
+   ],
+   "roughness": 0.9
+  },
+  "concrete-dark": {
+   "color": [
+    0.2,
+    0.24,
+    0.25
+   ],
+   "roughness": 0.92
+  },
+  "glass": {
+   "color": [
+    0.55,
+    0.62,
+    0.63
+   ],
+   "roughness": 0.05,
+   "metallic": 0.0
+  }
+ },
+ "blockout": [
+  {
+   "id": "floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    80,
+    16,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    -0.1
+   ],
+   "material": "asphalt"
+  },
+  {
+   "id": "wall-north",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    80,
+    0.3,
+    12
+   ],
+   "location": [
+    0,
+    8.15,
+    6.0
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "wall-south",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    80,
+    0.3,
+    12
+   ],
+   "location": [
+    0,
+    -8.15,
+    6.0
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "ceiling",
+   "shape": "box",
+   "role": "ceiling",
+   "size_m": [
+    80,
+    16,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    12.1
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "ramp",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    10,
+    16,
+    1
+   ],
+   "location": [
+    -35,
+    0,
+    0.5
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "shopfront-row",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    60,
+    2,
+    4
+   ],
+   "location": [
+    0,
+    -7,
+    2
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "daylight-slot",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    6,
+    2,
+    0.3
+   ],
+   "location": [
+    10,
+    0,
+    12
+   ],
+   "material": "glass"
+  }
+ ],
+ "props": [
+  {
+   "id": "transport",
+   "object": "armoured-transport",
+   "location": [
+    -30,
+    2,
+    1.0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "emitter-1",
+   "object": "barrier-emitter",
+   "location": [
+    -10,
+    4,
+    0
+   ]
+  },
+  {
+   "id": "emitter-2",
+   "object": "barrier-emitter",
+   "location": [
+    5,
+    -3,
+    0
+   ]
+  },
+  {
+   "id": "emitter-3",
+   "object": "barrier-emitter",
+   "location": [
+    20,
+    4,
+    0
+   ]
+  },
+  {
+   "id": "scaffold",
+   "object": "collapsed-scaffold",
+   "location": [
+    12,
+    -4,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    15
+   ]
+  },
+  {
+   "id": "crate-1",
+   "object": "supply-crate",
+   "location": [
+    28,
+    5,
+    0
+   ]
+  },
+  {
+   "id": "crate-2",
+   "object": "supply-crate",
+   "location": [
+    29.5,
+    5.5,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    30
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_lower_ring": {
+   "note": "Chapter 8: the ramp drops into smoke; she is already there, unhurried; 'Try to keep up, hero.' The emitters are placed; absorb the first canister cloud to learn Load.",
+   "world": {
+    "color": [
+     0.3,
+     0.36,
+     0.37
+    ],
+    "strength": 0.5
+   },
+   "lights": [
+    {
+     "name": "transport-lights",
+     "type": "SPOT",
+     "location": [
+      -28,
+      2,
+      3
+     ],
+     "look_at": [
+      0,
+      0,
+      1
+     ],
+     "energy": 3000,
+     "size": 2,
+     "color": [
+      0.92,
+      0.96,
+      0.96
+     ]
+    },
+    {
+     "name": "daylight-shaft",
+     "type": "AREA",
+     "location": [
+      10,
+      0,
+      11.5
+     ],
+     "look_at": [
+      10,
+      0,
+      0
+     ],
+     "energy": 4000,
+     "size": 6,
+     "color": [
+      0.86,
+      0.88,
+      0.86
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -24,
+     -2,
+     2.0
+    ],
+    "look_at": [
+     0,
+     0,
+     1.5
+    ],
+    "lens_mm": 28,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     -25,
+     0,
+     1.0
+    ],
+    "facing_deg": 270
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "emitter-1",
+     "verb": "Raise the first wall",
+     "leads_to": "s2_barrier_1"
+    },
+    {
+     "prop": "scaffold",
+     "verb": "Look at her"
+    }
+   ]
+  },
+  "s3_lower_ring_after": {
+   "note": "Chapter 8: behind his own walls; walk the pens and hear each person's want; Nell Okafor says 'RCC sent you' with a hand on the plate stamped RCC. Answer, or don't.",
+   "world": {
+    "color": [
+     0.25,
+     0.3,
+     0.31
+    ],
+    "strength": 0.45
+   },
+   "lights": [
+    {
+     "name": "daylight-shaft",
+     "type": "AREA",
+     "location": [
+      10,
+      0,
+      11.5
+     ],
+     "look_at": [
+      10,
+      0,
+      0
+     ],
+     "energy": 3500,
+     "size": 6,
+     "color": [
+      0.86,
+      0.88,
+      0.86
+     ]
+    },
+    {
+     "name": "wall-light",
+     "type": "AREA",
+     "location": [
+      5,
+      0,
+      3
+     ],
+     "look_at": [
+      5,
+      -3,
+      1
+     ],
+     "energy": 600,
+     "size": 4,
+     "color": [
+      1.0,
+      0.82,
+      0.55
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     4,
+     1.7
+    ],
+    "look_at": [
+     5,
+     -3,
+     1.0
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     3,
+     0
+    ],
+    "facing_deg": 200
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "emitter-2",
+     "verb": "Read the plate"
+    },
+    {
+     "prop": "emitter-3",
+     "verb": "Drop the walls on the way out",
+     "leads_to": "s2_barrier_2"
+    }
+   ]
+  }
+ }
+}

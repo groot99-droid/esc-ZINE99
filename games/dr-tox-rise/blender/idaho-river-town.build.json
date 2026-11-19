@@ -1,0 +1,481 @@
+{
+ "game": "dr-tox-rise",
+ "location": "idaho-river-town",
+ "name": "The Idaho river town",
+ "reference": "assets/locations/idaho-river-town.jpg",
+ "bounds_m": [
+  120,
+  80,
+  20
+ ],
+ "origin": "main street's foot at the top of the bank; +y toward the river and the outflow pipe on the far bank; storefronts along -y",
+ "materials": {
+  "grass-dry": {
+   "color": [
+    0.48,
+    0.5,
+    0.4
+   ],
+   "roughness": 0.95
+  },
+  "asphalt": {
+   "color": [
+    0.3,
+    0.32,
+    0.33
+   ],
+   "roughness": 0.95
+  },
+  "river": {
+   "color": [
+    0.28,
+    0.34,
+    0.33
+   ],
+   "roughness": 0.1
+  },
+  "earth": {
+   "color": [
+    0.3,
+    0.26,
+    0.22
+   ],
+   "roughness": 1.0
+  },
+  "concrete": {
+   "color": [
+    0.37,
+    0.45,
+    0.46
+   ],
+   "roughness": 0.9
+  },
+  "brick": {
+   "color": [
+    0.45,
+    0.3,
+    0.26
+   ],
+   "roughness": 0.9
+  },
+  "steel": {
+   "color": [
+    0.5,
+    0.52,
+    0.53
+   ],
+   "roughness": 0.45,
+   "metallic": 0.8
+  },
+  "concrete-dark": {
+   "color": [
+    0.2,
+    0.24,
+    0.25
+   ],
+   "roughness": 0.92
+  }
+ },
+ "blockout": [
+  {
+   "id": "bank",
+   "shape": "box",
+   "role": "terrain",
+   "size_m": [
+    120,
+    30,
+    1
+   ],
+   "location": [
+    0,
+    15,
+    -0.5
+   ],
+   "material": "grass-dry"
+  },
+  {
+   "id": "street",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    120,
+    50,
+    0.2
+   ],
+   "location": [
+    0,
+    -25,
+    -0.1
+   ],
+   "material": "asphalt"
+  },
+  {
+   "id": "river",
+   "shape": "box",
+   "role": "water",
+   "size_m": [
+    120,
+    24,
+    0.2
+   ],
+   "location": [
+    0,
+    30,
+    -0.4
+   ],
+   "material": "river",
+   "collide": false
+  },
+  {
+   "id": "far-bank",
+   "shape": "box",
+   "role": "terrain",
+   "size_m": [
+    120,
+    6,
+    3
+   ],
+   "location": [
+    0,
+    39,
+    0.5
+   ],
+   "material": "earth"
+  },
+  {
+   "id": "headwall",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    8,
+    2,
+    4
+   ],
+   "location": [
+    20,
+    38,
+    2.5
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "storefronts-west",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    50,
+    10,
+    8
+   ],
+   "location": [
+    -30,
+    -40,
+    4
+   ],
+   "material": "brick"
+  },
+  {
+   "id": "storefronts-east",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    50,
+    10,
+    8
+   ],
+   "location": [
+    30,
+    -40,
+    4
+   ],
+   "material": "brick"
+  },
+  {
+   "id": "water-tower",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    6,
+    6,
+    18
+   ],
+   "location": [
+    -50,
+    -30,
+    9
+   ],
+   "material": "steel"
+  },
+  {
+   "id": "fence",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    100,
+    0.1,
+    1.8
+   ],
+   "location": [
+    0,
+    16,
+    0.9
+   ],
+   "material": "steel",
+   "collide": true
+  },
+  {
+   "id": "sky",
+   "shape": "plane",
+   "role": "sky",
+   "size_m": [
+    400,
+    400,
+    0
+   ],
+   "location": [
+    0,
+    0,
+    60
+   ],
+   "material": "concrete-dark"
+  }
+ ],
+ "props": [
+  {
+   "id": "pipe",
+   "object": "outflow-pipe",
+   "location": [
+    20,
+    36,
+    1.0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ],
+   "height_m": 2.2
+  },
+  {
+   "id": "bike-dale",
+   "object": "child-bicycle",
+   "location": [
+    -6,
+    -8,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    70
+   ]
+  },
+  {
+   "id": "bike-two",
+   "object": "child-bicycle",
+   "location": [
+    -3.5,
+    -9.5,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    120
+   ]
+  },
+  {
+   "id": "sawhorse-store",
+   "object": "quarantine-sawhorse",
+   "location": [
+    -18,
+    -34,
+    0
+   ]
+  },
+  {
+   "id": "sawhorse-bank",
+   "object": "quarantine-sawhorse",
+   "location": [
+    8,
+    12,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    10
+   ]
+  },
+  {
+   "id": "notice-post",
+   "object": "town-notice-post",
+   "location": [
+    4,
+    -30,
+    0
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_river_town": {
+   "note": "Chapter 3: Alexander at five, a child's-height camera; four children on the street and the bank; notice one thing about each. Quarantine sheeting already on two doors.",
+   "world": {
+    "color": [
+     0.75,
+     0.77,
+     0.74
+    ],
+    "strength": 0.9
+   },
+   "lights": [
+    {
+     "name": "bleached-sun",
+     "type": "SUN",
+     "location": [
+      -30,
+      -40,
+      60
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 4.5,
+     "size": 1,
+     "color": [
+      0.86,
+      0.88,
+      0.86
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -2,
+     -14,
+     1.0
+    ],
+    "look_at": [
+     0,
+     10,
+     0.8
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     -2,
+     -12,
+     0
+    ],
+    "facing_deg": 0
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "bike-dale",
+     "verb": "Look at Dale's bike"
+    },
+    {
+     "prop": "notice-post",
+     "verb": "Read the notices"
+    },
+    {
+     "prop": "sawhorse-bank",
+     "verb": "Climb the bank to the river",
+     "leads_to": "s3_river_night"
+    }
+   ]
+  },
+  "s3_river_night": {
+   "note": "Chapter 3: night. The pipe pours pale sludge under one red flare; porch lights in the street go out one by one behind him. Nothing else is shown.",
+   "world": {
+    "color": [
+     0.05,
+     0.07,
+     0.08
+    ],
+    "strength": 0.2
+   },
+   "lights": [
+    {
+     "name": "red-flare",
+     "type": "POINT",
+     "location": [
+      22,
+      34,
+      3
+     ],
+     "look_at": [
+      20,
+      36,
+      1
+     ],
+     "energy": 400,
+     "size": 0.5,
+     "color": [
+      0.9,
+      0.12,
+      0.1
+     ]
+    },
+    {
+     "name": "porch",
+     "type": "POINT",
+     "location": [
+      -20,
+      -34,
+      3
+     ],
+     "look_at": [
+      -20,
+      -30,
+      0
+     ],
+     "energy": 120,
+     "size": 0.5,
+     "color": [
+      1.0,
+      0.82,
+      0.55
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     8,
+     1.0
+    ],
+    "look_at": [
+     20,
+     36,
+     1
+    ],
+    "lens_mm": 28,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     10,
+     0
+    ],
+    "facing_deg": 0
+   },
+   "hide": [
+    "bike-two"
+   ],
+   "interactions": [
+    {
+     "prop": "pipe",
+     "verb": "Watch the pipe",
+     "leads_to": "s3_hospital_walkout"
+    }
+   ]
+  }
+ }
+}

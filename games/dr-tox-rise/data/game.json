@@ -1,0 +1,143 @@
+{
+  "slug": "dr-tox-rise",
+  "title": "Dr. Tox: Rise",
+  "series": "Dr. Tox: Age of Glass & Greed, episode 1 of 4 (dr-tox-rise, dr-tox-fall, dr-tox-finale, dr-tox-altrulan)",
+  "sources": [
+    "dr-tox/source/Dr_Tox_Compiled_Bible_Obsidian.md (not in the vault; cited by part and section)"
+  ],
+  "target_minutes": {
+    "min": 160,
+    "max": 180
+  },
+  "players": {
+    "min": 1,
+    "max": 1
+  },
+  "core_verb": "Dose",
+  "structure": "Two leads on two clocks, Alexander and Reese, alternating by chapter; each thread is in its own order and every chapter opens on a dated caption. The threads never meet in Rise; they meet in a terminal line Alexander may or may not take. The last ending's flags carry into Fall as scars (Self, Amber, the Word, who was left).",
+  "carry_over": [
+    "self",
+    "amber",
+    "observers_choice",
+    "took_spec_sheet",
+    "security_knows_face",
+    "reese.word",
+    "reese.said_rcc",
+    "reese.flinches",
+    "barrier.released",
+    "fiche.names_read"
+  ],
+  "chapters": [
+    {
+      "id": "c1_first_dose",
+      "title": "The First Dose",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Alexander, 15 (2217)"
+    },
+    {
+      "id": "c2_sky_room",
+      "title": "Sky Room",
+      "minutes": 18,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Reese, 4 to 10"
+    },
+    {
+      "id": "c3_river",
+      "title": "Subject CMXCIX",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Alexander, 5, then 24 (2207, 2226)"
+    },
+    {
+      "id": "c4_trial53",
+      "title": "Trial 53",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Reese, 11 and 12"
+    },
+    {
+      "id": "c5_forging",
+      "title": "The Forging",
+      "minutes": 14,
+      "layers": [
+        "1d",
+        "2d"
+      ],
+      "lead": "Alexander, 2226, months 6 to 12"
+    },
+    {
+      "id": "c6_mantled",
+      "title": "Aegis, Mantled",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Reese, 2226"
+    },
+    {
+      "id": "c7_hunt",
+      "title": "The Hunt",
+      "minutes": 18,
+      "layers": [
+        "1d",
+        "2d"
+      ],
+      "lead": "Alexander, 2227"
+    },
+    {
+      "id": "c8_containment",
+      "title": "Containment Action",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "2d"
+      ],
+      "lead": "Reese, 2226, within the week"
+    },
+    {
+      "id": "c9_snakehead",
+      "title": "Two Years and One Week",
+      "minutes": 22,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Alexander, 2228"
+    },
+    {
+      "id": "c10_observers",
+      "title": "The Observers",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ],
+      "lead": "Alexander, 2228"
+    },
+    {
+      "id": "c11_claim",
+      "title": "Snakehead",
+      "minutes": 8,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Alexander, 2228"
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+{
+ "game": "dr-tox-rise",
+ "location": "sky-room",
+ "name": "Sky Room",
+ "reference": "assets/locations/sky-room.jpg",
+ "bounds_m": [
+  18,
+  14,
+  4
+ ],
+ "origin": "centre of the play mat; +y toward the bunks; the door in the -y wall",
+ "materials": {
+  "concrete": {
+   "color": [
+    0.37,
+    0.45,
+    0.46
+   ],
+   "roughness": 0.9
+  },
+  "sky-paint": {
+   "color": [
+    0.42,
+    0.62,
+    0.82
+   ],
+   "roughness": 0.85
+  },
+  "field-paint": {
+   "color": [
+    0.42,
+    0.62,
+    0.36
+   ],
+   "roughness": 0.85
+  },
+  "steel": {
+   "color": [
+    0.5,
+    0.52,
+    0.53
+   ],
+   "roughness": 0.45,
+   "metallic": 0.8
+  },
+  "concrete-dark": {
+   "color": [
+    0.2,
+    0.24,
+    0.25
+   ],
+   "roughness": 0.92
+  }
+ },
+ "blockout": [
+  {
+   "id": "floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    18,
+    14,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    -0.1
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "wall-north",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    18,
+    0.3,
+    4
+   ],
+   "location": [
+    0,
+    7.15,
+    2.0
+   ],
+   "material": "sky-paint"
+  },
+  {
+   "id": "wall-south",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    18,
+    0.3,
+    4
+   ],
+   "location": [
+    0,
+    -7.15,
+    2.0
+   ],
+   "material": "sky-paint"
+  },
+  {
+   "id": "wall-east",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    14,
+    4
+   ],
+   "location": [
+    9.15,
+    0,
+    2.0
+   ],
+   "material": "sky-paint"
+  },
+  {
+   "id": "wall-west",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    14,
+    4
+   ],
+   "location": [
+    -9.15,
+    0,
+    2.0
+   ],
+   "material": "sky-paint"
+  },
+  {
+   "id": "ceiling",
+   "shape": "box",
+   "role": "ceiling",
+   "size_m": [
+    18,
+    14,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    4.1
+   ],
+   "material": "sky-paint"
+  },
+  {
+   "id": "field-band-north",
+   "shape": "box",
+   "role": "trim",
+   "size_m": [
+    18,
+    0.05,
+    1.2
+   ],
+   "location": [
+    0,
+    6.95,
+    0.6
+   ],
+   "material": "field-paint"
+  },
+  {
+   "id": "field-band-south",
+   "shape": "box",
+   "role": "trim",
+   "size_m": [
+    18,
+    0.05,
+    1.2
+   ],
+   "location": [
+    0,
+    -6.95,
+    0.6
+   ],
+   "material": "field-paint"
+  },
+  {
+   "id": "door",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    1.2,
+    0.1,
+    2.2
+   ],
+   "location": [
+    0,
+    -7.0,
+    1.1
+   ],
+   "material": "steel"
+  },
+  {
+   "id": "drain",
+   "shape": "box",
+   "role": "trim",
+   "size_m": [
+    0.4,
+    0.4,
+    0.02
+   ],
+   "location": [
+    0,
+    0,
+    0.01
+   ],
+   "material": "steel"
+  }
+ ],
+ "props": [
+  {
+   "id": "bunk-0",
+   "object": "child-bunk",
+   "location": [
+    -7.5,
+    5.6,
+    0
+   ]
+  },
+  {
+   "id": "bunk-1",
+   "object": "child-bunk",
+   "location": [
+    -5.0,
+    5.6,
+    0
+   ]
+  },
+  {
+   "id": "bunk-2",
+   "object": "child-bunk",
+   "location": [
+    -2.5,
+    5.6,
+    0
+   ]
+  },
+  {
+   "id": "bunk-3",
+   "object": "child-bunk",
+   "location": [
+    0.0,
+    5.6,
+    0
+   ]
+  },
+  {
+   "id": "bunk-4",
+   "object": "child-bunk",
+   "location": [
+    2.5,
+    5.6,
+    0
+   ]
+  },
+  {
+   "id": "bunk-5",
+   "object": "child-bunk",
+   "location": [
+    5.0,
+    5.6,
+    0
+   ]
+  },
+  {
+   "id": "mat",
+   "object": "play-mat",
+   "location": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "speaker",
+   "object": "wall-speaker",
+   "location": [
+    8.8,
+    0,
+    3.4
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ],
+   "ground": false
+  },
+  {
+   "id": "crate",
+   "object": "toy-crate",
+   "location": [
+    3,
+    -2,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    20
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_skyroom_small": {
+   "note": "Chapter 2: Reese at four, a low camera; twenty children; meet Cally, Carmy and Rolan at the mat; find the string in the crate.",
+   "world": {
+    "color": [
+     0.6,
+     0.7,
+     0.8
+    ],
+    "strength": 0.7
+   },
+   "lights": [
+    {
+     "name": "flat-overhead",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      3.9
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 2500,
+     "size": 12,
+     "color": [
+      0.92,
+      0.96,
+      0.96
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     -5.5,
+     0.9
+    ],
+    "look_at": [
+     0,
+     2,
+     0.6
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     -4,
+     0
+    ],
+    "facing_deg": 0
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "crate",
+     "verb": "Take the string",
+     "leads_to": "s1_cradle_1"
+    },
+    {
+     "prop": "mat",
+     "verb": "Sit with them"
+    },
+    {
+     "prop": "speaker",
+     "verb": "Listen"
+    }
+   ]
+  },
+  "s3_skyroom_evening": {
+   "note": "Chapter 2: after training, ages eight to ten; the four sneak back to the painted wall in the corridor's blue light; Rolan's trouble, Carmy's friendship with Cally, the string again.",
+   "world": {
+    "color": [
+     0.1,
+     0.13,
+     0.2
+    ],
+    "strength": 0.25
+   },
+   "lights": [
+    {
+     "name": "corridor-blue",
+     "type": "SPOT",
+     "location": [
+      0,
+      -6.8,
+      2.2
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 600,
+     "size": 1.5,
+     "color": [
+      0.45,
+      0.6,
+      1.0
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     1,
+     -5,
+     1.4
+    ],
+    "look_at": [
+     0,
+     3,
+     1.0
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     1,
+     -4,
+     0
+    ],
+    "facing_deg": 0
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "mat",
+     "verb": "Make a figure, four hands",
+     "leads_to": "s1_cradle_2"
+    },
+    {
+     "prop": "bunk-2",
+     "verb": "Climb into the bunk"
+    }
+   ]
+  }
+ }
+}

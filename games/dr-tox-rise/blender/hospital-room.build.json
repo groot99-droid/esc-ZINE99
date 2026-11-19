@@ -1,0 +1,524 @@
+{
+ "game": "dr-tox-rise",
+ "location": "hospital-room",
+ "name": "The sealed hospital room",
+ "reference": "assets/locations/hospital-room.jpg",
+ "bounds_m": [
+  8,
+  6,
+  3.2
+ ],
+ "origin": "room centre; +y toward the bed's head wall and the bench; the observation glass in the -y wall",
+ "materials": {
+  "clinical-white": {
+   "color": [
+    0.91,
+    0.925,
+    0.918
+   ],
+   "roughness": 0.6
+  },
+  "glass": {
+   "color": [
+    0.55,
+    0.62,
+    0.63
+   ],
+   "roughness": 0.05,
+   "metallic": 0.0
+  },
+  "steel": {
+   "color": [
+    0.5,
+    0.52,
+    0.53
+   ],
+   "roughness": 0.45,
+   "metallic": 0.8
+  }
+ },
+ "blockout": [
+  {
+   "id": "floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    8,
+    6,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    -0.1
+   ],
+   "material": "clinical-white"
+  },
+  {
+   "id": "wall-north",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    8,
+    0.3,
+    3.2
+   ],
+   "location": [
+    0,
+    3.15,
+    1.6
+   ],
+   "material": "clinical-white"
+  },
+  {
+   "id": "wall-south",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    8,
+    0.3,
+    3.2
+   ],
+   "location": [
+    0,
+    -3.15,
+    1.6
+   ],
+   "material": "clinical-white"
+  },
+  {
+   "id": "wall-east",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    6,
+    3.2
+   ],
+   "location": [
+    4.15,
+    0,
+    1.6
+   ],
+   "material": "clinical-white"
+  },
+  {
+   "id": "wall-west",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    6,
+    3.2
+   ],
+   "location": [
+    -4.15,
+    0,
+    1.6
+   ],
+   "material": "clinical-white"
+  },
+  {
+   "id": "ceiling",
+   "shape": "box",
+   "role": "ceiling",
+   "size_m": [
+    8,
+    6,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    3.3000000000000003
+   ],
+   "material": "clinical-white"
+  },
+  {
+   "id": "observation-glass",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    4,
+    0.1,
+    1.4
+   ],
+   "location": [
+    0,
+    -3.0,
+    1.6
+   ],
+   "material": "glass",
+   "collide": true
+  },
+  {
+   "id": "fluoro-1",
+   "shape": "box",
+   "role": "trim",
+   "size_m": [
+    1.2,
+    0.2,
+    0.05
+   ],
+   "location": [
+    0,
+    1,
+    3.15
+   ],
+   "material": "clinical-white"
+  },
+  {
+   "id": "door",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    1.0,
+    0.1,
+    2.1
+   ],
+   "location": [
+    3.0,
+    3.0,
+    1.05
+   ],
+   "material": "steel"
+  }
+ ],
+ "props": [
+  {
+   "id": "bed",
+   "object": "isolation-bed",
+   "location": [
+    -2.2,
+    0.8,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "bench",
+   "object": "bench-rig",
+   "location": [
+    2.4,
+    2.4,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ]
+  },
+  {
+   "id": "vial",
+   "object": "amber-vial",
+   "location": [
+    2.2,
+    2.35,
+    0.95
+   ]
+  },
+  {
+   "id": "syringe",
+   "object": "lead-shielded-syringe",
+   "location": [
+    2.6,
+    2.3,
+    0.95
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "iv",
+   "object": "iv-pole",
+   "location": [
+    -1.0,
+    1.8,
+    0
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_hospital_2217": {
+   "note": "Chapter 1, 2217: fifteen, the breath tent fogging, the bench he built; the hook. Push in on the bench for the first batch.",
+   "world": {
+    "color": [
+     0.82,
+     0.86,
+     0.86
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "fluoro",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      3.1
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 400,
+     "size": 3,
+     "color": [
+      0.92,
+      0.96,
+      0.96
+     ]
+    },
+    {
+     "name": "vial-glow",
+     "type": "POINT",
+     "location": [
+      2.2,
+      2.2,
+      1.1
+     ],
+     "look_at": [
+      2.2,
+      2.35,
+      0.95
+     ],
+     "energy": 8,
+     "size": 0.1,
+     "color": [
+      1.0,
+      0.68,
+      0.25
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     -2.6,
+     1.6
+    ],
+    "look_at": [
+     2.4,
+     2.4,
+     1.0
+    ],
+    "lens_mm": 85,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     -1.5,
+     0
+    ],
+    "facing_deg": 30
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "bed",
+     "verb": "Lift the tent"
+    },
+    {
+     "prop": "bench",
+     "verb": "Make the batch",
+     "leads_to": "s1_cage_1"
+    }
+   ]
+  },
+  "s3_injection_first": {
+   "note": "Chapter 1: the first dose. Load the syringe, find the shunt-less vein, drive it; the line on the monitor turns from green to amber.",
+   "world": {
+    "color": [
+     0.82,
+     0.86,
+     0.86
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "fluoro",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      3.1
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 400,
+     "size": 3,
+     "color": [
+      0.92,
+      0.96,
+      0.96
+     ]
+    },
+    {
+     "name": "vial-glow",
+     "type": "POINT",
+     "location": [
+      2.2,
+      2.2,
+      1.1
+     ],
+     "look_at": [
+      2.2,
+      2.35,
+      0.95
+     ],
+     "energy": 8,
+     "size": 0.1,
+     "color": [
+      1.0,
+      0.68,
+      0.25
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     1.5,
+     1.2,
+     1.2
+    ],
+    "look_at": [
+     2.4,
+     2.4,
+     0.95
+    ],
+    "lens_mm": 85,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     1.6,
+     1.5,
+     0
+    ],
+    "facing_deg": 20
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "syringe",
+     "verb": "Take the syringe"
+    },
+    {
+     "prop": "vial",
+     "verb": "Draw the dose"
+    },
+    {
+     "prop": "bed",
+     "verb": "Lie back",
+     "leads_to": "s3_skyroom_small"
+    }
+   ]
+  },
+  "s3_hospital_walkout": {
+   "note": "Chapter 3, 2226: the last morning; the tent folded; walk to the door with a doctorate and the vials. Push in on the bench for a batch to carry outside.",
+   "world": {
+    "color": [
+     0.86,
+     0.88,
+     0.87
+    ],
+    "strength": 0.7
+   },
+   "lights": [
+    {
+     "name": "fluoro",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      3.1
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 300,
+     "size": 3,
+     "color": [
+      0.92,
+      0.96,
+      0.96
+     ]
+    },
+    {
+     "name": "corridor",
+     "type": "AREA",
+     "location": [
+      0,
+      -3.5,
+      1.6
+     ],
+     "look_at": [
+      0,
+      0,
+      1
+     ],
+     "energy": 200,
+     "size": 2,
+     "color": [
+      0.86,
+      0.88,
+      0.86
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -2,
+     -2,
+     1.7
+    ],
+    "look_at": [
+     3.0,
+     3.0,
+     1.2
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     -2,
+     -1.5,
+     0
+    ],
+    "facing_deg": 45
+   },
+   "hide": [
+    "iv"
+   ],
+   "interactions": [
+    {
+     "prop": "bench",
+     "verb": "Make the batch to take",
+     "leads_to": "s1_cage_2"
+    },
+    {
+     "prop": "vial",
+     "verb": "Pocket the vials"
+    }
+   ]
+  }
+ }
+}

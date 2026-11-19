@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="barrier-escort-t barrier-escort-d">
+<title id="barrier-escort-t">Barrier escort: Franco-Belgian ligne claire</title>
+<desc id="barrier-escort-d">Barrier escort (2D): the lower-ring supply corridor side-on in clear line, even outlines and flat colour with no hatching. A transport rolls left to right under a concrete deck; Aegis, in amber-lit light, draws hard-light walls as clean pale bars that turn thrown debris aside. Behind two of the walls small people are penned in, each with a name tag on the bar; a Load gauge in the corner empties as the walls go up.</desc>
+<rect x="0" y="0" width="1200" height="800" fill="#dfe6e4"/>
+<rect x="0" y="0" width="1200" height="150" fill="#9fb0ae" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="80" y="150" width="40" height="470" fill="#b9c6c4" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="280" y="150" width="40" height="470" fill="#b9c6c4" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="480" y="150" width="40" height="470" fill="#b9c6c4" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="680" y="150" width="40" height="470" fill="#b9c6c4" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="880" y="150" width="40" height="470" fill="#b9c6c4" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="1080" y="150" width="40" height="470" fill="#b9c6c4" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="0" y="620" width="1200" height="180" fill="#8c9897" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="40" y="380" width="300" height="240" fill="#c9b9a0" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="70" y="420" width="240" height="200" fill="#e8eeee" stroke="#1b1b1b" stroke-width="3" opacity="0.9"/>
+<rect x="440" y="380" width="300" height="240" fill="#c9b9a0" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="470" y="420" width="240" height="200" fill="#e8eeee" stroke="#1b1b1b" stroke-width="3" opacity="0.9"/>
+<rect x="840" y="380" width="300" height="240" fill="#c9b9a0" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="870" y="420" width="240" height="200" fill="#e8eeee" stroke="#1b1b1b" stroke-width="3" opacity="0.9"/>
+<rect x="560" y="470" width="360" height="150" rx="12" fill="#76807f" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="600" y="430" width="180" height="50" fill="#76807f" stroke="#1b1b1b" stroke-width="3"/>
+<circle cx="620" cy="625" r="34" fill="#2e3333" stroke="#1b1b1b" stroke-width="3"/>
+<circle cx="620" cy="625" r="12" fill="#9aa3a2" stroke="#1b1b1b" stroke-width="3"/>
+<circle cx="860" cy="625" r="34" fill="#2e3333" stroke="#1b1b1b" stroke-width="3"/>
+<circle cx="860" cy="625" r="12" fill="#9aa3a2" stroke="#1b1b1b" stroke-width="3"/>
+<text x="820" y="560" font-size="26" font-family="sans-serif" fill="#3a3f3f" font-weight="bold">RCC</text>
+<rect x="322" y="292" width="38" height="336" fill="#F2C14E" opacity="0.2"/>
+<rect x="330" y="300" width="22" height="320" fill="#fff6d8" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="972" y="322" width="38" height="306" fill="#F2C14E" opacity="0.2"/>
+<rect x="980" y="330" width="22" height="290" fill="#fff6d8" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="172" y="412" width="38" height="216" fill="#F2C14E" opacity="0.2"/>
+<rect x="180" y="420" width="22" height="200" fill="#fff6d8" stroke="#1b1b1b" stroke-width="3"/>
+<circle cx="250" cy="520" r="15" fill="#e8c8a8" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="234" y="536" width="32" height="80" rx="8" fill="#6f8a9c" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="222" y="470" width="56" height="22" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+<text x="226" y="487" font-size="15" font-family="sans-serif" fill="#1b1b1b">NELL</text>
+<circle cx="300" cy="520" r="15" fill="#e8c8a8" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="284" y="536" width="32" height="80" rx="8" fill="#6f8a9c" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="272" y="442" width="56" height="22" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+<text x="276" y="459" font-size="15" font-family="sans-serif" fill="#1b1b1b">TOMAS</text>
+<circle cx="1050" cy="520" r="15" fill="#e8c8a8" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="1034" y="536" width="32" height="80" rx="8" fill="#6f8a9c" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="1022" y="470" width="56" height="22" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+<text x="1026" y="487" font-size="15" font-family="sans-serif" fill="#1b1b1b">RUTH</text>
+<circle cx="470" cy="430" r="18" fill="#f1d9bf" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="448" y="448" width="44" height="110" rx="10" fill="#e8e1cf" stroke="#1b1b1b" stroke-width="3"/>
+<path d="M488,460 L540,400" stroke="#1b1b1b" stroke-width="14" stroke-linecap="round"/>
+<path d="M488,460 L540,400" stroke="#e8e1cf" stroke-width="8" stroke-linecap="round"/>
+<circle cx="542" cy="398" r="12" fill="#F2C14E" stroke="#1b1b1b" stroke-width="2"/>
+<rect x="450" y="556" width="16" height="64" fill="#5a5f5f" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="474" y="556" width="16" height="64" fill="#5a5f5f" stroke="#1b1b1b" stroke-width="3"/>
+<polygon points="280,250 304,256 294,276" fill="#7a6a58" stroke="#1b1b1b" stroke-width="2"/>
+<polygon points="300,330 324,336 314,356" fill="#7a6a58" stroke="#1b1b1b" stroke-width="2"/>
+<polygon points="950,270 974,276 964,296" fill="#7a6a58" stroke="#1b1b1b" stroke-width="2"/>
+<rect x="40" y="180" width="200" height="34" fill="#ffffff" stroke="#1b1b1b" stroke-width="3"/>
+<rect x="43" y="183" width="70" height="28" fill="#F2C14E"/>
+<text x="40" y="240" font-size="20" font-family="sans-serif" fill="#1b1b1b" font-weight="bold">LOAD</text>
+</svg>

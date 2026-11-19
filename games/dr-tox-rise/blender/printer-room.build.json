@@ -1,0 +1,476 @@
+{
+ "game": "dr-tox-rise",
+ "location": "printer-room",
+ "name": "The printer room",
+ "reference": "assets/locations/printer-room.jpg",
+ "bounds_m": [
+  14,
+  12,
+  7
+ ],
+ "origin": "room centre; +y toward the printer column; the door in the -y wall; vats along both side walls",
+ "materials": {
+  "concrete": {
+   "color": [
+    0.37,
+    0.45,
+    0.46
+   ],
+   "roughness": 0.9
+  },
+  "concrete-dark": {
+   "color": [
+    0.2,
+    0.24,
+    0.25
+   ],
+   "roughness": 0.92
+  },
+  "blue-emergency": {
+   "color": [
+    0.3,
+    0.45,
+    0.8
+   ],
+   "roughness": 0.5,
+   "emission": 1.5
+  },
+  "steel": {
+   "color": [
+    0.5,
+    0.52,
+    0.53
+   ],
+   "roughness": 0.45,
+   "metallic": 0.8
+  }
+ },
+ "blockout": [
+  {
+   "id": "floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    14,
+    12,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    -0.1
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "wall-north",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    14,
+    0.3,
+    7
+   ],
+   "location": [
+    0,
+    6.15,
+    3.5
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "wall-south",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    14,
+    0.3,
+    7
+   ],
+   "location": [
+    0,
+    -6.15,
+    3.5
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "wall-east",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    12,
+    7
+   ],
+   "location": [
+    7.15,
+    0,
+    3.5
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "wall-west",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    0.3,
+    12,
+    7
+   ],
+   "location": [
+    -7.15,
+    0,
+    3.5
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "ceiling",
+   "shape": "box",
+   "role": "ceiling",
+   "size_m": [
+    14,
+    12,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    7.1
+   ],
+   "material": "concrete-dark"
+  },
+  {
+   "id": "vapour",
+   "shape": "box",
+   "role": "trim",
+   "size_m": [
+    6,
+    6,
+    0.3
+   ],
+   "location": [
+    0,
+    0,
+    0.15
+   ],
+   "material": "blue-emergency",
+   "collide": false
+  },
+  {
+   "id": "door",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    1.2,
+    0.1,
+    2.2
+   ],
+   "location": [
+    0,
+    -6.0,
+    1.1
+   ],
+   "material": "steel"
+  }
+ ],
+ "props": [
+  {
+   "id": "column",
+   "object": "printer-column",
+   "location": [
+    0,
+    1.5,
+    0
+   ]
+  },
+  {
+   "id": "terminal",
+   "object": "rcc-terminal",
+   "location": [
+    2.6,
+    0.5,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    -30
+   ]
+  },
+  {
+   "id": "vat-0",
+   "object": "vat-unit",
+   "location": [
+    -6.4,
+    -4.0,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "vat-1",
+   "object": "vat-unit",
+   "location": [
+    -6.4,
+    -1.4,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "vat-2",
+   "object": "vat-unit",
+   "location": [
+    -6.4,
+    1.2000000000000002,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "vat-3",
+   "object": "vat-unit",
+   "location": [
+    -6.4,
+    3.8000000000000007,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "vat-e0",
+   "object": "vat-unit",
+   "location": [
+    6.4,
+    -4.0,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    -90
+   ]
+  },
+  {
+   "id": "vat-e1",
+   "object": "vat-unit",
+   "location": [
+    6.4,
+    -1.4,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    -90
+   ]
+  },
+  {
+   "id": "vat-e2",
+   "object": "vat-unit",
+   "location": [
+    6.4,
+    1.2000000000000002,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    -90
+   ]
+  },
+  {
+   "id": "vat-e3",
+   "object": "vat-unit",
+   "location": [
+    6.4,
+    3.8000000000000007,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    -90
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_printer_room": {
+   "note": "Chapter 9: the plaque, the forty failures, the terminal's spec sheet (leave it on the screen or tear the printout); the column splits; Cycle 41 opens her eyes: 'Cold.'",
+   "world": {
+    "color": [
+     0.08,
+     0.12,
+     0.2
+    ],
+    "strength": 0.3
+   },
+   "lights": [
+    {
+     "name": "soft-blue",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      6.8
+     ],
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "energy": 900,
+     "size": 8,
+     "color": [
+      0.45,
+      0.6,
+      1.0
+     ]
+    },
+    {
+     "name": "seam-backlight",
+     "type": "SPOT",
+     "location": [
+      0,
+      4,
+      1
+     ],
+     "look_at": [
+      0,
+      1.5,
+      1.5
+     ],
+     "energy": 300,
+     "size": 0.5,
+     "color": [
+      0.45,
+      0.6,
+      1.0
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     -4.5,
+     1.7
+    ],
+    "look_at": [
+     0,
+     1.5,
+     2.0
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     -4,
+     0
+    ],
+    "facing_deg": 0
+   },
+   "hide": [],
+   "interactions": [
+    {
+     "prop": "terminal",
+     "verb": "Read the screen"
+    },
+    {
+     "prop": "terminal",
+     "verb": "Tear the printout"
+    },
+    {
+     "prop": "column",
+     "verb": "Stay"
+    }
+   ]
+  },
+  "s3_printer_room_after": {
+   "note": "Ending, The Spec Sheet: the column gone to its bolts, vats drained; on the terminal one still of his own face at the housing.",
+   "world": {
+    "color": [
+     0.06,
+     0.08,
+     0.1
+    ],
+    "strength": 0.2
+   },
+   "lights": [
+    {
+     "name": "terminal-glow",
+     "type": "POINT",
+     "location": [
+      2.4,
+      0.2,
+      1.4
+     ],
+     "look_at": [
+      2.6,
+      0.5,
+      1.1
+     ],
+     "energy": 40,
+     "size": 0.2,
+     "color": [
+      0.86,
+      0.88,
+      0.86
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0.8,
+     -2,
+     1.6
+    ],
+    "look_at": [
+     2.6,
+     0.5,
+     1.1
+    ],
+    "lens_mm": 50,
+    "mode": "first-person"
+   },
+   "player_start": {
+    "location": [
+     0.8,
+     -2.5,
+     0
+    ],
+    "facing_deg": 30
+   },
+   "hide": [
+    "column"
+   ],
+   "interactions": [
+    {
+     "prop": "terminal",
+     "verb": "Look at your face",
+     "leads_to": "s1_cage_3"
+    }
+   ]
+  }
+ }
+}

@@ -276,3 +276,33 @@ Rebuild with `python tools/pictographs/build.py`; each game's drawing code is in
 ### Dead Reckoning (1D): Nautical plotting sheet
 
 ![Dead Reckoning](../games/lord-of-the-sea/pictographs/dead-reckoning.svg)
+
+## Dr. Tox: Rise
+
+### Panel run (2D): Noir spotted-black brush ink
+
+![Panel run](../games/dr-tox-rise/pictographs/panel-run.svg)
+
+### Barrier escort (2D): Franco-Belgian ligne claire
+
+![Barrier escort](../games/dr-tox-rise/pictographs/barrier-escort.svg)
+
+### The Cage (1D): Comic colourist's flats
+
+![The Cage](../games/dr-tox-rise/pictographs/cage.svg)
+
+### Cat's Cradle (1D): Chalk and poster paint on the painted sky
+
+![Cat's Cradle](../games/dr-tox-rise/pictographs/cats-cradle.svg)
+
+### The Window (1D): Fumetti photo-comic
+
+![The Window](../games/dr-tox-rise/pictographs/window.svg)
+
+### Fiche (1D): Scratchboard
+
+![Fiche](../games/dr-tox-rise/pictographs/fiche.svg)
+
+### Aftermath (1D): Manga screentone, evidence tents
+
+![Aftermath](../games/dr-tox-rise/pictographs/aftermath.svg)

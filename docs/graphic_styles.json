@@ -63,6 +63,13 @@
     {"game": "lord-of-the-sea", "kind": "1d", "name": "Liar's Tide", "key": "liars-tide", "style": "Sailor's tattoo flash", "look": "Bold outlines, flat red, green and yellow, dice and swallows"},
     {"game": "lord-of-the-sea", "kind": "1d", "name": "The Charter", "key": "charter", "style": "Engrossed deed with wax seal", "look": "Calligraphic clauses, a ribboned seal, one clause underlined"},
     {"game": "lord-of-the-sea", "kind": "1d", "name": "The Tea Board", "key": "tea-board", "style": "Blue-and-white export porcelain", "look": "Cobalt on white, willow-pattern borders as trade routes"},
-    {"game": "lord-of-the-sea", "kind": "1d", "name": "Dead Reckoning", "key": "dead-reckoning", "style": "Nautical plotting sheet", "look": "Compass rose, dividers, pencilled legs and fixes"}
+    {"game": "lord-of-the-sea", "kind": "1d", "name": "Dead Reckoning", "key": "dead-reckoning", "style": "Nautical plotting sheet", "look": "Compass rose, dividers, pencilled legs and fixes"},
+    {"game": "dr-tox-rise", "kind": "2d", "name": "Panel run", "key": "panel-run", "style": "Noir spotted-black brush ink", "look": "Heavy brushed blacks spotted across the panels, white gutters that skip time"},
+    {"game": "dr-tox-rise", "kind": "2d", "name": "Barrier escort", "key": "barrier-escort", "style": "Franco-Belgian ligne claire", "look": "Even clear outlines, flat colour, no hatching; hard-light walls as clean bars"},
+    {"game": "dr-tox-rise", "kind": "1d", "name": "The Cage", "key": "cage", "style": "Comic colourist's flats", "look": "Flat unshaded colour fills to the line, amber against green, never at equal weight"},
+    {"game": "dr-tox-rise", "kind": "1d", "name": "Cat's Cradle", "key": "cats-cradle", "style": "Chalk and poster paint on the painted sky", "look": "Chalk string figures over a flat painted blue sky, clinical white light"},
+    {"game": "dr-tox-rise", "kind": "1d", "name": "The Window", "key": "window", "style": "Fumetti photo-comic", "look": "Posed photo panels with typed captions and a guard rota in the margin"},
+    {"game": "dr-tox-rise", "kind": "1d", "name": "Fiche", "key": "fiche", "style": "Scratchboard", "look": "White lines cut from a black ground, frames of an index card grid"},
+    {"game": "dr-tox-rise", "kind": "1d", "name": "Aftermath", "key": "aftermath", "style": "Manga screentone, evidence tents", "look": "Dot-tone grey fields, numbered evidence tents beside each trace"}
   ]
 }

@@ -380,3 +380,58 @@ The two source chapters play in 3D, then the voyage moves between the layers: 3D
 ![Panel 8](../games/lord-of-the-sea/reference/05-engraved-sea.jpg)
 
 ![Panel E](../games/lord-of-the-sea/reference/11-the-open-sea.jpg)
+
+## 11. Dr. Tox: Rise
+
+Episode 1 of four (`dr-tox-rise`), from the author's bible `dr-tox/source/Dr_Tox_Compiled_Bible_Obsidian.md`, not the vault. Two leads on two clocks, Alexander and Reese, alternating by chapter under dated captions. Each 3D room hands off to a page by push-in, every break-in and every escort flattens into the comic page it is drawn on, and the Toxin State is always a cut: the player sees the panel go green and then the evidence tents, never the act. The arena is played as the refusal and cut at the seam. The five stills are the author's own catalogued thumbnails (`dr-tox/art_catalogue.md`: `45e6b51e`, `7b7a67f7`, `20d976bc`, `a9a2b0c1`, `ce8c5a1a`), converted to JPEG at their 320-pixel size; the full-size originals are on Higgsfield, and new stills for the other panels are not generated yet.
+
+| # | Layer | Scene | Shot | Beat | Into next | Still |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 3D | `s3_hospital_2217` | Flat fluorescent, locked off at 85 mm: a breath fogging a plastic tent; past it, a bench built from IV poles; caption 2217 | Fifteen, alone, lethal to share a room with: walk the four metres the tubing allows, lift the tent, go to the bench | Push-in on the bench |  |
+| 2 | 1D | `s1_cage_1` | The Cage: a dropper over a flask in flat colourist's fills, an indicator front of green against an amber band | Titrate the first batch to its endpoint; stop the drip where the flask holds amber against the green | Pull-out |  |
+| 3 | 3D | `s3_injection_first` | The bench at 85 mm; a scarred young arm; the lead sleeve with its slot of amber | The first dose: he drives it himself, and the monitor line turns from green to amber. "It is a cage, and he built it himself" | Cut to a painted sky |  |
+| 4 | 3D | `s3_skyroom_small` | A low child's camera in a concrete room painted with a blue sky and green fields; twenty small bunks | Reese at four meets Cally, Carmy and Rolan at the play mat; Rolan gets them in trouble; find the string in the crate | Push-in on the string |  |
+| 5 | 1D | `s1_cradle_1` | Chalk string between two pairs of small hands on painted sky | Two hands, Reese and Cally: learn the pinch, lift and drop; finish the first figure together | Pull-out |  |
+| 6 | 3D | `s3_skyroom_evening` | The same room in corridor blue through wired glass; four older children at the painted wall | After training, ages eight to ten: the four are top of the floor and close as anyone in the trial; Carmy and Cally since this room; Rolan the oddball | Push-in on eight hands |  |
+| 7 | 1D | `s1_cradle_2` | Four pairs of hands in chalk, one figure passing between them | Four hands: each crossing must go to the right child's fingers or the figure falls; bonds rise with each figure finished | Cut |  |
+| 8 | 3D | `s3_river_town` | A child's height on a bleached main street; sheeting stapled over doors; two small bikes on the asphalt | Alexander at five, before. Play beside Dale, June, the Ostrowski twins and Hollis, and notice one thing about each | Cut | [08-main-street](../games/dr-tox-rise/reference/08-main-street.jpg) |
+| 9 | 3D | `s3_river_night` | Night on the bank: the outflow pipe pouring pale sludge, one red flare, dead fish on the mud | "The town dies around them." Porch lights go out behind him one by one; nothing else is shown | Fade | [09-the-outflow](../games/dr-tox-rise/reference/09-the-outflow.jpg) |
+| 10 | 3D | `s3_hospital_walkout` | The sealed room in morning light, the tent folded; the door open for the first time | 2226: 24, a doctorate in forensic medical sciences, and a hunch not yet formed; he walks out the year the world falls | Push-in on the bench |  |
+| 11 | 1D | `s1_cage_2` | The Cage with a second flask and a moving indicator | A batch to carry outside: a larger flask, a faster front; the vials go in his pocket | Cut |  |
+| 12 | 1D | `s1_cradle_3` | Eight chalk hands; one pair stops | The night before: mid-figure Cally tells them the final protocol; the string drops; three are horrified and Rolan is not | Cut |  |
+| 13 | 3D | `s3_arena` | A concrete pit under hard floods, a steel seam across the floor; four children; dark glass above | "Only two of you can remain." The only input is Drop. Rolan's embrace is cut behind Reese's back; the leap is cut at the seam; the shot from above is never shown | Cut |  |
+| 14 | 3D | `s3_arena_after` | The floods off, one red light, two blades on two halves of the floor | "Now, now — you broke the rules. You should have killed your pair. Now you have no one." Then cryo, two doors down from a gurney he never sees | Fade |  |
+| 15 | 1D | `s1_window_1` | The Window: a posed photo of a guardhouse, a typed rota pinned in the margin | 2226, months 6 to 12: find the gap in two guards' rounds and lay his route into it | Flatten |  |
+| 16 | 2D | `s2_panel_1` | Panel run: a research floor through scratched glass in spotted black ink; white gutters | The first break-in. Pick the next panel; the gutter skips the guard's turn; find the plate that reads RCC | Fade | [16-the-research-floor](../games/dr-tox-rise/reference/16-the-research-floor.jpg) |
+| 17 | 3D | `s3_spire_mirror` | Amber, gold-edged light; a tall mirror; a woman's voice warm on purpose | "Welcome back, Aegis." "You look like you're supposed to." The flinch at "terrible" | Push-in on the reflection |  |
+| 18 | 1D | `s1_cradle_leash` | Cat's Cradle with three pairs of hands blank | The leash: the figure needs four children and three are white chalk ghosts; HOPE plays the flashback and calls it gratitude | Pull-out |  |
+| 19 | 3D | `s3_spire_ceremony` | A platform above a hundred thousand faces; his face forty metres tall on every screen | "Citizens of the Spire — I give you Aegis." The insignia goes on before he has decided how it feels | Cut |  |
+| 20 | 1D | `s1_window_2` | The Window: two rotas, a dog handler's photo, a clock that runs | 2227: three rounds and a dog; the window is narrower; the slack he finds is his starting Pulse | Flatten |  |
+| 21 | 2D | `s2_panel_2` | Panel run: a cold-storage depot in ink; the last panel's border turns green | A guard and a dog and nowhere left to hide: Pulse hits 100 and the State takes the page; cut | Cut |  |
+| 22 | 1D | `s1_aftermath_1` | Aftermath: a guard post in dot-tone grey, numbered evidence tents | He reads the room like evidence of a crime he did not witness: order the traces; the guard's name is on his locker | Fade | [22-aftermath](../games/dr-tox-rise/reference/22-aftermath.jpg) |
+| 23 | 3D | `s3_lower_ring` | Smoke on a ramp under a concrete deck; a woman already fighting, unhurried | "They finally sent the amber-lit one down from the Spire. I wondered when." Learn Load on the first canister cloud | Flatten |  |
+| 24 | 2D | `s2_barrier_1` | Barrier escort in clear line: a transport, hard-light walls as clean bars, people behind them | Draw walls to bring the transport through; every wall pens someone in, and their names show on it | Flatten |  |
+| 25 | 3D | `s3_lower_ring_after` | Behind his own walls; a plate stamped RCC on the emitter | Hear each penned person's want; Nell Okafor: "RCC sent you." Say "HOPE sent me", "RCC sent me", or nothing; the first "RCC" is recorded | Flatten |  |
+| 26 | 2D | `s2_barrier_2` | The same page going out | Drop pen walls on the way out, at the transport's cost, or keep them | Cut |  |
+| 27 | 3D | `s3_archive_fall` | Rubble under a breach, blue emergency light, rows of grey cabinets | 2228, two years and one week: through the ground into Snakehead; follow the hum to the reader | Push-in on the reader |  |
+| 28 | 1D | `s1_fiche_1` | Fiche: a hooded screen in scratchboard white, an index of a thousand frames | Find SUBJECT CMXCIX, his own file; find the river children by the one detail you kept; read names until the reader is needed elsewhere | Pull-out |  |
+| 29 | 3D | `s3_printer_room` | Soft blue, a black column veined with conduit, a CRT terminal, vapour on the floor | PROJECT CATALYST; BOND INTEGRITY 94.6%; leave it on the screen or tear the printout. The column splits; the girl from Sky Room opens her eyes as Cycle 41: "Cold." | Cut |  |
+| 30 | 3D | `s3_archive_alarm` | Red strobe through the cabinets; four glass cells; a tank where someone becomes visible | Security on the stair. The Observers open their inner door: go through with them, or take the stair alone and seal it | Flatten |  |
+| 31 | 2D | `s2_panel_3` | Panel run through the bunker, the Observers' shapes in the gutters | The escape: the Split leaps a gutter, the Cauldron sprays a doorway, the Twins crack a wall; draw as few darts as you can | Fade |  |
+| 32 | 3D | `s3_archive_claimed` | One amber work lamp, hard falloff into black | The return: light the lamp; the cells open on the family that kept him alive | Push-in on the locker |  |
+| 33 | 1D | `s1_cage_3` | The Cage on a steel bench under the work lamp | The first batch in his own lab: the supply that will have to last into the Fall | Pull-out |  |
+| 34 | 3D | `s3_bunker_injection` | The bunker medical bay at 50 mm; shirtless, scarred arm, lead-shielded syringe, jaw clenched, eyes shut | Fully Dr. Tox (as written): "armored, armed, based in Snakehead." The last image is the first signature image | Fade | [34-the-injection](../games/dr-tox-rise/reference/34-the-injection.jpg) |
+| E | 1D | `s1_aftermath_2` | Aftermath: the archive in dot tone, more tents than he can count | Green in the Archive: Pulse reached 100 in the escape; the tents are where the Observers set them for him | Fade |  |
+| E | 3D | `s3_archive_green` | Dim red emergency light, a wide empty frame, the subject small in it | Green in the Archive: he wakes among what the State did; the Observers keep their distance; Self starts the Fall lower | Push-in on the locker |  |
+| E | 3D | `s3_archive_empty` | The amber lamp over four open cells and a dry tank | The Cage Alone: he sealed the door behind him and they were taken; he claims an empty fortress | Push-in on the locker |  |
+| E | 3D | `s3_printer_room_after` | The column gone to its bolts; one still on the terminal | The Spec Sheet: he kept the printout and knows "Aegis"; the terminal shows his own face, logged | Push-in on the bench |  |
+
+![Panel 8](../games/dr-tox-rise/reference/08-main-street.jpg)
+
+![Panel 9](../games/dr-tox-rise/reference/09-the-outflow.jpg)
+
+![Panel 16](../games/dr-tox-rise/reference/16-the-research-floor.jpg)
+
+![Panel 22](../games/dr-tox-rise/reference/22-aftermath.jpg)
+
+![Panel 34](../games/dr-tox-rise/reference/34-the-injection.jpg)

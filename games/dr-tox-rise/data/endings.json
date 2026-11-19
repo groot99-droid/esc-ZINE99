@@ -1,0 +1,68 @@
+{
+  "endings": [
+    {
+      "id": "green_in_the_archive",
+      "name": "Green in the Archive",
+      "as_written": false,
+      "priority": 1,
+      "when": {
+        "is": "toxin_in_escape",
+        "eq": true
+      },
+      "summary": "Pulse reached 100 in the escape. The Toxin State took the stair, the security team and the archive door, in a form it has not used before and will not use again. He wakes in the archive, small in a wide red frame, and reconstructs it from the tents the Observers set out for him; they carried him back and will not stand near him yet. He lights the lamp in a fortress already stained.",
+      "cost": "Self 25 lower before the Fall begins, and the Observers have seen what he is.",
+      "final_scenes": [
+        "s1_aftermath_2",
+        "s3_archive_green",
+        "s1_cage_3"
+      ]
+    },
+    {
+      "id": "the_cage_alone",
+      "name": "The Cage Alone",
+      "as_written": false,
+      "priority": 2,
+      "when": {
+        "is": "observers_choice",
+        "eq": "left_them"
+      },
+      "summary": "He took the stair alone and sealed the inner door behind him, and the security team went through the cells instead of after him. He comes back months later to a fortress with every cell open and every tank dry. He claims it alone; the amber lamp lights an empty room built for a family.",
+      "cost": "The Observers are taken.",
+      "final_scenes": [
+        "s3_archive_empty",
+        "s1_cage_3"
+      ]
+    },
+    {
+      "id": "the_spec_sheet",
+      "name": "The Spec Sheet",
+      "as_written": false,
+      "priority": 3,
+      "when": {
+        "is": "took_spec_sheet",
+        "eq": true
+      },
+      "summary": "He tore the printout off the terminal: SUBJECT RCC53-Δ1 (\"AEGIS\") — BOND INTEGRITY 94.6%. He escapes with the Observers and claims the fortress, but on his return the printer room has been stripped to its bolts and the terminal shows one still: his own face at the housing, logged.",
+      "cost": "He knows \"Aegis\"; security knows his face.",
+      "final_scenes": [
+        "s3_archive_claimed",
+        "s3_printer_room_after",
+        "s1_cage_3"
+      ]
+    },
+    {
+      "id": "fully_dr_tox",
+      "name": "Fully Dr. Tox",
+      "as_written": true,
+      "priority": 4,
+      "when": true,
+      "summary": "As written: he read the spec sheet and left it on the screen, escaped with the Observers, returned and claimed the fortress. \"Alexander is fully established as Dr. Tox — armored, armed, based in Snakehead.\" (bible Part VI, Dr. Tox, Story: Origin). The last image is the first signature image: shirtless in the bunker medical bay, the lead-shielded syringe, jaw clenched, eyes shut.",
+      "cost": "The 999 are only names.",
+      "final_scenes": [
+        "s3_archive_claimed",
+        "s1_cage_3",
+        "s3_bunker_injection"
+      ]
+    }
+  ]
+}

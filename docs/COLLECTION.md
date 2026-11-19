@@ -6,7 +6,8 @@ idea, the "Shared ideas" section says how each must handle it.
 
 Slugs are the folder names under `games/`. Dr. Tox is episodic (`docs/PILLARS.md` section 1): each
 of its four episodes has its own slug, and no two episodes share a 2D mode or 1D game type. Its
-scope, accepted by the author on 2026-11-19, is `dr-tox/SCOPE.md`; its folders do not exist yet.
+scope, accepted by the author on 2026-11-19, is `dr-tox/SCOPE.md`. `games/dr-tox-rise/` exists (Episode 1,
+stage A); the other three folders do not exist yet.
 
 ## 1. Each game at a glance
 
@@ -58,15 +59,14 @@ maritime peace and order kept by an East India–style company. WrymWretch uses 
 | People of the Bark | **Crack runner**: a messenger platforms along a crack in the bark between cities | **Crack defence**: hold a crack against insects, barricade by barricade, side-on |
 | The Endless Temple | **Living illustration**: ride sand waves across the book's own drawn page with momentum | **The stacks**: side-on through shelves that do not end, toward a book that is calling |
 | The Lord of the Sea | **Engraved sea**: storms and chases side-on, in the style of an engraved chart come alive | **The deep**: side-on dives where Alexi moves as he cannot on land |
+| Dr. Tox: Rise | **Panel run**: Alexander's break-ins across a comic page; gutters skip time, the player picks the next panel | **Barrier escort**: Aegis draws hard-light walls to bring a transport through the lower ring, and sees whom they pen in |
 
 **Dr. Tox, reserved.** Its eight modes, all side-scrolling, are reserved for it here and no other
 game may take them. Each episode's two rows join the table above in that episode's build phase, when
 its folder and its rows in `docs/graphic_styles.json` exist (`tools/pictographs/build.py` requires a
-style for every row in the table).
+style for every row in the table). Rise's two (`dr-tox-rise`) joined it on 2026-11-19; the other
+three episodes' are reserved below.
 
-- *Rise* (`dr-tox-rise`): **Panel run**: Alexander's break-ins across a comic page; gutters skip
-  time, the player picks the next panel. **Barrier escort**: Aegis draws hard-light walls to bring a
-  transport through the lower ring, and sees whom they pen in.
 - *Fall* (`dr-tox-fall`): **Crowd thread**: through a relief-hall queue, breath radius kept off
   people; the shroud shrinks it. **Reflection run**: Cally and her mirrored reflection through glass
   halls; sometimes the reflection refuses.
@@ -128,17 +128,21 @@ game), the column on the right says what makes each one different.
 | The Lord of the Sea | The Charter | Document hunt | Find the clause that binds a port |
 | The Lord of the Sea | The Tea Board | Board game, trade routes | Played against the Lord of Tea; the final negotiation is a match |
 | The Lord of the Sea | Dead Reckoning | Navigation | Plot a course with dividers, wind and tide tables |
+| Dr. Tox: Rise | The Cage | Titration | Shielding against immune pressure: stop the drip at the endpoint; the only page that makes the cage |
+| Dr. Tox: Rise | Cat's Cradle | String figures | The four children's hands; each crossing must go to the right child, and the figure is what Reese keeps |
+| Dr. Tox: Rise | The Window | Timetable | A break-in window in guard rotations; the slack found is the Pulse he starts with |
+| Dr. Tox: Rise | Fiche | Indexed retrieval on microfiche | The 999, found by number and by the one detail kept of each child |
+| Dr. Tox: Rise | Aftermath | Reconstruction | Order the traces of what the body did; Rise only |
 
 **Dr. Tox, reserved.** Its seventeen 1D games are reserved for it here, each in a family new to the
 collection, and join the table above in their episode's build phase, as its 2D modes do. Every page
 is a medical instrument turned. The pin board with red string stays bunker set dressing (it is
 Peephole's Mosaic), and no page reads his own body or rations food (Man Eater's Chart and Tray).
 
-- *Rise*: **The Cage** (titration): shielding against immune pressure. **Cat's Cradle** (string
-  figures): the four children. **The Window** (timetable): a break-in window in guard rotations.
-  **Fiche** (indexed retrieval on microfiche): the 999.
-- *Rise to Finale*: **Aftermath** (reconstruction): order the traces of what the body did. One game,
-  owned by Rise, recurring in Fall and Finale.
+- *Rise*: its five, **The Cage**, **Cat's Cradle**, **The Window**, **Fiche** and **Aftermath**, joined
+  the table above on 2026-11-19. **Aftermath** (reconstruction) belongs to Rise only (the author's
+  ruling, 2026-11-19): Fall and Finale will each get a different reconstruction-style page later, each
+  its own 1D game type, so no two episodes share one.
 - *Fall*: **Triage**: sorting patients under scarcity. **The Manifold**: flow routing through the
   gauntlet's valves. **Persona** (Cally): deck-building to a target's attachment profile. **Bloom**
   (Rostova): spread containment on a grid.
@@ -289,3 +293,10 @@ section 15); the style is how that palette is drawn on that one page. Generated 
 | The Lord of the Sea | 1D | The Charter | **Engrossed deed with wax seal** | Calligraphic clauses, a ribboned seal, one clause underlined | [charter](../games/lord-of-the-sea/pictographs/charter.svg) |
 | The Lord of the Sea | 1D | The Tea Board | **Blue-and-white export porcelain** | Cobalt on white, willow-pattern borders as trade routes | [tea-board](../games/lord-of-the-sea/pictographs/tea-board.svg) |
 | The Lord of the Sea | 1D | Dead Reckoning | **Nautical plotting sheet** | Compass rose, dividers, pencilled legs and fixes | [dead-reckoning](../games/lord-of-the-sea/pictographs/dead-reckoning.svg) |
+| Dr. Tox: Rise | 2D | Panel run | **Noir spotted-black brush ink** | Heavy brushed blacks spotted across the panels, white gutters that skip time | [panel-run](../games/dr-tox-rise/pictographs/panel-run.svg) |
+| Dr. Tox: Rise | 2D | Barrier escort | **Franco-Belgian ligne claire** | Even clear outlines, flat colour, no hatching; hard-light walls as clean bars | [barrier-escort](../games/dr-tox-rise/pictographs/barrier-escort.svg) |
+| Dr. Tox: Rise | 1D | The Cage | **Comic colourist's flats** | Flat unshaded colour fills to the line, amber against green, never at equal weight | [cage](../games/dr-tox-rise/pictographs/cage.svg) |
+| Dr. Tox: Rise | 1D | Cat's Cradle | **Chalk and poster paint on the painted sky** | Chalk string figures over a flat painted blue sky, clinical white light | [cats-cradle](../games/dr-tox-rise/pictographs/cats-cradle.svg) |
+| Dr. Tox: Rise | 1D | The Window | **Fumetti photo-comic** | Posed photo panels with typed captions and a guard rota in the margin | [window](../games/dr-tox-rise/pictographs/window.svg) |
+| Dr. Tox: Rise | 1D | Fiche | **Scratchboard** | White lines cut from a black ground, frames of an index card grid | [fiche](../games/dr-tox-rise/pictographs/fiche.svg) |
+| Dr. Tox: Rise | 1D | Aftermath | **Manga screentone, evidence tents** | Dot-tone grey fields, numbered evidence tents beside each trace | [aftermath](../games/dr-tox-rise/pictographs/aftermath.svg) |

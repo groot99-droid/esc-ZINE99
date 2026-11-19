@@ -1,0 +1,297 @@
+{
+  "scope_note": "Alexander's meters are pulse, amber and self; Reese's are load and the reese.* names. self, amber, the Word and who was left carry into dr-tox-fall. Numbers are design values for the prototype; units in The Cage are invented (marks, drops of reagent A9) and describe no real procedure, dose or route.",
+  "state": [
+    {
+      "name": "pulse",
+      "type": "meter",
+      "default": 20,
+      "description": "Alexander's heart rate as pressure, 0 to 100. +12 per dart drawn from the shunt, +8 when seen, +15 on a hit, +3 per second of sprint; -2 per second standing still in cover. Floor 20, or 40 when amber is 0 at a chapter start. At 100 the Toxin State takes the controls (bible Part VI, Dr. Tox section 3).",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "amber",
+      "type": "counter",
+      "default": 0,
+      "description": "Doses of the radioactive cage on hand, 0 to 6. Made in The Cage. One is taken at each Alexander chapter start; each Toxin State burns 2 (the cost model, bible Part IX Q1, adopted)."
+    },
+    {
+      "name": "amber_quality",
+      "type": "enum",
+      "default": "none",
+      "description": "The last batch from The Cage. leaky: the endpoint was missed short (pulse floor +10 next chapter). steady: on the endpoint. hot: overshot (one fewer dose).",
+      "values": [
+        "none",
+        "leaky",
+        "steady",
+        "hot"
+      ]
+    },
+    {
+      "name": "self",
+      "type": "meter",
+      "default": 100,
+      "description": "What is left of the man, 0 to 100. Each Toxin State event takes 15, or 10 if its Aftermath is reconstructed; the Green ending takes 25 more. Never restored (bible Part IX Q2, adopted). Below 70 his panel captions lose words. Carries into Fall.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "toxin_events",
+      "type": "ledger",
+      "default": [],
+      "description": "Every Toxin State event. trigger is pulse, scripted or hit; reconstructed is true once its Aftermath page is solved.",
+      "fields": [
+        "chapter",
+        "scene",
+        "trigger",
+        "reconstructed"
+      ]
+    },
+    {
+      "name": "toxin_in_escape",
+      "type": "bool",
+      "default": false,
+      "description": "Pulse reached 100 during the escape (s2_panel_3). Decides the Green in the Archive ending."
+    },
+    {
+      "name": "first_dose_taken",
+      "type": "bool",
+      "default": false,
+      "description": "The fifteen-year-old drove his first dose (s3_injection_first)."
+    },
+    {
+      "name": "river.children_met",
+      "type": "counter",
+      "default": 0,
+      "description": "Children of the river town the five-year-old Alexander played beside, 0 to 4 (s3_river_town)."
+    },
+    {
+      "name": "river.details",
+      "type": "ledger",
+      "default": [],
+      "description": "The one detail the player noticed about each child in the river town: Dale's two-wheeler with one training wheel, June's chalk numbers, the Ostrowski twins' matching scabs, Hollis's jar of minnows. Read back in Fiche.",
+      "fields": [
+        "child",
+        "detail"
+      ]
+    },
+    {
+      "name": "fiche.own_file_found",
+      "type": "bool",
+      "default": false,
+      "description": "Alexander found SUBJECT CMXCIX on the fiche (s1_fiche_1)."
+    },
+    {
+      "name": "fiche.names_read",
+      "type": "counter",
+      "default": 0,
+      "description": "Names of the 999 read aloud from the fiche before security came, 0 to 999 (in practice up to about 60)."
+    },
+    {
+      "name": "fiche.children_found",
+      "type": "counter",
+      "default": 0,
+      "description": "Children from the river town found on the fiche by their detail, 0 to 4."
+    },
+    {
+      "name": "hunch",
+      "type": "counter",
+      "default": 0,
+      "description": "RCC plates found in break-ins (the hardware still reads RCC, bible Part III, Terminology Rule, Exception), 0 to 3. At 3 the pin board in his flat is complete; the hike that ends in the cavern begins."
+    },
+    {
+      "name": "window.slack",
+      "type": "counter",
+      "default": 0,
+      "description": "Seconds of slack in the last break-in window found on The Window, 0 to 90. The Panel run starts with pulse 20 plus (90 - slack)/3."
+    },
+    {
+      "name": "panel.darts_drawn",
+      "type": "counter",
+      "default": 0,
+      "description": "Darts drawn from the shunt across all Panel runs."
+    },
+    {
+      "name": "panel.seen",
+      "type": "counter",
+      "default": 0,
+      "description": "Times Alexander was seen across all Panel runs."
+    },
+    {
+      "name": "reese.bond_cally",
+      "type": "meter",
+      "default": 30,
+      "description": "Reese's bond with Cally, 0 to 100, raised in Sky Room and Cat's Cradle.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "reese.bond_carmy",
+      "type": "meter",
+      "default": 30,
+      "description": "Reese's bond with Carmy, 0 to 100.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "reese.bond_rolan",
+      "type": "meter",
+      "default": 30,
+      "description": "Reese's bond with Rolan, 0 to 100.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "cradle.figures_made",
+      "type": "counter",
+      "default": 0,
+      "description": "String figures the four children finished together across Cat's Cradle."
+    },
+    {
+      "name": "arena.held_seconds",
+      "type": "counter",
+      "default": 0,
+      "description": "How long Reese held the blade before dropping it. The arena waits; it never accepts another input (s3_arena)."
+    },
+    {
+      "name": "arena.weapon_dropped",
+      "type": "bool",
+      "default": false,
+      "description": "Reese threw down his weapon. Always true by the cut at the seam; the arena is played as the refusal."
+    },
+    {
+      "name": "reese.mirror_answer",
+      "type": "enum",
+      "default": "silent",
+      "description": "What Reese answers at the mirror when the woman says he looks like he is supposed to: nothing, or 'For HOPE?'",
+      "values": [
+        "silent",
+        "hope"
+      ]
+    },
+    {
+      "name": "reese.flinches",
+      "type": "counter",
+      "default": 0,
+      "description": "Times the leash fired: HOPE signalled a flashback and Reese felt it as gratitude (bible Part VIII Scene 2 III). Carries into Fall."
+    },
+    {
+      "name": "load",
+      "type": "meter",
+      "default": 0,
+      "description": "Toxins Aegis has absorbed, 0 to 100. Absorbing a canister cloud adds 20; each metre of hard-light wall spends 2.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "other_hero.met",
+      "type": "bool",
+      "default": false,
+      "description": "Reese met the unnamed other hero in the lower ring (bible Part VIII Scene 2 VI)."
+    },
+    {
+      "name": "barrier.penned",
+      "type": "counter",
+      "default": 0,
+      "description": "People penned in by Aegis's walls during the escort in (s2_barrier_1)."
+    },
+    {
+      "name": "barrier.penned_names",
+      "type": "ledger",
+      "default": [],
+      "description": "Each person penned, by name, with the one want they say through the wall.",
+      "fields": [
+        "name",
+        "want"
+      ]
+    },
+    {
+      "name": "barrier.transport_through",
+      "type": "bool",
+      "default": false,
+      "description": "The transport reached the supply corridor's far gate."
+    },
+    {
+      "name": "barrier.released",
+      "type": "counter",
+      "default": 0,
+      "description": "Pen walls Reese dropped on the way out (s2_barrier_2), at the cost of the transport's time. Carries into Fall."
+    },
+    {
+      "name": "reese.word",
+      "type": "enum",
+      "default": "hope",
+      "description": "What Reese answers when Nell Okafor says 'RCC sent you' over a plate stamped RCC (s3_lower_ring_after): 'HOPE sent me', 'RCC sent me', or nothing. The Terminology Rule as a flag (bible Part III).",
+      "values": [
+        "hope",
+        "rcc",
+        "silent"
+      ]
+    },
+    {
+      "name": "reese.said_rcc",
+      "type": "bool",
+      "default": false,
+      "description": "The first time Reese says 'RCC' is recorded (bible Part III; Part VI, Aegis, voice note). Carries into Fall."
+    },
+    {
+      "name": "cycle41.watched",
+      "type": "bool",
+      "default": false,
+      "description": "Alexander stayed until Cycle 41 opened her eyes (s3_printer_room)."
+    },
+    {
+      "name": "took_spec_sheet",
+      "type": "bool",
+      "default": false,
+      "description": "Alexander tore the terminal's printout and kept it. Decides The Spec Sheet ending."
+    },
+    {
+      "name": "knows_aegis",
+      "type": "bool",
+      "default": false,
+      "description": "Alexander has read the name AEGIS and kept it. Set with took_spec_sheet; the bible's own path has him not know the name (Part VIII Scene 3)."
+    },
+    {
+      "name": "security_knows_face",
+      "type": "bool",
+      "default": false,
+      "description": "The printer room's camera logged his face while he tore the printout."
+    },
+    {
+      "name": "observers_choice",
+      "type": "enum",
+      "default": "undecided",
+      "description": "At the alarm the Observers open their cells' inner door for him. with_them: he goes through with them. left_them: he takes the stair alone and seals the door behind him.",
+      "values": [
+        "undecided",
+        "with_them",
+        "left_them"
+      ]
+    },
+    {
+      "name": "aftermath.solved",
+      "type": "counter",
+      "default": 0,
+      "description": "Aftermath pages reconstructed in full."
+    },
+    {
+      "name": "claimed_snakehead",
+      "type": "bool",
+      "default": false,
+      "description": "Alexander returned and lit the amber work lamp in the bunker."
+    }
+  ]
+}
