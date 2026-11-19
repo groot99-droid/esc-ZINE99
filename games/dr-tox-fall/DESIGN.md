@@ -1289,3 +1289,5 @@ Everything here is not in the bible. The author can approve or strike each.
 - The seven graphic styles' "look" lines (`docs/graphic_styles.json`) and the Composite style itself.
 - The string quartet at the gala.
 - Every prompt in `assets/assets.json`.
+
+**Author review, 2026-11-19.** The author reviewed this list and accepted every addition in it, and approved Composite and its style ("Identikit acetate overlays").
