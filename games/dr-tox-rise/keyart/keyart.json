@@ -1,0 +1,184 @@
+{
+  "game": "dr-tox-rise",
+  "style": "Vintage grainy 35mm film still in the bible's colour grammar: desaturated cold gray-teal world, amber for the cage that holds, sickly green only for the toxin loose and never at equal weight with amber; heavy film grain, practical haze, no lens flare, no stylization. Dr. Tox's face from the author's character sheet (reference jobs 15439340, 3e0abdae). No gore; children only from behind or at a distance.",
+  "images": [
+    {
+      "id": "key-art-wide",
+      "kind": "key-art",
+      "title": "Based in Snakehead",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Same man as the reference images, identical face: very pale near-bloodless white man in his early thirties, deep-set pale gray-blue eyes, prominent dark eyebrows, thin unsmiling mouth, sharp angular jaw, short dark buzzcut with slight widow's peak, tall lean sinewy build, heavy scarring on the right forearm. He wears the matte black tactical bodysuit with segmented plating, two leaf-bladed throwing knives crossed in an X on the chest, four syringe barrels on the left forearm gauntlet, clear feed line at the right wrist, no chrome. Perfectly still in a raw concrete bunker doorway, thighs up, in the right half of the frame, face half lit, looking at the camera. Beside him a single amber work lamp and small amber vials, hard falloff into black. The left half is calm empty dark concrete wall in haze, for a title. Threat from stillness. 50mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "059702df-57d8-492e-8c0e-30e8689188ad",
+      "image": "keyart/key-art-wide.jpg"
+    },
+    {
+      "id": "key-art-tall",
+      "kind": "key-art",
+      "title": "Based in Snakehead",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Same man as the reference images, identical face: very pale near-bloodless white man in his early thirties, deep-set pale gray-blue eyes, prominent dark eyebrows, thin unsmiling mouth, sharp angular jaw, short dark buzzcut with slight widow's peak, tall lean sinewy build, heavy scarring on the right forearm. He wears the matte black tactical bodysuit with segmented plating, two leaf-bladed throwing knives crossed in an X on the chest, four syringe barrels on the left forearm gauntlet, clear feed line at the right wrist, no chrome. Perfectly still in a raw concrete bunker doorway, tall frame, knees up, in the lower two thirds, face half lit, looking at the camera. Beside him a single amber work lamp and small amber vials, hard falloff into black. The upper third is calm empty dark concrete ceiling in haze, for a title. Threat from stillness. 50mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "0a266e41-9868-42f9-9548-cf4c4e659b61",
+      "image": "keyart/key-art-tall.jpg"
+    },
+    {
+      "id": "ending-green-in-the-archive",
+      "kind": "ending",
+      "ending": "green_in_the_archive",
+      "title": "Green in the Archive",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Same man as the reference images, identical face: very pale near-bloodless white man in his early thirties, deep-set pale gray-blue eyes, prominent dark eyebrows, thin unsmiling mouth, sharp angular jaw, short dark buzzcut with slight widow's peak, tall lean sinewy build, heavy scarring on the right forearm. Human again, suit torn at the seams, he sits small against the far wall of a wide concrete archive, staring at his open hands. Dim red emergency light floods the whole room. Nine small plain blank grey cloth evidence tents stand on the floor, with no numbers, no cards and no markings on them. A faint spent green etch stains the concrete. At right an open steel locker holds one glowing amber vial, the only warm thing. Far back in shadow, three hunched figures keep their distance. The lower quarter is calm dark empty floor. Static locked-off 24mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "2e10e843-e594-4d98-9bf5-d681b08d0d6f",
+      "image": "keyart/ending-green-in-the-archive.jpg",
+      "needs_review": "Retried once (first pass printed small numbers on the evidence tents); kept the retry. Four Observer figures sit at the back where three were asked; red light fills only the left of the room; his torn kit reads like a dark jacket."
+    },
+    {
+      "id": "ending-the-cage-alone",
+      "kind": "ending",
+      "ending": "the_cage_alone",
+      "title": "The Cage Alone",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. A long underground concrete bunker room built for a family: four small cells along the left wall with plain blank unnumbered steel doors standing open, each empty, a thin mattress on one bunk, a folded blanket on another. At the centre a tall glass water tank, drained and dry, a pale mineral line where the water stood, its lid lifted open. On the lid sits a single amber work lamp, switched on, the only warm light, hard falloff into black. Dust in the air, nobody in the room. Cold desaturated gray-teal concrete, a fallen chair. The lower quarter is calm dark empty floor. Static wide 28mm, subject small, lonely, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "e8c00231-f182-4eff-9d8a-4b7be73c2d8c",
+      "image": "keyart/ending-the-cage-alone.jpg",
+      "retries": "Retried once: the first pass numbered the cell doors."
+    },
+    {
+      "id": "ending-the-spec-sheet",
+      "kind": "ending",
+      "ending": "the_spec_sheet",
+      "title": "The Spec Sheet",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. A stripped underground printer room: at the centre the empty base of a removed floor-to-ceiling column, only cut cables and bare bolts left in the concrete, soft blue emergency light. At the right an old CRT terminal glows with one grainy black-and-white security camera still on its screen, small and blurred: the face of the man in the reference images, pale and gaunt with a dark buzzcut, caught looking up. On a corkboard beside it one torn sheet of continuous printer paper is pinned, its lines of print too small and blurred to read, one short line circled by hand in dark marker. No readable words. Cold, forensic, evidence-photography stillness. The lower quarter is calm dark empty floor. Static 35mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "b2643d70-ace1-4f98-8b49-c19f8e1f0a1b",
+      "image": "keyart/ending-the-spec-sheet.jpg"
+    },
+    {
+      "id": "ending-fully-dr-tox",
+      "kind": "ending",
+      "ending": "fully_dr_tox",
+      "title": "Fully Dr. Tox",
+      "aspect_ratio": "16:9",
+      "as_written": true,
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Same man as the reference images, identical face: very pale near-bloodless white man in his early thirties, deep-set pale gray-blue eyes, prominent dark eyebrows, thin unsmiling mouth, sharp angular jaw, short dark buzzcut with slight widow's peak, tall lean sinewy build, heavy scarring on the right forearm. Shirtless in the bunker medical bay, jaw clenched, pain that is absolute and routine. Both eyes fully closed. He presses a heavy dull grey lead-shielded syringe, a thick cylindrical metal sleeve with only a narrow window of amber fluid, into a metal surgical port set into his scarred right forearm, clear tubing from the port; no needle visible. Racks of amber vials. Behind him in shadow his black tactical bodysuit and crossed knives hang on a rack. A single amber work lamp with hard falloff into black. The lower quarter is calm dark shadow. 50mm, amber dominates, no blood, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "a5fe7b62-8455-499e-8ba0-59ff80c7f847",
+      "image": "keyart/ending-fully-dr-tox.jpg",
+      "needs_review": "Retried once (first pass: a plain needle syringe, not lead-shielded, into the skin); kept the retry. His eyes are screwed tight rather than shut, the build is heavier than the sheet's, and a needle tip still shows at the port."
+    },
+    {
+      "id": "cast-alexander",
+      "kind": "character",
+      "title": "Alexander Balklin",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Same man as the reference images, identical face: very pale near-bloodless white man in his early thirties, deep-set pale gray-blue eyes, prominent dark eyebrows, thin unsmiling mouth, sharp angular jaw, short dark buzzcut with slight widow's peak, tall lean sinewy build, heavy scarring on the right forearm. Full body, standing alone in a bare concrete bunker room in a white ribbed tank top, dark work trousers, worn boots and a wristwatch, a cigarette burning down between his fingers, scars on his bare arms doing the talking. He looks just past the camera, cold and evaluating. Flat overhead fluorescent tube, clinical and unflattering, cold gray walls, a single amber work lamp switched off on a shelf behind him. Narrow vertical contained silhouette. 85mm, static locked-off, symmetrical, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "353b4ea8-8cea-4bb6-b721-548873f29317",
+      "image": "keyart/cast-alexander.jpg"
+    },
+    {
+      "id": "cast-reese-boy",
+      "kind": "character",
+      "title": "Reese, Sky Room",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Wide shot of Sky Room, a windowless concrete room whose walls are painted with a flat soft blue sky, plain white clouds and a green field along the bottom, flat clinical white overhead light, a worn grey play mat on the floor. Far from the camera, in the middle of the mat, a slight twelve-year-old boy with short brown hair, in a plain pale grey program tunic and trousers, sits cross-legged with his back to the viewer, facing the painted wall, making a simple string figure with a loop of pale string. Only the back of his head and shoulders show. He is small in the frame, the painted sky rising tall above him, the paint scuffed at child height. Nobody else in the room. Quiet and ordinary. Static locked-off 28mm, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "ac408b7a-ed03-45de-bf8f-043bd728e641",
+      "image": "keyart/cast-reese-boy.jpg",
+      "retries": "Retried twice: first pass showed his face; the second was refused by the safety filter (job e9d8fc06-e508-4e26-9dad-21476ee5a09d); the third, kept, is from behind."
+    },
+    {
+      "id": "cast-reese-aegis",
+      "kind": "character",
+      "title": "Aegis",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Half-length portrait of a young man in his early twenties with short brown hair and an open earnest face, taller and dense through the shoulders but lean, never bulky, faint warm amber luminescence under the skin at the wrists, fine deliberate surgical scars threading up both forearms, in a plain fitted pale grey program uniform with a small blank round metal insignia on the chest. He stands before a tall mirror in a quiet clean program corridor, looking at his own reflection with careful uncertainty, as if checking that he looks like he is supposed to. Light calibrated warm instead of clinical: amber, gold-edged, almost reverent, falling softly on him; the world around him cold gray-teal concrete. Approachable strength, a good kid who wants to be worthy. Clear skin, no wounds, no glowing eyes, no bodybuilder physique. 85mm, shallow focus, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "2cdfd0b1-d4c2-4a89-80d3-1dcfeedf600a",
+      "image": "keyart/cast-reese-aegis.jpg",
+      "needs_review": "Aegis has no design system yet (bible Part VI, Aegis; dr-tox/SCOPE.md question 5 asks for one before key art). This uses only the bible's own details, and the author decides whether it stands."
+    },
+    {
+      "id": "cast-cally-twelve",
+      "kind": "character",
+      "title": "Cally, Sky Room",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Seen only from behind, a twelve-year-old girl with long straight dark hair tied back, in a plain pale grey program tunic and trousers, stands with one hand flat on the painted wall of Sky Room, a windowless concrete room whose walls are painted with a flat soft blue sky, plain white clouds and a green field along the bottom, flat clinical white overhead light, a worn grey play mat on the floor, as if feeling for where the sky ends. She is small in the frame and turned fully away, the long dark hair down her back. Near her on the mat a loop of pale string lies dropped. No face visible. Still, watchful, alone. Static locked-off 35mm, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "10d29a32-b86d-4338-911f-38737ffd9f2a",
+      "image": "keyart/cast-cally-twelve.jpg"
+    },
+    {
+      "id": "cast-cally-cycle-41",
+      "kind": "character",
+      "title": "Cally, Cycle 41",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. In a quiet underground room like a nursery wearing a lab's face, vat-lined walls under soft blue emergency light, a floor-to-ceiling column of matte black housing veined with fiber conduit has split open down its seam. Low vapor rolls out across the floor, backlit blue. Standing upright just inside the opened column, framed from the knees up, steady and unhurried, is a young woman in her early twenties with long dark hair, pale and composed, in a plain thin pale grey clinical bodysuit that covers her from neck to wrists to ankles, modest and clinical, her wet hair dark against her shoulders. She looks straight at the camera the way a locksmith looks at a door, with a small private smile, pleasant and interested. No restraints on her, no wounds. 50mm, static, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "bda967a2-ba2c-4372-b6ca-5c59ce1353a3",
+      "image": "keyart/cast-cally-cycle-41.jpg",
+      "needs_review": "Retried once (first pass: a leotard with bare legs); kept the retry, fully covered, but the bodysuit is skin-tight. The author should judge whether it is modest enough. The room reads as a plant room more than a nursery."
+    },
+    {
+      "id": "cast-carmy",
+      "kind": "character",
+      "title": "Carmy",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Very wide shot from the far corner of Sky Room, a windowless concrete room whose walls are painted with a flat soft blue sky, plain white clouds and a green field along the bottom, flat clinical white overhead light, a worn grey play mat on the floor: tiny in the middle distance, a twelve-year-old girl with short curly auburn hair, in a plain pale grey program tunic and trousers, sits on the play mat with her back fully to the camera, her head tipped back as she laughs, holding up a loop of pale string. Only the back of her head shows; no face, nobody else in the room. Everything is safe and ordinary for this moment. Static wide locked-off 28mm, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "d32e6b21-a7c8-4b79-a1e8-165815036024",
+      "image": "keyart/cast-carmy.jpg",
+      "needs_review": "Retried once (first pass: her face in profile, close); kept the retry, alone and further off, but her laughing profile still shows over her shoulder."
+    },
+    {
+      "id": "cast-rolan",
+      "kind": "character",
+      "title": "Rolan",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. At a distance, small in the frame, a lanky twelve-year-old boy with untidy fair hair, in a plain pale grey program tunic and trousers, seen from behind, balanced on top of a stack of grey training crates in Sky Room, a windowless concrete room whose walls are painted with a flat soft blue sky, plain white clouds and a green field along the bottom, flat clinical white overhead light, a worn grey play mat on the floor, arms spread wide like he owns the room, a scuffed rubber training ball tucked under one arm. Below him the floor is empty. Mischief, confidence, an oddball who gets the others in trouble. No face visible, no weapons. Static wide locked-off 28mm, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "e199b95f-9d7e-49ce-abdf-6259fc2be5bc",
+      "image": "keyart/cast-rolan.jpg"
+    },
+    {
+      "id": "cast-observers",
+      "kind": "character",
+      "title": "The Observers of the Whole",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. A quiet group portrait in an underground concrete bunker of a family of failed experiments, victims first, gentle and wary: exactly five figures and one tank, nobody else in the room. At the left a figure whose left half of face and body is mottled damp olive toad skin with one wide golden toad eye, the right half human, crouched and coiled. Beside him a stooped figure covered in pulsating translucent boils, wrapped in a grey blanket. At the right two thin twins with enlarged pale throat sacs, holding each other upright. At the centre a tall glass tank of perfectly clear water, a human figure floating inside almost invisible, only the faint shimmering outline of a man's shoulders and head, like heat haze. Single amber work lamp and cold fluorescent fill, dignified, sad, no violence. 35mm, static, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "a98b0788-9b5a-4194-9237-cc64f5dcf7f8",
+      "image": "keyart/cast-observers.jpg",
+      "needs_review": "Retried once (first pass: extra people in the background, the Ghost drawn as a cuttlefish); kept the retry. The Cauldron has throat sacs, not acid boils, and the Ghost's face is too visible."
+    }
+  ],
+  "generated": "2026-11-19, nano_banana_2 at 2k; Dr. Tox images use the character sheet's front and three-quarter headshots as reference media. The kit is described from the bible's Part VI §11 wording, not the sheet's exoskeleton, because that has green fluid tubing and §6 keeps green for the toxin loose."
+}
