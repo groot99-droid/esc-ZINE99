@@ -1,7 +1,8 @@
 # esc-ZINE99
 
-Ten games adapted from the author's creative-writing vault. Each game is between 45 minutes and
-3 hours long, has endings that depend on the player's choices, and is played in three layers: 3D
+Eleven games adapted from the author's work: ten from the creative-writing vault, and Dr. Tox, in
+four episodes, from the author's bible in `dr-tox/source/`. Each game (for Dr. Tox, each episode) is
+between 45 minutes and 3 hours long, has endings that depend on the player's choices, and is played in three layers: 3D
 scenes, 2D spatial sequences and 1D games within the game.
 
 No game is finished, and the shared engine (`docs/TECH.md`) is not started. What exists is:
@@ -32,13 +33,14 @@ lacks is listed at the end of its `DESIGN.md` section "Accepted development (202
 | People of the Bark | `games/people-of-the-bark/` | City-builder at the scale of tree bark | 150–180 min |
 | The Endless Temple | `games/endless-temple/` | Hub adventure, one world per book | 120–160 min |
 | The Lord of the Sea | `games/lord-of-the-sea/` | Open-sea adventure as a weakened sea god | 160–180 min |
+| Dr. Tox: Age of Glass & Greed | `games/dr-tox-rise/`, `-fall/`, `-finale/`, `-altrulan/` (not yet created) | Four episodes as a poisoned forensic scientist hunting the company that made him | 490–600 min in all |
 
 ## Where to read
 
 | File | What it holds |
 | --- | --- |
 | `docs/PILLARS.md` | The rules every game follows: length, investment, endings, the three layers, fidelity |
-| `docs/COLLECTION.md` | How the ten games stay different: which game owns which verb, 2D mode and 1D game |
+| `docs/COLLECTION.md` | How the eleven games stay different: which game owns which verb, 2D mode and 1D game |
 | `docs/TECH.md` | The proposed shared engine, the repository layout, saves, endings, accessibility, assets |
 | `docs/DESIGN_TEMPLATE.md` | The sections every game's design has |
 | `docs/STORYBOARDS.md` | How each game's scenes join through the three layers, panel by panel |
@@ -64,7 +66,7 @@ lacks is listed at the end of its `DESIGN.md` section "Accepted development (202
 | `web/` | The hub, each game's loading screen and one playable module per 2D mode and 1D game |
 | `tools/` | The validator and the checks and builds below |
 | `schemas/` | JSON Schemas for the four shared data files |
-| `dr-tox/` | A catalogue of the author's existing Higgsfield art for Dr. Tox, a separate project: prompt, model, job id and thumbnail, no links |
+| `dr-tox/` | Dr. Tox's shared lore: the author's bible (`source/`), the accepted scope (`SCOPE.md`), the Episode 1 style rows waiting for Phase 1 (`styles_pending.json`), and a catalogue of the author's existing Higgsfield art: prompt, model, job id and thumbnail, no links |
 
 ## The three layers
 
@@ -136,5 +138,6 @@ playable in the page. See `docs/WEB.md`.
 ## Sources
 
 Every game adapts a work in the author's `Pipelines-Plugin` repository, under
-`creative-writing/vault/`. Those works are never edited here. Lines quoted in the designs are
+`creative-writing/vault/`, except Dr. Tox, which adapts the author's bible in `dr-tox/source/`,
+cited by part and section. Those works are never edited here. Lines quoted in the designs are
 verbatim, and each design lists what was added for the game.

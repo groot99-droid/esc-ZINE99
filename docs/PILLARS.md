@@ -1,13 +1,16 @@
 # Pillars: the rules every game in esc-ZINE99 follows
 
 These rules come from the author. Every game's `DESIGN.md` has to meet all of them, and
-`docs/COLLECTION.md` shows how the ten games meet them differently.
+`docs/COLLECTION.md` shows how the eleven games meet them differently.
 
 ## 1. Length: 45 minutes to 3 hours
 
 A first playthrough lasts at least 45 minutes and at most about 3 hours. Each design states its
 own target, splits it into chapters with minutes per chapter, and the minutes add up to the
 target. Replays to reach other endings do not count toward the 45 minutes.
+
+**Episodic games.** A game the author names as episodic (now only Dr. Tox) meets this rule per
+episode, each episode its own slug, 45 minutes to about 3 hours. The whole may be longer.
 
 ## 2. Every game earns the player's investment
 
@@ -32,7 +35,8 @@ A story ends how the author wrote it. The choices are what make it a game.
 
 - The author's written ending is always in the game, marked **as written**, and it is what follows
   when the player keeps to the story's own path.
-- Other endings open when the player chooses differently. Every game has at least four endings.
+- Other endings open when the player chooses differently. Every game (an episodic game: per
+  episode) has at least four endings.
 - Every ending has exact, testable conditions, stated as flags and meters in `data/endings.json`.
   A player must be able to reach each ending on purpose, and a designer must be able to say why a
   given run got the ending it did.
@@ -54,20 +58,23 @@ Every game uses all three, in several scenes each.
 The test for sorting anything: in 2D the player is **getting somewhere**; in 1D the player is
 **working something out**.
 
-Each game has at least four 3D scenes, two distinct 2D modes, and four distinct 1D games. Each 1D
-game has rules, inputs, a win or finish state, a difficulty curve, and a reason in the story for
-being played. A 1D game always feeds back into the story or the endings.
+Each game (an episodic game: per episode) has at least four 3D scenes, two distinct 2D modes, and
+four distinct 1D games. Each 1D game has rules, inputs, a win or finish state, a difficulty curve,
+and a reason in the story for being played. A 1D game always feeds back into the story or the endings.
 
 ## 6. Original and diverse
 
 No two games in the collection share a core verb, a 2D mode or a 1D game type. Where two games
 touch the same idea (becoming the monster, losing memory, investigating), `docs/COLLECTION.md`
-states how each one handles it differently, and the designs must keep to that.
+states how each one handles it differently, and the designs must keep to that. No two episodes of
+one game share a 2D mode or 1D game type.
 
 ## 7. Faithful to the source
 
 - The author's works in the `Pipelines-Plugin` vault (`creative-writing/vault/`) are certified
   verbatim and are never edited. These games adapt them; they do not change them.
+- Dr. Tox adapts the author's bible in `dr-tox/source/` under the same rule, cited by part and
+  section.
 - Lines quoted from a work are verbatim and cited by vault path.
 - Every design has a section listing what was **added** for the game and is not in the author's
   text, so the author can approve or strike it.

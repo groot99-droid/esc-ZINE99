@@ -1,16 +1,18 @@
 # CLAUDE.md — esc-ZINE99
 
-Ten games adapted from the author's creative-writing vault. Read `README.md` for the layout.
+Eleven games adapted from the author's work: ten from the creative-writing vault, and Dr. Tox, in
+four episodes, from the author's bible in `dr-tox/source/`. Read `README.md` for the layout.
 
 ## Rules
 
 - **The designs answer to `docs/PILLARS.md` and `docs/COLLECTION.md`.** PILLARS sets the rules
-  every game meets (45 to 180 minutes, investment, conditional endings, 3D, 2D and 1D, fidelity).
+  every game meets (45 to 180 minutes, per episode for Dr. Tox, investment, conditional endings, 3D, 2D and 1D, fidelity).
   COLLECTION assigns each game its core verb, 2D modes and 1D games, and no game may take one that
   belongs to another. Change COLLECTION first if a design needs something another game owns.
 - **The source works are the author's and are never edited.** They live in the `Pipelines-Plugin`
   repository under `creative-writing/vault/`. Quote them verbatim and cite the vault path. Every
   design's last section lists what was added for the game, so the author can approve or strike it.
+  Dr. Tox's bible in `dr-tox/source/` is the author's too: never edited, cited by part and section.
 - **The author's ending is marked `as_written` and is never removed.** It follows when the player
   keeps to the story's own path. Other endings come from choices. A game whose source has no
   ending has no `as_written` ending until the author supplies one.

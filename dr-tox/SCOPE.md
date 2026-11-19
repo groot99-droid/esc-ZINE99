@@ -1,7 +1,7 @@
-# Dr. Tox: scope of the eleventh game (proposal)
+# Dr. Tox: scope of the eleventh game
 
-**Status: proposal, 2026-11-19. Nothing is built.** The author accepts, changes or strikes it before
-any design is written. Source: the author's bible, `dr-tox/source/Dr_Tox_Compiled_Bible_Obsidian.md`
+**Status: ACCEPTED by the author 2026-11-19, all 13 recommendations** (section 8). Phase 0 is done
+(section 9); nothing else is built. Source: the author's bible, `dr-tox/source/Dr_Tox_Compiled_Bible_Obsidian.md`
 (cited by part and section), never edited. Anything the bible does not contain is an addition.
 
 Two rulings from the author bind it: the game "can be much larger", and the two Catalysts are two
@@ -230,3 +230,34 @@ look-alikes (the bible's Venom, Hulk and *The Boys* stay contrast, never referen
 11. **The other hero:** recommend unnamed, not Chitin.
 12. **Hub:** one cover with an episode menu, outside the ring of ten threads? Recommend yes.
 13. **Art:** download full-size originals for the web build, no links kept? Recommend yes.
+
+## 9. Phase 0 edits (2026-11-19)
+
+Made after the author accepted section 8. Nothing under `games/`, `web/` or `tools/` changed.
+
+- **`docs/PILLARS.md`**: "ten" to "eleven"; the Episodic games rule after section 1; "(an episodic
+  game: per episode)" in sections 4 and 5; "No two episodes of one game share a 2D mode or 1D game
+  type." in section 6; the bible bullet in section 7. All as section 2 words them.
+- **`docs/COLLECTION.md`**: "ten" to "eleven"; a note on the four slugs; row 11 in section 1
+  (490–600 min, **Dose**; camera left to each episode's design); a tone row; the handlings from
+  this file's section 1 in section 5 (becoming the monster, memory loss, investigation, a god);
+  "Amber, Self and the Word" in section 6. **The 2D modes and 1D games of section 4 are listed as reserved, below the
+  tables of COLLECTION sections 3 and 4, not as table rows.** `tools/pictographs/build.py --check`
+  requires a `graphic_styles.json` row and a `pictographs/make.py` for every table row, and resolves
+  a row's game from `games/<slug>/data/game.json`; none exists yet. Each episode's rows move into
+  the tables in its own phase. Section 7 of COLLECTION is generated from `graphic_styles.json` and
+  is unchanged.
+- **`docs/graphic_styles.json`**: unchanged. The seven Rise rows (two 2D modes, five 1D games,
+  Aftermath once) are in `dr-tox/styles_pending.json` in its exact schema, because adding them now
+  fails `tools/pictographs/build.py --check` (no `make.py`) and stops `tools/web/build.py` (no
+  `game.json`). Phase 1 moves them across. Their "look" lines are proposals.
+- **`README.md`, `CLAUDE.md`**: "ten" to "eleven", Dr. Tox's bible named as its source, the four
+  slugs listed as not yet created.
+- **Added wording for the author to approve or strike**: the tone row ("Grounded, cynical comic-book
+  science fiction, body horror; Altrulan as sculptural myth" / "Fury at the company, then fear of his
+  own body; in Altrulan, reverence"), the gloss of "Amber, Self and the Word", and the seven "look"
+  lines.
+- **Open conflict for the author**: Aftermath spans Episodes 1 to 3 (section 4), but the new
+  PILLARS rule says no two episodes of one game share a 1D game type. Either Aftermath becomes a
+  named exception, or Fall and Finale each take their own variant. Each still has four 1D games
+  without it.

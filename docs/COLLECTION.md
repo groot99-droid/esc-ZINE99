@@ -1,10 +1,12 @@
-# The collection: how ten games stay different
+# The collection: how eleven games stay different
 
-This file is the contract between the ten designs. Each game owns the items assigned to it here.
+This file is the contract between the eleven designs. Each game owns the items assigned to it here.
 No other game may reuse a core verb, a 2D mode or a 1D game type. Where two games touch the same
 idea, the "Shared ideas" section says how each must handle it.
 
-Slugs are the folder names under `games/`.
+Slugs are the folder names under `games/`. Dr. Tox is episodic (`docs/PILLARS.md` section 1): each
+of its four episodes has its own slug, and no two episodes share a 2D mode or 1D game type. Its
+scope, accepted by the author on 2026-11-19, is `dr-tox/SCOPE.md`; its folders do not exist yet.
 
 ## 1. Each game at a glance
 
@@ -20,6 +22,7 @@ Slugs are the folder names under `games/`.
 | 8 | `people-of-the-bark` | People of the Bark | `05_Worldbuilding/01_People_of_the_Bark.md` | 150–180 min | 1 | **Interpret** | Four seasons of one year, two scales | Top-down god camera, with a pull-back |
 | 9 | `endless-temple` | The Endless Temple | `02_Novels/05_The_Endless_Temple_-_Elaris_Sel_Marden.md` | 120–160 min | 1 | **Read** | A temple hub; each book is a world; a mystery runs through the hub | First person in the temple, third in the books |
 | 10 | `lord-of-the-sea` | The Lord of the Sea | `02_Novels/02_WrymWretch.md`, the two Alexi chapters only | 160–180 min | 1 | **Stir** | An open sea chart, region by region | Third person, at sea |
+| 11 | `dr-tox-rise`, `dr-tox-fall`, `dr-tox-finale`, `dr-tox-altrulan` | Dr. Tox: Age of Glass & Greed | The author's bible, `dr-tox/source/Dr_Tox_Compiled_Bible_Obsidian.md` (not in the vault), cited by part and section | 490–600 min in four episodes: Rise 160–180, Fall 150–180, Finale 120–150, Altrulan 60–90 | 1 | **Dose** | Four episodes, each a complete game: Rise, Fall and Finale, then Altrulan after the Reset; the last ending's flags carry as scars | Set in each episode's design |
 
 The author confirmed that the Alexi chapters inside the WrymWretch file are a separate story,
 *The Lord of the Sea*: a weakened Poseidon long after the age of the Greek gods, in an age of
@@ -39,6 +42,7 @@ maritime peace and order kept by an East India–style company. WrymWretch uses 
 | People of the Bark | Comic, mythic | Affection for tiny people |
 | The Endless Temple | Liminal fantasy, storybook | Wanderlust, quiet guilt |
 | The Lord of the Sea | Comic, mythic, nautical | Swagger returning |
+| Dr. Tox | Grounded, cynical comic-book science fiction, body horror; Altrulan as sculptural myth | Fury at the company, then fear of his own body; in Altrulan, reverence |
 
 ## 3. 2D modes: one owner each
 
@@ -54,6 +58,25 @@ maritime peace and order kept by an East India–style company. WrymWretch uses 
 | People of the Bark | **Crack runner**: a messenger platforms along a crack in the bark between cities | **Crack defence**: hold a crack against insects, barricade by barricade, side-on |
 | The Endless Temple | **Living illustration**: ride sand waves across the book's own drawn page with momentum | **The stacks**: side-on through shelves that do not end, toward a book that is calling |
 | The Lord of the Sea | **Engraved sea**: storms and chases side-on, in the style of an engraved chart come alive | **The deep**: side-on dives where Alexi moves as he cannot on land |
+
+**Dr. Tox, reserved.** Its eight modes, all side-scrolling, are reserved for it here and no other
+game may take them. Each episode's two rows join the table above in that episode's build phase, when
+its folder and its rows in `docs/graphic_styles.json` exist (`tools/pictographs/build.py` requires a
+style for every row in the table).
+
+- *Rise* (`dr-tox-rise`): **Panel run**: Alexander's break-ins across a comic page; gutters skip
+  time, the player picks the next panel. **Barrier escort**: Aegis draws hard-light walls to bring a
+  transport through the lower ring, and sees whom they pen in.
+- *Fall* (`dr-tox-fall`): **Crowd thread**: through a relief-hall queue, breath radius kept off
+  people; the shroud shrinks it. **Reflection run**: Cally and her mirrored reflection through glass
+  halls; sometimes the reflection refuses.
+- *Finale* (`dr-tox-finale`): **The airway**: the arcology's ducts on the airflow; the page inks
+  itself as he passes. **Procession**: against the cult's march, to its front.
+- *Altrulan* (`dr-tox-altrulan`): **Root-way**: along vines between towers that swell on the city's
+  breath. **Fresco walk**: along a scripture wall; cracks show the Age beneath.
+
+Panel run is not The Endless Temple's living illustration: it moves between panels, not along one
+page.
 
 ## 4. 1D games: one owner each
 
@@ -106,17 +129,40 @@ game), the column on the right says what makes each one different.
 | The Lord of the Sea | The Tea Board | Board game, trade routes | Played against the Lord of Tea; the final negotiation is a match |
 | The Lord of the Sea | Dead Reckoning | Navigation | Plot a course with dividers, wind and tide tables |
 
+**Dr. Tox, reserved.** Its seventeen 1D games are reserved for it here, each in a family new to the
+collection, and join the table above in their episode's build phase, as its 2D modes do. Every page
+is a medical instrument turned. The pin board with red string stays bunker set dressing (it is
+Peephole's Mosaic), and no page reads his own body or rations food (Man Eater's Chart and Tray).
+
+- *Rise*: **The Cage** (titration): shielding against immune pressure. **Cat's Cradle** (string
+  figures): the four children. **The Window** (timetable): a break-in window in guard rotations.
+  **Fiche** (indexed retrieval on microfiche): the 999.
+- *Rise to Finale*: **Aftermath** (reconstruction): order the traces of what the body did. One game,
+  owned by Rise, recurring in Fall and Finale.
+- *Fall*: **Triage**: sorting patients under scarcity. **The Manifold**: flow routing through the
+  gauntlet's valves. **Persona** (Cally): deck-building to a target's attachment profile. **Bloom**
+  (Rostova): spread containment on a grid.
+- *Finale*: **The Creed** (dominoes): his own past lines chain into doctrine. **Two Pans**
+  (balance): the ratio of the final dose. **Switchboard**: patching life-support circuits.
+  **Panes** (Aegis): tangram tiling of a breach.
+- *Altrulan*: **Rubbing**: reveal a relief by rubbing. **The Measure**: exact amounts with fixed
+  vessels. **The Mill** (board game, alignment, morris family). **The Peal**: change ringing on the
+  towers' bells.
+
 ## 5. Shared ideas, handled differently
 
-**Becoming the monster.** The Stuffed Ones and Man Eater both turn the player into the thing.
+**Becoming the monster.** The Stuffed Ones, Man Eater and Dr. Tox all turn the player into the thing.
 
 - *The Stuffed Ones*: the change is sudden, an act break. You become one of a pack and share a
   pulse with your friends. The horror is social: you hunt together, and the test is stillness.
 - *Man Eater*: the change is gradual, measured in your own body every day, and you are alone. The
   horror is appetite: the test is what you eat, and your strength and your clarity pull against
   each other.
+- *Dr. Tox*: the change is sudden, involuntary and unremembered. The Toxin State takes the
+  controls, never in the same form twice (bible Part VI §3), and the player learns afterwards what
+  his body did.
 
-**Memory loss.** Four games touch it.
+**Memory loss.** Five games touch it.
 
 - *The Stuffed Ones*: you lose **your own** memories. It is internal and it is identity. Stuffing
   decides what you keep.
@@ -126,8 +172,10 @@ game), the column on the right says what makes each one different.
   retelling. It is reversible and it is the combat economy.
 - *The Lord of the Sea*: deliberately **not** about memory. Alexi's power comes from the sea's
   wildness and sailors' devotion, a political and social power, not a remembered one.
+- *Dr. Tox*: memory is **a leash someone else holds**. Reese's past is made to mean something to
+  him on demand: "HOPE signals them to mean something to him on demand" (bible Part VI, Aegis).
 
-**Investigation.** Four games make the player notice wrongness.
+**Investigation.** Five games make the player notice wrongness.
 
 - *Behind the Peephole*: deduce **other people's** hidden lives. There are true answers and they
   are scored.
@@ -135,6 +183,8 @@ game), the column on the right says what makes each one different.
   is what to save.
 - *Lira Calyx*: test **hypotheses with instruments**, knowing the data can be falsified.
 - *Man Eater*: **you are the evidence**. You observe your own body.
+- *Dr. Tox*: **reconstruct what your own body did** while the Toxin State held it. Not what is
+  being done to you, as in Man Eater, but what you did.
 
 **Isolation in a building.** Peephole (a hotel) and Man Eater (a base) both keep the player in
 one place at night. Peephole never lets you enter the rooms you watch; Man Eater lets you go
@@ -144,9 +194,10 @@ anywhere, at the cost of being seen and of the cold.
 counts three nights per group and loops groups; Peephole spends a fixed number of hours across six
 doors; Man Eater alternates a day of duties with a night of choices, and the 10:00 call divides them.
 
-**A god.** People of the Bark and The Lord of the Sea both involve divinity. In Bark the player
-is the people who mistake a squirrel and a hand for gods, and must never be told. In Sea the
-player is a real god who has lost his following.
+**A god.** People of the Bark, The Lord of the Sea and Dr. Tox all involve divinity. In Bark the
+player is the people who mistake a squirrel and a hand for gods, and must never be told. In Sea the
+player is a real god who has lost his following. In Dr. Tox's Altrulan the gods are people the
+player knew, sincerely remembered as gods (bible Part III); no ending treats the scripture as a lie.
 
 ## 6. How endings are decided, game by game
 
@@ -164,6 +215,7 @@ Each game reaches its endings by a different kind of rule, so replays feel diffe
 | People of the Bark | The balance between the three institutions over the year |
 | The Endless Temple | A choice inside each book, plus whether Elaris keeps returning from the tea |
 | The Lord of the Sea | The Order and Wild map at the end, plus the final match on the Tea Board |
+| Dr. Tox | Amber, Self and the Word: the amber cage the Toxin State burns, the Self it lowers, and whether Reese and Cally say "HOPE" or "RCC"; each episode's ending carries into the next as scars |
 
 ## 7. Graphic styles: one owner each
 

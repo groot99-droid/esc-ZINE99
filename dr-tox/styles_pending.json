@@ -1,0 +1,12 @@
+{
+  "note": "Episode 1 (Rise) rows for docs/graphic_styles.json, in its exact schema, from dr-tox/SCOPE.md section 4. Held here because adding them now breaks the checks: tools/pictographs/build.py reports 'dr-tox-rise: no pictographs/make.py' and tools/web/build.py reads games/dr-tox-rise/data/game.json, which does not exist. Move them into docs/graphic_styles.json in Phase 1, once games/dr-tox-rise/ has data/game.json and pictographs/make.py, together with the two Rise rows in COLLECTION sections 3 and 4. The 'look' lines are proposals for the author. Near styles to watch: scratchboard (white cut from black) against Heartstream's scrimshaw.",
+  "styles": [
+    {"game": "dr-tox-rise", "kind": "2d", "name": "Panel run", "key": "panel-run", "style": "Noir spotted-black brush ink", "look": "Heavy brushed blacks spotted across the panels, white gutters that skip time"},
+    {"game": "dr-tox-rise", "kind": "2d", "name": "Barrier escort", "key": "barrier-escort", "style": "Franco-Belgian ligne claire", "look": "Even clear outlines, flat colour, no hatching; hard-light walls as clean bars"},
+    {"game": "dr-tox-rise", "kind": "1d", "name": "The Cage", "key": "cage", "style": "Comic colourist's flats", "look": "Flat unshaded colour fills to the line, amber against green, never at equal weight"},
+    {"game": "dr-tox-rise", "kind": "1d", "name": "Cat's Cradle", "key": "cats-cradle", "style": "Chalk and poster paint on the painted sky", "look": "Chalk string figures over a flat painted blue sky, clinical white light"},
+    {"game": "dr-tox-rise", "kind": "1d", "name": "The Window", "key": "window", "style": "Fumetti photo-comic", "look": "Posed photo panels with typed captions and a guard rota in the margin"},
+    {"game": "dr-tox-rise", "kind": "1d", "name": "Fiche", "key": "fiche", "style": "Scratchboard", "look": "White lines cut from a black ground, frames of an index card grid"},
+    {"game": "dr-tox-rise", "kind": "1d", "name": "Aftermath", "key": "aftermath", "style": "Manga screentone, evidence tents", "look": "Dot-tone grey fields, numbered evidence tents beside each trace"}
+  ]
+}
