@@ -358,9 +358,9 @@
       "material": "Hollow-channel throwing blades laid on a grey cloth",
       "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A folded grey cloth laid flat with six leaf-shaped hollow-channel throwing blades set out on it in a row, each blade with an open centre channel and a small fill port at the base, dark matte steel, no shine. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people. Reference image for 3D modelling.",
       "model": "gpt_image_2_6",
-      "job_id": null,
+      "job_id": "b1a01c1f-c0f6-4d4f-9327-b6a8496914cd",
       "image": "assets/objects/blade-cloth.jpg",
-      "note": "Submitted 2026-11-19 as job f56c4927-7dfa-4a53-8a9c-fb489ee73330 (gpt_image_2_6); the safety system flagged it (nsfw) and no image was made. Not resubmitted: a reworded prompt needs the author's go-ahead."
+      "note": "Resubmitted unchanged once with the author's go-ahead after a first attempt (job f56c4927-7dfa-4a53-8a9c-fb489ee73330) was flagged; this one was made and accepted."
     },
     {
       "id": "freeway-span",
@@ -668,7 +668,7 @@
       "model": "gpt_image_2_6",
       "job_id": null,
       "image": "assets/objects/dispersal-rig.jpg",
-      "note": "Submitted 2026-11-19 as job 6b3cbcc8-4cfc-483f-b684-3bcac186930d (gpt_image_2_6); the safety system flagged it (nsfw) and no image was made. Not resubmitted: a reworded prompt needs the author's go-ahead."
+      "note": "Flagged by the safety system twice, unchanged prompt (jobs 6b3cbcc8-4cfc-483f-b684-3bcac186930d and af9bcfc2-8807-49f8-9886-c7778c18630c). Not reworded to get past the flag; waiting for the author."
     },
     {
       "id": "service-truck",
