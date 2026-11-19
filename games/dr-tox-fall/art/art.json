@@ -1,6 +1,6 @@
 {
  "game": "dr-tox-fall",
- "count": 183,
+ "count": 184,
  "assets": [
   {
    "id": "title-episodes",
@@ -1065,6 +1065,14 @@
    "w": 240,
    "h": 200,
    "row": "reflection-run | Doors, switches and the three refusals"
+  },
+  {
+   "id": "shared-dispersal-rig",
+   "group": "pieces",
+   "title": "Dispersal rig (3D prop reference)",
+   "w": 1024,
+   "h": 1024,
+   "row": "shared | 3D prop reference: dispersal-rig (assets.json), drawn by code"
   },
   {
    "id": "triage-cot",

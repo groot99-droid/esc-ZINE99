@@ -665,10 +665,10 @@
       ],
       "material": "Steel aerosol rig with tanks, nozzle and a small screen, plate stamped RCC",
       "prompt": "Grounded realistic 3D game prop, worn and used, matte surfaces, no chrome. A compact wheeled steel aerosol dispersal rig: two pressure tanks, a nozzle arm, hoses, a small dark CRT screen in a housing, a riveted plate stamped with the three letters RCC, rust-ochre residue around the nozzle. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering except the three stamped letters RCC on the plate, no other objects, no hands, no people. Reference image for 3D modelling.",
-      "model": "gpt_image_2_6",
+      "model": "code-drawn (art asset shared-dispersal-rig)",
       "job_id": null,
       "image": "assets/objects/dispersal-rig.jpg",
-      "note": "Flagged by the safety system twice, unchanged prompt (jobs 6b3cbcc8-4cfc-483f-b684-3bcac186930d and af9bcfc2-8807-49f8-9886-c7778c18630c). Not reworded to get past the flag; waiting for the author."
+      "note": "Code-drawn, not a Higgsfield image: art asset shared-dispersal-rig (games/dr-tox-fall/art/src/90_dispersal_rig.py, art/pieces/shared-dispersal-rig.svg), rendered to this JPEG at 1024x1024 with Chromium. Drawn at the author's request after the safety system flagged the generated image twice with the prompt unchanged (jobs 6b3cbcc8-4cfc-483f-b684-3bcac186930d and af9bcfc2-8807-49f8-9886-c7778c18630c); the prompt was never reworded and is kept here as the spec. job_id stays null."
     },
     {
       "id": "service-truck",
